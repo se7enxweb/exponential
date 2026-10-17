@@ -12,6 +12,9 @@
  *  SR-04 - Real differences still show: a missing field, another type, another varchar length, NOT NULL, another
  *          default, DEFAULT NULL against DEFAULT 0, an index
  *  SR-05 - The SQL of a difference is written from the shipped definition, not from the normalized one
+ *  SR-06 - A fresh SQLite installation creates ezuser from share/db_schema.dba as the installer does
+ *          (generateSchemaFile()): the index ezuser_login is UNIQUE, reads back as unique, refuses a second
+ *          account with the same login, and the check finds nothing to change on ezuser
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -188,5 +191,30 @@ class expSQLiteSchemaReaderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'type' => 'longtext' ), $restored['table_changes']['expmail_category']['added_fields']['notes'] );
         $this->assertSame( $shipped['eznew'], $restored['new_tables']['eznew'] );
         $this->assertFalse( expSchemaConsistencyReport::restoreDefinitions( false, $shipped ) );
+    }
+
+    /** SR-06 */
+    public function testFreshInstallCreatesTheUniqueLoginIndex()
+    {
+        $schema = null;
+        include dirname( __DIR__, 4 ) . '/share/db_schema.dba';
+        $this->assertSame( 'unique', $schema['ezuser']['indexes']['ezuser_login']['type'], 'the shipped definition' );
+
+        $writer = new eZSQLiteSchema( array( 'instance' => null ) );
+        $sql = $writer->generateSchemaFile( array( 'ezuser' => $schema['ezuser'], '_info' => array( 'format' => 'generic' ) ) );
+        $this->assertMatchesRegularExpression( '/CREATE\s+UNIQUE INDEX ezuser_login ON ezuser\s+\( login \);/', $sql );
+        foreach ( array_filter( array_map( 'trim', explode( ';', $sql ) ) ) as $statement )
+            $this->assertTrue( $this->db->db->exec( $statement ), $statement );
+
+        $read = $this->read();
+        $this->assertSame( array( 'type' => 'unique', 'fields' => array( 'login' ) ), $read['ezuser']['indexes']['ezuser_login'] );
+
+        $this->db->db->exec( "INSERT INTO ezuser ( contentobject_id, login, email ) VALUES ( 1, 'same', 'a@example.com' )" );
+        $this->assertFalse( @$this->db->db->exec( "INSERT INTO ezuser ( contentobject_id, login, email ) VALUES ( 2, 'same', 'b@example.com' )" ),
+                            'a second account with the same login is refused' );
+
+        $diff = eZDbSchemaChecker::diff( eZSQLiteSchema::normalizeForComparison( array( 'ezuser' => $read['ezuser'] ) ),
+                                         eZSQLiteSchema::normalizeForComparison( array( 'ezuser' => $schema['ezuser'] ) ) );
+        $this->assertSame( array(), $diff, 'nothing to change on ezuser' );
     }
 }

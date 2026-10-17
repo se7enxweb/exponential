@@ -652,7 +652,7 @@ ec737d33e04106fd2dd49b4d1cbefc78  design/admin/templates/setup/settingsextension
 d54731ec37f052d109de18e268fcc094  design/admin/templates/setup/setupmenu.tpl
 a839e58218fe662fdd99c9888abaf329  design/admin/templates/setup/setupmenu_figure.tpl
 cf304e66c675da3b5d618071cab020c9  design/admin/templates/setup/sitedata.tpl
-41525e9febcbf7b684327e30e329b954  design/admin/templates/setup/systemupgrade.tpl
+a75b3c61c701a168ed8883bd042e500a  design/admin/templates/setup/systemupgrade.tpl
 2c2038f56dc90c1679b97023c851a8d6  design/admin/templates/setup/templateoperator.tpl
 713f58d21aa6b58f4d4ca88b69092cfa  design/admin/templates/setup/templateoperator_basic.tpl
 571bc9e15ede9dfa6be6ce83416d744d  design/admin/templates/setup/templateoperator_code.tpl
@@ -1292,7 +1292,7 @@ b1bc4417bae5bcc7b31803d07c125f11  design/admin4/templates/setup/settingsextensio
 16682a2aaeca781c203cd9e3b6300712  design/admin4/templates/setup/setupmenu.tpl
 a839e58218fe662fdd99c9888abaf329  design/admin4/templates/setup/setupmenu_figure.tpl
 cf304e66c675da3b5d618071cab020c9  design/admin4/templates/setup/sitedata.tpl
-41525e9febcbf7b684327e30e329b954  design/admin4/templates/setup/systemupgrade.tpl
+a75b3c61c701a168ed8883bd042e500a  design/admin4/templates/setup/systemupgrade.tpl
 609cdf5d740c8d34fe78ec54c1dd3e39  design/admin4/templates/setup/templateoperator.tpl
 686b4d0cbfcaf6899889d6772a89daf0  design/admin4/templates/setup/templateoperator_basic.tpl
 571bc9e15ede9dfa6be6ce83416d744d  design/admin4/templates/setup/templateoperator_code.tpl
@@ -3068,7 +3068,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-883a5974c3384aa82fd13a5d00dd5273  doc/changelogs/6.0/6.0.15.md
+555dec232902acf7a3d86ed72b7497f6  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3631,7 +3631,7 @@ f52435ea65b9339e1191f8bbb8753638  doc/guides/system-information.md
 dc5f0aedab105f984fc1d7e71761f4eb  doc/guides/two-factor-login.md
 06d9b73556412ec28f4c1fe7b5c7c58d  doc/guides/ui-switch-design.md
 d55259e5b036dd972962aa0bd877bc3f  doc/guides/ui-switch-settings.md
-fc2eb248460e9ebbb10faf76eb446e2e  doc/guides/upgrade-check.md
+8edef25a59620ef868cb98f6c28cc2cd  doc/guides/upgrade-check.md
 96ce9e87d17b31ab1a771517f083e4ea  doc/guides/upgrading.md
 6477f5214f3a7f3dfdf0da2e2284d082  doc/guides/urls-and-aliases.md
 d0260680e11ffdb7581f3bff6191d877  doc/guides/workflows.md
@@ -5647,7 +5647,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 2898970b3f0a92a99c65c02bf7b1ffab  kernel/private/classes/exceptions/kernel/moduleviewnotfound.php
 330a3389deaa6670e6677eaf993b9a73  kernel/private/classes/expcontentaccessreport.php
 7006dcb750cb36c53efb10d3cd301720  kernel/private/classes/expfileconsistencyreport.php
-405bb8762d0eb09c3cab1b207bfe2e5c  kernel/private/classes/expschemaconsistencyreport.php
+30b99d6b38fac3eb85094f52e824516c  kernel/private/classes/expschemaconsistencyreport.php
 f1861974cd8e989be2d32e491a1a8cf3  kernel/private/classes/ezautoloadgenerator.php
 7642907aab26669358d257577baedeab  kernel/private/classes/ezcontentobjectstate.php
 6288d50d915fadc3e956d6a8c9ce660c  kernel/private/classes/ezcontentobjectstategroup.php
@@ -8249,7 +8249,7 @@ bf4805eef66167c3d4a3a93b22e382b3  tests/tests/kernel/datatypes/ezxmltext/handler
 7d433742c2df5b0ba02948a6f228f0e8  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 60f8f3fb91c8a7da7e20ca1f9c518136  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
-e2866895244944ed9c19f75a4b7d748f  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
+b6656c954acf5e5f6db1a2607a7564e4  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
 0133feca9084b5d356221439d79d6841  tests/tests/kernel/private/classes/ezpExtensionInfoTest.php
 5277128e032a8ba916fd550e97672c58  tests/tests/kernel/private/classes/ezpFormTokenRefusalTest.php
 f6f7a6d0fedaac36b1b7a203e3f349cf  tests/tests/kernel/private/classes/ezpKernelResultAndEventTest.php
@@ -8505,8 +8505,8 @@ eae37bd4076abbb33b0e566f8d816ef8  tests/tests/lib/ezdb/mongodb/expMongoDBWhereTe
 5270224505ef824263b274220d047878  tests/tests/lib/ezdb/mongodb/sevenxMongoDBIntegrationTest.php
 d69d80eb919a41cca021cb8e9172bd2f  tests/tests/lib/ezdb/mongodb/stubs.php
 ed800401b82ccafb8da7b386047af5cd  tests/tests/lib/ezdb/suite.php
-2c8cd0a84a690c6c737ca90e849b5dc4  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php
-f4326b68b05233745c9337fa44f844ca  tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php
+63e528cf0602d28f50e1a648dcc2bfee  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php
+5b0a706ca0ab368e7ea8b1a665ef9757  tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php
 8290f19b05f206e4b8a3404f28de247d  tests/tests/lib/ezdiff/eZDiffTextEngineTest.php
 d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt
 1ad512526369d4f3eb3cab8034b19950  tests/tests/lib/ezfile/eZDirAndFileHandlerTest.php

@@ -188,6 +188,26 @@ class eZDbSchemaGenerationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( "\n-- line one\n-- line two\nDROP TABLE old;\n", $sql );
     }
 
+    /**
+     * A fresh installation on every engine makes ezuser.login unique: the installer writes the tables from
+     * share/db_schema.dba, and the hand-written kernel schema files say the same.
+     */
+    public function testEveryEngineCreatesTheLoginIndexUnique()
+    {
+        $schema = null;
+        include 'share/db_schema.dba';
+        $user = array( 'ezuser' => $schema['ezuser'], '_info' => array( 'format' => 'generic' ) );
+        $this->assertSame( 'unique', $schema['ezuser']['indexes']['ezuser_login']['type'] );
+
+        $this->assertMatchesRegularExpression( '/UNIQUE KEY ezuser_login \( login \)/', ( new eZMysqlSchema( array( 'instance' => null ) ) )->generateSchemaFile( $user ) );
+        $this->assertStringContainsString( 'CREATE UNIQUE INDEX ezuser_login ON ezuser USING btree ( login );', ( new eZPgsqlSchema( array( 'instance' => null ) ) )->generateSchemaFile( $user ) );
+        $this->assertMatchesRegularExpression( '/CREATE\s+UNIQUE INDEX ezuser_login ON ezuser\s+\( login \);/', ( new eZSQLiteSchema( array( 'instance' => null ) ) )->generateSchemaFile( $user ) );
+
+        $this->assertStringContainsString( 'UNIQUE KEY ezuser_login (login)', file_get_contents( 'kernel/sql/mysql/kernel_schema.sql' ) );
+        $this->assertStringContainsString( 'CREATE UNIQUE INDEX ezuser_login ON ezuser USING btree (login);', file_get_contents( 'kernel/sql/postgresql/kernel_schema.sql' ) );
+        $this->assertStringContainsString( 'CREATE UNIQUE INDEX "idx_ezuser_ezuser_login" ON "ezuser" (`login`);', file_get_contents( 'kernel/sql/sqlite/schema.sql' ) );
+    }
+
     public function testDiffOfASchemaWithItselfIsEmpty()
     {
         $this->assertSame( array(), eZDbSchemaChecker::diff( self::schema(), self::schema() ) );

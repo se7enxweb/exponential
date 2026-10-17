@@ -28,6 +28,7 @@
      $kind_labels = hash( 'missing_table', 'Missing table'|i18n( 'design/admin/setup/systemupgrade' ),
                           'extra_table', 'Table not in the schema'|i18n( 'design/admin/setup/systemupgrade' ),
                           'changed_table', 'Changed table'|i18n( 'design/admin/setup/systemupgrade' ),
+                          'inactive_table', 'Table of an extension that is not active'|i18n( 'design/admin/setup/systemupgrade' ),
                           'missing_field', 'Missing field'|i18n( 'design/admin/setup/systemupgrade' ),
                           'extra_field', 'Field not in the schema'|i18n( 'design/admin/setup/systemupgrade' ),
                           'changed_field', 'Changed field'|i18n( 'design/admin/setup/systemupgrade' ),
@@ -92,7 +93,8 @@
 <div class="a4-notice is-ok" role="status">
     <div class="a4-row is-between"><h2 class="a4-h2">{'Database check OK.'|i18n( 'design/admin/setup' )}</h2><span class="a4-setup-time">{'%seconds s'|i18n( 'design/admin/setup/systemupgrade',, hash( '%seconds', $schema.seconds|l10n( 'number' ) ) )}</span></div>
     <p>{if $schema.relational}{'The database matches the schema of Exponential and the active extensions (%files schema files).'|i18n( 'design/admin/setup/systemupgrade',, hash( '%files', $schema.schema_files|count ) )}{else}{'Every collection Exponential needs is there.'|i18n( 'design/admin/setup/systemupgrade' )}{/if}
-       {if $schema.counts.noise|gt( 0 )}{'%count tables differ only in how the %engine engine names their types; nothing needs to change.'|i18n( 'design/admin/setup/systemupgrade',, hash( '%count', $schema.counts.noise, '%engine', $schema.engine|wash ) )}{/if}</p>
+       {if $schema.counts.noise|gt( 0 )}{'%count tables differ only in how the %engine engine names their types; nothing needs to change.'|i18n( 'design/admin/setup/systemupgrade',, hash( '%count', $schema.counts.noise, '%engine', $schema.engine|wash ) )}{/if}
+       {if first_set( $schema.counts.inactive_table, 0 )|gt( 0 )}{'%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.'|i18n( 'design/admin/setup/systemupgrade',, hash( '%count', $schema.counts.inactive_table ) )}{/if}</p>
 </div>
     {else}
 <div class="a4-notice is-warn" role="alert">
@@ -347,6 +349,7 @@
     <li class="a4-figure{if $schema.counts.missing_table|gt( 0 )} is-attention{/if}"><strong>{$schema.counts.missing_table}</strong><span>{'Missing tables'|i18n( 'design/admin/setup/systemupgrade' )}</span></li>
     <li class="a4-figure{if $schema.counts.extra_table|gt( 0 )} is-warn{/if}"><strong>{$schema.counts.extra_table}</strong><span>{'Tables not in the schema'|i18n( 'design/admin/setup/systemupgrade' )}</span></li>
     <li class="a4-figure"><strong>{sub( $schema.counts.changed_table, $schema.counts.noise )}</strong><span>{'Changed tables'|i18n( 'design/admin/setup/systemupgrade' )}</span></li>
+    <li class="a4-figure"><strong>{first_set( $schema.counts.inactive_table, 0 )}</strong><span>{'Tables of extensions that are not active'|i18n( 'design/admin/setup/systemupgrade' )}</span></li>
     <li class="a4-figure"><strong>{$schema.counts.noise}</strong><span>{'Engine notes'|i18n( 'design/admin/setup/systemupgrade' )}</span></li>
 </ul>
 
@@ -361,13 +364,15 @@
 
 {foreach $schema.tables as $table}
 {if $table.noise}{continue}{/if}
-<details class="a4-fold {if $table.noise}{elseif or( $table.destructive, eq( $table.kind, 'extra_table' ) )}is-warn{else}is-bad{/if}"{if $table.noise|not} open="open"{/if}>
+<details class="a4-fold {if or( $table.noise, eq( $table.kind, 'inactive_table' ) )}{elseif or( $table.destructive, eq( $table.kind, 'extra_table' ) )}is-warn{else}is-bad{/if}"{if and( $table.noise|not, ne( $table.kind, 'inactive_table' ) )} open="open"{/if}>
     <summary>
         <h3><code>{$table.name|wash}</code></h3>
         <ul class="a4-badges">
             {if $table.noise}<li class="a4-badge is-info">{'Engine note'|i18n( 'design/admin/setup/systemupgrade' )}</li>
+            {elseif eq( $table.kind, 'inactive_table' )}<li class="a4-badge is-info">{$kind_labels[$table.kind]|wash}</li>
             {else}<li class="a4-badge {if eq( $table.kind, 'missing_table' )}is-bad{elseif eq( $table.kind, 'extra_table' )}is-warn{else}is-warn{/if}">{$kind_labels[$table.kind]|wash}</li>{/if}
-            {if $table.source|ne( '' )}<li class="a4-badge">{$table.source|wash}</li>{/if}
+            {if eq( $table.kind, 'inactive_table' )}<li class="a4-badge">{'belongs to %extension (not active)'|i18n( 'design/admin/setup/systemupgrade',, hash( '%extension', $table.source|wash ) )}</li>
+            {elseif $table.source|ne( '' )}<li class="a4-badge">{$table.source|wash}</li>{/if}
             {if $table.destructive}<li class="a4-badge is-bad">{'Removes something'|i18n( 'design/admin/setup/systemupgrade' )}</li>{/if}
         </ul>
     </summary>
@@ -378,8 +383,10 @@
             <p>{'The %engine schema handler writes no SQL for this: the engine names these types in its own words (on SQLite, text for longtext and an integer key it does not read as auto_increment). Nothing needs to change.'|i18n( 'design/admin/setup/systemupgrade',, hash( '%engine', $schema.engine|wash ) )}</p>
             {elseif eq( $table.kind, 'missing_table' )}
             <p>{'The table ships with Exponential or an active extension, and the database does not have it. Run the CREATE statement after a backup; the feature that uses the table fails until it is there.'|i18n( 'design/admin/setup/systemupgrade' )}</p>
+            {elseif eq( $table.kind, 'inactive_table' )}
+            <p>{'This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.'|i18n( 'design/admin/setup/systemupgrade',, hash( '%extension', $table.source|wash ) )}</p>
             {elseif eq( $table.kind, 'extra_table' )}
-            <p>{'No shipped schema names this table: usually it belongs to an extension that is not active, or to an extension of your own without a schema file. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.'|i18n( 'design/admin/setup/systemupgrade' )}</p>
+            <p>{'No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.'|i18n( 'design/admin/setup/systemupgrade' )}</p>
             {else}
             <p>{'Fields or indexes differ from the shipped definition. Read each statement and run the ones you agree with, after a backup. A statement that removes a field or an index may remove data of your own.'|i18n( 'design/admin/setup/systemupgrade' )}</p>
             {/if}

@@ -22,6 +22,10 @@
  *  SC-04 - A changed table the engine writes no SQL for is an engine note and passes
  *  SC-05 - Field and index definitions in words; the SQL download marks what removes something
  *  SC-06 - A document store: missing collections grouped by feature, the mongosh command
+ *  SC-07 - The tables of installed extensions that are not active: found in share/db_schema.dba and in the CREATE
+ *          TABLE statements of sql/<engine>/*.sql, active extensions left out
+ *  SC-08 - Such a table is listed as belonging to its extension, with no SQL and no DROP in the whole SQL or the
+ *          download, and does not fail the check; a table no schema names is still dropped as before
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -505,5 +509,71 @@ class expUpgradeCheckReportsTest extends PHPUnit\Framework\TestCase
         $ok = expSchemaConsistencyReport::mongoResult( array( 'ezcontentobject' ), array( 'ezcontentobject' ) );
         $this->assertSame( 'ok', $ok['status'] );
         $this->assertSame( '', $ok['mongo']['create_command'] );
+    }
+
+    /** SC-07 */
+    public function testInactiveExtensionTables()
+    {
+        $this->file( 'extension/ezfind/share/db_schema.dba', "<?php\n// schema\n\$schema = array( 'ezfind_elevate_configuration' => array( 'name' => 'ezfind_elevate_configuration', 'fields' => array(), 'indexes' => array() ),\n  '_info' => array( 'format' => 'generic' ) );\n" );
+        $this->file( 'extension/sqlonly/sql/mysql/schema.sql', "CREATE TABLE `sqlonly_items` (\n  id int\n);\ncreate table if not exists sqlonly_log ( id int );\n" );
+        $this->file( 'extension/sqlonly/sql/sqlite/schema.sql', "CREATE TABLE \"sqlonly_lite\" ( id integer );\n" );
+        $this->file( 'extension/active/share/db_schema.dba', "<?php\n\$schema = array( 'active_table' => array( 'fields' => array(), 'indexes' => array() ) );\n" );
+        $this->file( 'extension/broken/share/db_schema.dba', "not a schema file\n" );
+        $this->file( 'extension/notadir', 'x' );
+
+        $tables = expSchemaConsistencyReport::inactiveExtensionTables( $this->root . '/extension', array( 'active' ), 'mysql' );
+        ksort( $tables );
+        $this->assertSame( array( 'ezfind_elevate_configuration' => 'ezfind', 'sqlonly_items' => 'sqlonly', 'sqlonly_log' => 'sqlonly' ), $tables );
+
+        $tables = expSchemaConsistencyReport::inactiveExtensionTables( $this->root . '/extension', array( 'active' ), 'sqlite' );
+        ksort( $tables );
+        $this->assertSame( array( 'ezfind_elevate_configuration' => 'ezfind', 'sqlonly_lite' => 'sqlonly' ), $tables, 'only the engine\'s own sql directory' );
+
+        $this->assertSame( array(), expSchemaConsistencyReport::inactiveExtensionTables( $this->root . '/none', array() ) );
+        $this->assertSame( array( 'a', 'b' ), expSchemaConsistencyReport::createdTables( "CREATE TEMPORARY TABLE a (x int);\nCREATE TABLE [b] (y int);\nCREATE TABLE a (z int);" ) );
+    }
+
+    /** SC-08 */
+    public function testInactiveExtensionTableHasNoDrop()
+    {
+        $differences = array(
+            'removed_tables' => array( 'ezfind_elevate_configuration' => array( 'fields' => array(), 'indexes' => array() ),
+                                       'custom_data' => array( 'fields' => array(), 'indexes' => array() ) ),
+        );
+        $report = expSchemaConsistencyReport::fromDifferences( $differences, $this->writer(), 'sqlite', array(), array(),
+                                                               array( 'ezfind_elevate_configuration' => 'ezfind' ) );
+        $result = $report->result();
+        $this->assertSame( 'differences', $result['status'], 'the table no schema names still counts' );
+        $this->assertSame( array( 'custom_data', 'ezfind_elevate_configuration' ), array_column( $result['tables'], 'name' ) );
+        $this->assertSame( 1, $result['counts']['tables'] );
+        $this->assertSame( 1, $result['counts']['extra_table'] );
+        $this->assertSame( 1, $result['counts']['inactive_table'] );
+
+        list( $extra, $inactive ) = $result['tables'];
+        $this->assertSame( 'extra_table', $extra['kind'] );
+        $this->assertSame( "DROP TABLE custom_data;\n", $extra['sql'] );
+        $this->assertTrue( $extra['destructive'] );
+        $this->assertSame( 'inactive_table', $inactive['kind'] );
+        $this->assertSame( 'ezfind', $inactive['source'] );
+        $this->assertSame( '', $inactive['sql'] );
+        $this->assertFalse( $inactive['destructive'] );
+
+        $this->assertSame( "DROP TABLE custom_data;\n", $result['sql'], 'All statements has no DROP of the extension\'s table' );
+        $text = $report->sqlText( 'Check' );
+        $this->assertStringContainsString( "-- ezfind_elevate_configuration: belongs to ezfind (not active), nothing to run\n", $text );
+        $this->assertStringNotContainsString( 'DROP TABLE ezfind_elevate_configuration', $text );
+
+        // only tables of extensions that are not active: the check passes, with nothing to run
+        $only = expSchemaConsistencyReport::fromDifferences( array( 'removed_tables' => array( 'ezfind_elevate_configuration' => array() ) ),
+                                                            $this->writer(), 'sqlite', array(), array(), array( 'ezfind_elevate_configuration' => 'ezfind' ) )->result();
+        $this->assertSame( 'ok', $only['status'] );
+        $this->assertSame( '', $only['sql'] );
+        $this->assertSame( 0, $only['counts']['tables'] );
+        $this->assertSame( 1, $only['counts']['inactive_table'] );
+
+        // without the map: as before, a table not in the schema with its DROP
+        $before = expSchemaConsistencyReport::fromDifferences( array( 'removed_tables' => array( 'ezfind_elevate_configuration' => array() ) ), $this->writer(), 'sqlite' )->result();
+        $this->assertSame( 'extra_table', $before['tables'][0]['kind'] );
+        $this->assertSame( "DROP TABLE ezfind_elevate_configuration;\n", $before['sql'] );
     }
 }

@@ -120,17 +120,20 @@ consistency**, **Download SQL** sends the SQL of every table under a comment say
 
 Press **Check database consistency**. It reads `share/db_schema.dba` and the `share/db_schema.dba` of every active
 extension that has one, reads the schema of the database, and compares them with the schema handler of the database
-engine (`dbschema.ini [SchemaSettings]`). On the demonstration server (SQLite, 11 schema files) it takes about
+engine (`dbschema.ini [SchemaSettings]`). It also reads the schema files of the extensions that are installed and not
+active (their `share/db_schema.dba`, and the `CREATE TABLE` statements of their `sql/<engine>/*.sql`), only to say to
+which of them a table in the database belongs; nothing is compared with those. On the demonstration server (SQLite, 11 schema files) it takes about
 0.1 seconds.
 
-The figures count **tables with SQL to review**, missing tables, tables not in the schema, changed tables and engine
-notes. Then one folding card per table, with what differs (missing, extra and changed fields and indexes, with the
+The figures count **tables with SQL to review**, missing tables, tables not in the schema, changed tables, tables of
+extensions that are not active and engine notes. Then one folding card per table, with what differs (missing, extra and changed fields and indexes, with the
 shipped and the current definition) and the SQL for that table:
 
 | Kind | What it means | What to do |
 |---|---|---|
 | **Missing table** | Shipped with Exponential or an active extension, not in the database. The feature that uses it fails until it is there. | Run its CREATE statement after a backup. |
-| **Table not in the schema** | In the database, in no shipped schema: usually a table of an extension that is not active, or of an extension of your own without a schema file. | Leave it unless you know its data is no longer needed. The DROP statement is shown only to be complete, and marked **Removes something**. |
+| **Table not in the schema** | In the database, in no schema at all, not even that of an installed extension that is not active: usually a table of an extension of your own without a schema file, or of an extension that was removed. | Leave it unless you know its data is no longer needed. The DROP statement is shown only to be complete, and marked **Removes something**. |
+| **Table of an extension that is not active** | In the database and in no active schema, but the schema of an extension that is installed and not active names it, for example `ezfind_elevate_configuration` of ezfind (the Elevate configuration). The card says "belongs to ezfind (not active)". | Activate the extension, or leave the table; dropping it removes the extension's data. No SQL is written for it: no DROP statement on the card, in **All statements** or in the download, and it does not fail the check. |
 | **Changed table** | Fields or indexes differ from the shipped definition. | Read each statement and run the ones you agree with, after a backup. Statements that remove or change a field or an index are marked **Removes something**: they can remove data of your own. |
 | **Engine notes** | The engine's schema handler writes no SQL for the difference. On SQLite the check first sets aside what SQLite cannot tell apart (`text` and `longtext`, the display width of an `auto_increment` key, a default left out or written as false), so a table as the SQLite schema files create it matches; what is left and still has no SQL is an engine note. | Nothing. They are listed in one folded group and do not fail the check. |
 

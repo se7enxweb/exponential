@@ -17,8 +17,12 @@
  *
  * What it finds, per table:
  * - missing_table: shipped, not in the database
- * - extra_table:   in the database, in no shipped schema (often a table of an extension that is not active, or of
- *                  a custom extension that ships no schema file); its SQL drops it, so it is marked destructive
+ * - extra_table:   in the database, in no shipped schema (often a table of a custom extension that ships no schema
+ *                  file); its SQL drops it, so it is marked destructive
+ * - inactive_table: in the database and in no active schema, but named by the schema of an extension that is
+ *                  installed and not active (its share/db_schema.dba, or a CREATE TABLE in its sql/<engine>/*.sql).
+ *                  It is listed with the extension's name and no SQL: dropping it would remove that extension's data,
+ *                  so no DROP statement is written for it, neither for the table nor in the whole SQL
  * - changed_table: in both, with fields or indexes that differ:
  *   missing_field, extra_field, changed_field, missing_index, extra_index, changed_index
  *
@@ -38,6 +42,7 @@ class expSchemaConsistencyReport
     const TABLE_MISSING = 'missing_table';
     const TABLE_EXTRA = 'extra_table';
     const TABLE_CHANGED = 'changed_table';
+    const TABLE_INACTIVE = 'inactive_table';
 
     /** The kinds of a finding inside a changed table, in the order they are shown */
     const ITEM_KINDS = array( 'missing_field', 'extra_field', 'changed_field', 'missing_index', 'extra_index', 'changed_index' );
@@ -60,13 +65,90 @@ class expSchemaConsistencyReport
      * @param string $engine The database engine (mysql, postgresql, sqlite ...)
      * @param array $current The database's schema, to say what a changed field is now; optional
      * @param array $sources table => where it is shipped ('exponential' or the extension's name); optional
+     * @param array $inactive table => the installed, not active extension whose schema names it
+     *                        (inactiveExtensionTables()); optional
      * @return expSchemaConsistencyReport
      */
-    public static function fromDifferences( $differences, $generator = null, $engine = '', array $current = array(), array $sources = array() )
+    public static function fromDifferences( $differences, $generator = null, $engine = '', array $current = array(), array $sources = array(), array $inactive = array() )
     {
         $report = new self();
-        $report->result = $report->build( $differences, $generator, (string)$engine, $current, $sources );
+        $report->result = $report->build( $differences, $generator, (string)$engine, $current, $sources, $inactive );
         return $report;
+    }
+
+    /**
+     * The tables named by the schema files of the extensions that are installed and not active: each directory
+     * under $extensionRoot that is not in $active, its share/db_schema.dba and the CREATE TABLE statements of its
+     * sql/<engine>/*.sql. Only says to which extension a table belongs; nothing is compared with these schemas.
+     *
+     * @param string $extensionRoot The extension directory (eZExtension::baseDirectory())
+     * @param string[] $active The names of the active extensions
+     * @param string $engine The database engine (mysql, postgresql, sqlite ...): which sql/ directory to read
+     * @return array table => extension name; the first extension in name order wins
+     */
+    public static function inactiveExtensionTables( $extensionRoot, array $active, $engine = '' )
+    {
+        $tables = array();
+        $entries = is_dir( $extensionRoot ) ? scandir( $extensionRoot ) : false;
+        if ( !is_array( $entries ) )
+            return $tables;
+        $engineDirs = array_unique( array_filter( array( (string)$engine, $engine === 'postgresql' ? 'pgsql' : '', $engine === 'sqlite' ? 'sqlite3' : '' ) ) );
+        foreach ( $entries as $extension )
+        {
+            $path = $extensionRoot . '/' . $extension;
+            if ( $extension === '' || $extension[0] === '.' || !is_dir( $path ) || in_array( $extension, $active, true ) )
+                continue;
+            $names = self::tableNames( self::readSchemaFile( $path . '/share/db_schema.dba' ) );
+            foreach ( $engineDirs as $engineDir )
+            {
+                foreach ( glob( $path . '/sql/' . $engineDir . '/*.sql' ) ?: array() as $file )
+                    $names = array_merge( $names, self::createdTables( (string)@file_get_contents( $file ) ) );
+            }
+            foreach ( $names as $name )
+            {
+                if ( !isset( $tables[$name] ) )
+                    $tables[$name] = $extension;
+            }
+        }
+        return $tables;
+    }
+
+    /**
+     * The names of the tables an SQL file creates (CREATE TABLE [IF NOT EXISTS] name), unquoted.
+     *
+     * @param string $sql
+     * @return string[]
+     */
+    public static function createdTables( $sql )
+    {
+        if ( !preg_match_all( '/\bCREATE\s+(?:TEMPORARY\s+)?TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?[`"\[]?([A-Za-z0-9_]+)[`"\]]?/i', (string)$sql, $matches ) )
+            return array();
+        return array_values( array_unique( $matches[1] ) );
+    }
+
+    /**
+     * A schema file as eZDbSchema::read() reads it (a PHP file that sets $schema, or a serialized array), without
+     * the kernel; false when it is missing or in another format.
+     *
+     * @param string $file
+     * @return array|false
+     */
+    private static function readSchemaFile( $file )
+    {
+        if ( !is_file( $file ) )
+            return false;
+        $head = (string)@file_get_contents( $file, false, null, 0, 100 );
+        if ( strpos( $head, '<?php' ) === 0 )
+        {
+            $schema = ( static function ( $__file ) { $schema = false; include $__file; return $schema; } )( $file );
+            return is_array( $schema ) ? $schema : false;
+        }
+        if ( preg_match( '#a:[0-9]+:{#', $head ) )
+        {
+            $schema = @unserialize( (string)file_get_contents( $file ), array( 'allowed_classes' => false ) );
+            return is_array( $schema ) ? $schema : false;
+        }
+        return false;
     }
 
     /**
@@ -104,6 +186,9 @@ class expSchemaConsistencyReport
         }
 
         $engine = method_exists( $db, 'databaseName' ) ? (string)$db->databaseName() : '';
+        // tables of extensions that are installed and not active: said to be theirs, never dropped
+        $inactive = array_diff_key( self::inactiveExtensionTables( eZExtension::baseDirectory(), eZExtension::activeExtensions(), $engine ),
+                                    $sources );
         $dbSchema = eZDbSchema::instance( $db );
         if ( !is_object( $dbSchema ) )
         {
@@ -135,7 +220,7 @@ class expSchemaConsistencyReport
             {
                 $differences = eZDbSchemaChecker::diff( $current, $original );
             }
-            $report = self::fromDifferences( $differences, $dbSchema, $engine, is_array( $current ) ? $current : array(), $sources );
+            $report = self::fromDifferences( $differences, $dbSchema, $engine, is_array( $current ) ? $current : array(), $sources, $inactive );
         }
         $report->result['schema_files'] = $files;
         $report->result['seconds'] = round( microtime( true ) - $started, 3 );
@@ -150,8 +235,9 @@ class expSchemaConsistencyReport
      * - relational: false for a document store (MongoDB), which has collections and no fields to compare
      * - tables:   list of array( name, kind, source, destructive, noise, items, counts, sql ); items is a list of
      *             array( kind, name, detail, expected, actual )
-     * - counts:   missing_table, extra_table, changed_table, tables (with SQL to run), noise (engine notes: changed
-     *             tables the engine writes no SQL for), and each item kind
+     * - counts:   missing_table, extra_table, changed_table, inactive_table (tables of an installed extension that is
+     *             not active: listed, no SQL, they do not fail the check), tables (with SQL to run), noise (engine
+     *             notes: changed tables the engine writes no SQL for), and each item kind
      * - sql:      the whole upgrade SQL, as eZDbSchemaInterface::generateUpgradeFile() writes it ('' when equal)
      * - mongo:    for a document store: missing, extra, groups, create_command
      * - schema_files: list of array( name, file, tables ) that were compared (collect() only)
@@ -178,6 +264,12 @@ class expSchemaConsistencyReport
         $out .= "-- indexes that the shipped schema does not have; they may hold data of your own.\n";
         foreach ( $result['tables'] as $table )
         {
+            if ( $table['kind'] === self::TABLE_INACTIVE )
+            {
+                $out .= "\n-- " . $table['name'] . ': belongs to ' . $table['source'] . " (not active), nothing to run\n"
+                      . "--   activate the extension, or leave it; dropping the table removes its data\n";
+                continue;
+            }
             $out .= "\n-- " . $table['name'] . ': ' . ( !empty( $table['noise'] ) ? 'engine note, nothing to run' : str_replace( '_', ' ', $table['kind'] ) ) . ( $table['source'] !== '' ? ' (' . $table['source'] . ')' : '' )
                   . ( $table['destructive'] ? ' DESTRUCTIVE' : '' ) . "\n";
             foreach ( $table['items'] as $item )
@@ -319,16 +411,17 @@ class expSchemaConsistencyReport
         $command = $create ? "[\n  '" . implode( "',\n  '", $create ) . "'\n].forEach(function(c) {\n  db.createCollection(c);\n  print('Created: ' + c);\n});" : '';
 
         $counts = array_fill_keys( self::ITEM_KINDS, 0 ) + array( self::TABLE_MISSING => count( $missing ), self::TABLE_EXTRA => count( $extra ),
-                                                                   self::TABLE_CHANGED => 0, 'tables' => count( $missing ), 'noise' => 0 );
+                                                                   self::TABLE_CHANGED => 0, self::TABLE_INACTIVE => 0, 'tables' => count( $missing ), 'noise' => 0 );
         return array( 'status' => $missing ? self::STATUS_DIFFERENCES : self::STATUS_OK, 'failure' => '', 'engine' => (string)$engine,
                       'relational' => false, 'tables' => array(), 'counts' => $counts, 'sql' => '',
                       'mongo' => array( 'missing' => $missing, 'extra' => $extra, 'groups' => $groups, 'create_command' => $command ),
                       'schema_files' => array(), 'seconds' => 0.0 );
     }
 
-    private function build( $differences, $generator, $engine, array $current, array $sources )
+    private function build( $differences, $generator, $engine, array $current, array $sources, array $inactive = array() )
     {
-        $counts = array_fill_keys( self::ITEM_KINDS, 0 ) + array( self::TABLE_MISSING => 0, self::TABLE_EXTRA => 0, self::TABLE_CHANGED => 0, 'tables' => 0, 'noise' => 0 );
+        $counts = array_fill_keys( self::ITEM_KINDS, 0 ) + array( self::TABLE_MISSING => 0, self::TABLE_EXTRA => 0, self::TABLE_CHANGED => 0,
+                                                                   self::TABLE_INACTIVE => 0, 'tables' => 0, 'noise' => 0 );
         $result = array( 'status' => self::STATUS_OK, 'failure' => '', 'engine' => $engine, 'relational' => true, 'tables' => array(),
                          'counts' => $counts, 'sql' => '', 'mongo' => null, 'schema_files' => array(), 'seconds' => 0.0 );
         if ( !is_array( $differences ) )
@@ -375,6 +468,15 @@ class expSchemaConsistencyReport
         {
             foreach ( $differences['removed_tables'] as $name => $def )
             {
+                if ( isset( $inactive[$name] ) )
+                {
+                    // An installed extension that is not active names it: its data, not something to drop. No SQL
+                    // for it, here or in the whole SQL below.
+                    $tables[] = $this->table( $name, self::TABLE_INACTIVE, array( $name => $inactive[$name] ), array(), '', false );
+                    $counts[self::TABLE_INACTIVE]++;
+                    unset( $differences['removed_tables'][$name] );
+                    continue;
+                }
                 $tables[] = $this->table( $name, self::TABLE_EXTRA, $sources, array(),
                                           $this->sql( $generator, array( 'removed_tables' => array( $name => $def ) ) ), true );
                 $counts[self::TABLE_EXTRA]++;
@@ -392,16 +494,20 @@ class expSchemaConsistencyReport
                 $counts['noise']++;
             }
         }
+        if ( isset( $differences['removed_tables'] ) && !$differences['removed_tables'] )
+            unset( $differences['removed_tables'] );
+        // the tables to act on first, then the tables of extensions that are not active, then the engine notes
         usort( $tables, function ( $a, $b ) {
-            if ( $a['noise'] !== $b['noise'] )
-                return $a['noise'] ? 1 : -1;
+            $rank = function ( $t ) { return $t['noise'] ? 2 : ( $t['kind'] === self::TABLE_INACTIVE ? 1 : 0 ); };
+            if ( $rank( $a ) !== $rank( $b ) )
+                return $rank( $a ) - $rank( $b );
             return strcmp( $a['name'], $b['name'] );
         } );
-        $counts['tables'] = count( $tables ) - $counts['noise'];
+        $counts['tables'] = count( $tables ) - $counts['noise'] - $counts[self::TABLE_INACTIVE];
 
         $result['tables'] = $tables;
         $result['counts'] = $counts;
-        $result['sql'] = $tables ? $this->sql( $generator, $differences ) : '';
+        $result['sql'] = count( $tables ) > $counts[self::TABLE_INACTIVE] ? $this->sql( $generator, $differences ) : '';
         $result['status'] = $counts['tables'] > 0 ? self::STATUS_DIFFERENCES : self::STATUS_OK;
         return $result;
     }
