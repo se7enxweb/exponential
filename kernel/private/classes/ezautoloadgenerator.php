@@ -203,6 +203,27 @@ class eZAutoloadGenerator
     }
 
     /**
+     * The mode an autoload file for the mode/location $location is written with, within EZP_FILE_MODE_MAX.
+     *
+     * The kernel array (autoload/ezp_kernel.php) and a single extension's array (extension/foo/autoload/) are
+     * source files kept in version control and listed in share/filelist.md5: they get 0644 like every other PHP
+     * file there, so regenerating them leaves no mode change behind. The arrays under var/autoload are runtime
+     * files that both the command line and the web server may rewrite, and keep the mode they had before
+     * (EZP_INI_FILE_PERMISSION where defined, else 0777).
+     *
+     * @param int $location
+     * @return int
+     */
+    protected function autoloadFileMode( $location )
+    {
+        if ( $location === self::MODE_KERNEL || $location === self::MODE_SINGLE_EXTENSION )
+        {
+            return eZFile::fileMode( 0644 );
+        }
+        return eZFile::fileMode( defined( 'EZP_INI_FILE_PERMISSION' ) ? EZP_INI_FILE_PERMISSION : 0777 );
+    }
+
+    /**
      * Writes the autoload data in <var>$data</var> for the mode/location
      * <var>$location</var> to actual files.
      *
@@ -251,8 +272,7 @@ class eZAutoloadGenerator
                  fwrite( $file, $data );
                  fwrite( $file, $this->dumpArrayEnd() );
                  fclose( $file );
-                 // Within EZP_FILE_MODE_MAX; without the limits exactly as before (EZP_INI_FILE_PERMISSION, else 0777)
-                 chmod( $filePath, eZFile::fileMode( defined( 'EZP_INI_FILE_PERMISSION' ) ? EZP_INI_FILE_PERMISSION : 0777 ) );
+                 chmod( $filePath, $this->autoloadFileMode( $location ) );
 
              }
              else
@@ -892,7 +912,9 @@ class eZAutoloadGenerator
             }
 
             $this->stopProgressOutput( self::OUTPUT_PROGRESS_PHASE2 );
-            ksort( $retArray );
+            // Byte order of the class names (SORT_STRING), so the order never depends on how PHP compares
+            // two names that look numeric, and a regenerated file is byte-identical to the committed one
+            ksort( $retArray, SORT_STRING );
         }
 
         if ( $this->output !== null )
