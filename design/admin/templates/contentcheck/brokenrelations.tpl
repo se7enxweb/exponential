@@ -79,9 +79,9 @@
     <div class="a4-field">
         <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'kernel/contentcheck' )}</button>
     </div>
-    {if $missing_files.enabled}{include uri='design:contentcheck/missingfiles_filter.tpl' files=$missing_files part='choice'}{/if}
     {include uri='design:contentcheck/filter_choice.tpl' group='Kind' label='Targets'|i18n( 'kernel/contentcheck' )}
     {include uri='design:contentcheck/filter_choice.tpl' group='Relation' label='References'|i18n( 'kernel/contentcheck' )}
+    {if $missing_files.enabled}{include uri='design:contentcheck/missingfiles_filter.tpl' files=$missing_files part='choice'}{/if}
 </form>
 </section>
 
