@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 {* The left column's width (the admin_left_menu_size preference): a preset name, drawn by the stylesheets, or a
-   width dragged by hand, set as --left-sidebar-width by the pre-paint script in the head. No inline CSS. *}
+   width dragged by hand, set as --left-sidebar-width by the pre-paint script in the head. No inline CSS.
+   a4-preload: the first paint draws the side columns from the user's preferences, without transitions, until
+   ezadmin_menubar.js has applied their state and takes the class away (admin4.css). *}
 {def $page_left_size = ezpreference( 'admin_left_menu_size' )}
-<html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}{if $page_left_size|ne( '' )}{if or( eq( $page_left_size, 'small' ), eq( $page_left_size, 'medium' ), eq( $page_left_size, 'large' ) )} data-a4-left-size="{$page_left_size}"{else} data-a4-left-width="{$page_left_size|wash}"{/if}{/if}{include uri='design:parts/a4_preference_attributes.tpl'}>
+<html class="a4-preload" lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}{if $page_left_size|ne( '' )}{if or( eq( $page_left_size, 'small' ), eq( $page_left_size, 'medium' ), eq( $page_left_size, 'large' ) )} data-a4-left-size="{$page_left_size}"{else} data-a4-left-width="{$page_left_size|wash}"{/if}{/if}{include uri='design:parts/a4_preference_attributes.tpl'}>
 {undef $page_left_size}
 
 <head>
