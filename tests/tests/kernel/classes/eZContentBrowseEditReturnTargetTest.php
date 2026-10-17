@@ -40,4 +40,16 @@ class eZContentBrowseEditReturnTargetTest extends TestCase
         $this->assertFalse( eZContentBrowse::editReturnTarget( false ) );
         $this->assertFalse( eZContentBrowse::editReturnTarget( '' ) );
     }
+
+    /**
+     * The view's check reads only an edit page as a return page: parameters of any other browse (role assignment,
+     * a node choice, none at all) are never dropped, and no object is fetched for them.
+     */
+    public function testBrowseViewKeepsParametersThatDoNotReturnToAnEditPage()
+    {
+        $this->assertFalse( \Exponential\View\Kernel\Content\Browse::returnsToMissingDraft( array( 'from_page' => '/role/assign/5' ) ) );
+        $this->assertFalse( \Exponential\View\Kernel\Content\Browse::returnsToMissingDraft( array( 'from_page' => '/content/view/full/2' ) ) );
+        $this->assertFalse( \Exponential\View\Kernel\Content\Browse::returnsToMissingDraft( array( 'action_name' => 'AddRelatedObject' ) ) );
+        $this->assertFalse( \Exponential\View\Kernel\Content\Browse::returnsToMissingDraft( 'not an array' ) );
+    }
 }
