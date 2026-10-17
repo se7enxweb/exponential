@@ -1333,6 +1333,17 @@
     ],
     "kernel/private/classes/views/setup/templateoperator.php": [
       "tests/tests/design/AdminSetupWizardTemplatesTest.php"
+    ],
+    "kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php": [
+      "tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php",
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
+    ],
+    "kernel/classes/datatypes/ezxmltext/ezxmlinputparser.php": [
+      "tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php",
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
+    ],
+    "settings/content.ini": [
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
     ]
   },
   "generated": {
@@ -1589,7 +1600,8 @@
       "tests/tests/extension/ezoe/expOEEngineViewTest.php"
     ],
     "extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php": [
-      "tests/tests/extension/ezoe/expOEInputTableCellTextTest.php"
+      "tests/tests/extension/ezoe/expOEInputTableCellTextTest.php",
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
     ],
     "extension/ezoe/modules/ezoe/engine.php": [
       "tests/tests/extension/ezoe/expOEEngineViewTest.php"

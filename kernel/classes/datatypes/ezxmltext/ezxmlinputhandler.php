@@ -27,7 +27,10 @@ class eZXMLInputHandler
      */
     public function __construct( $xmlData, $aliasedType, $contentObjectAttribute )
     {
-        $this->XMLData = preg_replace( '/[^\x{0009}\x{000a}\x{000d}\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}]+/u', '', $xmlData, -1, $count );
+        // XML 1.0 also allows #x10000-#x10FFFF. Without that range every character beyond U+FFFF vanished without a
+        // replacement when the text was opened in the editor: "&lt;mi&gt;\u{1D465}&lt;/mi&gt;" in custom:mathml became
+        // "&lt;mi&gt;&lt;/mi&gt;", "\u{1D538} = \mathbb{A}" in a formula " = \mathbb{A}", "a \u{1F600} b" became "a b".
+        $this->XMLData = preg_replace( '/[^\x{0009}\x{000a}\x{000d}\x{0020}-\x{D7FF}\x{E000}-\x{FFFD}\x{10000}-\x{10FFFF}]+/u', '', $xmlData, -1, $count );
         if ( $count > 0 )
         {
             eZDebug::writeWarning( "$count invalid character(s) detected. They have been removed from input.", __METHOD__ );
