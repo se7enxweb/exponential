@@ -161,6 +161,19 @@ them depend on the branch, not on the code:
 When `main` changed `share/filelist.md5` since the branch started, merge `main` into the branch and run
 `make manifest-fix` again rather than resolving the conflict by hand.
 
+The PHPUnit workflow runs for every push and pull request (from 2026-10-17). Until then it ran only when a `.php`
+file, `composer.json`, `composer.lock` or `phpunit.xml` changed, although the tests also read templates,
+stylesheets, scripts, translations, INI files and documentation: a change to those alone ran no test, and its
+failure showed up later on an unrelated commit. `tests/tests/bin/CiWorkflowPullRequestTest.php` (suite `quality`)
+keeps the workflows that way: no paths filter for PHPUnit, `COMPOSER_ROOT_VERSION=dev-main` in all three, no
+`pull_request_target` and no write permission, so the code of a fork never runs with a token that can change the
+repository.
+
+The first pull request of a new contributor from a fork waits for a maintainer's approval before any workflow runs
+(the repository's setting "Require approval for first-time contributors"). A run that nobody approves expires and
+is listed as failed with no jobs; it says nothing about the code. Approve it under Actions, or push again after the
+first pull request of that contributor has been merged.
+
 The `Database tests` jobs run every suite of `phpunit.xml` with `tests/runtests.php --dsn ... --db-per-test` and fail
 on a failure or error (before 2026-10-15 the runner always exited with 0, and the job passed whatever the tests
 reported; it also named the `tests` directory, which ran files that `phpunit.xml` excludes).
