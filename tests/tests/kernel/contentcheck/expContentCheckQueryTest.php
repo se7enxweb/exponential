@@ -20,6 +20,8 @@
  *  CQ-10  the image path of an image attribute, only inside the installation
  *  CQ-11  the databases the checks run on
  *  CQ-12  the trash view: another method than POST is refused before anything else
+ *  CQ-13  the filter form of the broken relations takes its node without a redirect: the kernel carries the query
+ *         of a request over every module redirect, so a redirect from the form's GET came back to itself forever
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -256,5 +258,26 @@ class expContentCheckQueryTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( expContentCheck::matches( 'abc', '' ) );
         $this->assertFalse( expContentCheck::matches( 'abd', 'abc' ) );
         $this->assertTrue( expContentCheck::matches( 'abc', 'abc' ) );
+    }
+
+    /** CQ-13 */
+    public function testBrokenRelationsFormTakesTheNodeWithoutARedirect()
+    {
+        $this->assertSame( 58, Brokenrelations::chosenNodeID( '2', '58' ) );
+        $this->assertSame( 2, Brokenrelations::chosenNodeID( '2', null ) );
+        $this->assertSame( 2, Brokenrelations::chosenNodeID( '2', '' ) );
+        $this->assertSame( 2, Brokenrelations::chosenNodeID( '2', 'x' ) );
+        $this->assertSame( 2, Brokenrelations::chosenNodeID( '2', array( 58 ) ) );
+        $this->assertSame( 1, Brokenrelations::chosenNodeID( null, ' 1 ' ) );
+        $this->assertNull( Brokenrelations::chosenNodeID( null, null ) );
+
+        // why: a module redirect keeps the query of the request, so the form's NodeID comes back with it
+        $this->assertSame( '/admin/contentcheck/brokenrelations/58?Kind%5B%5D=deleted&NodeID=58&Kind%5B%5D=deleted',
+                           ezpKernelWeb::appendRequestQuery( '/admin/contentcheck/brokenrelations/58?Kind%5B%5D=deleted',
+                                                             'NodeID=58&Kind%5B%5D=deleted', 'alpha.example' ) );
+        // so neither list view may redirect while it answers a GET
+        $root = dirname( __DIR__, 4 ) . '/kernel/private/classes/views/contentcheck/';
+        foreach ( array( 'brokenrelations.php', 'unreferenced.php' ) as $file )
+            $this->assertStringNotContainsString( 'redirectTo(', (string)file_get_contents( $root . $file ), $file );
     }
 }
