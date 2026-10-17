@@ -1,0 +1,73 @@
+name: CI health
+
+# A weekly summary of how the workflows of this repository have done: the pass rate per
+# workflow and event, the steps that fail most, the tests that fail most (read from the
+# PHPUnit logs) and the flaky runs (passed on a rerun, or failed at a sha that passed in
+# another run). INFORMATIONAL ONLY: it never fails because CI was red; it only reports.
+#
+# The summary is written to the run log and the job summary, and kept as an artifact
+# (Markdown and JSON). Run it by hand from the Actions tab ("Run workflow") to choose the
+# number of days or to include the other repositories of the owner.
+#
+# The same report on a developer machine (needs the gh CLI, logged in):
+#   python3 .github/scripts/ci_health_report.py --days 14 --md ci-health.md
+# See doc/bc/6.0/ci.md.
+
+on:
+  schedule:
+    - cron: '17 6 * * 1'   # Mondays 06:17 UTC
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Days to look back'
+        default: '7'
+      owner:
+        description: 'Also every repository of this owner (empty: this repository only)'
+        default: ''
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: ci-health
+  cancel-in-progress: false
+
+jobs:
+  report:
+    name: CI health report
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.event_name != 'schedule' || github.repository == 'se7enxweb/exponential'
+
+    steps:
+      - name: Checkout the report script
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+          sparse-checkout-cone-mode: false
+
+      - name: Report
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DAYS: ${{ inputs.days || '7' }}
+          OWNER: ${{ inputs.owner }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/ci-health"
+          set -- --days "$DAYS" --repo "$GITHUB_REPOSITORY" --cache-dir none \
+                 --md "$RUNNER_TEMP/ci-health/ci-health.md" --json "$RUNNER_TEMP/ci-health/ci-health.json"
+          if [ -n "$OWNER" ]; then
+            set -- "$@" --org "$OWNER"
+          fi
+          python3 .github/scripts/ci_health_report.py "$@"
+          cat "$RUNNER_TEMP/ci-health/ci-health.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-health
+          path: ${{ runner.temp }}/ci-health/
+          if-no-files-found: ignore
+          retention-days: 90

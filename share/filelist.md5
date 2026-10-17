@@ -6,6 +6,8 @@ abe0320a0a3b2b054b9ef775a92aa8c5  .githooks/check-commit-range
 5ed5bd1f59052ec6efe88df6332ff49e  .githooks/pre-commit
 e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
+615b46b2d4c1115974bae173147c099f  .github/scripts/ci_health_report.py
+4270426b8852e565e2c70389a8ed0559  .github/workflows/ci-health.yml
 a5e5334f58df49e18097ed70241e9ba0  .github/workflows/performance.yml
 70fa091a11602f4cc0cd99c51571b595  .github/workflows/phpunit.yml
 1bf09a85c9a724076d99e0407e79e51c  .github/workflows/quality.yml
@@ -3004,6 +3006,7 @@ e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 6eda2bd886dfdb0de3a91d2c5ad117c5  doc/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/bc/6.0/bookmark-folders.md
 d4b597204d5099e2bd8f5e498fd4d1ad  doc/bc/6.0/cache-console.md
+6c63f55315601b4e5547f4cbf2d621e9  doc/bc/6.0/ci.md
 fdba75c8c79a1b17f63cb3a6e013e134  doc/bc/6.0/cleanuprss.md
 f8dec2dfb81fbb16a107d0bde08c230b  doc/bc/6.0/cli_cronjob_view_abstractions.md
 f1ac6c4bdfb768a543907f1e85408ed8  doc/bc/6.0/console-exp-ini.md
