@@ -360,6 +360,13 @@ class expSystemReport
         $host = strtolower( preg_replace( '#^[a-z][a-z0-9+.-]*://#i', '', $facts['site_url'] ) );
         $host = preg_replace( '#[:/].*$#', '', $host );
         $facts['site_url_placeholder'] = $host === '' || in_array( $host, array( 'localhost', '127.0.0.1', '[::1]', '::1' ), true );
+        // How many siteaccesses there are and how a request picks one (#552); the full map is on Setup > System information
+        if ( !class_exists( 'expSiteAccessOverview' ) )
+            return $facts;
+        $facts['siteaccess_count'] = count( expSiteAccessOverview::names( array(
+            'AvailableSiteAccessList' => (array)self::ini( 'SiteAccessSettings', 'AvailableSiteAccessList', array() ),
+            'RelatedSiteAccessList' => (array)self::ini( 'SiteAccessSettings', 'RelatedSiteAccessList', array() ) ) ) );
+        $facts['match_order'] = expSiteAccessOverview::matchOrder( self::ini( 'SiteAccessSettings', 'MatchOrder', '' ) );
         return $facts;
     }
 
@@ -1323,6 +1330,11 @@ class expSystemReport
         if ( $this->fact( 'exponential', 'build' ) )
             $rows[] = array( $this->t( 'Engine archive build' ), (string)$this->fact( 'exponential', 'build' ) );
         $rows[] = array( $this->t( 'Siteaccess' ), (string)$this->fact( 'site', 'siteaccess', '' ) );
+        if ( $this->fact( 'site', 'siteaccess_count' ) )
+            $rows[] = array( $this->t( 'Siteaccesses' ), $this->t( '%count (default: %default; match: %order)', array(
+                '%count' => (string)(int)$this->fact( 'site', 'siteaccess_count' ),
+                '%default' => (string)$this->fact( 'site', 'public_siteaccess', '' ),
+                '%order' => implode( ', ', (array)$this->fact( 'site', 'match_order', array() ) ) ) ) );
         $rows[] = array( $this->t( 'Extensions' ), (string)count( (array)$this->facts['extensions'] ) );
         $cards[] = array( 'id' => 'exponential', 'title' => 'Exponential', 'state' => $worst( array( 'site_url' ) ), 'rows' => $rows );
 
