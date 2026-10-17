@@ -5,6 +5,14 @@
   hasAccessToBySetting and multipleezjscServerCalls. A server with persistent workers keeps every
   function a worker ever defined, so a generic name defined first by other code (eztags' tree menu
   defines an exitWithInternalError of its own) would have served these views.
+- Updated: generated script and style content of the packer (a server function such as
+  ezjsc::jqueryio with packing off, or content that is never cached) is linked as a file of its own,
+  named after its hash in the packer's cache directory, instead of being written inline into the
+  page, so a page under a Content Security Policy without 'unsafe-inline' can use it. When the file
+  cannot be stored the content is written inline as before.
+- Fixed: ezpublishingqueue::status answers only a user who can read the object or the registered
+  user who created the version, and gives the node's address only to a reader; anyone else gets the
+  answer of a version that does not exist.
 - Updated: Version 1.8.3 in ezinfo.php and extension.xml.
 
 # 1.8.2
