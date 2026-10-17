@@ -198,6 +198,32 @@ class eZTSTranslatorTest extends PHPUnit\Framework\TestCase
         $this->assertNull( $translator->translate( 'x', 'anything' ) );
     }
 
+    /**
+     * A file that does not validate raises no PHP warning per schema complaint (a broken catalogue raised hundreds
+     * per request into warning.log): the errors are collected, with their lines, for the one eZDebug warning.
+     */
+    public function testValidationErrorsAreCollectedNotRaised()
+    {
+        $this->writeTs( "<context><name>x</name>\n<message><source>a</source><translation>b</translation><source>c</source></message></context>\n" );
+        $doc = new DOMDocument( '1.0', 'utf-8' );
+        $this->assertTrue( $doc->load( $this->dir . '/' . self::LOCALE . '/translation.ts' ) );
+        $raised = array();
+        set_error_handler( function ( $no, $str ) use ( &$raised ) { $raised[] = $str; return true; } );
+        $valid = eZTSTranslator::validateDOMTree( $doc );
+        restore_error_handler();
+        $this->assertFalse( $valid );
+        $this->assertSame( array(), $raised );
+        $errors = eZTSTranslator::validationErrors();
+        $this->assertNotEmpty( $errors );
+        $this->assertStringStartsWith( 'line 5: ', $errors[0] );
+        $this->assertSame( array(), libxml_get_errors() );
+
+        $valid = new DOMDocument( '1.0', 'utf-8' );
+        $valid->loadXML( '<?xml version="1.0" encoding="utf-8"?><TS version="2.0"><context><name>x</name><message><source>a</source><translation>b</translation></message></context></TS>' );
+        $this->assertTrue( eZTSTranslator::validateDOMTree( $valid ) );
+        $this->assertSame( array(), eZTSTranslator::validationErrors() );
+    }
+
     public function testMissingFile()
     {
         $translator = new eZTSTranslator( self::LOCALE, 'no-such-file.ts', false );
