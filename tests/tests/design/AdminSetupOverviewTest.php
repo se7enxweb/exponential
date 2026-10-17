@@ -13,6 +13,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
 {
     const PAGE = 'design/admin4/templates/setup/setupmenu.tpl';
@@ -24,7 +26,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
 
     private static function read( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     /** @return array<string, string[]> the menu.ini values of one section, as eZINI reads arrays */
@@ -125,7 +127,7 @@ class AdminSetupOverviewTest extends PHPUnit\Framework\TestCase
         {
             $this->assertMatchesRegularExpression( '/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $icon, "LinkIcons[$key]" );
             $this->assertContains( $icon, $listed, "LinkIcons[$key]=$icon is not in design.ini IconList[], so the tile would draw the plug icon" );
-            $svg = (string)file_get_contents( "$root/share/icons/bootstrap-icons/svg/$icon.svg" );
+            $svg = AdminFiles::read( "$root/share/icons/bootstrap-icons/svg/$icon.svg" );
             $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-' . $icon . '"', $svg, "LinkIcons[$key]: $icon.svg is no Bootstrap icon" );
         }
         $this->assertSame( count( $icons ), count( array_unique( $icons ) ), 'two functions share one icon' );

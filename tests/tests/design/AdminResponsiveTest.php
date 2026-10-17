@@ -24,6 +24,8 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminResponsiveTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -33,7 +35,7 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
 
     private static function file( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     private static function css( $file )

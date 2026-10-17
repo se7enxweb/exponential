@@ -37,6 +37,10 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -46,7 +50,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
 
     private static function css( $file )
     {
-        return preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( self::root() . '/design/admin4/stylesheets/' . $file ) );
+        return preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( self::root() . '/design/admin4/stylesheets/' . $file ) );
     }
 
     /** The inner text of every "@media <query> { ... }" block of $css, joined */
@@ -74,9 +78,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
     /** PM-01 */
     public function testEscapeClosesThePhoneMenu()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
+        $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/phone_menu.js' ) . ' '
                                    . escapeshellarg( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
         $s = array();
@@ -129,7 +131,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'icon', $s['the close button closes and focuses the button']['focus'] );
         // a tap outside the header closes, without moving the focus; one in the menu does not (pointerdown: iOS sends
         // no click to the document for a tap on the page's background)
-        $this->assertStringContainsString( 'document.addEventListener("pointerdown", (e) => {', (string)file_get_contents( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
+        $this->assertStringContainsString( 'document.addEventListener("pointerdown", (e) => {', AdminFiles::read( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
         $this->assertFalse( $s['a tap outside the header closes']['open'] );
         $this->assertFalse( $s['a tap outside the header closes']['bodyOpen'] );
         $this->assertSame( array(), $s['a tap outside the header closes']['log'] );
@@ -147,7 +149,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
 
     private static function template( $path )
     {
-        return (string)file_get_contents( self::root() . '/design/' . $path );
+        return AdminFiles::read( self::root() . '/design/' . $path );
     }
 
     /** PM-02 */
@@ -244,8 +246,8 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'none', $base['.a4-phone-only']['display'] );
         $this->assertSame( 'block', self::phone()['.navbar-bar > :is(.header-search-mobile, .a4-phone-only)']['display'] );
         $this->assertStringContainsString( "return li !== more && !li.classList.contains('header-search-mobile') && !li.classList.contains('a4-phone-only');",
-                                           (string)file_get_contents( self::root() . '/design/admin4/javascript/admin4.js' ) );
-        $this->assertStringContainsString( '$(".a4-phone-close-button").on(\'click\'', (string)file_get_contents( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
+                                           AdminFiles::read( self::root() . '/design/admin4/javascript/admin4.js' ) );
+        $this->assertStringContainsString( '$(".a4-phone-close-button").on(\'click\'', AdminFiles::read( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
 
         // the user's actions: the header user menu's links under the same conditions, and logout
         $user = self::template( 'admin4/templates/parts/a4_phone_user.tpl' );

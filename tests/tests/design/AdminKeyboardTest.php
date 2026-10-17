@@ -13,11 +13,13 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminKeyboardTest extends PHPUnit\Framework\TestCase
 {
     private static function file( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     public function testTheNodeTabsFollowTheTabsPattern()
@@ -94,7 +96,7 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
         {
             if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
                 continue;
-            $source = preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( $file->getPathname() ) );
+            $source = preg_replace( '/\{\*.*?\*\}/s', '', AdminFiles::read( $file->getPathname() ) );
             if ( preg_match( '/<img\b[^>]*\bonclick=/i', $source ) )
                 $found[] = substr( $file->getPathname(), strlen( $base ) );
         }

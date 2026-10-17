@@ -15,13 +15,15 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminSetupTabsLeftMenuTest extends PHPUnit\Framework\TestCase
 {
     const CONDITION = "or( \$navigation_part_name|ne( 'ezsetupnavigationpart' ), \$a4_own_part|eq( 'ezsetupnavigationpart' ) )";
 
     private static function read( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     public static function leftMenus()

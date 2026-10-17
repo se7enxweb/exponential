@@ -26,11 +26,13 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminHeaderTest extends PHPUnit\Framework\TestCase
 {
     private static function file( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     private static function css( $file )
@@ -156,7 +158,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
     {
         $root = dirname( __DIR__, 3 );
         $check = "fetch( 'user', 'can_open', hash( 'uri', 'user/password' ) )";
-        $source = (string)file_get_contents( $root . '/design/admin4/templates/parts/a4_header_user.tpl' );
+        $source = AdminFiles::read( $root . '/design/admin4/templates/parts/a4_header_user.tpl' );
         $this->assertSame( 1, substr_count( $source, $check ), 'the one database access of the template' );
         $dir = $root . '/var/tmp/phpunit-header-user-' . getmypid() . '-' . substr( md5( uniqid( '', true ) ), 0, 8 );
         mkdir( $dir, 0777, true );
