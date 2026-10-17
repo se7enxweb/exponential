@@ -1348,6 +1348,16 @@ class eZINI
                    $onlyModified = false, $useRootDir = true, $resetArrays = false,
                    $encapsulateInPHP = true )
     {
+        // with site.ini [ConfigurationSettings] ManagedByDeployment=enabled the settings come from the
+        // deployment only; a web request does not write an INI file (command line scripts still do). Measured
+        // before: settings/edit and visual/toolbar saved *.ini.append.php into settings/ of the release.
+        if ( class_exists( 'expManagedConfiguration' ) && expManagedConfiguration::refusesWrite() )
+        {
+            eZDebug::writeError( "Refusing to save '" . ( $fileName === false ? $this->FileName : $fileName ) .
+                                 "': site.ini [ConfigurationSettings] ManagedByDeployment is enabled", __METHOD__ );
+            return false;
+        }
+
         $lineSeparator = eZSys::lineSeparator();
         $pathArray = array();
         $dirArray = array();

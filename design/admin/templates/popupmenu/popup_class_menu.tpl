@@ -21,10 +21,12 @@
     <hr />
     <a id="class-createnodefeed" data-menu-url={"/content/view/full/%nodeID%"|ezurl} data-menu-disabled-class="menu-item-disabled" data-menu-disabled-for="class-createnodefeed" href="#" data-menu-form="menu-form-createnodefeed">{"Create RSS/ATOM feed"|i18n("design/admin/popupmenu")}</a>
     <a id="class-removenodefeed" data-menu-url={"/content/view/full/%nodeID%"|ezurl} data-menu-disabled-class="menu-item-disabled" data-menu-disabled-for="class-removenodefeed" href="#" data-menu-form="menu-form-removenodefeed">{"Remove RSS/ATOM feed"|i18n("design/admin/popupmenu")}</a>
+{if fetch( 'user', 'can_open', hash( 'uri', 'visual/templatecreate' ) )}
     <hr />
     <a id="override-view" class="more" href="#" data-menu-submenu="OverrideSiteAccess" data-menu-hide="OverrideByClassSiteAccess OverrideByNodeSiteAccess">{"Template overrides"|i18n("design/admin/popupmenu")}</a>
     <a id="override-by-class-view" class="more" href="#" data-menu-submenu="OverrideByClassSiteAccess" data-menu-hide="OverrideSiteAccess OverrideByNodeSiteAccess">{"New class override"|i18n("design/admin/popupmenu")}</a>
     <a id="override-by-node-view" class="more" href="#" data-menu-submenu="OverrideByNodeSiteAccess" data-menu-hide="OverrideSiteAccess OverrideByClassSiteAccess">{"New node override"|i18n("design/admin/popupmenu")}</a>
+{/if}
     <hr />
     <a id="class-history" data-menu-url={"content/history/%objectID%"|ezurl} data-menu-disabled-class="menu-item-disabled" data-menu-disabled-for="class-history" href="#">{'Manage versions'|i18n( 'design/admin/popupmenu' )}</a>
     <a id="url-alias" data-menu-url={"content/urlalias/%nodeID%"|ezurl} data-menu-disabled-class="menu-item-disabled" data-menu-disabled-for="url-alias" href="#">{'Manage URL aliases'|i18n( 'design/admin/popupmenu' )}</a>

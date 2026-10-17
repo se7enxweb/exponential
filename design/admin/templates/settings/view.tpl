@@ -14,7 +14,8 @@
 
 {def $has_file = and( $ini_file, is_set( $page ), $page )
      $base_url = concat( 'settings/view/', $current_siteaccess, '/', $ini_file )
-     $filtered = or( $query|ne( '' ), $changed_only )}
+     $filtered = or( $query|ne( '' ), $changed_only )
+     $can_edit = fetch( 'user', 'can_open', hash( 'uri', 'settings/edit' ) )}
 
 <div class="context-block a4-page">
 
@@ -247,13 +248,13 @@
     <h3 class="a4-h3" id="{$b.anchor|wash}-h">[{$b.name|wash}]</h3>
     <div class="a4-actions">
         <span class="a4-muted">{if ne( $b.settings|count, $b.total )}{'%shown of %total settings'|i18n( 'design/admin/settings',, hash( '%shown', $b.settings|count, '%total', $b.total ) )|wash}{else}{'%total settings'|i18n( 'design/admin/settings',, hash( '%total', $b.total ) )|wash}{/if}</span>
-        {if and( is_set( $settings[$b.name] ), $settings[$b.name].editable )}<a class="a4-btn a4-btn-small" href={concat( 'settings/edit/', $current_siteaccess, '/', $ini_file, '/', $b.name )|ezurl}>{'Add setting'|i18n( 'design/admin/settings' )}</a>{/if}
+        {if and( $can_edit, is_set( $settings[$b.name] ), $settings[$b.name].editable )}<a class="a4-btn a4-btn-small" href={concat( 'settings/edit/', $current_siteaccess, '/', $ini_file, '/', $b.name )|ezurl}>{'Add setting'|i18n( 'design/admin/settings' )}</a>{/if}
     </div>
 </div>
 <ul class="a4-plain">
 {foreach $b.settings as $row}
 <li class="a4-settings-set{if $row.pending} is-pending{/if}" id="{$row.anchor|wash}">
-    <div class="a4-settings-set-select">{if $row.removable}<input type="checkbox" name="RemoveSettingsArray[]" value="{$b.name|wash}:{$row.name|wash}" aria-label="{'Remove %setting from %file'|i18n( 'design/admin/settings',, hash( '%setting', $row.name, '%file', $row.remove_from ) )|wash}" title="{'Remove from %file'|i18n( 'design/admin/settings',, hash( '%file', $row.remove_from ) )|wash}" />{/if}</div>
+    <div class="a4-settings-set-select">{if and( $can_edit, $row.removable )}<input type="checkbox" name="RemoveSettingsArray[]" value="{$b.name|wash}:{$row.name|wash}" aria-label="{'Remove %setting from %file'|i18n( 'design/admin/settings',, hash( '%setting', $row.name, '%file', $row.remove_from ) )|wash}" title="{'Remove from %file'|i18n( 'design/admin/settings',, hash( '%file', $row.remove_from ) )|wash}" />{/if}</div>
     <div class="a4-settings-set-main">
         <div class="a4-settings-set-name">
             <code>{$row.name|wash}{if ne( $row.kind, 'plain' )}[]{/if}</code>
@@ -316,7 +317,7 @@
     </div>
     <div class="a4-settings-set-side">
         {if and( ne( $row.kind, 'plain' ), $row.sources )}<span class="a4-muted a4-settings-set-from">{'from'|i18n( 'design/admin/settings' )}</span>{foreach $row.sources as $source}{include uri='design:settings/exp_origin.tpl' origin=$source}{/foreach}{else}{include uri='design:settings/exp_origin.tpl' origin=$row.origin}{/if}
-        {if $row.editable}<a class="a4-btn a4-btn-small" href={concat( 'settings/edit/', $current_siteaccess, '/', $ini_file, '/', $b.name, '/', $row.name, '/', $row.edit_placement )|ezurl} aria-label="{'Edit %setting'|i18n( 'design/admin/settings',, hash( '%setting', $row.name ) )|wash}">{'Edit'|i18n( 'design/admin/settings' )}</a>{/if}
+        {if and( $can_edit, $row.editable )}<a class="a4-btn a4-btn-small" href={concat( 'settings/edit/', $current_siteaccess, '/', $ini_file, '/', $b.name, '/', $row.name, '/', $row.edit_placement )|ezurl} aria-label="{'Edit %setting'|i18n( 'design/admin/settings',, hash( '%setting', $row.name ) )|wash}">{'Edit'|i18n( 'design/admin/settings' )}</a>{/if}
     </div>
 </li>
 {/foreach}
@@ -325,10 +326,12 @@
 {/foreach}
 </div>
 
+{if $can_edit}
 <div class="a4-toolbar is-bottom">
     <p class="a4-meta">{'Remove takes a ticked setting out of settings/override or the siteaccess file that sets it last; the value of the next file down, or the default, takes over. Settings from settings/%file and from extensions cannot be removed here.'|i18n( 'design/admin/settings',, hash( '%file', $ini_file ) )|wash}</p>
     <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveButton" value="1">{'Remove selected'|i18n( 'design/admin/settings' )}</button>
 </div>
+{/if}
 </form>
 {/if}
 </section>

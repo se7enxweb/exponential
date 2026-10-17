@@ -8,7 +8,7 @@
     <input class="button-disabled" type="submit" name="RemoveOverrideButton" value="{'Remove selected'|i18n( 'design/admin/visual/templateview' )}" disabled="disabled"/>
     {/if}
 
-    {if $new_override_allowed}
+    {if and( $new_override_allowed, fetch( 'user', 'can_open', hash( 'uri', 'visual/templatecreate' ) ) )}
     <input class="button" type="submit" name="NewOverrideButton" value="{'New override'|i18n( 'design/admin/visual/templateview' )}" title="{'Create a new template override.'|i18n( 'design/admin/visual/templateview' )}" />
     {/if}
     </div>

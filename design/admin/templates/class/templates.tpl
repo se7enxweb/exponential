@@ -23,7 +23,7 @@
     <td><code>{$override.block|wash}</code></td>
     <td><a href={concat( '/visual/templateview', $override.source )|ezurl} title="{'View template overrides for the <%source_template_name> template.'|i18n( 'design/admin/class/view',, hash( '%source_template_name', $override.source ) )|wash}">{$override.source|wash}</a></td>
     <td><code>{$override.target|wash}</code></td>
-    <td><a class="a4-btn a4-btn-small" href={concat( '/visual/templateedit/', $override.target )|ezurl} title="{'Edit the override template for the <%override_name> override.'|i18n( 'design/admin/class/view',, hash( '%override_name', $override.block ) )|wash}">{'Edit'|i18n( 'design/admin/class/view' )}</a></td>
+    <td>{if fetch( 'user', 'can_open', hash( 'uri', 'visual/templateedit' ) )}<a class="a4-btn a4-btn-small" href={concat( '/visual/templateedit/', $override.target )|ezurl} title="{'Edit the override template for the <%override_name> override.'|i18n( 'design/admin/class/view',, hash( '%override_name', $override.block ) )|wash}">{'Edit'|i18n( 'design/admin/class/view' )}</a>{/if}</td>
 </tr>
 {/foreach}
 </tbody>
