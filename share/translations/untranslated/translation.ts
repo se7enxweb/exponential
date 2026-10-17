@@ -10575,6 +10575,10 @@
         <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Editorial</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -33672,6 +33676,30 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Checking...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Table of an extension that is not active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tables of extensions that are not active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>belongs to %extension (not active)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -69570,6 +69598,13 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/ezie</name>
+    <message>
+        <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

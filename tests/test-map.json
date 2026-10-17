@@ -15,7 +15,8 @@
   ],
   "map": {
     "share/translations/*/translation.ts": [
-      "tests/tests/lib/ezi18n/eZTSTranslatorTest.php"
+      "tests/tests/lib/ezi18n/eZTSTranslatorTest.php",
+      "tests/tests/design/TranslationFilesValidTest.php"
     ],
     "*.php": [
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"

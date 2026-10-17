@@ -12,7 +12,7 @@
      $cc_problem_classes = hash( 'missing', 'is-bad', 'alias_missing', 'is-warn', 'alias_stale', 'is-warn', 'alias_absent', 'is-info' )
      $cc_alias_states = hash( 'missing', 'missing'|i18n( 'kernel/contentcheck' ), 'stale', 'out of date'|i18n( 'kernel/contentcheck' ), 'absent', 'never made'|i18n( 'kernel/contentcheck' ) )
      $cc_row_actions = cond( eq( $row.problem, 'missing' ), array( 'restore', 'replace', 'remove', 'review' ), array( 'regenerate', 'review' ) )
-     $cc_action_names = hash( 'regenerate', 'Regenerate'|i18n( 'kernel/contentcheck' ),
+     $cc_row_action_names = hash( 'regenerate', 'Regenerate'|i18n( 'kernel/contentcheck' ),
                               'restore', 'Restore'|i18n( 'kernel/contentcheck' ),
                               'replace', 'Re-upload'|i18n( 'kernel/contentcheck' ),
                               'remove', 'Remove reference'|i18n( 'kernel/contentcheck' ),
@@ -33,7 +33,7 @@
     <td><span class="a4-tag {$cc_problem_classes[$row.problem]}">{$cc_problem_names[$row.problem]|wash}</span>
         {if $row.review}<div><span class="a4-tag is-accent">{'Marked for review'|i18n( 'kernel/contentcheck' )}</span></div>{/if}</td>
     {if $can_fix}<td>{if $row.can_fix}<div class="a4-actions">
-        {foreach $cc_row_actions as $cc_action}<button type="submit" class="a4-btn a4-btn-small" name="ItemAction" value="{concat( $cc_action, ':', $row.key )|wash}" aria-label="{concat( $cc_action_names[$cc_action], ': ', $cc_label )|wash}">{$cc_action_names[$cc_action]|wash}</button>{/foreach}
+        {foreach $cc_row_actions as $cc_action}<button type="submit" class="a4-btn a4-btn-small" name="ItemAction" value="{concat( $cc_action, ':', $row.key )|wash}" aria-label="{concat( $cc_row_action_names[$cc_action], ': ', $cc_label )|wash}">{$cc_row_action_names[$cc_action]|wash}</button>{/foreach}
         </div>{/if}</td>{/if}
 </tr>
-{undef $cc_problem_names $cc_problem_classes $cc_alias_states $cc_row_actions $cc_action_names $cc_label}
+{undef $cc_problem_names $cc_problem_classes $cc_alias_states $cc_row_actions $cc_row_action_names $cc_label}
