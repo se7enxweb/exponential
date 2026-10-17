@@ -10574,6 +10574,10 @@
         <source>Upload files to this location.</source>
         <translation>העלאת קבצים למיקום זה.</translation>
     </message>
+    <message>
+        <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
+        <translation>לא ניתן להציג את פריטי המשנה: Exponential UI (ההרחבה expui) אינה פעילה או אינה טעונה בגישת אתר זו.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -14686,6 +14690,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Overview</source>
         <translation>סקירה</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>קובצי אחסון</translation>
+    </message>
+    <message>
+        <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
+        <translation>קבצים באחסון שאין בהם שימוש, וקבצים עם בעלים או הרשאות שגויים.</translation>
     </message>
 </context>
 <context>
@@ -60010,6 +60022,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Registration link refused</source>
         <translation>קישור הרשמה נדחה</translation>
     </message>
+    <message>
+        <source>Image aliases regenerate</source>
+        <translation>יצירה מחדש של כינויי תמונות</translation>
+    </message>
+    <message>
+        <source>Missing file restore</source>
+        <translation>שחזור קובץ חסר</translation>
+    </message>
+    <message>
+        <source>Missing file replace</source>
+        <translation>החלפת קובץ חסר</translation>
+    </message>
+    <message>
+        <source>Missing file reference remove</source>
+        <translation>הסרת הפניה לקובץ חסר</translation>
+    </message>
+    <message>
+        <source>Missing file review mark</source>
+        <translation>סימון קובץ חסר לבדיקה</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -61137,6 +61169,782 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Change or remove the rule target.</source>
         <translation>יש לשנות או להסיר את יעד הכלל.</translation>
+    </message>
+    <message>
+        <source>Start location (node id)</source>
+        <translation>מיקום התחלה (מזהה צומת)</translation>
+    </message>
+    <message>
+        <source>Now: %path</source>
+        <translation>כעת: %path</translation>
+    </message>
+    <message>
+        <source>1 is the whole tree. Your choice is remembered.</source>
+        <translation>הערך 1 הוא העץ כולו. הבחירה שלך נשמרת.</translation>
+    </message>
+    <message>
+        <source>Start locations</source>
+        <translation>מיקומי התחלה</translation>
+    </message>
+    <message>
+        <source>Choose with the node picker</source>
+        <translation>בחירה באמצעות בורר הצמתים</translation>
+    </message>
+    <message>
+        <source>Wrong owner</source>
+        <translation>בעלים שגויים</translation>
+    </message>
+    <message>
+        <source>Wrong mode</source>
+        <translation>הרשאות שגויות</translation>
+    </message>
+    <message>
+        <source>Empty file</source>
+        <translation>קובץ ריק</translation>
+    </message>
+    <message>
+        <source>Name differs in case</source>
+        <translation>השם שונה באותיות רישיות</translation>
+    </message>
+    <message>
+        <source>Path differs from its parts</source>
+        <translation>הנתיב שונה מחלקיו</translation>
+    </message>
+    <message>
+        <source>In another type directory</source>
+        <translation>בתיקיית סוג אחרת</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>נתיב</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>גיל</translation>
+    </message>
+    <message>
+        <source>moved to the quarantine</source>
+        <translation>הועברו להסגר</translation>
+    </message>
+    <message>
+        <source>restored</source>
+        <translation>שוחזרו</translation>
+    </message>
+    <message>
+        <source>deleted from the quarantine</source>
+        <translation>נמחקו מההסגר</translation>
+    </message>
+    <message>
+        <source>given the expected owner and mode</source>
+        <translation>קיבלו את הבעלים וההרשאות הצפויים</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>קובצי אחסון</translation>
+    </message>
+    <message>
+        <source>The files below %dir: those no content uses (orphan files), and the file-system problems of those it uses. A file counts as used when a version of any object, also an old one or one in the trash, names it, or when a field, a layout, a setting or a template names its path. Files younger than %days days are never orphans. Nothing is deleted from the storage: orphans go to a quarantine, from where they can be restored.</source>
+        <translation>הקבצים מתחת ל־%dir: אלה שאף תוכן אינו משתמש בהם (קבצים יתומים), ובעיות מערכת הקבצים של אלה שבשימוש. קובץ נחשב כנמצא בשימוש כאשר גרסה של אובייקט כלשהו, גם גרסה ישנה או אובייקט בסל המחזור, מציינת אותו, או כאשר שדה, פריסה, הגדרה או תבנית מציינים את הנתיב שלו. קבצים שגילם פחות מ־%days ימים לעולם אינם יתומים. דבר אינו נמחק מהאחסון: קבצים יתומים עוברים להסגר, וממנו ניתן לשחזר אותם.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) were %action.</source>
+        <translation>%count קבצים (%size) %action.</translation>
+    </message>
+    <message>
+        <source>%count could not be changed.</source>
+        <translation>לא ניתן היה לשנות %count.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files changed after the confirmation. Tick them again.</source>
+        <translation>דבר לא שונה: הקבצים השתנו לאחר האישור. יש לסמן אותם שוב.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation>דבר לא שונה.</translation>
+    </message>
+    <message>
+        <source>The files are kept by a cluster file handler: they are read from its table, owner and mode are not checked, and nothing can be moved or fixed here.</source>
+        <translation>הקבצים מנוהלים על ידי מטפל קבצים של אשכול: הם נקראים מהטבלה שלו, הבעלים וההרשאות אינם נבדקים, ולא ניתן להעביר או לתקן דבר כאן.</translation>
+    </message>
+    <message>
+        <source>Last scan</source>
+        <translation>סריקה אחרונה</translation>
+    </message>
+    <message>
+        <source>The storage has not been scanned yet.</source>
+        <translation>האחסון עדיין לא נסרק.</translation>
+    </message>
+    <message>
+        <source>A scan started at %time is not finished (%percent %).</source>
+        <translation>סריקה שהתחילה ב־%time טרם הסתיימה (%percent %).</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>התקדמות</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>הסתיים</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>קבצים</translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation>בשימוש</translation>
+    </message>
+    <message>
+        <source>Orphan files</source>
+        <translation>קבצים יתומים</translation>
+    </message>
+    <message>
+        <source>Too new to judge</source>
+        <translation>חדש מכדי לשפוט</translation>
+    </message>
+    <message>
+        <source>Took</source>
+        <translation>משך</translation>
+    </message>
+    <message>
+        <source>%seconds s in %steps steps</source>
+        <translation>%seconds שנ&apos; ב־%steps שלבים</translation>
+    </message>
+    <message>
+        <source>Files were changed since this scan; the lists leave out what was moved or fixed.</source>
+        <translation>קבצים שונו מאז סריקה זו; הרשימות משמיטות את מה שהועבר או תוקן.</translation>
+    </message>
+    <message>
+        <source>The reference index could not be read completely, so paths named only in rich text, layouts, settings or templates were not seen. Nothing is moved until it can be read.</source>
+        <translation>לא ניתן היה לקרוא את אינדקס ההפניות במלואו, ולכן נתיבים שמוזכרים רק בטקסט עשיר, בפריסות, בהגדרות או בתבניות לא נראו. דבר אינו מועבר עד שניתן יהיה לקרוא אותו.</translation>
+    </message>
+    <message>
+        <source>Continue the scan</source>
+        <translation>המשך הסריקה</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation>התחלה מחדש</translation>
+    </message>
+    <message>
+        <source>Scan again</source>
+        <translation>סריקה חוזרת</translation>
+    </message>
+    <message>
+        <source>Scan the storage</source>
+        <translation>סריקת האחסון</translation>
+    </message>
+    <message>
+        <source>The scan runs in steps of a few seconds and can be continued later; on a large storage run ./console exp:content-check --storage.</source>
+        <translation>הסריקה רצה בשלבים של כמה שניות וניתן להמשיך אותה מאוחר יותר; באחסון גדול יש להריץ ./console exp:content-check --storage.</translation>
+    </message>
+    <message>
+        <source>Lists</source>
+        <translation>רשימות</translation>
+    </message>
+    <message>
+        <source>File problems</source>
+        <translation>בעיות קבצים</translation>
+    </message>
+    <message>
+        <source>Quarantine</source>
+        <translation>הסגר</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>בעיות</translation>
+    </message>
+    <message>
+        <source>Orphan files belong to no content, so the start location does not apply to them: the whole storage is listed.</source>
+        <translation>קבצים יתומים אינם שייכים לשום תוכן, ולכן מיקום ההתחלה אינו חל עליהם: האחסון כולו מוצג.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) in %dir.</source>
+        <translation>%count קבצים (%size) ב־%dir.</translation>
+    </message>
+    <message>
+        <source>The scan keeps the first %count orphans; move them, then scan again for the others.</source>
+        <translation>הסריקה שומרת את %count היתומים הראשונים; יש להעביר אותם ואז לסרוק שוב כדי למצוא את האחרים.</translation>
+    </message>
+    <message>
+        <source>Scan the storage to see this list.</source>
+        <translation>יש לסרוק את האחסון כדי לראות רשימה זו.</translation>
+    </message>
+    <message>
+        <source>No orphan files.</source>
+        <translation>אין קבצים יתומים.</translation>
+    </message>
+    <message>
+        <source>No file problems below this node match the filter.</source>
+        <translation>אין בעיות קבצים מתחת לצומת זה שתואמות למסנן.</translation>
+    </message>
+    <message>
+        <source>The quarantine is empty.</source>
+        <translation>ההסגר ריק.</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>בעיה</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>בשימוש על ידי</translation>
+    </message>
+    <message>
+        <source>Moved on</source>
+        <translation>הועבר בתאריך</translation>
+    </message>
+    <message>
+        <source>Owner and mode</source>
+        <translation>בעלים והרשאות</translation>
+    </message>
+    <message>
+        <source>%days d</source>
+        <translation>%days ימים</translation>
+    </message>
+    <message>
+        <source>Found: %path</source>
+        <translation>נמצא: %path</translation>
+    </message>
+    <message>
+        <source>Move ticked files to the quarantine</source>
+        <translation>העברת הקבצים המסומנים להסגר</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of ticked files</source>
+        <translation>תיקון הבעלים וההרשאות של הקבצים המסומנים</translation>
+    </message>
+    <message>
+        <source>Restore ticked files</source>
+        <translation>שחזור הקבצים המסומנים</translation>
+    </message>
+    <message>
+        <source>Delete ticked files permanently</source>
+        <translation>מחיקת הקבצים המסומנים לצמיתות</translation>
+    </message>
+    <message>
+        <source>The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.</source>
+        <translation>העמוד הבא הוא הרצת ניסיון: הוא מציג מה יקרה לכל קובץ ואינו משנה דבר עד שתאשר. לכל היותר %count קבצים בכל פעם.</translation>
+    </message>
+    <message>
+        <source>Move to the quarantine</source>
+        <translation>העברה להסגר</translation>
+    </message>
+    <message>
+        <source>Restore from the quarantine</source>
+        <translation>שחזור מההסגר</translation>
+    </message>
+    <message>
+        <source>Delete from the quarantine</source>
+        <translation>מחיקה מההסגר</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode</source>
+        <translation>תיקון בעלים והרשאות</translation>
+    </message>
+    <message>
+        <source>Moved to the quarantine</source>
+        <translation>הועבר להסגר</translation>
+    </message>
+    <message>
+        <source>Moved back to the storage</source>
+        <translation>הוחזר לאחסון</translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation>נמחק לצמיתות</translation>
+    </message>
+    <message>
+        <source>Owner and mode set</source>
+        <translation>הבעלים וההרשאות הוגדרו</translation>
+    </message>
+    <message>
+        <source>The file is not there (any more).</source>
+        <translation>הקובץ אינו שם (עוד).</translation>
+    </message>
+    <message>
+        <source>The file is not in a directory the check covers.</source>
+        <translation>הקובץ אינו בתיקייה שהבדיקה מכסה.</translation>
+    </message>
+    <message>
+        <source>The file is a symbolic link.</source>
+        <translation>הקובץ הוא קישור סימבולי.</translation>
+    </message>
+    <message>
+        <source>The path is in the ignored list.</source>
+        <translation>הנתיב נמצא ברשימת ההתעלמות.</translation>
+    </message>
+    <message>
+        <source>The file is too new to judge.</source>
+        <translation>הקובץ חדש מכדי לשפוט.</translation>
+    </message>
+    <message>
+        <source>Content uses the file now.</source>
+        <translation>תוכן משתמש כעת בקובץ.</translation>
+    </message>
+    <message>
+        <source>No content uses the file: it is an orphan, not a problem.</source>
+        <translation>אף תוכן אינו משתמש בקובץ: הוא יתום, לא בעיה.</translation>
+    </message>
+    <message>
+        <source>A file is already at the destination.</source>
+        <translation>ביעד כבר קיים קובץ.</translation>
+    </message>
+    <message>
+        <source>The reference index cannot be read now.</source>
+        <translation>לא ניתן לקרוא כעת את אינדקס ההפניות.</translation>
+    </message>
+    <message>
+        <source>Files of a cluster file handler cannot be changed here.</source>
+        <translation>לא ניתן לשנות כאן קבצים של מטפל קבצים של אשכול.</translation>
+    </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</source>
+        <translation>רק מנהל המערכת יכול לשנות את הבעלים: יש להריץ ./console exp:content-check --fix-permissions כמשתמש root.</translation>
+    </message>
+    <message>
+        <source>This server process does not own the file, so it cannot change its mode.</source>
+        <translation>תהליך שרת זה אינו הבעלים של הקובץ, ולכן אינו יכול לשנות את ההרשאות שלו.</translation>
+    </message>
+    <message>
+        <source>Owner and mode are already as expected.</source>
+        <translation>הבעלים וההרשאות כבר כצפוי.</translation>
+    </message>
+    <message>
+        <source>No file was ticked. Tick the files first.</source>
+        <translation>לא סומן אף קובץ. יש לסמן תחילה את הקבצים.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing has been changed yet.</source>
+        <translation>הרצת ניסיון: עדיין לא שונה דבר.</translation>
+    </message>
+    <message>
+        <source>Only the first %count ticked files are taken; do the others afterwards.</source>
+        <translation>רק %count הקבצים המסומנים הראשונים נלקחים; באחרים יש לטפל לאחר מכן.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved to %dir, below the date of today, keeping their path. They can be restored from there.</source>
+        <translation>%count קבצים (%size) יועברו אל %dir, מתחת לתאריך של היום, תוך שמירה על הנתיב שלהם. ניתן לשחזר אותם משם.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be deleted from the quarantine. This cannot be undone.</source>
+        <translation>%count קבצים (%size) יימחקו מההסגר. לא ניתן לבטל פעולה זו.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved back to their place in the storage.</source>
+        <translation>%count קבצים (%size) יוחזרו למקומם באחסון.</translation>
+    </message>
+    <message>
+        <source>%count files will get the expected owner and mode; nothing else is changed.</source>
+        <translation>%count קבצים יקבלו את הבעלים וההרשאות הצפויים; דבר אחר אינו משתנה.</translation>
+    </message>
+    <message>
+        <source>None of the ticked files can be changed.</source>
+        <translation>לא ניתן לשנות אף אחד מהקבצים המסומנים.</translation>
+    </message>
+    <message>
+        <source>To: %path</source>
+        <translation>אל: %path</translation>
+    </message>
+    <message>
+        <source>Left as it is</source>
+        <translation>נשאר כפי שהוא</translation>
+    </message>
+    <message>
+        <source>I understand that these files are deleted permanently.</source>
+        <translation>אני מבין שקבצים אלה נמחקים לצמיתות.</translation>
+    </message>
+    <message>
+        <source>Confirm for %count files</source>
+        <translation>אישור עבור %count קבצים</translation>
+    </message>
+    <message>
+        <source>Scanning the storage</source>
+        <translation>סריקת האחסון מתבצעת</translation>
+    </message>
+    <message>
+        <source>%files files read so far (%size), %orphans of them orphans; %percent % done.</source>
+        <translation>נקראו עד כה %files קבצים (%size), %orphans מהם יתומים; %percent % הושלמו.</translation>
+    </message>
+    <message>
+        <source>Stop here</source>
+        <translation>עצירה כאן</translation>
+    </message>
+    <message>
+        <source>The scan goes on by itself. Stop it at any time; it can be continued later.</source>
+        <translation>הסריקה ממשיכה מעצמה. ניתן לעצור אותה בכל עת ולהמשיך אותה מאוחר יותר.</translation>
+    </message>
+    <message>
+        <source>This page only takes the forms of the storage files.</source>
+        <translation>עמוד זה מקבל רק את הטפסים של קובצי האחסון.</translation>
+    </message>
+    <message>
+        <source>You may not do this with storage files.</source>
+        <translation>אין לך הרשאה לבצע פעולה זו בקובצי אחסון.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and tick the files once more.</source>
+        <translation>תוקף הטופס פג. יש לפתוח את הרשימה שוב ולסמן את הקבצים מחדש.</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>אישור</translation>
+    </message>
+    <message>
+        <source>Choose classes</source>
+        <translation>בחירת מחלקות</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>כל המחלקות</translation>
+    </message>
+    <message>
+        <source>No class</source>
+        <translation>ללא מחלקה</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>בחירת הכול בעמוד זה</translation>
+    </message>
+    <message>
+        <source>Select none</source>
+        <translation>ביטול הבחירה</translation>
+    </message>
+    <message>
+        <source>%selected of %total selected</source>
+        <translation>%selected מתוך %total נבחרו</translation>
+    </message>
+    <message>
+        <source>Move all %count results to the trash</source>
+        <translation>העברת כל %count התוצאות לסל המחזור</translation>
+    </message>
+    <message>
+        <source>Move all %count files to the quarantine</source>
+        <translation>העברת כל %count הקבצים להסגר</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of all %count results</source>
+        <translation>תיקון הבעלים וההרשאות של כל %count התוצאות</translation>
+    </message>
+    <message>
+        <source>Restore all %count files</source>
+        <translation>שחזור כל %count הקבצים</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>בחירת הכול</translation>
+    </message>
+    <message>
+        <source>File missing</source>
+        <translation>הקובץ חסר</translation>
+    </message>
+    <message>
+        <source>Alias missing</source>
+        <translation>הכינוי חסר</translation>
+    </message>
+    <message>
+        <source>Alias out of date</source>
+        <translation>הכינוי אינו עדכני</translation>
+    </message>
+    <message>
+        <source>Alias never made</source>
+        <translation>הכינוי מעולם לא נוצר</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>חסר</translation>
+    </message>
+    <message>
+        <source>out of date</source>
+        <translation>אינו עדכני</translation>
+    </message>
+    <message>
+        <source>never made</source>
+        <translation>מעולם לא נוצר</translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation>יצירה מחדש</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>שחזור</translation>
+    </message>
+    <message>
+        <source>Re-upload</source>
+        <translation>העלאה מחדש</translation>
+    </message>
+    <message>
+        <source>Remove reference</source>
+        <translation>הסרת ההפניה</translation>
+    </message>
+    <message>
+        <source>Mark for review</source>
+        <translation>סימון לבדיקה</translation>
+    </message>
+    <message>
+        <source>Version %version</source>
+        <translation>גרסה %version</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>טיוטה</translation>
+    </message>
+    <message>
+        <source>File: %time</source>
+        <translation>קובץ: %time</translation>
+    </message>
+    <message>
+        <source>Marked for review</source>
+        <translation>סומן לבדיקה</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases from the original</source>
+        <translation>יצירה מחדש של הכינויים מהמקור</translation>
+    </message>
+    <message>
+        <source>Restore from another version</source>
+        <translation>שחזור מגרסה אחרת</translation>
+    </message>
+    <message>
+        <source>Re-upload or replace the file</source>
+        <translation>העלאה מחדש או החלפה של הקובץ</translation>
+    </message>
+    <message>
+        <source>Remove the dead reference</source>
+        <translation>הסרת ההפניה המתה</translation>
+    </message>
+    <message>
+        <source>Missing files in %dir</source>
+        <translation>קבצים חסרים ב־%dir</translation>
+    </message>
+    <message>
+        <source>Images, files and media whose file is not in the storage, in the published version and in drafts, and images whose aliases are missing or were made with other settings.</source>
+        <translation>תמונות, קבצים ומדיה שהקובץ שלהם אינו נמצא באחסון, בגרסה המפורסמת ובטיוטות, ותמונות שהכינויים שלהן חסרים או נוצרו בהגדרות אחרות.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files or your access changed after the confirmation. Choose the rows again.</source>
+        <translation>דבר לא שונה: הקבצים או הגישה שלך השתנו לאחר האישור. יש לבחור את השורות שוב.</translation>
+    </message>
+    <message>
+        <source>%count field versions done.</source>
+        <translation>%count גרסאות שדה טופלו.</translation>
+    </message>
+    <message>
+        <source>%count could not be done.</source>
+        <translation>לא ניתן היה לטפל ב־%count.</translation>
+    </message>
+    <message>
+        <source>No missing file and no alias problem found.</source>
+        <translation>לא נמצא קובץ חסר ולא נמצאה בעיית כינוי.</translation>
+    </message>
+    <message>
+        <source>Nothing found among these objects. Go on with the next page.</source>
+        <translation>לא נמצא דבר בין אובייקטים אלה. יש להמשיך לעמוד הבא.</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>אובייקט</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>גרסה</translation>
+    </message>
+    <message>
+        <source>Expected path</source>
+        <translation>הנתיב הצפוי</translation>
+    </message>
+    <message>
+        <source>Missing files from the start</source>
+        <translation>קבצים חסרים מההתחלה</translation>
+    </message>
+    <message>
+        <source>Next page of missing files</source>
+        <translation>העמוד הבא של הקבצים החסרים</translation>
+    </message>
+    <message>
+        <source>With the ticked rows</source>
+        <translation>עם השורות המסומנות</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>תצוגה מקדימה</translation>
+    </message>
+    <message>
+        <source>The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.</source>
+        <translation>העמוד הבא מציג מה יקרה לכל שורה ומבקש אישור. לכל היותר %count שורות בכל פעם; הן מטופלות באצוות.</translation>
+    </message>
+    <message>
+        <source>Published version</source>
+        <translation>גרסה שפורסמה</translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation>טיוטות</translation>
+    </message>
+    <message>
+        <source>Missing files: problems</source>
+        <translation>קבצים חסרים: בעיות</translation>
+    </message>
+    <message>
+        <source>Missing files: versions</source>
+        <translation>קבצים חסרים: גרסאות</translation>
+    </message>
+    <message>
+        <source>You may not edit this object.</source>
+        <translation>אין לך הרשאה לערוך אובייקט זה.</translation>
+    </message>
+    <message>
+        <source>Nothing is wrong with it any more.</source>
+        <translation>אין בו עוד שום בעיה.</translation>
+    </message>
+    <message>
+        <source>The original file is missing: restore or upload it first.</source>
+        <translation>קובץ המקור חסר: יש לשחזר או להעלות אותו תחילה.</translation>
+    </message>
+    <message>
+        <source>This kind of field has no image aliases.</source>
+        <translation>לסוג שדה זה אין כינויי תמונות.</translation>
+    </message>
+    <message>
+        <source>No other version of this field still has its file.</source>
+        <translation>לאף גרסה אחרת של שדה זה כבר אין את הקובץ שלו.</translation>
+    </message>
+    <message>
+        <source>Its file is not missing.</source>
+        <translation>הקובץ שלו אינו חסר.</translation>
+    </message>
+    <message>
+        <source>No file was given, or the file to copy is gone.</source>
+        <translation>לא סופק קובץ, או שהקובץ להעתקה נעלם.</translation>
+    </message>
+    <message>
+        <source>The file must have the same extension as the expected path, and an image must be an image.</source>
+        <translation>לקובץ חייבת להיות אותה סיומת כמו לנתיב הצפוי, ותמונה חייבת להיות תמונה.</translation>
+    </message>
+    <message>
+        <source>The file is too large.</source>
+        <translation>הקובץ גדול מדי.</translation>
+    </message>
+    <message>
+        <source>A file is at the expected path now; it was left alone.</source>
+        <translation>כעת יש קובץ בנתיב הצפוי; לא נגעו בו.</translation>
+    </message>
+    <message>
+        <source>The file could not be written to the storage.</source>
+        <translation>לא ניתן היה לכתוב את הקובץ לאחסון.</translation>
+    </message>
+    <message>
+        <source>It could not be done. The debug output says why.</source>
+        <translation>לא ניתן היה לבצע זאת. פלט ניפוי השגיאות מציין מדוע.</translation>
+    </message>
+    <message>
+        <source>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</source>
+        <translation>נבדקו רק %count האובייקטים הראשונים. יש לבחור תת־עץ קטן יותר כדי לראות את השאר.</translation>
+    </message>
+    <message>
+        <source>Tick at least one problem and one version.</source>
+        <translation>יש לסמן לפחות בעיה אחת וגרסה אחת.</translation>
+    </message>
+    <message>
+        <source>Preview for all %count results</source>
+        <translation>תצוגה מקדימה עבור כל %count התוצאות</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases</source>
+        <translation>יצירה מחדש של הכינויים</translation>
+    </message>
+    <message>
+        <source>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</source>
+        <translation>הכינויים של כל תמונה נוצרים מחדש מהמקור שלה, לפי ההגדרות הנוכחיות של image.ini. המקור אינו משתנה.</translation>
+    </message>
+    <message>
+        <source>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</source>
+        <translation>הקובץ של גרסה אחרת של אותו שדה, שעדיין יש לה אותו, מועתק לנתיב הצפוי. דבר אינו נדרס; לאחר מכן תמונה מקבלת שוב את הכינויים שלה.</translation>
+    </message>
+    <message>
+        <source>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</source>
+        <translation>יש לבחור קובץ לכל גרסת שדה. הוא מוצב בנתיב הצפוי וחייב להיות בעל אותה סיומת; תמונה חייבת להיות תמונה. דבר אינו נדרס.</translation>
+    </message>
+    <message>
+        <source>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</source>
+        <translation>השדה מרוקן בגרסה זו: הוא כבר אינו מציין את הקובץ החסר. אף קובץ אינו נמחק. שדה חובה יש למלא שוב בעריכה הבאה.</translation>
+    </message>
+    <message>
+        <source>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</source>
+        <translation>כל גרסת שדה מסומנת לבדיקה ברשימה, עם השם שלך והשעה. דבר אחר אינו משתנה.</translation>
+    </message>
+    <message>
+        <source>Resolve missing files</source>
+        <translation>טיפול בקבצים חסרים</translation>
+    </message>
+    <message>
+        <source>No row was ticked or no action chosen. Tick the rows first.</source>
+        <translation>לא סומנה שורה או שלא נבחרה פעולה. יש לסמן תחילה את השורות.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows are taken; do the others afterwards.</source>
+        <translation>רק %count השורות הראשונות נלקחות; באחרות יש לטפל לאחר מכן.</translation>
+    </message>
+    <message>
+        <source>%count field versions, done %batch at a time.</source>
+        <translation>%count גרסאות שדה, %batch בכל פעם.</translation>
+    </message>
+    <message>
+        <source>None of the chosen rows can be resolved this way.</source>
+        <translation>לא ניתן לטפל באף אחת מהשורות שנבחרו בדרך זו.</translation>
+    </message>
+    <message>
+        <source>Field %id</source>
+        <translation>שדה %id</translation>
+    </message>
+    <message>
+        <source>Copied from version %version</source>
+        <translation>הועתק מגרסה %version</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>קובץ</translation>
+    </message>
+    <message>
+        <source>Aliases made again</source>
+        <translation>הכינויים נוצרו מחדש</translation>
+    </message>
+    <message>
+        <source>Reference removed</source>
+        <translation>ההפניה הוסרה</translation>
+    </message>
+    <message>
+        <source>Not done</source>
+        <translation>לא בוצע</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch by itself</source>
+        <translation>המשך אוטומטי לאצווה הבאה</translation>
+    </message>
+    <message>
+        <source>Confirm for %count field versions</source>
+        <translation>אישור עבור %count גרסאות שדה</translation>
+    </message>
+    <message>
+        <source>%done of %total field versions done, %failed not done, %left to go.</source>
+        <translation>%done מתוך %total גרסאות שדה טופלו, %failed לא טופלו, %left נותרו.</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch</source>
+        <translation>המשך לאצווה הבאה</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the missing files of the broken relations.</source>
+        <translation>עמוד זה מקבל רק את הטופס של הקבצים החסרים של הקשרים השבורים.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and choose the rows once more.</source>
+        <translation>תוקף הטופס פג. יש לפתוח את הרשימה שוב ולבחור את השורות מחדש.</translation>
+    </message>
+    <message>
+        <source>Resolve</source>
+        <translation>טיפול</translation>
     </message>
 </context>
 <context>
@@ -63362,6 +64170,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>the system (cronjob or command line)</source>
         <translation>המערכת (משימה מתוזמנת או שורת פקודה)</translation>
     </message>
+    <message>
+        <source>This job no longer exists or you may not see it. The status is not updated any more.</source>
+        <translation>משימה זו כבר אינה קיימת או שאין לך הרשאה לראות אותה. המצב אינו מתעדכן עוד.</translation>
+    </message>
+    <message>
+        <source>You are no longer signed in. Sign in again and reload this page to follow the job.</source>
+        <translation>אינך מחובר עוד. יש להתחבר שוב ולטעון מחדש עמוד זה כדי לעקוב אחר המשימה.</translation>
+    </message>
+    <message>
+        <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation>לא ניתן היה להציג את המצב. יש לטעון מחדש את העמוד כדי לעקוב אחר המשימה.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -64702,6 +65522,278 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>%count err</source>
         <translation>%count שגיאות</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>שרת</translation>
+    </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation>גרסאות: PHP %php (%sapi), Exponential %exponential</translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation>OPc %pct %</translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation>זיכרון OPcache: %used מתוך %size MB בשימוש, שיעור פגיעות %rate %, %scripts סקריפטים, %restarts הפעלות מחדש</translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation>APCu %pct %</translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation>זיכרון APCu, משותף לכל האתרים במאגר PHP: %used מתוך %size MB בשימוש, %entries רשומות, שיעור פגיעות %rate %, %expunges פינויים</translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation>לא זמין: APCu אינו טעון או אינו מופעל עבור PHP זה.</translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation>פינויים</translation>
+    </message>
+    <message>
+        <source>Rendering</source>
+        <translation>עיבוד תצוגה</translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation>תצוגה: פגיעה</translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation>תצוגה: חדשה</translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation>תצוגה: כבוי</translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation>תצוגה: ?</translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation>מטמון תצוגת תוכן</translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation>הודרו %count</translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation>%compiled תבניות הודרו בבקשה זו, %executed הרצות של תבניות מהודרות</translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation>נקרא מהמטמון</translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation>נוצר ונשמר במטמון</translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation>נוצר מבלי לשמור אותו במטמון</translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation>קובץ המטמון לא שימש</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>לא בשימוש</translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation>המפתח נבנה, לא נרשמה תוצאה</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>בקר</translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation>לא רצה אף תצוגת מודול.</translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation>תצוגת מודול</translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation>הצגת המחלקה</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>סקריפט</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>גישת אתר</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>חלק ניווט</translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation>סדר העיצובים (%count בסיסים)</translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation>לא רצה תצוגת תוכן בעמוד זה.</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds שנ&apos;</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>גיבוב</translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation>קובץ מטמון</translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation>מפתח מטמון (%count חלקים)</translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation>נוסף או שונה על ידי מאזין content/view/cachekeys</translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation>מאזין</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>ריק</translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation>הרצות של תבניות מהודרות</translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation>הודרו בבקשה זו</translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation>תבניות שהודרו בבקשה זו</translation>
+    </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation>בלוקים %hits/%count</translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation>בלוקי מטמון: %hits מתוך %count נקראו מהמטמון, %generated ms ליצירת האחרים (הבלוקים החיצוניים ביותר)</translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation>בלוקי מטמון</translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation>לא רץ אף בלוק מטמון בעמוד זה.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation>%hits מתוך %count נקראו מהמטמון; %lookup ms לאיתורם, %generated ms ליצירת האחרים (הבלוקים החיצוניים ביותר; הזמן של שורה כולל את הבלוקים שבתוכה).</translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation>מוצגים %shown הראשונים.</translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation>פגיעה</translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation>נוצר</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>לא נמצא</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>איתור</translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation>יצירה</translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation>תפוגה</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>מפתחות</translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation>מפתחות</translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation>לא ידוע (קוד מותאם אישית, או תבנית שהודרה קודם לכן)</translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation>תת־עץ %node</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>תצוגה</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>צומת %node</translation>
+    </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation>תבניות שעובדו</translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation>%count תבניות</translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation>לא הודרה</translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation>עץ התבניות</translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation>תצוגות המודול שרצו עבור בקשה זו, לפי הסדר (עמוד שגיאה או הפניה מוסיפים אחת), עם המחלקה שהריצה כל תצוגה והסקריפט שלה; מתחתיהן גישת האתר, חלק הניווט ובסיסי העיצוב בסדר שבו מחפשים תבניות.</translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation>כל תבנית שבקשה זו עיבדה, לפי סדר תחילתה, מקוננת תחת התבנית שכללה אותה. חץ מציין את הקובץ שעקיפה בחרה; אחרת יש להצביע על שם כדי לראות את הקובץ שלו. זמן כולל את כל מה שהתבנית כללה, לא את הניתוח או ההידור של התבנית עצמה. תבניות של תצוגה שנקראה ממטמון התצוגה אינן מעובדות ואינן מוצגות.</translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation>האם תצוגת התוכן (content/view) נקראה מקובץ המטמון שלה או נוצרה, ומדוע. המפתח קובע את הקובץ: שתי בקשות עם אותם חלקים חולקות אותו. איתור הוא הזמן למציאת הקובץ ולקריאתו, יצירה היא הזמן לעיבוד התצוגה.</translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation>כל {cache-block} לפי הסדר שבו אותר. פגיעה עולה רק את האיתור; בלוק שנוצר מעבד את התוכן שלו ושומר אותו לבקשה הבאה. בלוק בתוך בלוק שנוצר רץ רק אז, ולכן הספירות שונות בין בקשה ראשונה לשנייה.</translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
+        <translation>ההגדרות שקובעות שמירה במטמון והידור, וכמה תבניות רצו מהמטמון המהודר או הודרו עכשיו. מיד לאחר ניקוי מטמון התבניות כל תבנית מהודרת פעם אחת.</translation>
     </message>
 </context>
 <context>
