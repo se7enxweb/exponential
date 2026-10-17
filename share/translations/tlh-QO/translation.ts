@@ -3412,6 +3412,122 @@
         <source>information collector</source>
         <translation>De&apos; boSwI&apos;</translation>
     </message>
+    <message>
+        <source>Fields of this form</source>
+        <translation>mIw tetlh Daqmey</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>ghItlh</translation>
+    </message>
+    <message>
+        <source>Rich text</source>
+        <translation>ghItlh naQ</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>mI'</translation>
+    </message>
+    <message>
+        <source>Yes/no</source>
+        <translation>HISlaH/ghobe'</translation>
+    </message>
+    <message>
+        <source>Choice</source>
+        <translation>wIv</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>jaj</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>poH</translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <translation>rarwI'</translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation>De'wI' QIn</translation>
+    </message>
+    <message>
+        <source>Relation</source>
+        <translation>rar</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>mIllogh</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>De' ngaSwI'</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>mIllogh vIH</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>permey</translation>
+    </message>
+    <message>
+        <source>People</source>
+        <translation>ghotpu'</translation>
+    </message>
+    <message>
+        <source>User account</source>
+        <translation>lo'wI' mI'</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>Rating</source>
+        <translation>noHghach</translation>
+    </message>
+    <message>
+        <source>Metadata</source>
+        <translation>Del De'</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Suy qach</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>tetlh</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>DuH</translation>
+    </message>
+    <message>
+        <source>Package</source>
+        <translation>'aplo'</translation>
+    </message>
+    <message>
+        <source>Notification</source>
+        <translation>ghuH QIn</translation>
+    </message>
+    <message>
+        <source>Security</source>
+        <translation>Hung</translation>
+    </message>
+    <message>
+        <source>Newsletter</source>
+        <translation>QIn nav</translation>
+    </message>
+    <message>
+        <source>Feed</source>
+        <translation>De' bIQtIq</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>latlh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_draft</name>
