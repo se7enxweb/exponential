@@ -105,15 +105,46 @@ once, whoever leaves a page open. The cronjobs console streams because a run end
 
 ### Measured
 
-TODO-PERF: the cost per poll (server time, CPU, IO) of an idle file and of a growing one, on Apache with PHP-FPM and on
-Velocity, and the test with a 50 MB log polled every second (CPU and IO of the server over a few minutes). The lead
-fills this section from the performance test.
+Measured on a test server on 17 October 2026 (PHP 8.5, load average 10 to 13 on a shared server), with a synthetic log of
+50 MB (280,000 entries) that grew by 20 entries (3.7 KB) a second, polled once a second.
+
+The log work of one poll, in the process (getrusage and /proc/self/io;
+60 s, 54 growing and 6 idle polls):
+
+| | Wall time | CPU | Bytes read |
+|---|---|---|---|
+| Opening the file (its last 64 KB, 349 entries masked and linked) | 78 ms | 78 ms | 200 KB |
+| A poll with 20 new entries | 6.1 ms | 5.0 ms (max 9.6) | 7.9 KB |
+| The same poll by a second viewer (from the chunk cache) | 5.9 ms | 4.4 ms | 7.9 KB, 54 of 54 cache hits |
+| An idle poll (nothing new: one stat(), no file opened) | 0.25 ms | 0.4 ms | 0.1 KB |
+| For comparison: reading the whole file once | 59 ms | 59 ms | 50 MB |
+| A literal search through the whole file | 484 ms | 437 ms | stops at 32 MB (`MaxBytesPerRequest`), "More results" goes on |
+| A time range of 10 s in the middle of the file | 41 ms | 41 ms | 288 KB (binary search on the times) |
+| A catastrophic regular expression, `(\w+\s?)+$` | 4.4 ms | 4.4 ms | stopped with "regex_limit" |
+
+Most of a growing poll's CPU is masking and linking its entries (about 0.25 ms each); the file IO is what grew plus
+the small chunk cache file.
+
+The whole request over HTTPS, as an administrator, 30 polls each (`server_ms` is
+the time PHP spent on the request, kernel start, session and policy check included):
+
+| | Server time, mean (p95) | Round trip, mean (p95) |
+|---|---|---|
+| Apache + PHP-FPM, growing | 57 ms (69) | 81 ms (104) |
+| Apache + PHP-FPM, idle | 56 ms (66) | 80 ms (95) |
+| Velocity (:8080), growing | 47 ms (67) | 85 ms (120) |
+| Velocity (:8080), idle | 37 ms (51) | 74 ms (100) |
+
+So a poll costs what any small administration request costs; the log itself adds a few milliseconds at most. A page
+that follows a quiet file backs off from 1 s to 15 s (`MaxPollInterval`), so an idle viewer makes about 4 requests a
+minute; a hidden tab does not poll at all. Each request holds a PHP-FPM child or a Velocity worker for those
+milliseconds only, never for as long as the page is open.
 
 ## Searching
 
 The search form (above the list) searches:
 
-- **This file**, **every kernel log** or **every file**, and with **Include rotations** their `.1` .. `.N` and `.gz`
+- **This file**, **every kernel log** or **every file**, and with **Include rotated files** their `.1` .. `.N` and `.gz`
   too (`[SearchSettings] Rotations`). Files are searched newest first (the file, then `.1`, `.2` ...); within a file the
   entries come in the order they were written.
 - **Text**: a literal (default) or a **regular expression**, case sensitive or not. A regular expression longer than
@@ -233,7 +264,7 @@ the session id; nothing is written to the session, so a poll costs no session wr
 ## Keyboard and accessibility
 
 - **Space** (while the log has the focus): pause or resume.
-- **End**: jump to the newest entry (and follow again); **Home**: the oldest kept.
+- **End**: jump to the newest entry (and follow again); **Home**: the oldest kept; **Up** and **Down** move between entries, **Enter** opens one (its request, debug output and audit).
 - **Enter** / **Shift+Enter** in the find field, or **n** / **N** in the log: next / previous match.
 - The log is a focusable region with a label; new entries are announced in a polite live region, at most one
   announcement every few seconds ("12 new entries"), never one per line.

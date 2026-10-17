@@ -13,7 +13,7 @@ is for administrators and developers who answer such reports.
   details of the failure.
 - **Setup > Log files**, field **Error reference**: paste the reference and press **Search**. The page shows the entry
   and every line of the same request (same address and client, within two seconds) from all kernel logs.
-- From there: **Audit of this minute** for who did what, the links to the node, object or template the lines name.
+- From there: **The audit of this moment** for who did what, the links to the node, object or template the lines name.
 - The same from a shell: `./console exp:logs --reference=ERR-0123456789`.
 - Personal data stays masked (e-mail and IP addresses, tokens); only a user with `setup/unmasklogs` can switch
   that off for themselves.
@@ -44,7 +44,7 @@ address in **Request**, levels **Error** and **Warning**, scope **Every kernel l
   wrote it.
 - Node and object ids, class identifiers and template paths in the messages are links: open the content or the
   template the error was about.
-- **Audit of this minute** opens the audit console at the same time: an edit, a publish or a settings change right
+- **The audit of this moment** opens the audit console at the same time: an edit, a publish or a settings change right
   before the error is often the cause.
 - **Related lines** on any entry finds the rest of its request the same way.
 
