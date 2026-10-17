@@ -26,7 +26,11 @@
                     title="{'%tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
                     data-a4-mega-src={concat( 'user/megamenu/', $item_mega )|ezurl}><span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span></button>
             <div id="a4-mega-{$item_mega|wash}" class="a4-mega-panel" hidden
-                 data-a4-mega-error="{'The %tab menu could not be loaded.'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}">
+                 data-a4-mega-error="{'The %tab menu could not be loaded.'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
+                 data-a4-mega-retry="{'Try again'|i18n( 'design/admin/pagelayout' )|wash}"
+                 data-a4-mega-signed-out="{'You are signed out. Sign in again to see the %tab menu.'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
+                 data-a4-mega-signin="{'Sign in'|i18n( 'design/admin/pagelayout' )|wash}"
+                 data-a4-mega-login={'user/login'|ezurl}>
                 <div class="a4-mega-body" data-a4-mega-body>
                     <p class="a4-mega-status" role="status">{'Loading the %tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}</p>
                 </div>

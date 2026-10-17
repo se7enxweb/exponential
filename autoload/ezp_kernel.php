@@ -1171,6 +1171,7 @@ return array(
       'expMailTemplateBody'                                          => 'kernel/classes/mail/expmailtemplatebody.php',
       'expMailToken'                                                 => 'kernel/classes/mailpreferences/expmailtoken.php',
       'expMaintenance'                                               => 'kernel/classes/expmaintenance.php',
+      'expManagedConfiguration'                                      => 'kernel/classes/expmanagedconfiguration.php',
       'expModuleExtensionWizard'                                     => 'kernel/setup/expmoduleextensionwizard.php',
       'expModuleWizard'                                              => 'kernel/setup/expmodulewizard.php',
       'expMongoDB'                                                   => 'lib/ezdb/classes/expmongodb.php',

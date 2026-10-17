@@ -41,7 +41,10 @@
 
 <p class="a4-intro">{'A package carries content classes, content, extensions, settings or a whole site, to install here or to take to another installation. Packages are kept in repositories under %path: "local" holds the packages made or imported here, the others hold packages by vendor. The setup wizard installs new sites from these packages, and the published packages are built from them, so a package marked "Installer source" should be changed only on purpose.'|i18n( 'design/admin/package/list',, hash( '%path', $package_storage_path ) )|wash}</p>
 
-{def $feedback = first_set( $package_feedback, false() )}
+{def $feedback = first_set( $package_feedback, false() )
+     $can_open_export = fetch( 'user', 'can_open', hash( 'uri', 'package/export' ) )
+     $can_open_upload = fetch( 'user', 'can_open', hash( 'uri', 'package/upload' ) )
+     $can_open_create = fetch( 'user', 'can_open', hash( 'uri', 'package/create' ) )}
 {if $feedback}
     {if eq( $feedback.type, 'removed' )}
 <div class="a4-notice is-ok" role="status">{if $feedback.names|count|gt( 0 )}{'Removed: %names.'|i18n( 'design/admin/package/list',, hash( '%names', $feedback.names|implode( ', ' ) ) )|wash}{else}{'Nothing was removed.'|i18n( 'design/admin/package/list' )}{/if}</div>
@@ -199,7 +202,7 @@
         </div>
         <div class="a4-actions">
             <a class="a4-btn a4-btn-small" href={$view_uri|ezurl} aria-describedby="{$card_id|wash}-title">{'View'|i18n( 'design/admin/package/list' )}</a>
-            {if $can_export}
+            {if and( $can_export, $can_open_export )}
             <a class="a4-btn a4-btn-small" href={concat( '/package/export/', $card.name, '/', $card.repository_id, '/(format)/xml' )|ezurl} aria-describedby="{$card_id|wash}-title" title="{'Download the package as an .ezpkg file.'|i18n( 'design/admin/package/list' )}">{'Download'|i18n( 'design/admin/package/list' )}</a>
             <a class="a4-btn a4-btn-small" href={concat( '/package/export/', $card.name, '/', $card.repository_id, '/(format)/json' )|ezurl} aria-describedby="{$card_id|wash}-title" title="{'Download the package in the JSON format (package.json), as a .json.ezpkg file.'|i18n( 'design/admin/package/list' )}">{'JSON'|i18n( 'design/admin/package/list' )}</a>
             {/if}
@@ -270,8 +273,8 @@
     <p class="a4-meta">{if $package_can_remove}{'Remove selected asks first and says what goes. Removing a package deletes its files from the repository; what it installed stays on the site.'|i18n( 'design/admin/package/list' )}{else}{'You are not allowed to remove packages (package/remove).'|i18n( 'design/admin/package/list' )}{/if}</p>
     <div class="a4-actions">
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemovePackageButton" value="1"{if or( $package_can_remove|not, $package_cards|count|eq( 0 ) )} disabled="disabled"{/if}>{'Remove selected'|i18n( 'design/admin/package/list' )}</button>
-        <button type="submit" class="a4-btn" name="InstallPackageButton" value="1"{if $package_can_import|not} disabled="disabled" title="{'You are not allowed to import packages (package/import).'|i18n( 'design/admin/package/list' )}"{/if}>{'Import new package'|i18n( 'design/admin/package/list' )}</button>
-        <button type="submit" class="a4-btn a4-btn-primary" name="CreatePackageButton" value="1"{if $package_can_create|not} disabled="disabled" title="{'You are not allowed to create packages (package/create).'|i18n( 'design/admin/package/list' )}"{/if}>{'Create new package'|i18n( 'design/admin/package/list' )}</button>
+        {if $can_open_upload}<button type="submit" class="a4-btn" name="InstallPackageButton" value="1"{if $package_can_import|not} disabled="disabled" title="{'You are not allowed to import packages (package/import).'|i18n( 'design/admin/package/list' )}"{/if}>{'Import new package'|i18n( 'design/admin/package/list' )}</button>{/if}
+        {if $can_open_create}<button type="submit" class="a4-btn a4-btn-primary" name="CreatePackageButton" value="1"{if $package_can_create|not} disabled="disabled" title="{'You are not allowed to create packages (package/create).'|i18n( 'design/admin/package/list' )}"{/if}>{'Create new package'|i18n( 'design/admin/package/list' )}</button>{/if}
     </div>
 </div>
 

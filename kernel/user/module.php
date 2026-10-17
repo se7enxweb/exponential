@@ -46,7 +46,9 @@ $ViewList['preferences'] = array(
 // fragment without the page layout, asked for once by design/admin4/javascript/a4_mega_menu.js when the panel is first
 // opened (user/megamenu/<tab>). The policy of any user of the siteaccess, as user/preferences, since the tabs belong to
 // different modules: the view itself answers only for a tab in the user's top menu, and checks each link as the left
-// menu does. ajax, so the address is not kept as the last page seen.
+// menu does. ajax, so the address is not kept as the last page seen. site.ini names it in AnonymousAccessList[] and
+// PolicyOmitList[]: the view makes the sign-in, siteaccess and tab checks itself and answers a refusal with a bare 403
+// (or 404 for a tab it does not serve), never with the sign-in page or an error page in the page layout.
 $ViewList['megamenu'] = array(
     'functions' => array( 'login' ),
     'script' => 'megamenu.php',

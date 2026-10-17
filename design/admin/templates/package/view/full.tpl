@@ -69,8 +69,8 @@
    exactly that), Export to file and Download package/export, Remove package/remove. Only a package with install
    type "install" and at least one install item can be installed; for any other the page says why. *}
 {def $pvf_installable=and( $package.install_type|eq( 'install' ), $package.install|count|gt( 0 ) )
-     $pvf_can_install=$package.can_install
-     $pvf_can_export=$package.can_export
+     $pvf_can_install=and( $package.can_install, fetch( 'user', 'can_open', hash( 'uri', 'package/install' ) ) )
+     $pvf_can_export=and( $package.can_export, fetch( 'user', 'can_open', hash( 'uri', 'package/export' ) ) )
      $pvf_can_remove=first_set( $package_can_remove, false() )}
 <div class="a4-toolbar">
     <p class="a4-meta"><a href={cond( $repo_suffix|ne( '' ), concat( '/package/list', $repo_suffix ), '/package/list' )|ezurl}>&laquo; {'Back to the packages'|i18n( 'design/admin/package' )}</a></p>

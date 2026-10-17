@@ -10,7 +10,7 @@
      and ImportExportMenuTemplateArray[] (import and job entries, the Import/Export menu only), given the same
      parameters; each checks its own policies. Nothing is output when there is no entry for the user. *}
 {set-block variable=$export_package_items}
-{if fetch( 'package', 'content_export_access' )}
+{if and( fetch( 'package', 'content_export_access' ), fetch( 'user', 'can_open', hash( 'uri', 'package/create' ) ) )}
     <a id="{$item_prefix}-package-node" data-menu-url={"package/create/(creator)/ezcontentobject/(node)/%nodeID%"|ezurl} href="#"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'This item as package…'|i18n( 'design/admin/popupmenu' )}</a>
     <a id="{$item_prefix}-package-subtree" data-menu-url={"package/create/(creator)/ezcontentobject/(node)/%nodeID%/(subtree)/1"|ezurl} href="#"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'This item and its subtree as package…'|i18n( 'design/admin/popupmenu' )}</a>
     <a id="{$item_prefix}-package-content" data-menu-url={"package/create/(creator)/ezcontentobject/(node)/%nodeID%/(subtree)/1/(classes)/0"|ezurl} href="#"><span class="a4-icon a4-bi-box-seam" aria-hidden="true"></span> {'Subtree as package, without class definitions…'|i18n( 'design/admin/popupmenu' )}</a>

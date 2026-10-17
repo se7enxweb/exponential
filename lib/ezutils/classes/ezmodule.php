@@ -2268,6 +2268,19 @@ class eZModule
 
         $ini = eZINI::instance();
 
+        // with site.ini [ConfigurationSettings] ManagedByDeployment=enabled the views that write
+        // settings, templates, code or packages are switched off like a disabled view, whatever the rules say.
+        // Measured before: settings/edit, visual/toolbar and visual/templateedit wrote into settings/ and
+        // design/ of the release on the server, and nothing in version control showed it.
+        if ( class_exists( 'expManagedConfiguration' ) &&
+             expManagedConfiguration::isLockedView( $moduleName, $viewName ) &&
+             expManagedConfiguration::isEnabled( $ini ) )
+        {
+            $check['result'] = false;
+            $check['view_checked'] = true;
+            return $check;
+        }
+
         $access = true;
         $currentAccess = true;
         if ( !$ini->hasGroup( 'SiteAccessRules' ) )

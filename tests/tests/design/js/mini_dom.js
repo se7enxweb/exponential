@@ -48,7 +48,19 @@ class Element extends Node {
     constructor(doc, tag) {
         super(doc);
         this.nodeType = 1; this.tagName = tag.toUpperCase(); this.attrs = new Map(); this.style = {}; this.listeners = {};
-        if (this.tagName === 'TEMPLATE') this.content = { childNodes: [] };
+        // a template's content: its nodes, searched like a DocumentFragment
+        if (this.tagName === 'TEMPLATE') {
+            this.content = {
+                childNodes: [],
+                querySelectorAll(selector) {
+                    const out = [];
+                    const walk = (n) => { if (n.nodeType !== 1) return; if (n.matches(selector)) out.push(n); n.children.forEach(walk); };
+                    this.childNodes.forEach(walk);
+                    return out;
+                },
+                querySelector(selector) { return this.querySelectorAll(selector)[0] || null; },
+            };
+        }
     }
     getAttribute(name) { return this.attrs.has(name) ? this.attrs.get(name) : null; }
     setAttribute(name, value) { this.attrs.set(name, String(value)); }
@@ -66,6 +78,11 @@ class Element extends Node {
             contains: (c) => list().includes(c),
             add: (c) => { if (!list().includes(c)) el.className = list().concat(c).join(' '); },
             remove: (c) => { el.className = list().filter((x) => x !== c).join(' '); },
+            toggle: (c, force) => {
+                const on = force === undefined ? !list().includes(c) : !!force;
+                el.className = on ? (list().includes(c) ? el.className : list().concat(c).join(' ')) : list().filter((x) => x !== c).join(' ');
+                return on;
+            },
         };
     }
     get hidden() { return this.hasAttribute('hidden'); }

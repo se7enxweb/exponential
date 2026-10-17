@@ -117,7 +117,7 @@
             <span class="override-badge override-badge-extension" title="{'Defined by an extension; its order and conditions can be changed here, removing it is done in the extension'|i18n( 'design/admin/visual/templateview' )|wash}">{'extension'|i18n( 'design/admin/visual/templateview' )}</span>
         {/if}
         <span class="override-actions">
-            {if $CustomMatch.item.match_file}
+            {if and( $CustomMatch.item.match_file, fetch( 'user', 'can_open', hash( 'uri', 'visual/templateedit' ) ) )}
             <a class="override-edit" href={concat( '/visual/templateedit/', $CustomMatch.item.match_file )|ezurl} title="{'Edit override template.'|i18n( 'design/admin/visual/templateview' )|wash}">{'Edit'|i18n( 'design/admin/visual/templateview' )}</a>
             {/if}
             {if $own}

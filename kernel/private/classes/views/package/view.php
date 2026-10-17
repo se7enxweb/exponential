@@ -310,7 +310,8 @@ class View extends \Exponential\Runnable\ModuleView
         }
         $tpl->setVariable( 'package_card', $card );
         $tpl->setVariable( 'package_contents', $contents );
-        $tpl->setVariable( 'package_can_remove', $package->canUsePackagePolicyFunction( 'remove' ) );
+        // no removal from the browser with the configuration managed by the deployment (package/list refuses it)
+        $tpl->setVariable( 'package_can_remove', $package->canUsePackagePolicyFunction( 'remove' ) && !\expManagedConfiguration::isEnabled() );
         $tpl->setVariable( 'package_repository', $package->currentRepositoryInformation() );
 
         $Result = array();

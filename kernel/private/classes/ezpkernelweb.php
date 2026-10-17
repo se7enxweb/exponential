@@ -1649,7 +1649,10 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
 
         // pre check, setup wizard related so needs to be before session/db init
         // TODO: Move validity check in the constructor? Setup is not meant to be launched at each (sub)request is it?
-        if ( $ini->variable( 'SiteAccessSettings', 'CheckValidity' ) === 'true' )
+        // the setup wizard writes settings; with the configuration managed by the deployment it does not
+        // start, whatever CheckValidity says (eZModule::accessAllowed() sees the requested URI here, not setup/init)
+        if ( $ini->variable( 'SiteAccessSettings', 'CheckValidity' ) === 'true' &&
+             !( class_exists( 'expManagedConfiguration' ) && expManagedConfiguration::isEnabled( $ini ) ) )
         {
             $this->check = array( 'module' => 'setup', 'function' => 'init' );
             // Turn off some features that won't bee needed yet
