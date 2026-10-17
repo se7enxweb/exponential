@@ -16,8 +16,8 @@
  * - Scheme: the one of this request, as eZSys::isSSLNow() has it (forwarded
  *   headers included).
  * - Host: this request's host when the siteaccess can be reached on it by URI
- *   (MatchOrder has uri) and this request is not on a host of another
- *   siteaccess; else a host that [SiteAccessSettings] HostMatchMapItems maps
+ *   (MatchOrder has uri) and this request is not on a host that the host map
+ *   gives another siteaccess before the URI is tried; else a host that [SiteAccessSettings] HostMatchMapItems maps
  *   to the siteaccess; else its [SiteSettings] SiteURL; else this host.
  * - Port: the visitor's port, when the host has none of its own and is served
  *   by this installation (this host, or one of HostMatchMapItems) -- an
@@ -136,8 +136,13 @@ class ezpSiteAccessURL
         $uriSegment = in_array( 'uri', $order, true ) ? self::uriSegment( $ini, $siteaccess ) : null;
 
         // On this host by URI, unless this host belongs to another siteaccess
-        // (then a URI would be matched there, under that host's rules).
-        $currentMapsElsewhere = in_array( strtolower( $currentHost ), $allMapped, true )
+        // and MatchOrder tries the host before the URI (then the host's rule
+        // would win there). With uri before host the URI wins on any host.
+        $hostPosition = array_search( 'host', $order, true );
+        $uriPosition = array_search( 'uri', $order, true );
+        $hostFirst = $hostPosition !== false && ( $uriPosition === false || $hostPosition < $uriPosition );
+        $currentMapsElsewhere = $hostFirst
+                                && in_array( strtolower( $currentHost ), $allMapped, true )
                                 && !in_array( strtolower( $currentHost ), array_map( 'strtolower', $mappedHosts ), true );
         if ( $uriSegment !== null && !$currentMapsElsewhere )
         {
