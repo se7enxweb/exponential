@@ -224,6 +224,18 @@ The selector is one template, `design:contentcheck/scope.tpl`, included in the f
 passes `expContentCheckScope::forTemplate( $nodeID, '<view>' )`. The views that take a start location (and that the
 node picker may return to) are listed in `ViewList[]`; another check adds its view there.
 
+## One layout
+
+Every check has the same order: the **start location**, the **filters** (a group of choices has **Select all** and
+**Select none**, buttons after **Show** so that Enter still shows the list), the **results header** ("X to Y of N"), the
+**table**, whose header box ticks or clears every row of the page and shows "n of m selected" (without JavaScript:
+**Select all on this page** and **Select none**), the **bulk actions** (the ticked rows, or "all N results": the whole
+list with its filters, at most one batch, always with the plan or the confirmation first) and the **pager** (page
+sizes and page links, the filters kept in the address). The parts are shared templates in `contentcheck/`:
+`scope.tpl`, `filter_choice.tpl` (`group=`, read as GET `<group>Choice=all|none`), `results_head.tpl`, `select_all.tpl`,
+`bulkbar.tpl` (with `select_count.tpl`), `pager.tpl` (`offset_name` for a second list on a page) and
+`contentcheck_select.js`.
+
 ## Storage files
 
 Open **Setup > Storage files**. The page shows the last **scan** of the storage directory (`var/<site>/storage`,
