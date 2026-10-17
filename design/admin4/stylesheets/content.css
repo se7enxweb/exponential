@@ -259,6 +259,12 @@ div.latest ins
 
 /* CLASS ATTRIBUTE GROUPING */
 
+/* a named group of attributes (content.ini [ClassAttributeSettings] CategoryList, the class attribute's category):
+   a heading line over its attribute cards; collapsed it is the line alone */
+#page fieldset.ezcca-collapsible { min-width: 0; margin: 0 0 var(--a4-space-5); padding: var(--a4-space-2) 0 0; border: 0; border-top: 1px solid var(--a4-line-strong); background: none; }
+#page fieldset.ezcca-collapsible > legend { padding: 0; padding-inline-end: var(--a4-space-2); font-size: var(--a4-text-m); font-weight: 650; }
+#page fieldset.ezcca-collapsible.ezcca-collapsed { height: auto; margin-bottom: var(--a4-space-4); }
+
 fieldset.ezcca-collapsible legend a
 {
     text-decoration: none;
