@@ -66245,6 +66245,18 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Classic (server-rendered)</source>
         <translation>ngo&apos; (jabwI&apos; chenmoHbogh)</translation>
     </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (ngo&apos;qu&apos;)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>ngo&apos; (ngo&apos;qu&apos;)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>ngo&apos;, jabwI&apos; chenmoHbogh (ngo&apos;qu&apos;)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/toolbar/uiswitch</name>

@@ -67403,6 +67403,18 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>Classic (server-rendered)</source>
         <translation>Clásica (generada en el servidor)</translation>
     </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (anterior)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Clásica (anterior)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Clásica, generada en el servidor (anterior)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/toolbar/uiswitch</name>
