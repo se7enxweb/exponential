@@ -5735,7 +5735,7 @@ a8f236b033308a59d6b884709d19d67e  kernel/private/classes/views/collaboration/gro
 12b72604e2a6096b66b36643e27d49f3  kernel/private/classes/views/content/action.php
 989bd5db475879ed6ba37a8345bc6275  kernel/private/classes/views/content/advancedsearch.php
 66a77a2383215f4025c68c022435de28  kernel/private/classes/views/content/bookmark.php
-14cffa2b90f967582b70c4d0d46acc14  kernel/private/classes/views/content/browse.php
+68fdc15f64fe0144ae57f92506d58be3  kernel/private/classes/views/content/browse.php
 667385c683f0777a6a3c8212b5ee0234  kernel/private/classes/views/content/collectedinfo.php
 e4b8872022000056c55f2cd172f70a7b  kernel/private/classes/views/content/collectinformation.php
 8811ebb386d80a3f8f98660a80810576  kernel/private/classes/views/content/copy.php
@@ -7769,7 +7769,7 @@ e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBa
 3afd50615887db52cfda0599f741eed7  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
 d3f4c6a7061e2f6b8d54c27e22d3e5c7  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItemTest.php
-41a2ea2fdcf268173af4d8ea9c79c086  tests/tests/kernel/classes/eZContentBrowseEditReturnTargetTest.php
+79b4c0af4d21f326b414a618d2ebc1d1  tests/tests/kernel/classes/eZContentBrowseEditReturnTargetTest.php
 c27a9015f7fbb87702e8932aa1238ea8  tests/tests/kernel/classes/eZContentCacheEventSendersTest.php
 94b71bed8f4c29466e8a95961fb599d4  tests/tests/kernel/classes/eZContentCacheManagerThresholdWarningTest.php
 7b567299532ebfe85e27a12b7508924f  tests/tests/kernel/classes/eZContentClassAttributeSQLiteIDsTest.php
