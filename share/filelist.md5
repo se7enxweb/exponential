@@ -4369,7 +4369,7 @@ e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 53322d752c21521e6736059158a8dd4b  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
-1c2db55c35353283a7b906aba881b5b6  extension/ezjscore/CHANGELOG
+ea2fc855e0133c56081b86f7f6fd29b9  extension/ezjscore/CHANGELOG
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezjscore/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezjscore/README
 8901b1cdb8d2fd269beef27e7322be09  extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php
