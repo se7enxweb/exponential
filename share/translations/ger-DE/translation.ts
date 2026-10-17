@@ -16724,6 +16724,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Das Menü „%tab“ konnte nicht geladen werden.</translation>
     </message>
     <message>
+        <source>Try again</source>
+        <translation>Erneut versuchen</translation>
+    </message>
+    <message>
+        <source>You are signed out. Sign in again to see the %tab menu.</source>
+        <translation>Sie sind abgemeldet. Melden Sie sich erneut an, um das Menü „%tab“ zu sehen.</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Anmelden</translation>
+    </message>
+    <message>
         <source>Go to %tab</source>
         <translation>Weiter zu „%tab“</translation>
     </message>

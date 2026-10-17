@@ -18,30 +18,52 @@
  *   menu of the header is open.
  * - From 576px (the one-line main menu; also 960px at 200% zoom): below (the phone menu), or while the tab sits in the "More" list, admin4.css hides the button
  *   and the script keeps the panel closed; the tab is then a plain link, and the phone menu is unchanged.
- * - The panel's groups and links are loaded once, from the button's data-a4-mega-src (user/megamenu/<tab>), the
- *   first time it opens: the page itself carries only the button, a status line and the link to the tab's page. A failed
- *   load, or one without an answer after 10 s, says so in the panel (data-a4-mega-error) and is tried again on the
- *   next opening. A link to the page
- *   shown (the tab's link included) is marked aria-current="page".
+ * - The panel's groups and links are loaded from the button's data-a4-mega-src (user/megamenu/<tab>) the first time it
+ *   opens: the page itself carries only the button, a status line and the link to the tab's page. The load:
+ *   - is one request per tab and page: an opening while it runs waits for the same request, and closing the panel
+ *     does not cancel it; once loaded, the links stay for the life of the page;
+ *   - is the menu only when the answer holds the fragment's marker (data-a4-mega-fragment, set by
+ *     user/megamenu.tpl; data-a4-mega-groups for a design's own fragment without it);
+ *   - is tried once more, after a short pause, when it failed for a passing reason: no connection, a server error
+ *     (5xx, 408, 429), no answer after 10 s, or an answer that is not the menu;
+ *   - with a 401 or 403, or a sign-in page in place of the menu, shows that the user is signed out, with a link to
+ *     sign in (data-a4-mega-signed-out, data-a4-mega-login) instead of the error;
+ *   - when it has failed for good, says so (data-a4-mega-error) with a "Try again" button (data-a4-mega-retry); the
+ *     link to the tab's page stays below it, and the next opening tries again too;
+ *   - stopped by the browser (the page being left, an aborted request) is no failure: nothing is shown, and the next
+ *     opening loads again.
+ *   A link to the page shown (the tab's link included) is marked aria-current="page".
+ * - Bound once: a second copy of the script, or a second run of it, leaves a tab already bound (data-a4-mega-bound)
+ *   as it is.
  * Plain JavaScript, no library; window.matchMedia, setTimeout and fetch are read from window, so the behaviour can
- * be run outside a browser (tests/tests/design/js/mega_menu.js).
+ * be run outside a browser (tests/tests/design/js/mega_menu.js, tests/tests/design/js/mega_menu_load.js).
  */
 (function () {
     'use strict';
 
-    var ENTER_DELAY = 300, LEAVE_DELAY = 400, LOAD_TIMEOUT = 10000;
+    var ENTER_DELAY = 300, LEAVE_DELAY = 400, LOAD_TIMEOUT = 10000, RETRY_DELAY = 600, RETRIES = 1;
     var menus = [];      // per tab with a mega menu: { close, isOpen }; one panel is open at a time
+    var leaving = false; // the page is being left: a request the browser stops then is no failure
+
+    // why a load did not give the menu: 'transient' (tried again), 'signed-out', 'failed' or 'aborted' (no failure)
+    function Failure(kind, detail) {
+        this.kind = kind;
+        this.detail = detail;
+    }
 
     function megaMenu(item) {
+        if (item.getAttribute('data-a4-mega-bound') !== null) return;
         var toggle = item.querySelector('.a4-mega-toggle');
         var panel = toggle ? document.getElementById(toggle.getAttribute('aria-controls')) : null;
         var body = panel ? panel.querySelector('[data-a4-mega-body]') : null;
         if (!panel || !body) return;
+        item.setAttribute('data-a4-mega-bound', '');
         var wide = window.matchMedia('(min-width: 576px)');
         var fine = window.matchMedia('(hover: hover) and (pointer: fine)');
         var mode = null;     // null (closed), 'preview' (opened by the mouse resting on it) or 'open'
         var timer = null;    // the pending preview or close
-        var loading = null;  // the load of the links, once it has started and not failed
+        var loading = null;  // the load of the links: running, or done (then kept); null before it and after a failure
+        var loadingText = (body.textContent || '').replace(/\s+/g, ' ').trim();
 
         // the button is shown: one header row, and the tab not in the "More" list
         function usable() {
@@ -69,13 +91,46 @@
             return Array.prototype.slice.call(panel.querySelectorAll('a[href]'));
         }
 
-        function status(text) {
+        // the panel's status line, with an action (a link or a button) under it when given
+        function status(text, action) {
             body.innerHTML = '';
             var p = document.createElement('p');
             p.className = 'a4-mega-status';
             p.setAttribute('role', 'status');
             p.textContent = text;
             body.appendChild(p);
+            if (action) {
+                var row = document.createElement('p');
+                row.className = 'a4-mega-actions';
+                row.appendChild(action);
+                body.appendChild(row);
+            }
+        }
+
+        function showFailed() {
+            var retry = document.createElement('button');
+            retry.setAttribute('type', 'button');
+            retry.className = 'a4-btn';
+            retry.setAttribute('data-a4-mega-retry-button', '');
+            retry.textContent = panel.getAttribute('data-a4-mega-retry') || '';
+            retry.addEventListener('click', function () {
+                // kept in the panel until the answer: a click on a removed button would read as one outside
+                retry.disabled = true;
+                load(true);
+            });
+            status(panel.getAttribute('data-a4-mega-error') || '', retry);
+        }
+
+        function showSignedOut() {
+            var login = panel.getAttribute('data-a4-mega-login');
+            var a = null;
+            if (login) {
+                a = document.createElement('a');
+                a.setAttribute('href', login);
+                a.className = 'a4-btn';
+                a.textContent = panel.getAttribute('data-a4-mega-signin') || '';
+            }
+            status(panel.getAttribute('data-a4-mega-signed-out') || panel.getAttribute('data-a4-mega-error') || '', a);
         }
 
         // the links to the page shown, the tab's link included
@@ -87,47 +142,99 @@
             });
         }
 
-        // the request, given up (and aborted where the browser can) when no answer has come after LOAD_TIMEOUT: a
-        // server that never answers must not leave the panel busy and the load blocked for good
-        function request() {
+        // one request: given up (and aborted where the browser can) when no answer has come after LOAD_TIMEOUT, so a
+        // server that never answers does not leave the panel busy and the load blocked for good; the answer's text,
+        // or a Failure
+        function attempt() {
             var controller = typeof window.AbortController === 'function' ? new window.AbortController() : null;
-            var init = { credentials: 'same-origin', headers: { 'X-Requested-With': 'XMLHttpRequest' } };
+            var init = {
+                method: 'GET',
+                credentials: 'same-origin',
+                cache: 'no-store',
+                redirect: 'follow',
+                headers: { 'Accept': 'text/html', 'X-Requested-With': 'XMLHttpRequest' }
+            };
             if (controller) init.signal = controller.signal;
             return new Promise(function (resolve, reject) {
+                var settled = false, timedOut = false;
+                function settle(fn, value) {
+                    if (settled) return;
+                    settled = true;
+                    window.clearTimeout(limit);
+                    fn(value);
+                }
                 var limit = window.setTimeout(function () {
+                    timedOut = true;
                     if (controller) controller.abort();
-                    reject(new Error('no answer'));
+                    settle(reject, new Failure('transient', 'timeout'));
                 }, LOAD_TIMEOUT);
-                window.fetch(toggle.getAttribute('data-a4-mega-src'), init).then(function (response) {
-                    if (!response.ok) throw new Error('HTTP ' + response.status);
+                var pending;
+                try {
+                    pending = window.fetch(toggle.getAttribute('data-a4-mega-src'), init);
+                } catch (e) {
+                    settle(reject, new Failure('transient', 'network'));
+                    return;
+                }
+                pending.then(function (response) {
+                    var code = response.status;
+                    if (code === 401 || code === 403) throw new Failure('signed-out', code);
+                    if (response.redirected && /\/user\/login(?:[/?#]|$)/.test(response.url || '')) throw new Failure('signed-out', 'login');
+                    if (code >= 500 || code === 408 || code === 429) throw new Failure('transient', code);
+                    if (!response.ok) throw new Failure('failed', code);
                     return response.text();
                 }).then(function (html) {
-                    window.clearTimeout(limit);
-                    resolve(html);
+                    settle(resolve, html);
                 }, function (error) {
-                    window.clearTimeout(limit);
-                    reject(error);
+                    if (error instanceof Failure) settle(reject, error);
+                    else if (error && error.name === 'AbortError') settle(reject, new Failure(timedOut ? 'transient' : 'aborted', 'abort'));
+                    else settle(reject, new Failure('transient', 'network'));
                 });
             });
         }
 
-        function load() {
+        // the menu in the answer: the fragment's marked element, or a Failure (a sign-in page is the signed-out state)
+        function fragment(html) {
+            var template = document.createElement('template');
+            template.innerHTML = html;
+            var content = template.content;
+            var groups = content.querySelector('[data-a4-mega-fragment]') || content.querySelector('[data-a4-mega-groups]');
+            if (groups) return groups;
+            if (content.querySelector('input[name="Login"]')) throw new Failure('signed-out', 'login form');
+            throw new Failure('transient', 'not the menu');
+        }
+
+        // the request and its parsing, tried again once after a passing failure or a request the browser stopped
+        function fetchMenu(tries) {
+            return attempt().then(fragment).catch(function (failure) {
+                if (!(failure instanceof Failure)) failure = new Failure('failed', 'parse');
+                if ((failure.kind !== 'transient' && failure.kind !== 'aborted') || tries >= RETRIES || leaving) throw failure;
+                return new Promise(function (resolve) { window.setTimeout(resolve, RETRY_DELAY); }).then(function () {
+                    return fetchMenu(tries + 1);
+                });
+            });
+        }
+
+        // keep: the panel's content stays until the answer (the "Try again" button clicked, which must not leave the
+        // panel under the click); otherwise a failure shown before gives way to the loading line again
+        function load(keep) {
             if (loading) return loading;
             panel.setAttribute('aria-busy', 'true');
-            loading = request().then(function (html) {
-                // only the fragment's element: a sign-in or error page in its place is not the menu
-                var template = document.createElement('template');
-                template.innerHTML = html;
-                var groups = template.content.querySelector('[data-a4-mega-groups]');
-                if (!groups) throw new Error('not the menu');
+            if (!keep && body.querySelector('.a4-mega-actions')) status(loadingText);
+            loading = fetchMenu(0).then(function (groups) {
                 body.innerHTML = '';
                 body.appendChild(groups);
                 markCurrent(panel);
                 panel.removeAttribute('aria-busy');
-            }).catch(function () {
+            }, function (failure) {
                 loading = null;
                 panel.removeAttribute('aria-busy');
-                status(panel.getAttribute('data-a4-mega-error') || '');
+                // stopped by the browser, or the page being left: no failure; the next opening loads again
+                if (leaving || failure.kind === 'aborted') {
+                    status(loadingText);
+                    return;
+                }
+                if (failure.kind === 'signed-out') showSignedOut();
+                else showFailed();
             });
             return loading;
         }
@@ -228,6 +335,16 @@
     function init() {
         Array.prototype.forEach.call(document.querySelectorAll('#header .a4-mega-item'), megaMenu);
     }
+
+    // a request the browser stops while the page is left (a link in the panel followed) is no failure; the page
+    // coming back from the back-forward cache is in use again
+    window.addEventListener('pagehide', function () { leaving = true; });
+    // beforeunload: a navigation a page's own prompt keeps from happening leaves the page in use
+    window.addEventListener('beforeunload', function () {
+        leaving = true;
+        window.setTimeout(function () { leaving = false; }, 3000);
+    });
+    window.addEventListener('pageshow', function () { leaving = false; });
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();

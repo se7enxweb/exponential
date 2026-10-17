@@ -1181,6 +1181,8 @@ body,
     color: var(--a4-muted);
     font-size: var(--a4-text-s);
   }
+  /* under a failed load's status line: "Try again", or the way to sign in (a4_mega_menu.js; .a4-btn) */
+  .a4-mega-actions { margin: calc(-1 * var(--a4-space-2)) 0 var(--a4-space-4); }
   .a4-mega-all {
     margin: 0;
     padding-top: var(--a4-space-3);

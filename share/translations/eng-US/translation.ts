@@ -14334,6 +14334,18 @@ Note: The packages will not be uninstalled.</translation>
         <translation>The %tab menu could not be loaded.</translation>
     </message>
     <message>
+        <source>Try again</source>
+        <translation>Try again</translation>
+    </message>
+    <message>
+        <source>You are signed out. Sign in again to see the %tab menu.</source>
+        <translation>You are signed out. Sign in again to see the %tab menu.</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Sign in</translation>
+    </message>
+    <message>
         <source>Go to %tab</source>
         <translation>Go to %tab</translation>
     </message>

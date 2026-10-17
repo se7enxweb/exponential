@@ -587,8 +587,18 @@ opens the user form directly. A permission check for one user has no view in the
   (`parts/a4_mega_menu.tpl`): the same names, groups, icons (`LinkIcons[]`), descriptions (`LinkDescriptions[]`)
   and access checks (`PolicyList_<link>[]`, `CheckViewAccess`, `NoAccessLinks`), without figures. `a4_mega_menu.js`
   asks for it once, when the panel is first opened; the page itself carries only the button, a status line and the
-  tab's link (about 1 KB), cached with the header per role set (`$user_hash`), as the tabs are. A load that fails
-  says so in the panel and is tried again on the next opening; the tab's link stays.
+  tab's link (about 1 KB), cached with the header per role set (`$user_hash`), as the tabs are.
+- **The load.** One request per tab and page (`credentials: same-origin`, `Accept: text/html`,
+  `X-Requested-With`, `cache: no-store`): an opening while it runs waits for the same request, closing the panel
+  cancels nothing, and the links stay for the life of the page. The answer is the menu only when it holds the
+  fragment's marker, `data-a4-mega-fragment="<tab>"` (set by `user/megamenu.tpl`; a design's own fragment without
+  it is still taken by its `data-a4-mega-groups`). A passing failure (no connection, 5xx, 408, 429, no answer
+  after 10 s, an answer that is not the menu) is tried once more after 600 ms. A 401, a 403, a redirect to
+  `user/login` or a sign-in page in its place shows that the user is signed out, with a "Sign in" link
+  (`data-a4-mega-signed-out`, `data-a4-mega-signin`, `data-a4-mega-login` on the panel). A failure for good says
+  so (`data-a4-mega-error`) with a "Try again" button (`data-a4-mega-retry`); the tab's link stays under it, and the
+  next opening tries again too. A request the browser stops (the page being left by a link in the panel) is no
+  failure. The script binds each tab once (`data-a4-mega-bound`), however often it is loaded.
 - **The rights.** The view's policy is `user/login` (any user of the siteaccess, as `user/preferences`), since the
   tabs belong to different modules and a policy of one of them would keep the others' users out. The rights are
   the tab's and the links': the view answers only for a tab named in `MegaMenuTabs[]` with a `MegaMenuTemplate`
