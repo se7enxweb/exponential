@@ -170,6 +170,9 @@
     "design/admin4/templates/tabs/audit/node.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
+    "kernel/classes/ezdbgarbagecollector.php": [
+      "tests/tests/kernel/classes/eZDBGarbageCollectorBasketQueryTest.php"
+    ],
     "kernel/common/ezpi18n.php": [
       "tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php"
     ],
