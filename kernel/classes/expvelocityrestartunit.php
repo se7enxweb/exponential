@@ -162,7 +162,7 @@ class expVelocityRestartUnit
      */
     public function delegate( $script, array $args, array $markerDirs )
     {
-        if ( !is_dir( $this->runDir ) && !@mkdir( $this->runDir, 0775, true ) && !is_dir( $this->runDir ) )
+        if ( !is_dir( $this->runDir ) && !eZDir::mkdir( $this->runDir, false, true ) && !is_dir( $this->runDir ) )
             return null;
         $token = bin2hex( random_bytes( 8 ) );
         $log = $this->logFile( $token );

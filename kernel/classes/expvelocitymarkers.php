@@ -84,7 +84,7 @@ class expVelocityMarkers
      */
     public function write( $name, array $data )
     {
-        if ( !is_dir( $this->dir ) && !@mkdir( $this->dir, 0775, true ) && !is_dir( $this->dir ) )
+        if ( !is_dir( $this->dir ) && !eZDir::mkdir( $this->dir, false, true ) && !is_dir( $this->dir ) )
             return false;
         $path = $this->path( $name );
         $tmp = $path . '.' . getmypid() . '.tmp';
