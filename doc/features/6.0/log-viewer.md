@@ -402,6 +402,23 @@ Scheduled rotation comes with the log manager: the cronjob part `logs` (`cronjob
 Audit: a rename or copy as `system.log.rotate` (compressing with `after.action` `compress`), emptying as
 `system.log.truncate`, removing as `system.log.delete`.
 
+### Downloading every log
+
+**Download all logs** (an orange button at the start of the page, `[ActionSettings] Download`) sends one archive of
+every log the viewer lists, the web server's included, named `logs-<host>-<YYYYMMDD-HHMM>.zip` (a `.tar.gz` where the
+PHP zip extension is missing). With **Include archives** (ticked by default) their rotations come along. Paths inside
+are relative: `var/log/error.log`, `var/<site>/log/storage.log`, and `webserver/access_ssl_log` for a log configured by
+key. A `MANIFEST.txt` lists each file with its size, last write (UTC) and sha256 of what is stored.
+
+- The contents are masked line by line as the viewer shows them; a compressed rotation is unpacked to be masked.
+  **Unredacted**, offered only with `setup/unmasklogs` and shown with a warning, stores the files as written (a
+  compressed rotation as it is).
+- It is a POST with the form token on a page that needs `setup/managelogs`, and it is recorded in the audit as
+  `system.log.download` with `after.bundle`, the number of files, the bytes and whether it was unredacted.
+- The logs read may sum to at most `[ActionSettings] MaxBundleBytes` (default 256 MB); over it the page says how much
+  there is and nothing is built. The archive is built as a stream (memory stays flat) in its own directory under
+  `var/tmp/logbundle`, sent in pieces and removed afterwards, also when the visitor leaves early.
+
 ## Log health
 
 **Setup > Log files > Log health** (`setup/logs`; `/setup/logshealth`) shows at a glance:
@@ -548,6 +565,7 @@ siteaccess.
 | `[HealthSettings] DiskBudget` | `268435456` | the disk all logs may use together (see [Log health](#log-health)); 0: none |
 | `[DigestSettings] Hours`, `MaxMessages`, `MaxBytesPerFile`, `Levels[]` | `24`, `50`, `8388608`, `error`, `warning` | the error digest (see [Error digest](#error-digest)) |
 | `MaxDownloadBytes` | `52428800` | the largest range of one download |
+| `MaxBundleBytes` | `268435456` | the most bytes of logs one "Download all logs" archive holds |
 | `[RateLimitSettings] Requests`, `Window` | `120`, `60` | feed requests per session and window (seconds) |
 | `[ViewerAuditSettings] ReadInterval` | `600` | seconds between two `system.log.read` of the same file and session |
 

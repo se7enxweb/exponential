@@ -3,7 +3,8 @@
    Every action is a POST (form token) that shows its plan first (setup/logs_manage_confirm.tpl).
    Variables: log_logs (key => log of expLogManagerInterface::logs()), log_total (bytes of the logs and their archives),
    log_result (null or op, key, ok, error, steps of the last action), log_switches (Rotate, Truncate, Compress,
-   DeleteArchives, Download => bool), log_can_download, log_token_field, log_token.
+   DeleteArchives, Download => bool), log_can_download, log_token_field, log_token, log_bundle_error (null or error,
+   total, cap of a refused "Download all logs"), log_bundle_cap, log_bundle_format (zip | tar.gz), log_can_unmask.
 
    The same file is in design/admin and design/admin4. *}
 <div class="context-block a4-page a4-setup-logs a4-setup-logmanage">
@@ -39,6 +40,28 @@
     {if $log_switches.DeleteArchives}<button type="submit" class="a4-btn" name="Op" value="prune_all"><span class="a4-icon a4-bi-trash" aria-hidden="true"></span>{'Prune all archives…'|i18n( 'design/admin/setup/logs' )}</button>{/if}
     {if and( $log_switches.Rotate|not, $log_switches.DeleteArchives|not )}<span class="a4-meta">{'The actions are switched off in settings/logviewer.ini [ActionSettings].'|i18n( 'design/admin/setup/logs' )}</span>{/if}
 </form>
+
+{* Every log in one archive (expLogBundle): a POST with the form token; masked unless Unredacted (setup/unmasklogs) *}
+{if $log_bundle_error}
+<div class="a4-notice is-bad" role="alert">
+    {if $log_bundle_error.error|eq( 'too_large' )}{'The logs are too large to download at once: %total, more than the limit of %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Leave the archives out, or download the logs one by one.'|i18n( 'design/admin/setup/logs',, hash( '%total', $log_bundle_error.total|si( byte ), '%cap', $log_bundle_error.cap|si( byte ) ) )|wash}
+    {elseif $log_bundle_error.error|eq( 'empty' )}{'There is no log file to download.'|i18n( 'design/admin/setup/logs' )}
+    {else}{'The archive could not be written in var/tmp. Check that the web server may write there.'|i18n( 'design/admin/setup/logs' )}{/if}
+</div>
+{/if}
+{if $log_can_download}
+<form method="post" action={'setup/logsmanage'|ezurl} class="a4-row a4-setup-logmanage-bundle">
+    <input type="hidden" name="{$log_token_field|wash}" value="{$log_token|wash}" />
+    <button type="submit" class="a4-btn a4-btn-primary" name="DownloadAllButton" value="1" aria-describedby="log-bundle-help"><span class="a4-icon a4-bi-download" aria-hidden="true"></span>{'Download all logs'|i18n( 'design/admin/setup/logs' )}</button>
+    <input type="hidden" name="IncludeArchives" value="0" />
+    <label class="a4-check"><input type="checkbox" name="IncludeArchives" value="1" checked="checked" /><span>{'Include archives'|i18n( 'design/admin/setup/logs' )}</span></label>
+    {if $log_can_unmask}
+    <label class="a4-check"><input type="checkbox" name="Unredacted" value="1" aria-describedby="log-bundle-unredacted" /><span>{'Unredacted'|i18n( 'design/admin/setup/logs' )}</span></label>
+    <span class="a4-notice is-warn a4-setup-logmanage-bundle-warn" id="log-bundle-unredacted">{'Unredacted: e-mail addresses, IP addresses, tokens and session ids as written. Only for a secure place; the download is recorded in the audit.'|i18n( 'design/admin/setup/logs' )}</span>
+    {/if}
+    <span class="a4-help" id="log-bundle-help">{'One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.'|i18n( 'design/admin/setup/logs',, hash( '%format', cond( $log_bundle_format|eq( 'zip' ), '.zip', '.tar.gz' ), '%cap', $log_bundle_cap|si( byte ) ) )|wash}</span>
+</form>
+{/if}
 
 <div class="a4-table-wrap">
 <table class="a4-table a4-setup-logmanage-table">

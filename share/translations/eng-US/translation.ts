@@ -71034,5 +71034,37 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Logs</source>
         <translation>Logs</translation>
     </message>
+    <message>
+        <source>The logs are too large to download at once: %total, more than the limit of %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Leave the archives out, or download the logs one by one.</source>
+        <translation>The logs are too large to download at once: %total, more than the limit of %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Leave the archives out, or download the logs one by one.</translation>
+    </message>
+    <message>
+        <source>There is no log file to download.</source>
+        <translation>There is no log file to download.</translation>
+    </message>
+    <message>
+        <source>The archive could not be written in var/tmp. Check that the web server may write there.</source>
+        <translation>The archive could not be written in var/tmp. Check that the web server may write there.</translation>
+    </message>
+    <message>
+        <source>Download all logs</source>
+        <translation>Download all logs</translation>
+    </message>
+    <message>
+        <source>Include archives</source>
+        <translation>Include archives</translation>
+    </message>
+    <message>
+        <source>Unredacted</source>
+        <translation>Unredacted</translation>
+    </message>
+    <message>
+        <source>Unredacted: e-mail addresses, IP addresses, tokens and session ids as written. Only for a secure place; the download is recorded in the audit.</source>
+        <translation>Unredacted: e-mail addresses, IP addresses, tokens and session ids as written. Only for a secure place; the download is recorded in the audit.</translation>
+    </message>
+    <message>
+        <source>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</source>
+        <translation>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</translation>
+    </message>
 </context>
 </TS>

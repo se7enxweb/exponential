@@ -5,7 +5,9 @@
  * compress the archives, remove the archives older than N days, rotate all, prune all, and the download of the
  * viewer (setup/logsaction).
  *
- * GET shows the logs. A POST of an action (Op: rotate | truncate | compress | prune | rotate_all | prune_all, with Key
+ * GET shows the logs. A POST with DownloadAllButton (IncludeArchives, Unredacted) sends one archive of every log
+ * (expLogBundle; Unredacted needs setup/unmasklogs). A POST of an action (Op: rotate | truncate | compress | prune |
+ * rotate_all | prune_all, with Key
  * and Days) shows its plan, every step, and changes nothing (the dry run); its ConfirmButton posts it again and the
  * plan is applied, each step checked against the disk again, and recorded in the audit. Every POST carries the form
  * token; the view needs setup/managelogs, and each action its switch in [ActionSettings] (Rotate, Truncate,
@@ -53,6 +55,94 @@ class Logsmanage extends \Exponential\Runnable\ModuleView
         if ( empty( $switches[self::OPS[$op][1]] ) )
             return 'off';
         return $confirmed ? 'apply' : 'preview';
+    }
+
+    /** The session variable that carries a refused bundle (too large) to the page shown after it */
+    const BUNDLE_ERROR = 'expLogBundleError';
+
+    /**
+     * What a "Download all logs" request may do. Pure. The view itself needs setup/managelogs (module.php); an
+     * unredacted bundle also needs setup/unmasklogs.
+     *
+     * @param string $method GET or POST
+     * @param bool $tokenOk the POST carries the form token
+     * @param bool $canManage setup/managelogs
+     * @param bool $download [ActionSettings] Download
+     * @param bool $unredacted asked for unredacted contents
+     * @param bool $canUnmask setup/unmasklogs
+     * @return string build | denied | off | unmask_denied
+     */
+    public static function decideBundle( $method, $tokenOk, $canManage, $download, $unredacted, $canUnmask )
+    {
+        if ( $method !== 'POST' || !$tokenOk || !$canManage )
+            return 'denied';
+        if ( !$download )
+            return 'off';
+        if ( $unredacted && !$canUnmask )
+            return 'unmask_denied';
+        return 'build';
+    }
+
+    /**
+     * Builds the bundle of every log and sends it, then removes it. Ends the request (never inside a catch: the
+     * clean exit of a persistent worker throws on purpose).
+     *
+     * @param \eZModule $Module
+     * @param \expLogViewerConfig $config
+     * @param bool $archives
+     * @param bool $unredacted
+     * @return array|null a page result only when nothing was sent
+     */
+    protected function sendBundle( $Module, \expLogViewerConfig $config, $archives, $unredacted )
+    {
+        $locator = new \expLogFileLocator( $config );
+        $files = \expLogBundle::files( $locator, $archives );
+        $dir = \expLogBundle::workDirectory();
+        if ( $dir === null )
+        {
+            \eZHTTPTool::instance()->setSessionVariable( self::BUNDLE_ERROR, array( 'error' => 'write', 'total' => 0, 'cap' => 0 ) );
+            return $Module->redirectTo( '/setup/logsmanage' );
+        }
+        // removed after the send below, and also when the request ends early (the visitor left, an error)
+        register_shutdown_function( array( '\expLogBundle', 'cleanup' ), $dir );
+        $format = \expLogBundle::format();
+        $name = \expLogBundle::fileName( \expLogBundle::host(), time(), $format );
+        $redactor = $unredacted ? null : \expLogRedactor::fromConfig( $config, false );
+        $built = \expLogBundle::build( $files, $redactor, $dir, $name, \expLogBundle::cap( $config ), $format );
+        if ( !$built['ok'] )
+        {
+            \expLogBundle::cleanup( $dir );
+            \eZHTTPTool::instance()->setSessionVariable( self::BUNDLE_ERROR, array( 'error' => $built['error'], 'total' => $built['total'], 'cap' => $built['cap'] ) );
+            return $Module->redirectTo( '/setup/logsmanage' );
+        }
+        \expLogViewer::audit( 'download', array( 'id' => $name, 'size' => $built['size'] ),
+                              array( 'bundle' => true, 'files' => $built['files'], 'bytes' => $built['bytes'], 'unredacted' => (bool)$unredacted ) );
+        ignore_user_abort( true );
+        if ( method_exists( '\eZExecution', 'discardOutputBuffers' ) )
+            \eZExecution::discardOutputBuffers();
+        header( 'Content-Type: ' . ( $format === 'zip' ? 'application/zip' : 'application/gzip' ) );
+        header( 'Content-Disposition: attachment; filename="' . $name . '"' );
+        header( 'Content-Length: ' . $built['size'] );
+        header( 'Cache-Control: no-store' );
+        header( 'X-Content-Type-Options: nosniff' );
+        $in = @fopen( $built['path'], 'rb' );
+        if ( $in !== false )
+        {
+            while ( !feof( $in ) )
+            {
+                $chunk = fread( $in, \expLogBundle::CHUNK );
+                if ( $chunk === false || $chunk === '' )
+                    break;
+                echo $chunk;
+                flush();
+                if ( connection_aborted() )
+                    break;
+            }
+            fclose( $in );
+        }
+        \expLogBundle::cleanup( $dir );
+        \eZExecution::cleanExit();
+        return null;
     }
 
     /**
@@ -121,6 +211,17 @@ class Logsmanage extends \Exponential\Runnable\ModuleView
              : ( isset( $Params['Key'] ) ? (string)$Params['Key'] : '' );
         $days = $http->hasPostVariable( 'Days' ) ? $http->postVariable( 'Days' ) : ( isset( $Params['days'] ) ? $Params['days'] : null );
         $switches = self::switches( $config );
+        if ( $method === 'POST' && $http->hasPostVariable( 'DownloadAllButton' ) && $config->enabled( 'LogViewerSettings', 'LogViewer' ) )
+        {
+            $unredacted = $http->hasPostVariable( 'Unredacted' ) && (string)$http->postVariable( 'Unredacted' ) === '1';
+            $bundle = self::decideBundle( $method, \expLogViewer::checkFormToken(), \expLogViewer::can( 'managelogs' ), $switches['Download'],
+                                          $unredacted, \expLogViewer::can( 'unmasklogs' ) );
+            if ( $bundle !== 'build' )
+                return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+            // without the box ticked the field is absent: the form sends IncludeArchives=0 in a hidden field first
+            $archives = !$http->hasPostVariable( 'IncludeArchives' ) || (string)$http->postVariable( 'IncludeArchives' ) !== '0';
+            return $this->sendBundle( $Module, $config, $archives, $unredacted );
+        }
         $decision = self::decide( $method, $op, $method === 'POST' && \expLogViewer::checkFormToken(), $http->hasPostVariable( 'ConfirmButton' ),
                                   $switches, $config->enabled( 'LogViewerSettings', 'LogViewer' ) );
         if ( $decision === 'disabled' )
@@ -176,6 +277,16 @@ class Logsmanage extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'log_total', $total );
         $tpl->setVariable( 'log_result', is_array( $result ) ? $result : null );
         $tpl->setVariable( 'log_can_download', $switches['Download'] );
+        $bundleError = null;
+        if ( $http->hasSessionVariable( self::BUNDLE_ERROR ) )
+        {
+            $bundleError = $http->sessionVariable( self::BUNDLE_ERROR );
+            $http->removeSessionVariable( self::BUNDLE_ERROR );
+        }
+        $tpl->setVariable( 'log_bundle_error', is_array( $bundleError ) ? $bundleError : null );
+        $tpl->setVariable( 'log_bundle_cap', \expLogBundle::cap( $config ) );
+        $tpl->setVariable( 'log_bundle_format', \expLogBundle::format() );
+        $tpl->setVariable( 'log_can_unmask', \expLogViewer::can( 'unmasklogs' ) );
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:setup/logs_manage.tpl' );
         $Result['left_menu'] = 'design:setup/logs_menu.tpl';

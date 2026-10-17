@@ -77974,5 +77974,37 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Logs</source>
         <translation>Logs</translation>
     </message>
+    <message>
+        <source>The logs are too large to download at once: %total, more than the limit of %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Leave the archives out, or download the logs one by one.</source>
+        <translation>Die Logs sind zu groß, um sie auf einmal herunterzuladen: %total, mehr als die Grenze von %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Lassen Sie die Archive weg oder laden Sie die Logs einzeln herunter.</translation>
+    </message>
+    <message>
+        <source>There is no log file to download.</source>
+        <translation>Es gibt keine Logdatei zum Herunterladen.</translation>
+    </message>
+    <message>
+        <source>The archive could not be written in var/tmp. Check that the web server may write there.</source>
+        <translation>Das Archiv konnte nicht in var/tmp geschrieben werden. Prüfen Sie, ob der Webserver dort schreiben darf.</translation>
+    </message>
+    <message>
+        <source>Download all logs</source>
+        <translation>Alle Logs herunterladen</translation>
+    </message>
+    <message>
+        <source>Include archives</source>
+        <translation>Archive einschließen</translation>
+    </message>
+    <message>
+        <source>Unredacted</source>
+        <translation>Unmaskiert</translation>
+    </message>
+    <message>
+        <source>Unredacted: e-mail addresses, IP addresses, tokens and session ids as written. Only for a secure place; the download is recorded in the audit.</source>
+        <translation>Unmaskiert: E-Mail-Adressen, IP-Adressen, Tokens und Session-IDs wie geschrieben. Nur für einen sicheren Ort; der Download wird im Audit festgehalten.</translation>
+    </message>
+    <message>
+        <source>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</source>
+        <translation>Eine %format-Datei aller Logs, mit einer MANIFEST.txt der Größen, letzten Schreibzeiten und Prüfsummen. Maskiert wie im Viewer; im Audit festgehalten; höchstens %cap.</translation>
+    </message>
 </context>
 </TS>
