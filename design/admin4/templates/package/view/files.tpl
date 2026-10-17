@@ -12,7 +12,7 @@
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 <h1 class="context-title">
-        {$package.name|wash}-{$package.version-number}-{$package.release-number}{if $package.release-timestamp}({$package.release-timestamp|l10n( shortdatetime )}){/if}{if $package.type|wash} [{$package.type}]{/if}
+        {$package.name|wash}-{$package.version-number|wash}-{$package.release-number|wash}{if $package.release-timestamp}({$package.release-timestamp|l10n( shortdatetime )}){/if}{if $package.type|wash} [{$package.type|wash}]{/if}
         - {if $package.install_type|eq( 'install' )}
             {if $package.is_installed}
                 {'Installed'|i18n('design/admin/package')}
@@ -41,7 +41,7 @@
 
     {section var=collection loop=$package.file-list}
     <div class="objectheader">
-        <h2>{'Files [%collectionname]'|i18n('design/admin/package',, hash( '%collectionname', $collection.key ))}</h2>
+        <h2>{'Files [%collectionname]'|i18n('design/admin/package',, hash( '%collectionname', $collection.key|wash ))}</h2>
     </div>
     <div class="object">
         <div class="files">

@@ -40,9 +40,9 @@
     <select id="templatecreate-extension" name="DesignExtension">
         {foreach $extension_list as $extensionName}
             {if eq($design_extension,$extensionName)}
-                <option value="{$extensionName}" selected="selected">{$extensionName}</option>
+                <option value="{$extensionName|wash}" selected="selected">{$extensionName|wash}</option>
             {else}
-                <option value="{$extensionName}">{$extensionName}</option>
+                <option value="{$extensionName|wash}">{$extensionName|wash}</option>
             {/if}
         {/foreach}
 
@@ -57,7 +57,7 @@
 
 <div class="block">
     <label for="templatecreate-name">{'Filename'|i18n( 'design/admin/visual/templatecreate' )}:</label>
-    <input id="templatecreate-name" class="halfbox" type="text" name="TemplateName" value="{$template_name}" />.tpl
+    <input id="templatecreate-name" class="halfbox" type="text" name="TemplateName" value="{$template_name|wash}" />.tpl
 </div>
 
 {switch match=$template_type}

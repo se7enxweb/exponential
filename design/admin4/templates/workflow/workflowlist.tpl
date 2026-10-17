@@ -101,7 +101,7 @@
 
     <input class="button" type="submit" name="NewWorkflowButton" value="{'New workflow'|i18n( 'design/admin/workflow/workflowlist' )}" title="{'Create a new workflow.'|i18n( 'design/admin/workflow/workflowlist' )}" />
     <input type="hidden" name="CurrentGroupID" value="{$group_id}" />
-    <input type="hidden" name="CurrentGroupName" value="{$group_name}" />
+    <input type="hidden" name="CurrentGroupName" value="{$group_name|wash}" />
 </div>
 {* DESIGN: Control bar END *}</div></div>
 </div>

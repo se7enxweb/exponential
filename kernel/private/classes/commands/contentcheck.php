@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Content checks: build the reference index, list the unused assets and the broken relations below a node, scan the storage files (report only, unless --quarantine or --fix-permissions without --dry-run)
+ * @description Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only, unless --fix, --quarantine or --fix-permissions without --dry-run)
  * @alias exp:content-check
  *
  * File containing the exp:content-check command (doc/features/6.0/content-checks.md, "On the command line").
@@ -20,7 +20,7 @@ class Contentcheck extends \Exponential\Runnable\Command
         $cli = $this->cli();
         $this->script(
             array(
-                'description' => "Content checks (report only, except --quarantine and --fix-permissions without --dry-run)\n" .
+                'description' => "Content checks (report only, except --fix, --quarantine and --fix-permissions without --dry-run)\n" .
                                  "\n" .
                                  "./console exp:content-check --build-index           build the reference index (also the cronjob part contentcheck)\n" .
                                  "./console exp:content-check --unreferenced --node=2  the unused assets below node 2\n" .
@@ -30,7 +30,13 @@ class Contentcheck extends \Exponential\Runnable\Command
                                  "./console exp:content-check --storage --quarantine --dry-run   which orphans would be quarantined\n" .
                                  "./console exp:content-check --storage --quarantine            move them to the quarantine\n" .
                                  "./console exp:content-check --storage --fix-permissions [--dry-run]   set owner and mode of used files\n" .
+                                 "./console exp:content-check --missing-files --node=2  files missing from the storage, stale image aliases\n" .
+                                 "./console exp:content-check --missing-files --fix=regenerate --dry-run   what regenerating would do\n" .
+                                 "./console exp:content-check --fix=restore --items=123-4,125-2          restore two field versions\n" .
+                                 "./console exp:content-check --fix=replace --items=123-4 --replace-with=photo.jpg\n" .
                                  "\n" .
+                                 "--fix (regenerate, restore, replace, remove, review) is the only option that changes anything; with\n" .
+                                 "--dry-run it shows the plan and changes nothing. Without --items it takes every finding of --missing-files.\n" .
                                  "The lists are those of the user given by --login (default admin): what that user may read.\n" .
                                  "Exit code: 0 nothing found, 1 something found, 2 error.",
                 'use-session'    => false,
@@ -38,7 +44,13 @@ class Contentcheck extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[build-index][unreferenced][broken][node:][why:][login:][json][storage][quarantine][fix-permissions][dry-run]', '', array(
+        $options = $this->startup( '[build-index][unreferenced][broken][missing-files][problems:][versions:][fix:][items:][replace-with:][node:][why:][login:][json][storage][quarantine][fix-permissions][dry-run]', '', array(
+            'missing-files' => 'List the fields below --node whose files are missing, and images with missing or stale aliases',
+            'problems'      => 'With --missing-files: missing,alias_missing,alias_stale,alias_absent (default: the first three)',
+            'versions'      => 'With --missing-files: published,draft (default: both)',
+            'fix'           => 'Resolve: regenerate, restore, replace, remove or review (the findings of --missing-files, or --items)',
+            'items'         => 'With --fix: field versions as <attribute id>-<version>, separated by commas',
+            'replace-with'  => 'With --fix=replace: the file put at the expected path (one item)',
             'build-index'  => 'Build the reference index and keep it in the cache',
             'unreferenced' => 'List the unused assets below --node',
             'broken'       => 'List the broken relations below --node (all pages) and in the layouts',
@@ -49,7 +61,7 @@ class Contentcheck extends \Exponential\Runnable\Command
             'storage'      => 'Scan the storage files (all of it, in batches) and keep the result for the storage view',
             'quarantine'   => 'With --storage: move the orphan files of the scan to the quarantine (each checked again)',
             'fix-permissions' => 'With --storage: set the expected owner and mode of used files with a wrong one',
-            'dry-run'      => 'With --quarantine or --fix-permissions: show what would be done, change nothing'
+            'dry-run'      => 'With --fix, --quarantine or --fix-permissions: show what would be done, change nothing'
         ) );
 
         $login = !empty( $options['login'] ) ? (string)$options['login'] : 'admin';
@@ -117,6 +129,18 @@ class Contentcheck extends \Exponential\Runnable\Command
                 $report['broken'] = array( 'node_id' => $nodeID, 'checked' => $checked, 'findings' => $findings, 'layouts' => $layouts );
                 $found = $found || $findings || $layouts;
             }
+            if ( !empty( $options['missing-files'] ) || ( !empty( $options['fix'] ) && empty( $options['items'] ) ) )
+            {
+                $report['missing_files'] = self::missingFiles( $nodeID, $options );
+                $found = $found || $report['missing_files']['rows'];
+            }
+            if ( !empty( $options['fix'] ) )
+            {
+                $keys = !empty( $options['items'] ) ? \expContentCheckFiles::keyList( (string)$options['items'], \expContentCheckFileFix::maxItems() + 1 )
+                                                    : \expContentCheckFiles::keyList( array_unique( array_column( $report['missing_files']['rows'], 'key' ) ),
+                                                                                      \expContentCheckFileFix::maxItems() + 1 );
+                $report['fix'] = self::fix( (string)$options['fix'], $keys, $options );
+            }
             if ( !empty( $options['why'] ) )
                 $report['why'] = \expContentCheckUnreferenced::reasons( \expContentCheck::idList( (string)$options['why'] ) );
             if ( !empty( $options['storage'] ) )
@@ -135,7 +159,7 @@ class Contentcheck extends \Exponential\Runnable\Command
         if ( !empty( $options['json'] ) )
         {
             $cli->output( json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) );
-            $this->shutdown( $found ? 1 : 0 );
+            $this->shutdown( isset( $report['fix'] ) && $report['fix']['failed'] ? 2 : ( $found ? 1 : 0 ) );
             return;
         }
         if ( isset( $report['index'] ) )
@@ -172,12 +196,30 @@ class Contentcheck extends \Exponential\Runnable\Command
                 $cli->output( sprintf( '  %s%s: %d of %d files (%s)%s', $action['action'], $action['dry_run'] ? ' (dry run)' : '', $action['count'],
                                        $action['asked'], self::bytes( $action['bytes'] ), $action['reasons'] ? '; left: ' . json_encode( $action['reasons'] ) : '' ) );
         }
+        if ( isset( $report['missing_files'] ) )
+        {
+            $cli->output( sprintf( 'Missing files and image aliases below node %d: %d in %d objects checked', $nodeID,
+                                   count( $report['missing_files']['rows'] ), $report['missing_files']['checked'] ) );
+            foreach ( $report['missing_files']['rows'] as $r )
+                $cli->output( sprintf( '  %-12s object %-8d %-9s %-13s %s%s', $r['key'], $r['object_id'], $r['version_status'], $r['problem'], $r['path'],
+                                       $r['aliases'] ? ' (' . implode( ', ', $r['aliases'] ) . ')' : '' ) );
+        }
+        if ( isset( $report['fix'] ) )
+        {
+            $f = $report['fix'];
+            $cli->output( sprintf( '%s %s: %d field versions planned, %d allowed%s', $f['dry_run'] ? 'DRY RUN' : 'Fix', $f['action'], count( $f['items'] ),
+                                   $f['allowed'], $f['dry_run'] ? '' : sprintf( ', %d done, %d not done', count( $f['fixed'] ), count( $f['failed'] ) ) ) );
+            foreach ( $f['items'] as $item )
+                $cli->output( sprintf( '  %-12s %-10s %s%s%s', $item['key'], $item['allowed'] ? 'allowed' : 'refused', $item['allowed'] ? $item['path'] : $item['reason'],
+                                       $item['source'] !== '' ? '  (' . $item['source'] . ')' : '',
+                                       isset( $f['failed'][$item['key']] ) ? '  FAILED: ' . $f['failed'][$item['key']] : '' ) );
+        }
         if ( isset( $report['why'] ) )
         {
             foreach ( $report['why'] as $id => $why )
                 $cli->output( sprintf( '  object %-8d %s', $id, $why === null ? 'UNUSED: nothing found that uses it' : 'used: ' . $why ) );
         }
-        $this->shutdown( $found ? 1 : 0 );
+        $this->shutdown( isset( $report['fix'] ) && $report['fix']['failed'] ? 2 : ( $found ? 1 : 0 ) );
     }
 
     /**
@@ -259,6 +301,86 @@ class Contentcheck extends \Exponential\Runnable\Command
             $i++;
         }
         return sprintf( $i === 0 ? '%d %s' : '%.1f %s', $value, $units[$i] );
+    }
+
+    /**
+     * Every finding of the missing files check below a node, all pages.
+     *
+     * @param int $nodeID
+     * @param array $options problems, versions
+     * @return array array( 'node_id', 'checked', 'rows' => list of array( key, object_id, version_status, problem,
+     *               path, aliases => alias names ) )
+     */
+    protected static function missingFiles( $nodeID, array $options )
+    {
+        $input = array( 'NodeID' => $nodeID, 'Limit' => 200 );
+        if ( !empty( $options['problems'] ) )
+            $input['Problem'] = preg_split( '/[\s,]+/', (string)$options['problems'], -1, PREG_SPLIT_NO_EMPTY );
+        if ( !empty( $options['versions'] ) )
+            $input['Version'] = preg_split( '/[\s,]+/', (string)$options['versions'], -1, PREG_SPLIT_NO_EMPTY );
+        $params = \expContentCheckFiles::parameters( $input, $nodeID );
+        $rows = array();
+        $checked = 0;
+        do
+        {
+            $result = \expContentCheckFiles::scan( $params );
+            if ( $result['error'] !== '' )
+                throw new \RuntimeException( 'missing files: ' . $result['error'] );
+            $checked += $result['checked'];
+            foreach ( $result['rows'] as $row )
+                $rows[] = array( 'key' => $row['key'], 'object_id' => $row['object_id'], 'version_status' => $row['version_status'],
+                                 'problem' => $row['problem'], 'path' => $row['path'], 'aliases' => array_column( $row['aliases'], 'alias' ) );
+            $params['after'] = $result['last'];
+        }
+        while ( !$result['done'] );
+        return array( 'node_id' => (int)$nodeID, 'checked' => $checked, 'rows' => $rows );
+    }
+
+    /**
+     * Plans a resolution and, without --dry-run, does it batch by batch, as the administration does after the
+     * confirmation (the same checks, the same audit events).
+     *
+     * @param string $action
+     * @param array $keys from expContentCheckFiles::keyList()
+     * @param array $options dry-run, replace-with
+     * @return array array( 'action', 'dry_run', 'items' => list of array( key, allowed, reason, path ), 'allowed' => int,
+     *               'fixed' => keys, 'failed' => key => why )
+     */
+    protected static function fix( $action, array $keys, array $options )
+    {
+        if ( !in_array( $action, \expContentCheckFileFix::ACTIONS, true ) )
+            throw new \RuntimeException( '--fix takes ' . implode( ', ', \expContentCheckFileFix::ACTIONS ) );
+        $uploads = array();
+        if ( $action === 'replace' )
+        {
+            $file = isset( $options['replace-with'] ) ? (string)$options['replace-with'] : '';
+            if ( $file === '' || !is_file( $file ) || count( $keys ) !== 1 )
+                throw new \RuntimeException( '--fix=replace needs one --items and a file in --replace-with' );
+            $uploads[key( $keys )] = array( 'tmp' => $file, 'name' => basename( $file ), 'uploaded' => false );
+        }
+        // the confirmation token of the administration, with a secret of this run
+        \expContentCheck::setTestSecret( bin2hex( random_bytes( 32 ) ) );
+        $dryRun = !empty( $options['dry-run'] );
+        $plan = \expContentCheckFileFix::plan( $action, $keys );
+        $report = array( 'action' => $action, 'dry_run' => $dryRun, 'items' => array(), 'allowed' => count( $plan['allowed'] ), 'fixed' => array(), 'failed' => array() );
+        foreach ( $plan['items'] as $item )
+            $report['items'][] = array( 'key' => $item['key'], 'allowed' => $item['allowed'], 'reason' => $item['reason'], 'path' => $item['path'],
+                                       'source' => $item['source_path'] !== '' ? 'from version ' . $item['source_version'] . ': ' . $item['source_path'] : '' );
+        if ( $dryRun )
+            return $report;
+        $todo = $keys;
+        while ( $plan['allowed'] )
+        {
+            $outcome = \expContentCheckFileFix::execute( $action, $todo, \expContentCheck::confirmToken( $plan['fingerprint'] ), $uploads );
+            $report['fixed'] = array_merge( $report['fixed'], $outcome['fixed'] );
+            $report['failed'] = array_merge( $report['failed'], $outcome['failed'] );
+            if ( !$outcome['remaining'] || $outcome['reason'] !== '' )
+                break;
+            $todo = \expContentCheckFiles::keyList( $outcome['remaining'], \expContentCheckFileFix::maxItems() );
+            $plan = \expContentCheckFileFix::plan( $action, $todo );
+        }
+        \expContentCheck::setTestSecret( null );
+        return $report;
     }
 }
 

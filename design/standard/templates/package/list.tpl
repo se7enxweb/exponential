@@ -71,7 +71,7 @@ Note: The packages will not be uninstalled.'|i18n('design/standard/package')|bre
     <td width="1">{if $:item.is_local}<input type="checkbox" name="PackageSelection[]" value="{$:item.name|wash}" />{/if}</td>
     {/if}
     <td><a href={concat('package/view/full/',$:item.name)|ezurl}>{$:item.name|wash}</a></td>
-    <td>{$:item.version-number}-{$:item.release-number}{if $:item.release-timestamp}({$:item.release-timestamp|l10n( shortdatetime )}){/if}{if $:item.type} [{$:item.type|wash}]{/if}</td>
+    <td>{$:item.version-number|wash}-{$:item.release-number|wash}{if $:item.release-timestamp}({$:item.release-timestamp|l10n( shortdatetime )}){/if}{if $:item.type} [{$:item.type|wash}]{/if}</td>
     <td>{$:item.summary|wash}</td>
     <td>
         {if $:item.install_type|eq( 'install' )}

@@ -1658,7 +1658,7 @@
     </message>
     <message>
         <source>Confirm removal</source>
-        <translation>Löschen bestätigen</translation>
+        <translation>Entfernen bestätigen</translation>
     </message>
     <message>
         <source>%namelist [%object_count objects]</source>
@@ -5275,6 +5275,10 @@
         <translation>Alle Elemente schließen. Geschlossene Elemente werden trotzdem gespeichert und veröffentlicht; nichts wird ausgelassen.</translation>
     </message>
     <message>
+        <source>version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
         <source>version %version</source>
         <translation>Version %version</translation>
     </message>
@@ -8557,7 +8561,7 @@
     </message>
     <message>
         <source>Rejected</source>
-        <translation type="obsolete">Abgelehnt</translation>
+        <translation>Abgelehnt</translation>
     </message>
     <message>
         <source>Copy and edit</source>
@@ -9053,7 +9057,7 @@
     <name>design/admin/dashboard/community</name>
     <message>
         <source>What&apos;s happening in the Exponential Community</source>
-        <translation type="unfinished"></translation>
+        <translation>Neues aus der Exponential Community</translation>
     </message>
     <message>
         <source>What&apos;s happening in the eZ Community</source>
@@ -9155,7 +9159,8 @@
     <message>
         <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;If this platform is critical for your business, we strongly recommend to subscribe to the Enterprise Edition of Exponential. More on &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt;&apos; website.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie verwenden %edition, die &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative und zukunftsweisende&lt;/span&gt; Version von Exponential, entwickelt von &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; und der &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Wenn diese Plattform für Ihr Unternehmen geschäftskritisch ist, empfehlen wir Ihnen dringend ein Abonnement der Enterprise Edition von Exponential. Mehr dazu auf der Website von &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>You are using %edition, the &lt;span id=&quot;Exponential-community-project-is-innovative-and-cutting-edge&quot;&gt;innovative and cutting-edge&lt;/span&gt; version of Exponential, built by &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and the &lt;a href=&quot;%ez_community_link&quot;&gt;Exponential Community&lt;/a&gt;.&lt;/p&gt;</source>
@@ -15662,7 +15667,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Repository</source>
-        <translation type="obsolete">Ablage</translation>
+        <translation>Paketquelle</translation>
     </message>
     <message>
         <source>All</source>
@@ -16161,7 +16166,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <name>design/admin/page_copyright</name>
     <message>
         <source>&lt;a href=&quot;%evaluate_link&quot;&gt;Evaluate Exponential Enterprise Edition&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Become a member of the Exponential Community, exchange and contribute&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;%evaluate_link&quot;&gt;Exponential Enterprise Edition testen&lt;/a&gt; - &lt;a href=&quot;%share_link&quot;&gt;Mitglied der Exponential Community werden, sich austauschen und beitragen&lt;/a&gt;. &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; und andere.</translation>
     </message>
     <message>
         <source>Powered by &lt;span class=&quot;edition-info&quot;&gt;%edition&lt;/span&gt;. For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
@@ -16169,11 +16174,11 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; and others.</source>
-        <translation type="unfinished"></translation>
+        <translation> &lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1999-2014 &lt;a href=&quot;%ez_link&quot;&gt;7x AS&lt;/a&gt; und andere.</translation>
     </message>
     <message>
         <source> For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation> Weitere Informationen unter &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>&lt;a href=&quot;%ezpublish_link&quot;&gt;Exponential&lt;/a&gt; Copyright &amp;copy; 1998-2026 &lt;a href=&quot;%ez_link&quot;&gt;7x&lt;/a&gt; and others.</source>
@@ -23115,7 +23120,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Setting Name</source>
-        <translation type="obsolete">Name der Einstellung</translation>
+        <translation>Name der Einstellung</translation>
     </message>
     <message>
         <source>Setting value</source>
@@ -23159,7 +23164,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Please choose another name that is not already taken</source>
-        <translation type="obsolete">Bitte wählen Sie einen anderen Namen, der noch nicht vorgekommen ist</translation>
+        <translation>Bitte wählen Sie einen anderen Namen, der noch nicht vergeben ist</translation>
     </message>
     <message>
         <source>%valfield is not allowed to contain spaces</source>
@@ -23171,7 +23176,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Make sure you have proper permissions to %path and try again.</source>
-        <translation type="obsolete">vergewissern Sie sich, dass Sie korrekte Rechte auf %path haben und versuchen Sie es nochmals.</translation>
+        <translation>Vergewissern Sie sich, dass Sie ausreichende Rechte für %path haben, und versuchen Sie es erneut.</translation>
     </message>
     <message>
         <source>Name contains illegal character(s).</source>
@@ -25107,6 +25112,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Es wurde kein PHP-Kommandozeilenprogramm gefunden, daher kann von hier aus nichts gestartet werden. Setzen Sie cronjob.ini [AdminSettings] PhpCliPath auf seinen vollständigen Pfad.</translation>
     </message>
     <message>
+        <source>Running</source>
+        <translation>Läuft</translation>
+    </message>
+    <message>
         <source>Running: %part</source>
         <translation>Läuft: %part</translation>
     </message>
@@ -25181,6 +25190,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>State</source>
         <translation>Status</translation>
+    </message>
+    <message>
+        <source>scripts</source>
+        <translation>Skripte</translation>
     </message>
     <message>
         <source>%count scripts</source>
@@ -25265,6 +25278,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Site</source>
         <translation>Seite</translation>
+    </message>
+    <message>
+        <source>Process</source>
+        <translation>Prozess</translation>
+    </message>
+    <message>
+        <source>Elapsed</source>
+        <translation>Verstrichen</translation>
     </message>
     <message>
         <source>Started</source>
@@ -25598,7 +25619,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="obsolete">Aktiv</translation>
+        <translation>Aktiv</translation>
     </message>
     <message>
         <source>Name</source>
@@ -25606,7 +25627,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation type="obsolete">Änderungen anwenden</translation>
+        <translation>Änderungen anwenden</translation>
     </message>
     <message>
         <source>Activate or deactivate extension. Use the &quot;Apply changes&quot; button to apply the changes.</source>
@@ -25642,7 +25663,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Activate</source>
-        <translation type="obsolete">Aktivieren</translation>
+        <translation>Aktivieren</translation>
     </message>
     <message>
         <source>Activate or deactivate extension. Use the &quot;Update&quot; button to apply the changes.</source>
@@ -26174,7 +26195,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Extensions</source>
         <comment>Exponential extensions</comment>
-        <translation type="obsolete">Erweiterungen</translation>
+        <translation>Erweiterungen</translation>
     </message>
     <message>
         <source>Version</source>
@@ -26349,6 +26370,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>generation</source>
         <translation>Generation</translation>
+    </message>
+    <message>
+        <source>last cleared</source>
+        <translation>zuletzt geleert</translation>
+    </message>
+    <message>
+        <source>tables written since</source>
+        <translation>seitdem geschriebene Tabellen</translation>
     </message>
     <message>
         <source>purged tags</source>
@@ -26636,6 +26665,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Dies ist die Standard-Engine ([ServerSettings] Engine), die exp:velocity start ohne --engine verwendet.</translation>
     </message>
     <message>
+        <source>The default engine is</source>
+        <translation>Die Standard-Engine ist</translation>
+    </message>
+    <message>
+        <source>this one runs with</source>
+        <translation>diese läuft mit</translation>
+    </message>
+    <message>
         <source>The default engine is %default; this one runs with %command.</source>
         <translation>Die Standard-Engine ist %default; diese hier läuft mit %command.</translation>
     </message>
@@ -26648,6 +26685,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Adresse</translation>
     </message>
     <message>
+        <source>reachable from</source>
+        <translation>erreichbar über</translation>
+    </message>
+    <message>
         <source>reachable from %reach</source>
         <translation>erreichbar von %reach</translation>
     </message>
@@ -26658,6 +26699,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Process</source>
         <translation>Prozess</translation>
+    </message>
+    <message>
+        <source>pid</source>
+        <translation>PID</translation>
+    </message>
+    <message>
+        <source>process(es)</source>
+        <translation>Prozess(e)</translation>
     </message>
     <message>
         <source>pid %pid, %processes process(es)</source>
@@ -26704,6 +26753,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>und</translation>
     </message>
     <message>
+        <source>stop it with</source>
+        <translation>beenden mit</translation>
+    </message>
+    <message>
         <source>stop it with %command</source>
         <translation>anhalten mit %command</translation>
     </message>
@@ -26746,6 +26799,18 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Archive</source>
         <translation>Archiv</translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>erstellt</translation>
     </message>
     <message>
         <source>%files files, %bytes bytes, built %built</source>
@@ -26872,6 +26937,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>settings/querycache.ini</translation>
     </message>
     <message>
+        <source>results held in APCu</source>
+        <translation>in APCu gehaltene Ergebnisse</translation>
+    </message>
+    <message>
+        <source>by this server</source>
+        <translation>von diesem Server</translation>
+    </message>
+    <message>
         <source>%entries results held in APCu (%size) by this server</source>
         <translation>%entries Ergebnisse in APCu (%size) auf diesem Server</translation>
     </message>
@@ -26900,6 +26973,34 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>noch keine Statusdatei</translation>
     </message>
     <message>
+        <source>This server since</source>
+        <translation>Dieser Server seit</translation>
+    </message>
+    <message>
+        <source>requests</source>
+        <translation>Anfragen</translation>
+    </message>
+    <message>
+        <source>hits</source>
+        <translation>Treffer</translation>
+    </message>
+    <message>
+        <source>misses</source>
+        <translation>Fehlschläge</translation>
+    </message>
+    <message>
+        <source>hit rate</source>
+        <translation>Trefferquote</translation>
+    </message>
+    <message>
+        <source>not cacheable</source>
+        <translation>nicht cachebar</translation>
+    </message>
+    <message>
+        <source>writes</source>
+        <translation>Schreibvorgänge</translation>
+    </message>
+    <message>
         <source>This server since %date: %requests requests, %hits hits, %misses misses</source>
         <translation>Dieser Server seit %date: %requests Anfragen, %hits Treffer, %misses Fehlzugriffe</translation>
     </message>
@@ -26926,6 +27027,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Reset the counters</source>
         <translation>Zähler zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Over the last %n profiled requests</source>
+        <translation>Über die letzten %n profilierten Anfragen</translation>
+    </message>
+    <message>
+        <source>statements</source>
+        <translation>Anweisungen</translation>
+    </message>
+    <message>
+        <source>exact repeats</source>
+        <translation>exakte Wiederholungen</translation>
+    </message>
+    <message>
+        <source>in the database</source>
+        <translation>in der Datenbank</translation>
+    </message>
+    <message>
+        <source>a per-request memo would save</source>
+        <translation>ein Zwischenspeicher pro Anfrage würde einsparen</translation>
+    </message>
+    <message>
+        <source>a shared query cache about</source>
+        <translation>ein gemeinsamer Abfrage-Cache etwa</translation>
     </message>
     <message>
         <source>Over the last %n profiled requests: %statements statements, %repeats exact repeats (%repeat_pct), %db_ms in the database</source>
@@ -27004,12 +27129,20 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>nur Antworten mit eigenem max-age werden aufbewahrt; Exponential sendet no-cache, daher werden seine Seiten nicht aufbewahrt</translation>
     </message>
     <message>
+        <source>every request is rendered</source>
+        <translation>jede Anfrage wird gerendert</translation>
+    </message>
+    <message>
         <source>disabled &amp;mdash; every request is rendered</source>
         <translation>deaktiviert &amp;mdash; jede Anfrage wird gerendert</translation>
     </message>
     <message>
         <source>Hits</source>
         <translation>Treffer</translation>
+    </message>
+    <message>
+        <source>since the server started</source>
+        <translation>seit dem Start des Servers</translation>
     </message>
     <message>
         <source>%hits hits, %misses misses, %rate since the server started</source>
@@ -27036,6 +27169,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>verfügbar, aber für den Antwort-Cache ausgeschaltet</translation>
     </message>
     <message>
+        <source>pages</source>
+        <translation>Seiten</translation>
+    </message>
+    <message>
+        <source>entries up to</source>
+        <translation>Einträge bis zu</translation>
+    </message>
+    <message>
+        <source>segment</source>
+        <translation>Speichersegment</translation>
+    </message>
+    <message>
+        <source>free</source>
+        <translation>frei</translation>
+    </message>
+    <message>
         <source>%pages pages, %size (entries up to %max_size; segment %segment, %free free)</source>
         <translation>%pages Seiten, %size (Einträge bis %max_size; Segment %segment, %free frei)</translation>
     </message>
@@ -27046,6 +27195,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>the directory does not exist yet or cannot be read</source>
         <translation>das Verzeichnis existiert noch nicht oder kann nicht gelesen werden</translation>
+    </message>
+    <message>
+        <source>at least</source>
+        <translation>mindestens</translation>
+    </message>
+    <message>
+        <source>directories</source>
+        <translation>Verzeichnisse</translation>
     </message>
     <message>
         <source>at least %files files, %size</source>
@@ -27310,6 +27467,22 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Individual files on disk</source>
         <translation>Einzelne Dateien auf der Festplatte</translation>
+    </message>
+    <message>
+        <source>the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set</source>
+        <translation>das Archiv unten wird nicht verwendet, weil die Umgebungsvariable EXP_ENGINE_PHAR nicht gesetzt ist</translation>
+    </message>
+    <message>
+        <source>Served by</source>
+        <translation>Ausgeliefert von</translation>
+    </message>
+    <message>
+        <source>To run from the files on disk again</source>
+        <translation>Um wieder von den Dateien auf der Festplatte zu laufen</translation>
+    </message>
+    <message>
+        <source>To run from the archive</source>
+        <translation>Um aus dem Archiv zu laufen</translation>
     </message>
     <message>
         <source>%size, built %built</source>
@@ -28483,7 +28656,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation type="obsolete">Gebe einen Array mit dem Tempalteoperatornamen zurück.</translation>
+        <translation>\return ein Array mit dem Namen des Template-Operators.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
@@ -30487,6 +30660,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Alle schließen</translation>
     </message>
     <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
+    </message>
+    <message>
         <source>%lines lines, %bytes bytes</source>
         <translation>%lines Zeilen, %bytes Bytes</translation>
     </message>
@@ -30690,6 +30871,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Der Webserver kann nicht in extension/ schreiben, daher kann diese Seite Ihnen nur ein Archiv übergeben.</translation>
     </message>
     <message>
+        <source>methods</source>
+        <translation>Methoden</translation>
+    </message>
+    <message>
         <source>%methods methods</source>
         <translation>%methods Methoden</translation>
     </message>
@@ -30816,6 +31001,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Close all</source>
         <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -31349,6 +31542,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Verzeichnisse</translation>
     </message>
     <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
         <source>%lines lines</source>
         <translation>%lines Zeilen</translation>
     </message>
@@ -31379,6 +31576,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Close all</source>
         <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -31626,6 +31827,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Close all</source>
         <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -32923,6 +33132,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>%count gefunden</translation>
     </message>
     <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
         <source>%lines lines</source>
         <translation>%lines Zeilen</translation>
     </message>
@@ -33025,6 +33238,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Close all</source>
         <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -33318,6 +33535,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Alle schließen</translation>
     </message>
     <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
+    </message>
+    <message>
         <source>%lines lines, %bytes bytes</source>
         <translation>%lines Zeilen, %bytes Bytes</translation>
     </message>
@@ -33607,6 +33832,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Close all</source>
         <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -34263,6 +34496,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Alle schließen</translation>
     </message>
     <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
+    </message>
+    <message>
         <source>%lines lines, %bytes bytes</source>
         <translation>%lines Zeilen, %bytes Bytes</translation>
     </message>
@@ -34678,6 +34919,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Funktionen haben einen Rumpf</translation>
     </message>
     <message>
+        <source>{myfunction}...{/myfunction}, with the body handed over unprocessed to draw none, one or many times. This is how section and foreach work.</source>
+        <translation>{myfunction}...{/myfunction}, wobei der Inhalt unverarbeitet übergeben wird, um ihn keinmal, einmal oder mehrmals auszugeben. So funktionieren section und foreach.</translation>
+    </message>
+    <message>
         <source>%open...%close, with the body handed over unprocessed to draw none, one or many times. This is how section and foreach work.</source>
         <translation>%open...%close, wobei der Inhalt unverarbeitet übergeben wird, um ihn keinmal, einmal oder mehrmals auszugeben. So arbeiten section und foreach.</translation>
     </message>
@@ -34768,6 +35013,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Close all</source>
         <translation>Alle schließen</translation>
+    </message>
+    <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -35212,6 +35465,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <translation>Alle schließen</translation>
     </message>
     <message>
+        <source>lines</source>
+        <translation>Zeilen</translation>
+    </message>
+    <message>
+        <source>bytes</source>
+        <translation>Bytes</translation>
+    </message>
+    <message>
         <source>%lines lines, %bytes bytes</source>
         <translation>%lines Zeilen, %bytes Bytes</translation>
     </message>
@@ -35432,7 +35693,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Sessions</source>
-        <translation type="obsolete">Sitzungen</translation>
+        <translation>Sitzungen</translation>
     </message>
     <message>
         <source>Total number of sessions</source>
@@ -51057,7 +51318,7 @@ Falls Sie das machen, werden die Unterelemente ebenfalls entfernt.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove these items?</source>
-        <translation type="obsolete">Sind Sie sicher, dass Sie diese Objekte entfernen wollen?</translation>
+        <translation>Sind Sie sicher, dass Sie diese Elemente entfernen wollen?</translation>
     </message>
     <message>
         <source>%nodename and its %childcount children. %additionalwarning</source>
@@ -53712,7 +53973,7 @@ By using %datatypename you can ...</translation>
     <message>
         <source>Extensions</source>
         <comment>Exponential extensions</comment>
-        <translation type="obsolete">Erweiterungen</translation>
+        <translation>Erweiterungen</translation>
     </message>
     <message>
         <source>Version</source>
@@ -54404,6 +54665,14 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     <message>
         <source>What is actually on this installation, read off disk on every request.</source>
         <translation>Was tatsächlich auf dieser Installation vorhanden ist, bei jeder Anfrage von der Festplatte gelesen.</translation>
+    </message>
+    <message>
+        <source>extension points found</source>
+        <translation>gefundene Erweiterungspunkte</translation>
+    </message>
+    <message>
+        <source>ini files read</source>
+        <translation>gelesene INI-Dateien</translation>
     </message>
     <message>
         <source>%total extension points found, %ini ini files read.</source>
@@ -56526,7 +56795,7 @@ This functionality is also available at a later time from the Administration Int
     </message>
     <message>
         <source>Notice: The out of the box front-end site often relies on data within a package. This is why it is strongly suggested to map the package language to your primary language, otherwise you&apos;ll need to adjust the configuration and template files to get it working.</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinweis: Die mitgelieferte Website greift oft auf Daten aus einem Paket zurück. Deshalb wird dringend empfohlen, die Sprache des Pakets Ihrer Hauptsprache zuzuordnen; andernfalls müssen Sie die Konfiguration und die Template-Dateien anpassen, damit sie funktioniert.</translation>
     </message>
     <message>
         <source>Open source software is nothing without a vibrant community!</source>
@@ -56544,7 +56813,17 @@ How do you access it?&lt;/p&gt;
     &lt;a href=&quot;http://share.ez.no/events&quot;&gt;events&lt;/a&gt;, &lt;a href=&quot;http://share.ez.no/members-partners/find-a-partner&quot;&gt;partners&lt;/a&gt;...&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
 &lt;p&gt;We<byte value="x19"/>re looking forward to seeing what you share with the Community!&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Wenn Sie Wissen teilen, Tipps mit Entwicklern austauschen oder einfach Verbesserungstricks finden möchten, ist die Exponential Community der richtige Ort.&lt;/p&gt;
+
+&lt;p&gt;
+Wie gelangen Sie dorthin?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gehen Sie auf &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;Exponential Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Klicken Sie auf Registrieren (oben auf der Seite) und legen Sie Ihr Profil an&lt;/li&gt;
+&lt;li&gt;Hier finden Sie die &lt;a href=&quot;http://share.ez.no/blogs&quot;&gt;Blogbeiträge&lt;/a&gt;,
+    &lt;a href=&quot;http://share.ez.no/events&quot;&gt;Veranstaltungen&lt;/a&gt;, &lt;a href=&quot;http://share.ez.no/members-partners/find-a-partner&quot;&gt;Partner&lt;/a&gt;...&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Wir freuen uns darauf, zu sehen, was Sie mit der Community teilen!&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Exponential Platform</source>
@@ -56556,7 +56835,7 @@ How do you access it?&lt;/p&gt;
     </message>
     <message>
         <source>Exponential 5 platform</source>
-        <translation type="unfinished"></translation>
+        <translation>Exponential-5-Plattform</translation>
     </message>
     <message>
         <source>Installation &amp; configuration</source>
@@ -61018,7 +61297,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Expiry cache</source>
-        <translation type="obsolete">Ablaufzeit-Cache</translation>
+        <translation>Ablauf-Cache</translation>
     </message>
     <message>
         <source>Class identifier cache</source>
@@ -62185,6 +62464,31 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <translation>Ungültige Eingabe.</translation>
     </message>
     <message>
+        <source>Aquarius</source>
+        <translation>Wassermann</translation>
+    </message>
+    <message>
+        <source>Aries</source>
+        <translation>Widder</translation>
+    </message>
+    <message>
+        <source>Birthday</source>
+        <comment>Datatype name</comment>
+        <translation>Geburtstag</translation>
+    </message>
+    <message>
+        <source>Cancer</source>
+        <translation>Krebs</translation>
+    </message>
+    <message>
+        <source>Canonical url must use https protocol.</source>
+        <translation>Die kanonische URL muss das https-Protokoll verwenden.</translation>
+    </message>
+    <message>
+        <source>Capricorn</source>
+        <translation>Steinbock</translation>
+    </message>
+    <message>
         <source>Creditcard number is not a number</source>
         <translation>Die Kreditkartennummer ist keine Zahl.</translation>
     </message>
@@ -62193,17 +62497,49 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
         <translation>Die Beschreibung sollte kürzer als 155 Zeichen sein.</translation>
     </message>
     <message>
+        <source>Gemini</source>
+        <translation>Zwillinge</translation>
+    </message>
+    <message>
+        <source>Leo</source>
+        <translation>Löwe</translation>
+    </message>
+    <message>
+        <source>Libra</source>
+        <translation>Waage</translation>
+    </message>
+    <message>
         <source>Name on creditcard not given</source>
         <translation>Der Name auf der Kreditkarte fehlt.</translation>
+    </message>
+    <message>
+        <source>Pisces</source>
+        <translation>Fische</translation>
+    </message>
+    <message>
+        <source>Please enter a correct date.</source>
+        <translation>Bitte geben Sie ein korrektes Datum ein.</translation>
     </message>
     <message>
         <source>Please enter the correct CVV2 code.</source>
         <translation>Bitte geben Sie den richtigen CVV2-Code ein.</translation>
     </message>
     <message>
+        <source>Sagittarius</source>
+        <translation>Schütze</translation>
+    </message>
+    <message>
+        <source>Scorpio</source>
+        <translation>Skorpion</translation>
+    </message>
+    <message>
         <source>Syndicate</source>
         <comment>Datatype name</comment>
         <translation>Syndizierung</translation>
+    </message>
+    <message>
+        <source>Taurus</source>
+        <translation>Stier</translation>
     </message>
     <message>
         <source>The creditcard was not accepted.
@@ -62216,6 +62552,10 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
                 Please contact the site administrator and inform them of
                 this error. Please do not try to resubmit payment.</source>
         <translation>Bei dieser Transaktion konnte die Verwendung einer sicheren Transaktion nicht überprüft werden (MD5-Hash fehlgeschlagen). Bitte wenden Sie sich an den Administrator der Website und informieren Sie ihn über diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</translation>
+    </message>
+    <message>
+        <source>Virgio</source>
+        <translation>Jungfrau</translation>
     </message>
     <message>
         <source>Your creditcard is expired.</source>
@@ -63977,6 +64317,318 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Select all</source>
         <translation>Alle auswählen</translation>
     </message>
+    <message>
+        <source>File missing</source>
+        <translation>Datei fehlt</translation>
+    </message>
+    <message>
+        <source>Alias missing</source>
+        <translation>Variante fehlt</translation>
+    </message>
+    <message>
+        <source>Alias out of date</source>
+        <translation>Variante veraltet</translation>
+    </message>
+    <message>
+        <source>Alias never made</source>
+        <translation>Variante nie erstellt</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>fehlt</translation>
+    </message>
+    <message>
+        <source>out of date</source>
+        <translation>veraltet</translation>
+    </message>
+    <message>
+        <source>never made</source>
+        <translation>nie erstellt</translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation>Neu erstellen</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Re-upload</source>
+        <translation>Neu hochladen</translation>
+    </message>
+    <message>
+        <source>Remove reference</source>
+        <translation>Verweis entfernen</translation>
+    </message>
+    <message>
+        <source>Mark for review</source>
+        <translation>Zur Prüfung markieren</translation>
+    </message>
+    <message>
+        <source>Version %version</source>
+        <translation>Version %version</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Entwurf</translation>
+    </message>
+    <message>
+        <source>File: %time</source>
+        <translation>Datei: %time</translation>
+    </message>
+    <message>
+        <source>Marked for review</source>
+        <translation>Zur Prüfung markiert</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases from the original</source>
+        <translation>Bildvarianten aus dem Original neu erstellen</translation>
+    </message>
+    <message>
+        <source>Restore from another version</source>
+        <translation>Aus einer anderen Version wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Re-upload or replace the file</source>
+        <translation>Datei neu hochladen oder ersetzen</translation>
+    </message>
+    <message>
+        <source>Remove the dead reference</source>
+        <translation>Toten Verweis entfernen</translation>
+    </message>
+    <message>
+        <source>Missing files in %dir</source>
+        <translation>Fehlende Dateien in %dir</translation>
+    </message>
+    <message>
+        <source>Images, files and media whose file is not in the storage, in the published version and in drafts, and images whose aliases are missing or were made with other settings.</source>
+        <translation>Bilder, Dateien und Medien, deren Datei nicht im Speicher liegt, in der veröffentlichten Version und in Entwürfen, und Bilder, deren Varianten fehlen oder mit anderen Einstellungen erstellt wurden.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files or your access changed after the confirmation. Choose the rows again.</source>
+        <translation>Nichts wurde geändert: Die Dateien oder Ihre Rechte haben sich nach der Bestätigung geändert. Wählen Sie die Zeilen erneut.</translation>
+    </message>
+    <message>
+        <source>%count field versions done.</source>
+        <translation>%count Feldversionen erledigt.</translation>
+    </message>
+    <message>
+        <source>%count could not be done.</source>
+        <translation>%count konnten nicht erledigt werden.</translation>
+    </message>
+    <message>
+        <source>No missing file and no alias problem found.</source>
+        <translation>Keine fehlende Datei und kein Problem mit Bildvarianten gefunden.</translation>
+    </message>
+    <message>
+        <source>Nothing found among these objects. Go on with the next page.</source>
+        <translation>Unter diesen Objekten wurde nichts gefunden. Fahren Sie mit der nächsten Seite fort.</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Expected path</source>
+        <translation>Erwarteter Pfad</translation>
+    </message>
+    <message>
+        <source>Missing files from the start</source>
+        <translation>Fehlende Dateien von vorn</translation>
+    </message>
+    <message>
+        <source>Next page of missing files</source>
+        <translation>Nächste Seite fehlender Dateien</translation>
+    </message>
+    <message>
+        <source>With the ticked rows</source>
+        <translation>Mit den markierten Zeilen</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Vorschau</translation>
+    </message>
+    <message>
+        <source>The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.</source>
+        <translation>Die nächste Seite zeigt, was mit jeder Zeile geschieht, und bittet um Bestätigung. Höchstens %count Zeilen auf einmal; sie werden in Stapeln erledigt.</translation>
+    </message>
+    <message>
+        <source>Published version</source>
+        <translation>Veröffentlichte Version</translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation>Entwürfe</translation>
+    </message>
+    <message>
+        <source>Missing files: problems</source>
+        <translation>Fehlende Dateien: Probleme</translation>
+    </message>
+    <message>
+        <source>Missing files: versions</source>
+        <translation>Fehlende Dateien: Versionen</translation>
+    </message>
+    <message>
+        <source>You may not edit this object.</source>
+        <translation>Sie dürfen dieses Objekt nicht bearbeiten.</translation>
+    </message>
+    <message>
+        <source>Nothing is wrong with it any more.</source>
+        <translation>Damit ist nichts mehr falsch.</translation>
+    </message>
+    <message>
+        <source>The original file is missing: restore or upload it first.</source>
+        <translation>Die Originaldatei fehlt: Stellen Sie sie zuerst wieder her oder laden Sie sie hoch.</translation>
+    </message>
+    <message>
+        <source>This kind of field has no image aliases.</source>
+        <translation>Diese Art von Feld hat keine Bildvarianten.</translation>
+    </message>
+    <message>
+        <source>No other version of this field still has its file.</source>
+        <translation>Keine andere Version dieses Feldes hat ihre Datei noch.</translation>
+    </message>
+    <message>
+        <source>Its file is not missing.</source>
+        <translation>Seine Datei fehlt nicht.</translation>
+    </message>
+    <message>
+        <source>No file was given, or the file to copy is gone.</source>
+        <translation>Es wurde keine Datei angegeben, oder die zu kopierende Datei ist verschwunden.</translation>
+    </message>
+    <message>
+        <source>The file must have the same extension as the expected path, and an image must be an image.</source>
+        <translation>Die Datei muss dieselbe Endung wie der erwartete Pfad haben, und ein Bild muss ein Bild sein.</translation>
+    </message>
+    <message>
+        <source>The file is too large.</source>
+        <translation>Die Datei ist zu groß.</translation>
+    </message>
+    <message>
+        <source>A file is at the expected path now; it was left alone.</source>
+        <translation>Am erwarteten Pfad liegt jetzt eine Datei; sie wurde nicht angetastet.</translation>
+    </message>
+    <message>
+        <source>The file could not be written to the storage.</source>
+        <translation>Die Datei konnte nicht in den Speicher geschrieben werden.</translation>
+    </message>
+    <message>
+        <source>It could not be done. The debug output says why.</source>
+        <translation>Es konnte nicht erledigt werden. Die Debug-Ausgabe nennt den Grund.</translation>
+    </message>
+    <message>
+        <source>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</source>
+        <translation>Nur die ersten %count Objekte wurden geprüft. Wählen Sie einen kleineren Teilbaum, um den Rest zu sehen.</translation>
+    </message>
+    <message>
+        <source>Tick at least one problem and one version.</source>
+        <translation>Markieren Sie mindestens ein Problem und eine Version.</translation>
+    </message>
+    <message>
+        <source>Preview for all %count results</source>
+        <translation>Vorschau für alle %count Ergebnisse</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases</source>
+        <translation>Bildvarianten neu erstellen</translation>
+    </message>
+    <message>
+        <source>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</source>
+        <translation>Die Varianten jedes Bildes werden aus seinem Original neu erstellt, mit den jetzigen Einstellungen der image.ini. Das Original wird nicht geändert.</translation>
+    </message>
+    <message>
+        <source>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</source>
+        <translation>Die Datei einer anderen Version desselben Feldes, die sie noch hat, wird an den erwarteten Pfad kopiert. Nichts wird überschrieben; ein Bild erhält danach seine Varianten neu.</translation>
+    </message>
+    <message>
+        <source>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</source>
+        <translation>Wählen Sie für jede Feldversion eine Datei. Sie wird an den erwarteten Pfad gelegt und muss dieselbe Endung haben; ein Bild muss ein Bild sein. Nichts wird überschrieben.</translation>
+    </message>
+    <message>
+        <source>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</source>
+        <translation>Das Feld wird in dieser Version geleert: Es nennt die fehlende Datei nicht mehr. Keine Datei wird gelöscht. Ein Pflichtfeld muss beim nächsten Bearbeiten wieder gefüllt werden.</translation>
+    </message>
+    <message>
+        <source>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</source>
+        <translation>Jede Feldversion wird in der Liste zur Prüfung markiert, mit Ihrem Namen und der Zeit. Sonst ändert sich nichts.</translation>
+    </message>
+    <message>
+        <source>Resolve missing files</source>
+        <translation>Fehlende Dateien beheben</translation>
+    </message>
+    <message>
+        <source>No row was ticked or no action chosen. Tick the rows first.</source>
+        <translation>Keine Zeile markiert oder keine Aktion gewählt. Markieren Sie zuerst die Zeilen.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows are taken; do the others afterwards.</source>
+        <translation>Nur die ersten %count Zeilen werden übernommen; erledigen Sie die übrigen danach.</translation>
+    </message>
+    <message>
+        <source>%count field versions, done %batch at a time.</source>
+        <translation>%count Feldversionen, jeweils %batch auf einmal.</translation>
+    </message>
+    <message>
+        <source>None of the chosen rows can be resolved this way.</source>
+        <translation>Keine der gewählten Zeilen kann auf diese Weise behoben werden.</translation>
+    </message>
+    <message>
+        <source>Field %id</source>
+        <translation>Feld %id</translation>
+    </message>
+    <message>
+        <source>Copied from version %version</source>
+        <translation>Aus Version %version kopiert</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Aliases made again</source>
+        <translation>Varianten neu erstellt</translation>
+    </message>
+    <message>
+        <source>Reference removed</source>
+        <translation>Verweis entfernt</translation>
+    </message>
+    <message>
+        <source>Not done</source>
+        <translation>Nicht erledigt</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch by itself</source>
+        <translation>Automatisch mit dem nächsten Stapel fortfahren</translation>
+    </message>
+    <message>
+        <source>Confirm for %count field versions</source>
+        <translation>Für %count Feldversionen bestätigen</translation>
+    </message>
+    <message>
+        <source>%done of %total field versions done, %failed not done, %left to go.</source>
+        <translation>%done von %total Feldversionen erledigt, %failed nicht erledigt, %left ausstehend.</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch</source>
+        <translation>Mit dem nächsten Stapel fortfahren</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the missing files of the broken relations.</source>
+        <translation>Diese Seite nimmt nur das Formular der fehlenden Dateien bei den ungültigen Relationen an.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and choose the rows once more.</source>
+        <translation>Das Formular ist abgelaufen. Öffnen Sie die Liste erneut und wählen Sie die Zeilen noch einmal.</translation>
+    </message>
+    <message>
+        <source>Resolve</source>
+        <translation>Beheben</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -64589,6 +65241,16 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Audit</source>
         <comment>Navigation part</comment>
         <translation>Audit</translation>
+    </message>
+    <message>
+        <source>BC CIE Export</source>
+        <comment>Navigation part</comment>
+        <translation>BC-CIE-Export</translation>
+    </message>
+    <message>
+        <source>CJW Newsletter</source>
+        <comment>Navigation part</comment>
+        <translation>CJW-Newsletter</translation>
     </message>
     <message>
         <source>Syndication</source>
@@ -72127,6 +72789,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Registration link refused</source>
         <translation>Registrierungslink abgewiesen</translation>
     </message>
+    <message>
+        <source>Image aliases regenerate</source>
+        <translation>Bildvarianten neu erstellt</translation>
+    </message>
+    <message>
+        <source>Missing file restore</source>
+        <translation>Fehlende Datei wiederhergestellt</translation>
+    </message>
+    <message>
+        <source>Missing file replace</source>
+        <translation>Fehlende Datei ersetzt</translation>
+    </message>
+    <message>
+        <source>Missing file reference remove</source>
+        <translation>Verweis auf fehlende Datei entfernt</translation>
+    </message>
+    <message>
+        <source>Missing file review mark</source>
+        <translation>Fehlende Datei zur Prüfung markiert</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard</name>
@@ -75794,6 +76476,13 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Apply</source>
         <translation>Übernehmen</translation>
+    </message>
+</context>
+<context>
+    <name>design/adin/content/trash</name>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
     </message>
 </context>
 </TS>

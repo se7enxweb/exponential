@@ -385,7 +385,7 @@
                 {if first_set( $viewed.media, '' )|eq( 'svg' )}<p class="pvf-note">{'An SVG image may carry script, so it is shown as text here; Download gives the file.'|i18n( 'design/admin/package' )}</p>{/if}
                 <pre class="pvf-code" data-document-format="{first_set( $viewed.format, '' )|wash}">{$ContentsBrowser.viewed_content|wash}</pre>
                 {if and( is_set( $viewed.truncated ), $viewed.truncated )}<p class="pvf-note">{'Only the first megabyte is shown here; Download gives the whole file.'|i18n( 'design/admin/package' )}</p>{/if}
-                {if first_set( $viewed.as_error, '' )|ne( '' )}<p class="pvf-note">{'The document could not be shown in the other format: %error'|i18n( 'design/admin/package',, hash( '%error', $viewed.as_error ) )}</p>{/if}
+                {if first_set( $viewed.as_error, '' )|ne( '' )}<p class="pvf-note">{'The document could not be shown in the other format: %error'|i18n( 'design/admin/package',, hash( '%error', $viewed.as_error|wash ) )}</p>{/if}
             {/if}
             </div>
         </div>

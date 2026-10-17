@@ -2468,7 +2468,8 @@ class eZPackage
         $type = $root->getElementsByTagName( 'type' );
         if ( $type->length > 0 )
         {
-            $parameters['type'] = $type->item( 0 )->getAttribute( 'value' );
+            // trimmed like the version below: white space around the value is no part of the type
+            $parameters['type'] = trim( $type->item( 0 )->getAttribute( 'value' ) );
         }
 
         if ( $parameters['vendor'] )
@@ -2676,6 +2677,23 @@ class eZPackage
         {
             $versionNumber = $versionNode->getElementsByTagName( 'number' )->item( 0 )?->textContent ?? false;
             $versionRelease = $versionNode->getElementsByTagName( 'release' )->item( 0 )?->textContent ?? false;
+            // A hand-written package.xml may wrap the values in white space (<number>\n  1.0\n</number>). It is
+            // no part of the number, and the check below must not refuse such a package for it.
+            $versionNumber = $versionNumber === false ? false : trim( $versionNumber );
+            $versionRelease = $versionRelease === false ? false : trim( $versionRelease );
+        }
+        // admin4 review 15.10.2026: version, release and type went from package.xml into the package views
+        // unchecked (only the name passed isValidName()); a <number> carrying markup ran as script in
+        // package/view/files for every administrator who opened the imported package. Like a package without a
+        // name, a definition whose version, release or type is not a plain token is not read.
+        foreach ( array( 'version' => $versionNumber, 'release' => $versionRelease,
+                         'type' => $parameters['type'] ?? false ) as $field => $value )
+        {
+            if ( !self::isValidDefinitionToken( $value ) )
+            {
+                eZDebug::writeError( "A package definition with an invalid $field was not read", __METHOD__ );
+                return false;
+            }
         }
         // the release timestamp is a <timestamp> directly under the root (the packaging one is inside <packaging>)
         $releaseTimestampNode = $xpath->query( 'timestamp', $root )->item( 0 );
@@ -3649,13 +3667,28 @@ class eZPackage
     }
 
     /**
+     * Whether a version number, release number or type read from a package definition is a plain token:
+     * absent, empty, or up to 64 letters, digits and "._+-" (Semantic Versioning with build metadata, the
+     * older "1.0-1"/"3.4.0beta1"/"10-stable" forms, the type names). Anything else would reach the package
+     * views as markup.
+     *
+     * @param string|false|null $value
+     * @return bool
+     */
+    static function isValidDefinitionToken( $value )
+    {
+        if ( $value === false || $value === null || $value === '' )
+            return true;
+        return is_string( $value ) and preg_match( '/^[0-9A-Za-z._+-]{1,64}$/', $value ) === 1;
+    }
+
+    /**
      * Checks if a package name is valid
      *
      * @param string $packageName the package name
      * @param string $transformedPackageName the package name, transformed to be valid
      * @return boolean true if the package name is valid, false if not
      */
-
     static function isValidName( $packageName, &$transformedPackageName = null )
     {
         $trans = eZCharTransform::instance();

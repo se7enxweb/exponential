@@ -45,6 +45,13 @@ $ViewList['brokenrelations'] = array(
     'functions' => array( 'brokenrelations' ),
     'params' => array( 'NodeID' ) );
 
+// Resolving the missing files of the broken relations: POST only; first the preview, then the batches
+$ViewList['fixfiles'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'fixfiles.php',
+    'functions' => array( 'brokenrelations', 'fixfiles' ),
+    'params' => array() );
+
 // The start location of a check, chosen with the node picker: GET contentcheck/scope/<view>/<node id> opens it, its
 // POST comes back here and opens contentcheck/<view>/<chosen node id> (expContentCheckScope)
 $ViewList['scope'] = array(
@@ -75,6 +82,9 @@ $FunctionList['unreferenced'] = array();
 $FunctionList['trash'] = array();
 // The list of broken relations (read only); it shows only what content/read lets the user see
 $FunctionList['brokenrelations'] = array();
+// With brokenrelations: resolving missing files (regenerate the aliases, restore, re-upload, remove the reference,
+// mark for review); each object also needs content/edit (marking for review: content/read)
+$FunctionList['fixfiles'] = array();
 // The storage files: scanning the storage and the lists of orphan files and file problems
 $FunctionList['storage'] = array();
 // With storage: moving orphan files to the quarantine, restoring them, and deleting them from the quarantine

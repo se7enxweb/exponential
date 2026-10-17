@@ -212,6 +212,29 @@ identical to admin4's; the other templates of the classic admin design are uncha
 - **Extensions** that write inline scripts or handlers into admin pages (their own menu items, page scripts) are
   reported until they move to files and `data-*` attributes as described above.
 
+### Measured on an installation with many extensions (17 October 2026)
+
+A crawl of 45 administration pages per siteaccess (admin4l, admin4, Exponential UI's adminui), on Apache and on
+Velocity, signed in as an administrator, with the report-only policy of this release:
+
+| | before | after |
+|---|---|---|
+| inline scripts per page | 32-34 | 11-15 |
+| event handler attributes per page | 165-167 | 36-42 |
+| policy reports per page (admin4, admin4l) | 35 | 11-14 |
+
+No page broke and no script error was added (report-only blocks nothing). Every remaining finding comes from an
+installed extension or Exponential UI's own design, not from the kernel's templates; `CSP_ALL_EXTENSIONS=1` lists
+them per file. On that installation they were, by number of findings in the templates admin4 and admin4l render:
+cjw_newsletter (193), eztags (49), xrowextract (24, its export and import context menus), explayouts_ui_api (22),
+sevenx_authentication_2fa (14), ezodf (14, the OpenOffice menu entries), explayouts (12), ezgmaplocation, expai (8
+each), xrowmetadata, expchangeclass (7 each), syndication, recaptcha, bcwebsitestatistics (6 each), ezie,
+explayouts_ui, enhancedselection2 (5 each), ezwt, ezownerchange, ezautosave (4 each), ezstarrating (3), and one or two
+in sevenx_dse, git_manager, bccie, ezupdate, expui, expqueue, explayouts_content_browser_ui, enhancedezbinaryfile,
+cjw_tmv and cjw_themes_jumper. At run time the context menu entries of ezmultiupload and ezownerchange, the debug
+output and Exponential UI's head script (Ace and the jQuery UI fallback) add to them. Each of these is changed in its
+own repository before a siteaccess that uses it is set to `enforce`.
+
 ### Before enforcing on the administration
 
 - **Menu items of extensions.** An extension that adds context menu items with an inline script

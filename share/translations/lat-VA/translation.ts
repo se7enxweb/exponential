@@ -10575,6 +10575,10 @@
         <source>Upload files to this location.</source>
         <translation>Fasciculos in hunc locum imponere.</translation>
     </message>
+    <message>
+        <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
+        <translation>Res subiectae enumerari non possunt: Exponential UI (extensio expui) in hoc aditu situs activa aut onerata non est.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -14687,6 +14691,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Overview</source>
         <translation>Conspectus</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>Fasciculi repositorii</translation>
+    </message>
+    <message>
+        <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
+        <translation>Fasciculi in repositorio quibus nihil utitur, et fasciculi cum possessore aut modo falso.</translation>
     </message>
 </context>
 <context>
@@ -60011,6 +60023,26 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Registration link refused</source>
         <translation>Nexus inscriptionis recusatus</translation>
     </message>
+    <message>
+        <source>Image aliases regenerate</source>
+        <translation>Cognomina imaginum iterum generata</translation>
+    </message>
+    <message>
+        <source>Missing file restore</source>
+        <translation>Fasciculus deficiens restitutus</translation>
+    </message>
+    <message>
+        <source>Missing file replace</source>
+        <translation>Fasciculus deficiens substitutus</translation>
+    </message>
+    <message>
+        <source>Missing file reference remove</source>
+        <translation>Referentia ad fasciculum deficientem remota</translation>
+    </message>
+    <message>
+        <source>Missing file review mark</source>
+        <translation>Fasciculus deficiens ad recognitionem notatus</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -61138,6 +61170,782 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Change or remove the rule target.</source>
         <translation>Scopum normae muta aut remove.</translation>
+    </message>
+    <message>
+        <source>Start location (node id)</source>
+        <translation>Locus initii (ID nodi)</translation>
+    </message>
+    <message>
+        <source>Now: %path</source>
+        <translation>Nunc: %path</translation>
+    </message>
+    <message>
+        <source>1 is the whole tree. Your choice is remembered.</source>
+        <translation>1 est tota arbor. Electio tua memoria tenetur.</translation>
+    </message>
+    <message>
+        <source>Start locations</source>
+        <translation>Loca initii</translation>
+    </message>
+    <message>
+        <source>Choose with the node picker</source>
+        <translation>Per electorem nodorum eligere</translation>
+    </message>
+    <message>
+        <source>Wrong owner</source>
+        <translation>Possessor falsus</translation>
+    </message>
+    <message>
+        <source>Wrong mode</source>
+        <translation>Modus falsus</translation>
+    </message>
+    <message>
+        <source>Empty file</source>
+        <translation>Fasciculus vacuus</translation>
+    </message>
+    <message>
+        <source>Name differs in case</source>
+        <translation>Nomen litteris maiusculis differt</translation>
+    </message>
+    <message>
+        <source>Path differs from its parts</source>
+        <translation>Via a partibus suis differt</translation>
+    </message>
+    <message>
+        <source>In another type directory</source>
+        <translation>In alio directorio generis</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Via</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Aetas</translation>
+    </message>
+    <message>
+        <source>moved to the quarantine</source>
+        <translation>in custodiam segregatam moti sunt</translation>
+    </message>
+    <message>
+        <source>restored</source>
+        <translation>restituti sunt</translation>
+    </message>
+    <message>
+        <source>deleted from the quarantine</source>
+        <translation>ex custodia segregata deleti sunt</translation>
+    </message>
+    <message>
+        <source>given the expected owner and mode</source>
+        <translation>possessorem et modum exspectatos acceperunt</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>Fasciculi repositorii</translation>
+    </message>
+    <message>
+        <source>The files below %dir: those no content uses (orphan files), and the file-system problems of those it uses. A file counts as used when a version of any object, also an old one or one in the trash, names it, or when a field, a layout, a setting or a template names its path. Files younger than %days days are never orphans. Nothing is deleted from the storage: orphans go to a quarantine, from where they can be restored.</source>
+        <translation>Fasciculi sub %dir: ii quibus nulla contenta utuntur (fasciculi orbi), et vitia systematis fasciculorum eorum quibus utuntur. Fasciculus adhibitus habetur cum versio cuiuslibet rei, etiam vetus aut in corbe, eum nominat, aut cum campus, dispositio, optio aut formula viam eius nominat. Fasciculi minores quam %days dies numquam orbi sunt. Nihil ex repositorio deletur: orbi in custodiam segregatam eunt, unde restitui possunt.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) were %action.</source>
+        <translation>Fasciculi %count (%size) %action.</translation>
+    </message>
+    <message>
+        <source>%count could not be changed.</source>
+        <translation>Mutari non potuerunt: %count.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files changed after the confirmation. Tick them again.</source>
+        <translation>Nihil mutatum est: fasciculi post confirmationem mutati sunt. Eos iterum nota.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation>Nihil mutatum est.</translation>
+    </message>
+    <message>
+        <source>The files are kept by a cluster file handler: they are read from its table, owner and mode are not checked, and nothing can be moved or fixed here.</source>
+        <translation>Fasciculi a tractatore fasciculorum botri servantur: ex tabula eius leguntur, possessor et modus non inspiciuntur, nec quicquam hic moveri aut corrigi potest.</translation>
+    </message>
+    <message>
+        <source>Last scan</source>
+        <translation>Ultima perlustratio</translation>
+    </message>
+    <message>
+        <source>The storage has not been scanned yet.</source>
+        <translation>Repositorium nondum perlustratum est.</translation>
+    </message>
+    <message>
+        <source>A scan started at %time is not finished (%percent %).</source>
+        <translation>Perlustratio hora %time incepta nondum finita est (%percent %).</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progressus</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Finitum</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fasciculi</translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation>Adhibitum</translation>
+    </message>
+    <message>
+        <source>Orphan files</source>
+        <translation>Fasciculi orbi</translation>
+    </message>
+    <message>
+        <source>Too new to judge</source>
+        <translation>Recentior quam ut iudicetur</translation>
+    </message>
+    <message>
+        <source>Took</source>
+        <translation>Duratio</translation>
+    </message>
+    <message>
+        <source>%seconds s in %steps steps</source>
+        <translation>%seconds sec. in %steps gradibus</translation>
+    </message>
+    <message>
+        <source>Files were changed since this scan; the lists leave out what was moved or fixed.</source>
+        <translation>Fasciculi post hanc perlustrationem mutati sunt; indices omittunt quae mota aut correcta sunt.</translation>
+    </message>
+    <message>
+        <source>The reference index could not be read completely, so paths named only in rich text, layouts, settings or templates were not seen. Nothing is moved until it can be read.</source>
+        <translation>Index referentiarum non totus legi potuit, itaque viae solum in textu formato, dispositionibus, optionibus aut formulis nominatae visae non sunt. Nihil movetur donec legi potest.</translation>
+    </message>
+    <message>
+        <source>Continue the scan</source>
+        <translation>Perlustrationem continuare</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation>Denuo incipere</translation>
+    </message>
+    <message>
+        <source>Scan again</source>
+        <translation>Iterum perlustrare</translation>
+    </message>
+    <message>
+        <source>Scan the storage</source>
+        <translation>Repositorium perlustrare</translation>
+    </message>
+    <message>
+        <source>The scan runs in steps of a few seconds and can be continued later; on a large storage run ./console exp:content-check --storage.</source>
+        <translation>Perlustratio gradibus paucorum secundorum procedit et postea continuari potest; in magno repositorio exsequere ./console exp:content-check --storage.</translation>
+    </message>
+    <message>
+        <source>Lists</source>
+        <translation>Indices</translation>
+    </message>
+    <message>
+        <source>File problems</source>
+        <translation>Vitia fasciculorum</translation>
+    </message>
+    <message>
+        <source>Quarantine</source>
+        <translation>Custodia segregata</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Difficultates</translation>
+    </message>
+    <message>
+        <source>Orphan files belong to no content, so the start location does not apply to them: the whole storage is listed.</source>
+        <translation>Fasciculi orbi ad nulla contenta pertinent, itaque locus initii ad eos non pertinet: totum repositorium enumeratur.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) in %dir.</source>
+        <translation>Fasciculi %count (%size) in %dir.</translation>
+    </message>
+    <message>
+        <source>The scan keeps the first %count orphans; move them, then scan again for the others.</source>
+        <translation>Perlustratio primos %count orbos servat; eos move, deinde iterum perlustra ut ceteros invenias.</translation>
+    </message>
+    <message>
+        <source>Scan the storage to see this list.</source>
+        <translation>Repositorium perlustra ut hunc indicem videas.</translation>
+    </message>
+    <message>
+        <source>No orphan files.</source>
+        <translation>Nulli fasciculi orbi.</translation>
+    </message>
+    <message>
+        <source>No file problems below this node match the filter.</source>
+        <translation>Nulla vitia fasciculorum sub hoc nodo filtro congruunt.</translation>
+    </message>
+    <message>
+        <source>The quarantine is empty.</source>
+        <translation>Custodia segregata vacua est.</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>Difficultas</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>Adhibitum a</translation>
+    </message>
+    <message>
+        <source>Moved on</source>
+        <translation>Motum die</translation>
+    </message>
+    <message>
+        <source>Owner and mode</source>
+        <translation>Possessor et modus</translation>
+    </message>
+    <message>
+        <source>%days d</source>
+        <translation>%days d.</translation>
+    </message>
+    <message>
+        <source>Found: %path</source>
+        <translation>Inventum: %path</translation>
+    </message>
+    <message>
+        <source>Move ticked files to the quarantine</source>
+        <translation>Fasciculos notatos in custodiam segregatam movere</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of ticked files</source>
+        <translation>Possessorem et modum fasciculorum notatorum corrigere</translation>
+    </message>
+    <message>
+        <source>Restore ticked files</source>
+        <translation>Fasciculos notatos restituere</translation>
+    </message>
+    <message>
+        <source>Delete ticked files permanently</source>
+        <translation>Fasciculos notatos in perpetuum delere</translation>
+    </message>
+    <message>
+        <source>The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.</source>
+        <translation>Pagina sequens est experimentum siccum: ostendit quid cuique fasciculo eventurum sit nec quicquam mutat donec confirmas. Simul non plus quam %count fasciculi.</translation>
+    </message>
+    <message>
+        <source>Move to the quarantine</source>
+        <translation>In custodiam segregatam movere</translation>
+    </message>
+    <message>
+        <source>Restore from the quarantine</source>
+        <translation>Ex custodia segregata restituere</translation>
+    </message>
+    <message>
+        <source>Delete from the quarantine</source>
+        <translation>Ex custodia segregata delere</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode</source>
+        <translation>Possessorem et modum corrigere</translation>
+    </message>
+    <message>
+        <source>Moved to the quarantine</source>
+        <translation>In custodiam segregatam motum</translation>
+    </message>
+    <message>
+        <source>Moved back to the storage</source>
+        <translation>In repositorium reductum</translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation>In perpetuum deletum</translation>
+    </message>
+    <message>
+        <source>Owner and mode set</source>
+        <translation>Possessor et modus constituti</translation>
+    </message>
+    <message>
+        <source>The file is not there (any more).</source>
+        <translation>Fasciculus ibi non (iam) est.</translation>
+    </message>
+    <message>
+        <source>The file is not in a directory the check covers.</source>
+        <translation>Fasciculus in directorio quod inspectio complectitur non est.</translation>
+    </message>
+    <message>
+        <source>The file is a symbolic link.</source>
+        <translation>Fasciculus est nexus symbolicus.</translation>
+    </message>
+    <message>
+        <source>The path is in the ignored list.</source>
+        <translation>Via in indice neglectorum est.</translation>
+    </message>
+    <message>
+        <source>The file is too new to judge.</source>
+        <translation>Fasciculus recentior est quam ut iudicetur.</translation>
+    </message>
+    <message>
+        <source>Content uses the file now.</source>
+        <translation>Contenta nunc fasciculo utuntur.</translation>
+    </message>
+    <message>
+        <source>No content uses the file: it is an orphan, not a problem.</source>
+        <translation>Nulla contenta fasciculo utuntur: orbus est, non vitium.</translation>
+    </message>
+    <message>
+        <source>A file is already at the destination.</source>
+        <translation>Fasciculus iam in loco destinato est.</translation>
+    </message>
+    <message>
+        <source>The reference index cannot be read now.</source>
+        <translation>Index referentiarum nunc legi non potest.</translation>
+    </message>
+    <message>
+        <source>Files of a cluster file handler cannot be changed here.</source>
+        <translation>Fasciculi tractatoris fasciculorum botri hic mutari non possunt.</translation>
+    </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</source>
+        <translation>Solus administrator systematis possessorem mutare potest: exsequere ./console exp:content-check --fix-permissions ut root.</translation>
+    </message>
+    <message>
+        <source>This server process does not own the file, so it cannot change its mode.</source>
+        <translation>Hic processus servitri fasciculum non possidet, itaque modum eius mutare non potest.</translation>
+    </message>
+    <message>
+        <source>Owner and mode are already as expected.</source>
+        <translation>Possessor et modus iam sunt ut exspectatur.</translation>
+    </message>
+    <message>
+        <source>No file was ticked. Tick the files first.</source>
+        <translation>Nullus fasciculus notatus est. Prius fasciculos nota.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing has been changed yet.</source>
+        <translation>Experimentum siccum: nihil adhuc mutatum est.</translation>
+    </message>
+    <message>
+        <source>Only the first %count ticked files are taken; do the others afterwards.</source>
+        <translation>Tantum primi %count fasciculi notati sumuntur; ceteros postea tracta.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved to %dir, below the date of today, keeping their path. They can be restored from there.</source>
+        <translation>Fasciculi %count (%size) in %dir movebuntur, sub dato hodierno, via sua servata. Inde restitui possunt.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be deleted from the quarantine. This cannot be undone.</source>
+        <translation>Fasciculi %count (%size) ex custodia segregata delebuntur. Hoc revocari non potest.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved back to their place in the storage.</source>
+        <translation>Fasciculi %count (%size) in locum suum in repositorio reducentur.</translation>
+    </message>
+    <message>
+        <source>%count files will get the expected owner and mode; nothing else is changed.</source>
+        <translation>Fasciculi %count possessorem et modum exspectatos accipient; nihil aliud mutatur.</translation>
+    </message>
+    <message>
+        <source>None of the ticked files can be changed.</source>
+        <translation>Nullus ex fasciculis notatis mutari potest.</translation>
+    </message>
+    <message>
+        <source>To: %path</source>
+        <translation>Ad: %path</translation>
+    </message>
+    <message>
+        <source>Left as it is</source>
+        <translation>Ut est relictum</translation>
+    </message>
+    <message>
+        <source>I understand that these files are deleted permanently.</source>
+        <translation>Intellego hos fasciculos in perpetuum deleri.</translation>
+    </message>
+    <message>
+        <source>Confirm for %count files</source>
+        <translation>Pro fasciculis %count confirmare</translation>
+    </message>
+    <message>
+        <source>Scanning the storage</source>
+        <translation>Repositorium perlustratur</translation>
+    </message>
+    <message>
+        <source>%files files read so far (%size), %orphans of them orphans; %percent % done.</source>
+        <translation>Fasciculi adhuc lecti: %files (%size), ex eis orbi: %orphans; %percent % factum.</translation>
+    </message>
+    <message>
+        <source>Stop here</source>
+        <translation>Hic consistere</translation>
+    </message>
+    <message>
+        <source>The scan goes on by itself. Stop it at any time; it can be continued later.</source>
+        <translation>Perlustratio sua sponte procedit. Quovis tempore eam siste; postea continuari potest.</translation>
+    </message>
+    <message>
+        <source>This page only takes the forms of the storage files.</source>
+        <translation>Haec pagina solum formularia fasciculorum repositorii accipit.</translation>
+    </message>
+    <message>
+        <source>You may not do this with storage files.</source>
+        <translation>Tibi non licet hoc cum fasciculis repositorii facere.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and tick the files once more.</source>
+        <translation>Formularium exspiravit. Indicem iterum aperi et fasciculos denuo nota.</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmare</translation>
+    </message>
+    <message>
+        <source>Choose classes</source>
+        <translation>Classes eligere</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Omnes classes</translation>
+    </message>
+    <message>
+        <source>No class</source>
+        <translation>Nulla classis</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Omnia in hac pagina seligere</translation>
+    </message>
+    <message>
+        <source>Select none</source>
+        <translation>Nihil seligere</translation>
+    </message>
+    <message>
+        <source>%selected of %total selected</source>
+        <translation>Electa: %selected ex %total</translation>
+    </message>
+    <message>
+        <source>Move all %count results to the trash</source>
+        <translation>Omnes eventus (%count) in corbem movere</translation>
+    </message>
+    <message>
+        <source>Move all %count files to the quarantine</source>
+        <translation>Omnes fasciculos (%count) in custodiam segregatam movere</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of all %count results</source>
+        <translation>Possessorem et modum omnium eventuum (%count) corrigere</translation>
+    </message>
+    <message>
+        <source>Restore all %count files</source>
+        <translation>Omnes fasciculos (%count) restituere</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>Omnia seligere</translation>
+    </message>
+    <message>
+        <source>File missing</source>
+        <translation>Fasciculus deest</translation>
+    </message>
+    <message>
+        <source>Alias missing</source>
+        <translation>Cognomen deest</translation>
+    </message>
+    <message>
+        <source>Alias out of date</source>
+        <translation>Cognomen obsoletum</translation>
+    </message>
+    <message>
+        <source>Alias never made</source>
+        <translation>Cognomen numquam factum</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>deest</translation>
+    </message>
+    <message>
+        <source>out of date</source>
+        <translation>obsoletum</translation>
+    </message>
+    <message>
+        <source>never made</source>
+        <translation>numquam factum</translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation>Regenerare</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Restituere</translation>
+    </message>
+    <message>
+        <source>Re-upload</source>
+        <translation>Iterum imponere</translation>
+    </message>
+    <message>
+        <source>Remove reference</source>
+        <translation>Referentiam removere</translation>
+    </message>
+    <message>
+        <source>Mark for review</source>
+        <translation>Ad recognitionem notare</translation>
+    </message>
+    <message>
+        <source>Version %version</source>
+        <translation>Versio %version</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Adumbratio</translation>
+    </message>
+    <message>
+        <source>File: %time</source>
+        <translation>Fasciculus: %time</translation>
+    </message>
+    <message>
+        <source>Marked for review</source>
+        <translation>Ad recognitionem notatum</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases from the original</source>
+        <translation>Cognomina ex originali iterum generare</translation>
+    </message>
+    <message>
+        <source>Restore from another version</source>
+        <translation>Ex alia versione restituere</translation>
+    </message>
+    <message>
+        <source>Re-upload or replace the file</source>
+        <translation>Fasciculum iterum imponere aut substituere</translation>
+    </message>
+    <message>
+        <source>Remove the dead reference</source>
+        <translation>Referentiam mortuam removere</translation>
+    </message>
+    <message>
+        <source>Missing files in %dir</source>
+        <translation>Fasciculi deficientes in %dir</translation>
+    </message>
+    <message>
+        <source>Images, files and media whose file is not in the storage, in the published version and in drafts, and images whose aliases are missing or were made with other settings.</source>
+        <translation>Imagines, fasciculi et res mediales quarum fasciculus in repositorio non est, in versione publicata et in adumbrationibus, et imagines quarum cognomina desunt aut aliis optionibus facta sunt.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files or your access changed after the confirmation. Choose the rows again.</source>
+        <translation>Nihil mutatum est: fasciculi aut aditus tuus post confirmationem mutata sunt. Versus iterum elige.</translation>
+    </message>
+    <message>
+        <source>%count field versions done.</source>
+        <translation>Versiones camporum perfectae: %count.</translation>
+    </message>
+    <message>
+        <source>%count could not be done.</source>
+        <translation>Perfici non potuerunt: %count.</translation>
+    </message>
+    <message>
+        <source>No missing file and no alias problem found.</source>
+        <translation>Nullus fasciculus deficiens nec ullum vitium cognominum inventum est.</translation>
+    </message>
+    <message>
+        <source>Nothing found among these objects. Go on with the next page.</source>
+        <translation>Inter has res nihil inventum est. Ad paginam sequentem perge.</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Res</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
+    <message>
+        <source>Expected path</source>
+        <translation>Via exspectata</translation>
+    </message>
+    <message>
+        <source>Missing files from the start</source>
+        <translation>Fasciculi deficientes ab initio</translation>
+    </message>
+    <message>
+        <source>Next page of missing files</source>
+        <translation>Pagina sequens fasciculorum deficientium</translation>
+    </message>
+    <message>
+        <source>With the ticked rows</source>
+        <translation>Cum versibus notatis</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Praevisio</translation>
+    </message>
+    <message>
+        <source>The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.</source>
+        <translation>Pagina sequens ostendit quid cuique versui eventurum sit et te rogat ut confirmes. Simul non plus quam %count versus; per partes perficiuntur.</translation>
+    </message>
+    <message>
+        <source>Published version</source>
+        <translation>Versio publicata</translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation>Adumbrationes</translation>
+    </message>
+    <message>
+        <source>Missing files: problems</source>
+        <translation>Fasciculi deficientes: vitia</translation>
+    </message>
+    <message>
+        <source>Missing files: versions</source>
+        <translation>Fasciculi deficientes: versiones</translation>
+    </message>
+    <message>
+        <source>You may not edit this object.</source>
+        <translation>Tibi non licet hanc rem recensere.</translation>
+    </message>
+    <message>
+        <source>Nothing is wrong with it any more.</source>
+        <translation>Nihil iam in eo vitiosum est.</translation>
+    </message>
+    <message>
+        <source>The original file is missing: restore or upload it first.</source>
+        <translation>Fasciculus originalis deest: prius eum restitue aut impone.</translation>
+    </message>
+    <message>
+        <source>This kind of field has no image aliases.</source>
+        <translation>Hoc genus campi cognomina imaginum non habet.</translation>
+    </message>
+    <message>
+        <source>No other version of this field still has its file.</source>
+        <translation>Nulla alia versio huius campi fasciculum suum adhuc habet.</translation>
+    </message>
+    <message>
+        <source>Its file is not missing.</source>
+        <translation>Fasciculus eius non deest.</translation>
+    </message>
+    <message>
+        <source>No file was given, or the file to copy is gone.</source>
+        <translation>Nullus fasciculus datus est, aut fasciculus exscribendus abiit.</translation>
+    </message>
+    <message>
+        <source>The file must have the same extension as the expected path, and an image must be an image.</source>
+        <translation>Fasciculus eandem extensionem habere debet ac via exspectata, et imago imago esse debet.</translation>
+    </message>
+    <message>
+        <source>The file is too large.</source>
+        <translation>Fasciculus nimis magnus est.</translation>
+    </message>
+    <message>
+        <source>A file is at the expected path now; it was left alone.</source>
+        <translation>Fasciculus nunc in via exspectata est; intactus relictus est.</translation>
+    </message>
+    <message>
+        <source>The file could not be written to the storage.</source>
+        <translation>Fasciculus in repositorium scribi non potuit.</translation>
+    </message>
+    <message>
+        <source>It could not be done. The debug output says why.</source>
+        <translation>Fieri non potuit. Exitus emendationis causam dicit.</translation>
+    </message>
+    <message>
+        <source>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</source>
+        <translation>Tantum primae %count res inspectae sunt. Subarborem minorem elige ut reliquas videas.</translation>
+    </message>
+    <message>
+        <source>Tick at least one problem and one version.</source>
+        <translation>Saltem unum vitium et unam versionem nota.</translation>
+    </message>
+    <message>
+        <source>Preview for all %count results</source>
+        <translation>Praevisio omnium eventuum (%count)</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases</source>
+        <translation>Cognomina iterum generare</translation>
+    </message>
+    <message>
+        <source>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</source>
+        <translation>Cognomina cuiusque imaginis ex originali eius iterum fiunt, cum optionibus image.ini nunc valentibus. Originale non mutatur.</translation>
+    </message>
+    <message>
+        <source>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</source>
+        <translation>Fasciculus alius versionis eiusdem campi, quae eum adhuc habet, in viam exspectatam exscribitur. Nihil superscribitur; imago deinde cognomina sua iterum accipit.</translation>
+    </message>
+    <message>
+        <source>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</source>
+        <translation>Pro quaque versione campi fasciculum elige. In via exspectata ponitur et eandem extensionem habere debet; imago imago esse debet. Nihil superscribitur.</translation>
+    </message>
+    <message>
+        <source>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</source>
+        <translation>Campus in hac versione vacuefit: fasciculum deficientem iam non nominat. Nullus fasciculus deletur. Campus necessarius proxima recensione iterum implendus est.</translation>
+    </message>
+    <message>
+        <source>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</source>
+        <translation>Quaeque versio campi in indice ad recognitionem notatur, cum nomine tuo et tempore. Nihil aliud mutatur.</translation>
+    </message>
+    <message>
+        <source>Resolve missing files</source>
+        <translation>Fasciculos deficientes solvere</translation>
+    </message>
+    <message>
+        <source>No row was ticked or no action chosen. Tick the rows first.</source>
+        <translation>Nullus versus notatus est aut nulla actio electa. Prius versus nota.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows are taken; do the others afterwards.</source>
+        <translation>Tantum primi %count versus sumuntur; ceteros postea fac.</translation>
+    </message>
+    <message>
+        <source>%count field versions, done %batch at a time.</source>
+        <translation>Versiones camporum: %count, singulis vicibus %batch.</translation>
+    </message>
+    <message>
+        <source>None of the chosen rows can be resolved this way.</source>
+        <translation>Nullus ex versibus electis hoc modo solvi potest.</translation>
+    </message>
+    <message>
+        <source>Field %id</source>
+        <translation>Campus %id</translation>
+    </message>
+    <message>
+        <source>Copied from version %version</source>
+        <translation>Ex versione %version exscriptum</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fasciculus</translation>
+    </message>
+    <message>
+        <source>Aliases made again</source>
+        <translation>Cognomina iterum facta</translation>
+    </message>
+    <message>
+        <source>Reference removed</source>
+        <translation>Referentia remota</translation>
+    </message>
+    <message>
+        <source>Not done</source>
+        <translation>Non perfectum</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch by itself</source>
+        <translation>Sponte ad partem sequentem pergere</translation>
+    </message>
+    <message>
+        <source>Confirm for %count field versions</source>
+        <translation>Pro versionibus camporum %count confirmare</translation>
+    </message>
+    <message>
+        <source>%done of %total field versions done, %failed not done, %left to go.</source>
+        <translation>Versiones camporum perfectae: %done ex %total, non perfectae: %failed, reliquae: %left.</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch</source>
+        <translation>Ad partem sequentem pergere</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the missing files of the broken relations.</source>
+        <translation>Haec pagina solum formularium fasciculorum deficientium relationum fractarum accipit.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and choose the rows once more.</source>
+        <translation>Formularium exspiravit. Indicem iterum aperi et versus denuo elige.</translation>
+    </message>
+    <message>
+        <source>Resolve</source>
+        <translation>Solvere</translation>
     </message>
 </context>
 <context>
@@ -63363,6 +64171,18 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>the system (cronjob or command line)</source>
         <translation>systema (opus statutum aut linea mandatorum)</translation>
     </message>
+    <message>
+        <source>This job no longer exists or you may not see it. The status is not updated any more.</source>
+        <translation>Hoc opus iam non exstat aut tibi id videre non licet. Status non iam renovatur.</translation>
+    </message>
+    <message>
+        <source>You are no longer signed in. Sign in again and reload this page to follow the job.</source>
+        <translation>Iam non inivisti. Iterum ini et hanc paginam iterum onera ut opus sequaris.</translation>
+    </message>
+    <message>
+        <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation>Status ostendi non potuit. Paginam iterum onera ut opus sequaris.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -64703,6 +65523,278 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>%count err</source>
         <translation>%count errat.</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Servitrum</translation>
+    </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation>Versiones: PHP %php (%sapi), Exponential %exponential</translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation>OPc %pct %</translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation>Memoria OPcache: %used ex %size MB in usu, ratio inventionum %rate %, scripta %scripts, iterationes initii %restarts</translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation>APCu %pct %</translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation>Memoria APCu, omnibus situs in congerie PHP communis: %used ex %size MB in usu, lemmata %entries, ratio inventionum %rate %, expulsiones %expunges</translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation>Non praesto: APCu huic PHP oneratum aut activatum non est.</translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation>Expulsiones</translation>
+    </message>
+    <message>
+        <source>Rendering</source>
+        <translation>Redditio</translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation>Visio: inventa</translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation>Visio: nova</translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation>Visio: inactiva</translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation>Visio: ?</translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation>Promptuarium visionum contenti</translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation>Compilatae %count</translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation>Formulae in hac petitione compilatae: %compiled; exsecutiones formularum compilatarum: %executed</translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation>Ex promptuario lectum</translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation>Generatum et in promptuario servatum</translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation>Generatum nec in promptuario servatum</translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation>Fasciculus promptuarii adhibitus non est</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Non adhibitum</translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation>Clavis constructa est, nullus exitus notatus</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Controller</translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation>Nulla visio moduli exsecuta est.</translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation>Visio moduli</translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation>Classem inspicere</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Scriptum</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Pars navigationis</translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation>Ordo designationum (bases: %count)</translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation>Nulla visio contentorum in hac pagina exsecuta est.</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sec.</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Signum numeri (#)</translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation>Fasciculus promptuarii</translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation>Clavis promptuarii (partes: %count)</translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation>Additum aut mutatum ab auditore content/view/cachekeys</translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation>auditor</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>vacuum</translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation>Exsecutiones formularum compilatarum</translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation>In hac petitione compilatum</translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation>Formulae in hac petitione compilatae</translation>
+    </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation>SP %hits/%count</translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation>Segmenta promptuarii: %hits ex %count ex promptuario lecta, %generated ms ad cetera generanda (segmenta extrema)</translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation>Segmenta promptuarii</translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation>Nullum segmentum promptuarii in hac pagina exsecutum est.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation>%hits ex %count ex promptuario lecta; %lookup ms ad ea quaerenda, %generated ms ad cetera generanda (segmenta extrema; tempus versus segmenta intra eum continet).</translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation>Prima %shown enumerantur.</translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation>inventum</translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation>generatum</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>non inventum</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>Quaesitio</translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation>Generatio</translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation>Exspiratio</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Claves</translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation>claves</translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation>ignotum (codex proprius, aut formula antea compilata)</translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation>subarbor %node</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Inspicere</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>nodus %node</translation>
+    </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation>Formulae redditae</translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation>Formulae: %count</translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation>non compilata</translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation>Arbor formularum</translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation>Visiones modulorum quae pro hac petitione exsecutae sunt, ordine (pagina erroris aut redirectio unam addit), cum classe quae quamque visionem exsecuta est et scripto eius; infra eas aditus situs, pars navigationis et bases designationum eo ordine quo formulae quaeruntur.</translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation>Omnis formula quam haec petitio reddidit, ordine quo incepit, sub formula quae eam inclusit inserta. Sagitta fasciculum nominat quem substitutio elegit; aliter nomen indica ut fasciculum eius videas. Tempus omnia continet quae formula inclusit, non analysin aut compilationem ipsius formulae. Formulae visionis ex promptuario visionum lectae non redduntur nec enumerantur.</translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation>Utrum visio contentorum (content/view) ex fasciculo promptuarii sui lecta an generata sit, et cur. Clavis fasciculum decernit: duae petitiones easdem partes habentes eum communicant. Quaesitio est tempus ad fasciculum inveniendum et legendum, generatio tempus ad visionem reddendam.</translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation>Omne {cache-block} eo ordine quo quaesitum est. Inventum solum quaesitionem constat; segmentum generatum contenta sua reddit et pro petitione sequenti servat. Segmentum intra segmentum generatum tunc solum exsequitur, itaque numeri inter primam et secundam petitionem differunt.</translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
+        <translation>Optiones quae de promptuario et compilatione decernunt, et quot formulae ex promptuario compilato exsecutae aut nunc compilatae sint. Statim post purgationem promptuarii formularum quaeque formula semel compilatur.</translation>
     </message>
 </context>
 <context>
