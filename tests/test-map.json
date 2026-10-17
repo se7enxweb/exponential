@@ -1422,6 +1422,15 @@
     "kernel/private/classes/views/setup/templateoperator.php": [
       "tests/tests/design/AdminSetupWizardTemplatesTest.php"
     ],
+    "kernel/common/ezwordtoimageoperator.php": [
+      "tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php"
+    ],
+    "settings/icon.ini": [
+      "tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php"
+    ],
+    "kernel/classes/ezsiteaccess.php": [
+      "tests/tests/kernel/classes/eZSiteAccessGetIniAndFindPathTest.php"
+    ],
     "kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php": [
       "tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php",
       "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
