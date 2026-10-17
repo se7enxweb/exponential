@@ -222,7 +222,7 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
 
 ## Icons
 
-admin4 draws its icons with [Bootstrap Icons](https://icons.getbootstrap.com/) 1.13.1 (MIT license). The SVG files
+admin4 draws its icons with [Bootstrap Icons](https://icons.getbootstrap.com/) 1.13.2 (MIT license). The SVG files
 are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside them; nothing is loaded from a CDN.
 
 - **In templates:** `<span class="a4-icon a4-bi-pencil" aria-hidden="true"></span>`, the component `.a4-icon`
@@ -250,7 +250,7 @@ are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside th
 - The classic designs (`admin`, `admin3`) keep their images; `.a4-icon` and `.a4-icon-btn` are in their
   copy of `components.css` as well, for templates shared by every administration design.
 
-To add an icon: copy the SVG from the Bootstrap Icons 1.13.1 package unchanged into
+To add an icon: copy the SVG from the Bootstrap Icons 1.13.2 package unchanged into
 `share/icons/bootstrap-icons/svg/`, add `.a4-bi-<name>` to both copies of `components.css` (or name the file in the
 theme's `icon.ini`), and use it. `tests/tests/design/AdminIconsTest.php` fails for a file nothing names, a name with
 no file, a changed file, and a GIF icon, inline SVG or image button in an admin4 template.
@@ -380,7 +380,7 @@ translation file has the string in the menu's context.
 SVG; no inline style, no image, and a setting cannot put markup or an unknown class on the page. Every Bootstrap icon
 admin4 ships is listed (see [Icons](#icons)). An extension that needs another one ships it itself:
 
-1. the SVG, unchanged from Bootstrap Icons 1.13.1 (MIT), in the extension, e.g.
+1. the SVG, unchanged from Bootstrap Icons 1.13.2 (MIT), in the extension, e.g.
    `extension/myreports/design/admin4/images/icons/bar-chart.svg`;
 2. a mask rule in a stylesheet of the extension registered in `design.ini [StylesheetSettings] BackendCSSFileList[]`,
    with the path relative to that stylesheet:
@@ -874,10 +874,42 @@ template sets `confObj.priorityDrag`, so the other admin designs are unchanged.
   `.a4-toast-action` in `components.css`. Tests: `AdminSubitemsPriorityDragTest`,
   `ezjscServerFunctionsNodePriorityTest`.
 
+## The content edit form
+
+`content/edit` (also while translating), multi-edit and `user/register` draw each attribute through
+`design:content/edit_attribute.tpl`. In admin4 every attribute is a card (`div.block.a4-content-attr`): its edge shows
+where one datatype's controls end and the next begin, a rich text toolbar included, and its corner names the kind of
+input with an icon and a word (`.a4-content-attr-kind`, "Text", "Rich text", "Date", "Relation" ...). The word is a
+visual hint (`aria-hidden`); the control states its own kind to a screen reader. On a phone it stands above the name.
+
+- **Short inputs share a row:** two cards next to each other whose datatypes are in `CompactDatatypes[]` (a number, a
+  date, a checkbox ...) stand side by side from 64em on; a third one takes the row again. A translation keeps one card
+  per row, since the original stands beside each field.
+- **The fields at a glance:** from `FieldNavigationFrom` attributes on (6 by default, 0 turns it off) a row of links
+  above the form names every field with its kind's icon, a required one with its mark, a field with an error in the
+  error colour. A link to a field in a collapsed attribute group opens the group
+  (`javascript/page/content_edit_attribute.js`); the error summary's links do the same.
+- **Attribute groups** (`content.ini [ClassAttributeSettings] CategoryList`, the category of a class attribute) are a
+  heading line over their cards; collapsed, the line alone.
+
+The kinds are settings, `admininterface.ini [ContentEditAttributeSettings]`: `DatatypeKind[<datatype>]=<kind>` maps a
+datatype to a kind, `KindName[<kind>]` is its English word (translated in the context
+`design/admin/content/edit_attribute`), `KindIcon[<kind>]` a Bootstrap Icons name drawn as `.a4-bi-<name>`, and a
+datatype that is not mapped takes `DefaultKind` ("Other", the puzzle piece). The kernel's datatypes and those of the
+extensions `composer.json` requires are mapped. An extension with a datatype of its own adds
+`DatatypeKind[<its datatype>]` (and, for a kind of its own, `KindName[]`, `KindIcon[]` and the icon's class, see
+[Icons](#icons)) in its `settings/admininterface.ini.append.php`, and names a short input in `CompactDatatypes[]`.
+`tests/tests/design/AdminContentEditAttributeKindsTest.php` fails for a kernel datatype without a kind, a kind without
+a name or icon, an icon that is not shipped or listed, and a name missing from the German or English catalogue.
+
+Policies of a role (`role/view`, `role/edit`) and the role cards of `role/list` are striped like the data tables
+(`--a4-zebra`), so a long list reads row by row.
+
 ## Settings
 
 | File | Block | Key | Default | Scope |
 |---|---|---|---|---|
+| `settings/admininterface.ini` | `ContentEditAttributeSettings` | `DatatypeKind[]`, `KindName[]`, `KindIcon[]`, `DefaultKind`, `CompactDatatypes[]`, `FieldNavigationFrom` | the kernel's datatypes and those of the required extensions, `other`, 15 short datatypes, `6` (see [The content edit form](#the-content-edit-form)) | siteaccess |
 | `settings/design.ini` | `AdminDesignSettings` | `ShowCommunityLinks` | `disabled` | siteaccess |
 | `settings/design.ini` | `StylesheetSettings` | `AdminComponentCSSFileList[]` | `components.css` and the five `modules/*.css` | siteaccess |
 | `settings/menu.ini` | `MenuAccessSettings` | `CheckViewAccess` | `enabled` | siteaccess |

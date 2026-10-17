@@ -3411,6 +3411,122 @@
         <source>information collector</source>
         <translation>אוסף מידע</translation>
     </message>
+    <message>
+        <source>Fields of this form</source>
+        <translation>השדות של טופס זה</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>טקסט</translation>
+    </message>
+    <message>
+        <source>Rich text</source>
+        <translation>טקסט עשיר</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>מספר</translation>
+    </message>
+    <message>
+        <source>Yes/no</source>
+        <translation>כן/לא</translation>
+    </message>
+    <message>
+        <source>Choice</source>
+        <translation>בחירה</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>תאריך</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>שעה</translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <translation>קישור</translation>
+    </message>
+    <message>
+        <source>E-mail</source>
+        <translation>דוא"ל</translation>
+    </message>
+    <message>
+        <source>Relation</source>
+        <translation>קשר</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>תמונה</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>קובץ</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>מדיה</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>תגיות</translation>
+    </message>
+    <message>
+        <source>People</source>
+        <translation>אנשים</translation>
+    </message>
+    <message>
+        <source>User account</source>
+        <translation>חשבון משתמש</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>מיקום</translation>
+    </message>
+    <message>
+        <source>Rating</source>
+        <translation>דירוג</translation>
+    </message>
+    <message>
+        <source>Metadata</source>
+        <translation>מטא-נתונים</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>חנות</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>טבלה</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>הגדרה</translation>
+    </message>
+    <message>
+        <source>Package</source>
+        <translation>חבילה</translation>
+    </message>
+    <message>
+        <source>Notification</source>
+        <translation>התראה</translation>
+    </message>
+    <message>
+        <source>Security</source>
+        <translation>אבטחה</translation>
+    </message>
+    <message>
+        <source>Newsletter</source>
+        <translation>ידיעון</translation>
+    </message>
+    <message>
+        <source>Feed</source>
+        <translation>ערוץ עדכונים</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>אחר</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/edit_draft</name>
