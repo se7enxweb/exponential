@@ -66245,6 +66245,18 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Classic (server-rendered)</source>
         <translation>Classica (a servitro reddita)</translation>
     </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (vetustior)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Classica (vetustior)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Classica, a servitro reddita (vetustior)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/toolbar/uiswitch</name>
