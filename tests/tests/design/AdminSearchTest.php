@@ -14,6 +14,12 @@
  *  AS-07 - A list filter that searches only the page shown says so when the list has more pages
  *  AS-08 - Every new text is in the German and English translations
  *  AS-09 - A search result shows where it is
+ *  AS-11 - The search form keeps the section, the locations and the page size of the last search; an empty text
+ *          searches nothing
+ *  AS-12 - The search landmarks have names, the scope button opens a dialog, a result's checkbox names the item, the
+ *          location radios are a group, the class attribute label points at a field only when there is one
+ *  AS-13 - A page past the last one says that it has no matches and links to the first page, instead of the count
+ *          above an empty result list
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminSearchTest.php
  *
@@ -40,13 +46,13 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     public function testTheSearchFormIsALabelledSearchLandmark()
     {
         $tpl = self::read( 'design/admin4/templates/content/search.tpl' );
-        $this->assertStringContainsString( '<form action={\'/content/search/\'|ezurl} method="get" role="search">', $tpl );
+        $this->assertStringContainsString( '<form action={\'/content/search/\'|ezurl} method="get" role="search" aria-label=', $tpl );
         $this->assertStringContainsString( '<label for="Search">', $tpl );
         $this->assertStringContainsString( 'type="search" name="SearchText" id="Search"', $tpl );
         $this->assertStringNotContainsString( 'type="text" name="SearchText"', $tpl );
 
         $advanced = self::read( 'design/admin4/templates/content/advancedsearch.tpl' );
-        $this->assertStringContainsString( 'method="get" role="search">', $advanced );
+        $this->assertStringContainsString( 'method="get" role="search" aria-label=', $advanced );
     }
 
     /** AS-01 */
@@ -146,8 +152,10 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     public function testNewTextsAreTranslated()
     {
         $texts = array( 'design/admin/content/search' => array( 'Search for', 'The search text was too long and was shortened.', 'Type the words to search for.',
-                                                                 'The search could not be run. Try fewer or simpler words, or search again later.', '%count matches' ),
+                                                                 'The search could not be run. Try fewer or simpler words, or search again later.', '%count matches',
+                                                                 'There are no matches on this page.', 'Go to the first page' ),
                         'design/admin/navigator' => array( 'Pages' ),
+                        'design/admin/pagelayout' => array( 'Quick search', 'Where' ),
                         'design/admin/setup/rad' => array( '%shown of %count' ),
                         'design/admin/class/grouplist' => array( 'Only this page is searched: %from to %to of %count.' ),
                         'design/admin/class/classlist' => array( 'Only this page is searched: %from to %to of %count.' ),
@@ -176,6 +184,66 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     {
         $tpl = self::read( 'design/admin4/templates/content/searchresult.tpl' );
         $this->assertStringContainsString( '{foreach $SearchResult.item.path as $path_node}<bdi>{$path_node.name|wash}</bdi>{delimiter} / {/delimiter}{/foreach}', $tpl );
+    }
+
+    /** AS-11 */
+    public function testANewSearchKeepsWhereItSearches()
+    {
+        $tpl = self::read( 'design/admin4/templates/content/search.tpl' );
+        $this->assertStringContainsString( '<select id="ezcontent_search_section_id" name="SectionID">', $tpl );
+        $this->assertStringContainsString( '{if eq( $search_section.id, $search_section_id )} selected="selected"{/if}', $tpl );
+        $this->assertStringContainsString( '<input type="hidden" name="SubTreeArray[]" value="{$search_subtree_id|wash}" />', $tpl, 'more than one location' );
+        $this->assertStringContainsString( '<input type="hidden" name="SearchPageLimit" value="{$search_page_limit|wash}" />', $tpl );
+        $this->assertStringNotContainsString( "{set page_limit=10}\n    {set search=", $tpl, 'the page size follows SearchPageLimit' );
+        $this->assertStringContainsString( "{set page_limit=min( \$page_limit, ezini( 'SearchSettings', 'MaximumSearchLimit' ) )}", $tpl );
+        $this->assertStringContainsString( "concat( '&SearchPageLimit=',", $tpl );
+        $this->assertStringNotContainsString( "sort_by,array('modified',false())),\n", $tpl );
+        // an empty text searches nothing, even where the engine allows an empty search
+        $this->assertStringContainsString( "{if \$search_text|trim|ne( '' )}\n    {set search=fetch(content,search,", $tpl );
+
+        $advanced = self::read( 'design/admin4/templates/content/advancedsearch.tpl' );
+        $this->assertStringContainsString( '$search_sub_tree|count|gt(0)|choose(', $advanced );
+        $this->assertStringNotContainsString( '$search_sub_tree|gt(0)', $advanced );
+
+        // the header's section works without a location; only an edit page has no search
+        $header = self::read( 'design/admin4/templates/page_search.tpl' );
+        $this->assertStringContainsString( "<select name=\"SectionID\"{if eq( \$ui_context, 'edit' )} disabled=\"disabled\"{/if}>", $header );
+    }
+
+    /** AS-12 */
+    public function testTheSearchIsNamedForAssistiveTechnology()
+    {
+        $this->assertStringContainsString( "role=\"search\" aria-label=\"{'Search'|i18n( 'design/admin/content/search' )|wash}\">", self::read( 'design/admin4/templates/content/search.tpl' ) );
+        $this->assertStringContainsString( "role=\"search\" aria-label=\"{'Advanced search'|i18n( 'design/admin/content/search' )|wash}\">", self::read( 'design/admin4/templates/content/advancedsearch.tpl' ) );
+        $header = self::read( 'design/admin4/templates/page_search.tpl' );
+        $this->assertStringContainsString( "role=\"search\" aria-label=\"{'Quick search'|i18n( 'design/admin/pagelayout' )|wash}\">", $header );
+        $this->assertStringContainsString( 'aria-haspopup="dialog"', $header );
+        $this->assertStringContainsString( 'role="dialog"', $header );
+        $this->assertStringNotContainsString( 'aria-haspopup="true"', $header );
+
+        $result = self::read( 'design/admin4/templates/content/searchresult.tpl' );
+        $this->assertStringContainsString( "<input aria-label=\"{'Select this item for editing.'|i18n( 'design/admin/content/search' )|wash} {\$SearchResult.item.name|wash}\"", $result );
+
+        $tpl = self::read( 'design/admin4/templates/content/search.tpl' );
+        $this->assertMatchesRegularExpression( "#<fieldset class=\"block\">\\s*<legend>\\{'Where'\\|i18n\\( 'design/admin/pagelayout' \\)\\}</legend>\\s*<label><input type=\"radio\" name=\"SubTreeArray\"#", $tpl );
+
+        $advanced = self::read( 'design/admin4/templates/content/advancedsearch.tpl' );
+        $this->assertStringContainsString( '<label{if $search_contentclass_id|gt( 0 )} for="ezcontent_advancesearch_class_attribute_id"{/if}>', $advanced );
+    }
+    /** AS-13 */
+    public function testAPagePastTheLastLinksToTheFirstPage()
+    {
+        $tpl = self::read( 'design/admin4/templates/content/search.tpl' );
+        $this->assertSame( 1, preg_match( '#\{if \$search_count\}(.*?)\n\{/if\}\n\n</form>#s', $tpl, $m ), 'the result block' );
+        $block = $m[1];
+        // the result list only with results on this page
+        $this->assertMatchesRegularExpression( "#\{if \\\$search_result\}\n\{include name=Result uri='design:content/searchresult.tpl' search_result=\\\$search_result\}\n\{else\}#", $block );
+        $this->assertStringContainsString( "{'There are no matches on this page.'|i18n( 'design/admin/content/search' )} <a href={concat( '/content/search', \$search_page_suffix )|ezurl}>{'Go to the first page'|i18n( 'design/admin/content/search' )}</a>", $block );
+        // the first page is the search's address without (offset): the same words, locations, section and page size
+        $this->assertSame( 1, substr_count( $tpl, "{def \$search_page_suffix = concat( '?SearchText=', \$search_text|urlencode," ) );
+        $this->assertStringContainsString( 'page_uri_suffix=$search_page_suffix', $block );
+        $this->assertSame( 1, preg_match( '#^\{def \$search_page_suffix = .*$#m', $block, $def ) );
+        $this->assertStringNotContainsString( 'offset', $def[0] );
     }
 
     private static function xpathString( $text )

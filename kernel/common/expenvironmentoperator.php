@@ -81,7 +81,7 @@ class expEnvironmentOperator
             if ( $ini->hasVariable( 'AdminEnvironment', $name ) )
                 $settings[$name] = $ini->variable( 'AdminEnvironment', $name );
         }
-        $version = isset( $settings['ShowVersion'] ) && $settings['ShowVersion'] === 'enabled'
+        $version = self::keyword( $settings, 'ShowVersion' ) === 'enabled'
                    ? ExponentialSDK::version( true, false, false ) : '';
         return self::badge( $settings, eZINI::environment(), $version, function ( $text ) {
             return ezpI18n::tr( 'design/admin/pagelayout', $text );
@@ -138,10 +138,25 @@ class expEnvironmentOperator
         $badge['name'] = $name;
         $badge['short'] = $short;
         $badge['release'] = $release;
-        $badge['display'] = isset( $settings['BadgeDisplay'] ) && $settings['BadgeDisplay'] === 'always' ? 'always' : 'hover';
-        $badge['title'] = !isset( $settings['ShowInTitle'] ) || $settings['ShowInTitle'] !== 'disabled';
+        // the keywords read as Level does (case and spaces do not matter): BadgeDisplay=Always or ShowInTitle=Disabled
+        // were taken as the default before (admin4 review 15.10.2026)
+        $badge['display'] = self::keyword( $settings, 'BadgeDisplay' ) === 'always' ? 'always' : 'hover';
+        $badge['title'] = self::keyword( $settings, 'ShowInTitle' ) !== 'disabled';
         $badge['key'] = implode( '|', array( $level, $name, $short, $release, $badge['display'], $badge['title'] ? 1 : 0 ) );
         return $badge;
+    }
+
+    /**
+     * A keyword setting (BadgeDisplay, ShowInTitle, ShowVersion) trimmed and in lower case; an empty string when it
+     * is not set or not a scalar.
+     *
+     * @param array $settings
+     * @param string $name
+     * @return string
+     */
+    static function keyword( array $settings, $name )
+    {
+        return isset( $settings[$name] ) && is_scalar( $settings[$name] ) ? strtolower( trim( (string)$settings[$name] ) ) : '';
     }
 
     /// \privatesection

@@ -669,17 +669,38 @@ class expUserHygiene
                 $setting = eZUserSetting::fetch( $id );
                 $maxLogin = $setting ? (int)$setting->attribute( 'max_login' ) : 0;
                 $enabled = $action === 'enable' ? 1 : 0;
-                if ( eZOperationHandler::operationIsAvailable( 'user_setsettings' ) )
+                $viaHandler = eZOperationHandler::operationIsAvailable( 'user_setsettings' );
+                if ( $viaHandler )
                     $result = eZOperationHandler::execute( 'user', 'setsettings', array( 'user_id' => $id, 'is_enabled' => $enabled, 'max_login' => $maxLogin ) );
                 else
                     $result = eZUserOperationCollection::setSettings( $id, $enabled, $maxLogin );
                 eZContentObject::clearCache( array( $id ) );
-                return !is_array( $result ) || !isset( $result['status'] ) || $result['status'] !== false;
+                return self::settingsDone( $result, $viaHandler );
             case 'unlock':
                 eZUser::setFailedLoginAttempts( $id, 0, true );
                 return true;
         }
         return false;
+    }
+
+    /**
+     * Whether the setsettings operation changed the account. Through the operation handler its status is an
+     * eZModuleOperationInfo::STATUS_* number, and only STATUS_CONTINUE means done: a workflow that cancels or halts
+     * it leaves the account as it was (operation() of expUserDeactivation reads it the same way). Before (admin4 review 15.10.2026) anything
+     * but false counted as done, so "Deactivate and move" could move an account that stayed enabled and record it as
+     * disabled. eZUserOperationCollection::setSettings() returns status true or false.
+     *
+     * @param mixed $result what the operation returned
+     * @param bool $viaHandler whether it ran through eZOperationHandler
+     * @return bool
+     */
+    public static function settingsDone( $result, $viaHandler )
+    {
+        if ( !is_array( $result ) || !isset( $result['status'] ) )
+            return false;
+        if ( $viaHandler )
+            return (int)$result['status'] === eZModuleOperationInfo::STATUS_CONTINUE;
+        return $result['status'] === true;
     }
 
     /**

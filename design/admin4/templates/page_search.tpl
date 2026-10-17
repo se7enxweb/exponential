@@ -12,7 +12,7 @@
     {set $section_id = ezhttp( 'SectionID', 'get' )}
 {/if}
 <div class="searchblock" data-searchblock="1">
-<form action={'/content/search/'|ezurl} method="get" role="search">
+<form action={'/content/search/'|ezurl} method="get" role="search" aria-label="{'Quick search'|i18n( 'design/admin/pagelayout' )|wash}">
     {if $ui_context_edit}
         <div class="searchtextwrapper">
             <input id="searchtext{$box}" class="form-control searchtext disabled" name="SearchText" type="search" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" disabled="disabled" title="{$search_title|wash}" aria-label="{$search_title|wash}" placeholder="{'Search...'|i18n( 'design/admin/pagelayout' )}" />
@@ -59,7 +59,7 @@
             {/if}
         {/if}
         <div class="searchtextwrapper">
-            <button type="button" class="searchscope" id="searchscope{$box}" aria-haspopup="true" aria-expanded="false" aria-controls="searchscope-pane{$box}" title="{'Search scope'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search scope'|i18n( 'design/admin/pagelayout' )}</span></button>
+            <button type="button" class="searchscope" id="searchscope{$box}" aria-haspopup="dialog" aria-expanded="false" aria-controls="searchscope-pane{$box}" title="{'Search scope'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search scope'|i18n( 'design/admin/pagelayout' )}</span></button>
             <input id="searchtext{$box}" class="form-control searchtext" name="SearchText" type="search" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" title="{$search_title|wash}" placeholder="{if $box|eq( '' )}{'Search...'|i18n( 'design/admin/pagelayout' )|wash}{else}{$search_title|wash}{/if}" aria-label="{$search_title|wash}"{if $box|eq( '' )} aria-keyshortcuts="/" data-short-placeholder="1"{/if} />
         </div>
         <button id="searchbutton{$box}" class="searchbuttonfield" name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/pagelayout' )}" title="{'Search'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search'|i18n( 'design/admin/pagelayout' )}</span></button>
@@ -76,7 +76,8 @@
             </div>
             <div class="searchscope-body">
                 <label class="searchscope-section">{'Section'|i18n( 'design/admin/pagelayout' )}
-                <select name="SectionID"{if $disabled} disabled="disabled"{/if}>
+                {* a section narrows any search, with or without a location: only an edit page has no search *}
+                <select name="SectionID"{if eq( $ui_context, 'edit' )} disabled="disabled"{/if}>
                     <option value="-1">{'All'|i18n( 'design/admin/pagelayout' )}</option>
                     {if is_set( $search_sections )|not}{def $search_sections = fetch( 'section', 'list' )}{/if}
                     {foreach $search_sections as $section}

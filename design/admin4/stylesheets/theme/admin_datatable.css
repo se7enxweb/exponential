@@ -113,7 +113,7 @@ th.admin-dt-hidden, tr.admin-dt-odd .admin-dt-hidden, tr.admin-dt-even .admin-dt
 
 .admin-dt caption {
     color: var(--a4-ink);
-    font-size: 85%;
+    font-size: var(--a4-text-xs);   /* 85% was 11px */
     font-weight: normal;
     font-style: italic;
     line-height: 1;
@@ -484,93 +484,6 @@ a.admin-pg-first:hover,a.admin-pg-previous:hover,a.admin-pg-next:hover,a.admin-p
     margin-right: 1em;
 }
 
-/* Column icons */
-
-.crankfield, .crankfield-disabled {
-    height: 16px;
-    width: 16px;
-}
-
-.crankfield,
-.crankfield-disabled {
-    position: relative;
-}
-
-/* the row's menu: three dots, muted; the accent while its link is hovered or focused */
-.crankfield::before,
-.crankfield-disabled::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background-color: var(--a4-muted);
-    -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/three-dots-vertical.svg) no-repeat center / contain;
-    mask: url(../../../../share/icons/bootstrap-icons/svg/three-dots-vertical.svg) no-repeat center / contain;
-}
-
-a:hover > .crankfield::before,
-a:focus-visible > .crankfield::before {
-    background-color: var(--a4-accent-text);
-}
-
-.crankfield-disabled::before {
-    background-color: var(--a4-disabled);
-}
-
-.thumbfield {
-    height: 16px;
-    width: 16px;
-}
-
-.thumbview {
-    position: relative;
-    z-index: 0;
-}
-
-/* an image's preview: the image icon on the empty .thumbfield */
-.thumbview > .thumbfield {
-    position: relative;
-}
-
-.thumbview > .thumbfield::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background-color: var(--a4-muted);
-    -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/image.svg) no-repeat center / contain;
-    mask: url(../../../../share/icons/bootstrap-icons/svg/image.svg) no-repeat center / contain;
-}
-
-.thumbview:hover{
-    background-color: transparent;
-    z-index: var(--a4-z-hover-preview);
-}
-
-.thumbview span {
-    position: absolute;
-    background-color: var(--a4-surface);
-    padding: 5px;
-    left: -1000px;
-    border: 1px solid var(--a4-line-strong);
-    visibility: hidden;
-    color: var(--a4-ink);
-    text-decoration: none;
-}
-
-.thumbview:hover span {
-    visibility: visible;
-    top: 0;
-    left: 25px;
-}
-
-
-
-/* ---- the sub-items toolbar: its buttons and menus (#action-controls, #ezbtn-*, #ezopt-menu-*) ---- */
 .hide-scrollbars * {
     overflow: hidden;
 }
@@ -886,6 +799,14 @@ a:focus-visible > .crankfield::before {
     background-color: var(--a4-disabled);
 }
 
+/* the row menu's button is the 16px icon alone: an invisible ::after makes it a 24 x 24px target (WCAG 2.5.8) without
+   moving the icon; a click on it reaches the <a role="button"> around the field */
+.crankfield::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+}
+
 .thumbfield {
     height: 16px;
     width: 16px;
@@ -933,4 +854,20 @@ a:focus-visible > .crankfield::before {
     visibility: visible;
     top: 0;
     left: 25px;
+}
+
+/* Forced colours: the browser replaces background-color with Canvas, and these icons are masks drawn with it, so they
+   were Canvas on Canvas: the row menu's button was invisible. CanvasText (GrayText while disabled) keeps them. */
+@media (forced-colors: active) {
+    .crankfield::before,
+    .crankfield-disabled::before,
+    a:hover > .crankfield::before,
+    a:focus-visible > .crankfield::before,
+    .thumbview > .thumbfield::before {
+        forced-color-adjust: none;
+        background-color: CanvasText;
+    }
+    .crankfield-disabled::before {
+        background-color: GrayText;
+    }
 }

@@ -19,7 +19,7 @@
 {section var=SearchResult loop=$search_result sequence=array( bglight, bgdark )}
 <tr class="{$SearchResult.sequence}" role="row">
 <td class="tight" role="cell">
-    <input aria-label="{'Select this item for editing.'|i18n( 'design/admin/content/search' )|wash}" type="checkbox" class="ezsearch-select" value="{$SearchResult.item.node_id}" title="{'Select this item for editing.'|i18n( 'design/admin/content/search' )|wash}" />
+    <input aria-label="{'Select this item for editing.'|i18n( 'design/admin/content/search' )|wash} {$SearchResult.item.name|wash}" type="checkbox" class="ezsearch-select" value="{$SearchResult.item.node_id}" title="{'Select this item for editing.'|i18n( 'design/admin/content/search' )|wash}" />
 </td>
 <td role="cell">
 {node_view_gui view=line content_node=$SearchResult.item}

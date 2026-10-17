@@ -165,7 +165,8 @@ function ContentStructureMenu( params, i18n )
         {
             liclass += ' lastli';
         }
-        if ( params.path && ( params.path[params.path.length-1] == item.node_id || ( !item.has_children && jQuery.inArray( item.node_id, params.path ) !== -1 ) ) )
+        // a node on the path without sub items in the tree is marked too (_onPath compares as strings)
+        if ( params.path && ( params.path[params.path.length-1] == item.node_id || ( !item.has_children && _onPath( item.node_id ) ) ) )
         {
             liclass += ' currentnode';
         }
@@ -926,25 +927,36 @@ function ContentStructureMenu( params, i18n )
         return String( value ).replace( /&/g, '&amp;' ).replace( /"/g, '&quot;' ).replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
     }
 
-    // Internal cookie functions
+    // The node is on the path to the current node (params.path: strings from the template; a node ID from the JSON
+    // is a number)
+    function _onPath( nodeID )
+    {
+        for ( var i = 0; i < params.path.length; i++ )
+        {
+            if ( String( params.path[i] ) === String( nodeID ) ) return true;
+        }
+        return false;
+    }
+
+    // Internal cookie functions (only where localStorage is blocked): encodeURIComponent, not the deprecated
+    // escape(); same site only, secure over https
     function _setCookie( name, value, expires, path )
     {
-        document.cookie = name + '=' + escape(value) + ( expires ? '; expires=' + expires.toUTCString(): '' ) + '; path='+ (path ? path : '/');
+        document.cookie = name + '=' + encodeURIComponent( value ) + ( expires ? '; expires=' + expires.toUTCString(): '' ) + '; path='+ (path ? path : '/')
+            + '; SameSite=Lax' + ( window.location && window.location.protocol === 'https:' ? '; Secure' : '' );
     }
 
+    // The cookie of exactly this name; a value escape()d by an older version reads the same (node IDs and "/")
     function _getCookie( name )
     {
-        var n = name + '=', c = document.cookie, start = c.indexOf( n ), end = c.indexOf( ";", start );
-        if ( start !== -1 )
+        var all = document.cookie ? document.cookie.split( /;\s*/ ) : [];
+        for ( var i = 0; i < all.length; i++ )
         {
-            return unescape( c.substring( start + n.length, ( end === -1 ? c.length : end ) ) );
+            if ( all[i].indexOf( name + '=' ) !== 0 ) continue;
+            var value = all[i].substring( name.length + 1 );
+            try { return decodeURIComponent( value ); } catch ( e ) { return value; }
         }
         return null;
-    }
-
-    function _delCookie( name )
-    {
-        _setCookie( name, '', ( new Date() - 86400000 ) );
     }
 }
 

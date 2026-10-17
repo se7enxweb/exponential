@@ -13,3 +13,4 @@
 {default text_shown='' text_all='' text_selected=''}
 <div hidden data-exp-list data-exp-list-scope=".a4-workflow-lists" data-exp-list-prefix="a4-workflow" data-exp-list-filter="1" data-text-shown="{$text_shown|wash}" data-text-all="{$text_all|wash}" data-text-selected="{$text_selected|wash}"></div>
 {ezscript( array( 'page/exp_list_script.js' ) )}
+{/default}

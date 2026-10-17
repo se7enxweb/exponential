@@ -87,3 +87,4 @@
 {/foreach}
 </div>
 {undef $list_limitations}
+{/default}

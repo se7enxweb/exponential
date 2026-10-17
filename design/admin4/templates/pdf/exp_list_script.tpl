@@ -5,3 +5,4 @@
 {default text_selected=''}
 <div hidden data-exp-list data-exp-list-scope=".a4-page" data-exp-list-prefix="exp" data-exp-list-filter="0" data-text-selected="{$text_selected|wash}"></div>
 {ezscript( array( 'page/exp_list_script.js' ) )}
+{/default}

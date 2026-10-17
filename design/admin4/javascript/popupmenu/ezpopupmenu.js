@@ -222,6 +222,11 @@ function _showTopLevel( event, menuID, substituteValues, menuHeader, disableIDLi
     {
         CurrentDisableIDList = disableIDList.push !== undefined ? disableIDList : [disableIDList];
     }
+    else if ( substituteValues != -1 )
+    {
+        // a new menu without a list: nothing disabled (the list of the menu opened before is not this one's)
+        CurrentDisableIDList = [];
+    }
 
     CurrentDisableMenuID = disableMenuID;
 
@@ -486,18 +491,24 @@ function _fillString( text, values, inScript )
     } );
 }
 
-function _substituteString( replaceString, substituteValues )
+// The plain values of a substitution list (the lists like %languages% and functions left out)
+function _plainValues( substituteValues )
 {
-    // loop though substitute values and substitute for each of them
+    var values = {};
     for ( var substItem in substituteValues )
     {
         if ( typeof substituteValues[substItem] != 'object' && typeof substituteValues[substItem] != 'function' )
         {
-            replaceString = replaceString.replace( substItem, substituteValues[substItem] );
+            values[substItem] = substituteValues[substItem];
         }
     }
+    return values;
+}
 
-    return replaceString;
+// Every placeholder in the string (not only its first occurrence; a $ in a value is taken as it is)
+function _substituteString( replaceString, substituteValues )
+{
+    return _fillString( replaceString, _plainValues( substituteValues ), false );
 }
 
 /*!
@@ -689,23 +700,24 @@ function _submitForm( formID, customSubstitute )
         {
             if ( children[i].type == 'hidden' )
             {
-                for ( var substItem in CurrentSubstituteValues )
+                // the menu's values, then the caller's own (customSubstitute: name, value, name, value ...)
+                origValue = children[i].value;
+                var filled = _substituteString( origValue, CurrentSubstituteValues );
+                if ( customSubstitute )
                 {
-                    origValue = children[i].value;
-                    children[i].value = children[i].value.replace( substItem, CurrentSubstituteValues[substItem] );
-                    if ( customSubstitute )
+                    var custom = {};
+                    for ( var j = 0, jl = customSubstitute.length; j < jl; j += 2 )
                     {
-                        for ( var j = 0, jl = customSubstitute.length; j < jl; j += 2 )
-                        {
-                            children[i].value = children[i].value.replace( '%'+customSubstitute[j]+'%', customSubstitute[j+1] );
-                        }
+                        custom['%' + customSubstitute[j] + '%'] = customSubstitute[j+1];
                     }
-                    if ( origValue != children[i].value )
-                    {
-                        resetInputs.push(
-                            { 'input': children[i], 'originalValue': origValue }
-                        );
-                    }
+                    filled = _fillString( filled, custom, false );
+                }
+                if ( filled != origValue )
+                {
+                    children[i].value = filled;
+                    resetInputs.push(
+                        { 'input': children[i], 'originalValue': origValue }
+                    );
                 }
             }
         }
@@ -1345,6 +1357,16 @@ if ( document.addEventListener )
 }
 
 if ( document.addEventListener ) document.addEventListener( 'keydown', _keyHandler );
+
+// A click on a disabled item of a menu (aria-disabled, _decorate) or on an item that only opens a submenu (class
+// "more", href="#") does not follow the "#": it scrolled the page to the top. The keyboard path already stops at
+// aria-disabled (_activate).
+function _disabledClick( e )
+{
+    var item = e.target && e.target.closest ? e.target.closest( 'a[aria-disabled="true"], a.more[href="#"]' ) : null;
+    if ( item && _menuOf( item ) ) e.preventDefault();
+}
+if ( document.addEventListener ) document.addEventListener( 'click', _disabledClick );
 
 // Register some functions on global scope
 window.ezpopup_SubstituteAndRedirect = _SubstituteAndRedirect;

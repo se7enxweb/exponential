@@ -1016,7 +1016,9 @@ details.a4-setup-more[open] > summary { margin-bottom: var(--a4-space-1); }
   .a4-setup-wz-match.is-current,
   .a4-setup-wz-tables tr.is-selected,
   .a4-page a.a4-setup-survey-tab.is-current,
-  .a4-page a.a4-setup-survey-kind.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
+  .a4-page a.a4-setup-survey-kind.is-current,
+  .a4-setup-sa-list .a4-card.is-current,
+  :where([dir="rtl"]) .a4-setup-sa-list .a4-card.is-current { outline: 2px solid Highlight; outline-offset: -2px; }
 }
 
 /* ---- setup/menu: the Setup overview -------------------------------------------------------------------------- */
@@ -1286,3 +1288,15 @@ label.a4-package-option-label {
 @media (max-width: 600px) {
   .a4-setup-scope-label { flex-basis: 100%; }
 }
+
+/* Setup > System information, Siteaccesses (#552): the resolution map and one card per siteaccess. Shared components
+   (.a4-fold, .a4-table, .a4-card, .a4-tag) do the rest. */
+.a4-setup-sa-entries { display: grid; gap: var(--a4-space-1); margin: 0; padding: 0; list-style: none; }
+.a4-setup-sa-entries li.is-current { font-weight: 650; }
+.a4-setup-sa-rules th[scope="row"] { font-weight: 400; white-space: nowrap; }
+.a4-setup-sa-list .a4-card.is-current { border-color: var(--a4-accent); box-shadow: inset 4px 0 0 var(--a4-accent), var(--a4-shadow-s); }
+:where([dir="rtl"]) .a4-setup-sa-list .a4-card.is-current { box-shadow: inset -4px 0 0 var(--a4-accent), var(--a4-shadow-s); }
+.a4-setup-sa-list .a4-card-head { flex-wrap: wrap; gap: var(--a4-space-2); }
+.a4-setup-sa-list .a4-badges { margin: 0; }
+.a4-setup-sa-list .a4-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: 0; }
+.a4-setup-sa-url { margin: 0; overflow-wrap: anywhere; }

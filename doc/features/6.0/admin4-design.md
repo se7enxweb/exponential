@@ -79,7 +79,12 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   (`design:parts/a4_preference_attributes.tpl`, `data-a4-pref-*`) and saves them through
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
   choice made before is taken along once. A preference that cannot be saved is kept in the browser instead, and
-  `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `tests/tests/design/AdminPreferencesTest.php` checks it.
+  `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `set()` sends nothing
+  when the value is already the one on `<html>`, so a page view writes no preference back. `set( name, value,
+  legacyKey, share )`: with `share` a saved value is also written to `localStorage`, so other open tabs follow (the
+  color mode does this). The left column's width (`admin_left_menu_size`) and the node view's tab switch
+  (`admin_navigation_content`) are saved through `window.a4Pref` too; a width that could not be saved is drawn from
+  the browser (`exp-a4-admin_left_menu_size`) while no preference and no preset size is set. `tests/tests/design/AdminPreferencesTest.php` checks it.
   The side columns are drawn with these preferences on the first paint: until `ezadmin_menubar.js` has applied
   their state, `html.a4-preload` (both page layouts) shows a column beside the content unless it is saved closed,
   with the room an open column takes, and runs no transitions; the script removes the class two frames later
@@ -302,7 +307,8 @@ in no group).
   tiles. The Dashboard menu ends with Change password and Edit profile this way.
 - **Access.** The view `setup/menu` opens with any one of the setup module's functions (`setup`, `administrate`,
   `managecache`, `managecronjobs`, `preload`, `system_info`), so a role that reached the tab's former page
-  (`setup/cache`) keeps the tab.
+  (`setup/cache`) keeps the tab. The tab asks for nothing more (`[Topmenu_setup]` has no `PolicyList[]`): a role
+  with `system_info` only has the tab, and with it the tabs of `[TopAdminMenu] SetupTabs[]`.
 - **Classic designs** show a short page with a pointer to the Setup menu and the `setup` toolbar of toolbar.ini.
 
 | Link key | Icon | Link key | Icon |
@@ -899,7 +905,7 @@ template sets `confObj.priorityDrag`, so the other admin designs are unchanged.
 | `settings/menu.ini` | `Topmenu_setup` | `URL[default]` | `setup/menu` (the Setup overview) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `PolicyList_<link>[]` | a node id, `<module>/<function>`, or `<module>/*` for a module without policy functions | siteaccess |
 | `settings/site.ini` | `SiteAccessSettings` | `FrontSiteAccess` | empty (`DefaultAccess`) | siteaccess |
-| `settings/site.ini` | `AdminEnvironment` | `Level`, `Name`, `ShortName`, `Release`, `ShowVersion`, `ShowInTitle` | empty (no badge), empty, empty, empty, `disabled`, `enabled` | siteaccess |
+| `settings/site.ini` | `AdminEnvironment` | `Level`, `Name`, `ShortName`, `Release`, `ShowVersion`, `ShowInTitle`, `BadgeDisplay` | empty (no badge), empty, empty, empty, `disabled`, `enabled`, `hover` | siteaccess |
 
 `ShowCommunityLinks=enabled` shows the footer line "Evaluate Exponential / Become a member of the Exponential
 Community". A template can also set `$show_community_links`.
@@ -926,10 +932,11 @@ Community". A template can also set `$show_community_links`.
   that leaves the administration for something else (`box-arrow-up-right`).
 - `[AdminSiteAccessMenu]`: the site menu (see "Site menu" above), read from the admin siteaccess's settings.
   `Show=disabled` turns it off. `List=related` (the default) lists `[SiteAccessSettings] RelatedSiteAccessList[]` of
-  the admin siteaccess, the siteaccesses that share its database, or `AvailableSiteAccessList[]` where it is empty;
+  the admin siteaccess, the siteaccesses that share its database, or the admin siteaccess alone where it is empty (it
+  never falls back to every siteaccess of the installation);
   `List=available` lists `AvailableSiteAccessList[]`; a siteaccess that is not in `AvailableSiteAccessList[]` is never
   listed; an installation that serves several sites with separate databases sets `RelatedSiteAccessList[]` for each
-  administration, so that it lists its own site only. `HiddenSiteAccessList[]` leaves siteaccesses out (the site the
+  administration, so that the menu lists its site's siteaccesses. `HiddenSiteAccessList[]` leaves siteaccesses out (the site the
   globe opens stays the first entry). `AdminSiteAccessList[]` names the administrations; empty,
   a siteaccess whose `SiteDesign` begins with `admin` or that sets `FrontSiteAccess` is one. `ListAdministrations`
   (`disabled` by default) lists them as a group of their own when `enabled`. Besides the site the globe opens, only
@@ -943,7 +950,8 @@ Community". A template can also set `$show_community_links`.
   `staging` or `production`, or `auto` for the level of `EXP_ENV` (`dev`, `development`; `test`; `stage`, `staging`;
   `prod`, `production`, `live`; another name or none: no badge). An empty `Name` takes the level's translated name.
   `BadgeDisplay` is `hover` (the default: shown only while a fine pointer rests on the logo or the logo has the
-  keyboard focus) or `always`; the title prefix (`ShowInTitle`) does not depend on it.
+  keyboard focus) or `always`; the title prefix (`ShowInTitle`) does not depend on it. `BadgeDisplay`, `ShowInTitle`
+  and `ShowVersion` are read like `Level`: case and surrounding spaces do not matter.
   Set it per environment, for example in `settings/override/site.ini.prod.append.php`
   ([Settings per environment](environment-settings.md)); the setting is read on every request. The header's and the
   sign-in page's cache-blocks are keyed by the badge, so a changed setting shows on the next request without clearing
@@ -970,6 +978,12 @@ Community". A template can also set `$show_community_links`.
 - admin4 keeps its own copy of `ezajaxsubitems_expdatatable.js`: it must work with no other admin design present, and
   a single copy in `design/standard` would be shadowed by any design that has its own. Change both copies together.
 - The CSS packer used to remove the space before a colon in selectors (`a :hover` became `a:hover`). Fixed.
+- expui's widgets (dialogs, the upload button, the date picker) take admin4's tokens through a bridge in `admin4.css`:
+  `--exp-accent` is `--a4-accent-strong`, `--exp-accent-dark` is `--a4-accent-press` (dark mode:
+  `--a4-accent-strong`), `--exp-accent-ring` is `--a4-accent-soft`, so white text on the primary button keeps 5.2:1;
+  their focus rings are overridden to admin4's 3 px `--a4-ring`.
+- admin4 loads `theme/rounded.css` by name; the `admin_theme` preference of older designs is not read, so an old
+  stored value cannot swap the theme stylesheet.
 
 ## Changes to the other designs on the same day
 
