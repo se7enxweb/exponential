@@ -27,6 +27,69 @@ class eZWordToImageOperator
         $this->IconInfo = array();
     }
 
+    /**
+     * The icon themes to search for an icon of a type, in order: the current theme, then every
+     * AdditionalThemeList[] theme, then StandardTheme (icon.ini [IconSettings]).
+     *
+     * The current theme is the type's own Theme ([<Type>Icons] Theme), else the theme of the design that is the
+     * SiteDesign (DesignTheme[<design>]), else Theme. When the design's theme replaces Theme, Theme follows it as the
+     * first fallback, so a key the design's theme does not map keeps the icon it had.
+     *
+     * @param eZINI $ini icon.ini
+     * @param string $configGroup the type's group, e.g. ClassIcons
+     * @return array of string
+     */
+    static function themeList( $ini, $configGroup )
+    {
+        $theme = $ini->variable( 'IconSettings', 'Theme' );
+        $themes = array();
+
+        $designTheme = self::designTheme( $ini );
+        if ( $designTheme !== false && $designTheme !== $theme )
+        {
+            $themes[] = $theme;
+            $theme = $designTheme;
+        }
+
+        // Check if the specific icon type has a theme setting
+        if ( $ini->hasVariable( $configGroup, 'Theme' ) )
+        {
+            $theme = $ini->variable( $configGroup, 'Theme' );
+        }
+
+        $additionalThemes = $ini->hasVariable( 'IconSettings', 'AdditionalThemeList' ) ? $ini->variable( 'IconSettings', 'AdditionalThemeList' ) : array();
+        if ( !is_array( $additionalThemes ) )
+            $additionalThemes = array();
+        $themes = array_merge( array( $theme ), $themes, $additionalThemes );
+
+        $standardTheme = $ini->hasVariable( 'IconSettings', 'StandardTheme' ) ? $ini->variable( 'IconSettings', 'StandardTheme' ) : false;
+        if ( $standardTheme )
+            $themes[] = $standardTheme;
+
+        return array_values( array_unique( $themes ) );
+    }
+
+    /**
+     * The icon theme of the current design: icon.ini [IconSettings] DesignTheme[<design>] for the SiteDesign of
+     * site.ini [DesignSettings], or false when the design has none or an empty one.
+     *
+     * @param eZINI $ini icon.ini
+     * @return string|false
+     */
+    static function designTheme( $ini )
+    {
+        $siteINI = eZINI::instance();
+        if ( !$ini->hasVariable( 'IconSettings', 'DesignTheme' ) || !$siteINI->hasVariable( 'DesignSettings', 'SiteDesign' ) )
+            return false;
+
+        $designThemes = $ini->variable( 'IconSettings', 'DesignTheme' );
+        $design = $siteINI->variable( 'DesignSettings', 'SiteDesign' );
+        if ( !is_array( $designThemes ) || !isset( $designThemes[$design] ) || $designThemes[$design] === '' )
+            return false;
+
+        return $designThemes[$design];
+    }
+
     /*!
       Returns the template operators.
     */
@@ -48,7 +111,7 @@ class eZWordToImageOperator
                 $replaceIcon = $ini->variable( 'WordToImageSettings', 'ReplaceIcon' );
 
                 $wwwDirPrefix = "";
-                if ( strlen( eZSys::wwwDir() ) > 0 )
+                if ( strlen( (string)eZSys::wwwDir() ) > 0 )
                     $wwwDirPrefix = eZSys::wwwDir() . "/";
                 foreach( $replaceIcon as $icon )
                 {
@@ -78,24 +141,31 @@ class eZWordToImageOperator
                 }
                 $type = $tpl->elementValue( $operatorParameters[0], $rootNamespace, $currentNamespace );
 
-                // Check if we have it cached
-                if ( isset( $this->IconInfo[$type] ) )
-                {
-                    $operatorValue = $this->IconInfo[$type];
-                    return;
-                }
-
                 $ini = eZINI::instance( 'icon.ini' );
-                $defaultRepository = $ini->variable( 'IconSettings', 'Repository' );
-                $theme = $ini->variable( 'IconSettings', 'Theme' );
-                $standardTheme = $ini->hasVariable( 'IconSettings', 'StandardTheme' ) ? $ini->variable( 'IconSettings', 'StandardTheme' ) : false;
-                $extensions = $ini->hasVariable( 'ExtensionSettings', 'IconExtensions' ) ? $ini->variable( 'ExtensionSettings', 'IconExtensions' ) : array();
-
                 $groups = array( 'mimetype' => 'MimeIcons',
                                  'class' => 'ClassIcons',
                                  'classgroup' => 'ClassGroupIcons',
                                  'action' => 'ActionIcons',
                                  'icon' => 'Icons' );
+                if ( !isset( $groups[$type] ) )
+                {
+                    $tpl->warning( $operatorName, "Unknown icon type '$type'" );
+                    return;
+                }
+
+                // Check if we have it cached. The key holds the theme list, which follows the design
+                // (DesignTheme[]), so a persistent worker or a design switch never reuses the info of another theme.
+                $availableThemes = self::themeList( $ini, $groups[$type] );
+                $cacheKey = $type . '|' . implode( ',', $availableThemes );
+                if ( isset( $this->IconInfo[$cacheKey] ) )
+                {
+                    $operatorValue = $this->IconInfo[$cacheKey];
+                    return;
+                }
+
+                $defaultRepository = $ini->variable( 'IconSettings', 'Repository' );
+                $extensions = $ini->hasVariable( 'ExtensionSettings', 'IconExtensions' ) ? $ini->variable( 'ExtensionSettings', 'IconExtensions' ) : array();
+
                 $configGroup = $groups[$type];
                 $mapNames = array( 'mimetype' => 'MimeMap',
                                    'class' => 'ClassMap',
@@ -103,20 +173,6 @@ class eZWordToImageOperator
                                    'action' => 'ActionMap',
                                    'icon' => 'IconMap' );
                 $mapName = $mapNames[$type];
-
-                // Check if the specific icon type has a theme setting
-                if ( $ini->hasVariable( $configGroup, 'Theme' ) )
-                {
-                    $theme = $ini->variable( $configGroup, 'Theme' );
-                }
-
-                // Build the list of themes to search
-                $availableThemes = $ini->hasVariable( 'IconSettings', 'AdditionalThemeList' ) ? $ini->variable( 'IconSettings', 'AdditionalThemeList' ) : array();
-                if ( !is_array( $availableThemes ) )
-                    $availableThemes = array();
-                array_unshift( $availableThemes, $theme );
-                if ( $standardTheme )
-                    array_push( $availableThemes, $standardTheme );
 
                 // Build the list of repositories to search
                 $siteDir = eZSys::siteDir();
@@ -284,7 +340,7 @@ class eZWordToImageOperator
                                        'default' => $default );
                 }
 
-                $this->IconInfo[$type] = $iconInfo;
+                $this->IconInfo[$cacheKey] = $iconInfo;
                 $operatorValue = $iconInfo;
             } break;
 
@@ -346,7 +402,7 @@ class eZWordToImageOperator
                     $iconPath = $defaultRepository . '/' . $theme . '/' . $operatorValue . '.gif';
                 }
 
-                if ( strlen( eZSys::wwwDir() ) > 0 )
+                if ( strlen( (string)eZSys::wwwDir() ) > 0 )
                     $wwwDirPrefix = htmlspecialchars( eZSys::wwwDir(), ENT_COMPAT, 'UTF-8' ) . '/';
                 else
                     $wwwDirPrefix = '/';
@@ -367,7 +423,6 @@ class eZWordToImageOperator
 
                 $ini = eZINI::instance( 'icon.ini' );
                 $defaultRepository = $ini->variable( 'IconSettings', 'Repository' );
-                $theme = $ini->variable( 'IconSettings', 'Theme' );
                 $standardTheme = $ini->hasVariable( 'IconSettings', 'StandardTheme' ) ? $ini->variable( 'IconSettings', 'StandardTheme' ) : false;
                 $extensions = $ini->hasVariable( 'ExtensionSettings', 'IconExtensions' ) ? $ini->variable( 'ExtensionSettings', 'IconExtensions' ) : array();
 
@@ -383,19 +438,8 @@ class eZWordToImageOperator
                                  'icon' => 'Icons' );
                 $configGroup = $groups[$operatorName];
 
-                // Check if the specific icon type has a theme setting
-                if ( $ini->hasVariable( $configGroup, 'Theme' ) )
-                {
-                    $theme = $ini->variable( $configGroup, 'Theme' );
-                }
-
                 // Build the list of themes to search
-                $availableThemes = $ini->hasVariable( 'IconSettings', 'AdditionalThemeList' ) ? $ini->variable( 'IconSettings', 'AdditionalThemeList' ) : array();
-                if ( !is_array( $availableThemes ) )
-                    $availableThemes = array();
-                array_unshift( $availableThemes, $theme );
-                if ( $standardTheme )
-                    array_push( $availableThemes, $standardTheme );
+                $availableThemes = self::themeList( $ini, $configGroup );
 
                 // Build the list of repositories to search
                 $matches = eZExtension::expandedPathList( $extensions, 'icons' );
@@ -559,7 +603,7 @@ class eZWordToImageOperator
                 $iconPath .= '/' . $icon;
 
                 $wwwDirPrefix = "";
-                if ( strlen( eZSys::wwwDir() ) > 0 )
+                if ( strlen( (string)eZSys::wwwDir() ) > 0 )
                     $wwwDirPrefix = eZSys::wwwDir();
                 $sizeText = '';
                 if ( $width !== false and $height !== false )
