@@ -936,7 +936,8 @@
       });
       return svg;
     };
-    const count = (key) => { const c = bar.querySelector('.exp-debug-chip[data-key="' + key + '"]'); return c ? parseInt(c.textContent, 10) || 0 : 0; };
+    // the toolbar theme keeps the chip's text in .exp-debug-chip-text, next to its popup
+    const count = (key) => { const c = bar.querySelector('.exp-debug-chip[data-key="' + key + '"]'); return c ? parseInt((c.querySelector('.exp-debug-chip-text') || c).textContent, 10) || 0 : 0; };
     const errors = count('errors'), warnings = count('warnings');
     const level = errors > 0 ? 'high' : (warnings > 0 ? 'warn' : '');
     const badgeLabel = errors > 0 ? t('%count errors', { '%count': errors }) : (warnings > 0 ? t('%count warnings', { '%count': warnings }) : '');
