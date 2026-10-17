@@ -368,6 +368,14 @@ icons are Bootstrap Icons (`share/icons/bootstrap-icons`, MIT) inlined in the st
 is loaded. The status is `http_response_code()` when the report is rendered; where PHP does not know it (the command
 line, a persistent worker) the block shows module/view only.
 
+The panel in the toolbar theme follows the Symfony profiler, from a window width of 761 px on: the tabs are a dark menu
+down the left side (an icon each, the count at the right, the open tab marked, the filter box above them; the up and
+down arrows move between them), the open tab has a large title, and the tabs whose chip has rows (Messages, Timing,
+SQL, Templates, Memory, Server) start with those figures as metrics in large type (`expDebugBarReport::metricsHtml()`,
+a `<dl class="exp-debug-metrics">`). Tables have open rows with a line between them; a message has a bar in the colour
+of its level. The panel's colours stay those of `expdebugbar.css`, light and dark. Narrower windows keep the row of
+tabs above the panel.
+
 ### The panel's height
 
 The open panel is full width, so only its height changes. The strip on its top edge (the edge facing the page, the
