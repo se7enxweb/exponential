@@ -1078,3 +1078,10 @@ a.a4-setup-tile-link:focus-visible::after { outline: 3px solid var(--a4-ring); o
   .a4-setup-tile:hover { border-color: Highlight; }
   a.a4-setup-tile-link:focus-visible::after { outline-color: Highlight; }
 }
+
+/* The package installer's option "Use content object modification and publication dates from the package"
+   (design/standard: package/installers/ezcontentobject/advanced_options.tpl); it was an inline style="" */
+label.a4-package-option-label {
+  font-weight: normal;
+  display: inline;
+}

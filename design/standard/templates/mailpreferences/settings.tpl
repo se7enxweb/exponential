@@ -15,7 +15,7 @@
          crumb=false() wide=false() admin_tab=false()}
 {/if}
 
-    <p class="mp-hint" style="margin: -.5em 0 1em;">{'For: %email'|i18n( 'design/standard/mailpreferences',, hash( '%email', $email ) )|wash}
+    <p class="mp-hint mp-hint-for">{'For: %email'|i18n( 'design/standard/mailpreferences',, hash( '%email', $email ) )|wash}
 {if $mode|eq( 'token' )}
     &middot; {'You opened this page with the personal link from one of our e-mails. Please do not forward that e-mail: the link lets anyone change these preferences.'|i18n( 'design/standard/mailpreferences' )}
 {/if}

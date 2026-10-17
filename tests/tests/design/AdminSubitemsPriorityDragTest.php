@@ -40,10 +40,12 @@ class AdminSubitemsPriorityDragTest extends PHPUnit\Framework\TestCase
     private static function labels()
     {
         $tpl = self::read( 'design/admin4/templates/children_detailed.tpl' );
-        $start = strpos( $tpl, 'DRAG: {ldelim}' );
+        // the labels are JSON in data-labels (no inline script): 'DRAG', hash( 'key', 'Text'|i18n( ... ), ... )
+        $start = strpos( $tpl, "'DRAG', hash(" );
         self::assertNotFalse( $start, 'children_detailed.tpl hands the texts over as labelsObj.DRAG' );
-        $end = strpos( $tpl, '{rdelim}', $start );
-        preg_match_all( "/(\\w+): \"\\{'((?:[^'\\\\]|\\\\.)*)'\\|i18n\\( 'design\\/admin\\/node\\/view\\/full' \\)\\|wash\\('javascript'\\)\\}\"/",
+        $end = strpos( $tpl, "'ACTION_BUTTONS', hash(", $start );
+        self::assertNotFalse( $end, 'the DRAG labels end where the ACTION_BUTTONS labels start' );
+        preg_match_all( "/'(\\w+)', '((?:[^'\\\\]|\\\\.)*)'\\|i18n\\( 'design\\/admin\\/node\\/view\\/full' \\)/",
                         substr( $tpl, $start, $end - $start ), $m, PREG_SET_ORDER );
         $labels = array();
         foreach ( $m as $match )
@@ -134,8 +136,8 @@ class AdminSubitemsPriorityDragTest extends PHPUnit\Framework\TestCase
         $children = self::read( 'design/admin4/templates/children.tpl' );
         $detailed = self::read( 'design/admin4/templates/children_detailed.tpl' );
         $this->assertStringContainsString( "\$priority    = and( eq( \$node.sort_array[0][0], 'priority' ), \$node.can_edit, \$children_count )", $children );
-        $this->assertStringContainsString( "priorityDrag: {if and( eq( \$node.sort_array[0][0], 'priority' ), \$node.can_edit )}true{else}false{/if},", $detailed );
-        $this->assertStringContainsString( 'parentObjectID: {$node.contentobject_id|int()},', $detailed );
+        $this->assertStringContainsString( "'priorityDrag', and( eq( \$node.sort_array[0][0], 'priority' ), \$node.can_edit ),", $detailed );
+        $this->assertStringContainsString( "'parentObjectID', \$node.contentobject_id|int(),", $detailed );
         $this->assertStringContainsString( "{ezscript_require( array( 'subitems_priority_drag.js', 'ezajaxsubitems_expdatatable.js' ) )}", $children );
 
         $this->assertFileEquals( self::root() . '/design/admin4/javascript/ezajaxsubitems_expdatatable.js',

@@ -44,6 +44,6 @@
     </ul>
 </div>
 {* the summary takes the focus, so a screen reader and the keyboard start at the errors *}
-{literal}<script type="text/javascript">(function(){ var s = document.getElementById( "a4-error-summary" ); if ( s ) s.focus(); })();</script>{/literal}
+{ezscript( array( 'page/package_wizard_progress.js' ) )}
 {/if}
 {undef $wz_steps $wz_number $wz_state $wz_ids $wz_labels}

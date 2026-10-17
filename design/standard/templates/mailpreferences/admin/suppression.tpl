@@ -22,7 +22,7 @@
         <div class="mp-actions"><input class="mp-btn" type="submit" name="CheckButton" value="{'Check'|i18n( 'design/admin/mailpreferences' )}" /></div>
     </form>
 {if $check}
-    <div class="mp-notice {if $check.suppressed}mp-notice-warning{else}mp-notice-info{/if}" role="status" style="margin-top:.8em;">
+    <div class="mp-notice mp-space-top {if $check.suppressed}mp-notice-warning{else}mp-notice-info{/if}" role="status">
         <p>{if $check.suppressed}{'This address is on the list (%reason, since %date).'|i18n( 'design/admin/mailpreferences',, hash( '%reason', cond( is_set( $reason_names[$check.row.reason] ), $reason_names[$check.row.reason], $check.row.reason ), '%date', cond( $check.row.created, $check.row.created|l10n( 'shortdate' ), '?' ) ) )|wash}{else}{'This address is not on the list.'|i18n( 'design/admin/mailpreferences' )}{/if}</p>
     </div>
 {if $check.suppressed}

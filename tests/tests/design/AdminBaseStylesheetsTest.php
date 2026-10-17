@@ -255,7 +255,7 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
             $this->assertContains( $part, $hidden, "$part is not printed" );
         }
         $this->assertSame( 'none !important', $rules['*, *::before, *::after']['box-shadow'] );
-        $head = (string)file_get_contents( self::root() . '/design/admin4/templates/page_head_style.tpl' );
+        $head = (string)file_get_contents( self::root() . '/design/admin4/javascript/a4_head.js' );
         $this->assertStringContainsString( "window.addEventListener('beforeprint', function () { root.setAttribute('data-a4-theme', 'light'); });", $head );
         $this->assertStringContainsString( "window.addEventListener('afterprint', function () { apply(root.getAttribute('data-a4-theme-choice')); });", $head );
     }

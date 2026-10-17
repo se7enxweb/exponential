@@ -155,7 +155,7 @@
 
 <div class="a4-actions">
     <input aria-labelledby="a4f-h-mewFilter" aria-describedby="a4f-m-mewFilter" type="text" id="mewFilter" class="a4-input is-auto" placeholder="{'Filter'|i18n( 'design/admin/setup/rad/moduleextension' )}" />
-    <button type="button" class="a4-btn a4-btn-small" id="mewNone">{'Tick none'|i18n( 'design/admin/setup/rad/moduleextension' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="mewNone" data-a4-check-all="input[type=checkbox][name='Tables[]']" data-a4-check-value="0">{'Tick none'|i18n( 'design/admin/setup/rad/moduleextension' )}</button>
     <button type="submit" class="a4-btn a4-btn-small" name="PreviewButton" value="1">{'Refresh preview'|i18n( 'design/admin/setup/rad/moduleextension' )}</button>
 </div>
 
@@ -310,8 +310,8 @@
 </div>
 
 <div class="a4-actions">
-    <button type="button" class="a4-btn a4-btn-small" id="mewOpenAll">{'Open all'|i18n( 'design/admin/setup/rad/moduleextension' )}</button>
-    <button type="button" class="a4-btn a4-btn-small" id="mewCloseAll">{'Close all'|i18n( 'design/admin/setup/rad/moduleextension' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="mewOpenAll" data-a4-wz-fold="open">{'Open all'|i18n( 'design/admin/setup/rad/moduleextension' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="mewCloseAll" data-a4-wz-fold="close">{'Close all'|i18n( 'design/admin/setup/rad/moduleextension' )}</button>
 </div>
 
 {foreach $wizard_files as $mew_file}
@@ -353,109 +353,4 @@
 </div>
 </form>
 
-{literal}
-<script type="text/javascript">
-( function () {
-    // The external details only apply to an external database.
-    var source = document.getElementById( 'mewSource' ),
-        external = document.getElementById( 'mewExternal' );
-
-    // Choosing a file from the list fills the box; the box is still there for a
-    // path the list does not know about.
-    var pick = document.getElementById( 'mewFilePick' ),
-        file = document.getElementById( 'mewFile' );
-    if ( pick && file )
-    {
-        pick.onchange = function () {
-            if ( pick.value !== '' ) file.value = pick.value;
-        };
-    }
-
-    // Which boxes apply depends on the kind, and the server decides the same
-    // thing after every submit; this only saves waiting for one.
-    var type = document.getElementById( 'mewType' );
-    if ( type )
-    {
-        type.onchange = function () {
-            var connect = document.getElementsByName( 'ConnectButton' );
-            if ( connect.length ) connect[0].click();
-        };
-    }
-
-    if ( source && external )
-    {
-        source.onchange = function () {
-            external.hidden = source.value !== 'external';
-        };
-    }
-
-    // Folding a file open and shut.
-    function fold( panel, open )
-    {
-        var collapsed = panel.className.indexOf( 'is-collapsed' ) !== -1;
-        if ( open === collapsed )
-        {
-            panel.className = open
-                ? panel.className.replace( / ?is-collapsed/, '' )
-                : panel.className + ' is-collapsed';
-        }
-        var toggle = panel.getElementsByTagName( 'span' )[0];
-        if ( toggle ) toggle.innerHTML = open ? '&minus;' : '+';
-    }
-
-    var divs = document.getElementsByTagName( 'div' ), files = [], i;
-    for ( i = 0; i < divs.length; i++ )
-        if ( divs[i].className.indexOf( 'a4-setup-wz-file' ) === 0 )
-            files.push( divs[i] );
-
-    for ( i = 0; i < files.length; i++ )
-    {
-        ( function ( panel ) {
-            var head = panel.getElementsByTagName( 'div' )[0];
-            if ( !head ) return;
-            head.onclick = function () {
-                fold( panel, panel.className.indexOf( 'is-collapsed' ) !== -1 );
-                return false;
-            };
-        } )( files[i] );
-    }
-
-    function every( open ) { for ( var j = 0; j < files.length; j++ ) fold( files[j], open ); }
-
-    var openAll = document.getElementById( 'mewOpenAll' ),
-        closeAll = document.getElementById( 'mewCloseAll' );
-    if ( openAll )  openAll.onclick  = function () { every( true ); return false; };
-    if ( closeAll ) closeAll.onclick = function () { every( false ); return false; };
-
-    // Narrowing a long table list without going back to the server.
-    var filter = document.getElementById( 'mewFilter' ),
-        list = document.getElementById( 'mewTableList' );
-
-    if ( filter && list )
-    {
-        filter.onkeyup = function () {
-            var want = filter.value.toLowerCase(),
-                rows = list.getElementsByTagName( 'tr' ), r;
-
-            for ( r = 1; r < rows.length; r++ )
-            {
-                var text = ( rows[r].textContent || rows[r].innerText || '' ).toLowerCase();
-                rows[r].hidden = !( want === '' || text.indexOf( want ) !== -1 );
-            }
-        };
-    }
-
-    var none = document.getElementById( 'mewNone' );
-    if ( none )
-    {
-        none.onclick = function () {
-            var boxes = document.getElementsByTagName( 'input' ), b;
-            for ( b = 0; b < boxes.length; b++ )
-                if ( boxes[b].type === 'checkbox' && boxes[b].name === 'Tables[]' )
-                    boxes[b].checked = false;
-            return false;
-        };
-    }
-} )();
-</script>
-{/literal}
+{ezscript( array( 'page/setup_wizard_files.js', 'page/setup_moduleextension.js' ) )}

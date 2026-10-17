@@ -8,86 +8,17 @@
     <input type="submit" value="{'Upload a file'|i18n( 'design/admin/content/datatype' )}"
             name="RelationUploadNew{$attribute.id}-{$attribute.version}"
             class="button relation-upload-new hide"
-            title="{'Upload a file to create a new object and add it to the relation'|i18n( 'design/admin/content/datatype' )}" />
+            title="{'Upload a file to create a new object and add it to the relation'|i18n( 'design/admin/content/datatype' )}"
+            data-text-required="{'Please choose a location'|i18n( 'design/admin/content/datatype' )|wash}"
+            data-text-validation="{'Some required fields are empty.'|i18n( 'design/admin/content/datatype' )|wash}"
+            data-text-parse-json="{'Unable to parse the JSON response.'|i18n( 'design/admin/content/datatype' )|wash}"
+            data-text-title="{'Upload a file and add the resulting object in the relation'|i18n( 'design/admin/content/datatype' )|wash}" />
 
     {run-once}
     {* The upload dialog: Exponential UI (exp::io, exp::dialog, exp::upload in BackendJavaScriptList) runs the steps
        and server calls on jQuery 4 (expajaxuploader.js). *}
     {ezscript_require( 'expajaxuploader.js' )}
-    <script type="text/javascript">
-    {literal}
-    (function () {
-        if (!window.Exp || !window.Exp.ready) { return; }
-        Exp.ready(function ($) {
-            if (!$.fn.expAjaxUploader) { return; }
-            $('.relation-upload-new').expAjaxUploader({
-                open: {
-                    action: 'ezajaxuploader::uploadform::ezobjectrelationlist'
-                },
-                upload: {
-                    action: 'ezajaxuploader::upload::ezobjectrelationlist?ContentType=html',
-                    form: 'form.ajaxuploader-upload'
-                },
-                location: {
-                    action: 'ezajaxuploader::preview::ezobjectrelationlist',
-                    form: 'form.ajaxuploader-location',
-                    browse: 'div.ajaxuploader-browse',
-        {/literal}
-                    required: "{'Please choose a location'|i18n( 'design/admin/content/datatype' )|wash( 'javascript' )}"
-        {literal}
-                },
-                preview: {
-                    form: 'form.ajaxuploader-preview',
-
-                    // this is the uploader: the object just created is added to the relation list
-                    callback: function () {
-                        var box = $('#ezobjectrelationlist_browse_' + this.conf.target.ObjectRelationsAttributeId),
-                            table = box.find('table.list').first(),
-                            tbody = table.find('tbody').first(),
-                            last = tbody.children().last(),
-                            tr, tds, priority,
-                            result = this.lastMetaData;
-
-                        if ( !table.hasClass('hide') ) {
-                            // table is visible, clone the last line
-                            tr = last.clone();
-                            tbody.append(tr);
-                            if ( last.hasClass('bgdark') ) {
-                                tr.removeClass('bgdark').addClass('bglight');
-                            } else {
-                                tr.removeClass('bglight').addClass('bgdark');
-                            }
-                        } else {
-                            // table is hidden, no related object yet
-                            // the only line in the table is the "template line"
-                            tr = last;
-                            table.removeClass('hide');
-                        }
-                        tds = tr.children();
-                        tds.eq(0).find('input').val(result.object_info.id);
-                        tds.eq(1).text(result.object_info.name);
-                        tds.eq(2).text(result.object_info.class_name);
-                        tds.eq(3).text(result.object_info.section_name);
-                        tds.eq(4).text(result.object_info.published);
-                        priority = tds.eq(5).find('input').first();
-                        priority.val(parseInt(priority.val(), 10) + 1);
-
-                        box.find('.ezobject-relation-remove-button').first().removeClass('button-disabled').addClass('button').prop('disabled', false);
-                        box.find('.ezobject-relation-no-relation').addClass('hide');
-
-                        this.close();
-                    }
-                },
-        {/literal}
-                validationErrorText: "{'Some required fields are empty.'|i18n( 'design/admin/content/datatype' )|wash( 'javascript' )}",
-                parseJSONErrorText: "{'Unable to parse the JSON response.'|i18n( 'design/admin/content/datatype' )|wash( 'javascript' )}",
-                title: "{'Upload a file and add the resulting object in the relation'|i18n( 'design/admin/content/datatype' )|wash( 'javascript' )}"
-        {literal}
-            });
-        });
-    })();
-    {/literal}
-    </script>
+    {ezscript( array( 'page/content_ezobjectrelationlist_ajaxuploader.js' ) )}
     {/run-once}
 {/if}
 {undef $merge_count $merge_unique_count $allowed_class_list $uploadable_classes}

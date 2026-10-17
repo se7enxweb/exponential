@@ -204,7 +204,7 @@
                         <div class="box-ml">
 
                             <h1 class="context-title"><a href={concat( '/class/view/', $object.contentclass_id )|ezurl} aria-haspopup="menu" aria-expanded="false"
-                                    onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$object.contentclass_id},'%objectID%',{$object.id}, '%nodeID%', {if $node.node_id}{$node.node_id}{else}null{/if}, '%currentURL%','{$node.url|wash( javascript )|wash}')), '{$object.content_class.name|wash(javascript)|wash}', ['class-createnodefeed', 'class-removenodefeed' {if $node.node_id|is_null()}, 'class-history', 'url-alias'{/if}] ); return false;">{$object.content_class.identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{$object.name|wash}&nbsp;[{$object.content_class.name|wash}]
+                                    data-menu-open="ClassMenu" data-menu-values="{json_encode( hash( '%classID%', $object.contentclass_id, '%objectID%', $object.id, '%nodeID%', $node.node_id, '%currentURL%', $node.url ) )|wash}" data-menu-title="{$object.content_class.name|wash}" data-menu-disable="[&quot;class-createnodefeed&quot;,&quot;class-removenodefeed&quot;{if $node.node_id|is_null()},&quot;class-history&quot;,&quot;url-alias&quot;{/if}]">{$object.content_class.identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{$object.name|wash}&nbsp;[{$object.content_class.name|wash}]
                             </h1>
 
 

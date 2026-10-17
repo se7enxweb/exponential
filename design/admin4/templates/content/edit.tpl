@@ -38,7 +38,7 @@
                                     title="{'Store the draft that is being edited and exit from edit mode. Use when you need to exit your work and return later to continue.'|i18n( 'design/admin/content/edit' )}" />
                                 <input class="button" type="submit" name="DiscardButton"
                                     value="{'Discard draft'|i18n( 'design/admin/content/edit' )}"
-                                    onclick="return confirmDiscard( '{'Are you sure you want to discard the draft?'|i18n( 'design/admin/content/edit' )|wash(javascript)|wash}' );"
+                                    data-a4-discard-confirm="{'Are you sure you want to discard the draft?'|i18n( 'design/admin/content/edit' )|wash}"
                                     title="{'Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).'|i18n( 'design/admin/content/edit' ) }" />
                             </div>
                             <div class="button-right"></div>
@@ -149,7 +149,7 @@
                                     title="{'Store the draft that is being edited and exit from edit mode. Use when you need to exit your work and return later to continue.'|i18n( 'design/admin/content/edit' )}" />
                                 <input class="button" type="submit" name="DiscardButton"
                                     value="{'Discard draft'|i18n( 'design/admin/content/edit' )}"
-                                    onclick="return confirmDiscard( '{'Are you sure you want to discard the draft?'|i18n( 'design/admin/content/edit' )|wash(javascript)|wash}' );"
+                                    data-a4-discard-confirm="{'Are you sure you want to discard the draft?'|i18n( 'design/admin/content/edit' )|wash}"
                                     title="{'Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).'|i18n( 'design/admin/content/edit' ) }" />
                                 <input type="hidden" name="DiscardConfirm" value="1" />
                             </div>
@@ -189,17 +189,8 @@
 
 
 
-{literal}
-    <script type="text/javascript">
-        function confirmDiscard(question) {
-            // Disable/bypass the reload-based (plain HTML) confirmation interface.
-            document.editform.DiscardConfirm.value = "0";
-
-            // Ask user if she really wants do it, return this to the handler.
-            return confirm(question);
-        }
-    </script>
-{/literal}
+{* The Discard buttons confirm with data-a4-discard-confirm (a4_actions.js): it sets DiscardConfirm to 0, which
+   bypasses the reload-based (plain HTML) confirmation interface, and asks the user. *}
 {* The object information menu does not collapse in admin3 (switched off on purpose). To switch it on, remove this
    comment around the script: it uses Exponential UI's exp::collapse, as the admin design's edit page does.
     <script type="text/javascript">

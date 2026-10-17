@@ -240,12 +240,18 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
                          'user/password', 'user/edit/(action)/edit' );
         $my = self::iniSection( 'Leftmenu_my' );
         $this->assertSame( array( 'change_password', 'edit_profile' ), $my['TrailLinks'] ?? null );
-        foreach ( array_keys( self::MENU_TEMPLATES ) as $design )
+        $drawn = array();
+        foreach ( self::MENU_TEMPLATES as $design => $template )
         {
+            // AdminUI's menu ships with the extension exp_adminui, which a checkout may not carry
+            if ( strpos( $template, 'extension/' ) === 0 && !is_file( dirname( __DIR__, 3 ) . '/' . $template ) )
+                continue;
+            $drawn[] = $design;
             $html = self::dashboardMenu( 'Leftmenu_trailtest', 'menu', $design );
             $this->assertSame( $wanted, self::hrefs( $html ), "the Dashboard menu of $design" );
             $this->assertSame( 1, substr_count( $html, '<ul' ), "$design draws the trail links in the one list" );
         }
+        $this->assertSame( array( 'admin4', 'admin' ), array_slice( $drawn, 0, 2 ), 'the core designs are always drawn' );
         // a user without the audit console and the extension: the same order without them, Change password still
         // before Edit profile at the end (a trail link the menu does not draw is left out, nothing else moves)
         $html = self::renderMenu( self::MENU_TEMPLATES['admin4'], 'Leftmenu_trailtest',

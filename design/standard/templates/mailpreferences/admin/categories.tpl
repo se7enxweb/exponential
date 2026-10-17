@@ -74,7 +74,7 @@
             <textarea id="mp-cat-description" name="Description" rows="3">{$values.description|wash}</textarea>
         </div>
 {if or( $edit|not, $edit.source|eq( 'admin' ) )}
-        <fieldset class="mp-field" style="border:0;padding:0;">
+        <fieldset class="mp-field mp-fieldset-plain">
             <legend class="mp-label">{'How often people may choose to get it'|i18n( 'design/admin/mailpreferences' )}</legend>
 {foreach $frequency_names as $frequency => $label}
             <label class="mp-check"><input type="checkbox" name="Frequencies[]" value="{$frequency|wash}"{if $values.frequencies|contains( $frequency )} checked="checked"{/if} /> <span>{$label|wash}</span></label>

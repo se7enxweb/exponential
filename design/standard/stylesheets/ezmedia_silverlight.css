@@ -1,0 +1,16 @@
+/*
+ * The Silverlight player of the media datatype (content/datatype/view/ezmedia.tpl and its plain variant): the
+ * "Get Microsoft Silverlight" link and the hidden frame. They were inline style="" attributes.
+ */
+#silverlightControlHost a.ezmedia-silverlight-get {
+  text-decoration: none;
+}
+#silverlightControlHost a.ezmedia-silverlight-get img {
+  border-style: none;
+}
+#silverlightControlHost iframe.ezmedia-silverlight-frame {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  border: 0px;
+}

@@ -179,12 +179,5 @@
 </form>
 {undef $errors $imported $analysed}
 
-<script type="text/javascript">
-var expRssImportFocus = {if $errors|count}'rss-import-errors'{else}'importName'{/if};
-{literal}
-( function () {
-    var focus = document.getElementById( expRssImportFocus );
-    if ( focus ) { focus.focus(); if ( focus.select ) focus.select(); }
-} )();
-{/literal}
-</script>
+<div id="rss-import-script" hidden data-focus="{if $errors|count}rss-import-errors{else}importName{/if}"></div>
+{ezscript( array( 'page/rss_edit_import.js' ) )}

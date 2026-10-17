@@ -67,7 +67,7 @@
                     <input type="text" name="CollaborationGroupTitle" maxlength="255" value="{$collab_group.title|wash}" aria-label="{'Rename the group'|i18n( 'design/admin/collaboration/inbox' )|wash}" />
                     <input class="a4-btn" type="submit" name="CollaborationGroupRename" value="{'Rename'|i18n( 'design/admin/collaboration/inbox' )}" />
                 </form>
-                <form class="a4-searchrow" method="post" action={$base|ezurl} data-cb-confirm="{'Delete this group and its subgroups? Their items move to the main group.'|i18n( 'design/admin/collaboration/inbox' )|wash}">
+                <form class="a4-searchrow" method="post" action={$base|ezurl} data-a4-confirm="{'Delete this group and its subgroups? Their items move to the main group.'|i18n( 'design/admin/collaboration/inbox' )|wash}">
                     <input class="a4-btn a4-btn-outline-danger" type="submit" name="CollaborationGroupDelete" value="{'Delete the group'|i18n( 'design/admin/collaboration/inbox' )}" />
                 </form>
 {else}
@@ -78,13 +78,3 @@
     </div>
 
 </div>
-<script type="text/javascript">
-{literal}
-(function () {
-    var forms = document.querySelectorAll('#exp-collab form[data-cb-confirm]');
-    for (var i = 0; i < forms.length; i++) {
-        forms[i].addEventListener('submit', function (e) { if (!window.confirm(this.getAttribute('data-cb-confirm'))) e.preventDefault(); });
-    }
-})();
-{/literal}
-</script>

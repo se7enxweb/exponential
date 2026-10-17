@@ -1,0 +1,7 @@
+/*
+ * The asynchronous publishing page (content/queued.tpl): the error and the placeholders that are hidden until the
+ * status check shows them (ezasynchronouspublishing.js sets their display). They were inline style="display: none".
+ */
+.ezap-hidden {
+  display: none;
+}

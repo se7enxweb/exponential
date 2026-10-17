@@ -1,0 +1,31 @@
+/*
+ * The link to the API access page (apikey/parts/account_link.tpl) on the user's profile, in every design. It was
+ * inline style="" attributes; the values are the same, so the box looks the same on every page it is on.
+ */
+.ak-account-link {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4em 1em;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 1em;
+  padding: .7em .95em;
+  border: 1px solid #d9dde3;
+  border-radius: 9px;
+  background: #f5f6f8;
+  color: #1f2430;
+}
+.ak-account-link p {
+  margin: 0;
+  flex: 1 1 18em;
+}
+.ak-account-link a.ak-account-link-button {
+  display: inline-block;
+  padding: .4em .95em;
+  border: 1px solid #9a3412;
+  border-radius: 8px;
+  background: #fff;
+  color: #9a3412;
+  font-weight: 650;
+  text-decoration: none;
+}

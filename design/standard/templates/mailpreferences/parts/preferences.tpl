@@ -150,7 +150,7 @@
     <div class="mp-scroll">
     <table class="mp-table mp-stack">
 {if $history_total|gt( $history|count )}
-        <caption class="mp-hint" style="caption-side: bottom; text-align: left;">{'The newest %shown of %total records. The download has all of them.'|i18n( 'design/standard/mailpreferences',, hash( '%shown', $history|count, '%total', $history_total ) )}</caption>
+        <caption class="mp-hint mp-caption-bottom">{'The newest %shown of %total records. The download has all of them.'|i18n( 'design/standard/mailpreferences',, hash( '%shown', $history|count, '%total', $history_total ) )}</caption>
 {/if}
         <thead><tr>
             <th scope="col">{'When'|i18n( 'design/standard/mailpreferences' )}</th>

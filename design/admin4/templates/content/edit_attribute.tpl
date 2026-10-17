@@ -11,7 +11,7 @@
 {foreach $content_attributes_grouped_data_map as $attribute_group => $content_attributes_grouped}
 {if $attribute_group|ne( $attribute_default_category )}
     <fieldset class="ezcca-collapsible ezcca-attributes-group-{$attribute_group|wash}">
-    <legend><a href="JavaScript:void(0);">{$attribute_categorys[$attribute_group]}</a></legend>
+    <legend><a href="#">{$attribute_categorys[$attribute_group]}</a></legend>
     <div class="ezcca-collapsible-fieldset-content">
 {/if}
 {foreach $content_attributes_grouped as $attribute_identifier => $attribute}
@@ -96,74 +96,7 @@
 {/foreach}
 {run-once}
 {* if is_set( $content_attributes_grouped_data_map[1] ) *}
-<script type="text/javascript">
-{literal}
-
-jQuery(function( $ )
-{
-    // An attribute the summary names is invalid even when the datatype set no message (an unknown error):
-    // mark it, so its group opens below and the link does not lead into a collapsed group
-    $('#a4-error-summary a[href^="#ezcca-attr-"]').each( function(){
-        $( document.getElementById( this.getAttribute('href').slice( 1 ) ) ).addClass('is-invalid');
-    } );
-
-    $('fieldset.ezcca-collapsible legend a').on( 'click', function()
-    {
-        var container = $( this.parentNode.parentNode ), inner = container.find('div.ezcca-collapsible-fieldset-content');
-        if ( container.hasClass('ezcca-collapsed') )
-        {
-            container.removeClass('ezcca-collapsed');
-            inner.slideDown( 150 );
-        }
-        else
-        {
-            inner.slideUp( 150, function(){
-                $( this.parentNode ).addClass('ezcca-collapsed');
-            });
-        }
-    });
-    // Collapse by default, unless the group has at least one attribute with a validation error
-    $('fieldset.ezcca-collapsible').each( function(){
-        if ( $(this).find('label.message-error, legend.message-error, .a4-content-attr.is-invalid').length == 0 )
-        {
-            $(this).addClass('ezcca-collapsed').find('div.ezcca-collapsible-fieldset-content').hide();
-        }
-    } );
-
-    // The datatype templates draw the controls; required and invalid are set on them here, once for all
-    // datatypes: aria-required, aria-invalid and the attribute's message as description. The original
-    // (read-only) side of a translation is left alone.
-    // The data controls only: no buttons, file or reset inputs, no remove/select checkboxes of lists (relations,
-    // matrix rows); a datatype template can opt a control out with the class a4-no-field-mark.
-    var controls = 'input:not([type=hidden]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]):not([type=file]), select, textarea';
-    function dataControls( group )
-    {
-        return $( group ).find( controls ).not('.original *, .a4-no-field-mark, .a4-no-field-mark *').filter( function(){
-            return !( /^(checkbox|radio)$/.test( this.type ) && /delete|remove|selection/i.test( this.name || '' ) );
-        } );
-    }
-    $('.a4-content-attr.is-required').each( function(){
-        dataControls( this ).attr( 'aria-required', 'true' );
-    } );
-    $('.a4-content-attr.is-invalid').each( function(){
-        var error = this.id.replace( 'ezcca-attr-', 'ezcca-error-' );
-        if ( !document.getElementById( error ) ) error = '';
-        dataControls( this ).each( function(){
-            this.setAttribute( 'aria-invalid', 'true' );
-            if ( error )
-            {
-                var described = ( this.getAttribute('aria-describedby') || '' ).split(' ').filter( Boolean );
-                if ( described.indexOf( error ) === -1 ) described.push( error );
-                this.setAttribute( 'aria-describedby', described.join(' ') );
-            }
-        } );
-    } );
-    // A failed store: the summary takes the focus, so it is read and its links lead to the fields
-    $('#a4-error-summary').trigger('focus');
-});
-
-{/literal}
-</script>
+{ezscript( array( 'page/content_edit_attribute.js' ) )}
 {* /if *}
 {/run-once}
 {/default}

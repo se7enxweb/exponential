@@ -136,6 +136,17 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
     {
         foreach ( self::copies( 'templates/children_detailed.tpl' ) as $path => $tpl )
         {
+            if ( $path === 'design/admin4/templates/children_detailed.tpl' )
+            {
+                // admin4: raw values in JSON (json_encode), HTML-escaped once for the data attribute; the script gets
+                // the text as typed, so a filter with & or < reaches the server as typed
+                $this->assertStringContainsString( "'nameFilter', \$view_parameters.namefilter,", $tpl, $path );
+                $this->assertStringContainsString( '{set $subitems_create_groups = $subitems_create_groups|append( $group.group_name )}', $tpl, $path );
+                $this->assertStringContainsString( 'data-create-groups="{json_encode( $subitems_create_groups )|wash}"', $tpl, $path );
+                $this->assertMatchesRegularExpression( '/data-conf="\{json_encode\( hash\(.*?\) \)\|wash\}"/s', $tpl, $path );
+                $this->assertStringNotContainsString( '<script', $tpl, $path );
+                continue;
+            }
             // in a script element: wash( 'javascript' ) alone, which escapes < and > too (see below); no HTML entities,
             // so a filter with & or < reaches the server as typed
             $this->assertStringContainsString( "nameFilter: '{\$view_parameters.namefilter|wash(javascript)}',", $tpl, $path );
@@ -163,31 +174,44 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
         }
     }
 
-    /** A name in a JS string inside an onclick attribute: JS-escaped, then HTML-escaped for the attribute */
+    /**
+     * A name in a JS string inside an onclick attribute (the classic admin design): JS-escaped, then HTML-escaped for
+     * the attribute. The admin4 openers have no handler (doc/features/6.0/content-security-policy.md): the name is
+     * data-menu-title, HTML-escaped once, and the values are JSON (json_encode), HTML-escaped for the attribute.
+     */
     public function testNamesInInlineMenuHandlersAreEscapedTwice()
     {
         $openers = array(
-            'templates/node/view/thumbnail.tpl' => "'{\$:node.object.name|shorten(18)|wash(javascript)|wash}'",
-            'templates/node/view/line.tpl' => "'{\$:node.object.name|shorten(18)|wash(javascript)|wash}'",
-            'templates/contentstructuremenu/show_content_structure.tpl' => "'{\$:parentNode.object.name|shorten(18)|wash(javascript)|wash}'",
-            'templates/content/view/versionview.tpl' => "'{\$object.content_class.name|wash(javascript)|wash}'",
+            'templates/node/view/thumbnail.tpl' => array( "'{\$:node.object.name|shorten(18)|wash(javascript)|wash}'", 'data-menu-title="{$:node.object.name|shorten(18)|wash}"' ),
+            'templates/node/view/line.tpl' => array( "'{\$:node.object.name|shorten(18)|wash(javascript)|wash}'", 'data-menu-title="{$:node.object.name|shorten(18)|wash}"' ),
+            'templates/contentstructuremenu/show_content_structure.tpl' => array( "'{\$:parentNode.object.name|shorten(18)|wash(javascript)|wash}'", 'data-menu-title="{$:parentNode.object.name|shorten(18)|wash}"' ),
+            'templates/content/view/versionview.tpl' => array( "'{\$object.content_class.name|wash(javascript)|wash}'", 'data-menu-title="{$object.content_class.name|wash}"' ),
         );
-        foreach ( $openers as $file => $needle )
+        foreach ( $openers as $file => $needles )
         {
             foreach ( self::copies( $file, array( 'admin', 'admin3', 'admin4' ) ) as $path => $tpl )
             {
-                $this->assertStringContainsString( $needle, $tpl, $path );
+                if ( strpos( $tpl, 'data-menu-open=' ) !== false )
+                {
+                    $this->assertStringContainsString( $needles[1], $tpl, $path );
+                    $this->assertStringNotContainsString( 'ezpopmenu_showTopLevel', $tpl, $path );
+                    $this->assertMatchesRegularExpression( '/data-menu-values="\{json_encode\( hash\( [^"]*\) \)\|wash\}"/', $tpl, $path );
+                    continue;
+                }
+                $this->assertStringStartsWith( 'design/admin', $path, "$path: the admin4 opener has no handler" );
+                $this->assertStringNotContainsString( 'design/admin4/', $path, "$path: the admin4 opener has no handler" );
+                $this->assertStringContainsString( $needles[0], $tpl, $path );
                 $this->assertDoesNotMatchRegularExpression( "/onclick=\"ezpopmenu_showTopLevel[^\\n]*\\|wash\\((?:\\s*)javascript(?:\\s*)\\)'/", $tpl,
                                                             "$path: a value only JS-escaped in an attribute is decoded by the browser first" );
             }
         }
-        foreach ( array( 'design/admin4/templates/node/view/a4_full_body.tpl', 'design/admin/templates/node/view/full.tpl' ) as $path )
-        {
-            $tpl = self::file( $path );
-            $this->assertStringContainsString( "'{\$node.class_name|wash(javascript)|wash}'", $tpl, $path );
-            $this->assertStringContainsString( "'%languages%', {\$js_class_languages|wash} )", $tpl, $path );
-        }
-        $this->assertStringContainsString( "'{\$node.name|shorten(18)|wash(javascript)|wash}'", self::file( 'design/standard/templates/content/bookmark_tree.tpl' ) );
+        $full = self::file( 'design/admin/templates/node/view/full.tpl' );
+        $this->assertStringContainsString( "'{\$node.class_name|wash(javascript)|wash}'", $full );
+        $this->assertStringContainsString( "'%languages%', {\$js_class_languages|wash} )", $full );
+        $a4 = self::file( 'design/admin4/templates/node/view/a4_full_body.tpl' );
+        $this->assertStringContainsString( 'data-menu-title="{$node.class_name|wash}"', $a4 );
+        $this->assertStringContainsString( 'data-menu-languages="{$js_class_languages|wash}"', $a4 );
+        $this->assertStringContainsString( 'data-menu-title="{$node.name|shorten(18)|wash}"', self::file( 'design/standard/templates/content/bookmark_tree.tpl' ) );
     }
 
     public function testThePreviewLinksOnlyToWebAndMailAddresses()
@@ -215,7 +239,7 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
         foreach ( self::copies( 'templates/popupmenu/popup_sub_advance_menu.tpl' ) as $path => $tpl )
         {
             $this->assertStringNotContainsString( "'url': {\"/content/hide/", $tpl, $path );
-            $this->assertStringContainsString( "ezpopmenu_submitForm( 'menu-form-hide' )", $tpl, $path );
+            $this->assertStringContainsString( 'data-menu-form="menu-form-hide"', $tpl, $path );
             $this->assertMatchesRegularExpression( '#<form id="menu-form-hide" method="post" action=\{"/content/hide/%nodeID%"\|ezurl\}>#', $tpl, $path );
         }
         foreach ( self::copies( 'javascript/popupmenu/ezpopupmenu.js' ) as $path => $js )
@@ -242,11 +266,12 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
         }
     }
 
-    /** The tree icon's title is escaped once: by the script, for the attribute; the template only escapes it for the script */
+    /** The tree icon's title is escaped once: by the script, for the attribute; the template only encodes it as JSON */
     public function testTheTreeIconTitleIsEscapedOnce()
     {
+        // the text is JSON in an attribute (json_encode, then wash for the attribute): no wash of its own
         foreach ( self::copies( 'templates/contentstructuremenu/content_structure_menu_dynamic.tpl' ) as $path => $tpl )
-            $this->assertStringContainsString( "\"expand\":\"{'Click on the icon to display a context-sensitive menu.'|i18n('design/admin/contentstructuremenu')|wash(javascript)}\"", $tpl, $path );
+            $this->assertStringContainsString( "'expand', 'Click on the icon to display a context-sensitive menu.'|i18n('design/admin/contentstructuremenu'),", $tpl, $path );
         foreach ( self::copies( 'javascript/contentstructuremenu_dynamic.js' ) as $path => $js )
             $this->assertStringContainsString( "_attr( i18n.expand )", $js, $path );
     }

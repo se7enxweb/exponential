@@ -258,16 +258,4 @@
 </div>
 </form>
 
-<script type="text/javascript">
-{literal}
-(function () {
-    var all = document.getElementById( 'role-assign-all' ), table = document.getElementById( 'role-assignments' );
-    if ( !all || !table ) return;
-    all.hidden = false;
-    all.addEventListener( 'change', function () {
-        var boxes = table.querySelectorAll( 'input[name="IDArray[]"]' ), i;
-        for ( i = 0; i < boxes.length; i++ ) boxes[i].checked = all.checked;
-    } );
-})();
-{/literal}
-</script>
+{ezscript( array( 'page/role_view.js' ) )}

@@ -179,8 +179,10 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $state = (string)file_get_contents( self::root() . '/design/admin4/templates/parts/language_state_badge.tpl' );
         $this->assertStringContainsString( '{$a4_ls_code|wash}<span class="a4-sr-only"> {$a4_ls_label|wash}</span></a>', $state );
         $template = (string)file_get_contents( self::root() . '/design/admin4/templates/children_detailed.tpl' );
-        $this->assertStringContainsString( 'languageBadges: languageBadges', $template );
+        // the map is JSON in data-conf (no inline script, doc/features/6.0/content-security-policy.md)
+        $this->assertStringContainsString( "'languageBadges', \$subitems_badges,", $template );
         $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code badge_plain=true()", $template );
+        $this->assertStringContainsString( '{set $subitems_badges = $subitems_badges|merge( hash( $locale.locale_code, $subitems_badge ) )}', $template );
     }
 
     /**
@@ -199,7 +201,8 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
             $template = (string)file_get_contents( self::root() . "/design/$design/templates/children_detailed.tpl" );
             $this->assertDoesNotMatchRegularExpression( '/flagIcons|flag_icon/', $template,
                                                         "design/$design's children_detailed.tpl still hands the script flags" );
-            $this->assertStringContainsString( 'languageBadges: languageBadges', $template, $design );
+            // admin4 hands the map over as JSON in a data attribute, the classic design in its inline script
+            $this->assertStringContainsString( $design === 'admin4' ? "'languageBadges', \$subitems_badges," : 'languageBadges: languageBadges', $template, $design );
         }
         $this->assertFileEquals( self::root() . '/' . self::INCLUDE_FILE,
                                  self::root() . '/design/admin/templates/parts/language_badge.tpl',

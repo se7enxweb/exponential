@@ -208,7 +208,8 @@
       "tests/tests/design/AdminRetiredClassesTest.php",
       "tests/tests/design/AdminSelfContainedTest.php",
       "tests/tests/design/AdminMegaMenuTest.php",
-      "tests/tests/design/AdminLanguageStatesTest.php"
+      "tests/tests/design/AdminLanguageStatesTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/admin*/stylesheets/*": [
       "tests/tests/design/AdminStylingRulesTest.php",
@@ -394,7 +395,8 @@
     ],
     "design/admin4/javascript/*": [
       "tests/tests/design/AdminKeyboardTest.php",
-      "tests/tests/design/AdminTreeViewTest.php"
+      "tests/tests/design/AdminTreeViewTest.php",
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/admin/javascript/contentstructuremenu_dynamic.js": [
       "tests/tests/design/AdminTreeViewTest.php"
@@ -994,6 +996,12 @@
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+    ],
+    "design/admin4l/templates/*": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/standard/templates/*": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ]
   },
   "generated": {
@@ -1052,6 +1060,12 @@
       "tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php",
       "tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php"
     ],
+    "design/admin/javascript/contentstructuremenu_dynamic.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin/javascript/popupmenu/ezpopupmenu.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
     "design/admin/templates/content/edit.tpl": [
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
     ],
@@ -1091,12 +1105,24 @@
       "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
+    "design/admin4/javascript/a4_actions.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/javascript/a4_head.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/javascript/contentstructuremenu_dynamic.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
     "design/admin4/stylesheets/admin4.css": [
       "tests/tests/design/AdminEnvironmentBadgeTest.php",
       "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
       "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/javascript/popupmenu/ezpopupmenu.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/admin4/stylesheets/components.css": [
       "tests/tests/design/AdminLanguageStatesTest.php"
@@ -1115,11 +1141,18 @@
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
     ],
     "design/admin4/templates/loginpagelayout.tpl": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php",
       "tests/tests/design/AdminEnvironmentBadgeTest.php"
     ],
     "design/admin4/templates/node/view/a4_full_body.tpl": [
       "tests/tests/kernel/content/eZAdminFullViewCopyButtonTest.php",
       "tests/tests/design/AdminLanguageStatesTest.php"
+    ],
+    "design/admin4/templates/page_head_script.tpl": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/admin4/templates/page_head_style.tpl": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/admin4/templates/parts/language_state_badge.tpl": [
       "tests/tests/design/AdminLanguageStatesTest.php"
@@ -1129,6 +1162,7 @@
       "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "design/admin4/templates/pagelayout.tpl": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php",
       "tests/tests/design/AdminEnvironmentBadgeTest.php",
       "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
@@ -1161,9 +1195,18 @@
       "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php",
       "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
+    "design/standard/javascript/contentstructuremenu/contentstructuremenu.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
     "design/standard/javascript/expdebugbar.js": [
       "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
       "tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php"
+    ],
+    "design/standard/javascript/lib/ezjslibimagepreloader.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+    ],
+    "design/standard/javascript/tools/ezjsselection.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/standard/stylesheets/core.css": [
       "tests/tests/kernel/classes/expVelocityEnginesTest.php"
@@ -1213,6 +1256,9 @@
     ],
     "extension/expservices/classes/users/expuserservices.php": [
       "tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php"
+    ],
+    "extension/ezjscore/classes/ezjscpacker.php": [
+      "tests/tests/extension/ezjscore/ezjscPackerGeneratedContentTest.php"
     ],
     "extension/ezoe/classes/ezoeserverfunctions.php": [
       "tests/tests/extension/ezoe/expOECustomTagListTest.php"

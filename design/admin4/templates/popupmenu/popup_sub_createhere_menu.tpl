@@ -1,13 +1,8 @@
 <!-- Create here menu -->
-<script type="text/javascript">
-menuArray['CreateHereMenu'] = {ldelim} 'depth': 1 {rdelim};
-menuArray['CreateHereMenu']['elements'] = {ldelim}{rdelim};
-menuArray['CreateHereMenu']['elements']['menu-classes'] = {ldelim} 'variable': '%classList%' {rdelim};
-menuArray['CreateHereMenu']['elements']['menu-classes']['content'] = '<a id="menu-item-create-here" href="#" onclick="ezpopmenu_submitForm( \'menu-form-create-here\', new Array( \'classID\', \'%classID%\' ) ); return false;">%name%<\/a>';
-</script>
 
-<div class="popupmenu" id="CreateHereMenu">
-    <div id="menu-classes"></div>
+<div class="popupmenu" id="CreateHereMenu" data-menu-depth="1">
+    <template id="menu-classes-template"><a id="menu-item-create-here" href="#" data-menu-form="menu-form-create-here" data-menu-form-values='["classID","%classID%"]'>%name%</a></template>
+    <div id="menu-classes" data-menu-variable="%classList%" data-menu-template="menu-classes-template"></div>
 </div>
 
 {* Create here form *}

@@ -71,7 +71,7 @@
 {/if}
 
 {if $confirm_key}
-<section class="ak-card" aria-labelledby="ak-confirm-title" style="border-color: var(--ak-bad-line); border-left: 4px solid var(--ak-bad);">
+<section class="ak-card ak-card-danger" aria-labelledby="ak-confirm-title">
     <h2 id="ak-confirm-title">{'Revoke the key "%name"?'|i18n( 'design/standard/apikey',, hash( '%name', $confirm_key.name ) )|wash}</h2>
     <p class="ak-lead">{'Every program that uses it stops working at once, and it cannot be made valid again.'|i18n( 'design/standard/apikey' )} <code>{$confirm_key.key_prefix|wash}_&hellip;</code></p>
     <form method="post" action={'apikey/list'|ezurl}>
@@ -191,27 +191,4 @@
 
 {include uri='design:apikey/parts/page_end.tpl'}
 
-{literal}
-<script>
-(function () {
-    var buttons = document.querySelectorAll('.ak .ak-copy');
-    var status = document.getElementById('ak-copy-status');
-    for (var i = 0; i < buttons.length; i++) {
-        (function (button) {
-            var source = document.querySelector(button.getAttribute('data-copy'));
-            if (!source || !navigator.clipboard || !window.isSecureContext) { return; }
-            button.hidden = false;
-            button.addEventListener('click', function () {
-                navigator.clipboard.writeText(source.textContent.trim()).then(function () {
-                    if (status) { status.textContent = button.getAttribute('data-done') || button.textContent + ': OK'; }
-                }, function () {
-                    if (status) { status.textContent = ''; }
-                });
-            });
-        }(buttons[i]));
-    }
-    var fresh = document.getElementById('ak-new');
-    if (fresh && fresh.focus) { fresh.focus(); }
-}());
-</script>
-{/literal}
+<script src={'javascript/apikey_list.js'|ezdesign}></script>
