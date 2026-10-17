@@ -61,7 +61,7 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
 
         $Module = $Params['Module'];
-        $ViewMode = (string)( $Params['ViewMode'] ?? '' );
+        $ViewMode = (string)( $scope['Params']['ViewMode'] ?? '' );
         $Offset = $Params['Offset'];
 
         if ( $ViewMode == 'offset' )

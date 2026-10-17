@@ -29,7 +29,7 @@ class Keyword extends \Exponential\Runnable\ModuleView
         unset( $__name );
 
         $Module = $Params['Module'];
-        $Alphabet = rawurldecode( (string)( $Params['Alphabet'] ?? '' ) );
+        $Alphabet = rawurldecode( (string)( $scope['Params']['Alphabet'] ?? '' ) );
 
         $Offset = $Params['Offset'];
         $ClassID = $Params['ClassID'];
