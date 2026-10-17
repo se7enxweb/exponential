@@ -5565,6 +5565,14 @@
         <translation>%count coincidencias</translation>
     </message>
     <message>
+        <source>There are no matches on this page.</source>
+        <translation>No hay coincidencias en esta página.</translation>
+    </message>
+    <message>
+        <source>Go to the first page</source>
+        <translation>Ir a la primera página</translation>
+    </message>
+    <message>
         <source>Try changing some keywords e.g. car instead of cars.</source>
         <translation type="obsolete">Intenta cambiar algunas palabras clave. Por ejemplo: coche en lugar de coches.</translation>
     </message>
@@ -11698,6 +11706,14 @@
         <translation>No se pueden listar los subelementos: Exponential UI (la extensión expui) no está activa o no está cargada en este acceso al sitio.</translation>
     </message>
     <message>
+        <source>Editorial</source>
+        <translation>Redacción</translation>
+    </message>
+    <message>
+        <source>Not saved: %error</source>
+        <translation>No guardado: %error</translation>
+    </message>
+    <message>
         <source>Sub items [%children_count]</source>
         <translation type="obsolete">Subelementos [%children_count]</translation>
     </message>
@@ -15258,6 +15274,18 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>No se pudo cargar el menú %tab.</translation>
     </message>
     <message>
+        <source>Try again</source>
+        <translation>Prueba de nuevo</translation>
+    </message>
+    <message>
+        <source>You are signed out. Sign in again to see the %tab menu.</source>
+        <translation>Has cerrado la sesión. Inicia sesión de nuevo para ver el menú %tab.</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Conectar</translation>
+    </message>
+    <message>
         <source>Go to %tab</source>
         <translation>Ir a %tab</translation>
     </message>
@@ -15592,6 +15620,10 @@ Nota: los paquetes no serán desinstalados.</translation>
     <message>
         <source>More</source>
         <translation>Más</translation>
+    </message>
+    <message>
+        <source>Quick search</source>
+        <translation>Búsqueda rápida</translation>
     </message>
     <message>
         <source>My account</source>
@@ -16307,6 +16339,14 @@ Nota: los paquetes no serán desinstalados.</translation>
     <message>
         <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
         <translation>Archivos del almacenamiento que nada usa, y archivos con propietario o permisos incorrectos.</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Archivos de registro</translation>
+    </message>
+    <message>
+        <source>Follow, search and cross-reference the log files.</source>
+        <translation>Sigue, busca y relaciona los archivos de registro.</translation>
     </message>
     <message>
         <source>URL management</source>
@@ -25124,6 +25164,30 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>Juego de caracteres</translation>
     </message>
     <message>
+        <source>Siteaccesses</source>
+        <translation>Accesos al sitio</translation>
+    </message>
+    <message>
+        <source>%count (default: %default; match: %order)</source>
+        <translation>%count (predeterminado: %default; asignación: %order)</translation>
+    </message>
+    <message>
+        <source>default: %default; match: %order</source>
+        <translation>predeterminado: %default; asignación: %order</translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation>URI</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Servidor</translation>
+    </message>
+    <message>
+        <source>Host and URI</source>
+        <translation>Host y URI</translation>
+    </message>
+    <message>
         <source>Internal</source>
         <translation>Interno</translation>
     </message>
@@ -26691,6 +26755,94 @@ Nota: los paquetes no serán desinstalados.</translation>
         <translation>Puerto</translation>
     </message>
     <message>
+        <source>Server variable</source>
+        <translation>Variable del servidor</translation>
+    </message>
+    <message>
+        <source>Index file</source>
+        <translation>Archivo índice</translation>
+    </message>
+    <message>
+        <source>StaticMatch</source>
+        <translation>StaticMatch</translation>
+    </message>
+    <message>
+        <source>Default siteaccess</source>
+        <translation>Acceso al sitio predeterminado</translation>
+    </message>
+    <message>
+        <source>Another matcher</source>
+        <translation>Otra regla de asignación</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administración</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Edición</translation>
+    </message>
+    <message>
+        <source>Site with login</source>
+        <translation>Sitio con inicio de sesión</translation>
+    </message>
+    <message>
+        <source>Every siteaccess of site.ini [SiteAccessSettings] AvailableSiteAccessList and RelatedSiteAccessList, with the rules that lead a request to it. The rules are read from the settings; the links open each siteaccess on the server and port of this page.</source>
+        <translation>Cada acceso al sitio de site.ini [SiteAccessSettings] AvailableSiteAccessList y RelatedSiteAccessList, con las reglas que llevan una solicitud hasta él. Las reglas se leen de la configuración; los enlaces abren cada acceso al sitio en el servidor y el puerto de esta página.</translation>
+    </message>
+    <message>
+        <source>This request</source>
+        <translation>Esta solicitud</translation>
+    </message>
+    <message>
+        <source>Match order</source>
+        <translation>Orden de asignación</translation>
+    </message>
+    <message>
+        <source>every request gets this siteaccess; the rules below are not used</source>
+        <translation>cada solicitud recibe este acceso al sitio; las reglas de abajo no se usan</translation>
+    </message>
+    <message>
+        <source>Resolution map</source>
+        <translation>Mapa de resolución</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regla</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Entradas</translation>
+    </message>
+    <message>
+        <source>matched</source>
+        <translation>asignado</translation>
+    </message>
+    <message>
+        <source>not a rule this installation knows</source>
+        <translation>no es una regla que esta instalación conozca</translation>
+    </message>
+    <message>
+        <source>no entries</source>
+        <translation>sin entradas</translation>
+    </message>
+    <message>
+        <source>chose %siteaccess</source>
+        <translation>eligió %siteaccess</translation>
+    </message>
+    <message>
+        <source>no rule matched</source>
+        <translation>ninguna regla coincidió</translation>
+    </message>
+    <message>
+        <source>The rules are tried from the top; the first that matches decides.</source>
+        <translation>Las reglas se prueban desde arriba; decide la primera que coincide.</translation>
+    </message>
+    <message>
+        <source>All siteaccesses</source>
+        <translation>Todos los accesos al sitio</translation>
+    </message>
+    <message>
         <source>no limit</source>
         <translation>sin límite</translation>
     </message>
@@ -26753,6 +26905,22 @@ Nota: los paquetes no serán desinstalados.</translation>
     <message>
         <source>default</source>
         <translation>predeterminado</translation>
+    </message>
+    <message>
+        <source>this page</source>
+        <translation>esta página</translation>
+    </message>
+    <message>
+        <source>related only</source>
+        <translation>solo relacionado</translation>
+    </message>
+    <message>
+        <source>no rule reaches it</source>
+        <translation>ninguna regla llega a él</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Diseño</translation>
     </message>
     <message>
         <source>Tables</source>
@@ -26889,6 +27057,70 @@ Nota: los paquetes no serán desinstalados.</translation>
     <message>
         <source>Locale</source>
         <translation>Local</translation>
+    </message>
+    <message>
+        <source>languages:</source>
+        <translation>idiomas:</translation>
+    </message>
+    <message>
+        <source>Access extensions</source>
+        <translation>Extensiones de acceso</translation>
+    </message>
+    <message>
+        <source>Hidden nodes</source>
+        <translation>Nodos ocultos</translation>
+    </message>
+    <message>
+        <source>shown</source>
+        <translation>se muestran</translation>
+    </message>
+    <message>
+        <source>not shown</source>
+        <translation>no se muestran</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Registrar</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>obligatorio</translation>
+    </message>
+    <message>
+        <source>not required</source>
+        <translation>no obligatorio</translation>
+    </message>
+    <message>
+        <source>Matched by</source>
+        <translation>Asignado por</translation>
+    </message>
+    <message>
+        <source>the default rule</source>
+        <translation>la regla predeterminada</translation>
+    </message>
+    <message>
+        <source>The settings of this siteaccess could not be read.</source>
+        <translation>No se pudo leer la configuración de este acceso al sitio.</translation>
+    </message>
+    <message>
+        <source>Open %siteaccess</source>
+        <translation>Abrir %siteaccess</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abrir</translation>
+    </message>
+    <message>
+        <source>Settings of %siteaccess</source>
+        <translation>Configuración de %siteaccess</translation>
+    </message>
+    <message>
+        <source>site.ini settings</source>
+        <translation>Configuración de site.ini</translation>
+    </message>
+    <message>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
+        <translation>El tipo sigue site.ini [SiteAccessSettings] SiteAccessType cuando un acceso al sitio lo define; si no, sus diseños y RequireUserLogin. Guía: doc/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -35513,6 +35745,30 @@ Nota: los paquetes no serán desinstalados.</translation>
     <message>
         <source>Checking...</source>
         <translation>Comprobando...</translation>
+    </message>
+    <message>
+        <source>Table of an extension that is not active</source>
+        <translation>Tabla de una extensión que no está activa</translation>
+    </message>
+    <message>
+        <source>%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.</source>
+        <translation>%count tablas pertenecen a extensiones instaladas y no activas; se enumeran abajo, sin nada que ejecutar.</translation>
+    </message>
+    <message>
+        <source>Tables of extensions that are not active</source>
+        <translation>Tablas de extensiones que no están activas</translation>
+    </message>
+    <message>
+        <source>belongs to %extension (not active)</source>
+        <translation>pertenece a %extension (no activa)</translation>
+    </message>
+    <message>
+        <source>This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.</source>
+        <translation>Esta tabla pertenece a la extensión %extension, que está instalada y no activa. Activa la extensión o deja la tabla; eliminarla borra sus datos. No se escribe SQL para ella.</translation>
+    </message>
+    <message>
+        <source>No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
+        <translation>Ningún esquema incluido nombra esta tabla, ni siquiera el de una extensión instalada que no está activa: normalmente pertenece a una extensión propia sin archivo de esquema, o a una extensión que se eliminó. Déjala, salvo que sepas que sus datos ya no se necesitan; la sentencia DROP se muestra solo para estar completa.</translation>
     </message>
 </context>
 <context>
@@ -46795,6 +47051,10 @@ Puedes editar uno de tus borradores o crear uno nuevo.</translation>
     <message>
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation>Menos palabras clave ofrecen más resultados. Intenta reducir las palabras clave hasta que obtengas un resultado.</translation>
+    </message>
+    <message>
+        <source>The search failed. Try again.</source>
+        <translation>La búsqueda falló. Inténtalo de nuevo.</translation>
     </message>
     <message>
         <source>Try changing some keywords eg. car instead of cars.</source>
@@ -60551,6 +60811,30 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>Site data</source>
         <translation>Datos del sitio</translation>
     </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuración</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Archivos de registro</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmar</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>Gestionar registros</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>Estado de los registros</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Resumen de errores</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -68375,6 +68659,10 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>Show the numbers</source>
         <translation>Mostrar las cifras</translation>
     </message>
+    <message>
+        <source>Nothing was published in the last 14 days.</source>
+        <translation>No se publicó nada en los últimos 14 días.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -69685,6 +69973,34 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
     <message>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>Los ajustes que deciden la caché y la compilación, y cuántas plantillas se ejecutaron desde la caché compilada o se compilaron ahora. Justo después de vaciar la caché de plantillas, cada plantilla se compila una vez.</translation>
+    </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Obsolescencias</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Módulo</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>ID del nudo</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>Estado HTTP</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Tiempo de consulta</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Solicitud</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Parte del tiempo de la página</translation>
     </message>
 </context>
 <context>
@@ -73388,6 +73704,1131 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
     <message>
         <source>Administration</source>
         <translation>Administración</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/ezie</name>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/logs</name>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Alerta</translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation>Aviso</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>Depuración</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Núcleo</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Sitio</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensiones</translation>
+    </message>
+    <message>
+        <source>Rotated archives</source>
+        <translation>Archivos rotados</translation>
+    </message>
+    <message>
+        <source>Log file %name</source>
+        <translation>Archivo de registro %name</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Archivos de registro</translation>
+    </message>
+    <message>
+        <source>Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.</source>
+        <translation>Sigue un archivo de registro mientras se escribe, lo busca a él y a sus rotaciones, y relaciona las líneas de una misma solicitud. Nada en esta página cambia un archivo salvo que una acción de abajo lo indique.</translation>
+    </message>
+    <message>
+        <source>The file was rotated. The next line written starts a new file.</source>
+        <translation>El archivo se ha rotado. La siguiente línea escrita inicia un archivo nuevo.</translation>
+    </message>
+    <message>
+        <source>The file was emptied.</source>
+        <translation>El archivo se ha vaciado.</translation>
+    </message>
+    <message>
+        <source>The archived rotation was removed.</source>
+        <translation>Se ha eliminado la rotación archivada.</translation>
+    </message>
+    <message>
+        <source>The action could not be carried out. The web server may not change the file or its directory.</source>
+        <translation>No se pudo llevar a cabo la acción. Puede que el servidor web no pueda cambiar el archivo o su directorio.</translation>
+    </message>
+    <message>
+        <source>The file asked for is not a log file this viewer may open (settings/logviewer.ini [LogViewerSettings] Directories[] and FilePatterns[]). The default file is shown instead.</source>
+        <translation>El archivo solicitado no es un archivo de registro que este visor pueda abrir (settings/logviewer.ini [LogViewerSettings] Directories[] y FilePatterns[]). En su lugar se muestra el archivo predeterminado.</translation>
+    </message>
+    <message>
+        <source>The search could not be run:</source>
+        <translation>No se pudo realizar la búsqueda:</translation>
+    </message>
+    <message>
+        <source>The search text is too long.</source>
+        <translation>El texto de búsqueda es demasiado largo.</translation>
+    </message>
+    <message>
+        <source>"%field" is not a time.</source>
+        <translation>«%field» no es una hora.</translation>
+    </message>
+    <message>
+        <source>The IP address may only hold digits, letters a to f, dots and colons.</source>
+        <translation>La dirección IP solo puede contener dígitos, las letras de la a a la f, puntos y dos puntos.</translation>
+    </message>
+    <message>
+        <source>The regular expression is not valid.</source>
+        <translation>La expresión regular no es válida.</translation>
+    </message>
+    <message>
+        <source>An error reference looks like ERR-0123456789.</source>
+        <translation>Una referencia de error tiene este aspecto: ERR-0123456789.</translation>
+    </message>
+    <message>
+        <source>There is no log file this viewer may open yet.</source>
+        <translation>Todavía no hay ningún archivo de registro que este visor pueda abrir.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Archivo</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abrir</translation>
+    </message>
+    <message>
+        <source>Changed %time</source>
+        <translation>Modificado %time</translation>
+    </message>
+    <message>
+        <source>Compressed, read only</source>
+        <translation>Comprimido, solo lectura</translation>
+    </message>
+    <message>
+        <source>Archived rotation, not followed</source>
+        <translation>Rotación archivada, no se sigue</translation>
+    </message>
+    <message>
+        <source>E-mail addresses, IP addresses and secrets are masked</source>
+        <translation>Las direcciones de correo electrónico, las direcciones IP y los secretos están enmascarados</translation>
+    </message>
+    <message>
+        <source>Shown unmasked</source>
+        <translation>Mostrado sin enmascarar</translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation>Controles</translation>
+    </message>
+    <message>
+        <source>Search results</source>
+        <translation>Resultados de la búsqueda</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Archivo</translation>
+    </message>
+    <message>
+        <source>Following</source>
+        <translation>Siguiendo</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>Pausar</translation>
+    </message>
+    <message>
+        <source>Newest</source>
+        <translation>Más reciente</translation>
+    </message>
+    <message>
+        <source>Follow</source>
+        <translation>Seguir</translation>
+    </message>
+    <message>
+        <source>Wrap lines</source>
+        <translation>Ajustar líneas</translation>
+    </message>
+    <message>
+        <source>Mask again</source>
+        <translation>Enmascarar de nuevo</translation>
+    </message>
+    <message>
+        <source>Show unmasked</source>
+        <translation>Mostrar sin enmascarar</translation>
+    </message>
+    <message>
+        <source>Find in the loaded lines</source>
+        <translation>Buscar en las líneas cargadas</translation>
+    </message>
+    <message>
+        <source>Find in view</source>
+        <translation>Buscar en la vista</translation>
+    </message>
+    <message>
+        <source>Previous match (Shift+Enter)</source>
+        <translation>Coincidencia anterior (Mayús+Intro)</translation>
+    </message>
+    <message>
+        <source>Previous match</source>
+        <translation>Coincidencia anterior</translation>
+    </message>
+    <message>
+        <source>Next match (Enter)</source>
+        <translation>Coincidencia siguiente (Intro)</translation>
+    </message>
+    <message>
+        <source>Next match</source>
+        <translation>Coincidencia siguiente</translation>
+    </message>
+    <message>
+        <source>Keys in the list: Space pauses or resumes, End jumps to the newest line, Up and Down move, Enter opens a line, n and N find the next and previous match.</source>
+        <translation>Teclas en la lista: Espacio pausa o reanuda, Fin salta a la línea más reciente, Arriba y Abajo se mueven, Intro abre una línea, n y N buscan la coincidencia siguiente y la anterior.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Buscar</translation>
+    </message>
+    <message>
+        <source>Search the log files</source>
+        <translation>Buscar en los archivos de registro</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Texto</translation>
+    </message>
+    <message>
+        <source>Literal text, or a regular expression (without delimiters) when Regular expression is ticked. A search stops after a few seconds and offers to go on.</source>
+        <translation>Texto literal o, si está marcada Expresión regular, una expresión regular (sin delimitadores). Una búsqueda se detiene a los pocos segundos y ofrece continuar.</translation>
+    </message>
+    <message>
+        <source>Regular expression</source>
+        <translation>Expresión regular</translation>
+    </message>
+    <message>
+        <source>Match case</source>
+        <translation>Distinguir mayúsculas y minúsculas</translation>
+    </message>
+    <message>
+        <source>Levels</source>
+        <translation>Niveles</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Para</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acceso al sitio</translation>
+    </message>
+    <message>
+        <source>Request address contains</source>
+        <translation>La dirección de la solicitud contiene</translation>
+    </message>
+    <message>
+        <source>Client IP starts with</source>
+        <translation>La IP del cliente empieza por</translation>
+    </message>
+    <message>
+        <source>Error reference</source>
+        <translation>Referencia de error</translation>
+    </message>
+    <message>
+        <source>The reference an error page showed: finds its line in every kernel log and its rotations, and the lines of its request.</source>
+        <translation>La referencia que mostró una página de error: encuentra su línea en cada registro del núcleo y sus rotaciones, y las líneas de su solicitud.</translation>
+    </message>
+    <message>
+        <source>Search in</source>
+        <translation>Buscar en</translation>
+    </message>
+    <message>
+        <source>This file</source>
+        <translation>Este archivo</translation>
+    </message>
+    <message>
+        <source>All kernel logs</source>
+        <translation>Todos los registros del núcleo</translation>
+    </message>
+    <message>
+        <source>All log files</source>
+        <translation>Todos los archivos de registro</translation>
+    </message>
+    <message>
+        <source>Include rotated files</source>
+        <translation>Incluir archivos rotados</translation>
+    </message>
+    <message>
+        <source>Back to following</source>
+        <translation>Volver al seguimiento</translation>
+    </message>
+    <message>
+        <source>%count entries found</source>
+        <translation>%count entradas encontradas</translation>
+    </message>
+    <message>
+        <source>(the search stopped after its time limit; more may follow)</source>
+        <translation>(la búsqueda se detuvo al llegar a su límite de tiempo; puede haber más)</translation>
+    </message>
+    <message>
+        <source>(the search stopped after reading its share; more may follow)</source>
+        <translation>(la búsqueda se detuvo tras leer su parte; puede haber más)</translation>
+    </message>
+    <message>
+        <source>(the first page of results)</source>
+        <translation>(la primera página de resultados)</translation>
+    </message>
+    <message>
+        <source>(the regular expression needed too much work on a line and was stopped; make it more specific)</source>
+        <translation>(la expresión regular necesitó demasiado trabajo en una línea y se detuvo; hazla más específica)</translation>
+    </message>
+    <message>
+        <source>The request of %reference</source>
+        <translation>La solicitud de %reference</translation>
+    </message>
+    <message>
+        <source>No other line of this request was found.</source>
+        <translation>No se encontró ninguna otra línea de esta solicitud.</translation>
+    </message>
+    <message>
+        <source>The audit of this moment</source>
+        <translation>La auditoría de este momento</translation>
+    </message>
+    <message>
+        <source>Lines of %name</source>
+        <translation>Líneas de %name</translation>
+    </message>
+    <message>
+        <source>Nothing matches the search.</source>
+        <translation>Nada coincide con la búsqueda.</translation>
+    </message>
+    <message>
+        <source>The file is empty.</source>
+        <translation>El archivo está vacío.</translation>
+    </message>
+    <message>
+        <source>More results</source>
+        <translation>Más resultados</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Entrada</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Cerrar</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acciones</translation>
+    </message>
+    <message>
+        <source>From byte</source>
+        <translation>Desde el byte</translation>
+    </message>
+    <message>
+        <source>To byte</source>
+        <translation>Hasta el byte</translation>
+    </message>
+    <message>
+        <source>Download (gzip)</source>
+        <translation>Descargar (gzip)</translation>
+    </message>
+    <message>
+        <source>Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.</source>
+        <translation>Campos vacíos: los últimos %size del archivo. Enmascarado como se muestra aquí; queda registrado en la auditoría.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Rotar ahora</translation>
+    </message>
+    <message>
+        <source>Empty the file</source>
+        <translation>Vaciar el archivo</translation>
+    </message>
+    <message>
+        <source>Remove this rotation</source>
+        <translation>Eliminar esta rotación</translation>
+    </message>
+    <message>
+        <source>Each of these asks for a confirmation first and is recorded in the audit.</source>
+        <translation>Cada una de ellas pide primero una confirmación y queda registrada en la auditoría.</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Reanudar</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>En pausa</translation>
+    </message>
+    <message>
+        <source>Waiting %seconds s (too many requests)</source>
+        <translation>Esperando %seconds s (demasiadas solicitudes)</translation>
+    </message>
+    <message>
+        <source>No answer from the server; trying again</source>
+        <translation>Sin respuesta del servidor; reintentando</translation>
+    </message>
+    <message>
+        <source>The file can no longer be read</source>
+        <translation>El archivo ya no se puede leer</translation>
+    </message>
+    <message>
+        <source>%count new lines</source>
+        <translation>%count líneas nuevas</translation>
+    </message>
+    <message>
+        <source>1 new line</source>
+        <translation>1 línea nueva</translation>
+    </message>
+    <message>
+        <source>The file was rotated or emptied; following the new one.</source>
+        <translation>El archivo se rotó o se vació; se sigue el nuevo.</translation>
+    </message>
+    <message>
+        <source>Match %index of %count</source>
+        <translation>Coincidencia %index de %count</translation>
+    </message>
+    <message>
+        <source>No match</source>
+        <translation>Sin coincidencias</translation>
+    </message>
+    <message>
+        <source>%count lines kept (the oldest are dropped from the page, never from the file)</source>
+        <translation>%count líneas conservadas (las más antiguas desaparecen de la página, nunca del archivo)</translation>
+    </message>
+    <message>
+        <source>Entry at %time</source>
+        <translation>Entrada a las %time</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Nivel</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origen</translation>
+    </message>
+    <message>
+        <source>Client</source>
+        <translation>Cliente</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Solicitud</translation>
+    </message>
+    <message>
+        <source>Byte offset</source>
+        <translation>Posición en bytes</translation>
+    </message>
+    <message>
+        <source>Lines of the same request</source>
+        <translation>Líneas de la misma solicitud</translation>
+    </message>
+    <message>
+        <source>Looking for the lines of this request…</source>
+        <translation>Buscando las líneas de esta solicitud…</translation>
+    </message>
+    <message>
+        <source>Debug output of this request</source>
+        <translation>Salida de depuración de esta solicitud</translation>
+    </message>
+    <message>
+        <source>No debug output of this request was logged.</source>
+        <translation>No se registró ninguna salida de depuración de esta solicitud.</translation>
+    </message>
+    <message>
+        <source>Find %reference everywhere</source>
+        <translation>Buscar %reference en todas partes</translation>
+    </message>
+    <message>
+        <source>Open the request</source>
+        <translation>Abrir la solicitud</translation>
+    </message>
+    <message>
+        <source>(cut: the entry is longer than the viewer keeps)</source>
+        <translation>(recortado: la entrada es más larga de lo que conserva el visor)</translation>
+    </message>
+    <message>
+        <source>Loading more results…</source>
+        <translation>Cargando más resultados…</translation>
+    </message>
+    <message>
+        <source>No more results.</source>
+        <translation>No hay más resultados.</translation>
+    </message>
+    <message>
+        <source>The request failed: %error</source>
+        <translation>La solicitud falló: %error</translation>
+    </message>
+    <message>
+        <source>The web server may not read this file.</source>
+        <translation>El servidor web no puede leer este archivo.</translation>
+    </message>
+    <message>
+        <source>rate: measuring</source>
+        <translation>ritmo: midiendo</translation>
+    </message>
+    <message>
+        <source>%rate lines/min</source>
+        <translation>%rate líneas/min</translation>
+    </message>
+    <message>
+        <source>Rotate %name now?</source>
+        <translation>¿Rotar %name ahora?</translation>
+    </message>
+    <message>
+        <source>Empty %name?</source>
+        <translation>¿Vaciar %name?</translation>
+    </message>
+    <message>
+        <source>Remove %name?</source>
+        <translation>¿Eliminar %name?</translation>
+    </message>
+    <message>
+        <source>The file becomes %name.1 and the older rotations move one number up; the oldest beyond %count is removed. The next line written starts a new file.</source>
+        <translation>El archivo pasa a ser %name.1 y las rotaciones anteriores suben un número; se elimina la más antigua más allá de %count. La siguiente línea escrita inicia un archivo nuevo.</translation>
+    </message>
+    <message>
+        <source>Every line of the file (%size) is removed for good. Download it first if it may still be needed.</source>
+        <translation>Se elimina para siempre cada línea del archivo (%size). Descárgalo antes si todavía puede hacer falta.</translation>
+    </message>
+    <message>
+        <source>The archived rotation (%size) is removed for good.</source>
+        <translation>La rotación archivada (%size) se elimina para siempre.</translation>
+    </message>
+    <message>
+        <source>The action is recorded in the audit.</source>
+        <translation>La acción queda registrada en la auditoría.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
+        <translation>Un enlace a este registro y a esta vista (filtros, búsqueda, en pausa o siguiendo, la línea seleccionada), para guardarlo o compartirlo. Nunca muestra las líneas sin enmascarar.</translation>
+    </message>
+    <message>
+        <source>Copy permalink</source>
+        <translation>Copiar enlace permanente</translation>
+    </message>
+    <message>
+        <source>Link copied</source>
+        <translation>Enlace copiado</translation>
+    </message>
+    <message>
+        <source>Permalink</source>
+        <translation>Enlace permanente</translation>
+    </message>
+    <message>
+        <source>The link could not be copied; it is selected in the field, copy it with the keyboard.</source>
+        <translation>No se pudo copiar el enlace; está seleccionado en el campo, cópialo con el teclado.</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Servidor web</translation>
+    </message>
+    <message>
+        <source>Copy messages</source>
+        <translation>Copiar mensajes</translation>
+    </message>
+    <message>
+        <source>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</source>
+        <translation>Copiar mensajes copia las líneas mostradas como texto sin formato: al seguir, cada línea conservada; en pausa, las líneas visibles. Se copian enmascaradas como se muestran.</translation>
+    </message>
+    <message>
+        <source>%count lines copied</source>
+        <translation>%count líneas copiadas</translation>
+    </message>
+    <message>
+        <source>1 line copied</source>
+        <translation>1 línea copiada</translation>
+    </message>
+    <message>
+        <source>The lines could not be copied. Select them in the list and copy them with the keyboard.</source>
+        <translation>No se pudieron copiar las líneas. Selecciónalas en la lista y cópialas con el teclado.</translation>
+    </message>
+    <message>
+        <source>%count logs</source>
+        <translation>%count registros</translation>
+    </message>
+    <message>
+        <source>%size are removed for good.</source>
+        <translation>%size se eliminan para siempre.</translation>
+    </message>
+    <message>
+        <source>%size in all</source>
+        <translation>%size en total</translation>
+    </message>
+    <message>
+        <source>%size with their archives</source>
+        <translation>%size con sus archivos</translation>
+    </message>
+    <message>
+        <source>%size/h</source>
+        <translation>%size/h</translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation>Archivos históricos</translation>
+    </message>
+    <message>
+        <source>At most %days days</source>
+        <translation>Como máximo %days días</translation>
+    </message>
+    <message>
+        <source>Back to the logs</source>
+        <translation>Volver a los registros</translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation>Se convierte en</translation>
+    </message>
+    <message>
+        <source>Carry out %count steps</source>
+        <translation>Llevar a cabo %count pasos</translation>
+    </message>
+    <message>
+        <source>Compress archives…</source>
+        <translation>Comprimir archivos…</translation>
+    </message>
+    <message>
+        <source>Compress the archives of %key?</source>
+        <translation>¿Comprimir los archivos de %key?</translation>
+    </message>
+    <message>
+        <source>Compressed</source>
+        <translation>Comprimido</translation>
+    </message>
+    <message>
+        <source>Delete archives…</source>
+        <translation>Eliminar archivos…</translation>
+    </message>
+    <message>
+        <source>Delete the old archives of %key?</source>
+        <translation>¿Eliminar los archivos antiguos de %key?</translation>
+    </message>
+    <message>
+        <source>Done: %count steps.</source>
+        <translation>Hecho: %count pasos.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Descarga</translation>
+    </message>
+    <message>
+        <source>Empty %key after archiving it?</source>
+        <translation>¿Vaciar %key después de archivarlo?</translation>
+    </message>
+    <message>
+        <source>Empty (archive first)…</source>
+        <translation>Vaciar (archivar antes)…</translation>
+    </message>
+    <message>
+        <source>Growth</source>
+        <translation>Crecimiento</translation>
+    </message>
+    <message>
+        <source>Keep %count</source>
+        <translation>Conservar %count</translation>
+    </message>
+    <message>
+        <source>Last write</source>
+        <translation>Última escritura</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Límites</translation>
+    </message>
+    <message>
+        <source>Lines (about)</source>
+        <translation>Líneas (aprox.)</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>Registro</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>Gestionar registros</translation>
+    </message>
+    <message>
+        <source>Not compressed</source>
+        <translation>Sin comprimir</translation>
+    </message>
+    <message>
+        <source>Not everything was done (%error): %done of %count steps.</source>
+        <translation>No se hizo todo (%error): %done de %count pasos.</translation>
+    </message>
+    <message>
+        <source>Not managed here: %keys</source>
+        <translation>No se gestionan aquí: %keys</translation>
+    </message>
+    <message>
+        <source>Not writable: %owner:%group</source>
+        <translation>No se puede escribir: %owner:%group</translation>
+    </message>
+    <message>
+        <source>Nothing to do: no file needs this action now.</source>
+        <translation>Nada que hacer: ningún archivo necesita ahora esta acción.</translation>
+    </message>
+    <message>
+        <source>Older than (days)</source>
+        <translation>Más antiguos que (días)</translation>
+    </message>
+    <message>
+        <source>Prune all archives…</source>
+        <translation>Depurar todos los archivos…</translation>
+    </message>
+    <message>
+        <source>Prune the archives of every log?</source>
+        <translation>¿Depurar los archivos de todos los registros?</translation>
+    </message>
+    <message>
+        <source>Rotate %key now?</source>
+        <translation>¿Rotar %key ahora?</translation>
+    </message>
+    <message>
+        <source>Rotate all over their limit…</source>
+        <translation>Rotar todos los que superan su límite…</translation>
+    </message>
+    <message>
+        <source>Rotate at %size</source>
+        <translation>Rotar a los %size</translation>
+    </message>
+    <message>
+        <source>Rotate every log over its limit?</source>
+        <translation>¿Rotar cada registro que supera su límite?</translation>
+    </message>
+    <message>
+        <source>Rotate now…</source>
+        <translation>Rotar ahora…</translation>
+    </message>
+    <message>
+        <source>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</source>
+        <translation>Rota, vacía, comprime y depura los archivos de registro. Cada acción muestra exactamente lo que hará antes de que cambie nada, y cada paso queda registrado en la auditoría. Los registros del servidor web son suyos: se muestran aquí, pero nunca se cambian.</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamaño</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Paso</translation>
+    </message>
+    <message>
+        <source>The actions are switched off in settings/logviewer.ini [ActionSettings].</source>
+        <translation>Las acciones están desactivadas en settings/logviewer.ini [ActionSettings].</translation>
+    </message>
+    <message>
+        <source>The log files, their archives and their limits</source>
+        <translation>Los archivos de registro, sus archivos históricos y sus límites</translation>
+    </message>
+    <message>
+        <source>The steps of this action</source>
+        <translation>Los pasos de esta acción</translation>
+    </message>
+    <message>
+        <source>The web server cannot write this file or its directory: owner %owner, group %group.</source>
+        <translation>El servidor web no puede escribir este archivo ni su directorio: propietario %owner, grupo %group.</translation>
+    </message>
+    <message>
+        <source>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</source>
+        <translation>Esto es una vista previa: todavía no ha cambiado nada. Confirma para llevar a cabo estos %count pasos. Los archivos se vuelven a comprobar antes de cada paso, y cada paso queda registrado en la auditoría.</translation>
+    </message>
+    <message>
+        <source>Web server, read only</source>
+        <translation>Servidor web, solo lectura</translation>
+    </message>
+    <message>
+        <source>compress</source>
+        <translation>comprimir</translation>
+    </message>
+    <message>
+        <source>copy</source>
+        <translation>copiar</translation>
+    </message>
+    <message>
+        <source>delete</source>
+        <translation>eliminar</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>vaciar</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ninguna</translation>
+    </message>
+    <message>
+        <source>over the limit</source>
+        <translation>por encima del límite</translation>
+    </message>
+    <message>
+        <source>rename</source>
+        <translation>renombrar</translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation>%days días</translation>
+    </message>
+    <message>
+        <source>%size of %limit</source>
+        <translation>%size de %limit</translation>
+    </message>
+    <message>
+        <source>%size per hour</source>
+        <translation>%size por hora</translation>
+    </message>
+    <message>
+        <source>(no budget set)</source>
+        <translation>(sin presupuesto definido)</translation>
+    </message>
+    <message>
+        <source>Archives compressed</source>
+        <translation>Archivos comprimidos</translation>
+    </message>
+    <message>
+        <source>Archives kept</source>
+        <translation>Archivos conservados</translation>
+    </message>
+    <message>
+        <source>Archives removed after</source>
+        <translation>Archivos eliminados tras</translation>
+    </message>
+    <message>
+        <source>Archives: %size</source>
+        <translation>Archivos: %size</translation>
+    </message>
+    <message>
+        <source>Budget: logviewer.ini [HealthSettings] DiskBudget</source>
+        <translation>Presupuesto: logviewer.ini [HealthSettings] DiskBudget</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Modificado</translation>
+    </message>
+    <message>
+        <source>Current files: %size</source>
+        <translation>Archivos actuales: %size</translation>
+    </message>
+    <message>
+        <source>Disk use</source>
+        <translation>Uso de disco</translation>
+    </message>
+    <message>
+        <source>Every log</source>
+        <translation>Todos los registros</translation>
+    </message>
+    <message>
+        <source>Every log is within its limit.</source>
+        <translation>Cada registro está dentro de su límite.</translation>
+    </message>
+    <message>
+        <source>Fastest growing</source>
+        <translation>Los que más crecen</translation>
+    </message>
+    <message>
+        <source>How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.</source>
+        <translation>Cuánto disco usan los registros, cuáles crecen más rápido, cuáles superan su límite o no puede escribirlos el servidor web, el error más reciente de cada uno y la configuración de rotación vigente. Nada en esta página cambia un archivo.</translation>
+    </message>
+    <message>
+        <source>Largest size</source>
+        <translation>Tamaño máximo</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>Estado de los registros</translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation>Administrar</translation>
+    </message>
+    <message>
+        <source>Newest error</source>
+        <translation>Error más reciente</translation>
+    </message>
+    <message>
+        <source>No log is known to grow yet: growth is measured between rotations.</source>
+        <translation>Todavía no se sabe de ningún registro que crezca: el crecimiento se mide entre rotaciones.</translation>
+    </message>
+    <message>
+        <source>Not writable by the web server</source>
+        <translation>El servidor web no puede escribirlos</translation>
+    </message>
+    <message>
+        <source>Over their size limit</source>
+        <translation>Por encima de su límite de tamaño</translation>
+    </message>
+    <message>
+        <source>Read only. Each value names the settings file, section and variable it comes from; change it there (in an override), not here.</source>
+        <translation>Solo lectura. Cada valor indica el archivo de configuración, la sección y la variable de la que procede; cámbialo allí (en un override), no aquí.</translation>
+    </message>
+    <message>
+        <source>Rotation settings in effect</source>
+        <translation>Configuración de rotación vigente</translation>
+    </message>
+    <message>
+        <source>Set in</source>
+        <translation>Definido en</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ajuste</translation>
+    </message>
+    <message>
+        <source>The log files belong to different users (%owners). A file created by one user may not be writable by the other; give them one owner, or a shared group with group write.</source>
+        <translation>Los archivos de registro pertenecen a usuarios distintos (%owners). Puede que un archivo creado por un usuario no pueda escribirlo el otro; dales un solo propietario, o un grupo común con permiso de escritura de grupo.</translation>
+    </message>
+    <message>
+        <source>The log manager is not available, so sizes, limits and archives cannot be listed.</source>
+        <translation>El gestor de registros no está disponible, así que no se pueden enumerar tamaños, límites ni archivos.</translation>
+    </message>
+    <message>
+        <source>The web server can write every log.</source>
+        <translation>El servidor web puede escribir todos los registros.</translation>
+    </message>
+    <message>
+        <source>The web server cannot append to these files, so what it logs is lost. They were usually created by a command line or Exponential Velocity running as another user.</source>
+        <translation>El servidor web no puede añadir nada a estos archivos, así que se pierde lo que registra. Normalmente los creó una línea de comandos o Exponential Velocity ejecutándose como otro usuario.</translation>
+    </message>
+    <message>
+        <source>There is no log to show.</source>
+        <translation>No hay ningún registro que mostrar.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>built-in default</source>
+        <translation>valor predeterminado integrado</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nunca</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>sin límite</translation>
+    </message>
+    <message>
+        <source>none in the last lines</source>
+        <translation>ninguno en las últimas líneas</translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation>sin permiso de escritura</translation>
+    </message>
+    <message>
+        <source>of a budget of %budget (%percent %)</source>
+        <translation>de un presupuesto de %budget (%percent %)</translation>
+    </message>
+    <message>
+        <source>over limit</source>
+        <translation>por encima del límite</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>si</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Resumen de errores</translation>
+    </message>
+    <message>
+        <source>The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.</source>
+        <translation>Los distintos errores y advertencias de las últimas horas, sin números, identificadores, valores entre comillas ni rutas, para que las resolicitudes de un mismo problema cuenten como una sola línea. Aquí los mensajes siempre se enmascaran.</translation>
+    </message>
+    <message>
+        <source>Time window</source>
+        <translation>Ventana de tiempo</translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation>Última</translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation>%count h</translation>
+    </message>
+    <message>
+        <source>Hide known messages</source>
+        <translation>Ocultar mensajes conocidos</translation>
+    </message>
+    <message>
+        <source>Show known messages</source>
+        <translation>Mostrar mensajes conocidos</translation>
+    </message>
+    <message>
+        <source>Since %time; levels: %levels.</source>
+        <translation>Desde %time; niveles: %levels.</translation>
+    </message>
+    <message>
+        <source>%count known messages are hidden.</source>
+        <translation>%count mensajes conocidos están ocultos.</translation>
+    </message>
+    <message>
+        <source>There is no log this digest can read.</source>
+        <translation>No hay ningún registro que este resumen pueda leer.</translation>
+    </message>
+    <message>
+        <source>%count entries in %groups messages</source>
+        <translation>%count entradas en %groups mensajes</translation>
+    </message>
+    <message>
+        <source>Only the first %size of the window were read; the file holds more.</source>
+        <translation>Solo se leyeron los primeros %size de la ventana; el archivo contiene más.</translation>
+    </message>
+    <message>
+        <source>Messages of %name</source>
+        <translation>Mensajes de %name</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>Cuenta</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mensaje</translation>
+    </message>
+    <message>
+        <source>Last seen</source>
+        <translation>Visto por última vez</translation>
+    </message>
+    <message>
+        <source>Known</source>
+        <translation>Conocido</translation>
+    </message>
+    <message>
+        <source>Open the newest entry</source>
+        <translation>Abrir la entrada más reciente</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>List again</source>
+        <translation>Volver a listar</translation>
+    </message>
+    <message>
+        <source>Mark as known</source>
+        <translation>Marcar como conocido</translation>
+    </message>
+    <message>
+        <source>No error or warning in this window.</source>
+        <translation>Ningún error ni advertencia en esta ventana.</translation>
+    </message>
+    <message>
+        <source>Log tools</source>
+        <translation>Herramientas de registros</translation>
+    </message>
+    <message>
+        <source>Logs</source>
+        <translation>Registros</translation>
+    </message>
+    <message>
+        <source>The logs are too large to download at once: %total, more than the limit of %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Leave the archives out, or download the logs one by one.</source>
+        <translation>Los registros son demasiado grandes para descargarlos de una vez: %total, más que el límite de %cap ([ActionSettings] MaxBundleBytes en settings/logviewer.ini). Deja fuera los archivos o descarga los registros uno a uno.</translation>
+    </message>
+    <message>
+        <source>There is no log file to download.</source>
+        <translation>No hay ningún archivo de registro que descargar.</translation>
+    </message>
+    <message>
+        <source>The archive could not be written in var/tmp. Check that the web server may write there.</source>
+        <translation>No se pudo escribir el archivo comprimido en var/tmp. Verifica que el servidor web pueda escribir ahí.</translation>
+    </message>
+    <message>
+        <source>Download all logs</source>
+        <translation>Descargar todos los registros</translation>
+    </message>
+    <message>
+        <source>Include archives</source>
+        <translation>Incluir archivos</translation>
+    </message>
+    <message>
+        <source>Unredacted</source>
+        <translation>Sin enmascarar</translation>
+    </message>
+    <message>
+        <source>Unredacted: e-mail addresses, IP addresses, tokens and session ids as written. Only for a secure place; the download is recorded in the audit.</source>
+        <translation>Sin enmascarar: direcciones de correo electrónico, direcciones IP, tokens e identificadores de sesión tal como se escribieron. Solo para un lugar seguro; la descarga queda registrada en la auditoría.</translation>
+    </message>
+    <message>
+        <source>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</source>
+        <translation>Un archivo %format de todos los registros, con un MANIFEST.txt de tamaños, últimas escrituras y sumas de comprobación. Enmascarado como lo muestra el visor; queda registrado en la auditoría; como máximo %cap.</translation>
+    </message>
+    <message>
+        <source>Grouped by category and rule.</source>
+        <translation>Agrupado por categoría y regla.</translation>
+    </message>
+    <message>
+        <source>Grouped by the reason of the answer.</source>
+        <translation>Agrupado por el motivo de la respuesta.</translation>
+    </message>
+    <message>
+        <source>Grouped by the kind of reason.</source>
+        <translation>Agrupado por el tipo de motivo.</translation>
+    </message>
+    <message>
+        <source>Grouped by the request path.</source>
+        <translation>Agrupado por la ruta de la solicitud.</translation>
+    </message>
+    <message>
+        <source>Levels: %levels.</source>
+        <translation>Niveles: %levels.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/logviewer</name>
+    <message>
+        <source>Not found requests (404)</source>
+        <translation>Solicitudes no encontradas (404)</translation>
+    </message>
+    <message>
+        <source>Security (request classifier)</source>
+        <translation>Seguridad (clasificador de solicitudes)</translation>
+    </message>
+    <message>
+        <source>Web server access log</source>
+        <translation>Registro de accesos del servidor web</translation>
+    </message>
+    <message>
+        <source>Web server error log</source>
+        <translation>Registro de errores del servidor web</translation>
     </message>
 </context>
 <context>

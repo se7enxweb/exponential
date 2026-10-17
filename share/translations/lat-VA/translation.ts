@@ -5090,6 +5090,14 @@
         <source>%count matches</source>
         <translation>Res congruentes: %count</translation>
     </message>
+    <message>
+        <source>There are no matches on this page.</source>
+        <translation>In hac pagina nulla congruentia est.</translation>
+    </message>
+    <message>
+        <source>Go to the first page</source>
+        <translation>Ad primam paginam ire</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -10695,6 +10703,14 @@
         <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
         <translation>Res subiectae enumerari non possunt: Exponential UI (extensio expui) in hoc aditu situs activa aut onerata non est.</translation>
     </message>
+    <message>
+        <source>Editorial</source>
+        <translation>Redactorium</translation>
+    </message>
+    <message>
+        <source>Not saved: %error</source>
+        <translation>Non servatum: %error</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -13854,6 +13870,18 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Index tabellae %tab onerari non potuit.</translation>
     </message>
     <message>
+        <source>Try again</source>
+        <translation>Iterum conari</translation>
+    </message>
+    <message>
+        <source>You are signed out. Sign in again to see the %tab menu.</source>
+        <translation>Exiisti. Iterum inire ut indicem %tab videas.</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>Inire</translation>
+    </message>
+    <message>
         <source>Go to %tab</source>
         <translation>Ad %tab ire</translation>
     </message>
@@ -14188,6 +14216,10 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>More</source>
         <translation>Plura</translation>
+    </message>
+    <message>
+        <source>Quick search</source>
+        <translation>Quaestio celeris</translation>
     </message>
 </context>
 <context>
@@ -14815,6 +14847,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
         <translation>Fasciculi in repositorio quibus nihil utitur, et fasciculi cum possessore aut modo falso.</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Fasciculi actorum</translation>
+    </message>
+    <message>
+        <source>Follow, search and cross-reference the log files.</source>
+        <translation>Fasciculos actorum sequere, quaere et inter se confer.</translation>
     </message>
 </context>
 <context>
@@ -23284,6 +23324,30 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Copia characterum</translation>
     </message>
     <message>
+        <source>Siteaccesses</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>%count (default: %default; match: %order)</source>
+        <translation>%count (praefinitum: %default; congruentia: %order)</translation>
+    </message>
+    <message>
+        <source>default: %default; match: %order</source>
+        <translation>praefinitum: %default; congruentia: %order</translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation>URI</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Nomen hospitis</translation>
+    </message>
+    <message>
+        <source>Host and URI</source>
+        <translation>Hospes et URI</translation>
+    </message>
+    <message>
         <source>Internal</source>
         <translation>Internum</translation>
     </message>
@@ -24851,6 +24915,94 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Porta</translation>
     </message>
     <message>
+        <source>Server variable</source>
+        <translation>Variabilis servitri</translation>
+    </message>
+    <message>
+        <source>Index file</source>
+        <translation>Fasciculus indicis</translation>
+    </message>
+    <message>
+        <source>StaticMatch</source>
+        <translation>StaticMatch</translation>
+    </message>
+    <message>
+        <source>Default siteaccess</source>
+        <translation>Aditus situs praefinitus</translation>
+    </message>
+    <message>
+        <source>Another matcher</source>
+        <translation>Alia norma congruentiae</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administratio</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Redactor</translation>
+    </message>
+    <message>
+        <source>Site with login</source>
+        <translation>Situs cum aditu</translation>
+    </message>
+    <message>
+        <source>Every siteaccess of site.ini [SiteAccessSettings] AvailableSiteAccessList and RelatedSiteAccessList, with the rules that lead a request to it. The rules are read from the settings; the links open each siteaccess on the server and port of this page.</source>
+        <translation>Omnis aditus situs ex site.ini [SiteAccessSettings] AvailableSiteAccessList et RelatedSiteAccessList, cum normis quae petitionem ad eum ducunt. Normae ex optionibus leguntur; nexus quemque aditum situs in servitro et porta huius paginae aperiunt.</translation>
+    </message>
+    <message>
+        <source>This request</source>
+        <translation>Haec petitio</translation>
+    </message>
+    <message>
+        <source>Match order</source>
+        <translation>Ordo congruentiae</translation>
+    </message>
+    <message>
+        <source>every request gets this siteaccess; the rules below are not used</source>
+        <translation>omnis petitio hunc aditum situs accipit; normae infra non adhibentur</translation>
+    </message>
+    <message>
+        <source>Resolution map</source>
+        <translation>Tabula resolutionis</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Norma</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Lemmata</translation>
+    </message>
+    <message>
+        <source>matched</source>
+        <translation>congruit</translation>
+    </message>
+    <message>
+        <source>not a rule this installation knows</source>
+        <translation>non est norma quam haec institutio novit</translation>
+    </message>
+    <message>
+        <source>no entries</source>
+        <translation>nulla lemmata</translation>
+    </message>
+    <message>
+        <source>chose %siteaccess</source>
+        <translation>%siteaccess elegit</translation>
+    </message>
+    <message>
+        <source>no rule matched</source>
+        <translation>nulla norma congruit</translation>
+    </message>
+    <message>
+        <source>The rules are tried from the top; the first that matches decides.</source>
+        <translation>Normae a summo temptantur; prima quae congruit decernit.</translation>
+    </message>
+    <message>
+        <source>All siteaccesses</source>
+        <translation>Omnes aditus situs</translation>
+    </message>
+    <message>
         <source>no limit</source>
         <translation>sine limite</translation>
     </message>
@@ -24913,6 +25065,22 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>default</source>
         <translation>praedefinitum</translation>
+    </message>
+    <message>
+        <source>this page</source>
+        <translation>haec pagina</translation>
+    </message>
+    <message>
+        <source>related only</source>
+        <translation>tantum cognatus</translation>
+    </message>
+    <message>
+        <source>no rule reaches it</source>
+        <translation>nulla norma eum attingit</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Designatio</translation>
     </message>
     <message>
         <source>Tables</source>
@@ -25049,6 +25217,70 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Locale</source>
         <translation>Localizatio</translation>
+    </message>
+    <message>
+        <source>languages:</source>
+        <translation>linguae:</translation>
+    </message>
+    <message>
+        <source>Access extensions</source>
+        <translation>Extensiones aditus</translation>
+    </message>
+    <message>
+        <source>Hidden nodes</source>
+        <translation>Nodi occulti</translation>
+    </message>
+    <message>
+        <source>shown</source>
+        <translation>ostenduntur</translation>
+    </message>
+    <message>
+        <source>not shown</source>
+        <translation>non ostenduntur</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Inire</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>necessarium</translation>
+    </message>
+    <message>
+        <source>not required</source>
+        <translation>non necessarium</translation>
+    </message>
+    <message>
+        <source>Matched by</source>
+        <translation>Congruit per</translation>
+    </message>
+    <message>
+        <source>the default rule</source>
+        <translation>norma praefinita</translation>
+    </message>
+    <message>
+        <source>The settings of this siteaccess could not be read.</source>
+        <translation>Optiones huius aditus situs legi non potuerunt.</translation>
+    </message>
+    <message>
+        <source>Open %siteaccess</source>
+        <translation>%siteaccess aperire</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aperire</translation>
+    </message>
+    <message>
+        <source>Settings of %siteaccess</source>
+        <translation>Optiones %siteaccess</translation>
+    </message>
+    <message>
+        <source>site.ini settings</source>
+        <translation>Optiones site.ini</translation>
+    </message>
+    <message>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
+        <translation>Genus sequitur site.ini [SiteAccessSettings] SiteAccessType cum aditus situs id statuit, aliter designationes eius et RequireUserLogin. Dux: doc/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -33607,6 +33839,30 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Checking...</source>
         <translation>Probatur...</translation>
+    </message>
+    <message>
+        <source>Table of an extension that is not active</source>
+        <translation>Tabula extensionis non activae</translation>
+    </message>
+    <message>
+        <source>%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.</source>
+        <translation>%count tabulae ad extensiones institutas neque activas pertinent; infra enumerantur, nihil exsequendum.</translation>
+    </message>
+    <message>
+        <source>Tables of extensions that are not active</source>
+        <translation>Tabulae extensionum non activarum</translation>
+    </message>
+    <message>
+        <source>belongs to %extension (not active)</source>
+        <translation>ad %extension pertinet (non activa)</translation>
+    </message>
+    <message>
+        <source>This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.</source>
+        <translation>Haec tabula ad extensionem %extension pertinet, quae instituta est neque activa. Extensionem activa aut tabulam relinque; eam delere data eius tollit. Nullum SQL pro ea scribitur.</translation>
+    </message>
+    <message>
+        <source>No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
+        <translation>Nullum schema cum systemate datum hanc tabulam nominat, ne illud quidem extensionis institutae non activae: plerumque ad extensionem tuam sine fasciculo schematis pertinet, aut ad extensionem remotam. Eam relinque, nisi scis data eius non iam requiri; sententia DROP tantum ut integra sit ostenditur.</translation>
     </message>
 </context>
 <context>
@@ -44198,6 +44454,10 @@ Si commentaria approbatori mittere aut statum inspicere vis, URL infra adhibe.</
     <message>
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation>Pauciora verba clavis plura eventa afferunt. Verba clavis minue, donec eventum accipias.</translation>
+    </message>
+    <message>
+        <source>The search failed. Try again.</source>
+        <translation>Quaestio defecit. Iterum conare.</translation>
     </message>
 </context>
 <context>
@@ -56821,6 +57081,30 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Site data</source>
         <translation>Data situs</translation>
     </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Fasciculi actorum</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmare</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>Acta administrare</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>Valetudo actorum</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Summarium errorum</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -64633,6 +64917,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Show the numbers</source>
         <translation>Numeros ostendere</translation>
     </message>
+    <message>
+        <source>Nothing was published in the last 14 days.</source>
+        <translation>Nihil proximis XIV diebus editum est.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -65943,6 +66231,34 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>Optiones quae de promptuario et compilatione decernunt, et quot formulae ex promptuario compilato exsecutae aut nunc compilatae sint. Statim post purgationem promptuarii formularum quaeque formula semel compilatur.</translation>
+    </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Obsoleta</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modulus</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>ID nodi</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>Status HTTP</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Tempus interrogationis</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Petitio</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Pars temporis paginae</translation>
     </message>
 </context>
 <context>
@@ -69646,6 +69962,1131 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Administration</source>
         <translation>Administratio</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/ezie</name>
+    <message>
+        <source>Edit</source>
+        <translation>Recensere</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/logs</name>
+    <message>
+        <source>Error</source>
+        <translation>Erratum</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Monitum</translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation>Nuntius</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>Emendatio</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nucleus</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Situs</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensiones</translation>
+    </message>
+    <message>
+        <source>Rotated archives</source>
+        <translation>Archiva rotata</translation>
+    </message>
+    <message>
+        <source>Log file %name</source>
+        <translation>Fasciculus actorum %name</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Fasciculi actorum</translation>
+    </message>
+    <message>
+        <source>Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.</source>
+        <translation>Fasciculum actorum dum scribitur sequitur, eum eiusque rotationes quaerit, et versus unius petitionis coniungit. Nihil in hac pagina fasciculum mutat, nisi actio infra id dicit.</translation>
+    </message>
+    <message>
+        <source>The file was rotated. The next line written starts a new file.</source>
+        <translation>Fasciculus rotatus est. Proximus versus scriptus novum fasciculum incipit.</translation>
+    </message>
+    <message>
+        <source>The file was emptied.</source>
+        <translation>Fasciculus vacuefactus est.</translation>
+    </message>
+    <message>
+        <source>The archived rotation was removed.</source>
+        <translation>Rotatio archivata remota est.</translation>
+    </message>
+    <message>
+        <source>The action could not be carried out. The web server may not change the file or its directory.</source>
+        <translation>Actio perfici non potuit. Fortasse servitrum interretiale fasciculum aut directorium eius mutare non licet.</translation>
+    </message>
+    <message>
+        <source>The file asked for is not a log file this viewer may open (settings/logviewer.ini [LogViewerSettings] Directories[] and FilePatterns[]). The default file is shown instead.</source>
+        <translation>Fasciculus petitus non est fasciculus actorum quem hic inspector aperire licet (settings/logviewer.ini [LogViewerSettings] Directories[] et FilePatterns[]). Pro eo fasciculus praefinitus ostenditur.</translation>
+    </message>
+    <message>
+        <source>The search could not be run:</source>
+        <translation>Quaestio fieri non potuit:</translation>
+    </message>
+    <message>
+        <source>The search text is too long.</source>
+        <translation>Textus quaestionis nimis longus est.</translation>
+    </message>
+    <message>
+        <source>"%field" is not a time.</source>
+        <translation>&quot;%field&quot; non est tempus.</translation>
+    </message>
+    <message>
+        <source>The IP address may only hold digits, letters a to f, dots and colons.</source>
+        <translation>Inscriptio IP tantum numeros, litteras a ad f, puncta et duo puncta continere potest.</translation>
+    </message>
+    <message>
+        <source>The regular expression is not valid.</source>
+        <translation>Expressio regularis non valet.</translation>
+    </message>
+    <message>
+        <source>An error reference looks like ERR-0123456789.</source>
+        <translation>Relatio erroris sic apparet: ERR-0123456789.</translation>
+    </message>
+    <message>
+        <source>There is no log file this viewer may open yet.</source>
+        <translation>Nondum est fasciculus actorum quem hic inspector aperire licet.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fasciculus</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aperire</translation>
+    </message>
+    <message>
+        <source>Changed %time</source>
+        <translation>Mutatum %time</translation>
+    </message>
+    <message>
+        <source>Compressed, read only</source>
+        <translation>Compressum, tantum legendum</translation>
+    </message>
+    <message>
+        <source>Archived rotation, not followed</source>
+        <translation>Rotatio archivata, non secuta</translation>
+    </message>
+    <message>
+        <source>E-mail addresses, IP addresses and secrets are masked</source>
+        <translation>Inscriptiones electronicae, inscriptiones IP et secreta velata sunt</translation>
+    </message>
+    <message>
+        <source>Shown unmasked</source>
+        <translation>Sine velo ostensum</translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation>Moderamina</translation>
+    </message>
+    <message>
+        <source>Search results</source>
+        <translation>Eventus quaestionis</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Archivum</translation>
+    </message>
+    <message>
+        <source>Following</source>
+        <translation>Sequens</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>Intermittere</translation>
+    </message>
+    <message>
+        <source>Newest</source>
+        <translation>Novissimum</translation>
+    </message>
+    <message>
+        <source>Follow</source>
+        <translation>Sequi</translation>
+    </message>
+    <message>
+        <source>Wrap lines</source>
+        <translation>Versus frangere</translation>
+    </message>
+    <message>
+        <source>Mask again</source>
+        <translation>Iterum velare</translation>
+    </message>
+    <message>
+        <source>Show unmasked</source>
+        <translation>Sine velo ostendere</translation>
+    </message>
+    <message>
+        <source>Find in the loaded lines</source>
+        <translation>In versibus oneratis quaerere</translation>
+    </message>
+    <message>
+        <source>Find in view</source>
+        <translation>In conspectu quaerere</translation>
+    </message>
+    <message>
+        <source>Previous match (Shift+Enter)</source>
+        <translation>Congruentia prior (Shift+Enter)</translation>
+    </message>
+    <message>
+        <source>Previous match</source>
+        <translation>Congruentia prior</translation>
+    </message>
+    <message>
+        <source>Next match (Enter)</source>
+        <translation>Congruentia sequens (Enter)</translation>
+    </message>
+    <message>
+        <source>Next match</source>
+        <translation>Congruentia sequens</translation>
+    </message>
+    <message>
+        <source>Keys in the list: Space pauses or resumes, End jumps to the newest line, Up and Down move, Enter opens a line, n and N find the next and previous match.</source>
+        <translation>Claves in indice: Spatium intermittit aut resumit, End ad versum novissimum salit, Sursum et Deorsum movent, Enter versum aperit, n et N congruentiam sequentem et priorem inveniunt.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Quaerere</translation>
+    </message>
+    <message>
+        <source>Search the log files</source>
+        <translation>Fasciculos actorum quaerere</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Textus</translation>
+    </message>
+    <message>
+        <source>Literal text, or a regular expression (without delimiters) when Regular expression is ticked. A search stops after a few seconds and offers to go on.</source>
+        <translation>Textus ad litteram, aut expressio regularis (sine terminis) cum Expressio regularis notata est. Quaestio post paucas secundas consistit et pergere offert.</translation>
+    </message>
+    <message>
+        <source>Regular expression</source>
+        <translation>Expressio regularis</translation>
+    </message>
+    <message>
+        <source>Match case</source>
+        <translation>Litteras maiusculas distinguere</translation>
+    </message>
+    <message>
+        <source>Levels</source>
+        <translation>Gradus</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ex</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Usque ad</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>Request address contains</source>
+        <translation>Inscriptio petitionis continet</translation>
+    </message>
+    <message>
+        <source>Client IP starts with</source>
+        <translation>IP clientis incipit ab</translation>
+    </message>
+    <message>
+        <source>Error reference</source>
+        <translation>Relatio erroris</translation>
+    </message>
+    <message>
+        <source>The reference an error page showed: finds its line in every kernel log and its rotations, and the lines of its request.</source>
+        <translation>Relatio quam pagina erroris ostendit: versum eius in omnibus actis nuclei eorumque rotationibus invenit, et versus petitionis eius.</translation>
+    </message>
+    <message>
+        <source>Search in</source>
+        <translation>Quaerere in</translation>
+    </message>
+    <message>
+        <source>This file</source>
+        <translation>Hic fasciculus</translation>
+    </message>
+    <message>
+        <source>All kernel logs</source>
+        <translation>Omnia acta nuclei</translation>
+    </message>
+    <message>
+        <source>All log files</source>
+        <translation>Omnes fasciculi actorum</translation>
+    </message>
+    <message>
+        <source>Include rotated files</source>
+        <translation>Fasciculos rotatos includere</translation>
+    </message>
+    <message>
+        <source>Back to following</source>
+        <translation>Ad sequendum redire</translation>
+    </message>
+    <message>
+        <source>%count entries found</source>
+        <translation>%count lemmata inventa</translation>
+    </message>
+    <message>
+        <source>(the search stopped after its time limit; more may follow)</source>
+        <translation>(quaestio post terminum temporis sui constitit; plura sequi possunt)</translation>
+    </message>
+    <message>
+        <source>(the search stopped after reading its share; more may follow)</source>
+        <translation>(quaestio post partem suam lectam constitit; plura sequi possunt)</translation>
+    </message>
+    <message>
+        <source>(the first page of results)</source>
+        <translation>(prima pagina eventuum)</translation>
+    </message>
+    <message>
+        <source>(the regular expression needed too much work on a line and was stopped; make it more specific)</source>
+        <translation>(expressio regularis nimium laboris in uno versu postulavit et sistita est; eam magis definitam fac)</translation>
+    </message>
+    <message>
+        <source>The request of %reference</source>
+        <translation>Petitio %reference</translation>
+    </message>
+    <message>
+        <source>No other line of this request was found.</source>
+        <translation>Nullus alius versus huius petitionis inventus est.</translation>
+    </message>
+    <message>
+        <source>The audit of this moment</source>
+        <translation>Inspectio huius momenti</translation>
+    </message>
+    <message>
+        <source>Lines of %name</source>
+        <translation>Versus %name</translation>
+    </message>
+    <message>
+        <source>Nothing matches the search.</source>
+        <translation>Nihil quaestioni congruit.</translation>
+    </message>
+    <message>
+        <source>The file is empty.</source>
+        <translation>Fasciculus vacuus est.</translation>
+    </message>
+    <message>
+        <source>More results</source>
+        <translation>Plures eventus</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Lemma</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Claudere</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actiones</translation>
+    </message>
+    <message>
+        <source>From byte</source>
+        <translation>Ab octeto</translation>
+    </message>
+    <message>
+        <source>To byte</source>
+        <translation>Ad octetum</translation>
+    </message>
+    <message>
+        <source>Download (gzip)</source>
+        <translation>Depromere (gzip)</translation>
+    </message>
+    <message>
+        <source>Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.</source>
+        <translation>Campi vacui: postrema %size fasciculi. Velatum ut hic ostenditur; in inspectione notatur.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Nunc rotare</translation>
+    </message>
+    <message>
+        <source>Empty the file</source>
+        <translation>Fasciculum vacuefacere</translation>
+    </message>
+    <message>
+        <source>Remove this rotation</source>
+        <translation>Hanc rotationem removere</translation>
+    </message>
+    <message>
+        <source>Each of these asks for a confirmation first and is recorded in the audit.</source>
+        <translation>Harum quaeque primum confirmationem petit et in inspectione notatur.</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Resumere</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Intermissum</translation>
+    </message>
+    <message>
+        <source>Waiting %seconds s (too many requests)</source>
+        <translation>Exspectans %seconds s (nimis multae petitiones)</translation>
+    </message>
+    <message>
+        <source>No answer from the server; trying again</source>
+        <translation>Nullum responsum a servitro; iterum temptatur</translation>
+    </message>
+    <message>
+        <source>The file can no longer be read</source>
+        <translation>Fasciculus iam legi non potest</translation>
+    </message>
+    <message>
+        <source>%count new lines</source>
+        <translation>%count versus novi</translation>
+    </message>
+    <message>
+        <source>1 new line</source>
+        <translation>1 versus novus</translation>
+    </message>
+    <message>
+        <source>The file was rotated or emptied; following the new one.</source>
+        <translation>Fasciculus rotatus aut vacuefactus est; novus sequitur.</translation>
+    </message>
+    <message>
+        <source>Match %index of %count</source>
+        <translation>Congruentia %index ex %count</translation>
+    </message>
+    <message>
+        <source>No match</source>
+        <translation>Nulla congruentia</translation>
+    </message>
+    <message>
+        <source>%count lines kept (the oldest are dropped from the page, never from the file)</source>
+        <translation>%count versus servati (vetustissimi e pagina, numquam e fasciculo, removentur)</translation>
+    </message>
+    <message>
+        <source>Entry at %time</source>
+        <translation>Lemma hora %time</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Gradus</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origo</translation>
+    </message>
+    <message>
+        <source>Client</source>
+        <translation>Cliens</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Petitio</translation>
+    </message>
+    <message>
+        <source>Byte offset</source>
+        <translation>Positio in octetis</translation>
+    </message>
+    <message>
+        <source>Lines of the same request</source>
+        <translation>Versus eiusdem petitionis</translation>
+    </message>
+    <message>
+        <source>Looking for the lines of this request…</source>
+        <translation>Versus huius petitionis quaeruntur…</translation>
+    </message>
+    <message>
+        <source>Debug output of this request</source>
+        <translation>Exitus emendationis huius petitionis</translation>
+    </message>
+    <message>
+        <source>No debug output of this request was logged.</source>
+        <translation>Nullus exitus emendationis huius petitionis notatus est.</translation>
+    </message>
+    <message>
+        <source>Find %reference everywhere</source>
+        <translation>%reference ubique quaerere</translation>
+    </message>
+    <message>
+        <source>Open the request</source>
+        <translation>Petitionem aperire</translation>
+    </message>
+    <message>
+        <source>(cut: the entry is longer than the viewer keeps)</source>
+        <translation>(decurtatum: lemma longius est quam inspector servat)</translation>
+    </message>
+    <message>
+        <source>Loading more results…</source>
+        <translation>Plures eventus onerantur…</translation>
+    </message>
+    <message>
+        <source>No more results.</source>
+        <translation>Nulli plures eventus.</translation>
+    </message>
+    <message>
+        <source>The request failed: %error</source>
+        <translation>Petitio defecit: %error</translation>
+    </message>
+    <message>
+        <source>The web server may not read this file.</source>
+        <translation>Servitro interretiali hunc fasciculum legere non licet.</translation>
+    </message>
+    <message>
+        <source>rate: measuring</source>
+        <translation>celeritas: metitur</translation>
+    </message>
+    <message>
+        <source>%rate lines/min</source>
+        <translation>%rate versus/min</translation>
+    </message>
+    <message>
+        <source>Rotate %name now?</source>
+        <translation>Nuncne %name rotare?</translation>
+    </message>
+    <message>
+        <source>Empty %name?</source>
+        <translation>%name vacuefacere?</translation>
+    </message>
+    <message>
+        <source>Remove %name?</source>
+        <translation>%name removere?</translation>
+    </message>
+    <message>
+        <source>The file becomes %name.1 and the older rotations move one number up; the oldest beyond %count is removed. The next line written starts a new file.</source>
+        <translation>Fasciculus fit %name.1 et rotationes veteriores uno numero ascendunt; vetustissima ultra %count removetur. Proximus versus scriptus novum fasciculum incipit.</translation>
+    </message>
+    <message>
+        <source>Every line of the file (%size) is removed for good. Download it first if it may still be needed.</source>
+        <translation>Omnis versus fasciculi (%size) in perpetuum removetur. Prius eum deprome, si fortasse adhuc opus erit.</translation>
+    </message>
+    <message>
+        <source>The archived rotation (%size) is removed for good.</source>
+        <translation>Rotatio archivata (%size) in perpetuum removetur.</translation>
+    </message>
+    <message>
+        <source>The action is recorded in the audit.</source>
+        <translation>Actio in inspectione notatur.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
+    <message>
+        <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
+        <translation>Nexus ad haec acta et hunc conspectum (filtra, quaestio, intermissum aut sequens, versus selectus), ad notandum aut communicandum. Versus numquam sine velo ostendit.</translation>
+    </message>
+    <message>
+        <source>Copy permalink</source>
+        <translation>Nexum perpetuum exscribere</translation>
+    </message>
+    <message>
+        <source>Link copied</source>
+        <translation>Nexus exscriptus</translation>
+    </message>
+    <message>
+        <source>Permalink</source>
+        <translation>Nexus perpetuus</translation>
+    </message>
+    <message>
+        <source>The link could not be copied; it is selected in the field, copy it with the keyboard.</source>
+        <translation>Nexus exscribi non potuit; in campo selectus est, eum claviatura exscribe.</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Servitrum interretiale</translation>
+    </message>
+    <message>
+        <source>Copy messages</source>
+        <translation>Nuntios exscribere</translation>
+    </message>
+    <message>
+        <source>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</source>
+        <translation>Nuntios exscribere versus ostensos ut textum purum exscribit: dum sequitur, omnem versum servatum; dum intermittitur, versus in conspectu. Velantur ut ostenduntur.</translation>
+    </message>
+    <message>
+        <source>%count lines copied</source>
+        <translation>%count versus exscripti</translation>
+    </message>
+    <message>
+        <source>1 line copied</source>
+        <translation>1 versus exscriptus</translation>
+    </message>
+    <message>
+        <source>The lines could not be copied. Select them in the list and copy them with the keyboard.</source>
+        <translation>Versus exscribi non potuerunt. Eos in indice selige et claviatura exscribe.</translation>
+    </message>
+    <message>
+        <source>%count logs</source>
+        <translation>%count acta</translation>
+    </message>
+    <message>
+        <source>%size are removed for good.</source>
+        <translation>%size in perpetuum removentur.</translation>
+    </message>
+    <message>
+        <source>%size in all</source>
+        <translation>%size in summa</translation>
+    </message>
+    <message>
+        <source>%size with their archives</source>
+        <translation>%size cum archivis suis</translation>
+    </message>
+    <message>
+        <source>%size/h</source>
+        <translation>%size/hora</translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation>Archiva</translation>
+    </message>
+    <message>
+        <source>At most %days days</source>
+        <translation>Ad summum %days dies</translation>
+    </message>
+    <message>
+        <source>Back to the logs</source>
+        <translation>Ad acta redire</translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation>Fit</translation>
+    </message>
+    <message>
+        <source>Carry out %count steps</source>
+        <translation>%count gradus perficere</translation>
+    </message>
+    <message>
+        <source>Compress archives…</source>
+        <translation>Archiva comprimere…</translation>
+    </message>
+    <message>
+        <source>Compress the archives of %key?</source>
+        <translation>Archivane %key comprimere?</translation>
+    </message>
+    <message>
+        <source>Compressed</source>
+        <translation>Compressum</translation>
+    </message>
+    <message>
+        <source>Delete archives…</source>
+        <translation>Archiva delere…</translation>
+    </message>
+    <message>
+        <source>Delete the old archives of %key?</source>
+        <translation>Archivane vetera %key delere?</translation>
+    </message>
+    <message>
+        <source>Done: %count steps.</source>
+        <translation>Factum: %count gradus.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Depromere</translation>
+    </message>
+    <message>
+        <source>Empty %key after archiving it?</source>
+        <translation>%key post archivationem vacuefacere?</translation>
+    </message>
+    <message>
+        <source>Empty (archive first)…</source>
+        <translation>Vacuefacere (prius archivare)…</translation>
+    </message>
+    <message>
+        <source>Growth</source>
+        <translation>Incrementum</translation>
+    </message>
+    <message>
+        <source>Keep %count</source>
+        <translation>%count servare</translation>
+    </message>
+    <message>
+        <source>Last write</source>
+        <translation>Ultima scriptio</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limites</translation>
+    </message>
+    <message>
+        <source>Lines (about)</source>
+        <translation>Versus (circiter)</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>Acta</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>Acta administrare</translation>
+    </message>
+    <message>
+        <source>Not compressed</source>
+        <translation>Non compressum</translation>
+    </message>
+    <message>
+        <source>Not everything was done (%error): %done of %count steps.</source>
+        <translation>Non omnia facta sunt (%error): %done ex %count gradibus.</translation>
+    </message>
+    <message>
+        <source>Not managed here: %keys</source>
+        <translation>Hic non administrantur: %keys</translation>
+    </message>
+    <message>
+        <source>Not writable: %owner:%group</source>
+        <translation>Scribi non potest: %owner:%group</translation>
+    </message>
+    <message>
+        <source>Nothing to do: no file needs this action now.</source>
+        <translation>Nihil agendum: nullus fasciculus nunc hac actione eget.</translation>
+    </message>
+    <message>
+        <source>Older than (days)</source>
+        <translation>Vetustiora quam (dies)</translation>
+    </message>
+    <message>
+        <source>Prune all archives…</source>
+        <translation>Omnia archiva purgare…</translation>
+    </message>
+    <message>
+        <source>Prune the archives of every log?</source>
+        <translation>Archivane omnium actorum purgare?</translation>
+    </message>
+    <message>
+        <source>Rotate %key now?</source>
+        <translation>Nuncne %key rotare?</translation>
+    </message>
+    <message>
+        <source>Rotate all over their limit…</source>
+        <translation>Omnia ultra terminum suum rotare…</translation>
+    </message>
+    <message>
+        <source>Rotate at %size</source>
+        <translation>Rotare ad %size</translation>
+    </message>
+    <message>
+        <source>Rotate every log over its limit?</source>
+        <translation>Omniane acta ultra terminum suum rotare?</translation>
+    </message>
+    <message>
+        <source>Rotate now…</source>
+        <translation>Nunc rotare…</translation>
+    </message>
+    <message>
+        <source>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</source>
+        <translation>Fasciculos actorum rota, vacuefac, comprime et purga. Omnis actio prius quam quicquam mutetur accurate ostendit quid factura sit, et omnis gradus in inspectione notatur. Acta servitri interretialis eius sunt: hic ostenduntur, sed numquam mutantur.</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Magnitudo</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Gradus</translation>
+    </message>
+    <message>
+        <source>The actions are switched off in settings/logviewer.ini [ActionSettings].</source>
+        <translation>Actiones in settings/logviewer.ini [ActionSettings] exstinctae sunt.</translation>
+    </message>
+    <message>
+        <source>The log files, their archives and their limits</source>
+        <translation>Fasciculi actorum, archiva eorum et termini eorum</translation>
+    </message>
+    <message>
+        <source>The steps of this action</source>
+        <translation>Gradus huius actionis</translation>
+    </message>
+    <message>
+        <source>The web server cannot write this file or its directory: owner %owner, group %group.</source>
+        <translation>Servitrum interretiale hunc fasciculum aut directorium eius scribere non potest: possessor %owner, grex %group.</translation>
+    </message>
+    <message>
+        <source>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</source>
+        <translation>Haec praevisio est: nihil adhuc mutatum est. Confirma ut hos %count gradus perficias. Fasciculi ante omnem gradum iterum probantur, et omnis gradus in inspectione notatur.</translation>
+    </message>
+    <message>
+        <source>Web server, read only</source>
+        <translation>Servitrum interretiale, tantum legendum</translation>
+    </message>
+    <message>
+        <source>compress</source>
+        <translation>comprimere</translation>
+    </message>
+    <message>
+        <source>copy</source>
+        <translation>exscribere</translation>
+    </message>
+    <message>
+        <source>delete</source>
+        <translation>delere</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>vacuefacere</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nullum</translation>
+    </message>
+    <message>
+        <source>over the limit</source>
+        <translation>ultra terminum</translation>
+    </message>
+    <message>
+        <source>rename</source>
+        <translation>renominare</translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation>%days dies</translation>
+    </message>
+    <message>
+        <source>%size of %limit</source>
+        <translation>%size ex %limit</translation>
+    </message>
+    <message>
+        <source>%size per hour</source>
+        <translation>%size per horam</translation>
+    </message>
+    <message>
+        <source>(no budget set)</source>
+        <translation>(nullus modus statutus)</translation>
+    </message>
+    <message>
+        <source>Archives compressed</source>
+        <translation>Archiva compressa</translation>
+    </message>
+    <message>
+        <source>Archives kept</source>
+        <translation>Archiva servata</translation>
+    </message>
+    <message>
+        <source>Archives removed after</source>
+        <translation>Archiva removentur post</translation>
+    </message>
+    <message>
+        <source>Archives: %size</source>
+        <translation>Archiva: %size</translation>
+    </message>
+    <message>
+        <source>Budget: logviewer.ini [HealthSettings] DiskBudget</source>
+        <translation>Modus: logviewer.ini [HealthSettings] DiskBudget</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Mutatum</translation>
+    </message>
+    <message>
+        <source>Current files: %size</source>
+        <translation>Fasciculi praesentes: %size</translation>
+    </message>
+    <message>
+        <source>Disk use</source>
+        <translation>Usus disci</translation>
+    </message>
+    <message>
+        <source>Every log</source>
+        <translation>Omnia acta</translation>
+    </message>
+    <message>
+        <source>Every log is within its limit.</source>
+        <translation>Omnia acta intra terminum suum sunt.</translation>
+    </message>
+    <message>
+        <source>Fastest growing</source>
+        <translation>Celerrime crescentia</translation>
+    </message>
+    <message>
+        <source>How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.</source>
+        <translation>Quantum disci acta occupent, quae celerrime crescant, quae ultra terminum suum sint aut a servitro interretiali scribi non possint, error novissimus cuiusque, et optiones rotationis vigentes. Nihil in hac pagina fasciculum mutat.</translation>
+    </message>
+    <message>
+        <source>Largest size</source>
+        <translation>Magnitudo maxima</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>Valetudo actorum</translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation>Administrare</translation>
+    </message>
+    <message>
+        <source>Newest error</source>
+        <translation>Error novissimus</translation>
+    </message>
+    <message>
+        <source>No log is known to grow yet: growth is measured between rotations.</source>
+        <translation>Nondum constat ulla acta crescere: incrementum inter rotationes metitur.</translation>
+    </message>
+    <message>
+        <source>Not writable by the web server</source>
+        <translation>A servitro interretiali scribi non possunt</translation>
+    </message>
+    <message>
+        <source>Over their size limit</source>
+        <translation>Ultra terminum magnitudinis suae</translation>
+    </message>
+    <message>
+        <source>Read only. Each value names the settings file, section and variable it comes from; change it there (in an override), not here.</source>
+        <translation>Tantum legendum. Quisque valor fasciculum optionum, sectionem et variabilem unde venit nominat; eum ibi muta (in substitutione), non hic.</translation>
+    </message>
+    <message>
+        <source>Rotation settings in effect</source>
+        <translation>Optiones rotationis vigentes</translation>
+    </message>
+    <message>
+        <source>Set in</source>
+        <translation>Statutum in</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Optio</translation>
+    </message>
+    <message>
+        <source>The log files belong to different users (%owners). A file created by one user may not be writable by the other; give them one owner, or a shared group with group write.</source>
+        <translation>Fasciculi actorum ad diversos usores pertinent (%owners). Fasciculus ab uno usore creatus ab altero fortasse scribi non potest; eis unum possessorem da, aut gregem communem cum iure scribendi gregis.</translation>
+    </message>
+    <message>
+        <source>The log manager is not available, so sizes, limits and archives cannot be listed.</source>
+        <translation>Administrator actorum praesto non est, itaque magnitudines, termini et archiva enumerari non possunt.</translation>
+    </message>
+    <message>
+        <source>The web server can write every log.</source>
+        <translation>Servitrum interretiale omnia acta scribere potest.</translation>
+    </message>
+    <message>
+        <source>The web server cannot append to these files, so what it logs is lost. They were usually created by a command line or Exponential Velocity running as another user.</source>
+        <translation>Servitrum interretiale his fasciculis nihil addere potest, itaque quod notat perit. Plerumque a linea mandatorum aut ab Exponential Velocity ut alius usor currente creati sunt.</translation>
+    </message>
+    <message>
+        <source>There is no log to show.</source>
+        <translation>Nulla acta ostendenda sunt.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>built-in default</source>
+        <translation>praefinitum internum</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>numquam</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>sine limite</translation>
+    </message>
+    <message>
+        <source>none in the last lines</source>
+        <translation>nullus in ultimis versibus</translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation>scribi non potest</translation>
+    </message>
+    <message>
+        <source>of a budget of %budget (%percent %)</source>
+        <translation>ex modo %budget (%percent %)</translation>
+    </message>
+    <message>
+        <source>over limit</source>
+        <translation>ultra terminum</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ita</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Summarium errorum</translation>
+    </message>
+    <message>
+        <source>The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.</source>
+        <translation>Errores et monita distincta horarum proximarum, numeris, notis, valoribus citatis et viis seclusis, ut eiusdem problematis repetitiones pro uno versu numerentur. Hic nuntii semper velantur.</translation>
+    </message>
+    <message>
+        <source>Time window</source>
+        <translation>Spatium temporis</translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation>Ultima</translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation>%count hor.</translation>
+    </message>
+    <message>
+        <source>Hide known messages</source>
+        <translation>Nuntios notos occultare</translation>
+    </message>
+    <message>
+        <source>Show known messages</source>
+        <translation>Nuntios notos ostendere</translation>
+    </message>
+    <message>
+        <source>Since %time; levels: %levels.</source>
+        <translation>Ab %time; gradus: %levels.</translation>
+    </message>
+    <message>
+        <source>%count known messages are hidden.</source>
+        <translation>%count nuntii noti occultantur.</translation>
+    </message>
+    <message>
+        <source>There is no log this digest can read.</source>
+        <translation>Nulla acta sunt quae hoc summarium legere possit.</translation>
+    </message>
+    <message>
+        <source>%count entries in %groups messages</source>
+        <translation>%count lemmata in %groups nuntiis</translation>
+    </message>
+    <message>
+        <source>Only the first %size of the window were read; the file holds more.</source>
+        <translation>Tantum prima %size spatii lecta sunt; fasciculus plura continet.</translation>
+    </message>
+    <message>
+        <source>Messages of %name</source>
+        <translation>Nuntii %name</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>Numerus</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nuntius</translation>
+    </message>
+    <message>
+        <source>Last seen</source>
+        <translation>Novissime visum</translation>
+    </message>
+    <message>
+        <source>Known</source>
+        <translation>Notum</translation>
+    </message>
+    <message>
+        <source>Open the newest entry</source>
+        <translation>Lemma novissimum aperire</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ostendere</translation>
+    </message>
+    <message>
+        <source>List again</source>
+        <translation>Iterum enumerare</translation>
+    </message>
+    <message>
+        <source>Mark as known</source>
+        <translation>Ut notum signare</translation>
+    </message>
+    <message>
+        <source>No error or warning in this window.</source>
+        <translation>Nullus error neque monitum in hoc spatio.</translation>
+    </message>
+    <message>
+        <source>Log tools</source>
+        <translation>Instrumenta actorum</translation>
+    </message>
+    <message>
+        <source>Logs</source>
+        <translation>Acta</translation>
+    </message>
+    <message>
+        <source>The logs are too large to download at once: %total, more than the limit of %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Leave the archives out, or download the logs one by one.</source>
+        <translation>Acta nimis magna sunt ut simul deprimantur: %total, plus quam terminus %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Archiva omitte, aut acta singillatim deprome.</translation>
+    </message>
+    <message>
+        <source>There is no log file to download.</source>
+        <translation>Nullus fasciculus actorum deprimendus est.</translation>
+    </message>
+    <message>
+        <source>The archive could not be written in var/tmp. Check that the web server may write there.</source>
+        <translation>Archivum in var/tmp scribi non potuit. Proba servitro interretiali ibi scribere licere.</translation>
+    </message>
+    <message>
+        <source>Download all logs</source>
+        <translation>Omnia acta depromere</translation>
+    </message>
+    <message>
+        <source>Include archives</source>
+        <translation>Archiva includere</translation>
+    </message>
+    <message>
+        <source>Unredacted</source>
+        <translation>Sine velo</translation>
+    </message>
+    <message>
+        <source>Unredacted: e-mail addresses, IP addresses, tokens and session ids as written. Only for a secure place; the download is recorded in the audit.</source>
+        <translation>Sine velo: inscriptiones electronicae, inscriptiones IP, tesserae et notae sessionum ut scriptae sunt. Tantum ad locum tutum; depromptio in inspectione notatur.</translation>
+    </message>
+    <message>
+        <source>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</source>
+        <translation>Unus fasciculus %format omnium actorum, cum MANIFEST.txt magnitudinum, ultimarum scriptionum et summarum probationis. Velatum ut inspector ostendit; in inspectione notatur; ad summum %cap.</translation>
+    </message>
+    <message>
+        <source>Grouped by category and rule.</source>
+        <translation>Per categoriam et normam congregatum.</translation>
+    </message>
+    <message>
+        <source>Grouped by the reason of the answer.</source>
+        <translation>Per causam responsi congregatum.</translation>
+    </message>
+    <message>
+        <source>Grouped by the kind of reason.</source>
+        <translation>Per genus causae congregatum.</translation>
+    </message>
+    <message>
+        <source>Grouped by the request path.</source>
+        <translation>Per viam petitionis congregatum.</translation>
+    </message>
+    <message>
+        <source>Levels: %levels.</source>
+        <translation>Gradus: %levels.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/logviewer</name>
+    <message>
+        <source>Not found requests (404)</source>
+        <translation>Petitiones non inventae (404)</translation>
+    </message>
+    <message>
+        <source>Security (request classifier)</source>
+        <translation>Securitas (classificator petitionum)</translation>
+    </message>
+    <message>
+        <source>Web server access log</source>
+        <translation>Acta aditus servitri interretialis</translation>
+    </message>
+    <message>
+        <source>Web server error log</source>
+        <translation>Acta errorum servitri interretialis</translation>
     </message>
 </context>
 </TS>

@@ -5089,6 +5089,14 @@
         <source>%count matches</source>
         <translation>%count התאמות</translation>
     </message>
+    <message>
+        <source>There are no matches on this page.</source>
+        <translation>אין התאמות בעמוד זה.</translation>
+    </message>
+    <message>
+        <source>Go to the first page</source>
+        <translation>מעבר לעמוד הראשון</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -10694,6 +10702,14 @@
         <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
         <translation>לא ניתן להציג את פריטי המשנה: Exponential UI (ההרחבה expui) אינה פעילה או אינה טעונה בגישת אתר זו.</translation>
     </message>
+    <message>
+        <source>Editorial</source>
+        <translation>עריכה</translation>
+    </message>
+    <message>
+        <source>Not saved: %error</source>
+        <translation>לא נשמר: %error</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -13853,6 +13869,18 @@ Note: The packages will not be uninstalled.</source>
         <translation>לא ניתן היה לטעון את התפריט %tab.</translation>
     </message>
     <message>
+        <source>Try again</source>
+        <translation>יש לנסות שוב</translation>
+    </message>
+    <message>
+        <source>You are signed out. Sign in again to see the %tab menu.</source>
+        <translation>התנתקת. יש להתחבר שוב כדי לראות את התפריט %tab.</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>כניסה</translation>
+    </message>
+    <message>
         <source>Go to %tab</source>
         <translation>מעבר אל %tab</translation>
     </message>
@@ -14187,6 +14215,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>More</source>
         <translation>עוד</translation>
+    </message>
+    <message>
+        <source>Quick search</source>
+        <translation>חיפוש מהיר</translation>
     </message>
 </context>
 <context>
@@ -14814,6 +14846,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
         <translation>קבצים באחסון שאין בהם שימוש, וקבצים עם בעלים או הרשאות שגויים.</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>קובצי יומן</translation>
+    </message>
+    <message>
+        <source>Follow, search and cross-reference the log files.</source>
+        <translation>מעקב, חיפוש והצלבה של קובצי היומן.</translation>
     </message>
 </context>
 <context>
@@ -23283,6 +23323,30 @@ Note: The packages will not be uninstalled.</source>
         <translation>קידוד תווים</translation>
     </message>
     <message>
+        <source>Siteaccesses</source>
+        <translation>גישות אתר</translation>
+    </message>
+    <message>
+        <source>%count (default: %default; match: %order)</source>
+        <translation>%count (ברירת מחדל: %default; התאמה: %order)</translation>
+    </message>
+    <message>
+        <source>default: %default; match: %order</source>
+        <translation>ברירת מחדל: %default; התאמה: %order</translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation>URI</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>שם המארח</translation>
+    </message>
+    <message>
+        <source>Host and URI</source>
+        <translation>מארח ו־URI</translation>
+    </message>
+    <message>
         <source>Internal</source>
         <translation>פנימי</translation>
     </message>
@@ -24850,6 +24914,94 @@ Note: The packages will not be uninstalled.</source>
         <translation>פורט</translation>
     </message>
     <message>
+        <source>Server variable</source>
+        <translation>משתנה שרת</translation>
+    </message>
+    <message>
+        <source>Index file</source>
+        <translation>קובץ אינדקס</translation>
+    </message>
+    <message>
+        <source>StaticMatch</source>
+        <translation>StaticMatch</translation>
+    </message>
+    <message>
+        <source>Default siteaccess</source>
+        <translation>גישת אתר ברירת מחדל</translation>
+    </message>
+    <message>
+        <source>Another matcher</source>
+        <translation>כלל התאמה אחר</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ניהול</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>עורך</translation>
+    </message>
+    <message>
+        <source>Site with login</source>
+        <translation>אתר עם התחברות</translation>
+    </message>
+    <message>
+        <source>Every siteaccess of site.ini [SiteAccessSettings] AvailableSiteAccessList and RelatedSiteAccessList, with the rules that lead a request to it. The rules are read from the settings; the links open each siteaccess on the server and port of this page.</source>
+        <translation>כל גישת אתר מתוך site.ini [SiteAccessSettings] AvailableSiteAccessList ו־RelatedSiteAccessList, עם הכללים שמובילים בקשה אליה. הכללים נקראים מההגדרות; הקישורים פותחים כל גישת אתר בשרת ובפורט של עמוד זה.</translation>
+    </message>
+    <message>
+        <source>This request</source>
+        <translation>בקשה זו</translation>
+    </message>
+    <message>
+        <source>Match order</source>
+        <translation>סדר התאמה</translation>
+    </message>
+    <message>
+        <source>every request gets this siteaccess; the rules below are not used</source>
+        <translation>כל בקשה מקבלת גישת אתר זו; הכללים שלהלן אינם בשימוש</translation>
+    </message>
+    <message>
+        <source>Resolution map</source>
+        <translation>מפת פענוח</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>כלל</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>רשומות</translation>
+    </message>
+    <message>
+        <source>matched</source>
+        <translation>הותאם</translation>
+    </message>
+    <message>
+        <source>not a rule this installation knows</source>
+        <translation>לא כלל שהתקנה זו מכירה</translation>
+    </message>
+    <message>
+        <source>no entries</source>
+        <translation>אין רשומות</translation>
+    </message>
+    <message>
+        <source>chose %siteaccess</source>
+        <translation>בחר ב־%siteaccess</translation>
+    </message>
+    <message>
+        <source>no rule matched</source>
+        <translation>אף כלל לא התאים</translation>
+    </message>
+    <message>
+        <source>The rules are tried from the top; the first that matches decides.</source>
+        <translation>הכללים נבדקים מלמעלה למטה; הכלל הראשון שמתאים מכריע.</translation>
+    </message>
+    <message>
+        <source>All siteaccesses</source>
+        <translation>כל גישות האתר</translation>
+    </message>
+    <message>
         <source>no limit</source>
         <translation>ללא הגבלה</translation>
     </message>
@@ -24912,6 +25064,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>default</source>
         <translation>ברירת מחדל</translation>
+    </message>
+    <message>
+        <source>this page</source>
+        <translation>עמוד זה</translation>
+    </message>
+    <message>
+        <source>related only</source>
+        <translation>קשורה בלבד</translation>
+    </message>
+    <message>
+        <source>no rule reaches it</source>
+        <translation>אף כלל אינו מגיע אליה</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>עיצוב</translation>
     </message>
     <message>
         <source>Tables</source>
@@ -25048,6 +25216,70 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Locale</source>
         <translation>הגדרות אזוריות</translation>
+    </message>
+    <message>
+        <source>languages:</source>
+        <translation>שפות:</translation>
+    </message>
+    <message>
+        <source>Access extensions</source>
+        <translation>הרחבות גישה</translation>
+    </message>
+    <message>
+        <source>Hidden nodes</source>
+        <translation>צמתים מוסתרים</translation>
+    </message>
+    <message>
+        <source>shown</source>
+        <translation>מוצגים</translation>
+    </message>
+    <message>
+        <source>not shown</source>
+        <translation>לא מוצגים</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>התחברות</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>חובה</translation>
+    </message>
+    <message>
+        <source>not required</source>
+        <translation>לא נדרש</translation>
+    </message>
+    <message>
+        <source>Matched by</source>
+        <translation>הותאם על ידי</translation>
+    </message>
+    <message>
+        <source>the default rule</source>
+        <translation>כלל ברירת המחדל</translation>
+    </message>
+    <message>
+        <source>The settings of this siteaccess could not be read.</source>
+        <translation>לא ניתן היה לקרוא את ההגדרות של גישת אתר זו.</translation>
+    </message>
+    <message>
+        <source>Open %siteaccess</source>
+        <translation>פתיחת %siteaccess</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>פתיחה</translation>
+    </message>
+    <message>
+        <source>Settings of %siteaccess</source>
+        <translation>הגדרות של %siteaccess</translation>
+    </message>
+    <message>
+        <source>site.ini settings</source>
+        <translation>הגדרות site.ini</translation>
+    </message>
+    <message>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
+        <translation>הסוג נקבע לפי site.ini [SiteAccessSettings] SiteAccessType כאשר גישת אתר מגדירה אותו, ואחרת לפי העיצובים שלה ו־RequireUserLogin. מדריך: doc/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -33606,6 +33838,30 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Checking...</source>
         <translation>בודק...</translation>
+    </message>
+    <message>
+        <source>Table of an extension that is not active</source>
+        <translation>טבלה של הרחבה שאינה פעילה</translation>
+    </message>
+    <message>
+        <source>%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.</source>
+        <translation>%count טבלאות שייכות להרחבות מותקנות שאינן פעילות; הן מפורטות להלן, ואין מה להריץ.</translation>
+    </message>
+    <message>
+        <source>Tables of extensions that are not active</source>
+        <translation>טבלאות של הרחבות שאינן פעילות</translation>
+    </message>
+    <message>
+        <source>belongs to %extension (not active)</source>
+        <translation>שייכת ל־%extension (לא פעילה)</translation>
+    </message>
+    <message>
+        <source>This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.</source>
+        <translation>טבלה זו שייכת להרחבה %extension, שמותקנת ואינה פעילה. יש להפעיל את ההרחבה או להשאיר את הטבלה; מחיקתה מסירה את הנתונים שלה. לא נכתב עבורה SQL.</translation>
+    </message>
+    <message>
+        <source>No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
+        <translation>אף סכמה מצורפת אינה מזכירה טבלה זו, אפילו לא זו של הרחבה מותקנת שאינה פעילה: בדרך כלל היא שייכת להרחבה משלך ללא קובץ סכמה, או להרחבה שהוסרה. יש להשאיר אותה, אלא אם ידוע שהנתונים שלה כבר אינם נחוצים; משפט ה־DROP מוצג רק לשם השלמות.</translation>
     </message>
 </context>
 <context>
@@ -44197,6 +44453,10 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation>פחות מילות מפתח מניבות יותר תוצאות. כדאי לצמצם את מילות המפתח עד שמתקבלת תוצאה.</translation>
+    </message>
+    <message>
+        <source>The search failed. Try again.</source>
+        <translation>החיפוש נכשל. יש לנסות שוב.</translation>
     </message>
 </context>
 <context>
@@ -56820,6 +57080,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Site data</source>
         <translation>נתוני האתר</translation>
     </message>
+    <message>
+        <source>Setup</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>קובצי יומן</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>אישור</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>ניהול יומנים</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>תקינות היומנים</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>תקציר שגיאות</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -64632,6 +64916,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Show the numbers</source>
         <translation>הצגת המספרים</translation>
     </message>
+    <message>
+        <source>Nothing was published in the last 14 days.</source>
+        <translation>דבר לא פורסם ב־14 הימים האחרונים.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -65942,6 +66230,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>ההגדרות שקובעות שמירה במטמון והידור, וכמה תבניות רצו מהמטמון המהודר או הודרו עכשיו. מיד לאחר ניקוי מטמון התבניות כל תבנית מהודרת פעם אחת.</translation>
+    </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>הוצאות משימוש</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>מודול</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>מזהה צומת</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>סטטוס HTTP</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>זמן שאילתה</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>בקשה</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>חלק מזמן העמוד</translation>
     </message>
 </context>
 <context>
@@ -69645,6 +69961,1131 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Administration</source>
         <translation>ניהול</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/ezie</name>
+    <message>
+        <source>Edit</source>
+        <translation>עריכה</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/logs</name>
+    <message>
+        <source>Error</source>
+        <translation>שגיאה</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>אזהרה</translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation>הודעה</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>ניפוי שגיאות</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ליבה</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>אתר</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>הרחבות</translation>
+    </message>
+    <message>
+        <source>Rotated archives</source>
+        <translation>ארכיונים שהוחלפו בסבב</translation>
+    </message>
+    <message>
+        <source>Log file %name</source>
+        <translation>קובץ יומן %name</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>קובצי יומן</translation>
+    </message>
+    <message>
+        <source>Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.</source>
+        <translation>עוקב אחר קובץ יומן בזמן שהוא נכתב, מחפש בו ובסבבים שלו, ומקשר בין השורות של בקשה אחת. דבר בעמוד זה אינו משנה קובץ, אלא אם פעולה שלהלן אומרת זאת.</translation>
+    </message>
+    <message>
+        <source>The file was rotated. The next line written starts a new file.</source>
+        <translation>הקובץ הוחלף בסבב. השורה הבאה שתיכתב תפתח קובץ חדש.</translation>
+    </message>
+    <message>
+        <source>The file was emptied.</source>
+        <translation>הקובץ רוקן.</translation>
+    </message>
+    <message>
+        <source>The archived rotation was removed.</source>
+        <translation>הסבב שבארכיון הוסר.</translation>
+    </message>
+    <message>
+        <source>The action could not be carried out. The web server may not change the file or its directory.</source>
+        <translation>לא ניתן היה לבצע את הפעולה. ייתכן ששרת האינטרנט אינו רשאי לשנות את הקובץ או את התיקייה שלו.</translation>
+    </message>
+    <message>
+        <source>The file asked for is not a log file this viewer may open (settings/logviewer.ini [LogViewerSettings] Directories[] and FilePatterns[]). The default file is shown instead.</source>
+        <translation>הקובץ המבוקש אינו קובץ יומן שמציג זה רשאי לפתוח (settings/logviewer.ini [LogViewerSettings] Directories[] ו־FilePatterns[]). במקומו מוצג קובץ ברירת המחדל.</translation>
+    </message>
+    <message>
+        <source>The search could not be run:</source>
+        <translation>לא ניתן היה להריץ את החיפוש:</translation>
+    </message>
+    <message>
+        <source>The search text is too long.</source>
+        <translation>טקסט החיפוש ארוך מדי.</translation>
+    </message>
+    <message>
+        <source>"%field" is not a time.</source>
+        <translation>&quot;%field&quot; אינו זמן.</translation>
+    </message>
+    <message>
+        <source>The IP address may only hold digits, letters a to f, dots and colons.</source>
+        <translation>כתובת ה־IP יכולה להכיל רק ספרות, האותיות a עד f, נקודות ונקודתיים.</translation>
+    </message>
+    <message>
+        <source>The regular expression is not valid.</source>
+        <translation>הביטוי הרגולרי אינו תקין.</translation>
+    </message>
+    <message>
+        <source>An error reference looks like ERR-0123456789.</source>
+        <translation>הפניית שגיאה נראית כך: ERR-0123456789.</translation>
+    </message>
+    <message>
+        <source>There is no log file this viewer may open yet.</source>
+        <translation>עדיין אין קובץ יומן שמציג זה רשאי לפתוח.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>קובץ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>פתיחה</translation>
+    </message>
+    <message>
+        <source>Changed %time</source>
+        <translation>שונה %time</translation>
+    </message>
+    <message>
+        <source>Compressed, read only</source>
+        <translation>דחוס, לקריאה בלבד</translation>
+    </message>
+    <message>
+        <source>Archived rotation, not followed</source>
+        <translation>סבב בארכיון, ללא מעקב</translation>
+    </message>
+    <message>
+        <source>E-mail addresses, IP addresses and secrets are masked</source>
+        <translation>כתובות דוא&quot;ל, כתובות IP וסודות מוסתרים</translation>
+    </message>
+    <message>
+        <source>Shown unmasked</source>
+        <translation>מוצג ללא הסתרה</translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation>פקדים</translation>
+    </message>
+    <message>
+        <source>Search results</source>
+        <translation>תוצאות חיפוש</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>ארכיון</translation>
+    </message>
+    <message>
+        <source>Following</source>
+        <translation>במעקב</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>השהיה</translation>
+    </message>
+    <message>
+        <source>Newest</source>
+        <translation>החדש ביותר</translation>
+    </message>
+    <message>
+        <source>Follow</source>
+        <translation>מעקב</translation>
+    </message>
+    <message>
+        <source>Wrap lines</source>
+        <translation>גלישת שורות</translation>
+    </message>
+    <message>
+        <source>Mask again</source>
+        <translation>הסתרה מחדש</translation>
+    </message>
+    <message>
+        <source>Show unmasked</source>
+        <translation>הצגה ללא הסתרה</translation>
+    </message>
+    <message>
+        <source>Find in the loaded lines</source>
+        <translation>חיפוש בשורות שנטענו</translation>
+    </message>
+    <message>
+        <source>Find in view</source>
+        <translation>חיפוש בתצוגה</translation>
+    </message>
+    <message>
+        <source>Previous match (Shift+Enter)</source>
+        <translation>התאמה קודמת (Shift+Enter)</translation>
+    </message>
+    <message>
+        <source>Previous match</source>
+        <translation>התאמה קודמת</translation>
+    </message>
+    <message>
+        <source>Next match (Enter)</source>
+        <translation>התאמה הבאה (Enter)</translation>
+    </message>
+    <message>
+        <source>Next match</source>
+        <translation>התאמה הבאה</translation>
+    </message>
+    <message>
+        <source>Keys in the list: Space pauses or resumes, End jumps to the newest line, Up and Down move, Enter opens a line, n and N find the next and previous match.</source>
+        <translation>מקשים ברשימה: רווח משהה או ממשיך, End קופץ לשורה החדשה ביותר, למעלה ולמטה זזים, Enter פותח שורה, n ו־N מוצאים את ההתאמה הבאה והקודמת.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>חיפוש</translation>
+    </message>
+    <message>
+        <source>Search the log files</source>
+        <translation>חיפוש בקובצי היומן</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>טקסט</translation>
+    </message>
+    <message>
+        <source>Literal text, or a regular expression (without delimiters) when Regular expression is ticked. A search stops after a few seconds and offers to go on.</source>
+        <translation>טקסט מילולי, או ביטוי רגולרי (ללא תוחמים) כאשר &quot;ביטוי רגולרי&quot; מסומן. חיפוש נעצר לאחר כמה שניות ומציע להמשיך.</translation>
+    </message>
+    <message>
+        <source>Regular expression</source>
+        <translation>ביטוי רגולרי</translation>
+    </message>
+    <message>
+        <source>Match case</source>
+        <translation>התאמת רישיות</translation>
+    </message>
+    <message>
+        <source>Levels</source>
+        <translation>רמות</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>מקור</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>עד</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>גישת אתר</translation>
+    </message>
+    <message>
+        <source>Request address contains</source>
+        <translation>כתובת הבקשה מכילה</translation>
+    </message>
+    <message>
+        <source>Client IP starts with</source>
+        <translation>כתובת ה־IP של הלקוח מתחילה ב</translation>
+    </message>
+    <message>
+        <source>Error reference</source>
+        <translation>הפניית שגיאה</translation>
+    </message>
+    <message>
+        <source>The reference an error page showed: finds its line in every kernel log and its rotations, and the lines of its request.</source>
+        <translation>ההפניה שהציג עמוד שגיאה: מוצאת את השורה שלה בכל יומן ליבה ובסבבים שלו, ואת השורות של הבקשה שלה.</translation>
+    </message>
+    <message>
+        <source>Search in</source>
+        <translation>חיפוש ב</translation>
+    </message>
+    <message>
+        <source>This file</source>
+        <translation>קובץ זה</translation>
+    </message>
+    <message>
+        <source>All kernel logs</source>
+        <translation>כל יומני הליבה</translation>
+    </message>
+    <message>
+        <source>All log files</source>
+        <translation>כל קובצי היומן</translation>
+    </message>
+    <message>
+        <source>Include rotated files</source>
+        <translation>כולל קבצים שהוחלפו בסבב</translation>
+    </message>
+    <message>
+        <source>Back to following</source>
+        <translation>חזרה למעקב</translation>
+    </message>
+    <message>
+        <source>%count entries found</source>
+        <translation>נמצאו %count רשומות</translation>
+    </message>
+    <message>
+        <source>(the search stopped after its time limit; more may follow)</source>
+        <translation>(החיפוש נעצר לאחר מגבלת הזמן שלו; ייתכן שיש עוד)</translation>
+    </message>
+    <message>
+        <source>(the search stopped after reading its share; more may follow)</source>
+        <translation>(החיפוש נעצר לאחר שקרא את חלקו; ייתכן שיש עוד)</translation>
+    </message>
+    <message>
+        <source>(the first page of results)</source>
+        <translation>(העמוד הראשון של התוצאות)</translation>
+    </message>
+    <message>
+        <source>(the regular expression needed too much work on a line and was stopped; make it more specific)</source>
+        <translation>(הביטוי הרגולרי דרש יותר מדי עבודה על שורה ונעצר; יש להפוך אותו לספציפי יותר)</translation>
+    </message>
+    <message>
+        <source>The request of %reference</source>
+        <translation>הבקשה של %reference</translation>
+    </message>
+    <message>
+        <source>No other line of this request was found.</source>
+        <translation>לא נמצאה שורה נוספת של בקשה זו.</translation>
+    </message>
+    <message>
+        <source>The audit of this moment</source>
+        <translation>הביקורת של רגע זה</translation>
+    </message>
+    <message>
+        <source>Lines of %name</source>
+        <translation>שורות של %name</translation>
+    </message>
+    <message>
+        <source>Nothing matches the search.</source>
+        <translation>דבר אינו תואם לחיפוש.</translation>
+    </message>
+    <message>
+        <source>The file is empty.</source>
+        <translation>הקובץ ריק.</translation>
+    </message>
+    <message>
+        <source>More results</source>
+        <translation>תוצאות נוספות</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>רשומה</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>סגירה</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>פעולות</translation>
+    </message>
+    <message>
+        <source>From byte</source>
+        <translation>מבייט</translation>
+    </message>
+    <message>
+        <source>To byte</source>
+        <translation>עד בייט</translation>
+    </message>
+    <message>
+        <source>Download (gzip)</source>
+        <translation>הורדה (gzip)</translation>
+    </message>
+    <message>
+        <source>Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.</source>
+        <translation>שדות ריקים: %size האחרונים של הקובץ. מוסתר כפי שמוצג כאן; נרשם בביקורת.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>סבב עכשיו</translation>
+    </message>
+    <message>
+        <source>Empty the file</source>
+        <translation>ריקון הקובץ</translation>
+    </message>
+    <message>
+        <source>Remove this rotation</source>
+        <translation>הסרת סבב זה</translation>
+    </message>
+    <message>
+        <source>Each of these asks for a confirmation first and is recorded in the audit.</source>
+        <translation>כל אחת מאלה מבקשת אישור תחילה ונרשמת בביקורת.</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>חידוש</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>מושהה</translation>
+    </message>
+    <message>
+        <source>Waiting %seconds s (too many requests)</source>
+        <translation>ממתין %seconds שנ&apos; (יותר מדי בקשות)</translation>
+    </message>
+    <message>
+        <source>No answer from the server; trying again</source>
+        <translation>אין תשובה מהשרת; מנסה שוב</translation>
+    </message>
+    <message>
+        <source>The file can no longer be read</source>
+        <translation>לא ניתן עוד לקרוא את הקובץ</translation>
+    </message>
+    <message>
+        <source>%count new lines</source>
+        <translation>%count שורות חדשות</translation>
+    </message>
+    <message>
+        <source>1 new line</source>
+        <translation>שורה חדשה 1</translation>
+    </message>
+    <message>
+        <source>The file was rotated or emptied; following the new one.</source>
+        <translation>הקובץ הוחלף בסבב או רוקן; מתבצע מעקב אחר החדש.</translation>
+    </message>
+    <message>
+        <source>Match %index of %count</source>
+        <translation>התאמה %index מתוך %count</translation>
+    </message>
+    <message>
+        <source>No match</source>
+        <translation>אין התאמה</translation>
+    </message>
+    <message>
+        <source>%count lines kept (the oldest are dropped from the page, never from the file)</source>
+        <translation>%count שורות נשמרות (הישנות ביותר יורדות מהעמוד, אף פעם לא מהקובץ)</translation>
+    </message>
+    <message>
+        <source>Entry at %time</source>
+        <translation>רשומה בשעה %time</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>שעה</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>רמה</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>מקור</translation>
+    </message>
+    <message>
+        <source>Client</source>
+        <translation>לקוח</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>בקשה</translation>
+    </message>
+    <message>
+        <source>Byte offset</source>
+        <translation>היסט בבייטים</translation>
+    </message>
+    <message>
+        <source>Lines of the same request</source>
+        <translation>שורות של אותה בקשה</translation>
+    </message>
+    <message>
+        <source>Looking for the lines of this request…</source>
+        <translation>מחפש את השורות של בקשה זו…</translation>
+    </message>
+    <message>
+        <source>Debug output of this request</source>
+        <translation>פלט ניפוי השגיאות של בקשה זו</translation>
+    </message>
+    <message>
+        <source>No debug output of this request was logged.</source>
+        <translation>לא נרשם פלט ניפוי שגיאות עבור בקשה זו.</translation>
+    </message>
+    <message>
+        <source>Find %reference everywhere</source>
+        <translation>חיפוש %reference בכל מקום</translation>
+    </message>
+    <message>
+        <source>Open the request</source>
+        <translation>פתיחת הבקשה</translation>
+    </message>
+    <message>
+        <source>(cut: the entry is longer than the viewer keeps)</source>
+        <translation>(נחתך: הרשומה ארוכה ממה שהמציג שומר)</translation>
+    </message>
+    <message>
+        <source>Loading more results…</source>
+        <translation>טוען תוצאות נוספות…</translation>
+    </message>
+    <message>
+        <source>No more results.</source>
+        <translation>אין תוצאות נוספות.</translation>
+    </message>
+    <message>
+        <source>The request failed: %error</source>
+        <translation>הבקשה נכשלה: %error</translation>
+    </message>
+    <message>
+        <source>The web server may not read this file.</source>
+        <translation>שרת האינטרנט אינו רשאי לקרוא קובץ זה.</translation>
+    </message>
+    <message>
+        <source>rate: measuring</source>
+        <translation>קצב: נמדד</translation>
+    </message>
+    <message>
+        <source>%rate lines/min</source>
+        <translation>%rate שורות/דקה</translation>
+    </message>
+    <message>
+        <source>Rotate %name now?</source>
+        <translation>לבצע סבב ל־%name עכשיו?</translation>
+    </message>
+    <message>
+        <source>Empty %name?</source>
+        <translation>לרוקן את %name?</translation>
+    </message>
+    <message>
+        <source>Remove %name?</source>
+        <translation>להסיר את %name?</translation>
+    </message>
+    <message>
+        <source>The file becomes %name.1 and the older rotations move one number up; the oldest beyond %count is removed. The next line written starts a new file.</source>
+        <translation>הקובץ הופך ל־%name.1 והסבבים הישנים יותר עולים במספר אחד; הישן ביותר מעבר ל־%count מוסר. השורה הבאה שתיכתב תפתח קובץ חדש.</translation>
+    </message>
+    <message>
+        <source>Every line of the file (%size) is removed for good. Download it first if it may still be needed.</source>
+        <translation>כל שורה בקובץ (%size) מוסרת לצמיתות. יש להוריד אותו קודם אם ייתכן שעוד יהיה בו צורך.</translation>
+    </message>
+    <message>
+        <source>The archived rotation (%size) is removed for good.</source>
+        <translation>הסבב שבארכיון (%size) מוסר לצמיתות.</translation>
+    </message>
+    <message>
+        <source>The action is recorded in the audit.</source>
+        <translation>הפעולה נרשמת בביקורת.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
+    <message>
+        <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
+        <translation>קישור ליומן זה ולתצוגה זו (מסננים, חיפוש, מושהה או במעקב, השורה הממוקדת), לשמירה או לשיתוף. הוא לעולם אינו מציג את השורות ללא הסתרה.</translation>
+    </message>
+    <message>
+        <source>Copy permalink</source>
+        <translation>העתקת קישור קבוע</translation>
+    </message>
+    <message>
+        <source>Link copied</source>
+        <translation>הקישור הועתק</translation>
+    </message>
+    <message>
+        <source>Permalink</source>
+        <translation>קישור קבוע</translation>
+    </message>
+    <message>
+        <source>The link could not be copied; it is selected in the field, copy it with the keyboard.</source>
+        <translation>לא ניתן היה להעתיק את הקישור; הוא מסומן בשדה, יש להעתיק אותו באמצעות המקלדת.</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>שרת אינטרנט</translation>
+    </message>
+    <message>
+        <source>Copy messages</source>
+        <translation>העתקת הודעות</translation>
+    </message>
+    <message>
+        <source>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</source>
+        <translation>&quot;העתקת הודעות&quot; מעתיקה את השורות המוצגות כטקסט פשוט: בזמן מעקב, כל שורה שנשמרה; בזמן השהיה, השורות שבתצוגה. הן מוסתרות כפי שהן מוצגות.</translation>
+    </message>
+    <message>
+        <source>%count lines copied</source>
+        <translation>%count שורות הועתקו</translation>
+    </message>
+    <message>
+        <source>1 line copied</source>
+        <translation>שורה 1 הועתקה</translation>
+    </message>
+    <message>
+        <source>The lines could not be copied. Select them in the list and copy them with the keyboard.</source>
+        <translation>לא ניתן היה להעתיק את השורות. יש לסמן אותן ברשימה ולהעתיק אותן באמצעות המקלדת.</translation>
+    </message>
+    <message>
+        <source>%count logs</source>
+        <translation>%count יומנים</translation>
+    </message>
+    <message>
+        <source>%size are removed for good.</source>
+        <translation>%size מוסרים לצמיתות.</translation>
+    </message>
+    <message>
+        <source>%size in all</source>
+        <translation>%size בסך הכול</translation>
+    </message>
+    <message>
+        <source>%size with their archives</source>
+        <translation>%size עם הארכיונים שלהם</translation>
+    </message>
+    <message>
+        <source>%size/h</source>
+        <translation>%size/שעה</translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation>ארכיונים</translation>
+    </message>
+    <message>
+        <source>At most %days days</source>
+        <translation>לכל היותר %days ימים</translation>
+    </message>
+    <message>
+        <source>Back to the logs</source>
+        <translation>חזרה ליומנים</translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation>הופכת ל</translation>
+    </message>
+    <message>
+        <source>Carry out %count steps</source>
+        <translation>ביצוע %count שלבים</translation>
+    </message>
+    <message>
+        <source>Compress archives…</source>
+        <translation>דחיסת ארכיונים…</translation>
+    </message>
+    <message>
+        <source>Compress the archives of %key?</source>
+        <translation>לדחוס את הארכיונים של %key?</translation>
+    </message>
+    <message>
+        <source>Compressed</source>
+        <translation>דחוס</translation>
+    </message>
+    <message>
+        <source>Delete archives…</source>
+        <translation>מחיקת ארכיונים…</translation>
+    </message>
+    <message>
+        <source>Delete the old archives of %key?</source>
+        <translation>למחוק את הארכיונים הישנים של %key?</translation>
+    </message>
+    <message>
+        <source>Done: %count steps.</source>
+        <translation>בוצע: %count שלבים.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>הורדה</translation>
+    </message>
+    <message>
+        <source>Empty %key after archiving it?</source>
+        <translation>לרוקן את %key לאחר העברתו לארכיון?</translation>
+    </message>
+    <message>
+        <source>Empty (archive first)…</source>
+        <translation>ריקון (העברה לארכיון קודם)…</translation>
+    </message>
+    <message>
+        <source>Growth</source>
+        <translation>גדילה</translation>
+    </message>
+    <message>
+        <source>Keep %count</source>
+        <translation>שמירת %count</translation>
+    </message>
+    <message>
+        <source>Last write</source>
+        <translation>כתיבה אחרונה</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>מגבלות</translation>
+    </message>
+    <message>
+        <source>Lines (about)</source>
+        <translation>שורות (בערך)</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>יומן</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>ניהול יומנים</translation>
+    </message>
+    <message>
+        <source>Not compressed</source>
+        <translation>לא דחוס</translation>
+    </message>
+    <message>
+        <source>Not everything was done (%error): %done of %count steps.</source>
+        <translation>לא הכול בוצע (%error): %done מתוך %count שלבים.</translation>
+    </message>
+    <message>
+        <source>Not managed here: %keys</source>
+        <translation>לא מנוהלים כאן: %keys</translation>
+    </message>
+    <message>
+        <source>Not writable: %owner:%group</source>
+        <translation>אין הרשאת כתיבה: %owner:%group</translation>
+    </message>
+    <message>
+        <source>Nothing to do: no file needs this action now.</source>
+        <translation>אין מה לעשות: אף קובץ אינו זקוק לפעולה זו כעת.</translation>
+    </message>
+    <message>
+        <source>Older than (days)</source>
+        <translation>ישנים מ־(ימים)</translation>
+    </message>
+    <message>
+        <source>Prune all archives…</source>
+        <translation>גיזום כל הארכיונים…</translation>
+    </message>
+    <message>
+        <source>Prune the archives of every log?</source>
+        <translation>לגזום את הארכיונים של כל היומנים?</translation>
+    </message>
+    <message>
+        <source>Rotate %key now?</source>
+        <translation>לבצע סבב ל־%key עכשיו?</translation>
+    </message>
+    <message>
+        <source>Rotate all over their limit…</source>
+        <translation>סבב לכל אלה שחורגים מהמגבלה שלהם…</translation>
+    </message>
+    <message>
+        <source>Rotate at %size</source>
+        <translation>סבב ב־%size</translation>
+    </message>
+    <message>
+        <source>Rotate every log over its limit?</source>
+        <translation>לבצע סבב לכל יומן שחורג מהמגבלה שלו?</translation>
+    </message>
+    <message>
+        <source>Rotate now…</source>
+        <translation>סבב עכשיו…</translation>
+    </message>
+    <message>
+        <source>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</source>
+        <translation>סבב, ריקון, דחיסה וגיזום של קובצי היומן. כל פעולה מציגה בדיוק מה תעשה לפני שמשהו משתנה, וכל שלב נרשם בביקורת. היומנים של שרת האינטרנט שייכים לו: הם מוצגים כאן אך לעולם אינם משתנים.</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>גודל</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>שלב</translation>
+    </message>
+    <message>
+        <source>The actions are switched off in settings/logviewer.ini [ActionSettings].</source>
+        <translation>הפעולות כבויות ב־settings/logviewer.ini [ActionSettings].</translation>
+    </message>
+    <message>
+        <source>The log files, their archives and their limits</source>
+        <translation>קובצי היומן, הארכיונים שלהם והמגבלות שלהם</translation>
+    </message>
+    <message>
+        <source>The steps of this action</source>
+        <translation>השלבים של פעולה זו</translation>
+    </message>
+    <message>
+        <source>The web server cannot write this file or its directory: owner %owner, group %group.</source>
+        <translation>שרת האינטרנט אינו יכול לכתוב לקובץ זה או לתיקייה שלו: בעלים %owner, קבוצה %group.</translation>
+    </message>
+    <message>
+        <source>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</source>
+        <translation>זוהי תצוגה מקדימה: דבר עדיין לא השתנה. יש לאשר כדי לבצע את %count השלבים האלה. הקבצים נבדקים שוב לפני כל שלב, וכל שלב נרשם בביקורת.</translation>
+    </message>
+    <message>
+        <source>Web server, read only</source>
+        <translation>שרת אינטרנט, לקריאה בלבד</translation>
+    </message>
+    <message>
+        <source>compress</source>
+        <translation>דחיסה</translation>
+    </message>
+    <message>
+        <source>copy</source>
+        <translation>העתקה</translation>
+    </message>
+    <message>
+        <source>delete</source>
+        <translation>מחיקה</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>ריקון</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ללא</translation>
+    </message>
+    <message>
+        <source>over the limit</source>
+        <translation>מעל המגבלה</translation>
+    </message>
+    <message>
+        <source>rename</source>
+        <translation>שינוי שם</translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation>%days ימים</translation>
+    </message>
+    <message>
+        <source>%size of %limit</source>
+        <translation>%size מתוך %limit</translation>
+    </message>
+    <message>
+        <source>%size per hour</source>
+        <translation>%size לשעה</translation>
+    </message>
+    <message>
+        <source>(no budget set)</source>
+        <translation>(לא הוגדרה מכסה)</translation>
+    </message>
+    <message>
+        <source>Archives compressed</source>
+        <translation>ארכיונים דחוסים</translation>
+    </message>
+    <message>
+        <source>Archives kept</source>
+        <translation>ארכיונים שנשמרים</translation>
+    </message>
+    <message>
+        <source>Archives removed after</source>
+        <translation>ארכיונים מוסרים לאחר</translation>
+    </message>
+    <message>
+        <source>Archives: %size</source>
+        <translation>ארכיונים: %size</translation>
+    </message>
+    <message>
+        <source>Budget: logviewer.ini [HealthSettings] DiskBudget</source>
+        <translation>מכסה: logviewer.ini [HealthSettings] DiskBudget</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>שונה</translation>
+    </message>
+    <message>
+        <source>Current files: %size</source>
+        <translation>קבצים נוכחיים: %size</translation>
+    </message>
+    <message>
+        <source>Disk use</source>
+        <translation>שימוש בדיסק</translation>
+    </message>
+    <message>
+        <source>Every log</source>
+        <translation>כל יומן</translation>
+    </message>
+    <message>
+        <source>Every log is within its limit.</source>
+        <translation>כל יומן נמצא בתוך המגבלה שלו.</translation>
+    </message>
+    <message>
+        <source>Fastest growing</source>
+        <translation>הגדלים במהירות הרבה ביותר</translation>
+    </message>
+    <message>
+        <source>How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.</source>
+        <translation>כמה מקום בדיסק תופסים היומנים, אילו גדלים במהירות הרבה ביותר, אילו חורגים מהמגבלה שלהם או ששרת האינטרנט אינו יכול לכתוב אליהם, השגיאה החדשה ביותר של כל אחד, והגדרות הסבב שבתוקף. דבר בעמוד זה אינו משנה קובץ.</translation>
+    </message>
+    <message>
+        <source>Largest size</source>
+        <translation>הגודל הגדול ביותר</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>תקינות היומנים</translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation>ניהול</translation>
+    </message>
+    <message>
+        <source>Newest error</source>
+        <translation>השגיאה החדשה ביותר</translation>
+    </message>
+    <message>
+        <source>No log is known to grow yet: growth is measured between rotations.</source>
+        <translation>עדיין לא ידוע על יומן שגדל: הגדילה נמדדת בין סבבים.</translation>
+    </message>
+    <message>
+        <source>Not writable by the web server</source>
+        <translation>שרת האינטרנט אינו יכול לכתוב אליהם</translation>
+    </message>
+    <message>
+        <source>Over their size limit</source>
+        <translation>מעל מגבלת הגודל שלהם</translation>
+    </message>
+    <message>
+        <source>Read only. Each value names the settings file, section and variable it comes from; change it there (in an override), not here.</source>
+        <translation>לקריאה בלבד. כל ערך מציין את קובץ ההגדרות, המקטע והמשתנה שממנו הוא מגיע; יש לשנות אותו שם (ב־override), לא כאן.</translation>
+    </message>
+    <message>
+        <source>Rotation settings in effect</source>
+        <translation>הגדרות סבב בתוקף</translation>
+    </message>
+    <message>
+        <source>Set in</source>
+        <translation>הוגדר ב</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>הגדרה</translation>
+    </message>
+    <message>
+        <source>The log files belong to different users (%owners). A file created by one user may not be writable by the other; give them one owner, or a shared group with group write.</source>
+        <translation>קובצי היומן שייכים למשתמשים שונים (%owners). ייתכן שקובץ שנוצר על ידי משתמש אחד לא יהיה ניתן לכתיבה עבור האחר; יש לתת להם בעלים אחד, או קבוצה משותפת עם הרשאת כתיבה לקבוצה.</translation>
+    </message>
+    <message>
+        <source>The log manager is not available, so sizes, limits and archives cannot be listed.</source>
+        <translation>מנהל היומנים אינו זמין, ולכן לא ניתן לפרט גדלים, מגבלות וארכיונים.</translation>
+    </message>
+    <message>
+        <source>The web server can write every log.</source>
+        <translation>שרת האינטרנט יכול לכתוב לכל יומן.</translation>
+    </message>
+    <message>
+        <source>The web server cannot append to these files, so what it logs is lost. They were usually created by a command line or Exponential Velocity running as another user.</source>
+        <translation>שרת האינטרנט אינו יכול להוסיף לקבצים אלה, ולכן מה שהוא רושם הולך לאיבוד. בדרך כלל הם נוצרו על ידי שורת פקודה או על ידי Exponential Velocity שרץ כמשתמש אחר.</translation>
+    </message>
+    <message>
+        <source>There is no log to show.</source>
+        <translation>אין יומן להצגה.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ערך</translation>
+    </message>
+    <message>
+        <source>built-in default</source>
+        <translation>ברירת מחדל מובנית</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>אף פעם</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ללא הגבלה</translation>
+    </message>
+    <message>
+        <source>none in the last lines</source>
+        <translation>אין בשורות האחרונות</translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation>לא ניתן לכתיבה</translation>
+    </message>
+    <message>
+        <source>of a budget of %budget (%percent %)</source>
+        <translation>מתוך מכסה של %budget (%percent %)</translation>
+    </message>
+    <message>
+        <source>over limit</source>
+        <translation>מעל המגבלה</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>תקציר שגיאות</translation>
+    </message>
+    <message>
+        <source>The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.</source>
+        <translation>השגיאות והאזהרות השונות של השעות האחרונות, ללא מספרים, מזהים, ערכים במירכאות ונתיבים, כך שחזרות על אותה בעיה נספרות כשורה אחת. כאן ההודעות תמיד מוסתרות.</translation>
+    </message>
+    <message>
+        <source>Time window</source>
+        <translation>חלון זמן</translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation>האחרון</translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation>%count שע&apos;</translation>
+    </message>
+    <message>
+        <source>Hide known messages</source>
+        <translation>הסתרת הודעות מוכרות</translation>
+    </message>
+    <message>
+        <source>Show known messages</source>
+        <translation>הצגת הודעות מוכרות</translation>
+    </message>
+    <message>
+        <source>Since %time; levels: %levels.</source>
+        <translation>מאז %time; רמות: %levels.</translation>
+    </message>
+    <message>
+        <source>%count known messages are hidden.</source>
+        <translation>%count הודעות מוכרות מוסתרות.</translation>
+    </message>
+    <message>
+        <source>There is no log this digest can read.</source>
+        <translation>אין יומן שתקציר זה יכול לקרוא.</translation>
+    </message>
+    <message>
+        <source>%count entries in %groups messages</source>
+        <translation>%count רשומות ב־%groups הודעות</translation>
+    </message>
+    <message>
+        <source>Only the first %size of the window were read; the file holds more.</source>
+        <translation>נקראו רק %size הראשונים של החלון; הקובץ מכיל יותר.</translation>
+    </message>
+    <message>
+        <source>Messages of %name</source>
+        <translation>הודעות של %name</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>ספירה</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>הודעה</translation>
+    </message>
+    <message>
+        <source>Last seen</source>
+        <translation>נראה לאחרונה</translation>
+    </message>
+    <message>
+        <source>Known</source>
+        <translation>מוכר</translation>
+    </message>
+    <message>
+        <source>Open the newest entry</source>
+        <translation>פתיחת הרשומה החדשה ביותר</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>הצגה</translation>
+    </message>
+    <message>
+        <source>List again</source>
+        <translation>הצגה ברשימה שוב</translation>
+    </message>
+    <message>
+        <source>Mark as known</source>
+        <translation>סימון כמוכר</translation>
+    </message>
+    <message>
+        <source>No error or warning in this window.</source>
+        <translation>אין שגיאה או אזהרה בחלון זה.</translation>
+    </message>
+    <message>
+        <source>Log tools</source>
+        <translation>כלי יומן</translation>
+    </message>
+    <message>
+        <source>Logs</source>
+        <translation>יומנים</translation>
+    </message>
+    <message>
+        <source>The logs are too large to download at once: %total, more than the limit of %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Leave the archives out, or download the logs one by one.</source>
+        <translation>היומנים גדולים מדי להורדה בבת אחת: %total, יותר מהמגבלה של %cap ([ActionSettings] MaxBundleBytes ב־settings/logviewer.ini). יש להשמיט את הארכיונים, או להוריד את היומנים אחד אחד.</translation>
+    </message>
+    <message>
+        <source>There is no log file to download.</source>
+        <translation>אין קובץ יומן להורדה.</translation>
+    </message>
+    <message>
+        <source>The archive could not be written in var/tmp. Check that the web server may write there.</source>
+        <translation>לא ניתן היה לכתוב את הארכיון ב־var/tmp. יש לבדוק ששרת האינטרנט רשאי לכתוב שם.</translation>
+    </message>
+    <message>
+        <source>Download all logs</source>
+        <translation>הורדת כל היומנים</translation>
+    </message>
+    <message>
+        <source>Include archives</source>
+        <translation>כולל ארכיונים</translation>
+    </message>
+    <message>
+        <source>Unredacted</source>
+        <translation>ללא הסתרה</translation>
+    </message>
+    <message>
+        <source>Unredacted: e-mail addresses, IP addresses, tokens and session ids as written. Only for a secure place; the download is recorded in the audit.</source>
+        <translation>ללא הסתרה: כתובות דוא&quot;ל, כתובות IP, אסימונים ומזהי הפעלה כפי שנכתבו. רק למקום מאובטח; ההורדה נרשמת בביקורת.</translation>
+    </message>
+    <message>
+        <source>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</source>
+        <translation>קובץ %format אחד של כל היומנים, עם MANIFEST.txt של גדלים, כתיבות אחרונות וסכומי ביקורת. מוסתר כפי שהמציג מציג אותם; נרשם בביקורת; לכל היותר %cap.</translation>
+    </message>
+    <message>
+        <source>Grouped by category and rule.</source>
+        <translation>מקובץ לפי קטגוריה וכלל.</translation>
+    </message>
+    <message>
+        <source>Grouped by the reason of the answer.</source>
+        <translation>מקובץ לפי סיבת התשובה.</translation>
+    </message>
+    <message>
+        <source>Grouped by the kind of reason.</source>
+        <translation>מקובץ לפי סוג הסיבה.</translation>
+    </message>
+    <message>
+        <source>Grouped by the request path.</source>
+        <translation>מקובץ לפי נתיב הבקשה.</translation>
+    </message>
+    <message>
+        <source>Levels: %levels.</source>
+        <translation>רמות: %levels.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/logviewer</name>
+    <message>
+        <source>Not found requests (404)</source>
+        <translation>בקשות שלא נמצאו (404)</translation>
+    </message>
+    <message>
+        <source>Security (request classifier)</source>
+        <translation>אבטחה (מסווג בקשות)</translation>
+    </message>
+    <message>
+        <source>Web server access log</source>
+        <translation>יומן הגישה של שרת האינטרנט</translation>
+    </message>
+    <message>
+        <source>Web server error log</source>
+        <translation>יומן השגיאות של שרת האינטרנט</translation>
     </message>
 </context>
 </TS>
