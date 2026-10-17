@@ -97,7 +97,7 @@ read as it is) and the modification time of a non-empty `var/log/cronjob*.log`.
 
 | Card | What it shows |
 |---|---|
-| Exponential | version and state, release line, the version the database was installed or upgraded to (`ezsite_data`), the engine archive's build when Velocity runs from it, the siteaccess, the number of extensions |
+| Exponential | version and state, release line, the version the database was installed or upgraded to (`ezsite_data`), the engine archive's build when Velocity runs from it, the siteaccess, the number of siteaccesses with the default and the match order ("17 (default: site; match: uri, host)"), the number of extensions |
 | Server | as section 2, plus the port and whether it is HTTPS |
 | PHP | version (ZTS marked), SAPI, `memory_limit`, `max_execution_time`, upload limits, `max_input_vars`, the operating system |
 | OPcache and APCu | on or off; hit rate, memory and scripts when the statistics can be read; otherwise why not; JIT; `validate_timestamps` and how often; `file_update_protection` under Velocity; APCu free memory |
@@ -125,6 +125,8 @@ Folded below the cards, each opens with a click:
   `max_file_uploads`, `display_errors`, the `disable_functions` list, the autoload functions, and the link to
   `phpinfo()`.
 - **Site addresses**: the public site, the address this page was served from, the `SiteURL` setting.
+- **Siteaccesses** (#552): every siteaccess of `site.ini [SiteAccessSettings] AvailableSiteAccessList` and
+  `RelatedSiteAccessList`, and how a request reaches each one. See section 5a.
 - **OPcache and APCu**: memory, scripts, hit rate and interned strings as bars, and their settings.
 - **Velocity** (under Velocity only): engine and role, address, process, console log, the views the server answers
   itself and who may open them, other engines running.
@@ -138,6 +140,44 @@ Folded below the cards, each opens with a click:
   which checks `setup/managecache` itself. A post without the form token is refused (403).
 - **Database connection**: type, server, socket, database name, character set, read replica.
 - **Report for support**: the text of the report in a read-only field.
+
+## 5a. Siteaccesses
+
+Which siteaccesses an installation has, and which one a request gets, used to be visible only in the INI files. The
+part **Siteaccesses** of the page shows it, folded (a native `<details>`: Enter or Space opens it).
+
+- **This request**: the siteaccess this page got and the rule that chose it (a host map entry, a URI element, the
+  default siteaccess ...), the default siteaccess (`[SiteSettings] DefaultAccess`) and `MatchOrder`. A `StaticMatch`
+  is shown too: it gives every request one siteaccess and the rules are not used.
+- **Resolution map**: the rules in `MatchOrder` order, each with the entries that name a siteaccess: the URI element
+  (`URIMatchType=element`, one entry per available siteaccess) or the URI map (`URIMatchMapItems`), the host map
+  (`HostMatchMapItems`, with the match method when it is not `strict`), the host and URI map
+  (`HostUriMatchMapItems`), the ports (`[PortAccessSettings]`), the server variable and the index file; for the
+  `text` and `regexp` types the pattern. The rule and the entry that chose this request are marked; the last row is
+  the default siteaccess, used when no rule matches. The rules are tried from the top and the first match decides.
+- **All siteaccesses**: one card each with its kind, design (`SiteDesign` and `AdditionalSiteDesignList`), locale and
+  site languages, access extensions, whether hidden nodes are shown, whether a login is required, and the entries that
+  reach it. Tags mark the default, the siteaccess of this page, one that is only in `RelatedSiteAccessList` (it can
+  be read but not opened), and one that no rule reaches.
+- **Open** opens the siteaccess where a visitor would find it, worked out by the code of the admin's "Open the site"
+  link (`ezpSiteAccessURL::root()`): its host when the host map gives it one, its URI prefix when it is matched by URI,
+  and the port of this page (an admin opened on Velocity's :8080 opens the sites on :8080). **site.ini settings**
+  opens `settings/view/<siteaccess>/site.ini`.
+
+**The kind** is `admin`, `editor`, `login` (a site that needs a login) or `site`, worked out from the designs and
+`RequireUserLogin`. A siteaccess can name its own with the optional setting `site.ini [SiteAccessSettings]
+SiteAccessType` (for instance `SiteAccessType=shop`); it is not set by default.
+
+**How it is read.** The matching rules come from `site.ini` without siteaccess overrides, as `eZSiteAccess::match()`
+reads them, never from the request. The settings of each siteaccess come from `eZSiteAccess::getIni()`, which loads
+them into a separate `eZINI` and leaves the current siteaccess as it is. No database setting, password or key is read.
+The page needs `setup/system_info`, like the rest of Setup > System information. The class is
+`expSiteAccessOverview` (`kernel/classes/expsiteaccessoverview.php`); `build()` is pure and tested without a
+database in `tests/tests/kernel/classes/expSiteAccessOverviewTest.php`.
+
+**Translations.** The texts are in `design/admin/setup/info`, translated to `eng-US` and `ger-DE`. The five
+machine-assisted administration languages (`esl-ES`, `esl-MX`, `heb-IL`, `lat-VA`, `tlh-QO`, #547) take them in
+their next pass: the master catalogue has them as unfinished messages, so the gap extraction of that pass finds them.
 
 ## 6. The report for a support request
 

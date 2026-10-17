@@ -674,6 +674,22 @@ class Info extends \Exponential\Runnable\ModuleView
             'configured_placeholder' => $configuredHost === '' || in_array( $configuredHost, array( 'localhost', '127.0.0.1', '[::1]', '::1' ), true ),
         );
         $tpl->setVariable( 'site_info', $siteInfo );
+
+        // Every siteaccess, the rules that reach it and the one this request got (#552). Read from the settings, the
+        // current siteaccess stays as it is; an error leaves the section out rather than the page.
+        $siteAccessMap = null;
+        if ( class_exists( 'expSiteAccessOverview' ) )
+        {
+            try
+            {
+                $siteAccessMap = \expSiteAccessOverview::gather();
+            }
+            catch ( \Throwable $e )
+            {
+                \eZDebug::writeError( 'The siteaccess map could not be read: ' . $e->getMessage(), __METHOD__ );
+            }
+        }
+        $tpl->setVariable( 'siteaccess_map', $siteAccessMap );
     }
 
     /**
