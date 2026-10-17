@@ -1030,6 +1030,9 @@ fieldset.a4-field > legend + * { clear: both; }
 .a4-input.is-auto { width: auto; }
 .a4-field textarea, textarea.a4-input { min-height: 96px; line-height: var(--a4-leading); }
 .a4-field select[multiple], select.a4-input[multiple] { min-height: 150px; padding: var(--a4-space-1); }
+/* a one-line select without a class draws admin4.css's chevron at its end edge: the padding above would let the
+   text run under it ("Subtree" beside "Assign" in role/view) */
+.a4-field select:not([class]):where(:not([multiple]):not([size]), [size="1"]) { padding-inline-end: var(--a4-space-6); }
 .a4-input:focus,
 .a4-field select:focus,
 .a4-field textarea:focus,
