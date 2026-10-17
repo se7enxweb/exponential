@@ -103,19 +103,12 @@ function out(name, value) { console.log(JSON.stringify(Object.assign({ name }, v
     t.document.dispatch('change', t.document.getElementById('r'));
     out('change', { submitted: t.document.submitted, location: t.log.location, reset: t.document.getElementById('ignore').value });
 }
-// print
+// removed actions: data-a4-print and data-a4-disable-on-submit are no longer handled (no template used them)
 {
-    const t = run('<a href="#" id="p" data-a4-print="">print</a>');
+    const t = run('<form id="f"><a href="#" id="p" data-a4-print="">print</a><input type="submit" id="b1" name="PublishButton" data-a4-disable-on-submit="" /></form>');
     const ev = t.document.dispatch('click', t.document.getElementById('p'));
-    out('print', { prints: t.log.prints, prevented: ev.defaultPrevented });
-}
-// disable on submit: the buttons are disabled after the click, the click itself goes on
-{
-    const t = run('<form id="f"><input type="submit" id="b1" name="PublishButton" data-a4-disable-on-submit="" /><input type="submit" id="b2" name="CancelButton" /></form>');
-    const ev = t.document.dispatch('click', t.document.getElementById('b1'));
-    const before = t.document.getElementById('b2').disabled;
-    t.flush();
-    out('disable on submit', { prevented: ev.defaultPrevented, sent: t.document.submitted.length, before, after: [t.document.getElementById('b1').disabled, t.document.getElementById('b2').disabled] });
+    t.document.dispatch('click', t.document.getElementById('b1'));
+    out('removed', { prints: t.log.prints, prevented: ev.defaultPrevented, timers: t.log.timers.length, sent: t.document.submitted.length });
 }
 // focus: the marked field gets the focus when the script runs on a parsed page
 {

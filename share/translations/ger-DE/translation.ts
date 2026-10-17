@@ -17419,6 +17419,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Konten, die niemand nutzt oder die Aufmerksamkeit brauchen; deaktivieren, entsperren oder exportieren.</translation>
     </message>
+    <message>
+        <source>Storage files</source>
+        <translation>Speicherdateien</translation>
+    </message>
+    <message>
+        <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
+        <translation>Dateien im Speicher, die nichts verwendet, und Dateien mit falschem Eigentümer oder falschen Rechten.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -63505,6 +63513,470 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Change or remove the rule target.</source>
         <translation>Ändern oder entfernen Sie das Regelziel.</translation>
     </message>
+    <message>
+        <source>Start location (node id)</source>
+        <translation>Startort (Knoten-ID)</translation>
+    </message>
+    <message>
+        <source>Now: %path</source>
+        <translation>Jetzt: %path</translation>
+    </message>
+    <message>
+        <source>1 is the whole tree. Your choice is remembered.</source>
+        <translation>1 ist der ganze Baum. Ihre Wahl wird gespeichert.</translation>
+    </message>
+    <message>
+        <source>Start locations</source>
+        <translation>Startorte</translation>
+    </message>
+    <message>
+        <source>Choose with the node picker</source>
+        <translation>Mit der Knotenauswahl wählen</translation>
+    </message>
+    <message>
+        <source>Wrong owner</source>
+        <translation>Falscher Eigentümer</translation>
+    </message>
+    <message>
+        <source>Wrong mode</source>
+        <translation>Falsche Rechte</translation>
+    </message>
+    <message>
+        <source>Empty file</source>
+        <translation>Leere Datei</translation>
+    </message>
+    <message>
+        <source>Name differs in case</source>
+        <translation>Name weicht in der Groß-/Kleinschreibung ab</translation>
+    </message>
+    <message>
+        <source>Path differs from its parts</source>
+        <translation>Pfad weicht von seinen Teilen ab</translation>
+    </message>
+    <message>
+        <source>In another type directory</source>
+        <translation>Im Verzeichnis eines anderen Typs</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Pfad</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Alter</translation>
+    </message>
+    <message>
+        <source>moved to the quarantine</source>
+        <translation>in die Quarantäne verschoben</translation>
+    </message>
+    <message>
+        <source>restored</source>
+        <translation>wiederhergestellt</translation>
+    </message>
+    <message>
+        <source>deleted from the quarantine</source>
+        <translation>aus der Quarantäne gelöscht</translation>
+    </message>
+    <message>
+        <source>given the expected owner and mode</source>
+        <translation>mit dem erwarteten Eigentümer und den erwarteten Rechten versehen</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>Speicherdateien</translation>
+    </message>
+    <message>
+        <source>The files below %dir: those no content uses (orphan files), and the file-system problems of those it uses. A file counts as used when a version of any object, also an old one or one in the trash, names it, or when a field, a layout, a setting or a template names its path. Files younger than %days days are never orphans. Nothing is deleted from the storage: orphans go to a quarantine, from where they can be restored.</source>
+        <translation>Die Dateien unter %dir: die, die kein Inhalt verwendet (verwaiste Dateien), und die Dateisystemprobleme der verwendeten. Eine Datei gilt als verwendet, wenn eine Version irgendeines Objekts sie nennt, auch eine alte oder eine im Papierkorb, oder wenn ein Feld, ein Layout, eine Einstellung oder ein Template ihren Pfad nennt. Dateien, die jünger als %days Tage sind, gelten nie als verwaist. Aus dem Speicher wird nichts gelöscht: verwaiste Dateien kommen in eine Quarantäne, aus der sie wiederhergestellt werden können.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) were %action.</source>
+        <translation>%count Dateien (%size) wurden %action.</translation>
+    </message>
+    <message>
+        <source>%count could not be changed.</source>
+        <translation>%count konnten nicht geändert werden.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files changed after the confirmation. Tick them again.</source>
+        <translation>Nichts wurde geändert: Die Dateien haben sich nach der Bestätigung geändert. Bitte erneut auswählen.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation>Nichts wurde geändert.</translation>
+    </message>
+    <message>
+        <source>The files are kept by a cluster file handler: they are read from its table, owner and mode are not checked, and nothing can be moved or fixed here.</source>
+        <translation>Die Dateien werden von einem Cluster-Dateihandler verwaltet: Sie werden aus seiner Tabelle gelesen, Eigentümer und Rechte werden nicht geprüft, und hier kann nichts verschoben oder korrigiert werden.</translation>
+    </message>
+    <message>
+        <source>Last scan</source>
+        <translation>Letzte Prüfung</translation>
+    </message>
+    <message>
+        <source>The storage has not been scanned yet.</source>
+        <translation>Der Speicher wurde noch nicht geprüft.</translation>
+    </message>
+    <message>
+        <source>A scan started at %time is not finished (%percent %).</source>
+        <translation>Eine um %time begonnene Prüfung ist nicht abgeschlossen (%percent %).</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fortschritt</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Abgeschlossen</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Dateien</translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation>Verwendet</translation>
+    </message>
+    <message>
+        <source>Orphan files</source>
+        <translation>Verwaiste Dateien</translation>
+    </message>
+    <message>
+        <source>Too new to judge</source>
+        <translation>Zu neu zum Beurteilen</translation>
+    </message>
+    <message>
+        <source>Took</source>
+        <translation>Dauer</translation>
+    </message>
+    <message>
+        <source>%seconds s in %steps steps</source>
+        <translation>%seconds s in %steps Schritten</translation>
+    </message>
+    <message>
+        <source>Files were changed since this scan; the lists leave out what was moved or fixed.</source>
+        <translation>Seit dieser Prüfung wurden Dateien geändert; die Listen lassen Verschobenes und Korrigiertes weg.</translation>
+    </message>
+    <message>
+        <source>The reference index could not be read completely, so paths named only in rich text, layouts, settings or templates were not seen. Nothing is moved until it can be read.</source>
+        <translation>Der Referenzindex konnte nicht vollständig gelesen werden; Pfade, die nur in Rich Text, Layouts, Einstellungen oder Templates stehen, wurden nicht gesehen. Nichts wird verschoben, bis er gelesen werden kann.</translation>
+    </message>
+    <message>
+        <source>Continue the scan</source>
+        <translation>Prüfung fortsetzen</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation>Neu beginnen</translation>
+    </message>
+    <message>
+        <source>Scan again</source>
+        <translation>Erneut prüfen</translation>
+    </message>
+    <message>
+        <source>Scan the storage</source>
+        <translation>Speicher prüfen</translation>
+    </message>
+    <message>
+        <source>The scan runs in steps of a few seconds and can be continued later; on a large storage run ./console exp:content-check --storage.</source>
+        <translation>Die Prüfung läuft in Schritten von wenigen Sekunden und kann später fortgesetzt werden; bei einem großen Speicher ./console exp:content-check --storage ausführen.</translation>
+    </message>
+    <message>
+        <source>Lists</source>
+        <translation>Listen</translation>
+    </message>
+    <message>
+        <source>File problems</source>
+        <translation>Dateiprobleme</translation>
+    </message>
+    <message>
+        <source>Quarantine</source>
+        <translation>Quarantäne</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Probleme</translation>
+    </message>
+    <message>
+        <source>Orphan files belong to no content, so the start location does not apply to them: the whole storage is listed.</source>
+        <translation>Verwaiste Dateien gehören zu keinem Inhalt, daher gilt der Startort für sie nicht: Der ganze Speicher wird aufgelistet.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) in %dir.</source>
+        <translation>%count Dateien (%size) in %dir.</translation>
+    </message>
+    <message>
+        <source>The scan keeps the first %count orphans; move them, then scan again for the others.</source>
+        <translation>Die Prüfung behält die ersten %count verwaisten Dateien; verschieben Sie diese und prüfen Sie dann erneut für die übrigen.</translation>
+    </message>
+    <message>
+        <source>Scan the storage to see this list.</source>
+        <translation>Prüfen Sie den Speicher, um diese Liste zu sehen.</translation>
+    </message>
+    <message>
+        <source>No orphan files.</source>
+        <translation>Keine verwaisten Dateien.</translation>
+    </message>
+    <message>
+        <source>No file problems below this node match the filter.</source>
+        <translation>Keine Dateiprobleme unter diesem Knoten passen zum Filter.</translation>
+    </message>
+    <message>
+        <source>The quarantine is empty.</source>
+        <translation>Die Quarantäne ist leer.</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>Problem</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>Verwendet von</translation>
+    </message>
+    <message>
+        <source>Moved on</source>
+        <translation>Verschoben am</translation>
+    </message>
+    <message>
+        <source>Owner and mode</source>
+        <translation>Eigentümer und Rechte</translation>
+    </message>
+    <message>
+        <source>%days d</source>
+        <translation>%days T</translation>
+    </message>
+    <message>
+        <source>Found: %path</source>
+        <translation>Gefunden: %path</translation>
+    </message>
+    <message>
+        <source>Move ticked files to the quarantine</source>
+        <translation>Ausgewählte Dateien in die Quarantäne verschieben</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of ticked files</source>
+        <translation>Eigentümer und Rechte der ausgewählten Dateien korrigieren</translation>
+    </message>
+    <message>
+        <source>Restore ticked files</source>
+        <translation>Ausgewählte Dateien wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Delete ticked files permanently</source>
+        <translation>Ausgewählte Dateien endgültig löschen</translation>
+    </message>
+    <message>
+        <source>The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.</source>
+        <translation>Die nächste Seite ist ein Probelauf: Sie zeigt, was mit jeder Datei geschähe, und ändert nichts, bis Sie bestätigen. Höchstens %count Dateien auf einmal.</translation>
+    </message>
+    <message>
+        <source>Move to the quarantine</source>
+        <translation>In die Quarantäne verschieben</translation>
+    </message>
+    <message>
+        <source>Restore from the quarantine</source>
+        <translation>Aus der Quarantäne wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Delete from the quarantine</source>
+        <translation>Aus der Quarantäne löschen</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode</source>
+        <translation>Eigentümer und Rechte korrigieren</translation>
+    </message>
+    <message>
+        <source>Moved to the quarantine</source>
+        <translation>In die Quarantäne verschoben</translation>
+    </message>
+    <message>
+        <source>Moved back to the storage</source>
+        <translation>In den Speicher zurückverschoben</translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation>Endgültig gelöscht</translation>
+    </message>
+    <message>
+        <source>Owner and mode set</source>
+        <translation>Eigentümer und Rechte gesetzt</translation>
+    </message>
+    <message>
+        <source>The file is not there (any more).</source>
+        <translation>Die Datei ist nicht (mehr) vorhanden.</translation>
+    </message>
+    <message>
+        <source>The file is not in a directory the check covers.</source>
+        <translation>Die Datei liegt in keinem Verzeichnis, das die Prüfung abdeckt.</translation>
+    </message>
+    <message>
+        <source>The file is a symbolic link.</source>
+        <translation>Die Datei ist ein symbolischer Link.</translation>
+    </message>
+    <message>
+        <source>The path is in the ignored list.</source>
+        <translation>Der Pfad steht in der Liste der ignorierten Pfade.</translation>
+    </message>
+    <message>
+        <source>The file is too new to judge.</source>
+        <translation>Die Datei ist zu neu, um sie zu beurteilen.</translation>
+    </message>
+    <message>
+        <source>Content uses the file now.</source>
+        <translation>Ein Inhalt verwendet die Datei jetzt.</translation>
+    </message>
+    <message>
+        <source>No content uses the file: it is an orphan, not a problem.</source>
+        <translation>Kein Inhalt verwendet die Datei: Sie ist verwaist, kein Problem einer verwendeten Datei.</translation>
+    </message>
+    <message>
+        <source>A file is already at the destination.</source>
+        <translation>Am Ziel liegt bereits eine Datei.</translation>
+    </message>
+    <message>
+        <source>The reference index cannot be read now.</source>
+        <translation>Der Referenzindex kann gerade nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>Files of a cluster file handler cannot be changed here.</source>
+        <translation>Dateien eines Cluster-Dateihandlers können hier nicht geändert werden.</translation>
+    </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</source>
+        <translation>Nur der Systemadministrator kann den Eigentümer ändern: ./console exp:content-check --fix-permissions als root ausführen.</translation>
+    </message>
+    <message>
+        <source>This server process does not own the file, so it cannot change its mode.</source>
+        <translation>Dieser Serverprozess ist nicht Eigentümer der Datei und kann ihre Rechte daher nicht ändern.</translation>
+    </message>
+    <message>
+        <source>Owner and mode are already as expected.</source>
+        <translation>Eigentümer und Rechte sind bereits wie erwartet.</translation>
+    </message>
+    <message>
+        <source>No file was ticked. Tick the files first.</source>
+        <translation>Keine Datei ausgewählt. Wählen Sie zuerst die Dateien aus.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing has been changed yet.</source>
+        <translation>Probelauf: Noch wurde nichts geändert.</translation>
+    </message>
+    <message>
+        <source>Only the first %count ticked files are taken; do the others afterwards.</source>
+        <translation>Nur die ersten %count ausgewählten Dateien werden übernommen; die übrigen danach.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved to %dir, below the date of today, keeping their path. They can be restored from there.</source>
+        <translation>%count Dateien (%size) werden nach %dir verschoben, unter das heutige Datum und mit ihrem Pfad. Von dort können sie wiederhergestellt werden.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be deleted from the quarantine. This cannot be undone.</source>
+        <translation>%count Dateien (%size) werden aus der Quarantäne gelöscht. Das kann nicht rückgängig gemacht werden.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved back to their place in the storage.</source>
+        <translation>%count Dateien (%size) werden an ihren Platz im Speicher zurückverschoben.</translation>
+    </message>
+    <message>
+        <source>%count files will get the expected owner and mode; nothing else is changed.</source>
+        <translation>%count Dateien erhalten den erwarteten Eigentümer und die erwarteten Rechte; sonst wird nichts geändert.</translation>
+    </message>
+    <message>
+        <source>None of the ticked files can be changed.</source>
+        <translation>Keine der ausgewählten Dateien kann geändert werden.</translation>
+    </message>
+    <message>
+        <source>To: %path</source>
+        <translation>Nach: %path</translation>
+    </message>
+    <message>
+        <source>Left as it is</source>
+        <translation>Bleibt unverändert</translation>
+    </message>
+    <message>
+        <source>I understand that these files are deleted permanently.</source>
+        <translation>Mir ist bewusst, dass diese Dateien endgültig gelöscht werden.</translation>
+    </message>
+    <message>
+        <source>Confirm for %count files</source>
+        <translation>Für %count Dateien bestätigen</translation>
+    </message>
+    <message>
+        <source>Scanning the storage</source>
+        <translation>Speicher wird geprüft</translation>
+    </message>
+    <message>
+        <source>%files files read so far (%size), %orphans of them orphans; %percent % done.</source>
+        <translation>Bisher %files Dateien gelesen (%size), davon %orphans verwaist; %percent % erledigt.</translation>
+    </message>
+    <message>
+        <source>Stop here</source>
+        <translation>Hier anhalten</translation>
+    </message>
+    <message>
+        <source>The scan goes on by itself. Stop it at any time; it can be continued later.</source>
+        <translation>Die Prüfung läuft von selbst weiter. Sie können sie jederzeit anhalten und später fortsetzen.</translation>
+    </message>
+    <message>
+        <source>This page only takes the forms of the storage files.</source>
+        <translation>Diese Seite nimmt nur die Formulare der Speicherdateien an.</translation>
+    </message>
+    <message>
+        <source>You may not do this with storage files.</source>
+        <translation>Sie dürfen das mit Speicherdateien nicht tun.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and tick the files once more.</source>
+        <translation>Das Formular ist abgelaufen. Öffnen Sie die Liste erneut und wählen Sie die Dateien noch einmal aus.</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bestätigen</translation>
+    </message>
+    <message>
+        <source>Choose classes</source>
+        <translation>Klassen wählen</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>Alle Klassen</translation>
+    </message>
+    <message>
+        <source>No class</source>
+        <translation>Keine Klasse</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alle auf dieser Seite auswählen</translation>
+    </message>
+    <message>
+        <source>Select none</source>
+        <translation>Keine auswählen</translation>
+    </message>
+    <message>
+        <source>%selected of %total selected</source>
+        <translation>%selected von %total ausgewählt</translation>
+    </message>
+    <message>
+        <source>Move all %count results to the trash</source>
+        <translation>Alle %count Ergebnisse in den Papierkorb verschieben</translation>
+    </message>
+    <message>
+        <source>Move all %count files to the quarantine</source>
+        <translation>Alle %count Dateien in die Quarantäne verschieben</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of all %count results</source>
+        <translation>Eigentümer und Rechte aller %count Ergebnisse korrigieren</translation>
+    </message>
+    <message>
+        <source>Restore all %count files</source>
+        <translation>Alle %count Dateien wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>Alle auswählen</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -70845,6 +71317,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>the system (cronjob or command line)</source>
         <translation>das System (Cronjob oder Kommandozeile)</translation>
+    </message>
+    <message>
+        <source>This job no longer exists or you may not see it. The status is not updated any more.</source>
+        <translation>Diesen Job gibt es nicht mehr, oder Sie dürfen ihn nicht sehen. Der Status wird nicht mehr aktualisiert.</translation>
+    </message>
+    <message>
+        <source>You are no longer signed in. Sign in again and reload this page to follow the job.</source>
+        <translation>Sie sind nicht mehr angemeldet. Melden Sie sich erneut an und laden Sie diese Seite neu, um den Job weiter zu verfolgen.</translation>
+    </message>
+    <message>
+        <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation>Der Status konnte nicht angezeigt werden. Laden Sie die Seite neu, um den Job weiter zu verfolgen.</translation>
     </message>
 </context>
 <context>

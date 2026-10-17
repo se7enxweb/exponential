@@ -266,13 +266,15 @@ class expContentCheckQueryTest extends PHPUnit\Framework\TestCase
     /** CQ-13 */
     public function testBrokenRelationsFormTakesTheNodeWithoutARedirect()
     {
-        $this->assertSame( 58, Brokenrelations::chosenNodeID( '2', '58' ) );
-        $this->assertSame( 2, Brokenrelations::chosenNodeID( '2', null ) );
-        $this->assertSame( 2, Brokenrelations::chosenNodeID( '2', '' ) );
-        $this->assertSame( 2, Brokenrelations::chosenNodeID( '2', 'x' ) );
-        $this->assertSame( 2, Brokenrelations::chosenNodeID( '2', array( 58 ) ) );
-        $this->assertSame( 1, Brokenrelations::chosenNodeID( null, ' 1 ' ) );
-        $this->assertNull( Brokenrelations::chosenNodeID( null, null ) );
+        expContentCheckScope::setTestPreference( false );
+        $this->assertSame( array( 'node_id' => 58, 'given' => true ), expContentCheckScope::choose( '2', '58', 2 ) );
+        $this->assertSame( 2, expContentCheckScope::choose( '2', null, 9 )['node_id'] );
+        $this->assertSame( 2, expContentCheckScope::choose( '2', '', 9 )['node_id'] );
+        $this->assertSame( 2, expContentCheckScope::choose( '2', 'x', 9 )['node_id'] );
+        $this->assertSame( 2, expContentCheckScope::choose( '2', array( 58 ), 9 )['node_id'] );
+        $this->assertSame( 1, expContentCheckScope::choose( null, ' 1 ', 9 )['node_id'] );
+        $this->assertSame( array( 'node_id' => 9, 'given' => false ), expContentCheckScope::choose( null, null, 9 ) );
+        expContentCheckScope::setTestPreference( null );
 
         // why: a module redirect keeps the query of the request, so the form's NodeID comes back with it
         $this->assertSame( '/admin/contentcheck/brokenrelations/58?Kind%5B%5D=deleted&NodeID=58&Kind%5B%5D=deleted',

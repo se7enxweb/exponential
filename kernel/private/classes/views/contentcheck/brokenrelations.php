@@ -36,8 +36,23 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         // the node from the filter form (GET NodeID), else from the address. No redirect to an address with the node:
         // the kernel carries the query of a request over every module redirect, so the NodeID of the form came back
         // with the redirect and sent it to the same address again, until the browser gave up (too many redirects)
-        $input['NodeID'] = self::chosenNodeID( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,
-                                               $http->hasGetVariable( 'NodeID' ) ? $http->getVariable( 'NodeID' ) : null );
+        // (expContentCheckScope: the form's node, else the address's, else the user's last choice, which it becomes)
+        $input['NodeID'] = \expContentCheckScope::resolve( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,
+                                                          $http->hasGetVariable( 'NodeID' ) ? $http->getVariable( 'NodeID' ) : null );
+        // "Select all" / "Select none" of the states and the references (KindChoice, RelationChoice); none ticked
+        // checks every one, as no box ticked does
+        $none = array();
+        foreach ( array( 'Kind' => \expContentCheckBrokenRelations::KINDS, 'Relation' => \expContentCheckBrokenRelations::RELATIONS ) as $group => $all )
+        {
+            $choice = $http->hasGetVariable( $group . 'Choice' ) ? $http->getVariable( $group . 'Choice' ) : '';
+            if ( $choice === 'all' )
+                $input[$group] = $all;
+            else if ( $choice === 'none' )
+            {
+                unset( $input[$group] );
+                $none[] = $group;
+            }
+        }
         $input['Limit'] = $limit;
         // without a node: the content tree's top node, which a user with a limited content/read may read as well
         $params = \expContentCheckBrokenRelations::parameters( $input, Unreferenced::rootNodeID() );
@@ -49,7 +64,10 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'result', $result );
         $tpl->setVariable( 'params', $params );
+        $tpl->setVariable( 'scope', \expContentCheckScope::forTemplate( (int)$params['node_id'], 'brokenrelations' ) );
         $tpl->setVariable( 'kinds', \expContentCheckBrokenRelations::KINDS );
+        $tpl->setVariable( 'kinds_shown', in_array( 'Kind', $none, true ) ? array() : $params['kinds'] );
+        $tpl->setVariable( 'relations_shown', in_array( 'Relation', $none, true ) ? array() : $params['relations'] );
         $tpl->setVariable( 'relations', \expContentCheckBrokenRelations::RELATIONS );
         $tpl->setVariable( 'page_uri', '/contentcheck/brokenrelations/' . (int)$params['node_id'] );
         $tpl->setVariable( 'filter_suffix', self::querySuffix( $params ) );
@@ -60,23 +78,6 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         return array( 'content' => $tpl->fetch( 'design:contentcheck/brokenrelations.tpl' ),
                       'path' => array( array( 'text' => \ezpI18n::tr( 'kernel/contentcheck', 'Setup' ), 'url' => 'setup/menu' ),
                                        array( 'text' => \ezpI18n::tr( 'kernel/contentcheck', 'Broken relations' ), 'url' => false ) ) );
-    }
-
-    /**
-     * The node the check starts from: the one of the filter form (GET NodeID) when it is a node id, else the one in
-     * the address; null for neither (the content tree's top node then).
-     *
-     * @param mixed $addressNodeID the view parameter NodeID
-     * @param mixed $formNodeID GET NodeID, or null when the request has none
-     * @return int|null
-     */
-    public static function chosenNodeID( $addressNodeID, $formNodeID )
-    {
-        $form = $formNodeID === null || is_array( $formNodeID ) ? array() : \expContentCheck::idList( $formNodeID, 1 );
-        if ( $form )
-            return $form[0];
-        $address = $addressNodeID === null || is_array( $addressNodeID ) ? array() : \expContentCheck::idList( $addressNodeID, 1 );
-        return $address ? $address[0] : null;
     }
 
     /**

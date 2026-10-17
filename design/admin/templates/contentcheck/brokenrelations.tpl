@@ -1,7 +1,7 @@
 {* The contentcheck/brokenrelations view (doc/features/6.0/content-checks.md, "Broken relations"). Read only.
 
    Variables: result (node, excluded, findings, checked, last, done, error), params (node_id, exclude, kinds,
-   relations, after, limit), kinds, relations, page_uri, filter_suffix, limit, limit_choices, limit_preference.
+   relations, after, limit), scope (the start location, see scope.tpl), kinds, relations, page_uri, filter_suffix, limit, limit_choices, limit_preference.
    The sources are walked by object id: a page shows the findings of the objects checked for it, and "Next page"
    goes on after the last of them (After). A target the user may not read is "unavailable",
    without id or state. The same file is in design/admin and design/admin4. *}
@@ -50,11 +50,7 @@
 <section aria-labelledby="cc-filter-title">
 <h2 class="a4-sr-only" id="cc-filter-title">{'Filter'|i18n( 'kernel/contentcheck' )}</h2>
 <form class="a4-filterbar" method="get" action={$page_uri|ezurl}>
-    <div class="a4-field">
-        <label for="cc-node">{'Below node'|i18n( 'kernel/contentcheck' )}</label>
-        <input type="text" id="cc-node" name="NodeID" value="{$params.node_id}" inputmode="numeric" pattern="[0-9]*" maxlength="10" aria-describedby="cc-node-help" />
-        <span class="a4-help" id="cc-node-help">{'Now: %name. 1 checks the whole tree.'|i18n( 'kernel/contentcheck',, hash( '%name', cond( $node.node_id|eq( 1 ), 'Whole tree'|i18n( 'kernel/contentcheck' ), $node.name ) ) )|wash}</span>
-    </div>
+    {include uri='design:contentcheck/scope.tpl' scope=$scope}
     <div class="a4-field">
         <label for="cc-exclude">{'Leave out the nodes below'|i18n( 'kernel/contentcheck' )}</label>
         <input type="text" id="cc-exclude" name="Exclude" value="{$params.exclude|implode( ', ' )|wash}" maxlength="250" spellcheck="false" aria-describedby="cc-exclude-help" />
@@ -64,7 +60,7 @@
         <legend>{'Targets'|i18n( 'kernel/contentcheck' )}</legend>
         <div class="a4-chips">
         {foreach $kinds as $kind}
-            <label class="a4-chip"><input type="checkbox" name="Kind[]" value="{$kind|wash}"{if $params.kinds|contains( $kind )} checked="checked"{/if} /><span>{$kind_names[$kind]|wash}</span></label>
+            <label class="a4-chip"><input type="checkbox" name="Kind[]" value="{$kind|wash}"{if $kinds_shown|contains( $kind )} checked="checked"{/if} /><span>{$kind_names[$kind]|wash}</span></label>
         {/foreach}
         </div>
     </fieldset>
@@ -72,21 +68,22 @@
         <legend>{'References'|i18n( 'kernel/contentcheck' )}</legend>
         <div class="a4-chips">
         {foreach $relations as $relation}
-            <label class="a4-chip"><input type="checkbox" name="Relation[]" value="{$relation|wash}"{if $params.relations|contains( $relation )} checked="checked"{/if} /><span>{$relation_names[$relation]|wash}</span></label>
+            <label class="a4-chip"><input type="checkbox" name="Relation[]" value="{$relation|wash}"{if $relations_shown|contains( $relation )} checked="checked"{/if} /><span>{$relation_names[$relation]|wash}</span></label>
         {/foreach}
         </div>
     </fieldset>
     <div class="a4-field">
-        <button type="submit" class="a4-btn a4-btn-primary">{'Check'|i18n( 'kernel/contentcheck' )}</button>
+        <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'kernel/contentcheck' )}</button>
     </div>
+    {include uri='design:contentcheck/filter_choice.tpl' name='Kind' label='Targets'|i18n( 'kernel/contentcheck' )}
+    {include uri='design:contentcheck/filter_choice.tpl' name='Relation' label='References'|i18n( 'kernel/contentcheck' )}
 </form>
 </section>
 
 <section class="a4-section" aria-labelledby="cc-list-title">
-<div class="a4-section-head">
-    <h2 class="a4-h2" id="cc-list-title">{'Findings'|i18n( 'kernel/contentcheck' )}</h2>
-    <span class="a4-meta">{if $params.after|gt( 0 )}{'%count objects checked after object %after.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked, '%after', $params.after ) )}{else}{'%count objects checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked ) )}{/if}</span>
-</div>
+{include uri='design:contentcheck/results_head.tpl' title='Findings'|i18n( 'kernel/contentcheck' ) title_id='cc-list-title'
+         offset=0 limit=$limit count=-1
+         count_text=cond( $params.after|gt( 0 ), '%count objects checked after object %after.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked, '%after', $params.after ) ), '%count objects checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked ) ) )}
 
 {if $findings|count|eq( 0 )}
 <p class="a4-empty">{if $result.done}{'No broken relation found.'|i18n( 'kernel/contentcheck' )}{else}{'No broken relation found among these objects. Go on with the next page.'|i18n( 'kernel/contentcheck' )}{/if}</p>
@@ -121,22 +118,11 @@
 </div>
 {/if}
 
-<div class="a4-listfoot">
-    <p class="a4-sizes">
-        <span>{'Per page'|i18n( 'kernel/contentcheck' )}:</span>
-    {foreach $limit_choices as $limit_index => $limit_option}
-        {if eq( $limit_option, $limit )}
-        <span class="current" aria-current="true">{$limit_option}</span>
-        {else}
-        <a href={concat( '/user/preferences/set/', $limit_preference, '/', $limit_index|inc )|ezurl} title="{'Show %count findings per page.'|i18n( 'kernel/contentcheck',, hash( '%count', $limit_option ) )}">{$limit_option}</a>
-        {/if}
-    {/foreach}
-    </p>
-    <div class="a4-pager">
-        {if $params.after|gt( 0 )}<a class="a4-btn" href={concat( $page_uri, $filter_suffix )|ezurl}>{'From the start'|i18n( 'kernel/contentcheck' )}</a>{/if}
-        {if $result.done|not}<a class="a4-btn" href={concat( $page_uri, $filter_suffix, $separator, 'After=', $result.last )|ezurl}>{'Next page'|i18n( 'kernel/contentcheck' )}</a>{/if}
-    </div>
-</div>
+{include uri='design:contentcheck/pager.tpl' page_uri=$page_uri page_uri_suffix=$filter_suffix item_count=-1 view_parameters=hash()
+         limit=$limit limit_choices=$limit_choices limit_preference=$limit_preference
+         size_title='Show %count findings per page.'|i18n( 'kernel/contentcheck' )
+         start_url=cond( $params.after|gt( 0 ), concat( $page_uri, $filter_suffix ), '' )
+         next_url=cond( $result.done, '', concat( $page_uri, $filter_suffix, $separator, 'After=', $result.last ) )}
 </section>
 
 {if $result.layouts|count|gt( 0 )}

@@ -886,16 +886,19 @@
     "kernel/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
       "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
-      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "kernel/private/classes/views/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
       "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
-      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "settings/contentcheck.ini": [
       "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
-      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "design/admin*/templates/contentcheck/*": [
       "tests/tests/design/AdminSelfContainedTest.php",
@@ -908,10 +911,12 @@
     "kernel/classes/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
       "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
-      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "kernel/private/classes/commands/contentcheck.php": [
-      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "kernel/private/classes/cronjobs/contentcheck.php": [
       "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
@@ -1140,11 +1145,13 @@
     ],
     "design/admin/javascript/ezajaxrelations_jquery.js": [
       "tests/tests/design/AdminScriptsBehaviourTest.php",
-      "tests/tests/design/AdminScriptsTest.php"
+      "tests/tests/design/AdminScriptsTest.php",
+      "tests/tests/design/AdminContentJobScriptsTest.php"
     ],
     "design/admin4/javascript/ezajaxrelations_jquery.js": [
       "tests/tests/design/AdminScriptsBehaviourTest.php",
-      "tests/tests/design/AdminScriptsTest.php"
+      "tests/tests/design/AdminScriptsTest.php",
+      "tests/tests/design/AdminContentJobScriptsTest.php"
     ],
     "design/admin/javascript/expajaxuploader.js": [
       "tests/tests/design/AdminScriptsBehaviourTest.php"
@@ -1194,6 +1201,47 @@
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe.tpl": [
       "tests/tests/extension/ezoe/expOEAtdRemovedTest.php"
+    ],
+    "design/admin4/templates/content/copy.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/content/copy_subtree.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/content/queued.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/class/edit_locked.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezimage.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezimage_editor.tpl": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin4/javascript/page/content_job.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "design/admin4/javascript/page/content_job_mode_choice.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "design/admin4/templates/content/job.tpl": [
+      "tests/tests/design/AdminContentJobScriptsTest.php",
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "design/admin4/templates/content/job_mode_choice.tpl": [
+      "tests/tests/design/AdminContentJobScriptsTest.php",
+      "tests/tests/design/AdminJobTranslationsTest.php"
+    ],
+    "tests/tests/design/js/content_job.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "tests/tests/design/js/content_job_mode_choice.js": [
+      "tests/tests/design/AdminContentJobScriptsTest.php"
+    ],
+    "tests/tests/design/js/csp_actions.js": [
+      "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ]
   },
   "generated": {
@@ -1590,7 +1638,8 @@
       "tests/tests/kernel/classes/eZContentHistoryAccessTest.php",
       "tests/tests/kernel/classes/eZContentVersionviewViewModeTest.php",
       "tests/tests/kernel/classes/subitems/expSubitemsCSVExportTest.php",
-      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
     ],
     "kernel/content/multiedit_functions.php": [
       "tests/tests/kernel/classes/permissions/expPermissionHooksTest.php"
@@ -1651,7 +1700,8 @@
     ],
     "kernel/private/classes/ezpkernelweb.php": [
       "tests/tests/lib/ezsession/eZSessionResponseCookieTest.php",
-      "tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php"
+      "tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php",
+      "tests/tests/kernel/private/classes/ezpContentSecurityPolicyTest.php"
     ],
     "kernel/private/classes/ezscriptclusterpurge.php": [
       "tests/tests/kernel/classes/runnable/ClusterPurgeCronjobExpiryTest.php"
@@ -1948,7 +1998,8 @@
       "tests/tests/lib/ezfile/eZLogMaxSizeTest.php",
       "tests/tests/lib/ezutils/eZINIEnvironmentTest.php",
       "tests/tests/design/AdminSiteAccessMenuTest.php",
-      "tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php"
+      "tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php",
+      "tests/tests/kernel/private/classes/ezpContentSecurityPolicyTest.php"
     ],
     "settings/subitems.ini": [
       "tests/tests/kernel/classes/subitems/expSubitemsColumnRegistryTest.php"
@@ -2089,6 +2140,30 @@
     ],
     "extension/ezoe/classes/runnable/views/ezoe/embed_view.php": [
       "tests/tests/extension/ezoe/expOEEmbedViewTest.php"
+    ],
+    "design/standard/javascript/content_queued.js": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/standard/javascript/ezasynchronouspublishing.js": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/standard/stylesheets/content_queued.css": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "kernel/private/classes/ezpcontentsecuritypolicy.php": [
+      "tests/tests/kernel/private/classes/ezpContentSecurityPolicyTest.php"
+    ],
+    "kernel/private/classes/views/class/edit.php": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "kernel/private/classes/views/content/copy.php": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "kernel/private/classes/views/content/copysubtree.php": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "kernel/private/classes/views/content/queued.php": [
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
     ]
   }
 }

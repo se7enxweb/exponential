@@ -15,10 +15,7 @@
  *                                        data-a4-dismiss="#id" hides that element instead
  *   data-a4-submit-on-change             a change submits the element's form
  *   data-a4-navigate-on-change           a change goes to the element's value (a select of addresses)
- *   data-a4-print                        a click prints the page
  *   data-a4-reset-field="id"             a change sets the field with that id to 0
- *   data-a4-disable-on-submit            on a submit button: the form's buttons are disabled just after the click
- *                                        (a second click does not send the form twice)
  *   data-a4-focus                        the page focuses this field when it is shown (and selects its text)
  */
 (function () {
@@ -44,7 +41,7 @@
     }
 
     document.addEventListener('click', function (e) {
-        var el = closest(e.target, '[data-a4-confirm], [data-a4-discard-confirm], [data-a4-toggle-checkboxes], [data-a4-check-all], [data-a4-dismiss], [data-a4-print], [data-a4-disable-on-submit]');
+        var el = closest(e.target, '[data-a4-confirm], [data-a4-discard-confirm], [data-a4-toggle-checkboxes], [data-a4-check-all], [data-a4-dismiss]');
         if (!el || el.tagName === 'FORM') return;
 
         if (el.hasAttribute('data-a4-discard-confirm')) {
@@ -75,19 +72,6 @@
             var target = el.getAttribute('data-a4-dismiss') ? document.querySelector(el.getAttribute('data-a4-dismiss')) : el.parentNode;
             if (target) target.hidden = true;
             return;
-        }
-        if (el.hasAttribute('data-a4-print')) {
-            e.preventDefault();
-            window.print();
-            return;
-        }
-        if (el.hasAttribute('data-a4-disable-on-submit')) {
-            var owner = formOf(el);
-            // after the click, so the button's own name and value are still sent with the form
-            window.setTimeout(function () {
-                var buttons = owner ? owner.querySelectorAll('input[type="submit"], button[type="submit"], button:not([type])') : [];
-                for (var i = 0; i < buttons.length; i++) buttons[i].disabled = true;
-            }, 1);
         }
     });
 

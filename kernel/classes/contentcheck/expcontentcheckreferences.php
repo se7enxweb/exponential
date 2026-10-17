@@ -40,7 +40,7 @@ class expContentCheckReferences
     const CACHE_FILE = 'contentcheck/references.php';
 
     /** The format of the index; an index of another format is built again */
-    const FORMAT = 2;
+    const FORMAT = 3;
 
     /** Settings and blocks whose names speak of content ids (INI files) */
     const INI_KEY_PATTERN = '/(node|location|object|root|parent|subtree|indexpage|defaultpage|startpage|toppage|container|folder|nexus|remote)/i';
@@ -72,7 +72,7 @@ class expContentCheckReferences
     {
         return array( 'format' => self::FORMAT, 'built' => 0, 'seconds' => 0.0,
                       'objects' => array(), 'nodes' => array(), 'remote' => array(), 'aliases' => array(),
-                      'queries' => array(), 'counts' => array() );
+                      'queries' => array(), 'counts' => array(), 'storage' => array() );
     }
 
     // ------------------------------------------------------------------ the index and its cache
@@ -291,6 +291,8 @@ class expContentCheckReferences
         $names = array();
         foreach ( $this->files as $path => $entries )
         {
+            // every storage path named anywhere keeps that file from being an orphan (expContentCheckStorage)
+            $this->index['storage'][$path] = 1;
             $images[] = $path;
             $names[basename( $path )] = $entries[0];
         }

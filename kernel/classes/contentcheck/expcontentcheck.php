@@ -317,7 +317,8 @@ class expContentCheck
         $secret = self::secret();
         if ( $secret === '' )
             return '';
-        $user = eZUser::currentUser();
+        // with a test secret no user is looked up (the tests that need no database)
+        $user = self::$testSecret !== null ? null : eZUser::currentUser();
         $userID = $user instanceof eZUser ? (int)$user->attribute( 'contentobject_id' ) : 0;
         return hash_hmac( 'sha256', 'contentcheck|' . $userID . '|' . $purpose, $secret );
     }

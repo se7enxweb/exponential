@@ -56,10 +56,14 @@ class Trash extends \Exponential\Runnable\ModuleView
 
             case 'confirm':
             default:
+                // "Move all N results": the objects of the whole list (its filters), at most one batch; the plan says
+                // when there were more
+                if ( $decision['all_results'] )
+                    $decision['object_ids'] = self::allResults( $_POST, \expContentCheckTrash::batchLimit() + 1 );
                 $plan = \expContentCheckTrash::plan( $decision['object_ids'] );
                 return $this->page( 'design:contentcheck/confirm.tpl',
                                     array( 'plan' => $plan, 'node_id' => (int)$decision['node_id'],
-                                           'nothing_selected' => !$decision['object_ids'],
+                                           'nothing_selected' => !$decision['object_ids'], 'all_results' => $decision['all_results'],
                                            'confirm_token' => $plan['allowed'] ? \expContentCheck::confirmToken( $plan['fingerprint'] ) : '',
                                            'confirm_field' => \expContentCheck::CONFIRM_FIELD,
                                            'form_token' => \expContentCheck::formToken(),
@@ -78,7 +82,7 @@ class Trash extends \Exponential\Runnable\ModuleView
      */
     public static function decide( $method, array $post )
     {
-        $decision = array( 'step' => 'refused', 'reason' => '', 'object_ids' => array(),
+        $decision = array( 'step' => 'refused', 'reason' => '', 'object_ids' => array(), 'all_results' => false,
                            'node_id' => \expContentCheck::id( isset( $post['NodeID'] ) ? $post['NodeID'] : null, Unreferenced::rootNodeID() ) );
         if ( strtoupper( (string)$method ) !== 'POST' )
             return array_merge( $decision, array( 'reason' => 'method' ) );
@@ -90,7 +94,36 @@ class Trash extends \Exponential\Runnable\ModuleView
         $decision['object_ids'] = \expContentCheck::idList( isset( $post['ObjectIDList'] ) && is_array( $post['ObjectIDList'] ) ? $post['ObjectIDList'] : array(),
                                                            \expContentCheckTrash::batchLimit() + 1 );
         $decision['step'] = isset( $post['ConfirmButton'] ) && $decision['object_ids'] ? 'execute' : 'confirm';
+        // the whole list instead of the ticked rows: always the confirmation first
+        $decision['all_results'] = isset( $post['AllResultsButton'] ) && !isset( $post['ConfirmButton'] );
+        if ( $decision['all_results'] )
+            $decision['step'] = 'confirm';
         return $decision;
+    }
+
+    /**
+     * The objects of the whole list of unreferenced objects with the posted filters (NodeID, ClassID[], Containers)
+     * that the user may move to the trash, at most $max.
+     *
+     * @param array $post
+     * @param int $max
+     * @return int[]
+     */
+    public static function allResults( array $post, $max )
+    {
+        $input = array( 'NodeID' => isset( $post['NodeID'] ) ? $post['NodeID'] : null, 'Offset' => 0, 'Limit' => (int)$max );
+        if ( isset( $post['ClassID'] ) )
+            $input['ClassID'] = $post['ClassID'];
+        if ( !empty( $post['Containers'] ) )
+            $input['Containers'] = '1';
+        $result = \expContentCheckUnreferenced::fetch( \expContentCheckUnreferenced::parameters( $input, Unreferenced::rootNodeID() ) );
+        $ids = array();
+        foreach ( $result['error'] === '' ? $result['rows'] : array() as $row )
+        {
+            if ( !empty( $row['can_trash'] ) )
+                $ids[] = (int)$row['object_id'];
+        }
+        return $ids;
     }
 
     /**
