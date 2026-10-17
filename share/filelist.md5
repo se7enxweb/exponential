@@ -7768,6 +7768,7 @@ e957ce257ff45aa0025d9ba25e8e9a5c  tests/tests/kernel/classes/debugbar/expDebugBa
 71451cc17604fc01607da6319a403e84  tests/tests/kernel/classes/debugbar/expDebugBarPanelsTest.php
 3afd50615887db52cfda0599f741eed7  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
 d3f4c6a7061e2f6b8d54c27e22d3e5c7  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
+10e48903e98d34210b6fb4d6e2f2388a  tests/tests/kernel/classes/debugbar/expDebugBarSummaryPhpVersionTest.php
 d0f1077b7412d5471c3025b0e6e47260  tests/tests/kernel/classes/eZCollaborationItemTest.php
 c27a9015f7fbb87702e8932aa1238ea8  tests/tests/kernel/classes/eZContentCacheEventSendersTest.php
 94b71bed8f4c29466e8a95961fb599d4  tests/tests/kernel/classes/eZContentCacheManagerThresholdWarningTest.php
@@ -8629,7 +8630,7 @@ e6ad2c9ac436d848b4359433b0380402  tests/tests/lib/ezutils/eZURIFilterStringTest.
 40005d9e868e02bfbd2cae8d1e693583  tests/tests/lib/ezutils/eZURITransformURINullTest.php
 ffcf86e89c7ff74ede52e2ec04b52b1a  tests/tests/lib/ezutils/eZUtilsHelpersTest.php
 926cae6ab947a58b88b5cbc55a8e5902  tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php
-5a6a2e5b321e7ffd6129aec115d8cd0d  tests/tests/lib/ezutils/expDebugBarReportEngineTest.php
+def53b26e73c0558a811a95b59614ebc  tests/tests/lib/ezutils/expDebugBarReportEngineTest.php
 b99dee804176afb040d2d3199defbcf5  tests/tests/lib/ezutils/expDebugBarReportMessageTextTest.php
 d61d567806f489ef8da1039db441411f  tests/tests/lib/ezutils/expDebugBarReportPanelHeightTest.php
 104050181feaa35129f61c3900abd978  tests/tests/lib/ezutils/expDebugBarReportRuntimeChipsTest.php
