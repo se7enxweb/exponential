@@ -116,8 +116,18 @@ class View extends \Exponential\Runnable\ModuleView
             }
 
             // A refusal is not a fault; ezpFormTokenRefusal::log() has written its one line
+            // The line names the error and its HTTP status, so a request for a page that does not exist (404) can be
+            // told from a fault. An anonymous visitor asked to log in (401) and a moved page (301) are the designed
+            // answers to a request, not faults: they are notices.
             if ( !$isFormTokenRefusal )
-                \eZDebug::writeError( "Error ocurred using URI: " . $_SERVER['REQUEST_URI'] , "error/view.php" );
+            {
+                $errorLine = "Error ocurred using URI: " . $_SERVER['REQUEST_URI'] . " ($errorType error $errorNumber"
+                           . ( $httpErrorCode !== null ? ", HTTP $httpErrorCode" : '' ) . ')';
+                if ( $httpErrorCode == 401 || $httpErrorCode == 301 )
+                    \eZDebug::writeNotice( $errorLine, "error/view.php" );
+                else
+                    \eZDebug::writeError( $errorLine, "error/view.php" );
+            }
 
             if ( $errorHandlerType == 'redirect' )
             {

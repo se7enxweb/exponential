@@ -711,7 +711,7 @@ class eZContentClassPackageHandler extends eZPackageHandler
         $dom->appendChild( $classNode );
 
         $serializedNameListNode = $dom->createElement( 'serialized-name-list' );
-        $serializedNameListNode->appendChild( $dom->createTextNode( $class->attribute( 'serialized_name_list' ) ) );
+        $serializedNameListNode->appendChild( $dom->createTextNode( (string)$class->attribute( 'serialized_name_list' ) ) );
         $classNode->appendChild( $serializedNameListNode );
 
         $identifierNode = $dom->createElement( 'identifier' );
@@ -719,19 +719,19 @@ class eZContentClassPackageHandler extends eZPackageHandler
         $classNode->appendChild( $identifierNode );
 
         $serializedDescriptionListNode = $dom->createElement( 'serialized-description-list' );
-        $serializedDescriptionListNode->appendChild( $dom->createTextNode( $class->attribute( 'serialized_description_list' ) ) );
+        $serializedDescriptionListNode->appendChild( $dom->createTextNode( (string)$class->attribute( 'serialized_description_list' ) ) );
         $classNode->appendChild( $serializedDescriptionListNode );
 
         $remoteIDNode = $dom->createElement( 'remote-id' );
-        $remoteIDNode->appendChild( $dom->createTextNode( $class->attribute( 'remote_id' ) ) );
+        $remoteIDNode->appendChild( $dom->createTextNode( (string)$class->attribute( 'remote_id' ) ) );
         $classNode->appendChild( $remoteIDNode );
 
         $objectNamePatternNode = $dom->createElement( 'object-name-pattern' );
-        $objectNamePatternNode->appendChild( $dom->createTextNode( $class->attribute( 'contentobject_name' ) ) );
+        $objectNamePatternNode->appendChild( $dom->createTextNode( (string)$class->attribute( 'contentobject_name' ) ) );
         $classNode->appendChild( $objectNamePatternNode );
 
         $urlAliasPatternNode = $dom->createElement( 'url-alias-pattern' );
-        $urlAliasPatternNode->appendChild( $dom->createTextNode( $class->attribute( 'url_alias_name' ) ) );
+        $urlAliasPatternNode->appendChild( $dom->createTextNode( (string)$class->attribute( 'url_alias_name' ) ) );
         $classNode->appendChild( $urlAliasPatternNode );
 
         $isContainer = $class->attribute( 'is_container' ) ? 'true' : 'false';
@@ -838,7 +838,7 @@ class eZContentClassPackageHandler extends eZPackageHandler
             $attributeRemoteNode->appendChild( $attributeIDNode );
 
             $attributeSerializedNameListNode = $dom->createElement( 'serialized-name-list' );
-            $attributeSerializedNameListNode->appendChild( $dom->createTextNode( $attribute->attribute( 'serialized_name_list' ) ) );
+            $attributeSerializedNameListNode->appendChild( $dom->createTextNode( (string)$attribute->attribute( 'serialized_name_list' ) ) );
             $attributeNode->appendChild( $attributeSerializedNameListNode );
 
             $attributeIdentifierNode = $dom->createElement( 'identifier' );
@@ -846,15 +846,15 @@ class eZContentClassPackageHandler extends eZPackageHandler
             $attributeNode->appendChild( $attributeIdentifierNode );
 
             $attributeSerializedDescriptionListNode = $dom->createElement( 'serialized-description-list' );
-            $attributeSerializedDescriptionListNode->appendChild( $dom->createTextNode( $attribute->attribute( 'serialized_description_list' ) ) );
+            $attributeSerializedDescriptionListNode->appendChild( $dom->createTextNode( (string)$attribute->attribute( 'serialized_description_list' ) ) );
             $attributeNode->appendChild( $attributeSerializedDescriptionListNode );
 
             $attributeCategoryNode = $dom->createElement( 'category' );
-            $attributeCategoryNode->appendChild( $dom->createTextNode( $attribute->attribute( 'category' ) ) );
+            $attributeCategoryNode->appendChild( $dom->createTextNode( (string)$attribute->attribute( 'category' ) ) );
             $attributeNode->appendChild( $attributeCategoryNode );
 
             $attributeSerializedDataTextNode = $dom->createElement( 'serialized-data-text' );
-            $attributeSerializedDataTextNode->appendChild( $dom->createTextNode( $attribute->attribute( 'serialized_data_text' ) ) );
+            $attributeSerializedDataTextNode->appendChild( $dom->createTextNode( (string)$attribute->attribute( 'serialized_data_text' ) ) );
             $attributeNode->appendChild( $attributeSerializedDataTextNode );
 
             $attributePlacementNode = $dom->createElement( 'placement' );

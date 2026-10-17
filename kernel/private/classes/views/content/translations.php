@@ -60,11 +60,11 @@ class Translations extends \Exponential\Runnable\ModuleView
 
         if ( $Module->isCurrentAction( 'StoreNew' ) /* || $http->hasPostVariable( 'StoreButton' ) */ )
         {
-            $localeID = $Module->actionParameter( 'LocaleID' );
+            $localeID = $Module->hasActionParameter( 'LocaleID' ) ? $Module->actionParameter( 'LocaleID' ) : '';
             $translationName = '';
             $translationLocale = '';
-            $customName = (string) $Module->actionParameter( 'TranslationName' );
-            $customLocale = (string) $Module->actionParameter( 'TranslationLocale' );
+            $customName = $Module->hasActionParameter( 'TranslationName' ) ? (string) $Module->actionParameter( 'TranslationName' ) : '';
+            $customLocale = $Module->hasActionParameter( 'TranslationLocale' ) ? (string) $Module->actionParameter( 'TranslationLocale' ) : '';
             \eZDebug::writeDebug( $localeID, 'localeID' );
             if ( $localeID != '' and
                  $localeID != -1 )

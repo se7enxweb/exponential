@@ -847,7 +847,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
 
                 $availableViewsInModule = $this->module->attribute( 'views' );
                 if (
-                    !isset( $availableViewsInModule[$functionName] )
+                    !isset( $availableViewsInModule[(string)$functionName] )
                     && !$objectHasMovedError
                     && !isset( $this->module->Module['function']['script'] )
                 )
@@ -870,7 +870,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                     else
                     {
                         $policyCheckViewMap = $this->getPolicyCheckViewMap( $this->siteBasics['policy-check-omit-list'] );
-                        if ( isset( $policyCheckViewMap[$moduleName][$functionName] ) )
+                        if ( isset( $policyCheckViewMap[$moduleName][(string)$functionName] ) )
                             $omitPolicyCheck = true;
                     }
                 }
@@ -955,9 +955,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                     }
                     else if ( !$moduleAccessAllowed )
                     {
-                        if ( isset( $availableViewsInModule[$functionName][ 'default_navigation_part' ] ) )
+                        if ( isset( $availableViewsInModule[(string)$functionName][ 'default_navigation_part' ] ) )
                         {
-                            $defaultNavigationPart = $availableViewsInModule[$functionName][ 'default_navigation_part' ];
+                            $defaultNavigationPart = $availableViewsInModule[(string)$functionName][ 'default_navigation_part' ];
                         }
 
                         // The view refused is the one requested (the view does not run): what the audit's
