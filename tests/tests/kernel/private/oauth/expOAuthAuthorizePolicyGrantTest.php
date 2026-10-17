@@ -103,6 +103,16 @@ class expOAuthAuthorizePolicyGrantTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 'skip', $entry['action'], $entry['name'] );
     }
 
+    public function testOnlyAnonymous()
+    {
+        $this->assertTrue( expOAuthAuthorizePolicyGrant::onlyAnonymous( array( 10 ), array( 10, 42 ) ) );
+        $this->assertTrue( expOAuthAuthorizePolicyGrant::onlyAnonymous( array( 42 ), array( 10, 42 ) ) );
+        $this->assertTrue( expOAuthAuthorizePolicyGrant::onlyAnonymous( array( '10', 42 ), array( '10', '42' ) ) );
+        // also assigned to members, or not assigned at all
+        $this->assertFalse( expOAuthAuthorizePolicyGrant::onlyAnonymous( array( 42, 12 ), array( 10, 42 ) ) );
+        $this->assertFalse( expOAuthAuthorizePolicyGrant::onlyAnonymous( array(), array( 10, 42 ) ) );
+    }
+
     public function testLoginSiteAccesses()
     {
         $this->assertFalse( expOAuthAuthorizePolicyGrant::loginSiteAccesses( array() ) );

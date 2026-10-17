@@ -16,7 +16,8 @@
  * policies limited by SiteAccess give one oauth/authorize limited to all of their siteaccesses together.
  *
  * Roles that already have oauth/authorize (or oauth/*, or * / *) are left alone, so the script can run again.
- * Roles assigned only to the anonymous user are skipped: an anonymous user can never authorize a client.
+ * Roles assigned only to the anonymous user (or its own group) are skipped: an anonymous user can never authorize a
+ * client.
  * With a list of roles (--role), only those roles are considered; a listed role without user/login gets an
  * unlimited oauth/authorize, and a listed role assigned only to the anonymous user is granted too (it was asked for).
  *
@@ -28,10 +29,11 @@ class expOAuthAuthorizePolicyGrant
      * The role as plain data for plan().
      *
      * @param eZRole $role
-     * @param int $anonymousUserId site.ini [UserSettings] AnonymousUserID
+     * @param int|int[] $anonymousIds the anonymous user's object ID (site.ini [UserSettings] AnonymousUserID) and the
+     *                                groups it is placed in directly (anonymousObjectIds())
      * @return array id, name, anonymous_only, policies (each module, function, limitations: identifier => values)
      */
-    public static function roleData( $role, $anonymousUserId )
+    public static function roleData( $role, $anonymousIds )
     {
         $policies = array();
         foreach ( $role->policyList() as $policy )
@@ -56,8 +58,49 @@ class expOAuthAuthorizePolicyGrant
 
         return array( 'id' => (int)$role->attribute( 'id' ),
                       'name' => (string)$role->attribute( 'name' ),
-                      'anonymous_only' => $assigned === array( (int)$anonymousUserId ),
+                      'anonymous_only' => self::onlyAnonymous( $assigned, (array)$anonymousIds ),
                       'policies' => $policies );
+    }
+
+    /**
+     * @param int[] $assigned the object IDs a role is assigned to
+     * @param int[] $anonymousIds
+     * @return bool whether the role is assigned, and only to the anonymous user or its own group
+     */
+    public static function onlyAnonymous( array $assigned, array $anonymousIds )
+    {
+        $anonymousIds = array_map( 'intval', $anonymousIds );
+        if ( !$assigned )
+            return false;
+        foreach ( $assigned as $id )
+        {
+            if ( !in_array( (int)$id, $anonymousIds, true ) )
+                return false;
+        }
+        return true;
+    }
+
+    /**
+     * The anonymous user's object ID and the object IDs of the groups it is placed in directly (the "Anonymous
+     * Users" group; not the groups above it, whose roles reach every user).
+     *
+     * @param int $anonymousUserId
+     * @return int[]
+     */
+    public static function anonymousObjectIds( $anonymousUserId )
+    {
+        $ids = array( (int)$anonymousUserId );
+        $object = eZContentObject::fetch( (int)$anonymousUserId );
+        if ( $object instanceof eZContentObject )
+        {
+            foreach ( $object->assignedNodes() as $node )
+            {
+                $parent = $node->fetchParent();
+                if ( $parent instanceof eZContentObjectTreeNode )
+                    $ids[] = (int)$parent->attribute( 'contentobject_id' );
+            }
+        }
+        return array_values( array_unique( $ids ) );
     }
 
     /**

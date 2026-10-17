@@ -40,14 +40,14 @@ class Addoauthauthorizepolicy extends \Exponential\Runnable\Command
 
         $dryRun = (bool)$options['dry-run'];
         $onlyRoles = $options['role'] ? (array)$options['role'] : array();
-        $anonymousUserId = (int)\eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' );
+        $anonymousIds = \expOAuthAuthorizePolicyGrant::anonymousObjectIds( (int)\eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' ) );
 
         $roles = array();
         $roleData = array();
         foreach ( \eZRole::fetchList() as $role )
         {
             $roles[(int)$role->attribute( 'id' )] = $role;
-            $roleData[] = \expOAuthAuthorizePolicyGrant::roleData( $role, $anonymousUserId );
+            $roleData[] = \expOAuthAuthorizePolicyGrant::roleData( $role, $anonymousIds );
         }
 
         $plan = \expOAuthAuthorizePolicyGrant::plan( $roleData, $onlyRoles );

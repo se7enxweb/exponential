@@ -46,7 +46,10 @@ php bin/php/addoauthauthorizepolicy.php --role=Editor --role=12 --dry-run   # on
   `user/login` gives an unlimited policy, `user/login` limited to some siteaccesses gives `oauth/authorize` limited to
   those siteaccesses.
 - Roles that grant it already (`oauth/authorize`, `oauth/*`, every module) are skipped, so the script can run again.
-- A role assigned only to the anonymous user is skipped: an anonymous user can never authorize a client.
+- A role assigned only to the anonymous user, or to its own group (Anonymous Users), is skipped: an anonymous user
+  can never authorize a client. A role also assigned to other users or groups is granted: on sites built from the
+  standard packages the Anonymous role is assigned to Members and Partners too and gives them `user/login`, so it
+  gets the policy (harmless for the anonymous user, who must sign in before authorizing).
 - With `--role` (an ID or a name, repeatable) only the roles named are considered; a named role without `user/login`
   gets an unlimited policy.
 - The role cache is cleared after a grant.
