@@ -14,8 +14,11 @@
  * Two lines of defence, both only in a web request (command line scripts and the deployment keep writing):
  * - the views in LOCKED_VIEWS answer like a module switched off in [SiteAccessRules] (eZModule::accessAllowed()),
  *   so the menus, the dashboard and the tabs hide them through expViewAccess as well;
- * - eZINI::save() refuses to write, which also stops writers the list does not know (extension modules,
- *   ezjscore calls, views added later).
+ * - eZINI::save() and expIniEditor::save() refuse to write, which also stops writers the list does not know
+ *   (extension modules, ezjscore calls, the debug bar, the audit and mail settings pages, views added later).
+ *
+ * A web request is any SAPI but cli/phpdbg, and a CLI process that serves the web (Velocity, see
+ * isWebServerInCli()).
  *
  * Read-only views (settings/view, template and package lists, cache, system info) stay open.
  */
@@ -100,14 +103,37 @@ class expManagedConfiguration
     /**
      * @param eZINI|null $ini site.ini of the current siteaccess when null
      * @param string|null $sapi PHP_SAPI (or self::$sapi) when null; a parameter for the tests
-     * @return bool whether eZINI::save() has to refuse: switch enabled and not on the command line
+     * @param array|null $server $_SERVER when null; a parameter for the tests
+     * @return bool whether eZINI::save() and expIniEditor::save() have to refuse: switch enabled and not a
+     *              command line script
      */
-    public static function refusesWrite( $ini = null, $sapi = null )
+    public static function refusesWrite( $ini = null, $sapi = null, $server = null )
     {
         if ( $sapi === null )
             $sapi = self::$sapi !== null ? self::$sapi : PHP_SAPI;
-        if ( $sapi === 'cli' || $sapi === 'phpdbg' )
+        if ( ( $sapi === 'cli' || $sapi === 'phpdbg' ) && !self::isWebServerInCli( $server ) )
             return false;
         return self::isEnabled( $ini );
+    }
+
+    /**
+     * Whether a process in the CLI SAPI is answering a web request: Velocity's workers are CLI processes,
+     * and a request method with a Host header is what a web request has and a shell script does not
+     * (the same test as eZExecution::isWebRequest()).
+     *
+     * @param array|null $server $_SERVER when null
+     * @return bool
+     */
+    public static function isWebServerInCli( $server = null )
+    {
+        if ( $server === null )
+        {
+            if ( defined( 'QBIX_SERVER_VERSION' ) )
+                return true;
+            $server = isset( $_SERVER ) && is_array( $_SERVER ) ? $_SERVER : array();
+        }
+        if ( isset( $server['QBIX_WORKER'] ) || isset( $server['VELOCITY'] ) )
+            return true;
+        return !empty( $server['REQUEST_METHOD'] ) && !empty( $server['HTTP_HOST'] );
     }
 }

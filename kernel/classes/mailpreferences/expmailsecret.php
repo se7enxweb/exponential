@@ -202,7 +202,7 @@ class expMailSecret
                 $scope = new expIniScope( 'mailpreferences-secret', expIniScope::KIND_GLOBAL, basename( $dir ), $root, 'Mail preference secret' );
                 $editor = new expIniEditor( $scope, 'mailpreferences.ini' );
                 $editor->set( self::BLOCK, self::VARIABLE, $value );
-                $editor->save( array( 'backup' => false ) );
+                $editor->save( array( 'backup' => false, 'generatedSecret' => true ) );
                 if ( !$existed )
                     self::own( $file );
                 return true;

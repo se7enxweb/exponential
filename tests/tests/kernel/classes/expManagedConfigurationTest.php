@@ -11,6 +11,8 @@
  *  MC-05 - eZINI::save() refuses in a web request before anything is written; the command line still writes
  *  MC-06 - settings/site.ini ships the switch disabled
  *  MC-07 - The module name is matched without case (/Settings/edit on a case-insensitive filesystem)
+ *  MC-08 - A CLI process that serves the web (Velocity, a request method with a Host header) counts as a web request
+ *  MC-09 - expIniEditor::save() refuses in a web request with the switch; generated key material is still written
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -185,5 +187,60 @@ class expManagedConfigurationTest extends PHPUnit\Framework\TestCase
         $source = file_get_contents( self::root() . '/settings/site.ini' );
         $this->assertMatchesRegularExpression( '/^\[ConfigurationSettings\]\n(?:(?!\[)[^\n]*\n)*?ManagedByDeployment=disabled$/m',
             $source, 'settings/site.ini sets [ConfigurationSettings] ManagedByDeployment=disabled' );
+    }
+
+    public function testCliProcessServingTheWebCountsAsAWebRequest()
+    {
+        $web = array( 'REQUEST_METHOD' => 'POST', 'HTTP_HOST' => 'example.org' );
+        $this->assertTrue( expManagedConfiguration::isWebServerInCli( $web ) );
+        $this->assertTrue( expManagedConfiguration::isWebServerInCli( array( 'QBIX_WORKER' => '1' ) ) );
+        $this->assertFalse( expManagedConfiguration::isWebServerInCli( array() ), 'a shell script' );
+        $this->assertFalse( expManagedConfiguration::isWebServerInCli( array( 'REQUEST_METHOD' => 'GET' ) ), 'no Host header' );
+
+        $this->setSwitch( 'enabled' );
+        $this->assertTrue( expManagedConfiguration::refusesWrite( null, 'cli', $web ), 'Velocity worker' );
+        $this->assertTrue( expManagedConfiguration::refusesWrite( null, 'cli-server', array() ), 'PHP built-in server' );
+        $this->assertFalse( expManagedConfiguration::refusesWrite( null, 'cli', array() ), 'shell script' );
+        $this->setSwitch( 'disabled' );
+        $this->assertFalse( expManagedConfiguration::refusesWrite( null, 'cli', $web ) );
+    }
+
+    public function testIniEditorSaveRefusesInAWebRequestWithTheSwitch()
+    {
+        $editorSave = function ( array $options )
+        {
+            return function ( $dir ) use ( $options )
+            {
+                $scope = new expIniScope( 'mc-probe', expIniScope::KIND_GLOBAL, basename( $dir ), dirname( $dir ) . '/', 'Probe' );
+                $editor = new expIniEditor( $scope, 'probe.ini' );
+                $editor->set( 'ProbeSettings', 'Value', 'x' );
+                try
+                {
+                    $editor->save( $options + array( 'backup' => false ) );
+                    return true;
+                }
+                catch ( expIniException $e )
+                {
+                    return $e->getMessage();
+                }
+            };
+        };
+
+        $this->setSwitch( 'enabled' );
+        list( $result, $files ) = $this->saveAs( 'fpm-fcgi', $editorSave( array() ) );
+        $this->assertIsString( $result, 'refused in a web request' );
+        $this->assertStringContainsString( 'ManagedByDeployment', $result );
+        $this->assertSame( array(), $files, 'nothing written' );
+
+        list( $result, $files ) = $this->saveAs( 'fpm-fcgi', $editorSave( array( 'generatedSecret' => true ) ) );
+        $this->assertTrue( $result, 'generated key material is runtime state and still written' );
+        $this->assertSame( array( 'probe.ini.append.php' ), $files );
+
+        list( $result, $files ) = $this->saveAs( 'cli', $editorSave( array() ) );
+        $this->assertTrue( $result, 'the command line still writes' );
+
+        $this->setSwitch( 'disabled' );
+        list( $result, $files ) = $this->saveAs( 'fpm-fcgi', $editorSave( array() ) );
+        $this->assertTrue( $result, 'a web request writes without the switch' );
     }
 }
