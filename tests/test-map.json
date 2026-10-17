@@ -1333,6 +1333,12 @@
     ],
     "kernel/private/classes/views/setup/templateoperator.php": [
       "tests/tests/design/AdminSetupWizardTemplatesTest.php"
+    ],
+    "kernel/common/ezwordtoimageoperator.php": [
+      "tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php"
+    ],
+    "settings/icon.ini": [
+      "tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php"
     ]
   },
   "generated": {
