@@ -340,6 +340,30 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "\nreturn array(\n      '{$p}Keep' => 'classes/keep.php',\n    );\n", end( $messages ) );
     }
 
+    public function testVersionedAutoloadFileIsWrittenAs0644()
+    {
+        $p = $this->name;
+        $this->file( 'classes/keep.php', "<?php\nclass {$p}Keep {}\n" );
+        $out = "$this->dir/out";
+        $file = "$out/{$this->name}_autoload.php";
+        mkdir( $out, 0755, true );
+        file_put_contents( $file, '<?php return array();' );
+        chmod( $file, 0777 );
+        $generator = $this->generator( array( 'writeFiles' => true, 'outputDir' => $out ) );
+        $generator->buildAutoloadArrays();
+        clearstatcache();
+        $this->assertSame( sprintf( '%o', eZFile::fileMode( 0644 ) ), sprintf( '%o', fileperms( $file ) & 0777 ) );
+    }
+
+    public function testEntriesAreInByteOrderOfTheClassNames()
+    {
+        $p = $this->name;
+        $this->file( 'classes/b.php', "<?php\nclass {$p}Explovestack {}\nclass {$p}Exploremipsumfill {}\nclass {$p}explain {}\nclass {$p}Ex10 {}\nclass {$p}Ex9 {}\n" );
+        list( , $entries ) = $this->generated();
+        $this->assertSame( array( "{$p}Ex10", "{$p}Ex9", "{$p}Exploremipsumfill", "{$p}Explovestack", "{$p}explain" ),
+                           array_keys( $entries ) );
+    }
+
     public function testOutputDirThatIsAFileIsRefused()
     {
         $p = $this->name;
