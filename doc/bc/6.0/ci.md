@@ -141,3 +141,6 @@ The failed jobs were about evenly split between dependency installs (PHPUnit, Da
 the sniff tests) and real test failures. The tests that failed most were the translation quality, packer, admin
 content security policy and admin tab order tests. Six runs passed on a rerun. Compare later reports with these
 figures.
+
+A pull request whose branch leaves `share/filelist.md5` stale gets a warning from the Quality check, not a
+failure; the person merging it refreshes the manifest on `main`.
