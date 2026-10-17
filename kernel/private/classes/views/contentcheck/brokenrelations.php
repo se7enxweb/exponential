@@ -5,7 +5,7 @@
  * to deleted, trashed, hidden or unpublished content, page by page. Read only. Needs the policy
  * contentcheck/brokenrelations; answers on administration siteaccesses only. With the target "Missing files"
  * (Kind[]=missing_file) it also lists the content whose files are missing from the storage and the images with
- * missing or stale aliases (expContentCheckFiles, doc "Missing files"), paged on their own (FileAfter).
+ * missing or stale aliases (expContentCheckFiles, doc "Missing files"), paged on their own ((file_offset) in the address).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -48,7 +48,7 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         {
             $choice = $http->hasGetVariable( $group . 'Choice' ) ? $http->getVariable( $group . 'Choice' ) : '';
             if ( $choice === 'all' )
-                $input[$group] = $all;
+                $input[$group] = $group === 'Kind' && class_exists( 'expContentCheckFiles' ) ? array_merge( $all, array( \expContentCheckFiles::TARGET ) ) : $all;
             else if ( $choice === 'none' )
             {
                 unset( $input[$group] );
@@ -73,7 +73,7 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         $missingFiles = array( 'enabled' => false, 'only' => false, 'storage_dir' => method_exists( 'expContentCheckFiles', 'section' ) ? \eZSys::storageDirectory() : '' );
         if ( $files['enabled'] )
         {
-            $missingFiles = \expContentCheckFiles::section( $_GET, (int)$params['node_id'], $limit ) + $files;
+            $missingFiles = \expContentCheckFiles::section( $_GET, (int)$params['node_id'], $limit, \expAdminPagination::offset( $Params, 'file_offset' ) ) + $files;
             $filterSuffix = \expContentCheckFiles::querySuffix( $filterSuffix, $params['kinds'], $missingFiles['params'] );
         }
 

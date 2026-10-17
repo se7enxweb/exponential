@@ -64086,6 +64086,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Registration link refused</source>
         <translation>Registration link refused</translation>
     </message>
+    <message>
+        <source>Image aliases regenerate</source>
+        <translation>Image aliases regenerate</translation>
+    </message>
+    <message>
+        <source>Missing file restore</source>
+        <translation>Missing file restore</translation>
+    </message>
+    <message>
+        <source>Missing file replace</source>
+        <translation>Missing file replace</translation>
+    </message>
+    <message>
+        <source>Missing file reference remove</source>
+        <translation>Missing file reference remove</translation>
+    </message>
+    <message>
+        <source>Missing file review mark</source>
+        <translation>Missing file review mark</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard</name>
@@ -68272,6 +68292,114 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>It could not be done. The debug output says why.</source>
         <translation>It could not be done. The debug output says why.</translation>
+    </message>
+    <message>
+        <source>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</source>
+        <translation>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</translation>
+    </message>
+    <message>
+        <source>Tick at least one problem and one version.</source>
+        <translation>Tick at least one problem and one version.</translation>
+    </message>
+    <message>
+        <source>Preview for all %count results</source>
+        <translation>Preview for all %count results</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases</source>
+        <translation>Regenerate the aliases</translation>
+    </message>
+    <message>
+        <source>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</source>
+        <translation>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</translation>
+    </message>
+    <message>
+        <source>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</source>
+        <translation>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</translation>
+    </message>
+    <message>
+        <source>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</source>
+        <translation>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</translation>
+    </message>
+    <message>
+        <source>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</source>
+        <translation>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</translation>
+    </message>
+    <message>
+        <source>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</source>
+        <translation>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</translation>
+    </message>
+    <message>
+        <source>Resolve missing files</source>
+        <translation>Resolve missing files</translation>
+    </message>
+    <message>
+        <source>No row was ticked or no action chosen. Tick the rows first.</source>
+        <translation>No row was ticked or no action chosen. Tick the rows first.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows are taken; do the others afterwards.</source>
+        <translation>Only the first %count rows are taken; do the others afterwards.</translation>
+    </message>
+    <message>
+        <source>%count field versions, done %batch at a time.</source>
+        <translation>%count field versions, done %batch at a time.</translation>
+    </message>
+    <message>
+        <source>None of the chosen rows can be resolved this way.</source>
+        <translation>None of the chosen rows can be resolved this way.</translation>
+    </message>
+    <message>
+        <source>Field %id</source>
+        <translation>Field %id</translation>
+    </message>
+    <message>
+        <source>Copied from version %version</source>
+        <translation>Copied from version %version</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>Aliases made again</source>
+        <translation>Aliases made again</translation>
+    </message>
+    <message>
+        <source>Reference removed</source>
+        <translation>Reference removed</translation>
+    </message>
+    <message>
+        <source>Not done</source>
+        <translation>Not done</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch by itself</source>
+        <translation>Go on with the next batch by itself</translation>
+    </message>
+    <message>
+        <source>Confirm for %count field versions</source>
+        <translation>Confirm for %count field versions</translation>
+    </message>
+    <message>
+        <source>%done of %total field versions done, %failed not done, %left to go.</source>
+        <translation>%done of %total field versions done, %failed not done, %left to go.</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch</source>
+        <translation>Go on with the next batch</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the missing files of the broken relations.</source>
+        <translation>This page only takes the form of the missing files of the broken relations.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and choose the rows once more.</source>
+        <translation>The form has expired. Open the list again and choose the rows once more.</translation>
+    </message>
+    <message>
+        <source>Resolve</source>
+        <translation>Resolve</translation>
     </message>
 </context>
 <context>

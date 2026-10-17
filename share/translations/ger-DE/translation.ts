@@ -64169,6 +64169,114 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>It could not be done. The debug output says why.</source>
         <translation>Es konnte nicht erledigt werden. Die Debug-Ausgabe nennt den Grund.</translation>
     </message>
+    <message>
+        <source>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</source>
+        <translation>Nur die ersten %count Objekte wurden geprüft. Wählen Sie einen kleineren Teilbaum, um den Rest zu sehen.</translation>
+    </message>
+    <message>
+        <source>Tick at least one problem and one version.</source>
+        <translation>Markieren Sie mindestens ein Problem und eine Version.</translation>
+    </message>
+    <message>
+        <source>Preview for all %count results</source>
+        <translation>Vorschau für alle %count Ergebnisse</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases</source>
+        <translation>Bildvarianten neu erstellen</translation>
+    </message>
+    <message>
+        <source>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</source>
+        <translation>Die Varianten jedes Bildes werden aus seinem Original neu erstellt, mit den jetzigen Einstellungen der image.ini. Das Original wird nicht geändert.</translation>
+    </message>
+    <message>
+        <source>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</source>
+        <translation>Die Datei einer anderen Version desselben Feldes, die sie noch hat, wird an den erwarteten Pfad kopiert. Nichts wird überschrieben; ein Bild erhält danach seine Varianten neu.</translation>
+    </message>
+    <message>
+        <source>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</source>
+        <translation>Wählen Sie für jede Feldversion eine Datei. Sie wird an den erwarteten Pfad gelegt und muss dieselbe Endung haben; ein Bild muss ein Bild sein. Nichts wird überschrieben.</translation>
+    </message>
+    <message>
+        <source>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</source>
+        <translation>Das Feld wird in dieser Version geleert: Es nennt die fehlende Datei nicht mehr. Keine Datei wird gelöscht. Ein Pflichtfeld muss beim nächsten Bearbeiten wieder gefüllt werden.</translation>
+    </message>
+    <message>
+        <source>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</source>
+        <translation>Jede Feldversion wird in der Liste zur Prüfung markiert, mit Ihrem Namen und der Zeit. Sonst ändert sich nichts.</translation>
+    </message>
+    <message>
+        <source>Resolve missing files</source>
+        <translation>Fehlende Dateien beheben</translation>
+    </message>
+    <message>
+        <source>No row was ticked or no action chosen. Tick the rows first.</source>
+        <translation>Keine Zeile markiert oder keine Aktion gewählt. Markieren Sie zuerst die Zeilen.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows are taken; do the others afterwards.</source>
+        <translation>Nur die ersten %count Zeilen werden übernommen; erledigen Sie die übrigen danach.</translation>
+    </message>
+    <message>
+        <source>%count field versions, done %batch at a time.</source>
+        <translation>%count Feldversionen, jeweils %batch auf einmal.</translation>
+    </message>
+    <message>
+        <source>None of the chosen rows can be resolved this way.</source>
+        <translation>Keine der gewählten Zeilen kann auf diese Weise behoben werden.</translation>
+    </message>
+    <message>
+        <source>Field %id</source>
+        <translation>Feld %id</translation>
+    </message>
+    <message>
+        <source>Copied from version %version</source>
+        <translation>Aus Version %version kopiert</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>Aliases made again</source>
+        <translation>Varianten neu erstellt</translation>
+    </message>
+    <message>
+        <source>Reference removed</source>
+        <translation>Verweis entfernt</translation>
+    </message>
+    <message>
+        <source>Not done</source>
+        <translation>Nicht erledigt</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch by itself</source>
+        <translation>Automatisch mit dem nächsten Stapel fortfahren</translation>
+    </message>
+    <message>
+        <source>Confirm for %count field versions</source>
+        <translation>Für %count Feldversionen bestätigen</translation>
+    </message>
+    <message>
+        <source>%done of %total field versions done, %failed not done, %left to go.</source>
+        <translation>%done von %total Feldversionen erledigt, %failed nicht erledigt, %left ausstehend.</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch</source>
+        <translation>Mit dem nächsten Stapel fortfahren</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the missing files of the broken relations.</source>
+        <translation>Diese Seite nimmt nur das Formular der fehlenden Dateien bei den ungültigen Relationen an.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and choose the rows once more.</source>
+        <translation>Das Formular ist abgelaufen. Öffnen Sie die Liste erneut und wählen Sie die Zeilen noch einmal.</translation>
+    </message>
+    <message>
+        <source>Resolve</source>
+        <translation>Beheben</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
@@ -72306,6 +72414,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Registration link refused</source>
         <translation>Registrierungslink abgewiesen</translation>
+    </message>
+    <message>
+        <source>Image aliases regenerate</source>
+        <translation>Bildvarianten neu erstellt</translation>
+    </message>
+    <message>
+        <source>Missing file restore</source>
+        <translation>Fehlende Datei wiederhergestellt</translation>
+    </message>
+    <message>
+        <source>Missing file replace</source>
+        <translation>Fehlende Datei ersetzt</translation>
+    </message>
+    <message>
+        <source>Missing file reference remove</source>
+        <translation>Verweis auf fehlende Datei entfernt</translation>
+    </message>
+    <message>
+        <source>Missing file review mark</source>
+        <translation>Fehlende Datei zur Prüfung markiert</translation>
     </message>
 </context>
 <context>

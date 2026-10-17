@@ -19,7 +19,7 @@ backups or clean up disks, and for anyone who sees broken images on the site.
 - Each row names the object (with its node), the field, the version, the **expected path**, the time the version
   was last changed and the problem: **File missing**, **Alias missing**, **Alias out of date** or **Alias never made**.
 - The same list on the command line: `./console exp:content-check --missing-files --node=<node id>`.
-- Nothing is changed by the check itself.
+- Nothing is changed by the check itself; the resolutions (section 6) always show a preview first.
 
 ## 1. Open the check
 
@@ -55,9 +55,11 @@ so they are not listed separately.
 
 ## 3. Page through a large tree
 
-The objects are checked by object id, 200 at a time and at most 5000 for one page (`ChunkSize` and `ScanLimit` of
-`[MissingFileSettings]` in `contentcheck.ini`). **Next page of missing files** goes on after the last object
-checked; **Missing files from the start** begins again. The header says how many objects were checked.
+The list has a total and pages, like the other lists: "1 to 10 of 446" in its header, the page links below it, and
+**Per page** to choose 10, 25 or 50 rows. To count, every object below the start location is walked once (at most
+50,000, `ListLimit` of `[MissingFileSettings]` in `contentcheck.ini`); the findings are kept for a minute
+(`ListCacheTTL`), so the next pages come at once. Its pages are `(file_offset)` in the address, so they do not move
+the pages of the broken relations above it.
 
 ## 4. The same from a shell
 
@@ -91,3 +93,40 @@ Tables[mydatatype]=mytable
 
 Any other datatype adds a class implementing `expContentCheckFileHandler` (`files()`, `removeReference()`,
 `hasAliases()`) and names it in `Handlers[]`.
+
+## 6. Resolve what was found
+
+With the policy `contentcheck/fixfiles` (and `content/edit` on the object) every row has buttons, and the list has
+tick boxes and **With the ticked rows**. Whatever you choose, the next page is a **preview** that says, row by row,
+what will happen or why it cannot; nothing happens until you press **Confirm**.
+
+| You see | Do this | What happens |
+|---|---|---|
+| **Alias missing** or **Alias out of date** | **Regenerate** | the aliases are made again from the original with the settings of `image.ini` now |
+| **File missing**, and an older version still has a file | **Restore** | that version's file is copied to the expected path (the preview names the version and the file) |
+| **File missing**, and you have the file | **Re-upload** | choose the file on the preview; it must have the same extension, and an image must be an image |
+| **File missing**, and the file is gone for good | **Remove reference** | the field is emptied in that version; no file is deleted |
+| You are not sure | **Mark for review** | the row shows **Marked for review** until it is resolved |
+
+1. Tick the rows (or the box in the header for the whole page; **Select all on this page** without JavaScript).
+2. Choose the action under **With the ticked rows** and press **Preview**. With more pages, **Preview for all
+   results below this node** takes the rows of every page.
+3. Read the preview, and press **Confirm for N field versions**.
+4. Large selections run in batches of 10: the page shows the progress and goes on by itself; **Stop here** goes
+   back to the list.
+5. The list says how many rows were done and why any were not.
+
+Every row done is recorded in the audit (**Setup > Audit trail**, channel content): `content.file.alias.regenerate`,
+`content.file.restore`, `content.file.replace`, `content.file.reference.remove`, `content.file.review.mark`.
+
+From a shell, always with a dry run first:
+
+```bash
+./console exp:content-check --missing-files --node=2 --fix=regenerate --dry-run --allow-root-user
+./console exp:content-check --fix=restore --items=13905-2 --allow-root-user
+```
+
+```
+Fix restore: 1 field versions planned, 1 allowed, 1 done, 0 not done
+  13905-2      allowed    var/site/storage/original/text/a9d2344afd0d6ea0134cef55f8384827.txt  (from version 1: var/site/storage/original/text/aaa078c1d252cb083b3e94fde402d21d.txt)
+```

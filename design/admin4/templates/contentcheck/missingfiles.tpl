@@ -1,29 +1,34 @@
 {* The missing files section of contentcheck/brokenrelations (doc/features/6.0/content-checks.md, "Missing files"):
-   shown when the target "Missing files" is ticked.
+   shown when the target "Missing files" is ticked. The order of every result list of the checks: results header
+   (title, "X to Y of N", the selection count), table, bulk actions, pages.
 
-   Variables: files (from expContentCheckFiles::section(): result (node, rows, checked, last, done, error), params
-   (node_id, problems, versions, after, limit), can_fix, actions, max_items, form_token, token_field, feedback),
-   page_uri, filter_suffix (the page's query string, with the missing files asked for). The objects are walked by
-   id: "Next page of missing files" goes on after the last object checked (FileAfter). With contentcheck/fixfiles
-   the ticked rows (or one row's button) are posted to contentcheck/fixfiles, which shows what will happen and asks
-   for a confirmation first. The same file is in design/admin and design/admin4. *}
+   Variables: files (from expContentCheckFiles::section(): result (node, rows of the page, count, offset, checked,
+   incomplete, error), params (node_id, problems, versions), select_all, can_fix, actions, max_items, form_token,
+   token_field, feedback, storage_dir), page_uri, filter_suffix (the page's query string, with the missing files
+   asked for), limit, limit_choices, limit_preference. The pages are (file_offset) in the address, apart from the
+   relations' own. With contentcheck/fixfiles the ticked rows (or one row's button) are posted to
+   contentcheck/fixfiles, which shows what will happen and asks for a confirmation first. The same file is in
+   design/admin and design/admin4. *}
 {def $cc_action_names = hash( 'regenerate', 'Regenerate the aliases from the original'|i18n( 'kernel/contentcheck' ),
                               'restore', 'Restore from another version'|i18n( 'kernel/contentcheck' ),
                               'replace', 'Re-upload or replace the file'|i18n( 'kernel/contentcheck' ),
                               'remove', 'Remove the dead reference'|i18n( 'kernel/contentcheck' ),
                               'review', 'Mark for review'|i18n( 'kernel/contentcheck' ) )
      $cc_rows = $files.result.rows
+     $cc_count = $files.result.count
+     $cc_offset = $files.result.offset
      $cc_selectable = false()
-     $cc_separator = cond( $filter_suffix|eq( '?' ), '', '&' )}
-{if $files.can_fix}{foreach $cc_rows as $cc_row}{if $cc_row.can_fix}{set $cc_selectable = true()}{/if}{/foreach}{/if}
+     $cc_tickable = 0
+     $cc_page_url = concat( $page_uri, '/(file_offset)/', $cc_offset, $filter_suffix )}
+{if $files.can_fix}{foreach $cc_rows as $cc_row}{if $cc_row.can_fix}{set $cc_selectable = true()}{set $cc_tickable = $cc_tickable|inc}{/if}{/foreach}{/if}
 
 <section class="a4-section" aria-labelledby="cc-files-title">
-<div class="a4-section-head">
-    <h2 class="a4-h2" id="cc-files-title">{'Missing files in %dir'|i18n( 'kernel/contentcheck',, hash( '%dir', $files.storage_dir ) )|wash}</h2>
-    <span class="a4-meta">{if $files.params.after|gt( 0 )}{'%count objects checked after object %after.'|i18n( 'kernel/contentcheck',, hash( '%count', $files.result.checked, '%after', $files.params.after ) )}{else}{'%count objects checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $files.result.checked ) )}{/if}</span>
-</div>
+{include uri='design:contentcheck/results_head.tpl' title='Missing files in %dir'|i18n( 'kernel/contentcheck',, hash( '%dir', $files.storage_dir ) ) title_id='cc-files-title' offset=$cc_offset limit=$limit count=$cc_count count_text='%count objects checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $files.result.checked ) )}
 <p class="a4-meta">{'Images, files and media whose file is not in the storage, in the published version and in drafts, and images whose aliases are missing or were made with other settings.'|i18n( 'kernel/contentcheck' )}</p>
 
+{if $files.result.incomplete}
+<div class="a4-notice is-warn" role="status">{'Only the first %count objects were checked. Choose a smaller subtree to see the rest.'|i18n( 'kernel/contentcheck',, hash( '%count', $files.result.checked ) )}</div>
+{/if}
 {if $files.feedback}
     {if eq( $files.feedback.reason, 'changed' )}
 <div class="a4-notice is-warn" role="alert">{'Nothing was changed: the files or your access changed after the confirmation. Choose the rows again.'|i18n( 'kernel/contentcheck' )}</div>
@@ -47,14 +52,15 @@
 <input type="hidden" name="NodeID" value="{$files.params.node_id}" />
 {/if}
 
+
 {if $cc_rows|count|eq( 0 )}
-<p class="a4-empty">{if $files.result.done}{'No missing file and no alias problem found.'|i18n( 'kernel/contentcheck' )}{else}{'Nothing found among these objects. Go on with the next page.'|i18n( 'kernel/contentcheck' )}{/if}</p>
+<p class="a4-empty">{if is_set( $files.result.nothing_chosen )}{'Tick at least one problem and one version.'|i18n( 'kernel/contentcheck' )}{else}{'No missing file and no alias problem found.'|i18n( 'kernel/contentcheck' )}{/if}</p>
 {else}
 <div class="a4-table-wrap">
-<table class="a4-table">
+<table class="a4-table"{if $cc_selectable} data-a4-select="1"{/if}>
 <thead>
 <tr>
-    {if $cc_selectable}<th scope="col" class="tight"><span class="a4-sr-only">{'Select'|i18n( 'kernel/contentcheck' )}</span></th>{/if}
+    {if $cc_selectable}<th scope="col" class="tight">{include uri='design:contentcheck/select_all.tpl' select_all=$files.select_all}</th>{/if}
     <th scope="col">{'Object'|i18n( 'kernel/contentcheck' )}</th>
     <th scope="col">{'Field'|i18n( 'kernel/contentcheck' )}</th>
     <th scope="col">{'Version'|i18n( 'kernel/contentcheck' )}</th>
@@ -66,38 +72,24 @@
 </thead>
 <tbody>
 {foreach $cc_rows as $cc_row}
-{include uri='design:contentcheck/file_row.tpl' row=$cc_row selectable=$cc_selectable can_fix=$files.can_fix}
+{include uri='design:contentcheck/file_row.tpl' row=$cc_row selectable=$cc_selectable can_fix=$files.can_fix select_all=$files.select_all}
 {/foreach}
 </tbody>
 </table>
 </div>
 {/if}
-
-<div class="a4-listfoot">
-    <div class="a4-pager">
-        {if $files.params.after|gt( 0 )}<a class="a4-btn" href={concat( $page_uri, $filter_suffix )|ezurl}>{'Missing files from the start'|i18n( 'kernel/contentcheck' )}</a>{/if}
-        {if $files.result.done|not}<a class="a4-btn" href={concat( $page_uri, $filter_suffix, $cc_separator, 'FileAfter=', $files.result.last )|ezurl}>{'Next page of missing files'|i18n( 'kernel/contentcheck' )}</a>{/if}
-    </div>
-</div>
-
-{if $files.can_fix}
-{if $cc_selectable}
-<div class="a4-toolbar is-bottom">
-    <div class="a4-field">
-        <label for="cc-fix-action">{'With the ticked rows'|i18n( 'kernel/contentcheck' )}</label>
-        <select id="cc-fix-action" name="FixAction" aria-describedby="cc-fix-help">
-        {foreach $files.actions as $cc_action}
-            <option value="{$cc_action|wash}">{$cc_action_names[$cc_action]|wash}</option>
-        {/foreach}
-        </select>
-    </div>
-    <div class="a4-actions">
-        <button type="submit" class="a4-btn a4-btn-primary" name="PreviewButton" value="1">{'Preview'|i18n( 'kernel/contentcheck' )}</button>
-    </div>
-    <p class="a4-meta" id="cc-fix-help">{'The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.'|i18n( 'kernel/contentcheck',, hash( '%count', $files.max_items ) )}</p>
-</div>
+{if and( $files.can_fix, $cc_selectable )}
+{set-block variable=cc_actions}<label class="a4-sr-only" for="cc-fix-action">{'With the ticked rows'|i18n( 'kernel/contentcheck' )}</label>
+<select id="cc-fix-action" name="FixAction" aria-describedby="cc-fix-help">{foreach $files.actions as $cc_action}<option value="{$cc_action|wash}">{$cc_action_names[$cc_action]|wash}</option>{/foreach}</select>
+<button type="submit" class="a4-btn a4-btn-primary" name="PreviewButton" value="1" aria-describedby="cc-fix-help">{'Preview'|i18n( 'kernel/contentcheck' )}</button>
+{if $cc_count|gt( $cc_rows|count )}{foreach $files.params.problems as $cc_problem}<input type="hidden" name="Problem[]" value="{$cc_problem|wash}" />{/foreach}{foreach $files.params.versions as $cc_version}<input type="hidden" name="Version[]" value="{$cc_version|wash}" />{/foreach}
+<button type="submit" class="a4-btn" name="AllResultsButton" value="1" aria-describedby="cc-fix-help">{'Preview for all %count results'|i18n( 'kernel/contentcheck',, hash( '%count', $cc_count ) )}</button>{/if}{/set-block}
+{include uri='design:contentcheck/bulkbar.tpl' select_all=$files.select_all total=$cc_tickable page_url=$cc_page_url actions=$cc_actions help='The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.'|i18n( 'kernel/contentcheck',, hash( '%count', $files.max_items ) ) help_id='cc-fix-help'}
 {/if}
+{if $files.can_fix}
 </form>
 {/if}
+
+{include uri='design:contentcheck/pager.tpl' page_uri=$page_uri page_uri_suffix=$filter_suffix item_count=$cc_count view_parameters=hash( 'file_offset', $cc_offset ) limit=$limit limit_choices=$limit_choices limit_preference=$limit_preference offset_name='file_offset' size_title='Show %count findings per page.'|i18n( 'kernel/contentcheck' )}
 </section>
-{undef $cc_action_names $cc_rows $cc_selectable $cc_separator}
+{undef $cc_action_names $cc_rows $cc_count $cc_offset $cc_selectable $cc_tickable $cc_page_url}{if is_set( $cc_actions )}{undef $cc_actions}{/if}

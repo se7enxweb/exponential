@@ -1,7 +1,7 @@
 {* One "file problem" row of an a4-table (doc/features/6.0/content-checks.md, "Missing files"): select, object and
    node, field, version, expected path, last modified, state, actions. Shared by the file checks.
 
-   Variables: row (key, object_id, object_name, node_id, field_name, language, version, version_status, path,
+   Variables: select_all (tick the box), row (key, object_id, object_name, node_id, field_name, language, version, version_status, path,
    file_name, aliases, modified, file_modified, problem, review, can_fix, has_aliases), selectable (show the tick
    box column), can_fix (the user has contentcheck/fixfiles). The row's buttons post ItemAction=<action>:<key> in
    the list's form. The same file is in design/admin and design/admin4. *}
@@ -19,15 +19,15 @@
                               'review', 'Mark for review'|i18n( 'kernel/contentcheck' ) )
      $cc_label = concat( $row.object_name, ' – ', $row.field_name, ' – ', 'Version %version'|i18n( 'kernel/contentcheck',, hash( '%version', $row.version ) ) )}
 <tr>
-    {if $selectable}<td>{if and( $can_fix, $row.can_fix )}<input type="checkbox" name="Keys[]" value="{$row.key|wash}" aria-label="{$cc_label|wash}" />{/if}</td>{/if}
+    {if $selectable}<td>{if and( $can_fix, $row.can_fix )}<input type="checkbox" name="Keys[]" value="{$row.key|wash}" aria-label="{$cc_label|wash}" data-a4-select-item="1"{if $select_all} checked="checked"{/if} />{/if}</td>{/if}
     <td>{if $row.node_id|gt( 0 )}<a href={concat( '/content/view/full/', $row.node_id )|ezurl}>{$row.object_name|wash}</a>{else}{$row.object_name|wash}{/if}
         <div class="a4-meta">{'Object %id'|i18n( 'kernel/contentcheck',, hash( '%id', $row.object_id ) )}{if $row.node_id|gt( 0 )} &middot; {'Node %id'|i18n( 'kernel/contentcheck',, hash( '%id', $row.node_id ) )}{/if}</div></td>
     <td>{if $row.field_name|ne( '' )}{$row.field_name|wash}{else}&ndash;{/if}{if $row.language|ne( '' )} <span class="a4-tag is-mono">{$row.language|wash}</span>{/if}
         {if $row.file_name|ne( '' )}<div class="a4-meta">{$row.file_name|wash}</div>{/if}</td>
     <td>{'Version %version'|i18n( 'kernel/contentcheck',, hash( '%version', $row.version ) )}
         <div class="a4-meta">{if eq( $row.version_status, 'published' )}{'Published'|i18n( 'kernel/contentcheck' )}{else}{'Draft'|i18n( 'kernel/contentcheck' )}{/if}</div></td>
-    <td><span class="a4-tag is-mono a4-wrap">{$row.path|wash}</span>
-        {if $row.aliases|count|gt( 0 )}<div class="a4-meta">{foreach $row.aliases as $cc_alias sequence array( '', ', ' ) as $cc_sep}{$cc_sep}{$cc_alias.alias|wash} ({$cc_alias_states[$cc_alias.state]|wash}){/foreach}</div>{/if}</td>
+    <td><code class="a4-code">{$row.path|wash}</code>
+        {if $row.aliases|count|gt( 0 )}<div class="a4-meta">{foreach $row.aliases as $cc_alias}{delimiter}, {/delimiter}{$cc_alias.alias|wash} ({$cc_alias_states[$cc_alias.state]|wash}){/foreach}</div>{/if}</td>
     <td>{if $row.modified|gt( 0 )}{$row.modified|l10n( 'shortdatetime' )}{else}&ndash;{/if}
         {if $row.file_modified|gt( 0 )}<div class="a4-meta">{'File: %time'|i18n( 'kernel/contentcheck',, hash( '%time', $row.file_modified|l10n( 'shortdatetime' ) ) )}</div>{/if}</td>
     <td><span class="a4-tag {$cc_problem_classes[$row.problem]}">{$cc_problem_names[$row.problem]|wash}</span>

@@ -14,8 +14,8 @@
  *   alias_absent   an alias of image.ini (AliasList[] of [MissingFileSettings]; empty: all) that was never made;
  *                  normal, since aliases are made when first shown, so it is off unless asked for
  *
- * The objects are walked by object id in chunks, as the broken relations are: a page goes on after the last object
- * checked (After). What the user may not read is left out in the SQL. A file is looked up through
+ * The objects are walked by object id in chunks (scan()); the list of the broken relations walks them all (findAll(),
+ * kept a minute) for its total and pages. What the user may not read is left out in the SQL. A file is looked up through
  * eZClusterFileHandler, so the DFS of a cluster counts, not the local disk.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -442,7 +442,7 @@ class expContentCheckFiles
      * @param array $params from parameters()
      * @return array array( 'node', 'rows', 'checked', 'last', 'done', 'error' => '' | not_found | database )
      */
-    public static function scan( array $params )
+    public static function scan( array $params, $describe = true )
     {
         $result = array( 'node' => null, 'rows' => array(), 'checked' => 0, 'last' => (int)$params['after'], 'done' => true, 'error' => '' );
         if ( !expContentCheck::isSupportedDatabase() )
@@ -501,8 +501,80 @@ class expContentCheckFiles
             if ( !empty( $permission['temp_tables'] ) )
                 $db->dropTempTableList( $permission['temp_tables'] );
         }
-        $result['rows'] = self::describe( $result['rows'] );
+        if ( $describe )
+            if ( $describe )
+            $result['rows'] = self::describe( $result['rows'] );
         return $result;
+    }
+
+    /**
+     * Every finding below the node (not described), for a list with a total and pages: the objects are walked to
+     * the end, at most [MissingFileSettings] ListLimit objects. Kept for ListCacheTTL seconds per user and filters, so
+     * that paging does not walk them again; a resolution clears it (clearListCache()).
+     *
+     * @param array $params from parameters() (after and limit are not used)
+     * @return array array( 'node', 'rows', 'checked', 'error', 'incomplete' => bool (stopped at ListLimit) )
+     */
+    public static function findAll( array $params )
+    {
+        $user = eZUser::currentUser();
+        $current = eZSiteAccess::current();
+        $key = md5( json_encode( array( (int)$params['node_id'], $params['problems'], $params['versions'],
+                                        $user instanceof eZUser ? (int)$user->attribute( 'contentobject_id' ) : 0,
+                                        is_array( $current ) && isset( $current['name'] ) ? (string)$current['name'] : '' ) ) );
+        $ttl = expContentCheck::intSetting( 'MissingFileSettings', 'ListCacheTTL', 60, 0, 3600 );
+        $file = self::listCacheDirectory() . '/files-' . $key . '.php';
+        $node = expContentCheck::readableNode( $params['node_id'] );
+        if ( !$node )
+            return array( 'node' => null, 'rows' => array(), 'checked' => 0, 'error' => 'not_found', 'incomplete' => false );
+        if ( $ttl > 0 && is_file( $file ) && filemtime( $file ) > time() - $ttl )
+        {
+            $cached = @unserialize( (string)file_get_contents( $file ), array( 'allowed_classes' => false ) );
+            if ( is_array( $cached ) && isset( $cached['rows'] ) )
+                return array_merge( $cached, array( 'node' => $node ) );
+        }
+        $limit = expContentCheck::intSetting( 'MissingFileSettings', 'ListLimit', 50000, 100, 1000000 );
+        $params['after'] = 0;
+        $params['limit'] = 200;
+        $all = array( 'rows' => array(), 'checked' => 0, 'error' => '', 'incomplete' => false );
+        do
+        {
+            $result = self::scan( $params, false );
+            if ( $result['error'] !== '' )
+                return array( 'node' => $node, 'rows' => array(), 'checked' => 0, 'error' => $result['error'], 'incomplete' => false );
+            $all['rows'] = array_merge( $all['rows'], $result['rows'] );
+            $all['checked'] += $result['checked'];
+            $params['after'] = $result['last'];
+            if ( !$result['done'] && $all['checked'] >= $limit )
+            {
+                $all['incomplete'] = true;
+                break;
+            }
+        }
+        while ( !$result['done'] );
+        if ( $ttl > 0 )
+        {
+            eZDir::mkdir( dirname( $file ), false, true );
+            eZFile::create( basename( $file ), dirname( $file ), serialize( $all ), true );
+        }
+        return array_merge( $all, array( 'node' => $node ) );
+    }
+
+    /**
+     * @return string the directory of the list cache
+     */
+    protected static function listCacheDirectory()
+    {
+        return eZSys::cacheDirectory() . '/contentcheck';
+    }
+
+    /**
+     * Forgets every kept list (after a resolution changed what is missing).
+     */
+    public static function clearListCache()
+    {
+        foreach ( glob( self::listCacheDirectory() . '/files-*.php' ) ?: array() as $file )
+            @unlink( $file );
     }
 
     /**
@@ -694,21 +766,34 @@ class expContentCheckFiles
     /**
      * The missing files section of the broken relations page: the page of findings and what the template needs.
      *
-     * @param array $get the request's GET fields: Problem[], Version[], FileAfter
+     * @param array $get the request's GET fields: Problem[], Version[], ProblemChoice, VersionChoice, SelectAll
      * @param int $nodeID the page's start node
      * @param int $limit the page size
+     * @param int $offset the first finding of the page
      * @return array array( 'enabled' => true, 'result' => scan(), 'params', 'problems', 'versions', 'storage_dir',
      *               'can_fix', 'actions', 'max_items', 'form_token', 'token_field', 'feedback' )
      */
-    public static function section( array $get, $nodeID, $limit )
+    public static function section( array $get, $nodeID, $limit, $offset = 0 )
     {
         $input = array( 'NodeID' => (int)$nodeID, 'Limit' => (int)$limit );
-        foreach ( array( 'Problem' => 'Problem', 'Version' => 'Version', 'FileAfter' => 'After' ) as $field => $name )
+        foreach ( array( 'Problem' => 'Problem', 'Version' => 'Version' ) as $field => $name )
         {
             if ( isset( $get[$field] ) )
                 $input[$name] = $get[$field];
         }
+        // "Select all" and "Select none" of the filter groups: submit buttons, so they work without JavaScript
+        foreach ( array( 'Problem' => self::PROBLEMS, 'Version' => self::VERSIONS ) as $name => $all )
+        {
+            $choice = isset( $get[$name . 'Choice'] ) && is_string( $get[$name . 'Choice'] ) ? $get[$name . 'Choice'] : '';
+            if ( $choice === 'all' )
+                $input[$name] = $all;
+        }
         $params = self::parameters( $input, (int)$nodeID );
+        foreach ( array( 'Problem' => 'problems', 'Version' => 'versions' ) as $name => $key )
+        {
+            if ( isset( $get[$name . 'Choice'] ) && $get[$name . 'Choice'] === 'none' )
+                $params[$key] = array();
+        }
         $canFix = class_exists( 'expContentCheckFileFix' ) && expContentCheck::hasPolicy( 'contentcheck', 'fixfiles' );
         $feedback = null;
         $http = eZHTTPTool::instance();
@@ -719,7 +804,22 @@ class expContentCheckFiles
             if ( !is_array( $feedback ) )
                 $feedback = null;
         }
-        return array( 'enabled' => true, 'result' => self::scan( $params ), 'params' => $params,
+        // nothing ticked in a filter group: nothing to look for
+        if ( $params['problems'] && $params['versions'] )
+            $result = self::findAll( $params );
+        else
+            $result = array( 'node' => expContentCheck::readableNode( (int)$nodeID ), 'rows' => array(), 'checked' => 0, 'error' => '',
+                             'incomplete' => false, 'nothing_chosen' => true );
+        // the page: offset (file_offset in the address) and size
+        $result['count'] = count( $result['rows'] );
+        $offset = max( 0, (int)$offset );
+        if ( $offset >= $result['count'] )
+            $offset = $result['count'] > 0 ? (int)( floor( ( $result['count'] - 1 ) / max( 1, (int)$limit ) ) * max( 1, (int)$limit ) ) : 0;
+        $result['offset'] = $offset;
+        $result['rows'] = self::describe( array_slice( $result['rows'], $offset, max( 1, (int)$limit ) ) );
+        $params['offset'] = $offset;
+        return array( 'enabled' => true, 'result' => $result, 'params' => $params,
+                      'select_all' => isset( $get['SelectAll'] ) && $get['SelectAll'] === '1',
                       'problems' => self::PROBLEMS, 'versions' => self::VERSIONS, 'storage_dir' => eZSys::storageDirectory(),
                       'can_fix' => $canFix, 'actions' => $canFix ? expContentCheckFileFix::ACTIONS : array(),
                       'max_items' => $canFix ? expContentCheckFileFix::maxItems() : 0,

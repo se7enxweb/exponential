@@ -100,7 +100,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [REST API v1 and v2: one extension](rest-api-v1-and-v2.md) | Which URL answers at v1 and v2 from the one `ezprestapi` extension, a client authenticated with OAuth2 or a key, the API called with curl, `rest.ini` read, an installation moved off the deprecated `ezprestapiprovider` | 20 minutes |
 | [Upgrading](upgrading.md) | An installation of 4.x, 5.x or an earlier 6.0.x moved to the current 6.0 line, and checked | 20 minutes for a small site |
 | [The upgrade check](upgrade-check.md) | The files and the database compared with the release on Setup > Upgrade check, every kind of finding read and dealt with, the report downloaded, the same check run from a shell | 15 minutes |
-| [Missing files and image aliases](missing-files.md) | Files missing from the storage and stale image aliases found below a node with the target "Missing files" of the broken relations, each row read, the same list from a shell | 10 minutes |
+| [Missing files and image aliases](missing-files.md) | Files missing from the storage and stale image aliases found below a node with the target "Missing files" of the broken relations, each row read and resolved after a preview (regenerated, restored, uploaded again, its reference removed or marked for review), the same from a shell with a dry run first | 15 minutes |
 
 ## Road 1: editors
 

@@ -327,19 +327,63 @@ modified (and, for an alias, the file's own time), and the problem:
   checked: nothing shows them.
 - **Where**: every file is looked up through `eZClusterFileHandler`, so on a cluster (DFS) the cluster's storage
   counts, not the local disk of one server.
-- The objects are walked by object id, `ChunkSize` objects (200) per set of queries, as the broken relations are:
-  **Next page of missing files** goes on after the last object checked (`FileAfter`, apart from the relations' own
-  **Next page**), and a page stops after `ScanLimit` objects (5000).
+- **Pages**: the list has a total ("1 to 25 of 446"), page links and the page size of the broken relations
+  (`ItemsPerPageList_contentcheck_brokenrelations[]`); its pages are `(file_offset)` in the address, apart from the
+  relations' own. To have a total, every object below the node is walked (`ChunkSize` objects, 200, per set of
+  queries, at most `ListLimit`, 50,000; with more the list says so), and the findings are kept `ListCacheTTL` (60)
+  seconds per user and filters, so the next pages do not walk them again; a resolution forgets them. The whole tree
+  of the demonstration site (714 objects, 446 findings) takes 2.4 s; the next pages a few milliseconds.
+- **Marked for review** shows on a row someone marked (see below), until the row is resolved.
+
+### Resolving
+
+Tick rows and choose what to do with them, or use a row's own button. The next page is always a **preview**: every
+chosen row with what will happen to it, or why it cannot be done. Only a **POST** of that preview with the form
+token and a confirmation token bound to exactly the rows shown does anything; if the files or your access changed
+in between, nothing is done and the list says so.
+
+- **Selecting**: the box in the table's header ticks or clears every row of the page and shows a mixed state when
+  some are ticked; "N of M selected" counts them (`contentcheck_select.js`, the same as the other lists of the
+  checks). Without JavaScript, **Select all on this page** and **Select none** do the same on the server
+  (`SelectAll=1`). When there are more pages, **Preview for all N results** takes every row of
+  every page with the same filters, at most `MaxFixItems`, and shows the preview as well.
+- The filter groups **Missing files: problems** and **Missing files: versions** have **Select all** and **Select
+  none** buttons (submit buttons, so they work without JavaScript); with none ticked nothing is looked for.
+
+| Action | What it does | Offered for |
+|---|---|---|
+| **Regenerate the aliases from the original** | removes the alias entries from the image's XML and makes each alias again from the original, as the image datatype does when an image is first shown (the files are written at their paths); the original is not changed | alias missing, out of date or never made |
+| **Restore from another version** | copies the file of another version of the same field that still has it (the published version first, then the newest) to the expected path; an image then gets its aliases again | file missing |
+| **Re-upload or replace the file** | puts an uploaded file at the expected path: it must have the same extension (never a script, HTML or SVG), and an image must be an image; `MaxReplaceSize` limits the size | file missing |
+| **Remove the dead reference** | empties the field in that version (the image XML, or the row of the file table): it no longer names the missing file; the database only. A required field must be filled again at the next edit | file missing |
+| **Mark for review** | marks the field version (who, when, the problem; in `ezsite_data` as `contentcheck.review.<attribute id>.<version>`), so someone can look at it later | every row |
+
+- Nothing is ever deleted and nothing is overwritten: a file that came back in between is left alone (**A file is
+  at the expected path now**), and each row is checked again against the storage just before it is done.
+- The chosen rows are done `FixBatchSize` (10) at a time; between the batches the page shows the progress and goes
+  on by itself (unless **Go on with the next batch by itself** is unticked, or you press a key or click), or with
+  **Go on with the next batch**; **Stop here** goes back to the list. At most `MaxFixItems` (200) rows at once.
+- Every row needs `content/edit` on its object (marking for review: `content/read`), on top of the policies below.
+- Every row done or not done is recorded in the audit (channel `content`), with the object, the expected path, the
+  field, version and language, and the result:
+
+| Event | Action |
+|---|---|
+| `content.file.alias.regenerate` | Regenerate (also after a restore or a replacement of an image) |
+| `content.file.restore` | Restore from another version (with the source version and path) |
+| `content.file.replace` | Re-upload or replace |
+| `content.file.reference.remove` | Remove the dead reference |
+| `content.file.review.mark` | Mark for review |
 
 How to look into a missing file, step by step: [Missing files and image aliases](../../guides/missing-files.md).
-
 ## Who may use them
 
 | Policy | Opens |
 |---|---|
 | `contentcheck/unreferenced` | the list of unreferenced objects |
 | `contentcheck/trash` | with `unreferenced`: moving them to the trash; each object needs `content/remove` as well |
-| `contentcheck/brokenrelations` | the list of broken relations |
+| `contentcheck/brokenrelations` | the list of broken relations, and with the target "Missing files" the missing files |
+| `contentcheck/fixfiles` | with `brokenrelations`: resolving missing files; each object needs `content/edit` as well (marking for review: `content/read`) |
 | `contentcheck/storage` | the storage files: the scan, the orphans, the file problems and the quarantine list |
 | `contentcheck/quarantine` | with `storage`: moving orphans to the quarantine, restoring them, deleting them there |
 | `contentcheck/permissions` | with `storage`: setting the expected owner and mode of used files |
@@ -440,9 +484,16 @@ Tables[ezbinaryfile]=ezbinaryfile
 Tables[ezmedia]=ezmedia
 # The aliases looked for by "Alias never made"; empty: every alias of image.ini
 AliasList[]
-# Objects checked with one set of queries (10 to 1000); objects checked for one page at most
+# Objects checked with one set of queries (10 to 1000); objects walked for the list at most,
+# and how long its findings are kept for its pages (seconds; 0: walked again for every page)
 ChunkSize=200
-ScanLimit=5000
+ListLimit=50000
+ListCacheTTL=60
+# Rows in one resolution at most (1 to 1000); rows done per request (1 to 200)
+MaxFixItems=200
+FixBatchSize=10
+# The largest replacement in bytes; 0: what PHP takes
+MaxReplaceSize=0
 # enabled: the cronjob part contentcheck also counts the missing files and alias problems
 CronjobReport=disabled
 ```
@@ -498,12 +549,22 @@ Report only; nothing is changed or moved:
 
 `--storage` runs the whole scan and keeps it for the page; `--quarantine` and `--fix-permissions` change files only
 without `--dry-run`, and record each batch in the audit like the page does.
-Missing files, report only as well:
+
+Missing files and their resolutions; only `--fix` changes anything, and `--dry-run` shows its plan instead:
 
 ```
 ./console exp:content-check --missing-files --node=2                 # every missing file and alias problem below node 2
 ./console exp:content-check --missing-files --problems=missing --versions=published
+./console exp:content-check --missing-files --fix=regenerate --dry-run  # what regenerating every finding would do
+./console exp:content-check --fix=restore --items=123-4,125-2       # restore two field versions (<attribute id>-<version>)
+./console exp:content-check --fix=replace --items=123-4 --replace-with=photo.jpg
+./console exp:content-check --fix=review --items=123-4             # mark for review
 ```
+
+`--fix` takes `regenerate`, `restore`, `replace`, `remove` or `review`; without `--items` it takes every finding of
+`--missing-files` below `--node`. It plans, checks and audits exactly as the administration does (the same
+`content/edit` checks for the `--login` user, the same batches, the same audit events). Exit code 2 when a row could
+not be done.
 
 The lists are those of the user given by `--login` (default `admin`). Exit code 0 when nothing is found, 1 when
 something is, 2 on an error. On a very large installation set `BuildOnRequest=false` and run the cronjob part
@@ -553,11 +614,14 @@ and MariaDB, PostgreSQL, SQLite and Oracle. On MongoDB the checks say they are n
   `expContentCheckReferences` (the reference index: one extractor per source, `build()`, the cache, `reason()`),
   `expContentCheckTrash` (plan and move), `expContentCheckBrokenRelations` (parameters, source query,
   `xmlReferences()`, `attributeTargets()`, target states, `hint()`, the scan, `layoutFindings()`).
-- Missing files: the target of `brokenrelations`; `expContentCheckFiles` (parameters, the queries, `judge()` with
-  the storage lookups passed in, the page, `target()`, `section()`, `inspect()`), the handler interface
-  `expContentCheckFileHandler` with `expContentCheckFileImage` and `expContentCheckFileTable`. Templates
-  `missingfiles.tpl` (the section), `missingfiles_filter.tpl`, the shared row `file_row.tpl`. Tests:
-  `expContentCheckFilesTest.php` (no database).
+- Missing files: the target of `brokenrelations` and the view `fixfiles` (POST only); `expContentCheckFiles`
+  (parameters, the queries, `judge()` with the storage lookups passed in, the page, `target()`, `section()`,
+  `inspect()`, review marks), `expContentCheckFileFix` (plan, execute in batches, the five actions, audit), the
+  handler interface `expContentCheckFileHandler` with `expContentCheckFileImage` and `expContentCheckFileTable`.
+  Templates `missingfiles.tpl` (the section), `missingfiles_filter.tpl`, the shared row `file_row.tpl`,
+  `fixconfirm.tpl`, `fixprogress.tpl` (with `design/standard/javascript/contentcheck_fixfiles.js` for the next
+  batch), `fixrefused.tpl`, `fixreason.tpl`. Tests: `expContentCheckFilesTest.php` and
+  `expContentCheckFileFixTest.php` (no database).
 - Command `exp:content-check` (`bin/php/contentcheck.php`, `kernel/private/classes/commands/contentcheck.php`) and
   the cronjob part `contentcheck` (`cronjobs/contentcheck.php`).
 - To add a reference source of an extension's table, list its column in `ObjectColumns[]`, `NodeColumns[]` or
