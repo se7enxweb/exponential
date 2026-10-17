@@ -68524,7 +68524,7 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
     </message>
     <message>
         <source>Siteaccess</source>
-        <translation>Siteaccess</translation>
+        <translation>Acceso al sitio</translation>
     </message>
     <message>
         <source>Navigation part</source>
@@ -68556,11 +68556,11 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
     </message>
     <message>
         <source>Added or changed by a content/view/cachekeys listener</source>
-        <translation>Añadida o cambiada por un listener de content/view/cachekeys</translation>
+        <translation>Añadida o cambiada por un oyente de content/view/cachekeys</translation>
     </message>
     <message>
         <source>listener</source>
-        <translation>listener</translation>
+        <translation>oyente</translation>
     </message>
     <message>
         <source>empty</source>
@@ -68580,7 +68580,7 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
     </message>
     <message>
         <source>CB %hits/%count</source>
-        <translation>CB %hits/%count</translation>
+        <translation>BC %hits/%count</translation>
     </message>
     <message>
         <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
