@@ -261,7 +261,10 @@ class expVelocityEnginesTest extends ezpTestCase
         foreach ( array( 'activeExtensionsCache', 'extensionNameCache', 'extensionPathCache', 'extensionSettingsSiteAccessCache' ) as $property )
             $extensionState[$property] = $this->staticValue( 'eZExtension', $property );
         $activeExtensions = $GLOBALS['eZActiveExtensions'] ?? null;
-        $cacheFiles = $this->cacheFiles();
+        // Only the cache files of this test's own siteaccess and extension: the cache directories are shared with
+        // every other PHP process of the tree (the local gate runs three test files at once in one tree), which
+        // write cache files of their own at any moment, so the whole listing is not this test's to compare.
+        $cacheFiles = $this->cacheFilesNaming( array( $siteAccess, $extension ) );
         try
         {
             $this->assertSame( 1, preg_match( '~' . expVelocity::staticPaths() . '~', '/x1_extsa_cache/example/cache/public/x.js' ) );
@@ -280,7 +283,8 @@ class expVelocityEnginesTest extends ezpTestCase
             foreach ( $extensionState as $property => $value )
                 $this->assertSame( $value, $this->staticValue( 'eZExtension', $property ), $property );
             $this->assertSame( $activeExtensions, $GLOBALS['eZActiveExtensions'] ?? null );
-            $this->assertSame( $cacheFiles, $this->cacheFiles() );
+            $this->assertSame( array(), $cacheFiles, 'no cache file named the new siteaccess before' );
+            $this->assertSame( $cacheFiles, $this->cacheFilesNaming( array( $siteAccess, $extension ) ), 'no cache file written for it' );
         }
         finally
         {
@@ -354,6 +358,33 @@ class expVelocityEnginesTest extends ezpTestCase
                 $files[] = $file;
         sort( $files );
         return $files;
+    }
+
+    /**
+     * The files below the INI cache directory and the extension cache directory that name one of $names (in their
+     * file name or their content). A cache written while reading a siteaccess's settings names its directory or its
+     * extension: the INI caches list their input files, the extension cache lists the extensions.
+     *
+     * @param string[] $names
+     * @return string[]
+     */
+    protected function cacheFilesNaming( array $names )
+    {
+        $found = array();
+        foreach ( $this->cacheFiles() as $file )
+        {
+            // a file another process removes between the listing and the read is not one of ours
+            $text = is_file( $file ) ? (string)@file_get_contents( $file ) : '';
+            foreach ( $names as $name )
+            {
+                if ( strpos( $file, $name ) !== false || strpos( $text, $name ) !== false )
+                {
+                    $found[] = $file;
+                    break;
+                }
+            }
+        }
+        return $found;
     }
 
     /**
