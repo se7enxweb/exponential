@@ -212,6 +212,18 @@ policy *ezjscore / call* with the function list **ezjscnode**; a request whose c
   and clear the INI cache. The shipped designs do not call `ezjscnode` for anonymous visitors; a site's own
   JavaScript that does would need the policy for the Anonymous role.
 
+## 9. Decide who may authorize OAuth clients
+
+An application registered at **Setup > oAuth admin** sends users to `oauth/authorize`, where they allow it to act for
+them. From 6.0.15 on that needs the policy *OAuth / Authorize* (`oauth/authorize`), optionally limited to some
+siteaccesses; a user without it is sent back to the application with `error=access_denied`.
+
+- New installations give it to the **Editor** role; administrators have it through full access.
+- On an upgraded site run `php bin/php/addoauthauthorizepolicy.php --dry-run`, then without `--dry-run`: every role
+  that lets users sign in gets the policy for the same siteaccesses, so nobody loses what they could do before.
+  The whole story, and how to keep the old behavior for a while, is in
+  [the upgrade note](../bc/6.0/oauth-authorize-policy.md).
+
 ## Who may do this
 
 - The role pages need access to the `role` module. The unactivated users page needs `user/activation`, and so do
