@@ -250,7 +250,7 @@ class eZOEXMLInput extends eZXMLInputHandler
                     self::$browserType = 'MobileWebKit';
             }
             if ( self::$browserType === false )
-                eZDebug::writeNotice( 'Browser not supported: ' . $userAgent, __METHOD__ );
+                eZDebug::writeDebug( 'Browser not supported: ' . $userAgent, __METHOD__ );
         }
         return self::$browserType;
     }
@@ -341,7 +341,7 @@ class eZOEXMLInput extends eZXMLInputHandler
     {
         if ( !$this->currentUserHasAccess() )
         {
-            eZDebug::writeNotice('Current user does not have access to ezoe, falling back to normal xml editor!', __METHOD__ );
+            eZDebug::writeDebug('Current user does not have access to ezoe, falling back to normal xml editor!', __METHOD__ );
             return false;
         }
 
@@ -349,7 +349,7 @@ class eZOEXMLInput extends eZXMLInputHandler
         {
             if ( $this->currentUserHasAccess( 'disable_editor' ) )
             {
-                eZDebug::writeNotice('Current browser is not supported by ezoe, falling back to normal xml editor!', __METHOD__ );
+                eZDebug::writeDebug('Current browser is not supported by ezoe, falling back to normal xml editor!', __METHOD__ );
                 return false;
             }
             eZDebug::writeWarning('Current browser is not supported by ezoe, but user does not have access to disable editor!', __METHOD__ );
