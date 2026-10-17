@@ -1344,6 +1344,10 @@
     ],
     "settings/content.ini": [
       "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
+    ],
+    "settings/ezxml.ini": [
+      "tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php",
+      "tests/tests/extension/ezoe/expOEFormulaTextTest.php"
     ]
   },
   "generated": {
