@@ -22,7 +22,8 @@
  * (flock); the second one finds the file already renamed (another inode) and does nothing. Writers append without
  * locking, as before, so a lock never blocks a request's logging.
  *
- * Pure file system: no settings are read here (the callers pass them), so it works on the earliest error paths.
+ * Pure file system: no settings are read here (the callers pass them), so it works on the earliest error paths; modes go
+ * through eZFile::fileMode(), so the EZP_FILE_MODE_MAX limit of config.php applies.
  */
 class expLogRotator
 {
@@ -197,7 +198,7 @@ class expLogRotator
         }
         $wantMode = is_array( $old ) && isset( $old['mode'] ) ? ( $old['mode'] & 0777 ) : ( $mode !== null ? ( (int)$mode & 0777 ) : null );
         if ( $wantMode !== null )
-            @chmod( $path, $wantMode );
+            @chmod( $path, eZFile::fileMode( $wantMode ) ); // the old mode, within EZP_FILE_MODE_MAX
         if ( is_array( $old ) && function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
         {
             @chown( $path, (int)$old['uid'] );
@@ -244,7 +245,7 @@ class expLogRotator
             @unlink( $tmp );
             return false;
         }
-        @chmod( $target, $stat['mode'] & 0777 );
+        @chmod( $target, eZFile::fileMode( $stat['mode'] & 0777 ) );
         if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
         {
             @chown( $target, (int)$stat['uid'] );
