@@ -26,6 +26,6 @@
         {/foreach}
         </div>
     </fieldset>{/if}
-    {if eq( $part, 'choice' )}{include uri='design:contentcheck/filter_choice.tpl' name='Problem' label='Missing files: problems'|i18n( 'kernel/contentcheck' )}{/if}
-    {if eq( $part, 'choice' )}{include uri='design:contentcheck/filter_choice.tpl' name='Version' label='Missing files: versions'|i18n( 'kernel/contentcheck' )}{/if}
+    {if eq( $part, 'choice' )}{include uri='design:contentcheck/filter_choice.tpl' group='Problem' label='Missing files: problems'|i18n( 'kernel/contentcheck' )}{/if}
+    {if eq( $part, 'choice' )}{include uri='design:contentcheck/filter_choice.tpl' group='Version' label='Missing files: versions'|i18n( 'kernel/contentcheck' )}{/if}
 {undef $cc_problem_names $cc_version_names}
