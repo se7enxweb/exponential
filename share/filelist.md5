@@ -5649,7 +5649,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 330a3389deaa6670e6677eaf993b9a73  kernel/private/classes/expcontentaccessreport.php
 7006dcb750cb36c53efb10d3cd301720  kernel/private/classes/expfileconsistencyreport.php
 30b99d6b38fac3eb85094f52e824516c  kernel/private/classes/expschemaconsistencyreport.php
-f1861974cd8e989be2d32e491a1a8cf3  kernel/private/classes/ezautoloadgenerator.php
+ba76560513cfe183791eab4ea1d71171  kernel/private/classes/ezautoloadgenerator.php
 7642907aab26669358d257577baedeab  kernel/private/classes/ezcontentobjectstate.php
 6288d50d915fadc3e956d6a8c9ce660c  kernel/private/classes/ezcontentobjectstategroup.php
 00e0da11d764b55e34ca0f7094fe1c96  kernel/private/classes/ezcontentobjectstategrouplanguage.php
@@ -8249,7 +8249,7 @@ ca73bee703a0441de0ebd3f1c8fabc1a  tests/tests/kernel/datatypes/ezxmltext/ezxmlte
 bf4805eef66167c3d4a3a93b22e382b3  tests/tests/kernel/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput_regression.php
 20e4366dd2d283c394b1ec6f50294dd9  tests/tests/kernel/datatypes/suite.php
 21a4686e433489cd944c809a0d2cd307  tests/tests/kernel/error/ErrorHeaderListTest.php
-7d433742c2df5b0ba02948a6f228f0e8  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
+77927d3c943bbb393761f88c40789cfc  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 60f8f3fb91c8a7da7e20ca1f9c518136  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
 b6656c954acf5e5f6db1a2607a7564e4  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
