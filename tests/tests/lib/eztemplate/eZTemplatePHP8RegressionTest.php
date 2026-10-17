@@ -169,6 +169,22 @@ class eZTemplatePHP8RegressionTest extends PHPUnit\Framework\TestCase
         $this->assertRendersCleanly( '[{$a|wash}]', array( 'a' => '<b>' ), '[&lt;b&gt;]' );
     }
 
+    /**
+     * The string operators trim, pad, wrap, upcase, downcase and count_chars of null (an unset attribute, such as a
+     * menu item's url in parts/ini_menu.tpl) give the result of '' without the PHP 8.1 null deprecation.
+     */
+    public function testStringOperatorsOfNull()
+    {
+        $this->assertRendersCleanly( '[{$a|trim}]', array( 'a' => null ), '[]' );
+        $this->assertRendersCleanly( '[{$a|trim( \'/\' )}]', array( 'a' => null ), '[]' );
+        $this->assertRendersCleanly( '[{$a|trim( \'/\' )}]', array( 'a' => '/x/' ), '[x]' );
+        $this->assertRendersCleanly( '[{$a|pad( 2 )}]', array( 'a' => null ), '[  ]' );
+        $this->assertRendersCleanly( '[{$a|wrap}]', array( 'a' => null ), '[]' );
+        $this->assertRendersCleanly( '[{$a|upcase}]', array( 'a' => null ), '[]' );
+        $this->assertRendersCleanly( '[{$a|downcase}]', array( 'a' => 'AB' ), '[ab]' );
+        $this->assertRendersCleanly( '[{$a|count_chars}]', array( 'a' => null ), '[0]' );
+    }
+
     /** a5f16bd9f7, 4917e57c92, f627bcf278: the compiled foreach and section/loop code */
     public function testCompiledLoopsWithSequences()
     {
