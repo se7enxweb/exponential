@@ -72,11 +72,9 @@
 </div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
-
-<p class="a4-intro">{'Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.'|i18n( 'design/admin/setup/logs' )}</p>
-
-{* The buttons of the log viewer's pages (setup/logs_nav.tpl) *}
-{include uri='design:setup/logs_nav.tpl' log_nav_current='logs'}
+{* The buttons of the log viewer's pages, then this page's intro (setup/logs_nav.tpl): the same place on every page *}
+{include uri='design:setup/logs_nav.tpl' log_nav_current='logs'
+         log_nav_intro='Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.'|i18n( 'design/admin/setup/logs' )}
 
 {if $log_done|ne( '' )}
 <div class="a4-notice {if $log_done_ok}is-ok{else}is-bad{/if}" role="{if $log_done_ok}status{else}alert{/if}">

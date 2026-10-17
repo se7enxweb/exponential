@@ -8,6 +8,8 @@
  *  LN-02  every page of the viewer includes the row with its own current item (logs, manage, health, digest; the
  *         archive viewer is setup/logs), in both designs, and the two copies of each template are the same
  *  LN-03  the row's styles are in the module stylesheet (tokens only), not inline
+ *  LN-04  every page is heading, then the row as the first thing of its content, then the intro (drawn by the row's
+ *         include), so the row stays at the same place when switching between them
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -30,7 +32,7 @@ class LogViewerNavTest extends PHPUnit\Framework\TestCase
     }
 
     /** The row with the access check given as $stub_manage */
-    private function render( $current, $manage )
+    private function render( $current, $manage, $intro = null )
     {
         $source = self::read( self::NAV );
         $this->assertSame( 1, substr_count( $source, self::ACCESS ), 'one access check' );
@@ -41,9 +43,12 @@ class LogViewerNavTest extends PHPUnit\Framework\TestCase
         $tpl = eZTemplate::factory();
         $tpl->setVariable( 'log_nav_current', $current );
         $tpl->setVariable( 'stub_manage', $manage );
+        if ( $intro !== null )
+            $tpl->setVariable( 'log_nav_intro', $intro );
         $html = $tpl->fetch( $file );
         $tpl->unsetVariable( 'log_nav_current' );
         $tpl->unsetVariable( 'stub_manage' );
+        $tpl->unsetVariable( 'log_nav_intro' );
         unlink( $file );
         rmdir( $dir );
         return $html;
@@ -73,6 +78,10 @@ class LogViewerNavTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 1, $marked, "one current item for $current" );
             $this->assertStringContainsString( '<nav class="a4-setup-log-nav"', $html );
         }
+        $html = $this->render( 'logs', true, 'An intro & more' );
+        $this->assertGreaterThan( strpos( $html, '</nav>' ), strpos( $html, '<p class="a4-intro a4-setup-log-intro">An intro &amp; more</p>' ),
+                                  'the intro comes after the row, washed' );
+        $this->assertStringNotContainsString( 'a4-setup-log-intro', $this->render( 'logs', true ), 'no intro, no paragraph' );
         $html = $this->render( 'health', false );
         $this->assertStringNotContainsString( 'setup/logsmanage', $html, 'Manage logs only with setup/managelogs' );
         $this->assertSame( 3, substr_count( $html, 'a4-btn-primary' ) );
@@ -86,7 +95,18 @@ class LogViewerNavTest extends PHPUnit\Framework\TestCase
         foreach ( $pages as $template => $current )
         {
             $a4 = self::read( "design/admin4/templates/setup/$template.tpl" );
-            $this->assertSame( 1, substr_count( $a4, "{include uri='design:setup/logs_nav.tpl' log_nav_current='$current'}" ), $template );
+            $include = "{include uri='design:setup/logs_nav.tpl' log_nav_current='$current'";
+            $this->assertSame( 1, substr_count( $a4, $include ), $template );
+            // LN-04 the order: heading, then the row as the first thing of the content box, then the intro (only through the row)
+            $title = strpos( $a4, 'class="context-title"' );
+            $box = strpos( $a4, '<div class="box-bc"><div class="box-ml"><div class="box-content">' );
+            $row = strpos( $a4, $include );
+            $this->assertNotFalse( $title, $template );
+            $this->assertTrue( $title < $box && $box < $row, "$template: heading, then the content box, then the row" );
+            $open = strlen( '<div class="box-bc"><div class="box-ml"><div class="box-content">' );
+            $between = substr( $a4, $box + $open, $row - $box - $open );
+            $this->assertSame( '', trim( preg_replace( '/\{\*.*?\*\}/s', '', $between ) ), "$template: nothing drawn between the box and the row" );
+            $this->assertStringNotContainsString( '<p class="a4-intro"', $a4, "$template: the intro is drawn by the row's include" );
             $this->assertSame( $a4, self::read( "design/admin/templates/setup/$template.tpl" ), "$template: both designs the same" );
         }
         $this->assertSame( self::read( self::NAV ), self::read( 'design/admin/templates/setup/logs_nav.tpl' ) );

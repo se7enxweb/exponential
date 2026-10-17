@@ -16,9 +16,8 @@
 </div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
-{include uri='design:setup/logs_nav.tpl' log_nav_current='health'}
-
-<p class="a4-meta">{'How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.'|i18n( 'design/admin/setup/logs' )}</p>
+{include uri='design:setup/logs_nav.tpl' log_nav_current='health'
+         log_nav_intro='How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.'|i18n( 'design/admin/setup/logs' )}
 
 {if $log_health_manager|not}
 <div class="a4-notice is-warn" role="status">{'The log manager is not available, so sizes, limits and archives cannot be listed.'|i18n( 'design/admin/setup/logs' )}</div>

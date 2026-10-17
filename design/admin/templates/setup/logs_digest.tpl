@@ -15,9 +15,8 @@
 </div></div>
 
 <div class="box-bc"><div class="box-ml"><div class="box-content">
-{include uri='design:setup/logs_nav.tpl' log_nav_current='digest'}
-
-<p class="a4-setup-logdigest-intro">{'The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.'|i18n( 'design/admin/setup/logs' )}</p>
+{include uri='design:setup/logs_nav.tpl' log_nav_current='digest'
+         log_nav_intro='The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.'|i18n( 'design/admin/setup/logs' )}
 
 <div class="a4-row a4-setup-logdigest-filters">
     <nav class="a4-setup-logdigest-hours" aria-label="{'Time window'|i18n( 'design/admin/setup/logs' )|wash}">
