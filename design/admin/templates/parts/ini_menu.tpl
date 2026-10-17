@@ -56,7 +56,7 @@
 
 {if ezini_hasvariable( $ini_section, 'Links', 'menu.ini' )}
     {def $ini_menu_url_list   = ezini( $ini_section, 'Links', 'menu.ini' )
-         $name_list  = ezini( $ini_section, 'LinkNames', 'menu.ini' )
+         $name_list  = cond( ezini_hasvariable( $ini_section, 'LinkNames', 'menu.ini' ), ezini( $ini_section, 'LinkNames', 'menu.ini' ), hash() )
          $menu_name  = ''
          $check      = array()
          $has_access = true()

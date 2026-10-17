@@ -321,6 +321,9 @@ class expUISwitchLanguageCatalogue
         $reader = new XMLReader();
         if ( !@$reader->open( $file, null, LIBXML_NONET ) )
             return $keys;
+        // A broken file (a merge in progress) counts what was read before the error, without a PHP warning for
+        // each parser complaint.
+        $useInternal = libxml_use_internal_errors( true );
         $context = '';
         $inName = false;
         try
@@ -368,6 +371,8 @@ class expUISwitchLanguageCatalogue
             // a broken file counts what was read before the error
         }
         $reader->close();
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useInternal );
         return $keys;
     }
 

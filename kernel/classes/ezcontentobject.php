@@ -427,7 +427,7 @@ class eZContentObject extends eZPersistentObject
             // $contentObjectID is not set yet here (it is set below this early return); with version 0 every call
             // raised "Undefined variable $contentObjectID".
             $contentObjectID = $this->attribute( 'id' );
-            eZDebug::writeNotice( "There is no object name for version($version) of the content object ($contentObjectID) in language($lang)", __METHOD__ );
+            eZDebug::writeDebug( "There is no object name for version($version) of the content object ($contentObjectID) in language($lang)", __METHOD__ );
             return $name;
         }
         $db = eZDB::instance();
@@ -502,7 +502,7 @@ class eZContentObject extends eZPersistentObject
         $resCount = count( $result );
         if( $resCount < 1 )
         {
-            eZDebug::writeNotice( "There is no object name for version($version) of the content object ($contentObjectID) in language($lang)", __METHOD__ );
+            eZDebug::writeDebug( "There is no object name for version($version) of the content object ($contentObjectID) in language($lang)", __METHOD__ );
         }
         else if( $resCount > 1 )
         {
@@ -698,25 +698,30 @@ class eZContentObject extends eZPersistentObject
             $language = $this->CurrentLanguage;
         }
 
-        if ( !$language || !isset( $eZContentObjectDataMapCache[$this->ID][$version][$language] ) )
+        // The root node's empty object has neither a version nor a language: key it by '' as PHP did for null,
+        // without the null array offset PHP 8.5 deprecates.
+        $versionKey = $version ?? '';
+        $languageKey = $language ?? '';
+        if ( !$language || !isset( $eZContentObjectDataMapCache[$this->ID][$versionKey][$languageKey] ) )
         {
             $data = $this->contentObjectAttributes( true, $version, $language );
 
             if ( !$language )
             {
                 $language = $this->CurrentLanguage;
+                $languageKey = $language ?? '';
             }
 
             // Store the attributes for later use
-            $this->ContentObjectAttributeArray[$version][$language] = $data;
-            $eZContentObjectDataMapCache[$this->ID][$version][$language] = $data;
+            $this->ContentObjectAttributeArray[$versionKey][$languageKey] = $data;
+            $eZContentObjectDataMapCache[$this->ID][$versionKey][$languageKey] = $data;
         }
         else
         {
-            $data = $eZContentObjectDataMapCache[$this->ID][$version][$language];
+            $data = $eZContentObjectDataMapCache[$this->ID][$versionKey][$languageKey];
         }
 
-        if ( !isset( $this->DataMap[$version][$language] ) )
+        if ( !isset( $this->DataMap[$versionKey][$languageKey] ) )
         {
             $ret = array();
             /* @var eZContentObjectAttribute[] $data */
@@ -725,11 +730,11 @@ class eZContentObject extends eZPersistentObject
                 $identifier = $item->contentClassAttributeIdentifier();
                 $ret[$identifier] = $data[$key];
             }
-            $this->DataMap[$version][$language] = $ret;
+            $this->DataMap[$versionKey][$languageKey] = $ret;
         }
         else
         {
-            $ret = $this->DataMap[$version][$language];
+            $ret = $this->DataMap[$versionKey][$languageKey];
         }
         return $ret;
     }
