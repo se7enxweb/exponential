@@ -81,4 +81,38 @@ class CiWorkflowPullRequestTest extends PHPUnit\Framework\TestCase
             $this->assertDoesNotMatchRegularExpression( '/:\s*write\s*$/m', $text, "$name asks for a write permission" );
         }
     }
+
+    /**
+     * Returns the text of one step of a workflow, from its "- name:" line to the next step
+     *
+     * @param string $text
+     * @param string $name
+     * @return string
+     */
+    private static function step( $text, $name )
+    {
+        if ( !preg_match( '/^(\s+)- name: ' . preg_quote( $name, '/' ) . '\s*\n(.*?)(?=^\1- name:|\z)/ms', $text, $match ) )
+        {
+            self::fail( "no step '$name'" );
+        }
+        return $match[2];
+    }
+
+    /**
+     * The manifest check is a warning on a pull request (the person merging refreshes the
+     * manifest on main) and stays blocking on a push to main.
+     */
+    public function testManifestWarnsOnPullRequestsAndBlocksOnPush()
+    {
+        $step = self::step( self::workflow( 'quality.yml' ), 'File manifest (share/filelist.md5)' );
+        $this->assertStringNotContainsString( 'continue-on-error', $step, 'a push to main must stay blocking' );
+        $this->assertMatchesRegularExpression(
+            "/MANIFEST_BLOCKING:\s*\\$\{\{\s*github\.event_name == 'pull_request' && '0' \|\| '1'\s*\}\}/", $step,
+            'the warning mode is chosen by the event: pull_request only' );
+        // a mismatch ends in exit 1 unless the step is in warning mode
+        $this->assertMatchesRegularExpression(
+            '/if \[ "\$MANIFEST_BLOCKING" = 0 \]; then\s*\n\s*echo "::warning::[^\n]*\n\s*exit 0\s*\n\s*fi\s*\n\s*exit 1\s*\n/', $step,
+            'a mismatch on push must exit 1' );
+        $this->assertStringContainsString( 'php bin/php/checkmanifest.php --all', $step );
+    }
 }

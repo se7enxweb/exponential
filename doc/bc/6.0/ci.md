@@ -19,7 +19,7 @@ hooks, file manifest, code style, PHPStan, the tests of a change) are described 
 
 | Workflow | Runs on | Jobs | Blocks |
 |---|---|---|---|
-| `quality.yml` (Quality) | every push to `main` and every pull request to it, and by hand | **Syntax, manifest, commit messages, code style** (PHP 8.3, Node.js 22), **PHPStan** (PHP 8.3), **Code style sniff tests** (PHP 8.4), **PHP 8.0 (oldest supported) syntax and boot** | yes; code style is a warning |
+| `quality.yml` (Quality) | every push to `main` and every pull request to it, and by hand | **Syntax, manifest, commit messages, code style** (PHP 8.3, Node.js 22), **PHPStan** (PHP 8.3), **Code style sniff tests** (PHP 8.4), **PHP 8.0 (oldest supported) syntax and boot** | yes; code style is a warning, and the file manifest is a warning on a pull request (blocking on a push to `main`) |
 | `phpunit.yml` (PHPUnit) | every push to `main` and every pull request to it (no paths filter: the tests also read templates, stylesheets, scripts, translations, settings and documentation), and by hand | **PHPUnit (PHP 8.1 to 8.5)**, a matrix without a database; **Database tests** on MySQL 8.0 and PostgreSQL 15 (PHP 8.3) | yes |
 | `performance.yml` (Performance) | a push or pull request that changes PHP, templates, `settings/`, the German translation or `tests/benchmark/` | **Micro benchmark (PHP 8.5)** against `tests/benchmark/baseline.json`; a probe over the threshold is measured once more and only the second run counts | no (`continue-on-error`) |
 | `ci-health.yml` (CI health) | Mondays 06:17 UTC, and by hand | **CI health report** | no; it only reports |
@@ -62,7 +62,7 @@ or `origin/main` for a pull request.
 |---|---|
 | PHP syntax of changed files | `git diff --name-only --diff-filter=ACMR $BASE HEAD -- '*.php' \| xargs -r -n1 php -l` |
 | JavaScript syntax of changed files | `git diff --name-only --diff-filter=ACMR $BASE HEAD -- '*.js' ':!*.min.js' \| xargs -r -n1 node --check` (Node.js 22 or later) |
-| File manifest (share/filelist.md5) | `php bin/php/checkmanifest.php --all`; fix with `make manifest-fix` and commit `share/filelist.md5` |
+| File manifest (share/filelist.md5) | `php bin/php/checkmanifest.php --all`; fix with `make manifest-fix` and commit `share/filelist.md5` (blocking on a push to `main`, a warning on a pull request: the person merging refreshes it) |
 | Commit messages | `sh .githooks/check-commit-range $BASE HEAD` (see the policy below) |
 | Code style of changed files | `make phpcs BASE=$BASE` (a warning in CI) |
 | PHPStan | `make devtools` once, then `make phpstan`; only findings missing from `phpstan-baseline.neon` fail |

@@ -146,8 +146,11 @@ them depend on the branch, not on the code:
   `share/filelist.md5`; `make hooks` makes the pre-commit hook refuse a commit that forgets it. When CI finds a stale
   line, the job prints the change to `share/filelist.md5` that makes it match, as an annotation, in the log and in
   the job summary. Run `make manifest-fix` (`php bin/php/checkmanifest.php --fix`) in the branch and commit the
-  result, e.g. `Updated: The file manifest carries the checksums of ...`. The check stays blocking for pull
-  requests: a branch merged with a stale line puts that line on `main`, where every site's upgrade check lists the
+  result, e.g. `Updated: The file manifest carries the checksums of ...`. On a pull request the check is a
+  **warning** (a `::warning::` annotation and a note in the job summary), never a failure: it runs on the merge of
+  the branch into the current `main`, so when `main` changed the same files the contributor cannot produce the
+  merged checksums, and the person merging the pull request refreshes the manifest on `main` in the same push. On
+  a push to `main` the check stays **blocking**: a stale line on `main` makes every site's upgrade check list the
   file as modified.
 - **The commit messages.** `.githooks/check-commit-range <base> <head>` checks every commit of the push or the pull
   request; CI and the local gates run the same script. A commit by a project author (an address listed in
