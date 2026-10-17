@@ -23498,6 +23498,30 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Character set</translation>
     </message>
     <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccesses</translation>
+    </message>
+    <message>
+        <source>%count (default: %default; match: %order)</source>
+        <translation>%count (default: %default; match: %order)</translation>
+    </message>
+    <message>
+        <source>default: %default; match: %order</source>
+        <translation>default: %default; match: %order</translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation>URI</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>Host and URI</source>
+        <translation>Host and URI</translation>
+    </message>
+    <message>
         <source>Internal</source>
         <translation>Internal</translation>
     </message>
@@ -25065,6 +25089,94 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Port</translation>
     </message>
     <message>
+        <source>Server variable</source>
+        <translation>Server variable</translation>
+    </message>
+    <message>
+        <source>Index file</source>
+        <translation>Index file</translation>
+    </message>
+    <message>
+        <source>StaticMatch</source>
+        <translation>StaticMatch</translation>
+    </message>
+    <message>
+        <source>Default siteaccess</source>
+        <translation>Default siteaccess</translation>
+    </message>
+    <message>
+        <source>Another matcher</source>
+        <translation>Another matcher</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Editor</translation>
+    </message>
+    <message>
+        <source>Site with login</source>
+        <translation>Site with login</translation>
+    </message>
+    <message>
+        <source>Every siteaccess of site.ini [SiteAccessSettings] AvailableSiteAccessList and RelatedSiteAccessList, with the rules that lead a request to it. The rules are read from the settings; the links open each siteaccess on the server and port of this page.</source>
+        <translation>Every siteaccess of site.ini [SiteAccessSettings] AvailableSiteAccessList and RelatedSiteAccessList, with the rules that lead a request to it. The rules are read from the settings; the links open each siteaccess on the server and port of this page.</translation>
+    </message>
+    <message>
+        <source>This request</source>
+        <translation>This request</translation>
+    </message>
+    <message>
+        <source>Match order</source>
+        <translation>Match order</translation>
+    </message>
+    <message>
+        <source>every request gets this siteaccess; the rules below are not used</source>
+        <translation>every request gets this siteaccess; the rules below are not used</translation>
+    </message>
+    <message>
+        <source>Resolution map</source>
+        <translation>Resolution map</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Rule</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Entries</translation>
+    </message>
+    <message>
+        <source>matched</source>
+        <translation>matched</translation>
+    </message>
+    <message>
+        <source>not a rule this installation knows</source>
+        <translation>not a rule this installation knows</translation>
+    </message>
+    <message>
+        <source>no entries</source>
+        <translation>no entries</translation>
+    </message>
+    <message>
+        <source>chose %siteaccess</source>
+        <translation>chose %siteaccess</translation>
+    </message>
+    <message>
+        <source>no rule matched</source>
+        <translation>no rule matched</translation>
+    </message>
+    <message>
+        <source>The rules are tried from the top; the first that matches decides.</source>
+        <translation>The rules are tried from the top; the first that matches decides.</translation>
+    </message>
+    <message>
+        <source>All siteaccesses</source>
+        <translation>All siteaccesses</translation>
+    </message>
+    <message>
         <source>no limit</source>
         <translation>no limit</translation>
     </message>
@@ -25127,6 +25239,22 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>default</source>
         <translation>default</translation>
+    </message>
+    <message>
+        <source>this page</source>
+        <translation>this page</translation>
+    </message>
+    <message>
+        <source>related only</source>
+        <translation>related only</translation>
+    </message>
+    <message>
+        <source>no rule reaches it</source>
+        <translation>no rule reaches it</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Design</translation>
     </message>
     <message>
         <source>Tables</source>
@@ -25263,6 +25391,70 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Locale</source>
         <translation>Locale</translation>
+    </message>
+    <message>
+        <source>languages:</source>
+        <translation>languages:</translation>
+    </message>
+    <message>
+        <source>Access extensions</source>
+        <translation>Access extensions</translation>
+    </message>
+    <message>
+        <source>Hidden nodes</source>
+        <translation>Hidden nodes</translation>
+    </message>
+    <message>
+        <source>shown</source>
+        <translation>shown</translation>
+    </message>
+    <message>
+        <source>not shown</source>
+        <translation>not shown</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>required</translation>
+    </message>
+    <message>
+        <source>not required</source>
+        <translation>not required</translation>
+    </message>
+    <message>
+        <source>Matched by</source>
+        <translation>Matched by</translation>
+    </message>
+    <message>
+        <source>the default rule</source>
+        <translation>the default rule</translation>
+    </message>
+    <message>
+        <source>The settings of this siteaccess could not be read.</source>
+        <translation>The settings of this siteaccess could not be read.</translation>
+    </message>
+    <message>
+        <source>Open %siteaccess</source>
+        <translation>Open %siteaccess</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>Settings of %siteaccess</source>
+        <translation>Settings of %siteaccess</translation>
+    </message>
+    <message>
+        <source>site.ini settings</source>
+        <translation>site.ini settings</translation>
+    </message>
+    <message>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
+        <translation>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>

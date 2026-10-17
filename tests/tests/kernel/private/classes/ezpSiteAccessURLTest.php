@@ -210,6 +210,15 @@ class ezpSiteAccessURLTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-eng/', ezpSiteAccessURL::root( 'k1-eng' ) );
     }
 
+    public function testUriBeforeHostKeepsThisHost()
+    {
+        // MatchOrder=uri;host: /k1-admin/ is matched by URI on any host, so the host map of this host does not count
+        $this->rules( array( 'MatchOrder' => 'uri;host',
+                             'HostMatchMapItems' => array( 'www.k1.example.invalid;k1-eng', 'admin.k1.example.invalid;k1-admin' ) ) );
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-admin/', ezpSiteAccessURL::root( 'k1-admin' ) );
+        $this->assertSame( 'https://www.k1.example.invalid/' . $this->index . 'k1-ger/', ezpSiteAccessURL::root( 'k1-ger' ) );
+    }
+
     public function testSiteUrlWhenNeitherUriNorHostMap()
     {
         $this->rules( array( 'MatchOrder' => 'host' ), 'http://shop.k1.example.invalid:9000/path' );
