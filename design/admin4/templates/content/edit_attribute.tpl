@@ -1,6 +1,7 @@
 {default $view_parameters            = array()
          $attribute_categorys        = ezini( 'ClassAttributeSettings', 'CategoryList', 'content.ini' )
          $attribute_default_category = ezini( 'ClassAttributeSettings', 'DefaultCategory', 'content.ini' )}
+{def $exp_attribute_templates = cond( ezini_hasvariable( 'EditSettings', 'AttributeTemplates', 'content.ini' ), ezini( 'EditSettings', 'AttributeTemplates', 'content.ini' ), array() )}
 
 {* Each attribute is a card that names the kind of its input in its corner, and a short one shares its row with a
    short neighbour. The kind, its icon and which datatypes are short come from admininterface.ini
@@ -49,12 +50,18 @@
 <div class="block a4-content-attr ezcca-edit-datatype-{$attribute.data_type_string} ezcca-edit-{$attribute_identifier} a4-content-attr-kind-{$a4_kind|wash}{if and( $is_translating_content|not, $a4_compact|contains( $attribute.data_type_string ) )} is-compact{/if}{if $attribute.is_required} is-required{/if}{if $attribute.has_validation_error} is-invalid{/if}" id="ezcca-attr-{$attribute.id}" tabindex="-1"{if $a4_own_fieldset|not} role="group" aria-labelledby="ezcca-name-{$attribute.id}"{if and( $attribute.has_validation_error, $a4_view_only|not )} aria-describedby="ezcca-error-{$attribute.id}"{/if}{/if}>
 {* The kind of input: a visual hint beside the name, which the control itself states to a screen reader *}
 <span class="a4-content-attr-kind" aria-hidden="true"><span class="a4-icon a4-bi-{first_set( $a4_kind_icons[$a4_kind], $a4_kind_icons[$a4_kind_default] )|wash}"></span>{first_set( $a4_kind_names[$a4_kind], $a4_kind_names[$a4_kind_default] )|i18n( 'design/admin/content/edit_attribute' )|wash}</span>
+{* The templates of content.ini [EditSettings] AttributeTemplates[] (extensions' tools of a field, drawn with the page so
+   nothing moves when scripts start): after the label, or first in the block when the field has its own fieldset or
+   is being translated *}
+{set-block variable=exp_attribute_hook}{foreach $exp_attribute_templates as $exp_attribute_template}{include uri=concat( 'design:', $exp_attribute_template )}{/foreach}{/set-block}
+{if and( $a4_view_only|not, or( $is_translating_content, $attribute.display_info.edit.grouped_input ) )}{$exp_attribute_hook}{/if}
 {* Show view GUI if we can't edit, otherwise: show edit GUI. *}
 {if $a4_view_only}
     <label class="a4-content-attr-label"><span id="ezcca-name-{$attribute.id}">{first_set( $contentclass_attribute.nameList[$content_language], $contentclass_attribute.name )|wash}</span>
         {if $attribute.can_translate|not} <span class="nontranslatable">({'not translatable'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
         {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
     </label>
+    {$exp_attribute_hook}
     {if $is_translating_content}
         <div class="original">
         {attribute_view_gui attribute_base=$attribute_base attribute=$attribute view_parameters=$view_parameters}
@@ -107,6 +114,7 @@
                 {if $attribute.is_information_collector} <span class="collector">({'information collector'|i18n( 'design/admin/content/edit_attribute' )})</span>{/if}
                 {if $contentclass_attribute.description} <span class="classattribute-description">{first_set( $contentclass_attribute.descriptionList[$content_language], $contentclass_attribute.description)|wash}</span>{/if}
             </label>
+            {$exp_attribute_hook}
             {if $attribute.has_validation_error}<p class="a4-field-error a4-content-attr-error" id="ezcca-error-{$attribute.id}"><span class="a4-icon a4-bi-x-circle-fill" aria-hidden="true"></span> {if $attribute.validation_error}{$attribute.validation_error|wash}{else}{'Required data is either missing or is invalid'|i18n( 'design/admin/content/edit' )}{/if}</p>{/if}
             {set-block variable=exp_text_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$attribute.language_code}{/set-block}{if $exp_text_attrs|ne( '' )}<div class="exp-content-text"{$exp_text_attrs}>{/if}
             {attribute_edit_gui attribute_base=$attribute_base attribute=$attribute view_parameters=$view_parameters}
@@ -116,7 +124,7 @@
     {/if}
 {/if}
 </div>
-{undef $contentclass_attribute $a4_view_only $a4_own_fieldset}
+{undef $contentclass_attribute $a4_view_only $a4_own_fieldset $exp_attribute_hook}
 {/foreach}
 </div>
 {if $attribute_group|ne( $attribute_default_category )}
@@ -129,5 +137,6 @@
 {ezscript( array( 'page/content_edit_attribute.js' ) )}
 {* /if *}
 {/run-once}
+{undef $exp_attribute_templates}
 {undef $a4_kind_of $a4_kind_names $a4_kind_icons $a4_kind_default $a4_compact $a4_nav_from $a4_kind $a4_attr_count}
 {/default}

@@ -270,9 +270,22 @@ html[data-a4-theme="dark"] {
 .a4-page *::after {
   box-sizing: border-box;
 }
-.a4-page [hidden] {
+.a4-page [hidden]:not(.exp-js-only),
+html:not(.a4-js) .a4-page .exp-js-only[hidden],
+.a4-page .exp-js-only.exp-js-late[hidden] {
   display: none !important;
 }
+/* Script-only controls (.exp-js-only: a search field, a filter count, "select all", move buttons) carry hidden in the
+   markup, so a page without scripts does not offer them, and the page's script sets hidden to false. When the frame's
+   scripts run (html.a4-js, set by a4_head.js before the first paint) they are drawn from the first paint instead of
+   when that script runs at the end of the page: until 2026-10 class/classlist moved its whole list down by the search
+   field's height while it loaded. The defaults below have no specificity, so a component's own display (.a4-field,
+   .a4-btn, .a4-filterbar) still wins. .exp-js-late keeps a control hidden until its script decides to show it (only
+   when there is something to select). The filter count keeps its line free for the number the script writes. */
+:where(html.a4-js .a4-page .exp-js-only[hidden]) { display: block; }
+:where(html.a4-js .a4-page :is(label, span, a).exp-js-only[hidden]) { display: inline; }
+:where(html.a4-js .a4-page :is(input, button, select).exp-js-only[hidden]) { display: inline-block; }
+html.a4-js .a4-page .a4-filter-count.exp-js-only:empty { min-height: 1lh; }
 :where(.a4-page) p {
   margin: 0;
 }

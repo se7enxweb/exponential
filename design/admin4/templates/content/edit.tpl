@@ -20,7 +20,19 @@
             <div id="fix">
 
 
-                <div id="controlbar-top" class="controlbar controlbar-fixed-disabled">
+                {* The autosave (content.ini [EditSettings] AdditionalTemplates[]=content/edit/autosave.tpl) fills .button-right
+                   with its save status and preview link and, with autosave.ini HideStoreDraftButton=enabled, hides the
+                   Store draft button when its script starts. The classes let admin4.css draw that state at the first paint
+                   (html.a4-js), so the buttons and the form do not move when the script runs. *}
+                {def $a4_edit_bar_class = ''}
+                {if ezini( 'EditSettings', 'AdditionalTemplates', 'content.ini' )|contains( 'content/edit/autosave.tpl' )}
+                    {set $a4_edit_bar_class = ' a4-edit-bar-autosave'}
+                    {if and( ezini_hasvariable( 'AutosaveSettings', 'HideStoreDraftButton', 'autosave.ini' ), ezini( 'AutosaveSettings', 'HideStoreDraftButton', 'autosave.ini' )|eq( 'enabled' ) )}
+                        {set $a4_edit_bar_class = concat( $a4_edit_bar_class, ' a4-edit-bar-autosave-store' )}
+                    {/if}
+                {/if}
+                <div id="controlbar-top" class="controlbar controlbar-fixed-disabled{$a4_edit_bar_class}">
+                {undef $a4_edit_bar_class}
                     {* DESIGN: Control bar START *}<div class="box-bc">
                         <div class="box-ml">
                             <div class="button-left">
