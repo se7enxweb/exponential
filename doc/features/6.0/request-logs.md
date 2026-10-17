@@ -50,7 +50,7 @@ Both logs start their lines with the prefix eZLog writes, the time and the maske
 | `404` | the status of the answer: 404 or 410 |
 | `GET /site/no-such-page?q=***` | the method and the URI: the path as requested (secrets and e-mail addresses in it masked), every query value `***`, control characters removed, spaces encoded, at most `MaxURILength` characters (a longer one ends in `...`) |
 | `siteaccess=` | the siteaccess that answered |
-| `reason=` | why the page is missing, the first reason the kernel found: `module:<name>` (no such module), `view:<module>/<view>` (no such view), `disabled:<module>[/<view>]` (switched off for this siteaccess), `node:<id>`, `object:<id>`, `rule:<name>` (a rule of `requestrules.ini` that answers "not found"), or `kernel:<error type>/<error number>` when nothing more is known |
+| `reason=` | why the page is missing, the first reason the kernel found: `module:<name>` (no such module), `view:<module>/<view>` (no such view), `disabled:<module>[/<view>]` (switched off for this siteaccess), `node:<id>`, `object:<id>`, `rule:<name>` (a rule of `requestrules.ini` that answers "not found"), `file:<object>/<attribute>` (a download whose file is not available), or `kernel:<error type>/<error number>` when nothing more is known |
 | `node=` | the node id when it is known, else `-` |
 | `referrer=` | the referring address, written like the URI, or `-` |
 | `ua=3f2a9c1b "..."` | the first 8 hexadecimal digits of the SHA-1 of the user agent, and its first 60 characters without quotes and control characters (`ua=- ""` without one) |

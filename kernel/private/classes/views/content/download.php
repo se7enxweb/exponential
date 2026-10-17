@@ -78,7 +78,12 @@ class Download extends \Exponential\Runnable\ModuleView
 
         if ( $result == \eZBinaryFileHandler::RESULT_UNAVAILABLE )
         {
-            \eZDebug::writeError( "The specified file could not be found." );
+            // The request ends as not available: one line in 404.log (reason file:<object>/<attribute>), or in
+            // security.log for a classified probe, while site.ini [RequestLogSettings] NotFoundLog is enabled
+            $fileLine = "The specified file could not be found.";
+            if ( !class_exists( 'expRequestLog' )
+                 || !\expRequestLog::reason( 'file', $contentObject->attribute( 'id' ) . '/' . $contentObjectAttribute->attribute( 'id' ), null, $fileLine ) )
+                \eZDebug::writeError( $fileLine );
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
         }
 
