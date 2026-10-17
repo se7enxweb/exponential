@@ -239,25 +239,33 @@ class eZWordToImageOperator
                             $map = array_merge( $map,
                                                 $themeRepositoryINI->variable( $configGroup, $mapName ) );
                         }
-                        // Load override mappings if they exist. An override names a file of the theme it was
-                        // written for (an extension's ClassMap[]=filesystems/folder.png is a crystal path); one this
-                        // theme does not have is left out, so the theme's own entry or its Default is used instead of
-                        // an address that is not there (the content tree builds its icon URLs from this map).
+                        // Load override mappings if they exist
                         if ( $ini->hasVariable( $configGroup, $mapName ) )
                         {
-                            $overrideMap = $ini->variable( $configGroup, $mapName );
-                            foreach ( is_array( $overrideMap ) ? $overrideMap : array() as $key => $file )
+                            $map = array_merge( $map,
+                                                $ini->variable( $configGroup, $mapName ) );
+                        }
+                        // A mapping names a file of the theme it was written for: an extension's
+                        // ClassMap[]=filesystems/folder.png is a crystal path, and the theme's icon.ini is read with the
+                        // overrides of every extension too. One this theme does not have is left out, so the theme's
+                        // Default is used instead of an address that is not there (the content tree builds its icon
+                        // URLs from this map). Checked once per theme list; the answer is kept below.
+                        if ( $sizePathList )
+                        {
+                            $sizePaths = array_unique( $sizePathList );
+                            foreach ( $map as $key => $file )
                             {
-                                if ( !$sizePathList )
-                                    $map[$key] = $file;
-                                foreach ( array_unique( $sizePathList ) as $sizePath )
+                                $found = false;
+                                foreach ( $sizePaths as $sizePath )
                                 {
                                     if ( is_file( $siteDir . $themePath . '/' . $sizePath . '/' . $file ) )
                                     {
-                                        $map[$key] = $file;
+                                        $found = true;
                                         break;
                                     }
                                 }
+                                if ( !$found )
+                                    unset( $map[$key] );
                             }
                         }
 
