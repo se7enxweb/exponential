@@ -887,7 +887,10 @@ class eZDebug
                      "MemoryUsage" => $usedMemory );
         $debug->TimePoints[] = $tp;
         $desc = "Timing Point: $description";
-        foreach ( array( self::LEVEL_NOTICE, self::LEVEL_WARNING, self::LEVEL_ERROR, self::LEVEL_DEBUG, self::LEVEL_STRICT ) as $lvl )
+        // The last timing point is written before the first message of a request as context, into debug.log
+        // only: in error.log, warning.log and notice.log it counted as an entry of its own, a "Timing Point:
+        // Module start" line with no problem in it ahead of every first error, warning or notice.
+        foreach ( array( self::LEVEL_DEBUG ) as $lvl )
         {
             if ( isset( $debug->TmpTimePoints[$lvl] ) )
                 $debug->TmpTimePoints[$lvl] = array();
