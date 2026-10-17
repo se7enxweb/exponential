@@ -13,6 +13,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminTreeViewTest extends PHPUnit\Framework\TestCase
 {
     const SCRIPT = 'design/admin4/javascript/contentstructuremenu_dynamic.js';
@@ -20,7 +22,7 @@ class AdminTreeViewTest extends PHPUnit\Framework\TestCase
 
     private static function file( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     public function testTheTemplateMakesTheListATree()

@@ -13,6 +13,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminSelfContainedTest extends PHPUnit\Framework\TestCase
 {
     /** Where admin4 finds a template itself */
@@ -92,7 +94,7 @@ class AdminSelfContainedTest extends PHPUnit\Framework\TestCase
         $references = array();
         foreach ( $sources as $file )
         {
-            foreach ( self::designReferences( (string)file_get_contents( $file ) ) as $path )
+            foreach ( self::designReferences( AdminFiles::read( $file ) ) as $path )
             {
                 if ( !isset( $references[$path] ) )
                     $references[$path] = substr( $file, strlen( $root ) + 1 );
@@ -108,10 +110,11 @@ class AdminSelfContainedTest extends PHPUnit\Framework\TestCase
     {
         $root = self::root();
         $references = array();
-        foreach ( array_merge( glob( "$root/settings/{,*/,*/*/}override.ini*", GLOB_BRACE ) ?: array(),
+        foreach ( array_merge( AdminFiles::files( "$root/settings/{,*/,*/*/}override.ini*", GLOB_BRACE ),
+                               // extensions are optional: a checkout without any has no override of theirs
                                glob( "$root/extension/*/settings/{,*/,*/*/}override.ini*", GLOB_BRACE ) ?: array() ) as $file )
         {
-            preg_match_all( '/^MatchFile=(\S+)/m', (string)file_get_contents( $file ), $m );
+            preg_match_all( '/^MatchFile=(\S+)/m', AdminFiles::read( $file ), $m );
             foreach ( $m[1] as $path )
             {
                 if ( !isset( $references[$path] ) )

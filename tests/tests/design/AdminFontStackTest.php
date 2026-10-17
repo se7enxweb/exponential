@@ -14,6 +14,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminFontStackTest extends PHPUnit\Framework\TestCase
 {
     const STACK = '"Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, var(--a4-font-intl), sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
@@ -63,7 +65,7 @@ class AdminFontStackTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( 'design/admin4/stylesheets/components.css', 'design/admin/stylesheets/components.css' ) as $path )
         {
-            $css = (string)file_get_contents( self::root() . '/' . $path );
+            $css = AdminFiles::read( self::root() . '/' . $path );
             $this->assertSame( 1, preg_match_all( '/--a4-font:\s*([^;]+);/', $css, $m ), "$path declares --a4-font once" );
             $this->assertSame( self::STACK, trim( $m[1][0] ), "$path: --a4-font" );
         }
@@ -76,7 +78,7 @@ class AdminFontStackTest extends PHPUnit\Framework\TestCase
         $this->assertNotEmpty( $files );
         foreach ( $files as $path )
         {
-            $css = preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( self::root() . '/' . $path ) );
+            $css = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( self::root() . '/' . $path ) );
             preg_match_all( '/(?<![\w-])font-family\s*:\s*([^;}]+)/i', $css, $m );
             foreach ( $m[1] as $value )
             {
@@ -210,9 +212,9 @@ class AdminFontStackTest extends PHPUnit\Framework\TestCase
 
     public function testTheBodyAndTheEditorContentUseTheFontToken()
     {
-        $core = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/core.css' );
+        $core = AdminFiles::read( self::root() . '/design/admin4/stylesheets/core.css' );
         $this->assertMatchesRegularExpression( '/^body\b[^{]*\{[^}]*font-family:\s*var\(--a4-font[,)]/m', $core );
-        $editor = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/editor_content.css' );
+        $editor = AdminFiles::read( self::root() . '/design/admin4/stylesheets/editor_content.css' );
         $this->assertMatchesRegularExpression( '/body:is\(\.mceContentBody, \.mce-content-body\) \{[^}]*font-family:\s*var\(--a4-font\)/', $editor );
     }
 }

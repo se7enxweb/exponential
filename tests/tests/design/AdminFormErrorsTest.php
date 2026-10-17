@@ -13,11 +13,13 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
 {
     private static function read( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     public function testEveryAttributeIsANamedGroupThatTheSummaryCanReach()
@@ -43,7 +45,7 @@ class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
         foreach ( new RecursiveIteratorIterator( new RecursiveDirectoryIterator( "$root/design/admin4", FilesystemIterator::SKIP_DOTS ) ) as $file )
         {
             if ( substr( (string)$file, -4 ) !== '.tpl' ) continue;
-            $text = (string)file_get_contents( (string)$file );
+            $text = AdminFiles::read( (string)$file );
             if ( strpos( $text, "design:content/edit_attribute.tpl" ) !== false )
             {
                 $callers[] = substr( (string)$file, strlen( $root ) + 1 );

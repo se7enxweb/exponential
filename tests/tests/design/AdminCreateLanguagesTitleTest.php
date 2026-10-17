@@ -11,6 +11,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminCreateLanguagesTitleTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -21,7 +23,7 @@ class AdminCreateLanguagesTitleTest extends PHPUnit\Framework\TestCase
     /** The code of content/action from the fetch of create_languages.tpl to the view's return */
     private static function languageChoice()
     {
-        $code = (string)file_get_contents( self::root() . '/kernel/private/classes/views/content/action.php' );
+        $code = AdminFiles::read( self::root() . '/kernel/private/classes/views/content/action.php' );
         $start = strpos( $code, "\$tpl->fetch( 'design:content/create_languages.tpl' )" );
         self::assertNotFalse( $start, 'content/action fetches create_languages.tpl' );
         $end = strpos( $code, 'return $this->viewResult(', $start );
@@ -46,6 +48,6 @@ class AdminCreateLanguagesTitleTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'Inhalt', $xpath->evaluate( "string(//context[name='kernel/content']/message[source='Content']/translation)" ) );
         // the page's own heading uses the same text
         $this->assertStringContainsString( "{'Language selection'|i18n( 'design/admin/content/create_languages' )}",
-            (string)file_get_contents( self::root() . '/design/admin4/templates/content/create_languages.tpl' ) );
+            AdminFiles::read( self::root() . '/design/admin4/templates/content/create_languages.tpl' ) );
     }
 }
