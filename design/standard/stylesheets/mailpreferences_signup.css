@@ -38,6 +38,10 @@ fieldset.mp-signup-box > .mp-signup-option > label {
   margin: 0;
   float: none;
   width: auto;
+  /* a design whose labels do not wrap (admin4's core.css: nowrap) ran a category's description past a phone's edge */
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 fieldset.mp-signup-box .mp-signup-note {
   opacity: .8;

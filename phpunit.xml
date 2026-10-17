@@ -73,6 +73,12 @@
             <directory suffix="Test.php">tests/tests/kernel/contentcheck</directory>
         </testsuite>
 
+        <!-- the log viewer (doc/features/6.0/log-viewer.md): parser, tailing by offset, masking, path safety, the
+             bounded search and the actions, on synthetic files in the temporary directory; no database -->
+        <testsuite name="kernel-logviewer">
+            <directory suffix="Test.php">tests/tests/kernel/logviewer</directory>
+        </testsuite>
+
         <testsuite name="lib">
             <directory suffix="Test.php">tests/tests/lib</directory>
             <exclude>tests/tests/lib/ezdb/mongodb</exclude>

@@ -157,6 +157,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **legacy bridge**: the package that runs Exponential 6 inside the Symfony platform. [Legacy bridge](features/6.0/legacy-bridge.md), [specification](specifications/6.0/legacy-bridge-bundle.md).
 - **loading order**: the order in which active **extensions** are read; later wins. [Extension loading order](features/6.0/extension-loading-order.md).
 - **location**: another word for a **node**. [Content model](guides/content-model-and-editing.md).
+- **log viewer**: Setup > Log files (`setup/logs`) and `./console exp:logs`: the log files followed live, searched with their rotations, masked by default, cross-referenced by request and error reference. [The log viewer](features/6.0/log-viewer.md).
 
 ## M
 

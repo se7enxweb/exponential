@@ -14826,6 +14826,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Log files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Follow, search and cross-reference the log files.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -56910,6 +56918,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Site data</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -69745,6 +69777,1053 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/standard/ezie</name>
     <message>
         <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/logs</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotated archives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log file %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file was rotated. The next line written starts a new file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file was emptied.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archived rotation was removed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action could not be carried out. The web server may not change the file or its directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file asked for is not a log file this viewer may open (settings/logviewer.ini [LogViewerSettings] Directories[] and FilePatterns[]). The default file is shown instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The search could not be run:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The search text is too long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>"%field" is not a time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The IP address may only hold digits, letters a to f, dots and colons.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The regular expression is not valid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error reference looks like ERR-0123456789.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no log file this viewer may open yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compressed, read only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archived rotation, not followed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail addresses, IP addresses and secrets are masked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown unmasked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Following</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Follow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wrap lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mask again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show unmasked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find in the loaded lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find in view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous match (Shift+Enter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous match</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next match (Enter)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next match</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keys in the list: Space pauses or resumes, End jumps to the newest line, Up and Down move, Enter opens a line, n and N find the next and previous match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search the log files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Literal text, or a regular expression (without delimiters) when Regular expression is ticked. A search stops after a few seconds and offers to go on.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Regular expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Match case</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Levels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Request address contains</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Client IP starts with</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error reference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The reference an error page showed: finds its line in every kernel log and its rotations, and the lines of its request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All kernel logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All log files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include rotated files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to following</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count entries found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(the search stopped after its time limit; more may follow)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(the search stopped after reading its share; more may follow)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(the first page of results)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(the regular expression needed too much work on a line and was stopped; make it more specific)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The request of %reference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No other line of this request was found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The audit of this moment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing matches the search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>More results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From byte</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To byte</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download (gzip)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty the file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove this rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each of these asks for a confirmation first and is recorded in the audit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting %seconds s (too many requests)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No answer from the server; trying again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file can no longer be read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count new lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 new line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file was rotated or emptied; following the new one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Match %index of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No match</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count lines kept (the oldest are dropped from the page, never from the file)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Entry at %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Client</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Byte offset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines of the same request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Looking for the lines of this request…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug output of this request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No debug output of this request was logged.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find %reference everywhere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(cut: the entry is longer than the viewer keeps)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Loading more results…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No more results.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The request failed: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server may not read this file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rate: measuring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%rate lines/min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate %name now?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty %name?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove %name?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file becomes %name.1 and the older rotations move one number up; the oldest beyond %count is removed. The next line written starts a new file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every line of the file (%size) is removed for good. Download it first if it may still be needed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archived rotation (%size) is removed for good.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action is recorded in the audit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy permalink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Link copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Permalink</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link could not be copied; it is selected in the field, copy it with the keyboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count lines copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 line copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The lines could not be copied. Select them in the list and copy them with the keyboard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size are removed for good.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size in all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size with their archives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>At most %days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Carry out %count steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compress archives…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compress the archives of %key?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compressed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete archives…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete the old archives of %key?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done: %count steps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty %key after archiving it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty (archive first)…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Growth</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keep %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last write</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lines (about)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not compressed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not everything was done (%error): %done of %count steps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not managed here: %keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not writable: %owner:%group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing to do: no file needs this action now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Older than (days)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prune all archives…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prune the archives of every log?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate %key now?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate all over their limit…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate at %size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate every log over its limit?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate now…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The actions are switched off in settings/logviewer.ini [ActionSettings].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The log files, their archives and their limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The steps of this action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot write this file or its directory: owner %owner, group %group.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web server, read only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>compress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>over the limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size of %limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%size per hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(no budget set)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives compressed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives kept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives removed after</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Archives: %size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Budget: logviewer.ini [HealthSettings] DiskBudget</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current files: %size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disk use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every log is within its limit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fastest growing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Largest size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Newest error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No log is known to grow yet: growth is measured between rotations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not writable by the web server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Over their size limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read only. Each value names the settings file, section and variable it comes from; change it there (in an override), not here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation settings in effect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The log files belong to different users (%owners). A file created by one user may not be writable by the other; give them one owner, or a shared group with group write.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The log manager is not available, so sizes, limits and archives cannot be listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server can write every log.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The web server cannot append to these files, so what it logs is lost. They were usually created by a command line or Exponential Velocity running as another user.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no log to show.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>built-in default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none in the last lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>of a budget of %budget (%percent %)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>over limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide known messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show known messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Since %time; levels: %levels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count known messages are hidden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no log this digest can read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count entries in %groups messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the first %size of the window were read; the file holds more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last seen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Known</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the newest entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mark as known</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No error or warning in this window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

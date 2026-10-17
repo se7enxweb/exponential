@@ -225,7 +225,7 @@ $ViewList["extensions"] = array(
 // with managecache alone must keep it. A user with none of them gets the access denied page, which names the policy
 // of the last function eZUser::hasAccessToView() asked (system_info); any one of the listed functions opens the view.
 $ViewList['menu'] = array(
-    'functions' => array( 'setup or administrate or managecache or managecronjobs or preload or system_info' ),
+    'functions' => array( 'setup or administrate or managecache or managecronjobs or preload or system_info or logs' ),
     'script' => 'setupmenu.php',
     'default_navigation_part' => 'ezsetupnavigationpart',
     'params' => array( ) );
@@ -326,6 +326,66 @@ $ViewList['systemupgrade'] = array(
                                     'DownloadSchemaReportButton' => 'DownloadSchemaReport' ),
     'params' => array( ) );
 
+// The log viewer (doc/features/6.0/log-viewer.md): the page, its feed (polls, searches, related lines; JSON, short
+// requests, never held open) and its actions (POST only). The page's permalinks name a log by its key and its state
+// by view parameters: setup/logs/view/<key>/(level)/error/(search)/timeout/(follow)/0 (expLogPermalink); a link of
+// the old form setup/logs?file=<path> answers 301 with the permalink.
+$ViewList['logs'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logs.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array( 'Mode', 'Key' ),
+    'unordered_params' => array( 'rotation' => 'rotation', 'level' => 'level', 'search' => 'search', 'regex' => 'regex',
+                                 'case' => 'case', 'from' => 'from', 'to' => 'to', 'siteaccess' => 'siteaccess', 'uri' => 'uri',
+                                 'ip' => 'ip', 'reference' => 'reference', 'scope' => 'scope', 'rotations' => 'rotations',
+                                 'cursor' => 'cursor', 'offset' => 'offset', 'follow' => 'follow', 'wrap' => 'wrap',
+                                 'unmask' => 'unmask', 'done' => 'done', 'ok' => 'ok', 'archive' => 'archive' ) );
+
+// Log management (doc/features/6.0/log-viewer.md, "Managing logs"): every log with its archives, sizes and limits,
+// rotate, empty, compress and prune one log or all of them, always with a preview first (GET shows, POST with the
+// form token and ConfirmButton changes). Policy setup/managelogs; the actions also need [ActionSettings].
+$ViewList['logsmanage'] = array(
+    'functions' => array( 'managelogs' ),
+    'script' => 'logsmanage.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array( 'Key' ),
+    'unordered_params' => array( 'op' => 'op', 'days' => 'days' ) );
+
+// The health of the logs: disk use against the budget, the fastest growing, those over their limit, files the web
+// server cannot write, the newest error per log, and the effective rotation settings with where each is set.
+$ViewList['logshealth'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logshealth.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array() );
+
+// The error digest: the distinct messages of the last hours per log, normalized and counted, each linked to its
+// filtered view; "known" messages are hidden per user (preference admin_logviewer_known, POST with the form token).
+$ViewList['logsdigest'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logsdigest.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array( 'Key' ),
+    'unordered_params' => array( 'hours' => 'hours', 'known' => 'known' ) );
+
+$ViewList['logsfeed'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logsfeed.php',
+    'ui_context' => 'ajax',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array() );
+
+$ViewList['logsaction'] = array(
+    'functions' => array( 'logs' ),
+    'script' => 'logsaction.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array() );
+
 
 /*! Provided for backwards compatibility */
 $ViewList["toolbarlist"] = array(
@@ -389,6 +449,10 @@ $ViewList["templatecreate"] = array(
 $FunctionList = array();
 $FunctionList['administrate'] = array();
 $FunctionList['install'] = array();
+// the log viewer: read (logs), rotate, empty and remove archives (managelogs), see unmasked (unmasklogs)
+$FunctionList['logs'] = array();
+$FunctionList['managelogs'] = array();
+$FunctionList['unmasklogs'] = array();
 $FunctionList['managecache'] = array();
 $FunctionList['managecronjobs'] = array();
 $FunctionList['preload'] = array();

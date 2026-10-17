@@ -76,6 +76,20 @@ jQuery(function( $ )
             }
         } );
     } );
+    // A control a datatype template draws without a name of its own (no label, title or ARIA name: the author list's
+    // name and email fields, the selects of an enhanced selection) is named by its attribute's name and, in a table,
+    // by its column's header too, so no field of the form is announced without a name (WCAG 4.1.2)
+    $('.a4-content-attr').each( function(){
+        var name = document.getElementById( this.id.replace( 'ezcca-attr-', 'ezcca-name-' ) );
+        if ( !name ) return;
+        dataControls( this ).each( function(){
+            if ( ( this.labels && this.labels.length ) || this.title || this.getAttribute('aria-label') || this.getAttribute('aria-labelledby') ) return;
+            var label = $.trim( $( name ).text() ), cell = $( this ).closest('td, th')[0], row = cell && $( cell ).closest('table').find('tr').first()[0];
+            var head = row && row.cells[cell.cellIndex];
+            if ( head && head.tagName === 'TH' && head !== cell && $.trim( $( head ).text() ) ) label += ': ' + $.trim( $( head ).text() );
+            if ( label ) this.setAttribute( 'aria-label', label );
+        } );
+    } );
     // A failed store: the summary takes the focus, so it is read and its links lead to the fields
     $('#a4-error-summary').trigger('focus');
 });

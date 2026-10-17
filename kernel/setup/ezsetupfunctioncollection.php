@@ -100,6 +100,15 @@ class eZSetupFunctionCollection
                                          'all' => $all,
                                          'count' => count( array_intersect( $paused, $defined ) ) ) );
     }
+
+    /**
+     * The files of the log viewer's navigator (expLogViewer::navigatorForCurrentUser()): group => files with size,
+     * time and line rate; empty without setup/logs or with the viewer switched off.
+     */
+    function fetchLogFiles()
+    {
+        return array( 'result' => expLogViewer::navigatorForCurrentUser() );
+    }
 }
 }
 

@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
         <translation>Files in the storage that nothing uses, and files with the wrong owner or mode.</translation>
     </message>
+    <message>
+        <source>Log files</source>
+        <translation>Log files</translation>
+    </message>
+    <message>
+        <source>Follow, search and cross-reference the log files.</source>
+        <translation>Follow, search and cross-reference the log files.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -58040,6 +58048,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Site data</source>
         <translation>Site data</translation>
     </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Log files</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirm</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>Manage logs</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>Log health</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Error digest</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -69926,6 +69958,1053 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Edit</source>
         <translation>Edit</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/logs</name>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Warning</translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation>Notice</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>Debug</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensions</translation>
+    </message>
+    <message>
+        <source>Rotated archives</source>
+        <translation>Rotated archives</translation>
+    </message>
+    <message>
+        <source>Log file %name</source>
+        <translation>Log file %name</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>Log files</translation>
+    </message>
+    <message>
+        <source>Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.</source>
+        <translation>Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.</translation>
+    </message>
+    <message>
+        <source>The file was rotated. The next line written starts a new file.</source>
+        <translation>The file was rotated. The next line written starts a new file.</translation>
+    </message>
+    <message>
+        <source>The file was emptied.</source>
+        <translation>The file was emptied.</translation>
+    </message>
+    <message>
+        <source>The archived rotation was removed.</source>
+        <translation>The archived rotation was removed.</translation>
+    </message>
+    <message>
+        <source>The action could not be carried out. The web server may not change the file or its directory.</source>
+        <translation>The action could not be carried out. The web server may not change the file or its directory.</translation>
+    </message>
+    <message>
+        <source>The file asked for is not a log file this viewer may open (settings/logviewer.ini [LogViewerSettings] Directories[] and FilePatterns[]). The default file is shown instead.</source>
+        <translation>The file asked for is not a log file this viewer may open (settings/logviewer.ini [LogViewerSettings] Directories[] and FilePatterns[]). The default file is shown instead.</translation>
+    </message>
+    <message>
+        <source>The search could not be run:</source>
+        <translation>The search could not be run:</translation>
+    </message>
+    <message>
+        <source>The search text is too long.</source>
+        <translation>The search text is too long.</translation>
+    </message>
+    <message>
+        <source>"%field" is not a time.</source>
+        <translation>"%field" is not a time.</translation>
+    </message>
+    <message>
+        <source>The IP address may only hold digits, letters a to f, dots and colons.</source>
+        <translation>The IP address may only hold digits, letters a to f, dots and colons.</translation>
+    </message>
+    <message>
+        <source>The regular expression is not valid.</source>
+        <translation>The regular expression is not valid.</translation>
+    </message>
+    <message>
+        <source>An error reference looks like ERR-0123456789.</source>
+        <translation>An error reference looks like ERR-0123456789.</translation>
+    </message>
+    <message>
+        <source>There is no log file this viewer may open yet.</source>
+        <translation>There is no log file this viewer may open yet.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>Changed %time</source>
+        <translation>Changed %time</translation>
+    </message>
+    <message>
+        <source>Compressed, read only</source>
+        <translation>Compressed, read only</translation>
+    </message>
+    <message>
+        <source>Archived rotation, not followed</source>
+        <translation>Archived rotation, not followed</translation>
+    </message>
+    <message>
+        <source>E-mail addresses, IP addresses and secrets are masked</source>
+        <translation>E-mail addresses, IP addresses and secrets are masked</translation>
+    </message>
+    <message>
+        <source>Shown unmasked</source>
+        <translation>Shown unmasked</translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation>Controls</translation>
+    </message>
+    <message>
+        <source>Search results</source>
+        <translation>Search results</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>Archive</translation>
+    </message>
+    <message>
+        <source>Following</source>
+        <translation>Following</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>Pause</translation>
+    </message>
+    <message>
+        <source>Newest</source>
+        <translation>Newest</translation>
+    </message>
+    <message>
+        <source>Follow</source>
+        <translation>Follow</translation>
+    </message>
+    <message>
+        <source>Wrap lines</source>
+        <translation>Wrap lines</translation>
+    </message>
+    <message>
+        <source>Mask again</source>
+        <translation>Mask again</translation>
+    </message>
+    <message>
+        <source>Show unmasked</source>
+        <translation>Show unmasked</translation>
+    </message>
+    <message>
+        <source>Find in the loaded lines</source>
+        <translation>Find in the loaded lines</translation>
+    </message>
+    <message>
+        <source>Find in view</source>
+        <translation>Find in view</translation>
+    </message>
+    <message>
+        <source>Previous match (Shift+Enter)</source>
+        <translation>Previous match (Shift+Enter)</translation>
+    </message>
+    <message>
+        <source>Previous match</source>
+        <translation>Previous match</translation>
+    </message>
+    <message>
+        <source>Next match (Enter)</source>
+        <translation>Next match (Enter)</translation>
+    </message>
+    <message>
+        <source>Next match</source>
+        <translation>Next match</translation>
+    </message>
+    <message>
+        <source>Keys in the list: Space pauses or resumes, End jumps to the newest line, Up and Down move, Enter opens a line, n and N find the next and previous match.</source>
+        <translation>Keys in the list: Space pauses or resumes, End jumps to the newest line, Up and Down move, Enter opens a line, n and N find the next and previous match.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Search</translation>
+    </message>
+    <message>
+        <source>Search the log files</source>
+        <translation>Search the log files</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Text</translation>
+    </message>
+    <message>
+        <source>Literal text, or a regular expression (without delimiters) when Regular expression is ticked. A search stops after a few seconds and offers to go on.</source>
+        <translation>Literal text, or a regular expression (without delimiters) when Regular expression is ticked. A search stops after a few seconds and offers to go on.</translation>
+    </message>
+    <message>
+        <source>Regular expression</source>
+        <translation>Regular expression</translation>
+    </message>
+    <message>
+        <source>Match case</source>
+        <translation>Match case</translation>
+    </message>
+    <message>
+        <source>Levels</source>
+        <translation>Levels</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>From</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>To</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Request address contains</source>
+        <translation>Request address contains</translation>
+    </message>
+    <message>
+        <source>Client IP starts with</source>
+        <translation>Client IP starts with</translation>
+    </message>
+    <message>
+        <source>Error reference</source>
+        <translation>Error reference</translation>
+    </message>
+    <message>
+        <source>The reference an error page showed: finds its line in every kernel log and its rotations, and the lines of its request.</source>
+        <translation>The reference an error page showed: finds its line in every kernel log and its rotations, and the lines of its request.</translation>
+    </message>
+    <message>
+        <source>Search in</source>
+        <translation>Search in</translation>
+    </message>
+    <message>
+        <source>This file</source>
+        <translation>This file</translation>
+    </message>
+    <message>
+        <source>All kernel logs</source>
+        <translation>All kernel logs</translation>
+    </message>
+    <message>
+        <source>All log files</source>
+        <translation>All log files</translation>
+    </message>
+    <message>
+        <source>Include rotated files</source>
+        <translation>Include rotated files</translation>
+    </message>
+    <message>
+        <source>Back to following</source>
+        <translation>Back to following</translation>
+    </message>
+    <message>
+        <source>%count entries found</source>
+        <translation>%count entries found</translation>
+    </message>
+    <message>
+        <source>(the search stopped after its time limit; more may follow)</source>
+        <translation>(the search stopped after its time limit; more may follow)</translation>
+    </message>
+    <message>
+        <source>(the search stopped after reading its share; more may follow)</source>
+        <translation>(the search stopped after reading its share; more may follow)</translation>
+    </message>
+    <message>
+        <source>(the first page of results)</source>
+        <translation>(the first page of results)</translation>
+    </message>
+    <message>
+        <source>(the regular expression needed too much work on a line and was stopped; make it more specific)</source>
+        <translation>(the regular expression needed too much work on a line and was stopped; make it more specific)</translation>
+    </message>
+    <message>
+        <source>The request of %reference</source>
+        <translation>The request of %reference</translation>
+    </message>
+    <message>
+        <source>No other line of this request was found.</source>
+        <translation>No other line of this request was found.</translation>
+    </message>
+    <message>
+        <source>The audit of this moment</source>
+        <translation>The audit of this moment</translation>
+    </message>
+    <message>
+        <source>Lines of %name</source>
+        <translation>Lines of %name</translation>
+    </message>
+    <message>
+        <source>Nothing matches the search.</source>
+        <translation>Nothing matches the search.</translation>
+    </message>
+    <message>
+        <source>The file is empty.</source>
+        <translation>The file is empty.</translation>
+    </message>
+    <message>
+        <source>More results</source>
+        <translation>More results</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Entry</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>From byte</source>
+        <translation>From byte</translation>
+    </message>
+    <message>
+        <source>To byte</source>
+        <translation>To byte</translation>
+    </message>
+    <message>
+        <source>Download (gzip)</source>
+        <translation>Download (gzip)</translation>
+    </message>
+    <message>
+        <source>Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.</source>
+        <translation>Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>Rotate now</translation>
+    </message>
+    <message>
+        <source>Empty the file</source>
+        <translation>Empty the file</translation>
+    </message>
+    <message>
+        <source>Remove this rotation</source>
+        <translation>Remove this rotation</translation>
+    </message>
+    <message>
+        <source>Each of these asks for a confirmation first and is recorded in the audit.</source>
+        <translation>Each of these asks for a confirmation first and is recorded in the audit.</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Resume</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Paused</translation>
+    </message>
+    <message>
+        <source>Waiting %seconds s (too many requests)</source>
+        <translation>Waiting %seconds s (too many requests)</translation>
+    </message>
+    <message>
+        <source>No answer from the server; trying again</source>
+        <translation>No answer from the server; trying again</translation>
+    </message>
+    <message>
+        <source>The file can no longer be read</source>
+        <translation>The file can no longer be read</translation>
+    </message>
+    <message>
+        <source>%count new lines</source>
+        <translation>%count new lines</translation>
+    </message>
+    <message>
+        <source>1 new line</source>
+        <translation>1 new line</translation>
+    </message>
+    <message>
+        <source>The file was rotated or emptied; following the new one.</source>
+        <translation>The file was rotated or emptied; following the new one.</translation>
+    </message>
+    <message>
+        <source>Match %index of %count</source>
+        <translation>Match %index of %count</translation>
+    </message>
+    <message>
+        <source>No match</source>
+        <translation>No match</translation>
+    </message>
+    <message>
+        <source>%count lines kept (the oldest are dropped from the page, never from the file)</source>
+        <translation>%count lines kept (the oldest are dropped from the page, never from the file)</translation>
+    </message>
+    <message>
+        <source>Entry at %time</source>
+        <translation>Entry at %time</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Time</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Level</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Source</translation>
+    </message>
+    <message>
+        <source>Client</source>
+        <translation>Client</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Request</translation>
+    </message>
+    <message>
+        <source>Byte offset</source>
+        <translation>Byte offset</translation>
+    </message>
+    <message>
+        <source>Lines of the same request</source>
+        <translation>Lines of the same request</translation>
+    </message>
+    <message>
+        <source>Looking for the lines of this request…</source>
+        <translation>Looking for the lines of this request…</translation>
+    </message>
+    <message>
+        <source>Debug output of this request</source>
+        <translation>Debug output of this request</translation>
+    </message>
+    <message>
+        <source>No debug output of this request was logged.</source>
+        <translation>No debug output of this request was logged.</translation>
+    </message>
+    <message>
+        <source>Find %reference everywhere</source>
+        <translation>Find %reference everywhere</translation>
+    </message>
+    <message>
+        <source>Open the request</source>
+        <translation>Open the request</translation>
+    </message>
+    <message>
+        <source>(cut: the entry is longer than the viewer keeps)</source>
+        <translation>(cut: the entry is longer than the viewer keeps)</translation>
+    </message>
+    <message>
+        <source>Loading more results…</source>
+        <translation>Loading more results…</translation>
+    </message>
+    <message>
+        <source>No more results.</source>
+        <translation>No more results.</translation>
+    </message>
+    <message>
+        <source>The request failed: %error</source>
+        <translation>The request failed: %error</translation>
+    </message>
+    <message>
+        <source>The web server may not read this file.</source>
+        <translation>The web server may not read this file.</translation>
+    </message>
+    <message>
+        <source>rate: measuring</source>
+        <translation>rate: measuring</translation>
+    </message>
+    <message>
+        <source>%rate lines/min</source>
+        <translation>%rate lines/min</translation>
+    </message>
+    <message>
+        <source>Rotate %name now?</source>
+        <translation>Rotate %name now?</translation>
+    </message>
+    <message>
+        <source>Empty %name?</source>
+        <translation>Empty %name?</translation>
+    </message>
+    <message>
+        <source>Remove %name?</source>
+        <translation>Remove %name?</translation>
+    </message>
+    <message>
+        <source>The file becomes %name.1 and the older rotations move one number up; the oldest beyond %count is removed. The next line written starts a new file.</source>
+        <translation>The file becomes %name.1 and the older rotations move one number up; the oldest beyond %count is removed. The next line written starts a new file.</translation>
+    </message>
+    <message>
+        <source>Every line of the file (%size) is removed for good. Download it first if it may still be needed.</source>
+        <translation>Every line of the file (%size) is removed for good. Download it first if it may still be needed.</translation>
+    </message>
+    <message>
+        <source>The archived rotation (%size) is removed for good.</source>
+        <translation>The archived rotation (%size) is removed for good.</translation>
+    </message>
+    <message>
+        <source>The action is recorded in the audit.</source>
+        <translation>The action is recorded in the audit.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
+        <translation>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</translation>
+    </message>
+    <message>
+        <source>Copy permalink</source>
+        <translation>Copy permalink</translation>
+    </message>
+    <message>
+        <source>Link copied</source>
+        <translation>Link copied</translation>
+    </message>
+    <message>
+        <source>Permalink</source>
+        <translation>Permalink</translation>
+    </message>
+    <message>
+        <source>The link could not be copied; it is selected in the field, copy it with the keyboard.</source>
+        <translation>The link could not be copied; it is selected in the field, copy it with the keyboard.</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Web server</translation>
+    </message>
+    <message>
+        <source>Copy messages</source>
+        <translation>Copy messages</translation>
+    </message>
+    <message>
+        <source>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</source>
+        <translation>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</translation>
+    </message>
+    <message>
+        <source>%count lines copied</source>
+        <translation>%count lines copied</translation>
+    </message>
+    <message>
+        <source>1 line copied</source>
+        <translation>1 line copied</translation>
+    </message>
+    <message>
+        <source>The lines could not be copied. Select them in the list and copy them with the keyboard.</source>
+        <translation>The lines could not be copied. Select them in the list and copy them with the keyboard.</translation>
+    </message>
+    <message>
+        <source>%count logs</source>
+        <translation>%count logs</translation>
+    </message>
+    <message>
+        <source>%size are removed for good.</source>
+        <translation>%size are removed for good.</translation>
+    </message>
+    <message>
+        <source>%size in all</source>
+        <translation>%size in all</translation>
+    </message>
+    <message>
+        <source>%size with their archives</source>
+        <translation>%size with their archives</translation>
+    </message>
+    <message>
+        <source>%size/h</source>
+        <translation>%size/h</translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation>Archives</translation>
+    </message>
+    <message>
+        <source>At most %days days</source>
+        <translation>At most %days days</translation>
+    </message>
+    <message>
+        <source>Back to the logs</source>
+        <translation>Back to the logs</translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation>Becomes</translation>
+    </message>
+    <message>
+        <source>Carry out %count steps</source>
+        <translation>Carry out %count steps</translation>
+    </message>
+    <message>
+        <source>Compress archives…</source>
+        <translation>Compress archives…</translation>
+    </message>
+    <message>
+        <source>Compress the archives of %key?</source>
+        <translation>Compress the archives of %key?</translation>
+    </message>
+    <message>
+        <source>Compressed</source>
+        <translation>Compressed</translation>
+    </message>
+    <message>
+        <source>Delete archives…</source>
+        <translation>Delete archives…</translation>
+    </message>
+    <message>
+        <source>Delete the old archives of %key?</source>
+        <translation>Delete the old archives of %key?</translation>
+    </message>
+    <message>
+        <source>Done: %count steps.</source>
+        <translation>Done: %count steps.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Download</translation>
+    </message>
+    <message>
+        <source>Empty %key after archiving it?</source>
+        <translation>Empty %key after archiving it?</translation>
+    </message>
+    <message>
+        <source>Empty (archive first)…</source>
+        <translation>Empty (archive first)…</translation>
+    </message>
+    <message>
+        <source>Growth</source>
+        <translation>Growth</translation>
+    </message>
+    <message>
+        <source>Keep %count</source>
+        <translation>Keep %count</translation>
+    </message>
+    <message>
+        <source>Last write</source>
+        <translation>Last write</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limits</translation>
+    </message>
+    <message>
+        <source>Lines (about)</source>
+        <translation>Lines (about)</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>Log</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>Manage logs</translation>
+    </message>
+    <message>
+        <source>Not compressed</source>
+        <translation>Not compressed</translation>
+    </message>
+    <message>
+        <source>Not everything was done (%error): %done of %count steps.</source>
+        <translation>Not everything was done (%error): %done of %count steps.</translation>
+    </message>
+    <message>
+        <source>Not managed here: %keys</source>
+        <translation>Not managed here: %keys</translation>
+    </message>
+    <message>
+        <source>Not writable: %owner:%group</source>
+        <translation>Not writable: %owner:%group</translation>
+    </message>
+    <message>
+        <source>Nothing to do: no file needs this action now.</source>
+        <translation>Nothing to do: no file needs this action now.</translation>
+    </message>
+    <message>
+        <source>Older than (days)</source>
+        <translation>Older than (days)</translation>
+    </message>
+    <message>
+        <source>Prune all archives…</source>
+        <translation>Prune all archives…</translation>
+    </message>
+    <message>
+        <source>Prune the archives of every log?</source>
+        <translation>Prune the archives of every log?</translation>
+    </message>
+    <message>
+        <source>Rotate %key now?</source>
+        <translation>Rotate %key now?</translation>
+    </message>
+    <message>
+        <source>Rotate all over their limit…</source>
+        <translation>Rotate all over their limit…</translation>
+    </message>
+    <message>
+        <source>Rotate at %size</source>
+        <translation>Rotate at %size</translation>
+    </message>
+    <message>
+        <source>Rotate every log over its limit?</source>
+        <translation>Rotate every log over its limit?</translation>
+    </message>
+    <message>
+        <source>Rotate now…</source>
+        <translation>Rotate now…</translation>
+    </message>
+    <message>
+        <source>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</source>
+        <translation>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Size</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Step</translation>
+    </message>
+    <message>
+        <source>The actions are switched off in settings/logviewer.ini [ActionSettings].</source>
+        <translation>The actions are switched off in settings/logviewer.ini [ActionSettings].</translation>
+    </message>
+    <message>
+        <source>The log files, their archives and their limits</source>
+        <translation>The log files, their archives and their limits</translation>
+    </message>
+    <message>
+        <source>The steps of this action</source>
+        <translation>The steps of this action</translation>
+    </message>
+    <message>
+        <source>The web server cannot write this file or its directory: owner %owner, group %group.</source>
+        <translation>The web server cannot write this file or its directory: owner %owner, group %group.</translation>
+    </message>
+    <message>
+        <source>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</source>
+        <translation>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</translation>
+    </message>
+    <message>
+        <source>Web server, read only</source>
+        <translation>Web server, read only</translation>
+    </message>
+    <message>
+        <source>compress</source>
+        <translation>compress</translation>
+    </message>
+    <message>
+        <source>copy</source>
+        <translation>copy</translation>
+    </message>
+    <message>
+        <source>delete</source>
+        <translation>delete</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>empty</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>none</translation>
+    </message>
+    <message>
+        <source>over the limit</source>
+        <translation>over the limit</translation>
+    </message>
+    <message>
+        <source>rename</source>
+        <translation>rename</translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation>%days days</translation>
+    </message>
+    <message>
+        <source>%size of %limit</source>
+        <translation>%size of %limit</translation>
+    </message>
+    <message>
+        <source>%size per hour</source>
+        <translation>%size per hour</translation>
+    </message>
+    <message>
+        <source>(no budget set)</source>
+        <translation>(no budget set)</translation>
+    </message>
+    <message>
+        <source>Archives compressed</source>
+        <translation>Archives compressed</translation>
+    </message>
+    <message>
+        <source>Archives kept</source>
+        <translation>Archives kept</translation>
+    </message>
+    <message>
+        <source>Archives removed after</source>
+        <translation>Archives removed after</translation>
+    </message>
+    <message>
+        <source>Archives: %size</source>
+        <translation>Archives: %size</translation>
+    </message>
+    <message>
+        <source>Budget: logviewer.ini [HealthSettings] DiskBudget</source>
+        <translation>Budget: logviewer.ini [HealthSettings] DiskBudget</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Changed</translation>
+    </message>
+    <message>
+        <source>Current files: %size</source>
+        <translation>Current files: %size</translation>
+    </message>
+    <message>
+        <source>Disk use</source>
+        <translation>Disk use</translation>
+    </message>
+    <message>
+        <source>Every log</source>
+        <translation>Every log</translation>
+    </message>
+    <message>
+        <source>Every log is within its limit.</source>
+        <translation>Every log is within its limit.</translation>
+    </message>
+    <message>
+        <source>Fastest growing</source>
+        <translation>Fastest growing</translation>
+    </message>
+    <message>
+        <source>How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.</source>
+        <translation>How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.</translation>
+    </message>
+    <message>
+        <source>Largest size</source>
+        <translation>Largest size</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>Log health</translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation>Manage</translation>
+    </message>
+    <message>
+        <source>Newest error</source>
+        <translation>Newest error</translation>
+    </message>
+    <message>
+        <source>No log is known to grow yet: growth is measured between rotations.</source>
+        <translation>No log is known to grow yet: growth is measured between rotations.</translation>
+    </message>
+    <message>
+        <source>Not writable by the web server</source>
+        <translation>Not writable by the web server</translation>
+    </message>
+    <message>
+        <source>Over their size limit</source>
+        <translation>Over their size limit</translation>
+    </message>
+    <message>
+        <source>Read only. Each value names the settings file, section and variable it comes from; change it there (in an override), not here.</source>
+        <translation>Read only. Each value names the settings file, section and variable it comes from; change it there (in an override), not here.</translation>
+    </message>
+    <message>
+        <source>Rotation settings in effect</source>
+        <translation>Rotation settings in effect</translation>
+    </message>
+    <message>
+        <source>Set in</source>
+        <translation>Set in</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Setting</translation>
+    </message>
+    <message>
+        <source>The log files belong to different users (%owners). A file created by one user may not be writable by the other; give them one owner, or a shared group with group write.</source>
+        <translation>The log files belong to different users (%owners). A file created by one user may not be writable by the other; give them one owner, or a shared group with group write.</translation>
+    </message>
+    <message>
+        <source>The log manager is not available, so sizes, limits and archives cannot be listed.</source>
+        <translation>The log manager is not available, so sizes, limits and archives cannot be listed.</translation>
+    </message>
+    <message>
+        <source>The web server can write every log.</source>
+        <translation>The web server can write every log.</translation>
+    </message>
+    <message>
+        <source>The web server cannot append to these files, so what it logs is lost. They were usually created by a command line or Exponential Velocity running as another user.</source>
+        <translation>The web server cannot append to these files, so what it logs is lost. They were usually created by a command line or Exponential Velocity running as another user.</translation>
+    </message>
+    <message>
+        <source>There is no log to show.</source>
+        <translation>There is no log to show.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Value</translation>
+    </message>
+    <message>
+        <source>built-in default</source>
+        <translation>built-in default</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>never</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>no limit</translation>
+    </message>
+    <message>
+        <source>none in the last lines</source>
+        <translation>none in the last lines</translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation>not writable</translation>
+    </message>
+    <message>
+        <source>of a budget of %budget (%percent %)</source>
+        <translation>of a budget of %budget (%percent %)</translation>
+    </message>
+    <message>
+        <source>over limit</source>
+        <translation>over limit</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yes</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Error digest</translation>
+    </message>
+    <message>
+        <source>The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.</source>
+        <translation>The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.</translation>
+    </message>
+    <message>
+        <source>Time window</source>
+        <translation>Time window</translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation>Last</translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation>%count h</translation>
+    </message>
+    <message>
+        <source>Hide known messages</source>
+        <translation>Hide known messages</translation>
+    </message>
+    <message>
+        <source>Show known messages</source>
+        <translation>Show known messages</translation>
+    </message>
+    <message>
+        <source>Since %time; levels: %levels.</source>
+        <translation>Since %time; levels: %levels.</translation>
+    </message>
+    <message>
+        <source>%count known messages are hidden.</source>
+        <translation>%count known messages are hidden.</translation>
+    </message>
+    <message>
+        <source>There is no log this digest can read.</source>
+        <translation>There is no log this digest can read.</translation>
+    </message>
+    <message>
+        <source>%count entries in %groups messages</source>
+        <translation>%count entries in %groups messages</translation>
+    </message>
+    <message>
+        <source>Only the first %size of the window were read; the file holds more.</source>
+        <translation>Only the first %size of the window were read; the file holds more.</translation>
+    </message>
+    <message>
+        <source>Messages of %name</source>
+        <translation>Messages of %name</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>Count</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Message</translation>
+    </message>
+    <message>
+        <source>Last seen</source>
+        <translation>Last seen</translation>
+    </message>
+    <message>
+        <source>Known</source>
+        <translation>Known</translation>
+    </message>
+    <message>
+        <source>Open the newest entry</source>
+        <translation>Open the newest entry</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>List again</source>
+        <translation>List again</translation>
+    </message>
+    <message>
+        <source>Mark as known</source>
+        <translation>Mark as known</translation>
+    </message>
+    <message>
+        <source>No error or warning in this window.</source>
+        <translation>No error or warning in this window.</translation>
+    </message>
+    <message>
+        <source>Log tools</source>
+        <translation>Log tools</translation>
+    </message>
+    <message>
+        <source>Logs</source>
+        <translation>Logs</translation>
     </message>
 </context>
 </TS>

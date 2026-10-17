@@ -89,4 +89,12 @@ $FunctionList['cronjob_pauses'] = array( 'name' => 'cronjob_pauses',
                                                                  'method' => 'fetchCronjobPauses' ),
                                          'parameter_type' => 'standard',
                                          'parameters' => array( ) );
+// The log files of the log viewer's navigator (Setup > Log files), grouped: kernel, site, extensions, archives; an empty
+// list for a user without setup/logs (doc/features/6.0/log-viewer.md).
+$FunctionList['log_files'] = array( 'name' => 'log_files',
+                                    'operation_types' => array( 'read' ),
+                                    'call_method' => array( 'class' => 'eZSetupFunctionCollection',
+                                                            'method' => 'fetchLogFiles' ),
+                                    'parameter_type' => 'standard',
+                                    'parameters' => array( ) );
 ?>

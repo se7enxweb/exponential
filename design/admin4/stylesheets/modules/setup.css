@@ -1103,6 +1103,198 @@ label.a4-package-option-label {
   display: inline;
 }
 
+/* ---- Log files (setup/logs, setup/logsaction; templates setup/logs*.tpl, script page/setup_logs.js) ----------- */
+
+/* The navigator in the left menu: each file with its size, last change and line rate */
+.a4-setup-lognav { margin-top: var(--a4-space-4); }
+.a4-setup-lognav-count { color: var(--a4-muted); font-weight: 400; }
+.a4-setup-lognav-items .a4-setup-lognav-link { display: block; min-width: 0; }
+.a4-setup-lognav-name { display: block; overflow-wrap: anywhere; font-family: var(--a4-mono); font-size: var(--a4-text-xs); font-weight: 650; }
+.a4-setup-lognav-dir { display: block; overflow-wrap: anywhere; color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-setup-lognav-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--a4-space-2);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The file chooser for narrow windows, the facts of the file and the controls */
+.a4-setup-log-picker { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
+.a4-setup-log-picker select { min-width: 0; max-width: 100%; flex: 1 1 220px; }
+/* The button of a chooser (Open, Copy permalink) on a line of its own, at the start */
+.a4-setup-log-picker-actions { flex: 1 0 100%; display: flex; justify-content: flex-start; gap: var(--a4-space-2); }
+/* The permalink of the view: a read-only field to select, and the copy button */
+.a4-setup-log-permalink { flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
+.a4-setup-log-permalink .a4-input { flex: 1 1 260px; min-width: 0; max-width: 100%; font-family: var(--a4-mono); }
+.a4-setup-log-permalink .a4-help { flex-basis: 100%; }
+.a4-setup-log-facts { margin: 0 0 var(--a4-space-3); overflow-wrap: anywhere; }
+.a4-setup-log-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--a4-z-sticky);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-s);
+}
+.a4-setup-log-switch { align-items: center; }
+.a4-setup-log-switch input { margin: 0; }
+.a4-setup-log-find { flex: 1 1 320px; justify-content: flex-end; }
+.a4-setup-log-find .a4-input { flex: 1 1 160px; min-width: 0; max-width: 320px; }
+.a4-setup-log-keys { flex: 1 1 100%; margin: 0; font-size: var(--a4-text-xs); }
+.a4-setup-log-search { margin: 0 0 var(--a4-space-4); }
+.a4-setup-log-search fieldset .a4-row { gap: var(--a4-space-2) var(--a4-space-4); }
+.a4-setup-log-more { margin: var(--a4-space-3) 0 0; }
+.a4-setup-log-more [aria-disabled="true"] { opacity: .55; pointer-events: none; }
+
+/* The lines. Without the script: a plain list that wraps. With it: a scrolling region whose rows have one height,
+   of which only those in view are drawn (the spacer is as tall as all of them); .is-wrapped draws every kept line. */
+.a4-setup-log-view {
+  position: relative;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 0 var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-surface);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+}
+.a4-setup-log-view.is-scripted { height: min(70vh, 760px); overflow: auto; overscroll-behavior: contain; }
+.a4-setup-log-view:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
+.a4-setup-log-view .a4-empty { margin: 0; padding: var(--a4-space-4); font-family: var(--a4-font); }
+.a4-setup-log-spacer { position: relative; min-width: 100%; width: max-content; }
+.a4-setup-log-view.is-wrapped .a4-setup-log-spacer { width: auto; }
+.a4-setup-log-rows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  will-change: transform;
+}
+.a4-setup-log-view.is-wrapped .a4-setup-log-rows { position: static; will-change: auto; }
+.a4-setup-log-plain { margin: 0; padding: 0; list-style: none; font-family: var(--a4-mono); font-size: var(--a4-text-xs); }
+
+.a4-setup-log-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--a4-space-2);
+  padding: 1px var(--a4-space-2);
+  border-inline-start: 3px solid var(--a4-line-strong);
+  line-height: var(--a4-leading);
+  white-space: pre;
+  cursor: pointer;
+}
+.a4-setup-log-plain .a4-setup-log-row,
+.a4-setup-log-view.is-wrapped .a4-setup-log-row { flex-wrap: wrap; white-space: pre-wrap; overflow-wrap: anywhere; cursor: default; }
+.a4-setup-log-view.is-wrapped .a4-setup-log-row { cursor: pointer; }
+.a4-setup-log-plain .a4-setup-log-row + .a4-setup-log-row,
+.a4-setup-log-view.is-wrapped .a4-setup-log-row + .a4-setup-log-row { border-top: 1px solid var(--a4-line); }
+.a4-setup-log-plain .a4-setup-log-msg,
+.a4-setup-log-view.is-wrapped .a4-setup-log-msg { flex: 1 1 100%; }
+.a4-setup-log-row:hover { background-color: var(--a4-soft); }
+.a4-setup-log-row.is-error { border-inline-start-color: var(--a4-bad); }
+.a4-setup-log-row.is-warning { border-inline-start-color: var(--a4-warn); }
+.a4-setup-log-row.is-notice { border-inline-start-color: var(--a4-info); }
+.a4-setup-log-row.is-debug { border-inline-start-color: var(--a4-line-strong); }
+.a4-setup-log-row.is-separator { border-top: 1px dashed var(--a4-line-strong); color: var(--a4-muted); font-style: italic; cursor: default; }
+.a4-setup-log-row.is-match { background-color: var(--a4-warn-bg); }
+.a4-setup-log-row.is-current-match { background-color: var(--a4-accent-soft); outline: 2px solid var(--a4-accent-strong); outline-offset: -2px; }
+.a4-setup-log-row.is-active { outline: 2px solid var(--a4-ring); outline-offset: -2px; }
+
+/* A stripe per request (the lines with the same request key share one) */
+.a4-setup-log-rk-1 { box-shadow: inset 3px 0 0 var(--a4-chart-1); }
+.a4-setup-log-rk-2 { box-shadow: inset 3px 0 0 var(--a4-chart-2); }
+.a4-setup-log-rk-3 { box-shadow: inset 3px 0 0 var(--a4-chart-3); }
+.a4-setup-log-rk-4 { box-shadow: inset 3px 0 0 var(--a4-chart-4); }
+.a4-setup-log-rk-5 { box-shadow: inset 3px 0 0 var(--a4-chart-5); }
+.a4-setup-log-rk-6 { box-shadow: inset 3px 0 0 var(--a4-chart-6); }
+.a4-setup-log-rk-7 { box-shadow: inset 3px 0 0 var(--a4-chart-7); }
+.a4-setup-log-rk-8 { box-shadow: inset 3px 0 0 var(--a4-chart-8); }
+
+.a4-setup-log-time { color: var(--a4-muted); font-variant-numeric: tabular-nums; }
+.a4-setup-log-level {
+  display: inline-block;
+  min-width: 7ch;
+  padding: 0 var(--a4-space-1);
+  border: 1px solid transparent;
+  border-radius: var(--a4-radius-s);
+  font-family: var(--a4-font);
+  font-weight: 700;
+  text-align: center;
+}
+.a4-setup-log-level.is-error { background-color: var(--a4-bad-bg); color: var(--a4-bad); }
+.a4-setup-log-level.is-warning { background-color: var(--a4-warn-bg); color: var(--a4-warn); }
+.a4-setup-log-level.is-notice { background-color: var(--a4-info-bg); color: var(--a4-info); }
+.a4-setup-log-level.is-debug { background-color: var(--a4-soft); color: var(--a4-muted); }
+.a4-setup-log-file { color: var(--a4-accent-text); }
+.a4-setup-log-src { padding: 0 var(--a4-space-1); border: 1px solid var(--a4-line-strong); border-radius: var(--a4-radius-s); color: var(--a4-ink); }
+.a4-setup-log-src-1 { border-color: var(--a4-chart-1); }
+.a4-setup-log-src-2 { border-color: var(--a4-chart-2); }
+.a4-setup-log-src-3 { border-color: var(--a4-chart-3); }
+.a4-setup-log-src-4 { border-color: var(--a4-chart-4); }
+.a4-setup-log-src-5 { border-color: var(--a4-chart-5); }
+.a4-setup-log-src-6 { border-color: var(--a4-chart-6); }
+.a4-setup-log-src-7 { border-color: var(--a4-chart-7); }
+.a4-setup-log-src-8 { border-color: var(--a4-chart-8); }
+.a4-setup-log-req { color: var(--a4-muted); }
+.a4-setup-log-msg { color: var(--a4-ink); }
+.a4-setup-log-link { color: var(--a4-accent-text); text-decoration: underline; }
+.a4-setup-log-link:hover { color: var(--a4-accent-press); }
+
+/* One entry, opened: its facts, its whole text, the lines of its request and its debug output */
+.a4-setup-log-detail { margin: 0 0 var(--a4-space-4); }
+.a4-setup-log-detail:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 1px; }
+.a4-setup-log-detail-text {
+  max-height: 50vh;
+  margin: var(--a4-space-3) 0;
+  padding: var(--a4-space-3);
+  overflow: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.a4-setup-log-detail-text a { color: var(--a4-accent-text); }
+.a4-setup-log-related-part { margin-top: var(--a4-space-4); }
+.a4-setup-log-related-part .a4-setup-log-plain { max-height: 40vh; overflow: auto; border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
+.a4-setup-log-related { margin: 0 0 var(--a4-space-4); }
+
+/* The actions */
+.a4-setup-log-actions { margin: var(--a4-space-4) 0 0; }
+.a4-setup-log-actions form + form { margin-top: var(--a4-space-3); padding-top: var(--a4-space-3); border-top: 1px solid var(--a4-line); }
+.a4-setup-log-download .a4-field { flex: 0 1 160px; }
+.a4-setup-log-actions .a4-help { flex: 1 1 100%; margin: 0; }
+.a4-setup-log-confirm { margin-top: var(--a4-space-4); }
+
+@media (max-width: 600px) {
+  .a4-setup-log-view.is-scripted { height: 60vh; }
+  .a4-setup-log-find { justify-content: flex-start; }
+  .a4-setup-log-find .a4-input { max-width: none; }
+  .a4-setup-log-download .a4-field { flex: 1 1 100%; }
+}
+
+/* Forced colors: the system colours, borders where colour carried the meaning */
+@media (forced-colors: active) {
+  .a4-setup-log-row { border-inline-start-color: CanvasText; }
+  .a4-setup-log-row.is-error { border-inline-start-style: double; border-inline-start-width: 4px; }
+  .a4-setup-log-level { border-color: CanvasText; }
+  .a4-setup-log-row.is-active { outline-color: Highlight; }
+  .a4-setup-log-row.is-match { outline: 1px dashed Highlight; outline-offset: -1px; }
+  .a4-setup-log-row.is-current-match { outline: 2px solid Highlight; }
+  .a4-setup-log-src { border-color: CanvasText; }
+  .a4-setup-log-link, .a4-setup-log-detail-text a { color: LinkText; }
+}
+
 /* ---- contentcheck: the start location of every check (design:contentcheck/scope.tpl) ----------------------- */
 
 /* Two rows of links in the filter bar: the quick scope buttons, then the sites and sections under the content root */
@@ -1125,3 +1317,64 @@ label.a4-package-option-label {
 .a4-setup-sa-list .a4-badges { margin: 0; }
 .a4-setup-sa-list .a4-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: 0; }
 .a4-setup-sa-url { margin: 0; overflow-wrap: anywhere; }
+
+/* ---- w551b health: Setup > Log files > Health (setup/logshealth, setup/logs_health.tpl) ---- */
+.a4-setup-loghealth-total { margin: var(--a4-space-2) 0; }
+.a4-setup-loghealth-meter { display: block; width: 100%; max-width: 40rem; height: var(--a4-space-3); margin: 0 0 var(--a4-space-2); }
+.a4-setup-loghealth-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--a4-space-3); margin: var(--a4-space-3) 0; }
+.a4-setup-loghealth-grid > .a4-card + .a4-card { margin-top: 0; }
+.a4-setup-loghealth-list { margin: 0; padding-inline-start: var(--a4-space-4); }
+.a4-setup-loghealth-list li { margin: 0 0 var(--a4-space-1); overflow-wrap: anywhere; }
+.a4-setup-loghealth-table td, .a4-setup-loghealth-table th { vertical-align: top; }
+.a4-setup-loghealth-error { min-width: 12rem; }
+.a4-setup-loghealth-message { display: block; font-family: var(--a4-mono); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-setup-loghealth-table tr.is-attention > th { box-shadow: inset 3px 0 0 var(--a4-warn); }
+[dir="rtl"] .a4-setup-loghealth-table tr.is-attention > th { box-shadow: inset -3px 0 0 var(--a4-warn); }
+.a4-setup-loghealth-settings code { overflow-wrap: anywhere; }
+@media (forced-colors: active) {
+  .a4-setup-loghealth-table tr.is-attention > th { box-shadow: none; border-inline-start: 3px solid CanvasText; }
+}
+
+/* ---- w551b digest: the error digest (setup/logsdigest, design:setup/logs_digest.tpl) ---------------------------- */
+.a4-setup-logdigest-intro { margin: 0 0 var(--a4-space-3); color: var(--a4-muted); max-width: 72ch; }
+.a4-setup-logdigest-filters { flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-2); }
+.a4-setup-logdigest-hours { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); }
+.a4-setup-logdigest-hours ul { margin: 0; }
+.a4-setup-logdigest-label { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-setup-logdigest-log { margin: 0 0 var(--a4-space-4); }
+.a4-setup-logdigest-scroll { overflow-x: auto; max-width: 100%; }
+.a4-setup-logdigest-table { width: 100%; }
+.a4-setup-logdigest-count { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.a4-setup-logdigest-msg { min-width: 18rem; overflow-wrap: anywhere; }
+.a4-setup-logdigest-msg code { font-family: var(--a4-mono); font-size: var(--a4-text-s); color: var(--a4-ink); }
+.a4-setup-logdigest-sample { display: block; margin-top: var(--a4-space-1); font-family: var(--a4-mono); font-size: var(--a4-text-xs); color: var(--a4-muted); }
+.a4-setup-logdigest-last { white-space: nowrap; }
+.a4-setup-logdigest-actions { white-space: nowrap; }
+.a4-setup-logdigest-actions .a4-btn { margin-inline-end: var(--a4-space-1); }
+.a4-setup-logdigest-form { display: inline; margin: 0; }
+.a4-setup-logdigest-table tr.is-known td { color: var(--a4-muted); }
+@media (max-width: 600px) {
+  .a4-setup-logdigest-msg { min-width: 12rem; }
+}
+
+/* ---- w551b manage: Setup > Log files > Manage logs (setup/logsmanage, setup/logs_manage*.tpl) ---- */
+.a4-setup-logmanage-all { flex-wrap: wrap; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
+.a4-setup-logmanage-table th[scope="row"] { overflow-wrap: anywhere; }
+.a4-setup-logmanage-archives,
+.a4-setup-logmanage-limits { list-style: none; margin: 0; padding: 0; font-size: var(--a4-text-xs); }
+.a4-setup-logmanage-archives li,
+.a4-setup-logmanage-limits li { margin: 0 0 var(--a4-space-1); overflow-wrap: anywhere; }
+.a4-setup-logmanage-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); margin: 0 0 var(--a4-space-1); }
+.a4-setup-logmanage-days { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); }
+.a4-setup-logmanage-days .a4-input { width: 5.5rem; }
+.a4-setup-logmanage-days label { font-size: var(--a4-text-xs); color: var(--a4-muted); }
+.a4-setup-logmanage-plan code { overflow-wrap: anywhere; }
+
+/* ---- w551b nav: the buttons of the log viewer's pages (setup/logs_nav.tpl), on a line of their own at the start ---- */
+.a4-setup-log-nav { margin: 0 0 var(--a4-space-3); }
+.a4-setup-log-nav-list { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: var(--a4-space-2); margin: 0; padding: 0; list-style: none; }
+.a4-setup-log-nav-list li { margin: 0; }
+.a4-setup-log-nav-btn.is-current { box-shadow: inset 0 0 0 2px var(--a4-card), 0 0 0 2px var(--a4-accent); text-decoration: underline; text-underline-offset: 3px; }
+@media (forced-colors: active) {
+  .a4-setup-log-nav-btn.is-current { outline: 2px solid Highlight; outline-offset: 2px; }
+}

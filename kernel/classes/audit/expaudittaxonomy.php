@@ -153,6 +153,12 @@ class expAuditTaxonomy
         'system.cronjob.fail' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system' ),
         'system.cronjob.pause' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.cronjob.resume' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        // the log viewer (Setup > Log files, doc/features/6.0/log-viewer.md)
+        'system.log.read' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system' ),
+        'system.log.download' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        'system.log.rotate' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        'system.log.truncate' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system' ),
+        'system.log.delete' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.command.run' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system' ),
         'system.package.install' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.package.uninstall' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
