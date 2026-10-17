@@ -1175,7 +1175,7 @@ class eZContentUpload
 
                         if ( $parentNodes )
                         {
-                            eZDebug::writeNotice( "Matched assignment for upload :'$classData'", __METHOD__ );
+                            eZDebug::writeDebug( "Matched assignment for upload :'$classData'", __METHOD__ );
                             break;
                         }
                     }

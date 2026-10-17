@@ -4048,6 +4048,10 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
     function fetchParent()
     {
+        // The virtual node of a draft that has no placement yet (content/versionview of a new object) has no
+        // parent: null, without fetch()'s warning about an empty node id.
+        if ( !$this->attribute( 'parent_node_id' ) )
+            return null;
         return $this->fetch( $this->attribute( 'parent_node_id' ) );
     }
 
@@ -4074,7 +4078,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
     function pathArray()
     {
         $pathString = $this->attribute( 'path_string' );
-        $pathItems = explode( '/', $pathString );
+        $pathItems = explode( '/', (string)$pathString );
         $pathArray = array();
         foreach ( $pathItems as $pathItem )
         {
@@ -7600,7 +7604,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
             if ( !$pathString )
                 return $falseValue;
 
-            $pathItems = explode( '/', $pathString );
+            $pathItems = explode( '/', (string)$pathString );
             $pathArray = array();
             foreach ( $pathItems as $pathItem )
             {

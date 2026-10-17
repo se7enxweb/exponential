@@ -296,17 +296,24 @@ class eZTSTranslator extends eZTranslatorHandler
                 eZDebug::accumulatorStart( 'tstranslator_load', 'tstranslator', 'TS load' );
 
                 $doc = new DOMDocument( '1.0', 'utf-8' );
+                $useInternal = libxml_use_internal_errors( true );
+                libxml_clear_errors();
                 $success = $doc->load( $path );
+                $loadErrors = array();
+                foreach ( array_slice( libxml_get_errors(), 0, 5 ) as $error )
+                    $loadErrors[] = 'line ' . $error->line . ': ' . trim( $error->message );
+                libxml_clear_errors();
+                libxml_use_internal_errors( $useInternal );
 
                 if ( !$success )
                 {
-                    eZDebug::writeWarning( "Unable to load XML from file $path", __METHOD__ );
+                    eZDebug::writeWarning( "Unable to load XML from file $path: " . implode( '; ', $loadErrors ), __METHOD__ );
                     continue;
                 }
 
                 if ( !$this->validateDOMTree( $doc ) )
                 {
-                    eZDebug::writeWarning( "XML text for file $path did not validate", __METHOD__ );
+                    eZDebug::writeWarning( "XML text for file $path did not validate: " . implode( '; ', self::validationErrors() ), __METHOD__ );
                     continue;
                 }
 
@@ -372,10 +379,35 @@ class eZTSTranslator extends eZTranslatorHandler
         if ( !is_object( $tree ) )
             return false;
 
+        // The schema's complaints are collected, not raised as one PHP warning each (a broken file raised
+        // hundreds per request); the caller's warning names the file and validationErrors() the lines.
+        $useInternal = libxml_use_internal_errors( true );
+        libxml_clear_errors();
         $isValid = $tree->RelaxNGValidate( 'schemas/translation/ts.rng' );
+        self::$LastValidationErrors = array();
+        if ( !$isValid )
+        {
+            foreach ( array_slice( libxml_get_errors(), 0, 5 ) as $error )
+                self::$LastValidationErrors[] = 'line ' . $error->line . ': ' . trim( $error->message );
+        }
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useInternal );
 
         return $isValid;
     }
+
+    /**
+     * The first errors (at most five, "line N: message") of the last validateDOMTree() that failed.
+     *
+     * @return string[]
+     */
+    static function validationErrors()
+    {
+        return self::$LastValidationErrors;
+    }
+
+    /** @var string[] see validationErrors() */
+    private static $LastValidationErrors = array();
 
     /**
      * Handles a DOM Context node and the messages it contains

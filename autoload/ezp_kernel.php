@@ -1143,6 +1143,7 @@ return array(
       'expLogPermalink'                                              => 'kernel/classes/logviewer/explogpermalink.php',
       'expLogRateLimit'                                              => 'kernel/classes/logviewer/explogratelimit.php',
       'expLogRedactor'                                               => 'kernel/classes/logviewer/explogredactor.php',
+      'expLogRotator'                                                => 'lib/ezfile/classes/explogrotator.php',
       'expLogSearch'                                                 => 'kernel/classes/logviewer/explogsearch.php',
       'expLogSearchLimitException'                                   => 'kernel/classes/logviewer/explogsearch.php',
       'expLogTail'                                                   => 'kernel/classes/logviewer/explogtail.php',

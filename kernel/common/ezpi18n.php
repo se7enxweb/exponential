@@ -137,6 +137,12 @@ class ezpI18n
             return self::insertArguments( $trans, $arguments );
         }
 
+        // The source texts are American English, so a text the eng-US file does not reword is shown as it is
+        // written: not a missing translation. Logging every one of them wrote a debug.log line per text per page
+        // on every eng-US siteaccess (the file rotated about once a minute with debug output on).
+        if ( $localeCode == 'eng-US' )
+            return self::insertArguments( $source, $arguments );
+
         if ( $comment != null and strlen( $comment ) > 0 )
             eZDebug::writeDebug( "Missing translation for message in context: '$context' with comment: '$comment'. The untranslated message is: '$source'", __METHOD__ );
         else

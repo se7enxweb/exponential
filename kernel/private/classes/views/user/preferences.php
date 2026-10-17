@@ -57,8 +57,11 @@ class Preferences extends \Exponential\Runnable\ModuleView
         $secFetchSite = isset( $_SERVER['HTTP_SEC_FETCH_SITE'] ) ? $_SERVER['HTTP_SEC_FETCH_SITE'] : null;
         $allowPreferenceWrite = $secFetchSite === null || $secFetchSite === 'same-origin' || $secFetchSite === 'same-site';
 
+        // A request without a key (user/preferences alone) has nothing to store: it only redirects.
+        $hasKey = is_string( $key ) && trim( $key ) !== '';
+
         // Set user preferences
-        if ( $allowPreferenceWrite )
+        if ( $hasKey && $allowPreferenceWrite )
         {
             if ( \eZOperationHandler::operationIsAvailable( 'user_preferences' ) )
             {
@@ -71,9 +74,10 @@ class Preferences extends \Exponential\Runnable\ModuleView
                 \eZPreferences::setValue( $key, $value );
             }
         }
-        else
+        else if ( $hasKey )
         {
-            \eZDebug::writeWarning( "Skipped the preference write for '$key': the request came with Sec-Fetch-Site '$secFetchSite'", 'user/preferences' );
+            // The designed answer to an address opened directly (it asks, below), not a fault: debug, not a warning.
+            \eZDebug::writeDebug( "Skipped the preference write for '$key': the request came with Sec-Fetch-Site '$secFetchSite'", 'user/preferences' );
             // #389 an address opened directly (typed, a bookmark: 'none') or from another site does not change the
             // preference behind the visitor's back, and does not end on an unrelated page either: it asks. The
             // answer is a POST from this site (same-origin, with the form token of ezformtoken), which writes.

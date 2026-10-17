@@ -89,9 +89,11 @@ WHERE ezbasket.session_id = ezsession.session_key (+) AND
         }
         else
         {
-            $sql = "SELECT id, productcollection_id
-FROM ezsession
-     RIGHT JOIN ezbasket
+            // A LEFT JOIN from the baskets: the same rows as the former RIGHT JOIN from the sessions, which SQLite
+            // before 3.39 refuses ("RIGHT and FULL OUTER JOINs are not currently supported")
+            $sql = "SELECT ezbasket.id AS id, ezbasket.productcollection_id AS productcollection_id
+FROM ezbasket
+     LEFT JOIN ezsession
        ON ezbasket.session_id = ezsession.session_key
 WHERE ezsession.session_key IS NULL";
         }

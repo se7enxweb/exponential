@@ -82,7 +82,7 @@ class Exploremipsumfill extends \Exponential\Runnable\Command
             return;
         }
 
-        if ( !$dryRun && !\eZUser::currentUser()->isLoggedIn() )
+        if ( !$dryRun && !\eZUser::currentUser()->isRegistered() )
         {
             $creator = \eZUser::fetch( (int)\eZINI::instance()->variable( 'UserSettings', 'UserCreatorID' ) );
             if ( $creator )

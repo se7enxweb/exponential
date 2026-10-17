@@ -820,7 +820,10 @@ class eZDFSFileHandler implements eZClusterFileHandlerInterface, ezpDatabaseBase
         if ( $binaryData === null &&
              $fileContent === null )
         {
-            eZDebug::writeError( "Write callback need to set the 'content' or 'binarydata' entry for '{$this->filePath}'", __METHOD__ );
+            // A callback that returns null has nothing to store (eZUser::generateUserCacheForFile() for a user
+            // removed meanwhile): that is its documented answer, not a faulty callback.
+            if ( $fileData !== null )
+                eZDebug::writeError( "Write callback need to set the 'content' or 'binarydata' entry for '{$this->filePath}'", __METHOD__ );
             $this->abortCacheGeneration();
             return null;
         }

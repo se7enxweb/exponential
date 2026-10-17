@@ -15,7 +15,8 @@
   ],
   "map": {
     "share/translations/*/translation.ts": [
-      "tests/tests/lib/ezi18n/eZTSTranslatorTest.php"
+      "tests/tests/lib/ezi18n/eZTSTranslatorTest.php",
+      "tests/tests/design/TranslationFilesValidTest.php"
     ],
     "*.php": [
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
@@ -169,8 +170,20 @@
     "design/admin4/templates/tabs/audit/node.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
+    "kernel/classes/ezdbgarbagecollector.php": [
+      "tests/tests/kernel/classes/eZDBGarbageCollectorBasketQueryTest.php"
+    ],
+    "kernel/common/ezpi18n.php": [
+      "tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php"
+    ],
+    "lib/ezfile/classes/ezlog.php": [
+      "tests/tests/lib/ezfile/expLogRotatorTest.php",
+      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php"
+    ],
     "lib/ezutils/classes/ezdebug.php": [
-      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"
+      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
+      "tests/tests/lib/ezutils/eZDebugTimingPointLogTest.php",
+      "tests/tests/lib/ezfile/expLogRotatorTest.php"
     ],
     "lib/ezutils/classes/expdebugbarreport.php": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"

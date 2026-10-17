@@ -422,7 +422,10 @@ class Runcronjobs extends \Exponential\Runnable\Command
 
         if ( !is_array( $scripts ) or empty( $scripts ) )
         {
-            $cli->notice( 'Notice: No scripts found for execution.' );
+            // A part without scripts is a setting, not a fault: --quiet (cron) leaves it out of the cron log, which it
+            // filled with one line a minute
+            if ( !$isQuiet )
+                $cli->notice( 'Notice: No scripts found for execution.' );
             $script->shutdown( 0 );
         }
 

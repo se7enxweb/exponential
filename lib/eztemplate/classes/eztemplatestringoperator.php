@@ -53,20 +53,20 @@ class eZTemplateStringOperator
                                                              '$result = $codec->convertString( $staticValues[0] );'
                                                  ),
                                    'pad' => array( 'return' => 'string',
-                                                   'code' => '$result = $paramCount == 2 ? str_pad( $staticValues[0], $staticValues[1] ) : str_pad ( $staticValues[0], $staticValues[1], $staticValues[2] );',
-                                                   'code2' => '$result = str_pad( $staticValues[0], $staticValues[1] );',
-                                                   'code3' => '$result = str_pad( $staticValues[0], $staticValues[1], $staticValues[2] );',
+                                                   'code' => '$result = $paramCount == 2 ? str_pad( (string)$staticValues[0], $staticValues[1] ) : str_pad( (string)$staticValues[0], $staticValues[1], $staticValues[2] );',
+                                                   'code2' => '$result = str_pad( (string)$staticValues[0], $staticValues[1] );',
+                                                   'code3' => '$result = str_pad( (string)$staticValues[0], $staticValues[1], $staticValues[2] );',
                                                  ),
                                    'trim' => array( 'return' => 'string',
-                                                    'code' => '$result = $paramCount == 1 ? trim( $staticValues[0] ) : trim ( $staticValues[0], $staticValues[1] );',
-                                                    'code1' => '$result = trim( $staticValues[0] );',
-                                                    'code2' => '$result = trim( $staticValues[0], $staticValues[1] );',
+                                                    'code' => '$result = $paramCount == 1 ? trim( (string)$staticValues[0] ) : trim( (string)$staticValues[0], $staticValues[1] );',
+                                                    'code1' => '$result = trim( (string)$staticValues[0] );',
+                                                    'code2' => '$result = trim( (string)$staticValues[0], $staticValues[1] );',
                                                  ),
                                    'wrap' => array( 'return' => 'string',
-                                                    'code1' => '$result = wordwrap( $staticValues[0] );',
-                                                    'code2' => '$result = wordwrap( $staticValues[0], $staticValues[1] );',
-                                                    'code3' => '$result = wordwrap( $staticValues[0], $staticValues[1], $staticValues[2] );',
-                                                    'code4' => '$result = wordwrap( $staticValues[0], $staticValues[1], $staticValues[2], $staticValues[3] );',
+                                                    'code1' => '$result = wordwrap( (string)$staticValues[0] );',
+                                                    'code2' => '$result = wordwrap( (string)$staticValues[0], $staticValues[1] );',
+                                                    'code3' => '$result = wordwrap( (string)$staticValues[0], $staticValues[1], $staticValues[2] );',
+                                                    'code4' => '$result = wordwrap( (string)$staticValues[0], $staticValues[1], $staticValues[2], $staticValues[3] );',
                                                  ),
                                    'simplify' => array( 'return' => 'string',
                                                         'code' => 'if ( $paramCount == 1 )
@@ -287,14 +287,14 @@ class eZTemplateStringOperator
         if ( eZTemplateNodeTool::isConstantElement( $parameters[0] ) )
         {
             $text = eZTemplateNodeTool::elementConstantValue( $parameters[0] );
-            $text = $phpFunction( $text );
+            $text = $phpFunction( (string)$text );
             $text = str_replace( array( "'" ), array( "\\'" ), $text );
             $code = "%output% = '" . $text . "' ;\n";
         }
         else
         {
             $values[] = $parameters[0];
-            $code = "%output% = $phpFunction( %1% );\n";
+            $code = "%output% = $phpFunction( (string) %1% );\n";
         }
 
         $newElements[] = eZTemplateNodeTool::createCodePieceElement( $code, $values );
@@ -522,6 +522,10 @@ class eZTemplateStringOperator
                      $namedParameters,
                      $placement )
     {
+        // Every operator here works on a string: null (an unset attribute) is the empty string, as it was before
+        // PHP 8.1 deprecated null for the string functions.
+        if ( $operatorValue === null )
+            $operatorValue = '';
         switch ( $operatorName )
         {
             // Convert all alphabetical chars of operatorvalue to uppercase.
