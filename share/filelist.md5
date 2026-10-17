@@ -1997,7 +1997,7 @@ d39a4d09fb5b17d8d49fc0da526ff1e4  design/standard/javascript/dashboard_community
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 b8c91691f6f4c2a012fac6884a2523b7  design/standard/javascript/expdebugbar-head.js
-ecfccf78fc50efa45a562649c1ba08b7  design/standard/javascript/expdebugbar.js
+5c5a2fac8ac63b43eabb82a5ec4e59f2  design/standard/javascript/expdebugbar.js
 926862e4e05c2c21ae1f91b36c18d791  design/standard/javascript/ezasynchronouspublishing.js
 32df3b8648430182840fe753d4977548  design/standard/javascript/ezmedia_silverlight.js
 508ff667415a5d98e2a74446341b83ec  design/standard/javascript/ezmultioption/ezmultioption.js
@@ -2021,7 +2021,7 @@ bca28d129e420ebe0e8a332a15c24fd4  design/standard/stylesheets/core.css
 480210c74d385593961fa435116fa328  design/standard/stylesheets/debug.css
 95aae21af74d28590b2b95defccd916e  design/standard/stylesheets/exp_bookmarks.css
 e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.css
-dd078a2997be44a4eae7e83a164280e2  design/standard/stylesheets/expdebugbar-toolbar.css
+04c417f5004b839a5074d87b93f3e111  design/standard/stylesheets/expdebugbar-toolbar.css
 daaa63a5a6d2134b5ed2e6eab8730a1b  design/standard/stylesheets/expdebugbar.css
 6be40b2658f59872433cc8104f2deebd  design/standard/stylesheets/ezmedia_silverlight.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
@@ -3009,7 +3009,7 @@ f1ac6c4bdfb768a543907f1e85408ed8  doc/bc/6.0/console-exp-ini.md
 f504dbb0bd1d30709cde9b7def0b1c52  doc/bc/6.0/content-export-menu.md
 d3d1f22911e860a16506696d3fee2cbb  doc/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/bc/6.0/content-object-fallback-locale.md
-9c63717328d52de4b3b70c414d590c68  doc/bc/6.0/debug-bar.md
+bd7e17c4ad79edba44858d93f629b015  doc/bc/6.0/debug-bar.md
 68ca2915c347f13a647afb19d14748d0  doc/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/bc/6.0/eZINI_PRESERVES_COMMENTS.md
 cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
@@ -3227,7 +3227,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-42f157121903f15847963d45ff6a55b5  doc/changelogs/6.0/6.0.15.md
+eeabb1427cad229cf5d20a6ee578215f  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6702,7 +6702,7 @@ d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
 c86873ded14533e5c2c8d74477b5b0c9  lib/eztemplate/classes/eztemplatevariableelement.php
 290175b9eca3990307842ecc8353ae59  lib/eztemplate/classes/eztemplatewhilefunction.php
-77a9eb72b51eca60181a3e35df3ed4d3  lib/ezutils/classes/expdebugbarreport.php
+a96f3e667387ce974e3a4284c338d6af  lib/ezutils/classes/expdebugbarreport.php
 b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 11982ee3f90617fbf7ddbb55b4806286  lib/ezutils/classes/ezcachehelper.php
 65418d73b97109fe1dc0fc642c93139e  lib/ezutils/classes/ezcli.php
@@ -8949,7 +8949,7 @@ def53b26e73c0558a811a95b59614ebc  tests/tests/lib/ezutils/expDebugBarReportEngin
 b99dee804176afb040d2d3199defbcf5  tests/tests/lib/ezutils/expDebugBarReportMessageTextTest.php
 24a5b39e28934cb9a21a2ac138b37f65  tests/tests/lib/ezutils/expDebugBarReportPanelHeightTest.php
 104050181feaa35129f61c3900abd978  tests/tests/lib/ezutils/expDebugBarReportRuntimeChipsTest.php
-810315d09a518fabcb4a870ca31a9fca  tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php
+5ba21c9ef0d37c63f981aac741defd5c  tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php
 b52fb09b44b7e75ab5ec7b700cd19784  tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php
 73b71352cf122c5331f60f4ca3185288  tests/tests/lib/ezutils/ezdebug_regression.php
 43dca975479fcb28e788dece5baeef99  tests/tests/lib/ezutils/ezhttptool_regression.php
