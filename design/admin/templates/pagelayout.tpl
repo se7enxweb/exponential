@@ -44,10 +44,10 @@ div#maincolumn {ldelim} padding-inline-end: 20px; padding-inline-start: 50px; {r
         {if is_set( $left_menu_widths[$admin_left_size] )}
             {set $left_size_hash = $left_menu_widths[$admin_left_size]}
             div#leftmenu   {ldelim} width: {$left_size_hash|int}em; {rdelim}
-            div#maincontent {ldelim} margin-inline-start: {$left_size_hash|int}em; {rdelim}
+            div#maincontent {ldelim} margin-inline-start: calc({$left_size_hash|int}em + 10px); {rdelim}
         {else}
             div#page div#leftmenu   {ldelim} width: {$admin_left_size|wash}; {rdelim}
-            div#page div#maincontent {ldelim} margin-inline-start: {$admin_left_size|wash}; {rdelim}
+            div#page div#maincontent {ldelim} margin-inline-start: calc({$admin_left_size|wash} + 10px); {rdelim}
         {/if}
         {undef $left_menu_widths}
     {/if}
@@ -96,7 +96,13 @@ div#maincolumn {ldelim} padding-inline-end: 20px; padding-inline-start: 50px; {r
 <hr class="hide" />
 {/cache-block}{* /Pr uri cache *}
 
-<div id="columns" class="{if $hide_right_menu}hide-rightmenu{/if}{if and( $collapse_left_menu, $hide_left_menu|not )} leftmenu-collapsed{/if}">
+{* The user name in the header: written by this script (the header is cached for every user of the same roles) right
+   after the header, before the page is first drawn; at the end of the page it widened the user menu after the first paint *}
+<script type="text/javascript">
+document.getElementById('header-usermenu-logout').innerHTML += '<span class="header-usermenu-name"><bdi>{$current_user.login|wash}<\/bdi><\/span>';
+</script>
+
+<div id="columns" class="{if $hide_right_menu}hide-rightmenu{/if}{if $collapse_right_menu} rightmenu-collapsed{/if}{if and( $collapse_left_menu, $hide_left_menu|not )} leftmenu-collapsed{/if}">
 
 
 <div id="left-panels-separator">
@@ -225,8 +231,6 @@ div#maincolumn {ldelim} padding-inline-end: 20px; padding-inline-start: 50px; {r
 {/cache-block}
 
 <script type="text/javascript">
-document.getElementById('header-usermenu-logout').innerHTML += '<span class="header-usermenu-name"><bdi>{$current_user.login|wash}<\/bdi><\/span>';
-
 document.getElementById('right-panels-separator').style.insetInlineEnd = (parseInt(document.getElementById('rightmenu').offsetWidth,10) - 20) + 'px';
 
 {literal}

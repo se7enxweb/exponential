@@ -79,6 +79,14 @@
             <directory suffix="Test.php">tests/tests/kernel/logviewer</directory>
         </testsuite>
 
+        <!-- the request logs (doc/features/6.0/request-logs.md): 404.log, the request classifier and security.log,
+             one line per request whichever way it ends; settings given to the classes, files below var/tmp; no
+             database -->
+        <testsuite name="kernel-requestlog">
+            <directory suffix="Test.php">tests/tests/kernel/requestlog</directory>
+            <directory suffix="Test.php">tests/tests/kernel/requestclassifier</directory>
+        </testsuite>
+
         <testsuite name="lib">
             <directory suffix="Test.php">tests/tests/lib</directory>
             <exclude>tests/tests/lib/ezdb/mongodb</exclude>

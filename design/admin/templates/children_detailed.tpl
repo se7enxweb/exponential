@@ -276,6 +276,12 @@ else {
     <div id="tpg"></div>
 </div>
 <div id="content-sub-items-list" class="content-navigation-childlist"></div>
+{* The table's place while its rows load (pagelayout.css .a4-subitems-reserve): the header, one line per row of the
+   first page (the rows per page, or the sub-items when there are fewer) and the pager, so the page does not move down
+   when the script draws the table. Shown only while the list is empty or loading. *}
+{def $subitems_reserve_rows = min( $children_count, $number_of_items )}
+<div class="a4-subitems-reserve" aria-hidden="true"><span class="a4-subitems-reserve-head"></span>{if gt( $subitems_reserve_rows, 0 )}{for 1 to $subitems_reserve_rows as $subitems_reserve_row}<span></span>{/for}<span class="a4-subitems-reserve-pager"></span>{/if}</div>
+{undef $subitems_reserve_rows}
 <div id="bpg"></div>
 
 <div id="to-dialog-container"></div>

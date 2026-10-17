@@ -13,8 +13,13 @@
  *   noteView()    the module, view and named parameters of the request, so the line can name its node or object.
  *   handleError() the error module, where it wrote "Error ocurred using URI": classifies the request (once),
  *                 writes the security line or the 404 line and returns true, or false for the caller's old line.
- *   finish()      once at the end of the web request (ezpKernelWeb): classifies a request not classified yet (a 200
- *                 with an injection in its query) and writes what is still pending.
+ *   begin()       when the web request starts (ezpKernelWeb::run()): forgets the previous request and registers
+ *                 finish() as a clean-up handler of eZExecution, so it also runs when the request ends through
+ *                 eZExecution::cleanExit() (a download, an ezjscore call, a redirect, a view that sends its own
+ *                 output) or a fatal error, not only at the normal end.
+ *   finish()      once at the end of the web request, whichever way it ends (a second call does nothing):
+ *                 classifies a request not classified yet (a 200 with an injection in its query) and writes what
+ *                 is still pending.
  *
  * site.ini [RequestLogSettings]: NotFoundLog, NotFoundLogFile, MaskIP, MaxURILength. Line format:
  * doc/features/6.0/request-logs.md.
@@ -44,6 +49,9 @@ class expRequestLog
 
     /** @var bool whether this request's line (404, security, or the old one) is written */
     protected static $done = false;
+
+    /** @var bool whether finish() ran for this request (it runs once, from shutdown or a clean-up handler) */
+    protected static $finished = false;
 
     /** @var int|null the HTTP status the error module answered */
     protected static $status = null;
@@ -77,8 +85,33 @@ class expRequestLog
         self::$classified = false;
         self::$verdict = false;
         self::$done = false;
+        self::$finished = false;
         self::$status = null;
         self::$lastLine = null;
+    }
+
+    /**
+     * Starts the request log of a web request: forgets the previous request (reset()) and registers finish() as a
+     * clean-up handler of eZExecution, so the request is classified and its line written whichever way it ends:
+     * the normal end (ezpKernelWeb::shutdown()), eZExecution::cleanExit() (downloads, ezjscore calls, redirects,
+     * views that send their own output), or a fatal error (eZExecution's shutdown handler runs the clean-up).
+     *
+     * eZExecution keeps its handlers per request (REQUEST_TIME_FLOAT) and adds one only once, so a persistent
+     * worker (Velocity) neither runs a previous request's handler nor collects copies of it.
+     *
+     * @return void
+     */
+    public static function begin()
+    {
+        self::reset();
+        if ( class_exists( 'eZExecution' ) )
+            eZExecution::addCleanupHandler( array( __CLASS__, 'finish' ) );
+    }
+
+    /** @return bool whether finish() ran for this request */
+    public static function finished()
+    {
+        return self::$finished;
     }
 
     /**
@@ -215,7 +248,8 @@ class expRequestLog
     }
 
     /**
-     * Called once at the end of the web request. Classifies the request when nothing did yet, and writes what is
+     * Called at the end of the web request, from ezpKernelWeb::shutdown() and as eZExecution's clean-up handler
+     * (begin()); only the first call counts. Classifies the request when nothing did yet, and writes what is
      * pending: the 404 line of a not-found that did not reach the error module, or the old error line of a reason
      * whose request did not end as a not-found.
      *
@@ -224,6 +258,10 @@ class expRequestLog
      */
     public static function finish( $status = null )
     {
+        // once per request: shutdown() and eZExecution::cleanup() (a clean exit, then the normal end) both call it
+        if ( self::$finished )
+            return;
+        self::$finished = true;
         if ( $status === null )
             $status = self::$status;
         if ( $status === null && function_exists( 'http_response_code' ) )
@@ -284,6 +322,11 @@ class expRequestLog
                     self::$verdict = true;
                 }
             }
+            // A classified request's answer is never kept by a shared cache (Velocity's response cache, a proxy):
+            // kept, the same request sent again was answered from it and never reached the classifier, so a
+            // probe repeated five times wrote one security line under Velocity and five under Apache.
+            if ( self::$verdict )
+                self::keepOutOfSharedCaches();
         }
         catch ( Throwable $e )
         {
@@ -293,6 +336,21 @@ class expRequestLog
             self::$verdict = false;
         }
         return self::$verdict;
+    }
+
+    /**
+     * Marks the answer of a classified request private, no-store (ezpRequestRuleKernel::keepOutOfSharedCaches()),
+     * so no shared cache keeps it and the next identical request is classified again. Late headers are fine under
+     * Velocity, which collects them after the clean-up handlers ran; once headers are sent it does nothing.
+     *
+     * @return void
+     */
+    protected static function keepOutOfSharedCaches()
+    {
+        if ( class_exists( 'ezpRequestRuleKernel' ) )
+            ezpRequestRuleKernel::keepOutOfSharedCaches();
+        else if ( !headers_sent() )
+            header( 'Cache-Control: private, no-store' );
     }
 
     /**

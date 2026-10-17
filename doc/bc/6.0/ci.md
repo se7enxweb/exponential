@@ -35,7 +35,9 @@ These things hold for all of them:
   package release that breaks the resolution therefore breaks the install step of every leg at once, without a
   change in this repository.
 - **A pull request is tested as merged into `main`.** The checks see `main` plus the branch, so a branch that was
-  green can turn red when `main` moves. Merge `main` into the branch and push again.
+  green can turn red when `main` moves. Merge `main` into the branch and push again. A pull request that conflicts
+  with `main` gets no checks at all, because GitHub has no merge commit to test: a pull request with an empty checks
+  list is resolved by merging `main` into the branch, not by re-running anything.
 - **Only a superseded pull request run is cancelled.** Quality, PHPUnit and Performance have one concurrency group
   per pull request, and a new push to the branch cancels the run it replaces. A push to `main` gets a group of its
   own commit, so a later push never cancels it halfway and every commit on `main` keeps a complete result. A
@@ -88,7 +90,7 @@ The team's push gate runs the checks of `.github/workflows/quality.yml` and the 
 
 | Mode | What runs | When |
 |------|-----------|------|
-| `--fast` | syntax of the changed PHP files (PHP 8.3 as CI, and PHP 8.0), `node --check` of the changed scripts (node 22), commit messages (the same `.githooks/check-commit-range` CI runs), the file manifest, the code style of the changed files (warning only, as in CI), PHPStan, and the PHPUnit test files of the change | every commit and push |
+| `--fast` | syntax of the changed PHP files (PHP 8.3 as CI, and PHP 8.0), `node --check` of the changed scripts (node 22), commit messages (the same `.githooks/check-commit-range` CI runs), the Packagist check of `composer.json` (below), the file manifest, the code style of the changed files (warning only, as in CI), PHPStan, and the PHPUnit test files of the change | every commit and push |
 | default | as `--fast`, with the whole PHPUnit run instead of the changed tests | larger pushes |
 | `--ci` | the default set plus PHP 8.0 syntax of every file and the PHP 8.0 production install with the boot smoke test (CI's `php80` job) | before a release |
 
@@ -103,6 +105,14 @@ How it matches CI:
   named after its classes, the tests that name its classes, path or changed INI settings, and the tests that walk a
   directory the file is in and check files of its kind (every admin4 template, every `translation.ts`). The last
   rule closes the gap that let a template's inline script tag and a translation's markup through on 2026-10-16/17.
+- **Packagist.** When the range changes `composer.json`, every `se7enxweb/*` constraint in `require` and
+  `require-dev` must match a stable release that `https://repo.packagist.org/p2/<vendor>/<package>.json` already
+  lists. CI's PHPUnit install step runs `composer update` on every leg, so a repin to a version that was tagged but
+  never reached Packagist (a missing webhook, a typo, a release still being cut) fails all of them at once. The gate
+  fails first and names the package, the constraint and the newest version Packagist has; an unreachable Packagist
+  fails it too. `GATES_ALLOW_UNPUBLISHED=1` turns the failure into a warning, for an emergency only: CI stays red until
+  the release is on Packagist. The order for a repin is therefore: release the extension, see it on Packagist,
+  commit the root's new constraint, run the fast gates on that commit, and push that exact commit.
 
 Differences that remain, and why:
 

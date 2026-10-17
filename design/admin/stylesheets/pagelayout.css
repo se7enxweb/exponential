@@ -290,16 +290,18 @@ div.tabs-content.disabled div.tab-content
     position: relative;
 }
 
+/* The left menu (15em) and the 10px between the columns that leftmenu_widthcontrol.js keeps when it sets the margin
+   after the page is parsed: drawn from the first paint, so the content does not move 10px aside on every page */
 #maincontent
 {
-    margin: 0 0 0 15em;
+    margin: 0;
+    margin-inline-start: calc(15em + 10px);
     min-height: 200px;
     border-radius: 2px;
     position: relative;
     padding-top:1px;
     padding-bottom:1px;
 }
-:where([dir="rtl"]) #maincontent { margin: 0 15em 0 0; }
 
 #maincontent-design
 {
@@ -378,7 +380,12 @@ div#columns.hide-rightmenu div#maincolumn { margin-inline-end: 0; }
     top:0;
     bottom:0;
     z-index:1;
+    inset-inline-end: 161px;   /* the right menu (181px) less 20px, as the script at the end of pagelayout.tpl sets it */
 }
+/* Where the script at the end of pagelayout.tpl puts the separator, drawn from the first paint: a collapsed right menu
+   (18px) and a page without one (edit) */
+#columns.rightmenu-collapsed #right-panels-separator { inset-inline-end: -2px; }
+#columns.hide-rightmenu #right-panels-separator { inset-inline-end: -20px; }
 
 .panels-separator-top
 {
@@ -1538,6 +1545,14 @@ html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
   #page #columns #leftmenu { order: 2; float: none; width: auto; margin: 0; min-height: 0; }
   #page #columns #leftmenu.collapsed #leftmenu-design { visibility: visible; }
   #page #columns #rightmenu { order: 2; float: none; width: auto; min-height: 0; overflow: visible; }
+  /* While the page loads, the browser draws what it has: the menus come before the content in the document, so they
+     were drawn at the top and then pushed under the content when it arrived (a layout shift of 0.4 to 1.1 on every
+     page). They wait until the main column is complete (the .break after it); not on the pages without the right
+     column (the edit form), whose menu stands above the form and is drawn there from the start. #canvas-bottom follows the main column in
+     the document but stands above it here (the column's order is 1): its 20px are kept free under #canvas-top until
+     it arrives, so it does not push the content down. */
+  #page #columns:not(.hide-rightmenu):not(:has(> .break)) :is(#rightmenu, #leftmenu) { display: none; }
+  #page #columns:not(:has(> #canvas-bottom)) > #canvas-top { margin-block-end: 20px; }
   #leftmenu-design, #rightmenu-design { margin: 0; min-height: 0; }
   #rightmenu-design :is(select, input[type=text], input[type=search]) { width: 100%; min-height: var(--a4-control-h); }
   #maincontent-design { margin: 0; padding: var(--a4-space-3); overflow-wrap: break-word; }
@@ -1554,3 +1569,21 @@ html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
   #maincontent :is(td, th) > a[href] { display: inline-flex; align-items: center; min-height: var(--a4-control-h); }
   ul.tabs li a, ul.tabs li span.disabled { display: flex; align-items: center; min-height: var(--a4-control-h); box-sizing: border-box; }
 }
+
+
+/* ---- node view ---- the sub-items table's place while it loads (children_detailed.tpl .a4-subitems-reserve), in
+   this file because it is the classic design's alone (admin4 sizes its own in admin4.css; modules/content.css is
+   the same file in both designs): the script draws the table after the page, first a loading line and then its rows, and the pager and
+   everything under it moved down by the whole table on every node view. The reserve holds the header (the table's
+   head and the space above it, about 67px), a line per row of the first page (a row is about 28px) and the pager,
+   while the list is empty (before the script) or loading (aria-busy: the head and the loading line are there, so
+   those two give way). It is hidden: its own move when it gives way is no layout shift. --------------------------- */
+
+.a4-subitems-reserve { display: none; visibility: hidden; }
+html.exp-js #content-sub-items-list:empty + .a4-subitems-reserve,
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve { display: block; }
+.a4-subitems-reserve > span { display: block; height: calc(var(--a4-space-5) + var(--a4-space-1)); }
+.a4-subitems-reserve > .a4-subitems-reserve-head { height: calc(var(--a4-space-7) + var(--a4-space-4) + var(--a4-space-1)); }
+.a4-subitems-reserve > .a4-subitems-reserve-pager { height: calc(var(--a4-space-6) + var(--a4-space-1)); }
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve > .a4-subitems-reserve-head,
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve > .a4-subitems-reserve-head + span { display: none; }

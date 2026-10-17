@@ -1653,9 +1653,19 @@ class expVelocity
         // Short, because the cost of being wrong is a page that exists
         // appearing not to. A minute blunts a crawl without visibly delaying
         // a publish.
-        $negative = $this->cacheSetting( 'NotFoundSeconds', 'CacheNotFoundSeconds', '60' );
+        $negative = $this->cacheSetting( 'NotFoundSeconds', 'CacheNotFoundSeconds', '0' );
         if ( $negative !== '' && (int)$negative > 0 )
             $cache['negativeTtl'] = (int)$negative;
+
+        // A request that says Cache-Control: no-cache (or Pragma: no-cache)
+        // reaches PHP, as it does under Apache, and its answer is stored again.
+        // Without it a repeated identical request -- a probe sent five times --
+        // was answered by the server's cache from the second time on and never
+        // reached the request classifier or security.log. A browser's ordinary
+        // reload (max-age=0) is still answered from the cache.
+        $noCache = $this->cacheSetting( 'HonorRequestNoCache', null, 'enabled' );
+        if ( $noCache === 'enabled' || $noCache === 'true' )
+            $cache['honorRequestNoCache'] = true;
 
         // Collapse the indentation eZ's templates ship with.
         //

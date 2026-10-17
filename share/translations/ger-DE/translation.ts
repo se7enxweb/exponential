@@ -76644,6 +76644,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Classic (server-rendered)</source>
         <translation>Klassisch (serverseitig)</translation>
     </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (älter)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Klassisch (älter)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Klassisch, serverseitig (älter)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/toolbar/uiswitch</name>

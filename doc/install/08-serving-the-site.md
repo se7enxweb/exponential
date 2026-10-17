@@ -399,7 +399,8 @@ worker is chosen: no fork, no PHP, no database. Exponential configures it in `[C
 | `APCu`, `APCuMaxSize` | `enabled`, `0` | small entries in APCu, shared by the workers (`apc.enable_cli` is set for the server process) |
 | `SkipCookies` | empty | cookies that mean "personal, do not cache"; empty derives the session cookie and `is_logged_in` |
 | `StaleWhileRevalidate` | `60` | seconds an expired page is still served while one request renders its replacement |
-| `NotFoundSeconds` | `60` | seconds a 404 is remembered |
+| `NotFoundSeconds` | `0` | seconds a 404 is remembered; `0` sends every 404 to PHP, so 404.log and security.log see each one |
+| `HonorRequestNoCache` | `enabled` | a request with `Cache-Control: no-cache` or `Pragma: no-cache` reaches PHP and its answer is stored again |
 | `SweepEvery`, `SweepMaxAge` | `300`, `86400` | clearing expired entries off the disk |
 | `MinifyHtml` | `enabled` | stored pages without template indentation |
 

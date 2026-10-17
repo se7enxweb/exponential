@@ -21,7 +21,8 @@ still work; a value in `[CacheSettings]` wins.
 | Key | Shipped value | Old behaviour | Former `[ServerSettings]` name |
 |---|---|---|---|
 | `StaleWhileRevalidate` | `60` (seconds) | `0` | `CacheStaleWhileRevalidate` |
-| `NotFoundSeconds` | `60` (seconds) | `0` | `CacheNotFoundSeconds` |
+| `NotFoundSeconds` | `0` (seconds; was `60` until 6.0.15) | `0` | `CacheNotFoundSeconds` |
+| `HonorRequestNoCache` | `enabled` | (none: no-cache was answered from the cache) | |
 | `MinifyHtml` | `enabled` | `disabled` | `MinifyCachedHtml` |
 | `MiddleOutCompression` | `disabled` | `disabled` | `MiddleOutCompression` |
 
@@ -103,6 +104,18 @@ is never remembered as a negative. The lifetime is the server's, not the respons
 whatever `Cache-Control` the application happened to set.
 
 `0` gives the old behaviour.
+
+**Shipped as `0` since 6.0.15.** A 404 answered from the cache never reaches PHP, so 404.log and the request
+classifier (security.log) saw a repeated not-found or probe once a minute at most, where Apache shows each one. Set a
+value again where the rendering cost of dead links matters more than seeing each request. A request the classifier
+flags is answered `Cache-Control: private, no-store` whatever its status, so it is never kept either way.
+
+## Added: request `no-cache` reaches PHP (`HonorRequestNoCache`)
+
+A request sending `Cache-Control: no-cache` (or `Pragma: no-cache` without a `Cache-Control`) is not answered from
+the server's cache: it reaches PHP, as under Apache, and the answer is stored again. A browser's ordinary reload
+(`max-age=0`) is still answered from the cache. Needs exponential-velocity with `Q.web.cache.honorRequestNoCache`.
+`disabled` gives the old behaviour.
 
 ## Added: HTML minification (`MinifyHtml`)
 

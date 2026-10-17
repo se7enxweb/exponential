@@ -5090,6 +5090,14 @@
         <source>%count matches</source>
         <translation>%count Doch tu&apos;lu&apos;</translation>
     </message>
+    <message>
+        <source>There are no matches on this page.</source>
+        <translation>naDev rapbogh pagh tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Go to the first page</source>
+        <translation>wa&apos;DIch nav yIjaH</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -10695,6 +10703,14 @@
         <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
         <translation>puq Dochmey tetlhDaq lanlu&apos;laHbe&apos;: yoS lojmItvamDaq Exponential UI (expui chuqtaHghach) chu&apos;lu&apos;be&apos; pagh lI&apos;lu&apos;be&apos;.</translation>
     </message>
+    <message>
+        <source>Editorial</source>
+        <translation>ghItlh choHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Not saved: %error</source>
+        <translation>polbe&apos;lu&apos;: %error</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -13854,6 +13870,18 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>Qagh! %tab HIDjolev Suqlu&apos;be&apos;.</translation>
     </message>
     <message>
+        <source>Try again</source>
+        <translation>yInIDqa&apos;</translation>
+    </message>
+    <message>
+        <source>You are signed out. Sign in again to see the %tab menu.</source>
+        <translation>bImej. %tab HIDjolev DaleghmeH, yI&apos;el&apos;eghqa&apos;.</translation>
+    </message>
+    <message>
+        <source>Sign in</source>
+        <translation>yI&apos;el</translation>
+    </message>
+    <message>
         <source>Go to %tab</source>
         <translation>%tab &apos;ay&apos; perDaq yIjaH</translation>
     </message>
@@ -14188,6 +14216,10 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>More</source>
         <translation>latlh</translation>
+    </message>
+    <message>
+        <source>Quick search</source>
+        <translation>nejghach nom</translation>
     </message>
 </context>
 <context>
@@ -14815,6 +14847,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
         <translation>pagh lo&apos;bogh ghItlh polmeH Daq ghItlhmey, ghajwI&apos; pagh chaw&apos;mey muj ghajbogh ghItlhmey je.</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>wanI&apos; tetlh ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Follow, search and cross-reference the log files.</source>
+        <translation>wanI&apos; tetlh ghItlhmey yItlha&apos;, yInej, yIrar je.</translation>
     </message>
 </context>
 <context>
@@ -23284,6 +23324,30 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>ngutlh ghom</translation>
     </message>
     <message>
+        <source>Siteaccesses</source>
+        <translation>yoS lojmItmey</translation>
+    </message>
+    <message>
+        <source>%count (default: %default; match: %order)</source>
+        <translation>%count (motlh: %default; rapghach: %order)</translation>
+    </message>
+    <message>
+        <source>default: %default; match: %order</source>
+        <translation>motlh: %default; rapghach: %order</translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation>URI</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>jabwI&apos; pong</translation>
+    </message>
+    <message>
+        <source>Host and URI</source>
+        <translation>jabwI&apos; URI je</translation>
+    </message>
+    <message>
         <source>Internal</source>
         <translation>qoD</translation>
     </message>
@@ -24851,6 +24915,94 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>lojmIt mI&apos;</translation>
     </message>
     <message>
+        <source>Server variable</source>
+        <translation>jabwI&apos; choHlaHbogh</translation>
+    </message>
+    <message>
+        <source>Index file</source>
+        <translation>mI&apos; tetlh ghItlh</translation>
+    </message>
+    <message>
+        <source>StaticMatch</source>
+        <translation>StaticMatch</translation>
+    </message>
+    <message>
+        <source>Default siteaccess</source>
+        <translation>motlh yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>Another matcher</source>
+        <translation>latlh rapmoHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>loHghach</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>ghItlh choHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Site with login</source>
+        <translation>&apos;el&apos;eghghach poQbogh yoS</translation>
+    </message>
+    <message>
+        <source>Every siteaccess of site.ini [SiteAccessSettings] AvailableSiteAccessList and RelatedSiteAccessList, with the rules that lead a request to it. The rules are read from the settings; the links open each siteaccess on the server and port of this page.</source>
+        <translation>site.ini [SiteAccessSettings] AvailableSiteAccessList RelatedSiteAccessList je yoS lojmIt Hoch, chutmey ghaHDaq tlhobghach Devboghmo&apos; je. DuHmeyvo&apos; chutmey laDlu&apos;; nav jabwI&apos; &apos;ej lojmIt naQDaq yoS lojmIt Hoch poSmoH rarwI&apos;mey.</translation>
+    </message>
+    <message>
+        <source>This request</source>
+        <translation>tlhobghachvam</translation>
+    </message>
+    <message>
+        <source>Match order</source>
+        <translation>rapghach mIw</translation>
+    </message>
+    <message>
+        <source>every request gets this siteaccess; the rules below are not used</source>
+        <translation>yoS lojmItvam Suq Hoch tlhobghach; bIng chutmey lo&apos;be&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Resolution map</source>
+        <translation>rapghach pu&apos;jIn</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>chut</translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation>Dochmey</translation>
+    </message>
+    <message>
+        <source>matched</source>
+        <translation>rapta&apos;</translation>
+    </message>
+    <message>
+        <source>not a rule this installation knows</source>
+        <translation>chut Sovbe&apos;bogh jomghachvam</translation>
+    </message>
+    <message>
+        <source>no entries</source>
+        <translation>Dochmey pagh</translation>
+    </message>
+    <message>
+        <source>chose %siteaccess</source>
+        <translation>%siteaccess wIv</translation>
+    </message>
+    <message>
+        <source>no rule matched</source>
+        <translation>rapbogh chut pagh</translation>
+    </message>
+    <message>
+        <source>The rules are tried from the top; the first that matches decides.</source>
+        <translation>Dung vo&apos; chutmey nIDlu&apos;; wuq wa&apos;DIch rapbogh chut.</translation>
+    </message>
+    <message>
+        <source>All siteaccesses</source>
+        <translation>yoS lojmItmey Hoch</translation>
+    </message>
+    <message>
         <source>no limit</source>
         <translation>veH pagh</translation>
     </message>
@@ -24913,6 +25065,22 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>default</source>
         <translation>motlh</translation>
+    </message>
+    <message>
+        <source>this page</source>
+        <translation>navvam</translation>
+    </message>
+    <message>
+        <source>related only</source>
+        <translation>rarlu&apos;bogh neH</translation>
+    </message>
+    <message>
+        <source>no rule reaches it</source>
+        <translation>ghaHDaq paw chut pagh</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>mIllogh nab</translation>
     </message>
     <message>
         <source>Tables</source>
@@ -25049,6 +25217,70 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Locale</source>
         <translation>Hol Sep</translation>
+    </message>
+    <message>
+        <source>languages:</source>
+        <translation>Holmey:</translation>
+    </message>
+    <message>
+        <source>Access extensions</source>
+        <translation>lojmIt chelwI&apos;mey</translation>
+    </message>
+    <message>
+        <source>Hidden nodes</source>
+        <translation>So&apos;lu&apos;bogh moQmey</translation>
+    </message>
+    <message>
+        <source>shown</source>
+        <translation>&apos;anglu&apos;</translation>
+    </message>
+    <message>
+        <source>not shown</source>
+        <translation>&apos;anglu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>yI&apos;el</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>poQlu&apos;</translation>
+    </message>
+    <message>
+        <source>not required</source>
+        <translation>poQlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Matched by</source>
+        <translation>rapmoHwI&apos;</translation>
+    </message>
+    <message>
+        <source>the default rule</source>
+        <translation>motlh chut</translation>
+    </message>
+    <message>
+        <source>The settings of this siteaccess could not be read.</source>
+        <translation>yoS lojmItvam DuHmey laDlaHlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Open %siteaccess</source>
+        <translation>%siteaccess yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Settings of %siteaccess</source>
+        <translation>%siteaccess DuHmey</translation>
+    </message>
+    <message>
+        <source>site.ini settings</source>
+        <translation>site.ini DuHmey</translation>
+    </message>
+    <message>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
+        <translation>yoS lojmIt cherchugh, site.ini [SiteAccessSettings] SiteAccessType tlha&apos; Segh; pagh, HaDwI&apos; nabmeyDaj RequireUserLogin je tlha&apos;. ghojmoHwI&apos; ghItlh: doc/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -33607,6 +33839,30 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Checking...</source>
         <translation>&apos;oltaH...</translation>
+    </message>
+    <message>
+        <source>Table of an extension that is not active</source>
+        <translation>Qapbe&apos;bogh chelwI&apos; raS</translation>
+    </message>
+    <message>
+        <source>%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.</source>
+        <translation>jomlu&apos;pu&apos;bogh Qapbe&apos;bogh je chelwI&apos;mey ghaj %count raSmey; bIng tetlhlu&apos;, Qaplu&apos;meH pagh.</translation>
+    </message>
+    <message>
+        <source>Tables of extensions that are not active</source>
+        <translation>Qapbe&apos;bogh chelwI&apos;mey raSmey</translation>
+    </message>
+    <message>
+        <source>belongs to %extension (not active)</source>
+        <translation>%extension ghaj (Qapbe&apos;)</translation>
+    </message>
+    <message>
+        <source>This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.</source>
+        <translation>raSvam ghaj chelwI&apos; %extension, jomlu&apos;pu&apos;bogh Qapbe&apos;bogh je. chelwI&apos; yIQapmoH, pagh raS yImej; DaQaw&apos;chugh, De&apos;Daj teqlu&apos;. raSvammo&apos; SQL ghItlhlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
+        <translation>raSvam pong ngevlu&apos;bogh mIwmey pagh, jomlu&apos;pu&apos;bogh Qapbe&apos;bogh chelwI&apos; mIw rur: motlh mIw ghItlh ghajbe&apos;bogh chelwI&apos;lIj ghaj, pagh teqlu&apos;pu&apos;bogh chelwI&apos; ghaj. yImej, De&apos;Daj poQlu&apos;be&apos;qa&apos; DaSovbe&apos;chugh; naQmoHmeH neH DROP ra&apos;ghach &apos;anglu&apos;.</translation>
     </message>
 </context>
 <context>
@@ -44198,6 +44454,10 @@ chaw&apos;wI&apos;vaD ja&apos;ghachmey DangeH DaneHchugh pagh Dotlh DaleghmeH, b
     <message>
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation>nejmeH mu&apos;mey puSchugh, Dochmey law&apos; tu&apos;lu&apos;. Doch Datu&apos;pa&apos; nejmeH mu&apos;mey mI&apos; yInupmoH.</translation>
+    </message>
+    <message>
+        <source>The search failed. Try again.</source>
+        <translation>luj nejghach. yInIDqa&apos;.</translation>
     </message>
 </context>
 <context>
@@ -56821,6 +57081,30 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Site data</source>
         <translation>yoS De&apos;</translation>
     </message>
+    <message>
+        <source>Setup</source>
+        <translation>SeHlaw</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>wanI&apos; tetlh ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>yI&apos;ol</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>wanI&apos; tetlhmey yI&apos;aw&apos;</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>wanI&apos; tetlhmey Dotlh</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Qaghmey QIn ngaj</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -64633,6 +64917,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Show the numbers</source>
         <translation>mI&apos;mey tI&apos;ang</translation>
     </message>
+    <message>
+        <source>Nothing was published in the last 14 days.</source>
+        <translation>Qav 14 jaj Doch ngevlu&apos;pu&apos;be&apos;.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -65944,6 +66232,34 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>De&apos; polwI&apos; mughghach je wIvbogh DuHmey, &apos;ej mughlu&apos;pu&apos;bogh De&apos; polwI&apos;vo&apos; Qappu&apos;bogh pagh DaH mughlu&apos;pu&apos;bogh mIw &apos;echletmey mI&apos;. mIw &apos;echlet De&apos; polwI&apos; chImmoHlu&apos;DI&apos; mIw &apos;echlet Hoch wa&apos;logh mughlu&apos;.</translation>
     </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>ngo&apos;moHlu&apos;bogh Dochmey</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>ngoq &apos;ay&apos;</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>Sor Daq ngu&apos;meH mI&apos;</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>HTTP Dotlh</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>ghel poH</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>tlhobghach</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>nav poH &apos;ay&apos;</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -66244,6 +66560,18 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Classic (server-rendered)</source>
         <translation>ngo&apos; (jabwI&apos; chenmoHbogh)</translation>
+    </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (ngo&apos;qu&apos;)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>ngo&apos; (ngo&apos;qu&apos;)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>ngo&apos;, jabwI&apos; chenmoHbogh (ngo&apos;qu&apos;)</translation>
     </message>
 </context>
 <context>
@@ -69646,6 +69974,1131 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Administration</source>
         <translation>loHghach</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/ezie</name>
+    <message>
+        <source>Edit</source>
+        <translation>yIchoH</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/logs</name>
+    <message>
+        <source>Error</source>
+        <translation>Qagh</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>ghuHmoHghach</translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation>ghuHmoHghach mach</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation>Qagh nejghach</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ngoq botlh</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>yoS</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>chelwI&apos;mey</translation>
+    </message>
+    <message>
+        <source>Rotated archives</source>
+        <translation>tamlu&apos;pu&apos;bogh polmeH pa&apos;mey</translation>
+    </message>
+    <message>
+        <source>Log file %name</source>
+        <translation>wanI&apos; tetlh ghItlh %name</translation>
+    </message>
+    <message>
+        <source>Log files</source>
+        <translation>wanI&apos; tetlh ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Follows a log file as it is written, searches it and its rotations, and links the lines of one request. Nothing on this page changes a file unless an action below says so.</source>
+        <translation>ghItlhlu&apos;taHvIS wanI&apos; tetlh ghItlh tlha&apos;, ghaH tammeymey je nej, wa&apos; tlhobghach tlhegh rar. ghItlh choHbe&apos; navvam Doch, bIng vangghach jatlhbe&apos;chugh.</translation>
+    </message>
+    <message>
+        <source>The file was rotated. The next line written starts a new file.</source>
+        <translation>ghItlh tamlu&apos;pu&apos;. ghItlh chu&apos; tagh tlhegh veb ghItlhlu&apos;bogh.</translation>
+    </message>
+    <message>
+        <source>The file was emptied.</source>
+        <translation>ghItlh chImmoHlu&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>The archived rotation was removed.</source>
+        <translation>polta&apos;bogh tamghach teqlu&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>The action could not be carried out. The web server may not change the file or its directory.</source>
+        <translation>vangghach ta&apos;laHlu&apos;be&apos;. ghItlh pagh ghItlh pa&apos;Daj choHlaHbe&apos;law&apos; jabwI&apos;.</translation>
+    </message>
+    <message>
+        <source>The file asked for is not a log file this viewer may open (settings/logviewer.ini [LogViewerSettings] Directories[] and FilePatterns[]). The default file is shown instead.</source>
+        <translation>tlhoblu&apos;bogh ghItlh, wanI&apos; tetlh ghItlh poSmoHlaHbogh leghwI&apos;vam ghaHbe&apos; (settings/logviewer.ini [LogViewerSettings] Directories[] FilePatterns[] je). motlh ghItlh &apos;anglu&apos; ghaH rIntaH.</translation>
+    </message>
+    <message>
+        <source>The search could not be run:</source>
+        <translation>nejghach Qaplu&apos;laHbe&apos;:</translation>
+    </message>
+    <message>
+        <source>The search text is too long.</source>
+        <translation>tIq law&apos; nejghach ghItlh.</translation>
+    </message>
+    <message>
+        <source>"%field" is not a time.</source>
+        <translation>&quot;%field&quot; poH ghaHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The IP address may only hold digits, letters a to f, dots and colons.</source>
+        <translation>mI&apos;mey, a vo&apos; f ngutlhmey, Qamwi&apos;mey, cha&apos; Qamwi&apos;mey neH ghaj IP Daq.</translation>
+    </message>
+    <message>
+        <source>The regular expression is not valid.</source>
+        <translation>lo&apos;laHbe&apos; chut &apos;echlet mu&apos;tlhegh.</translation>
+    </message>
+    <message>
+        <source>An error reference looks like ERR-0123456789.</source>
+        <translation>Qagh mI&apos; Dun: ERR-0123456789.</translation>
+    </message>
+    <message>
+        <source>There is no log file this viewer may open yet.</source>
+        <translation>wej poSmoHlaHbogh leghwI&apos;vam wanI&apos; tetlh ghItlh tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ghItlh</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Changed %time</source>
+        <translation>choHlu&apos;ta&apos; %time</translation>
+    </message>
+    <message>
+        <source>Compressed, read only</source>
+        <translation>QaDmoHlu&apos;ta&apos;, laD neH</translation>
+    </message>
+    <message>
+        <source>Archived rotation, not followed</source>
+        <translation>polta&apos;bogh tamghach, tlha&apos;lu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>E-mail addresses, IP addresses and secrets are masked</source>
+        <translation>QIn Daqmey, IP Daqmey, peghmeymey je So&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Shown unmasked</source>
+        <translation>So&apos;be&apos;lu&apos;taHvIS &apos;anglu&apos;</translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation>SeHmeH Dochmey</translation>
+    </message>
+    <message>
+        <source>Search results</source>
+        <translation>nejghach ngoDmey</translation>
+    </message>
+    <message>
+        <source>Archive</source>
+        <translation>polmeH pa&apos;</translation>
+    </message>
+    <message>
+        <source>Following</source>
+        <translation>tlha&apos;taH</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>yIyev</translation>
+    </message>
+    <message>
+        <source>Newest</source>
+        <translation>chu&apos;qu&apos;</translation>
+    </message>
+    <message>
+        <source>Follow</source>
+        <translation>yItlha&apos;</translation>
+    </message>
+    <message>
+        <source>Wrap lines</source>
+        <translation>tlheghmey yItlhe&apos;moH</translation>
+    </message>
+    <message>
+        <source>Mask again</source>
+        <translation>yISo&apos;qa&apos;</translation>
+    </message>
+    <message>
+        <source>Show unmasked</source>
+        <translation>So&apos;be&apos;lu&apos;bogh yI&apos;ang</translation>
+    </message>
+    <message>
+        <source>Find in the loaded lines</source>
+        <translation>lI&apos;lu&apos;pu&apos;bogh tlheghmeyDaq yInej</translation>
+    </message>
+    <message>
+        <source>Find in view</source>
+        <translation>leghlu&apos;bogh DaqDaq yInej</translation>
+    </message>
+    <message>
+        <source>Previous match (Shift+Enter)</source>
+        <translation>rapghach nungbogh (Shift+Enter)</translation>
+    </message>
+    <message>
+        <source>Previous match</source>
+        <translation>rapghach nungbogh</translation>
+    </message>
+    <message>
+        <source>Next match (Enter)</source>
+        <translation>rapghach veb (Enter)</translation>
+    </message>
+    <message>
+        <source>Next match</source>
+        <translation>rapghach veb</translation>
+    </message>
+    <message>
+        <source>Keys in the list: Space pauses or resumes, End jumps to the newest line, Up and Down move, Enter opens a line, n and N find the next and previous match.</source>
+        <translation>tetlhDaq leQmey: yev pagh taHqa&apos; Space, tlhegh chu&apos;qu&apos;Daq Sup End, vIH Dung bIng je, tlhegh poSmoH Enter, rapghach veb nungbogh je tu&apos; n N je.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>yInej</translation>
+    </message>
+    <message>
+        <source>Search the log files</source>
+        <translation>wanI&apos; tetlh ghItlhmey yInej</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>ghItlh</translation>
+    </message>
+    <message>
+        <source>Literal text, or a regular expression (without delimiters) when Regular expression is ticked. A search stops after a few seconds and offers to go on.</source>
+        <translation>ghItlh mu&apos;mey, pagh chut &apos;echlet mu&apos;tlhegh (veHmey Hutlh) chut &apos;echlet mu&apos;tlhegh wIvlu&apos;DI&apos;. &apos;op lup ret nejghach mev, &apos;ej ghoSqa&apos; &apos;e&apos; nob.</translation>
+    </message>
+    <message>
+        <source>Regular expression</source>
+        <translation>chut &apos;echlet mu&apos;tlhegh</translation>
+    </message>
+    <message>
+        <source>Match case</source>
+        <translation>ngutlh tInmey machmey je yIwIv</translation>
+    </message>
+    <message>
+        <source>Levels</source>
+        <translation>patlhmey</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ghoch</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>Request address contains</source>
+        <translation>tlhobghach Daq ngaS</translation>
+    </message>
+    <message>
+        <source>Client IP starts with</source>
+        <translation>lo&apos;wI&apos; IP tagh</translation>
+    </message>
+    <message>
+        <source>Error reference</source>
+        <translation>Qagh mI&apos;</translation>
+    </message>
+    <message>
+        <source>The reference an error page showed: finds its line in every kernel log and its rotations, and the lines of its request.</source>
+        <translation>Qagh nav &apos;anglu&apos;pu&apos;bogh mI&apos;: ngoq botlh wanI&apos; tetlh Hoch tammeyDaj je DaqDaq tlheghDaj tu&apos;, tlhobghachDaj tlheghmey je tu&apos;.</translation>
+    </message>
+    <message>
+        <source>Search in</source>
+        <translation>nejmeH Daq</translation>
+    </message>
+    <message>
+        <source>This file</source>
+        <translation>ghItlhvam</translation>
+    </message>
+    <message>
+        <source>All kernel logs</source>
+        <translation>ngoq botlh wanI&apos; tetlhmey Hoch</translation>
+    </message>
+    <message>
+        <source>All log files</source>
+        <translation>wanI&apos; tetlh ghItlhmey Hoch</translation>
+    </message>
+    <message>
+        <source>Include rotated files</source>
+        <translation>tamlu&apos;pu&apos;bogh ghItlhmey yIroQ</translation>
+    </message>
+    <message>
+        <source>Back to following</source>
+        <translation>tlha&apos;ghachDaq yIchegh</translation>
+    </message>
+    <message>
+        <source>%count entries found</source>
+        <translation>%count Dochmey tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>(the search stopped after its time limit; more may follow)</source>
+        <translation>(poH veHDaj qaSpu&apos;DI&apos; mev nejghach; latlh ghoSlaH)</translation>
+    </message>
+    <message>
+        <source>(the search stopped after reading its share; more may follow)</source>
+        <translation>(&apos;ay&apos;Daj laDpu&apos;DI&apos; mev nejghach; latlh ghoSlaH)</translation>
+    </message>
+    <message>
+        <source>(the first page of results)</source>
+        <translation>(ngoDmey wa&apos;DIch nav)</translation>
+    </message>
+    <message>
+        <source>(the regular expression needed too much work on a line and was stopped; make it more specific)</source>
+        <translation>(wa&apos; tlheghDaq Qu&apos; law&apos; poQ chut &apos;echlet mu&apos;tlhegh, &apos;ej mevmoHlu&apos;; yIngaQmoH)</translation>
+    </message>
+    <message>
+        <source>The request of %reference</source>
+        <translation>%reference tlhobghach</translation>
+    </message>
+    <message>
+        <source>No other line of this request was found.</source>
+        <translation>tlhobghachvam latlh tlhegh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The audit of this moment</source>
+        <translation>poHvam &apos;olghach</translation>
+    </message>
+    <message>
+        <source>Lines of %name</source>
+        <translation>%name tlheghmey</translation>
+    </message>
+    <message>
+        <source>Nothing matches the search.</source>
+        <translation>nejghach rapbe&apos; Doch.</translation>
+    </message>
+    <message>
+        <source>The file is empty.</source>
+        <translation>chIm ghItlh.</translation>
+    </message>
+    <message>
+        <source>More results</source>
+        <translation>latlh ngoDmey</translation>
+    </message>
+    <message>
+        <source>Entry</source>
+        <translation>Doch</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>yISoQmoH</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>vangghachmey</translation>
+    </message>
+    <message>
+        <source>From byte</source>
+        <translation>mI&apos;Hom ghom vo&apos;</translation>
+    </message>
+    <message>
+        <source>To byte</source>
+        <translation>mI&apos;Hom ghomDaq</translation>
+    </message>
+    <message>
+        <source>Download (gzip)</source>
+        <translation>yIHev (gzip)</translation>
+    </message>
+    <message>
+        <source>Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.</source>
+        <translation>chIm Daqmey: ghItlh Qav %size. naDev &apos;anglu&apos;bogh rur So&apos;lu&apos;; &apos;olghachDaq ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Rotate now</source>
+        <translation>DaH yItam</translation>
+    </message>
+    <message>
+        <source>Empty the file</source>
+        <translation>ghItlh yIchImmoH</translation>
+    </message>
+    <message>
+        <source>Remove this rotation</source>
+        <translation>tamghachvam yIteq</translation>
+    </message>
+    <message>
+        <source>Each of these asks for a confirmation first and is recorded in the audit.</source>
+        <translation>wa&apos;DIch &apos;ol &apos;e&apos; tlhob Hoch vangghach, &apos;ej &apos;olghachDaq ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>yItaghqa&apos;</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>yevlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Waiting %seconds s (too many requests)</source>
+        <translation>%seconds lup loS (law&apos; tlhobghachmey)</translation>
+    </message>
+    <message>
+        <source>No answer from the server; trying again</source>
+        <translation>jang jabwI&apos; pagh; nIDqa&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>The file can no longer be read</source>
+        <translation>ghItlh laDlaHlu&apos;be&apos;qa&apos;</translation>
+    </message>
+    <message>
+        <source>%count new lines</source>
+        <translation>%count tlheghmey chu&apos;</translation>
+    </message>
+    <message>
+        <source>1 new line</source>
+        <translation>1 tlhegh chu&apos;</translation>
+    </message>
+    <message>
+        <source>The file was rotated or emptied; following the new one.</source>
+        <translation>ghItlh tamlu&apos; pagh chImmoHlu&apos;; ghItlh chu&apos; tlha&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Match %index of %count</source>
+        <translation>%count rapghachmey: %index</translation>
+    </message>
+    <message>
+        <source>No match</source>
+        <translation>rapghach pagh</translation>
+    </message>
+    <message>
+        <source>%count lines kept (the oldest are dropped from the page, never from the file)</source>
+        <translation>%count tlheghmey polta&apos; (navvo&apos; ngo&apos;qu&apos;bogh teqlu&apos;, ghItlhvo&apos; not teqlu&apos;)</translation>
+    </message>
+    <message>
+        <source>Entry at %time</source>
+        <translation>%time Doch</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>poH</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>patlh</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>Client</source>
+        <translation>lo&apos;wI&apos;</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>tlhobghach</translation>
+    </message>
+    <message>
+        <source>Byte offset</source>
+        <translation>mI&apos;Hom ghom Daq</translation>
+    </message>
+    <message>
+        <source>Lines of the same request</source>
+        <translation>rap tlhobghach tlheghmey</translation>
+    </message>
+    <message>
+        <source>Looking for the lines of this request…</source>
+        <translation>tlhobghachvam tlheghmey nejlu&apos;taH…</translation>
+    </message>
+    <message>
+        <source>Debug output of this request</source>
+        <translation>tlhobghachvam Qagh nejghach De&apos;</translation>
+    </message>
+    <message>
+        <source>No debug output of this request was logged.</source>
+        <translation>tlhobghachvam Qagh nejghach De&apos; ghItlhlu&apos;pu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Find %reference everywhere</source>
+        <translation>Dat %reference yInej</translation>
+    </message>
+    <message>
+        <source>Open the request</source>
+        <translation>tlhobghach yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>(cut: the entry is longer than the viewer keeps)</source>
+        <translation>(pe&apos;lu&apos;: polbogh leghwI&apos; tIq law&apos; Doch tIq puS)</translation>
+    </message>
+    <message>
+        <source>Loading more results…</source>
+        <translation>latlh ngoDmey lI&apos;lu&apos;taH…</translation>
+    </message>
+    <message>
+        <source>No more results.</source>
+        <translation>latlh ngoDmey tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The request failed: %error</source>
+        <translation>luj tlhobghach: %error</translation>
+    </message>
+    <message>
+        <source>The web server may not read this file.</source>
+        <translation>ghItlhvam laDlaHbe&apos; jabwI&apos;.</translation>
+    </message>
+    <message>
+        <source>rate: measuring</source>
+        <translation>Do: juvlu&apos;taH</translation>
+    </message>
+    <message>
+        <source>%rate lines/min</source>
+        <translation>%rate tlheghmey/tup</translation>
+    </message>
+    <message>
+        <source>Rotate %name now?</source>
+        <translation>DaH %name DatamneS&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Empty %name?</source>
+        <translation>%name DachImmoHneS&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Remove %name?</source>
+        <translation>%name DateqneS&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>The file becomes %name.1 and the older rotations move one number up; the oldest beyond %count is removed. The next line written starts a new file.</source>
+        <translation>%name.1 moj ghItlh, &apos;ej wa&apos; mI&apos; Dung ghoS tammey ngo&apos;; %count Dung ngo&apos;qu&apos;bogh teqlu&apos;. ghItlh chu&apos; tagh tlhegh veb ghItlhlu&apos;bogh.</translation>
+    </message>
+    <message>
+        <source>Every line of the file (%size) is removed for good. Download it first if it may still be needed.</source>
+        <translation>reH teqlu&apos; ghItlh tlhegh Hoch (%size). poQlu&apos;qa&apos;laHchugh, wa&apos;DIch yIHev.</translation>
+    </message>
+    <message>
+        <source>The archived rotation (%size) is removed for good.</source>
+        <translation>reH teqlu&apos; polta&apos;bogh tamghach (%size).</translation>
+    </message>
+    <message>
+        <source>The action is recorded in the audit.</source>
+        <translation>&apos;olghachDaq vangghach ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>yIqIl</translation>
+    </message>
+    <message>
+        <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
+        <translation>wanI&apos; tetlhvam leghghachvam je rarwI&apos; (ruQwI&apos;mey, nejghach, yevlu&apos;ta&apos; pagh tlha&apos;taH, buSlu&apos;bogh tlhegh), qawmeH pagh mumeH. So&apos;be&apos;lu&apos;bogh tlheghmey not &apos;ang.</translation>
+    </message>
+    <message>
+        <source>Copy permalink</source>
+        <translation>reH rarwI&apos; yIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Link copied</source>
+        <translation>rarwI&apos; qonqa&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Permalink</source>
+        <translation>reH rarwI&apos;</translation>
+    </message>
+    <message>
+        <source>The link could not be copied; it is selected in the field, copy it with the keyboard.</source>
+        <translation>rarwI&apos; qonqa&apos;laHlu&apos;be&apos;; DaqDaq wIvlu&apos;ta&apos;, leQmey lo&apos;taHvIS yIqonqa&apos;.</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>jabwI&apos;</translation>
+    </message>
+    <message>
+        <source>Copy messages</source>
+        <translation>QInmey yIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</source>
+        <translation>&quot;QInmey yIqonqa&apos;&quot; &apos;anglu&apos;bogh tlheghmey qonqa&apos; ghItlh motlh rur: tlha&apos;taHvIS, polta&apos;bogh tlhegh Hoch; yevlu&apos;DI&apos;, leghlu&apos;bogh tlheghmey. &apos;anglu&apos;bogh rur So&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>%count lines copied</source>
+        <translation>%count tlheghmey qonqa&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>1 line copied</source>
+        <translation>1 tlhegh qonqa&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>The lines could not be copied. Select them in the list and copy them with the keyboard.</source>
+        <translation>tlheghmey qonqa&apos;laHlu&apos;be&apos;. tetlhDaq yIwIv, leQmey lo&apos;taHvIS yIqonqa&apos;.</translation>
+    </message>
+    <message>
+        <source>%count logs</source>
+        <translation>%count wanI&apos; tetlhmey</translation>
+    </message>
+    <message>
+        <source>%size are removed for good.</source>
+        <translation>reH teqlu&apos; %size.</translation>
+    </message>
+    <message>
+        <source>%size in all</source>
+        <translation>%size Hoch</translation>
+    </message>
+    <message>
+        <source>%size with their archives</source>
+        <translation>%size polmeH pa&apos;meyDaj tIq</translation>
+    </message>
+    <message>
+        <source>%size/h</source>
+        <translation>%size/rep</translation>
+    </message>
+    <message>
+        <source>Archives</source>
+        <translation>polmeH pa&apos;mey</translation>
+    </message>
+    <message>
+        <source>At most %days days</source>
+        <translation>%days jaj law&apos; law&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Back to the logs</source>
+        <translation>wanI&apos; tetlhmeyDaq yIchegh</translation>
+    </message>
+    <message>
+        <source>Becomes</source>
+        <translation>moj</translation>
+    </message>
+    <message>
+        <source>Carry out %count steps</source>
+        <translation>%count mIw &apos;ay&apos;mey yIta&apos;</translation>
+    </message>
+    <message>
+        <source>Compress archives…</source>
+        <translation>polmeH pa&apos;mey yIQaDmoH…</translation>
+    </message>
+    <message>
+        <source>Compress the archives of %key?</source>
+        <translation>%key polmeH pa&apos;mey DaQaDmoHneS&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Compressed</source>
+        <translation>QaDmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Delete archives…</source>
+        <translation>polmeH pa&apos;mey yIQaw&apos;…</translation>
+    </message>
+    <message>
+        <source>Delete the old archives of %key?</source>
+        <translation>%key polmeH pa&apos;mey ngo&apos; DaQaw&apos;neS&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Done: %count steps.</source>
+        <translation>rInta&apos;: %count mIw &apos;ay&apos;mey.</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>yIHev</translation>
+    </message>
+    <message>
+        <source>Empty %key after archiving it?</source>
+        <translation>%key DapolDI&apos; DachImmoHneS&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Empty (archive first)…</source>
+        <translation>yIchImmoH (wa&apos;DIch yIpol)…</translation>
+    </message>
+    <message>
+        <source>Growth</source>
+        <translation>Sachghach</translation>
+    </message>
+    <message>
+        <source>Keep %count</source>
+        <translation>%count yIpol</translation>
+    </message>
+    <message>
+        <source>Last write</source>
+        <translation>Qav ghItlhghach</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>veHmey</translation>
+    </message>
+    <message>
+        <source>Lines (about)</source>
+        <translation>tlheghmey (Dun)</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>wanI&apos; tetlh</translation>
+    </message>
+    <message>
+        <source>Manage logs</source>
+        <translation>wanI&apos; tetlhmey yI&apos;aw&apos;</translation>
+    </message>
+    <message>
+        <source>Not compressed</source>
+        <translation>QaDmoHlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Not everything was done (%error): %done of %count steps.</source>
+        <translation>Hoch ta&apos;lu&apos;be&apos; (%error): %count mIw &apos;ay&apos;mey, %done ta&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Not managed here: %keys</source>
+        <translation>naDev &apos;aw&apos;lu&apos;be&apos;: %keys</translation>
+    </message>
+    <message>
+        <source>Not writable: %owner:%group</source>
+        <translation>ghItlhlaHlu&apos;be&apos;: %owner:%group</translation>
+    </message>
+    <message>
+        <source>Nothing to do: no file needs this action now.</source>
+        <translation>Qu&apos; pagh: DaH vangghachvam poQbe&apos; ghItlh.</translation>
+    </message>
+    <message>
+        <source>Older than (days)</source>
+        <translation>ngo&apos; law&apos; (jajmey)</translation>
+    </message>
+    <message>
+        <source>Prune all archives…</source>
+        <translation>polmeH pa&apos;mey Hoch yIchIlmoH…</translation>
+    </message>
+    <message>
+        <source>Prune the archives of every log?</source>
+        <translation>wanI&apos; tetlh Hoch polmeH pa&apos;mey DachIlmoHneS&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Rotate %key now?</source>
+        <translation>DaH %key DatamneS&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Rotate all over their limit…</source>
+        <translation>veHchaj juSbogh Hoch yItam…</translation>
+    </message>
+    <message>
+        <source>Rotate at %size</source>
+        <translation>%size DaqDaq yItam</translation>
+    </message>
+    <message>
+        <source>Rotate every log over its limit?</source>
+        <translation>veHDaj juSbogh wanI&apos; tetlh Hoch DatamneS&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Rotate now…</source>
+        <translation>DaH yItam…</translation>
+    </message>
+    <message>
+        <source>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</source>
+        <translation>wanI&apos; tetlh ghItlhmey yItam, yIchImmoH, yIQaDmoH, yIchIlmoH je. pa&apos; choHlu&apos;pa&apos;, nIDbogh Doch &apos;ang vangghach Hoch, &apos;ej &apos;olghachDaq mIw &apos;ay&apos; Hoch ghItlhlu&apos;. jabwI&apos; wanI&apos; tetlhmey ghaj jabwI&apos;: naDev &apos;anglu&apos;, &apos;ach not choHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>tInghach</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>mIw &apos;ay&apos;</translation>
+    </message>
+    <message>
+        <source>The actions are switched off in settings/logviewer.ini [ActionSettings].</source>
+        <translation>settings/logviewer.ini [ActionSettings] DaqDaq vangghachmey chu&apos;Ha&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>The log files, their archives and their limits</source>
+        <translation>wanI&apos; tetlh ghItlhmey, polmeH pa&apos;meychaj, veHmeychaj je</translation>
+    </message>
+    <message>
+        <source>The steps of this action</source>
+        <translation>vangghachvam mIw &apos;ay&apos;mey</translation>
+    </message>
+    <message>
+        <source>The web server cannot write this file or its directory: owner %owner, group %group.</source>
+        <translation>ghItlhvam pagh ghItlh pa&apos;Daj ghItlhlaHbe&apos; jabwI&apos;: ghajwI&apos; %owner, ghom %group.</translation>
+    </message>
+    <message>
+        <source>This is a preview: nothing has changed yet. Confirm to carry out these %count steps. The files are checked again before each step, and each step is recorded in the audit.</source>
+        <translation>nungbogh mIllogh &apos;oH: wej choHlu&apos;. %count mIw &apos;ay&apos;meyvam Data&apos;meH yI&apos;ol. mIw &apos;ay&apos; Hoch nungDI&apos; ghItlhmey nuDqa&apos;lu&apos;, &apos;ej &apos;olghachDaq mIw &apos;ay&apos; Hoch ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Web server, read only</source>
+        <translation>jabwI&apos;, laD neH</translation>
+    </message>
+    <message>
+        <source>compress</source>
+        <translation>QaDmoH</translation>
+    </message>
+    <message>
+        <source>copy</source>
+        <translation>qonqa&apos;</translation>
+    </message>
+    <message>
+        <source>delete</source>
+        <translation>Qaw&apos;</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>chImmoH</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>pagh</translation>
+    </message>
+    <message>
+        <source>over the limit</source>
+        <translation>veH juS</translation>
+    </message>
+    <message>
+        <source>rename</source>
+        <translation>pong choH</translation>
+    </message>
+    <message>
+        <source>%days days</source>
+        <translation>%days jaj</translation>
+    </message>
+    <message>
+        <source>%size of %limit</source>
+        <translation>%limit: %size</translation>
+    </message>
+    <message>
+        <source>%size per hour</source>
+        <translation>Hoch rep %size</translation>
+    </message>
+    <message>
+        <source>(no budget set)</source>
+        <translation>(Huch veH cherlu&apos;be&apos;)</translation>
+    </message>
+    <message>
+        <source>Archives compressed</source>
+        <translation>QaDmoHlu&apos;pu&apos;bogh polmeH pa&apos;mey</translation>
+    </message>
+    <message>
+        <source>Archives kept</source>
+        <translation>polta&apos;bogh polmeH pa&apos;mey</translation>
+    </message>
+    <message>
+        <source>Archives removed after</source>
+        <translation>polmeH pa&apos;mey teqlu&apos; ret</translation>
+    </message>
+    <message>
+        <source>Archives: %size</source>
+        <translation>polmeH pa&apos;mey: %size</translation>
+    </message>
+    <message>
+        <source>Budget: logviewer.ini [HealthSettings] DiskBudget</source>
+        <translation>Huch veH: logviewer.ini [HealthSettings] DiskBudget</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Current files: %size</source>
+        <translation>DaH ghItlhmey: %size</translation>
+    </message>
+    <message>
+        <source>Disk use</source>
+        <translation>De&apos; qengwI&apos; lo&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Every log</source>
+        <translation>wanI&apos; tetlh Hoch</translation>
+    </message>
+    <message>
+        <source>Every log is within its limit.</source>
+        <translation>veHDaj juSbe&apos; wanI&apos; tetlh Hoch.</translation>
+    </message>
+    <message>
+        <source>Fastest growing</source>
+        <translation>nomqu&apos; Sachbogh</translation>
+    </message>
+    <message>
+        <source>How much disk the logs use, which grow fastest, which are over their limit or cannot be written by the web server, the newest error of each, and the rotation settings in effect. Nothing on this page changes a file.</source>
+        <translation>De&apos; qengwI&apos; &apos;ar lo&apos; wanI&apos; tetlhmey, nomqu&apos; Sachbogh &apos;Iv, veHchaj juSbogh pagh jabwI&apos; ghItlhlaHbe&apos;bogh &apos;Iv, Hoch Qagh chu&apos;qu&apos;, tamghach DuHmey lo&apos;lu&apos;bogh je. ghItlh choHbe&apos; navvam Doch.</translation>
+    </message>
+    <message>
+        <source>Largest size</source>
+        <translation>tInqu&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Log health</source>
+        <translation>wanI&apos; tetlhmey Dotlh</translation>
+    </message>
+    <message>
+        <source>Manage</source>
+        <translation>yIloH</translation>
+    </message>
+    <message>
+        <source>Newest error</source>
+        <translation>Qagh chu&apos;qu&apos;</translation>
+    </message>
+    <message>
+        <source>No log is known to grow yet: growth is measured between rotations.</source>
+        <translation>wej Sachbogh wanI&apos; tetlh Sovlu&apos;: tammey joj Sachghach juvlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Not writable by the web server</source>
+        <translation>jabwI&apos; ghItlhlaHbe&apos;</translation>
+    </message>
+    <message>
+        <source>Over their size limit</source>
+        <translation>tInghach veHchaj juS</translation>
+    </message>
+    <message>
+        <source>Read only. Each value names the settings file, section and variable it comes from; change it there (in an override), not here.</source>
+        <translation>laD neH. Hoch lo&apos;laHghach pong DuHmey ghItlh, &apos;ay&apos;, choHlaHbogh je, vo&apos; ghoSbogh; pa&apos; yIchoH (override DaqDaq), naDev yIchoHQo&apos;.</translation>
+    </message>
+    <message>
+        <source>Rotation settings in effect</source>
+        <translation>lo&apos;lu&apos;bogh tamghach DuHmey</translation>
+    </message>
+    <message>
+        <source>Set in</source>
+        <translation>cherlu&apos;pu&apos;bogh Daq</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>DuH</translation>
+    </message>
+    <message>
+        <source>The log files belong to different users (%owners). A file created by one user may not be writable by the other; give them one owner, or a shared group with group write.</source>
+        <translation>lo&apos;wI&apos;pu&apos; pIm ghaj wanI&apos; tetlh ghItlhmey (%owners). wa&apos; lo&apos;wI&apos; chenmoHbogh ghItlh ghItlhlaHbe&apos;law&apos; latlh; wa&apos; ghajwI&apos; yInob, pagh ghom ghItlhlaHbogh mutlhbogh ghom yInob.</translation>
+    </message>
+    <message>
+        <source>The log manager is not available, so sizes, limits and archives cannot be listed.</source>
+        <translation>wanI&apos; tetlh &apos;aw&apos;wI&apos; lo&apos;laHbe&apos;lu&apos;, vaj tInghachmey, veHmey, polmeH pa&apos;mey je tetlhlaHlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The web server can write every log.</source>
+        <translation>wanI&apos; tetlh Hoch ghItlhlaH jabwI&apos;.</translation>
+    </message>
+    <message>
+        <source>The web server cannot append to these files, so what it logs is lost. They were usually created by a command line or Exponential Velocity running as another user.</source>
+        <translation>ghItlhmeyvam chellaHbe&apos; jabwI&apos;, vaj ghItlhbogh Doch chIlpu&apos;. motlh ra&apos;wI&apos; tlhegh pagh latlh lo&apos;wI&apos; rur Qapbogh Exponential Velocity chenmoHpu&apos;.</translation>
+    </message>
+    <message>
+        <source>There is no log to show.</source>
+        <translation>&apos;anglu&apos;meH wanI&apos; tetlh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ngoD</translation>
+    </message>
+    <message>
+        <source>built-in default</source>
+        <translation>ngevlu&apos;bogh motlh</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>not</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ghobe&apos;</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>veH pagh</translation>
+    </message>
+    <message>
+        <source>none in the last lines</source>
+        <translation>Qav tlheghmeyDaq pagh</translation>
+    </message>
+    <message>
+        <source>not writable</source>
+        <translation>DaghItlhlaHbe&apos;</translation>
+    </message>
+    <message>
+        <source>of a budget of %budget (%percent %)</source>
+        <translation>Huch veH %budget (%percent %)</translation>
+    </message>
+    <message>
+        <source>over limit</source>
+        <translation>veH juS</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>HISlaH</translation>
+    </message>
+    <message>
+        <source>Error digest</source>
+        <translation>Qaghmey QIn ngaj</translation>
+    </message>
+    <message>
+        <source>The distinct errors and warnings of the last hours, with numbers, ids, quoted values and paths set aside so that repeats of one problem count as one line. Messages are always masked here.</source>
+        <translation>Qav repmey Qaghmey ghuHmoHghachmey je pIm, mI&apos;mey, ngu&apos;meH mI&apos;mey, jatlhlu&apos;bogh lo&apos;laHghachmey, Hurghmey je teqlu&apos;pu&apos;mo&apos;, wa&apos; tlhegh rur wa&apos; Seng ghoSqa&apos;ghachmey. naDev reH So&apos;lu&apos; QInmey.</translation>
+    </message>
+    <message>
+        <source>Time window</source>
+        <translation>poH &apos;ay&apos;</translation>
+    </message>
+    <message>
+        <source>Last</source>
+        <translation>Qav</translation>
+    </message>
+    <message>
+        <source>%count h</source>
+        <translation>%count rep</translation>
+    </message>
+    <message>
+        <source>Hide known messages</source>
+        <translation>Sovlu&apos;bogh QInmey yISo&apos;</translation>
+    </message>
+    <message>
+        <source>Show known messages</source>
+        <translation>Sovlu&apos;bogh QInmey yI&apos;ang</translation>
+    </message>
+    <message>
+        <source>Since %time; levels: %levels.</source>
+        <translation>%time vo&apos;; patlhmey: %levels.</translation>
+    </message>
+    <message>
+        <source>%count known messages are hidden.</source>
+        <translation>%count Sovlu&apos;bogh QInmey So&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>There is no log this digest can read.</source>
+        <translation>laDlaHbogh QIn ngajvam wanI&apos; tetlh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>%count entries in %groups messages</source>
+        <translation>%groups QInmeyDaq %count Dochmey</translation>
+    </message>
+    <message>
+        <source>Only the first %size of the window were read; the file holds more.</source>
+        <translation>poH &apos;ay&apos; wa&apos;DIch %size neH laDlu&apos;; latlh ngaS ghItlh.</translation>
+    </message>
+    <message>
+        <source>Messages of %name</source>
+        <translation>%name QInmey</translation>
+    </message>
+    <message>
+        <source>Count</source>
+        <translation>mI&apos;</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>QIn</translation>
+    </message>
+    <message>
+        <source>Last seen</source>
+        <translation>Qav leghlu&apos;</translation>
+    </message>
+    <message>
+        <source>Known</source>
+        <translation>Sovlu&apos;</translation>
+    </message>
+    <message>
+        <source>Open the newest entry</source>
+        <translation>Doch chu&apos;qu&apos; yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>yI&apos;ang</translation>
+    </message>
+    <message>
+        <source>List again</source>
+        <translation>yItetlhqa&apos;</translation>
+    </message>
+    <message>
+        <source>Mark as known</source>
+        <translation>Sovlu&apos;bogh yIghItlh</translation>
+    </message>
+    <message>
+        <source>No error or warning in this window.</source>
+        <translation>poH &apos;ay&apos;vamDaq Qagh ghuHmoHghach ghap pagh.</translation>
+    </message>
+    <message>
+        <source>Log tools</source>
+        <translation>wanI&apos; tetlh jan</translation>
+    </message>
+    <message>
+        <source>Logs</source>
+        <translation>wanI&apos; tetlhmey</translation>
+    </message>
+    <message>
+        <source>The logs are too large to download at once: %total, more than the limit of %cap ([ActionSettings] MaxBundleBytes in settings/logviewer.ini). Leave the archives out, or download the logs one by one.</source>
+        <translation>wa&apos;logh Hevmeh tIn law&apos; wanI&apos; tetlhmey: %total, %cap veH juS ([ActionSettings] MaxBundleBytes settings/logviewer.ini DaqDaq). polmeH pa&apos;mey yIroQQo&apos;, pagh wa&apos; wa&apos; wanI&apos; tetlhmey yIHev.</translation>
+    </message>
+    <message>
+        <source>There is no log file to download.</source>
+        <translation>Hevlu&apos;meH wanI&apos; tetlh ghItlh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The archive could not be written in var/tmp. Check that the web server may write there.</source>
+        <translation>var/tmp DaqDaq polmeH pa&apos; ghItlhlaHlu&apos;be&apos;. pa&apos; ghItlhlaH jabwI&apos; &apos;e&apos; yInuD.</translation>
+    </message>
+    <message>
+        <source>Download all logs</source>
+        <translation>wanI&apos; tetlhmey Hoch yIHev</translation>
+    </message>
+    <message>
+        <source>Include archives</source>
+        <translation>polmeH pa&apos;mey yIroQ</translation>
+    </message>
+    <message>
+        <source>Unredacted</source>
+        <translation>So&apos;be&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Unredacted: e-mail addresses, IP addresses, tokens and session ids as written. Only for a secure place; the download is recorded in the audit.</source>
+        <translation>So&apos;be&apos;lu&apos;: QIn Daqmey, IP Daqmey, tu&apos;qom Degh, poH ngu&apos;meH mI&apos;mey je, ghItlhlu&apos;pu&apos;bogh rur. Daq Hung neH; &apos;olghachDaq Hevghach ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</source>
+        <translation>wanI&apos; tetlh Hoch wa&apos; %format ghItlh, MANIFEST.txt ghajbogh: tInghachmey, Qav ghItlhghachmey, nuDmeH mI&apos;mey je. &apos;angbogh leghwI&apos; rur So&apos;lu&apos;; &apos;olghachDaq ghItlhlu&apos;; %cap law&apos; law&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Grouped by category and rule.</source>
+        <translation>Segh chut je ghomlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Grouped by the reason of the answer.</source>
+        <translation>jang meq ghomlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Grouped by the kind of reason.</source>
+        <translation>meq Segh ghomlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Grouped by the request path.</source>
+        <translation>tlhobghach He ghomlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Levels: %levels.</source>
+        <translation>patlhmey: %levels.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/logviewer</name>
+    <message>
+        <source>Not found requests (404)</source>
+        <translation>tu&apos;lu&apos;be&apos;bogh tlhobghachmey (404)</translation>
+    </message>
+    <message>
+        <source>Security (request classifier)</source>
+        <translation>Hung (tlhobghach SeghmoHwI&apos;)</translation>
+    </message>
+    <message>
+        <source>Web server access log</source>
+        <translation>jabwI&apos; &apos;elghach wanI&apos; tetlh</translation>
+    </message>
+    <message>
+        <source>Web server error log</source>
+        <translation>jabwI&apos; Qagh wanI&apos; tetlh</translation>
     </message>
 </context>
 </TS>

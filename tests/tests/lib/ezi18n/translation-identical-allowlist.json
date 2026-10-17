@@ -85,7 +85,8 @@
         "Composer": "product name",
         "FrankenPHP": "product name",
         "Qbix": "product name",
-        "Nexus": "product name"
+        "Nexus": "product name",
+        "StaticMatch": "the name of a site.ini [SiteAccessSettings] MatchOrder value"
     },
     "esl-ES": {
         "#level1 - #level2": "format placeholders only",
@@ -260,7 +261,8 @@
         "YYYY-MM-DD HH:MM:SS": "date format code, glossary says leave unchanged",
         "YYYY-MM-DDTHH:MM:SS+00:00": "date format code, glossary says leave unchanged",
         "Z-A": "alphabetical sort order, same in Spanish",
-        "Zoom": "Zoom is the standard Spanish word for zooming in image editors (RAE: zum/zoom), same as existing catalogue"
+        "Zoom": "Zoom is the standard Spanish word for zooming in image editors (RAE: zum/zoom), same as existing catalogue",
+        "%size/h": "placeholder and the hour symbol h, the same in Spanish"
     },
     "esl-MX": {
         "#level1 - #level2": "PDF numbering placeholders only",
@@ -432,7 +434,8 @@
         "YYYY-MM-DD HH:MM:SS": "Spelled-out date format, kept unchanged per glossary",
         "YYYY-MM-DDTHH:MM:SS+00:00": "Spelled-out date format, kept unchanged per glossary",
         "Z-A": "Reverse alphabetical sort order, the same letters in Spanish.",
-        "Zoom": "Zoom is the usual Spanish word for this image tool"
+        "Zoom": "Zoom is the usual Spanish word for this image tool",
+        "%size/h": "placeholder and the hour symbol h, the same in Spanish"
     },
     "heb-IL": {
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
