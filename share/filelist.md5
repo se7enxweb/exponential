@@ -6489,7 +6489,7 @@ cf7bc98e01503c17909f8b969ad183bc  lib/ezdiff/classes/ezdifftextengine.php
 4448cd4dc3d27d94f325a425118f978b  lib/ezdiff/classes/ezdiffxmltextengine.php
 81178363e1f5d9572f376cd2d64ee029  lib/ezdiff/classes/eztextdiff.php
 9547fac72159955d9ea00903939e0997  lib/ezdiff/classes/ezxmltextdiff.php
-7a07be0fe4ce1ee0a881d90970e8dfb9  lib/ezfile/classes/explogrotator.php
+f872d9d22b69e596baa0a21ee0de4110  lib/ezfile/classes/explogrotator.php
 181b1f1ccbc6fc53e1ffcc65c6fe33ca  lib/ezfile/classes/ezbzip2compressionhandler.php
 b4517d02af1a2133eb3338269efd60f2  lib/ezfile/classes/ezcompressionhandler.php
 04728a4bfb0860e5cd45758e9d9d0490  lib/ezfile/classes/ezdir.php
