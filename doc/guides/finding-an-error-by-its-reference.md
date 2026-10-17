@@ -13,6 +13,8 @@ is for administrators and developers who answer such reports.
   details of the failure.
 - **Setup > Log files**, field **Error reference**: paste the reference and press **Search**. The page shows the entry
   and every line of the same request (same address and client, within two seconds) from all kernel logs.
+- Or type the address directly: `/setup/logs/view/error/(reference)/ERR-0123456789/(scope)/kernel/(rotations)/1`
+  (in the administration siteaccess, e.g. `/admin/setup/logs/view/error/...`).
 - From there: **The audit of this moment** for who did what, the links to the node, object or template the lines name.
 - The same from a shell: `./console exp:logs --reference=ERR-0123456789`.
 - Personal data stays masked (e-mail and IP addresses, tokens); only a user with `setup/unmasklogs` can switch
@@ -36,7 +38,13 @@ Not found? The log may have rotated away (look at the oldest **Rotated archives*
 its own `var/log`.
 
 Without a reference, search by time and address instead: **From** and **To** a few minutes around the report, the
-address in **Request**, levels **Error** and **Warning**, scope **Every kernel log**.
+address in **Request**, levels **Error** and **Warning**, scope **All kernel logs**. As a permalink:
+`/setup/logs/view/error/(level)/error,warning/(from)/2026-10-17T01~3A00/(to)/2026-10-17T01~3A10/(uri)/~2Fshop/(scope)/kernel`
+(a `:` is `~3A` and a `/` is `~2F` in a value, see [Permalinks](../features/6.0/log-viewer.md#permalinks)).
+
+If the server's web server logs are configured ([Web server logs](../features/6.0/log-viewer.md#web-server-logs)),
+`/setup/logs/view/webserver-access` with the same time range shows the request as the web server saw it: its status,
+size and agent.
 
 ## 3. Read the request
 
@@ -60,5 +68,7 @@ The first prints the entry, the lines of its request and the audit window; exit 
 
 ## 5. Share what you found
 
-Copy or download the lines with masking on (the default): the download of **Download range** is masked like the page
-and compressed. Never paste unmasked lines into a ticket: they can hold customers' e-mail addresses and IP addresses.
+Send a colleague the view itself: **Copy permalink** gives an address such as
+`/setup/logs/view/error/(reference)/ERR-0123456789/(scope)/kernel/(rotations)/1` that opens the same search for anyone
+with `setup/logs`, always masked (a permalink never carries the unmasked switch). Copy or download the lines with
+masking on (the default): the download of **Download range** is masked like the page and compressed. Never paste unmasked lines into a ticket: they can hold customers' e-mail addresses and IP addresses.

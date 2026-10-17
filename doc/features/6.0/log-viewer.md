@@ -14,8 +14,15 @@ Related: [Finding an error by its reference](../../guides/finding-an-error-by-it
   the log files of the installation: `var/log/error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`,
   `deprecated.log`, `auth.log`, the cronjob logs, the logs of every site (`var/<site>/log/*.log`), the logs extensions
   write (`expmcp.log`, the `expai` logs ...) and their rotations `.1` .. `.N`, and compressed rotations (`.gz`, read only).
-- The left menu holds the Setup menu and a **navigator** of every file, grouped **Kernel**, **Site**, **Extensions**
-  and **Rotated archives**, with its size, the time it was last written and how many lines a minute it gains.
+- The left menu holds the Setup menu and a **navigator** of every file, grouped **Kernel**, **Site**, **Extensions**,
+  **Web server** and **Rotated archives**, with its size, the time it was last written and how many lines a minute it
+  gains.
+- Every view has a **permalink** without a query string, by the log's key: `/setup/logs/view/error`,
+  `/setup/logs/view/debug`, `/setup/logs/view/webserver-access`, with its filters, search and position as view
+  parameters, e.g. `/setup/logs/view/error/(level)/error/(search)/timeout/(follow)/0`. **Copy permalink** puts it on
+  the clipboard. See [Permalinks](#permalinks).
+- The **web server's logs** (access and error) are shown when `logviewer.ini` names them by key; they are off by
+  default and never guessed. See [Web server logs](#web-server-logs).
 - A file is **followed live** with short requests (one poll a second while lines arrive, slower and slower while
   nothing does), with **Pause** and **Resume**. Nothing holds a server process open.
 - **Search** a file, every kernel log or every file, optionally with their rotations: a text or a regular expression
@@ -46,8 +53,9 @@ A user without `setup/logs` (an editor) is refused on the page, the feed and the
 
 ## The page
 
-The page shows the file chosen in the navigator (or `?file=var/log/error.log`; without one,
-`[LogViewerSettings] DefaultFile`, else the first kernel log). It opens at the end of the file: the last
+The page shows the log chosen in the navigator, by its permalink (`/setup/logs/view/<key>`, see
+[Permalinks](#permalinks)); `/setup/logs` alone opens `[LogViewerSettings] DefaultKey` (`error`), else
+`DefaultFile`, else the first kernel log. It opens at the end of the file: the last
 `[TailSettings] InitialBytes` bytes, from the first whole line. Those lines are part of the page itself, so it reads
 without JavaScript; with it, the page's script takes the list over and follows the file.
 
@@ -70,12 +78,122 @@ Every file of the allowed directories (see [Which files](#which-files)), grouped
   auth, cronjob, storage, setup, mail, trash purge) in the global log directory or eZDebug's.
 - **Site**: the logs of a site's own log directory (`var/<site>/log`).
 - **Extensions**: any other file, such as `expmcp.log` or `expai-models.log`.
+- **Web server**: the logs configured by key in `LogList[]` (see [Web server logs](#web-server-logs)), shown by their
+  label (`LogLabel[]`), with the file name beside it.
 - **Rotated archives**: `.1` .. `.N` and `.gz`, after their file, by number.
+
+Every entry links to its permalink (`/setup/logs/view/<key>`, a rotation with `/(rotation)/<n>`).
 
 Each with its size, the time it was last written and its line rate. The rate is the growth between two looks at
 least 30 seconds apart, divided by the file's average line length (measured once from its last 16 KB); it reads
 "-" until there are two looks. Listing costs one `scandir()` per directory and one `stat()` per file; the samples are
 kept in one small file in `<cache dir>/logviewer/stats.json`.
+
+## Permalinks
+
+Every view of a log has an address without a query string, short enough to type and safe to bookmark or send:
+
+```
+/setup/logs/view/<key>[/(name)/<value>]...
+```
+
+**The key** names a log, never a path (`expLogFileLocator::keyFor()`, `resolveKey()`):
+
+| Log | Key | Permalink |
+| --- | --- | --- |
+| `var/log/<name>.log` | `<name>` | `/setup/logs/view/error`, `/setup/logs/view/debug`, `/setup/logs/view/expmcp` |
+| `var/<site>/log/<name>.log` | `<site>-<name>` | `/setup/logs/view/site-storage` |
+| a file in another directory of `Directories[]` | the directory with `-` for `/`, then `-<name>` | `/setup/logs/view/var-other-logs-app` |
+| a log configured in `LogList[]` | its key | `/setup/logs/view/webserver-access` |
+
+A key is letters, digits, `.`, `_` and `-` (at most 64, starting with a letter or digit); any other character of a
+file name becomes `-`. A rotation is the same key with `/(rotation)/<n>` (`-1` for a compressed file without a
+number). A key only ever finds a file the navigator lists: anything else, `..` and slashes included, answers the
+kernel's "not found" page (404), the same for a key that does not exist as for one that is not allowed.
+
+**The view parameters**, in the order a link writes them (`expLogPermalink::PARAMS`); a parameter at its default is
+left out, so a plain view is just `/setup/logs/view/<key>`:
+
+| Parameter | Value | Default | Meaning |
+| --- | --- | --- | --- |
+| `(rotation)` | a number | `0` | `.1` .. `.N` of the log (`-1`: a bare `.gz`) |
+| `(level)` | `error,warning,notice,debug` (a comma list) | all | the levels searched |
+| `(search)` | text | | the search text |
+| `(regex)` | `1` / `0` | `0` | the search text is a regular expression |
+| `(case)` | `1` / `0` | `0` | case sensitive |
+| `(from)`, `(to)` | a time, e.g. `2026-10-17T01~3A00` | | the time range |
+| `(siteaccess)` | a name | | the siteaccess |
+| `(uri)` | text | | part of the request address |
+| `(ip)` | the start of an address | | the client |
+| `(reference)` | `ERR-0123456789` | | an error reference |
+| `(scope)` | `file`, `kernel`, `all` | `file` | which logs are searched |
+| `(rotations)` | `1` / `0` | `0` | their rotations too |
+| `(cursor)` | `<file>:<offset>` | | where a search goes on ("More results") |
+| `(offset)` | a byte offset | | the entry in focus |
+| `(follow)` | `1` / `0` | `1` | `0`: the view opens paused |
+| `(wrap)` | `1` / `0` | `0` | long lines wrapped |
+| `(unmask)` | `1` / `0` | `0` | shown unmasked (only with `setup/unmasklogs`; never part of a copied permalink) |
+| `(done)`, `(ok)` | an action, `1` / `0` | | the outcome of rotate, empty or remove (set by the action, not copied) |
+
+**The encoding of a value.** Letters, digits and `_ . , -` are written as they are; every other byte is `~` and its
+two hexadecimal digits, so a value never holds a `/` or a `(` that would end it: a space is `~20`, a slash `~2F`, a
+colon `~3A`, a `~` itself `~7E`, and a character outside ASCII one `~XX` per byte of its UTF-8 (`ü` is `~C3~BC`).
+Examples:
+
+```
+/setup/logs/view/error/(level)/error/(search)/timeout/(follow)/0
+/setup/logs/view/error/(level)/error,warning/(from)/2026-10-17/(to)/2026-10-17
+/setup/logs/view/error/(reference)/ERR-0123456789/(scope)/kernel/(rotations)/1
+/setup/logs/view/webserver-access/(search)/~2Fadmin~2Fsetup/(level)/error
+/setup/logs/view/debug/(rotation)/1/(offset)/204800/(follow)/0
+```
+
+The page keeps its address in step with the view as it changes (paused or following, wrapped, the entry in focus), so
+the address bar and **Copy permalink** always give a link that opens the same view. The search form works without
+JavaScript too: it is sent with the key and the fields, and the page answers `303` with the permalink.
+
+**Old links.** A link of the first form, `/setup/logs?file=var/log/error.log` (with `q`, `levels[]` and the other
+search fields of that time), answers `301 Moved Permanently` with the permalink of the same file and search, e.g.
+`/setup/logs/view/error`, `/setup/logs?file=var/log/error.log.1` is `/setup/logs/view/error/(rotation)/1`. A file it
+may not open answers 404. The feed (`setup/logsfeed`) and the actions (`setup/logsaction`) still name a file by its
+internal id (`var/log/error.log`; a configured log `@<key>/<file name>`); the actions answer with the permalink.
+
+## Web server logs
+
+The web server's access and error logs are shown when they are named by key in `logviewer.ini`. They are **off by
+default and never guessed**: the keys `webserver-access` and `webserver-error` are listed with no path, and a key
+without a path is not shown.
+
+```
+[LogViewerSettings]
+LogList[]=webserver-access
+LogList[]=webserver-error
+LogPath[webserver-access]=/var/www/vhosts/<domain>/logs/access_ssl_log
+LogPath[webserver-error]=/var/www/vhosts/<domain>/logs/error_log
+```
+
+(the paths of a Plesk server; elsewhere e.g. `/var/log/apache2/access.log` and `error.log`, or the logs of the site's
+own virtual host).
+
+- `LogList[]` lists the configured keys, `LogPath[<key>]` the file (absolute, or relative to the installation root; it
+  may be outside the installation), `LogLabel[<key>]` the name the navigator shows (defaults: "Web server access log",
+  "Web server error log"), `LogGroup[<key>]` its group: `kernel`, `site`, `extensions` or `webserver` (the default,
+  also for an unknown value).
+- A configured log can name any other file the same way, e.g. a log a program writes outside `var/`. Only the keys
+  listed are ever opened: a permalink, a feed request or an action cannot name another path.
+- The rotations beside the file are listed too: `<name>.N` and `<name>.N.gz` (`access_ssl_log.1`, `error_log.1.gz`);
+  other files of the directory never are (Plesk's `access_ssl_log.processed` is not a rotation). A rotation that is a
+  symbolic link leading out of the directory is refused.
+- **Read and download only.** The web server owns these files: rotate, empty and remove are never offered for a
+  configured log, and `setup/logsaction` refuses them whatever `[ActionSettings]` says.
+- **The user that runs PHP must be able to read the file** (PHP-FPM's pool user, or the user of Exponential Velocity).
+  On Plesk the files in `/var/www/vhosts/<domain>/logs/` belong to the site's user; `/var/www/vhosts/system/<domain>/logs/`
+  does not let it in. A file that cannot be read is listed as such and not opened; `open_basedir` must allow the path.
+- The lines are read as the web server writes them: the **access log** in the common or combined format
+  (`client - user [17/Oct/2026:01:00:00 +0200] "GET /path HTTP/1.1" 200 1234 "referer" "agent"`), with the status as
+  the level (5xx error, 4xx warning, else notice), the client and the path linked into the request grouping; the
+  **error log** of Apache 2.4 (`[Fri Oct 17 01:00:00.123456 2026] [module:level] [pid N] [client ip:port] message`),
+  with its level. Masking applies as everywhere: client addresses and e-mail addresses are masked by default.
 
 ## Following a file live
 
@@ -233,6 +351,9 @@ Screenshots and reports about a log should be made with masking on.
 | Empty a file (its size becomes 0) | `setup/managelogs` | `Truncate=enabled` | `system.log.truncate` |
 | Remove an archived rotation (`.1` .. `.N`, `.gz`; never a current file) | `setup/managelogs` | `DeleteArchives=enabled` | `system.log.delete` |
 
+Rotate, empty and remove are never offered for a log configured by key (the web server's): its program owns it. After
+an action the page opens the permalink of the log with `(done)/<action>/(ok)/1` (or `0`), which shows the outcome.
+
 Every action is a POST to `setup/logsaction` with the form token; rotate, empty and remove first show a confirmation
 page that names the file, its size and what will happen. Opening a file records `system.log.read` once per file and
 session per `[ViewerAuditSettings] ReadInterval` seconds, so following a file does not write a record per poll. The
@@ -247,7 +368,11 @@ The viewer opens only files it lists, and it lists only these (`expLogFileLocato
   directory); subdirectories are never walked, so the audit trail in `var/log/audit` stays with the audit console;
 - whose name matches `FilePatterns[]` (`*.log`, `*.log.N`, `*.log.N.gz`, `*.log.gz`) and no `ExcludePatterns[]`.
 
-A file is asked for by its path relative to the root (`?file=var/log/error.log`). That path is refused when it has
+and the logs configured by key in `LogList[]` (see [Web server logs](#web-server-logs)) with their rotations.
+
+The page asks for a log by its key ([Permalinks](#permalinks)), which only finds a file of that list. The feed and the
+actions ask for a file by its id: the path relative to the root (`var/log/error.log`), or `@<key>/<file name>` for a
+configured log (only its file and its rotations). A path is refused when it has
 `..`, `.`, a backslash, a control character or a leading slash; its directory must **resolve** (`realpath`) to one of
 the allowed directories, and those must resolve inside the installation root, so a symbolic link to a directory
 elsewhere is not followed. A file that is a symbolic link is opened only when its target is a log file in an allowed
@@ -306,7 +431,12 @@ siteaccess.
 | `FilePatterns[]` | `*.log`, `*.log.[0-9]`, `*.log.[0-9][0-9]`, `*.log.[0-9].gz`, `*.log.[0-9][0-9].gz`, `*.log.gz` | the file names listed |
 | `ExcludePatterns[]` | (none) | file names never listed |
 | `KernelLogs[]` | `error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`, `deprecated.log`, `auth.log`, `cronjob*.log`, `storage.log`, `setup.log`, `mail.log`, `trashpurge.log` | the names of the Kernel group |
-| `DefaultFile` | `var/log/error.log` | the file opened without `?file=` |
+| `DefaultKey` | `error` | the log `/setup/logs` opens (a key, see [Permalinks](#permalinks)) |
+| `DefaultFile` | `var/log/error.log` | the file opened when `DefaultKey` finds none |
+| `LogList[]` | `webserver-access`, `webserver-error` | the logs configured by key (see [Web server logs](#web-server-logs)) |
+| `LogPath[<key>]` | (none: off) | the file of a configured log; a key without one is not shown |
+| `LogLabel[<key>]` | `Web server access log`, `Web server error log` | the name the navigator shows |
+| `LogGroup[<key>]` | `webserver` | the group: `kernel`, `site`, `extensions`, `webserver` |
 | `FileLevels[]` | `error.log*;error`, `*error*.log*;error`, `warning.log*;warning`, `strict.log*;warning`, `deprecated.log*;notice`, `notice.log*;notice`, `debug.log*;debug` | the level of lines that name none, by file name |
 | `[TailSettings] InitialBytes` | `65536` | what the page shows when opened |
 | `MaxBytesPerPoll` | `262144` | the most one poll reads |
@@ -337,15 +467,19 @@ Numeric settings are kept within safe bounds whatever the file says (for example
 
 ## For developers
 
-- Classes in `kernel/classes/logviewer/`: `expLogViewerConfig` (settings), `expLogFileLocator` (allow-list, groups),
+- Classes in `kernel/classes/logviewer/`: `expLogViewerConfig` (settings), `expLogFileLocator` (allow-list, groups,
+  keys, configured logs), `expLogPermalink` (the permalinks: `build()`, `state()`, `encode()`, `decode()`),
   `expLogTail` (offset reads, chunk cache, `.gz`), `expLogParser` (entries, levels, links), `expLogSearch` (bounded
   search, time seek), `expLogRedactor` (masks), `expLogRateLimit`, `expLogFileStats` (line rate), `expLogActions`
   (download, rotate, empty, remove) and the facade `expLogViewer` (policies, audit, the feed's answers).
-- Views: `setup/logs` (the page), `setup/logsfeed` (JSON: `action=tail|search|related|reference|files`),
+- Views: `setup/logs` (the page; `setup/logs/view/<key>` with the view parameters of [Permalinks](#permalinks)),
+  `setup/logsfeed` (JSON: `action=tail|search|related|reference|files`),
   `setup/logsaction` (POST). Template fetch: `fetch( 'setup', 'log_files' )`, the navigator (empty without
   `setup/logs`).
 - A log of your own extension appears in **Extensions** when it is written to an allowed directory with a matching
   name (`var/log/myextension.log` through `eZLog::write()`); give it a level with `FileLevels[]`, or write
   `Error:` / `Warning:` at the start of its messages.
 - Tests (no database): `tests/tests/kernel/logviewer/`: the parser, offset tailing and the chunk cache, masking, path
-  safety, the regular expression limit, the search, the rate limit and the actions on throwaway files.
+  safety, the regular expression limit, the search, the rate limit and the actions on throwaway files; the keys and
+  the configured logs (`expLogKeyTest`), the permalinks and the old links (`expLogPermalinkTest`), the web server's
+  formats (`expLogWebServerFormatsTest`).
