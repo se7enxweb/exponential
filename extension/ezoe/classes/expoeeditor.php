@@ -298,30 +298,33 @@ class expOEEditor
     }
 
     /**
-     * Whether the server accepts an uploaded file name. ezoe.ini [EditorSettings] UploadExtensionCheck:
-     * 'engine' (default) checks when the user's engine is not tinymce3 (the TinyMCE 3 dialog has never
-     * limited types), 'always' checks every upload, 'disabled' none. A file with no extension is refused
-     * whenever the check is on.
+     * Whether the server accepts an uploaded file name. A name with an executable type anywhere in it (php,
+     * phtml, sh, .htaccess, ...) is refused always, whatever the engine and the mode. ezoe.ini [EditorSettings]
+     * UploadExtensionCheck then decides about the list UploadFileExtensions[]: 'engine' (default) checks it when
+     * the user's engine is not tinymce3 (the TinyMCE 3 dialog has never limited types), 'always' for every upload,
+     * 'disabled' never. A file with no extension is refused whenever the list is checked.
      *
      * @param string $fileName the name the client sent
      * @return bool
      */
     public static function uploadExtensionAllowed( $fileName )
     {
-        $ini  = eZINI::instance( 'ezoe.ini' );
-        $mode = $ini->hasVariable( 'EditorSettings', 'UploadExtensionCheck' ) ? $ini->variable( 'EditorSettings', 'UploadExtensionCheck' ) : 'engine';
-        if ( $mode === 'disabled' || ( $mode !== 'always' && self::resolve() === self::DEFAULT_ENGINE ) )
-            return true;
         $parts = explode( '.', basename( str_replace( '\\', '/', (string) $fileName ) ) );
-        if ( count( $parts ) < 2 )
-            return false;
         array_shift( $parts );
-        // "shell.php.jpg" is served as PHP by some server setups: no executable type anywhere in the name
+        // "shell.php.jpg" is served as PHP by some server setups: no executable type anywhere in the name. First and
+        // for every engine: TinyMCE 3 users skip the list below, and a server without the .htaccess rules (nginx)
+        // would run what was uploaded
         foreach ( $parts as $part )
         {
             if ( in_array( strtolower( $part ), self::$executableExtensions, true ) )
                 return false;
         }
+        $ini  = eZINI::instance( 'ezoe.ini' );
+        $mode = $ini->hasVariable( 'EditorSettings', 'UploadExtensionCheck' ) ? $ini->variable( 'EditorSettings', 'UploadExtensionCheck' ) : 'engine';
+        if ( $mode === 'disabled' || ( $mode !== 'always' && self::resolve() === self::DEFAULT_ENGINE ) )
+            return true;
+        if ( count( $parts ) < 1 )
+            return false;
         return in_array( strtolower( end( $parts ) ), self::uploadExtensions(), true );
     }
 }

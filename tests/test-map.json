@@ -1020,6 +1020,16 @@
     ],
     "design/standard/javascript/ezasynchronouspublishing.js": [
       "tests/tests/design/AsynchronousPublishingLinkTest.php"
+    ],
+    "extension/ezoe/modules/ezoe/module.php": [
+      "tests/tests/extension/ezoe/expOEAtdRemovedTest.php"
+    ],
+    "extension/ezoe/settings/ezoe.ini": [
+      "tests/tests/extension/ezoe/expOEAtdRemovedTest.php",
+      "tests/tests/extension/ezoe/expOEUploadExecutableTest.php"
+    ],
+    "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe.tpl": [
+      "tests/tests/extension/ezoe/expOEAtdRemovedTest.php"
     ]
   },
   "generated": {
@@ -1289,14 +1299,16 @@
     ],
     "extension/ezoe/classes/runnable/views/ezoe/relations.php": [
       "tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php",
-      "tests/tests/extension/ezoe/expOERelationsEmbedIdTest.php"
+      "tests/tests/extension/ezoe/expOERelationsEmbedIdTest.php",
+      "tests/tests/extension/ezoe/expOEEmbedViewTest.php"
     ],
     "extension/ezoe/classes/runnable/views/ezoe/spellcheck_rpc.php": [
       "tests/tests/extension/ezoe/ezoeSpellcheckRpcRawInputTest.php",
       "tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php"
     ],
     "extension/ezoe/classes/runnable/views/ezoe/tags.php": [
-      "tests/tests/extension/ezoe/expOECustomTagListTest.php"
+      "tests/tests/extension/ezoe/expOECustomTagListTest.php",
+      "tests/tests/extension/ezoe/expOECustomTagNameTest.php"
     ],
     "extension/ezoe/classes/runnable/views/ezoe/upload.php": [
       "tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php",
@@ -1907,6 +1919,12 @@
     ],
     "design/admin4l/templates/explayouts/block/admin_theme_switch.tpl": [
       "tests/tests/design/AdminSiteAccessMenuTest.php"
+    ],
+    "extension/ezoe/design/standard/templates/ezoe/tag_custom.tpl": [
+      "tests/tests/extension/ezoe/expOECustomTagNameTest.php"
+    ],
+    "extension/ezoe/classes/runnable/views/ezoe/embed_view.php": [
+      "tests/tests/extension/ezoe/expOEEmbedViewTest.php"
     ]
   }
 }

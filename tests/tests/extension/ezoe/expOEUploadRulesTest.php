@@ -34,11 +34,18 @@ class expOEUploadRulesTest extends expOETestCase
         $this->assertFalse( expOEEditor::uploadExtensionAllowed( $name ), $name );
     }
 
-    #[PHPUnit\Framework\Attributes\DataProvider( 'refused' )]
-    public function testNothingIsRefusedWhenTheCheckIsDisabled( $name )
+    public static function refusedByTheList()
+    {
+        return array( array( 'noextension' ), array( '' ), array( 'tool.xyz' ), array( 'archive.tar.gz' ) );
+    }
+
+    /** The list is not checked; the executable types are refused in every mode (expOEUploadExecutableTest) */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'refusedByTheList' )]
+    public function testOnlyExecutablesAreRefusedWhenTheCheckIsDisabled( $name )
     {
         $this->ini( 'UploadExtensionCheck', 'disabled' );
         $this->assertTrue( expOEEditor::uploadExtensionAllowed( $name ), $name );
+        $this->assertFalse( expOEEditor::uploadExtensionAllowed( 'shell.php' ) );
     }
 
     public function testTinyMCE3UsersAreNotLimitedInTheDefaultMode()
@@ -46,6 +53,14 @@ class expOEUploadRulesTest extends expOETestCase
         $this->ini( 'UploadExtensionCheck', 'engine' );
         $this->preference( 'tinymce3' );
         $this->assertTrue( expOEEditor::uploadExtensionAllowed( 'tool.xyz' ) );
+    }
+
+    public function testTinyMCE3UsersCannotUploadAnExecutableInTheDefaultMode()
+    {
+        $this->ini( 'UploadExtensionCheck', 'engine' );
+        $this->preference( 'tinymce3' );
+        foreach ( array( 'x.php', 'shell.php.jpg', 'x.phtml', 'run.sh', '.htaccess' ) as $name )
+            $this->assertFalse( expOEEditor::uploadExtensionAllowed( $name ), $name );
     }
 
     public function testTinyMCE8UsersAreLimitedInTheDefaultMode()
