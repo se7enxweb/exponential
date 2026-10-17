@@ -53,10 +53,11 @@ function run(storage, cookie) {
     // node 2 is on the path (above the current node 42) and has no sub items in the tree
     out.onPathWithout = /currentnode/.test(menu.generateEntry(node(2, false), false, false, 1));
     out.offPathWithout = /currentnode/.test(menu.generateEntry(node(3, false), false, false, 1));
-    const toggle = { id: 'a5', getAttribute: (k) => (k === 'data-modified-subnode' ? '1700000000' : null) };
-    toggle.closest = (sel) => (sel === 'a[data-modified-subnode]' ? toggle : null);
+    const toggle = { id: 'a5', getAttribute: (k) => (k === 'data-tree-modified' ? '1700000000' : k === 'data-tree-load' ? '5' : null) };
+    toggle.hasAttribute = (k) => k === 'data-tree-load';
+    toggle.closest = (sel) => (sel === 'a[data-tree-load]' ? toggle : null);
     toggle.click = () => (listeners.click || []).forEach((fn) => fn({ target: toggle, preventDefault() {} }));
-    const foreign = { id: 'a99', getAttribute: () => '1', closest: () => foreign };
+    const foreign = { id: 'a99', getAttribute: (k) => (k === 'data-tree-load' ? '99' : '1'), hasAttribute: () => true, closest: () => foreign };
     let prevented = false;
     (listeners.click || []).forEach((fn) => fn({ target: toggle, preventDefault() { prevented = true; } }));
     out.clickPrevented = prevented;

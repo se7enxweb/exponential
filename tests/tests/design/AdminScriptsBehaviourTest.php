@@ -181,7 +181,7 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
         $s = $this->harness( 'tree_toggle.js', array( 'design/admin4/javascript/contentstructuremenu_dynamic.js' ) );
         $entry = $s['storage']['withChildren'];
         $this->assertStringContainsString( 'id="a5" href="#" role="button"', $entry );
-        $this->assertStringContainsString( 'data-modified-subnode="1700000000"', $entry );
+        $this->assertStringContainsString( 'data-tree-load="5" data-tree-modified="1700000000"', $entry );
         $this->assertStringNotContainsString( 'onclick', $entry );
         $this->assertStringNotContainsString( 'onkeydown', $entry );
         $this->assertStringNotContainsString( 'treeMenu', $entry );
