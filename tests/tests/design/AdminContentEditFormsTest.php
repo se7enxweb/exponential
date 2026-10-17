@@ -24,6 +24,8 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
 {
     const FIELD = '.a4-content-attr :is(input, select, textarea):where(:not([type]), [type=text], [type=password], [type=email], [type=number], [type=url], [type=tel], [type=search], [type=date], [type=time], [type=datetime-local], select, textarea)';
@@ -41,7 +43,7 @@ class AdminContentEditFormsTest extends PHPUnit\Framework\TestCase
 
     private static function read( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     /** The module stylesheet without comments */

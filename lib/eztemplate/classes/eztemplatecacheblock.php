@@ -54,7 +54,12 @@ class eZTemplateCacheBlock
         self::filterKeys( $keys );
         $nodeID = $subtreeExpiry ? eZTemplateCacheBlock::decodeNodeID( $subtreeExpiry ) : false;
         $cachePath = eZTemplateCacheBlock::cachePath( eZTemplateCacheBlock::keyString( $keys ), $nodeID );
-        return eZTemplateCacheBlock::handle( $cachePath, $nodeID, $ttl, $useGlobalExpiry );
+        // A compiled {cache-block keys=...} passes array( keys, placement, siteaccess ): the debug bar names the
+        // template and shows the keys. Custom code (content/treemenu) passes keys of its own.
+        $placement = !empty( $GLOBALS['eZDebugEnabled'] ) && count( $keys ) === 3 && isset( $keys[1] ) && is_string( $keys[1] )
+                     && preg_match( '/^\d+_\d+_\d+_\d+_./', $keys[1] ) ? $keys[1] : false;
+        return eZTemplateCacheBlock::handle( $cachePath, $nodeID, $ttl, $useGlobalExpiry, $placement,
+                                             $placement !== false ? $keys[0] : $keys );
     }
 
     /**
@@ -85,9 +90,14 @@ class eZTemplateCacheBlock
     /*!
      \static
      Helper function for the compiled code, similar to retrieve() but requires the $cachePath to be calculated up front.
+     $placement (the block's placementString()) and $keys are noted for the debug bar's Rendering tab only.
      */
-    static function handle( $cachePath, $nodeID, $ttl, $useGlobalExpiry = true )
+    static function handle( $cachePath, $nodeID, $ttl, $useGlobalExpiry = true, $placement = false, $keys = null )
     {
+        $noted = !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' );
+        if ( $noted )
+            $start = microtime( true );
+
         $globalExpiryTime = -1;
         if ( $useGlobalExpiry )
         {
@@ -110,9 +120,28 @@ class eZTemplateCacheBlock
 
         if ( $ttl == 0 )
             $ttl = -1;
-        return array( &$cacheHandler,
-                      $cacheHandler->processCache( array( 'eZTemplateCacheBlock', 'retrieveContent' ), null,
-                                                   $ttl, $globalExpiryTime ) );
+        $content = $cacheHandler->processCache( array( 'eZTemplateCacheBlock', 'retrieveContent' ), null,
+                                                $ttl, $globalExpiryTime );
+        if ( $noted )
+        {
+            $hit = !( $content instanceof eZClusterFileFailure );
+            expRenderStats::noteCacheBlock( spl_object_id( $cacheHandler ), $cachePath, $placement, $keys, $nodeID, $ttl,
+                                            $hit, ( microtime( true ) - $start ) * 1000, null, $hit ? strlen( (string)$content ) : null );
+        }
+        return array( &$cacheHandler, $content );
+    }
+
+    /*!
+     \static
+     Stores the content a cache-block generated; called by the compiled code after the block was not found in the
+     cache. Notes the time since handle() and the size for the debug bar's Rendering tab.
+     */
+    static function store( $cacheHandler, $cachedText )
+    {
+        $cacheHandler->storeCache( array( 'scope' => 'template-block', 'binarydata' => $cachedText ) );
+        // by the handler handle() returned: a nested block has its own, while the compiled code's $cachePath is shared
+        if ( !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' ) )
+            expRenderStats::noteCacheBlockStored( spl_object_id( $cacheHandler ), strlen( (string)$cachedText ) );
     }
 
     /*!

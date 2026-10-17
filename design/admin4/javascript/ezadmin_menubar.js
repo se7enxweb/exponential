@@ -451,8 +451,26 @@
         handle.addEventListener('pointerup', () => announce(leftMenu.getBoundingClientRect().width));
     }
 
+    // The first paint: until sidebarToggle() has applied the columns' state, the page layouts' html.a4-preload draws
+    // them from the user's preferences, without transitions (admin4.css). Two frames later the class goes: the first
+    // frame is drawn with the script's state, and only a change after it runs a transition.
+    function endPreload() {
+        const root = document.documentElement;
+        const done = () => root.classList.remove("a4-preload");
+        if (typeof window.requestAnimationFrame !== "function") {
+            done();
+            return;
+        }
+        window.requestAnimationFrame(() => window.requestAnimationFrame(done));
+    }
+
     $(function () {
-        sidebarToggle();
+        // finally: if applying the state throws, the page must not keep a4-preload (no transitions, columns frozen)
+        try {
+            sidebarToggle();
+        } finally {
+            endPreload();
+        }
         navbarToggle();
         leftMenuResize();
     });

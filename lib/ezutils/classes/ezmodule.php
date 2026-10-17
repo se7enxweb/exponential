@@ -1949,6 +1949,9 @@ class eZModule
             $viewStack[] = $currentView;
         $currentView = array( 'view' => $functionName,
                               'module' => $this->Name );
+        // lib/ does not need the kernel: the debug bar's collector only when it is there
+        if ( class_exists( 'expRenderStats' ) )
+            expRenderStats::noteModuleView( $this->Name, $functionName, $this->Path . "/" . $this->Name . "/" . $function["script"] );
         $Return = eZProcess::run( $this->Path . "/" . $this->Name . "/" . $function["script"],
                                   $params,
                                   $params_as_var );

@@ -31,6 +31,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
 {
     /**
@@ -104,7 +106,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
             $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
             foreach ( $files as $file )
             {
-                if ( substr( $file->getFilename(), -4 ) === '.tpl' && self::inlineCssCount( file_get_contents( $file->getPathname() ) ) > 0 )
+                if ( substr( $file->getFilename(), -4 ) === '.tpl' && self::inlineCssCount( AdminFiles::read( $file->getPathname() ) ) > 0 )
                 {
                     $found[] = substr( $file->getPathname(), strlen( self::$root ) + 1 );
                 }
@@ -163,7 +165,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         {
             $file = self::$root . '/' . $path;
             $this->assertFileExists( $file );
-            $this->assertSame( 1, self::inlineCssCount( file_get_contents( $file ) ), "$path: one inline style only ($why)" );
+            $this->assertSame( 1, self::inlineCssCount( AdminFiles::read( $file ) ), "$path: one inline style only ($why)" );
         }
     }
 
@@ -257,10 +259,10 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $problems = array();
         foreach ( array( 'admin4', 'admin' ) as $design )
         {
-            foreach ( glob( self::$root . "/design/$design/stylesheets/modules/*.css" ) as $file )
+            foreach ( AdminFiles::files( self::$root . "/design/$design/stylesheets/modules/*.css" ) as $file )
             {
                 $name = substr( $file, strlen( self::$root ) + 1 );
-                foreach ( self::declarations( file_get_contents( $file ) ) as $d )
+                foreach ( self::declarations( AdminFiles::read( $file ) ) as $d )
                 {
                     list( $selector, $property, $value ) = $d;
                     if ( strpos( $selector, '.a4-' ) === false )
@@ -294,7 +296,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
 
     public function testEveryColourTokenHasADarkValue()
     {
-        $css = file_get_contents( self::$root . '/design/admin4/stylesheets/components.css' );
+        $css = AdminFiles::read( self::$root . '/design/admin4/stylesheets/components.css' );
         $light = self::tokensOf( $css, ':root' );
         $dark = self::tokensOf( $css, 'html[data-a4-theme="dark"]' );
         $this->assertNotEmpty( $light );
@@ -346,7 +348,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         foreach ( $files as $file )
         {
             $path = self::$root . '/design/admin4/stylesheets/' . $file;
-            foreach ( self::declarations( (string)file_get_contents( $path ) ) as $d )
+            foreach ( self::declarations( AdminFiles::read( $path ) ) as $d )
             {
                 list( $selector, $property, $value ) = $d;
                 if ( strpos( $property, '--' ) === 0 )
@@ -390,7 +392,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         {
             $path = self::$root . '/design/admin4/stylesheets/' . $file;
             $this->assertFileExists( $path );
-            foreach ( self::declarations( file_get_contents( $path ) ) as $d )
+            foreach ( self::declarations( AdminFiles::read( $path ) ) as $d )
             {
                 list( $selector, $property, $value ) = $d;
                 if ( strpos( $property, '--' ) === 0 )
@@ -482,14 +484,14 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     {
         $problems = array();
         $files = array_merge(
-            glob( self::$root . '/design/admin4/stylesheets/*.css' ),
-            glob( self::$root . '/design/admin4/stylesheets/*/*.css' )
+            AdminFiles::files( self::$root . '/design/admin4/stylesheets/*.css' ),
+            AdminFiles::files( self::$root . '/design/admin4/stylesheets/*/*.css' )
         );
         $this->assertNotEmpty( $files );
         foreach ( $files as $file )
         {
             $name = substr( $file, strlen( self::$root ) + 1 );
-            foreach ( self::declarations( file_get_contents( $file ) ) as $d )
+            foreach ( self::declarations( AdminFiles::read( $file ) ) as $d )
             {
                 list( $selector, $property, $value ) = $d;
                 if ( self::selectorHasFocus( $selector ) && self::outlineIsRemoved( $property, $value ) )
@@ -508,19 +510,19 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     public function testAdmin4FollowsTheModesTheBrowserAsksFor()
     {
         $dir = self::$root . '/design/admin4/stylesheets';
-        $components = preg_replace( '#/\*.*?\*/#s', '', file_get_contents( "$dir/components.css" ) );
+        $components = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( "$dir/components.css" ) );
         $this->assertMatchesRegularExpression( '/(^|\})\s*:root\s*\{[^}]*color-scheme:\s*light/s', $components );
         $this->assertMatchesRegularExpression( '/html\[data-a4-theme="dark"\]\s*\{[^}]*color-scheme:\s*dark/s', $components );
         $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\)\s*\{.*?\.a4-dot, \.a4-meter > span, \.a4-bars > \* \{ forced-color-adjust: none; \}/s', $components );
         // the touch rule must outweigh .a4-field input[type=text] (0,2,1): one :not() per excluded type
         $this->assertMatchesRegularExpression( '/@media \(pointer: coarse\)\s*\{[^}]*\.a4-field input:not\(\[type=checkbox\]\):not\(\[type=radio\]\)[^{]*\{ font-size: var\(--a4-text-l\); \}/s', $components );
-        $frame = preg_replace( '#/\*.*?\*/#s', '', file_get_contents( "$dir/admin4.css" ) );
+        $frame = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( "$dir/admin4.css" ) );
         $this->assertMatchesRegularExpression( '/@media \(prefers-reduced-motion: reduce\)\s*\{\s*\*, \*::before, \*::after\s*\{[^}]*transition-duration/s', $frame );
         $this->assertMatchesRegularExpression( '/@media \(pointer: coarse\)\s*\{[^}]*#page input:not\(\[type=checkbox\]\)[^{]*\{ font-size: var\(--a4-text-l\); \}/s', $frame );
         $all = array();
-        foreach ( array_merge( glob( "$dir/*.css" ), glob( "$dir/*/*.css" ) ) as $file )
+        foreach ( array_merge( AdminFiles::files( "$dir/*.css" ), AdminFiles::files( "$dir/*/*.css" ) ) as $file )
         {
-            foreach ( self::declarations( file_get_contents( $file ) ) as $d )
+            foreach ( self::declarations( AdminFiles::read( $file ) ) as $d )
             {
                 if ( preg_match( '/^(-\w+-)?transition(-property)?$/', $d[1] ) && preg_match( '/(^|,)\s*all\b/', $d[2] ) )
                 {
@@ -538,7 +540,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
      */
     public function testSidebarScriptStoresOnlyAWideWindowsClick()
     {
-        $js = file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' );
+        $js = AdminFiles::read( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' );
         $start = strpos( $js, 'function sidebarToggle()' );
         $end = strpos( $js, '// Navbar menu toggling feature' );
         $this->assertNotFalse( $start );
@@ -564,7 +566,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
      */
     public function testBaseAndPageStylesheetsDrawNoTextBelowTwelvePixels()
     {
-        $core = (string)file_get_contents( self::$root . '/design/admin4/stylesheets/core.css' );
+        $core = AdminFiles::read( self::$root . '/design/admin4/stylesheets/core.css' );
         $this->assertMatchesRegularExpression( '/body \/\*[^*]*\*\/\s*\{[^}]*font-size: var\(--a4-text-s\);/', $core, 'core.css sets the body text from the type scale' );
         $problems = array();
         $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::$root . '/design/admin4/stylesheets', FilesystemIterator::SKIP_DOTS ) );
@@ -573,7 +575,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
             $name = $file->getFilename();
             if ( substr( $name, -4 ) !== '.css' || in_array( $name, array( 'admin4.css', 'components.css' ), true ) )
                 continue;
-            $css = preg_replace( '/\/\*.*?\*\//s', '', (string)file_get_contents( $file->getPathname() ) );
+            $css = preg_replace( '/\/\*.*?\*\//s', '', AdminFiles::read( $file->getPathname() ) );
             preg_match_all( '/font(?:-size)?\s*:[^;{}]*?(?<![\w.])(0?\.\d+)em\b/', $css, $m );
             foreach ( $m[1] as $em )
             {
@@ -593,7 +595,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $problems = array();
         foreach ( array( 'components.css', 'admin4.css' ) as $file )
         {
-            foreach ( self::declarations( file_get_contents( self::$root . "/design/admin4/stylesheets/$file" ) ) as $d )
+            foreach ( self::declarations( AdminFiles::read( self::$root . "/design/admin4/stylesheets/$file" ) ) as $d )
             {
                 list( $selector, $property, $value ) = $d;
                 if ( ( $property === 'font-size' || $property === 'font' ) && preg_match( '/\d+(\.\d+)?px/i', $value ) )
@@ -628,7 +630,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         // in the order the page loads them: admin4.css after pagelayout.css
         foreach ( array( 'pagelayout.css', 'admin4.css' ) as $file )
         {
-            foreach ( self::declarations( file_get_contents( "$dir/$file" ) ) as $d )
+            foreach ( self::declarations( AdminFiles::read( "$dir/$file" ) ) as $d )
             {
                 $found[$d[0]][$d[1]] = $d[2];
             }
@@ -648,7 +650,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'window_controls.tpl', 'node/top_node_full.tpl' ) as $template )
         {
             $this->assertStringContainsString( '<span class="a4-tabs-switch-label" aria-hidden="true">{\'Tabs\'|i18n( \'design/admin/parts/my/menu\' )}</span>',
-                file_get_contents( self::$root . "/design/admin4/templates/$template" ), $template );
+                AdminFiles::read( self::$root . "/design/admin4/templates/$template" ), $template );
         }
     }
 
@@ -662,7 +664,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $found = array();
         foreach ( array( 'components.css', 'admin4.css' ) as $file )
         {
-            foreach ( self::declarations( file_get_contents( "$dir/$file" ) ) as $d )
+            foreach ( self::declarations( AdminFiles::read( "$dir/$file" ) ) as $d )
             {
                 $found[$d[0]][$d[1]] = $d[2];
             }
@@ -677,14 +679,14 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         // the forms laid out as a list are not data tables
         foreach ( array( 'shop/editvatrule.tpl', 'shop/editcurrency.tpl' ) as $template )
         {
-            $this->assertStringContainsString( '<table class="list a4-plain"', file_get_contents( self::$root . "/design/admin4/templates/$template" ), $template );
+            $this->assertStringContainsString( '<table class="list a4-plain"', AdminFiles::read( self::$root . "/design/admin4/templates/$template" ), $template );
         }
-        $this->assertStringContainsString( '--exp-dt-row-alt: var(--a4-zebra)', file_get_contents( "$dir/admin4.css" ) );
+        $this->assertStringContainsString( '--exp-dt-row-alt: var(--a4-zebra)', AdminFiles::read( "$dir/admin4.css" ) );
 
         $problems = array();
-        foreach ( array_merge( glob( "$dir/*.css" ), glob( "$dir/*/*.css" ) ) as $path )
+        foreach ( array_merge( AdminFiles::files( "$dir/*.css" ), AdminFiles::files( "$dir/*/*.css" ) ) as $path )
         {
-            foreach ( self::declarations( file_get_contents( $path ) ) as $d )
+            foreach ( self::declarations( AdminFiles::read( $path ) ) as $d )
             {
                 list( $selector, $property, $value ) = $d;
                 if ( preg_match( '/tr\.(bglight|bgdark)|tr:nth-(child|of-type)\((even|odd|2n)/', $selector )
@@ -706,26 +708,26 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     {
         $dir = self::$root . '/design/admin4/stylesheets';
         $found = array();
-        foreach ( self::declarations( file_get_contents( "$dir/admin4.css" ) ) as $d )
+        foreach ( self::declarations( AdminFiles::read( "$dir/admin4.css" ) ) as $d )
         {
             $found[$d[0]][$d[1]] = $d[2];
         }
         $this->assertSame( 'var(--a4-control-h)', $found['.controlbar.a4-node-actions form .button-left .block select']['height'] );
         // drawn by the page (the forced-colors block further down gives the native control back)
         $this->assertMatchesRegularExpression( '/\n\.controlbar\.a4-node-actions form \.button-left \.block select \{[^}]*\bappearance: none;/',
-            file_get_contents( "$dir/admin4.css" ) );
+            AdminFiles::read( "$dir/admin4.css" ) );
         $this->assertSame( 'var(--a4-control-h)', $found['html #action-controls .exp-dt-action']['height'] );
         $this->assertSame( 'var(--a4-control-h)', $found['html .exp-dt-first, html .exp-dt-prev, html .exp-dt-next, html .exp-dt-last, html .exp-dt-page']['height'] );
         $this->assertSame( 'col-resize', $found['.leftmenu-resize-handle']['cursor'] );
-        $this->assertStringContainsString( '--a4-control-h: 32px', file_get_contents( "$dir/components.css" ) );
-        $grip = file_get_contents( self::$root . '/design/admin4/templates/page_leftmenu.tpl' );
+        $this->assertStringContainsString( '--a4-control-h: 32px', AdminFiles::read( "$dir/components.css" ) );
+        $grip = AdminFiles::read( self::$root . '/design/admin4/templates/page_leftmenu.tpl' );
         $this->assertStringContainsString( 'role="separator"', $grip );
         $this->assertStringContainsString( 'tabindex="0"', $grip );
         $this->assertStringNotContainsString( 'title=', $grip, 'the grip is named by its aria-label alone' );
         // forced colors: the native select without the page's chevron
         $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\) \{\s*\.controlbar\.a4-node-actions form \.button-left \.block select \{[^}]*appearance: auto;[^}]*background-image: none;/',
-            file_get_contents( "$dir/admin4.css" ) );
-        $this->assertStringContainsString( "handle.addEventListener('keydown'", file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' ) );
+            AdminFiles::read( "$dir/admin4.css" ) );
+        $this->assertStringContainsString( "handle.addEventListener('keydown'", AdminFiles::read( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' ) );
     }
 
     public function testListsMarkTickedRows()
@@ -734,7 +736,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $found = array();
         foreach ( array( 'components.css', 'admin4.css' ) as $file )
         {
-            foreach ( self::declarations( file_get_contents( "$dir/$file" ) ) as $d )
+            foreach ( self::declarations( AdminFiles::read( "$dir/$file" ) ) as $d )
             {
                 // a selector list counts for each of its selectors (commas inside :is()/:has() do not split)
                 foreach ( preg_split( '/,(?![^()]*\))/', $d[0] ) as $one )
@@ -752,7 +754,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         // the ticked tint comes after the hover rule, so it wins
         foreach ( array( 'components.css', 'admin4.css' ) as $file )
         {
-            $css = file_get_contents( "$dir/$file" );
+            $css = AdminFiles::read( "$dir/$file" );
             $this->assertGreaterThan( strpos( $css, 'tr:hover > :is(td, th[scope="row"])' ), strpos( $css, 'tr:has(> td > input[type="checkbox"]:checked)' ), $file );
         }
         // no sticky list header: the tables sit in scrolling wrappers (pagelayout.css div:has(> table)), where it never sticks.
@@ -766,7 +768,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
 
     public function testTreeShowsThePathToTheCurrentNode()
     {
-        $css = file_get_contents( self::$root . '/design/admin4/stylesheets/admin4.css' );
+        $css = AdminFiles::read( self::$root . '/design/admin4/stylesheets/admin4.css' );
         $this->assertStringContainsString( 'li.currentnode > a.image-text :is(span.node-name-normal', $css );
         $this->assertSame( 1, preg_match( '/\n(div#contentstructure li\.currentnode > a\.image-text :is\([^)]*\)) \{([^}]*)\}/', $css, $current ) );
         $this->assertStringContainsString( 'box-shadow: inset 3px 0 0 var(--a4-accent);', $current[2] );
@@ -783,7 +785,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
      */
     public function testTablePreferencesAreASegmentedControlOnTheTokens()
     {
-        $css = file_get_contents( self::$root . '/design/admin4/stylesheets/theme/rounded.css' );
+        $css = AdminFiles::read( self::$root . '/design/admin4/stylesheets/theme/rounded.css' );
         preg_match_all( '/(?:^|\n)([^{}\n]*p\.table-preferences[^{}]*)\{([^}]*)\}/', $css, $rules, PREG_SET_ORDER );
         $this->assertGreaterThanOrEqual( 4, count( $rules ) );
         $all = '';
@@ -833,9 +835,9 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     {
         $dir = self::$root . '/design/admin4/stylesheets';
         $problems = array();
-        foreach ( array_merge( glob( "$dir/*.css" ), glob( "$dir/*/*.css" ) ) as $path )
+        foreach ( array_merge( AdminFiles::files( "$dir/*.css" ), AdminFiles::files( "$dir/*/*.css" ) ) as $path )
         {
-            $css = preg_replace( '#/\*.*?\*/#s', '', (string)file_get_contents( $path ) );
+            $css = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( $path ) );
             if ( preg_match_all( '/z-index\s*:\s*([^;}]+)/i', $css, $m ) )
             {
                 foreach ( $m[1] as $value )
@@ -851,11 +853,11 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $problems, 'use a --a4-z-* token (0, 1 and -1 only inside one component)' );
 
         // every token a stylesheet uses is defined (a typo would make the z-index auto)
-        $defined = (string)file_get_contents( "$dir/components.css" );
+        $defined = AdminFiles::read( "$dir/components.css" );
         $undefined = array();
-        foreach ( array_merge( glob( "$dir/*.css" ), glob( "$dir/*/*.css" ) ) as $path )
+        foreach ( array_merge( AdminFiles::files( "$dir/*.css" ), AdminFiles::files( "$dir/*/*.css" ) ) as $path )
         {
-            preg_match_all( '/var\((--a4-z-[a-z-]+)\)/', (string)file_get_contents( $path ), $used );
+            preg_match_all( '/var\((--a4-z-[a-z-]+)\)/', AdminFiles::read( $path ), $used );
             foreach ( array_unique( $used[1] ) as $token )
             {
                 if ( !preg_match( '/' . preg_quote( $token, '/' ) . '\s*:/', $defined ) )
@@ -867,7 +869,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $undefined, 'a --a4-z-* token that components.css does not define' );
 
         $tokens = array();
-        preg_match_all( '/(--a4-z-[a-z-]+)\s*:\s*(-?\d+)\s*;/', (string)file_get_contents( "$dir/components.css" ), $m, PREG_SET_ORDER );
+        preg_match_all( '/(--a4-z-[a-z-]+)\s*:\s*(-?\d+)\s*;/', AdminFiles::read( "$dir/components.css" ), $m, PREG_SET_ORDER );
         foreach ( $m as $token )
         {
             $tokens[$token[1]] = (int)$token[2];
@@ -890,11 +892,11 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     /** The tabs on the window edges say which column they show and whether it is shown; Escape closes an overlay column. */
     public function testSidebarTabsSayWhatTheyControl()
     {
-        $tpl = (string)file_get_contents( self::$root . '/design/admin4/templates/page_topmenu.tpl' );
+        $tpl = AdminFiles::read( self::$root . '/design/admin4/templates/page_topmenu.tpl' );
         $this->assertStringContainsString( 'class="sidebar-control left" aria-controls="leftmenu"', $tpl );
         $this->assertStringContainsString( 'class="sidebar-control right" aria-controls="rightmenu"', $tpl );
         $this->assertStringContainsString( "'Left column'|i18n( 'design/admin/pagelayout' )|wash", $tpl );
-        $js = (string)file_get_contents( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' );
+        $js = AdminFiles::read( self::$root . '/design/admin4/javascript/ezadmin_menubar.js' );
         $this->assertStringContainsString( '.attr("aria-expanded", open ? "true" : "false")', $js );
         $this->assertStringContainsString( 'e.key !== "Escape"', $js );
         $this->assertStringContainsString( 'control.focus();', $js );
@@ -907,7 +909,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertFileEquals( self::$root . '/design/admin4/stylesheets/components.css', self::$root . '/design/admin/stylesheets/components.css',
             'design/admin/stylesheets/components.css is a copy of the admin4 file; change admin4 and copy it' );
         // the module stylesheets too: design/admin loads the same components and the same module groups
-        foreach ( glob( self::$root . '/design/admin4/stylesheets/modules/*.css' ) as $file )
+        foreach ( AdminFiles::files( self::$root . '/design/admin4/stylesheets/modules/*.css' ) as $file )
         {
             $this->assertFileEquals( $file, self::$root . '/design/admin/stylesheets/modules/' . basename( $file ),
                 'design/admin/stylesheets/modules/' . basename( $file ) . ' is a copy of the admin4 file; change admin4 and copy it' );
@@ -916,7 +918,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
 
     public function testEveryListedStylesheetExists()
     {
-        $ini = file_get_contents( self::$root . '/settings/design.ini' );
+        $ini = AdminFiles::read( self::$root . '/settings/design.ini' );
         preg_match_all( '/^AdminComponentCSSFileList\[\]=(\S+)\s*$/m', $ini, $m );
         $this->assertContains( 'components.css', $m[1] );
         foreach ( $m[1] as $file )

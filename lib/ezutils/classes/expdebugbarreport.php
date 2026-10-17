@@ -11,7 +11,7 @@
 /**
  * The HTML debug report as the "Exp Debug" bar: a bar pinned to the bottom of the window with a live
  * summary of the request, and a tabbed panel above it (Messages, Settings, Cache, Timing, SQL, Templates,
- * Included files, Memory, Velocity, and Other for reports nobody claimed).
+ * Included files, Memory, Server (id velocity), and Other for reports nobody claimed).
  *
  * Every section the classic report printed is still printed, with the same ids and the same rows, only
  * placed in a tab: scripts and stylesheets that look for #main-debug-table, #timingpoints,
@@ -58,6 +58,8 @@ class expDebugBarReport
         'memory_abs'=> array( 'warn' => 134217728, 'high' => 268435456 ), // 128 MB, 256 MB
         'templates' => array( 'warn' => 150, 'high' => 400 ),
         'querycache_hit_rate' => array( 'warn' => 50, 'high' => 10 ), // percent: the level rises BELOW these
+        'opcache_memory' => array( 'warn' => 80, 'high' => 95 ),     // percent of opcache.memory_consumption used
+        'apcu_memory'    => array( 'warn' => 75, 'high' => 90 ),     // percent of apc.shm_size used
     );
 
     /**
@@ -153,7 +155,7 @@ class expDebugBarReport
     public static function scriptStrings()
     {
         return array(
-            'Messages', 'Settings', 'Cache', 'Timing', 'SQL', 'Templates', 'Included files', 'Memory', 'Velocity', 'Other',
+            'Messages', 'Settings', 'Cache', 'Timing', 'SQL', 'Templates', 'Included files', 'Memory', 'Server', 'Other',
             'Debug report sections', 'Filter', 'Filter settings and report rows', 'No rows match the filter.',
             '%count rows match', 'Clear filter',
             'All', 'Errors', 'Warnings', 'Notices', 'Debug', 'Timing points', 'Strict',
@@ -188,7 +190,7 @@ class expDebugBarReport
             'By tag', 'By ID', 'All caches',
             'You may not clear caches (setup/managecache).',
             'Response cache', 'Engine',
-            // the Velocity tab: a page that came from a cache carries the report of the request that rendered it
+            // the Server tab: a page that came from a cache carries the report of the request that rendered it
             'This report was rendered at %time by %renderer for a request on port %entry, %age before this page was loaded on port %port: the page came from a cache, not from this request.',
             '%count s', '%count min',
             'Close', 'Open the debug report',
@@ -243,6 +245,9 @@ class expDebugBarReport
         $byIP = $ini->variable( 'DebugSettings', 'DebugByIP' ) == 'enabled' ? ' ' . self::t( '(By IP Address)' ) : '';
 
         // Messages, with the SQL statements (SQLOutput) taken out into the SQL tab.
+        // the panels of extensions (debugbar.ini Panels[]): a tab after Memory each, a chip and data for those that
+        // give them. Collected before the messages, so the warning about a panel left out is among them.
+        $panels = self::extensionPanels();
         $messages = self::messageRows( $debug, $allowedDebugLevels );
 
         // Top reports: the classic toolbar goes to Settings, anything else stays above the messages.
@@ -294,6 +299,9 @@ class expDebugBarReport
             // Written to deprecated.log and counted only, never listed with the messages (eZDebug::writeDeprecated())
             'deprecations' => eZDebug::deprecatedCount(),
             'levels'    => array(),
+            // PHP, OPcache and APCu of the process that rendered the page: only for those who may see the privileged
+            // rows of the Server tab, since the bar can show to anonymous visitors (DebugByIP)
+            'runtime'   => self::runtimeFigures( $userInfo['can_setup'] || $userInfo['can_cache'] ),
         );
 
         // The server side's summary (kernel/classes/debugbar), when it is loaded: its levels follow
@@ -304,7 +312,8 @@ class expDebugBarReport
             try
             {
                 $serverSummary = expDebugBarSummary::collect();
-                foreach ( array( 'time' => 'time', 'sql' => 'sql', 'memory' => 'memory', 'templates' => 'templates' ) as $from => $to )
+                foreach ( array( 'time' => 'time', 'sql' => 'sql', 'memory' => 'memory', 'templates' => 'templates',
+                                 'opcache' => 'opcache', 'apcu' => 'apcu' ) as $from => $to )
                 {
                     if ( isset( $serverSummary[$from]['level'] ) && in_array( $serverSummary[$from]['level'], array( 'ok', 'warn', 'high' ), true ) )
                         $summary['levels'][$to] = $serverSummary[$from]['level'];
@@ -317,6 +326,18 @@ class expDebugBarReport
         }
         $summary['querycache'] = $serverSummary !== null && array_key_exists( 'querycache', $serverSummary )
             ? $serverSummary['querycache'] : self::queryCacheSummary();
+        // How the page was rendered (controller, view cache key, compiled templates): for setup/setup only, as the
+        // cache key carries the user's role and limitation ids
+        $rendering = $userInfo['can_setup'] ? self::renderingData() : null;
+        $summary['rendering'] = $rendering === null ? null : self::renderingChips( $rendering );
+
+        // the chips of the extensions' panels (collected before the messages, see above)
+        $summary['panels'] = array();
+        foreach ( $panels as $panel )
+        {
+            if ( $panel['chip'] !== null )
+                $summary['panels'][] = $panel['chip'];
+        }
 
         $tabs = array(
             'messages'  => self::t( 'Messages' ),
@@ -325,10 +346,17 @@ class expDebugBarReport
             'timing'    => self::t( 'Timing' ),
             'sql'       => self::t( 'SQL' ),
             'templates' => self::t( 'Templates' ),
+            'rendering' => self::t( 'Rendering' ),
             'includes'  => self::t( 'Included files' ),
             'memory'    => self::t( 'Memory' ),
-            'velocity'  => self::t( 'Velocity' ),
         );
+        foreach ( $panels as $panel )
+            $tabs[$panel['tab']] = $panel['title'];
+        // id velocity, as the tab was named first: scripts and stylesheets find the section by it
+        $tabs['velocity'] = self::t( 'Server' );
+
+        if ( $rendering === null )
+            unset( $tabs['rendering'] );
         if ( $otherReports !== '' )
             $tabs['other'] = self::t( 'Other' );
         $badges = array(
@@ -421,6 +449,14 @@ class expDebugBarReport
         echo $templateReports;
         self::panelEnd();
 
+        // --- Rendering
+        if ( $rendering !== null )
+        {
+            self::panelStart( 'rendering', $tabs );
+            echo self::renderingHtml( $rendering );
+            self::panelEnd();
+        }
+
         // --- Included files
         self::panelStart( 'includes', $tabs );
         echo self::includedFilesHtml( $useIncludedFiles );
@@ -431,7 +467,15 @@ class expDebugBarReport
         echo self::memoryHtml( $debug, $totalElapsed, $peakMemory, $memoryLimit, $sqlCount, $queryKey );
         self::panelEnd();
 
-        // --- Velocity
+        // --- the extensions' panels
+        foreach ( $panels as $panel )
+        {
+            self::panelStart( $panel['tab'], $tabs );
+            echo $panel['html'];
+            self::panelEnd();
+        }
+
+        // --- Server (id velocity)
         self::panelStart( 'velocity', $tabs );
         echo self::velocityHtml( $userInfo['can_setup'] || $userInfo['can_cache'] );
         self::panelEnd();
@@ -464,6 +508,7 @@ class expDebugBarReport
             'urls'       => array( 'call' => self::url( 'ezjscore/call' ),
                                    'cachetoolbar' => self::url( 'setup/cachetoolbar' ) ),
             'strings'    => self::translatedScriptStrings(),
+            'panels'     => array_filter( array_column( $panels, 'data', 'id' ), 'is_array' ),
             'panel'      => array( 'min' => self::PANEL_HEIGHT_MIN, 'max' => self::PANEL_HEIGHT_MAX ),
         );
         echo '<script type="application/json" id="exp-debug-data">'
@@ -621,6 +666,11 @@ class expDebugBarReport
         if ( $s['templates'] !== null )
             $chips[] = array( 'templates', 'templates', $tplLevel,
                               self::t( '%count tpl', array( '%count' => $s['templates'] ) ), self::t( 'Templates used' ) );
+        if ( !empty( $s['rendering'] ) )
+        {
+            foreach ( $s['rendering'] as $chip )
+                $chips[] = $chip;
+        }
         $chips[] = array( 'messages', 'warnings', $s['warnings'] > 0 ? 'warn' : 'ok',
                           self::t( '%count warn', array( '%count' => $s['warnings'] ) ), self::t( 'Warnings' ) );
         $chips[] = array( 'messages', 'errors', $s['errors'] > 0 ? 'high' : 'ok',
@@ -630,13 +680,21 @@ class expDebugBarReport
         $chips[] = array( 'messages', 'deprecations', $deprecations > 0 ? 'warn' : 'ok',
                           self::t( '%count depr', array( '%count' => $deprecations ) ),
                           self::t( 'PHP deprecations, written to deprecated.log' ) );
+        foreach ( isset( $s['panels'] ) ? (array)$s['panels'] : array() as $chip )
+            $chips[] = $chip;
+        // At the right end: OPcache, APCu, then the versions; the first of them pushes them all there
+        $runtime = isset( $s['runtime'] ) ? $s['runtime'] : null;
+        $end = array_values( array_filter( array_merge( self::runtimeChips( $runtime, (array)$s['levels'] ), array( self::versionsChip( $runtime ) ) ) ) );
+        foreach ( $end as $i => $chip )
+            $chips[] = $i === 0 ? array_merge( $chip, array( true ) ) : $chip;
 
         $html = '<span class="exp-debug-summary" role="group" aria-label="' . self::h( 'Page summary' ) . '">';
         foreach ( $chips as $chip )
         {
             list( $tab, $key, $lvl, $text, $title ) = $chip;
+            $push = !empty( $chip[5] );
             $levelWord = $lvl === 'high' ? self::t( 'high' ) : ( $lvl === 'warn' ? self::t( 'raised' ) : self::t( 'normal' ) );
-            $html .= '<button type="button" class="exp-debug-chip" data-tab="' . $tab . '" data-key="' . $key . '" data-level="' . $lvl . '"'
+            $html .= '<button type="button" class="exp-debug-chip' . ( $push ? ' exp-debug-end' : '' ) . '" data-tab="' . $tab . '" data-key="' . $key . '" data-level="' . $lvl . '"'
                    . ' title="' . htmlspecialchars( $title . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"'
                    . ' aria-label="' . htmlspecialchars( $title . ': ' . $text . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">'
                    . htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</button>';
@@ -1051,7 +1109,8 @@ class expDebugBarReport
         $rows[self::t( 'Entered' )] = $entered;
         $rows[self::t( 'Received by' )] = $facts['received_by'];
         $rows[self::t( 'Rendered by' )] = self::t( $facts['rendered_by'] );
-        $rows['PHP'] = PHP_VERSION . ' (' . PHP_SAPI . ')';
+        // the version only for the privileged: the tab shows to anonymous visitors too when DebugByIP matches
+        $rows['PHP'] = $privileged ? PHP_VERSION . ' (' . PHP_SAPI . ')' : PHP_SAPI;
         if ( $privileged )
         {
             $rows[self::t( 'Process' )] = (string)$facts['pid'];
@@ -1074,9 +1133,366 @@ class expDebugBarReport
         if ( $privileged )
         {
             $html .= '<h3>' . self::h( 'OPcache' ) . '</h3>' . self::opcacheHtml();
+            $html .= '<h3>' . self::h( 'APCu' ) . '</h3>' . self::apcuHtml();
             $html .= '<div class="exp-debug-velocity-cache"></div>';
         }
         return $html;
+    }
+
+    /** Longest value the Rendering tab shows in full; a longer one is cut, the whole value is its tooltip */
+    const RENDERING_VALUE_MAX = 200;
+
+    /**
+     * What the Rendering tab shows: what expRenderStats noted for this request and the settings that decide it.
+     *
+     * @return array|null views, view_cache, templates, siteaccess, navigation_part, design, settings; null when the
+     *                    kernel's collector is not loaded
+     */
+    public static function renderingData()
+    {
+        if ( !class_exists( 'expRenderStats' ) )
+            return null;
+        $data = array( 'views' => expRenderStats::views(), 'view_cache' => expRenderStats::viewCache(),
+                       'templates' => expRenderStats::templates(),
+                       'cache_blocks' => method_exists( 'expRenderStats', 'cacheBlocks' ) ? expRenderStats::cacheBlocks() : array(),
+                       'cache_block_totals' => method_exists( 'expRenderStats', 'cacheBlockTotals' ) ? expRenderStats::cacheBlockTotals() : null,
+                       'tree' => method_exists( 'expRenderStats', 'tree' ) ? expRenderStats::tree() : array(),
+                       'tree_count' => method_exists( 'expRenderStats', 'treeCount' ) ? expRenderStats::treeCount() : 0,
+                       'siteaccess' => '', 'navigation_part' => '',
+                       'design' => array(), 'settings' => array() );
+        if ( isset( $GLOBALS['eZCurrentAccess']['name'] ) )
+            $data['siteaccess'] = (string)$GLOBALS['eZCurrentAccess']['name'];
+        try
+        {
+            $ini = eZINI::instance();
+            foreach ( array( 'ContentSettings' => array( 'ViewCaching' ),
+                             'TemplateSettings' => array( 'TemplateCompile', 'TemplateCache', 'CompileExecution', 'DevelopmentMode' ) ) as $group => $names )
+            {
+                foreach ( $names as $name )
+                    $data['settings'][$name] = $ini->hasVariable( $group, $name ) ? (string)$ini->variable( $group, $name ) : '';
+            }
+            if ( class_exists( 'eZTemplateDesignResource' ) )
+            {
+                foreach ( (array)eZTemplateDesignResource::allDesignBases() as $base )
+                    $data['design'][] = (string)$base;
+            }
+            if ( class_exists( 'eZTemplate', false ) )
+            {
+                $tpl = eZTemplate::factory();
+                if ( $tpl->hasVariable( 'module_result' ) )
+                {
+                    $result = $tpl->variable( 'module_result' );
+                    if ( isset( $result['navigation_part'] ) && is_scalar( $result['navigation_part'] ) )
+                        $data['navigation_part'] = (string)$result['navigation_part'];
+                }
+            }
+        }
+        catch ( Throwable $e )
+        {
+        }
+        return $data;
+    }
+
+    /**
+     * The chips of the Rendering tab: what the content view cache did, and how many templates were compiled now.
+     *
+     * @param array $r renderingData()
+     * @return array chips as summaryHtml() takes them
+     */
+    public static function renderingChips( array $r )
+    {
+        $chips = array();
+        $cache = $r['view_cache'];
+        if ( is_array( $cache ) && $cache['state'] !== null )
+        {
+            $words = array( 'hit' => self::t( 'View: hit' ), 'generated' => self::t( 'View: new' ), 'uncached' => self::t( 'View: new' ),
+                            'expired' => self::t( 'View: new' ), 'off' => self::t( 'View: off' ), 'pending' => self::t( 'View: ?' ) );
+            $state = isset( $words[$cache['state']] ) ? $cache['state'] : 'pending';
+            $chips[] = array( 'rendering', 'viewcache', $state === 'hit' || $state === 'off' ? 'ok' : 'warn', $words[$state],
+                              self::t( 'Content view cache' ) . ': ' . self::renderingStateText( $cache ) );
+        }
+        $totals = isset( $r['cache_block_totals'] ) ? $r['cache_block_totals'] : null;
+        if ( $totals && $totals['count'] > 0 )
+        {
+            $misses = $totals['count'] - $totals['hits'];
+            $chips[] = array( 'rendering', 'cacheblocks', $misses > 0 ? 'warn' : 'ok',
+                              self::t( 'CB %hits/%count', array( '%hits' => $totals['hits'], '%count' => $totals['count'] ) ),
+                              self::t( 'Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)',
+                                       array( '%hits' => $totals['hits'], '%count' => $totals['count'],
+                                              '%generated' => number_format( $totals['generate_ms'], 0, '.', '' ) ) ) );
+        }
+        $compiled = count( $r['templates']['compiled'] );
+        $chips[] = array( 'rendering', 'compiled', $compiled > 0 ? 'warn' : 'ok', self::t( 'Compiled %count', array( '%count' => $compiled ) ),
+                          self::t( '%compiled templates compiled in this request, %executed runs of compiled templates',
+                                   array( '%compiled' => $compiled, '%executed' => (int)$r['templates']['executed'] ) ) );
+        return $chips;
+    }
+
+    /** The content view cache's state as a sentence, with its reason. */
+    protected static function renderingStateText( array $cache )
+    {
+        $texts = array( 'hit' => 'Read from the cache',
+                        'generated' => 'Generated and stored in the cache',
+                        'uncached' => 'Generated without storing it in the cache',
+                        'expired' => 'The cache file was not used',
+                        'off' => 'Not used',
+                        'pending' => 'The key was built, no outcome was noted' );
+        $text = self::t( isset( $texts[$cache['state']] ) ? $texts[$cache['state']] : $texts['pending'] );
+        if ( $cache['reason'] !== '' )
+            $text .= ' (' . $cache['reason'] . ')';
+        return $text;
+    }
+
+    /**
+     * The Rendering tab: the controller, the content view cache and its key, and the template compilation.
+     *
+     * @param array $r renderingData()
+     * @return string
+     */
+    public static function renderingHtml( array $r )
+    {
+        $html = '<h3>' . self::h( 'Controller' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.' ) . '</p>';
+        if ( !$r['views'] )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'No module view ran.' ) . '</p>';
+        else
+        {
+            $html .= '<table class="exp-debug-facts"><tr><th>' . self::h( 'Module view' ) . '</th><th>' . self::h( 'View class' )
+                   . '</th><th>' . self::h( 'Script' ) . '</th></tr>';
+            foreach ( $r['views'] as $view )
+            {
+                $html .= '<tr><td>' . self::a( $view['module'] . '/' . $view['view'] ) . '</td><td>'
+                       . ( $view['class'] === null ? '-' : self::a( $view['class'] ) ) . '</td><td>' . self::renderingValue( self::relativePath( $view['script'] ) ) . '</td></tr>';
+            }
+            $html .= '</table>';
+        }
+        $rows = array( self::t( 'Siteaccess' ) => $r['siteaccess'],
+                       self::t( 'Navigation part' ) => $r['navigation_part'] );
+        $html .= '<table class="exp-debug-facts">';
+        foreach ( $rows as $k => $v )
+            $html .= '<tr><th>' . self::a( $k ) . '</th><td>' . ( $v === '' ? '-' : self::renderingValue( $v ) ) . '</td></tr>';
+        $html .= '</table>';
+        if ( $r['design'] )
+        {
+            // the first base that has a template wins
+            $html .= '<details class="exp-debug-render-design"><summary>' . self::h( 'Design order (%count bases)', array( '%count' => count( $r['design'] ) ) ) . '</summary><ol>';
+            foreach ( $r['design'] as $base )
+                $html .= '<li>' . self::renderingValue( self::relativePath( $base ) ) . '</li>';
+            $html .= '</ol></details>';
+        }
+
+        // the tree right after the controller: what rendered the page, open
+        $html .= self::templateTreeHtml( isset( $r['tree'] ) ? $r['tree'] : array(), isset( $r['tree_count'] ) ? (int)$r['tree_count'] : 0 );
+
+        $html .= '<h3>' . self::h( 'Content view cache' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.' ) . '</p>';
+        $cache = $r['view_cache'];
+        if ( !is_array( $cache ) || $cache['state'] === null )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'No content view ran on this page.' ) . '</p>';
+        else
+        {
+            // laid out like the cache blocks below: one row, the key folded in the last column
+            $cache += array( 'node_id' => null, 'view_mode' => null, 'lookup_ms' => null, 'generate_ms' => null );
+            $node = isset( $cache['parts']['node_id'] ) ? $cache['parts']['node_id'] : $cache['node_id'];
+            $mode = isset( $cache['parts']['viewmode'] ) ? $cache['parts']['viewmode'] : $cache['view_mode'];
+            $view = $node === null ? '-' : self::renderingValue( self::t( 'node %node', array( '%node' => (int)$node ) ) . ( $mode === null ? '' : ', ' . $mode ) );
+            $keys = '-';
+            if ( $cache['parts'] )
+            {
+                $keys = '<details class="exp-debug-render-keys"><summary>' . self::h( 'Cache key (%count parts)', array( '%count' => count( $cache['parts'] ) ) ) . '</summary>';
+                $keys .= '<table class="exp-debug-facts">';
+                foreach ( $cache['parts'] as $name => $value )
+                {
+                    $mark = in_array( $name, $cache['from_listeners'], true )
+                        ? ' <span class="exp-debug-badge" title="' . self::h( 'Added or changed by a content/view/cachekeys listener' ) . '">' . self::h( 'listener' ) . '</span>' : '';
+                    $shown = $value === null ? '' : ( is_bool( $value ) ? ( $value ? '1' : '' ) : (string)$value );
+                    $keys .= '<tr><th>' . self::a( $name ) . $mark . '</th><td>' . ( $shown === '' ? '<em>' . self::h( 'empty' ) . '</em>' : self::renderingValue( $shown ) ) . '</td></tr>';
+                }
+                $keys .= '</table>';
+                if ( $cache['path'] !== null )
+                    $keys .= self::h( 'Hash' ) . ' <code>' . self::a( $cache['hash'] ) . '</code><br><code>' . self::renderingValue( self::relativePath( $cache['path'] ) ) . '</code>';
+                $keys .= '</details>';
+            }
+            $ms = function ( $value ) { return $value === null ? '-' : number_format( $value, 1, '.', '' ) . ' ms'; };
+            $html .= '<table class="exp-debug-facts exp-debug-viewcache"><tr><th>' . self::h( 'View' ) . '</th><th>' . self::h( 'State' )
+                   . '</th><th>' . self::h( 'Lookup' ) . '</th><th>' . self::h( 'Generation' ) . '</th><th>' . self::h( 'Size' )
+                   . '</th><th>' . self::h( 'Age' ) . '</th><th>' . self::h( 'Keys' ) . '</th></tr>';
+            $html .= '<tr data-state="' . self::a( $cache['state'] ) . '"><td>' . $view . '</td><td>' . self::renderingValue( self::renderingStateText( $cache ) )
+                   . '</td><td>' . $ms( $cache['lookup_ms'] ) . '</td><td>' . $ms( $cache['generate_ms'] ) . '</td><td>'
+                   . ( $cache['size'] === null ? '-' : number_format( $cache['size'] / 1024, 1 ) . ' KB' ) . '</td><td>'
+                   . ( $cache['age'] === null ? '-' : self::h( '%seconds s', array( '%seconds' => (int)$cache['age'] ) ) ) . '</td><td>' . $keys . '</td></tr>';
+            $html .= '</table>';
+        }
+
+        $html .= self::cacheBlocksHtml( isset( $r['cache_blocks'] ) ? $r['cache_blocks'] : array(),
+                                        isset( $r['cache_block_totals'] ) ? $r['cache_block_totals'] : null );
+
+        $html .= '<h3>' . self::h( 'Templates' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.' ) . '</p>';
+        $settings = $r['settings'];
+        $html .= '<table class="exp-debug-facts">';
+        foreach ( array( 'ViewCaching', 'TemplateCompile', 'CompileExecution', 'TemplateCache', 'DevelopmentMode' ) as $name )
+        {
+            if ( isset( $settings[$name] ) )
+                $html .= '<tr><th>' . self::a( $name ) . '</th><td>' . self::a( $settings[$name] ) . '</td></tr>';
+        }
+        $compiled = $r['templates']['compiled'];
+        $html .= '<tr><th>' . self::h( 'Templates rendered' ) . '</th><td>' . ( empty( $r['tree_count'] ) ? '-' : (int)$r['tree_count'] ) . '</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Compiled templates run' ) . '</th><td>' . (int)$r['templates']['executed'] . '</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Compiled in this request' ) . '</th><td>' . count( $compiled ) . '</td></tr>';
+        $html .= '</table>';
+        if ( $compiled )
+        {
+            $html .= '<details class="exp-debug-render-compiled"><summary>' . self::h( 'Templates compiled in this request' ) . '</summary><ul>';
+            foreach ( $compiled as $file )
+                $html .= '<li>' . self::renderingValue( self::relativePath( $file ) ) . '</li>';
+            $html .= '</ul></details>';
+        }
+        return $html;
+    }
+
+    /**
+     * The template tree of the Rendering tab: every template in the order it started, nested under the template
+     * that included it, with the file the overrides chose and the time it took including what it included.
+     *
+     * @param array $tree expRenderStats::tree()
+     * @param int $count expRenderStats::treeCount()
+     * @return string
+     */
+    protected static function templateTreeHtml( array $tree, $count )
+    {
+        if ( !$tree )
+            return '';
+        $html = '<h3>' . self::h( 'Template tree' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.' ) . '</p>';
+        $html .= '<details class="exp-debug-render-tree" open><summary>' . self::h( '%count templates', array( '%count' => $count ) ) . '</summary>';
+        if ( count( $tree ) < $count )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'The first %shown are listed.', array( '%shown' => count( $tree ) ) ) . '</p>';
+        $html .= '<ul class="exp-debug-tree">';
+        $depth = 0;
+        $open = false;
+        // the recorded depths of the entries above the current one: a template left on the stack by an exception that
+        // was caught makes what follows deeper than its place, so the level in the list comes from this stack
+        $above = array();
+        foreach ( $tree as $entry )
+        {
+            while ( $above && end( $above ) >= (int)$entry['depth'] )
+                array_pop( $above );
+            $entryDepth = count( $above );
+            $above[] = (int)$entry['depth'];
+            // preorder with depths: open a list for a child, close lists back to the entry's depth
+            if ( $open && $entryDepth > $depth )
+            {
+                $html .= '<ul>';
+                $depth = $entryDepth;
+            }
+            else
+            {
+                if ( $open )
+                    $html .= '</li>';
+                while ( $depth > $entryDepth )
+                {
+                    $html .= '</ul></li>';
+                    $depth--;
+                }
+            }
+            $html .= '<li>' . self::templateTreeLabel( $entry );
+            $open = true;
+        }
+        if ( $open )
+            $html .= '</li>';
+        while ( $depth > 0 )
+        {
+            $html .= '</ul></li>';
+            $depth--;
+        }
+        return $html . '</ul></details>';
+    }
+
+    /** One template of the tree: the name asked for, the file used when an override chose another, time, compiled */
+    protected static function templateTreeLabel( array $entry )
+    {
+        $design = strpos( $entry['uri'], 'design:' ) === 0;
+        $uri = $design ? substr( $entry['uri'], 7 ) : self::relativePath( preg_replace( '/^file:/', '', $entry['uri'] ) );
+        $file = $entry['file'] === null ? null : self::relativePath( $entry['file'] );
+        // a design template in its own place (not below override/): no override; a file template is its file
+        $own = $file === null || $file === $uri
+               || ( $design && substr( $file, -strlen( '/templates/' . $uri ) ) === '/templates/' . $uri
+                    && strpos( $file, '/override/templates/' ) === false );
+        if ( $own )
+            $label = '<code' . ( $file === null || $file === $uri ? '' : ' title="' . self::a( $file ) . '"' ) . '>' . self::renderingValue( $uri ) . '</code>';
+        else
+            $label = '<code>' . self::renderingValue( $uri ) . '</code> &rarr; <span class="exp-debug-render-override">' . self::renderingValue( $file ) . '</span>';
+        $label .= ' <span class="exp-debug-render-ms">' . ( $entry['ms'] === null ? '-' : number_format( $entry['ms'], 1, '.', '' ) . ' ms' ) . '</span>';
+        if ( !$entry['compiled'] )
+            $label .= ' <span class="exp-debug-badge">' . self::h( 'not compiled' ) . '</span>';
+        return $label;
+    }
+
+    /**
+     * The cache blocks of the Rendering tab: one row per {cache-block} in the order they were looked up.
+     *
+     * @param array $blocks expRenderStats::cacheBlocks()
+     * @param array|null $totals expRenderStats::cacheBlockTotals()
+     * @return string
+     */
+    protected static function cacheBlocksHtml( array $blocks, $totals )
+    {
+        $html = '<h3>' . self::h( 'Cache blocks' ) . '</h3>';
+        $html .= '<p class="exp-debug-hint exp-debug-render-explain">' . self::h( 'Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.' ) . '</p>';
+        if ( !$totals || $totals['count'] == 0 )
+            return $html . '<p class="exp-debug-hint">' . self::h( 'No cache-block ran on this page.' ) . '</p>';
+        $html .= '<p class="exp-debug-hint">' . self::h( '%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row\'s time holds the blocks inside it).',
+                    array( '%hits' => $totals['hits'], '%count' => $totals['count'],
+                           '%lookup' => number_format( $totals['lookup_ms'], 1, '.', '' ),
+                           '%generated' => number_format( $totals['generate_ms'], 1, '.', '' ) ) ) . '</p>';
+        if ( count( $blocks ) < $totals['count'] )
+            $html .= '<p class="exp-debug-hint">' . self::h( 'The first %shown are listed.', array( '%shown' => count( $blocks ) ) ) . '</p>';
+        $states = array( 'hit' => 'hit', 'generated' => 'generated', 'pending' => 'not found' );
+        $html .= '<table class="exp-debug-facts exp-debug-cacheblocks"><tr><th>' . self::h( 'Template' ) . '</th><th>' . self::h( 'State' )
+               . '</th><th>' . self::h( 'Lookup' ) . '</th><th>' . self::h( 'Generation' ) . '</th><th>' . self::h( 'Size' )
+               . '</th><th>' . self::h( 'Expiry' ) . '</th><th>' . self::h( 'Keys' ) . '</th></tr>';
+        foreach ( $blocks as $block )
+        {
+            $where = $block['template'] === null ? '<em>' . self::h( 'unknown (custom code, or a template compiled before)' ) . '</em>'
+                : self::renderingValue( self::relativePath( $block['template'] ) . ':' . (int)$block['line'] );
+            $expiry = array();
+            if ( $block['ttl'] !== null )
+                $expiry[] = self::t( '%seconds s', array( '%seconds' => $block['ttl'] ) );
+            if ( $block['node_id'] !== null )
+                $expiry[] = self::t( 'subtree %node', array( '%node' => $block['node_id'] ) );
+            $keys = $block['keys'] === null ? '-' : '<details><summary>' . self::h( 'keys' ) . '</summary>' . self::renderingValue( $block['keys'] )
+                  . '<br><code>' . self::renderingValue( self::relativePath( $block['path'] ) ) . '</code></details>';
+            $html .= '<tr data-state="' . self::a( $block['state'] ) . '"><td>' . $where . '</td><td>' . self::h( $states[$block['state']] ) . '</td><td>'
+                   . number_format( $block['lookup_ms'], 1, '.', '' ) . ' ms</td><td>'
+                   . ( $block['generate_ms'] === null ? '-' : number_format( $block['generate_ms'], 1, '.', '' ) . ' ms' ) . '</td><td>'
+                   . ( $block['size'] === null ? '-' : number_format( $block['size'] / 1024, 1 ) . ' KB' ) . '</td><td>'
+                   . ( $expiry ? self::a( implode( ', ', $expiry ) ) : '-' ) . '</td><td>' . $keys . '</td></tr>';
+        }
+        return $html . '</table>';
+    }
+
+    /** A value of the Rendering tab, escaped; cut after RENDERING_VALUE_MAX characters with the whole value as tooltip. */
+    protected static function renderingValue( $value )
+    {
+        $value = (string)$value;
+        $length = function_exists( 'mb_strlen' ) ? mb_strlen( $value, 'UTF-8' ) : strlen( $value );
+        if ( $length <= self::RENDERING_VALUE_MAX )
+            return self::a( $value );
+        $cut = function_exists( 'mb_substr' ) ? mb_substr( $value, 0, self::RENDERING_VALUE_MAX, 'UTF-8' ) : substr( $value, 0, self::RENDERING_VALUE_MAX );
+        return '<span title="' . self::a( $value ) . '">' . self::a( $cut ) . '&hellip;</span>';
+    }
+
+    /** A path below the installation root without the root, which says nothing to the reader. */
+    public static function relativePath( $path )
+    {
+        static $root = null;
+        $path = (string)$path;
+        if ( $root === null )
+            $root = getcwd();
+        if ( $root !== false && $root !== '' && strpos( $path, $root . '/' ) === 0 )
+            return substr( $path, strlen( $root ) + 1 );
+        return strpos( $path, './' ) === 0 ? substr( $path, 2 ) : $path;
     }
 
     /** htmlspecialchars() for text and attribute values. */
@@ -1085,6 +1501,213 @@ class expDebugBarReport
         return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
     }
 
+
+    /**
+     * The panels extensions register (expDebugBarRegistry::panels(), debugbar.ini Panels[]) that the current user may
+     * see, ready to draw: the tab's id "x-<id>" (apart from the built-in tabs), its title, its chip for summaryHtml()
+     * or null, its HTML and its data. A panel that throws, or gives a title that is not a string, is left out of
+     * this report with a warning, so one extension cannot break the bar.
+     *
+     * @return array list of array( 'id', 'tab', 'title', 'chip', 'html', 'data' )
+     */
+    public static function extensionPanels()
+    {
+        if ( !class_exists( 'expDebugBarRegistry' ) || !interface_exists( 'expDebugBarPanelInterface' ) )
+            return array();
+        try
+        {
+            $classes = ( new expDebugBarRegistry() )->panels( $broken );
+        }
+        catch ( Throwable $e )
+        {
+            return array();
+        }
+        foreach ( $broken as $id => $reason )
+            eZDebug::writeWarning( "Debug bar panel '$id' left out: $reason", __METHOD__ );
+
+        $panels = array();
+        foreach ( $classes as $id => $class )
+        {
+            try
+            {
+                $panel = new $class();
+                if ( !$panel->visible() )
+                    continue;
+                $title = $panel->title();
+                if ( !is_string( $title ) || $title === '' )
+                    throw new UnexpectedValueException( 'title() gave no text' );
+                $tab = 'x-' . strtolower( $id );
+                $chip = $panel->chip();
+                if ( is_array( $chip ) && isset( $chip['text'] ) && (string)$chip['text'] !== '' )
+                {
+                    $level = isset( $chip['level'] ) && in_array( $chip['level'], array( 'ok', 'warn', 'high' ), true ) ? $chip['level'] : 'ok';
+                    $chip = array( $tab, 'panel-' . strtolower( $id ), $level, (string)$chip['text'],
+                                   isset( $chip['title'] ) ? (string)$chip['title'] : $title );
+                }
+                else
+                {
+                    $chip = null;
+                }
+                $data = $panel->data();
+                $panels[] = array( 'id' => $id, 'tab' => $tab, 'title' => $title, 'chip' => $chip,
+                                   'html' => (string)$panel->html(), 'data' => is_array( $data ) ? $data : null );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeWarning( "Debug bar panel '$id' ($class) left out: " . $e->getMessage(), __METHOD__ );
+            }
+        }
+        return $panels;
+    }
+
+    /**
+     * PHP version, OPcache and APCu of the process that rendered the page, for the summary chips, or null for a
+     * viewer who may not see them. OPcache and APCu are null when they are not loaded or not on for this process.
+     *
+     * @param bool $privileged the viewer may see the privileged rows of the Server tab (setup or cache rights)
+     * @return array|null array( 'php' => string, 'sapi' => string, 'exponential' => string|null, 'opcache' => array|null,
+     *                    'apcu' => array|null )
+     */
+    public static function runtimeFigures( $privileged )
+    {
+        if ( !$privileged )
+            return null;
+        $opcache = self::opcacheStatus();
+        return array( 'php' => PHP_VERSION, 'sapi' => PHP_SAPI,
+                      'exponential' => class_exists( 'eZPublishSDK' ) ? eZPublishSDK::version( true, false, false ) : null,
+                      'opcache' => is_array( $opcache ) && !empty( $opcache['enabled'] ) ? $opcache : null,
+                      'apcu' => self::apcuStatus() );
+    }
+
+    /**
+     * The chips of runtimeFigures() for OPcache and APCu, with the share of their memory in use; summaryHtml() draws them
+     * at the right end before the versions (versionsChip()). A level from $levels (the kernel's summary, which follows debugbar.ini Thresholds[]) wins over
+     * the defaults.
+     *
+     * @param array|null $runtime runtimeFigures()
+     * @param array $levels 'opcache' / 'apcu' => ok | warn | high
+     * @return array one chip per cache that is on: array( tab, key, level, text, title )
+     */
+    public static function runtimeChips( $runtime, array $levels = array() )
+    {
+        if ( !is_array( $runtime ) )
+            return array();
+        $t = self::memoryThresholds();
+        $level = function( $pct, array $limits ) { return $pct >= $limits['high'] ? 'high' : ( $pct >= $limits['warn'] ? 'warn' : 'ok' ); };
+        $chips = array();
+        $o = $runtime['opcache'];
+        if ( is_array( $o ) )
+        {
+            $size = $o['used'] + $o['free'];
+            $pct = $size > 0 ? $o['used'] / $size * 100 : 0;
+            $lvl = isset( $levels['opcache'] ) && in_array( $levels['opcache'], array( 'ok', 'warn', 'high' ), true )
+                 ? $levels['opcache'] : $level( $pct, $t['opcache_memory'] );
+            $chips[] = array( 'velocity', 'opcache', $lvl, self::t( 'OPc %pct %', array( '%pct' => number_format( $pct, 0 ) ) ),
+                              self::t( 'OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts',
+                                       array( '%used' => number_format( $o['used'] / 1048576, 1 ), '%size' => number_format( $size / 1048576, 0 ),
+                                              '%rate' => $o['hit_rate'], '%scripts' => $o['scripts'], '%restarts' => $o['restarts'] ) ) );
+        }
+        $a = $runtime['apcu'];
+        if ( is_array( $a ) )
+        {
+            $pct = $a['size'] > 0 ? $a['used'] / $a['size'] * 100 : 0;
+            $lvl = isset( $levels['apcu'] ) && in_array( $levels['apcu'], array( 'ok', 'warn', 'high' ), true )
+                 ? $levels['apcu'] : $level( $pct, $t['apcu_memory'] );
+            $chips[] = array( 'velocity', 'apcu', $lvl, self::t( 'APCu %pct %', array( '%pct' => number_format( $pct, 0 ) ) ),
+                              self::t( 'APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges',
+                                       array( '%used' => number_format( $a['used'] / 1048576, 1 ), '%size' => number_format( $a['size'] / 1048576, 0 ),
+                                              '%entries' => $a['entries'], '%rate' => $a['hit_rate'], '%expunges' => $a['expunges'] ) ) );
+        }
+        return $chips;
+    }
+
+    /**
+     * The limits of the OPcache and APCu chips: debugbar.ini [DebugBarSettings] Thresholds[opcache_memory] and
+     * Thresholds[apcu_memory] where the kernel's registry can read them, else the defaults. The kernel's summary gives
+     * its levels only to users with setup/setup; a user with only setup/managecache sees the chips too, with the same
+     * limits.
+     *
+     * @return array 'opcache_memory' / 'apcu_memory' => array( 'warn' => percent, 'high' => percent )
+     */
+    protected static function memoryThresholds()
+    {
+        $limits = array( 'opcache_memory' => self::$thresholds['opcache_memory'], 'apcu_memory' => self::$thresholds['apcu_memory'] );
+        if ( class_exists( 'expDebugBarRegistry' ) && class_exists( 'eZINI', false ) )
+        {
+            try
+            {
+                $ini = ( new expDebugBarRegistry() )->thresholds();
+                foreach ( array_keys( $limits ) as $name )
+                {
+                    if ( isset( $ini[$name] ) )
+                        $limits[$name] = array( 'warn' => $ini[$name][0], 'high' => $ini[$name][1] );
+                }
+            }
+            catch ( Throwable $e )
+            {
+            }
+        }
+        return $limits;
+    }
+
+    /**
+     * The chip with the versions of PHP and Exponential, drawn last at the right end of the summary, or null for a
+     * viewer who may not see them (runtimeFigures() is null then).
+     *
+     * @param array|null $runtime runtimeFigures()
+     * @return array|null a chip as summaryHtml() draws it: array( tab, key, level, text, title )
+     */
+    public static function versionsChip( $runtime )
+    {
+        if ( !is_array( $runtime ) )
+            return null;
+        $text = 'PHP ' . $runtime['php'] . ( !empty( $runtime['exponential'] ) ? ' | Exp ' . $runtime['exponential'] : '' );
+        return array( 'velocity', 'versions', 'ok', $text,
+                      self::t( 'Versions: PHP %php (%sapi), Exponential %exponential',
+                               array( '%php' => $runtime['php'], '%sapi' => $runtime['sapi'],
+                                      '%exponential' => !empty( $runtime['exponential'] ) ? $runtime['exponential'] : '-' ) ) );
+    }
+
+    /**
+     * APCu of the process that rendered this page, or null when APCu is not loaded or not enabled for it (the
+     * command line has it off unless apc.enable_cli is set). Memory without the block lists, so it stays cheap.
+     *
+     * @return array|null
+     */
+    public static function apcuStatus()
+    {
+        if ( !function_exists( 'apcu_enabled' ) || !apcu_enabled() )
+            return null;
+        $sma = @apcu_sma_info( true );
+        $info = @apcu_cache_info( true );
+        if ( !is_array( $sma ) || !is_array( $info ) )
+            return null;
+        $size = (int)( isset( $sma['num_seg'], $sma['seg_size'] ) ? $sma['num_seg'] * $sma['seg_size'] : 0 );
+        $avail = (int)( isset( $sma['avail_mem'] ) ? $sma['avail_mem'] : 0 );
+        $hits = (int)( isset( $info['num_hits'] ) ? $info['num_hits'] : 0 );
+        $misses = (int)( isset( $info['num_misses'] ) ? $info['num_misses'] : 0 );
+        return array(
+            'size'     => $size,
+            'used'     => max( 0, $size - $avail ),
+            'entries'  => (int)( isset( $info['num_entries'] ) ? $info['num_entries'] : 0 ),
+            'hit_rate' => $hits + $misses > 0 ? round( $hits / ( $hits + $misses ) * 100, 2 ) : 0,
+            'expunges' => (int)( isset( $info['expunges'] ) ? $info['expunges'] : 0 ),
+        );
+    }
+
+    /** APCu facts for the Server tab, or a hint why there are none. */
+    protected static function apcuHtml()
+    {
+        $a = self::apcuStatus();
+        if ( $a === null )
+            return '<p class="exp-debug-hint">' . self::h( 'Not available: APCu is not loaded or not enabled for this PHP.' ) . '</p>';
+        $html = '<table class="exp-debug-facts exp-debug-apcu">';
+        $html .= '<tr><th>' . self::h( 'Memory used' ) . '</th><td>' . number_format( $a['used'] / 1048576, 1 ) . ' MB / ' . number_format( $a['size'] / 1048576, 0 ) . ' MB</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Entries' ) . '</th><td>' . $a['entries'] . '</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Hit rate' ) . '</th><td>' . $a['hit_rate'] . ' %</td></tr>';
+        $html .= '<tr><th>' . self::h( 'Expunges' ) . '</th><td>' . $a['expunges'] . '</td></tr>';
+        return $html . '</table>';
+    }
 
     /** OPcache status of the process that rendered this page. */
     public static function opcacheStatus()

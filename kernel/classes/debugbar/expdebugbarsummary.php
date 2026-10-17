@@ -41,7 +41,8 @@ class expDebugBarSummary
         }
         $thresholds += array( 'time_ms' => array( 500, 1500 ), 'sql_count' => array( 100, 300 ), 'sql_ms' => array( 200, 800 ),
                               'memory_mb' => array( 64, 192 ), 'templates' => array( 150, 400 ),
-                              'querycache_hit_rate' => array( 50, 10 ) );
+                              'querycache_hit_rate' => array( 50, 10 ),
+                              'opcache_memory' => array( 80, 95 ), 'apcu_memory' => array( 75, 90 ) );
 
         $start = $debug && $debug->ScriptStart ? $debug->ScriptStart : ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? $_SERVER['REQUEST_TIME_FLOAT'] : microtime( true ) );
         $stop = $debug && $debug->ScriptStop ? $debug->ScriptStop : microtime( true );
@@ -118,6 +119,8 @@ class expDebugBarSummary
 
         $peak = memory_get_peak_usage( true );
         $ini = class_exists( 'eZINI', false ) ? eZINI::instance() : null;
+        // the state of the server (versions, OPcache, APCu): for those who may read its lists only, asked once
+        $mayReadLists = self::mayReadLists();
         return array(
             'time' => array( 'total_ms' => $totalMs, 'level' => self::level( $totalMs, $thresholds['time_ms'] ) ),
             'sql' => array( 'count' => $sqlCount, 'time_ms' => round( $sqlMs, 2 ),
@@ -135,11 +138,16 @@ class expDebugBarSummary
                               'by_ip' => $ini ? $ini->variable( 'DebugSettings', 'DebugByIP' ) === 'enabled' : false,
                               'by_user' => $ini ? $ini->variable( 'DebugSettings', 'DebugByUser' ) === 'enabled' : false,
                               // the entry that matched is a line of the list: only for those who may see the list
-                              'ip_match' => isset( $GLOBALS['eZDebugIPMatch'] ) ? ( self::mayReadLists() ? $GLOBALS['eZDebugIPMatch'] : true ) : null ),
+                              'ip_match' => isset( $GLOBALS['eZDebugIPMatch'] ) ? ( $mayReadLists ? $GLOBALS['eZDebugIPMatch'] : true ) : null ),
             'querycache' => self::queryCache( $thresholds['querycache_hit_rate'] ),
             'engine' => self::engine(),
             'siteaccess' => isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : null,
-            'php' => PHP_VERSION,
+            // memory of OPcache and APCu: the state of the server, for those who may read its lists only
+            'opcache' => $mayReadLists ? self::opcache( $thresholds['opcache_memory'] ) : null,
+            'apcu' => $mayReadLists ? self::apcu( $thresholds['apcu_memory'] ) : null,
+            // the version of PHP tells what the server is open to: for those who may read its lists only, as the bar's
+            // own versions chip; the report's JSON reaches anonymous visitors too when DebugByIP matches
+            'php' => $mayReadLists ? PHP_VERSION : null,
             'thresholds' => $thresholds,
         );
     }
@@ -204,6 +212,39 @@ class expDebugBarSummary
             $data = array( 'error' => $e->getMessage() );
         }
         return json_encode( $data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_SLASHES | JSON_PARTIAL_OUTPUT_ON_ERROR );
+    }
+
+    /**
+     * OPcache memory of this process with its level, or null when OPcache is off for it.
+     *
+     * @param array $limits array( warn, high ) in percent of the memory in use
+     * @return array|null
+     */
+    protected static function opcache( array $limits )
+    {
+        $o = class_exists( 'expDebugBarReport' ) ? expDebugBarReport::opcacheStatus() : null;
+        if ( !is_array( $o ) || empty( $o['enabled'] ) )
+            return null;
+        $size = $o['used'] + $o['free'];
+        // the level from the exact share, as the bar's own chips compare it; the figure rounded
+        $share = $size > 0 ? $o['used'] / $size * 100 : 0;
+        return array( 'used' => $o['used'], 'size' => $size, 'percent' => round( $share, 1 ), 'hit_rate' => $o['hit_rate'],
+                      'scripts' => $o['scripts'], 'restarts' => $o['restarts'], 'level' => self::level( $share, $limits ) );
+    }
+
+    /**
+     * APCu memory of this process with its level, or null when APCu is off for it.
+     *
+     * @param array $limits array( warn, high ) in percent of the memory in use
+     * @return array|null
+     */
+    protected static function apcu( array $limits )
+    {
+        $a = class_exists( 'expDebugBarReport' ) ? expDebugBarReport::apcuStatus() : null;
+        if ( !is_array( $a ) )
+            return null;
+        $share = $a['size'] > 0 ? $a['used'] / $a['size'] * 100 : 0;
+        return $a + array( 'percent' => round( $share, 1 ), 'level' => self::level( $share, $limits ) );
     }
 
     /** ok, warn or high for $value against array( warn, high ). */

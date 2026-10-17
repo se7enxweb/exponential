@@ -19,6 +19,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminNewsletterPreviewTest extends PHPUnit\Framework\TestCase
 {
     const INCLUDES = array( 'design/admin2/templates/includes/cjwnewsletteredition_preview.tpl',
@@ -42,7 +44,7 @@ class AdminNewsletterPreviewTest extends PHPUnit\Framework\TestCase
             $this->markTestSkipped( 'cjw_newsletter is not installed' );
         $this->assertFileExists( self::dir() . '/' . $file );
         // template comments are not markup
-        return preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( self::dir() . '/' . $file ) );
+        return preg_replace( '/\{\*.*?\*\}/s', '', AdminFiles::read( self::dir() . '/' . $file ) );
     }
 
     public function testPreviewFramesAreSandboxedAndStyledByClass()
@@ -63,7 +65,7 @@ class AdminNewsletterPreviewTest extends PHPUnit\Framework\TestCase
                 $this->assertDoesNotMatchRegularExpression( '/\s(width|height|style)=/', $frame, "$file: size comes from the stylesheet" );
             }
         }
-        $css = (string)file_get_contents( self::dir() . '/design/standard/stylesheets/cjw_newsletter.css' );
+        $css = AdminFiles::read( self::dir() . '/design/standard/stylesheets/cjw_newsletter.css' );
         $this->assertMatchesRegularExpression( '/\.cjwnl-preview-frame\s*\{[^}]*height:[^}]*\}/', $css, 'the frame class sets the size' );
         // the admin designs' div.tab-content is a fixed 20em box that scrolls; the preview panels grow with the frame
         $this->assertMatchesRegularExpression( '/div\.tab-content\.cjwnl-preview-panel\s*\{[^}]*height:\s*auto;[^}]*overflow-y:\s*visible;[^}]*\}/', $css );
@@ -95,11 +97,11 @@ class AdminNewsletterPreviewTest extends PHPUnit\Framework\TestCase
     {
         $ini = $this->read( 'settings/cjw_newsletter.ini' );
         $this->assertMatchesRegularExpression( '/^PhpCli=auto$/m', $ini );
-        $edition = (string)file_get_contents( self::dir() . '/classes/cjwnewsletteredition.php' );
+        $edition = AdminFiles::read( self::dir() . '/classes/cjwnewsletteredition.php' );
         $this->assertStringContainsString( 'static function phpCli()', $edition );
         $this->assertStringContainsString( 'expProcessTools::phpCli()', $edition );
         $this->assertSame( 1, substr_count( $edition, "'PhpCli'" ), 'PhpCli is read in one place, phpCli()' );
-        $list = (string)file_get_contents( self::dir() . '/classes/cjwnewsletterlist.php' );
+        $list = AdminFiles::read( self::dir() . '/classes/cjwnewsletterlist.php' );
         $this->assertStringNotContainsString( "'PhpCli'", $list );
         $this->assertStringContainsString( 'CjwNewsletterEdition::phpCli()', $list );
     }

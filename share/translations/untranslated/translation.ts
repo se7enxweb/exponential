@@ -10571,6 +10571,10 @@
         <source>Upload files to this location.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -65019,6 +65023,278 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%count err</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rendering</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

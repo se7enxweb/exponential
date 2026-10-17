@@ -12,6 +12,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminTimelineTest extends PHPUnit\Framework\TestCase
 {
     const PART = 'design/admin4/templates/parts/audit_timeline.tpl';
@@ -23,7 +25,7 @@ class AdminTimelineTest extends PHPUnit\Framework\TestCase
     {
         $file = dirname( __DIR__, 3 ) . '/' . $path;
         self::assertFileExists( $file );
-        return (string)file_get_contents( $file );
+        return AdminFiles::read( $file );
     }
 
     public function testTheComponentIsInBothStylesheets()

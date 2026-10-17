@@ -10831,6 +10831,10 @@
         <source>Export this item or import into it.</source>
         <translation>Export this item or import into it.</translation>
     </message>
+    <message>
+        <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
+        <translation>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -61290,6 +61294,278 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>(%factor times as long)</source>
         <translation>(%factor times as long)</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation>Versions: PHP %php (%sapi), Exponential %exponential</translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation>OPc %pct %</translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation>APCu %pct %</translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation>Not available: APCu is not loaded or not enabled for this PHP.</translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation>Expunges</translation>
+    </message>
+    <message>
+        <source>Rendering</source>
+        <translation>Rendering</translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation>View: hit</translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation>View: new</translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation>View: off</translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation>View: ?</translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation>Content view cache</translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation>Compiled %count</translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation>%compiled templates compiled in this request, %executed runs of compiled templates</translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation>Read from the cache</translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation>Generated and stored in the cache</translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation>Generated without storing it in the cache</translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation>The cache file was not used</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Not used</translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation>The key was built, no outcome was noted</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Controller</translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation>No module view ran.</translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation>Module view</translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation>View class</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Script</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Navigation part</translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation>Design order (%count bases)</translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation>No content view ran on this page.</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation>Cache file</translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation>Cache key (%count parts)</translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation>Added or changed by a content/view/cachekeys listener</translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation>listener</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>empty</translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation>Compiled templates run</translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation>Compiled in this request</translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation>Templates compiled in this request</translation>
+    </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation>CB %hits/%count</translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation>Cache blocks</translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation>No cache-block ran on this page.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation>The first %shown are listed.</translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation>hit</translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation>generated</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>not found</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>Lookup</translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation>Generation</translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation>Expiry</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Keys</translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation>keys</translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation>unknown (custom code, or a template compiled before)</translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation>subtree %node</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>View</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>node %node</translation>
+    </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation>Templates rendered</translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation>%count templates</translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation>not compiled</translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation>Template tree</translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
+        <translation>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</translation>
     </message>
 </context>
 <context>

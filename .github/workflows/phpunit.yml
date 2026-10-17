@@ -46,6 +46,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # The design tests run admin4 JavaScript in node and FAIL without it where CI is set
+      # (tests/tests/design/AdminNodeBinary.php), so node is installed here instead of relying on the image.
+      # Node 22 or later, as the JavaScript syntax check of quality.yml.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -165,6 +173,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      # The design tests run admin4 JavaScript in node and FAIL without it where CI is set
+      # (tests/tests/design/AdminNodeBinary.php), so node is installed here instead of relying on the image.
+      # Node 22 or later, as the JavaScript syntax check of quality.yml.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2

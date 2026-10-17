@@ -19,6 +19,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminSubitemsTranslationsTest extends PHPUnit\Framework\TestCase
 {
     const CONTEXT = 'design/admin/node/view/full';
@@ -150,7 +152,7 @@ class AdminSubitemsTranslationsTest extends PHPUnit\Framework\TestCase
         $german = self::messages( 'ger-DE', 'design/admin/content/removeobject' );
         $this->assertSame( array( '%child_count Element' ), $german['%child_count item'] );
         $this->assertSame( array( '%child_count Elemente' ), $german['%child_count items'] );
-        $template = (string)file_get_contents( self::root() . '/design/admin4/templates/node/removeobject.tpl' );
+        $template = AdminFiles::read( self::root() . '/design/admin4/templates/node/removeobject.tpl' );
         $this->assertStringContainsString( "'%child_count items'\n         |i18n( 'design/admin/content/removeobject'", $template );
     }
 }

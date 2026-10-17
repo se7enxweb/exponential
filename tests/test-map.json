@@ -260,13 +260,15 @@
     "design/admin4/javascript/ezadmin_menubar.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminPreferencesTest.php",
-      "tests/tests/design/AdminPhoneMenuTest.php"
+      "tests/tests/design/AdminPhoneMenuTest.php",
+      "tests/tests/design/AdminFirstPaintColumnsTest.php"
     ],
     "design/admin4/templates/page_topmenu.tpl": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/AdminHeaderTest.php",
       "tests/tests/design/AdminLogoTest.php",
-      "tests/tests/design/AdminPhoneMenuTest.php"
+      "tests/tests/design/AdminPhoneMenuTest.php",
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
     ],
     "design/admin4/templates/parts/a4_header_user.tpl": [
       "tests/tests/design/AdminHeaderTest.php",
@@ -428,7 +430,8 @@
       "tests/tests/design/AdminNodeTabsHeightTest.php"
     ],
     "design/admin*/templates/pagelayout.tpl": [
-      "tests/tests/design/AdminPreferencesTest.php"
+      "tests/tests/design/AdminPreferencesTest.php",
+      "tests/tests/design/AdminFirstPaintColumnsTest.php"
     ],
     "kernel/private/classes/views/*": [
       "tests/tests/design/AdminSelfContainedTest.php"
@@ -486,6 +489,7 @@
       "tests/tests/design/AdminJobTranslationsTest.php"
     ],
     "design/admin4/stylesheets/admin4.css": [
+      "tests/tests/design/AdminFirstPaintColumnsTest.php",
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminHeaderTest.php",
@@ -542,12 +546,14 @@
     ],
     "design/admin4l/templates/explayouts/block/admin_*.tpl": [
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminIconsTest.php"
+      "tests/tests/design/AdminIconsTest.php",
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
     ],
     "design/admin4/stylesheets/pagelayout.css": [
       "tests/tests/design/AdminHeaderTest.php",
       "tests/tests/design/AdminVisibilityStatusTest.php",
-      "tests/tests/design/AdminLeftColumnFontTest.php"
+      "tests/tests/design/AdminLeftColumnFontTest.php",
+      "tests/tests/design/AdminResponsiveTest.php"
     ],
     "extension/ezoe/design/standard/templates/content/datatype/edit/ezxmltext_ezoe_engine_switch.tpl": [
       "tests/tests/extension/ezoe/expOEEngineConfigTest.php",
@@ -739,7 +745,8 @@
       "tests/tests/design/AdminMegaMenuTest.php",
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminPhoneMenuTest.php"
+      "tests/tests/design/AdminPhoneMenuTest.php",
+      "tests/tests/design/Admin4lReviewTest.php"
     ],
     "design/admin/templates/setup/cronjobs.tpl": [
       "tests/tests/kernel/classes/expCronjobPauseTest.php"
@@ -934,6 +941,9 @@
     "tests/tests/design/js/site_menu.js": [
       "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
+    "tests/tests/design/js/first_paint.js": [
+      "tests/tests/design/AdminFirstPaintColumnsTest.php"
+    ],
     "design/admin4*/stylesheets/*.css": [
       "tests/tests/design/AdminFontStackTest.php"
     ],
@@ -999,6 +1009,25 @@
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+    ],
+    "design/admin4l/templates/pagelayout.tpl": [
+      "tests/tests/design/Admin4lReviewTest.php",
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl": [
+      "tests/tests/design/Admin4lReviewTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl": [
+      "tests/tests/design/Admin4lReviewTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_menu_button.tpl": [
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_sidebar_controls.tpl": [
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl": [
+      "tests/tests/design/AdminHeaderTabOrderTest.php"
     ]
   },
   "generated": {

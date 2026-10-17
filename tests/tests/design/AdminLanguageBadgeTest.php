@@ -13,6 +13,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
 {
     const INCLUDE_FILE = 'design/admin4/templates/parts/language_badge.tpl';
@@ -41,7 +43,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         $found = array();
         foreach ( self::admin4Files() as $file )
         {
-            $source = (string)file_get_contents( $file );
+            $source = AdminFiles::read( $file );
             if ( preg_match( '/flag_icon|share\/icons\/flags|flagIcons/', $source ) )
                 $found[] = substr( $file, strlen( self::root() ) + 1 );
         }
@@ -52,7 +54,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
     {
         $file = self::root() . '/' . self::INCLUDE_FILE;
         $this->assertFileExists( $file );
-        $source = (string)file_get_contents( $file );
+        $source = AdminFiles::read( $file );
         $this->assertStringContainsString( '.content_language_code', $source );
         $this->assertStringNotContainsString( 'http_locale_code', $source, 'http_locale_code follows site.ini HTTPLocale, which is one tag for the whole site' );
         $this->assertStringContainsString( 'class="a4-lang', $source );
@@ -67,7 +69,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
      */
     public function testTheBadgeIsTheLanguagePartOfTheTag()
     {
-        $source = (string)file_get_contents( self::root() . '/' . self::INCLUDE_FILE );
+        $source = AdminFiles::read( self::root() . '/' . self::INCLUDE_FILE );
         $code = (string)preg_replace( '/\{\*.*?\*\}/s', '', $source );
         $this->assertStringContainsString( "\$a4_lang_tag|explode( '-' )", $code );
         $this->assertStringContainsString( '{set $a4_lang_badge = $a4_lang_primary[0]|upcase}', $code );
@@ -86,10 +88,10 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
     public function testEveryShippedLocaleShowsItsLanguagePart()
     {
         $codes = array();
-        foreach ( glob( self::root() . '/share/locale/*.ini' ) as $file )
+        foreach ( AdminFiles::files( self::root() . '/share/locale/*.ini' ) as $file )
         {
             // read as eZINI does, line by line: parse_ini_file() gives up on some locale files (characters it reserves)
-            $tag = preg_match( '/^ContentLanguage=([^\r\n]*)$/m', (string)file_get_contents( $file ), $m ) ? trim( $m[1] ) : '';
+            $tag = preg_match( '/^ContentLanguage=([^\r\n]*)$/m', AdminFiles::read( $file ), $m ) ? trim( $m[1] ) : '';
             if ( $tag === '' )
                 continue;
             $parts = explode( '-', $tag );
@@ -117,8 +119,8 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         {
             if ( substr( $file, -3 ) !== 'tpl' )
                 continue;
-            $uses += substr_count( (string)file_get_contents( $file ), "design:parts/language_badge.tpl" );
-            $this->assertDoesNotMatchRegularExpression( '/class="a4-lang"[^>]*>[A-Z]{2}</', (string)file_get_contents( $file ),
+            $uses += substr_count( AdminFiles::read( $file ), "design:parts/language_badge.tpl" );
+            $this->assertDoesNotMatchRegularExpression( '/class="a4-lang"[^>]*>[A-Z]{2}</', AdminFiles::read( $file ),
                                                         basename( $file ) . ' writes a language code by hand' );
         }
         $this->assertGreaterThanOrEqual( 20, $uses );
@@ -131,7 +133,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
      */
     public function testTheOptionalParametersCannotReadACallersVariable()
     {
-        $source = (string)file_get_contents( self::root() . '/' . self::INCLUDE_FILE );
+        $source = AdminFiles::read( self::root() . '/' . self::INCLUDE_FILE );
         $code = (string)preg_replace( '/\{\*.*?\*\}/s', '', $source );
         preg_match_all( '/\$([a-z_0-9]+)/', $code, $matches );
         $read = array_values( array_unique( $matches[1] ) );
@@ -152,7 +154,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
         {
             if ( substr( $file, -3 ) !== 'tpl' )
                 continue;
-            preg_match_all( "/\{include\s+uri='design:parts\/language_badge\.tpl'[^}]*\}/", (string)file_get_contents( $file ), $matches );
+            preg_match_all( "/\{include\s+uri='design:parts\/language_badge\.tpl'[^}]*\}/", AdminFiles::read( $file ), $matches );
             foreach ( $matches[0] as $include )
             {
                 ++$includes;
@@ -166,19 +168,19 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
 
     public function testTheSubItemsColumnEscapesAndNamesItsBadges()
     {
-        $script = (string)file_get_contents( self::root() . '/design/admin4/javascript/ezajaxsubitems_expdatatable.js' );
+        $script = AdminFiles::read( self::root() . '/design/admin4/javascript/ezajaxsubitems_expdatatable.js' );
         $this->assertStringContainsString( 'confObj.languageBadges', $script );
         // the class carries the state (a4-lang is-main|is-present|is-missing, AdminLanguageStatesTest)
         $this->assertStringContainsString( "cls = 'a4-lang is-' + state", $script );
         $this->assertMatchesRegularExpression( '/class="\' \+ cls \+ \'"[^;]*aria-label=/', $script );
         // A badge link's name starts with the code it shows (WCAG 2.5.3 label in name): the name follows as hidden text
         $this->assertStringContainsString( "+ badge + '<span class=\"a4-sr-only\"> ' + label + '</span></a>'", $script );
-        $body = (string)file_get_contents( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
+        $body = AdminFiles::read( self::root() . '/design/admin4/templates/node/view/a4_full_body.tpl' );
         // the node's badges show each language's state (parts/language_state_badge.tpl): the code, then the state as hidden text
         $this->assertStringContainsString( "design:parts/language_state_badge.tpl' state_entry=\$language", $body );
-        $state = (string)file_get_contents( self::root() . '/design/admin4/templates/parts/language_state_badge.tpl' );
+        $state = AdminFiles::read( self::root() . '/design/admin4/templates/parts/language_state_badge.tpl' );
         $this->assertStringContainsString( '{$a4_ls_code|wash}<span class="a4-sr-only"> {$a4_ls_label|wash}</span></a>', $state );
-        $template = (string)file_get_contents( self::root() . '/design/admin4/templates/children_detailed.tpl' );
+        $template = AdminFiles::read( self::root() . '/design/admin4/templates/children_detailed.tpl' );
         $this->assertStringContainsString( 'languageBadges: languageBadges', $template );
         $this->assertStringContainsString( "design:parts/language_badge.tpl' locale=\$locale.locale_code badge_plain=true()", $template );
     }
@@ -192,11 +194,11 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( 'admin4', 'admin' ) as $design )
         {
-            $script = (string)file_get_contents( self::root() . "/design/$design/javascript/ezajaxsubitems_expdatatable.js" );
+            $script = AdminFiles::read( self::root() . "/design/$design/javascript/ezajaxsubitems_expdatatable.js" );
             $this->assertDoesNotMatchRegularExpression( '/flagIcons|flag_icon|share\/icons\/flags/', $script,
                                                         "design/$design's sub-items script still draws a flag" );
             $this->assertStringContainsString( 'confObj.languageBadges', $script, $design );
-            $template = (string)file_get_contents( self::root() . "/design/$design/templates/children_detailed.tpl" );
+            $template = AdminFiles::read( self::root() . "/design/$design/templates/children_detailed.tpl" );
             $this->assertDoesNotMatchRegularExpression( '/flagIcons|flag_icon/', $template,
                                                         "design/$design's children_detailed.tpl still hands the script flags" );
             $this->assertStringContainsString( 'languageBadges: languageBadges', $template, $design );
@@ -210,7 +212,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( 'admin4', 'admin' ) as $design )
         {
-            $css = (string)file_get_contents( self::root() . "/design/$design/stylesheets/components.css" );
+            $css = AdminFiles::read( self::root() . "/design/$design/stylesheets/components.css" );
             $this->assertMatchesRegularExpression( '/^\.a4-lang \{/m', $css, $design );
             $this->assertMatchesRegularExpression( '/^\.a4-langs \{/m', $css, $design );
         }
@@ -218,7 +220,7 @@ class AdminLanguageBadgeTest extends PHPUnit\Framework\TestCase
 
     public function testEZLocaleNamesItsContentLanguageCode()
     {
-        $source = (string)file_get_contents( self::root() . '/lib/ezlocale/classes/ezlocale.php' );
+        $source = AdminFiles::read( self::root() . '/lib/ezlocale/classes/ezlocale.php' );
         $this->assertStringContainsString( "'content_language_code' => 'contentLanguageCode'", $source );
         $this->assertMatchesRegularExpression( '/function contentLanguageCode\(\)\s*\{\s*return \(string\)\$this->HTTPLocaleCode;/', $source );
     }

@@ -9,7 +9,7 @@ for how to use it.
 
 | | |
 |---|---|
-| What changed | New design `design/admin4l` (page layout, zone template, 18 block templates). New admin layout types `admin_3col`, `admin_2col`, `admin_full` (`Group=admin`), block definitions `admin_*` in `[AdminBlockSettings]`, rule targets `module` and `module_view`, `[AdminLayoutSettings]` in `explayouts.ini`. New fetch functions `resolve_admin_layout`, `admin_layout_cache_key`, `admin_layouts_enabled` in the `explayouts` module. |
+| What changed | New design `design/admin4l` (page layout, zone template, 20 block templates). New admin layout types `admin_3col`, `admin_2col`, `admin_full` (`Group=admin`), block definitions `admin_*` in `[AdminBlockSettings]`, rule targets `module` and `module_view`, `[AdminLayoutSettings]` in `explayouts.ini`. New fetch functions `resolve_admin_layout`, `admin_layout_cache_key`, `admin_layouts_enabled` in the `explayouts` module. |
 | Who is affected | Admin siteaccesses with `SiteDesign=admin4l`. Sites that override `pagelayout.tpl` or `page_*.tpl` in `admin4` get the override only when no admin layout resolves. Editors of layouts see a `group` parameter in the editor API (default `site`). |
 | How to check | `php vendor/bin/phpunit --testsuite explayouts_admin`; load the admin pages and compare with `SiteDesign=admin4`. |
 | How to fix | `[AdminLayoutSettings] Enabled=disabled` in the admin siteaccess's `explayouts.ini.append.php` returns every page to plain admin4 (clear the ini and template-block caches). |

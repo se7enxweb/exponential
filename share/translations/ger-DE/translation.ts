@@ -13021,6 +13021,10 @@
         <source>Export this item or import into it.</source>
         <translation>Dieses Element exportieren oder in es importieren.</translation>
     </message>
+    <message>
+        <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
+        <translation>Die Unterelemente können nicht aufgelistet werden: Exponential UI (die Extension expui) ist in diesem Siteaccess nicht aktiv oder nicht geladen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -69303,6 +69307,278 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>(%factor times as long)</source>
         <translation>(%factor-mal so lange)</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Versions: PHP %php (%sapi), Exponential %exponential</source>
+        <translation>Versionen: PHP %php (%sapi), Exponential %exponential</translation>
+    </message>
+    <message>
+        <source>OPc %pct %</source>
+        <translation>OPc %pct %</translation>
+    </message>
+    <message>
+        <source>OPcache memory: %used of %size MB in use, hit rate %rate %, %scripts scripts, %restarts restarts</source>
+        <translation>OPcache-Speicher: %used von %size MB belegt, Trefferquote %rate %, %scripts Skripte, %restarts Neustarts</translation>
+    </message>
+    <message>
+        <source>APCu %pct %</source>
+        <translation>APCu %pct %</translation>
+    </message>
+    <message>
+        <source>APCu memory, shared by every site of the PHP pool: %used of %size MB in use, %entries entries, hit rate %rate %, %expunges expunges</source>
+        <translation>APCu-Speicher, von allen Sites des PHP-Pools geteilt: %used von %size MB belegt, %entries Einträge, Trefferquote %rate %, %expunges Komplettleerungen</translation>
+    </message>
+    <message>
+        <source>Not available: APCu is not loaded or not enabled for this PHP.</source>
+        <translation>Nicht verfügbar: APCu ist in diesem PHP nicht geladen oder nicht eingeschaltet.</translation>
+    </message>
+    <message>
+        <source>Expunges</source>
+        <translation>Komplettleerungen</translation>
+    </message>
+    <message>
+        <source>Rendering</source>
+        <translation>Rendering</translation>
+    </message>
+    <message>
+        <source>View: hit</source>
+        <translation>View: Treffer</translation>
+    </message>
+    <message>
+        <source>View: new</source>
+        <translation>View: neu</translation>
+    </message>
+    <message>
+        <source>View: off</source>
+        <translation>View: aus</translation>
+    </message>
+    <message>
+        <source>View: ?</source>
+        <translation>View: ?</translation>
+    </message>
+    <message>
+        <source>Content view cache</source>
+        <translation>Cache der Inhaltsansicht</translation>
+    </message>
+    <message>
+        <source>Compiled %count</source>
+        <translation>Kompiliert %count</translation>
+    </message>
+    <message>
+        <source>%compiled templates compiled in this request, %executed runs of compiled templates</source>
+        <translation>%compiled Templates in dieser Anfrage kompiliert, %executed Läufe kompilierter Templates</translation>
+    </message>
+    <message>
+        <source>Read from the cache</source>
+        <translation>Aus dem Cache gelesen</translation>
+    </message>
+    <message>
+        <source>Generated and stored in the cache</source>
+        <translation>Erzeugt und im Cache gespeichert</translation>
+    </message>
+    <message>
+        <source>Generated without storing it in the cache</source>
+        <translation>Erzeugt, ohne sie im Cache zu speichern</translation>
+    </message>
+    <message>
+        <source>The cache file was not used</source>
+        <translation>Die Cache-Datei wurde nicht verwendet</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Nicht verwendet</translation>
+    </message>
+    <message>
+        <source>The key was built, no outcome was noted</source>
+        <translation>Der Schlüssel wurde gebildet, ein Ergebnis wurde nicht vermerkt</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation>Controller</translation>
+    </message>
+    <message>
+        <source>No module view ran.</source>
+        <translation>Es lief keine Modulansicht.</translation>
+    </message>
+    <message>
+        <source>Module view</source>
+        <translation>Modulansicht</translation>
+    </message>
+    <message>
+        <source>View class</source>
+        <translation>View-Klasse</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Skript</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Navigation part</source>
+        <translation>Navigationsbereich</translation>
+    </message>
+    <message>
+        <source>Design order (%count bases)</source>
+        <translation>Design-Reihenfolge (%count Basen)</translation>
+    </message>
+    <message>
+        <source>No content view ran on this page.</source>
+        <translation>Auf dieser Seite lief keine Inhaltsansicht.</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Hash</source>
+        <translation>Hash</translation>
+    </message>
+    <message>
+        <source>Cache file</source>
+        <translation>Cache-Datei</translation>
+    </message>
+    <message>
+        <source>Cache key (%count parts)</source>
+        <translation>Cache-Schlüssel (%count Teile)</translation>
+    </message>
+    <message>
+        <source>Added or changed by a content/view/cachekeys listener</source>
+        <translation>Von einem Listener für content/view/cachekeys hinzugefügt oder geändert</translation>
+    </message>
+    <message>
+        <source>listener</source>
+        <translation>Listener</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>leer</translation>
+    </message>
+    <message>
+        <source>Compiled templates run</source>
+        <translation>Ausgeführte kompilierte Templates</translation>
+    </message>
+    <message>
+        <source>Compiled in this request</source>
+        <translation>In dieser Anfrage kompiliert</translation>
+    </message>
+    <message>
+        <source>Templates compiled in this request</source>
+        <translation>In dieser Anfrage kompilierte Templates</translation>
+    </message>
+    <message>
+        <source>CB %hits/%count</source>
+        <translation>CB %hits/%count</translation>
+    </message>
+    <message>
+        <source>Cache blocks: %hits of %count read from the cache, %generated ms to generate the others (outermost blocks)</source>
+        <translation>Cache-Blöcke: %hits von %count aus dem Cache gelesen, %generated ms für das Erzeugen der übrigen (äußerste Blöcke)</translation>
+    </message>
+    <message>
+        <source>Cache blocks</source>
+        <translation>Cache-Blöcke</translation>
+    </message>
+    <message>
+        <source>No cache-block ran on this page.</source>
+        <translation>Auf dieser Seite lief kein cache-block.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache; %lookup ms to look them up, %generated ms to generate the others (outermost blocks; a row's time holds the blocks inside it).</source>
+        <translation>%hits von %count aus dem Cache gelesen; %lookup ms zum Nachschlagen, %generated ms für das Erzeugen der übrigen (äußerste Blöcke; die Zeit einer Zeile enthält die Blöcke darin).</translation>
+    </message>
+    <message>
+        <source>The first %shown are listed.</source>
+        <translation>Die ersten %shown sind aufgeführt.</translation>
+    </message>
+    <message>
+        <source>hit</source>
+        <translation>Treffer</translation>
+    </message>
+    <message>
+        <source>generated</source>
+        <translation>erzeugt</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nicht gefunden</translation>
+    </message>
+    <message>
+        <source>Lookup</source>
+        <translation>Nachschlagen</translation>
+    </message>
+    <message>
+        <source>Generation</source>
+        <translation>Erzeugung</translation>
+    </message>
+    <message>
+        <source>Expiry</source>
+        <translation>Ablauf</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>keys</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>unknown (custom code, or a template compiled before)</source>
+        <translation>unbekannt (eigener Code oder ein früher kompiliertes Template)</translation>
+    </message>
+    <message>
+        <source>subtree %node</source>
+        <translation>Teilbaum %node</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Ansicht</translation>
+    </message>
+    <message>
+        <source>node %node</source>
+        <translation>Knoten %node</translation>
+    </message>
+    <message>
+        <source>Templates rendered</source>
+        <translation>Gerenderte Templates</translation>
+    </message>
+    <message>
+        <source>%count templates</source>
+        <translation>%count Templates</translation>
+    </message>
+    <message>
+        <source>not compiled</source>
+        <translation>nicht kompiliert</translation>
+    </message>
+    <message>
+        <source>Template tree</source>
+        <translation>Template-Baum</translation>
+    </message>
+    <message>
+        <source>The module views that ran for this request, in order (an error page or a redirect adds one), with the class that ran each view and its script; below them the siteaccess, the navigation part and the design bases in the order templates are looked up.</source>
+        <translation>Die Modulansichten, die für diese Anfrage liefen, in ihrer Reihenfolge (eine Fehlerseite oder eine Weiterleitung fügt eine hinzu), mit der Klasse, die die Ansicht ausführte, und ihrem Skript; darunter der Siteaccess, der Navigationsbereich und die Design-Basen in der Reihenfolge, in der Templates gesucht werden.</translation>
+    </message>
+    <message>
+        <source>Every template this request rendered, in the order it started, nested under the template that included it. An arrow names the file an override chose; otherwise point at a name to see its file. A time holds everything the template included, not the parsing or compiling of the template itself. Templates of a view read from the view cache are not rendered and not listed.</source>
+        <translation>Jedes Template, das diese Anfrage gerendert hat, in der Reihenfolge seines Starts, eingerückt unter dem Template, das es eingebunden hat. Ein Pfeil nennt die Datei, die ein Override gewählt hat; sonst zeigt der Mauszeiger über einem Namen die Datei. Eine Zeit enthält alles, was das Template eingebunden hat, nicht das Parsen oder Kompilieren des Templates selbst. Templates einer Ansicht aus dem View-Cache werden nicht gerendert und nicht aufgeführt.</translation>
+    </message>
+    <message>
+        <source>Whether the content view (content/view) was read from its cache file or generated, and why. The key decides the file: two requests with the same parts share it. Lookup is the time to find and read the file, generation the time to render the view.</source>
+        <translation>Ob die Inhaltsansicht (content/view) aus ihrer Cache-Datei gelesen oder erzeugt wurde, und warum. Der Schlüssel bestimmt die Datei: zwei Anfragen mit denselben Teilen teilen sie. Nachschlagen ist die Zeit zum Finden und Lesen der Datei, Erzeugung die Zeit zum Rendern der Ansicht.</translation>
+    </message>
+    <message>
+        <source>Every {cache-block} in the order it was looked up. A hit costs only the lookup; a generated block renders its content and stores it for the next request. A block inside a generated block only runs then, so the counts differ between a first and a second request.</source>
+        <translation>Jeder {cache-block} in der Reihenfolge, in der er nachgeschlagen wurde. Ein Treffer kostet nur das Nachschlagen; ein erzeugter Block rendert seinen Inhalt und speichert ihn für die nächste Anfrage. Ein Block in einem erzeugten Block läuft nur dann, daher unterscheiden sich die Zahlen zwischen einer ersten und einer zweiten Anfrage.</translation>
+    </message>
+    <message>
+        <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
+        <translation>Die Einstellungen, die über Cache und Kompilierung entscheiden, und wie viele Templates aus dem kompilierten Cache liefen oder jetzt kompiliert wurden. Direkt nach dem Leeren des Template-Caches wird jedes Template einmal kompiliert.</translation>
     </message>
 </context>
 <context>

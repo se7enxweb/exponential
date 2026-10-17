@@ -15,6 +15,10 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminSidebarDrawerTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -24,7 +28,7 @@ class AdminSidebarDrawerTest extends PHPUnit\Framework\TestCase
 
     private static function read( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     public function testTheScriptsBreakpointsAreTheStylesheets()
@@ -39,11 +43,7 @@ class AdminSidebarDrawerTest extends PHPUnit\Framework\TestCase
 
     public function testEachColumnIsADrawerBelowItsBreakpoint()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-        {
-            $this->markTestSkipped( 'node is not installed' );
-        }
+        $node = AdminNodeBinary::require();
         $out = shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/sidebar_drawer.js' ) . ' '
                            . escapeshellarg( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
         $s = json_decode( (string)$out, true );
@@ -103,7 +103,7 @@ class AdminSidebarDrawerTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'start:--', 'click-right:-R', 'focus:left:-R', 'tab>page:-R' ), $s['trapOutside']['states'] );
         // the tab reports the state
         foreach ( array( 'admin4' => 'design/admin4/templates/page_topmenu.tpl',
-                         'admin4l' => 'design/admin4l/templates/explayouts/block/admin_sidebar_toggles.tpl' ) as $design => $path )
+                         'admin4l' => 'design/admin4l/templates/explayouts/block/admin_sidebar_controls.tpl' ) as $design => $path )
         {
             $this->assertStringContainsString( 'class="sidebar-control right" aria-controls="rightmenu" aria-expanded="false"', self::read( $path ), $design );
         }
@@ -114,11 +114,7 @@ class AdminSidebarDrawerTest extends PHPUnit\Framework\TestCase
      */
     private function harness()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-        {
-            $this->markTestSkipped( 'node is not installed' );
-        }
+        $node = AdminNodeBinary::require();
         $out = shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/sidebar_drawer.js' ) . ' '
                            . escapeshellarg( self::root() . '/design/admin4/javascript/ezadmin_menubar.js' ) );
         $s = json_decode( (string)$out, true );

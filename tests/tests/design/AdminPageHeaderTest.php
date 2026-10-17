@@ -13,6 +13,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminPageHeaderTest extends PHPUnit\Framework\TestCase
 {
     private static function root()
@@ -24,7 +26,7 @@ class AdminPageHeaderTest extends PHPUnit\Framework\TestCase
     {
         $file = self::root() . '/' . $path;
         self::assertFileExists( $file );
-        return (string)file_get_contents( $file );
+        return AdminFiles::read( $file );
     }
 
     public function testComponentsDefineThePageHeaderAndTheBreadcrumb()
