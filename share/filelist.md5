@@ -3574,7 +3574,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-3cad3542cc10d903ffe9410b1fdda086  doc/features/6.0/content-security-policy.md
+ecbb852db73a35878993d3c6accb68fe  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
