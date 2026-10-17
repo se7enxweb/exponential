@@ -108,32 +108,11 @@ class expLogActions
         if ( $count === null )
             $count = class_exists( 'eZLog' ) ? (int)eZLog::maxLogrotateFiles() : 3;
         $count = max( 1, min( 99, (int)$count ) );
-        $path = $file['path'];
-        $renamed = array();
-        for ( $i = $count; $i > 0; --$i )
-        {
-            $name = $path . '.' . $i;
-            if ( !file_exists( $name ) && !is_link( $name ) )
-                continue;
-            if ( is_link( $name ) )
-                return array( 'ok' => false, 'error' => 'link', 'renamed' => $renamed );
-            if ( $i === $count )
-            {
-                if ( !@unlink( $name ) )
-                    return array( 'ok' => false, 'error' => 'unlink', 'renamed' => $renamed );
-                $renamed[] = basename( $name ) . ' -> -';
-            }
-            else
-            {
-                if ( !@rename( $name, $path . '.' . ( $i + 1 ) ) )
-                    return array( 'ok' => false, 'error' => 'rename', 'renamed' => $renamed );
-                $renamed[] = basename( $name ) . ' -> ' . basename( $path ) . '.' . ( $i + 1 );
-            }
-        }
-        if ( !@rename( $path, $path . '.1' ) )
-            return array( 'ok' => false, 'error' => 'rename', 'renamed' => $renamed );
-        $renamed[] = basename( $path ) . ' -> ' . basename( $path ) . '.1';
-        return array( 'ok' => true, 'error' => '', 'renamed' => $renamed );
+        // The kernel's one rotation (expLogRotator): locked against a second rotation of the same file, the new log
+        // created with the old one's owner and mode, archives compressed when site.ini [FileSettings] LogFileCompress
+        $result = expLogRotator::rotate( $file['path'], $count,
+                                         array( 'compress' => class_exists( 'eZLog' ) && eZLog::compressArchives() ) );
+        return array( 'ok' => $result['ok'], 'error' => $result['error'], 'renamed' => $result['renamed'] );
     }
 
     /**
@@ -150,7 +129,13 @@ class expLogActions
         if ( $handle === false )
             return array( 'ok' => false, 'error' => 'open', 'bytes' => 0 );
         $size = (int)$file['size'];
-        $ok = ftruncate( $handle, 0 );
+        // under the lock expLogRotator takes, so emptying never runs in the middle of a rotation of the same file
+        $ok = false;
+        if ( flock( $handle, LOCK_EX ) )
+        {
+            $ok = ftruncate( $handle, 0 );
+            flock( $handle, LOCK_UN );
+        }
         fclose( $handle );
         clearstatcache( true, $file['path'] );
         return array( 'ok' => $ok, 'error' => $ok ? '' : 'truncate', 'bytes' => $size );
