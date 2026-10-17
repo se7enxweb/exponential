@@ -41,8 +41,8 @@
 
 namespace
 {
-if ( !function_exists( 'multipleezjscServerCalls' ) ) {
-function multipleezjscServerCalls( $calls, $contentType = 'json' )
+if ( !function_exists( 'expModuleViewEzjscoreCallMultipleServerCalls' ) ) {
+function expModuleViewEzjscoreCallMultipleServerCalls( $calls, $contentType = 'json' )
 {
     $r = array();
     foreach( $calls as $call )
@@ -215,14 +215,14 @@ class Call extends \Exponential\Runnable\ModuleView
             // set_time_limit(65);
             while( time() < $endTime )
             {
-                echo $streamSeparator . implode( $callSeparator, multipleezjscServerCalls( $callFnList, $contentType ) );
+                echo $streamSeparator . implode( $callSeparator, expModuleViewEzjscoreCallMultipleServerCalls( $callFnList, $contentType ) );
                 flush();
                 usleep( $callInterval );
             }
         }
         else
         {
-            echo implode( $callSeparator, multipleezjscServerCalls( $callFnList, $contentType ) );
+            echo implode( $callSeparator, expModuleViewEzjscoreCallMultipleServerCalls( $callFnList, $contentType ) );
         }
 
 

@@ -39,9 +39,9 @@
 
 namespace
 {
-if ( !function_exists( 'exitWithInternalError' ) ) {
+if ( !function_exists( 'expModuleViewEzjscoreRunExitWithInternalError' ) ) {
 // Functions that earlier existed in index_ajax.php (now removed from ezjscore)
-function exitWithInternalError( $errorText )
+function expModuleViewEzjscoreRunExitWithInternalError( $errorText )
 {
     header( $_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error' );
     //include_once( 'extension/ezjscore/classes/ezjscajaxcontent.php' );
@@ -58,8 +58,8 @@ function exitWithInternalError( $errorText )
 }
 }
 
-if ( !function_exists( 'hasAccessToBySetting' ) ) {
-function hasAccessToBySetting( $moduleName, $view = false, $policyAccessList = false )
+if ( !function_exists( 'expModuleViewEzjscoreRunHasAccessToBySetting' ) ) {
+function expModuleViewEzjscoreRunHasAccessToBySetting( $moduleName, $view = false, $policyAccessList = false )
 {
     if ( $policyAccessList !== false )
     {
@@ -96,7 +96,7 @@ class Run extends \Exponential\Runnable\ModuleView
         // look for module and view info in uri parameters
         if ( !isset( $uriParams[1] ) )
         {
-            exitWithInternalError( "Did not find module info in url." );
+            expModuleViewEzjscoreRunExitWithInternalError( "Did not find module info in url." );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
@@ -106,7 +106,7 @@ class Run extends \Exponential\Runnable\ModuleView
         $module = \eZModule::findModule( $moduleName );
         if ( !$module instanceof \eZModule )
         {
-            exitWithInternalError( "'$moduleName' module does not exist, or is not a valid module." );
+            expModuleViewEzjscoreRunExitWithInternalError( "'$moduleName' module does not exist, or is not a valid module." );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
@@ -115,7 +115,7 @@ class Run extends \Exponential\Runnable\ModuleView
         $moduleViews = $module->attribute('views');
         if ( !isset( $moduleViews[ $viewName ] ) )
         {
-            exitWithInternalError( "'$viewName' view does not exist on the current module." );
+            expModuleViewEzjscoreRunExitWithInternalError( "'$viewName' view does not exist on the current module." );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 
@@ -123,7 +123,7 @@ class Run extends \Exponential\Runnable\ModuleView
         $moduleCheck = \eZModule::accessAllowed( $uri );
         if ( !$moduleCheck['result'] )
         {
-            exitWithInternalError( '$moduleName/$viewName is disabled.' );
+            expModuleViewEzjscoreRunExitWithInternalError( '$moduleName/$viewName is disabled.' );
         }
 
 
@@ -131,10 +131,10 @@ class Run extends \Exponential\Runnable\ModuleView
         $ini         = \eZINI::instance();
         $currentUser = \eZUser::currentUser();
         $policyOmitList = class_exists( 'expPolicyOmitList' ) ? \expPolicyOmitList::entries( $ini ) : $ini->variable( 'RoleSettings', 'PolicyOmitList' );
-        if ( !hasAccessToBySetting( $moduleName, $viewName, $policyOmitList )
+        if ( !expModuleViewEzjscoreRunHasAccessToBySetting( $moduleName, $viewName, $policyOmitList )
           && !$currentUser->hasAccessToView( $module, $viewName, $params ) )
         {
-            exitWithInternalError( "User does not have access to the $moduleName/$viewName policy." );
+            expModuleViewEzjscoreRunExitWithInternalError( "User does not have access to the $moduleName/$viewName policy." );
             return $this->viewResult( isset( $Result ) ? $Result : null, null );
         }
 

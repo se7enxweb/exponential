@@ -2,7 +2,7 @@
 /**
  * ezjscore/call answers a failing server function with an error text inside the response.
  *
- * multipleezjscServerCalls() caught only Exception, so a PHP Error (a TypeError, a call to an
+ * expModuleViewEzjscoreCallMultipleServerCalls() caught only Exception, so a PHP Error (a TypeError, a call to an
  * undefined method, ...) escaped and turned the JSON or XML body into an HTML fatal page, which
  * could show server file paths. An Exception still passes its message to the client; any other
  * Throwable is logged and answered with a generic text.
@@ -53,7 +53,7 @@ class ezjscoreCallThrowableTestRouter extends ezjscServerRouter
 class ezjscoreCallThrowableTest extends PHPUnit\Framework\TestCase
 {
     /**
-     * Runs one call through multipleezjscServerCalls() and returns the decoded response.
+     * Runs one call through expModuleViewEzjscoreCallMultipleServerCalls() and returns the decoded response.
      *
      * @param ezjscServerRouter|string $call
      * @return array
@@ -65,7 +65,7 @@ class ezjscoreCallThrowableTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Runs the calls through multipleezjscServerCalls() and returns the encoded responses.
+     * Runs the calls through expModuleViewEzjscoreCallMultipleServerCalls() and returns the encoded responses.
      *
      * Logging an error the first time sets eZDebug up, which resets the PHP error handler;
      * the handler found before is put back, so a test leaves the handler as it found it.
@@ -79,7 +79,7 @@ class ezjscoreCallThrowableTest extends PHPUnit\Framework\TestCase
         $handler = set_error_handler( $probe );
         restore_error_handler();
 
-        $responses = multipleezjscServerCalls( $calls, 'json' );
+        $responses = expModuleViewEzjscoreCallMultipleServerCalls( $calls, 'json' );
 
         $current = set_error_handler( $probe );
         restore_error_handler();

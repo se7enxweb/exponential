@@ -1,3 +1,12 @@
+# 1.8.3
+- Updated: the global functions of the ezjscore/run and ezjscore/call views have names of their own
+  (expModuleViewEzjscoreRunExitWithInternalError, expModuleViewEzjscoreRunHasAccessToBySetting,
+  expModuleViewEzjscoreCallMultipleServerCalls) instead of exitWithInternalError,
+  hasAccessToBySetting and multipleezjscServerCalls. A server with persistent workers keeps every
+  function a worker ever defined, so a generic name defined first by other code (eztags' tree menu
+  defines an exitWithInternalError of its own) would have served these views.
+- Updated: Version 1.8.3 in ezinfo.php and extension.xml.
+
 # 1.8.2
 - Updated: ezjscnode::updatepriority takes the reorder lists of admin4's sub items table
   (PriorityList, ExpectedPriorityList, Renumber with PageOrder and PageOffset): it refuses to write

@@ -6,7 +6,7 @@
 
 namespace
 {
-if ( !function_exists( 'formatParam' ) ) {
+if ( !function_exists( 'expModuleViewEzoeSpellcheckRpcFormatParam' ) ) {
 /**
  * Returns a request value as it is, or only its letters, digits and "-_," when sanitized
  * (the helper of the TinyMCE spell checker that getRequestParam() calls).
@@ -15,7 +15,7 @@ if ( !function_exists( 'formatParam' ) ) {
  * @param bool $sanitize True to strip everything else.
  * @return String
  */
-function formatParam($str, $sanitize = false)
+function expModuleViewEzoeSpellcheckRpcFormatParam($str, $sanitize = false)
 {
     if ($sanitize)
         $str = preg_replace("/[^0-9a-z\-_,]+/i", "", (string)$str);
@@ -24,7 +24,7 @@ function formatParam($str, $sanitize = false)
 }
 }
 
-if ( !function_exists( 'getRequestParam' ) ) {
+if ( !function_exists( 'expModuleViewEzoeSpellcheckRpcGetRequestParam' ) ) {
 /**
  * Returns an request value by name without magic quoting.
  *
@@ -32,7 +32,7 @@ if ( !function_exists( 'getRequestParam' ) ) {
  * @param String $default_value Default value to return if value not found.
  * @return String request value by name without magic quoting or default value.
  */
-function getRequestParam($name, $default_value = false, $sanitize = false)
+function expModuleViewEzoeSpellcheckRpcGetRequestParam($name, $default_value = false, $sanitize = false)
 {
     if (!isset($_REQUEST[$name]))
         return $default_value;
@@ -42,12 +42,12 @@ function getRequestParam($name, $default_value = false, $sanitize = false)
         $newarray = array();
 
         foreach ($_REQUEST[$name] as $name => $value)
-            $newarray[formatParam($name, $sanitize)] = formatParam($value, $sanitize);
+            $newarray[expModuleViewEzoeSpellcheckRpcFormatParam($name, $sanitize)] = expModuleViewEzoeSpellcheckRpcFormatParam($value, $sanitize);
 
         return $newarray;
     }
 
-    return formatParam($_REQUEST[$name], $sanitize);
+    return expModuleViewEzoeSpellcheckRpcFormatParam($_REQUEST[$name], $sanitize);
 }
 }
 }
@@ -106,7 +106,7 @@ class SpellcheckRpc extends \Exponential\Runnable\ModuleView
 
         // Try param
         if (isset($_POST["json_data"]))
-            $raw = getRequestParam("json_data");
+            $raw = expModuleViewEzoeSpellcheckRpcGetRequestParam("json_data");
 
         // Try globals array
         if (!$raw && isset($_GLOBALS["HTTP_RAW_POST_DATA"]))
