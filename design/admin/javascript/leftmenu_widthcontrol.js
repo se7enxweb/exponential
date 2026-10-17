@@ -69,7 +69,9 @@ jQuery(function( $ )
         $leftmenu.addClass( 'widthcontroled' );
     }
 
-    if ( $leftmenu.length )
+    // Only while the menu stands beside the content: on a narrow window the columns stack (pagelayout.css), the
+    // menu is not floated, and a start margin would push the content aside
+    if ( $leftmenu.length && getComputedStyle( $leftmenu[0] ).cssFloat !== 'none' )
     {
         if ( !margin )
             margin = 0;
