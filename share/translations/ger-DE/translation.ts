@@ -36902,6 +36902,30 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Checking...</source>
         <translation>Prüfung läuft...</translation>
     </message>
+    <message>
+        <source>Table of an extension that is not active</source>
+        <translation>Tabelle einer nicht aktiven Erweiterung</translation>
+    </message>
+    <message>
+        <source>%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.</source>
+        <translation>%count Tabellen gehören zu installierten, nicht aktiven Erweiterungen; sie sind unten aufgeführt, ohne dass etwas auszuführen ist.</translation>
+    </message>
+    <message>
+        <source>Tables of extensions that are not active</source>
+        <translation>Tabellen nicht aktiver Erweiterungen</translation>
+    </message>
+    <message>
+        <source>belongs to %extension (not active)</source>
+        <translation>gehört zu %extension (nicht aktiv)</translation>
+    </message>
+    <message>
+        <source>This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.</source>
+        <translation>Diese Tabelle gehört zur Erweiterung %extension, die installiert und nicht aktiv ist. Aktivieren Sie die Erweiterung oder lassen Sie die Tabelle stehen; wird sie gelöscht, sind ihre Daten verloren. Für sie wird kein SQL geschrieben.</translation>
+    </message>
+    <message>
+        <source>No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
+        <translation>Kein mitgeliefertes Schema nennt diese Tabelle, auch nicht das einer installierten, nicht aktiven Erweiterung: Meist gehört sie zu einer eigenen Erweiterung ohne Schemadatei oder zu einer entfernten Erweiterung. Lassen Sie sie stehen, sofern Sie nicht wissen, dass ihre Daten nicht mehr gebraucht werden; die DROP-Anweisung wird nur der Vollständigkeit halber gezeigt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/accounthandlers/html/ez</name>
@@ -76691,6 +76715,13 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Name</source>
         <translation>Name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/ezie</name>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
     </message>
 </context>
 </TS>

@@ -33998,6 +33998,30 @@ Note: The packages will not be uninstalled.</translation>
         <source>Checking...</source>
         <translation>Checking...</translation>
     </message>
+    <message>
+        <source>Table of an extension that is not active</source>
+        <translation>Table of an extension that is not active</translation>
+    </message>
+    <message>
+        <source>%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.</source>
+        <translation>%count tables belong to extensions that are installed and not active; they are listed below, with nothing to run.</translation>
+    </message>
+    <message>
+        <source>Tables of extensions that are not active</source>
+        <translation>Tables of extensions that are not active</translation>
+    </message>
+    <message>
+        <source>belongs to %extension (not active)</source>
+        <translation>belongs to %extension (not active)</translation>
+    </message>
+    <message>
+        <source>This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.</source>
+        <translation>This table belongs to the extension %extension, which is installed and not active. Activate the extension, or leave the table; dropping it removes its data. No SQL is written for it.</translation>
+    </message>
+    <message>
+        <source>No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</source>
+        <translation>No shipped schema names this table, not even that of an installed extension that is not active: usually it belongs to an extension of your own without a schema file, or to an extension that was removed. Leave it, unless you know its data is no longer needed; the DROP statement is shown only to be complete.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/accounthandlers/html/ez</name>
@@ -69751,6 +69775,13 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Apply</source>
         <translation>Apply</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/ezie</name>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
     </message>
 </context>
 </TS>
