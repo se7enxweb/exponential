@@ -5648,7 +5648,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 330a3389deaa6670e6677eaf993b9a73  kernel/private/classes/expcontentaccessreport.php
 7006dcb750cb36c53efb10d3cd301720  kernel/private/classes/expfileconsistencyreport.php
 30b99d6b38fac3eb85094f52e824516c  kernel/private/classes/expschemaconsistencyreport.php
-f97155bcc83ef89c10b3a9a1d17da268  kernel/private/classes/ezautoloadgenerator.php
+ba76560513cfe183791eab4ea1d71171  kernel/private/classes/ezautoloadgenerator.php
 7642907aab26669358d257577baedeab  kernel/private/classes/ezcontentobjectstate.php
 6288d50d915fadc3e956d6a8c9ce660c  kernel/private/classes/ezcontentobjectstategroup.php
 00e0da11d764b55e34ca0f7094fe1c96  kernel/private/classes/ezcontentobjectstategrouplanguage.php

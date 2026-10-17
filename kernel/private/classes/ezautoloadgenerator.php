@@ -203,7 +203,7 @@ class eZAutoloadGenerator
     }
 
     /**
-     * The mode an autoload file for the mode/location $location is written with, within EZP_FILE_MODE_MAX.
+     * The mode an autoload file for the mode/location $location is written with, before EZP_FILE_MODE_MAX applies.
      *
      * The kernel array (autoload/ezp_kernel.php) and a single extension's array (extension/foo/autoload/) are
      * source files kept in version control and listed in share/filelist.md5: they get 0644 like every other PHP
@@ -218,9 +218,9 @@ class eZAutoloadGenerator
     {
         if ( $location === self::MODE_KERNEL || $location === self::MODE_SINGLE_EXTENSION )
         {
-            return eZFile::fileMode( 0644 );
+            return 0644;
         }
-        return eZFile::fileMode( defined( 'EZP_INI_FILE_PERMISSION' ) ? EZP_INI_FILE_PERMISSION : 0777 );
+        return defined( 'EZP_INI_FILE_PERMISSION' ) ? EZP_INI_FILE_PERMISSION : 0777;
     }
 
     /**
@@ -272,7 +272,8 @@ class eZAutoloadGenerator
                  fwrite( $file, $data );
                  fwrite( $file, $this->dumpArrayEnd() );
                  fclose( $file );
-                 chmod( $filePath, $this->autoloadFileMode( $location ) );
+                 // Within EZP_FILE_MODE_MAX
+                 chmod( $filePath, eZFile::fileMode( $this->autoloadFileMode( $location ) ) );
 
              }
              else
