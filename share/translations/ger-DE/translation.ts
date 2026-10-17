@@ -64617,6 +64617,38 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Resolve</source>
         <translation>Beheben</translation>
     </message>
+    <message>
+        <source>Websites</source>
+        <translation>Websites</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>Medien</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Design</translation>
+    </message>
+    <message>
+        <source>Sites and sections</source>
+        <translation>Websites und Bereiche</translation>
+    </message>
+    <message>
+        <source>(contains the start location)</source>
+        <translation>(enthält den Startort)</translation>
+    </message>
+    <message>
+        <source>More…</source>
+        <translation>Mehr …</translation>
+    </message>
+    <message>
+        <source>Choose another site or section with the node picker</source>
+        <translation>Andere Website oder anderen Bereich mit der Knotenauswahl wählen</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

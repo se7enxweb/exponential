@@ -99,7 +99,8 @@ class Storage extends \Exponential\Runnable\ModuleView
         }
 
         $tpl = \eZTemplate::factory();
-        $tpl->setVariable( 'scope', \expContentCheckScope::forTemplate( $nodeID, 'storage' ) );
+        // the scope buttons keep the list shown (orphans or file problems)
+        $tpl->setVariable( 'scope', \expContentCheckScope::forTemplate( $nodeID, 'storage', array( 'Show' => $params['show'] ) ) );
         $tpl->setVariable( 'params', $params );
         $tpl->setVariable( 'state', $state );
         $tpl->setVariable( 'percent', $state ? \expContentCheckStorage::percent( $state ) : 0 );

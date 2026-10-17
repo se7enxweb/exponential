@@ -18,8 +18,8 @@ that link to or embed something a visitor cannot reach; and if you decide who ma
   (orphan files), with their size and age and the totals, and the file-system problems of the files content uses
   (wrong owner or mode, empty, a name or path that does not match). Orphans can be moved to a quarantine, restored
   from there and deleted from there; owner and mode can be fixed. Nothing is ever deleted from the storage itself.
-- Every check starts where you choose: the whole tree, the content, Media, Media/Images, Users or any node through the
-  node picker; your choice is remembered (see [Where a check starts](#where-a-check-starts)).
+- Every check starts where you choose: the whole tree, the websites, Media, one site or section under the content
+  root, or any node through the node picker; your choice is remembered (see [Where a check starts](#where-a-check-starts)).
 - **Missing files**, a target of the broken relations (**Missing files in var/<site>/storage**): images, files and
   media whose file is missing from the storage (or the cluster's), in the published version and in drafts, and
   images whose aliases are missing or out of date. See [Missing files](#missing-files).
@@ -211,22 +211,49 @@ whole tree, which is what the pages avoid. **From the start** begins again.
 
 ## Where a check starts
 
-Each check has a **start location** field (the node id) with buttons for the usual places and **Choose with the node
-picker**, which opens the shared node picker (content/browse) and comes back to the same check:
+Each check has a **start location** field (the node id) and, beneath it, two rows of buttons:
 
-- the presets of `contentcheck.ini [ScopeSettings] PresetList[]`: **Whole tree** (node 1, for users with an
-  unlimited `content/read`), the content (`RootNode`), **Media** (`MediaRootNode`), **Media/Images** (the URL alias
-  `media/images`) and **Users** (`UserRootNode`). Other keys: `setup`, `design`, a node id or any URL alias path. A
-  preset whose node does not exist or that you may not read is left out;
-- a check reads its node from the form (`NodeID`), else from the address (`contentcheck/<view>/<node id>`), else
-  from your last choice, else the content tree's top node. A node given in the form or the address becomes your last
-  choice (the preference `admin_contentcheck_scope`), so the next check opens there; the address always carries it,
-  so a link to a check shows the same subtree to everyone who may read it.
+- the **quick scope buttons** of `contentcheck.ini [ScopeSettings] PresetList[]`: **Whole tree** (node 1, for users
+  with an unlimited `content/read`), **Websites** (the content root, `content.ini [NodeSettings] RootNode`) and
+  **Media** (`MediaRootNode`), then **Choose with the node picker**, which opens the shared node picker
+  (content/browse) and comes back to the same check. Users and any other node are reached through the picker. Other
+  keys for the list: `users` (**Users**), `setup`, `design`, a node id or any URL alias path such as `media/images`
+  (these show the node's name). A button whose node does not exist or that you may not read is left out. The content
+  and media roots are the ones of `content.ini [NodeSettings]`; set them there;
+- the **sites and sections** under the content root: one button per visible child of the content root you may read
+  (not hidden, not invisible), in the content root's own sort order, so a check can start in one site's or
+  section's subtree. Read live from the content tree on every page; names are escaped. At most `SiteRowLimit`
+  (default 12); with more, **More…** opens the node picker at that level (`contentcheck/scope/<view>/<node
+  id>/<start node id>`; a cancel goes back to the check where it was). The site the start location lies in is
+  outlined. `SiteRow=disabled` hides the row; `SiteRowParent` (default `content`) takes another preset key, a node
+  id or a URL alias path as the level to list.
 
-The selector is one template, `design:contentcheck/scope.tpl`, included in the filter form of every check; the view
-passes `expContentCheckScope::forTemplate( $nodeID, '<view>' )`. The views that take a start location (and that the
-node picker may return to) are listed in `ViewList[]`; another check adds its view there.
+The current start location's button is marked (`aria-current="true"`, the primary color). Every button is a plain
+link to `contentcheck/<view>/<node id>`, so it works without JavaScript, by keyboard (Tab, Enter) and wraps on
+phones; the storage files keep the list shown (`?Show=...`). A check reads its node from the form (`NodeID`), else
+from the address (`contentcheck/<view>/<node id>`), else from your last choice, else the content tree's top node. A
+node given in the form or the address becomes your last choice (the preference `admin_contentcheck_scope`), so the
+next check opens there; the address always carries it, so a link to a check shows the same subtree to everyone who
+may read it.
 
+```ini
+# settings/override/contentcheck.ini.append.php
+[ScopeSettings]
+PresetList[]
+PresetList[]=tree
+PresetList[]=content
+PresetList[]=media
+PresetList[]=users
+SiteRow=enabled
+SiteRowParent=content
+SiteRowLimit=12
+```
+
+The selector is one template, `design:contentcheck/scope.tpl` (the same file in design/admin and design/admin4),
+included in the filter form of every check; the view passes `expContentCheckScope::forTemplate( $nodeID, '<view>' )`
+(a third argument lists plain GET fields the links keep). Its styles are `.a4-setup-scope` in
+`stylesheets/modules/setup.css`. The views that take a start location (and that the node picker may return to) are
+listed in `ViewList[]`; another check adds its view there.
 ## One layout
 
 Every check has the same order: the **start location**, the **filters** (a group of choices has **Select all** and
