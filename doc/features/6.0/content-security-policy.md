@@ -65,6 +65,45 @@ kernel's HTTP cache carry the same headers.
 Mode=enforce
 ```
 
+### Switching to enforce, step by step
+
+The shipped default changes nothing for a visitor: `Mode=auto` sends a report-only policy on administration
+siteaccesses and none on the sites. Enforcing is a decision per siteaccess, made after an audit:
+
+1. **Audit the templates.** `AdminContentSecurityPolicyTest` checks the core designs and the extensions this
+   repository ships. Run it once with every extension of the installation, as the administration renders them
+   (the chains of `uiswitch.ini DesignChain[]`, each administration siteaccess's `AdditionalSiteDesignList[]` and the
+   active extensions of `settings/override`):
+
+   ```bash
+   CSP_ALL_EXTENSIONS=1 php vendor/bin/phpunit tests/tests/design/AdminContentSecurityPolicyTest.php
+   ```
+
+   Every line of the failure is a template with inline code that an enforced policy would break, by extension. A
+   template of an extension is fixed in that extension's repository (scripts into files loaded with `ezscript`,
+   values into `data-*` attributes, handlers into listeners or the `data-a4-*` actions, menu items into `data-menu-*`).
+2. **Collect the reports of real use.** Set `ReportURI` to a collector of your own, or watch the developer console
+   (Chrome and Firefox log "[Report Only] Refused to ..."), and use the administration for a few days: the pages of
+   every extension, the editors, the dialogs. Handler attributes are reported only when they run, so open the context
+   menus and dialogs too.
+3. **Enforce one siteaccess first**, best a second administration siteaccess that only you use, with the same
+   designs and extensions as the main one. Keep the report-only one for everyone else.
+4. **Loosen only what you must**, per siteaccess and per directive, for example for TinyMCE 3:
+
+   ```ini
+   [ContentSecurityPolicy]
+   Mode=enforce
+   Directives[script-src]='self' 'unsafe-inline'
+   Directives[style-src]='self' 'unsafe-inline'
+   ```
+
+5. **Clear the INI cache** (`php bin/php/ezcache.php --clear-tag=ini`) and reload PHP (and restart Velocity) so every
+   process sends the new header. **To go back**, set `Mode=report-only` (or `disabled`) and clear the INI cache again;
+   nothing else changes.
+
+Sites (non-administration siteaccesses) get no policy with `auto`. Their designs and the rich text they render
+(`style=""` from content, embedded players) are not checked by the test: start them with `Mode=report-only`.
+
 ## The directives shipped
 
 - `script-src 'self'` allows script files of this site only: no inline `<script>`, no `on...=` attribute, no
