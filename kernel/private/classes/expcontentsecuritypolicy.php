@@ -1,10 +1,9 @@
 <?php
 /**
- * File containing the ezpContentSecurityPolicy class.
+ * File containing the expContentSecurityPolicy class.
  *
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- * @version //autogentag//
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
  */
 
@@ -24,7 +23,7 @@
  *
  * Settings: site.ini [ContentSecurityPolicy] of the current siteaccess. See doc/features/6.0/content-security-policy.md.
  */
-class ezpContentSecurityPolicy
+class expContentSecurityPolicy
 {
     const MODE_DISABLED = 'disabled';
     const MODE_REPORT_ONLY = 'report-only';

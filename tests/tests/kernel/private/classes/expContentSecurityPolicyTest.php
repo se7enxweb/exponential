@@ -1,6 +1,6 @@
 <?php
 /**
- * ezpContentSecurityPolicy and the security headers of ezpKernelWeb: the mode (auto by the design), the policy from
+ * expContentSecurityPolicy and the security headers of ezpKernelWeb: the mode (auto by the design), the policy from
  * its directives (nothing a setting could use to split the header or add a directive), the report-only and the
  * enforced header beside SecurityHeaders[Content-Security-Policy], and the defaults of settings/site.ini.
  *
@@ -12,7 +12,7 @@
  * @group kernel
  */
 
-class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
+class expContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
 {
     /** @var array section => variable => array( saved value ) or null (not set) */
     private $saved = array();
@@ -55,19 +55,19 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     public function testModeAutoIsReportOnlyForAdministrationDesignsOnly()
     {
         foreach ( array( 'admin', 'admin4', 'admin4l', 'adminui', 'Admin3' ) as $design )
-            $this->assertSame( 'report-only', ezpContentSecurityPolicy::mode( 'auto', $design ), $design );
+            $this->assertSame( 'report-only', expContentSecurityPolicy::mode( 'auto', $design ), $design );
         foreach ( array( 'standard', 'mysite', 'plain', '', 'myadmin', null ) as $design )
-            $this->assertSame( 'disabled', ezpContentSecurityPolicy::mode( 'auto', $design ), var_export( $design, true ) );
+            $this->assertSame( 'disabled', expContentSecurityPolicy::mode( 'auto', $design ), var_export( $design, true ) );
     }
 
     public function testModeExplicitValuesAndUnknownOnes()
     {
-        $this->assertSame( 'enforce', ezpContentSecurityPolicy::mode( 'enforce', 'standard' ) );
-        $this->assertSame( 'enforce', ezpContentSecurityPolicy::mode( ' Enforce ', 'admin4' ) );
-        $this->assertSame( 'report-only', ezpContentSecurityPolicy::mode( 'report-only', 'standard' ) );
-        $this->assertSame( 'disabled', ezpContentSecurityPolicy::mode( 'disabled', 'admin4' ) );
+        $this->assertSame( 'enforce', expContentSecurityPolicy::mode( 'enforce', 'standard' ) );
+        $this->assertSame( 'enforce', expContentSecurityPolicy::mode( ' Enforce ', 'admin4' ) );
+        $this->assertSame( 'report-only', expContentSecurityPolicy::mode( 'report-only', 'standard' ) );
+        $this->assertSame( 'disabled', expContentSecurityPolicy::mode( 'disabled', 'admin4' ) );
         foreach ( array( '', 'on', 'enabled', 'report', array( 'enforce' ), null ) as $mode )
-            $this->assertSame( 'disabled', ezpContentSecurityPolicy::mode( $mode, 'admin4' ), var_export( $mode, true ) );
+            $this->assertSame( 'disabled', expContentSecurityPolicy::mode( $mode, 'admin4' ), var_export( $mode, true ) );
     }
 
     // ------------------------------------------------------------ policy
@@ -76,7 +76,7 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame(
             "default-src 'self'; script-src 'self' https://cdn.example.com; object-src 'none'",
-            ezpContentSecurityPolicy::policy( array(
+            expContentSecurityPolicy::policy( array(
                 'default-src' => "'self'",
                 'Script-Src' => " 'self'   https://cdn.example.com ",
                 'object-src' => "'none'",
@@ -86,7 +86,7 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
 
     public function testPolicyLeavesOutEmptyAndUnsafeDirectives()
     {
-        $policy = ezpContentSecurityPolicy::policy( array(
+        $policy = expContentSecurityPolicy::policy( array(
             'default-src' => "'self'",
             'style-src' => '',
             'img-src' => "'self'; script-src *",
@@ -98,17 +98,17 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             0 => "'self'",
         ) );
         $this->assertSame( "default-src 'self'", $policy );
-        $this->assertSame( '', ezpContentSecurityPolicy::policy( array() ) );
-        $this->assertSame( '', ezpContentSecurityPolicy::policy( 'default-src *' ) );
-        $this->assertSame( '', ezpContentSecurityPolicy::policy( array( 'default-src' => '' ) ) );
+        $this->assertSame( '', expContentSecurityPolicy::policy( array() ) );
+        $this->assertSame( '', expContentSecurityPolicy::policy( 'default-src *' ) );
+        $this->assertSame( '', expContentSecurityPolicy::policy( array( 'default-src' => '' ) ) );
     }
 
     public function testPolicyReportUri()
     {
         $this->assertSame( "default-src 'self'; report-uri /csp-report",
-                           ezpContentSecurityPolicy::policy( array( 'default-src' => "'self'" ), ' /csp-report ' ) );
+                           expContentSecurityPolicy::policy( array( 'default-src' => "'self'" ), ' /csp-report ' ) );
         foreach ( array( '/a b', '/a;script-src *', '/a,b', "/a\nb" ) as $uri )
-            $this->assertSame( "default-src 'self'", ezpContentSecurityPolicy::policy( array( 'default-src' => "'self'" ), $uri ), $uri );
+            $this->assertSame( "default-src 'self'", expContentSecurityPolicy::policy( array( 'default-src' => "'self'" ), $uri ), $uri );
     }
 
     // ------------------------------------------------------------ merge
@@ -119,7 +119,7 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $this->assertSame(
             array( 'Content-Security-Policy' => "frame-ancestors 'self'", 'X-Frame-Options' => 'SAMEORIGIN',
                    'Content-Security-Policy-Report-Only' => "script-src 'self'" ),
-            ezpContentSecurityPolicy::merge( $headers, array( 'Content-Security-Policy-Report-Only' => "script-src 'self'" ) )
+            expContentSecurityPolicy::merge( $headers, array( 'Content-Security-Policy-Report-Only' => "script-src 'self'" ) )
         );
     }
 
@@ -127,12 +127,12 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame(
             array( 'content-security-policy' => "frame-ancestors 'self', script-src 'self'" ),
-            ezpContentSecurityPolicy::merge( array( 'content-security-policy' => "frame-ancestors 'self'" ),
+            expContentSecurityPolicy::merge( array( 'content-security-policy' => "frame-ancestors 'self'" ),
                                              array( 'Content-Security-Policy' => "script-src 'self'" ) )
         );
         $this->assertSame( array( 'Content-Security-Policy' => "script-src 'self'" ),
-                           ezpContentSecurityPolicy::merge( array(), array( 'Content-Security-Policy' => "script-src 'self'" ) ) );
-        $this->assertSame( array( 'A' => 'b' ), ezpContentSecurityPolicy::merge( array( 'A' => 'b' ), array() ) );
+                           expContentSecurityPolicy::merge( array(), array( 'Content-Security-Policy' => "script-src 'self'" ) ) );
+        $this->assertSame( array( 'A' => 'b' ), expContentSecurityPolicy::merge( array( 'A' => 'b' ), array() ) );
     }
 
     // ------------------------------------------------------------ headers from site.ini
@@ -145,22 +145,22 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
 
         $this->setting( 'ContentSecurityPolicy', 'Mode', 'auto' );
         $this->assertSame( array( 'Content-Security-Policy-Report-Only' => "default-src 'self'; object-src 'none'" ),
-                           ezpContentSecurityPolicy::headers() );
+                           expContentSecurityPolicy::headers() );
 
         $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
         $this->assertSame( array( 'Content-Security-Policy' => "default-src 'self'; object-src 'none'" ),
-                           ezpContentSecurityPolicy::headers() );
+                           expContentSecurityPolicy::headers() );
 
         $this->setting( 'ContentSecurityPolicy', 'Mode', 'disabled' );
-        $this->assertSame( array(), ezpContentSecurityPolicy::headers() );
+        $this->assertSame( array(), expContentSecurityPolicy::headers() );
 
         $this->setting( 'ContentSecurityPolicy', 'Mode', 'auto' );
         $this->setting( 'DesignSettings', 'SiteDesign', 'standard' );
-        $this->assertSame( array(), ezpContentSecurityPolicy::headers() );
+        $this->assertSame( array(), expContentSecurityPolicy::headers() );
 
         $this->setting( 'ContentSecurityPolicy', 'Mode', 'report-only' );
         $this->setting( 'ContentSecurityPolicy', 'Directives', array() );
-        $this->assertSame( array(), ezpContentSecurityPolicy::headers(), 'no directive, no header' );
+        $this->assertSame( array(), expContentSecurityPolicy::headers(), 'no directive, no header' );
     }
 
     public function testKernelSecurityHeadersCarryThePolicy()
@@ -196,17 +196,17 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
 
         $this->setting( 'ContentSecurityPolicy', 'Mode', 'report-only' );
         $this->assertSame( array( 'Content-Security-Policy-Report-Only' => "default-src 'self'; object-src 'none'; report-uri /csp-report" ),
-                           ezpContentSecurityPolicy::headers() );
+                           expContentSecurityPolicy::headers() );
         $this->setting( 'ContentSecurityPolicy', 'Mode', 'auto' );
         $this->assertSame( array( 'Content-Security-Policy-Report-Only' => "default-src 'self'; object-src 'none'; report-uri /csp-report" ),
-                           ezpContentSecurityPolicy::headers() );
+                           expContentSecurityPolicy::headers() );
 
         $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
         $this->assertSame( array( 'Content-Security-Policy' => "default-src 'self'; frame-ancestors 'self'; sandbox allow-forms; object-src 'none'; report-uri /csp-report" ),
-                           ezpContentSecurityPolicy::headers() );
+                           expContentSecurityPolicy::headers() );
 
-        $this->assertSame( array( 'a' => 'b' ), ezpContentSecurityPolicy::reportOnlyDirectives( array( 'a' => 'b', ' SANDBOX ' => 'x' ) ) );
-        $this->assertSame( array(), ezpContentSecurityPolicy::reportOnlyDirectives( 'frame-ancestors x' ) );
+        $this->assertSame( array( 'a' => 'b' ), expContentSecurityPolicy::reportOnlyDirectives( array( 'a' => 'b', ' SANDBOX ' => 'x' ) ) );
+        $this->assertSame( array(), expContentSecurityPolicy::reportOnlyDirectives( 'frame-ancestors x' ) );
     }
 
     /** Without SecurityHeaders[] (removed, or not a list) the policy is sent all the same */
@@ -228,7 +228,7 @@ class ezpContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $ini = eZINI::fetchFromFile( 'settings/site.ini' );
         $this->assertSame( 'auto', $ini->variable( 'ContentSecurityPolicy', 'Mode' ) );
         $this->assertSame( '', $ini->variable( 'ContentSecurityPolicy', 'ReportURI' ) );
-        $policy = ezpContentSecurityPolicy::policy( $ini->variable( 'ContentSecurityPolicy', 'Directives' ) );
+        $policy = expContentSecurityPolicy::policy( $ini->variable( 'ContentSecurityPolicy', 'Directives' ) );
         foreach ( array( "default-src 'self'", "script-src 'self'", "style-src 'self'", "object-src 'none'",
                          "base-uri 'self'", "frame-ancestors 'self'", "form-action 'self'" ) as $directive )
             $this->assertStringContainsString( $directive, $policy );

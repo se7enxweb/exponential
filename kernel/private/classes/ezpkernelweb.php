@@ -1224,7 +1224,7 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      * [HTTPHeaderSettings] SecurityHeaders[<name>]=<value>. An empty value
      * drops that header; Strict-Transport-Security is only sent over HTTPS.
      * The Content Security Policy of [ContentSecurityPolicy] is added
-     * (ezpContentSecurityPolicy). Custom headers ([HTTPHeaderSettings] HeaderList) still override these.
+     * (expContentSecurityPolicy). Custom headers ([HTTPHeaderSettings] HeaderList) still override these.
      *
      * @return array header name => value
      */
@@ -1253,7 +1253,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         }
         // The Content Security Policy of [ContentSecurityPolicy]: report-only as a header of its own, enforced as a
         // second policy after the Content-Security-Policy above
-        return ezpContentSecurityPolicy::merge( $headers, ezpContentSecurityPolicy::headers( $ini ) );
+        // A long-running process (Velocity) that loaded its class map before the class existed sends the headers
+        // without the policy instead of failing every page
+        if ( !class_exists( 'expContentSecurityPolicy' ) )
+            return $headers;
+        return expContentSecurityPolicy::merge( $headers, expContentSecurityPolicy::headers( $ini ) );
     }
 
     /**
