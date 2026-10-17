@@ -156,6 +156,15 @@
         </testsuite>
 
         <!--
+          maps: how the map templates of ezgmaplocation, ezflow and cjw_themes_jumper escape a location's address,
+          and the datatype's fromString(). No database; a test whose extension is not installed is skipped.
+          Run: php vendor/bin/phpunit - -testsuite maps
+        -->
+        <testsuite name="maps">
+            <directory suffix="Test.php">tests/tests/extension/maps</directory>
+        </testsuite>
+
+        <!--
           quality: the sniffs of the code style check (bin/phpcs/). Needs the development tools (make devtools).
           Run: php vendor/bin/phpunit - -testsuite quality
         -->
