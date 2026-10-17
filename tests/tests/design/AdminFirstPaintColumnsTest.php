@@ -14,6 +14,11 @@
  *  FP-04 - the script takes the class away two frames after sidebarToggle() has applied the state (endPreload() run
  *          in node, tests/tests/design/js/first_paint.js; skipped without node), at once without
  *          requestAnimationFrame
+ *  FP-05 - which columns the page has comes from the server, <body data-a4-columns> (left: the frame's column or the
+ *          page's own, right), not only from :has(), which a paint of the half-parsed page does not match yet
+ *  FP-06 - html.a4-js (a4_head.js, before the first paint) draws the right column's disclosures closed from the start
+ *  FP-07 - the content tree scrolls in a card that fills the column: Trash, the content finder and the width buttons
+ *          stand at its foot and do not move while the tree is built
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminFirstPaintColumnsTest.php
  *
@@ -102,20 +107,23 @@ class AdminFirstPaintColumnsTest extends PHPUnit\Framework\TestCase
         $right = 'html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"])';
         $drawer = 'html.a4-preload[data-a4-pref-admin-right-drawer="1"]';
         $shown = array( 'opacity' => '1', 'visibility' => 'visible' );
+        // which columns the page has: the server's <body data-a4-columns>, :has() for a layout without it (FP-05)
+        $hasLeft = 'body:is([data-a4-columns~="left"], :has(.sidebar.left))';
+        $hasRight = 'body:is([data-a4-columns~="right"], :has(.sidebar.right))';
 
         // beside the content: shown, and the same room as an open column takes once the script has run
         $wide = self::media( $css, 'screen and (min-width: 1024px)' );
         $this->assertSame( $shown, self::declarations( $wide, $left . ' .sidebar.left' ) );
         $this->assertSame( self::declarations( $wide, 'html body:has(.sidebar.left.show)' ),
-                           self::declarations( $wide, $left . ' body:has(.sidebar.left)' ), 'left: the room of .show' );
+                           self::declarations( $wide, $left . ' ' . $hasLeft ), 'left: the room of .show' );
         $this->assertSame( self::declarations( $wide, 'body:has(.sidebar.left.show) .content-wrapper' ),
-                           self::declarations( $wide, $left . ' body:has(.sidebar.left) .content-wrapper' ) );
+                           self::declarations( $wide, $left . ' ' . $hasLeft . ' .content-wrapper' ) );
         $wider = self::media( $css, 'screen and (min-width: 1280px)' );
         $this->assertSame( $shown, self::declarations( $wider, $right . ' .sidebar.right' ) );
         $this->assertSame( self::declarations( $wider, 'html body:has(.sidebar.right.show)' ),
-                           self::declarations( $wider, $right . ' body:has(.sidebar.right)' ), 'right: the room of .show' );
+                           self::declarations( $wider, $right . ' ' . $hasRight ), 'right: the room of .show' );
         $this->assertSame( self::declarations( $wider, 'body:has(.sidebar.right.show) .content-wrapper' ),
-                           self::declarations( $wider, $right . ' body:has(.sidebar.right) .content-wrapper' ) );
+                           self::declarations( $wider, $right . ' ' . $hasRight . ' .content-wrapper' ) );
         $this->assertNotNull( self::declarations( $wide, 'html body:has(.sidebar.left.show)' ) );
         $this->assertNotNull( self::declarations( $wider, 'html body:has(.sidebar.right.show)' ) );
 
@@ -125,9 +133,9 @@ class AdminFirstPaintColumnsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $shown, self::declarations( $tablet, $drawer . ' .sidebar.right' ) );
         $mid = self::media( $css, 'screen and (min-width: 1024px) and (max-width: 1279.98px)' );
         $this->assertSame( array( 'opacity' => '0', 'visibility' => 'hidden' ), self::declarations( $mid, $drawer . ' .sidebar.left' ) );
-        $this->assertSame( array( 'margin-inline-start' => '0' ), self::declarations( $mid, $drawer . ' body:has(.sidebar.left)' ) );
+        $this->assertSame( array( 'margin-inline-start' => '0' ), self::declarations( $mid, $drawer . ' ' . $hasLeft ) );
         // the drawer's rules come after the wide ones they override (same weight)
-        $this->assertGreaterThan( strpos( $css, $left . ' body:has(.sidebar.left) {' ), strpos( $css, $drawer . ' body:has(.sidebar.left) {' ) );
+        $this->assertGreaterThan( strpos( $css, $left . ' ' . $hasLeft . ' {' ), strpos( $css, $drawer . ' ' . $hasLeft . ' {' ) );
 
         // nothing of this on a phone or below the left column's breakpoint: the drawers start closed
         $phone = self::media( $css, 'screen and (max-width: 575.98px)' ) . self::media( $css, 'screen and (max-width: 1023.98px)' );
@@ -170,5 +178,51 @@ class AdminFirstPaintColumnsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( true, true, false ), $s['frames']['log'] );
         $this->assertTrue( $s['frames']['other'] );
         $this->assertSame( array( false ), $s['noFrames']['log'] );
+    }
+
+    public function testThePageNamesItsColumnsOnTheBody()
+    {
+        foreach ( array( 'admin4', 'admin4l' ) as $design )
+        {
+            $layout = self::read( 'design/' . $design . '/templates/pagelayout.tpl' );
+            $this->assertStringContainsString( '<body data-a4-columns="{$a4_columns}">', $layout, $design );
+            $this->assertMatchesRegularExpression( "/\\{def \\\$a4_columns = cond\\( or\\( \\\$hide_left_menu\\|not, \\\$module_result\\.content\\|contains\\( 'class=\"sidebar left\"' \\) \\), 'left right', 'right' \\)\\}/",
+                                                   $layout, $design . ': the frame\'s left column or the page\'s own, the right always' );
+            // defined before the cache-block that holds <body>, and a key of it
+            $def = strpos( $layout, '{def $a4_columns' );
+            $this->assertLessThan( strpos( $layout, '{cache-block' ), $def, $design );
+            $this->assertMatchesRegularExpression( '/\{cache-block keys=array\([^\n]*\$main_wrapped, \$a4_columns \)/', $layout, $design );
+        }
+    }
+
+    public function testTheRightColumnsDisclosuresAreClosedOnTheFirstPaint()
+    {
+        $head = self::read( 'design/admin4/javascript/a4_head.js' );
+        $this->assertStringContainsString( "root.classList.add('a4-js');", $head );
+        $css = self::read( 'design/admin4/stylesheets/admin4.css' );
+        $this->assertSame( array( 'display' => 'flex' ),
+                           self::declarations( $css, 'html.a4-js .a4-uiswitch-toggle[data-a4-disclosure][hidden]' ) );
+        $this->assertSame( array( 'display' => 'none' ),
+                           self::declarations( $css, 'html.a4-js .a4-uiswitch-toggle[data-a4-disclosure][aria-expanded="false"] + .a4-uiswitch-menu' ) );
+        // the button stands right before its list in the template the rule is written for
+        $this->assertMatchesRegularExpression( '/<button type="button" class="a4-uiswitch-toggle"[^\n]* data-a4-disclosure=""[^\n]* hidden>[^\n]*<\/button>\n<form class="a4-uiswitch-menu"/',
+                                               self::read( 'design/admin4/templates/uiswitch/choices.tpl' ) );
+    }
+
+    public function testTheContentTreeScrollsAndThePartsAfterItStayAtTheCardsFoot()
+    {
+        $css = self::read( 'design/admin4/stylesheets/admin4.css' );
+        $this->assertSame( array( 'display' => 'flex', 'flex' => '1 1 auto', 'flex-direction' => 'column', 'min-height' => '0' ),
+                           self::declarations( $css, '#leftmenu-design:has(> #content-tree)' ) );
+        $this->assertSame( array( 'flex' => 'none' ), self::declarations( $css, '#leftmenu-design:has(> #content-tree) > *' ) );
+        $this->assertSame( array( 'flex' => '1 1 0', 'min-height' => '8rem', 'overflow' => 'auto' ),
+                           self::declarations( $css, '#content-tree #contentstructure' ) );
+        // the cards the rules are written for: #content-tree, its .box-bc > .box-ml > .box-content, the tree in it
+        foreach ( array( 'content', 'media', 'my', 'user' ) as $part )
+        {
+            $menu = self::read( 'design/admin4/templates/parts/' . $part . '/menu.tpl' );
+            $this->assertMatchesRegularExpression( '/<div id="content-tree">.*<div class="box-bc"><div class="box-ml"><div class="box-content">\s*(\{[^}]*\}\s*)*<div id="contentstructure">/s',
+                                                   $menu, $part );
+        }
     }
 }

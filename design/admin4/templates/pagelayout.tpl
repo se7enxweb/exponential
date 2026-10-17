@@ -35,6 +35,9 @@
     {if and( $hide_left_menu, $module_result.content|contains( 'id="maincontent"' )|not )}
         {set $main_wrapped = true()}
     {/if}
+    {* The side columns the page has, on <body data-a4-columns> for the first paint (admin4.css, html.a4-preload): the
+       frame's left column, or the one an edit-type page's template draws itself, and the right column, always drawn *}
+    {def $a4_columns = cond( or( $hide_left_menu|not, $module_result.content|contains( 'class="sidebar left"' ) ), 'left right', 'right' )}
     {* Error pages can arrive with the same URI while their title and path name the error: key them
        by error type and number too (every other page keeps the plain URI key) *}
     {if is_set( $module_result.errorType )}
@@ -45,7 +48,7 @@
  Need navigation part for cases like content/browse where node id is taken from caller params *}
     {* siteaccess_url() here too: this block holds the header block below, whose
        site link depends on the scheme, host and port of the request. *}
-    {cache-block keys=array( $uri_cache_key, $user_hash, $current_user.contentobject_id, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), siteaccess_menu_key(), $env_badge.key, $main_wrapped ) ignore_content_expiry}
+    {cache-block keys=array( $uri_cache_key, $user_hash, $current_user.contentobject_id, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), siteaccess_menu_key(), $env_badge.key, $main_wrapped, $a4_columns ) ignore_content_expiry}
 
     {* The environment's name before the title (site.ini [AdminEnvironment] ShowInTitle), as in the header's badge *}
     {include uri='design:page_head.tpl' title_prefix=cond( $env_badge.title, concat( '[', $env_badge.name|upcase, '] ' ), '' )}
@@ -56,7 +59,7 @@
 
 </head>
 
-<body>
+<body data-a4-columns="{$a4_columns}">
 
     {* Skip link: the first stop of the Tab key, shown only while focused, to the main landmark (see $main_wrapped). *}
     <a class="a4-skip-link" href="#{if $main_wrapped}a4-main{else}maincontent{/if}">{'Skip to main content'|i18n( 'design/admin/pagelayout' )|wash}</a>
