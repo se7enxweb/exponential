@@ -1,6 +1,7 @@
 {* The progress page of a content job (content/job/<id>): a subtree remove or copy running in the background.
    The page polls content/job/<id>?json=1 every two seconds and updates the bar, the counts, the message and the
-   log; when the job finishes it opens the result, when it fails or is cancelled it reloads to show the buttons. *}
+   log; when the job finishes it opens the result, when it fails or is cancelled it reloads to show the buttons.
+   It stops with a message when the job is gone or the session has ended (page/content_job.js). *}
 {def $state_names = hash( 'queued',    'Waiting'|i18n( 'design/admin/content/job' ),
                           'running',   'Running'|i18n( 'design/admin/content/job' ),
                           'done',      'Done'|i18n( 'design/admin/content/job' ),
@@ -16,6 +17,9 @@
      data-text-opening="{'Opening the result in %seconds s'|i18n( 'design/admin/content/job' )|wash}"
      data-text-stopping="{'Stopping after the current batch'|i18n( 'design/admin/content/job' )|wash}"
      data-text-waiting="{'Waiting for the status...'|i18n( 'design/admin/content/job' )|wash}"
+     data-text-gone="{'This job no longer exists or you may not see it. The status is not updated any more.'|i18n( 'design/admin/content/job' )|wash}"
+     data-text-signed-out="{'You are no longer signed in. Sign in again and reload this page to follow the job.'|i18n( 'design/admin/content/job' )|wash}"
+     data-text-error="{'The status could not be shown. Reload the page to follow the job.'|i18n( 'design/admin/content/job' )|wash}"
      data-states="{concat( $state_names.queued, '|', $state_names.running, '|', $state_names.done, '|', $state_names.failed, '|', $state_names.cancelled )|wash}">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
