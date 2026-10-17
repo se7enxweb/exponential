@@ -105,6 +105,13 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
     protected $formTokenRefusal = null;
 
     /**
+     * Whether run() started a web request whose request log (expRequestLog::finish()) shutdown() still ends
+     *
+     * @var bool
+     */
+    protected $requestLogPending = false;
+
+    /**
      * Hash of settings for the web kernel handler.
      *
      * Keys can be:
@@ -132,6 +139,12 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         // What the debug bar's Rendering tab shows of the previous request
         if ( class_exists( 'expRenderStats' ) )
             expRenderStats::resetRequest();
+        // The request log (404.log, security.log): the reason and the verdict of the previous request are gone
+        if ( class_exists( 'expRequestLog' ) )
+            expRequestLog::reset();
+        // and the classifier is built again from this request's siteaccess settings when it is first asked
+        if ( class_exists( 'expRequestClassifier' ) && method_exists( 'expRequestClassifier', 'reset' ) )
+            expRequestClassifier::reset();
 
         if ( isset( $settings['injected-settings'] ) )
         {
@@ -359,6 +372,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
 
         $obLevel = ob_get_level();
         ob_start();
+        // Set again here as in the constructor: a kernel that runs twice starts its request log afresh; shutdown()
+        // ends it with expRequestLog::finish()
+        if ( class_exists( 'expRequestLog' ) )
+            expRequestLog::reset();
+        $this->requestLogPending = true;
         $this->requestInit();
 
         // send header information
@@ -854,6 +872,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 {
                     // module and view name the missing page on the error page (error/kernel/21); check is what
                     // the exception path of eZModule::handleError() reads
+                    // A view the module does not have: a not-found, written to 404.log (site.ini [RequestLogSettings])
+                    if ( class_exists( 'expRequestLog' ) )
+                        expRequestLog::reason( 'view', $moduleName . '/' . $functionName );
                     $moduleResult = $this->module->handleError( eZError::KERNEL_MODULE_VIEW_NOT_FOUND, 'kernel',
                                                                 array( "check" => $moduleCheck, 'module' => $moduleName, 'view' => $functionName ) );
                     $runModuleView = false;
@@ -999,6 +1020,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         if ( class_exists( 'expAuditGuard' ) && !expAuditGuard::webAllows( $this->module->attribute( 'name' ), $functionName ) )
                             $moduleResult = expAuditGuard::refusedResult( $this->module->attribute( 'name' ), $functionName );
 
+                        // The node or object the view is asked for, for the line of a request that ends as a not-found
+                        if ( class_exists( 'expRequestLog' ) )
+                            expRequestLog::noteView( $this->module->attribute( 'name' ), $functionName,
+                                                     self::namedViewParameters( $availableViewsInModule, $functionName, $params ) );
+
                         // The request rules (requestrules.ini) decide after the
                         // policies allowed the view and before it runs
                         if ( $moduleResult === null && class_exists( 'ezpRequestRuleKernel' ) )
@@ -1011,6 +1037,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                             $moduleResult = $this->module->run( $functionName, $params, false, $userParameters );
 
                         if ( $this->module->exitStatus() == eZModule::STATUS_FAILED && $moduleResult == null )
+                        {
+                            if ( class_exists( 'expRequestLog' ) )
+                                expRequestLog::reason( 'view', $moduleName . '/' . $functionName );
                             $moduleResult = $this->module->handleError(
                                 eZError::KERNEL_MODULE_VIEW_NOT_FOUND,
                                 'kernel',
@@ -1019,22 +1048,36 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                                     'view' => $functionName
                                 )
                             );
+                        }
                     }
                 }
             }
             else if ( $moduleCheck['result'] )
             {
-                eZDebug::writeError( "Undefined module: $moduleName", "index" );
+                // A module that does not exist is a page that does not exist: 404.log, not a fault for error.log,
+                // while site.ini [RequestLogSettings] NotFoundLog is enabled
+                if ( !class_exists( 'expRequestLog' ) || !expRequestLog::reason( 'module', $moduleName, null, "Undefined module: $moduleName" ) )
+                    eZDebug::writeError( "Undefined module: $moduleName", "index" );
                 $this->module = new eZModule( "", "", $moduleName );
                 $GLOBALS['eZRequestedModule'] = $this->module;
                 $moduleResult = $this->module->handleError( eZError::KERNEL_MODULE_NOT_FOUND, 'kernel', array( 'module' => $moduleName ) );
             }
             else
             {
+                // Switched off for this siteaccess: answered as a not-found, written to 404.log while
+                // site.ini [RequestLogSettings] NotFoundLog is enabled, else to error.log as before
                 if ( $moduleCheck['view_checked'] )
-                    eZDebug::writeError( "View '" . $moduleCheck['view'] . "' in module '" . $moduleCheck['module'] . "' is disabled", "index" );
+                {
+                    $disabledLine = "View '" . $moduleCheck['view'] . "' in module '" . $moduleCheck['module'] . "' is disabled";
+                    $disabledDetail = $moduleCheck['module'] . '/' . $moduleCheck['view'];
+                }
                 else
-                    eZDebug::writeError( "Module '" . $moduleCheck['module'] . "' is disabled", "index" );
+                {
+                    $disabledLine = "Module '" . $moduleCheck['module'] . "' is disabled";
+                    $disabledDetail = $moduleCheck['module'];
+                }
+                if ( !class_exists( 'expRequestLog' ) || !expRequestLog::reason( 'disabled', $disabledDetail, null, $disabledLine ) )
+                    eZDebug::writeError( $disabledLine, "index" );
                 $GLOBALS['eZRequestedModule'] = $this->module = new eZModule( "", "", $moduleCheck['module'] );
                 // A module this siteaccess switches off answers as one that does
                 // not exist (404), so the page does not tell that it is there.
@@ -1071,6 +1114,30 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         }
 
         return $moduleResult;
+    }
+
+    /**
+     * The parameters of a view call by the names the module definition gives them (NodeID, ObjectID ...), as
+     * eZModule::run() maps them, for the request log.
+     *
+     * @param array $views the module's views
+     * @param string $functionName
+     * @param array $params the positional parameters
+     * @return array
+     */
+    protected static function namedViewParameters( $views, $functionName, $params )
+    {
+        $named = array();
+        if ( !is_array( $views ) || !isset( $views[(string)$functionName]['params'] ) || !is_array( $params ) )
+            return $named;
+        $i = 0;
+        foreach ( (array)$views[(string)$functionName]['params'] as $name )
+        {
+            if ( isset( $params[$i] ) && is_scalar( $params[$i] ) )
+                $named[(string)$name] = $params[$i];
+            ++$i;
+        }
+        return $named;
     }
 
     /**
@@ -1763,6 +1830,22 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      */
     protected function shutdown( $reInitialize = true )
     {
+        // The end of the web request: its line in security.log or 404.log, when one is still pending (once)
+        if ( $this->requestLogPending )
+        {
+            $this->requestLogPending = false;
+            if ( class_exists( 'expRequestLog' ) )
+            {
+                try
+                {
+                    expRequestLog::finish();
+                }
+                catch ( Throwable $e )
+                {
+                    eZDebug::writeWarning( 'The request log failed: ' . $e->getMessage(), __METHOD__ );
+                }
+            }
+        }
         eZExecution::cleanup();
         eZExecution::setCleanExit();
         eZExpiryHandler::shutdown();

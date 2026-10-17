@@ -42,7 +42,12 @@ class ezpRequestRuleKernel
         if ( $result === null )
             return null;
 
-        eZDebug::writeNotice( "Request rule '{$result->rule}': " . $result->describe() . ' for ' . $context->get( 'typed_uri' ), __METHOD__ );
+        // A rule that answers "not found" makes the request a 404: its one line is in 404.log (reason rule:<name>,
+        // doc/features/6.0/request-logs.md), not a notice as well
+        $ruleLine = "Request rule '{$result->rule}': " . $result->describe() . ' for ' . $context->get( 'typed_uri' );
+        if ( $result->type !== ezpRequestRuleResult::NOT_FOUND || !class_exists( 'expRequestLog' )
+             || !expRequestLog::reason( 'rule', (string)$result->rule ) )
+            eZDebug::writeNotice( $ruleLine, __METHOD__ );
         if ( $result->type === ezpRequestRuleResult::REWRITE
              && ( isset( $route['rewrites'] ) ? $route['rewrites'] : 0 ) >= $engine->maxRewrites() )
         {

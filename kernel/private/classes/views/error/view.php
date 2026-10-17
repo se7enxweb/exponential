@@ -120,7 +120,12 @@ class View extends \Exponential\Runnable\ModuleView
             // told from a fault. An anonymous visitor asked to log in (401), a request the policies refuse (403) and a
             // moved page (301) are the designed answers to a request, not faults: they are notices. Refused access
             // that matters for security is in auth.log and the audit trail, not here.
-            if ( !$isFormTokenRefusal )
+            // A request the request classifier names a probe is written to security.log only, and a page that does
+            // not exist (404, 410) to 404.log (site.ini [RequestLogSettings]): expRequestLog::handleError() writes
+            // that one line and says so; everything else is written here as before.
+            $requestLogged = !$isFormTokenRefusal && class_exists( 'expRequestLog' )
+                             && \expRequestLog::handleError( $httpErrorCode, $errorType, $errorNumber );
+            if ( !$isFormTokenRefusal && !$requestLogged )
             {
                 $errorLine = "Error ocurred using URI: " . $_SERVER['REQUEST_URI'] . " ($errorType error $errorNumber"
                            . ( $httpErrorCode !== null ? ", HTTP $httpErrorCode" : '' ) . ')';

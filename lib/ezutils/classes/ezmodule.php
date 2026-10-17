@@ -768,6 +768,17 @@ class eZModule
             eZDebug::writeWarning( "No error type specified for error code $errorCode, assuming kernel.\nA specific error type should be supplied, please check your code.", __METHOD__ );
             $errorType = 'kernel';
         }
+
+        // The view that raised the error and its parameters (the node or object it was asked for), for the line of
+        // the request log; the error module's own run replaces them in $GLOBALS['eZRequestedModuleParams']. Only when
+        // the kernel noted none: a persistent worker may still hold the previous request's parameters there
+        if ( class_exists( 'expRequestLog' ) && isset( $GLOBALS['eZRequestedModuleParams']['module_name'] )
+             && $GLOBALS['eZRequestedModuleParams']['module_name'] === $this->Name )
+        {
+            expRequestLog::noteView( $this->Name, (string)$GLOBALS['eZRequestedModuleParams']['function_name'],
+                                     isset( $GLOBALS['eZRequestedModuleParams']['parameters'] ) ? $GLOBALS['eZRequestedModuleParams']['parameters'] : array(), false );
+        }
+
         $errorModule = $this->errorModule();
 
         $module = self::findModule( $errorModule['module'], $this );
@@ -1805,8 +1816,14 @@ class eZModule
         if ( count( $this->Functions ) > 0 and
              !isset( $this->Functions[$functionName] ) )
         {
-            eZDebug::writeError( "Undefined view: " . $this->Module["name"] . "::$functionName ",
-                                 "eZModule" );
+            // The view the request asked for (the requested module): a page that does not exist, for 404.log while
+            // site.ini [RequestLogSettings] NotFoundLog is enabled. Any other call of an unknown view is a fault.
+            $requested = isset( $GLOBALS['eZRequestedModule'] ) && $GLOBALS['eZRequestedModule'] === $this;
+            if ( !$requested || !class_exists( 'expRequestLog' )
+                 || !expRequestLog::reason( 'view', $this->Module["name"] . '/' . $functionName, null,
+                                            "Undefined view: " . $this->Module["name"] . "::$functionName " ) )
+                eZDebug::writeError( "Undefined view: " . $this->Module["name"] . "::$functionName ",
+                                     "eZModule" );
             $this->setExitStatus( self::STATUS_FAILED );
             $Return = null;
             return $Return;

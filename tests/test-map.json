@@ -331,7 +331,20 @@
       "tests/tests/design/AdminPhoneMenuTest.php"
     ],
     "kernel/private/classes/views/error/view.php": [
-      "tests/tests/kernel/error/ErrorHeaderListTest.php"
+      "tests/tests/kernel/error/ErrorHeaderListTest.php",
+      "tests/tests/kernel/requestlog/expRequestLogTest.php"
+    ],
+    "kernel/classes/requestclassifier/*": [
+      "tests/tests/kernel/requestclassifier/expRequestClassifierRulesTest.php",
+      "tests/tests/kernel/requestclassifier/expRequestClassifierTest.php",
+      "tests/tests/kernel/requestclassifier/expRequestClassifierThresholdTest.php"
+    ],
+    "settings/requestclassifier.ini": [
+      "tests/tests/kernel/requestclassifier/expRequestClassifierTest.php"
+    ],
+    "kernel/classes/requestlog/*": [
+      "tests/tests/kernel/requestlog/expRequestLogTest.php",
+      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php"
     ],
     "kernel/private/classes/views/user/logout.php": [
       "tests/tests/kernel/classes/eZUserLogoutTest.php"
@@ -960,7 +973,8 @@
       "tests/tests/kernel/logviewer/expLogHealthTest.php",
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
       "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
-      "tests/tests/kernel/logviewer/expLogBundleTest.php"
+      "tests/tests/kernel/logviewer/expLogBundleTest.php",
+      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php"
     ],
     "kernel/classes/logviewer/exploghealth.php": [
       "tests/tests/kernel/logviewer/expLogHealthTest.php"
@@ -969,7 +983,8 @@
       "tests/tests/kernel/logviewer/expLogBundleTest.php"
     ],
     "kernel/classes/logviewer/explogdigest.php": [
-      "tests/tests/kernel/logviewer/expLogDigestTest.php"
+      "tests/tests/kernel/logviewer/expLogDigestTest.php",
+      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php"
     ],
     "kernel/classes/logviewer/explogmanager*.php": [
       "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
@@ -979,7 +994,8 @@
       "tests/tests/design/LogViewerNavTest.php",
       "tests/tests/design/LogViewerCopyMessagesTest.php",
       "tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php",
-      "tests/tests/design/AdminStylingRulesTest.php"
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php"
     ],
     "design/*/javascript/page/setup_logs*.js": [
       "tests/tests/design/LogViewerNavTest.php",
@@ -1018,7 +1034,8 @@
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
       "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
       "tests/tests/kernel/logviewer/expLogBundleTest.php",
-      "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
+      "tests/tests/kernel/classes/ini/expIniRoundTripTest.php",
+      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php"
     ],
     "tests/tests/kernel/logviewer/expLogViewerTestFixtures.php": [
       "tests/tests/kernel/logviewer/expLogTailTest.php",
@@ -1027,7 +1044,8 @@
       "tests/tests/kernel/logviewer/expLogActionsTest.php",
       "tests/tests/kernel/logviewer/expLogViewerTest.php",
       "tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php",
-      "tests/tests/kernel/logviewer/expLogKeyTest.php"
+      "tests/tests/kernel/logviewer/expLogKeyTest.php",
+      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php"
     ],
     "kernel/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
