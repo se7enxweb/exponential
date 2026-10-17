@@ -8,6 +8,21 @@
 
 /* ---- shared by several setup pages ------------------------------------------------------------------------- */
 
+/* The parts a page's script shows once the document is parsed (hidden in the markup, so the page works without the
+   script) are drawn from the first paint when the frame's scripts run: html.a4-js, set by a4_head.js before the first
+   paint. Until 2026-10 they appeared late and the content below moved down (setup/cache: the search and group filter,
+   256px; setup/info: "Copy report as text" pushed the toolbar's buttons aside). The filter's count line is kept free
+   for the number the script writes into it. Each script still sets hidden to false: this only draws it earlier
+   (!important: inside .a4-page, components.css hides every [hidden] with !important). */
+html.a4-js #exp-cache-toolbar[hidden],
+html.a4-js .a4-filterbar.a4-setup-js-only[hidden] { display: grid !important; }
+html.a4-js #exp-sysinfo-copy[hidden],
+html.a4-js #exp-cache-select-all-label[hidden],
+html.a4-js .a4-btn.a4-setup-copy.a4-setup-js-only[hidden] { display: inline-flex !important; }
+html.a4-js #exp-cache-count:empty,
+html.a4-js #upgrade-filter-count:empty { min-height: 1lh; }
+html.a4-js .a4-setup-nojs-only { display: none; }
+
 
 /* A list of values on one line, separated by a dot */
 .a4-setup-inline { margin: 0; padding: 0; list-style: none; font-size: var(--a4-text-s); }
