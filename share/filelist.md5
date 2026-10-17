@@ -3201,7 +3201,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-ac425b81ccf8dc7985bfb1d19b266b4d  doc/changelogs/6.0/6.0.15.md
+2abbe6abb6d7895dc5430fb524e4e9e4  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3582,7 +3582,7 @@ d75618879646cabf05b8f01755b2c624  doc/features/6.0/extensions/ezie.md
 78114b9df3950d3cadd22150641928a9  doc/features/6.0/extensions/ezmbpaex.md
 287fa7bc8067d5bdb99b3ad08852c73d  doc/features/6.0/extensions/ezmultiupload.md
 63e62ca0afe62f6ae451bad1aab57d3e  doc/features/6.0/extensions/ezodf.md
-1458a7aae764f949d20a82f10de6382c  doc/features/6.0/extensions/ezoe.md
+7d0bd3b35bd366b35a564b79058a2527  doc/features/6.0/extensions/ezoe.md
 93257863022a2ae320367e716fd56a29  doc/features/6.0/extensions/ezpaypal.md
 d401faa952476917589d0af7b2106553  doc/features/6.0/extensions/ezpm.md
 04bfe0ddd18984552a1197b37e1b2be1  doc/features/6.0/extensions/ezprestapi.md
@@ -3656,6 +3656,7 @@ f9c24ee19f2caf2e1326cf5158b46bfc  doc/features/6.0/repair-from-the-browser.md
 d19ac2813afb3d92cc981015c8ecdfc1  doc/features/6.0/request-rules.md
 24e8ccadcc06ff46a640a76473fd2d4a  doc/features/6.0/reset-user-password.md
 dfc80bc3e8c5193eda53ed0174e12623  doc/features/6.0/reverse-relation-check.md
+a2b854480148165d9d884261749eaecb  doc/features/6.0/rich-text-supplementary-characters-and-tex-source.md
 f3e55ab662ea59e47a493133318f41ee  doc/features/6.0/right-to-left.md
 cb4ba958c01d20e816fc121fd17f2d6d  doc/features/6.0/robots-txt.md
 5546e1fd2154341af36b7d47c0e72dac  doc/features/6.0/role-and-policy-template-operators.md
@@ -4852,7 +4853,7 @@ f3bffc88e81741de46f06135aac557bf  extension/ezoe/design/standard/templates/ezoe/
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
 b9fd60ca35c9e3786ffd14bb18c1ed1f  extension/ezoe/extension.xml
 01214e50476261ce630c830eac088e41  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
-dd1b898e65def2b18874cfd8e698e54b  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
+ef6ba4bf267f1ea133f9b6dbee43529e  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
 18f870446f4fbe17ed7e04874d42d544  extension/ezoe/modules/ezoe/classes/GoogleSpell.php
 61c42625117fd10f3bf7c497841b774c  extension/ezoe/modules/ezoe/classes/PSpell.php
@@ -5116,8 +5117,8 @@ e5b2a2662a2b0de99fd4f1d6d63786e8  kernel/classes/datatypes/ezuser/ezuser.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
 57ccebfb2e208033a9dd81415f35937f  kernel/classes/datatypes/ezuser/ezusertype.php
-dc082dd96e41677e348d1721ead53183  kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php
-69534db58a4fb5aff975c479f38a7941  kernel/classes/datatypes/ezxmltext/ezxmlinputparser.php
+1a8700ce4387c0176e386ae6ee0e5df4  kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php
+262a87f05bcc2be853a8f234ac70848e  kernel/classes/datatypes/ezxmltext/ezxmlinputparser.php
 2165581a04a9104b665395350c40188f  kernel/classes/datatypes/ezxmltext/ezxmloutputhandler.php
 7e3e4d2b10fd3ee473b8e4c86b142d6c  kernel/classes/datatypes/ezxmltext/ezxmlschema.php
 90dcdac76c12a61ab7b8a3a4224eaf12  kernel/classes/datatypes/ezxmltext/ezxmltext.php
@@ -6699,7 +6700,7 @@ f99a41a30ace913f63ff7525de52d0ff  settings/browse.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 182107cb19ce2f10279176af2ccb2819  settings/collect.ini
-6b0df53fca749a21bb7814ac2c08a7af  settings/content.ini
+9c7e5deb622b4f9cea157f9d5a3bb2bd  settings/content.ini
 0d7e5e0bb39e92668a902f1fd81d84ef  settings/contentcheck.ini
 850a0458284805760eaa0832567cecc1  settings/contentfinder.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
@@ -6715,7 +6716,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 622bfdd0839287780dbce473c779c5cb  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
-179e641f13c2340ba00500111ea04bb2  settings/ezxml.ini
+e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
 cb0b16d6478138ba8429920d17189ded  settings/file.ini
 d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
@@ -7598,7 +7599,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-e9db5eb2bb4e5f0d39ce7bd2d537ad7e  tests/test-map.json
+621cbdb4d3e4d7f3d05f72f28244ba4d  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 0f61a66b5e0996561766fc594dec3781  tests/tests/design/Admin4lReviewTest.php
@@ -7837,6 +7838,7 @@ c41c31f51231d61133a36baf5a601830  tests/tests/extension/ezoe/expOEEmbedImageAlia
 9f7b44df6f05aa7d16b8fe1f90161cbd  tests/tests/extension/ezoe/expOEEmbedViewTest.php
 078eb45b6ed73577df8ea2e1428cba6a  tests/tests/extension/ezoe/expOEEngineConfigTest.php
 fc96db66db0ea2664cf805a08fca8284  tests/tests/extension/ezoe/expOEEngineViewTest.php
+7ad9d2d425902731e9976f6c60de3223  tests/tests/extension/ezoe/expOEFormulaTextTest.php
 1103e78206d9b10b78585b071e7c48bc  tests/tests/extension/ezoe/expOEInputBreakAttributesTest.php
 6834ab097cfc296675fecaebdf5dfcb3  tests/tests/extension/ezoe/expOEInputTableCellTextTest.php
 dbd0bda355096c5da0a52429cb51a1a9  tests/tests/extension/ezoe/expOEInputValidFlagTest.php
@@ -8450,6 +8452,7 @@ ad0918c3bcd020a69bad17c2d10d356c  tests/tests/kernel/datatypes/ezuser/eztextfile
 5cd4f65645fc10938f3451afda3107db  tests/tests/kernel/datatypes/ezuser/ezusercache_test.php
 1791f20631a86bbf53978fe93bfd02ed  tests/tests/kernel/datatypes/ezuser/ezusertype_regression.php
 25a79e382b1b906fbbc7dc1b7d19f223  tests/tests/kernel/datatypes/ezuser/setup_accounts.php
+18819a79db8aba1b5259586766dcf053  tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php
 44372283e89c499536c3dec68cd5ed9e  tests/tests/kernel/datatypes/ezxmltext/eZXMLTextTest.php
 d68b2b4b96d62568ec43342b23dec0e1  tests/tests/kernel/datatypes/ezxmltext/ezxmlinputparser.php
 8dd20a4810d187475ce7a91a1d492507  tests/tests/kernel/datatypes/ezxmltext/ezxmlinputparser_regression.php
