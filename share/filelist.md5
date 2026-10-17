@@ -909,7 +909,7 @@ fa5bc6eab0c0f988c4aaf65e4b7d6f68  design/admin4/javascript/node_tabs.js
 08a6a9cff05522d2cf740364b98d49d1  design/admin4/javascript/page/content_bookmark.js
 63246daf88b74bd489fc08b24f78c55b  design/admin4/javascript/page/content_datepicker.js
 eb5dfd418d4d9068306e9186e38cde79  design/admin4/javascript/page/content_draft.js
-275e96c7c592c01355399d91fdcd4627  design/admin4/javascript/page/content_edit_attribute.js
+8d7d03e844588e56fa6ef11607b1e56e  design/admin4/javascript/page/content_edit_attribute.js
 683d381f3e4d7f0e8ec67947b2d205a9  design/admin4/javascript/page/content_edit_languages.js
 11fdfa7a2ffee85a21232fb440c916cf  design/admin4/javascript/page/content_ezobjectrelation_ajaxuploader.js
 60dcec353e5cace6692b1d26708062a8  design/admin4/javascript/page/content_ezobjectrelationlist_ajaxuploader.js
@@ -2002,7 +2002,7 @@ d0f2b8b0edec14ee34329b9c861f5b3a  design/standard/stylesheets/expdebugbar.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
 bcdfcacb01a50d4aac0cacb753500cba  design/standard/stylesheets/mailpreferences.css
 d30d96f7fbd57acdf214228a9caeeee2  design/standard/stylesheets/mailpreferences_account_link.css
-dec25ff840de2485604985988acdf6c2  design/standard/stylesheets/mailpreferences_signup.css
+0dc888c586595537ff00fa327e3ef019  design/standard/stylesheets/mailpreferences_signup.css
 d5de150d8a583b510f49f7c3021088cf  design/standard/stylesheets/manual.css
 e91e66b21615238ff34d939f1fffe61a  design/standard/stylesheets/oauthadmin.css
 98719dedc66bde23d454467e88a81961  design/standard/stylesheets/setup.css
@@ -3201,7 +3201,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-67cb0c8436865c82fc9f5ad3f99a848a  doc/changelogs/6.0/6.0.15.md
+0ac4c1e006a26b8d7678d8d8b816c731  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7606,7 +7606,7 @@ ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1ae5a0d8d8818787dcfc5b08f01fbeb7  tests/tests/design/AdminBaseStylesheetsTest.php
 59ec01ce80314b5d77be3007f4a32b66  tests/tests/design/AdminBrowseCurrentNodeTest.php
 759fe4ff4c2d9fc1985f080528d04c2f  tests/tests/design/AdminCardsTest.php
-b4eed4df04c71138df32774d86cc7f9f  tests/tests/design/AdminContentEditAttributeKindsTest.php
+928ab4135429ae23231564d2d7d7c119  tests/tests/design/AdminContentEditAttributeKindsTest.php
 f8fc661b72f217d00398c1a6862843d3  tests/tests/design/AdminContentEditFormsTest.php
 cb34401be4cee0b728449535cc448c34  tests/tests/design/AdminContentJobScriptsTest.php
 8b4a9581fc2949dd1f68b8473cfc42bb  tests/tests/design/AdminContentSecurityPolicyTest.php
