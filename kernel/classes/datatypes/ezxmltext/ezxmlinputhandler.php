@@ -230,7 +230,18 @@ class eZXMLInputHandler
         $result = preg_replace( $pattern, $replacement, $text, -1, $count );
         if ( $result === null )
         {
-            $text = function_exists( 'mb_scrub' ) ? mb_scrub( $text, 'UTF-8' ) : (string)@iconv( 'UTF-8', 'UTF-8//IGNORE', $text );
+            if ( function_exists( 'mb_scrub' ) )
+            {
+                // mb_scrub() uses the substitute character of mbstring, '?' unless it was set
+                $substitute = mb_substitute_character();
+                mb_substitute_character( 0xFFFD );
+                $text = mb_scrub( $text, 'UTF-8' );
+                mb_substitute_character( $substitute );
+            }
+            else
+            {
+                $text = (string)@iconv( 'UTF-8', 'UTF-8//IGNORE', $text );
+            }
             $result = preg_replace( $pattern, $replacement, $text, -1, $count );
             ++$count;
         }
