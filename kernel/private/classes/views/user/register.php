@@ -19,9 +19,12 @@ namespace
 {
 
 
-if ( !function_exists( 'checkContentActions' ) )
+// Its own name, not the shared checkContentActions of the original views: under a persistent-worker server (Velocity,
+// ForkPerRequest=disabled) a worker keeps every function it ever defined, so with one shared name whichever view
+// ran first in a worker supplied the action check of the other (a content/edit Publish then ran user/register).
+if ( !function_exists( 'expUserRegisterCheckContentActions' ) )
 {
-    function checkContentActions( $module, $class, $object, $version, $contentObjectAttributes, $EditVersion, $EditLanguage )
+    function expUserRegisterCheckContentActions( $module, $class, $object, $version, $contentObjectAttributes, $EditVersion, $EditLanguage )
     {
         if ( $module->isCurrentAction( 'Cancel' ) )
         {
@@ -360,7 +363,7 @@ class Register extends \Exponential\Runnable\ModuleView
         $Params['ObjectID'] = $userID;
 
         $Module->addHook( 'post_publish', 'registerSearchObject', 1, false );
-        $Module->addHook( 'action_check', 'checkContentActions' );
+        $Module->addHook( 'action_check', 'expUserRegisterCheckContentActions' );
 
         $OmitSectionSetting = true;
 

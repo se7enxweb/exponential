@@ -3,6 +3,7 @@
     are (a text part is not HTML); buttons and links become "Label: URL" lines. A row's value stays on its one line:
     its line breaks become spaces, so a value the user typed (a name) cannot add lines that look like the mail's own
     "Label: URL" links.
+    A value that is not a string (a number, or nothing) is written as text, so the line never stops the mail.
 
     Line breaks: the template parser drops one newline right after a tag and one right before a tag, so the blank
     lines below are deliberate (a text between two tags needs three newlines to print one).
@@ -27,7 +28,7 @@
 {/if}
 {if $mt_rows|count}
 {foreach $mt_rows as $mt_row}
-{$mt_row.label}: {$mt_row.value|explode( "\r" )|implode( " " )|explode( "\n" )|implode( " " )}
+{$mt_row.label}: {concat( '', $mt_row.value )|explode( "\r" )|implode( " " )|explode( "\n" )|implode( " " )}
 
 {/foreach}
 

@@ -19,9 +19,12 @@ namespace
 {
 
 
-if ( !function_exists( 'checkContentActions' ) )
+// Its own name, not the shared checkContentActions of the original views: under a persistent-worker server (Velocity,
+// ForkPerRequest=disabled) a worker keeps every function it ever defined, so with one shared name whichever view
+// ran first in a worker supplied the action check of the other (a content/edit Publish then ran user/register).
+if ( !function_exists( 'expContentEditCheckContentActions' ) )
 {
-    function checkContentActions( $module, $class, $object, $version, $contentObjectAttributes, $EditVersion, $EditLanguage, $FromLanguage, &$Result )
+    function expContentEditCheckContentActions( $module, $class, $object, $version, $contentObjectAttributes, $EditVersion, $EditLanguage, $FromLanguage, &$Result )
     {
         if ( $module->isCurrentAction( 'Preview' ) )
         {
@@ -537,7 +540,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                                              array( 'AccessList' => $obj->accessList( 'edit' ) ) ) );
             }
         }
-        $Module->addHook( 'action_check', 'checkContentActions' );
+        $Module->addHook( 'action_check', 'expContentEditCheckContentActions' );
 
         $includeResult = include( 'kernel/content/attribute_edit.php' );
 

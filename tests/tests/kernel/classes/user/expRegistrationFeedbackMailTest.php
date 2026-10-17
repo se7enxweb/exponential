@@ -10,6 +10,7 @@
  *  RF-04 - without links (false): the account information only, no buttons, no link to the administration
  *  RF-05 - values are washed in the HTML part: a login with markup is escaped
  *  RF-07 - line breaks a user typed (a name) cannot add lines to the text part that look like its links
+ *  RF-08 - values that are not strings (no login, a number) do not stop the text part
  *  RF-06 - only mail/layout.tpl carries styles; registrationfeedback.tpl and layout_text.tpl have none, and none of
  *          the three names the old product name
  *
@@ -188,6 +189,16 @@ class expRegistrationFeedbackMailTest extends PHPUnit\Framework\TestCase
         $this->assertDoesNotMatchRegularExpression( '/^(Activate account|View account): https:\/\/evil/m', $mail['text'] );
         $this->assertStringContainsString( 'Name: RF  Activate account: https://evil.example.invalid/x View account: https://evil.example.invalid/y', $mail['text'] );
         $this->assertStringContainsString( 'Activate account: ' . self::links()['approve'], $mail['text'], 'the real links stay' );
+    }
+
+    /** RF-08 */
+    public function testValuesThatAreNotStringsDoNotStopTheTextPart()
+    {
+        // no login (the user could not be fetched) and a name that is a number: the text part still renders
+        $mail = $this->render( 'administrator', false, null, 7 );
+        $this->assertIsString( $mail['text'] );
+        $this->assertStringContainsString( 'Name: 7', $mail['text'] );
+        $this->assertMatchesRegularExpression( '/^Username: *$/m', $mail['text'] );
     }
 
     /** RF-06 */
