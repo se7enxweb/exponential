@@ -63961,6 +63961,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Restore all %count files</source>
         <translation>Alle %count Dateien wiederherstellen</translation>
     </message>
+    <message>
+        <source>Select all</source>
+        <translation>Alle auswählen</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

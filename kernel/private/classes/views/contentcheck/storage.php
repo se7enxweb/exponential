@@ -45,7 +45,12 @@ class Storage extends \Exponential\Runnable\ModuleView
         $get = array();
         foreach ( array( 'Show', 'Sort', 'Order', 'Kind' ) as $name )
             $get[$name] = $http->hasGetVariable( $name ) ? $http->getVariable( $name ) : null;
+        // "Select all" / "Select none" of the kinds (KindChoice); none ticked lists every kind, as no box ticked does
+        $kindChoice = $http->hasGetVariable( 'KindChoice' ) ? $http->getVariable( 'KindChoice' ) : '';
+        if ( $kindChoice === 'all' || $kindChoice === 'none' )
+            $get['Kind'] = $kindChoice === 'all' ? \expContentCheckStorage::PROBLEMS : null;
         $params = self::parameters( $get );
+        $params['kinds_shown'] = $kindChoice === 'none' ? array() : $params['kinds'];
         $params['offset'] = \expAdminPagination::offset( $Params );
         $params['limit'] = $limit;
         $nodeID = \expContentCheckScope::resolve( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,

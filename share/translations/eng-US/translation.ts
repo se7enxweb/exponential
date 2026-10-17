@@ -68065,6 +68065,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Restore all %count files</source>
         <translation>Restore all %count files</translation>
     </message>
+    <message>
+        <source>Select all</source>
+        <translation>Select all</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

@@ -88,14 +88,7 @@
     <div class="a4-field">
         <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'kernel/contentcheck' )}</button>
     </div>
-    {* after Show: Enter in a field submits the form with its first button, which must stay Show *}
-    <div class="a4-field" role="group" aria-labelledby="cc-class-quick">
-        <span class="a4-label" id="cc-class-quick">{'Choose classes'|i18n( 'kernel/contentcheck' )}</span>
-        <div class="a4-row">
-            <button type="submit" class="a4-btn a4-btn-small" name="AllClassesButton" value="1">{'All classes'|i18n( 'kernel/contentcheck' )}</button>
-            <button type="submit" class="a4-btn a4-btn-small" name="NoClassesButton" value="1">{'No class'|i18n( 'kernel/contentcheck' )}</button>
-        </div>
-    </div>
+    {include uri='design:contentcheck/filter_choice.tpl' name='Class' label='Classes'|i18n( 'kernel/contentcheck' )}
 </form>
 </section>
 
@@ -104,12 +97,8 @@
 <input type="hidden" name="NodeID" value="{$params.node_id}" />
 
 <section class="a4-section" aria-labelledby="cc-list-title">
-<div class="a4-section-head">
-    <h2 class="a4-h2" id="cc-list-title">{'Objects'|i18n( 'kernel/contentcheck' )}</h2>
-    {if $result.count|gt( 0 )}
-    <span class="a4-meta">{'%from to %to of %count'|i18n( 'kernel/contentcheck',, hash( '%from', sum( $params.offset, 1 ), '%to', min( sum( $params.offset, $limit ), $result.count ), '%count', $result.count ) )}</span>
-    {/if}
-</div>
+{include uri='design:contentcheck/results_head.tpl' title='Objects'|i18n( 'kernel/contentcheck' ) title_id='cc-list-title'
+         offset=$params.offset limit=$limit count=$result.count}
 
 {if $rows|count|eq( 0 )}
 <p class="a4-empty">{'No unused asset below this node matches the filter.'|i18n( 'kernel/contentcheck' )}</p>
@@ -143,44 +132,23 @@
 </div>
 {/if}
 
-<div class="a4-listfoot">
-    <p class="a4-sizes">
-        <span>{'Per page'|i18n( 'kernel/contentcheck' )}:</span>
-    {foreach $limit_choices as $limit_index => $limit_option}
-        {if eq( $limit_option, $limit )}
-        <span class="current" aria-current="true">{$limit_option}</span>
-        {else}
-        <a href={concat( '/user/preferences/set/', $limit_preference, '/', $limit_index|inc )|ezurl} title="{'Show %count items per page.'|i18n( 'kernel/contentcheck',, hash( '%count', $limit_option ) )}">{$limit_option}</a>
-        {/if}
-    {/foreach}
-    </p>
-    <div class="a4-pager">
-    {include name=navigator
-             uri='design:navigator/google.tpl'
-             page_uri=$page_uri
-             page_uri_suffix=$page_uri_suffix
-             item_count=$result.count
-             view_parameters=$view_parameters
-             item_limit=$limit}
-    </div>
-</div>
-</section>
-
 {if and( $can_trash, $tickable )}
-<div class="a4-toolbar is-bottom">
-    {include uri='design:contentcheck/select_count.tpl' select_all=$select_all total=$tickable_count
-             page_url=concat( $page_uri, '/(offset)/', $params.offset, $page_uri_suffix )}
-    <div class="a4-actions">
+{set-block variable=cc_actions}
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="TrashButton" value="1" aria-describedby="cc-trash-help">{'Move ticked objects to the trash'|i18n( 'kernel/contentcheck' )}</button>
         {if $result.count|gt( $rows|count )}
         {foreach $params.class_ids as $class_id}<input type="hidden" name="ClassID[]" value="{$class_id}" />{/foreach}
         {if $params.containers}<input type="hidden" name="Containers" value="1" />{/if}
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="AllResultsButton" value="1" aria-describedby="cc-trash-help">{'Move all %count results to the trash'|i18n( 'kernel/contentcheck',, hash( '%count', $result.count ) )}</button>
         {/if}
-    </div>
-    <p class="a4-meta" id="cc-trash-help">{'The next page shows what will happen and asks you to confirm. At most %count objects at a time; they can be restored from the trash.'|i18n( 'kernel/contentcheck',, hash( '%count', $batch_limit ) )}</p>
-</div>
+{/set-block}
+{include uri='design:contentcheck/bulkbar.tpl' select_all=$select_all total=$tickable_count
+         page_url=concat( $page_uri, '/(offset)/', $params.offset, $page_uri_suffix ) actions=$cc_actions help_id='cc-trash-help'
+         help='The next page shows what will happen and asks you to confirm. At most %count objects at a time; they can be restored from the trash.'|i18n( 'kernel/contentcheck',, hash( '%count', $batch_limit ) )}
 {/if}
+
+{include uri='design:contentcheck/pager.tpl' page_uri=$page_uri page_uri_suffix=$page_uri_suffix item_count=$result.count
+         view_parameters=$view_parameters limit=$limit limit_choices=$limit_choices limit_preference=$limit_preference}
+</section>
 </form>
 
 </div></div></div>

@@ -107,13 +107,14 @@
         <legend>{'Problems'|i18n( 'kernel/contentcheck' )}</legend>
         <div class="a4-chips">
         {foreach $kinds as $kind}
-            <label class="a4-chip"><input type="checkbox" name="Kind[]" value="{$kind|wash}"{if $params.kinds|contains( $kind )} checked="checked"{/if} /><span>{$kind_names[$kind]|wash}</span></label>
+            <label class="a4-chip"><input type="checkbox" name="Kind[]" value="{$kind|wash}"{if $params.kinds_shown|contains( $kind )} checked="checked"{/if} /><span>{$kind_names[$kind]|wash}</span></label>
         {/foreach}
         </div>
     </fieldset>
     <div class="a4-field">
         <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'kernel/contentcheck' )}</button>
     </div>
+    {include uri='design:contentcheck/filter_choice.tpl' name='Kind' label='Problems'|i18n( 'kernel/contentcheck' )}
 </form>
 </section>
 {elseif eq( $params.show, 'orphans' )}
@@ -121,6 +122,7 @@
 <h2 class="a4-sr-only" id="cc-filter-title">{'Filter'|i18n( 'kernel/contentcheck' )}</h2>
 <form class="a4-filterbar" method="get" action={$page_uri|ezurl}>
     <input type="hidden" name="Show" value="orphans" />
+    {include uri='design:contentcheck/scope.tpl' scope=$scope}
     <div class="a4-field">
         <label for="cc-sort">{'Order by'|i18n( 'kernel/contentcheck' )}</label>
         <select id="cc-sort" name="Sort">
@@ -150,12 +152,8 @@
 <input type="hidden" name="Show" value="{$params.show|wash}" />
 
 <section class="a4-section" aria-labelledby="cc-list-title">
-<div class="a4-section-head">
-    <h2 class="a4-h2" id="cc-list-title">{if eq( $params.show, 'orphans' )}{'Orphan files'|i18n( 'kernel/contentcheck' )}{elseif eq( $params.show, 'problems' )}{'File problems'|i18n( 'kernel/contentcheck' )}{else}{'Quarantine'|i18n( 'kernel/contentcheck' )}{/if}</h2>
-    {if $count|gt( 0 )}
-    <span class="a4-meta">{'%from to %to of %count'|i18n( 'kernel/contentcheck',, hash( '%from', sum( $params.offset, 1 ), '%to', min( sum( $params.offset, $limit ), $count ), '%count', $count ) )}</span>
-    {/if}
-</div>
+{include uri='design:contentcheck/results_head.tpl' title=cond( eq( $params.show, 'orphans' ), 'Orphan files'|i18n( 'kernel/contentcheck' ), eq( $params.show, 'problems' ), 'File problems'|i18n( 'kernel/contentcheck' ), 'Quarantine'|i18n( 'kernel/contentcheck' ) )
+         title_id='cc-list-title' offset=$params.offset limit=$limit count=$count}
 
 {if eq( $params.show, 'quarantine' )}
 <p class="a4-meta">{'%count files (%size) in %dir.'|i18n( 'kernel/contentcheck',, hash( '%count', $quarantine.count, '%size', $quarantine.bytes|si( byte ), '%dir', $quarantine_root ) )|wash}</p>
@@ -211,36 +209,11 @@
 </div>
 {/if}
 
-<div class="a4-listfoot">
-    <p class="a4-sizes">
-        <span>{'Per page'|i18n( 'kernel/contentcheck' )}:</span>
-    {foreach $limit_choices as $limit_index => $limit_option}
-        {if eq( $limit_option, $limit )}
-        <span class="current" aria-current="true">{$limit_option}</span>
-        {else}
-        <a href={concat( '/user/preferences/set/', $limit_preference, '/', $limit_index|inc )|ezurl} title="{'Show %count items per page.'|i18n( 'kernel/contentcheck',, hash( '%count', $limit_option ) )}">{$limit_option}</a>
-        {/if}
-    {/foreach}
-    </p>
-    <div class="a4-pager">
-    {include name=navigator
-             uri='design:navigator/google.tpl'
-             page_uri=$page_uri
-             page_uri_suffix=$page_uri_suffix
-             item_count=$count
-             view_parameters=$view_parameters
-             item_limit=$limit}
-    </div>
-</div>
-</section>
 
 {if and( $tickable, $rows|count|gt( 0 ) )}
-<div class="a4-toolbar is-bottom">
-    {include uri='design:contentcheck/select_count.tpl' select_all=$select_all total=$tickable_count
-             page_url=concat( $page_uri, '/(offset)/', $params.offset, $page_uri_suffix )}
     {if eq( $params.show, 'orphans' )}<input type="hidden" name="Sort" value="{$params.sort|wash}" /><input type="hidden" name="Order" value="{$params.order|wash}" />{/if}
     {if eq( $params.show, 'problems' )}{foreach $params.kinds as $kind}<input type="hidden" name="Kind[]" value="{$kind|wash}" />{/foreach}{/if}
-    <div class="a4-actions">
+{set-block variable=cc_actions}
     {if eq( $params.show, 'orphans' )}
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="Action" value="quarantine" aria-describedby="cc-action-help">{'Move ticked files to the quarantine'|i18n( 'kernel/contentcheck' )}</button>
         {if $count|gt( $rows|count )}<button type="submit" class="a4-btn a4-btn-outline-danger" name="AllResultsAction" value="quarantine" aria-describedby="cc-action-help">{'Move all %count files to the quarantine'|i18n( 'kernel/contentcheck',, hash( '%count', $count ) )}</button>{/if}
@@ -252,10 +225,15 @@
         <button type="submit" class="a4-btn a4-btn-outline-danger" name="Action" value="delete" aria-describedby="cc-action-help">{'Delete ticked files permanently'|i18n( 'kernel/contentcheck' )}</button>
         {if $count|gt( $rows|count )}<button type="submit" class="a4-btn" name="AllResultsAction" value="restore" aria-describedby="cc-action-help">{'Restore all %count files'|i18n( 'kernel/contentcheck',, hash( '%count', $count ) )}</button>{/if}
     {/if}
-    </div>
-    <p class="a4-meta" id="cc-action-help">{'The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.'|i18n( 'kernel/contentcheck',, hash( '%count', $batch_limit ) )}</p>
-</div>
+{/set-block}
+{include uri='design:contentcheck/bulkbar.tpl' select_all=$select_all total=$tickable_count
+         page_url=concat( $page_uri, '/(offset)/', $params.offset, $page_uri_suffix ) actions=$cc_actions help_id='cc-action-help'
+         help='The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.'|i18n( 'kernel/contentcheck',, hash( '%count', $batch_limit ) )}
 {/if}
+
+{include uri='design:contentcheck/pager.tpl' page_uri=$page_uri page_uri_suffix=$page_uri_suffix item_count=$count
+         view_parameters=$view_parameters limit=$limit limit_choices=$limit_choices limit_preference=$limit_preference}
+</section>
 </form>
 
 </div></div></div>

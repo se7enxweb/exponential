@@ -60,7 +60,7 @@
         <legend>{'Targets'|i18n( 'kernel/contentcheck' )}</legend>
         <div class="a4-chips">
         {foreach $kinds as $kind}
-            <label class="a4-chip"><input type="checkbox" name="Kind[]" value="{$kind|wash}"{if $params.kinds|contains( $kind )} checked="checked"{/if} /><span>{$kind_names[$kind]|wash}</span></label>
+            <label class="a4-chip"><input type="checkbox" name="Kind[]" value="{$kind|wash}"{if $kinds_shown|contains( $kind )} checked="checked"{/if} /><span>{$kind_names[$kind]|wash}</span></label>
         {/foreach}
         </div>
     </fieldset>
@@ -68,21 +68,22 @@
         <legend>{'References'|i18n( 'kernel/contentcheck' )}</legend>
         <div class="a4-chips">
         {foreach $relations as $relation}
-            <label class="a4-chip"><input type="checkbox" name="Relation[]" value="{$relation|wash}"{if $params.relations|contains( $relation )} checked="checked"{/if} /><span>{$relation_names[$relation]|wash}</span></label>
+            <label class="a4-chip"><input type="checkbox" name="Relation[]" value="{$relation|wash}"{if $relations_shown|contains( $relation )} checked="checked"{/if} /><span>{$relation_names[$relation]|wash}</span></label>
         {/foreach}
         </div>
     </fieldset>
     <div class="a4-field">
-        <button type="submit" class="a4-btn a4-btn-primary">{'Check'|i18n( 'kernel/contentcheck' )}</button>
+        <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'kernel/contentcheck' )}</button>
     </div>
+    {include uri='design:contentcheck/filter_choice.tpl' name='Kind' label='Targets'|i18n( 'kernel/contentcheck' )}
+    {include uri='design:contentcheck/filter_choice.tpl' name='Relation' label='References'|i18n( 'kernel/contentcheck' )}
 </form>
 </section>
 
 <section class="a4-section" aria-labelledby="cc-list-title">
-<div class="a4-section-head">
-    <h2 class="a4-h2" id="cc-list-title">{'Findings'|i18n( 'kernel/contentcheck' )}</h2>
-    <span class="a4-meta">{if $params.after|gt( 0 )}{'%count objects checked after object %after.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked, '%after', $params.after ) )}{else}{'%count objects checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked ) )}{/if}</span>
-</div>
+{include uri='design:contentcheck/results_head.tpl' title='Findings'|i18n( 'kernel/contentcheck' ) title_id='cc-list-title'
+         offset=0 limit=$limit count=-1
+         count_text=cond( $params.after|gt( 0 ), '%count objects checked after object %after.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked, '%after', $params.after ) ), '%count objects checked.'|i18n( 'kernel/contentcheck',, hash( '%count', $result.checked ) ) )}
 
 {if $findings|count|eq( 0 )}
 <p class="a4-empty">{if $result.done}{'No broken relation found.'|i18n( 'kernel/contentcheck' )}{else}{'No broken relation found among these objects. Go on with the next page.'|i18n( 'kernel/contentcheck' )}{/if}</p>
@@ -117,22 +118,11 @@
 </div>
 {/if}
 
-<div class="a4-listfoot">
-    <p class="a4-sizes">
-        <span>{'Per page'|i18n( 'kernel/contentcheck' )}:</span>
-    {foreach $limit_choices as $limit_index => $limit_option}
-        {if eq( $limit_option, $limit )}
-        <span class="current" aria-current="true">{$limit_option}</span>
-        {else}
-        <a href={concat( '/user/preferences/set/', $limit_preference, '/', $limit_index|inc )|ezurl} title="{'Show %count findings per page.'|i18n( 'kernel/contentcheck',, hash( '%count', $limit_option ) )}">{$limit_option}</a>
-        {/if}
-    {/foreach}
-    </p>
-    <div class="a4-pager">
-        {if $params.after|gt( 0 )}<a class="a4-btn" href={concat( $page_uri, $filter_suffix )|ezurl}>{'From the start'|i18n( 'kernel/contentcheck' )}</a>{/if}
-        {if $result.done|not}<a class="a4-btn" href={concat( $page_uri, $filter_suffix, $separator, 'After=', $result.last )|ezurl}>{'Next page'|i18n( 'kernel/contentcheck' )}</a>{/if}
-    </div>
-</div>
+{include uri='design:contentcheck/pager.tpl' page_uri=$page_uri page_uri_suffix=$filter_suffix item_count=-1 view_parameters=hash()
+         limit=$limit limit_choices=$limit_choices limit_preference=$limit_preference
+         size_title='Show %count findings per page.'|i18n( 'kernel/contentcheck' )
+         start_url=cond( $params.after|gt( 0 ), concat( $page_uri, $filter_suffix ), '' )
+         next_url=cond( $result.done, '', concat( $page_uri, $filter_suffix, $separator, 'After=', $result.last ) )}
 </section>
 
 {if $result.layouts|count|gt( 0 )}

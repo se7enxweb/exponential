@@ -52,9 +52,9 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
         foreach ( $classNames as $id => $name )
             $classOptions[] = array( 'id' => $id, 'name' => $name );
 
-        // "All classes" and "No class" are submit buttons of the filter form: they work without JavaScript
-        $input['ClassID'] = self::classChoice( $input, array_keys( $classNames ),
-                                               $http->hasGetVariable( 'AllClassesButton' ), $http->hasGetVariable( 'NoClassesButton' ) );
+        // "Select all" and "Select none" are submit buttons of the filter form (ClassChoice): no JavaScript needed
+        $choice = $http->hasGetVariable( 'ClassChoice' ) ? $http->getVariable( 'ClassChoice' ) : '';
+        $input['ClassID'] = self::classChoice( $input, array_keys( $classNames ), $choice === 'all', $choice === 'none' );
         $input['Offset'] = \expAdminPagination::offset( $Params );
         $input['Limit'] = $limit;
         $params = \expContentCheckUnreferenced::parameters( $input, self::rootNodeID() );
@@ -97,12 +97,12 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The classes asked for: every listed class with "All classes", none with "No class", else the form's ClassID[].
+     * The classes asked for: every listed class with "Select all", none with "Select none", else the form's ClassID[].
      *
      * @param array $input the request's fields (ClassID)
      * @param int[] $allClassIDs the classes the filter offers
-     * @param bool $all the button "All classes" was pressed
-     * @param bool $none the button "No class" was pressed
+     * @param bool $all the button "Select all" was pressed (ClassChoice=all)
+     * @param bool $none the button "Select none" was pressed (ClassChoice=none)
      * @return array
      */
     public static function classChoice( array $input, array $allClassIDs, $all, $none )

@@ -23,8 +23,9 @@
  *  CS-12  the scan state as the view shows it: the share done; what an action took out of the lists
  *  CS-14  "All N results": the action for the whole list always shows its plan first; the trash of the unreferenced
  *         objects the same
- *  CS-13  the class filter of the unreferenced objects: "All classes" and "No class" are buttons of the form (no
- *         JavaScript needed) and come after "Show", which Enter in a field must keep pressing
+ *  CS-13  one layout for every check: the scope picker first, "Select all" / "Select none" of a filter group as
+ *         buttons of the form (no JavaScript needed) after "Show", which Enter in a field must keep pressing, the shared
+ *         results header and pager
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -394,15 +395,22 @@ class expContentCheckStorageTest extends PHPUnit\Framework\TestCase
         $root = dirname( __DIR__, 4 );
         foreach ( array( 'admin', 'admin4' ) as $design )
         {
-            $tpl = (string)file_get_contents( $root . '/design/' . $design . '/templates/contentcheck/unreferenced.tpl' );
-            $show = strpos( $tpl, "{'Show'|i18n( 'kernel/contentcheck' )}</button>" );
-            $this->assertNotFalse( $show, $design );
-            foreach ( array( 'AllClassesButton', 'NoClassesButton' ) as $button )
+            foreach ( array( 'unreferenced', 'storage', 'brokenrelations' ) as $view )
             {
-                $at = strpos( $tpl, 'name="' . $button . '"' );
-                $this->assertNotFalse( $at, $design . ' ' . $button );
-                $this->assertGreaterThan( $show, $at, $design . ': ' . $button . ' after Show' );
+                $tpl = (string)file_get_contents( $root . '/design/' . $design . '/templates/contentcheck/' . $view . '.tpl' );
+                $show = strpos( $tpl, "{'Show'|i18n( 'kernel/contentcheck' )}</button>" );
+                $this->assertNotFalse( $show, $design . ' ' . $view );
+                $at = strpos( $tpl, "design:contentcheck/filter_choice.tpl" );
+                $this->assertNotFalse( $at, $design . ' ' . $view );
+                $this->assertGreaterThan( $show, $at, $design . ' ' . $view . ': the choice buttons after Show' );
+                // one layout: the scope first, the results header, the pager; no list markup of its own
+                $this->assertLessThan( $show, strpos( $tpl, 'design:contentcheck/scope.tpl' ), $design . ' ' . $view );
+                $this->assertNotFalse( strpos( $tpl, 'design:contentcheck/results_head.tpl' ), $design . ' ' . $view );
+                $this->assertNotFalse( strpos( $tpl, 'design:contentcheck/pager.tpl' ), $design . ' ' . $view );
+                $this->assertFalse( strpos( $tpl, 'class="a4-listfoot"' ), $design . ' ' . $view . ': pager.tpl, no copy' );
             }
+            $choice = (string)file_get_contents( $root . '/design/' . $design . '/templates/contentcheck/filter_choice.tpl' );
+            $this->assertStringContainsString( 'Choice" value="all"', $choice );
         }
     }
 

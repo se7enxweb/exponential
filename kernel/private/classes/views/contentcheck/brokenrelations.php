@@ -39,6 +39,20 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         // (expContentCheckScope: the form's node, else the address's, else the user's last choice, which it becomes)
         $input['NodeID'] = \expContentCheckScope::resolve( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,
                                                           $http->hasGetVariable( 'NodeID' ) ? $http->getVariable( 'NodeID' ) : null );
+        // "Select all" / "Select none" of the states and the references (KindChoice, RelationChoice); none ticked
+        // checks every one, as no box ticked does
+        $none = array();
+        foreach ( array( 'Kind' => \expContentCheckBrokenRelations::KINDS, 'Relation' => \expContentCheckBrokenRelations::RELATIONS ) as $group => $all )
+        {
+            $choice = $http->hasGetVariable( $group . 'Choice' ) ? $http->getVariable( $group . 'Choice' ) : '';
+            if ( $choice === 'all' )
+                $input[$group] = $all;
+            else if ( $choice === 'none' )
+            {
+                unset( $input[$group] );
+                $none[] = $group;
+            }
+        }
         $input['Limit'] = $limit;
         // without a node: the content tree's top node, which a user with a limited content/read may read as well
         $params = \expContentCheckBrokenRelations::parameters( $input, Unreferenced::rootNodeID() );
@@ -52,6 +66,8 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'params', $params );
         $tpl->setVariable( 'scope', \expContentCheckScope::forTemplate( (int)$params['node_id'], 'brokenrelations' ) );
         $tpl->setVariable( 'kinds', \expContentCheckBrokenRelations::KINDS );
+        $tpl->setVariable( 'kinds_shown', in_array( 'Kind', $none, true ) ? array() : $params['kinds'] );
+        $tpl->setVariable( 'relations_shown', in_array( 'Relation', $none, true ) ? array() : $params['relations'] );
         $tpl->setVariable( 'relations', \expContentCheckBrokenRelations::RELATIONS );
         $tpl->setVariable( 'page_uri', '/contentcheck/brokenrelations/' . (int)$params['node_id'] );
         $tpl->setVariable( 'filter_suffix', self::querySuffix( $params ) );
