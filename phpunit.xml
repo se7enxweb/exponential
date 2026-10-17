@@ -180,6 +180,7 @@
         -->
         <testsuite name="admin-extensions">
             <file>tests/tests/extension/git_manager/GitManagerAdminStylingTest.php</file>
+            <file>tests/tests/extension/git_manager/GitManagerLogPagingTest.php</file>
             <file>tests/tests/extension/ezupdate/ezUpdateAdminStylingTest.php</file>
             <file>tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php</file>
         </testsuite>
