@@ -149,13 +149,13 @@ if ( !$user->isRegistered() )
 
     return $result;
 }
-// logged in, but no access to oauth/authorize
-$access = $user->hasAccessTo( 'oauth', 'authorize' );
-if ( !$access[ 'accessWord' ] == 'yes' )
+// Signed in, but without the policy oauth/authorize (for this siteaccess): the user may not authorize clients. The
+// redirect_uri is a validated end point of the client here, so the client is told with access_denied (RFC 6749,
+// section 4.1.2.1). Before 6.0.15 a negation bound before the comparison made this check always pass.
+if ( !expOAuthAuthorizePolicy::userMayAuthorize( $user, expOAuthAuthorizePolicy::currentSiteAccessName(), $restINI ) )
 {
-    return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+    error( $pRedirectUri, 'access_denied', 'The user may not authorize clients' );
 }
-unset( $access );
 
 // Everything is valid. Process to app authorization.
 if ( !$application->isAuthorizedByUser( $pScope, eZUser::currentUser() ) )
