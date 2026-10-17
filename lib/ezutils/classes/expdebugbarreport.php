@@ -413,14 +413,16 @@ class expDebugBarReport
         if ( $theme === 'toolbar' )
             echo self::includeTag( 'css', 'design/standard/stylesheets/expdebugbar-toolbar.css' );
         echo '<div id="debug" class="exp-debug" data-exp-debug-bar="2"' . ( $theme === 'toolbar' ? ' data-exp-debug-theme="toolbar"' : '' ) . '>';
-        echo '<h2><a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . htmlspecialchars( $byUser . $byIP, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</a>';
-        echo self::summaryHtml( $summary, $theme );
-        echo '</h2>';
-        // the panel's height as the user left it (0: the default); the inline script below applies it before the
+        // Everything the bar shows is in the markup, so its first paint is final (#571): the symbol that minimises it
+        // and "Keep open on reload" were added by the scripts after the first paint, which made the bar wrap to a
+        // second line and moved its link. expdebugbar-head.js only sets their state.
+        echo self::barHtml( $byUser . $byIP, $summary, $theme );
+        // the panel's height as the user left it (0: the default); expdebugbar-head.js applies it before the
         // panel opens. From the preference for a logged-in user; for an anonymous visitor from the browser's localStorage
         echo '<div id="debug-details" role="region" aria-label="' . self::h( 'Debug report' ) . '"'
            . ' data-exp-debug-panel-height="' . self::savedPanelHeight( $userInfo['logged_in'] ) . '"'
-           . ' data-exp-debug-panel-store="' . ( $userInfo['logged_in'] ? 'preference' : 'browser' ) . '">';
+           . ' data-exp-debug-panel-store="' . ( $userInfo['logged_in'] ? 'preference' : 'browser' ) . '"'
+           . ' data-exp-debug-panel-min="' . self::PANEL_HEIGHT_MIN . '" data-exp-debug-panel-max="' . self::PANEL_HEIGHT_MAX . '">';
 
         echo '<div class="exp-debug-toolbar">';
         echo '<div class="exp-debug-tabs" role="tablist" aria-label="' . self::h( 'Debug report sections' ) . '">';
@@ -646,6 +648,44 @@ class expDebugBarReport
             $rows[] = $html;
         }
         return array( 'rows' => $rows, 'sql' => $sql, 'counts' => $counts );
+    }
+
+    /**
+     * The pinned bar and the minimised tab, complete at the first paint (#571): the symbol that minimises the bar, the
+     * "Exp Debug" link, the chips, "Keep open on reload" (its box alone in the toolbar theme, the words its tooltip),
+     * and the hidden tab that restores the bar with the error or warning count. expdebugbar-head.js sets their state
+     * before the first paint, expdebugbar.js wires them.
+     *
+     * @param string $by " (By IP Address)" and the like
+     * @param array $summary the bar's summary (render())
+     * @param string $theme THEMES
+     */
+    public static function barHtml( $by, array $summary, $theme = 'default' )
+    {
+        $e = function ( $value ) { return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ); };
+        $minimise = self::t( 'Minimise debug bar' );
+        $keep = self::t( 'Keep open on reload' );
+        $html = '<h2><button type="button" class="exp-debug-logo" aria-label="' . $e( $minimise ) . '" title="' . $e( $minimise ) . '">' . self::symbolSvg() . '</button>'
+              . '<a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . $e( $by ) . '</a>'
+              . self::summaryHtml( $summary, $theme )
+              . '<label class="debug-keep-open"' . ( $theme === 'toolbar' ? ' title="' . $e( $keep ) . '"' : '' ) . '><input type="checkbox"> ' . $e( $keep ) . '</label>'
+              . '</h2>';
+        $errors = isset( $summary['errors'] ) ? (int)$summary['errors'] : 0;
+        $warnings = isset( $summary['warnings'] ) ? (int)$summary['warnings'] : 0;
+        $badge = $errors > 0 ? self::t( '%count errors', array( '%count' => $errors ) ) : ( $warnings > 0 ? self::t( '%count warnings', array( '%count' => $warnings ) ) : '' );
+        $label = self::t( 'Show debug bar' ) . ( $badge !== '' ? ' (' . $badge . ')' : '' );
+        $html .= '<button type="button" class="exp-debug-restore" hidden aria-label="' . $e( $label ) . '" title="' . $e( $label ) . '">' . self::symbolSvg()
+               . ( $badge !== '' ? '<span class="exp-debug-restore-badge" data-level="' . ( $errors > 0 ? 'high' : 'warn' ) . '" aria-hidden="true">' . ( $errors > 0 ? $errors : $warnings ) . '</span>' : '' )
+               . '</button>';
+        return $html;
+    }
+
+    /** The Exponential symbol (the two squares of the logo) of the minimise button and the minimised tab. */
+    protected static function symbolSvg()
+    {
+        return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="exp-debug-symbol">'
+             . '<rect x="2" y="2" width="13.5" height="13.5" fill="none" stroke="currentColor" stroke-width="2" class="exp-debug-symbol-back"></rect>'
+             . '<rect x="8.5" y="8.5" width="13.5" height="13.5" fill="#f05a22" stroke="currentColor" stroke-width="2" class="exp-debug-symbol-front"></rect></svg>';
     }
 
     /** The chips of the pinned bar, each opening its tab. */
@@ -1920,76 +1960,25 @@ class expDebugBarReport
      * A link to one of the bar's files. The address is the plain path: no version or file time query (owner rule,
      * AGENTS.md "Admin design and template styling rules"); a browser that still shows an old file is reloaded by hand.
      */
-    protected static function includeTag( $kind, $path )
+    protected static function includeTag( $kind, $path, $defer = true )
     {
         $url = eZSys::wwwDir() . '/' . $path;
         if ( $kind === 'css' )
             return '<link rel="stylesheet" type="text/css" href="' . htmlspecialchars( $url, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">';
-        return '<script src="' . htmlspecialchars( $url, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '" defer></script>';
+        return '<script src="' . htmlspecialchars( $url, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"' . ( $defer ? ' defer' : '' ) . '></script>';
     }
 
     /**
-     * The bar's script: the open/close with "Keep open on reload" inline, the tabs and the controls from the file.
-     * All of the bar's CSS, the pinned bar and the panel above it included, is in expdebugbar.css, linked before
-     * the bar (render()); the report carries no <style> and no style="" (AGENTS.md "Admin design and template
-     * styling rules").
+     * The bar's scripts, both files (no inline script, so a Content-Security-Policy with script-src 'self' holds):
+     * expdebugbar-head.js runs at once, before the first paint, and sets the state of what the markup already has
+     * (open and close, "Keep open on reload", the saved panel height, the minimised bar); expdebugbar.js (deferred)
+     * the tabs and the controls. All of the bar's CSS is in expdebugbar.css, linked before the bar (render()); the
+     * report carries no <style> and no style="" (AGENTS.md "Admin design and template styling rules").
      */
     protected static function assetsHtml()
     {
-        // Open and close with a click on the header. "Keep open on reload" remembers the state in the
-        // browser's localStorage (exp-debug-keep, exp-debug-open); unticked, the details start closed on
-        // every page. Storage that throws (private windows, blocked site data) is ignored.
-        $html = "<script>
-(function () {
-  const header = document.querySelector('#debug h2 a');
-  const content = document.querySelector('#debug-details');
-  if (!header || !content) return;
-  document.body.classList.add('exp-debug-bar');
-  const bar = header.parentNode;
-  const fit = () => document.documentElement.style.setProperty('--exp-debug-bar-h', bar.offsetHeight + 'px');
-  fit();
-  if (window.ResizeObserver) new ResizeObserver(fit).observe(bar); else window.addEventListener('resize', fit);
-  header.addEventListener('click', (e) => e.preventDefault());
-  const read = (key) => { try { return window.localStorage.getItem(key); } catch (e) { return null; } };
-  const write = (key, value) => { try { window.localStorage.setItem(key, value); } catch (e) {} };
-  // The panel's height as the user left it (expdebugbar.js resizes it and saves the height), set before the panel
-  // opens: for a logged-in user from the user preference (data-exp-debug-panel-height, 0 for the default; the
-  // preference is authoritative, localStorage is not looked at), for an anonymous visitor from localStorage
-  // (exp-debug-panel-height; read() gives null where storage is blocked). Only a whole number of pixels counts.
-  const rawHeight = content.getAttribute('data-exp-debug-panel-store') === 'browser'
-    ? read('exp-debug-panel-height') : content.getAttribute('data-exp-debug-panel-height');
-  const savedHeight = parseInt(rawHeight || '0', 10);
-  if (savedHeight > 0 && String(savedHeight) === String(rawHeight).trim()) document.documentElement.style.setProperty('--exp-debug-panel-h', Math.min(" . self::PANEL_HEIGHT_MAX . ", Math.max(" . self::PANEL_HEIGHT_MIN . ", savedHeight)) + 'px');
-  const setOpen = (open) => {
-    header.classList.toggle('active', open);
-    content.classList.toggle('active', open);
-    header.setAttribute('aria-expanded', open ? 'true' : 'false');
-    document.dispatchEvent(new CustomEvent('exp-debug-toggle', { detail: { open: open } }));
-  };
-  window.expDebugBarSetOpen = (open) => {
-    setOpen(open);
-    if (keep.checked) write('exp-debug-open', open ? '1' : '0');
-  };
-  const keepLabel = document.createElement('label');
-  keepLabel.className = 'debug-keep-open';
-  const keep = document.createElement('input');
-  keep.type = 'checkbox';
-  keep.checked = read('exp-debug-keep') === '1';
-  keepLabel.appendChild(keep);
-  keepLabel.appendChild(document.createTextNode(' ' + " . json_encode( self::t( 'Keep open on reload' ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP ) . "));
-  // the toolbar theme shows the box alone (expdebugbar-toolbar.css), the words then as its tooltip
-  if (bar.parentNode.getAttribute('data-exp-debug-theme') === 'toolbar') keepLabel.title = keepLabel.textContent.trim();
-  bar.appendChild(keepLabel);
-  if (keep.checked && read('exp-debug-open') === '1') setOpen(true);
-  keep.addEventListener('change', () => {
-    write('exp-debug-keep', keep.checked ? '1' : '0');
-    write('exp-debug-open', keep.checked && content.classList.contains('active') ? '1' : '0');
-  });
-  header.addEventListener('click', () => window.expDebugBarSetOpen(!content.classList.contains('active')));
-})();
-</script>";
-        $html .= self::includeTag( 'js', 'design/standard/javascript/expdebugbar.js' );
-        return $html;
+        return self::includeTag( 'js', 'design/standard/javascript/expdebugbar-head.js', false )
+             . self::includeTag( 'js', 'design/standard/javascript/expdebugbar.js' );
     }
 
     /** The node and URI this page shows (for "This page only"). */

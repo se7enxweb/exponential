@@ -300,6 +300,7 @@ test (and puts them back if they differ). Its log is a file of its own under `va
 | Part | Where |
 |---|---|
 | Report markup, summary, data block | `expDebugBarReport` (`lib/ezutils/classes/expdebugbarreport.php`), called by `eZDebug::printReportInternal()` for HTML reports |
+| Open and close, "Keep open on reload", saved panel height, minimised bar (runs at once, before the first paint) | `design/standard/javascript/expdebugbar-head.js` |
 | Tabs, filter, settings, IP list, presets, cache, change log | `design/standard/javascript/expdebugbar.js` |
 | Styles (light and dark) | `design/standard/stylesheets/expdebugbar.css` |
 | Toolbar theme (`Theme=toolbar`) | `design/standard/stylesheets/expdebugbar-toolbar.css`, linked after it |
@@ -314,7 +315,12 @@ Text reports (`Debug=inline` on the command line) and the popup window are uncha
 ### No inline CSS
 
 Neither report prints a `<style>` element or a `style=""` attribute (AGENTS.md "Admin design and template styling
-rules"); the open and close of the pinned bar stay an inline script.
+rules"), and no inline script: the part that must run before the first paint is `expdebugbar-head.js`, linked
+without `defer`, so a Content-Security-Policy with `script-src 'self'` holds. The bar's markup is complete at the first
+paint (the minimise symbol, the link, the chips, "Keep open on reload" and the hidden tab that restores the bar are
+all printed by `expDebugBarReport::barHtml()`), the bar keeps at least the height of one line, and its sides are
+logical (`margin-inline-*`, `inset-inline-*`), so it does not grow or move after load and its link stays at the end
+of the line in a right-to-left interface (#571).
 
 - **The bar**: every rule, the pinned bar and the panel above it included, is in `expdebugbar.css` and takes its
   colours from the bar's `--xd-*` tokens, each with a value for `prefers-color-scheme: dark` and for admin4's
@@ -385,14 +391,14 @@ The height is saved once at the end of a drag, or 0.6 s after the last key press
 - **Logged in**: in the user preference `expdebugbar_panel_height` (eZPreferences, through
   `expdebugbar::panelheight`), so it follows the user to any browser. `0` means the default height. The report reads
   it back (`expDebugBarReport::savedPanelHeight()`) and prints it on the panel as `data-exp-debug-panel-height`; the
-  report's inline script sets `--exp-debug-panel-h` from it before the panel opens, so it opens at that height
+  report's first script (`expdebugbar-head.js`) sets `--exp-debug-panel-h` from it before the panel opens, so it opens at that height
   without a jump.
 - **Anonymous** (the bar shown by IP): no preference is read or saved and no request is sent, since eZPreferences
   keep an anonymous user's values in the session and the debug bar must never start a session
   (`savedPanelHeight()` returns 0 without asking, and `expdebugbar::panelheight` refuses an anonymous visitor
   before the token check). The height is kept in the browser instead: `localStorage` key `exp-debug-panel-height`,
   every access in `try`/`catch` (blocked storage means the default height), read back and held between 120 and
-  4000 px by the report's inline script before the panel opens; anything but a whole number of pixels is ignored.
+  4000 px by `expdebugbar-head.js` before the panel opens; anything but a whole number of pixels is ignored.
   It stays in that browser only; another browser or a private window starts at the default.
   On a siteaccess that requires a sign-in (the admin), `ezjscore/call` needs a signed-in user since 6.0.15, so on
   an anonymous admin page (the sign-in page) the panels that ask the server (cache, log, summary) show "Could not

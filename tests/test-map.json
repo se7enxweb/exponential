@@ -192,6 +192,9 @@
     "design/standard/stylesheets/expdebugbar-toolbar.css": [
       "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php"
     ],
+    "design/standard/javascript/expdebugbar-head.js": [
+      "tests/tests/lib/ezutils/expDebugBarReportPanelHeightTest.php"
+    ],
     "lib/ezdb/classes/ezdbquerycache.php": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"
     ],
@@ -199,7 +202,8 @@
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"
     ],
     "design/standard/stylesheets/expdebugbar.css": [
-      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"
+      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
+      "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php"
     ],
     "design/standard/stylesheets/debug.css": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"
@@ -2143,7 +2147,9 @@
     ],
     "lib/ezutils/classes/expdebugbarreport.php": [
       "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
-      "tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php"
+      "tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php",
+      "tests/tests/lib/ezutils/expDebugBarReportPanelHeightTest.php",
+      "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php"
     ],
     "lib/ezutils/classes/ezdebug.php": [
       "tests/tests/lib/ezutils/eZDebugReportNullLabelTest.php",

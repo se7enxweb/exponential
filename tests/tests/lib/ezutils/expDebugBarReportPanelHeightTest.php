@@ -6,7 +6,8 @@
  *   - expDebugBarReport::savedPanelHeight(): the saved value read back for a logged-in user, 0 for anything unusable;
  *     for an anonymous visitor always 0, without asking the preferences (they would need a session)
  *   - the rendered report carries the height on #debug-details as data-* attributes (never in a style attribute),
- *     the inline rule sizes the panel from --exp-debug-panel-h within the room above the bar, and the server
+ *     the bar's markup is complete at the first paint and its scripts are files (no inline script, #571),
+ *     the rule sizes the panel from --exp-debug-panel-h within the room above the bar, and the server
  *     function stores the preference after the POST and form token checks
  *
  * No database: the preference reader is passed in, and the report is rendered from a debug instance of its own
@@ -152,14 +153,23 @@ class expDebugBarReportPanelHeightTest extends PHPUnit\Framework\TestCase
         }
 
         $this->assertMatchesRegularExpression(
-            '#<div id="debug-details" role="region" aria-label="[^"]*" data-exp-debug-panel-height="0" data-exp-debug-panel-store="browser">#',
+            '#<div id="debug-details" role="region" aria-label="[^"]*" data-exp-debug-panel-height="0" data-exp-debug-panel-store="browser" data-exp-debug-panel-min="120" data-exp-debug-panel-max="4000">#',
             $report, 'no user loaded (anonymous): the default height from the server, the browser keeps it; as data attributes' );
         $this->assertDoesNotMatchRegularExpression( '#<div id="debug-details"[^>]*\sstyle=#', $report, 'no style attribute on the panel' );
-        // the inline script applies the saved height before the panel opens, the script data carries the limits
-        $this->assertStringContainsString( "setProperty('--exp-debug-panel-h', Math.min(4000, Math.max(120, savedHeight)) + 'px')", $report );
-        $this->assertStringContainsString( "? read('exp-debug-panel-height') : content.getAttribute('data-exp-debug-panel-height');", $report, 'localStorage only for an anonymous visitor' );
-        $this->assertStringContainsString( "if (savedHeight > 0 && String(savedHeight) === String(rawHeight).trim())", $report, 'only a whole number of pixels' );
         $this->assertMatchesRegularExpression( '#"panel":\{"min":120,"max":4000\}#', $report );
+        // no inline script (Content-Security-Policy script-src 'self'): the part that runs at once is a file, linked
+        // without defer, and applies the saved height before the panel opens
+        $this->assertDoesNotMatchRegularExpression( '#<script(?![^>]*\ssrc=)(?![^>]*type="application/json")[^>]*>#', $report, 'only <script src> and the JSON data' );
+        $this->assertMatchesRegularExpression( '#<script src="[^"]*/design/standard/javascript/expdebugbar-head\.js"></script><script src="[^"]*/design/standard/javascript/expdebugbar\.js" defer></script>#', $report );
+        $head = file_get_contents( $this->root . '/design/standard/javascript/expdebugbar-head.js' );
+        $this->assertStringContainsString( "setProperty('--exp-debug-panel-h', Math.min(highest, Math.max(lowest, savedHeight)) + 'px')", $head );
+        $this->assertStringContainsString( "? read('exp-debug-panel-height') : content.getAttribute('data-exp-debug-panel-height');", $head, 'localStorage only for an anonymous visitor' );
+        $this->assertStringContainsString( "if (savedHeight > 0 && String(savedHeight) === String(rawHeight).trim())", $head, 'only a whole number of pixels' );
+        // #571: the bar is complete at the first paint: the minimise symbol, the link, "Keep open on reload" and the
+        // hidden tab that restores the bar are in the markup, not added by the scripts after load
+        $this->assertMatchesRegularExpression(
+            '#<h2><button type="button" class="exp-debug-logo" aria-label="[^"]+" title="[^"]+"><svg [^>]*class="exp-debug-symbol">.*?</svg></button><a href="\#debug-end"[^>]*>Exp Debug.*?<label class="debug-keep-open"><input type="checkbox"> [^<]+</label></h2><button type="button" class="exp-debug-restore" hidden #s',
+            $report );
     }
 
     public function testPanelSizeAndHandleStyles()

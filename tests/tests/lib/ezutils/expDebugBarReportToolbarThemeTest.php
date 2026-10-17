@@ -128,7 +128,7 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( '.exp-debug-chip[data-key="' . $key . '"] { --xd-icon: url("data:image/svg+xml,', $css, $key );
         $this->assertDoesNotMatchRegularExpression( '#url\(\s*(?!["\']?data:)#', $css, 'no file and no host is loaded' );
         $this->assertStringNotContainsString( '!important', $css );
-        $this->assertStringContainsString( '#debug[data-exp-debug-theme="toolbar"] .exp-debug-chip.exp-debug-end { margin-left: auto; }', $css,
+        $this->assertStringContainsString( '#debug[data-exp-debug-theme="toolbar"] .exp-debug-chip.exp-debug-end { margin-inline-start: auto; }', $css,
                                            'the chip rule sets margin: 0, the right end is set again' );
         $this->assertDoesNotMatchRegularExpression( '#\]\s+:focus-visible#', $css, 'no focus rule reaches into the panel' );
         $this->assertStringContainsString( '#debug[data-exp-debug-theme="toolbar"] > h2 > a.active { background: var(--xd-tb-open);', $css,
@@ -138,8 +138,47 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
         // the default theme's markup and data stay as they were: no theme attribute, no request in the page's JSON
         $this->assertStringContainsString( "' data-exp-debug-theme=\"toolbar\"' : ''", $source );
         $this->assertMatchesRegularExpression( "#if \( \\\$theme === 'toolbar' \)\s+\\\$summary\['request'\] = self::requestInfo\(#", $source );
-        $this->assertStringContainsString( "if (bar.parentNode.getAttribute('data-exp-debug-theme') === 'toolbar') keepLabel.title", $source );
         $this->assertMatchesRegularExpression( "#if \( \\\$theme === 'toolbar' \)\s+echo self::includeTag\( 'css', 'design/standard/stylesheets/expdebugbar-toolbar\.css' \);#", $source );
+    }
+
+    /**
+     * #571: the bar is complete in its markup (no element added after the first paint) in both themes; "Keep open on
+     * reload" carries its words as the tooltip in the toolbar theme only; the minimised tab has the error count.
+     */
+    public function testTheBarIsCompleteInItsMarkup()
+    {
+        foreach ( array( 'default', 'toolbar' ) as $theme )
+        {
+            $html = expDebugBarReport::barHtml( ' (By IP Address)', self::summary( array( 'errors' => 3 ) ), $theme );
+            $this->assertStringStartsWith( '<h2><button type="button" class="exp-debug-logo" aria-label="Minimise debug bar" title="Minimise debug bar"><svg ', $html, $theme );
+            $this->assertStringContainsString( '<a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug (By IP Address)</a><span class="exp-debug-summary"', $html, $theme );
+            $this->assertStringContainsString( $theme === 'toolbar' ? '<label class="debug-keep-open" title="Keep open on reload"><input type="checkbox"> Keep open on reload</label></h2>'
+                                                                    : '<label class="debug-keep-open"><input type="checkbox"> Keep open on reload</label></h2>', $html, $theme );
+            $this->assertStringContainsString( '<button type="button" class="exp-debug-restore" hidden aria-label="Show debug bar (3 errors)" title="Show debug bar (3 errors)"><svg ', $html, $theme );
+            $this->assertStringContainsString( '<span class="exp-debug-restore-badge" data-level="high" aria-hidden="true">3</span></button>', $html, $theme );
+            $this->assertDoesNotMatchRegularExpression( '#\sstyle=#', $html, $theme );
+        }
+        $html = expDebugBarReport::barHtml( '', self::summary( array( 'warnings' => 0, 'errors' => 0 ) ), 'default' );
+        $this->assertStringNotContainsString( 'exp-debug-restore-badge', $html, 'no badge without errors or warnings' );
+        $this->assertStringContainsString( 'aria-label="Show debug bar" title="Show debug bar"', $html );
+    }
+
+    /** #571: the bar's sides are logical, so its link stays at the end of the line in a right-to-left interface. */
+    public function testTheBarUsesLogicalSides()
+    {
+        foreach ( array( 'expdebugbar.css', 'expdebugbar-toolbar.css' ) as $file )
+        {
+            $css = file_get_contents( $this->root . '/design/standard/stylesheets/' . $file );
+            preg_match_all( '#^([^{}\n]*(?:> h2|\.exp-debug-chip|exp-debug-restore|exp-debug-logo|debug-keep-open|exp-debug-summary)[^{}]*)\{([^}]*)\}#m', $css, $rules, PREG_SET_ORDER );
+            $this->assertNotEmpty( $rules, $file );
+            foreach ( $rules as $rule )
+            {
+                $this->assertDoesNotMatchRegularExpression( '#(?<![-\w])(margin|padding|border)-(left|right)\s*:|(?<![-\w])right\s*:|text-align:\s*(left|right)#', $rule[2], $file . ': ' . trim( $rule[1] ) );
+            }
+        }
+        $css = file_get_contents( $this->root . '/design/standard/stylesheets/expdebugbar.css' );
+        $this->assertMatchesRegularExpression( '/#debug > h2 \{[^}]*box-sizing: border-box; min-height: 38px;/s', $css, 'the bar keeps the height of one line' );
+        $this->assertStringContainsString( '#debug[data-exp-debug-bar] > h2 > a { order: 3; flex: 0 0 auto; margin-inline-start: auto; }', $css );
     }
 
     public function testTheNewWordsAreTranslated()
