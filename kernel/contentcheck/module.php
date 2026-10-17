@@ -6,7 +6,9 @@
  *
  * Policies: contentcheck/unreferenced opens the list of unreferenced objects; contentcheck/trash is needed as
  * well to move them to the trash, and then content/remove on each object decides. contentcheck/brokenrelations
- * opens the read-only list of broken relations. Every list shows only what content/read lets the user see. No role
+ * opens the read-only list of broken relations. contentcheck/storage opens the storage files (orphans and file
+ * problems) and runs their scan; contentcheck/quarantine moves orphans to the quarantine, restores and deletes them
+ * there; contentcheck/permissions sets the expected owner and mode of used files. Every list shows only what content/read lets the user see. No role
  * but Administrator (which holds every policy) has them in a new installation. The checks answer on administration
  * siteaccesses only (contentcheck.ini [ContentCheckSettings] SiteAccessList[]).
  *
@@ -43,6 +45,29 @@ $ViewList['brokenrelations'] = array(
     'functions' => array( 'brokenrelations' ),
     'params' => array( 'NodeID' ) );
 
+// The start location of a check, chosen with the node picker: GET contentcheck/scope/<view>/<node id> opens it, its
+// POST comes back here and opens contentcheck/<view>/<chosen node id> (expContentCheckScope)
+$ViewList['scope'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'scope.php',
+    'params' => array( 'View', 'NodeID' ) );
+
+// The storage files: orphans (no content uses them), file-system problems of the used ones below the node, and the
+// quarantine (GET: Show, Sort, Order, Kind[]; (offset) in the address)
+$ViewList['storage'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'storage.php',
+    'functions' => array( 'storage' ),
+    'params' => array( 'NodeID' ),
+    'unordered_params' => array( 'offset' => 'Offset' ) );
+
+// The scan and the actions on storage files: POST only; every action shows its plan (the dry run) and is confirmed
+$ViewList['storageaction'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'storageaction.php',
+    'functions' => array( 'storage' ),
+    'params' => array() );
+
 $FunctionList = array();
 // The list of unreferenced objects; it shows only what content/read lets the user see
 $FunctionList['unreferenced'] = array();
@@ -50,5 +75,11 @@ $FunctionList['unreferenced'] = array();
 $FunctionList['trash'] = array();
 // The list of broken relations (read only); it shows only what content/read lets the user see
 $FunctionList['brokenrelations'] = array();
+// The storage files: scanning the storage and the lists of orphan files and file problems
+$FunctionList['storage'] = array();
+// With storage: moving orphan files to the quarantine, restoring them, and deleting them from the quarantine
+$FunctionList['quarantine'] = array();
+// With storage: setting the expected owner and mode of used files
+$FunctionList['permissions'] = array();
 
 ?>

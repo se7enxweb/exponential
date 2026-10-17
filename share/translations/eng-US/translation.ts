@@ -15006,6 +15006,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
         <translation>Accounts nobody uses or that need a look; disable, unlock or export them.</translation>
     </message>
+    <message>
+        <source>Storage files</source>
+        <translation>Storage files</translation>
+    </message>
+    <message>
+        <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
+        <translation>Files in the storage that nothing uses, and files with the wrong owner or mode.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -67608,6 +67616,470 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Change or remove the rule target.</source>
         <translation>Change or remove the rule target.</translation>
+    </message>
+    <message>
+        <source>Start location (node id)</source>
+        <translation>Start location (node id)</translation>
+    </message>
+    <message>
+        <source>Now: %path</source>
+        <translation>Now: %path</translation>
+    </message>
+    <message>
+        <source>1 is the whole tree. Your choice is remembered.</source>
+        <translation>1 is the whole tree. Your choice is remembered.</translation>
+    </message>
+    <message>
+        <source>Start locations</source>
+        <translation>Start locations</translation>
+    </message>
+    <message>
+        <source>Choose with the node picker</source>
+        <translation>Choose with the node picker</translation>
+    </message>
+    <message>
+        <source>Wrong owner</source>
+        <translation>Wrong owner</translation>
+    </message>
+    <message>
+        <source>Wrong mode</source>
+        <translation>Wrong mode</translation>
+    </message>
+    <message>
+        <source>Empty file</source>
+        <translation>Empty file</translation>
+    </message>
+    <message>
+        <source>Name differs in case</source>
+        <translation>Name differs in case</translation>
+    </message>
+    <message>
+        <source>Path differs from its parts</source>
+        <translation>Path differs from its parts</translation>
+    </message>
+    <message>
+        <source>In another type directory</source>
+        <translation>In another type directory</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Path</translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation>Age</translation>
+    </message>
+    <message>
+        <source>moved to the quarantine</source>
+        <translation>moved to the quarantine</translation>
+    </message>
+    <message>
+        <source>restored</source>
+        <translation>restored</translation>
+    </message>
+    <message>
+        <source>deleted from the quarantine</source>
+        <translation>deleted from the quarantine</translation>
+    </message>
+    <message>
+        <source>given the expected owner and mode</source>
+        <translation>given the expected owner and mode</translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation>Storage files</translation>
+    </message>
+    <message>
+        <source>The files below %dir: those no content uses (orphan files), and the file-system problems of those it uses. A file counts as used when a version of any object, also an old one or one in the trash, names it, or when a field, a layout, a setting or a template names its path. Files younger than %days days are never orphans. Nothing is deleted from the storage: orphans go to a quarantine, from where they can be restored.</source>
+        <translation>The files below %dir: those no content uses (orphan files), and the file-system problems of those it uses. A file counts as used when a version of any object, also an old one or one in the trash, names it, or when a field, a layout, a setting or a template names its path. Files younger than %days days are never orphans. Nothing is deleted from the storage: orphans go to a quarantine, from where they can be restored.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) were %action.</source>
+        <translation>%count files (%size) were %action.</translation>
+    </message>
+    <message>
+        <source>%count could not be changed.</source>
+        <translation>%count could not be changed.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files changed after the confirmation. Tick them again.</source>
+        <translation>Nothing was changed: the files changed after the confirmation. Tick them again.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation>Nothing was changed.</translation>
+    </message>
+    <message>
+        <source>The files are kept by a cluster file handler: they are read from its table, owner and mode are not checked, and nothing can be moved or fixed here.</source>
+        <translation>The files are kept by a cluster file handler: they are read from its table, owner and mode are not checked, and nothing can be moved or fixed here.</translation>
+    </message>
+    <message>
+        <source>Last scan</source>
+        <translation>Last scan</translation>
+    </message>
+    <message>
+        <source>The storage has not been scanned yet.</source>
+        <translation>The storage has not been scanned yet.</translation>
+    </message>
+    <message>
+        <source>A scan started at %time is not finished (%percent %).</source>
+        <translation>A scan started at %time is not finished (%percent %).</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progress</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Finished</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Files</translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation>Used</translation>
+    </message>
+    <message>
+        <source>Orphan files</source>
+        <translation>Orphan files</translation>
+    </message>
+    <message>
+        <source>Too new to judge</source>
+        <translation>Too new to judge</translation>
+    </message>
+    <message>
+        <source>Took</source>
+        <translation>Took</translation>
+    </message>
+    <message>
+        <source>%seconds s in %steps steps</source>
+        <translation>%seconds s in %steps steps</translation>
+    </message>
+    <message>
+        <source>Files were changed since this scan; the lists leave out what was moved or fixed.</source>
+        <translation>Files were changed since this scan; the lists leave out what was moved or fixed.</translation>
+    </message>
+    <message>
+        <source>The reference index could not be read completely, so paths named only in rich text, layouts, settings or templates were not seen. Nothing is moved until it can be read.</source>
+        <translation>The reference index could not be read completely, so paths named only in rich text, layouts, settings or templates were not seen. Nothing is moved until it can be read.</translation>
+    </message>
+    <message>
+        <source>Continue the scan</source>
+        <translation>Continue the scan</translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation>Start again</translation>
+    </message>
+    <message>
+        <source>Scan again</source>
+        <translation>Scan again</translation>
+    </message>
+    <message>
+        <source>Scan the storage</source>
+        <translation>Scan the storage</translation>
+    </message>
+    <message>
+        <source>The scan runs in steps of a few seconds and can be continued later; on a large storage run ./console exp:content-check --storage.</source>
+        <translation>The scan runs in steps of a few seconds and can be continued later; on a large storage run ./console exp:content-check --storage.</translation>
+    </message>
+    <message>
+        <source>Lists</source>
+        <translation>Lists</translation>
+    </message>
+    <message>
+        <source>File problems</source>
+        <translation>File problems</translation>
+    </message>
+    <message>
+        <source>Quarantine</source>
+        <translation>Quarantine</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problems</translation>
+    </message>
+    <message>
+        <source>Orphan files belong to no content, so the start location does not apply to them: the whole storage is listed.</source>
+        <translation>Orphan files belong to no content, so the start location does not apply to them: the whole storage is listed.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) in %dir.</source>
+        <translation>%count files (%size) in %dir.</translation>
+    </message>
+    <message>
+        <source>The scan keeps the first %count orphans; move them, then scan again for the others.</source>
+        <translation>The scan keeps the first %count orphans; move them, then scan again for the others.</translation>
+    </message>
+    <message>
+        <source>Scan the storage to see this list.</source>
+        <translation>Scan the storage to see this list.</translation>
+    </message>
+    <message>
+        <source>No orphan files.</source>
+        <translation>No orphan files.</translation>
+    </message>
+    <message>
+        <source>No file problems below this node match the filter.</source>
+        <translation>No file problems below this node match the filter.</translation>
+    </message>
+    <message>
+        <source>The quarantine is empty.</source>
+        <translation>The quarantine is empty.</translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation>Problem</translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation>Used by</translation>
+    </message>
+    <message>
+        <source>Moved on</source>
+        <translation>Moved on</translation>
+    </message>
+    <message>
+        <source>Owner and mode</source>
+        <translation>Owner and mode</translation>
+    </message>
+    <message>
+        <source>%days d</source>
+        <translation>%days d</translation>
+    </message>
+    <message>
+        <source>Found: %path</source>
+        <translation>Found: %path</translation>
+    </message>
+    <message>
+        <source>Move ticked files to the quarantine</source>
+        <translation>Move ticked files to the quarantine</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of ticked files</source>
+        <translation>Fix owner and mode of ticked files</translation>
+    </message>
+    <message>
+        <source>Restore ticked files</source>
+        <translation>Restore ticked files</translation>
+    </message>
+    <message>
+        <source>Delete ticked files permanently</source>
+        <translation>Delete ticked files permanently</translation>
+    </message>
+    <message>
+        <source>The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.</source>
+        <translation>The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.</translation>
+    </message>
+    <message>
+        <source>Move to the quarantine</source>
+        <translation>Move to the quarantine</translation>
+    </message>
+    <message>
+        <source>Restore from the quarantine</source>
+        <translation>Restore from the quarantine</translation>
+    </message>
+    <message>
+        <source>Delete from the quarantine</source>
+        <translation>Delete from the quarantine</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode</source>
+        <translation>Fix owner and mode</translation>
+    </message>
+    <message>
+        <source>Moved to the quarantine</source>
+        <translation>Moved to the quarantine</translation>
+    </message>
+    <message>
+        <source>Moved back to the storage</source>
+        <translation>Moved back to the storage</translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation>Deleted permanently</translation>
+    </message>
+    <message>
+        <source>Owner and mode set</source>
+        <translation>Owner and mode set</translation>
+    </message>
+    <message>
+        <source>The file is not there (any more).</source>
+        <translation>The file is not there (any more).</translation>
+    </message>
+    <message>
+        <source>The file is not in a directory the check covers.</source>
+        <translation>The file is not in a directory the check covers.</translation>
+    </message>
+    <message>
+        <source>The file is a symbolic link.</source>
+        <translation>The file is a symbolic link.</translation>
+    </message>
+    <message>
+        <source>The path is in the ignored list.</source>
+        <translation>The path is in the ignored list.</translation>
+    </message>
+    <message>
+        <source>The file is too new to judge.</source>
+        <translation>The file is too new to judge.</translation>
+    </message>
+    <message>
+        <source>Content uses the file now.</source>
+        <translation>Content uses the file now.</translation>
+    </message>
+    <message>
+        <source>No content uses the file: it is an orphan, not a problem.</source>
+        <translation>No content uses the file: it is an orphan, not a problem.</translation>
+    </message>
+    <message>
+        <source>A file is already at the destination.</source>
+        <translation>A file is already at the destination.</translation>
+    </message>
+    <message>
+        <source>The reference index cannot be read now.</source>
+        <translation>The reference index cannot be read now.</translation>
+    </message>
+    <message>
+        <source>Files of a cluster file handler cannot be changed here.</source>
+        <translation>Files of a cluster file handler cannot be changed here.</translation>
+    </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</source>
+        <translation>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</translation>
+    </message>
+    <message>
+        <source>This server process does not own the file, so it cannot change its mode.</source>
+        <translation>This server process does not own the file, so it cannot change its mode.</translation>
+    </message>
+    <message>
+        <source>Owner and mode are already as expected.</source>
+        <translation>Owner and mode are already as expected.</translation>
+    </message>
+    <message>
+        <source>No file was ticked. Tick the files first.</source>
+        <translation>No file was ticked. Tick the files first.</translation>
+    </message>
+    <message>
+        <source>Dry run: nothing has been changed yet.</source>
+        <translation>Dry run: nothing has been changed yet.</translation>
+    </message>
+    <message>
+        <source>Only the first %count ticked files are taken; do the others afterwards.</source>
+        <translation>Only the first %count ticked files are taken; do the others afterwards.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved to %dir, below the date of today, keeping their path. They can be restored from there.</source>
+        <translation>%count files (%size) will be moved to %dir, below the date of today, keeping their path. They can be restored from there.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be deleted from the quarantine. This cannot be undone.</source>
+        <translation>%count files (%size) will be deleted from the quarantine. This cannot be undone.</translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved back to their place in the storage.</source>
+        <translation>%count files (%size) will be moved back to their place in the storage.</translation>
+    </message>
+    <message>
+        <source>%count files will get the expected owner and mode; nothing else is changed.</source>
+        <translation>%count files will get the expected owner and mode; nothing else is changed.</translation>
+    </message>
+    <message>
+        <source>None of the ticked files can be changed.</source>
+        <translation>None of the ticked files can be changed.</translation>
+    </message>
+    <message>
+        <source>To: %path</source>
+        <translation>To: %path</translation>
+    </message>
+    <message>
+        <source>Left as it is</source>
+        <translation>Left as it is</translation>
+    </message>
+    <message>
+        <source>I understand that these files are deleted permanently.</source>
+        <translation>I understand that these files are deleted permanently.</translation>
+    </message>
+    <message>
+        <source>Confirm for %count files</source>
+        <translation>Confirm for %count files</translation>
+    </message>
+    <message>
+        <source>Scanning the storage</source>
+        <translation>Scanning the storage</translation>
+    </message>
+    <message>
+        <source>%files files read so far (%size), %orphans of them orphans; %percent % done.</source>
+        <translation>%files files read so far (%size), %orphans of them orphans; %percent % done.</translation>
+    </message>
+    <message>
+        <source>Stop here</source>
+        <translation>Stop here</translation>
+    </message>
+    <message>
+        <source>The scan goes on by itself. Stop it at any time; it can be continued later.</source>
+        <translation>The scan goes on by itself. Stop it at any time; it can be continued later.</translation>
+    </message>
+    <message>
+        <source>This page only takes the forms of the storage files.</source>
+        <translation>This page only takes the forms of the storage files.</translation>
+    </message>
+    <message>
+        <source>You may not do this with storage files.</source>
+        <translation>You may not do this with storage files.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and tick the files once more.</source>
+        <translation>The form has expired. Open the list again and tick the files once more.</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirm</translation>
+    </message>
+    <message>
+        <source>Choose classes</source>
+        <translation>Choose classes</translation>
+    </message>
+    <message>
+        <source>All classes</source>
+        <translation>All classes</translation>
+    </message>
+    <message>
+        <source>No class</source>
+        <translation>No class</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Select all on this page</translation>
+    </message>
+    <message>
+        <source>Select none</source>
+        <translation>Select none</translation>
+    </message>
+    <message>
+        <source>%selected of %total selected</source>
+        <translation>%selected of %total selected</translation>
+    </message>
+    <message>
+        <source>Move all %count results to the trash</source>
+        <translation>Move all %count results to the trash</translation>
+    </message>
+    <message>
+        <source>Move all %count files to the quarantine</source>
+        <translation>Move all %count files to the quarantine</translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of all %count results</source>
+        <translation>Fix owner and mode of all %count results</translation>
+    </message>
+    <message>
+        <source>Restore all %count files</source>
+        <translation>Restore all %count files</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation>Select all</translation>
     </message>
 </context>
 <context>

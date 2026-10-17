@@ -866,16 +866,19 @@
     "kernel/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
       "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
-      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "kernel/private/classes/views/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
       "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
-      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "settings/contentcheck.ini": [
       "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php",
-      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "design/admin*/templates/contentcheck/*": [
       "tests/tests/design/AdminSelfContainedTest.php",
@@ -888,10 +891,12 @@
     "kernel/classes/contentcheck/*": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php",
       "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php",
       "tests/tests/kernel/contentcheck/expContentCheckSandboxTest.php"
     ],
     "kernel/private/classes/commands/contentcheck.php": [
-      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
+      "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
     ],
     "kernel/private/classes/cronjobs/contentcheck.php": [
       "tests/tests/kernel/contentcheck/expContentCheckReferencesTest.php"
