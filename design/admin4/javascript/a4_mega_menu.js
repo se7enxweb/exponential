@@ -339,15 +339,18 @@
         Array.prototype.forEach.call(document.querySelectorAll('#header .a4-mega-item'), megaMenu);
     }
 
-    // a request the browser stops while the page is left (a link in the panel followed) is no failure; the page
-    // coming back from the back-forward cache is in use again
-    window.addEventListener('pagehide', function () { leaving = true; });
-    // beforeunload: a navigation a page's own prompt keeps from happening leaves the page in use
-    window.addEventListener('beforeunload', function () {
-        leaving = true;
-        window.setTimeout(function () { leaving = false; }, 3000);
-    });
-    window.addEventListener('pageshow', function () { leaving = false; });
+    // a request the browser stops while the page is left (any link followed, the panel's or another) is no failure:
+    // browsers reject a fetch still running when the next page starts loading (Firefox with a network error, not an
+    // AbortError), and the error would show for the seconds the next page takes. The page is in use again when it
+    // comes back from the back-forward cache, or when the user acts on it after a navigation that did not happen (a
+    // page's own "leave this page?" prompt answered with stay).
+    function left() { leaving = true; }
+    function inUse() { leaving = false; }
+    window.addEventListener('pagehide', left);
+    window.addEventListener('beforeunload', left);
+    window.addEventListener('pageshow', inUse);
+    document.addEventListener('pointerdown', inUse, true);
+    document.addEventListener('keydown', inUse, true);
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
     else init();

@@ -57,6 +57,7 @@ function run(plan, options) {
                 if (next === 'later') { run.later = () => resolve(response({ status: 200, body: FRAGMENT })); return; }
                 // stopped by the browser only when the scenario says so (the page being left)
                 if (next === 'abort later') { run.abortLater = () => reject(abortError()); return; }
+                if (next === 'network later') { run.networkLater = () => reject(new TypeError('NetworkError when attempting to fetch resource.')); return; }
                 resolve(response(next));
             });
         },
@@ -154,6 +155,21 @@ function out(name, value) { process.stdout.write(JSON.stringify(Object.assign({ 
         await t.click(t.toggle());
         await t.advance(0);
         out('abort is no error', { during, after: t.state() });
+    }
+    // Firefox: another link followed while the panel loads; beforeunload, then the fetch fails with a network error
+    // while the next page loads: no error, no second request. Back in use (a stay on a leave prompt): loads again
+    {
+        const t = run(['network later']);
+        await t.click(t.toggle());
+        t.window.fire('beforeunload');
+        run.networkLater();
+        await t.advance(5000);
+        const during = t.state();
+        t.document.dispatch('pointerdown', t.toggle());
+        await t.click(t.toggle());
+        await t.click(t.toggle());
+        await t.advance(0);
+        out('navigation network error is no error', { during, after: t.state() });
     }
     // an aborted request on a page still in use is tried once more, not shown as an error
     {

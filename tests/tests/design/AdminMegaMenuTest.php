@@ -594,7 +594,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertIsArray( $row, 'the harness ran: ' . $out );
             $s[$row['name']] = $row;
         }
-        $this->assertCount( 18, $s, $out );
+        $this->assertCount( 19, $s, $out );
 
         $menu = function ( array $state, $requests, $name ) {
             $this->assertTrue( $state['menu'], $name );
@@ -618,6 +618,12 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertNull( $during['busy'] );
         $menu( $s['abort is no error']['after'], 2, 'abort: next opening' );
         $menu( $s['abort is tried again'], 2, 'abort is tried again' );
+        // the page being left by another link: the network error of the stopped request (Firefox) is no error either
+        $during = $s['navigation network error is no error']['during'];
+        $this->assertSame( 'LOADING', $during['status'] );
+        $this->assertNull( $during['retry'] );
+        $this->assertSame( 1, $during['requests'], 'not tried again while the page is left' );
+        $menu( $s['navigation network error is no error']['after'], 2, 'navigation network error: next opening' );
 
         // one request in flight, closing cancels nothing
         $this->assertSame( 'true', $s['in-flight request is reused']['closed']['busy'] );
