@@ -1,4 +1,4 @@
-{def $siteAccessList = ezini('SiteAccessSettings','RelatedSiteAccessList')|unique}
+{def $sa_menu_siteaccesses = ezini('SiteAccessSettings','RelatedSiteAccessList')|unique}
 
 <!-- Site access for override popup menu -->
 
@@ -7,9 +7,9 @@
         <div class="break"></div>
     </div>
 
-    {section var=siteAccess loop=$:siteAccessList}
-        {let link=concat("visual/templatecreate/node/view/full.tpl/(siteAccess)/",$siteAccess)|ezurl}
-            <a id="menu-override-siteAccess-{$siteAccess}" data-menu-redirect={$link}>{$siteAccess}</a>
+    {section var=siteAccess loop=$:sa_menu_siteaccesses}
+        {let sa_menu_link=concat("visual/templatecreate/node/view/full.tpl/(siteAccess)/",$siteAccess)|ezurl}
+            <a id="menu-override-siteAccess-{$siteAccess}" data-menu-redirect={$sa_menu_link}>{$siteAccess}</a>
         {/let}
     {/section}
 </div>
@@ -22,9 +22,9 @@
         <div class="break"></div>
     </div>
 
-    {section var=siteAccess loop=$:siteAccessList}
-        {let link=concat('visual/templatecreate/node/view/full.tpl/(siteAccess)/', $siteAccess, '/(classID)/%classID%')|ezurl}
-            <a id="menu-override-by-class-siteAccess-{$siteAccess}" data-menu-redirect={$link}>{$siteAccess}</a>
+    {section var=siteAccess loop=$:sa_menu_siteaccesses}
+        {let sa_menu_link=concat('visual/templatecreate/node/view/full.tpl/(siteAccess)/', $siteAccess, '/(classID)/%classID%')|ezurl}
+            <a id="menu-override-by-class-siteAccess-{$siteAccess}" data-menu-redirect={$sa_menu_link}>{$siteAccess}</a>
         {/let}
     {/section}
 
@@ -38,9 +38,9 @@
         <div class="break"></div>
     </div>
 
-    {section var=siteAccess loop=$:siteAccessList}
-        {let link=concat('visual/templatecreate/node/view/full.tpl/(siteAccess)/', $siteAccess, '/(nodeID)/%nodeID%')|ezurl}
-            <a id="menu-override-by-node-siteAccess-{$siteAccess}" data-menu-redirect={$link}>{$siteAccess}</a>
+    {section var=siteAccess loop=$:sa_menu_siteaccesses}
+        {let sa_menu_link=concat('visual/templatecreate/node/view/full.tpl/(siteAccess)/', $siteAccess, '/(nodeID)/%nodeID%')|ezurl}
+            <a id="menu-override-by-node-siteAccess-{$siteAccess}" data-menu-redirect={$sa_menu_link}>{$siteAccess}</a>
         {/let}
     {/section}
-</div>
+</div>{undef $sa_menu_siteaccesses}

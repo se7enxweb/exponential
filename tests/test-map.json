@@ -167,6 +167,9 @@
     "design/admin4/templates/dashboard/audit.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
+    "design/admin*/templates/popupmenu/popup_sub_siteaccess_menus.tpl": [
+      "tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php"
+    ],
     "design/admin4/templates/tabs/audit/node.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
@@ -175,6 +178,26 @@
     ],
     "kernel/common/ezpi18n.php": [
       "tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php"
+    ],
+    "kernel/private/classes/commands/explogs.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "cronjobs/explogrotate.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "kernel/private/classes/cronjobs/explogrotate.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "kernel/classes/logviewer/explogmanager.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "lib/ezfile/classes/explogrotator.php": [
+      "tests/tests/lib/ezfile/expLogRotatorTest.php",
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplate.php": [
+      "tests/tests/lib/eztemplate/eZTemplateVanishedCompiledTemplateTest.php",
+      "tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php"
     ],
     "lib/ezfile/classes/ezlog.php": [
       "tests/tests/lib/ezfile/expLogRotatorTest.php",
