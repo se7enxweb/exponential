@@ -84,6 +84,19 @@ class AdminBaseStylesheetsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'var(--a4-accent-text)', self::rules( self::css( 'theme/admin_datatable.css' ) )['tbody .admin-dt-editable']['color'] );
     }
 
+    /**
+     * The IcoMoon glyphs (the data table pager's arrows) take a 1em box from the first paint and draw no fallback
+     * letter, so nothing around them moves when the font arrives (no layout shift)
+     */
+    public function testIconFontGlyphsReserveTheirBox()
+    {
+        $css = self::css( 'core.css' );
+        $core = self::rules( $css );
+        $this->assertSame( 'inline-block', $core['[data-icon]:before']['display'] );
+        $this->assertSame( '1em', $core['[data-icon]:before']['inline-size'] );
+        $this->assertMatchesRegularExpression( '/@font-face\s*\{[^}]*IcoMoon[^}]*font-display:\s*block/s', $css );
+    }
+
     public function testDiffMarksTakeTheStateTokens()
     {
         $content = self::rules( self::css( 'content.css' ) );

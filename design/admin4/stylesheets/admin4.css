@@ -247,7 +247,10 @@ body,
   .header-search-mobile {
     display: none;
   }
-  .header-logo { order: 1; align-items: center; }
+  /* the logo's box as high as the tools (36px): the first row is as high with the logo alone as with every tool. The
+     tools stand after the main menu in the markup, so a paint of the half-parsed header drew the row 32px high and
+     the menu 4px higher, and it moved down when the search arrived (a layout shift from 576px to 1279px). */
+  .header-logo { order: 1; align-items: center; min-height: 36px; }
   .header-search {
     display: block;
     order: 2;
@@ -1295,6 +1298,18 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 #rightmenu-design {
   padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);   /* the right column's card is 208px wide (16rem less the 24px edge and the gutter): more would push its buttons past the card */
 }
+/* The left card with the content tree fills the column, and the tree is the part that scrolls: the parts after it
+   (Trash, the content finder, the width buttons) stand at the card's foot from the first paint. The tree is built by
+   contentstructuremenu_dynamic.js after the page is parsed; until 2026-10 it grew the card, and every part below it
+   moved down 20-600px as it opened to the current node (a layout shift on every page with the tree). A column too
+   short for the tree's least height (8rem) and the parts scrolls as a whole. */
+#leftmenu-design:has(> #content-tree) { display: flex; flex: 1 1 auto; flex-direction: column; min-height: 0; }
+#leftmenu-design:has(> #content-tree) > * { flex: none; }
+#leftmenu-design > #content-tree,
+#content-tree > .box-bc,
+#content-tree > .box-bc > .box-ml,
+#content-tree > .box-bc > .box-ml > .box-content { display: flex; flex: 1 1 0; flex-direction: column; min-height: 0; }
+#content-tree #contentstructure { flex: 1 1 0; min-height: 8rem; overflow: auto; }
 
 /* One gutter between the cards: --a4-gutter (24px) between a side column's card and the content, under
    the header and at the cards' bottom, the gap of a common 24px layout grid. The window's edges keep at least 24px
@@ -1334,27 +1349,30 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
    (admin_right_drawer 1), and from 1024px the left column steps aside for it. An anonymous page has no preferences:
    both columns as by default. The script takes html.a4-preload away two frames after it has applied its state; till
    then nothing moves by a transition either (the tabs' arrows turning to their state). Without the script the
-   columns stay as the preferences say. */
+   columns stay as the preferences say. Which columns the page has comes from the server as well, <body data-a4-columns>
+   (left, right): .sidebar.right stands after the content in the source, so a paint of the half-parsed page did not match
+   body:has(.sidebar.right) yet and drew the content 232px wider until the column was parsed (a shift of 0.12-0.14
+   on the node view at 1440px). :has() stays for a page layout without the attribute. */
 html.a4-preload *,
 html.a4-preload *::before,
 html.a4-preload *::after { transition: none !important; }
 @media screen and (min-width: 1024px) {
   html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) .sidebar.left { opacity: 1; visibility: visible; }
-  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:has(.sidebar.left) { margin-inline-start: var(--left-sidebar-width, 15rem); }
-  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:has(.sidebar.left) .content-wrapper { padding-inline-start: 0; }
+  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:is([data-a4-columns~="left"], :has(.sidebar.left)) { margin-inline-start: var(--left-sidebar-width, 15rem); }
+  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:is([data-a4-columns~="left"], :has(.sidebar.left)) .content-wrapper { padding-inline-start: 0; }
 }
 @media screen and (min-width: 1280px) {
   html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) .sidebar.right { opacity: 1; visibility: visible; }
-  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:has(.sidebar.right) { margin-inline-end: var(--a4-right-width); }
-  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:has(.sidebar.right) .content-wrapper { padding-inline-end: 0; }
+  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:is([data-a4-columns~="right"], :has(.sidebar.right)) { margin-inline-end: var(--a4-right-width); }
+  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:is([data-a4-columns~="right"], :has(.sidebar.right)) .content-wrapper { padding-inline-end: 0; }
 }
 @media screen and (min-width: 576px) and (max-width: 1279.98px) {
   html.a4-preload[data-a4-pref-admin-right-drawer="1"] .sidebar.right { opacity: 1; visibility: visible; }
 }
 @media screen and (min-width: 1024px) and (max-width: 1279.98px) {
   html.a4-preload[data-a4-pref-admin-right-drawer="1"] .sidebar.left { opacity: 0; visibility: hidden; }
-  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:has(.sidebar.left) { margin-inline-start: 0; }
-  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:has(.sidebar.left) .content-wrapper { padding-inline-start: var(--a4-space-5); }
+  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:is([data-a4-columns~="left"], :has(.sidebar.left)) { margin-inline-start: 0; }
+  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:is([data-a4-columns~="left"], :has(.sidebar.left)) .content-wrapper { padding-inline-start: var(--a4-space-5); }
 }
 @media screen and (max-width: 1023.98px) {
   .content-wrapper {
@@ -2377,6 +2395,12 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
   color: var(--a4-muted);
 }
 #controlbar-top #ez-as-place.as-error { color: var(--a4-bad); }
+/* With the autosave (content/edit.tpl sets .a4-edit-bar-autosave and, for autosave.ini HideStoreDraftButton,
+   .a4-edit-bar-autosave-store) the first paint already has the bar its script makes: the place of the save status
+   and preview link (on phones a line of its own under the buttons), and no Store draft button. Drawn later, the
+   buttons reflowed and the form moved down (CLS 0.18 at 375px). Without a script the bar stays as it is. */
+html.a4-js #controlbar-top.a4-edit-bar-autosave .button-right:empty { display: flex; }
+html.a4-js #editform:has(#controlbar-top.a4-edit-bar-autosave-store) input[name="StoreButton"] { display: none; }
 
 /* Room for the rich text editor's toolbar under the header and this bar: --a4-sticky-edge (admin4.js) is where the
    visible part of the page starts. A field or an editor reached with the keyboard is scrolled to below it, not under
@@ -2960,6 +2984,11 @@ div#contentstructure ul#content_tree_menu a.nodeicon::after {
 .a4-uiswitch-toggle:hover { border-color: var(--a4-line-strong); background-color: var(--a4-soft); }
 .a4-uiswitch-menu { margin: 0; }
 .a4-uiswitch-menu[hidden] { display: none; }
+/* With the script (html.a4-js, set by a4_head.js before the first paint) the first paint already shows the button
+   and closes the list, as admin4.js does once the document is parsed: until 2026-10 the open list was drawn first and
+   the tools below it moved up 96px when it closed. Opened, the button's aria-expanded is true and the list shows. */
+html.a4-js .a4-uiswitch-toggle[data-a4-disclosure][hidden] { display: flex; }
+html.a4-js .a4-uiswitch-toggle[data-a4-disclosure][aria-expanded="false"] + .a4-uiswitch-menu { display: none; }
 .a4-uiswitch-list { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
 .a4-uiswitch-list li { margin: 0; padding: 0; }
 .a4-uiswitch-option {
@@ -3429,6 +3458,21 @@ html #action-controls {
   align-items: center;
   gap: var(--a4-space-2);
 }
+
+/* The sub-items table's place while it loads (children_detailed.tpl .a4-subitems-reserve): the script draws the
+   table after the page, empty until its rows arrive, and everything under it (the pager, the footer) moved down by the
+   whole table on every node view. The reserve holds the toolbar and the header (2 x 32px + the toolbar's 10px
+   margins - 8px of the gap = 76px), a 32px line per row of the first page and the pager, while the list is empty
+   (before the script) or loading (aria-busy). The loading message takes the first line, as tall as a row. */
+.a4-subitems-reserve { display: none; visibility: hidden; }   /* hidden: its own move when it gives way is no layout shift */
+html.exp-js #content-sub-items-list:empty + .a4-subitems-reserve,
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve { display: block; }
+.a4-subitems-reserve > span { display: block; height: var(--a4-control-h); }
+.a4-subitems-reserve > .a4-subitems-reserve-head { height: calc(2 * var(--a4-control-h) + var(--a4-space-3)); }
+.a4-subitems-reserve > .a4-subitems-reserve-pager { height: calc(var(--a4-control-h) + var(--a4-space-2)); }
+#content-sub-items-list:has(table[aria-busy]) + .a4-subitems-reserve > .a4-subitems-reserve-head { display: none; }
+#content-sub-items-list:has(table[aria-busy] > .exp-dt-message:not([hidden])) + .a4-subitems-reserve > .a4-subitems-reserve-head + span { display: none; }
+html #content-sub-items-list .exp-dt-message td { box-sizing: border-box; height: var(--a4-control-h); }
 
 /* On a phone a long search result name breaks rather than widening the result table past the screen */
 @media screen and (max-width: 575.98px) {
