@@ -64098,6 +64098,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Registration link refused</source>
         <translation>Registration link refused</translation>
     </message>
+    <message>
+        <source>Image aliases regenerate</source>
+        <translation>Image aliases regenerate</translation>
+    </message>
+    <message>
+        <source>Missing file restore</source>
+        <translation>Missing file restore</translation>
+    </message>
+    <message>
+        <source>Missing file replace</source>
+        <translation>Missing file replace</translation>
+    </message>
+    <message>
+        <source>Missing file reference remove</source>
+        <translation>Missing file reference remove</translation>
+    </message>
+    <message>
+        <source>Missing file review mark</source>
+        <translation>Missing file review mark</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard</name>
@@ -68080,6 +68100,318 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Select all</source>
         <translation>Select all</translation>
+    </message>
+    <message>
+        <source>File missing</source>
+        <translation>File missing</translation>
+    </message>
+    <message>
+        <source>Alias missing</source>
+        <translation>Alias missing</translation>
+    </message>
+    <message>
+        <source>Alias out of date</source>
+        <translation>Alias out of date</translation>
+    </message>
+    <message>
+        <source>Alias never made</source>
+        <translation>Alias never made</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>missing</translation>
+    </message>
+    <message>
+        <source>out of date</source>
+        <translation>out of date</translation>
+    </message>
+    <message>
+        <source>never made</source>
+        <translation>never made</translation>
+    </message>
+    <message>
+        <source>Regenerate</source>
+        <translation>Regenerate</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Restore</translation>
+    </message>
+    <message>
+        <source>Re-upload</source>
+        <translation>Re-upload</translation>
+    </message>
+    <message>
+        <source>Remove reference</source>
+        <translation>Remove reference</translation>
+    </message>
+    <message>
+        <source>Mark for review</source>
+        <translation>Mark for review</translation>
+    </message>
+    <message>
+        <source>Version %version</source>
+        <translation>Version %version</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Draft</translation>
+    </message>
+    <message>
+        <source>File: %time</source>
+        <translation>File: %time</translation>
+    </message>
+    <message>
+        <source>Marked for review</source>
+        <translation>Marked for review</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases from the original</source>
+        <translation>Regenerate the aliases from the original</translation>
+    </message>
+    <message>
+        <source>Restore from another version</source>
+        <translation>Restore from another version</translation>
+    </message>
+    <message>
+        <source>Re-upload or replace the file</source>
+        <translation>Re-upload or replace the file</translation>
+    </message>
+    <message>
+        <source>Remove the dead reference</source>
+        <translation>Remove the dead reference</translation>
+    </message>
+    <message>
+        <source>Missing files in %dir</source>
+        <translation>Missing files in %dir</translation>
+    </message>
+    <message>
+        <source>Images, files and media whose file is not in the storage, in the published version and in drafts, and images whose aliases are missing or were made with other settings.</source>
+        <translation>Images, files and media whose file is not in the storage, in the published version and in drafts, and images whose aliases are missing or were made with other settings.</translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files or your access changed after the confirmation. Choose the rows again.</source>
+        <translation>Nothing was changed: the files or your access changed after the confirmation. Choose the rows again.</translation>
+    </message>
+    <message>
+        <source>%count field versions done.</source>
+        <translation>%count field versions done.</translation>
+    </message>
+    <message>
+        <source>%count could not be done.</source>
+        <translation>%count could not be done.</translation>
+    </message>
+    <message>
+        <source>No missing file and no alias problem found.</source>
+        <translation>No missing file and no alias problem found.</translation>
+    </message>
+    <message>
+        <source>Nothing found among these objects. Go on with the next page.</source>
+        <translation>Nothing found among these objects. Go on with the next page.</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Object</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Expected path</source>
+        <translation>Expected path</translation>
+    </message>
+    <message>
+        <source>Missing files from the start</source>
+        <translation>Missing files from the start</translation>
+    </message>
+    <message>
+        <source>Next page of missing files</source>
+        <translation>Next page of missing files</translation>
+    </message>
+    <message>
+        <source>With the ticked rows</source>
+        <translation>With the ticked rows</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Preview</translation>
+    </message>
+    <message>
+        <source>The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.</source>
+        <translation>The next page shows what will happen to each row and asks you to confirm. At most %count rows at a time; they are done in batches.</translation>
+    </message>
+    <message>
+        <source>Published version</source>
+        <translation>Published version</translation>
+    </message>
+    <message>
+        <source>Drafts</source>
+        <translation>Drafts</translation>
+    </message>
+    <message>
+        <source>Missing files: problems</source>
+        <translation>Missing files: problems</translation>
+    </message>
+    <message>
+        <source>Missing files: versions</source>
+        <translation>Missing files: versions</translation>
+    </message>
+    <message>
+        <source>You may not edit this object.</source>
+        <translation>You may not edit this object.</translation>
+    </message>
+    <message>
+        <source>Nothing is wrong with it any more.</source>
+        <translation>Nothing is wrong with it any more.</translation>
+    </message>
+    <message>
+        <source>The original file is missing: restore or upload it first.</source>
+        <translation>The original file is missing: restore or upload it first.</translation>
+    </message>
+    <message>
+        <source>This kind of field has no image aliases.</source>
+        <translation>This kind of field has no image aliases.</translation>
+    </message>
+    <message>
+        <source>No other version of this field still has its file.</source>
+        <translation>No other version of this field still has its file.</translation>
+    </message>
+    <message>
+        <source>Its file is not missing.</source>
+        <translation>Its file is not missing.</translation>
+    </message>
+    <message>
+        <source>No file was given, or the file to copy is gone.</source>
+        <translation>No file was given, or the file to copy is gone.</translation>
+    </message>
+    <message>
+        <source>The file must have the same extension as the expected path, and an image must be an image.</source>
+        <translation>The file must have the same extension as the expected path, and an image must be an image.</translation>
+    </message>
+    <message>
+        <source>The file is too large.</source>
+        <translation>The file is too large.</translation>
+    </message>
+    <message>
+        <source>A file is at the expected path now; it was left alone.</source>
+        <translation>A file is at the expected path now; it was left alone.</translation>
+    </message>
+    <message>
+        <source>The file could not be written to the storage.</source>
+        <translation>The file could not be written to the storage.</translation>
+    </message>
+    <message>
+        <source>It could not be done. The debug output says why.</source>
+        <translation>It could not be done. The debug output says why.</translation>
+    </message>
+    <message>
+        <source>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</source>
+        <translation>Only the first %count objects were checked. Choose a smaller subtree to see the rest.</translation>
+    </message>
+    <message>
+        <source>Tick at least one problem and one version.</source>
+        <translation>Tick at least one problem and one version.</translation>
+    </message>
+    <message>
+        <source>Preview for all %count results</source>
+        <translation>Preview for all %count results</translation>
+    </message>
+    <message>
+        <source>Regenerate the aliases</source>
+        <translation>Regenerate the aliases</translation>
+    </message>
+    <message>
+        <source>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</source>
+        <translation>The aliases of each image are made again from its original, with the settings of image.ini now. The original is not changed.</translation>
+    </message>
+    <message>
+        <source>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</source>
+        <translation>The file of another version of the same field, which still has it, is copied to the expected path. Nothing is overwritten; an image then gets its aliases again.</translation>
+    </message>
+    <message>
+        <source>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</source>
+        <translation>Choose a file for each field version. It is put at the expected path and must have the same extension; an image must be an image. Nothing is overwritten.</translation>
+    </message>
+    <message>
+        <source>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</source>
+        <translation>The field is emptied in this version: it no longer names the missing file. No file is deleted. A required field must be filled again at the next edit.</translation>
+    </message>
+    <message>
+        <source>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</source>
+        <translation>Each field version is marked for review in the list, with your name and the time. Nothing else changes.</translation>
+    </message>
+    <message>
+        <source>Resolve missing files</source>
+        <translation>Resolve missing files</translation>
+    </message>
+    <message>
+        <source>No row was ticked or no action chosen. Tick the rows first.</source>
+        <translation>No row was ticked or no action chosen. Tick the rows first.</translation>
+    </message>
+    <message>
+        <source>Only the first %count rows are taken; do the others afterwards.</source>
+        <translation>Only the first %count rows are taken; do the others afterwards.</translation>
+    </message>
+    <message>
+        <source>%count field versions, done %batch at a time.</source>
+        <translation>%count field versions, done %batch at a time.</translation>
+    </message>
+    <message>
+        <source>None of the chosen rows can be resolved this way.</source>
+        <translation>None of the chosen rows can be resolved this way.</translation>
+    </message>
+    <message>
+        <source>Field %id</source>
+        <translation>Field %id</translation>
+    </message>
+    <message>
+        <source>Copied from version %version</source>
+        <translation>Copied from version %version</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>Aliases made again</source>
+        <translation>Aliases made again</translation>
+    </message>
+    <message>
+        <source>Reference removed</source>
+        <translation>Reference removed</translation>
+    </message>
+    <message>
+        <source>Not done</source>
+        <translation>Not done</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch by itself</source>
+        <translation>Go on with the next batch by itself</translation>
+    </message>
+    <message>
+        <source>Confirm for %count field versions</source>
+        <translation>Confirm for %count field versions</translation>
+    </message>
+    <message>
+        <source>%done of %total field versions done, %failed not done, %left to go.</source>
+        <translation>%done of %total field versions done, %failed not done, %left to go.</translation>
+    </message>
+    <message>
+        <source>Go on with the next batch</source>
+        <translation>Go on with the next batch</translation>
+    </message>
+    <message>
+        <source>This page only takes the form of the missing files of the broken relations.</source>
+        <translation>This page only takes the form of the missing files of the broken relations.</translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and choose the rows once more.</source>
+        <translation>The form has expired. Open the list again and choose the rows once more.</translation>
+    </message>
+    <message>
+        <source>Resolve</source>
+        <translation>Resolve</translation>
     </message>
 </context>
 <context>

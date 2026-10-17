@@ -9,6 +9,7 @@
  *   ./console exp:content-check --unreferenced --node=2   the unused assets below node 2
  *   ./console exp:content-check --broken --node=2         the broken relations below node 2 and in the layouts
  *   ./console exp:content-check --why=123                 what uses object 123
+ *   ./console exp:content-check --missing-files --node=2  missing files and stale image aliases below node 2
  *
  * @alias exp:content-check
  *

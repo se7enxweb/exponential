@@ -4,7 +4,9 @@
    relations, after, limit), scope (the start location, see scope.tpl), kinds, relations, page_uri, filter_suffix, limit, limit_choices, limit_preference.
    The sources are walked by object id: a page shows the findings of the objects checked for it, and "Next page"
    goes on after the last of them (After). A target the user may not read is "unavailable",
-   without id or state. The same file is in design/admin and design/admin4. *}
+   without id or state. missing_files: the target "Missing files" (enabled, only, storage_dir and, when ticked, the
+   section of expContentCheckFiles::section(), drawn by contentcheck/missingfiles.tpl). The same file is in
+   design/admin and design/admin4. *}
 {def $kind_names = hash( 'deleted', 'Deleted'|i18n( 'kernel/contentcheck' ),
                          'trash', 'In the trash'|i18n( 'kernel/contentcheck' ),
                          'hidden', 'Hidden'|i18n( 'kernel/contentcheck' ),
@@ -62,6 +64,7 @@
         {foreach $kinds as $kind}
             <label class="a4-chip"><input type="checkbox" name="Kind[]" value="{$kind|wash}"{if $kinds_shown|contains( $kind )} checked="checked"{/if} /><span>{$kind_names[$kind]|wash}</span></label>
         {/foreach}
+        {if $missing_files.storage_dir|ne( '' )}<label class="a4-chip"><input type="checkbox" name="Kind[]" value="missing_file"{if $missing_files.enabled} checked="checked"{/if} /><span>{'Missing files in %dir'|i18n( 'kernel/contentcheck',, hash( '%dir', $missing_files.storage_dir ) )|wash}</span></label>{/if}
         </div>
     </fieldset>
     <fieldset class="a4-field">
@@ -72,14 +75,17 @@
         {/foreach}
         </div>
     </fieldset>
+    {if $missing_files.enabled}{include uri='design:contentcheck/missingfiles_filter.tpl' files=$missing_files part='chips'}{/if}
     <div class="a4-field">
         <button type="submit" class="a4-btn a4-btn-primary">{'Show'|i18n( 'kernel/contentcheck' )}</button>
     </div>
     {include uri='design:contentcheck/filter_choice.tpl' group='Kind' label='Targets'|i18n( 'kernel/contentcheck' )}
     {include uri='design:contentcheck/filter_choice.tpl' group='Relation' label='References'|i18n( 'kernel/contentcheck' )}
+    {if $missing_files.enabled}{include uri='design:contentcheck/missingfiles_filter.tpl' files=$missing_files part='choice'}{/if}
 </form>
 </section>
 
+{if $missing_files.only|not}
 <section class="a4-section" aria-labelledby="cc-list-title">
 {include uri='design:contentcheck/results_head.tpl' title='Findings'|i18n( 'kernel/contentcheck' ) title_id='cc-list-title'
          offset=0 limit=$limit count=-1
@@ -124,6 +130,9 @@
          start_url=cond( $params.after|gt( 0 ), concat( $page_uri, $filter_suffix ), '' )
          next_url=cond( $result.done, '', concat( $page_uri, $filter_suffix, $separator, 'After=', $result.last ) )}
 </section>
+{/if}
+
+{if $missing_files.enabled}{include uri='design:contentcheck/missingfiles.tpl' files=$missing_files page_uri=$page_uri filter_suffix=$filter_suffix}{/if}
 
 {if $result.layouts|count|gt( 0 )}
 <section class="a4-section" aria-labelledby="cc-layouts-title">
