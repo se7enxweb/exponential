@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 {* The left column's width (the admin_left_menu_size preference): a preset name, drawn by the stylesheets, or a
-   width dragged by hand, set as --left-sidebar-width by the pre-paint script in the head. No inline CSS. *}
+   width dragged by hand, set as --left-sidebar-width by the pre-paint script in the head. No inline CSS.
+   a4-preload: the first paint draws the side columns from the user's preferences, without transitions, until
+   ezadmin_menubar.js has applied their state and takes the class away (admin4.css). *}
 {def $page_left_size = ezpreference( 'admin_left_menu_size' )}
-<html lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}{if $page_left_size|ne( '' )}{if or( eq( $page_left_size, 'small' ), eq( $page_left_size, 'medium' ), eq( $page_left_size, 'large' ) )} data-a4-left-size="{$page_left_size}"{else} data-a4-left-width="{$page_left_size|wash}"{/if}{/if}{include uri='design:parts/a4_preference_attributes.tpl'}>
+<html class="a4-preload" lang="{$site.http_equiv.Content-language|wash}"{if eq( first_set( $site.text_direction, 'ltr' ), 'rtl' )} dir="rtl"{/if}{if $page_left_size|ne( '' )}{if or( eq( $page_left_size, 'small' ), eq( $page_left_size, 'medium' ), eq( $page_left_size, 'large' ) )} data-a4-left-size="{$page_left_size}"{else} data-a4-left-width="{$page_left_size|wash}"{/if}{/if}{include uri='design:parts/a4_preference_attributes.tpl'}>
 {undef $page_left_size}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {* SectionID is cast to a number: every distinct raw value would write its own cache file *}
     {* Do some uncacheable left + right menu stuff before cache-block's *}
     {* $hide_left_menu and $hide_right_menu as the admin design defines them: on content edit pages (edit, history,
        version view ...) the page's own template brings the left column (Object information) and the content tree
@@ -21,7 +24,7 @@
      $admin_left_size      = ezpreference( 'admin_left_menu_size' )
      $admin_theme          = ezpreference( 'admin_theme' )
      $left_size_hash       = 0
-     $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' ) ) )
+     $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' )|int ) )
      $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ), ',', $current_user.is_logged_in|choose( 'anonymous', 'user' ) )
      $uri_cache_key        = $module_result.uri
      $main_wrapped         = false()
@@ -39,7 +42,7 @@
     {if and( ezini_hasvariable( 'AdminLayoutSettings', 'Enabled', 'explayouts.ini' ), eq( ezini( 'AdminLayoutSettings', 'Enabled', 'explayouts.ini' ), 'enabled' ) )}
         {set $admin_layout = fetch( 'explayouts', 'resolve_admin_layout', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )}
         {if and( is_array( $admin_layout ), is_set( $admin_layout.block_count ), $admin_layout.block_count|gt( 0 ) )}
-            {set $admin_layout_id   = concat( $admin_layout.id, '-', fetch( 'explayouts', 'admin_layout_cache_key', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) ).result.0 )
+            {set $admin_layout_id   = concat( $admin_layout.id, '-', fetch( 'explayouts', 'admin_layout_cache_key', hash( 'module', first_set( $admin_mp.module_name, '' ), 'view', first_set( $admin_mp.function_name, '' ) ) )|implode( '-' ) )
                  $admin_layout_type = $admin_layout.layout_type}
             {* the layout type decides which side columns the page has *}
             {if $admin_layout_type|eq( 'admin_full' )}
@@ -97,28 +100,34 @@
        site menu lists the siteaccesses of the settings at the addresses of the request (parts/a4_header_site.tpl). *}
                 {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), siteaccess_menu_key(), $admin_layout_id, $env_badge.key ) ignore_content_expiry}
 
-                {* HEADER ( SEARCH, LOGO AND USERMENU ): the navbar. The header zone fills it with the logo,
-                   search, theme switch and sidebar toggles, the topmenu zone with the tab menu. Either zone
-                   empty (or no admin layout): admin4's own navbar. *}
-                {def $header_html  = ''
+                {* HEADER ( SEARCH, LOGO AND USERMENU ): the navbar. The header zone fills it with the logo, the menu
+                   button, search, theme switch and sidebar controls, the topmenu zone with the tab menu. Either zone
+                   empty (or no admin layout): admin4's own navbar. The Tab order is admin4's: logo, menu button, menu,
+                   search, tools, sidebar controls. So the header zone is drawn in two parts, the logo and the menu
+                   button before the menu panel, the rest after it. A layout stored with the old admin_sidebar_toggles
+                   block (button and controls in one) draws it in the second part, after the tools. *}
+                {def $header_start = ''
+                     $header_html  = ''
                      $topmenu_html = ''}
                 {if $admin_layout}
-                    {set-block variable=$header_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='header'}{/set-block}
+                    {set-block variable=$header_start}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='header' only=array( 'admin_logo', 'admin_menu_button' )}{/set-block}
+                    {set-block variable=$header_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='header' skip=array( 'admin_logo', 'admin_menu_button' )}{/set-block}
                     {set-block variable=$topmenu_html}{include uri='design:explayouts/admin_zone.tpl' layout=$admin_layout zone_identifier='topmenu'}{/set-block}
                 {/if}
-                {if and( $header_html|trim|ne( '' ), $topmenu_html|trim|ne( '' ) )}
+                {if and( concat( $header_start, $header_html )|trim|ne( '' ), $topmenu_html|trim|ne( '' ) )}
                 <div id="navbar" class="navbar-main">
-                    {$header_html}
+                    {$header_start}
                     <div id="a4-navbar-menu" class="navbar-menu {if $ui_context_edit}disabled{/if}" role="navigation" aria-label="{'Main menu'|i18n( 'design/admin/pagelayout' )|wash}">
                         <ul class="navbar-bar">
                             {$topmenu_html}
                         </ul>
                     </div>
+                    {$header_html}
                 </div>
                 {else}
                     {include uri='design:page_header.tpl'}
                 {/if}
-                {undef $header_html $topmenu_html}
+                {undef $header_start $header_html $topmenu_html}
             </div>
         </div>
         {/cache-block}{* /Pr tab cache *}

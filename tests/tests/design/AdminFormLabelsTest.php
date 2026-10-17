@@ -16,6 +16,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminFormLabelsTest extends PHPUnit\Framework\TestCase
 {
     /** Where admin4's templates are: the design's own and its overrides */
@@ -46,7 +48,7 @@ class AdminFormLabelsTest extends PHPUnit\Framework\TestCase
             foreach ( $it as $file )
             {
                 if ( substr( $file->getFilename(), -4 ) === '.tpl' )
-                    $all[substr( $file->getPathname(), strlen( self::root() ) + 1 )] = (string)file_get_contents( $file->getPathname() );
+                    $all[substr( $file->getPathname(), strlen( self::root() ) + 1 )] = AdminFiles::read( $file->getPathname() );
             }
         }
         ksort( $all );
@@ -149,7 +151,7 @@ class AdminFormLabelsTest extends PHPUnit\Framework\TestCase
                 }
             }
             $this->assertGreaterThan( 0, $callers, "$uri is included nowhere in admin4; remove it from INCLUDED" );
-            $control = (string)file_get_contents( self::root() . '/' . $path );
+            $control = AdminFiles::read( self::root() . '/' . $path );
             $this->assertCount( 1, self::unnamedControls( $control ), "$path should hold only its parameter-named control" );
             $this->assertMatchesRegularExpression( '/\\bid="\\{\\$' . $parameter . '\\|wash\\}"/', $control, "$path should take its id from $parameter" );
         }
@@ -261,12 +263,12 @@ class AdminFormLabelsTest extends PHPUnit\Framework\TestCase
     public function testTheAttributeLabelIsTheLabelOfItsField()
     {
         $id = 'ezcoa-{if ne( $attribute_base, \'ContentObjectAttribute\' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}';
-        $tpl = (string)file_get_contents( self::root() . '/design/admin4/templates/content/edit_attribute.tpl' );
+        $tpl = AdminFiles::read( self::root() . '/design/admin4/templates/content/edit_attribute.tpl' );
         $this->assertSame( 2, substr_count( $tpl, ' for="' . $id . '"' ) );
         $this->assertStringContainsString( '{if $attribute.display_info.edit.grouped_input|not} for="' . $id . '"{/if}', $tpl, 'the translation branch: only for a single input' );
         foreach ( array( 'ezstring', 'eztext', 'ezinteger', 'ezemail' ) as $datatype )
         {
-            $edit = (string)file_get_contents( self::root() . "/design/standard/templates/content/datatype/edit/$datatype.tpl" );
+            $edit = AdminFiles::read( self::root() . "/design/standard/templates/content/datatype/edit/$datatype.tpl" );
             $this->assertStringContainsString( 'id="' . $id . '"', $edit, $datatype );
         }
     }

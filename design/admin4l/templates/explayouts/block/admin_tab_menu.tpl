@@ -1,32 +1,25 @@
-{* Admin block (explayouts). Markup copied from admin4 page_topmenu.tpl lines, keep in step with it. *}
-{if is_unset( $ui_context_edit )}{def $ui_context_edit = eq( $ui_context, 'edit' )}{/if}
+{* Admin block (explayouts). Markup copied from admin4 page_topmenu.tpl lines, keep in step with it. Only the <li> items: the page wraps the topmenu zone in #a4-navbar-menu > ul.navbar-bar. *}
 
-    <!-- start::Navbar Menu -->
-    <div class="navbar-menu {if $ui_context_edit}disabled{/if}">
-        <ul class="navbar-bar">
-            {* The phone menu's search, first in the panel (below 576px; from 576px the header's own search stands in
-               the row) *}
-            <li class="header-search-mobile">
-                {include uri='design:page_search.tpl' search_box='-mobile'}
-            </li>
-            {* The tab marked as current: the page's navigation part, or Setup's for a page of a tab the Setup menu
-               stands in for (parts/a4_navigation_part.tpl) *}
-            {def $a4_current_part = ''}
-            {set-block variable=a4_current_part}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
-            {* The tabs, with the mega menus of menu.ini [TopAdminMenu] MegaMenuTabs[] (parts/a4_topmenu_items.tpl, shared
-               with admin4l's tab menu block) *}
-            {include uri='design:parts/a4_topmenu_items.tpl' navigationpart_identifier=$a4_current_part|trim}
-            {undef $a4_current_part}
-            {* The overflow of the one-line menu (576px and up): ezadmin_menubar.js moves the tabs that do not fit into
-               this list and shows the item; without the script it stays hidden and the row scrolls sideways. A
-               disclosure button (aria-expanded, aria-controls), not a menu: the list holds plain links. *}
-            <li class="a4-nav-more" hidden>
-                <button type="button" class="a4-nav-more-toggle" aria-expanded="false" aria-controls="a4-nav-more-list">{'More'|i18n( 'design/admin/pagelayout' )|wash}<span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span></button>
-                <ul id="a4-nav-more-list" class="a4-nav-more-list" hidden></ul>
-            </li>
-            <li class="a4-phone-only a4-phone-close">
-                <button type="button" class="a4-phone-close-button" aria-controls="a4-navbar-menu"><span class="a4-phone-close-cross" aria-hidden="true">&#215;</span>{'Close'|i18n( 'design/admin/pagelayout' )|wash}</button>
-            </li>
-        </ul>
-    </div>
-    <!-- end::Navbar Menu -->
+    {* The phone menu's search, first in the panel (below 576px; from 576px the header's own search stands in
+       the row) *}
+    <li class="header-search-mobile">
+        {include uri='design:page_search.tpl' search_box='-mobile'}
+    </li>
+    {* The tab marked as current: the page's navigation part, or Setup's for a page of a tab the Setup menu
+       stands in for (parts/a4_navigation_part.tpl) *}
+    {def $a4_current_part = ''}
+    {set-block variable=a4_current_part}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
+    {* The tabs, with the mega menus of menu.ini [TopAdminMenu] MegaMenuTabs[] (parts/a4_topmenu_items.tpl, shared
+       with admin4l's tab menu block) *}
+    {include uri='design:parts/a4_topmenu_items.tpl' navigationpart_identifier=$a4_current_part|trim}
+    {undef $a4_current_part}
+    {* The overflow of the one-line menu (576px and up): ezadmin_menubar.js moves the tabs that do not fit into
+       this list and shows the item; without the script it stays hidden and the row scrolls sideways. A
+       disclosure button (aria-expanded, aria-controls), not a menu: the list holds plain links. *}
+    <li class="a4-nav-more" hidden>
+        <button type="button" class="a4-nav-more-toggle" aria-expanded="false" aria-controls="a4-nav-more-list">{'More'|i18n( 'design/admin/pagelayout' )|wash}<span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span></button>
+        <ul id="a4-nav-more-list" class="a4-nav-more-list" hidden></ul>
+    </li>
+    <li class="a4-phone-only a4-phone-close">
+        <button type="button" class="a4-phone-close-button" aria-controls="a4-navbar-menu"><span class="a4-phone-close-cross" aria-hidden="true">&#215;</span>{'Close'|i18n( 'design/admin/pagelayout' )|wash}</button>
+    </li>

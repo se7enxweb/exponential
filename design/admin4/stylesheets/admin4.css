@@ -1325,6 +1325,37 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
   html body:has(.sidebar.right.show) { margin-inline-end: var(--a4-right-width); }
   body:has(.sidebar.right.show) .content-wrapper { padding-inline-end: 0; }
 }
+/* The first paint already has the columns the page ends with. ezadmin_menubar.js opens a column (.show) once the
+   document is parsed, and a page drawn before that showed the content across the whole window, then moved it aside
+   for the columns (a cumulative layout shift of 0.87 on the dashboard at 1440px). Until the script has applied its state, the
+   page layouts' html.a4-preload draws the columns from the user's preferences on <html>
+   (parts/a4_preference_attributes.tpl), with the script's own rules: beside the content open unless saved closed
+   (admin_left_sidebar, admin_right_sidebar 0), the right drawer open on a tablet-sized window when saved open
+   (admin_right_drawer 1), and from 1024px the left column steps aside for it. An anonymous page has no preferences:
+   both columns as by default. The script takes html.a4-preload away two frames after it has applied its state; till
+   then nothing moves by a transition either (the tabs' arrows turning to their state). Without the script the
+   columns stay as the preferences say. */
+html.a4-preload *,
+html.a4-preload *::before,
+html.a4-preload *::after { transition: none !important; }
+@media screen and (min-width: 1024px) {
+  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) .sidebar.left { opacity: 1; visibility: visible; }
+  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:has(.sidebar.left) { margin-inline-start: var(--left-sidebar-width, 15rem); }
+  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:has(.sidebar.left) .content-wrapper { padding-inline-start: 0; }
+}
+@media screen and (min-width: 1280px) {
+  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) .sidebar.right { opacity: 1; visibility: visible; }
+  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:has(.sidebar.right) { margin-inline-end: var(--a4-right-width); }
+  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:has(.sidebar.right) .content-wrapper { padding-inline-end: 0; }
+}
+@media screen and (min-width: 576px) and (max-width: 1279.98px) {
+  html.a4-preload[data-a4-pref-admin-right-drawer="1"] .sidebar.right { opacity: 1; visibility: visible; }
+}
+@media screen and (min-width: 1024px) and (max-width: 1279.98px) {
+  html.a4-preload[data-a4-pref-admin-right-drawer="1"] .sidebar.left { opacity: 0; visibility: hidden; }
+  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:has(.sidebar.left) { margin-inline-start: 0; }
+  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:has(.sidebar.left) .content-wrapper { padding-inline-start: var(--a4-space-5); }
+}
 @media screen and (max-width: 1023.98px) {
   .content-wrapper {
     padding: 0.5rem var(--a4-space-5);
@@ -3330,11 +3361,20 @@ body.leftmenu-resizing .leftmenu-resize-handle { color: var(--a4-accent-text); b
   .sidebar.right.show #rightmenu-design { box-shadow: 0 0 0 1px var(--a4-card-edge), var(--a4-shadow-m); }
 }
 
-/* An open left drawer (below 1024px) keeps its tab at its right edge instead of over the tree */
+/* The left drawer (below 1024px) as the right one: its tab stays fixed on the window's edge, open or closed, in the
+   24px the card leaves there (.sidebar.left > div), so it neither covers the tree nor moves with the column's width.
+   Until 2026-10 the open drawer moved its tab to its far edge: by the width dragged on a wide window, which put it
+   in the middle of a phone's screen over the page (and, right to left, off the screen). The drawer leaves 48px of
+   the page visible at any saved width, and on a phone it has no width grip: dragging there moved the page. */
 @media screen and (max-width: 1023.98px) {
-  body:has(#leftmenu.sidebar.show) .sidebar-control.left {
-    translate: min(var(--left-sidebar-width, 16rem), calc(100vw - var(--a4-space-7))) 0;
-  }
+  .sidebar.left { max-width: calc(100vw - var(--a4-space-7)); }
+}
+@media screen and (max-width: 575.98px) {
+  .leftmenu-resize-handle { display: none; }
+}
+/* A touch screen: both tabs 48px high, a comfortable target where only 24px of the width is free */
+@media (pointer: coarse) {
+  .sidebar-control { height: var(--a4-space-7); }
 }
 
 /* A very wide window: the content column stops growing, so a page's actions stay near what they act on */

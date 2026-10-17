@@ -34,6 +34,8 @@
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 require_once __DIR__ . '/AdminTokenContrastTest.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
 {
     const PARTIAL = 'design/admin4/templates/parts/a4_environment_badge.tpl';
@@ -46,7 +48,7 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
 
     private static function file( $path )
     {
-        return (string)file_get_contents( dirname( __DIR__, 3 ) . '/' . $path );
+        return AdminFiles::read( dirname( __DIR__, 3 ) . '/' . $path );
     }
 
     private static function css()

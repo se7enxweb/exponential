@@ -13021,6 +13021,10 @@
         <source>Export this item or import into it.</source>
         <translation>Dieses Element exportieren oder in es importieren.</translation>
     </message>
+    <message>
+        <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
+        <translation>Die Unterelemente können nicht aufgelistet werden: Exponential UI (die Extension expui) ist in diesem Siteaccess nicht aktiv oder nicht geladen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>

@@ -13,6 +13,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminTokenContrastTest extends PHPUnit\Framework\TestCase
 {
     private static $modes;
@@ -20,8 +22,8 @@ class AdminTokenContrastTest extends PHPUnit\Framework\TestCase
     public static function setUpBeforeClass(): void
     {
         $root = dirname( __DIR__, 3 );
-        $components = file_get_contents( $root . '/design/admin4/stylesheets/components.css' );
-        $frame = file_get_contents( $root . '/design/admin4/stylesheets/admin4.css' );
+        $components = AdminFiles::read( $root . '/design/admin4/stylesheets/components.css' );
+        $frame = AdminFiles::read( $root . '/design/admin4/stylesheets/admin4.css' );
         $light = self::tokens( $components, ':root' ) + self::tokens( $frame, ':root' );
         $dark = self::tokens( $components, 'html[data-a4-theme="dark"]' ) + self::tokens( $frame, 'html[data-a4-theme="dark"]' ) + $light;
         self::$modes = array( 'light' => $light, 'dark' => $dark );

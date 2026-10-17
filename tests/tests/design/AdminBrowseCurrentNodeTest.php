@@ -14,13 +14,15 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminBrowseCurrentNodeTest extends PHPUnit\Framework\TestCase
 {
     private static function file( $path )
     {
         $file = dirname( __DIR__, 3 ) . '/' . $path;
         self::assertFileExists( $file );
-        return (string)file_get_contents( $file );
+        return AdminFiles::read( $file );
     }
 
     /** BC-01 */

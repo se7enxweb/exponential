@@ -80,6 +80,10 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   `user/preferences/set_and_exit`. An anonymous page keeps them in the browser (`localStorage`) only; a browser
   choice made before is taken along once. A preference that cannot be saved is kept in the browser instead, and
   `set( name, '' )` forgets a choice (the preference set empty, the browser's copy removed). `tests/tests/design/AdminPreferencesTest.php` checks it.
+  The side columns are drawn with these preferences on the first paint: until `ezadmin_menubar.js` has applied
+  their state, `html.a4-preload` (both page layouts) shows a column beside the content unless it is saved closed,
+  with the room an open column takes, and runs no transitions; the script removes the class two frames later
+  (`tests/tests/design/AdminFirstPaintColumnsTest.php`).
 - **Header and top menu.** One row of 56 px from 1280 px (logo, menu, search, site, light/dark, user menu, logout),
   two rows of 48 + 40 px from 576 px, one row of 56 px on a phone with the hamburger menu (logo, site, light/dark,
   menu button). The menu stays on one line; tabs that do not fit go into a "More" list. On a phone the menu opens
@@ -201,7 +205,7 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
   ([styling rules, "Edit forms"](../../bc/6.0/admin4-styling.md#edit-forms)).
 - **Frame.** Side column margins are halved (a 16 px gap). The sidebar buttons sit on the window edges at 48% of the
   window height; they are named after their column ("Left column", "Right column"), say with `aria-expanded` whether
-  it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Long names in the side columns wrap instead of being cut off.
+  it shows, and on a narrow window Escape closes a column open over the page and returns the focus to its tab. Below 1024px both tabs stay fixed on the window's edge while their column is open over the page, in the 24 px its card leaves there; on a touch screen they are 48 px high. The left column's width grip is not shown on a phone. Long names in the side columns wrap instead of being cut off.
   The User preferences block of the right column (Locations, Re-edit) shows "on" and "off" as tabs, like the node
   view's tabs: the current state in the accent tint with a bar under it (the pressed button of a POST form, `aria-pressed`), the other one quiet
   ([styling rules, "Legacy controls and the side columns"](../../bc/6.0/admin4-styling.md#legacy-controls-and-the-side-columns)).

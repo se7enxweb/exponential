@@ -29,6 +29,8 @@
 
 require_once __DIR__ . '/AdminBaseStylesheetsTest.php';
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminLogoTest extends PHPUnit\Framework\TestCase
 {
     const PARTIAL = 'design/admin4/templates/parts/a4_logo.tpl';
@@ -41,7 +43,7 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
 
     private static function file( $path )
     {
-        return (string)file_get_contents( self::root() . '/' . $path );
+        return AdminFiles::read( self::root() . '/' . $path );
     }
 
     private static function css( $file )
@@ -129,7 +131,7 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
             {
                 $path = substr( $file->getPathname(), strlen( self::root() ) + 1 );
                 if ( $path !== self::PARTIAL && substr( $path, -4 ) === '.tpl' )
-                    $this->assertStringNotContainsString( 'class="a4-logo', (string)file_get_contents( $file->getPathname() ), $path );
+                    $this->assertStringNotContainsString( 'class="a4-logo', AdminFiles::read( $file->getPathname() ), $path );
             }
         }
 

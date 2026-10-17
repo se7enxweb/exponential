@@ -15,6 +15,10 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminNodeBinary.php';
+
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminContextMenuTest extends PHPUnit\Framework\TestCase
 {
     /** The designs whose copies of the menu script and its openers are kept identical */
@@ -33,7 +37,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     /** The POPUP MENU block of admin4's pagelayout.css, comments removed */
     private static function menuCss()
     {
-        $css = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/pagelayout.css' );
+        $css = AdminFiles::read( self::root() . '/design/admin4/stylesheets/pagelayout.css' );
         $start = strpos( $css, '/* POPUP MENU' );
         $end = strpos( $css, '/* BOX MODEL */' );
         self::assertNotFalse( $start, 'pagelayout.css has no POPUP MENU block' );
@@ -54,7 +58,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     /** The pixel value of an admin4 --a4-space-N token, from components.css */
     private static function spaceTokenPx( $token )
     {
-        $tokens = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/components.css' );
+        $tokens = AdminFiles::read( self::root() . '/design/admin4/stylesheets/components.css' );
         self::assertSame( 1, preg_match( '/' . preg_quote( $token, '/' ) . ':\s*(\d+)px;/', $tokens, $match ),
                           "components.css does not define $token in px" );
         return (int)$match[1];
@@ -85,7 +89,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
 
     public function testMenuScriptGivesRolesAndKeys()
     {
-        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
         foreach ( array( "'role', 'menu'", "'role', 'menuitem'", "'role', 'separator'", "'aria-haspopup'", "'aria-expanded'",
                          "'aria-disabled'", "'aria-labelledby'", "'tabindex', '-1'" ) as $needle )
             $this->assertStringContainsString( $needle, $js, "ezpopupmenu.js no longer sets $needle" );
@@ -110,7 +114,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
      */
     public function testAKeyboardClickIsToldByItsClickCountNotByItsPositionOnThePage()
     {
-        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
         $this->assertSame( 1, preg_match( '/function _isKeyboardEvent\( event \)\s*\{(.*?)\n\}/s', $js, $match ),
                            'ezpopupmenu.js no longer has _isKeyboardEvent()' );
         $body = (string)preg_replace( '/\/\/[^\n]*/', '', $match[1] );
@@ -124,7 +128,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( 'javascript/contentstructuremenu_dynamic.js', 'templates/contentstructuremenu/show_content_structure.tpl' ) as $file )
         {
-            $text = (string)file_get_contents( self::root() . "/design/admin4/$file" );
+            $text = AdminFiles::read( self::root() . "/design/admin4/$file" );
             $this->assertMatchesRegularExpression( '/class="nodeicon" href="#" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="/', $text,
                 "The tree's menu button in $file needs role, aria-haspopup, aria-expanded and a name" );
         }
@@ -138,7 +142,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( "admin4", "admin" ) as $design )
         {
-            $text = (string)file_get_contents( self::root() . "/design/$design/javascript/ezajaxsubitems_expdatatable.js" );
+            $text = AdminFiles::read( self::root() . "/design/$design/javascript/ezajaxsubitems_expdatatable.js" );
             $this->assertStringContainsString( "var ev = e.originalEvent || e;", $text, "design/$design: the sub-items menu button passes the native event" );
             $this->assertStringNotContainsString( "getBoundingClientRect", $text, "design/$design: the sub-items menu button places the menu itself again" );
         }
@@ -163,7 +167,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
      */
     public function testAKeyboardMenuStaysAtItsTriggerAndOutOfTheHeader()
     {
-        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
         $this->assertStringContainsString( "anchor = { 'top': rect.top + screenData.ScrollY, 'bottom': rect.bottom + screenData.ScrollY };", $js );
         $this->assertStringContainsString( '_moveTopLevelOnScreen( menuID, mousePos, anchor );', $js );
         $start = strpos( $js, 'function _moveTopLevelOnScreen( menuID, mousePos, anchor )' );
@@ -185,10 +189,8 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
      */
     public function testTheMenuPlacementStaysInTheVisibleArea()
     {
-        $node = trim( (string)shell_exec( 'command -v node 2>/dev/null' ) );
-        if ( $node === '' )
-            $this->markTestSkipped( 'node is not installed' );
-        $js = (string)file_get_contents( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
+        $node = AdminNodeBinary::require();
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/popupmenu/ezpopupmenu.js' );
         $this->assertSame( 1, preg_match( '/function _verticalPlace\(.*?\n\}\n/s', $js, $m ) );
         // areaTop, areaBottom, above, below, height, minHeight => top, maxHeight
         $cases = array(

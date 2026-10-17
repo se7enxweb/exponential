@@ -14,6 +14,8 @@
  * @package tests
  */
 
+require_once __DIR__ . '/AdminFiles.php';
+
 class AdminLandmarksTest extends PHPUnit\Framework\TestCase
 {
     const TEMPLATES = 'design/admin4/templates';
@@ -28,7 +30,7 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
 
     private static function template( $name )
     {
-        return (string)file_get_contents( self::root() . '/' . self::TEMPLATES . '/' . $name );
+        return AdminFiles::read( self::root() . '/' . self::TEMPLATES . '/' . $name );
     }
 
     /** Every template of admin4 and its overrides, path relative to the root => source without {* comments *} */
@@ -42,7 +44,7 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
             {
                 if ( substr( $file->getFilename(), -4 ) !== '.tpl' )
                     continue;
-                $source = preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( $file->getPathname() ) );
+                $source = preg_replace( '/\{\*.*?\*\}/s', '', AdminFiles::read( $file->getPathname() ) );
                 $all[substr( $file->getPathname(), strlen( self::root() ) + 1 )] = $source;
             }
         }
@@ -86,7 +88,7 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
      */
     public function testTheAdmin4lPageLayoutHasTheSameSkipLinkAndLandmarks()
     {
-        $layout = preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( self::root() . '/design/admin4l/templates/pagelayout.tpl' ) );
+        $layout = preg_replace( '/\{\*.*?\*\}/s', '', AdminFiles::read( self::root() . '/design/admin4l/templates/pagelayout.tpl' ) );
         $this->assertMatchesRegularExpression( '#<body[^>]*>\s*<a class="a4-skip-link" href="\#\{if \$main_wrapped\}a4-main\{else\}maincontent\{/if\}">#', $layout );
         $this->assertStringContainsString( '<div id="maincontent" role="main" tabindex="-1">', $layout );
         $this->assertMatchesRegularExpression( '#\{if \$main_wrapped\}\s*<div id="a4-main" role="main" tabindex="-1">#', $layout );
@@ -178,7 +180,7 @@ class AdminLandmarksTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( 'admin4', 'admin' ) as $design )
         {
-            $css = (string)file_get_contents( self::root() . "/design/$design/stylesheets/components.css" );
+            $css = AdminFiles::read( self::root() . "/design/$design/stylesheets/components.css" );
             $this->assertStringContainsString( '.a4-skip-link {', $css, $design );
             $this->assertStringContainsString( '.a4-skip-link:focus {', $css, $design );
         }

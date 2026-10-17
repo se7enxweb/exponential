@@ -10571,6 +10571,10 @@
         <source>Upload files to this location.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
