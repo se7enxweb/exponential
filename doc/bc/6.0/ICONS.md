@@ -31,7 +31,8 @@ No kernel class override and no `EZP_AUTOLOAD_ALLOW_KERNEL_OVERRIDE` setup is ne
 
 ## How icons are found
 
-- **Theme chain**: the current theme (`Theme`), then every `AdditionalThemeList[]` theme, then `StandardTheme`.
+- **Theme chain**: the current theme (`Theme`, or the theme of the current design, `DesignTheme[<SiteDesign>]`, followed
+  by `Theme`), then every `AdditionalThemeList[]` theme, then `StandardTheme`.
 - **Repository chain**: for each theme, the `icons/` directory of every extension in `IconExtensions[]` (in the
   listed order), then the default repository `share/icons/`.
 - **Default icon**: when nothing matches, the theme's or override's `Default` icon is used.
@@ -47,6 +48,7 @@ All settings are in `settings/icon.ini`, overridable in `settings/override/` and
 | `icon.ini` | `[IconSettings]` | `Theme` | `crystal` | global or siteaccess |
 | `icon.ini` | `[IconSettings]` | `StandardTheme` | `crystal` (final fallback) | global or siteaccess |
 | `icon.ini` | `[IconSettings]` | `AdditionalThemeList[]` | empty (searched before `StandardTheme`) | global or siteaccess |
+| `icon.ini` | `[IconSettings]` | `DesignTheme[<design>]` | `bootstrap-icons` for `admin4` and `admin4l` (replaces `Theme` while the design is the `SiteDesign`; empty: off) | global or siteaccess |
 | `icon.ini` | `[ExtensionSettings]` | `IconExtensions[]` | empty (searched before `Repository`, order matters) | global or siteaccess |
 
 ```ini
@@ -145,17 +147,24 @@ The `IconExtensions[]` entry makes the icon engine look in `extension/mycompany_
 `share/icons/bootstrap-icons/` is a second admin icon theme next to `crystal-admin`, made for the admin4 design:
 Bootstrap Icons 1.13.1 (MIT, `LICENSE` beside them) as SVG, one file for every size (`Sizes[normal]=32x32;svg`,
 the part after the semicolon is the subdirectory). Its `icon.ini` maps the same classes, MIME types, class groups and
-other icons as `crystal-admin`, and more. Switch an admin siteaccess to it with
+other icons as `crystal-admin`, and more. It follows the design: `settings/icon.ini` sets
 
 ```ini
 [IconSettings]
-Theme=bootstrap-icons
-AdditionalThemeList[]
-AdditionalThemeList[]=crystal-admin
+DesignTheme[]
+DesignTheme[admin4]=bootstrap-icons
+DesignTheme[admin4l]=bootstrap-icons
 ```
 
-so `class_icon`, `mimetype_icon`, `classgroup_icon` and `icon` still give a key it does not map its `crystal-admin`
-icon. The content tree's `icon_info` does not: it reads the first theme it finds (break at the first theme directory)
+While the siteaccess's `SiteDesign` (`site.ini [DesignSettings]`) is a design with an entry, its theme replaces
+`Theme`, and `Theme` is searched right after it. An admin siteaccess with `Theme=crystal-admin` therefore draws
+Bootstrap Icons in admin4, and `class_icon`, `mimetype_icon`, `classgroup_icon` and `icon` still give a key the theme
+does not map its `crystal-admin` icon; a user who switches to admin3 gets `crystal-admin` again. A type's own theme
+(`[ClassIcons] Theme` etc.) still wins. `DesignTheme[admin4]=` (empty) in a siteaccess's `icon.ini.append.php` turns it
+off for admin4, an empty `DesignTheme[]` for every design; a design of your own built on admin4 needs its own entry.
+
+Earlier in the 6.0.15 line the theme was opt-in per admin siteaccess (`Theme=bootstrap-icons`, `AdditionalThemeList[]=crystal-admin`).
+That setting still works and gives the same icons; it can stay or go. The content tree's `icon_info` does not: it reads the first theme it finds (break at the first theme directory)
 and gives that theme's `Default` for a class it does not map, so a class of your own belongs in `ClassMap`. See
 [the admin4 design: icons](../../features/6.0/admin4-design.md#icons).
 

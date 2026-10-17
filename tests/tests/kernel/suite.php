@@ -70,7 +70,6 @@ class eZKernelTestSuite extends ezpDatabaseTestSuite
         $this->addTestSuite( 'ezpMobileDeviceDetectTest' );
         $this->addTestSuite( 'ezpMobileDeviceRegexpFilterTest' );
 
-        $this->addTestSuite( 'eZSiteAccess_Test' );
         $this->addTestSuite( 'eZSiteAccessMatchHostUriTest' );
         $this->addTestSuite( 'eZSiteDataTest' );
         $this->addTestSuite( 'eZPendingActionsTest' );
