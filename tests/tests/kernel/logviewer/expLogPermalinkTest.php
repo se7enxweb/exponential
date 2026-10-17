@@ -9,6 +9,7 @@
  *  LV-73  build(): the order of PARAMS, defaults and $omit left out, a plain view is setup/logs/view/<key>
  *  LV-74  round trip: build() then state() gives the same state, for many random states
  *  LV-75  searching() and criteriaInput()
+ *  LV-76  (archive)/N is the name of rotation N; (rotation)/N is read as the same; build() writes (archive)
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -123,7 +124,7 @@ class expLogPermalinkTest extends PHPUnit\Framework\TestCase
                       'reference' => 'ERR-0123456789', 'scope' => 'kernel', 'rotations' => true, 'cursor' => '0:10', 'offset' => 20,
                       'follow' => false, 'wrap' => true, 'unmask' => true, 'done' => 'truncate', 'ok' => true );
         $url = expLogPermalink::build( 'site-storage', $all );
-        $this->assertSame( 'setup/logs/view/site-storage/(rotation)/1/(level)/error,warning/(search)/a~20b/(regex)/1/(case)/1'
+        $this->assertSame( 'setup/logs/view/site-storage/(archive)/1/(level)/error,warning/(search)/a~20b/(regex)/1/(case)/1'
                            . '/(from)/2026-10-17/(to)/2026-10-18/(siteaccess)/admin/(uri)/~2Fx/(ip)/192.0.2.1/(reference)/ERR-0123456789'
                            . '/(scope)/kernel/(rotations)/1/(cursor)/0~3A10/(offset)/20/(follow)/0/(wrap)/1/(unmask)/1/(done)/truncate/(ok)/1', $url );
         // the names come in the order of PARAMS
@@ -184,5 +185,21 @@ class expLogPermalinkTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $c['regex'] );
         $this->assertSame( array( 'error' ), $c['levels'] );
         $this->assertSame( array(), $c['invalid'] );
+    }
+
+    /** LV-76 */
+    public function testArchiveIsTheNameOfARotation()
+    {
+        $this->assertSame( 'archive', array_keys( expLogPermalink::PARAMS )[0] );
+        $this->assertSame( 2, expLogPermalink::state( array( 'archive' => '2' ) )['rotation'] );
+        // (rotation)/N, the name of the first permalinks, is read as the same
+        $this->assertSame( 3, expLogPermalink::state( array( 'rotation' => '3' ) )['rotation'] );
+        // a view's $Params hold false for a parameter not given: the other name is still read
+        $this->assertSame( 4, expLogPermalink::state( array( 'archive' => false, 'rotation' => '4' ) )['rotation'] );
+        $this->assertSame( 5, expLogPermalink::state( array( 'archive' => '5', 'rotation' => '4' ) )['rotation'], '(archive) wins' );
+        $this->assertSame( -1, expLogPermalink::state( array( 'archive' => '-1' ) )['rotation'], 'a bare .gz' );
+        $this->assertSame( 'setup/logs/view/error/(archive)/2', expLogPermalink::build( 'error', array( 'rotation' => 2 ) ) );
+        $this->assertSame( 'setup/logs/view/error', expLogPermalink::build( 'error', array( 'rotation' => 0 ) ), 'the current file' );
+        $this->assertStringNotContainsString( '(rotation)', expLogPermalink::build( 'error', array( 'rotation' => 7, 'q' => 'x' ) ) );
     }
 }

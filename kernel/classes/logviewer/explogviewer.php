@@ -155,6 +155,25 @@ class expLogViewer
     }
 
     /**
+     * The actions that apply to one file, of those switched on and allowed (actions()). An archive (.N, .gz) is
+     * read only: it is downloaded or removed, never rotated or emptied; a current file is never removed; a log
+     * configured by key (the web server's) is only downloaded. Pure.
+     *
+     * @param array $file a resolved file (archive, configured)
+     * @param array $actions actions()
+     * @return array download, rotate, truncate, delete => bool
+     */
+    public static function actionsFor( array $file, array $actions )
+    {
+        $archive = !empty( $file['archive'] );
+        $configured = !empty( $file['configured'] );
+        return array( 'download' => !empty( $actions['download'] ),
+                      'rotate' => !empty( $actions['rotate'] ) && !$archive && !$configured,
+                      'truncate' => !empty( $actions['truncate'] ) && !$archive && !$configured,
+                      'delete' => !empty( $actions['delete'] ) && $archive && !$configured );
+    }
+
+    /**
      * The navigator: the groups of files with size, time and line rate.
      *
      * @return array group => list of files (id, name, dir, group, base, rotation, gz, archive, level, size, mtime, rate,

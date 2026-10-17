@@ -54,10 +54,16 @@ class Logs extends \Exponential\Runnable\ModuleView
                     $target = \expLogPermalink::build( $file['key'], $state );
                 }
             }
-            else if ( is_string( $_GET['key'] ) && $locator->resolveKey( $_GET['key'], isset( $_GET['rotation'] ) ? (int)$_GET['rotation'] : 0 ) !== null )
+            else
             {
-                $state['rotation'] = isset( $_GET['rotation'] ) ? (int)$_GET['rotation'] : 0;
-                $target = \expLogPermalink::build( (string)$_GET['key'], $state );
+                // the archive asked for: archive=N (rotation=N is the same)
+                $archive = isset( $_GET['archive'] ) && is_scalar( $_GET['archive'] ) ? (int)$_GET['archive']
+                           : ( isset( $_GET['rotation'] ) && is_scalar( $_GET['rotation'] ) ? (int)$_GET['rotation'] : 0 );
+                if ( is_string( $_GET['key'] ) && $locator->resolveKey( $_GET['key'], $archive ) !== null )
+                {
+                    $state['rotation'] = $archive;
+                    $target = \expLogPermalink::build( (string)$_GET['key'], $state );
+                }
             }
             if ( $target !== null )
             {

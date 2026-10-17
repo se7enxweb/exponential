@@ -6,12 +6,13 @@
  *   /setup/logs/view/<key>[/(name)/<value>]...
  *   /setup/logs/view/error
  *   /setup/logs/view/error/(level)/error,warning/(search)/timeout/(follow)/0/(offset)/20480
- *   /setup/logs/view/webserver-access/(rotation)/1/(search)/~2Fadmin~2F
+ *   /setup/logs/view/webserver-access/(archive)/1/(search)/~2Fadmin~2F
  *
  * A value is written as is when it is made of letters, digits, - _ . and , only; any other character is ~ and its
  * two hexadecimal digits (a space ~20, a slash ~2F, a ~ itself ~7E), so a value never holds a / or a ( that would
  * end it. The page's script writes the same (page/setup_logs.js). The names, in the order a link writes them:
- * rotation, level, search, regex, case, from, to, siteaccess, uri, ip, reference, scope, rotations, cursor, offset,
+ * archive (the rotation N: .N, or .N.gz when there is no plain one; (rotation)/N is read as the same), level, search,
+ * regex, case, from, to, siteaccess, uri, ip, reference, scope, rotations, cursor, offset,
  * follow, wrap, unmask, done, ok. A value that is the default is left out. Pure: nothing here reads a file.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
@@ -25,7 +26,7 @@ class expLogPermalink
     const VIEW = 'setup/logs/view';
 
     /** view parameter => state field, in the order a link writes them */
-    const PARAMS = array( 'rotation' => 'rotation', 'level' => 'levels', 'search' => 'q', 'regex' => 'regex', 'case' => 'case',
+    const PARAMS = array( 'archive' => 'rotation', 'level' => 'levels', 'search' => 'q', 'regex' => 'regex', 'case' => 'case',
                           'from' => 'from', 'to' => 'to', 'siteaccess' => 'siteaccess', 'uri' => 'uri', 'ip' => 'ip',
                           'reference' => 'reference', 'scope' => 'scope', 'rotations' => 'rotations', 'cursor' => 'cursor',
                           'offset' => 'offset', 'follow' => 'follow', 'wrap' => 'wrap', 'unmask' => 'unmask', 'done' => 'done',
@@ -89,10 +90,12 @@ class expLogPermalink
         $s = self::defaults();
         foreach ( self::PARAMS as $param => $field )
         {
+            // the view parameter, else the state field of the same value ((rotation)/N for (archive)/N, the names of
+            // the old query string); a parameter the request did not give is false in a view's $Params
             $raw = null;
-            if ( isset( $in[$param] ) )
+            if ( isset( $in[$param] ) && $in[$param] !== false )
                 $raw = $in[$param];
-            else if ( isset( $in[$field] ) )
+            else if ( isset( $in[$field] ) && $in[$field] !== false )
                 $raw = $in[$field];
             if ( $raw === null || $raw === false )
                 continue;

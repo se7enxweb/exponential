@@ -62,8 +62,9 @@ class Logsaction extends \Exponential\Runnable\ModuleView
         $file = $viewer->locator()->resolve( $fileID );
         if ( $file === null )
             return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
-        // a log configured by key (the web server's) belongs to its program: read and download only
-        if ( $action !== 'download' && !empty( $file['configured'] ) )
+        // a log configured by key (the web server's) is only downloaded, an archive only downloaded or removed
+        $fileActions = \expLogViewer::actionsFor( $file, $actions );
+        if ( empty( $fileActions[$action] ) )
             return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
 
         if ( $action === 'download' )

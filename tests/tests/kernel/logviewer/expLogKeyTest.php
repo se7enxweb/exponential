@@ -210,10 +210,10 @@ class expLogKeyTest extends PHPUnit\Framework\TestCase
             return expLogPermalink::build( $file['key'], $state );
         };
         $this->assertSame( 'setup/logs/view/error', $map( 'var/log/error.log' ) );
-        $this->assertSame( 'setup/logs/view/error/(rotation)/1', $map( 'var/log/error.log.1' ) );
+        $this->assertSame( 'setup/logs/view/error/(archive)/1', $map( 'var/log/error.log.1' ) );
         $this->assertSame( 'setup/logs/view/site-storage', $map( 'var/site/log/storage.log' ) );
         $this->assertSame( 'setup/logs/view/error/(level)/error/(search)/time~20out', $map( 'var/log/error.log', array( 'q' => 'time out', 'levels' => array( 'error' ) ) ) );
-        $this->assertSame( 'setup/logs/view/webserver-error/(rotation)/1', $map( '@webserver-error/error_log.1.gz' ) );
+        $this->assertSame( 'setup/logs/view/webserver-error/(archive)/1', $map( '@webserver-error/error_log.1.gz' ) );
         $this->assertNull( $map( 'var/log/../../secret' ) );
         $this->assertNull( $map( 'var/log/nope.log' ) );
         // and back: the permalink's key and rotation open the same file
