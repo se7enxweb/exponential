@@ -12,7 +12,8 @@ Related: [Finding an error by its reference](../../guides/finding-an-error-by-it
 
 - **Setup > Log files** (`setup/logs`, in the **System** group of the Setup menu and in admin4's mega menu) shows
   the log files of the installation: `var/log/error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`,
-  `deprecated.log`, `auth.log`, the cronjob logs, the logs of every site (`var/<site>/log/*.log`), the logs extensions
+  `deprecated.log`, `auth.log`, the request logs `404.log` and `security.log` ([Request logs](request-logs.md)), the
+  cronjob logs, the logs of every site (`var/<site>/log/*.log`), the logs extensions
   write (`expmcp.log`, the `expai` logs ...) and their rotations `.1` .. `.N`, and compressed rotations (`.gz`, read only).
 - The left menu holds the Setup menu and a **navigator** of every file, grouped **Kernel**, **Site**, **Extensions**,
   **Web server** and **Rotated archives**, with its size, the time it was last written and how many lines a minute it
@@ -75,7 +76,8 @@ entries scrolls as fast as one of ten.
 Every file of the allowed directories (see [Which files](#which-files)), grouped:
 
 - **Kernel**: the files named in `[LogViewerSettings] KernelLogs[]` (error, warning, notice, debug, strict, deprecated,
-  auth, cronjob, storage, setup, mail, trash purge) in the global log directory or eZDebug's.
+  auth, cronjob, storage, setup, mail, trash purge, the request logs 404 and security) in the global log directory or
+  eZDebug's; a log with a `LogLabel[<key>]` is shown by its label.
 - **Site**: the logs of a site's own log directory (`var/<site>/log`).
 - **Extensions**: any other file, such as `expmcp.log` or `expai-models.log`.
 - **Web server**: the logs configured by key in `LogList[]` (see [Web server logs](#web-server-logs)), shown by their
@@ -445,6 +447,12 @@ window by a binary search on its times and read for at most `MaxBytesPerFile` (8
 **Mark as known** hides a group for the viewer (a POST with the form token; the user preference
 `admin_logviewer_known`, at most 200 groups); `/(known)/1` lists the known ones too, with **List again**.
 
+**Per log**, `[DigestSettings] LogLevels[<key>]` lists other levels (a comma list; `LogLevels[404]=error,warning,notice`
+lists the not-found answers, which are notices) and `GroupBy[<key>]` groups by something other than the message:
+`category-rule` (the first word, `<category>/<rule>`: `security.log`), `reason` (the `reason=` field with ids and
+paths set aside: `404.log`), `reason-kind`, `uri` (the method and the path without the query) or `message` (the
+default). A log grouped another way says so above its table. See [Request logs](request-logs.md).
+
 ## Archives
 
 A rotation opens in the same viewer, read only, under its own permalink: `/setup/logs/view/<key>/(archive)/N` (`.N`,
@@ -531,14 +539,14 @@ siteaccess.
 | `Directories[]` | `var/log`, `{log_dir}`, `var/*/log` | the directories whose files are listed (see [Which files](#which-files)) |
 | `FilePatterns[]` | `*.log`, `*.log.[0-9]`, `*.log.[0-9][0-9]`, `*.log.[0-9].gz`, `*.log.[0-9][0-9].gz`, `*.log.gz` | the file names listed |
 | `ExcludePatterns[]` | (none) | file names never listed |
-| `KernelLogs[]` | `error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`, `deprecated.log`, `auth.log`, `cronjob*.log`, `storage.log`, `setup.log`, `mail.log`, `trashpurge.log` | the names of the Kernel group |
+| `KernelLogs[]` | `error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`, `deprecated.log`, `auth.log`, `cronjob*.log`, `storage.log`, `setup.log`, `mail.log`, `trashpurge.log`, `404.log`, `security.log` | the names of the Kernel group |
 | `DefaultKey` | `error` | the log `/setup/logs` opens (a key, see [Permalinks](#permalinks)) |
 | `DefaultFile` | `var/log/error.log` | the file opened when `DefaultKey` finds none |
 | `LogList[]` | `webserver-access`, `webserver-error` | the logs configured by key (see [Web server logs](#web-server-logs)) |
 | `LogPath[<key>]` | (none: off) | the file of a configured log; a key without one is not shown |
-| `LogLabel[<key>]` | `Web server access log`, `Web server error log` | the name the navigator shows |
+| `LogLabel[<key>]` | `Web server access log`, `Web server error log`, `Not found requests (404)` (404), `Security (request classifier)` (security) | the name the navigator and the digest show, translated in the context `kernel/logviewer`; it names a configured log or any log of the log directories by its key |
 | `LogGroup[<key>]` | `webserver` | the group: `kernel`, `site`, `extensions`, `webserver` |
-| `FileLevels[]` | `error.log*;error`, `*error*.log*;error`, `warning.log*;warning`, `strict.log*;warning`, `deprecated.log*;notice`, `notice.log*;notice`, `debug.log*;debug` | the level of lines that name none, by file name |
+| `FileLevels[]` | `error.log*;error`, `*error*.log*;error`, `warning.log*;warning`, `strict.log*;warning`, `deprecated.log*;notice`, `notice.log*;notice`, `debug.log*;debug`, `404.log*;notice`, `security.log*;warning` | the level of lines that name none, by file name |
 | `[TailSettings] InitialBytes` | `65536` | what the page shows when opened |
 | `MaxBytesPerPoll` | `262144` | the most one poll reads |
 | `PollInterval` | `1000` | ms between polls while lines arrive |
@@ -564,6 +572,7 @@ siteaccess.
 | `[RotationSettings] MaxSize[<key>]`, `Keep[<key>]`, `Compress[<key>]`, `MaxAgeDays[<key>]` | (none: `site.ini [FileSettings]`) | the limits of one log (see [Managing logs](#managing-logs)) |
 | `[HealthSettings] DiskBudget` | `268435456` | the disk all logs may use together (see [Log health](#log-health)); 0: none |
 | `[DigestSettings] Hours`, `MaxMessages`, `MaxBytesPerFile`, `Levels[]` | `24`, `50`, `8388608`, `error`, `warning` | the error digest (see [Error digest](#error-digest)) |
+| `[DigestSettings] LogLevels[<key>]`, `GroupBy[<key>]` | `LogLevels[404]=error,warning,notice`; `GroupBy[404]=reason`, `GroupBy[security]=category-rule` | per log: the levels listed and the grouping (`message`, `category-rule`, `reason`, `reason-kind`, `uri`) |
 | `MaxDownloadBytes` | `52428800` | the largest range of one download |
 | `MaxBundleBytes` | `268435456` | the most bytes of logs one "Download all logs" archive holds |
 | `[RateLimitSettings] Requests`, `Window` | `120`, `60` | feed requests per session and window (seconds) |

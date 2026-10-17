@@ -55,6 +55,9 @@ They apply to rotation, pruning and compression on demand, the cronjob part and 
 without an entry takes the `site.ini [FileSettings]` values above. The size-triggered rotation while a log is being
 written always uses `site.ini`.
 
+The request logs come with entries of their own: `404.log` and `security.log` keep 5 archives, compressed, with a
+size limit of 10 MB, pruned after 30 (404) and 90 (security) days ([Request logs](request-logs.md)).
+
 ## On the command line
 
 ```bash
