@@ -82,19 +82,34 @@ $module = $Params['Module'];
 $http = eZHTTPTool::instance();
 $restINI = eZINI::instance( 'rest.ini' );
 
-// Redirect URI, required to handle other errors, checked first
-if ( ( $pRedirectUri = getHTTPVariable( 'redirect_uri' ) ) === false )
+// Redirect URI, client ID and the client's end point are checked first, without redirecting: until the redirect_uri
+// is known to be the end point of a registered client it is the requester's address, and an error sent there would
+// make this view an open redirector. RFC 6749, section 4.1.2.1: inform the resource owner, do not redirect.
+if ( !is_string( $pRedirectUri = getHTTPVariable( 'redirect_uri' ) ) )
 {
     response( '400 Bad Request' );
 }
 
 // Client ID
-if ( ( $pClientId = getHTTPVariable( 'client_id' ) ) === false )
+if ( !is_string( $pClientId = getHTTPVariable( 'client_id' ) ) )
 {
-    error( $pRedirectUri, 'invalid_request', "Missing client ID parameter" );
-    // redirect to the redirect_uri with GET parameter error=invalid_request
-    // @todo mismatch between chapters 3.2's example (error=access-denied) and error codes list at 3.2.1 (error=access_denied)
+    response( '400 Bad Request' );
 }
+
+// Try loading the REST client based on the ID
+$application = ezpRestClient::fetchByClientId( $pClientId );
+if ( !$application instanceof ezpRestClient )
+{
+    response( '400 Bad Request' );
+}
+
+// The client is found, validate the redirect_uri
+if ( !$application->isEndPointValid( $pRedirectUri ) )
+{
+    response( '400 Bad Request' );
+}
+
+// From here on errors are sent to the client's end point
 
 // Requested response type
 if ( ( $pResponseType = getHTTPVariable( 'response_type' ) ) === false )
@@ -108,19 +123,6 @@ if ( ( $pResponseType = getHTTPVariable( 'response_type' ) ) === false )
 $pScope = getHTTPVariable( 'scope' );
 
 // @todo The spec mentions (FIXME:chapter) throwing an error if the request has extra parameters. Check this.
-
-// Try loading the REST client based on the ID
-$application = ezpRestClient::fetchByClientId( $pClientId );
-if ( !$application instanceof ezpRestClient )
-{
-    error( $pRedirectUri, 'invalid_client' );
-}
-
-// The client is found, validate the redirect_uri
-if ( !$application->isEndPointValid( $pRedirectUri ) )
-{
-    error( $pRedirectUri, 'redirect_uri_mismatch' );
-}
 
 // authentication
 $user = eZUser::currentUser();

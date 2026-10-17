@@ -17,6 +17,19 @@
  */
 class ezjscServerFunctionsPublishingQueue extends ezjscServerFunctions
 {
+    /**
+     * The publishing status of a version: queued, pending, working, deferred (with the address of its version view)
+     * or finished (with the address of the published node).
+     *
+     * Only for a user who can read the object, or the registered user who created the version and waits for it to
+     * be published; the address of the node only for a user who can read the object. For anyone else the answer is
+     * the one of a version that does not exist, so the call does not tell which objects and versions there are.
+     *
+     * @param array $args The content object ID and the version number
+     * @return array
+     * @throws ezcBaseFunctionalityNotSupportedException When an argument is missing, or the version is not found
+     *                                                   or not open to the current user
+     */
     public static function status( $args )
     {
         if ( count( $args ) != 2 )
@@ -26,7 +39,28 @@ class ezjscServerFunctionsPublishingQueue extends ezjscServerFunctions
 
         list( $contentObjectId, $version ) = $args;
 
-        $process = ezpContentPublishingProcess::fetchByContentObjectVersion( $contentObjectId, $version );
+        $objectVersion = $process = false;
+        if ( preg_match( '/^[1-9][0-9]{0,9}$/', (string)$contentObjectId ) && preg_match( '/^[1-9][0-9]{0,9}$/', (string)$version ) )
+        {
+            // the process first: when it is finished, the object read after it is the published one
+            $process = ezpContentPublishingProcess::fetchByContentObjectVersion( $contentObjectId, $version );
+            $objectVersion = eZContentObjectVersion::fetchVersion( $version, $contentObjectId );
+        }
+        $object = $objectVersion instanceof eZContentObjectVersion ? $objectVersion->attribute( 'contentobject' ) : null;
+        if ( !$object instanceof eZContentObject )
+        {
+            throw new ezcBaseFunctionalityNotSupportedException( 'status', 'Object version not found' );
+        }
+
+        $canRead = $object->canRead();
+        if ( !$canRead )
+        {
+            $user = eZUser::currentUser();
+            if ( !$user->isRegistered() || $objectVersion->attribute( 'creator_id' ) != $user->attribute( 'contentobject_id' ) )
+            {
+                throw new ezcBaseFunctionalityNotSupportedException( 'status', 'Object version not found' );
+            }
+        }
 
         // No process: check if the object's still a draft
         // @todo Change to a PENDING check when applied (operation => step 2)
@@ -42,12 +76,13 @@ class ezjscServerFunctionsPublishingQueue extends ezjscServerFunctions
 
                 case ezpContentPublishingProcess::STATUS_FINISHED:
                     $status = 'finished';
-                    $objectVersion = $process->attribute( 'version' );
-                    $object = $objectVersion->attribute( 'contentobject' );
-                    $node = $object->attribute( 'main_node' );
-                    $uri = $node->attribute( 'url_alias' );
-                    eZURI::transformURI( $uri );
-                    $return['node_uri'] = $uri;
+                    if ( $canRead )
+                    {
+                        $node = $object->attribute( 'main_node' );
+                        $uri = $node->attribute( 'url_alias' );
+                        eZURI::transformURI( $uri );
+                        $return['node_uri'] = $uri;
+                    }
                     break;
 
                 case ezpContentPublishingProcess::STATUS_PENDING:
@@ -65,11 +100,7 @@ class ezjscServerFunctionsPublishingQueue extends ezjscServerFunctions
         }
         else
         {
-            $version = eZContentObjectVersion::fetchVersion( $version, $contentObjectId );
-            if ( !$version )
-                throw new ezcBaseFunctionalityNotSupportedException( 'status', 'Object version not found' );
-            else
-                $return = array( 'status' =>  'queued' );
+            $return = array( 'status' =>  'queued' );
         }
 
         return $return;
