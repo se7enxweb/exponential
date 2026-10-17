@@ -958,11 +958,6 @@ function ContentStructureMenu( params, i18n )
         }
         return null;
     }
-
-    function _delCookie( name )
-    {
-        _setCookie( name, '', ( new Date() - 86400000 ) );
-    }
 }
 
 /*

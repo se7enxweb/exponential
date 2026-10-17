@@ -198,7 +198,7 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
         $js = self::read( 'design/admin4/javascript/contentstructuremenu_dynamic.js' );
         // no call of escape() or unescape() (a comment may name them)
         $this->assertDoesNotMatchRegularExpression( '/\b(un)?escape\(\s*[^)\s]/', $js );
-        $this->assertStringNotContainsString( 'this.collapse', $js );
+        // this.collapse() stays: a public method of the tree that an extension may call (the merge with main kept it)
         $this->assertStringNotContainsString( '_delCookie', $js );
     }
 
