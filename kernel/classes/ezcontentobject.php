@@ -427,7 +427,7 @@ class eZContentObject extends eZPersistentObject
             // $contentObjectID is not set yet here (it is set below this early return); with version 0 every call
             // raised "Undefined variable $contentObjectID".
             $contentObjectID = $this->attribute( 'id' );
-            eZDebug::writeNotice( "There is no object name for version($version) of the content object ($contentObjectID) in language($lang)", __METHOD__ );
+            eZDebug::writeDebug( "There is no object name for version($version) of the content object ($contentObjectID) in language($lang)", __METHOD__ );
             return $name;
         }
         $db = eZDB::instance();
@@ -502,7 +502,7 @@ class eZContentObject extends eZPersistentObject
         $resCount = count( $result );
         if( $resCount < 1 )
         {
-            eZDebug::writeNotice( "There is no object name for version($version) of the content object ($contentObjectID) in language($lang)", __METHOD__ );
+            eZDebug::writeDebug( "There is no object name for version($version) of the content object ($contentObjectID) in language($lang)", __METHOD__ );
         }
         else if( $resCount > 1 )
         {
