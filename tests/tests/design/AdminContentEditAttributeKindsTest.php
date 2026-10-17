@@ -151,6 +151,19 @@ class AdminContentEditAttributeKindsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "removeClass('ezcca-collapsed')", $js );
     }
 
+    /**
+     * A control without a name of its own (the author list, an enhanced selection) is named by its attribute's name
+     * and its column header, and a control that has a name keeps it.
+     */
+    public function testAControlWithoutANameIsNamedByItsAttribute()
+    {
+        $js = AdminFiles::read( self::root() . '/design/admin4/javascript/page/content_edit_attribute.js' );
+        $this->assertStringContainsString( "this.id.replace( 'ezcca-attr-', 'ezcca-name-' )", $js );
+        $this->assertStringContainsString( "this.labels && this.labels.length", $js );
+        $this->assertStringContainsString( "this.getAttribute('aria-labelledby')", $js );
+        $this->assertStringContainsString( "this.setAttribute( 'aria-label', label )", $js );
+    }
+
     public function testTheCardsUseLogicalPropertiesInBothCopies()
     {
         $admin4 = AdminFiles::read( self::root() . '/design/admin4/stylesheets/modules/content.css' );
