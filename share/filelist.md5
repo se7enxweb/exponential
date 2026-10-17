@@ -276,7 +276,7 @@ bc1f590f32f5d71f9bfdf7781f2135fc  design/admin/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 bfafd7d7df0571b71ba1cbacadfb2949  design/admin/javascript/contentcheck_select.js
 d04051dd86493ca0c7a5a7d8ef2e9788  design/admin/javascript/contentcheck_storage.js
-32d7bef91554577f353597db4dd10e43  design/admin/javascript/contentstructuremenu_dynamic.js
+8efbbdaa6de1c48f6827f760b04f2dd0  design/admin/javascript/contentstructuremenu_dynamic.js
 ccc9542289d65bc6f5a7bbf6dbe04821  design/admin/javascript/expajaxuploader.js
 57d8995b892a18ef13ca0b9779bc29c7  design/admin/javascript/ezajaxrelations_jquery.js
 a7c1e5a25f185f993412621b9a08cd32  design/admin/javascript/ezajaxsubitems_expdatatable.js
@@ -897,7 +897,7 @@ c4e44f092c1485b98a75ab6acb33b03a  design/admin4/javascript/a4_mega_menu.js
 96efe93e3c4e32360592366949d38d21  design/admin4/javascript/admin4.js
 bfafd7d7df0571b71ba1cbacadfb2949  design/admin4/javascript/contentcheck_select.js
 d04051dd86493ca0c7a5a7d8ef2e9788  design/admin4/javascript/contentcheck_storage.js
-32d7bef91554577f353597db4dd10e43  design/admin4/javascript/contentstructuremenu_dynamic.js
+8efbbdaa6de1c48f6827f760b04f2dd0  design/admin4/javascript/contentstructuremenu_dynamic.js
 ccc9542289d65bc6f5a7bbf6dbe04821  design/admin4/javascript/expajaxuploader.js
 bac30bec66631791ce7970d4a26f98d5  design/admin4/javascript/ezadmin_menubar.js
 57d8995b892a18ef13ca0b9779bc29c7  design/admin4/javascript/ezajaxrelations_jquery.js
@@ -7634,7 +7634,7 @@ df9169b60283ae0c34ac07e8909c9b54  tests/tests/design/AdminRetiredClassesTest.php
 c6696bb26b02b77930b8f73ecb0f1a40  tests/tests/design/AdminReverseRelationCheckTest.php
 999bf935b744564d34820f18ed44071c  tests/tests/design/AdminReviewTemplateWarningsTest.php
 4e1fa8a8f96a88cb202a1d802d384698  tests/tests/design/AdminScriptFailureTextsTest.php
-e31cb067f10191fa2cc5029c7de4651a  tests/tests/design/AdminScriptsBehaviourTest.php
+9e40a065721378ca5ab92eb202af8293  tests/tests/design/AdminScriptsBehaviourTest.php
 2886d6d1bc84430c38d64bb2b40f78c5  tests/tests/design/AdminScriptsTest.php
 1654e973de5806f25d2ed377f3bfca49  tests/tests/design/AdminSearchTest.php
 56992a596f3d012b3958a7d030f58be7  tests/tests/design/AdminSelfContainedTest.php
