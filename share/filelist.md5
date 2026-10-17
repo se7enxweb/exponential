@@ -19,7 +19,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6317a4c9d5332abdff2cdede49edebb7  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-723cead5c1ff957cefbf05572018b48c  autoload/ezp_kernel.php
+9ca27e4f210452d307e7d3bd78e2ca6a  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -44,6 +44,7 @@ a9586e3978dfedf84e40af4d9ff7edd6  bin/mongodb/fixup_ndjson.py
 1374ed9d080d58b9372d49d958ba0ed1  bin/mongodb/validate_ndjson.sh
 04ea36d6c950a3853af68f0b8424a2b2  bin/php/accesscheck.php
 11893714c574088dd6f49b8aba0e9018  bin/php/adddefaultstates.php
+446fab6194c2edbe6edc69620702dd35  bin/php/addoauthauthorizepolicy.php
 4460e42dd61f6e055992cf55cb0f1b4c  bin/php/audit.php
 19f4d817d3033c84df9cbbba89e0cfd1  bin/php/benchmark.php
 1a9635e4b6f5bb48a85dcf4160f33d9f  bin/php/cache.php
@@ -3041,6 +3042,7 @@ e1a1f8a4940d420e0ab02a90567834b3  doc/bc/6.0/mail-preferences.md
 abb94091360a905fee43c0792bbf9d39  doc/bc/6.0/middle-out-compression.md
 02a48a62c48e03aa3f29dfaee9709546  doc/bc/6.0/multi-node-edit.md
 e5667e060274ef92f4b29dd702774e4c  doc/bc/6.0/notification-ui-and-commands.md
+09126e5f8caee5c1c7e418680e6f5e4f  doc/bc/6.0/oauth-authorize-policy.md
 de93c492b3a2fa49ea08a89471fc968a  doc/bc/6.0/opml.md
 55378c5cf937bb08d4bf59181318a5a2  doc/bc/6.0/package-json-format.md
 124e3d7a3e5975ebf1b1be6a096bab20  doc/bc/6.0/pagination-settings.md
@@ -3223,7 +3225,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-3b78f983b588b51d6502574682ace519  doc/changelogs/6.0/6.0.15.md
+5f3c6fc53d1c73a55f475215df085dbf  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3779,8 +3781,8 @@ af6721096590e8660704dfe911f7b4e7  doc/guides/packages.md
 f5c7d03721608109d841867836f390c9  doc/guides/pdf-exports.md
 c777f0fd24777ff82ffc1f07226a62db  doc/guides/preloading-caches.md
 b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
-6dc5870af0d6b5faf77180ad2ef15391  doc/guides/rest-api-v1-and-v2.md
-00807658ca3397c8b47bc0c034af37ca  doc/guides/roles-and-policies.md
+d2180bc478399514471afe5c36506a63  doc/guides/rest-api-v1-and-v2.md
+a0a831ac75f0f2a8fcd58c871d580d37  doc/guides/roles-and-policies.md
 bb8d6835bd7b4751fd30540ba5bdf4c8  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
 fdcc1e0224cad899a30b1bfc699d942f  doc/guides/security-and-audit.md
@@ -5702,6 +5704,7 @@ b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/int
 3d3a0ae30251fcd03d11507ca6aca2bb  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventnotifier.php
 7b075fff6b1e2111d3f2b9f83e59c705  kernel/private/classes/commands/accesscheck.php
 637c34664ef032d92963815921a3581e  kernel/private/classes/commands/adddefaultstates.php
+feb9d9ee0bc95f6a298f87be41b485a5  kernel/private/classes/commands/addoauthauthorizepolicy.php
 34ae68be04b0972a488a71f656800e6a  kernel/private/classes/commands/audit.php
 df1aec24f996ce857e8b868c9b68fa5f  kernel/private/classes/commands/benchmark.php
 43642656977307db78e5f248b9f465ff  kernel/private/classes/commands/cache.php
@@ -6163,8 +6166,8 @@ e172decb6e12d8dbd0f3a528954692a4  kernel/private/interfaces/ezplanguageswitcherc
 f8ea2ae835fdbf95fbe09d6d1eb52948  kernel/private/interfaces/ezpsearchengine.php
 b2afc49bae090915d16fdcc404247c32  kernel/private/interfaces/ezpstaticcache.php
 d9ea7b3e09c41a33b6f413b7f8548a21  kernel/private/interfaces/ezpwebbasedkernelhandler.php
-98250bc62c640cef2637cafd3d6088bd  kernel/private/modules/oauth/authorize.php
-9d08c9d91b62451ba54c7798cdf8321d  kernel/private/modules/oauth/module.php
+03ce6e3e3a6f51686604e9ac70dce568  kernel/private/modules/oauth/authorize.php
+489a41c9976f119ce14c0380b4e01dcd  kernel/private/modules/oauth/module.php
 be4a17b10277a3d00570033aa92efab2  kernel/private/modules/oauthadmin/action.php
 f287ce2859dafe0cd64e6284b69980c2  kernel/private/modules/oauthadmin/edit.php
 35dbd032bfe1c9cbf32d21579939d937  kernel/private/modules/oauthadmin/keyaction.php
@@ -6246,6 +6249,8 @@ be63381744b2541c61008256dbcca8ff  kernel/private/rest/classes/interfaces/view_co
 6b00486ab2c179f94faca4124ed596a6  kernel/private/rest/classes/models/ezprest_token.php
 f18bde4e8acf59d184759eb494239a0d  kernel/private/rest/classes/models/rest_model.php
 d18b0c46a501fb27380f2229539815c8  kernel/private/rest/classes/mvc_configuration.php
+7ce787be69b6557fc858ea8987cbc933  kernel/private/rest/classes/oauth/authorize_policy.php
+c7af38bc5a082e7290758290a6343792  kernel/private/rest/classes/oauth/authorize_policy_grant.php
 2699aed333387d9f87475e2e520a4aa3  kernel/private/rest/classes/oauth/oauth_filter.php
 128ea423d29aefe0794e3b609d19ce5c  kernel/private/rest/classes/oauth/utility.php
 7c1d17b1d2ab1f285872833ee383b650  kernel/private/rest/classes/oauth_token_endpoint_error.php
@@ -6447,7 +6452,7 @@ a5a61099e4c1ed8b3d4cc85ffb11a5eb  kernel/shop/updatebasket.php
 11c090806e9636c16955a873ba5ae028  kernel/shop/vatrules.php
 a04dffad4e657eed3e6e013d3f0c0374  kernel/shop/vattype.php
 ef06c1c17f9c7019e9f5ce249bc232ee  kernel/shop/wishlist.php
-8543e1c8e1a513d07a4492b61658d8b5  kernel/sql/common/cleandata.sql
+c945a5df7a11ee4671644cd4cd631adf  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
@@ -6455,7 +6460,7 @@ dd46ede74b0eb5e4c6fb55fde80f414a  kernel/sql/mysql/kernel_schema.sql
 c82dc0ebec07c22d5cee916faa0967ce  kernel/sql/postgresql/kernel_schema.sql
 f2ad2f8e1711872bbc2d871d7cc6c76b  kernel/sql/postgresql/sequence.sql.template
 ce03b8330af52b5e601c91208fee1ffd  kernel/sql/postgresql/setval.sql
-6e637aa271d7358d1c1542ddb9271e06  kernel/sql/sqlite/cleandata.sql
+14a22b0c8101fe7124b1c1f2a4823ad3  kernel/sql/sqlite/cleandata.sql
 9f43f24dada2d8918b9663e43af6d2b0  kernel/sql/sqlite/schema.sql
 1bb603e51ab28ac0367fb23c71c2648e  kernel/state/assign.php
 58b38e2e4ae8744e1d4418ed6659bc18  kernel/state/edit.php
@@ -6798,7 +6803,7 @@ ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
 660b0d81b874343b1ffa494dc1fd6dbf  settings/querycache.ini
 688db30689fc7f6ca972f71be1616c51  settings/rad.ini
 744f63beb0a42c8ec1f29c355e81fd5c  settings/requestrules.ini
-db6b4d0a5dcd033f25aaa70eccb33d47  settings/rest.ini
+ad97f94775c35151cdab893306a21b6e  settings/rest.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
@@ -8571,8 +8576,10 @@ d7ca0190a449ce3e4d3bf7e6a05c2aaf  tests/tests/kernel/private/ezpmobiledevicedete
 3800857a4794909b3b08cef7cd20b04c  tests/tests/kernel/private/ezpmobiledevicedetectfilter_test.php
 209510774063bdbcedf0a8a81d4e87ed  tests/tests/kernel/private/ezpmobiledeviceregexpfilter_test.php
 259d772ffe9317ad662e839a06834ca7  tests/tests/kernel/private/eztopologicalsort_test.php
-62fd31f7db0576d062ae24471989b186  tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php
-ae38f33d6bf324ea879cda3aeeee9746  tests/tests/kernel/private/oauth/fixtures/authorize_harness.php
+2f24eb646f6124026ae2852dc88113f6  tests/tests/kernel/private/oauth/expOAuthAuthorizePolicyGrantTest.php
+234f8da0df98b283750ac4fc2287bb61  tests/tests/kernel/private/oauth/expOAuthAuthorizePolicyTest.php
+a8821288ba6fa2117419906c4f3f14ec  tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php
+86e0412e558768e807e5950aeb25b01a  tests/tests/kernel/private/oauth/fixtures/authorize_harness.php
 ff5fd6c8ea38ccd01786dc6beab3d757  tests/tests/kernel/private/rest/abstract_test.php
 7374c5861a8fe2feadb136468fb39a0d  tests/tests/kernel/private/rest/application_cache_test.php
 d4f322bfaa51c8aa4da2382f366dcb40  tests/tests/kernel/private/rest/controller_test.php
