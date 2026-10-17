@@ -225,10 +225,11 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
         $this->assertFileExists( self::root() . '/design/admin4/stylesheets/theme/rounded.css' );
     }
 
-    public function testInlineScriptsReadEventKey()
+    public function testPageScriptsReadEventKey()
     {
-        foreach ( array( 'design/admin4/templates/rss/edit_export.tpl' => "event.key !== 'Enter' || event.isComposing",
-                         'design/admin4/templates/setup/rad.tpl' => "event.key === 'Escape'" ) as $path => $check )
+        // the scripts of the RSS export and RAD pages (page scripts since the Content Security Policy wave)
+        foreach ( array( 'design/admin4/javascript/page/rss_edit_export.js' => "event.key !== 'Enter' || event.isComposing",
+                         'design/admin4/javascript/page/setup_rad.js' => "event.key === 'Escape'" ) as $path => $check )
         {
             $tpl = self::read( $path );
             $this->assertStringContainsString( $check, $tpl, $path );
