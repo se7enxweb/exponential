@@ -170,6 +170,9 @@
     "design/admin4/templates/tabs/audit/node.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
+    "kernel/common/ezpi18n.php": [
+      "tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php"
+    ],
     "lib/ezfile/classes/ezlog.php": [
       "tests/tests/lib/ezfile/expLogRotatorTest.php",
       "tests/tests/lib/ezfile/eZLogMaxSizeTest.php"
