@@ -312,6 +312,10 @@ class Velocity extends \Exponential\Runnable\Command
             "             ssl renew [host...]; the running server picks a renewal up within\n" .
             "             a minute, no restart\n" .
             "  ext        the PHP extensions the server provides (see below)\n" .
+            "  watchdog   the safety net (off until installed): starts the engine again when it\n" .
+            "             is down, unless stopped on purpose or a restart is under way\n" .
+            "             watchdog run (one check now) | status | install (systemd timer,\n" .
+            "             root) | remove; log in var/log/velocity-watchdog.log\n" .
             "  install    put the engine's binary in place (frankenphp: download the pinned\n" .
             "             release and verify its SHA-256; --force, --from=<file>, --check,\n" .
             "             --trust-github-digest; qbix: nothing to do)\n\n" .
@@ -412,7 +416,7 @@ class Velocity extends \Exponential\Runnable\Command
         $script->initialize();
 
         $verbs = array( 'start', 'stop', 'graceful', 'restart', 'kill', 'status', 'deploy',
-                        'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl', 'ssl', 'ext', 'install' );
+                        'command', 'config', 'cache', 'layout', 'site', 'conf', 'mod', 'ctl', 'ssl', 'ext', 'install', 'watchdog' );
         $verb = isset( $options['arguments'][0] ) ? strtolower( trim( $options['arguments'][0] ) ) : 'status';
 
         if ( !in_array( $verb, $verbs, true ) )
@@ -851,6 +855,42 @@ class Velocity extends \Exponential\Runnable\Command
                     $cli->output( $cli->stylize( 'emphasize', 'velocity: ' . $result['message'] ) );
                 else
                     $cli->error( 'velocity: ' . $result['message'] );
+                $script->shutdown( $result['ok'] ? 0 : 1 );
+            }
+            break;
+
+            case 'watchdog':
+            {
+                // The safety net that starts the engine again when it is down and
+                // nobody stopped it (expVelocityWatchdog); off until installed.
+                $action = isset( $options['arguments'][1] ) ? strtolower( trim( $options['arguments'][1] ) ) : 'status';
+                if ( !in_array( $action, array( 'run', 'status', 'install', 'remove' ), true ) )
+                {
+                    $cli->error( "velocity: watchdog run|status|install|remove, not '$action'" );
+                    $script->shutdown( 1 );
+                }
+                $watchdog = new \expVelocityWatchdog( $velocity );
+                $result = $watchdog->$action();
+                if ( $action === 'status' )
+                    $result = array( 'ok' => true ) + $result;
+                if ( $asJson )
+                    $cli->output( json_encode( $result, JSON_UNESCAPED_SLASHES ) );
+                elseif ( $action === 'status' )
+                {
+                    foreach ( $result as $name => $value )
+                        if ( $name !== 'ok' )
+                            $cli->output( sprintf( '  %-15s %s', $name, is_array( $value ) ? json_encode( $value, JSON_UNESCAPED_SLASHES )
+                                : ( is_bool( $value ) ? ( $value ? 'yes' : 'no' ) : ( $value === null ? '-' : velocityShortPaths( (string)$value ) ) ) ) );
+                }
+                else
+                {
+                    foreach ( $result['actions'] ?? array() as $line )
+                        $cli->output( '  ' . velocityShortPaths( $line ) );
+                    $line = 'velocity watchdog: ' . ( $action === 'run'
+                        ? $result['action'] . ' (' . $result['reason'] . ')' . ( $result['detail'] !== '' ? ': ' . $result['detail'] : '' )
+                        : $result['message'] );
+                    $result['ok'] ? $cli->output( $cli->stylize( 'emphasize', velocityShortPaths( $line ) ) ) : $cli->error( velocityShortPaths( $line ) );
+                }
                 $script->shutdown( $result['ok'] ? 0 : 1 );
             }
             break;

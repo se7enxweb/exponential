@@ -208,6 +208,62 @@ DetachedRestart=enabled   # disabled: restart in the calling process, as before
 
 `EXP_VELOCITY_DETACHED_RESTART=0` in the environment turns the detaching off for one call.
 
+### The watchdog (`exp:velocity watchdog`)
+
+A restart is a stop followed by a start. If whatever runs it is killed in between, the server stays down until
+somebody starts it. The restart now runs as one detached unit, so that should not happen again. The watchdog is a
+second safety net for what still can: a crash, an out-of-memory kill, or a stop by some other tool.
+
+It is off until you install it (root, systemd):
+
+```
+./console exp:velocity watchdog install --allow-root-user   # vc-watchdog.service + .timer, conf-available/watchdog.conf, enabled
+./console exp:velocity watchdog status --allow-root-user    # timer, markers, last check and last start
+./console exp:velocity watchdog run --allow-root-user       # one check now (--json for a script)
+./console exp:velocity conf disable watchdog --allow-root-user   # pause it (conf enable: resume)
+./console exp:velocity watchdog remove --allow-root-user    # timer off, units and configuration file removed
+```
+
+Every `Interval` seconds (45 by default) the timer runs one check of the default engine (or the engine named with
+`--engine`). It starts the engine only when **all** of these are true:
+
+- no process of the engine runs. A server that runs but does not answer is left alone: the watchdog never stops,
+  kills or restarts a running server;
+- nobody stopped it on purpose. `exp:velocity stop` and `kill` write `stopped.json` beside the pid file
+  (`var/vc/qbix/run/`), and `start`, `restart` and `graceful` remove it;
+- no restart is in progress. The detached restart writes `restart-in-progress.json` and removes it when its start has
+  finished. A marker whose process is gone, or that is older than `RestartTimeout`, no longer counts;
+- the optional `LockFile` is not held (a deploy queue). If the lock is held for longer than `RestartTimeout` while the
+  server is down, it no longer counts either;
+- it is not backing off. After three failed starts in a row, it waits `Backoff` seconds before trying again.
+
+The server it starts goes into a systemd scope of its own (`vc-<engine>-watchdog-start-<time>`). Without that,
+systemd would end the server together with the watchdog's oneshot service, and the service also has
+`KillMode=process`. Every check that does more than find the server running writes one line to
+`var/log/velocity-watchdog.log` (in the log viewer as "Velocity watchdog"):
+
+```
+[2026-10-17T17:02:15+00:00] qbix action=start reason=down detail="not running, down for 0 s; start: ..." pid=12345
+[2026-10-17T17:03:00+00:00] qbix action=skip reason=intentionally-stopped detail="stopped on purpose 40 s ago; ..." pid=12360
+```
+
+The reasons are `down`, `restart-stale`, `intentionally-stopped`, `restart-in-progress`, `lock-held`, `backoff`,
+`paused`, `overlap` (the previous check is still busy) and `error`.
+
+```ini
+[WatchdogSettings]
+Interval=45            # seconds between checks (15-3600)
+RestartTimeout=300     # how long a restart marker or a held lock may hold it back
+Backoff=600            # the wait after three failed starts in a row
+LockFile=              # a lock (flock) that means "deploying, wait"; empty: none
+UnitName=vc-watchdog   # give each installation on a host its own
+UnitDir=/etc/systemd/system
+```
+
+`install` writes these values to `conf-available/watchdog.conf` in the configuration tree (`/etc/vc`), as JSON under
+`watchdog`, and enables it in `conf-enabled`. Values in the enabled file win over `velocity.ini`, so a host can
+change them without an INI override. An existing file is kept when you install again.
+
 ## Running them side by side
 
 For tests the three can run at the same time: each has its own port, pid

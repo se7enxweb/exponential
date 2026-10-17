@@ -1283,6 +1283,7 @@ return array(
       'expVelocityMarkers'                                           => 'kernel/classes/expvelocitymarkers.php',
       'expVelocityPHPServer'                                         => 'kernel/classes/expvelocityphpserver.php',
       'expVelocityRestartUnit'                                       => 'kernel/classes/expvelocityrestartunit.php',
+      'expVelocityWatchdog'                                          => 'kernel/classes/expvelocitywatchdog.php',
       'expViewAccess'                                                => 'kernel/classes/expviewaccess.php',
       'expWorkflowEventWizard'                                       => 'kernel/setup/expworkfloweventwizard.php',
       'ezpAccessDenied'                                              => 'kernel/private/classes/exceptions/kernel/accessdenied.php',

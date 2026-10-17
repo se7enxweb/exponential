@@ -1879,6 +1879,9 @@
     "kernel/classes/expvelocityrestartunit.php": [
       "tests/tests/kernel/classes/expVelocityMarkersTest.php"
     ],
+    "kernel/classes/expvelocitywatchdog.php": [
+      "tests/tests/kernel/classes/expVelocityWatchdogTest.php"
+    ],
     "kernel/classes/ezcollaborationitemhandler.php": [
       "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"
     ],
