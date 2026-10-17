@@ -230,7 +230,7 @@ extension). The editor siteaccess (`SiteDesign=editor`) falls back to `admin4l` 
 
 ## Icons
 
-admin4 draws its icons with [Bootstrap Icons](https://icons.getbootstrap.com/) 1.13.1 (MIT license). The SVG files
+admin4 draws its icons with [Bootstrap Icons](https://icons.getbootstrap.com/) 1.13.2 (MIT license). The SVG files
 are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside them; nothing is loaded from a CDN.
 
 - **In templates:** `<span class="a4-icon a4-bi-pencil" aria-hidden="true"></span>`, the component `.a4-icon`
@@ -257,7 +257,7 @@ are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside th
 - The classic designs (`admin`, `admin3`) keep their images; `.a4-icon` and `.a4-icon-btn` are in their
   copy of `components.css` as well, for templates shared by every administration design.
 
-To add an icon: copy the SVG from the Bootstrap Icons 1.13.1 package unchanged into
+To add an icon: copy the SVG from the Bootstrap Icons 1.13.2 package unchanged into
 `share/icons/bootstrap-icons/svg/`, add `.a4-bi-<name>` to both copies of `components.css` (or name the file in the
 theme's `icon.ini`), and use it. `tests/tests/design/AdminIconsTest.php` fails for a file nothing names, a name with
 no file, a changed file, and a GIF icon, inline SVG or image button in an admin4 template.
@@ -387,7 +387,7 @@ translation file has the string in the menu's context.
 SVG; no inline style, no image, and a setting cannot put markup or an unknown class on the page. Every Bootstrap icon
 admin4 ships is listed (see [Icons](#icons)). An extension that needs another one ships it itself:
 
-1. the SVG, unchanged from Bootstrap Icons 1.13.1 (MIT), in the extension, e.g.
+1. the SVG, unchanged from Bootstrap Icons 1.13.2 (MIT), in the extension, e.g.
    `extension/myreports/design/admin4/images/icons/bar-chart.svg`;
 2. a mask rule in a stylesheet of the extension registered in `design.ini [StylesheetSettings] BackendCSSFileList[]`,
    with the path relative to that stylesheet:
