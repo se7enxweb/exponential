@@ -4971,6 +4971,14 @@
         <source>%count matches</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>There are no matches on this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Go to the first page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -10579,6 +10587,10 @@
         <source>Editorial</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Not saved: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -14065,6 +14077,10 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>More</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick search</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -44285,6 +44301,10 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Fewer keywords result in more matches. Try reducing keywords until you get a result.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The search failed. Try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/tipafriend</name>
@@ -64584,6 +64604,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Show the numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was published in the last 14 days.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
