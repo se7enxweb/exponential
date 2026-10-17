@@ -5748,7 +5748,6 @@ c6a557af95f53f503d1c974af308f202  kernel/private/classes/ezpautoloadclioutput.ph
 8283e4f7982e9d1aff4c308f72dd9a18  kernel/private/classes/ezpcontentpublishingprocess.php
 dad70a135e50fcc3415d197dd961caad  kernel/private/classes/ezpcontentpublishingqueue.php
 483341cbf4649e24b6f15b0357bc5aee  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
-b30c442e38dbf34a61dd2b5abad4d066  kernel/private/classes/ezpcontentsecuritypolicy.php
 0776e5d1ac1cb5de51f7dee8b46cf113  kernel/private/classes/ezpevent.php
 93ec1ada8eab0c1428a81264a05a9e2d  kernel/private/classes/ezpextension.php
 9ab86ba94c98100eebd9b45dc7673254  kernel/private/classes/ezpformtokenrefusal.php
@@ -6759,7 +6758,6 @@ eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
 a63ff6444dbbf40c9bd57aee41040c9f  share/db_data.dba
 2f401f8da6b03bb3f6badf20964a4e87  share/db_schema.dba
-9a5fc63be075d7fff7f067c04e4ec16c  share/filelist.md5
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
 0e1abb7c8f76d149177749fe2a397ce3  share/icons/blunk.gif
 9d76fce3ac59b65b057119623fb7b030  share/icons/bootstrap-icons/LICENSE
