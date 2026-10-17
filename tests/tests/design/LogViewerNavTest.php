@@ -120,6 +120,9 @@ class LogViewerNavTest extends PHPUnit\Framework\TestCase
         $css = self::read( 'design/admin4/stylesheets/modules/setup.css' );
         $this->assertStringContainsString( '.a4-setup-log-nav-list { display: flex; flex-wrap: wrap; justify-content: flex-start;', $css );
         $this->assertStringContainsString( '.a4-setup-log-nav-btn.is-current', $css );
+        $this->assertStringContainsString( '.a4-setup-log-nav { margin: var(--a4-space-4) 0 var(--a4-space-4); }', $css, 'room above and below the row, from tokens' );
+        $this->assertStringContainsString( 'gap: var(--a4-space-3) var(--a4-space-2);', $css, 'a row gap when the buttons wrap' );
+        $this->assertSame( file_get_contents( self::root() . '/design/admin/stylesheets/modules/setup.css' ), $css, 'the same rules in both designs' );
         $this->assertStringNotContainsString( 'style=', self::read( self::NAV ) );
     }
 }
