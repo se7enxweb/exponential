@@ -1376,5 +1376,5 @@ label.a4-package-option-label {
 .a4-setup-log-nav-list li { margin: 0; }
 .a4-setup-log-nav-btn.is-current { box-shadow: inset 0 0 0 2px var(--a4-card), 0 0 0 2px var(--a4-accent); text-decoration: underline; text-underline-offset: 3px; }
 @media (forced-colors: active) {
-  .a4-setup-log-nav-btn.is-current { outline: 3px solid Highlight; outline-offset: 2px; }
+  .a4-setup-log-nav-btn.is-current { outline: 2px solid Highlight; outline-offset: 2px; }
 }

@@ -3,7 +3,7 @@
  * The buttons of the log viewer's pages (design:setup/logs_nav.tpl): one row on every page, primary buttons, the
  * current page marked.
  *
- *  LN-01  the row renders Logs first, then Manage logs (only with setup/managelogs), Log health, Error digest, all
+ *  LN-01  the row renders Logs, Error digest, Log health, then Manage logs (only with setup/managelogs), all
  *         .a4-btn.a4-btn-primary links, and exactly the current one carries aria-current="page" and is-current
  *  LN-02  every page of the viewer includes the row with its own current item (logs, manage, health, digest; the
  *         archive viewer is setup/logs), in both designs, and the two copies of each template are the same
@@ -63,7 +63,7 @@ class LogViewerNavTest extends PHPUnit\Framework\TestCase
             preg_match_all( '#<a class="([^"]*)" href="([^"]*)"( aria-current="page")?>#', $html, $m, PREG_SET_ORDER );
             $this->assertCount( 4, $m, $html );
             $urls = array_map( function ( $x ) { return preg_replace( '#^.*/setup/#', 'setup/', $x[2] ); }, $m );
-            $this->assertSame( array( 'setup/logs', 'setup/logsmanage', 'setup/logshealth', 'setup/logsdigest' ), $urls, 'Logs first' );
+            $this->assertSame( array( 'setup/logs', 'setup/logsdigest', 'setup/logshealth', 'setup/logsmanage' ), $urls, 'Logs, Error digest, Log health, Manage logs' );
             $marked = 0;
             foreach ( $m as $i => $a )
             {
@@ -72,7 +72,7 @@ class LogViewerNavTest extends PHPUnit\Framework\TestCase
                 {
                     $marked++;
                     $this->assertStringContainsString( 'is-current', $a[1] );
-                    $this->assertSame( array( 'logs', 'manage', 'health', 'digest' )[$i], $current );
+                    $this->assertSame( array( 'logs', 'digest', 'health', 'manage' )[$i], $current );
                 }
             }
             $this->assertSame( 1, $marked, "one current item for $current" );
