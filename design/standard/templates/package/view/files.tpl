@@ -9,7 +9,7 @@
     <form method="post" action={concat( 'package/view/files/', $package.name )|ezurl}>
 
     <div class="objectheader">
-        <h2>{$package.name|wash}-{$package.version-number}-{$package.release-number}{if $package.release-timestamp}({$package.release-timestamp|l10n( shortdatetime )}){/if}{if $package.type|wash} [{$package.type}]{/if}
+        <h2>{$package.name|wash}-{$package.version-number|wash}-{$package.release-number|wash}{if $package.release-timestamp}({$package.release-timestamp|l10n( shortdatetime )}){/if}{if $package.type|wash} [{$package.type|wash}]{/if}
         - {if $package.install_type|eq( 'install' )}
             {if $package.is_installed}
                 {'Installed'|i18n('design/standard/package')}

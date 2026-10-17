@@ -3,7 +3,7 @@
 <div id="package">
 
 {*PD: {$persistent_data|attribute(show)*}
-<h2>{'Uninstalling package'|i18n('design/standard/package')} '{$package.name}'.</h2>
+<h2>{'Uninstalling package'|i18n('design/standard/package')} '{$package.name|wash}'.</h2>
 
 {def $path=concat( 'package/uninstall/', $package.name )}
 <form method="post" action={$path|ezurl}>
@@ -16,14 +16,14 @@
         <ul>
         {def $i=0}
         {foreach $error.actions as $action_id => $action}
-            <li><input class="radiobutton" id="{$action_id}" type="radio" name="ActionID" value="{$action_id}" {if eq($i, 0)}checked="checked"{/if} />{$action|wash}</li>
+            <li><input class="radiobutton" id="{$action_id|wash}" type="radio" name="ActionID" value="{$action_id|wash}" {if eq($i, 0)}checked="checked"{/if} />{$action|wash}</li>
             {set $i=inc($i)}
         {/foreach}
         </ul>
         <label for="RememberAction"><input class="checkbox" id="RememberAction" type="checkbox" name="RememberAction"/>{'Use this choice for all items'|i18n('design/standard/package')}</label>
         </div>
     {else}
-        <p>{'Element with ID \'%element_id\' will not be uninstalled.'|i18n( 'design/standard/package',, hash( '%element_id', $error.element_id ) )}</p>
+        <p>{'Element with ID \'%element_id\' will not be uninstalled.'|i18n( 'design/standard/package',, hash( '%element_id', $error.element_id|wash ) )}</p>
     {/if}
 {else}
     <h3>{'Unhandled uninstallation error has occurred.'|i18n('design/standard/package')}</h3>
