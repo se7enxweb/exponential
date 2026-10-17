@@ -48,6 +48,7 @@
     'workflow_processes', 'Workflow processes'|i18n( 'design/admin/parts/setup/menu' ),
     'maintenance',        'Maintenance'|i18n( 'design/admin/parts/setup/menu' ),
     'cronjobs',           'Cronjobs'|i18n( 'design/admin/parts/setup/menu' ),
+    'logs',               'Log files'|i18n( 'design/admin/parts/setup/menu' ),
     'preload',            'Preload Sites'|i18n( 'design/admin/parts/setup/menu' ),
     'oauth_list',         'oAuth admin'|i18n( 'design/admin/parts/setup/menu' ),
     'look_and_feel',      'Look and feel'|i18n( 'design/admin/parts/visual/menu' ),
