@@ -30,7 +30,8 @@
  *     sign in (data-a4-mega-signed-out, data-a4-mega-login) instead of the error;
  *   - when it has failed for good, says so (data-a4-mega-error) with a "Try again" button (data-a4-mega-retry); the
  *     link to the tab's page stays below it, and the next opening tries again too;
- *   - stopped by the browser (the page being left, an aborted request) is no failure: nothing is shown, and the next
+ *   - stopped by the browser (another page being opened: an AbortError, or Firefox's network error) is no failure:
+ *     nothing is shown, and the next
  *     opening loads again.
  *   A link to the page shown (the tab's link included) is marked aria-current="page".
  * - Bound once: a second copy of the script, or a second run of it, leaves a tab already bound (data-a4-mega-bound)

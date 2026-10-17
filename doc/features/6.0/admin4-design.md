@@ -599,7 +599,7 @@ opens the user form directly. A permission check for one user has no view in the
   `user/login` or a sign-in page in its place shows that the user is signed out, with a "Sign in" link
   (`data-a4-mega-signed-out`, `data-a4-mega-signin`, `data-a4-mega-login` on the panel). A failure for good says
   so (`data-a4-mega-error`) with a "Try again" button (`data-a4-mega-retry`); the tab's link stays under it, and the
-  next opening tries again too. A request the browser stops (the page being left by a link in the panel) is no
+  next opening tries again too. A request the browser stops because another page is being opened (an AbortError, or the network error Firefox gives) is no
   failure. The script binds each tab once (`data-a4-mega-bound`), however often it is loaded.
 - **The rights.** The view's policy is `user/login` (any user of the siteaccess, as `user/preferences`), since the
   tabs belong to different modules and a policy of one of them would keep the others' users out. The rights are
