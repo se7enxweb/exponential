@@ -50,6 +50,7 @@ class ezpOauthAuthorizeRedirectTest extends PHPUnit\Framework\TestCase
             'no client, no type'      => array( array( 'redirect_uri' => 'https://evil.example/' ) ),
             'redirect_uri as array'   => array( array( 'redirect_uri' => array( self::ENDPOINT ), 'client_id' => 'known-client', 'response_type' => 'code' ) ),
             'client ID as array'      => array( array( 'redirect_uri' => self::ENDPOINT, 'client_id' => array( 'known-client' ), 'response_type' => 'code' ) ),
+            'empty redirect_uri of a client stored without end point' => array( array( 'redirect_uri' => '', 'client_id' => 'no-endpoint-client', 'response_type' => 'code' ) ),
             'unknown client by POST'  => array( array(), array( 'AuthorizeButton' => '1', 'redirect_uri' => 'https://evil.example/', 'client_id' => 'nobody' ) ),
         );
     }

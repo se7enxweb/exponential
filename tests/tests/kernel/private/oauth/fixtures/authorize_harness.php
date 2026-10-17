@@ -51,6 +51,12 @@ class ezpRestClient
 
     public static function fetchByClientId( $clientId )
     {
+        if ( $clientId === 'no-endpoint-client' )
+        {
+            $client = new self();
+            $client->endpoint_uri = '';
+            return $client;
+        }
         return $clientId === 'known-client' ? new self() : false;
     }
 

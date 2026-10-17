@@ -103,8 +103,9 @@ if ( !$application instanceof ezpRestClient )
     response( '400 Bad Request' );
 }
 
-// The client is found, validate the redirect_uri
-if ( !$application->isEndPointValid( $pRedirectUri ) )
+// The client is found, validate the redirect_uri; an empty one is no end point, even for a client stored without one
+// (the code or token would go to the relative address "?access_token=...")
+if ( $pRedirectUri === '' || !$application->isEndPointValid( $pRedirectUri ) )
 {
     response( '400 Bad Request' );
 }
