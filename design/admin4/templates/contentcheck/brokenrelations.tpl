@@ -1,7 +1,7 @@
 {* The contentcheck/brokenrelations view (doc/features/6.0/content-checks.md, "Broken relations"). Read only.
 
    Variables: result (node, excluded, findings, checked, last, done, error), params (node_id, exclude, kinds,
-   relations, after, limit), kinds, relations, page_uri, filter_suffix, limit, limit_choices, limit_preference.
+   relations, after, limit), scope (the start location, see scope.tpl), kinds, relations, page_uri, filter_suffix, limit, limit_choices, limit_preference.
    The sources are walked by object id: a page shows the findings of the objects checked for it, and "Next page"
    goes on after the last of them (After). A target the user may not read is "unavailable",
    without id or state. The same file is in design/admin and design/admin4. *}
@@ -50,11 +50,7 @@
 <section aria-labelledby="cc-filter-title">
 <h2 class="a4-sr-only" id="cc-filter-title">{'Filter'|i18n( 'kernel/contentcheck' )}</h2>
 <form class="a4-filterbar" method="get" action={$page_uri|ezurl}>
-    <div class="a4-field">
-        <label for="cc-node">{'Below node'|i18n( 'kernel/contentcheck' )}</label>
-        <input type="text" id="cc-node" name="NodeID" value="{$params.node_id}" inputmode="numeric" pattern="[0-9]*" maxlength="10" aria-describedby="cc-node-help" />
-        <span class="a4-help" id="cc-node-help">{'Now: %name. 1 checks the whole tree.'|i18n( 'kernel/contentcheck',, hash( '%name', cond( $node.node_id|eq( 1 ), 'Whole tree'|i18n( 'kernel/contentcheck' ), $node.name ) ) )|wash}</span>
-    </div>
+    {include uri='design:contentcheck/scope.tpl' scope=$scope}
     <div class="a4-field">
         <label for="cc-exclude">{'Leave out the nodes below'|i18n( 'kernel/contentcheck' )}</label>
         <input type="text" id="cc-exclude" name="Exclude" value="{$params.exclude|implode( ', ' )|wash}" maxlength="250" spellcheck="false" aria-describedby="cc-exclude-help" />

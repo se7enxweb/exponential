@@ -14678,6 +14678,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Overview</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Storage files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files in the storage that nothing uses, and files with the wrong owner or mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -60986,6 +60994,426 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Change or remove the rule target.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start location (node id)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now: %path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 is the whole tree. Your choice is remembered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose with the node picker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wrong owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wrong mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name differs in case</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Path differs from its parts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In another type directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Age</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>moved to the quarantine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>restored</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>deleted from the quarantine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>given the expected owner and mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Storage files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The files below %dir: those no content uses (orphan files), and the file-system problems of those it uses. A file counts as used when a version of any object, also an old one or one in the trash, names it, or when a field, a layout, a setting or a template names its path. Files younger than %days days are never orphans. Nothing is deleted from the storage: orphans go to a quarantine, from where they can be restored.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files (%size) were %action.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count could not be changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was changed: the files changed after the confirmation. Tick them again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The files are kept by a cluster file handler: they are read from its table, owner and mode are not checked, and nothing can be moved or fixed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The storage has not been scanned yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A scan started at %time is not finished (%percent %).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Orphan files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Too new to judge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Took</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%seconds s in %steps steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files were changed since this scan; the lists leave out what was moved or fixed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The reference index could not be read completely, so paths named only in rich text, layouts, settings or templates were not seen. Nothing is moved until it can be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Continue the scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan the storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The scan runs in steps of a few seconds and can be continued later; on a large storage run ./console exp:content-check --storage.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quarantine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Orphan files belong to no content, so the start location does not apply to them: the whole storage is listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files (%size) in %dir.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The scan keeps the first %count orphans; move them, then scan again for the others.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan the storage to see this list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No orphan files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No file problems below this node match the filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The quarantine is empty.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Used by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner and mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%days d</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Found: %path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move ticked files to the quarantine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix owner and mode of ticked files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore ticked files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete ticked files permanently</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The next page is a dry run: it shows what would happen to each file and changes nothing until you confirm. At most %count files at a time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move to the quarantine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore from the quarantine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete from the quarantine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fix owner and mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved to the quarantine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved back to the storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleted permanently</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner and mode set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is not there (any more).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is not in a directory the check covers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is a symbolic link.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The path is in the ignored list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is too new to judge.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content uses the file now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No content uses the file: it is an orphan, not a problem.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A file is already at the destination.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The reference index cannot be read now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Files of a cluster file handler cannot be changed here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the system administrator can change the owner: run ./console exp:content-check --fix-permissions as root.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This server process does not own the file, so it cannot change its mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner and mode are already as expected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No file was ticked. Tick the files first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dry run: nothing has been changed yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only the first %count ticked files are taken; do the others afterwards.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved to %dir, below the date of today, keeping their path. They can be restored from there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be deleted from the quarantine. This cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files (%size) will be moved back to their place in the storage.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count files will get the expected owner and mode; nothing else is changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None of the ticked files can be changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To: %path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left as it is</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I understand that these files are deleted permanently.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm for %count files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scanning the storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%files files read so far (%size), %orphans of them orphans; %percent % done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The scan goes on by itself. Stop it at any time; it can be continued later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page only takes the forms of the storage files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not do this with storage files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The form has expired. Open the list again and tick the files once more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

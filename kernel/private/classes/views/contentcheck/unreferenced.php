@@ -36,7 +36,9 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
             if ( $http->hasGetVariable( $name ) )
                 $input[$name] = $http->getVariable( $name );
         }
-        $input['NodeID'] = isset( $Params['NodeID'] ) ? $Params['NodeID'] : null;
+        // the form's node, else the address's, else the user's last choice, which it becomes (expContentCheckScope)
+        $input['NodeID'] = \expContentCheckScope::resolve( isset( $Params['NodeID'] ) ? $Params['NodeID'] : null,
+                                                          $http->hasGetVariable( 'NodeID' ) ? $http->getVariable( 'NodeID' ) : null );
         $input['Offset'] = \expAdminPagination::offset( $Params );
         $input['Limit'] = $limit;
         $params = \expContentCheckUnreferenced::parameters( $input, self::rootNodeID() );
@@ -70,6 +72,7 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'result', $result );
         $tpl->setVariable( 'params', $params );
+        $tpl->setVariable( 'scope', \expContentCheckScope::forTemplate( (int)$params['node_id'], 'unreferenced' ) );
         $tpl->setVariable( 'class_options', $classOptions );
         $tpl->setVariable( 'sorts', array_keys( \expContentCheckUnreferenced::SORTS ) );
         $tpl->setVariable( 'page_uri', '/contentcheck/unreferenced/' . (int)$params['node_id'] );

@@ -14,6 +14,12 @@ that link to or embed something a visitor cannot reach; and if you decide who ma
   object or node that was deleted, is in the trash, is hidden or was never published, with the source, the field,
   the target, its state and what to do about it, and a link to edit the source; and on the first page the layouts
   whose blocks, collections or rules name such content. Read only.
+- **Storage files** (`/contentcheck/storage/<node id>`): the files in `var/<site>/storage` that no content uses
+  (orphan files), with their size and age and the totals, and the file-system problems of the files content uses
+  (wrong owner or mode, empty, a name or path that does not match). Orphans can be moved to a quarantine, restored
+  from there and deleted from there; owner and mode can be fixed. Nothing is ever deleted from the storage itself.
+- Every check starts where you choose: the whole tree, the content, Media, Media/Images, Users or any node through the
+  node picker; your choice is remembered (see [Where a check starts](#where-a-check-starts)).
 - Both are in the Setup menu and on the Setup overview (group Content model), and in the context menu of the content
   tree and the sub-items list (**Advanced > Unreferenced objects in subtree**, **Broken relations in subtree**),
   which open them for that node.
@@ -200,6 +206,99 @@ the page header says how many objects were checked and after which object. A pag
 one source, so it can show a few findings more than its size. There is no total: counting would mean reading the
 whole tree, which is what the pages avoid. **From the start** begins again.
 
+## Where a check starts
+
+Each check has a **start location** field (the node id) with buttons for the usual places and **Choose with the node
+picker**, which opens the shared node picker (content/browse) and comes back to the same check:
+
+- the presets of `contentcheck.ini [ScopeSettings] PresetList[]`: **Whole tree** (node 1, for users with an
+  unlimited `content/read`), the content (`RootNode`), **Media** (`MediaRootNode`), **Media/Images** (the URL alias
+  `media/images`) and **Users** (`UserRootNode`). Other keys: `setup`, `design`, a node id or any URL alias path. A
+  preset whose node does not exist or that you may not read is left out;
+- a check reads its node from the form (`NodeID`), else from the address (`contentcheck/<view>/<node id>`), else
+  from your last choice, else the content tree's top node. A node given in the form or the address becomes your last
+  choice (the preference `admin_contentcheck_scope`), so the next check opens there; the address always carries it,
+  so a link to a check shows the same subtree to everyone who may read it.
+
+The selector is one template, `design:contentcheck/scope.tpl`, included in the filter form of every check; the view
+passes `expContentCheckScope::forTemplate( $nodeID, '<view>' )`. The views that take a start location (and that the
+node picker may return to) are listed in `ViewList[]`; another check adds its view there.
+
+## Storage files
+
+Open **Setup > Storage files**. The page shows the last **scan** of the storage directory (`var/<site>/storage`,
+the directories of `ScanDirectoryList[]`: `images`, `images-versioned`, `original`) and three lists:
+
+- **Orphan files**: files no content uses, with their path, size, age, owner and mode, and the totals (count and
+  bytes). They belong to no content, so the start location does not apply: the whole storage is listed. Order by
+  path, size or age.
+- **File problems**: files content uses, of the objects below the start location that you may read, with
+  - **Wrong owner**: another owner than `ExpectedOwner` (empty: the owner of the storage directory);
+  - **Wrong mode**: missing bits of the expected mode (`FileMode`, empty: `site.ini [FileSettings]
+    StorageFilePermissions`); more bits are not a problem;
+  - **Empty file**: zero bytes;
+  - **Name differs in case**: the image XML names a file that is missing, but one with the same name in another case
+    is there;
+  - **Path differs from its parts**: an image's `url` is not its `dirpath` and `filename`;
+  - **In another type directory**: a file or media file is not in `original/<first part of its MIME type>/` but in
+    another type's directory.
+
+  A file that is missing altogether is not listed here; the missing files check reports it.
+- **Quarantine**: the files in the quarantine, by date, to restore or delete.
+
+### What counts as used
+
+A file is used when any of these names it, from **every** version and object state (also old versions and the trash:
+an image of an old version is still shown in the history and restored with it):
+
+1. `ezimagefile` (every image and alias file);
+2. the image XML (`data_text`) of the attribute its directory names (`.../<attribute id>-<version>-<language>/`), by
+   `url` or by `dirpath` and `filename`, of the original or any alias;
+3. `ezbinaryfile` or `ezmedia`, by its name (files and media are stored as `original/<type>/<name>`);
+4. the [reference index](#the-reference-index): a storage path in the text of any field, a layout block, a setting or a
+   template.
+
+A file younger than `MinAge` (a day) is never an orphan: an upload writes the file before its row. Paths in
+`IgnorePathList[]` (by default `images/_video-thumbnails`, a cache of the media theme) are never listed. Symbolic links
+are not followed. When the reference index cannot be read completely, the page says so and nothing can be moved.
+
+### The scan
+
+The scan reads `ScanBatchSize` files (2,000) at a time and judges them with one set of queries per batch; in the
+browser a step runs for `StepSeconds` (4) and the page goes on by itself (a small script presses **Continue the
+scan**; without it, press it). **Stop here** keeps what was read; **Continue the scan** goes on later, **Start again**
+from the beginning. The scan then reads the image attributes and the file and media rows in chunks for the name and
+path problems. Its state and result are kept in the cache directory (`contentcheck/storage-scan.json`); at most
+`MaxListed` orphans and problems (5,000) are kept, the totals count all. On a large storage run the command line.
+
+With a **cluster** file handler other than the file system (DFS, database) the files are read from its table
+(`ezdfsfile`, `ezdbfile`); owner and mode are not checked and nothing can be changed: report only.
+
+## Quarantine
+
+Nothing is ever deleted from the storage. The actions, each for the ticked files of a list:
+
+| Action | What it does | Policy |
+|---|---|---|
+| Move to the quarantine | moves orphans to `var/<site>/storage-quarantine/<date>/<their path below the storage>` (`QuarantineDirectory`), and records them in `.manifest.jsonl` there | `contentcheck/quarantine` |
+| Restore | moves a quarantined file back to its place, never over a file that is there now | `contentcheck/quarantine` |
+| Delete permanently | deletes a file from the quarantine; the confirmation needs the box "I understand ..." as well | `contentcheck/quarantine` |
+| Fix owner and mode | sets only the expected owner and mode of a used file, nothing else | `contentcheck/permissions` |
+
+Every action is a **dry run** first: the next page lists every ticked file with what would happen to it, and changes
+nothing. Only **Confirm** does it, posted with the session's form token (and ezformtoken's) and a confirmation token
+bound to exactly the files shown and to your session. Every file is checked again when it is done: a file that content
+uses now, that is younger than `MinAge`, that is a link, that lies outside the storage or the quarantine, or whose
+destination is taken, is left as it is. At most `MaxActionBatch` files (200) are taken from one confirmation. Each
+action is recorded in the audit (`content.file.orphan.quarantine`, `content.file.orphan.restore`,
+`content.file.orphan.delete`, `content.file.permissions.fix`, with the number of files, their bytes and their paths;
+a refusal for a missing policy as `content.file.orphan.refused`).
+
+**Owner and mode**: changing the owner needs root; changing the mode needs root or the file's owner. The plan says for
+each file whether this server process can do it. Where two users write the storage (an application server running as
+root and PHP-FPM as the site user, so some files end up owned by root), run the command line as root:
+`./console exp:content-check --storage --fix-permissions --dry-run`, then without `--dry-run`.
+
 ## Who may use them
 
 | Policy | Opens |
@@ -207,6 +306,9 @@ whole tree, which is what the pages avoid. **From the start** begins again.
 | `contentcheck/unreferenced` | the list of unreferenced objects |
 | `contentcheck/trash` | with `unreferenced`: moving them to the trash; each object needs `content/remove` as well |
 | `contentcheck/brokenrelations` | the list of broken relations |
+| `contentcheck/storage` | the storage files: the scan, the orphans, the file problems and the quarantine list |
+| `contentcheck/quarantine` | with `storage`: moving orphans to the quarantine, restoring them, deleting them there |
+| `contentcheck/permissions` | with `storage`: setting the expected owner and mode of used files |
 
 The policies have no limitations; what each list shows is limited by `content/read` (as a subtree fetch is, in its
 SQL), and what may be moved by `content/remove`.
@@ -294,6 +396,36 @@ ChunkSize=200
 ScanLimit=5000
 ```
 
+```ini
+[ScopeSettings]
+# The presets: tree, content, media, users, setup, design, a node id or a URL alias path
+PresetList[]=tree
+PresetList[]=content
+PresetList[]=media
+PresetList[]=media/images
+PresetList[]=users
+# The views that take a start location
+ViewList[]=unreferenced
+ViewList[]=brokenrelations
+ViewList[]=storage
+
+[StorageSettings]
+ScanDirectoryList[]=images
+ScanDirectoryList[]=images-versioned
+ScanDirectoryList[]=original
+IgnorePathList[]=images/_video-thumbnails
+ScanBatchSize=2000
+StepSeconds=4
+MaxListed=5000
+# seconds; a younger file is never an orphan
+MinAge=86400
+# empty: the owner of the storage directory / site.ini StorageFilePermissions
+ExpectedOwner=
+FileMode=
+QuarantineDirectory=storage-quarantine
+MaxActionBatch=200
+```
+
 Page sizes: `admininterface.ini [PaginationSettings] ItemsPerPageList_contentcheck_unreferenced[]` and
 `ItemsPerPageList_contentcheck_brokenrelations[]`.
 
@@ -307,7 +439,14 @@ Report only; nothing is changed or moved:
 ./console exp:content-check --broken --node=2        # every broken relation below node 2, and the layouts'
 ./console exp:content-check --why=123,456            # what uses objects 123 and 456 (the first reference found)
 ./console exp:content-check --unreferenced --json    # the same as JSON
+./console exp:content-check --storage                # scan the storage files: orphans and file problems (totals)
+./console exp:content-check --storage --quarantine --dry-run        # which orphans would be quarantined
+./console exp:content-check --storage --quarantine                  # move them (each checked again)
+./console exp:content-check --storage --fix-permissions --dry-run   # which owners and modes would be set
 ```
+
+`--storage` runs the whole scan and keeps it for the page; `--quarantine` and `--fix-permissions` change files only
+without `--dry-run`, and record each batch in the audit like the page does.
 
 The lists are those of the user given by `--login` (default `admin`). Exit code 0 when nothing is found, 1 when
 something is, 2 on an error. On a very large installation set `BuildOnRequest=false` and run the cronjob part
@@ -362,6 +501,12 @@ and MariaDB, PostgreSQL, SQLite and Oracle. On MongoDB the checks say they are n
 - To add a reference source of an extension's table, list its column in `ObjectColumns[]`, `NodeColumns[]` or
   `NodeListColumns[]`; for anything else, extend `expContentCheckReferences::build()` with a `from...()` method and an
   extractor with a test in `expContentCheckReferencesTest`.
+- The start location: `expContentCheckScope` (presets, preference, `forTemplate()`), the view `contentcheck/scope`
+  (the node picker, `browse.ini [ContentCheckScope]`) and the template `contentcheck/scope.tpl`.
+- The storage files: `expContentCheckStorage` (settings, `usedAmong()`, the batched scan `scanStep()`, the result),
+  `expContentCheckQuarantine` (the plans and actions, `listing()`), the views `contentcheck/storage` and
+  `contentcheck/storageaction`, the templates `contentcheck/storage*.tpl` and the script `contentcheck_storage.js`.
+  Test: `expContentCheckStorageTest.php` (no database).
 - Templates `contentcheck/*.tpl` in `design/admin` and `design/admin4`; context menu entries in
   `popupmenu/popup_sub_advance_menu.tpl` of both.
 - Tests: `tests/tests/kernel/contentcheck/expContentCheckQueryTest.php` needs no database (input, SQL, rich text,

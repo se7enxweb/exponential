@@ -1,7 +1,7 @@
 {* The contentcheck/unreferenced view (doc/features/6.0/content-checks.md, "Unreferenced objects").
 
    Variables: result (node, count, rows, error), params (node_id, class_ids, sort, order, containers, offset,
-   limit), class_options, sorts, page_uri, page_uri_suffix, view_parameters, limit, limit_choices,
+   limit), scope (the start location, see scope.tpl), class_options, sorts, page_uri, page_uri_suffix, view_parameters, limit, limit_choices,
    limit_preference, feedback (the outcome of a move to the trash, or null), can_trash, batch_limit, form_token,
    token_field. Only what the user may read is in result.rows; a row can be ticked only when the user may move it
    to the trash. The filters are a GET form; the ticked rows are posted to contentcheck/trash, which asks for a
@@ -55,6 +55,7 @@
 <section aria-labelledby="cc-filter-title">
 <h2 class="a4-sr-only" id="cc-filter-title">{'Filter'|i18n( 'kernel/contentcheck' )}</h2>
 <form class="a4-filterbar" method="get" action={$page_uri|ezurl}>
+    {include uri='design:contentcheck/scope.tpl' scope=$scope}
     <div class="a4-field">
         <label for="cc-class">{'Classes'|i18n( 'kernel/contentcheck' )}</label>
         <select id="cc-class" name="ClassID[]" multiple="multiple" size="6" aria-describedby="cc-class-help">
