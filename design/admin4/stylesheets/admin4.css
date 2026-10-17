@@ -2395,6 +2395,12 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
   color: var(--a4-muted);
 }
 #controlbar-top #ez-as-place.as-error { color: var(--a4-bad); }
+/* With the autosave (content/edit.tpl sets .a4-edit-bar-autosave and, for autosave.ini HideStoreDraftButton,
+   .a4-edit-bar-autosave-store) the first paint already has the bar its script makes: the place of the save status
+   and preview link (on phones a line of its own under the buttons), and no Store draft button. Drawn later, the
+   buttons reflowed and the form moved down (CLS 0.18 at 375px). Without a script the bar stays as it is. */
+html.a4-js #controlbar-top.a4-edit-bar-autosave .button-right:empty { display: flex; }
+html.a4-js #editform:has(#controlbar-top.a4-edit-bar-autosave-store) input[name="StoreButton"] { display: none; }
 
 /* Room for the rich text editor's toolbar under the header and this bar: --a4-sticky-edge (admin4.js) is where the
    visible part of the page starts. A field or an editor reached with the keyboard is scrolled to below it, not under
