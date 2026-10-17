@@ -328,6 +328,51 @@ class expDebugBarRegistry
     }
 
     /**
+     * The panels extensions add to the bar (expDebugBarPanelInterface): [DebugBarSettings] Panels[]=<id> with
+     * [Panel_<id>] Class=<class>. An id is letters, digits and _ (it becomes part of the tab's id); an entry without a
+     * usable class is left out and named in $broken, so a wrong setting shows instead of breaking the report.
+     *
+     * @param array $broken filled with id => reason for the entries left out
+     * @return array id => class name, in the order of Panels[]
+     */
+    public function panels( &$broken = array() )
+    {
+        $broken = array();
+        $panels = array();
+        $taken = array();
+        foreach ( (array)$this->option( 'Panels', array() ) as $id )
+        {
+            $id = trim( (string)$id );
+            if ( $id === '' || isset( $panels[$id] ) )
+                continue;
+            // the tab's id is the lower case id: two ids that differ in case only would draw one tab twice
+            if ( isset( $taken[strtolower( $id )] ) )
+            {
+                $broken[$id] = 'same id as ' . $taken[strtolower( $id )];
+                continue;
+            }
+            if ( !preg_match( '/^[A-Za-z0-9_]{1,40}$/', $id ) )
+            {
+                $broken[$id] = 'invalid id';
+                continue;
+            }
+            $class = $this->ini->hasVariable( 'Panel_' . $id, 'Class' ) ? trim( (string)$this->ini->variable( 'Panel_' . $id, 'Class' ) ) : '';
+            if ( $class === '' )
+                $broken[$id] = 'no [Panel_' . $id . '] Class';
+            else if ( !class_exists( $class ) )
+                $broken[$id] = 'class ' . $class . ' not found';
+            else if ( !in_array( 'expDebugBarPanelInterface', class_implements( $class ), true ) )
+                $broken[$id] = 'class ' . $class . ' does not implement expDebugBarPanelInterface';
+            else
+            {
+                $panels[$id] = $class;
+                $taken[strtolower( $id )] = $id;
+            }
+        }
+        return $panels;
+    }
+
+    /**
      * Thresholds[<name>]=<warn>;<high>.
      *
      * @return array name => array( warn, high )

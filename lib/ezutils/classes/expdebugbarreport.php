@@ -243,6 +243,9 @@ class expDebugBarReport
         $byIP = $ini->variable( 'DebugSettings', 'DebugByIP' ) == 'enabled' ? ' ' . self::t( '(By IP Address)' ) : '';
 
         // Messages, with the SQL statements (SQLOutput) taken out into the SQL tab.
+        // the panels of extensions (debugbar.ini Panels[]): a tab after Memory each, a chip and data for those that
+        // give them. Collected before the messages, so the warning about a panel left out is among them.
+        $panels = self::extensionPanels();
         $messages = self::messageRows( $debug, $allowedDebugLevels );
 
         // Top reports: the classic toolbar goes to Settings, anything else stays above the messages.
@@ -318,6 +321,14 @@ class expDebugBarReport
         $summary['querycache'] = $serverSummary !== null && array_key_exists( 'querycache', $serverSummary )
             ? $serverSummary['querycache'] : self::queryCacheSummary();
 
+        // the chips of the extensions' panels (collected before the messages, see above)
+        $summary['panels'] = array();
+        foreach ( $panels as $panel )
+        {
+            if ( $panel['chip'] !== null )
+                $summary['panels'][] = $panel['chip'];
+        }
+
         $tabs = array(
             'messages'  => self::t( 'Messages' ),
             'settings'  => self::t( 'Settings' ),
@@ -327,9 +338,11 @@ class expDebugBarReport
             'templates' => self::t( 'Templates' ),
             'includes'  => self::t( 'Included files' ),
             'memory'    => self::t( 'Memory' ),
-            // id velocity, as the tab was named first: scripts and stylesheets find the section by it
-            'velocity'  => self::t( 'Server' ),
         );
+        foreach ( $panels as $panel )
+            $tabs[$panel['tab']] = $panel['title'];
+        // id velocity, as the tab was named first: scripts and stylesheets find the section by it
+        $tabs['velocity'] = self::t( 'Server' );
         if ( $otherReports !== '' )
             $tabs['other'] = self::t( 'Other' );
         $badges = array(
@@ -432,6 +445,14 @@ class expDebugBarReport
         echo self::memoryHtml( $debug, $totalElapsed, $peakMemory, $memoryLimit, $sqlCount, $queryKey );
         self::panelEnd();
 
+        // --- the extensions' panels
+        foreach ( $panels as $panel )
+        {
+            self::panelStart( $panel['tab'], $tabs );
+            echo $panel['html'];
+            self::panelEnd();
+        }
+
         // --- Server (id velocity)
         self::panelStart( 'velocity', $tabs );
         echo self::velocityHtml( $userInfo['can_setup'] || $userInfo['can_cache'] );
@@ -465,6 +486,7 @@ class expDebugBarReport
             'urls'       => array( 'call' => self::url( 'ezjscore/call' ),
                                    'cachetoolbar' => self::url( 'setup/cachetoolbar' ) ),
             'strings'    => self::translatedScriptStrings(),
+            'panels'     => array_filter( array_column( $panels, 'data', 'id' ), 'is_array' ),
             'panel'      => array( 'min' => self::PANEL_HEIGHT_MIN, 'max' => self::PANEL_HEIGHT_MAX ),
         );
         echo '<script type="application/json" id="exp-debug-data">'
@@ -631,6 +653,8 @@ class expDebugBarReport
         $chips[] = array( 'messages', 'deprecations', $deprecations > 0 ? 'warn' : 'ok',
                           self::t( '%count depr', array( '%count' => $deprecations ) ),
                           self::t( 'PHP deprecations, written to deprecated.log' ) );
+        foreach ( isset( $s['panels'] ) ? (array)$s['panels'] : array() as $chip )
+            $chips[] = $chip;
 
         $html = '<span class="exp-debug-summary" role="group" aria-label="' . self::h( 'Page summary' ) . '">';
         foreach ( $chips as $chip )
@@ -1086,6 +1110,64 @@ class expDebugBarReport
         return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
     }
 
+
+    /**
+     * The panels extensions register (expDebugBarRegistry::panels(), debugbar.ini Panels[]) that the current user may
+     * see, ready to draw: the tab's id "x-<id>" (apart from the built-in tabs), its title, its chip for summaryHtml()
+     * or null, its HTML and its data. A panel that throws, or gives a title that is not a string, is left out of
+     * this report with a warning, so one extension cannot break the bar.
+     *
+     * @return array list of array( 'id', 'tab', 'title', 'chip', 'html', 'data' )
+     */
+    public static function extensionPanels()
+    {
+        if ( !class_exists( 'expDebugBarRegistry' ) || !interface_exists( 'expDebugBarPanelInterface' ) )
+            return array();
+        try
+        {
+            $classes = ( new expDebugBarRegistry() )->panels( $broken );
+        }
+        catch ( Throwable $e )
+        {
+            return array();
+        }
+        foreach ( $broken as $id => $reason )
+            eZDebug::writeWarning( "Debug bar panel '$id' left out: $reason", __METHOD__ );
+
+        $panels = array();
+        foreach ( $classes as $id => $class )
+        {
+            try
+            {
+                $panel = new $class();
+                if ( !$panel->visible() )
+                    continue;
+                $title = $panel->title();
+                if ( !is_string( $title ) || $title === '' )
+                    throw new UnexpectedValueException( 'title() gave no text' );
+                $tab = 'x-' . strtolower( $id );
+                $chip = $panel->chip();
+                if ( is_array( $chip ) && isset( $chip['text'] ) && (string)$chip['text'] !== '' )
+                {
+                    $level = isset( $chip['level'] ) && in_array( $chip['level'], array( 'ok', 'warn', 'high' ), true ) ? $chip['level'] : 'ok';
+                    $chip = array( $tab, 'panel-' . strtolower( $id ), $level, (string)$chip['text'],
+                                   isset( $chip['title'] ) ? (string)$chip['title'] : $title );
+                }
+                else
+                {
+                    $chip = null;
+                }
+                $data = $panel->data();
+                $panels[] = array( 'id' => $id, 'tab' => $tab, 'title' => $title, 'chip' => $chip,
+                                   'html' => (string)$panel->html(), 'data' => is_array( $data ) ? $data : null );
+            }
+            catch ( Throwable $e )
+            {
+                eZDebug::writeWarning( "Debug bar panel '$id' ($class) left out: " . $e->getMessage(), __METHOD__ );
+            }
+        }
+        return $panels;
+    }
 
     /** OPcache status of the process that rendered this page. */
     public static function opcacheStatus()
