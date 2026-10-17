@@ -1545,6 +1545,13 @@ html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
   #page #columns #leftmenu { order: 2; float: none; width: auto; margin: 0; min-height: 0; }
   #page #columns #leftmenu.collapsed #leftmenu-design { visibility: visible; }
   #page #columns #rightmenu { order: 2; float: none; width: auto; min-height: 0; overflow: visible; }
+  /* While the page loads, the browser draws what it has: the menus come before the content in the document, so they
+     were drawn at the top and then pushed under the content when it arrived (a layout shift of 0.4 to 1.1 on every
+     page). They wait until the main column is complete (the .break after it). #canvas-bottom follows the main column in
+     the document but stands above it here (the column's order is 1): its 20px are kept free under #canvas-top until
+     it arrives, so it does not push the content down. */
+  #page #columns:not(:has(> .break)) :is(#rightmenu, #leftmenu) { display: none; }
+  #page #columns:not(:has(> #canvas-bottom)) > #canvas-top { margin-block-end: 20px; }
   #leftmenu-design, #rightmenu-design { margin: 0; min-height: 0; }
   #rightmenu-design :is(select, input[type=text], input[type=search]) { width: 100%; min-height: var(--a4-control-h); }
   #maincontent-design { margin: 0; padding: var(--a4-space-3); overflow-wrap: break-word; }
