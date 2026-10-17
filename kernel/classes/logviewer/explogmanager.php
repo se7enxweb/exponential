@@ -24,7 +24,7 @@
  *
  * How: expLogRotator (locked, keeps the owner, group and mode of a log, never follows a link).
  */
-class expLogManager
+class expLogManager implements expLogManagerInterface
 {
     const OPS = array( 'rotate', 'prune', 'compress', 'truncate' );
 
