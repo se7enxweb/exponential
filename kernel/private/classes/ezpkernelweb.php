@@ -362,6 +362,16 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
      */
     public function run()
     {
+        // Set again here as in the constructor: a kernel that runs twice starts its request log afresh. begin()
+        // also registers expRequestLog::finish() as a clean-up handler, so a request that ends through
+        // eZExecution::cleanExit() (a download, an ezjscore call, a redirect, the mobile redirect below) or a fatal
+        // error is classified too; shutdown() ends the others. finish() runs once either way.
+        if ( class_exists( 'expRequestLog' ) && method_exists( 'expRequestLog', 'begin' ) )
+            expRequestLog::begin();
+        else if ( class_exists( 'expRequestLog' ) )
+            expRequestLog::reset();
+        $this->requestLogPending = true;
+
         if ( $this->mobileDeviceDetect->isEnabled() )
         {
             $this->mobileDeviceDetect->process();
@@ -372,11 +382,6 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
 
         $obLevel = ob_get_level();
         ob_start();
-        // Set again here as in the constructor: a kernel that runs twice starts its request log afresh; shutdown()
-        // ends it with expRequestLog::finish()
-        if ( class_exists( 'expRequestLog' ) )
-            expRequestLog::reset();
-        $this->requestLogPending = true;
         $this->requestInit();
 
         // send header information

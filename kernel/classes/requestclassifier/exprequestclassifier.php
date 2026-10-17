@@ -78,6 +78,18 @@ class expRequestClassifier
     }
 
     /**
+     * Test hook: the classifier instance() returns until the next reset(), e.g. one built with a test
+     * configuration (log and cache directories of the test).
+     *
+     * @param expRequestClassifier|null $classifier null: built from the INI settings when first asked
+     * @return void
+     */
+    public static function setInstance( ?expRequestClassifier $classifier )
+    {
+        self::$instance = $classifier;
+    }
+
+    /**
      * Forgets the instance (and, with $all, the compiled patterns and the warnings given): for tests and after a
      * settings change.
      *
