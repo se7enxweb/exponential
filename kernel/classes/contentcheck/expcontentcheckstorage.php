@@ -173,7 +173,7 @@ class expContentCheckStorage
 
     /**
      * The mode every used file should have at least: StorageSettings FileMode, else site.ini [FileSettings]
-     * StorageFilePermissions.
+     * StorageFilePermissions, limited by eZFile::fileMode().
      *
      * @return int
      */
@@ -185,7 +185,8 @@ class expContentCheckStorage
             $ini = eZINI::instance();
             $mode = $ini->hasVariable( 'FileSettings', 'StorageFilePermissions' ) ? (string)$ini->variable( 'FileSettings', 'StorageFilePermissions' ) : '0666';
         }
-        return preg_match( '/^0?[0-7]{3}$/', $mode ) ? octdec( $mode ) & 0777 : 0666;
+        // never wider than the installation's limit (EZP_FILE_MODE_MAX): a file at that limit is not a problem
+        return eZFile::fileMode( preg_match( '/^0?[0-7]{3}$/', $mode ) ? octdec( $mode ) & 0777 : 0666 );
     }
 
     /**
@@ -576,7 +577,7 @@ class expContentCheckStorage
         $json = json_encode( $state, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PARTIAL_OUTPUT_ON_ERROR );
         $ok = eZFile::create( basename( $file ), dirname( $file ), (string)$json, true );
         if ( $ok )
-            @chmod( $file, octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) & 0666 );
+            @chmod( $file, eZFile::fileMode( octdec( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) & 0666 ) );
         return (bool)$ok;
     }
 

@@ -436,7 +436,7 @@ class expContentCheckQuarantine
                     if ( isset( $entry['owner'] ) && $entry['owner'] !== null )
                         $ok = @chown( $file, (int)$entry['owner'] );
                     if ( $ok && isset( $entry['mode'] ) && $entry['mode'] !== null )
-                        $ok = @chmod( $file, (int)$entry['mode'] );
+                        $ok = @chmod( $file, eZFile::fileMode( (int)$entry['mode'] ) );
                     clearstatcache( true, $file );
                     break;
             }
