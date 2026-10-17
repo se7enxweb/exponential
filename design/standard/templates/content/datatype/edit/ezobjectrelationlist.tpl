@@ -218,15 +218,15 @@
                     <th>{'Name'|i18n( 'design/standard/content/datatype' )}</th>
                     <th>{'Type'|i18n( 'design/standard/content/datatype' )}</th>
                     <th>{'Section'|i18n( 'design/standard/content/datatype' )}</th>
-                    <th><span title="{'The related objects will be edited in the same language as this object. If such translations do not exist they will be created, based on the source language of your choice.'|i18n( 'design/standard/content/datatype' )}">{'Translation base'|i18n( 'design/standard/content/datatype' )}</span></th>
-                    <th class="tight">{'Order'|i18n( 'design/standard/content/datatype' )}</th>
+                    <th id="ezcoa-{$attribute.id}_translation_head"><span title="{'The related objects will be edited in the same language as this object. If such translations do not exist they will be created, based on the source language of your choice.'|i18n( 'design/standard/content/datatype' )}">{'Translation base'|i18n( 'design/standard/content/datatype' )}</span></th>
+                    <th class="tight" id="ezcoa-{$attribute.id}_order_head">{'Order'|i18n( 'design/standard/content/datatype' )}</th>
                 </tr>
                 {section name=Relation loop=$attribute.content.relation_list sequence=array( bglight, bgdark )}
                     <tr class="{$:sequence}">
                     {if $:item.is_modified}
                         {* Remove. *}
                         <td>
-                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id|wash}" />
+                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id|wash}" aria-label="{cond( or( $Relation:object.can_read, $Relation:object.can_view_embed ), $Relation:object.name, 'Remove selected'|i18n( 'design/standard/content/datatype' ) )|wash}" />
                           <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$:item.contentobject_id|wash}" />
                         </td>
                         <td colspan="4">
@@ -254,12 +254,12 @@
                         </td>
 
                         {* Order. *}
-                        <td><input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_order" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority|wash}" /></td>
+                        <td><input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_order" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" size="2" type="text" aria-labelledby="ezcoa-{$attribute.id}_order_head" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority|wash}" /></td>
                     {else}
                         {let object=fetch( content, object, hash( object_id, $:item.contentobject_id, object_version, $:item.contentobject_version ) )}
                         {* Remove. *}
                         <td>
-                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id|wash}" />
+                          <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_remove_{$Relation:index}" class="ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$:item.contentobject_id|wash}" aria-label="{cond( or( $Relation:object.can_read, $Relation:object.can_view_embed ), $Relation:object.name, 'Remove selected'|i18n( 'design/standard/content/datatype' ) )|wash}" />
                           <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$:item.contentobject_id|wash}" />
                         </td>
 
@@ -280,7 +280,7 @@
                                 </span>
                             {else}
                                 {def $languages=$Relation:object.languages}
-                                <select name="{$attribute_base}_translation_source_{$attribute.id}_{$Relation:object.id}" title="{'This object is not translated, please select the language the new translation will be based on.'|i18n( 'design/standard/content/datatype' )}">
+                                <select aria-labelledby="ezcoa-{$attribute.id}_translation_head" name="{$attribute_base}_translation_source_{$attribute.id}_{$Relation:object.id}" title="{'This object is not translated, please select the language the new translation will be based on.'|i18n( 'design/standard/content/datatype' )}">
                                     {foreach $languages as $language}
                                         <option value="{$language.locale|wash}" {if $language.locale|eq( $Relation:object.initial_language_code )}selected="selected"{/if}>{$language.name|wash}</option>
                                     {/foreach}
@@ -291,7 +291,7 @@
                         </td>
 
                         {* Order. *}
-                        <td><input size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority|wash}" /></td>
+                        <td><input size="2" type="text" aria-labelledby="ezcoa-{$attribute.id}_order_head" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$:item.priority|wash}" /></td>
                         {/let}
                     {/if}
                     </tr>
@@ -344,7 +344,7 @@
             <th>{'Type'|i18n( 'design/standard/content/datatype' )}</th>
             <th>{'Section'|i18n( 'design/standard/content/datatype' )}</th>
             <th>{'Published'|i18n( 'design/standard/content/datatype' )}</th>
-            <th class="tight">{'Order'|i18n( 'design/standard/content/datatype' )}</th>
+            <th class="tight" id="ezcoa-{$attribute.id}_order_head">{'Order'|i18n( 'design/standard/content/datatype' )}</th>
         </tr>
         </thead>
         <tbody>
@@ -353,7 +353,7 @@
               {def $object = fetch( content, object, hash( object_id, $item.contentobject_id ) )}
               <tr class="{$style}">
                 {* Remove. *}
-                <td><input type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$item.contentobject_id|wash}" />
+                <td><input type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="{$item.contentobject_id|wash}" aria-label="{cond( or( $object.can_read, $object.can_view_embed ), $object.name, 'Remove selected'|i18n( 'design/standard/content/datatype' ) )|wash}" />
                 <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="{$item.contentobject_id|wash}" /></td>
 
                 {* Name, type and section, of an object the editor may read *}
@@ -374,20 +374,20 @@
                 </td>
 
                 {* Order. *}
-                <td><input size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$item.priority|wash}" /></td>
+                <td><input size="2" type="text" aria-labelledby="ezcoa-{$attribute.id}_order_head" name="{$attribute_base}_priority[{$attribute.id}][]" value="{$item.priority|wash}" /></td>
 
               </tr>
               {undef $object}
             {/foreach}
         {else}
           <tr class="bgdark">
-            <td><input type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="--id--" />
+            <td><input type="checkbox" name="{$attribute_base}_selection[{$attribute.id}][]" value="--id--" aria-label="{'Remove selected'|i18n( 'design/standard/content/datatype' )|wash}" />
             <input type="hidden" name="{$attribute_base}_data_object_relation_list_{$attribute.id}[]" value="no_relation" /></td>
             <td>--name--</td>
             <td>--class-name--</td>
             <td>--section-name--</td>
             <td>--published--</td>
-            <td><input size="2" type="text" name="{$attribute_base}_priority[{$attribute.id}][]" value="0" /></td>
+            <td><input size="2" type="text" aria-labelledby="ezcoa-{$attribute.id}_order_head" name="{$attribute_base}_priority[{$attribute.id}][]" value="0" /></td>
           </tr>
         {/if}
         </tbody>

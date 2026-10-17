@@ -2255,7 +2255,7 @@ dcaa6cd5933cbd4daafa84bcc06521c4  design/standard/templates/content/datatype/edi
 332a75e0bdd87b8d62504c60ffc26a89  design/standard/templates/content/datatype/edit/ezobjectrelation.tpl
 29b017f30ad5cb73ba0852726752e185  design/standard/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
 1a68fb4b7b0d164fd1752a20a3c00c86  design/standard/templates/content/datatype/edit/ezobjectrelation_ajaxuploader.tpl
-6c19da53b569a6af086df8db7e510390  design/standard/templates/content/datatype/edit/ezobjectrelationlist.tpl
+153af206d9d4ff137a23a18621332cc3  design/standard/templates/content/datatype/edit/ezobjectrelationlist.tpl
 01da2dd0e05d842e8a9fe97b1b0ac3aa  design/standard/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl
 7eaf59a62a97383faefc85c16bb732bc  design/standard/templates/content/datatype/edit/ezobjectrelationlist_controls.tpl
 75ee0d3ded9fe34f9507ea47c2107dce  design/standard/templates/content/datatype/edit/ezoption.tpl
@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-f9ec3e322984e9f249508de48648ada9  doc/changelogs/6.0/6.0.15.md
+5324f1099a3cc8d5d99a8ea36f6ee42b  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7743,6 +7743,7 @@ a60c3633a9045361377a90f14d676472  tests/tests/design/AdminPageHeaderTest.php
 c7a83ca94e5008c349693102cdcbeedd  tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php
 964332e29381bae7173aa9450cd52780  tests/tests/design/AdminPreferencesTest.php
 88d5471b0a77c9b9d6aefb5d1db6c8bd  tests/tests/design/AdminPreviewDevicesTest.php
+384d300f25cd69528b84e4fd228f16d0  tests/tests/design/AdminRelationListLabelsTest.php
 d3d40e761c6b85ebaddc3ceee2a5b66e  tests/tests/design/AdminResponsiveTest.php
 df9169b60283ae0c34ac07e8909c9b54  tests/tests/design/AdminRetiredClassesTest.php
 c6696bb26b02b77930b8f73ecb0f1a40  tests/tests/design/AdminReverseRelationCheckTest.php
