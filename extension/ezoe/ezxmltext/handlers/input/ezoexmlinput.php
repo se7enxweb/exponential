@@ -1329,15 +1329,35 @@ class eZOEXMLInput extends eZXMLInputHandler
                 // inputXML() removes every line break of its output at the end. Inside a custom tag (e.g. a formula)
                 // that glued the lines together: "\\cdot<line break>x" became "\\cdotx". There the line break and
                 // the white space around it become one space, as TeX reads it.
+                // In TeX source (content.ini [CustomTagSettings] TeXSource[<tag>]=true) that turned
+                // "a % comment<line break>+ b" into "a % comment + b", commenting out the rest of the formula. An
+                // unescaped % with the rest of its line, the line break and the indentation of the next line is
+                // therefore dropped first, as TeX reads it; leading white space is dropped too, instead of being
+                // stored as &nbsp; (U+00A0).
+                $texSource = false;
                 if ( $tag->parentNode instanceof DOMElement && $tag->parentNode->nodeName === 'custom' )
                 {
+                    $texSource = self::isTeXSourceTag( $tag->parentNode->getAttribute( 'name' ) );
+                    if ( $texSource )
+                    {
+                        $tagContent = self::texWithoutLineComments( $tagContent );
+                    }
                     $tagContent = preg_replace( '/[ \t]*(?:\r\n|\r|\n)\s*/', ' ', $tagContent );
+                    if ( $texSource && !$tag->previousSibling )
+                    {
+                        $tagContent = ltrim( $tagContent, " \t" );
+                    }
+                    if ( !strlen( $tagContent ) )
+                    {
+                        break;
+                    }
                 }
 
                 $tagContent = htmlspecialchars( $tagContent, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 $tagContent = str_replace ( '&amp;nbsp;', '&nbsp;', $tagContent );
 
-                if ( $this->allowMultipleSpaces )
+                // In TeX several spaces are one; an &nbsp; made of them would be a visible "\ "
+                if ( $this->allowMultipleSpaces && !$texSource )
                 {
                     $tagContent = str_replace( '  ', ' &nbsp;', $tagContent );
                 }
@@ -1995,6 +2015,77 @@ class eZOEXMLInput extends eZXMLInputHandler
         return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8' );
     }
 
+    /**
+     * Whether the text of custom tag $name is TeX source (content.ini [CustomTagSettings] TeXSource[$name]=true)
+     *
+     * @param string $name
+     * @return bool
+     */
+    public static function isTeXSourceTag( $name )
+    {
+        if ( self::$texSourceTags === null )
+        {
+            $ini = eZINI::instance( 'content.ini' );
+            self::$texSourceTags = $ini->hasVariable( 'CustomTagSettings', 'TeXSource' ) ?
+                                   (array)$ini->variable( 'CustomTagSettings', 'TeXSource' ) : array();
+        }
+        return isset( self::$texSourceTags[$name] ) && self::$texSourceTags[$name] === 'true';
+    }
+
+    /**
+     * TeX $text without its line comments, read as TeX reads them: an unescaped % (not preceded by an odd
+     * number of backslashes) up to the end of the line, the line break and the leading blanks of the next line.
+     * A comment on the last line has no line break to lose and stays. The % also ends a control word: when the text
+     * before it ends in one (\alpha, an odd number of backslashes before the letters) and the next line starts with
+     * a letter, a space stays between them, "\alpha%<line break>beta" gives "\alpha beta", not "\alphabeta".
+     *
+     * @param string $text
+     * @return string
+     */
+    public static function texWithoutLineComments( $text )
+    {
+        return preg_replace_callback(
+            // consecutive comment lines are one match, so the control word check sees the line after the last one
+            '/(?<!\\\\)((?:\\\\\\\\)*)(?:%[^\r\n]*(?:\r\n|\r|\n)[ \t]*)+/',
+            static function ( $match ) use ( $text )
+            {
+                if ( $match[1][0] !== '' )
+                {
+                    return $match[1][0];
+                }
+                // TeX letters are ASCII only (ctype_alpha() would follow the locale)
+                $isLetter = static function ( $c )
+                {
+                    return ( $c >= 'a' && $c <= 'z' ) || ( $c >= 'A' && $c <= 'Z' );
+                };
+                $start = $match[0][1];
+                $end = $start + strlen( $match[0][0] );
+                if ( !isset( $text[$end] ) || !$isLetter( $text[$end] ) )
+                {
+                    return '';
+                }
+                // Walk back over the letters and the backslashes before the %, instead of matching a regular
+                // expression against the whole text before it for every comment
+                $i = $start - 1;
+                while ( $i >= 0 && $isLetter( $text[$i] ) )
+                {
+                    --$i;
+                }
+                if ( $i === $start - 1 )
+                {
+                    return '';
+                }
+                $backslashes = 0;
+                while ( $i >= 0 && $text[$i] === '\\' )
+                {
+                    ++$backslashes;
+                    --$i;
+                }
+                return $backslashes % 2 === 1 ? ' ' : '';
+            },
+            $text, -1, $count, PREG_OFFSET_CAPTURE );
+    }
+
     /*
      * Generates custom attribute value, and also sets tag styles to styleString variable (by ref)
      */
@@ -2030,15 +2121,19 @@ class eZOEXMLInput extends eZXMLInputHandler
         {
             if ( $attribute->namespaceURI == 'http://ez.no/namespaces/ezpublish3/custom/' )
             {
+                // inputXML() removes every line break of its output, attribute values included. Multi-line MathML in
+                // custom:mathml ("&lt;mi&gt;a&lt;/mi&gt;&#10;&lt;mo&gt;") became "...&lt;/mi&gt;&lt;mo&gt;", and
+                // "a&#10;b" in a plain text attribute became "ab". Here the line break becomes a space.
+                $attributeValue = preg_replace( '/\r\n|\r|\n/', ' ', $attribute->value );
                 if ( $customAttributePart === '' )
                 {
                     $customAttributePart = ' customattributes="';
-                    $customAttributePart .= $attribute->name . '|' . htmlspecialchars( $attribute->value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+                    $customAttributePart .= $attribute->name . '|' . htmlspecialchars( $attributeValue, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 }
                 else
                 {
                    $customAttributePart .= 'attribute_separation' . $attribute->name . '|' .
-                       htmlspecialchars( $attribute->value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
+                       htmlspecialchars( $attributeValue, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 }
                 if ( isset( self::$customAttributeStyleMap[$attribute->name] ) )
                 {
@@ -2367,6 +2462,7 @@ class eZOEXMLInput extends eZXMLInputHandler
     protected static $designBases = null;
     protected static $userAccessHash = array();
     protected static $customAttributeStyleMap = null;
+    protected static $texSourceTags = null;
     protected static $embedIsCompatibilityMode = null;
     protected static $xmlTagAliasList = null;
 

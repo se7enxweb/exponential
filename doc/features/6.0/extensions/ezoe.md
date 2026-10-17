@@ -11,7 +11,8 @@ standalone repository received funding metadata only.
 
 How the editor is built, upgraded to TinyMCE 8 and configured in Exponential 6 is described in
 [ezoe and TinyMCE 8](../../../bc/6.0/ezoe-tinymce8.md) and on the feature page
-[Online editor on TinyMCE 8](../online-editor-tinymce8.md).
+[Online editor on TinyMCE 8](../online-editor-tinymce8.md). Characters above U+FFFF and TeX source in custom tags:
+[Rich text: characters above U+FFFF and TeX source](../rich-text-supplementary-characters-and-tex-source.md).
 
 ## Related pages
 
