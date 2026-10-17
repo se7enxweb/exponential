@@ -130,7 +130,7 @@ class expManagedConfiguration
         {
             if ( defined( 'QBIX_SERVER_VERSION' ) )
                 return true;
-            $server = isset( $_SERVER ) && is_array( $_SERVER ) ? $_SERVER : array();
+            $server = $_SERVER;
         }
         if ( isset( $server['QBIX_WORKER'] ) || isset( $server['VELOCITY'] ) )
             return true;
