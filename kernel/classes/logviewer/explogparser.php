@@ -111,7 +111,7 @@ class expLogParser
             $client = isset( $m[3] ) ? preg_replace( '/:\d+$/', '', $m[3] ) : '';
             return array( 'time_text' => $m[1], 'time' => self::time( preg_replace( '/\.\d+/', '', $m[1] ) ), 'ip' => $client,
                           'siteaccess' => '', 'url' => '', 'message' => $m[2] . ': ' . ( isset( $m[4] ) ? $m[4] : '' ),
-                          'format' => 'apache_error', 'level' => self::level( $m[2] . ':' ) );
+                          'format' => 'apache_error', 'level' => self::level( preg_replace( '/\d+$/', '', $m[2] ) . ':' ) );
         }
         if ( strpos( $line, '] "' ) !== false && preg_match( self::RE_ACCESS, $line, $m ) )
         {
