@@ -30,7 +30,7 @@ abstract class ModuleView extends Runnable
     public static function main( $scriptFile, array $scope )
     {
         $view = static::create( $scriptFile );
-        \expRenderStats::noteViewClass( get_class( $view ), $scriptFile );
+        class_exists( 'expRenderStats' ) && \expRenderStats::noteViewClass( get_class( $view ), $scriptFile );
         return static::runWithEvents( $view, 'view', $scope, function () use ( $view, $scope ) {
             return $view->run( $scope );
         } );

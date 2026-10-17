@@ -502,7 +502,7 @@ class eZNodeviewfunctions
             // return an eZClusterFileFailure if it has
             if ( isset( $Result['no_cache'] ) )
             {
-                expRenderStats::noteViewCacheExpired( 'Cache has been disabled for this node (no_cache)' );
+                class_exists( 'expRenderStats' ) && expRenderStats::noteViewCacheExpired( 'Cache has been disabled for this node (no_cache)' );
                 return new eZClusterFileFailure( 3, "Cache has been disabled for this node" );
             }
 
@@ -559,7 +559,7 @@ class eZNodeviewfunctions
                             )
                         );
                     }
-                    expRenderStats::noteViewCacheHit( $file, $mtime );
+                    class_exists( 'expRenderStats' ) && expRenderStats::noteViewCacheHit( $file, $mtime );
                     return $Result;
                 }
                 $keyArray = array( array( 'object', $Result['content_info']['object_id'] ),
@@ -593,7 +593,7 @@ class eZNodeviewfunctions
                 $res = eZTemplateDesignResource::instance();
                 $res->setKeys( $keyArray );
 
-                expRenderStats::noteViewCacheHit( $file, $mtime );
+                class_exists( 'expRenderStats' ) && expRenderStats::noteViewCacheHit( $file, $mtime );
                 return $Result;
             }
         }
@@ -605,7 +605,7 @@ class eZNodeviewfunctions
         // Cache is expired so return specialized cluster object
         if ( !isset( $expiryReason ) )
             $expiryReason = 'Content cache is expired';
-        expRenderStats::noteViewCacheExpired( $expiryReason );
+        class_exists( 'expRenderStats' ) && expRenderStats::noteViewCacheExpired( $expiryReason );
         return new eZClusterFileFailure( 1, $expiryReason );
     }
 
@@ -634,7 +634,7 @@ class eZNodeviewfunctions
         $start = microtime( true );
         $retval = self::contentViewGenerateResult( $file, $args );
         // Stored only with a file and 'store' (not when the cache file said no_cache), for the debug bar's Rendering tab
-        expRenderStats::noteViewGenerated( $file !== false && !empty( $retval['store'] ) ? $file : false, ( microtime( true ) - $start ) * 1000,
+        class_exists( 'expRenderStats' ) && expRenderStats::noteViewGenerated( $file !== false && !empty( $retval['store'] ) ? $file : false, ( microtime( true ) - $start ) * 1000,
                                            isset( $retval['binarydata'] ) && is_string( $retval['binarydata'] ) ? strlen( $retval['binarydata'] ) : null );
         return $retval;
     }

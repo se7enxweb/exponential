@@ -119,6 +119,8 @@ class expDebugBarSummary
 
         $peak = memory_get_peak_usage( true );
         $ini = class_exists( 'eZINI', false ) ? eZINI::instance() : null;
+        // the state of the server (versions, OPcache, APCu): for those who may read its lists only, asked once
+        $mayReadLists = self::mayReadLists();
         return array(
             'time' => array( 'total_ms' => $totalMs, 'level' => self::level( $totalMs, $thresholds['time_ms'] ) ),
             'sql' => array( 'count' => $sqlCount, 'time_ms' => round( $sqlMs, 2 ),
@@ -136,16 +138,16 @@ class expDebugBarSummary
                               'by_ip' => $ini ? $ini->variable( 'DebugSettings', 'DebugByIP' ) === 'enabled' : false,
                               'by_user' => $ini ? $ini->variable( 'DebugSettings', 'DebugByUser' ) === 'enabled' : false,
                               // the entry that matched is a line of the list: only for those who may see the list
-                              'ip_match' => isset( $GLOBALS['eZDebugIPMatch'] ) ? ( self::mayReadLists() ? $GLOBALS['eZDebugIPMatch'] : true ) : null ),
+                              'ip_match' => isset( $GLOBALS['eZDebugIPMatch'] ) ? ( $mayReadLists ? $GLOBALS['eZDebugIPMatch'] : true ) : null ),
             'querycache' => self::queryCache( $thresholds['querycache_hit_rate'] ),
             'engine' => self::engine(),
             'siteaccess' => isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : null,
             // memory of OPcache and APCu: the state of the server, for those who may read its lists only
-            'opcache' => self::mayReadLists() ? self::opcache( $thresholds['opcache_memory'] ) : null,
-            'apcu' => self::mayReadLists() ? self::apcu( $thresholds['apcu_memory'] ) : null,
+            'opcache' => $mayReadLists ? self::opcache( $thresholds['opcache_memory'] ) : null,
+            'apcu' => $mayReadLists ? self::apcu( $thresholds['apcu_memory'] ) : null,
             // the version of PHP tells what the server is open to: for those who may read its lists only, as the bar's
             // own versions chip; the report's JSON reaches anonymous visitors too when DebugByIP matches
-            'php' => self::mayReadLists() ? PHP_VERSION : null,
+            'php' => $mayReadLists ? PHP_VERSION : null,
             'thresholds' => $thresholds,
         );
     }

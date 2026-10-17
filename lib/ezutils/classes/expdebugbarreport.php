@@ -300,7 +300,7 @@ class expDebugBarReport
             'deprecations' => eZDebug::deprecatedCount(),
             'levels'    => array(),
             // PHP, OPcache and APCu of the process that rendered the page: only for those who may see the privileged
-            // rows of the Velocity tab, since the bar can show to anonymous visitors (DebugByIP)
+            // rows of the Server tab, since the bar can show to anonymous visitors (DebugByIP)
             'runtime'   => self::runtimeFigures( $userInfo['can_setup'] || $userInfo['can_cache'] ),
         );
 
@@ -1564,7 +1564,7 @@ class expDebugBarReport
      * PHP version, OPcache and APCu of the process that rendered the page, for the summary chips, or null for a
      * viewer who may not see them. OPcache and APCu are null when they are not loaded or not on for this process.
      *
-     * @param bool $privileged the viewer may see the privileged rows of the Velocity tab (setup or cache rights)
+     * @param bool $privileged the viewer may see the privileged rows of the Server tab (setup or cache rights)
      * @return array|null array( 'php' => string, 'sapi' => string, 'exponential' => string|null, 'opcache' => array|null,
      *                    'apcu' => array|null )
      */
@@ -1695,7 +1695,7 @@ class expDebugBarReport
         );
     }
 
-    /** APCu facts for the Velocity tab, or a hint why there are none. */
+    /** APCu facts for the Server tab, or a hint why there are none. */
     protected static function apcuHtml()
     {
         $a = self::apcuStatus();
