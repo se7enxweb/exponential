@@ -1295,6 +1295,18 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
 #rightmenu-design {
   padding: var(--a4-space-2) var(--a4-space-2) var(--a4-space-3);   /* the right column's card is 208px wide (16rem less the 24px edge and the gutter): more would push its buttons past the card */
 }
+/* The left card with the content tree fills the column, and the tree is the part that scrolls: the parts after it
+   (Trash, the content finder, the width buttons) stand at the card's foot from the first paint. The tree is built by
+   contentstructuremenu_dynamic.js after the page is parsed; until 2026-10 it grew the card, and every part below it
+   moved down 20-600px as it opened to the current node (a layout shift on every page with the tree). A column too
+   short for the tree's least height (8rem) and the parts scrolls as a whole. */
+#leftmenu-design:has(> #content-tree) { display: flex; flex: 1 1 auto; flex-direction: column; min-height: 0; }
+#leftmenu-design:has(> #content-tree) > * { flex: none; }
+#leftmenu-design > #content-tree,
+#content-tree > .box-bc,
+#content-tree > .box-bc > .box-ml,
+#content-tree > .box-bc > .box-ml > .box-content { display: flex; flex: 1 1 0; flex-direction: column; min-height: 0; }
+#content-tree #contentstructure { flex: 1 1 0; min-height: 8rem; overflow: auto; }
 
 /* One gutter between the cards: --a4-gutter (24px) between a side column's card and the content, under
    the header and at the cards' bottom, the gap of a common 24px layout grid. The window's edges keep at least 24px
@@ -1334,27 +1346,30 @@ html[data-a4-theme-choice="system"] .a4-theme-toggle .a4-icon-system { display: 
    (admin_right_drawer 1), and from 1024px the left column steps aside for it. An anonymous page has no preferences:
    both columns as by default. The script takes html.a4-preload away two frames after it has applied its state; till
    then nothing moves by a transition either (the tabs' arrows turning to their state). Without the script the
-   columns stay as the preferences say. */
+   columns stay as the preferences say. Which columns the page has comes from the server as well, <body data-a4-columns>
+   (left, right): .sidebar.right stands after the content in the source, so a paint of the half-parsed page did not match
+   body:has(.sidebar.right) yet and drew the content 232px wider until the column was parsed (a shift of 0.12-0.14
+   on the node view at 1440px). :has() stays for a page layout without the attribute. */
 html.a4-preload *,
 html.a4-preload *::before,
 html.a4-preload *::after { transition: none !important; }
 @media screen and (min-width: 1024px) {
   html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) .sidebar.left { opacity: 1; visibility: visible; }
-  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:has(.sidebar.left) { margin-inline-start: var(--left-sidebar-width, 15rem); }
-  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:has(.sidebar.left) .content-wrapper { padding-inline-start: 0; }
+  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:is([data-a4-columns~="left"], :has(.sidebar.left)) { margin-inline-start: var(--left-sidebar-width, 15rem); }
+  html.a4-preload:not([data-a4-pref-admin-left-sidebar="0"]) body:is([data-a4-columns~="left"], :has(.sidebar.left)) .content-wrapper { padding-inline-start: 0; }
 }
 @media screen and (min-width: 1280px) {
   html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) .sidebar.right { opacity: 1; visibility: visible; }
-  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:has(.sidebar.right) { margin-inline-end: var(--a4-right-width); }
-  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:has(.sidebar.right) .content-wrapper { padding-inline-end: 0; }
+  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:is([data-a4-columns~="right"], :has(.sidebar.right)) { margin-inline-end: var(--a4-right-width); }
+  html.a4-preload:not([data-a4-pref-admin-right-sidebar="0"]) body:is([data-a4-columns~="right"], :has(.sidebar.right)) .content-wrapper { padding-inline-end: 0; }
 }
 @media screen and (min-width: 576px) and (max-width: 1279.98px) {
   html.a4-preload[data-a4-pref-admin-right-drawer="1"] .sidebar.right { opacity: 1; visibility: visible; }
 }
 @media screen and (min-width: 1024px) and (max-width: 1279.98px) {
   html.a4-preload[data-a4-pref-admin-right-drawer="1"] .sidebar.left { opacity: 0; visibility: hidden; }
-  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:has(.sidebar.left) { margin-inline-start: 0; }
-  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:has(.sidebar.left) .content-wrapper { padding-inline-start: var(--a4-space-5); }
+  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:is([data-a4-columns~="left"], :has(.sidebar.left)) { margin-inline-start: 0; }
+  html.a4-preload[data-a4-pref-admin-right-drawer="1"] body:is([data-a4-columns~="left"], :has(.sidebar.left)) .content-wrapper { padding-inline-start: var(--a4-space-5); }
 }
 @media screen and (max-width: 1023.98px) {
   .content-wrapper {
@@ -2937,6 +2952,11 @@ div#contentstructure ul#content_tree_menu ul a.openclose-close::after {
 .a4-uiswitch-toggle:hover { border-color: var(--a4-line-strong); background-color: var(--a4-soft); }
 .a4-uiswitch-menu { margin: 0; }
 .a4-uiswitch-menu[hidden] { display: none; }
+/* With the script (html.a4-js, set by a4_head.js before the first paint) the first paint already shows the button
+   and closes the list, as admin4.js does once the document is parsed: until 2026-10 the open list was drawn first and
+   the tools below it moved up 96px when it closed. Opened, the button's aria-expanded is true and the list shows. */
+html.a4-js .a4-uiswitch-toggle[data-a4-disclosure][hidden] { display: flex; }
+html.a4-js .a4-uiswitch-toggle[data-a4-disclosure][aria-expanded="false"] + .a4-uiswitch-menu { display: none; }
 .a4-uiswitch-list { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
 .a4-uiswitch-list li { margin: 0; padding: 0; }
 .a4-uiswitch-option {
