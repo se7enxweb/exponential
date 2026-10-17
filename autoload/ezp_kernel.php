@@ -1123,6 +1123,7 @@ return array(
       'expKickstarter'                                               => 'kernel/classes/expkickstarter.php',
       'expKickstarterIni'                                            => 'kernel/classes/expkickstarterini.php',
       'expLinkCheck'                                                 => 'kernel/classes/explinkcheck.php',
+      'expLogRotator'                                                => 'lib/ezfile/classes/explogrotator.php',
       'expLoveStack'                                                 => 'kernel/classes/explovestack.php',
       'expMailAddressChange'                                         => 'kernel/classes/mailpreferences/expmailaddresschange.php',
       'expMailBounceReader'                                          => 'kernel/classes/mailpreferences/expmailbouncereader.php',

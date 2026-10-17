@@ -1035,20 +1035,27 @@ class eZDebug
         $GLOBALS['eZDebugMaxLogrotateFiles'] = $files;
     }
 
-    /*!
-     \static
-     Rotates logfiles so the current logfile is backed up,
-     old rotate logfiles are rotated once more and those that
-     exceed maxLogrotateFiles() will be removed.
-     Rotated files will get the extension .1, .2 etc.
-    */
-    static function rotateLog( $fileName )
+    /**
+     * Rotates a log file as eZLog::rotateLog() does (expLogRotator), keeping maxLogrotateFiles() archives.
+     *
+     * @param string $fileName
+     * @param int $minSize rotate only when the file is still larger than this under the lock (0: always)
+     * @return bool|null true when rotated (or another process did meanwhile), false when not (also when no longer bigger than $minSize), null when switched off
+     */
+    static function rotateLog( $fileName, $minSize = 0 )
     {
         $maxLogrotateFiles = eZDebug::maxLogrotateFiles();
         if ( $maxLogrotateFiles == 0 )
         {
-            return;
+            return null;
         }
+        if ( class_exists( 'expLogRotator' ) )
+        {
+            $compress = class_exists( 'eZLog' ) ? eZLog::compressArchives() : false;
+            $result = expLogRotator::rotate( $fileName, $maxLogrotateFiles, array( 'compress' => $compress, 'minSize' => (int)$minSize ) );
+            return $result['ok'] || $result['error'] === 'moved';
+        }
+        // A process that loaded its classes before expLogRotator existed (a long running worker)
         for ( $i = $maxLogrotateFiles; $i > 0; --$i )
         {
             $logRotateName = $fileName . '.' . $i;
@@ -1060,16 +1067,13 @@ class eZDebug
                 }
                 else
                 {
-                    $newLogRotateName = $fileName . '.' . ($i + 1);
-                    eZFile::rename( $logRotateName, $newLogRotateName );
+                    @rename( $logRotateName, $fileName . '.' . ( $i + 1 ) );
                 }
             }
         }
         if ( file_exists( $fileName ) )
         {
-            $newLogRotateName = $fileName . '.' . 1;
-            eZFile::rename( $fileName, $newLogRotateName );
-            return true;
+            return @rename( $fileName, $fileName . '.1' );
         }
         return false;
     }
@@ -1099,8 +1103,8 @@ class eZDebug
         if ( $fileExisted and
              filesize( $fileName ) > eZDebug::maxLogSize() )
         {
-            if ( eZDebug::rotateLog( $fileName ) )
-                $fileExisted = false;
+            if ( eZDebug::rotateLog( $fileName, eZDebug::maxLogSize() ) )
+                $fileExisted = file_exists( $fileName );
         }
         $text = $string;
         if ( self::$LogContext !== '' )

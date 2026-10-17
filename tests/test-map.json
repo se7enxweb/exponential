@@ -169,8 +169,14 @@
     "design/admin4/templates/tabs/audit/node.tpl": [
       "tests/tests/design/AdminTimelineTest.php"
     ],
+    "lib/ezfile/classes/ezlog.php": [
+      "tests/tests/lib/ezfile/expLogRotatorTest.php",
+      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php"
+    ],
     "lib/ezutils/classes/ezdebug.php": [
-      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"
+      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
+      "tests/tests/lib/ezutils/eZDebugTimingPointLogTest.php",
+      "tests/tests/lib/ezfile/expLogRotatorTest.php"
     ],
     "lib/ezutils/classes/expdebugbarreport.php": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"

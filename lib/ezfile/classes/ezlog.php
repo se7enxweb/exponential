@@ -44,8 +44,8 @@ class eZLog
         if ( $fileExisted and
              filesize( $fileName ) > eZLog::maxLogSize() )
         {
-            if ( eZLog::rotateLog( $fileName ) )
-                $fileExisted = false;
+            if ( eZLog::rotateLog( $fileName, eZLog::maxLogSize() ) )
+                $fileExisted = file_exists( $fileName );
         }
         else if ( !$fileExisted and !file_exists( $dir ) )
         {
@@ -148,8 +148,8 @@ class eZLog
         if ( $fileExisted and
              filesize( $fileName ) > eZLog::maxLogSize() )
         {
-            if ( eZLog::rotateLog( $fileName ) )
-                $fileExisted = false;
+            if ( eZLog::rotateLog( $fileName, eZLog::maxLogSize() ) )
+                $fileExisted = file_exists( $fileName );
         }
         else if ( !$fileExisted and !file_exists( $logDirectory ) )
         {
@@ -272,20 +272,31 @@ class eZLog
         return $fromINI !== null ? $fromINI : self::MAX_LOGROTATE_FILES;
     }
 
-    /*!
-     \static
-     Rotates logfiles so the current logfile is backed up,
-     old rotate logfiles are rotated once more and those that
-     exceed maxLogrotateFiles() will be removed.
-     Rotated files will get the extension .1, .2 etc.
-    */
-    static function rotateLog( $fileName )
+    /**
+     * Rotates a log file: <file> becomes <file>.1, older archives move one up, and what is beyond
+     * maxLogrotateFiles() is removed (expLogRotator: one rotation for the whole kernel, locked against a second
+     * rotation of the same file, the new file created with the old one's owner and mode).
+     *
+     * @param string $fileName
+     * @param int $minSize rotate only when the file is still larger than this under the lock (0: always), so two
+     *                     processes that both found the file too big rotate it once, not twice
+     * @return bool|null true when the file was rotated (or another process did meanwhile), false when not (also when no longer bigger than $minSize), null when
+     *                   rotation is switched off (LogFileRotateCount=0)
+     */
+    static function rotateLog( $fileName, $minSize = 0 )
     {
         $maxLogrotateFiles = eZLog::maxLogrotateFiles();
         if ( $maxLogrotateFiles == 0 )
         {
-            return;
+            return null;
         }
+        if ( class_exists( 'expLogRotator' ) )
+        {
+            $result = expLogRotator::rotate( $fileName, $maxLogrotateFiles,
+                                            array( 'compress' => self::compressArchives(), 'minSize' => (int)$minSize ) );
+            return $result['ok'] || $result['error'] === 'moved';
+        }
+        // A process that loaded its classes before expLogRotator existed (a long running worker)
         for ( $i = $maxLogrotateFiles; $i > 0; --$i )
         {
             $logRotateName = $fileName . '.' . $i;
@@ -298,17 +309,48 @@ class eZLog
                 else
                 {
                     $newLogRotateName = $fileName . '.' . ($i + 1);
-                    eZFile::rename( $logRotateName, $newLogRotateName );
+                    @rename( $logRotateName, $newLogRotateName );
                 }
             }
         }
         if ( file_exists( $fileName ) )
         {
-            $newLogRotateName = $fileName . '.' . 1;
-            eZFile::rename( $fileName, $newLogRotateName );
-            return true;
+            return @rename( $fileName, $fileName . '.1' );
         }
         return false;
+    }
+
+    /**
+     * Whether the archives of a log are compressed from .2 on (site.ini [FileSettings] LogFileCompress=enabled;
+     * disabled by default, and while site.ini is not loaded).
+     *
+     * @return bool
+     */
+    public static function compressArchives()
+    {
+        if ( !class_exists( 'eZINI', false ) || !eZINI::isLoaded() )
+            return false;
+        try
+        {
+            $ini = eZINI::instance();
+            return $ini->hasVariable( 'FileSettings', 'LogFileCompress' ) && $ini->variable( 'FileSettings', 'LogFileCompress' ) === 'enabled';
+        }
+        catch ( Throwable $e )
+        {
+            return false;
+        }
+    }
+
+    /**
+     * How old an archive may become before a prune removes it, in seconds (site.ini [FileSettings] LogFileMaxAge,
+     * in days; 0 or missing: no age limit, only the number of archives counts).
+     *
+     * @return int
+     */
+    public static function maxArchiveAge()
+    {
+        $days = self::fileSetting( 'LogFileMaxAge', 0 );
+        return $days !== null ? $days * 86400 : 0;
     }
 
     /*!
