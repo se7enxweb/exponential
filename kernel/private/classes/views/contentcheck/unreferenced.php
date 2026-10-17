@@ -105,7 +105,7 @@ class Unreferenced extends \Exponential\Runnable\ModuleView
      * The query string that keeps the filters and the order on the pages of the list.
      *
      * @param array $params from expContentCheckUnreferenced::parameters()
-     * @return string empty, or starting with ?
+     * @return string starting with ? (it always carries the order)
      */
     public static function querySuffix( array $params )
     {

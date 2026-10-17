@@ -219,7 +219,10 @@ class expContentCheckQueryTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '?ClassID%5B%5D=5&ClassID%5B%5D=12&Sort=modified&Order=desc&Containers=1', Unreferenced::querySuffix( $p ) );
         $p = expContentCheckBrokenRelations::parameters( array( 'Exclude' => '43,5', 'Kind' => array( 'deleted', '"><script>' ), 'Relation' => array( 'xml', 'object' ) ) );
         $this->assertSame( '?Exclude=43%2C5&Kind%5B%5D=deleted', Brokenrelations::querySuffix( $p ) );
-        $this->assertSame( '?', Brokenrelations::querySuffix( expContentCheckBrokenRelations::parameters( array() ) ) );
+        $this->assertSame( '', Brokenrelations::querySuffix( expContentCheckBrokenRelations::parameters( array() ) ), 'no filter: no bare "?"' );
+        foreach ( array( 'design/admin', 'design/admin4' ) as $design )
+            $this->assertStringContainsString( "\$separator = cond( \$filter_suffix|eq( '' ), '?', '&' )}",
+                                               (string)file_get_contents( dirname( __DIR__, 4 ) . "/$design/templates/contentcheck/brokenrelations.tpl" ), $design );
     }
 
     /** CQ-10 */

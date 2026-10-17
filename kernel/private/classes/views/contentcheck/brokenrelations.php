@@ -68,7 +68,7 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
      * The query string of the filters, without the position (After), which the pages add.
      *
      * @param array $params from expContentCheckBrokenRelations::parameters()
-     * @return string starting with ?
+     * @return string empty without a filter, else starting with ?
      */
     public static function querySuffix( array $params )
     {
@@ -85,7 +85,8 @@ class Brokenrelations extends \Exponential\Runnable\ModuleView
             foreach ( $params['relations'] as $relation )
                 $query[] = 'Relation%5B%5D=' . rawurlencode( $relation );
         }
-        return '?' . implode( '&', $query );
+        // no filter, no bare "?" in the links of the page (admin4 review 15.10.2026)
+        return $query ? '?' . implode( '&', $query ) : '';
     }
 }
 

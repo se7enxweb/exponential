@@ -158,7 +158,8 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
     public function testHoverIsTheDefaultDisplayAndAlwaysIsTheOnlyOther()
     {
         $this->assertSame( 'hover', expEnvironmentOperator::badge( array( 'Level' => 'production' ), false )['display'], 'unset: hover' );
-        foreach ( array( 'hover' => 'hover', 'always' => 'always', 'Always' => 'hover', 'never' => 'hover', '' => 'hover' ) as $value => $display )
+        // read as Level is: case and surrounding spaces do not matter (BadgeDisplay=Always was taken as hover before)
+        foreach ( array( 'hover' => 'hover', 'always' => 'always', 'Always' => 'always', ' ALWAYS ' => 'always', 'never' => 'hover', '' => 'hover' ) as $value => $display )
         {
             $badge = expEnvironmentOperator::badge( array( 'Level' => 'production', 'BadgeDisplay' => (string)$value ), false );
             $this->assertSame( $display, $badge['display'], var_export( $value, true ) );
@@ -166,6 +167,10 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 'Production', $badge['name'] );
         }
         $this->assertSame( 'hover', expEnvironmentOperator::badge( array( 'Level' => 'production', 'BadgeDisplay' => array( 'always' ) ), false )['display'] );
+        foreach ( array( 'disabled' => false, 'Disabled' => false, ' DISABLED ' => false, 'enabled' => true, '' => true ) as $value => $title )
+            $this->assertSame( $title, expEnvironmentOperator::badge( array( 'Level' => 'production', 'ShowInTitle' => (string)$value ), false )['title'], "ShowInTitle=$value" );
+        $this->assertTrue( expEnvironmentOperator::badge( array( 'Level' => 'production', 'ShowInTitle' => array( 'disabled' ) ), false )['title'] );
+        $this->assertSame( 'enabled', expEnvironmentOperator::keyword( array( 'ShowVersion' => ' Enabled ' ), 'ShowVersion' ), 'ShowVersion too' );
         $this->assertStringContainsString( "'ShowInTitle', 'BadgeDisplay' )", self::file( 'kernel/common/expenvironmentoperator.php' ), 'currentBadge() reads the setting' );
     }
 
