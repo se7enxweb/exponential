@@ -5243,7 +5243,7 @@ f703975a7ca0282821bceab993c82567  kernel/classes/ezcontentobjecttreenode.php
 01331d4eaa61e9c8e51519380dcb9b0d  kernel/classes/ezcontentupload.php
 908a9d23c197d5b893c609bdaa444433  kernel/classes/ezcontentuploadhandler.php
 9662925adfb7aaf224b0b8ad868b2a6d  kernel/classes/ezdatatype.php
-ee2b49030950e53b41b84ce544acd87d  kernel/classes/ezdbgarbagecollector.php
+6576a4796232913482631fe770f35b33  kernel/classes/ezdbgarbagecollector.php
 1339229a6783eed279acaa8901f2dd6e  kernel/classes/ezdiscount.php
 ea26685655b4643bd297100dbdd9a9f5  kernel/classes/ezdiscountrule.php
 fb132e7c863174626926237fdc954d34  kernel/classes/ezdiscountsubrule.php
@@ -7599,7 +7599,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-f55012e8da2dff0ba6d034905086c58d  tests/test-map.json
+4e384ad721cff656b5b618f335d34dfc  tests/test-map.json
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
 0f61a66b5e0996561766fc594dec3781  tests/tests/design/Admin4lReviewTest.php
@@ -7995,6 +7995,7 @@ c2edb6e2d9c112518bab3ebd07cd1247  tests/tests/kernel/classes/eZContentObjectTree
 96a6bf56522b97aea2f4603917fac829  tests/tests/kernel/classes/eZContentObjectVersionLanguageNameTest.php
 7a3fa441028fd31dced1d8dee4ab6525  tests/tests/kernel/classes/eZContentVersionviewPathTest.php
 08bae3f881c14044a64af6a735e581cb  tests/tests/kernel/classes/eZContentVersionviewViewModeTest.php
+872626d9764abd0bdf850636ddad3cdd  tests/tests/kernel/classes/eZDBGarbageCollectorBasketQueryTest.php
 c50ed4541f1fb9c0614ec8dad537f6a1  tests/tests/kernel/classes/eZDynamicPropertiesPHP82Test.php
 c5b0906382598e118d038175ada1cc30  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
 ae5b1048f8e08ec7094ae01547fdcee1  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
