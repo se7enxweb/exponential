@@ -96,7 +96,7 @@ class expUISwitchDesignProviderTest extends PHPUnit\Framework\TestCase
         if ( !is_dir( $this->root . '/extension/exp_adminui/design/adminui' ) )
             $this->markTestSkipped( 'exp_adminui is not installed' );
         $provider = $this->provider( null, 'admin4l', array( 'exp_adminui' ) );
-        $this->assertSame( array( 'admin4l', 'admin4', 'adminui', 'admin3', 'admin' ), $provider->allowedValues() );
+        $this->assertSame( array( 'admin4l', 'admin4', 'admin3', 'adminui', 'admin' ), $provider->allowedValues() );
     }
 
     public function testDesignsWithoutAChainOrADirectoryOrAWellFormedNameAreNotOffered()
@@ -125,9 +125,51 @@ class expUISwitchDesignProviderTest extends PHPUnit\Framework\TestCase
     public function testLabelsComeFromTheSettings()
     {
         $provider = $this->provider();
-        $this->assertSame( 'Classic', $provider->label( 'admin' ) );
+        $this->assertSame( 'Classic (older)', $provider->label( 'admin' ) );
         $this->assertSame( 'Admin 4 (layouts)', $provider->label( 'admin4l' ) );
         $this->assertSame( 'editor', $this->provider( null, 'editor' )->label( 'editor' ), 'a design without a label shows its name' );
+    }
+
+    /**
+     * The shipped order and labels of the switcher: the current designs first (admin4l, admin4, admin3), then the
+     * older ones, each labelled "(older)" (AdminUI and the classic designs), so a user sees which design to prefer.
+     */
+    public function testShippedOrderPutsTheCurrentDesignsFirstAndMarksTheOlderOnes()
+    {
+        $settings = $this->shipped();
+        $this->assertSame( array( 'admin4l', 'admin4', 'admin3', 'adminui', 'admin', 'admin_classic' ), array_values( $settings['AllowedValues'] ) );
+        $provider = $this->provider();
+        $labels = array();
+        foreach ( $settings['AllowedValues'] as $design )
+            $labels[$design] = $provider->label( $design );
+        $this->assertSame( array(
+            'admin4l' => 'Admin 4 (layouts)',
+            'admin4' => 'Admin 4',
+            'admin3' => 'Admin 3',
+            'adminui' => 'AdminUI (older)',
+            'admin' => 'Classic (older)',
+            'admin_classic' => 'Classic, server-rendered (older)',
+        ), $labels );
+        foreach ( array( 'admin4l', 'admin4', 'admin3' ) as $current )
+            $this->assertStringNotContainsString( '(older)', $labels[$current] );
+
+        // each label has a finished translation in the eng-US and ger-DE catalogues (context kernel/uiswitch)
+        foreach ( array( 'eng-US', 'ger-DE' ) as $locale )
+        {
+            $ts = simplexml_load_file( $this->root . '/share/translations/' . $locale . '/translation.ts' );
+            $context = $ts->xpath( "//context[name='kernel/uiswitch']" );
+            $this->assertNotEmpty( $context, $locale );
+            foreach ( array( 'AdminUI (older)', 'Classic (older)', 'Classic, server-rendered (older)' ) as $source )
+            {
+                $message = $context[0]->xpath( 'message[source=' . json_encode( $source ) . ']' );
+                $this->assertCount( 1, $message, $locale . ' ' . $source );
+                $this->assertNotSame( '', trim( (string)$message[0]->translation ), $locale . ' ' . $source );
+                $this->assertNotSame( 'unfinished', (string)$message[0]->translation['type'], $locale . ' ' . $source );
+            }
+        }
+        $ts = simplexml_load_file( $this->root . '/share/translations/ger-DE/translation.ts' );
+        $message = $ts->xpath( "//context[name='kernel/uiswitch']/message[source='AdminUI (older)']" );
+        $this->assertSame( 'AdminUI (älter)', (string)$message[0]->translation );
     }
 
     public function testApplySwitchesTheDesignInMemoryAndResetForgetsIt()

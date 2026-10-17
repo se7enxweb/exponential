@@ -69711,6 +69711,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Classic (server-rendered)</source>
         <translation>Classic (server-rendered)</translation>
     </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (older)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Classic (older)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Classic, server-rendered (older)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/toolbar/uiswitch</name>

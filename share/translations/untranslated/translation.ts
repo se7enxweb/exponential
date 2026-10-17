@@ -66410,6 +66410,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Classic (server-rendered)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/toolbar/uiswitch</name>
