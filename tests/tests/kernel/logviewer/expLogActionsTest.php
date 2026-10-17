@@ -60,7 +60,7 @@ class expLogActionsTest extends PHPUnit\Framework\TestCase
         file_put_contents( $log . '.2', "two\n" );
         $r = expLogActions::rotate( $this->resolve( 'var/log/error.log' ), 2 );
         $this->assertTrue( $r['ok'] );
-        $this->assertFileDoesNotExist( $log );
+        $this->assertSame( '', file_get_contents( $log ), 'the new log is created at once, empty, with the mode of the old one' );
         $this->assertSame( "current\n", file_get_contents( $log . '.1' ) );
         $this->assertSame( "one\n", file_get_contents( $log . '.2' ) );
         $this->assertFileDoesNotExist( $log . '.3' );
