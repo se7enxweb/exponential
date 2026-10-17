@@ -26,10 +26,18 @@ permissions:
 env:
   COMPOSER_ROOT_VERSION: dev-main
 
+# One group per pull request: a new push to the branch cancels the run it supersedes. A push to
+# main gets a group of its own commit, so a later push never cancels it halfway and every commit
+# on main keeps a complete result.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   checks:
     name: Syntax, manifest, commit messages, code style
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout code
@@ -127,7 +135,13 @@ jobs:
           key: ${{ runner.os }}-devtools-${{ hashFiles('composer.dev.lock') }}
 
       - name: Install development tools
-        run: COMPOSER=composer.dev.json composer install --no-interaction --no-progress
+        run: |
+          for attempt in 1 2 3; do
+            COMPOSER=composer.dev.json composer install --no-interaction --no-progress && exit 0
+            echo "::warning::composer install failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          exit 1
 
       - name: Code style of changed files (warning only)
         continue-on-error: true
@@ -136,6 +150,7 @@ jobs:
   phpstan:
     name: PHPStan
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout code
@@ -155,14 +170,34 @@ jobs:
           path: .devtools/vendor
           key: ${{ runner.os }}-devtools-${{ hashFiles('composer.dev.lock') }}
 
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-phpstan-${{ hashFiles('composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      # Retried: a Packagist or GitHub hiccup is not a finding
       - name: Install dependencies and development tools
         run: |
-          composer update --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          retry() {
+            for attempt in 1 2 3; do
+              "$@" && return 0
+              echo "::warning::$1 $2 failed (attempt $attempt of 3)"
+              sleep $((attempt * 15))
+            done
+            return 1
+          }
+          retry composer update --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
           # Velocity is only suggested (it needs PHP 8.1), but the kernel's Velocity
           # integration (kernel/classes/expvelocity.php) is analysed too, so install it
           # here as a site on PHP 8.1 or later would
-          composer require --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb se7enxweb/exponential-velocity:~0.0.4.42
-          COMPOSER=composer.dev.json composer install --no-interaction --no-progress
+          retry composer require --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb se7enxweb/exponential-velocity:~0.0.4.42
+          COMPOSER=composer.dev.json retry composer install --no-interaction --no-progress
 
       - name: Generate autoloads
         run: php bin/php/ezpgenerateautoloads.php -s -e || true
@@ -173,6 +208,7 @@ jobs:
   sniffs:
     name: Code style sniff tests
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout code
@@ -193,10 +229,29 @@ jobs:
           path: .devtools/vendor
           key: ${{ runner.os }}-devtools-${{ hashFiles('composer.dev.lock') }}
 
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-sniffs-${{ hashFiles('composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+
       - name: Install dependencies and development tools
         run: |
-          composer update --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=ext-mongodb
-          COMPOSER=composer.dev.json composer install --no-interaction --no-progress
+          retry() {
+            for attempt in 1 2 3; do
+              "$@" && return 0
+              echo "::warning::$1 $2 failed (attempt $attempt of 3)"
+              sleep $((attempt * 15))
+            done
+            return 1
+          }
+          retry composer update --no-scripts --prefer-dist --no-progress --no-interaction --ignore-platform-req=ext-mongodb
+          COMPOSER=composer.dev.json retry composer install --no-interaction --no-progress
 
       - name: Tests of the code style sniffs (bin/phpcs/)
         run: vendor/bin/phpunit --testsuite quality --no-coverage
@@ -204,6 +259,7 @@ jobs:
   php80:
     name: PHP 8.0 (oldest supported) syntax and boot
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout code
@@ -225,8 +281,32 @@ jobs:
       # suggested), so a package that raises its PHP minimum again fails here. Without a
       # lock file Composer resolves require-dev too, so its PHPUnit range has to include a
       # version for PHP 8.0 (9.6): the command is exactly the one a site runs.
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer downloads
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-php80-${{ hashFiles('composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-php80-
+
+      # Retried on a network error only: a requirement that PHP 8.0 cannot meet is the result
+      # this step exists for, and fails at once.
       - name: Install the production dependencies with PHP 8.0
-        run: composer install --no-dev --prefer-dist --no-progress --no-interaction
+        run: |
+          for attempt in 1 2 3; do
+            if composer install --no-dev --prefer-dist --no-progress --no-interaction > "$RUNNER_TEMP/composer.log" 2>&1; then
+              cat "$RUNNER_TEMP/composer.log"
+              exit 0
+            fi
+            cat "$RUNNER_TEMP/composer.log"
+            grep -q 'could not be resolved to an installable set' "$RUNNER_TEMP/composer.log" && exit 1
+            echo "::warning::composer install failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          exit 1
 
       - name: Boot smoke test without a database (every kernel and extension class, compat functions, a template)
         run: php bin/php/ezexec.php tests/bin/bootsmoke.php

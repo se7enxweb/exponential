@@ -1,26 +1,25 @@
 name: PHPUnit
 
+# No paths filter: the tests read templates, stylesheets, scripts, translations, settings and
+# documentation too (the design rules, the translation quality, the documented cronjobs). With the
+# old filter (only *.php and composer files) a change to those ran no test at all, and the failure
+# it caused appeared on the next unrelated push.
 on:
   push:
     branches: [ main, master ]
-    paths:
-      - '**.php'
-      - 'composer.json'
-      - 'composer.lock'
-      - 'phpunit.xml'
-      - '.github/workflows/phpunit.yml'
   pull_request:
     branches: [ main, master ]
-    paths:
-      - '**.php'
-      - 'composer.json'
-      - 'composer.lock'
-      - 'phpunit.xml'
-      - '.github/workflows/phpunit.yml'
   workflow_dispatch:
 
 permissions:
   contents: read
+
+# One group per pull request: a new push to the branch cancels the run it supersedes. A push to
+# main gets a group of its own commit, so a later push never cancels it halfway and every commit
+# on main keeps a complete result.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 # The version Composer gives the root package. On a push to main it reads "dev-main" from the
 # checked-out branch, and the branch alias "dev-main": "6.0.x-dev" in composer.json lets packages
@@ -36,6 +35,8 @@ jobs:
   phpunit:
     name: PHPUnit (PHP ${{ matrix.php }})
     runs-on: ubuntu-latest
+    # A green run takes about 6 minutes; a hung test or install stops here, not at the 6 hour default
+    timeout-minutes: 30
 
     strategy:
       fail-fast: false
@@ -64,8 +65,8 @@ jobs:
 
       - name: Install system packages
         run: |
-          sudo apt-get update
-          sudo apt-get install -y imagemagick libbson-dev libmongoc-dev
+          sudo apt-get -o Acquire::Retries=3 update
+          sudo apt-get -o Acquire::Retries=3 install -y imagemagick libbson-dev libmongoc-dev
 
       - name: Get Composer cache directory
         id: composer-cache
@@ -75,8 +76,10 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock', 'composer.json', '.github/workflows/phpunit.yml') }}
-          restore-keys: ${{ runner.os }}-composer-
+          key: ${{ runner.os }}-composer-php${{ matrix.php }}-${{ hashFiles('composer.json', '.github/workflows/phpunit.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-php${{ matrix.php }}-
+            ${{ runner.os }}-composer-
 
       - name: Install dependencies
         run: |
@@ -93,7 +96,13 @@ jobs:
           # lock can fit every leg: resolve it fresh from composer.json each run.
           # A committed overlay lock froze every package at the versions of the
           # day it was made, and each later repin of composer.json failed here.
-          COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          # Retried: a Packagist or GitHub hiccup is not a test failure
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "::warning::composer update failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
 
       - name: Ensure vendor is present
         run: |
@@ -128,6 +137,8 @@ jobs:
   phpunit-db:
     name: Database tests (${{ matrix.db }}, PHP ${{ matrix.php }})
     runs-on: ubuntu-latest
+    # A green run takes about 6 minutes; a hung test or install stops here, not at the 6 hour default
+    timeout-minutes: 30
 
     strategy:
       fail-fast: false
@@ -192,8 +203,8 @@ jobs:
 
       - name: Install system packages
         run: |
-          sudo apt-get update
-          sudo apt-get install -y imagemagick libbson-dev libmongoc-dev
+          sudo apt-get -o Acquire::Retries=3 update
+          sudo apt-get -o Acquire::Retries=3 install -y imagemagick libbson-dev libmongoc-dev
 
       - name: Get Composer cache directory
         id: composer-cache-db
@@ -203,8 +214,10 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache-db.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock', 'composer.json', '.github/workflows/phpunit.yml') }}
-          restore-keys: ${{ runner.os }}-composer-
+          key: ${{ runner.os }}-composer-db-php${{ matrix.php }}-${{ hashFiles('composer.json', '.github/workflows/phpunit.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-db-php${{ matrix.php }}-
+            ${{ runner.os }}-composer-
 
       - name: Install dependencies
         run: |
@@ -212,7 +225,13 @@ jobs:
           export PHPUNIT_VERSION="^11.5"
           php -r '$file = getenv("CI_COMPOSER_FILE"); $data = json_decode(file_get_contents($file), true, 512, JSON_THROW_ON_ERROR); if (($phpunit = getenv("PHPUNIT_VERSION")) !== false && $phpunit !== "") { $data["require-dev"]["phpunit/phpunit"] = $phpunit; } $data["require-dev"]["mongodb/mongodb"] = "^1.21 || ^2.0"; file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);'
           # Resolved fresh each run; see the phpunit job.
-          COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+          # Retried: a Packagist or GitHub hiccup is not a test failure
+          for attempt in 1 2 3; do
+            COMPOSER="${CI_COMPOSER_FILE}" composer update --with-all-dependencies --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "::warning::composer update failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
 
       - name: Ensure vendor is present
         run: |

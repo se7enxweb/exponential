@@ -54,9 +54,12 @@ permissions:
 env:
   COMPOSER_ROOT_VERSION: dev-main
 
+# One group per pull request: a new push to the branch cancels the run it supersedes. A push to
+# main gets a group of its own commit, so a later push never cancels it halfway (three runs on
+# main were cancelled that way) and every commit on main keeps a complete result.
 concurrency:
-  group: performance-${{ github.ref }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   micro:
@@ -80,13 +83,40 @@ jobs:
           coverage: none
           tools: composer:v2
 
-      - name: Install the production dependencies
-        run: composer install --no-dev --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
+      - name: Cache Composer downloads
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-perf-${{ hashFiles('composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      # Retried: a Packagist or GitHub hiccup is not a result of the benchmark
+      - name: Install the production dependencies
+        run: |
+          for attempt in 1 2 3; do
+            composer install --no-dev --prefer-dist --no-progress --no-interaction --ignore-platform-req=php --ignore-platform-req=ext-mongodb && exit 0
+            echo "::warning::composer install failed (attempt $attempt of 3)"
+            sleep $((attempt * 15))
+          done
+          exit 1
+
+      # A shared runner is sometimes busy for a while (another VM on the host). A probe over the
+      # threshold is therefore measured a second time, and only the second run counts: a real
+      # regression is slow both times, a noisy neighbour seldom is.
       - name: Micro benchmark against the baseline (warning only)
         id: micro
         continue-on-error: true
         run: |
+          if php bin/php/benchmark.php micro --repeat=30 --warmup=3 \
+              --baseline=tests/benchmark/baseline.json --all-checks \
+              --save="$RUNNER_TEMP/benchmark-micro.json"; then
+            exit 0
+          fi
+          echo "::notice title=Micro benchmark::over the threshold or failed on the first run; measuring once more"
           php bin/php/benchmark.php micro --repeat=30 --warmup=3 \
             --baseline=tests/benchmark/baseline.json --all-checks \
             --save="$RUNNER_TEMP/benchmark-micro.json"
