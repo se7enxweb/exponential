@@ -525,7 +525,10 @@ class eZFSFileHandler implements eZClusterFileHandlerInterface
         if ( $binaryData === null &&
              $fileContent === null )
         {
-            eZDebug::writeError( "Write callback need to set the 'content' or 'binarydata' entry" );
+            // A callback that returns null has nothing to store (eZUser::generateUserCacheForFile() for a user
+            // removed meanwhile): that is its documented answer, not a faulty callback.
+            if ( $fileData !== null )
+                eZDebug::writeError( "Write callback need to set the 'content' or 'binarydata' entry for '{$this->filePath}'", __METHOD__ );
             // the lock taken before the callback ran must not outlive it: a leaked lock makes every later
             // process that wants this file wait for the lifetime of the lock and then kill the process holding it
             $this->_freeExclusiveLock( 'storeCache' );
