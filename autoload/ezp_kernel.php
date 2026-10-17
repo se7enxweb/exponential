@@ -1135,6 +1135,7 @@ return array(
       'expLogFileLocator'                                            => 'kernel/classes/logviewer/explogfilelocator.php',
       'expLogFileStats'                                              => 'kernel/classes/logviewer/explogfilestats.php',
       'expLogHealth'                                                 => 'kernel/classes/logviewer/exploghealth.php',
+      'expLogManager'                                                => 'kernel/classes/logviewer/explogmanager.php',
       'expLogManagerFactory'                                         => 'kernel/classes/logviewer/explogmanagerfactory.php',
       'expLogManagerFallback'                                        => 'kernel/classes/logviewer/explogmanagerfallback.php',
       'expLogManagerInterface'                                       => 'kernel/classes/logviewer/explogmanagerinterface.php',

@@ -176,6 +176,16 @@
     "kernel/common/ezpi18n.php": [
       "tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php"
     ],
+    "kernel/private/classes/commands/explogs.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "kernel/classes/logviewer/explogmanager.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "lib/ezfile/classes/explogrotator.php": [
+      "tests/tests/lib/ezfile/expLogRotatorTest.php",
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
     "lib/ezfile/classes/ezlog.php": [
       "tests/tests/lib/ezfile/expLogRotatorTest.php",
       "tests/tests/lib/ezfile/eZLogMaxSizeTest.php"
