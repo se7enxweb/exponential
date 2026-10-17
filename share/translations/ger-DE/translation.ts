@@ -5832,6 +5832,14 @@
         <translation>%count Treffer</translation>
     </message>
     <message>
+        <source>There are no matches on this page.</source>
+        <translation>Auf dieser Seite gibt es keine Treffer.</translation>
+    </message>
+    <message>
+        <source>Go to the first page</source>
+        <translation>Zur ersten Seite</translation>
+    </message>
+    <message>
         <source>Update attributes</source>
         <translation>Attribute aktualisieren</translation>
     </message>

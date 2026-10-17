@@ -16,7 +16,7 @@
         <h2>{"Some errors occurred"|i18n( "design/standard/content/upload" )}</h2>
         <ul>
             {section var=error loop=$errors}
-                <li>{$error.description}</li>
+                <li>{$error.description|wash}</li>
             {/section}
         </ul>
     </div>

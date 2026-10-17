@@ -453,7 +453,8 @@
     "settings/menu.ini": [
       "tests/tests/design/AdminMenuPolicyListTest.php",
       "tests/tests/design/AdminSetupOverviewTest.php",
-      "tests/tests/design/AdminMegaMenuTest.php"
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/kernel/common/eZTopMenuOperatorSetupTabAccessTest.php"
     ],
     "kernel/*/module.php": [
       "tests/tests/design/AdminMenuPolicyListTest.php"
@@ -757,7 +758,8 @@
       "tests/tests/design/AdminMegaMenuTest.php"
     ],
     "kernel/common/eztopmenuoperator.php": [
-      "tests/tests/design/AdminMegaMenuTest.php"
+      "tests/tests/design/AdminMegaMenuTest.php",
+      "tests/tests/kernel/common/eZTopMenuOperatorSetupTabAccessTest.php"
     ],
     "design/admin4/templates/parts/a4_topmenu_items.tpl": [
       "tests/tests/design/AdminMegaMenuTest.php",
@@ -1316,6 +1318,21 @@
     ],
     "design/admin4/templates/error/shop/4.tpl": [
       "tests/tests/design/AdminStoredValueEscapingTest.php"
+    ],
+    "design/admin4/templates/content/upload.tpl": [
+      "tests/tests/design/AdminTreeMenuEscapingTest.php"
+    ],
+    "design/admin/templates/content/upload.tpl": [
+      "tests/tests/design/AdminTreeMenuEscapingTest.php"
+    ],
+    "design/standard/templates/content/upload.tpl": [
+      "tests/tests/design/AdminTreeMenuEscapingTest.php"
+    ],
+    "kernel/private/classes/views/setup/datatype.php": [
+      "tests/tests/design/AdminSetupWizardTemplatesTest.php"
+    ],
+    "kernel/private/classes/views/setup/templateoperator.php": [
+      "tests/tests/design/AdminSetupWizardTemplatesTest.php"
     ]
   },
   "generated": {

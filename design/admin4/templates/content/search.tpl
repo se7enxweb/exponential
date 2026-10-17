@@ -137,19 +137,28 @@
 
 {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
 
+{* the search's address without the page: the pages below, and the way back from a page past the last *}
+{def $search_page_suffix = concat( '?SearchText=', $search_text|urlencode, $search_timestamp|gt( 0 )|choose( '', concat( '&SearchTimestamp=', $search_timestamp ) ), $search_subtree_array|count|gt( 0 )|choose( '', concat( '&', 'SubTreeArray[]'|urlencode, '=', $search_subtree_array|implode( concat( '&', 'SubTreeArray[]'|urlencode, '=' ) ) ) ), $search_section_id|gt( 0 )|choose( '', concat( '&SectionID=', $search_section_id ) ), first_set( $search_page_limit, 2 )|eq( 2 )|choose( concat( '&SearchPageLimit=', first_set( $search_page_limit, 2 )|urlencode ), '' ) )}
+{if $search_result}
 {include name=Result uri='design:content/searchresult.tpl' search_result=$search_result}
+{else}
+{* A page past the last one ((offset) beyond the matches, an old link or a list that shrank): no empty table under
+   the count, but what happened and the way to the first page *}
+<p class="a4-notice is-info" role="status">{'There are no matches on this page.'|i18n( 'design/admin/content/search' )} <a href={concat( '/content/search', $search_page_suffix )|ezurl}>{'Go to the first page'|i18n( 'design/admin/content/search' )}</a></p>
+{/if}
 
 <div class="context-toolbar">
 {include name=Navigator
          uri='design:navigator/google.tpl'
          page_uri='/content/search'
-         page_uri_suffix=concat( '?SearchText=', $search_text|urlencode, $search_timestamp|gt( 0 )|choose( '', concat( '&SearchTimestamp=', $search_timestamp ) ), $search_subtree_array|count|gt( 0 )|choose( '', concat( '&', 'SubTreeArray[]'|urlencode, '=', $search_subtree_array|implode( concat( '&', 'SubTreeArray[]'|urlencode, '=' ) ) ) ), $search_section_id|gt( 0 )|choose( '', concat( '&SectionID=', $search_section_id ) ), first_set( $search_page_limit, 2 )|eq( 2 )|choose( concat( '&SearchPageLimit=', first_set( $search_page_limit, 2 )|urlencode ), '' ) )
+         page_uri_suffix=$search_page_suffix
          item_count=$search_count
          view_parameters=$view_parameters
          item_limit=$page_limit}
 </div>
 {* DESIGN: Content END *}</div></div></div>
 </div>
+{undef $search_page_suffix}
 {/if}
 
 </form>
