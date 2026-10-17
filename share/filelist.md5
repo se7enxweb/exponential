@@ -182,7 +182,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-9c997a2fe1d2d76472a68686e1b9b986  composer.json
+1092002f0c058a31040e681cb120ca64  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-087a5e0bc3cb56ff7c6f25a49eab7e8d  doc/changelogs/6.0/6.0.15.md
+70f055299b51a718d7bdff3cdc5af2ad  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7776,7 +7776,7 @@ db8cab45223a19677ec1dc1f786b2f5c  tests/tests/design/AdminUsedTranslationsTest.p
 79434fdf210e89a5a67e773034cbfa98  tests/tests/design/AdminVisibilityStatusTest.php
 f0f50ee05d633e889c584fbc962ea814  tests/tests/design/AsynchronousPublishingLinkTest.php
 72b8688d77884e0a8d3b705c186a7191  tests/tests/design/ClassicAdminNarrowWindowTest.php
-032b14e01223eb9b6ad24196b1c64607  tests/tests/design/ExtensionInlineScriptsTest.php
+be0d65eb9d0dbf34d048d809f070c37f  tests/tests/design/ExtensionInlineScriptsTest.php
 a160ae3b2d682c5f063abf5546023024  tests/tests/design/FormSubmitButtonDisableTest.php
 375fe339c03acdb153a03aadbc24784d  tests/tests/design/LogViewerCopyMessagesTest.php
 3ded02ca57016d193d7c9df51a8dbe84  tests/tests/design/LogViewerNavTest.php
