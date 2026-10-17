@@ -1,6 +1,6 @@
 <?php
 /**
- * File containing the oauthadmin module definition.
+ * File containing the oauth module definition.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -22,5 +22,17 @@ $ViewList['authorize'] = array(
     'script' => 'authorize.php',
 );
 
-$FunctionList = array( );
+// oauth/authorize: a signed in user may authorize an OAuth client to act on the user's behalf. The view checks it
+// itself (site.ini [RoleSettings] PolicyOmitList has oauth/authorize, so the login form can keep the request's GET
+// parameters), with expOAuthAuthorizePolicy. Limited by siteaccess like user/login.
+$FunctionList = array();
+$FunctionList['authorize'] = array(
+    'SiteAccess' => array(
+        'name' => 'SiteAccess',
+        'values' => array(),
+        'class' => 'eZSiteAccess',
+        'function' => 'siteAccessList',
+        'parameter' => array()
+    )
+);
 ?>
