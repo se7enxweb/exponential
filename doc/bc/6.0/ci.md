@@ -81,6 +81,46 @@ in a fresh clone with only `vendor/` installed, before deciding that CI is wrong
 in the whole run shares state with another test (a static cache, an INI value set in-process, a file under `var/`);
 run the two files together to find the pair.
 
+## The local gates and CI
+
+The team's push gate runs the checks of `.github/workflows/quality.yml` and the DB-less job of
+`phpunit.yml` against a committed revision, in a clean git worktree of it:
+
+| Mode | What runs | When |
+|------|-----------|------|
+| `--fast` | syntax of the changed PHP files (PHP 8.3 as CI, and PHP 8.0), `node --check` of the changed scripts (node 22), commit messages (the same `.githooks/check-commit-range` CI runs), the file manifest, the code style of the changed files (warning only, as in CI), PHPStan, and the PHPUnit test files of the change | every commit and push |
+| default | as `--fast`, with the whole PHPUnit run instead of the changed tests | larger pushes |
+| `--ci` | the default set plus PHP 8.0 syntax of every file and the PHP 8.0 production install with the boot smoke test (CI's `php80` job) | before a release |
+
+How it matches CI:
+
+- **Extensions.** The clean tree gets every `se7enxweb/*` extension `composer.json` requires at the release CI's
+  `composer update` installs (the highest Packagist version inside the constraint), not a developer's checkout. A
+  checkout carrying unreleased work made a kernel test pass locally and fail in CI on 2026-10-16.
+- **Environment.** PHPUnit runs with `CI=1`, as GitHub sets it, and with node on `PATH`: the design tests that run
+  admin JavaScript, and the check that every shipped extension is present, fail instead of skipping.
+- **Test selection in `--fast`.** A changed file runs the tests that map to it (`tests/test-map.json`), the tests
+  named after its classes, the tests that name its classes, path or changed INI settings, and the tests that walk a
+  directory the file is in and check files of its kind (every admin4 template, every `translation.ts`). The last
+  rule closes the gap that let a template's inline script tag and a translation's markup through on 2026-10-16/17.
+
+Differences that remain, and why:
+
+- **One PHP version for PHPUnit.** CI runs PHPUnit on PHP 8.1 to 8.5, with PHPUnit 10.5 (8.1), 11.5 (8.2, 8.3) and
+  13 (8.4, 8.5) resolved fresh each run. The local gate runs PHP 8.5 against the installation's `vendor/` (PHPUnit
+  13, which needs PHP 8.4). A test that only fails on an old PHPUnit's API, or on PHP 8.1 to 8.3 behaviour, is found
+  in CI only. Syntax is checked with 8.0 and 8.3 locally, so a parse error is not one of them.
+- **`vendor/` is the installation's, not a fresh resolve.** CI runs `composer update` each time; the local gate
+  copies the installed `vendor/`. A newer dependency release can change CI's result between two runs of the same
+  commit. `--ci` does a fresh `composer install --no-dev` with PHP 8.0 for the boot test.
+- **PHPStan** runs on PHP 8.3 as in CI. The installed `vendor/` asks for PHP 8.4, so the gate switches off its
+  Composer platform check in the clean tree for the PHPStan run only.
+- **No database jobs.** CI's MySQL and PostgreSQL jobs (`tests/runtests.php --dsn ...`) are not run locally; the
+  DB-less run covers the same test files except those that need a database.
+- **Performance** (the micro benchmark) is warning only in CI and is not run by the gate.
+- **The commit range on push.** CI checks `before..sha` of the push; the gate checks `<base>..<rev>` with
+  `<base>` = `origin/main` after a fetch, which is the same range for a fast-forward push.
+
 ## The commit message policy
 
 Every commit of the project starts with what it does: `Added: `, `Updated: `, `Fixed: `, `Removed: ` or `Renamed: `
