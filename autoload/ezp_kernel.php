@@ -114,6 +114,7 @@ return array(
       'Exponential\\Cronjob\\Kernel\\Clusterpurge'                   => 'kernel/private/classes/cronjobs/clusterpurge.php',
       'Exponential\\Cronjob\\Kernel\\Contentcheck'                   => 'kernel/private/classes/cronjobs/contentcheck.php',
       'Exponential\\Cronjob\\Kernel\\Contentjobs'                    => 'kernel/private/classes/cronjobs/contentjobs.php',
+      'Exponential\\Cronjob\\Kernel\\Explogrotate'                   => 'kernel/private/classes/cronjobs/explogrotate.php',
       'Exponential\\Cronjob\\Kernel\\Hide'                           => 'kernel/private/classes/cronjobs/hide.php',
       'Exponential\\Cronjob\\Kernel\\HttpcacheCleanup'               => 'kernel/private/classes/cronjobs/httpcache_cleanup.php',
       'Exponential\\Cronjob\\Kernel\\Indexcontent'                   => 'kernel/private/classes/cronjobs/indexcontent.php',

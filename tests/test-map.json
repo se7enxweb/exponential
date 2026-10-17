@@ -179,6 +179,12 @@
     "kernel/private/classes/commands/explogs.php": [
       "tests/tests/kernel/logviewer/expLogManagerTest.php"
     ],
+    "cronjobs/explogrotate.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
+    "kernel/private/classes/cronjobs/explogrotate.php": [
+      "tests/tests/kernel/logviewer/expLogManagerTest.php"
+    ],
     "kernel/classes/logviewer/explogmanager.php": [
       "tests/tests/kernel/logviewer/expLogManagerTest.php"
     ],

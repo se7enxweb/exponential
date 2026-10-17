@@ -38,6 +38,23 @@ Which files can be rotated and pruned is the log viewer's allow-list: the direct
 inside the installation. The logs configured by key there (`LogList[]`, such as the web server's) are never rotated
 or pruned: the program that writes them owns their rotation.
 
+### Per log: logviewer.ini [RotationSettings]
+
+A log can have limits of its own, by its key (the key of the log viewer's permalinks):
+
+```ini
+# settings/override/logviewer.ini.append.php
+[RotationSettings]
+MaxSize[debug]=10485760
+Keep[debug]=1
+Compress[error]=enabled
+MaxAgeDays[error]=30
+```
+
+They apply to rotation, pruning and compression on demand, the cronjob part and the log viewer's actions. A log
+without an entry takes the `site.ini [FileSettings]` values above. The size-triggered rotation while a log is being
+written always uses `site.ini`.
+
 ## On the command line
 
 ```bash
@@ -49,8 +66,17 @@ or pruned: the program that writes them owns their rotation.
 ./console exp:logs --prune --dry-run             # archives beyond LogFileRotateCount and LogFileMaxAge, and bare .gz files
 ./console exp:logs --prune                       # remove them (all logs)
 ./console exp:logs --prune=error,debug           # only these logs
+./console exp:logs --compress                    # compress the plain archives from .2 on
+./console exp:logs --truncate=debug              # empty a log by rotating it (its content stays in debug.log.1)
+./console exp:logs --truncate=debug --in-place   # empty it in place, keeping no copy
+./console exp:logs --rotate-all --force          # also the logs under their MaxSize
+./console exp:logs --prune --days=7              # an age limit for this run instead of MaxAgeDays
 ./console exp:logs --archives --json             # the same as JSON
 ```
+
+`--rotate-all` rotates the logs over their `MaxSize` (with `--force`: every log that is not empty); `--rotate=<keys>`
+rotates the named ones whatever their size. Every operation is first a plan (`--dry-run` prints it) and is then carried
+out step by step, each step checked again against the disk under the lock.
 
 A log is named by its **key**, the same as in the log viewer's permalinks (`setup/logs/view/<key>`): `error` for
 `var/log/error.log`, `<site>-<name>` for `var/<site>/log/<name>.log` (`site-storage`), or by its **id**, the path
@@ -64,16 +90,19 @@ failure. Run it as the user who owns the logs, or as root (the new logs then kee
 Rotations are recorded in the audit trail as `system.log.rotate`, prunes as `system.log.delete` (channel system),
 the same names as the log viewer's actions.
 
-### In a cronjob or logrotate
+### As a cronjob part
 
-The size-based rotation needs no job. To rotate every night and keep a week of archives:
+The size-based rotation needs no job. The cronjob part `logs` (`cronjobs/explogrotate.php`, in no default part, so
+it runs only when asked) rotates every log over its `MaxSize`, prunes the archives beyond `Keep` and `MaxAgeDays`, and
+compresses the archives of the logs with `Compress` enabled; each change is recorded in the audit trail:
 
 ```bash
-# /etc/cron.d/exponential-logs (as the site's user or root)
-15 3 * * * www-data cd /path/to/exponential && php bin/php/explogs.php --rotate-all --prune >/dev/null
+php runcronjobs.php logs
+# or every night, as the site's user (or root, the new logs keep their owner):
+15 3 * * * www-data cd /path/to/exponential && php runcronjobs.php -q logs
 ```
 
-with `LogFileRotateCount=7`. If the system's `logrotate` manages `var/log` instead, set `LogFileRotateCount=0` so
+### With logrotate If the system's `logrotate` manages `var/log` instead, set `LogFileRotateCount=0` so
 the kernel does not rotate as well, and use `copytruncate` or `create <mode> <owner> <group>` there.
 
 ## In the log viewer
@@ -90,7 +119,12 @@ the kernel does not rotate as well, and use `copytruncate` or `create <mode> <ow
 - `eZDebug::rotateLog( $file, $minSize = 0 )` and `eZLog::rotateLog( $file, $minSize = 0 )` call it with
   `LogFileRotateCount`; a process that loaded its classes before `expLogRotator` existed (a long running worker)
   rotates the old way until it restarts.
-- `expLogManager` (`kernel/classes/logviewer/explogmanager.php`): `logs()`, `select( $names )`, `rotate( $names|null )`,
-  `rotateFile( $file )`, `prune( $names|null, $dryRun )`, on an `expLogFileLocator`.
+- `expLogManager` (`kernel/classes/logviewer/explogmanager.php`), the API of the command line, the cronjob part and the
+  log viewer's actions: `logs()` (each log with its archives, sizes, `growth` in bytes an hour since the last rotation,
+  `limits` with their sources, `writable`, `owner`), `effectiveSettings( $key )`, `select( $names )`,
+  `plan( $keys|'all', 'rotate'|'prune'|'compress'|'truncate', $opts )` (the dry run: steps `{key, op, from, to,
+  bytes}`), `apply( $plan )` (each step resolved through the allow-list again; a step naming any file but the log or
+  one of its archives is refused), and the shortcuts `rotate( $key )`, `prune( $key, $days )`, `compress( $key )`,
+  `truncate( $key, $archiveFirst = true )`.
 - Tests (no database): `tests/tests/lib/ezfile/expLogRotatorTest.php`,
   `tests/tests/kernel/logviewer/expLogManagerTest.php`.
