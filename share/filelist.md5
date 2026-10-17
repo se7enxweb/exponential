@@ -178,7 +178,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-93f5dea80d13fbc30e3199d3b70e69f0  composer.json
+6efe24e9ce7d0787fa85a5127fd88f47  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -3227,7 +3227,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-eeabb1427cad229cf5d20a6ee578215f  doc/changelogs/6.0/6.0.15.md
+64f0abc751a8c4edd3ddd86ad7a032ce  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7930,6 +7930,7 @@ abe87695b0129240038005d88c363c48  tests/tests/extension/ezoe/expOEUploadRulesTes
 a1fc7b448e95e5b9f8256737a973c160  tests/tests/extension/ezoe/ezoeSpellcheckRpcRawInputTest.php
 9e12b292511466e7dbd49a30b818d4c4  tests/tests/extension/ezoe/ezoeSpellcheckRpcRequestParamTest.php
 78c2f68b18d2bf4684ca8b54ecf34dda  tests/tests/extension/ezoe/helpers/run_ezoe_view.php
+6889852668a1807eb4ebbfd18b7e5924  tests/tests/extension/ezupdate/ezUpdateAdminStylingTest.php
 8a138c434614ffd914a51a924600e12a  tests/tests/extension/ezupdate/ezUpdateComposerLocationTest.php
 228e5c524d3f47d50fb5303b7b76e37c  tests/tests/extension/ezupdate/ezUpdateInstallabilityTest.php
 33bd8c266652b5fde6c294bb124e06fd  tests/tests/extension/ezupdate/ezUpdateJobOutcomeTest.php
@@ -7940,7 +7941,9 @@ cf79264b76e26d46d385530fc1fc6e93  tests/tests/extension/ezupdate/fixtures/compos
 37204f9331d53a964bb66a09f776120e  tests/tests/extension/ezupdate/fixtures/composer_update_nothing_to_do.log
 93560b62a75eb48a157a8f339b6cebfa  tests/tests/extension/ezupdate/fixtures/composer_update_one_update.log
 7a425cdb99ce71ff04e1a65bc1ccd33f  tests/tests/extension/ezupdate/fixtures/probe_composer_location.php
+abc064a61d340b53525575d2883b77cb  tests/tests/extension/git_manager/GitManagerAdminStylingTest.php
 32d0a05d30e7ce48e020e5e74d1d9fa9  tests/tests/extension/maps/expMapAddressEscapingTest.php
+68ae76f0ecbdae3536129edaf2dd63b8  tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php
 f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
 60763ffb5de55986611b882076e8d32c  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
 80f2b4056adbe4f9240733cdcfd4d5d9  tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php
