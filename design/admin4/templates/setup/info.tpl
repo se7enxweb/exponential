@@ -196,6 +196,131 @@
     </div>
 </details>
 
+{* Siteaccesses (#552): every siteaccess of AvailableSiteAccessList and RelatedSiteAccessList, the rules that reach
+   each one (from the settings, never from this request), the resolution map in MatchOrder and the siteaccess this
+   request got. $siteaccess_map comes from expSiteAccessOverview; no setting shown here is a secret. *}
+{if $siteaccess_map}
+{def $sa_map = $siteaccess_map
+     $sa_probe_label = hash( 'uri', 'URI'|i18n( 'design/admin/setup/info' ),
+                             'host', 'Host'|i18n( 'design/admin/setup/info' ),
+                             'host_uri', 'Host and URI'|i18n( 'design/admin/setup/info' ),
+                             'port', 'Port'|i18n( 'design/admin/setup/info' ),
+                             'servervar', 'Server variable'|i18n( 'design/admin/setup/info' ),
+                             'index', 'Index file'|i18n( 'design/admin/setup/info' ),
+                             'static', 'StaticMatch'|i18n( 'design/admin/setup/info' ),
+                             'default', 'Default siteaccess'|i18n( 'design/admin/setup/info' ),
+                             'other', 'Another matcher'|i18n( 'design/admin/setup/info' ) )
+     $sa_kind_label = hash( 'admin', 'Administration'|i18n( 'design/admin/setup/info' ),
+                            'editor', 'Editor'|i18n( 'design/admin/setup/info' ),
+                            'login', 'Site with login'|i18n( 'design/admin/setup/info' ),
+                            'site', 'Site'|i18n( 'design/admin/setup/info' ) )}
+<details class="a4-fold a4-setup-sa" id="exp-sysinfo-siteaccesses">
+    <summary><h2 class="a4-h2">{'Siteaccesses'|i18n( 'design/admin/setup/info' )}</h2><span class="a4-muted">{$sa_map.count|wash} &middot; {'default: %default; match: %order'|i18n( 'design/admin/setup/info',, hash( '%default', $sa_map.default|wash, '%order', $sa_map.match_order|implode( ', ' )|wash ) )}</span></summary>
+    <div class="a4-fold-body a4-stack">
+        <p class="a4-help">{'Every siteaccess of site.ini [SiteAccessSettings] AvailableSiteAccessList and RelatedSiteAccessList, with the rules that lead a request to it. The rules are read from the settings; the links open each siteaccess on the server and port of this page.'|i18n( 'design/admin/setup/info' )}</p>
+
+        {* This request *}
+        <dl class="a4-setup-rows">
+            <dt>{'This request'|i18n( 'design/admin/setup/info' )}</dt>
+            <dd><strong>{$sa_map.current.name|wash}</strong> &mdash;
+                {if is_set( $sa_probe_label[$sa_map.current.probe] )}{$sa_probe_label[$sa_map.current.probe]|wash}{else}{$sa_map.current.probe|wash}{/if}{if $sa_map.current.entry} <code>{$sa_map.current.entry|wash}</code>{/if}</dd>
+            <dt>{'Default siteaccess'|i18n( 'design/admin/setup/info' )}</dt>
+            <dd><code>{$sa_map.default|wash}</code> <span class="a4-muted">site.ini [SiteSettings] DefaultAccess</span></dd>
+            <dt>{'Match order'|i18n( 'design/admin/setup/info' )}</dt>
+            <dd><code>{$sa_map.match_order|implode( ';' )|wash}</code> <span class="a4-muted">site.ini [SiteAccessSettings] MatchOrder</span></dd>
+            {if $sa_map.static}
+            <dt>StaticMatch</dt>
+            <dd><code>{$sa_map.static|wash}</code> &mdash; {'every request gets this siteaccess; the rules below are not used'|i18n( 'design/admin/setup/info' )}</dd>
+            {/if}
+        </dl>
+
+        {* The resolution map *}
+        <h3 class="a4-h3" id="exp-sysinfo-sa-rules">{'Resolution map'|i18n( 'design/admin/setup/info' )}</h3>
+        <div class="a4-table-wrap" role="region" aria-labelledby="exp-sysinfo-sa-rules" tabindex="0">
+        <table class="a4-table a4-setup-sa-rules">
+        <thead><tr>
+            <th scope="col" class="a4-num">#</th>
+            <th scope="col">{'Rule'|i18n( 'design/admin/setup/info' )}</th>
+            <th scope="col">{'Entries'|i18n( 'design/admin/setup/info' )}</th>
+            <th scope="col">{'This request'|i18n( 'design/admin/setup/info' )}</th>
+        </tr></thead>
+        <tbody>
+        {foreach $sa_map.rules as $rule}
+            <tr{if $rule.wins} class="is-selected"{/if}>
+                <td class="a4-num">{$rule.position|wash}</td>
+                <th scope="row"><code>{$rule.probe|wash}</code> {if is_set( $sa_probe_label[$rule.probe] )}{$sa_probe_label[$rule.probe]|wash}{/if}{if $rule.method} <span class="a4-muted">{$rule.method|wash}</span>{/if}</th>
+                <td>
+                {if $rule.entries}
+                    <ul class="a4-setup-sa-entries">
+                    {foreach $rule.entries as $entry}
+                        <li{if is_set( $entry.wins )} class="is-current"{/if}><code>{$entry.match|wash}</code> &rarr; {$entry.siteaccess|wash}{if is_set( $entry.host_method )}{if ne( $entry.host_method, 'strict' )} <span class="a4-muted">({$entry.host_method|wash})</span>{/if}{/if}{if is_set( $entry.wins )} <span class="a4-tag is-accent">{'matched'|i18n( 'design/admin/setup/info' )}</span>{/if}</li>
+                    {/foreach}
+                    </ul>
+                {elseif $rule.pattern}
+                    <code>{$rule.pattern|wash}</code>
+                {elseif $rule.known|not}
+                    <span class="a4-muted">{'not a rule this installation knows'|i18n( 'design/admin/setup/info' )}</span>
+                {else}
+                    <span class="a4-muted">{'no entries'|i18n( 'design/admin/setup/info' )}</span>
+                {/if}
+                </td>
+                <td>{if $rule.wins}<span class="a4-tag is-accent">{'chose %siteaccess'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $sa_map.current.name|wash ) )}</span>{/if}</td>
+            </tr>
+        {/foreach}
+            <tr{if eq( $sa_map.current.probe, 'default' )} class="is-selected"{/if}>
+                <td class="a4-num">&ndash;</td>
+                <th scope="row">{'Default siteaccess'|i18n( 'design/admin/setup/info' )}</th>
+                <td>{'no rule matched'|i18n( 'design/admin/setup/info' )} &rarr; {$sa_map.default|wash}</td>
+                <td>{if eq( $sa_map.current.probe, 'default' )}<span class="a4-tag is-accent">{'chose %siteaccess'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $sa_map.current.name|wash ) )}</span>{/if}</td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+        <p class="a4-help">{'The rules are tried from the top; the first that matches decides.'|i18n( 'design/admin/setup/info' )}</p>
+
+        {* Every siteaccess *}
+        <h3 class="a4-h3">{'All siteaccesses'|i18n( 'design/admin/setup/info' )}</h3>
+        <ul class="a4-grid is-wide a4-setup-sa-list">
+        {foreach $sa_map.siteaccesses as $sa}
+            <li class="a4-card a4-stack{if $sa.is_current} is-current{/if}" id="exp-sysinfo-sa-{$sa.name|wash}">
+                <div class="a4-card-head">
+                    <h4 class="a4-h3">{$sa.name|wash}</h4>
+                    <ul class="a4-badges">
+                        <li class="a4-tag">{if is_set( $sa_kind_label[$sa.kind] )}{$sa_kind_label[$sa.kind]|wash}{else}{$sa.kind|wash}{/if}</li>
+                        {if $sa.is_default}<li class="a4-tag is-info">{'default'|i18n( 'design/admin/setup/info' )}</li>{/if}
+                        {if $sa.is_current}<li class="a4-tag is-accent">{'this page'|i18n( 'design/admin/setup/info' )}</li>{/if}
+                        {if $sa.available|not}<li class="a4-tag is-warn">{'related only'|i18n( 'design/admin/setup/info' )}</li>{elseif $sa.reachable|not}<li class="a4-tag is-warn">{'no rule reaches it'|i18n( 'design/admin/setup/info' )}</li>{/if}
+                    </ul>
+                </div>
+                <dl class="a4-setup-rows">
+                    <dt>{'Design'|i18n( 'design/admin/setup/info' )}</dt>
+                    <dd>{if $sa.site_design}<code>{$sa.site_design|wash}</code>{else}&ndash;{/if}{if $sa.additional_designs} <span class="a4-muted">+ {$sa.additional_designs|implode( ', ' )|wash}</span>{/if}</dd>
+                    <dt>{'Locale'|i18n( 'design/admin/setup/info' )}</dt>
+                    <dd>{if $sa.locale}{$sa.locale|wash}{else}&ndash;{/if}{if $sa.languages} <span class="a4-muted">{'languages:'|i18n( 'design/admin/setup/info' )} {$sa.languages|implode( ', ' )|wash}</span>{/if}</dd>
+                    <dt>{'Access extensions'|i18n( 'design/admin/setup/info' )}</dt>
+                    <dd>{if $sa.access_extensions}{$sa.access_extensions|implode( ', ' )|wash}{else}&ndash;{/if}</dd>
+                    <dt>{'Hidden nodes'|i18n( 'design/admin/setup/info' )}</dt>
+                    <dd>{if $sa.show_hidden_nodes}{'shown'|i18n( 'design/admin/setup/info' )}{else}{'not shown'|i18n( 'design/admin/setup/info' )}{/if}</dd>
+                    <dt>{'Login'|i18n( 'design/admin/setup/info' )}</dt>
+                    <dd>{if $sa.require_user_login}{'required'|i18n( 'design/admin/setup/info' )}{else}{'not required'|i18n( 'design/admin/setup/info' )}{/if}</dd>
+                    <dt>{'Matched by'|i18n( 'design/admin/setup/info' )}</dt>
+                    <dd>{if $sa.matched_by}{foreach $sa.matched_by as $by sequence array( '', ', ' ) as $sep}{$sep}{if is_set( $sa_probe_label[$by.probe] )}{$sa_probe_label[$by.probe]|wash}{else}{$by.probe|wash}{/if} <code>{$by.match|wash}</code>{/foreach}{elseif $sa.is_default}{'the default rule'|i18n( 'design/admin/setup/info' )}{else}&ndash;{/if}</dd>
+                </dl>
+                {if $sa.readable|not}<p class="a4-help">{'The settings of this siteaccess could not be read.'|i18n( 'design/admin/setup/info' )}</p>{/if}
+                <p class="a4-actions">
+                    {if $sa.url}<a class="a4-btn a4-btn-small" href="{$sa.url|wash}" aria-label="{'Open %siteaccess'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $sa.name ) )|wash}">{'Open'|i18n( 'design/admin/setup/info' )}</a>{/if}
+                    {if $sa.settings_path}<a class="a4-btn a4-btn-small" href={concat( '/', $sa.settings_path )|ezurl} aria-label="{'Settings of %siteaccess'|i18n( 'design/admin/setup/info',, hash( '%siteaccess', $sa.name ) )|wash}">{'site.ini settings'|i18n( 'design/admin/setup/info' )}</a>{/if}
+                </p>
+                {if $sa.url}<p class="a4-help a4-setup-sa-url"><code>{$sa.url|wash}</code></p>{/if}
+            </li>
+        {/foreach}
+        </ul>
+        <p class="a4-help">{'The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md'|i18n( 'design/admin/setup/info' )}</p>
+    </div>
+</details>
+{undef $sa_map $sa_probe_label $sa_kind_label}
+{/if}
+
 {* The opcode cache and APCu, for whatever serves the page *}
 <details class="a4-fold" id="php-caches">
     <summary><h2 class="a4-h2">{'OPcache and APCu'|i18n( 'design/admin/setup/info' )}</h2><span class="a4-muted">{'figures of the process that answered'|i18n( 'design/admin/setup/info' )}</span></summary>

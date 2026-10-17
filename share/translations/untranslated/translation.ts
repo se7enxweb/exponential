@@ -23158,6 +23158,30 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Siteaccesses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count (default: %default; match: %order)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>default: %default; match: %order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host and URI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Internal</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24725,6 +24749,94 @@ Note: The packages will not be uninstalled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Server variable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Index file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>StaticMatch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another matcher</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Site with login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every siteaccess of site.ini [SiteAccessSettings] AvailableSiteAccessList and RelatedSiteAccessList, with the rules that lead a request to it. The rules are read from the settings; the links open each siteaccess on the server and port of this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This request</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Match order</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>every request gets this siteaccess; the rules below are not used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resolution map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>matched</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not a rule this installation knows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>chose %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no rule matched</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The rules are tried from the top; the first that matches decides.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All siteaccesses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>no limit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -24786,6 +24898,22 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>related only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no rule reaches it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -24922,6 +25050,70 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>languages:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Access extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Matched by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the default rule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The settings of this siteaccess could not be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings of %siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>site.ini settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/guides/system-information.md</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
