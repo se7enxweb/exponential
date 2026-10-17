@@ -524,10 +524,7 @@ class expRequestLog
         $file = self::logFile();
         if ( !is_dir( $dir ) )
         {
-            if ( class_exists( 'eZDir' ) )
-                @eZDir::mkdir( $dir, false, true );
-            else
-                @mkdir( $dir, 0777, true );
+            @eZDir::mkdir( $dir, false, true );
         }
         clearstatcache( true, $file );
         $existed = is_file( $file );
@@ -553,7 +550,7 @@ class expRequestLog
         {
             $permissions = class_exists( 'eZINI' ) ? octdec( eZINI::instance()->variable( 'FileSettings', 'LogFilePermissions' ) ) : 0666;
             if ( $permissions )
-                @chmod( $file, class_exists( 'eZFile' ) ? eZFile::fileMode( $permissions ) : $permissions );
+                @chmod( $file, eZFile::fileMode( $permissions ) );
         }
         catch ( Throwable $ignored )
         {

@@ -128,6 +128,9 @@ for ( $i = 0; $i < (int)$argv[3]; $i++ )
     $counter->hit( $argv[2] );
 ' );
         $key = sha1( 'shared-client' );
+        // the bare processes have no eZDir: the counter's directory is there before they start
+        if ( !is_dir( $this->dir . '/cache/counter' ) )
+            mkdir( $this->dir . '/cache/counter', 0777, true );
         $processes = array();
         for ( $p = 0; $p < 3; $p++ )
         {

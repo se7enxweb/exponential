@@ -68,10 +68,7 @@ class expRequestThresholdCounter
         $file = $this->fileOf( $key );
         if ( !is_dir( $this->dir ) )
         {
-            if ( class_exists( 'eZDir' ) )
-                @eZDir::mkdir( $this->dir, false, true );
-            else
-                @mkdir( $this->dir, 0777, true );
+            @eZDir::mkdir( $this->dir, false, true );
         }
         $existed = is_file( $file );
         $fp = @fopen( $file, 'c+' );
