@@ -1866,7 +1866,17 @@
       "tests/tests/kernel/classes/expUserLoginIntegrityTest.php"
     ],
     "kernel/classes/expvelocity.php": [
-      "tests/tests/kernel/classes/expVelocityEnginesTest.php"
+      "tests/tests/kernel/classes/expVelocityEnginesTest.php",
+      "tests/tests/kernel/classes/expVelocityMarkersTest.php"
+    ],
+    "kernel/classes/expvelocitydeploy.php": [
+      "tests/tests/kernel/classes/expVelocityMarkersTest.php"
+    ],
+    "kernel/classes/expvelocitymarkers.php": [
+      "tests/tests/kernel/classes/expVelocityMarkersTest.php"
+    ],
+    "kernel/classes/expvelocityrestartunit.php": [
+      "tests/tests/kernel/classes/expVelocityMarkersTest.php"
     ],
     "kernel/classes/ezcollaborationitemhandler.php": [
       "tests/tests/kernel/classes/eZPhp8CallableMethodsTest.php"

@@ -178,6 +178,36 @@ and took 17.6 seconds. `deploy --kernel` excludes every top-level directory but 
 the kernel's classes are, and takes under a second for the same array. For a run by hand, list such directories in
 `.autoloadignore` (one pattern per line, anchored at the installation root) or pass `--exclude=<dir>`.
 
+### A restart or deploy that is cut off
+
+`exp:velocity restart`, and the restart step of `deploy`, run the stop and the start as one detached unit. The command
+re-launches itself in its own session (`setsid -f`) and, as root under systemd, in a transient scope named
+`vc-restart-<date>-<token>` (`systemctl list-units 'vc-restart-*'`), then waits for it and prints what it printed, with
+its exit code. A caller that is killed between the stop and the start (a timeout, a spend limit, a closed terminal,
+the end of a login session) no longer leaves the server down: the restart finishes on its own. The server it starts
+lives in that scope, not in the caller's session.
+
+While it runs, `restart-in-progress.json` lies next to the pid file (`var/vc/qbix/run/`), with the detached
+process's pid, its scope and when it began; it goes when the start has finished. Its output is
+`restart-<token>.log` in the same directory until the caller has read it.
+
+An explicit `exp:velocity stop` (or `kill`) writes `stopped.json` there; `start`, `restart` and `graceful` remove it.
+The server is down on purpose only while that file is there. `deploy` therefore starts a server that is down without
+it (a restart cut off before this change, or a crash) and leaves one that was stopped on purpose alone.
+
+The server's priority is `[ServerSettings] Nice` (default 5), whatever the caller runs at: a deploy run under
+`nice -n 19` used to leave every worker at 19. `exp:velocity status` names a parent that runs at another value.
+`Nice=inherit` keeps the caller's.
+
+```ini
+[ServerSettings]
+Nice=5                    # inherit: the caller's priority, as before
+[ControlSettings]
+DetachedRestart=enabled   # disabled: restart in the calling process, as before
+```
+
+`EXP_VELOCITY_DETACHED_RESTART=0` in the environment turns the detaching off for one call.
+
 ## Running them side by side
 
 For tests the three can run at the same time: each has its own port, pid

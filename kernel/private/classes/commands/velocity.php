@@ -277,9 +277,12 @@ class Velocity extends \Exponential\Runnable\Command
             "  start      start it\n" .
             "  stop       ask it to stop, and wait; every process of this installation, not only\n" .
             "             the pid files' (qbix: SIGKILL after [ControlSettings] StopTimeout)\n" .
+            "             (it stays stopped: the watchdog does not start it again until start)\n" .
             "  graceful   re-exec without dropping the listening socket\n" .
             "  restart    stop, then start; succeeds only when a new parent answers (qbix),\n" .
-            "             and finishes a restart that was interrupted\n" .
+            "             and finishes a restart that was interrupted. Runs detached (own\n" .
+            "             session, and a systemd scope vc-restart-<ts> as root), so a caller\n" .
+            "             killed half-way does not leave the server down\n" .
             "             (the engine archive is rebuilt first only when a file in kernel/,\n" .
             "              lib/ or autoload/ was added, removed or changed; --rebuild-phar: always)\n" .
             "  deploy     everything a PHP code change needs, in order, PASS/FAIL per step:\n" .
@@ -492,6 +495,38 @@ class Velocity extends \Exponential\Runnable\Command
             }
         }
 
+        // restart runs as one detached unit (expVelocityRestartUnit): the stop
+        // and the start go on in their own session and scope, so a caller that
+        // is killed between them no longer leaves the server down. This process
+        // waits and prints what the restart printed, with its exit code.
+        $restartTargets = $engineList ? array_map( function ( $name ) { return \expVelocity::create( 'velocity.ini', $name ); }, $engineList )
+                                      : array( $velocity );
+        $restartDirs = array_map( function ( $engine ) { return dirname( $engine->pidFile() ); }, $restartTargets );
+        if ( $verb === 'restart' && \expVelocityRestartUnit::enabled(
+                 \eZINI::instance( 'velocity.ini' )->hasVariable( 'ControlSettings', 'DetachedRestart' )
+                 ? \eZINI::instance( 'velocity.ini' )->variable( 'ControlSettings', 'DetachedRestart' ) : 'enabled' ) )
+        {
+            $unit = new \expVelocityRestartUnit( $restartDirs[0] );
+            $outcome = $unit->delegate( realpath( $_SERVER['argv'][0] ) ?: $_SERVER['argv'][0], array_slice( $_SERVER['argv'], 1 ), $restartDirs );
+            if ( $outcome !== null )
+            {
+                fwrite( STDOUT, $outcome[1] );
+                $script->shutdown( $outcome[0] );
+            }
+            // Could not be detached: restarted here, as before.
+        }
+        if ( $verb === 'restart' )
+            \expVelocityRestartUnit::beginChild( $restartDirs, 'restart' );
+
+        // An explicit stop or kill keeps the server down (the watchdog leaves
+        // it alone); start, restart and graceful lift that.
+        if ( in_array( $verb, array( 'stop', 'kill', 'start', 'restart', 'graceful' ), true ) )
+            foreach ( $restartTargets as $engine )
+            {
+                $markers = \expVelocityMarkers::forVelocity( $engine );
+                in_array( $verb, array( 'stop', 'kill' ), true ) ? $markers->markStopped( $verb ) : $markers->clear( \expVelocityMarkers::STOPPED );
+            }
+
         // Several engines: the same verb for each, one after the other. One that
         // fails does not stop the rest; the exit code says whether all succeeded.
         if ( count( $engineList ) > 1 )
@@ -562,6 +597,8 @@ class Velocity extends \Exponential\Runnable\Command
                     velocityPrintStatus( $cli, $engine[1], $engine[0], true );
                 $cli->output( '' );
             }
+            if ( $verb === 'restart' )
+                \expVelocityRestartUnit::childDone( $allOk );
             $script->shutdown( $allOk ? 0 : 1 );
         }
 
@@ -933,6 +970,8 @@ class Velocity extends \Exponential\Runnable\Command
                 if ( $asJson )
                 {
                     $cli->output( json_encode( $result ) );
+                    if ( $verb === 'restart' )
+                        \expVelocityRestartUnit::childDone( $result['ok'] );
                     $script->shutdown( $result['ok'] ? 0 : 1 );
                     break;
                 }
@@ -955,6 +994,8 @@ class Velocity extends \Exponential\Runnable\Command
                 }
                 velocityPrintStatus( $cli, $status, $velocity );
                 $cli->output( '' );
+                if ( $verb === 'restart' )
+                    \expVelocityRestartUnit::childDone( $result['ok'] );
                 $script->shutdown( $result['ok'] ? 0 : 1 );
         }
     }

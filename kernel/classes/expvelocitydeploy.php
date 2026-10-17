@@ -666,15 +666,21 @@ class expVelocityDeploy
 
         $velocity = $this->velocity;
         $step['dry'] = function () use ( $velocity ) {
-            return $velocity->isRunning() ? 'running: would be restarted' : 'not running: would be left stopped';
+            if ( $velocity->isRunning() )
+                return 'running: would be restarted';
+            return expVelocityMarkers::forVelocity( $velocity )->isStopped()
+                ? 'stopped with exp:velocity stop: would be left stopped'
+                : 'not running, and not stopped on purpose: would be started';
         };
 
         $self = $this;
         $step['run'] = function () use ( $self, $velocity, $args ) {
-            // Not started when it was not running: a deploy brings the running
-            // services up to date, it does not decide which ones should run.
-            if ( !$velocity->isRunning() )
-                return array( null, 'not running, so not restarted (exp:velocity start starts it)' );
+            // Not started when it was stopped on purpose (exp:velocity stop): a
+            // deploy brings the running services up to date, it does not decide
+            // which ones should run. A server that is down without that -- a
+            // restart whose caller was killed half-way -- is started.
+            if ( !$velocity->isRunning() && expVelocityMarkers::forVelocity( $velocity )->isStopped() )
+                return array( null, 'stopped with exp:velocity stop, so not restarted (exp:velocity start starts it)' );
 
             list( $code, $output ) = $self->runCommand( $args );
             $result = null;
