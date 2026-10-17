@@ -2503,7 +2503,7 @@ parameters:
 			path: kernel/private/classes/views/content/draft.php
 
 		-
-			message: '#^Function computeRedirect not found\.$#'
+			message: '#^Function expModuleViewContentEditComputeRedirect not found\.$#'
 			identifier: function.notFound
 			count: 2
 			path: kernel/private/classes/views/content/edit.php

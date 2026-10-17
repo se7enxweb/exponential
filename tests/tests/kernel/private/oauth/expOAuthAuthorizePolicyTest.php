@@ -131,7 +131,7 @@ class expOAuthAuthorizePolicyTest extends PHPUnit\Framework\TestCase
     {
         $source = (string)file_get_contents( self::root() . '/kernel/private/modules/oauth/authorize.php' );
         $this->assertStringContainsString( 'expOAuthAuthorizePolicy::userMayAuthorize(', $source );
-        $this->assertStringContainsString( "error( \$pRedirectUri, 'access_denied'", $source );
+        $this->assertStringContainsString( "expModuleViewOauthAuthorizeError( \$pRedirectUri, 'access_denied'", $source );
         $this->assertDoesNotMatchRegularExpression( '/!\s*\$access\s*\[[^\]]+\]\s*==/', $source );
     }
 
