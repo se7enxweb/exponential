@@ -176,7 +176,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-c20c5e16aff57d0121b0cd9598b2d723  composer.json
+1a0bb74bc00bab67f67b481325f33260  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -732,7 +732,7 @@ c1d5568a015071d50353f523c84efb2b  design/admin/templates/visual/templatelist.tpl
 42653a28301635a4a1fb8d02a51485d0  design/admin/templates/visual/templateview.tpl
 33e4c23d831c66c1744cec343c7052a2  design/admin/templates/visual/templateview_buttons.tpl
 99bffc8a164702c52b762b1dd300a15c  design/admin/templates/visual/toolbar.tpl
-e0bcde19ca3e377bb55d86014ee0c876  design/admin/templates/visual/toolbarlist.tpl
+afabf89fb768470913fff84defefaa66  design/admin/templates/visual/toolbarlist.tpl
 598e6b110327d37243b0de1d5184770b  design/admin/templates/window_controls.tpl
 edb9f6881ad25d91f2bf5a75c5cd7b56  design/admin/templates/window_controls_extratabs.tpl
 b4481aa8c6dd7b66accd2fea3c4480ba  design/admin/templates/windows.tpl
