@@ -897,6 +897,7 @@
       "tests/tests/kernel/logviewer/expLogSearchTest.php",
       "tests/tests/kernel/logviewer/expLogActionsTest.php",
       "tests/tests/kernel/logviewer/expLogViewerTest.php",
+      "tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php",
       "tests/tests/kernel/logviewer/expLogPermalinkTest.php",
       "tests/tests/kernel/logviewer/expLogKeyTest.php",
       "tests/tests/kernel/logviewer/expLogWebServerFormatsTest.php"
@@ -907,6 +908,7 @@
     ],
     "kernel/private/classes/views/setup/logs*.php": [
       "tests/tests/kernel/logviewer/expLogViewerTest.php",
+      "tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php",
       "tests/tests/kernel/logviewer/expLogActionsTest.php",
       "tests/tests/kernel/logviewer/expLogSearchTest.php",
       "tests/tests/kernel/logviewer/expLogPermalinkTest.php",
@@ -914,11 +916,13 @@
     ],
     "kernel/setup/logs*.php": [
       "tests/tests/kernel/logviewer/expLogViewerTest.php",
+      "tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php",
       "tests/tests/kernel/logviewer/expLogPermalinkTest.php"
     ],
     "settings/logviewer.ini": [
       "tests/tests/kernel/logviewer/expLogActionsTest.php",
       "tests/tests/kernel/logviewer/expLogViewerTest.php",
+      "tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php",
       "tests/tests/kernel/logviewer/expLogKeyTest.php",
       "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
     ],
@@ -928,6 +932,7 @@
       "tests/tests/kernel/logviewer/expLogSearchTest.php",
       "tests/tests/kernel/logviewer/expLogActionsTest.php",
       "tests/tests/kernel/logviewer/expLogViewerTest.php",
+      "tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php",
       "tests/tests/kernel/logviewer/expLogKeyTest.php"
     ],
     "kernel/contentcheck/*": [

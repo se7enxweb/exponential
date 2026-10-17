@@ -33,6 +33,18 @@
         return;
 
     var data = function ( name ) { return script.getAttribute( 'data-' + name ) || ''; };
+    // a user preference, stored as every admin preference is (user/preferences/set_and_exit, a POST with the form
+    // token), so it holds for every log, every view and the next visit
+    var savePreference = function ( name, value ) {
+        var url = data( 'pref-url' );
+        if ( !url || !window.fetch )
+            return;
+        var body = encodeURIComponent( data( 'token-field' ) || 'ezxform_token' ) + '=' + encodeURIComponent( data( 'token' ) );
+        window.fetch( url + '/' + encodeURIComponent( name ) + '/' + encodeURIComponent( value ), {
+            method: 'POST', credentials: 'same-origin', keepalive: true,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body
+        } ).catch( function () {} );
+    };
     var text = function ( name ) { return data( 'text-' + name ); };
     var fill = function ( template, values ) {
         return String( template ).replace( /%(\w+)/g, function ( all, key ) { return values.hasOwnProperty( key ) ? String( values[key] ) : all; } );
@@ -353,8 +365,7 @@
             path += '/(offset)/' + encodeValue( focused.o );
         if ( paused && liveFile && !searching )
             path += '/(follow)/0';
-        if ( wrap )
-            path += '/(wrap)/1';
+        // wrapping is the viewer's preference (admin_logviewer_wrap), not part of a view's address
         return path;
     };
     var syncUrl = function () {
@@ -874,6 +885,7 @@
     if ( wrapBox )
         wrapBox.addEventListener( 'change', function () {
             wrap = wrapBox.checked;
+            savePreference( 'admin_logviewer_wrap', wrap ? '1' : '0' );
             view.classList.toggle( 'is-wrapped', wrap );
             rowHeight = 0;
             if ( follow )
@@ -958,11 +970,12 @@
     var asked = state.view || {};
     add( ( source && source.entries ) || [], searching );
     setStatus( searching ? text( 'results' ) : ( liveFile ? text( 'following' ) : text( 'archive' ) ), liveFile ? 'is-running' : '' );
-    if ( asked.wrap && wrapBox )
+    // wrapping as the server drew it on first paint: the preference admin_logviewer_wrap, on by default
+    if ( wrapBox )
     {
-        wrapBox.checked = true;
-        wrap = true;
-        view.classList.add( 'is-wrapped' );
+        wrap = !!state.wrap;
+        wrapBox.checked = wrap;
+        view.classList.toggle( 'is-wrapped', wrap );
     }
     var focusAt = -1;
     if ( typeof asked.offset === 'number' && asked.offset >= 0 )

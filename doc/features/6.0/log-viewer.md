@@ -131,7 +131,7 @@ left out, so a plain view is just `/setup/logs/view/<key>`:
 | `(cursor)` | `<file>:<offset>` | | where a search goes on ("More results") |
 | `(offset)` | a byte offset | | the entry in focus |
 | `(follow)` | `1` / `0` | `1` | `0`: the view opens paused |
-| `(wrap)` | `1` / `0` | `0` | long lines wrapped |
+| `(wrap)` | `1` / `0` | the viewer's preference | long lines wrapped on this one page; a shared link never carries it (see "Wrapping long lines") |
 | `(unmask)` | `1` / `0` | `0` | shown unmasked (only with `setup/unmasklogs`; never part of a copied permalink) |
 | `(done)`, `(ok)` | an action, `1` / `0` | | the outcome of rotate, empty or remove (set by the action, not copied) |
 
@@ -148,9 +148,17 @@ Examples:
 /setup/logs/view/debug/(rotation)/1/(offset)/204800/(follow)/0
 ```
 
-The page keeps its address in step with the view as it changes (paused or following, wrapped, the entry in focus), so
+The page keeps its address in step with the view as it changes (paused or following, the entry in focus), so
 the address bar and **Copy permalink** always give a link that opens the same view. The search form works without
 JavaScript too: it is sent with the key and the fields, and the page answers `303` with the permalink.
+
+### Wrapping long lines
+
+Long lines are wrapped by default. The **Wrap lines** switch stores each viewer's choice as the user preference
+`admin_logviewer_wrap` (`1` or `0`, written through `user/preferences/set_and_exit` like the other administration
+preferences), so it stays the same for every log, every permalink and the next visit, and the page draws it before
+anything shows (no flash). Without a stored choice, `[TailSettings] WrapLines` decides (default `enabled`). Following
+or paused, and the entry in focus, belong to a view and travel in its permalink; wrapping is a preference and does not.
 
 **Old links.** A link of the first form, `/setup/logs?file=var/log/error.log` (with `q`, `levels[]` and the other
 search fields of that time), answers `301 Moved Permanently` with the permalink of the same file and search, e.g.

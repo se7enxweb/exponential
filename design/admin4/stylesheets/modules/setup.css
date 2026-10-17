@@ -1109,6 +1109,8 @@ label.a4-package-option-label {
 /* The file chooser for narrow windows, the facts of the file and the controls */
 .a4-setup-log-picker { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
 .a4-setup-log-picker select { min-width: 0; max-width: 100%; flex: 1 1 220px; }
+/* The button of a chooser (Open, Copy permalink) on a line of its own, at the start */
+.a4-setup-log-picker-actions { flex: 1 0 100%; display: flex; justify-content: flex-start; gap: var(--a4-space-2); }
 /* The permalink of the view: a read-only field to select, and the copy button */
 .a4-setup-log-permalink { flex-wrap: wrap; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
 .a4-setup-log-permalink .a4-input { flex: 1 1 260px; min-width: 0; max-width: 100%; font-family: var(--a4-mono); }

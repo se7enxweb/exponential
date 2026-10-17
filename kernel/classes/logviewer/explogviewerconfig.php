@@ -42,7 +42,7 @@ class expLogViewerConfig
         ),
         'TailSettings' => array(
             'InitialBytes' => 65536, 'MaxBytesPerPoll' => 262144, 'PollInterval' => 1000, 'MaxPollInterval' => 15000,
-            'MaxLinesKept' => 5000, 'ChunkCacheTTL' => 10, 'ChunkCacheMaxBytes' => 262144,
+            'MaxLinesKept' => 5000, 'ChunkCacheTTL' => 10, 'ChunkCacheMaxBytes' => 262144, 'WrapLines' => 'enabled',
         ),
         'SearchSettings' => array(
             'MaxBytesPerRequest' => 33554432, 'TimeLimit' => 2000, 'MaxResults' => 200, 'MaxPatternLength' => 200,

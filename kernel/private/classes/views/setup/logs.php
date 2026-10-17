@@ -139,7 +139,9 @@ class Logs extends \Exponential\Runnable\ModuleView
         $token = \expLogViewer::formToken();
         $client = $config->clientSettings();
         $navigator = \expLogViewer::navigatorForCurrentUser();
-        $permalink = $file !== null ? \expLogPermalink::build( $file['key'], array( 'rotation' => $file['rotation'] ) + $state, array( 'done', 'ok', 'unmask' ) ) : '';
+        // wrapping is the viewer's preference (on by default); a (wrap)/0|1 in a shared link only changes this one page
+        $wrap = isset( $Params['wrap'] ) && $Params['wrap'] !== false ? $state['wrap'] : $viewer->wrapLines();
+        $permalink = $file !== null ? \expLogPermalink::build( $file['key'], array( 'rotation' => $file['rotation'] ) + $state, array( 'done', 'ok', 'unmask', 'wrap' ) ) : '';
 
         $siteAccesses = array();
         $ini = \eZINI::instance();
@@ -173,6 +175,7 @@ class Logs extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'log_permalink', $permalink );
         $tpl->setVariable( 'log_key', $file !== null ? $file['key'] : '' );
         $tpl->setVariable( 'log_view_state', $state );
+        $tpl->setVariable( 'log_wrap', $wrap );
         $tpl->setVariable( 'log_siteaccesses', $siteAccesses );
         $tpl->setVariable( 'log_max_download', $config->int( 'ActionSettings', 'MaxDownloadBytes' ) );
         // the data the script starts from, as JSON in a script element of type application/json
@@ -180,7 +183,7 @@ class Logs extends \Exponential\Runnable\ModuleView
             'file' => $file !== null ? \expLogViewer::fileInfo( $file ) : null,
             'initial' => $initial, 'search' => $search, 'related' => $related, 'searching' => $searching,
             'client' => $client, 'unmasked' => $viewer->unmasked(),
-            'key' => $file !== null ? $file['key'] : '', 'view' => $state, 'permalink' => $permalink,
+            'key' => $file !== null ? $file['key'] : '', 'view' => $state, 'permalink' => $permalink, 'wrap' => $wrap,
         ), $flags ) );
 
         $Result = array();

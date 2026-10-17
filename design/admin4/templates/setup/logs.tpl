@@ -131,14 +131,14 @@
     {/foreach}
     </select>
     {if $log_unmasked}<input type="hidden" name="unmask" value="1" />{/if}
-    <button type="submit" class="a4-btn a4-btn-small">{'Open'|i18n( 'design/admin/setup/logs' )}</button>
+    <div class="a4-setup-log-picker-actions"><button type="submit" class="a4-btn a4-btn-primary">{'Open'|i18n( 'design/admin/setup/logs' )}</button></div>
 </form>
 
 {* The permalink of this view (never with the unmasked choice): selectable without JavaScript, copied with the button *}
 <div class="a4-row a4-setup-log-permalink">
     <label for="log-permalink">{'Permalink'|i18n( 'design/admin/setup/logs' )}</label>
     <input type="text" id="log-permalink" class="a4-input" readonly="readonly" value={$log_permalink|ezurl( 'double', 'full' )} aria-describedby="log-permalink-help" />
-    <button type="button" class="a4-btn a4-btn-small" id="log-copy-link" disabled="disabled"><span class="a4-icon a4-bi-link-45deg" aria-hidden="true"></span>{'Copy permalink'|i18n( 'design/admin/setup/logs' )}</button>
+    <div class="a4-setup-log-picker-actions"><button type="button" class="a4-btn a4-btn-primary" id="log-copy-link" disabled="disabled"><span class="a4-icon a4-bi-link-45deg" aria-hidden="true"></span>{'Copy permalink'|i18n( 'design/admin/setup/logs' )}</button></div>
     <span class="a4-help" id="log-permalink-help">{'A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.'|i18n( 'design/admin/setup/logs' )}</span>
 </div>
 
@@ -167,7 +167,7 @@
             <span class="a4-icon a4-bi-arrow-bar-down" aria-hidden="true"></span>{'Newest'|i18n( 'design/admin/setup/logs' )}
         </button>
         <label class="a4-check a4-setup-log-switch"><input type="checkbox" id="log-follow" checked="checked" disabled="disabled" /><span>{'Follow'|i18n( 'design/admin/setup/logs' )}</span></label>
-        <label class="a4-check a4-setup-log-switch"><input type="checkbox" id="log-wrap" disabled="disabled" /><span>{'Wrap lines'|i18n( 'design/admin/setup/logs' )}</span></label>
+        <label class="a4-check a4-setup-log-switch"><input type="checkbox" id="log-wrap" disabled="disabled"{if $log_wrap} checked="checked"{/if} /><span>{'Wrap lines'|i18n( 'design/admin/setup/logs' )}</span></label>
         {if $log_can_unmask}
         <a class="a4-btn a4-btn-small a4-btn-ghost" id="log-unmask" data-unmasked="{if $log_unmasked}1{else}0{/if}"
            href={concat( $log_permalink, cond( $log_unmasked, '', '/(unmask)/1' ) )|ezurl}>
@@ -285,7 +285,7 @@
 {/if}
 
 {* ---- the lines ---- *}
-<div class="a4-setup-log-view{if $log_searching} is-results{/if}" id="log-view" tabindex="0" role="region" aria-labelledby="log-view-title" aria-describedby="log-keys">
+<div class="a4-setup-log-view{if $log_searching} is-results{/if}{if $log_wrap} is-wrapped{/if}" id="log-view" tabindex="0" role="region" aria-labelledby="log-view-title" aria-describedby="log-keys">
     <h2 class="a4-sr-only" id="log-view-title">{if $log_searching}{'Search results'|i18n( 'design/admin/setup/logs' )}{else}{'Lines of %name'|i18n( 'design/admin/setup/logs',, hash( '%name', $log_file.name ) )|wash}{/if}</h2>
     {if $log_entries|count}
     <ol class="a4-setup-log-plain" id="log-list">
@@ -340,7 +340,7 @@
             <label for="log-dl-to">{'To byte'|i18n( 'design/admin/setup/logs' )}</label>
             <input type="number" id="log-dl-to" name="To" min="0" step="1" inputmode="numeric" />
         </div>
-        <button type="submit" class="a4-btn" name="DownloadButton" value="1"><span class="a4-icon a4-bi-download" aria-hidden="true"></span>{'Download (gzip)'|i18n( 'design/admin/setup/logs' )}</button>
+        <button type="submit" class="a4-btn a4-btn-primary" name="DownloadButton" value="1"><span class="a4-icon a4-bi-download" aria-hidden="true"></span>{'Download (gzip)'|i18n( 'design/admin/setup/logs' )}</button>
         <p class="a4-help">{'Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.'|i18n( 'design/admin/setup/logs',, hash( '%size', $log_max_download|si( byte ) ) )|wash}</p>
     </form>
     {/if}
@@ -348,7 +348,7 @@
     <form method="post" action={'setup/logsaction'|ezurl} class="a4-row a4-setup-log-manage">
         <input type="hidden" name="{$log_token_field|wash}" value="{$log_token|wash}" />
         <input type="hidden" name="File" value="{$log_file.id|wash}" />
-        {if and( $log_actions.rotate, $log_file.archive|not )}<button type="submit" class="a4-btn" name="RotateButton" value="1"><span class="a4-icon a4-bi-arrow-clockwise" aria-hidden="true"></span>{'Rotate now'|i18n( 'design/admin/setup/logs' )}</button>{/if}
+        {if and( $log_actions.rotate, $log_file.archive|not )}<button type="submit" class="a4-btn a4-btn-primary" name="RotateButton" value="1"><span class="a4-icon a4-bi-arrow-clockwise" aria-hidden="true"></span>{'Rotate now'|i18n( 'design/admin/setup/logs' )}</button>{/if}
         {if and( $log_actions.truncate, $log_file.archive|not )}<button type="submit" class="a4-btn a4-btn-outline-danger" name="TruncateButton" value="1"><span class="a4-icon a4-bi-x-circle-fill" aria-hidden="true"></span>{'Empty the file'|i18n( 'design/admin/setup/logs' )}</button>{/if}
         {if and( $log_actions.delete, $log_file.archive )}<button type="submit" class="a4-btn a4-btn-outline-danger" name="DeleteButton" value="1"><span class="a4-icon a4-bi-trash" aria-hidden="true"></span>{'Remove this rotation'|i18n( 'design/admin/setup/logs' )}</button>{/if}
         <p class="a4-help">{'Each of these asks for a confirmation first and is recorded in the audit.'|i18n( 'design/admin/setup/logs' )}</p>
@@ -365,6 +365,9 @@
 {* The values the script needs, read from here by page/setup_logs.js; the data it starts from follows as JSON *}
 <div id="log-script" hidden
      data-feed-url={'setup/logsfeed'|ezurl}
+     data-pref-url={'user/preferences/set_and_exit'|ezurl}
+     data-token-field="{$log_token_field|wash}"
+     data-token="{$log_token|wash}"
      data-page-url={'setup/logs'|ezurl}
      data-node-url={'content/view/full'|ezurl}
      data-class-url={'class/view'|ezurl}

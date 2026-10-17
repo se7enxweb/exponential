@@ -76,6 +76,39 @@ class expLogViewer
         return isset( $access['accessWord'] ) && $access['accessWord'] !== 'no';
     }
 
+    /** The user preference that keeps the viewer's choice of wrapping long lines */
+    const WRAP_PREFERENCE = 'admin_logviewer_wrap';
+
+    /**
+     * Whether long lines are wrapped, from a stored choice: '1' on, '0' off, anything else (no choice stored) the
+     * default of [TailSettings] WrapLines (enabled). Pure.
+     *
+     * @param mixed $stored the preference's value (false or null when none is stored)
+     * @param bool $default
+     * @return bool
+     */
+    public static function wrapFrom( $stored, $default = true )
+    {
+        if ( $stored === '1' || $stored === 1 || $stored === true )
+            return true;
+        if ( $stored === '0' || $stored === 0 )
+            return false;
+        return (bool)$default;
+    }
+
+    /**
+     * Whether the current user's viewer wraps long lines: their stored choice (eZPreferences admin_logviewer_wrap,
+     * written by the page's switch through user/preferences/set_and_exit), else the default of the settings. The
+     * same for every log, view and visit, so switching logs or opening a permalink never changes it.
+     *
+     * @return bool
+     */
+    public function wrapLines()
+    {
+        $stored = class_exists( 'eZPreferences' ) ? eZPreferences::value( self::WRAP_PREFERENCE ) : false;
+        return self::wrapFrom( $stored, $this->config->enabled( 'TailSettings', 'WrapLines' ) );
+    }
+
     /** @return bool whether the viewer is on ([LogViewerSettings] LogViewer) */
     public function enabled()
     {
