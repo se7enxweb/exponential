@@ -219,7 +219,7 @@ var labelsObj = {ldelim}
         [
         {foreach $group.items as $can_create_class}
             {if $can_create_class.can_instantiate_languages}
-            {ldelim} text: "{$can_create_class.name|wash()}", value: {$can_create_class.id} {rdelim}
+            {ldelim} text: "{$can_create_class.name|wash|wash(javascript)}", value: {$can_create_class.id} {rdelim}
 
             {/if}
             {delimiter}{if $can_create_class.can_instantiate_languages},{/if}{/delimiter}

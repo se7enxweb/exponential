@@ -46,9 +46,13 @@
 {* The tree is drawn by contentstructuremenu_dynamic.js from the data of this element (no inline script, so it works
    under a Content Security Policy without 'unsafe-inline', doc/features/6.0/content-security-policy.md):
    data-tree-root the top node, data-tree-params the icons, classes, languages and texts (cached), data-tree-request
-   what depends on the request and the user. Each is JSON. *}
+   what depends on the request and the user. Each is JSON.
+   The class list of data-tree-root is the one the current user may create below the root node: the roles and
+   limitations are part of the outer block's key, or every user got the list of whoever rendered the block first. *}
+{def $csm_user     = fetch( 'user', 'current_user' )
+     $csm_perm_key = concat( $csm_user.role_id_list|implode( ',' ), '|', $csm_user.limited_assignment_value_list|implode( ',' ) )|md5}
 <div class="content-tree-menu"{*
-*}{cache-block keys=array( $root_node_id, $access_type ) expiry=0}{*
+*}{cache-block keys=array( $root_node_id, $access_type, $csm_perm_key ) expiry=0}{*
     *}{def $root_node_url = $root_node.url $class_list = array()}{*
     The top node (1) has no URL alias of its own: it opens its full view, which lists the top-level nodes.
     *}{if $root_node_url|eq('')}{set $root_node_url = concat( 'content/view/full/', $root_node_id )}{/if}{*
@@ -116,6 +120,6 @@
     'useCookie', $menu_persistence,
     'path', $tree_path,
     'perm', concat($current_user.role_id_list|implode(','),'|',$current_user.limited_assignment_value_list|implode(','))|md5
-) )|wash}"{/default}{undef $tree_path}>
+) )|wash}"{/default}{undef $tree_path $csm_user $csm_perm_key}>
 <ul id="content_tree_menu"></ul>
 </div>

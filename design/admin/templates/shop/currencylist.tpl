@@ -62,7 +62,7 @@
 {def $auto_rate_value = ''}
 {foreach $currency_list as $currency sequence array( bglight, bgdark ) as $bg_class_style}
     <tr class="{if eq( $currency.status, 2 ) }object-cannot-remove{else}{$bg_class_style}{/if}">
-        <td><input type="checkbox" name="DeleteCurrencyList[]" value="{$currency.code}" title="{'Use these checkboxes to select items for removal. Click the "Remove selected" button to  remove the selected items.'|i18n( 'design/admin/shop/currencylist' )|wash()}" /></td>
+        <td><input type="checkbox" name="DeleteCurrencyList[]" value="{$currency.code|wash}" title="{'Use these checkboxes to select items for removal. Click the "Remove selected" button to  remove the selected items.'|i18n( 'design/admin/shop/currencylist' )|wash()}" /></td>
         <td>
             {if is_set( $currency_names[$currency.code] )}
                 {$currency_names[$currency.code]}
@@ -70,10 +70,10 @@
                 {'Unknown currency name'|i18n( 'design/admin/shop/currencylist' )}
             {/if}
         </td>
-        <td>{$currency.code}</td>
-        <td>{$currency.symbol}</td>
-        <td>{$currency.locale}</td>
-        <td><select name="CurrencyList[{$currency.code}][status]" title="{'Select status'|i18n( 'design/admin/shop/currencylist' )}">
+        <td>{$currency.code|wash}</td>
+        <td>{$currency.symbol|wash}</td>
+        <td>{$currency.locale|wash}</td>
+        <td><select name="CurrencyList[{$currency.code|wash}][status]" title="{'Select status'|i18n( 'design/admin/shop/currencylist' )}">
                 <option value="active" {if eq($currency.status, 1)}selected = "selected"{/if} >{'Active'|i18n( 'design/admin/shop/currencylist' )}</option>
                 <option value="inactive" {if eq($currency.status, 2)}selected = "selected"{/if}>{'Inactive'|i18n( 'design/admin/shop/currencylist' )}</option>
             </select>
@@ -91,8 +91,8 @@
             <td class="number">{$auto_rate_value}</td>
         {/if}
 
-        <td class="number"><input type="text" size="10" name="CurrencyList[{$currency.code}][custom_rate_value]" value="{if gt($currency.custom_rate_value, 0)}{$currency.custom_rate_value}{else}{/if}" /></td>
-        <td class="number"><input type="text" size="10" name="CurrencyList[{$currency.code}][rate_factor]" value="{$currency.rate_factor}" /></td>
+        <td class="number"><input type="text" size="10" name="CurrencyList[{$currency.code|wash}][custom_rate_value]" value="{if gt($currency.custom_rate_value, 0)}{$currency.custom_rate_value}{else}{/if}" /></td>
+        <td class="number"><input type="text" size="10" name="CurrencyList[{$currency.code|wash}][rate_factor]" value="{$currency.rate_factor}" /></td>
         {if gt($currency.rate_value, 0)}
             <td class="number">{$currency.rate_value}</td>
         {else}
