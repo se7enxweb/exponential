@@ -61947,6 +61947,38 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Resolve</source>
         <translation>yItI&apos;</translation>
     </message>
+    <message>
+        <source>Websites</source>
+        <translation>yoSmey</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>mIllogh</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>lo&apos;wI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>mIllogh nab</translation>
+    </message>
+    <message>
+        <source>Sites and sections</source>
+        <translation>yoSmey &apos;ay&apos;mey je</translation>
+    </message>
+    <message>
+        <source>(contains the start location)</source>
+        <translation>(tagh Daq ngaS)</translation>
+    </message>
+    <message>
+        <source>More…</source>
+        <translation>latlh…</translation>
+    </message>
+    <message>
+        <source>Choose another site or section with the node picker</source>
+        <translation>Sor Daq wIvwI&apos; yIlo&apos;; latlh yoS pagh &apos;ay&apos; yIwIv</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>

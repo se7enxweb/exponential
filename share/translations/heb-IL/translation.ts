@@ -61946,6 +61946,38 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Resolve</source>
         <translation>טיפול</translation>
     </message>
+    <message>
+        <source>Websites</source>
+        <translation>אתרים</translation>
+    </message>
+    <message>
+        <source>Media</source>
+        <translation>מדיה</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>משתמשים</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>עיצוב</translation>
+    </message>
+    <message>
+        <source>Sites and sections</source>
+        <translation>אתרים ומדורים</translation>
+    </message>
+    <message>
+        <source>(contains the start location)</source>
+        <translation>(מכיל את מיקום ההתחלה)</translation>
+    </message>
+    <message>
+        <source>More…</source>
+        <translation>עוד…</translation>
+    </message>
+    <message>
+        <source>Choose another site or section with the node picker</source>
+        <translation>בחירת אתר או מדור אחר באמצעות בורר הצמתים</translation>
+    </message>
 </context>
 <context>
     <name>kernel/contentfinder</name>
