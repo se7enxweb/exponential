@@ -641,6 +641,9 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   margin: 0 0 var(--a4-space-3);
 }
 .a4-content-preview-bar[hidden] { display: none; }
+/* with the frame's scripts (html.a4-js, set before the first paint) the bar is there from the first paint, so the
+   preview below it does not move down when admin4.js takes it on */
+html.a4-js .a4-content-preview-bar[hidden] { display: flex; }
 .a4-content-preview-bar .a4-content-preview-size {
   margin: 0;
   color: var(--a4-muted);
@@ -674,8 +677,12 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   }
 }
 /* The stage: the device's frame centred on the soft surface; the script sets the frame's size and the iframe's
-   scale. Without the script the iframe fills the column as before. */
-.a4-content-preview-stage.is-device {
+   scale. Without the script the iframe fills the column as before. With it (html.a4-js) the stage is drawn as a
+   device from the first paint: the frame has the saved device's size (the eZPreferences admin_preview_device and
+   admin_preview_landscape on <html>, parts/a4_preference_attributes.tpl; empty: desktop), narrowed to the column
+   with the device's proportions, as the script draws it, so nothing below the preview moves when the script runs. */
+.a4-content-preview-stage.is-device,
+html.a4-js .a4-content-preview-stage {
   display: flex;
   justify-content: center;
   padding: var(--a4-space-3);
@@ -683,7 +690,8 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   background-color: var(--a4-soft);
   overflow: hidden;
 }
-.a4-content-preview-stage.is-device .a4-content-preview-device {
+.a4-content-preview-stage.is-device .a4-content-preview-device,
+html.a4-js .a4-content-preview-stage .a4-content-preview-device {
   box-sizing: content-box;   /* the script sets the size of the scaled page; the edge comes on top */
   flex: 0 0 auto;
   overflow: hidden;
@@ -692,14 +700,28 @@ div.block.a4-content-attr { margin: 0 0 var(--a4-space-5); padding-bottom: 0; } 
   background-color: var(--a4-card);
   box-shadow: var(--a4-shadow-s);
 }
-.a4-content-preview-stage.is-device .a4-content-preview-device iframe {
+.a4-content-preview-stage.is-device .a4-content-preview-device iframe,
+html.a4-js .a4-content-preview-stage .a4-content-preview-device iframe {
   display: block;
   max-width: none;
   border: 0;
   transform-origin: 0 0;
 }
+/* the device sizes of versionview.tpl (CSS pixels) until the script sets the frame's own size */
+html.a4-js .a4-content-preview-stage { --a4-preview-w: 1280; --a4-preview-h: 800; }
+html.a4-js[data-a4-pref-admin-preview-device="phone"] .a4-content-preview-stage { --a4-preview-w: 390; --a4-preview-h: 844; }
+html.a4-js[data-a4-pref-admin-preview-device="tablet"] .a4-content-preview-stage { --a4-preview-w: 820; --a4-preview-h: 1180; }
+html.a4-js[data-a4-pref-admin-preview-device="large"] .a4-content-preview-stage { --a4-preview-w: 1920; --a4-preview-h: 1080; }
+html.a4-js[data-a4-pref-admin-preview-device="phone"][data-a4-pref-admin-preview-landscape="1"] .a4-content-preview-stage { --a4-preview-w: 844; --a4-preview-h: 390; }
+html.a4-js[data-a4-pref-admin-preview-device="tablet"][data-a4-pref-admin-preview-landscape="1"] .a4-content-preview-stage { --a4-preview-w: 1180; --a4-preview-h: 820; }
+html.a4-js .a4-content-preview-stage .a4-content-preview-device {
+  width: min(calc(var(--a4-preview-w) * 1px), calc(100% - 2px));
+  aspect-ratio: var(--a4-preview-w) / var(--a4-preview-h);
+}
+html.a4-js .a4-content-preview-stage .a4-content-preview-device iframe { width: 100%; height: 100%; }
 @media (forced-colors: active) {
-  .a4-content-preview-stage.is-device .a4-content-preview-device { border-color: CanvasText; }
+  .a4-content-preview-stage.is-device .a4-content-preview-device,
+  html.a4-js .a4-content-preview-stage .a4-content-preview-device { border-color: CanvasText; }
 }
 
 /* ---- node view ---- the Upload link (node/view/upload_button.tpl, an .a4-btn) in the classic action bar of
