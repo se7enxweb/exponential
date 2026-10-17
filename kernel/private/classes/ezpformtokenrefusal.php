@@ -234,10 +234,9 @@ class ezpFormTokenRefusal
             return;
         $protocol = isset( $_SERVER['SERVER_PROTOCOL'] ) && preg_match( '#^HTTP/\d(\.\d)?$#', $_SERVER['SERVER_PROTOCOL'] )
             ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.1';
-        // http_response_code() first: after a header( 'HTTP/...' ) line PHP
-        // ignores it and warns ("has no effect"), once per refused form.
-        http_response_code( 403 );
-        header( $protocol . ' 403 Forbidden' );
+        // The status through header()'s response code: http_response_code() warns ("has no effect") when an
+        // earlier header( 'HTTP/...' ) line of the request set the status already.
+        header( $protocol . ' 403 Forbidden', true, 403 );
         header( 'Status: 403 Forbidden' );
         header( 'Cache-Control: no-store, max-age=0' );
         header( 'Pragma: no-cache' );
