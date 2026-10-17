@@ -130,6 +130,28 @@ class eZWordToImageOperatorDesignThemeTest extends PHPUnit\Framework\TestCase
                            $this->render() );
     }
 
+    /**
+     * icon_info keeps its answer per operator instance. A persistent worker (Velocity) keeps the template, and so the
+     * operator, from one request to the next, and the UI switch changes the design within a session: the kept answer
+     * must be the one of the current theme list, not of the design the first request had.
+     */
+    public function testIconInfoFollowsADesignSwitchInTheSameTemplate()
+    {
+        $file = $this->dir . '/icon_info.tpl';
+        file_put_contents( $file, "{icon_info( 'class' ).theme}" );
+        eZTemplate::resetInstance();
+        $tpl = eZTemplate::factory();
+
+        $this->design( 'admin4' );
+        $this->assertSame( 'bootstrap-icons', $tpl->fetch( $file ) );
+
+        $this->design( 'admin3' );
+        $this->assertSame( 'crystal-admin', $tpl->fetch( $file ) );
+
+        $this->design( 'admin4' );
+        $this->assertSame( 'bootstrap-icons', $tpl->fetch( $file ) );
+    }
+
     private function design( $design )
     {
         eZINI::instance()->setVariable( 'DesignSettings', 'SiteDesign', $design );

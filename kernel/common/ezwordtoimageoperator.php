@@ -141,22 +141,31 @@ class eZWordToImageOperator
                 }
                 $type = $tpl->elementValue( $operatorParameters[0], $rootNamespace, $currentNamespace );
 
-                // Check if we have it cached
-                if ( isset( $this->IconInfo[$type] ) )
-                {
-                    $operatorValue = $this->IconInfo[$type];
-                    return;
-                }
-
                 $ini = eZINI::instance( 'icon.ini' );
-                $defaultRepository = $ini->variable( 'IconSettings', 'Repository' );
-                $extensions = $ini->hasVariable( 'ExtensionSettings', 'IconExtensions' ) ? $ini->variable( 'ExtensionSettings', 'IconExtensions' ) : array();
-
                 $groups = array( 'mimetype' => 'MimeIcons',
                                  'class' => 'ClassIcons',
                                  'classgroup' => 'ClassGroupIcons',
                                  'action' => 'ActionIcons',
                                  'icon' => 'Icons' );
+                if ( !isset( $groups[$type] ) )
+                {
+                    $tpl->warning( $operatorName, "Unknown icon type '$type'" );
+                    return;
+                }
+
+                // Check if we have it cached. The key holds the theme list, which follows the design
+                // (DesignTheme[]), so a persistent worker or a design switch never reuses the info of another theme.
+                $availableThemes = self::themeList( $ini, $groups[$type] );
+                $cacheKey = $type . '|' . implode( ',', $availableThemes );
+                if ( isset( $this->IconInfo[$cacheKey] ) )
+                {
+                    $operatorValue = $this->IconInfo[$cacheKey];
+                    return;
+                }
+
+                $defaultRepository = $ini->variable( 'IconSettings', 'Repository' );
+                $extensions = $ini->hasVariable( 'ExtensionSettings', 'IconExtensions' ) ? $ini->variable( 'ExtensionSettings', 'IconExtensions' ) : array();
+
                 $configGroup = $groups[$type];
                 $mapNames = array( 'mimetype' => 'MimeMap',
                                    'class' => 'ClassMap',
@@ -164,9 +173,6 @@ class eZWordToImageOperator
                                    'action' => 'ActionMap',
                                    'icon' => 'IconMap' );
                 $mapName = $mapNames[$type];
-
-                // Build the list of themes to search
-                $availableThemes = self::themeList( $ini, $configGroup );
 
                 // Build the list of repositories to search
                 $siteDir = eZSys::siteDir();
@@ -334,7 +340,7 @@ class eZWordToImageOperator
                                        'default' => $default );
                 }
 
-                $this->IconInfo[$type] = $iconInfo;
+                $this->IconInfo[$cacheKey] = $iconInfo;
                 $operatorValue = $iconInfo;
             } break;
 
