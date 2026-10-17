@@ -70858,5 +70858,44 @@ You will need to change the class of the node by using the swap functionality.</
         <source>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Grouped by category and rule.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grouped by the reason of the answer.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grouped by the kind of reason.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grouped by the request path.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Levels: %levels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/logviewer</name>
+    <message>
+        <source>Not found requests (404)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security (request classifier)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web server access log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web server error log</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

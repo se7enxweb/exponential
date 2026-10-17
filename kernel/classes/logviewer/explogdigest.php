@@ -10,6 +10,8 @@
  *   digest nor the search link it builds ever carries an e-mail or IP address, a token or a secret setting.
  * - Normalized: numbers, hexadecimal values, ids, quoted strings, paths and error references become placeholders, so
  *   "node 12 not found" and "node 13 not found" are one group.
+ * - Per log ([DigestSettings] LogLevels[<key>], GroupBy[<key>]): other levels (404.log lists its notices) and another
+ *   grouping (security.log by <category>/<rule>, 404.log by the reason of the not found answer); see groupText().
  * - Known: a group's id (the first 12 hexadecimal digits of the sha1 of its normalized text) can be marked as known per
  *   user (the preference admin_logviewer_known, a comma list); known groups are left out unless asked for.
  *
@@ -71,6 +73,91 @@ class expLogDigest
     {
         $levels = array_values( array_intersect( expLogParser::$levels, $this->config->lst( 'DigestSettings', 'Levels' ) ) );
         return $levels ? $levels : self::$defaults['Levels'];
+    }
+
+    /** The ways a digest groups a log's entries ([DigestSettings] GroupBy[<key>]) */
+    const GROUPINGS = array( 'message', 'category-rule', 'reason', 'reason-kind', 'uri' );
+
+    /**
+     * The levels a digest lists for one log: [DigestSettings] LogLevels[<key>] (a comma list), else levels().
+     *
+     * @param string $key
+     * @return string[]
+     */
+    public function levelsFor( $key )
+    {
+        $perLog = $this->config->hash( 'DigestSettings', 'LogLevels' );
+        if ( isset( $perLog[$key] ) )
+        {
+            $levels = array_values( array_intersect( expLogParser::$levels, array_map( 'trim', explode( ',', $perLog[$key] ) ) ) );
+            if ( $levels )
+                return $levels;
+        }
+        return $this->levels();
+    }
+
+    /**
+     * How a digest groups the entries of one log: [DigestSettings] GroupBy[<key>], one of GROUPINGS; message by default.
+     *
+     * @param string $key
+     * @return string
+     */
+    public function groupingFor( $key )
+    {
+        $groupBy = $this->config->hash( 'DigestSettings', 'GroupBy' );
+        $mode = isset( $groupBy[$key] ) ? strtolower( $groupBy[$key] ) : 'message';
+        return in_array( $mode, self::GROUPINGS, true ) ? $mode : 'message';
+    }
+
+    /**
+     * The text an entry is grouped by, from its masked headline: the normalized message, or the field the grouping
+     * names (doc/features/6.0/request-logs.md). An entry without that field is grouped by its message. The text is
+     * also what the search literal of the group is taken from, so it is a run of the line as it is written. Pure.
+     *
+     *   category-rule  "probe/wp-login" (security.log: the first word, <category>/<rule>)
+     *   reason         "reason=module:no-such-page", "reason=node:#" (404.log: ids, numbers and paths set aside)
+     *   reason-kind    "reason=module:"
+     *   uri            "GET /blog/#" (the method and the path, without the query; numbers set aside)
+     *
+     * @param string $mode one of GROUPINGS
+     * @param string $masked the masked headline of the entry
+     * @return string
+     */
+    public static function groupText( $mode, $masked )
+    {
+        $masked = (string)$masked;
+        switch ( $mode )
+        {
+            case 'category-rule':
+                if ( preg_match( '#^([a-z0-9_\-]+/[A-Za-z0-9_.:\-]+)(?:\s|$)#', $masked, $m ) )
+                    return $m[1];
+                break;
+            case 'reason':
+            case 'reason-kind':
+                if ( preg_match( '/(?:^|\s)reason=([a-z]+):(\S*)/', $masked, $m ) )
+                {
+                    if ( $mode === 'reason-kind' )
+                        return 'reason=' . $m[1] . ':';
+                    $detail = preg_replace( '/\d+/', '#', $m[2] );
+                    if ( substr_count( $detail, '/' ) >= 2 && $m[1] === 'urlalias' )
+                        $detail = '<path>';
+                    if ( strlen( $detail ) > 120 )
+                        $detail = substr( $detail, 0, 120 );
+                    return 'reason=' . $m[1] . ':' . $detail;
+                }
+                break;
+            case 'uri':
+                if ( preg_match( '#(?:^|\s)([A-Z]{3,10}) (/\S*)#', $masked, $m ) )
+                {
+                    $path = preg_replace( '/[?#].*$/', '', $m[2] );
+                    $path = preg_replace( '/\d+/', '#', $path );
+                    if ( strlen( $path ) > 160 )
+                        $path = substr( $path, 0, 160 );
+                    return $m[1] . ' ' . $path;
+                }
+                break;
+        }
+        return self::normalize( $masked );
     }
 
     /**
@@ -205,15 +292,18 @@ class expLogDigest
      * @param bool $showKnown list the known groups too (marked known)
      * @return array key, id, label, groups (each: id, key, level, text (normalized, masked), sample (the first line of the
      *               newest entry, masked), literal, count, first, last (Unix times), last_offset, known), total (entries
-     *               counted), hidden (known groups left out), scanned (bytes), stopped (bool: the byte cap was reached)
+     *               counted), hidden (known groups left out), scanned (bytes), stopped (bool: the byte cap was reached),
+     *               grouping (groupingFor()), levels (levelsFor())
      */
     public function digestFile( array $file, $since, array $known = array(), $showKnown = false )
     {
         $key = isset( $file['key'] ) ? (string)$file['key'] : (string)$file['id'];
         $out = array( 'key' => $key, 'id' => $file['id'], 'label' => isset( $file['label'] ) ? $file['label'] : $file['name'],
-                      'groups' => array(), 'total' => 0, 'hidden' => 0, 'scanned' => 0, 'stopped' => false );
+                      'groups' => array(), 'total' => 0, 'hidden' => 0, 'scanned' => 0, 'stopped' => false,
+                      'grouping' => $this->groupingFor( $key ), 'levels' => $this->levelsFor( $key ) );
         $cap = $this->setting( 'MaxBytesPerFile' );
-        $levels = $this->levels();
+        $levels = $out['levels'];
+        $grouping = $out['grouping'];
         $knownSet = array_flip( $known );
         $groups = array();
         $handle = !empty( $file['gz'] ) ? @gzopen( $file['path'], 'rb' ) : @fopen( $file['path'], 'rb' );
@@ -225,7 +315,7 @@ class expLogDigest
         $pending = '';
         $pendingStart = $offset;
         $pos = $offset;
-        $flush = function ( $text, $start ) use ( &$groups, &$out, $file, $key, $since, $levels )
+        $flush = function ( $text, $start ) use ( &$groups, &$out, $file, $key, $since, $levels, $grouping )
         {
             if ( $text === '' )
                 return;
@@ -234,7 +324,7 @@ class expLogDigest
                 if ( $entry['cont'] || $entry['time'] === null || $entry['time'] < $since || !in_array( $entry['level'], $levels, true ) )
                     continue;
                 $masked = $this->redactor->text( self::headline( $entry['message'] ) );
-                $normalized = self::normalize( $masked );
+                $normalized = $grouping === 'message' ? self::normalize( $masked ) : self::groupText( $grouping, $masked );
                 if ( $normalized === '' )
                     continue;
                 $id = self::groupId( $key, $normalized );
@@ -242,7 +332,9 @@ class expLogDigest
                 if ( !isset( $groups[$id] ) )
                     $groups[$id] = array( 'id' => $id, 'key' => $key, 'level' => $entry['level'], 'text' => $normalized,
                                           'sample' => '',
-                                          'literal' => self::literalOf( self::normalize( $this->redactor->text( self::searchLine( $entry['message'] ) ) ) ),
+                                          'literal' => $grouping === 'message'
+                                                       ? self::literalOf( self::normalize( $this->redactor->text( self::searchLine( $entry['message'] ) ) ) )
+                                                       : self::literalOf( $normalized ),
                                           'count' => 0,
                                           'first' => $entry['time'], 'last' => $entry['time'], 'last_offset' => $entry['offset'], 'known' => false );
                 $g =& $groups[$id];

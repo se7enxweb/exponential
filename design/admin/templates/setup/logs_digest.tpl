@@ -2,7 +2,7 @@
    distinct errors and warnings of the last hours, normalized and counted, most frequent first, each linked to the log's
    view filtered to it and to its newest entry; a group can be marked known (hidden for this user) and listed again.
    Variables: digest_logs (key, id, label, groups (id, level, text, sample, literal, count, first, last, known, link,
-   entry_link), total, hidden, scanned, stopped, view_link), digest_key, digest_hours, digest_hour_choices,
+   entry_link), total, hidden, scanned, stopped, view_link, grouping, levels), digest_key, digest_hours, digest_hour_choices,
    digest_since, digest_show_known, digest_hidden, digest_known_count, digest_levels, digest_self, digest_toggle_known,
    digest_base, digest_token_field, digest_token.
 
@@ -43,6 +43,10 @@
         <h2 id="digest-{$digest_log.key|wash}"><a href={$digest_log.view_link|ezurl}>{$digest_log.label|wash}</a></h2>
         <span class="a4-meta">{'%count entries in %groups messages'|i18n( 'design/admin/setup/logs',, hash( '%count', $digest_log.total, '%groups', $digest_log.groups|count ) )|wash}</span>
     </header>
+    {if and( is_set( $digest_log.grouping ), $digest_log.grouping|ne( 'message' ) )}
+    <p class="a4-meta">{switch match=$digest_log.grouping}{case match='category-rule'}{'Grouped by category and rule.'|i18n( 'design/admin/setup/logs' )}{/case}{case match='reason'}{'Grouped by the reason of the answer.'|i18n( 'design/admin/setup/logs' )}{/case}{case match='reason-kind'}{'Grouped by the kind of reason.'|i18n( 'design/admin/setup/logs' )}{/case}{case}{'Grouped by the request path.'|i18n( 'design/admin/setup/logs' )}{/case}{/switch}
+    {'Levels: %levels.'|i18n( 'design/admin/setup/logs',, hash( '%levels', $digest_log.levels|implode( ', ' ) ) )|wash}</p>
+    {/if}
     {if $digest_log.stopped}
     <p class="a4-notice is-warn" role="status">{'Only the first %size of the window were read; the file holds more.'|i18n( 'design/admin/setup/logs',, hash( '%size', $digest_log.scanned|si( byte ) ) )|wash}</p>
     {/if}

@@ -71066,5 +71066,44 @@ You will need to change the class of the node by using the swap functionality.</
         <source>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</source>
         <translation>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</translation>
     </message>
+    <message>
+        <source>Grouped by category and rule.</source>
+        <translation>Grouped by category and rule.</translation>
+    </message>
+    <message>
+        <source>Grouped by the reason of the answer.</source>
+        <translation>Grouped by the reason of the answer.</translation>
+    </message>
+    <message>
+        <source>Grouped by the kind of reason.</source>
+        <translation>Grouped by the kind of reason.</translation>
+    </message>
+    <message>
+        <source>Grouped by the request path.</source>
+        <translation>Grouped by the request path.</translation>
+    </message>
+    <message>
+        <source>Levels: %levels.</source>
+        <translation>Levels: %levels.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/logviewer</name>
+    <message>
+        <source>Not found requests (404)</source>
+        <translation>Not found requests (404)</translation>
+    </message>
+    <message>
+        <source>Security (request classifier)</source>
+        <translation>Security (request classifier)</translation>
+    </message>
+    <message>
+        <source>Web server access log</source>
+        <translation>Web server access log</translation>
+    </message>
+    <message>
+        <source>Web server error log</source>
+        <translation>Web server error log</translation>
+    </message>
 </context>
 </TS>

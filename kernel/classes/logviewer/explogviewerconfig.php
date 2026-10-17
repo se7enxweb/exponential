@@ -30,15 +30,16 @@ class expLogViewerConfig
             'FilePatterns' => array( '*.log', '*.log.[0-9]', '*.log.[0-9][0-9]', '*.log.[0-9].gz', '*.log.[0-9][0-9].gz', '*.log.gz' ),
             'ExcludePatterns' => array(),
             'KernelLogs' => array( 'error.log', 'warning.log', 'notice.log', 'debug.log', 'strict.log', 'deprecated.log', 'auth.log',
-                                   'cronjob*.log', 'storage.log', 'setup.log', 'mail.log', 'trashpurge.log' ),
+                                   'cronjob*.log', 'storage.log', 'setup.log', 'mail.log', 'trashpurge.log', '404.log', 'security.log' ),
             'DefaultFile' => 'var/log/error.log',
             'DefaultKey' => 'error',
             'LogList' => array( 'webserver-access', 'webserver-error' ),
             'LogPath' => array(),
-            'LogLabel' => array( 'webserver-access' => 'Web server access log', 'webserver-error' => 'Web server error log' ),
+            'LogLabel' => array( 'webserver-access' => 'Web server access log', 'webserver-error' => 'Web server error log',
+                                 '404' => 'Not found requests (404)', 'security' => 'Security (request classifier)' ),
             'LogGroup' => array(),
             'FileLevels' => array( 'error.log*;error', '*error*.log*;error', 'warning.log*;warning', 'strict.log*;warning',
-                                   'deprecated.log*;notice', 'notice.log*;notice', 'debug.log*;debug' ),
+                                   'deprecated.log*;notice', 'notice.log*;notice', 'debug.log*;debug', '404.log*;notice', 'security.log*;warning' ),
         ),
         'TailSettings' => array(
             'InitialBytes' => 65536, 'MaxBytesPerPoll' => 262144, 'PollInterval' => 1000, 'MaxPollInterval' => 15000,
@@ -59,6 +60,12 @@ class expLogViewerConfig
         ),
         'RateLimitSettings' => array( 'Requests' => 120, 'Window' => 60 ),
         'ViewerAuditSettings' => array( 'ReadInterval' => 600 ),
+        'HealthSettings' => array( 'DiskBudget' => 268435456 ),
+        'DigestSettings' => array(
+            'Hours' => 24, 'MaxMessages' => 50, 'MaxBytesPerFile' => 8388608, 'Levels' => array( 'error', 'warning' ),
+            'LogLevels' => array( '404' => 'error,warning,notice' ),
+            'GroupBy' => array( '404' => 'reason', 'security' => 'category-rule' ),
+        ),
     );
 
     /** The bounds of the numeric settings: group/variable => array( min, max ) */
@@ -215,7 +222,9 @@ class expLogViewerConfig
     }
 
     /**
-     * A setting with keys (LogPath[<key>]=...): key => value, the non-empty scalar ones.
+     * A setting with keys (LogPath[<key>]=...): key => value, the non-empty scalar ones. A key of digits only
+     * (LogLabel[404], the key of var/log/404.log) is an integer in a PHP array, so it is taken as well; an entry
+     * without a key (LogLabel[]=x) is not, since it is the position 0, 1 ... of a list.
      *
      * @param string $group
      * @param string $name
@@ -225,10 +234,17 @@ class expLogViewerConfig
     {
         $value = $this->get( $group, $name );
         $out = array();
-        if ( is_array( $value ) )
-            foreach ( $value as $k => $v )
-                if ( is_string( $k ) && is_scalar( $v ) && trim( (string)$v ) !== '' )
-                    $out[$k] = trim( (string)$v );
+        if ( !is_array( $value ) )
+            return $out;
+        $position = 0;
+        foreach ( $value as $k => $v )
+        {
+            // a list entry: the keys 0, 1, 2 ... in order (a real key of digits never runs from 0 like this)
+            if ( is_int( $k ) && $k === $position++ )
+                continue;
+            if ( is_scalar( $v ) && trim( (string)$v ) !== '' )
+                $out[(string)$k] = trim( (string)$v );
+        }
         return $out;
     }
 

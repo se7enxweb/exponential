@@ -78006,5 +78006,44 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>One %format file of every log, with a MANIFEST.txt of sizes, last writes and checksums. Masked as the viewer shows them; recorded in the audit; at most %cap.</source>
         <translation>Eine %format-Datei aller Logs, mit einer MANIFEST.txt der Größen, letzten Schreibzeiten und Prüfsummen. Maskiert wie im Viewer; im Audit festgehalten; höchstens %cap.</translation>
     </message>
+    <message>
+        <source>Grouped by category and rule.</source>
+        <translation>Gruppiert nach Kategorie und Regel.</translation>
+    </message>
+    <message>
+        <source>Grouped by the reason of the answer.</source>
+        <translation>Gruppiert nach dem Grund der Antwort.</translation>
+    </message>
+    <message>
+        <source>Grouped by the kind of reason.</source>
+        <translation>Gruppiert nach der Art des Grundes.</translation>
+    </message>
+    <message>
+        <source>Grouped by the request path.</source>
+        <translation>Gruppiert nach dem Anfragepfad.</translation>
+    </message>
+    <message>
+        <source>Levels: %levels.</source>
+        <translation>Stufen: %levels.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/logviewer</name>
+    <message>
+        <source>Not found requests (404)</source>
+        <translation>Nicht gefundene Anfragen (404)</translation>
+    </message>
+    <message>
+        <source>Security (request classifier)</source>
+        <translation>Sicherheit (Anfrageklassifizierung)</translation>
+    </message>
+    <message>
+        <source>Web server access log</source>
+        <translation>Zugriffsprotokoll des Webservers</translation>
+    </message>
+    <message>
+        <source>Web server error log</source>
+        <translation>Fehlerprotokoll des Webservers</translation>
+    </message>
 </context>
 </TS>

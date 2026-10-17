@@ -47,6 +47,9 @@ class expLogFileLocator
     /** @var array|null the listing, this instance (listFiles()) */
     protected $listing = null;
 
+    /** @var array|null LogLabel[] by key, this instance (labelOf()) */
+    protected $labels = null;
+
     /**
      * @param expLogViewerConfig $config
      * @param string|null $logDir {log_dir}; null: eZDebug's log directory (var/log without eZDebug)
@@ -239,12 +242,47 @@ class expLogFileLocator
             $group = self::GROUP_SITE;
         else
             $group = self::GROUP_EXTENSIONS;
+        $key = self::keyFor( $dirID, $base );
+        $label = $ini !== null ? $ini['label'] : $this->labelOf( $key );
         return array( 'id' => ( $dirID !== '' ? $dirID . '/' : '' ) . $name, 'name' => $name, 'dir' => $dirID, 'group' => $group,
                       'base' => $base, 'base_id' => ( $dirID !== '' ? $dirID . '/' : '' ) . $base,
                       'rotation' => $rotation, 'gz' => $gz, 'archive' => $group === self::GROUP_ARCHIVES,
-                      'level' => $this->fileLevel( $name ), 'key' => self::keyFor( $dirID, $base ),
-                      'label' => $ini !== null && $ini['label'] !== '' ? $ini['label'] : $base,
+                      'level' => $this->fileLevel( $name ), 'key' => $key,
+                      'label' => $label !== '' ? self::translateLabel( $label ) : $base,
+                      'labeled' => $label !== '',
                       'configured' => $ini !== null );
+    }
+
+    /**
+     * The label of a log of the log directories by its key ([LogViewerSettings] LogLabel[<key>], e.g. LogLabel[404]
+     * for var/log/404.log), or ''.
+     *
+     * @param string $key
+     * @return string
+     */
+    public function labelOf( $key )
+    {
+        if ( $this->labels === null )
+            $this->labels = $this->config->hash( 'LogViewerSettings', 'LogLabel' );
+        return isset( $this->labels[$key] ) ? (string)$this->labels[$key] : '';
+    }
+
+    /**
+     * A label of the settings in the language of the administration (context kernel/logviewer), when the kernel's
+     * translation system is running; the label itself otherwise (tests, the command line before it starts).
+     *
+     * @param string $label
+     * @return string
+     */
+    public static function translateLabel( $label )
+    {
+        if ( class_exists( 'ezpI18n', false ) && class_exists( 'eZTranslatorManager', false ) )
+        {
+            $translated = ezpI18n::tr( 'kernel/logviewer', $label );
+            if ( is_string( $translated ) && $translated !== '' )
+                return $translated;
+        }
+        return $label;
     }
 
     /**

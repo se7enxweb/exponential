@@ -125,7 +125,7 @@
         {if $log_list|count}
         <optgroup label="{$log_group_names[ $log_group ]|wash}">
         {foreach $log_list as $log_item}
-            <option value="{$log_item.id|wash}" data-href={concat( 'setup/logs/view/', $log_item.key, cond( $log_item.rotation|ne( 0 ), concat( '/(archive)/', $log_item.rotation ), '' ), cond( $log_unmasked, '/(unmask)/1', '' ) )|ezurl}{if $log_item.id|eq( $log_file.id )} selected="selected"{/if}>{if $log_item.configured}{$log_item.label|wash} ({$log_item.name|wash}){else}{$log_item.id|wash}{/if}</option>
+            <option value="{$log_item.id|wash}" data-href={concat( 'setup/logs/view/', $log_item.key, cond( $log_item.rotation|ne( 0 ), concat( '/(archive)/', $log_item.rotation ), '' ), cond( $log_unmasked, '/(unmask)/1', '' ) )|ezurl}{if $log_item.id|eq( $log_file.id )} selected="selected"{/if}>{if $log_item.labeled}{$log_item.label|wash} ({$log_item.name|wash}){else}{$log_item.id|wash}{/if}</option>
         {/foreach}
         </optgroup>
         {/if}

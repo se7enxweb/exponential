@@ -280,7 +280,8 @@ class expLogViewer
                       'archive' => (bool)$file['archive'], 'gz' => (bool)$file['gz'], 'size' => (int)$file['size'],
                       'mtime' => (int)$file['mtime'], 'ino' => (int)$file['ino'], 'level' => $file['level'],
                       'key' => isset( $file['key'] ) ? $file['key'] : '', 'rotation' => isset( $file['rotation'] ) ? (int)$file['rotation'] : 0,
-                      'label' => isset( $file['label'] ) ? $file['label'] : $file['name'], 'configured' => !empty( $file['configured'] ) );
+                      'label' => isset( $file['label'] ) ? $file['label'] : $file['name'], 'labeled' => !empty( $file['labeled'] ),
+                      'configured' => !empty( $file['configured'] ) );
     }
 
     /**

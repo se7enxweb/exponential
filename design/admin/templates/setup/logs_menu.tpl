@@ -2,7 +2,7 @@
    the Setup menu, then every log the viewer may open, grouped Kernel, Site, Extensions, Web server and Rotated
    archives, each with its size, its last change and the lines a minute it gains (from fetch( 'setup', 'log_files' ),
    which is empty for a user without setup/logs). Each link is the log's permalink, setup/logs/view/<key>[/(archive)/N].
-   The open file's link carries aria-current="page". A log configured by key shows its label, with the file name below.
+   The open file's link carries aria-current="page". A log with a label (LogLabel[<key>]) shows it, with the file name below.
 
    The same file is in design/admin and design/admin4. Styles: stylesheets/modules/setup.css (.a4-setup-lognav). *}
 {include uri='design:parts/setup/menu.tpl'}
@@ -50,8 +50,8 @@
                 {else}
                 <span class="disabled a4-setup-lognav-link" title="{'The web server may not read this file.'|i18n( 'design/admin/setup/logs' )|wash}">
                 {/if}
-                    <span class="a4-setup-lognav-name">{if and( $lognav_file.configured, $lognav_file.archive|not )}{$lognav_file.label|wash}{else}{$lognav_file.name|wash}{/if}</span>
-                    {if and( $lognav_file.configured, $lognav_file.archive|not )}<span class="a4-setup-lognav-dir">{$lognav_file.name|wash}</span>
+                    <span class="a4-setup-lognav-name">{if and( $lognav_file.labeled, $lognav_file.archive|not )}{$lognav_file.label|wash}{else}{$lognav_file.name|wash}{/if}</span>
+                    {if and( $lognav_file.labeled, $lognav_file.archive|not )}<span class="a4-setup-lognav-dir">{$lognav_file.name|wash}</span>
                     {elseif and( $lognav_file.configured|not, or( $lognav_group|eq( 'site' ), $lognav_group|eq( 'archives' ) ) )}<span class="a4-setup-lognav-dir">{$lognav_file.dir|wash}</span>{/if}
                     <span class="a4-setup-lognav-meta">
                         <span>{$lognav_file.size|si( byte )}</span>

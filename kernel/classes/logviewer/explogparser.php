@@ -6,6 +6,8 @@
  *  - eZDebug:  [ Oct 17 2026 01:54:58 ] [ip] [siteaccess] [url or command line] Label:
  *              (the message follows on the next lines; older files have no siteaccess and url)
  *  - eZLog:    [ Oct 17 2026 01:54:58 ][ siteaccess ][ url ] message   (or [ date ] message)
+ *  - the request logs (404.log, security.log): [ Oct 17 2026 01:54:58 ] [ip] 404 GET /uri siteaccess=site reason=...
+ *              or [ ... ] [ip] probe/wp-login confidence=high 404 GET /uri siteaccess=site ... (requestHeader())
  *  - ISO:      2026-10-17T01:54:58+02:00 message, or [2026-10-17 01:54:58] message
  *  - JSON:     one object per line with time / ts / timestamp, level, message / msg, ip, url / uri
  * Any other line continues the entry before it (a message over several lines, a stack trace); a chunk that starts
@@ -30,6 +32,12 @@ class expLogParser
 
     /** eZLog: date, then optionally siteaccess and request */
     const RE_LOG = '/^\[ ([A-Z][a-z]{2} \d{1,2} \d{4} \d{2}:\d{2}:\d{2}) \](?:\[ ([^\]]*?) \]\[ ((?:[^\]]|\](?!\s))*?) \])? ?(.*)$/s';
+
+    /** 404.log, after the prefix: <status> <method> <uri> siteaccess=<sa> reason=<kind>:<detail> node=... referrer=... ua=... */
+    const RE_NOT_FOUND = '/^(4\d\d) (\S+) (\S+) siteaccess=(\S*) reason=(\S+)/';
+
+    /** security.log, after the prefix: <category>/<rule> confidence=<c> <status|-> <method> <uri> siteaccess=<sa> ... */
+    const RE_SECURITY = '#^([a-z0-9_\-]+)/([A-Za-z0-9_.:\-]+) confidence=(low|medium|high) (\d{3}|-) (\S+) (\S+) siteaccess=(\S*)#';
 
     /** ISO 8601 or SQL time at the start, optionally in brackets */
     const RE_ISO = '/^\[?(\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}(?:[.,]\d{1,6})?(?:Z|[+\-]\d{2}:?\d{2})?)\]?\s*(.*)$/s';
@@ -93,9 +101,15 @@ class expLogParser
         if ( $line === '' )
             return null;
         if ( $line[0] === '[' && preg_match( self::RE_DEBUG, $line, $m ) )
-            return array( 'time_text' => $m[1], 'time' => self::time( $m[1] ), 'ip' => $m[2],
-                          'siteaccess' => isset( $m[3] ) ? $m[3] : '', 'url' => isset( $m[4] ) ? $m[4] : '',
-                          'message' => isset( $m[5] ) ? $m[5] : '', 'format' => 'debug' );
+        {
+            $header = array( 'time_text' => $m[1], 'time' => self::time( $m[1] ), 'ip' => $m[2],
+                             'siteaccess' => isset( $m[3] ) ? $m[3] : '', 'url' => isset( $m[4] ) ? $m[4] : '',
+                             'message' => isset( $m[5] ) ? $m[5] : '', 'format' => 'debug' );
+            // the request logs (404.log, security.log) name no siteaccess or request in brackets: they are fields
+            if ( $header['siteaccess'] === '' && $header['url'] === '' && $header['message'] !== '' )
+                $header = self::requestHeader( $header );
+            return $header;
+        }
         if ( $line[0] === '[' && preg_match( self::RE_LOG, $line, $m ) )
             return array( 'time_text' => $m[1], 'time' => self::time( $m[1] ), 'ip' => '',
                           'siteaccess' => isset( $m[2] ) ? $m[2] : '', 'url' => isset( $m[3] ) ? $m[3] : '',
@@ -127,6 +141,40 @@ class expLogParser
             return array( 'time_text' => $m[1], 'time' => self::time( $m[1] ), 'ip' => '', 'siteaccess' => '', 'url' => '',
                           'message' => $m[2], 'format' => 'iso' );
         return null;
+    }
+
+    /**
+     * The fields of a line of the request logs (doc/features/6.0/request-logs.md), when the message after the eZLog
+     * prefix is one: the request (url), siteaccess, status, the reason of a not found request or the category and
+     * rule of a security one (source). Any other message is left as it is. Pure.
+     *
+     * @param array $header a header of the eZDebug / eZLog format with neither siteaccess nor request
+     * @return array
+     */
+    public static function requestHeader( array $header )
+    {
+        $message = (string)$header['message'];
+        if ( preg_match( self::RE_SECURITY, $message, $m ) )
+        {
+            $header['format'] = 'security';
+            $header['category'] = $m[1];
+            $header['rule'] = $m[2];
+            $header['confidence'] = $m[3];
+            $header['status'] = $m[4] === '-' ? null : (int)$m[4];
+            $header['url'] = $m[6];
+            $header['siteaccess'] = $m[7];
+            $header['source'] = $m[1] . '/' . $m[2];
+        }
+        else if ( preg_match( self::RE_NOT_FOUND, $message, $m ) )
+        {
+            $header['format'] = 'notfound';
+            $header['status'] = (int)$m[1];
+            $header['url'] = $m[3];
+            $header['siteaccess'] = $m[4];
+            $header['reason'] = $m[5];
+            $header['source'] = (string)$m[1];
+        }
+        return $header;
     }
 
     /**
@@ -220,6 +268,9 @@ class expLogParser
      */
     public static function source( array $header )
     {
+        // a request log's line names it: the status (404.log) or <category>/<rule> (security.log)
+        if ( isset( $header['source'] ) && is_string( $header['source'] ) )
+            return $header['source'];
         $message = trim( (string)$header['message'] );
         if ( $message !== '' && preg_match( '/^(?:(?:Error|Warning|Notice|Debug|Strict|Deprecated)\s*(?:\(\w+\))?\s*:\s*)?([A-Za-z_][\w\\\\\/.:\-]{0,80}?)\s*(?::\s*$|::|\s+-\s|:\s)/', $message, $m ) )
             return rtrim( $m[1], ':' );
