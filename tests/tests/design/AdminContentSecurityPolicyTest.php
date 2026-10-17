@@ -12,7 +12,9 @@
  *   templates/ and override/templates/. Active are the extensions of site.ini [ExtensionSettings] ActiveExtensions[]
  *   with settings/override, and for every siteaccess whose SiteDesign is admin4 or admin4l also its
  *   ActiveAccessExtensions[]; a checkout without settings/override (as distributed) counts every extension it
- *   carries. Template comments {* ... *} are not read; a <script> with a src, a JSON data block and a <template>
+ *   carries. Only the extensions this repository ships (SHIPPED_EXTENSIONS) are checked; installed extensions of
+ *   their own repositories only with CSP_ALL_EXTENSIONS=1 (an audit of an installation). Template comments
+ *   {* ... *} are not read; a <script> with a src, a JSON data block and a <template>
  *   are fine. EXCEPTIONS are permanent and say why; ALLOWLIST (core templates) and EXTENSION_ALLOWLIST (per
  *   extension, with the reason) hold what is still to be moved and only shrink: a listed file with fewer findings
  *   than listed, or no longer rendered, fails until its entry is lowered or removed.
@@ -77,7 +79,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         'design/standard/templates/shop/orderreceipt_style.tpl' => array( 'styleblock' => 1 ),
     );
 
-    /** The extensions the distribution carries: an allowlisted one missing from the checkout fails under CI=1 */
+    /** The extensions this repository ships (share/filelist.md5): checked always; an allowlisted one missing fails under CI=1 */
     const SHIPPED_EXTENSIONS = array( 'expservices', 'ezformtoken', 'ezjscore', 'ezoe' );
 
     /**
@@ -222,6 +224,20 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * True when the templates of an extension are checked: the extensions this repository ships (SHIPPED_EXTENSIONS,
+     * the ones share/filelist.md5 lists). Extensions installed beside them come from repositories of their own and
+     * are checked there, so their state cannot fail this repository's tests. CSP_ALL_EXTENSIONS=1 checks every
+     * extension of the checkout, to audit an installation:
+     *   CSP_ALL_EXTENSIONS=1 php vendor/bin/phpunit tests/tests/design/AdminContentSecurityPolicyTest.php
+     */
+    public static function checkedExtension( $name )
+    {
+        if ( !self::hasExtension( $name ) )
+            return false;
+        return getenv( 'CSP_ALL_EXTENSIONS' ) ? true : in_array( $name, self::SHIPPED_EXTENSIONS, true );
+    }
+
+    /**
      * What an administration renders with, label => array( active extensions in activation order, chain of designs ):
      * for every siteaccess whose SiteDesign is one of DESIGNS its own chain (SiteDesign, AdditionalSiteDesignList[],
      * StandardDesign) with the global extensions and its ActiveAccessExtensions[], and with the same extensions the
@@ -239,7 +255,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             foreach ( glob( "$root/extension/*", GLOB_ONLYDIR ) as $dir )
                 $global[] = basename( $dir );
         }
-        $global = array_values( array_unique( array_filter( $global, array( __CLASS__, 'hasExtension' ) ) ) );
+        $global = array_values( array_unique( array_filter( $global, array( __CLASS__, 'checkedExtension' ) ) ) );
 
         // the settings directories of every siteaccess: settings/siteaccess/<name> and those of the active extensions
         $siteAccessDirs = array();
@@ -260,7 +276,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             if ( !isset( self::DESIGNS[$siteDesign] ) )
                 continue;
             $access = self::iniList( $files, 'ExtensionSettings', 'ActiveAccessExtensions' );
-            $active = array_values( array_unique( array_merge( $global, array_filter( $access, array( __CLASS__, 'hasExtension' ) ) ) ) );
+            $active = array_values( array_unique( array_merge( $global, array_filter( $access, array( __CLASS__, 'checkedExtension' ) ) ) ) );
             $chain = array_merge( array( $siteDesign ), self::iniList( $files, 'DesignSettings', 'AdditionalSiteDesignList' ),
                                   array( (string)self::iniValue( $files, 'DesignSettings', 'StandardDesign' ) ) );
             $variants[$siteAccess] = array( $active, array_values( array_unique( array_filter( $chain ) ) ) );
@@ -289,7 +305,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             $files = array_merge( $files, self::iniFiles( "$root/extension/$extension/settings", 'design.ini' ) );
         $files = array_merge( $files, self::iniFiles( "$root/settings/override", 'design.ini' ) );
         $names = array_reverse( self::iniList( $files, 'ExtensionSettings', 'DesignExtensions' ) );
-        return array_values( array_unique( array_filter( $names, array( __CLASS__, 'hasExtension' ) ) ) );
+        return array_values( array_unique( array_filter( $names, array( __CLASS__, 'checkedExtension' ) ) ) );
     }
 
     /** The design bases of a chain, as eZTemplateDesignResource::findDesignBase(): per design the extensions, then the core */
