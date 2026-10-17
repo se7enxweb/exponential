@@ -115,9 +115,5 @@
 </div>
 
 {if $has_active}
-<script type="text/javascript">
-{literal}
-(function () { setTimeout(function () { location.reload(); }, 5000); })();
-{/literal}
-</script>
+{ezscript( array( 'page/content_jobs.js' ) )}
 {/if}

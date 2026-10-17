@@ -93,11 +93,18 @@ class AdminJobTranslationsTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( 'admin', 'admin4' ) as $design )
         {
-            foreach ( array( 'children_detailed.tpl', 'contentstructuremenu/content_structure_menu_dynamic.tpl' ) as $path )
+            // the tree takes them as JSON (data-tree-params, no inline script), and so does admin4's sub-items table
+            // (data-conf); the classic design's sub-items table as a script value
+            $patterns = array(
+                'children_detailed.tpl' => $design === 'admin4'
+                    ? "/\\{foreach fetch\\( 'content', 'prioritized_languages' \\) as \\\$language\\}\\{set \\\$subitems_languages = \\\$subitems_languages\\|merge\\( hash\\( \\\$language\\.locale, \\\$language\\.name \\) \\)\\}/"
+                    : "/\\{foreach fetch\\( 'content', 'prioritized_languages' \\) as \\\$language\\}\\{\\*\\s*\\*\\}['\"]\\{\\\$language\\.locale\\|wash\\(javascript\\)\\}['\"]: ?['\"]\\{\\\$language\\.name\\|wash\\(javascript\\)\\}/",
+                'contentstructuremenu/content_structure_menu_dynamic.tpl' => "/\\{foreach fetch\\( 'content', 'prioritized_languages' \\) as \\\$language\\}\\{set \\\$tree_languages = \\\$tree_languages\\|merge\\( hash\\( \\\$language\\.locale, \\\$language\\.name \\) \\)\\}/",
+            );
+            foreach ( $patterns as $path => $pattern )
             {
                 $tpl = AdminFiles::read( self::root() . "/design/$design/templates/$path" );
-                $this->assertMatchesRegularExpression( "/\\{foreach fetch\\( 'content', 'prioritized_languages' \\) as \\\$language\\}\\{\\*\\s*\\*\\}['\"]\\{\\\$language\\.locale\\|wash\\(javascript\\)\\}['\"]: ?['\"]\\{\\\$language\\.name\\|wash\\(javascript\\)\\}/",
-                                                       $tpl, "$design/$path" );
+                $this->assertMatchesRegularExpression( $pattern, $tpl, "$design/$path" );
                 $this->assertStringNotContainsString( 'intl_language_name', $tpl, "$design/$path" );
             }
         }

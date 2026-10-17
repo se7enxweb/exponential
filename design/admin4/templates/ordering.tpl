@@ -44,16 +44,5 @@
 
 {* Highlight "SetSorting" button on change *}
 {literal}
-<script type="text/javascript">
-jQuery('#ezasi-sort-field, #ezasi-sort-order').each( function(){
-    jQuery( this ).attr( 'initial', this.value );
-} ).on('change', function(){
-    var t = $(this), o = $(this.id === 'ezasi-sort-field' ? '#ezasi-sort-order' : '#ezasi-sort-field'), s = $('#ezasi-sort-set');
-    // signal in gui if user needs to save this or not
-    if ( t.val() === t.attr('initial') && o.val() === o.attr('initial') )
-        s.removeClass('defaultbutton').addClass('button');
-    else
-        s.removeClass('button').addClass('defaultbutton');
-});
-</script>
+{ezscript( array( 'page/node_ordering.js' ) )}
 {/literal}

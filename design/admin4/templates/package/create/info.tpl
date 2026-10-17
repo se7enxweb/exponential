@@ -82,35 +82,7 @@
                 <span id="PackageLicenceDescription"{if $licence_selected.description|not} hidden{/if}>{$licence_selected.description|wash}<br /></span>
                 <span id="PackageLicenceLinkLine"{if $licence_selected.url|not} hidden{/if}>{'License text:'|i18n( 'design/admin/package' )} <a id="PackageLicenceLink" href="{$licence_selected.url|wash}" target="_blank" rel="noopener noreferrer">{$licence_selected.name|wash}</a></span>
             </p>
-            {literal}
-            <script type="text/javascript">
-            (function()
-            {
-                var select = document.getElementById( 'PackageLicence' ),
-                    link = document.getElementById( 'PackageLicenceLink' ),
-                    linkLine = document.getElementById( 'PackageLicenceLinkLine' ),
-                    description = document.getElementById( 'PackageLicenceDescription' );
-                if ( !select || !link )
-                    return;
-                function update()
-                {
-                    var option = select.options[select.selectedIndex];
-                    if ( !option )
-                        return;
-                    var url = option.getAttribute( 'data-url' ) || '',
-                        text = option.getAttribute( 'data-description' ) || '';
-                    link.href = url || '#';
-                    link.textContent = option.getAttribute( 'data-name' ) || option.value;
-                    linkLine.hidden = !url;
-                    description.firstChild.nodeValue = text;
-                    description.hidden = !text;
-                }
-                if ( !description.firstChild || description.firstChild.nodeType !== 3 )
-                    description.insertBefore( document.createTextNode( '' ), description.firstChild );
-                select.addEventListener( 'change', update );
-            })();
-            </script>
-            {/literal}
+            {ezscript( array( 'page/package_create_info.js' ) )}
             {else}
             <p class="a4-notice is-warn package-licence-none">{'No licenses are configured for packages. Add them to package.ini [LicenseSettings] LicenseList.'|i18n( 'design/admin/package' )}</p>
             {/if}

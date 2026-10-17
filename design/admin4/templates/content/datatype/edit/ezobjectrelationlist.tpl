@@ -197,8 +197,9 @@
                      <input type="text" name="attribute_{$attribute.id}_new_object_name" id="attribute_{$attribute.id}_new_object_name" />
                 </div>
                 <input class="button" type="button" value="{'Create New'|i18n( 'design/standard/content/datatype' )}" name="CustomActionButton[{$attribute.id}_new_object]"
-                       onclick="var divfield=document.getElementById('create_new_object_{$attribute.id}');divfield.hidden=false;
-                                var editfield=document.getElementById('attribute_{$attribute.id}_new_object_name');editfield.focus();this.style.display='none';return false;" />
+                       data-a4-reveal="create_new_object_{$attribute.id}" data-a4-reveal-focus="attribute_{$attribute.id}_new_object_name" />
+                {* the button shows the name field, focuses it and hides itself (page/content_objectrelationlist.js) *}
+                {ezscript( array( 'page/content_objectrelationlist.js' ) )}
            {/if}
         {/section}
 
@@ -219,7 +220,7 @@
             {if $attribute.content.relation_list}
                 <table class="list" cellspacing="0">
                 <tr class="bglight">
-                    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" onclick="ezjs_toggleCheckboxes( document.editform, '{$attribute_base}_selection[{$attribute.id}][]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+                    <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" data-a4-toggle-checkboxes="{$attribute_base}_selection[{$attribute.id}][]" data-a4-form="editform"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
                     <th scope="col">{'Name'|i18n( 'design/standard/content/datatype' )}</th>
                     <th scope="col">{'Type'|i18n( 'design/standard/content/datatype' )}</th>
                     <th scope="col">{'Section'|i18n( 'design/standard/content/datatype' )}</th>
@@ -344,7 +345,7 @@
         <table class="list{if $attribute.content.relation_list|not} hide{/if}" cellspacing="0">
         <thead>
         <tr>
-            <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" onclick="ezjs_toggleCheckboxes( document.editform, '{$attribute_base}_selection[{$attribute.id}][]' ); return false;"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
+            <th scope="col" class="tight"><button type="button" class="a4-icon-btn" title="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" aria-label="{'Invert selection.'|i18n( 'design/standard/content/datatype' )|wash}" data-a4-toggle-checkboxes="{$attribute_base}_selection[{$attribute.id}][]" data-a4-form="editform"><span class="a4-icon a4-bi-check2-square is-medium" aria-hidden="true"></span></button></th>
             <th scope="col">{'Name'|i18n( 'design/standard/content/datatype' )}</th>
             <th scope="col">{'Type'|i18n( 'design/standard/content/datatype' )}</th>
             <th scope="col">{'Section'|i18n( 'design/standard/content/datatype' )}</th>

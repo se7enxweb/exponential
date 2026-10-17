@@ -219,8 +219,8 @@ php bin/php/ezcache.php --clear-all</pre>
 <span class="a4-meta">{$wizard_target|wash}</span>
 
 <div class="a4-actions">
-    <button type="button" class="a4-btn a4-btn-small" id="ceOpenAll">{'Open all'|i18n( 'design/admin/setup/rad/content' )}</button>
-    <button type="button" class="a4-btn a4-btn-small" id="ceCloseAll">{'Close all'|i18n( 'design/admin/setup/rad/content' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="ceOpenAll" data-a4-wz-fold="open">{'Open all'|i18n( 'design/admin/setup/rad/content' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="ceCloseAll" data-a4-wz-fold="close">{'Close all'|i18n( 'design/admin/setup/rad/content' )}</button>
 </div>
 
 {foreach $wizard_files as $ce_file}
@@ -262,41 +262,4 @@ php bin/php/ezcache.php --clear-all</pre>
 </div>
 </form>
 
-{literal}
-<script type="text/javascript">
-( function () {
-    function fold( panel, open )
-    {
-        var collapsed = panel.className.indexOf( 'is-collapsed' ) !== -1;
-        if ( open === collapsed )
-        {
-            panel.className = open
-                ? panel.className.replace( / ?is-collapsed/, '' )
-                : panel.className + ' is-collapsed';
-        }
-        var toggle = panel.getElementsByTagName( 'span' )[0];
-        if ( toggle ) toggle.innerHTML = open ? '&minus;' : '+';
-    }
-
-    var divs = document.getElementsByTagName( 'div' ), files = [], i;
-    for ( i = 0; i < divs.length; i++ )
-        if ( divs[i].className.indexOf( 'a4-setup-wz-file' ) === 0 )
-            files.push( divs[i] );
-
-    for ( i = 0; i < files.length; i++ )
-        ( function ( panel ) {
-            var head = panel.getElementsByTagName( 'div' )[0];
-            if ( !head ) return;
-            head.onclick = function () {
-                fold( panel, panel.className.indexOf( 'is-collapsed' ) !== -1 );
-                return false;
-            };
-        } )( files[i] );
-
-    function every( open ) { for ( var j = 0; j < files.length; j++ ) fold( files[j], open ); }
-    var openAll = document.getElementById( 'ceOpenAll' ), closeAll = document.getElementById( 'ceCloseAll' );
-    if ( openAll )  openAll.onclick  = function () { every( true ); return false; };
-    if ( closeAll ) closeAll.onclick = function () { every( false ); return false; };
-} )();
-</script>
-{/literal}
+{ezscript( array( 'page/setup_wizard_files.js' ) )}

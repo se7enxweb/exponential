@@ -239,9 +239,9 @@
 <div class="a4-toolbar is-bottom">
 {if $wildcard_list|count|gt( 0 )}
     <div class="a4-actions">
-        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveWildcardButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_wildcard' )}" onclick="return confirm( '{'Are you sure you want to remove the selected wildcards?'|i18n( 'design/admin/content/urlalias_wildcard' )|wash( javascript )|wash}' );">{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
+        <button type="submit" class="a4-btn a4-btn-outline-danger" name="RemoveWildcardButton" value="{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}" title="{'Remove selected aliases from the list above.'|i18n( 'design/admin/content/urlalias_wildcard' )}" data-a4-confirm="{'Are you sure you want to remove the selected wildcards?'|i18n( 'design/admin/content/urlalias_wildcard' )|wash}">{'Remove selected'|i18n( 'design/admin/content/urlalias_wildcard' )}</button>
     </div>
-    <p class="a4-meta">{'A removed wildcard stops working at once: its addresses are then answered by URL aliases and modules alone.'|i18n( 'design/admin/content/urlalias_wildcard' )} <span id="wildcard-selected-count" aria-live="polite"></span></p>
+    <p class="a4-meta">{'A removed wildcard stops working at once: its addresses are then answered by URL aliases and modules alone.'|i18n( 'design/admin/content/urlalias_wildcard' )} <span id="wildcard-selected-count" aria-live="polite" data-text-selected="{'%count selected.'|i18n( 'design/admin/content/urlalias_wildcard' )|wash}"></span></p>
     <details class="a4-confirm">
         <summary>{'Remove all'|i18n( 'design/admin/content/urlalias_wildcard' )}</summary>
         <div>
@@ -264,38 +264,4 @@
 </div></div></div>
 </div>
 
-<script type="text/javascript">
-var expWildcardText = {ldelim}
-    selected: '{'%count selected.'|i18n( 'design/admin/content/urlalias_wildcard' )|wash( javascript )}'
-{rdelim};
-{literal}
-(function () {
-    var nodes = document.querySelectorAll( '.a4-url .a4-url-js-only' ), i;
-    for ( i = 0; i < nodes.length; i++ ) nodes[i].hidden = false;
-    var invalid = document.querySelector( '.a4-url [aria-invalid="true"]' );
-    if ( invalid ) invalid.focus();
-    var list = document.getElementById( 'wildcard-list' );
-    if ( !list ) return;
-    var selectAll = document.getElementById( 'wildcard-select-all' );
-    var countEl = document.getElementById( 'wildcard-selected-count' );
-    function boxes() { return list.querySelectorAll( 'input[name="WildcardIDList[]"]' ); }
-    function update() {
-        var all = boxes(), n = 0, j;
-        for ( j = 0; j < all.length; j++ ) {
-            var card = all[j].closest( '.a4-card' );
-            if ( card ) card.classList.toggle( 'is-selected', all[j].checked );
-            if ( all[j].checked ) n++;
-        }
-        if ( countEl ) countEl.textContent = n ? expWildcardText.selected.split( '%count' ).join( n ) : '';
-        if ( selectAll ) { selectAll.checked = n > 0 && n === all.length; selectAll.indeterminate = n > 0 && n < all.length; }
-    }
-    list.addEventListener( 'change', update );
-    if ( selectAll ) selectAll.addEventListener( 'change', function () {
-        var all = boxes(), j;
-        for ( j = 0; j < all.length; j++ ) all[j].checked = selectAll.checked;
-        update();
-    } );
-    update();
-})();
-{/literal}
-</script>
+{ezscript( array( 'page/content_urlalias_wildcard.js' ) )}

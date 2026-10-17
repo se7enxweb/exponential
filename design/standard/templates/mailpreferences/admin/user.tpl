@@ -13,13 +13,13 @@
             <label for="mp-user-q">{'Name, login, e-mail address or user ID'|i18n( 'design/admin/mailpreferences' )}</label>
             <input type="text" id="mp-user-q" name="q" value="{$query|wash}" required="required" />
         </div>
-        <div class="mp-actions" style="margin-top:0;"><input class="mp-btn primary" type="submit" value="{'Find'|i18n( 'design/admin/mailpreferences' )}" /></div>
+        <div class="mp-actions mp-actions-flush"><input class="mp-btn primary" type="submit" value="{'Find'|i18n( 'design/admin/mailpreferences' )}" /></div>
     </form>
 {if $query|ne( '' )}
 {if $users|count|eq( 0 )}
-    <p class="mp-hint" style="margin-top:.8em;">{'No user found.'|i18n( 'design/admin/mailpreferences' )}</p>
+    <p class="mp-hint mp-space-top">{'No user found.'|i18n( 'design/admin/mailpreferences' )}</p>
 {else}
-    <div class="mp-scroll" style="margin-top:.8em;">
+    <div class="mp-scroll mp-space-top">
     <table class="mp-table mp-stack">
         <thead><tr>
             <th scope="col">{'Name'|i18n( 'design/admin/mailpreferences' )}</th>

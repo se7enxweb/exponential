@@ -33,7 +33,7 @@
 {/if}
 
 {if $filter_user_id|gt(0)}
-<div class="exp-bar" style="margin: 0 0 16px;">
+<div class="exp-bar exp-bar-top">
     <span>{if $filter_user}{'Only the keys of %name (%login) are shown.'|i18n( 'design/admin/oauthadmin',, hash( '%name', $filter_user_name, '%login', $filter_user.login ) )|wash}{else}{'The user %id no longer exists; these are the keys that were theirs.'|i18n( 'design/admin/oauthadmin',, hash( '%id', $filter_user_id ) )}{/if}</span>
     <div class="exp-actions">
         {if $filter_user}<a class="exp-btn exp-btn-small" href={concat( 'user/setting/', $filter_user_id )|ezurl}>{'User settings'|i18n( 'design/admin/oauthadmin' )}</a>{/if}

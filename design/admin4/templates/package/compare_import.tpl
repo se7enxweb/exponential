@@ -97,33 +97,6 @@
 </section>
 {if $confirm}
 {* All/None per item: a convenience on top of the plain checkboxes, shown only where scripts run *}
-<script>
-(function () {ldelim}
-    var blocks = document.querySelectorAll( '.pcmp-import details.pcmp-values' );
-    for ( var i = 0; i < blocks.length; i++ )
-    {ldelim}
-        var bar = blocks[i].querySelector( '.pcmp-values-all' );
-        if ( !bar ) continue;
-        bar.hidden = false;
-        bar.addEventListener( 'click', function ( event )
-        {ldelim}
-            var mode = event.target.getAttribute( 'data-pcmp-values' );
-            if ( !mode ) return;
-            var boxes = this.parentNode.querySelectorAll( 'input[name="ImportValue[]"]:not([disabled])' );
-            for ( var j = 0; j < boxes.length; j++ ) boxes[j].checked = mode === 'all';
-        {rdelim} );
-    {rdelim}
-    // A class left out takes the values that need it along (the import leaves them out either way)
-    var classes = document.querySelectorAll( '.pcmp-import input[data-pcmp-class]' );
-    for ( var k = 0; k < classes.length; k++ )
-    {ldelim}
-        classes[k].addEventListener( 'change', function ()
-        {ldelim}
-            var needing = document.querySelectorAll( '.pcmp-import input[data-needs-class="' + this.getAttribute( 'data-pcmp-class' )"]' );
-            for ( var m = 0; m < needing.length; m++ ) needing[m].checked = this.checked;
-        {rdelim} );
-    {rdelim}
-{rdelim})();
-</script>
+{ezscript( array( 'page/package_compare_import.js' ) )}
 {/if}
 {undef $resultLabels $resultGlyphs $confirm}

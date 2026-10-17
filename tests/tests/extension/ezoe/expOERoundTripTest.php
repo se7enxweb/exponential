@@ -124,6 +124,10 @@ class expOERoundTripTest extends expOETestCase
             'heading'   => array( $head . '<section><header>Head</header><paragraph>x</paragraph></section></section>', array( '<header>Head</header>' ) ),
             'literal'   => array( $head . '<paragraph><literal>x &lt; y</literal></paragraph></section>', array( '<literal>x &lt; y</literal>' ) ),
             'list'      => array( $head . '<paragraph><ul><li><paragraph>a</paragraph></li></ul></paragraph></section>', array( '<li>', 'a' ) ),
+            // a custom tag whose text is "0" (falsy in PHP) came back as a space
+            'custom 0'  => array( $head . '<paragraph><custom name="math_latex" custom:display="inline" custom:alt="0">0</custom></paragraph></section>', array( '>0</custom>' ) ),
+            // a line break inside a custom tag was dropped, gluing "\cdot" to the next line; now a space
+            'custom br' => array( $head . "<paragraph><custom name=\"math_latex\" custom:display=\"block\" custom:alt=\"a\">a \\cdot\n  x</custom></paragraph></section>", array( '\\cdot x' ) ),
         );
     }
 

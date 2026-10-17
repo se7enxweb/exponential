@@ -61,32 +61,15 @@
 <input id="a4f-WorkflowEvent_data_waituntildate_modifydate_{$event.id}" type="checkbox" name="WorkflowEvent_data_waituntildate_modifydate_{$event.id}[]" value="1" {if $event.data_int1}checked="checked"{/if} />
 </div>
 
-<script type="text/javascript">
-(function ()
-{ldelim}
-    document.getElementById( "custom-action-button-{$event.id}-load-class-attribute-list" ).style.display = 'none';
-    var classSelect = document.getElementById( "workflowevent-event-ezwaituntildate-class-{$event.id}" );
-    classSelect.onchange = ( function()
-    {ldelim}
-        var classAttributeSelect = document.getElementById( "workflowevent-event-ezwaituntildate-class-attribute-{$event.id}" );
-        var classAttributesHash = {ldelim}
-        {foreach $event.workflow_type.contentclass_list as $class}
-            {delimiter},{/delimiter}
-            {$class.id} : {ldelim}
-            {foreach fetch( 'class', 'attribute_list', hash( 'class_id', $class.id ) ) as $attribute}
-                {delimiter},{/delimiter}
-                {$attribute.id} : "{$attribute.name|wash( 'javascript' )}"
-            {/foreach}
-            {rdelim}
-        {/foreach}
-        {rdelim};
-        classAttributeSelect.options.length = 0;
-        for ( var classAttributeId in classAttributesHash[classSelect.options[classSelect.selectedIndex].value] )
-        {ldelim}
-            classAttributeSelect.options.add( new Option( classAttributesHash[classSelect.value][classAttributeId], classAttributeId ) );
-        {rdelim}
-    {rdelim}
-    );
-{rdelim}
-)();
-</script>
+{* The attributes of every class, as [ class id, [ [ attribute id, name ], ... ] ] pairs: the attribute list follows
+   the chosen class without the Update attributes button (page/workflow_event_ezwaituntildate.js). *}
+{def $waituntil_classes = array()
+     $waituntil_attributes = array()}
+{foreach $event.workflow_type.contentclass_list as $class}
+{set $waituntil_attributes = array()}
+{foreach fetch( 'class', 'attribute_list', hash( 'class_id', $class.id ) ) as $attribute}{set $waituntil_attributes = $waituntil_attributes|append( array( $attribute.id, $attribute.name ) )}{/foreach}
+{set $waituntil_classes = $waituntil_classes|append( array( $class.id, $waituntil_attributes ) )}
+{/foreach}
+<div class="exp-waituntildate-data" hidden data-class-select="workflowevent-event-ezwaituntildate-class-{$event.id}" data-attribute-select="workflowevent-event-ezwaituntildate-class-attribute-{$event.id}" data-update-button="custom-action-button-{$event.id}-load-class-attribute-list" data-classes="{json_encode( $waituntil_classes )|wash}"></div>
+{undef $waituntil_classes $waituntil_attributes}
+{ezscript( array( 'page/workflow_event_ezwaituntildate.js' ) )}

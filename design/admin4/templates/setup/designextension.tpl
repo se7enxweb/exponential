@@ -118,8 +118,8 @@
 <span class="a4-meta">{'Everything here is a starting point meant to be edited, not a black box.'|i18n( 'design/admin/setup/rad/designextension' )}</span>
 
 <div class="a4-actions">
-    <button type="button" class="a4-btn a4-btn-small" id="dewAll">{'Tick all'|i18n( 'design/admin/setup/rad/designextension' )}</button>
-    <button type="button" class="a4-btn a4-btn-small" id="dewNone">{'Tick none'|i18n( 'design/admin/setup/rad/designextension' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="dewAll" data-a4-check-all="input[type=checkbox][name='Parts[]']">{'Tick all'|i18n( 'design/admin/setup/rad/designextension' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="dewNone" data-a4-check-all="input[type=checkbox][name='Parts[]']" data-a4-check-value="0">{'Tick none'|i18n( 'design/admin/setup/rad/designextension' )}</button>
     <button type="submit" class="a4-btn a4-btn-small" name="PreviewButton" value="1">{'Refresh preview'|i18n( 'design/admin/setup/rad/designextension' )}</button>
 </div>
 
@@ -181,8 +181,8 @@
 <span class="a4-meta">{'Click a heading to read one. Nothing here has been written yet.'|i18n( 'design/admin/setup/rad/designextension' )}</span>
 
 <div class="a4-actions">
-    <button type="button" class="a4-btn a4-btn-small" id="dewOpenAll">{'Open all'|i18n( 'design/admin/setup/rad/designextension' )}</button>
-    <button type="button" class="a4-btn a4-btn-small" id="dewCloseAll">{'Close all'|i18n( 'design/admin/setup/rad/designextension' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="dewOpenAll" data-a4-wz-fold="open">{'Open all'|i18n( 'design/admin/setup/rad/designextension' )}</button>
+    <button type="button" class="a4-btn a4-btn-small" id="dewCloseAll" data-a4-wz-fold="close">{'Close all'|i18n( 'design/admin/setup/rad/designextension' )}</button>
 </div>
 
 {foreach $wizard_files as $dew_index => $dew_file}
@@ -224,90 +224,4 @@
 </div>
 </form>
 
-{literal}
-<script type="text/javascript">
-( function () {
-    // Folding a file open and shut. The markup is already complete; this only
-    // saves scrolling past a thousand lines to reach the next heading.
-    function fold( panel, open )
-    {
-        var collapsed = panel.className.indexOf( 'is-collapsed' ) !== -1;
-        if ( open === collapsed )
-        {
-            panel.className = open
-                ? panel.className.replace( / ?is-collapsed/, '' )
-                : panel.className + ' is-collapsed';
-        }
-
-        var toggle = panel.getElementsByTagName( 'span' )[0];
-        if ( toggle ) toggle.innerHTML = open ? '&minus;' : '+';
-    }
-
-    var panels = document.getElementsByTagName( 'div' ), files = [], i;
-    for ( i = 0; i < panels.length; i++ )
-        if ( panels[i].className.indexOf( 'a4-setup-wz-file' ) === 0 )
-            files.push( panels[i] );
-
-    for ( i = 0; i < files.length; i++ )
-    {
-        ( function ( panel ) {
-            var head = panel.getElementsByTagName( 'div' )[0];
-            if ( !head ) return;
-            head.onclick = function () {
-                fold( panel, panel.className.indexOf( 'is-collapsed' ) !== -1 );
-                return false;
-            };
-        } )( files[i] );
-    }
-
-    function every( open )
-    {
-        for ( var j = 0; j < files.length; j++ )
-            fold( files[j], open );
-    }
-
-    var openAll = document.getElementById( 'dewOpenAll' ),
-        closeAll = document.getElementById( 'dewCloseAll' );
-    if ( openAll )  openAll.onclick  = function () { every( true ); return false; };
-    if ( closeAll ) closeAll.onclick = function () { every( false ); return false; };
-
-    // Ticking all or none of the parts.
-    function boxes()
-    {
-        var inputs = document.getElementsByTagName( 'input' ), found = [], k;
-        for ( k = 0; k < inputs.length; k++ )
-            if ( inputs[k].type === 'checkbox' && inputs[k].name === 'Parts[]' )
-                found.push( inputs[k] );
-        return found;
-    }
-
-    function tick( on )
-    {
-        var list = boxes(), k;
-        for ( k = 0; k < list.length; k++ )
-            list[k].checked = on;
-    }
-
-    var all = document.getElementById( 'dewAll' ), none = document.getElementById( 'dewNone' );
-    if ( all )  all.onclick  = function () { tick( true ); return false; };
-    if ( none ) none.onclick = function () { tick( false ); return false; };
-
-    // The name drives the directory, so show what it will become as it is typed.
-    var name = document.getElementById( 'dewName' );
-    if ( name )
-    {
-        name.onkeyup = function () {
-            var clean = name.value.toLowerCase().replace( /[^a-z0-9_]+/g, '_' ).replace( /^_+|_+$/g, '' ),
-                hint = name.parentNode.getElementsByTagName( 'span' )[0];
-            if ( hint ) {
-                if ( !hint.getAttribute( 'data-empty' ) )
-                    hint.setAttribute( 'data-empty', hint.textContent );
-                hint.textContent = clean === ''
-                    ? hint.getAttribute( 'data-empty' )
-                    : hint.getAttribute( 'data-named' ).split( '%name' ).join( clean );
-            }
-        };
-    }
-} )();
-</script>
-{/literal}
+{ezscript( array( 'page/setup_wizard_files.js', 'page/setup_designextension.js' ) )}

@@ -11,27 +11,5 @@
         {if $job_mode.now_allowed|not}<span class="a4-help a4-content-job-why">{$job_mode.now_reason|wash}</span>{/if}</label>
     <span class="a4-help a4-content-job-why">{'Below %limit items running now is preselected, from %limit on the background job (content.ini SynchronousLimit). Your last choice is remembered.'|i18n( 'design/admin/content/job',, hash( '%limit', $job_mode.sync_limit ) )}</span>
 </fieldset>
-<script type="text/javascript">
-{literal}
-(function () {
-  var sets = document.querySelectorAll('fieldset.a4-content-job-mode'), set = sets[sets.length - 1];
-  if (!set) return;
-  var op = set.getAttribute('data-op'), formName = set.getAttribute('data-form'), prefs = set.getAttribute('data-prefs');
-  set.addEventListener('change', function (e) {
-    if (!e.target || e.target.name !== 'ContentJobMode' || !prefs) return;
-    fetch(prefs + '/admin_content_job_mode_' + op + '/' + e.target.value, {credentials: 'same-origin', cache: 'no-store'}).catch(function () {});
-  });
-  // the browse page renders this above its form: listen on the document, the form need not exist yet
-  if (formName) {
-    document.addEventListener('submit', function (e) {
-      var f = e.target, c = set.querySelector('input[name="ContentJobMode"]:checked');
-      if (!f || f.getAttribute('name') !== formName || !c) return;
-      var h = f.querySelector('input[type="hidden"][name="ContentJobMode"]');
-      if (!h) { h = document.createElement('input'); h.type = 'hidden'; h.name = 'ContentJobMode'; f.appendChild(h); }
-      h.value = c.value;
-    });
-  }
-})();
-{/literal}
-</script>
+{ezscript( array( 'page/content_job_mode_choice.js' ) )}
 {/default}

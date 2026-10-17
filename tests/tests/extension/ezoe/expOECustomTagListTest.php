@@ -203,7 +203,7 @@ class expOECustomTagListTest extends expOETestCase
         $this->assertStringContainsString( "append( 'exp_customtag_controls' )", $tiny3 );
         $this->assertStringContainsString( "ezcss_require( 'ezoe_customtags.css' )", $tiny3 );
         $tiny8 = file_get_contents( $root . '/templates/content/datatype/edit/ezxmltext_ezoe_tinymce8.tpl' );
-        $this->assertStringContainsString( 'ez_custom_tag_controls:', $tiny8 );
+        $this->assertStringContainsString( '"ez_custom_tag_controls":', $tiny8 );
         $plugin = file_get_contents( $root . '/javascript/plugins/exp_customtag_controls/editor_plugin.js' );
         $this->assertStringContainsString( "PluginManager.add( 'exp_customtag_controls'", $plugin );
         $this->assertStringContainsString( 'Copyright (C) Mugo Web', $plugin );
@@ -216,6 +216,6 @@ class expOECustomTagListTest extends expOETestCase
 
         $tiptap = $this->root() . '/extension/exp_oe_tiptap/design/standard/templates/content/datatype/edit/ezxmltext_exp_oe_tiptap_editor.tpl';
         if ( is_file( $tiptap ) )
-            $this->assertStringContainsString( 'customTagControls:', file_get_contents( $tiptap ) );
+            $this->assertMatchesRegularExpression( '/"?customTagControls"?\s*:/', file_get_contents( $tiptap ) );
     }
 }

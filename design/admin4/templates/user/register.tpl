@@ -34,8 +34,8 @@
 <div class="controlbar">
 {* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
     <div class="block">
-        <input class="defaultbutton" type="submit" id="PublishButton" name="PublishButton" value="{'OK'|i18n( 'design/admin/user/register' )}" onclick="window.setTimeout( disableButtons, 1 ); return true;" />
-        <input class="button" type="submit" id="CancelButton" name="CancelButton" value="{'Cancel'|i18n( 'design/admin/user/register' )}" onclick="window.setTimeout( disableButtons, 1 ); return true;" />
+        <input class="defaultbutton" type="submit" id="PublishButton" name="PublishButton" value="{'OK'|i18n( 'design/admin/user/register' )}" />
+        <input class="button" type="submit" id="CancelButton" name="CancelButton" value="{'Cancel'|i18n( 'design/admin/user/register' )}" />
     </div>
 {* DESIGN: Control bar END *}</div></div>
 </div>
@@ -48,8 +48,8 @@
 <div class="controlbar">
 {* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
     <div class="block">
-        <input class="button button-disabled" disabled="disabled" type="submit" id="PublishButton" name="PublishButton" value="{'OK'|i18n( 'design/admin/user/register' )}" onclick="window.setTimeout( disableButtons, 1 ); return true;" />
-        <input class="button" type="submit" id="CancelButton" name="CancelButton" value="{'Back'|i18n( 'design/admin/user/register' )}" onclick="window.setTimeout( disableButtons, 1 ); return true;" />
+        <input class="button button-disabled" disabled="disabled" type="submit" id="PublishButton" name="PublishButton" value="{'OK'|i18n( 'design/admin/user/register' )}" />
+        <input class="button" type="submit" id="CancelButton" name="CancelButton" value="{'Back'|i18n( 'design/admin/user/register' )}" />
     </div>
 {* DESIGN: Control bar END *}</div></div>
 </div>
@@ -62,27 +62,4 @@
 
 
 
-{literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    with( document.registerform )
-    {
-        for( var i = 0, l = elements.length; i < l; i++ )
-        {
-            if( elements[i].type == 'text' )
-            {
-                elements[i].focus();
-                return;
-            }
-        }
-    }
-});
-
-function disableButtons()
-{
-    document.getElementById( 'PublishButton' ).disabled = true;
-    document.getElementById( 'CancelButton' ).disabled = true;
-}
-</script>
-{/literal}
+{ezscript( array( 'page/user_register.js' ) )}

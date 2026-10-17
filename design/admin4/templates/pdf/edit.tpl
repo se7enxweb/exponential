@@ -204,19 +204,6 @@
 {if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>
 
-<script type="text/javascript">
-var expPdfEditError = {if $errors|count}true{else}false{/if};
-{literal}
-(function () {
-    var box = document.getElementById( 'pdf-edit-errors' );
-    if ( expPdfEditError && box ) {
-        var first = document.querySelector( '.exp-pdf [aria-invalid="true"]' );
-        ( first && first.focus ? first : box ).focus();
-        return;
-    }
-    var title = document.getElementById( 'pdfTitle' );
-    if ( title ) { title.focus(); title.select(); }
-})();
-{/literal}
-</script>
+<div id="pdf-edit-script" hidden data-error="{if $errors|count}1{else}0{/if}"></div>
+{ezscript( array( 'page/pdf_edit.js' ) )}
 {undef $errors $source $is_new $draft_other $selected $published_file $storage $stored $tree}

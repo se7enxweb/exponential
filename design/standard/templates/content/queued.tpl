@@ -22,7 +22,7 @@
  *    child: <a id="ezap-contentview-uri" href="#">
  *        The url_alias for the published node will be assigned to this item's href
  *
- * <div class="ezap-placeholder" id="ezap-message-deferred" style="display: none" />
+ * <div class="ezap-placeholder ezap-hidden" id="ezap-message-deferred" />
  *    displayed when the object's publishing has been interrupted and deferred to crontab. This
  *    can happen when an ezapprove workflow is in place, or any other type of workflow event that sends the item to cron
  *    child: <a id="ezap-versionview-uri" href="#">
@@ -33,20 +33,20 @@
 {exp_config()}
 {ezscript_require( array( 'ezjsc::jquery', 'exp::core::shared', 'exp::io', 'ezasynchronouspublishing.js' ) )}
 
-<script type="text/javascript">
-eZAsynchronousPublishingApp.cfg = {ldelim}
-    contentobject_id: {$contentObjectId},
-    version: {$version},
-    redirect_uri: {if is_set( $redirect_uri )}"{$redirect_uri|wash( 'javascript' )}"{else}false{/if},
-    failure_message: "{'A fatal error occured while checking the version status, you can try to refresh this page or contact your administrator.'|i18n( 'design/standard/location' )|wash( 'javascript' )}",
-    last_checked_message: "{'(Checking every %ms%ms and checked %times% times so far)'|i18n( 'design/standard/location' )|wash( 'javascript' )}",
-
-{rdelim};
-eZAsynchronousPublishingApp.init()
-</script>
+{* The configuration of eZAsynchronousPublishingApp, read by javascript/content_queued.js, which starts it; the
+   hidden placeholders (ezap-hidden) are in stylesheets/content_queued.css. No inline script or style, for a
+   Content Security Policy without 'unsafe-inline' *}
+<link rel="stylesheet" type="text/css" href={'stylesheets/content_queued.css'|ezdesign} />
+<div id="ezap-config" hidden
+     data-contentobject-id="{$contentObjectId|int}"
+     data-version="{$version|int}"
+     {if is_set( $redirect_uri )}data-redirect-uri="{$redirect_uri|wash}"{/if}
+     data-failure-message="{'A fatal error occured while checking the version status, you can try to refresh this page or contact your administrator.'|i18n( 'design/standard/location' )|wash}"
+     data-last-checked-message="{'(Checking every %ms%ms and checked %times% times so far)'|i18n( 'design/standard/location' )|wash}"></div>
+<script type="text/javascript" src={'javascript/content_queued.js'|ezdesign}></script>
 
 {* placeholder for error messages from the queue *}
-<div id="ezap-error" style="display: none" class="message-error">
+<div id="ezap-error" class="message-error ezap-hidden">
 </div>
 
 {* placeholder for text shown while the object is being published *}
@@ -56,14 +56,14 @@ eZAsynchronousPublishingApp.init()
 </div>
 
 {* placeholder for text shown when the object has been published *}
-<div class="ezap-placeholder message-feedback" id="ezap-message-finished" style="display: none">
+<div class="ezap-placeholder message-feedback ezap-hidden" id="ezap-message-finished">
     <h1>{'Publishing finished'|i18n( 'design/standard/content' )}</h1>
     {"Your content has been published successfully"|i18n( 'design/standard/location' )}<br />
     <a id="ezap-contentview-uri" href="#">{"View the published item"|i18n('design/standard/location')}</a>
 </div>
 
 {* placeholder for text shown when publishing has been deferred to cron (for instance by ezapprove) *}
-<div class="ezap-placeholder message-feedback" id="ezap-message-deferred" style="display: none">
+<div class="ezap-placeholder message-feedback ezap-hidden" id="ezap-message-deferred">
     <h1>{'Your content is pending an external action'|i18n( 'design/standard/content' )}</h1>
     {"Publishing has been deferred to crontab and will be published when the operation resumes. The object is also listed in your dashboard under pending items."|i18n( 'design/standard/location' )}
     <a id="ezap-versionview-uri" href="#">{"View your pending content"|i18n( 'design/standard/location' )}</a>

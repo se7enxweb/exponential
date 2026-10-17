@@ -92,9 +92,9 @@
                 <input class="a4-btn" type="submit" name="CollaborationAction_Comment" value="{'Add Comment'|i18n( 'design/admin/collaboration/handler/view/full/ezapprove' )}" />
     {if $collab_item.is_creator|not}
                 <input class="a4-btn a4-btn-primary" type="submit" name="CollaborationAction_Accept" value="{'Approve'|i18n( 'design/admin/collaboration/handler/view/full/ezapprove' )}"
-                       data-cb-confirm="{'Approve "%title"? It is published when the publishing workflow continues.'|i18n( 'design/admin/collaboration/inbox',, hash( '%title', $title ) )|wash}" />
+                       data-a4-confirm="{'Approve "%title"? It is published when the publishing workflow continues.'|i18n( 'design/admin/collaboration/inbox',, hash( '%title', $title ) )|wash}" />
                 <input class="a4-btn a4-btn-outline-danger" type="submit" name="CollaborationAction_Deny" value="{'Deny'|i18n( 'design/admin/collaboration/handler/view/full/ezapprove' )}"
-                       data-cb-confirm="{'Deny "%title"? It becomes a draft for the author again.'|i18n( 'design/admin/collaboration/inbox',, hash( '%title', $title ) )|wash}" />
+                       data-a4-confirm="{'Deny "%title"? It becomes a draft for the author again.'|i18n( 'design/admin/collaboration/inbox',, hash( '%title', $title ) )|wash}" />
     {/if}
             </div>
     {if $collab_item.is_creator}
@@ -142,13 +142,3 @@
     </div>
 
 </div>
-<script type="text/javascript">
-{literal}
-(function () {
-    var buttons = document.querySelectorAll('#exp-collab [data-cb-confirm]');
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', function (e) { if (!window.confirm(this.getAttribute('data-cb-confirm'))) e.preventDefault(); });
-    }
-})();
-{/literal}
-</script>

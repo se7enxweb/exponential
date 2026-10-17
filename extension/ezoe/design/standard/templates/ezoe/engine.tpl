@@ -35,18 +35,22 @@
 {if $switch_enabled}
     <p>{'The edit form also has a button to switch to each of the other available editors.'|i18n( 'design/standard/ezoe' )}</p>
 {/if}
+{if $forced}
+    <p>{'This site uses %engine for every editor; a choice of your own does not apply here.'|i18n( 'design/standard/ezoe',, hash( '%engine', $engines[$forced]|wash ) )}</p>
+{else}
 <form method="post" action={'/ezoe/engine'|ezurl}>
     <div class="block">
         <label for="ezoe-engine">{'Editor for text fields'|i18n( 'design/standard/ezoe' )}</label>
         <select id="ezoe-engine" name="Engine">
-            <option value=""{if eq( $preference, '' )} selected="selected"{/if}>{'Default of this site (%engine)'|i18n( 'design/standard/ezoe',, hash( '%engine', $engines[$configured] ) )}</option>
+            <option value=""{if eq( $preference, '' )} selected="selected"{/if}>{'Default of this site (%engine)'|i18n( 'design/standard/ezoe',, hash( '%engine', $engines[$configured]|wash ) )}</option>
             {foreach $engines as $id => $label}
             <option value="{$id|wash}"{if eq( $preference, $id )} selected="selected"{/if}>{$label|wash}</option>
             {/foreach}
         </select>
-        <p>{'In use now: %engine. Saved only for your user, the text of your content is the same with every editor.'|i18n( 'design/standard/ezoe',, hash( '%engine', $engines[$resolved] ) )}</p>
+        <p>{'In use now: %engine. Saved only for your user, the text of your content is the same with every editor.'|i18n( 'design/standard/ezoe',, hash( '%engine', $engines[$resolved]|wash ) )}</p>
     </div>
     <div class="controlbar"><input class="button" type="submit" name="SaveEngineButton" value="{'Save'|i18n( 'design/standard/ezoe' )}" /></div>
 </form>
+{/if}
 </div>
 </div>

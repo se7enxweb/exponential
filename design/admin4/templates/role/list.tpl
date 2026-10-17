@@ -170,37 +170,5 @@
 </div></div></div>
 </div>
 
-<script type="text/javascript">
-var expRoleListText = {ldelim}
-    selected: '{'%count selected.'|i18n( 'design/admin/role/list' )|wash( javascript )}',
-    none: '{'Nothing is ticked yet.'|i18n( 'design/admin/role/list' )|wash( javascript )}'
-{rdelim};
-{literal}
-(function () {
-    var list = document.getElementById( 'role-list' );
-    var nodes = document.querySelectorAll( '.a4-page .exp-js-only' ), i;
-    for ( i = 0; i < nodes.length; i++ ) nodes[i].hidden = false;
-    if ( !list ) return;
-    var selectAll = document.getElementById( 'role-select-all' );
-    var countEl = document.getElementById( 'role-selected-count' );
-    function boxes() { return list.querySelectorAll( 'input[name="DeleteIDArray[]"]' ); }
-    function update() {
-        var all = boxes(), n = 0, j;
-        for ( j = 0; j < all.length; j++ ) {
-            var card = all[j].closest( '.a4-card' );
-            if ( card ) card.classList.toggle( 'is-selected', all[j].checked );
-            if ( all[j].checked ) n++;
-        }
-        if ( countEl ) countEl.textContent = n ? expRoleListText.selected.split( '%count' ).join( n ) : expRoleListText.none;
-        if ( selectAll ) { selectAll.checked = n > 0 && n === all.length; selectAll.indeterminate = n > 0 && n < all.length; }
-    }
-    list.addEventListener( 'change', update );
-    if ( selectAll ) selectAll.addEventListener( 'change', function () {
-        var all = boxes(), j;
-        for ( j = 0; j < all.length; j++ ) all[j].checked = selectAll.checked;
-        update();
-    } );
-    update();
-})();
-{/literal}
-</script>
+<div id="role-list-data" hidden data-role-list-text-selected="{'%count selected.'|i18n( 'design/admin/role/list' )|wash}" data-role-list-text-none="{'Nothing is ticked yet.'|i18n( 'design/admin/role/list' )|wash}"></div>
+{ezscript( array( 'page/role_list.js' ) )}

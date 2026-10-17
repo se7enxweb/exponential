@@ -43,7 +43,7 @@
 </ul>
 </section>
 
-<form name="languageform" action={$module.functions.translations.uri|ezurl} method="post" id="language-form">
+<form name="languageform" action={$module.functions.translations.uri|ezurl} method="post" id="language-form" data-text-confirm="{'Remove these languages?'|i18n( 'design/admin/content/translations' )|wash}" data-text-listed="{'Still listed by siteaccesses: %sites. Take it out of their SiteLanguageList as well.'|i18n( 'design/admin/content/translations' )|wash}" data-text-none="{'Select at least one unused language to remove.'|i18n( 'design/admin/content/translations' )|wash}">
 
 <section class="a4-section" aria-labelledby="language-list-title">
 <div class="a4-section-head">
@@ -202,33 +202,4 @@
 
 </div>
 
-<script type="text/javascript">
-var expLanguageText = {ldelim}
-    confirm: '{'Remove these languages?'|i18n( 'design/admin/content/translations' )|wash( javascript )}',
-    listed: '{'Still listed by siteaccesses: %sites. Take it out of their SiteLanguageList as well.'|i18n( 'design/admin/content/translations' )|wash( javascript )}',
-    none: '{'Select at least one unused language to remove.'|i18n( 'design/admin/content/translations' )|wash( javascript )}'
-{rdelim};
-{literal}
-(function () {
-    var form = document.getElementById( 'language-form' );
-    if ( !form ) return;
-    var removing = false;
-    form.addEventListener( 'click', function ( e ) {
-        removing = !!( e.target.closest && e.target.closest( '#language-remove' ) );
-    } );
-    // Before a removal, say which languages go and which siteaccesses still list them.
-    form.addEventListener( 'submit', function ( e ) {
-        if ( !removing ) return;
-        var picked = form.querySelectorAll( 'input[name="DeleteIDArray[]"]:checked' ), lines = [], i;
-        if ( !picked.length ) { e.preventDefault(); window.alert( expLanguageText.none ); return; }
-        for ( i = 0; i < picked.length; i++ ) {
-            var line = '- ' + picked[i].getAttribute( 'data-name' );
-            var sites = picked[i].getAttribute( 'data-sites' );
-            if ( sites ) line += '\n  ' + expLanguageText.listed.split( '%sites' ).join( sites );
-            lines.push( line );
-        }
-        if ( !window.confirm( expLanguageText.confirm + '\n\n' + lines.join( '\n' ) ) ) e.preventDefault();
-    } );
-})();
-{/literal}
-</script>
+{ezscript( array( 'page/content_translations.js' ) )}

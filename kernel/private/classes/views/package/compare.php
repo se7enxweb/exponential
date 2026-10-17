@@ -85,7 +85,8 @@ class Compare extends \Exponential\Runnable\ModuleView
         // and the filter form's own fields would bring the next request straight back here
         $redirect = function ( $target )
         {
-            \eZURI::transformURI( $target, false, 'full' );
+            // Without HTML escaping: the address goes into the Location header, where &amp; would stay &amp;
+            \eZURI::transformURI( $target, false, 'full', false );
             \eZHTTPTool::redirect( $target, array(), '302 Found', false );
             \eZExecution::cleanExit();
         };

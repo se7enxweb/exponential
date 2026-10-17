@@ -195,6 +195,29 @@ class expOEEditorRegistryTest extends expOETestCase
         $this->assertSame( array( 'tinymce3' ), array_keys( expOEEditor::engines() ) );
     }
 
+    public function testAForcedEngineWinsOverPreferenceAndSiteAndHidesTheSwitch()
+    {
+        $this->ini( 'EditorEngine', 'tinymce8' );
+        $this->ini( 'EngineSwitch', 'enabled' );
+        $this->ini( 'ForceEngine', 'tinymce3' );
+        $this->assertSame( 'tinymce3', expOEEditor::forcedEngine() );
+        $this->assertSame( 'tinymce3', expOEEditor::resolve( 'tinymce8' ) );
+        $this->preference( 'tinymce8' );
+        $this->assertSame( 'tinymce3', expOEEditor::resolve() );
+        $this->assertFalse( expOEEditor::switchEnabled() );
+    }
+
+    public function testAForcedEngineThatCannotBeUsedIsIgnored()
+    {
+        $this->ini( 'EditorEngine', 'tinymce3' );
+        $this->ini( 'EngineSwitch', 'enabled' );
+        $this->ini( 'ForceEngine', 'notinstalled' );
+        $this->assertSame( '', expOEEditor::forcedEngine() );
+        $this->assertSame( 'tinymce8', expOEEditor::resolve( 'tinymce8' ), 'the preference applies again' );
+        $this->assertSame( 'tinymce3', expOEEditor::resolve( '' ) );
+        $this->assertTrue( expOEEditor::switchEnabled() );
+    }
+
     public function testSwitchEnabledFollowsTheIni()
     {
         $this->ini( 'EngineSwitch', 'enabled' );

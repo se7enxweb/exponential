@@ -11,20 +11,10 @@
 <link rel="Author" href={"/ezinfo/about"|ezurl} />
 
 {if $enable_print}
-{* Add print <link> tag in JS to be cache safe with query string (not included in cache-block key by default in pagelayout) *}
-<script type="text/javascript">
-(function() {ldelim}
-
-    var head = document.getElementsByTagName('head')[0];
-    var printNode = document.createElement('link');
-    printNode.rel = 'Alternate';
-    printNode.href = "{concat( 'layout/set/print/', $site.uri.original_uri )|ezurl( 'no' )}" + document.location.search;
-    printNode.media = 'print';
-    printNode.title = "{'Printable version'|i18n('design/ezwebin/link')}";
-    head.appendChild(printNode);
-
-{rdelim})();
-</script>
+{* Add print <link> tag in JS to be cache safe with query string (not included in cache-block key by default in pagelayout).
+   The script is a file of its own (a Content Security Policy without 'unsafe-inline'); it reads its href and title
+   from its data attributes *}
+<script type="text/javascript" src={'javascript/print_link.js'|ezdesign} data-print-href="{concat( 'layout/set/print/', $site.uri.original_uri )|ezurl( 'no' )|wash}" data-print-title="{'Printable version'|i18n('design/ezwebin/link')|wash}"></script>
 {/if}
 
 {/default}

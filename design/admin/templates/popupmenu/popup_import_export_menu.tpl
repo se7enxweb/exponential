@@ -8,11 +8,7 @@
 {include uri='design:popupmenu/popup_export_items.tpl' menu_id='ImportExportMenu' item_prefix='node-export' sub_menu_depth=1 with_import=true()}
 {/set-block}
 {if $import_export_items|trim|ne( '' )}
-<script type="text/javascript">
-menuArray['ImportExportMenu'] = {ldelim} 'depth': 0, 'headerID': 'node-export-header' {rdelim};
-menuArray['ImportExportMenu']['elements'] = {ldelim}{rdelim};
-</script>
-<div class="popupmenu" id="ImportExportMenu">
+<div class="popupmenu" id="ImportExportMenu" data-menu-depth="0" data-menu-header="node-export-header">
     <div class="popupmenuheader"><h3 id="node-export-header">{'Import/Export'|i18n( 'design/admin/popupmenu' )}</h3>
         <div class="break"></div>
     </div>

@@ -28,10 +28,15 @@ class AdminTreeViewTest extends PHPUnit\Framework\TestCase
     public function testTheTemplateMakesTheListATree()
     {
         $tpl = self::file( self::TEMPLATE );
-        $this->assertStringContainsString( "treeMenu.tree( document.getElementById( 'content_tree_menu' ) );", $tpl );
-        $this->assertStringContainsString( "\"tree\":\"{'Content tree'|i18n(\"design/admin/contentstructuremenu\")|wash(\"javascript\")}\"", $tpl );
+        // the template carries the data (no inline script); contentstructuremenu_dynamic.js draws the tree from it
+        $this->assertStringContainsString( '<ul id="content_tree_menu"></ul>', $tpl );
+        $this->assertStringContainsString( "'tree', 'Content tree'|i18n(\"design/admin/contentstructuremenu\")", $tpl );
+        $this->assertStringNotContainsString( '<script', $tpl );
         // the tree is set up before the first load, which decorates what it adds
-        $this->assertLessThan( strpos( $tpl, 'treeMenu.load( false' ), strpos( $tpl, 'treeMenu.tree(' ) );
+        $js = self::file( self::SCRIPT );
+        $start = strpos( $js, 'ContentStructureMenu.fromElement = function' );
+        $this->assertNotFalse( $start );
+        $this->assertLessThan( strpos( $js, 'menu.load( false', $start ), strpos( $js, 'menu.tree( ul );', $start ) );
     }
 
     public function testTheTreeCarriesTheRolesAndStates()

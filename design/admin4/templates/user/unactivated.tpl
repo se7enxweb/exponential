@@ -229,22 +229,6 @@
 </div></div></div>
 </div>
 
-<script type="text/javascript">
-var expUnactText = {ldelim} selected: '{'%count selected.'|i18n( 'design/admin/user/unactivated' )|wash( javascript )}' {rdelim};
-{literal}
-(function () {
-    var table = document.getElementById( 'unact-list' ), all = document.getElementById( 'unact-select-all' ), out = document.getElementById( 'unact-selected-count' );
-    if ( !table ) return;
-    function boxes() { return table.querySelectorAll( 'input[name="DeleteIDArray[]"]' ); }
-    function update() {
-        var b = boxes(), n = 0, i;
-        for ( i = 0; i < b.length; i++ ) if ( b[i].checked ) n++;
-        if ( out ) out.textContent = n ? expUnactText.selected.split( '%count' ).join( n ) : '';
-        if ( all ) { all.checked = n > 0 && n === b.length; all.indeterminate = n > 0 && n < b.length; }
-    }
-    if ( all ) { all.hidden = false; all.addEventListener( 'change', function () { var b = boxes(), i; for ( i = 0; i < b.length; i++ ) b[i].checked = all.checked; update(); } ); }
-    table.addEventListener( 'change', update );
-})();
-{/literal}
-</script>
+<div id="user-unactivated-data" hidden data-unact-text-selected="{'%count selected.'|i18n( 'design/admin/user/unactivated' )|wash}"></div>
+{ezscript( array( 'page/user_unactivated.js' ) )}
 {undef $uri}

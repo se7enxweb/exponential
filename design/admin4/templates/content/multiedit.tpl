@@ -119,7 +119,7 @@
        find your way around. Nothing here changes what is submitted - a closed
        panel still posts its fields. *}
     <div class="a4-actions">
-        {if $multiedit_autosave_interval|gt(0)}<em id="multiedit-autosave" class="a4-content-multiedit-autosave" role="status"></em>{/if}
+        {if $multiedit_autosave_interval|gt(0)}<em id="multiedit-autosave" class="a4-content-multiedit-autosave" role="status" data-autosave-interval="{$multiedit_autosave_interval|wash}" data-autosave-track="{if $multiedit_autosave_track}1{else}0{/if}" data-text-saving="{'Saving drafts...'|i18n('design/admin/content/multiedit')|wash}" data-text-saved="{'Drafts saved at %time'|i18n('design/admin/content/multiedit')|wash}" data-text-error="{'Could not save the drafts'|i18n('design/admin/content/multiedit')|wash}"></em>{/if}
         <input class="a4-btn a4-btn-small" type="button" id="multiedit-expand" value="{'Expand all'|i18n('design/admin/content/multiedit')}" title="{'Open every item.'|i18n('design/admin/content/multiedit')|wash}" />
         <input class="a4-btn a4-btn-small" type="button" id="multiedit-collapse" value="{'Collapse all'|i18n('design/admin/content/multiedit')}" title="{'Close every item. Closed items are still saved and published; nothing is left out.'|i18n('design/admin/content/multiedit')|wash}" />
     </div>
@@ -179,152 +179,8 @@
 {/foreach}
 <input type="hidden" name="MultiEditReturnURI" value="{$multiedit_return_uri|wash}" />
 
-{literal}<script type="text/javascript">
-(function () {
-    function panels()
-    {
-        return Array.prototype.slice.call(
-            document.querySelectorAll( 'details.a4-content-multiedit-object' ) );
-    }
-
-    function setAll( open )
-    {
-        panels().forEach( function ( panel ) { panel.open = open; } );
-    }
-
-    var expand   = document.getElementById( 'multiedit-expand' ),
-        collapse = document.getElementById( 'multiedit-collapse' );
-
-    if ( expand )   expand.onclick   = function () { setAll( true ); };
-    if ( collapse ) collapse.onclick = function () { setAll( false ); };
-
-    // A form that has come back with something to fix opens the items that
-    // need it, whatever the reader last collapsed: being told there is a
-    // problem and then having to hunt for it is the worst of both.
-    panels().forEach( function ( panel ) {
-        if ( panel.className.indexOf( 'a4-content-multiedit-invalid' ) !== -1 )
-            panel.open = true;
-    } );
-})();
-</script>{/literal}
-
-{if $multiedit_autosave_interval|gt(0)}
-{* The settings first: the script below reads them as it runs. *}
-<script type="text/javascript">
-var MULTIEDIT_AUTOSAVE_INTERVAL = {$multiedit_autosave_interval};
-var MULTIEDIT_AUTOSAVE_TRACK = {if $multiedit_autosave_track}true{else}false{/if};
-var MULTIEDIT_AUTOSAVE_TEXTS = {ldelim}
-    saving: "{'Saving drafts...'|i18n('design/admin/content/multiedit')|wash('javascript')}",
-    saved:  "{'Drafts saved at %time'|i18n('design/admin/content/multiedit')|wash('javascript')}",
-    error:  "{'Could not save the drafts'|i18n('design/admin/content/multiedit')|wash('javascript')}"
-{rdelim};
-</script>
-<script type="text/javascript">
-{literal}
-// Autosave.
-//
-// ezautosave's own AutoSubmit posts to an endpoint naming one object and one
-// version, which cannot say what this form holds. So the form is posted back
-// to its own Save drafts action instead: one request, every draft stored, by
-// the same code the button uses. The interval and the track-input preference
-// come from autosave.ini, so an installation that has turned autosave off has
-// it off here too.
-(function () {
-    var form     = document.forms.multiedit,
-        place    = document.getElementById( 'multiedit-autosave' ),
-        interval = MULTIEDIT_AUTOSAVE_INTERVAL,
-        track    = MULTIEDIT_AUTOSAVE_TRACK,
-        texts    = MULTIEDIT_AUTOSAVE_TEXTS;
-
-    if ( !form || !place || !window.FormData || !window.fetch )
-        return;
-
-    var dirty = false, saving = false, debounce = null;
-
-    function say( state, text )
-    {
-        place.className = 'a4-content-multiedit-autosave as-' + state;
-        place.textContent = text;
-    }
-
-    function stamp()
-    {
-        var now = new Date();
-        return ( '0' + now.getHours() ).slice( -2 ) + ':' + ( '0' + now.getMinutes() ).slice( -2 );
-    }
-
-    function save()
-    {
-        if ( saving || !dirty )
-            return;
-
-        saving = true;
-        say( 'saving', texts.saving );
-
-        var data = new FormData();
-
-        // Files are left out on purpose. A file field cannot be re-sent
-        // meaningfully every few minutes, and a datatype that receives no
-        // upload keeps what it already has - which is what is wanted. The
-        // buttons are left out too, except the one that means "store".
-        Array.prototype.forEach.call( form.elements, function ( field ) {
-            if ( !field.name || field.disabled || field.type === 'file' )
-                return;
-            if ( field.type === 'submit' || field.type === 'button' )
-                return;
-            if ( ( field.type === 'checkbox' || field.type === 'radio' ) && !field.checked )
-                return;
-            if ( field.multiple && field.options )
-            {
-                Array.prototype.forEach.call( field.options, function ( option ) {
-                    if ( option.selected ) data.append( field.name, option.value );
-                } );
-                return;
-            }
-            data.append( field.name, field.value );
-        } );
-
-        data.append( 'MultiStoreButton', '1' );
-
-        fetch( form.getAttribute( 'action' ), {
-            method: 'POST',
-            body: data,
-            credentials: 'same-origin'
-        } ).then( function ( response ) {
-            saving = false;
-            if ( !response.ok )
-                throw new Error( response.status );
-            // Only now: anything typed while the request was in flight has
-            // set this again, and must not be thrown away.
-            dirty = false;
-            say( 'success', texts.saved.replace( '%time', stamp() ) );
-        } ).catch( function () {
-            saving = false;
-            say( 'error', texts.error );
-        } );
-    }
-
-    form.addEventListener( 'input', function () { dirty = true; } );
-    form.addEventListener( 'change', function () {
-        dirty = true;
-        if ( !track )
-            return;
-        // Leaving a field saves, but not on every keystroke.
-        if ( debounce ) clearTimeout( debounce );
-        debounce = setTimeout( save, 2000 );
-    } );
-
-    setInterval( save, interval * 1000 );
-
-    // Pressing a real button is a save of its own; do not race it.
-    Array.prototype.forEach.call( form.elements, function ( field ) {
-        if ( field.type === 'submit' )
-            field.addEventListener( 'click', function () { dirty = false; } );
-    } );
-})();
-{/literal}
-</script>
-{/if}
+{* the expand and collapse buttons and, when it is on, the autosave (page/content_multiedit.js) *}
+{ezscript( array( 'page/content_multiedit.js' ) )}
 
 {/if}
 {/if}

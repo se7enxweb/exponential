@@ -64,7 +64,7 @@
 
 <div class="block">
 <label for="workflowName">{'Name'|i18n( 'design/admin/workflow/edit' )}:</label>
-<input class="halfbox" id="workflowName" type="text" name="Workflow_name" value="{$workflow.name|wash}" />
+<input class="halfbox" id="workflowName" type="text" data-a4-focus name="Workflow_name" value="{$workflow.name|wash}" />
 </div>
 
 {section show=$event_list}
@@ -156,12 +156,3 @@
 
 </form>
 
-{literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    document.getElementById('workflowName').select();
-    document.getElementById('workflowName').focus();
-});
-</script>
-{/literal}

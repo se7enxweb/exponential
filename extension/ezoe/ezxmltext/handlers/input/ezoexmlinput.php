@@ -1326,6 +1326,14 @@ class eZOEXMLInput extends eZXMLInputHandler
                     break;
                 }
 
+                // inputXML() removes every line break of its output at the end. Inside a custom tag (e.g. a formula)
+                // that glued the lines together: "\\cdot<line break>x" became "\\cdotx". There the line break and
+                // the white space around it become one space, as TeX reads it.
+                if ( $tag->parentNode instanceof DOMElement && $tag->parentNode->nodeName === 'custom' )
+                {
+                    $tagContent = preg_replace( '/[ \t]*(?:\r\n|\r|\n)\s*/', ' ', $tagContent );
+                }
+
                 $tagContent = htmlspecialchars( $tagContent, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 );
                 $tagContent = str_replace ( '&amp;nbsp;', '&nbsp;', $tagContent );
 
@@ -1584,15 +1592,17 @@ class eZOEXMLInput extends eZXMLInputHandler
                     $customAttributePart .= ' align="' . self::markupValue( $align ) . '"';
                 }
 
+                // === '' instead of !$childTagText: a custom tag whose text is "0" is falsy in PHP and reached the
+                // editor as &nbsp;; saving stored a space instead of the 0.
                 if ( isset( self::$nativeCustomTags[ $name ] ))
                 {
-                    if ( !$childTagText ) $childTagText = '&nbsp;';
+                    if ( $childTagText === '' ) $childTagText = '&nbsp;';
                     $output .= '<' . self::$nativeCustomTags[ $name ] . $customAttributePart . $styleString .
                                '>' . $childTagText . '</' . self::$nativeCustomTags[ $name ] . '>';
                 }
                 else if ( $inline === true )
                 {
-                    if ( !$childTagText ) $childTagText = '&nbsp;';
+                    if ( $childTagText === '' ) $childTagText = '&nbsp;';
                     $tagName = $name === 'underline' ? 'u' : 'span';
                     $output .= '<' . $tagName . ' class="ezoeItemCustomTag ' . $htmlName . '" type="custom"' .
                                $customAttributePart . $styleString . '>' . $childTagText . '</' . $tagName . '>';

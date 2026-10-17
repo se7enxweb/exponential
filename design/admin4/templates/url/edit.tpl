@@ -13,7 +13,7 @@
     <div class="context-attributes">
         <div class="block">
             <label for="address">{'Address'|i18n( 'design/admin/url/edit' )}:</label>
-            <input class="box" id="address" type="text" name="link" value="{$url.url|wash}" />
+            <input class="box" id="address" type="text" data-a4-focus name="link" value="{$url.url|wash}" />
         </div>
     </div>
 
@@ -30,12 +30,3 @@
 </div>
 </form>
 
-{literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    document.getElementById('address').select();
-    document.getElementById('address').focus();
-});
-</script>
-{/literal}

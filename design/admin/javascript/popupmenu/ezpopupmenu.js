@@ -99,11 +99,14 @@ An example example with a menu and a submenu.
     Each item can contain the following properties:
       + "url": The URL that this element should point at. Put the part that should be substituted within "%" symbols.
 
-The following example configures the menu created in step 1.
+The following example configures the menu created in step 1. menuArray exists once this file is loaded: add to it,
+never assign it anew (var menuArray = new Array() or menuArray = {} replaces it, and the menus declared with data-menu-*
+attributes, see below, are no longer created on first use). Without an inline script, the same menu is declared with
+data-menu-depth on the menu and data-menu-url on its items (preferred: a page under a Content Security Policy without
+'unsafe-inline' runs no inline script).
 --------------------------------------------------------------------------------
-<script language="JavaScript1.2" type="text/javascript">
+<script type="text/javascript">
 
- var menuArray = new Array();
  <!-- main menu -->
  menuArray['mainmenu'] = {};
  menuArray['mainmenu']['depth'] = 0;
@@ -316,9 +319,12 @@ function _listenForOutsideClicks()
  */
 function _doItemSubstitution( menuID, menuHeader )
 {
-    // Do URL replace for all items in that menu
-    for ( var i in menuArray[menuID]['elements'] )
+    // Do URL replace for all items in that menu: those of menuArray[menuID]['elements'] and those declared with
+    // data-menu-* attributes (_items)
+    var elements = _items( menuID );
+    for ( var i in elements )
     {
+        var item = elements[i];
         var hrefElement = document.getElementById( i );
 
         if ( !hrefElement )
@@ -327,17 +333,18 @@ function _doItemSubstitution( menuID, menuHeader )
         }
 
         // href replacement
-        var replaceString = menuArray[menuID]['elements'][i]['url'];
+        var replaceString = item['url'];
 
         if ( replaceString )
         {
             replaceString = _substituteString( replaceString, CurrentSubstituteValues );
-            hrefElement.setAttribute( "href", replaceString );
+            // only an address of this site: a javascript:, data: or foreign URL in the menu is not linked
+            hrefElement.setAttribute( "href", _isSafeURL( replaceString ) ? replaceString : '#' );
         }
 
         // shown only when a value of the menu is set (shown_if: '%canImport%'): an item that does not apply to this
         // item of the page (the Import of the Import/Export menu outside a container) is left out, not disabled
-        var shownIf = menuArray[menuID]['elements'][i]['shown_if'];
+        var shownIf = item['shown_if'];
         if ( shownIf )
         {
             var shownValue = CurrentSubstituteValues != -1 ? CurrentSubstituteValues[shownIf] : undefined;
@@ -345,24 +352,24 @@ function _doItemSubstitution( menuID, menuHeader )
         }
 
         // dynamic generation
-        var loopingVariable = menuArray[menuID]['elements'][i]['variable'];
+        var loopingVariable = item['variable'];
 
         if ( loopingVariable )
         {
-            _fillItems( hrefElement, menuArray[menuID]['elements'][i]['content'], CurrentSubstituteValues[loopingVariable] );
+            _fillItems( hrefElement, item['content'], CurrentSubstituteValues[loopingVariable] );
         }
 
         var disabledForElement = false;
-        if ( typeof( menuArray[menuID]['elements'][i]['disabled_for'] ) != 'undefined' && CurrentDisableIDList )
+        if ( typeof( item['disabled_for'] ) != 'undefined' && CurrentDisableIDList )
         {
             for ( var disI = 0, disL = CurrentDisableIDList.length; disI < disL; disI++ )
             {
-                if ( disabledForElement = menuArray[menuID]['elements'][i]['disabled_for'][ CurrentDisableIDList[disI] ] === 'yes'  )
+                if ( disabledForElement = item['disabled_for'][ CurrentDisableIDList[disI] ] === 'yes'  )
                     break;
             }
         }
 
-        if ( typeof( menuArray[menuID]['elements'][i]['disabled_class'] ) != 'undefined' &&
+        if ( typeof( item['disabled_class'] ) != 'undefined' &&
               ( disabledForElement ||
               ( CurrentDisableMenuID && hrefElement.id == CurrentDisableMenuID ) ) )
         {
@@ -372,14 +379,14 @@ function _doItemSubstitution( menuID, menuHeader )
             CurrentDisabledMenusItems[hrefElement.id]['onmouseover'] = hrefElement.onmouseover;
             CurrentDisabledMenusItems[hrefElement.id]['onclick'] = hrefElement.onclick;
 
-            hrefElement.className = menuArray[menuID]['elements'][i]['disabled_class'];
+            hrefElement.className = item['disabled_class'];
             hrefElement.setAttribute( "href", '#' );
             hrefElement.onmouseover = "";
             hrefElement.onclick = "";
 
         }
-        else if ( typeof( menuArray[menuID]['elements'][i]['disabled_class'] ) != 'undefined' &&
-                  hrefElement.className == menuArray[menuID]['elements'][i]['disabled_class'] )
+        else if ( typeof( item['disabled_class'] ) != 'undefined' &&
+                  hrefElement.className == item['disabled_class'] )
         {
             // Restore(enable) menu item
             if ( typeof( CurrentDisabledMenusItems[hrefElement.id] ) != 'undefined' )
@@ -449,7 +456,9 @@ function _fillNodes( parent, values )
             for ( var a = 0; a < node.attributes.length; a++ )
             {
                 var name = node.attributes[a].name, value = node.attributes[a].value;
-                var filled = _fillString( value, values, /^on/i.test( name ) );
+                // an event handler attribute (a menu of an extension) is a script, the values of a form a declared
+                // item submits (data-menu-form-values) JSON
+                var filled = _fillString( value, values, /^on/i.test( name ) ? 'script' : ( name === 'data-menu-form-values' ? 'json' : '' ) );
                 if ( filled !== value ) node.setAttribute( name, filled );
             }
             _fillNodes( node, values );
@@ -458,7 +467,8 @@ function _fillNodes( parent, values )
 }
 
 // Every placeholder of values in text, in one pass (a value that holds a placeholder stays as it is); in a script
-// (an event handler attribute) as the content of a string literal.
+// (an event handler attribute, inScript 'script' or true) as the content of a string literal, in JSON ('json') as the
+// content of a JSON string.
 function _fillString( text, values, inScript )
 {
     var keys = [];
@@ -471,6 +481,7 @@ function _fillString( text, values, inScript )
     return text.replace( new RegExp( keys.join( '|' ), 'g' ), function( key )
     {
         var value = String( values[key] );
+        if ( inScript === 'json' ) return JSON.stringify( value ).slice( 1, -1 );
         return inScript ? JSON.stringify( value ).slice( 1, -1 ).replace( /'/g, "\\'" ) : value;
     } );
 }
@@ -774,12 +785,45 @@ function _createAArray( flat )
  */
 function _SubstituteAndRedirect( href )
 {
-    // loop though substitute values and substitute for each of them
-    for ( var substItem in CurrentSubstituteValues )
+    // every placeholder, each value URL-encoded (as the action of _submitForm())
+    var encoded = {};
+    for ( var key in CurrentSubstituteValues )
     {
-        href = href.replace( substItem, CurrentSubstituteValues[substItem] );
+        if ( typeof CurrentSubstituteValues[key] != 'object' && typeof CurrentSubstituteValues[key] != 'function' )
+            encoded[key] = encodeURIComponent( String( CurrentSubstituteValues[key] ) );
     }
+    href = _fillString( String( href ), encoded, false );
+    // only an address of this site (http or https, same origin): a javascript:, data: or foreign URL does nothing
+    if ( !_isSafeURL( href ) )
+        return;
     location.href = href;
+}
+
+// True for an address of this site: resolved against the page, http or https and the page's origin. Anything else
+// (javascript:, data:, //other.host, an address that does not parse) is refused with an error in the console.
+function _isSafeURL( url )
+{
+    var safe = false;
+    try
+    {
+        if ( typeof URL === 'function' )
+        {
+            var page = new URL( window.location.href ), target = new URL( String( url ), page.href );
+            safe = ( target.protocol === 'http:' || target.protocol === 'https:' ) && target.origin === page.origin;
+        }
+        else
+        {
+            // no URL parser: only a path of this site
+            safe = /^\/(?![\/\\])/.test( String( url ) );
+        }
+    }
+    catch ( e )
+    {
+        safe = false;
+    }
+    if ( !safe && window.console )
+        window.console.error( 'ezpopupmenu: refused the address ' + url + ' (not of this site)' );
+    return safe;
 }
 
 function _getScreenProperties()
@@ -935,6 +979,7 @@ function _openSubmenu( item )
     var level = menuArray[menu.id]['depth'];
     // Calls ezpopmenu_showSubLevel(); the submenu may already be open from the mouse hovering the item.
     if ( typeof item.onmouseover === 'function' ) item.onmouseover.call( item );
+    else _hover( item, null );
     var sub = VisibleMenus[level + 1];
     if ( sub && sub != 'none' && SubMenuOpeners[sub] === item ) _focusItem( sub, 0 );
 }
@@ -1080,6 +1125,225 @@ function _keyHandler( e )
     }
 }
 
+/*!
+  Menus declared without a script (doc/features/6.0/content-security-policy.md): a page under a Content Security
+  Policy without 'unsafe-inline' runs neither inline <script> elements nor on...= attributes, so a menu, its items
+  and the elements that open it can say what the menuArray entries and the event handler attributes said in
+  data-menu-* attributes; one listener per event on the document acts on them.
+
+  On the menu (div.popupmenu):
+    data-menu-depth="1"            menuArray[id]['depth']
+    data-menu-header="menu-header" menuArray[id]['headerID']
+  On an item (an element with an id inside the menu), what menuArray[id]['elements'][itemID] held:
+    data-menu-url="/content/edit/%objectID%"          'url'
+    data-menu-shown-if="%canImport%"                  'shown_if'
+    data-menu-disabled-class="menu-item-disabled"     'disabled_class'
+    data-menu-disabled-for="class-history url-alias"  'disabled_for' (the keys that disable it)
+    data-menu-variable="%languages%" data-menu-template="<id of a <template>>"   'variable' and 'content'
+  What an item does (instead of onmouseover / onclick):
+    data-menu-submenu="EditSubmenu"   pointing at it (or Enter, Arrow right) opens that submenu below it;
+                                      data-menu-hide="A B" first hides the menus A and B
+    data-menu-form="menu-form-move"   a click submits that form (ezpopmenu_submitForm()); data-menu-form-values
+                                      '["classID","%classID%"]' are its custom substitutions
+    data-menu-redirect="/url/%nodeID%" a click goes to the URL with the values put in (ezpopup_SubstituteAndRedirect())
+    Every other item hides the submenus of other items when pointed at (ezpopmenu_mouseOver()).
+  An element that opens a menu (instead of onclick="ezpopmenu_showTopLevel( ... )"):
+    data-menu-open="ContextMenu"                the menu
+    data-menu-values='{"%nodeID%":2}'           the values (JSON)
+    data-menu-languages / data-menu-classes     %languages% and %classList% (the JSON of language_js_array and
+                                                classes_js_array; empty or '' for none)
+    data-menu-title="Name"                      the header text
+    data-menu-disable="2"                       the disable list (JSON array, or one value)
+    data-menu-disable-item="menu-create-here"   the item to disable
+  An item with an event handler attribute of its own (a menu of an extension) keeps working as before, and a menu
+  that an extension's script adds items to (menuArray['ContextMenu']['elements'][...] = ...) is created from its
+  data-menu-* attributes on first use.
+*/
+
+// The items of a menu: the entries of menuArray[menuID]['elements'], and those declared on its items
+function _items( menuID )
+{
+    var entries = {}, declared = {}, menu = document.getElementById( menuID ), i;
+    var nodes = menu && menu.querySelectorAll ?
+        menu.querySelectorAll( '[data-menu-url], [data-menu-shown-if], [data-menu-disabled-class], [data-menu-variable]' ) : [];
+    for ( i = 0; i < nodes.length; i++ )
+    {
+        if ( nodes[i].id ) declared[nodes[i].id] = _declaredItem( nodes[i] );
+    }
+    var listed = menuArray[menuID] && menuArray[menuID]['elements'] ? menuArray[menuID]['elements'] : {};
+    for ( i in declared ) entries[i] = declared[i];
+    for ( i in listed )
+    {
+        if ( !entries[i] ) { entries[i] = listed[i]; continue; }
+        var merged = {}, key;
+        for ( key in entries[i] ) merged[key] = entries[i][key];
+        for ( key in listed[i] ) merged[key] = listed[i][key];
+        entries[i] = merged;
+    }
+    return entries;
+}
+
+function _declaredItem( el )
+{
+    var item = {};
+    if ( el.hasAttribute( 'data-menu-url' ) ) item['url'] = el.getAttribute( 'data-menu-url' );
+    if ( el.hasAttribute( 'data-menu-shown-if' ) ) item['shown_if'] = el.getAttribute( 'data-menu-shown-if' );
+    if ( el.hasAttribute( 'data-menu-disabled-class' ) ) item['disabled_class'] = el.getAttribute( 'data-menu-disabled-class' );
+    if ( el.hasAttribute( 'data-menu-disabled-for' ) )
+    {
+        var keys = el.getAttribute( 'data-menu-disabled-for' ).split( /\s+/ ), disabledFor = {};
+        for ( var k = 0; k < keys.length; k++ )
+        {
+            if ( keys[k] ) disabledFor[keys[k]] = 'yes';
+        }
+        item['disabled_for'] = disabledFor;
+    }
+    if ( el.hasAttribute( 'data-menu-variable' ) )
+    {
+        item['variable'] = el.getAttribute( 'data-menu-variable' );
+        var template = document.getElementById( el.getAttribute( 'data-menu-template' ) || '' );
+        item['content'] = template ? template.innerHTML : '';
+    }
+    return item;
+}
+
+// A menu's entry from the attributes of its element (data-menu-depth, data-menu-header); null for an element that is
+// no declared menu
+function _declaredMenu( id )
+{
+    var el = typeof id === 'string' && document.getElementById ? document.getElementById( id ) : null;
+    if ( !el || !el.hasAttribute || !el.hasAttribute( 'data-menu-depth' ) ) return null;
+    var entry = { 'depth': parseInt( el.getAttribute( 'data-menu-depth' ), 10 ) || 0, 'elements': {} };
+    if ( el.hasAttribute( 'data-menu-header' ) ) entry['headerID'] = el.getAttribute( 'data-menu-header' );
+    return entry;
+}
+
+// menuArray, which creates the entry of a declared menu when it is first asked for
+function _declaringMenus( menus )
+{
+    if ( typeof Proxy !== 'function' ) return menus;
+    return new Proxy( menus, {
+        get: function( target, key )
+        {
+            if ( !( key in target ) )
+            {
+                var entry = _declaredMenu( key );
+                if ( entry ) target[key] = entry;
+            }
+            return target[key];
+        }
+    } );
+}
+
+function _isDisabled( item )
+{
+    return item.getAttribute( 'aria-disabled' ) === 'true';
+}
+
+// An item pointed at (or opened from the keyboard, event null): its submenu, or the submenus of other items hidden
+function _hover( item, event )
+{
+    var menu = _menuOf( item );
+    if ( !menu || _isDisabled( item ) ) return;
+    var sub = item.getAttribute( 'data-menu-submenu' );
+    if ( sub )
+    {
+        var hide = ( item.getAttribute( 'data-menu-hide' ) || '' ).split( /\s+/ );
+        for ( var i = 0; i < hide.length; i++ )
+        {
+            if ( hide[i] && menuArray[hide[i]] ) _hide( hide[i] );
+        }
+        _showSubLevel( event, sub, item.id );
+    }
+    else
+    {
+        _mouseOver( menu.id );
+    }
+}
+
+// The values of an opener: data-menu-values (JSON), %languages% and %classList%
+function _openerValues( el )
+{
+    var values = {};
+    try { values = JSON.parse( el.getAttribute( 'data-menu-values' ) || '{}' ) || {}; } catch ( e ) { values = {}; }
+    var lists = { 'data-menu-languages': '%languages%', 'data-menu-classes': '%classList%' };
+    for ( var attr in lists )
+    {
+        if ( !el.hasAttribute( attr ) ) continue;
+        var list = el.getAttribute( attr ), parsed = '';
+        if ( list && list !== "''" )
+        {
+            try { parsed = JSON.parse( list ); } catch ( e ) { parsed = ''; }
+        }
+        values[lists[attr]] = parsed;
+    }
+    return values;
+}
+
+function _openerDisableList( el )
+{
+    if ( !el.hasAttribute( 'data-menu-disable' ) ) return -1;
+    var list = el.getAttribute( 'data-menu-disable' );
+    try { return JSON.parse( list ); } catch ( e ) { return list; }
+}
+
+// The event a menu reads (the opener, the position and how it was opened) for a listener that sits on the document
+function _openerEvent( e, el )
+{
+    return { type: e.type, detail: e.detail, pageX: e.pageX, pageY: e.pageY, clientX: e.clientX, clientY: e.clientY,
+             target: el, currentTarget: el };
+}
+
+function _declaredClick( e )
+{
+    var target = e.target && e.target.closest ? e.target : ( e.target && e.target.parentNode );
+    if ( !target || !target.closest ) return;
+
+    var opener = target.closest( '[data-menu-open]' );
+    if ( opener && !_menuOf( opener ) )
+    {
+        e.preventDefault();
+        _showTopLevel( _openerEvent( e, opener ), opener.getAttribute( 'data-menu-open' ), _openerValues( opener ),
+                       opener.getAttribute( 'data-menu-title' ), _openerDisableList( opener ),
+                       opener.getAttribute( 'data-menu-disable-item' ) || -1 );
+        return;
+    }
+
+    var item = target.closest( 'div.popupmenu [data-menu-form], div.popupmenu [data-menu-redirect], div.popupmenu [data-menu-submenu]' );
+    if ( !item || item.hasAttribute( 'onclick' ) ) return;
+    if ( _isDisabled( item ) || item.hasAttribute( 'data-menu-submenu' ) )
+    {
+        // a disabled item does nothing; an item with a submenu opens it when pointed at, a click stays on the page
+        e.preventDefault();
+        return;
+    }
+    if ( item.hasAttribute( 'data-menu-form' ) )
+    {
+        e.preventDefault();
+        var custom = null;
+        try { custom = JSON.parse( item.getAttribute( 'data-menu-form-values' ) || 'null' ); } catch ( err ) { custom = null; }
+        _submitForm( item.getAttribute( 'data-menu-form' ), custom );
+        return;
+    }
+    e.preventDefault();
+    _hideAll();
+    _SubstituteAndRedirect( item.getAttribute( 'data-menu-redirect' ) );
+}
+
+function _declaredMouseOver( e )
+{
+    var item = e.target && e.target.closest ? e.target.closest( 'div.popupmenu a' ) : null;
+    // an item with a handler attribute of its own (a menu of an extension) is left to it
+    if ( !item || item.hasAttribute( 'onmouseover' ) ) return;
+    _hover( item, e );
+}
+
+if ( document.addEventListener )
+{
+    document.addEventListener( 'click', _declaredClick );
+    document.addEventListener( 'mouseover', _declaredMouseOver );
+}
+
 if ( document.addEventListener ) document.addEventListener( 'keydown', _keyHandler );
 
 // Register some functions on global scope
@@ -1092,9 +1356,7 @@ window.ezpopmenu_hide = _hide;
 window.ezpopmenu_submitForm = _submitForm;
 window.ezpopmenu_showSubLevel = _showSubLevel;
 
-if ( window.menuArray === undefined )
-{
-    window.menuArray = {};
-}
+// A menu declared with data-menu-* attributes is created on first use, also by a script that adds items to it
+window.menuArray = _declaringMenus( window.menuArray === undefined ? {} : window.menuArray );
 
 })();// Scope end
