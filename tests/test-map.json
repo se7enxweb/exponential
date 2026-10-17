@@ -739,7 +739,8 @@
       "tests/tests/design/AdminMegaMenuTest.php",
       "tests/tests/design/AdminIconsTest.php",
       "tests/tests/design/AdminHeaderTest.php",
-      "tests/tests/design/AdminPhoneMenuTest.php"
+      "tests/tests/design/AdminPhoneMenuTest.php",
+      "tests/tests/design/Admin4lReviewTest.php"
     ],
     "design/admin/templates/setup/cronjobs.tpl": [
       "tests/tests/kernel/classes/expCronjobPauseTest.php"
@@ -994,6 +995,15 @@
     "kernel/setup/steps/ezstep_create_sites.php": [
       "tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php",
       "tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php"
+    ],
+    "design/admin4l/templates/pagelayout.tpl": [
+      "tests/tests/design/Admin4lReviewTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl": [
+      "tests/tests/design/Admin4lReviewTest.php"
+    ],
+    "design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl": [
+      "tests/tests/design/Admin4lReviewTest.php"
     ]
   },
   "generated": {

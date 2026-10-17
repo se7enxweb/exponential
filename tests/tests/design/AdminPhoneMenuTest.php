@@ -268,7 +268,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         // admin4l's tab menu block has the same order and the same close button at the panel's end
         $at = -1;
         foreach ( array( '<li class="header-search-mobile">', "{include uri='design:parts/a4_topmenu_items.tpl'", '<li class="a4-nav-more" hidden>',
-                         '<li class="a4-phone-only a4-phone-close">', '<!-- end::Navbar Menu -->' ) as $needle )
+                         '<li class="a4-phone-only a4-phone-close">' ) as $needle )
         {
             $next = strpos( $tabMenu, $needle );
             $this->assertNotFalse( $next, 'admin4l: ' . $needle );

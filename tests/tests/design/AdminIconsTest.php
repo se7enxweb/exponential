@@ -209,7 +209,7 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
     /**
      * admin4l's header blocks are copies of parts of admin4's page_topmenu.tpl ("keep in step"): every line of
      * their markup is in page_topmenu.tpl, so a change of the icons or names there cannot leave admin4l behind.
-     * The tab menu block keeps a plain .navbar-menu wrapper; the zone's wrapper in admin4l's page layout is the landmark.
+     * The tab menu block draws only the <li> items; the wrapper in admin4l's page layout is the landmark.
      */
     public function testAdmin4lHeaderBlocksAreInStepWithTheTopMenu()
     {
