@@ -134,7 +134,7 @@ class AdminVisibilityStatusTest extends PHPUnit\Framework\TestCase
             return $out;
         };
         $light = $tokens( ':root' );
-        $modes = array( 'light' => $light, 'dark' => $tokens( 'html[data-a4-theme="dark"]' ) + $light );
+        $modes = array( 'light' => $light, 'dark' => $tokens( 'html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"]))' ) + $light );
         $marks = array( '--a4-ok' => '--a4-ok-bg', '--a4-bad' => '--a4-bad-bg', '--a4-warn' => '--a4-warn-bg', '--a4-muted' => '--a4-soft' );
         $failures = array();
         foreach ( $modes as $mode => $t )

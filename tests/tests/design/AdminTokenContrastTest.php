@@ -25,7 +25,7 @@ class AdminTokenContrastTest extends PHPUnit\Framework\TestCase
         $components = AdminFiles::read( $root . '/design/admin4/stylesheets/components.css' );
         $frame = AdminFiles::read( $root . '/design/admin4/stylesheets/admin4.css' );
         $light = self::tokens( $components, ':root' ) + self::tokens( $frame, ':root' );
-        $dark = self::tokens( $components, 'html[data-a4-theme="dark"]' ) + self::tokens( $frame, 'html[data-a4-theme="dark"]' ) + $light;
+        $dark = self::tokens( $components, 'html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"]))' ) + self::tokens( $frame, 'html[data-a4-theme="dark"]' ) + $light;
         self::$modes = array( 'light' => $light, 'dark' => $dark );
     }
 

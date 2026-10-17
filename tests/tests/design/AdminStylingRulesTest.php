@@ -298,7 +298,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     {
         $css = AdminFiles::read( self::$root . '/design/admin4/stylesheets/components.css' );
         $light = self::tokensOf( $css, ':root' );
-        $dark = self::tokensOf( $css, 'html[data-a4-theme="dark"]' );
+        $dark = self::tokensOf( $css, 'html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"]))' );
         $this->assertNotEmpty( $light );
         $missing = array();
         foreach ( $light as $token )
@@ -512,7 +512,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $dir = self::$root . '/design/admin4/stylesheets';
         $components = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( "$dir/components.css" ) );
         $this->assertMatchesRegularExpression( '/(^|\})\s*:root\s*\{[^}]*color-scheme:\s*light/s', $components );
-        $this->assertMatchesRegularExpression( '/html\[data-a4-theme="dark"\]\s*\{[^}]*color-scheme:\s*dark/s', $components );
+        $this->assertMatchesRegularExpression( '/html\[data-a4-theme="dark"\]:not\(:where\(\[data-a4-modes="light"\]\)\)\s*\{[^}]*color-scheme:\s*dark/s', $components );
         $this->assertMatchesRegularExpression( '/@media \(forced-colors: active\)\s*\{.*?\.a4-dot, \.a4-meter > span, \.a4-bars > \* \{ forced-color-adjust: none; \}/s', $components );
         // the touch rule must outweigh .a4-field input[type=text] (0,2,1): one :not() per excluded type
         $this->assertMatchesRegularExpression( '/@media \(pointer: coarse\)\s*\{[^}]*\.a4-field input:not\(\[type=checkbox\]\):not\(\[type=radio\]\)[^{]*\{ font-size: var\(--a4-text-l\); \}/s', $components );
@@ -902,6 +902,24 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'control.focus();', $js );
         // while a context menu is shown, Escape belongs to the menu, whatever the script order
         $this->assertStringContainsString( 'document.querySelectorAll("div.popupmenu")', $js );
+    }
+
+    /**
+     * #558: the classic design has only the light mode. Its page layouts say so (html[data-a4-modes="light"]) and the
+     * dark tokens skip such a page, so a dark html[data-a4-theme] there cannot put the dark tokens' light text on the
+     * classic frame's light header and columns. admin4's page layouts must not carry the mark.
+     */
+    public function testClassicPageLayoutsStayLightUnderADarkTheme()
+    {
+        foreach ( array( 'pagelayout.tpl', 'loginpagelayout.tpl' ) as $file )
+        {
+            $this->assertMatchesRegularExpression( '/<html [^>]*data-a4-modes="light"/', AdminFiles::read( self::$root . "/design/admin/templates/$file" ), "design/admin/templates/$file" );
+            $this->assertStringNotContainsString( 'data-a4-modes="light"', AdminFiles::read( self::$root . "/design/admin4/templates/$file" ), "design/admin4/templates/$file" );
+        }
+        $components = preg_replace( '#/\*.*?\*/#s', '', AdminFiles::read( self::$root . '/design/admin/stylesheets/components.css' ) );
+        // the only top-level block of dark tokens is the one that skips a light-only page
+        $this->assertSame( 1, preg_match_all( '/(^|\})\s*html\[data-a4-theme="dark"\][^{]*\{\s*color-scheme/', $components ) );
+        $this->assertSame( 1, preg_match_all( '/(^|\})\s*html\[data-a4-theme="dark"\]:not\(:where\(\[data-a4-modes="light"\]\)\)\s*\{\s*color-scheme: dark;/', $components ) );
     }
 
     public function testComponentsAreTheSameInAdminAndAdmin4()
