@@ -278,7 +278,7 @@ ac084a07607e6d6c5a845da15423854f  design/admin/images/view-fullscreen.png
 a5e25bc5b912c88678afe25d798ade81  design/admin/javascript/expajaxuploader.js
 59795cfe15e8bc99974d7d9099794478  design/admin/javascript/ezajaxrelations_jquery.js
 f02e93624744081391c450871c0aaf92  design/admin/javascript/ezajaxsubitems_expdatatable.js
-415a9e1414e032778c6d8bbd1f575633  design/admin/javascript/leftmenu_widthcontrol.js
+0008a7955d1f67c5efd0f08fe978f284  design/admin/javascript/leftmenu_widthcontrol.js
 d5da958d6db22f93e9b4cffa6342bef5  design/admin/javascript/node_tabs.js
 41bbff07d99eeb191520d98df1035fe7  design/admin/javascript/page/package_create_info.js
 c71727095da21bb273294e7524c8934a  design/admin/javascript/page/package_wizard_pick.js
@@ -3167,7 +3167,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-ca8a247f7e907c52f50685c9d0342e17  doc/changelogs/6.0/6.0.15.md
+8b4fa42b86840e9427d16f8fe9979979  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7609,6 +7609,7 @@ ca25a4b93b231cb5ebc3f04b2d1c61d8  tests/tests/design/AdminTopNodeNameTest.php
 ccd433156774b07dbcedd50766144243  tests/tests/design/AdminTreeViewTest.php
 22e8a59ecf13ada22293642d78a64fbf  tests/tests/design/AdminVisibilityStatusTest.php
 f0f50ee05d633e889c584fbc962ea814  tests/tests/design/AsynchronousPublishingLinkTest.php
+72b8688d77884e0a8d3b705c186a7191  tests/tests/design/ClassicAdminNarrowWindowTest.php
 a160ae3b2d682c5f063abf5546023024  tests/tests/design/FormSubmitButtonDisableTest.php
 5582056a45ff633ad8831432b6074f3c  tests/tests/design/js/asynchronous_publishing.js
 97f0260b658044b5a65cd992f81c3ec8  tests/tests/design/js/csp_actions.js
