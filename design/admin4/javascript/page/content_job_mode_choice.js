@@ -1,6 +1,7 @@
 /*
  * The "run now or in the background" choice on a confirmation page (content/job_mode_choice.tpl): a change is
- * remembered as the user's preference for the operation (data-prefs, data-op of the fieldset), and with data-form the
+ * remembered as the user's preference admin_content_job_mode_<data-op of the fieldset>, saved through window.a4Pref
+ * (a4_head.js: a POST to user/preferences/set_and_exit with the form token), and with data-form the
  * choice is sent with that form, which may stand elsewhere on the page. A file of its own, so the page runs under a
  * Content Security Policy without 'unsafe-inline' (doc/features/6.0/content-security-policy.md).
  *
@@ -11,10 +12,10 @@
   function setup(set) {
     if (set.hasAttribute('data-job-mode-ready')) return;
     set.setAttribute('data-job-mode-ready', '1');
-    var op = set.getAttribute('data-op'), formName = set.getAttribute('data-form'), prefs = set.getAttribute('data-prefs');
+    var op = set.getAttribute('data-op'), formName = set.getAttribute('data-form');
     set.addEventListener('change', function (e) {
-      if (!e.target || e.target.name !== 'ContentJobMode' || !prefs) return;
-      fetch(prefs + '/admin_content_job_mode_' + op + '/' + e.target.value, {credentials: 'same-origin', cache: 'no-store'}).catch(function () {});
+      if (!e.target || e.target.name !== 'ContentJobMode' || !op || !window.a4Pref) return;
+      window.a4Pref.set('admin_content_job_mode_' + op, e.target.value);
     });
     // the browse page renders this above its form: listen on the document, the form need not exist yet
     if (formName) {

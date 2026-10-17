@@ -63281,6 +63281,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>the system (cronjob or command line)</source>
         <translation>the system (cronjob or command line)</translation>
     </message>
+    <message>
+        <source>This job no longer exists or you may not see it. The status is not updated any more.</source>
+        <translation>This job no longer exists or you may not see it. The status is not updated any more.</translation>
+    </message>
+    <message>
+        <source>You are no longer signed in. Sign in again and reload this page to follow the job.</source>
+        <translation>You are no longer signed in. Sign in again and reload this page to follow the job.</translation>
+    </message>
+    <message>
+        <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation>The status could not be shown. Reload the page to follow the job.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>

@@ -70834,6 +70834,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>the system (cronjob or command line)</source>
         <translation>das System (Cronjob oder Kommandozeile)</translation>
     </message>
+    <message>
+        <source>This job no longer exists or you may not see it. The status is not updated any more.</source>
+        <translation>Diesen Job gibt es nicht mehr, oder Sie dürfen ihn nicht sehen. Der Status wird nicht mehr aktualisiert.</translation>
+    </message>
+    <message>
+        <source>You are no longer signed in. Sign in again and reload this page to follow the job.</source>
+        <translation>Sie sind nicht mehr angemeldet. Melden Sie sich erneut an und laden Sie diese Seite neu, um den Job weiter zu verfolgen.</translation>
+    </message>
+    <message>
+        <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation>Der Status konnte nicht angezeigt werden. Laden Sie die Seite neu, um den Job weiter zu verfolgen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>

@@ -2,7 +2,7 @@
    optional $form_name: the name of a form elsewhere on the page that the choice is sent with (the browse page,
    whose form does not contain this block). The choice is remembered as the user's preference for the operation. *}
 {default form_name=''}
-<fieldset class="a4-content-job-mode" data-prefs={"user/preferences/set"|ezurl} data-op="{$job_mode.op|wash}"{if $form_name} data-form="{$form_name|wash}"{/if}>
+<fieldset class="a4-content-job-mode" data-op="{$job_mode.op|wash}"{if $form_name} data-form="{$form_name|wash}"{/if}>
     <legend>{'How to run it'|i18n( 'design/admin/content/job' )}</legend>
     <label><input type="radio" name="ContentJobMode" value="job"{if eq( $job_mode.default, 'job' )} checked="checked"{/if} />
         {if eq( $job_mode.recommended, 'job' )}{'Run in the background (recommended for %count items: you can leave the page)'|i18n( 'design/admin/content/job',, hash( '%count', $job_mode.count ) )}{else}{'Run in the background (%count items: you can leave the page)'|i18n( 'design/admin/content/job',, hash( '%count', $job_mode.count ) )}{/if}</label>
