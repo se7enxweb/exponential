@@ -9,6 +9,8 @@
  *   - requestInfo() and requestChip(): a status only from 100 to 599, amber from 400, red from 500
  *   - debugbar.ini ships Theme=default and registers the setting; the stylesheet has an icon for every key the summary
  *     draws, no external URL, and is linked only in the toolbar theme
+ *   - the panels: metrics from the chips' rows in the toolbar theme only, the tabs a menu down the left side from
+ *     761px on, with an icon each and the up and down arrows
  *   - the new words are translated in eng-US and ger-DE
  *
  * No database: the figures are passed in.
@@ -112,6 +114,52 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'ok', '-' ), array( $chip[2], $chip[3] ), 'nothing known: a dash' );
     }
 
+    public function testThePanelsGetMetricsInTheToolbarThemeOnly()
+    {
+        $this->assertSame( '<dl class="exp-debug-metrics"><div class="exp-debug-metric"><dt>Queries</dt><dd>12</dd></div>'
+                           . '<div class="exp-debug-metric"><dt>&lt;b&gt;</dt><dd>a&amp;b</dd></div></dl>',
+                           expDebugBarReport::metricsHtml( array( 'Queries' => '12', '<b>' => 'a&b' ) ) );
+
+        $start = new ReflectionMethod( 'expDebugBarReport', 'panelStart' );
+        ob_start();
+        $start->invoke( null, 'sql', array( 'sql' => 'SQL' ), array( 'sql' => array( 'Queries' => '12' ) ) );
+        $start->invoke( null, 'memory', array( 'memory' => 'Memory' ), array( 'sql' => array( 'Queries' => '12' ) ) );
+        $start->invoke( null, 'timing', array( 'timing' => 'Timing' ) );
+        $html = ob_get_clean();
+        $this->assertSame( 1, substr_count( $html, 'exp-debug-metrics' ), 'only the panel with figures' );
+        $this->assertStringContainsString( '<h3 class="exp-debug-panel-title">SQL</h3><dl class="exp-debug-metrics">', $html );
+
+        // the figures come from the chips' rows, collected only for the toolbar theme
+        $source = file_get_contents( $this->root . '/lib/ezutils/classes/expdebugbarreport.php' );
+        $this->assertMatchesRegularExpression( "#\\\$metrics = array\(\);\s+if \( \\\$theme === 'toolbar' \)#", $source );
+        $this->assertSame( 12, preg_match_all( '#self::panelStart\( [^;]+, \$tabs, \$metrics \);#', $source ), 'every panel' );
+
+        $chips = ( new ReflectionMethod( 'expDebugBarReport', 'summaryChips' ) )->invoke( null, self::summary(), 'toolbar' );
+        $keys = array_column( $chips, 1 );
+        foreach ( array( 'request', 'time', 'sql', 'memory', 'templates', 'errors' ) as $key )
+            $this->assertNotEmpty( $chips[array_search( $key, $keys, true )]['rows'], "$key has the rows its panel shows" );
+    }
+
+    public function testTheTabsAreAMenuDownTheLeftSide()
+    {
+        $css = file_get_contents( $this->root . '/design/standard/stylesheets/expdebugbar-toolbar.css' );
+        $this->assertStringContainsString( '@media (min-width: 761px) {', $css, 'narrower, the tabs stay a row' );
+        $this->assertStringContainsString( 'grid-template-columns: 220px minmax(0, 1fr);', $css );
+        $this->assertStringContainsString( '#debug[data-exp-debug-theme="toolbar"] #debug-details > .exp-debug-panel[hidden] { display: none; }', $css,
+                                           'the script hides the other panels with hidden' );
+        foreach ( array( 'messages', 'settings', 'cache', 'timing', 'sql', 'templates', 'rendering', 'includes', 'memory', 'velocity', 'other' ) as $tab )
+            $this->assertStringContainsString( '.exp-debug-tab[data-tab="' . $tab . '"] { --xd-icon: url("data:image/svg+xml,', $css, $tab );
+
+        $js = file_get_contents( $this->root . '/design/standard/javascript/expdebugbar.js' );
+        $this->assertStringContainsString( "window.matchMedia('(min-width: 761px)')", $js, 'the same width as the stylesheet' );
+        $this->assertStringContainsString( "sideways.addEventListener('change', orient);", $js, 'a resized window agrees' );
+        $this->assertStringContainsString( "const nextKey = vertical() ? 'ArrowDown' : 'ArrowRight', previousKey = vertical() ? 'ArrowUp' : 'ArrowLeft';", $js,
+                                           'asked on every key' );
+        $this->assertStringContainsString( 'grid-row: 1 / -1; align-self: start;', $css, 'the handle stays at the top while the panel scrolls' );
+        $this->assertStringContainsString( 'overflow-y: auto;', $css, 'every tab can be reached in a low panel' );
+        $this->assertStringNotContainsString( 'order: -1', $css, 'the filter box comes where the keyboard reaches it' );
+    }
+
     public function testTheIniShipsTheDefaultAndTheSetting()
     {
         $ini = file_get_contents( $this->root . '/settings/debugbar.ini' );
@@ -138,7 +186,9 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
         // the default theme's markup and data stay as they were: no theme attribute, no request in the page's JSON
         $this->assertStringContainsString( "' data-exp-debug-theme=\"toolbar\"' : ''", $source );
         $this->assertMatchesRegularExpression( "#if \( \\\$theme === 'toolbar' \)\s+\\\$summary\['request'\] = self::requestInfo\(#", $source );
-        $this->assertStringContainsString( "if (bar.parentNode.getAttribute('data-exp-debug-theme') === 'toolbar') keepLabel.title", $source );
+        $assets = new ReflectionMethod( 'expDebugBarReport', 'assetsHtml' );
+        $this->assertStringNotContainsString( 'keepLabel.title', $assets->invoke( null ), 'the default theme\'s script as it was' );
+        $this->assertStringContainsString( 'keepLabel.title = keepLabel.textContent.trim();', $assets->invoke( null, 'toolbar' ) );
         $this->assertMatchesRegularExpression( "#if \( \\\$theme === 'toolbar' \)\s+echo self::includeTag\( 'css', 'design/standard/stylesheets/expdebugbar-toolbar\.css' \);#", $source );
     }
 

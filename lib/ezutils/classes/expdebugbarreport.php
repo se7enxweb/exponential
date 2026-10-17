@@ -409,7 +409,19 @@ class expDebugBarReport
         if ( !$debug->UseCSS )
             echo self::includeTag( 'css', 'design/standard/stylesheets/debug.css' );
         echo self::includeTag( 'css', 'design/standard/stylesheets/expdebugbar.css' );
-        // the toolbar theme's rules after the bar's own: they win at the same weight and leave the panel as it is
+        // The toolbar theme heads a panel with the figures of its chip, in large type (the rows of the chip's popup)
+        $metrics = array();
+        if ( $theme === 'toolbar' )
+        {
+            $panelOf = array( 'errors' => 'messages', 'time' => 'timing', 'sql' => 'sql', 'memory' => 'memory',
+                              'templates' => 'templates', 'request' => 'velocity' );
+            foreach ( self::summaryChips( $summary, $theme ) as $chip )
+            {
+                if ( isset( $panelOf[$chip[1]] ) && !empty( $chip['rows'] ) )
+                    $metrics[$panelOf[$chip[1]]] = $chip['rows'];
+            }
+        }
+        // the toolbar theme's rules after the bar's own: they win at the same weight
         if ( $theme === 'toolbar' )
             echo self::includeTag( 'css', 'design/standard/stylesheets/expdebugbar-toolbar.css' );
         echo '<div id="debug" class="exp-debug" data-exp-debug-bar="2"' . ( $theme === 'toolbar' ? ' data-exp-debug-theme="toolbar"' : '' ) . '>';
@@ -436,7 +448,7 @@ class expDebugBarReport
         echo '</div>';
 
         // --- Messages
-        self::panelStart( 'messages', $tabs );
+        self::panelStart( 'messages', $tabs, $metrics );
         echo '<div class="exp-debug-message-tools">';
         echo '<div class="exp-debug-levels" data-counts="' . htmlspecialchars( json_encode( $messages['counts'] ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"></div>';
         echo self::copyMessagesHtml();
@@ -448,7 +460,7 @@ class expDebugBarReport
         self::panelEnd();
 
         // --- Settings (drawn by the script; the classic toolbar below it)
-        self::panelStart( 'settings', $tabs );
+        self::panelStart( 'settings', $tabs, $metrics );
         echo '<div class="exp-debug-settings" data-state="pending"></div>';
         if ( !$userInfo['can_setup'] )
         {
@@ -464,12 +476,12 @@ class expDebugBarReport
         self::panelEnd();
 
         // --- Cache
-        self::panelStart( 'cache', $tabs );
+        self::panelStart( 'cache', $tabs, $metrics );
         echo self::cacheHtml( $pageInfo, $userInfo );
         self::panelEnd();
 
         // --- Timing
-        self::panelStart( 'timing', $tabs );
+        self::panelStart( 'timing', $tabs, $metrics );
         if ( $useTiming )
             echo self::timingPointsHtml( $debug, $startTime );
         if ( $useAccumulators )
@@ -477,13 +489,13 @@ class expDebugBarReport
         self::panelEnd();
 
         // --- SQL
-        self::panelStart( 'sql', $tabs );
+        self::panelStart( 'sql', $tabs, $metrics );
         echo $sqlReports;
         echo self::sqlHtml( $debug, $ini, $dbType, $sqlCount, $sqlMs, $messages['sql'], $totalElapsed );
         self::panelEnd();
 
         // --- Templates
-        self::panelStart( 'templates', $tabs );
+        self::panelStart( 'templates', $tabs, $metrics );
         if ( $templateReports === '' )
             echo '<p class="exp-debug-hint">' . self::h( 'Template usage is not recorded. Turn on "Show used templates" (TemplateSettings ShowUsedTemplates) in the Settings tab.' ) . '</p>';
         echo $templateReports;
@@ -492,37 +504,37 @@ class expDebugBarReport
         // --- Rendering
         if ( $rendering !== null )
         {
-            self::panelStart( 'rendering', $tabs );
+            self::panelStart( 'rendering', $tabs, $metrics );
             echo self::renderingHtml( $rendering );
             self::panelEnd();
         }
 
         // --- Included files
-        self::panelStart( 'includes', $tabs );
+        self::panelStart( 'includes', $tabs, $metrics );
         echo self::includedFilesHtml( $useIncludedFiles );
         self::panelEnd();
 
         // --- Memory
-        self::panelStart( 'memory', $tabs );
+        self::panelStart( 'memory', $tabs, $metrics );
         echo self::memoryHtml( $debug, $totalElapsed, $peakMemory, $memoryLimit, $sqlCount, $queryKey );
         self::panelEnd();
 
         // --- the extensions' panels
         foreach ( $panels as $panel )
         {
-            self::panelStart( $panel['tab'], $tabs );
+            self::panelStart( $panel['tab'], $tabs, $metrics );
             echo $panel['html'];
             self::panelEnd();
         }
 
         // --- Server (id velocity)
-        self::panelStart( 'velocity', $tabs );
+        self::panelStart( 'velocity', $tabs, $metrics );
         echo self::velocityHtml( $userInfo['can_setup'] || $userInfo['can_cache'] );
         self::panelEnd();
 
         if ( $otherReports !== '' )
         {
-            self::panelStart( 'other', $tabs );
+            self::panelStart( 'other', $tabs, $metrics );
             echo $otherReports;
             self::panelEnd();
         }
@@ -555,7 +567,7 @@ class expDebugBarReport
            . json_encode( $data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_PARTIAL_OUTPUT_ON_ERROR )
            . '</script>';
 
-        echo self::assetsHtml();
+        echo self::assetsHtml( $theme );
 
         if ( $returnReport )
         {
@@ -566,10 +578,25 @@ class expDebugBarReport
         return null;
     }
 
-    protected static function panelStart( $id, array $tabs )
+    protected static function panelStart( $id, array $tabs, array $metrics = array() )
     {
         echo '<section class="exp-debug-panel" role="tabpanel" id="exp-debug-panel-' . $id . '" aria-labelledby="exp-debug-tab-' . $id . '" tabindex="0">';
         echo '<h3 class="exp-debug-panel-title">' . htmlspecialchars( $tabs[$id], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</h3>';
+        if ( !empty( $metrics[$id] ) )
+            echo self::metricsHtml( $metrics[$id] );
+    }
+
+    /**
+     * The metrics at the head of a panel in the toolbar theme: a value in large type over its label, for each row
+     * (label => value) of the panel's chip.
+     */
+    public static function metricsHtml( array $rows )
+    {
+        $h = function ( $value ) { return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ); };
+        $html = '<dl class="exp-debug-metrics">';
+        foreach ( $rows as $label => $value )
+            $html .= '<div class="exp-debug-metric"><dt>' . $h( $label ) . '</dt><dd>' . $h( $value ) . '</dd></div>';
+        return $html . '</dl>';
     }
 
     protected static function panelEnd()
@@ -650,6 +677,32 @@ class expDebugBarReport
 
     /** The chips of the pinned bar, each opening its tab. */
     protected static function summaryHtml( array $s, $theme = 'default' )
+    {
+        $toolbar = $theme === 'toolbar';
+        $html = '<span class="exp-debug-summary" role="group" aria-label="' . self::h( 'Page summary' ) . '">';
+        foreach ( self::summaryChips( $s, $theme ) as $chip )
+        {
+            list( $tab, $key, $lvl, $text, $title ) = $chip;
+            $push = !empty( $chip[5] );
+            $levelWord = $lvl === 'high' ? self::t( 'high' ) : ( $lvl === 'warn' ? self::t( 'raised' ) : self::t( 'normal' ) );
+            $html .= '<button type="button" class="exp-debug-chip' . ( $push ? ' exp-debug-end' : '' ) . '" data-tab="' . $tab . '" data-key="' . $key . '" data-level="' . $lvl . '"'
+                   // the toolbar theme shows the title in the block's popup, a tooltip of the browser would repeat it
+                   . ( $toolbar ? '' : ' title="' . htmlspecialchars( $title . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"' )
+                   . ' aria-label="' . htmlspecialchars( $title . ': ' . $text . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">'
+                   . ( $toolbar ? self::chipInfoHtml( $text, $title, isset( $chip['rows'] ) ? (array)$chip['rows'] : array() )
+                                : htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) )
+                   . '</button>';
+        }
+        return $html . '</span>';
+    }
+
+    /**
+     * The chips of the summary, in their order: array( tab, key, level, text, title ), index 5 true for the first chip
+     * at the right end, and 'rows' (label => value) for the popup of the toolbar theme and the metrics of its panels.
+     *
+     * @return array
+     */
+    protected static function summaryChips( array $s, $theme = 'default' )
     {
         $t = self::$thresholds;
         $level = function( $value, $warn, $high ) { return $value >= $high ? 'high' : ( $value >= $warn ? 'warn' : 'ok' ); };
@@ -745,21 +798,7 @@ class expDebugBarReport
         foreach ( $end as $i => $chip )
             $chips[] = $i === 0 ? array_merge( $chip, array( true ) ) : $chip;
 
-        $html = '<span class="exp-debug-summary" role="group" aria-label="' . self::h( 'Page summary' ) . '">';
-        foreach ( $chips as $chip )
-        {
-            list( $tab, $key, $lvl, $text, $title ) = $chip;
-            $push = !empty( $chip[5] );
-            $levelWord = $lvl === 'high' ? self::t( 'high' ) : ( $lvl === 'warn' ? self::t( 'raised' ) : self::t( 'normal' ) );
-            $html .= '<button type="button" class="exp-debug-chip' . ( $push ? ' exp-debug-end' : '' ) . '" data-tab="' . $tab . '" data-key="' . $key . '" data-level="' . $lvl . '"'
-                   // the toolbar theme shows the title in the block's popup, a tooltip of the browser would repeat it
-                   . ( $toolbar ? '' : ' title="' . htmlspecialchars( $title . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"' )
-                   . ' aria-label="' . htmlspecialchars( $title . ': ' . $text . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">'
-                   . ( $toolbar ? self::chipInfoHtml( $text, $title, isset( $chip['rows'] ) ? (array)$chip['rows'] : array() )
-                                : htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) )
-                   . '</button>';
-        }
-        return $html . '</span>';
+        return $chips;
     }
 
     /**
@@ -1934,7 +1973,7 @@ class expDebugBarReport
      * the bar (render()); the report carries no <style> and no style="" (AGENTS.md "Admin design and template
      * styling rules").
      */
-    protected static function assetsHtml()
+    protected static function assetsHtml( $theme = 'default' )
     {
         // Open and close with a click on the header. "Keep open on reload" remembers the state in the
         // browser's localStorage (exp-debug-keep, exp-debug-open); unticked, the details start closed on
@@ -1977,9 +2016,9 @@ class expDebugBarReport
   keep.checked = read('exp-debug-keep') === '1';
   keepLabel.appendChild(keep);
   keepLabel.appendChild(document.createTextNode(' ' + " . json_encode( self::t( 'Keep open on reload' ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP ) . "));
-  // the toolbar theme shows the box alone (expdebugbar-toolbar.css), the words then as its tooltip
-  if (bar.parentNode.getAttribute('data-exp-debug-theme') === 'toolbar') keepLabel.title = keepLabel.textContent.trim();
-  bar.appendChild(keepLabel);
+" . ( $theme === 'toolbar' ? "  // the toolbar theme shows the box alone (expdebugbar-toolbar.css), the words then as its tooltip
+  keepLabel.title = keepLabel.textContent.trim();
+" : '' ) . "  bar.appendChild(keepLabel);
   if (keep.checked && read('exp-debug-open') === '1') setOpen(true);
   keep.addEventListener('change', () => {
     write('exp-debug-keep', keep.checked ? '1' : '0');
