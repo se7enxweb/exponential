@@ -2665,9 +2665,7 @@ class expVelocity
         // caller's: a deploy run under nice -n 19 left every worker at 19 and
         // the site slow (2026-10-17). nice -n is relative, so the step is
         // from this process's own value to the setting.
-        $target = $this->niceSetting();
-        $nice = self::nicePrefix( $target, self::niceOf( getmypid() ),
-                                  $target === null ? false : $this->findExecutable( 'nice' ) );
+        $nice = $this->startNicePrefix();
         $instances = $this->instances();
         for ( $i = 0; $i < $instances; $i++ )
         {
@@ -3575,6 +3573,19 @@ class expVelocity
         if ( $value === '' || $value === 'inherit' || !preg_match( '/^[+-]?\d+$/', $value ) )
             return null;
         return max( -20, min( 19, (int)$value ) );
+    }
+
+    /**
+     * The "nice -n <step> " a start puts before the server's command, every
+     * engine alike, so it runs at niceSetting() and not at the caller's value.
+     *
+     * @return string
+     */
+    protected function startNicePrefix()
+    {
+        $target = $this->niceSetting();
+        return self::nicePrefix( $target, self::niceOf( getmypid() ),
+                                 $target === null ? false : $this->findExecutable( 'nice' ) );
     }
 
     /**

@@ -1867,7 +1867,8 @@
     ],
     "kernel/classes/expvelocity.php": [
       "tests/tests/kernel/classes/expVelocityEnginesTest.php",
-      "tests/tests/kernel/classes/expVelocityMarkersTest.php"
+      "tests/tests/kernel/classes/expVelocityMarkersTest.php",
+      "tests/tests/kernel/classes/expVelocityNiceTest.php"
     ],
     "kernel/classes/expvelocitydeploy.php": [
       "tests/tests/kernel/classes/expVelocityMarkersTest.php"
