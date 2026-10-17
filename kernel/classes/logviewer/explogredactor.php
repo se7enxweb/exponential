@@ -154,7 +154,7 @@ class expLogRedactor
                 $text = str_replace( $secret, self::HIDDEN, $text );
         // a password in an address is never shown, masked or not
         if ( class_exists( 'expSecretRule' ) )
-            $text = expSecretRule::maskInline( $text, self::HIDDEN );
+            $text = self::inlineSecrets( $text );
         if ( $this->secrets )
         {
             $text = preg_replace( self::JWT, self::HIDDEN, $text );
@@ -163,14 +163,40 @@ class expLogRedactor
                 // a numeric value of a "key" or "sig" is an identifier more often than a secret, but the safe side wins
                 return $m[1] . expLogRedactor::HIDDEN;
             }, $text );
-            if ( class_exists( 'expSystemReportMask' ) )
-                $text = expSystemReportMask::text( $text );
+            // what expSystemReportMask::text() adds to the inline secrets (masked above already): session ids and
+            // cookies given as pairs, and a run of 26 or more letters and digits with a digit in it (a key, a token)
+            $text = preg_replace( '/\b((?:[A-Za-z]*sess(?:ion)?_?id|sid|cookie)[\'"]?\s*(?:=>|=|:(?=\s)))(\s*)("[^"]*"|\'[^\']*\'|[^\s&;,]+)/i',
+                                  '${1}${2}' . self::HIDDEN, $text );
+            $text = preg_replace_callback( '/(?<![A-Za-z0-9])[A-Za-z0-9]{26,}={0,2}(?![A-Za-z0-9])/', function ( $m ) {
+                return preg_match( '/\d/', $m[0] ) && preg_match( '/[A-Za-z]/', $m[0] ) ? expLogRedactor::HIDDEN : $m[0];
+            }, $text );
         }
         if ( $this->emails )
             $text = preg_replace( self::EMAIL, '$1' . self::HIDDEN . '@' . self::HIDDEN . '.$2', $text );
         if ( $this->ips )
             $text = $this->ipText( $text );
         return $text === null ? '' : $text;
+    }
+
+    /** A line that may hold an inline secret of expSecretRule: an address with a scheme, or a secret-named pair */
+    const INLINE_CANDIDATE = '/^[^\n]*(?::\/\/|pass|secret|token|api.?key|pwd|salt|@)[^\n]*$/mi';
+
+    /**
+     * expSecretRule::maskInline() on the lines that may hold such a secret only, each on its own: the same result
+     * (its patterns never cross a line end, and the one meant for a whole value then fits a whole line), at a fraction
+     * of the cost on a long text (a block of a download), where most lines name none of them.
+     *
+     * @param string $text
+     * @return string
+     */
+    public static function inlineSecrets( $text )
+    {
+        if ( strpos( $text, "\n" ) === false )
+            return (string)expSecretRule::maskInline( $text, self::HIDDEN );
+        $out = preg_replace_callback( self::INLINE_CANDIDATE, function ( $m ) {
+            return (string)expSecretRule::maskInline( $m[0], expLogRedactor::HIDDEN );
+        }, $text );
+        return $out === null ? (string)expSecretRule::maskInline( $text, self::HIDDEN ) : $out;
     }
 
     /**

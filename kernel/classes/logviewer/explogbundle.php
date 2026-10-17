@@ -119,6 +119,10 @@ class expLogBundle
     {
         if ( $base === null )
             $base = ( class_exists( 'eZSys' ) ? eZSys::rootDir() : getcwd() ) . '/var/tmp/logbundle';
+        // a bundle left behind by a request that ended before its cleanup (a worker stopped mid-way) goes after an hour
+        foreach ( (array)glob( rtrim( $base, '/' ) . '/[0-9]*-*', GLOB_ONLYDIR ) as $old )
+            if ( @filemtime( $old ) !== false && time() - (int)@filemtime( $old ) > 3600 )
+                self::cleanup( $old );
         $dir = rtrim( $base, '/' ) . '/' . date( 'YmdHis' ) . '-' . bin2hex( random_bytes( 8 ) );
         if ( !@mkdir( $dir, eZDir::dirMode( 0700 ), true ) && !is_dir( $dir ) )
             return null;
@@ -236,19 +240,53 @@ class expLogBundle
                 fclose( $out );
             return false;
         }
+        // masked in blocks of whole lines (no mask crosses a line end), not line by line: the same result with a
+        // fraction of the pattern calls, which is what the time of a bundle is spent on
         $read = 0;
+        $carry = '';
         while ( true )
         {
-            $line = $gz ? gzgets( $in, self::CHUNK ) : fgets( $in, self::CHUNK );
-            if ( $line === false )
+            $block = $gz ? gzread( $in, self::CHUNK ) : fread( $in, self::CHUNK );
+            $eof = $block === false || $block === '';
+            if ( !$eof )
+            {
+                $read += strlen( $block );
+                $block = $carry . $block;
+                $nl = strrpos( $block, "\n" );
+                if ( $nl === false )
+                {
+                    $carry = $block;
+                    continue;
+                }
+                $carry = (string)substr( $block, $nl + 1 );
+                $block = substr( $block, 0, $nl + 1 );
+            }
+            else
+            {
+                $block = $carry;
+                $carry = '';
+            }
+            if ( $block !== '' )
+                fwrite( $out, self::maskBlock( $block, $redactor ) );
+            if ( $eof )
                 break;
-            $read += strlen( $line );
-            $nl = substr( $line, -1 ) === "\n";
-            fwrite( $out, $redactor->text( rtrim( $line, "\n" ) ) . ( $nl ? "\n" : '' ) );
         }
         $gz ? gzclose( $in ) : fclose( $in );
         fclose( $out );
         return $read;
+    }
+
+    /**
+     * Whole lines masked as the viewer masks one line: every line is masked on its own text (masks never cross a
+     * line end), in one call per block. Pure.
+     *
+     * @param string $block whole lines
+     * @param expLogRedactor $redactor
+     * @return string
+     */
+    public static function maskBlock( $block, expLogRedactor $redactor )
+    {
+        return $redactor->text( $block );
     }
 
     /** A zip of the entries (ZipArchive reads each file when it closes, in pieces) */
