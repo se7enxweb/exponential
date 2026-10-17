@@ -47,6 +47,13 @@ class expDebugBarReport
     const PANEL_HEIGHT_MAX = 4000;
 
     /**
+     * The looks of the bar, debugbar.ini [DebugBarSettings] Theme: 'default' (the light chips) and 'toolbar' (a dark,
+     * compact toolbar with an icon in each block, the request's HTTP status and module/view in the first one, and the
+     * details of a block in a popup above it while the pointer or the focus is on it). The panel is the same in both.
+     */
+    const THEMES = array( 'default', 'toolbar' );
+
+    /**
      * When a summary value turns amber (warn) and red (high).
      * Memory is compared with memory_limit when PHP has one, else with the absolute bytes.
      */
@@ -61,6 +68,32 @@ class expDebugBarReport
         'opcache_memory' => array( 'warn' => 80, 'high' => 95 ),     // percent of opcache.memory_consumption used
         'apcu_memory'    => array( 'warn' => 75, 'high' => 90 ),     // percent of apc.shm_size used
     );
+
+    /**
+     * The theme the bar is drawn in (THEMES): debugbar.ini [DebugBarSettings] Theme, 'default' when the INI can not
+     * be read (an early fatal error, a script without the kernel).
+     */
+    public static function theme()
+    {
+        if ( !class_exists( 'eZINI', false ) )
+            return 'default';
+        try
+        {
+            $ini = eZINI::instance( 'debugbar.ini' );
+            return self::themeName( $ini->hasVariable( 'DebugBarSettings', 'Theme' ) ? $ini->variable( 'DebugBarSettings', 'Theme' ) : '' );
+        }
+        catch ( Throwable $e )
+        {
+            return 'default';
+        }
+    }
+
+    /** $value as one of THEMES, without regard to case; 'default' for anything else. */
+    public static function themeName( $value )
+    {
+        $value = is_string( $value ) ? strtolower( trim( $value ) ) : '';
+        return in_array( $value, self::THEMES, true ) ? $value : 'default';
+    }
 
     /**
      * Translates $source in the bar's context, when the translation system is there (it is not in an
@@ -303,6 +336,10 @@ class expDebugBarReport
             // rows of the Server tab, since the bar can show to anonymous visitors (DebugByIP)
             'runtime'   => self::runtimeFigures( $userInfo['can_setup'] || $userInfo['can_cache'] ),
         );
+        $theme = self::theme();
+        // the first block of the toolbar theme: the status the response has so far, the module and view
+        if ( $theme === 'toolbar' )
+            $summary['request'] = self::requestInfo( null, null, $pageInfo );
 
         // The server side's summary (kernel/classes/debugbar), when it is loaded: its levels follow
         // [DebugBarSettings] Thresholds[] in debugbar.ini, so they win over the defaults above.
@@ -372,9 +409,12 @@ class expDebugBarReport
         if ( !$debug->UseCSS )
             echo self::includeTag( 'css', 'design/standard/stylesheets/debug.css' );
         echo self::includeTag( 'css', 'design/standard/stylesheets/expdebugbar.css' );
-        echo '<div id="debug" class="exp-debug" data-exp-debug-bar="2">';
+        // the toolbar theme's rules after the bar's own: they win at the same weight and leave the panel as it is
+        if ( $theme === 'toolbar' )
+            echo self::includeTag( 'css', 'design/standard/stylesheets/expdebugbar-toolbar.css' );
+        echo '<div id="debug" class="exp-debug" data-exp-debug-bar="2"' . ( $theme === 'toolbar' ? ' data-exp-debug-theme="toolbar"' : '' ) . '>';
         echo '<h2><a href="#debug-end" aria-controls="debug-details" aria-expanded="false">Exp Debug' . htmlspecialchars( $byUser . $byIP, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</a>';
-        echo self::summaryHtml( $summary );
+        echo self::summaryHtml( $summary, $theme );
         echo '</h2>';
         // the panel's height as the user left it (0: the default); the inline script below applies it before the
         // panel opens. From the preference for a logged-in user; for an anonymous visitor from the browser's localStorage
@@ -609,7 +649,7 @@ class expDebugBarReport
     }
 
     /** The chips of the pinned bar, each opening its tab. */
-    protected static function summaryHtml( array $s )
+    protected static function summaryHtml( array $s, $theme = 'default' )
     {
         $t = self::$thresholds;
         $level = function( $value, $warn, $high ) { return $value >= $high ? 'high' : ( $value >= $warn ? 'warn' : 'ok' ); };
@@ -630,12 +670,22 @@ class expDebugBarReport
             elseif ( $key === 'templates' ) $tplLevel = $value;
         }
 
+        $toolbar = $theme === 'toolbar';
         $chips = array();
+        // The toolbar theme starts with the request, the details of a block are shown in its popup ('rows')
+        if ( $toolbar && isset( $s['request'] ) && is_array( $s['request'] ) )
+            $chips[] = self::requestChip( $s['request'] );
+        $pageMs = $s['time'] * 1000;
         $chips[] = array( 'timing', 'time', $timeLevel,
-                          number_format( $s['time'], 3 ) . ' s', self::t( 'Page time' ) );
+                          number_format( $s['time'], 3 ) . ' s', self::t( 'Page time' ),
+                          'rows' => array( self::t( 'Page time' ) => number_format( $pageMs, 0, '.', '' ) . ' ms',
+                                           self::t( 'Query time' ) => number_format( $s['sql_ms'], 0, '.', '' ) . ' ms' ) );
         $chips[] = array( 'sql', 'sql', $sqlLevel,
                           self::t( '%count SQL', array( '%count' => $s['sql_count'] ) ) . ' / ' . number_format( $s['sql_ms'], 0 ) . ' ms',
-                          self::t( 'SQL queries and their time' ) );
+                          self::t( 'SQL queries and their time' ),
+                          'rows' => array( self::t( 'Queries' ) => (string)(int)$s['sql_count'],
+                                           self::t( 'Query time' ) => number_format( $s['sql_ms'], 1, '.', '' ) . ' ms',
+                                           self::t( 'Share of page time' ) => ( $pageMs > 0 ? number_format( min( 100, $s['sql_ms'] / $pageMs * 100 ), 0, '.', '' ) : '0' ) . ' %' ) );
         if ( !empty( $s['querycache']['measured'] ) )
         {
             $q = $s['querycache'];
@@ -662,24 +712,31 @@ class expDebugBarReport
                                     . ( $factor !== null ? ' ' . self::t( '(%factor times as long)', array( '%factor' => $factor ) ) : '' )
                                   : '' ) );
         }
-        $chips[] = array( 'memory', 'memory', $memLevel, number_format( $s['memory'] / 1048576, 1 ) . ' MB', self::t( 'Peak memory' ) );
+        $chips[] = array( 'memory', 'memory', $memLevel, number_format( $s['memory'] / 1048576, 1 ) . ' MB', self::t( 'Peak memory' ),
+                          'rows' => array( self::t( 'Peak memory' ) => number_format( $s['memory'] / 1048576, 1, '.', '' ) . ' MB',
+                                           self::t( 'Memory limit' ) => $s['memory_limit'] > 0 ? number_format( $s['memory_limit'] / 1048576, 0, '.', '' ) . ' MB' : self::t( 'none' ) ) );
         if ( $s['templates'] !== null )
             $chips[] = array( 'templates', 'templates', $tplLevel,
-                              self::t( '%count tpl', array( '%count' => $s['templates'] ) ), self::t( 'Templates used' ) );
+                              self::t( '%count tpl', array( '%count' => $s['templates'] ) ), self::t( 'Templates used' ),
+                              'rows' => array( self::t( 'Templates used' ) => (string)(int)$s['templates'] ) );
         if ( !empty( $s['rendering'] ) )
         {
             foreach ( $s['rendering'] as $chip )
                 $chips[] = $chip;
         }
-        $chips[] = array( 'messages', 'warnings', $s['warnings'] > 0 ? 'warn' : 'ok',
-                          self::t( '%count warn', array( '%count' => $s['warnings'] ) ), self::t( 'Warnings' ) );
-        $chips[] = array( 'messages', 'errors', $s['errors'] > 0 ? 'high' : 'ok',
-                          self::t( '%count err', array( '%count' => $s['errors'] ) ), self::t( 'Errors' ) );
         // PHP deprecations: only their number, the messages are in deprecated.log (site.ini DeprecatedLog)
         $deprecations = isset( $s['deprecations'] ) ? (int)$s['deprecations'] : 0;
+        // the three message blocks show the same counts in their popups
+        $messageRows = array( self::t( 'Errors' ) => (string)(int)$s['errors'], self::t( 'Warnings' ) => (string)(int)$s['warnings'],
+                              self::t( 'Notices' ) => (string)( isset( $s['notices'] ) ? (int)$s['notices'] : 0 ),
+                              self::t( 'Deprecations' ) => (string)$deprecations );
+        $chips[] = array( 'messages', 'warnings', $s['warnings'] > 0 ? 'warn' : 'ok',
+                          self::t( '%count warn', array( '%count' => $s['warnings'] ) ), self::t( 'Warnings' ), 'rows' => $messageRows );
+        $chips[] = array( 'messages', 'errors', $s['errors'] > 0 ? 'high' : 'ok',
+                          self::t( '%count err', array( '%count' => $s['errors'] ) ), self::t( 'Errors' ), 'rows' => $messageRows );
         $chips[] = array( 'messages', 'deprecations', $deprecations > 0 ? 'warn' : 'ok',
                           self::t( '%count depr', array( '%count' => $deprecations ) ),
-                          self::t( 'PHP deprecations, written to deprecated.log' ) );
+                          self::t( 'PHP deprecations, written to deprecated.log' ), 'rows' => $messageRows );
         foreach ( isset( $s['panels'] ) ? (array)$s['panels'] : array() as $chip )
             $chips[] = $chip;
         // At the right end: OPcache, APCu, then the versions; the first of them pushes them all there
@@ -695,11 +752,75 @@ class expDebugBarReport
             $push = !empty( $chip[5] );
             $levelWord = $lvl === 'high' ? self::t( 'high' ) : ( $lvl === 'warn' ? self::t( 'raised' ) : self::t( 'normal' ) );
             $html .= '<button type="button" class="exp-debug-chip' . ( $push ? ' exp-debug-end' : '' ) . '" data-tab="' . $tab . '" data-key="' . $key . '" data-level="' . $lvl . '"'
-                   . ' title="' . htmlspecialchars( $title . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"'
+                   // the toolbar theme shows the title in the block's popup, a tooltip of the browser would repeat it
+                   . ( $toolbar ? '' : ' title="' . htmlspecialchars( $title . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '"' )
                    . ' aria-label="' . htmlspecialchars( $title . ': ' . $text . ' (' . $levelWord . ')', ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '">'
-                   . htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</button>';
+                   . ( $toolbar ? self::chipInfoHtml( $text, $title, isset( $chip['rows'] ) ? (array)$chip['rows'] : array() )
+                                : htmlspecialchars( $text, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) )
+                   . '</button>';
         }
         return $html . '</span>';
+    }
+
+    /**
+     * The inside of a block of the toolbar theme: its text, and the popup with the title and the rows (label =>
+     * value). The popup is hidden from assistive technology, the block's aria-label carries the same.
+     */
+    public static function chipInfoHtml( $text, $title, array $rows )
+    {
+        $h = function ( $value ) { return htmlspecialchars( (string)$value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ); };
+        $html = '<span class="exp-debug-chip-text">' . $h( $text ) . '</span>'
+              . '<span class="exp-debug-chip-info" aria-hidden="true"><span class="exp-debug-chip-info-title">' . $h( $title ) . '</span>';
+        foreach ( $rows as $label => $value )
+            $html .= '<span class="exp-debug-chip-info-row"><span>' . $h( $label ) . '</span><span>' . $h( $value ) . '</span></span>';
+        return $html . '</span>';
+    }
+
+    /**
+     * The request for the first block of the toolbar theme: the HTTP status the response has so far (null where PHP
+     * does not know it, as on the command line and in a persistent worker), the module and view that ran, from
+     * $GLOBALS['eZRequestedModuleParams'], and the siteaccess and node of pageInfo().
+     *
+     * @param int|false|null $status http_response_code(), null: ask PHP
+     * @param array|null $params the module parameters, null: the global ones
+     * @param array $page pageInfo()
+     * @return array status, module, view, siteaccess, node_id
+     */
+    public static function requestInfo( $status = null, $params = null, array $page = array() )
+    {
+        if ( $status === null )
+            $status = function_exists( 'http_response_code' ) ? http_response_code() : false;
+        if ( $params === null )
+            $params = isset( $GLOBALS['eZRequestedModuleParams'] ) ? $GLOBALS['eZRequestedModuleParams'] : null;
+        return array(
+            'status' => is_int( $status ) && $status >= 100 && $status <= 599 ? $status : null,
+            'module' => is_array( $params ) && isset( $params['module_name'] ) && is_string( $params['module_name'] ) ? $params['module_name'] : '',
+            'view' => is_array( $params ) && isset( $params['function_name'] ) && is_string( $params['function_name'] ) ? $params['function_name'] : '',
+            'siteaccess' => isset( $page['siteaccess'] ) ? (string)$page['siteaccess'] : '',
+            'node_id' => isset( $page['node_id'] ) ? (int)$page['node_id'] : 0,
+        );
+    }
+
+    /**
+     * The first block of the toolbar theme from requestInfo(): "200 content/view", amber from status 400, red from
+     * 500. It opens the Server tab, which says where the request entered.
+     *
+     * @return array a chip as summaryHtml() draws it
+     */
+    public static function requestChip( array $r )
+    {
+        $status = isset( $r['status'] ) ? $r['status'] : null;
+        $route = $r['module'] !== '' ? $r['module'] . ( $r['view'] !== '' ? '/' . $r['view'] : '' ) : '';
+        $text = trim( ( $status !== null ? $status : '' ) . ' ' . $route );
+        $level = $status >= 500 ? 'high' : ( $status >= 400 ? 'warn' : 'ok' );
+        $rows = array( self::t( 'HTTP status' ) => $status !== null ? (string)$status : '-',
+                       self::t( 'Module' ) => $r['module'] !== '' ? $r['module'] : '-',
+                       self::t( 'View' ) => $r['view'] !== '' ? $r['view'] : '-' );
+        if ( $r['siteaccess'] !== '' )
+            $rows[self::t( 'Siteaccess' )] = $r['siteaccess'];
+        if ( $r['node_id'] > 0 )
+            $rows[self::t( 'Node ID' )] = (string)$r['node_id'];
+        return array( 'velocity', 'request', $level, $text !== '' ? $text : '-', self::t( 'Request' ), 'rows' => $rows );
     }
 
     /**
@@ -1856,6 +1977,8 @@ class expDebugBarReport
   keep.checked = read('exp-debug-keep') === '1';
   keepLabel.appendChild(keep);
   keepLabel.appendChild(document.createTextNode(' ' + " . json_encode( self::t( 'Keep open on reload' ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP ) . "));
+  // the toolbar theme shows the box alone (expdebugbar-toolbar.css), the words then as its tooltip
+  if (bar.parentNode.getAttribute('data-exp-debug-theme') === 'toolbar') keepLabel.title = keepLabel.textContent.trim();
   bar.appendChild(keepLabel);
   if (keep.checked && read('exp-debug-open') === '1') setOpen(true);
   keep.addEventListener('change', () => {

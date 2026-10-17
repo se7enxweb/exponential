@@ -186,7 +186,11 @@
       "tests/tests/lib/ezfile/expLogRotatorTest.php"
     ],
     "lib/ezutils/classes/expdebugbarreport.php": [
-      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"
+      "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
+      "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php"
+    ],
+    "design/standard/stylesheets/expdebugbar-toolbar.css": [
+      "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php"
     ],
     "lib/ezdb/classes/ezdbquerycache.php": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"

@@ -302,6 +302,7 @@ test (and puts them back if they differ). Its log is a file of its own under `va
 | Report markup, summary, data block | `expDebugBarReport` (`lib/ezutils/classes/expdebugbarreport.php`), called by `eZDebug::printReportInternal()` for HTML reports |
 | Tabs, filter, settings, IP list, presets, cache, change log | `design/standard/javascript/expdebugbar.js` |
 | Styles (light and dark) | `design/standard/stylesheets/expdebugbar.css` |
+| Toolbar theme (`Theme=toolbar`) | `design/standard/stylesheets/expdebugbar-toolbar.css`, linked after it |
 | Words | context `design/standard/debugbar` in `share/translations/*/translation.ts` (eng-US, ger-DE) |
 
 The report links the script and the stylesheet itself, so every design gets the bar: admin, admin2, admin3, admin4
@@ -341,6 +342,25 @@ The bar stays at the bottom of the window wherever the page is scrolled; a click
 above it, which scrolls on its own. No page ever has to be scrolled to use it. "Keep open on reload" remembers the
 open panel in the browser (`localStorage` keys `exp-debug-keep`, `exp-debug-open`), and the last tab
 (`exp-debug-tab`). Escape closes the panel.
+
+### Themes
+
+`debugbar.ini [DebugBarSettings] Theme` sets how the pinned bar looks; the panel above it is the same in both. It is
+also a setting of the bar (Settings tab, Debug output, "Bar theme").
+
+| Value | The bar |
+|---|---|
+| `default` | The summary as light chips (dark in a dark colour scheme), the details of a chip in its tooltip (`title`). Also any value that is not `toolbar`. |
+| `toolbar` | A dark, compact toolbar in both colour schemes, in the manner of the Symfony web debug toolbar: each block with an icon, the first block the request (HTTP status and module/view, green, amber from status 400, red from 500; it opens the Server tab), amber and red blocks filled with their colour, and the details of a block in a popup above it while the pointer or the keyboard focus is on it. "Keep open on reload" shows its box alone, the words as its tooltip. "Exp Debug", the switch of the panel, is a lighter block of its own at the right end, filled orange while the panel is open; its arrow points up, and down while it is open. |
+
+In the toolbar theme a chip carries its text in `.exp-debug-chip-text` and its popup in `.exp-debug-chip-info`
+(`aria-hidden`, the chip's `aria-label` says the same) and has no `title`. The popup lists the rows a chip gives
+(`'rows'`, label => value: page and query time, queries and their share of the page time, peak memory and the
+memory limit, templates, the counts of errors, warnings, notices and deprecations, the request's status, module,
+view, siteaccess and node), or the chip's title alone. A chip of an extension's panel gets a generic icon; the
+icons are Bootstrap Icons (`share/icons/bootstrap-icons`, MIT) inlined in the stylesheet as masks, so no further file
+is loaded. The status is `http_response_code()` when the report is rendered; where PHP does not know it (the command
+line, a persistent worker) the block shows module/view only.
 
 ### The panel's height
 
