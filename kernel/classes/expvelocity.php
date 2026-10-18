@@ -2238,7 +2238,11 @@ class expVelocity
                 $target = (string)@readlink( '/proc/' . $proc['pid'] . '/fd/' . $fd );
                 if ( substr( $target, -10 ) === ' (deleted)' )
                     $target = substr( $target, 0, -10 );
-                if ( $target !== '' && strpos( $target, $dir ) === 0 )
+                // A detached restart (expVelocityRestartUnit) writes its own
+                // output to restart-<token>.log here; it is not a server, and
+                // counted as one it made a restart that hung look running.
+                if ( $target !== '' && strpos( $target, $dir ) === 0
+                     && strpos( basename( $target ), 'restart-' ) !== 0 )
                 {
                     $pids[] = $proc['pid'];
                     break;

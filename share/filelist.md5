@@ -5226,7 +5226,7 @@ dbf729b5e4373a73ea096e996a48b931  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 21c77a7f6ab0d4e081886665a6a6f721  kernel/classes/exptestlanguage.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
-c0e5e33007965d71fa3e785f60f476a1  kernel/classes/expvelocity.php
+c0ff93ab55af41d88a7e96900934db3e  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 c748b14e37c7c23f4b66f5df522d253c  kernel/classes/expvelocityconfiglayout.php
 2bf751792e29fc5259d774fb590c7f7a  kernel/classes/expvelocitydeploy.php
