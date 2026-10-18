@@ -498,12 +498,18 @@
             }
         }
         window.addEventListener('hashchange', revealHash);
+        // "Print this page": shown only where it can work (it stays hidden without JavaScript)
+        if (typeof window.print === 'function') {
+            arr(document.querySelectorAll('[data-exphelp-print]')).forEach(function (b) { b.hidden = false; });
+        }
 
         document.addEventListener('click', function (event) {
             var target = event.target && event.target.closest ? event.target : null;
             if (!target) { return; }
             var b = target.closest('[data-exphelp-copy]');
             if (b) { event.preventDefault(); copy(b); return; }
+            b = target.closest('[data-exphelp-print]');
+            if (b) { event.preventDefault(); window.print(); return; }
             b = target.closest('[data-exphelp-collapse]');
             if (b) { event.preventDefault(); toggle(b); return; }
             // a click outside a search closes its live results

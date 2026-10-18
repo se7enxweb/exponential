@@ -4,7 +4,8 @@
  * An unknown id, or one expHelpDocumentIndex does not allow, is a 404; no id opens the dashboard.
  *
  * Template variables: help_page (document), help_html (rendered, safe), help_toc (level, text, anchor), help_tree,
- * help_prev, help_next (documents or null), help_edit_url (GitHub), help_breadcrumb (array of url, text).
+ * help_prev, help_next (documents or null), help_edit_url (GitHub), help_breadcrumb (array of url, text),
+ * help_pdf_enabled (bool: the "Download as PDF" link, exphelp/pdf/<page id>).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -47,6 +48,8 @@ class Viewer extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_prev', $neighbours['prev'] );
         $tpl->setVariable( 'help_next', $neighbours['next'] );
         $tpl->setVariable( 'help_edit_url', $editBase !== '' && isset( $document['path'] ) ? $editBase . $document['path'] : '' );
+        // Print and PDF (expHelpPdf): the download is offered when [PdfSettings] Enabled is not false
+        $tpl->setVariable( 'help_pdf_enabled', class_exists( 'expHelpPdf' ) && \expHelpPdf::isEnabled() );
         $tpl->setVariable( 'help_category', isset( $document['category'], $categories[$document['category']] ) ? $categories[$document['category']] : false );
 
         $title = isset( $document['title'] ) && $document['title'] !== '' ? $document['title'] : $id;

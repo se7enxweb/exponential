@@ -37,6 +37,7 @@
                 <p class="a4-help-summary" dir="auto">{$help_page.summary|wash}</p>
                 {/if}
                 {include uri='design:exphelp/parts/viewer_meta.tpl' meta_page=$help_page meta_audiences=$help_audience_list meta_edit_url=$help_edit_url meta_category=cond( is_set( $help_category ), $help_category, false() )}
+                {include uri='design:exphelp/parts/viewer_actions.tpl' actions_page=$help_page actions_pdf=cond( is_set( $help_pdf_enabled ), $help_pdf_enabled, false() )}
             </header>
 
             {if $help_toc_items|count|ge( 2 )}

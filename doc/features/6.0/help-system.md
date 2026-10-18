@@ -55,6 +55,9 @@ Security Policy.
 | `[FeaturedSettings] PageList[]` | empty | pages shown first on the dashboard |
 | `[ContextHelp] Map[]` | kernel modules | `Map[<module>/<view>]=<page>#<anchor>` |
 | `[IssueTrackers]` | the Exponential tracker | where errors are reported |
+| `[PdfSettings] Enabled` | `true` | `false` hides "Download as PDF" and makes `exphelp/pdf` a 404 |
+| `[PdfSettings] PageSize` | `A4` | `A4` or `Letter` |
+| `[PdfSettings] FontFiles[]` and the others | DejaVu Sans, Droid Sans Fallback | TrueType fonts of the PDF, first readable file of each list (see below) |
 
 ### Front matter
 
@@ -84,12 +87,40 @@ Map[mymodule/edit]=ext/myextension/usage.md#editing
 and, to show its own `doc/` directory, an administrator adds it to `[IndexSettings] ExtensionDocDirs[]`. Its pages
 then have the ids `ext/<extension>/<path>`.
 
+## Print and PDF
+
+Every help page has two actions under its facts:
+
+- **Print this page** opens the browser's print dialog (the button is shown by the help's script; without
+  JavaScript the browser's own Print command does the same). On paper only the document is printed: no menus,
+  tree, contents or buttons, light colors even when the administration is dark, the page's source file, last
+  change and address under its title, the address of every outside link after the link, and no break inside a
+  code block, table or callout.
+- **Download as PDF** (`/exphelp/pdf/<page>`, policy `exphelp/read`) sends the page as a PDF file named after its
+  title. It is drawn on the server by the kernel's own PDF library (`lib/ezpdf`); no outside service or program
+  is used. Headings (with working links to them), paragraphs, lists, tables, code blocks (monospace), callouts,
+  quotes, images from `doc/` (PNG, JPEG, GIF, WebP) and footnotes are kept; the page's license notice ends the
+  file; every page has the title and "Page n of N" at its foot. Only the pages the viewer shows can be
+  downloaded; anything else is a 404.
+
+The text of the PDF is as good as its fonts. With a TrueType font (`[PdfSettings] FontFiles[]`, `BoldFontFiles[]`,
+`ItalicFontFiles[]`, `BoldItalicFontFiles[]`, `MonoFontFiles[]`; DejaVu Sans of the operating system by default)
+every character the font has is drawn and the text can be selected and searched; only the characters used are
+embedded, so a page is some tens of kilobytes. `FallbackFontFiles[]` (Droid Sans Fallback) takes the characters the
+main font lacks, such as Chinese, Japanese and Korean. Right to left text (Hebrew, Arabic) is printed right to left;
+Arabic letters are drawn in their basic forms, without joining. Without any TrueType font the PDF core fonts are
+used and characters outside Western European are replaced by their closest Latin letters.
+
+PDFs are cached in `var/<site>/cache/exphelp/pdf/`, per page, index signature, address and fonts: a change to the
+page or the settings makes a new file.
+
 ## On the command line
 
 ```bash
 ./console exp:help index     # rebuild the help index and the search index
 ./console exp:help search "publish a page"
 ./console exp:help check     # broken links and images in doc/
+./console exp:help pdf help/searching.md --out=searching.pdf --base-url=https://www.example.com
 ```
 
 The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change.

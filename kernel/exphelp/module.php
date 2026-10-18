@@ -9,6 +9,7 @@
  *   exphelp/viewer/<page id>       one page; <page id> is its path below doc/ (features/6.0/help-system.md); ?p= too
  *   exphelp/search?q=...           the results page; with format=json the JSON the client's instant search reads
  *   exphelp/asset/<path>           an image below doc/, with its content type (only git-tracked files)
+ *   exphelp/pdf/<page id>          the page as a PDF file to download (expHelpPdf)
  *   exphelp/report                 how to report an error: which tracker, a prefilled issue, safe diagnostics
  *
  * Policy function read; Anonymous is not given it. An unknown or refused path is a 404.
@@ -47,6 +48,13 @@ $ViewList['search'] = array(
 $ViewList['asset'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'asset.php',
+    'functions' => array( 'read' ),
+    'params' => array() );
+
+// The page as a PDF file to download: the rest of the address (exphelp/pdf/help/getting-started.md) or GET p
+$ViewList['pdf'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'pdf.php',
     'functions' => array( 'read' ),
     'params' => array() );
 
