@@ -15,6 +15,7 @@
 
 .a4-help {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--a4-space-5);
   min-width: 0;
   max-width: var(--a4-content-max);
@@ -81,6 +82,7 @@
 .a4-help-hero {
   position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--a4-space-4);
   padding: var(--a4-space-7) var(--a4-space-6) var(--a4-space-6);
   border-radius: var(--a4-radius-s);
@@ -265,6 +267,7 @@
   font-weight: 650;
 }
 .a4-help-result__meta { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); margin-top: var(--a4-space-1); }
+.a4-help-result__link:hover, .a4-help-result__link:focus-visible { text-decoration: none; }
 .a4-help-results__status { margin: 0; padding: var(--a4-space-2) var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-help-results__status:empty { display: none; }
 .a4-help-results__relaxed { margin: 0; padding: var(--a4-space-2) var(--a4-space-3) 0; color: var(--a4-warn); font-size: var(--a4-text-xs); font-weight: 600; }
@@ -305,9 +308,10 @@
 
 /* ---- dashboard: audience cards------------------------------------------------------------------------------- */
 
+.a4-help { container-type: inline-size; }
 .a4-help-audiences {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--a4-space-4);
   margin: 0;
   padding: 0;
@@ -359,6 +363,13 @@
 }
 .a4-help-audience li a .a4-icon { color: var(--a4-muted); }
 
+@container (max-width: 1080px) {
+  .a4-help-audiences { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container (max-width: 520px) {
+  .a4-help-audiences { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* ---- dashboard: featured pages and recently changed pages, side by side ------------------------------------- */
 
 .a4-help-columns {
@@ -372,7 +383,7 @@
 }
 .a4-help-featured {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
   gap: var(--a4-space-3);
   margin: 0;
   padding: 0;
@@ -447,8 +458,8 @@
 
 .a4-help-report {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
   gap: var(--a4-space-4) var(--a4-space-5);
   padding: var(--a4-space-5);
   border-radius: var(--a4-radius-s);
@@ -462,8 +473,8 @@
 .a4-help-report p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-help-report-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
 .a4-help-report-security { display: inline-flex; align-items: center; gap: var(--a4-space-1); margin-top: var(--a4-space-2); font-size: var(--a4-text-xs); }
-@media (max-width: 800px) {
-  .a4-help-report { grid-template-columns: auto minmax(0, 1fr); }
+.a4-help-report-actions { grid-column: 2; }
+@media (max-width: 600px) {
   .a4-help-report-actions { grid-column: 1 / -1; }
 }
 

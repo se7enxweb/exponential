@@ -166,7 +166,7 @@ class expHelpAudience
             if ( is_array( $types = $get( 'TypeSettings', 'TypeNames' ) ) && $types )
                 $config['types'] = array_merge( self::TYPES, $types );
         }
-        return new static( $config );
+        return new self( $config );
     }
 
     /**

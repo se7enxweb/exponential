@@ -108,7 +108,7 @@ class expHelpDocumentIndex
         $request = getmypid() . ':' . ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? $_SERVER['REQUEST_TIME_FLOAT'] : '' );
         if ( self::$instance === null || self::$instanceRequest !== $request )
         {
-            self::$instance = new static( expHelpAllowlist::fromIni(), array(
+            self::$instance = new self( expHelpAllowlist::fromIni(), array(
                 'stat_files' => self::iniSetting( 'StatFiles', 'enabled' ) !== 'disabled',
                 'git_history' => self::iniSetting( 'GitHistory', 'enabled' ) !== 'disabled' ) );
             self::$instanceRequest = $request;

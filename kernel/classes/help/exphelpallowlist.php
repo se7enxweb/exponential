@@ -99,7 +99,7 @@ class expHelpAllowlist
      */
     public static function fromIni( $rootDir = null )
     {
-        return new static( $rootDir, self::iniConfig() );
+        return new self( $rootDir, self::iniConfig() );
     }
 
     /**
