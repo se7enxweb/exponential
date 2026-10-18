@@ -119,7 +119,7 @@ a.image-text:hover > span
     padding: 2px;
 }
 :where([dir="rtl"]) #header-help { float: left; }
-#header-help a
+#header-help a.a4-help-context, #header-help summary.a4-help-context
 {
     display: inline-flex;
     align-items: center;
@@ -128,8 +128,27 @@ a.image-text:hover > span
     text-decoration: none;
     font-size: 0.94em;
 }
-#header-help a:hover, #header-help a:focus { color: #fff; text-decoration: underline; }
-#header-help a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+#header-help .a4-help-context:hover, #header-help .a4-help-context:focus { color: #fff; text-decoration: underline; }
+#header-help .a4-help-context:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+/* The Help menu (page_header.tpl): a native <details> disclosure, no script; its panel hangs under the header */
+#header-help { position: relative; }
+#header-help .header-help-menu > summary { list-style: none; cursor: pointer; }
+#header-help .header-help-menu > summary::-webkit-details-marker { display: none; }
+#header-help .header-help-panel {
+    position: absolute; top: 100%; inset-inline-end: 0; z-index: var(--a4-z-popover); width: 20rem; max-width: calc(100vw - 2rem);
+    margin-top: var(--a4-space-1); padding: var(--a4-space-3); background: var(--a4-surface); border: 1px solid var(--a4-line);
+    border-radius: var(--a4-radius); box-shadow: var(--a4-shadow-m); color: var(--a4-ink); text-align: start;
+}
+#header-help .header-help-search { display: flex; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
+#header-help .header-help-search .a4-input { flex: 1 1 auto; min-width: 0; }
+#header-help .header-help-panel a { display: block; padding: var(--a4-space-1) var(--a4-space-2); border-radius: var(--a4-radius); color: var(--a4-accent-text); text-decoration: none; }
+#header-help .header-help-panel a:hover, #header-help .header-help-panel a:focus { background: var(--a4-accent-soft); }
+#header-help .header-help-panel a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -2px; }
+#header-help a.header-help-front { color: var(--a4-ink); }
+#header-help .header-help-front span { display: block; color: var(--a4-muted); }
+#header-help .header-help-heading { margin: var(--a4-space-3) 0 var(--a4-space-1); padding-inline: var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-s); font-weight: 600; }
+#header-help .header-help-list { margin: 0; padding: 0; list-style: none; }
+#header-help a.header-help-center { margin-top: var(--a4-space-2); padding-top: var(--a4-space-2); border-top: 1px solid var(--a4-line); border-radius: 0; font-weight: 600; }
 
 #header-usermenu span.header-usermenu-name
 {
@@ -1551,7 +1570,7 @@ html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
   #header-usermenu a, #header-usermenu span { display: inline-flex; align-items: center; min-height: var(--a4-control-h); padding-inline: var(--a4-space-2); }
   #header-help { order: 2; float: none; margin: 0; margin-inline-start: auto; padding: 0; }
   #header-help + #header-usermenu, #header-usermenu + #header-help { margin-inline-start: 0; }
-  #header-help a { min-height: var(--a4-control-h); padding-inline: var(--a4-space-2); }
+  #header-help .a4-help-context { min-height: var(--a4-control-h); padding-inline: var(--a4-space-2); }
   #header-help .header-help-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   #header-search { order: 3; flex: 1 1 100%; float: none; padding: 0 0 var(--a4-space-2); }
   #header-search .searchblock { float: none; }

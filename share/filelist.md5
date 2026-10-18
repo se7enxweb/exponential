@@ -341,7 +341,7 @@ be099ebbbccdeae8ab7385dc4fd795dc  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
-002dc36c2e254a2474d18a78626c5dc3  design/admin/stylesheets/pagelayout.css
+b2f9a21b4cb6e4c203819288c28710aa  design/admin/stylesheets/pagelayout.css
 2d02f74460d590ebf57e8230963c891e  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 017f424deeeb46501db6bcf63990e746  design/admin/stylesheets/theme/rounded.css
@@ -599,7 +599,7 @@ f282688f9c5b255781005e8124e243cc  design/admin/templates/package/uninstall_error
 fda9299f029c731efb3f2a7d8cae2fe8  design/admin/templates/page_head_script.tpl
 9b35e3bf7adb0350c55c63dadb305f35  design/admin/templates/page_head_style.tpl
 dbcd6a019f44c7b1bcf92f13c30f641f  design/admin/templates/page_head_style_inline.tpl
-f73947ed79521860b3ed5908e796a7d2  design/admin/templates/page_header.tpl
+ecb3c141d6f8940074a7432d3bb63bac  design/admin/templates/page_header.tpl
 2fbd947226762a9f26b46f0f28d34ea4  design/admin/templates/page_leftmenu.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin/templates/page_login_copyright.tpl
 1bf2256ccd6061ee7f354a26834937c1  design/admin/templates/page_menuheadenabled.tpl
