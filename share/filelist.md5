@@ -5427,7 +5427,7 @@ d737f4b8cee16a8ecd9af63aa5d73613  kernel/classes/help/exphelpfrontmatter.php
 fbe202253abbc1bce78eaaa73f6207ea  kernel/classes/help/exphelpissuereport.php
 0f072cc096b3f9ad306f5e7c52ca386d  kernel/classes/help/exphelplinkcheck.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
-beb74ae4c50906226bf0cfd83fddb2b2  kernel/classes/help/exphelpmarkdownrenderer.php
+d90531ed472a1724946fd1fd87aef5d1  kernel/classes/help/exphelpmarkdownrenderer.php
 f2f4f7222b423446d90fefa0a0ab25d6  kernel/classes/help/exphelpsearch.php
 63e8afbb944019671f8b369642eb12d7  kernel/classes/ini/actions/expiniaction.php
 85b05708b2165d0dc398973d33ba0a0e  kernel/classes/ini/actions/expiniactionactions.php
