@@ -25,6 +25,10 @@
  * - HELPJS-07: pages without [data-exphelp] are left alone. The file has no eval, no new Function, no innerHTML or
  *   document.write (it runs under the admin's Content Security Policy, script-src 'self' + nonce), and does not
  *   need jQuery; every other design's copy of it is identical, and every exphelp template that carries a hook loads it.
+ * - HELPJS-08: with data-exphelp-canonical-base on the form, sending it goes to the canonical address
+ *   (/exphelp/search/(q)/<words>/(category)/<id>/(audience)/<id>/(type)/<id>), and on the search page itself the
+ *   address follows the search (the answer's canonical_href when it is safe); an empty field with a filter set lists
+ *   the pages of that filter (browse mode).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminHelpScriptTest.php
  *
@@ -178,6 +182,24 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $p['next'], 'never a javascript: link' );
         $this->assertSame( array( '/admin/exphelp/viewer/(path)/doc/a.md' ), $p['assigned'] );
         $this->assertFalse( $p['ctrl'] );
+    }
+
+    /** HELPJS-08 */
+    public function testTheCanonicalSearchAddressAndBrowsing()
+    {
+        $c = $this->cases()['canonical address'];
+        $this->assertTrue( $c['submitPrevented'] );
+        $this->assertSame( array( '/admin/exphelp/search/(q)/a+b+c+d%2Be/(category)/guides/(audience)/editor' ), $c['assigned'],
+                           "the form goes to the canonical address: q, category, audience, type; '/', '(' and ')' become spaces, a space '+'" );
+        $this->assertFalse( $c['plainPrevented'], 'without data-exphelp-canonical-base the form is sent as it is' );
+        $this->assertSame( array( '/admin/exphelp/search' ), $c['emptyAssigned'] );
+        $this->assertSame( '/admin/exphelp/search?q=&audience=editor&limit=20&format=json', $c['browseUrl'],
+                           'an empty field with a filter set asks for the browse list' );
+        $this->assertSame( array( '/admin/exphelp/viewer/x.md' ), $c['browseLinks'] );
+        $this->assertSame( '2 Treffer', $c['browseStatus'] );
+        $this->assertSame( array(), $c['dashReplaced'], 'another page keeps its address' );
+        $this->assertSame( array( '/admin/exphelp/search/(q)/cache', '/admin/exphelp/search/(q)/cach', '/admin/exphelp/search' ), $c['pageReplaced'],
+                           "the search page follows the search: the server's canonical_href, its own address for an unsafe one, the base when emptied" );
     }
 
     /** HELPJS-07 */
