@@ -3,7 +3,7 @@ title: Singleton / instance()
 audience: developer
 category: standards
 order: 320
-summary: A class that hands out one shared instance per key, mostly through a static instance() method (often cached in $GLOBALS). 68 instances in Exponential.
+summary: A class that hands out one shared instance per key, mostly through a static instance() method (often cached in $GLOBALS). 69 instances in Exponential.
 keywords: design pattern, singleton, creation, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class that hands out one shared instance per key, mostly through a static inst
 | | |
 |---|---|
 | Group | Creation |
-| Instances | 68 |
+| Instances | 69 |
 | Recognized by | Has a static instance() or getInstance() method. |
 | Extension point | Call Class::instance(); many of them take the settings file or database as the key. |
 
@@ -105,14 +105,15 @@ A class that hands out one shared instance per key, mostly through a static inst
 |---|---|---|---|---|
 | `eZImportEditWizard` | class extends eZWizardBase | `extension/syndication/modules/syndication/import_edit/ezimporteditwizard.php:47` | – | – |
 
-### kernel/classes (11)
+### kernel/classes (12)
 
 [All patterns of kernel/classes](area-kernel-classes.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expPasswordPolicy` | class | `kernel/classes/exppasswordpolicy.php:21` | The rules a new password must meet, and what happens after a password was changed. | – |
+| `expPasswordPolicy` | class | `kernel/classes/exppasswordpolicy.php:24` | The rules a new password must meet, and what happens after a password was changed. | – |
 | `expScriptStatus` | class | `kernel/classes/expscriptstatus.php:18` | expScriptStatus - lightweight CLI progress/status reporter. | – |
+| `expWeakPasswordList` | class | `kernel/classes/expweakpasswordlist.php:35` | The one list of well-known and common passwords, and the check every place that sets a new password uses: the setup wizard, the kickstarter and exp:i… | – |
 | `eZBinaryFileHandler` | class | `kernel/classes/ezbinaryfilehandler.php:23` | – | – |
 | `eZClusterFileHandler` | class | `kernel/classes/ezclusterfilehandler.php:11` | – | – |
 | `eZCollaborationProfile` | class extends eZPersistentObject | `kernel/classes/ezcollaborationprofile.php:18` | – | – |

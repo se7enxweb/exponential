@@ -18,8 +18,8 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | | |
 |---|---|
 | Instances (all categories) | 5058 |
-| Classes, interfaces, traits and enums | 2874 (2801 classes, 72 interfaces, 1 trait) |
-| ... with at least one pattern | 2294 |
+| Classes, interfaces, traits and enums | 2875 (2802 classes, 72 interfaces, 1 trait) |
+| ... with at least one pattern | 2295 |
 | Module views | 491 |
 | Policy functions | 232 |
 | Fetch functions | 290 |
@@ -27,7 +27,7 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | Cronjob parts | 36 |
 | Event hooks | 97 |
 | INI plugin points | 574 |
-| Source files read | 3744 PHP, 509 INI |
+| Source files read | 3745 PHP, 509 INI |
 | Areas | 142 |
 
 ## The patterns
@@ -44,7 +44,7 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | [Policy function (access control)](policy-function.md) | Request handling | 232 | An entry of $FunctionList in a module.php. |
 | [Front Controller](front-controller.md) | Request handling | 10 | The kernel classes ezpKernel, ezpKernelWeb, ezpKernelTreeMenu, ezpKernelRest, eZModule and their kind. |
 | [Command (console, scripts, cronjobs)](command.md) | Request handling | 220 | Extends Command, CronjobPart or Runnable (the runnable console commands and cronjob parts), or a cronjobs/*.php file. |
-| [Singleton / instance()](singleton.md) | Creation | 68 | Has a static instance() or getInstance() method. |
+| [Singleton / instance()](singleton.md) | Creation | 69 | Has a static instance() or getInstance() method. |
 | [Factory and static factory methods](factory.md) | Creation | 352 | Class name ends in Factory, or has static create*(), from*(), factory(), make*() methods, or creates new self/new static in a static method. |
 | [Builder](builder.md) | Creation | 8 | Class name contains Builder or Generator. |
 | [Registry](registry.md) | Structure | 30 | Class name contains Registry, or has static register*() methods. |
@@ -61,7 +61,7 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | [Value object / struct](value-object.md) | Structure | 95 | Class name ends in Struct, Value, Result, Item, Info or Definition and the class has few methods, or extends ezcBaseStruct. |
 | [Exception hierarchy](exception.md) | Structure | 51 | Extends Exception, an *Exception class or Error. |
 | [Trait (mixin)](trait.md) | Structure | 1 | Every trait. |
-| [Utility (static helper)](utility.md) | Structure | 541 | A concrete class whose methods are all static (at least two). |
+| [Utility (static helper)](utility.md) | Structure | 540 | A concrete class whose methods are all static (at least two). |
 | [INI plugin point (extension point)](ini-plugin-point.md) | Plugins | 947 | A setting of a settings/*.ini file (or an extension's) whose value is the name of a class of the catalogue. |
 
 ## The areas
@@ -148,7 +148,7 @@ One page per part of the code base: every class with its patterns, and the views
 | [extension/syndication](area-extension-syndication.md) | 34 | 13 | 0 | 0 | 0 |
 | [extension/xrowextract](area-extension-xrowextract.md) | 91 | 9 | 2 | 0 | 33 |
 | [extension/xrowmetadata](area-extension-xrowmetadata.md) | 38 | 2 | 0 | 7 | 1 |
-| [kernel/classes](area-kernel-classes.md) | 201 | 0 | 0 | 0 | 0 |
+| [kernel/classes](area-kernel-classes.md) | 202 | 0 | 0 | 0 | 0 |
 | [kernel/classes/apikey](area-kernel-classes-apikey.md) | 3 | 0 | 0 | 0 | 0 |
 | [kernel/classes/audit](area-kernel-classes-audit.md) | 54 | 0 | 0 | 0 | 0 |
 | [kernel/classes/basketinfohandlers](area-kernel-classes-basketinfohandlers.md) | 1 | 0 | 0 | 0 | 0 |

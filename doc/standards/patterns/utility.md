@@ -3,7 +3,7 @@ title: Utility (static helper)
 audience: developer
 category: standards
 order: 337
-summary: A class of static functions grouped by subject; no instances. 541 instances in Exponential.
+summary: A class of static functions grouped by subject; no instances. 540 instances in Exponential.
 keywords: design pattern, utility, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class of static functions grouped by subject; no instances.
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 541 |
+| Instances | 540 |
 | Recognized by | A concrete class whose methods are all static (at least two). |
 
 ## Classes by area
@@ -725,14 +725,13 @@ A class of static functions grouped by subject; no instances.
 | `expContentJobLock` | class | `kernel/classes/contentjob/expcontentjoblock.php:30` | Subtree locks of the content jobs. | – |
 | `expContentJobStore` | class | `kernel/classes/contentjob/expcontentjobstore.php:18` | The store of the content jobs: one JSON file per job in var//jobs/content/, written atomically (a temporary file in the same directory, flushed to di… | – |
 
-### kernel/classes/datatypes (10)
+### kernel/classes/datatypes (9)
 
 [All patterns of kernel/classes/datatypes](area-kernel-classes-datatypes.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expCountryGroups` | class | `kernel/classes/datatypes/ezcountry/expcountrygroups.php:24` | The country list as people pick from it: first the groups of settings/countrygroups.ini (by default one group of the most used countries, in ranked o… | – |
-| `eZForgotPassword` | class extends eZPersistentObject | `kernel/classes/datatypes/ezuser/ezforgotpassword.php:19` | – | – |
 | `eZImageFile` | class extends eZPersistentObject | `kernel/classes/datatypes/ezimage/ezimagefile.php:19` | – | extension/AdminAid/settings/aid.ini [SearchDatabase] ClassList[] |
 | `eZISBNGroup` | class extends eZPersistentObject | `kernel/classes/datatypes/ezisbn/ezisbngroup.php:24` | – | – |
 | `eZISBNGroupRange` | class extends eZPersistentObject | `kernel/classes/datatypes/ezisbn/ezisbngrouprange.php:26` | – | – |

@@ -34,7 +34,7 @@ Every class, interface and trait of `kernel/classes/datatypes` with the patterns
 | `eZEnumType` | class extends eZDataType | [Datatype (Strategy for content fields)](datatype.md) | `kernel/classes/datatypes/ezenum/ezenumtype.php:18` | – |
 | `eZEnumValue` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md) | `kernel/classes/datatypes/ezenum/ezenumvalue.php:19` | – |
 | `eZFloatType` | class extends eZDataType | [Datatype (Strategy for content fields)](datatype.md) | `kernel/classes/datatypes/ezfloat/ezfloattype.php:19` | – |
-| `eZForgotPassword` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/datatypes/ezuser/ezforgotpassword.php:19` | – |
+| `eZForgotPassword` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md) | `kernel/classes/datatypes/ezuser/ezforgotpassword.php:19` | – |
 | `eZIdentifierType` | class extends eZDataType | [Datatype (Strategy for content fields)](datatype.md) | `kernel/classes/datatypes/ezidentifier/ezidentifiertype.php:19` | – |
 | `eZImageAliasHandler` | class | [Strategy / handler](strategy-handler.md) | `kernel/classes/datatypes/ezimage/ezimagealiashandler.php:28` | – |
 | `eZImageFile` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md), [INI plugin point (extension point)](ini-plugin-point.md), [Utility (static helper)](utility.md) | `kernel/classes/datatypes/ezimage/ezimagefile.php:19` | – |

@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `kernel/classes` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (201)
+## Classes (202)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -57,7 +57,7 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `expNotificationService` | class | [Facade / service](facade.md), [Utility (static helper)](utility.md) | `kernel/classes/expnotificationservice.php:26` | The one place that knows how the notification system is run and looked at: the cronjob part, the exp:notification:* commands, the status page and its… |
 | `expPackageConflictReport` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/exppackageconflictreport.php:22` | What installing a package would meet on this installation, by remote id, without writing anything: for every content object of the package whether an… |
 | `expPackageJson` | class | [Utility (static helper)](utility.md) | `kernel/classes/exppackagejson.php:34` | The JSON serialization of a package (doc/bc/6.0/package-json-format.md). |
-| `expPasswordPolicy` | class | [Singleton / instance()](singleton.md) | `kernel/classes/exppasswordpolicy.php:21` | The rules a new password must meet, and what happens after a password was changed. |
+| `expPasswordPolicy` | class | [Singleton / instance()](singleton.md) | `kernel/classes/exppasswordpolicy.php:24` | The rules a new password must meet, and what happens after a password was changed. |
 | `expPhar` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/expphar.php:21` | Packages the engine -- the kernel and library class files -- into a phar, so the runtime can load them from one archive instead of from a thousand se… |
 | `expPolicyOmitList` | class | [Utility (static helper)](utility.md) | `kernel/classes/exppolicyomitlist.php:25` | The modules and views that skip the policy check: site.ini [RoleSettings] PolicyOmitList[] without the entries of [RoleSettings] PolicyOmitListExclud… |
 | `expPreloadAddress` | class | [Factory and static factory methods](factory.md) | `kernel/classes/exppreloadaddress.php:26` | Where the cache preloader finds a siteaccess: the address of its site, the url prefix that selects it on that host, and the pages a run starts from. |
@@ -85,6 +85,7 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `expVelocityRestartUnit` | class | [Factory and static factory methods](factory.md) | `kernel/classes/expvelocityrestartunit.php:34` | Runs exp:velocity restart as one detached unit: the stop and the start in a process that does not belong to the caller. |
 | `expVelocityWatchdog` | class | – | `kernel/classes/expvelocitywatchdog.php:49` | A safety net that starts the default engine again when it is down and nobody meant it to be: exp:velocity watchdog. |
 | `expViewAccess` | class | [Utility (static helper)](utility.md) | `kernel/classes/expviewaccess.php:25` | Whether a user can open an address of this siteaccess, decided the way the kernel decides a request (ezpKernelWeb): the URL alias (and wildcard) tran… |
+| `expWeakPasswordList` | class | [Singleton / instance()](singleton.md) | `kernel/classes/expweakpasswordlist.php:35` | The one list of well-known and common passwords, and the check every place that sets a new password uses: the setup wizard, the kickstarter and exp:i… |
 | `eZAudit` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezaudit.php:20` | The 4.x audit API, kept so every existing call keeps working: eZAudit::writeAudit( $name, $attributes ) is recorded by expAudit (kernel/classes/audit… |
 | `eZBasket` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `kernel/classes/ezbasket.php:20` | – |
 | `eZBinaryFileHandler` | class | [Singleton / instance()](singleton.md), [Strategy / handler](strategy-handler.md) | `kernel/classes/ezbinaryfilehandler.php:23` | – |
