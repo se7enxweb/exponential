@@ -183,7 +183,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-46bfef93e2aff392d66b6d2923bb2dca  composer.json
+8a5eb56a17051781707d2a31aea2bb03  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -3253,7 +3253,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-cbf0fee18a4f687f1d3cd1ef81939723  doc/changelogs/6.0/6.0.15.md
+d9985e5c47166ef3f5154d4bfbfd803b  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3594,7 +3594,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-03437e5b4bce1615e092d63127278518  doc/features/6.0/content-security-policy.md
+ad5f14eb9d9467850d3878892ca6a93c  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
@@ -6820,7 +6820,7 @@ b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.ph
 72ac1e093ee82d6fbf003d4432240000  phpcs.xml.dist
 ef2da25522d8ed3513c81b1343870c7e  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-5650b10f166e2bcd71ab5f87c35d4cb9  phpunit.xml
+874233841191fbe6ff5f632be4b5499a  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -8080,6 +8080,7 @@ a1a9edde9c0872dfbf4f774d28b9c6ae  tests/tests/extension/git_manager/GitManagerAd
 51cd083de51e3fe4c44f83b15733f6b5  tests/tests/extension/git_manager/GitManagerLogPagingTest.php
 a259b36c8795f576c46cb9b5ea46ea25  tests/tests/extension/maps/expMapAddressEscapingTest.php
 267144e1bae65a62d6434f56daf8fe80  tests/tests/extension/sevenx_dse/SevenxDseAdminNeoViewTest.php
+924a92bcd13a2f7159be39fcf533816f  tests/tests/extension/sevenx_dse/SevenxDseAdminNeoWorkerStateTest.php
 68ae76f0ecbdae3536129edaf2dd63b8  tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php
 2abc7e0d7ab556d758e40d7c95bc1dbb  tests/tests/extension/sevenx_dse/fixtures/adminneo_ends_with_ezexit.php
 14ed0fd86bd419c3abc2e81c07d0cdc0  tests/tests/extension/sevenx_dse/fixtures/adminneo_runs_to_end.php

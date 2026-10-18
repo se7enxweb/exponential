@@ -185,6 +185,7 @@
             <file>tests/tests/extension/ezupdate/ezUpdateAdminStylingTest.php</file>
             <file>tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php</file>
             <file>tests/tests/extension/sevenx_dse/SevenxDseAdminNeoViewTest.php</file>
+            <file>tests/tests/extension/sevenx_dse/SevenxDseAdminNeoWorkerStateTest.php</file>
             <file>tests/tests/extension/ezflow/ezflowEditScriptTest.php</file>
         </testsuite>
 
