@@ -2238,7 +2238,11 @@ class expVelocity
                 $target = (string)@readlink( '/proc/' . $proc['pid'] . '/fd/' . $fd );
                 if ( substr( $target, -10 ) === ' (deleted)' )
                     $target = substr( $target, 0, -10 );
-                if ( $target !== '' && strpos( $target, $dir ) === 0 )
+                // A detached restart (expVelocityRestartUnit) writes its own
+                // output to restart-<token>.log here; it is not a server, and
+                // counted as one it made a restart that hung look running.
+                if ( $target !== '' && strpos( $target, $dir ) === 0
+                     && strpos( basename( $target ), 'restart-' ) !== 0 )
                 {
                     $pids[] = $proc['pid'];
                     break;
@@ -2661,6 +2665,11 @@ class expVelocity
         // taken down with the shell or the script that started it. Without
         // one the server still starts, backgrounded and with no terminal.
         $setsid = $this->findExecutable( 'setsid' );
+        // The priority the server runs at is [ServerSettings] Nice, not the
+        // caller's: a deploy run under nice -n 19 left every worker at 19 and
+        // the site slow (2026-10-17). nice -n is relative, so the step is
+        // from this process's own value to the setting.
+        $nice = $this->startNicePrefix();
         $instances = $this->instances();
         for ( $i = 0; $i < $instances; $i++ )
         {
@@ -2669,7 +2678,7 @@ class expVelocity
             foreach ( $own as $k => $argument )
                 if ( strpos( $argument, '--pid=' ) === 0 )
                     $own[$k] = '--pid=' . $this->pidFile( $i );
-            $command = $environment . ( $setsid !== false ? escapeshellarg( $setsid ) . ' ' : '' )
+            $command = $environment . $nice . ( $setsid !== false ? escapeshellarg( $setsid ) . ' ' : '' )
                      . implode( ' ', array_map( 'escapeshellarg', $own ) )
                      . ' > ' . escapeshellarg( $this->logFile( $i ) ) . ' 2>&1 < /dev/null &';
             @exec( $command );
@@ -3557,6 +3566,93 @@ class expVelocity
     }
 
     /**
+     * The priority the server runs at: [ServerSettings] Nice, -20 to 19, or
+     * null for "inherit" (whatever the caller runs at, the old behavior).
+     *
+     * @return int|null
+     */
+    public function niceSetting()
+    {
+        $value = strtolower( trim( (string)$this->setting( 'ServerSettings', 'Nice', '5' ) ) );
+        if ( $value === '' || $value === 'inherit' || !preg_match( '/^[+-]?\d+$/', $value ) )
+            return null;
+        return max( -20, min( 19, (int)$value ) );
+    }
+
+    /**
+     * The "nice -n <step> " a start puts before the server's command, every
+     * engine alike, so it runs at niceSetting() and not at the caller's value.
+     *
+     * @return string
+     */
+    protected function startNicePrefix()
+    {
+        $target = $this->niceSetting();
+        return self::nicePrefix( $target, self::niceOf( getmypid() ),
+                                 $target === null ? false : $this->findExecutable( 'nice' ) );
+    }
+
+    /**
+     * A process's nice value, from /proc; null when it cannot be read.
+     *
+     * @param int $pid
+     * @return int|null
+     */
+    public static function niceOf( $pid )
+    {
+        $stat = (string)@file_get_contents( '/proc/' . (int)$pid . '/stat' );
+        $end = strrpos( $stat, ')' );
+        if ( $end === false )
+            return null;
+        // After "pid (comm) ": state is field 3, nice field 19.
+        $fields = preg_split( '/\s+/', trim( substr( $stat, $end + 1 ) ) );
+        return isset( $fields[16] ) && is_numeric( $fields[16] ) ? (int)$fields[16] : null;
+    }
+
+    /**
+     * The "nice -n <step> " that takes a command from $current to $target;
+     * empty when nothing is to change or it cannot be done. Pure.
+     *
+     * @param int|null $target
+     * @param int|null $current
+     * @param string|false $niceBinary
+     * @return string
+     */
+    public static function nicePrefix( $target, $current, $niceBinary )
+    {
+        if ( $target === null || $niceBinary === false || $niceBinary === '' )
+            return '';
+        $step = (int)$target - (int)( $current === null ? 0 : $current );
+        if ( $step === 0 )
+            return '';
+        return escapeshellarg( $niceBinary ) . ' -n ' . $step . ' ';
+    }
+
+    /**
+     * Parents running at another priority than [ServerSettings] Nice, as
+     * problems for status. Pure apart from reading /proc through $niceOf.
+     *
+     * @param array $parents pids
+     * @param int|null $target
+     * @param callable $niceOf pid => int|null
+     * @return array
+     */
+    public static function niceProblems( array $parents, $target, $niceOf )
+    {
+        $problems = array();
+        if ( $target === null )
+            return $problems;
+        foreach ( $parents as $parent )
+        {
+            $nice = call_user_func( $niceOf, $parent );
+            if ( $nice !== null && $nice !== (int)$target )
+                $problems[] = 'parent ' . $parent . ' runs at nice ' . $nice . ', not [ServerSettings] Nice=' . (int)$target
+                    . ' (started from a caller at another priority?) -- exp:velocity restart applies the setting';
+        }
+        return $problems;
+    }
+
+    /**
      * Whether the running processes make a working server, and what is wrong
      * when they do not: an instance without its parent, processes whose
      * server has gone (and which ports they hold), connections queued that
@@ -3577,6 +3673,9 @@ class expVelocity
             if ( !isset( $parents[$i] ) )
                 $problems[] = ( $this->instances() > 1 ? 'instance ' . $i . ' has' : 'has' ) . ' no running parent'
                     . ' (' . $this->relativePath( $this->pidFile( $i ) ) . ' is missing or names a process that is gone)';
+
+        $problems = array_merge( $problems, self::niceProblems( array_values( $parents ), $this->niceSetting(),
+                                                                array( __CLASS__, 'niceOf' ) ) );
 
         $ports = $this->configuredPorts();
         $holders = $this->portHolders( $ports );

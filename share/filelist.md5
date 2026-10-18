@@ -23,7 +23,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6317a4c9d5332abdff2cdede49edebb7  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-fab8e44917d817e7a936282cb3add3d6  autoload/ezp_kernel.php
+f5443d7fad155099d6e2957022d22b52  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3082,7 +3082,7 @@ b3619f3dd7b2c0c98ea03f16cba624e4  doc/bc/6.0/trash.md
 0637dd8b6d6bcb69afd7fa771041c8f5  doc/bc/6.0/ui-switch.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
-109af94270d62cc925172e6b889864d0  doc/bc/6.0/velocity-engines.md
+cd81a056e4c793f005fd104bbe6bb6f4  doc/bc/6.0/velocity-engines.md
 886acb7ce25be5416e143b161f5c0672  doc/bc/6.0/velocity-ondisk-layout.md
 e45848cf4009e8515ef6ed6775a40b07  doc/bc/6.0/view_full_security.md
 8fd6c3094d810e78dbd152f24c450ec9  doc/bc/6.0/yui-removal.md
@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-42b81e5ab5aadf81cdaaa7ce49418798  doc/changelogs/6.0/6.0.15.md
+c169a95863dbe9973b0cbef7aa16937b  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5227,13 +5227,16 @@ dbf729b5e4373a73ea096e996a48b931  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 21c77a7f6ab0d4e081886665a6a6f721  kernel/classes/exptestlanguage.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
-59493771097567369a08c4bef7f5f9ba  kernel/classes/expvelocity.php
+c0ff93ab55af41d88a7e96900934db3e  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 c748b14e37c7c23f4b66f5df522d253c  kernel/classes/expvelocityconfiglayout.php
-5936100316b019b80078d1c4cb56c07b  kernel/classes/expvelocitydeploy.php
-7fd7e6d025cf7ea88211886fcdf2ba8d  kernel/classes/expvelocityfrankenphp.php
+2bf751792e29fc5259d774fb590c7f7a  kernel/classes/expvelocitydeploy.php
+ca152db03e020c7bbe4ba8951c72a906  kernel/classes/expvelocityfrankenphp.php
 7c4ebba6437621654ba6ac7004296173  kernel/classes/expvelocityfrankenphpinstaller.php
-47063de8eb0264a026b9b448b0c1ead3  kernel/classes/expvelocityphpserver.php
+600c52c5993053d67fa78bde9b37ff99  kernel/classes/expvelocitymarkers.php
+d7b0086399665b9506af909e3d6230fc  kernel/classes/expvelocityphpserver.php
+8575d463d7c31610483091d94c65f8fc  kernel/classes/expvelocityrestartunit.php
+5d1ef7c5851b12f5f7cc034b06bd06b7  kernel/classes/expvelocitywatchdog.php
 b42226f735d68e3b8b78875311b214fb  kernel/classes/expviewaccess.php
 d9da1ddbb238a9634bbd835247adbc64  kernel/classes/ezaudit.php
 6235fea69dfbb9e5d965e4879d7203db  kernel/classes/ezbasket.php
@@ -5419,7 +5422,7 @@ eb57a9b3e9f9d772150bedcc96f6db3d  kernel/classes/logviewer/explogratelimit.php
 ea0de1820d4f8933ddda6a3c4a3d6ddc  kernel/classes/logviewer/explogsearch.php
 d318c1d56d892e1b52a04b6e1e98f0f4  kernel/classes/logviewer/explogtail.php
 1d34a1bdc540a32edc3c5259e65b24db  kernel/classes/logviewer/explogviewer.php
-628f2a168b01d0e58854c352b717e226  kernel/classes/logviewer/explogviewerconfig.php
+be39d8c0caad394b7c816c6a60858e89  kernel/classes/logviewer/explogviewerconfig.php
 e0743bbaada56d3b5fc0b60d63816f34  kernel/classes/mail/expmailtemplatebody.php
 433fa0d8a63f3ab1be70354c7a4c145d  kernel/classes/mailpreferences/expconsentcontext.php
 edd4fe2a12021de5f1e04134421a0cca  kernel/classes/mailpreferences/expconsentlog.php
@@ -5814,7 +5817,7 @@ e418cf8846889816fde6983b02b7af7a  kernel/private/classes/commands/updateniceurls
 2015ac6318bd4a4d4add811741d4505f  kernel/private/classes/commands/userlogincheck.php
 8e4e6e811bc4b9185f908d59ead28563  kernel/private/classes/commands/velocity-router.php
 d6e5f5025713bfadd4389ddb1998a5e8  kernel/private/classes/commands/velocity-warmup.php
-5f754b9d98901233ace6173f16a46ae4  kernel/private/classes/commands/velocity.php
+0000aff045898b0c950c0e50f405e070  kernel/private/classes/commands/velocity.php
 962a2d0f6f0b2cb408addc4c9f2c3055  kernel/private/classes/commands/verify_aliases.php
 b6b30e479c66f9e11106941e27a50866  kernel/private/classes/commands/warm.php
 cbbe5f58bc358839404eee4aea3bd23a  kernel/private/classes/commands/webserver.php
@@ -6815,7 +6818,7 @@ ff628948e2b39a3ebfb9a8f9f81ae678  settings/ini.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
-4448338df55e87d4c0e4e153020f62f5  settings/logviewer.ini
+d185d373c46a93b79dc7c9680a50a45c  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 76c2a66b3812c0106f2b189d51df4a44  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
@@ -6851,7 +6854,7 @@ aa1ac2879a1589cc5152361a5b6a87a2  settings/textfile.ini
 0e7434c643d1e1dfe866ee4be55ff5db  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-0d6620f08d1f3e5244cfb72ba93c12f1  settings/velocity.ini
+3f7970aa2d6d63ad815f0180ce0c4ddd  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
@@ -7690,7 +7693,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-93df0f2a69f55708af7179ba2a45fda4  tests/test-map.json
+de16be58cc7482b86c64efeca2f6af39  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
@@ -8197,7 +8200,10 @@ c46fd8ef85c10a50ff801cd31cba5ed6  tests/tests/kernel/classes/expTestLanguageTest
 f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTest.php
 808113843572bb212ca69e58f900b4dd  tests/tests/kernel/classes/expUserLoginIntegrityTest.php
 3b8447a030a246d2d35378de5fde1347  tests/tests/kernel/classes/expVelocityEnginesTest.php
+be3a33ce3c88aba09d1e3a0ab5c51a2c  tests/tests/kernel/classes/expVelocityMarkersTest.php
+d192ba3ececa29f5bea6ab48deb3d607  tests/tests/kernel/classes/expVelocityNiceTest.php
 f7cd1ed759475ce246d5a6cd8c5a92b6  tests/tests/kernel/classes/expVelocityStopRestartTest.php
+7890d1111ba863c29eac5cd4e13d276c  tests/tests/kernel/classes/expVelocityWatchdogTest.php
 c8c704867551b709eb99c383b3f91b59  tests/tests/kernel/classes/expViewAccessTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml

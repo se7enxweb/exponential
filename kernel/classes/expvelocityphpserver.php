@@ -400,7 +400,7 @@ class expVelocityPHPServer extends expVelocity
         $setsid = $this->findExecutable( 'setsid' );
         // The whole subshell redirected and replaced by the server, so it
         // holds none of this process's output and its pid is the server's.
-        $command = '( cd ' . escapeshellarg( $this->rootDir ) . ' && ' . $prefix . 'exec '
+        $command = '( cd ' . escapeshellarg( $this->rootDir ) . ' && ' . $prefix . 'exec ' . $this->startNicePrefix()
                  . ( $setsid !== false ? escapeshellarg( $setsid ) . ' ' : '' )
                  . implode( ' ', array_map( 'escapeshellarg', $this->command() ) )
                  . ' ) > ' . escapeshellarg( $log ) . ' 2>&1 < /dev/null & echo $!';

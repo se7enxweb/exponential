@@ -1110,7 +1110,7 @@ class expVelocityFrankenPHP extends expVelocity
         // replaced by the server (exec): with "cd ... && server > log &" the
         // backgrounded shell kept this process's output pipe open, and exec()
         // here waited for as long as the server ran.
-        $command = '( cd ' . escapeshellarg( $this->rootDir ) . ' && ' . $prefix . 'exec '
+        $command = '( cd ' . escapeshellarg( $this->rootDir ) . ' && ' . $prefix . 'exec ' . $this->startNicePrefix()
                  . ( $setsid !== false ? escapeshellarg( $setsid ) . ' ' : '' )
                  . implode( ' ', array_map( 'escapeshellarg', $this->command() ) )
                  . ' ) > ' . escapeshellarg( $log ) . ' 2>&1 < /dev/null &';
