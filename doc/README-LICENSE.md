@@ -53,8 +53,11 @@ The help shows a different notice on these pages. They are:
   (`doc/features/2.x` to `doc/features/5.x`, `doc/bc/4.x` and `doc/bc/5.x`, `doc/specifications/3.x`,
   `doc/specifications/4.x` and `doc/specifications/trunk`, `doc/changelogs/2.9` to `doc/changelogs/5.x`, and
   `doc/changelogs/README.md`);
-- `doc/shop/`, `doc/branch-overview`, `doc/release-overview`, `doc/standards/header.txt`, and the example
-  configuration files `doc/examples/ezpublish.conf` and `doc/examples/htaccess`.
+- `doc/shop/`, `doc/branch-overview`, `doc/release-overview` and `doc/standards/header.txt`.
+
+The example configuration files `doc/examples/htaccess` and `doc/examples/ezpublish.conf` were rewritten for
+Exponential 6 and are free documentation like the rest; the rewrite rules in them are those of `.htaccess_root`, part
+of the software and under its license.
 
 The list is the setting `[License] OtherLicensePathRules[]` in `settings/exphelp.ini`, which the help reads to
 choose the notice of a page.
