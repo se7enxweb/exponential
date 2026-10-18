@@ -343,7 +343,7 @@ ef2a553f3e9a28390f0d235e3098b593  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
-b2f9a21b4cb6e4c203819288c28710aa  design/admin/stylesheets/pagelayout.css
+7f0ab761ab91d55e7f22d9456c4d8529  design/admin/stylesheets/pagelayout.css
 2d02f74460d590ebf57e8230963c891e  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 017f424deeeb46501db6bcf63990e746  design/admin/stylesheets/theme/rounded.css
@@ -609,7 +609,7 @@ f282688f9c5b255781005e8124e243cc  design/admin/templates/package/uninstall_error
 fda9299f029c731efb3f2a7d8cae2fe8  design/admin/templates/page_head_script.tpl
 9b35e3bf7adb0350c55c63dadb305f35  design/admin/templates/page_head_style.tpl
 dbcd6a019f44c7b1bcf92f13c30f641f  design/admin/templates/page_head_style_inline.tpl
-ecb3c141d6f8940074a7432d3bb63bac  design/admin/templates/page_header.tpl
+1e3fad39578f09875830943b5d52a7c3  design/admin/templates/page_header.tpl
 658df4da89d3c912a6bc9a3335604445  design/admin/templates/page_leftmenu.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin/templates/page_login_copyright.tpl
 1bf2256ccd6061ee7f354a26834937c1  design/admin/templates/page_menuheadenabled.tpl
@@ -1058,7 +1058,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-088de3f699a211ded957ec81a35a0b70  design/admin4/stylesheets/admin4.css
+f5cc0d7523b8ccfb41f0360cac5ab1ff  design/admin4/stylesheets/admin4.css
 183e7934db6488f5f05a9f47d91aa019  design/admin4/stylesheets/components.css
 fef6201f7a8970ad72c4e5d3fc5147ce  design/admin4/stylesheets/content.css
 399bdd34c0eb57e51468449154ad9911  design/admin4/stylesheets/core.css
@@ -1372,7 +1372,7 @@ b4fb859581095c667b7fa2b69b4c4e28  design/admin4/templates/page_topmenu.tpl
 a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
 75df05e2e3d28222f8d6cac41b06073f  design/admin4/templates/pagelayout.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
-e5e563614f536f1e1eae5fd3ef9049c0  design/admin4/templates/parts/a4_header_help.tpl
+6a42c27482affc9c09165b3c9cb60d1d  design/admin4/templates/parts/a4_header_help.tpl
 41b309bce99292420eca74f538bedc24  design/admin4/templates/parts/a4_header_site.tpl
 4321818ff67ec7372e68e6559a776370  design/admin4/templates/parts/a4_header_user.tpl
 302762e589dd7ade916c47265ed2955f  design/admin4/templates/parts/a4_logo.tpl
