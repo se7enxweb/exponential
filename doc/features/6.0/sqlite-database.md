@@ -9,6 +9,10 @@ SQLite support arrived in January 2024 (releases 6.0.1 to 6.0.3, see the
 since. Everything below describes the code as it is now; a note says where a
 setting came in a later release than the first driver.
 
+> **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
+> at this time. Details: [Database support](../../help/database-support.md).
+
 ## What you get
 
 - A kernel database driver, `eZSQLite3DB`

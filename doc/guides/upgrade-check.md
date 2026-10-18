@@ -180,4 +180,6 @@ runs.
 - [The file manifest and how a release writes it](../features/6.0/file-consistency-check.md)
 - [Upgrading](upgrading.md)
 - [Quality checks](../features/6.0/quality-checks.md): `checkmanifest --staged` in the pre-commit hook
+- [Database support](../help/database-support.md): the supported databases in their official order, and which of them the
+  database check covers
 - Changelog: [6.0.15](../changelogs/6.0/6.0.15.md)

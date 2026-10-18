@@ -11,6 +11,10 @@ class, the collection schema and a test plan, is
 its section 24 for a step-by-step installation and section 26 for the known
 limits.
 
+> **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
+> at this time. Details: [Database support](../../help/database-support.md).
+
 ## What was added
 
 | Piece | File | Role |

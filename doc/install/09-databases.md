@@ -1,12 +1,20 @@
 # 9. Databases
 
-Exponential stores its content repository in one of five database systems: SQLite 3, MySQL or MariaDB,
-PostgreSQL, MongoDB, and Oracle through the `ezoracle` extension. This chapter explains each of them as an
+Exponential stores its content repository in one of six database systems on five drivers: SQLite 3, PostgreSQL,
+MongoDB, MariaDB, Oracle through the `ezoracle` extension, and MySQL (MariaDB and MySQL share one driver). This
+chapter explains each of them as an
 operator meets it: what the driver does, how to create the database and its user, the exact settings block, what
 goes wrong and how to recognise it. It spends most of its pages on SQLite, because SQLite is the installer's
 default and, with the driver Exponential ships, a full production database that carries heavy read load and queues
 concurrent writes instead of failing them. The chapter ends with a comparison table and the notes that matter when
 code or content moves from one engine to another.
+
+> **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
+> at this time. Details: [Database support](../help/database-support.md).
+
+The sections below keep the order of the drivers (MariaDB and MySQL share section 9.3); the support page above gives
+the versions checked against the code, the test coverage of each database and what Microsoft SQL Server would need.
 
 [Contents](README.md) · Previous: [8. Serving the site](08-serving-the-site.md) · Next: [10. After installing](10-after-installing.md)
 
@@ -782,7 +790,7 @@ Backups: `mongodump --uri="mongodb://exponential@localhost:27017/exponential" --
 
 ## 9.6 Oracle 19c and later (ezoracle)
 
-Oracle support comes from the **`ezoracle`** extension (version 2.3.3, the version `composer.json` requires with `~2.3.3`): the driver
+Oracle support comes from the **`ezoracle`** extension (version 2.3.7, the version `composer.json` requires with `~2.3.7`): the driver
 `eZOracleDB`, the schema handler `eZOracleSchema`, console commands and cronjobs. It is a dependency in
 `composer.json`, so it is in `extension/ezoracle` after `composer install`. Its own `README.md` and `INSTALL` are the
 complete reference; this section is the operator's path through them.
@@ -1020,10 +1028,20 @@ engine the site runs on now, not by the one it was installed on: `update/databas
 `update/database/postgresql/` and `update/database/sqlite/`, and for Oracle the files in the `ezoracle` extension.
 MongoDB has no SQL update files. [Chapter 11](11-upgrading.md#113-the-update-files) lists them.
 
+## 9.10 Microsoft SQL Server
+
+Exponential 6.0.x has no driver for Microsoft SQL Server; it is known to be possible with additional work at this
+time. The database layer is the interface `eZDBInterface` with pluggable driver aliases and schema handlers, which is
+how the Oracle and MongoDB support were added. The work list (a driver on `sqlsrv`, the `BIT_OR` aggregate SQL Server
+lacks, a schema handler, SQL and update files, installer entries, tests) is in
+[Database support](../help/database-support.md#microsoft-sql-server-possible-with-additional-work).
+
 ## References
 
 In this repository:
 
+- [Database support](../help/database-support.md): the supported databases in their official order, the versions
+  checked against the code, installer support per path and CI coverage.
 - [SQLite database support](../features/6.0/sqlite-database.md): the task-oriented introduction.
 - [Specification: the SQLite3 database driver](../specifications/6.0/sqlite3-database-driver.md): connection,
   PRAGMAs, transactions and writers, the SQL compatibility layer.
