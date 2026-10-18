@@ -56,5 +56,4 @@ Foundation**:
 
 - [Who runs the partner program](who-runs-the-partner-program.md)
 - [Working with the Exponential Foundation](working-with-the-foundation.md)
-- [Open questions for the Foundation](open-questions-for-the-foundation.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

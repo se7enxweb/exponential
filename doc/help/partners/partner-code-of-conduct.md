@@ -72,12 +72,11 @@ your own plans as the project's roadmap.
 
 ## When something goes wrong
 
-Tell the partner team (partner@exponential.earth) early. Under the contract, "7x may terminate for violations"
+Tell the partner team (<https://exponential.earth/partner/contact-us>) early. Under the contract, "7x may terminate for violations"
 (program page); open, early correction is always better.
 
 ## Related pages
 
 - [Open source values in daily partner work](open-source-values-for-partners.md)
 - [The partnership agreement in plain words](the-partnership-agreement.md)
-- [Open questions for the Foundation](open-questions-for-the-foundation.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

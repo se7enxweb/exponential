@@ -67,7 +67,6 @@ The program page has an older-looking table for Starter to Platinum. Differences
 | Co-marketing | Budget up to 5%, Gold and Platinum | "Co-marketing investment from 7x", Gold and Platinum |
 | Services discount | 0/0/5/10/15/20% (Starter to Platinum) | 0/0/10/10/15/20% |
 | Subscription discount | 4/4/4/15/20/25% | 5/5/15/15/20/25% |
-| Lead referral commission | 15% cold, 20% hot | 10% cold, 20% hot |
 
 Treat the benefits page as the newer statement, and confirm in writing.
 

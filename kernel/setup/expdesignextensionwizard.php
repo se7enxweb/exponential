@@ -390,8 +390,12 @@ class expDesignExtensionWizard extends expExtensionWizard
              . "{\$module_result.content}\n"
              . "</main>\n\n"
              . "{include uri='design:page_footer.tpl'}\n\n"
-             . "{* Anything a template asked to be put at the end of the body. *}\n"
-             . "{ezscript_require( array( 'ezjsc::jquery' ) )}\n"
+             . "{* The scripts: jQuery, the JavaScriptList of design.ini, and whatever a\n"
+             . "   template on this page asked for with ezscript_require(). They are\n"
+             . "   printed here, at the end of the body, so every template has had its say. *}\n"
+             . "{ezscript_load( array( 'ezjsc::jquery',\n"
+             . "                       ezini( 'JavaScriptSettings', 'JavaScriptList', 'design.ini' ),\n"
+             . "                       ezini( 'JavaScriptSettings', 'FrontendJavaScriptList', 'design.ini' ) ) )}\n"
              . "</body>\n"
              . "</html>\n";
     }
@@ -400,13 +404,16 @@ class expDesignExtensionWizard extends expExtensionWizard
     {
         $head = "{* What goes in the head of every page: the title, the character set,\n"
               . "   and the files design.ini says this design loads. *}\n"
-              . "<meta charset=\"{ezini( 'RegionalSettings', 'ContentObjectLocale' )|extract_left( 0 )}utf-8\" />\n"
+              . "<meta charset=\"utf-8\" />\n"
               . "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n"
-              . "<title>{\$module_result.path|reverse|implode_key( 'text', ' / ' )|wash} - {ezini( 'SiteSettings', 'SiteName' )|wash}</title>\n\n"
-              . "{ezcss_require( ezini( 'StylesheetSettings', 'CSSFileList' ) )}\n";
+              . "<title>{foreach \$module_result.path|reverse as \$path_item}{\$path_item.text|wash}{delimiter} / {/delimiter}{/foreach} - {ezini( 'SiteSettings', 'SiteName' )|wash}</title>\n\n"
+              . "{* The stylesheets of design.ini, and whatever a template asked for with\n"
+              . "   ezcss_require() before this point. *}\n"
+              . "{ezcss_load( array( ezini( 'StylesheetSettings', 'CSSFileList', 'design.ini' ),\n"
+              . "                    ezini( 'StylesheetSettings', 'FrontendCSSFileList', 'design.ini' ) ) )}\n";
 
         if ( $settings['parts']['print_stylesheet'] )
-            $head .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"print\" href={'print.css'|ezdesign} />\n";
+            $head .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"print\" href={'stylesheets/print.css'|ezdesign} />\n";
 
         $head .= "\n{* An rss autodiscovery line, if this site publishes one. *}\n"
                . "{*<link rel=\"alternate\" type=\"application/rss+xml\" title=\"{ezini( 'SiteSettings', 'SiteName' )|wash}\" href={'/rss/feed/my_feed'|ezurl} />*}\n";

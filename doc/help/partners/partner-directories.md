@@ -46,5 +46,4 @@ be defined by the Foundation.
 
 - [Your partner page](your-partner-page.md)
 - [Partner profiles](partner-profiles.md)
-- [Open questions for the Foundation](open-questions-for-the-foundation.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
