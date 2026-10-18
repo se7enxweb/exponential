@@ -5,10 +5,13 @@
  * fields safely. No database.
  *
  *  MA-01 - Where a template puts the address (or the popup title) into a script, it is |wash|wash( 'javascript' ):
- *          the map libraries hand it to setContent(), which reads HTML. Never wash( 'javascript' ) alone.
+ *          the map libraries hand it to setContent(), which reads HTML. Never wash( 'javascript' ) alone. From
+ *          cjw_themes_jumper 0.1.6 and ezflow 6.1.9 on the templates have no inline script: the value goes to the
+ *          map's script file in a data attribute, escaped for HTML once (|wash), the attribute escaped again
  *  MA-02 - The view and edit templates of the datatype print the address with |wash, never raw: it is stored as typed
  *  MA-03 - The pipeline as the templates write it, rendered by a bare eZTemplate (interpreted and compiled): the script
- *          literal holds no quote, < or >, and what the browser reads from it is the HTML-escaped address
+ *          literal holds no quote, < or >, and what the browser reads from it is the HTML-escaped address; for the
+ *          data attributes, what getAttribute() gives the script is the address escaped for HTML once
  *  MA-05 - The view and edit templates make the coordinates strings (concat) before explode(): a driver that returns
  *          floats (SQLite, PDO) stopped the edit page at implode()
  *  MA-04 - fromString(): four fields store the location; three keep the coordinates with an empty address; fewer, or
@@ -132,9 +135,68 @@ class expMapAddressEscapingTest extends PHPUnit\Framework\TestCase
                                                                "$file: $variable in a script is escaped for HTML, then for JavaScript" );
                     }
                 }
-                $this->assertGreaterThan( 0, $found, "$file writes $variable into a script" );
+                if ( $found )
+                    continue;
+                // From cjw_themes_jumper 0.1.6 and ezflow 6.1.9 on, the value reaches the map's script through a data
+                // attribute (no inline script): it is escaped for HTML once (|wash), for setContent(), and the
+                // attribute as a whole is escaped again; never for JavaScript, which is no longer the context
+                $this->assertSame( 0, preg_match_all( '#<script\b(?![^>]*\ssrc=)[^>]*>\s*\S#', $source ),
+                                   "$file: no inline script; the value goes through a data attribute" );
+                // every use of the variable outside {def}/{undef}, where it is set or dropped, not printed
+                $uses = preg_replace( '/\{(?:un)?def\b[^}]*\}/s', '', $source );
+                preg_match_all( '/' . preg_quote( $variable, '/' ) . '(?![\w.\[])((?:\|[a-z_]+(?:\([^)]*\))?)*)/i', $uses, $outputs );
+                foreach ( $outputs[1] as $pipeline )
+                {
+                    ++$found;
+                    $this->assertSame( '|wash', $pipeline, "$file: $variable is escaped for HTML once (|wash)" );
+                }
+                $this->assertGreaterThan( 0, $found, "$file writes $variable into a script or a data attribute" );
             }
         }
+    }
+
+    /**
+     * The data attributes the map templates of cjw_themes_jumper 0.1.6 and ezflow 6.1.9 write, as they write them:
+     * file => array( expression in the template, the part a bare eZTemplate renders with the address as $a, what the
+     * rest of the expression makes of it (json_encode is an ezjscore operator, applied here as it encodes), what the
+     * script reads from the attribute, what it must read )
+     */
+    private static function attributeChains()
+    {
+        return array(
+            'extension/cjw_themes_jumper/design/starter/templates/content/parts/leaflet_map_single.tpl' => array(
+                "data-popup=\"{concat( '<h1>', \$lm_title|wash, '</h1><p>', \$lm_loc.address|wash, '</p>' )|wash}\"",
+                "{concat( '<h1>', \$a|wash, '</h1><p>', \$a|wash, '</p>' )|wash}",
+                function ( $rendered ) { return $rendered; },
+                function ( $read ) { return $read; },
+                function ( $escaped ) { return "<h1>$escaped</h1><p>$escaped</p>"; } ),
+            'extension/ezflow/design/ezflow/override/templates/block/geo_located_content.tpl' => array(
+                "'address', \$location.data_map[\$attribute].content.address|wash ) ) )}",
+                "{\$a|wash}",
+                function ( $rendered ) { return htmlspecialchars( json_encode( array( 'address' => $rendered ) ), ENT_QUOTES, 'UTF-8' ); },
+                function ( $read ) { $d = json_decode( $read, true ); return is_array( $d ) ? $d['address'] : null; },
+                function ( $escaped ) { return $escaped; } ),
+        );
+    }
+
+    /** MA-03, the data attribute: what the script reads (getAttribute) is the address escaped for HTML once */
+    public function testTheDataAttributeGivesTheScriptTheHtmlEscapedAddress()
+    {
+        $checked = 0;
+        foreach ( self::attributeChains() as $file => $chain )
+        {
+            if ( !is_file( $file ) || strpos( file_get_contents( $file ), $chain[0] ) === false )
+                continue;
+            $checked++;
+            $attribute = $chain[2]( $this->render( $chain[1], self::HOSTILE ) );
+            foreach ( array( '<', '>', '"' ) as $character )
+                $this->assertStringNotContainsString( $character, $attribute, "$file: no raw " . json_encode( $character ) . ' in the attribute' );
+            $read = html_entity_decode( $attribute, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+            $this->assertSame( $chain[4]( htmlspecialchars( self::HOSTILE, ENT_QUOTES, 'UTF-8' ) ), $chain[3]( $read ),
+                               "$file: setContent() receives the address escaped for HTML once" );
+        }
+        if ( !$checked )
+            $this->markTestSkipped( 'no map template with a data attribute is installed' );
     }
 
     /** MA-02 */
