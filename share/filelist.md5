@@ -3807,7 +3807,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/examples/fetch-functions/user/member_of.md
 42a70c11641a0fce108e4659cd159987  doc/examples/fetch-functions/workflow/workflow_statuses.md
 e2a0d933b995c654fb8d0b0d61460b08  doc/examples/fetch-functions/workflow/workflow_type_statuses.md
 025f63459e9b91b5bf0e127628f6e01b  doc/examples/htaccess
-cdc276ab0e0099c3e4041086343d6548  doc/examples/ini-settings/README.md
+6f3aeb004cfdf46ba4cc7edc4be62658  doc/examples/ini-settings/README.md
 7300316117cd25adfc2c05be2b1ae470  doc/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/examples/ini-settings/admininterface/AdditionalTab_audit.md
 cf9fc1e268eda3d5536fcfa4ce5399a4  doc/examples/ini-settings/admininterface/AdditionalTab_policies.md
@@ -4330,9 +4330,10 @@ ef95aafe91ab5c65b44854dceb1d194a  doc/examples/ini-settings/exphelp/FeaturedSett
 c46567ea2a0855ca6f41e1fa356c47fc  doc/examples/ini-settings/exphelp/License.md
 1101a760f6eb6cc2f30d28a0f0d19ec9  doc/examples/ini-settings/exphelp/NavigationSettings.md
 a13bbc950bdaa9e2fdceb8ce86dc90e3  doc/examples/ini-settings/exphelp/PdfSettings.md
-d3ba2fcb777e7b72574b838653d66caf  doc/examples/ini-settings/exphelp/README.md
+e991c8ed3857731628c6e2919c4c4557  doc/examples/ini-settings/exphelp/README.md
 e1cfc48f09765cc0fdabb92adbf7dd2a  doc/examples/ini-settings/exphelp/SearchSettings.md
 a049551ead973f7c0d01d422b681c6a1  doc/examples/ini-settings/exphelp/SecuritySettings.md
+0d482dd4e7993d690a621e90e3b8b302  doc/examples/ini-settings/exphelp/TitleSettings.md
 0ba48a9cf37cdfb565b1e917929eefb3  doc/examples/ini-settings/exphelp/Tracker_community.md
 aeec9e7a12212b862a115f962ab8cbc8  doc/examples/ini-settings/exphelp/Tracker_software.md
 314874544e21e6b51c13bd6ffc742008  doc/examples/ini-settings/exphelp/Tracker_velocity.md
