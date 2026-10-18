@@ -30,20 +30,25 @@ Expected: a line beginning `PHP 8.`.
 
 Pick one path. All three give the same installation.
 
-**A. Composer project** (the quickest for a new site):
+**A. Git clones with history** (recommended when you build a website): the kernel and every se7enxweb extension
+arrive as Git clones, so you can see what changed, follow development and send fixes back.
+[Develop with Git](../help/develop-with-git.md) explains why and how.
+
+```bash
+composer config --global 'preferred-install.se7enxweb/*' source
+cd /var/www
+git clone https://github.com/se7enxweb/exponential.git exponential
+cd exponential
+git switch -c my-site
+composer install
+```
+
+**B. Composer project** (the quickest way to a site you only want to try or run):
 
 ```bash
 cd /var/www
 composer create-project se7enxweb/exponential exponential
 cd exponential
-```
-
-**B. Git clone** (when you want the history and to follow changes):
-
-```bash
-git clone https://github.com/se7enxweb/exponential.git
-cd exponential
-composer install
 ```
 
 **C. Packages.** Single add-ons (content, classes, templates, files) are `.ezpkg` archives that you install after the

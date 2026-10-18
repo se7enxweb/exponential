@@ -63,6 +63,10 @@ file. Stop the server with `php bin/php/console exp:velocity stop --engine=php`.
 The `php` engine is PHP's own server, for development. For a real site use Exponential Velocity's `qbix` engine or
 Apache/nginx with PHP-FPM ([section 8](#8-serve-the-site-web-server-https-and-permissions)).
 
+**Building a website rather than trying one?** Get the code as Git clones with their full history instead: the same
+two install commands work in a clone, and [section 3](#3-get-the-code) shows the commands that make the kernel and
+every extension a clone you can follow, change and contribute back from.
+
 ## 2. Requirements
 
 *Full chapter: [02-requirements](install/02-requirements.md)*
@@ -126,7 +130,22 @@ One of these, chosen in [section 8](#8-serve-the-site-web-server-https-and-permi
 
 Pick one. All give the same installation.
 
-**Composer project** (quickest for a new site):
+**Git clones with history** (recommended for anyone who builds websites): the kernel and every se7enxweb extension
+arrive as Git clones, so you can see what changed, follow development, keep your own changes on a branch and send
+fixes back as pull requests. [Develop with Git](help/develop-with-git.md) explains it step by step.
+
+```bash
+composer config --global 'preferred-install.se7enxweb/*' source
+git clone https://github.com/se7enxweb/exponential.git
+cd exponential
+git switch -c my-site
+composer install
+```
+
+The first line is needed once per user account: it makes Composer clone every `se7enxweb/*` package instead of
+downloading its release archive.
+
+**Composer project** (quickest for a site you only run; release archives without history):
 
 ```bash
 cd www_root_directory
@@ -135,14 +154,7 @@ cd exponential
 ```
 
 Add a version to pin a release, for example `composer create-project se7enxweb/exponential:v6.0.14 exponential`.
-
-**Git clone** (when you want the history and to follow changes):
-
-```bash
-git clone https://github.com/se7enxweb/exponential.git
-cd exponential
-composer install
-```
+Add `--prefer-source --keep-vcs` to get Git clones from `create-project` too.
 
 **Composer require into an empty directory** (the package from
 [Packagist](https://packagist.org/packages/se7enxweb/exponential)):

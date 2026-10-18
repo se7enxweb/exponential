@@ -70,6 +70,11 @@ git clone https://github.com/se7enxweb/ezflow.git ezflow
 cd ..
 ```
 
+Only clone by hand an extension that `composer.json` does not require. For a Composer package, let Composer make
+the clone (`composer config --global 'preferred-install.se7enxweb/*' source`, then `composer require` or
+`composer reinstall`): a hand-made clone in place of a package Composer installed as an archive is replaced, history
+and commits included, at the package's next update. See [Develop with Git](../help/develop-with-git.md).
+
 **From a package** (`.ezpkg`, for example one you downloaded in section 7):
 
 ```bash

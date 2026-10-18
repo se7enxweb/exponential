@@ -49,6 +49,13 @@ allowed to use is shown grayed out or not at all.
 | [Keyboard shortcuts](keyboard-shortcuts.md) | Work with the keyboard alone, in the administration and in these help pages |
 | [When something goes wrong](when-something-goes-wrong.md) | Tell the right people about an error, with what they need to fix it |
 
+## Grow from user to developer
+
+| Page | What it helps you do |
+|---|---|
+| [Develop with Git](develop-with-git.md) | Install Exponential as Git clones with their full history (the recommended way to build websites), keep them up to date, and send fixes back as pull requests |
+| [Getting the code](../install/03-getting-the-code.md) | Every way to install the code, with versions, tags and extensions explained |
+
 ## Deeper guides
 
 When a help page is not enough, the guides go into every detail of one area. A few that editors use most:

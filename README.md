@@ -554,6 +554,20 @@ php bin/php/console exp:install --random-password --url=http://localhost:8087
 php bin/php/console exp:velocity start --engine=php
 ```
 
+Building websites with Exponential? The recommended way is to get the kernel and every se7enxweb extension as Git
+clones with their full history, so you can follow development, keep your changes on a branch and send fixes back as
+pull requests:
+
+```bash
+composer config --global 'preferred-install.se7enxweb/*' source
+git clone https://github.com/se7enxweb/exponential.git
+cd exponential
+git switch -c my-site
+composer install
+```
+
+[Develop with Git](doc/help/develop-with-git.md) explains each step, and how to turn an existing site into clones.
+
 Optional extensions that `composer.json` brings but leaves inactive, such as Exponential Intelligence and the job
 queue, are switched on afterwards; [doc/INSTALL.md](doc/INSTALL.md#10-after-installing) says how.
 
