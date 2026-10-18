@@ -31,7 +31,7 @@ php extension/ezownerchange/bin/php/expownerchange.php --to-owner=<new owner id>
 php extension/ezownerchange/bin/php/expownerchange.php --to-owner=<new owner id> --node=<node id> --from-owner=<old owner id>
 ```
 
-The extension's [command line guide](../../extension/ezownerchange/doc/cli.md) has every option and real output.
+The extension's [command line guide](https://github.com/se7enxweb/ezownerchange/blob/master/doc/cli.md) has every option and real output.
 
 ## The extension's documentation
 
@@ -39,13 +39,13 @@ The extension's own guides are in the
 [ezownerchange repository](https://github.com/se7enxweb/ezownerchange/tree/master/doc), and in every installation
 under `extension/ezownerchange/doc/`:
 
-- [Using it in the administration](../../extension/ezownerchange/doc/usage.md)
-- [The command line script](../../extension/ezownerchange/doc/cli.md)
-- [Configuration](../../extension/ezownerchange/doc/configuration.md)
-- [Permissions and role setups](../../extension/ezownerchange/doc/permissions.md)
-- [What the audit records](../../extension/ezownerchange/doc/audit.md)
-- [Upgrading from releases up to 1.3](../../extension/ezownerchange/doc/upgrading.md)
-- [Troubleshooting](../../extension/ezownerchange/doc/troubleshooting.md)
+- [Using it in the administration](https://github.com/se7enxweb/ezownerchange/blob/master/doc/usage.md)
+- [The command line script](https://github.com/se7enxweb/ezownerchange/blob/master/doc/cli.md)
+- [Configuration](https://github.com/se7enxweb/ezownerchange/blob/master/doc/configuration.md)
+- [Permissions and role setups](https://github.com/se7enxweb/ezownerchange/blob/master/doc/permissions.md)
+- [What the audit records](https://github.com/se7enxweb/ezownerchange/blob/master/doc/audit.md)
+- [Upgrading from releases up to 1.3](https://github.com/se7enxweb/ezownerchange/blob/master/doc/upgrading.md)
+- [Troubleshooting](https://github.com/se7enxweb/ezownerchange/blob/master/doc/troubleshooting.md)
 
 ## Related pages
 

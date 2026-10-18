@@ -211,6 +211,7 @@ body,
   color: var(--a4-header-ink);
   transition: background-color .15s ease, color .15s ease;
 }
+.navbar-menu li a > .a4-icon { margin-inline-end: 0.4em; }   /* menu.ini [Topmenu_<tab>] Icon */
 .navbar-menu li a:hover {
   background-color: var(--a4-header-hover);
   color: var(--a4-header-ink);
@@ -257,7 +258,8 @@ body,
     margin-inline-start: auto;
   }
   .header-site,
-  .header-theme { order: 3; }   /* the site link first: same order, so the markup's order decides */
+  .header-theme,
+  .header-help { order: 3; }   /* the site link first: same order, so the markup's order decides */
   .header-user { order: 4; }
   .navbar-menu {
     order: 5;
@@ -288,11 +290,11 @@ body,
     flex: 0 0 auto;
   }
   .navbar-bar a:focus-visible { outline-offset: -3px; }   /* a scrolling row clips: the ring is drawn inside the tab */
-  /* the field gives way first, so the tools keep one row down to 576px. The rest of the row takes 439px (the
+  /* the field gives way first, so the tools keep one row down to 576px. The rest of the row takes 487px (the
      paddings 48, the logo 158 (114 until the inline logo), the site link, the gaps, the search button 41, light/dark
-     36, the user menu and logout 80); 454px leaves room for one more tool, so the field is 122px wide at 576px
-     (166px with the old 114px logo, 106px until 2026-10) and its full 230px from 684px. */
-  #header .searchblock input.searchtext { width: clamp(6rem, calc(100vw - 454px), 230px); }
+     36, the help link 36 and its gap 12, the user menu and logout 80; 439px before the help link); 502px leaves 15px to spare,
+     so the field is 74px wide at 576px (measured: the tools keep the row) and its full 230px from 732px. */
+  #header .searchblock input.searchtext { width: clamp(4.5rem, calc(100vw - 502px), 230px); }
   /* With the script the row never overflows (ezadmin_menubar.js moves what does not fit into "More"), so it need not
      clip, and the "More" list can open below it. */
   .navbar-menu.a4-nav-fits .navbar-bar { overflow: visible; }
@@ -342,13 +344,17 @@ body,
   #header-logo .brand { justify-content: center; min-width: 36px; height: 36px; }   /* a target as large as the tools */
   #header .navbar-icon {
     order: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 36px;
     height: 36px;
     margin: 0;
     padding: 0;
-    font-size: 1.75rem;
     line-height: 1;
   }
+  /* the menu (Bootstrap Icons list) and, while it is open, the cross (x-lg): the icons of the header's other tools */
+  #header .navbar-icon > .a4-icon { width: 24px; height: 24px; }
 }
 
 /* ---- The phone menu (below 576px) --------------------------------------------------------------------------------
@@ -446,6 +452,10 @@ body,
   }
   .navbar-menu .navbar-bar > li > a.selected { border-color: var(--a4-accent-strong); font-weight: 600; }
   .navbar-menu .navbar-bar a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+  /* a tab with an icon (menu.ini [Topmenu_<tab>] Icon) stacks it above its name, like the user's action tiles below,
+     so a wrapped name never leaves the icon alone at a line's end */
+  .navbar-menu .navbar-bar > li > a:has(> .a4-icon) { flex-direction: column; gap: var(--a4-space-1); }
+  .navbar-menu .navbar-bar > li > a > .a4-icon { width: 18px; height: 18px; margin: 0; }   /* as the action tiles' icons */
 
   /* the user's actions: the name, then their buttons side by side, two to a row (one at 200% text) */
   .a4-phone-user {
@@ -534,8 +544,9 @@ body,
      no such row, keeps them) */
   .navbar-main:has(.a4-phone-user) > .header-user { display: none; }
   /* the open menu's button shows a cross */
-  #header .navbar-icon[aria-expanded="true"] > span { display: none; }
-  #header .navbar-icon[aria-expanded="true"]::before { content: "\00D7"; font-size: 2rem; }
+  #header .navbar-icon > .a4-bi-x-lg,
+  #header .navbar-icon[aria-expanded="true"] > .a4-bi-list { display: none; }
+  #header .navbar-icon[aria-expanded="true"] > .a4-bi-x-lg { display: inline-block; }
   #header .navbar-icon:focus-visible {
     outline: 3px solid var(--a4-ring);
     outline-offset: 2px;
@@ -729,7 +740,7 @@ body,
   #header .a4-env-always { max-width: 18rem; }   /* the main menu gives the room, its last tabs going into "More" */
 }
 @media screen and (min-width: 576px) and (max-width: 1279.98px) {
-  #header:has(.a4-env-always) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px); }
+  #header:has(.a4-env-always) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 502px - var(--a4-env-room)), 230px); }
 }
 /* the same for hover where the pointer cannot hover finely (touch screens): the badge is in the row there */
 @media screen and (max-width: 767.98px) and (not ((hover: hover) and (pointer: fine))) {
@@ -761,7 +772,7 @@ body,
   #header .a4-env-hover { max-width: 18rem; }
 }
 @media screen and (min-width: 576px) and (max-width: 1279.98px) and (not ((hover: hover) and (pointer: fine))) {
-  #header:has(.a4-env-hover) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px); }
+  #header:has(.a4-env-hover) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 502px - var(--a4-env-room)), 230px); }
 }
 /* the sign-in page: the name beside the logo at every width (it has the room), no release (nobody is signed in);
    with hover, as in the header */
@@ -854,9 +865,10 @@ body,
 }
 .navbar-menu .a4-nav-more-list li a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
 
-/* The site link, the user menu and the logout button: round icon buttons as high as light/dark and the search field (36px, more
+/* The site link, the help link, the user menu and the logout button: round icon buttons as high as light/dark and the search field (36px, more
    than the 32px a header control is meant to have at least), in the header's colours */
 .header-site,
+.header-help,
 .header-user {
   display: flex;
   align-items: center;
@@ -909,9 +921,11 @@ body,
 .a4-user-menu-self:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
 .a4-user-menu-links { margin: 0; padding: 0; list-style: none; }
 .a4-user-menu-links li { margin: 0; }
-.a4-user-menu-links :is(a, span) {
+/* li > : not the icon inside a link (the icons of the phone menu's action tiles, parts/a4_header_user.tpl) */
+.a4-user-menu-links li > :is(a, span) {
   display: flex;
   align-items: center;
+  gap: var(--a4-space-2);
   min-height: 32px;
   padding: var(--a4-space-1) var(--a4-space-3);
   border-radius: var(--a4-radius-s);
@@ -1882,7 +1896,8 @@ a.a4-dash-figure:is(:hover, :focus-visible) > span:not(.a4-dash-figure-ico):not(
 .a4-dash-system #mainteinance-text p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-s); line-height: 1.5; }
 .a4-dash-facts { display: grid; grid-template-columns: auto 1fr; gap: var(--a4-space-2) var(--a4-space-3); margin: var(--a4-space-3) 0; }
 .a4-dash-facts dt { color: var(--a4-muted); }
-.a4-dash-facts dd { margin: 0; font-weight: 600; }
+.a4-dash-facts dd { margin: 0; font-weight: 600; unicode-bidi: plaintext; text-align: left; } /* a value (6.0.15stable, ezmysqli) takes the direction of its own first letter */
+:where([dir="rtl"]) .a4-dash-facts dd { text-align: right; }   /* and stands beside its label whatever its own direction (plaintext would align it to its own start) */
 .a4-dash-links { display: flex; flex-wrap: wrap; gap: var(--a4-space-2) var(--a4-space-3); margin: 0; }
 
 .a4-dash-blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--a4-space-5); align-items: start; }

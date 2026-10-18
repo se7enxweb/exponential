@@ -6,7 +6,7 @@
      that section (Links[]) and no <group>-<key> of a section its GroupSections[] adds (one, or several separated by
      ";"): an unknown key, or the link of
      an extension that is not active here
-   * more than 18 keys: only the first 18 links the user may open are shown
+   * more than 19 keys: only the first 19 links the user may open are shown
    Drawn in the page's cache blocks, so a message shows when the block is built, not on every page. *}
 {def $mmc_section = ''
      $mmc_own = hash()
@@ -42,8 +42,8 @@
             {debug-log msg=concat( 'menu.ini [', $mmc_section, '] MegaMenuLinks[]=', $mmc_key, ': no link of this menu or of a section its GroupSections[] adds (unknown key, or its extension is not active here), ignored' )}
         {/if}
     {/foreach}
-    {if ezini( $mmc_section, 'MegaMenuLinks', 'menu.ini' )|count|gt( 18 )}
-        {debug-log msg=concat( 'menu.ini [', $mmc_section, '] MegaMenuLinks[]: ', ezini( $mmc_section, 'MegaMenuLinks', 'menu.ini' )|count, ' keys, the mega menu shows the first 18 links the user may open' )}
+    {if ezini( $mmc_section, 'MegaMenuLinks', 'menu.ini' )|count|gt( 19 )}
+        {debug-log msg=concat( 'menu.ini [', $mmc_section, '] MegaMenuLinks[]: ', ezini( $mmc_section, 'MegaMenuLinks', 'menu.ini' )|count, ' keys, the mega menu shows the first 19 links the user may open' )}
     {/if}
 {/foreach}
 {undef $mmc_section $mmc_own $mmc_added $mmc_parts $mmc_known}

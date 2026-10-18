@@ -576,6 +576,7 @@
       "tests/tests/design/AdminJobTranslationsTest.php"
     ],
     "design/admin4/stylesheets/admin4.css": [
+      "tests/tests/design/AdminRightToLeftTest.php",
       "tests/tests/design/AdminEditBarTest.php",
       "tests/tests/design/AdminLegacyControlsTest.php",
       "tests/tests/design/AdminHeaderTest.php",
@@ -1176,6 +1177,21 @@
       "tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php",
       "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php"
     ],
+    "share/translations/esl-*": [
+      "tests/tests/lib/ezi18n/expSpanishTuFormTest.php"
+    ],
+    "extension/ezoe/translations/esl-*": [
+      "tests/tests/lib/ezi18n/expSpanishTuFormTest.php"
+    ],
+    "extension/ezjscore/translations/esl-*": [
+      "tests/tests/lib/ezi18n/expSpanishTuFormTest.php"
+    ],
+    "design/standard/stylesheets/expdebugbar*.css": [
+      "tests/tests/design/AdminRightToLeftTest.php"
+    ],
+    "share/locale/*.ini": [
+      "tests/tests/design/AdminRightToLeftTest.php"
+    ],
     "kernel/classes/uiswitch/*": [
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php",
       "tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php",
@@ -1269,6 +1285,7 @@
       "tests/tests/design/AdminReviewTemplateWarningsTest.php"
     ],
     "design/admin4/templates/content/dashboard.tpl": [
+      "tests/tests/design/AdminRightToLeftTest.php",
       "tests/tests/design/AdminReviewTemplateWarningsTest.php",
       "tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php"
     ],
@@ -1574,6 +1591,7 @@
       "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
     "design/admin4/stylesheets/content.css": [
+      "tests/tests/design/AdminRightToLeftTest.php",
       "tests/tests/design/AdminContentEditAttributeKindsTest.php"
     ],
     "design/admin4/stylesheets/modules/people.css": [
@@ -1624,6 +1642,79 @@
     ],
     "design/admin*/stylesheets/modules/setup.css": [
       "tests/tests/kernel/classes/expNodeQuickPickTest.php"
+    ],
+    "kernel/classes/help/exphelp.php": [
+      "tests/tests/kernel/classes/help/expHelpLinksTest.php",
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+    ],
+    "kernel/classes/help/exphelplinks.php": [
+      "tests/tests/kernel/classes/help/expHelpLinksTest.php",
+      "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
+    ],
+    "kernel/classes/help/exphelpmarkdownrenderer.php": [
+      "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
+    ],
+    "kernel/classes/help/exphelphighlighter.php": [
+      "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
+    ],
+    "kernel/classes/help/exphelpdocumentindex.php": [
+      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
+      "tests/tests/kernel/classes/help/expHelpLinksTest.php"
+    ],
+    "kernel/classes/help/exphelpallowlist.php": [
+      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
+    ],
+    "kernel/classes/help/exphelpfrontmatter.php": [
+      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php"
+    ],
+    "kernel/classes/help/exphelpaudience.php": [
+      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
+    ],
+    "kernel/classes/help/exphelpsearch.php": [
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
+    ],
+    "kernel/classes/help/exphelpcontextregistry.php": [
+      "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php"
+    ],
+    "kernel/classes/help/exphelpcontextproviderinterface.php": [
+      "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php"
+    ],
+    "kernel/classes/help/exphelpissuereport.php": [
+      "tests/tests/kernel/classes/help/expHelpIssueReportTest.php"
+    ],
+    "kernel/classes/help/*": [
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
+      "tests/tests/kernel/classes/help/expHelpLinksTest.php",
+      "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php",
+      "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php",
+      "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
+      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
+    ],
+    "kernel/exphelp/*": [
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
+      "tests/tests/kernel/classes/help/expHelpLinksTest.php"
+    ],
+    "kernel/private/classes/views/exphelp/*": [
+      "tests/tests/kernel/classes/help/expHelpLinksTest.php",
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+    ],
+    "settings/exphelp.ini": [
+      "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php",
+      "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
+      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php"
+    ],
+    "settings/module.ini": [
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+    ],
+    "settings/site.ini": [
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+    ],
+    "kernel/sql/common/cleandata.sql": [
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
     ]
   },
   "generated": {

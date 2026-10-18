@@ -64882,6 +64882,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Nothing was published in the last 14 days.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -71290,6 +71294,705 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No locale is of this kind.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&quot;Saving an article with an image fails with a 500 error&quot;, not &quot;Bug&quot; or &quot;Help&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension&apos;s repository.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type a word to search every help page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -37,7 +37,7 @@
        it at the row's end. The menu comes right after the logo, as it is drawn from 1280px; from 576 to 1279px it is
        drawn as the second row, and the Tab key still reaches it before the search and the tools. *}
     {* The phone-width menu button; ezadmin_menubar.js toggles the menu, aria-expanded and the keys. *}
-    <div class="navbar-icon" role="button" tabindex="0" aria-expanded="false" aria-controls="a4-navbar-menu" aria-label="{'Menu'|i18n( 'design/admin/pagelayout' )|wash}"><span aria-hidden="true">&#9776;</span></div>
+    <div class="navbar-icon" role="button" tabindex="0" aria-expanded="false" aria-controls="a4-navbar-menu" aria-label="{'Menu'|i18n( 'design/admin/pagelayout' )|wash}"><span class="a4-icon a4-bi-list" aria-hidden="true"></span><span class="a4-icon a4-bi-x-lg" aria-hidden="true"></span></div>
         {* the sections of the search popup, fetched once for both copies of the search (page_search.tpl reads them) *}
         {def $search_sections = cond( $ui_context_edit, array(), fetch( 'section', 'list' ) )}
     <!-- start::Navbar Menu -->
@@ -97,6 +97,8 @@
         </button>
         <span id="a4-theme-status" class="a4-sr-only" role="status"></span>
     </div>
+    {* Help for this page, the context help (parts/a4_header_help.tpl) *}
+    {include uri='design:parts/a4_header_help.tpl'}
     {include uri='design:parts/a4_header_user.tpl'}
     <!-- begin::Sidebar Controls -->
         <div class="sidebar-controls">
