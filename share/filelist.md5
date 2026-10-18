@@ -5414,7 +5414,7 @@ b6cfc26748e521566fe99b5abd17b6e2  kernel/classes/help/exphelp.php
 cde091ff977a26a609f39108326c5020  kernel/classes/help/exphelpfrontmatter.php
 99520b445ecac9996f6de9f6721a83a4  kernel/classes/help/exphelpfunctioncollection.php
 77d5132ce45e3ede09d0140edaae0954  kernel/classes/help/exphelphighlighter.php
-805e475381946954ba100e1d59d77268  kernel/classes/help/exphelpissuereport.php
+fbe202253abbc1bce78eaaa73f6207ea  kernel/classes/help/exphelpissuereport.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
 a4551b9b071dc4b1f31aa64925139e61  kernel/classes/help/exphelpmarkdownrenderer.php
 5cb97c2d9c258e98bb66768ec62f0646  kernel/classes/help/exphelpsearch.php

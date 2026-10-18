@@ -176,7 +176,22 @@ class expHelpIssueReport
     public function environmentValues()
     {
         if ( $this->facts === null )
-            $this->facts = $this->values !== null ? $this->values : $this->collect();
+        {
+            if ( $this->values !== null )
+                $this->facts = $this->values;
+            else
+            {
+                // reading the facts can connect the database, which registers the kernel's exception handler: the
+                // handler in place before is put back, so a caller (a test, a command) keeps its own
+                $before = set_exception_handler( null );
+                set_exception_handler( $before );
+                $this->facts = $this->collect();
+                $after = set_exception_handler( null );
+                set_exception_handler( $after );
+                if ( $after !== $before )
+                    restore_exception_handler();
+            }
+        }
         $facts = $this->facts;
         $values = array();
         foreach ( self::ENVIRONMENT_KEYS as $key )
@@ -387,14 +402,16 @@ class expHelpIssueReport
 
         $patterns = array(
             // credentials in an address: scheme://user:password@host
-            '#\b([a-z][a-z0-9+.-]*://)[^/\s:@]+(?::[^/\s@]*)?@#i' => '$1[credentials]@',
+            '#\b([a-z][a-z0-9+.-]*://)[^/\s:@]+(?::[^/\s@]*)?@(?:\[[^\]\s]*\]|[^/\s:?\#]+)(?::\d+)?#i' => '$1[credentials]@[host]',
+            // the host of any address that is not a web page (a database, a cache, a mail server)
+            '#\b((?!https?://)[a-z][a-z0-9+.-]*://)(?!\[credentials\])(?:\[[^\]\s]*\]|[^/\s:?\#\[]+)(?::\d+)?#i' => '$1[host]',
             // key=value or key: value secrets
             '/\b((?:pass(?:word|wd)?|pwd|secret|token|api[_-]?key|apikey|auth|authorization|bearer|private[_-]?key|client[_-]?secret|session(?:id)?|cookie|dsn)\s*[=:]\s*)("[^"]*"|\'[^\']*\'|\S+)/i' => '$1[redacted]',
             // e-mail addresses
             '/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/' => '[email]',
             // IPv4 and IPv6 addresses
             '/\b(?:\d{1,3}\.){3}\d{1,3}\b/' => '[address]',
-            '/\b(?:[0-9a-f]{1,4}:){3,7}[0-9a-f]{1,4}\b/i' => '[address]',
+            '/(?<![\w:])(?:(?:[0-9a-f]{1,4}:){7}[0-9a-f]{1,4}|(?:[0-9a-f]{1,4}:){1,7}:|(?:[0-9a-f]{1,4}:){1,6}:[0-9a-f]{1,4}|(?:[0-9a-f]{1,4}:){1,5}(?::[0-9a-f]{1,4}){1,2}|(?:[0-9a-f]{1,4}:){1,4}(?::[0-9a-f]{1,4}){1,3}|(?:[0-9a-f]{1,4}:){1,3}(?::[0-9a-f]{1,4}){1,4}|(?:[0-9a-f]{1,4}:){1,2}(?::[0-9a-f]{1,4}){1,5}|[0-9a-f]{1,4}:(?::[0-9a-f]{1,4}){1,6}|::(?:[0-9a-f]{1,4}:){0,6}[0-9a-f]{1,4})(?![\w:])/i' => '[address]',
             // absolute paths outside the install root (Unix, home shortcut and Windows)
             '#(?<![\w.:/~])(?:~/|/(?:var|home|root|etc|usr|opt|srv|tmp|web|mnt|data|run|private|Users|Library|Volumes)/)[^\s"\'<>|,;)]*#' => '[path]',
             '#\b[A-Za-z]:\\\\(?:[^\\\\\s]+\\\\?)+#' => '[path]',
