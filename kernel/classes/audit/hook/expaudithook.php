@@ -87,6 +87,9 @@ class expAuditHook
         'system.cronjob.fail' => 'run',
         'system.install.run' => 'install',
         'system.repair.queue' => 'change',
+        'system.velocity.watchdog.backoff' => 'backoff',
+        'system.velocity.watchdog.skip' => 'skip',
+        'system.velocity.watchdog.start' => 'start',
         'system.workflow.trigger.change' => 'change',
     );
 

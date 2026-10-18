@@ -167,6 +167,11 @@ class expAuditTaxonomy
         'system.install.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.upgrade.run' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        // the Velocity watchdog (doc/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
+        // something notable; a run that finds the engine running records nothing (not even system.command.run)
+        'system.velocity.watchdog.start' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
+        'system.velocity.watchdog.backoff' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system' ),
+        'system.velocity.watchdog.skip' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system' ),
         'system.repair.queue' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.maintenance.change' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         'system.template.change' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),

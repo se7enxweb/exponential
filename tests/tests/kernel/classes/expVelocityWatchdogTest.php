@@ -236,6 +236,123 @@ class expVelocityWatchdogTest extends ezpTestCase
         $conf = json_decode( $dog->confText(), true );
         $this->assertSame( $dog->restartTimeout(), $conf['watchdog']['restartTimeout'] );
     }
+
+    /**
+     * Runs $code with the audit pointed at a throwaway directory (var/tmp/audit-tests/, test keys, no database)
+     * and returns the system channel's records it wrote, without the audit's own file records.
+     */
+    private function auditRecords( callable $code )
+    {
+        require_once __DIR__ . '/audit/fixtures/expaudittestfixtures.php';
+        $dir = expAuditTestFixtures::setUp( $this->name() );
+        try
+        {
+            $code();
+            expAudit::flush();
+            $out = array();
+            foreach ( expAuditTestFixtures::records( $dir, 'system' ) as $r )
+                if ( strpos( $r['name'], 'system.audit.' ) !== 0 )
+                    $out[] = $r;
+            return $out;
+        }
+        finally
+        {
+            expAuditHook::reset();
+            expAuditTestFixtures::tearDown();
+        }
+    }
+
+    public function testRunThatFindsTheEngineRunningWritesNoAuditEvent()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $engine->running = true;
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        $records = $this->auditRecords( function () use ( $dog ) {
+            $script = new eZScript();
+            $script->setAuditCommandRun( false );
+            $r = $dog->run();
+            $this->assertSame( 'running', $r['reason'] );
+            $this->assertNull( expVelocityWatchdog::audit( $r ) );
+            $this->assertNull( $script->auditCommandRun( 0 ), 'no system.command.run either' );
+        } );
+        $this->assertSame( array(), $records );
+    }
+
+    public function testPausedRunWritesNoAuditEvent()
+    {
+        $this->assertNull( expVelocityWatchdog::auditEvent( array( 'action' => 'skip', 'reason' => 'paused', 'engine' => 'qbix' ) ) );
+    }
+
+    public function testRunThatStartsTheEngineWritesOneStartEvent()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        $records = $this->auditRecords( function () use ( $dog ) {
+            $script = new eZScript();
+            $script->setAuditCommandRun( false );
+            $this->assertNotNull( expVelocityWatchdog::audit( $dog->run() ) );
+            $script->auditCommandRun( 0 );
+        } );
+        $this->assertCount( 1, $records );
+        $this->assertSame( 'system.velocity.watchdog.start', $records[0]['name'] );
+        $this->assertSame( 'start', $records[0]['verb'] );
+        $this->assertSame( 'success', $records[0]['result'] );
+        $this->assertSame( 'down', $records[0]['after']['reason'] );
+    }
+
+    public function testFailedStartAndBackoffAreRecorded()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $engine->failStart = true;
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        $records = $this->auditRecords( function () use ( $dog ) {
+            for ( $i = 0; $i < 4; $i++ )
+                expVelocityWatchdog::audit( $dog->run() );
+        } );
+        $this->assertSame( array( 'system.velocity.watchdog.start', 'system.velocity.watchdog.start', 'system.velocity.watchdog.start',
+                                  'system.velocity.watchdog.backoff' ), array_column( $records, 'name' ) );
+        $this->assertSame( 'failed', $records[0]['result'] );
+        $this->assertSame( 'backoff', $records[3]['verb'] );
+    }
+
+    public function testSkipsAreRecordedWithTheirReason()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        ( new expVelocityMarkers( $this->dir . '/run' ) )->markStopped( 'stop' );
+        $records = $this->auditRecords( function () use ( $dog ) {
+            expVelocityWatchdog::audit( $dog->run() );
+        } );
+        $this->assertCount( 1, $records );
+        $this->assertSame( 'system.velocity.watchdog.skip', $records[0]['name'] );
+        $this->assertSame( 'intentionally-stopped', $records[0]['after']['reason'] );
+        $this->assertSame( 0, $engine->starts );
+        foreach ( array( 'restart-in-progress', 'lock-held', 'overlap', 'error' ) as $reason )
+        {
+            $event = expVelocityWatchdog::auditEvent( array( 'action' => 'skip', 'reason' => $reason, 'detail' => '', 'engine' => 'qbix' ) );
+            $this->assertSame( 'system.velocity.watchdog.skip', $event[0], $reason );
+        }
+    }
+
+    public function testOtherCommandsStillRecordCommandRun()
+    {
+        $records = $this->auditRecords( function () {
+            $script = new eZScript();
+            $this->assertTrue( $script->auditsCommandRun(), 'on by default' );
+            $this->assertNotNull( $script->auditCommandRun( 0 ) );
+        } );
+        $this->assertSame( array( 'system.command.run' ), array_column( $records, 'name' ) );
+    }
+
+    public function testWatchdogNamesAreInTheCatalogue()
+    {
+        $catalogue = expAuditTaxonomy::catalogue();
+        foreach ( array( 'start' => 'notice', 'backoff' => 'warning', 'skip' => 'info' ) as $rank => $severity )
+        {
+            $this->assertSame( $severity, $catalogue['system.velocity.watchdog.' . $rank]['severity'] );
+            $this->assertSame( 'on', $catalogue['system.velocity.watchdog.' . $rank]['default'] );
+        }
+    }
 }
 
 /**
