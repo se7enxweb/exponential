@@ -92,7 +92,7 @@ It is printed after simple's files, so your rules win at equal specificity.
 `multi-dropdown.tpl`, `topbar.tpl`, `social-media.tpl`). `page_header.tpl` includes `menu/dropdown.tpl`; the
 other choices are there as commented-out includes, so switching menus is a one-line change in a copy of
 `page_header.tpl` in your design. Menus fetch
-the children of the root node; see Menus and navigation.
+the children of the root node; see [Menus and navigation](../templates/menus-and-navigation.md).
 
 The folder also holds editor leftovers (`*.backup`, `*.save`, `#...#` files). They are not used by the design; do not
 copy them.

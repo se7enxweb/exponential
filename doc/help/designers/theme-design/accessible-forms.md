@@ -95,7 +95,7 @@ landmark on the `<form>`:
 
 ## Related pages
 
-- Forms in templates
+- [Forms in templates](../templates/forms-in-templates.md)
 - [Keyboard and focus](keyboard-and-focus.md)
-- Datatype edit templates
+- [Datatype edit templates](../templates/datatype-edit-templates.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

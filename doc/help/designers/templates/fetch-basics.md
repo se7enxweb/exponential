@@ -45,7 +45,7 @@ given.
 | `fetch( 'content', 'translation_list' )` | the languages of the site |
 | `fetch( 'user', 'current_user' )` | the signed-in user (also `$current_user` in the pagelayout) |
 | `fetch( 'user', 'has_access_to', hash( 'module', ..., 'function', ... ) )` | permission test |
-| `fetch( 'explayouts', 'resolve_layout', hash() )` | the layout of the page (Fetching a layout in templates) |
+| `fetch( 'explayouts', 'resolve_layout', hash() )` | the layout of the page ([Fetching a layout in templates](layouts-template-fetch.md)) |
 
 ## Where fetch functions are defined
 
@@ -65,7 +65,7 @@ Always test single results before use: `{if $node}...{/if}`.
 
 ## Rules
 
-- Fetch once and keep the result in a variable (Fetch performance).
+- Fetch once and keep the result in a variable ([Fetch performance](fetch-performance.md)).
 - Every list fetch has a `limit`.
 - Content the user may not read is left out of results by default; do not work around it.
 - Find special nodes by `remote_id`, not by a hard-coded node id that differs between installations.
@@ -74,5 +74,5 @@ Always test single results before use: `{if $node}...{/if}`.
 
 - [Fetching nodes and lists](fetching-nodes-and-lists.md)
 - [Fetch filters and sorting](fetch-filters-and-sorting.md)
-- Nodes, objects and attributes
+- [Nodes, objects and attributes](nodes-objects-attributes.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

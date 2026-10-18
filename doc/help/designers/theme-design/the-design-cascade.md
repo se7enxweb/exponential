@@ -94,7 +94,7 @@ The same search runs for `stylesheets/index.css` (through `ezcss_load`) and for 
 When a template is requested, the kernel first checks the override rules of `override.ini` for that template. If a rule
 matches the current page (class, node, view mode ...), its `MatchFile` is used, searched under `override/templates/`
 through the same bases. Only when no rule matches is the cascade's plain copy used. See
-Override basics.
+[Override basics](../templates/override-ini-basics.md).
 
 ## The caches of the cascade
 

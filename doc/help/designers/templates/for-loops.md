@@ -42,7 +42,7 @@ Five stars, filled up to a rating:
 </span>
 ```
 
-Page numbers (when you do not use the shipped navigator templates, see Pagination):
+Page numbers (when you do not use the shipped navigator templates, see [Pagination](pagination.md)):
 
 ```tpl
 {for 1 to $page_count as $page}

@@ -91,6 +91,6 @@ See [The packer cache and deploys](packer-cache-and-deploy.md) for the full tabl
 ## Related pages
 
 - [Cache-block](../templates/cache-block.md)
-- Template compilation and cache
+- [Template compilation and cache](../templates/template-compilation-and-cache.md)
 - [Theme performance](theme-performance.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -33,7 +33,7 @@ to find the cause of a problem.
 
 | Mistake | Symptom | Fix |
 |---|---|---|
-| a fetch inside a `foreach` | slow pages, many queries in the debug output | one fetch before the loop (Fetch performance) |
+| a fetch inside a `foreach` | slow pages, many queries in the debug output | one fetch before the loop ([Fetch performance](fetch-performance.md)) |
 | a list fetch without `limit` | very slow pages on big folders | always a `limit`, paginate |
 | reading `$node.children` for a menu | all children loaded with all data | a fetch with `limit` and `class_filter_array` |
 | drawing an empty field | empty wrappers, stray labels | test `has_content` first |
@@ -64,10 +64,10 @@ to find the cause of a problem.
 | editing a template in `design/standard` or a shipped theme | change lost on upgrade | copy it into your design ([The design cascade](../theme-design/the-design-cascade.md)) |
 | a new template or override not showing | old template still used, or empty content area | clear `template-override` ([Debugging a design](../theme-design/debugging-a-design.md)) |
 | an override with a typo in `MatchFile` | rule ignored, error log entry | check the path under `override/templates/` |
-| two overrides for the same source | the wrong one wins | `Priority` (Override ordering) |
+| two overrides for the same source | the wrong one wins | `Priority` ([Override ordering](override-ordering.md)) |
 
 ## Related pages
 
 - [Template style guide](template-style-guide.md)
-- Template debugging
+- [Template debugging](template-debugging.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

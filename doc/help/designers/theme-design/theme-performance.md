@@ -38,7 +38,7 @@ sides.
 |---|---|
 | The view cache | keep full views cacheable; nothing user-specific in them ([Caching for designers](caching-for-designers.md)) |
 | Cache-blocks | wrap menus and footers with the right keys |
-| Fewer fetches | fetch once in the pagelayout, pass the result to parts; prefer `content_info` values (Fetch performance) |
+| Fewer fetches | fetch once in the pagelayout, pass the result to parts; prefer `content_info` values ([Fetch performance](../templates/fetch-performance.md)) |
 | Limits | always a `limit` on list fetches; paginate |
 | No fetch in a loop | fetch the children once, not a fetch per item |
 

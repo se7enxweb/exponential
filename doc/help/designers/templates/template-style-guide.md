@@ -42,7 +42,7 @@ the shipped designs follow.
 
 ## Data
 
-- Fetch once, with a `limit`, outside loops (Fetch performance).
+- Fetch once, with a `limit`, outside loops ([Fetch performance](fetch-performance.md)).
 - Test optional fields with `has_content` before drawing them.
 - Prefer `content_info` values in the pagelayout over fetching the node again.
 - Cache-blocks with explicit keys around expensive parts ([Cache-block](cache-block.md)).

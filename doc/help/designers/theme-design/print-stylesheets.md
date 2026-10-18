@@ -68,5 +68,5 @@ Use the browser's print preview, and the developer tools' "emulate print media" 
 ## Related pages
 
 - [Loading stylesheets](loading-stylesheets.md)
-- View modes
+- [View modes](../templates/view-modes.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

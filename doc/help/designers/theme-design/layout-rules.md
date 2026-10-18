@@ -67,5 +67,5 @@ priorities before anything else.
 ## Related pages
 
 - [Layouts for designers](layouts-for-designers.md)
-- Fetching a layout in templates
+- [Fetching a layout in templates](../templates/layouts-template-fetch.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

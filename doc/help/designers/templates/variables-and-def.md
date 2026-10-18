@@ -57,7 +57,7 @@ A variable defined in a template is visible in templates it includes, not in its
 ```
 
 writes `cache_ttl` into the root namespace, where the content view reads it. For page-level values, prefer the
-persistent variable.
+[persistent variable](persistent-variable.md).
 
 ## Naming
 

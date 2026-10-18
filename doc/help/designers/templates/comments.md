@@ -49,7 +49,7 @@ before a release instead of leaving it commented out for long.
 
 `<!-- ... -->` is sent to every visitor, can reveal internal notes and adds bytes. Use it only when the comment is meant
 for the HTML source (rare). For debugging which template drew what, use template path comments instead
-(Template path comments).
+([Template path comments](template-path-comments.md)).
 
 ## Related pages
 

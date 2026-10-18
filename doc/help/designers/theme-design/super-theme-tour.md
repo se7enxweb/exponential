@@ -56,7 +56,7 @@ A handful of files: enough to switch a siteaccess to the design and see a page.
   ```
 
   which shows how an override replaces the full view of one class
-  (Override basics).
+  ([Override basics](../templates/override-ini-basics.md)).
 - The design is used by a siteaccess once its `SiteDesign` (or `AdditionalSiteDesignList[]`) names
   `sevenx_themes_super`.
 
@@ -95,7 +95,7 @@ While you are there, write the character set plainly: `<meta charset="utf-8">`.
    [Theme extensions: start here](../extensions/theme-extensions-start-here.md)).
 2. Replace the frame with a pagelayout that has landmarks and a skip link ([Landmarks and headings](landmarks-and-headings.md)).
 3. Add design tokens and a dark mode to `site.css` ([Design tokens](design-tokens.md)).
-4. Add override rules per class and view mode (Node templates by class).
+4. Add override rules per class and view mode ([Node templates by class](../templates/node-templates-by-class.md)).
 5. Add translations for its strings ([Tutorial: internationalize a theme](tutorial-internationalize-a-theme.md)).
 
 ## Related pages

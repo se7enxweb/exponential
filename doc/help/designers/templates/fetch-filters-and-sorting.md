@@ -74,5 +74,5 @@ a short `cache_ttl` ([Caching for designers](../theme-design/caching-for-designe
 ## Related pages
 
 - [Fetching nodes and lists](fetching-nodes-and-lists.md)
-- Fetch performance
+- [Fetch performance](fetch-performance.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

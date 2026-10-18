@@ -73,7 +73,7 @@ Match[class_identifier]=event
 ```
 
 The full view template receives `$node` (the node shown), `$view_parameters` and `$language_code`
-(Full view). Test `has_content` before printing optional fields.
+([Full view](../templates/full-view.md)). Test `has_content` before printing optional fields.
 
 ## Step 4: clear caches and look
 
@@ -94,7 +94,7 @@ shows `override/templates/full/event.tpl` around the content. If the default tem
 
 ## Related pages
 
-- Override basics
-- Node templates by class
-- View modes
+- [Override basics](../templates/override-ini-basics.md)
+- [Node templates by class](../templates/node-templates-by-class.md)
+- [View modes](../templates/view-modes.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

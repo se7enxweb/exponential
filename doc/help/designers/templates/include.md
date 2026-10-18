@@ -71,7 +71,7 @@ A path that does not exist is a template error: make sure every possible value h
 | Use | When |
 |---|---|
 | `{include}` | a part of the frame, or markup that does not depend on the content class |
-| `{node_view_gui content_node=$child view='line'}` | drawing a node: the view mode's template is chosen through overrides, per class (node_view_gui) |
+| `{node_view_gui content_node=$child view='line'}` | drawing a node: the view mode's template is chosen through overrides, per class ([node_view_gui](node-view-gui.md)) |
 
 ## Related pages
 

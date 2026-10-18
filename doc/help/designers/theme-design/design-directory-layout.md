@@ -93,7 +93,7 @@ override/templates/
 ```
 
 The media design has `content`, `edit`, `embed`, `full`, `line`, `node`, `standard` and `view` here. See
-Override basics.
+[Override basics](../templates/override-ini-basics.md).
 
 ## Two real examples
 

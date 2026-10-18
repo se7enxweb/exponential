@@ -55,5 +55,5 @@ part of the view cache key; arbitrary GET values are not. Keep `ezhttp` output o
 ## Related pages
 
 - [The ezini operator](ezini-operator.md)
-- Search results template
+- [Search results template](search-results-template.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

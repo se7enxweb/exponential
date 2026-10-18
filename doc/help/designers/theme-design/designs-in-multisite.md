@@ -99,7 +99,7 @@ SiteDesign=example
 - **Images and links in shared templates.** Use `ezimage`, `ezdesign` and `ezurl`, never paths with a design or
   siteaccess name in them, so the same template works for every site.
 - **Overrides by node id** differ per site tree. Prefer class identifiers, sections or remote ids
-  (Override match keys).
+  ([Override match keys](../templates/override-match-keys.md)).
 
 ## Related pages
 

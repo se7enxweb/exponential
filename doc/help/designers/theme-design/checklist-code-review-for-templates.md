@@ -26,12 +26,12 @@ first review. It follows the project's review list for admin templates and adds 
 - [ ] URLs built with `ezurl`/`ezroot`, design files with `ezimage`/`ezdesign`; no hard-coded siteaccess paths.
 - [ ] Optional fields tested with `has_content` before use.
 - [ ] `{def}` variables `{undef}`ined in included templates; no clash with the includer's names.
-- [ ] Override rules: unique prefixed names, a correct `Match`, `Priority` where it matters (Override ordering).
+- [ ] Override rules: unique prefixed names, a correct `Match`, `Priority` where it matters ([Override ordering](../templates/override-ordering.md)).
 - [ ] The template parses: `./console exp:eztemplatecheck <file or folder>`.
 
 ## Performance
 
-- [ ] Every list fetch has a limit; no fetch in a loop (Fetch performance).
+- [ ] Every list fetch has a limit; no fetch in a loop ([Fetch performance](../templates/fetch-performance.md)).
 - [ ] Cache-block keys cover everything that changes the output, and nothing more.
 - [ ] Nothing user-specific in a view-cached template; no `csp_nonce()` in cached output.
 

@@ -69,7 +69,7 @@ A full view can tell the frame to hide the left menu or the breadcrumb, without 
 
 `ezpagedata_set` writes into the persistent variable of the view, which reaches the pagelayout through
 `$module_result.content_info.persistent_variable`; `ezpagedata()` reads it there. `ezpagedata_append` adds to a list
-instead of replacing it. See The persistent variable.
+instead of replacing it. See [The persistent variable](../templates/persistent-variable.md).
 
 ## Menus from menu.ini
 
@@ -110,5 +110,5 @@ Start with the logo, the footer and the stylesheet; that is often all a branded 
 
 - [A tour of the simple theme](simple-theme-tour.md)
 - [The design cascade](the-design-cascade.md)
-- Menus and navigation
+- [Menus and navigation](../templates/menus-and-navigation.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

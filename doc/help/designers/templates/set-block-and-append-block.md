@@ -60,7 +60,7 @@ and full views for their view cache lifetime:
 ```
 
 (the ezwebin event calendar). For values the pagelayout needs, prefer the persistent variable
-(The persistent variable).
+([The persistent variable](persistent-variable.md)).
 
 ## Uses in the shipped templates
 

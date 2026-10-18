@@ -100,5 +100,5 @@ The latest three news on the front page:
 
 - [Fetch basics](fetch-basics.md)
 - [Fetch filters and sorting](fetch-filters-and-sorting.md)
-- Pagination
+- [Pagination](pagination.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

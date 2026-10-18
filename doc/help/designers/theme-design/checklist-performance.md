@@ -34,7 +34,7 @@ once right after clearing caches and once again.
 
 - [ ] Full views are view-cached; nothing user-specific in them ([Caching for designers](caching-for-designers.md)).
 - [ ] Menus and footers in cache-blocks with correct, small keys.
-- [ ] Every list fetch has a `limit`; no fetch inside a `foreach` (Fetch performance).
+- [ ] Every list fetch has a `limit`; no fetch inside a `foreach` ([Fetch performance](../templates/fetch-performance.md)).
 - [ ] The current node fetched once in the pagelayout, reused by the parts.
 - [ ] The debug output (on a test siteaccess) shows a reasonable number of database queries for the page.
 

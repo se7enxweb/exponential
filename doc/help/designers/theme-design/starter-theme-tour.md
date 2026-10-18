@@ -108,5 +108,5 @@ class on `<html>`); see [No inline CSS](no-inline-css.md).
 
 - [The themes that ship with Exponential](themes-on-alpha.md)
 - [Designs and siteaccesses](designs-and-siteaccesses.md)
-- Override a single node
+- [Override a single node](../templates/override-a-single-node.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

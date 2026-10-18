@@ -75,7 +75,7 @@ Collection items of the shipped list block are nodes (`$block.values.items`):
 ```
 
 Drawing each item with `node_view_gui` and a view mode (`line`, or one of your own such as `card`) reuses the line
-templates and overrides of your design (node_view_gui).
+templates and overrides of your design ([node_view_gui](../templates/node-view-gui.md)).
 
 ## Containers and their children
 

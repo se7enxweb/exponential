@@ -72,7 +72,7 @@ Work through these, in order:
 4. **The cascade.** A design higher in the list may have the same file. Template path comments show which copy won
    ([The design cascade](the-design-cascade.md)).
 5. **The override order.** Another rule for the same `Source` may match first. Rules are tried by `Priority`
-   (lowest first; no `Priority` sorts last) and the first match wins (Override ordering).
+   (lowest first; no `Priority` sorts last) and the first match wins ([Override ordering](../templates/override-ordering.md)).
 6. **The extension.** Is the design extension active for this siteaccess, and listed in `DesignExtensions[]`?
 
 ## My stylesheet change does not show
@@ -130,7 +130,7 @@ operator from an extension that is not active on the siteaccess.
 
 ## Related pages
 
-- Template debugging
-- Template compilation and cache
+- [Template debugging](../templates/template-debugging.md)
+- [Template compilation and cache](../templates/template-compilation-and-cache.md)
 - [Caching for designers](caching-for-designers.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

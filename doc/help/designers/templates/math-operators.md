@@ -74,5 +74,5 @@ Columns for a grid:
 ## Related pages
 
 - [Logic and comparison operators](logic-and-comparison-operators.md)
-- Pagination
+- [Pagination](pagination.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

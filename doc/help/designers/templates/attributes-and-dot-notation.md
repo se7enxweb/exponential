@@ -30,7 +30,7 @@ to look inside a value.
 
 Kernel objects (nodes, objects, attributes, users) expose a fixed list of attributes; a node, for example, has `name`,
 `url_alias`, `data_map`, `children`, `parent`, `path`, `class_identifier`, `can_edit` and more
-(Nodes, objects and attributes).
+([Nodes, objects and attributes](nodes-objects-attributes.md)).
 
 ## Chains
 
@@ -78,6 +78,6 @@ values first:
 ## Related pages
 
 - [TPL syntax basics](tpl-syntax-basics.md)
-- Nodes, objects and attributes
-- Template debugging
+- [Nodes, objects and attributes](nodes-objects-attributes.md)
+- [Template debugging](template-debugging.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

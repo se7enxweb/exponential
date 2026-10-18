@@ -22,7 +22,7 @@ alphabetical order; each links to the page that explains it.
 
 **Attribute.** One field of a content object (the title, the body, the image). In templates
 `$node.data_map.<identifier>`; drawn with `{attribute_view_gui attribute=...}`. See
-attribute_view_gui.
+[attribute_view_gui](../templates/attribute-view-gui.md).
 
 **Block.** One item in a zone of a layout (text, image, list, hero ...), drawn by a block template. See
 [Block definitions](block-definitions.md).
@@ -43,7 +43,7 @@ differ per class (`class_identifier`).
 strict policy blocks inline code. See [CSP-safe design](csp-safe-design.md).
 
 **Datatype.** The kind of a field (text line, rich text, image, date). Each has view and edit templates under
-`content/datatype/`. See Datatype view templates.
+`content/datatype/`. See [Datatype view templates](../templates/datatype-view-templates.md).
 
 **Design.** A named folder of templates, stylesheets, scripts and images. See [What a design is](what-a-design-is.md).
 
@@ -65,7 +65,7 @@ strict policy blocks inline code. See [CSP-safe design](csp-safe-design.md).
 [Pagelayout variables](pagelayout-variables.md).
 
 **Node.** A location of a content object in the content tree. An object can have several nodes. Templates of views
-receive `$node`. See Nodes, objects and attributes.
+receive `$node`. See [Nodes, objects and attributes](../templates/nodes-objects-attributes.md).
 
 **Object (content object).** One piece of content with its fields and versions.
 
@@ -73,7 +73,7 @@ receive `$node`. See Nodes, objects and attributes.
 [Operators overview](../templates/operators-overview.md).
 
 **Override.** A rule in `override.ini` that uses another template for a page that matches conditions. See
-Override basics.
+[Override basics](../templates/override-ini-basics.md).
 
 ## P to Z
 
@@ -82,7 +82,7 @@ Override basics.
 **Pagelayout.** The outermost template, `pagelayout.tpl`, which frames every page. See [The pagelayout](the-pagelayout.md).
 
 **Persistent variable.** A hash a view template fills for the pagelayout. See
-The persistent variable.
+[The persistent variable](../templates/persistent-variable.md).
 
 **Rule (layouts).** The mapping from requests to a layout, with targets, conditions and a priority. See
 [Layout rules](layout-rules.md).
@@ -101,7 +101,7 @@ The persistent variable.
 [Caching for designers](caching-for-designers.md).
 
 **View mode.** The way a node is shown: `full`, `line`, `embed`, `embed-inline` ... See
-View modes.
+[View modes](../templates/view-modes.md).
 
 **Wash.** The operator that escapes text for HTML output. See [Wash and escaping](../templates/wash-and-escaping.md).
 

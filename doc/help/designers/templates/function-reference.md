@@ -41,7 +41,7 @@ Registered in `lib/eztemplate/classes/eztemplateautoload.php`:
 | `ldelim`, `rdelim` | `{ldelim}` prints `{` | [Literal and delimiters](literal-and-delimiters.md) |
 | `literal` | `{literal}...{/literal}` | [Literal and delimiters](literal-and-delimiters.md) |
 | `sequence` | `{sequence name=seq loop=array( ... )}` | older alternating values; prefer `foreach ... sequence` |
-| `debug-timing-point`, `debug-accumulator`, `debug-log`, `debug-trace` | `{debug-log msg='...'}` | Template debugging |
+| `debug-timing-point`, `debug-accumulator`, `debug-log`, `debug-trace` | `{debug-log msg='...'}` | [Template debugging](template-debugging.md) |
 | `tool_bar` | `{tool_bar name=... view=...}` | toolbars of `toolbar.ini` |
 | `menu` | `{menu name=...}` | menus of `menu.ini` |
 
@@ -52,11 +52,11 @@ the object it receives:
 
 | Function | Draws | Template folder |
 |---|---|---|
-| `attribute_view_gui` | a field for viewing | `content/datatype/view/` (`collect/` for information collectors) (attribute_view_gui) |
+| `attribute_view_gui` | a field for viewing | `content/datatype/view/` (`collect/` for information collectors) ([attribute_view_gui](attribute-view-gui.md)) |
 | `attribute_edit_gui` | a field's edit form | `content/datatype/edit/` |
 | `attribute_result_gui`, `attribute_pdf_gui`, `attribute_diff_gui` | collected results, PDF, version differences | `content/datatype/result/`, `pdf/`, `diff/` |
-| `node_view_gui` | a node in a view mode | `node/view/<view>.tpl` (node_view_gui) |
-| `content_view_gui` | an object in a view mode | `content/view/<view>.tpl` (content_view_gui) |
+| `node_view_gui` | a node in a view mode | `node/view/<view>.tpl` ([node_view_gui](node-view-gui.md)) |
+| `content_view_gui` | an object in a view mode | `content/view/<view>.tpl` ([content_view_gui](content-view-gui.md)) |
 | `related_view_gui`, `content_pdf_gui`, `content_version_view_gui` | related objects, PDF, versions | |
 | `class_attribute_view_gui`, `class_attribute_edit_gui` | class definitions (administration) | |
 | `event_view_gui`, `event_edit_gui` | workflow events (administration) | |

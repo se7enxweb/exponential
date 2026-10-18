@@ -41,7 +41,7 @@ or heading) is drawn.
 - the main image loaded lazily or in a size far larger than shown;
 - render-blocking scripts in the head;
 - many stylesheets or third-party font CSS before any text can be drawn;
-- a slow server response: an uncached full view with many fetches (Fetch performance).
+- a slow server response: an uncached full view with many fetches ([Fetch performance](../templates/fetch-performance.md)).
 
 ## How to measure
 

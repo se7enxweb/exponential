@@ -58,7 +58,7 @@ into `pagelayout/*.tpl` parts ([The pagelayout](the-pagelayout.md)). Replace:
 | `<title>Site</title>` | a title from the page's path and `$site.title` |
 | `href="index.html"` | `href={'/'\|ezurl}` |
 | `src="img/logo.svg"` | `src={'logo.svg'\|ezimage}` |
-| a fixed menu | a fetch of the root's children (Menus and navigation) |
+| a fixed menu | a fetch of the root's children ([Menus and navigation](../templates/menus-and-navigation.md)) |
 
 ## Step 4: page types become view templates
 

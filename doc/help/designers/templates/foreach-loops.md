@@ -94,7 +94,7 @@ Alternating values, for example row classes:
 
 ## Habits
 
-- No fetch inside a loop: fetch once before (Fetch performance).
+- No fetch inside a loop: fetch once before ([Fetch performance](fetch-performance.md)).
 - `{undef}` loop helper variables after the loop if the template is included elsewhere.
 - Print an empty state when the list is empty: `{if $list|count}...{else}...{/if}`.
 

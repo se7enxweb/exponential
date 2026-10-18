@@ -61,11 +61,11 @@ is not implemented. For a range or any other condition, use `{if}`:
 
 ## When not to use it
 
-- Per content class markup belongs in override templates, not in one big switch (Node templates by class).
+- Per content class markup belongs in override templates, not in one big switch ([Node templates by class](node-templates-by-class.md)).
 - Two branches are clearer with `{if}`.
 
 ## Related pages
 
 - [If and conditions](if-and-conditions.md)
-- Override basics
+- [Override basics](override-ini-basics.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

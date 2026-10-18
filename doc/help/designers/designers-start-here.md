@@ -37,7 +37,7 @@ first, what to do in your first week, and where every topic lives in this help.
    **design cascade**, taking the first file it finds ([The design cascade](theme-design/the-design-cascade.md)).
 3. The **pagelayout** frames every page around the module's result ([The pagelayout](theme-design/the-pagelayout.md)).
 4. **Templates** in the TPL language draw content, and **overrides** choose a template per class, node or section
-   ([Templates overview](templates/templates-overview.md), Override basics).
+   ([Templates overview](templates/templates-overview.md), [Override basics](templates/override-ini-basics.md)).
 5. Stylesheets and scripts reach the browser **packed** by ezjscore, with no inline code
    ([Loading stylesheets](theme-design/loading-stylesheets.md), [CSP-safe design](theme-design/csp-safe-design.md)).
 
@@ -76,8 +76,8 @@ first, what to do in your first week, and where every topic lives in this help.
 | Templates | the TPL language, operators and functions, fetching content, view modes, overrides, debugging | [Templates overview](templates/templates-overview.md) |
 | Theme extensions | metadata, settings, packaging, the RAD design and package wizards | [Theme extensions: start here](extensions/theme-extensions-start-here.md) |
 | Distribution | repositories, versions, releases, Packagist, licenses, publishing | [Distributing a theme: start here](distribution/distribution-start-here.md) |
-| Sales | selling themes and services | Selling themes and services: start here |
-| Maintenance life cycle | compatibility, upgrades, security, deprecation, end of life, forks | The maintenance life cycle: start here |
+| Sales | selling themes and services | [Selling themes and services: start here](sales/selling-start-here.md) |
+| Maintenance life cycle | compatibility, upgrades, security, deprecation, end of life, forks | [The maintenance life cycle: start here](lifecycle/lifecycle-start-here.md) |
 
 ## Tutorials
 

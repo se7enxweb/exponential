@@ -71,7 +71,7 @@ A content view (`content/view`) fills `content_info` with these keys (from `eZNo
 | `class_group`, `state`, `state_identifier` | class groups and object states |
 | `current_language`, `language_mask` | the language shown |
 | `offset` | the paging offset |
-| `persistent_variable` | what view templates set for the pagelayout (The persistent variable) |
+| `persistent_variable` | what view templates set for the pagelayout ([The persistent variable](../templates/persistent-variable.md)) |
 
 `content_info` is not an array on pages of other modules (search, user, error). Always test before you read it:
 
@@ -136,6 +136,6 @@ The language attribute and direction:
 ## Related pages
 
 - [The pagelayout](the-pagelayout.md)
-- Module result and content info
-- Breadcrumbs
+- [Module result and content info](../templates/module-result-and-content-info.md)
+- [Breadcrumbs](../templates/breadcrumbs.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -210,7 +210,7 @@ Match[class_identifier]=article
 </article>
 ```
 
-Use the attribute identifiers of your installation's article class (Override basics).
+Use the attribute identifiers of your installation's article class ([Override basics](../templates/override-ini-basics.md)).
 
 ## Step 7: a siteaccess that uses the design
 

@@ -56,7 +56,7 @@ The piped value is ignored; without a `user_id` parameter the current user is ch
 ## Node permissions
 
 For a specific node, the node itself knows: `$node.can_edit`, `$node.can_create`, `$node.can_remove`, `$node.can_read`
-(Nodes, objects and attributes).
+([Nodes, objects and attributes](nodes-objects-attributes.md)).
 
 ```tpl
 {if $node.can_edit}
@@ -77,5 +77,5 @@ a cache-block needs `$current_user.role_id_list|implode( ',' )` in its keys ([Ca
 ## Related pages
 
 - [Logic and comparison operators](logic-and-comparison-operators.md)
-- User and login templates
+- [User and login templates](user-and-login-templates.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

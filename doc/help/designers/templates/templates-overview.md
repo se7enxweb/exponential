@@ -27,16 +27,16 @@ written in its own template language (TPL), which mixes HTML with tags in braces
 A template turns data (a node, a list, settings) into HTML. It has no access to the database or the file system except
 through **fetch functions** and **operators** the kernel and extensions provide, which keeps templates safe to hand to
 designers. Templates are compiled into PHP the first time they run and cached
-(Template compilation and cache).
+([Template compilation and cache](template-compilation-and-cache.md)).
 
 ## The kinds of templates in a design
 
 | Kind | Example path | Called by |
 |---|---|---|
 | Pagelayout | `pagelayout.tpl` | the kernel, around every page ([The pagelayout](../theme-design/the-pagelayout.md)) |
-| Node view templates | `node/view/full.tpl`, `node/view/line.tpl` | content views, `node_view_gui` (View modes) |
-| Override templates | `override/templates/full/article.tpl` | `override.ini` rules (Override basics) |
-| Datatype templates | `content/datatype/view/ezstring.tpl` | `attribute_view_gui` (Datatype view templates) |
+| Node view templates | `node/view/full.tpl`, `node/view/line.tpl` | content views, `node_view_gui` ([View modes](view-modes.md)) |
+| Override templates | `override/templates/full/article.tpl` | `override.ini` rules ([Override basics](override-ini-basics.md)) |
+| Datatype templates | `content/datatype/view/ezstring.tpl` | `attribute_view_gui` ([Datatype view templates](datatype-view-templates.md)) |
 | Module templates | `user/login.tpl`, `content/search.tpl` | module views |
 | Parts | `pagelayout/header.tpl`, `parts/teaser.tpl` | `{include}` from other templates |
 | Layout block templates | `explayouts/block/list.tpl` | the layouts engine ([Layouts for designers](../theme-design/layouts-for-designers.md)) |
@@ -79,8 +79,8 @@ designers. Templates are compiled into PHP the first time they run and cached
 1. [TPL syntax basics](tpl-syntax-basics.md), [Variables and def](variables-and-def.md), [If and conditions](if-and-conditions.md),
    [Foreach loops](foreach-loops.md), [Include](include.md).
 2. [Wash and escaping](wash-and-escaping.md), [URL operators](url-operators.md), [The i18n operator](i18n-operator.md).
-3. [Fetch basics](fetch-basics.md), Nodes, objects and attributes, View modes.
-4. Override basics, Override match keys.
+3. [Fetch basics](fetch-basics.md), [Nodes, objects and attributes](nodes-objects-attributes.md), [View modes](view-modes.md).
+4. [Override basics](override-ini-basics.md), [Override match keys](override-match-keys.md).
 5. [Template style guide](template-style-guide.md), [Common template mistakes](common-template-mistakes.md).
 
 ## Related pages
