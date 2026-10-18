@@ -72479,6 +72479,42 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Versions %from to %to</source>
         <translation>Versiones %from ad %to</translation>
     </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Moderatores inceptorum</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Venditio et mercatura</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Incepta consule et rege: gradus et munera, hospitium eligendum, fines operis, indices probandi, portae qualitatis, editiones et pericula.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Exponential ostende et commenda: positio, praecipuae facultates, demonstrationes, obiectiones, licentiae, nota et communitas.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Hic incipe</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Inceptorum moderatio</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Venditio et mercatura</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Incepta Exponential consulere, gerere, augere: gradus, munera, indices, pericula et opus cum communitate.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Exponential ostendere et commendare: positio, demonstrationes, obiectiones, licentiae, nota et communitas augenda.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

@@ -72479,6 +72479,42 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Versions %from to %to</source>
         <translation>mI&apos;mey %from vo&apos; %to</translation>
     </message>
+    <message>
+        <source>Project managers</source>
+        <translation>jInmol DevwI'pu'</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>ngevwI'pu' je maqwI'pu'</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>jInmolmey yInab 'ej yIDev: gherghmey Qu'mey je, Qum 'aDmey wIv, jInmol veH, tetlhmey, Daq'e' QaD, chenmoHmey, Qobmey je.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Exponential yI'ang 'ej yImaq: Daq, laH potlh, 'aghmeH Qu'mey, Hoghmey, chaw'mey, pong, ghom je.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>naDev yItagh</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>jInmol DevwI'ghach</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>ngevwI'pu' je maqwI'pu'</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Exponential jInmolmey nab, Dev, ghur: gherghmey, Qu'mey, tetlhmey, Qobmey, ghom je.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Exponential 'ang 'ej maq: Daq, 'aghmeH Qu'mey, Hoghmey, chaw'mey, pong, ghom ghurmoH je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

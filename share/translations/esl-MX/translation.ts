@@ -76705,6 +76705,42 @@ Gracias por la retroalimentación</translation>
         <source>Versions %from to %to</source>
         <translation>Versiones %from a %to</translation>
     </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Gerentes de proyecto</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Ventas y mercadotecnia</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Planea y dirige proyectos: fases y roles, elección del hosting, alcance, listas de verificación, controles de calidad, versiones y riesgos.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Presenta y promueve Exponential: posicionamiento, funciones destacadas, demos, objeciones, licencias, marca y comunidad.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Empieza aquí</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Liderazgo de proyectos</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Ventas y mercadotecnia</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Planear, ejecutar y hacer crecer proyectos de Exponential: fases, roles, listas de verificación, riesgos y colaboración con la comunidad.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Presentar y promover Exponential: posicionamiento, demos, objeciones, licencias, marca y crecimiento de la comunidad.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

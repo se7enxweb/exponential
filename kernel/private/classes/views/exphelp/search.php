@@ -346,6 +346,8 @@ class Search extends \Exponential\Runnable\ModuleView
             case 'layouts': return \ezpI18n::tr( $ctx, 'Page layouts: zones, blocks and the rules that choose a layout.' );
             case 'shortcuts': return \ezpI18n::tr( $ctx, 'Keyboard shortcuts that make the administration faster.' );
             case 'support': return \ezpI18n::tr( $ctx, 'Getting help and reporting an error.' );
+            case 'leadership': return \ezpI18n::tr( $ctx, 'Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.' );
+            case 'business': return \ezpI18n::tr( $ctx, 'Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.' );
             case 'administration': return \ezpI18n::tr( $ctx, 'Running the site: settings, users and roles, caches, cronjobs and logs.' );
             case 'features': return \ezpI18n::tr( $ctx, 'What each feature does and how to set it up.' );
             case 'development': return \ezpI18n::tr( $ctx, 'Templates, extensions, the API and the code behind it.' );
