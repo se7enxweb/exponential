@@ -65,7 +65,8 @@
  * the "More" item at the row's end (page_topmenu.tpl: li.a4-nav-more, hidden until needed); they move back when there
  * is room again. A ResizeObserver on the menu's panel refits the row (the panel's width does not depend on the tabs:
  * flex-basis 0 from 1280px, the full width below); without one, the window's resize event does. Below 576px every tab
- * stays in the phone menu's grid. "More" is marked like the selected tab while the current page's tab is in it.
+ * stays in the phone menu's grid. The current page's tab stays in the row while another tab can go into "More"; "More" is
+ * marked like the selected tab only while the current page's tab is in it (a row too narrow for that tab alone).
  * The panel gets .a4-nav-fits once the script runs: the row no longer clips or scrolls (the CSS fallback without the
  * script), so the list can open below it.
  *
@@ -206,8 +207,19 @@
             more.hidden = true;
             if (wide.matches && !fits()) {
                 more.hidden = false;
+                // the current page's tab (its link marked aria-current) stays in the row while another tab can go, so
+                // the row shows it selected as on every other page instead of marking "More"; the others keep their order
+                var current = tabs.filter(function (li) {
+                    return Array.prototype.some.call(li.children, function (c) { return c.tagName === 'A' && c.hasAttribute('aria-current'); });
+                })[0];
                 for (var i = tabs.length - 1; i >= 0 && !fits(); i--) {
+                    if (tabs[i] === current) continue;
                     list.insertBefore(tabs[i], list.firstChild);
+                }
+                if (current && !fits()) {
+                    // no room even for it alone: it goes too, in its place among the tabs in the list
+                    var after = Array.prototype.filter.call(list.children, function (li) { return tabs.indexOf(li) > tabs.indexOf(current); })[0];
+                    list.insertBefore(current, after || null);
                 }
             }
             if (more.hidden && toggle.getAttribute('aria-expanded') === 'true') setOpen(toggle, list, false, false);
