@@ -72555,6 +72555,182 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
         <translation>GitHub Daq chu&apos; De&apos; lI&apos;lu&apos;DI&apos; yItlhap, ghIq Composer yIchu&apos;qa&apos;: Hoch rep, Hoch jaj, Hoch Hogh, Hoch jar, pagh Hoch chu&apos; ghom neH.</translation>
     </message>
+    <message>
+        <source>Partners</source>
+        <translation>jupma&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>QaHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>nagh beQ chenmoHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Qum &apos;aD ghommey</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>ghun chenmoHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>De&apos;wI&apos; Daq chenmoHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>QaHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Huch nobwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Exponential lo&apos;taHvIS yIchenmoH, yI&apos;aD, yIngev je: jupma&apos; ghom, jupma&apos; Segh, Qapla&apos;, poQmey, chay&apos; yItlhob.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>De&apos; yIjaH: ja&apos;chuqmeH De&apos;, wanI&apos;mey, ghom HoSghajmey, &apos;aghmeH Qu&apos;mey, lo&apos;wI&apos;pu&apos; chu&apos; yIQaH je.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>nagh beQ, tetlh je yInab, &apos;ay&apos;mey yIchenmoH, vaj yIchaH, yIngev, yIQorgh je.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Exponential Daqmey yI&apos;aD: jabwI&apos; poQmey, PHP De&apos;wI&apos; je, Velocity, De&apos; pol, Hung, De&apos; polmeH, Qu&apos;mey je.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Exponential Dalo&apos;taHvIS ghun yIchenmoH: ngoDmey, mo&apos;meymey, &apos;aghmey, API, &apos;ay&apos;mey, waHmey je.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Exponential Dalo&apos;taHvIS De&apos;wI&apos; Daqmey yIchenmoH: Daq yInab, ngoD Seghmey, nagh beQmey, Dachmey, taghmoH, QorghmeH je.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>jInmol yIghurmoH: ngoq, De&apos; ghItlh, mughmey, waHmey je yInob, Dachenmoh&apos;bogh yIDel.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Exponential Qu&apos; yIDIl: Huch nobmeH meq, nuq DIlmeH, chay&apos; 7x, ghom&apos;a&apos; je yIQaH.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>jupma&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>QaHghach ghom je</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>nagh beQ nab</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>tetlhmey</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>&apos;ay&apos; chenmoHghach</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>nagh beQ &apos;ay&apos;mey</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>chaHghach DaQmoHghach je</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>nagh beQmey Qu&apos;mey je ngev</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>QorghmeH yIn gho</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Qum &apos;aD</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>ghun chenmoH</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>De&apos;wI&apos; Daqmey chenmoH</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Exponential QaH</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Huch nobghach</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>jupma&apos; DaneHtaHvIS Exponential yIQap: jupma&apos; ghom, jupma&apos; Seghmey, Qapla&apos;, chay&apos; yItlhob.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Exponential De&apos; jaH: ja&apos;chuqmeH De&apos;, wanI&apos;mey, HoSghajmey, lo&apos;wI&apos;pu&apos; chu&apos; yItlhab.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Exponential nagh beQmey nab: nagh beQmey, tam pat, Ha&apos;DIbaH, De&apos;mey, lo&apos;laHghach je.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>tetlh Hol: choHlaHbogh, vang, Qu&apos;mey, Suqmey, yIDmey, tammey je.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>&apos;ay&apos;mey yIchenmoH gho&apos;Do&apos; gho&apos;Do&apos;: Hal, SeHmey, mo&apos;meymey, tetlhmey, Seghmey, Qapla&apos; yInob je.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>nagh beQ &apos;ay&apos; DaqoDmoH: Hal, SeHmey, poQmey, nagh beQmey chel je.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>nagh beQmey &apos;ay&apos;mey je chaH: pol Daqmey, ngaSwI&apos;mey, chenmoHmey, mI&apos;mey, chaw&apos;mey je.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>nagh beQmey Qu&apos;mey je ngev: nobmey, wagh, QaH, je&apos;wI&apos;pu&apos; tlhej.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>nagh beQmey &apos;ay&apos;mey je yIyInmoH: DubmeH, Do&apos;ghach, Hung tI&apos;mey, mej je.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Exponential &apos;aD: jabwI&apos;mey, PHP, De&apos; polmeH, De&apos;wI&apos; jabwI&apos;mey, Velocity, De&apos; pol, De&apos; polmeH, Qu&apos;mey je.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Exponential Dalo&apos;taHvIS ghun chenmoH: ngoDmey, mo&apos;meymey, &apos;aghmey, API, waHmey je.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Exponential Dalo&apos;taHvIS De&apos;wI&apos; Daqmey chenmoH: nab, ngoD Hal, nagh beQmey, Dachmey, taghmoH je.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Exponential ghurmoH: ngoq, De&apos; ghItlh, mughmey, waHmey, ja&apos;chuq je nob.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Exponential DIl: Huch nob nuq DIl, chay&apos; 7x, Exponential ghom&apos;a&apos; je QaH.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
