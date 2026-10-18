@@ -28,7 +28,11 @@
  *
  * lookup() result: array( 'id' => page id|'', 'anchor' => string, 'url' => module-relative URL, 'title' => string,
  *                         'level' => view|module|dashboard, 'entry' => the key that matched|'', 'source' =>
- *                         provider class|'map'|'', 'key' => a short string for template cache-block keys )
+ *                         provider class|'map'|'', 'key' => a short string for template cache-block keys: the page
+ *                         and the module )
+ *
+ * menu() gives the header's Help menu its related topics and quick links ([ContextHelp] MenuTopics, MenuLinks[],
+ * [FeaturedSettings] PageList[]).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -55,6 +59,9 @@ class expHelpContextRegistry
     /** @var array lookup() results of this request */
     protected $memo = array();
 
+    /** @var array the Help menu's settings: featured (page ids), links (key => target), topics (int) */
+    protected $menu = array( 'featured' => array(), 'links' => array(), 'topics' => 6 );
+
     /** The page suffixes an entry may name (the index decides the rest) */
     const PAGE_PATTERN = '#\.(md|markdown|txt)$#i';
 
@@ -63,9 +70,18 @@ class expHelpContextRegistry
      * @param array $providers expHelpContextProviderInterface objects or class names
      * @param callable|null $pageInfo function( $id ): array|null, the page's metadata (title) or null when no such
      *                                page is served; null = every syntactically safe page is taken as it is
+     * @param array $menu the header's Help menu: 'featured' => page ids ([FeaturedSettings] PageList[]), 'links' =>
+     *                    key => page id[#anchor] or an exphelp view ("exphelp/report") ([ContextHelp] MenuLinks[]),
+     *                    'topics' => how many related topics it lists ([ContextHelp] MenuTopics)
      */
-    public function __construct( array $map = array(), array $providers = array(), $pageInfo = null )
+    public function __construct( array $map = array(), array $providers = array(), $pageInfo = null, array $menu = array() )
     {
+        if ( isset( $menu['featured'] ) && is_array( $menu['featured'] ) )
+            $this->menu['featured'] = array_values( array_filter( $menu['featured'], 'is_string' ) );
+        if ( isset( $menu['links'] ) && is_array( $menu['links'] ) )
+            $this->menu['links'] = $menu['links'];
+        if ( isset( $menu['topics'] ) && is_numeric( $menu['topics'] ) )
+            $this->menu['topics'] = max( 0, min( 12, (int)$menu['topics'] ) );
         foreach ( $map as $key => $value )
         {
             $key = self::normalizeKey( $key );
@@ -146,9 +162,14 @@ class expHelpContextRegistry
                 }
             };
         }
+        $featured = $ini->hasVariable( 'FeaturedSettings', 'PageList' ) ? $ini->variable( 'FeaturedSettings', 'PageList' ) : array();
+        $links = $read( 'MenuLinks', array() );
         return new self( is_array( $map ) ? $map : array(),
                          is_array( $providers ) ? array_values( array_filter( $providers, 'strlen' ) ) : array(),
-                         $pageInfo );
+                         $pageInfo,
+                         array( 'featured' => is_array( $featured ) ? $featured : array(),
+                                'links' => is_array( $links ) ? $links : array(),
+                                'topics' => $read( 'MenuTopics', 6 ) ) );
     }
 
     /**
@@ -205,7 +226,99 @@ class expHelpContextRegistry
             $result = array( 'id' => '', 'anchor' => '', 'url' => expHelp::url( 'dashboard' ), 'title' => '',
                              'level' => 'dashboard', 'entry' => '', 'source' => '', 'key' => 'dashboard' );
         }
+        // the key of the template cache-blocks that draw the link and the Help menu: the page, and the module, whose
+        // related topics the menu lists
+        $result['key'] .= '|' . $module;
         return $this->memo[$memoKey] = $result;
+    }
+
+    /**
+     * The header's Help menu for a module, view and design: the topics related to the page and the quick links.
+     * Only pages the help serves are listed; it reads the small list of served pages, never the index.
+     *
+     * Topics, at most [ContextHelp] MenuTopics, without the page lookup() gives (the menu's first entry) and
+     * without repeats: the other entries of the same module (design-specific ones first, in the map's order), the
+     * module's own entry, then the featured pages ([FeaturedSettings] PageList[]).
+     * Links: [ContextHelp] MenuLinks[], key => a page id[#anchor] or an exphelp view (exphelp/report).
+     *
+     * @param string $module
+     * @param string $view
+     * @param string $design
+     * @return array array( 'topics' => list of array( id, anchor, url, title ), 'links' => list of array( key, id,
+     *               anchor, url, title ) )
+     */
+    public function menu( $module, $view = '', $design = '' )
+    {
+        $module = self::normalizePart( $module );
+        $design = self::normalizePart( $design );
+        $current = $this->lookup( $module, $view, $design );
+        $seen = array();
+        if ( $current['id'] !== '' )
+            $seen[$current['id']] = true;
+        $topics = array();
+        $add = function ( array $target ) use ( &$topics, &$seen ) {
+            if ( isset( $seen[$target['id']] ) || count( $topics ) >= $this->menu['topics'] )
+                return;
+            $info = $this->info( $target['id'] );
+            if ( $info === null )
+                return;
+            $seen[$target['id']] = true;
+            $topics[] = $this->entry( $target, $info );
+        };
+        if ( $module !== '' )
+        {
+            $own = array();
+            $general = array();
+            foreach ( $this->entries as $key => $target )
+            {
+                $design_ = '';
+                $rest = $key;
+                if ( strpos( $key, ':' ) !== false )
+                    list( $design_, $rest ) = explode( ':', $key, 2 );
+                if ( $design_ !== '' && $design_ !== $design )
+                    continue;
+                $parts = explode( '/', $rest, 2 );
+                if ( $parts[0] !== $module || !isset( $parts[1] ) )
+                    continue;
+                if ( $design_ !== '' )
+                    $own[] = $target;
+                else
+                    $general[] = $target;
+            }
+            foreach ( array_merge( $own, $general ) as $target )
+                $add( $target );
+            foreach ( array( $design !== '' ? $design . ':' . $module : null, $module ) as $key )
+            {
+                if ( $key !== null && isset( $this->entries[$key] ) )
+                    $add( $this->entries[$key] );
+            }
+        }
+        foreach ( $this->menu['featured'] as $id )
+        {
+            $target = self::parseTarget( $id );
+            if ( $target !== null )
+                $add( $target );
+        }
+
+        $links = array();
+        foreach ( $this->menu['links'] as $key => $value )
+        {
+            $key = strtolower( trim( (string)$key ) );
+            if ( !preg_match( '#^[a-z0-9_]+$#', $key ) || !is_scalar( $value ) )
+                continue;
+            $value = trim( (string)$value );
+            if ( preg_match( '#^exphelp/(dashboard|report|search)$#', $value, $m ) )
+            {
+                $links[] = array( 'key' => $key, 'id' => '', 'anchor' => '', 'url' => expHelp::url( $m[1] ), 'title' => '' );
+                continue;
+            }
+            $target = self::parseTarget( $value );
+            $info = $target === null ? null : $this->info( $target['id'] );
+            if ( $info === null )
+                continue;
+            $links[] = array( 'key' => $key ) + $this->entry( $target, $info );
+        }
+        return array( 'topics' => $topics, 'links' => $links );
     }
 
     /**
@@ -324,6 +437,18 @@ class expHelpContextRegistry
             return array();
         $info = call_user_func( $this->pageInfo, $id );
         return is_array( $info ) ? $info : null;
+    }
+
+    /**
+     * A menu entry: id, anchor, url, title (the page's title, else its file name made readable)
+     */
+    protected function entry( array $target, array $info )
+    {
+        $title = isset( $info['title'] ) && is_scalar( $info['title'] ) ? trim( (string)$info['title'] ) : '';
+        if ( $title === '' )
+            $title = ucfirst( str_replace( array( '-', '_' ), ' ', preg_replace( '#\.[a-z]+$#i', '', basename( $target['id'] ) ) ) );
+        return array( 'id' => $target['id'], 'anchor' => $target['anchor'],
+                      'url' => expHelp::url( 'viewer', $target['id'], $target['anchor'] ), 'title' => $title );
     }
 
     protected function result( array $target, array $info, $level, $entry, $source )

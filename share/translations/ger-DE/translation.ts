@@ -79103,5 +79103,29 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Anleitungen und Referenz für alle, die mit dieser Installation arbeiten, erstellt aus der Dokumentation ihrer eigenen Version.</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Hilfemenü</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Verwandte Themen</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Schnellzugriff</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Hilfe-Center öffnen</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>Neuigkeiten</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Mit Git entwickeln</translation>
+    </message>
 </context>
 </TS>

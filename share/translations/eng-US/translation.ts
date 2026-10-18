@@ -72159,5 +72159,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Help menu</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Related topics</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Quick links</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Open the Help center</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>What's new</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Develop with Git</translation>
+    </message>
 </context>
 </TS>
