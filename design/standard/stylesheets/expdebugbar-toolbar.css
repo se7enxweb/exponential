@@ -47,6 +47,9 @@
 #debug[data-exp-debug-theme="toolbar"] > h2 > label.debug-keep-open { display: inline-flex; align-items: center; color: var(--xd-tb-soft); font-size: 0; margin-inline-start: 6px; margin-inline-end: 0; }
 #debug[data-exp-debug-theme="toolbar"] > h2 > label.debug-keep-open > input { margin: 0; }
 #debug[data-exp-debug-theme="toolbar"] > h2 > button.exp-debug-logo { color: var(--xd-tb-fg); }
+/* the symbol sets its own colour (expdebugbar.css, the dark ink of the light theme): on the dark bar and in its
+   minimised tab the outlined square takes the light ink, or only the orange square shows */
+#debug[data-exp-debug-theme="toolbar"] .exp-debug-symbol { color: var(--xd-tb-fg); }
 #debug[data-exp-debug-theme="toolbar"] > h2 > button.exp-debug-logo:hover { background: var(--xd-tb-hover); border-color: transparent; }
 /* the light focus colour on the dark bar only; the panel keeps the focus rule of expdebugbar.css */
 #debug[data-exp-debug-theme="toolbar"] > h2 :focus-visible, #debug[data-exp-debug-theme="toolbar"] > button.exp-debug-restore:focus-visible { outline-color: var(--xd-tb-focus); }
