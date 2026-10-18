@@ -28,6 +28,7 @@ class Exphelp extends \Exponential\Runnable\Command
                                  "./console exp:help search \"clear cache\"      search the pages (--audience, --category, --type, --limit)\n" .
                                  "./console exp:help show guides/caches.md     the metadata and headings of one page\n" .
                                  "./console exp:help check                     check the links and images of every page (--below=guides/)\n" .
+                                 "./console exp:help pdf help/searching.md      the page as a PDF file (--out=file.pdf, --base-url=https://host)\n" .
                                  "\n" .
                                  "Only git-tracked files below doc/ (and the doc/ of the extensions in exphelp.ini ExtensionDocDirs[]) are\n" .
                                  "pages; nothing is changed except the cache in var/<site>/cache/exphelp. --json prints one JSON document.\n" .
@@ -37,7 +38,7 @@ class Exphelp extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[rebuild][list][json][audience:][category:][type:][limit:][below:][all][strict]', '', array(
+        $options = $this->startup( '[rebuild][list][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:]', '', array(
             'rebuild'  => 'index: build the index again even when the cached one is current',
             'list'     => 'index: list every page',
             'json'     => 'Print one JSON document instead of the text',
@@ -48,6 +49,8 @@ class Exphelp extends \Exponential\Runnable\Command
             'below'    => 'check, index --list: only the pages whose id starts with this (e.g. guides/)',
             'all'      => 'check: also list the notices (links to files that are not help pages)',
             'strict'   => 'check: exit 1 on warnings too',
+            'out'      => 'pdf: the file to write (default: the page title as file name, in the current directory)',
+            'base-url' => 'pdf: scheme and host for the links and the page address (https://www.example.com)',
         ) );
 
         $arguments = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
@@ -69,8 +72,11 @@ class Exphelp extends \Exponential\Runnable\Command
                 case 'check':
                     $code = $this->check( $options, $json );
                     break;
+                case 'pdf':
+                    $code = $this->pdf( $arguments ? (string)$arguments[0] : '', $options, $json );
+                    break;
                 default:
-                    $cli->error( "Unknown action \"$action\": index, search, show or check (./console exp:help --help)" );
+                    $cli->error( "Unknown action \"$action\": index, search, show, check or pdf (./console exp:help --help)" );
                     $code = 2;
             }
         }
@@ -245,6 +251,50 @@ class Exphelp extends \Exponential\Runnable\Command
             foreach ( $document['headings'] as $heading )
                 $cli->output( str_repeat( '  ', $heading['level'] ) . $heading['text'] . '  #' . $heading['anchor'] );
         }
+        return 0;
+    }
+
+    /**
+     * exp:help pdf <id> [--out=file.pdf] [--base-url=https://host]: the page as a PDF (expHelpPdf, the same file the
+     * view exphelp/pdf serves, from the same cache)
+     *
+     * @param string $id
+     * @param array $options
+     * @param bool $json
+     * @return int
+     */
+    protected function pdf( $id, array $options, $json )
+    {
+        $cli = $this->cli();
+        $id = preg_replace( '#^doc/#', '', trim( $id ) );
+        if ( $id === '' )
+        {
+            $cli->error( 'Usage: ./console exp:help pdf <id> [--out=file.pdf] [--base-url=https://www.example.com]' );
+            return 2;
+        }
+        $baseUrl = isset( $options['base-url'] ) && is_string( $options['base-url'] ) ? trim( $options['base-url'] ) : '';
+        if ( $baseUrl !== '' && preg_match( '#^https?://[A-Za-z0-9.-]+(:[0-9]+)?$#', rtrim( $baseUrl, '/' ) ) !== 1 )
+        {
+            $cli->error( "--base-url takes a scheme and host, e.g. https://www.example.com: $baseUrl" );
+            return 2;
+        }
+        $pdf = \expHelpPdf::forPage( $id, $baseUrl );
+        if ( $pdf === null )
+        {
+            $cli->error( "Not a help page: $id (unknown, not tracked by git, or excluded)" );
+            return 1;
+        }
+        $out = isset( $options['out'] ) && is_string( $options['out'] ) && $options['out'] !== '' ? $options['out'] : $pdf['filename'];
+        $data = $pdf['file'] !== null ? (string)file_get_contents( $pdf['file'] ) : (string)$pdf['data'];
+        if ( @file_put_contents( $out, $data ) !== strlen( $data ) )
+        {
+            $cli->error( "FAIL: could not write $out" );
+            return 2;
+        }
+        if ( $json )
+            $this->printJson( array( 'id' => $id, 'file' => $out, 'size' => strlen( $data ), 'cached' => $pdf['cached'] ) );
+        else
+            $cli->output( sprintf( 'PASS %s -> %s (%d bytes%s)', $id, $out, strlen( $data ), $pdf['cached'] ? ', from the cache' : '' ) );
         return 0;
     }
 

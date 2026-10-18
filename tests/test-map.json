@@ -1705,20 +1705,39 @@
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php",
       "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
-      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "kernel/classes/help/exphelppdf*.php": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "lib/ezpdf/classes/*": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "kernel/exphelp/*": [
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
-      "tests/tests/kernel/classes/help/expHelpLinksTest.php"
+      "tests/tests/kernel/classes/help/expHelpLinksTest.php",
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "kernel/private/classes/views/exphelp/*": [
       "tests/tests/kernel/classes/help/expHelpLinksTest.php",
-      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "design/admin*/templates/exphelp/*": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "design/admin*/javascript/exphelp.js": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "design/admin*/stylesheets/modules/help.css": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "settings/exphelp.ini": [
       "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php",
       "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
-      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php"
+      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "settings/module.ini": [
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"

@@ -1431,6 +1431,54 @@
   .a4-help-article pre { white-space: pre-wrap; }
 }
 
+/* ---- Print and PDF (exphelp/parts/viewer_actions.tpl) --------------------------------------------------------
+   "Print this page" (shown by exphelp.js) and "Download as PDF" under the page's facts; on paper only the document:
+   no frame of the administration (admin4.css hides admin4's, the ids below are the classic admin's), no tree,
+   contents, buttons or pager; the address of the page under its facts, readable code on paper, outside link
+   addresses after the link (above), nothing split inside a code block, table or callout. Paper is light: admin4
+   switches to the light theme before printing (a4_head.js), and the code blocks drop their dark background. */
+.a4-help-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--a4-space-2);
+  margin: var(--a4-space-2) 0 0;
+}
+.a4-help-actions .a4-btn[hidden] { display: none; }
+.a4-help-print-url { display: none; }
+
+@media print {
+  body:has(.a4-help-viewer) :is(#header, #path, #leftmenu, #rightmenu, #footer, #left-panels-separator,
+    #right-panels-separator, #widthcontrol-handler, #leftmenu-showhide, #rightmenu-showhide) { display: none !important; }
+  body:has(.a4-help-viewer) :is(#maincolumn, #maincontent, #columns) { margin: 0 !important; padding: 0 !important; width: auto !important; }
+  .a4-help-actions,
+  .a4-help-meta-item.is-audience .a4-sr-only { display: none; }
+  .a4-help-print-url {
+    display: block;
+    margin: var(--a4-space-1) 0 0;
+    color: var(--a4-muted);
+    font-size: var(--a4-text-xs);
+    overflow-wrap: anywhere;
+  }
+  .a4-help-viewer,
+  .a4-help-article {
+    color: var(--a4-ink);
+    background: none;
+  }
+  .a4-help-article { font-size: var(--a4-text-m); line-height: 1.55; orphans: 3; widows: 3; }
+  .a4-help-article img { max-width: 100%; height: auto; }
+  .a4-help-article .a4-help-code,
+  .a4-help-article .a4-help-pre {
+    border: 1px solid var(--a4-line);
+    background: var(--a4-soft);
+    color: var(--a4-ink);
+  }
+  .a4-help-article .a4-help-pre [class^="a4-help-tok-"] { color: var(--a4-ink); }
+  .a4-help-article .a4-help-pre .a4-help-tok-comment { color: var(--a4-muted); font-style: italic; }
+  .a4-help-article :is(.a4-help-callout, .a4-help-table thead, .a4-help-code) { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .a4-help-article .a4-help-table-wrap { overflow: visible; }
+  .a4-help-article tr { break-inside: avoid; }
+}
+
 /* ---- Report an error (exphelp/report.tpl, workstream H) ----------------------------------------------------- */
 .a4-help-reportpage { display: grid; gap: var(--a4-space-5); }
 .a4-help-issue-jump { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin-top: var(--a4-space-3); }
