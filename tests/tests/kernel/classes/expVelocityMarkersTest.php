@@ -80,6 +80,20 @@ class expVelocityMarkersTest extends ezpTestCase
         @rmdir( $this->dir . '/sub' );
     }
 
+    public function testClearStaleRestartRemovesOnlyADeadProcessMarker()
+    {
+        $markers = new expVelocityMarkers( $this->dir );
+        $this->assertFalse( $markers->clearStaleRestart(), 'no marker, nothing removed' );
+
+        $markers->write( expVelocityMarkers::RESTART, array( 'started' => time(), 'pid' => getmypid() ) );
+        $this->assertFalse( $markers->clearStaleRestart(), 'this process\'s own marker stays' );
+        $this->assertNotNull( $markers->read( expVelocityMarkers::RESTART ) );
+
+        $markers->write( expVelocityMarkers::RESTART, array( 'started' => time(), 'pid' => self::DEAD_PID ) );
+        $this->assertTrue( $markers->clearStaleRestart(), 'a killed restart\'s marker goes' );
+        $this->assertNull( $markers->read( expVelocityMarkers::RESTART ) );
+    }
+
     public function testMarkStopped()
     {
         $markers = new expVelocityMarkers( $this->dir );

@@ -528,7 +528,13 @@ class Velocity extends \Exponential\Runnable\Command
             foreach ( $restartTargets as $engine )
             {
                 $markers = \expVelocityMarkers::forVelocity( $engine );
-                in_array( $verb, array( 'stop', 'kill' ), true ) ? $markers->markStopped( $verb ) : $markers->clear( \expVelocityMarkers::STOPPED );
+                if ( in_array( $verb, array( 'stop', 'kill' ), true ) )
+                    $markers->markStopped( $verb );
+                else
+                {
+                    $markers->clear( \expVelocityMarkers::STOPPED );
+                    $markers->clearStaleRestart();
+                }
             }
 
         // Several engines: the same verb for each, one after the other. One that

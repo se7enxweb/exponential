@@ -135,6 +135,25 @@ class expVelocityMarkers
                                                    'pid' => getmypid() ) );
     }
 
+    /**
+     * Remove a restart marker whose process is gone: a restart that was
+     * killed. Left in place, a later process that gets the same pid would
+     * make the marker look alive and hold the watchdog back during a real
+     * outage. Start, restart and graceful call it.
+     *
+     * @return bool true when one was removed
+     */
+    public function clearStaleRestart()
+    {
+        $restart = $this->read( self::RESTART );
+        if ( $restart === null )
+            return false;
+        $pid = isset( $restart['pid'] ) ? (int)$restart['pid'] : 0;
+        if ( $pid === getmypid() || ( $pid > 0 && self::pidAlive( $pid ) ) )
+            return false;
+        return $this->clear( self::RESTART );
+    }
+
     /** @return bool whether an explicit stop holds the server down */
     public function isStopped()
     {
