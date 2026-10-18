@@ -73210,5 +73210,45 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Exponential documentation</source>
         <translation>Documentation d&apos;Exponential</translation>
     </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>D&apos;utilisateur à développeur</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential est un logiciel libre dont tout l&apos;historique est sur GitHub. Installez-le sous forme de clones Git, la méthode recommandée pour créer des sites, et vous pourrez suivre chaque modification, essayer les correctifs avant leur publication et proposer vos propres améliorations.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Utiliser l&apos;administration</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Connectez-vous, modifiez et publiez.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Installer avec Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Le noyau et chaque extension sous forme de clones avec leur historique.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Contribuer en retour</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Forkez, corrigez et ouvrez une pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Développer avec Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Guide d&apos;installation</translation>
+    </message>
 </context>
 </TS>

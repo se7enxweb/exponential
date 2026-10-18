@@ -73264,5 +73264,45 @@ Gracias por tu feedback</translation>
         <source>Exponential documentation</source>
         <translation>Documentación de Exponential</translation>
     </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>De usuario a desarrollador</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential es software libre con todo su historial en GitHub. Instálalo como clones de Git, la forma recomendada de crear sitios web, y podrás seguir cada cambio, probar correcciones antes de que se publiquen y enviar tus propias mejoras.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Usa la administración</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Inicia sesión, edita y publica.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Instala con Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>El núcleo y cada extensión como clones con su historial.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Contribuye</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Haz un fork, corrige y abre un pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Desarrolla con Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Guía de instalación</translation>
+    </message>
 </context>
 </TS>

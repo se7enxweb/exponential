@@ -71815,5 +71815,45 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Exponential documentation</source>
         <translation>Exponential De&apos; ghItlh</translation>
     </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>lo&apos;wI&apos; DaHjaj, chenmoHwI&apos; wa&apos;leS</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential jo&apos;Daq Hoch qun GitHub Daq tu&apos;lu&apos;. Git velqa&apos; DaH yIjom; Daq chenmoHmeH mIw nIvqu&apos; &apos;oH. vaj Hoch choH DaghoS, Qagh tI&apos;meH DaH yInID, &apos;ej DuHIvDI&apos; Dumaq.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>loHwI&apos; yIlo&apos;</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>yI&apos;el, yIchoH, yImaq.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Git lo&apos;taHvIS yIjom</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>botlh &apos;ej Hoch chuq velqa&apos; qun ghaj.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>yIQaH</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>fork yIchenmoH, yItI&apos;, pull request yIpoSmoH.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Git lo&apos;taHvIS yIchenmoH</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>jom ghItlh</translation>
+    </message>
 </context>
 </TS>

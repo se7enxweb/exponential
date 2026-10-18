@@ -71815,5 +71815,45 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Exponential documentation</source>
         <translation>Documenta Exponential</translation>
     </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Ab usore ad artificem</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential programma liberum est, cuius tota historia in GitHub servatur. Id ut exemplaria Git instituito, quae via ad situs aedificandos commendatur: omnem mutationem sequi, emendationes ante editionem experiri et tuas emendationes remittere poteris.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Administratione utere</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Intra, muta et ede.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Per Git institue</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Nucleus et omnis extensio ut exemplaria cum historia.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Vicissim confer</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Furcam fac, emenda et petitionem pull request aperi.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Cum Git aedifica</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Dux institutionis</translation>
+    </message>
 </context>
 </TS>

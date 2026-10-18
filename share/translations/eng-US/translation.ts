@@ -71876,5 +71876,45 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Exponential documentation</source>
         <translation>Exponential documentation</translation>
     </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Grow from user to developer</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Use the administration</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Sign in, edit and publish.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Install with Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>The kernel and every extension as clones with history.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Contribute back</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Fork, fix and open a pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Develop with Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Installation guide</translation>
+    </message>
 </context>
 </TS>

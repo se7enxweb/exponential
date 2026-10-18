@@ -71696,5 +71696,45 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Exponential documentation</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

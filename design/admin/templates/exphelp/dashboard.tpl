@@ -155,6 +155,9 @@
     </section>
     {/if}
 
+    {* ---- Grow from user to developer (parts/dashboard_grow.tpl) ---- *}
+    {include uri='design:exphelp/parts/dashboard_grow.tpl'}
+
     {* ---- Report an error ---- *}
     <section class="a4-help-report" aria-labelledby="help-dash-report">
         <span class="a4-help-tile" aria-hidden="true"><span class="a4-icon a4-bi-exclamation-diamond"></span></span>

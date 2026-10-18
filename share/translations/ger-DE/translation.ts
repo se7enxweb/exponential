@@ -78820,5 +78820,45 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Exponential documentation</source>
         <translation>Exponential-Dokumentation</translation>
     </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Vom Benutzer zum Entwickler</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential ist freie Software mit ihrer vollständigen Geschichte auf GitHub. Installieren Sie es als Git-Klone, den empfohlenen Weg zum Bau von Websites, und Sie können jede Änderung verfolgen, Korrekturen vor ihrer Veröffentlichung ausprobieren und Ihre eigenen Verbesserungen zurückschicken.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Die Administration nutzen</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Anmelden, bearbeiten und veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Mit Git installieren</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Den Kernel und jede Erweiterung als Klone mit Geschichte.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Zurückgeben</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Forken, korrigieren und einen Pull Request öffnen.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Mit Git entwickeln</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Installationsanleitung</translation>
+    </message>
 </context>
 </TS>

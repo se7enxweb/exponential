@@ -71846,5 +71846,45 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Exponential documentation</source>
         <translation>התיעוד של Exponential</translation>
     </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>ממשתמש למפתח</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential היא תוכנה חופשית שכל ההיסטוריה שלה ב-GitHub. התקינו אותה כשכפולי Git, הדרך המומלצת לבניית אתרים, ותוכלו לעקוב אחר כל שינוי, לנסות תיקונים לפני שהם יוצאים ולשלוח בחזרה שיפורים משלכם.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>השתמשו בממשק הניהול</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>התחברו, ערכו ופרסמו.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>התקינו עם Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>הליבה וכל הרחבה כשכפולים עם היסטוריה.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>תרמו בחזרה</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>צרו fork, תקנו ופתחו pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>פיתוח עם Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>מדריך התקנה</translation>
+    </message>
 </context>
 </TS>

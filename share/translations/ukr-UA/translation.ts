@@ -71800,5 +71800,45 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Exponential documentation</source>
         <translation>Документація Exponential</translation>
     </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Від користувача до розробника</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential — вільне програмне забезпечення з повною історією на GitHub. Встановіть його як клони Git, рекомендований спосіб створення сайтів, і ви зможете стежити за кожною зміною, пробувати виправлення до їх випуску та надсилати власні покращення.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Користуйтеся адмініструванням</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Увійдіть, редагуйте та публікуйте.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Встановіть за допомогою Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Ядро та кожне розширення як клони з історією.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Робіть внесок</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Зробіть форк, виправте та відкрийте pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Розробка з Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Посібник зі встановлення</translation>
+    </message>
 </context>
 </TS>
