@@ -52,7 +52,8 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     protected function iniValues( $file )
     {
         $values = array();
-        foreach ( preg_split( '/\R/', (string)file_get_contents( $file ) ) as $line )
+        // not /\R/: without the u modifier it also splits at the byte 0x85, which is inside UTF-8 letters (Arabic م)
+        foreach ( preg_split( '/\r\n|\n|\r/', (string)file_get_contents( $file ) ) as $line )
         {
             if ( preg_match( '/^([A-Za-z0-9_]+)=(.*)$/', trim( $line ), $m ) )
                 $values[$m[1]] = $m[2];
@@ -205,7 +206,8 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         $values = $this->iniValues( $this->root . '/share/locale/' . $code . '.ini' );
         $this->assertSame( 'rtl', strtolower( $values['TextDirection'] ?? '' ), "$code: TextDirection" );
         $this->assertSame( $http, $values['ContentLanguage'] ?? '', "$code: ContentLanguage" );
-        $this->assertSame( $name, $values['InternationalLanguageName'] ?? '', "$code: InternationalLanguageName" );
+        // "Arabic" or, from CLDR, "Arabic (Saudi Arabia)"
+        $this->assertMatchesRegularExpression( '/^' . $name . '( \(.+\))?$/', $values['InternationalLanguageName'] ?? '', "$code: InternationalLanguageName" );
         $this->assertMatchesRegularExpression( '/^[' . $script . '\s()]+$/u', $values['LanguageName'] ?? '', "$code: LanguageName" );
         $this->assertMatchesRegularExpression( '/^FallbackLanguages\[' . preg_quote( $code, '/' ) . '\]=\S+/m',
                                                (string)file_get_contents( $this->root . '/settings/i18n.ini' ) );

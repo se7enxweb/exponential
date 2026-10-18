@@ -9100,7 +9100,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php
 70a5cdcff19c3d25379d38bdf6522d47  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
-d8c3ef91fc7026c595f7e96a8073dbf4  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
+997c1b36e441b71edbfd6aabcba96ca3  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 c80fd248275f1e8f1cbfc16674668c09  tests/tests/lib/ezi18n/expTranslationQualityTest.php
