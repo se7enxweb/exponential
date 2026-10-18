@@ -265,6 +265,9 @@ Hardening beyond that, from the strongest to the simplest:
 [UserSettings]
 MinPasswordLength=10          # bytes; 3 when the setting is missing
 GeneratePasswordLength=16
+WeakPasswordCheck=enabled     # refuse well-known and common passwords (since 6.0.15)
+WeakPasswordFile=             # more words, one per line; or WeakPasswordList[]=...
+ForgotPasswordKeyLifetime=3600 # seconds a "Forgot your password?" link works; 0: until used
 HashType=php_default          # bcrypt today; never plaintext or the md5_* types
 UpdateHash=true               # re-hash older hashes at the next sign-in
 
@@ -300,7 +303,9 @@ passwords (`Summer2026!`) rather than strong ones; the strength meter and the "G
 (`GeneratePasswordLength=16`) help users reach the length instead. The `Require*` and `MinCharacterClasses` rules
 exist for organisations whose own policy prescribes them. `MinPasswordLength` counts bytes, so a password in a script
 with multi-byte characters reaches it with fewer characters. Raising the minimum does not lock anyone out: existing
-passwords keep working and the rule applies when a password is next set.
+passwords keep working and the rule applies when a password is next set. The same goes for the well-known password
+check (`WeakPasswordCheck`), which follows the same guidance: verifiers should compare new passwords against a list
+of commonly used and compromised values. Add your organization's own words with `WeakPasswordList[]` or `WeakPasswordFile`.
 
 The rules apply to every form that sets a password (`user/password`, registration, the user account in `content/edit`
 and the administration, `bin/php/resetuserpassword.php`), checked by `expPasswordPolicy`
