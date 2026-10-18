@@ -7794,7 +7794,7 @@ bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 99862a3b59cc584c3fcba01e689aaa17  share/transformations/hebrew.tr
 06361e73b7836778b599fa55f3300ebf  share/transformations/latin.tr
 9c0a310f00eb6c3334a8c41198ec3161  share/transformations/search.tr
-7d9d5e62fd17d3525ca3ea2aa763b6a2  share/translations/ara-SA/translation.ts
+5995a364b91ac759cdde5e9992b0ea6a  share/translations/ara-SA/translation.ts
 460da6761ad0f2e5f4e9482a3688df97  share/translations/cat-ES/translation.ts
 4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
 dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
@@ -7807,8 +7807,8 @@ a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
 1208c5696efab5daf3a3c3c140304ab1  share/translations/eng-US/translation.ts
-6edbdb1fd42f37f3563af44231838e7c  share/translations/esl-ES/translation.ts
-f20c5f9881f2a88c7ecb3fb18635366d  share/translations/esl-MX/translation.ts
+ebbf483a2ce6129b622787cf7dcd67d6  share/translations/esl-ES/translation.ts
+407488d5c1cdfe79d123ab0636a7c30f  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 bde05a54773ed9c07a07ad0ae0ef8c74  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
