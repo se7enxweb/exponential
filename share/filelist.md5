@@ -3274,7 +3274,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-f327ed050013a90e852dd6e97f1c145b  doc/changelogs/6.0/6.0.15.md
+678efdd3e4564d967e6bb7c51e70f5b4  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4231,7 +4231,7 @@ e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
 c16be8cb22d2ac62ecb044e4af371544  doc/install/17-migration-reference.md
 ce0b3f77ce09c1b78d7b56dac34a2b38  doc/install/README.md
-61231d1f09cead108d5435ca12aaf238  doc/languages.md
+05f9d724ce55d70ce86eb8ed6267f5a3  doc/languages.md
 96f498c48962f624f83d7484bd72ba84  doc/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/shop/examples/paypal/extensionfiles.html
@@ -9113,7 +9113,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php
 70a5cdcff19c3d25379d38bdf6522d47  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
-f1ba69a86fb54b17de2d0692afd1fb34  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
+997c1b36e441b71edbfd6aabcba96ca3  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 c80fd248275f1e8f1cbfc16674668c09  tests/tests/lib/ezi18n/expTranslationQualityTest.php
