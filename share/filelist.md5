@@ -2064,7 +2064,7 @@ bca28d129e420ebe0e8a332a15c24fd4  design/standard/stylesheets/core.css
 480210c74d385593961fa435116fa328  design/standard/stylesheets/debug.css
 95aae21af74d28590b2b95defccd916e  design/standard/stylesheets/exp_bookmarks.css
 e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.css
-858ce822723117f41ac936c585f5a988  design/standard/stylesheets/expdebugbar-toolbar.css
+66c465fbc3cde32f2e5689f498ec7ace  design/standard/stylesheets/expdebugbar-toolbar.css
 d530934d3e23c478e7b09006ca02afc3  design/standard/stylesheets/expdebugbar.css
 6be40b2658f59872433cc8104f2deebd  design/standard/stylesheets/ezmedia_silverlight.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
@@ -4995,7 +4995,6 @@ c5a96d944b1e1854cb5de425c9950607  extension/ezoe/settings/rad.ini.append.php
 853d4572f6ec46ab643772d8502836f1  extension/ezoe/settings/site.ini.append.php
 7292c40010858802f38d44d59c6e1f2e  extension/ezoe/tests/ezoexmltext_regression.php
 f8a85b1a0304fa337737229280fcb45c  extension/ezoe/tests/suite.php
-823495d42f8ad8d95afbf5b5c2cc5c7a  extension/ezoe/translations/ara-SA/translation.ts
 010cab40ddf9f9075fd8ebebaeb4dd53  extension/ezoe/translations/cat-ES/translation.ts
 89352618462fa235c9a4d73edfcde79a  extension/ezoe/translations/cze-CZ/translation.ts
 7a01cb19a8749a323545c01659a2ddba  extension/ezoe/translations/dan-DK/translation.ts
