@@ -12,6 +12,7 @@
     'my_wish_list',       'My wish list'|i18n( 'design/admin/parts/my/menu' ),
     'edit_profile',       'Edit profile'|i18n( 'design/admin/parts/my/menu' ),
     'dashboard',          'Dashboard'|i18n( 'design/admin/parts/my/menu' ),
+    'help_center',        'Help center'|i18n( 'design/admin/parts/my/menu' ),
 )}
 
 

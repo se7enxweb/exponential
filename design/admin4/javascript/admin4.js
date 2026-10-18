@@ -247,10 +247,34 @@
         });
     }
 
+
+    // the Help menu (parts/a4_header_help.tpl): its button takes the place of the "?" link, which stays for a browser
+    // without the script; the keys go through the search field first, then the links
+    function helpMenu() {
+        var wrap = document.getElementById('a4-help-menu-wrap');
+        var button = document.getElementById('a4-help-toggle');
+        var panel = document.getElementById('a4-help-menu');
+        if (!wrap || !button || !panel) return;
+        var link = wrap.parentNode.querySelector('.a4-help-context');
+        var field = panel.querySelector('input[type="search"]');
+        wrap.hidden = false;
+        if (link) link.hidden = true;
+        disclosure(button, panel, function (p) {
+            var list = links(p);
+            return field && field.offsetParent !== null ? [field].concat(list) : list;
+        });
+        // Home and End move in the field's text, not to the menu's first and last links
+        if (field) {
+            field.addEventListener('keydown', function (e) {
+                if (e.key === 'Home' || e.key === 'End') e.stopPropagation();
+            });
+        }
+    }
     function init() {
         overflowMenu();
         disclosure(document.getElementById('a4-user-toggle'), document.getElementById('a4-user-menu'));
         siteMenu();
+        helpMenu();
         // any other disclosure (uiswitch/choices.tpl): a hidden button[data-a4-disclosure] with aria-controls; the
         // script shows the button and closes its panel, which stays open without the script
         Array.prototype.forEach.call(document.querySelectorAll('button[data-a4-disclosure][aria-controls]'), function (button) {

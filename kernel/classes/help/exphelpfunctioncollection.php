@@ -34,6 +34,22 @@ class expHelpFunctionCollection
     {
         return array( 'result' => expHelpLicense::isEnabled() ? expHelpLicense::forPage( (string)$id ) : false );
     }
+
+    /**
+     * fetch( 'exphelp', 'context_menu', hash( 'module', ..., 'view', ..., 'design', ... ) ): the header's Help menu
+     *
+     * @param string $module
+     * @param string $view
+     * @param string $design
+     * @return array array( 'result' => expHelpContextRegistry::menu() (topics, links) or false when the user may not
+     *               read the help )
+     */
+    public static function fetchContextMenu( $module = '', $view = '', $design = '' )
+    {
+        if ( !expHelp::isEnabled() || !expHelp::canRead() )
+            return array( 'result' => false );
+        return array( 'result' => expHelpContextRegistry::instance()->menu( (string)$module, (string)$view, (string)$design ) );
+    }
 }
 
 ?>
