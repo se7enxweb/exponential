@@ -562,7 +562,7 @@ queue, are switched on afterwards; [doc/INSTALL.md](doc/INSTALL.md#10-after-inst
 ## Exponential (6.x) Issue tracker
 
 Submitting bugs, improvements and stories is possible on [Exponential Project Issue Tracker](https://issues.exponential.earth)
-If you discover a [security issue](SECURITY.md), please responsibly report such issues via email to security@exponential.earth
+If you discover a [security issue](SECURITY.md), please responsibly report such issues via email to security@se7enx.com
 
 ## Exponential Community Project Issue tracker
 

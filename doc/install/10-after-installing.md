@@ -57,7 +57,8 @@ through it once in order after the install; afterwards it serves as a reference.
    once and written to `var/log/initial-admin-password`, readable by its owner only.
 2. **Sign in and change the password** at once: in the administration, **Change password** in the user menu, or
    directly `/admin/user/password`. The page lists the requirements beside the field: at least
-   `[UserSettings] MinPasswordLength` characters (shipped `10`, `settings/site.ini`) and not a well-known password.
+   `[UserSettings] MinPasswordLength` characters (shipped `10`, `settings/site.ini`) and the `[PasswordSettings]` rules you
+   switched on. It does not refuse well-known words by itself: choose a long, random password.
    The user gets an e-mail that the password was changed (`ChangeNotificationMail`), which is also the first test of
    your mail settings ([10.4](#104-mail-the-file-transport-and-real-sending)).
 3. **Remove the password file** once you have signed in with the new password:
@@ -80,7 +81,9 @@ php bin/php/resetuserpassword.php -u admin -g --allow-root-user
 instead, for when you are not the operating system's `root`. A password given with `-p` is visible in the process
 list and the shell history; prefer `-g` and change the password after logging in. See
 [Reset a user password](../features/6.0/reset-user-password.md) and
-[Changing your password](../features/6.0/modern-password-change.md).
+[Changing your password](../features/6.0/modern-password-change.md). Every way to change it, the default per install
+method, and how to retire the `admin` login: [Change the administrator password](../help/change-the-admin-password.md),
+[The default administrator password](../help/default-administrator-password.md).
 
 ## 10.2 Siteaccesses and site addresses
 

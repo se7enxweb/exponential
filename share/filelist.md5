@@ -20,7 +20,7 @@ eab760120a50cdf35a0fd50618301b24  COPYRIGHT.md
 d34848eec00c077171187386a805c85b  LICENSE
 bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 1bc8d08bda60c234dded6cb03b90dfba  Makefile
-6317a4c9d5332abdff2cdede49edebb7  README.md
+2fbb4bb5cc80da3688ade65475f8c339  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
 c496896330c3cb979269cdd2fc81564b  autoload/ezp_kernel.php
@@ -3067,7 +3067,7 @@ f7b960f9e3417b2f6b65b82c1bd5f7c2  doc/bc/6.0/ezoe-tinymce8.md
 02f9c4098af6775e9b9fc4a0553bf473  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 4182afe4de0ebf523b622ca208b721fe  doc/bc/6.0/file-modes.md
 2830240c5b94103d5fc28cb3e736daba  doc/bc/6.0/frankenphp.md
-d88ed154806689c479cf5a1a70587fa5  doc/bc/6.0/hardening.md
+f50494600c581d6f79cb3b05c1b6c120  doc/bc/6.0/hardening.md
 fca17d35cfc097ff4b57c3c5c871b55a  doc/bc/6.0/http-caching.md
 ac6e038afa43bb7abe89a1cfd1a6533e  doc/bc/6.0/http2-and-cache-warming.md
 d77d7dc32b09ae5014f77546cb57bbea  doc/bc/6.0/httpcache.md
@@ -3731,7 +3731,7 @@ b44b9ac50952ac2e8f16cbb8f32b9b1b  doc/features/6.0/rad-tools.md
 6a7f7df92abdbc6a724d6b7e43addedf  doc/features/6.0/registration-admin-links.md
 12527c047b3b9350ebd0481dcb338531  doc/features/6.0/remote-services-expservices.md
 f9c24ee19f2caf2e1326cf5158b46bfc  doc/features/6.0/repair-from-the-browser.md
-3dea17886d0bc9690aa972985f36ce0c  doc/features/6.0/request-logs.md
+360a9cdcc0fa5df78c64b07af326f651  doc/features/6.0/request-logs.md
 d19ac2813afb3d92cc981015c8ecdfc1  doc/features/6.0/request-rules.md
 24e8ccadcc06ff46a640a76473fd2d4a  doc/features/6.0/reset-user-password.md
 dfc80bc3e8c5193eda53ed0174e12623  doc/features/6.0/reverse-relation-check.md
@@ -3838,7 +3838,7 @@ d2180bc478399514471afe5c36506a63  doc/guides/rest-api-v1-and-v2.md
 a0a831ac75f0f2a8fcd58c871d580d37  doc/guides/roles-and-policies.md
 bb8d6835bd7b4751fd30540ba5bdf4c8  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
-fdcc1e0224cad899a30b1bfc699d942f  doc/guides/security-and-audit.md
+0c549ca68b159fb0bf8e94e78e491ebb  doc/guides/security-and-audit.md
 43dbd90e31972fef2826ebb622ab5c4d  doc/guides/sessions.md
 d6248fd6c8f6678c5868d0eb6023ea08  doc/guides/settings-page.md
 885507547719ede4633742514335fa2e  doc/guides/system-information.md
@@ -3854,6 +3854,8 @@ d0260680e11ffdb7581f3bff6191d877  doc/guides/workflows.md
 c0773805fa8155fd732765e3b5792191  doc/help/README.md
 b3a32c0cd10ca5a1f908dcdde4e8e71a  doc/help/accounts-and-sign-in.md
 a9e76a7895670864d47b7293e5a5cdaf  doc/help/admin-tour.md
+00d096ebda88cdbaf4a5a5db68cc7060  doc/help/change-the-admin-password.md
+84a158fb16c3675d233ca977a3619e79  doc/help/default-administrator-password.md
 ced049f18b5605fcad3ff85057cb4b6f  doc/help/editing-content.md
 a797e7e7496ab173a1619777b41a0a74  doc/help/getting-started.md
 c62bd3523b50c73d0284cce14072b804  doc/help/images/admin-dashboard.webp
@@ -3877,6 +3879,7 @@ b6f5016b38d3aef26092fb55ea3917ae  doc/help/languages.md
 52aa8e105823c3e1d159e27ba449bbbe  doc/help/media-and-uploads.md
 0bf642c168fe8af84f64190ce1cff902  doc/help/publishing-and-versions.md
 291f1692bf5590051f383d80da653fe2  doc/help/searching.md
+f6bb933745534900963af37fd0e899e5  doc/help/security-hardening.md
 446113f878bd53c1ecb1ce27ba53265d  doc/help/when-something-goes-wrong.md
 bfac4d20e64cf0fff734fc68908cf3e9  doc/history/2023/2023-12.md
 9775fae8288f43e5b1b4de97824ba096  doc/history/2024/2024-01a.md
@@ -4222,10 +4225,10 @@ abd23037456486e47deb8eb67816b3cd  doc/install/05-setup-wizard.md
 d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
 ed12923e4234004b770f77d7181e957d  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
-5d304c2a04345b1958c8632696aeef8e  doc/install/10-after-installing.md
+b085b95a8e02c8756c335b43fe675676  doc/install/10-after-installing.md
 c376342fb415dc3c6efc6d35be96b628  doc/install/11-upgrading.md
 4068cd5786ca748d6c9becee07eb250b  doc/install/12-troubleshooting.md
-edb1a01259acea9831b5ada2fce80452  doc/install/13-security-hardening.md
+8cac613e0ffd44851ba19d6fdb0847fe  doc/install/13-security-hardening.md
 697395aba059076da8463bce457b9957  doc/install/14-migrating-from-4x.md
 e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
@@ -6930,7 +6933,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 a111b660f8e29a00cb059785bda7df42  settings/debugbar.ini
 3ec24b98a92d3433c648d7ab3e76f93a  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-f80da5ae8192863e8c8404044fa13ac1  settings/exphelp.ini
+8bd32c6875b26f8f6ee9ef55bcc6bc93  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini

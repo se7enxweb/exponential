@@ -14,7 +14,7 @@ and one reflected cross-site scripting. No API changes; every patched function k
 | How to check | `php tests/bin/ezptestrunner_all_tests.php security` |
 | How to fix | Update to 6.0.13 or later. Audit your own extensions for the patterns listed below. |
 
-Questions about these fixes go to **security@exponential.earth**.
+Questions about these fixes go to **security@se7enx.com**.
 
 ## Table of Contents
 
@@ -85,7 +85,7 @@ and `htmlspecialchars()` output escaping) with no impact on calling code.
 | Database backends affected | MySQL / MariaDB / PostgreSQL (all backends using string interpolation) |
 | Patch date | 2026-02-21 |
 | Reported by | Internal security audit |
-| Primary contact for questions | security@exponential.earth |
+| Primary contact for questions | security@se7enx.com |
 
 The vulnerabilities described in this document affect any deployment running a 6.0.x
 release of the Exponential platform where:
