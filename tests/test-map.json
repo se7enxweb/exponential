@@ -24,6 +24,10 @@
     "bin/*": [
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
     ],
+    "bin/php/console": [
+      "tests/tests/bin/ConsoleExtensionAliasTest.php",
+      "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
+    ],
     "*.ini": [
       "tests/tests/kernel/classes/ini/expIniRoundTripTest.php"
     ],

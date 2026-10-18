@@ -2,8 +2,8 @@
 /**
  * The classic administration design (design/admin) at narrow widths: the right column's tools keep inside the
  * column (no minimum width wider than it, the interface choices one full-width button a row), and below 760px the
- * page stacks its columns, wraps its header, scrolls wide tables inside their own box and makes its controls 44px
- * high. The page layouts carry the viewport meta so a phone lays the page out at its own width, and the left menu's
+ * page stacks its columns, wraps its header, scrolls wide tables inside their own box and makes its controls and
+ * text fields 44px high. The page layouts carry the viewport meta so a phone lays the page out at its own width, and the left menu's
  * width control leaves the main column's margin alone while the columns are stacked.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/ClassicAdminNarrowWindowTest.php
@@ -44,6 +44,16 @@ class ClassicAdminNarrowWindowTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( $rule, $block, $rule );
         // the block sets no colour (tokens only, and nothing to keep in step with a theme)
         $this->assertDoesNotMatchRegularExpression( '/(^|[;{\s])(color|background(-color)?)\s*:/', $block );
+    }
+
+    public function testNarrowWindowsGiveTextFieldsTheControlHeight()
+    {
+        // the relation list's "Find objects" field was 21px high beside its button: a target under 24px at 375px
+        $css = self::read( 'design/admin/stylesheets/pagelayout.css' );
+        $block = substr( $css, (int)strpos( $css, '@media (max-width: 760px) {' ) );
+        $this->assertMatchesRegularExpression( '/#maincontent :is\(input:not\(\[type\]\), input\[type=text\], input\[type=search\][^)]*\)[^{]*\{ min-height: var\(--a4-control-h\); \}/', $block );
+        $template = self::read( 'design/standard/templates/content/datatype/edit/ezobjectrelationlist.tpl' );
+        $this->assertStringContainsString( '<input type="text" class="halfbox hide ezobject-relation-search-text"', $template );
     }
 
     public function testPageLayoutsCarryTheViewportMeta()

@@ -473,6 +473,8 @@ $discoverCommands = function() use ( $rootDir, $extractDescription, $extractAlia
                 'type'        => 'php',
                 'binary'      => PHP_BINARY,
                 'description' => $extractDescription( $fp, 'php' ),
+                // "@alias exp:layouts" names the command exp:layouts; a bare alias stays in the extension's namespace
+                'aliases'     => $extractAliases( $fp, 'ext:' . $extName ),
             );
         }
 
