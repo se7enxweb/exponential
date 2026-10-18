@@ -4380,7 +4380,7 @@ df1654222d575929ea33d31d25976e0e  doc/specifications/6.0/velocity-engine-setting
 f215c05198661b115822ecf85b049791  doc/specifications/trunk/webdav/design.txt
 231361c745f55c967dbdc6a9e6428c90  doc/specifications/trunk/webdav/readme.txt
 5437549b02cb05d98a6c0e9faa2a9d6e  doc/specifications/trunk/webdav/testing.txt
-6189c5df4fc27778a61782f929c00a03  doc/standards/README.md
+df75d4f91455dbd534622d59abe81320  doc/standards/README.md
 1af0578c90d5deb67f8bc4f8fe9563b4  doc/standards/accessibility.md
 fed64be2edb9800e788d5f326fb2dcf7  doc/standards/apis-and-protocols.md
 ab1377780280d3c6dc841299eb2656f6  doc/standards/architecture/compatibility-releases-deployment.md
@@ -4535,7 +4535,7 @@ ab60e06628c4ccb2308856db10aea7fc  doc/standards/patterns/area-lib-ezsession.md
 39b1857ace75c0ea42172e2f8e74010f  doc/standards/patterns/area-lib-eztemplate.md
 a6ba9e05b130ada3369e589850db54dd  doc/standards/patterns/area-lib-ezutils.md
 f56f52be9dcadf413e89bfbb6eefe733  doc/standards/patterns/area-lib.md
-138d65bdf250691db85233b482f95697  doc/standards/patterns/area-settings.md
+000b8dbd44c105cc15ab04f50f6b5cf7  doc/standards/patterns/area-settings.md
 8d51b6bab2bd4b1316fed921a5367fb0  doc/standards/patterns/builder.md
 8b86164ff04a96e58338bec9b80140d8  doc/standards/patterns/chain.md
 30dca74e51deca2dab12d4d95737be2d  doc/standards/patterns/command.md
@@ -4547,7 +4547,7 @@ ace043d83d8a64806f2d8e67d82ecfa0  doc/standards/patterns/facade.md
 9deb7518faa7f8e5ccae56c6bfed6343  doc/standards/patterns/factory.md
 2d5a85d89a682e90a4685ced0d54a03b  doc/standards/patterns/fetch-function.md
 9f1e881de6eb53d0bdaf07c0a66668e2  doc/standards/patterns/front-controller.md
-a66b9d80c483aab3fa138d440131a6ae  doc/standards/patterns/ini-plugin-point.md
+ff595b392b319165f5b537f3faf81e0f  doc/standards/patterns/ini-plugin-point.md
 2a979f2464e87eb2fcd24c0c459ae627  doc/standards/patterns/interface.md
 49f14f915edd11c4e7b9c18cdbcc9daf  doc/standards/patterns/iterator.md
 ae60f3891bc0ba525d2989391a15a0a0  doc/standards/patterns/module-view.md

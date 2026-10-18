@@ -68,6 +68,7 @@ extension point of each. It is generated from the source code and can be rebuilt
 
 - [Source file header template (inherited, 4.1)](header.txt): the license header every PHP file of the 4.x code base
   began with, kept as history. New files use the header described in [Coding standards](coding-standards.md).
+- [Accessibility, security and compliance checklists](../help/leadership/accessibility-security-and-compliance-checklists.md) for project managers and buyers
 - [The license of this documentation](../README-LICENSE.md)
 - [Security hardening](../help/security-hardening.md), [Database support](../help/database-support.md) and
   [Operating system support](../help/os-support.md) for the operator's view of the same subjects.
