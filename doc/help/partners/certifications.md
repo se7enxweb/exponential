@@ -50,7 +50,7 @@ runs the program):
 - how long a certification stays valid and how it is renewed;
 - who may examine, and whether the Foundation endorses the certificates.
 
-Ask partner@exponential.earth before you plan a team's certification schedule.
+Ask the partner team (<https://exponential.earth/partner/contact-us>) before you plan a team's certification schedule.
 
 ## Preparing with the existing documentation
 
