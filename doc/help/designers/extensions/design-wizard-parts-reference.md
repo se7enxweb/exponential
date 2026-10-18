@@ -39,7 +39,7 @@ three edits by hand, or its pages have a broken title and load no stylesheets or
 
 2. **Printing the files.** The generated templates call `ezcss_require` and `ezscript_require`, which only collect
    files; nothing prints them. Add `{ezcss_load()}` at the end of `page_head.tpl` and `{ezscript_load()}` just before
-   `</body>` in `pagelayout.tpl` ([The ezcss and ezscript operators](../theme-design/ezcss-and-ezscript-operators.md)).
+   `</body>` in `pagelayout.tpl` (The ezcss and ezscript operators).
 3. **The character set.** Replace the generated `<meta charset=...>` line, which builds `utf-8` from the locale with
    `extract_left( 0 )` and works only by accident, with a plain `<meta charset="utf-8" />`.
 
@@ -48,8 +48,8 @@ rel="stylesheet">` for your stylesheet and a `<script>` element for jQuery.
 
 `settings/design.ini` marks `CSSFileList[]` and `JavaScriptList[]` as deprecated in favor of
 `FrontendCSSFileList[]` and `FrontendJavaScriptList[]`. The generated files work as they are; when you rework the
-head of your design, consider moving to the newer lists ([Loading stylesheets](../theme-design/loading-stylesheets.md),
-[Loading JavaScript](../theme-design/loading-javascript.md)).
+head of your design, consider moving to the newer lists (Loading stylesheets,
+Loading JavaScript).
 
 ## Settings parts
 
