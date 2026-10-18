@@ -33,7 +33,7 @@
 class expHelpSearch
 {
     /** Version of the index file format; a change builds a new index. */
-    const FORMAT = 2;
+    const FORMAT = 3;
 
     const DEFAULT_LIMIT = 20;
     const MAX_LIMIT = 50;
@@ -1100,7 +1100,10 @@ class expHelpSearch
                 isset( $doc['category'] ) ? (string)$doc['category'] : '',
                 isset( $doc['type'] ) ? (string)$doc['type'] : '',
                 $path,
-                preg_match( '#(?:^|/)(\d{1,2})\.\d+(?:\.\d+)?/#', $key, $version ) ? (string)(int)$version[1] : '',
+                // the major version of the directory the page is in, else the one the index found in the page (the release
+                // history of old versions)
+                preg_match( '#(?:^|/)(\d{1,2})\.\d+(?:\.\d+)?/#', $key, $version ) ? (string)(int)$version[1]
+                    : ( isset( $doc['version'] ) && preg_match( '/^\d{1,2}$/', (string)$doc['version'] ) ? (string)(int)$doc['version'] : '' ),
             );
             $text = isset( $doc['text'] ) ? (string)$doc['text'] : '';
             $headings = array();

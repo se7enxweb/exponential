@@ -251,7 +251,8 @@ class expHelpDocumentIndex
         // the code that builds the entries: a deploy of a changed parser or slugger builds the index again
         foreach ( array( __FILE__, ( new ReflectionClass( 'expHelpFrontMatter' ) )->getFileName(),
                          ( new ReflectionClass( 'expHelpAudience' ) )->getFileName(),
-                         class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '' ) as $code )
+                         class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '',
+                         class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
             if ( is_string( $code ) && $code !== '' )
                 $parts[] = basename( $code ) . ':' . (int)@filemtime( $code ) . ':' . (int)@filesize( $code );
         if ( $this->statFiles )
@@ -856,11 +857,17 @@ class expHelpDocumentIndex
                     $title = $heading['text'];
                     break;
                 }
+        // a plain text list of records (the release and branch history) is titled and summarized by its records
+        $records = $format === 'text' && strpos( $body, "\n- " ) !== false ? ( new expHelpRecordRenderer() )->describe( $body ) : null;
+        if ( $title === '' && $records !== null )
+            $title = $records['title'];
         if ( $title === '' )
             $title = self::fallbackTitle( $path, $body );
 
         $summary = isset( $meta['summary'] ) && is_string( $meta['summary'] ) ? trim( $meta['summary'] )
                  : ( isset( $meta['description'] ) && is_string( $meta['description'] ) ? trim( $meta['description'] ) : '' );
+        if ( $summary === '' && $records !== null )
+            $summary = $records['summary'];
         if ( $summary === '' )
             $summary = self::summary( $body, $format );
         $summary = self::truncate( $summary, self::SUMMARY_LENGTH );
@@ -903,6 +910,8 @@ class expHelpDocumentIndex
             'changed'  => $mtime,
             'size'     => isset( $file['size'] ) ? (int)$file['size'] : strlen( $text ),
             'root'     => isset( $file['root'] ) ? $file['root'] : strtok( $path, '/' ),
+            // the newest major version a record page (the release history) covers; search ranks older versions lower
+            'version'  => $records !== null ? $records['version'] : '',
         );
     }
 

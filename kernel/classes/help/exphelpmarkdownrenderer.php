@@ -187,6 +187,18 @@ class expHelpMarkdownRenderer
      */
     public function renderPlainText( $text, $currentId = '' )
     {
+        // a list of records (the release and branch history) is shown as tables, recognised by its shape
+        if ( strpos( (string)$text, "\n- " ) !== false )
+        {
+            $used = array();
+            $records = new expHelpRecordRenderer( array( 'translate' => array( $this, 't' ) ) );
+            $rendered = $records->render( $text, function( $heading ) use ( &$used )
+            {
+                return $this->options['id_prefix'] . self::slug( $heading, $used );
+            } );
+            if ( $rendered !== null )
+                return $rendered + array( 'frontMatter' => '' );
+        }
         $title = '';
         foreach ( explode( "\n", str_replace( array( "\r\n", "\r" ), "\n", (string)$text ), 40 ) as $line )
         {
@@ -1623,7 +1635,7 @@ class expHelpMarkdownRenderer
     /**
      * An interface word, translated.
      */
-    protected function t( $text )
+    public function t( $text )
     {
         if ( is_callable( $this->options['translate'] ) )
             return (string)call_user_func( $this->options['translate'], $text );

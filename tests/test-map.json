@@ -1602,7 +1602,11 @@
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
     ],
     "kernel/classes/help/exphelpmarkdownrenderer.php": [
-      "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
+      "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php",
+      "tests/tests/kernel/classes/help/expHelpRecordRendererTest.php"
+    ],
+    "kernel/classes/help/exphelprecordrenderer.php": [
+      "tests/tests/kernel/classes/help/expHelpRecordRendererTest.php"
     ],
     "kernel/classes/help/exphelphighlighter.php": [
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"

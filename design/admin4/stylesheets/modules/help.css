@@ -813,6 +813,118 @@
   text-decoration: none;
 }
 
+/* record pages (expHelpRecordRenderer): the release and branch history as tables per series */
+.a4-help-records-intro {
+  color: var(--a4-ink);
+}
+.a4-help-records-stats {
+  color: var(--a4-muted);
+}
+.a4-help-records-group {
+  margin-top: var(--a4-space-6);
+}
+.a4-help-records .a4-help-h > .a4-tag {
+  margin-inline-start: var(--a4-space-2);
+  vertical-align: middle;
+}
+.a4-help-records-details > summary,
+.a4-help-records-range {
+  color: var(--a4-muted);
+}
+.a4-help-records-table th[scope="row"] {
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-s);
+  white-space: nowrap;
+}
+.a4-help-records-table td,
+.a4-help-records-table th {
+  font-size: var(--a4-text-s);
+}
+.a4-help-records-table time {
+  white-space: nowrap;
+}
+.a4-help-records-table tr:target {
+  outline: 2px solid var(--a4-accent);
+  outline-offset: -2px;
+}
+.a4-help-records-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-records-list > li + li {
+  margin-top: var(--a4-space-1);
+}
+.a4-help-records-key {
+  color: var(--a4-muted);
+}
+.a4-help-records-sub {
+  display: block;
+  color: var(--a4-muted);
+}
+.a4-help-records-none {
+  color: var(--a4-muted);
+  font-style: italic;
+}
+.a4-help-records-url {
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+.a4-help-records-dead {
+  margin-inline-start: var(--a4-space-1);
+  white-space: nowrap;
+}
+.a4-help-records-note {
+  font-style: italic;
+}
+.a4-help-records-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-3);
+  margin: var(--a4-space-3) 0;
+}
+.a4-help-records-filter {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+}
+.a4-help-records-filter > .a4-field {
+  min-width: 16rem;
+  max-width: 100%;
+}
+.a4-help-records-count {
+  margin: 0;
+  color: var(--a4-muted);
+}
+.a4-help-records-table tr[hidden] {
+  display: none;
+}
+.a4-help-sort {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.a4-help-sort::after {
+  content: "\2195";
+  margin-inline-start: var(--a4-space-1);
+  color: var(--a4-muted);
+}
+[aria-sort="ascending"] > .a4-help-sort::after {
+  content: "\2191";
+}
+[aria-sort="descending"] > .a4-help-sort::after {
+  content: "\2193";
+}
+@media print {
+  .a4-help-records-tools {
+    display: none;
+  }
+}
 @media print {
   .a4-help-pre,
   .a4-help-body .a4-help-pre {

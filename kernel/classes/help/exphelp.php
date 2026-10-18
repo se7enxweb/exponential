@@ -126,7 +126,11 @@ class expHelp
                       'collapse' => ezpI18n::tr( $c, 'Hide section: %title' ),
                       'expand' => ezpI18n::tr( $c, 'Show section: %title' ),
                       'relaxed' => ezpI18n::tr( $c, 'No page has every word; these have some of them.' ),
-                      'clear' => ezpI18n::tr( $c, 'Clear' ) );
+                      'clear' => ezpI18n::tr( $c, 'Clear' ),
+                      'recordsFilter' => ezpI18n::tr( $c, 'Filter' ),
+                      'recordsPlaceholder' => ezpI18n::tr( $c, 'Version, name, year or revision' ),
+                      'recordsCount' => ezpI18n::tr( $c, '%count of %total entries' ),
+                      'sortBy' => ezpI18n::tr( $c, 'Sort by %title' ) );
     }
 
     /**

@@ -1121,6 +1121,7 @@ return array(
       'expHelpLinks'                                                 => 'kernel/classes/help/exphelplinks.php',
       'expHelpMarkdownRenderer'                                      => 'kernel/classes/help/exphelpmarkdownrenderer.php',
       'expHelpReadPolicyGrant'                                       => 'kernel/classes/help/exphelpreadpolicygrant.php',
+      'expHelpRecordRenderer'                                        => 'kernel/classes/help/exphelprecordrenderer.php',
       'expHelpSearch'                                                => 'kernel/classes/help/exphelpsearch.php',
       'expImageUploadValidator'                                      => 'kernel/classes/expimageuploadvalidator.php',
       'expInfo'                                                      => 'lib/ezutils/classes/expinfo.php',
