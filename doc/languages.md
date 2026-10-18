@@ -4,9 +4,9 @@ The one place that says which languages Exponential supports, at which level, an
 were taken on 15 October 2026, those of the administration translations on 16 October 2026 (Exponential 6.0.15).
 
 In short: **219 locale files** (213 languages and countries plus 6 variations, in 32 scripts, 28 of them written
-right to left) can be chosen as content languages and siteaccess locales; **30 administration translations**
-exist, eight of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Hebrew, Latin and, for
-fun, Klingon).
+right to left) can be chosen as content languages and siteaccess locales; **31 administration translations**
+exist, nine of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Ukrainian, Hebrew, Latin
+and, for fun, Klingon).
 Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 ## Contents
@@ -53,8 +53,8 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `lat-VA`, `tlh-QO` (the last six machine-assisted, see [section 4](#4-every-administration-translation)) |
-| **Partial interface, full content** | An administration translation exists but covers 16 to 39% of today's strings (it was complete for an older release). Strings without a translation show in English. Content as above. | the 22 older translations with strings, see [section 4](#4-every-administration-translation) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `lat-VA`, `tlh-QO`, `ukr-UA` (the last seven machine-assisted, see [section 4](#4-every-administration-translation)) |
+| **Partial interface, full content** | An administration translation exists but covers 16 to 39% of today's strings (it was complete for an older release). Strings without a translation show in English. Content as above. | the 21 older translations with strings, see [section 4](#4-every-administration-translation) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 170 added in 6.0.15 |
 
 `nno-NO` has a translation file without a single translated string, so it is content only in practice.
@@ -295,7 +295,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `tuk-TM` | Turkmen | Türkmen dili | Central Asia and Caucasus | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `tur-TR` | Turkish | Türkçe | Middle East | LTR | Latin (`Latn`) | older, hand-made | — |
 | `uig-CN` | Uyghur | ئۇيغۇرچە | East Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
-| `ukr-UA` | Ukrainian | Українська | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made, fixed in 6.0.15 | — |
+| `ukr-UA` | Ukrainian | Українська | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made, fixed in 6.0.15 | 100% |
 | `urd-IN` | Urdu (India) | اردو (بھارت) | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `urd-PK` | Urdu (Pakistan) | اردو (پاکستان) | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `uzb-UZ` | Uzbek | O‘zbek | Central Asia and Caucasus | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -410,6 +410,7 @@ source text, and the interface language choice counts English as 100%.
 | `lat-VA` | 100% (16,623 of 16,623) | 100% (16,623 of 16,623) |
 | `tlh-QO` | 100% (16,623 of 16,623) | 100% (16,623 of 16,623) |
 | `fre-FR` | 100% (17,295 of 17,295) | 100% (17,295 of 17,295) |
+| `ukr-UA` | 100% (17,295 of 17,295) | 100% (17,295 of 17,295) |
 | `ger-DE` | 99% (16,514 of 16,529) | 99% (16,509 of 16,623) |
 | `por-BR` | 99% (6,465 of 6,512) | 38% (6,465 of 16,623) |
 | `swe-SE` | 99% (6,463 of 6,512) | 38% (6,463 of 16,623) |
@@ -448,6 +449,10 @@ Notes:
   untranslated file of that day. Its older hand-made translations stay; the strings added since, and about ninety
   older ones that had lost a placeholder, a tag or a line break or had stayed English, were translated
   machine-assisted. A review by a native speaker is welcome. The catalogues of ezoe and ezjscore are complete too.
+- **Ukrainian** (`ukr-UA`) is new and complete since 17 October 2026, measured against the 17,295 strings of the
+  untranslated file of that day, machine-assisted throughout; the catalogues of ezoe and ezjscore are complete too.
+  A review by a native speaker is welcome. Ukrainian has three plural forms and the source texts only two
+  (`%count item(s)`), so a few counts read awkwardly for 2 to 4; most such texts are phrased as "label: %count".
 - The catalogues of the active extensions are complete in these five languages too; each extension releases them.
 - Two directories have no locale file of the same meaning: `ser-SR` and `srp-RS` are both Serbian (`ser-SR` in Latin
   script, `srp-RS` in Cyrillic; both locale files exist).
@@ -658,8 +663,9 @@ reason to `tests/tests/lib/ezi18n/translation-identical-allowlist.json`; never w
 language joins the test's list of languages.
 
 Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the eight
-complete ones, and a review of the machine-assisted Spanish, French, Hebrew, Latin and Klingon translations is the quickest
-win.
+Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the nine
+complete ones, and a review of the machine-assisted Spanish, French, Ukrainian, Hebrew, Latin and Klingon
+translations is the quickest win.
 
 ## 9. Right-to-left languages
 

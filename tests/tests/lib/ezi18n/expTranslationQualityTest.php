@@ -19,12 +19,14 @@
  */
 class expTranslationQualityTest extends PHPUnit\Framework\TestCase
 {
-    const LANGUAGES = array( 'esl-ES', 'esl-MX', 'fre-FR', 'heb-IL', 'lat-VA', 'tlh-QO' );
+    const LANGUAGES = array( 'esl-ES', 'esl-MX', 'fre-FR', 'heb-IL', 'lat-VA', 'tlh-QO', 'ukr-UA' );
 
     const TAG = '/<[ \t\n\r]*\/?[ \t\n\r]*[A-Za-z][A-Za-z0-9]*(?:[ \t\n\r][^<>]*)?\/?[ \t\n\r]*>/';
     const ENTITY = '/&(?:#[0-9]+|#x[0-9A-Fa-f]+|[A-Za-z][A-Za-z0-9]*);/';
-    const LEADING = '/^[ \t\n\r\f\v]*/';
-    const TRAILING = '/[ \t\n\r\f\v]*\z/';
+    // \x0B, not \v: without the u modifier \v also matches the byte 0x85, the second byte of Cyrillic letters
+    // such as х (D1 85), and a Ukrainian text ending in х counted as ending in whitespace.
+    const LEADING = '/^[ \t\n\r\f\x0B]*/';
+    const TRAILING = '/[ \t\n\r\f\x0B]*\z/';
 
     private static $allowlist;
 
