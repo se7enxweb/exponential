@@ -1048,11 +1048,6 @@ body,
     align-items: center;
     gap: 2px;
   }
-  /* the button stands in the tab's end padding: a tab with a mega menu is 16px wider than without, not 26px, so three
-     such tabs (Dashboard, Users, Setup) take less room in the row than two did: no tab moves into "More" for them */
-  .navbar-menu .navbar-bar > li.a4-mega-item > a,
-  .navbar-menu .navbar-bar > li.a4-mega-item > a.selected,
-  .navbar-menu .navbar-bar > li.a4-mega-item > a.selected:hover { padding-inline-end: calc(var(--a4-space-1) / 2); }
   .a4-mega-toggle {
     display: inline-flex;
     align-items: center;

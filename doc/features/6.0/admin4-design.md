@@ -511,7 +511,7 @@ icons, descriptions and access checks of a menu.ini section:
 |---|---|---|---|
 | `setup` | `design:parts/setup/mega_menu.tpl` (the Setup menu's own `parts/setup/menu.tpl`) | `Leftmenu_setup` | nineteen, see below |
 | `users` | `design:parts/user/mega_menu.tpl` | `Leftmenu_user_mega` | eight, see below |
-| `dashboard` | `design:parts/my/mega_menu.tpl` | `Leftmenu_my_mega` | eighteen, see below |
+| `dashboard` | `design:parts/my/mega_menu.tpl` | `Leftmenu_my_mega` | seventeen, see below |
 
 To give another tab one (an extension's, say): write a template in admin4 that includes `parts/ini_menu.tpl` with
 the tab's section, `menu_layout='tiles'`, `tiles_layout='mega'` and the `i18n_hash` of its link names; name it in
@@ -562,19 +562,19 @@ Change password and Edit profile last, as in the left menu):
 
 | Group | Links (`MegaMenuLinks[]`) |
 |---|---|
-| Overview | `overview-dashboard` (Dashboard), `overview-help_center` (Help center) |
+| Overview | `overview-dashboard` (Dashboard); the Help center (`overview-help_center`) joins it once the help adds its link to `[Leftmenu_my]` |
 | Your work | `work-my_drafts`, `work-my_pending`, `work-collaboration`, `work-my_bookmarks` |
 | Activity and audit | `activity-console` (Audit trail), `activity-expai_events` (AI events) |
 | Exponential Intelligence | `ei-expai`, `ei-expai_vector`, `ei-expai_chain`, `ei-expai_alttext`, `ei-expai_log`, `ei-expai_help` |
 | My account | `account-my_notifications`, `account-my_mail`, `account-change_password`, `account-edit_profile` |
 
-Eighteen links, every function of the tab but the shop's preferred currency, which stays in the left menu. Each is
+Seventeen links, every function of the tab but the shop's preferred currency, which stays in the left menu. Each is
 shown only to a user who may open it (the expai links need `expai/write` and their own policies, the audit links
-`audit/read`, the Help center `exphelp/read`), and a group left without a link is not drawn.
+`audit/read`), and a group left without a link is not drawn.
 
 The panel is wide (`[Topmenu_dashboard] MegaMenuLayout=wide`): instead of up to three groups of 17rem side by side,
 the groups are set in up to four balanced columns of 15rem (CSS columns; a group is never split), four at 1440px,
-three at 960px (a 1920px screen at 200% zoom), two below. Eighteen links with their descriptions then fit the
+three at 960px (a 1920px screen at 200% zoom), two below. Seventeen links with their descriptions then fit the
 window's height without scrolling inside the panel. Another tab with a long choice can take the same layout with
 `MegaMenuLayout=wide` in its `[Topmenu_<tab>]`; without it (Setup, Users) the panel is drawn as before.
 
@@ -992,7 +992,7 @@ Policies of a role (`role/view`, `role/edit`) and the role cards of `role/list` 
 | `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuTemplate` | `design:parts/setup/mega_menu.tpl` (setup), `design:parts/user/mega_menu.tpl` (users), `design:parts/my/mega_menu.tpl` (dashboard) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_user_mega` | `MegaMenuLinks[]` | eight links of the Users tab (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuLayout` | unset (up to three groups side by side); `wide` for dashboard (up to four balanced columns) | siteaccess |
-| `settings/menu.ini` | `Leftmenu_my_mega` | `MegaMenuLinks[]` | eighteen links of the Dashboard tab, every Exponential Intelligence link among them (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
+| `settings/menu.ini` | `Leftmenu_my_mega` | `MegaMenuLinks[]` | seventeen links of the Dashboard tab, every Exponential Intelligence link among them (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_setup` | `MegaMenuLinks[]` | nineteen frequent links, at most 19 shown (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the nine groups of `Leftmenu_setup` (Design and Audit for moved tabs, AI and Updates for extensions' links) | siteaccess |

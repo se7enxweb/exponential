@@ -1115,11 +1115,11 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         // the audit console of the tab's menu (audit/console) as the audit menu's console
         $this->assertSame( $ini['Leftmenu_my']['Links']['audit'], $ini['Leftmenu_audit']['Links']['console'] );
         $this->assertContains( 'activity-console', $choice );
-        // every link of Exponential Intelligence, and the Help center
+        // every link of Exponential Intelligence
         foreach ( self::DASHBOARD_EI_LINKS as list( $section, $link ) )
             $this->assertNotEmpty( array_filter( $chosen, function ( $c ) use ( $section, $link ) { return $c[1] === $section && $c[2] === $link; } ),
                                    "the EI link [$section] $link is in the Dashboard's mega menu" );
-        $this->assertContains( 'overview-help_center', $choice );
+        $this->assertNotContains( 'overview-help_center', $choice, 'the Help center comes with its own link, not before it' );
         // the order of the left menu: the audit before Exponential Intelligence, Change password and Edit profile last
         $this->assertLessThan( array_search( 'ei-expai', $choice ), array_search( 'activity-console', $choice ) );
         $this->assertSame( array( 'account-change_password', 'account-edit_profile' ), array_slice( $choice, -2 ) );
