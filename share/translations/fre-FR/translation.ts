@@ -73230,5 +73230,9 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Your account</source>
         <translation>Votre compte</translation>
     </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Guides et référence pour tous ceux qui travaillent avec cette installation, tirés de la documentation de sa propre version.</translation>
+    </message>
 </context>
 </TS>

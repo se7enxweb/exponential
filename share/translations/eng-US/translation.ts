@@ -71896,5 +71896,9 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your account</source>
         <translation>Your account</translation>
     </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</translation>
+    </message>
 </context>
 </TS>

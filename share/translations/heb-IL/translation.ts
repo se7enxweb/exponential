@@ -71866,5 +71866,9 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your account</source>
         <translation>החשבון שלך</translation>
     </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>מדריכים וחומר עיון לכל מי שעובד עם התקנה זו, מתוך התיעוד של הגרסה שלה.</translation>
+    </message>
 </context>
 </TS>
