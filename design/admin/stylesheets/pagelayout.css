@@ -1568,6 +1568,9 @@ html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
   #maincontent :is(img, video, iframe, object, embed) { max-width: 100%; height: auto; }
   #maincontent pre { max-width: 100%; overflow-x: auto; }
   #page :is(input.button, input.defaultbutton, input.button-disabled, button.button, a.button, .a4-btn, .exp-dt-button) { min-height: var(--a4-control-h); }
+  /* text fields as high as the buttons beside them: the relation list's "Find objects" field was 21px high, 2px from
+     its button (a target under 24px, WCAG 2.5.8) */
+  #maincontent :is(input:not([type]), input[type=text], input[type=search], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=password], select:not([multiple]):not([size])) { min-height: var(--a4-control-h); }
   #maincontent :is(td, th) > a[href] { display: inline-flex; align-items: center; min-height: var(--a4-control-h); }
   ul.tabs li a, ul.tabs li span.disabled { display: flex; align-items: center; min-height: var(--a4-control-h); box-sizing: border-box; }
 }
