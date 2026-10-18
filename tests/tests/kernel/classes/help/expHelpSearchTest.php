@@ -81,6 +81,38 @@ class expHelpSearchTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'doc/guides/velocity.md', $hit['path'] );
     }
 
+    public function testSectionsFindSetextAndRepeatedHeadingsAsTheIndexDoes()
+    {
+        $source = "---\ntitle: x\n---\nIntro text.\n\nFirst part\n==========\n\nOne.\n\n## Usage\n\nTwo.\n\n```\n# not a heading\n```\n\n- item\n---\n\n## Usage\n\nThree.\n\nSecond `part`\n-------------\n\nFour.\n";
+        $sections = expHelpSearch::sections( $source );
+        $headings = array_map( function ( $s ) { return array( $s['heading'], $s['anchor'] ); }, $sections );
+        $this->assertSame( array( array( null, null ), array( 'First part', 'first-part' ), array( 'Usage', 'usage' ),
+                                  array( 'Usage', 'usage-1' ), array( 'Second part', 'second-part' ) ), $headings );
+        $this->assertStringContainsString( '# not a heading', $sections[2]['text'] );
+        if ( is_callable( array( 'expHelpDocumentIndex', 'headings' ) ) )
+        {
+            $index = array_map( function ( $h ) { return array( $h['text'], $h['anchor'] ); }, expHelpDocumentIndex::headings( substr( $source, strpos( $source, 'Intro' ) ) ) );
+            $this->assertSame( array_slice( $headings, 1 ), $index, 'the same headings and anchors as the document index' );
+        }
+    }
+
+    public function testATextPageHasNoAnchors()
+    {
+        $search = expHelpSearch::fromDocuments( array( 'features/3.8/notes.txt' => array( 'title' => 'Notes', 'type' => 'feature',
+            'text' => "Notes\n=====\n\n# Section\n\nThe zebra lives here.\n" ) ) );
+        $hit = $search->search( 'zebra ' )['hits'][0];
+        $this->assertNull( $hit['anchor'] );
+        $this->assertStringEndsWith( '/features/3.8/notes.txt', $hit['url'] );
+        $this->assertStringContainsString( '<mark>zebra</mark>', $hit['snippet'] );
+    }
+
+    public function testPagesOfOlderVersionsRankLower()
+    {
+        $page = array( 'title' => 'Image handling', 'type' => 'feature', 'text' => "# Image handling\n\nImages are scaled.\n" );
+        $search = expHelpSearch::fromDocuments( array( 'features/3.10/images.md' => $page, 'features/6.0/images.md' => $page, 'features/5.1/images.md' => $page ) );
+        $this->assertSame( array( 'features/6.0/images.md', 'features/5.1/images.md', 'features/3.10/images.md' ), self::ids( $search->search( 'images ' ) ) );
+    }
+
     public function testChangelogRanksBelowAGuideWithTheSameWords()
     {
         $ids = self::ids( self::search()->search( 'velocity restart ' ) );
