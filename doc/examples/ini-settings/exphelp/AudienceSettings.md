@@ -86,7 +86,7 @@ AudienceIcons[sales-marketing]=graph-up-arrow
 
 > <pattern>;<audience,audience>, first match wins ("\*" also matches "/")  
 
-Default: a list of 58: `doc/help/leadership/*;project-manager`, `doc/help/business/*;sales-marketing`, `doc/LICENSE-GFDL-1.3.txt;editor,admin,developer,user`, `doc/glossary.md;editor,admin,developer,user`, `doc/languages.md;admin,developer`, `doc/guides/README.md;editor,admin,developer`, `doc/guides/getting-started.md;admin,developer`, `doc/guides/content-model-and-editing.md;editor,developer`, `doc/guides/bookmarks.md;editor`, `doc/guides/collected-information.md;editor,admin`, `doc/guides/urls-and-aliases.md;editor,admin`, `doc/guides/content-history.md;editor,admin` ....
+Default: a list of 60: `doc/help/leadership/*;project-manager`, `doc/help/business/*;sales-marketing`, `doc/LICENSE-GFDL-1.3.txt;editor,admin,developer,user`, `doc/glossary.md;editor,admin,developer,user`, `doc/languages.md;admin,developer`, `doc/guides/README.md;editor,admin,developer`, `doc/guides/getting-started.md;admin,developer`, `doc/guides/content-model-and-editing.md;editor,developer`, `doc/guides/bookmarks.md;editor`, `doc/guides/collected-information.md;editor,admin`, `doc/guides/urls-and-aliases.md;editor,admin`, `doc/guides/content-history.md;editor,admin` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -114,7 +114,7 @@ PathRules[]=doc/guides/test-language-lorem-ipsum.md;admin,developer
 PathRules[]=doc/guides/ui-switch-design.md;admin
 PathRules[]=doc/guides/ui-switch-settings.md;admin
 PathRules[]=doc/guides/two-factor-login.md;user,admin
-# ... 38 more in the shipped file
+# ... 40 more in the shipped file
 */ ?>
 ```
 
@@ -122,7 +122,7 @@ PathRules[]=doc/guides/two-factor-login.md;user,admin
 
 > <type> => <audience,audience>, when nothing else says  
 
-Default: a hash of 11: `help=editor,user`, `guide=admin`, `feature=admin,developer`, `bc=developer,admin`, `install=admin,developer`, `changelog=admin,developer`, `specification=developer`, `history=developer`, `example=developer,admin`, `generated=developer,admin`, `reference=developer,admin`.
+Default: a hash of 12: `help=editor,user`, `guide=admin`, `feature=admin,developer`, `bc=developer,admin`, `install=admin,developer`, `changelog=admin,developer`, `specification=developer`, `history=developer`, `example=developer,admin`, `generated=developer,admin`, `reference=developer,admin`, `catalogue=developer`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -141,6 +141,7 @@ TypeDefaults[history]=developer
 TypeDefaults[example]=developer,admin
 TypeDefaults[generated]=developer,admin
 TypeDefaults[reference]=developer,admin
+TypeDefaults[catalogue]=developer
 */ ?>
 ```
 

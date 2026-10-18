@@ -43,6 +43,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:explogs](explogs.md) | exp:logs | The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives |
 | [exp:exploremipsumfill](exploremipsumfill.md) | exp:loremipsum | Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text |
 | [exp:explovestack](explovestack.md) | exp:lovestack | Check an installation coming from LoveStack (read-only), and record its database as Exponential's (migrate) |
+| [exp:exppatterncatalogue](exppatterncatalogue.md) |  |  |
 | [exp:exprepair](exprepair.md) |  | Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run |
 | [exp:ezapplytemplate](ezapplytemplate.md) |  | Apply the template blocks found in files and write the files back (exit code 0, 1 or 2) |
 | [exp:ezasynchronouspublisher](ezasynchronouspublisher.md) |  |  |

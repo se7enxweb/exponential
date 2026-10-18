@@ -115,8 +115,9 @@ TitleMatchBoost=1.4
 > same words, changelogs and history below it  
 > The generated reference examples (doc/examples/, ./console exp:help:examples): thousands of short pages that  
 > repeat setting, operator and view names; below the written pages that explain the same words  
+> the generated pattern catalogue (doc/standards/patterns/) lists thousands of class names: below the written pages  
 
-Default: a hash of 6: `help=1.5`, `guide=1.3`, `specification=0.8`, `changelog=0.45`, `history=0.6`, `generated=0.5`.
+Default: a hash of 7: `help=1.5`, `guide=1.3`, `specification=0.8`, `changelog=0.45`, `history=0.6`, `generated=0.5`, `catalogue=0.5`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -130,6 +131,7 @@ TypeBoost[specification]=0.8
 TypeBoost[changelog]=0.45
 TypeBoost[history]=0.6
 TypeBoost[generated]=0.5
+TypeBoost[catalogue]=0.5
 */ ?>
 ```
 

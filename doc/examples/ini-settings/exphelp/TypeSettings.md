@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > What kind of page a file is: its front matter (type: guide), else the first rule that matches.  
 > <pattern>;<type>, first match wins  
 
-Default: a list of 13: `doc/help/*;help`, `doc/guides/*;guide`, `doc/features/*;feature`, `doc/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/install/*;install`, `doc/INSTALL.md;install`, `doc/specifications/*;specification`, `doc/history/*;history`, `doc/release-overview;history`, `doc/branch-overview;history`, `doc/examples/*;example` ....
+Default: a list of 14: `doc/help/*;help`, `doc/guides/*;guide`, `doc/features/*;feature`, `doc/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/install/*;install`, `doc/INSTALL.md;install`, `doc/specifications/*;specification`, `doc/history/*;history`, `doc/release-overview;history`, `doc/branch-overview;history`, `doc/examples/*;example` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,13 +42,14 @@ PathRules[]=doc/history/*;history
 PathRules[]=doc/release-overview;history
 PathRules[]=doc/branch-overview;history
 PathRules[]=doc/examples/*;example
+PathRules[]=doc/standards/patterns/*;catalogue
 PathRules[]=*;reference
 */ ?>
 ```
 
 ## TypeNames
 
-Default: a hash of 11: `help=Help`, `guide=Guide`, `feature=Feature`, `bc=Upgrade note`, `install=Installation`, `changelog=Changelog`, `specification=Specification`, `history=History`, `example=Example`, `generated=Generated reference`, `reference=Reference`.
+Default: a hash of 12: `help=Help`, `guide=Guide`, `feature=Feature`, `bc=Upgrade note`, `install=Installation`, `changelog=Changelog`, `specification=Specification`, `history=History`, `example=Example`, `generated=Generated reference`, `reference=Reference`, `catalogue=Generated catalogue`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -67,6 +68,7 @@ TypeNames[history]=History
 TypeNames[example]=Example
 TypeNames[generated]=Generated reference
 TypeNames[reference]=Reference
+TypeNames[catalogue]=Generated catalogue
 */ ?>
 ```
 

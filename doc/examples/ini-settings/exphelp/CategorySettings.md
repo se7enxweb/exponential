@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > The sections of the help, in dashboard order. A page's category: its front matter (category: editing), else the  
 > first PathRules\[\] that matches, else TypeDefaults\[<type>\]  
 
-Default: a list of 20: `getting-started`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `shortcuts`, `support`, `leadership`, `business` ....
+Default: a list of 21: `getting-started`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `shortcuts`, `support`, `leadership`, `business` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -44,18 +44,19 @@ Categories[]=leadership
 Categories[]=business
 Categories[]=administration
 Categories[]=features
+Categories[]=standards
 Categories[]=development
 Categories[]=examples
 Categories[]=install-upgrade
 Categories[]=release-notes
 Categories[]=history
-Categories[]=reference
+# ... 1 more in the shipped file
 */ ?>
 ```
 
 ## CategoryNames
 
-Default: a hash of 20: `getting-started=Getting started`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `shortcuts=Keyboard shortcuts`, `support=Help and support`, `leadership=Project leadership`, `business=Sales and marketing` ....
+Default: a hash of 21: `getting-started=Getting started`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `shortcuts=Keyboard shortcuts`, `support=Help and support`, `leadership=Project leadership`, `business=Sales and marketing` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -77,12 +78,13 @@ CategoryNames[leadership]=Project leadership
 CategoryNames[business]=Sales and marketing
 CategoryNames[administration]=Administration
 CategoryNames[features]=Features
+CategoryNames[standards]=Standards
 CategoryNames[development]=Development
 CategoryNames[examples]=Examples
 CategoryNames[install-upgrade]=Installation and upgrades
 CategoryNames[release-notes]=Release notes
 CategoryNames[history]=History
-CategoryNames[reference]=Reference
+# ... 1 more in the shipped file
 */ ?>
 ```
 
@@ -90,7 +92,7 @@ CategoryNames[reference]=Reference
 
 > Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
 
-Default: a hash of 20: `getting-started=signpost-split`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `shortcuts=input-cursor-text`, `support=info-circle`, `leadership=diagram-3`, `business=graph-up-arrow` ....
+Default: a hash of 21: `getting-started=signpost-split`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `shortcuts=input-cursor-text`, `support=info-circle`, `leadership=diagram-3`, `business=graph-up-arrow` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -112,12 +114,13 @@ CategoryIcons[leadership]=diagram-3
 CategoryIcons[business]=graph-up-arrow
 CategoryIcons[administration]=gear
 CategoryIcons[features]=stars
+CategoryIcons[standards]=check2-square
 CategoryIcons[development]=code-square
 CategoryIcons[examples]=file-earmark-code
 CategoryIcons[install-upgrade]=box-seam
 CategoryIcons[release-notes]=journal-text
 CategoryIcons[history]=clock-history
-CategoryIcons[reference]=collection
+# ... 1 more in the shipped file
 */ ?>
 ```
 
@@ -125,7 +128,7 @@ CategoryIcons[reference]=collection
 
 > <pattern>;<category>, first match wins  
 
-Default: a list of 60: `doc/help/leadership/*;leadership`, `doc/help/business/*;business`, `doc/LICENSE-GFDL-1.3.txt;reference`, `doc/glossary.md;reference`, `doc/languages.md;languages`, `doc/guides/README.md;getting-started`, `doc/guides/getting-started.md;getting-started`, `doc/guides/content-model-and-editing.md;editing`, `doc/guides/bookmarks.md;editing`, `doc/guides/collected-information.md;editing`, `doc/guides/urls-and-aliases.md;editing`, `doc/guides/content-history.md;publishing` ....
+Default: a list of 61: `doc/help/leadership/*;leadership`, `doc/help/business/*;business`, `doc/LICENSE-GFDL-1.3.txt;reference`, `doc/glossary.md;reference`, `doc/languages.md;languages`, `doc/guides/README.md;getting-started`, `doc/guides/getting-started.md;getting-started`, `doc/guides/content-model-and-editing.md;editing`, `doc/guides/bookmarks.md;editing`, `doc/guides/collected-information.md;editing`, `doc/guides/urls-and-aliases.md;editing`, `doc/guides/content-history.md;publishing` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -153,7 +156,7 @@ PathRules[]=doc/guides/test-language-lorem-ipsum.md;languages
 PathRules[]=doc/guides/ui-switch-design.md;administration
 PathRules[]=doc/guides/ui-switch-settings.md;administration
 PathRules[]=doc/guides/two-factor-login.md;account
-# ... 40 more in the shipped file
+# ... 41 more in the shipped file
 */ ?>
 ```
 
@@ -161,7 +164,7 @@ PathRules[]=doc/guides/two-factor-login.md;account
 
 > <type> => <category>, when nothing else says  
 
-Default: a hash of 11: `help=getting-started`, `guide=administration`, `feature=features`, `bc=install-upgrade`, `install=install-upgrade`, `changelog=release-notes`, `specification=development`, `history=history`, `example=examples`, `generated=examples`, `reference=reference`.
+Default: a hash of 12: `help=getting-started`, `guide=administration`, `feature=features`, `bc=install-upgrade`, `install=install-upgrade`, `changelog=release-notes`, `specification=development`, `history=history`, `example=examples`, `generated=examples`, `reference=reference`, `catalogue=standards`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -180,6 +183,7 @@ TypeDefaults[history]=history
 TypeDefaults[example]=examples
 TypeDefaults[generated]=examples
 TypeDefaults[reference]=reference
+TypeDefaults[catalogue]=standards
 */ ?>
 ```
 

@@ -49,7 +49,7 @@ AudiencePageLimit=4
 
 > Page types the audience cards never list (they are found through the search and the categories)  
 
-Default: a list of 5: `changelog`, `history`, `bc`, `specification`, `generated`.
+Default: a list of 6: `changelog`, `history`, `bc`, `specification`, `generated`, `catalogue`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -62,6 +62,7 @@ AudienceExcludeTypes[]=history
 AudienceExcludeTypes[]=bc
 AudienceExcludeTypes[]=specification
 AudienceExcludeTypes[]=generated
+AudienceExcludeTypes[]=catalogue
 */ ?>
 ```
 
