@@ -118,7 +118,7 @@ class expHelpNavigation
             if ( @file_put_contents( $tmp, $html, LOCK_EX ) !== false )
             {
                 $permissions = eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' );
-                @chmod( $tmp, preg_match( '/^0?[0-7]{3}$/', (string)$permissions ) ? octdec( $permissions ) : 0664 );
+                @chmod( $tmp, eZFile::fileMode( preg_match( '/^0?[0-7]{3}$/', (string)$permissions ) ? octdec( $permissions ) : 0664 ) );
                 if ( !@rename( $tmp, $file ) )
                     @unlink( $tmp );
             }
