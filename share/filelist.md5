@@ -185,7 +185,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-8a5eb56a17051781707d2a31aea2bb03  composer.json
+4646426096705698bf5c6a8924b98dda  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -425,7 +425,7 @@ ac31521e1d3e3362c34b594c91a035dd  design/admin/templates/content/dashboard.tpl
 be10703720b7ceaf157f701c0edca88f  design/admin/templates/content/edit.tpl
 20fc16a593439b8ac7f753ab9aea79a3  design/admin/templates/content/edit_attribute.tpl
 00f93086667ce9e241dae6c699728f85  design/admin/templates/content/edit_conflict.tpl
-a038803bfb7afe020d14c41475a8859b  design/admin/templates/content/edit_draft.tpl
+1767722311c704a224362368f377ac61  design/admin/templates/content/edit_draft.tpl
 b296af3623023fd29dede1e7a28c87b5  design/admin/templates/content/edit_languages.tpl
 e97cba76d5487646dc6b002d88fc9cbd  design/admin/templates/content/edit_locations.tpl
 0068136b71d0d6b37f96b14ef7aa115c  design/admin/templates/content/edit_menu.tpl
@@ -511,15 +511,15 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 60e288bd8fb5708e034ac8c4000e36e1  design/admin/templates/error/shop/3.tpl
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
 a21abf4515a9de1f22cc061b2b9831c2  design/admin/templates/exphelp/dashboard.tpl
-5e5f404b3aef9f255982ee00972db267  design/admin/templates/exphelp/manual.tpl
-3267dc924dc6e8bb85f80453aee65b52  design/admin/templates/exphelp/parts/dashboard_content.tpl
+9dc6e969756b3692c17f14c4364e36dd  design/admin/templates/exphelp/manual.tpl
+5ed77b74cfcb4441ec7ebbc677c22267  design/admin/templates/exphelp/parts/dashboard_content.tpl
 d7baa6ee646fff454b4689f8ef2279cb  design/admin/templates/exphelp/parts/manual_toc.tpl
 09875679251690e7ef0399b30260fdb4  design/admin/templates/exphelp/parts/viewer_meta.tpl
 835295e2c2b1ba2b36871512ccae3213  design/admin/templates/exphelp/parts/viewer_nav.tpl
 69992051147dd0f6b3dbc0892bee4fa9  design/admin/templates/exphelp/parts/viewer_toc.tpl
 531d9d1d54c0683eca68c623119174f9  design/admin/templates/exphelp/report.tpl
 51b24a03beb437397748f04b2547a222  design/admin/templates/exphelp/search.tpl
-b1bc105925c14c772674ad6a9bbe5398  design/admin/templates/exphelp/topic.tpl
+601a5a9008268305f07ebcceec6a9df6  design/admin/templates/exphelp/topic.tpl
 04f7d4eeeaf00ae78f83533fc6b2cf92  design/admin/templates/exphelp/viewer.tpl
 779a3d4311505cfeb78de4b8f1ca2751  design/admin/templates/ezinfo/about.tpl
 6c10e7f9eea0fc7029c8110b0b33fb28  design/admin/templates/ezinfo/copyright.tpl
@@ -886,7 +886,7 @@ e3bfb91bebf01770b13c4a9ffe2a8f95  design/admin3/javascript/ezadmin_menubar.js
 bc7937dac73f716b532f14b62505ed0d  design/admin3/templates/content/browse_mode_list.tpl
 861bd3ca689c1348cbf47d40c4d980ef  design/admin3/templates/content/browse_mode_thumbnail.tpl
 f1070d15631a97d1b594b7b75a8231d6  design/admin3/templates/content/edit.tpl
-35c95ad3e52bd6cf74d907b804ea2625  design/admin3/templates/content/edit_draft.tpl
+baf13e6175651449381af85f8ae7b1c4  design/admin3/templates/content/edit_draft.tpl
 02474d5bf8a508eb4af0f63c623a678b  design/admin3/templates/content/edit_menu.tpl
 ada5d12461d8b215c68aca061f8d2368  design/admin3/templates/content/history.tpl
 3d1c7e6f28404ca56bb4b01ea9248f5e  design/admin3/templates/content/view/versionview.tpl
@@ -1169,7 +1169,7 @@ e1ee85d39a0695cfbe8c6f6fdcdf5796  design/admin4/templates/content/draft.tpl
 32ddb3dcdf4cb11a5ea6b2a52cc5ad63  design/admin4/templates/content/edit.tpl
 35a999e2b6cf7d3ab3fb9cfde0fc4d5e  design/admin4/templates/content/edit_attribute.tpl
 7c71af76a9760ef2ddf9d8a388e736d4  design/admin4/templates/content/edit_conflict.tpl
-64a0fa570c04b37f7ffb8effd9ba64f2  design/admin4/templates/content/edit_draft.tpl
+eb49c9083f0a3f216d4e041555834491  design/admin4/templates/content/edit_draft.tpl
 d57d7de78aa4c380ff712925f64156a5  design/admin4/templates/content/edit_languages.tpl
 403c3db24d35709e59409d3f21de1f36  design/admin4/templates/content/edit_locations.tpl
 cb9d190d4a32ffb9708907879a923a2a  design/admin4/templates/content/edit_menu.tpl
@@ -1257,15 +1257,15 @@ b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 61b4fd1fca8330170ce7e6b1425a3962  design/admin4/templates/error/shop/3.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
 a21abf4515a9de1f22cc061b2b9831c2  design/admin4/templates/exphelp/dashboard.tpl
-5e5f404b3aef9f255982ee00972db267  design/admin4/templates/exphelp/manual.tpl
-3267dc924dc6e8bb85f80453aee65b52  design/admin4/templates/exphelp/parts/dashboard_content.tpl
+9dc6e969756b3692c17f14c4364e36dd  design/admin4/templates/exphelp/manual.tpl
+5ed77b74cfcb4441ec7ebbc677c22267  design/admin4/templates/exphelp/parts/dashboard_content.tpl
 d7baa6ee646fff454b4689f8ef2279cb  design/admin4/templates/exphelp/parts/manual_toc.tpl
 09875679251690e7ef0399b30260fdb4  design/admin4/templates/exphelp/parts/viewer_meta.tpl
 835295e2c2b1ba2b36871512ccae3213  design/admin4/templates/exphelp/parts/viewer_nav.tpl
 69992051147dd0f6b3dbc0892bee4fa9  design/admin4/templates/exphelp/parts/viewer_toc.tpl
 531d9d1d54c0683eca68c623119174f9  design/admin4/templates/exphelp/report.tpl
 51b24a03beb437397748f04b2547a222  design/admin4/templates/exphelp/search.tpl
-b1bc105925c14c772674ad6a9bbe5398  design/admin4/templates/exphelp/topic.tpl
+601a5a9008268305f07ebcceec6a9df6  design/admin4/templates/exphelp/topic.tpl
 04f7d4eeeaf00ae78f83533fc6b2cf92  design/admin4/templates/exphelp/viewer.tpl
 7deb1dc6bd320de93789f39eb322d1f4  design/admin4/templates/ezinfo/about.tpl
 6c10e7f9eea0fc7029c8110b0b33fb28  design/admin4/templates/ezinfo/copyright.tpl
@@ -3282,7 +3282,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-7778cd7074fc6b84372ed60cf4e4779a  doc/changelogs/6.0/6.0.15.md
+dbbdf9bd32512a2a23c33c1d38c58907  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5460,7 +5460,7 @@ ce0bb66240c7036cda2021294a47d14f  kernel/classes/ezworkflowgrouplink.php
 b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 4ff841d8b07c17168f3063c415ba91b6  kernel/classes/ezworkflowtype.php
 55f92f1a206b102c012d371f1dd5f36a  kernel/classes/help/content/exphelpcontentinstaller.php
-42e1726e66a9f60b432b2551f5aeb95e  kernel/classes/help/content/exphelpcontentprovider.php
+cd2fe14e4eaec5d6c152ec03dc0b9c9a  kernel/classes/help/content/exphelpcontentprovider.php
 ac511aa456e80d00093d0b638a2c7e3a  kernel/classes/help/content/exphelpcontentrepository.php
 c0c8f7b1244fe73801ecb80b43a6b679  kernel/classes/help/content/exphelpcontentschema.php
 731dacfbc9e210d26a6115321f360d89  kernel/classes/help/content/exphelpcontentseeder.php
@@ -7805,7 +7805,7 @@ a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
 974a0ec8e90ce22933bfed0a970400c9  share/translations/eng-US/translation.ts
-fcc53550c46100ca75cfa8b41d38c7c7  share/translations/esl-ES/translation.ts
+b50042ae5bf515757cb925fe2f6359b6  share/translations/esl-ES/translation.ts
 0943fbf20c0f0922ef0937df1a904148  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 3728702b705b9dbb4786b60965c61db8  share/translations/fre-FR/translation.ts
@@ -7911,6 +7911,7 @@ cb34401be4cee0b728449535cc448c34  tests/tests/design/AdminContentJobScriptsTest.
 954111b43f470f49b2adcba584ec2b8d  tests/tests/design/AdminDensityTest.php
 83007cecd982197169ff20b40fab93d5  tests/tests/design/AdminEditAttributeTemplatesTest.php
 203a6b32fa42f2613b74ccf60acf6d54  tests/tests/design/AdminEditBarTest.php
+5aeca4b5fc05720233ceaad27620f27e  tests/tests/design/AdminEditConflictNewDraftTest.php
 2e45f4f6c49a009cc6d2ed32e774ca45  tests/tests/design/AdminEditorSkinTest.php
 bdbcd3466ff5acf56b435b9f6550d6ed  tests/tests/design/AdminEnvironmentBadgeTest.php
 4833a54303e0502e9eb97275b8aeb4aa  tests/tests/design/AdminFiles.php
@@ -8492,7 +8493,7 @@ d1046a764cd9965e41cb1a4576148d32  tests/tests/kernel/classes/help/expHelpContent
 71c9e5ae21978534c250ee6455633a7e  tests/tests/kernel/classes/help/expHelpIssueReportTest.php
 ead998cc3d4822efd40bb9da2d72d733  tests/tests/kernel/classes/help/expHelpLinksTest.php
 ee73cc3a2f8f76b722448da9b9642a81  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
-f5af6333a0efac158e183917cda8b55a  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
+14d6d667ebe2d3935fe84e54ec3ead1e  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
 40d3f7f792f9d9bd65dd9deed364d74d  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 a684f12211ff378fe1c4dc493a899644  tests/tests/kernel/classes/help/expHelpSearchTest.php
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php

@@ -30,7 +30,7 @@
             {/if}
             {if $help_manual.edition|ne( '' )}<li class="a4-help-meta-item"><span class="a4-icon a4-bi-tag" aria-hidden="true"></span>{'Edition %edition'|i18n( 'kernel/exphelp',, hash( '%edition', $help_manual.edition ) )|wash}</li>{/if}
             {if $help_manual.license|ne( '' )}<li class="a4-help-meta-item">{$help_manual.license|wash}</li>{/if}
-            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={$help_json_url|ezurl}><span class="a4-icon a4-bi-braces" aria-hidden="true"></span> JSON</a></li>
+            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={$help_json_url|ezurl}><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> JSON</a></li>
         </ul>
         {if $help_manual.shortdesc|ne( '' )}<p dir="auto">{$help_manual.shortdesc|wash}</p>{/if}
     </header>

@@ -56,7 +56,7 @@
                     {if $help_edit_url|ne( '' )}
                     <li class="a4-help-meta-item is-edit"><a class="a4-btn a4-btn-small a4-btn-ghost" href={$help_edit_url|ezurl}><span class="a4-icon a4-bi-pencil" aria-hidden="true"></span> {'Edit this topic'|i18n( 'kernel/exphelp' )}</a></li>
                     {/if}
-                    <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={$help_json_url|ezurl}><span class="a4-icon a4-bi-braces" aria-hidden="true"></span> JSON</a></li>
+                    <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={$help_json_url|ezurl}><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> JSON</a></li>
                 </ul>
             </header>
 
