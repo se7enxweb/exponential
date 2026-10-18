@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > The sections of the help, in dashboard order. A page's category: its front matter (category: editing), else the  
 > first PathRules\[\] that matches, else TypeDefaults\[<type>\]  
 
-Default: a list of 21: `getting-started`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `shortcuts`, `support`, `leadership`, `business` ....
+Default: a list of 35: `getting-started`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `shortcuts`, `support`, `leadership`, `business` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -42,21 +42,21 @@ Categories[]=shortcuts
 Categories[]=support
 Categories[]=leadership
 Categories[]=business
-Categories[]=administration
-Categories[]=features
-Categories[]=standards
-Categories[]=development
-Categories[]=examples
-Categories[]=install-upgrade
-Categories[]=release-notes
-Categories[]=history
-# ... 1 more in the shipped file
+Categories[]=partnership
+Categories[]=advocacy
+Categories[]=theme-design
+Categories[]=templates
+Categories[]=extension-development
+Categories[]=theme-extensions
+Categories[]=theme-distribution
+Categories[]=theme-sales
+# ... 15 more in the shipped file
 */ ?>
 ```
 
 ## CategoryNames
 
-Default: a hash of 21: `getting-started=Getting started`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `shortcuts=Keyboard shortcuts`, `support=Help and support`, `leadership=Project leadership`, `business=Sales and marketing` ....
+Default: a hash of 35: `getting-started=Getting started`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `shortcuts=Keyboard shortcuts`, `support=Help and support`, `leadership=Project leadership`, `business=Sales and marketing` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -76,15 +76,15 @@ CategoryNames[shortcuts]=Keyboard shortcuts
 CategoryNames[support]=Help and support
 CategoryNames[leadership]=Project leadership
 CategoryNames[business]=Sales and marketing
-CategoryNames[administration]=Administration
-CategoryNames[features]=Features
-CategoryNames[standards]=Standards
-CategoryNames[development]=Development
-CategoryNames[examples]=Examples
-CategoryNames[install-upgrade]=Installation and upgrades
-CategoryNames[release-notes]=Release notes
-CategoryNames[history]=History
-# ... 1 more in the shipped file
+CategoryNames[partnership]=Partnership
+CategoryNames[advocacy]=Advocacy and community
+CategoryNames[theme-design]=Theme design
+CategoryNames[templates]=Templates
+CategoryNames[extension-development]=Extension development
+CategoryNames[theme-extensions]=Theme extensions
+CategoryNames[theme-distribution]=Publishing and distribution
+CategoryNames[theme-sales]=Selling themes and services
+# ... 15 more in the shipped file
 */ ?>
 ```
 
@@ -92,7 +92,7 @@ CategoryNames[history]=History
 
 > Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
 
-Default: a hash of 21: `getting-started=signpost-split`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `shortcuts=input-cursor-text`, `support=info-circle`, `leadership=diagram-3`, `business=graph-up-arrow` ....
+Default: a hash of 35: `getting-started=signpost-split`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `shortcuts=input-cursor-text`, `support=info-circle`, `leadership=diagram-3`, `business=graph-up-arrow` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -112,15 +112,15 @@ CategoryIcons[shortcuts]=input-cursor-text
 CategoryIcons[support]=info-circle
 CategoryIcons[leadership]=diagram-3
 CategoryIcons[business]=graph-up-arrow
-CategoryIcons[administration]=gear
-CategoryIcons[features]=stars
-CategoryIcons[standards]=check2-square
-CategoryIcons[development]=code-square
-CategoryIcons[examples]=file-earmark-code
-CategoryIcons[install-upgrade]=box-seam
-CategoryIcons[release-notes]=journal-text
-CategoryIcons[history]=clock-history
-# ... 1 more in the shipped file
+CategoryIcons[partnership]=building
+CategoryIcons[advocacy]=people
+CategoryIcons[theme-design]=palette
+CategoryIcons[templates]=file-earmark-code
+CategoryIcons[extension-development]=puzzle
+CategoryIcons[theme-extensions]=puzzle
+CategoryIcons[theme-distribution]=box-seam
+CategoryIcons[theme-sales]=tag
+# ... 15 more in the shipped file
 */ ?>
 ```
 
@@ -128,7 +128,7 @@ CategoryIcons[history]=clock-history
 
 > <pattern>;<category>, first match wins  
 
-Default: a list of 61: `doc/help/leadership/*;leadership`, `doc/help/business/*;business`, `doc/LICENSE-GFDL-1.3.txt;reference`, `doc/glossary.md;reference`, `doc/languages.md;languages`, `doc/guides/README.md;getting-started`, `doc/guides/getting-started.md;getting-started`, `doc/guides/content-model-and-editing.md;editing`, `doc/guides/bookmarks.md;editing`, `doc/guides/collected-information.md;editing`, `doc/guides/urls-and-aliases.md;editing`, `doc/guides/content-history.md;publishing` ....
+Default: a list of 72: `doc/help/leadership/*;leadership`, `doc/help/business/*;business`, `doc/help/partners/*;partnership`, `doc/help/advocates/*;advocacy`, `doc/help/designers/templates/*;templates`, `doc/help/designers/*;theme-design`, `doc/help/hosting/*;hosting`, `doc/help/creators/app-creators/*;app-creation`, `doc/help/creators/website-creators/*;website-creation`, `doc/help/creators/*;website-creation`, `doc/help/supporters/*;supporting`, `doc/help/sponsors/*;sponsorship` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -138,6 +138,17 @@ Default: a list of 61: `doc/help/leadership/*;leadership`, `doc/help/business/*;
 PathRules[]
 PathRules[]=doc/help/leadership/*;leadership
 PathRules[]=doc/help/business/*;business
+PathRules[]=doc/help/partners/*;partnership
+PathRules[]=doc/help/advocates/*;advocacy
+PathRules[]=doc/help/designers/templates/*;templates
+PathRules[]=doc/help/designers/*;theme-design
+PathRules[]=doc/help/hosting/*;hosting
+PathRules[]=doc/help/creators/app-creators/*;app-creation
+PathRules[]=doc/help/creators/website-creators/*;website-creation
+PathRules[]=doc/help/creators/*;website-creation
+PathRules[]=doc/help/supporters/*;supporting
+PathRules[]=doc/help/sponsors/*;sponsorship
+PathRules[]=doc/help/extension-development/*;extension-development
 PathRules[]=doc/LICENSE-GFDL-1.3.txt;reference
 PathRules[]=doc/glossary.md;reference
 PathRules[]=doc/languages.md;languages
@@ -145,18 +156,7 @@ PathRules[]=doc/guides/README.md;getting-started
 PathRules[]=doc/guides/getting-started.md;getting-started
 PathRules[]=doc/guides/content-model-and-editing.md;editing
 PathRules[]=doc/guides/bookmarks.md;editing
-PathRules[]=doc/guides/collected-information.md;editing
-PathRules[]=doc/guides/urls-and-aliases.md;editing
-PathRules[]=doc/guides/content-history.md;publishing
-PathRules[]=doc/guides/drafts-and-pending.md;publishing
-PathRules[]=doc/guides/pdf-exports.md;publishing
-PathRules[]=doc/guides/rss-feeds.md;publishing
-PathRules[]=doc/guides/content-languages.md;languages
-PathRules[]=doc/guides/test-language-lorem-ipsum.md;languages
-PathRules[]=doc/guides/ui-switch-design.md;administration
-PathRules[]=doc/guides/ui-switch-settings.md;administration
-PathRules[]=doc/guides/two-factor-login.md;account
-# ... 41 more in the shipped file
+# ... 52 more in the shipped file
 */ ?>
 ```
 

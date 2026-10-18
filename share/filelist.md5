@@ -4308,7 +4308,7 @@ a167313a19f4ace5d72cb0f6df665bce  doc/examples/ini-settings/debugbar/Setting_tem
 3c31de5918621df99993a753d3d6a8e1  doc/examples/ini-settings/debugbar/Setting_template_show_method_debug.md
 27884fb2e3dc818711769bd0c56e02e9  doc/examples/ini-settings/debugbar/Setting_template_show_used_templates.md
 261861405e26cb7d08b860818f1e0809  doc/examples/ini-settings/debugbar/Setting_template_show_xhtml_code.md
-afecd73f0895cd12260f87d1426c0267  doc/examples/ini-settings/design/AdminDesignSettings.md
+9cf2469a268c2479c2a669fd2f8cf2d6  doc/examples/ini-settings/design/AdminDesignSettings.md
 aeaa8789f4b7c0334307601785d5b464  doc/examples/ini-settings/design/ExtensionSettings.md
 a2a2dee9325e8005f77a6670bb95546e  doc/examples/ini-settings/design/JavaScriptSettings.md
 37a06d0c6ceb7cffbd7ec79f582474a1  doc/examples/ini-settings/design/README.md
@@ -4321,8 +4321,8 @@ d9eee41b354d44edaa02d269af60d80b  doc/examples/ini-settings/error/HTTPError-301.
 d7242053330bdcb5eebf5ba020ab24bd  doc/examples/ini-settings/error/HTTPError-403.md
 397dcc317ce855be5813c04a6c501781  doc/examples/ini-settings/error/HTTPError-404.md
 caf60908b53ecf82087e9a61ba87f97f  doc/examples/ini-settings/error/README.md
-d49166f7e18752dc7c7cc354e4523302  doc/examples/ini-settings/exphelp/AudienceSettings.md
-1ab069012152c4ec323a0a067e7195b4  doc/examples/ini-settings/exphelp/CategorySettings.md
+ebb1ce0c0068db635357d22176c3309a  doc/examples/ini-settings/exphelp/AudienceSettings.md
+18bfbd878f1ca33bd8f68613c3ffe2c7  doc/examples/ini-settings/exphelp/CategorySettings.md
 401bd0989a64a7870f4dc86b138198b4  doc/examples/ini-settings/exphelp/ContentSettings.md
 4710fe922c525ac18b9a92002f5a2418  doc/examples/ini-settings/exphelp/ContextHelp.md
 3d307f778430f1bdd6462b040e20299c  doc/examples/ini-settings/exphelp/DashboardSettings.md
@@ -5589,7 +5589,7 @@ f2a50c3f8ce9f472873147e1fcd9ebe5  doc/examples/template-operators/crc32.md
 68afbe6c6b5dad32ef302229022857e0  doc/examples/template-operators/csp_nonce.md
 9758cdd5af58a7fc4abd3d7dfdc88727  doc/examples/template-operators/currentdate.md
 93b4ae09ea0a38ce5b70dc418147d69f  doc/examples/template-operators/d18n.md
-c4777bd2e64ec5f58d9b2dea62f90cf0  doc/examples/template-operators/datetime.md
+88906bccced14fbf03e8b8ed67d8b536  doc/examples/template-operators/datetime.md
 804269193aeca09f5c94e1f42ec5f3f9  doc/examples/template-operators/dec.md
 3dacba264257e7dd5e35f4b61b3bddde  doc/examples/template-operators/div.md
 11291d86fd6455fc9ec886ce54d5de8b  doc/examples/template-operators/downcase.md
@@ -7414,7 +7414,7 @@ c2e8a054eca4c274992ea0ae2a268f8b  doc/standards/patterns/area-kernel-classes-clu
 04d905779df0d3d1a9c053dbcdeb5f5a  doc/standards/patterns/area-kernel-classes-contentjob.md
 22af311bc5214cf9edd17e50f11866dd  doc/standards/patterns/area-kernel-classes-datatypes.md
 b42d0f5d5d6f84b256ce11e22331034f  doc/standards/patterns/area-kernel-classes-debugbar.md
-d4b8943c88c39cb554b47e72d4da4cf8  doc/standards/patterns/area-kernel-classes-help.md
+e49bcbedcfb698c16b9b56b5bd80428e  doc/standards/patterns/area-kernel-classes-help.md
 db265a706ca3f53e44a3b4d51f39f7f8  doc/standards/patterns/area-kernel-classes-i18n.md
 391ba74ba698985d3b4d94ad9227235b  doc/standards/patterns/area-kernel-classes-ini.md
 549c0a6da0d6ff827c8729c41bbfc8e8  doc/standards/patterns/area-kernel-classes-logviewer.md
@@ -7464,7 +7464,7 @@ ab60e06628c4ccb2308856db10aea7fc  doc/standards/patterns/area-lib-ezsession.md
 39b1857ace75c0ea42172e2f8e74010f  doc/standards/patterns/area-lib-eztemplate.md
 a6ba9e05b130ada3369e589850db54dd  doc/standards/patterns/area-lib-ezutils.md
 f56f52be9dcadf413e89bfbb6eefe733  doc/standards/patterns/area-lib.md
-700fa9399ac53710b2cf5749f0c1b0b1  doc/standards/patterns/area-settings.md
+f0b92f61e94145f5be7e36d30e8d0990  doc/standards/patterns/area-settings.md
 a4ef695b674c0add62856e3d28ea491c  doc/standards/patterns/builder.md
 8b86164ff04a96e58338bec9b80140d8  doc/standards/patterns/chain.md
 77752d0373c51f948d495b846a0fd580  doc/standards/patterns/command.md
@@ -7473,10 +7473,10 @@ c335c8f83d01ffda47e7c5c47240a593  doc/standards/patterns/decorator.md
 eab86aa2ce51b587e9a3edd334b13868  doc/standards/patterns/event-hook.md
 ff3211f52b95a7a94afe0ced3a0e81e4  doc/standards/patterns/exception.md
 ace043d83d8a64806f2d8e67d82ecfa0  doc/standards/patterns/facade.md
-9deb7518faa7f8e5ccae56c6bfed6343  doc/standards/patterns/factory.md
+7fead0871fc382dac31e1fafb726ddba  doc/standards/patterns/factory.md
 2d5a85d89a682e90a4685ced0d54a03b  doc/standards/patterns/fetch-function.md
 9f1e881de6eb53d0bdaf07c0a66668e2  doc/standards/patterns/front-controller.md
-5be1d989e1310f469976e92304e66f87  doc/standards/patterns/ini-plugin-point.md
+8a733ef6444e677dd56053ec25cfebe6  doc/standards/patterns/ini-plugin-point.md
 2a979f2464e87eb2fcd24c0c459ae627  doc/standards/patterns/interface.md
 49f14f915edd11c4e7b9c18cdbcc9daf  doc/standards/patterns/iterator.md
 ae60f3891bc0ba525d2989391a15a0a0  doc/standards/patterns/module-view.md

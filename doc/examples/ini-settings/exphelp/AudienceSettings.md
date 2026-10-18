@@ -21,11 +21,15 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 
 > editor: writes and publishes content; admin: runs the site; developer: builds on it; user: a site's visitor or  
 > member; project-manager: plans and leads projects built on it; sales-marketing: presents, sells and promotes it  
-> and grows its community. Who a page is for: its front matter (audience: editor, admin), else the first PathRules\[\]  
+> and grows its community; partner: a company that builds, hosts or sells with Exponential; advocate: a community  
+> advocate (street team); designer: designs themes and templates, builds, ships and maintains extensions;  
+> hosting: a hosting company; app-creator / website-creator: builds applications / websites with it; supporter:  
+> helps the project grow; sponsor: funds it (doc/help/<folder>/ of each in PathRules\[\] below). Who a page is for:  
+> its front matter (audience: editor, admin), else the first PathRules\[\]  
 > that matches, else its file name (...-developer.md) or opening lines ("for editors"), else TypeDefaults\[<type>\].  
 > The order here is the order of the dashboard's audience cards and the search filters.  
 
-Default: a list of 6: `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`.
+Default: a list of 14: `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -39,12 +43,20 @@ Audiences[]=developer
 Audiences[]=user
 Audiences[]=project-manager
 Audiences[]=sales-marketing
+Audiences[]=partner
+Audiences[]=advocate
+Audiences[]=designer
+Audiences[]=hosting
+Audiences[]=app-creator
+Audiences[]=website-creator
+Audiences[]=supporter
+Audiences[]=sponsor
 */ ?>
 ```
 
 ## AudienceNames
 
-Default: a hash of 6: `editor=Editors`, `admin=Administrators`, `developer=Developers`, `user=Users`, `project-manager=Project managers`, `sales-marketing=Sales & marketing`.
+Default: a hash of 14: `editor=Editors`, `admin=Administrators`, `developer=Developers`, `user=Users`, `project-manager=Project managers`, `sales-marketing=Sales & marketing`, `partner=Partners`, `advocate=Advocates`, `designer=Designers`, `hosting=Hosting companies`, `app-creator=Application creators`, `website-creator=Website creators` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -58,6 +70,14 @@ AudienceNames[developer]=Developers
 AudienceNames[user]=Users
 AudienceNames[project-manager]=Project managers
 AudienceNames[sales-marketing]=Sales & marketing
+AudienceNames[partner]=Partners
+AudienceNames[advocate]=Advocates
+AudienceNames[designer]=Designers
+AudienceNames[hosting]=Hosting companies
+AudienceNames[app-creator]=Application creators
+AudienceNames[website-creator]=Website creators
+AudienceNames[supporter]=Supporters
+AudienceNames[sponsor]=Sponsors
 */ ?>
 ```
 
@@ -65,7 +85,7 @@ AudienceNames[sales-marketing]=Sales & marketing
 
 > Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
 
-Default: a hash of 6: `editor=pencil`, `admin=shield-lock`, `developer=code-square`, `user=person`, `project-manager=diagram-3`, `sales-marketing=graph-up-arrow`.
+Default: a hash of 14: `editor=pencil`, `admin=shield-lock`, `developer=code-square`, `user=person`, `project-manager=diagram-3`, `sales-marketing=graph-up-arrow`, `partner=building`, `advocate=people`, `designer=palette`, `hosting=database`, `app-creator=phone`, `website-creator=globe` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -79,6 +99,14 @@ AudienceIcons[developer]=code-square
 AudienceIcons[user]=person
 AudienceIcons[project-manager]=diagram-3
 AudienceIcons[sales-marketing]=graph-up-arrow
+AudienceIcons[partner]=building
+AudienceIcons[advocate]=people
+AudienceIcons[designer]=palette
+AudienceIcons[hosting]=database
+AudienceIcons[app-creator]=phone
+AudienceIcons[website-creator]=globe
+AudienceIcons[supporter]=star
+AudienceIcons[sponsor]=piggy-bank
 */ ?>
 ```
 
@@ -86,7 +114,7 @@ AudienceIcons[sales-marketing]=graph-up-arrow
 
 > <pattern>;<audience,audience>, first match wins ("\*" also matches "/")  
 
-Default: a list of 60: `doc/help/leadership/*;project-manager`, `doc/help/business/*;sales-marketing`, `doc/LICENSE-GFDL-1.3.txt;editor,admin,developer,user`, `doc/glossary.md;editor,admin,developer,user`, `doc/languages.md;admin,developer`, `doc/guides/README.md;editor,admin,developer`, `doc/guides/getting-started.md;admin,developer`, `doc/guides/content-model-and-editing.md;editor,developer`, `doc/guides/bookmarks.md;editor`, `doc/guides/collected-information.md;editor,admin`, `doc/guides/urls-and-aliases.md;editor,admin`, `doc/guides/content-history.md;editor,admin` ....
+Default: a list of 70: `doc/help/leadership/*;project-manager`, `doc/help/business/*;sales-marketing`, `doc/help/partners/*;partner`, `doc/help/advocates/*;advocate`, `doc/help/designers/*;designer`, `doc/help/hosting/*;hosting`, `doc/help/creators/app-creators/*;app-creator`, `doc/help/creators/website-creators/*;website-creator`, `doc/help/creators/*;app-creator,website-creator`, `doc/help/supporters/*;supporter`, `doc/help/sponsors/*;sponsor`, `doc/help/extension-development/*;developer,designer` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -96,6 +124,16 @@ Default: a list of 60: `doc/help/leadership/*;project-manager`, `doc/help/busine
 PathRules[]
 PathRules[]=doc/help/leadership/*;project-manager
 PathRules[]=doc/help/business/*;sales-marketing
+PathRules[]=doc/help/partners/*;partner
+PathRules[]=doc/help/advocates/*;advocate
+PathRules[]=doc/help/designers/*;designer
+PathRules[]=doc/help/hosting/*;hosting
+PathRules[]=doc/help/creators/app-creators/*;app-creator
+PathRules[]=doc/help/creators/website-creators/*;website-creator
+PathRules[]=doc/help/creators/*;app-creator,website-creator
+PathRules[]=doc/help/supporters/*;supporter
+PathRules[]=doc/help/sponsors/*;sponsor
+PathRules[]=doc/help/extension-development/*;developer,designer
 PathRules[]=doc/LICENSE-GFDL-1.3.txt;editor,admin,developer,user
 PathRules[]=doc/glossary.md;editor,admin,developer,user
 PathRules[]=doc/languages.md;admin,developer
@@ -104,17 +142,7 @@ PathRules[]=doc/guides/getting-started.md;admin,developer
 PathRules[]=doc/guides/content-model-and-editing.md;editor,developer
 PathRules[]=doc/guides/bookmarks.md;editor
 PathRules[]=doc/guides/collected-information.md;editor,admin
-PathRules[]=doc/guides/urls-and-aliases.md;editor,admin
-PathRules[]=doc/guides/content-history.md;editor,admin
-PathRules[]=doc/guides/drafts-and-pending.md;editor
-PathRules[]=doc/guides/pdf-exports.md;editor,admin
-PathRules[]=doc/guides/rss-feeds.md;admin
-PathRules[]=doc/guides/content-languages.md;editor,admin
-PathRules[]=doc/guides/test-language-lorem-ipsum.md;admin,developer
-PathRules[]=doc/guides/ui-switch-design.md;admin
-PathRules[]=doc/guides/ui-switch-settings.md;admin
-PathRules[]=doc/guides/two-factor-login.md;user,admin
-# ... 40 more in the shipped file
+# ... 50 more in the shipped file
 */ ?>
 ```
 

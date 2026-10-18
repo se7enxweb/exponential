@@ -31,7 +31,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/exphelp/dashboard.tpl` line 150:
+The first use in the templates of this installation, `design/admin/templates/exphelp/dashboard.tpl` line 158:
 
 ```tpl
 {if and( is_set( $change.time ), $change.time|gt( 0 ) )}<time datetime="{$change.time|datetime( 'custom', '%Y-%m-%dT%H:%i:%s' )}">{$change.time|l10n( 'shortdate' )}</time>{/if}
