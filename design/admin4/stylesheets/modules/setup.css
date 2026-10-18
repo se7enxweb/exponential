@@ -1411,3 +1411,22 @@ label.a4-package-option-label {
   .a4-setup-oauth-keys td[data-label]::before { content: attr(data-label); display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
   .a4-setup-oauth-keys .a4-setup-oauth-key-actions { text-align: start; }
 }
+
+/* ---- setup/languages: Interface languages, the translation fallbacks (design:setup/languages.tpl) -------------- */
+/* The interface coverage: a short bar before the percentage */
+.a4-setup-languages-meter { display: inline-block; width: 64px; margin-inline-end: var(--a4-space-1); vertical-align: middle; }
+/* The chain in a cell: the steps in a row, an arrow before each but the first */
+.a4-setup-languages-chain { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); margin: 0; padding: 0; list-style: none; }
+.a4-setup-languages-chain > li + li::before { content: "\2192"; margin-inline-end: var(--a4-space-1); color: var(--a4-muted); }
+[dir="rtl"] .a4-setup-languages-chain > li + li::before { content: "\2190"; }
+/* The steps of one locale, numbered, the rule under the target */
+.a4-setup-languages-steps { margin: 0 0 var(--a4-space-4); padding-inline-start: var(--a4-space-5); }
+.a4-setup-languages-steps > li { margin-bottom: var(--a4-space-2); }
+.a4-setup-languages-steps .a4-meta { display: block; }
+/* The locale of this siteaccess */
+.a4-setup-languages-table tr.is-current > * { background-color: var(--a4-accent-soft); }
+@media (forced-colors: active) {
+  .a4-setup-languages-table tr.is-current > * { outline: 2px solid Highlight; outline-offset: -2px; }
+}
+.a4-setup-languages-problems { display: grid; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-4); padding: 0; list-style: none; }
+.a4-setup-languages-detail { margin-bottom: var(--a4-space-4); }

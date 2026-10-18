@@ -105,6 +105,15 @@ $ViewList['sitedata'] = array(
     'params' => array(),
     'unordered_params' => array( 'offset' => 'Offset', 'filter' => 'Filter' ) );
 
+// Setup > Interface languages: every locale's translation fallback chain and coverage, read only
+// (doc/languages.md, "Translation fallbacks")
+$ViewList['languages'] = array(
+    'functions' => array( 'system_info' ),
+    'script' => 'languages.php',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array(),
+    'unordered_params' => array( 'show' => 'Show', 'locale' => 'Locale' ) );
+
 $ViewList["rad"] = array(
     'functions' => array( 'setup' ),
     "script" => "rad.php",

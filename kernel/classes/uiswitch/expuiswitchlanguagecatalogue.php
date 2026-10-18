@@ -11,7 +11,10 @@
  * What the interface language choice knows about every locale of the installation: its names (share/locale/<code>.ini
  * LanguageName and InternationalLanguageName), its HTTP code ([HTTP] ContentLanguage) and how complete the kernel's
  * translation of the interface is (share/translations/<code>/translation.ts against the source catalogue
- * share/translations/untranslated/translation.ts).
+ * share/translations/untranslated/translation.ts). A locale without a translation of its own counts with the first
+ * translation of its fallback chain (expI18nFallbackResolver: FallbackLanguages[], the rules of FallbackRules[], the
+ * automatic same-language fallback; ger-AT to ger-DE), because the translator loads that one in its place. With
+ * FallbackMode=merge it counts with every translation of the chain together.
  *
  * Reading 25 translation files of 1 to 3 MB takes seconds, so the result is cached: in memory for the process and in
  * <cache directory>/uiswitch/language-catalogue.json, both keyed by a signature of the names, sizes and modification
@@ -23,7 +26,7 @@ class expUISwitchLanguageCatalogue
     const LOCALE_PATTERN = '/^[a-z]{3}-[A-Z]{2}(@[a-z0-9]{1,16})?$/';
 
     /** the format of the cache file; a new format number builds the catalogue again */
-    const FORMAT = 3;
+    const FORMAT = 5;
 
     /** @var array signature => catalogue, for the life of the process (Velocity workers) */
     private static $memory = array();
@@ -49,14 +52,68 @@ class expUISwitchLanguageCatalogue
     /** @var int|null the request generation the directory times were last looked at in */
     protected $checkedGeneration = null;
 
+    /** @var array|null locale => translation it falls back to; null: read from i18n.ini when first needed */
+    protected $fallbacks;
+
+    /** @var expI18nFallbackResolver|null */
+    protected $resolver;
+
     /**
      * @param string $root
      * @param string|null $cacheDirectory
+     * @param array|null $fallbacks locale => translation, as i18n.ini [TranslationSettings] FallbackLanguages[], with
+     *        no other rule; null reads the settings (expI18nFallbackResolver::settings())
+     * @param expI18nFallbackResolver|null $resolver the resolver to use instead (it then decides alone)
      */
-    public function __construct( $root = '', $cacheDirectory = null )
+    public function __construct( $root = '', $cacheDirectory = null, $fallbacks = null, $resolver = null )
     {
         $this->root = (string)$root;
         $this->cacheDirectory = $cacheDirectory;
+        $this->fallbacks = is_array( $fallbacks ) ? $fallbacks : null;
+        $this->resolver = $resolver instanceof expI18nFallbackResolver ? $resolver : null;
+    }
+
+    /**
+     * The fallback resolver the catalogue counts with: the one given, one of the map given (without other rules),
+     * or the installation's (its settings, with the translations and locales below the catalogue's root).
+     *
+     * @return expI18nFallbackResolver
+     */
+    public function resolver()
+    {
+        if ( $this->resolver === null )
+        {
+            $paths = array( 'repository' => $this->path( 'share/translations' ), 'locale_directory' => $this->path( 'share/locale' ) );
+            if ( $this->fallbacks !== null )
+                $this->resolver = new expI18nFallbackResolver( $this->fallbacks, array(), array_merge( $paths, array( 'automatic' => false ) ) );
+            elseif ( $this->root === '' && class_exists( 'eZINI' ) )
+                $this->resolver = expI18nFallbackResolver::instance();
+            else
+            {
+                $settings = expI18nFallbackResolver::settings();
+                $this->resolver = new expI18nFallbackResolver( $settings['configured'], $settings['rules'], array_merge( $settings['options'], $paths ) );
+            }
+        }
+        return $this->resolver;
+    }
+
+    /**
+     * The translation fallbacks that point to another translation, locale => translation: the ones to
+     * "untranslated" or eng-GB (the source texts) are left out, as the translator treats them as none.
+     *
+     * @return array
+     */
+    public function fallbacks()
+    {
+        $map = array();
+        foreach ( $this->resolver()->configured() as $code => $target )
+        {
+            $isTranslation = is_string( $target ) && preg_match( self::LOCALE_PATTERN, $target ) && $target !== 'eng-GB';
+            if ( is_string( $code ) && $isTranslation && $target !== $code )
+                $map[$code] = $target;
+        }
+        ksort( $map, SORT_STRING );
+        return $map;
     }
 
     /**
@@ -125,7 +182,7 @@ class expUISwitchLanguageCatalogue
             return $this->signature;
         $this->directoryStamp = $stamp;
         clearstatcache();
-        $parts = array( self::FORMAT );
+        $parts = array( self::FORMAT, $this->resolver()->signature() );
         $files = array_merge( (array)glob( $this->path( 'share/locale/*.ini' ) ),
                               (array)glob( $this->path( 'share/translations/*/translation.ts' ) ) );
         sort( $files, SORT_STRING );
@@ -158,8 +215,10 @@ class expUISwitchLanguageCatalogue
     }
 
     /**
-     * The catalogue: code => hash( native, english, http, coverage ), coverage an integer percentage or null when
-     * the locale has no translation (English, the language of the source texts, is always 100).
+     * The catalogue: code => hash( native, english, http, coverage, fallback ), coverage an integer percentage or null
+     * when the locale has no translation (English, the language of the source texts, is always 100), fallback the
+     * translation it was counted with when it has none of its own (its fallback chain), else '', chain the
+     * locale's fallback chain (expI18nFallbackResolver::chain(), 'untranslated' left out).
      *
      * @return array
      */
@@ -204,20 +263,53 @@ class expUISwitchLanguageCatalogue
     {
         $sourceKeys = $this->messageKeys( $this->path( 'share/translations/untranslated/translation.ts' ), false );
         $entries = array();
+        $keysOf = array();
+        $resolver = $this->resolver();
+        $merge = $resolver->mode() === 'merge';
         foreach ( $this->localeCodes( true ) as $code )
         {
             $names = $this->readLocaleNames( $this->path( 'share/locale/' . $code . '.ini' ) );
             $coverage = null;
+            $fallback = '';
+            $chain = array_values( array_diff( $resolver->chain( $code ), array( expI18nFallbackResolver::SOURCE ) ) );
             if ( strpos( $code, 'eng-' ) === 0 )
                 $coverage = 100;
             else
             {
-                $ts = $this->path( 'share/translations/' . $code . '/translation.ts' );
-                if ( is_file( $ts ) )
-                    $coverage = self::coveragePercent( $sourceKeys, $this->messageKeys( $ts, true ) );
+                // As eZTSTranslator: the locale's own file, then its chain; a variant (ger-DE@euro) also loads the
+                // translation of its locale (ger-DE) and that one's chain.
+                $base = strpos( $code, '@' ) !== false ? substr( $code, 0, strpos( $code, '@' ) ) : $code;
+                $candidates = array_merge( array( $code ), $chain );
+                if ( $base !== $code )
+                    $candidates = array_merge( $candidates, array( $base ), $resolver->chain( $base ) );
+                $files = array();
+                foreach ( array_unique( $candidates ) as $candidate )
+                {
+                    if ( $candidate === expI18nFallbackResolver::SOURCE )
+                        continue;
+                    $ts = $this->path( 'share/translations/' . $candidate . '/translation.ts' );
+                    if ( !is_file( $ts ) )
+                        continue;
+                    if ( !$files && $candidate !== $code )
+                        $fallback = $candidate;
+                    $files[] = $ts;
+                    if ( !$merge )
+                        break;
+                }
+                if ( $files )
+                {
+                    $translated = array();
+                    foreach ( $files as $ts )
+                    {
+                        if ( !isset( $keysOf[$ts] ) )
+                            $keysOf[$ts] = $this->messageKeys( $ts, true );
+                        $translated += $keysOf[$ts];
+                    }
+                    $coverage = self::coveragePercent( $sourceKeys, $translated );
+                }
             }
             $entries[$code] = array( 'native' => $names['LanguageName'], 'english' => $names['InternationalLanguageName'],
-                                     'http' => $names['ContentLanguage'], 'coverage' => $coverage,
+                                     'http' => $names['ContentLanguage'], 'coverage' => $coverage, 'fallback' => $fallback, 'chain' => $chain,
                                      'intl_native' => strpos( $code, '@' ) === false ? self::intlDisplayName( $names['ContentLanguage'], $names['ContentLanguage'] ) : '',
                                      'test' => strtolower( $names['TestLanguage'] ) === 'true' );
         }
