@@ -11,7 +11,8 @@
  * - HELPJS-02: an older answer arriving after a newer one is ignored; an empty query sends nothing; a failed request or
  *   a browser without fetch says the search is not available (the form still goes to the search page); a changed
  *   filter searches again.
- * - HELPJS-03: keys: / focuses the search (not while typing, not with Ctrl), ArrowDown/ArrowUp move the focus through
+ * - HELPJS-03: keys: / focuses the search (not while typing, not with Ctrl, and before the admin header's own /
+ *   shortcut of admin4.js, not out of a dialog), ArrowDown/ArrowUp move the focus through
  *   the results and back to the field, Enter opens the first result once the list is up (before that the form is
  *   sent), Esc closes the list, then clears the field.
  * - HELPJS-04: every <pre> of the page gets one copy button (type=button), in A's .a4-help-code wrapper when there is
@@ -24,6 +25,13 @@
  * - HELPJS-07: pages without [data-exphelp] are left alone. The file has no eval, no new Function, no innerHTML or
  *   document.write (it runs under the admin's Content Security Policy, script-src 'self' + nonce), and does not
  *   need jQuery; every other design's copy of it is identical, and every exphelp template that carries a hook loads it.
+ * - HELPJS-10: a record page ([data-exphelp-records]) gets a filter field after its summary that hides the rows without
+ *   every word (and a table left without rows), with the count in the page's language, and a sort button in each
+ *   header of its table[data-exphelp-sortable] but a data-sort="none" one (aria-sort, natural order, both ways).
+ * - HELPJS-08: with data-exphelp-canonical-base on the form, sending it goes to the canonical address
+ *   (/exphelp/search/(q)/<words>/(category)/<id>/(audience)/<id>/(type)/<id>), and on the search page itself the
+ *   address follows the search (the answer's canonical_href when it is safe); an empty field with a filter set lists
+ *   the pages of that filter (browse mode).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminHelpScriptTest.php
  *
@@ -117,6 +125,11 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $k = $c['keys'];
         $this->assertSame( 'q', $k['focusInput'], '/ focuses the field' );
         $this->assertFalse( $k['slashInInput'], '/ typed in the field is a character' );
+        $s = $c['slash beats the header search'];
+        $this->assertSame( 'q', $s['focused'], "/ goes to the help search before the admin header's own / shortcut (capture phase)" );
+        $this->assertTrue( $s['prevented'] );
+        $this->assertSame( 'searchtext', $s['disabledGoesToHeader'], 'without a usable help search the header keeps /' );
+        $this->assertNotSame( 'q', $s['fromDialog'], 'not out of a dialog' );
         $this->assertSame( '/admin/exphelp/viewer/(path)/doc/a.md#clear', $k['first'] );
         $this->assertSame( '/admin/exphelp/viewer/(path)/doc/c.md', $k['second'] );
         $this->assertSame( '/admin/exphelp/viewer/(path)/doc/c.md', $k['stays'], 'the last result stays' );
@@ -141,6 +154,25 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'Copy', $c['copy']['after'] );
         $this->assertSame( 'Copied', $c['copy']['announced'] );
         $this->assertSame( 'Press Ctrl+C to copy', $c['copy without clipboard']['label'] );
+    }
+
+    /** HELPJS-10 */
+    public function testRecordPagesFilterAndSort()
+    {
+        $r = $this->cases()['records'];
+        $this->assertTrue( $r['afterStats'], 'the filter comes after the summary' );
+        $this->assertSame( 'search', $r['type'] );
+        $this->assertSame( 'Filter', $r['label'] );
+        $this->assertSame( array( '4.0.0' ), $r['filtered'], 'only the rows with every word' );
+        $this->assertSame( array( true, false ), $r['wraps'], 'a table without a matching row is hidden' );
+        $this->assertSame( '1 von 3', $r['status'], 'the count in the language of the page' );
+        $this->assertSame( array( '3.0-1', '3.10-1', '4.0.0' ), $r['cleared'] );
+        $this->assertSame( 4, $r['buttons'], 'no button on a column marked data-sort="none"' );
+        $this->assertSame( 'Sort by Version', $r['labels'][0] );
+        $this->assertSame( array( '3.0-1', '3.10-1' ), $r['asc'], 'versions in natural order' );
+        $this->assertSame( 'ascending', $r['sortAsc'] );
+        $this->assertSame( array( '3.10-1', '3.0-1' ), $r['desc'] );
+        $this->assertSame( 'descending', $r['sortDesc'] );
     }
 
     /** HELPJS-05 */
@@ -172,6 +204,24 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $p['next'], 'never a javascript: link' );
         $this->assertSame( array( '/admin/exphelp/viewer/(path)/doc/a.md' ), $p['assigned'] );
         $this->assertFalse( $p['ctrl'] );
+    }
+
+    /** HELPJS-08 */
+    public function testTheCanonicalSearchAddressAndBrowsing()
+    {
+        $c = $this->cases()['canonical address'];
+        $this->assertTrue( $c['submitPrevented'] );
+        $this->assertSame( array( '/admin/exphelp/search/(q)/a+b+c+d%2Be/(category)/guides/(audience)/editor' ), $c['assigned'],
+                           "the form goes to the canonical address: q, category, audience, type; '/', '(' and ')' become spaces, a space '+'" );
+        $this->assertFalse( $c['plainPrevented'], 'without data-exphelp-canonical-base the form is sent as it is' );
+        $this->assertSame( array( '/admin/exphelp/search' ), $c['emptyAssigned'] );
+        $this->assertSame( '/admin/exphelp/search?q=&audience=editor&limit=20&format=json', $c['browseUrl'],
+                           'an empty field with a filter set asks for the browse list' );
+        $this->assertSame( array( '/admin/exphelp/viewer/x.md' ), $c['browseLinks'] );
+        $this->assertSame( '2 Treffer', $c['browseStatus'] );
+        $this->assertSame( array(), $c['dashReplaced'], 'another page keeps its address' );
+        $this->assertSame( array( '/admin/exphelp/search/(q)/cache', '/admin/exphelp/search/(q)/cach', '/admin/exphelp/search' ), $c['pageReplaced'],
+                           "the search page follows the search: the server's canonical_href, its own address for an unsafe one, the base when emptied" );
     }
 
     /** HELPJS-07 */

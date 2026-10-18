@@ -26858,6 +26858,19 @@ INSERT INTO ezpolicy (
   0,
   3
 );
+INSERT INTO ezpolicy (
+  function_name,
+  id,
+  module_name,
+  original_id,
+  role_id
+) VALUES (
+  'read',
+  335,
+  'exphelp',
+  0,
+  3
+);
 
 INSERT INTO ezpolicy_limitation (
   id,

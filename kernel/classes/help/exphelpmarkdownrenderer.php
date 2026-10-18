@@ -104,6 +104,9 @@ class expHelpMarkdownRenderer
     /** @var array texts and backtick run lengths that have no closing run: key => run => from offset */
     protected $backtickMiss = array();
 
+    /** @var array texts => the offsets of their matching brackets (bracketMatches()) */
+    protected $bracketCache = array();
+
     public function __construct( array $options = array() )
     {
         $this->options = $options + array(
@@ -184,6 +187,18 @@ class expHelpMarkdownRenderer
      */
     public function renderPlainText( $text, $currentId = '' )
     {
+        // a list of records (the release and branch history) is shown as tables, recognised by its shape
+        if ( strpos( (string)$text, "\n- " ) !== false )
+        {
+            $used = array();
+            $records = new expHelpRecordRenderer( array( 'translate' => array( $this, 't' ) ) );
+            $rendered = $records->render( $text, function( $heading ) use ( &$used )
+            {
+                return $this->options['id_prefix'] . self::slug( $heading, $used );
+            } );
+            if ( $rendered !== null )
+                return $rendered + array( 'frontMatter' => '' );
+        }
         $title = '';
         foreach ( explode( "\n", str_replace( array( "\r\n", "\r" ), "\n", (string)$text ), 40 ) as $line )
         {
@@ -1189,11 +1204,13 @@ class expHelpMarkdownRenderer
     protected function emphasis( $html )
     {
         $rules = array(
-            '/(?<![\\\\*])\*\*(?=[^\s*])(.{1,600}?)(?<=[^\s*])\*\*(?!\*)/su' => '<strong>$1</strong>',
-            '/(?<![\p{L}\p{N}_])__(?=[^\s_])(.{1,600}?)(?<=[^\s_])__(?![\p{L}\p{N}_])/su' => '<strong>$1</strong>',
-            '/(?<![\\\\*])\*(?=[^\s*])(.{1,600}?)(?<=[^\s*])\*(?!\*)/su' => '<em>$1</em>',
-            '/(?<![\p{L}\p{N}_])_(?=[^\s_])(.{1,600}?)(?<=[^\s_])_(?![\p{L}\p{N}_])/su' => '<em>$1</em>',
-            '/(?<!~)~~(?=[^\s~])(.{1,600}?)(?<=[^\s~])~~(?!~)/su' => '<del>$1</del>',
+            // the content of a span never holds its own delimiter (strong: never "**"), so a failed opener stops at
+            // the next delimiter and a page of unmatched "*a *a *a" is matched in linear time
+            '/(?<![\\\\*])\*\*(?=[^\s*])((?:[^*]|\*(?!\*)){1,600}?)(?<=[^\s*])\*\*(?!\*)/su' => '<strong>$1</strong>',
+            '/(?<![\p{L}\p{N}_])__(?=[^\s_])((?:[^_]|_(?!_)){1,600}?)(?<=[^\s_])__(?![\p{L}\p{N}_])/su' => '<strong>$1</strong>',
+            '/(?<![\\\\*])\*(?=[^\s*])([^*]{1,600}?)(?<=[^\s*])\*(?!\*)/su' => '<em>$1</em>',
+            '/(?<![\p{L}\p{N}_])_(?=[^\s_])([^_]{1,600}?)(?<=[^\s_])_(?![\p{L}\p{N}_])/su' => '<em>$1</em>',
+            '/(?<!~)~~(?=[^\s~])((?:[^~]|~(?!~)){1,600}?)(?<=[^\s~])~~(?!~)/su' => '<del>$1</del>',
         );
         foreach ( $rules as $regex => $replace )
         {
@@ -1232,19 +1249,21 @@ class expHelpMarkdownRenderer
     }
 
     /**
-     * A link or image at $text[$k] === '[': [label](url "title"), [label][ref], [label][], [label].
+     * The offset of the closing "]" of every "[" in a text (escaped brackets and code spans skipped), computed once
+     * per text with a stack.
      *
-     * @return array|null array( 'label', 'url', 'title', 'end' )
+     * @param string $text
+     * @return array offset of "[" => offset of its "]"
      */
-    protected function parseLink( $text, $k )
+    protected function bracketMatches( $text )
     {
+        $key = strlen( $text ) . ':' . crc32( $text );
+        if ( isset( $this->bracketCache[$key] ) )
+            return $this->bracketCache[$key];
+        $matches = array();
+        $stack = array();
         $len = strlen( $text );
-        $depth = 0;
-        $p = $k;
-        $close = null;
-        // a label is at most 999 characters (CommonMark); a longer scan would make "[[[[..." quadratic
-        $limit = min( $len, $k + 1000 );
-        for ( ; $p < $limit; $p++ )
+        for ( $p = 0; $p < $len; $p++ )
         {
             $c = $text[$p];
             if ( $c === '\\' )
@@ -1256,26 +1275,31 @@ class expHelpMarkdownRenderer
             {
                 $run = strspn( $text, '`', $p );
                 $end = $this->findBacktickRun( $text, $p + $run, $run );
-                if ( $end !== null )
-                {
-                    $p = $end + $run - 1;
-                    continue;
-                }
-                $p += $run - 1;
+                $p = ( $end !== null ? $end + $run : $p + $run ) - 1;
                 continue;
             }
             if ( $c === '[' )
-                $depth++;
-            elseif ( $c === ']' )
-            {
-                $depth--;
-                if ( $depth === 0 )
-                {
-                    $close = $p;
-                    break;
-                }
-            }
+                $stack[] = $p;
+            elseif ( $c === ']' && $stack )
+                $matches[array_pop( $stack )] = $p;
         }
+        if ( count( $this->bracketCache ) > 64 )
+            $this->bracketCache = array();
+        return $this->bracketCache[$key] = $matches;
+    }
+
+    /**
+     * A link or image at $text[$k] === '[': [label](url "title"), [label][ref], [label][], [label].
+     *
+     * @return array|null array( 'label', 'url', 'title', 'end' )
+     */
+    protected function parseLink( $text, $k )
+    {
+        $len = strlen( $text );
+        // the closing bracket of every opening one, found in one pass over the text (a scan per "[" made
+        // "[[[[..." quadratic); a label is at most 999 characters (CommonMark)
+        $matches = $this->bracketMatches( $text );
+        $close = isset( $matches[$k] ) && $matches[$k] - $k <= 1000 ? $matches[$k] : null;
         if ( $close === null )
             return null;
         $label = substr( $text, $k + 1, $close - $k - 1 );
@@ -1611,7 +1635,7 @@ class expHelpMarkdownRenderer
     /**
      * An interface word, translated.
      */
-    protected function t( $text )
+    public function t( $text )
     {
         if ( is_callable( $this->options['translate'] ) )
             return (string)call_user_func( $this->options['translate'], $text );

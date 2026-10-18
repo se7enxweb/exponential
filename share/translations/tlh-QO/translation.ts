@@ -13770,6 +13770,10 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;De&apos; latlh DaneHchugh, &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; yIlegh.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>QaH botlh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14221,6 +14225,10 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Quick search</source>
         <translation>nejghach nom</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>QaH botlh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14446,6 +14454,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>ponglIj, De&apos;wI&apos; QIn DaqlIj, De&apos; latlh je.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>QaH botlh</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>nav, nej &apos;ej chay&apos; Qagh ja&apos;lu&apos;.</translation>
     </message>
 </context>
 <context>
@@ -14863,6 +14879,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>The translation each interface language shows, and what it falls back to.</source>
         <translation>rarmeH jIH Hol Hoch 'angbogh mughghach, tam Hol je.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>QaH botlh</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>nav, nej &apos;ej chay&apos; Qagh ja&apos;lu&apos;.</translation>
     </message>
 </context>
 <context>
@@ -64949,6 +64973,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>QaH botlh</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -72049,6 +72077,330 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Exponential documentation</source>
         <translation>Exponential De&apos; ghItlh</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>De&apos; choH</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>laHmey</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>QaH &apos;ej boQ</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>mIllogh &apos;ej Hol</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Holmey</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>mIch mIwmey</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>ngangmoH</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>De&apos;lIj</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>jomvam lo&apos;bogh Hoch ghotvaD nav &apos;ej De&apos; paq, mI&apos;Daj De&apos; ghItlh vo&apos; ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>nIHwI&apos;mey yIlo&apos;</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>yIlegh</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Hoch QaH nav yIlegh</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>QaH yIlegh</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>latlh ghotpu&apos;, latlh qech pagh latlh Segh yIwIv.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>yIghItlhqa&apos;</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>tI&apos;meH choHmey yInob</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>yIqonqa&apos; &apos;ej yIDIb</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>ghItlh Dub &apos;ej chaw&apos; QIn</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>De&apos; chenmoH &apos;ej choH: ghItlhwI&apos;, yotlhmey, nab ghItlhmey &apos;ej mI&apos;mey.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>De&apos; ghItlh chaw&apos;</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>loHghach Daq &apos;ej Daq Daq De&apos; Sam.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>loHghach wa&apos;DIch mIwmey: &apos;el, He Sam &apos;ej jaj Hoch Qu&apos;mey.</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>De&apos; ghItlh tlhab: yIlo&apos; bIQaHjaj &apos;ej latlh DaQaHjaj</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>QaH Suq &apos;ej Qagh ja&apos;.</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>latlh lo&apos;wI&apos;pu&apos;vaD nav yInob, nav Dap pagh De&apos;wI&apos; ghItlh. Hoch qonqa&apos;Daq ghItlh Dub QIn, chaw&apos; QIn &apos;ej chaw&apos; qonqa&apos; yIpol.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>mIllogh, De&apos;wI&apos; ghItlh &apos;ej latlh Hol: lan, wIv &apos;ej lo&apos;qa&apos;.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Exponential jom &apos;ej mI&apos; chu&apos; Dub.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>loHghach nomqu&apos;moHbogh SeHlaw leQmey.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>wIvvamvaD pagh nav.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>ghItlhmey ngo&apos; polta&apos;lu&apos;bogh.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>nav nab: Sepmey, ngoghmey &apos;ej nab wIvbogh chutmey.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>De&apos; ngangmoH, poH yIlan, So&apos; &apos;ej vIH.</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>nav Hoch yIlaD, poH Hoch, ngoQ Hoch.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>chaw&apos; yIlaD</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>QaH Daq nav pong &apos;ej Daq, pagh doc Daq De&apos;wI&apos; ghItlh yIlo&apos; nav DaghItlhmeH.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>De&apos; paq: SeHlaw, ra&apos;mey &apos;ej mIwmey.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Daq yIloH: SeHlaw, lo&apos;wI&apos;pu&apos; &apos;ej Qu&apos;mey, pegh Daqmey, poH Qu&apos;mey &apos;ej ghItlhmey.</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>rap chaw&apos; yIlo&apos; mI&apos;lIj DaDIbDI&apos;, wa&apos;DIch QInmey &apos;ej Dachoghta&apos;bogh QIn je.</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>yIHaD</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>tamghay&apos;mey, chelwI&apos;mey, API &apos;ej ngoq &apos;emDaq.</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>De&apos;wI&apos; Qorwagh Daq chaw&apos;</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>De&apos; ghItlhvam tlhab, %license %version pagh tlhaQ chaw&apos; lo&apos;.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>De&apos; ghItlhvam tlhab, %license %version chaw&apos; lo&apos;.</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>QaHvam tlhab, %license %version pagh tlhaQ chaw&apos; lo&apos;. Dalo&apos;laH, DaDIblaH &apos;ej DapIvmoHlaH:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>QaHvam tlhab, %license %version chaw&apos; lo&apos;. Dalo&apos;laH, DaDIblaH &apos;ej DapIvmoHlaH:</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>%license ghItlh &apos;oH, mI&apos; %version, Free Software Foundation ngangmoHmeH. Hoch ghotvaD mu&apos; Hoch qonqa&apos;laH &apos;ej DIblaH; choHlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>%extension chelwI&apos; De&apos; ghItlh &apos;ay&apos; &apos;oH navvam&apos;e&apos;, chelwI&apos; chaw&apos; lo&apos;.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>wa&apos;DIch ghun De&apos; ghItlh vo&apos; navvam Suqlu&apos;. %license lo&apos;be&apos;; %other lo&apos;.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>qechmey</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>yImugh, yIchoH &apos;ej yIpIvmoH</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>mughmey &apos;ej Daq Holmey.</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>nav Hoch Daq «GitHub Daq yIchoH» yIlo&apos;. rap chaw&apos; lo&apos;bogh choHmey laj, vaj Hoch ghotvaD tlhab ratlh.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>mI&apos; Hoch Daq choHpu&apos;bogh.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>nuq ta&apos; laH Hoch &apos;ej chay&apos; SeHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>De&apos; ghItlh tlhab Dalo&apos;DI&apos; nuq Data&apos;laH</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>nav chaw&apos; Segh</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>De&apos;lIj: mu&apos;mey pegh, cha&apos; mIw &apos;el &apos;ej SeHlaw.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count nav rap</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>De&apos; ghItlh qengmeyDaq %count nav. qeng yIpoSmoH, pagh pong mu&apos; yIlo&apos; &apos;ej yInIH.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>De&apos; ghItlhvam bopbogh</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>QaH naQ yIlegh</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>nav yInIH</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>QaH nav yInIH</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>pagh nav pong rap</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>mI&apos; ngo&apos; rapmoHghach</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>choH ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>ghu&apos;mey</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>nav&apos;e&apos; QaH</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>loHghach lo&apos;</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>jomghach</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Suy qach</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>nab ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>chutmey</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>navvam yIgher</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>PDF yIlI&apos;</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>navvam yIgher pagh yIlI&apos;</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Daq:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Exponential QaH</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>nav %number, %count vo&apos;</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>mIllogh: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>mIllogh</translation>
     </message>
 </context>
 </TS>
