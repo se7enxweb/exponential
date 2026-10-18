@@ -141,7 +141,8 @@ The "State" column is the state on 18 October 2026, with its source.
 
 **What it is.** "Exponential is a professional PHP application framework with advanced CMS (content management system)
 functionality. As a CMS its most notable feature is its fully customizable and extendable content model" (README).
-It is the continuation of eZ Publish, whose code it is, and it is published as the Composer package
+Its code was once the code of eZ Publish, a product that its creator discontinued after almost eighteen years of
+service to the world (7x's account, owner, 18 October 2026); Exponential carried that code forward and is published as the Composer package
 `se7enxweb/exponential` (composer.json). The README lists its main features: user-defined content classes, version
 control, multilingual support, a built-in search engine, role-based permissions, approval and scheduled publication,
 multisite support, built-in e-commerce, workflows, a template engine, a headless REST API, a database abstraction
@@ -186,7 +187,7 @@ Exponential (Legacy) Included (now with SQLite support)" (repository description
 lists the lines 2.5.x, 3.3.x, 4.6.x and 5.0.x as "Dual Kernel Symfony CMS which also includes a full copy of
 Exponential 6".
 
-**Who it is for.** Existing Exponential and eZ Publish sites that want Symfony beside them and move forward step by
+**Who it is for.** Existing Exponential sites, including sites built when the software was still called eZ Publish, that want Symfony beside them and move forward step by
 step ([Legacy bridge](../features/6.0/legacy-bridge.md)).
 
 ### Exponential Platform Nexus
@@ -417,8 +418,10 @@ No events (conferences, meetups) are documented in the sources used for this pag
 | 1998 | First year of the copyright notice of 7x and the Exponential Foundation | COPYRIGHT.md |
 | 1999 to 2014 | The copyright years of eZ Systems AS in the code | COPYRIGHT.md |
 | 2006 | eZpedia starts | <https://ezpedia.exponential.earth/> |
+| 2014 | 7x's initial idea: the se7enx.com domain is registered quietly and the fork of the entire ecosystem is prepared | 7x's account (owner, 18 October 2026); [Who is 7x?](who-is-7x.md#from-brookins-consulting-to-7x-in-three-stages) |
 | 2021 | "The platform originally known as eZ Publish reached end-of-life in 2021. We kept going." | se7enxweb profile README |
-| December 2023 | 7x takes over the code base; the first outside change is merged on 11 December | [December 2023](../history/2023/2023-12.md) |
+| 2022 | 7x's project starts | 7x's account (owner, 18 October 2026); README.md |
+| December 2023 | 7x's project is launched and takes over the code base; the first outside change is merged on 11 December | [December 2023](../history/2023/2023-12.md) |
 | 1 January 2024 | Exponential 6.0.0 (then still named eZ Publish) | [release overview](../release-overview) |
 | 2024 to 2026 | Exponential Platform, Legacy, Nexus and DXP repositories are created (February 2024 to March 2026) | GitHub API |
 | July 2025 | `COPYRIGHT.md` and `LICENSE.md` are added | [July 2025](../history/2025/2025-07.md) |
@@ -467,7 +470,7 @@ No events (conferences, meetups) are documented in the sources used for this pag
 | **GFDL** | GNU Free Documentation License; the documentation's license, version 1.3 or later |
 | **CSP** | Content Security Policy; tells the browser which scripts and styles a page may use |
 | **Packagist** | The Composer package directory |
-| **eZ Publish** | The original name of the software, by eZ Systems, 1999 to 2021 |
+| **eZ Publish** | The name the software had while eZ Systems developed it; a product its creator discontinued after almost eighteen years of service to the world. Used only for that history; the product today is Exponential |
 | **eZ Platform, Ibexa DXP OSS** | The Symfony based successors of eZ Publish by eZ Systems and Ibexa |
 | **LoveStack** | Mugo Web's distribution of the legacy kernel, whose features 6.0.15 rebuilt |
 
@@ -489,6 +492,8 @@ Other repositories, read through the GitHub API on 18 October 2026: the `compose
 `exponential-platform`, `exponential-platform-legacy`, `exponential-platform-nexus`, `exponential-platform-dxp`,
 `exponential-platform-nexus-starter`, `exponentialbasic`, `exponential-velocity`, `expai`, `exp_adminui`, and the
 se7enxweb profile README (`se7enxweb/.github`).
+
+7x's own account of its three stages (2014, 2022, 2023), given by the owner of 7x for this page on 18 October 2026.
 
 Public web pages, read on 18 October 2026: <https://foundation.exponential.earth/>,
 <https://exponential.earth/about/project>, <https://exponential.earth/>, <https://se7enx.com/about>,
