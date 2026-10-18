@@ -106,6 +106,7 @@ ecd31f66f1c0268e1929489cac642295  bin/php/ezwebincommon.php
 aef5f587ba98095996266b403af6d77c  bin/php/ezwebinupgrade.php
 6ab2dce1ea53fbf5e557a457414e0543  bin/php/flatten.php
 776d90775d3fe142bc18f7d48987b426  bin/php/frankenphp.php
+038994d40f5bd45e6d6f97ace5ba73f2  bin/php/i18n.php
 59c9fcb832a37194d1ea457b7793ae64  bin/php/ini.php
 3866c29e27b5168b711a2147e7a8b873  bin/php/install.php
 e4675b2c9840dcfeb3b515eb1fe87dd5  bin/php/kickstarter.php
@@ -675,6 +676,7 @@ ed52e10a5f47b691c8e15ae490adb105  design/admin/templates/setup/datatype.tpl
 a925a224cc78a74747132267d11b2cfa  design/admin/templates/setup/handlerextension.tpl
 9547336dbfa9668c57e44d4a05ebd396  design/admin/templates/setup/info.tpl
 af31fc447e00b08df2231c45cc83aff5  design/admin/templates/setup/kerneloverride.tpl
+9fb0ec16a49adaa9d9d8f5efdff92534  design/admin/templates/setup/languages.tpl
 0c815ccd0620c85bcbbd931407f80b60  design/admin/templates/setup/logs.tpl
 3f58c215a126e0f858d160727e4549aa  design/admin/templates/setup/logs_confirm.tpl
 9f15a4466e841676ba64b31cf110c32b  design/admin/templates/setup/logs_digest.tpl
@@ -1426,6 +1428,7 @@ c2399586235f8316999cf8cc48050129  design/admin4/templates/setup/extensions.tpl
 26cf7f04b40f141b5976df73fdef460a  design/admin4/templates/setup/handlerextension.tpl
 0611bfbad8aeed063e0318dc77186f58  design/admin4/templates/setup/info.tpl
 f7778e3a6cf0d80181dea41d479a1931  design/admin4/templates/setup/kerneloverride.tpl
+9fb0ec16a49adaa9d9d8f5efdff92534  design/admin4/templates/setup/languages.tpl
 0c815ccd0620c85bcbbd931407f80b60  design/admin4/templates/setup/logs.tpl
 3f58c215a126e0f858d160727e4549aa  design/admin4/templates/setup/logs_confirm.tpl
 9f15a4466e841676ba64b31cf110c32b  design/admin4/templates/setup/logs_digest.tpl
@@ -5395,6 +5398,7 @@ ce0bb66240c7036cda2021294a47d14f  kernel/classes/ezworkflowgrouplink.php
 08af60f44b4c8d91729d951cbbf01ac5  kernel/classes/ezworkflowgrouptype.php
 b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 4ff841d8b07c17168f3063c415ba91b6  kernel/classes/ezworkflowtype.php
+9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
 63e8afbb944019671f8b369642eb12d7  kernel/classes/ini/actions/expiniaction.php
 85b05708b2165d0dc398973d33ba0a0e  kernel/classes/ini/actions/expiniactionactions.php
 1e5387f9dde2f6bfbc97b60a92572340  kernel/classes/ini/actions/expiniactionadd.php
@@ -5812,6 +5816,7 @@ e98e5c5a081eab2a8c9a18daf576072b  kernel/private/classes/commands/ezwebincommon.
 5b480d0f805b45581ac24faee337da83  kernel/private/classes/commands/ezwebinupgrade.php
 c61acc01467edac32c8a59505a4b9fe3  kernel/private/classes/commands/flatten.php
 fe35c28f741908dd6713405c603413ec  kernel/private/classes/commands/frankenphp.php
+5d5edc8e51ef12f0402018e59ffb7bdc  kernel/private/classes/commands/i18n.php
 8bdf8c53969e8d1d622139f4b6928e67  kernel/private/classes/commands/ini.php
 1d84d46c5427821500cbdcb9322ede53  kernel/private/classes/commands/install.php
 6f138ff94b8f197de38bf401d0ae2ba2  kernel/private/classes/commands/kickstarter.php
@@ -6091,6 +6096,7 @@ c82e5ac21ed1b61b72a5e91d6550bf9c  kernel/private/classes/views/setup/datatype.ph
 af13a15fd346cd3c53de7f9c8fb7bb81  kernel/private/classes/views/setup/handlerextension.php
 8c7b6b665a97b61bc047207ecaec091a  kernel/private/classes/views/setup/info.php
 9ec471cd1828163cca17e995aaa27538  kernel/private/classes/views/setup/kerneloverride.php
+ea7196a514fccfb9e7f4d488fc0c998f  kernel/private/classes/views/setup/languages.php
 895afc41e9c831dbae0936dcf3317ab8  kernel/private/classes/views/setup/logs.php
 c978fbf49d160945a24910a5345f58a5  kernel/private/classes/views/setup/logsaction.php
 5613e8a4a7dc22405ce66b92c5f7174a  kernel/private/classes/views/setup/logsdigest.php
@@ -6402,6 +6408,7 @@ b3d46bd1c3ea5767a9ffcb90f8b22061  kernel/setup/ezsetupcommon.php
 7183ac0ed7562b87665665a2daad4b6f  kernel/setup/handlerextension.php
 f74e53f9425a012b53f82f9d23c7306c  kernel/setup/info.php
 041d133355eda95b9fbdb57620982207  kernel/setup/kerneloverride.php
+caf3022e053006d30e89e94cd8f07bf8  kernel/setup/languages.php
 ae2792a0b360499f822d7a52f9505efe  kernel/setup/logs.php
 d969b3e0244041055a42a14d6fcd5ab8  kernel/setup/logsaction.php
 3e3d6a182763d1c18dbfb8127534e6f8  kernel/setup/logsdigest.php
@@ -8368,6 +8375,7 @@ fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthenticatio
 6d55864478b562693e77197e4a5e94c1  tests/tests/kernel/classes/ezuserdiscountrule_test.php
 43a4eefe5f44077ad2e85271207b9890  tests/tests/kernel/classes/ezworkflowevent_regression.php
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
+444d0db01cc11b5e3f7778567f43f105  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
 f6ecb43c903ad708479858b8bbb01746  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 28f13941e6a56ca4b6dba5757c6fadd0  tests/tests/kernel/classes/ini/command/IniCommandTest.php
 78c48749a30c2769a626984bf19d3074  tests/tests/kernel/classes/ini/command/IniMoveTest.php
