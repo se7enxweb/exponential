@@ -4477,6 +4477,16 @@ c01bc7fd96ae7ffc3bf44b3b761ed906  doc/help/images/tour-layout-block-selected.web
 b19b77fb20de7a54ce56360c1ccc6b5e  doc/help/images/tour-preview.webp
 7367882f7d7621f057d0194c8b581bf8  doc/help/images/tour-versions-draft.webp
 dcbc4765c6efd3a48ec1f17cebfa5b7a  doc/help/images/two-step-setup.webp
+4d1a93affc9ea877d95a2366ac7fbdd9  doc/help/images/update-caches.webp
+7dd79c9123d679a4acc9508154036a29  doc/help/images/update-ezupdate-browse.webp
+71ac5f422fd916cfccfdb5d9e84d7448  doc/help/images/update-ezupdate-funding.webp
+0fded34d3063fda0029fbea560b9f7c3  doc/help/images/update-ezupdate-installed.webp
+17aa69f8c4f00df749d5b76e53a0f7ac  doc/help/images/update-ezupdate-overview.webp
+4ed8ffe2f0f5a2d028bcf6cbce169cc2  doc/help/images/update-ezupdate-servers.webp
+3ef7be78473df61aa69b7f78fb2bf134  doc/help/images/update-git-manager.webp
+8d871ea63bc3f9405162549738dd10ea  doc/help/images/update-logs.webp
+2ee3c65057ea308d18a427bc3e0450a3  doc/help/images/update-maintenance.webp
+1f80a35c16fb4004febb83c4a11c98e2  doc/help/images/update-upgrade-check.webp
 f7310491d28b2e21502fa6ba5b206888  doc/help/images/versions.webp
 83e381b602fa6e9ae3396dce8de9542b  doc/help/keyboard-shortcuts.md
 b6f5016b38d3aef26092fb55ea3917ae  doc/help/languages.md
@@ -4603,7 +4613,7 @@ ce9facdac8c61ce2a410c587b8025f5e  doc/help/supporters/supporters-start-here.md
 457a76da27b0e835a9ab252c976d8626  doc/help/supporters/supporting-as-a-company.md
 756cca3c7b02a19aed7dc684a35ac63e  doc/help/supporters/testing-and-reporting-bugs.md
 0c5611d9122cc264a4193dff110fc70d  doc/help/supporters/ways-to-support-exponential.md
-11301d15e5750276fe4244cb999256fa  doc/help/update-with-git.md
+a247a75035bbe8fa4e58db52602b7f15  doc/help/update-with-git.md
 6cee31f394a1674d1c735bb1e8b585e7  doc/help/when-something-goes-wrong.md
 5ca11aed7eb7120556497445c9099bc8  doc/help/who-is-7x.md
 1789c6d5581540a05554c912dd7dd48e  doc/help/who-is-the-exponential-foundation.md
@@ -9440,7 +9450,7 @@ dec261453f1798ac4bf413bdbc0aa456  tests/tests/kernel/classes/help/expHelpCommuni
 36b450bc550a4dc82272aa296b1fda36  tests/tests/kernel/classes/help/expHelpContentExportTest.php
 d1046a764cd9965e41cb1a4576148d32  tests/tests/kernel/classes/help/expHelpContentTest.php
 19fa0f5f2358b00a9b0a8b6fe0a822ca  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
-12258253f6e255b87e883796db7850b8  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
+ea72cf918aeca7b86c5f50ce2b395b35  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
 63751e825a3e7a8eab2e03bde858a6e7  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
 71c9e5ae21978534c250ee6455633a7e  tests/tests/kernel/classes/help/expHelpIssueReportTest.php
 9f17bb790fa4497c71715564c6fe3a58  tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php
