@@ -1664,7 +1664,20 @@
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
     ],
     "kernel/sql/common/cleandata.sql": [
-      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "kernel/sql/sqlite/cleandata.sql": [
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "kernel/classes/help/exphelpreadpolicygrant.php": [
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "kernel/private/classes/commands/addexphelpreadpolicy.php": [
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "bin/php/addexphelpreadpolicy.php": [
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
     ]
   },
   "generated": {

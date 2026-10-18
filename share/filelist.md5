@@ -23,7 +23,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6317a4c9d5332abdff2cdede49edebb7  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-518cc720170fb41269ce2172a6425cde  autoload/ezp_kernel.php
+49079fe0f2e933701012f4cce0c22241  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -48,6 +48,7 @@ a9586e3978dfedf84e40af4d9ff7edd6  bin/mongodb/fixup_ndjson.py
 1374ed9d080d58b9372d49d958ba0ed1  bin/mongodb/validate_ndjson.sh
 04ea36d6c950a3853af68f0b8424a2b2  bin/php/accesscheck.php
 11893714c574088dd6f49b8aba0e9018  bin/php/adddefaultstates.php
+c54a6f68ea2ace17c9469d30f2b6f32e  bin/php/addexphelpreadpolicy.php
 446fab6194c2edbe6edc69620702dd35  bin/php/addoauthauthorizepolicy.php
 4460e42dd61f6e055992cf55cb0f1b4c  bin/php/audit.php
 19f4d817d3033c84df9cbbba89e0cfd1  bin/php/benchmark.php
@@ -3683,7 +3684,7 @@ efbf2cf79f254018df640a05a54f55d9  doc/features/6.0/extensions/xrowmetadata.md
 1d5d1d68f0fdcf825e81bc6ad49ee3c0  doc/features/6.0/ezpm-package-manager-cli.md
 3961785a8af896cb1fddd1e9be1eb080  doc/features/6.0/file-consistency-check.md
 dfa9c308bb3efde44b47784f72b7e244  doc/features/6.0/form-expired-page.md
-075f2261c4457bbb4a9d6621ddba3b55  doc/features/6.0/help-system.md
+7d5bb541ca05c8ab7105fba238ce4df5  doc/features/6.0/help-system.md
 8de8fa7cc57c60a79a0dbb7e6698bfac  doc/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/features/6.0/icon-themes-in-extensions.md
 084d3e79b84e8ab0d8c13663d37c531e  doc/features/6.0/install-in-one-command.md
@@ -5458,6 +5459,7 @@ fbe202253abbc1bce78eaaa73f6207ea  kernel/classes/help/exphelpissuereport.php
 0f072cc096b3f9ad306f5e7c52ca386d  kernel/classes/help/exphelplinkcheck.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
 d90531ed472a1724946fd1fd87aef5d1  kernel/classes/help/exphelpmarkdownrenderer.php
+4bb23e416344f44ac2989a7746f1ed2f  kernel/classes/help/exphelpreadpolicygrant.php
 f2f4f7222b423446d90fefa0a0ab25d6  kernel/classes/help/exphelpsearch.php
 63e8afbb944019671f8b369642eb12d7  kernel/classes/ini/actions/expiniaction.php
 85b05708b2165d0dc398973d33ba0a0e  kernel/classes/ini/actions/expiniactionactions.php
@@ -5828,6 +5830,7 @@ b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/int
 3d3a0ae30251fcd03d11507ca6aca2bb  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventnotifier.php
 7b075fff6b1e2111d3f2b9f83e59c705  kernel/private/classes/commands/accesscheck.php
 637c34664ef032d92963815921a3581e  kernel/private/classes/commands/adddefaultstates.php
+78fb7e64133745289b22ef19637e2d26  kernel/private/classes/commands/addexphelpreadpolicy.php
 feb9d9ee0bc95f6a298f87be41b485a5  kernel/private/classes/commands/addoauthauthorizepolicy.php
 34ae68be04b0972a488a71f656800e6a  kernel/private/classes/commands/audit.php
 df1aec24f996ce857e8b868c9b68fa5f  kernel/private/classes/commands/benchmark.php
@@ -6584,7 +6587,7 @@ a5a61099e4c1ed8b3d4cc85ffb11a5eb  kernel/shop/updatebasket.php
 11c090806e9636c16955a873ba5ae028  kernel/shop/vatrules.php
 a04dffad4e657eed3e6e013d3f0c0374  kernel/shop/vattype.php
 ef06c1c17f9c7019e9f5ce249bc232ee  kernel/shop/wishlist.php
-c945a5df7a11ee4671644cd4cd631adf  kernel/sql/common/cleandata.sql
+b6f0e8c2cea5e228c975de27492721fa  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
@@ -6592,7 +6595,7 @@ dd46ede74b0eb5e4c6fb55fde80f414a  kernel/sql/mysql/kernel_schema.sql
 c82dc0ebec07c22d5cee916faa0967ce  kernel/sql/postgresql/kernel_schema.sql
 f2ad2f8e1711872bbc2d871d7cc6c76b  kernel/sql/postgresql/sequence.sql.template
 ce03b8330af52b5e601c91208fee1ffd  kernel/sql/postgresql/setval.sql
-14a22b0c8101fe7124b1c1f2a4823ad3  kernel/sql/sqlite/cleandata.sql
+90390dd0124362796ab09f2f4cdacf5c  kernel/sql/sqlite/cleandata.sql
 9f43f24dada2d8918b9663e43af6d2b0  kernel/sql/sqlite/schema.sql
 1bb603e51ab28ac0367fb23c71c2648e  kernel/state/assign.php
 58b38e2e4ae8744e1d4418ed6659bc18  kernel/state/edit.php
@@ -7801,7 +7804,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-6d7c671f6b85f9e4a34584a196f640ef  tests/test-map.json
+29c814f90be84ba04b9e9db9fa2fe8ae  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -8403,6 +8406,7 @@ fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthenticatio
 ead998cc3d4822efd40bb9da2d72d733  tests/tests/kernel/classes/help/expHelpLinksTest.php
 ee73cc3a2f8f76b722448da9b9642a81  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
 f5af6333a0efac158e183917cda8b55a  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
+c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 40d3f7f792f9d9bd65dd9deed364d74d  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 a684f12211ff378fe1c4dc493a899644  tests/tests/kernel/classes/help/expHelpSearchTest.php
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
