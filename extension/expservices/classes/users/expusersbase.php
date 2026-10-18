@@ -120,6 +120,30 @@ abstract class expUsersBase extends expServiceBase
         return eZUser::contentClassIDs();
     }
 
+    /**
+     * Why a new password is refused: the rules of user/password (expPasswordPolicy: MinPasswordLength,
+     * [PasswordSettings] and the well-known password check), or only the length where the policy is missing.
+     *
+     * @param string $password
+     * @param eZUser|null $user the account, when it exists
+     * @param string|null $login
+     * @return array translated sentences, empty when the password is accepted
+     */
+    protected static function passwordErrors( $password, $user = null, $login = null )
+    {
+        if ( class_exists( 'expPasswordPolicy' ) )
+            return expPasswordPolicy::instance()->accountErrors( (string)$password, $user instanceof eZUser ? $user : null, $login );
+        return eZUser::validatePassword( $password ) ? array() : array( 'The password is too short' );
+    }
+
+    /** @throws expServiceException 422 when the password is refused, naming every rule it fails */
+    protected static function requireAcceptablePassword( $password, $user = null, $login = null )
+    {
+        $errors = self::passwordErrors( $password, $user, $login );
+        if ( $errors )
+            throw new expServiceException( 'The password is not acceptable: ' . implode( ' ', $errors ), 422 );
+    }
+
     /** @throws expServiceException 422 when login, e-mail or password are not acceptable or taken */
     protected static function validateNewAccount( $login, $email, $password, $exceptId = 0 )
     {
@@ -137,8 +161,8 @@ abstract class expUsersBase extends expServiceBase
             if ( $other instanceof eZUser && (int)$other->attribute( 'contentobject_id' ) !== (int)$exceptId )
                 throw new expServiceException( 'The e-mail address is already in use', 409 );
         }
-        if ( $password !== null && !eZUser::validatePassword( $password ) )
-            throw new expServiceException( 'The password is too short', 422 );
+        if ( $password !== null )
+            self::requireAcceptablePassword( $password, $exceptId ? eZUser::fetch( (int)$exceptId ) : null, $login );
     }
 
     protected static function moduleFunctions( $module )

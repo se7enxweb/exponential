@@ -7,6 +7,10 @@
 {if $link}
 {"Click here to get new password"|i18n('design/standard/user/forgotpassword')}:
 {concat("user/forgotpassword/", $hash_key, '/')|ezurl(no,'full')}
+{if gt( first_set( $key_lifetime_minutes, 0 ), 0 )}
+
+{"The link works only once and only for %1 minutes."|i18n('design/standard/user/forgotpassword',,array($key_lifetime_minutes))}
+{/if}
 {else}
 
 

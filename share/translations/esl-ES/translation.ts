@@ -51689,6 +51689,10 @@ Consulta la página de requisitos para obtener más información.</translation>
         <source>Company</source>
         <translation type="obsolete">Compañía</translation>
     </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Esta contraseña es conocida o demasiado común, así que cualquiera podría adivinarla. Elige otra.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54205,6 +54209,22 @@ tu cuenta.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Introduce una dirección de correo electrónico válida.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Este enlace ha caducado.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Por tu seguridad, un enlace para restablecer tu contraseña solo funciona durante %1 minutos y una sola vez. Pide un enlace nuevo a continuación.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Pedir un enlace nuevo</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>El enlace solo funciona una vez y durante %1 minutos.</translation>
     </message>
 </context>
 <context>
@@ -58923,6 +58943,14 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
     <message>
         <source>The new password does not meet the requirements.</source>
         <translation>La nueva contraseña no cumple los requisitos.</translation>
+    </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>No es una contraseña conocida ni común</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>La nueva contraseña es conocida o demasiado común. Elige otra.</translation>
     </message>
 </context>
 <context>
@@ -71035,6 +71063,10 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>The password does not meet the requirements.</source>
         <translation>La contraseña no cumple los requisitos.</translation>
     </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>La contraseña es conocida o demasiado común. Elige otra.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
@@ -74182,6 +74214,14 @@ Gracias por tu feedback</translation>
     <message>
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>Presentar y promocionar Exponential: posicionamiento, demostraciones, objeciones, licencias, marca y crecimiento de la comunidad.</translation>
+    </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Actualiza con Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Recibe las actualizaciones en cuanto se suben a GitHub y luego actualiza Composer para que coincida: cada hora, cada día, cada semana, cada mes o solo en cada versión.</translation>
     </message>
 </context>
 </TS>

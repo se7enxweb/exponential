@@ -37,15 +37,10 @@ class Install extends \Exponential\Runnable\Command
      */
     public static function passwordProblem( $password )
     {
+        // the same rules as the kickstarter (eZStepSiteAdmin::kickstartPasswordProblem(), expWeakPasswordList)
         if ( \eZStepSiteAdmin::isWeakDefaultPassword( $password ) )
             return 'well-known';
-        $min = 10;
-        if ( class_exists( 'eZINI', false ) )
-        {
-            $configured = (int)\eZINI::instance( 'site.ini' )->variable( 'UserSettings', 'MinPasswordLength' );
-            if ( $configured > 0 )
-                $min = $configured;
-        }
+        $min = \eZStepSiteAdmin::minAdminPasswordLength();
         if ( strlen( $password ) < $min )
             return "shorter than $min characters";
         return null;

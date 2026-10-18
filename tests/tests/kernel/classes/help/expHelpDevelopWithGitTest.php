@@ -1,6 +1,6 @@
 <?php
 /**
- * The "Develop with Git" help page and the "Grow from user to developer" band of the help dashboard
+ * The "Develop with Git" and "Update with Git" help pages and the "Grow from user to developer" band of the help dashboard
  * (doc/help/develop-with-git.md, design/<admin4|admin>/templates/exphelp/parts/dashboard_grow.tpl). No database.
  *
  *  HG-01  the page exists with its front matter: audiences user and developer, category development, featured
@@ -11,6 +11,7 @@
  *         dashboards, linking the page and the installation chapter, with no inline CSS or script
  *  HG-06  every string of the part is in the eng-US and ger-DE catalogues under kernel/exphelp
  *  HG-07  the commands the page recommends are the ones that were verified (clone URL, preferred-install, keep-vcs)
+ *  HG-08  help/update-with-git.md: front matter, the verified update commands per schedule, linked from the band, served
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -21,6 +22,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
 {
     const PAGE = 'doc/help/develop-with-git.md';
     const PART = 'templates/exphelp/parts/dashboard_grow.tpl';
+    const UPDATE_PAGE = 'doc/help/update-with-git.md';
 
     private static function root()
     {
@@ -98,7 +100,13 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
     /** HG-04 */
     public function testLinksAndAnchors()
     {
-        $text = self::read( self::PAGE );
+        $this->assertGreaterThan( 10, $this->checkLinks( self::PAGE ) );
+        $this->assertGreaterThan( 8, $this->checkLinks( self::UPDATE_PAGE ) );
+    }
+
+    private function checkLinks( $page )
+    {
+        $text = self::read( $page );
         preg_match_all( '/\]\(([^)\s]+)\)/', $text, $m );
         $this->assertNotEmpty( $m[1] );
         $checked = 0;
@@ -110,14 +118,14 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
                 continue;
             }
             $parts = explode( '#', $href, 2 );
-            $target = $parts[0] === '' ? self::PAGE : self::normalize( dirname( self::PAGE ) . '/' . $parts[0] );
+            $target = $parts[0] === '' ? $page : self::normalize( dirname( $page ) . '/' . $parts[0] );
             $this->assertStringStartsWith( 'doc/', $target, $href );
             $this->assertFileExists( self::root() . '/' . $target, $href );
             if ( isset( $parts[1] ) && $parts[1] !== '' )
                 $this->assertContains( $parts[1], self::anchors( self::read( $target ) ), $href . ': no such heading' );
             ++$checked;
         }
-        $this->assertGreaterThan( 10, $checked );
+        return $checked;
     }
 
     private static function normalize( $path )
@@ -154,7 +162,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
     public function testStringsTranslated()
     {
         preg_match_all( "/\\{'((?:[^'\\\\]|\\\\.)+)'\\|i18n\\( \\\$help_grow_ctx \\)/", self::read( 'design/admin4/' . self::PART ), $m );
-        $this->assertCount( 10, $m[1] );
+        $this->assertCount( 12, $m[1] );
         foreach ( array( 'eng-US', 'ger-DE' ) as $lang )
         {
             $ts = self::read( 'share/translations/' . $lang . '/translation.ts' );
@@ -168,6 +176,33 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
                     $context, $lang . ': ' . $source );
             }
         }
+    }
+
+    /** HG-08 */
+    public function testUpdatePage()
+    {
+        $text = self::read( self::UPDATE_PAGE );
+        $this->assertNotSame( '', $text, self::UPDATE_PAGE . ' exists' );
+        list( $meta, $body ) = expHelpFrontMatter::split( $text );
+        $this->assertSame( 'development', $meta['category'] );
+        $this->assertStringStartsWith( '# Update with Git', ltrim( $body ) );
+        foreach ( array(
+            'git fetch origin --tags',
+            'git merge origin/main',
+            "git merge \"\$(git tag -l 'v6.*' --sort=version:refname | tail -1)\"",
+            'composer update',
+            'git log --oneline ORIG_HEAD..HEAD',
+            'exp:velocity deploy',
+            'OnCalendar=daily',
+            '15 4 * * *  EXP_SITE=/var/www/exponential /usr/local/bin/exp-update release',
+        ) as $command )
+            $this->assertStringContainsString( $command, $text );
+        $this->assertStringContainsString( "'/exphelp/viewer/help/update-with-git.md'|ezurl", self::read( 'design/admin4/' . self::PART ) );
+        $out = array();
+        $rc = 1;
+        @exec( 'git -C ' . escapeshellarg( self::root() ) . ' ls-files -- ' . escapeshellarg( self::UPDATE_PAGE ) . ' 2>/dev/null', $out, $rc );
+        if ( $rc === 0 && $out )
+            $this->assertTrue( ( new expHelpAllowlist( array( 'root' => self::root() ) ) )->allows( self::UPDATE_PAGE ) );
     }
 
     /** HG-07 */

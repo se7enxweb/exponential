@@ -16,6 +16,9 @@
  * ended (EndOtherSessions) and the "your password was changed" mail is sent (ChangeNotificationMail, mail
  * category security). Guide: doc/features/6.0/modern-password-change.md.
  *
+ * The rule not_common refuses well-known and common passwords (expWeakPasswordList: the built-in words, site.ini
+ * [UserSettings] WeakPasswordList[] and WeakPasswordFile); it is on unless [UserSettings] WeakPasswordCheck=disabled.
+ *
  * @package kernel
  */
 class expPasswordPolicy
@@ -29,6 +32,7 @@ class expPasswordPolicy
     const RULE_CLASSES = 'classes';
     const RULE_NOT_LOGIN = 'not_login';
     const RULE_NOT_CURRENT = 'not_current';
+    const RULE_NOT_COMMON = 'not_common';
 
     /** The element ids of the three fields, keyed by their POST names */
     protected static $fieldIDs = array( 'oldPassword' => 'password-old', 'newPassword' => 'password-new',
@@ -51,6 +55,19 @@ class expPasswordPolicy
     public static function instance()
     {
         return new self();
+    }
+
+    /** @var expWeakPasswordList|null */
+    protected $weakList = null;
+
+    /**
+     * @return expWeakPasswordList the well-known password list, read from the same site.ini
+     */
+    public function weakList()
+    {
+        if ( $this->weakList === null )
+            $this->weakList = new expWeakPasswordList( $this->ini );
+        return $this->weakList;
     }
 
     /**
@@ -128,6 +145,8 @@ class expPasswordPolicy
             $rules[] = array( 'id' => self::RULE_NOT_LOGIN, 'min' => 0, 'text' => ezpI18n::tr( 'kernel/user/password', 'Does not contain your user name' ) );
         if ( $this->enabled( 'ForbidCurrentPassword' ) )
             $rules[] = array( 'id' => self::RULE_NOT_CURRENT, 'min' => 0, 'text' => ezpI18n::tr( 'kernel/user/password', 'Is not your current password' ) );
+        if ( $this->weakList()->enabled() )
+            $rules[] = array( 'id' => self::RULE_NOT_COMMON, 'min' => 0, 'text' => ezpI18n::tr( 'kernel/user/password', 'Is not a well-known or common password' ) );
         return $rules;
     }
 
@@ -159,6 +178,8 @@ class expPasswordPolicy
                 return ezpI18n::tr( 'kernel/user/password', 'The new password must not contain your user name.' );
             case self::RULE_NOT_CURRENT:
                 return ezpI18n::tr( 'kernel/user/password', 'The new password must be different from your current password.' );
+            case self::RULE_NOT_COMMON:
+                return ezpI18n::tr( 'kernel/user/password', 'The new password is well-known or too common. Choose another one.' );
         }
         return ezpI18n::tr( 'kernel/user/password', 'The new password does not meet the requirements.' );
     }
@@ -190,6 +211,8 @@ class expPasswordPolicy
                 return ezpI18n::tr( 'kernel/user/password/account', 'The password must not contain the user name.' );
             case self::RULE_NOT_CURRENT:
                 return ezpI18n::tr( 'kernel/user/password/account', 'The password must be different from the current password.' );
+            case self::RULE_NOT_COMMON:
+                return ezpI18n::tr( 'kernel/user/password/account', 'The password is well-known or too common. Choose another one.' );
         }
         return ezpI18n::tr( 'kernel/user/password/account', 'The password does not meet the requirements.' );
     }
@@ -280,6 +303,9 @@ class expPasswordPolicy
                     break;
                 case self::RULE_NOT_CURRENT:
                     $ok = !( $user instanceof eZUser ) || !self::isCurrentPassword( $user, $password );
+                    break;
+                case self::RULE_NOT_COMMON:
+                    $ok = !$this->weakList()->isWeak( $password );
                     break;
             }
             if ( !$ok )

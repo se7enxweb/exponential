@@ -57,8 +57,9 @@ through it once in order after the install; afterwards it serves as a reference.
    once and written to `var/log/initial-admin-password`, readable by its owner only.
 2. **Sign in and change the password** at once: in the administration, **Change password** in the user menu, or
    directly `/admin/user/password`. The page lists the requirements beside the field: at least
-   `[UserSettings] MinPasswordLength` characters (shipped `10`, `settings/site.ini`) and the `[PasswordSettings]` rules you
-   switched on. It does not refuse well-known words by itself: choose a long, random password.
+   `[UserSettings] MinPasswordLength` characters (shipped `10`, `settings/site.ini`), not a well-known or common password
+   (`WeakPasswordCheck`, since 6.0.15) and the `[PasswordSettings]` rules you
+   switched on. Choose a long, random password.
    The user gets an e-mail that the password was changed (`ChangeNotificationMail`), which is also the first test of
    your mail settings ([10.4](#104-mail-the-file-transport-and-real-sending)).
 3. **Remove the password file** once you have signed in with the new password:

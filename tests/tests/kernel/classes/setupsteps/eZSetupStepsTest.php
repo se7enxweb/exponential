@@ -79,6 +79,9 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
             'bad email' => array( array( 'email' => 'ada at example' ) + $good, array( eZStepSiteAdmin::EMAIL_INVALID ) ),
             'no password' => array( array( 'password1' => '', 'password2' => '' ) + $good, array( eZStepSiteAdmin::PASSWORD_MISSING ) ),
             'passwords differ' => array( array( 'password2' => 'other' ) + $good, array( eZStepSiteAdmin::PASSWORD_MISSMATCH ) ),
+            // long enough, but a variant of a well-known word (base word + ending, built here, not written out)
+            'well-known variant' => array( array( 'password1' => 'publish' . 'ing', 'password2' => 'publish' . 'ing' ) + $good, array( eZStepSiteAdmin::PASSWORD_TOO_COMMON ) ),
+            'well-known with a year' => array( array( 'password1' => 'Administrator' . '2026', 'password2' => 'Administrator' . '2026' ) + $good, array( eZStepSiteAdmin::PASSWORD_TOO_COMMON ) ),
             'nothing posted' => array( array(), array( eZStepSiteAdmin::FIRST_NAME_MISSING, eZStepSiteAdmin::LAST_NAME_MISSING, eZStepSiteAdmin::EMAIL_MISSING, eZStepSiteAdmin::PASSWORD_MISSING ) ),
             'arrays posted' => array( array( 'first_name' => array( 'x' ), 'last_name' => array(), 'email' => array( 'a' ), 'password1' => array( 'p' ), 'password2' => array( 'p' ) ),
                                       array( eZStepSiteAdmin::FIRST_NAME_MISSING, eZStepSiteAdmin::LAST_NAME_MISSING, eZStepSiteAdmin::EMAIL_MISSING, eZStepSiteAdmin::PASSWORD_MISSING ) ),
@@ -105,7 +108,8 @@ class eZSetupStepsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $errors !== array(), $this->variable( 'has_errors' ) );
         $flags = array( eZStepSiteAdmin::FIRST_NAME_MISSING => 'first_name_missing', eZStepSiteAdmin::LAST_NAME_MISSING => 'last_name_missing',
                         eZStepSiteAdmin::EMAIL_MISSING => 'email_missing', eZStepSiteAdmin::EMAIL_INVALID => 'email_invalid',
-                        eZStepSiteAdmin::PASSWORD_MISSMATCH => 'password_missmatch', eZStepSiteAdmin::PASSWORD_MISSING => 'password_missing' );
+                        eZStepSiteAdmin::PASSWORD_MISSMATCH => 'password_missmatch', eZStepSiteAdmin::PASSWORD_MISSING => 'password_missing',
+                        eZStepSiteAdmin::PASSWORD_TOO_COMMON => 'password_too_common' );
         foreach ( $flags as $code => $flag )
             $this->assertSame( isset( $errors[0] ) && $errors[0] === $code ? 1 : 0, $this->variable( $flag ), $flag );
     }

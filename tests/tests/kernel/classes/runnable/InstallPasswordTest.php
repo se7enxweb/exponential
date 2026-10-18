@@ -3,7 +3,7 @@
  * The administrator password of exp:install: what is accepted, what is generated, and how the summary reads
  * back the password the installation really set. Files are written under var/tmp/install-password-tests/ only.
  *
- *  IP-01 - well-known passwords (publish, admin) are a problem; so are ones shorter than 10 characters
+ *  IP-01 - well-known passwords (publish, admin) and their variants are a problem; so are ones shorter than 10 characters
  *  IP-02 - an acceptable password (10+ characters, not well-known) has no problem and is kept as given
  *  IP-03 - a generated password is 24 characters of the bcrypt alphabet and differs per call
  *  IP-04 - the recorded password is read back from the file the setup writes, and only when this run wrote it
@@ -38,8 +38,16 @@ class InstallPasswordTest extends PHPUnit\Framework\TestCase
     public function testAcceptablePasswordIsKept()
     {
         $class = '\Exponential\Command\Kernel\Install';
-        $this->assertNull( $class::passwordProblem( 'publishing' ) );
         $this->assertNull( $class::passwordProblem( 'Tr0ub4dor&3xyz' ) );
+        $this->assertNull( $class::passwordProblem( 'k1e-Strong-Passphrase-9' ) );
+    }
+
+    public function testVariantOfAWellKnownWordIsAProblemEvenWhenLongEnough()
+    {
+        // built from the base word and an ending, the variant rule of expWeakPasswordList
+        $class = '\Exponential\Command\Kernel\Install';
+        $this->assertSame( 'well-known', $class::passwordProblem( 'publish' . 'ing' ) );
+        $this->assertSame( 'well-known', $class::passwordProblem( 'Exponential' . '2026!' ) );
     }
 
     public function testGeneratedPassword()

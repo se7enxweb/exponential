@@ -1233,8 +1233,8 @@ Rules that hold for every service of these domains:
 - Roles are edited like the role editor does: `exprole::draftCreate`, `draftAddPolicy`, `draftRemovePolicy`, `publish`
   (or `draftDiscard`); `exppolicy` changes the published role directly and validates module, function and limitation
   names against the module definition.
-- `expaccount` carries the public flows. The reset and activation keys travel by e-mail only and expire after 24 hours
-  through the services; `forgotRequest` answers the same for known and unknown addresses. Where a write is open to
+- `expaccount` carries the public flows. The reset and activation keys travel by e-mail only; an activation key expires after 24 hours, a reset key after `site.ini [UserSettings] ForgotPasswordKeyLifetime` (one hour as shipped), both
+  through the services as on the forgot-password page; `forgotRequest` answers the same for known and unknown addresses. Where a write is open to
   visitors its access is the login or registration policy of the user module (the catalogue allows no public write).
 - A collaboration item is visible to its participants only (everybody else gets 404); approve and deny need the approver role
   and a waiting approval, and leave the workflow to resume exactly as the kernel's own view does.
