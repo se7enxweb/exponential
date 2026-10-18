@@ -27,6 +27,9 @@ explains how.
 
 ## 1. Sign in
 
+Step by step, with every message you may meet: [Logging into the Editor](logging-into-the-editor.md) for editors,
+[Logging into the admin](logging-into-the-admin.md) for administrators.
+
 1. Open the address of the administration that you were given. On many sites it is the site's address followed by
    `/admin`, for example `https://www.example.com/admin`. Some sites have a separate address for editors.
 2. Type your **Username** and **Password** and press **Sign in**. The eye button in the password field shows what

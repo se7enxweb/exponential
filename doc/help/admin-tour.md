@@ -15,6 +15,9 @@ This page walks once around the screen of the administration, so you know where 
 design. What you see depends on your role: an editor may see only **Dashboard**, **Content structure** and **Media**
 in the top menu, an administrator sees more.
 
+Not signed in yet? See [Logging into the admin](logging-into-the-admin.md) or, for editors,
+[Logging into the Editor](logging-into-the-editor.md).
+
 ![The dashboard of the administration](images/admin-dashboard.webp)
 
 ## The header
