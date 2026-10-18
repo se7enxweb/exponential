@@ -80,27 +80,65 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
 
         $persistenceList = eZSetupFetchPersistenceList();
 
-        // var/log/setup.log: the first request of the wizard starts a run, the others continue it
-        // Maintenance mode (var/maintenance.json) for the wizard's whole run: this
-        // browser passes on a cookie, every other visitor gets the maintenance page
-        // rather than a second wizard. It ends with the last page, or by itself when
-        // the wizard is left (expMaintenance::WIZARD_LEASE).
-        if ( !empty( $GLOBALS['expVelocityWarmup'] ) )
+        // Who may run the wizard, and when maintenance starts (expSetupWizardGuard):
+        // - an installed site refuses the wizard with an explanation page and writes
+        //   nothing, unless [SetupSettings] AllowWizardOnInstalledSite=enabled, and then
+        //   only after a confirm page posted back with its one-time token;
+        // - maintenance mode (var/maintenance.json, the wizard lease) never starts from a
+        //   GET or because a page was shown: it starts with the first posted step (fresh
+        //   installation) or the confirmed POST (installed site). This browser passes on a
+        //   cookie, every other visitor gets the maintenance page rather than a second
+        //   wizard. It ends with the last page, or by itself when the wizard is left
+        //   (expMaintenance::WIZARD_LEASE, renewed by each posted step only).
+        // var/log/setup.log: a run starts with the wizard's first page, posted steps continue it
+        $root = \eZSys::rootDir();
+        $isStepPost = $http->hasPostVariable( 'eZSetup_current_step' );
+        $warmup = !empty( $GLOBALS['expVelocityWarmup'] );
+        $validityCheck = !empty( $GLOBALS['eZSiteBasics']['validity-check-required'] );
+        $installed = \expSetupWizardGuard::isInstalled( $root, $validityCheck );
+        $allowedOnInstalled = \expSetupWizardGuard::allowedOnInstalledSite( $ini );
+        if ( $installed && !$allowedOnInstalled )
+        {
+            // Velocity's warm-up included: nothing to prepare, nothing written
+            return $this->guardPage( $tpl, 'design:setup/init/installed.tpl',
+                                     \ezpI18n::tr( 'design/standard/setup/init', 'Already installed' ) );
+        }
+        $confirmed = ( $installed && !$warmup ) ? \expSetupWizardGuard::confirmedByPost( $http ) : false;
+        $leaseRenewed = false;
+        if ( $isStepPost && !$warmup )
+        {
+            if ( \expSetupLog::resume() )
+                $leaseRenewed = \expMaintenance::renewWizard( $root, (string)\expSetupLog::runId() );
+        }
+        $decision = \expSetupWizardGuard::decide( $installed, $allowedOnInstalled, $isStepPost, $confirmed, $leaseRenewed );
+        if ( $warmup )
         {
             // Velocity's warm-up render: not a visitor, so no run and no lease (a lease
             // would lock the browser on the wizard out with a cookie nobody holds)
+            if ( $decision === \expSetupWizardGuard::CONFIRM )
+                return $this->guardPage( $tpl, 'design:setup/init/confirm_reinstall.tpl',
+                                         \ezpI18n::tr( 'design/standard/setup/init', 'Reinstall this site' ) );
         }
-        else if ( !$http->hasPostVariable( 'eZSetup_current_step' ) )
+        else if ( $decision === \expSetupWizardGuard::CONFIRM )
         {
+            $tpl->setVariable( 'confirm_token', \expSetupWizardGuard::issueConfirmToken( $http ) );
+            $tpl->setVariable( 'confirm_button', \expSetupWizardGuard::CONFIRM_BUTTON );
+            $tpl->setVariable( 'confirm_token_name', \expSetupWizardGuard::CONFIRM_TOKEN );
+            return $this->guardPage( $tpl, 'design:setup/init/confirm_reinstall.tpl',
+                                     \ezpI18n::tr( 'design/standard/setup/init', 'Reinstall this site' ) );
+        }
+        else if ( $decision === \expSetupWizardGuard::SHOW )
+        {
+            // A fresh installation's first page: a run in the setup log, no maintenance yet
             \expSetupLog::startWeb();
-            \expMaintenance::beginWizard( \eZSys::rootDir(), (string)\expSetupLog::runId() );
         }
-        else
+        else if ( $decision === \expSetupWizardGuard::BEGIN )
         {
-            if ( !\expSetupLog::resume() )
+            if ( $confirmed )
+                \expSetupLog::startWeb( array( 'confirmed' => 'reinstall of an installed site' ) );
+            else if ( !\expSetupLog::resume() )
                 \expSetupLog::start( 'web setup wizard (joined at step ' . $http->postVariable( 'eZSetup_current_step' ) . ')' );
-            if ( !\expMaintenance::renewWizard( \eZSys::rootDir(), (string)\expSetupLog::runId() ) )
-                \expMaintenance::beginWizard( \eZSys::rootDir(), (string)\expSetupLog::runId() );
+            \expMaintenance::beginWizard( $root, (string)\expSetupLog::runId() );
         }
         $setupRunId = (string)\expSetupLog::runId();
         $result = null;
@@ -182,6 +220,8 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
 
         $done = false;
         $result = null;
+        // The view's own name, for the form action when the request did not come through the validity check
+        $partName = 'init';
 
         while( !$done && $step != null )
         {
@@ -248,6 +288,8 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
                     {
                         \expSetupLog::finish( 'installed', true );
                         \expMaintenance::endWizard( \eZSys::rootDir(), $setupRunId );
+                        // From now on setup/init explains that the site is installed
+                        \expSetupWizardGuard::markInstalled( \eZSys::rootDir(), $setupRunId );
                     }
                     $tpl->setVariable( 'setup_current_step', $step['class'] ); // set current step
                     $result = $stepInstaller->display();
@@ -272,6 +314,9 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
 
         // Print debug information and exit.
         \eZDebug::addTimingPoint( "End" );
+        // A step that ran long (a package import) holds the lease from its end, not its start
+        if ( !$warmup && $setupRunId !== '' && ( $decision === \expSetupWizardGuard::BEGIN || $decision === \expSetupWizardGuard::CONTINUE_RUN ) )
+            \expMaintenance::renewWizard( $root, $setupRunId );
         \expSetupLog::suspend();
 
         return $this->viewResult( isset( $Result ) ? $Result : null,  $result );
@@ -281,6 +326,20 @@ class Ezsetup extends \Exponential\Runnable\ModuleView
         //eZExecution::cleanExit();
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * A page of its own instead of a wizard step (installed site, confirm page), in
+     * the frame the setup page layout expects. Writes nothing.
+     */
+    protected function guardPage( $tpl, $template, $title )
+    {
+        $tpl->setVariable( 'kickstart_file', 'kickstart.ini' );
+        return array( 'content' => $tpl->fetch( $template ),
+                      'path' => array( array( 'text' => $title, 'url' => false ) ),
+                      'help' => '',
+                      'summary' => '',
+                      'progress' => 0 );
     }
 }
 

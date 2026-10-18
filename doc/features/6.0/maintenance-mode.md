@@ -107,7 +107,7 @@ still means maintenance: a maintenance page is better than a half-changed site.
 | `reason` | `unknown`, an installation, `setup` (web wizard) or a manual window. |
 | `message`, `until` | Shown on the page. `until` is a Unix time; `Retry-After` is the seconds left, or 120 when no end is set. |
 | `allow_ips`, `allow_paths` | Addresses and paths still served (`--allow-admin` adds `/admin`). |
-| `lease` | Web wizard only: the marker expires 1,800 seconds after the wizard's last request. |
+| `lease` | Web wizard only: the marker expires 900 seconds after the wizard's last posted step. |
 | `allow_token` | Web wizard only: SHA-256 hash of the cookie that lets the wizard's own browser through. |
 
 ## Installations use it automatically
@@ -115,12 +115,15 @@ still means maintenance: a maintenance page is better than a half-changed site.
 - **Kickstarter**: switches maintenance on when a run begins and off when the
   site is installed and checked. After a failed step it stays on and says how
   to end it (`php bin/php/maintenance.php off`).
-- **Web setup wizard**: its first request switches maintenance on with reason
-  `setup` and gives its browser a random cookie (`exp_setup_wizard`); every
-  other visitor gets the maintenance page instead of a second wizard that
-  would abandon or overwrite the first run. Each wizard request renews the
-  30-minute lease, so a wizard that is left does not keep the site offline. The
-  last page switches maintenance off and clears the cookie.
+- **Web setup wizard**: its first posted step (never a GET, never a page being
+  shown) switches maintenance on with reason `setup` and gives its browser a
+  random cookie (`exp_setup_wizard`); every other visitor gets the maintenance
+  page instead of a second wizard that would abandon or overwrite the first
+  run. Each posted step renews the 15-minute lease (`expMaintenance::WIZARD_LEASE`
+  = 900 seconds) and the cookie with it, so a wizard that is left gives the site
+  back within 15 minutes by itself. The last page switches maintenance off and
+  clears the cookie. On an installed site the wizard does not run at all: see
+  [the setup wizard](../../install/05-setup-wizard.md#52-the-browser-hold-and-maintenance-mode).
 
 Before this, requests that arrived during an installation met half-built tables
 and logged errors that were not the installation's ("no such table:

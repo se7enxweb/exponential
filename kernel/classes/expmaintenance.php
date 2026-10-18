@@ -32,8 +32,12 @@ class expMaintenance
     const DEFAULT_PAGE = 'share/maintenance.html';
     /** The cookie that lets the web setup wizard's own browser through */
     const WIZARD_COOKIE = 'exp_setup_wizard';
-    /** Seconds a web wizard holds maintenance after its last request */
-    const WIZARD_LEASE = 1800;
+    /**
+     * Seconds a web wizard holds maintenance after its last posted step. Short on
+     * purpose: only a posted step renews it (never a GET or a page being shown), so
+     * a wizard that is left gives the site back within this time by itself.
+     */
+    const WIZARD_LEASE = 900;
 
     /**
      * Answers the request with the maintenance page when maintenance is on and
@@ -94,7 +98,11 @@ class expMaintenance
         return true;
     }
 
-    /** Each further wizard request: the wizard is still there, hold maintenance a while longer. */
+    /**
+     * Each further posted wizard step: the wizard is still there, hold maintenance
+     * a while longer. The browser's cookie is renewed with it, so it does not run
+     * out before the lease does.
+     */
     static function renewWizard( $root, $runId )
     {
         $state = self::state( $root );
@@ -106,7 +114,12 @@ class expMaintenance
         if ( @file_put_contents( $tmp, json_encode( $state, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . "\n" ) === false )
             return false;
         @chmod( $tmp, eZFile::fileMode( 0666 ) );
-        return @rename( $tmp, $file );
+        if ( !@rename( $tmp, $file ) )
+            return false;
+        $cookie = isset( $_COOKIE[self::WIZARD_COOKIE] ) && is_string( $_COOKIE[self::WIZARD_COOKIE] ) ? $_COOKIE[self::WIZARD_COOKIE] : '';
+        if ( $cookie !== '' && !empty( $state['allow_token'] ) && hash_equals( (string)$state['allow_token'], hash( 'sha256', $cookie ) ) )
+            self::wizardCookie( $cookie, (int)$state['lease'] );
+        return true;
     }
 
     /** The wizard's last page: the site is installed, maintenance off. */
