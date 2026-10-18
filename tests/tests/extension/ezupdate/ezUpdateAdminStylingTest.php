@@ -3,17 +3,21 @@
  * ezupdate's admin pages (Setup > Updates and packages) follow the administration's styling rules
  * (doc/bc/6.0/admin4-styling.md), checked on the files alone; no database.
  *
- * - No <style> block, no style="" attribute and no inline <script> body in any ezupdate template.
+ * - No <style> block, no style="" attribute and no inline <script> body in any ezupdate template, and the script
+ *   (ezupdate.js) sets no inline style either.
  * - The module stylesheet (design/standard/stylesheets/modules/update.css) is listed in design.ini
  *   [StylesheetSettings] BackendCSSFileList, names only .a4-update-* classes and takes colours, radii, spacing and
  *   fonts from the --a4-* tokens only (the same check as the kernel's module stylesheets, so every value has its
- *   dark mode in components.css).
- * - The Overview (update/dashboard) and the parts it shares with the other views (header, footer, status, method)
- *   are built from the shared components and carry none of the older .ezx-* / .ezupdate-* look classes.
- * - The status badge the job page's script swaps while it polls has the classes parts/status.tpl draws.
+ *   dark mode in components.css). It is the module's only stylesheet: no template loads one of its own.
+ * - Every view (each of module.php) and every part is built from the shared components and carries none of the
+ *   older .ezx-* / .ezupdate-* look classes; each view's template draws its title through parts/header.tpl.
+ * - The colours of Composer's output (eZUpdateManager::ansiToHtml()) are classes the module stylesheet draws, not
+ *   style attributes, and the output stays escaped.
+ * - The status badge and the notices the job page's script swaps while it polls have the classes the templates draw.
  * - Every view sits in the Setup navigation part, so its left column is the kernel's Setup menu, which ends with
  *   the admin4 width switch (parts/left_width_control.tpl).
- * - Every string of the dashboard and its parts is translated in eng-US and ger-DE.
+ * - Every string of every template is translated in eng-US and ger-DE and in the five other completed catalogues
+ *   (esl-ES, esl-MX, heb-IL, lat-VA, tlh-QO).
  *
  * Skips when extension/ezupdate is not installed; EZUPDATE_EXTENSION_DIR=<dir> checks a clone instead.
  *
@@ -27,15 +31,9 @@
 class ezUpdateAdminStylingTest extends PHPUnit\Framework\TestCase
 {
     /**
-     * The dashboard and its shared parts: built from the shared components only
+     * The languages whose catalogues translate every string of the module
      */
-    const MIGRATED = array(
-        'design/standard/templates/ezupdate/dashboard.tpl',
-        'design/standard/templates/ezupdate/parts/header.tpl',
-        'design/standard/templates/ezupdate/parts/footer.tpl',
-        'design/standard/templates/ezupdate/parts/status.tpl',
-        'design/standard/templates/ezupdate/parts/method.tpl',
-    );
+    const LANGUAGES = array( 'eng-US', 'ger-DE', 'esl-ES', 'esl-MX', 'heb-IL', 'lat-VA', 'tlh-QO' );
 
     const MODULE_CSS = 'design/standard/stylesheets/modules/update.css';
 
@@ -129,6 +127,64 @@ class ezUpdateAdminStylingTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * The module stylesheet is the only one: no template loads a stylesheet of its own (ezcss_require, a <link>),
+     * and the older design system (ezupdate.css) is gone
+     */
+    public function testNoTemplateLoadsAStylesheetOfItsOwn()
+    {
+        $found = array();
+        foreach ( self::templates() as $path )
+        {
+            $source = self::withoutComments( self::read( $path ) );
+            if ( preg_match( '/ezcss_require|ezcss_load|<link\b/i', $source ) )
+            {
+                $found[] = $path;
+            }
+        }
+        $this->assertSame( array(), $found );
+        $sheets = array();
+        $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::$ext . '/design', FilesystemIterator::SKIP_DOTS ) );
+        foreach ( $it as $file )
+        {
+            if ( substr( $file->getFilename(), -4 ) === '.css' )
+            {
+                $sheets[] = substr( $file->getPathname(), strlen( self::$ext ) + 1 );
+            }
+        }
+        $this->assertSame( array( self::MODULE_CSS ), $sheets );
+    }
+
+    /**
+     * The script changes looks with classes only, never with an inline style (style-src 'self')
+     */
+    public function testScriptSetsNoInlineStyle()
+    {
+        $script = self::read( 'design/standard/javascript/ezupdate.js' );
+        $this->assertDoesNotMatchRegularExpression( '/\.style\s*[.\[=]|setAttribute\(\s*[\'"]style|cssText/', $script );
+    }
+
+    /**
+     * Composer's colours become classes the module stylesheet draws; the output stays escaped
+     */
+    public function testComposerOutputColoursAreClasses()
+    {
+        require_once self::$ext . '/classes/ezupdatemanager.php';
+        $html = eZUpdateManager::ansiToHtml( "\x1b[32mInstalled\x1b[39m <b>x</b> \x1b[1;31mfailed\x1b[0m \x1b[2Kdone" );
+        $this->assertStringNotContainsString( 'style=', $html );
+        $this->assertStringNotContainsString( "\x1b", $html );
+        $this->assertStringContainsString( '&lt;b&gt;x&lt;/b&gt;', $html );
+        $this->assertStringContainsString( '<span class="a4-update-ansi-ok">Installed</span>', $html );
+        $this->assertMatchesRegularExpression( '/<span class="(a4-update-ansi-bold a4-update-ansi-bad|a4-update-ansi-bad a4-update-ansi-bold)">failed<\/span>/', $html );
+        $css = self::read( self::MODULE_CSS );
+        $all = eZUpdateManager::ansiToHtml( "\x1b[1m\x1b[30ma\x1b[31mb\x1b[32mc\x1b[33md\x1b[34me\x1b[35mf\x1b[36mg\x1b[37mh\x1b[90mi\x1b[97mj\x1b[0m" );
+        preg_match_all( '/a4-update-ansi-[\w-]+/', $all, $m );
+        foreach ( array_unique( $m[0] ) as $class )
+        {
+            $this->assertMatchesRegularExpression( '/\.' . preg_quote( $class, '/' ) . '\s*\{/', $css, 'update.css draws .' . $class );
+        }
+    }
+
+    /**
      * Returns the rules of a stylesheet as (selector, property, value), at-rule wrappers opened and keyframes left out
      */
     private static function declarations( $css )
@@ -204,10 +260,10 @@ class ezUpdateAdminStylingTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), array_values( array_unique( $problems ) ) );
     }
 
-    public function testDashboardAndSharedPartsUseTheSharedComponents()
+    public function testEveryTemplateUsesTheSharedComponents()
     {
         $leftovers = array();
-        foreach ( self::MIGRATED as $path )
+        foreach ( self::templates() as $path )
         {
             $source = self::withoutComments( self::read( $path ) );
             preg_match_all( '/\bclass="([^"]*)"/', $source, $m );
@@ -215,8 +271,8 @@ class ezUpdateAdminStylingTest extends PHPUnit\Framework\TestCase
             {
                 foreach ( preg_split( '/\s+/', preg_replace( '/\{[^}]*\}/', ' ', $classes ) ) as $class )
                 {
-                    // the page root keeps .ezx (the older views' tokens and the "/" search key) and the close button
-                    // keeps .ezx-dismiss (the script's hook); no other old look class
+                    // the page root keeps .ezx (the "/" search key) and the close button keeps .ezx-dismiss (the
+                    // script's hook); no other old look class
                     if ( preg_match( '/^(ezx-|ezupdate-|button$|defaultbutton$|hide$)/', $class ) && $class !== 'ezx-dismiss' )
                     {
                         $leftovers[] = $path . ': ' . $class;
@@ -231,22 +287,69 @@ class ezUpdateAdminStylingTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( $component, $dashboard, 'The dashboard uses .' . $component );
         }
         $header = self::read( 'design/standard/templates/ezupdate/parts/header.tpl' );
-        foreach ( array( 'a4-pagehead', 'a4-tabs', 'aria-current="page"', 'a4-notice' ) as $part )
+        foreach ( array( 'a4-page', 'a4-pagehead', 'a4-pagehead-actions', 'a4-tabs', 'aria-current="page"', 'a4-notice' ) as $part )
         {
             $this->assertStringContainsString( $part, $header );
         }
     }
 
-    public function testEveryFormButtonOfTheDashboardIsKept()
+    /**
+     * Every view of module.php has its template, which opens with parts/header.tpl and passes its title (so the page
+     * gets its h1 and the shared page scope, .a4-page) and ends with parts/footer.tpl
+     */
+    public function testEveryViewDrawsItsTitleThroughTheSharedHeader()
     {
-        $dashboard = self::read( 'design/standard/templates/ezupdate/dashboard.tpl' );
-        foreach ( array( 'GetComposerButton', 'SwitchUpdatesOnButton', 'SwitchUpdatesOffButton', 'CheckForUpdatesButton',
-                         'DryRunUpdateButton', 'InstallUpdatesButton', 'RerunButton', 'name="ConfirmBackup"', 'name="Packages[]"',
-                         'data-ezupdate-enables="InstallUpdatesButton"', 'data-ezx-busy', 'data-ezx-ago', 'data-ezx-copy' ) as $name )
+        $Module = $ViewList = null;
+        include self::$ext . '/modules/update/module.php';
+        $this->assertNotEmpty( $ViewList );
+        foreach ( array_keys( $ViewList ) as $name )
         {
-            $this->assertStringContainsString( $name, $dashboard );
+            $path = 'design/standard/templates/ezupdate/' . $name . '.tpl';
+            $this->assertFileExists( self::$ext . '/' . $path, 'update/' . $name . ' has its template' );
+            $source = self::withoutComments( self::read( $path ) );
+            $this->assertMatchesRegularExpression( "/\\{include uri='design:ezupdate\\/parts\\/header\\.tpl'[^}]*\\btitle=/s", $source, $path . ' passes its title to the header' );
+            $this->assertStringContainsString( "{include uri='design:ezupdate/parts/footer.tpl'}", $source, $path );
+            $this->assertDoesNotMatchRegularExpression( '/<h1\b/', $source, $path . ': the header draws the h1' );
+        }
+    }
+
+    /**
+     * The forms of the views keep every field and button name their view scripts read
+     */
+    public function testEveryFormFieldAndButtonIsKept()
+    {
+        $names = array(
+            'dashboard.tpl' => array( 'GetComposerButton', 'SwitchUpdatesOnButton', 'SwitchUpdatesOffButton', 'CheckForUpdatesButton',
+                                      'DryRunUpdateButton', 'InstallUpdatesButton', 'RerunButton', 'name="ConfirmBackup"', 'name="Packages[]"',
+                                      'data-ezupdate-enables="InstallUpdatesButton"', 'data-ezx-busy', 'data-ezx-ago', 'data-ezx-copy' ),
+            'servers.tpl' => array( 'PackagistOffButton', 'PackagistOnButton', 'RemoveComposerServerButton', 'AddComposerServerButton',
+                                    'RemovePackageServerButton', 'AddPackageServerButton', 'name="ServerName"', 'name="ServerType"',
+                                    'name="ServerURL"', 'data-ezupdate-confirm' ),
+            'browse.tpl' => array( 'name="q"', 'name="source"', 'name="type"', 'role="search"', 'update/browse/(page)/' ),
+            'packages.tpl' => array( 'FetchPackageButton', 'name="PackageName"', 'name="Replace"', 'data-ezx-filter', 'data-ezx-none' ),
+            'job.tpl' => array( 'RerunButton', 'RunForRealButton', 'name="ConfirmBackup"', 'data-ezupdate-when-done', 'id="ezupdate-job-output"',
+                                'id="ezupdate-job-status"', 'id="ezupdate-job-result"', 'id="ezupdate-job-notice"', 'data-ezx-follow', 'data-ezx-wrap' ),
+            'package.tpl' => array( 'data-ezx-stable-only', 'data-ezx-versions', 'parts/install_form.tpl' ),
+            'parts/install_form.tpl' => array( 'name="Constraint"', 'DryRunInstallButton', 'InstallButton', 'name="ConfirmBackup"', 'parts/method.tpl' ),
+            'installed.tpl' => array( 'data-ezupdate-installed', 'data-ezupdate-row', 'data-ezupdate-table', 'data-ezupdate-empty', 'data-filter',
+                                      'data-sort=', 'data-sort-select', 'data-search', 'data-count', 'aria-controls="ezupdate-inv-detail-' ),
+            'fund.tpl' => array( 'update/fund/json', 'update/fund/text', 'update/fund/(direct)/1', 'data-ezx-filter', 'data-ezx-none',
+                                 'rel="noopener noreferrer nofollow"' ),
+        );
+        foreach ( $names as $template => $list )
+        {
+            $source = self::read( 'design/standard/templates/ezupdate/' . $template );
+            foreach ( $list as $name )
+            {
+                $this->assertStringContainsString( $name, $source, $template );
+            }
         }
         $this->assertStringContainsString( 'name="InstallMethod"', self::read( 'design/standard/templates/ezupdate/parts/method.tpl' ) );
+        $script = self::read( 'design/standard/javascript/ezupdate.js' );
+        foreach ( array( 'data-ezupdate-installed', 'tbody[data-ezupdate-row]', '[data-ezupdate-table]', '[data-ezupdate-empty]', 'ezupdate-inv-detail-' ) as $hook )
+        {
+            $this->assertStringContainsString( $hook, $script, 'ezupdate.js finds ' . $hook );
+        }
     }
 
     public function testPollingSwapsTheSameStatusBadge()
@@ -267,6 +370,12 @@ class ezUpdateAdminStylingTest extends PHPUnit\Framework\TestCase
             $this->assertSame( $fromTemplate, $fromScript, 'The badge of a ' . $state . ' run' );
         }
         $this->assertStringContainsString( 'ezupdate-job-output', $script, 'The job page still polls its output' );
+        // the notice and the result it fills in are the shared notice the template draws
+        $job = self::read( 'design/standard/templates/ezupdate/job.tpl' );
+        $this->assertStringContainsString( "notice.className = 'a4-notice a4-update-note '", $script );
+        $this->assertStringContainsString( 'class="a4-notice is-warn a4-update-note" id="ezupdate-job-notice"', $job );
+        $this->assertStringContainsString( "result.className = 'a4-notice a4-update-section is-'", $script );
+        $this->assertMatchesRegularExpression( '/id="ezupdate-job-result" class="a4-notice is-[^"]*a4-update-section"/', $job );
     }
 
     public function testViewsUseTheSetupMenuWithTheWidthSwitch()
@@ -310,24 +419,24 @@ class ezUpdateAdminStylingTest extends PHPUnit\Framework\TestCase
         return $sources;
     }
 
-    public function testEveryStringOfTheDashboardIsTranslated()
+    public function testEveryStringOfEveryTemplateIsTranslated()
     {
         $strings = array();
-        foreach ( self::MIGRATED as $path )
+        foreach ( self::templates() as $path )
         {
-            preg_match_all( "/'((?:[^'\\\\]|\\\\.)*)'\\|i18n\\(\\s*'extension\\/ezupdate'/", self::read( $path ), $m );
+            preg_match_all( "/'((?:[^'\\\\]|\\\\.)*)'\\|i18n\\(\\s*'extension\\/ezupdate'/", self::withoutComments( self::read( $path ) ), $m );
             foreach ( $m[1] as $text )
             {
                 $strings[] = stripslashes( $text );
             }
         }
         $strings = array_unique( $strings );
-        $this->assertGreaterThan( 40, count( $strings ) );
-        foreach ( array( 'eng-US', 'ger-DE' ) as $language )
+        $this->assertGreaterThan( 200, count( $strings ) );
+        foreach ( self::LANGUAGES as $language )
         {
             $known = self::translated( $language );
             $missing = array_values( array_filter( $strings, function ( $text ) use ( $known ) { return !isset( $known[$text] ); } ) );
-            $this->assertSame( array(), $missing, $language . ' translates every string of the dashboard and its parts' );
+            $this->assertSame( array(), $missing, $language . ' translates every string of the templates' );
         }
     }
 }
