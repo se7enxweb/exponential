@@ -102,3 +102,21 @@ then have the ids `ext/<extension>/<path>`.
 ```
 
 The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change.
+
+## Languages and accessibility
+
+The labels of the help pages (dashboard, search, page viewer, error report, the Help button) are in the
+`kernel/exphelp` context of the administration translations, and every complete catalogue has them: German,
+French, Spanish (Spain and Mexico), Ukrainian, Hebrew, Arabic, Latin and Klingon, with English and the
+`untranslated` template kept in step. The names in `exphelp.ini` (`[CategorySettings] CategoryNames[]`, the
+trackers' `Name` and `Description`) go through the same context, so a new name there needs a message in each of
+those catalogues; `tests/tests/lib/ezi18n/expTranslationQualityTest.php` checks that a finished translation keeps
+the placeholders (`%count`, `%title` ...) of its source. The help pages themselves are the documentation in
+`doc/` and stay in the language they are written in; the diagnostics and the issue text the error report prepares
+stay in English on purpose, because the maintainers read them.
+
+In a right-to-left interface language (Hebrew, Arabic) the pages are mirrored: the navigation tree, the contents
+and the previous/next links swap sides and their arrows turn, while paths, code and the diagnostics stay left to
+right. Every page has one `h1`, named navigation landmarks, labels for each search field and filter, a visible
+focus ring on everything that takes the keyboard, and a note on each link that opens a new window; `/` moves to
+the help search, and the instant results are announced to screen readers.
