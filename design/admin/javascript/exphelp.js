@@ -11,6 +11,8 @@
  * - [data-exphelp-content] the rendered page; data-exphelp-collapsible="h2" adds a show/hide button to each h2.
  * - nav[data-exphelp-toc] links to #ids of the headings; the one being read gets aria-current="location".
  * - a[data-exphelp-prev], a[data-exphelp-next] the previous and next page.
+ * - [data-exphelp-records] a record page (expHelpRecordRenderer): a filter field over its rows and sort buttons in the
+ *   headers of its table[data-exphelp-sortable] (cells sort by data-sort-value, else their text).
  * Keys: / focuses the search, ArrowDown/ArrowUp move through the results, Enter opens one, Esc closes the results;
  * j/k go to the next/previous heading, [ and ] to the previous/next page.
  */
@@ -22,7 +24,9 @@
         noResults: 'No help page matches your search.', resultsCount: '%count results', resultCount: '1 result',
         searching: 'Searching...', error: 'The search is not available. Press Enter to search.',
         collapse: 'Hide section: %title', expand: 'Show section: %title',
-        relaxed: 'No page contains every word; these pages contain some of them.'
+        relaxed: 'No page contains every word; these pages contain some of them.',
+        recordsFilter: 'Filter', recordsPlaceholder: 'Version, name, year or revision',
+        recordsCount: '%count of %total entries', sortBy: 'Sort by %title'
     };
     var DEBOUNCE = 150;
     var LIMIT = 20;
@@ -374,6 +378,104 @@
         });
     }
 
+
+    // Record pages (the release and branch history, [data-exphelp-records]): a filter field over all their rows and
+    // sort buttons in the column headers. Without this file the tables are complete and in date order.
+    function setupRecords(content, t) {
+        arr(content.querySelectorAll('[data-exphelp-records]')).forEach(function (box) {
+            if (box.querySelector('[data-exphelp-records-filter]')) { return; }
+            var tables = arr(box.querySelectorAll('table[data-exphelp-sortable]'));
+            var rows = [];
+            tables.forEach(function (table) { rows = rows.concat(bodyRows(table)); });
+            if (!rows.length) { return; }
+            var tools = el('div', 'a4-help-records-tools');
+            var field = el('label', 'a4-help-records-filter');
+            var input = el('input', 'a4-field');
+            input.setAttribute('type', 'search');
+            input.setAttribute('data-exphelp-records-filter', '');
+            input.setAttribute('placeholder', t.recordsPlaceholder);
+            input.setAttribute('autocomplete', 'off');
+            field.appendChild(el('span', 'a4-help-records-filter-label', t.recordsFilter));
+            field.appendChild(input);
+            var status = el('p', 'a4-help-records-count');
+            status.setAttribute('aria-live', 'polite');
+            tools.appendChild(field);
+            tools.appendChild(status);
+            var after = box.querySelector('.a4-help-records-stats');
+            if (after && after.parentNode === box) { box.insertBefore(tools, after.nextSibling); } else { box.insertBefore(tools, box.firstChild); }
+
+            var texts = rows.map(function (row) { return row.textContent.replace(/\s+/g, ' ').toLowerCase(); });
+            var timer = null;
+            function apply() {
+                var terms = input.value.toLowerCase().split(/\s+/).filter(function (w) { return w !== ''; });
+                var shown = 0;
+                rows.forEach(function (row, i) {
+                    var match = terms.every(function (w) { return texts[i].indexOf(w) >= 0; });
+                    row.hidden = !match;
+                    if (match) { shown += 1; }
+                });
+                tables.forEach(function (table) {
+                    var any = bodyRows(table).some(function (r) { return !r.hidden; });
+                    var holder = table.closest('details') || table.closest('.a4-help-table-wrap') || table;
+                    holder.hidden = !any;
+                    if (any && terms.length) { reveal(table); }
+                });
+                status.textContent = terms.length ? t.recordsCount.replace('%count', String(shown)).replace('%total', String(rows.length)) : '';
+            }
+            input.addEventListener('input', function () {
+                if (timer) { window.clearTimeout(timer); }
+                timer = window.setTimeout(apply, DEBOUNCE);
+            });
+            input.addEventListener('search', apply);
+
+            tables.forEach(function (table) {
+                var head = table.querySelector('thead tr');
+                if (!head) { return; }
+                cellsOf(head).forEach(function (th, index) {
+                    if (th.getAttribute('data-sort') === 'none' || th.querySelector('button')) { return; }
+                    var title = th.textContent.replace(/\s+/g, ' ').trim();
+                    var button = el('button', 'a4-help-sort', title);
+                    button.setAttribute('type', 'button');
+                    button.setAttribute('aria-label', t.sortBy.replace('%title', title));
+                    th.textContent = '';
+                    th.appendChild(button);
+                    button.addEventListener('click', function () { sortTable(table, th, index); });
+                });
+            });
+        });
+    }
+
+    function bodyRows(table) {
+        var body = table.querySelector('tbody');
+        return body ? arr(body.children).filter(function (n) { return n.tagName === 'TR'; }) : [];
+    }
+
+    function cellsOf(row) {
+        return arr(row.children).filter(function (n) { return n.tagName === 'TD' || n.tagName === 'TH'; });
+    }
+
+    function sortValue(row, index) {
+        var cell = cellsOf(row)[index];
+        if (!cell) { return ''; }
+        var v = cell.getAttribute('data-sort-value');
+        return v !== null ? v : cell.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+    }
+
+    function sortTable(table, th, index) {
+        var ascending = th.getAttribute('aria-sort') !== 'ascending';
+        cellsOf(th.parentNode).forEach(function (cell) { cell.removeAttribute('aria-sort'); });
+        th.setAttribute('aria-sort', ascending ? 'ascending' : 'descending');
+        var body = table.querySelector('tbody');
+        if (!body) { return; }
+        var rows = bodyRows(table).map(function (row, i) { return { row: row, value: sortValue(row, index), i: i }; });
+        rows.sort(function (a, b) {
+            // empty values last in both directions, then the original order
+            if (a.value === '' || b.value === '') { return a.value === b.value ? a.i - b.i : (a.value === '' ? 1 : -1); }
+            var c = a.value.localeCompare(b.value, undefined, { numeric: true });
+            return (c === 0 ? a.i - b.i : (ascending ? c : -c));
+        });
+        rows.forEach(function (r) { body.appendChild(r.row); });
+    }
     // A heading's text without its # anchor link
     function headingText(h) {
         return arr(h.childNodes).filter(function (n) {
@@ -488,6 +590,7 @@
             var t = strings(closestRoot(content));
             setupCopy(content, t);
             setupCollapse(content, t);
+            setupRecords(content, t);
             revealHash();
             var toc = document.querySelector('[data-exphelp-toc]');
             if (toc) {

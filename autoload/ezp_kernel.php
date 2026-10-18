@@ -1123,6 +1123,7 @@ return array(
       'expHelpLinks'                                                 => 'kernel/classes/help/exphelplinks.php',
       'expHelpMarkdownRenderer'                                      => 'kernel/classes/help/exphelpmarkdownrenderer.php',
       'expHelpReadPolicyGrant'                                       => 'kernel/classes/help/exphelpreadpolicygrant.php',
+      'expHelpRecordRenderer'                                        => 'kernel/classes/help/exphelprecordrenderer.php',
       'expHelpSearch'                                                => 'kernel/classes/help/exphelpsearch.php',
       'expI18nFallbackConfiguredRule'                                => 'lib/ezi18n/classes/expi18nfallbackconfiguredrule.php',
       'expI18nFallbackReport'                                        => 'kernel/classes/i18n/expi18nfallbackreport.php',

@@ -1170,7 +1170,10 @@ class expHelpSearch
                 isset( $doc['category'] ) ? (string)$doc['category'] : '',
                 isset( $doc['type'] ) ? (string)$doc['type'] : '',
                 $path,
-                preg_match( '#(?:^|/)(\d{1,2})\.\d+(?:\.\d+)?/#', $key, $version ) ? (string)(int)$version[1] : '',
+                // the major version of the directory the page is in, else the one the index found in the page (the release
+                // history of old versions)
+                preg_match( '#(?:^|/)(\d{1,2})\.\d+(?:\.\d+)?/#', $key, $version ) ? (string)(int)$version[1]
+                    : ( isset( $doc['version'] ) && preg_match( '/^\d{1,2}$/', (string)$doc['version'] ) ? (string)(int)$doc['version'] : '' ),
                 isset( $doc['order'] ) ? (int)$doc['order'] : 0,
                 !empty( $doc['featured'] ),
                 isset( $doc['summary'] ) && is_string( $doc['summary'] ) ? self::truncate( trim( preg_replace( '/\s+/u', ' ', $doc['summary'] ) ), 300 ) : '',

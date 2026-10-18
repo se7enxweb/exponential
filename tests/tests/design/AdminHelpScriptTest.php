@@ -25,6 +25,9 @@
  * - HELPJS-07: pages without [data-exphelp] are left alone. The file has no eval, no new Function, no innerHTML or
  *   document.write (it runs under the admin's Content Security Policy, script-src 'self' + nonce), and does not
  *   need jQuery; every other design's copy of it is identical, and every exphelp template that carries a hook loads it.
+ * - HELPJS-10: a record page ([data-exphelp-records]) gets a filter field after its summary that hides the rows without
+ *   every word (and a table left without rows), with the count in the page's language, and a sort button in each
+ *   header of its table[data-exphelp-sortable] but a data-sort="none" one (aria-sort, natural order, both ways).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminHelpScriptTest.php
  *
@@ -147,6 +150,25 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'Copy', $c['copy']['after'] );
         $this->assertSame( 'Copied', $c['copy']['announced'] );
         $this->assertSame( 'Press Ctrl+C to copy', $c['copy without clipboard']['label'] );
+    }
+
+    /** HELPJS-10 */
+    public function testRecordPagesFilterAndSort()
+    {
+        $r = $this->cases()['records'];
+        $this->assertTrue( $r['afterStats'], 'the filter comes after the summary' );
+        $this->assertSame( 'search', $r['type'] );
+        $this->assertSame( 'Filter', $r['label'] );
+        $this->assertSame( array( '4.0.0' ), $r['filtered'], 'only the rows with every word' );
+        $this->assertSame( array( true, false ), $r['wraps'], 'a table without a matching row is hidden' );
+        $this->assertSame( '1 von 3', $r['status'], 'the count in the language of the page' );
+        $this->assertSame( array( '3.0-1', '3.10-1', '4.0.0' ), $r['cleared'] );
+        $this->assertSame( 4, $r['buttons'], 'no button on a column marked data-sort="none"' );
+        $this->assertSame( 'Sort by Version', $r['labels'][0] );
+        $this->assertSame( array( '3.0-1', '3.10-1' ), $r['asc'], 'versions in natural order' );
+        $this->assertSame( 'ascending', $r['sortAsc'] );
+        $this->assertSame( array( '3.10-1', '3.0-1' ), $r['desc'] );
+        $this->assertSame( 'descending', $r['sortDesc'] );
     }
 
     /** HELPJS-05 */

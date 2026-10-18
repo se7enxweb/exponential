@@ -279,6 +279,45 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
         out('page keys', { scrolled: h.scrolled, hash: h.sandbox.location.hash, typingJ, prev, next, assigned: h.assigned, ctrl });
     }
     {
+        // a record page (expHelpRecordRenderer): a filter field over every row, sort buttons in the headers
+        const table = (rows) => '<div class="a4-help-table-wrap"><table class="a4-table a4-help-records-table" data-exphelp-sortable><thead><tr>'
+            + '<th scope="col">Version</th><th scope="col">Date</th><th scope="col" data-sort="none">Notes</th></tr></thead><tbody>'
+            + rows.map((r) => '<tr id="' + r[0] + '"><th scope="row" data-sort-value="' + r[1] + '">' + r[0] + '</th><td data-sort-value="' + r[2] + '">' + r[2] + '</td><td>' + r[3] + '</td></tr>').join('')
+            + '</tbody></table></div>';
+        const page = '<div class="a4-help" data-exphelp data-exphelp-i18n="' + attr({ recordsCount: '%count von %total' }) + '">'
+            + '<article data-exphelp-content><div class="a4-help-body a4-help-records" data-exphelp-records><h1 id="top">Release history</h1>'
+            + '<p class="a4-help-records-stats">3 releases</p>'
+            + '<h2 id="s3">Series 3.x</h2>' + table([['3.0-1', '000003.000000-000001', '2003-03-24', 'first'], ['3.10-1', '000003.000010-000001', '2008-01-01', '']])
+            + '<h2 id="s4">Series 4.x</h2>' + table([['4.0.0', '000004.000000.000000', '2007-11-19', 'beta <b>x</b>']])
+            + '</div></article></div>';
+        const h = setup(page);
+        const d = h.document;
+        const input = d.querySelector('[data-exphelp-records-filter]');
+        const tools = d.querySelector('.a4-help-records-tools');
+        const afterStats = tools && tools.parentNode.children.indexOf(tools) === tools.parentNode.children.indexOf(d.querySelector('.a4-help-records-stats')) + 1;
+        const visible = () => d.querySelectorAll('tbody tr').filter((r) => !r.hidden).map((r) => r.id);
+        input.value = '4.0';
+        d.dispatch('input', input, { bubbles: true });
+        h.runTimers(500);
+        const filtered = visible();
+        const wraps = d.querySelectorAll('.a4-help-table-wrap').map((w) => w.hidden);
+        const status = d.querySelector('.a4-help-records-count').textContent;
+        input.value = '';
+        d.dispatch('input', input, { bubbles: true });
+        h.runTimers(500);
+        const cleared = visible();
+        const buttons = d.querySelectorAll('.a4-help-sort');
+        const labels = buttons.map((b) => b.getAttribute('aria-label'));
+        d.dispatch('click', buttons[0], {});
+        const asc = d.querySelectorAll('tbody tr').map((r) => r.id).slice(0, 2);
+        const sortAsc = buttons[0].parentNode.getAttribute('aria-sort');
+        d.dispatch('click', buttons[0], {});
+        const desc = d.querySelectorAll('tbody tr').map((r) => r.id).slice(0, 2);
+        const sortDesc = buttons[0].parentNode.getAttribute('aria-sort');
+        out('records', { afterStats, filtered, wraps, status, cleared, buttons: buttons.length, labels, asc, sortAsc, desc, sortDesc,
+            type: input.getAttribute('type'), label: tools.querySelector('label').textContent });
+    }
+    {
         // the admin header's search and its / shortcut (admin4.js) on the same page
         const page = '<form id="header"><input type="text" id="searchtext" name="SearchText" /></form>' + SEARCH;
         const h = setup(page, { admin4: true });
