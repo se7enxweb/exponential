@@ -609,7 +609,7 @@ ecb3c141d6f8940074a7432d3bb63bac  design/admin/templates/page_header.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 def1e69baea2cb9d93a8d1af2bf5f692  design/admin/templates/page_toppath.tpl
-2a9016a3646eca940e4e8e68ae84a879  design/admin/templates/pagelayout.tpl
+f6d92dbc6a35bf9324af8a28ffd530df  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 6f4962eafc7286ab584e17db8f6c7b00  design/admin/templates/parts/content/menu.tpl
 d7600cfd918e52be3b4f25b90a040ba7  design/admin/templates/parts/ini_menu.tpl

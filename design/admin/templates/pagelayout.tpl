@@ -75,6 +75,10 @@ div#maincolumn {ldelim} padding-inline-end: 20px; padding-inline-start: 50px; {r
 </head>
 <body>
 
+{* Skip link: the first stop of the Tab key, shown only while focused (components.css .a4-skip-link), to the main
+   landmark: #maincontent, or #mainarea on pages without the left menu *}
+<a class="a4-skip-link" href="#{if $hide_left_menu}mainarea{else}maincontent{/if}">{'Skip to main content'|i18n( 'design/admin/pagelayout' )|wash}</a>
+
 <div id="page" class="{$navigation_part.identifier} section_id_{first_set( $module_result.section_id, 0 )}">
 
 <div id="header">
@@ -186,9 +190,11 @@ document.getElementById('header-usermenu-logout').innerHTML += '<span class="hea
 
 {* Main area START *}
 {if $hide_left_menu}
+    <div id="mainarea" role="main">
     {include uri='design:page_mainarea.tpl'}
+    </div>
 {else}
-    <div id="maincontent">
+    <div id="maincontent" role="main">
     <div id="maincontent-design" class="float-break"><div id="fix">
 
     <div id="path">
