@@ -24,6 +24,8 @@ allowed to use is shown grayed out or not at all.
 |---|---|
 | [Getting started](getting-started.md) | Sign in, take your first steps, and know where to find help |
 | [A tour of the administration](admin-tour.md) | Know the header, the tabs, the side columns and the dashboard |
+| [Logging into the Editor](logging-into-the-editor.md) | Sign in to the Editor, the interface for writing and publishing |
+| [Logging into the admin](logging-into-the-admin.md) | Sign in to the administration, with lockout, design and safety tips |
 
 ## Who makes Exponential
 
@@ -61,6 +63,7 @@ allowed to use is shown grayed out or not at all.
 | Page | What it helps you do |
 |---|---|
 | [Develop with Git](develop-with-git.md) | Install Exponential as Git clones with their full history (the recommended way to build websites), keep them up to date, and send fixes back as pull requests |
+| [Update with Git](update-with-git.md) | Get updates as they are pushed to GitHub and update Composer to match, hourly, daily, weekly, monthly or only at each release, by hand or automatically |
 | [Getting the code](../install/03-getting-the-code.md) | Every way to install the code, with versions, tags and extensions explained |
 
 ## Deeper guides
