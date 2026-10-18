@@ -14026,6 +14026,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14477,6 +14481,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>Open your user object</source>
         <translation>Open your user object</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14760,6 +14768,14 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Your name, e-mail address and other details.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guides, search and how to report an error.</translation>
     </message>
 </context>
 <context>
@@ -15177,6 +15193,14 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>The translation each interface language shows, and what it falls back to.</source>
         <translation>The translation each interface language shows, and what it falls back to.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guides, search and how to report an error.</translation>
     </message>
 </context>
 <context>
@@ -64780,6 +64804,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Show the numbers</source>
         <translation>Show the numbers</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
     </message>
 </context>
 <context>

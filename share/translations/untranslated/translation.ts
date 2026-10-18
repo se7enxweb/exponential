@@ -13760,6 +13760,10 @@ Note: The packages will not be uninstalled.</source>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14211,6 +14215,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Quick search</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14435,6 +14443,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Your name, e-mail address and other details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14852,6 +14868,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -64824,6 +64848,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Nothing was published in the last 14 days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help center</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

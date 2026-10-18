@@ -8,7 +8,8 @@
    to the full view of the user's own object (its main node's URL alias, content/view/full/<main node> without one)
    when the user may read that node, as the "Current user" box does; without a main node or read access, and on edit
    and browse pages, it stays text. The link is named by the name and login it shows; "Open your user object" is its
-   tooltip and description. *}
+   tooltip and description. With exphelp/read (and the help switched on) the menu ends with the Help center, the
+   start page of the help (exphelp/dashboard); the header's "?" link opens the help of the page itself. *}
 {if $current_user.is_logged_in}
 {def $a4_user_login = $current_user.login
      $a4_user_name = $current_user.contentobject.name
@@ -17,7 +18,8 @@
      $a4_user_inactive = or( $ui_context_edit, eq( $ui_context, 'browse' ) )
      $a4_user_node = $current_user.contentobject.main_node
      $a4_user_self = false()
-     $a4_user_href = false()}
+     $a4_user_href = false()
+     $a4_user_help = and( ezini( 'HelpSettings', 'Enabled', 'exphelp.ini' )|eq( 'true' ), fetch( 'user', 'has_access_to', hash( 'module', 'exphelp', 'function', 'read' ) ) )}
 {if and( $a4_user_inactive|not, $a4_user_node )}{set $a4_user_self = $a4_user_node.can_read}{/if}
 {if $a4_user_self}{set $a4_user_href = cond( $a4_user_node.url_alias, $a4_user_node.url_alias, concat( 'content/view/full/', $a4_user_node.node_id ) )}{/if}
 <div id="header-user" class="header-user">
@@ -44,6 +46,7 @@
             {if $a4_user_inactive}
                 <li><span class="disabled" aria-disabled="true">{'Change user info'|i18n( 'design/admin/pagelayout' )|wash}</span></li>
                 <li><span class="disabled" aria-disabled="true">{'Change password'|i18n( 'design/admin/pagelayout' )|wash}</span></li>
+                {if $a4_user_help}<li><span class="disabled" aria-disabled="true">{'Help center'|i18n( 'design/admin/pagelayout' )|wash}</span></li>{/if}
             {else}
                 {if $current_user.contentobject.can_edit}
                 <li><a href={concat( '/content/edit/', $current_user.contentobject_id, '/' )|ezurl} title="{'Change name, email, password, etc.'|i18n( 'design/admin/pagelayout' )|wash}">{'Change information'|i18n( 'design/admin/pagelayout' )|wash}</a></li>
@@ -52,6 +55,7 @@
                 <li><a href={'/user/password/'|ezurl}>{'Change password'|i18n( 'design/admin/pagelayout' )|wash}</a></li>
                 {/if}
                 <li><a href={'/mailpreferences/settings'|ezurl}>{'My e-mail preferences'|i18n( 'design/admin/pagelayout' )|wash}</a></li>
+                {if $a4_user_help}<li><a href={'/exphelp/dashboard'|ezurl}>{'Help center'|i18n( 'design/admin/pagelayout' )|wash}</a></li>{/if}
             {/if}
             </ul>
         </div>
@@ -62,5 +66,5 @@
     <a href={'/user/logout'|ezurl} id="header-usermenu-logout" class="a4-header-btn a4-logout" aria-label="{$a4_logout_label|wash}" title="{$a4_logout_label|wash}"><span class="a4-icon a4-bi-box-arrow-right" aria-hidden="true"></span></a>
     {/if}
 </div>
-{undef $a4_user_login $a4_user_name $a4_user_label $a4_logout_label $a4_user_inactive $a4_user_node $a4_user_self $a4_user_href}
+{undef $a4_user_login $a4_user_name $a4_user_label $a4_logout_label $a4_user_inactive $a4_user_node $a4_user_self $a4_user_href $a4_user_help}
 {/if}

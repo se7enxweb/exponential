@@ -36,7 +36,8 @@
         'sessions', fetch( 'user', 'can_open', hash( 'uri', 'setup/session' ) ),
         'drafts',   fetch( 'user', 'can_open', hash( 'uri', 'content/draft' ) ),
         'pending',  fetch( 'user', 'can_open', hash( 'uri', 'content/pendinglist' ) ),
-        'trash',    fetch( 'user', 'can_open', hash( 'uri', 'content/trash' ) ) )}
+        'trash',    fetch( 'user', 'can_open', hash( 'uri', 'content/trash' ) ),
+        'help',     and( ezini( 'HelpSettings', 'Enabled', 'exphelp.ini' )|eq( 'true' ), fetch( 'user', 'can_open', hash( 'uri', 'exphelp/dashboard' ) ) ) )}
 
 {* Key figures *}
 {def $count_content   = fetch( 'content', 'tree_count', hash( 'parent_node_id', $root_node ) )
@@ -95,6 +96,10 @@
             {/if}
             {if $can.cache}
             <a class="a4-dash-action" href={'setup/cache'|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#8635;</span>{'Caches'|i18n( 'design/admin/dashboard' )}</a>
+            {/if}
+            {* the Help center, the start page of the help (exphelp/dashboard) *}
+            {if $can.help}
+            <a class="a4-dash-action" href={'exphelp/dashboard'|ezurl}><span class="a4-dash-ico" aria-hidden="true">?</span>{'Help center'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
         </nav>
     </section>

@@ -1748,6 +1748,7 @@ html .exp-dt tbody tr:has(> td > input[type="checkbox"]:checked) > td { backgrou
 #footer a {
   color: var(--a4-footer-link);
 }
+.a4-footer-help .a4-icon { margin-inline-end: var(--a4-space-1); }   /* the Help center link (page_copyright.tpl) */
 #footer a:hover {
   color: var(--a4-footer-link-hover);
 }

@@ -238,7 +238,7 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
     public function testDashboardMenuOrderInEveryDesign()
     {
         $wanted = array( 'content/dashboard', 'collaboration/view/summary', 'content/pendinglist', 'content/draft', 'content/bookmark',
-                         'mailpreferences/settings', 'notification/settings', 'audit/console', 'expai/summary', 'expai/vector',
+                         'mailpreferences/settings', 'notification/settings', 'exphelp/dashboard', 'audit/console', 'expai/summary', 'expai/vector',
                          'user/password', 'user/edit/(action)/edit' );
         $my = self::iniSection( 'Leftmenu_my' );
         $this->assertSame( array( 'change_password', 'edit_profile' ), $my['TrailLinks'] ?? null );
