@@ -1051,6 +1051,9 @@ class expHelpDocumentIndex
                 continue;
             if ( preg_match( '/^title:\s*(.+)$/i', $line, $m ) )
                 $line = rtrim( trim( $m[1] ), '.' );
+            // a label that opens a list ("2.9-3:", "stable/3.0:") names nothing: the file name does
+            elseif ( substr( $line, -1 ) === ':' )
+                break;
             if ( mb_strlen( $line, 'UTF-8' ) <= 80 && !preg_match( '/^[0-9a-f]{7,}\b|^(\$|<|\{|https?:)/', $line ) )
                 return self::inlineText( $line );
             break;
