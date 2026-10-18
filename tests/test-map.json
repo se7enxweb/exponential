@@ -623,7 +623,8 @@
     ],
     "design/admin*/stylesheets/components.css": [
       "tests/tests/design/AdminSetupOverviewTest.php",
-      "tests/tests/design/AdminVisibilityStatusTest.php"
+      "tests/tests/design/AdminVisibilityStatusTest.php",
+      "tests/tests/kernel/classes/expNodeQuickPickTest.php"
     ],
     "design/admin4/templates/page_leftmenu.tpl": [
       "tests/tests/design/AdminSetupTabsLeftMenuTest.php"
@@ -870,7 +871,8 @@
     ],
     "extension/ezmultiupload/*": [
       "tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php",
-      "tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php"
+      "tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php",
+      "tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php"
     ],
     "design/admin4/javascript/subitems_priority_drag.js": [
       "tests/tests/design/AdminSubitemsPriorityDragTest.php"
@@ -1572,6 +1574,22 @@
     ],
     "design/standard/templates/content/edit_attribute.tpl": [
       "tests/tests/design/StandardContentEditAccessibleNamesTest.php"
+    ],
+    "kernel/classes/expnodequickpick.php": [
+      "tests/tests/kernel/classes/expNodeQuickPickTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php",
+      "tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php"
+    ],
+    "kernel/classes/contentcheck/expcontentcheckscope.php": [
+      "tests/tests/kernel/classes/expNodeQuickPickTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
+    ],
+    "design/admin*/templates/contentcheck/scope.tpl": [
+      "tests/tests/kernel/classes/expNodeQuickPickTest.php",
+      "tests/tests/kernel/contentcheck/expContentCheckStorageTest.php"
+    ],
+    "design/admin*/stylesheets/modules/setup.css": [
+      "tests/tests/kernel/classes/expNodeQuickPickTest.php"
     ]
   },
   "generated": {

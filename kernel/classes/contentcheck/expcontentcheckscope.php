@@ -12,7 +12,9 @@
  * websites (the content root) and Media by default. Beneath them a second row lists the sites, sections and top
  * folders under the content root (SiteRow*), so a check can start in one site's subtree. Any other node, Users among
  * them, is chosen with the shared node picker (content/browse) through the view contentcheck/scope. The views that
- * take a start location are listed in ViewList[].
+ * take a start location are listed in ViewList[]. Finding the presets and building the rows is expNodeQuickPick's,
+ * shared with other pages' quick location buttons (the upload page of ezmultiupload); the methods here keep their
+ * names and answers.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -199,17 +201,7 @@ class expContentCheckScope
      */
     public static function presetSource( $key )
     {
-        if ( !is_string( $key ) || $key === '' || strlen( $key ) > 200 )
-            return null;
-        $named = array( 'tree' => 'node:1', 'content' => 'ini:RootNode', 'media' => 'ini:MediaRootNode',
-                        'users' => 'ini:UserRootNode', 'setup' => 'ini:SetupRootNode', 'design' => 'ini:DesignRootNode' );
-        if ( isset( $named[$key] ) )
-            return $named[$key];
-        if ( preg_match( '/^[0-9]{1,10}$/', $key ) && (int)$key > 0 )
-            return 'node:' . (int)$key;
-        if ( preg_match( '#^[A-Za-z0-9_\-]+(/[A-Za-z0-9_\-]+)*$#', $key ) && !preg_match( '/^[0-9]+$/', $key ) )
-            return 'path:' . strtolower( $key );
-        return null;
+        return expNodeQuickPick::source( $key );
     }
 
     /**
@@ -220,17 +212,7 @@ class expContentCheckScope
      */
     public static function presetNodeID( $source )
     {
-        list( $type, $value ) = explode( ':', (string)$source, 2 );
-        if ( $type === 'node' )
-            return (int)$value;
-        if ( $type === 'ini' )
-            return self::iniNode( $value, 0 );
-        if ( $type === 'path' )
-        {
-            $nodeID = eZURLAliasML::fetchNodeIDByPath( $value );
-            return $nodeID ? (int)$nodeID : 0;
-        }
-        return 0;
+        return expNodeQuickPick::nodeID( $source );
     }
 
     /**
@@ -296,16 +278,7 @@ class expContentCheckScope
      */
     public static function presetLabel( $key, $nodeName )
     {
-        switch ( is_string( $key ) ? $key : '' )
-        {
-            case 'tree': return ezpI18n::tr( 'kernel/contentcheck', 'Whole tree' );
-            case 'content': return ezpI18n::tr( 'kernel/contentcheck', 'Websites' );
-            case 'media': return ezpI18n::tr( 'kernel/contentcheck', 'Media' );
-            case 'users': return ezpI18n::tr( 'kernel/contentcheck', 'Users' );
-            case 'setup': return ezpI18n::tr( 'kernel/contentcheck', 'Setup' );
-            case 'design': return ezpI18n::tr( 'kernel/contentcheck', 'Design' );
-        }
-        return (string)$nodeName;
+        return expNodeQuickPick::label( $key, $nodeName );
     }
 
     /**
@@ -334,27 +307,7 @@ class expContentCheckScope
      */
     public static function siteRow( array $children, $currentPath, $currentID, $limit )
     {
-        $items = array();
-        $more = false;
-        $limit = max( 1, (int)$limit );
-        $seen = array();
-        foreach ( $children as $child )
-        {
-            if ( !is_array( $child ) || !isset( $child['node_id'] ) || (int)$child['node_id'] <= 0 || isset( $seen[(int)$child['node_id']] )
-                 || !empty( $child['is_hidden'] ) || !empty( $child['is_invisible'] ) )
-                continue;
-            $id = (int)$child['node_id'];
-            $seen[$id] = true;
-            if ( count( $items ) >= $limit )
-            {
-                $more = true;
-                break;
-            }
-            $items[] = array( 'node_id' => $id, 'name' => isset( $child['name'] ) ? (string)$child['name'] : '',
-                              'current' => $id === (int)$currentID,
-                              'within' => $id !== (int)$currentID && strpos( (string)$currentPath, '/' . $id . '/' ) !== false );
-        }
-        return array( 'items' => $items, 'more' => $more );
+        return expNodeQuickPick::row( $children, $currentPath, $currentID, $limit );
     }
 
     /**
@@ -365,17 +318,7 @@ class expContentCheckScope
      */
     protected static function childRows( eZContentObjectTreeNode $parent )
     {
-        $children = $parent->subTree( array( 'Depth' => 1, 'DepthOperator' => 'eq', 'Limit' => self::SITE_ROW_SCAN,
-                                             'SortBy' => $parent->sortArray(), 'IgnoreVisibility' => true,
-                                             'LoadDataMap' => false, 'AsObject' => true ) );
-        $rows = array();
-        foreach ( is_array( $children ) ? $children : array() as $child )
-        {
-            if ( $child instanceof eZContentObjectTreeNode )
-                $rows[] = array( 'node_id' => (int)$child->attribute( 'node_id' ), 'name' => (string)$child->attribute( 'name' ),
-                                 'is_hidden' => (int)$child->attribute( 'is_hidden' ), 'is_invisible' => (int)$child->attribute( 'is_invisible' ) );
-        }
-        return $rows;
+        return expNodeQuickPick::childRows( $parent, self::SITE_ROW_SCAN );
     }
 
     /**

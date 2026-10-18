@@ -19,9 +19,9 @@
         <input type="text" id="{$cc_scope_id}" name="NodeID" value="{$scope.node_id|wash}" inputmode="numeric" pattern="[0-9]*" maxlength="10" aria-describedby="{$cc_scope_id}-help" />
         <span class="a4-help" id="{$cc_scope_id}-help">{if and( is_set( $scope.path ), $scope.path|ne( '' ) )}{'Now: %path'|i18n( 'kernel/contentcheck',, hash( '%path', $scope.path ) )|wash}{elseif $scope.node_name|ne( '' )}{'Now: %path'|i18n( 'kernel/contentcheck',, hash( '%path', $scope.node_name ) )|wash}{/if} {'1 is the whole tree. Your choice is remembered.'|i18n( 'kernel/contentcheck' )}</span>
 {if and( is_set( $scope.presets ), is_set( $scope.view ), $scope.view|ne( '' ) )}
-        <div class="a4-toolbar a4-setup-scope">
+        <div class="a4-toolbar a4-quickpick">
         <nav class="a4-row" aria-labelledby="{$cc_scope_id}-presets">
-            <span class="a4-setup-scope-label" id="{$cc_scope_id}-presets">{'Start locations'|i18n( 'kernel/contentcheck' )}</span>
+            <span class="a4-quickpick-label" id="{$cc_scope_id}-presets">{'Start locations'|i18n( 'kernel/contentcheck' )}</span>
         {foreach $scope.presets as $preset}
             <a class="a4-btn a4-btn-small{if $preset.current} a4-btn-primary{/if}" href={concat( '/contentcheck/', $scope.view, '/', $preset.node_id, $cc_scope_query )|ezurl}{if $preset.current} aria-current="true"{/if}{if $preset.path|ne( '' )} title="{$preset.path|wash}"{/if}>{cond( is_set( $preset.label ), $preset.label, $preset.name )|wash}</a>
         {/foreach}
@@ -31,7 +31,7 @@
         </nav>
 {if and( is_set( $scope.sites ), $scope.sites.items|count|gt( 0 ) )}
         <nav class="a4-row" aria-labelledby="{$cc_scope_id}-sites">
-            <span class="a4-setup-scope-label" id="{$cc_scope_id}-sites">{'Sites and sections'|i18n( 'kernel/contentcheck' )}</span>
+            <span class="a4-quickpick-label" id="{$cc_scope_id}-sites">{'Sites and sections'|i18n( 'kernel/contentcheck' )}</span>
         {foreach $scope.sites.items as $site}
             <a class="a4-btn a4-btn-small{if $site.current} a4-btn-primary{elseif $site.within} is-within{/if}" href={concat( '/contentcheck/', $scope.view, '/', $site.node_id, $cc_scope_query )|ezurl}{if $site.current} aria-current="true"{/if}>{$site.name|wash}{if $site.within}<span class="a4-sr-only"> {'(contains the start location)'|i18n( 'kernel/contentcheck' )}</span>{/if}</a>
         {/foreach}
