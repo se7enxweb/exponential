@@ -8902,6 +8902,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 9b2f42f8460d203df243995ce82a1dc6  tests/tests/lib/ezi18n/eZCodePageTablesTest.php
 70a5cdcff19c3d25379d38bdf6522d47  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
+cff47582357935e6543c99bc55bbd4d1  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
 5b2d2c4d059e39193c2ff5a390e9e106  tests/tests/lib/ezi18n/expTranslationQualityTest.php
 03035027777233602e11f98b3195a191  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
