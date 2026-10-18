@@ -13767,6 +13767,10 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Daha fazla bilgi için bkz. &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Yardım merkezi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14218,6 +14222,10 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>Quick search</source>
         <translation>Hızlı arama</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Yardım merkezi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14443,6 +14451,70 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Adınız, e-posta adresiniz ve diğer ayrıntılar.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Genel bakış</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Çalışmalarınız</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Etkinlik ve denetim</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Başlangıç sayfanız: çalışmalarınız, görevleriniz ve değişenler.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Onayınızı bekleyen öğeler ve sizin başkalarını bekleyen öğeleriniz.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Yayımlanmayı bekleyen öğeleriniz.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Başlattığınız ve henüz yayımlamadığınız taslaklar.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>Yeniden bulmak için işaretlediğiniz içerik.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>Exponential Intelligence başlangıç sayfası: araçları ve kullanımları.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>İçeriği yapay zekâ ile, sizin denetiminizde değiştiren konuşmalar.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Adım adım yazılan içerik: çalıştırmalar ve kontrol noktaları.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>Yapay zekâ istekleri, token sayıları ve maliyetleri.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Yapay zekâ özelliklerinin nasıl çalıştığı ve nasıl kullanılacağı.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Yardım merkezi</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Kılavuzlar, arama ve bir hatanın nasıl bildirileceği.</translation>
     </message>
 </context>
 <context>
@@ -14852,6 +14924,22 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Günlük dosyalarını izleyin, arayın ve çapraz başvuru yapın.</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Arayüz dilleri</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>Her arayüz dilinin gösterdiği çeviri ve geri dönüş olarak kullandığı dil.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Yardım merkezi</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Kılavuzlar, arama ve bir hatanın nasıl bildirileceği.</translation>
     </message>
 </context>
 <context>
@@ -50536,6 +50624,42 @@ Daha fazla bilgi için gereksinimler sayfasına bakın.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>Ana bilgisayar adıyla erişimde kural şudur: site için %site, yönetim için %admin ve içerik düzenleme için %editor.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>Bu site zaten kurulu</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>Kurulum sihirbazı Exponential'ı yeni bir siteye kurar. Kurulu bir sitede çalışmaz ve açılması hiçbir şeyi değiştirmez: site çevrimiçi kalır.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Yeniden kurulum, kickstarter ile (%file, ardından php bin/php/kickstarter.php) veya yeni bir kurulumla yapılır.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Bu site yeniden kurulsun mu?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>Bu site zaten kurulu. Kurulum sihirbazı kurulu siteler için etkinleştirilmiş (AllowWizardOnInstalledSite); bu ayar yalnızca geliştirme amaçlıdır.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Sihirbazı başlatmak tüm siteyi bakım moduna alır: sihirbaz bitene veya 15 dakika boyunca kullanılmadan bırakılana kadar diğer tüm ziyaretçiler bir bakım sayfası görür.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>Kurulum sihirbazını başlat</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>İptal</translation>
+    </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Bu parola çok bilinen veya çok yaygın bir parola olduğundan herkes tahmin edebilir. Lütfen başka bir parola seçin.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53004,6 +53128,22 @@ o e-postadaki yönergeleri izleyin.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Lütfen geçerli bir e-posta adresi girin.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Bu bağlantının süresi doldu.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Güvenliğiniz için parola sıfırlama bağlantısı yalnızca %1 dakika boyunca ve yalnızca bir kez çalışır. Aşağıdan yeni bir bağlantı isteyin.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Yeni bağlantı iste</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>Bağlantı yalnızca bir kez ve yalnızca %1 dakika boyunca çalışır.</translation>
     </message>
 </context>
 <context>
@@ -57102,6 +57242,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Error digest</source>
         <translation>Hata özeti</translation>
     </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Arayüz dilleri</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -57674,6 +57818,14 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>The new password does not meet the requirements.</source>
         <translation>Yeni parola gereksinimleri karşılamıyor.</translation>
+    </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Çok bilinen veya yaygın bir parola değil</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Yeni parola çok bilinen veya çok yaygın. Lütfen başka bir parola seçin.</translation>
     </message>
 </context>
 <context>
@@ -60801,6 +60953,18 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
         <translation>Uç nokta URI&apos;si, https://app.example.com/callback gibi mutlak bir adres olmalıdır.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Seç</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Eylemler</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Gerekli</translation>
     </message>
 </context>
 <context>
@@ -64922,6 +65086,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Yardım merkezi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -66233,6 +66401,34 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>Önbelleğe almayı ve derlemeyi belirleyen ayarlar ve derlenmiş önbellekten kaç şablonun çalıştığı ya da şimdi derlendiği. Şablon önbelleği temizlendikten hemen sonra her şablon bir kez derlenir.</translation>
     </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Kullanımdan kaldırmalar</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modül</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>Düğüm kimliği</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>HTTP durumu</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Sorgu süresi</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>İstek</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Sayfa süresindeki payı</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -66533,6 +66729,18 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Classic (server-rendered)</source>
         <translation>Klasik (sunucuda oluşturulan)</translation>
+    </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (eski)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Klasik (eski)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Klasik, sunucuda oluşturulan (eski)</translation>
     </message>
 </context>
 <context>
@@ -67109,6 +67317,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The effective audit settings, sinks and index.</source>
         <translation>Geçerli denetim ayarları, hedefler ve dizin.</translation>
     </message>
+    <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Denetim konsolunda Exponential Intelligence olayları.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
@@ -67131,6 +67343,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>The templates of the designs and their overrides.</source>
         <translation>Tasarımların şablonları ve geçersiz kılmaları.</translation>
+    </message>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Alternatif metni olmayan resimler ve bunlar için öneriler.</translation>
     </message>
 </context>
 <context>
@@ -69718,6 +69934,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The password does not meet the requirements.</source>
         <translation>Parola gereksinimleri karşılamıyor.</translation>
     </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Parola çok bilinen veya çok yaygın. Lütfen başka bir parola seçin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
@@ -71061,12 +71281,1710 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Web server error log</source>
         <translation>Web sunucusu hata günlüğü</translation>
     </message>
+    <message>
+        <source>Content Security Policy reports</source>
+        <translation>Content Security Policy raporları</translation>
+    </message>
 </context>
 <context>
     <name>design/ezfind/search</name>
     <message>
         <source>Spell check suggestion: did you mean</source>
         <translation>Yazım denetimi önerisi: bunu mu demek istediniz</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Arayüz dilleri</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Yönetim arayüzü, yerel ayarının dilinde gösterilir. Kendi çevirisi olmayan bir yerel ayar, geri dönüş zincirindeki ilk çeviriyi, o da yoksa İngilizce kaynak metinleri gösterir. Bu sayfa her yerel ayarı, neyi gösterdiğini ve bunun ne kadar eksiksiz olduğunu listeler. Hiçbir şeyi değiştirmez: geri dönüşler i18n.ini [TranslationSettings] içinde ayarlanır.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Genel bakış</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Yerel ayarlar</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>Kendi çevirisi olanlar</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Geri dönüş yoluyla çevrilenler</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>İngilizce kaynak metinlerle gösterilenler</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Sorunlar</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Zinciri yeniden %target yerel ayarına dönüyor.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Zinciri FallbackMaxDepth değerinden uzun ve %target noktasında kesiliyor.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>%target yerel ayarına geri dönüyor; bu bir yerel ayar kodu değil.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>%target yerel ayarına geri dönüyor; bunun ne yerel ayar dosyası ne de çevirisi var.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] %target değerini adlandırıyor; bu bir geri dönüş kuralı değil.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Geri dönüşü var, ancak yerel ayar dosyası yok.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>%target yerel ayarına geri dönüyor; bunun henüz çevirisi yok: İngilizce kaynak metinleri gösteriyor.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Tüm yerel ayarlar</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>Kurulumda %locale için yerel ayar dosyası yok.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Kendi çevirisi</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Arayüz</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % çevrildi</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>%locale üzerinden</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>İngilizce kaynak metinler</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Uzantılar</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%total metnin %translated tanesi çevrildi, %complete tamamlandı</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Geri dönüş zinciri</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>çeviri yok</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>FallbackLanguages[] ile</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>otomatik aynı dil geri dönüşüyle</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>%rule kuralıyla</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Yok: kendi çevirisi olmadığında İngilizce kaynak metinleri gösterir.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Uzantı</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Çevrilen</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ayarlar</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>Yapılandırılmış geri dönüşü olan %count yerel ayar</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: zincirdeki tüm çeviriler, en özel olan geçerli</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: zincirdeki ilk çeviri</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>enabled: çevirisi ve yapılandırılmış geri dönüşü olmayan bir yerel ayar, kendi dilinin en eksiksiz çevirisini alır</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Şunlar için asla: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>devre dışı</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Yok</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>Aynı liste komut satırında: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count gösteriliyor</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göster</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Yerel ayar</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Bu site erişimi</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>kaynak metinler</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>sorun</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%total içinden %translated</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>ortalama %percent %</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Vurgulanan adım otomatik aynı dil geri dönüşüyle bulundu; diğerleri yapılandırılmıştır veya bir kuraldan gelir.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Bu türde yerel ayar yok.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Yardım</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ara</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Yardımda ara</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Hata bildir</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopyala</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopyalandı</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Kopyalama başarısız oldu</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Sonuç yok</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count sonuç</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Aranıyor...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Arama şu anda kullanılamıyor.</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Hiçbir sayfa tüm sözcükleri içermiyor; bu sayfalar bazılarını içeriyor.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Temizle</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Başlarken</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Yönetim</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Geliştirme</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Kurulum ve yükseltmeler</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Sürüm notları</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Geçmiş</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Başvuru</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 sonuç</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Yöneticiler</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Editörler</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Geliştiriciler</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Son kullanıcılar</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Kodu kopyala</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Üzerine geliştirin: uzantılar, şablonlar, ayarlar, API'ler, komut satırı ve yükseltmeler.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>İçerik oluşturun, düzenleyin, çevirin ve yayımlayın: medya, düzenler, arama ve editör.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system's health.</source>
+        <translation>Kurulumu yönetin: siteler, kullanıcılar ve roller, önbellekler, günlükler, güvenlik ve sistemin sağlığı.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Siteyi kullanın: hesabınız, oturum açma, iki faktörlü kimlik doğrulama ve aradığınızı bulma.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Bu sayfa için yardım</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Yardım: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Bölümü gizle: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Bölümü göster: %title</translation>
+    </message>
+    <message>
+        <source>"Saving an article with an image fails with a 500 error", not "Bug" or "Help".</source>
+        <translation>"Resimli bir makaleyi kaydetmek 500 hatasıyla başarısız oluyor"; "Hata" veya "Yardım" değil.</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>%count dk okuma</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>%count sayfa</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to / %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(GitHub'da yeni sorun, yeni pencerede açılır)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(yeni pencerede açılır)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>1 sayfa</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>İyi bir rapor, hatanın hızla düzeltilmesini sağlar. Bu sayfa raporu nereye göndereceğinizi, ne yazacağınızı anlatır ve size yapıştırabileceğiniz, bu kuruluma ait güvenli bir özet verir.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>Bir dakikalık kontrol çoğu zaman soruyu yanıtlar ya da belirsiz bir raporu düzeltilebilir bir rapora dönüştürür.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Bir güvenlik sorunu mu? Herkese açık bir sorun kaydında değil, gizli olarak bildirin.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>Hatayı adlandıran bir başlık</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>Birinin okumaması, değiştirmemesi veya ele geçirmemesi gereken şeyleri okumasına, değiştirmesine veya ele geçirmesine izin veren bir zayıflık gizli olarak bildirilir; böylece başkaları öğrenmeden önce düzeltilebilir.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Tüm yardım sayfaları</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Tüm konular</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Tüm türler</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension's repository.</source>
+        <translation>Yalnızca tek bir uzantıda (bir veri türü, bir modül, kendine ait bir tasarım) oluşan bir hata, o uzantının deposunda düzeltilir.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>Bir uzantı</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Bu sitenin bir yöneticisinden hata özetinin ilgili satırlarını isteyin (Kurulum, Günlükler). Bir bakımcının en çok ihtiyaç duyduğu şey ileti ve hatanın oluştuğu zamandır.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>Önce topluluğa sorun: bir şeyin nasıl çalıştığına dair sorular, fikirler ve deneyimler oraya aittir.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>Bildirmeden önce</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>Konuya göre göz atın</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Kategori:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>Bir uzantı seçin</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>Tanılama bilgilerini kopyala</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Tanılama</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Metin olarak tanılama bilgileri</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>Bunu mu demek istediniz:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Bu konuda herkese açık bir sorun kaydı, çekme isteği veya forum gönderisi açmayın.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>%address adresine e-posta gönderin</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Exponential'ın her bölümünün GitHub'da herkese açık kendi sorun takipçisi vardır. Sorun açmak için bir GitHub hesabınız olması gerekir.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>GitHub'da düzenle</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Herkes</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Uzantı</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Uzantılar</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>Öne çıkan kılavuzlar</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Bildiklerinizi doldurun; form, sorunu bu kurulumun tanılama bilgileriyle hazırlar. Sorunu GitHub'da açıp kendiniz gönderene kadar GitHub'a hiçbir şey gönderilmez.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>Kimin için</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>Kimin için:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Bir güvenlik sorunu mu buldunuz?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Bir hata mı buldunuz?</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Yardım merkezi</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>Yardım başlangıcı</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>Size nasıl yardımcı olabiliriz?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>Bir hata nasıl bildirilir</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>Sürümü, PHP sürümünü ve motoru (yukarıdaki tanılama bilgileri), bir saldırganın neler yapabileceğini ve yeniden oluşturma adımlarını ekleyin. Parolaları, gizli bilgileri ve kişisel verileri eklemeyin. İlk yanıtı bir iş günü içinde alırsınız.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>Metniniz ve tanılama bilgileri doldurulmuş olarak GitHub'da açılır; orada kontrol edip gönderin.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Klavye kısayolları</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Son değişiklik</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>Özel olan her şeyi dışarıda bırakın</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>Günlüklere bakın</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>Mevcut bir raporu arayın</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>Bir sayfa mı eksik? Bize bildirin</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Bunu asla herkese açık bir sorun takipçisinde veya forumda bildirmeyin. Şu başlık altında açıklanan gizli yolu kullanın:</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Yeni sorun</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>%name için yeni sorun</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Sonraki</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Hiçbir sayfa tüm sözcükleri içermiyor; bunlardan herhangi birini içeren sayfalar gösteriliyor.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>“%query” ile eşleşen sayfa yok.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>Parola, anahtar, e-posta adresi, kişi adı veya müşteri verisi eklemeyin. Form bariz olanları kaldırır, ancak göndermeden önce sorunu okuyun.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Bunun bir hata olduğundan emin değil misiniz?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>Bu sayfada</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Açık sorunlar</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Hata özetini aç</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>Yardım merkezini aç</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>Sorunu %tracker içinde aç</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Genel bakış</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Sizin için yazılmış sayfaları görmek için rolünüzü seçin.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>%audience için popüler sayfalar</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>Sorunu hazırla</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Önceki</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>Önceki ve sonraki sayfa</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Güvenlik politikasını okuyun</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>Son güncellenenler</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Yaptığınız işlemi tekrarlayın. Her seferinde mi, yalnızca bir kullanıcı veya bir sayfa için mi başarısız olduğunu ve önbellekleri temizlemenin bir şeyi değiştirip değiştirmediğini not edin.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>Bir güvenlik açığını GitHub'da gizli olarak bildirin</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>Bildirilecek yer</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>Sonuç sayfaları</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>“%query” için sonuçlar</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>Kılavuz, ayar, komut arayın…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Aşağıdaki takipçinin açık sorunlarında arama yapın. Hatanız orada varsa, yeni bir sorun açmak yerine bildiklerinizi oraya ekleyin.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Güvenlik sorunları</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>Bu sayfada bir yanlışlık mı var? Hata bildirin</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Kaynak dosya:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>Bulunduğunuz yerden başlayın</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>Yeniden oluşturma adımları</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>GitHub'da bize bildirin: kılavuz, hangi takipçinin uygun olduğunu, nelerin ekleneceğini ve kopyalanacak sistem ayrıntılarını gizli bilgiler olmadan gösterir.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>Yanıt, bir özelliğin bilinen sınırları da dahil olmak üzere zaten belgelenmiş olabilir.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Hata özeti, son saatlerdeki farklı hata iletilerini listeler. Bir bakımcının en çok ihtiyaç duyduğu şey ileti ve hatanın oluştuğu zamandır.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>Yeni açılmış bir sayfadan hataya giden en kısa yol, her satırda bir adım.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>Bu kurulumun sürümü, sunucusu ve uzantıları. Hiçbir zaman parola, anahtar, veritabanı sunucusu veya adı, e-posta adresi ya da kurulum dışındaki yolları içermez.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Başlık</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>Konu</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>Daha az veya farklı sözcükler ya da başka bir hedef kitle veya konu deneyin.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>Yeniden deneyin</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tür</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>Bu uzantıyı kullan</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Kullanıcılar</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>Ne oldu</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>Bunun yerine ne olması gerekiyordu.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Ne yaptığınız ve neyin yanlış gittiği. Hata iletisini aynen alıntılayın.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>Ne bekliyordunuz</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>Nereye bildirilir</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>Raporu yazın</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Sorununuz hazır.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>hedef kitleler</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>temizle</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>sonuçlar arasında gezin</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>aç</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>GitHub'ı yeni pencerede açar</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>yeni pencerede açılır</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>sayfalar</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>ara</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>bölümler</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>PHP arayüzü</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Web sunucusu</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>İşletim sistemi</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Veritabanı</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Site erişimi</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Tasarım</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Hata ayıklama çıktısı</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Görünüm önbelleği</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Etkin uzantılar</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Oluşturulma</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (yazılım)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Çekirdekteki, yönetim arayüzündeki, birlikte gelen uzantılardaki ve belgelerdeki hatalar</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (uygulama sunucusu)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Velocity sunucusunun kendi hataları: başlatma, çalışan süreçler, yanıt önbelleği, HTTPS, exp:velocity komutu</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Exponential projesi ve topluluğu</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Proje, web sitesi, ekosistem ve bir yazılım parçasındaki hata olmayan her şey</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Exponential topluluk forumları</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Telegram topluluk sohbeti</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Exponential belgeleri</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>İçerik düzenleme</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Özellikler</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Yardım ve destek</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Resimler ve medya</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Diller</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Düzenler</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Yayımlama</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Hesabınız</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Bu kurulumla çalışan herkes için kılavuzlar ve başvuru bilgileri; kurulumun kendi sürümünün belgelerinden hazırlanmıştır.</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Yardım menüsü</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>İlgili konular</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Hızlı bağlantılar</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Yardım merkezini aç</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>Yenilikler</translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Kullanıcılıktan geliştiriciliğe ilerleyin</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential, tüm geçmişi GitHub'da bulunan özgür bir yazılımdır. Web siteleri oluşturmanın önerilen yolu olan Git klonları olarak kurarsanız her değişikliği izleyebilir, düzeltmeleri yayımlanmadan önce deneyebilir ve kendi iyileştirmelerinizi geri gönderebilirsiniz.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Yönetim arayüzünü kullanın</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Oturum açın, düzenleyin ve yayımlayın.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Git ile kurun</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Çekirdek ve tüm uzantılar, geçmişleriyle birlikte klon olarak.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Katkıda bulunun</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Çatallayın, düzeltin ve bir çekme isteği açın.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Git ile geliştirin</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Kurulum kılavuzu</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Belge lisansı</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Bu sayfa %extension uzantısının belgelerinin bir parçasıdır ve o uzantının lisansı altında dağıtılır.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Bu sayfa özgün yazılımın belgelerinden devralınmıştır. %license kapsamında değildir; %other altında dağıtılır.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Hangi sayfaların hangi lisansa sahip olduğu</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Bu, Free Software Foundation tarafından yayımlandığı haliyle %license sürüm %version metnidir. Herkes onu kelimesi kelimesine kopyalayabilir ve paylaşabilir; değiştirilmesine izin verilmez.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Bu belgeler, %license %version veya sonraki bir sürümü altında lisanslanmış özgür belgelerdir.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Bu belgeler, %license %version altında lisanslanmış özgür belgelerdir.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Lisansı okuyun</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Web'deki lisans</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Özgür belgelerle neler yapabilirsiniz</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Telif hakkı ve lisans bildirimi</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Özgür belgeler: kendinize ve başkalarına yardım etmek için kullanın</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Bu yardım, %license %version veya sonraki bir sürümü altında lisanslanmış özgür belgelerdir. Onu kullanabilir, paylaşabilir ve geliştirebilirsiniz:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Bu yardım, %license %version altında lisanslanmış özgür belgelerdir. Onu kullanabilir, paylaşabilir ve geliştirebilirsiniz:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>İnceleyin</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Herhangi bir sayfayı, istediğiniz amaçla, istediğiniz kadar okuyun.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Kopyalayın ve paylaşın</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Sayfaları kâğıt üzerinde veya dosya olarak diğer kullanıcılara verin. Her kopyada telif hakkı bildirimini, lisans bildirimini ve lisansın bir kopyasını koruyun.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Çevirin, uyarlayın ve geliştirin</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Kendi sürümünüzü özgün bildirimlerle ve neyi değiştirdiğinize dair bir notla aynı lisans altında paylaşın.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Kaynak gösterin</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Bir sayfaya, başlığı ve yardımdaki adresiyle ya da doc dizinindeki dosyasıyla atıfta bulunun.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Düzeltmelerinizle katkıda bulunun</translation>
+    </message>
+    <message>
+        <source>Use "Edit on GitHub" on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Herhangi bir sayfada "GitHub'da düzenle" seçeneğini kullanın. Değişiklikler aynı lisans altında kabul edilir; böylece herkes için özgür kalır.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Filtreleri uygula</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Göz at</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Tüm yardım sayfalarına göz atın</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Yardıma göz atın</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Başka bir hedef kitle, konu veya tür seçin.</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>İçerik oluşturma ve değiştirme: editör, alanlar, taslaklar ve sürümler.</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Yönetim arayüzünde ve sitede içerik bulma.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Yönetim arayüzünde ilk adımlar: oturum açma, yolunuzu bulma ve günlük görevler.</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Yardım alma ve hata bildirme.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Resimler, dosyalar ve diğer medya: yükleme, seçme ve yeniden kullanma.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Exponential'ı kurma ve yeni bir sürüme yükseltme.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Yönetim arayüzünü hızlandıran klavye kısayolları.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Bu seçim için sayfa yok.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Başvuru için saklanan eski belgeler.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Sayfa düzenleri: bölgeler, bloklar ve bir düzeni seçen kurallar.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>İçeriği yayımlama, zamanlama, gizleme ve taşıma.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Başvuru belgeleri: ayarlar, komutlar ve biçimler.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Siteyi işletme: ayarlar, kullanıcılar ve roller, önbellekler, cron işleri ve günlükler.</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Şablonlar, uzantılar, API ve arkasındaki kod.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Konular</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Çeviriler ve sitenin dilleri.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Her sürümde neler değişti.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Her özelliğin ne yaptığı ve nasıl ayarlanacağı.</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Hesabınız: parola, iki adımlı oturum açma ve tercihler.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count sayfa eşleşiyor</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>Belgelerin klasörlerinde %count sayfa. Bir klasör açın veya başlıktaki bir sözcüğe göre filtreleyin.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>Bu belgeler hakkında</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Tüm yardıma göz atın</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Sayfaları filtrele</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Yardım sayfalarını filtrele</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Eşleşen sayfa başlığı yok</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Geriye dönük uyumluluk</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Değişiklik günlükleri</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Örnekler</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Kılavuzlar</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Yönetim arayüzünü kullanma</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Kurulum</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Mağaza</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Belirtimler</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standartlar</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Bu sayfayı yazdır</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>PDF olarak indir</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Bu sayfayı yazdırın veya indirin</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Adres:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Exponential yardımı</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Sayfa %number / %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Resim: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Resim</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%total kayıttan %count tanesi</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrele</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>%title ölçütüne göre sırala</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Sürüm, ad, yıl veya revizyon</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count kayıt, %first ile %last arası</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 kayıt, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adresler ve notlar</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Artık çevrimiçi olmayan sunuculardaki adresler tarihî metin olarak korunur.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Tarih</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Diğer</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Yayımlanma</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revizyonlar</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>%s serisi</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Kaynak</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Eski kayıtlar özgün SVN deposundan gelir.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Sürüm</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>özgün SVN'den</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>tarihî (artık çevrimiçi değil)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>kaydedilmemiş</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>revizyon %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Exponential'ı kim geliştiriyor</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential, yaklaşık otuz yıllık bir geçmişe sahip özgür bir yazılımdır. Ona öncülük eden şirketle ve açık kaynak projesini yürüten kâr amacı gütmeyen vakıfla tanışın.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>7x kimdir?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>İlk sürümünden bugüne Exponential'ın arkasındaki şirket.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Exponential Foundation kimdir?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>Kâr amacı gütmeyen kuruluş, ürün ailesi ve taahhütleri.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count yardım konusu</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Tüm kılavuzlar</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Kavram</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>İçindekiler</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>EPUB indir</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>PDF indir</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Bu konuyu düzenle</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Baskı %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>%from sürümünden itibaren</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Yardım konuları</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Kılavuzlar</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Kılavuzlar ve yardım konuları</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Platform:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Önizleme</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Önizleme: %state, okuyuculara sunulmuyor</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Görev</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Henüz okuyabileceğiniz bir kılavuz yok.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Bu kılavuzda henüz okuyabileceğiniz bir konu yok.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Konu türü:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Sorun giderme</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>%from ile %to arası sürümler</translation>
+    </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Proje yöneticileri</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Satış ve pazarlama</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Projeleri planlayın ve yönetin: aşamalar ve roller, barındırma seçenekleri, kapsam belirleme, kontrol listeleri, kalite kapıları, sürümler ve riskler.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Exponential'ı tanıtın ve öne çıkarın: konumlandırma, öne çıkan özellikler, demolar, itirazlar, lisanslama, marka ve topluluk.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Buradan başlayın</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Proje liderliği</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Satış ve pazarlama</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Exponential projelerini planlama, yürütme ve büyütme: aşamalar, roller, kontrol listeleri, riskler ve toplulukla çalışma.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Exponential'ı tanıtma ve öne çıkarma: konumlandırma, demolar, itirazlar, lisanslama, marka ve topluluğu büyütme.</translation>
+    </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Git ile güncelleyin</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Güncellemeleri GitHub'a gönderildikleri anda alın, ardından Composer'ı buna göre güncelleyin: saatlik, günlük, haftalık, aylık veya yalnızca her sürümde.</translation>
+    </message>
+    <message>
+        <source>Partners</source>
+        <translation>İş ortakları</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>Savunucular</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>Tasarımcılar</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Barındırma şirketleri</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>Uygulama geliştiricileri</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>Web sitesi geliştiricileri</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>Destekçiler</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Sponsorlar</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Exponential ile geliştirin, barındırın ve satın: iş ortaklığı programı, iş ortağı sınıfları, avantajlar, gereksinimler ve nasıl başvurulacağı.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>Sesinizi duyurun: konuşma noktaları, etkinlikler, topluluk kanalları, demolar ve yeni kullanıcıların yollarını bulmalarına yardım etme.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>Temalar ve şablonlar tasarlayın, uzantılar geliştirin; ardından bunları yaşam döngüleri boyunca yayımlayın, satın ve bakımını yapın.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Exponential sitelerini barındırın: sunucu gereksinimleri, PHP ve veritabanları, Velocity, önbellekleme, güvenlik, yedeklemeler ve işletim.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Exponential üzerinde uygulamalar geliştirin: içerik modelleri, modüller ve görünümler, API'ler, uzantılar ve test.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Exponential ile web siteleri oluşturun: sitenin planlanması, içerik sınıfları, tasarımlar, düzenler, yayına alma ve bakımı.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>Projenin büyümesine yardım edin: kod, belge, çeviri ve testlerle katkıda bulunun ve geliştirdiklerinizi paylaşın.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Exponential üzerindeki çalışmaları finanse edin: sponsorluğun neden önemli olduğu, neyi karşıladığı ve 7x ile Vakfa nasıl sponsor olunacağı.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>İş ortaklığı</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>Savunuculuk ve topluluk</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>Tema tasarımı</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Şablonlar</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>Uzantı geliştirme</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>Tema uzantıları</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>Yayımlama ve dağıtım</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>Tema ve hizmet satışı</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>Bakım yaşam döngüsü</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Barındırma</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>Uygulama geliştirme</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>Web sitesi oluşturma</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Exponential'ı destekleme</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Sponsorluk</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>İş ortağı olarak Exponential ile çalışma: iş ortaklığı programı, iş ortağı sınıfları, avantajlar ve nasıl başvurulacağı.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Exponential'ı duyurma: konuşma noktaları, etkinlikler, kanallar ve yeni kullanıcıları karşılama.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Exponential için tema tasarlama: tasarımlar, geçersiz kılma sistemi, stiller, varlıklar ve erişilebilirlik.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>Şablon dili: değişkenler, operatörler, fonksiyonlar, fetch'ler, include'lar ve geçersiz kılmalar.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>Adım adım uzantı geliştirme: yapı, ayarlar, modüller, şablonlar, sınıflar ve katkıda bulunma.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>Bir temayı uzantı olarak paketleme: yapı, ayarlar, bağımlılıklar ve eklediği tasarımlar.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>Tema ve uzantıları yayımlama: depolar, paketler, sürümler, sürüm numaraları ve lisanslar.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>Temaları ve çevresindeki hizmetleri satma: teklifler, fiyatlandırma, destek ve müşterilerle çalışma.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>Tema ve uzantıları yaşatma: yükseltmeler, uyumluluk, güvenlik düzeltmeleri ve kullanımdan kaldırma.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Exponential'ı barındırma: sunucular, PHP, veritabanları, web sunucuları, Velocity, önbellekleme, yedeklemeler ve işletim.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Exponential üzerinde uygulama geliştirme: içerik modelleri, modüller, görünümler, API'ler ve test.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Exponential ile web sitesi oluşturma: planlama, içerik yapısı, tasarımlar, düzenler ve yayına alma.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Exponential'ın büyümesine yardım etme: kod, belge, çeviri, test ve tavsiye yoluyla katkı.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Exponential'ı finanse etme: sponsorluğun neyi karşıladığı ve 7x ile Exponential Foundation'a nasıl sponsor olunacağı.</translation>
     </message>
 </context>
 </TS>

@@ -14126,6 +14126,10 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Další informace viz &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum nápovědy</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14633,6 +14637,10 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
         <source>Quick search</source>
         <translation>Rychlé hledání</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum nápovědy</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14870,6 +14878,70 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Vaše jméno, e-mailová adresa a další údaje.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Přehled</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Vaše práce</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Aktivita a audit</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Vaše úvodní stránka: vaše práce, vaše úkoly a co se změnilo.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Položky, které čekají na vaše schválení, a vaše položky, které čekají na schválení ostatních.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Vaše položky, které čekají na publikování.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Koncepty, které jste začali a dosud nepublikovali.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>Obsah, který jste si označili, abyste jej znovu našli.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>Úvodní stránka Exponential Intelligence: její nástroje a jejich použití.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Vlákna, která mění obsah pomocí AI pod vaší kontrolou.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Obsah psaný po krocích: běhy a jejich kontrolní body.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>Požadavky na AI, jejich tokeny a jejich cena.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Jak funkce AI fungují a jak je používat.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum nápovědy</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Návody, vyhledávání a jak nahlásit chybu.</translation>
     </message>
 </context>
 <context>
@@ -15279,6 +15351,22 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Sledovat, prohledávat a propojovat soubory protokolů.</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Jazyky rozhraní</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>Překlad, který zobrazuje každý jazyk rozhraní, a jeho záložní překlad.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum nápovědy</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Návody, vyhledávání a jak nahlásit chybu.</translation>
     </message>
 </context>
 <context>
@@ -43637,6 +43725,42 @@ Další informace najdete na stránce požadavků.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>Při přístupu podle názvu hostitele je zvykem %site pro web, %admin pro administraci a %editor pro úpravy obsahu.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>Tento web je již nainstalován</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>Průvodce instalací nainstaluje Exponential na nový web. Na nainstalovaném webu se nespustí a jeho otevřením se nic nezmění: web zůstane online.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Přeinstalace se provádí pomocí kickstarteru (%file, poté php bin/php/kickstarter.php) nebo novou instalací.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Přeinstalovat tento web?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>Tento web je již nainstalován. Průvodce instalací je povolen i pro nainstalované weby (AllowWizardOnInstalledSite), což je určeno pouze pro vývoj.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Spuštění průvodce přepne celý web do režimu údržby: každý další návštěvník uvidí stránku údržby, dokud průvodce neskončí nebo dokud nezůstane 15 minut nečinný.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>Spustit průvodce instalací</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
+    </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Toto heslo je známé nebo příliš běžné, takže jej může kdokoli uhodnout. Zvolte jiné.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -46057,6 +46181,22 @@ a aktivujte svůj účet.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Zadejte platnou e-mailovou adresu.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Platnost tohoto odkazu vypršela.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Z bezpečnostních důvodů funguje odkaz pro obnovení hesla pouze %1 minut a pouze jednou. Níže si vyžádejte nový odkaz.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Vyžádat nový odkaz</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>Odkaz funguje pouze jednou a pouze %1 minut.</translation>
     </message>
 </context>
 <context>
@@ -50102,6 +50242,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Error digest</source>
         <translation>Souhrn chyb</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Jazyky rozhraní</translation>
     </message>
 </context>
 <context>
@@ -59148,6 +59292,14 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The new password does not meet the requirements.</source>
         <translation>Nové heslo nesplňuje požadavky.</translation>
     </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Není známé ani běžné heslo</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Nové heslo je známé nebo příliš běžné. Zvolte jiné.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/setup/rad</name>
@@ -62078,6 +62230,18 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
         <translation>URI koncového bodu musí být absolutní adresa, například https://app.example.com/callback.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Vybrat</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akce</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Povinné</translation>
     </message>
 </context>
 <context>
@@ -66199,6 +66363,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum nápovědy</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -67510,6 +67678,34 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>Nastavení, která rozhodují o ukládání do mezipaměti a kompilaci, a kolik šablon běželo ze zkompilované mezipaměti nebo bylo nyní zkompilováno. Hned po vymazání mezipaměti šablon se každá šablona jednou zkompiluje.</translation>
     </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Zastaralé funkce</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>ID uzlu</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>Stav HTTP</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Doba dotazu</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Požadavek</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Podíl na době načtení stránky</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -67810,6 +68006,18 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Classic (server-rendered)</source>
         <translation>Klasický (vykreslovaný na serveru)</translation>
+    </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (starší)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Klasické (starší)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Klasické, vykreslované na serveru (starší)</translation>
     </message>
 </context>
 <context>
@@ -68386,6 +68594,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The effective audit settings, sinks and index.</source>
         <translation>Platná nastavení auditu, cíle a index.</translation>
     </message>
+    <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Události Exponential Intelligence v konzoli auditu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
@@ -68408,6 +68620,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>The templates of the designs and their overrides.</source>
         <translation>Šablony designů a jejich přepsání.</translation>
+    </message>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Obrázky bez alternativního textu a návrhy pro něj.</translation>
     </message>
 </context>
 <context>
@@ -70995,6 +71211,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The password does not meet the requirements.</source>
         <translation>Heslo nesplňuje požadavky.</translation>
     </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Heslo je známé nebo příliš běžné. Zvolte jiné.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
@@ -72338,12 +72558,1710 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Web server error log</source>
         <translation>Protokol chyb webového serveru</translation>
     </message>
+    <message>
+        <source>Content Security Policy reports</source>
+        <translation>Hlášení Content Security Policy</translation>
+    </message>
 </context>
 <context>
     <name>design/ezfind/search</name>
     <message>
         <source>Spell check suggestion: did you mean</source>
         <translation>Návrh opravy pravopisu: měli jste na mysli</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Jazyky rozhraní</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Administrace se zobrazuje v jazyce svého národního prostředí. Národní prostředí bez vlastního překladu zobrazuje první překlad ze svého záložního řetězce, jinak anglické zdrojové texty. Tato stránka uvádí každé národní prostředí s tím, co zobrazuje a nakolik je to úplné. Nic nemění: záložní jazyky se nastavují v i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Přehled</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Národní prostředí</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>S vlastním překladem</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Přeložená pomocí záložního jazyka</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>V anglických zdrojových textech</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problémy</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Jeho řetězec se vrací zpět k %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Jeho řetězec je delší než FallbackMaxDepth a je zkrácen u %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Vrací se k %target, což není kód národního prostředí.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Vrací se k %target, který nemá soubor národního prostředí ani překlad.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] uvádí %target, což není záložní pravidlo.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Má záložní jazyk, ale nemá soubor národního prostředí.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Vrací se k %target, který zatím nemá překlad: zobrazuje anglické zdrojové texty.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Všechna národní prostředí</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>Instalace nemá soubor národního prostředí pro %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Vlastní překlad</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Rozhraní</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % přeloženo</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>přes %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Anglické zdrojové texty</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Rozšíření</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated z %total přeloženo, %complete úplných</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Záložní řetězec</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>bez překladu</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>podle FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>automatickou záložní volbou stejného jazyka</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>podle pravidla %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Žádný: bez vlastního překladu zobrazuje anglické zdrojové texty.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Rozšíření</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Přeloženo</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>Národní prostředí s nastaveným záložním jazykem: %count</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: každý překlad řetězce, přednost má ten nejkonkrétnější</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: první překlad řetězce</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>enabled: národní prostředí bez překladu a bez nastaveného záložního jazyka použije nejúplnější překlad svého jazyka</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Nikdy pro: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>vypnuto</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Žádné</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>Stejný seznam na příkazové řádce: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>Zobrazeno: %count</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zobrazit</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Národní prostředí</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jazyk</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Tento přístup k webu</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>zdrojové texty</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>problém</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated z %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % v průměru</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Zvýrazněný krok byl nalezen automatickou záložní volbou stejného jazyka; ostatní jsou nastavené nebo pocházejí z pravidla.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Žádné národní prostředí tohoto druhu.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Nápověda</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hledat</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Hledat v nápovědě</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Nahlásit chybu</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopírovat</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Zkopírováno</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Kopírování se nezdařilo</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Žádné výsledky</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Počet výsledků: %count</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Hledání...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Vyhledávání nyní není k dispozici.</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Žádná stránka neobsahuje všechna slova; tyto obsahují některá z nich.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Vymazat</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Začínáme</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrace</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Vývoj</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Instalace a aktualizace</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Poznámky k vydání</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historie</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Referenční informace</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 výsledek</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administrátoři</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Editoři</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Vývojáři</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Koncoví uživatelé</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Kopírovat kód</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Stavějte na něm: rozšíření, šablony, nastavení, API, příkazová řádka a aktualizace.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Vytvářejte, upravujte, překládejte a publikujte obsah: média, rozvržení, vyhledávání a editor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system's health.</source>
+        <translation>Provozujte instalaci: weby, uživatelé a role, mezipaměti, protokoly, zabezpečení a stav systému.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Používejte web: váš účet, přihlášení, dvoufázové ověření a vyhledávání.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Nápověda k této stránce</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Nápověda: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Skrýt oddíl: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Zobrazit oddíl: %title</translation>
+    </message>
+    <message>
+        <source>"Saving an article with an image fails with a 500 error", not "Bug" or "Help".</source>
+        <translation>„Uložení článku s obrázkem selže s chybou 500“, nikoli „Chyba“ nebo „Nápověda“.</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>Čtení na %count min</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>Počet stránek: %count</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to z %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(nové hlášení na GitHubu, otevře se v novém okně)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(otevře se v novém okně)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>1 stránka</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>Dobré hlášení vede k rychlé opravě chyby. Tato stránka vám řekne, kam je poslat a co napsat, a poskytne vám bezpečný souhrn této instalace, který můžete vložit.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>Minuta kontroly často otázku zodpoví nebo z vágního hlášení udělá takové, které lze opravit.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Bezpečnostní problém? Nahlaste jej soukromě, ne ve veřejném hlášení.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>Název, který chybu pojmenovává</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>Slabina, která někomu umožní číst, měnit nebo převzít to, k čemu nemá mít přístup, se hlásí soukromě, aby mohla být opravena dříve, než se o ní dozví kdokoli další.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Všechny stránky nápovědy</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Všechna témata</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Všechny typy</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension's repository.</source>
+        <translation>Chyba, ke které dochází pouze v jednom rozšíření (datový typ, modul, vlastní vzhled), se opravuje v repozitáři daného rozšíření.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>Jedno z rozšíření</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Požádejte administrátora tohoto webu o odpovídající řádky přehledu chyb (Nastavení, Protokoly). Zpráva a čas, kdy k chybě došlo, jsou to, co správce potřebuje nejvíce.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>Nejprve se zeptejte komunity: otázky, jak něco funguje, nápady a zkušenosti patří tam.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>Než chybu nahlásíte</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>Procházet podle tématu</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Kategorie:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>Zvolte rozšíření</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>Kopírovat diagnostiku</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Diagnostika</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Diagnostika jako text</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>Měli jste na mysli:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Neotevírejte o něm veřejné hlášení, pull request ani příspěvek ve fóru.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>Napsat e-mail na %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Každá část Exponential má na GitHubu vlastní veřejný systém hlášení. K otevření hlášení potřebujete účet GitHub.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>Upravit na GitHubu</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Všichni</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Rozšíření</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Rozšíření</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>Doporučené návody</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Vyplňte, co víte; formulář připraví hlášení s diagnostikou této instalace. Na GitHub se nic neodešle, dokud hlášení sami neotevřete a neodešlete.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>Pro</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>Pro:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Našli jste bezpečnostní problém?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Našli jste chybu?</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum nápovědy</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>Úvod nápovědy</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>Jak vám můžeme pomoci?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>Jak nahlásit chybu</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>Uveďte verzi, verzi PHP a engine (výše uvedenou diagnostiku), co může útočník udělat a kroky k reprodukci. Vynechejte hesla, tajné klíče a osobní údaje. První odpověď dostanete do jednoho pracovního dne.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>Otevře se na GitHubu s vyplněným textem a diagnostikou; zkontrolujte jej tam a odešlete.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Klávesové zkratky</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Naposledy změněno</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>Vynechejte vše soukromé</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>Podívejte se do protokolů</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>Vyhledejte existující hlášení</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>Chybí vám stránka? Dejte nám vědět</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Nikdy jej nehlaste ve veřejném systému hlášení ani ve fóru. Použijte soukromý postup popsaný v části</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Nové hlášení</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>Nové hlášení pro %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Další</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Žádná stránka neobsahuje všechna slova; zobrazují se stránky s některým z nich.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>Výrazu „%query“ neodpovídá žádná stránka.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>Žádná hesla, klíče, e-mailové adresy, jména osob ani data zákazníků. Formulář odstraní ty zjevné, ale před odesláním si hlášení přečtěte.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Nejste si jisti, že jde o chybu?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>Na této stránce</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Otevřená hlášení</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Otevřít přehled chyb</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>Otevřít centrum nápovědy</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>Otevřít hlášení v %tracker</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Přehled</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Zvolte svou roli a zobrazí se stránky napsané pro ni.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>Oblíbené stránky pro %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>Připravit hlášení</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Předchozí</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>Předchozí a další stránka</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Přečíst zásady zabezpečení</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>Nedávno aktualizováno</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Zopakujte, co jste udělali. Zaznamenejte, zda k chybě dochází pokaždé, jen u jednoho uživatele nebo jedné stránky, a zda vymazání mezipamětí něco změní.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>Nahlásit zranitelnost soukromě na GitHubu</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>Nahlásit do</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>Stránky výsledků</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>Výsledky pro „%query“</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>Hledat návody, nastavení, příkazy…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Prohledejte otevřená hlášení v níže uvedeném systému. Pokud tam vaše chyba je, doplňte k ní, co víte, místo otevírání nového hlášení.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Bezpečnostní problémy</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>Je na této stránce něco špatně? Nahlaste chybu</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Zdrojový soubor:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>Začněte tam, kde jste</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>Kroky k reprodukci</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>Dejte nám vědět na GitHubu: návod ukáže, který systém hlášení se hodí, co uvést a jaké systémové údaje zkopírovat, bez jakýchkoli tajných údajů.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>Odpověď už může být zdokumentována, včetně známých omezení funkce.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Přehled chyb uvádí jednotlivé chybové zprávy za posledních několik hodin. Zpráva a čas, kdy k chybě došlo, jsou to, co správce potřebuje nejvíce.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>Nejkratší cesta od nově načtené stránky k chybě, jeden krok na řádek.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>Verze, server a rozšíření této instalace. Nikdy neobsahuje hesla, klíče, hostitele ani názvy databází, e-mailové adresy ani cesty mimo instalaci.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>Téma</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>Zkuste méně slov nebo jiná slova, případně jinou cílovou skupinu nebo téma.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>Zkusit znovu</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>Použít toto rozšíření</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Uživatelé</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>Co se stalo</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>Co se mělo stát místo toho.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Co jste udělali a co se pokazilo. Chybovou zprávu citujte přesně.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>Co jste očekávali</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>Kam hlásit</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>Napsat hlášení</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Vaše hlášení je připraveno.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>cílové skupiny</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>vymazat</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>pohyb mezi výsledky</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>otevřít</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>otevře GitHub v novém okně</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>otevře se v novém okně</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>stránky</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>hledat</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>oddíly</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>Rozhraní PHP</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Webový server</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>Operační systém</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Databáze</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Přístup k webu</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Vzhled</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jazyk</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Ladicí výstup</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Mezipaměť zobrazení</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Aktivní rozšíření</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Vygenerováno</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (software)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Chyby v jádře, administraci, přibalených rozšířeních a dokumentaci</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (aplikační server)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Chyby samotného serveru Velocity: spouštění, workery, jeho mezipaměť odpovědí, HTTPS, příkaz exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Projekt a komunita Exponential</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Projekt, web, ekosystém a vše, co není chybou v softwaru</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Komunitní fóra Exponential</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Komunitní chat na Telegramu</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Dokumentace Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Úprava obsahu</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Funkce</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Nápověda a podpora</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Obrázky a média</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Jazyky</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Rozvržení</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Publikování</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Váš účet</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Návody a referenční příručka pro každého, kdo s touto instalací pracuje, sepsané z dokumentace její vlastní verze.</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Nabídka nápovědy</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Související témata</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Rychlé odkazy</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Otevřít centrum nápovědy</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>Co je nového</translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Od uživatele k vývojáři</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential je svobodný software s celou historií na GitHubu. Nainstalujte jej jako klony Git, což je doporučený způsob tvorby webů, a budete moci sledovat každou změnu, zkoušet opravy před jejich vydáním a posílat zpět vlastní vylepšení.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Používejte administraci</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Přihlaste se, upravujte a publikujte.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Instalace pomocí Gitu</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Jádro a všechna rozšíření jako klony s historií.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Přispějte zpět</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Vytvořte fork, opravte chybu a otevřete pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Vývoj s Gitem</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Instalační příručka</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Licence dokumentace</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Tato stránka je součástí dokumentace rozšíření %extension a je šířena pod licencí tohoto rozšíření.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Tato stránka byla převzata z dokumentace původního softwaru. Nevztahuje se na ni %license; je šířena pod %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Které stránky mají kterou licenci</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Toto je text %license, verze %version, jak jej zveřejňuje Free Software Foundation. Kdokoli jej smí doslovně kopírovat a sdílet; měnit jej není dovoleno.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Tato dokumentace je svobodná dokumentace, licencovaná pod %license %version nebo novější.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Tato dokumentace je svobodná dokumentace, licencovaná pod %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Přečíst licenci</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Licence na webu</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Co můžete se svobodnou dokumentací dělat</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Upozornění na autorská práva a licenci</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Svobodná dokumentace: používejte ji, abyste pomohli sobě i ostatním</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Tato nápověda je svobodná dokumentace, licencovaná pod %license %version nebo novější. Smíte ji používat, sdílet a vylepšovat:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Tato nápověda je svobodná dokumentace, licencovaná pod %license %version. Smíte ji používat, sdílet a vylepšovat:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Studujte ji</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Čtěte kteroukoli stránku tak často, jak chcete, a k jakémukoli účelu.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Kopírujte ji a sdílejte</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Předávejte stránky dalším uživatelům, na papíře nebo jako soubory. Ke každé kopii připojte upozornění na autorská práva, licenční upozornění a kopii licence.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Překládejte, upravujte a vylepšujte ji</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Sdílejte svou verzi pod stejnou licencí, s původními upozorněními a poznámkou o tom, co jste změnili.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Citujte ji</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Odkazujte na stránku jejím názvem a adresou v nápovědě nebo jejím souborem v adresáři doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Přispějte opravami zpět</translation>
+    </message>
+    <message>
+        <source>Use "Edit on GitHub" on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Na kterékoli stránce použijte „Upravit na GitHubu“. Změny se přijímají pod stejnou licencí, takže zůstanou svobodné pro všechny.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Použít filtry</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Procházet</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Procházet všechny stránky nápovědy</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Procházet nápovědu</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Zvolte jinou cílovou skupinu, téma nebo typ.</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Vytváření a změna obsahu: editor, pole, koncepty a verze.</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Hledání obsahu v administraci a na webu.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>První kroky v administraci: přihlášení, orientace a každodenní úkoly.</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Získání pomoci a nahlášení chyby.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Obrázky, soubory a další média: nahrávání, výběr a opakované použití.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Instalace Exponential a jeho aktualizace na nové vydání.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Klávesové zkratky, které zrychlí práci v administraci.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Pro tento výběr neexistuje žádná stránka.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Starší dokumenty uchované pro referenci.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Rozvržení stránek: zóny, bloky a pravidla, která rozvržení vybírají.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Publikování, plánování, skrývání a přesouvání obsahu.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Referenční materiály: nastavení, příkazy a formáty.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Provoz webu: nastavení, uživatelé a role, mezipaměti, úlohy cron a protokoly.</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Šablony, rozšíření, API a kód, který za tím stojí.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Témata</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Překlady a jazyky webu.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Co se změnilo v jednotlivých vydáních.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Co jednotlivé funkce dělají a jak je nastavit.</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Váš účet: heslo, dvoufázové přihlášení a předvolby.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>Odpovídajících stránek: %count</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>Počet stránek: %count, uspořádaných ve složkách dokumentace. Otevřete složku nebo filtrujte podle slova z názvu.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>O této dokumentaci</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Procházet celou nápovědu</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Filtrovat stránky</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Filtrovat stránky nápovědy</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Žádný název stránky neodpovídá</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Zpětná kompatibilita</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Přehledy změn</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Příklady</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Návody</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Používání administrace</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Instalace</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Obchod</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Specifikace</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standardy</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Vytisknout tuto stránku</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Stáhnout jako PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Vytisknout nebo stáhnout tuto stránku</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Adresa:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Nápověda Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Stránka %number z %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Obrázek: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Obrázek</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count z %total záznamů</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtr</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Řadit podle %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Verze, název, rok nebo revize</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>Záznamy: %count, %first až %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 záznam, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adresy a poznámky</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Adresy na serverech, které již nejsou online, jsou zachovány jako historický text.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Jiné</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Vydáno</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revize</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Řada %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Zdroj</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Starší záznamy pocházejí z původního repozitáře SVN.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Verze</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>z původního SVN</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historické (již není online)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nezaznamenáno</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>revize %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Kdo vytváří Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential je svobodný software s historií téměř třiceti let. Seznamte se se společností, která jej vede, a s neziskovou nadací, která provozuje projekt open source.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Kdo je 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Společnost, která stojí za Exponential, od jeho prvního vydání až dodnes.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Kdo je Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>Nezisková organizace, rodina produktů a její závazky.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>Témata nápovědy: %count</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Všechny příručky</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Koncept</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Obsah</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>Stáhnout EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>Stáhnout PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Upravit toto téma</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Vydání %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>Od verze %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Témata nápovědy</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Příručky</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Příručky a témata nápovědy</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Platforma:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Náhled</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Náhled: %state, nedoručeno čtenářům</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Úloha</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Zatím zde nejsou žádné příručky, které byste si mohli přečíst.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Tato příručka zatím nemá žádná témata, která byste si mohli přečíst.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Typ tématu:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Řešení problémů</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Verze %from až %to</translation>
+    </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Projektoví manažeři</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Prodej a marketing</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Plánujte a veďte projekty: fáze a role, volba hostingu, vymezení rozsahu, kontrolní seznamy, kontroly kvality, vydání a rizika.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Představujte a propagujte Exponential: postavení na trhu, hlavní funkce, ukázky, námitky, licencování, značka a komunita.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Začněte zde</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Vedení projektů</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Prodej a marketing</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Plánování, řízení a rozvoj projektů Exponential: fáze, role, kontrolní seznamy, rizika a spolupráce s komunitou.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Představování a propagace Exponential: postavení na trhu, ukázky, námitky, licencování, značka a rozvoj komunity.</translation>
+    </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Aktualizace pomocí Gitu</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Získávejte aktualizace hned, jak jsou odeslány na GitHub, a pak podle nich aktualizujte Composer: každou hodinu, denně, týdně, měsíčně nebo jen při každém vydání.</translation>
+    </message>
+    <message>
+        <source>Partners</source>
+        <translation>Partneři</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>Propagátoři</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>Designéři</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Hostingové společnosti</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>Tvůrci aplikací</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>Tvůrci webů</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>Podporovatelé</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Sponzoři</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Stavějte, hostujte a prodávejte s Exponential: partnerský program, třídy partnerů, výhody, požadavky a jak se přihlásit.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>Šiřte povědomí: hlavní argumenty, akce, komunitní kanály, ukázky a pomoc novým uživatelům v orientaci.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>Navrhujte motivy a šablony, vytvářejte rozšíření a pak je publikujte, prodávejte a udržujte po celou dobu jejich životního cyklu.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Hostujte weby Exponential: požadavky na server, PHP a databáze, Velocity, ukládání do mezipaměti, zabezpečení, zálohy a provoz.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Vytvářejte aplikace na Exponential: obsahové modely, moduly a pohledy, API, rozšíření a testování.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Vytvářejte weby s Exponential: plánování webu, třídy obsahu, vzhledy, rozvržení, spuštění a péče o web.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>Pomozte projektu růst: přispívejte kódem, dokumentací, překlady a testováním a sdílejte, co vytvoříte.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Financujte práci na Exponential: proč je sponzorství důležité, co z něj je placeno a jak sponzorovat 7x a nadaci.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>Partnerství</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>Propagace a komunita</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>Návrh motivů</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Šablony</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>Vývoj rozšíření</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>Rozšíření s motivy</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>Publikování a distribuce</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>Prodej motivů a služeb</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>Životní cyklus údržby</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Hostování</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>Vytváření aplikací</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>Vytváření webů</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Podpora Exponential</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Sponzorství</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>Spolupráce s Exponential jako partner: partnerský program, třídy partnerů, výhody a jak se přihlásit.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Šíření povědomí o Exponential: hlavní argumenty, akce, kanály a vítání nových uživatelů.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Navrhování motivů pro Exponential: vzhledy, systém přepisů (override), styly, soubory a přístupnost.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>Šablonovací jazyk: proměnné, operátory, funkce, načítání dat (fetch), vkládání (include) a přepisy.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>Vytváření rozšíření krok za krokem: struktura, nastavení, moduly, šablony, třídy a přispívání zpět.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>Zabalení motivu jako rozšíření: struktura, nastavení, závislosti a vzhledy, které přidává.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>Publikování motivů a rozšíření: repozitáře, balíčky, vydání, verze a licence.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>Prodej motivů a souvisejících služeb: nabídky, ceny, podpora a spolupráce s klienty.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>Udržování motivů a rozšíření při životě: aktualizace, kompatibilita, bezpečnostní opravy a ukončení podpory.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Hostování Exponential: servery, PHP, databáze, webové servery, Velocity, ukládání do mezipaměti, zálohy a provoz.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Vytváření aplikací na Exponential: obsahové modely, moduly, pohledy, API a testování.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Vytváření webů s Exponential: plánování, struktura obsahu, vzhledy, rozvržení a spuštění.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Pomoc s růstem Exponential: přispívání kódem, dokumentací, překlady, testováním a šíření dobrého slova.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Financování Exponential: co sponzorství platí a jak sponzorovat 7x a Exponential Foundation.</translation>
     </message>
 </context>
 </TS>

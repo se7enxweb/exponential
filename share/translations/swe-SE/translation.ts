@@ -14143,6 +14143,10 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Mer information finns på &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hjälpcenter</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14650,6 +14654,10 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>Quick search</source>
         <translation>Snabbsökning</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hjälpcenter</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14887,6 +14895,70 @@ Obs: Paketen avinstalleras inte.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Ditt namn, din e-postadress och andra uppgifter.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Översikt</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Ditt arbete</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Aktivitet och granskning</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Din startsida: ditt arbete, dina uppgifter och vad som har ändrats.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Objekt som väntar på ditt godkännande, och dina som väntar på andra.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Dina objekt som väntar på att publiceras.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Utkasten som du har påbörjat men inte publicerat än.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>Innehållet som du har markerat för att hitta det igen.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>Startsidan för Exponential Intelligence: dess verktyg och hur de används.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Trådar som ändrar innehåll med AI, under din kontroll.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Innehåll som skrivs i steg: körningarna och deras kontrollpunkter.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>AI-förfrågningarna, deras tokens och deras kostnad.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Hur AI-funktionerna fungerar och hur du använder dem.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hjälpcenter</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guider, sökning och hur du rapporterar ett fel.</translation>
     </message>
 </context>
 <context>
@@ -15300,6 +15372,22 @@ Obs: Paketen avinstalleras inte.</translation>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Följ, sök i och korsreferera loggfilerna.</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Gränssnittsspråk</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>Översättningen som varje gränssnittsspråk visar och vad det faller tillbaka på.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hjälpcenter</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guider, sökning och hur du rapporterar ett fel.</translation>
     </message>
 </context>
 <context>
@@ -43658,6 +43746,42 @@ Se sidan med krav för mer information.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>Med åtkomst via värdnamn är konventionen %site för webbplatsen, %admin för administrationen och %editor för innehållsredigering.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>Den här webbplatsen är redan installerad</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>Installationsguiden installerar Exponential på en ny webbplats. Den körs inte på en installerad webbplats, och att öppna den ändrar ingenting: webbplatsen förblir online.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Ominstallation görs med kickstartern (%file, sedan php bin/php/kickstarter.php) eller med en ny installation.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Installera om den här webbplatsen?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>Den här webbplatsen är redan installerad. Installationsguiden är aktiverad för installerade webbplatser (AllowWizardOnInstalledSite), vilket endast är avsett för utveckling.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Om du startar guiden försätts hela webbplatsen i underhållsläge: alla andra besökare får en underhållssida tills guiden är klar, eller tills den har lämnats orörd i 15 minuter.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>Starta installationsguiden</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Det här lösenordet är välkänt eller för vanligt, så vem som helst kan gissa det. Välj ett annat.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -46078,6 +46202,22 @@ ditt konto.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Ange en giltig e-postadress.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Den här länken har gått ut.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Av säkerhetsskäl fungerar en länk för att återställa ditt lösenord bara i %1 minuter och bara en gång. Begär en ny länk nedan.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Begär en ny länk</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>Länken fungerar bara en gång och bara i %1 minuter.</translation>
     </message>
 </context>
 <context>
@@ -50123,6 +50263,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Error digest</source>
         <translation>Felsammandrag</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Gränssnittsspråk</translation>
     </message>
 </context>
 <context>
@@ -59169,6 +59313,14 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The new password does not meet the requirements.</source>
         <translation>Det nya lösenordet uppfyller inte kraven.</translation>
     </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Är inte ett välkänt eller vanligt lösenord</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Det nya lösenordet är välkänt eller för vanligt. Välj ett annat.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/setup/rad</name>
@@ -62099,6 +62251,18 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
         <translation>Slutpunktens URI måste vara en absolut adress, till exempel https://app.example.com/callback.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Välj</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Åtgärder</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obligatorisk</translation>
     </message>
 </context>
 <context>
@@ -66220,6 +66384,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hjälpcenter</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -67531,6 +67699,34 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>Inställningarna som avgör cachning och kompilering, och hur många mallar som kördes från den kompilerade cachen eller kompilerades nu. Direkt efter en tömning av mallcachen kompileras varje mall en gång.</translation>
     </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Utfasningar</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>Nod-id</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>HTTP-status</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Frågetid</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Förfrågan</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Andel av sidtiden</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -67831,6 +68027,18 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Classic (server-rendered)</source>
         <translation>Klassisk (serverrenderad)</translation>
+    </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (äldre)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Klassisk (äldre)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Klassisk, serverrenderad (äldre)</translation>
     </message>
 </context>
 <context>
@@ -68407,6 +68615,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The effective audit settings, sinks and index.</source>
         <translation>De gällande granskningsinställningarna, mottagarna och indexet.</translation>
     </message>
+    <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Händelserna i Exponential Intelligence i granskningskonsolen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
@@ -68429,6 +68641,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>The templates of the designs and their overrides.</source>
         <translation>Designernas mallar och deras åsidosättningar.</translation>
+    </message>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Bilder utan alternativ text, och förslag på sådan.</translation>
     </message>
 </context>
 <context>
@@ -71016,6 +71232,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The password does not meet the requirements.</source>
         <translation>Lösenordet uppfyller inte kraven.</translation>
     </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Lösenordet är välkänt eller för vanligt. Välj ett annat.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
@@ -72359,12 +72579,1710 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Web server error log</source>
         <translation>Webbserverns fellogg</translation>
     </message>
+    <message>
+        <source>Content Security Policy reports</source>
+        <translation>Rapporter om Content Security Policy</translation>
+    </message>
 </context>
 <context>
     <name>design/ezfind/search</name>
     <message>
         <source>Spell check suggestion: did you mean</source>
         <translation>Förslag från stavningskontrollen: menade du</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Gränssnittsspråk</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Administrationen visas på språket för dess språkinställning. En språkinställning utan egen översättning visar den första översättningen i sin reservkedja, annars de engelska källtexterna. Den här sidan listar varje språkinställning med vad den visar och hur komplett det är. Den ändrar ingenting: reservspråken ställs in i i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Översikt</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Språkinställningar</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>Med en egen översättning</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Översatta via ett reservspråk</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>På de engelska källtexterna</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problem</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Dess kedja leder tillbaka till %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Dess kedja är längre än FallbackMaxDepth och kapas vid %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Faller tillbaka på %target, som inte är någon språkkod.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Faller tillbaka på %target, som varken har en språkfil eller en översättning.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] anger %target, som inte är någon reservregel.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Har ett reservspråk, men ingen språkfil.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Faller tillbaka på %target, som ännu inte har någon översättning: den visar de engelska källtexterna.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Alla språkinställningar</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>Installationen har ingen språkfil för %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Egen översättning</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nej</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Gränssnitt</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % översatt</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>via %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Engelska källtexter</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Tillägg</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated av %total översatta, %complete kompletta</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Reservkedja</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>ingen översättning</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>genom FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>genom det automatiska reservspråket inom samma språk</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>genom regeln %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Inget: utan egen översättning visas de engelska källtexterna.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Tillägg</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Översatt</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count språkinställningar med ett konfigurerat reservspråk</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: varje översättning i kedjan, där den mest specifika vinner</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: den första översättningen i kedjan</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>enabled: en språkinställning utan översättning och utan konfigurerat reservspråk tar den mest kompletta översättningen av sitt språk</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Aldrig för: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>inaktiverad</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ingen</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>Samma lista på kommandoraden: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count visas</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Visa</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Språkinställning</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Den här webbplatsingången</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>källtexter</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>problem</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated av %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % i genomsnitt</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Ett markerat steg hittades av det automatiska reservspråket inom samma språk; de andra är konfigurerade eller kommer från en regel.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Ingen språkinställning är av det här slaget.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Hjälp</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sök</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Sök i hjälpen</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Rapportera ett fel</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiera</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopierat</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Kopieringen misslyckades</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Inga resultat</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count resultat</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Söker...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Sökningen är inte tillgänglig just nu.</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Ingen sida innehåller alla ord; de här innehåller några av dem.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Rensa</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Kom igång</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Utveckling</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Installation och uppgraderingar</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Versionsinformation</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historik</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Referens</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 resultat</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administratörer</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Redaktörer</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Utvecklare</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Slutanvändare</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Kopiera kod</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Bygg vidare: tillägg, mallar, inställningar, API:erna, kommandoraden och uppgraderingar.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Skapa, redigera, översätt och publicera innehåll: media, layouter, sökning och redigeraren.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system's health.</source>
+        <translation>Driv installationen: webbplatser, användare och roller, cacheminnen, loggar, säkerhet och systemets hälsa.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Använd webbplatsen: ditt konto, inloggning, tvåfaktorsautentisering och att hitta saker.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Hjälp för den här sidan</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Hjälp: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Dölj avsnitt: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Visa avsnitt: %title</translation>
+    </message>
+    <message>
+        <source>"Saving an article with an image fails with a 500 error", not "Bug" or "Help".</source>
+        <translation>"Att spara en artikel med en bild misslyckas med ett 500-fel", inte "Bugg" eller "Hjälp".</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>%count min läsning</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>%count sidor</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to av %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(nytt ärende på GitHub, öppnas i ett nytt fönster)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(öppnas i ett nytt fönster)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>1 sida</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>En bra rapport gör att ett fel åtgärdas snabbt. Den här sidan berättar var du ska skicka den, vad du ska skriva och ger dig en säker sammanfattning av den här installationen att klistra in.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>En minuts kontroll besvarar ofta frågan, eller gör en vag rapport till en som går att åtgärda.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Ett säkerhetsproblem? Rapportera det privat, inte i ett offentligt ärende.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>En rubrik som namnger felet</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>En svaghet som låter någon läsa, ändra eller ta över sådant som de inte borde rapporteras privat, så att den kan åtgärdas innan någon annan får veta om den.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Alla hjälpsidor</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Alla ämnen</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Alla typer</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension's repository.</source>
+        <translation>Ett fel som bara uppstår i ett tillägg (en datatyp, en modul, en egen design) åtgärdas i det tilläggets arkiv.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>Ett tillägg</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Be en administratör för den här webbplatsen om de matchande raderna i felsammanställningen (Konfiguration, Loggar). Meddelandet och tidpunkten då det hände är det en underhållare behöver mest.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>Fråga gemenskapen först: frågor om hur något fungerar, idéer och erfarenheter hör hemma där.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>Innan du rapporterar</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>Bläddra efter ämne</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Kategori:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>Välj ett tillägg</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>Kopiera diagnostiken</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Diagnostik</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Diagnostik som text</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>Menade du:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Öppna inte ett offentligt ärende, en pull request eller ett foruminlägg om det.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>E-posta %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Varje del av Exponential har sin egen offentliga ärendehantering på GitHub. Du behöver ett GitHub-konto för att öppna ett ärende.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>Redigera på GitHub</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Alla</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Tillägg</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Tillägg</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>Utvalda guider</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Fyll i det du vet; formuläret förbereder ärendet med den här installationens diagnostik. Ingenting skickas till GitHub förrän du öppnar ärendet där och skickar in det själv.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>För</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>För:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Hittat ett säkerhetsproblem?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Hittat ett fel?</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hjälpcenter</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>Hjälpstart</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>Hur kan vi hjälpa dig?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>Så rapporterar du ett fel</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>Ange versionen, PHP-versionen och motorn (diagnostiken ovan), vad en angripare kan göra och stegen för att återskapa det. Utelämna lösenord, hemligheter och personuppgifter. Du får ett första svar inom en arbetsdag.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>Det öppnas på GitHub med din text och diagnostiken ifyllda; kontrollera det där och skicka in det.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Kortkommandon</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Senast ändrad</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>Utelämna allt privat</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>Titta i loggarna</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>Leta efter en befintlig rapport</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>Saknar du en sida? Berätta för oss</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Rapportera det aldrig i en offentlig ärendehantering eller ett forum. Använd den privata vägen som beskrivs under</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Nytt ärende</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>Nytt ärende för %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Nästa</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Ingen sida innehåller alla ord; sidor med något av dem visas.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>Ingen sida matchar ”%query”.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>Inga lösenord, nycklar, e-postadresser, namn på personer eller kunddata. Formuläret tar bort de uppenbara, men läs ärendet innan du skickar in det.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Osäker på om det är ett fel?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>På den här sidan</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Öppna ärenden</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Öppna felsammanställningen</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>Öppna hjälpcentret</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>Öppna ärendet i %tracker</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Översikt</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Välj din roll för att se sidorna som är skrivna för den.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>Populära sidor för %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>Förbered ärendet</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Föregående</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>Föregående och nästa sida</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Läs säkerhetspolicyn</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>Nyligen uppdaterade</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Upprepa det du gjorde. Notera om det misslyckas varje gång, bara för en användare eller en sida, och om det ändrar något att rensa cacheminnena.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>Rapportera en sårbarhet privat på GitHub</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>Rapportera till</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>Resultatsidor</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>Resultat för ”%query”</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>Sök guider, inställningar, kommandon…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Sök bland de öppna ärendena i ärendehanteringen nedan. Om ditt fel finns där, lägg till det du vet i stället för att öppna ett nytt.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Säkerhetsproblem</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>Något fel på den här sidan? Rapportera ett fel</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Källfil:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>Börja där du är</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>Steg för att återskapa</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>Berätta för oss på GitHub: guiden visar vilken ärendehantering som passar, vad du ska ta med och systemuppgifterna att kopiera, utan några hemligheter.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>Svaret kan redan vara dokumenterat, inklusive de kända begränsningarna för en funktion.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Felsammanställningen listar de olika felmeddelandena från de senaste timmarna. Meddelandet och tidpunkten då det hände är det en underhållare behöver mest.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>Den kortaste vägen från en ny sida till felet, ett steg per rad.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>Versionen, servern och tilläggen i den här installationen. Den innehåller aldrig lösenord, nycklar, databasvärdar eller -namn, e-postadresser eller sökvägar utanför installationen.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>Ämne</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>Prova färre eller andra ord, eller en annan målgrupp eller ett annat ämne.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>Försök igen</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>Använd det här tillägget</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Användare</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>Vad som hände</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>Vad som borde ha hänt i stället.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Vad du gjorde och vad som gick fel. Citera felmeddelandet exakt.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>Vad du förväntade dig</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>Var du rapporterar</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>Skriv rapporten</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Ditt ärende är klart.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>målgrupper</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>rensa</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>gå igenom resultaten</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>öppna</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>öppnar GitHub i ett nytt fönster</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>öppnas i ett nytt fönster</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>sidor</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>sök</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>avsnitt</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>PHP-gränssnitt</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Webbserver</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>Operativsystem</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Databas</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Webbplatsingång</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Design</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Felsökningsutdata</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Vycache</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Aktiva tillägg</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Genererad</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (programvaran)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Fel i kärnan, administrationen, de medföljande tilläggen och dokumentationen</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (applikationsservern)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Fel i själva Velocity-servern: start, arbetsprocesser, dess svarscache, HTTPS, kommandot exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Exponential-projektet och gemenskapen</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Projektet, webbplatsen, ekosystemet och allt som inte är ett fel i en programvara</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Exponentials gemenskapsforum</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Gemenskapschatt på Telegram</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Exponential-dokumentation</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Redigera innehåll</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Funktioner</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Hjälp och support</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Bilder och media</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Layouter</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Publicering</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Ditt konto</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Guider och referens för alla som arbetar med den här installationen, skrivna utifrån dokumentationen för dess egen version.</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Hjälpmeny</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Relaterade ämnen</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Snabblänkar</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Öppna hjälpcentret</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>Nyheter</translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Väx från användare till utvecklare</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential är fri programvara med hela sin historik på GitHub. Installera den som Git-kloner, det rekommenderade sättet att bygga webbplatser, så kan du följa varje ändring, prova rättningar innan de släpps och skicka tillbaka dina egna förbättringar.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Använd administrationen</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Logga in, redigera och publicera.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Installera med Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Kärnan och varje tillägg som kloner med historik.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Bidra tillbaka</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Forka, rätta och öppna en pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Utveckla med Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Installationsguide</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Dokumentationslicens</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Den här sidan är en del av dokumentationen för tillägget %extension och distribueras under det tilläggets licens.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Den här sidan har ärvts från dokumentationen för den ursprungliga programvaran. Den omfattas inte av %license; den distribueras under %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Vilka sidor som har vilken licens</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Det här är texten i %license, version %version, så som Free Software Foundation publicerar den. Alla får kopiera och dela den ordagrant; att ändra den är inte tillåtet.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Den här dokumentationen är fri dokumentation, licensierad under %license %version eller senare.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Den här dokumentationen är fri dokumentation, licensierad under %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Läs licensen</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Licensen på webben</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Vad du kan göra med fri dokumentation</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Upphovsrätts- och licensmeddelande</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Fri dokumentation: använd den för att hjälpa dig själv och andra</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Den här hjälpen är fri dokumentation, licensierad under %license %version eller senare. Du får använda den, dela den och förbättra den:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Den här hjälpen är fri dokumentation, licensierad under %license %version. Du får använda den, dela den och förbättra den:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Studera den</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Läs vilken sida som helst så ofta du vill, för vilket syfte som helst.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Kopiera den och dela den</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Ge sidor till andra användare, på papper eller som filer. Behåll upphovsrättsmeddelandet, licensmeddelandet och en kopia av licensen med varje kopia.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Översätt, anpassa och förbättra den</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Dela din version under samma licens, med de ursprungliga meddelandena och en notering om vad du ändrade.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Citera den</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Hänvisa till en sida med dess titel och dess adress i hjälpen, eller dess fil i katalogen doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Bidra med rättningar</translation>
+    </message>
+    <message>
+        <source>Use "Edit on GitHub" on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Använd "Redigera på GitHub" på vilken sida som helst. Ändringar tas emot under samma licens, så att de förblir fria för alla.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Tillämpa filter</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Bläddra</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Bläddra bland alla hjälpsidor</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Bläddra i hjälpen</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Välj en annan målgrupp, ett annat ämne eller en annan typ.</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Skapa och ändra innehåll: redigeraren, fält, utkast och versioner.</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Hitta innehåll i administrationen och på webbplatsen.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Första stegen i administrationen: logga in, hitta rätt och de vardagliga uppgifterna.</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Få hjälp och rapportera ett fel.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Bilder, filer och andra media: ladda upp, välja och återanvända dem.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Installera Exponential och uppgradera till en ny version.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Kortkommandon som gör administrationen snabbare.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Ingen sida för det här valet.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Äldre dokument som sparas som referens.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Sidlayouter: zoner, block och reglerna som väljer en layout.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Publicera, schemalägga, dölja och flytta innehåll.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Referensmaterial: inställningar, kommandon och format.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Driva webbplatsen: inställningar, användare och roller, cacheminnen, cronjobb och loggar.</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Mallar, tillägg, API:et och koden bakom.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Ämnen</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Översättningar och webbplatsens språk.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Vad som ändrades i varje version.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Vad varje funktion gör och hur du ställer in den.</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Ditt konto: lösenord, inloggning i två steg och inställningar.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count sidor matchar</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>%count sidor, i dokumentationens mappar. Öppna en mapp, eller filtrera på ett ord i titeln.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>Om den här dokumentationen</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Bläddra i all hjälp</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Filtrera sidor</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Filtrera hjälpsidorna</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Ingen sidtitel matchar</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Bakåtkompatibilitet</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Ändringsloggar</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Exempel</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Guider</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Använda administrationen</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Installation</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Butik</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Specifikationer</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standarder</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Skriv ut den här sidan</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Ladda ned som PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Skriv ut eller ladda ned den här sidan</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Adress:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Exponential-hjälp</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Sida %number av %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Bild: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Bild</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count av %total poster</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrera</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Sortera efter %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Version, namn, år eller revision</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count poster, %first till %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 post, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adresser och anteckningar</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Adresser på servrar som inte längre är online sparas som historisk text.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Övrigt</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Släppt</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revisioner</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Serie %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Källa</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>De äldre posterna kommer från det ursprungliga SVN-arkivet.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>från det ursprungliga SVN-arkivet</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historisk (inte längre online)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>inte registrerad</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>revision %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Vem som gör Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential är fri programvara med en historia på nästan trettio år. Möt företaget som leder det och den ideella stiftelsen som driver open source-projektet.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Vem är 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Företaget bakom Exponential, från den första versionen till i dag.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Vem är Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>Den ideella organisationen, produktfamiljen och dess åtaganden.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count hjälpämnen</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Alla handböcker</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Begrepp</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Innehåll</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>Ladda ned EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>Ladda ned PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Redigera det här ämnet</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Utgåva %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>Från version %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Hjälpämnen</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Handböcker</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Handböcker och hjälpämnen</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Plattform:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Förhandsvisning</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Förhandsvisning: %state, levereras inte till läsare</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Uppgift</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Det finns inga handböcker som du kan läsa än.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Den här handboken har inga ämnen som du kan läsa än.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Ämnestyp:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Felsökning</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Version %from till %to</translation>
+    </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Projektledare</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Försäljning &amp; marknadsföring</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Planera och led projekt: faser och roller, val av hosting, avgränsning, checklistor, kvalitetsgrindar, versioner och risker.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Presentera och marknadsför Exponential: positionering, viktiga funktioner, demonstrationer, invändningar, licensiering, varumärke och gemenskap.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Börja här</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Projektledning</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Försäljning och marknadsföring</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Planera, driva och utveckla Exponential-projekt: faser, roller, checklistor, risker och att arbeta med gemenskapen.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Presentera och marknadsföra Exponential: positionering, demonstrationer, invändningar, licensiering, varumärke och att låta gemenskapen växa.</translation>
+    </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Uppdatera med Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Hämta uppdateringar när de skickas till GitHub och uppdatera sedan Composer så att det stämmer: varje timme, dagligen, varje vecka, varje månad eller bara vid varje ny version.</translation>
+    </message>
+    <message>
+        <source>Partners</source>
+        <translation>Partner</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>Förespråkare</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>Designer</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Webbhotell</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>Applikationsskapare</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>Webbplatsskapare</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>Supportrar</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Sponsorer</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Bygg, drifta och sälj med Exponential: partnerprogrammet, partnerklasser, fördelar, krav och hur du ansöker.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>Sprid budskapet: samtalsämnen, evenemang, gemenskapskanaler, demonstrationer och att hjälpa nya användare att hitta rätt.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>Designa teman och mallar, bygg tillägg och publicera, sälj och underhåll dem sedan under hela deras livscykel.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Drifta Exponential-webbplatser: serverkrav, PHP och databaser, Velocity, cachning, säkerhet, säkerhetskopior och drift.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Bygg applikationer på Exponential: innehållsmodeller, moduler och vyer, API:erna, tillägg och testning.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Bygg webbplatser med Exponential: planera webbplatsen, innehållsklasser, designer, layouter, lanseringen och skötseln.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>Hjälp projektet att växa: bidra med kod, dokumentation, översättningar och testning, och dela det du bygger.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Finansiera arbetet med Exponential: varför sponsring är viktigt, vad den betalar för och hur du sponsrar 7x och stiftelsen.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>Partnerskap</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>Förespråkande och gemenskap</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>Temadesign</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Mallar</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>Tilläggsutveckling</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>Tematillägg</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>Publicering och distribution</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>Sälja teman och tjänster</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>Underhållslivscykel</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Drift</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>Bygga applikationer</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>Bygga webbplatser</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Stödja Exponential</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Sponsring</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>Att arbeta med Exponential som partner: partnerprogrammet, partnerklasser, fördelar och hur du ansöker.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Att sprida budskapet om Exponential: samtalsämnen, evenemang, kanaler och att välkomna nya användare.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Att designa teman för Exponential: designer, override-systemet, stilar, resurser och tillgänglighet.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>Mallspråket: variabler, operatorer, funktioner, hämtningar, inkluderingar och åsidosättningar.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>Bygga tillägg steg för steg: struktur, inställningar, moduler, mallar, klasser och att bidra tillbaka.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>Paketera ett tema som ett tillägg: struktur, inställningar, beroenden och designerna det lägger till.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>Publicera teman och tillägg: arkiv, paket, utgåvor, versioner och licenser.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>Sälja teman och tjänsterna runt dem: erbjudanden, prissättning, support och att arbeta med kunder.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>Hålla teman och tillägg vid liv: uppgraderingar, kompatibilitet, säkerhetsrättningar och avveckling.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Drifta Exponential: servrar, PHP, databaser, webbservrar, Velocity, cachning, säkerhetskopior och drift.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Bygga applikationer på Exponential: innehållsmodeller, moduler, vyer, API:er och testning.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Bygga webbplatser med Exponential: planering, innehållsstruktur, designer, layouter och lanseringen.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Hjälpa Exponential att växa: bidra med kod, dokumentation, översättningar, testning och muntlig spridning.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Finansiera Exponential: vad sponsring betalar för och hur du sponsrar 7x och Exponential Foundation.</translation>
     </message>
 </context>
 </TS>

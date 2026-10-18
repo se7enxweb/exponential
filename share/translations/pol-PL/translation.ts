@@ -14119,6 +14119,10 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Więcej informacji: &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum pomocy</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14626,6 +14630,10 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <source>Quick search</source>
         <translation>Szybkie wyszukiwanie</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum pomocy</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14867,6 +14875,70 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Imię i nazwisko, adres e-mail i inne dane.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Przegląd</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Moja praca</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Aktywność i audyt</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Strona startowa: własna praca, zadania i ostatnie zmiany.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Elementy oczekujące na zatwierdzenie oraz własne elementy oczekujące na innych.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Własne elementy oczekujące na publikację.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Rozpoczęte i jeszcze nieopublikowane wersje robocze.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>Treść oznaczona, aby łatwo ją ponownie odnaleźć.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>Strona startowa Exponential Intelligence: narzędzia i ich użycie.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Wątki, w których AI zmienia treść pod kontrolą użytkownika.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Treść tworzona etapami: przebiegi i ich punkty kontrolne.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>Żądania AI, ich tokeny i koszty.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Jak działają funkcje AI i jak z nich korzystać.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum pomocy</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Poradniki, wyszukiwanie i sposób zgłaszania błędów.</translation>
     </message>
 </context>
 <context>
@@ -15280,6 +15352,22 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Śledzić, przeszukiwać i porównywać pliki dziennika.</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Języki interfejsu</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>Tłumaczenie wyświetlane w każdym języku interfejsu oraz jego tłumaczenie zastępcze.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum pomocy</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Poradniki, wyszukiwanie i sposób zgłaszania błędów.</translation>
     </message>
 </context>
 <context>
@@ -43574,6 +43662,42 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>Przy dostępie przez nazwę hosta przyjęto konwencję: %site dla witryny, %admin dla administracji i %editor dla edycji treści.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>Ta witryna jest już zainstalowana</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>Kreator instalacji instaluje Exponential w nowej witrynie. Nie działa w zainstalowanej witrynie, a jego otwarcie niczego nie zmienia: witryna pozostaje dostępna.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Ponowną instalację wykonuje się za pomocą kickstartera (%file, następnie php bin/php/kickstarter.php) lub przez nową instalację.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Zainstalować ponownie tę witrynę?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>Ta witryna jest już zainstalowana. Kreator instalacji jest włączony dla zainstalowanych witryn (AllowWizardOnInstalledSite), co jest przeznaczone wyłącznie do prac programistycznych.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Uruchomienie kreatora przełącza całą witrynę w tryb konserwacji: wszyscy pozostali odwiedzający widzą stronę konserwacji, dopóki kreator nie zakończy pracy lub nie pozostanie nieużywany przez 15 minut.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>Uruchomić kreator instalacji</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulować</translation>
+    </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>To hasło jest powszechnie znane lub zbyt popularne, więc każdy mógłby je odgadnąć. Należy wybrać inne.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -45987,6 +46111,22 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Proszę podać prawidłowy adres e-mail.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Ten link wygasł.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Ze względów bezpieczeństwa link do zresetowania hasła działa tylko przez %1 minut i tylko jeden raz. Poniżej można poprosić o nowy link.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Poprosić o nowy link</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>Link działa tylko jeden raz i tylko przez %1 minut.</translation>
     </message>
 </context>
 <context>
@@ -50032,6 +50172,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Error digest</source>
         <translation>Podsumowanie błędów</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Języki interfejsu</translation>
     </message>
 </context>
 <context>
@@ -59078,6 +59222,14 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The new password does not meet the requirements.</source>
         <translation>Nowe hasło nie spełnia wymagań.</translation>
     </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Nie jest powszechnie znanym ani popularnym hasłem</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Nowe hasło jest powszechnie znane lub zbyt popularne. Należy wybrać inne.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/setup/rad</name>
@@ -62008,6 +62160,18 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
         <translation>URI punktu końcowego musi być adresem bezwzględnym, np. https://app.example.com/callback.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Wybrać</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcje</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Wymagane</translation>
     </message>
 </context>
 <context>
@@ -66129,6 +66293,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum pomocy</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -67440,6 +67608,34 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>Ustawienia decydujące o pamięci podręcznej i kompilacji oraz liczba szablonów uruchomionych ze skompilowanej pamięci podręcznej lub skompilowanych teraz. Bezpośrednio po wyczyszczeniu pamięci podręcznej szablonów każdy szablon jest kompilowany raz.</translation>
     </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Przestarzałe elementy</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Moduł</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>ID węzła</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>Status HTTP</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Czas zapytań</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Żądanie</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Udział w czasie strony</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -67740,6 +67936,18 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Classic (server-rendered)</source>
         <translation>Klasyczny (generowany po stronie serwera)</translation>
+    </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (starszy)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Klasyczny (starszy)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Klasyczny, renderowany na serwerze (starszy)</translation>
     </message>
 </context>
 <context>
@@ -68316,6 +68524,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The effective audit settings, sinks and index.</source>
         <translation>Obowiązujące ustawienia audytu, miejsca docelowe i indeks.</translation>
     </message>
+    <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Zdarzenia Exponential Intelligence w konsoli audytu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
@@ -68338,6 +68550,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>The templates of the designs and their overrides.</source>
         <translation>Szablony projektów graficznych i ich nadpisania.</translation>
+    </message>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Obrazy bez tekstu alternatywnego oraz propozycje tego tekstu.</translation>
     </message>
 </context>
 <context>
@@ -70925,6 +71141,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The password does not meet the requirements.</source>
         <translation>Hasło nie spełnia wymagań.</translation>
     </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Hasło jest powszechnie znane lub zbyt popularne. Należy wybrać inne.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
@@ -72268,12 +72488,1710 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Web server error log</source>
         <translation>Dziennik błędów serwera WWW</translation>
     </message>
+    <message>
+        <source>Content Security Policy reports</source>
+        <translation>Raporty Content Security Policy</translation>
+    </message>
 </context>
 <context>
     <name>design/ezfind/search</name>
     <message>
         <source>Spell check suggestion: did you mean</source>
         <translation>Sugestia pisowni: czy chodziło o</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Języki interfejsu</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Administracja jest wyświetlana w języku swoich ustawień regionalnych. Ustawienia regionalne bez własnego tłumaczenia wyświetlają pierwsze tłumaczenie ze swojego łańcucha zastępczego, a w przeciwnym razie angielskie teksty źródłowe. Ta strona wymienia wszystkie ustawienia regionalne wraz z tym, co wyświetlają, i stopniem kompletności. Niczego nie zmienia: tłumaczenia zastępcze ustawia się w i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Przegląd</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Ustawienia regionalne</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>Z własnym tłumaczeniem</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Przetłumaczone przez tłumaczenie zastępcze</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>W angielskich tekstach źródłowych</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problemy</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Jego łańcuch wraca do %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Jego łańcuch jest dłuższy niż FallbackMaxDepth i zostaje obcięty na %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Tłumaczenie zastępcze to %target, który nie jest kodem ustawień regionalnych.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Tłumaczenie zastępcze to %target, który nie ma ani pliku ustawień regionalnych, ani tłumaczenia.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] wskazuje %target, który nie jest regułą tłumaczenia zastępczego.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Ma tłumaczenie zastępcze, ale nie ma pliku ustawień regionalnych.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Tłumaczenie zastępcze to %target, który nie ma jeszcze tłumaczenia: wyświetlane są angielskie teksty źródłowe.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Wszystkie ustawienia regionalne</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>Instalacja nie ma pliku ustawień regionalnych dla %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Własne tłumaczenie</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tak</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Interfejs</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % przetłumaczono</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>przez %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Angielskie teksty źródłowe</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Rozszerzenia</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>Przetłumaczono %translated z %total, ukończono %complete</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Łańcuch tłumaczeń zastępczych</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>brak tłumaczenia</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>według FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>według automatycznego tłumaczenia zastępczego w tym samym języku</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>według reguły %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Brak: bez własnego tłumaczenia wyświetlane są angielskie teksty źródłowe.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Rozszerzenie</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Przetłumaczone</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ustawienia</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>Ustawienia regionalne ze skonfigurowanym tłumaczeniem zastępczym: %count</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: wszystkie tłumaczenia łańcucha, pierwszeństwo ma najbardziej szczegółowe</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: pierwsze tłumaczenie łańcucha</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>enabled: ustawienia regionalne bez tłumaczenia i bez skonfigurowanego tłumaczenia zastępczego przejmują najbardziej kompletne tłumaczenie swojego języka</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Nigdy dla: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>wyłączone</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Brak</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>Ta sama lista w wierszu poleceń: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>Wyświetlono: %count</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazać</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Ustawienia regionalne</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Język</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Ten dostęp do witryny</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>teksty źródłowe</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>problem</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated z %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>średnio %percent %</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Wyróżniony krok został znaleziony przez automatyczne tłumaczenie zastępcze w tym samym języku; pozostałe są skonfigurowane lub pochodzą z reguły.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Brak ustawień regionalnych tego rodzaju.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Pomoc</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Wyszukać</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Przeszukać pomoc</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Zgłosić błąd</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiować</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Skopiowano</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Kopiowanie nie powiodło się</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Brak wyników</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Liczba wyników: %count</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Wyszukiwanie...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Wyszukiwanie jest obecnie niedostępne.</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Żadna strona nie zawiera wszystkich słów; te zawierają niektóre z nich.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Wyczyścić</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Pierwsze kroki</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administracja</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Programowanie</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Instalacja i aktualizacje</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Informacje o wydaniu</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historia</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Dokumentacja techniczna</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 wynik</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administratorzy</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Redaktorzy</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Programiści</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Użytkownicy końcowi</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Kopiować kod</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Rozbudowa: rozszerzenia, szablony, ustawienia, interfejsy API, wiersz poleceń i aktualizacje.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Tworzenie, edycja, tłumaczenie i publikowanie treści: multimedia, układy, wyszukiwanie i edytor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system's health.</source>
+        <translation>Prowadzenie instalacji: witryny, użytkownicy i role, pamięci podręczne, logi, bezpieczeństwo i stan systemu.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Korzystanie z witryny: konto, logowanie, uwierzytelnianie dwuskładnikowe i wyszukiwanie.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Pomoc dla tej strony</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Pomoc: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Ukryć sekcję: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Pokazać sekcję: %title</translation>
+    </message>
+    <message>
+        <source>"Saving an article with an image fails with a 500 error", not "Bug" or "Help".</source>
+        <translation>„Zapisanie artykułu z obrazem kończy się błędem 500”, a nie „Błąd” czy „Pomoc”.</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>Czas czytania: %count min</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>Liczba stron: %count</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to z %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(nowe zgłoszenie w serwisie GitHub, otwiera się w nowym oknie)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(otwiera się w nowym oknie)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>1 strona</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>Dobre zgłoszenie pozwala szybko naprawić błąd. Ta strona wskazuje, dokąd je wysłać i co w nim napisać, oraz zawiera bezpieczne podsumowanie tej instalacji do wklejenia.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>Chwila sprawdzania często odpowiada na pytanie lub zamienia niejasne zgłoszenie w takie, które da się naprawić.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Problem z bezpieczeństwem? Należy go zgłosić poufnie, a nie w publicznym zgłoszeniu.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>Tytuł, który nazywa błąd</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>Luka, która pozwala komuś odczytać, zmienić lub przejąć to, do czego nie powinien mieć dostępu, jest zgłaszana poufnie, aby można ją było naprawić, zanim dowie się o niej ktokolwiek inny.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Wszystkie strony pomocy</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Wszystkie tematy</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Wszystkie typy</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension's repository.</source>
+        <translation>Błąd występujący tylko w jednym rozszerzeniu (typ danych, moduł, własny projekt graficzny) jest naprawiany w repozytorium tego rozszerzenia.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>Rozszerzenie</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Należy poprosić administratora tej witryny o odpowiednie wiersze zestawienia błędów (Ustawienia, Logi). Komunikat i czas jego wystąpienia są tym, czego opiekun potrzebuje najbardziej.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>Najpierw warto zapytać społeczność: pytania o działanie funkcji, pomysły i doświadczenia należą właśnie tam.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>Przed zgłoszeniem</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>Przeglądać według tematu</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Kategoria:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>Wybrać rozszerzenie</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>Skopiować diagnostykę</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Diagnostyka</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Diagnostyka jako tekst</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>Czy chodziło o:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Nie należy otwierać w tej sprawie publicznego zgłoszenia, pull requestu ani wpisu na forum.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>E-mail %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Każda część Exponential ma własny publiczny system zgłoszeń w serwisie GitHub. Do otwarcia zgłoszenia potrzebne jest konto GitHub.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>Edytować w serwisie GitHub</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Wszyscy</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Rozszerzenie</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Rozszerzenia</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>Polecane poradniki</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Wystarczy wypełnić znane pola; formularz przygotuje zgłoszenie z diagnostyką tej instalacji. Nic nie jest wysyłane do serwisu GitHub, dopóki zgłoszenie nie zostanie tam otwarte i samodzielnie wysłane.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>Dla</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>Dla:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Znaleziono problem z bezpieczeństwem?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Znaleziono błąd?</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum pomocy</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>Start pomocy</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>W czym możemy pomóc?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>Jak zgłosić błąd</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>Należy podać wersję, wersję PHP i silnik (diagnostyka powyżej), możliwości atakującego oraz kroki pozwalające odtworzyć problem. Nie należy podawać haseł, sekretów ani danych osobowych. Pierwsza odpowiedź przychodzi w ciągu jednego dnia roboczego.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>Zgłoszenie otwiera się w serwisie GitHub z wypełnionym tekstem i diagnostyką; należy je tam sprawdzić i wysłać.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Skróty klawiaturowe</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Ostatnia zmiana</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>Pominąć wszystko, co prywatne</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>Sprawdzić logi</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>Poszukać istniejącego zgłoszenia</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>Brakuje strony? Prosimy o informację</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Nigdy nie należy zgłaszać go w publicznym systemie zgłoszeń ani na forum. Należy skorzystać z poufnej ścieżki opisanej w sekcji</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Nowe zgłoszenie</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>Nowe zgłoszenie dla %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Następna</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Żadna strona nie zawiera wszystkich słów; wyświetlane są strony zawierające którekolwiek z nich.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>Żadna strona nie pasuje do „%query”.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>Żadnych haseł, kluczy, adresów e-mail, nazwisk osób ani danych klientów. Formularz usuwa oczywiste przypadki, ale przed wysłaniem należy przeczytać zgłoszenie.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Nie wiadomo, czy to błąd?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>Na tej stronie</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Otwarte zgłoszenia</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Otworzyć zestawienie błędów</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>Otworzyć centrum pomocy</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>Otworzyć zgłoszenie w %tracker</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Przegląd</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Wybór roli pokazuje strony napisane dla niej.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>Popularne strony dla: %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>Przygotować zgłoszenie</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Poprzednia</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>Poprzednia i następna strona</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Przeczytać zasady bezpieczeństwa</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>Ostatnio zaktualizowane</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Należy powtórzyć wykonane czynności i zanotować, czy błąd występuje za każdym razem, tylko dla jednego użytkownika lub jednej strony oraz czy wyczyszczenie pamięci podręcznych coś zmienia.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>Zgłosić lukę poufnie w serwisie GitHub</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>Zgłosić do</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>Strony wyników</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>Wyniki dla „%query”</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>Wyszukać poradniki, ustawienia, polecenia…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Należy przeszukać otwarte zgłoszenia w poniższym systemie zgłoszeń. Jeśli błąd już tam jest, lepiej dodać do niego znane informacje niż otwierać nowe zgłoszenie.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Problemy z bezpieczeństwem</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>Coś jest nie tak na tej stronie? Zgłosić błąd</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Plik źródłowy:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>Zacząć tam, gdzie się jest</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>Kroki do odtworzenia</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>Wystarczy zgłosić to w serwisie GitHub: poradnik wskazuje odpowiedni system zgłoszeń, co należy podać i jakie dane systemu skopiować, bez żadnych sekretów.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>Odpowiedź może już być udokumentowana, łącznie ze znanymi ograniczeniami funkcji.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Zestawienie błędów wymienia różne komunikaty o błędach z ostatnich godzin. Komunikat i czas jego wystąpienia są tym, czego opiekun potrzebuje najbardziej.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>Najkrótsza droga od świeżo otwartej strony do błędu, jeden krok w wierszu.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>Wersja, serwer i rozszerzenia tej instalacji. Nigdy nie zawiera haseł, kluczy, hostów ani nazw baz danych, adresów e-mail ani ścieżek spoza instalacji.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tytuł</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>Temat</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>Warto spróbować mniejszej liczby słów lub innych słów albo innej grupy odbiorców lub tematu.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>Spróbować ponownie</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>Użyć tego rozszerzenia</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Użytkownicy</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>Co się stało</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>Co powinno było się stać.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Wykonane czynności i to, co poszło nie tak. Komunikat o błędzie należy przytoczyć dokładnie.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>Oczekiwany wynik</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>Gdzie zgłaszać</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>Napisać zgłoszenie</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Zgłoszenie jest gotowe.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>grupy odbiorców</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>wyczyścić</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>poruszanie się po wynikach</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>otworzyć</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>otwiera serwis GitHub w nowym oknie</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>otwiera się w nowym oknie</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>strony</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>wyszukać</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>sekcje</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>Interfejs PHP</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Serwer WWW</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>System operacyjny</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Baza danych</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Dostęp do witryny</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Projekt graficzny</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Język</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Dane debugowania</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Pamięć podręczna widoków</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Aktywne rozszerzenia</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Wygenerowano</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (oprogramowanie)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Błędy w jądrze, administracji, dołączonych rozszerzeniach i dokumentacji</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (serwer aplikacji)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Błędy samego serwera Velocity: uruchamianie, procesy robocze, jego pamięć podręczna odpowiedzi, HTTPS, polecenie exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Projekt i społeczność Exponential</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Projekt, witryna internetowa, ekosystem i wszystko, co nie jest błędem w oprogramowaniu</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Fora społeczności Exponential</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Czat społeczności w Telegramie</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Dokumentacja Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Edycja treści</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Funkcje</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Pomoc i wsparcie</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Obrazy i multimedia</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Języki</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Układy</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Publikowanie</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Poradniki i dokumentacja techniczna dla wszystkich, którzy pracują z tą instalacją, napisane na podstawie dokumentacji jej własnej wersji.</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Menu pomocy</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Powiązane tematy</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Szybkie linki</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Otworzyć Centrum pomocy</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>Nowości</translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Od użytkownika do programisty</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential jest wolnym oprogramowaniem z pełną historią w serwisie GitHub. Instalacja w postaci klonów Git, zalecany sposób budowania witryn, pozwala śledzić każdą zmianę, testować poprawki przed ich wydaniem i przekazywać własne ulepszenia.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Korzystać z administracji</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Logowanie, edycja i publikowanie.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Zainstalować za pomocą Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Jądro i wszystkie rozszerzenia jako klony z historią.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Przekazać zmiany</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Fork, poprawka i pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Programować z Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Instrukcja instalacji</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Licencja dokumentacji</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Ta strona jest częścią dokumentacji rozszerzenia %extension i jest rozpowszechniana na licencji tego rozszerzenia.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Ta strona została odziedziczona z dokumentacji oryginalnego oprogramowania. Nie jest objęta licencją %license; jest rozpowszechniana na licencji %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Które strony mają którą licencję</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>To jest tekst licencji %license w wersji %version w postaci opublikowanej przez Free Software Foundation. Każdy może go kopiować i rozpowszechniać w niezmienionej formie; zmienianie go jest niedozwolone.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Ta dokumentacja jest wolną dokumentacją, udostępnianą na licencji %license %version lub późniejszej.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Ta dokumentacja jest wolną dokumentacją, udostępnianą na licencji %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Przeczytać licencję</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Licencja w internecie</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Co można robić z wolną dokumentacją</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Informacja o prawach autorskich i licencji</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Wolna dokumentacja: do pomocy sobie i innym</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Ta pomoc jest wolną dokumentacją, udostępnianą na licencji %license %version lub późniejszej. Można ją wykorzystywać, rozpowszechniać i ulepszać:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Ta pomoc jest wolną dokumentacją, udostępnianą na licencji %license %version. Można ją wykorzystywać, rozpowszechniać i ulepszać:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Studiować</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Każdą stronę można czytać dowolnie często i w dowolnym celu.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Kopiować i rozpowszechniać</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Strony można przekazywać innym użytkownikom, na papierze lub jako pliki. Do każdej kopii należy dołączyć informację o prawach autorskich, informację o licencji i kopię licencji.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Tłumaczyć, dostosowywać i ulepszać</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Własną wersję należy udostępniać na tej samej licencji, z oryginalnymi informacjami i opisem wprowadzonych zmian.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Cytować</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Do strony należy odwoływać się przez jej tytuł i adres w pomocy lub jej plik w katalogu doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Przekazywać poprawki</translation>
+    </message>
+    <message>
+        <source>Use "Edit on GitHub" on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Na każdej stronie można użyć opcji „Edytować w serwisie GitHub”. Zmiany są przyjmowane na tej samej licencji, więc pozostają wolne dla wszystkich.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Zastosować filtry</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Przeglądać</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Przeglądać wszystkie strony pomocy</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Przeglądać pomoc</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Należy wybrać inną grupę odbiorców, temat lub typ.</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Tworzenie i zmienianie treści: edytor, pola, wersje robocze i wersje.</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Wyszukiwanie treści w administracji i w witrynie.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Pierwsze kroki w administracji: logowanie, orientacja i codzienne zadania.</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Uzyskiwanie pomocy i zgłaszanie błędów.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Obrazy, pliki i inne multimedia: przesyłanie, wybieranie i ponowne wykorzystywanie.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Instalacja Exponential i aktualizacja do nowego wydania.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Skróty klawiaturowe przyspieszające pracę w administracji.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Brak stron dla tego wyboru.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Starsze dokumenty zachowane do wglądu.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Układy stron: strefy, bloki i reguły wyboru układu.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Publikowanie, planowanie, ukrywanie i przenoszenie treści.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Materiały referencyjne: ustawienia, polecenia i formaty.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Prowadzenie witryny: ustawienia, użytkownicy i role, pamięci podręczne, zadania cron i logi.</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Szablony, rozszerzenia, API i kod, który za nimi stoi.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Tematy</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Tłumaczenia i języki witryny.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Co zmieniło się w każdym wydaniu.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Co robi każda funkcja i jak ją skonfigurować.</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Konto: hasło, dwuetapowe logowanie i preferencje.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>Pasujące strony: %count</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>Liczba stron: %count, w katalogach dokumentacji. Należy otworzyć katalog lub filtrować według słowa z tytułu.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>O tej dokumentacji</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Przeglądać całą pomoc</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Filtrować strony</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Filtrować strony pomocy</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Żaden tytuł strony nie pasuje</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Kompatybilność wsteczna</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Dzienniki zmian</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Przykłady</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Poradniki</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Korzystanie z administracji</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Instalacja</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Sklep</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Specyfikacje</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standardy</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Wydrukować tę stronę</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Pobrać jako PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Wydrukować lub pobrać tę stronę</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Adres:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Pomoc Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Strona %number z %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Obraz: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Obraz</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>Wpisy: %count z %total</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtr</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Sortować według: %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Wersja, nazwa, rok lub rewizja</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>Wpisy: %count, od %first do %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 wpis, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adresy i uwagi</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Adresy na serwerach, które nie są już dostępne, zachowano jako tekst historyczny.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nazwa</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Inne</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Wydano</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Rewizje</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Seria %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Źródło</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Starsze wpisy pochodzą z oryginalnego repozytorium SVN.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Wersja</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>z oryginalnego SVN</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historyczny (już niedostępny)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nie zarejestrowano</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>rewizja %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Kto tworzy Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential jest wolnym oprogramowaniem z historią sięgającą niemal trzydziestu lat. Oto firma, która nim kieruje, i fundacja non-profit, która prowadzi projekt open source.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Kim jest 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Firma stojąca za Exponential, od pierwszego wydania do dziś.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Czym jest Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>Organizacja non-profit, rodzina produktów i jej zobowiązania.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>Tematy pomocy: %count</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Wszystkie podręczniki</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Pojęcie</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Spis treści</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>Pobrać EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>Pobrać PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Edytować ten temat</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Wydanie %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>Od wersji %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Tematy pomocy</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Podręczniki</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Podręczniki i tematy pomocy</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Platforma:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Podgląd</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Podgląd: %state, niedostępne dla czytelników</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Zadanie</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Nie ma jeszcze podręczników dostępnych do czytania.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Ten podręcznik nie ma jeszcze tematów dostępnych do czytania.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Typ tematu:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Rozwiązywanie problemów</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Wersje od %from do %to</translation>
+    </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Kierownicy projektów</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Sprzedaż i marketing</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Planowanie i prowadzenie projektów: etapy i role, wybór hostingu, określanie zakresu, listy kontrolne, bramki jakości, wydania i ryzyka.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Prezentowanie i promowanie Exponential: pozycjonowanie, najważniejsze funkcje, wersje demonstracyjne, zastrzeżenia klientów, licencje, marka i społeczność.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Od czego zacząć</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Kierowanie projektem</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Sprzedaż i marketing</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Planowanie, prowadzenie i rozwijanie projektów Exponential: etapy, role, listy kontrolne, ryzyka i współpraca ze społecznością.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Prezentowanie i promowanie Exponential: pozycjonowanie, wersje demonstracyjne, zastrzeżenia klientów, licencje, marka i rozwój społeczności.</translation>
+    </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Aktualizować za pomocą Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Aktualizacje można pobierać w miarę ich publikowania w serwisie GitHub, a następnie odpowiednio aktualizować Composer: co godzinę, codziennie, co tydzień, co miesiąc lub tylko przy każdym wydaniu.</translation>
+    </message>
+    <message>
+        <source>Partners</source>
+        <translation>Partnerzy</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>Ambasadorzy</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>Projektanci</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Firmy hostingowe</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>Twórcy aplikacji</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>Twórcy witryn</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>Wspierający</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Sponsorzy</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Budowanie, hosting i sprzedaż z Exponential: program partnerski, klasy partnerów, korzyści, wymagania i sposób zgłoszenia.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>Szerzenie informacji: argumenty, wydarzenia, kanały społeczności, wersje demonstracyjne i pomoc nowym użytkownikom w odnalezieniu się.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>Projektowanie motywów i szablonów, tworzenie rozszerzeń, a następnie ich publikowanie, sprzedaż i utrzymanie przez cały cykl życia.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Hosting witryn Exponential: wymagania serwera, PHP i bazy danych, Velocity, pamięć podręczna, bezpieczeństwo, kopie zapasowe i eksploatacja.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Budowanie aplikacji na Exponential: modele treści, moduły i widoki, interfejsy API, rozszerzenia i testowanie.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Budowanie witryn z Exponential: planowanie witryny, klasy treści, projekty graficzne, układy, uruchomienie i utrzymanie.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>Pomoc w rozwoju projektu: wkład w kod, dokumentację, tłumaczenia i testy oraz dzielenie się własnymi realizacjami.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Finansowanie prac nad Exponential: dlaczego sponsoring ma znaczenie, co finansuje i jak sponsorować 7x oraz Fundację.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>Partnerstwo</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>Rzecznictwo i społeczność</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>Projektowanie motywów</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Szablony</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>Tworzenie rozszerzeń</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>Rozszerzenia z motywami</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>Publikowanie i dystrybucja</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>Sprzedaż motywów i usług</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>Cykl życia i utrzymanie</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Hosting</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>Budowanie aplikacji</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>Budowanie witryn</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Wspieranie Exponential</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Sponsoring</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>Współpraca z Exponential jako partner: program partnerski, klasy partnerów, korzyści i sposób zgłoszenia.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Szerzenie informacji o Exponential: argumenty, wydarzenia, kanały i przyjmowanie nowych użytkowników.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Projektowanie motywów dla Exponential: projekty graficzne, system nadpisywania, style, zasoby i dostępność.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>Język szablonów: zmienne, operatory, funkcje, pobieranie danych, dołączenia i nadpisania.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>Tworzenie rozszerzeń krok po kroku: struktura, ustawienia, moduły, szablony, klasy i przekazywanie zmian.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>Pakowanie motywu jako rozszerzenia: struktura, ustawienia, zależności i dodawane projekty graficzne.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>Publikowanie motywów i rozszerzeń: repozytoria, pakiety, wydania, wersje i licencje.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>Sprzedaż motywów i powiązanych usług: oferty, ceny, wsparcie i współpraca z klientami.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>Utrzymywanie motywów i rozszerzeń: aktualizacje, kompatybilność, poprawki bezpieczeństwa i wycofanie.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Hosting Exponential: serwery, PHP, bazy danych, serwery WWW, Velocity, pamięć podręczna, kopie zapasowe i eksploatacja.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Budowanie aplikacji na Exponential: modele treści, moduły, widoki, interfejsy API i testowanie.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Budowanie witryn z Exponential: planowanie, struktura treści, projekty graficzne, układy i uruchomienie.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Pomoc w rozwoju Exponential: wkład w kod, dokumentację, tłumaczenia, testy i polecanie innym.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Finansowanie Exponential: co finansuje sponsoring i jak sponsorować 7x oraz Exponential Foundation.</translation>
     </message>
 </context>
 </TS>

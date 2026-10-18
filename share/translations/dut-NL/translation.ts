@@ -14147,6 +14147,10 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Zie &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt; voor meer informatie.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Helpcentrum</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14654,6 +14658,10 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>Quick search</source>
         <translation>Snel zoeken</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Helpcentrum</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14879,6 +14887,70 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Je naam, e-mailadres en andere gegevens.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overzicht</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Jouw werk</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Activiteit en audit</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Je startpagina: je werk, je taken en wat er is veranderd.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Items die op jouw goedkeuring wachten, en die van jou die op anderen wachten.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Je items die wachten op publicatie.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>De concepten die je bent begonnen en nog niet hebt gepubliceerd.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>De inhoud die je hebt gemarkeerd om die terug te vinden.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>De startpagina van Exponential Intelligence: de tools en hoe je ze gebruikt.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Threads die inhoud met AI wijzigen, onder jouw controle.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Inhoud die in stappen is geschreven: de runs en hun checkpoints.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>De AI-verzoeken, hun tokens en hun kosten.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Hoe de AI-functies werken en hoe je ze gebruikt.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Helpcentrum</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Handleidingen, zoeken en hoe je een fout meldt.</translation>
     </message>
 </context>
 <context>
@@ -15288,6 +15360,22 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>De logbestanden volgen, doorzoeken en met elkaar vergelijken.</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Interfacetalen</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>De vertaling die elke interfacetaal toont, en waar die op terugvalt.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Helpcentrum</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Handleidingen, zoeken en hoe je een fout meldt.</translation>
     </message>
 </context>
 <context>
@@ -43580,6 +43668,42 @@ Zie de pagina met systeemeisen voor meer informatie.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>Bij toegang via hostnaam is de conventie %site voor de site, %admin voor het beheer en %editor voor het bewerken van inhoud.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>Deze site is al geïnstalleerd</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>De installatiewizard installeert Exponential op een nieuwe site. Hij draait niet op een geïnstalleerde site, en hem openen verandert niets: de site blijft online.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Opnieuw installeren gaat met de kickstarter (%file, daarna php bin/php/kickstarter.php) of met een nieuwe installatie.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Deze site opnieuw installeren?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>Deze site is al geïnstalleerd. De installatiewizard is ingeschakeld voor geïnstalleerde sites (AllowWizardOnInstalledSite), wat alleen bedoeld is voor ontwikkeling.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Als je de wizard start, gaat de hele site in onderhoudsmodus: elke andere bezoeker krijgt een onderhoudspagina totdat de wizard klaar is, of totdat hij 15 minuten niet is gebruikt.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>De installatiewizard starten</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Dit wachtwoord is bekend of te gangbaar, dus iedereen kan het raden. Kies een ander wachtwoord.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -46000,6 +46124,22 @@ te activeren.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Voer een geldig e-mailadres in.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Deze link is verlopen.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Voor je veiligheid werkt een link om je wachtwoord opnieuw in te stellen maar %1 minuten en maar één keer. Vraag hieronder een nieuwe link aan.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Nieuwe link aanvragen</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>De link werkt maar één keer en maar %1 minuten.</translation>
     </message>
 </context>
 <context>
@@ -50045,6 +50185,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Error digest</source>
         <translation>Foutenoverzicht</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Interfacetalen</translation>
     </message>
 </context>
 <context>
@@ -59091,6 +59235,14 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The new password does not meet the requirements.</source>
         <translation>Het nieuwe wachtwoord voldoet niet aan de eisen.</translation>
     </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Is geen bekend of gangbaar wachtwoord</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Het nieuwe wachtwoord is bekend of te gangbaar. Kies een ander wachtwoord.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/setup/rad</name>
@@ -62021,6 +62173,18 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
         <translation>De endpoint-URI moet een absoluut adres zijn, zoals https://app.example.com/callback.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selecteren</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acties</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Verplicht</translation>
     </message>
 </context>
 <context>
@@ -66142,6 +66306,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Helpcentrum</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -67453,6 +67621,34 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>De instellingen die cachen en compileren bepalen, en hoeveel templates uit de gecompileerde cache liepen of nu zijn gecompileerd. Direct na het legen van de templatecache wordt elke template één keer gecompileerd.</translation>
     </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Verouderde functies</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Module</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>Node-ID</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>HTTP-status</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Querytijd</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Verzoek</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Aandeel in paginatijd</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -67753,6 +67949,18 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Classic (server-rendered)</source>
         <translation>Klassiek (op de server gerenderd)</translation>
+    </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (ouder)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Klassiek (ouder)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Klassiek, op de server weergegeven (ouder)</translation>
     </message>
 </context>
 <context>
@@ -68329,6 +68537,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The effective audit settings, sinks and index.</source>
         <translation>De geldende auditinstellingen, sinks en index.</translation>
     </message>
+    <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>De gebeurtenissen van Exponential Intelligence in de auditconsole.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
@@ -68351,6 +68563,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>The templates of the designs and their overrides.</source>
         <translation>De templates van de designs en hun overrides.</translation>
+    </message>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Afbeeldingen zonder alternatieve tekst, en suggesties daarvoor.</translation>
     </message>
 </context>
 <context>
@@ -70938,6 +71154,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The password does not meet the requirements.</source>
         <translation>Het wachtwoord voldoet niet aan de eisen.</translation>
     </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Het wachtwoord is bekend of te gangbaar. Kies een ander wachtwoord.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
@@ -72281,12 +72501,1710 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Web server error log</source>
         <translation>Foutenlogboek van de webserver</translation>
     </message>
+    <message>
+        <source>Content Security Policy reports</source>
+        <translation>Content Security Policy-meldingen</translation>
+    </message>
 </context>
 <context>
     <name>design/ezfind/search</name>
     <message>
         <source>Spell check suggestion: did you mean</source>
         <translation>Spellingsuggestie: bedoelde je</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Interfacetalen</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>De beheerinterface wordt getoond in de taal van haar locale. Een locale zonder eigen vertaling toont de eerste vertaling uit haar fallbackketen, anders de Engelse bronteksten. Deze pagina toont elke locale met wat ze toont en hoe volledig dat is. Ze verandert niets: de fallbacks worden ingesteld in i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overzicht</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Locales</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>Met een eigen vertaling</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Vertaald via een fallback</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>In de Engelse bronteksten</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problemen</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>De keten komt terug bij %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>De keten is langer dan FallbackMaxDepth en wordt afgebroken bij %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Valt terug op %target, wat geen localecode is.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Valt terug op %target, dat geen localebestand en geen vertaling heeft.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] noemt %target, wat geen fallbackregel is.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Heeft een fallback, maar geen localebestand.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Valt terug op %target, dat nog geen vertaling heeft: het toont de Engelse bronteksten.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Alle locales</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>De installatie heeft geen localebestand voor %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Eigen vertaling</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Interface</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % vertaald</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>via %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Engelse bronteksten</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensies</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated van %total vertaald, %complete volledig</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Fallbackketen</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>geen vertaling</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>door FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>door de automatische fallback binnen dezelfde taal</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>door de regel %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Geen: zonder eigen vertaling toont ze de Engelse bronteksten.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensie</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Vertaald</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Instellingen</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count locales met een ingestelde fallback</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: elke vertaling uit de keten, de meest specifieke wint</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: de eerste vertaling uit de keten</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>enabled: een locale zonder vertaling en zonder ingestelde fallback neemt de meest volledige vertaling van haar taal</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Nooit voor: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Geen</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>Dezelfde lijst op de opdrachtregel: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count getoond</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tonen</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locale</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Deze siteaccess</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>bronteksten</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>probleem</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated van %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % gemiddeld</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Een gemarkeerde stap is gevonden door de automatische fallback binnen dezelfde taal; de andere zijn ingesteld of komen uit een regel.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Geen enkele locale is van deze soort.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Help</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Zoeken</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>In de help zoeken</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Een fout melden</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiëren</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Gekopieerd</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Kopiëren mislukt</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Geen resultaten</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count resultaten</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Zoeken...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Zoeken is op dit moment niet beschikbaar.</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Geen pagina bevat elk woord; deze bevatten er een aantal.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Wissen</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Aan de slag</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Beheer</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Ontwikkeling</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Installatie en upgrades</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Releasenotes</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Geschiedenis</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Naslag</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 resultaat</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Beheerders</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Redacteuren</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Ontwikkelaars</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Eindgebruikers</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Code kopiëren</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Bouw erop verder: extensies, templates, instellingen, de API's, de opdrachtregel en upgrades.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Inhoud maken, bewerken, vertalen en publiceren: media, layouts, zoeken en de editor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system's health.</source>
+        <translation>De installatie draaiende houden: sites, gebruikers en rollen, caches, logs, beveiliging en de gezondheid van het systeem.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>De site gebruiken: je account, inloggen, tweestapsverificatie en dingen vinden.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Help bij deze pagina</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Help: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Sectie verbergen: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Sectie tonen: %title</translation>
+    </message>
+    <message>
+        <source>"Saving an article with an image fails with a 500 error", not "Bug" or "Help".</source>
+        <translation>"Een artikel met een afbeelding opslaan mislukt met een 500-fout", niet "Bug" of "Help".</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>%count min. lezen</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>%count pagina's</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to van %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(nieuwe issue op GitHub, opent in een nieuw venster)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(opent in een nieuw venster)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>1 pagina</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>Een goede melding zorgt dat een fout snel wordt opgelost. Deze pagina vertelt je waar je haar heen stuurt, wat je schrijft, en geeft je een veilige samenvatting van deze installatie om erin te plakken.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>Een minuut controleren beantwoordt vaak de vraag, of maakt van een vage melding een melding die kan worden opgelost.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Een beveiligingsprobleem? Meld het privé, niet in een openbare issue.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>Een titel die de fout benoemt</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>Een zwakke plek waarmee iemand kan lezen, wijzigen of overnemen wat niet voor hem bedoeld is, meld je privé, zodat die kan worden opgelost voordat anderen ervan weten.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Alle helppagina's</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Alle onderwerpen</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Alle soorten</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension's repository.</source>
+        <translation>Een fout die alleen in één extensie optreedt (een datatype, een module, een eigen design) wordt in de repository van die extensie opgelost.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>Een extensie</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Vraag een beheerder van deze site om de bijbehorende regels uit het foutenoverzicht (Instellingen, Logs). De melding en het tijdstip waarop het gebeurde, heeft een maintainer het meest nodig.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>Vraag het eerst aan de community: vragen over hoe iets werkt, ideeën en ervaringen horen daar thuis.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>Voordat je meldt</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>Bladeren per onderwerp</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Categorie:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>Kies een extensie</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>De diagnose kopiëren</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Diagnose</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Diagnose als tekst</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>Bedoelde je:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Open er geen openbare issue, pull request of forumbericht over.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>Mail %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Elk onderdeel van Exponential heeft een eigen openbare tracker op GitHub. Je hebt een GitHub-account nodig om een issue te openen.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>Bewerken op GitHub</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Iedereen</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensie</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensies</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>Uitgelichte handleidingen</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Vul in wat je weet; het formulier bereidt de issue voor met de diagnose van deze installatie. Er wordt niets naar GitHub gestuurd totdat je de issue daar opent en zelf indient.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>Voor</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>Voor:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Een beveiligingsprobleem gevonden?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Een fout gevonden?</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Helpcentrum</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>Help-start</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>Waarmee kunnen we je helpen?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>Zo meld je een fout</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>Vermeld de versie, de PHP-versie en de engine (de diagnose hierboven), wat een aanvaller kan doen en de stappen om het te reproduceren. Laat wachtwoorden, geheimen en persoonsgegevens weg. Je krijgt binnen één werkdag een eerste antwoord.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>Ze opent op GitHub met je tekst en de diagnose ingevuld; controleer haar daar en dien haar in.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Sneltoetsen</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Laatst gewijzigd</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>Laat alles weg wat privé is</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>Bekijk de logs</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>Zoek naar een bestaande melding</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>Mis je een pagina? Laat het ons weten</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Meld het nooit in een openbare issuetracker of op een forum. Gebruik de privéroute die wordt beschreven onder</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Nieuwe issue</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>Nieuwe issue voor %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Volgende</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Geen pagina bevat elk woord; pagina's met een van de woorden worden getoond.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>Geen pagina komt overeen met “%query”.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>Geen wachtwoorden, sleutels, e-mailadressen, namen van mensen of klantgegevens. Het formulier verwijdert de voor de hand liggende, maar lees de issue voordat je haar indient.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Weet je niet zeker of het een fout is?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>Op deze pagina</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Openstaande issues</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Het foutenoverzicht openen</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>Het helpcentrum openen</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>De issue openen in %tracker</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overzicht</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Kies je rol om de pagina's te zien die daarvoor zijn geschreven.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>Populaire pagina's voor %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>De issue voorbereiden</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Vorige</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>Vorige en volgende pagina</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Het beveiligingsbeleid lezen</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>Onlangs bijgewerkt</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Herhaal wat je deed. Noteer of het elke keer misgaat, alleen voor één gebruiker of één pagina, en of het legen van de caches iets verandert.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>Een kwetsbaarheid privé melden op GitHub</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>Melden bij</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>Resultaatpagina's</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>Resultaten voor “%query”</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>Zoek handleidingen, instellingen, opdrachten…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Doorzoek de open issues van de tracker hieronder. Staat je fout er al, voeg dan toe wat je weet in plaats van een nieuwe te openen.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Beveiligingsproblemen</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>Klopt er iets niet op deze pagina? Meld een fout</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Bronbestand:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>Begin waar je bent</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>Stappen om te reproduceren</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>Laat het ons weten op GitHub: de handleiding laat zien welke tracker past, wat je moet vermelden en welke systeemgegevens je kopieert, zonder geheimen.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>Het antwoord staat misschien al in de documentatie, inclusief de bekende beperkingen van een functie.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Het foutenoverzicht toont de verschillende foutmeldingen van de afgelopen uren. De melding en het tijdstip waarop het gebeurde, heeft een maintainer het meest nodig.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>De kortste weg van een nieuwe pagina naar de fout, één stap per regel.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>De versie, de server en de extensies van deze installatie. Bevat nooit wachtwoorden, sleutels, databasehosts of -namen, e-mailadressen of paden buiten de installatie.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>Onderwerp</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>Probeer minder of andere woorden, of een andere doelgroep of een ander onderwerp.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>Probeer het opnieuw</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Soort</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>Deze extensie gebruiken</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Gebruikers</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>Wat er gebeurde</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>Wat er in plaats daarvan had moeten gebeuren.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Wat je deed en wat er misging. Citeer de foutmelding letterlijk.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>Wat je verwachtte</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>Waar je meldt</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>De melding schrijven</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Je issue is klaar.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>doelgroepen</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>wissen</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>door de resultaten bewegen</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>openen</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>opent GitHub in een nieuw venster</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>opent in een nieuw venster</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>pagina's</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>zoeken</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>secties</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>PHP-interface</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Webserver</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>Besturingssysteem</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Database</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Design</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Debuguitvoer</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Weergavecache</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Actieve extensies</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Gegenereerd</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (de software)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Fouten in de kernel, de beheerinterface, de meegeleverde extensies en de documentatie</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (de applicatieserver)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Fouten van de Velocity-server zelf: starten, workers, de responscache, HTTPS, de opdracht exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Exponential-project en -community</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Het project, de website, het ecosysteem en alles wat geen fout in een stuk software is</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Communityforums van Exponential</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Communitychat op Telegram</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Documentatie van Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Inhoud bewerken</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Functies</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Help en ondersteuning</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Afbeeldingen en media</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Talen</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Layouts</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Publiceren</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Je account</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Handleidingen en naslag voor iedereen die met deze installatie werkt, geschreven op basis van de documentatie van haar eigen versie.</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Helpmenu</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Gerelateerde onderwerpen</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Snelkoppelingen</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Het helpcentrum openen</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>Wat is er nieuw</translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Groei van gebruiker naar ontwikkelaar</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential is vrije software met de volledige geschiedenis op GitHub. Installeer het als Git-clones, de aanbevolen manier om websites te bouwen, en je kunt elke wijziging volgen, fixes proberen voordat ze worden uitgebracht en je eigen verbeteringen terugsturen.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>De beheerinterface gebruiken</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Inloggen, bewerken en publiceren.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Installeren met Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>De kernel en elke extensie als clones met geschiedenis.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Bijdragen</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Forken, repareren en een pull request openen.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Ontwikkelen met Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Installatiehandleiding</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Documentatielicentie</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Deze pagina hoort bij de documentatie van de extensie %extension en wordt verspreid onder de licentie van die extensie.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Deze pagina is overgenomen uit de documentatie van de oorspronkelijke software. Ze valt niet onder de %license; ze wordt verspreid onder de %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Welke pagina's welke licentie hebben</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Dit is de tekst van de %license, versie %version, zoals de Free Software Foundation die publiceert. Iedereen mag hem woordelijk kopiëren en delen; wijzigen is niet toegestaan.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Deze documentatie is vrije documentatie, gelicentieerd onder de %license %version of later.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Deze documentatie is vrije documentatie, gelicentieerd onder de %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>De licentie lezen</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>De licentie op het web</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Wat je met vrije documentatie mag doen</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Copyright- en licentievermelding</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Vrije documentatie: gebruik haar om jezelf en anderen te helpen</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Deze help is vrije documentatie, gelicentieerd onder de %license %version of later. Je mag haar gebruiken, delen en verbeteren:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Deze help is vrije documentatie, gelicentieerd onder de %license %version. Je mag haar gebruiken, delen en verbeteren:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Bestuderen</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Lees elke pagina zo vaak je wilt, voor elk doel.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Kopiëren en delen</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Geef pagina's aan andere gebruikers, op papier of als bestanden. Bewaar bij elke kopie de copyrightvermelding, de licentievermelding en een kopie van de licentie.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Vertalen, aanpassen en verbeteren</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Deel je versie onder dezelfde licentie, met de oorspronkelijke vermeldingen en een notitie van wat je hebt gewijzigd.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Citeren</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Verwijs naar een pagina met haar titel en haar adres in de help, of haar bestand in de map doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Verbeteringen terugsturen</translation>
+    </message>
+    <message>
+        <source>Use "Edit on GitHub" on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Gebruik "Bewerken op GitHub" op elke pagina. Wijzigingen worden onder dezelfde licentie geaccepteerd, zodat ze voor iedereen vrij blijven.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Filters toepassen</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Bladeren</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Door alle helppagina's bladeren</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Door de help bladeren</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Kies een andere doelgroep, een ander onderwerp of een andere soort.</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Inhoud maken en wijzigen: de editor, velden, concepten en versies.</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Inhoud vinden in de beheerinterface en op de site.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Eerste stappen in de beheerinterface: inloggen, je weg vinden en de dagelijkse taken.</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Hulp krijgen en een fout melden.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Afbeeldingen, bestanden en andere media: uploaden, kiezen en hergebruiken.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Exponential installeren en upgraden naar een nieuwe release.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Sneltoetsen die de beheerinterface sneller maken.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Geen pagina voor deze keuze.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Oudere documenten, bewaard ter naslag.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Paginalayouts: zones, blokken en de regels die een layout kiezen.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Inhoud publiceren, inplannen, verbergen en verplaatsen.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Naslagmateriaal: instellingen, opdrachten en formaten.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>De site beheren: instellingen, gebruikers en rollen, caches, cronjobs en logs.</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Templates, extensies, de API en de code erachter.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Onderwerpen</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Vertalingen en de talen van de site.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Wat er in elke release is veranderd.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Wat elke functie doet en hoe je haar instelt.</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Je account: wachtwoord, inloggen in twee stappen en voorkeuren.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count pagina's komen overeen</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>%count pagina's, in de mappen van de documentatie. Open een map, of filter op een woord uit de titel.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>Over deze documentatie</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Door alle help bladeren</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Pagina's filteren</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>De helppagina's filteren</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Geen paginatitel komt overeen</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Achterwaartse compatibiliteit</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Changelogs</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Voorbeelden</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Handleidingen</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>De beheerinterface gebruiken</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Installatie</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Winkel</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Specificaties</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standaarden</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Deze pagina afdrukken</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Downloaden als PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Deze pagina afdrukken of downloaden</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Adres:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Exponential-help</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Pagina %number van %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Afbeelding: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Afbeelding</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count van %total vermeldingen</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filteren</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Sorteren op %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Versie, naam, jaar of revisie</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count vermeldingen, %first tot %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 vermelding, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adressen en notities</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Adressen op servers die niet meer online zijn, worden als historische tekst bewaard.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Overig</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Uitgebracht</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revisies</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Reeks %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Bron</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>De oudere gegevens komen uit de oorspronkelijke SVN-repository.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versie</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>uit de oorspronkelijke SVN</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historisch (niet meer online)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>niet vastgelegd</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>revisie %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Wie maakt Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential is vrije software met een geschiedenis van bijna dertig jaar. Maak kennis met het bedrijf dat het leidt en de stichting zonder winstoogmerk die het opensourceproject beheert.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Wie is 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Het bedrijf achter Exponential, van de eerste release tot vandaag.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Wie is de Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>De stichting zonder winstoogmerk, de productfamilie en haar toezeggingen.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count helponderwerpen</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Alle handboeken</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Begrip</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Inhoudsopgave</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>EPUB downloaden</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>PDF downloaden</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Dit onderwerp bewerken</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Editie %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>Vanaf versie %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Helponderwerpen</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Handboeken</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Handboeken en helponderwerpen</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Platform:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Voorbeeld</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Voorbeeld: %state, niet aan lezers geleverd</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Taak</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Er zijn nog geen handboeken die je kunt lezen.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Dit handboek heeft nog geen onderwerpen die je kunt lezen.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Soort onderwerp:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Probleemoplossing</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Versies %from tot %to</translation>
+    </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Projectmanagers</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Sales en marketing</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Projecten plannen en leiden: fasen en rollen, hostingkeuzes, scoping, checklists, kwaliteitspoorten, releases en risico's.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Exponential presenteren en promoten: positionering, belangrijkste functies, demo's, bezwaren, licenties, merk en community.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Begin hier</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Projectleiding</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Sales en marketing</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Exponential-projecten plannen, uitvoeren en laten groeien: fasen, rollen, checklists, risico's en samenwerken met de community.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Exponential presenteren en promoten: positionering, demo's, bezwaren, licenties, merk en de community laten groeien.</translation>
+    </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Bijwerken met Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Haal updates op zodra ze naar GitHub worden gepusht, en werk Composer daarna bij: elk uur, dagelijks, wekelijks, maandelijks of alleen bij elke release.</translation>
+    </message>
+    <message>
+        <source>Partners</source>
+        <translation>Partners</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>Ambassadeurs</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>Ontwerpers</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Hostingbedrijven</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>Applicatiebouwers</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>Websitebouwers</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>Supporters</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Sponsors</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Bouwen, hosten en verkopen met Exponential: het partnerprogramma, partnerklassen, voordelen, vereisten en hoe je je aanmeldt.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>Vertel het verder: gespreksonderwerpen, evenementen, communitykanalen, demo's en nieuwe gebruikers op weg helpen.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>Ontwerp thema's en templates, bouw extensies, en publiceer, verkoop en onderhoud ze gedurende hun hele levenscyclus.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Exponential-sites hosten: serververeisten, PHP en databases, Velocity, caching, beveiliging, back-ups en beheer.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Applicaties bouwen op Exponential: inhoudsmodellen, modules en weergaven, de API's, extensies en testen.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Websites bouwen met Exponential: de site plannen, inhoudsklassen, designs, layouts, de lancering en het onderhoud.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>Help het project groeien: draag code, documentatie, vertalingen en tests bij, en deel wat je bouwt.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Financier het werk aan Exponential: waarom sponsoring belangrijk is, wat ermee wordt betaald en hoe je 7x en de Foundation sponsort.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>Partnerschap</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>Ambassadeurschap en community</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>Thema-ontwerp</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>Extensieontwikkeling</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>Thema-extensies</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>Publicatie en distributie</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>Thema's en diensten verkopen</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>Levenscyclus van onderhoud</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Hosting</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>Applicaties bouwen</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>Websites bouwen</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Exponential ondersteunen</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Sponsoring</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>Met Exponential werken als partner: het partnerprogramma, partnerklassen, voordelen en hoe je je aanmeldt.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Exponential onder de aandacht brengen: gespreksonderwerpen, evenementen, kanalen en nieuwe gebruikers verwelkomen.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Thema's ontwerpen voor Exponential: designs, het overridesysteem, stijlen, assets en toegankelijkheid.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>De templatetaal: variabelen, operators, functies, fetches, includes en overrides.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>Stap voor stap extensies bouwen: structuur, instellingen, modules, templates, klassen en bijdragen.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>Een thema als extensie verpakken: structuur, instellingen, afhankelijkheden en de designs die het toevoegt.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>Thema's en extensies publiceren: repository's, pakketten, releases, versies en licenties.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>Thema's en de diensten eromheen verkopen: aanbiedingen, prijzen, ondersteuning en werken met klanten.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>Thema's en extensies in leven houden: upgrades, compatibiliteit, beveiligingsfixes en uitfasering.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Exponential hosten: servers, PHP, databases, webservers, Velocity, caching, back-ups en beheer.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Applicaties bouwen op Exponential: inhoudsmodellen, modules, weergaven, API's en testen.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Websites bouwen met Exponential: planning, inhoudsstructuur, designs, layouts en de lancering.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Exponential helpen groeien: code, documentatie, vertalingen en tests bijdragen, en mond-tot-mondreclame.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Exponential financieren: wat sponsoring betaalt en hoe je 7x en de Exponential Foundation sponsort.</translation>
     </message>
 </context>
 </TS>

@@ -14058,6 +14058,10 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Za više informacija pogledajte &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centar za pomoć</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14561,6 +14565,10 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>Quick search</source>
         <translation>Brzo pretraživanje</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centar za pomoć</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14798,6 +14806,70 @@ Napomena: paketi neće biti deinstalirani.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Vaše ime, adresa e-pošte i drugi podaci.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pregled</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Vaš rad</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Aktivnost i revizija</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Vaša početna stranica: vaš rad, vaši zadaci i što se promijenilo.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Stavke koje čekaju vaše odobrenje i vaše stavke koje čekaju odobrenje drugih.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Vaše stavke koje čekaju objavu.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Skice koje ste započeli, a još ih niste objavili.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>Sadržaj koji ste označili kako biste ga ponovno pronašli.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>Početna stranica za Exponential Intelligence: njegovi alati i njihova uporaba.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Razgovori koji mijenjaju sadržaj pomoću umjetne inteligencije, pod vašim nadzorom.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Sadržaj pisan u koracima: izvođenja i njihove kontrolne točke.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>Zahtjevi prema umjetnoj inteligenciji, njihovi tokeni i trošak.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Kako funkcioniraju značajke umjetne inteligencije i kako ih koristiti.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centar za pomoć</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Vodiči, pretraživanje i kako prijaviti pogrešku.</translation>
     </message>
 </context>
 <context>
@@ -15211,6 +15283,22 @@ Napomena: paketi neće biti deinstalirani.</translation>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Praćenje, pretraživanje i međusobno povezivanje datoteka zapisnika.</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Jezici sučelja</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>Prijevod koji prikazuje svaki jezik sučelja i na što se vraća kao zamjenu.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centar za pomoć</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Vodiči, pretraživanje i kako prijaviti pogrešku.</translation>
     </message>
 </context>
 <context>
@@ -43461,6 +43549,42 @@ Više podataka potražite na stranici sa zahtjevima.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>Kod pristupa putem naziva glavnog računala konvencija je %site za web-mjesto, %admin za administraciju i %editor za uređivanje sadržaja.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>Ovo je web-mjesto već instalirano</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>Čarobnjak za postavljanje instalira Exponential na novo web-mjesto. Ne pokreće se na već instaliranom web-mjestu, a njegovo otvaranje ništa ne mijenja: web-mjesto ostaje dostupno.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Ponovna instalacija provodi se pomoću kickstartera (%file, zatim php bin/php/kickstarter.php) ili novom instalacijom.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Ponovno instalirati ovo web-mjesto?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>Ovo je web-mjesto već instalirano. Čarobnjak za postavljanje omogućen je za instalirana web-mjesta (AllowWizardOnInstalledSite), što je namijenjeno samo razvoju.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Pokretanje čarobnjaka stavlja cijelo web-mjesto u način održavanja: svaki drugi posjetitelj dobiva stranicu održavanja dok čarobnjak ne završi ili dok ne bude neaktivan 15 minuta.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>Pokreni čarobnjak za postavljanje</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Odustani</translation>
+    </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Ova je lozinka poznata ili previše uobičajena, pa ju je lako pogoditi. Odaberite drugu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -45862,6 +45986,22 @@ svoj račun.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Unesite valjanu adresu e-pošte.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Ova je poveznica istekla.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Radi vaše sigurnosti poveznica za ponovno postavljanje lozinke vrijedi samo %1 minuta i samo jednom. Zatražite novu poveznicu u nastavku.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Zatraži novu poveznicu</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>Poveznica vrijedi samo jednom i samo %1 minuta.</translation>
     </message>
 </context>
 <context>
@@ -49873,6 +50013,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>Error digest</source>
         <translation>Sažetak pogrešaka</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Jezici sučelja</translation>
     </message>
 </context>
 <context>
@@ -58919,6 +59063,14 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The new password does not meet the requirements.</source>
         <translation>Nova lozinka ne zadovoljava zahtjeve.</translation>
     </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Nije poznata ili uobičajena lozinka</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Nova je lozinka poznata ili previše uobičajena. Odaberite drugu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/setup/rad</name>
@@ -61849,6 +62001,18 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
         <translation>URI krajnje točke mora biti apsolutna adresa, npr. https://app.example.com/callback.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Odaberi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Radnje</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obavezno</translation>
     </message>
 </context>
 <context>
@@ -65970,6 +66134,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centar za pomoć</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -67281,6 +67449,34 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The settings that decide caching and compiling, and how many templates ran from the compiled cache or were compiled now. Right after a template cache clear every template is compiled once.</source>
         <translation>Postavke koje određuju predmemoriranje i prevođenje te koliko je predložaka izvedeno iz predmemorije prevedenih predložaka ili prevedeno sada. Odmah nakon čišćenja predmemorije predložaka svaki se predložak jednom prevodi.</translation>
     </message>
+    <message>
+        <source>Deprecations</source>
+        <translation>Zastarjele značajke</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Node ID</source>
+        <translation>ID čvora</translation>
+    </message>
+    <message>
+        <source>HTTP status</source>
+        <translation>HTTP status</translation>
+    </message>
+    <message>
+        <source>Query time</source>
+        <translation>Vrijeme upita</translation>
+    </message>
+    <message>
+        <source>Request</source>
+        <translation>Zahtjev</translation>
+    </message>
+    <message>
+        <source>Share of page time</source>
+        <translation>Udio u vremenu stranice</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -67581,6 +67777,18 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>Classic (server-rendered)</source>
         <translation>Klasično (generira poslužitelj)</translation>
+    </message>
+    <message>
+        <source>AdminUI (older)</source>
+        <translation>AdminUI (starije)</translation>
+    </message>
+    <message>
+        <source>Classic (older)</source>
+        <translation>Klasično (starije)</translation>
+    </message>
+    <message>
+        <source>Classic, server-rendered (older)</source>
+        <translation>Klasično, generirano na poslužitelju (starije)</translation>
     </message>
 </context>
 <context>
@@ -68157,6 +68365,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The effective audit settings, sinks and index.</source>
         <translation>Važeće postavke revizije, odredišta i indeks.</translation>
     </message>
+    <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Događaji sustava Exponential Intelligence u konzoli za reviziju.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
@@ -68179,6 +68391,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>The templates of the designs and their overrides.</source>
         <translation>Predlošci dizajna i njihova nadjačavanja.</translation>
+    </message>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Slike bez alternativnog teksta i prijedlozi za njega.</translation>
     </message>
 </context>
 <context>
@@ -70766,6 +70982,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The password does not meet the requirements.</source>
         <translation>Lozinka ne ispunjava zahtjeve.</translation>
     </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Lozinka je poznata ili previše uobičajena. Odaberite drugu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
@@ -72109,12 +72329,1710 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Web server error log</source>
         <translation>Zapisnik pogrešaka web-poslužitelja</translation>
     </message>
+    <message>
+        <source>Content Security Policy reports</source>
+        <translation>Izvješća pravila Content Security Policy</translation>
+    </message>
 </context>
 <context>
     <name>design/ezfind/search</name>
     <message>
         <source>Spell check suggestion: did you mean</source>
         <translation>Prijedlog provjere pravopisa: jeste li mislili</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Jezici sučelja</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Administracija se prikazuje na jeziku svoje lokalizacije. Lokalizacija bez vlastitog prijevoda prikazuje prvi prijevod iz svog lanca zamjenskih jezika, a inače izvorne tekstove na engleskom. Ova stranica navodi svaku lokalizaciju, što prikazuje i koliko je to potpuno. Ništa ne mijenja: zamjenski jezici postavljaju se u i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pregled</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Lokalizacije</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>S vlastitim prijevodom</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Prevedene putem zamjenskog jezika</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>Na izvornim tekstovima na engleskom</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problemi</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Njezin se lanac vraća na %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Njezin je lanac dulji od FallbackMaxDepth i prekinut je kod %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Kao zamjenu koristi %target, što nije kôd lokalizacije.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Kao zamjenu koristi %target, koja nema ni datoteku lokalizacije ni prijevod.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] navodi %target, što nije pravilo zamjene.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Ima zamjenski jezik, ali nema datoteku lokalizacije.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Kao zamjenu koristi %target, koja još nema prijevod: prikazuje izvorne tekstove na engleskom.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Sve lokalizacije</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>Instalacija nema datoteku lokalizacije za %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Vlastiti prijevod</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Sučelje</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % prevedeno</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>putem %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Izvorni tekstovi na engleskom</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Proširenja</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>Prevedeno %translated od %total, %complete potpuno</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Lanac zamjenskih jezika</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>nema prijevoda</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>prema FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>prema automatskoj zamjeni unutar istog jezika</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>prema pravilu %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Nema: bez vlastitog prijevoda prikazuje izvorne tekstove na engleskom.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Proširenje</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Prevedeno</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Postavke</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>Lokalizacija s konfiguriranim zamjenskim jezikom: %count</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: svi prijevodi iz lanca, pri čemu prednost ima najspecifičniji</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: prvi prijevod iz lanca</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>enabled: lokalizacija bez prijevoda i bez konfiguriranog zamjenskog jezika preuzima najpotpuniji prijevod svog jezika</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Nikada za: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>onemogućeno</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nema</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>Isti popis u naredbenom retku: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>Prikazano: %count</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Prikaži</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Lokalizacija</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jezik</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Ovaj pristup web-mjestu</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>izvorni tekstovi</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>problem</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated od %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>prosječno %percent %</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Istaknuti korak pronađen je automatskom zamjenom unutar istog jezika; ostali su konfigurirani ili proizlaze iz pravila.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Nijedna lokalizacija nije ove vrste.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Pomoć</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pretraži</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Pretraži pomoć</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Prijavi pogrešku</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiraj</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopirano</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Kopiranje nije uspjelo</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Nema rezultata</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Broj rezultata: %count</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Pretraživanje...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Pretraživanje trenutačno nije dostupno.</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Nijedna stranica ne sadrži sve riječi; ove sadrže neke od njih.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Očisti</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Prvi koraci</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administracija</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Razvoj</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Instalacija i nadogradnje</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Bilješke o izdanju</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Povijest</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Referenca</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 rezultat</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administratori</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Urednici</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Razvojni programeri</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Krajnji korisnici</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Kopiraj kôd</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Gradite na njemu: proširenja, predlošci, postavke, API-ji, naredbeni redak i nadogradnje.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Stvarajte, uređujte, prevodite i objavljujte sadržaj: mediji, rasporedi, pretraživanje i uređivač.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system's health.</source>
+        <translation>Upravljajte instalacijom: web-mjesta, korisnici i uloge, predmemorije, zapisnici, sigurnost i stanje sustava.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Koristite web-mjesto: vaš račun, prijava, dvofaktorska autentifikacija i pronalaženje sadržaja.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Pomoć za ovu stranicu</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Pomoć: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Sakrij odjeljak: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Prikaži odjeljak: %title</translation>
+    </message>
+    <message>
+        <source>"Saving an article with an image fails with a 500 error", not "Bug" or "Help".</source>
+        <translation>"Spremanje članka sa slikom ne uspijeva uz pogrešku 500", a ne "Bug" ili "Pomoć".</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>Čitanje: %count min</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>Broj stranica: %count</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to od %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(novi problem na GitHubu, otvara se u novom prozoru)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(otvara se u novom prozoru)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>1 stranica</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>Dobra prijava omogućuje brz ispravak pogreške. Ova stranica govori kamo je poslati, što napisati i daje vam siguran sažetak ove instalacije koji možete zalijepiti.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>Minuta provjere često odgovori na pitanje ili nejasnu prijavu pretvori u onu koja se može riješiti.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Sigurnosni problem? Prijavite ga privatno, a ne u javnom problemu.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>Naslov koji imenuje pogrešku</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>Slabost koja nekome omogućuje da čita, mijenja ili preuzme ono što ne bi smio prijavljuje se privatno, kako bi se mogla ispraviti prije nego što za nju doznaju drugi.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Sve stranice pomoći</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Sve teme</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Sve vrste</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension's repository.</source>
+        <translation>Pogreška koja se javlja samo u jednom proširenju (vrsta podataka, modul, vlastiti dizajn) ispravlja se u repozitoriju tog proširenja.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>Proširenje</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Zamolite administratora ovog web-mjesta za odgovarajuće retke iz sažetka pogrešaka (Postavljanje, Zapisnici). Poruka i vrijeme kada se pogreška dogodila ono su što održavatelju najviše treba.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>Najprije pitajte zajednicu: pitanja o tome kako nešto funkcionira, ideje i iskustva pripadaju tamo.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>Prije prijave</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>Pregledaj po temi</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Kategorija:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>Odaberite proširenje</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>Kopiraj dijagnostiku</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Dijagnostika</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Dijagnostika kao tekst</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>Jeste li mislili:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Nemojte o tome otvarati javni problem, zahtjev za povlačenje (pull request) ni objavu na forumu.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>E-pošta %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Svaki dio sustava Exponential ima vlastiti javni sustav za praćenje problema na GitHubu. Za otvaranje problema potreban vam je račun na GitHubu.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>Uredi na GitHubu</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Svi</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Proširenje</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Proširenja</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>Istaknuti vodiči</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Ispunite ono što znate; obrazac priprema problem s dijagnostikom ove instalacije. Ništa se ne šalje na GitHub dok problem ondje sami ne otvorite i ne pošaljete.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>Za</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>Za:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Pronašli ste sigurnosni problem?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Pronašli ste pogrešku?</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centar za pomoć</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>Početak pomoći</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>Kako vam možemo pomoći?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>Kako prijaviti pogrešku</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>Navedite verziju, verziju PHP-a i pogon (gornja dijagnostika), što napadač može učiniti i korake za reprodukciju. Izostavite lozinke, tajne i osobne podatke. Prvi odgovor dobit ćete unutar jednog radnog dana.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>Otvara se na GitHubu s ispunjenim vašim tekstom i dijagnostikom; ondje ga provjerite i pošaljite.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Tipkovnički prečaci</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Posljednja promjena</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>Izostavite sve privatno</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>Pogledajte zapisnike</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>Potražite postojeću prijavu</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>Nedostaje stranica? Javite nam</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Nikada je ne prijavljujte u javnom sustavu za praćenje problema ili na forumu. Koristite privatni put opisan pod</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Novi problem</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>Novi problem za %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Sljedeća</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Nijedna stranica ne sadrži sve riječi; prikazuju se stranice s barem jednom od njih.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>Nijedna stranica ne odgovara upitu „%query”.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>Bez lozinki, ključeva, adresa e-pošte, imena osoba ili podataka o klijentima. Obrazac uklanja očite podatke, ali pročitajte problem prije nego što ga pošaljete.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Niste sigurni je li to pogreška?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>Na ovoj stranici</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Otvoreni problemi</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Otvori sažetak pogrešaka</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>Otvori centar za pomoć</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>Otvori problem u %tracker</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pregled</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Odaberite svoju ulogu kako biste vidjeli stranice napisane za nju.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>Popularne stranice za %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>Pripremi problem</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Prethodna</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>Prethodna i sljedeća stranica</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Pročitajte sigurnosna pravila</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>Nedavno ažurirano</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Ponovite ono što ste učinili. Zabilježite ne uspijeva li svaki put, samo za jednog korisnika ili jednu stranicu te mijenja li išta čišćenje predmemorija.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>Privatno prijavite ranjivost na GitHubu</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>Prijavi na</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>Stranice rezultata</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>Rezultati za „%query”</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>Pretražite vodiče, postavke, naredbe…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Pretražite otvorene probleme u donjem sustavu za praćenje. Ako je vaša pogreška ondje, dodajte joj ono što znate umjesto da otvarate novi problem.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Sigurnosni problemi</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>Nešto nije u redu na ovoj stranici? Prijavite pogrešku</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Izvorna datoteka:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>Počnite ondje gdje jeste</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>Koraci za reprodukciju</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>Javite nam na GitHubu: vodič pokazuje koji sustav za praćenje odgovara, što navesti i podatke o sustavu koje treba kopirati, bez ikakvih tajni.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>Odgovor je možda već dokumentiran, uključujući poznata ograničenja neke značajke.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Sažetak pogrešaka navodi različite poruke o pogreškama iz posljednjih sati. Poruka i vrijeme kada se pogreška dogodila ono su što održavatelju najviše treba.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>Najkraći put od svježe stranice do pogreške, jedan korak po retku.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>Verzija, poslužitelj i proširenja ove instalacije. Nikada ne sadrži lozinke, ključeve, poslužitelje ili nazive baza podataka, adrese e-pošte ni putanje izvan instalacije.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>Tema</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>Pokušajte s manje riječi ili drugim riječima, ili s drugom publikom ili temom.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>Pokušajte ponovno</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Vrsta</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>Koristi ovo proširenje</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Korisnici</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>Što se dogodilo</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>Što se trebalo dogoditi umjesto toga.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Što ste učinili i što je pošlo po zlu. Navedite poruku o pogrešci doslovno.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>Što ste očekivali</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>Kamo prijaviti</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>Napišite prijavu</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Vaš je problem spreman.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>publike</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>očisti</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>kretanje kroz rezultate</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>otvori</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>otvara GitHub u novom prozoru</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>otvara se u novom prozoru</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>stranice</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>pretraži</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>odjeljci</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>PHP sučelje</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Web-poslužitelj</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>Operacijski sustav</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Baza podataka</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Pristup web-mjestu</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Dizajn</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jezik</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Izlaz otklanjanja pogrešaka</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Predmemorija prikaza</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Aktivna proširenja</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Generirano</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (softver)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Pogreške u jezgri, administraciji, priloženim proširenjima i dokumentaciji</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (aplikacijski poslužitelj)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Pogreške samog poslužitelja Velocity: pokretanje, radni procesi, njegova predmemorija odgovora, HTTPS, naredba exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Projekt i zajednica Exponential</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Projekt, web-mjesto, ekosustav i sve što nije pogreška u nekom softveru</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Forumi zajednice Exponential</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Chat zajednice na Telegramu</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Dokumentacija za Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Uređivanje sadržaja</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Značajke</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Pomoć i podrška</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Slike i mediji</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Jezici</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Rasporedi</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Objavljivanje</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Vaš račun</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Vodiči i referenca za sve koji rade s ovom instalacijom, napisani na temelju dokumentacije njezine verzije.</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Izbornik pomoći</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Povezane teme</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Brze poveznice</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Otvori centar za pomoć</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>Novosti</translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Od korisnika do razvojnog programera</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential je slobodni softver s cjelokupnom poviješću na GitHubu. Instalirajte ga kao Git klonove, što je preporučeni način izrade web-mjesta, pa možete pratiti svaku promjenu, isprobati ispravke prije njihova izdavanja i vratiti vlastita poboljšanja.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Koristite administraciju</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Prijavite se, uređujte i objavljujte.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Instalacija pomoću Gita</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Jezgra i svako proširenje kao klonovi s poviješću.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Doprinesite</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Napravite fork, ispravak i otvorite zahtjev za povlačenje (pull request).</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Razvoj pomoću Gita</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Vodič za instalaciju</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Licenca dokumentacije</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Ova je stranica dio dokumentacije proširenja %extension i distribuira se pod licencom tog proširenja.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Ova je stranica naslijeđena iz dokumentacije izvornog softvera. Nije obuhvaćena licencom %license; distribuira se pod licencom %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Koje stranice imaju koju licencu</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Ovo je tekst licence %license, verzija %version, kako ju objavljuje Free Software Foundation. Svatko je smije doslovno kopirati i dijeliti; mijenjanje nije dopušteno.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Ova je dokumentacija slobodna dokumentacija, licencirana pod licencom %license %version ili novijom.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Ova je dokumentacija slobodna dokumentacija, licencirana pod licencom %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Pročitajte licencu</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Licenca na webu</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Što možete činiti sa slobodnom dokumentacijom</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Obavijest o autorskim pravima i licenci</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Slobodna dokumentacija: koristite je kako biste pomogli sebi i drugima</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Ova je pomoć slobodna dokumentacija, licencirana pod licencom %license %version ili novijom. Možete je koristiti, dijeliti i poboljšavati:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Ova je pomoć slobodna dokumentacija, licencirana pod licencom %license %version. Možete je koristiti, dijeliti i poboljšavati:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Proučavajte je</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Čitajte bilo koju stranicu koliko god često želite, u bilo koju svrhu.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Kopirajte je i dijelite</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Dajte stranice drugim korisnicima, na papiru ili kao datoteke. Uz svaku kopiju zadržite obavijest o autorskim pravima, obavijest o licenci i primjerak licence.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Prevodite je, prilagođavajte i poboljšavajte</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Dijelite svoju verziju pod istom licencom, s izvornim obavijestima i napomenom o tome što ste promijenili.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Citirajte je</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Na stranicu se pozovite njezinim naslovom i adresom u pomoći ili njezinom datotekom u direktoriju doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Vratite ispravke</translation>
+    </message>
+    <message>
+        <source>Use "Edit on GitHub" on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Na bilo kojoj stranici upotrijebite "Uredi na GitHubu". Promjene se prihvaćaju pod istom licencom, pa ostaju slobodne za sve.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Primijeni filtre</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Pregledaj</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Pregledaj sve stranice pomoći</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Pregledaj pomoć</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Odaberite drugu publiku, temu ili vrstu.</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Stvaranje i mijenjanje sadržaja: uređivač, polja, skice i verzije.</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Pronalaženje sadržaja u administraciji i na web-mjestu.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Prvi koraci u administraciji: prijava, snalaženje i svakodnevni zadaci.</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Dobivanje pomoći i prijava pogreške.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Slike, datoteke i drugi mediji: učitavanje, odabir i ponovna uporaba.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Instalacija sustava Exponential i njegova nadogradnja na novo izdanje.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Tipkovnički prečaci koji ubrzavaju rad u administraciji.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Nema stranice za ovaj odabir.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Stariji dokumenti sačuvani radi referencije.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Rasporedi stranica: zone, blokovi i pravila koja odabiru raspored.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Objavljivanje, zakazivanje, skrivanje i premještanje sadržaja.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Referentni materijali: postavke, naredbe i formati.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Upravljanje web-mjestom: postavke, korisnici i uloge, predmemorije, cron poslovi i zapisnici.</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Predlošci, proširenja, API i kôd koji stoji iza njih.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Teme</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Prijevodi i jezici web-mjesta.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Što se promijenilo u svakom izdanju.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Što svaka značajka radi i kako je postaviti.</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Vaš račun: lozinka, prijava u dva koraka i preferencije.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>Odgovarajućih stranica: %count</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>Stranica: %count, u mapama dokumentacije. Otvorite mapu ili filtrirajte po riječi iz naslova.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>O ovoj dokumentaciji</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Pregledaj cijelu pomoć</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Filtriraj stranice</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Filtriraj stranice pomoći</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Nijedan naslov stranice ne odgovara</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Povratna kompatibilnost</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Popisi promjena</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Primjeri</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Vodiči</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Korištenje administracije</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Instalacija</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Trgovina</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Specifikacije</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Standardi</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Ispiši ovu stranicu</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Preuzmi kao PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Ispiši ili preuzmi ovu stranicu</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Adresa:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Pomoć za Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Stranica %number od %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Slika: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Slika</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count od %total unosa</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtar</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Poredaj po: %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Verzija, naziv, godina ili revizija</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>Unosa: %count, od %first do %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 unos, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adrese i napomene</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Adrese na poslužiteljima koji više nisu dostupni čuvaju se kao povijesni tekst.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naziv</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Ostalo</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Izdano</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revizije</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Serija %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Izvor</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Stariji zapisi potječu iz izvornog SVN repozitorija.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Verzija</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>iz izvornog SVN-a</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>povijesno (više nije dostupno)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nije zabilježeno</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>revizija %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Tko izrađuje Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential je slobodni softver s poviješću dugom gotovo trideset godina. Upoznajte tvrtku koja ga vodi i neprofitnu zakladu koja upravlja projektom otvorenog koda.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Tko je 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Tvrtka iza sustava Exponential, od njegova prvog izdanja do danas.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Tko je Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>Neprofitna organizacija, obitelj proizvoda i njezine obveze.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>Tema pomoći: %count</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Svi priručnici</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Koncept</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Sadržaj</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>Preuzmi EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>Preuzmi PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Uredi ovu temu</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Izdanje %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>Od verzije %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Teme pomoći</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Priručnici</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Priručnici i teme pomoći</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Platforma:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pretpregled</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Pretpregled: %state, nije dostupno čitateljima</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Zadatak</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Još nema priručnika koje možete čitati.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Ovaj priručnik još nema tema koje možete čitati.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Vrsta teme:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Rješavanje problema</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Verzije od %from do %to</translation>
+    </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Voditelji projekata</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Prodaja i marketing</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Planirajte i vodite projekte: faze i uloge, izbor smještaja, određivanje opsega, kontrolni popisi, kontrole kvalitete, izdanja i rizici.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Predstavite i promovirajte Exponential: pozicioniranje, istaknute značajke, demonstracije, prigovori, licenciranje, robna marka i zajednica.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Počnite ovdje</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Vođenje projekata</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Prodaja i marketing</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Planiranje, provedba i razvoj projekata sa sustavom Exponential: faze, uloge, kontrolni popisi, rizici i suradnja sa zajednicom.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Predstavljanje i promocija sustava Exponential: pozicioniranje, demonstracije, prigovori, licenciranje, robna marka i rast zajednice.</translation>
+    </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Ažuriranje pomoću Gita</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Preuzimajte ažuriranja čim se objave na GitHubu, a zatim uskladite Composer: svakog sata, dnevno, tjedno, mjesečno ili samo pri svakom izdanju.</translation>
+    </message>
+    <message>
+        <source>Partners</source>
+        <translation>Partneri</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>Zagovornici</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>Dizajneri</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Tvrtke za smještaj web-mjesta</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>Izrađivači aplikacija</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>Izrađivači web-mjesta</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>Podupiratelji</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Sponzori</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Gradite, udomljujte i prodavajte uz Exponential: partnerski program, partnerske razine, pogodnosti, zahtjevi i kako se prijaviti.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>Širite glas: ključne poruke, događanja, kanali zajednice, demonstracije i pomoć novim korisnicima da se snađu.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>Dizajnirajte teme i predloške, izrađujte proširenja, a zatim ih objavljujte, prodavajte i održavajte tijekom njihova životnog ciklusa.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Udomljujte web-mjesta na sustavu Exponential: zahtjevi poslužitelja, PHP i baze podataka, Velocity, predmemoriranje, sigurnost, sigurnosne kopije i rad sustava.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Izrađujte aplikacije na sustavu Exponential: modeli sadržaja, moduli i prikazi, API-ji, proširenja i testiranje.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Izrađujte web-mjesta uz Exponential: planiranje web-mjesta, klase sadržaja, dizajni, rasporedi, pokretanje i održavanje.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>Pomozite projektu da raste: doprinesite kôdom, dokumentacijom, prijevodima i testiranjem te podijelite ono što izradite.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Financirajte rad na sustavu Exponential: zašto je sponzorstvo važno, što financira i kako sponzorirati 7x i zakladu.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>Partnerstvo</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>Zagovaranje i zajednica</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>Dizajn tema</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Predlošci</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>Razvoj proširenja</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>Proširenja s temama</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>Objavljivanje i distribucija</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>Prodaja tema i usluga</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>Životni ciklus održavanja</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Smještaj web-mjesta</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>Izrada aplikacija</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>Izrada web-mjesta</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Podrška sustavu Exponential</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Sponzorstvo</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>Suradnja sa sustavom Exponential kao partner: partnerski program, partnerske razine, pogodnosti i kako se prijaviti.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Širenje glasa o sustavu Exponential: ključne poruke, događanja, kanali i dobrodošlica novim korisnicima.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Dizajniranje tema za Exponential: dizajni, sustav nadjačavanja, stilovi, resursi i pristupačnost.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>Jezik predložaka: varijable, operatori, funkcije, dohvaćanja, uključivanja i nadjačavanja.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>Izrada proširenja korak po korak: struktura, postavke, moduli, predlošci, klase i vraćanje doprinosa.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>Pakiranje teme kao proširenja: struktura, postavke, ovisnosti i dizajni koje dodaje.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>Objavljivanje tema i proširenja: repozitoriji, paketi, izdanja, verzije i licence.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>Prodaja tema i povezanih usluga: ponude, cijene, podrška i rad s klijentima.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>Održavanje tema i proširenja: nadogradnje, kompatibilnost, sigurnosni ispravci i povlačenje iz uporabe.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Smještaj sustava Exponential: poslužitelji, PHP, baze podataka, web-poslužitelji, Velocity, predmemoriranje, sigurnosne kopije i rad sustava.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Izrada aplikacija na sustavu Exponential: modeli sadržaja, moduli, prikazi, API-ji i testiranje.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Izrada web-mjesta uz Exponential: planiranje, struktura sadržaja, dizajni, rasporedi i pokretanje.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Pomoć u rastu sustava Exponential: doprinos kôdom, dokumentacijom, prijevodima, testiranjem i preporukama.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Financiranje sustava Exponential: što sponzorstvo financira i kako sponzorirati 7x i Exponential Foundation.</translation>
     </message>
 </context>
 </TS>
