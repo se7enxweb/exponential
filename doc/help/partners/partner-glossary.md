@@ -39,7 +39,7 @@ This page is for anyone who meets an unfamiliar term in the partner pages.
 | **Supporter** | Anyone who helps the project | [Supporters: start here](../supporters/supporters-start-here.md) |
 | **Sponsor** | Anyone who funds 7x or the Foundation | [Sponsors: start here](../sponsors/sponsors-start-here.md) |
 | **Upstream** | The original project of code you use or changed | [Contributing extensions back upstream](contributing-extensions-back.md) |
-| **To be defined by the Foundation** | A question the published sources do not answer yet | [Open questions for the Foundation](open-questions-for-the-foundation.md) |
+| **To be defined by the Foundation** | A question the published sources do not answer yet | [Governance: who decides what](governance-and-decisions.md) |
 
 ## Related pages
 

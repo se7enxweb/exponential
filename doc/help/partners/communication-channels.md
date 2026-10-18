@@ -16,7 +16,7 @@ public where it helps others.
 
 | Purpose | Channel | Public? | Source |
 |---|---|---|---|
-| Your partnership: application, level, invoices, agreement | partner@exponential.earth (also partners@exponential.earth); form <https://exponential.earth/partner/contact-us> | No | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
+| Your partnership: application, level, invoices, agreement | The partner team, through <https://exponential.earth/partner/contact-us> | No | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
 | Technical support under your plan | GitHub issue tickets, per level | Depends on the repository | <https://exponential.earth/partner/benefits> |
 | A bug in the software | <https://github.com/se7enxweb/exponential/issues> | Yes | README, [When something goes wrong](../when-something-goes-wrong.md) |
 | The project, community or websites | <https://github.com/se7enxweb/exponential-community/issues> | Yes | README |

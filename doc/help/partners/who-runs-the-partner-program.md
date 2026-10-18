@@ -50,8 +50,6 @@ therefore **to be defined by the Foundation**:
 - Whether the Foundation will keep its own partner directory.
 - How the program's governance is shared between 7x and the Foundation.
 
-They are collected on [Open questions for the Foundation](open-questions-for-the-foundation.md).
-
 > **Tip**
 > Until the Foundation publishes its role, treat 7x as your counterpart for everything in the partner program:
 > applications, agreements, invoices, levels, support tickets and co-marketing. Treat the Foundation as the steward
@@ -61,7 +59,7 @@ They are collected on [Open questions for the Foundation](open-questions-for-the
 
 | You want to | Talk to | Page |
 |---|---|---|
-| Apply, change level, renew | The partner team at 7x (partner@exponential.earth) | [How to apply](how-to-apply.md) |
+| Apply, change level, renew | The partner team at 7x (<https://exponential.earth/partner/contact-us>) | [How to apply](how-to-apply.md) |
 | Ask about invoices for the partner subscription | 7x (the store seller) | [Partner plans and prices](partner-plans-and-prices.md) |
 | Get technical support under your plan | 7x, through your GitHub issue tickets | [Opening a partner support ticket](opening-a-partner-support-ticket.md) |
 | Support the open source project financially | The Foundation, and 7x | [Sponsors: start here](../sponsors/sponsors-start-here.md) |
@@ -72,5 +70,4 @@ They are collected on [Open questions for the Foundation](open-questions-for-the
 - [Working with 7x](working-with-7x.md)
 - [Working with the Exponential Foundation](working-with-the-foundation.md)
 - [Governance: who decides what](governance-and-decisions.md)
-- [Open questions for the Foundation](open-questions-for-the-foundation.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
