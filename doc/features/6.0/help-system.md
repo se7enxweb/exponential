@@ -107,6 +107,10 @@ then have the ids `ext/<extension>/<path>`.
   tree works without JavaScript; a folder's `README.md` or `index.md` is its "Overview" link. A folder is named by
   `exphelp.ini [NavigationSettings] FolderNames[<path>]`, else by the title of its README, else by its directory
   name. The tree is cached per index, siteaccess and language, so a page with 1 200 entries costs one file read.
+  Folders listed in `[NavigationSettings] FoldedFolders[]` (shipped: the generated reference examples below
+  `doc/examples/`) show only their "Overview" link and page count; their pages, and those of the folders below them,
+  are listed while a page inside is open. Without folding, the 2 400 generated pages would put about 2 400 more links
+  on every page of the help.
 - **Search and browse addresses** use view parameters, so they can be bookmarked and linked:
   `/exphelp/search/(q)/publish`, `/exphelp/search/(category)/layouts/(audience)/editor`, with `(type)`,
   `(offset)` and `(limit)` as well. Without `(q)` the page lists every page the filters allow (browse mode); with no
@@ -177,6 +181,12 @@ page or the settings makes a new file.
 ./console exp:help check     # broken links and images in doc/
 ./console exp:help pdf help/searching.md --out=searching.pdf --base-url=https://www.example.com
 ```
+
+The examples below `doc/examples/` that are generated from the code (template operators, fetch functions, module
+views, policies, INI settings, datatypes, workflow events, cronjobs, console commands, extension points) are written
+by `./console exp:help:examples`; `--check` reports pages that are not current. See
+[Examples](../../examples/README.md#how-the-generated-pages-are-made). They have the page type `generated`, which ranks
+below the written pages (`[SearchSettings] TypeBoost[generated]`) and stays off the audience cards of the dashboard.
 
 The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change.
 

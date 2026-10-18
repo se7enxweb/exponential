@@ -37,8 +37,7 @@ class expHelpLicense
         // the same list as the shipped exphelp.ini
         'OtherLicensePathRules' => array( 'doc/features/[2-5].*', 'doc/bc/[2-5].*', 'doc/specifications/[2-5].*',
                                           'doc/specifications/trunk/*', 'doc/changelogs/[2-5].*', 'doc/changelogs/README.md',
-                                          'doc/shop/*', 'doc/branch-overview', 'doc/release-overview', 'doc/standards/header.txt',
-                                          'doc/examples/ezpublish.conf', 'doc/examples/htaccess' ),
+                                          'doc/shop/*', 'doc/branch-overview', 'doc/release-overview', 'doc/standards/header.txt' ),
         'OtherCopyright' => 'Copyright (C) 1999 - 2014 eZ Systems AS and contributors',
         'OtherLicenseName' => 'GNU General Public License, version 2',
         'OtherLicenseURL' => 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.html' );
