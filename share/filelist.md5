@@ -761,7 +761,7 @@ a28d02058dcaceb3f0bd665a92aff6b9  design/admin/templates/tabs/audit/node_header.
 237a0259b99105209be9ec58938d7b04  design/admin/templates/tabs/user/roles_header.tpl
 08b7af3fc1601f6fff034ead9b14ca49  design/admin/templates/toolbar/full/admin_bookmarks.tpl
 787142d1ca642f0e53c702c289446842  design/admin/templates/toolbar/full/admin_clear_cache.tpl
-72a7098f67e7e8b25879baf12498b6a5  design/admin/templates/toolbar/full/admin_current_user.tpl
+7ef1c2ab129707eb10be9425b0954955  design/admin/templates/toolbar/full/admin_current_user.tpl
 78474c135f927b8753f96696b4f0dea0  design/admin/templates/toolbar/full/admin_preferences.tpl
 0b4dfef40733278ba2b460e1e1fdb087  design/admin/templates/toolbar/full/admin_quick_settings.tpl
 0d034d557c4c0bd669c5b35e516a9b84  design/admin/templates/toolbar/full/admin_ui_switch.tpl
@@ -1364,12 +1364,12 @@ a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
 4c69be890b8756ae97832bc21c274c09  design/admin4/templates/parts/a4_header_help.tpl
 41b309bce99292420eca74f538bedc24  design/admin4/templates/parts/a4_header_site.tpl
-bff8ebb11fd13c08c65fef395cd68a67  design/admin4/templates/parts/a4_header_user.tpl
+8c839f1d7bf035432d53330fa7ad2c6b  design/admin4/templates/parts/a4_header_user.tpl
 302762e589dd7ade916c47265ed2955f  design/admin4/templates/parts/a4_logo.tpl
 872df5ea86816a733b3af3d804c1ac76  design/admin4/templates/parts/a4_mega_menu.tpl
 1c88e915acb7959ec0704b62f7eeb3d2  design/admin4/templates/parts/a4_mega_menu_check.tpl
 f3e3cfde385fe96ecd6534c0437066a9  design/admin4/templates/parts/a4_navigation_part.tpl
-4850ed0fb8728d9f792f9cd76b744d6a  design/admin4/templates/parts/a4_phone_user.tpl
+86cd6b41acbe3e1c1e1d995c002495ea  design/admin4/templates/parts/a4_phone_user.tpl
 d4696f13eec2ef1d087413002e35c015  design/admin4/templates/parts/a4_preference_attributes.tpl
 f23c9e1796dd3ab29e1af6ef0039b859  design/admin4/templates/parts/a4_tabs_height.tpl
 e7cbcc8548bbdec86d4686f2b042bb78  design/admin4/templates/parts/a4_topmenu_items.tpl
@@ -1527,7 +1527,7 @@ a28d02058dcaceb3f0bd665a92aff6b9  design/admin4/templates/tabs/audit/node_header
 237a0259b99105209be9ec58938d7b04  design/admin4/templates/tabs/user/roles_header.tpl
 08b7af3fc1601f6fff034ead9b14ca49  design/admin4/templates/toolbar/full/admin_bookmarks.tpl
 787142d1ca642f0e53c702c289446842  design/admin4/templates/toolbar/full/admin_clear_cache.tpl
-0c5ae21ffb91fee299241856a9742889  design/admin4/templates/toolbar/full/admin_current_user.tpl
+8e8d1455e7c287e05b2a3c72aeb68b51  design/admin4/templates/toolbar/full/admin_current_user.tpl
 b60915914f7647785deb969657ed9089  design/admin4/templates/toolbar/full/admin_preferences.tpl
 0b4dfef40733278ba2b460e1e1fdb087  design/admin4/templates/toolbar/full/admin_quick_settings.tpl
 8091bd20e0bb5cb45543fc5716c8bb40  design/admin4/templates/toolbar/full/admin_ui_switch.tpl
@@ -7950,7 +7950,7 @@ f439d02bf7ee68ecca6ccd30ffe60170  tests/tests/design/AdminNodeUploadButtonTest.p
 91fc8ff0be7f6a3bdbe8de38be0a5d5a  tests/tests/design/AdminOauthadminPagesTest.php
 907a0875297199e04b4cd7968a4ba33e  tests/tests/design/AdminPackageWizardTest.php
 a60c3633a9045361377a90f14d676472  tests/tests/design/AdminPageHeaderTest.php
-f492a7245a9e2cfcd36195786444435f  tests/tests/design/AdminPhoneMenuTest.php
+f4a2f3b04d9c1aa4183cabca6121fccd  tests/tests/design/AdminPhoneMenuTest.php
 c7a83ca94e5008c349693102cdcbeedd  tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php
 10041abc282f4bcb18eca95a13864deb  tests/tests/design/AdminPrePaintGuardsTest.php
 964332e29381bae7173aa9450cd52780  tests/tests/design/AdminPreferencesTest.php
