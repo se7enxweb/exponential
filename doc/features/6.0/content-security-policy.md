@@ -342,3 +342,11 @@ ReportEndpoint=disabled
 
 The shipped default stays `Mode=auto`, report-only on the administration. Enforcing is a decision per installation,
 taken after the audit above.
+
+**Inline guards and editors.** No administration pagelayout needs a nonce or a hash: admin4 and admin4l run their
+pre-paint code from `a4_head.js`, admin3 from `admin3_head.js`, both loaded in the head. The online editor does not
+offer TinyMCE 3 where the policy is enforced without `'unsafe-inline'` in `script-src` (TinyMCE 3 writes handler
+attributes); it falls back to TinyMCE 8. A siteaccess that must keep TinyMCE 3 sets
+`Directives[script-src]='self' 'unsafe-inline'` and `Directives[style-src]='self' 'unsafe-inline'` for itself. The
+shipped policy also names `worker-src 'self'`, so `AdditionalSources[]=worker-src blob:` can allow a blob worker
+where a feature needs one.

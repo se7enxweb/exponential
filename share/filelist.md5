@@ -3248,7 +3248,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-9a54258bf8474a1c59746cd4d1164768  doc/changelogs/6.0/6.0.15.md
+86655fe97d3ed0d91e9e528eb58fefa4  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3589,7 +3589,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-89fbb5e6874a7193e2115f03b6131373  doc/features/6.0/content-security-policy.md
+8610a60d9d2777022cfabe6df176d439  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
