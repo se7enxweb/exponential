@@ -78404,14 +78404,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Die Suche ist gerade nicht verfügbar.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Einklappen</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Ausklappen</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Keine Seite enthält alle Wörter; diese enthalten einige davon.</translation>
     </message>
@@ -78422,10 +78414,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Getting started</source>
         <translation>Erste Schritte</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Inhalte und Bearbeitung</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -79054,6 +79042,330 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Exponential documentation</source>
         <translation>Exponential-Dokumentation</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Inhalte bearbeiten</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Funktionen</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Hilfe und Support</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Bilder und Medien</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Sprachen</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Seitenlayouts</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Ihr Konto</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Anleitungen und Referenz für alle, die mit dieser Installation arbeiten, erstellt aus der Dokumentation ihrer eigenen Version.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Filter anwenden</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Stöbern</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Alle Hilfeseiten durchstöbern</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Die Hilfe durchstöbern</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Wählen Sie eine andere Zielgruppe, ein anderes Thema oder einen anderen Typ.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Zitieren</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Korrekturen zurückgeben</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Kopieren und weitergeben</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Urheberrechts- und Lizenzhinweis</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Inhalte erstellen und ändern: der Editor, Felder, Entwürfe und Versionen.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Lizenz der Dokumentation</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Inhalte in der Administration und auf der Website finden.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Erste Schritte in der Administration: anmelden, sich zurechtfinden und die täglichen Aufgaben.</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Freie Dokumentation: Nutzen Sie sie, um sich und anderen zu helfen</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Hilfe bekommen und einen Fehler melden.</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Geben Sie Seiten an andere weiter, auf Papier oder als Dateien. Behalten Sie bei jeder Kopie den Urheberrechtshinweis, den Lizenzhinweis und eine Kopie der Lizenz bei.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Bilder, Dateien und andere Medien: hochladen, auswählen und wiederverwenden.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Exponential installieren und auf eine neue Version aktualisieren.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Tastenkürzel, die die Administration schneller machen.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Keine Seite für diese Auswahl.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Ältere Dokumente, zum Nachschlagen aufbewahrt.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Seitenlayouts: Zonen, Blöcke und die Regeln, die ein Layout auswählen.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Inhalte veröffentlichen, planen, verbergen und verschieben.</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Lesen Sie jede Seite, so oft Sie wollen, zu jedem Zweck.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Die Lizenz lesen</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Verweisen Sie auf eine Seite mit ihrem Titel und ihrer Adresse in der Hilfe oder mit ihrer Datei im Verzeichnis doc.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Nachschlagematerial: Einstellungen, Befehle und Formate.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Die Website betreiben: Einstellungen, Benutzer und Rollen, Caches, Cronjobs und Logs.</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Geben Sie Ihre Fassung unter derselben Lizenz weiter, mit den ursprünglichen Hinweisen und einem Vermerk, was Sie geändert haben.</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Studieren</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Templates, Extensions, die API und der Code dahinter.</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Die Lizenz im Web</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version oder später.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version.</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version oder später. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Dies ist der Text der %license, Version %version, wie ihn die Free Software Foundation veröffentlicht. Jeder darf ihn wörtlich kopieren und weitergeben; ändern darf man ihn nicht.</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Diese Seite gehört zur Dokumentation der Extension %extension und wird unter der Lizenz dieser Extension verbreitet.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Diese Seite stammt aus der Dokumentation der ursprünglichen Software. Sie fällt nicht unter die %license, sondern wird unter der %other verbreitet.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Themen</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Übersetzen, anpassen und verbessern</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Übersetzungen und die Sprachen der Website.</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Nutzen Sie „Auf GitHub bearbeiten“ auf jeder Seite. Änderungen werden unter derselben Lizenz angenommen, damit sie für alle frei bleiben.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Was sich in jeder Version geändert hat.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Was jede Funktion tut und wie man sie einrichtet.</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Was Sie mit freier Dokumentation tun dürfen</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Welche Seiten welche Lizenz haben</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Ihr Konto: Passwort, Anmeldung in zwei Schritten und Einstellungen.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count passende Seiten</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>%count Seiten in den Ordnern der Dokumentation. Öffnen Sie einen Ordner oder filtern Sie nach einem Wort des Titels.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>Über diese Dokumentation</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Die ganze Hilfe durchstöbern</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Seiten filtern</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Hilfeseiten filtern</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Kein Seitentitel passt</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Rückwärtskompatibilität</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Änderungsprotokolle</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Beispiele</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Anleitungen</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Die Administration verwenden</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Installation</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Shop</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Spezifikationen</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Normen</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Diese Seite drucken</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Als PDF herunterladen</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Diese Seite drucken oder herunterladen</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Adresse:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Exponential-Hilfe</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Seite %number von %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Bild: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Bild</translation>
     </message>
 </context>
 </TS>

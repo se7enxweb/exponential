@@ -1647,12 +1647,19 @@
       "tests/tests/kernel/classes/help/expHelpLinksTest.php",
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
     ],
+    "kernel/classes/help/exphelpnavigation.php": [
+      "tests/tests/kernel/classes/help/expHelpNavigationTest.php"
+    ],
     "kernel/classes/help/exphelplinks.php": [
       "tests/tests/kernel/classes/help/expHelpLinksTest.php",
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
     ],
     "kernel/classes/help/exphelpmarkdownrenderer.php": [
-      "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
+      "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php",
+      "tests/tests/kernel/classes/help/expHelpRecordRendererTest.php"
+    ],
+    "kernel/classes/help/exphelprecordrenderer.php": [
+      "tests/tests/kernel/classes/help/expHelpRecordRendererTest.php"
     ],
     "kernel/classes/help/exphelphighlighter.php": [
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
@@ -1715,7 +1722,29 @@
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
     ],
     "kernel/sql/common/cleandata.sql": [
-      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "kernel/sql/sqlite/cleandata.sql": [
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "kernel/classes/help/exphelpreadpolicygrant.php": [
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "kernel/private/classes/commands/addexphelpreadpolicy.php": [
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "bin/php/addexphelpreadpolicy.php": [
+      "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "design/admin4/javascript/exphelp.js": [
+      "tests/tests/design/AdminHelpScriptTest.php"
+    ],
+    "design/admin/javascript/exphelp.js": [
+      "tests/tests/design/AdminHelpScriptTest.php"
+    ],
+    "tests/tests/design/js/exphelp.js": [
+      "tests/tests/design/AdminHelpScriptTest.php"
     ],
     "kernel/classes/help/content/exphelpcontentschema.php": [
       "tests/tests/kernel/classes/help/expHelpContentTest.php"

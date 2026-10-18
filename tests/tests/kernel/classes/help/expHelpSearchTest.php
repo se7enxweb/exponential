@@ -81,6 +81,38 @@ class expHelpSearchTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'doc/guides/velocity.md', $hit['path'] );
     }
 
+    public function testSectionsFindSetextAndRepeatedHeadingsAsTheIndexDoes()
+    {
+        $source = "---\ntitle: x\n---\nIntro text.\n\nFirst part\n==========\n\nOne.\n\n## Usage\n\nTwo.\n\n```\n# not a heading\n```\n\n- item\n---\n\n## Usage\n\nThree.\n\nSecond `part`\n-------------\n\nFour.\n";
+        $sections = expHelpSearch::sections( $source );
+        $headings = array_map( function ( $s ) { return array( $s['heading'], $s['anchor'] ); }, $sections );
+        $this->assertSame( array( array( null, null ), array( 'First part', 'first-part' ), array( 'Usage', 'usage' ),
+                                  array( 'Usage', 'usage-1' ), array( 'Second part', 'second-part' ) ), $headings );
+        $this->assertStringContainsString( '# not a heading', $sections[2]['text'] );
+        if ( is_callable( array( 'expHelpDocumentIndex', 'headings' ) ) )
+        {
+            $index = array_map( function ( $h ) { return array( $h['text'], $h['anchor'] ); }, expHelpDocumentIndex::headings( substr( $source, strpos( $source, 'Intro' ) ) ) );
+            $this->assertSame( array_slice( $headings, 1 ), $index, 'the same headings and anchors as the document index' );
+        }
+    }
+
+    public function testATextPageHasNoAnchors()
+    {
+        $search = expHelpSearch::fromDocuments( array( 'features/3.8/notes.txt' => array( 'title' => 'Notes', 'type' => 'feature',
+            'text' => "Notes\n=====\n\n# Section\n\nThe zebra lives here.\n" ) ) );
+        $hit = $search->search( 'zebra ' )['hits'][0];
+        $this->assertNull( $hit['anchor'] );
+        $this->assertStringEndsWith( '/features/3.8/notes.txt', $hit['url'] );
+        $this->assertStringContainsString( '<mark>zebra</mark>', $hit['snippet'] );
+    }
+
+    public function testPagesOfOlderVersionsRankLower()
+    {
+        $page = array( 'title' => 'Image handling', 'type' => 'feature', 'text' => "# Image handling\n\nImages are scaled.\n" );
+        $search = expHelpSearch::fromDocuments( array( 'features/3.10/images.md' => $page, 'features/6.0/images.md' => $page, 'features/5.1/images.md' => $page ) );
+        $this->assertSame( array( 'features/6.0/images.md', 'features/5.1/images.md', 'features/3.10/images.md' ), self::ids( $search->search( 'images ' ) ) );
+    }
+
     public function testChangelogRanksBelowAGuideWithTheSameWords()
     {
         $ids = self::ids( self::search()->search( 'velocity restart ' ) );
@@ -154,13 +186,47 @@ class expHelpSearchTest extends PHPUnit\Framework\TestCase
         return $list;
     }
 
-    public function testAnEmptyQueryGivesTheFacetsOfTheWholeSet()
+    public function testAnEmptyQueryBrowsesEveryPageTheFiltersAllow()
     {
         $result = self::search()->search( '' );
-        $this->assertSame( 0, $result['total'] );
-        $this->assertSame( array(), $result['hits'] );
+        $this->assertSame( 'browse', $result['mode'] );
+        $this->assertSame( 5, $result['total'] );
+        $this->assertSame( $result['hits'], $result['results'] );
+        // help pages and guides first, changelogs last
+        $this->assertSame( 'help/editing.md', $result['hits'][0]['id'] );
+        $this->assertSame( 'guides/velocity.md', $result['hits'][1]['id'] );
+        $this->assertSame( 'changelogs/6.0.15.md', end( $result['hits'] )['id'] );
         $this->assertSame( 1, $result['facets']['type']['guide'] );
         $this->assertSame( 3, $result['facets']['audience']['developer'] );
+        $this->assertNull( $result['hits'][0]['anchor'] );
+        $this->assertStringEndsWith( '/exphelp/viewer/help/editing.md', $result['hits'][0]['url'] );
+
+        $ops = self::search()->search( '', array( 'category' => 'operations' ) );
+        $this->assertSame( array( 'guides/velocity.md', 'features/cache.md' ), self::ids( $ops ) );
+        $this->assertSame( 1, $ops['facets']['category']['content'], 'the category facet ignores its own filter' );
+
+        $paged = self::search()->search( '', array(), 2, 4 );
+        $this->assertSame( 5, $paged['total'] );
+        $this->assertCount( 1, $paged['hits'] );
+
+        $this->assertNotContains( 'changelogs/6.0.15.md', self::ids( self::search()->search( '-changelog' ) ), 'an excluded word alone browses without it' );
+        $this->assertSame( 'browse', self::search()->search( '-changelog' )['mode'] );
+    }
+
+    public function testBrowseOrderFeaturedThenOrderThenTitle()
+    {
+        $page = function ( $title, $order = 0, $featured = false ) {
+            return array( 'title' => $title, 'type' => 'help', 'category' => 'layouts', 'order' => $order, 'featured' => $featured,
+                          'summary' => "About $title.", 'text' => "# $title\n\nText.\n" );
+        };
+        $search = expHelpSearch::fromDocuments( array(
+            'help/zeta.md' => $page( 'Zeta' ), 'help/alpha.md' => $page( 'Alpha' ), 'help/second.md' => $page( 'Second', 2 ),
+            'help/first.md' => $page( 'First', 1 ), 'help/star.md' => $page( 'Star', 9, true ) ) );
+        $result = $search->search( '', array( 'category' => 'layouts' ) );
+        $this->assertSame( array( 'help/star.md', 'help/first.md', 'help/second.md', 'help/alpha.md', 'help/zeta.md' ), self::ids( $result ) );
+        $this->assertTrue( $result['hits'][0]['featured'] );
+        $this->assertSame( 'About Star.', $result['hits'][0]['snippet'] );
+        $this->assertSame( array( array( 'About Star.', false ) ), $result['hits'][0]['snippet_parts'] );
     }
 
     public function testSnippetsEscapeEverythingAndMarkTheWords()
@@ -215,6 +281,7 @@ class expHelpSearchTest extends PHPUnit\Framework\TestCase
     {
         $result = self::search()->search( 'the ' );
         $this->assertSame( array( 'the' ), $result['terms'] );
+        $this->assertSame( 'search', $result['mode'] );
         $this->assertSame( 0, $result['total'] );
         $this->assertArrayHasKey( 'audience', $result['facets'] );
         $this->assertSame( 'features/cache.md', self::search()->search( 'the template cache ' )['hits'][0]['id'] );

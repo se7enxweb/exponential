@@ -4,7 +4,8 @@
  * An unknown id, or one expHelpDocumentIndex does not allow, is a 404; no id opens the dashboard.
  *
  * Template variables: help_page (document), help_html (rendered, safe), help_toc (level, text, anchor), help_tree,
- * help_prev, help_next (documents or null), help_edit_url (GitHub), help_breadcrumb (array of url, text).
+ * help_nav_html (the navigation tree, expHelpNavigation: safe HTML, not washed), help_prev, help_next (documents or
+ * null), help_edit_url (GitHub), help_category.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -34,7 +35,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
             return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
 
         $rendered = self::rendered( $index, $document, $id, $source );
-        $categories = $index->categories();
+        $categories = \expHelp::translatedNames( $index->categories() );
         $neighbours = $index->neighbours( $id );
         $editBase = (string)\expHelp::setting( 'HelpSettings', 'EditBaseURL', '' );
 
@@ -43,7 +44,8 @@ class Viewer extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_page', $document );
         $tpl->setVariable( 'help_html', $rendered['html'] );
         $tpl->setVariable( 'help_toc', $rendered['toc'] );
-        $tpl->setVariable( 'help_tree', $index->tree() );
+        // a server process started before the class existed (a Velocity worker) shows the page without the tree
+        $tpl->setVariable( 'help_nav_html', class_exists( 'expHelpNavigation' ) ? ( new \expHelpNavigation( $index ) )->html( $id ) : '' );
         $tpl->setVariable( 'help_prev', $neighbours['prev'] );
         $tpl->setVariable( 'help_next', $neighbours['next'] );
         $tpl->setVariable( 'help_edit_url', $editBase !== '' && isset( $document['path'] ) ? $editBase . $document['path'] : '' );
