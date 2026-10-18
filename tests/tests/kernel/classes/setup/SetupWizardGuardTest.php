@@ -121,8 +121,10 @@ class SetupWizardGuardTest extends PHPUnit\Framework\TestCase
         $source = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/private/classes/views/setup/ezsetup.php' );
         $this->assertSame( 1, substr_count( $source, 'expMaintenance::beginWizard(' ), 'one place starts maintenance' );
         $begin = strpos( $source, 'expMaintenance::beginWizard(' );
-        $branch = strrpos( substr( $source, 0, $begin ), 'else if' );
-        $this->assertStringContainsString( 'expSetupWizardGuard::BEGIN', substr( $source, $branch, $begin - $branch ) );
+        // the nearest decision branch before it is the BEGIN branch
+        $branch = strrpos( substr( $source, 0, $begin ), '$decision === \\expSetupWizardGuard::' );
+        $this->assertNotFalse( $branch );
+        $this->assertStringStartsWith( '$decision === \\expSetupWizardGuard::BEGIN', substr( $source, $branch ) );
         // the refusal returns before the setup log or maintenance are touched
         $refuse = strpos( $source, "'design:setup/init/installed.tpl'" );
         $this->assertNotFalse( $refuse );
@@ -140,7 +142,14 @@ class SetupWizardGuardTest extends PHPUnit\Framework\TestCase
     public function testTheWizardLeaseExpiresByItselfAndIsShort()
     {
         $this->assertLessThanOrEqual( 900, expMaintenance::WIZARD_LEASE );
+        $handlerBefore = set_exception_handler( null );
+        restore_exception_handler();
         $this->assertTrue( expMaintenance::beginWizard( $this->root, 'run-9' ) );
+        // the settings layer installs eZExecution's exception handler once, on first use; not this test's to keep
+        $handlerAfter = set_exception_handler( null );
+        restore_exception_handler();
+        if ( $handlerAfter !== $handlerBefore )
+            restore_exception_handler();
         $this->assertIsArray( expMaintenance::state( $this->root ) );
         $this->assertTrue( expMaintenance::renewWizard( $this->root, 'run-9' ) );
         $this->assertFalse( expMaintenance::renewWizard( $this->root, 'another-run' ), 'another run does not renew it' );
