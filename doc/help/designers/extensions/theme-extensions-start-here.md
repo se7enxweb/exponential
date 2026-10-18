@@ -16,7 +16,7 @@ that tell an installation who the theme is. This section shows how to build that
 as a Composer package or as an Exponential package (`.ezpkg`).
 
 How the design itself is made (templates, overrides, stylesheets, dark mode, accessibility) is explained in
-[Theme design](../theme-design/design-extensions.md) and [Templates](../templates/templates-overview.md). This
+Theme design and Templates. This
 section is about the container around it.
 
 ## A reading order
