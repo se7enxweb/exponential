@@ -13,6 +13,9 @@
  * - a[data-exphelp-prev], a[data-exphelp-next] the previous and next page.
  * - [data-exphelp-records] a record page (expHelpRecordRenderer): a filter field over its rows and sort buttons in the
  *   headers of its table[data-exphelp-sortable] (cells sort by data-sort-value, else their text).
+ * - nav[data-exphelp-nav] the tree of all help pages; its input[data-exphelp-navfilter] (hidden until this file shows
+ *   it) narrows the tree to the pages whose title or folder has every typed word; the count goes to
+ *   [data-exphelp-navfilter-status].
  * Keys: / focuses the search, ArrowDown/ArrowUp move through the results, Enter opens one, Esc closes the results;
  * j/k go to the next/previous heading, [ and ] to the previous/next page.
  */
@@ -26,7 +29,8 @@
         collapse: 'Hide section: %title', expand: 'Show section: %title',
         relaxed: 'No page contains every word; these pages contain some of them.',
         recordsFilter: 'Filter', recordsPlaceholder: 'Version, name, year or revision',
-        recordsCount: '%count of %total entries', sortBy: 'Sort by %title'
+        recordsCount: '%count of %total entries', sortBy: 'Sort by %title',
+        navCount: '%count pages match', navNone: 'No page title matches'
     };
     var DEBOUNCE = 150;
     var LIMIT = 20;
@@ -578,6 +582,62 @@
 
     var started = false, searches = [], spy = null;
 
+    /**
+     * The filter box of the help tree (nav[data-exphelp-nav] with input[data-exphelp-navfilter]): as you type, only the
+     * pages whose title (or folder name) has every typed word stay, their folders open; empty, the tree is back as it
+     * was (the folders on the way to the current page open). The count goes to [data-exphelp-navfilter-status].
+     */
+    function setupNavFilter(nav, t) {
+        var input = nav.querySelector('[data-exphelp-navfilter]');
+        if (!input) { return; }
+        var status = nav.querySelector('[data-exphelp-navfilter-status]');
+        var details = arr(nav.querySelectorAll('details'));
+        var initial = details.map(function (d) { return d.open; });
+        var items = arr(nav.querySelectorAll('li'));
+        function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+        var texts = items.map(function (li) {
+            var own = li.querySelector(':scope > a, :scope > details > summary');
+            return norm(own ? own.textContent : '');
+        });
+        var timer = null;
+        input.hidden = false;
+        function apply() {
+            var words = norm(input.value).split(/\s+/).filter(function (w) { return w !== ''; });
+            if (!words.length) {
+                items.forEach(function (li) { li.hidden = false; });
+                details.forEach(function (d, i) { d.open = initial[i]; });
+                if (status) { status.textContent = ''; }
+                return;
+            }
+            var shown = 0;
+            // a page matches on its own title plus the names of its folders
+            items.forEach(function (li, i) {
+                if (li.querySelector(':scope > details')) { return; }
+                var hay = texts[i], p = li.parentElement ? li.parentElement.closest('li') : null;
+                while (p) { hay += ' ' + texts[items.indexOf(p)]; p = p.parentElement ? p.parentElement.closest('li') : null; }
+                var ok = words.every(function (w) { return hay.indexOf(w) !== -1; });
+                li.hidden = !ok;
+                if (ok) { shown += 1; }
+            });
+            // folders: shown and open when a page below them is shown
+            items.slice().reverse().forEach(function (li) {
+                var d = li.querySelector(':scope > details');
+                if (!d) { return; }
+                var any = !!d.querySelector('li:not([hidden]) > a');
+                li.hidden = !any;
+                d.open = any;
+            });
+            if (status) { status.textContent = shown ? t.navCount.replace('%count', shown) : t.navNone; }
+        }
+        input.addEventListener('input', function () {
+            window.clearTimeout(timer);
+            timer = window.setTimeout(apply, 80);
+        });
+        input.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && input.value !== '') { event.preventDefault(); event.stopPropagation(); input.value = ''; apply(); }
+        });
+    }
+
     function init() {
         if (started || !document.querySelector('[data-exphelp]')) { return; }
         started = true;
@@ -585,6 +645,7 @@
             var s = new Search(form);
             if (s.box) { searches.push(s); }
         });
+        arr(document.querySelectorAll("nav[data-exphelp-nav]")).forEach(function (nav) { setupNavFilter(nav, strings(closestRoot(nav))); });
         var content = contentOf(document);
         if (content) {
             var t = strings(closestRoot(content));

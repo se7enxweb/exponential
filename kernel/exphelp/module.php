@@ -7,6 +7,7 @@
  *
  *   exphelp/dashboard              the help start page: search, audiences, featured pages, recent changes, trackers
  *   exphelp/viewer/<page id>       one page; <page id> is its path below doc/ (features/6.0/help-system.md); ?p= too
+ *   exphelp/contents               every help page as one tree (all folders open), with a filter box
  *   exphelp/search/(q)/<words>/(category)/<id>/...  search, or browse without (q); format=json: the client's JSON
  *   exphelp/asset/<path>           an image below doc/, with its content type (only git-tracked files)
  *   exphelp/report                 how to report an error: which tracker, a prefilled issue, safe diagnostics
@@ -33,6 +34,13 @@ $ViewList['dashboard'] = array(
 $ViewList['viewer'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'viewer.php',
+    'functions' => array( 'read' ),
+    'params' => array() );
+
+// Every help page as one tree, all folders open, with a filter box
+$ViewList['contents'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'contents.php',
     'functions' => array( 'read' ),
     'params' => array() );
 

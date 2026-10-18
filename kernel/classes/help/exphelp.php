@@ -199,7 +199,9 @@ class expHelp
                       'recordsFilter' => ezpI18n::tr( $c, 'Filter' ),
                       'recordsPlaceholder' => ezpI18n::tr( $c, 'Version, name, year or revision' ),
                       'recordsCount' => ezpI18n::tr( $c, '%count of %total entries' ),
-                      'sortBy' => ezpI18n::tr( $c, 'Sort by %title' ) );
+                      'sortBy' => ezpI18n::tr( $c, 'Sort by %title' ),
+                      'navCount' => ezpI18n::tr( $c, '%count pages match' ),
+                      'navNone' => ezpI18n::tr( $c, 'No page title matches' ) );
     }
 
     /**
