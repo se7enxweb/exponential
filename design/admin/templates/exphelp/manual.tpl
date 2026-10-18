@@ -1,0 +1,72 @@
+{* exphelp/manual[/<remote_id>] (doc/features/6.0/help-content.md): the manuals of help maintained as content, or one
+   manual with its table of contents (chapters and topics the user may see; not Released ones only for those who may
+   edit them, marked as a preview).
+
+   Variables (kernel/private/classes/views/exphelp/manual.php): help_manual (false for the list; else title, subtitle,
+   shortdesc, edition, license, authors[], preview), help_manual_toc (nested: kind chapter|topic, title, shortdesc,
+   url, preview, children), help_manuals (title, subtitle, shortdesc, remote_id, edition, preview), help_ebook_formats (epub, pdf), help_json_url,
+   help_i18n_json.
+
+   The same file is in design/admin and design/admin4. *}
+<div class="a4-page a4-help a4-help-manual" data-exphelp data-exphelp-i18n="{$help_i18n_json|wash}">
+
+    <div class="a4-help-viewer-bar">
+        <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help start'|i18n( 'kernel/exphelp' )}</a>
+        {if $help_manual}
+        <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/manual'|ezurl}><span class="a4-icon a4-bi-journal-text" aria-hidden="true"></span> {'Manuals'|i18n( 'kernel/exphelp' )}</a>
+        {/if}
+    </div>
+
+    {if $help_manual}
+    <header class="a4-help-pagehead">
+        <h1 class="a4-help-title" dir="auto">{$help_manual.title|wash}</h1>
+        {if $help_manual.subtitle|ne( '' )}<p class="a4-help-summary" dir="auto">{$help_manual.subtitle|wash}</p>{/if}
+        <ul class="a4-help-meta" role="list">
+            {if $help_manual.preview}
+            <li class="a4-help-meta-item"><span class="a4-tag is-warn"><span class="a4-icon a4-bi-eye" aria-hidden="true"></span> {'Preview: %state, not delivered to readers'|i18n( 'kernel/exphelp',, hash( '%state', $help_manual.state ) )|wash}</span></li>
+            {/if}
+            {if $help_manual.audience|count}
+            <li class="a4-help-meta-item is-audience"><span class="a4-sr-only">{'For:'|i18n( 'kernel/exphelp' )}</span>{foreach $help_manual.audience as $help_a}<span class="a4-tag a4-help-pill">{$help_a|wash}</span> {/foreach}</li>
+            {/if}
+            {if $help_manual.edition|ne( '' )}<li class="a4-help-meta-item"><span class="a4-icon a4-bi-tag" aria-hidden="true"></span>{'Edition %edition'|i18n( 'kernel/exphelp',, hash( '%edition', $help_manual.edition ) )|wash}</li>{/if}
+            {if $help_manual.license|ne( '' )}<li class="a4-help-meta-item">{$help_manual.license|wash}</li>{/if}
+            {foreach $help_ebook_formats as $help_fmt}
+            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small" href={concat( 'exphelp/manual/', $help_manual.remote_id, '?format=', $help_fmt )|ezurl} download><span class="a4-icon a4-bi-download" aria-hidden="true"></span> {cond( eq( $help_fmt, 'pdf' ), 'Download PDF'|i18n( 'kernel/exphelp' ), 'Download EPUB'|i18n( 'kernel/exphelp' ) )}</a></li>
+            {/foreach}
+            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={$help_json_url|ezurl}><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> JSON</a></li>
+        </ul>
+        {if $help_manual.shortdesc|ne( '' )}<p dir="auto">{$help_manual.shortdesc|wash}</p>{/if}
+    </header>
+
+    <section class="a4-card" aria-labelledby="exphelp-manual-toc">
+        <h2 class="a4-help-section-head" id="exphelp-manual-toc">{'Contents'|i18n( 'kernel/exphelp' )}</h2>
+        {if $help_manual_toc|count}
+        {include name=ManualToc uri='design:exphelp/parts/manual_toc.tpl' toc_entries=$help_manual_toc}
+        {else}
+        <p class="a4-meta">{'This manual has no topics you can read yet.'|i18n( 'kernel/exphelp' )}</p>
+        {/if}
+    </section>
+    {else}
+    <header class="a4-help-pagehead">
+        <h1 class="a4-help-title">{'Manuals'|i18n( 'kernel/exphelp' )}</h1>
+    </header>
+    {if $help_manuals|count}
+    <ul class="a4-help-featured">
+    {foreach $help_manuals as $help_m}
+        <li class="a4-help-feature">
+            <a href={concat( 'exphelp/manual/', $help_m.remote_id )|ezurl}>
+                <span class="a4-help-tile is-small" aria-hidden="true"><span class="a4-icon a4-bi-journal-text"></span></span>
+                <span class="a4-help-feature-text">
+                    <span class="a4-help-feature-title">{$help_m.title|wash}</span>
+                    {if $help_m.shortdesc|ne( '' )}<span class="a4-help-feature-summary">{$help_m.shortdesc|shorten( 160 )|wash}</span>{/if}
+                    {if $help_m.preview}<span class="a4-help-feature-meta"><span class="a4-tag is-warn">{'Preview'|i18n( 'kernel/exphelp' )}</span></span>{/if}
+                </span>
+            </a>
+        </li>
+    {/foreach}
+    </ul>
+    {else}
+    <p class="a4-meta">{'There are no manuals you can read yet.'|i18n( 'kernel/exphelp' )}</p>
+    {/if}
+    {/if}
+</div>

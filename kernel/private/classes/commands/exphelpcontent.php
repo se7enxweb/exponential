@@ -1,0 +1,316 @@
+<?php
+/**
+ * @description Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall
+ * @alias exp:help:content
+ *
+ * File containing the exp:help:content command (doc/features/6.0/help-content.md, doc/specifications/6.0/help-system.md).
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
+ */
+
+namespace Exponential\Command\Kernel
+{
+
+class Exphelpcontent extends \Exponential\Runnable\Command
+{
+    public function run()
+    {
+        $cli = $this->cli();
+        $this->script(
+            array(
+                'description' => "Help maintained as content (topics, manuals, glossary in the content tree)\n" .
+                                 "\n" .
+                                 "./console exp:help:content install -s <admin siteaccess> [--dry-run]   classes, tree and roles (all three steps)\n" .
+                                 "./console exp:help:content classes -s ...    the eight help_* classes in the class group Help (create_classes.php)\n" .
+                                 "./console exp:help:content tree -s ...       sections, the state group help_status, the folder tree (create_tree.php)\n" .
+                                 "./console exp:help:content roles -s ...      the roles Help editor, Help release and the Anonymous policy (create_roles.php)\n" .
+                                 "./console exp:help:content check -s ... [--fix]   the validator (check_help.php); --fix sets the sections from the audience\n" .
+                                 "./console exp:help:content seed-glossary -s ... [--file=] [--update]   the glossary (seed_glossary.php)\n" .
+                                 "./console exp:help:content seed-topics -s ... [--file=] [--update] [--release]   topics and manuals (seed_topics.php)\n" .
+                                 "./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state\n" .
+                                 "./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file]\n" .
+                                 "                                              an e-book of the Released topics of a manual (export_manual.php)\n" .
+                                 "./console exp:help:content uninstall -s ... [--with-content] [--dry-run]   take the roles away (and the tree, classes,\n" .
+                                 "                                              state group and sections with --with-content)\n" .
+                                 "\n" .
+                                 "-s (--siteaccess) is required: one tree may serve several installations with different databases. Every\n" .
+                                 "step is idempotent: a second run prints \"No change.\". --dry-run shows what would change and changes nothing.\n" .
+                                 "Exit code: 0 fine, 1 check found an ERROR (or a step could not be done), 2 error.",
+                'use-session'    => false,
+                'use-modules'    => true,
+                'use-extensions' => true
+            )
+        );
+        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json][manual:][format:][output:]', '', array(
+            'dry-run'      => 'Show what would change, change nothing',
+            'fix'          => 'check: set the section of each topic, figure, chapter and manual from the audience',
+            'file'         => 'seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json)',
+            'update'       => 'seed-*: also update existing objects that differ from the file',
+            'release'      => 'seed-topics: set new topics, chapters and manuals to Released',
+            'with-content' => 'uninstall: also the help tree (into the trash), the classes, the state group and the sections',
+            'login'        => 'The user who creates the classes and objects (default admin)',
+            'json'         => 'Print one JSON document instead of the text',
+            'manual'       => 'export: the remote_id of the manual (help-manual-...)',
+            'format'       => 'export: epub or pdf',
+            'output'       => 'export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>)',
+        ) );
+
+        $arguments = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
+        $action = $arguments ? strtolower( (string)array_shift( $arguments ) ) : '';
+        $json = !empty( $options['json'] );
+        $dryRun = !empty( $options['dry-run'] );
+
+        if ( empty( $options['siteaccess'] ) )
+        {
+            $cli->error( 'FAIL: -s <siteaccess> is required (./console exp:help:content --help)' );
+            $this->shutdown( 2 );
+            return;
+        }
+        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export' );
+        if ( !in_array( $action, $known, true ) )
+        {
+            $cli->error( "Unknown action \"$action\": " . implode( ', ', $known ) . ' (./console exp:help:content --help)' );
+            $this->shutdown( 2 );
+            return;
+        }
+
+        $login = !empty( $options['login'] ) ? (string)$options['login'] : 'admin';
+        $user = \eZUser::fetchByName( $login );
+        if ( !$user instanceof \eZUser )
+        {
+            $cli->error( 'FAIL: no user with the login given by --login' );
+            $this->shutdown( 2 );
+            return;
+        }
+        \eZUser::setCurrentlyLoggedInUser( $user, (int)$user->attribute( 'contentobject_id' ) );
+
+        $db = \eZDB::instance();
+        if ( !$json )
+        {
+            $cli->output( 'Siteaccess: ' . $options['siteaccess'] . '   database: ' . $db->databaseName() . ' ' . $db->DB .
+                          ( $dryRun ? '   (dry run: nothing is changed)' : '' ) );
+        }
+
+        $code = 0;
+        try
+        {
+            $common = array( 'dry_run' => $dryRun, 'user_id' => (int)$user->attribute( 'contentobject_id' ) );
+            switch ( $action )
+            {
+                case 'install':
+                case 'classes':
+                case 'tree':
+                case 'roles':
+                    $installer = new \expHelpContentInstaller( $common );
+                    $installer->install( $action === 'install' ? array( 'classes', 'tree', 'roles' ) : array( $action ) );
+                    $code = $this->printChanges( $installer->changes(), $json );
+                    break;
+                case 'seed-glossary':
+                case 'seed-topics':
+                    $code = $this->seed( $action, $options, $common, $json );
+                    break;
+                case 'check':
+                    $code = $this->check( !empty( $options['fix'] ), $common, $json );
+                    break;
+                case 'report':
+                    $this->printReport( \expHelpContentInstaller::report(), $json );
+                    break;
+                case 'export':
+                    $code = $this->export( $options, $dryRun, $json );
+                    break;
+                case 'uninstall':
+                    $installer = new \expHelpContentInstaller( $common );
+                    $installer->uninstall( !empty( $options['with-content'] ) );
+                    $code = $this->printChanges( $installer->changes(), $json );
+                    break;
+            }
+            if ( !$dryRun && !in_array( $action, array( 'report', 'export' ), true ) )
+                \expHelpContentProvider::clearCache();
+        }
+        catch ( \Exception $e )
+        {
+            $cli->error( 'FAIL: ' . $e->getMessage() );
+            $code = 2;
+        }
+        $this->shutdown( $code );
+    }
+
+    protected function seed( $action, array $options, array $common, $json )
+    {
+        $default = $action === 'seed-glossary' ? 'share/help/seed-glossary.json' : 'share/help/seed-topics.json';
+        $file = !empty( $options['file'] ) ? (string)$options['file'] : $default;
+        $seeder = new \expHelpContentSeeder( $common + array( 'update' => !empty( $options['update'] ), 'release' => !empty( $options['release'] ) ) );
+        $data = \expHelpContentSeeder::readFile( $file );
+        if ( $action === 'seed-glossary' )
+            $seeder->seedGlossary( $data );
+        else
+            $seeder->seedTopics( $data );
+        $changes = $seeder->changes();
+        // new objects take the section of their parent: set it from the audience at once
+        if ( $seeder->touched() && empty( $common['dry_run'] ) )
+        {
+            \expHelpContentRepository::resetInstance();
+            $set = \expHelpContentRepository::instance()->load();
+            $validator = new \expHelpContentValidator();
+            $installer = new \expHelpContentInstaller( $common );
+            $installer->fixSections( $validator->validate( $set['topics'], $set['figures'], $set['maps'], $set['glossary'] ) );
+            $changes = array_merge( $changes, $installer->changes() );
+        }
+        return $this->printChanges( $changes, $json );
+    }
+
+    protected function export( array $options, $dryRun, $json )
+    {
+        $cli = $this->cli();
+        $format = !empty( $options['format'] ) ? strtolower( (string)$options['format'] ) : 'epub';
+        if ( !in_array( $format, array( 'epub', 'pdf' ), true ) )
+        {
+            $cli->error( 'FAIL: --format is epub or pdf' );
+            return 2;
+        }
+        if ( !in_array( $format, \expHelpContentExport::formats(), true ) )
+        {
+            $cli->error( "FAIL: this installation cannot write $format (EPUB needs the zip extension, PDF the help's PDF writer)" );
+            return 2;
+        }
+        $provider = \expHelpContentProvider::instance();
+        $manual = $provider->manual( isset( $options['manual'] ) ? (string)$options['manual'] : '' );
+        if ( $manual === null )
+        {
+            $cli->error( 'FAIL: no manual with that remote_id (--manual=help-manual-...) the user may read' );
+            return 2;
+        }
+        $export = new \expHelpContentExport( $provider, $manual );
+        $file = !empty( $options['output'] ) ? (string)$options['output']
+              : rtrim( \expHelp::cacheDirectory(), '/' ) . '/ebooks/' . $manual['remote_id'] . '.' . $format;
+        $topics = count( $export->topics() );
+        if ( $dryRun )
+        {
+            $result = array( 'file' => $file, 'topics' => $topics, 'written' => false );
+            if ( $json )
+                $this->printJson( $result );
+            else
+                $cli->output( "Would write $file ($topics Released topics)" );
+            return $topics ? 0 : 1;
+        }
+        $result = $format === 'epub' ? $export->writeEpub( $file ) : $export->writePdf( $file );
+        if ( $json )
+            $this->printJson( $result );
+        else
+            $cli->output( sprintf( 'PASS wrote %s (%d bytes, %d topics)', $result['file'], $result['bytes'], $result['topics'] ) );
+        return 0;
+    }
+
+    protected function check( $fix, array $common, $json )
+    {
+        $cli = $this->cli();
+        if ( !\expHelpContentRepository::isInstalled() )
+        {
+            $cli->error( 'FAIL: help as content is not installed (./console exp:help:content install -s <siteaccess>)' );
+            return 2;
+        }
+        $set = \expHelpContentRepository::instance()->load();
+        $validator = new \expHelpContentValidator();
+        $findings = $validator->validate( $set['topics'], $set['figures'], $set['maps'], $set['glossary'] );
+        $fixed = 0;
+        $changes = array();
+        if ( $fix )
+        {
+            $installer = new \expHelpContentInstaller( $common );
+            $fixed = $installer->fixSections( $findings );
+            $changes = $installer->changes();
+            if ( $fixed > 0 && empty( $common['dry_run'] ) )
+            {
+                \expHelpContentRepository::resetInstance();
+                $set = \expHelpContentRepository::instance()->load();
+                $findings = $validator->validate( $set['topics'], $set['figures'], $set['maps'], $set['glossary'] );
+            }
+        }
+        $counts = \expHelpContentValidator::counts( $findings );
+        if ( $json )
+        {
+            $this->printJson( array( 'topics' => count( $set['topics'] ), 'figures' => count( $set['figures'] ), 'maps' => count( $set['maps'] ),
+                                     'glossary' => count( $set['glossary'] ), 'counts' => $counts, 'fixed' => $fixed,
+                                     'changes' => $changes, 'findings' => $findings ) );
+        }
+        else
+        {
+            foreach ( $changes as $change )
+                $cli->output( sprintf( '%-8s %-8s %s', $change['step'], $change['action'], $change['what'] ) );
+            foreach ( $findings as $finding )
+                $cli->output( sprintf( '%-7s %-24s %-28s %-12s %s', $finding['level'], $finding['code'],
+                                       $finding['help_id'] !== '' ? $finding['help_id'] : '#' . $finding['object_id'], $finding['field'], $finding['message'] ) );
+            $cli->output( sprintf( '%d topics, %d figures, %d manuals and chapters, %d glossary entries: %d ERROR, %d WARNING, %d NOTICE%s',
+                                   count( $set['topics'] ), count( $set['figures'] ), count( $set['maps'] ), count( $set['glossary'] ),
+                                   $counts['ERROR'], $counts['WARNING'], $counts['NOTICE'],
+                                   $fix ? ', ' . $fixed . ( empty( $common['dry_run'] ) ? ' sections set' : ' sections would be set' ) : '' ) );
+        }
+        return $counts['ERROR'] > 0 ? 1 : 0;
+    }
+
+    protected function printChanges( array $changes, $json )
+    {
+        $errors = 0;
+        foreach ( $changes as $change )
+        {
+            if ( $change['action'] === 'error' )
+                $errors++;
+        }
+        if ( $json )
+        {
+            $this->printJson( array( 'changes' => $changes, 'errors' => $errors ) );
+            return $errors ? 1 : 0;
+        }
+        $cli = $this->cli();
+        if ( !$changes )
+            $cli->output( 'No change.' );
+        foreach ( $changes as $change )
+            $cli->output( sprintf( '%-8s %-8s %s', $change['step'], $change['action'], $change['what'] ) );
+        return $errors ? 1 : 0;
+    }
+
+    protected function printReport( array $report, $json )
+    {
+        if ( $json )
+        {
+            $this->printJson( $report );
+            return;
+        }
+        $cli = $this->cli();
+        $cli->output( 'Classes:' );
+        foreach ( $report['classes'] as $identifier => $row )
+            $cli->output( sprintf( '  %-22s %s', $identifier, $row['exists']
+                ? 'id ' . $row['id'] . ', ' . $row['objects'] . ' objects' . ( $row['missing_attributes'] ? ', missing: ' . implode( ', ', $row['missing_attributes'] ) : '' )
+                : 'missing' ) );
+        $cli->output( 'Sections:' );
+        foreach ( $report['sections'] as $identifier => $id )
+            $cli->output( sprintf( '  %-22s %s', $identifier, $id ? 'id ' . $id : 'missing' ) );
+        $cli->output( 'States (' . \expHelpContentSchema::STATE_GROUP . '):' );
+        foreach ( $report['states'] as $identifier => $id )
+            $cli->output( sprintf( '  %-22s %s', $identifier, $id ? 'id ' . $id : 'missing' ) );
+        $cli->output( 'Tree:' );
+        foreach ( $report['tree'] as $remoteId => $nodeId )
+            $cli->output( sprintf( '  %-26s %s', $remoteId, $nodeId ? 'node ' . $nodeId : 'missing' ) );
+        $cli->output( 'Roles:' );
+        foreach ( $report['roles'] as $name => $row )
+            $cli->output( sprintf( '  %-22s %s', $name, $row['exists'] ? $row['policies'] . ' policies, assigned to ' . count( $row['assigned_to'] ) : 'missing' ) );
+        if ( $report['content'] )
+        {
+            $states = array();
+            foreach ( $report['content']['topics_by_state'] as $state => $count )
+                $states[] = "$state $count";
+            $cli->output( sprintf( 'Content: %d topics (%s), %d figures, %d manuals and chapters, %d glossary entries',
+                                   $report['content']['topics'], implode( ', ', $states ), $report['content']['figures'],
+                                   $report['content']['manuals_and_chapters'], $report['content']['glossary'] ) );
+        }
+    }
+
+    protected function printJson( $data )
+    {
+        $this->cli()->output( json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PARTIAL_OUTPUT_ON_ERROR ) );
+    }
+}
+
+}

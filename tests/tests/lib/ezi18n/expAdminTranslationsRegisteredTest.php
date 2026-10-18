@@ -198,7 +198,8 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     /**
      * The complete right-to-left translations: the locale is right to left and names itself in its script, the
      * interface language switch offers it as right to left, the catalogue, its ezoe and its ezjscore catalogues are
-     * written in the script, not left in English, and the fallback setting of settings/i18n.ini names it.
+     * written in the script, not left in English, and it needs no fallback of its own: the other countries of the
+     * language fall back to it.
      */
     #[PHPUnit\Framework\Attributes\DataProvider( 'rightToLeftTranslations' )]
     public function testRightToLeftTranslationIsWrittenInItsScript( $code, $http, $name, $script )
@@ -209,8 +210,13 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         // "Arabic" or, from CLDR, "Arabic (Saudi Arabia)"
         $this->assertMatchesRegularExpression( '/^' . $name . '( \(.+\))?$/', $values['InternationalLanguageName'] ?? '', "$code: InternationalLanguageName" );
         $this->assertMatchesRegularExpression( '/^[' . $script . '\s()]+$/u', $values['LanguageName'] ?? '', "$code: LanguageName" );
-        $this->assertMatchesRegularExpression( '/^FallbackLanguages\[' . preg_quote( $code, '/' ) . '\]=\S+/m',
-                                               (string)file_get_contents( $this->root . '/settings/i18n.ini' ) );
+        // the translation has its own file, so it needs no fallback; every other country of the language that
+        // settings/i18n.ini names falls back to it
+        $i18n = (string)file_get_contents( $this->root . '/settings/i18n.ini' );
+        $this->assertDoesNotMatchRegularExpression( '/^FallbackLanguages\[' . preg_quote( $code, '/' ) . '\]=/m', $i18n );
+        preg_match_all( '/^FallbackLanguages\[(' . substr( $code, 0, 3 ) . '-[A-Z]+)\]=(\S*)\s*$/m', $i18n, $m, PREG_SET_ORDER );
+        foreach ( $m as $row )
+            $this->assertSame( $code, $row[2], "FallbackLanguages[{$row[1]}]" );
         foreach ( array( 'share', 'extension/ezoe', 'extension/ezjscore' ) as $base )
         {
             $ts = (string)file_get_contents( $this->root . '/' . $base . '/translations/' . $code . '/translation.ts' );

@@ -1684,7 +1684,8 @@
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
     ],
     "kernel/classes/help/exphelpcontextregistry.php": [
-      "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php"
+      "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php",
+      "tests/tests/kernel/classes/help/expHelpContentTest.php"
     ],
     "kernel/classes/help/exphelpcontextproviderinterface.php": [
       "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php"
@@ -1744,6 +1745,30 @@
     ],
     "tests/tests/design/js/exphelp.js": [
       "tests/tests/design/AdminHelpScriptTest.php"
+    ],
+    "kernel/classes/help/content/exphelpcontentschema.php": [
+      "tests/tests/kernel/classes/help/expHelpContentTest.php"
+    ],
+    "kernel/classes/help/content/exphelpcontentvalidator.php": [
+      "tests/tests/kernel/classes/help/expHelpContentTest.php"
+    ],
+    "kernel/classes/help/content/exphelpcontentprovider.php": [
+      "tests/tests/kernel/classes/help/expHelpContentTest.php"
+    ],
+    "kernel/classes/help/content/exphelpcontentinstaller.php": [
+      "tests/tests/kernel/classes/help/expHelpContentTest.php"
+    ],
+    "kernel/classes/help/content/exphelpcontentseeder.php": [
+      "tests/tests/kernel/classes/help/expHelpContentTest.php"
+    ],
+    "kernel/classes/help/exphelpcontextpageinterface.php": [
+      "tests/tests/kernel/classes/help/expHelpContentTest.php"
+    ],
+    "kernel/private/classes/views/exphelp/context.php": [
+      "tests/tests/kernel/classes/help/expHelpContentTest.php"
+    ],
+    "kernel/classes/help/content/exphelpcontentexport.php": [
+      "tests/tests/kernel/classes/help/expHelpContentExportTest.php"
     ]
   },
   "generated": {

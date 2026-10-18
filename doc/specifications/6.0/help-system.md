@@ -1,6 +1,8 @@
 # Plan: user manuals and help maintained inside Exponential
 
-Status: proposal, 18 October 2026. Companion page: [the help style guide](help-style-guide.md).
+Status: proposal, 18 October 2026; phase 1 (classes, tree, sections, states, roles, validator, web and context help
+in the help of the administration) implemented in 6.0.15, see [help maintained as content](../../features/6.0/help-content.md).
+Companion page: [the help style guide](help-style-guide.md).
 
 ## Idea
 
