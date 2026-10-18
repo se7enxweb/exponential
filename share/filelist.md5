@@ -334,7 +334,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin/stylesheets/modules/content.css
 aa82582790ae9045ab54f1183a83a860  design/admin/stylesheets/modules/people.css
-6fa2f2b6d20e607740cb056eef9c307e  design/admin/stylesheets/modules/setup.css
+ef2a553f3e9a28390f0d235e3098b593  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
@@ -1045,7 +1045,7 @@ d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin4/stylesheets/modules/content.css
 aa82582790ae9045ab54f1183a83a860  design/admin4/stylesheets/modules/people.css
-6fa2f2b6d20e607740cb056eef9c307e  design/admin4/stylesheets/modules/setup.css
+ef2a553f3e9a28390f0d235e3098b593  design/admin4/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin4/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin4/stylesheets/modules/workflow.css
 6e999aa90b2660caf0fe3e2ef577ecdf  design/admin4/stylesheets/packagecompare.css
@@ -6858,7 +6858,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
 2c4c64d6057a3119262cb387c39bc7d4  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
-8cb3d1bc35e2f881776309e00d3e9360  settings/menu.ini
+7f8f7c96b0a7f7dbbf8fb08db508153d  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 a31f00b74645eb27de381ce29244079b  settings/module.ini
 1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini

@@ -1425,5 +1425,8 @@ label.a4-package-option-label {
 .a4-setup-languages-steps .a4-meta { display: block; }
 /* The locale of this siteaccess */
 .a4-setup-languages-table tr.is-current > * { background-color: var(--a4-accent-soft); }
+@media (forced-colors: active) {
+  .a4-setup-languages-table tr.is-current > * { outline: 2px solid Highlight; outline-offset: -2px; }
+}
 .a4-setup-languages-problems { display: grid; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-4); padding: 0; list-style: none; }
 .a4-setup-languages-detail { margin-bottom: var(--a4-space-4); }
