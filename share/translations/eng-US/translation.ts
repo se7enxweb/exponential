@@ -15170,6 +15170,14 @@ Note: The packages will not be uninstalled.</translation>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Follow, search and cross-reference the log files.</translation>
     </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Interface languages</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>The translation each interface language shows, and what it falls back to.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -58116,6 +58124,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Error digest</source>
         <translation>Error digest</translation>
     </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>Interface languages</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -71176,6 +71188,225 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Web server error log</source>
         <translation>Web server error log</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Interface languages</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Locales</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>With a translation of their own</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Translated through a fallback</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>In the English source texts</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problems</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Its chain comes back to %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Its chain is longer than FallbackMaxDepth and is cut at %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Falls back to %target, which is no locale code.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Falls back to %target, which has neither a locale file nor a translation.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] names %target, which is no fallback rule.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Has a fallback, but no locale file.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Falls back to %target, which has no translation yet: it shows the English source texts.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>All locales</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>The installation has no locale file for %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Translation of its own</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Interface</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % translated</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>through %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>English source texts</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensions</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated of %total translated, %complete complete</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Fallback chain</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>no translation</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>by FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>by the automatic same-language fallback</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>by the rule %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>None: without a translation of its own it shows the English source texts.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Translated</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count locales with a configured fallback</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: every translation of the chain, the most specific winning</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: the first translation of the chain</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Never for: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>disabled</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>The same list on the command line: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count shown</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Locale</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Language</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>This siteaccess</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>source texts</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>problem</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated of %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % on average</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>No locale is of this kind.</translation>
     </message>
 </context>
 </TS>
