@@ -9,7 +9,8 @@
    when the user may read that node, as the "Current user" box does; without a main node or read access, and on edit
    and browse pages, it stays text. The link is named by the name and login it shows; "Open your user object" is its
    tooltip and description. With exphelp/read (and the help switched on) the menu ends with the Help center, the
-   start page of the help (exphelp/dashboard); the header's "?" link opens the help of the page itself. *}
+   start page of the help (exphelp/dashboard), read from $a4_help of the page layout (no fetch here); the header's
+   "?" link opens the help of the page itself. *}
 {if $current_user.is_logged_in}
 {def $a4_user_login = $current_user.login
      $a4_user_name = $current_user.contentobject.name
@@ -19,7 +20,7 @@
      $a4_user_node = $current_user.contentobject.main_node
      $a4_user_self = false()
      $a4_user_href = false()
-     $a4_user_help = and( ezini( 'HelpSettings', 'Enabled', 'exphelp.ini' )|eq( 'true' ), fetch( 'user', 'has_access_to', hash( 'module', 'exphelp', 'function', 'read' ) ) )}
+     $a4_user_help = first_set( $a4_help, false() )}
 {if and( $a4_user_inactive|not, $a4_user_node )}{set $a4_user_self = $a4_user_node.can_read}{/if}
 {if $a4_user_self}{set $a4_user_href = cond( $a4_user_node.url_alias, $a4_user_node.url_alias, concat( 'content/view/full/', $a4_user_node.node_id ) )}{/if}
 <div id="header-user" class="header-user">

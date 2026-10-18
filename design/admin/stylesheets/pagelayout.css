@@ -148,7 +148,7 @@ a.image-text:hover > span
 #header-help .header-help-front span { display: block; color: var(--a4-muted); }
 #header-help .header-help-heading { margin: var(--a4-space-3) 0 var(--a4-space-1); padding-inline: var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-s); font-weight: 600; }
 #header-help .header-help-list { margin: 0; padding: 0; list-style: none; }
-#header-help a.header-help-center { margin-top: var(--a4-space-2); padding-top: var(--a4-space-2); border-top: 1px solid var(--a4-line); border-radius: 0; font-weight: 600; }
+#header-help a.header-help-center { margin-bottom: var(--a4-space-2); padding-bottom: var(--a4-space-2); border-bottom: 1px solid var(--a4-line); border-radius: 0; font-weight: 600; }
 
 #header-usermenu span.header-usermenu-name
 {

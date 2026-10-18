@@ -72940,14 +72940,6 @@ Gracias por tu feedback</translation>
         <translation>La búsqueda no está disponible en este momento.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Contraer</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Expandir</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Ninguna página contiene todas las palabras; estas contienen algunas.</translation>
     </message>
@@ -72958,10 +72950,6 @@ Gracias por tu feedback</translation>
     <message>
         <source>Getting started</source>
         <translation>Primeros pasos</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Contenido y edición</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -73204,10 +73192,6 @@ Gracias por tu feedback</translation>
         <translation>¿Has encontrado un error?</translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation>Guías y referencia para todos los que trabajan con %site, a partir de la documentación de la versión de esta instalación.</translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation>Centro de ayuda</translation>
     </message>
@@ -73426,10 +73410,6 @@ Gracias por tu feedback</translation>
     <message>
         <source>Type</source>
         <translation>Tipo</translation>
-    </message>
-    <message>
-        <source>Type a word to search every help page.</source>
-        <translation>Escribe una palabra para buscar en todas las páginas de ayuda.</translation>
     </message>
     <message>
         <source>Use this extension</source>
@@ -74082,6 +74062,90 @@ Gracias por tu feedback</translation>
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
         <translation>La organización sin ánimo de lucro, la familia de productos y sus compromisos.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count temas de ayuda</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Todos los manuales</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Concepto</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Índice</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>Descargar EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>Descargar PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Editar este tema</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Edición %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>Desde la versión %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Temas de ayuda</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Manuales</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Manuales y temas de ayuda</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Plataforma:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Vista previa</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Vista previa: %state, no se muestra a los lectores</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Tarea</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Todavía no hay manuales que puedas leer.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Este manual todavía no tiene temas que puedas leer.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Tipo de tema:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Solución de problemas</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Versiones %from a %to</translation>
     </message>
 </context>
 </TS>
