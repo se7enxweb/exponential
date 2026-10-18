@@ -71954,31 +71954,31 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Documentation license</source>
-        <translation>ترخيص التوثيق</translation>
+        <translation>ترخيص الوثائق</translation>
     </message>
     <message>
         <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>هذه الصفحة جزء من توثيق الامتداد %extension وتُوزَّع بموجب ترخيص ذلك الامتداد.</translation>
+        <translation>هذه الصفحة جزء من وثائق الامتداد %extension وتُوزَّع بموجب ترخيص ذلك الامتداد.</translation>
     </message>
     <message>
         <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>وُرثت هذه الصفحة من توثيق البرنامج الأصلي. لا يشملها %license؛ وهي تُوزَّع بموجب %other.</translation>
+        <translation>ورثت هذه الصفحة من وثائق البرنامج الأصلي. وهي لا تخضع لـ %license؛ بل تُوزَّع بموجب %other.</translation>
     </message>
     <message>
         <source>Which pages have which license</source>
-        <translation>أي الصفحات تخضع لأي ترخيص</translation>
+        <translation>أي الصفحات تحمل أي ترخيص</translation>
     </message>
     <message>
         <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>هذا هو نص %license، الإصدار %version، كما تنشره مؤسسة البرمجيات الحرة. يحق لأي شخص نسخه ومشاركته حرفيًا؛ ولا يُسمح بتغييره.</translation>
+        <translation>هذا نص %license، الإصدار %version، كما تنشره مؤسسة البرمجيات الحرة. يحق لأي شخص نسخه ومشاركته حرفيًا؛ ولا يُسمح بتغييره.</translation>
     </message>
     <message>
         <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>هذا التوثيق توثيق حر، مرخَّص بموجب %license %version أو أي إصدار لاحق.</translation>
+        <translation>هذه الوثائق وثائق حرة، مرخّصة بموجب %license %version أو أي إصدار لاحق.</translation>
     </message>
     <message>
         <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>هذا التوثيق توثيق حر، مرخَّص بموجب %license %version.</translation>
+        <translation>هذه الوثائق وثائق حرة، مرخّصة بموجب %license %version.</translation>
     </message>
     <message>
         <source>Read the license</source>
@@ -71990,7 +71990,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>What you can do with free documentation</source>
-        <translation>ما يمكنك فعله بالتوثيق الحر</translation>
+        <translation>ما الذي يمكنك فعله بالوثائق الحرة</translation>
     </message>
     <message>
         <source>Copyright and license notice</source>
@@ -71998,55 +71998,55 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Free documentation: use it to help yourself and others</source>
-        <translation>توثيق حر: استخدمه لمساعدة نفسك والآخرين</translation>
+        <translation>وثائق حرة: استخدمها لمساعدة نفسك والآخرين</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>هذه المساعدة توثيق حر، مرخَّص بموجب %license %version أو أي إصدار لاحق. يمكنك استخدامه ومشاركته وتحسينه:</translation>
+        <translation>هذه المساعدة وثائق حرة، مرخّصة بموجب %license %version أو أي إصدار لاحق. يمكنك استخدامها ومشاركتها وتحسينها:</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>هذه المساعدة توثيق حر، مرخَّص بموجب %license %version. يمكنك استخدامه ومشاركته وتحسينه:</translation>
+        <translation>هذه المساعدة وثائق حرة، مرخّصة بموجب %license %version. يمكنك استخدامها ومشاركتها وتحسينها:</translation>
     </message>
     <message>
         <source>Study it</source>
-        <translation>ادرسه</translation>
+        <translation>ادرسها</translation>
     </message>
     <message>
         <source>Read any page as often as you like, for any purpose.</source>
-        <translation>اقرأ أي صفحة بقدر ما تشاء، لأي غرض.</translation>
+        <translation>اقرأ أي صفحة كلما شئت، لأي غرض.</translation>
     </message>
     <message>
         <source>Copy it and share it</source>
-        <translation>انسخه وشاركه</translation>
+        <translation>انسخها وشاركها</translation>
     </message>
     <message>
         <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>أعطِ الصفحات لمستخدمين آخرين، ورقيًا أو كملفات. احتفظ بإشعار حقوق النشر وإشعار الترخيص ونسخة من الترخيص مع كل نسخة.</translation>
+        <translation>أعطِ الصفحات لمستخدمين آخرين، على الورق أو كملفات. احتفظ بإشعار حقوق النشر وإشعار الترخيص ونسخة من الترخيص مع كل نسخة.</translation>
     </message>
     <message>
         <source>Translate, adapt and improve it</source>
-        <translation>ترجمه وكيّفه وحسّنه</translation>
+        <translation>ترجمها وكيّفها وحسّنها</translation>
     </message>
     <message>
         <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>شارك نسختك بموجب الترخيص نفسه، مع الإشعارات الأصلية وملاحظة بما غيّرته.</translation>
+        <translation>شارك نسختك بالترخيص نفسه، مع الإشعارات الأصلية وملاحظة بما غيّرته.</translation>
     </message>
     <message>
         <source>Cite it</source>
-        <translation>استشهد به</translation>
+        <translation>استشهد بها</translation>
     </message>
     <message>
         <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>أشر إلى صفحة بعنوانها وعنوانها في المساعدة، أو بملفها في دليل doc.</translation>
+        <translation>أشر إلى الصفحة بعنوانها وعنوانها في المساعدة، أو بملفها في دليل doc.</translation>
     </message>
     <message>
         <source>Contribute fixes back</source>
-        <translation>ساهم بالتصحيحات</translation>
+        <translation>ساهم بالإصلاحات</translation>
     </message>
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>استخدم &quot;التحرير على GitHub&quot; في أي صفحة. تُقبل التغييرات بموجب الترخيص نفسه، فتبقى حرة للجميع.</translation>
+        <translation>استخدم &quot;تحرير على GitHub&quot; في أي صفحة. تُقبَل التغييرات بالترخيص نفسه، فتبقى حرة للجميع.</translation>
     </message>
     <message>
         <source>Apply filters</source>

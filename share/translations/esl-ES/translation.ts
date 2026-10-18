@@ -73390,11 +73390,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>Esta página forma parte de la documentación de la extensión %extension y se distribuye bajo la licencia de esa extensión.</translation>
+        <translation>Esta página forma parte de la documentación de la extensión %extension y se distribuye con la licencia de esa extensión.</translation>
     </message>
     <message>
         <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>Esta página procede de la documentación del software original. No está cubierta por la %license; se distribuye bajo la %other.</translation>
+        <translation>Esta página procede de la documentación del software original. No está cubierta por la %license; se distribuye con la %other.</translation>
     </message>
     <message>
         <source>Which pages have which license</source>
@@ -73422,7 +73422,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>What you can do with free documentation</source>
-        <translation>Lo que puede hacer con la documentación libre</translation>
+        <translation>Qué puede hacer con la documentación libre</translation>
     </message>
     <message>
         <source>Copyright and license notice</source>
@@ -73454,7 +73454,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Entregue páginas a otros usuarios, en papel o como archivos. Mantenga con cada copia el aviso de copyright, el aviso de licencia y una copia de la licencia.</translation>
+        <translation>Dé páginas a otros usuarios, en papel o como archivos. Conserve el aviso de copyright, el aviso de licencia y una copia de la licencia con cada copia.</translation>
     </message>
     <message>
         <source>Translate, adapt and improve it</source>
@@ -73462,7 +73462,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Comparta su versión bajo la misma licencia, con los avisos originales y una nota de lo que ha cambiado.</translation>
+        <translation>Comparta su versión con la misma licencia, con los avisos originales y una nota de lo que ha cambiado.</translation>
     </message>
     <message>
         <source>Cite it</source>
@@ -73478,7 +73478,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Use «Editar en GitHub» en cualquier página. Los cambios se aceptan bajo la misma licencia, así que siguen siendo libres para todos.</translation>
+        <translation>Use «Editar en GitHub» en cualquier página. Los cambios se aceptan con la misma licencia, así que siguen siendo libres para todos.</translation>
     </message>
     <message>
         <source>Apply filters</source>

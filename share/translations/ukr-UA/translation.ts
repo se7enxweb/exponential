@@ -71930,7 +71930,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>Цю сторінку успадковано з документації оригінального програмного забезпечення. На неї не поширюється %license; вона поширюється за %other.</translation>
+        <translation>Ця сторінка успадкована з документації початкового програмного забезпечення. На неї не поширюється %license; вона поширюється за %other.</translation>
     </message>
     <message>
         <source>Which pages have which license</source>
@@ -71938,15 +71938,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>Це текст %license, версія %version, у тому вигляді, в якому його публікує Free Software Foundation. Кожен може дослівно копіювати й поширювати його; змінювати його не дозволено.</translation>
+        <translation>Це текст %license, версії %version, у тому вигляді, як його публікує Free Software Foundation. Кожен може дослівно копіювати й поширювати його; змінювати його не дозволено.</translation>
     </message>
     <message>
         <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>Ця документація є вільною документацією, ліцензованою за %license %version або пізнішою версією.</translation>
+        <translation>Ця документація є вільною документацією за ліцензією %license %version або пізнішою.</translation>
     </message>
     <message>
         <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>Ця документація є вільною документацією, ліцензованою за %license %version.</translation>
+        <translation>Ця документація є вільною документацією за ліцензією %license %version.</translation>
     </message>
     <message>
         <source>Read the license</source>
@@ -71954,7 +71954,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The license on the web</source>
-        <translation>Ліцензія в мережі</translation>
+        <translation>Ліцензія в інтернеті</translation>
     </message>
     <message>
         <source>What you can do with free documentation</source>
@@ -71962,19 +71962,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Copyright and license notice</source>
-        <translation>Повідомлення про авторські права та ліцензію</translation>
+        <translation>Повідомлення про авторські права й ліцензію</translation>
     </message>
     <message>
         <source>Free documentation: use it to help yourself and others</source>
-        <translation>Вільна документація: використовуйте її, щоб допомогти собі та іншим</translation>
+        <translation>Вільна документація: користуйтеся нею, щоб допомагати собі й іншим</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>Ця довідка є вільною документацією, ліцензованою за %license %version або пізнішою версією. Ви можете використовувати, поширювати й покращувати її:</translation>
+        <translation>Ця довідка є вільною документацією за ліцензією %license %version або пізнішою. Ви можете використовувати, поширювати й покращувати її:</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>Ця довідка є вільною документацією, ліцензованою за %license %version. Ви можете використовувати, поширювати й покращувати її:</translation>
+        <translation>Ця довідка є вільною документацією за ліцензією %license %version. Ви можете використовувати, поширювати й покращувати її:</translation>
     </message>
     <message>
         <source>Study it</source>
@@ -71986,19 +71986,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Copy it and share it</source>
-        <translation>Копіюйте та поширюйте її</translation>
+        <translation>Копіюйте її й поширюйте</translation>
     </message>
     <message>
         <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Передавайте сторінки іншим користувачам, на папері або у файлах. Зберігайте з кожною копією повідомлення про авторські права, повідомлення про ліцензію та копію ліцензії.</translation>
+        <translation>Передавайте сторінки іншим, на папері або як файли. Зберігайте з кожною копією повідомлення про авторські права, повідомлення про ліцензію та копію ліцензії.</translation>
     </message>
     <message>
         <source>Translate, adapt and improve it</source>
-        <translation>Перекладайте, адаптуйте та покращуйте її</translation>
+        <translation>Перекладайте, адаптуйте й покращуйте її</translation>
     </message>
     <message>
         <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Поширюйте свою версію за тією ж ліцензією, з оригінальними повідомленнями та приміткою про те, що ви змінили.</translation>
+        <translation>Поширюйте свою версію під тією самою ліцензією, з початковими повідомленнями й приміткою про те, що ви змінили.</translation>
     </message>
     <message>
         <source>Cite it</source>
@@ -72014,7 +72014,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Скористайтеся «Редагувати на GitHub» на будь-якій сторінці. Зміни приймаються за тією ж ліцензією, тож вони залишаються вільними для всіх.</translation>
+        <translation>Скористайтеся «Редагувати на GitHub» на будь-якій сторінці. Зміни приймаються за тією самою ліцензією, тож вони залишаються вільними для всіх.</translation>
     </message>
     <message>
         <source>Apply filters</source>

@@ -73344,7 +73344,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Which pages have which license</source>
-        <translation>Quelles pages sont sous quelle licence</translation>
+        <translation>Quelles pages ont quelle licence</translation>
     </message>
     <message>
         <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
@@ -73372,7 +73372,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Copyright and license notice</source>
-        <translation>Mention de copyright et de licence</translation>
+        <translation>Mention de droits d&apos;auteur et de licence</translation>
     </message>
     <message>
         <source>Free documentation: use it to help yourself and others</source>
@@ -73400,7 +73400,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Donnez des pages à d&apos;autres utilisateurs, sur papier ou sous forme de fichiers. Conservez avec chaque copie la mention de copyright, la mention de licence et une copie de la licence.</translation>
+        <translation>Donnez des pages à d&apos;autres utilisateurs, sur papier ou sous forme de fichiers. Gardez la mention de droits d&apos;auteur, la mention de licence et une copie de la licence avec chaque copie.</translation>
     </message>
     <message>
         <source>Translate, adapt and improve it</source>
@@ -73416,15 +73416,15 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
     <message>
         <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>Renvoyez à une page par son titre et son adresse dans l&apos;aide, ou par son fichier dans le répertoire doc.</translation>
+        <translation>Désignez une page par son titre et son adresse dans l&apos;aide, ou par son fichier dans le répertoire doc.</translation>
     </message>
     <message>
         <source>Contribute fixes back</source>
-        <translation>Proposer vos corrections</translation>
+        <translation>Contribuer vos corrections</translation>
     </message>
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Utilisez « Modifier sur GitHub » sur n&apos;importe quelle page. Les modifications sont acceptées sous la même licence et restent ainsi libres pour tous.</translation>
+        <translation>Utilisez « Modifier sur GitHub » sur n&apos;importe quelle page. Les modifications sont acceptées sous la même licence, elles restent donc libres pour tous.</translation>
     </message>
     <message>
         <source>Apply filters</source>

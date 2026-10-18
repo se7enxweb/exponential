@@ -71937,31 +71937,31 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Documentation license</source>
-        <translation>De&apos;wI&apos; ghItlh chaw&apos;</translation>
+        <translation>De&apos; ghItlh chaw&apos;</translation>
     </message>
     <message>
         <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>%extension De&apos;wI&apos; ghItlh &apos;ay&apos; ghaH nav&apos;e&apos;. chaw&apos;Daj lo&apos;taHvIS DIvumlu&apos;.</translation>
+        <translation>%extension chelwI&apos; De&apos; ghItlh &apos;ay&apos; &apos;oH navvam&apos;e&apos;, chelwI&apos; chaw&apos; lo&apos;.</translation>
     </message>
     <message>
         <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>wa&apos;DIch ghun De&apos;wI&apos; ghItlh vo&apos; nav&apos;e&apos; Hevlu&apos;. %license DaH &apos;oHbe&apos;; %other lo&apos;taHvIS DIvumlu&apos;.</translation>
+        <translation>wa&apos;DIch ghun De&apos; ghItlh vo&apos; navvam Suqlu&apos;. %license lo&apos;be&apos;; %other lo&apos;.</translation>
     </message>
     <message>
         <source>Which pages have which license</source>
-        <translation>nav chaw&apos; Hoch</translation>
+        <translation>nav chaw&apos; Segh</translation>
     </message>
     <message>
         <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>%license ghItlh, %version mI&apos;, Free Software Foundation ghItlh &apos;oH. Hoch ghItlh jang &apos;ej lo&apos;laH; choHlaHbe&apos;.</translation>
+        <translation>%license ghItlh &apos;oH, mI&apos; %version, Free Software Foundation ngangmoHmeH. Hoch ghotvaD mu&apos; Hoch qonqa&apos;laH &apos;ej DIblaH; choHlu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>De&apos;wI&apos; ghItlh tlhab &apos;oH De&apos;wI&apos; ghItlh&apos;e&apos;. %license %version pagh ret chaw&apos; lo&apos;lu&apos;.</translation>
+        <translation>De&apos; ghItlhvam tlhab, %license %version pagh tlhaQ chaw&apos; lo&apos;.</translation>
     </message>
     <message>
         <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>De&apos;wI&apos; ghItlh tlhab &apos;oH De&apos;wI&apos; ghItlh&apos;e&apos;. %license %version chaw&apos; lo&apos;lu&apos;.</translation>
+        <translation>De&apos; ghItlhvam tlhab, %license %version chaw&apos; lo&apos;.</translation>
     </message>
     <message>
         <source>Read the license</source>
@@ -71969,67 +71969,67 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>The license on the web</source>
-        <translation>chaw&apos; Qo&apos;noS SIrgh</translation>
+        <translation>De&apos;wI&apos; Qorwagh Daq chaw&apos;</translation>
     </message>
     <message>
         <source>What you can do with free documentation</source>
-        <translation>De&apos;wI&apos; ghItlh tlhab Dalo&apos;laH</translation>
+        <translation>De&apos; ghItlh tlhab Dalo&apos;DI&apos; nuq Data&apos;laH</translation>
     </message>
     <message>
         <source>Copyright and license notice</source>
-        <translation>ghItlhwI&apos; chaw&apos; &apos;ej chaw&apos; QIn</translation>
+        <translation>ghItlh Dub &apos;ej chaw&apos; QIn</translation>
     </message>
     <message>
         <source>Free documentation: use it to help yourself and others</source>
-        <translation>De&apos;wI&apos; ghItlh tlhab: yIlo&apos; &apos;ej SoH latlh je yIQaH</translation>
+        <translation>De&apos; ghItlh tlhab: yIlo&apos; bIQaHjaj &apos;ej latlh DaQaHjaj</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>QaH De&apos;wI&apos; ghItlh tlhab &apos;oH. %license %version pagh ret chaw&apos; lo&apos;lu&apos;. Dalo&apos;laH, Dalo&apos;moHlaH, DanIvmoHlaH je:</translation>
+        <translation>QaHvam tlhab, %license %version pagh tlhaQ chaw&apos; lo&apos;. Dalo&apos;laH, DaDIblaH &apos;ej DapIvmoHlaH:</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>QaH De&apos;wI&apos; ghItlh tlhab &apos;oH. %license %version chaw&apos; lo&apos;lu&apos;. Dalo&apos;laH, Dalo&apos;moHlaH, DanIvmoHlaH je:</translation>
+        <translation>QaHvam tlhab, %license %version chaw&apos; lo&apos;. Dalo&apos;laH, DaDIblaH &apos;ej DapIvmoHlaH:</translation>
     </message>
     <message>
         <source>Study it</source>
-        <translation>yIghoj</translation>
+        <translation>yIHaD</translation>
     </message>
     <message>
         <source>Read any page as often as you like, for any purpose.</source>
-        <translation>nav DaneH yIlaD, Hoch ngoQ.</translation>
+        <translation>nav Hoch yIlaD, poH Hoch, ngoQ Hoch.</translation>
     </message>
     <message>
         <source>Copy it and share it</source>
-        <translation>yIjang &apos;ej yIlo&apos;moH</translation>
+        <translation>yIqonqa&apos; &apos;ej yIDIb</translation>
     </message>
     <message>
         <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>latlh lo&apos;wI&apos;pu&apos; nav tunob, nav Daq pagh De&apos; teywI&apos; Daq. Hoch jang ghItlhwI&apos; chaw&apos; QIn, chaw&apos; QIn, chaw&apos; jang je yIpol.</translation>
+        <translation>latlh lo&apos;wI&apos;pu&apos;vaD nav yInob, nav Dap pagh De&apos;wI&apos; ghItlh. Hoch qonqa&apos;Daq ghItlh Dub QIn, chaw&apos; QIn &apos;ej chaw&apos; qonqa&apos; yIpol.</translation>
     </message>
     <message>
         <source>Translate, adapt and improve it</source>
-        <translation>yImugh, yIchoH, yInIvmoH je</translation>
+        <translation>yImugh, yIchoH &apos;ej yIpIvmoH</translation>
     </message>
     <message>
         <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>chaw&apos; rap lo&apos;taHvIS De&apos;wI&apos; ghItlh Dalo&apos;moH. wa&apos;DIch QIn &apos;ej Dachoh&apos;bogh QIn je yIchel.</translation>
+        <translation>rap chaw&apos; yIlo&apos; mI&apos;lIj DaDIbDI&apos;, wa&apos;DIch QInmey &apos;ej Dachoghta&apos;bogh QIn je.</translation>
     </message>
     <message>
         <source>Cite it</source>
-        <translation>yIjatlh</translation>
+        <translation>yIghItlhqa&apos;</translation>
     </message>
     <message>
         <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>nav pong &apos;ej QaH Daq SIrgh, pagh doc Daq De&apos; teywI&apos; yIlo&apos;.</translation>
+        <translation>QaH Daq nav pong &apos;ej Daq, pagh doc Daq De&apos;wI&apos; ghItlh yIlo&apos; nav DaghItlhmeH.</translation>
     </message>
     <message>
         <source>Contribute fixes back</source>
-        <translation>Qagh Dachenmoh&apos;bogh yInob</translation>
+        <translation>tI&apos;meH choHmey yInob</translation>
     </message>
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Hoch nav Daq &quot;GitHub Daq yIchoH&quot; yIlo&apos;. chaw&apos; rap lo&apos;taHvIS choHmey Hevlu&apos;, vaj Hoch tlhab ratlh.</translation>
+        <translation>nav Hoch Daq «GitHub Daq yIchoH» yIlo&apos;. rap chaw&apos; lo&apos;bogh choHmey laj, vaj Hoch ghotvaD tlhab ratlh.</translation>
     </message>
     <message>
         <source>Apply filters</source>
