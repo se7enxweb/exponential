@@ -125,14 +125,19 @@ class expHelpContextRegistry
         $pageInfo = null;
         if ( $read( 'CheckPages', 'enabled' ) !== 'disabled' )
         {
-            $pageInfo = function ( $id ) {
+            // Every admin page asks this for its Help link: it reads the small list of served pages the last index
+            // load wrote (expHelpDocumentIndex::pageTitles(), one include), never the index itself (seconds).
+            // No list yet: nothing is known, the page is taken as it is.
+            $titles = false;
+            $pageInfo = function ( $id ) use ( &$titles ) {
                 try
                 {
-                    $index = expHelpDocumentIndex::instance();
-                    if ( !$index->isAllowed( $id ) )
-                        return null;
-                    $document = $index->document( $id );
-                    return is_array( $document ) ? $document : array();
+                    if ( $titles === false )
+                        $titles = expHelpDocumentIndex::pageTitles();
+                    if ( $titles === null )
+                        return array();
+                    $id = expHelpAllowlist::normalize( $id );
+                    return $id !== null && isset( $titles[$id] ) ? array( 'title' => $titles[$id] ) : null;
                 }
                 catch ( Exception $e )
                 {

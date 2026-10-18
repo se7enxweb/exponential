@@ -704,9 +704,63 @@ class expHelpDocumentIndex
         $cached = $this->read( 'index-' . $signature . '.php' );
         if ( is_array( $cached ) && isset( $cached['format'], $cached['documents'], $cached['signature'] )
              && $cached['format'] === self::FORMAT && $cached['signature'] === $signature )
-            return $this->data = $cached;
-        $this->rebuild();
+            $this->data = $cached;
+        else
+            $this->rebuild();
+        $this->storePageTitles();
         return $this->data;
+    }
+
+    /** The file of pageTitles(), in the cache directory */
+    const PAGE_TITLES_FILE = 'pages.php';
+
+    /**
+     * Writes the small list of served pages (id => title) that pageTitles() reads, when it is missing or belongs to
+     * another index. Every admin page's Help link checks its page there, never in the full index.
+     *
+     * @return bool whether the file is current
+     */
+    protected function storePageTitles()
+    {
+        $dir = $this->cacheDir();
+        if ( $dir === null || $this->data === null )
+            return false;
+        $current = self::pageTitlesData( $dir );
+        if ( is_array( $current ) && isset( $current['signature'] ) && $current['signature'] === $this->data['signature'] )
+            return true;
+        $titles = array();
+        foreach ( $this->data['documents'] as $id => $document )
+            $titles[(string)$id] = isset( $document['title'] ) && is_scalar( $document['title'] ) ? (string)$document['title'] : '';
+        return $this->store( self::PAGE_TITLES_FILE, array( 'signature' => $this->data['signature'], 'titles' => $titles ), self::PAGE_TITLES_FILE );
+    }
+
+    /**
+     * The served pages as id => title, from the small file the last index load wrote: cheap enough for every
+     * request (one stat and an opcache include). Null when there is none yet (no help page was opened and no
+     * `exp:help index` ran since the cache was cleared): then nothing is known and callers should not filter.
+     *
+     * @param string|null $dir the cache directory, default the installation's
+     * @return array|null
+     */
+    public static function pageTitles( $dir = null )
+    {
+        $data = self::pageTitlesData( $dir === null ? self::defaultCacheDir() : $dir );
+        return is_array( $data ) && isset( $data['titles'] ) && is_array( $data['titles'] ) ? $data['titles'] : null;
+    }
+
+    /**
+     * @param string|null $dir
+     * @return array|null
+     */
+    protected static function pageTitlesData( $dir )
+    {
+        if ( !is_string( $dir ) || $dir === '' )
+            return null;
+        $file = rtrim( $dir, '/' ) . '/' . self::PAGE_TITLES_FILE;
+        if ( !is_file( $file ) )
+            return null;
+        $data = @include $file;
+        return is_array( $data ) ? $data : null;
     }
 
     /**
