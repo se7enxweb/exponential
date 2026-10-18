@@ -7846,6 +7846,7 @@ d3d40e761c6b85ebaddc3ceee2a5b66e  tests/tests/design/AdminResponsiveTest.php
 df9169b60283ae0c34ac07e8909c9b54  tests/tests/design/AdminRetiredClassesTest.php
 c6696bb26b02b77930b8f73ecb0f1a40  tests/tests/design/AdminReverseRelationCheckTest.php
 999bf935b744564d34820f18ed44071c  tests/tests/design/AdminReviewTemplateWarningsTest.php
+4ed1fdf46ac9f4af65f97aee92c9d731  tests/tests/design/AdminRightToLeftTest.php
 9a880af6887faccecbc4b7cda3f89f64  tests/tests/design/AdminRoleListZebraTest.php
 4e1fa8a8f96a88cb202a1d802d384698  tests/tests/design/AdminScriptFailureTextsTest.php
 9e40a065721378ca5ab92eb202af8293  tests/tests/design/AdminScriptsBehaviourTest.php
