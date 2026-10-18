@@ -72559,14 +72559,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>La recherche n&apos;est pas disponible pour le moment.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Réduire</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Développer</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Aucune page ne contient tous les mots ; celles-ci en contiennent une partie.</translation>
     </message>
@@ -72577,10 +72569,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Getting started</source>
         <translation>Premiers pas</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Contenu et édition</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -73209,6 +73197,38 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Exponential documentation</source>
         <translation>Documentation d&apos;Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Modifier le contenu</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Fonctionnalités</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Aide et assistance</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Images et médias</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Langues</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Mises en page</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Publication</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Votre compte</translation>
     </message>
 </context>
 </TS>

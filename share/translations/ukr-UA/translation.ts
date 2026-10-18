@@ -71149,14 +71149,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Пошук зараз недоступний.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Згорнути</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Розгорнути</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Жодна сторінка не містить усіх слів; ці містять деякі з них.</translation>
     </message>
@@ -71167,10 +71159,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Getting started</source>
         <translation>Початок роботи</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Вміст і редагування</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -71799,6 +71787,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Exponential documentation</source>
         <translation>Документація Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Редагування вмісту</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Можливості</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Довідка й підтримка</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Зображення й медіа</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Мови</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Макети</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Публікація</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Ваш обліковий запис</translation>
     </message>
 </context>
 </TS>

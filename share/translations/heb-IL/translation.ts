@@ -71195,14 +71195,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>החיפוש אינו זמין כרגע.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>כיווץ</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>הרחבה</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>אף דף אינו מכיל את כל המילים; בדפים אלה יש חלק מהן.</translation>
     </message>
@@ -71213,10 +71205,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Getting started</source>
         <translation>צעדים ראשונים</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>תוכן ועריכה</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -71845,6 +71833,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Exponential documentation</source>
         <translation>התיעוד של Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>עריכת תוכן</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>תכונות</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>עזרה ותמיכה</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>תמונות ומדיה</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>שפות</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>פריסות</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>פרסום</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>החשבון שלך</translation>
     </message>
 </context>
 </TS>
