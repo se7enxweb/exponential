@@ -5421,7 +5421,7 @@ cde091ff977a26a609f39108326c5020  kernel/classes/help/exphelpfrontmatter.php
 fbe202253abbc1bce78eaaa73f6207ea  kernel/classes/help/exphelpissuereport.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
 beb74ae4c50906226bf0cfd83fddb2b2  kernel/classes/help/exphelpmarkdownrenderer.php
-f2f4f7222b423446d90fefa0a0ab25d6  kernel/classes/help/exphelpsearch.php
+2e980192f549cdbde60974cc4daebcd5  kernel/classes/help/exphelpsearch.php
 63e8afbb944019671f8b369642eb12d7  kernel/classes/ini/actions/expiniaction.php
 85b05708b2165d0dc398973d33ba0a0e  kernel/classes/ini/actions/expiniactionactions.php
 1e5387f9dde2f6bfbc97b60a92572340  kernel/classes/ini/actions/expiniactionadd.php
@@ -6872,7 +6872,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 a111b660f8e29a00cb059785bda7df42  settings/debugbar.ini
 3bfabc5627f3aa07599a418d6ff989ec  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-a97dc9cb027507a215e7628b505c2467  settings/exphelp.ini
+adfbd223431c82087abddb966de894d9  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -8364,7 +8364,7 @@ ead998cc3d4822efd40bb9da2d72d733  tests/tests/kernel/classes/help/expHelpLinksTe
 bbaef6878a19ff2211cc9cdf6225b655  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
 f5af6333a0efac158e183917cda8b55a  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
 1e2a5a06d45c173ce025b618e731ce09  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
-a684f12211ff378fe1c4dc493a899644  tests/tests/kernel/classes/help/expHelpSearchTest.php
+7a9a34541cd9bdb2f47c45ad79afd151  tests/tests/kernel/classes/help/expHelpSearchTest.php
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 f6ecb43c903ad708479858b8bbb01746  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 28f13941e6a56ca4b6dba5757c6fadd0  tests/tests/kernel/classes/ini/command/IniCommandTest.php

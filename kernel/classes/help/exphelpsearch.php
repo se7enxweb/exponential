@@ -8,10 +8,12 @@
  * (git HEAD, file times, settings) and the search settings, so a change to either builds a new index.
  *
  * Ranking: BM25 over weighted fields (title, headings, path, keywords, text: [SearchSettings] TitleBoost,
- * HeadingBoost, PathBoost, KeywordBoost, BodyBoost), times a boost per type (TypeBoost[]: changelogs and history
- * rank lower), times TitleMatchBoost when every query word is in the title. Every word must match; when no page
- * has all of them the search relaxes to any word and says so ('relaxed'). The last word also matches as a prefix
- * (search while typing) unless the query ends with a space; "quoted words" are marked together; -word excludes.
+ * HeadingBoost, PathBoost, KeywordBoost, BodyBoost), times a boost per type (TypeBoost[]: help pages and guides
+ * rank higher, specifications, changelogs and history lower), times VersionBoost[] for pages below the version
+ * directory of an older major version (features/3.8/), times TitleMatchBoost when every query word is in the
+ * title. Every word must match; when no page has all of them the search relaxes to any word and says so
+ * ('relaxed'). The last word also matches as a prefix (search while typing) unless the query ends with a space;
+ * "quoted words" are marked together; -word excludes.
  * A hit carries its best matching section (heading and anchor) and a snippet with the query words marked, as
  * escaped HTML ('snippet') and as parts ('snippet_parts': list of array( text, isMatch )) for clients that build
  * the DOM with text nodes.
@@ -31,7 +33,7 @@
 class expHelpSearch
 {
     /** Version of the index file format; a change builds a new index. */
-    const FORMAT = 1;
+    const FORMAT = 2;
 
     const DEFAULT_LIMIT = 20;
     const MAX_LIMIT = 50;
@@ -116,7 +118,9 @@ class expHelpSearch
     {
         $settings = array(
             'fieldWeights' => array( 'title' => 8.0, 'headings' => 3.0, 'path' => 2.0, 'keywords' => 4.0, 'body' => 1.0 ),
-            'typeBoost' => array( 'changelog' => 0.45, 'history' => 0.6 ),
+            'typeBoost' => array( 'help' => 1.5, 'guide' => 1.3, 'specification' => 0.8, 'changelog' => 0.45, 'history' => 0.6 ),
+            // pages below a version directory (features/3.8/, bc/4.1/): the older the major version, the lower
+            'versionBoost' => array( '3' => 0.5, '4' => 0.6, '5' => 0.75 ),
             'titleBoost' => 1.4,
             'stopWords' => self::$defaultStopWords,
             'cacheDir' => null,
@@ -141,12 +145,14 @@ class expHelpSearch
         $value = $number( 'TitleMatchBoost' );
         if ( $value !== null )
             $settings['titleBoost'] = $value;
-        if ( $ini->hasVariable( 'SearchSettings', 'TypeBoost' ) )
+        foreach ( array( 'TypeBoost' => 'typeBoost', 'VersionBoost' => 'versionBoost' ) as $name => $key )
         {
-            foreach ( (array)$ini->variable( 'SearchSettings', 'TypeBoost' ) as $type => $boost )
+            if ( !$ini->hasVariable( 'SearchSettings', $name ) )
+                continue;
+            foreach ( (array)$ini->variable( 'SearchSettings', $name ) as $what => $boost )
             {
-                if ( is_string( $type ) && is_numeric( $boost ) && $boost >= 0 && $boost <= 100 )
-                    $settings['typeBoost'][$type] = (float)$boost;
+                if ( ( is_string( $what ) || is_int( $what ) ) && (string)$what !== '' && is_numeric( $boost ) && $boost >= 0 && $boost <= 100 )
+                    $settings[$key][(string)$what] = (float)$boost;
             }
         }
         if ( $ini->hasVariable( 'SearchSettings', 'StopWords' ) )
@@ -212,6 +218,9 @@ class expHelpSearch
             $type = $index['docs'][$doc][4];
             if ( isset( $this->settings['typeBoost'][$type] ) )
                 $score *= $this->settings['typeBoost'][$type];
+            $major = $index['docs'][$doc][6];
+            if ( $major !== '' && isset( $this->settings['versionBoost'][$major] ) )
+                $score *= $this->settings['versionBoost'][$major];
             // every group matches a word of the title: the page is about the query
             $titleWords = array();
             foreach ( self::tokenize( $index['docs'][$doc][1] ) as $word )
@@ -393,7 +402,7 @@ class expHelpSearch
         $source = $this->source( $id );
         if ( $source !== null )
         {
-            $sections = self::sections( $source, false );
+            $sections = self::sections( $source, false, self::isMarkdown( $id ) );
             $best = $this->bestSection( $sections, $marks );
             if ( $best !== null )
             {
@@ -482,46 +491,81 @@ class expHelpSearch
     /**
      * The sections of a Markdown or text source: list of array( heading|null, anchor|null, text ). With $plain
      * the text is plain text (Markdown syntax removed, white space collapsed), else the Markdown of the section.
+     *
+     * Headings are found as expHelpDocumentIndex::headings() finds them (ATX "# ..." and setext "Title\n====",
+     * outside fenced code, a heading without text is no heading) and get the same text and anchor, so a hit links
+     * to the id the viewer gives the heading. A source that is not Markdown ($markdown false) is one section.
      */
-    public static function sections( $source, $plain = true )
+    public static function sections( $source, $plain = true, $markdown = true )
     {
         $source = str_replace( array( "\r\n", "\r" ), "\n", (string)$source );
         $source = self::stripFrontMatter( $source );
+        if ( !$markdown )
+        {
+            $text = $plain ? self::plain( $source ) : $source;
+            return trim( $text ) === '' ? array() : array( array( 'heading' => null, 'anchor' => null, 'text' => $text ) );
+        }
         $sections = array();
         $current = array( 'heading' => null, 'anchor' => null, 'lines' => array() );
         $fence = null;
         $slugs = array();
+        $previousIsText = false;
         foreach ( explode( "\n", $source ) as $line )
         {
-            // only lines that start with #, ` or ~ (after up to three spaces) can change the structure
+            // only lines that start with #, `, ~, = or - (after up to three spaces) can change the structure
             $first = ltrim( substr( $line, 0, 4 ), ' ' );
             $c = $first !== '' ? $first[0] : '';
-            if ( $c !== '#' && $c !== '`' && $c !== '~' )
+            if ( $c !== '#' && $c !== '`' && $c !== '~' && $c !== '=' && $c !== '-' )
             {
                 $current['lines'][] = $line;
+                $previousIsText = $fence === null;
                 continue;
             }
             if ( $fence !== null )
             {
-                if ( preg_match( '/^\s{0,3}(`{3,}|~{3,})\s*$/', $line, $m ) && $m[1][0] === $fence[0] && strlen( $m[1] ) >= strlen( $fence ) )
+                if ( preg_match( '/^ {0,3}(`{3,}|~{3,})\s*$/', $line, $m ) && $m[1][0] === $fence[0] && strlen( $m[1] ) >= strlen( $fence ) )
                     $fence = null;
                 $current['lines'][] = $line;
+                $previousIsText = false;
                 continue;
             }
-            if ( preg_match( '/^\s{0,3}(`{3,}|~{3,})/', $line, $m ) )
+            if ( preg_match( '/^ {0,3}(`{3,}|~{3,})/', $line, $m ) )
             {
                 $fence = $m[1];
                 $current['lines'][] = $line;
+                $previousIsText = false;
                 continue;
             }
-            if ( preg_match( '/^\s{0,3}(#{1,6})\s+(.*?)\s*#*\s*$/', $line, $m ) )
+            if ( preg_match( '/^ {0,3}(#{1,6})(?:[ \t]+(.*?))?(?:[ \t]+#+)?[ \t]*$/', $line, $m ) )
             {
-                $sections[] = $current;
-                $heading = trim( self::inlineText( $m[2] ) );
-                $current = array( 'heading' => $heading, 'anchor' => self::anchor( $heading, $slugs ), 'lines' => array() );
+                $heading = self::headingText( isset( $m[2] ) ? $m[2] : '' );
+                $previousIsText = false;
+                if ( $heading !== '' )
+                {
+                    $sections[] = $current;
+                    $current = array( 'heading' => $heading, 'anchor' => self::anchor( $heading, $slugs ), 'lines' => array() );
+                }
                 continue;
+            }
+            if ( $previousIsText && $current['lines'] && preg_match( '/^ {0,3}(=+|-+)[ \t]*$/', $line ) )
+            {
+                $previous = (string)end( $current['lines'] );
+                // a setext underline follows a line that is not a list item, quote, table or indented code
+                if ( trim( $previous ) !== '' && !preg_match( '/^( {4}|\t| {0,3}([-*+>|]|\d+[.)])(\s|$))/', $previous ) )
+                {
+                    $heading = self::headingText( $previous );
+                    $previousIsText = false;
+                    if ( $heading !== '' )
+                    {
+                        array_pop( $current['lines'] );
+                        $sections[] = $current;
+                        $current = array( 'heading' => $heading, 'anchor' => self::anchor( $heading, $slugs ), 'lines' => array() );
+                    }
+                    continue;
+                }
             }
             $current['lines'][] = $line;
+            $previousIsText = true;
         }
         $sections[] = $current;
         $out = array();
@@ -537,6 +581,12 @@ class expHelpSearch
         return $out;
     }
 
+    /** Whether a page is Markdown (rendered with heading anchors) rather than plain text, by its suffix. */
+    public static function isMarkdown( $id )
+    {
+        return (bool)preg_match( '/\.(?:md|markdown)$/i', (string)$id );
+    }
+
     /** Markdown to one line of plain text. */
     public static function plain( $markdown )
     {
@@ -544,20 +594,27 @@ class expHelpSearch
         return trim( preg_replace( '/\s+/u', ' ', self::inlineText( $markdown ) ) );
     }
 
+    /** The text of a heading, as the document index gives it. */
+    protected static function headingText( $markdown )
+    {
+        if ( is_callable( array( 'expHelpDocumentIndex', 'inlineText' ) ) )
+            return trim( (string)expHelpDocumentIndex::inlineText( $markdown ) );
+        return trim( preg_replace( '/\s+/u', ' ', self::inlineText( $markdown ) ) );
+    }
+
     /**
-     * The heading anchor: expHelpMarkdownRenderer's when it exists (the viewer links must agree), else the
-     * GitHub style slug, made unique within the document.
+     * The anchor of a heading, unique in the document ($used): the document index's (which is the renderer's),
+     * else the GitHub rule.
      */
     public static function anchor( $heading, array &$used )
     {
-        if ( class_exists( 'expHelpMarkdownRenderer' ) && method_exists( 'expHelpMarkdownRenderer', 'slug' ) )
-            $slug = expHelpMarkdownRenderer::slug( $heading );
-        else
-        {
-            $slug = self::lower( $heading );
-            $slug = preg_replace( '/[^\p{L}\p{N}\s_-]+/u', '', $slug );
-            $slug = trim( preg_replace( '/\s+/u', '-', $slug ), '-' );
-        }
+        if ( is_callable( array( 'expHelpDocumentIndex', 'slug' ) ) )
+            return (string)expHelpDocumentIndex::slug( $heading, $used );
+        if ( is_callable( array( 'expHelpMarkdownRenderer', 'slug' ) ) )
+            return (string)expHelpMarkdownRenderer::slug( $heading, $used );
+        $slug = self::lower( $heading );
+        $slug = preg_replace( '/[^\p{L}\p{N}\p{M} _-]+/u', '', $slug );
+        $slug = str_replace( ' ', '-', (string)$slug );
         if ( $slug === '' )
             $slug = 'section';
         $base = $slug;
@@ -1017,7 +1074,8 @@ class expHelpSearch
      * Builds the index from documents.
      *
      * @param array $documents id => array( title, headings, audience, category, type, keywords, path, text )
-     * @return array docs (list of array( id, title, audience[], category, type, path )), terms
+     * @return array docs (list of array( id, title, audience[], category, type, path, major version of the
+     *               version directory the page is in or "" ), terms
      *               (term => "<document frequency>|<doc>:<tf x 100> ..."), vocabulary (the terms, sorted)
      */
     public function build( array $documents )
@@ -1042,6 +1100,7 @@ class expHelpSearch
                 isset( $doc['category'] ) ? (string)$doc['category'] : '',
                 isset( $doc['type'] ) ? (string)$doc['type'] : '',
                 $path,
+                preg_match( '#(?:^|/)(\d{1,2})\.\d+(?:\.\d+)?/#', $key, $version ) ? (string)(int)$version[1] : '',
             );
             $text = isset( $doc['text'] ) ? (string)$doc['text'] : '';
             $headings = array();
@@ -1052,7 +1111,7 @@ class expHelpSearch
             }
             else
             {
-                foreach ( self::sections( $text ) as $section )
+                foreach ( self::sections( $text, true, self::isMarkdown( $key ) ) as $section )
                 {
                     if ( $section['heading'] !== null )
                         $headings[] = $section['heading'];
