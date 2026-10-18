@@ -13,7 +13,8 @@
  *    opening lines of the page ("for editors", "administrators", "developers", "end users");
  * 4. the default of the page's type: [AudienceSettings] TypeDefaults[<type>] and [CategorySettings] TypeDefaults[<type>].
  *
- * The audiences are editor, admin, developer, user, project-manager and sales-marketing ([AudienceSettings] Audiences[]);
+ * The audiences are editor, admin, developer, user, project-manager, sales-marketing, partner, advocate, designer,
+ * hosting, app-creator, website-creator, supporter and sponsor ([AudienceSettings] Audiences[]);
  * the categories and their names and icons are [CategorySettings] Categories[], CategoryNames[] and CategoryIcons[]. An extension adds rules
  * and categories in its own exphelp.ini.append.php.
  *
@@ -33,6 +34,14 @@ class expHelpAudience
     const USER = 'user';
     const PROJECT_MANAGER = 'project-manager';
     const SALES_MARKETING = 'sales-marketing';
+    const PARTNER = 'partner';
+    const ADVOCATE = 'advocate';
+    const DESIGNER = 'designer';
+    const HOSTING = 'hosting';
+    const APP_CREATOR = 'app-creator';
+    const WEBSITE_CREATOR = 'website-creator';
+    const SUPPORTER = 'supporter';
+    const SPONSOR = 'sponsor';
 
     /** The audiences and their names and icons (bootstrap-icons) */
     const AUDIENCES = array(
@@ -42,6 +51,14 @@ class expHelpAudience
         'user'      => array( 'name' => 'Users', 'icon' => 'person' ),
         'project-manager' => array( 'name' => 'Project managers', 'icon' => 'diagram-3' ),
         'sales-marketing' => array( 'name' => 'Sales & marketing', 'icon' => 'graph-up-arrow' ),
+        'partner'         => array( 'name' => 'Partners', 'icon' => 'building' ),
+        'advocate'        => array( 'name' => 'Advocates', 'icon' => 'people' ),
+        'designer'        => array( 'name' => 'Designers', 'icon' => 'palette' ),
+        'hosting'         => array( 'name' => 'Hosting companies', 'icon' => 'database' ),
+        'app-creator'     => array( 'name' => 'Application creators', 'icon' => 'phone' ),
+        'website-creator' => array( 'name' => 'Website creators', 'icon' => 'globe' ),
+        'supporter'       => array( 'name' => 'Supporters', 'icon' => 'star' ),
+        'sponsor'         => array( 'name' => 'Sponsors', 'icon' => 'piggy-bank' ),
     );
 
     /** The categories, in their dashboard order, with names and icons */
@@ -58,6 +75,20 @@ class expHelpAudience
         'support'         => array( 'name' => 'Help and support', 'icon' => 'info-circle' ),
         'leadership'      => array( 'name' => 'Project leadership', 'icon' => 'diagram-3' ),
         'business'        => array( 'name' => 'Sales and marketing', 'icon' => 'graph-up-arrow' ),
+        'partnership'     => array( 'name' => 'Partnership', 'icon' => 'building' ),
+        'advocacy'        => array( 'name' => 'Advocacy and community', 'icon' => 'people' ),
+        'theme-design'    => array( 'name' => 'Theme design', 'icon' => 'palette' ),
+        'templates'       => array( 'name' => 'Templates', 'icon' => 'file-earmark-code' ),
+        'extension-development' => array( 'name' => 'Extension development', 'icon' => 'puzzle' ),
+        'theme-extensions' => array( 'name' => 'Theme extensions', 'icon' => 'puzzle' ),
+        'theme-distribution' => array( 'name' => 'Publishing and distribution', 'icon' => 'box-seam' ),
+        'theme-sales' => array( 'name' => 'Selling themes and services', 'icon' => 'tag' ),
+        'theme-lifecycle' => array( 'name' => 'Maintenance life cycle', 'icon' => 'arrow-clockwise' ),
+        'hosting'         => array( 'name' => 'Hosting', 'icon' => 'database' ),
+        'app-creation'    => array( 'name' => 'Building applications', 'icon' => 'phone' ),
+        'website-creation' => array( 'name' => 'Building websites', 'icon' => 'globe' ),
+        'supporting'      => array( 'name' => 'Supporting Exponential', 'icon' => 'star' ),
+        'sponsorship'     => array( 'name' => 'Sponsorship', 'icon' => 'piggy-bank' ),
         'administration'  => array( 'name' => 'Administration', 'icon' => 'gear' ),
         'features'        => array( 'name' => 'Features', 'icon' => 'stars' ),
         'development'     => array( 'name' => 'Development', 'icon' => 'code-square' ),
@@ -85,6 +116,16 @@ class expHelpAudience
     const AUDIENCE_RULES = array(
         'doc/help/leadership/*;project-manager',
         'doc/help/business/*;sales-marketing',
+        'doc/help/partners/*;partner',
+        'doc/help/advocates/*;advocate',
+        'doc/help/designers/*;designer',
+        'doc/help/hosting/*;hosting',
+        'doc/help/creators/app-creators/*;app-creator',
+        'doc/help/creators/website-creators/*;website-creator',
+        'doc/help/creators/*;app-creator,website-creator',
+        'doc/help/supporters/*;supporter',
+        'doc/help/sponsors/*;sponsor',
+        'doc/help/extension-development/*;developer,designer',
         'doc/guides/README.md;editor,admin,developer',
         'doc/guides/getting-started.md;admin,editor,developer',
         'doc/glossary.md;editor,admin,developer,user',
@@ -112,6 +153,17 @@ class expHelpAudience
     const CATEGORY_RULES = array(
         'doc/help/leadership/*;leadership',
         'doc/help/business/*;business',
+        'doc/help/partners/*;partnership',
+        'doc/help/advocates/*;advocacy',
+        'doc/help/designers/templates/*;templates',
+        'doc/help/designers/*;theme-design',
+        'doc/help/hosting/*;hosting',
+        'doc/help/creators/app-creators/*;app-creation',
+        'doc/help/creators/website-creators/*;website-creation',
+        'doc/help/creators/*;website-creation',
+        'doc/help/supporters/*;supporting',
+        'doc/help/sponsors/*;sponsorship',
+        'doc/help/extension-development/*;extension-development',
         'doc/guides/README.md;getting-started',
         'doc/guides/getting-started.md;getting-started',
         'doc/guides/upgrading.md;install-upgrade',
@@ -418,7 +470,12 @@ class expHelpAudience
                           'developers' => 'developer', 'dev' => 'developer', 'users' => 'user', 'enduser' => 'user',
                           'end-user' => 'user', 'end-users' => 'user', 'project-managers' => 'project-manager',
                           'projectmanager' => 'project-manager', 'pm' => 'project-manager', 'sales' => 'sales-marketing',
-                          'marketing' => 'sales-marketing', 'sales-and-marketing' => 'sales-marketing', 'all' => '*' );
+                          'marketing' => 'sales-marketing', 'sales-and-marketing' => 'sales-marketing',
+                          'partners' => 'partner', 'advocates' => 'advocate', 'designers' => 'designer',
+                          'hosting-company' => 'hosting', 'hosting-companies' => 'hosting', 'hosts' => 'hosting',
+                          'app-creators' => 'app-creator', 'application-creator' => 'app-creator',
+                          'application-creators' => 'app-creator', 'website-creators' => 'website-creator',
+                          'supporters' => 'supporter', 'sponsors' => 'sponsor', 'all' => '*' );
         $wanted = array();
         foreach ( $items as $item )
         {
@@ -445,7 +502,7 @@ class expHelpAudience
      */
     public function guessAudience( $path, $intro )
     {
-        if ( preg_match( '/-(project-manager|sales-marketing|editor|editors|administrator|admin|developer|user)\.[a-z]+$/', basename( $path ), $m ) )
+        if ( preg_match( '/-(project-manager|sales-marketing|app-creator|website-creator|partner|advocate|designer|supporter|sponsor|editor|editors|administrator|admin|developer|user)\.[a-z]+$/', basename( $path ), $m ) )
             return $this->audienceList( array( $m[1] ) );
         $intro = strtolower( substr( (string)$intro, 0, 600 ) );
         $found = array();
