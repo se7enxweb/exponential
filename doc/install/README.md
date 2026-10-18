@@ -42,9 +42,16 @@ In a hurry? [The short installation guide](../INSTALL.md) has the quick start an
 | [12. Troubleshooting](12-troubleshooting.md) | Symptom, cause and fix for every stage: Composer, the wizard, the kickstarter, run time, databases, Velocity, caches, signing in |
 | [13. Security hardening for production](13-security-hardening.md) | What the server must never hand out, secrets, debug output, the admin siteaccess, passwords and sessions, form tokens, headers and HTTPS, the audit log |
 
-### Part V: Migrating to Exponential
+### Part V: Migrating to, within and away from Exponential
 
-These chapters name the old products (eZ Publish, eZ Platform, Ibexa) only to identify the system you migrate from.
+Start at **[the migration hub](migration/README.md)**: a verified table of every Exponential product and its
+versions, a decision guide, and one guide per path, within the Exponential family (Platform Legacy, Nexus, DXP,
+Exponential Platform, Exponential Basic, older releases) and from or to other systems (WordPress, Drupal, Joomla,
+Magento, Shopify, Contentful, Adobe Experience Manager, Wix, Squarespace, GoDaddy, static sites, JavaScript, Symfony
+and ColdFusion applications), with [the common checklist](migration/checklist.md),
+[the import and export tools](migration/exponential-tools.md) and [the content mapping](migration/content-model-mapping.md).
+
+The chapters below name the old products (eZ Publish, eZ Platform, Ibexa) only to identify the system you migrate from.
 Each one goes through the vendor's own migration pages point by point and says where Exponential differs.
 
 | Chapter | What it covers |
@@ -66,6 +73,7 @@ Each one goes through the vendor's own migration pages point by point and says w
 | Moving a site from eZ Publish 3.x or 4.x | Chapters [14](14-migrating-from-4x.md), [17](17-migration-reference.md), then [11](11-upgrading.md) for the update chain |
 | Moving a site from eZ Publish 5.x | Chapters [15](15-migrating-from-5x-legacy.md), [17](17-migration-reference.md) |
 | Moving a site from eZ Platform or Ibexa | Chapters [16](16-migrating-from-ez-platform-and-ibexa.md), [17](17-migration-reference.md) |
+| Moving between Exponential products, from another CMS or site builder, or away from Exponential | [The migration hub](migration/README.md) |
 | Something does not work | Chapter [12](12-troubleshooting.md) |
 
 ## Other documentation

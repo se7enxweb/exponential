@@ -1748,6 +1748,12 @@
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php"
     ],
+    "doc/install/migration/*": [
+      "tests/tests/kernel/classes/help/expHelpMigrationHubTest.php"
+    ],
+    "doc/install/README.md": [
+      "tests/tests/kernel/classes/help/expHelpMigrationHubTest.php"
+    ],
     "design/admin*/javascript/exphelp.js": [
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
@@ -1765,7 +1771,8 @@
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
       "tests/tests/kernel/classes/help/expHelpPdfTest.php",
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php",
-      "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php"
+      "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php",
+      "tests/tests/kernel/classes/help/expHelpMigrationHubTest.php"
     ],
     "settings/module.ini": [
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
@@ -2395,6 +2402,10 @@
     ],
     "kernel/setup/expcronjobrunner.php": [
       "tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php"
+    ],
+    "kernel/setup/expdesignextensionwizard.php": [
+      "tests/tests/kernel/classes/radwizards/expDesignExtensionWizardTest.php",
+      "tests/tests/kernel/classes/radwizards/expRadWizardsGeneratedFilesTest.php"
     ],
     "kernel/setup/expextensionwizard.php": [
       "tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php"

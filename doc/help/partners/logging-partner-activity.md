@@ -25,8 +25,8 @@ The requirements page (<https://exponential.earth/partner/requirements>, read 18
 
 > **Warning**
 > On 18 October 2026 the linked addresses <https://exponential.earth/partner-center> and
-> <https://exponential.earth/partner/dashboard> returned "not found". Until they are online, send your activity by
-> e-mail to partner@exponential.earth and keep your own record. How points are credited without the Partner Center
+> <https://exponential.earth/partner/dashboard> returned "not found". Until they are online, send your activity to
+> the partner team through <https://exponential.earth/partner/contact-us> and keep your own record. How points are credited without the Partner Center
 > is not stated: to be defined.
 
 ## What to submit and what evidence to give
