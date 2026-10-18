@@ -68,8 +68,13 @@ language in `language-names-<code>.json`). Both are keyed by a signature of the 
 locale and translation file, so a new or changed file builds the catalogue again on its next use; nothing needs
 clearing. With the cache, the list costs about 2 ms per page.
 
-A regional variant uses only its own translation file: `ger-AT` has none and shows English texts, not German ones.
-To give it German texts, copy `share/translations/ger-DE/` to `share/translations/ger-AT/`.
+A regional variant without a translation of its own takes the one `i18n.ini [TranslationSettings]
+FallbackLanguages[]` names: `ger-AT` and `ger-CH` show the `ger-DE` texts, the French-speaking countries `fre-FR`,
+the Spanish-speaking ones `esl-ES`, the Arabic ones `ara-SA` once it exists. The translator looks this up for the
+kernel and for each extension on its own, so `esl-MX`, which has a kernel translation, still gets `esl-ES` for an
+extension without an `esl-MX` one. The coverage of such a locale is that of the translation it falls back to.
+`testShippedFallbacksGiveEveryCountryOfATranslatedLanguageItsTranslation` fails when a country of a translated
+language has neither a translation nor a fallback.
 
 ## Untranslated languages: listed by default
 

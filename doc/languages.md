@@ -3,7 +3,7 @@
 The one place that says which languages Exponential supports, at which level, and how to add more. The figures
 were taken on 15 October 2026, those of the administration translations on 16 October 2026 (Exponential 6.0.15).
 
-In short: **219 locale files** (213 languages and countries plus 6 variations, in 32 scripts, 28 of them written
+In short: **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations, in 32 scripts, 40 of them written
 right to left) can be chosen as content languages and siteaccess locales; **31 administration translations**
 exist, nine of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Ukrainian, Hebrew, Latin
 and, for fun, Klingon).
@@ -59,10 +59,20 @@ The details are elsewhere and not repeated here:
 
 `nno-NO` has a translation file without a single translated string, so it is content only in practice.
 
+A country without a translation of its own speaks the one `i18n.ini [TranslationSettings] FallbackLanguages[]`
+names, at the same level: every German-, French- and Spanish-speaking country falls back to `ger-DE`, `fre-FR` and
+`esl-ES` (Latin America too: `esl-ES` is the complete one, `esl-MX` lacks some kernel strings and four extensions;
+`esl-MX` itself takes `esl-ES` for those extensions), the Arabic countries to `ara-SA` once that translation exists,
+and the other languages likewise (`por-PT` to `por-BR`, `ita-CH` to `ita-IT`). The translator looks the fallback
+up for the kernel and for each extension on its own. `expUISwitchLanguageProviderTest` fails when a country of a
+translated language has neither. The "Translation coverage" column below counts only a locale's own translation;
+the interface language choice shows the fallback's.
+
 ## 3. Every locale
 
-`share/locale` holds 219 files on 15 October 2026: 49 that existed before 6.0.15 and 170 added in 6.0.15. The add
-form of Setup > Languages offers the 213 without a variation (a variation such as `ger-DE@euro` only overrides a few
+`share/locale` holds 268 files on 18 October 2026: 49 that existed before 6.0.15, 170 added in 6.0.15, the test
+language `qlo-ZZ` ([section 12](#12-test-languages-lorem-ipsum)) and 48 added on 18 October 2026 (the remaining countries of Spanish, French, Arabic and German, generated the same way
+from CLDR 48). The add form of Setup > Languages offers the 261 without a variation (a variation such as `ger-DE@euro` only overrides a few
 keys of its base file and is chosen in `site.ini`), sorted by English name, each with its native name, its country
 (unless the name already gives it) and its code, and a search field that matches any of them: `bengali`, `বাংলা`,
 `ben`, `bangladesh` all find `ben-BD`. The interface language choice offers the same locales in its A–Z list, a
@@ -91,17 +101,29 @@ The table is generated from the locale files; do not edit it by hand.
 | `aka-GH` | Akan | Akan | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `amh-ET` | Amharic | አማርኛ | Africa | LTR | Ethiopic (`Ethi`) | CLDR 44 | — |
 | `ara-AE` | Arabic (United Arab Emirates) | العربية (الإمارات العربية المتحدة) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `ara-BH` | Arabic (Bahrain) | العربية (البحرين) | Middle East | RTL | Arabic (`Arab`) | CLDR 48 | — |
+| `ara-DJ` | Arabic (Djibouti) | العربية (جيبوتي) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-DZ` | Arabic (Algeria) | العربية (الجزائر) | Africa | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ara-EG` | Arabic (Egypt) | العربية (مصر) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `ara-ER` | Arabic (Eritrea) | العربية (إريتريا) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-IQ` | Arabic (Iraq) | العربية (العراق) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ara-JO` | Arabic (Jordan) | العربية (الأردن) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `ara-KM` | Arabic (Comoros) | العربية (جزر القمر) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-KW` | Arabic (Kuwait) | العربية (الكويت) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ara-LB` | Arabic (Lebanon) | العربية (لبنان) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `ara-LY` | Arabic (Libya) | العربية (ليبيا) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-MA` | Arabic (Morocco) | العربية (المغرب) | Africa | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `ara-MR` | Arabic (Mauritania) | العربية (موريتانيا) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
+| `ara-OM` | Arabic (Oman) | العربية (عُمان) | Middle East | RTL | Arabic (`Arab`) | CLDR 48 | — |
+| `ara-PS` | Arabic (Palestinian Territories) | العربية (الأراضي الفلسطينية) | Middle East | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-QA` | Arabic (Qatar) | العربية (قطر) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ara-SA` | Arabic | العربية | Middle East | RTL | Arabic (`Arab`) | older, hand-made | — |
+| `ara-SD` | Arabic (Sudan) | العربية (السودان) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
+| `ara-SO` | Arabic (Somalia) | العربية (الصومال) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-SY` | Arabic (Syria) | العربية (سوريا) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `ara-TD` | Arabic (Chad) | العربية (تشاد) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-TN` | Arabic (Tunisia) | العربية (تونس) | Africa | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `ara-YE` | Arabic (Yemen) | العربية (اليمن) | Middle East | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `asm-IN` | Assamese | অসমীয়া | South Asia | LTR | Bengali (`Beng`) | CLDR 44 | — |
 | `ast-ES` | Asturian | Asturianu | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `aze-AZ` | Azerbaijani | Azərbaycan | Central Asia and Caucasus | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -154,13 +176,21 @@ The table is generated from the locale files; do not edit it by hand.
 | `esl-BO` | Spanish (Bolivia) | Español (Bolivia) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-CL` | Spanish (Chile) | Español (Chile) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-CO` | Spanish (Colombia) | Español (Colombia) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `esl-CR` | Spanish (Costa Rica) | Español (Costa Rica) | Americas | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `esl-CU` | Spanish (Cuba) | Español (Cuba) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-DO` | Spanish (Dominican Republic) | Español (República Dominicana) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-EC` | Spanish (Ecuador) | Español (Ecuador) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-ES` | Spanish (Spain) | Español (España) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `esl-GQ` | Spanish (Equatorial Guinea) | Español (Guinea Ecuatorial) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `esl-GT` | Spanish (Guatemala) | Español (Guatemala) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `esl-HN` | Spanish (Honduras) | Español (Honduras) | Americas | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `esl-MX` | Spanish (Mexico) | Español (México) | Americas | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `esl-NI` | Spanish (Nicaragua) | Español (Nicaragua) | Americas | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `esl-PA` | Spanish (Panama) | Español (Panamá) | Americas | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `esl-PE` | Spanish (Peru) | Español (Perú) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `esl-PR` | Spanish (Puerto Rico) | Español (Puerto Rico) | Americas | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `esl-PY` | Spanish (Paraguay) | Español (Paraguay) | Americas | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `esl-SV` | Spanish (El Salvador) | Español (El Salvador) | Americas | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `esl-US` | Spanish (United States) | Español (Estados Unidos) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-UY` | Spanish (Uruguay) | Español (Uruguay) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `esl-VE` | Spanish (Venezuela) | Español (Venezuela) | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -173,20 +203,48 @@ The table is generated from the locale files; do not edit it by hand.
 | `fil-PH` | Filipino | Filipino | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fin-FI` | Finnish | Suomi | Europe | LTR | Latin (`Latn`) | older, hand-made | 32% |
 | `fre-BE` | French (Belgium) | Français (Belgique) | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
+| `fre-BF` | French (Burkina Faso) | Français (Burkina Faso) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-BI` | French (Burundi) | Français (Burundi) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-BJ` | French (Benin) | Français (Bénin) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `fre-CA` | French (Canada) | Français (Canada) | Americas | LTR | Latin (`Latn`) | older, hand-made | — |
 | `fre-CD` | French (Congo - Kinshasa) | Français (Congo-Kinshasa) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `fre-CF` | French (Central African Republic) | Français (République centrafricaine) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-CG` | French (Congo - Brazzaville) | Français (Congo-Brazzaville) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `fre-CH` | French (Switzerland) | Français (Suisse) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fre-CI` | French (Côte d’Ivoire) | Français (Côte d’Ivoire) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fre-CM` | French (Cameroon) | Français (Cameroun) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `fre-DJ` | French (Djibouti) | Français (Djibouti) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-DZ` | French (Algeria) | Français (Algérie) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `fre-FR` | French (France) | Français (France) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `fre-GA` | French (Gabon) | Français (Gabon) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-GN` | French (Guinea) | Français (Guinée) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-GQ` | French (Equatorial Guinea) | Français (Guinée équatoriale) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-HT` | French (Haiti) | Français (Haïti) | Americas | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-KM` | French (Comoros) | Français (Comores) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-LU` | French (Luxembourg) | Français (Luxembourg) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `fre-MA` | French (Morocco) | Français (Maroc) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `fre-MC` | French (Monaco) | Français (Monaco) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-MG` | French (Madagascar) | Français (Madagascar) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-ML` | French (Mali) | Français (Mali) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-MR` | French (Mauritania) | Français (Mauritanie) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-MU` | French (Mauritius) | Français (Maurice) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-NE` | French (Niger) | Français (Niger) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-RW` | French (Rwanda) | Français (Rwanda) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-SC` | French (Seychelles) | Français (Seychelles) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `fre-SN` | French (Senegal) | Français (Sénégal) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `fre-TD` | French (Chad) | Français (Tchad) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-TG` | French (Togo) | Français (Togo) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-TN` | French (Tunisia) | Français (Tunisie) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `fre-VU` | French (Vanuatu) | Français (Vanuatu) | Oceania | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `fry-NL` | Western Frisian | Frysk | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ful-SN` | Fula | Pulaar | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ger-AT` | German (Austria) | Deutsch (Österreich) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `ger-BE` | German (Belgium) | Deutsch (Belgien) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `ger-CH` | German (Switzerland) | Deutsch (Schweiz) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ger-DE` | German | Deutsch (Deutschland) | Europe | LTR | Latin (`Latn`) | older, hand-made | 99% |
 | `ger-DE@euro` | Variant of `ger-DE`: Euro support |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
+| `ger-LI` | German (Liechtenstein) | Deutsch (Liechtenstein) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
+| `ger-LU` | German (Luxembourg) | Deutsch (Luxemburg) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `gla-GB` | Scottish Gaelic | Gàidhlig | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `gle-IE` | Irish | Gaeilge | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `glg-ES` | Galician | Galego | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -259,6 +317,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `por-PT` | Portuguese (Portugal) | Português | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
 | `por-PT@euro` | Variant of `por-PT`: Suporte para Euro |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
 | `pus-AF` | Pashto | پښتو | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `qlo-ZZ` | Lorem Ipsum | Lorem Ipsum | None (test language) | LTR | Latin (`Latn`) | hand-made, test language only | — |
 | `que-PE` | Quechua | Runasimi | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `roh-CH` | Romansh | Rumantsch | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ron-RO` | Romanian | Română | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -306,7 +365,6 @@ The table is generated from the locale files; do not edit it by hand.
 | `yor-NG` | Yoruba | Èdè Yorùbá | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `zgh-MA` | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | Africa | LTR | Tifinagh (`Tfng`) | CLDR 44 | — |
 | `zul-ZA` | Zulu | IsiZulu | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `qlo-ZZ` | Lorem Ipsum | Lorem Ipsum | None (test language) | LTR | Latin (`Latn`) | hand-made, test language only | — |
 
 How the generated files were made, and where they differ from CLDR, is in [section 7](#7-adding-a-locale).
 Notes on single locales:
@@ -469,15 +527,15 @@ which takes its figures from Ethnologue (2026 edition); read on 15 October 2026.
 | 1 | English | 1,493 | `eng-US`, `eng-GB`, `eng-CA`, `eng-AU`, `eng-NZ`, `eng-IE`, `eng-IN`, `eng-SG`, `eng-ZA`, `eng-NG`, `eng-KE`, `eng-GH`, `eng-PK`, `eng-PH` | `eng-US` full; `eng-AU`, `eng-NZ` partial |
 | 2 | Mandarin Chinese | 1,183 | `chi-CN`, `chi-SG` (Simplified), `chi-TW`, `chi-HK` (Traditional) | `chi-CN`, `chi-TW`, `chi-HK` partial |
 | 3 | Hindi | 611 | `hin-IN` | none |
-| 4 | Spanish | 561 | `esl-ES`, `esl-MX`, `esl-AR`, `esl-CO`, `esl-CL`, `esl-PE`, `esl-US`, `esl-VE`, `esl-EC`, `esl-GT`, `esl-CU`, `esl-DO`, `esl-BO`, `esl-UY` | `esl-ES`, `esl-MX` full |
-| 5 | Modern Standard Arabic | 335 | `ara-SA`, `ara-EG`, `ara-AE`, `ara-MA`, `ara-DZ`, `ara-TN`, `ara-IQ`, `ara-JO`, `ara-LB`, `ara-SY`, `ara-KW`, `ara-QA` | none |
-| 6 | French | 334 | `fre-FR`, `fre-BE`, `fre-CA`, `fre-CH`, `fre-SN`, `fre-CI`, `fre-CM`, `fre-MA`, `fre-CD` | `fre-FR` full |
+| 4 | Spanish | 561 | `esl-ES`, `esl-MX`, `esl-AR`, `esl-CO`, `esl-CL`, `esl-PE`, `esl-US`, `esl-VE`, `esl-EC`, `esl-GT`, `esl-CU`, `esl-DO`, `esl-BO`, `esl-UY`, `esl-PY`, `esl-CR`, `esl-PA`, `esl-HN`, `esl-SV`, `esl-NI`, `esl-PR`, `esl-GQ` | `esl-ES`, `esl-MX` full |
+| 5 | Modern Standard Arabic | 335 | `ara-SA`, `ara-EG`, `ara-AE`, `ara-MA`, `ara-DZ`, `ara-TN`, `ara-IQ`, `ara-JO`, `ara-LB`, `ara-SY`, `ara-KW`, `ara-QA`, `ara-BH`, `ara-OM`, `ara-LY`, `ara-PS`, `ara-YE`, `ara-SD`, `ara-MR`, `ara-DJ`, `ara-KM`, `ara-SO`, `ara-TD`, `ara-ER` | none |
+| 6 | French | 334 | `fre-FR`, `fre-BE`, `fre-CA`, `fre-CH`, `fre-SN`, `fre-CI`, `fre-CM`, `fre-MA`, `fre-CD`, `fre-LU`, `fre-MC`, `fre-HT`, `fre-BJ`, `fre-BF`, `fre-BI`, `fre-CF`, `fre-TD`, `fre-KM`, `fre-CG`, `fre-DJ`, `fre-GQ`, `fre-GA`, `fre-GN`, `fre-MG`, `fre-ML`, `fre-NE`, `fre-RW`, `fre-SC`, `fre-TG`, `fre-VU`, `fre-DZ`, `fre-TN`, `fre-MR`, `fre-MU` | `fre-FR` full |
 | 7 | Bengali | 274 | `ben-BD`, `ben-IN` | none |
 | 8 | Portuguese | 269 | `por-PT`, `por-BR`, `por-MZ`, `por-AO`, `por-CV` | `por-BR` partial |
 | 9 | Indonesian | 255 | `ind-ID` | none |
 | 10 | Urdu | 246 | `urd-PK`, `urd-IN` | none |
 | 11 | Russian | 210 | `rus-RU` | `rus-RU` partial |
-| 12 | German | 133 | `ger-DE`, `ger-AT`, `ger-CH` | `ger-DE` full |
+| 12 | German | 133 | `ger-DE`, `ger-AT`, `ger-CH`, `ger-LU`, `ger-LI`, `ger-BE` | `ger-DE` full |
 | 13 | Japanese | 126 | `jpn-JP` | `jpn-JP` partial |
 | 14 | Nigerian Pidgin | 121 | `pcm-NG` | none |
 | 15 | Egyptian Arabic | 118 | `ara-EG` (written Arabic) | none |
@@ -530,10 +588,9 @@ Every language of the table above has a locale. Languages with a million or more
   Venetian, Silesian, Cherokee (`chr`), Nheengatu, Ossetic (`oss`), Yakut (`sah`), Chuvash (`chv`), Central Atlas
   Tamazight, Sango (`sag`), Mazanderani and Northern Luri (CLDR has English day names for both), Fula in Adlam
   script, Uzbek in Arabic script, Interlingua (only for the region "world", see [section 3](#3-every-locale)).
-- **More regional variants**: Spanish of Paraguay, Costa Rica, Panama, Honduras, El Salvador, Nicaragua and Puerto
-  Rico; French of Luxembourg, Algeria, Tunisia and the rest of Africa; Arabic of Bahrain, Oman, Libya, Palestine,
-  Yemen and Sudan; Portuguese of Guinea-Bissau; English of Hong Kong and Malaysia; German of Luxembourg and
-  Liechtenstein; Swedish of Finland; Russian of Kazakhstan and Belarus; Traditional Chinese of Macao.
+- **More regional variants**: Portuguese of Guinea-Bissau; English of Hong Kong and Malaysia; Swedish of Finland;
+  Russian of Kazakhstan and Belarus; Traditional Chinese of Macao. (The remaining countries of Spanish, French,
+  Arabic and German were added on 18 October 2026.)
 - Spoken varieties written in a standard language (Arabic dialects, Wu and Yue Chinese) need no locale of their own.
 
 Each one with CLDR data is a line in the generator away; see the next section.
@@ -671,11 +728,11 @@ translations is the quickest win.
 
 ## 9. Right-to-left languages
 
-28 locale files are written right to left:
+40 locale files are written right to left:
 
 | Language | Locales | Script |
 |---|---|---|
-| Arabic | `ara-SA`, `ara-EG`, `ara-AE`, `ara-MA`, `ara-DZ`, `ara-TN`, `ara-IQ`, `ara-JO`, `ara-LB`, `ara-SY`, `ara-KW`, `ara-QA` | Arabic |
+| Arabic | `ara-SA`, `ara-EG`, `ara-AE`, `ara-MA`, `ara-DZ`, `ara-TN`, `ara-IQ`, `ara-JO`, `ara-LB`, `ara-SY`, `ara-KW`, `ara-QA`, `ara-BH`, `ara-OM`, `ara-LY`, `ara-PS`, `ara-YE`, `ara-SD`, `ara-MR`, `ara-DJ`, `ara-KM`, `ara-SO`, `ara-TD`, `ara-ER` | Arabic |
 | Hebrew | `heb-IL` | Hebrew |
 | Yiddish | `yid-US` | Hebrew |
 | Persian, Dari | `fas-IR`, `fas-AF` | Arabic |
@@ -746,7 +803,7 @@ bit and bit 0 leave 62 bits for languages. "Which objects exist in German?" is t
 (`language_mask & 8 > 0`), which is what makes language filtering cheap in every query of the kernel.
 
 **What counts.** Only the content languages added on Setup > Languages, the ones in `ezcontent_language`. The
-locales in `share/locale` do not count: 219 of them can be offered while an installation uses two languages. A
+locales in `share/locale` do not count: 261 of them can be offered while an installation uses two languages. A
 language added and never used still takes its bit.
 
 **Freeing a place.** Remove a content language that no object and no class has a translation in (Setup >
