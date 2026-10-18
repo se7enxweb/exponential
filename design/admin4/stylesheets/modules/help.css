@@ -1246,3 +1246,9 @@
 .a4-help-issue-security .a4-notice p { margin: 0 0 var(--a4-space-2); }
 .a4-help-issue-security-list { display: grid; gap: var(--a4-space-1); margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }
 .a4-help-issue-security-list a { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 650; }
+
+/* Forced colors (Windows high contrast) drop backgrounds: a chosen filter, which differs only by its background, gets a
+   Highlight outline. */
+@media (forced-colors: active) {
+  .a4-help-filter input:checked + span { outline: 2px solid Highlight; }
+}

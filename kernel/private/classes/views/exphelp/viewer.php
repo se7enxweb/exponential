@@ -124,7 +124,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
             $tmp = $file . '.' . getmypid() . '.tmp';
             if ( $json !== false && @file_put_contents( $tmp, $json ) !== false )
             {
-                @chmod( $tmp, octdec( \eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
+                @chmod( $tmp, \eZFile::fileMode( octdec( \eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) ) );
                 @rename( $tmp, $file );
             }
         }

@@ -1192,7 +1192,7 @@ class expHelpDocumentIndex
         $temporary = $dir . '/.' . $name . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $temporary, $content, LOCK_EX ) === false )
             return false;
-        @chmod( $temporary, self::filePermissions() );
+        @chmod( $temporary, eZFile::fileMode( self::filePermissions() ) );
         if ( !@rename( $temporary, $dir . '/' . $name ) )
         {
             @unlink( $temporary );
@@ -1233,6 +1233,6 @@ class expHelpDocumentIndex
         if ( class_exists( 'eZDir' ) )
             eZDir::mkdir( $dir, false, true );
         else
-            @mkdir( $dir, 0777, true );
+            @mkdir( $dir, eZDir::dirMode( 0777 ), true );
     }
 }
