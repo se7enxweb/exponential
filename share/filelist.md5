@@ -3985,6 +3985,7 @@ ce2c27ed47d3e90ec6428ea796355d90  doc/help/business/growing-the-community.md
 78ea72499e12286cb19df6f56789c901  doc/help/business/sales-and-marketing-start-here.md
 3bdf16d3cb3308d3caf0e5edc8089f2d  doc/help/business/who-exponential-is-for.md
 255cb6d569c48c608698baf5a8b30f09  doc/help/change-the-admin-password.md
+7a23499a7d57ec11a2a1f06eeb47d005  doc/help/contribute-extensions-back.md
 de63d719e4a33cbc4f51ec1b25209bea  doc/help/creators/website-creators/accessibility-for-site-builders.md
 36e57aa80f9826c689f096d30eccc2d2  doc/help/creators/website-creators/backups-and-restores.md
 2dcf8360314e1ab754657bd1336b9732  doc/help/creators/website-creators/basket-checkout-and-orders.md
@@ -4216,7 +4217,7 @@ b48e6b0c6611f16eaa5f3c1c15fd9ca3  doc/help/designers/sales/what-buyers-receive.m
 8a3b6c522ce90b0a7e6ad651b9eea6ee  doc/help/designers/sales/what-you-can-sell.md
 0f8a40c8207d0d55c861b08877aeb16b  doc/help/designers/sales/where-themes-are-found.md
 f7863466f75586e6e29a18f8ae584317  doc/help/designers/sales/working-with-agencies-and-partners.md
-1ae993f40ea58852991153e5f338bf09  doc/help/develop-with-git.md
+4193fd043b30eb341a38d8ce967c2670  doc/help/develop-with-git.md
 ced049f18b5605fcad3ff85057cb4b6f  doc/help/editing-content.md
 7f94f7ee98d4f86420d13376ebf5743e  doc/help/extension-development/README.md
 b3ad21d3ad152b10858fe843940a32fb  doc/help/extension-development/part-1-from-user-to-developer/README.md
@@ -4539,7 +4540,7 @@ ce9facdac8c61ce2a410c587b8025f5e  doc/help/supporters/supporters-start-here.md
 457a76da27b0e835a9ab252c976d8626  doc/help/supporters/supporting-as-a-company.md
 756cca3c7b02a19aed7dc684a35ac63e  doc/help/supporters/testing-and-reporting-bugs.md
 0c5611d9122cc264a4193dff110fc70d  doc/help/supporters/ways-to-support-exponential.md
-11301d15e5750276fe4244cb999256fa  doc/help/update-with-git.md
+480667f640533917d46db5e95016fef9  doc/help/update-with-git.md
 6cee31f394a1674d1c735bb1e8b585e7  doc/help/when-something-goes-wrong.md
 5ca11aed7eb7120556497445c9099bc8  doc/help/who-is-7x.md
 1789c6d5581540a05554c912dd7dd48e  doc/help/who-is-the-exponential-foundation.md
