@@ -286,6 +286,7 @@ d04051dd86493ca0c7a5a7d8ef2e9788  design/admin/javascript/contentcheck_storage.j
 8efbbdaa6de1c48f6827f760b04f2dd0  design/admin/javascript/contentstructuremenu_dynamic.js
 3bf53d527c77fbe92265242d582073ff  design/admin/javascript/exp_admin_head.js
 ccc9542289d65bc6f5a7bbf6dbe04821  design/admin/javascript/expajaxuploader.js
+0b820c814e8ffbfe7629bcf0ae9a4ab8  design/admin/javascript/exphelp.js
 57d8995b892a18ef13ca0b9779bc29c7  design/admin/javascript/ezajaxrelations_jquery.js
 a7c1e5a25f185f993412621b9a08cd32  design/admin/javascript/ezajaxsubitems_expdatatable.js
 0008a7955d1f67c5efd0f08fe978f284  design/admin/javascript/leftmenu_widthcontrol.js
@@ -338,7 +339,7 @@ be099ebbbccdeae8ab7385dc4fd795dc  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
-96ab8e703f55dda209559d1f11966df4  design/admin/stylesheets/pagelayout.css
+2304a9a48408f2f9e4ba9222f36feabd  design/admin/stylesheets/pagelayout.css
 2d02f74460d590ebf57e8230963c891e  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 017f424deeeb46501db6bcf63990e746  design/admin/stylesheets/theme/rounded.css
@@ -593,7 +594,7 @@ f282688f9c5b255781005e8124e243cc  design/admin/templates/package/uninstall_error
 fda9299f029c731efb3f2a7d8cae2fe8  design/admin/templates/page_head_script.tpl
 9b35e3bf7adb0350c55c63dadb305f35  design/admin/templates/page_head_style.tpl
 dbcd6a019f44c7b1bcf92f13c30f641f  design/admin/templates/page_head_style_inline.tpl
-ee59e11711f04b511967f5335e53cdb9  design/admin/templates/page_header.tpl
+f73947ed79521860b3ed5908e796a7d2  design/admin/templates/page_header.tpl
 2fbd947226762a9f26b46f0f28d34ea4  design/admin/templates/page_leftmenu.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin/templates/page_login_copyright.tpl
 1bf2256ccd6061ee7f354a26834937c1  design/admin/templates/page_menuheadenabled.tpl
