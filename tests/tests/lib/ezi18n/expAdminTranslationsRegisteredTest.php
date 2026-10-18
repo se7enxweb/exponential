@@ -66,9 +66,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         return preg_match( '/<TS[^>]*\blanguage="([^"]+)"/', $head, $m ) ? $m[1] : '';
     }
 
-    /**
-     * @dataProvider completeLanguages
-     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'completeLanguages' )]
     public function testLocaleFileMatchesTheCatalogue( $code )
     {
         $locale = $this->root . '/share/locale/' . $code . '.ini';
@@ -78,14 +76,16 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         $values = $this->iniValues( $locale );
         $this->assertNotSame( '', $values['LanguageName'] ?? '', "$code: LanguageName" );
         $this->assertNotSame( '', $values['ContentLanguage'] ?? '', "$code: ContentLanguage" );
-        // uk-UA in the locale, uk_UA in the catalogue
-        $this->assertSame( strtolower( str_replace( '-', '_', $values['ContentLanguage'] ) ),
-                           strtolower( $this->catalogueLanguage( $ts ) ), "$code: catalogue language" );
+        // the catalogue names its language by the HTTP code (uk-UA in the locale, uk_UA in the catalogue) or by the
+        // locale code (heb-IL); the attribute is optional, but the French and Ukrainian catalogues carry it
+        $language = strtolower( $this->catalogueLanguage( $ts ) );
+        if ( $language === '' && !in_array( $code, self::WITH_EXTENSION_CATALOGUES, true ) )
+            return;
+        $this->assertContains( $language, array( strtolower( str_replace( '-', '_', $values['ContentLanguage'] ) ), strtolower( $code ) ),
+                               "$code: catalogue language" );
     }
 
-    /**
-     * @dataProvider completeLanguages
-     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'completeLanguages' )]
     public function testTheSwitchMeasuresTheCatalogueAsComplete( $code )
     {
         $catalogue = new expUISwitchLanguageCatalogue( $this->root, '' );
@@ -95,9 +95,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $entry['test'], "$code must not be a test language" );
     }
 
-    /**
-     * @dataProvider completeLanguages
-     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'completeLanguages' )]
     public function testTheSwitchOffersTheLanguageInARankedGroup( $code )
     {
         $text = (string)file_get_contents( $this->root . '/settings/uiswitch.ini' );
@@ -116,9 +114,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         $this->assertNotEmpty( array_intersect( $groups[$code], $listed[1] ), "$code: its group is not in GroupList[]" );
     }
 
-    /**
-     * @dataProvider completeLanguages
-     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'completeLanguages' )]
     public function testLanguagesDocumentListsTheTranslationAsComplete( $code )
     {
         $doc = (string)file_get_contents( $this->root . '/doc/languages.md' );
@@ -134,9 +130,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         return $data;
     }
 
-    /**
-     * @dataProvider extensionCatalogues
-     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'extensionCatalogues' )]
     public function testBundledExtensionsCarryTheCatalogue( $extension, $code )
     {
         $ts = $this->root . '/extension/' . $extension . '/translations/' . $code . '/translation.ts';
