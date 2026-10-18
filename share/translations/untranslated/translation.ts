@@ -72647,5 +72647,189 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Partners</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

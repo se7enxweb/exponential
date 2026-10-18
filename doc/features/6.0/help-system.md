@@ -6,7 +6,7 @@ if you write documentation (in `doc/` or in an extension) that should show up in
 ## In short
 
 - **Help dashboard** (`/exphelp/dashboard`): a search field, the help for each audience (editors, administrators,
-  developers, site users, project managers, sales & marketing; the last two cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
+  developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters and sponsors; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
   report an error.
 - **Help pages** (`/exphelp/viewer/<page>`): every git-tracked Markdown and text file under `doc/`, rendered with
   headings, a table of contents, tables, callouts, highlighted code and images, with the navigation of its section,
@@ -58,7 +58,7 @@ Security Policy.
 | `[IndexSettings] Roots[]` | `doc` | the directories whose tracked files are shown |
 | `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose `doc/` directory is shown too (opt-in) |
 | `[IndexSettings] ExcludePatterns[]` | doxygen, HTML, SVG | never shown, even when tracked |
-| `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
+| `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
 | `[AudienceSettings] PathRules[]` | per directory | `<glob>;<audience,...>`, first match wins |
 | `[CategorySettings]` | eight categories | names, icons and path rules |
 | `[SearchSettings]` | 20 results | result count and the weights of title, headings and text |

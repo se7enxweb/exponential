@@ -273,18 +273,21 @@ While that branch exists only on your machine, Composer refuses to update the pa
 
 ### Keep up to date
 
-The kernel, on your branch:
+The kernel, on your branch, then the extensions to match:
 
 ```bash
 git fetch origin --tags
-git merge v6.0.14
-composer install
+git merge origin/main
+composer update
 ```
 
-(use the release you move to, or `git merge origin/main` to follow the development line). Merging keeps your own commits on `my-site`. Moving the
-code is half of an upgrade; [Upgrading](../install/11-upgrading.md) has the database half.
+(or merge the newest release tag instead of `origin/main`). Merging keeps your own commits on `my-site`; `composer
+update`, not `composer install`, because the kernel's `composer.json` changed and your lock file has to follow it.
+[Update with Git](update-with-git.md) has the whole routine for the schedule you choose (hourly, daily, weekly,
+monthly or only at each release), how to see what changed, and an automatic update. Moving the code is half of an
+upgrade; [Upgrading](../install/11-upgrading.md) has the database half.
 
-The extensions, one at a time, after reading their release notes:
+One extension on its own, after reading its release notes:
 
 ```bash
 composer update se7enxweb/eztags
@@ -316,6 +319,7 @@ Three more things worth knowing:
 
 ## Where to go next
 
+- [Update with Git](update-with-git.md): stay in sync with GitHub on the schedule you choose.
 - [Getting the code](../install/03-getting-the-code.md): every way to install, versions and tags, extensions as
   Composer packages.
 - [Extensions](../guides/extensions.md) and the [extension pages](../features/6.0/extensions/README.md).

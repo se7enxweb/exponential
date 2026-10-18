@@ -1,0 +1,63 @@
+---
+title: Contributing code
+audience: supporter
+category: supporting
+order: 30
+summary: How individuals contribute code to Exponential - finding something to work on, setting up from Git, the branch and pull request workflow of CONTRIBUTING.md, commit messages, the file manifest, tests and CI, the merge policy and the license of contributions.
+keywords: code, contribute, pull request, fork, branch, Git, GitHub, commit message, CI, tests, manifest, GPL, first contribution
+type: help
+---
+# Contributing code
+
+This page is for developers who want to send their first or next pull request to Exponential. The rules are in
+[CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md); the Git workflow is explained
+step by step on [Develop with Git](../develop-with-git.md).
+
+## Find something to work on
+
+- Open issues: <https://github.com/se7enxweb/exponential/issues>.
+- Something that annoyed you in your own work: that is usually the best first contribution.
+- Extensions: each `se7enxweb/*` extension is its own repository with its own issues.
+
+## Set up
+
+Install Exponential from Git with full history ([Develop with Git](../develop-with-git.md)). SQLite is the default
+database, so a development installation needs no database server ([Database support](../database-support.md)).
+
+## The workflow
+
+1. Fork the repository and clone your fork.
+2. Create a branch: `git checkout -b feature/your-feature`.
+3. Follow the PSR standards and the coding style; administration templates follow the styling rules (no `<style>`
+   blocks, no `style=""` attributes; shared components and tokens) (CONTRIBUTING.md).
+4. Commit with a subject that starts with `Added: `, `Updated: `, `Fixed: `, `Removed: ` or `Renamed: `, for
+   example `Fixed: The redirect keeps the query string on the own host` (CONTRIBUTING.md).
+5. Update `share/filelist.md5` for every file you add, change or remove (`make manifest-fix`); `make hooks` installs
+   a pre-commit hook that checks it, the PHP syntax and the code style.
+6. Run the tests, update the documentation, push and open a pull request. "Keep your pull request focused. If you
+   have multiple contributions, submit multiple pull requests."
+
+## What happens to your pull request
+
+- CI runs syntax, manifest, commit message, code style, PHPStan and test checks on the supported PHP versions
+  (`doc/bc/6.0/ci.md`).
+- It is reviewed. "Every pull request is merged, and its commits are kept as the contributor wrote them and never
+  rewritten" (`doc/bc/6.0/ci.md`); what needs changing is changed in commits on top.
+
+## License
+
+"By contributing, you agree that your contributions will be licensed under the GNU General Public License, version
+2.0 or later" (CONTRIBUTING.md).
+
+## First contribution ideas
+
+- A test that reproduces a reported bug.
+- A PHP deprecation fix for the newest PHP version.
+- A small usability fix in the administration.
+
+## Related pages
+
+- [Develop with Git](../develop-with-git.md)
+- [Testing and reporting bugs](testing-and-reporting-bugs.md)
+- [Contributing code back (for partners)](../partners/contributing-code-back.md)
+- [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

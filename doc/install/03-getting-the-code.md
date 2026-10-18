@@ -128,10 +128,13 @@ To update later, on your branch:
 ```bash
 git fetch origin --tags
 git merge origin/main               # or the release you move to: git merge v6.0.<n>
-composer install
+composer update
 ```
 
-and `composer update se7enxweb/<package>` for one extension. Composer refuses to update a clone with uncommitted
+`composer update`, not `composer install`: the kernel's `composer.json` changed, and the lock file (your own, it is
+not part of the repository) has to follow it. `composer update se7enxweb/<package>` updates one extension.
+[Update with Git](../help/update-with-git.md) has the routine for every schedule, from hourly to only at each
+release, and an automatic update with cron or a systemd timer. Composer refuses to update a clone with uncommitted
 changes or with commits that exist only on your machine, so your work is never overwritten;
 [When Composer refuses](../help/develop-with-git.md#when-composer-refuses) lists the messages and what to do. Moving the
 code is only half of an upgrade: the database update files of [chapter 11](11-upgrading.md) are the other half.
