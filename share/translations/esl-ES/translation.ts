@@ -73581,7 +73581,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Choose another audience, topic or type.</source>
-        <translation>Elija otro público, tema o tipo.</translation>
+        <translation>Elige otro público, tema o tipo.</translation>
     </message>
     <message>
         <source>Cite it</source>
