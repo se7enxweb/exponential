@@ -76553,6 +76553,30 @@ Gracias por la retroalimentación</translation>
         <source>revision %s</source>
         <translation>revisión %s</translation>
     </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Quién hace Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential es software libre con una historia de casi treinta años. Conoce la empresa que lo dirige y la fundación sin fines de lucro que opera el proyecto de código abierto.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>¿Quién es 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>La empresa detrás de Exponential, desde su primera versión hasta hoy.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>¿Quién es la Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>La organización sin fines de lucro, la familia de productos y sus compromisos.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

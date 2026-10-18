@@ -579,6 +579,54 @@
   .a4-help-grow-actions { display: none; }
 }
 
+/* ---- dashboard: who makes Exponential (parts/dashboard_about.tpl) -------------------------------------------- */
+
+.a4-help-about {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--a4-space-4) var(--a4-space-5);
+  padding: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background:
+    linear-gradient(120deg, var(--a4-info-bg), transparent 55%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-info-line);
+}
+.a4-help-about .a4-help-tile { color: var(--a4-info); background-color: var(--a4-card); box-shadow: inset 0 0 0 1px var(--a4-info-line); }
+.a4-help-about h2 { margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-l); font-weight: 650; }
+.a4-help-about p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-about-links {
+  display: grid;
+  grid-column: 2;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-about-links a {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-2);
+  height: 100%;
+  padding: var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-help-about-links a:hover { box-shadow: inset 0 0 0 1px var(--a4-info-line); }
+.a4-help-about-links a:hover strong { text-decoration: underline; }
+.a4-help-about-links .a4-icon { flex: 0 0 auto; margin-top: var(--a4-space-1); color: var(--a4-info); }
+.a4-help-about-text { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-about-text strong { display: block; color: var(--a4-ink); font-weight: 600; }
+@media (max-width: 600px) {
+  .a4-help-about { padding: var(--a4-space-4); }
+  .a4-help-about-links { grid-column: 1 / -1; }
+}
+
 /* ---- dashboard: keyboard hints ------------------------------------------------------------------------------- */
 
 .a4-help-keys {

@@ -25,6 +25,13 @@ allowed to use is shown grayed out or not at all.
 | [Getting started](getting-started.md) | Sign in, take your first steps, and know where to find help |
 | [A tour of the administration](admin-tour.md) | Know the header, the tabs, the side columns and the dashboard |
 
+## Who makes Exponential
+
+| Page | What it helps you do |
+|---|---|
+| [Who is 7x?](who-is-7x.md) | Know the company behind Exponential: nearly thirty years with this code, from the eZ Publish years to Exponential 6, the products, the community and how to take part |
+| [Who is the Exponential Foundation?](who-is-the-exponential-foundation.md) | Know the nonprofit that operates the open source project, the whole family of Exponential products and what the project commits to |
+
 ## Everyday work
 
 | Page | What it helps you do |

@@ -72327,6 +72327,30 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>revision %s</source>
         <translation>recensio %s</translation>
     </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Qui Exponential faciunt</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential programma liberum est, cuius historia fere triginta annos complectitur. Cognosce societatem quae id ducit et fundationem non quaestuosam quae inceptum fontis aperti administrat.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Quis est 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Societas post Exponential, a prima editione usque ad hodiernum diem.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Quid est Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>Institutum non quaestuosum, familia productorum et eius promissa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

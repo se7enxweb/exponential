@@ -79551,5 +79551,29 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>revision %s</source>
         <translation>Revision %s</translation>
     </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Wer Exponential macht</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential ist freie Software mit einer Geschichte von fast dreißig Jahren. Lernen Sie das Unternehmen kennen, das es leitet, und die gemeinnützige Stiftung, die das Open-Source-Projekt betreibt.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Wer ist 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Das Unternehmen hinter Exponential, von der ersten Version bis heute.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Wer ist die Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>Die gemeinnützige Organisation, die Produktfamilie und ihre Zusagen.</translation>
+    </message>
 </context>
 </TS>
