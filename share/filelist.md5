@@ -512,7 +512,7 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 5d35317c921d3787c8da593f097cc2f4  design/admin/templates/error/shop/2.tpl
 60e288bd8fb5708e034ac8c4000e36e1  design/admin/templates/error/shop/3.tpl
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
-5569ea7f6737be80f95e323893dd92b7  design/admin/templates/exphelp/audience.tpl
+69fd782a2a5e04a37095b463d2fd6b62  design/admin/templates/exphelp/audience.tpl
 067116b34b78ad2ee423617355ed5ea7  design/admin/templates/exphelp/contents.tpl
 b3eb2afe4af319d4330140f00f27849c  design/admin/templates/exphelp/dashboard.tpl
 d5bcab372dd034d664fb7485189939e5  design/admin/templates/exphelp/manual.tpl
@@ -1265,7 +1265,7 @@ dfc9f60f6f8ad15792eef04ef82dae7a  design/admin4/templates/error/shop/1.tpl
 b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 61b4fd1fca8330170ce7e6b1425a3962  design/admin4/templates/error/shop/3.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
-5569ea7f6737be80f95e323893dd92b7  design/admin4/templates/exphelp/audience.tpl
+69fd782a2a5e04a37095b463d2fd6b62  design/admin4/templates/exphelp/audience.tpl
 067116b34b78ad2ee423617355ed5ea7  design/admin4/templates/exphelp/contents.tpl
 b3eb2afe4af319d4330140f00f27849c  design/admin4/templates/exphelp/dashboard.tpl
 d5bcab372dd034d664fb7485189939e5  design/admin4/templates/exphelp/manual.tpl

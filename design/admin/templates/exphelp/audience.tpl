@@ -39,7 +39,7 @@
             <a class="a4-btn a4-btn-primary" href={concat( '/exphelp/viewer/', $help_l.start.id )|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span>{'Start here'|i18n( $help_ctx )}</a>
             {/if}
             <a class="a4-btn" href={$help_l.search_url|ezurl}><span class="a4-icon a4-bi-list-ul" aria-hidden="true"></span>{'All pages for %audience'|i18n( $help_ctx,, hash( '%audience', $help_l.name ) )|wash}</a>
-            <a class="a4-btn" href={'/exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-arrow-left" aria-hidden="true"></span>{'All audiences'|i18n( $help_ctx )}</a>
+            <a class="a4-btn" href={'/exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-people" aria-hidden="true"></span>{'All audiences'|i18n( $help_ctx )}</a>
         </div>
     </section>
 {/case}
