@@ -91,12 +91,25 @@ class Languages extends \Exponential\Runnable\ModuleView
                               'rule' => $step['rule'], 'rule_kind' => $kind, 'translated' => $step['translated'] );
         }
         $summary = isset( $row['extension_summary'] ) ? $row['extension_summary'] : \expI18nFallbackReport::summary( array() );
-        return array( 'locale' => $row['locale'], 'english' => $row['english'], 'native' => $row['native'], 'http' => $row['http'],
+        return array( 'locale' => $row['locale'], 'english' => $row['english'], 'native' => $row['native'], 'http' => self::langAttribute( $row['http'] ),
                       'has_coverage' => $row['coverage'] !== null,
                       'own' => $row['own'], 'kind' => \expI18nFallbackReport::kind( $row ),
                       'coverage' => $row['coverage'], 'pct' => $row['coverage'] === null ? 0 : (int)$row['coverage'],
                       'from' => $row['from'], 'chain' => $chain, 'problem' => $row['problem'],
                       'problem_target' => $row['problem_target'], 'extensions' => $summary );
+    }
+
+    /**
+     * The lang attribute of a locale's own name: its HTTP code, but none for a private-use language (qaa to qtz, the
+     * test language qlo-ZZ), which no browser or screen reader knows.
+     *
+     * @param string $http
+     * @return string
+     */
+    public static function langAttribute( $http )
+    {
+        $http = (string)$http;
+        return preg_match( '/^q[a-t][a-z](-|$)/i', $http ) ? '' : $http;
     }
 
     /**
