@@ -1219,7 +1219,22 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
 
         $wide = self::media( self::css(), 'screen and (min-width: 576px)' );
         $this->assertStringContainsString( '.a4-mega-panel.a4-mega-wide {', $wide );
-        $this->assertStringContainsString( 'max-width: min(calc(4 * 15rem + 3 * var(--a4-space-5) + 2 * var(--a4-space-5) + 2px), calc(100vw - 2 * var(--a4-space-5)));', $wide );
+        $this->assertStringContainsString( '    width: min(calc(4 * 15rem + 3 * var(--a4-space-5) + 2 * var(--a4-space-5) + 2px), calc(100vw - 2 * var(--a4-space-5)));', $wide );
+        // every panel under its own tab: the script sets --a4-mega-start (the tab's start edge, kept inside the window,
+        // mirrored right to left) through the CSSOM; without the script the panel stays centred
+        $this->assertMatchesRegularExpression( '/\.a4-mega-panel\.is-anchored \{\s*inset-inline-start: var\(--a4-mega-start, var\(--a4-space-5\)\);\s*inset-inline-end: auto;\s*margin-inline: 0;/', $wide );
+        $js = self::read( 'design/admin4/javascript/a4_mega_menu.js' );
+        $this->assertStringContainsString( "panel.style.setProperty('--a4-mega-start', Math.round(start) + 'px');", $js );
+        $this->assertStringContainsString( "var start = rtl ? width - tab.right : tab.left;", $js );
+        $this->assertStringContainsString( "start = Math.max(margin, Math.min(start, width - margin - panel.offsetWidth));", $js );
+        $this->assertStringNotContainsString( 'setAttribute(\'style\'', $js, 'no style attribute (CSP)' );
+        // the caret inside the tab's pill: 12px more than a tab without a mega menu, the selected pill keeps its shape
+        $this->assertStringContainsString( '.navbar-menu .navbar-bar > li.a4-mega-item > a.selected:hover { padding-inline-end: var(--a4-space-5); }', $wide );
+        $this->assertMatchesRegularExpression( '/\.navbar-bar > li\.a4-mega-item > \.a4-mega-toggle \{\s*position: absolute;\s*inset-inline-end: 0;/', $wide );
+        $this->assertStringContainsString( '.navbar-bar > li.a4-mega-item > a.selected + .a4-mega-toggle { color: var(--a4-on-accent); }', $wide );
+        // the row's tab icons from 1600px only, so the tabs keep their room at 1440px and 960px
+        $this->assertStringContainsString( '.navbar-menu .navbar-bar > li > a > .a4-icon { display: none; }',
+                                           self::media( self::css(), 'screen and (min-width: 576px) and (max-width: 1599.98px)' ) );
         $this->assertStringContainsString( 'columns: 15rem 4;', $wide );
         $this->assertMatchesRegularExpression( '/\.a4-mega-wide \.a4-mega-group \{[^}]*break-inside: avoid;/', $wide, 'a group is never split' );
         // three columns of 15rem (16px) and their gaps fit 960px less the card's insets and padding: no inner scroll there
