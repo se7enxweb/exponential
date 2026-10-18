@@ -68,8 +68,20 @@ language in `language-names-<code>.json`). Both are keyed by a signature of the 
 locale and translation file, so a new or changed file builds the catalogue again on its next use; nothing needs
 clearing. With the cache, the list costs about 2 ms per page.
 
-A regional variant uses only its own translation file: `ger-AT` has none and shows English texts, not German ones.
-To give it German texts, copy `share/translations/ger-DE/` to `share/translations/ger-AT/`.
+A regional variant without a translation of its own takes the one `i18n.ini [TranslationSettings]
+FallbackLanguages[]` names: `ger-AT` and `ger-CH` show the `ger-DE` texts, the French-speaking countries `fre-FR`,
+the Spanish-speaking ones `esl-ES`, the Arabic ones `ara-SA` once it exists. The translator looks this up for the
+kernel and for each extension on its own, so `esl-MX`, which has a kernel translation, still gets `esl-ES` for an
+extension without an `esl-MX` one. The coverage of such a locale is that of the translation it falls back to.
+`testShippedFallbacksGiveEveryCountryOfATranslatedLanguageItsTranslation` fails when a country of a translated
+language has neither a translation nor a fallback.
+
+The fallbacks come from `expI18nFallbackResolver`, the class the translator uses: a locale counts with the first
+translation of its whole **chain** (`esl-AR -> esl-MX -> esl-ES`), the rules of extensions (`FallbackRules[]`) and
+the automatic same-language fallback included, and with `FallbackMode=merge` with every translation of the chain
+together. Each entry has `fallback` (the translation counted, '' for its own) and `chain`. The resolver's signature is
+part of the cache's (format 5). Setup > Interface languages and `./console exp:i18n fallbacks` list the same per
+locale, with the extensions' coverage: see [Translation fallbacks](../../languages.md#13-translation-fallbacks).
 
 ## Untranslated languages: listed by default
 
@@ -159,5 +171,53 @@ Sources:
   too. A provider of an extension gets the same list box by implementing both methods.
 - `expUISwitchLanguageCatalogue`: `entries()`, `entry( $code )`, `readerNames( $httpCode )`, `localeCodes()`,
   `coveragePercent()`, `sortValuesByLabel( $labels, $httpCode, $useIntl )`.
+- `expUISwitchLanguageCatalogue( $root, $cacheDirectory, $fallbacks, $resolver )`: `$fallbacks` (a
+  `FallbackLanguages[]` map without other rules) or `$resolver` (an `expI18nFallbackResolver`) replace the
+  installation's settings, for tests; `resolver()` is the one in use, `fallbacks()` the configured map that points to
+  a translation.
 - Tests: `tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php` (grouping, the A–Z order with and
   without Intl, the allow-list, untranslated languages, coverage and its cache), without a database.
+
+### Writing a fallback rule
+
+An extension that knows better where a locale should fall back (a regional language whose speakers read another,
+a script variant, a customer's own locale) adds a **rule**: a class implementing `expI18nFallbackRuleInterface`
+with one method.
+
+```php
+<?php
+// extension/myext/classes/mylocalefallbackrule.php (in the extension's autoload)
+class myLocaleFallbackRule implements expI18nFallbackRuleInterface
+{
+    public function fallbackFor( $locale, expI18nFallbackResolver $resolver )
+    {
+        // Catalan of Andorra and Valencia read the Catalan translation, if there is one
+        if ( in_array( $locale, array( 'cat-AD', 'cat-VA' ), true ) && $resolver->hasTranslation( 'cat-ES' ) )
+            return 'cat-ES';
+        return null; // no say: the next rule is asked
+    }
+}
+```
+
+```ini
+# extension/myext/settings/i18n.ini.append.php
+[TranslationSettings]
+FallbackRules[]=myLocaleFallbackRule
+```
+
+- `fallbackFor()` returns a locale code, `'untranslated'` (or `'eng-GB'`) for the English source texts, or `null`
+  when the rule has no say. It is asked for each step of a chain, so returning `cat-ES` for `cat-AD` and something
+  else for `cat-ES` makes a longer chain; the resolver stops cycles and long chains, and `exp:i18n check` reports
+  them.
+- The order is fixed: `FallbackLanguages[]` first (what is configured always wins), then the rules in the order of
+  `FallbackRules[]`, then the automatic same-language fallback. A rule cannot override a configured line; an
+  administrator can always correct a rule with one.
+- The resolver gives the rule `hasTranslation( $locale )` (a kernel translation exists), `translations()`,
+  `localeExists( $locale )` (a `share/locale` file), `configured()` and `option( $name )`. The rule is created once
+  per resolver (once per process while the settings stay the same) without arguments, so it can keep what it
+  computed; keep it cheap, the translator asks once per locale and request.
+- A rule that throws is logged and skipped; a `FallbackRules[]` entry that is no such class is reported by
+  `exp:i18n check` and on Setup > Interface languages, and otherwise ignored.
+- Test it the way `tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php` does: `new expI18nFallbackResolver(
+  $map, array( 'myLocaleFallbackRule' ), array( 'repository' => ..., 'locale_directory' => ... ) )` and
+  `chain()` / `explain()`, without a database.

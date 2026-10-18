@@ -101,6 +101,9 @@ class eZTranslationCache
         $translationExtensions = $ini->variable( 'RegionalSettings', 'TranslationExtensions' );
 
         $uniqueParts = array( $internalCharset, $translationRepository, implode( ';', $translationExtensions ) );
+        // the fallbacks decide which files a locale's cache is built from: other fallbacks, another cache
+        if ( class_exists( 'expI18nFallbackResolver' ) )
+            $uniqueParts[] = expI18nFallbackResolver::instance()->signature();
 
         $sharedTsCacheDir = $ini->hasVariable( 'RegionalSettings', 'SharedTranslationCacheDir' ) ?
                             trim( $ini->variable( 'RegionalSettings', 'SharedTranslationCacheDir' ) ) :
