@@ -412,3 +412,9 @@ attributes); it falls back to TinyMCE 8. A siteaccess that must keep TinyMCE 3 s
 `Directives[script-src]='self' 'unsafe-inline'` and `Directives[style-src]='self' 'unsafe-inline'` for itself. The
 shipped policy also names `worker-src 'self'`, so `AdditionalSources[]=worker-src blob:` can allow a blob worker
 where a feature needs one.
+
+**A view with a policy of its own.** The kernel sends its headers before the view runs. A view that sends its own
+`Content-Security-Policy` with PHP's `header()` (the database tool AdminNeo of sevenx_dse, with its own nonce) replaces
+the kernel's enforced policy for that response; the stricter report-only companion stays. That is intended: the view's
+policy fits its own inline scripts. A view that wants the kernel's policy as well adds its header with
+`header( ..., false )`.

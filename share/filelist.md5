@@ -182,7 +182,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-0f6e9d4fe76a3c5dfbb9f4d0af973bb2  composer.json
+cd537e8b5912c5a684e0f1bdb59bed06  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -3589,7 +3589,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-d01cb9b9b1027772cddc22fd3b6f499d  doc/features/6.0/content-security-policy.md
+0c35049b3484becd7d593bcf66b4c680  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
