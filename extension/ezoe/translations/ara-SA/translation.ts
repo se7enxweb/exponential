@@ -192,7 +192,7 @@
     </message>
     <message>
         <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
-        <translation>المحرر المباشر على TinyMCE 3.5، محرر كل تثبيتة.</translation>
+        <translation>المحرر المباشر على TinyMCE 3.5، محرر كل تثبيت.</translation>
     </message>
     <message>
         <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
