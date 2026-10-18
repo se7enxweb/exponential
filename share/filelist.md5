@@ -8016,7 +8016,7 @@ cf79264b76e26d46d385530fc1fc6e93  tests/tests/extension/ezupdate/fixtures/compos
 a1a9edde9c0872dfbf4f774d28b9c6ae  tests/tests/extension/git_manager/GitManagerAdminStylingTest.php
 51cd083de51e3fe4c44f83b15733f6b5  tests/tests/extension/git_manager/GitManagerLogPagingTest.php
 a259b36c8795f576c46cb9b5ea46ea25  tests/tests/extension/maps/expMapAddressEscapingTest.php
-8362dfb067e40501945fd448c8afe09a  tests/tests/extension/sevenx_dse/SevenxDseAdminNeoViewTest.php
+267144e1bae65a62d6434f56daf8fe80  tests/tests/extension/sevenx_dse/SevenxDseAdminNeoViewTest.php
 68ae76f0ecbdae3536129edaf2dd63b8  tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php
 2abc7e0d7ab556d758e40d7c95bc1dbb  tests/tests/extension/sevenx_dse/fixtures/adminneo_ends_with_ezexit.php
 14ed0fd86bd419c3abc2e81c07d0cdc0  tests/tests/extension/sevenx_dse/fixtures/adminneo_runs_to_end.php
