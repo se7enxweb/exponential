@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <title>{ezini( 'Portal', 'SiteTitle', 'expportal.ini' )|wash}</title>
-    <script>try {ldelim} var t = localStorage.getItem('expportal-theme'); if (t) document.documentElement.setAttribute('data-theme', t); {rdelim} catch (e) {ldelim}{rdelim}</script>
+    <script src={'javascript/portal/theme_head.js'|ezdesign}></script>
     <link rel="stylesheet" href={'stylesheets/portal.css'|ezdesign}>
     {ezscript_load( array( 'ezjsc::jquery' ) )}
 </head>

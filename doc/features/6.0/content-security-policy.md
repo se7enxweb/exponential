@@ -248,6 +248,13 @@ same `ezpopmenu_*` functions as before.
 What they still have inline is styles (`style=""`, `<style>`), which `style-src 'self'` reports; enforce with
 `style-src 'self' 'unsafe-inline'` until those are moved as well.
 
+Measured on the same installation after these releases, with the policy put on every page by the browser test and
+`script-src 'self'` enforced: the administration pages of admin4l, admin4 and Exponential UI (the newsletter, tags,
+export, layouts, owner change and the other extension pages among them) report no script violation and their
+features work, on Apache and on Velocity. What is still inline in a script sense is the TinyMCE 3 engine (ezoe and
+Exponential UI's copy of its edit template); external scripts (Google Maps, reCAPTCHA, the social buttons of ezdemo,
+an ad server of ezflow) need their hosts in `script-src`.
+
 ### Before enforcing on the administration
 
 - **Menu items of extensions.** An extension that adds context menu items with an inline script

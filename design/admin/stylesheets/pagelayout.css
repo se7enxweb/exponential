@@ -1400,8 +1400,10 @@ html #leftmenu .explayouts-sidebar a
 {
     display: list-item;
     list-style: disc outside;
-    margin: 0 0 0.4em 1.5em;
-    padding: 0;
+    margin: 0 0 0.1em 1.5em;
+    padding: 3px 0;
+    min-height: 24px;   /* a target of at least 24px (WCAG 2.5.8); the links were 16.8px high, 5.4px apart */
+    box-sizing: border-box;
     gap: 0;
     color: #0b4e7a;
     background: none;
@@ -1410,7 +1412,7 @@ html #leftmenu .explayouts-sidebar a
     line-height: 1.25;
     transition: none;
 }
-html:where([dir="rtl"]) #leftmenu .explayouts-sidebar a { margin: 0 1.5em 0.4em 0; }
+html:where([dir="rtl"]) #leftmenu .explayouts-sidebar a { margin: 0 1.5em 0.1em 0; }
 
 html #leftmenu .explayouts-sidebar a:hover
 {
@@ -1461,7 +1463,7 @@ html #page.ezexplayoutsuinavigationpart .nl-btn:hover { color: #000; border-colo
 
 html #page.ezexplayoutsuinavigationpart .nl-btn.nl-btn-primary
 {
-    color: #f5f3dd;
+    color: #fff;   /* 4.8:1 on the green; #f5f3dd was 4.3:1 (as theme/rounded.css) */
     background: #567975;
 }
 
@@ -1474,7 +1476,7 @@ html #page.ezexplayoutsuinavigationpart .ng-layouts-app table th
     font-weight: bold;
     text-transform: none;
     letter-spacing: normal;
-    color: #eee;
+    color: #fff;   /* 5.1:1 on the grey; #eee was 4.4:1 */
     background: #6f6e6b;
     border-bottom: 1px solid #ccc;
     padding: 6px 5.6px;

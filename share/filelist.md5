@@ -182,7 +182,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-9c997a2fe1d2d76472a68686e1b9b986  composer.json
+068b540dd62013aaaff9751f771f4fb9  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -337,7 +337,7 @@ dfb29f95a62780e5c09df46a0e996f6f  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
-8571202bbbf6bc6c39c6e1e17940cff9  design/admin/stylesheets/pagelayout.css
+5053fe0fe8caecc367da152e93c50067  design/admin/stylesheets/pagelayout.css
 2d02f74460d590ebf57e8230963c891e  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 017f424deeeb46501db6bcf63990e746  design/admin/stylesheets/theme/rounded.css
@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-c6cd136e8101598a6b58503bc650980f  doc/changelogs/6.0/6.0.15.md
+c169a95863dbe9973b0cbef7aa16937b  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3574,7 +3574,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-3cad3542cc10d903ffe9410b1fdda086  doc/features/6.0/content-security-policy.md
+ecbb852db73a35878993d3c6accb68fe  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
@@ -4323,8 +4323,9 @@ b1d522f844f26c1ced98f4d638d76f63  extension/expservices/design/expportal_jquery/
 2c83ea5271a157914199ae8086ec7efa  extension/expservices/design/expportal_jquery/javascript/portal/news.js
 4f19387c5c9903b06b41511baf6b1e18  extension/expservices/design/expportal_jquery/javascript/portal/search.js
 2d85e3865d96e17e37082be24e7554ab  extension/expservices/design/expportal_jquery/javascript/portal/shop.js
+67ed72a775cea0671f9c332c6bfa37cc  extension/expservices/design/expportal_jquery/javascript/portal/theme_head.js
 b15f4c3e509628bd74f5a9caeb0e9e19  extension/expservices/design/expportal_jquery/stylesheets/portal.css
-92821f6500933559cd0d01036e38519b  extension/expservices/design/expportal_jquery/templates/pagelayout.tpl
+2072b2b4fb617f022553b411c6d65dbe  extension/expservices/design/expportal_jquery/templates/pagelayout.tpl
 4ba0c6042b1e5da7d683a32c4c6535f4  extension/expservices/design/expportal_react/javascript/portal/api.js
 b248cbf5c196a8d65852516604f0e386  extension/expservices/design/expportal_react/javascript/portal/app.js
 02d0b364cec550f3de6faff7b37b9b46  extension/expservices/design/expportal_react/javascript/portal/pages/feeds.js
@@ -4348,7 +4349,7 @@ ae349a1f831ef056202da5a7791749ad  extension/expservices/design/expportal_reactiv
 a5a0ded18d815bc2af21708c761fb135  extension/expservices/design/expportal_reactive/javascript/reactive/effects.js
 4f61e42ab5c641a0db33dcdcd1a621ed  extension/expservices/design/expportal_reactive/javascript/reactive/store.js
 333a735ee3665d702a2847fa37182487  extension/expservices/design/expportal_reactive/javascript/reactive/vdom.js
-e2a60289ad1c3bbe39c89ed4bfc3a0e8  extension/expservices/design/expportal_reactive/templates/pagelayout.tpl
+581da8185137b869e391cd6b15e9773c  extension/expservices/design/expportal_reactive/templates/pagelayout.tpl
 7257506e273b79a601bba8b9660180f2  extension/expservices/design/expportal_wireframe/javascript/wireframe.js
 b69d305204dd0459049af2ee6e264f8b  extension/expservices/design/expportal_wireframe/stylesheets/wireframe.css
 c7f40c2be79241d3bf9a5db1bbce34f1  extension/expservices/design/expportal_wireframe/templates/pagelayout.tpl
@@ -6779,7 +6780,7 @@ b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.ph
 72ac1e093ee82d6fbf003d4432240000  phpcs.xml.dist
 ef2da25522d8ed3513c81b1343870c7e  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-c8c6f6e2b83a77d41461027351aa34ba  phpunit.xml
+3b24939a1de81154157acbbac32fd77d  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -7692,7 +7693,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-fe392e9f2592f81462e0093b7a88833f  tests/test-map.json
+f632fab93f67d3c21142ea911450c317  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
@@ -7778,8 +7779,8 @@ db8cab45223a19677ec1dc1f786b2f5c  tests/tests/design/AdminUsedTranslationsTest.p
 79434fdf210e89a5a67e773034cbfa98  tests/tests/design/AdminVisibilityStatusTest.php
 f0f50ee05d633e889c584fbc962ea814  tests/tests/design/AsynchronousPublishingLinkTest.php
 72b8688d77884e0a8d3b705c186a7191  tests/tests/design/ClassicAdminNarrowWindowTest.php
-032b14e01223eb9b6ad24196b1c64607  tests/tests/design/ExtensionInlineScriptsTest.php
-a160ae3b2d682c5f063abf5546023024  tests/tests/design/FormSubmitButtonDisableTest.php
+be0d65eb9d0dbf34d048d809f070c37f  tests/tests/design/ExtensionInlineScriptsTest.php
+6e105b5c448762ee4581368f59aff5cf  tests/tests/design/FormSubmitButtonDisableTest.php
 375fe339c03acdb153a03aadbc24784d  tests/tests/design/LogViewerCopyMessagesTest.php
 3ded02ca57016d193d7c9df51a8dbe84  tests/tests/design/LogViewerNavTest.php
 06249d1308ccf3eeb0d366548bae10a4  tests/tests/design/TranslationFilesValidTest.php
@@ -7908,6 +7909,8 @@ a26c7abb7aa53e9ce49166a23824422d  tests/tests/extension/expservices/users/expNot
 b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUserServicesTest.php
 1d8e114d714c6cc4edbaaf7d046993bc  tests/tests/extension/expservices/users/expUsersDeclarationsTest.php
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
+893aa82aa98f726b8c3707d41329e4f7  tests/tests/extension/ezflow/ezflowEditScriptTest.php
+63f1210778fca68d6548215d9865edef  tests/tests/extension/ezflow/js/ezflow_edit.js
 65bddc780ac5d0cd9cb58e79a59a877d  tests/tests/extension/ezjscore/ezjscPackerGeneratedContentTest.php
 a12c3e4b151896794176e0c9ca78d5ca  tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php
 815c9c214d99424bb693376c627ac29b  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php
@@ -7973,8 +7976,9 @@ cf79264b76e26d46d385530fc1fc6e93  tests/tests/extension/ezupdate/fixtures/compos
 37204f9331d53a964bb66a09f776120e  tests/tests/extension/ezupdate/fixtures/composer_update_nothing_to_do.log
 93560b62a75eb48a157a8f339b6cebfa  tests/tests/extension/ezupdate/fixtures/composer_update_one_update.log
 7a425cdb99ce71ff04e1a65bc1ccd33f  tests/tests/extension/ezupdate/fixtures/probe_composer_location.php
-abc064a61d340b53525575d2883b77cb  tests/tests/extension/git_manager/GitManagerAdminStylingTest.php
-32d0a05d30e7ce48e020e5e74d1d9fa9  tests/tests/extension/maps/expMapAddressEscapingTest.php
+a1a9edde9c0872dfbf4f774d28b9c6ae  tests/tests/extension/git_manager/GitManagerAdminStylingTest.php
+51cd083de51e3fe4c44f83b15733f6b5  tests/tests/extension/git_manager/GitManagerLogPagingTest.php
+a259b36c8795f576c46cb9b5ea46ea25  tests/tests/extension/maps/expMapAddressEscapingTest.php
 68ae76f0ecbdae3536129edaf2dd63b8  tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php
 f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
 60763ffb5de55986611b882076e8d32c  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php

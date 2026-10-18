@@ -174,14 +174,17 @@
 
         <!--
           admin-extensions: the admin templates and stylesheets of git_manager, ezupdate and sevenx_dse follow the admin
-          design rules (no inline CSS or scripts, tokens only, admin4 menus with the width switch). Reads files only; a
-          test whose extension is not installed is skipped.
+          design rules (no inline CSS or scripts, tokens only, admin4 menus with the width switch), and ezflow's edit
+          script (in node, against tests/tests/design/js/mini_dom.js). Reads files only; a test whose extension is not
+          installed is skipped.
           Run: php vendor/bin/phpunit - -testsuite admin-extensions
         -->
         <testsuite name="admin-extensions">
             <file>tests/tests/extension/git_manager/GitManagerAdminStylingTest.php</file>
+            <file>tests/tests/extension/git_manager/GitManagerLogPagingTest.php</file>
             <file>tests/tests/extension/ezupdate/ezUpdateAdminStylingTest.php</file>
             <file>tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php</file>
+            <file>tests/tests/extension/ezflow/ezflowEditScriptTest.php</file>
         </testsuite>
 
         <!--

@@ -114,6 +114,16 @@ class FormSubmitButtonDisableTest extends PHPUnit\Framework\TestCase
             $this->markTestSkipped( 'sevenx_themes_media is not installed' );
         $source = file_get_contents( $file );
         $this->assertSame( array(), self::offences( $source ) );
+        $script = self::root() . '/extension/sevenx_themes_media/design/media/javascript/exp-page-actions.js';
+        if ( strpos( $source, 'data-exp-disable-on-submit=' ) !== false && is_file( $script ) )
+        {
+            // sevenx-themes-media 1.5.70 on: the form names its buttons in data-exp-disable-on-submit, and the theme's
+            // script file disables them on the next tick (no inline script)
+            $code = file_get_contents( $script );
+            $this->assertSame( array(), self::offences( $code ) );
+            $this->assertMatchesRegularExpression( '/data-exp-disable-on-submit.*?setTimeout\(\s*function\s*\(\)\s*\{.*?\.disabled\s*=\s*true.*?\}\s*,\s*0\s*\)/s', $code );
+            return;
+        }
         $this->assertMatchesRegularExpression( '/setTimeout\(\s*disableButtons\s*,\s*0\s*\)/', $source );
     }
 }
