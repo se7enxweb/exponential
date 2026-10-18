@@ -35,8 +35,11 @@
 
 class expHelpRecordRenderer
 {
-    /** Hosts that no longer answer: their addresses are shown as historical text, never as links */
-    const DEAD_HOSTS = array( 'zev.ez.no', 'svn.ez.no', 'pubsvn.ez.no', 'svn.ez.no:80' );
+    /**
+     * Hosts that no longer answer (the old SVN servers; confluence.ez.no redirects to a dead port): their addresses are
+     * shown as historical text, never as links
+     */
+    const DEAD_HOSTS = array( 'zev.ez.no', 'svn.ez.no', 'pubsvn.ez.no', 'svn.ez.no:80', 'confluence.ez.no' );
 
     /** Fewest records for a text to count as a record list */
     const MIN_RECORDS = 3;
@@ -55,22 +58,30 @@ class expHelpRecordRenderer
     /** @var array hosts treated as gone */
     protected $deadHosts;
 
+    /** @var callable|null the address of a relative link (a page of the documentation), or null */
+    protected $link;
+
     /**
-     * @param array $options 'translate' => callable( string ): string, 'dead_hosts' => list of host names
+     * @param array $options 'translate' => callable( string ): string, 'dead_hosts' => list of host names,
+     *                       'link' => callable( string $relativePath ): ?string, the address of a page of the documentation
+     *                       a record names by a relative path (the Markdown renderer's link policy); without it such a
+     *                       path is shown as text
      */
     public function __construct( array $options = array() )
     {
         $this->translate = isset( $options['translate'] ) && is_callable( $options['translate'] ) ? $options['translate'] : null;
         $this->deadHosts = isset( $options['dead_hosts'] ) && is_array( $options['dead_hosts'] )
             ? array_map( 'strtolower', $options['dead_hosts'] ) : self::DEAD_HOSTS;
+        $this->link = isset( $options['link'] ) && is_callable( $options['link'] ) ? $options['link'] : null;
     }
 
     /**
      * Parse a text into records, or null when it is not a record list.
+     * Lines that start with "#" are comments: they say where the records come from and are shown as such.
      *
      * @param string $text
      * @return array|null array( 'intro' => list of lines, 'records' => list of record arrays (see record()),
-     *                    'sections' => list of section labels in order )
+     *                    'sections' => list of section labels in order, 'comments' => list of comment lines )
      */
     public static function parse( $text )
     {
@@ -80,6 +91,7 @@ class expHelpRecordRenderer
         $lines = explode( "\n", $text );
         $count = count( $lines );
         $intro = array();
+        $comments = array();
         $records = array();
         $sections = array();
         $section = '';
@@ -92,6 +104,11 @@ class expHelpRecordRenderer
             $line = rtrim( $lines[$i] );
             if ( trim( $line ) === '' )
                 continue;
+            if ( $line[0] === '#' )
+            {
+                $comments[] = trim( ltrim( $line, '#' ) );
+                continue;
+            }
             if ( preg_match( '/^-\s/', $line ) )
             {
                 // a field line outside a record
@@ -143,7 +160,7 @@ class expHelpRecordRenderer
         if ( count( $records ) < self::MIN_RECORDS || $nonBlank === 0 || $fieldLines === 0
              || $structured / $nonBlank < 0.85 || $keyed / $fieldLines < 0.6 || count( $intro ) > 10 )
             return null;
-        return array( 'intro' => $intro, 'records' => $records, 'sections' => $sections );
+        return array( 'intro' => $intro, 'records' => $records, 'sections' => $sections, 'comments' => $comments );
     }
 
     /**
@@ -162,13 +179,16 @@ class expHelpRecordRenderer
      *
      * @return array( 'name', 'section', 'aka', 'date' (ISO or ''), 'date_text', 'release_date', 'release_date_text',
      *                'revisions' => list of array( label, value ), 'urls' => list of array( label, url, revision ),
-     *                'notes' => list of text, 'series', 'keyed' => number of fields that were understood )
+     *                'notes' => list of text, 'sources' => list of text ("- Source=..."), 'series' ("- Series=5.x"
+     *                or from the version), 'minor' ("- Part=..." or from the version), 'keyed' => number of
+     *                fields that were understood )
      */
     protected static function record( $name, array $fields, $section )
     {
         $record = array( 'name' => $name, 'section' => $section, 'aka' => '', 'date' => '', 'date_text' => '',
                          'release_date' => '', 'release_date_text' => '', 'revisions' => array(), 'urls' => array(),
-                         'notes' => array(), 'series' => '', 'minor' => '', 'keyed' => 0 );
+                         'notes' => array(), 'sources' => array(), 'series' => '', 'minor' => '', 'keyed' => 0 );
+        $series = $part = '';
         foreach ( $fields as $field )
         {
             $key = null;
@@ -214,13 +234,20 @@ class expHelpRecordRenderer
                 $label = $key === 'url' ? 'Address' : ucfirst( substr( $key, 0, -4 ) );
                 $record['urls'][] = array( $label, $value, $revision );
             }
+            elseif ( $key === 'series' && preg_match( '/^\d{1,2}\.x$/', $value ) )
+                $series = $value; // the group, when the name holds no version of its own (2014.11 belongs to 5.x)
+            elseif ( $key === 'part' && $value !== '' )
+                $part = $value; // the part of a long series the record is listed in
+            elseif ( $key === 'source' && $value !== '' )
+                $record['sources'][] = $value;
             elseif ( $key === 'release branch configured' && $value === '' )
                 continue; // an empty marker: understood, nothing to show
             else
                 $record['revisions'][] = array( ucfirst( $key ), $value === '' || $value === '?' ? '' : $value );
         }
-        $record['series'] = self::series( $record['aka'], $name );
-        $record['minor'] = self::minor( $record['aka'], $name );
+        $record['series'] = $series !== '' ? $series : self::series( $record['aka'], $name );
+        $record['minor'] = $part !== '' ? $part : self::minor( $record['aka'], $name );
+        $record['part'] = $part !== '';
         return $record;
     }
 
@@ -285,7 +312,7 @@ class expHelpRecordRenderer
      * Title and summary of a record page, for the document index; null when the text is not one.
      *
      * @param string $text
-     * @return array|null array( 'title' => string, 'summary' => string, 'version' => newest major version or '' )
+     * @return array|null array( 'title' => string, 'summary' => string, 'version' => the major version most records belong to, or '' )
      */
     public function describe( $text )
     {
@@ -297,7 +324,7 @@ class expHelpRecordRenderer
     {
         $records = $parsed['records'];
         $branches = 0;
-        $svn = false;
+        $svnRecords = 0;
         $dead = false;
         $series = array();
         $dates = array();
@@ -305,18 +332,21 @@ class expHelpRecordRenderer
         {
             if ( strpos( $record['name'], '/' ) !== false || stripos( $record['name'], 'branch' ) !== false )
                 $branches++;
+            $svn = false;
             foreach ( $record['revisions'] as $revision )
                 if ( stripos( $revision[0], 'revision' ) !== false )
                     $svn = true;
             foreach ( $record['urls'] as $url )
             {
-                if ( stripos( $url[1], 'svn' ) !== false )
+                if ( stripos( $url[1], '/svn' ) !== false )
                     $svn = true;
                 if ( $this->isDead( $url[1] ) )
                     $dead = true;
             }
+            if ( $svn )
+                $svnRecords++;
             if ( $record['series'] !== '' )
-                $series[(int)$record['series']] = true;
+                $series[(int)$record['series']] = isset( $series[(int)$record['series']] ) ? $series[(int)$record['series']] + 1 : 1;
             foreach ( array( 'date', 'release_date' ) as $key )
                 if ( $record[$key] !== '' )
                     $dates[] = $record[$key];
@@ -329,7 +359,8 @@ class expHelpRecordRenderer
         $extra = array();
         if ( $range !== '' )
             $extra[] = $range;
-        if ( $svn )
+        // "from the original SVN" only when every record comes from it
+        if ( $svnRecords > 0 && $svnRecords === count( $records ) )
             $extra[] = $this->t( 'from the original SVN' );
         $title = $kind . ( $extra ? ' (' . implode( ', ', $extra ) . ')' : '' );
         sort( $dates );
@@ -339,10 +370,14 @@ class expHelpRecordRenderer
             $this->t( $isBranches
                 ? '%count branches from %first to %last with the revisions they started and ended at.'
                 : '%count releases from %first to %last with their release names, dates and revisions.' ) );
+        if ( $svnRecords > 0 && $svnRecords < count( $records ) )
+            $summary .= ' ' . $this->t( 'The older records come from the original SVN repository.' );
         if ( $dead )
-            $summary .= ' ' . $this->t( 'The addresses of the old SVN server are kept as historical text.' );
-        // the newest major version the records reach: search ranks the page like the pages of that version
-        return array( 'title' => $title, 'summary' => $summary, 'version' => $majors ? (string)end( $majors ) : '' );
+            $summary .= ' ' . $this->t( 'Addresses on servers that are no longer online are kept as historical text.' );
+        // the major version most records belong to: search ranks the page like the pages of that version (a history
+        // of mostly 3.x releases ranks like the 3.x pages, VersionBoost)
+        $most = $series ? array_search( max( $series ), $series, true ) : null;
+        return array( 'title' => $title, 'summary' => $summary, 'version' => $most === null ? '' : (string)$most );
     }
 
     /**
@@ -401,6 +436,8 @@ class expHelpRecordRenderer
         if ( $parsed['intro'] )
             $html .= '<p class="a4-help-records-intro">' . self::escape( implode( ' ', $parsed['intro'] ) ) . '</p>';
         $html .= '<p class="a4-help-records-stats">' . self::escape( $meta['summary'] ) . '</p>';
+        if ( $parsed['comments'] )
+            $html .= '<p class="a4-help-records-source">' . self::escape( implode( ' ', array_filter( $parsed['comments'] ) ) ) . '</p>';
 
         foreach ( $order as $group )
         {
@@ -413,13 +450,19 @@ class expHelpRecordRenderer
             // flat under the body (no section element), so the viewer's collapsible h2s (exphelp.js) find every group
             $html .= '<h2 id="' . $eid . '" class="a4-help-h a4-help-records-group">' . self::escape( $label ) . ' <span class="a4-tag">' . count( $rows ) . '</span>'
                 . ' <a class="a4-help-anchor" href="#' . $eid . '" aria-hidden="true" tabindex="-1">#</a></h2>';
-            // a long series is split into its minor versions (3.0, 3.1 ...), each with a heading of its own
+            // a long series is split into its minor versions (3.0, 3.1 ...) or the parts its records name ("- Part=..."),
+            // each with a heading of its own: minor versions in version order, named parts in the order of the file
             $parts = array();
+            $named = false;
             if ( $isSeries && count( $rows ) > 15 )
             {
                 foreach ( $rows as $row )
+                {
                     $parts[$row['minor'] !== '' ? $row['minor'] : $group][] = $row;
-                uksort( $parts, 'strnatcmp' );
+                    $named = $named || $row['part'];
+                }
+                if ( !$named )
+                    uksort( $parts, 'strnatcmp' );
             }
             if ( count( $parts ) < 2 )
                 $parts = array( '' => $rows );
@@ -504,7 +547,8 @@ class expHelpRecordRenderer
         foreach ( $record['revisions'] as $revision )
         {
             list( $label, $value ) = $revision;
-            if ( $first === '' && preg_match( '/^\d+/', $value, $m ) )
+            // the revision column sorts by the first revision number, not by a tag or a date
+            if ( $first === '' && !preg_match( '/date|tag/i', $label ) && preg_match( '/^\d+/', $value, $m ) )
                 $first = $m[0];
             $items[] = '<li><span class="a4-help-records-key">' . self::escape( $this->t( $label ) ) . '</span> '
                 . ( $value === '' ? '<span class="a4-help-records-none">' . self::escape( $this->t( 'not recorded' ) ) . '</span>'
@@ -519,6 +563,9 @@ class expHelpRecordRenderer
                 . ( $url[2] !== '' ? ' <span class="a4-help-records-sub">' . self::escape( sprintf( $this->t( 'revision %s' ), $url[2] ) ) . '</span>' : '' ) . '</li>';
         foreach ( $record['notes'] as $note )
             $items[] = '<li class="a4-help-records-note">' . self::escape( $note ) . '</li>';
+        foreach ( $record['sources'] as $source )
+            $items[] = '<li class="a4-help-records-source"><span class="a4-help-records-key">' . self::escape( $this->t( 'Source' ) ) . '</span> '
+                . self::escape( $source ) . '</li>';
         $html .= '<td>' . ( $items ? '<ul class="a4-help-records-list">' . implode( '', $items ) . '</ul>' : '' ) . '</td>';
         return $html . '</tr>';
     }
@@ -531,10 +578,19 @@ class expHelpRecordRenderer
     }
 
     /**
-     * An address: a link only for https on a host that still exists, else text; the gone hosts marked historical.
+     * An address: a link only for https on a host that still exists, else text; the gone hosts marked historical. A
+     * relative path (a page of the documentation: changelogs/6.0/6.0.14.md) is a link when the link option gives its
+     * address.
      */
     protected function urlHtml( $url )
     {
+        if ( !preg_match( '/^[A-Za-z][A-Za-z0-9+.-]*:|^\/\//', $url ) )
+        {
+            $href = $this->link !== null ? call_user_func( $this->link, $url ) : null;
+            if ( is_string( $href ) && $href !== '' && !preg_match( '/^\s*(?:javascript|data|vbscript|file):/i', $href ) )
+                return '<a href="' . self::escape( $href ) . '">' . self::escape( $url ) . '</a>';
+            return '<code class="a4-help-records-url">' . self::escape( $url ) . '</code>';
+        }
         $dead = $this->isDead( $url );
         if ( !$dead && preg_match( '#^https://[A-Za-z0-9.-]+(?::\d+)?(?:/[^\s<>"]*)?$#', $url ) )
             return '<a class="a4-help-ext" rel="noopener noreferrer" href="' . self::escape( $url ) . '">' . self::escape( $url ) . '</a>';
@@ -555,11 +611,12 @@ class expHelpRecordRenderer
     }
 
     /**
-     * A sort key that orders versions naturally: 3.10 after 3.9, 2.9-3 before 3.0-1.
+     * A sort key that orders versions naturally: 3.10 after 3.9, 2.9-3 before 3.0-1, v2014.11 with 2014.9.
      */
     protected static function versionKey( $name )
     {
-        return preg_replace_callback( '/\d+/', function( $m ) { return sprintf( '%06d', (int)$m[0] ); }, strtolower( $name ) );
+        return preg_replace_callback( '/\d+/', function( $m ) { return sprintf( '%06d', (int)$m[0] ); },
+                                      preg_replace( '/^v(?=\d)/', '', strtolower( $name ) ) );
     }
 
     protected function t( $text )
