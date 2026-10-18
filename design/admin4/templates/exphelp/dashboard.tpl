@@ -88,6 +88,11 @@
         </ul>
     </section>
 
+    {* ---- Help maintained as content: manuals and topics (doc/features/6.0/help-content.md) ---- *}
+    {if and( is_set( $help_content ), $help_content, or( $help_content.manuals|count|gt( 0 ), $help_content.topics|count|gt( 0 ) ) )}
+    {include uri='design:exphelp/parts/dashboard_content.tpl' content=$help_content}
+    {/if}
+
     {* ---- Featured and recently changed pages ---- *}
     {if or( and( is_set( $help_featured ), $help_featured|count|gt( 0 ) ), and( is_set( $help_recent ), $help_recent|count|gt( 0 ) ) )}
     <div class="a4-help-columns">
