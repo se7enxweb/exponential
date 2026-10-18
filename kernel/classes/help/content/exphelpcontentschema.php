@@ -87,7 +87,10 @@ class expHelpContentSchema
                 $value = $ini->variable( 'ContentSettings', $name );
                 if ( is_array( $default ) )
                 {
-                    $value = array_values( array_filter( (array)$value, function ( $v ) { return is_scalar( $v ) && trim( (string)$v ) !== ''; } ) );
+                    // keys are kept (AudienceMap[visitors]=user, ContextHelpIds[content/edit]=...); a plain list keeps its order
+                    $value = array_filter( (array)$value, function ( $v ) { return is_scalar( $v ) && trim( (string)$v ) !== ''; } );
+                    if ( count( array_filter( array_keys( $value ), 'is_string' ) ) === 0 )
+                        $value = array_values( $value );
                     return $value ? $value : $default;
                 }
                 return $value;
