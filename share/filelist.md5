@@ -6119,7 +6119,7 @@ d9f32563966a8b1506a892bdb7f4f812  kernel/private/classes/views/contentfinder/sea
 167efda06e6649f67bd2acdd585c5265  kernel/private/classes/views/exphelp/contents.php
 10a6678f1143f63600b68e96950831c8  kernel/private/classes/views/exphelp/dashboard.php
 0aff94d13bc40ee02538815ceb7cc5b5  kernel/private/classes/views/exphelp/report.php
-afd34a334d1a53660d09e792c0856b18  kernel/private/classes/views/exphelp/search.php
+5a685157eafb56bd02809af79ffd6553  kernel/private/classes/views/exphelp/search.php
 1c108b0561e0779ebfcd98f11536b67a  kernel/private/classes/views/exphelp/viewer.php
 aad26363a27c2cb19acf4d33e055e53a  kernel/private/classes/views/ezinfo/about.php
 bb1ec8ba0c555192359eb58e004d8b65  kernel/private/classes/views/ezinfo/copyright.php
@@ -8480,7 +8480,7 @@ c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPol
 15bc4aa421fecb44051cb5ccce92a704  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
 450e2a87a53cc8ae3fe778916dba5a1c  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 b61aa9c1f66c7026dff764569d8ea15d  tests/tests/kernel/classes/help/expHelpSearchTest.php
-d5c0f4796b6fd1834d58bb5c488727cb  tests/tests/kernel/classes/help/expHelpSearchViewParametersTest.php
+ba6f0d36f853bb5ab423e870f2540f9f  tests/tests/kernel/classes/help/expHelpSearchViewParametersTest.php
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 444d0db01cc11b5e3f7778567f43f105  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
 f6ecb43c903ad708479858b8bbb01746  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
