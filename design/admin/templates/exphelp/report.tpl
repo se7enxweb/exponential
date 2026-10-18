@@ -242,5 +242,6 @@
             <p>{'Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.'|i18n( $help_ctx )}</p>
         </div>
     </section>
+    {include uri='design:exphelp/parts/license_notice.tpl' license_page_id=''}
 </div>
 {ezscript_require( array( 'exphelp.js' ) )}

@@ -1658,6 +1658,12 @@
     "kernel/classes/help/exphelpsearch.php": [
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
     ],
+    "kernel/classes/help/exphelplicense.php": [
+      "tests/tests/kernel/classes/help/expHelpLicenseTest.php"
+    ],
+    "design/*/templates/exphelp/parts/license_*.tpl": [
+      "tests/tests/kernel/classes/help/expHelpLicenseTest.php"
+    ],
     "kernel/classes/help/exphelpcontextregistry.php": [
       "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php"
     ],

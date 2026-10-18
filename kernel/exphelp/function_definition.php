@@ -19,5 +19,12 @@ $FunctionList['context'] = array( 'name' => 'context',
                                   'parameters' => array( array( 'name' => 'module', 'type' => 'string', 'required' => false, 'default' => '' ),
                                                          array( 'name' => 'view', 'type' => 'string', 'required' => false, 'default' => '' ),
                                                          array( 'name' => 'design', 'type' => 'string', 'required' => false, 'default' => '' ) ) );
+// fetch( 'exphelp', 'license', hash( 'id', $page_id ) ): the documentation license of a page (expHelpLicense::forPage())
+$FunctionList['license'] = array( 'name' => 'license',
+                                  'operation_types' => array( 'read' ),
+                                  'call_method' => array( 'class' => 'expHelpFunctionCollection',
+                                                          'method' => 'fetchLicense' ),
+                                  'parameter_type' => 'standard',
+                                  'parameters' => array( array( 'name' => 'id', 'type' => 'string', 'required' => false, 'default' => '' ) ) );
 
 ?>

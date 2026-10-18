@@ -175,6 +175,9 @@
         </div>
     </section>
 
+    {* ---- Free documentation: the license and what readers may do with it ---- *}
+    {include uri='design:exphelp/parts/license_dashboard.tpl'}
+
     {* ---- Keyboard ---- *}
     <ul class="a4-help-keys" id="help-dash-keys" aria-label="{'Keyboard shortcuts'|i18n( $help_ctx )|wash}">
         <li><kbd class="a4-kbd">/</kbd> {'search'|i18n( $help_ctx )}</li>

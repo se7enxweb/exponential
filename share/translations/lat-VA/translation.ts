@@ -72070,5 +72070,101 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Duces et index rerum omnibus qui cum hac institutione laborant, ex documentis versionis eius propriae scripti.</translation>
     </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Licentia documentorum</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Haec pagina pars est documentorum extensionis %extension et sub licentia eius extensionis distribuitur.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Haec pagina ex documentis programmatis originalis hereditate accepta est. Sub %license non cadit; sub %other distribuitur.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Quae paginae quam licentiam habeant</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Hic est textus %license, versionis %version, qualem Free Software Foundation edit. Omnibus licet eum ad verbum describere et communicare; mutare non licet.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Haec documenta libera sunt, sub %license %version vel posteriore licentiata.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Haec documenta libera sunt, sub %license %version licentiata.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Licentiam lege</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Licentia in tela</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Quid documentis liberis facere possis</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Nota iuris auctoris et licentiae</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Documenta libera: iis utere ut te ipsum et alios adiuves</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Hoc auxilium documenta libera sunt, sub %license %version vel posteriore licentiata. Iis uti, ea communicare et emendare licet:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Hoc auxilium documenta libera sunt, sub %license %version licentiata. Iis uti, ea communicare et emendare licet:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Stude</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Quamlibet paginam quotiens vis lege, quovis consilio.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Describe et communica</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Paginas aliis usoribus da, in charta vel ut fasciculos. Cum omni exemplo notam iuris auctoris, notam licentiae et exemplum licentiae serva.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Converte, accommoda et emenda</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Versionem tuam sub eadem licentia communica, cum notis originalibus et nota eorum quae mutavisti.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Cita</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Paginam titulo et inscriptione eius in auxilio, vel fasciculo eius in directorio doc, nomina.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Emendationes refer</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>In quavis pagina &quot;In GitHub emendare&quot; adhibe. Mutationes sub eadem licentia accipiuntur, ut omnibus liberae maneant.</translation>
+    </message>
 </context>
 </TS>

@@ -72131,5 +72131,101 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</translation>
     </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Documentation license</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Which pages have which license</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>This documentation is free documentation, licensed under the %license %version or later.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>This documentation is free documentation, licensed under the %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Read the license</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>The license on the web</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>What you can do with free documentation</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Copyright and license notice</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Free documentation: use it to help yourself and others</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Study it</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Read any page as often as you like, for any purpose.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Copy it and share it</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Translate, adapt and improve it</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Share your version under the same license, with the original notices and a note of what you changed.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Cite it</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Refer to a page by its title and its address in the help, or its file in the doc directory.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Contribute fixes back</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</translation>
+    </message>
 </context>
 </TS>

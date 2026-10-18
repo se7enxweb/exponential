@@ -73519,5 +73519,101 @@ Gracias por tu feedback</translation>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Guías y referencia para todos los que trabajan con esta instalación, a partir de la documentación de su propia versión.</translation>
     </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Licencia de la documentación</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Esta página forma parte de la documentación de la extensión %extension y se distribuye bajo la licencia de esa extensión.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Esta página procede de la documentación del software original. No está cubierta por la %license; se distribuye bajo la %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Qué páginas tienen qué licencia</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Este es el texto de la %license, versión %version, tal como lo publica la Free Software Foundation. Cualquiera puede copiarlo y compartirlo literalmente; no se permite modificarlo.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Esta documentación es documentación libre, con licencia %license %version o posterior.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Esta documentación es documentación libre, con licencia %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Leer la licencia</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>La licencia en la web</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Lo que puede hacer con la documentación libre</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Aviso de copyright y licencia</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Documentación libre: úsela para ayudarse a sí mismo y a los demás</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Esta ayuda es documentación libre, con licencia %license %version o posterior. Puede usarla, compartirla y mejorarla:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Esta ayuda es documentación libre, con licencia %license %version. Puede usarla, compartirla y mejorarla:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Estudiarla</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Lea cualquier página tantas veces como quiera, con cualquier fin.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Copiarla y compartirla</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Entregue páginas a otros usuarios, en papel o como archivos. Mantenga con cada copia el aviso de copyright, el aviso de licencia y una copia de la licencia.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Traducirla, adaptarla y mejorarla</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Comparta su versión bajo la misma licencia, con los avisos originales y una nota de lo que ha cambiado.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Citarla</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Haga referencia a una página por su título y su dirección en la ayuda, o por su archivo en el directorio doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Aportar correcciones</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Use «Editar en GitHub» en cualquier página. Los cambios se aceptan bajo la misma licencia, así que siguen siendo libres para todos.</translation>
+    </message>
 </context>
 </TS>

@@ -23,6 +23,17 @@ class expHelpFunctionCollection
             return array( 'result' => false );
         return array( 'result' => expHelpContextRegistry::instance()->lookup( (string)$module, (string)$view, (string)$design ) );
     }
+
+    /**
+     * fetch( 'exphelp', 'license', hash( 'id', $page_id ) )
+     *
+     * @param string $id page id below doc/; '' for the help as a whole
+     * @return array array( 'result' => expHelpLicense::forPage(), or false when the notice is switched off )
+     */
+    public static function fetchLicense( $id = '' )
+    {
+        return array( 'result' => expHelpLicense::isEnabled() ? expHelpLicense::forPage( (string)$id ) : false );
+    }
 }
 
 ?>

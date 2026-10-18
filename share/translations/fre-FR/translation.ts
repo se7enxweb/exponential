@@ -73465,5 +73465,101 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Guides et référence pour tous ceux qui travaillent avec cette installation, tirés de la documentation de sa propre version.</translation>
     </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Licence de la documentation</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Cette page fait partie de la documentation de l&apos;extension %extension et est distribuée sous la licence de cette extension.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Cette page provient de la documentation du logiciel d&apos;origine. Elle n&apos;est pas couverte par la %license ; elle est distribuée sous la %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Quelles pages sont sous quelle licence</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Voici le texte de la %license, version %version, tel que le publie la Free Software Foundation. Chacun peut le copier et le partager mot pour mot ; il est interdit de le modifier.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Cette documentation est une documentation libre, sous licence %license %version ou ultérieure.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Cette documentation est une documentation libre, sous licence %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Lire la licence</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>La licence sur le web</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Ce que vous pouvez faire avec une documentation libre</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Mention de copyright et de licence</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Documentation libre : utilisez-la pour vous aider et aider les autres</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Cette aide est une documentation libre, sous licence %license %version ou ultérieure. Vous pouvez l&apos;utiliser, la partager et l&apos;améliorer :</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Cette aide est une documentation libre, sous licence %license %version. Vous pouvez l&apos;utiliser, la partager et l&apos;améliorer :</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>L&apos;étudier</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Lisez n&apos;importe quelle page aussi souvent que vous le souhaitez, dans n&apos;importe quel but.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>La copier et la partager</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Donnez des pages à d&apos;autres utilisateurs, sur papier ou sous forme de fichiers. Conservez avec chaque copie la mention de copyright, la mention de licence et une copie de la licence.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>La traduire, l&apos;adapter et l&apos;améliorer</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Partagez votre version sous la même licence, avec les mentions d&apos;origine et une note de ce que vous avez modifié.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>La citer</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Renvoyez à une page par son titre et son adresse dans l&apos;aide, ou par son fichier dans le répertoire doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Proposer vos corrections</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Utilisez « Modifier sur GitHub » sur n&apos;importe quelle page. Les modifications sont acceptées sous la même licence et restent ainsi libres pour tous.</translation>
+    </message>
 </context>
 </TS>
