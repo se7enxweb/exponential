@@ -1,8 +1,24 @@
 <?php
 /**
- * exphelp/search (doc/features/6.0/help-system.md, "Search"): GET q, audience, category, type, offset, limit.
- * format=json answers the client's instant search with expHelpSearch::search()'s array; otherwise the results page
- * design:exphelp/search.tpl (help_search: that array; help_filters: the filters given; help_audiences, help_categories).
+ * exphelp/search (doc/features/6.0/help-system.md, "Search"): the search and browse page of the help.
+ *
+ * The state lives in view parameters, in a canonical order (expHelp::searchUrl()):
+ *   exphelp/search/(q)/upload+image/(category)/layouts/(audience)/editor/(type)/help/(offset)/20/(limit)/10
+ * Every part is optional. Without (q) the page browses: it lists every page the filters allow (never an empty page).
+ * A GET request with q, audience, category, type, offset or limit (the search form without scripts, old links) is
+ * redirected (302) to the canonical address. A JSON request (format=json, or Accept: application/json, as the help
+ * script sends it) is never redirected and takes both forms: expHelpSearch::search()'s array plus 'canonical' (the
+ * module-relative address of that state) and 'canonical_href' (with the siteaccess).
+ *
+ * Values are checked: a category, audience or type must be one exphelp.ini knows (others are dropped), q is at most
+ * 200 characters, offset at most 10000, limit 1 to 50.
+ *
+ * Template design:exphelp/search.tpl: help_search (the result), help_filters (category, audience, type as lists
+ * joined by ","), help_canonical, help_url_base (the canonical address without offset; append "/(offset)/<n>"),
+ * help_facet_urls (facet => value => address of that choice, offset reset; value '' clears the facet),
+ * help_category (the chosen category: id, name, icon, count, intro) or false, help_audiences, help_categories,
+ * help_types, help_pager (prev, next: addresses or false; from, to, total, pages: list of array( number, url,
+ * current )), help_i18n_json.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -14,18 +30,44 @@ namespace Exponential\View\Kernel\Exphelp
 
 class Search extends \Exponential\Runnable\ModuleView
 {
+    /** The view parameter variables of module.php's unordered_params, by parameter name. */
+    const VIEW_PARAMETERS = array( 'q' => 'Query', 'category' => 'Category', 'audience' => 'Audience', 'type' => 'Type',
+                                   'offset' => 'Offset', 'limit' => 'Limit', 'format' => 'Format' );
+
     public function run( array $scope )
     {
-        $Module = $scope['Params']['Module'];
+        $Params = $scope['Params'];
+        $Module = $Params['Module'];
         if ( !\expHelp::isEnabled() )
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
 
-        $request = self::request( $_GET );
         $index = \expHelpDocumentIndex::instance();
-        $search = new \expHelpSearch( $index );
-        $result = $search->search( $request['q'], $request['filters'], $request['limit'], $request['offset'] );
+        $known = self::knownValues( $index );
+        $defaultLimit = self::defaultLimit();
+        $viewState = self::viewParameters( $Params );
+        $json = self::wantsJson( $viewState, $_GET, $_SERVER );
 
-        if ( $request['format'] === 'json' )
+        // the form without scripts, and old ?q= links: to the canonical address (never for JSON, never for POST)
+        if ( !$json && self::redirectsGet( $_GET, isset( $_SERVER['REQUEST_METHOD'] ) ? $_SERVER['REQUEST_METHOD'] : 'GET' ) )
+        {
+            $state = self::state( array_merge( $viewState, self::getState( $_GET ) ), $known, $defaultLimit );
+            return $Module->redirectTo( \expHelp::searchUrl( $state, $defaultLimit ) );
+        }
+
+        $state = self::state( $json ? array_merge( self::getState( $_GET ), array_filter( $viewState, function ( $v ) { return $v !== false && $v !== null && $v !== ''; } ) )
+                                    : $viewState, $known, $defaultLimit );
+        $filters = array();
+        foreach ( array( 'audience', 'category', 'type' ) as $facet )
+        {
+            if ( $state[$facet] )
+                $filters[$facet] = implode( ',', $state[$facet] );
+        }
+        $search = new \expHelpSearch( $index );
+        $result = $search->search( $state['q'], $filters, $state['limit'], $state['offset'] );
+        $result['canonical'] = \expHelp::searchUrl( $state, $defaultLimit );
+        $result['canonical_href'] = \expHelpLinks::absolute( $result['canonical'] );
+
+        if ( $json )
         {
             header( 'Content-Type: application/json; charset=utf-8' );
             header( 'Cache-Control: private, no-store' );
@@ -34,45 +76,278 @@ class Search extends \Exponential\Runnable\ModuleView
             \eZExecution::cleanExit();
         }
 
+        $categories = $index->categories();
+        $category = false;
+        if ( count( $state['category'] ) === 1 && isset( $categories[$state['category'][0]] ) )
+        {
+            $category = $categories[$state['category'][0]];
+            $category['intro'] = self::categoryIntro( $category['id'] );
+        }
+
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'help_i18n_json', \expHelp::clientStringsJson() );
         $tpl->setVariable( 'help_search', $result );
-        $tpl->setVariable( 'help_filters', $request['filters'] );
+        $tpl->setVariable( 'help_filters', $filters );
+        $tpl->setVariable( 'help_canonical', $result['canonical'] );
+        $tpl->setVariable( 'help_url_base', \expHelp::searchUrl( array( 'offset' => 0 ) + $state, $defaultLimit ) );
+        $tpl->setVariable( 'help_facet_urls', self::facetUrls( $state, $known, $defaultLimit ) );
+        $tpl->setVariable( 'help_pager', self::pager( $state, (int)$result['total'], $defaultLimit ) );
+        $tpl->setVariable( 'help_category', $category );
         $tpl->setVariable( 'help_audiences', $index->audiences() );
-        $tpl->setVariable( 'help_categories', $index->categories() );
+        $tpl->setVariable( 'help_categories', $categories );
+        $tpl->setVariable( 'help_types', $index->types() );
 
+        $title = $state['q'] !== '' ? \ezpI18n::tr( 'kernel/exphelp', 'Search' )
+                                    : ( $category ? $category['name'] : \ezpI18n::tr( 'kernel/exphelp', 'Browse' ) );
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:exphelp/search.tpl' );
         $Result['path'] = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ),
-                                 array( 'url' => false, 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Search' ) ) );
+                                 array( 'url' => false, 'text' => $title ) );
         return $Result;
     }
 
     /**
-     * The search parameters of a request, bounded.
+     * The view parameters of the request, by name (q, category, ...): string, or false when not given.
+     *
+     * @param array $params the view's $Params
+     * @return array
+     */
+    public static function viewParameters( array $params )
+    {
+        $state = array();
+        $user = isset( $params['UserParameters'] ) && is_array( $params['UserParameters'] ) ? $params['UserParameters'] : array();
+        foreach ( self::VIEW_PARAMETERS as $name => $variable )
+        {
+            $value = isset( $params[$variable] ) && is_string( $params[$variable] ) ? $params[$variable]
+                   : ( isset( $user[$name] ) && is_string( $user[$name] ) ? $user[$name] : false );
+            // an address decodes "+" to a space only with urldecode(); take both spellings
+            if ( $name === 'q' && is_string( $value ) )
+                $value = str_replace( '+', ' ', $value );
+            $state[$name] = $value;
+        }
+        return $state;
+    }
+
+    /**
+     * The search parameters of a query string (q, category, audience, type, offset, limit) that are set.
+     *
+     * @param array $get
+     * @return array
+     */
+    public static function getState( array $get )
+    {
+        $state = array();
+        foreach ( \expHelp::SEARCH_PARAMS as $name )
+        {
+            if ( isset( $get[$name] ) && is_string( $get[$name] ) && $get[$name] !== '' )
+                $state[$name] = $get[$name];
+        }
+        return $state;
+    }
+
+    /**
+     * Whether a request is to be redirected to the canonical address: a GET (or HEAD) with a search parameter in
+     * its query string, empty ones included (the form sends q= with nothing typed). JSON requests are decided before.
+     *
+     * @param array $get
+     * @param string $method
+     * @return bool
+     */
+    public static function redirectsGet( array $get, $method )
+    {
+        if ( !in_array( strtoupper( (string)$method ), array( 'GET', 'HEAD' ), true ) )
+            return false;
+        foreach ( \expHelp::SEARCH_PARAMS as $name )
+        {
+            if ( array_key_exists( $name, $get ) )
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * Whether the answer is JSON: format=json in the query string or as (format)/json, or Accept: application/json.
+     *
+     * @param array $viewState
+     * @param array $get
+     * @param array $server
+     * @return bool
+     */
+    public static function wantsJson( array $viewState, array $get, array $server )
+    {
+        return ( isset( $get['format'] ) && $get['format'] === 'json' )
+            || ( isset( $viewState['format'] ) && $viewState['format'] === 'json' )
+            || self::acceptsJson( $server );
+    }
+
+    /**
+     * A checked state: q (string, at most 200 characters, "/", "(", ")" as spaces), category, audience, type (lists
+     * of known values, at most 10), offset (0 to 10000), limit (1 to 50).
+     *
+     * @param array $raw name => string
+     * @param array $known facet => list of the known values
+     * @param int $defaultLimit
+     * @return array
+     */
+    public static function state( array $raw, array $known, $defaultLimit = 20 )
+    {
+        $state = array( 'q' => \expHelp::searchWords( isset( $raw['q'] ) ? $raw['q'] : '' ) );
+        foreach ( array( 'category', 'audience', 'type' ) as $facet )
+        {
+            $values = isset( $raw[$facet] ) && is_string( $raw[$facet] ) ? explode( ',', strtolower( $raw[$facet] ) ) : array();
+            $allowed = isset( $known[$facet] ) ? array_flip( $known[$facet] ) : array();
+            $values = array_values( array_unique( array_filter( array_map( 'trim', $values ), function ( $v ) use ( $allowed ) {
+                return $v !== '' && isset( $allowed[$v] );
+            } ) ) );
+            $state[$facet] = array_slice( $values, 0, 10 );
+        }
+        $number = function ( $name ) use ( $raw ) {
+            return isset( $raw[$name] ) && is_scalar( $raw[$name] ) && preg_match( '/^\d{1,9}$/', (string)$raw[$name] ) ? (int)$raw[$name] : null;
+        };
+        $offset = $number( 'offset' );
+        $limit = $number( 'limit' );
+        $state['limit'] = max( 1, min( 50, $limit === null ? (int)$defaultLimit : $limit ) );
+        $state['offset'] = max( 0, min( 10000, $offset === null ? 0 : $offset ) );
+        return $state;
+    }
+
+    /**
+     * The known values of each facet: the categories, audiences and types of exphelp.ini.
+     *
+     * @param \expHelpDocumentIndex $index
+     * @return array facet => list
+     */
+    public static function knownValues( $index )
+    {
+        return array( 'category' => array_map( 'strval', array_keys( $index->categories() ) ),
+                      'audience' => array_map( 'strval', array_keys( $index->audiences() ) ),
+                      'type' => array_map( 'strval', array_keys( $index->types() ) ) );
+    }
+
+    /**
+     * The address of each facet choice from a state: facet => value => address ('' clears the facet). A choice
+     * replaces the facet's value and starts again at the first page.
+     *
+     * @param array $state
+     * @param array $known
+     * @param int $defaultLimit
+     * @return array
+     */
+    public static function facetUrls( array $state, array $known, $defaultLimit = 20 )
+    {
+        $urls = array();
+        foreach ( array( 'category', 'audience', 'type' ) as $facet )
+        {
+            $urls[$facet] = array( '' => \expHelp::searchUrl( array( $facet => array(), 'offset' => 0 ) + $state, $defaultLimit ) );
+            foreach ( isset( $known[$facet] ) ? $known[$facet] : array() as $value )
+                $urls[$facet][$value] = \expHelp::searchUrl( array( $facet => array( $value ), 'offset' => 0 ) + $state, $defaultLimit );
+        }
+        return $urls;
+    }
+
+    /**
+     * The pager of a state: prev, next (addresses or false), from, to, total, pages (a window of at most 7 pages
+     * around the current one: number, url, current).
+     *
+     * @param array $state
+     * @param int $total
+     * @param int $defaultLimit
+     * @return array
+     */
+    public static function pager( array $state, $total, $defaultLimit = 20 )
+    {
+        $limit = max( 1, (int)$state['limit'] );
+        $offset = (int)$state['offset'];
+        $url = function ( $offset ) use ( $state, $defaultLimit ) {
+            return \expHelp::searchUrl( array( 'offset' => max( 0, $offset ) ) + $state, $defaultLimit );
+        };
+        $count = (int)ceil( $total / $limit );
+        $current = (int)floor( $offset / $limit );
+        $pages = array();
+        if ( $count > 1 )
+        {
+            $first = max( 0, min( $current - 3, $count - 7 ) );
+            for ( $n = $first; $n < min( $count, $first + 7 ); $n++ )
+                $pages[] = array( 'number' => $n + 1, 'url' => $url( $n * $limit ), 'current' => $n === $current );
+        }
+        return array(
+            'prev' => $offset > 0 ? $url( $offset - $limit ) : false,
+            'next' => $offset + $limit < $total ? $url( $offset + $limit ) : false,
+            'from' => $total > 0 ? min( $total, $offset + 1 ) : 0,
+            'to' => min( $total, $offset + $limit ),
+            'total' => $total,
+            'pages' => $pages,
+        );
+    }
+
+    /**
+     * The introduction of a category on its browse page: exphelp.ini [CategorySettings] CategoryIntros[<id>], else
+     * the built-in sentence for the standard categories, else ''.
+     *
+     * @param string $id
+     * @return string
+     */
+    public static function categoryIntro( $id )
+    {
+        $intros = \expHelp::setting( 'CategorySettings', 'CategoryIntros', array() );
+        if ( is_array( $intros ) && isset( $intros[$id] ) && is_string( $intros[$id] ) && trim( $intros[$id] ) !== '' )
+            return trim( $intros[$id] );
+        $ctx = 'kernel/exphelp';
+        switch ( $id )
+        {
+            case 'getting-started': return \ezpI18n::tr( $ctx, 'First steps in the administration: signing in, finding your way and the everyday tasks.' );
+            case 'editing': return \ezpI18n::tr( $ctx, 'Creating and changing content: the editor, fields, drafts and versions.' );
+            case 'media': return \ezpI18n::tr( $ctx, 'Images, files and other media: uploading, choosing and reusing them.' );
+            case 'publishing': return \ezpI18n::tr( $ctx, 'Publishing, scheduling, hiding and moving content.' );
+            case 'search': return \ezpI18n::tr( $ctx, 'Finding content in the administration and on the site.' );
+            case 'languages': return \ezpI18n::tr( $ctx, 'Translations and the languages of the site.' );
+            case 'account': return \ezpI18n::tr( $ctx, 'Your account: password, two-step sign-in and preferences.' );
+            case 'layouts': return \ezpI18n::tr( $ctx, 'Page layouts: zones, blocks and the rules that choose a layout.' );
+            case 'shortcuts': return \ezpI18n::tr( $ctx, 'Keyboard shortcuts that make the administration faster.' );
+            case 'support': return \ezpI18n::tr( $ctx, 'Getting help and reporting an error.' );
+            case 'administration': return \ezpI18n::tr( $ctx, 'Running the site: settings, users and roles, caches, cronjobs and logs.' );
+            case 'features': return \ezpI18n::tr( $ctx, 'What each feature does and how to set it up.' );
+            case 'development': return \ezpI18n::tr( $ctx, 'Templates, extensions, the API and the code behind it.' );
+            case 'install-upgrade': return \ezpI18n::tr( $ctx, 'Installing Exponential and upgrading it to a new release.' );
+            case 'release-notes': return \ezpI18n::tr( $ctx, 'What changed in each release.' );
+            case 'history': return \ezpI18n::tr( $ctx, 'Older documents kept for reference.' );
+            case 'reference': return \ezpI18n::tr( $ctx, 'Reference material: settings, commands and formats.' );
+        }
+        return '';
+    }
+
+    /** @return int [SearchSettings] ResultLimit, 1 to 50 */
+    public static function defaultLimit()
+    {
+        return max( 1, min( 50, (int)\expHelp::setting( 'SearchSettings', 'ResultLimit', 20 ) ) );
+    }
+
+    /**
+     * The search parameters of a query string, bounded (the JSON client's form; kept for callers of wave 1).
      *
      * @param array $get
      * @return array array( 'q' => string, 'filters' => array, 'limit' => int, 'offset' => int, 'format' => html|json )
      */
     public static function request( array $get )
     {
-        $text = function ( $key, $max ) use ( $get ) {
-            return isset( $get[$key] ) && is_string( $get[$key] ) ? mb_substr( trim( $get[$key] ), 0, $max ) : '';
-        };
+        $state = self::state( self::getState( $get ), array( 'category' => self::anyValues( $get, 'category' ),
+                                                              'audience' => self::anyValues( $get, 'audience' ),
+                                                              'type' => self::anyValues( $get, 'type' ) ), self::defaultLimit() );
         $filters = array();
-        foreach ( array( 'audience', 'category', 'type' ) as $key )
+        foreach ( array( 'audience', 'category', 'type' ) as $facet )
         {
-            $value = $text( $key, 64 );
-            // one value or a comma separated list (audience=admin,developer); expHelpSearch bounds each value
-            if ( $value !== '' && preg_match( '/^[a-z0-9_.-]+(?:,[a-z0-9_.-]+){0,9}$/', $value ) )
-                $filters[$key] = $value;
+            $values = array_filter( $state[$facet], function ( $v ) { return preg_match( '/^[a-z0-9_.-]+$/', $v ) === 1; } );
+            if ( $values )
+                $filters[$facet] = implode( ',', $values );
         }
-        $limit = isset( $get['limit'] ) ? (int)$get['limit'] : (int)\expHelp::setting( 'SearchSettings', 'ResultLimit', 20 );
-        return array( 'q' => $text( 'q', 200 ),
-                      'filters' => $filters,
-                      'limit' => max( 1, min( 50, $limit ) ),
-                      'offset' => max( 0, min( 10000, isset( $get['offset'] ) ? (int)$get['offset'] : 0 ) ),
-                      'format' => $text( 'format', 8 ) === 'json' || self::acceptsJson() ? 'json' : 'html' );
+        return array( 'q' => $state['q'], 'filters' => $filters, 'limit' => $state['limit'], 'offset' => $state['offset'],
+                      'format' => isset( $get['format'] ) && $get['format'] === 'json' || self::acceptsJson() ? 'json' : 'html' );
+    }
+
+    /** The values of a facet as given (request() checks their syntax only). */
+    protected static function anyValues( array $get, $facet )
+    {
+        return isset( $get[$facet] ) && is_string( $get[$facet] ) ? explode( ',', strtolower( $get[$facet] ) ) : array();
     }
 
     /**

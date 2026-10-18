@@ -106,6 +106,75 @@ class expHelp
         return $url;
     }
 
+    /** The view parameters of exphelp/search, in the order of the canonical address. */
+    const SEARCH_PARAMS = array( 'q', 'category', 'audience', 'type', 'offset', 'limit' );
+
+    /**
+     * The canonical address of a search or browse state: view parameters, never GET, only the ones that are set,
+     * always in the order q, category, audience, type, offset, limit
+     * ("/exphelp/search/(q)/upload+image/(category)/layouts/(offset)/20"). Words are percent-encoded with "+" for
+     * spaces; "/", "(" and ")" in them become spaces, since the address splits on them (and the search splits words
+     * on them anyway). An offset of 0 and a limit of $defaultLimit are left out.
+     *
+     * @param array $state q (string), category, audience, type (string or list), offset, limit (int)
+     * @param int $defaultLimit
+     * @return string module-relative, for |ezurl or expHelpLinks::absolute()
+     */
+    public static function searchUrl( array $state, $defaultLimit = 20 )
+    {
+        $url = '/exphelp/search';
+        foreach ( self::SEARCH_PARAMS as $name )
+        {
+            if ( !isset( $state[$name] ) )
+                continue;
+            $value = $state[$name];
+            if ( $name === 'q' )
+            {
+                $value = self::searchWords( $value );
+                if ( $value === '' )
+                    continue;
+                $value = str_replace( '%20', '+', rawurlencode( $value ) );
+            }
+            elseif ( $name === 'offset' || $name === 'limit' )
+            {
+                $value = (int)$value;
+                if ( $value <= 0 || ( $name === 'limit' && $value === (int)$defaultLimit ) )
+                    continue;
+                $value = (string)$value;
+            }
+            else
+            {
+                $values = is_array( $value ) ? $value : explode( ',', (string)$value );
+                $values = array_values( array_filter( array_map( 'strval', $values ), function ( $v ) {
+                    return preg_match( '/^[a-z0-9][a-z0-9_.-]{0,63}$/', $v ) === 1;
+                } ) );
+                if ( !$values )
+                    continue;
+                $value = implode( ',', array_unique( $values ) );
+            }
+            $url .= '/(' . $name . ')/' . $value;
+        }
+        return $url;
+    }
+
+    /**
+     * The words of a search as they go into an address: trimmed, white space collapsed, "/", "(", ")" and control
+     * characters as spaces, at most 200 characters.
+     *
+     * @param mixed $q
+     * @return string
+     */
+    public static function searchWords( $q )
+    {
+        if ( !is_string( $q ) )
+            return '';
+        if ( !mb_check_encoding( $q, 'UTF-8' ) )
+            $q = mb_convert_encoding( $q, 'UTF-8', 'UTF-8' );
+        $q = preg_replace( '/[\x00-\x1F\x7F\/()\\\\]+/u', ' ', $q );
+        $q = trim( preg_replace( '/\s+/u', ' ', (string)$q ) );
+        return mb_substr( $q, 0, 200, 'UTF-8' );
+    }
+
     /**
      * The translated strings the client script (exphelp.js) shows, keyed as it reads them.
      *
