@@ -1620,7 +1620,7 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>You can find more documentation in the doc folder of this extension and online on %link.</source>
-        <translation>Weitere Dokumentationen finden Sie im doc-Ordner dieser Erweiterung sowie online unter %link.</translation>
+        <translation>Weitere Dokumentationen finden Sie im doc-Ordner dieser Extension sowie online unter %link.</translation>
     </message>
     <message>
         <source>Toggle &lt;u&gt;underline&lt;/u&gt; style on the selected text. This button is only enabled if you have a custom tag named underline.</source>

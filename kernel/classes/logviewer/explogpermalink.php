@@ -161,6 +161,26 @@ class expLogPermalink
     }
 
     /**
+     * A state as a link to share writes it: the request and client address filters as the masks of the settings show
+     * them (expLogRedactor::fromConfig( $config, false )), so a link made from an unmasked view never carries an
+     * address or a value a masked viewer is not shown. The search compares those filters with what the viewer is
+     * shown, so the masked filters find the same entries, or more (203.0.x.x: every address shown so). Pure.
+     *
+     * @param array $state (defaults() for missing fields)
+     * @param expLogRedactor $redactor with the masks of the settings, never an unmasked viewer's
+     * @return array
+     */
+    public static function shareable( array $state, expLogRedactor $redactor )
+    {
+        $s = $state + self::defaults();
+        if ( $s['ip'] !== '' )
+            $s['ip'] = $redactor->ipFilterOf( $s['ip'] );
+        if ( $s['uri'] !== '' )
+            $s['uri'] = $redactor->text( $s['uri'] );
+        return $s;
+    }
+
+    /**
      * Whether a state asks for a search (any criterion set).
      *
      * @param array $s

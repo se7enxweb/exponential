@@ -148,6 +148,14 @@ class Logs extends \Exponential\Runnable\ModuleView
         // wrapping is the viewer's preference (on by default); a (wrap)/0|1 in a shared link only changes this one page
         $wrap = isset( $Params['wrap'] ) && $Params['wrap'] !== false ? $state['wrap'] : $viewer->wrapLines();
         $permalink = $file !== null ? \expLogPermalink::build( $file['key'], array( 'rotation' => $file['rotation'] ) + $state, array( 'done', 'ok', 'unmask', 'wrap' ) ) : '';
+        // the link to copy and share: its request and client address filters as the masks of the settings show them,
+        // so an unmasked viewer's link carries no address a masked viewer is not shown (the address bar keeps the
+        // filters as typed, for this viewer's own reloads)
+        $sharePermalink = $file !== null
+                          ? \expLogPermalink::build( $file['key'], array( 'rotation' => $file['rotation'] )
+                                                     + \expLogPermalink::shareable( $state, \expLogRedactor::fromConfig( $config, false ) ),
+                                                     array( 'done', 'ok', 'unmask', 'wrap' ) )
+                          : '';
 
         $siteAccesses = array();
         $ini = \eZINI::instance();
@@ -179,6 +187,7 @@ class Logs extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'log_done_ok', $state['ok'] );
         // the permalink of this view (without the outcome of an action and without unmask), its key and its state
         $tpl->setVariable( 'log_permalink', $permalink );
+        $tpl->setVariable( 'log_share_permalink', $sharePermalink );
         $tpl->setVariable( 'log_key', $file !== null ? $file['key'] : '' );
         $tpl->setVariable( 'log_view_state', $state );
         $tpl->setVariable( 'log_wrap', $wrap );

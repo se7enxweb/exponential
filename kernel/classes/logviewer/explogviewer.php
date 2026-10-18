@@ -395,9 +395,9 @@ class expLogViewer
     public function search( array $files, array $criteria, $cursor = '' )
     {
         $search = new expLogSearch( $this->config );
-        $redactor = $this->redactor;
-        $redact = $redactor->masking() ? function ( $text ) use ( $redactor ) { return $redactor->text( $text ); } : null;
-        $result = $search->run( $files, $criteria, $cursor, $redact );
+        // always the redactor, also unmasked: the values of the secret settings and a password in an address stay
+        // hidden then too, and must not be found by searching for them
+        $result = $search->run( $files, $criteria, $cursor, $this->redactor );
         $entries = array();
         foreach ( $result['entries'] as $e )
             $entries[] = $this->present( $e );

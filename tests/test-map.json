@@ -350,7 +350,8 @@
     ],
     "kernel/classes/requestlog/*": [
       "tests/tests/kernel/requestlog/expRequestLogTest.php",
-      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php"
+      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php",
+      "tests/tests/kernel/logviewer/expLogMaskedFilterTest.php"
     ],
     "kernel/private/classes/views/user/logout.php": [
       "tests/tests/kernel/classes/eZUserLogoutTest.php"
@@ -980,7 +981,8 @@
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
       "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
       "tests/tests/kernel/logviewer/expLogBundleTest.php",
-      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php"
+      "tests/tests/kernel/logviewer/expLogRequestLogsTest.php",
+      "tests/tests/kernel/logviewer/expLogMaskedFilterTest.php"
     ],
     "kernel/classes/logviewer/exploghealth.php": [
       "tests/tests/kernel/logviewer/expLogHealthTest.php"
@@ -1011,7 +1013,8 @@
     ],
     "kernel/classes/logviewer/explogpermalink.php": [
       "tests/tests/kernel/logviewer/expLogPermalinkTest.php",
-      "tests/tests/kernel/logviewer/expLogKeyTest.php"
+      "tests/tests/kernel/logviewer/expLogKeyTest.php",
+      "tests/tests/kernel/logviewer/expLogMaskedFilterTest.php"
     ],
     "kernel/private/classes/views/setup/logs*.php": [
       "tests/tests/kernel/logviewer/expLogViewerTest.php",
@@ -1024,7 +1027,8 @@
       "tests/tests/kernel/logviewer/expLogHealthTest.php",
       "tests/tests/kernel/logviewer/expLogDigestTest.php",
       "tests/tests/kernel/logviewer/expLogManagerFallbackTest.php",
-      "tests/tests/kernel/logviewer/expLogBundleTest.php"
+      "tests/tests/kernel/logviewer/expLogBundleTest.php",
+      "tests/tests/kernel/logviewer/expLogMaskedFilterTest.php"
     ],
     "kernel/setup/logs*.php": [
       "tests/tests/kernel/logviewer/expLogViewerTest.php",

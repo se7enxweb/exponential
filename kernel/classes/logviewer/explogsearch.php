@@ -14,6 +14,10 @@
  * The files are searched in the order given (the page gives the current file, then .1, .2 ... and the .gz ones);
  * within a file the entries come in the order they were written.
  *
+ * Given the viewer's redactor, a search finds only what the viewer is shown: the text, the request and the client
+ * address must also match as they are shown masked, so a hidden value (the host part of an address, a token in a
+ * request) cannot be found out by trying searches and watching for hits.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
@@ -74,7 +78,8 @@ class expLogSearch
             else
                 $c[$k] = $k === 'to' && preg_match( '/^\d{4}-\d{2}-\d{2}$/', $v ) ? $t + 86399 : $t;
         }
-        if ( $c['ip'] !== '' && !preg_match( '/^[0-9A-Fa-f.:]+$/', $c['ip'] ) )
+        // an x is a part the masks hide (203.0.x.x, 2001:db8:x:x): an address copied as the viewer shows it is a filter
+        if ( $c['ip'] !== '' && !preg_match( '/^[0-9A-Fa-fXx.:]+$/', $c['ip'] ) )
         {
             $c['invalid']['ip'] = 'not_an_address';
             $c['ip'] = '';
@@ -146,9 +151,11 @@ class expLogSearch
      *
      * @param array $entry from expLogParser
      * @param array $c criteria
+     * @param expLogRedactor|null $redactor the viewer's; with it, the request and the client address are compared
+     *                                      as the viewer is shown them (expLogViewer::present()), not as written
      * @return int 1 yes, 0 no, 2 no and every later entry is past the time range
      */
-    public static function entryMatches( array $entry, array $c )
+    public static function entryMatches( array $entry, array $c, ?expLogRedactor $redactor = null )
     {
         if ( $c['to'] !== null && $entry['time'] !== null && $entry['time'] > $c['to'] )
             return $entry['time'] > $c['to'] + 300 ? 2 : 0; // a little disorder between writers is tolerated
@@ -160,13 +167,62 @@ class expLogSearch
             return 0;
         if ( $c['siteaccess'] !== '' && strcasecmp( $entry['siteaccess'], $c['siteaccess'] ) !== 0 )
             return 0;
-        if ( $c['uri'] !== '' && stripos( $entry['url'], $c['uri'] ) === false )
-            return 0;
-        if ( $c['ip'] !== '' && strncasecmp( $entry['ip'], $c['ip'], strlen( $c['ip'] ) ) !== 0 )
-            return 0;
+        if ( $redactor === null )
+        {
+            if ( $c['uri'] !== '' && stripos( $entry['url'], $c['uri'] ) === false )
+                return 0;
+            if ( $c['ip'] !== '' && strncasecmp( $entry['ip'], $c['ip'], strlen( $c['ip'] ) ) !== 0 )
+                return 0;
+        }
+        else
+        {
+            // compared as written, these two would tell a masked viewer the hidden part one search at a time
+            // (203.0.113.7 shown as 203.0.x.x: does "203.0.1" find it? "203.0.11"? ...): compared as shown only, so a
+            // value copied from the page (203.0.x.x, token=***) finds its entries too
+            if ( $c['uri'] !== '' && !self::shownContains( $redactor, (string)$entry['url'], $c['uri'] ) )
+                return 0;
+            if ( $c['ip'] !== '' && !self::shownStartsWith( $redactor, (string)$entry['ip'], $c['ip'] ) )
+                return 0;
+        }
         if ( $c['reference'] !== '' && !in_array( $c['reference'], $entry['references'], true ) )
             return 0;
         return 1;
+    }
+
+    /**
+     * Whether a request filter is in the request as the viewer is shown it. A filter with a mark of the masks (***)
+     * is also compared with the request as a masked viewer is shown it, so a link made from a masked view finds its
+     * entries for an unmasked viewer too; that view shows less, never more. Pure.
+     *
+     * @param expLogRedactor $redactor the viewer's
+     * @param string $url the request as written
+     * @param string $filter
+     * @return bool
+     */
+    public static function shownContains( expLogRedactor $redactor, $url, $filter )
+    {
+        if ( stripos( $redactor->text( $url ), $filter ) !== false )
+            return true;
+        return strpos( $filter, expLogRedactor::HIDDEN ) !== false && $redactor->masked() !== $redactor
+               && stripos( $redactor->masked()->text( $url ), $filter ) !== false;
+    }
+
+    /**
+     * Whether a client address, as the viewer is shown it, starts with a filter. A filter with an x (a part the
+     * masks hide) is also compared with the address as a masked viewer is shown it. Pure.
+     *
+     * @param expLogRedactor $redactor the viewer's
+     * @param string $ip the client address as written (masked already in the request logs: 203.0.x.x)
+     * @param string $filter
+     * @return bool
+     */
+    public static function shownStartsWith( expLogRedactor $redactor, $ip, $filter )
+    {
+        $len = strlen( $filter );
+        if ( strncasecmp( $redactor->ip( $ip ), $filter, $len ) === 0 )
+            return true;
+        return stripos( $filter, 'x' ) !== false && $redactor->masked() !== $redactor
+               && strncasecmp( $redactor->masked()->ip( $ip ), $filter, $len ) === 0;
     }
 
     /**
@@ -175,8 +231,9 @@ class expLogSearch
      * @param array $files resolved files (expLogFileLocator::resolve()), in the order to search
      * @param array $c criteria (criteria())
      * @param string $cursor "<file index>:<offset>", '' from the start
-     * @param callable|null $redact a function( string ): string; with it, a text search must also match the text as
-     *                              the viewer shows it (what is masked cannot be found by its hidden value)
+     * @param expLogRedactor|callable|null $redact the viewer's redactor: the text, the request and the client address
+     *                              must also match as the viewer shows them (what is masked cannot be found by its
+     *                              hidden value); or a function( string ): string that applies to the text only
      * @return array entries (each with file: the file's id), cursor (to continue from, '' when done), stopped
      *               ('' | results | bytes | time | regex_limit), scanned (bytes), ms, files (ids searched), error
      */
@@ -188,6 +245,9 @@ class expLogSearch
         $maxResults = $this->config->int( 'SearchSettings', 'MaxResults' );
         $maxGzip = $this->config->int( 'SearchSettings', 'MaxGzipBytes' );
         $result = array( 'entries' => array(), 'cursor' => '', 'stopped' => '', 'scanned' => 0, 'ms' => 0, 'files' => array(), 'error' => '' );
+        $redactor = $redact instanceof expLogRedactor ? $redact : null;
+        if ( $redactor !== null )
+            $redact = array( $redactor, 'text' );
         if ( $c['invalid'] )
         {
             $result['error'] = 'invalid';
@@ -222,7 +282,7 @@ class expLogSearch
                 $offset = $i === $fileIndex ? $startOffset : 0;
                 if ( $offset === 0 && $c['from'] !== null && !$file['gz'] )
                     $offset = self::seekTime( $file['path'], $c['from'], (int)$file['size'] );
-                $stop = $this->scanFile( $file, $offset, $c, $compiled, $redact, $result, $started, $budget, $maxBytes, $maxResults, $maxGzip );
+                $stop = $this->scanFile( $file, $offset, $c, $compiled, $redact, $redactor, $result, $started, $budget, $maxBytes, $maxResults, $maxGzip );
                 if ( $stop !== null )
                 {
                     $result['stopped'] = $stop[0];
@@ -249,7 +309,7 @@ class expLogSearch
     /**
      * Searches one file from an offset; null when it was read to its end, else array( reason, offset to go on from ).
      */
-    protected function scanFile( array $file, $offset, array $c, array $compiled, $redact, array &$result, $started, $budget, $maxBytes, $maxResults, $maxGzip )
+    protected function scanFile( array $file, $offset, array $c, array $compiled, $redact, $redactor, array &$result, $started, $budget, $maxBytes, $maxResults, $maxGzip )
     {
         $gz = !empty( $file['gz'] );
         $handle = $gz ? @gzopen( $file['path'], 'rb' ) : @fopen( $file['path'], 'rb' );
@@ -279,7 +339,7 @@ class expLogSearch
         $stop = null;
         $needHeader = $c['levels'] || $c['from'] !== null || $c['to'] !== null || $c['siteaccess'] !== '' || $c['uri'] !== ''
                       || $c['ip'] !== '' || $c['reference'] !== '';
-        $check = function ( $start, $end ) use ( &$lines, &$result, $file, $c, $compiled, $redact, $fileLevel, $needHeader )
+        $check = function ( $start, $end ) use ( &$lines, &$result, $file, $c, $compiled, $redact, $redactor, $fileLevel, $needHeader )
         {
             if ( !$lines )
                 return 1;
@@ -295,7 +355,7 @@ class expLogSearch
             {
                 $entries = expLogParser::parse( $text, $start, $fileLevel );
                 $entry = $entries[0];
-                $verdict = expLogSearch::entryMatches( $entry, $c );
+                $verdict = expLogSearch::entryMatches( $entry, $c, $redactor );
                 if ( $verdict === 1 && $redact !== null && ( $compiled['pattern'] !== '' || $compiled['literal'] !== '' ) )
                     $verdict = expLogSearch::textMatches( $compiled, $c['case'], call_user_func( $redact, $entry['text'] ) ) ? 1 : 0;
                 if ( $verdict === 1 )

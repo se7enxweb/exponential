@@ -154,6 +154,14 @@ The page keeps its address in step with the view as it changes (paused or follow
 the address bar and **Copy permalink** always give a link that opens the same view. The search form works without
 JavaScript too: it is sent with the key and the fields, and the page answers `303` with the permalink.
 
+The link **Copy permalink** gives (and the field above it shows) carries the request and client address filters as
+the masks of the settings show them, whoever copies it: `(ip)/203.0.113.7` becomes `(ip)/203.0.x.x`, `(ip)/203.0.113`
+becomes `(ip)/203.0.x`, an e-mail address in `(uri)` becomes `j***@***.com`. A viewer who searched unmasked for a
+whole address therefore never shares it; whoever opens the link finds every entry shown with that masked address
+(which may be more than one client). The address bar keeps the filters as typed, for the viewer's own reloads. With
+`MaskIPs=disabled` the address is shown to everyone and stays in the link. In the template, `$log_share_permalink`
+holds that link (`$log_permalink` is the view's own); a template override without it falls back to `$log_permalink`.
+
 ### Wrapping long lines
 
 Long lines are wrapped by default. The **Wrap lines** switch stores each viewer's choice as the user preference
@@ -289,9 +297,24 @@ cursor `<file>:<offset>`). A regular expression runs with `pcre.backtrack_limit`
 the JIT (which ignores that limit); a pattern that needs more on one line (`(a+)+$` and the like) stops the search with
 "The regular expression is too expensive" instead of holding the server.
 
-With masking on, the text must also match the line as it is shown: a hidden value cannot be found by searching for
-it. The client address filter compares the address as written (an operator searching for an address from an incident
-report), and the results still show it masked.
+A search finds only what the viewer is shown: the text, the request and the client address must also match as they
+are shown, so a hidden value cannot be found by searching for it, one guess at a time. With masking on, the client
+address filter compares the masked address: `203.0.` finds `203.0.113.7` (shown as `203.0.x.x`), `203.0.113` finds
+nothing. To search for a whole address from an incident report, a viewer with `setup/unmasklogs` switches **Show
+unmasked** on. The values of secret settings and a password in an address are hidden from every viewer, so they are
+never found, masked or not.
+
+The request and client address filters are compared with the value as the viewer is shown it, and only with that, so
+a value copied from the page is a filter too: `203.0.x.x` (an `x` is accepted in the client address), `2001:db8:x:x`,
+`2001::x` and `::x` for compressed IPv6 addresses, `token=***` in the request. Case does not matter (`2001:DB8:`). A
+filter that holds a mark of the masks (`x` in an address, `***` in a request) also finds, for an unmasked viewer, the
+entries a masked viewer would find with it, so a link made from a masked view works for both. This holds on every path
+that filters: the kernel logs, `404.log` and `security.log` (whose addresses are written masked already, so the
+masked form is the only one that finds them, for every viewer), the archives (`.N` and `.N.gz`, also with
+**rotations**), the page's script, the error digest's links and the permalinks.
+
+A compressed IPv6 address with one group before the `::` (`2001::7334`, `fe80::1`) is shown as `2001::x`, as the
+request logs write it; before 6.0.15 the viewer showed it unmasked and the request logs wrote `x`.
 
 ## The line format and cross-references
 
@@ -452,6 +475,11 @@ lists the not-found answers, which are notices) and `GroupBy[<key>]` groups by s
 `category-rule` (the first word, `<category>/<rule>`: `security.log`), `reason` (the `reason=` field with ids and
 paths set aside: `404.log`), `reason-kind`, `uri` (the method and the path without the query) or `message` (the
 default). A log grouped another way says so above its table. See [Request logs](request-logs.md).
+
+A group of a log grouped by `uri` also links with the request filter: the group's path up to its first placeholder,
+masked as the group is (`GET /blog/#` links with `(uri)/~2Fblog~2F`), which the search compares with the request as
+the viewer is shown it. A path of no more than `/` adds no filter. `expLogDigest::link( $group, $since, $grouping )`
+takes the log's grouping; without it a link is built as before.
 
 ## Archives
 

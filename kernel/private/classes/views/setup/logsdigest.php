@@ -87,7 +87,7 @@ class Logsdigest extends \Exponential\Runnable\ModuleView
             $one = $digest->digestFile( $file, $since, $known, $showKnown );
             foreach ( $one['groups'] as &$g )
             {
-                $g['link'] = \expLogDigest::link( $g, $since );
+                $g['link'] = \expLogDigest::link( $g, $since, $one['grouping'] );
                 $g['entry_link'] = \expLogDigest::entryLink( $g );
             }
             unset( $g );

@@ -12,7 +12,7 @@
  * the view (history.replaceState): (follow)/0 while paused, (wrap)/1 with wrapped lines, (offset)/N for the focused
  * entry; it honors them on load. A value is written as the server writes it: every character other than A-Z a-z 0-9
  * _ . , - as ~ and the two hex digits of each of its UTF-8 bytes. "Copy permalink" copies the link without the
- * unmasked choice.
+ * unmasked choice, and with the request and client address filters as the masks show them (data-share-url).
  *
  * The values from the template are the data-* attributes of #log-script, the data it starts from the JSON of
  * #log-state. A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'.
@@ -53,7 +53,7 @@
     var urls = {
         feed: data( 'feed-url' ), page: data( 'page-url' ), node: slash( data( 'node-url' ) ), klass: slash( data( 'class-url' ) ),
         finder: data( 'finder-url' ), template: slash( data( 'template-url' ) ), audit: slash( data( 'audit-url' ) ),
-        permalink: data( 'permalink-url' ), base: data( 'base-url' )
+        permalink: data( 'permalink-url' ), share: data( 'share-url' ), base: data( 'base-url' )
     };
     // a value of a permalink, as expLogPermalink::encode() writes it
     var encodeValue = function ( value ) {
@@ -72,6 +72,8 @@
     // the permalink of the view without the parameters the script writes itself
     var VIEW_PARAMS = /\/\((follow|wrap|offset|unmask)\)\/[^\/]*/g;
     var permalinkBase = ( urls.permalink || urls.base || '' ).replace( VIEW_PARAMS, '' );
+    // the link to copy: the request and client address filters as the masks show them, never an unmasked value
+    var shareBase = urls.share ? urls.share.replace( VIEW_PARAMS, '' ) : permalinkBase;
     var searchQuery = data( 'search-query' );
     var canUnmask = data( 'can-unmask' ) === '1';
     var client = state.client || {};
@@ -356,8 +358,8 @@
     // ---- the address: the permalink of what is shown ----
     var permalinkField = document.getElementById( 'log-permalink' ), copyButton = document.getElementById( 'log-copy-link' );
     var syncTimer = null;
-    var viewPath = function () {
-        var path = permalinkBase;
+    var viewPath = function ( base ) {
+        var path = base === undefined ? permalinkBase : base;
         if ( !path )
             return '';
         var focused = active >= 0 && entries[active] && !follow ? entries[active] : null;
@@ -374,7 +376,7 @@
         if ( !path )
             return;
         if ( permalinkField )
-            permalinkField.value = window.location.origin + path;
+            permalinkField.value = window.location.origin + ( viewPath( shareBase ) || path );
         var shown = path + ( state.unmasked ? '/(unmask)/1' : '' );
         if ( window.history && window.history.replaceState && window.location.pathname !== shown )
         {
