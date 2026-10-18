@@ -237,7 +237,7 @@ class expHelpMarkdownRenderer
      * @param array|null $used
      * @return string
      */
-    public static function slug( $text, array &$used = null )
+    public static function slug( $text, ?array &$used = null )
     {
         $text = (string)$text;
         $text = preg_replace( '/<[^>]*>/', '', $text );
@@ -1289,7 +1289,9 @@ class expHelpMarkdownRenderer
             $url = '';
             if ( $q < $len && $text[$q] === '<' )
             {
-                $end = strpos( $text, '>', $q );
+                $end = strpos( substr( $text, $q, 2050 ), '>' );
+                if ( $end !== false )
+                    $end += $q;
                 if ( $end === false || strpos( substr( $text, $q, $end - $q ), "\n" ) !== false )
                     return null;
                 $url = substr( $text, $q + 1, $end - $q - 1 );
@@ -1297,9 +1299,12 @@ class expHelpMarkdownRenderer
             }
             else
             {
+                // bounded like CommonMark (32 nested parentheses) and by the longest address, so a run of
+                // unclosed "[a](" stays linear
                 $parens = 0;
+                $limit = min( $len, $q + 2048 );
                 $start = $q;
-                while ( $q < $len )
+                while ( $q < $limit )
                 {
                     $c = $text[$q];
                     if ( $c === '\\' && $q + 1 < $len )
@@ -1310,7 +1315,10 @@ class expHelpMarkdownRenderer
                     if ( ctype_space( $c ) )
                         break;
                     if ( $c === '(' )
-                        $parens++;
+                    {
+                        if ( ++$parens > 32 )
+                            return null;
+                    }
                     elseif ( $c === ')' )
                     {
                         if ( $parens === 0 )
@@ -1328,9 +1336,10 @@ class expHelpMarkdownRenderer
             {
                 $closer = $text[$q] === '(' ? ')' : $text[$q];
                 $end = $q + 1;
-                while ( $end < $len && $text[$end] !== $closer )
+                $stop = min( $len, $q + 1000 );
+                while ( $end < $stop && $text[$end] !== $closer )
                     $end += $text[$end] === '\\' ? 2 : 1;
-                if ( $end >= $len )
+                if ( $end >= $stop )
                     return null;
                 $title = self::unescapeUrl( substr( $text, $q + 1, $end - $q - 1 ) );
                 $q = $end + 1;
