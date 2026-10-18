@@ -624,7 +624,7 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
             $tmp = $file . '.' . getmypid() . '.tmp';
             if ( is_dir( dirname( $file ) ) && @file_put_contents( $tmp, json_encode( $ids, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) ) !== false )
             {
-                @chmod( $tmp, octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
+                @chmod( $tmp, eZFile::fileMode( octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) ) );
                 @rename( $tmp, $file );
             }
         }
