@@ -143,6 +143,32 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
                            "$extension $code: messages of the source catalogue without a translation" );
     }
 
+    /** @return string the finished translation of a source in a context, '' when there is none */
+    protected function translationOf( $file, $context, $source )
+    {
+        $doc = new DOMDocument( '1.0', 'utf-8' );
+        $doc->load( $file );
+        $xpath = new DOMXPath( $doc );
+        foreach ( $xpath->query( '//context[name="' . $context . '"]/message[source="' . $source . '"]/translation[not(@type)]' ) as $node )
+            return $node->textContent;
+        return '';
+    }
+
+    /**
+     * The header tab of the shop is "Store" in design/admin/pagelayout (menu.ini [Topmenu_shop]): a noun, the name
+     * the shop menu calls "Shop", not the verb "Store" (save) of the forms.
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'completeLanguages' )]
+    public function testTheShopTabIsNamedLikeTheShopNotLikeSaving( $code )
+    {
+        $ts = $this->root . '/share/translations/' . $code . '/translation.ts';
+        $tab = $this->translationOf( $ts, 'design/admin/pagelayout', 'Store' );
+        $shop = $this->translationOf( $ts, 'design/admin/parts/shop/menu', 'Shop' );
+        if ( $tab === '' || $shop === '' )
+            $this->markTestSkipped( "$code has no translation of the shop tab or the shop menu" );
+        $this->assertSame( $shop, $tab, "$code: the shop tab" );
+    }
+
     public function testUkrainianIsCyrillicLeftToRightWithAFallback()
     {
         $values = $this->iniValues( $this->root . '/share/locale/ukr-UA.ini' );
