@@ -341,7 +341,7 @@ be099ebbbccdeae8ab7385dc4fd795dc  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
-2304a9a48408f2f9e4ba9222f36feabd  design/admin/stylesheets/pagelayout.css
+002dc36c2e254a2474d18a78626c5dc3  design/admin/stylesheets/pagelayout.css
 2d02f74460d590ebf57e8230963c891e  design/admin/stylesheets/theme/admin_datatable.css
 80e40d820b12263064128a75be2de07b  design/admin/stylesheets/theme/modalwindow.css
 017f424deeeb46501db6bcf63990e746  design/admin/stylesheets/theme/rounded.css
@@ -509,7 +509,7 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 5d35317c921d3787c8da593f097cc2f4  design/admin/templates/error/shop/2.tpl
 60e288bd8fb5708e034ac8c4000e36e1  design/admin/templates/error/shop/3.tpl
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
-e9586bed991a7873dd972c56008ae4e8  design/admin/templates/exphelp/dashboard.tpl
+ba5b890a904e814036be65a5858729f9  design/admin/templates/exphelp/dashboard.tpl
 c505b56371004e72eab821c4b50ac3bc  design/admin/templates/exphelp/parts/viewer_meta.tpl
 835295e2c2b1ba2b36871512ccae3213  design/admin/templates/exphelp/parts/viewer_nav.tpl
 69992051147dd0f6b3dbc0892bee4fa9  design/admin/templates/exphelp/parts/viewer_toc.tpl
@@ -595,7 +595,7 @@ f282688f9c5b255781005e8124e243cc  design/admin/templates/package/uninstall_error
 30a75ad0b7435079d6b8019090ab7a56  design/admin/templates/package/view/file_card.tpl
 9ef992b5bb2e88db3607c6b170822939  design/admin/templates/package/view/files.tpl
 788da154ca78059ea6dadf6003b2fbdd  design/admin/templates/package/view/full.tpl
-2abe6f21fa320f3cb42198403d679dcc  design/admin/templates/page_copyright.tpl
+7a6a948535c458dc180f686ce55dffee  design/admin/templates/page_copyright.tpl
 fda9299f029c731efb3f2a7d8cae2fe8  design/admin/templates/page_head_script.tpl
 9b35e3bf7adb0350c55c63dadb305f35  design/admin/templates/page_head_style.tpl
 dbcd6a019f44c7b1bcf92f13c30f641f  design/admin/templates/page_head_style_inline.tpl
@@ -755,7 +755,7 @@ a28d02058dcaceb3f0bd665a92aff6b9  design/admin/templates/tabs/audit/node_header.
 237a0259b99105209be9ec58938d7b04  design/admin/templates/tabs/user/roles_header.tpl
 08b7af3fc1601f6fff034ead9b14ca49  design/admin/templates/toolbar/full/admin_bookmarks.tpl
 787142d1ca642f0e53c702c289446842  design/admin/templates/toolbar/full/admin_clear_cache.tpl
-72a7098f67e7e8b25879baf12498b6a5  design/admin/templates/toolbar/full/admin_current_user.tpl
+02b9e847af8641c4d2587be91b9f7b82  design/admin/templates/toolbar/full/admin_current_user.tpl
 78474c135f927b8753f96696b4f0dea0  design/admin/templates/toolbar/full/admin_preferences.tpl
 0b4dfef40733278ba2b460e1e1fdb087  design/admin/templates/toolbar/full/admin_quick_settings.tpl
 0d034d557c4c0bd669c5b35e516a9b84  design/admin/templates/toolbar/full/admin_ui_switch.tpl
