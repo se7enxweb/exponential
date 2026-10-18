@@ -171,7 +171,7 @@
 }
 .a4-help-filters legend { float: left; width: auto; margin: 0 var(--a4-space-1) 0 0; padding: var(--a4-space-1) 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
 .a4-help-filter { position: relative; display: inline-flex; }
-.a4-help-filter input {
+.a4-help-filter > input {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -180,7 +180,7 @@
   opacity: 0;
   cursor: pointer;
 }
-.a4-help-filter span {
+.a4-help-filter > span {
   display: inline-flex;
   align-items: center;
   gap: var(--a4-space-1);
@@ -193,9 +193,9 @@
   font-size: var(--a4-text-s);
   font-weight: 600;
 }
-.a4-help-filter input:hover + span { border-color: var(--a4-line-strong); }
-.a4-help-filter input:checked + span { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
-.a4-help-filter input:focus-visible + span { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-help-filter > input:hover + span { border-color: var(--a4-line-strong); }
+.a4-help-filter > input:checked + span { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.a4-help-filter > input:focus-visible + span { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4-help-filter [data-exphelp-count]:not(:empty) { color: inherit; font-weight: 400; opacity: .8; }
 .a4-help-filter [data-exphelp-count]:not(:empty)::before { content: "("; }
 .a4-help-filter [data-exphelp-count]:not(:empty)::after { content: ")"; }
@@ -378,6 +378,7 @@
   gap: var(--a4-space-5);
   align-items: start;
 }
+.a4-help-columns > :only-child { grid-column: 1 / -1; }
 @media (max-width: 1100px) {
   .a4-help-columns { grid-template-columns: minmax(0, 1fr); }
 }
