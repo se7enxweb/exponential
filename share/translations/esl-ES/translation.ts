@@ -73069,7 +73069,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Choose an extension</source>
-        <translation>Elija una extensión</translation>
+        <translation>Elige una extensión</translation>
     </message>
     <message>
         <source>Copy the diagnostics</source>
@@ -73121,7 +73121,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
-        <translation>Rellene lo que sepa; el formulario prepara la incidencia con el diagnóstico de esta instalación. No se envía nada a GitHub hasta que usted abra allí la incidencia y la envíe.</translation>
+        <translation>Rellena lo que sepas; el formulario prepara la incidencia con el diagnóstico de esta instalación. No se envía nada a GitHub hasta que abras allí la incidencia y la envíes.</translation>
     </message>
     <message>
         <source>For</source>
@@ -73181,7 +73181,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Look at the logs</source>
-        <translation>Consulte los registros</translation>
+        <translation>Consulta los registros</translation>
     </message>
     <message>
         <source>Look for an existing report</source>
@@ -73249,7 +73249,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Pick your role to see the pages written for it.</source>
-        <translation>Elija su rol para ver las páginas escritas para él.</translation>
+        <translation>Elige tu rol para ver las páginas escritas para él.</translation>
     </message>
     <message>
         <source>Popular pages for %audience</source>
@@ -73365,7 +73365,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Type a word to search every help page.</source>
-        <translation>Escriba una palabra para buscar en todas las páginas de ayuda.</translation>
+        <translation>Escribe una palabra para buscar en todas las páginas de ayuda.</translation>
     </message>
     <message>
         <source>Use this extension</source>
