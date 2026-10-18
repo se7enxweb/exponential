@@ -23,7 +23,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6317a4c9d5332abdff2cdede49edebb7  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-c496896330c3cb979269cdd2fc81564b  autoload/ezp_kernel.php
+4818d8144ee65690e56569fcf0b04486  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -2810,7 +2810,7 @@ d74373f353a46259eead7e623a9d4ea8  design/standard/templates/setup/init/regional_
 bd75c3893a9c6a7fa86037187bebd6c0  design/standard/templates/setup/init/security_help.tpl
 7da46521a71762a16675efc37378a83b  design/standard/templates/setup/init/site_access.tpl
 dcaa161800f85a4d786faca8c4661202  design/standard/templates/setup/init/site_access_help.tpl
-a4beb89df7855dc03fc08f1527a2cafb  design/standard/templates/setup/init/site_admin.tpl
+a76dd19012ae6587d860d61b1d92415b  design/standard/templates/setup/init/site_admin.tpl
 bec7b29b4304baad359a8013e8aeb32d  design/standard/templates/setup/init/site_admin_help.tpl
 a89aff687db90809484bd597f7cc9ace  design/standard/templates/setup/init/site_details.tpl
 3d96ac3d8e3eda557512e9cb49b6dbe7  design/standard/templates/setup/init/site_details_help.tpl
@@ -2970,8 +2970,8 @@ e709916cf34c9f054a2c09a23f614ed5  design/standard/templates/url/view/valid.tpl
 6b53b793cebd9bacab5930104b6637f0  design/standard/templates/url/view_url_list.tpl
 6ff3ac4ab54a3f027a688bafaf84c337  design/standard/templates/user/activate.tpl
 2554c5f3a60f7013a82f4cbdc73c1fc1  design/standard/templates/user/edit.tpl
-05c54fc072951df5123bdf0acc95c4d3  design/standard/templates/user/forgotpassword.tpl
-0593c48408782b956ece5a87bb080492  design/standard/templates/user/forgotpasswordmail.tpl
+9df9b234c8c26dbfcfeadff4a06783c7  design/standard/templates/user/forgotpassword.tpl
+d0384c9c12c990831650877f4e8a4cdb  design/standard/templates/user/forgotpasswordmail.tpl
 971ebbbcaf4b518149832ec6385cbf83  design/standard/templates/user/login.tpl
 6685342c1c48359f2f4168494f8bf71a  design/standard/templates/user/megamenu.tpl
 012058cf37cb560202e58cd45c3e6d46  design/standard/templates/user/password.tpl
@@ -3042,7 +3042,7 @@ d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXP
 e101242c403b860ecda6eb961d8f7659  doc/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
 92d8d3c9b7ce00b173e6537680cdd538  doc/bc/6.0/audit.md
-e8465b9099e38bb4731675ba1ea462c2  doc/bc/6.0/backend_ezjscore_services.md
+474041bf3a44717aba91b7cb09f150bd  doc/bc/6.0/backend_ezjscore_services.md
 e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 250a9d7e6948ddd176f5c6c54bb0febb  doc/bc/6.0/behaviour-changes-2026-09b.md
 6eda2bd886dfdb0de3a91d2c5ad117c5  doc/bc/6.0/behaviour-changes-2026-10.md
@@ -3126,6 +3126,7 @@ b3619f3dd7b2c0c98ea03f16cba624e4  doc/bc/6.0/trash.md
 e792ddbec002535cc7fac9d8de689fd6  doc/bc/6.0/velocity-engines.md
 886acb7ce25be5416e143b161f5c0672  doc/bc/6.0/velocity-ondisk-layout.md
 e45848cf4009e8515ef6ed6775a40b07  doc/bc/6.0/view_full_security.md
+e3778ee2cb9c525a6c469c4243fb3965  doc/bc/6.0/weak-passwords-and-reset-key-lifetime.md
 8fd6c3094d810e78dbd152f24c450ec9  doc/bc/6.0/yui-removal.md
 adac5192811bf518d52266dd4a6b0e72  doc/branch-overview
 0959bdd0da20ca86c663052e954574b8  doc/changelogs/2.9/CHANGELOG-2.9-1
@@ -3274,7 +3275,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-aaaf5b8efca06cd5a02cb2dc86de81d3  doc/changelogs/6.0/6.0.15.md
+09aef0cc5baaf7c00be31eb51d1e4c83  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3700,7 +3701,7 @@ ebabdb07b696edf707333308d72c8e50  doc/features/6.0/log-rotation.md
 990e1c65645859f009d8edce234b6b21  doc/features/6.0/mail-preferences.md
 96c9749d6c204b52e5f8561f0bb0409d  doc/features/6.0/maintenance-mode.md
 7dede757e1c12399dda823cca059ce7c  doc/features/6.0/managed-by-deployment.md
-822fe82ab94d97b6e85a4c01363fc6af  doc/features/6.0/modern-password-change.md
+7a043549866db9fd14d5f4e006253a83  doc/features/6.0/modern-password-change.md
 e1db49cf955e0e8bfa29c12997c0066f  doc/features/6.0/mongodb-database-support.md
 2b3c44897fbe517e7617d0352ad0b0a3  doc/features/6.0/multi-site-ini-overrides.md
 9b3d057faafd961620e8dcfac7999af4  doc/features/6.0/multi-site-log-and-cache-paths.md
@@ -3838,7 +3839,7 @@ d2180bc478399514471afe5c36506a63  doc/guides/rest-api-v1-and-v2.md
 a0a831ac75f0f2a8fcd58c871d580d37  doc/guides/roles-and-policies.md
 bb8d6835bd7b4751fd30540ba5bdf4c8  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
-fdcc1e0224cad899a30b1bfc699d942f  doc/guides/security-and-audit.md
+b4816980bacb1b5fff708762dd72be63  doc/guides/security-and-audit.md
 43dbd90e31972fef2826ebb622ab5c4d  doc/guides/sessions.md
 d6248fd6c8f6678c5868d0eb6023ea08  doc/guides/settings-page.md
 885507547719ede4633742514335fa2e  doc/guides/system-information.md
@@ -4217,8 +4218,8 @@ af18b6c87c55fc88588ffacded884a0d  doc/history/velocity/installers-and-packages.m
 b7feb8f70b1777646af0289a40467d60  doc/install/02-requirements.md
 77ab2d94d291e489872245faf84a4593  doc/install/03-getting-the-code.md
 f71ac215485dd1f34c31daf0f7f2489f  doc/install/04-choosing-an-install-method.md
-abd23037456486e47deb8eb67816b3cd  doc/install/05-setup-wizard.md
-9c81adae2c303fc9197980ecefe948f7  doc/install/06-kickstarter.md
+6a2a88b109d29d308f39fb4315185ca6  doc/install/05-setup-wizard.md
+0faa2592958c62c4bd77c27b769e005e  doc/install/06-kickstarter.md
 d37e9fa621c3f015bb71bdbd497b4b9e  doc/install/07-console-install.md
 ed12923e4234004b770f77d7181e957d  doc/install/08-serving-the-site.md
 fa049bc87c19affc44ca8f745d9e197c  doc/install/09-databases.md
@@ -4374,7 +4375,7 @@ b067c93ed80f7e330bf9e91484167add  extension/expservices/classes/misc/explanguage
 0a2e3847b2c6267f0c90c3950268e6a8  extension/expservices/classes/misc/expstatsservices.php
 5686a0f6d702734804462d5da7fdcb4d  extension/expservices/classes/misc/expsubitemsservices.php
 8c2e1646ef433a48d69d5c5acbab53e9  extension/expservices/classes/misc/expurlservices.php
-7ecb5904da5f15c0b48a31ac20712174  extension/expservices/classes/users/expaccountservices.php
+b6138c65db78e43c8ff409a7972bf349  extension/expservices/classes/users/expaccountservices.php
 2072a00345ddc1254f6512b992b70247  extension/expservices/classes/users/expbookmarkservices.php
 f878cf749669e547180f8d08bdd7069d  extension/expservices/classes/users/expcollaborationservices.php
 6f9019a2c2b3cc8bc97b142779299677  extension/expservices/classes/users/expnotificationservices.php
@@ -4383,8 +4384,8 @@ d20cef236e1fbb6e830d5e9d40d5babe  extension/expservices/classes/users/expprefere
 535cc61b86b4799a3a960a3ade78ffad  extension/expservices/classes/users/exproleservices.php
 5fc77fc1f52fcc10454b4c380c7de91f  extension/expservices/classes/users/expsessionadminservices.php
 2ec57de3b191fe56fa3686e1fb30cd88  extension/expservices/classes/users/expusergroupservices.php
-1ec6818e5971339761a1bc1076467156  extension/expservices/classes/users/expusersbase.php
-f41e58ead633adec873184b78409cb40  extension/expservices/classes/users/expuserservices.php
+4663f6d749e51bff8efcfb63d43ebfac  extension/expservices/classes/users/expusersbase.php
+78d76b5f31067ddffd4c10153c546851  extension/expservices/classes/users/expuserservices.php
 6906f121655ec940a08bd72cf7dd3e71  extension/expservices/design/expportal_jquery/javascript/portal/account.js
 0ddb959545ecfcecc379d3f2f91044ee  extension/expservices/design/expportal_jquery/javascript/portal/app.js
 22da20120af471ebffaad6689c32468c  extension/expservices/design/expportal_jquery/javascript/portal/core.js
@@ -5223,7 +5224,7 @@ a002e94a9d78469bc67760ea91216fc0  kernel/classes/datatypes/eztime/eztimetype.php
 c84d7155aab77cc6900f89499424d99f  kernel/classes/datatypes/ezurl/ezurl.php
 07b7ad4675177b6ac6163e17b9ace02d  kernel/classes/datatypes/ezurl/ezurlobjectlink.php
 ab95b25629ede0ba7aaf6fa166250fcb  kernel/classes/datatypes/ezurl/ezurltype.php
-bc1f7d94c3e9cdcc6b029676b42ac238  kernel/classes/datatypes/ezuser/ezforgotpassword.php
+502c16d973bd9cd475cb5f5803d414a2  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 303b9b3fcd92348310a194e3e48da982  kernel/classes/datatypes/ezuser/ezldapuser.php
 ddb7ea2df70d86d759cbb9f485513a82  kernel/classes/datatypes/ezuser/eztextfileuser.php
 e5b2a2662a2b0de99fd4f1d6d63786e8  kernel/classes/datatypes/ezuser/ezuser.php
@@ -5288,7 +5289,7 @@ c4b9c81f77742f3252686891c206d050  kernel/classes/expnodequickpick.php
 2b141e8596da58d9d22a67c4021cba74  kernel/classes/expnotificationservice.php
 57cba6faffa4b17b05a923a1427a986c  kernel/classes/exppackageconflictreport.php
 a1dd3f07f9038f8b1741e1ea5f24aa57  kernel/classes/exppackagejson.php
-c558703233869e8b7789a6a6179b31c9  kernel/classes/exppasswordpolicy.php
+8f0a8180259e193b40f0adc7c0619d5b  kernel/classes/exppasswordpolicy.php
 cadc65b1b3cc8e2459058bcc7eeb2840  kernel/classes/expphar.php
 757793bfb95c663bf2f51744c3184b70  kernel/classes/exppolicyomitlist.php
 b607c67490219f43e8a2cf31d600700e  kernel/classes/exppreloadaddress.php
@@ -5316,6 +5317,7 @@ d7b0086399665b9506af909e3d6230fc  kernel/classes/expvelocityphpserver.php
 8575d463d7c31610483091d94c65f8fc  kernel/classes/expvelocityrestartunit.php
 01b7d1bc1691803a5853e4ec4f66f1a8  kernel/classes/expvelocitywatchdog.php
 b42226f735d68e3b8b78875311b214fb  kernel/classes/expviewaccess.php
+8e5e3e25d1c8bf7d7d21e3ab861bbdb2  kernel/classes/expweakpasswordlist.php
 d9da1ddbb238a9634bbd835247adbc64  kernel/classes/ezaudit.php
 6235fea69dfbb9e5d965e4879d7203db  kernel/classes/ezbasket.php
 a8480946c345cbdba00cf4aa5f283a34  kernel/classes/ezbinaryfilehandler.php
@@ -5898,7 +5900,7 @@ c61acc01467edac32c8a59505a4b9fe3  kernel/private/classes/commands/flatten.php
 fe35c28f741908dd6713405c603413ec  kernel/private/classes/commands/frankenphp.php
 5d5edc8e51ef12f0402018e59ffb7bdc  kernel/private/classes/commands/i18n.php
 8bdf8c53969e8d1d622139f4b6928e67  kernel/private/classes/commands/ini.php
-1d84d46c5427821500cbdcb9322ede53  kernel/private/classes/commands/install.php
+8d18baf8023e3a4e3e2eb54e6da36c99  kernel/private/classes/commands/install.php
 6f138ff94b8f197de38bf401d0ae2ba2  kernel/private/classes/commands/kickstarter.php
 f44aa579a98c3c4f14f8a7e8e5eb114d  kernel/private/classes/commands/mailbounces.php
 0a5b99f0cb4d3b4a4ebf51367b66234b  kernel/private/classes/commands/mailconsent.php
@@ -6264,7 +6266,7 @@ aa89fd43a6579c8bfaf060210e8e0493  kernel/private/classes/views/url/edit.php
 675b6dec132dda2f5ecaa1ddbfda7b9e  kernel/private/classes/views/user/activate.php
 4e4bc7b8af19fb3c4304cca27774ff30  kernel/private/classes/views/user/deactivate.php
 a86c32c292a6686cc1a40f0d8dac6df8  kernel/private/classes/views/user/edit.php
-1c860c0fb53dfd7611744af7d6b340d2  kernel/private/classes/views/user/forgotpassword.php
+895b22c465a7b024fe3850b3bf160bc2  kernel/private/classes/views/user/forgotpassword.php
 cf6d5d42a7c8c57189d81a482dce126b  kernel/private/classes/views/user/hygiene.php
 8f26834de574e7fc29e03ffb5df66d2d  kernel/private/classes/views/user/login.php
 1d5df15c797dddeb7a51a35cc350538b  kernel/private/classes/views/user/logout.php
@@ -6529,7 +6531,7 @@ a2fbe78e6737be2db035b6181a070432  kernel/setup/steps/ezstep_installer.php
 b2618ceed1fcc73b311a16af3c476e1f  kernel/setup/steps/ezstep_registration.php
 fbead82c3bf65a6684c180c170ea34ce  kernel/setup/steps/ezstep_security.php
 0338a2832f74ef93c3e37bcd90786696  kernel/setup/steps/ezstep_site_access.php
-20924709bfb751197e73171df0b4c42d  kernel/setup/steps/ezstep_site_admin.php
+4e0cda8b9d9a1597f31af6da795df602  kernel/setup/steps/ezstep_site_admin.php
 1524d76a733d4ff74668d248ffae6dce  kernel/setup/steps/ezstep_site_details.php
 9ccf85d01b8fde71c9490f586339434d  kernel/setup/steps/ezstep_site_packages.php
 fd806de9de6e0bc7e046b71a56335641  kernel/setup/steps/ezstep_site_templates.php
@@ -6961,7 +6963,7 @@ ad97f94775c35151cdab893306a21b6e  settings/rest.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-087d35e29a62bf51ba85e29b07934126  settings/site.ini
+6ffef8877e2d68ed1b81f3ec8a574cdd  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -7774,7 +7776,7 @@ bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 99862a3b59cc584c3fcba01e689aaa17  share/transformations/hebrew.tr
 06361e73b7836778b599fa55f3300ebf  share/transformations/latin.tr
 9c0a310f00eb6c3334a8c41198ec3161  share/transformations/search.tr
-ff70922bebf9f4802e2a1512b6f9779a  share/translations/ara-SA/translation.ts
+f26865bb1e32a3eacff611c1c3bc46e4  share/translations/ara-SA/translation.ts
 460da6761ad0f2e5f4e9482a3688df97  share/translations/cat-ES/translation.ts
 4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
 dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
@@ -7786,18 +7788,18 @@ a6b9a5e18993b0e8f8f8ff35f99bded0  share/translations/cze-CZ/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-7f8278ecb59338fb962963c8a21899db  share/translations/eng-US/translation.ts
-88dcc2bdd218c0fde290396e99948b67  share/translations/esl-ES/translation.ts
-6b0d81036b12d8210ec8e38cc9b540eb  share/translations/esl-MX/translation.ts
+4ddb71ec2ef883445dcc0fcab5053511  share/translations/eng-US/translation.ts
+ac021d4cb075ca226ffd922c375d913d  share/translations/esl-ES/translation.ts
+8fd124e653c8cd58c69423a7218b5748  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
-31e768c409d7ed1b1769e31e9f5d2587  share/translations/fre-FR/translation.ts
+26a649f15cfb749b11ff92ff5759e039  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-a10d97d63cb7d10b2e292c7637f11acb  share/translations/ger-DE/translation.ts
-c620fee992077e5bdf88373e4a5bcc20  share/translations/heb-IL/translation.ts
+9f07e9645aa2943db1eba506584fdc78  share/translations/ger-DE/translation.ts
+1522c5e4c7e82938945cf720aca60c99  share/translations/heb-IL/translation.ts
 e97831dd958115eac1866c1c6edbac10  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
-4edc8b5179d60bb153e645a659713387  share/translations/lat-VA/translation.ts
+01a58234669280d0fd49871a2c720a87  share/translations/lat-VA/translation.ts
 92e922de40aae6851e4478c31f8bf4af  share/translations/nno-NO/translation.ts
 8bbbf764eeb595adc4615cdca139f3ad  share/translations/nor-NO/readme.txt
 448b926a6d0910153faf3bf794dc85b1  share/translations/nor-NO/translation.ts
@@ -7807,10 +7809,10 @@ d5ee9f6f41a1629151b2c95729988fd1  share/translations/rus-RU/translation.ts
 8d3885ecf29b1a456cefc940ade7f02c  share/translations/ser-SR/translation.ts
 c0bb0e5ef4ff758c9e505585337f7d2a  share/translations/srp-RS/translation.ts
 175a32374b310580e95bd659a017a77c  share/translations/swe-SE/translation.ts
-98c046b29c97cee131747df4445d1bf2  share/translations/tlh-QO/translation.ts
-7bb94d1de805620e9a67e97faf9a9f2b  share/translations/ukr-UA/translation.ts
+6cbd6d528046c7e073f9a1c8b1d5bf31  share/translations/tlh-QO/translation.ts
+30c575536c72391bc19d716ed28cc490  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-a87e24338730169c478655ce580ccbb7  share/translations/untranslated/translation.ts
+8f19955baade7b3fd053a7d53a30a3aa  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -8572,7 +8574,7 @@ a221ef1e611a2307335b75669841a068  tests/tests/kernel/classes/runnable/ClusterPur
 36e686c50b218ff33b8cfc6464ee3453  tests/tests/kernel/classes/runnable/CronjobPartRunFilterTest.php
 2973ce3fd51cf4811b11def2cb6a2f0a  tests/tests/kernel/classes/runnable/ExtractedRunMethodsTest.php
 1529db7040caf189752e8d75139d3889  tests/tests/kernel/classes/runnable/HideCronjobSearchIndexTest.php
-4fe9cc6e4e1eff67639db1d1ad3e56da  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
+36afbe4ae0cec8131b02146ba0ae7f44  tests/tests/kernel/classes/runnable/InstallPasswordTest.php
 afa2082e1b51519a99944e89da43c447  tests/tests/kernel/classes/runnable/ModuleViewScopeTest.php
 44d27b78d29b7a640f43f729a3691e2c  tests/tests/kernel/classes/runnable/MovedEntryPointsTest.php
 bf017e5d23973344b47e533fc1af26d8  tests/tests/kernel/classes/runnable/RadSurveyDeclaredRegistriesTest.php
@@ -8619,7 +8621,7 @@ ae30bcf264ae9a0e1b6e2e582bb0e469  tests/tests/kernel/classes/setup/SessionPageTe
 5c009c5724a7a3da87cb98dadbfe917b  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
 be124ca8bd5eed793ebfb648619273d6  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 ff0f446447b511ded16794509df958e8  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
-a5f311adee5cc6c0fa46486b22f14f48  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
+9b06f6476b309fd2b41458004178fa7f  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
 6c40a46fb606c4d27b987d2f6826eb21  tests/tests/kernel/classes/setupsteps/eZStepInstallerTest.php
 94f7de1b3237cc5c060982a0527dbf18  tests/tests/kernel/classes/shop/eZCurrencyConverterRoundingTest.php
 009298166c4d9895d0b6c4969ee530e6  tests/tests/kernel/classes/shopprices/eZPaymentCallbackCheckerTest.php
@@ -8665,7 +8667,8 @@ fd13f368d0002af718e950c81b7708d1  tests/tests/kernel/classes/urlalias/eZURLAlias
 240835728a1cf1cde742aa54c504dff7  tests/tests/kernel/classes/urlalias/eZURLWildcardPatternTest.php
 bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regression.php
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
-b6f45ce384a24cccf17ed74d9da7c988  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
+57f51350ebeed6595fdf7dc68bf7d310  tests/tests/kernel/classes/user/eZForgotPasswordExpiryTest.php
+bdf55aac98851f4511909927950cf960  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 972ceff89325d374430b9f9d976d4f69  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
 f673ec91908450c171ed3372b6fe86b5  tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php
 9d8efd686f8d700dc0ea739ff30fa782  tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php
@@ -8675,6 +8678,8 @@ fc63055bcb0f1d48ebb5c64f8a116fb7  tests/tests/kernel/classes/user/expRegistratio
 dff03a58accdae7a511ca92c6c1eaf06  tests/tests/kernel/classes/user/expUserDeactivationLiveTest.php
 e018f8a51585f4de4c80e2dc643f625a  tests/tests/kernel/classes/user/expUserDeactivationTest.php
 5c6824c8f8875573108c26cf3c1aa6e1  tests/tests/kernel/classes/user/expUserHygieneTest.php
+b853b2bf2eee7b3ea1f66c6cb8f66c3f  tests/tests/kernel/classes/user/expWeakPasswordListTest.php
+60b9f5237265384bd9159e210ee0a177  tests/tests/kernel/classes/user/expWeakPasswordTestINI.php
 ead0c972fc0471e6313c129e7a4fb4ee  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
 84ad8f4e328c5f376b3003c95eeb8b12  tests/tests/kernel/classes/velocitylayout/expVelocityConfigTest.php
 0ac61d5e64e5552a1cf34e2f052523b3  tests/tests/kernel/classes/workflowevents/eZWorkflowEventTypesTest.php

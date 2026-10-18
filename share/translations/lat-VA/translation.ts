@@ -50571,6 +50571,10 @@ Plura vide in pagina postulatorum.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>Cum aditu per nomen hospitis consuetudo est %site pro situ, %admin pro administratione et %editor pro contentis recensendis.</translation>
     </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Haec tessera nota aut nimis vulgaris est, quam quivis coniicere possit. Aliam elige.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53039,6 +53043,22 @@ rationem tuam activeres.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Inscriptionem electronicam validam, quaeso, insere.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Hic nexus exspiravit.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Securitatis tuae causa, nexus ad tesseram renovandam tantum %1 minuta et semel valet. Novum nexum infra pete.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Novum nexum pete</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>Nexus semel tantum et per %1 minuta valet.</translation>
     </message>
 </context>
 <context>
@@ -57713,6 +57733,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The new password does not meet the requirements.</source>
         <translation>Tessera nova condicionibus non satisfacit.</translation>
+    </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Non est tessera nota aut vulgaris</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Tessera nova nota aut nimis vulgaris est. Aliam elige.</translation>
     </message>
 </context>
 <context>
@@ -69812,6 +69840,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The password does not meet the requirements.</source>
         <translation>Tessera condicionibus non satisfacit.</translation>
+    </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Tessera nota aut nimis vulgaris est. Aliam elige.</translation>
     </message>
 </context>
 <context>

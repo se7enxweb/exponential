@@ -50568,6 +50568,10 @@ See the requirements page for more information.</source>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>За доступу через ім&apos;я хоста домовленість така: %site для сайту, %admin для адміністрування і %editor для редагування вмісту.</translation>
     </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Цей пароль відомий або надто поширений, тож будь-хто може його вгадати. Оберіть інший.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53036,6 +53040,22 @@ your account.</source>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Введіть дійсну адресу електронної пошти.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Термін дії цього посилання минув.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>З міркувань безпеки посилання для скидання пароля діє лише %1 хвилин і лише один раз. Запросіть нове посилання нижче.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Запросити нове посилання</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>Посилання діє лише один раз і лише %1 хвилин.</translation>
     </message>
 </context>
 <context>
@@ -57710,6 +57730,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The new password does not meet the requirements.</source>
         <translation>Новий пароль не відповідає вимогам.</translation>
+    </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Не є відомим чи поширеним паролем</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Новий пароль відомий або надто поширений. Оберіть інший.</translation>
     </message>
 </context>
 <context>
@@ -69797,6 +69825,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The password does not meet the requirements.</source>
         <translation>Пароль не відповідає вимогам.</translation>
+    </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Пароль відомий або надто поширений. Оберіть інший.</translation>
     </message>
 </context>
 <context>

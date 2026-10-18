@@ -417,18 +417,22 @@ as a path, so `AdminAccess=admin` gives the familiar `/admin`.
 | `Email` | text | none | the administrator's e-mail and `[MailSettings] AdminEmail` |
 | `Password` | secret | generated | the password of the user `admin` |
 
-**An empty or well-known password is never installed.** When `Password` is empty or missing, or one of `publish`,
-`admin`, `password`, `changeme`, `change-me`, `secret`, `exponential`, `demo`, `123456` (in any case), the step
-generates a random 20-character password, prints it once:
+**An empty, well-known or short password is never installed.** When `Password` is empty or missing, shorter than
+`site.ini [UserSettings] MinPasswordLength` (10 as shipped), or a well-known or common password (the shared list of
+`expWeakPasswordList`: `publish`, `admin`, `password`, `changeme`, `secret`, `exponential`, `demo`, `qwerty`,
+`123456` and many more, with their simple variants such as other case, digits or `!` at the end, letter swaps like
+`p@ssw0rd` and endings like `-ing` or `-er`; extensible with `[UserSettings] WeakPasswordList[]` and
+`WeakPasswordFile`), the step generates a random 20-character password, prints it once:
 
 ```text
-The administrator password was not set or is a well-known one; generated a random one.
+The administrator password was not set, is a well-known one or is shorter than 10 characters; generated a random one.
   admin password: <the password>
   (also written to var/log/initial-admin-password - change the password after the first login and delete that file)
 ```
 
-and writes `var/log/initial-admin-password` with mode `0600`. Log in, change the password, delete the file. A password
-you give is not checked against `MinPasswordLength` here (`exp:install` does check it, [chapter 7](07-console-install.md)).
+and writes `var/log/initial-admin-password` with mode `0600`. Log in, change the password, delete the file. These are
+the same rules as `exp:install` ([chapter 7](07-console-install.md)); before 6.0.15 a short password from
+`kickstart.ini` was installed as it was.
 
 **`[security]`**
 

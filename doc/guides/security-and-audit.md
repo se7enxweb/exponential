@@ -56,7 +56,7 @@ Expected: `404` three times. If you keep your own copy of `.htaccess`, merge the
 ./console exp:ini get 'image.ini/ImageUploadSettings/AllowedMIMETypes' --allow-root-user
 ```
 
-**The first administrator password.** When a kickstart file sets no password, or a well-known one such as `publish`, the installer makes a random 20-character password, prints it once and writes it to `var/log/initial-admin-password` (readable by the owner only). `exp:install --random-password` makes a 24-character one and shows it once. Sign in, change it, and delete that file. Forgot it later:
+**The first administrator password.** When a kickstart file sets no password, a well-known one such as `publish` (or a simple variant of one), or one shorter than `MinPasswordLength`, the installer makes a random 20-character password, prints it once and writes it to `var/log/initial-admin-password` (readable by the owner only). `exp:install --random-password` makes a 24-character one and shows it once. Sign in, change it, and delete that file. Forgot it later:
 
 ```bash
 php bin/php/resetuserpassword.php --allow-root-user -u admin -g

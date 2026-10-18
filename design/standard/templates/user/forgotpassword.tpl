@@ -14,7 +14,13 @@
    {"Password was successfully generated and sent to: %1"|i18n('design/standard/user/forgotpassword',,array($email|wash))}
    </p>
    {else}
-      {if $wrong_key}
+      {if and( $wrong_key, first_set( $key_expired, false() ) )}
+      <div class="warning">
+      <h2>{"This link has expired."|i18n('design/standard/user/forgotpassword')}</h2>
+      <p>{"For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below."|i18n('design/standard/user/forgotpassword',,array(first_set( $key_lifetime_minutes, 60 )))}</p>
+      <p><a href={"/user/forgotpassword/"|ezurl}>{"Ask for a new link"|i18n('design/standard/user/forgotpassword')}</a></p>
+      </div>
+      {elseif $wrong_key}
       <div class="warning">
       <h2>{"The key is invalid or has been used. "|i18n('design/standard/user/forgotpassword')}</h2>
       </div>
