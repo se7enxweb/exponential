@@ -72983,5 +72983,45 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

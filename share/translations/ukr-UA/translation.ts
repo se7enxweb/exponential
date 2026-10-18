@@ -72868,6 +72868,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Інфраструктура спільноти: чат, дзеркала, вікі та ресурси для розробників</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Тренери</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Преса, медіа та інфлюенсери</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Навчайте Exponential: курси для редакторів, адміністраторів, розробників і дизайнерів, воркшопи, вправи та оцінювання.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Пишіть і розповідайте про Exponential: факти, історія, люди, цитати, зображення та контакти.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Навчання</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Преса та медіа</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Навчання Exponential: курси, плани занять, воркшопи, вправи та оцінювання для кожної ролі.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Для журналістів, медіа та інфлюенсерів: факти, історія, оголошення, зображення та контакти.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Поверніть розширення спільноті</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Діліться розширеннями, які ви поширюєте, як вимагає GPL, щоб усі отримали користь.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

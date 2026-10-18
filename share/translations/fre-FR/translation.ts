@@ -74278,6 +74278,46 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>L&apos;infrastructure de la communauté : chat, miroirs, wikis et ressources pour les développeurs</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Formateurs</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Presse, médias et influenceurs</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Enseigner Exponential : cours pour rédacteurs, administrateurs, développeurs et designers, ateliers, exercices et évaluations.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Écrire et parler d&apos;Exponential : les faits, l&apos;histoire, les personnes, les citations, les images et les contacts.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Formation</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Presse et médias</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Enseigner Exponential : cours, plans de séance, ateliers, exercices et évaluations pour chaque rôle.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Pour les journalistes, les médias et les influenceurs : faits, histoire, annonces, images et contacts.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Partager vos extensions</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Partagez les extensions que vous distribuez, comme l&apos;exige la GPL, pour que tout le monde en profite.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

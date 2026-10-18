@@ -77109,6 +77109,46 @@ Gracias por la retroalimentación</translation>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infraestructura de la comunidad: chat, espejos, wikis y recursos para desarrolladores</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Instructores</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Prensa, medios e influencers</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Enseña Exponential: cursos para editores, administradores, desarrolladores y diseñadores, talleres, ejercicios y evaluaciones.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Escribe y habla sobre Exponential: los datos, la historia, las personas, citas, imágenes y a quién contactar.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Capacitación</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Prensa y medios</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Enseñar Exponential: cursos, planes de clase, talleres, ejercicios y evaluaciones para cada rol.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Para periodistas, medios e influencers: datos, historia, anuncios, imágenes y contactos.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Comparte tus extensiones</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Comparte las extensiones que distribuyes, como lo exige la GPL, para que todos se beneficien.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

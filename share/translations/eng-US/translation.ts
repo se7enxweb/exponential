@@ -73163,5 +73163,45 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Community infrastructure: chat, mirrors, wikis and developer resources</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Trainers</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Press, media and influencers</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Training</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Press and media</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>For journalists, media and influencers: facts, history, announcements, images and contacts.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Contribute extensions back</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Share the extensions you distribute, as the GPL requires, so everyone benefits.</translation>
+    </message>
 </context>
 </TS>
