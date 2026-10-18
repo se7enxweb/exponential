@@ -175,6 +175,32 @@ class expVelocityWatchdogTest extends ezpTestCase
         $this->assertSame( 0, $engine->starts );
     }
 
+    public function testRunClearsStaleRestartMarkerWhenItStarts()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        $markers = new expVelocityMarkers( $this->dir . '/run' );
+        // A pid that cannot run: the restart's process is gone.
+        $markers->write( expVelocityMarkers::RESTART, array( 'started' => time() - 10, 'pid' => 2147483646, 'unit' => null, 'by' => 'restart' ) );
+        $r = $dog->run();
+        $this->assertSame( 'restart-stale', $r['reason'] );
+        $this->assertTrue( $r['started'] );
+        $this->assertNull( $markers->read( expVelocityMarkers::RESTART ) );
+    }
+
+    public function testStartFailureStillClearsStaleRestartMarker()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $engine->failStart = true;
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        $markers = new expVelocityMarkers( $this->dir . '/run' );
+        $markers->write( expVelocityMarkers::RESTART, array( 'started' => 1, 'pid' => getmypid(), 'unit' => null, 'by' => 'restart' ) );
+        $this->assertSame( 'restart-stale', $dog->run()['reason'] );
+        $this->assertNull( $markers->read( expVelocityMarkers::RESTART ) );
+        // The next check sees a plain down server.
+        $this->assertSame( 'down', $dog->run()['reason'] );
+    }
+
     public function testRunPausedWhenConfDisabled()
     {
         $engine = new expVelocityWatchdogTestEngine();

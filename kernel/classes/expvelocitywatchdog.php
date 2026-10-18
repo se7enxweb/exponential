@@ -196,6 +196,13 @@ class expVelocityWatchdog
 
             if ( $result['action'] === 'start' )
             {
+                // A restart marker that no longer holds (its process gone, or
+                // too old) is taken out before the start, so that it does not
+                // outlive the server it was about. Only the one read above: a
+                // restart that began in the meantime keeps its own.
+                if ( $result['reason'] === 'restart-stale' )
+                    $this->clearStaleRestart( $markers, $restart );
+
                 $state['lastAttempt'] = $now;
                 $started = $this->startEngine();
                 $result['started'] = $started['ok'];
@@ -227,6 +234,21 @@ class expVelocityWatchdog
         flock( $own, LOCK_UN );
         fclose( $own );
         return $result;
+    }
+
+    /**
+     * Remove the restart marker if it is still the stale one that was read.
+     *
+     * @param expVelocityMarkers $markers
+     * @param array $stale the marker decide() found stale
+     * @return bool whether it was removed
+     */
+    protected function clearStaleRestart( expVelocityMarkers $markers, array $stale )
+    {
+        $now = $markers->read( expVelocityMarkers::RESTART );
+        if ( !is_array( $now ) || $now != $stale )
+            return false;
+        return $markers->clear( expVelocityMarkers::RESTART );
     }
 
     /**
