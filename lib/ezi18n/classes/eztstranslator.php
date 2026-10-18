@@ -155,18 +155,14 @@ class eZTSTranslator extends eZTranslatorHandler
                 {
                     // iterate over each known TS file, and get the highest timestamp
                     // this value will be used to check for cache validity
+                    // the files of the fallbacks count too: a changed ger-DE file renews the cache of ger-AT
                     foreach ( $roots as $root )
                     {
-                        $path = eZDir::path( array( $root, $locale, $charset, $filename ) );
-                        if ( file_exists( $path ) )
+                        foreach ( array_merge( array( $locale ), self::fallbackChain( $locale ) ) as $timeLocale )
                         {
-                            $timestamp = filemtime( $path );
-                            if ( $timestamp > $tsTimeStamp )
-                                $tsTimeStamp = $timestamp;
-                        }
-                        else
-                        {
-                            $path = eZDir::path( array( $root, $locale, $filename ) );
+                            $path = eZDir::path( array( $root, $timeLocale, $charset, $filename ) );
+                            if ( !file_exists( $path ) )
+                                $path = eZDir::path( array( $root, $timeLocale, $filename ) );
                             if ( file_exists( $path ) )
                             {
                                 $timestamp = filemtime( $path );
@@ -242,28 +238,15 @@ class eZTSTranslator extends eZTranslatorHandler
         $triedPaths = array();
         $loadedPaths = array();
 
-        $ini = eZINI::instance( "i18n.ini" );
-        $fallbacks = $ini->variable( 'TranslationSettings', 'FallbackLanguages' );
+        $mergeFallbacks = self::fallbackMode() === 'merge';
 
         foreach ( $localeParts as $localePart )
         {
             $localeCodeToProcess = isset( $localeCodeToProcess ) ? $localeCodeToProcess . '@' . $localePart: $localePart;
 
-            // array with alternative subdirs to check
-            $alternatives = array(
-                array( $localeCodeToProcess, $charset, $filename ),
-                array( $localeCodeToProcess, $filename ),
-            );
-
-            if ( isset( $fallbacks[$localeCodeToProcess] ) && $fallbacks[$localeCodeToProcess] )
-            {
-                if ( $fallbacks[$localeCodeToProcess] === 'eng-GB' ) // Consider eng-GB fallback as "untranslated" since eng-GB does not provide any ts file
-                {
-                    $fallbacks[$localeCodeToProcess] = 'untranslated';
-                }
-                $alternatives[] = array( $fallbacks[$localeCodeToProcess], $charset, $filename );
-                $alternatives[] = array( $fallbacks[$localeCodeToProcess], $filename );
-            }
+            // The locale, then the translations it falls back to (expI18nFallbackResolver: FallbackLanguages[], the
+            // rules of FallbackRules[], the automatic same-language fallback), each in the charset's directory first.
+            $candidates = array_merge( array( $localeCodeToProcess ), self::fallbackChain( $localeCodeToProcess ) );
 
             foreach ( $roots as $root )
             {
@@ -272,70 +255,74 @@ class eZTSTranslator extends eZTranslatorHandler
                     continue;
                 }
 
-                unset( $path );
-
-                foreach ( $alternatives as $alternative )
+                // first: the first file of the chain this root has; merge: every one of them, the most general
+                // first, so the messages a translation lacks come from the next one (an empty translation never
+                // replaces one loaded before, handleMessageNode())
+                $paths = array();
+                foreach ( $candidates as $candidate )
                 {
-                    $pathParts = $alternative;
-                    array_unshift( $pathParts, $root );
-                    $pathToTry = eZDir::path( $pathParts );
-                    $triedPaths[] = $pathToTry;
-
-                    if ( file_exists( $pathToTry ) )
+                    foreach ( array( array( $root, $candidate, $charset, $filename ), array( $root, $candidate, $filename ) ) as $pathParts )
                     {
-                        $path = $pathToTry;
-                        break;
-                    }
-                }
-
-                if ( !isset( $path ) )
-                {
-                    continue;
-                }
-
-                eZDebug::accumulatorStart( 'tstranslator_load', 'tstranslator', 'TS load' );
-
-                $doc = new DOMDocument( '1.0', 'utf-8' );
-                $useInternal = libxml_use_internal_errors( true );
-                libxml_clear_errors();
-                $success = $doc->load( $path );
-                $loadErrors = array();
-                foreach ( array_slice( libxml_get_errors(), 0, 5 ) as $error )
-                    $loadErrors[] = 'line ' . $error->line . ': ' . trim( $error->message );
-                libxml_clear_errors();
-                libxml_use_internal_errors( $useInternal );
-
-                if ( !$success )
-                {
-                    eZDebug::writeWarning( "Unable to load XML from file $path: " . implode( '; ', $loadErrors ), __METHOD__ );
-                    continue;
-                }
-
-                if ( !$this->validateDOMTree( $doc ) )
-                {
-                    eZDebug::writeWarning( "XML text for file $path did not validate: " . implode( '; ', self::validationErrors() ), __METHOD__ );
-                    continue;
-                }
-
-                $loadedPaths[] = $path;
-
-                $status = true;
-
-                $treeRoot = $doc->documentElement;
-                $children = $treeRoot->childNodes;
-                for ($i = 0; $i < $children->length; $i++ )
-                {
-                    $child = $children->item( $i );
-
-                    if ( $child->nodeType == XML_ELEMENT_NODE )
-                    {
-                        if ( $child->tagName == "context" )
+                        $pathToTry = eZDir::path( $pathParts );
+                        $triedPaths[] = $pathToTry;
+                        if ( file_exists( $pathToTry ) )
                         {
-                            $this->handleContextNode( $child );
+                            $paths[$candidate] = $pathToTry;
+                            break;
                         }
                     }
+                    if ( $paths && !$mergeFallbacks )
+                        break;
                 }
-                eZDebug::accumulatorStop( 'tstranslator_load' );
+                if ( $mergeFallbacks && count( $paths ) > 1 )
+                    unset( $paths[expI18nFallbackResolver::SOURCE] );
+
+                foreach ( array_reverse( $paths ) as $path )
+                {
+                    eZDebug::accumulatorStart( 'tstranslator_load', 'tstranslator', 'TS load' );
+
+                    $doc = new DOMDocument( '1.0', 'utf-8' );
+                    $useInternal = libxml_use_internal_errors( true );
+                    libxml_clear_errors();
+                    $success = $doc->load( $path );
+                    $loadErrors = array();
+                    foreach ( array_slice( libxml_get_errors(), 0, 5 ) as $error )
+                        $loadErrors[] = 'line ' . $error->line . ': ' . trim( $error->message );
+                    libxml_clear_errors();
+                    libxml_use_internal_errors( $useInternal );
+
+                    if ( !$success )
+                    {
+                        eZDebug::writeWarning( "Unable to load XML from file $path: " . implode( '; ', $loadErrors ), __METHOD__ );
+                        continue;
+                    }
+
+                    if ( !$this->validateDOMTree( $doc ) )
+                    {
+                        eZDebug::writeWarning( "XML text for file $path did not validate: " . implode( '; ', self::validationErrors() ), __METHOD__ );
+                        continue;
+                    }
+
+                    $loadedPaths[] = $path;
+
+                    $status = true;
+
+                    $treeRoot = $doc->documentElement;
+                    $children = $treeRoot->childNodes;
+                    for ($i = 0; $i < $children->length; $i++ )
+                    {
+                        $child = $children->item( $i );
+
+                        if ( $child->nodeType == XML_ELEMENT_NODE )
+                        {
+                            if ( $child->tagName == "context" )
+                            {
+                                $this->handleContextNode( $child );
+                            }
+                        }
+                    }
+                    eZDebug::accumulatorStop( 'tstranslator_load' );
+                }
             }
         }
 
@@ -367,6 +354,35 @@ class eZTSTranslator extends eZTranslatorHandler
         }
 
         return $status;
+    }
+
+    /**
+     * The translations a locale falls back to, in order (expI18nFallbackResolver::chain()), ending with
+     * 'untranslated' where configured so. Without the resolver (a persistent worker started before the class was
+     * added), the one step of FallbackLanguages[] as before.
+     *
+     * @param string $locale
+     * @return string[]
+     */
+    static function fallbackChain( $locale )
+    {
+        if ( class_exists( 'expI18nFallbackResolver' ) )
+            return expI18nFallbackResolver::instance()->chain( $locale );
+        $fallbacks = (array)eZINI::instance( 'i18n.ini' )->variable( 'TranslationSettings', 'FallbackLanguages' );
+        if ( empty( $fallbacks[$locale] ) )
+            return array();
+        // eng-GB has no file: it means the source texts
+        return array( $fallbacks[$locale] === 'eng-GB' ? 'untranslated' : $fallbacks[$locale] );
+    }
+
+    /**
+     * i18n.ini [TranslationSettings] FallbackMode: first (default) or merge.
+     *
+     * @return string
+     */
+    static function fallbackMode()
+    {
+        return class_exists( 'expI18nFallbackResolver' ) ? expI18nFallbackResolver::instance()->mode() : 'first';
     }
 
     /**

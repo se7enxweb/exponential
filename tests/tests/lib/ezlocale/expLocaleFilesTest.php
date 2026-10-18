@@ -26,7 +26,8 @@ class expLocaleFilesTest extends PHPUnit\Framework\TestCase
     /** Every right-to-left locale file there must be (Arabic, Hebrew, Persian and Dari, Urdu, Pashto, Western
      * Punjabi, Sindhi, Uyghur, Yiddish, Central Kurdish, Syriac, Kashmiri, N'Ko, Dhivehi). */
     const RTL_LOCALES = array( 'ara-SA', 'ara-AE', 'ara-EG', 'ara-MA', 'ara-DZ', 'ara-TN', 'ara-IQ', 'ara-JO', 'ara-LB',
-        'ara-SY', 'ara-KW', 'ara-QA', 'heb-IL', 'fas-IR', 'fas-AF', 'urd-PK', 'urd-IN', 'pus-AF', 'pnb-PK', 'snd-PK',
+        'ara-SY', 'ara-KW', 'ara-QA', 'ara-BH', 'ara-OM', 'ara-LY', 'ara-PS', 'ara-YE', 'ara-SD', 'ara-MR', 'ara-DJ',
+        'ara-KM', 'ara-SO', 'ara-TD', 'ara-ER', 'heb-IL', 'fas-IR', 'fas-AF', 'urd-PK', 'urd-IN', 'pus-AF', 'pnb-PK', 'snd-PK',
         'uig-CN', 'yid-US', 'ckb-IQ', 'syr-IQ', 'syr-SY', 'kas-IN', 'nqo-GN', 'div-MV' );
 
     private $timezone;
