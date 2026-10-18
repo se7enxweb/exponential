@@ -66091,6 +66091,10 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>Nothing was published in the last 14 days.</source>
         <translation>No se publicó nada en los últimos 14 días.</translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>

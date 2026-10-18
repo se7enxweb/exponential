@@ -99,7 +99,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `ara-LB` | Arabic (Lebanon) | العربية (لبنان) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ara-MA` | Arabic (Morocco) | العربية (المغرب) | Africa | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ara-QA` | Arabic (Qatar) | العربية (قطر) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
-| `ara-SA` | Arabic | العربية | Middle East | RTL | Arabic (`Arab`) | older, hand-made | — |
+| `ara-SA` | Arabic (Saudi Arabia) | العربية (المملكة العربية السعودية) | Middle East | RTL | Arabic (`Arab`) | older, regenerated from CLDR 48 | — |
 | `ara-SY` | Arabic (Syria) | العربية (سوريا) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ara-TN` | Arabic (Tunisia) | العربية (تونس) | Africa | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `asm-IN` | Assamese | অসমীয়া | South Asia | LTR | Bengali (`Beng`) | CLDR 44 | — |
@@ -611,7 +611,9 @@ Each generated file names its source and license in its first lines: CLDR is Cop
 
 **Hand-made files** are never overwritten by the generator. Besides the older files, Klingon (`tlh-QO`) is
 entirely hand-made: its header names its sources (The Klingon Dictionary, the Klingon Language Institute) and every
-choice. An older file is regenerated only when it is broken, one by one (`heb-IL`, `hin-IN`, `kor-KR`).
+choice. An older file is regenerated only when it is broken, one by one (`heb-IL`, `hin-IN`, `kor-KR`, and `ara-SA`,
+which named Morocco as its country, the Moroccan dirham as its currency, ISO-8859-1 as its character set and a
+12-hour clock with Latin am/pm).
 
 To add another locale with CLDR data, generate it the same way with `intl`; without CLDR data, copy a similar file
 and change it by hand. Then check it as below.

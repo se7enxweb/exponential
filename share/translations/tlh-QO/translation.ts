@@ -64933,6 +64933,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Nothing was published in the last 14 days.</source>
         <translation>Qav 14 jaj Doch ngevlu&apos;pu&apos;be&apos;.</translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>

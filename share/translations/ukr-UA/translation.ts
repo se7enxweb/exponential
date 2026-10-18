@@ -64918,6 +64918,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Nothing was published in the last 14 days.</source>
         <translation>За останні 14 днів нічого не опубліковано.</translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
