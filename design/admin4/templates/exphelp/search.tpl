@@ -159,6 +159,7 @@
         {/if}
         </div>
     </div>
+    {include uri='design:exphelp/parts/license_notice.tpl' license_page_id=''}
 </div>
 {ezscript_require( 'exphelp.js' )}
 {undef}

@@ -1450,3 +1450,61 @@
   .a4-help-topics__list a.a4-tag.is-current,
   .a4-help-pager__page.is-current { outline: 2px solid Highlight; }
 }
+
+/* ---- documentation license (O): the notice under every help page and the dashboard's free documentation block --
+   parts/license_notice.tpl and parts/license_dashboard.tpl (exphelp.ini [License], doc/README-LICENSE.md).
+   Tokens only; the notice stays in print, so a printed page carries its license. */
+.a4-help-license {
+  max-width: 80ch;
+  margin: var(--a4-space-5) 0 0;
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-inline-start: 4px solid var(--a4-info);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+}
+.a4-help-license.is-other { border-inline-start-color: var(--a4-line-strong); }
+.a4-help-license p { margin: 0 0 var(--a4-space-2); }
+.a4-help-license-title {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-2);
+  font-size: var(--a4-text-m);
+  font-weight: 650;
+  line-height: var(--a4-leading-tight);
+}
+.a4-help-license-title .a4-icon { color: var(--a4-accent-text); }
+.a4-help-license-copy { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-help-license-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--a4-space-1) var(--a4-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-license-links a { display: inline-flex; align-items: center; gap: var(--a4-space-1); font-weight: 600; }
+
+.a4-help-freedoc .a4-help-section-head p { margin: var(--a4-space-1) 0 0; color: var(--a4-muted); }
+.a4-help-freedoc-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--a4-space-3) var(--a4-space-4);
+  margin: var(--a4-space-3) 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-freedoc-list li { display: flex; align-items: flex-start; gap: var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-freedoc-list li > .a4-icon { flex: none; margin-top: var(--a4-space-1); color: var(--a4-accent-text); }
+.a4-help-freedoc-list strong { display: block; color: var(--a4-ink); }
+.a4-help-freedoc .a4-help-license-copy { margin: 0 0 var(--a4-space-3); }
+.a4-help-freedoc-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
+
+@media print {
+  .a4-help-license { break-inside: avoid; border-color: var(--a4-line-strong); background: none; }
+  .a4-help-license-links a[href^="http"]::after { content: " (" attr(href) ")"; font-weight: 400; }
+  .a4-help-freedoc-actions { display: none; }
+}

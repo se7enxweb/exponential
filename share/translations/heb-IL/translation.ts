@@ -71458,14 +71458,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>החיפוש אינו זמין כרגע.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>כיווץ</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>הרחבה</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>אף דף אינו מכיל את כל המילים; בדפים אלה יש חלק מהן.</translation>
     </message>
@@ -71476,10 +71468,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Getting started</source>
         <translation>צעדים ראשונים</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>תוכן ועריכה</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -72146,6 +72134,114 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>מדריכים וחומר עיון לכל מי שעובד עם התקנה זו, מתוך התיעוד של הגרסה שלה.</translation>
     </message>
     <message>
+        <source>Documentation license</source>
+        <translation>רישיון התיעוד</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>דף זה הוא חלק מהתיעוד של ההרחבה %extension ומופץ תחת הרישיון של אותה הרחבה.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>דף זה עבר בירושה מהתיעוד של התוכנה המקורית. הוא אינו מכוסה על ידי %license; הוא מופץ תחת %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>אילו דפים תחת איזה רישיון</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>זהו הטקסט של %license, גרסה %version, כפי שקרן התוכנה החופשית מפרסמת אותו. כל אחד רשאי להעתיק ולשתף אותו מילה במילה; אסור לשנות אותו.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version או גרסה מאוחרת יותר.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>קריאת הרישיון</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>הרישיון ברשת</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>מה אפשר לעשות עם תיעוד חופשי</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>הודעת זכויות יוצרים ורישיון</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>תיעוד חופשי: השתמשו בו כדי לעזור לעצמכם ולאחרים</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version או גרסה מאוחרת יותר. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>ללמוד אותה</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>קראו כל דף כמה פעמים שתרצו, לכל מטרה.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>להעתיק ולשתף אותה</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>תנו דפים למשתמשים אחרים, על נייר או כקבצים. שמרו עם כל עותק את הודעת זכויות היוצרים, את הודעת הרישיון ועותק של הרישיון.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>לתרגם, להתאים ולשפר אותה</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>שתפו את הגרסה שלכם תחת אותו רישיון, עם ההודעות המקוריות והערה על מה ששיניתם.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>לצטט אותה</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>הפנו לדף לפי הכותרת והכתובת שלו בעזרה, או לפי הקובץ שלו בתיקייה doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>לתרום תיקונים בחזרה</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>השתמשו ב&quot;עריכה ב-GitHub&quot; בכל דף. שינויים מתקבלים תחת אותו רישיון, כך שהם נשארים חופשיים לכולם.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>כיווץ</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>הרחבה</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>תוכן ועריכה</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>החלת מסננים</translation>
     </message>
@@ -72166,28 +72262,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>בחרו קהל, נושא או סוג אחר.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>לצטט אותו</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>לתרום תיקונים בחזרה</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>להעתיק ולשתף אותו</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>הודעת זכויות יוצרים ורישיון</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>יצירה ושינוי של תוכן: העורך, השדות, הטיוטות והגרסאות.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>רישיון התיעוד</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -72198,16 +72274,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>צעדים ראשונים בממשק הניהול: כניסה, התמצאות והמשימות היומיומיות.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>תיעוד חופשי: השתמשו בו כדי לעזור לעצמכם ולאחרים</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>קבלת עזרה ודיווח על שגיאה.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>תנו דפים למשתמשים אחרים, על נייר או כקבצים. השאירו עם כל עותק את הודעת זכויות היוצרים, את הודעת הרישיון ועותק של הרישיון.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -72238,18 +72306,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>פרסום, תזמון, הסתרה והעברה של תוכן.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>קראו כל דף כמה פעמים שתרצו, לכל מטרה.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>קריאת הרישיון</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>הפנו לדף לפי הכותרת והכתובת שלו בעזרה, או לפי הקובץ שלו בתיקיית doc.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>חומר עיון: הגדרות, פקודות ותבניות.</translation>
     </message>
@@ -72258,64 +72314,16 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הפעלת האתר: הגדרות, משתמשים ותפקידים, מטמונים, משימות מתוזמנות ויומנים.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>שתפו את הגרסה שלכם תחת אותו רישיון, עם ההודעות המקוריות והערה על מה ששיניתם.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>ללמוד אותו</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>תבניות, הרחבות, ה-API והקוד שמאחוריהם.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>הרישיון ברשת</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version או מאוחר יותר.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version או מאוחר יותר. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>זהו הטקסט של %license, גרסה %version, כפי שקרן התוכנה החופשית מפרסמת אותו. כל אחד רשאי להעתיק ולשתף אותו מילה במילה; אסור לשנות אותו.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>דף זה הוא חלק מהתיעוד של ההרחבה %extension ומופץ ברישיון של אותה הרחבה.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>דף זה נורש מהתיעוד של התוכנה המקורית. הוא אינו מכוסה על ידי %license; הוא מופץ תחת %other.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>נושאים</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>לתרגם, להתאים ולשפר אותו</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>תרגומים והשפות של האתר.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>השתמשו ב„עריכה ב-GitHub” בכל דף. שינויים מתקבלים באותו רישיון, כך שהם נשארים חופשיים לכולם.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -72324,14 +72332,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>מה עושה כל תכונה ואיך מגדירים אותה.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>מה מותר לעשות בתיעוד חופשי</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>לאילו דפים יש איזה רישיון</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>

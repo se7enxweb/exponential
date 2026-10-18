@@ -1120,6 +1120,7 @@ return array(
       'expHelpFunctionCollection'                                    => 'kernel/classes/help/exphelpfunctioncollection.php',
       'expHelpHighlighter'                                           => 'kernel/classes/help/exphelphighlighter.php',
       'expHelpIssueReport'                                           => 'kernel/classes/help/exphelpissuereport.php',
+      'expHelpLicense'                                               => 'kernel/classes/help/exphelplicense.php',
       'expHelpLinkCheck'                                             => 'kernel/classes/help/exphelplinkcheck.php',
       'expHelpLinks'                                                 => 'kernel/classes/help/exphelplinks.php',
       'expHelpMarkdownRenderer'                                      => 'kernel/classes/help/exphelpmarkdownrenderer.php',

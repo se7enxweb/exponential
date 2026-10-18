@@ -72136,6 +72136,102 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</translation>
     </message>
     <message>
+        <source>Documentation license</source>
+        <translation>Documentation license</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Which pages have which license</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>This documentation is free documentation, licensed under the %license %version or later.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>This documentation is free documentation, licensed under the %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Read the license</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>The license on the web</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>What you can do with free documentation</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Copyright and license notice</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Free documentation: use it to help yourself and others</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Study it</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Read any page as often as you like, for any purpose.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Copy it and share it</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Translate, adapt and improve it</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Share your version under the same license, with the original notices and a note of what you changed.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Cite it</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Refer to a page by its title and its address in the help, or its file in the doc directory.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Contribute fixes back</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>Apply filters</translation>
     </message>
@@ -72156,28 +72252,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Choose another audience, topic or type.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>Cite it</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>Contribute fixes back</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>Copy it and share it</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>Copyright and license notice</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>Creating and changing content: the editor, fields, drafts and versions.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>Documentation license</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -72188,16 +72264,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>First steps in the administration: signing in, finding your way and the everyday tasks.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>Free documentation: use it to help yourself and others</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>Getting help and reporting an error.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -72228,18 +72296,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Publishing, scheduling, hiding and moving content.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>Read any page as often as you like, for any purpose.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>Read the license</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>Refer to a page by its title and its address in the help, or its file in the doc directory.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>Reference material: settings, commands and formats.</translation>
     </message>
@@ -72248,64 +72304,16 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Running the site: settings, users and roles, caches, cronjobs and logs.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Share your version under the same license, with the original notices and a note of what you changed.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>Study it</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>Templates, extensions, the API and the code behind it.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>The license on the web</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>This documentation is free documentation, licensed under the %license %version or later.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>This documentation is free documentation, licensed under the %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>Topics</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>Translate, adapt and improve it</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>Translations and the languages of the site.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -72314,14 +72322,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>What each feature does and how to set it up.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>What you can do with free documentation</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>Which pages have which license</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>

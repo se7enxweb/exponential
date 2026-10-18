@@ -79080,6 +79080,102 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Anleitungen und Referenz für alle, die mit dieser Installation arbeiten, erstellt aus der Dokumentation ihrer eigenen Version.</translation>
     </message>
     <message>
+        <source>Documentation license</source>
+        <translation>Lizenz der Dokumentation</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Diese Seite gehört zur Dokumentation der Erweiterung %extension und wird unter der Lizenz dieser Erweiterung verbreitet.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Diese Seite stammt aus der Dokumentation der ursprünglichen Software. Sie fällt nicht unter die %license; sie wird unter der %other verbreitet.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Welche Seiten unter welcher Lizenz stehen</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Dies ist der Text der %license, Version %version, wie ihn die Free Software Foundation veröffentlicht. Jede und jeder darf ihn wortgetreu kopieren und weitergeben; Änderungen sind nicht erlaubt.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version oder einer späteren Version.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Lizenz lesen</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Die Lizenz im Web</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Was Sie mit freier Dokumentation tun können</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Urheberrechts- und Lizenzhinweis</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Freie Dokumentation: Nutzen Sie sie, um sich und anderen zu helfen</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version oder einer späteren Version. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Studieren</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Lesen Sie jede Seite so oft Sie möchten, zu jedem Zweck.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Kopieren und weitergeben</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Geben Sie Seiten an andere Benutzer weiter, auf Papier oder als Dateien. Behalten Sie bei jeder Kopie den Urheberrechtshinweis, den Lizenzhinweis und eine Kopie der Lizenz bei.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Übersetzen, anpassen und verbessern</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Geben Sie Ihre Fassung unter derselben Lizenz weiter, mit den ursprünglichen Hinweisen und einem Vermerk, was Sie geändert haben.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Zitieren</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Verweisen Sie auf eine Seite mit ihrem Titel und ihrer Adresse in der Hilfe oder mit ihrer Datei im Verzeichnis doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Korrekturen beitragen</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Nutzen Sie auf jeder Seite „Auf GitHub bearbeiten“. Änderungen werden unter derselben Lizenz angenommen und bleiben so für alle frei.</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>Filter anwenden</translation>
     </message>
@@ -79100,28 +79196,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Wählen Sie eine andere Zielgruppe, ein anderes Thema oder einen anderen Typ.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>Zitieren</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>Korrekturen zurückgeben</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>Kopieren und weitergeben</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>Urheberrechts- und Lizenzhinweis</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>Inhalte erstellen und ändern: der Editor, Felder, Entwürfe und Versionen.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>Lizenz der Dokumentation</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -79132,16 +79208,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Erste Schritte in der Administration: anmelden, sich zurechtfinden und die täglichen Aufgaben.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>Freie Dokumentation: Nutzen Sie sie, um sich und anderen zu helfen</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>Hilfe bekommen und einen Fehler melden.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Geben Sie Seiten an andere weiter, auf Papier oder als Dateien. Behalten Sie bei jeder Kopie den Urheberrechtshinweis, den Lizenzhinweis und eine Kopie der Lizenz bei.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -79172,18 +79240,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Inhalte veröffentlichen, planen, verbergen und verschieben.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>Lesen Sie jede Seite, so oft Sie wollen, zu jedem Zweck.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>Die Lizenz lesen</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>Verweisen Sie auf eine Seite mit ihrem Titel und ihrer Adresse in der Hilfe oder mit ihrer Datei im Verzeichnis doc.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>Nachschlagematerial: Einstellungen, Befehle und Formate.</translation>
     </message>
@@ -79192,64 +79248,16 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Die Website betreiben: Einstellungen, Benutzer und Rollen, Caches, Cronjobs und Logs.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Geben Sie Ihre Fassung unter derselben Lizenz weiter, mit den ursprünglichen Hinweisen und einem Vermerk, was Sie geändert haben.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>Studieren</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>Templates, Extensions, die API und der Code dahinter.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>Die Lizenz im Web</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version oder später.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version oder später. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>Dies ist der Text der %license, Version %version, wie ihn die Free Software Foundation veröffentlicht. Jeder darf ihn wörtlich kopieren und weitergeben; ändern darf man ihn nicht.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>Diese Seite gehört zur Dokumentation der Extension %extension und wird unter der Lizenz dieser Extension verbreitet.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>Diese Seite stammt aus der Dokumentation der ursprünglichen Software. Sie fällt nicht unter die %license, sondern wird unter der %other verbreitet.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>Themen</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>Übersetzen, anpassen und verbessern</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>Übersetzungen und die Sprachen der Website.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Nutzen Sie „Auf GitHub bearbeiten“ auf jeder Seite. Änderungen werden unter derselben Lizenz angenommen, damit sie für alle frei bleiben.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -79258,14 +79266,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>Was jede Funktion tut und wie man sie einrichtet.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>Was Sie mit freier Dokumentation tun dürfen</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>Welche Seiten welche Lizenz haben</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>

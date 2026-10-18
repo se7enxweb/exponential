@@ -71412,14 +71412,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Пошук зараз недоступний.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Згорнути</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Розгорнути</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Жодна сторінка не містить усіх слів; ці містять деякі з них.</translation>
     </message>
@@ -71430,10 +71422,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Getting started</source>
         <translation>Початок роботи</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Вміст і редагування</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -72100,6 +72088,114 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Посібники й довідник для всіх, хто працює з цією інсталяцією, створені з документації її власної версії.</translation>
     </message>
     <message>
+        <source>Documentation license</source>
+        <translation>Ліцензія документації</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Ця сторінка є частиною документації розширення %extension і поширюється за ліцензією цього розширення.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Цю сторінку успадковано з документації оригінального програмного забезпечення. На неї не поширюється %license; вона поширюється за %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Які сторінки мають яку ліцензію</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Це текст %license, версія %version, у тому вигляді, в якому його публікує Free Software Foundation. Кожен може дослівно копіювати й поширювати його; змінювати його не дозволено.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Ця документація є вільною документацією, ліцензованою за %license %version або пізнішою версією.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Ця документація є вільною документацією, ліцензованою за %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Прочитати ліцензію</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Ліцензія в мережі</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Що можна робити з вільною документацією</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Повідомлення про авторські права та ліцензію</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Вільна документація: використовуйте її, щоб допомогти собі та іншим</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Ця довідка є вільною документацією, ліцензованою за %license %version або пізнішою версією. Ви можете використовувати, поширювати й покращувати її:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Ця довідка є вільною документацією, ліцензованою за %license %version. Ви можете використовувати, поширювати й покращувати її:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Вивчайте її</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Читайте будь-яку сторінку скільки завгодно, з будь-якою метою.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Копіюйте та поширюйте її</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Передавайте сторінки іншим користувачам, на папері або у файлах. Зберігайте з кожною копією повідомлення про авторські права, повідомлення про ліцензію та копію ліцензії.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Перекладайте, адаптуйте та покращуйте її</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Поширюйте свою версію за тією ж ліцензією, з оригінальними повідомленнями та приміткою про те, що ви змінили.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Цитуйте її</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Посилайтеся на сторінку за її назвою та адресою в довідці або за її файлом у каталозі doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Надсилайте виправлення</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Скористайтеся «Редагувати на GitHub» на будь-якій сторінці. Зміни приймаються за тією ж ліцензією, тож вони залишаються вільними для всіх.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Згорнути</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Розгорнути</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Вміст і редагування</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>Застосувати фільтри</translation>
     </message>
@@ -72120,28 +72216,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Виберіть іншу аудиторію, тему або тип.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>Цитуйте її</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>Надсилайте виправлення</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>Копіюйте її й поширюйте</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>Повідомлення про авторські права й ліцензію</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>Створення й зміна вмісту: редактор, поля, чернетки й версії.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>Ліцензія документації</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -72152,16 +72228,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Перші кроки в адмініструванні: вхід, орієнтування й щоденні завдання.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>Вільна документація: користуйтеся нею, щоб допомагати собі й іншим</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>Як отримати допомогу й повідомити про помилку.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Передавайте сторінки іншим, на папері або як файли. Зберігайте з кожною копією повідомлення про авторські права, повідомлення про ліцензію та копію ліцензії.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -72192,18 +72260,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Публікація, планування, приховування й переміщення вмісту.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>Читайте будь-яку сторінку скільки завгодно, з будь-якою метою.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>Прочитати ліцензію</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>Посилайтеся на сторінку за її назвою та адресою в довідці або за її файлом у каталозі doc.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>Довідкові матеріали: налаштування, команди й формати.</translation>
     </message>
@@ -72212,64 +72268,16 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Керування сайтом: налаштування, користувачі й ролі, кеші, завдання cron і журнали.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Поширюйте свою версію під тією самою ліцензією, з початковими повідомленнями й приміткою про те, що ви змінили.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>Вивчайте її</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>Шаблони, розширення, API і код, що стоїть за ними.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>Ліцензія в інтернеті</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>Ця документація є вільною документацією за ліцензією %license %version або пізнішою.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>Ця документація є вільною документацією за ліцензією %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>Ця довідка є вільною документацією за ліцензією %license %version або пізнішою. Ви можете використовувати, поширювати й покращувати її:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>Ця довідка є вільною документацією за ліцензією %license %version. Ви можете використовувати, поширювати й покращувати її:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>Це текст %license, версії %version, у тому вигляді, як його публікує Free Software Foundation. Кожен може дослівно копіювати й поширювати його; змінювати його не дозволено.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>Ця сторінка є частиною документації розширення %extension і поширюється за ліцензією цього розширення.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>Ця сторінка успадкована з документації початкового програмного забезпечення. На неї не поширюється %license; вона поширюється за %other.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>Теми</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>Перекладайте, адаптуйте й покращуйте її</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>Переклади й мови сайту.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Скористайтеся «Редагувати на GitHub» на будь-якій сторінці. Зміни приймаються за тією самою ліцензією, тож вони залишаються вільними для всіх.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -72278,14 +72286,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>Що робить кожна функція і як її налаштувати.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>Що можна робити з вільною документацією</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>Які сторінки мають яку ліцензію</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>

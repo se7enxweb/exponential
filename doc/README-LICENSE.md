@@ -1,0 +1,67 @@
+---
+title: The license of this documentation
+audience: editor, admin, developer, user
+category: reference
+order: 90
+summary: The documentation of Exponential is free documentation under the GNU Free Documentation License 1.3 or later. The copyright notice, what it covers, and the older pages that keep their own terms.
+keywords: license, copyright, GFDL, GNU Free Documentation License, free documentation, attribution, copying, permission
+type: reference
+---
+# The license of this documentation
+
+## Copyright and permission notice
+
+Copyright (C) 1998 - 2026 7x & Exponential Foundation and the Exponential contributors.
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free
+Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no
+Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the
+section entitled "GNU Free Documentation License".
+
+## GNU Free Documentation License
+
+The license is the file [LICENSE-GFDL-1.3.txt](LICENSE-GFDL-1.3.txt) in this directory: the text of the
+GNU Free Documentation License, Version 1.3, 3 November 2008, exactly as the Free Software Foundation publishes it
+at <https://www.gnu.org/licenses/fdl-1.3.txt>. It is also on the web at <https://www.gnu.org/licenses/fdl-1.3.html>.
+Version 1.3 is the latest version of the license.
+
+The help in the administration (Help, the "?" button) shows the license on every page it opens, and links to
+[Free documentation: use it to help yourself and others](help/free-documentation.md), which explains in plain
+words what the license lets you do.
+
+## What the notice covers
+
+The notice covers the documentation the Exponential project wrote and maintains in the `doc/` directory of the
+repository: the help pages (`doc/help/`), the guides, the installation chapters, the feature, upgrade and
+specification documents of the 6.x line (`doc/features/6.0/`, `doc/bc/6.0/`, `doc/specifications/6.0/`), the
+changelogs of 6.x and of the extensions, the history, and the other pages at the top of `doc/`. This includes
+every 6.x page contributed through pull requests by the Exponential contributors.
+
+The software itself is not documentation: its source code stays under the GNU General Public License, version 2
+or any later version ([LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) and
+`COPYRIGHT.md` in the repository).
+
+## Older pages with their own terms
+
+Some files in `doc/` were inherited from the documentation of the original software, written by eZ Systems AS and
+its contributors between 1999 and 2014, and kept here for reference. The Exponential project does not hold their
+copyright and does not relicense them. They remain distributed under the terms they came with, the license of the
+repository (the GNU General Public License, version 2), and the copyright notice of eZ Systems AS applies to them.
+The help shows a different notice on these pages. They are:
+
+- the feature, upgrade, specification and changelog documents of the versions before 6.0
+  (`doc/features/2.x` to `doc/features/5.x`, `doc/bc/4.x` and `doc/bc/5.x`, `doc/specifications/3.x`,
+  `doc/specifications/4.x` and `doc/specifications/trunk`, `doc/changelogs/2.9` to `doc/changelogs/5.x`, and
+  `doc/changelogs/README.md`);
+- `doc/shop/`, `doc/branch-overview`, `doc/release-overview`, `doc/standards/header.txt`, and the example
+  configuration files `doc/examples/ezpublish.conf` and `doc/examples/htaccess`.
+
+The list is the setting `[License] OtherLicensePathRules[]` in `settings/exphelp.ini`, which the help reads to
+choose the notice of a page.
+
+## Contributing to the documentation
+
+A change to a page under the notice above is accepted under the same license, the GNU Free Documentation License
+1.3 or any later version, so that everyone keeps the same freedoms with the changed page. A contribution that
+cannot be published under these terms (text copied from a source with a different license, for example) has to
+say so in its pull request.
