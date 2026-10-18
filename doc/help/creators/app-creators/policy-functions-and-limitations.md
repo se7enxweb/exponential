@@ -90,7 +90,7 @@ Hiding a link is convenience, not security: the view must check again.
 - One function per kind of action (`read`, `create`, `manage`), not per screen.
 - Limitations only where a real customer needs them; each must be applied in code.
 - Never grant a new function to Anonymous by default; document what to grant.
-- Log refusals that matter in the audit trail (Access control in code).
+- Log refusals that matter in the audit trail ([Access control in code](access-control-in-code.md)).
 
 ## Related pages
 

@@ -90,7 +90,7 @@ caches and the search index right.
 ## Large operations
 
 Thousands of objects belong in a background process: a command run from cron, a queue job
-(Queues with expqueue), or the kernel's content jobs for removes, copies and moves of large
+([Queues with expqueue](queues-with-expqueue.md)), or the kernel's content jobs for removes, copies and moves of large
 subtrees ([Content jobs](content-jobs.md)). Commit in batches, clear `eZContentObject::clearCache()` between batches,
 and log progress.
 

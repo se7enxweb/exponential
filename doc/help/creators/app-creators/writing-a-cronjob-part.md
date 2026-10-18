@@ -73,16 +73,16 @@ The kernel is initialized for the siteaccess given with `-s`; the current user i
 | Log in a dedicated user when you write content | permissions and the audit name a real account, not the administrator |
 | Catch errors per item, continue, report at the end | one bad record should not stop the rest |
 | Clear in-memory caches between batches | long runs otherwise run out of memory |
-| Hand slow single tasks to a queue | the part stays short (Queues with expqueue) |
+| Hand slow single tasks to a queue | the part stays short ([Queues with expqueue](queues-with-expqueue.md)) |
 
 ## Testing
 
 Keep the logic in a service class and test it with PHPUnit; run the script by hand with `--script` on a development
-copy; check the output in **Setup > Cronjobs** (Testing applications).
+copy; check the output in **Setup > Cronjobs** ([Testing applications](testing-applications.md)).
 
 ## Related pages
 
 - [Cronjobs for applications](cronjobs-for-applications.md)
 - [CLI scripts with eZScript](cli-scripts.md)
-- Cronjob cookbook
+- Cronjob cookbook (`doc/examples/cookbook/cronjob.md`)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

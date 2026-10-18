@@ -31,11 +31,11 @@ decide what to build on it.
 | An admin interface | the administration for every content class, for free | [The admin tour](../../admin-tour.md) |
 | Business processes | workflows on triggers, object states | [Workflows](../../../guides/workflows.md), [Object states](../../../guides/object-states.md) |
 | Scheduled work | cronjob parts | [Cronjobs](../../../guides/cronjobs.md) |
-| Background jobs | the `expqueue` job queue and content jobs | Queues with expqueue |
-| An API | REST v1/v2 with OAuth2 and API keys; over a thousand named services in `expservices` | REST API v1 and v2, Remote services |
+| Background jobs | the `expqueue` job queue and content jobs | [Queues with expqueue](queues-with-expqueue.md) |
+| An API | REST v1/v2 with OAuth2 and API keys; over a thousand named services in `expservices` | [REST API v1 and v2](rest-api.md), [Remote services](remote-services-expservices.md) |
 | Search | built-in or Solr | [Site search](../website-creators/site-search.md) |
 | Audit | an audit trail of changes | [Audit trail](../../../features/6.0/audit-trail.md) |
-| AI assistance | Exponential Intelligence (`expai`) | Exponential Intelligence for applications |
+| AI assistance | Exponential Intelligence (`expai`) | [Exponential Intelligence for applications](exponential-intelligence.md) |
 | Serving | Velocity, Apache, nginx, FrankenPHP | [Serving the site](../../../install/08-serving-the-site.md) |
 
 ## What you write
@@ -43,7 +43,7 @@ decide what to build on it.
 Everything specific to your application lives in an **extension**: a directory under `extension/` with modules
 (addresses and views), classes, templates, settings, datatypes, workflow events, cronjob scripts and console commands.
 Setup > RAD lists 68 extension points and writes working skeletons for most of them
-(RAD tools).
+([RAD tools](rad-tools.md)).
 
 ## Kinds of applications
 
@@ -51,7 +51,7 @@ Setup > RAD lists 68 extension points and writes working skeletons for most of t
 |---|---|
 | A data application with forms and lists | content classes + custom views for special screens |
 | A portal or members area | sections, roles, registration, custom modules |
-| A headless back end for apps | content classes + REST or expservices (Headless Exponential) |
+| A headless back end for apps | content classes + REST or expservices ([Headless Exponential](headless-exponential.md)) |
 | A process tool (approvals, requests) | object states, workflows, notifications |
 | An integration hub | cronjobs, queues, REST clients in PHP classes |
 
@@ -73,7 +73,7 @@ service, and connect it.
 
 ## Related pages
 
-- Application creators: start here
+- [Application creators: start here](app-creators-start-here.md)
 - [What Exponential is: the product family](../../leadership/what-exponential-is.md)
 - [Standards](../../../standards/README.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

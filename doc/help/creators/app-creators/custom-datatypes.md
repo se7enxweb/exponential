@@ -12,7 +12,7 @@ type: help
 This page is for application creators who need a field type the shipped datatypes do not offer: a color, a rating, a
 structured address. A datatype is a class extending `eZDataType` (`kernel/classes/ezdatatype.php`) plus a view and an
 edit template. **Setup > RAD > Datatype extension** (`/setup/datatype`) writes a working skeleton
-(RAD tools).
+([RAD tools](rad-tools.md)).
 
 ## Contents
 
@@ -146,7 +146,7 @@ datatype registers itself (for example `kernel/classes/datatypes/ezboolean/ezboo
 ```
 
 No `style=""` in templates: a stylesheet or script reads `data-color`
-(Content Security Policy for your code).
+([Content Security Policy for your code](content-security-policy.md)).
 
 ## Storage
 
@@ -158,8 +158,8 @@ version, cleaned up in `deleteStoredObjectAttribute()` ([The datatype life cycle
 
 1. Regenerate autoloads, clear caches.
 2. Add an attribute of the new type to a test class; create, edit, translate, copy and remove objects.
-3. `toString()`/`fromString()` round-trip in a PHPUnit test (DB-less PHPUnit tests).
-4. Package export and import keep the value (Content packages).
+3. `toString()`/`fromString()` round-trip in a PHPUnit test ([DB-less PHPUnit tests](db-less-phpunit-tests.md)).
+4. Package export and import keep the value ([Content packages](packages-and-ezpkg.md)).
 
 ## Related pages
 

@@ -61,7 +61,7 @@ The generator maps them like any class.
 ## Composer libraries
 
 An extension that needs a library declares it in its own `composer.json`; the installation's Composer installs it into
-`vendor/`. Do not ship `vendor/` inside the extension (Composer packages and Packagist).
+`vendor/`. Do not ship `vendor/` inside the extension ([Composer packages and Packagist](composer-and-packagist.md)).
 
 ## When a class is not found
 

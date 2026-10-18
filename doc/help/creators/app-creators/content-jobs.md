@@ -64,12 +64,12 @@ died, so a job is not lost when the web server cannot start a worker. On a clust
 - For large operations on content, call the command (or its service) instead of looping over thousands of nodes in a
   request.
 - For your own background work, use the job queue `expqueue`, which is separate from content jobs and built for
-  application jobs (Queues with expqueue).
+  application jobs ([Queues with expqueue](queues-with-expqueue.md)).
 - Give supervisors `content/jobs` to see every user's jobs.
 
 ## Related pages
 
-- Background work: queues, cronjobs and content jobs
+- [Background work: queues, cronjobs and content jobs](background-work-patterns.md)
 - [Creating and updating content in code](creating-content-in-code.md)
 - [The content model and editing: large operations](../../../guides/content-model-and-editing.md#8-large-operations-as-content-jobs)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

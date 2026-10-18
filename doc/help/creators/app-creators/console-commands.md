@@ -71,7 +71,7 @@ registration needed. Give it a `@description` tag in its docblock so `list` desc
 | `exp:maintenance on/off` | maintenance mode |
 | `cron:<part>` | run a cronjob part |
 
-The generated pages of every command, with their options, are in the examples: Commands.
+The generated pages of every command, with their options, are in the examples (`doc/examples/commands/`).
 
 ## Related pages
 

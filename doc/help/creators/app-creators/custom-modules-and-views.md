@@ -49,7 +49,7 @@ $ViewList['item'] = array(
 ```
 
 In the view, `$Params['ItemID']` and `$Params['Offset']` hold the values, as strings from the address: cast and
-validate them (`(int)`, allow lists) before use (Input validation and output escaping).
+validate them (`(int)`, allow lists) before use ([Input validation and output escaping](input-validation-and-escaping.md)).
 
 ## Handling forms: actions
 

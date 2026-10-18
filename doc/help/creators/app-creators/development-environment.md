@@ -69,12 +69,12 @@ DebugOutput=enabled
 
 `DevelopmentMode` makes compiled templates follow their sources and turns the packer off. The debug bar shows queries,
 templates, settings and timings ([Exp debug bar](../../../features/6.0/exp-debug-bar.md),
-Debugging and logs). Never copy these settings to production.
+[Debugging and logs](debugging-and-logs.md)). Never copy these settings to production.
 
 ## Your extension in Git
 
 Keep the application in its own repository, checked out (or symlinked) into `extension/<ext>`, with its own
-`composer.json` so it installs like any extension later (Composer packages and Packagist).
+`composer.json` so it installs like any extension later ([Composer packages and Packagist](composer-and-packagist.md)).
 Activate it in `settings/override/site.ini.append.php`:
 
 ```ini

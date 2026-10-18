@@ -76,7 +76,7 @@ Use parts for markup that repeats.
 | `ignore_content_expiry` | not cleared by publishing |
 
 Data from your own tables is not tied to publishing: set an `expiry` that matches how stale it may be, or clear the
-`template-block` cache when your data changes (Caching in applications).
+`template-block` cache when your data changes ([Caching in applications](caching-in-applications.md)).
 
 ## Structuring an extension's templates
 

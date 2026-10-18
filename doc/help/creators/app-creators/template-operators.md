@@ -11,7 +11,7 @@ type: help
 
 This page is for application creators who give templates a new operator, such as `{$price|expdemo_money( 'EUR' )}`.
 An operator is a PHP class registered in the extension's `autoloads/eztemplateautoload.php`. The RAD tool
-**Template extension** (`/setup/templateoperator`) writes a working one for you (RAD tools).
+**Template extension** (`/setup/templateoperator`) writes a working one for you ([RAD tools](rad-tools.md)).
 
 ## Contents
 

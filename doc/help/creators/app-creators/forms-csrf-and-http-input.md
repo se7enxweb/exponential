@@ -85,12 +85,12 @@ sanitizing ([Creating and updating content in code](creating-content-in-code.md)
 ## Posts from scripts
 
 Machine clients do not use HTML forms: give them the REST API with API keys or OAuth, or expservices with tokens,
-which have their own authentication instead of form tokens (REST API v1 and v2,
-OAuth and API keys).
+which have their own authentication instead of form tokens ([REST API v1 and v2](rest-api.md),
+[OAuth and API keys](oauth-and-api-keys.md)).
 
 ## Related pages
 
-- Input validation and output escaping
-- Security for applications
+- [Input validation and output escaping](input-validation-and-escaping.md)
+- [Security for applications](security-for-applications.md)
 - [Security standard](../../../standards/security.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

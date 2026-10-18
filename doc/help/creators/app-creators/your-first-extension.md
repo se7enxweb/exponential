@@ -11,7 +11,7 @@ type: help
 
 This page is for application creators who want a running extension quickly. You build `expdemo`, an extension with one
 module, one view that lists the latest articles, one policy function and one template. You can let **Setup > RAD**
-write it (RAD tools) or type it yourself as below; both give the same result.
+write it ([RAD tools](rad-tools.md)) or type it yourself as below; both give the same result.
 
 ## Contents
 
@@ -141,5 +141,5 @@ Next: [Custom modules and views](custom-modules-and-views.md), and the class-bas
 
 - [Anatomy of an extension](extension-anatomy.md)
 - [module.php reference](module-definition-reference.md)
-- RAD tools: building faster
+- [RAD tools: building faster](rad-tools.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

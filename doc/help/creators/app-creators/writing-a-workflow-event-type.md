@@ -11,7 +11,7 @@ type: help
 
 This page is for application creators who add a step administrators can put into workflows: notify an external system
 on publish, check a field before publishing, wait for an outside approval. **Setup > RAD > Workflow event extension**
-(`/setup/workflowevent`) writes a working skeleton (RAD tools).
+(`/setup/workflowevent`) writes a working skeleton ([RAD tools](rad-tools.md)).
 
 ## Contents
 
@@ -87,7 +87,7 @@ This follows the shipped `eZWaitUntilDateType` (`kernel/classes/workflowtypes/ev
 | `STATUS_RUN_SUB_EVENT`, `STATUS_WORKFLOW_RESET`, `STATUS_WORKFLOW_DONE` | special flows (multiplexer, reset) |
 
 Keep `execute()` fast: it runs inside the editor's publish. Slow work goes to a queue
-(Background work).
+([Background work](background-work-patterns.md)).
 
 ## Settings per event
 

@@ -80,7 +80,7 @@ Objects you return should be `eZPersistentObject`s or offer `attribute()` and `h
 - Bound every limit.
 - Keep the method thin: call a service class your views and commands use too.
 - Name parameters as the content fetches do (`limit`, `offset`, `sort_by`), so template authors guess right.
-- Test the static method with PHPUnit like any class (DB-less PHPUnit tests).
+- Test the static method with PHPUnit like any class ([DB-less PHPUnit tests](db-less-phpunit-tests.md)).
 
 ## Related pages
 

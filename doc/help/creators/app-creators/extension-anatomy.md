@@ -37,7 +37,7 @@ settings the extension carries ([Extensions](../../../guides/extensions.md)).
 | `share/`, `sql/<engine>/` | database schema and data | installed by your setup script or the package |
 | `translations/<locale>/translation.ts` | translations | `site.ini [RegionalSettings] TranslationExtensions[]` |
 | `doc/` | the extension's own documentation | the help can read it when listed in `exphelp.ini` `ExtensionDocDirs[]` |
-| `tests/` | PHPUnit tests | your CI (Testing applications) |
+| `tests/` | PHPUnit tests | your CI ([Testing applications](testing-applications.md)) |
 
 The real catalogue of every extension point, with the INI line that registers it, is **Setup > RAD**
 ([Extension points](../../../bc/6.0/rad-extension-points.md)).
@@ -52,7 +52,7 @@ The real catalogue of every extension point, with the INI line that registers it
 
 The about page (`/ezinfo/about`) reads `extension.xml` first, so both files must state the same version
 ([About and package pages](../../../features/6.0/about-and-package-pages.md),
-Versions and releases).
+[Versions and releases](versions-and-releases.md)).
 
 ## Activation
 
@@ -81,6 +81,6 @@ respected). Order decides which extension's template or setting wins. Change it 
 ## Related pages
 
 - [Your first extension](your-first-extension.md)
-- Packaging your application as an extension
+- [Packaging your application as an extension](packaging-as-an-extension.md)
 - [Layering and naming](../../../standards/architecture/layering-and-naming.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -89,7 +89,7 @@ missing.
 
 API keys, passwords and tokens never go into your extension's repository. Read them from a key the installation sets in
 `settings/override/<file>.ini.append.php` (mode 0640, not committed), and fail with a clear message when it is empty.
-Environment-specific values: Environment settings and secrets.
+Environment-specific values: [Environment settings and secrets](environment-settings-and-secrets.md).
 
 ## Caches
 

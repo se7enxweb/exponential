@@ -69,8 +69,8 @@ echo json_encode( array( 'ok' => true, 'data' => $data ) );
 eZExecution::cleanExit();
 ```
 
-Prefer the existing JSON layers for APIs (JSON endpoints with ezjscore,
-REST API). Under Velocity, `cleanExit()` ends the request by an exception that the server handles; do
+Prefer the existing JSON layers for APIs ([JSON endpoints with ezjscore](json-endpoints-with-ezjscore.md),
+[REST API](rest-api.md)). Under Velocity, `cleanExit()` ends the request by an exception that the server handles; do
 not wrap it in a `catch ( Exception $e )`, or the page is appended to your output.
 
 ## Translated texts
