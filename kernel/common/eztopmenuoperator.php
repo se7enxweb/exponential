@@ -223,6 +223,10 @@ class eZTopMenuOperator
                 $menuItem['tooltip'] = isset( $this->DefaultNames[$tabID]['tooltip'] ) ? $this->DefaultNames[$tabID]['tooltip'] : '';
             }
 
+            // [Topmenu_<tab>] Icon: the name of an icon the design may show before the tab's name (admin4 draws it
+            // when design.ini [AdminDesignSettings] IconList[] has the name); '' for a tab without one
+            $menuItem['icon'] = $ini->hasVariable( 'Topmenu_' . $tabID , 'Icon' ) ? trim( (string)$ini->variable( 'Topmenu_' . $tabID , 'Icon' ) ) : '';
+
             $menuItem['navigationpart_identifier'] =  $ini->variable( 'Topmenu_' . $tabID , 'NavigationPartIdentifier' );
             $menuItem['position'] = 'middle';
             $menu[] = $menuItem;

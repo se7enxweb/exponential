@@ -9,7 +9,7 @@
      plug icon
    * item.text (LinkDescriptions[]): one line on what the function does, translated in item.context
    mega_links (the section's MegaMenuLinks[]) chooses the links shown: by link key (a link of a section a group adds,
-   GroupSections[], as <group>-<key>, e.g. audit-console), in that order, at most 14, only
+   GroupSections[], as <group>-<key>, e.g. audit-console), in that order, at most 19, only
    links the user may open (a link of an inactive extension is not in the groups at all); each keeps its group, the
    groups follow the order of their first chosen link, and a group with none is left out. With no mega_links every
    link is shown, in the menu's groups, and a link the user may not open shows its name without link
@@ -17,7 +17,7 @@
    No figures (LinkFigureTemplates[]): the menu asks no counts. Each group is a section with a heading (h2, drawn
    small); each link is a plain link, its description is the link's description (aria-describedby).
 *}
-{def $mega_max = 14
+{def $mega_max = 19
      $mega_groups = $groups
      $mega_picked = array()
      $mega_keys = array()

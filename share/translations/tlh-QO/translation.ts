@@ -14873,20 +14873,20 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <translation>wanI&apos; tetlh ghItlhmey yItlha&apos;, yInej, yIrar je.</translation>
     </message>
     <message>
-        <source>Help center</source>
-        <translation>QaH botlh</translation>
-    </message>
-    <message>
-        <source>Guides, search and how to report an error.</source>
-        <translation>nav, nej &apos;ej chay&apos; Qagh ja&apos;lu&apos;.</translation>
-    </message>
-    <message>
         <source>Interface languages</source>
         <translation>rarmeH jIH Holmey</translation>
     </message>
     <message>
         <source>The translation each interface language shows, and what it falls back to.</source>
         <translation>rarmeH jIH Hol Hoch 'angbogh mughghach, tam Hol je.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>QaH botlh</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>nav, nej &apos;ej chay&apos; Qagh ja&apos;lu&apos;.</translation>
     </message>
 </context>
 <context>
@@ -64970,6 +64970,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>Qav 14 jaj Doch ngevlu&apos;pu&apos;be&apos;.</translation>
     </message>
     <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
+    </message>
+    <message>
         <source>Help center</source>
         <translation>QaH botlh</translation>
     </message>
@@ -71158,6 +71162,225 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>rarmeH jIH Holmey</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Hol Sep Hol lo'taH loH. ghaj'eghbogh mughghach ghajbe'chugh Hol Sep, tam Hol mIr mughghach wa'DIch 'ang; pagh DIvI' Hol Hal ghItlhmey 'ang. Hol Sep Hoch tetlh ghItlh vam: nuq 'ang, 'ar naQ je. pagh choH: i18n.ini [TranslationSettings] Daq tam Holmey cherlu'.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>naQ leghghach</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Hol Sepmey</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>ghaj'eghbogh mughghach ghaj</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>tam Hol vegh mughlu'</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>DIvI' Hol Hal ghItlhmey lo'</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Sengmey</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>%target ghoSqa' mIr.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>FallbackMaxDepth tlhoy nI' mIr; %target Daq pe'lu'.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>tam Hol: %target. Hol Sep ngoq 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>tam Hol: %target. Hol Sep teywI' ghajbe', mughghach ghajbe' je.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] Daq %target ponglu'; tam chut 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>tam Hol ghaj, 'ach Hol Sep teywI' ghajbe'.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>tam Hol: %target. wej mughghach ghaj; DIvI' Hol Hal ghItlhmey 'anglu'.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Hol Sep Hoch</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>%locale Hol Sep teywI' ghajbe' jom.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>ghaj'eghbogh mughghach</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>HISlaH</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ghobe'</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>rarmeH jIH</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % mughlu'ta'</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>%locale vegh</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>DIvI' Hol Hal ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>chelwI'mey</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%total vo' %translated mughlu'ta'; %complete naQ</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>tam Hol mIr</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>mughghach tu'lu'be'</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>FallbackLanguages[] chenmoH</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>Hol rap tam nIteb chenmoH</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>chut %rule chenmoH</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>pagh: ghaj'eghbogh mughghach ghajbe'chugh, DIvI' Hol Hal ghItlhmey 'ang.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>chelwI'</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>mughlu'ta'</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>DuHmey</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count Hol Sepmey: tam Hol cherlu'ta'</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: mIr mughghach Hoch; mughghach le'qu' Qap</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: mIr mughghach wa'DIch</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>chu'lu'ta': mughghach ghajbe'chugh Hol Sep 'ej tam Hol cherlu'be'chugh, Holvetlh mughghach naQqu' tlhap</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>not lo'lu'be': %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>chu'Ha'lu'ta'</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>pagh</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>ra'meH tlheghDaq tetlh rap: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count 'anglu'</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>yI'ang</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Hol Sep</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Hol</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>yoS lojmIt vam</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>Hal ghItlhmey</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>Seng</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%total vo' %translated</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % motlh</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Hol rap tam nIteb tu'ta' 'ay' wovmoHlu'bogh; latlh 'aymey cherlu' pagh chutvo' chenlu'.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Hol Sep Segh vam tu'lu'be'.</translation>
+    </message>
+</context>
+<context>
     <name>kernel/exphelp</name>
     <message>
         <source>Help</source>
@@ -71204,6 +71427,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>DaH nejlu&apos;laHbe&apos;.</translation>
     </message>
     <message>
+        <source>Collapse</source>
+        <translation>yIQIH</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>yIDach</translation>
+    </message>
+    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Hoch mu&apos; ghajbe&apos; pagh nav; &apos;op ghaj nav&apos;meyvam.</translation>
     </message>
@@ -71214,6 +71445,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Getting started</source>
         <translation>wa&apos;DIch mIw</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>De&apos; &apos;ej choHmeH mIw</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -72166,225 +72401,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Image</source>
         <translation>mIllogh</translation>
-    </message>
-</context>
-<context>
-    <name>design/admin/setup/languages</name>
-    <message>
-        <source>Interface languages</source>
-        <translation>rarmeH jIH Holmey</translation>
-    </message>
-    <message>
-        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
-        <translation>Hol Sep Hol lo'taH loH. ghaj'eghbogh mughghach ghajbe'chugh Hol Sep, tam Hol mIr mughghach wa'DIch 'ang; pagh DIvI' Hol Hal ghItlhmey 'ang. Hol Sep Hoch tetlh ghItlh vam: nuq 'ang, 'ar naQ je. pagh choH: i18n.ini [TranslationSettings] Daq tam Holmey cherlu'.</translation>
-    </message>
-    <message>
-        <source>Overview</source>
-        <translation>naQ leghghach</translation>
-    </message>
-    <message>
-        <source>Locales</source>
-        <translation>Hol Sepmey</translation>
-    </message>
-    <message>
-        <source>With a translation of their own</source>
-        <translation>ghaj'eghbogh mughghach ghaj</translation>
-    </message>
-    <message>
-        <source>Translated through a fallback</source>
-        <translation>tam Hol vegh mughlu'</translation>
-    </message>
-    <message>
-        <source>In the English source texts</source>
-        <translation>DIvI' Hol Hal ghItlhmey lo'</translation>
-    </message>
-    <message>
-        <source>Problems</source>
-        <translation>Sengmey</translation>
-    </message>
-    <message>
-        <source>Its chain comes back to %target.</source>
-        <translation>%target ghoSqa' mIr.</translation>
-    </message>
-    <message>
-        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
-        <translation>FallbackMaxDepth tlhoy nI' mIr; %target Daq pe'lu'.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which is no locale code.</source>
-        <translation>tam Hol: %target. Hol Sep ngoq 'oHbe'.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
-        <translation>tam Hol: %target. Hol Sep teywI' ghajbe', mughghach ghajbe' je.</translation>
-    </message>
-    <message>
-        <source>FallbackRules[] names %target, which is no fallback rule.</source>
-        <translation>FallbackRules[] Daq %target ponglu'; tam chut 'oHbe'.</translation>
-    </message>
-    <message>
-        <source>Has a fallback, but no locale file.</source>
-        <translation>tam Hol ghaj, 'ach Hol Sep teywI' ghajbe'.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
-        <translation>tam Hol: %target. wej mughghach ghaj; DIvI' Hol Hal ghItlhmey 'anglu'.</translation>
-    </message>
-    <message>
-        <source>All locales</source>
-        <translation>Hol Sep Hoch</translation>
-    </message>
-    <message>
-        <source>The installation has no locale file for %locale.</source>
-        <translation>%locale Hol Sep teywI' ghajbe' jom.</translation>
-    </message>
-    <message>
-        <source>Translation of its own</source>
-        <translation>ghaj'eghbogh mughghach</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>HISlaH</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>ghobe'</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>rarmeH jIH</translation>
-    </message>
-    <message>
-        <source>%percent % translated</source>
-        <translation>%percent % mughlu'ta'</translation>
-    </message>
-    <message>
-        <source>through %locale</source>
-        <translation>%locale vegh</translation>
-    </message>
-    <message>
-        <source>English source texts</source>
-        <translation>DIvI' Hol Hal ghItlhmey</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>chelwI'mey</translation>
-    </message>
-    <message>
-        <source>%translated of %total translated, %complete complete</source>
-        <translation>%total vo' %translated mughlu'ta'; %complete naQ</translation>
-    </message>
-    <message>
-        <source>Fallback chain</source>
-        <translation>tam Hol mIr</translation>
-    </message>
-    <message>
-        <source>no translation</source>
-        <translation>mughghach tu'lu'be'</translation>
-    </message>
-    <message>
-        <source>by FallbackLanguages[]</source>
-        <translation>FallbackLanguages[] chenmoH</translation>
-    </message>
-    <message>
-        <source>by the automatic same-language fallback</source>
-        <translation>Hol rap tam nIteb chenmoH</translation>
-    </message>
-    <message>
-        <source>by the rule %rule</source>
-        <translation>chut %rule chenmoH</translation>
-    </message>
-    <message>
-        <source>None: without a translation of its own it shows the English source texts.</source>
-        <translation>pagh: ghaj'eghbogh mughghach ghajbe'chugh, DIvI' Hol Hal ghItlhmey 'ang.</translation>
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation>chelwI'</translation>
-    </message>
-    <message>
-        <source>Translated</source>
-        <translation>mughlu'ta'</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>DuHmey</translation>
-    </message>
-    <message>
-        <source>%count locales with a configured fallback</source>
-        <translation>%count Hol Sepmey: tam Hol cherlu'ta'</translation>
-    </message>
-    <message>
-        <source>merge: every translation of the chain, the most specific winning</source>
-        <translation>merge: mIr mughghach Hoch; mughghach le'qu' Qap</translation>
-    </message>
-    <message>
-        <source>first: the first translation of the chain</source>
-        <translation>first: mIr mughghach wa'DIch</translation>
-    </message>
-    <message>
-        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
-        <translation>chu'lu'ta': mughghach ghajbe'chugh Hol Sep 'ej tam Hol cherlu'be'chugh, Holvetlh mughghach naQqu' tlhap</translation>
-    </message>
-    <message>
-        <source>Never for: %list</source>
-        <translation>not lo'lu'be': %list</translation>
-    </message>
-    <message>
-        <source>disabled</source>
-        <translation>chu'Ha'lu'ta'</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>pagh</translation>
-    </message>
-    <message>
-        <source>The same list on the command line: %command</source>
-        <translation>ra'meH tlheghDaq tetlh rap: %command</translation>
-    </message>
-    <message>
-        <source>%count shown</source>
-        <translation>%count 'anglu'</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>yI'ang</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Hol Sep</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Hol</translation>
-    </message>
-    <message>
-        <source>This siteaccess</source>
-        <translation>yoS lojmIt vam</translation>
-    </message>
-    <message>
-        <source>source texts</source>
-        <translation>Hal ghItlhmey</translation>
-    </message>
-    <message>
-        <source>problem</source>
-        <translation>Seng</translation>
-    </message>
-    <message>
-        <source>%translated of %total</source>
-        <translation>%total vo' %translated</translation>
-    </message>
-    <message>
-        <source>%percent % on average</source>
-        <translation>%percent % motlh</translation>
-    </message>
-    <message>
-        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
-        <translation>Hol rap tam nIteb tu'ta' 'ay' wovmoHlu'bogh; latlh 'aymey cherlu' pagh chutvo' chenlu'.</translation>
-    </message>
-    <message>
-        <source>No locale is of this kind.</source>
-        <translation>Hol Sep Segh vam tu'lu'be'.</translation>
     </message>
 </context>
 </TS>

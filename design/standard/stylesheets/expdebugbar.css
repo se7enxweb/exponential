@@ -113,6 +113,7 @@ body.exp-debug-bar { padding-bottom: calc(var(--exp-debug-bar-h, 38px) + 8px); }
 #debug .exp-debug-chip {
   font: 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; padding: 3px 7px; border-radius: 10px;
   border: 1px solid var(--xd-line); background: var(--xd-ok-bg); color: var(--xd-ok); cursor: pointer; white-space: nowrap;
+  unicode-bidi: plaintext; /* a figure keeps its order in a right-to-left interface */
 }
 #debug .exp-debug-chip[data-level="warn"] { background: var(--xd-warn-bg); color: var(--xd-warn); border-color: currentColor; }
 #debug .exp-debug-chip[data-level="high"] { background: var(--xd-high-bg); color: var(--xd-high); border-color: currentColor; font-weight: 700; }
