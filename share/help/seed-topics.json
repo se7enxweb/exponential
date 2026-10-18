@@ -1,0 +1,98 @@
+{
+    "about": "Initial help topics and one manual for exp:help:content seed-topics: the templates of doc/specifications/6.0/help-style-guide.md (sections 1.1 to 1.5). Topics are found again by help_id (remote_id help-topic-<help_id>), manuals by remote_id; an existing object is left as the editors made it unless --update is given. Links to other topics: help:<help_id>. related: help_ids.",
+    "topics": [
+        {
+            "class": "help_concept",
+            "help_id": "content.versions",
+            "title": "Drafts and versions",
+            "shortdesc": "Every change to content is saved as a new version; readers only see the published one.",
+            "audience": ["Editors"],
+            "platform": ["Admin"],
+            "version_from": "6.0.0",
+            "fields": {
+                "body": "When you edit an object, Exponential creates a draft. The draft is a new version of the object. Readers of the site do not see it.\n\nWhen you publish the draft, it becomes the current version. The previous version stays in the history. You can compare versions and copy an old one into a new draft.\n\nDrafts you do not publish stay in **My drafts** until you discard them."
+            },
+            "related": ["content.publish-article"]
+        },
+        {
+            "class": "help_task",
+            "help_id": "content.publish-article",
+            "title": "Publish an article",
+            "shortdesc": "Create an article in a folder and publish it on the site.",
+            "audience": ["Editors"],
+            "platform": ["Admin"],
+            "version_from": "6.0.0",
+            "fields": {
+                "context": "An article appears on the site as soon as you publish it, if its section and state allow readers to see it.",
+                "prereq": "You are logged in to the admin interface and may create content in the folder.",
+                "steps": "1. Open the folder in which the article belongs.\n2. Select **Article** in the list of content classes.\n3. Click **Create here**.\n   The edit form opens.\n4. Fill in at least the title and the text.\n5. Click **Send for publishing**.\n   The folder opens again and shows the new article.",
+                "result": "The article is published. It is listed in the folder and visible on the site.",
+                "postreq": "Check the article on the site with **Preview** or by opening its page."
+            },
+            "related": ["content.versions", "content.not-visible", "content.edit-buttons"]
+        },
+        {
+            "class": "help_reference",
+            "help_id": "content.edit-buttons",
+            "title": "Buttons in the edit form",
+            "shortdesc": "These buttons are at the bottom of the edit form, and this is what each of them does.",
+            "audience": ["Editors"],
+            "platform": ["Admin"],
+            "version_from": "6.0.0",
+            "fields": {
+                "body": "| Button | What happens | Visible on the site? |\n|---|---|---|\n| **Send for publishing** | the draft becomes the current version | yes, unless a workflow holds it back |\n| **Store draft** | the draft is saved, the form stays open | no |\n| **Discard draft** | the draft is deleted | no, the current version stays |\n| **Preview** | shows the draft as the site would show it | no |"
+            },
+            "related": ["content.publish-article"]
+        },
+        {
+            "class": "help_troubleshooting",
+            "help_id": "content.not-visible",
+            "title": "A published article does not appear on the site",
+            "shortdesc": "If an article is published but missing on the site, its section, state or the cache is usually the reason.",
+            "audience": ["Editors", "Administrators"],
+            "platform": ["Admin"],
+            "version_from": "6.0.0",
+            "fields": {
+                "condition": "The article is listed in the admin interface as published. On the site it is missing from the list, or its address shows \"Access denied\".",
+                "cause": "Anonymous readers may not read the section or the object state of the article, or the site still shows a cached page.",
+                "remedy": "Open the article in the admin interface and look at **Section** and **Object states**. Compare them with an article that is visible. If they are the same, ask an administrator to clear the cache."
+            },
+            "related": ["content.publish-article"]
+        },
+        {
+            "class": "help_task",
+            "help_id": "account.log-in",
+            "title": "Log in",
+            "shortdesc": "Log in with your user name and your password.",
+            "audience": ["Visitors", "Members"],
+            "platform": ["Web"],
+            "version_from": "6.0.0",
+            "fields": {
+                "prereq": "You have an account.",
+                "steps": "1. Open the login page.\n2. Enter your user name in **Username**.\n3. Enter your password in **Password**.\n4. Click **Login**.\n   Your start page opens.",
+                "result": "You are logged in."
+            },
+            "related": []
+        }
+    ],
+    "chapters": [
+        {
+            "remote_id": "help-chapter-editors-publishing",
+            "title": "Publishing content",
+            "shortdesc": "How content gets from a draft onto the site, and what to do when it does not.",
+            "topicrefs": ["content.versions", "content.publish-article", "content.edit-buttons", "content.not-visible"]
+        }
+    ],
+    "manuals": [
+        {
+            "remote_id": "help-manual-editors",
+            "title": "Manual for editors",
+            "subtitle": "Writing and publishing content in the admin interface",
+            "shortdesc": "The tasks, concepts and reference of editing content in the Exponential admin interface.",
+            "audience": ["Editors"],
+            "edition": "6.0.15",
+            "license": "GNU Free Documentation License 1.3",
+            "topicrefs": ["help-chapter-editors-publishing", "account.log-in"]
+        }
+    ]
+}

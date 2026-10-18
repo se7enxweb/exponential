@@ -19,6 +19,8 @@
  *
  * PHP classes can answer first: [ContextHelp] Providers[] lists classes implementing
  * expHelpContextProviderInterface, asked in order before the map.
+ * A provider that also implements expHelpContextPageInterface may answer "content/<help_id>": a help topic
+ * maintained as content (doc/features/6.0/help-content.md); it gives the address and title of that page itself.
  *
  * The lookup goes from the most to the least specific: the providers, design:module/view, module/view,
  * design:module, module, then the help dashboard. An entry is skipped (and the next key tried) when its value is not
@@ -57,6 +59,9 @@ class expHelpContextRegistry
 
     /** The page suffixes an entry may name (the index decides the rest) */
     const PAGE_PATTERN = '#\.(md|markdown|txt)$#i';
+
+    /** The id of a help topic maintained as content, answered by an expHelpContextPageInterface provider */
+    const CONTENT_PAGE_PATTERN = '#^content/[a-z0-9.-]{1,80}$#';
 
     /**
      * @param array $map key => "page id[#anchor]"
@@ -176,6 +181,21 @@ class expHelpContextRegistry
                 $answer = $provider->helpContext( $module, $view, $design );
                 if ( !is_string( $answer ) || $answer === '' )
                     continue;
+                // a help topic maintained as content ("content/<help_id>"): only a provider that also serves such
+                // pages (expHelpContextPageInterface) may answer with one, and it says the page's address and title
+                if ( preg_match( self::CONTENT_PAGE_PATTERN, $answer ) )
+                {
+                    $page = $provider instanceof expHelpContextPageInterface ? $provider->contextPage( $answer ) : null;
+                    if ( is_array( $page ) && isset( $page['url'] ) && is_string( $page['url'] ) && strpos( $page['url'], '/exphelp/' ) === 0 )
+                    {
+                        $title = isset( $page['title'] ) && is_scalar( $page['title'] ) ? (string)$page['title'] : '';
+                        $result = array( 'id' => $answer, 'anchor' => '', 'url' => $page['url'], 'title' => $title,
+                                         'level' => $view !== '' ? 'view' : 'module', 'entry' => '', 'source' => get_class( $provider ),
+                                         'key' => $answer . '#' );
+                        break;
+                    }
+                    continue;
+                }
                 $target = self::parseTarget( $answer );
                 $info = $target ? $this->info( $target['id'] ) : null;
                 if ( $info !== null )
