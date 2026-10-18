@@ -3014,7 +3014,7 @@ d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXP
 0ab260d13ecc850ddf64413ea7eb9240  doc/bc/6.0/admin4-styling.md
 e101242c403b860ecda6eb961d8f7659  doc/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/bc/6.0/api-keys.md
-13cacc23a18208ce39a36cee2e8cfeb3  doc/bc/6.0/audit.md
+92d8d3c9b7ce00b173e6537680cdd538  doc/bc/6.0/audit.md
 e8465b9099e38bb4731675ba1ea462c2  doc/bc/6.0/backend_ezjscore_services.md
 e13e79599730e77b94efa91126e45ed9  doc/bc/6.0/behaviour-changes-2026-07-08.md
 250a9d7e6948ddd176f5c6c54bb0febb  doc/bc/6.0/behaviour-changes-2026-09b.md
@@ -3096,7 +3096,7 @@ b3619f3dd7b2c0c98ea03f16cba624e4  doc/bc/6.0/trash.md
 0637dd8b6d6bcb69afd7fa771041c8f5  doc/bc/6.0/ui-switch.md
 7928239ba6369a6bb899ee998ce94b05  doc/bc/6.0/user-password-change.md
 993384f707a1aa6b5574b412be832f5c  doc/bc/6.0/velocity-engine-upgrade-notes.md
-13bb239ae82f9365025fdd562b1bf539  doc/bc/6.0/velocity-engines.md
+e792ddbec002535cc7fac9d8de689fd6  doc/bc/6.0/velocity-engines.md
 886acb7ce25be5416e143b161f5c0672  doc/bc/6.0/velocity-ondisk-layout.md
 e45848cf4009e8515ef6ed6775a40b07  doc/bc/6.0/view_full_security.md
 8fd6c3094d810e78dbd152f24c450ec9  doc/bc/6.0/yui-removal.md
@@ -3247,7 +3247,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-5dc5b3bb39727f146688b0725eff7167  doc/changelogs/6.0/6.0.15.md
+9998738f050224a0b4f20d717f8d533d  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5252,7 +5252,7 @@ ca152db03e020c7bbe4ba8951c72a906  kernel/classes/expvelocityfrankenphp.php
 600c52c5993053d67fa78bde9b37ff99  kernel/classes/expvelocitymarkers.php
 d7b0086399665b9506af909e3d6230fc  kernel/classes/expvelocityphpserver.php
 8575d463d7c31610483091d94c65f8fc  kernel/classes/expvelocityrestartunit.php
-3211bfb62aa3ea5d24a01c6fe1b38af0  kernel/classes/expvelocitywatchdog.php
+01b7d1bc1691803a5853e4ec4f66f1a8  kernel/classes/expvelocitywatchdog.php
 b42226f735d68e3b8b78875311b214fb  kernel/classes/expviewaccess.php
 d9da1ddbb238a9634bbd835247adbc64  kernel/classes/ezaudit.php
 6235fea69dfbb9e5d965e4879d7203db  kernel/classes/ezbasket.php
@@ -8223,7 +8223,7 @@ f0e7540561b9a7d039c5fee3b8912260  tests/tests/kernel/classes/expUrlAdminPagesTes
 be3a33ce3c88aba09d1e3a0ab5c51a2c  tests/tests/kernel/classes/expVelocityMarkersTest.php
 d192ba3ececa29f5bea6ab48deb3d607  tests/tests/kernel/classes/expVelocityNiceTest.php
 f7cd1ed759475ce246d5a6cd8c5a92b6  tests/tests/kernel/classes/expVelocityStopRestartTest.php
-f90517688e2945a3c1954b59eb8dabe9  tests/tests/kernel/classes/expVelocityWatchdogTest.php
+d56fc6851ebcd05af301698d84ec6f50  tests/tests/kernel/classes/expVelocityWatchdogTest.php
 c8c704867551b709eb99c383b3f91b59  tests/tests/kernel/classes/expViewAccessTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml

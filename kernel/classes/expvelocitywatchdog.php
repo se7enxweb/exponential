@@ -54,6 +54,13 @@ class expVelocityWatchdog
     /** Its own state beside the markers: down since, last start, failures. */
     const STATE_FILE = 'watchdog.json';
 
+    /**
+     * The reason of the last skip it recorded in the audit, beside the markers: a skip with the same reason is not
+     * recorded again (only the first skip of a stopped period, or a new reason), and the file goes once the engine
+     * runs or is started again.
+     */
+    const LAST_SKIP_FILE = 'watchdog-last.json';
+
     /** Starts that may fail in a row before it waits Backoff seconds. */
     const MAX_FAILURES = 3;
 
@@ -162,6 +169,7 @@ class expVelocityWatchdog
         if ( !$own || !flock( $own, LOCK_EX | LOCK_NB ) )
         {
             $result['detail'] = 'another watchdog run is still busy';
+            $result['repeat'] = $this->noteSkip( $result );
             $this->log( $result );
             return $result;
         }
@@ -229,6 +237,7 @@ class expVelocityWatchdog
             $result['detail'] = $e->getMessage();
         }
 
+        $result['repeat'] = $this->noteSkip( $result );
         if ( $result['reason'] !== 'running' )
             $this->log( $result );
         flock( $own, LOCK_UN );
@@ -244,7 +253,9 @@ class expVelocityWatchdog
      *  - system.velocity.watchdog.start   it started the engine (result success), or a start failed (failed)
      *  - system.velocity.watchdog.backoff it did not try, because the last starts failed (backoff)
      *  - system.velocity.watchdog.skip    it left a down engine alone: stopped on purpose, a restart in progress,
-     *                                     the lock held, the previous check still busy (overlap), or an error
+     *                                     the lock held, the previous check still busy (overlap), or an error;
+     *                                     only when the reason changed (the first skip of a stopped period, or a
+     *                                     new reason), not again for a run that repeats it ($result['repeat'])
      *
      * @param array $result of run()
      * @return array|null array( name, data ) for expAuditHook::emit()
@@ -254,6 +265,10 @@ class expVelocityWatchdog
         $action = (string)( $result['action'] ?? '' );
         $reason = (string)( $result['reason'] ?? '' );
         if ( $action === 'none' || $reason === 'running' || $reason === 'paused' )
+            return null;
+        // The same skip as the last one recorded (noteSkip()): a server stopped on purpose would otherwise give
+        // one event per check, some 1,900 a day.
+        if ( !empty( $result['repeat'] ) && $action === 'skip' && $reason !== 'backoff' )
             return null;
         $after = array( 'reason' => $reason, 'detail' => (string)( $result['detail'] ?? '' ) );
         $data = array( 'object' => array( 'type' => 'engine', 'id' => (string)( $result['engine'] ?? '' ) ) );
@@ -289,6 +304,46 @@ class expVelocityWatchdog
         if ( $event === null || !class_exists( 'expAuditHook' ) )
             return null;
         return expAuditHook::emit( $event[0], $event[1] );
+    }
+
+    /**
+     * Keeps LAST_SKIP_FILE: whether this run's skip repeats the reason of the last skip recorded. A skip with a new
+     * reason is noted (and recorded by audit()); a run that finds the engine running, or starts it, ends the
+     * period and removes the file. Backoff and a paused watchdog leave it as it is.
+     *
+     * @param array $result of run()
+     * @return bool true when the run is a skip with the same reason as the last one recorded
+     */
+    protected function noteSkip( array $result )
+    {
+        $action = (string)( $result['action'] ?? '' );
+        $reason = (string)( $result['reason'] ?? '' );
+        $file = $this->runDirectory() . '/' . self::LAST_SKIP_FILE;
+        if ( $action === 'none' || $action === 'start' || $reason === 'running' )
+        {
+            if ( file_exists( $file ) )
+                @unlink( $file );
+            return false;
+        }
+        if ( $action !== 'skip' || $reason === 'paused' || $reason === 'backoff' )
+            return false;
+        $last = $this->lastSkip();
+        if ( isset( $last['reason'] ) && $last['reason'] === $reason )
+            return true;
+        $tmp = $file . '.' . getmypid();
+        if ( @file_put_contents( $tmp, json_encode( array( 'reason' => $reason, 'since' => time(),
+                                                           'engine' => (string)( $result['engine'] ?? '' ) ) ) . "\n" ) !== false )
+            @rename( $tmp, $file );
+        return false;
+    }
+
+    /**
+     * The last skip recorded in the audit (LAST_SKIP_FILE): array( reason, since, engine ), or an empty array.
+     */
+    public function lastSkip()
+    {
+        $data = json_decode( (string)@file_get_contents( $this->runDirectory() . '/' . self::LAST_SKIP_FILE ), true );
+        return is_array( $data ) ? $data : array();
     }
 
     /**

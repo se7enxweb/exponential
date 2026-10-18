@@ -334,6 +334,83 @@ class expVelocityWatchdogTest extends ezpTestCase
         }
     }
 
+    public function testRepeatedSkipsWithTheSameReasonWriteOneEvent()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        ( new expVelocityMarkers( $this->dir . '/run' ) )->markStopped( 'stop' );
+        $results = array();
+        $records = $this->auditRecords( function () use ( $dog, &$results ) {
+            for ( $i = 0; $i < 3; $i++ )
+            {
+                $results[] = $r = $dog->run();
+                expVelocityWatchdog::audit( $r );
+            }
+        } );
+        $this->assertSame( array( 'system.velocity.watchdog.skip' ), array_column( $records, 'name' ) );
+        $this->assertSame( array( false, true, true ), array_column( $results, 'repeat' ) );
+        $this->assertSame( 'intentionally-stopped', $dog->lastSkip()['reason'] );
+        $this->assertSame( 3, substr_count( (string)file_get_contents( $dog->logFile() ), 'reason=intentionally-stopped' ),
+                           'the log keeps one line per skip' );
+    }
+
+    public function testANewSkipReasonWritesANewEvent()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        $markers = new expVelocityMarkers( $this->dir . '/run' );
+        $markers->markStopped( 'stop' );
+        $records = $this->auditRecords( function () use ( $dog, $markers ) {
+            expVelocityWatchdog::audit( $dog->run() );
+            expVelocityWatchdog::audit( $dog->run() );
+            $markers->clear( expVelocityMarkers::STOPPED );
+            $markers->write( expVelocityMarkers::RESTART, array( 'started' => time(), 'pid' => getmypid() ) );
+            expVelocityWatchdog::audit( $dog->run() );
+            expVelocityWatchdog::audit( $dog->run() );
+            $markers->clear( expVelocityMarkers::RESTART );
+            $markers->markStopped( 'stop' );
+            expVelocityWatchdog::audit( $dog->run() );
+        } );
+        $this->assertSame( array( 'intentionally-stopped', 'restart-in-progress', 'intentionally-stopped' ),
+                           array_map( function ( $r ) { return $r['after']['reason']; }, $records ) );
+        $this->assertSame( 0, $engine->starts );
+    }
+
+    public function testRunningAgainResetsTheLastSkip()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        $markers = new expVelocityMarkers( $this->dir . '/run' );
+        $markers->markStopped( 'stop' );
+        $records = $this->auditRecords( function () use ( $dog, $engine, $markers ) {
+            expVelocityWatchdog::audit( $dog->run() );
+            $this->assertFileExists( $this->dir . '/run/' . expVelocityWatchdog::LAST_SKIP_FILE );
+            $engine->running = true;
+            $markers->clear( expVelocityMarkers::STOPPED );
+            $this->assertNull( expVelocityWatchdog::audit( $dog->run() ) );
+            $this->assertFileDoesNotExist( $this->dir . '/run/' . expVelocityWatchdog::LAST_SKIP_FILE );
+            $engine->running = false;
+            $markers->markStopped( 'stop' );
+            expVelocityWatchdog::audit( $dog->run() );
+            expVelocityWatchdog::audit( $dog->run() );
+        } );
+        $this->assertSame( array( 'system.velocity.watchdog.skip', 'system.velocity.watchdog.skip' ), array_column( $records, 'name' ) );
+    }
+
+    public function testAStartEndsTheSkipPeriod()
+    {
+        $engine = new expVelocityWatchdogTestEngine();
+        $dog = new expVelocityWatchdogTestDog( $engine, $this->dir );
+        file_put_contents( $this->dir . '/run/' . expVelocityWatchdog::LAST_SKIP_FILE, json_encode( array( 'reason' => 'lock-held' ) ) );
+        $r = $dog->run();
+        $this->assertSame( 'start', $r['action'] );
+        $this->assertFalse( $r['repeat'] );
+        $this->assertSame( array(), $dog->lastSkip() );
+        $this->assertNull( expVelocityWatchdog::auditEvent( array( 'action' => 'skip', 'reason' => 'lock-held', 'repeat' => true, 'engine' => 'qbix' ) ) );
+        $this->assertNotNull( expVelocityWatchdog::auditEvent( array( 'action' => 'skip', 'reason' => 'backoff', 'repeat' => true, 'engine' => 'qbix' ) ),
+                              'backoff is recorded as before' );
+    }
+
     public function testOtherCommandsStillRecordCommandRun()
     {
         $records = $this->auditRecords( function () {

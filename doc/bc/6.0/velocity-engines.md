@@ -261,7 +261,15 @@ every other command records (it calls `eZScript::setAuditCommandRun( false )` fo
 | `system.velocity.watchdog.skip` | it left a down engine alone | `intentionally-stopped`, `restart-in-progress`, `lock-held`, `overlap`, `error` |
 
 The reason and the detail are in the event's `after`. A check that finds the engine running (`none`), and a paused
-watchdog, record nothing. Note that a server stopped on purpose gives one `skip` event per check while it stays down.
+watchdog, record nothing.
+
+A `skip` is recorded only when its reason changes: the first skip of a period (a server stopped on purpose, a restart
+in progress, the lock held, an overlap, an error), or a skip with a different reason than the last one recorded. The
+watchdog keeps that last reason in `watchdog-last.json` beside the markers (`var/vc/<engine>/run/`) and removes the
+file as soon as a check finds the engine running or starts it, so the next stop gives a `skip` event again. A server
+stopped on purpose for a day gives one event, not some 1,900. `start` and `backoff` events are recorded as before.
+`velocity-watchdog.log` is not deduplicated: it keeps one line per check that does more than find the server running,
+so the log still shows every check of a stopped period.
 
 ```ini
 [WatchdogSettings]
