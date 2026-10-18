@@ -1128,7 +1128,40 @@
   font-style: normal;
 }
 :where([dir="rtl"]) .a4-help-nav-link[aria-current="page"] { box-shadow: inset -3px 0 0 var(--a4-accent); }
-.a4-help-nav-text { min-width: 0; }
+.a4-help-nav-text { flex: 1 1 auto; min-width: 0; }
+.a4-help-nav-count {
+  flex: none;
+  padding: 0 var(--a4-space-1);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+.a4-help-nav li[hidden] { display: none; }
+.a4-help-nav-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-3);
+}
+.a4-help-nav-filter { flex: 1 1 10rem; min-width: 0; }
+.a4-help-nav-all { font-size: var(--a4-text-xs); }
+.a4-help-section-more { display: inline-flex; align-items: center; gap: var(--a4-space-1); font-size: var(--a4-text-s); }
+
+/* The contents page (exphelp/contents): the whole tree, its top folders in columns on wide pages */
+.a4-help-contents { container-type: inline-size; container-name: a4-help-contents; }
+.a4-help-contents-links { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: var(--a4-space-3) 0 0; }
+.a4-help-nav.is-contents .a4-help-nav-tools { max-width: 32rem; }
+@container a4-help-contents (min-width: 60rem) {
+  .a4-help-nav.is-contents .a4-help-nav-list.is-top { columns: 2; column-gap: var(--a4-space-6); }
+  .a4-help-nav.is-contents .a4-help-nav-list.is-top > li { break-inside: avoid-column; }
+}
+@container a4-help-contents (min-width: 90rem) {
+  .a4-help-nav.is-contents .a4-help-nav-list.is-top { columns: 3; }
+}
 
 /* The contents of the page: at the side (scrollspy marks the heading in view) or folded above the page */
 .a4-help-toc-list { margin: 0; padding: 0; list-style: none; border-inline-start: 2px solid var(--a4-line); }

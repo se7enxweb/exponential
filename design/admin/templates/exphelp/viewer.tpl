@@ -2,12 +2,14 @@
    every help page on the left, the page in the middle (title, meta, the rendered document, previous/next) and its
    table of contents on the right, which stays in view. Narrower windows drop the side contents for a folded one above
    the page, and on phones the tree moves below the page (it comes after the page in the source, so the page is read
-   first). Works without JavaScript; exphelp.js (w612/F hooks) adds the instant search, the scrollspy of the contents,
-   the copy buttons of code blocks, collapsible sections and the keys / j k [ ].
+   first). The tree lists every page the help serves (expHelpNavigation, cached per index signature), the folders on
+   the way to this page open; its filter box (exphelp.js) narrows it as you type. Works without JavaScript; exphelp.js
+   (w612/F hooks) adds the instant search, the scrollspy of the contents, the copy buttons of code blocks, collapsible
+   sections and the keys / j k [ ].
 
    Variables (kernel/private/classes/views/exphelp/viewer.php): help_page (document: id, path, title, summary, type,
    category, audience[], changed, size ...), help_html (rendered by expHelpMarkdownRenderer and safe: NOT washed),
-   help_toc (level, text, anchor), help_tree (expHelpDocumentIndex::tree()), help_prev, help_next (documents or
+   help_toc (level, text, anchor), help_nav_html (the tree: safe HTML, NOT washed), help_prev, help_next (documents or
    null), help_edit_url (GitHub, may be empty), help_category (id, name, icon, or not set), help_i18n_json.
 
    The same file is in design/admin and design/admin4. *}
@@ -70,9 +72,15 @@
             <p class="a4-help-foot a4-meta"><a href={'exphelp/report'|ezurl}><span class="a4-icon a4-bi-exclamation-diamond" aria-hidden="true"></span> {'Something wrong on this page? Report an error'|i18n( 'kernel/exphelp' )}</a></p>
         </div>
 
-        <nav class="a4-help-nav" id="exphelp-nav" aria-labelledby="exphelp-nav-title" tabindex="-1">
+        <nav class="a4-help-nav" id="exphelp-nav" aria-labelledby="exphelp-nav-title" tabindex="-1" data-exphelp-nav>
             <p class="a4-help-nav-head" id="exphelp-nav-title"><span class="a4-icon a4-bi-list-ul" aria-hidden="true"></span> {'All help pages'|i18n( 'kernel/exphelp' )}</p>
-            {include name=NavLevel uri='design:exphelp/parts/viewer_nav.tpl' nav_node=$help_tree nav_current_id=$help_page.id nav_depth=0}
+            <div class="a4-help-nav-tools">
+                <label class="a4-sr-only" for="exphelp-nav-filter">{'Filter the help pages'|i18n( 'kernel/exphelp' )}</label>
+                <input class="a4-input a4-help-nav-filter exp-js-only" type="search" id="exphelp-nav-filter" autocomplete="off" placeholder="{'Filter pages'|i18n( 'kernel/exphelp' )|wash}" data-exphelp-navfilter hidden />
+                <a class="a4-help-nav-all" href={'exphelp/contents'|ezurl}>{'Browse all help'|i18n( 'kernel/exphelp' )}</a>
+            </div>
+            <p class="a4-sr-only" data-exphelp-navfilter-status aria-live="polite"></p>
+            {$help_nav_html}
         </nav>
 
         {if $help_toc_items|count|ge( 2 )}

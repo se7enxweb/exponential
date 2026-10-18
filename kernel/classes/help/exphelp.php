@@ -126,7 +126,9 @@ class expHelp
                       'collapse' => ezpI18n::tr( $c, 'Hide section: %title' ),
                       'expand' => ezpI18n::tr( $c, 'Show section: %title' ),
                       'relaxed' => ezpI18n::tr( $c, 'No page has every word; these have some of them.' ),
-                      'clear' => ezpI18n::tr( $c, 'Clear' ) );
+                      'clear' => ezpI18n::tr( $c, 'Clear' ),
+                      'navCount' => ezpI18n::tr( $c, '%count pages match' ),
+                      'navNone' => ezpI18n::tr( $c, 'No page title matches' ) );
     }
 
     /**
