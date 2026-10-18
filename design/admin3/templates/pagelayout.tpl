@@ -35,8 +35,9 @@
     {include uri='design:page_head_style.tpl'}
     {include uri='design:page_head_script.tpl'}
 
-    {* the hand-dragged width of the left column, before anything is drawn (data-a4-left-width on <html>) *}
-    {literal}<script>(function () { var r = document.documentElement, w = r.getAttribute('data-a4-left-width'); if (w && /^\d{2,4}(\.\d+)?px$/.test(w)) r.style.setProperty('--left-sidebar-width', w); })();</script>{/literal}
+    {* the hand-dragged width of the left column, before anything is drawn (data-a4-left-width on <html>): a script
+       file without defer, not an inline script, so it holds under a Content Security Policy with script-src 'self' *}
+    {ezscript( array( 'admin3_head.js' ) )}
 
 </head>
 

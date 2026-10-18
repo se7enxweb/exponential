@@ -860,6 +860,7 @@ a54e5021b1c597539a60da86ef766f0c  design/admin3/images/trash-icon-16x16.gif
 bb57d7d50de510183570d8844efbd49f  design/admin3/images/up-16x16-grey.png
 bc1f590f32f5d71f9bfdf7781f2135fc  design/admin3/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin3/images/view-fullscreen.png
+cc3eec2a3dccf317af26fabf9c02e0f3  design/admin3/javascript/admin3_head.js
 e3bfb91bebf01770b13c4a9ffe2a8f95  design/admin3/javascript/ezadmin_menubar.js
 948dfa01a6ac457c432732cd53ded738  design/admin3/stylesheets/pagelayout.css
 5d3b68fdb809c73a6d8dc464e33c61ec  design/admin3/stylesheets/responsive.css
@@ -880,7 +881,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 68ef800e886d8f0bbe4c2216f50e0c18  design/admin3/templates/page_search.tpl
 e197b66c63a2bcf4e5d9777cd91f6300  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
-e1bf38dbc7828053983dd6d4b819473c  design/admin3/templates/pagelayout.tpl
+e171ad46a49a7caea754a310b90d4513  design/admin3/templates/pagelayout.tpl
 e32e963f4d25c52a7f8d3eb520c0b227  design/admin3/templates/parts/user/menu.tpl
 03bf0a50004b366a1cbe7f46bb57d6ce  design/admin3/templates/window_controls.tpl
 a41265a8c8cf4698837a304aae23bb6a  design/admin4/fonts/IcoMoon.eot
@@ -7765,6 +7766,7 @@ f439d02bf7ee68ecca6ccd30ffe60170  tests/tests/design/AdminNodeUploadButtonTest.p
 a60c3633a9045361377a90f14d676472  tests/tests/design/AdminPageHeaderTest.php
 760c260eefaac3abe202655d074fd6c9  tests/tests/design/AdminPhoneMenuTest.php
 c7a83ca94e5008c349693102cdcbeedd  tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php
+10041abc282f4bcb18eca95a13864deb  tests/tests/design/AdminPrePaintGuardsTest.php
 964332e29381bae7173aa9450cd52780  tests/tests/design/AdminPreferencesTest.php
 88d5471b0a77c9b9d6aefb5d1db6c8bd  tests/tests/design/AdminPreviewDevicesTest.php
 384d300f25cd69528b84e4fd228f16d0  tests/tests/design/AdminRelationListLabelsTest.php
