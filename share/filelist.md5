@@ -3296,7 +3296,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-4593aa652f568a9d9428aedcfd06e62d  doc/changelogs/6.0/6.0.15.md
+6ca58e3d72a2b30f7dd90d5b219743cd  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3761,7 +3761,7 @@ dfc80bc3e8c5193eda53ed0174e12623  doc/features/6.0/reverse-relation-check.md
 a2b854480148165d9d884261749eaecb  doc/features/6.0/rich-text-supplementary-characters-and-tex-source.md
 f3e55ab662ea59e47a493133318f41ee  doc/features/6.0/right-to-left.md
 cb4ba958c01d20e816fc121fd17f2d6d  doc/features/6.0/robots-txt.md
-5546e1fd2154341af36b7d47c0e72dac  doc/features/6.0/role-and-policy-template-operators.md
+ebe06d47bd7893ebc9e77ce3774abaf7  doc/features/6.0/role-and-policy-template-operators.md
 0954ae9de88cdf88556032c14ff33a9c  doc/features/6.0/role-assignment-paging.md
 5eca0ca90770dd3b686d7743ecb9d33a  doc/features/6.0/role-policy-order.md
 f1b7156f5a50c09f2d0dad23f221a6d7  doc/features/6.0/rss-podcast-and-feed-list.md
@@ -7088,7 +7088,7 @@ fe326a7a2677d729c1080497a8310a94  lib/eztemplate/classes/exceptions/failedexecut
 9888e10199888f1819506a77bc4124da  lib/eztemplate/classes/eztemplatearithmeticoperator.php
 79f0ca210a49a9a42094d12601f8fc96  lib/eztemplate/classes/eztemplatearrayoperator.php
 a18e5f0d05eb1120d30dac9db87de72d  lib/eztemplate/classes/eztemplateattributeoperator.php
-14343b6210648d880e2d1dc763ce86e3  lib/eztemplate/classes/eztemplateautoload.php
+74efe699977852f3c5003d31d564c20c  lib/eztemplate/classes/eztemplateautoload.php
 caf4abdaccd57ca1a17e570a203c35fa  lib/eztemplate/classes/eztemplateblockfunction.php
 c7aaea08f3cac04f3913c840567b59d4  lib/eztemplate/classes/eztemplatecacheblock.php
 6c41a19dbb37f77b12ff5553c5722895  lib/eztemplate/classes/eztemplatecachefunction.php
@@ -9456,6 +9456,7 @@ c0be3d17b10801879ce3559488f18e5c  tests/tests/lib/eztemplate/eZTemplateCompiledI
 14c4ac52ed9429ce9ba6ea2b67dfc89c  tests/tests/lib/eztemplate/eZTemplateOperatorDefaultWarningTest.php
 021b629a14c10d16795252b566981e7e  tests/tests/lib/eztemplate/eZTemplateOperatorMatrixTest.php
 c6de6085f5bb0a3d346ae55181b75719  tests/tests/lib/eztemplate/eZTemplatePHP8RegressionTest.php
+1c1a04641c394c14ff7b246dc711b2e8  tests/tests/lib/eztemplate/eZTemplateRoleOperatorRegistrationTest.php
 054ba093ee53d9607044dc8dd344c73c  tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php
 897c11a86ad0ae4c7ee05d4433239ae1  tests/tests/lib/eztemplate/eZTemplateUnitLocaleAndSequenceTest.php
 d3098c09d1bc71770ffd4c1a7e674691  tests/tests/lib/eztemplate/eZTemplateVanishedCompiledTemplateTest.php
