@@ -512,15 +512,22 @@
             });
         });
 
+        // / goes to the help search, not to the admin header's: this listener runs in the capture phase, before the
+        // design's own / shortcut (admin4.js), which leaves an event alone once its default is prevented
+        document.addEventListener('keydown', function (event) {
+            if (event.key !== '/' || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || event.isComposing) { return; }
+            var t = event.target;
+            if (typing(t) || (t && t.closest && t.closest('[role="textbox"], [role="combobox"], [role="dialog"], [aria-modal="true"], dialog'))) { return; }
+            var visible = searches.filter(function (s) { return !s.input.disabled && s.input.offsetParent !== null; });
+            if (!visible.length) { return; }
+            event.preventDefault();
+            visible[0].input.focus();
+            if (visible[0].input.select) { visible[0].input.select(); }
+        }, true);
+
         document.addEventListener('keydown', function (event) {
             if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || typing(event.target)) { return; }
             var key = event.key;
-            if (key === '/' && searches.length) {
-                event.preventDefault();
-                searches[0].input.focus();
-                if (searches[0].input.select) { searches[0].input.select(); }
-                return;
-            }
             var c = contentOf(document);
             if ((key === 'j' || key === 'k') && c) {
                 if (jump(c, key === 'j' ? 1 : -1)) { event.preventDefault(); if (spy) { spy.schedule(); } }

@@ -11,7 +11,8 @@
  * - HELPJS-02: an older answer arriving after a newer one is ignored; an empty query sends nothing; a failed request or
  *   a browser without fetch says the search is not available (the form still goes to the search page); a changed
  *   filter searches again.
- * - HELPJS-03: keys: / focuses the search (not while typing, not with Ctrl), ArrowDown/ArrowUp move the focus through
+ * - HELPJS-03: keys: / focuses the search (not while typing, not with Ctrl, and before the admin header's own /
+ *   shortcut of admin4.js, not out of a dialog), ArrowDown/ArrowUp move the focus through
  *   the results and back to the field, Enter opens the first result once the list is up (before that the form is
  *   sent), Esc closes the list, then clears the field.
  * - HELPJS-04: every <pre> of the page gets one copy button (type=button), in A's .a4-help-code wrapper when there is
@@ -117,6 +118,11 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $k = $c['keys'];
         $this->assertSame( 'q', $k['focusInput'], '/ focuses the field' );
         $this->assertFalse( $k['slashInInput'], '/ typed in the field is a character' );
+        $s = $c['slash beats the header search'];
+        $this->assertSame( 'q', $s['focused'], "/ goes to the help search before the admin header's own / shortcut (capture phase)" );
+        $this->assertTrue( $s['prevented'] );
+        $this->assertSame( 'searchtext', $s['disabledGoesToHeader'], 'without a usable help search the header keeps /' );
+        $this->assertNotSame( 'q', $s['fromDialog'], 'not out of a dialog' );
         $this->assertSame( '/admin/exphelp/viewer/(path)/doc/a.md#clear', $k['first'] );
         $this->assertSame( '/admin/exphelp/viewer/(path)/doc/c.md', $k['second'] );
         $this->assertSame( '/admin/exphelp/viewer/(path)/doc/c.md', $k['stays'], 'the last result stays' );
