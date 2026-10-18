@@ -63,7 +63,8 @@ class Search extends \Exponential\Runnable\ModuleView
         foreach ( array( 'audience', 'category', 'type' ) as $key )
         {
             $value = $text( $key, 64 );
-            if ( $value !== '' && preg_match( '/^[a-z0-9_-]+$/', $value ) )
+            // one value or a comma separated list (audience=admin,developer); expHelpSearch bounds each value
+            if ( $value !== '' && preg_match( '/^[a-z0-9_.-]+(?:,[a-z0-9_.-]+){0,9}$/', $value ) )
                 $filters[$key] = $value;
         }
         $limit = isset( $get['limit'] ) ? (int)$get['limit'] : (int)\expHelp::setting( 'SearchSettings', 'ResultLimit', 20 );
@@ -71,7 +72,21 @@ class Search extends \Exponential\Runnable\ModuleView
                       'filters' => $filters,
                       'limit' => max( 1, min( 50, $limit ) ),
                       'offset' => max( 0, min( 10000, isset( $get['offset'] ) ? (int)$get['offset'] : 0 ) ),
-                      'format' => $text( 'format', 8 ) === 'json' ? 'json' : 'html' );
+                      'format' => $text( 'format', 8 ) === 'json' || self::acceptsJson() ? 'json' : 'html' );
+    }
+
+    /**
+     * Whether the client asks for JSON first (Accept: application/json, as the help script sends); a browser's
+     * Accept (text/html first, or any type) gets the page.
+     *
+     * @param array|null $server default $_SERVER
+     * @return bool
+     */
+    public static function acceptsJson( ?array $server = null )
+    {
+        $server = $server === null ? $_SERVER : $server;
+        $accept = isset( $server['HTTP_ACCEPT'] ) && is_string( $server['HTTP_ACCEPT'] ) ? strtolower( $server['HTTP_ACCEPT'] ) : '';
+        return (bool)preg_match( '/^\s*application\/json\s*(?:[;,]|$)/', $accept );
     }
 }
 
