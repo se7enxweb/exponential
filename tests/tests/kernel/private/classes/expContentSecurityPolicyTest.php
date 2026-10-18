@@ -26,6 +26,7 @@ class expContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $this->setting( 'ContentSecurityPolicy', 'AdditionalSources', array() );
         $this->setting( 'ContentSecurityPolicy', 'ReportOnlyDirectives', array() );
         $this->setting( 'ContentSecurityPolicy', 'ReportOnlyDesigns', array() );
+        $this->setting( 'ContentSecurityPolicy', 'ReportOnlyViews', array() );
         $this->setting( 'DesignSettings', 'AdditionalSiteDesignList', array() );
         expContentSecurityPolicy::reset();
     }
@@ -249,6 +250,7 @@ class expContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $ini->variable( 'ContentSecurityPolicy', 'AdditionalSources' ) );
         $this->assertSame( array(), $ini->variable( 'ContentSecurityPolicy', 'ReportOnlyDirectives' ) );
         $this->assertSame( array( 'admin', 'admin2', 'admin_classic' ), $ini->variable( 'ContentSecurityPolicy', 'ReportOnlyDesigns' ) );
+        $this->assertSame( array(), $ini->variable( 'ContentSecurityPolicy', 'ReportOnlyViews' ) );
     }
 
     // ------------------------------------------------------------ enforcing (#600)
@@ -388,6 +390,34 @@ class expContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( expContentSecurityPolicy::designListed( 'admin4', array( 'admin' ) ) );
         $this->assertFalse( expContentSecurityPolicy::designListed( '', array( '' ) ) );
         $this->assertFalse( expContentSecurityPolicy::designListed( 'admin', 'admin' ) );
+    }
+
+    public function testReportOnlyViewsAreNeverEnforced()
+    {
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'script-src' => "'self'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'ReportURI', '' );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
+        $this->setting( 'DesignSettings', 'SiteDesign', 'admin4l' );
+        $this->setting( 'ContentSecurityPolicy', 'ReportOnlyViews', array( 'DSE/AdminNeo' ) );
+
+        $this->assertSame( array( 'Content-Security-Policy-Report-Only' => "script-src 'self'" ),
+                           expContentSecurityPolicy::headers( null, 'dse/adminneo' ) );
+        $this->assertSame( array( 'Content-Security-Policy' => "script-src 'self'" ),
+                           expContentSecurityPolicy::headers( null, 'dse/dashboard' ) );
+        $this->assertSame( array( 'Content-Security-Policy' => "script-src 'self'" ), expContentSecurityPolicy::headers( null, '' ) );
+
+        // the current request's view, from the URI the kernel matched
+        $saved = $GLOBALS['eZURIRequestInstance'] ?? null;
+        $GLOBALS['eZURIRequestInstance'] = new eZURI( '/dse/adminneo/x' );
+        $this->assertSame( 'dse/adminneo', expContentSecurityPolicy::currentView() );
+        $this->assertSame( array( 'Content-Security-Policy-Report-Only' => "script-src 'self'" ), expContentSecurityPolicy::headers() );
+        $GLOBALS['eZURIRequestInstance'] = new eZURI( '/content/view/full/2' );
+        $this->assertSame( 'content/view', expContentSecurityPolicy::currentView() );
+        $this->assertArrayHasKey( 'Content-Security-Policy', expContentSecurityPolicy::headers() );
+        unset( $GLOBALS['eZURIRequestInstance'] );
+        $this->assertSame( '', expContentSecurityPolicy::currentView() );
+        if ( $saved !== null )
+            $GLOBALS['eZURIRequestInstance'] = $saved;
     }
 
     public function testAllowsInlineScripts()
