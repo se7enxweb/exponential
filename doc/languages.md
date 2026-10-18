@@ -23,6 +23,7 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 10. [No PHP extension at run time](#10-no-php-extension-at-run-time)
 11. [The limit of 62 content languages](#11-the-limit-of-62-content-languages)
 12. [Test languages: Lorem Ipsum](#12-test-languages-lorem-ipsum)
+13. [Translation fallbacks](#13-translation-fallbacks)
 
 ## 1. Locales, translations, content languages and siteaccesses
 
@@ -66,7 +67,8 @@ names, at the same level: every German-, French- and Spanish-speaking country fa
 and the other languages likewise (`por-PT` to `por-BR`, `ita-CH` to `ita-IT`). The translator looks the fallback
 up for the kernel and for each extension on its own. `expUISwitchLanguageProviderTest` fails when a country of a
 translated language has neither. The "Translation coverage" column below counts only a locale's own translation;
-the interface language choice shows the fallback's.
+the interface language choice shows the fallback's. Chains, the automatic same-language fallback, rules of
+extensions, `./console exp:i18n` and Setup > Interface languages: [section 13](#13-translation-fallbacks).
 
 ## 3. Every locale
 
@@ -721,7 +723,6 @@ language joins the test's list of languages. German (`ger-DE`) is on it since 6.
 ezjscore's catalogues; the words German keeps from English (Cache, Layout, Login, Siteaccess, Extension ...) are in
 the allowlist's `ger-DE` list.
 
-Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the eight
 Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the nine
 complete ones, and a review of the machine-assisted Spanish, French, Ukrainian, Hebrew, Latin and Klingon
 translations is the quickest win.
@@ -846,3 +847,86 @@ A locale of your own in the range `qaa`-`qtz` must carry the marker, and only th
 `tests/tests/kernel/classes/expTestLanguageTest.php` checks both, the file itself, that no default installation names
 `qlo-ZZ`, and the text `exp:loremipsum` writes per datatype. `expUISwitchTestLanguageTest` checks the interface
 language choice.
+
+## 13. Translation fallbacks
+
+A locale without a translation of its own is not left in English: the translator (`eZTSTranslator`) tries the
+translations it **falls back to**, in order, for each translation root on its own (the kernel's
+`share/translations`, then the `translations` directory of every extension in `site.ini [RegionalSettings]
+TranslationExtensions[]`). The one source of truth for that order is `expI18nFallbackResolver`
+(`lib/ezi18n/classes/`); the interface language choice, `./console exp:i18n` and Setup > Interface languages use the
+same class, so what they show is what the translator loads.
+
+### The chain
+
+Each step is decided by the first rule that answers:
+
+1. `i18n.ini [TranslationSettings] FallbackLanguages[]`: what is configured always wins.
+2. The classes of `FallbackRules[]`, in their order: rules that extensions add (see
+   [Writing a fallback rule](features/6.0/ui-switch-languages.md#writing-a-fallback-rule)).
+3. With `AutomaticLanguageFallback=enabled` (the default), the **automatic same-language fallback**: a locale with no
+   kernel translation of its own and no configured fallback takes the most complete translation of its language
+   (the three letters before the dash): `fre-NC` to `fre-FR`, `ger-IT` to `ger-DE`. So a new country locale of a
+   translated language needs no ini line. `AutomaticFallbackExclude[]` names languages (`eng`, the default: English
+   is the language of the source texts) or locales that never fall back automatically. Every country of a
+   translated language that ships has its `FallbackLanguages[]` line, so the automatic fallback changes nothing for
+   them (`expI18nFallbackResolverTest` checks it); it is for locales added later.
+
+The resolver then asks again for the answer, which makes a **chain**:
+
+```ini
+FallbackLanguages[esl-AR]=esl-MX
+FallbackLanguages[esl-MX]=esl-ES
+```
+
+gives `esl-AR -> esl-MX -> esl-ES`. A chain ends at a locale no rule answers for, at the source texts (`untranslated`,
+also written `eng-GB`, as it always was), before a locale that is already in it (a **cycle**, reported) or after
+`FallbackMaxDepth` steps (default 4, at most 16; a longer chain is cut and reported). A variant (`ger-AT@euro`)
+first loads its locale (`ger-AT`) and that one's chain, as before.
+
+### First or merge
+
+`FallbackMode=first` (the default, the behavior before 6.0.15) loads, in each root, the first file of the chain that
+root has: `esl-MX` has a kernel translation of its own, so the kernel shows `esl-MX`; an extension without an `esl-MX`
+file shows its `esl-ES`. `FallbackMode=merge` loads every file of the chain in a root, the most general first, so a
+message the specific translation lacks or leaves empty comes from the next one: `esl-MX` with `esl-ES` behind it
+shows no English at all. An empty translation never replaces one loaded before it.
+
+The translation cache follows the settings: its directory name includes the resolver's signature, and with
+`site.ini [RegionalSettings] TranslationCheckMTime=enabled` a changed file of any step of the chain renews the cache
+of the locales that fall back to it.
+
+### Seeing and checking the fallbacks
+
+```bash
+./console exp:i18n fallbacks                         # every locale: kernel coverage, extensions, chain
+./console exp:i18n fallbacks --only=fallback         # only those translated through a fallback (own, untranslated)
+./console exp:i18n fallbacks --locale=esl-AR,ger-AT  # each step with its rule, and every extension
+./console exp:i18n fallbacks --format=json
+./console exp:i18n check [--strict]                  # exit 1 on a problem: for CI
+```
+
+`check` reports as errors a cycle, a chain longer than `FallbackMaxDepth`, a target that is no locale code or has
+neither a locale file nor a translation, and a `FallbackRules[]` entry that is no class implementing
+`expI18nFallbackRuleInterface`; as warnings (errors with `--strict`) a configured locale without a locale file and a
+chain whose last step has no translation (it shows the English source texts; the Arabic countries fall back to
+`ara-SA` this way on purpose, waiting for that translation, and end in `untranslated`, so they are not reported).
+The extension coverage is cached in `var/<site>/cache/i18n/fallback-report.json` and rebuilt when a file or a
+setting changes; the first run reads every extension catalogue and takes a few seconds.
+
+**Setup > Interface languages** (`setup/languages`, policy `setup/system_info`, next to Languages in the Setup
+menu) shows the same list in the administration: every locale with the translation it shows, the coverage of the
+kernel and of the extensions, the chain (a step of the automatic fallback is highlighted), the problems, and the
+settings in effect. A locale's code opens its chain step by step with the rule of each step and every extension.
+The page is read only.
+
+### Settings
+
+| `i18n.ini [TranslationSettings]` | Default | Meaning |
+|---|---|---|
+| `FallbackLanguages[<locale>]` | 100 entries | The translation a locale falls back to; `eng-GB` or `untranslated` for the source texts. |
+| `FallbackRules[]` | empty | Classes implementing `expI18nFallbackRuleInterface`, asked after `FallbackLanguages[]`. |
+| `AutomaticLanguageFallback` | `enabled` | The same-language fallback for locales without translation and configuration. |
+| `AutomaticFallbackExclude[]` | `eng` | Languages or locales the automatic fallback leaves alone. |
+| `FallbackMaxDepth` | `4` | The most steps of a chain (1 to 16). |
+| `FallbackMode` | `first` | `first` or `merge`, see above. |
