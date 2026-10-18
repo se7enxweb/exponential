@@ -73654,6 +73654,74 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Version, name, year or revision</source>
         <translation>Version, nom, année ou révision</translation>
     </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count entrées, de %first à %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 entrée, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adresses et remarques</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Les adresses de serveurs qui ne sont plus en ligne sont conservées comme texte historique.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Date de sortie</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Autres</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Publiée</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Révisions</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Série %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origine</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Les entrées plus anciennes proviennent du dépôt SVN d&apos;origine.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>du SVN d&apos;origine</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historique (plus en ligne)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>non consigné</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>révision %s</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

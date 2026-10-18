@@ -72276,6 +72276,74 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version, name, year or revision</source>
         <translation>الإصدار أو الاسم أو السنة أو المراجعة</translation>
     </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count إدخال، من %first إلى %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>إدخال واحد، %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>العناوين والملاحظات</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>العناوين على خوادم لم تعد متصلة تُحفظ كنص تاريخي.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>التاريخ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>أخرى</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>تاريخ الإصدار</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>المراجعات</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>السلسلة %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>المصدر</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>السجلات الأقدم مأخوذة من مستودع SVN الأصلي.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>الإصدار</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>من SVN الأصلي</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>تاريخي (لم يعد متصلًا)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>غير مسجّل</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>المراجعة %s</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

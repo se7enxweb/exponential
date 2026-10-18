@@ -72359,5 +72359,73 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version, name, year or revision</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

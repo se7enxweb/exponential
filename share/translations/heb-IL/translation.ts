@@ -72290,6 +72290,74 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version, name, year or revision</source>
         <translation>גרסה, שם, שנה או מהדורה</translation>
     </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count רשומות, מ-%first עד %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>רשומה אחת, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>כתובות והערות</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>כתובות בשרתים שכבר אינם מקוונים נשמרות כטקסט היסטורי.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>תאריך</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>אחר</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>שוחרר</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>מהדורות</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>סדרה %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>מקור</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>הרשומות הישנות יותר מגיעות ממאגר ה-SVN המקורי.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>גרסה</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>מה-SVN המקורי</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>היסטורי (כבר לא מקוון)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>לא נרשם</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>מהדורה %s</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

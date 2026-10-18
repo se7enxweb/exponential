@@ -76485,6 +76485,74 @@ Gracias por la retroalimentación</translation>
         <source>Version, name, year or revision</source>
         <translation>Versión, nombre, año o revisión</translation>
     </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count entradas, de %first a %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 entrada, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Direcciones y notas</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Las direcciones de servidores que ya no están en línea se conservan como texto histórico.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Fecha</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nombre</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Otros</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Publicada</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revisiones</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Serie %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origen</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Los registros más antiguos provienen del repositorio SVN original.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>del SVN original</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>histórico (ya no está en línea)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>no registrado</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>revisión %s</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

@@ -72259,6 +72259,74 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Version, name, year or revision</source>
         <translation>Versio, nomen, annus aut recensio</translation>
     </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count inscriptiones, a %first ad %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 inscriptio, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Inscriptiones et notae</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Inscriptiones in servitris quae iam non in linea sunt ut textus historicus servantur.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dies</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Alia</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Edita</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Recensiones</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Series %s versionum</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Fons</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Inscriptiones antiquiores ex repositorio SVN originali veniunt.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>ex SVN originali</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historicum (iam non in linea)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>non inscriptum</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>recensio %s</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

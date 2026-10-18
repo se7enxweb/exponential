@@ -72259,6 +72259,74 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Version, name, year or revision</source>
         <translation>mI&apos;, pong, DIS pagh choH mI&apos;</translation>
     </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count ghItlh, %first vo&apos; %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>wa&apos; ghItlh, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Daqmey &apos;ej QInmey</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>jabwI&apos;mey Qapbe&apos;chu&apos;bogh Daqmey qun ghItlh ratlh.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>poH</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>latlh</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>ngangmoHlu&apos;</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>choH mI&apos;mey</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>%s mI&apos; tlhegh</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>wa&apos;DIch SVN pa&apos; vo&apos; ghItlhmey ngo&apos; ghoS.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>mI&apos;</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>wa&apos;DIch SVN vo&apos;</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>qun (Qapbe&apos;chu&apos;)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ghItlhlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>choH mI&apos; %s</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
