@@ -60614,6 +60614,18 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Claves</translation>
     </message>
     <message>
+        <source>Select</source>
+        <translation>Seligere</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actiones</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Necessarium</translation>
+    </message>
+    <message>
         <source>%from to %to of %count</source>
         <translation>%from ad %to ex %count</translation>
     </message>

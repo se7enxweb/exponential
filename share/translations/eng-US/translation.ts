@@ -67120,6 +67120,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Keys</translation>
     </message>
     <message>
+        <source>Select</source>
+        <translation>Select</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Required</translation>
+    </message>
+    <message>
         <source>%from to %to of %count</source>
         <translation>%from to %to of %count</translation>
     </message>
