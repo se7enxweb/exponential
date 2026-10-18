@@ -251,8 +251,9 @@ SiteRowLimit=12
 
 The selector is one template, `design:contentcheck/scope.tpl` (the same file in design/admin and design/admin4),
 included in the filter form of every check; the view passes `expContentCheckScope::forTemplate( $nodeID, '<view>' )`
-(a third argument lists plain GET fields the links keep). Its styles are `.a4-setup-scope` in
-`stylesheets/modules/setup.css`. The views that take a start location (and that the node picker may return to) are
+(a third argument lists plain GET fields the links keep). Its styles are the shared component `.a4-quickpick` in
+`stylesheets/components.css`, and the presets and rows come from `expNodeQuickPick`, which other pages' quick location
+buttons share (`quick-location-buttons.md`). The views that take a start location (and that the node picker may return to) are
 listed in `ViewList[]`; another check adds its view there.
 ## One layout
 
