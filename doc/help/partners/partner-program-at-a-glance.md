@@ -28,7 +28,7 @@ read on 18 October 2026 from the pages under <https://exponential.earth/partner>
 | Joining | Apply, review, sign the agreement, buy the subscription | [How to apply](how-to-apply.md) |
 | Term | One year; standing reviewed 30 days before the end; upgrades immediately | [Renewals, upgrades and downgrades](renewals-upgrades-and-downgrades.md) |
 | Contract | Independent companies, 30-day termination notice, disputes in Seattle, Washington | [The partnership agreement](the-partnership-agreement.md) |
-| Contact | partner@exponential.earth (also partners@exponential.earth), <https://exponential.earth/partner/contact-us> | [Working with 7x](working-with-7x.md) |
+| Contact | The partner team, through <https://exponential.earth/partner/contact-us> | [Working with 7x](working-with-7x.md) |
 
 ## The path through the program
 
@@ -59,7 +59,7 @@ section of the help covers the Exponential Partner Program; for the managed serv
 
 Several parts are not described in the published sources: the Foundation's role, a formal code of conduct, exam
 dates for certifications, how partner meetings are scheduled. See
-[Open questions for the Foundation](open-questions-for-the-foundation.md).
+[Governance: who decides what](governance-and-decisions.md).
 
 ## Related pages
 
