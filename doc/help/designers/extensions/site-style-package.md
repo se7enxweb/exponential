@@ -46,6 +46,6 @@ These correspond to the two stylesheet settings of `design.ini [StylesheetSettin
 ## Related pages
 
 - [The package creator wizard, step by step](package-creator-wizard-step-by-step.md)
-- [Loading stylesheets](../theme-design/loading-stylesheets.md)
+- Loading stylesheets
 - [The package wizard](../../../features/6.0/package-wizard.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
