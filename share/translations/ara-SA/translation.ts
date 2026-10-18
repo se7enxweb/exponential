@@ -57104,7 +57104,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>File %1 lists no files. Copy it from the Exponential release this installation runs.</source>
-        <translation>لا يدرج الملف %1 أي ملفات. انسخه من إصدار Exponential الذي تعمل به هذه التثبيتة.</translation>
+        <translation>لا يدرج الملف %1 أي ملفات. انسخه من إصدار Exponential الذي تعمل به هذا التثبيت.</translation>
     </message>
     <message>
         <source>Site data</source>
@@ -57932,7 +57932,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This installation has no zip support, so an archive cannot be built.</source>
-        <translation>لا تدعم هذه التثبيتة zip، لذا لا يمكن إنشاء أرشيف.</translation>
+        <translation>لا تدعم هذا التثبيت zip، لذا لا يمكن إنشاء أرشيف.</translation>
     </message>
     <message>
         <source>The archive could not be opened for writing.</source>
@@ -57956,7 +57956,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A module called %module already exists on this installation. Two modules of the same name cannot both answer; choose another.</source>
-        <translation>توجد وحدة باسم %module بالفعل في هذه التثبيتة. لا يمكن لوحدتين بالاسم نفسه أن تجيبا معًا؛ اختر اسمًا آخر.</translation>
+        <translation>توجد وحدة باسم %module بالفعل في هذا التثبيت. لا يمكن لوحدتين بالاسم نفسه أن تجيبا معًا؛ اختر اسمًا آخر.</translation>
     </message>
     <message>
         <source>A module with no views answers nothing. Name at least one.</source>
@@ -57980,11 +57980,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A content class called %class already exists on this installation. The script this writes refuses to run against it rather than change it; choose another identifier, or expect to run this somewhere else.</source>
-        <translation>توجد فئة محتوى باسم %class بالفعل في هذه التثبيتة. يرفض البرنامج النصي الذي يُكتب هنا العمل عليها بدلًا من تغييرها؛ اختر معرّفًا آخر، أو توقّع تشغيله في مكان آخر.</translation>
+        <translation>توجد فئة محتوى باسم %class بالفعل في هذا التثبيت. يرفض البرنامج النصي الذي يُكتب هنا العمل عليها بدلًا من تغييرها؛ اختر معرّفًا آخر، أو توقّع تشغيله في مكان آخر.</translation>
     </message>
     <message>
         <source>There is no datatype called %datatype on this installation, so the attribute %attribute cannot be made. It may exist where the script is run; if it does not, the script stops there.</source>
-        <translation>لا يوجد نوع بيانات باسم %datatype في هذه التثبيتة، لذا لا يمكن إنشاء السمة %attribute. قد يكون موجودًا حيث يُشغَّل البرنامج النصي؛ وإن لم يكن، يتوقف البرنامج النصي عند هذه النقطة.</translation>
+        <translation>لا يوجد نوع بيانات باسم %datatype في هذا التثبيت، لذا لا يمكن إنشاء السمة %attribute. قد يكون موجودًا حيث يُشغَّل البرنامج النصي؛ وإن لم يكن، يتوقف البرنامج النصي عند هذه النقطة.</translation>
     </message>
     <message>
         <source>Custom tags were chosen and none were named.</source>
@@ -57992,7 +57992,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A custom tag called %tag already exists on this installation. Naming it again redefines its attributes rather than adding a tag; choose another name.</source>
-        <translation>يوجد وسم مخصص باسم %tag بالفعل في هذه التثبيتة. تسميته مرة أخرى تعيد تعريف سماته بدلًا من إضافة وسم؛ اختر اسمًا آخر.</translation>
+        <translation>يوجد وسم مخصص باسم %tag بالفعل في هذا التثبيت. تسميته مرة أخرى تعيد تعريف سماته بدلًا من إضافة وسم؛ اختر اسمًا آخر.</translation>
     </message>
     <message>
         <source>A translation needs a locale, in the shape eng-GB: three letters, a dash, two letters.</source>
@@ -58248,7 +58248,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The path is read relative to the installation root, so it wants to be %path from %root - not from wherever the setting file is.</source>
-        <translation>يُقرأ المسار نسبةً إلى جذر التثبيتة، لذا يجب أن يكون %path انطلاقًا من %root - لا من مكان ملف الإعداد.</translation>
+        <translation>يُقرأ المسار نسبةً إلى جذر التثبيت، لذا يجب أن يكون %path انطلاقًا من %root - لا من مكان ملف الإعداد.</translation>
     </message>
     <message>
         <source>If the directory should exist, create it, or correct the value of %variable in %ini [%section].</source>
@@ -58356,7 +58356,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>It extends or implements %class, and nothing on this installation declares that.</source>
-        <translation>ترث أو تنفّذ %class، ولا شيء في هذه التثبيتة يعرّفها.</translation>
+        <translation>ترث أو تنفّذ %class، ولا شيء في هذا التثبيت يعرّفها.</translation>
     </message>
     <message>
         <source>Usually an extension that needs another one. Find what provides %class and install it, or switch this extension off if it is not wanted.</source>
@@ -58380,7 +58380,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This is the fault that stopped every payment gateway on this installation loading, and the fix was one keyword in the kernel.</source>
-        <translation>هذا هو الخلل الذي منع تحميل كل بوابات الدفع في هذه التثبيتة، وكان الإصلاح كلمة مفتاحية واحدة في نواة النظام.</translation>
+        <translation>هذا هو الخلل الذي منع تحميل كل بوابات الدفع في هذا التثبيت، وكان الإصلاح كلمة مفتاحية واحدة في نواة النظام.</translation>
     </message>
     <message>
         <source>If some callers use an instance, the method has to stay as it is and the static calls have to change instead.</source>
@@ -58492,7 +58492,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This installation's own database</source>
-        <translation>قاعدة بيانات هذه التثبيتة</translation>
+        <translation>قاعدة بيانات هذا التثبيت</translation>
     </message>
     <message>
         <source>Another database - given below</source>
@@ -58548,7 +58548,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose the database file, or give a path to one inside the installation.</source>
-        <translation>اختر ملف قاعدة البيانات، أو أعطِ مسارًا إلى ملف داخل التثبيتة.</translation>
+        <translation>اختر ملف قاعدة البيانات، أو أعطِ مسارًا إلى ملف داخل التثبيت.</translation>
     </message>
     <message>
         <source>An ODBC connection needs a data source name.</source>
@@ -58568,11 +58568,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Using this installation's own database.</source>
-        <translation>تُستخدم قاعدة بيانات هذه التثبيتة.</translation>
+        <translation>تُستخدم قاعدة بيانات هذا التثبيت.</translation>
     </message>
     <message>
         <source>This installation's own database is not connected.</source>
-        <translation>قاعدة بيانات هذه التثبيتة غير متصلة.</translation>
+        <translation>قاعدة بيانات هذا التثبيت غير متصلة.</translation>
     </message>
     <message>
         <source>Choose a database file.</source>
@@ -58628,7 +58628,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A class called %class already exists on this installation. Choose another name.</source>
-        <translation>توجد فئة باسم %class بالفعل في هذه التثبيتة. اختر اسمًا آخر.</translation>
+        <translation>توجد فئة باسم %class بالفعل في هذا التثبيت. اختر اسمًا آخر.</translation>
     </message>
     <message>
         <source>A datatype called %type is already installed. Two datatypes with the same identifier cannot both work; choose another.</source>
@@ -58684,7 +58684,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Additional extension roots were chosen and none were named. One per line, relative to the installation: %example</source>
-        <translation>اختيرت جذور امتدادات إضافية ولم يُسمَّ أي منها. جذر واحد في كل سطر، نسبةً إلى التثبيتة: %example</translation>
+        <translation>اختيرت جذور امتدادات إضافية ولم يُسمَّ أي منها. جذر واحد في كل سطر، نسبةً إلى التثبيت: %example</translation>
     </message>
     <message>
         <source>%root is already the first root and does not need naming again. Naming it twice changes nothing, but it reads as though it does.</source>
@@ -58700,7 +58700,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>An icon theme called %theme is already searched on this installation. Two themes of the same name shadow each other by root order rather than merging; choose another name.</source>
-        <translation>سمة أيقونات باسم %theme يُبحث فيها بالفعل في هذه التثبيتة. تحجب السمتان بالاسم نفسه إحداهما الأخرى بحسب ترتيب الجذور بدلًا من الدمج؛ اختر اسمًا آخر.</translation>
+        <translation>سمة أيقونات باسم %theme يُبحث فيها بالفعل في هذا التثبيت. تحجب السمتان بالاسم نفسه إحداهما الأخرى بحسب ترتيب الجذور بدلًا من الدمج؛ اختر اسمًا آخر.</translation>
     </message>
     <message>
         <source>Siteaccess settings were chosen and no siteaccess was named.</source>
@@ -58712,7 +58712,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>An image alias called %alias already exists on this installation. Writing it again redefines it, and every image served through it changes. Choose another name, or say so deliberately by removing this check.</source>
-        <translation>يوجد حجم صورة بديل باسم %alias بالفعل في هذه التثبيتة. كتابته مرة أخرى تعيد تعريفه، وتتغير كل صورة تُقدَّم عبره. اختر اسمًا آخر، أو عبّر عن ذلك عمدًا بإزالة هذا الفحص.</translation>
+        <translation>يوجد حجم صورة بديل باسم %alias بالفعل في هذا التثبيت. كتابته مرة أخرى تعيد تعريفه، وتتغير كل صورة تُقدَّم عبره. اختر اسمًا آخر، أو عبّر عن ذلك عمدًا بإزالة هذا الفحص.</translation>
     </message>
     <message>
         <source>Announced in %where. Read the call to see what it is handed.</source>
@@ -64961,6 +64961,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Nothing was published in the last 14 days.</source>
         <translation>لم يُنشر شيء خلال آخر 14 يومًا.</translation>
+    </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting، %name</translation>
     </message>
 </context>
 <context>

@@ -4942,7 +4942,7 @@ c5a96d944b1e1854cb5de425c9950607  extension/ezoe/settings/rad.ini.append.php
 853d4572f6ec46ab643772d8502836f1  extension/ezoe/settings/site.ini.append.php
 7292c40010858802f38d44d59c6e1f2e  extension/ezoe/tests/ezoexmltext_regression.php
 f8a85b1a0304fa337737229280fcb45c  extension/ezoe/tests/suite.php
-fd014e654ed74460017cdb86ba6fd79e  extension/ezoe/translations/ara-SA/translation.ts
+823495d42f8ad8d95afbf5b5c2cc5c7a  extension/ezoe/translations/ara-SA/translation.ts
 010cab40ddf9f9075fd8ebebaeb4dd53  extension/ezoe/translations/cat-ES/translation.ts
 89352618462fa235c9a4d73edfcde79a  extension/ezoe/translations/cze-CZ/translation.ts
 7a01cb19a8749a323545c01659a2ddba  extension/ezoe/translations/dan-DK/translation.ts
@@ -7628,7 +7628,7 @@ bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 99862a3b59cc584c3fcba01e689aaa17  share/transformations/hebrew.tr
 06361e73b7836778b599fa55f3300ebf  share/transformations/latin.tr
 9c0a310f00eb6c3334a8c41198ec3161  share/transformations/search.tr
-c9740d946a6b43ce9c0812c1e3102007  share/translations/ara-SA/translation.ts
+1aebfecb249ef3ac6e5684fc036fbd1d  share/translations/ara-SA/translation.ts
 460da6761ad0f2e5f4e9482a3688df97  share/translations/cat-ES/translation.ts
 4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
 dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
