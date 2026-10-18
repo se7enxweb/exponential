@@ -1926,6 +1926,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-layout-sidebar-inset { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/layout-sidebar-inset.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/layout-sidebar-inset.svg); }
 .a4-bi-lightning { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/lightning.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/lightning.svg); }
 .a4-bi-link-45deg { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/link-45deg.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/link-45deg.svg); }
+.a4-bi-list { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/list.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/list.svg); }
 .a4-bi-list-task { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/list-task.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/list-task.svg); }
 .a4-bi-list-ul { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/list-ul.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/list-ul.svg); }
 .a4-bi-lock { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/lock.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/lock.svg); }
@@ -1978,6 +1979,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-upload { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/upload.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/upload.svg); }
 .a4-bi-wrench-adjustable { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/wrench-adjustable.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/wrench-adjustable.svg); }
 .a4-bi-x-circle-fill { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/x-circle-fill.svg); }
+.a4-bi-x-lg { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/x-lg.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/x-lg.svg); }
 
 /* ---- The frame's own hidden-until-used parts (were style="display:none" in the pagelayouts) ------------------ */
 

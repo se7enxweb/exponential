@@ -4166,7 +4166,7 @@
     </message>
     <message>
         <source>Select the translation you want to edit</source>
-        <translation>Seleccione la traducción que desea editar</translation>
+        <translation>Selecciona la traducción que deseas editar</translation>
     </message>
     <message>
         <source>New translation</source>
@@ -4174,7 +4174,7 @@
     </message>
     <message>
         <source>Select the translation you want to add</source>
-        <translation>Seleccione la traducción que desee agregar</translation>
+        <translation>Selecciona la traducción que desees agregar</translation>
     </message>
     <message>
         <source>Translate based on</source>
@@ -57781,7 +57781,7 @@ tu cuenta.</translation>
     </message>
     <message>
         <source>Select application for removal.</source>
-        <translation>Seleccione la aplicación a eliminar.</translation>
+        <translation>Selecciona la aplicación a eliminar.</translation>
     </message>
     <message>
         <source>Edit the &lt;%application_name&gt; application.</source>
@@ -68686,6 +68686,10 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
     <message>
         <source>Nothing was published in the last 14 days.</source>
         <translation>No se publicó nada en los últimos 14 días.</translation>
+    </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
     </message>
 </context>
 <context>
