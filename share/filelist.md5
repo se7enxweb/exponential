@@ -1035,7 +1035,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-8b6d28b6393d69c93131fb06b9722e0c  design/admin4/stylesheets/admin4.css
+c5162b6cc143b903a93e9d6e772b41e6  design/admin4/stylesheets/admin4.css
 3b102f7ccab562607c9af9744d827088  design/admin4/stylesheets/components.css
 d810c1bfa553da326702439802441b11  design/admin4/stylesheets/content.css
 399bdd34c0eb57e51468449154ad9911  design/admin4/stylesheets/core.css

@@ -422,9 +422,6 @@ body,
     width: 44px;
     height: 44px;
   }
-  /* the tab's icon (menu.ini [Topmenu_<tab>] Icon) stands above its name in a tile, so a wrapped name never leaves
-     it alone at a line's end */
-  .navbar-menu .navbar-bar > li > a > .a4-icon { display: block; margin: 0 auto var(--a4-space-1); }
   /* a tab is a tile: the whole cell is the target, its name may wrap */
   .navbar-menu .navbar-bar > li > a,
   .navbar-menu .navbar-bar > li > a.selected,
@@ -450,6 +447,10 @@ body,
   }
   .navbar-menu .navbar-bar > li > a.selected { border-color: var(--a4-accent-strong); font-weight: 600; }
   .navbar-menu .navbar-bar a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+  /* a tab with an icon (menu.ini [Topmenu_<tab>] Icon) stacks it above its name, like the user's action tiles below,
+     so a wrapped name never leaves the icon alone at a line's end */
+  .navbar-menu .navbar-bar > li > a:has(> .a4-icon) { flex-direction: column; gap: var(--a4-space-1); }
+  .navbar-menu .navbar-bar > li > a > .a4-icon { width: 18px; height: 18px; margin: 0; }   /* as the action tiles' icons */
 
   /* the user's actions: the name, then their buttons side by side, two to a row (one at 200% text) */
   .a4-phone-user {
