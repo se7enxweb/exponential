@@ -3878,9 +3878,9 @@ d0260680e11ffdb7581f3bff6191d877  doc/guides/workflows.md
 f8a830200fb2f5c56f4f8ae0b035b655  doc/help/README.md
 b3a32c0cd10ca5a1f908dcdde4e8e71a  doc/help/accounts-and-sign-in.md
 5cd1cdb1f918968999adb4d0f1a84dd0  doc/help/admin-tour.md
-2efad33d15bfe256fea951b58cc6f9e3  doc/help/change-the-admin-password.md
+255cb6d569c48c608698baf5a8b30f09  doc/help/change-the-admin-password.md
 445126621c584f3559283634fe4640fc  doc/help/database-support.md
-78d848277c6407cb69d9382c47123e82  doc/help/default-administrator-password.md
+32e96048ccd6e37fc959c00b93866c28  doc/help/default-administrator-password.md
 6e5ac2bb71557cd478f414cedbd3d1f3  doc/help/develop-with-git.md
 ced049f18b5605fcad3ff85057cb4b6f  doc/help/editing-content.md
 e5653c37f0a95ba291692fbd234987cf  doc/help/free-documentation.md
@@ -3921,7 +3921,7 @@ b6f5016b38d3aef26092fb55ea3917ae  doc/help/languages.md
 e57691e6942395da24fb33dc33ca1616  doc/help/os-support.md
 0bf642c168fe8af84f64190ce1cff902  doc/help/publishing-and-versions.md
 291f1692bf5590051f383d80da653fe2  doc/help/searching.md
-f6bb933745534900963af37fd0e899e5  doc/help/security-hardening.md
+dc8acfe7a2ee87504513fb463c285310  doc/help/security-hardening.md
 6cee31f394a1674d1c735bb1e8b585e7  doc/help/when-something-goes-wrong.md
 2194df301c16f24819b8e9998836cfa4  doc/help/who-is-7x.md
 608dcd2ed0307767bdb76a46b8b00f0e  doc/help/who-is-the-exponential-foundation.md
@@ -4269,10 +4269,10 @@ b590a2195bf4d31b3fe4b79d569ff791  doc/install/06-kickstarter.md
 c8132574e98281daa72ec05829a091ed  doc/install/07-console-install.md
 c63307f4ac1a7ebdfb5ff5da39044148  doc/install/08-serving-the-site.md
 1c4b2fb7b253c351e9d6b3c744e51a29  doc/install/09-databases.md
-b085b95a8e02c8756c335b43fe675676  doc/install/10-after-installing.md
+8a44975d6d1b6fd915fd64db0a1641b7  doc/install/10-after-installing.md
 c376342fb415dc3c6efc6d35be96b628  doc/install/11-upgrading.md
 4068cd5786ca748d6c9becee07eb250b  doc/install/12-troubleshooting.md
-8cac613e0ffd44851ba19d6fdb0847fe  doc/install/13-security-hardening.md
+c11c2dccfca6a7c464e095a9d949e9a5  doc/install/13-security-hardening.md
 697395aba059076da8463bce457b9957  doc/install/14-migrating-from-4x.md
 e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
