@@ -52,7 +52,7 @@ Every class, interface and trait of `settings` with the patterns it was recogniz
 | `[SchemaSettings] SchemaHandlerClasses[sqlite]` | `eZSQLiteSchema` | `settings/dbschema.ini:25` |
 | `[SchemaSettings] SchemaHandlerClasses[sqlite3]` | `eZSQLiteSchema` | `settings/dbschema.ini:26` |
 | `[SchemaSettings] SchemaHandlerClasses[mongo]` | `expMongoSchema` | `settings/dbschema.ini:27` |
-| `[ContextHelp] Providers[]` | `expHelpContentProvider` | `settings/exphelp.ini:485` |
+| `[ContextHelp] Providers[]` | `expHelpContentProvider` | `settings/exphelp.ini:515` |
 | `[InputSettings] HandlerClass` | `eZSimplifiedXMLInput` | `settings/ezxml.ini:14` |
 | `[OutputSettings] HandlerClass` | `eZXHTMLXMLOutput` | `settings/ezxml.ini:40` |
 | `[OutputSettings] AliasClasses[ezpdf]` | `eZPDFXMLOutput` | `settings/ezxml.ini:43` |

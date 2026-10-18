@@ -3,7 +3,7 @@ title: Design pattern catalogue
 audience: developer
 category: standards
 order: 300
-summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 5058 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
+summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 5060 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
 keywords: design patterns, pattern catalogue, abstractions, architecture, factory, singleton, registry, strategy, handler, template method, observer, adapter, facade, active record, eZPersistentObject, datatype, template operator, fetch function, module view, policy function, workflow event, extension point, plugin, INI
 type: reference
 ---
@@ -11,15 +11,17 @@ type: reference
 
 This catalogue is for developers who extend Exponential or change its kernel. It lists every abstraction the code uses, where it is, and how a new implementation is plugged in, so that new code follows the patterns that are already there instead of inventing new ones. It is generated from the source code, so it is complete and current for the code it was built from; the rules that recognize each pattern are heuristic and are explained below.
 
+Runnable examples of most of these extension points: [Examples](../../examples/README.md) and the [cookbook](../../examples/cookbook/README.md).
+
 The rules the code follows: [Standards](../README.md) and [Kernel architecture](../architecture/kernel-architecture.md).
 
 ## In numbers
 
 | | |
 |---|---|
-| Instances (all categories) | 5058 |
-| Classes, interfaces, traits and enums | 2875 (2802 classes, 72 interfaces, 1 trait) |
-| ... with at least one pattern | 2295 |
+| Instances (all categories) | 5060 |
+| Classes, interfaces, traits and enums | 2877 (2804 classes, 72 interfaces, 1 trait) |
+| ... with at least one pattern | 2297 |
 | Module views | 491 |
 | Policy functions | 232 |
 | Fetch functions | 290 |
@@ -27,7 +29,7 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | Cronjob parts | 36 |
 | Event hooks | 97 |
 | INI plugin points | 574 |
-| Source files read | 3745 PHP, 509 INI |
+| Source files read | 3747 PHP, 509 INI |
 | Areas | 142 |
 
 ## The patterns
@@ -43,10 +45,10 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | [Module view (Page Controller)](module-view.md) | Request handling | 921 | An entry of $ViewList in a module.php, or a class that extends ModuleView or Page (the runnable form of a view). |
 | [Policy function (access control)](policy-function.md) | Request handling | 232 | An entry of $FunctionList in a module.php. |
 | [Front Controller](front-controller.md) | Request handling | 10 | The kernel classes ezpKernel, ezpKernelWeb, ezpKernelTreeMenu, ezpKernelRest, eZModule and their kind. |
-| [Command (console, scripts, cronjobs)](command.md) | Request handling | 220 | Extends Command, CronjobPart or Runnable (the runnable console commands and cronjob parts), or a cronjobs/*.php file. |
+| [Command (console, scripts, cronjobs)](command.md) | Request handling | 221 | Extends Command, CronjobPart or Runnable (the runnable console commands and cronjob parts), or a cronjobs/*.php file. |
 | [Singleton / instance()](singleton.md) | Creation | 69 | Has a static instance() or getInstance() method. |
 | [Factory and static factory methods](factory.md) | Creation | 352 | Class name ends in Factory, or has static create*(), from*(), factory(), make*() methods, or creates new self/new static in a static method. |
-| [Builder](builder.md) | Creation | 8 | Class name contains Builder or Generator. |
+| [Builder](builder.md) | Creation | 9 | Class name contains Builder or Generator. |
 | [Registry](registry.md) | Structure | 30 | Class name contains Registry, or has static register*() methods. |
 | [Strategy / handler](strategy-handler.md) | Behavior | 299 | Class name ends in Handler, Backend, Driver, Transport, Engine or Strategy, or implements an interface whose name does. |
 | [Template Method / abstract base class](template-method.md) | Behavior | 53 | An abstract class with both abstract and concrete methods. |
@@ -162,7 +164,7 @@ One page per part of the code base: every class with its patterns, and the views
 | [kernel/classes/contentjob](area-kernel-classes-contentjob.md) | 18 | 0 | 0 | 0 | 0 |
 | [kernel/classes/datatypes](area-kernel-classes-datatypes.md) | 81 | 0 | 0 | 0 | 0 |
 | [kernel/classes/debugbar](area-kernel-classes-debugbar.md) | 8 | 0 | 0 | 0 | 0 |
-| [kernel/classes/help](area-kernel-classes-help.md) | 30 | 0 | 0 | 0 | 0 |
+| [kernel/classes/help](area-kernel-classes-help.md) | 31 | 0 | 0 | 0 | 0 |
 | [kernel/classes/i18n](area-kernel-classes-i18n.md) | 1 | 0 | 0 | 0 | 0 |
 | [kernel/classes/ini](area-kernel-classes-ini.md) | 32 | 0 | 0 | 0 | 0 |
 | [kernel/classes/logviewer](area-kernel-classes-logviewer.md) | 19 | 0 | 0 | 0 | 0 |
@@ -187,7 +189,7 @@ One page per part of the code base: every class with its patterns, and the views
 | [kernel/private](area-kernel-private.md) | 177 | 8 | 1 | 1 | 0 |
 | [kernel/private/classes/asynchronouspublisheroutput](area-kernel-private-classes-asynchronouspublisheroutput.md) | 2 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/clusterfilehandlers](area-kernel-private-classes-clusterfilehandlers.md) | 14 | 0 | 0 | 0 | 0 |
-| [kernel/private/classes/commands](area-kernel-private-classes-commands.md) | 96 | 0 | 0 | 0 | 0 |
+| [kernel/private/classes/commands](area-kernel-private-classes-commands.md) | 97 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/cronjobs](area-kernel-private-classes-cronjobs.md) | 27 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/exceptions](area-kernel-private-classes-exceptions.md) | 14 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/httpcache](area-kernel-private-classes-httpcache.md) | 2 | 0 | 0 | 0 | 0 |

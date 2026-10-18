@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `kernel/classes/help` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (30)
+## Classes (31)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -33,6 +33,7 @@ Every class, interface and trait of `kernel/classes/help` with the patterns it w
 | `expHelpContextProviderInterface` | interface | [Interface (contract)](interface.md) | `kernel/classes/help/exphelpcontextproviderinterface.php:15` | A class that answers "help for this page" in code, for what one Map[] entry per view cannot say (a view whose help depends on its parameters, an exte… |
 | `expHelpContextRegistry` | class | [Factory and static factory methods](factory.md), [Registry](registry.md), [Singleton / instance()](singleton.md) | `kernel/classes/help/exphelpcontextregistry.php:44` | Context help: which help page answers "help for this page", for a module, view and design. |
 | `expHelpDocumentIndex` | class | [Singleton / instance()](singleton.md) | `kernel/classes/help/exphelpdocumentindex.php:34` | The index of the help pages (doc/features/6.0/help-system.md, "The index"): one entry per document of the allowlist (expHelpAllowlist: git-tracked fi… |
+| `expHelpExamplesGenerator` | class | [Builder](builder.md) | `kernel/classes/help/exphelpexamplesgenerator.php:25` | Writes the generated reference examples below doc/examples/ (doc/examples/README.md, "How the generated pages are made"): one Markdown page per templ… |
 | `expHelpFrontMatter` | class | [Utility (static helper)](utility.md) | `kernel/classes/help/exphelpfrontmatter.php:28` | The front matter of a help page (doc/features/6.0/help-system.md, "Front matter"): a block at the very top of a Markdown file between two lines of "-… |
 | `expHelpFunctionCollection` | class | [Fetch function (Query Object, Facade)](fetch-function.md), [Utility (static helper)](utility.md) | `kernel/classes/help/exphelpfunctioncollection.php:10` | The exphelp fetch functions (kernel/exphelp/function_definition.php). |
 | `expHelpHighlighter` | class | [Registry](registry.md), [Utility (static helper)](utility.md) | `kernel/classes/help/exphelphighlighter.php:29` | Server-side syntax highlighting of the code blocks of the help pages (exphelp, doc/features/6.0/help-system.md), without JavaScript or an external li… |

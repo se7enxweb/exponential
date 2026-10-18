@@ -6798,7 +6798,7 @@ d355246fd0485dd8399e0aeb99a66299  doc/standards/databases-and-sql.md
 23e878be585f79567fd29b5407aa9a06  doc/standards/documentation-and-publishing.md
 449ebadd494411a6149712074de173e8  doc/standards/header.txt
 06e9a6bdc8881cea34b7256f8dfbeed3  doc/standards/internationalization.md
-af4a9086a0ee098a69d2664e2a289bcf  doc/standards/patterns/README.md
+6ea7e3e4ce2d0c9f5613c3e0cb1bef76  doc/standards/patterns/README.md
 db5af8323066f3f7c28b63c188f839f7  doc/standards/patterns/active-record.md
 236a15387b09a00e86fcd8d659f0a5d4  doc/standards/patterns/adapter.md
 89593d8fb0713684734145a635f89276  doc/standards/patterns/area-extension-adminaid.md
@@ -6892,7 +6892,7 @@ c2e8a054eca4c274992ea0ae2a268f8b  doc/standards/patterns/area-kernel-classes-clu
 04d905779df0d3d1a9c053dbcdeb5f5a  doc/standards/patterns/area-kernel-classes-contentjob.md
 22af311bc5214cf9edd17e50f11866dd  doc/standards/patterns/area-kernel-classes-datatypes.md
 b42d0f5d5d6f84b256ce11e22331034f  doc/standards/patterns/area-kernel-classes-debugbar.md
-aa696addc7c298e93f98ec522abd0966  doc/standards/patterns/area-kernel-classes-help.md
+d4b8943c88c39cb554b47e72d4da4cf8  doc/standards/patterns/area-kernel-classes-help.md
 db265a706ca3f53e44a3b4d51f39f7f8  doc/standards/patterns/area-kernel-classes-i18n.md
 391ba74ba698985d3b4d94ad9227235b  doc/standards/patterns/area-kernel-classes-ini.md
 549c0a6da0d6ff827c8729c41bbfc8e8  doc/standards/patterns/area-kernel-classes-logviewer.md
@@ -6917,7 +6917,7 @@ c7a2cb260ea15945d8ea75689953ce30  doc/standards/patterns/area-kernel-common.md
 ec97d765daa13307ce48d20030973e60  doc/standards/patterns/area-kernel-modules.md
 c1e31d9c69b0d57ee90a107bdc7fed08  doc/standards/patterns/area-kernel-private-classes-asynchronouspublisheroutput.md
 6019001e2a5eb740ec0e279936f51191  doc/standards/patterns/area-kernel-private-classes-clusterfilehandlers.md
-94fb31d73a036852ccec36f306f511e4  doc/standards/patterns/area-kernel-private-classes-commands.md
+f10533cd9f10fadb1667f70e12742882  doc/standards/patterns/area-kernel-private-classes-commands.md
 03e3d17f953586362b284c07dde689a5  doc/standards/patterns/area-kernel-private-classes-cronjobs.md
 b556ebb0347061275ba30b112dca8dbc  doc/standards/patterns/area-kernel-private-classes-exceptions.md
 6bfbce5ed4859cba51efb939440f6bd1  doc/standards/patterns/area-kernel-private-classes-httpcache.md
@@ -6942,10 +6942,10 @@ ab60e06628c4ccb2308856db10aea7fc  doc/standards/patterns/area-lib-ezsession.md
 39b1857ace75c0ea42172e2f8e74010f  doc/standards/patterns/area-lib-eztemplate.md
 a6ba9e05b130ada3369e589850db54dd  doc/standards/patterns/area-lib-ezutils.md
 f56f52be9dcadf413e89bfbb6eefe733  doc/standards/patterns/area-lib.md
-f8eca6e4dfa7a998cfcfe9c7a8404bc1  doc/standards/patterns/area-settings.md
-8d51b6bab2bd4b1316fed921a5367fb0  doc/standards/patterns/builder.md
+700fa9399ac53710b2cf5749f0c1b0b1  doc/standards/patterns/area-settings.md
+a4ef695b674c0add62856e3d28ea491c  doc/standards/patterns/builder.md
 8b86164ff04a96e58338bec9b80140d8  doc/standards/patterns/chain.md
-30dca74e51deca2dab12d4d95737be2d  doc/standards/patterns/command.md
+77752d0373c51f948d495b846a0fd580  doc/standards/patterns/command.md
 d5b3a21962fe14afa5bd0e3d881ddf7d  doc/standards/patterns/datatype.md
 c335c8f83d01ffda47e7c5c47240a593  doc/standards/patterns/decorator.md
 eab86aa2ce51b587e9a3edd334b13868  doc/standards/patterns/event-hook.md
@@ -6954,7 +6954,7 @@ ace043d83d8a64806f2d8e67d82ecfa0  doc/standards/patterns/facade.md
 9deb7518faa7f8e5ccae56c6bfed6343  doc/standards/patterns/factory.md
 2d5a85d89a682e90a4685ced0d54a03b  doc/standards/patterns/fetch-function.md
 9f1e881de6eb53d0bdaf07c0a66668e2  doc/standards/patterns/front-controller.md
-ad4fc2e4534dd8e89b3c72c9e49b9ed2  doc/standards/patterns/ini-plugin-point.md
+5be1d989e1310f469976e92304e66f87  doc/standards/patterns/ini-plugin-point.md
 2a979f2464e87eb2fcd24c0c459ae627  doc/standards/patterns/interface.md
 49f14f915edd11c4e7b9c18cdbcc9daf  doc/standards/patterns/iterator.md
 ae60f3891bc0ba525d2989391a15a0a0  doc/standards/patterns/module-view.md
