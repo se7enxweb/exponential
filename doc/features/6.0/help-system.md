@@ -126,8 +126,16 @@ then have the ids `ext/<extension>/<path>`.
 
 ## Finding a page
 
-- **All pages** (`/exphelp/contents`): every help page as one tree, all folders open, with a filter field that
-  narrows the tree to the pages whose title or folder has every typed word. The viewer shows the same tree at the
+- **All pages** (`/exphelp/contents`): every help page as one tree, its folders closed (each shows its title and
+  number of pages), with a filter field that narrows the tree to the pages whose title or folder has every typed
+  word and opens their folders; emptied (or with Esc) it puts the folders back as they were. **Expand all** and
+  **Collapse all** open or close every folder; they sit in a small panel fixed at the end side of the window near the
+  bottom (the left side in a right-to-left language), so they stay at hand while scrolling, and appear only with
+  JavaScript. The panel stays above the debug bar, and above its minimised tab, through the custom property
+  `--exp-debug-clearance` that `expdebugbar.css` sets (the room the bar keeps free at the bottom of the window; unset
+  without the bar); another fixed control at the bottom of a page can use it the same way:
+  `bottom: calc(var(--exp-debug-clearance, 0px) + <gap>)`. Each folder has an id from its path, so
+  `/exphelp/contents#exphelp-folder-help-editors` opens the folder `doc/help/editors`. The viewer shows the same tree at the
   side of each page, with the folders on the way to the page open. Folders are native disclosure elements, so the
   tree works without JavaScript; a folder's `README.md` or `index.md` is its "Overview" link. A folder is named by
   `exphelp.ini [NavigationSettings] FolderNames[<path>]`, else by the title of its README, else by its directory
