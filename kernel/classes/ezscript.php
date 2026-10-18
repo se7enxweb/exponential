@@ -434,18 +434,7 @@ class eZScript
         }
 
         // Audit (doc/bc/6.0/audit.md, system.command.run): before the cleanup handlers, which flush the audit
-        if ( class_exists( 'expAuditHook' ) )
-        {
-            $auditExit = $exitCode !== false ? (int)$exitCode : ( $this->ExitCode !== false ? (int)$this->ExitCode : 0 );
-            expAuditHook::emit( 'system.command.run', function () use ( $auditExit ) {
-                $argv = isset( $_SERVER['argv'] ) && is_array( $_SERVER['argv'] ) ? $_SERVER['argv'] : array();
-                $script = isset( $argv[0] ) ? (string)$argv[0] : '';
-                $start = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (float)$_SERVER['REQUEST_TIME_FLOAT'] : microtime( true );
-                return array( 'object' => array( 'type' => 'command', 'id' => $script !== '' ? ( class_exists( 'expAudit' ) ? expAudit::relativePath( $script ) : basename( $script ) ) : 'unknown' ),
-                              'verb' => 'run', 'result' => $auditExit === 0 ? 'success' : 'failed', 'reason' => $auditExit === 0 ? null : 'error',
-                              'after' => array( 'exit' => $auditExit, 'ms' => (int)round( ( microtime( true ) - $start ) * 1000 ) ) );
-            } );
-        }
+        $this->auditCommandRun( $exitCode !== false ? (int)$exitCode : ( $this->ExitCode !== false ? (int)$this->ExitCode : 0 ) );
 
         eZExecution::cleanup();
         eZExecution::setCleanExit();
@@ -459,6 +448,48 @@ class eZScript
                 $cli->output( $exitText );
             exit( $this->ExitCode );
         }
+    }
+
+    /**
+     * Records the run of this command (system.command.run, doc/bc/6.0/audit.md) unless the command itself said
+     * that it records its own, more specific events instead (setAuditCommandRun( false )). Called by shutdown().
+     *
+     * @param int $exitCode
+     * @return string|null the event id, null when nothing was recorded
+     */
+    public function auditCommandRun( $exitCode )
+    {
+        if ( !$this->AuditCommandRun || !class_exists( 'expAuditHook' ) )
+            return null;
+        $auditExit = (int)$exitCode;
+        return expAuditHook::emit( 'system.command.run', function () use ( $auditExit ) {
+            $argv = isset( $_SERVER['argv'] ) && is_array( $_SERVER['argv'] ) ? $_SERVER['argv'] : array();
+            $script = isset( $argv[0] ) ? (string)$argv[0] : '';
+            $start = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? (float)$_SERVER['REQUEST_TIME_FLOAT'] : microtime( true );
+            return array( 'object' => array( 'type' => 'command', 'id' => $script !== '' ? ( class_exists( 'expAudit' ) ? expAudit::relativePath( $script ) : basename( $script ) ) : 'unknown' ),
+                          'verb' => 'run', 'result' => $auditExit === 0 ? 'success' : 'failed', 'reason' => $auditExit === 0 ? null : 'error',
+                          'after' => array( 'exit' => $auditExit, 'ms' => (int)round( ( microtime( true ) - $start ) * 1000 ) ) );
+        } );
+    }
+
+    /**
+     * Whether this run records the generic system.command.run event when it ends (the default: yes).
+     *
+     * Only for a command that records its own specific events and runs so often that a generic record of every
+     * run would bury them, such as `exp:velocity watchdog run` from its timer (system.velocity.watchdog.*). It
+     * applies to this run only; there is no setting for it.
+     *
+     * @param bool $audit
+     */
+    public function setAuditCommandRun( $audit )
+    {
+        $this->AuditCommandRun = (bool)$audit;
+    }
+
+    /** @return bool whether this run records system.command.run */
+    public function auditsCommandRun()
+    {
+        return $this->AuditCommandRun;
     }
 
     /*!
@@ -1241,6 +1272,8 @@ class eZScript
     public $ExitCode;
     public $IsQuiet;
     public $ShowVerbose;
+    /** @var bool whether this run records system.command.run when it ends (setAuditCommandRun()) */
+    public $AuditCommandRun = true;
 }
 
 function eZDBCleanup()

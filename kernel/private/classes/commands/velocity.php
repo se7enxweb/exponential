@@ -877,6 +877,14 @@ class Velocity extends \Exponential\Runnable\Command
                 }
                 $watchdog = new \expVelocityWatchdog( $velocity );
                 $result = $watchdog->$action();
+                if ( $action === 'run' )
+                {
+                    // Audit only on action (doc/bc/6.0/audit.md): the timer runs this every 45 s, so instead of
+                    // system.command.run for every run it records one system.velocity.watchdog.* event when it
+                    // started the engine, backed off or skipped, and nothing when the engine was running.
+                    $script->setAuditCommandRun( false );
+                    \expVelocityWatchdog::audit( $result );
+                }
                 if ( $action === 'status' )
                     $result = array( 'ok' => true ) + $result;
                 if ( $asJson )

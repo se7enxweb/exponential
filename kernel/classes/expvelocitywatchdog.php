@@ -237,6 +237,61 @@ class expVelocityWatchdog
     }
 
     /**
+     * The audit event of one run (doc/bc/6.0/audit.md, system.velocity.watchdog.*), or null when the run did
+     * nothing worth a record: the engine was running, or the watchdog is paused (its configuration file is
+     * disabled, so it does nothing on purpose). Every other run is one event:
+     *
+     *  - system.velocity.watchdog.start   it started the engine (result success), or a start failed (failed)
+     *  - system.velocity.watchdog.backoff it did not try, because the last starts failed (backoff)
+     *  - system.velocity.watchdog.skip    it left a down engine alone: stopped on purpose, a restart in progress,
+     *                                     the lock held, the previous check still busy (overlap), or an error
+     *
+     * @param array $result of run()
+     * @return array|null array( name, data ) for expAuditHook::emit()
+     */
+    public static function auditEvent( array $result )
+    {
+        $action = (string)( $result['action'] ?? '' );
+        $reason = (string)( $result['reason'] ?? '' );
+        if ( $action === 'none' || $reason === 'running' || $reason === 'paused' )
+            return null;
+        $after = array( 'reason' => $reason, 'detail' => (string)( $result['detail'] ?? '' ) );
+        $data = array( 'object' => array( 'type' => 'engine', 'id' => (string)( $result['engine'] ?? '' ) ) );
+        if ( $action === 'start' )
+        {
+            $ok = !empty( $result['started'] );
+            $data += array( 'result' => $ok ? 'success' : 'failed', 'reason' => $ok ? null : 'error' );
+            if ( !$ok )
+                $data['severity'] = 'warning';
+            $name = 'system.velocity.watchdog.start';
+        }
+        elseif ( $reason === 'backoff' )
+            $name = 'system.velocity.watchdog.backoff';
+        else
+        {
+            $name = 'system.velocity.watchdog.skip';
+            if ( $reason === 'error' )
+                $data += array( 'result' => 'failed', 'reason' => 'error' );
+        }
+        $data['after'] = $after;
+        return array( $name, $data );
+    }
+
+    /**
+     * Records the audit event of one run (auditEvent()), if it has one.
+     *
+     * @param array $result of run()
+     * @return string|null the event id
+     */
+    public static function audit( array $result )
+    {
+        $event = self::auditEvent( $result );
+        if ( $event === null || !class_exists( 'expAuditHook' ) )
+            return null;
+        return expAuditHook::emit( $event[0], $event[1] );
+    }
+
+    /**
      * Remove the restart marker if it is still the stale one that was read.
      *
      * @param expVelocityMarkers $markers

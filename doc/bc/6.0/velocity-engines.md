@@ -250,6 +250,19 @@ systemd would end the server together with the watchdog's oneshot service, and t
 The reasons are `down`, `restart-stale`, `intentionally-stopped`, `restart-in-progress`, `lock-held`, `backoff`,
 `paused`, `overlap` (the previous check is still busy) and `error`.
 
+The audit (doc/bc/6.0/audit.md) gets one event only from a check that acts or decides something notable, never from
+the routine "running, nothing to do" check. A `watchdog run` does not record the generic `system.command.run` that
+every other command records (it calls `eZScript::setAuditCommandRun( false )` for its own run). Instead it records:
+
+| Event | When | Reasons |
+|---|---|---|
+| `system.velocity.watchdog.start` | it started the engine (`success`), or the start failed (`failed`, warning) | `down`, `restart-stale` |
+| `system.velocity.watchdog.backoff` | it did not try, three starts in a row having failed | `backoff` |
+| `system.velocity.watchdog.skip` | it left a down engine alone | `intentionally-stopped`, `restart-in-progress`, `lock-held`, `overlap`, `error` |
+
+The reason and the detail are in the event's `after`. A check that finds the engine running (`none`), and a paused
+watchdog, record nothing. Note that a server stopped on purpose gives one `skip` event per check while it stays down.
+
 ```ini
 [WatchdogSettings]
 Interval=45            # seconds between checks (15-3600)

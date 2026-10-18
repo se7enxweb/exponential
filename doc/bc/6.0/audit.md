@@ -58,7 +58,7 @@ log stayed as it was. This is said wherever it applies.
 | Who signed in, who failed to, from which network | `access.session.login`, `access.session.login.failed` (with the reason), `access.session.logout`, account locks; the address truncated to its /24 network by default |
 | Who removed, moved, hid or restored content | `content.node.*` and `content.object.*`. A subtree removal is one parent event with one child per node. A content job is the parent of everything its batches do |
 | Who changed roles, policies, users, sections, states, classes | `access.role.*`, `access.policy.*`, `access.user.*`, `content.section.*`, `content.state.*`, `content.class.*`, with the values before and after |
-| Who changed a setting, cleared a cache, ran a command or a cronjob | `system.setting.write` (with the diff; secrets masked), `system.cache.clear`, `system.command.run`, `system.cronjob.run` |
+| Who changed a setting, cleared a cache, ran a command or a cronjob | `system.setting.write` (with the diff; secrets masked), `system.cache.clear`, `system.command.run`, `system.cronjob.run`; the Velocity watchdog only when it starts the engine, backs off or skips (`system.velocity.watchdog.*`), never for a routine check |
 | Who changed prices, VAT, currencies, discounts or removed an order | `commerce.*`; exports and imports of data are `data.*` |
 | Whether anyone tampered with the log | `exp:audit verify` and the console show, per channel, **intact** or **broken** with the file, the line and the kind of change |
 | To be told when something serious happens | Alert rules for brute force, admin roles granted, settings written out of hours, mass deletes, the audit switched off, a broken chain. Alerts go to syslog/journald and to mail recipients you choose |
@@ -2222,7 +2222,7 @@ only with `Reads=enabled`).
 | `system.log.rotate` | a log file is rotated now | – → size, ok, renamed (error) | `expLogViewer::audit`, `views/setup/logsaction.php` | rotate | notice | on | yes | system | buffered |
 | `system.log.truncate` | a log file is emptied | – → size, ok (error) | `expLogViewer::audit`, `views/setup/logsaction.php` | truncate | warning | on | yes | system | buffered |
 | `system.log.delete` | an archived rotation of a log file is removed | – → size, ok (error) | `expLogViewer::audit`, `views/setup/logsaction.php` | delete | notice | on | yes | system | buffered |
-| `system.command.run` | a command runs | – → exit code, ms | `ezscript.php:shutdown` | run | info | on | yes | system | buffered |
+| `system.command.run` | a command runs (not a run of `exp:velocity watchdog run`, which records `system.velocity.watchdog.*` only when it acts; a command opts out with `eZScript::setAuditCommandRun( false )`) | – → exit code, ms | `ezscript.php:auditCommandRun` (from `shutdown`) | run | info | on | yes | system | buffered |
 | `system.package.install` | a package is installed | – → name, version, items | `ezpackage.php:install` | install | notice | on | yes | system | buffered |
 | `system.package.uninstall` | a package is uninstalled | name, version → – | `ezpackage.php:uninstall` | uninstall | notice | on | yes | system | buffered |
 | `system.package.import` | a package archive is imported | – → name, version, sha256 of the archive | `ezpackage.php:import` | import | notice | on | yes | system | buffered |
@@ -2230,6 +2230,9 @@ only with `Reads=enabled`).
 | `system.install.run` | an installation is made | – → siteaccesses, packages, database engine | `setup/steps/ezstep_create_sites.php:init` | install | notice | on | yes | system | buffered |
 | `system.upgrade.run` | an upgrade check or upgrade script runs | – → result | `views/setup/systemupgrade.php:run` | run | notice | on | yes | system | buffered |
 | `system.velocity.deploy` | `exp:velocity deploy` or `restart` runs | – → steps, ms, result | `expvelocity.php:restart`, `expvelocitydeploy.php:run` | deploy | notice | on | yes | system | buffered |
+| `system.velocity.watchdog.start` | the Velocity watchdog started the engine (success) or a start failed (failed, warning) | – → reason (`down`, `restart-stale`), detail | `expvelocitywatchdog.php:audit` (from `commands/velocity.php`, `watchdog run`) | start | notice | on | yes | system | buffered |
+| `system.velocity.watchdog.backoff` | the watchdog left a down engine alone after three failed starts in a row | – → reason, detail | `expvelocitywatchdog.php:audit` | backoff | warning | on | yes | system | buffered |
+| `system.velocity.watchdog.skip` | the watchdog left a down engine alone: stopped on purpose, a restart in progress, the lock held, the previous check still busy, or an error | – → reason (`intentionally-stopped`, `restart-in-progress`, `lock-held`, `overlap`, `error`), detail | `expvelocitywatchdog.php:audit` | skip | info | on | yes | system | buffered |
 | `system.repair.queue` | the repair queue is written or a repair key created | entries → entries (never the key) | `lib/ezutils/classes/ezprepairqueue.php:writeSettings` | change | notice | on | yes | system | buffered |
 | `system.maintenance.change` | maintenance mode is switched | mode → mode | `expmaintenance.php:auditChange` | change | notice | on | yes | system | buffered |
 | `system.template.change` | a template is created or edited in the admin | sha256 → sha256 (never the template text) | `views/visual/templateedit.php:run`, `views/visual/templatecreate.php:run` | change | notice | on | yes | system | buffered |
