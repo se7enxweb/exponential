@@ -73550,5 +73550,25 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Image</source>
         <translation>Illustration</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Menu d&apos;aide</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Sujets connexes</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Liens rapides</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Ouvrir le centre d&apos;aide</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>Nouveautés</translation>
+    </message>
 </context>
 </TS>

@@ -72155,5 +72155,25 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Image</source>
         <translation>mIllogh</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>QaH HIDjolev</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>qechmey rap</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>rar nom</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>QaH botlh yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>nuq chu&apos;</translation>
+    </message>
 </context>
 </TS>

@@ -72155,5 +72155,25 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Image</source>
         <translation>Imago</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Index auxilii</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Argumenta cognata</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Nexus celeres</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Centrum auxilii aperire</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>Quae nova sunt</translation>
+    </message>
 </context>
 </TS>

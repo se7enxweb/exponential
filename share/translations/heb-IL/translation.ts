@@ -72186,5 +72186,25 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Image</source>
         <translation>תמונה</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>תפריט העזרה</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>נושאים קשורים</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>קישורים מהירים</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>פתיחת מרכז העזרה</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>מה חדש</translation>
+    </message>
 </context>
 </TS>

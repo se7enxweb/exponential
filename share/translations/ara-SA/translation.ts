@@ -72184,5 +72184,25 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Image</source>
         <translation>صورة</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>قائمة المساعدة</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>مواضيع ذات صلة</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>روابط سريعة</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>فتح مركز المساعدة</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>ما الجديد</translation>
+    </message>
 </context>
 </TS>
