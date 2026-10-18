@@ -3873,9 +3873,9 @@ d55259e5b036dd972962aa0bd877bc3f  doc/guides/ui-switch-settings.md
 96ce9e87d17b31ab1a771517f083e4ea  doc/guides/upgrading.md
 6477f5214f3a7f3dfdf0da2e2284d082  doc/guides/urls-and-aliases.md
 d0260680e11ffdb7581f3bff6191d877  doc/guides/workflows.md
-e3c2566bb064cd164a1edd69af7035e5  doc/help/README.md
-b3a32c0cd10ca5a1f908dcdde4e8e71a  doc/help/accounts-and-sign-in.md
-5cd1cdb1f918968999adb4d0f1a84dd0  doc/help/admin-tour.md
+82187a18e82b4b7f683c386312e040b8  doc/help/README.md
+b409e3a060dd8d98c756d652e742bc27  doc/help/accounts-and-sign-in.md
+b65fabce7ceb9f1766f5b80577f6a5a4  doc/help/admin-tour.md
 d7204e75563c4f245503999fa5fa819d  doc/help/business/brand-and-naming-rules.md
 7e6c6f3cba921436b6740994e22c90bf  doc/help/business/case-studies-and-content-marketing.md
 f6a78a7f48e98f3bb35db1e538ebbc49  doc/help/business/community-and-ecosystem.md
@@ -3894,7 +3894,7 @@ ce2c27ed47d3e90ec6428ea796355d90  doc/help/business/growing-the-community.md
 6e5ac2bb71557cd478f414cedbd3d1f3  doc/help/develop-with-git.md
 ced049f18b5605fcad3ff85057cb4b6f  doc/help/editing-content.md
 e5653c37f0a95ba291692fbd234987cf  doc/help/free-documentation.md
-78a58d7a9a50fba59db73a7b68b34599  doc/help/getting-started.md
+b2b505e9622bc7cba9d9a19be28f7e4a  doc/help/getting-started.md
 c62bd3523b50c73d0284cce14072b804  doc/help/images/admin-dashboard.webp
 aed66f92cd4fd51069175ad3af41a2c1  doc/help/images/content-view.webp
 3fdb924d0adb52c6ba456bf0aee9df7a  doc/help/images/context-menu.webp
@@ -3903,6 +3903,12 @@ c2df63287f2461e530eb9837e15b5010  doc/help/images/create-new.webp
 f94d5360a36312e9b7222390a9d258f1  doc/help/images/layouts-add-block.webp
 2214d74f4eafbb6aed288ba6074b1110  doc/help/images/layouts-block-added.webp
 436faceb58f9a9928a5b944cdc7de772  doc/help/images/layouts-editor.webp
+f780537783c8bd0b6f572d83b8f1ce1e  doc/help/images/login-admin-dashboard.webp
+502e573a13a5f9cc385718d9e9d928b2  doc/help/images/login-admin-form.webp
+d945e0e6391276d2f46efb9520cbeb2b  doc/help/images/login-editor-dashboard.webp
+d2006c41c883f8f639b150c0f0d89095  doc/help/images/login-editor-form.webp
+f2c80163f67c46b601c725c8e4b93e91  doc/help/images/login-forgot-password.webp
+56038f5b43f07fc1dd1e75101614b95a  doc/help/images/login-wrong-password.webp
 170860089252fcb9adcbf36a00ec78b9  doc/help/images/multi-upload.webp
 5dd4885f1eb9f500cdbc5ad4ec56343d  doc/help/images/my-account.webp
 146d0fbcabe3aefe6fce5721c8926e56  doc/help/images/right-column.webp
@@ -3945,6 +3951,8 @@ f187325c3b09dbdc7f952166874d86fc  doc/help/leadership/running-a-team-on-git.md
 41c4010fceaa13bf94360308c945ba65  doc/help/leadership/what-exponential-is.md
 af8d0f921263b8e41d96722507665161  doc/help/leadership/working-together.md
 a12406b76522c0f7dee81286878f2bb7  doc/help/leadership/working-with-the-community.md
+f02271a79b4ca70ad21e1cd939a07704  doc/help/logging-into-the-admin.md
+f4de2cec9df3c6a6461c95c2cb9068fb  doc/help/logging-into-the-editor.md
 52aa8e105823c3e1d159e27ba449bbbe  doc/help/media-and-uploads.md
 e57691e6942395da24fb33dc33ca1616  doc/help/os-support.md
 0bf642c168fe8af84f64190ce1cff902  doc/help/publishing-and-versions.md
