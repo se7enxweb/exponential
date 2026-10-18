@@ -268,7 +268,7 @@ class expHelpAllowlist
      * @param array|null $files the entries to check against (a cached copy), default entries()
      * @return string|null
      */
-    public function safePath( $path, array $files = null )
+    public function safePath( $path, ?array $files = null )
     {
         $path = self::normalize( $path );
         if ( $files === null )

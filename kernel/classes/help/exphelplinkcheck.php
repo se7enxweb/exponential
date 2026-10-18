@@ -37,7 +37,7 @@ class expHelpLinkCheck
     /**
      * @param expHelpDocumentIndex|null $index default expHelpDocumentIndex::instance()
      */
-    public function __construct( expHelpDocumentIndex $index = null )
+    public function __construct( ?expHelpDocumentIndex $index = null )
     {
         $this->index = $index !== null ? $index : expHelpDocumentIndex::instance();
     }
