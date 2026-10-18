@@ -79771,5 +79771,13 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>Exponential präsentieren und bewerben: Positionierung, Demos, Einwände, Lizenzen, Marke und das Wachstum der Community.</translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Mit Git aktualisieren</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Holen Sie Aktualisierungen, sobald sie auf GitHub erscheinen, und bringen Sie dann Composer auf denselben Stand: stündlich, täglich, wöchentlich, monatlich oder nur bei jedem Release.</translation>
+    </message>
 </context>
 </TS>
