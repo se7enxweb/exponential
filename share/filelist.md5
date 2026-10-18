@@ -4217,7 +4217,7 @@ f9f738c497f745bb5e02d68375b9f630  doc/specifications/4.3/admin_refresh/functiona
 e14335da02fc54b98c731ab8152fbda6  doc/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/specifications/4.5/asynchronous_publishing.txt
-573eb04938818e9ac9ed26bf59156763  doc/specifications/6.0/README.md
+33faf32c6fa6802e8ba2ce51b4c1a8ed  doc/specifications/6.0/README.md
 c7d48dabae7613771d017ddaf603bc61  doc/specifications/6.0/audit-event-model.md
 ab66e2db16090f3e2b4beeeb0a27f87e  doc/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/specifications/6.0/cjw_newsletter.md
@@ -4228,6 +4228,8 @@ b88aeca39b0d6fa40e6915f555e710d5  doc/specifications/6.0/database-drivers-sqlite
 d70689709994d00ac9e2ce8220874fbb  doc/specifications/6.0/explayouts-ui-api.md
 a274fa30292611fe64574bef2b9630f5  doc/specifications/6.0/expservices.md
 9f6990d78cc3c9ffde53cc08589e1fbc  doc/specifications/6.0/extension-metadata.md
+b947c37eaf28c9792c6d22f5346ba28b  doc/specifications/6.0/help-style-guide.md
+d4d73e5401649bde1a06325d0a30922e  doc/specifications/6.0/help-system.md
 fe1fc6a8426eefb3fc55d53530292a99  doc/specifications/6.0/ini-override-placements.md
 88d7df3fd4249b7257554244e41edb62  doc/specifications/6.0/installer-logs-and-seed-data.md
 f95c9c889acfa7d8b75e98252eb6cb4d  doc/specifications/6.0/legacy-bridge-bundle.md
