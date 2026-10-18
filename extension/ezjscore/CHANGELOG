@@ -1,3 +1,8 @@
+# 1.8.4
+- Added: French and Ukrainian translations (fre-FR, ukr-UA). They are complete and machine-assisted,
+  and would benefit from a review by native speakers.
+- Updated: Version 1.8.4 in ezinfo.php and extension.xml.
+
 # 1.8.3
 - Updated: the global functions of the ezjscore/run and ezjscore/call views have names of their own
   (expModuleViewEzjscoreRunExitWithInternalError, expModuleViewEzjscoreRunHasAccessToBySetting,
