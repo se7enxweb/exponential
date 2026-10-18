@@ -41,10 +41,10 @@ c711d4b48de12e5419af2b3b322093a1  bin/linux/doxysearch
 ac2994f58400084582a59ab8b38d8377  bin/linux/doxytag
 387442a7b572f75bc59e5eebd0beb0d6  bin/modfix.sh
 c7f87c874a59c2d17a5fe47b40fd3325  bin/mongodb/create_indexes.js
-23b09c03c5fb1122d7f55a89723f0a2f  bin/mongodb/export_mysql.sh
+d6d72bc6d61649402b01dbfe3e98606b  bin/mongodb/export_mysql.sh
 a9586e3978dfedf84e40af4d9ff7edd6  bin/mongodb/fixup_ndjson.py
 236d5d750221b222ee83cd17ee0cb266  bin/mongodb/import_all.sh
-97b3bd6db790ba2f8193ed70104eb119  bin/mongodb/mysql2ndjson.py
+f5b56ee1da203c9510cc1c77269cc2b7  bin/mongodb/mysql2ndjson.py
 1374ed9d080d58b9372d49d958ba0ed1  bin/mongodb/validate_ndjson.sh
 04ea36d6c950a3853af68f0b8424a2b2  bin/php/accesscheck.php
 11893714c574088dd6f49b8aba0e9018  bin/php/adddefaultstates.php
@@ -3056,7 +3056,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/bc/5.90/relation_indexing.md
 1e03a68c3131eb9d1c8b4570c969d237  doc/bc/6.0/EXT_SORT_ORDERS.md
 580daca8db37221dffe6bd85879108ac  doc/bc/6.0/ICONS.md
 2c56f7a3506917910383af311b62a3cb  doc/bc/6.0/LAYOUTS.md
-d386923e32f7abc18de9e5392795bb5f  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
+cb7fc54cfd3119b00225fd2b71c26ae6  doc/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
 0ab260d13ecc850ddf64413ea7eb9240  doc/bc/6.0/admin4-styling.md
 e101242c403b860ecda6eb961d8f7659  doc/bc/6.0/admin4l.md
@@ -3295,7 +3295,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1170bdba72d3f14cb2532722635da5ba  doc/changelogs/6.0/6.0.15.md
+7842f43b0e3d6008910f2f87e0281b7a  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
