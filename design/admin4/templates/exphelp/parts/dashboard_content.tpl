@@ -21,7 +21,7 @@
     {foreach $content.topics as $content_t}
         <li class="a4-help-feature">
             <a href={$content_t.url|ezurl}>
-                <span class="a4-help-tile is-small" aria-hidden="true"><span class="a4-icon a4-bi-file-earmark-text"></span></span>
+                <span class="a4-help-tile is-small" aria-hidden="true"><span class="a4-icon a4-bi-file-earmark-code"></span></span>
                 <span class="a4-help-feature-text">
                     <span class="a4-help-feature-title">{$content_t.title|wash}</span>
                     {if $content_t.summary|ne( '' )}<span class="a4-help-feature-summary">{$content_t.summary|shorten( 140 )|wash}</span>{/if}
