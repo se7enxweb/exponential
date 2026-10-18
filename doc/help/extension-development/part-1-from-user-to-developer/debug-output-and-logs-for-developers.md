@@ -110,7 +110,7 @@ eZDebug::writeError( 'Could not load node ' . $nodeID, __METHOD__ );
 Use `__METHOD__` as the label: the report then names the class and method.
 
 From a template, `{debug-log var=$node msg='node in my template'}` writes a value into the debug report (see
-Debugging templates).
+[Debugging templates](../part-2-builder/debugging-templates.md)).
 
 ## Writing your own log file
 

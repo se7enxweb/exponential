@@ -18,7 +18,7 @@ ladder, then read upward.
 | Step | You change | You need | Book part |
 |---|---|---|---|
 | **User** | Content: articles, images, menus, users | the administration | Part 1 (this part) |
-| **Builder** | Settings, templates, overrides, content classes, roles, workflows | a text editor, the INI and template languages, patience | Part 2 |
+| **Builder** | Settings, templates, overrides, content classes, roles, workflows | a text editor, the INI and template languages, patience | [Part 2](../part-2-builder/README.md) |
 | **Extension developer** | New modules, datatypes, operators, workflow events, cronjobs, commands | PHP, the kernel's classes, Git | Part 3, Part 4 |
 | **Theme developer** | The look: a design extension with templates, CSS, JavaScript | HTML, CSS, the template language, the design chain | Part 6 |
 
@@ -60,7 +60,7 @@ under version control, instead of scattered through `settings/override/`. Part 2
 
 > **Note**
 > Most sites need nothing beyond the builder's tools. Do not write PHP until a setting, a template or an override
-> really cannot do the job. When settings are not enough helps
+> really cannot do the job. [When settings are not enough](../part-2-builder/when-settings-are-not-enough.md) helps
 > you decide.
 
 ## Step 3: extension developer

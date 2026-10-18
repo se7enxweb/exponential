@@ -42,7 +42,7 @@ held 338 projects, in subtypes that map one to one to the chapters of this book:
 | Workflow event type | 38 | Workflow event types |
 | Template function | 27 | Template functions |
 | Admin interface integration | 26 | Admin pages in the admin4 style |
-| Content classes | 20 | Content classes for builders |
+| Content classes | 20 | [Content classes for builders](../part-2-builder/content-classes-for-builders.md) |
 | Translation | 14 | Translations in an extension |
 | Extended attribute filter | 11 | Fetch functions |
 | Content action handler | 10 | Handlers named by settings |

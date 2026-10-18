@@ -26,7 +26,7 @@ When a page states a fact, it names the file or the page where the fact comes fr
 | Part | For | What you learn |
 |---|---|---|
 | [Part 1: From user to developer](part-1-from-user-to-developer/README.md) | everyone | What an extension is, the tools, a development installation, reading the code and the logs, finding existing extensions on GitHub, Packagist, Share Exponential, Exponential Projects and eZpedia, and reusing them within their licenses |
-| Part 2: The builder | builders, designers, application creators | Settings and their scopes, templates, the design chain, overrides, view modes, fetch, content classes, roles, workflows, cronjobs, all without PHP |
+| [Part 2: The builder](part-2-builder/README.md) | builders, designers, application creators | Settings and their scopes, templates, the design chain, overrides, view modes, fetch, content classes, roles, workflows, cronjobs, all without PHP |
 | Part 3: The extension developer | developers | The anatomy of an extension, chapter by chapter: metadata, settings, autoloads, modules and views, policies, operators, fetch functions, datatypes, workflow events, cronjobs, commands, designs, ajax, translations, tables, events, handlers, security, CSP, admin pages, tests, documentation |
 | Tutorials | developers | Real small extensions built step by step, with the RAD tools and by hand |
 | Part 4: Upgrading an old extension | developers | Bringing an extension written for older PHP and older releases to Exponential 6, with before and after examples from extensions this project modernized |
@@ -39,10 +39,10 @@ When a page states a fact, it names the file or the page where the fact comes fr
 
 | You are | Start with |
 |---|---|
-| An editor or administrator who wants to build | [Part 1](part-1-from-user-to-developer/README.md), then Part 2 |
+| An editor or administrator who wants to build | [Part 1](part-1-from-user-to-developer/README.md), then [Part 2](part-2-builder/README.md) |
 | A PHP developer new to Exponential | [What an extension is](part-1-from-user-to-developer/what-an-extension-is.md), then Part 3 and the tutorials |
-| A designer | Part 2, then Part 6 |
-| An application creator | Part 2, then the capstone tutorial |
+| A designer | [Part 2](part-2-builder/README.md), then Part 6 |
+| An application creator | [Part 2](part-2-builder/README.md), then the capstone tutorial |
 | Someone with an old extension to bring up to date | Part 4 |
 | About to publish an extension | Part 7 and Part 5 |
 

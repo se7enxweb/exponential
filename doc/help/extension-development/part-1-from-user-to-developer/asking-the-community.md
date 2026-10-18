@@ -90,12 +90,12 @@ ways to help.
 
 You know what an extension is, you have a development installation, you can read the code and the logs, and you know
 where to find ideas and how to reuse them fairly. Continue with
-Part 2: The builder.
+[Part 2: The builder](../part-2-builder/README.md).
 
 ## Related pages
 
 - Previous: [Debug output and logs for developers](debug-output-and-logs-for-developers.md)
-- Next: Part 2: The builder: settings, templates and overrides
+- Next: [Part 2: The builder: settings, templates and overrides](../part-2-builder/README.md)
 - [When something goes wrong](../../when-something-goes-wrong.md)
 - Writing good issues
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
