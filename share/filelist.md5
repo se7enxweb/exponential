@@ -7973,7 +7973,7 @@ a732e808d64b9a5a30633dd745cae6fe  tests/tests/design/AdminFirstPaintColumnsTest.
 0783e6b5029fcdc30e2afa5d46c6a4e0  tests/tests/design/AdminFormErrorsTest.php
 0aedf29b682213c1a48cba48309e286a  tests/tests/design/AdminFormLabelsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
-0d5ed18cf2ae0f80bb92bac72200e07b  tests/tests/design/AdminHeaderTest.php
+f236deacb31adc5b9030c318f0653dd8  tests/tests/design/AdminHeaderTest.php
 6e7415e9f84d42a3917ecb505e465ba6  tests/tests/design/AdminHelpScriptTest.php
 ffae66982f72a7a9adc99acd43b3d662  tests/tests/design/AdminIconsTest.php
 ef7f72e6efae269cefa3d98124eee4f2  tests/tests/design/AdminJobTranslationsTest.php

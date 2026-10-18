@@ -165,12 +165,14 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
     {
         $root = dirname( __DIR__, 3 );
         $check = "fetch( 'user', 'can_open', hash( 'uri', 'user/password' ) )";
+        $helpCheck = "fetch( 'user', 'has_access_to', hash( 'module', 'exphelp', 'function', 'read' ) )";
         $source = AdminFiles::read( $root . '/design/admin4/templates/parts/a4_header_user.tpl' );
-        $this->assertSame( 1, substr_count( $source, $check ), 'the one database access of the template' );
+        $this->assertSame( 1, substr_count( $source, $check ), 'the database access of the template for the password link' );
+        $this->assertSame( 1, substr_count( $source, $helpCheck ), 'the database access of the template for the Help center link' );
         $dir = $root . '/var/tmp/phpunit-header-user-' . getmypid() . '-' . substr( md5( uniqid( '', true ) ), 0, 8 );
         mkdir( $dir, 0777, true );
         $copy = $dir . '/a4_header_user.tpl';
-        file_put_contents( $copy, str_replace( $check, 'true()', $source ) );
+        file_put_contents( $copy, str_replace( array( $check, $helpCheck ), 'true()', $source ) );
         $basics = array_key_exists( 'eZSiteBasics', $GLOBALS ) ? array( $GLOBALS['eZSiteBasics'] ) : null;
         // not compiled: each case renders the same template with other variables
         $GLOBALS['eZSiteBasics']['no-cache-adviced'] = true;
