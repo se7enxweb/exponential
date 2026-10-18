@@ -132,4 +132,20 @@ class expHelpSearchViewParametersTest extends PHPUnit\Framework\TestCase
         $this->assertSame( Search::VIEW_PARAMETERS, $ViewList['search']['unordered_params'] );
         $this->assertSame( array( 'read' ), $ViewList['search']['functions'] );
     }
+
+    /**
+     * The canonical redirect is sent by the view itself: a module redirect gets the request's query string appended by
+     * the kernel (ezpKernelWeb::appendRequestQuery()), so /search?q=x went to /search/(q)/x?q=x and redirected to itself
+     * until the browser gave up.
+     */
+    public function testTheCanonicalRedirectDoesNotCarryTheQueryString()
+    {
+        $source = file_get_contents( __DIR__ . '/../../../../../kernel/private/classes/views/exphelp/search.php' );
+        $this->assertStringNotContainsString( 'return $Module->redirectTo(', $source );
+        $this->assertStringContainsString( "\\eZHTTPTool::redirect( \$target, array(), '302 Found', false );", $source );
+        $this->assertStringContainsString( '\eZExecution::cleanExit();', $source );
+        // the target never holds a query string of its own
+        $state = Search::state( array_merge( Search::viewParameters( array() ), Search::getState( array( 'q' => 'img', 'category' => '' ) ) ), self::$known );
+        $this->assertSame( '/exphelp/search/(q)/img', expHelp::searchUrl( $state ) );
+    }
 }
