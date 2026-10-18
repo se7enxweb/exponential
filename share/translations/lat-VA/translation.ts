@@ -71304,14 +71304,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Quaerere nunc non licet.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Contrahere</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Explicare</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Nulla pagina omnia verba habet; hae quaedam habent.</translation>
     </message>
@@ -71322,10 +71314,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Getting started</source>
         <translation>Initia</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Contenta et emendatio</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -71568,10 +71556,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Errorem invenisti?</translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation>Duces et index rerum omnibus qui cum %site laborant, ex documentis versionis huius institutionis scripti.</translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation>Centrum auxilii</translation>
     </message>
@@ -71790,10 +71774,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Type</source>
         <translation>Genus</translation>
-    </message>
-    <message>
-        <source>Type a word to search every help page.</source>
-        <translation>Verbum scribe ut omnes paginas auxilii quaeras.</translation>
     </message>
     <message>
         <source>Use this extension</source>
@@ -72446,6 +72426,90 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
         <translation>Institutum non quaestuosum, familia productorum et eius promissa.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count argumenta auxilii</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Omnia enchiridia</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Notio</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Index</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>EPUB depromere</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>PDF depromere</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Hoc argumentum emendare</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Editio %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>A versione %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Argumenta auxilii</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Enchiridia</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Enchiridia et argumenta auxilii</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Suggestus:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Praevisio</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Praevisio: %state, lectoribus non traditur</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Opus</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Nondum sunt enchiridia quae legere possis.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Hoc enchiridion nondum argumenta habet quae legere possis.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Genus argumenti:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Errorum remedia</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Versiones %from ad %to</translation>
     </message>
 </context>
 <context>

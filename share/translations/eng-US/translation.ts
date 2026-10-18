@@ -71836,10 +71836,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Found an error?</translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation>Help center</translation>
     </message>
@@ -72060,10 +72056,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Type</translation>
     </message>
     <message>
-        <source>Type a word to search every help page.</source>
-        <translation>Type a word to search every help page.</translation>
-    </message>
-    <message>
         <source>Use this extension</source>
         <translation>Use this extension</translation>
     </message>
@@ -72278,18 +72270,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>What's new</source>
         <translation>What's new</translation>
-    </message>
-    <message>
-        <source>Collapse</source>
-        <translation>Collapse</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Expand</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Content and editing</translation>
     </message>
     <message>
         <source>Grow from user to developer</source>
@@ -72726,6 +72706,90 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
         <translation>The nonprofit, the product family and its commitments.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count help topics</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>All manuals</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Concept</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Contents</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>Download EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>Download PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Edit this topic</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Edition %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>From version %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Help topics</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Manuals</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Manuals and help topics</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Platform:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Preview</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Preview: %state, not delivered to readers</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Task</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>There are no manuals you can read yet.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>This manual has no topics you can read yet.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Topic type:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Troubleshooting</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Versions %from to %to</translation>
     </message>
 </context>
 </TS>

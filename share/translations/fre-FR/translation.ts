@@ -72699,14 +72699,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>La recherche n&apos;est pas disponible pour le moment.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Réduire</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Développer</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Aucune page ne contient tous les mots ; celles-ci en contiennent une partie.</translation>
     </message>
@@ -72717,10 +72709,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Getting started</source>
         <translation>Premiers pas</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Contenu et édition</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -72963,10 +72951,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Vous avez trouvé une erreur ?</translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation>Guides et référence pour tous ceux qui travaillent avec %site, tirés de la documentation de la version de cette installation.</translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation>Centre d&apos;aide</translation>
     </message>
@@ -73185,10 +73169,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Type</source>
         <translation>Type</translation>
-    </message>
-    <message>
-        <source>Type a word to search every help page.</source>
-        <translation>Saisissez un mot pour rechercher dans toutes les pages d&apos;aide.</translation>
     </message>
     <message>
         <source>Use this extension</source>
@@ -73841,6 +73821,90 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
         <translation>L'organisation à but non lucratif, la famille de produits et ses engagements.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count rubriques d&apos;aide</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Tous les manuels</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Concept explicatif</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Sommaire</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>Télécharger l&apos;EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>Télécharger le PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Modifier cette rubrique</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Édition %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>À partir de la version %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Rubriques d&apos;aide</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Manuels</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Manuels et rubriques d&apos;aide</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Plateforme :</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Aperçu</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Aperçu : %state, non diffusé aux lecteurs</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Tâche</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Il n&apos;y a encore aucun manuel que vous pouvez lire.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Ce manuel n&apos;a encore aucune rubrique que vous pouvez lire.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Type de rubrique :</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Dépannage</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Versions %from à %to</translation>
     </message>
 </context>
 <context>

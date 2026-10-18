@@ -71289,14 +71289,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Пошук зараз недоступний.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Згорнути</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Розгорнути</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Жодна сторінка не містить усіх слів; ці містять деякі з них.</translation>
     </message>
@@ -71307,10 +71299,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Getting started</source>
         <translation>Початок роботи</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Вміст і редагування</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -71553,10 +71541,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Знайшли помилку?</translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation>Посібники й довідник для всіх, хто працює з %site, створені з документації версії цієї інсталяції.</translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation>Центр довідки</translation>
     </message>
@@ -71775,10 +71759,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Type</source>
         <translation>Тип</translation>
-    </message>
-    <message>
-        <source>Type a word to search every help page.</source>
-        <translation>Введіть слово, щоб шукати на всіх сторінках довідки.</translation>
     </message>
     <message>
         <source>Use this extension</source>
@@ -72431,6 +72411,90 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
         <translation>Некомерційна організація, сімейство продуктів і її зобов’язання.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>Тем довідки: %count</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Усі посібники</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Поняття</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Зміст</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>Завантажити EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>Завантажити PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Редагувати цю тему</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Видання %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>Починаючи з версії %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Теми довідки</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Посібники</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Посібники й теми довідки</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Платформа:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Попередній перегляд</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Попередній перегляд: %state, читачам не показується</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Завдання</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Поки що немає посібників, які ви можете читати.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>У цьому посібнику поки що немає тем, які ви можете читати.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Тип теми:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Усунення несправностей</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Версії від %from до %to</translation>
     </message>
 </context>
 <context>

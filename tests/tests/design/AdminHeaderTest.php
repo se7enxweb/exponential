@@ -167,8 +167,8 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $check = "fetch( 'user', 'can_open', hash( 'uri', 'user/password' ) )";
         $helpCheck = "fetch( 'user', 'has_access_to', hash( 'module', 'exphelp', 'function', 'read' ) )";
         $source = AdminFiles::read( $root . '/design/admin4/templates/parts/a4_header_user.tpl' );
-        $this->assertSame( 1, substr_count( $source, $check ), 'the database access of the template for the password link' );
-        $this->assertSame( 1, substr_count( $source, $helpCheck ), 'the database access of the template for the Help center link' );
+        $this->assertSame( 1, substr_count( $source, $check ), 'the one database access of the template' );
+        $this->assertSame( 0, substr_count( $source, $helpCheck ), 'the Help center link reads $a4_help of the page layout, no access check of its own' );
         $dir = $root . '/var/tmp/phpunit-header-user-' . getmypid() . '-' . substr( md5( uniqid( '', true ) ), 0, 8 );
         mkdir( $dir, 0777, true );
         $copy = $dir . '/a4_header_user.tpl';
