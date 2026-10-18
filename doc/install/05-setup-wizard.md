@@ -73,12 +73,14 @@ fields named `P_<group>-<key>` (`design/standard/templates/setup/persistence.tpl
 While the wizard runs, the site is in **maintenance mode** for everybody except the browser that started it
 (class `expMaintenance` in `kernel/classes/expmaintenance.php`):
 
-1. The first request of a run (a request without a posted step) calls `expMaintenance::beginWizard()`. It writes the
-   marker `var/maintenance.json` with the reason `setup`, the run id of the setup log, the SHA-256 hash of a random
-   token and a **lease** that ends 30 minutes later (`expMaintenance::WIZARD_LEASE = 1800` seconds). The browser gets
-   the token as the cookie `exp_setup_wizard` (path `/`, HttpOnly, SameSite=Lax, Secure when the request came over
-   HTTPS).
-2. Every further wizard request renews the lease for another 30 minutes.
+1. Opening the wizard changes nothing: the first page (Welcome) is shown without maintenance, whoever asks for it
+   (a GET, a crawler, a reload). The first **posted** step of a run calls `expMaintenance::beginWizard()`. It writes
+   the marker `var/maintenance.json` with the reason `setup`, the run id of the setup log, the SHA-256 hash of a
+   random token and a **lease** that ends 15 minutes later (`expMaintenance::WIZARD_LEASE = 900` seconds). The
+   browser gets the token as the cookie `exp_setup_wizard` (path `/`, HttpOnly, SameSite=Lax, Secure when the request
+   came over HTTPS).
+2. Every further posted step renews the lease, and the cookie, for another 15 minutes, at the start of the request and
+   again at its end (a long step such as a package import holds it from its end). Nothing else renews it.
 3. Every other visitor, and every request without the cookie, is answered by the front controller before any setting
    or the database is read: HTTP **503**, a `Retry-After` header, `Cache-Control: no-store`, `X-Robots-Tag: noindex`,
    and the page `share/maintenance.html` (or the first active extension's `errors/maintenance.html`) with the title
@@ -89,6 +91,25 @@ While the wizard runs, the site is in **maintenance mode** for everybody except 
 
 The hold exists so that a second visitor cannot start a second wizard that would abandon or install over the first,
 and so that nobody meets a database that is half built.
+
+### The wizard on an installed site
+
+An administrator can still open `setup/init` on an installed site (the view needs the policy `setup/install`). It
+does not run there: the page says **"This site is already installed"** and that reinstalling is done with the
+kickstarter (`kickstart.ini`, then `php bin/php/kickstarter.php`) or with a fresh installation. Nothing is written: no
+maintenance marker, no run in `var/log/setup.log`. A site counts as installed when:
+
+- `var/site_installed.json` exists (the wizard's last page writes it), or
+- the request did not come through the validity check (`CheckValidity` is off, so the site is served normally), or
+- the request came through the validity check and the database in the settings holds content objects.
+
+For development, `settings/site.ini [SetupSettings] AllowWizardOnInstalledSite=enabled` (the default is `disabled`)
+lets the wizard run on an installed site, and then only after a confirm page: maintenance starts when that page's form
+is posted back with its one-time token (kept in the session), never from a GET. A posted step whose lease has run out
+returns to the confirm page.
+
+Before 6.0.15 any GET of `setup/init` started maintenance, so a crawler of a signed-in administrator could take an
+installed site offline with "The site is being set up" until the lease ran out or `exp:maintenance off` was run.
 
 ## 5.3 The pages, step by step
 

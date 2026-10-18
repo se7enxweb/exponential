@@ -1230,6 +1230,7 @@ return array(
       'expSettingsSecretRule'                                        => 'kernel/classes/ini/expsettingssecretrule.php',
       'expSettingsTarget'                                            => 'kernel/classes/ini/expsettingstarget.php',
       'expSetupLog'                                                  => 'kernel/classes/expsetuplog.php',
+      'expSetupWizardGuard'                                          => 'kernel/classes/expsetupwizardguard.php',
       'expSiteAccessOverview'                                        => 'kernel/classes/expsiteaccessoverview.php',
       'expStaticCacheRunner'                                         => 'kernel/setup/expstaticcacherunner.php',
       'expSubitemsAttributeColumn'                                   => 'kernel/classes/subitems/expsubitemsattributecolumn.php',
