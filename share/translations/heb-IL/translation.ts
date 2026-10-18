@@ -72578,6 +72578,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>הצגה וקידום של Exponential: מיצוב, הדגמות, התנגדויות, רישוי, מותג והגדלת הקהילה.</translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>עדכון עם Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>קבלו עדכונים ברגע שהם נדחפים ל-GitHub, ואז עדכנו את Composer בהתאם: כל שעה, כל יום, כל שבוע, כל חודש או רק בכל גרסה.</translation>
+    </message>
+    <message>
+        <source>Partners</source>
+        <translation>שותפים</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>שגרירים</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>מעצבים</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>חברות אחסון</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>יוצרי יישומים</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>יוצרי אתרים</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>תומכים</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>נותני חסות</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>לבנות, לארח ולמכור עם Exponential: תוכנית השותפים, סוגי השותפים, ההטבות, הדרישות ואיך להגיש מועמדות.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>להפיץ את הבשורה: נקודות לשיחה, אירועים, ערוצי הקהילה, הדגמות ועזרה למשתמשים חדשים.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>לעצב ערכות נושא ותבניות, לבנות הרחבות, ואז לפרסם, למכור ולתחזק אותן לאורך מחזור החיים שלהן.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>לארח אתרי Exponential: דרישות השרת, PHP ומסדי נתונים, Velocity, מטמון, אבטחה, גיבויים ותפעול.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>לבנות יישומים על Exponential: מודלי תוכן, מודולים ותצוגות, ממשקי ה-API, הרחבות ובדיקות.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>לבנות אתרים עם Exponential: תכנון האתר, מחלקות תוכן, עיצובים, פריסות, ההשקה והתחזוקה.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>לעזור לפרויקט לגדול: לתרום קוד, תיעוד, תרגומים ובדיקות, ולשתף את מה שאתם בונים.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>לממן את העבודה על Exponential: למה חסות חשובה, מה היא מממנת ואיך לתת חסות ל-7x ולקרן.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>שותפות</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>קידום וקהילה</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>עיצוב ערכות נושא</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>תבניות</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>פיתוח הרחבות</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>הרחבות ערכות נושא</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>פרסום והפצה</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>מכירת ערכות נושא ושירותים</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>מחזור חיי התחזוקה</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>אחסון</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>בניית יישומים</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>בניית אתרים</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>תמיכה ב-Exponential</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>חסות</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>עבודה עם Exponential כשותף: תוכנית השותפים, סוגי השותפים, ההטבות ואיך להגיש מועמדות.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>הפצת הבשורה על Exponential: נקודות לשיחה, אירועים, ערוצים וקבלת משתמשים חדשים.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>עיצוב ערכות נושא ל-Exponential: עיצובים, מערכת הדריסה, סגנונות, משאבים ונגישות.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>שפת התבניות: משתנים, אופרטורים, פונקציות, שליפות, הכללות ודריסות.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>בניית הרחבות צעד אחר צעד: מבנה, הגדרות, מודולים, תבניות, מחלקות ותרומה חזרה לפרויקט.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>אריזת ערכת נושא כהרחבה: מבנה, הגדרות, תלויות והעיצובים שהיא מוסיפה.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>פרסום ערכות נושא והרחבות: מאגרים, חבילות, גרסאות מופצות, מספרי גרסה ורישיונות.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>מכירת ערכות נושא והשירותים סביבן: הצעות, תמחור, תמיכה ועבודה עם לקוחות.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>לשמור על ערכות נושא והרחבות בחיים: שדרוגים, תאימות, תיקוני אבטחה והוצאה משימוש.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>אחסון Exponential: שרתים, PHP, מסדי נתונים, שרתי ווב, Velocity, מטמון, גיבויים ותפעול.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>בניית יישומים על Exponential: מודלי תוכן, מודולים, תצוגות, ממשקי API ובדיקות.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>בניית אתרים עם Exponential: תכנון, מבנה התוכן, עיצובים, פריסות וההשקה.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>לעזור ל-Exponential לגדול: תרומת קוד, תיעוד, תרגומים, בדיקות והמלצות מפה לאוזן.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>מימון Exponential: מה החסות מממנת ואיך לתת חסות ל-7x ולקרן Exponential.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
