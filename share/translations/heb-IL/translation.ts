@@ -72422,6 +72422,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>revision %s</source>
         <translation>מהדורה %s</translation>
     </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>מי עומד מאחורי Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential היא תוכנה חופשית עם היסטוריה של כמעט שלושים שנה. הכירו את החברה שמובילה אותה ואת הקרן ללא מטרות רווח שמפעילה את פרויקט הקוד הפתוח.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>מי זו 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>החברה שמאחורי Exponential, מהגרסה הראשונה ועד היום.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>מהי Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>הארגון ללא מטרות רווח, משפחת המוצרים וההתחייבויות שלו.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

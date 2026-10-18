@@ -72391,6 +72391,30 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>revision %s</source>
         <translation>choH mI&apos; %s</translation>
     </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Exponential chenmoHbogh ghom</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential tlhab ghun 'oH; DIS wejmaH Hoch qun ghaj. Exponential DevwI' kampa'nI' yIghov, 'ej Ho'DoS poSmoHbogh ghom yIghov.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>7x 'Iv?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Exponential DevwI' kampa'nI', wa'DIch vo' DaHjaj.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Exponential Foundation 'Iv?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>ghom, Doch qorDu' 'ej lay'mey.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

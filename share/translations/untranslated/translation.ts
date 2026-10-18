@@ -72491,5 +72491,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>revision %s</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

@@ -72408,6 +72408,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>revision %s</source>
         <translation>المراجعة %s</translation>
     </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>من يصنع Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential برنامج حر له تاريخ يمتد قرابة ثلاثين عامًا. تعرّف على الشركة التي تقوده والمؤسسة غير الربحية التي تدير مشروع المصدر المفتوح.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>من هي 7x؟</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>الشركة التي تقف وراء Exponential، من الإصدار الأول حتى اليوم.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>ما هي Exponential Foundation؟</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>المنظمة غير الربحية وعائلة المنتجات والتزاماتها.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

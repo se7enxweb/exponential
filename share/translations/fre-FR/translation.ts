@@ -73786,6 +73786,30 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>revision %s</source>
         <translation>révision %s</translation>
     </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Qui fait Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential est un logiciel libre dont l'histoire couvre près de trente ans. Découvrez l'entreprise qui le dirige et la fondation à but non lucratif qui gère le projet open source.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Qui est 7x ?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>L'entreprise derrière Exponential, de la première version à aujourd'hui.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Qui est l'Exponential Foundation ?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>L'organisation à but non lucratif, la famille de produits et ses engagements.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
