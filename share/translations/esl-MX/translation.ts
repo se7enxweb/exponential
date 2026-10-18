@@ -76781,6 +76781,182 @@ Gracias por la retroalimentación</translation>
         <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
         <translation>Recibe las actualizaciones en cuanto se suben a GitHub y luego actualiza Composer para que coincida: cada hora, cada día, cada semana, cada mes o solo en cada versión.</translation>
     </message>
+    <message>
+        <source>Partners</source>
+        <translation>Socios</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>Embajadores</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>Diseñadores</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Empresas de hosting</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>Creadores de aplicaciones</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>Creadores de sitios web</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>Colaboradores</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Patrocinadores</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Construye, hospeda y vende con Exponential: el programa de socios, las clases de socios, los beneficios, los requisitos y cómo postularte.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>Corre la voz: argumentos, eventos, canales de la comunidad, demos y ayuda a quienes empiezan.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>Diseña temas y plantillas, crea extensiones y luego publícalas, véndelas y mantenlas durante todo su ciclo de vida.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Hospeda sitios de Exponential: requisitos del servidor, PHP y bases de datos, Velocity, caché, seguridad, respaldos y operación.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Crea aplicaciones sobre Exponential: modelos de contenido, módulos y vistas, las API, extensiones y pruebas.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Crea sitios web con Exponential: planea el sitio, las clases de contenido, los diseños, los layouts, el lanzamiento y su mantenimiento.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>Ayuda a que el proyecto crezca: aporta código, documentación, traducciones y pruebas, y comparte lo que construyes.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Financia el trabajo en Exponential: por qué importa el patrocinio, qué paga y cómo patrocinar a 7x y a la Fundación.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>Alianzas</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>Difusión y comunidad</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>Diseño de temas</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Plantillas</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>Desarrollo de extensiones</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>Extensiones de temas</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>Publicación y distribución</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>Vender temas y servicios</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>Ciclo de vida y mantenimiento</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Alojamiento web</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>Crear aplicaciones</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>Crear sitios web</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Apoyar Exponential</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Patrocinio</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>Trabajar con Exponential como socio: el programa de socios, las clases de socios, los beneficios y cómo postularte.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Dar a conocer Exponential: argumentos, eventos, canales y bienvenida a los nuevos usuarios.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Diseñar temas para Exponential: diseños, el sistema de sobrescritura, estilos, recursos y accesibilidad.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>El lenguaje de plantillas: variables, operadores, funciones, fetch, inclusiones y sobrescrituras.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>Crear extensiones paso a paso: estructura, configuración, módulos, plantillas, clases y cómo devolver contribuciones.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>Empaquetar un tema como extensión: estructura, configuración, dependencias y los diseños que agrega.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>Publicar temas y extensiones: repositorios, paquetes, lanzamientos, versiones y licencias.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>Vender temas y los servicios relacionados: ofertas, precios, soporte y trabajo con clientes.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>Mantener vivos temas y extensiones: actualizaciones, compatibilidad, correcciones de seguridad y retiro.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Hospedar Exponential: servidores, PHP, bases de datos, servidores web, Velocity, caché, respaldos y operación.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Crear aplicaciones sobre Exponential: modelos de contenido, módulos, vistas, API y pruebas.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Crear sitios web con Exponential: planeación, estructura de contenido, diseños, layouts y lanzamiento.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Ayudar a que Exponential crezca: aportar código, documentación, traducciones, pruebas y la recomendación de boca en boca.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Financiar Exponential: qué paga el patrocinio y cómo patrocinar a 7x y a la Fundación Exponential.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

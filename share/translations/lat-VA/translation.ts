@@ -72555,6 +72555,182 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
         <translation>Renovationes cape statim ut in GitHub mittuntur, deinde Composer congruenter renova: singulis horis, diebus, hebdomadibus, mensibus aut tantum in singulis editionibus.</translation>
     </message>
+    <message>
+        <source>Partners</source>
+        <translation>Socii</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>Patroni</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>Designatores</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Societates hospitii</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>Applicationum conditores</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>Situum interretialium conditores</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>Fautores</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Sponsores</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Cum Exponential aedifica, hospitare, vende: programma sociorum, classes sociorum, commoda, condiciones et quomodo petas.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>Famam diffunde: argumenta, eventus, canales communitatis, demonstrationes et novis usoribus via monstranda.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>Themata et formas designa, extensiones aedifica, deinde eas per totam vitam ede, vende et cura.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Situs Exponential hospitare: condiciones servitoris, PHP et datorum bases, Velocity, memoria celer, securitas, exemplaria tuta et opera.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Applicationes in Exponential aedifica: exemplaria contenti, moduli et aspectus, API, extensiones et probationes.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Situs interretiales cum Exponential aedifica: situm consule, classes contenti, designationes, dispositiones, initium et cura.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>Incepto adiuva ut crescat: codicem, documenta, translationes et probationes confer, et quae aedificas communica.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Opus in Exponential sustine: cur sponsio refert, quid solvit et quomodo 7x et Fundationem sustineas.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>Societas</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>Patrocinium et communitas</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>Thematum designatio</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Formae</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>Extensionum evolutio</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>Extensiones thematum</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>Editio et distributio</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>Themata et officia vendere</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>Cursus curationis</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Hospitium</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>Applicationes aedificare</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>Situs interretiales aedificare</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Exponential sustinere</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Sponsio</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>Cum Exponential ut socius laborare: programma sociorum, classes sociorum, commoda et quomodo petas.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Famam Exponential diffundere: argumenta, eventus, canales et novi usores salutandi.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Themata Exponential designare: designationes, systema substitutionis, styli, res adiunctae et accessibilitas.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>Lingua formarum: variabiles, operatores, functiones, petitiones, inclusiones et substitutiones.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>Extensiones gradatim aedificare: structura, optiones, moduli, formae, classes et collatio retro.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>Thema ut extensionem colligere: structura, optiones, dependentiae et designationes quas addit.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>Themata et extensiones edere: repositoria, fasciculi, editiones, versiones et licentiae.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>Themata et officia circa ea vendere: oblationes, pretia, auxilium et opus cum clientibus.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>Themata et extensiones vivas servare: emendationes, congruentia, correctiones securitatis et dimissio.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Exponential hospitare: servitores, PHP, datorum bases, servitores interretiales, Velocity, memoria celer, exemplaria tuta et opera.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Applicationes in Exponential aedificare: exemplaria contenti, moduli, aspectus, API et probationes.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Situs interretiales cum Exponential aedificare: consilium, structura contenti, designationes, dispositiones et initium.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Exponential augere: codicem, documenta, translationes, probationes et famam conferre.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Exponential sustinere: quid sponsio solvat et quomodo 7x et Fundationem Exponential sustineas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
