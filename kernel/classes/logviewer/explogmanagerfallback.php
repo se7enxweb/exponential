@@ -105,6 +105,7 @@ class expLogManagerFallback implements expLogManagerInterface
                 $growth = (int)round( (int)$file['size'] / max( 1, $this->now() - $newest ) * 3600 );
             $avg = expLogFileStats::averageLineLength( $file['path'], (int)$file['size'] );
             $dir = dirname( $file['path'] );
+            $key = (string)$key;
             $out[$key] = array( 'key' => $key, 'id' => $file['id'], 'path' => $file['path'], 'name' => $file['name'],
                                 'label' => isset( $file['label'] ) ? $file['label'] : $file['name'], 'group' => $file['group'],
                                 'size' => (int)$file['size'], 'mtime' => (int)$file['mtime'],
@@ -115,7 +116,7 @@ class expLogManagerFallback implements expLogManagerInterface
                                 'owner' => self::ownerName( @fileowner( $file['path'] ) ), 'owner_group' => self::groupName( @filegroup( $file['path'] ) ),
                                 'managed' => empty( $file['configured'] ) );
         }
-        ksort( $out );
+        ksort( $out, SORT_STRING );
         return $this->logs = $out;
     }
 
@@ -242,7 +243,7 @@ class expLogManagerFallback implements expLogManagerInterface
             else if ( !empty( $file['configured'] ) )
                 $refused[$name] = 'webserver';
             else if ( isset( $logs[$file['key']] ) )
-                $keys[] = $file['key'];
+                $keys[] = (string)$file['key'];
             else
                 $refused[$name] = 'unknown';
         }
@@ -260,6 +261,8 @@ class expLogManagerFallback implements expLogManagerInterface
         $steps = array();
         foreach ( (array)$keys as $key )
         {
+            // array_keys() gives a key of digits only (404) as an integer
+            $key = (string)$key;
             if ( !isset( $logs[$key] ) || !$logs[$key]['managed'] )
             {
                 $unknown[] = (string)$key;
@@ -363,6 +366,7 @@ class expLogManagerFallback implements expLogManagerInterface
         $error = '';
         foreach ( $byKey as $key => $indexes )
         {
+            $key = (string)$key;
             $lock = isset( $logs[$key] ) && $logs[$key]['managed'] ? $this->lock( $key ) : null;
             foreach ( $indexes as $i )
             {

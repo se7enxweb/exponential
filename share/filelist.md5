@@ -3250,7 +3250,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-f4e9c49e3e28bacd4d06395eec237cdc  doc/changelogs/6.0/6.0.15.md
+1b30b79d04c4d25ae3ac02a8fc8d85eb  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5428,13 +5428,13 @@ f073bd9cc1ae524af2cdd0c8e4f411cb  kernel/classes/ini/expsettingstarget.php
 674fc071bc06939f6437294804567e78  kernel/classes/logviewer/explogactions.php
 6e88886cc2b5f33853f71ca6281a038f  kernel/classes/logviewer/explogbundle.php
 d129d7acf71d576d0594d36d7f3feb1e  kernel/classes/logviewer/explogdigest.php
-48f7b8fad0f6bafb6ef6ae871086cf44  kernel/classes/logviewer/explogfilelocator.php
+266446f6cac3cd4660a69419feeb3c68  kernel/classes/logviewer/explogfilelocator.php
 d28c555e0fae0bc6037dc04b569f6271  kernel/classes/logviewer/explogfilestats.php
-814a0514757a880b61a7e93a2128b2de  kernel/classes/logviewer/exploghealth.php
-e0254857176b4b5d0ce1b5d5ff07fa3d  kernel/classes/logviewer/explogmanager.php
+16a4e6c0850e6d1fb84762fa75307d86  kernel/classes/logviewer/exploghealth.php
+fa1617b8eae3fff979926b34cbf0a85b  kernel/classes/logviewer/explogmanager.php
 17ac42fcff5b733a2809e1ec218999b1  kernel/classes/logviewer/explogmanagerfactory.php
-69e661674fe6caf5505db35755d8b299  kernel/classes/logviewer/explogmanagerfallback.php
-dfc899d3ce066b3b45761fd24fe8e4e5  kernel/classes/logviewer/explogmanagerinterface.php
+b7bded09d1541c6beb853d4b664a3e9d  kernel/classes/logviewer/explogmanagerfallback.php
+f9b8bb148b79323c10a2976828832d14  kernel/classes/logviewer/explogmanagerinterface.php
 a08fdbc198b5a3b3b17afaf23abc6f01  kernel/classes/logviewer/explogparser.php
 4926c821fee4acab8f42f77dcc2ebca9  kernel/classes/logviewer/explogpermalink.php
 eb57a9b3e9f9d772150bedcc96f6db3d  kernel/classes/logviewer/explogratelimit.php
@@ -6093,7 +6093,7 @@ af13a15fd346cd3c53de7f9c8fb7bb81  kernel/private/classes/views/setup/handlerexte
 c978fbf49d160945a24910a5345f58a5  kernel/private/classes/views/setup/logsaction.php
 5613e8a4a7dc22405ce66b92c5f7174a  kernel/private/classes/views/setup/logsdigest.php
 9b2551dfafc9206d79fc1976d70c2f43  kernel/private/classes/views/setup/logsfeed.php
-3fb0a483efd880db1cd70ae0af23e580  kernel/private/classes/views/setup/logshealth.php
+c0bf37adaabebafce686b62586d0fa43  kernel/private/classes/views/setup/logshealth.php
 d10e3cba8b33146888b2f7ea70554193  kernel/private/classes/views/setup/logsmanage.php
 c52c0969e44db3dd969bdf15caf1427c  kernel/private/classes/views/setup/maintenance.php
 f3d410d2a77820dc00af01f2bb3ffc68  kernel/private/classes/views/setup/menuconfig.php
@@ -8629,6 +8629,7 @@ fa6dd2b59cf85f7b5e628292568c3244  tests/tests/kernel/logviewer/expLogHealthTest.
 e9db92ed572648e00f5f0fbf1956bd4c  tests/tests/kernel/logviewer/expLogManagerFallbackTest.php
 46f8bc21f64d617aab3f625ffd32b209  tests/tests/kernel/logviewer/expLogManagerTest.php
 32c949b29fc85c98a6e6272e09f157f7  tests/tests/kernel/logviewer/expLogMaskedFilterTest.php
+a2ee47366df073fa2599f92654e967ce  tests/tests/kernel/logviewer/expLogNumericKeyTest.php
 cf659ce9a5d8174daa838f20f12ac9b1  tests/tests/kernel/logviewer/expLogParserTest.php
 7ca6ac5eec7f9a7e802fd7f852a2849c  tests/tests/kernel/logviewer/expLogPermalinkTest.php
 777b688d58416f641f1bdc7aa6fc61a1  tests/tests/kernel/logviewer/expLogRedactorTest.php

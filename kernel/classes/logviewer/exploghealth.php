@@ -178,7 +178,8 @@ class expLogHealth
             {
                 try
                 {
-                    $effective = $manager->effectiveSettings( $key );
+                    // (string): a key of digits only (404) is an integer as the array key
+                    $effective = $manager->effectiveSettings( (string)$key );
                     if ( is_array( $effective ) && $effective )
                         $limits = $effective + $limits;
                 }

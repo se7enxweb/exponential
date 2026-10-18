@@ -264,6 +264,7 @@ class expLogFileLocator
     {
         if ( $this->labels === null )
             $this->labels = $this->config->hash( 'LogViewerSettings', 'LogLabel' );
+        $key = (string)$key;
         return isset( $this->labels[$key] ) ? (string)$this->labels[$key] : '';
     }
 
@@ -399,12 +400,14 @@ class expLogFileLocator
     /**
      * The file of a log key and rotation (0: the current file), when the viewer may open it.
      *
-     * @param string $key
+     * @param string|int $key an integer is a key of digits only (404) as PHP gives it from an array key
      * @param int $rotation
      * @return array|null as resolve()
      */
     public function resolveKey( $key, $rotation = 0 )
     {
+        if ( is_int( $key ) )
+            $key = (string)$key;
         if ( !is_string( $key ) || !preg_match( self::KEY_PATTERN, $key ) )
             return null;
         $rotation = (int)$rotation;

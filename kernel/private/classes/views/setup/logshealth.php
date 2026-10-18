@@ -65,7 +65,7 @@ class Logshealth extends \Exponential\Runnable\ModuleView
         $settings = \expLogHealth::settings( $logs, $manager );
         $viewLinks = array();
         foreach ( $summary['rows'] as $key => $row )
-            $viewLinks[$key] = \expLogPermalink::build( $key );
+            $viewLinks[$key] = \expLogPermalink::build( (string)$key );
 
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'log_health', $summary );
