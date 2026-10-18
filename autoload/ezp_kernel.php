@@ -1117,6 +1117,7 @@ return array(
       'expHelp'                                                      => 'kernel/classes/help/exphelp.php',
       'expHelpAllowlist'                                             => 'kernel/classes/help/exphelpallowlist.php',
       'expHelpAudience'                                              => 'kernel/classes/help/exphelpaudience.php',
+      'expHelpContentExport'                                         => 'kernel/classes/help/content/exphelpcontentexport.php',
       'expHelpContentInstaller'                                      => 'kernel/classes/help/content/exphelpcontentinstaller.php',
       'expHelpContentProvider'                                       => 'kernel/classes/help/content/exphelpcontentprovider.php',
       'expHelpContentRepository'                                     => 'kernel/classes/help/content/exphelpcontentrepository.php',

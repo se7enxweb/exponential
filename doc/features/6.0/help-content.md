@@ -17,6 +17,7 @@ administration like any other content, and delivered into the help of the admini
 | The validator of the style guide, `--fix` sets the sections from the audience | `./console exp:help:content check` |
 | The initial glossary and topics (the templates of the style guide, one manual) | `./console exp:help:content seed-glossary`, `seed-topics` |
 | What is installed, uninstall | `./console exp:help:content report`, `uninstall` |
+| An e-book (EPUB, PDF) of a manual | `./console exp:help:content export`, **Download EPUB/PDF** on the manual's page |
 | A topic in the help: `exphelp/topic/<help_id>`; a manual: `exphelp/manual/<remote_id>`; the list of manuals: `exphelp/manual` | admin, policy `exphelp/read` |
 | Context help as JSON: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>` | policy `exphelp/context` |
 
@@ -176,10 +177,35 @@ can never name `content/...`, and a provider that does not implement the interfa
 | `ContextHelpIds[<key>]` | none | `module/view` (or `module`, `design:module/view`) = help_id |
 | `AnonymousContextHelp` | `disabled` | `enabled`: the roles step gives Anonymous `exphelp/context` |
 
-## Phase 2
+## E-books
 
-E-book export (EPUB, PDF) of a manual with the PDF writer of the help's print and PDF download, the dashboard's
-list of topics with a past review date, editor conveniences.
+```
+./console exp:help:content export -s admin --manual=help-manual-editors --format=epub [--output=file] [--dry-run]
+./console exp:help:content export -s admin --manual=help-manual-editors --format=pdf
+```
+
+and on the manual's page in the help, **Download EPUB** and **Download PDF** (`exphelp/manual/<remote_id>?format=epub`).
+An e-book carries only the **Released** chapters and topics the user may read (on the command line: `--login`,
+default `admin`); a preview never goes into a book. The default file of the command is
+`var/<site>/cache/exphelp/ebooks/<remote_id>.<format>`; the download is made per request and not kept.
+
+- **EPUB 3** (`expHelpContentExport::writeEpub()`, PHP's zip extension): a title page (title, subtitle, short
+  description, edition, authors, license), one page per chapter and per topic in the order of the manual, a
+  navigation document with the nested contents, the figures from the storage with their alt text and caption,
+  `xml:lang` from the language of the manual, and the accessibility metadata of EPUB Accessibility 1.1
+  (`schema:accessMode`, `accessModeSufficient`, `accessibilityFeature`, `accessibilityHazard`,
+  `accessibilitySummary`, `dcterms:conformsTo`). Links between topics of the book stay inside the book; other topic
+  links go to the topic in the help. epubcheck and Ace by DAISY are not shipped: a site that publishes the books
+  runs them on the file.
+- **PDF** (`writePdf()`) uses the help's PDF writer (`expHelpPdfWriter`, the print and PDF download of help pages):
+  one document with the manual's title block, chapters and topics as headings, internal links and the figures. The
+  format is offered only where that writer is installed (`expHelpContentExport::formats()`).
+- Not yet: the DITA bookmap export and the e-book stored as a file object under "E-books" (`help-ebooks`), the
+  regular DITA export into a git repository (plan, delivery paths 3 and 4).
+
+## Later
+
+The dashboard's list of topics with a past review date, "Was this helpful?", editor conveniences.
 
 ## Classes
 

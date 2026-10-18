@@ -30,6 +30,8 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                  "./console exp:help:content seed-glossary -s ... [--file=] [--update]   the glossary (seed_glossary.php)\n" .
                                  "./console exp:help:content seed-topics -s ... [--file=] [--update] [--release]   topics and manuals (seed_topics.php)\n" .
                                  "./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state\n" .
+                                 "./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file]\n" .
+                                 "                                              an e-book of the Released topics of a manual (export_manual.php)\n" .
                                  "./console exp:help:content uninstall -s ... [--with-content] [--dry-run]   take the roles away (and the tree, classes,\n" .
                                  "                                              state group and sections with --with-content)\n" .
                                  "\n" .
@@ -41,7 +43,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json]', '', array(
+        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json][manual:][format:][output:]', '', array(
             'dry-run'      => 'Show what would change, change nothing',
             'fix'          => 'check: set the section of each topic, figure, chapter and manual from the audience',
             'file'         => 'seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json)',
@@ -50,6 +52,9 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             'with-content' => 'uninstall: also the help tree (into the trash), the classes, the state group and the sections',
             'login'        => 'The user who creates the classes and objects (default admin)',
             'json'         => 'Print one JSON document instead of the text',
+            'manual'       => 'export: the remote_id of the manual (help-manual-...)',
+            'format'       => 'export: epub or pdf',
+            'output'       => 'export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>)',
         ) );
 
         $arguments = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
@@ -63,7 +68,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             $this->shutdown( 2 );
             return;
         }
-        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall' );
+        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export' );
         if ( !in_array( $action, $known, true ) )
         {
             $cli->error( "Unknown action \"$action\": " . implode( ', ', $known ) . ' (./console exp:help:content --help)' );
@@ -112,13 +117,16 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 case 'report':
                     $this->printReport( \expHelpContentInstaller::report(), $json );
                     break;
+                case 'export':
+                    $code = $this->export( $options, $dryRun, $json );
+                    break;
                 case 'uninstall':
                     $installer = new \expHelpContentInstaller( $common );
                     $installer->uninstall( !empty( $options['with-content'] ) );
                     $code = $this->printChanges( $installer->changes(), $json );
                     break;
             }
-            if ( !$dryRun && $action !== 'report' )
+            if ( !$dryRun && !in_array( $action, array( 'report', 'export' ), true ) )
                 \expHelpContentProvider::clearCache();
         }
         catch ( \Exception $e )
@@ -151,6 +159,48 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             $changes = array_merge( $changes, $installer->changes() );
         }
         return $this->printChanges( $changes, $json );
+    }
+
+    protected function export( array $options, $dryRun, $json )
+    {
+        $cli = $this->cli();
+        $format = !empty( $options['format'] ) ? strtolower( (string)$options['format'] ) : 'epub';
+        if ( !in_array( $format, array( 'epub', 'pdf' ), true ) )
+        {
+            $cli->error( 'FAIL: --format is epub or pdf' );
+            return 2;
+        }
+        if ( !in_array( $format, \expHelpContentExport::formats(), true ) )
+        {
+            $cli->error( "FAIL: this installation cannot write $format (EPUB needs the zip extension, PDF the help's PDF writer)" );
+            return 2;
+        }
+        $provider = \expHelpContentProvider::instance();
+        $manual = $provider->manual( isset( $options['manual'] ) ? (string)$options['manual'] : '' );
+        if ( $manual === null )
+        {
+            $cli->error( 'FAIL: no manual with that remote_id (--manual=help-manual-...) the user may read' );
+            return 2;
+        }
+        $export = new \expHelpContentExport( $provider, $manual );
+        $file = !empty( $options['output'] ) ? (string)$options['output']
+              : rtrim( \expHelp::cacheDirectory(), '/' ) . '/ebooks/' . $manual['remote_id'] . '.' . $format;
+        $topics = count( $export->topics() );
+        if ( $dryRun )
+        {
+            $result = array( 'file' => $file, 'topics' => $topics, 'written' => false );
+            if ( $json )
+                $this->printJson( $result );
+            else
+                $cli->output( "Would write $file ($topics Released topics)" );
+            return $topics ? 0 : 1;
+        }
+        $result = $format === 'epub' ? $export->writeEpub( $file ) : $export->writePdf( $file );
+        if ( $json )
+            $this->printJson( $result );
+        else
+            $cli->output( sprintf( 'PASS wrote %s (%d bytes, %d topics)', $result['file'], $result['bytes'], $result['topics'] ) );
+        return 0;
     }
 
     protected function check( $fix, array $common, $json )
