@@ -81,7 +81,7 @@ div#maincolumn {ldelim} padding-inline-end: 20px; padding-inline-start: 50px; {r
 
 <div id="page" class="{$navigation_part.identifier} section_id_{first_set( $module_result.section_id, 0 )}">
 
-<div id="header">
+<div id="header" role="banner">
 <div id="header-design" class="float-break">
 
 {* HEADER ( SEARCH, LOGO AND USERMENU ) *}
@@ -124,7 +124,7 @@ document.getElementById('header-usermenu-logout').innerHTML += '<span class="hea
 
 <div id="canvas-top"></div>
 {* RIGHT MENU *}
-<div id="rightmenu">
+<div id="rightmenu" role="complementary" aria-label="{'Tools'|i18n( 'design/admin/pagelayout' )|wash}">
 {if or( $hide_right_menu, $collapse_right_menu )}
     <a id="rightmenu-showhide" class="show-hide-control" title="{'Show / Hide rightmenu'|i18n( 'design/admin/pagelayout/rightmenu' )}" href={'/user/preferences/set/admin_right_menu_show/1'|ezurl}></a>
     <div id="rightmenu-design"></div>
@@ -190,14 +190,14 @@ document.getElementById('header-usermenu-logout').innerHTML += '<span class="hea
 
 {* Main area START *}
 {if $hide_left_menu}
-    <div id="mainarea" role="main">
+    <div id="mainarea" role="main" tabindex="-1">
     {include uri='design:page_mainarea.tpl'}
     </div>
 {else}
-    <div id="maincontent" role="main">
+    <div id="maincontent" role="main" tabindex="-1">
     <div id="maincontent-design" class="float-break"><div id="fix">
 
-    <div id="path">
+    <div id="path" role="navigation" aria-label="{'Breadcrumb'|i18n( 'design/admin/pagelayout' )|wash}">
         <div id="path-design">
             {include uri='design:page_toppath.tpl'}
         </div>
@@ -223,7 +223,7 @@ document.getElementById('header-usermenu-logout').innerHTML += '<span class="hea
 
 {* keyed by the user's roles too: the context menu below shows entries by policy *}
 {cache-block keys=array( $access_type, $user_hash ) ignore_content_expiry}
-<div id="footer" class="float-break">
+<div id="footer" class="float-break" role="contentinfo">
 <div id="footer-design">
     {include uri='design:page_copyright.tpl'}
 </div>

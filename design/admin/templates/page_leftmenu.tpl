@@ -3,7 +3,7 @@
    width is dragged with the handle in the separator (leftmenu_widthcontrol.js, saved in admin_left_menu_size).
    $collapse_left_menu comes from pagelayout.tpl, which also sets the collapsed widths before the page shows. *}
 {def $left_collapsed = first_set( $collapse_left_menu, false() )}
-<div id="leftmenu"{if $left_collapsed} class="collapsed"{/if}>
+<div id="leftmenu"{if $left_collapsed} class="collapsed"{/if} role="navigation" aria-label="{'Side menu'|i18n( 'design/admin/pagelayout' )|wash}">
 <a id="leftmenu-showhide" class="show-hide-control" title="{'Hide / Show leftmenu'|i18n( 'design/admin/pagelayout/leftmenu' )}" href={concat( '/user/preferences/set/admin_left_menu_collapsed/', cond( $left_collapsed, '0', '1' ) )|ezurl}></a>
 <div id="leftmenu-design">
 
