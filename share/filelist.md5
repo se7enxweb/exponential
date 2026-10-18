@@ -3247,7 +3247,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e9b6a9ba76276456bf33196c12d894b2  doc/changelogs/6.0/6.0.15.md
+3024c0c411969c5af1fa5ca7dcf2877a  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4175,7 +4175,7 @@ e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 9141bf583876b5c6c08c3fad4c84a583  doc/install/16-migrating-from-ez-platform-and-ibexa.md
 c16be8cb22d2ac62ecb044e4af371544  doc/install/17-migration-reference.md
 ce0b3f77ce09c1b78d7b56dac34a2b38  doc/install/README.md
-a825a9bc6c933e9adefc00ab02151443  doc/languages.md
+cedd7afd38a85ea7b1ec5e2b221236d8  doc/languages.md
 96f498c48962f624f83d7484bd72ba84  doc/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/shop/examples/paypal/extensionfiles.html
@@ -4946,7 +4946,7 @@ c8d9a21567d8486e424fac34cee46c0e  extension/ezoe/translations/esl-ES/translation
 b59cd7d092dc44ca3d8ef742afe760f3  extension/ezoe/translations/esl-MX/translation.ts
 bb5bd9726ef6de446fc6c037ac7cd59a  extension/ezoe/translations/fin-FI/translation.ts
 68fdefd9ef2d189d414c17943634f75d  extension/ezoe/translations/fre-FR/translation.ts
-de8a301f79f5a80113b2a63d586edd79  extension/ezoe/translations/ger-DE/translation.ts
+4257b2c09f791814a57f3f8a04189f99  extension/ezoe/translations/ger-DE/translation.ts
 6582625d9098973a1a08f170f2caa3d2  extension/ezoe/translations/heb-IL/translation.ts
 27a456dec6d79d2cd1099446cf723ba6  extension/ezoe/translations/ita-IT/translation.ts
 83cb07d4be4e2d1cff883ca7d8b5d984  extension/ezoe/translations/jpn-JP/translation.ts
@@ -7633,7 +7633,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 6bfbf7d443f5dda3db40750157033954  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-78132b67e222b65a7a188c339d59761e  share/translations/ger-DE/translation.ts
+31c9e03f74ff01d350386123262f3708  share/translations/ger-DE/translation.ts
 c0b3e66c24e17c245f85e406e8463987  share/translations/heb-IL/translation.ts
 e97831dd958115eac1866c1c6edbac10  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -8921,8 +8921,8 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 70a5cdcff19c3d25379d38bdf6522d47  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
 f1ba69a86fb54b17de2d0692afd1fb34  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
-5b2d2c4d059e39193c2ff5a390e9e106  tests/tests/lib/ezi18n/expTranslationQualityTest.php
-03035027777233602e11f98b3195a191  tests/tests/lib/ezi18n/translation-identical-allowlist.json
+921c57ab4b3f2508544599e7de3c8d67  tests/tests/lib/ezi18n/expTranslationQualityTest.php
+04aa9a6a6dc5e8064abea0b933498d80  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg
