@@ -59,6 +59,9 @@
         {/if}
     </section>
 
+    {* ---- Who makes Exponential (parts/dashboard_about.tpl) ---- *}
+    {include uri='design:exphelp/parts/dashboard_about.tpl'}
+
     {* ---- Audiences ---- *}
     <section aria-labelledby="help-dash-audiences">
         <div class="a4-help-section-head">
