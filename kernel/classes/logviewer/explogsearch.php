@@ -78,7 +78,8 @@ class expLogSearch
             else
                 $c[$k] = $k === 'to' && preg_match( '/^\d{4}-\d{2}-\d{2}$/', $v ) ? $t + 86399 : $t;
         }
-        if ( $c['ip'] !== '' && !preg_match( '/^[0-9A-Fa-f.:]+$/', $c['ip'] ) )
+        // an x is a part the masks hide (203.0.x.x, 2001:db8:x:x): an address copied as the viewer shows it is a filter
+        if ( $c['ip'] !== '' && !preg_match( '/^[0-9A-Fa-fXx.:]+$/', $c['ip'] ) )
         {
             $c['invalid']['ip'] = 'not_an_address';
             $c['ip'] = '';
@@ -150,8 +151,8 @@ class expLogSearch
      *
      * @param array $entry from expLogParser
      * @param array $c criteria
-     * @param expLogRedactor|null $redactor the viewer's; with it, the request and the client address must also match
-     *                                      as the viewer shows them (expLogViewer::present())
+     * @param expLogRedactor|null $redactor the viewer's; with it, the request and the client address are compared
+     *                                      as the viewer is shown them (expLogViewer::present()), not as written
      * @return int 1 yes, 0 no, 2 no and every later entry is past the time range
      */
     public static function entryMatches( array $entry, array $c, ?expLogRedactor $redactor = null )
@@ -166,22 +167,62 @@ class expLogSearch
             return 0;
         if ( $c['siteaccess'] !== '' && strcasecmp( $entry['siteaccess'], $c['siteaccess'] ) !== 0 )
             return 0;
-        if ( $c['uri'] !== '' && stripos( $entry['url'], $c['uri'] ) === false )
-            return 0;
-        if ( $c['ip'] !== '' && strncasecmp( $entry['ip'], $c['ip'], strlen( $c['ip'] ) ) !== 0 )
-            return 0;
-        // compared as written above, these two would tell a masked viewer the hidden part one search at a time
-        // (203.0.113.7 shown as 203.0.x.x: does "203.0.1" find it? "203.0.11"? ...)
-        if ( $redactor !== null )
+        if ( $redactor === null )
         {
-            if ( $c['uri'] !== '' && stripos( $redactor->text( (string)$entry['url'] ), $c['uri'] ) === false )
+            if ( $c['uri'] !== '' && stripos( $entry['url'], $c['uri'] ) === false )
                 return 0;
-            if ( $c['ip'] !== '' && strncasecmp( $redactor->ip( (string)$entry['ip'] ), $c['ip'], strlen( $c['ip'] ) ) !== 0 )
+            if ( $c['ip'] !== '' && strncasecmp( $entry['ip'], $c['ip'], strlen( $c['ip'] ) ) !== 0 )
+                return 0;
+        }
+        else
+        {
+            // compared as written, these two would tell a masked viewer the hidden part one search at a time
+            // (203.0.113.7 shown as 203.0.x.x: does "203.0.1" find it? "203.0.11"? ...): compared as shown only, so a
+            // value copied from the page (203.0.x.x, token=***) finds its entries too
+            if ( $c['uri'] !== '' && !self::shownContains( $redactor, (string)$entry['url'], $c['uri'] ) )
+                return 0;
+            if ( $c['ip'] !== '' && !self::shownStartsWith( $redactor, (string)$entry['ip'], $c['ip'] ) )
                 return 0;
         }
         if ( $c['reference'] !== '' && !in_array( $c['reference'], $entry['references'], true ) )
             return 0;
         return 1;
+    }
+
+    /**
+     * Whether a request filter is in the request as the viewer is shown it. A filter with a mark of the masks (***)
+     * is also compared with the request as a masked viewer is shown it, so a link made from a masked view finds its
+     * entries for an unmasked viewer too; that view shows less, never more. Pure.
+     *
+     * @param expLogRedactor $redactor the viewer's
+     * @param string $url the request as written
+     * @param string $filter
+     * @return bool
+     */
+    public static function shownContains( expLogRedactor $redactor, $url, $filter )
+    {
+        if ( stripos( $redactor->text( $url ), $filter ) !== false )
+            return true;
+        return strpos( $filter, expLogRedactor::HIDDEN ) !== false && $redactor->masked() !== $redactor
+               && stripos( $redactor->masked()->text( $url ), $filter ) !== false;
+    }
+
+    /**
+     * Whether a client address, as the viewer is shown it, starts with a filter. A filter with an x (a part the
+     * masks hide) is also compared with the address as a masked viewer is shown it. Pure.
+     *
+     * @param expLogRedactor $redactor the viewer's
+     * @param string $ip the client address as written (masked already in the request logs: 203.0.x.x)
+     * @param string $filter
+     * @return bool
+     */
+    public static function shownStartsWith( expLogRedactor $redactor, $ip, $filter )
+    {
+        $len = strlen( $filter );
+        if ( strncasecmp( $redactor->ip( $ip ), $filter, $len ) === 0 )
+            return true;
+        return stripos( $filter, 'x' ) !== false && $redactor->masked() !== $redactor
+               && strncasecmp( $redactor->masked()->ip( $ip ), $filter, $len ) === 0;
     }
 
     /**
