@@ -13,8 +13,8 @@
  *    opening lines of the page ("for editors", "administrators", "developers", "end users");
  * 4. the default of the page's type: [AudienceSettings] TypeDefaults[<type>] and [CategorySettings] TypeDefaults[<type>].
  *
- * The audiences are editor, admin, developer and user ([AudienceSettings] Audiences[]); the categories and their
- * names and icons are [CategorySettings] Categories[], CategoryNames[] and CategoryIcons[]. An extension adds rules
+ * The audiences are editor, admin, developer, user, project-manager and sales-marketing ([AudienceSettings] Audiences[]);
+ * the categories and their names and icons are [CategorySettings] Categories[], CategoryNames[] and CategoryIcons[]. An extension adds rules
  * and categories in its own exphelp.ini.append.php.
  *
  * It also gives pages whose own title is unclear a clearer title and summary ([TitleSettings], pageTitle() and
@@ -31,6 +31,8 @@ class expHelpAudience
     const ADMIN = 'admin';
     const DEVELOPER = 'developer';
     const USER = 'user';
+    const PROJECT_MANAGER = 'project-manager';
+    const SALES_MARKETING = 'sales-marketing';
 
     /** The audiences and their names and icons (bootstrap-icons) */
     const AUDIENCES = array(
@@ -38,6 +40,8 @@ class expHelpAudience
         'admin'     => array( 'name' => 'Administrators', 'icon' => 'shield-lock' ),
         'developer' => array( 'name' => 'Developers', 'icon' => 'code-square' ),
         'user'      => array( 'name' => 'Users', 'icon' => 'person' ),
+        'project-manager' => array( 'name' => 'Project managers', 'icon' => 'diagram-3' ),
+        'sales-marketing' => array( 'name' => 'Sales & marketing', 'icon' => 'graph-up-arrow' ),
     );
 
     /** The categories, in their dashboard order, with names and icons */
@@ -52,6 +56,8 @@ class expHelpAudience
         'layouts'         => array( 'name' => 'Layouts', 'icon' => 'layout-sidebar-inset' ),
         'shortcuts'       => array( 'name' => 'Keyboard shortcuts', 'icon' => 'input-cursor-text' ),
         'support'         => array( 'name' => 'Help and support', 'icon' => 'info-circle' ),
+        'leadership'      => array( 'name' => 'Project leadership', 'icon' => 'diagram-3' ),
+        'business'        => array( 'name' => 'Sales and marketing', 'icon' => 'graph-up-arrow' ),
         'administration'  => array( 'name' => 'Administration', 'icon' => 'gear' ),
         'features'        => array( 'name' => 'Features', 'icon' => 'stars' ),
         'development'     => array( 'name' => 'Development', 'icon' => 'code-square' ),
@@ -77,6 +83,8 @@ class expHelpAudience
 
     /** [AudienceSettings] PathRules[] by default */
     const AUDIENCE_RULES = array(
+        'doc/help/leadership/*;project-manager',
+        'doc/help/business/*;sales-marketing',
         'doc/guides/README.md;editor,admin,developer',
         'doc/guides/getting-started.md;admin,editor,developer',
         'doc/glossary.md;editor,admin,developer,user',
@@ -102,6 +110,8 @@ class expHelpAudience
 
     /** [CategorySettings] PathRules[] by default */
     const CATEGORY_RULES = array(
+        'doc/help/leadership/*;leadership',
+        'doc/help/business/*;business',
         'doc/guides/README.md;getting-started',
         'doc/guides/getting-started.md;getting-started',
         'doc/guides/upgrading.md;install-upgrade',
@@ -406,7 +416,9 @@ class expHelpAudience
     {
         $aliases = array( 'editors' => 'editor', 'administrator' => 'admin', 'administrators' => 'admin', 'admins' => 'admin',
                           'developers' => 'developer', 'dev' => 'developer', 'users' => 'user', 'enduser' => 'user',
-                          'end-user' => 'user', 'end-users' => 'user', 'all' => '*' );
+                          'end-user' => 'user', 'end-users' => 'user', 'project-managers' => 'project-manager',
+                          'projectmanager' => 'project-manager', 'pm' => 'project-manager', 'sales' => 'sales-marketing',
+                          'marketing' => 'sales-marketing', 'sales-and-marketing' => 'sales-marketing', 'all' => '*' );
         $wanted = array();
         foreach ( $items as $item )
         {
@@ -433,7 +445,7 @@ class expHelpAudience
      */
     public function guessAudience( $path, $intro )
     {
-        if ( preg_match( '/-(editor|editors|administrator|admin|developer|user)\.[a-z]+$/', basename( $path ), $m ) )
+        if ( preg_match( '/-(project-manager|sales-marketing|editor|editors|administrator|admin|developer|user)\.[a-z]+$/', basename( $path ), $m ) )
             return $this->audienceList( array( $m[1] ) );
         $intro = strtolower( substr( (string)$intro, 0, 600 ) );
         $found = array();

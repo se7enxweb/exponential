@@ -79735,5 +79735,41 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Versions %from to %to</source>
         <translation>Versionen %from bis %to</translation>
     </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Projektmanager</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Vertrieb &amp; Marketing</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Projekte planen und leiten: Phasen und Rollen, Hosting-Wahl, Umfang, Checklisten, Qualitätsschranken, Releases und Risiken.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Exponential präsentieren und bewerben: Positionierung, Funktions-Highlights, Demos, Einwände, Lizenzen, Marke und Community.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Hier beginnen</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Projektleitung</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Vertrieb und Marketing</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Exponential-Projekte planen, durchführen und ausbauen: Phasen, Rollen, Checklisten, Risiken und die Zusammenarbeit mit der Community.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Exponential präsentieren und bewerben: Positionierung, Demos, Einwände, Lizenzen, Marke und das Wachstum der Community.</translation>
+    </message>
 </context>
 </TS>

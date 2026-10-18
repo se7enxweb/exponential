@@ -72611,5 +72611,41 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Versions %from to %to</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Project managers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

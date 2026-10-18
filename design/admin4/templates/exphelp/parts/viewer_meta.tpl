@@ -2,7 +2,7 @@
    and its category, each a link to the help search listing every page of that audience or category
    (exphelp/search/(audience)/<id>, /(category)/<id>), the source file in the repository, when it last changed, about
    how long it takes to read, and the link that opens the file on GitHub to edit it.
-   Variables: meta_page (document), meta_audiences (list of editor|admin|developer|user), meta_edit_url (may be ''),
+   Variables: meta_page (document), meta_audiences (list of editor|admin|developer|user|project-manager|sales-marketing), meta_edit_url (may be ''),
    meta_category (id, name, icon of the page's category, or false).
    The same file is in design/admin and design/admin4. *}
 {def $meta_minutes = cond( is_set( $meta_page.size ), $meta_page.size|div( 1200 )|ceil, 0 )
@@ -15,7 +15,7 @@
     <li class="a4-help-meta-item is-audience">
         <span class="a4-sr-only">{'For:'|i18n( 'kernel/exphelp' )}</span>
         {foreach $meta_audiences as $meta_audience}
-        <a class="a4-tag a4-help-pill is-{$meta_audience|wash}" href={concat( '/exphelp/search/(audience)/', $meta_audience )|ezurl}>{switch match=$meta_audience}{case match='editor'}{'Editors'|i18n( 'kernel/exphelp' )}{/case}{case match='admin'}{'Administrators'|i18n( 'kernel/exphelp' )}{/case}{case match='developer'}{'Developers'|i18n( 'kernel/exphelp' )}{/case}{case match='user'}{'Users'|i18n( 'kernel/exphelp' )}{/case}{case}{$meta_audience|wash}{/case}{/switch}</a>
+        <a class="a4-tag a4-help-pill is-{$meta_audience|wash}" href={concat( '/exphelp/search/(audience)/', $meta_audience )|ezurl}>{switch match=$meta_audience}{case match='editor'}{'Editors'|i18n( 'kernel/exphelp' )}{/case}{case match='admin'}{'Administrators'|i18n( 'kernel/exphelp' )}{/case}{case match='developer'}{'Developers'|i18n( 'kernel/exphelp' )}{/case}{case match='user'}{'Users'|i18n( 'kernel/exphelp' )}{/case}{case match='project-manager'}{'Project managers'|i18n( 'kernel/exphelp' )}{/case}{case match='sales-marketing'}{'Sales & marketing'|i18n( 'kernel/exphelp' )}{/case}{case}{$meta_audience|wash}{/case}{/switch}</a>
         {/foreach}
     </li>
     {/if}

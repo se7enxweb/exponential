@@ -73906,6 +73906,42 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Versions %from to %to</source>
         <translation>Versions %from à %to</translation>
     </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Chefs de projet</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Ventes et marketing</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Planifier et diriger des projets : phases et rôles, choix de l'hébergement, périmètre, listes de contrôle, critères de qualité, versions et risques.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Présenter et promouvoir Exponential : positionnement, fonctionnalités phares, démonstrations, objections, licences, marque et communauté.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Commencer ici</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Direction de projet</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Ventes et marketing</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Planifier, mener et faire grandir des projets Exponential : phases, rôles, listes de contrôle, risques et travail avec la communauté.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Présenter et promouvoir Exponential : positionnement, démonstrations, objections, licences, marque et croissance de la communauté.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

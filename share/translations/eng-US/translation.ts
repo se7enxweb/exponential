@@ -72791,5 +72791,41 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Versions %from to %to</source>
         <translation>Versions %from to %to</translation>
     </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Project managers</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Sales &amp; marketing</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Start here</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Project leadership</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Sales and marketing</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</translation>
+    </message>
 </context>
 </TS>
