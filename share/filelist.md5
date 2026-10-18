@@ -7757,7 +7757,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-4011902bc9b2ba2a585c3bb30c8919f3  tests/test-map.json
+e61d6eb5e63eb7ae79971d2e82c614b6  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -8351,6 +8351,13 @@ cb5cb17b3fe0cc32bee0dd8f2fb6b7e4  tests/tests/kernel/classes/ezurl_test.php
 fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthentication_test.php
 6d55864478b562693e77197e4a5e94c1  tests/tests/kernel/classes/ezuserdiscountrule_test.php
 43a4eefe5f44077ad2e85271207b9890  tests/tests/kernel/classes/ezworkflowevent_regression.php
+19fa0f5f2358b00a9b0a8b6fe0a822ca  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
+c9215155da1f84159e22350f6081b50d  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
+372bc63e285bedb76d17d3ad800f93d0  tests/tests/kernel/classes/help/expHelpIssueReportTest.php
+ead998cc3d4822efd40bb9da2d72d733  tests/tests/kernel/classes/help/expHelpLinksTest.php
+eb0d69dbd60c1cfb5f0b4d802e60851f  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
+f5af6333a0efac158e183917cda8b55a  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
+c654ab71a1da07293db99b646f219e94  tests/tests/kernel/classes/help/expHelpSearchTest.php
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 f6ecb43c903ad708479858b8bbb01746  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 28f13941e6a56ca4b6dba5757c6fadd0  tests/tests/kernel/classes/ini/command/IniCommandTest.php
