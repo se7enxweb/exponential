@@ -334,7 +334,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin/stylesheets/modules/content.css
-4bc53e2b188b0c9569b9a63df8e69ddd  design/admin/stylesheets/modules/help.css
+6f564ac9fd8aae34653b282c93b5ace3  design/admin/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin/stylesheets/modules/people.css
 be099ebbbccdeae8ab7385dc4fd795dc  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
@@ -1054,7 +1054,7 @@ d810c1bfa553da326702439802441b11  design/admin4/stylesheets/content.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin4/stylesheets/modules/content.css
-4bc53e2b188b0c9569b9a63df8e69ddd  design/admin4/stylesheets/modules/help.css
+6f564ac9fd8aae34653b282c93b5ace3  design/admin4/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin4/stylesheets/modules/people.css
 be099ebbbccdeae8ab7385dc4fd795dc  design/admin4/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin4/stylesheets/modules/structure.css
@@ -5453,7 +5453,7 @@ b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 3dbf137371ac711427fa2f3222a1ea2d  kernel/classes/help/exphelpaudience.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 f5c1ad322237308b48a3ef0e2530ef37  kernel/classes/help/exphelpcontextregistry.php
-50912e14de1bd05e875261b65a25aba0  kernel/classes/help/exphelpdocumentindex.php
+f622d7d28c30c94dff4e0a7f5ee08baf  kernel/classes/help/exphelpdocumentindex.php
 d737f4b8cee16a8ecd9af63aa5d73613  kernel/classes/help/exphelpfrontmatter.php
 99520b445ecac9996f6de9f6721a83a4  kernel/classes/help/exphelpfunctioncollection.php
 17d029ee9edac44ce5ec6bfdb6436178  kernel/classes/help/exphelphighlighter.php
@@ -5461,7 +5461,7 @@ fbe202253abbc1bce78eaaa73f6207ea  kernel/classes/help/exphelpissuereport.php
 0f072cc096b3f9ad306f5e7c52ca386d  kernel/classes/help/exphelplinkcheck.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
 d90531ed472a1724946fd1fd87aef5d1  kernel/classes/help/exphelpmarkdownrenderer.php
-f2f4f7222b423446d90fefa0a0ab25d6  kernel/classes/help/exphelpsearch.php
+36e626a06c75a30791bf36607dd2bd60  kernel/classes/help/exphelpsearch.php
 63e8afbb944019671f8b369642eb12d7  kernel/classes/ini/actions/expiniaction.php
 85b05708b2165d0dc398973d33ba0a0e  kernel/classes/ini/actions/expiniactionactions.php
 1e5387f9dde2f6bfbc97b60a92572340  kernel/classes/ini/actions/expiniactionadd.php
@@ -6109,7 +6109,7 @@ d9f32563966a8b1506a892bdb7f4f812  kernel/private/classes/views/contentfinder/sea
 8f40c5f71187f99e3485b1f94279a7ea  kernel/private/classes/views/exphelp/dashboard.php
 0aff94d13bc40ee02538815ceb7cc5b5  kernel/private/classes/views/exphelp/report.php
 4a454db30bc4abd848f89901f08b02aa  kernel/private/classes/views/exphelp/search.php
-1a91bdb5220ddeca762e35134f83f264  kernel/private/classes/views/exphelp/viewer.php
+e8984674a3ccd15bfebaa2a84ddbef61  kernel/private/classes/views/exphelp/viewer.php
 aad26363a27c2cb19acf4d33e055e53a  kernel/private/classes/views/ezinfo/about.php
 bb1ec8ba0c555192359eb58e004d8b65  kernel/private/classes/views/ezinfo/copyright.php
 cf544b983924d800e72fd6e275e038f1  kernel/private/classes/views/ezinfo/isalive.php
@@ -7708,7 +7708,7 @@ bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 99862a3b59cc584c3fcba01e689aaa17  share/transformations/hebrew.tr
 06361e73b7836778b599fa55f3300ebf  share/transformations/latin.tr
 9c0a310f00eb6c3334a8c41198ec3161  share/transformations/search.tr
-d0c2f111d4e1b519ebc6ed701f764dca  share/translations/ara-SA/translation.ts
+1fce590c5082295374c8a8073490f40a  share/translations/ara-SA/translation.ts
 460da6761ad0f2e5f4e9482a3688df97  share/translations/cat-ES/translation.ts
 4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
 dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
