@@ -97,6 +97,8 @@
         </button>
         <span id="a4-theme-status" class="a4-sr-only" role="status"></span>
     </div>
+    {* Help for this page, the context help (parts/a4_header_help.tpl) *}
+    {include uri='design:parts/a4_header_help.tpl'}
     {include uri='design:parts/a4_header_user.tpl'}
     <!-- begin::Sidebar Controls -->
         <div class="sidebar-controls">

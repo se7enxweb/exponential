@@ -122,7 +122,7 @@ installation on every switch. That is gone.
 - For a group of users: do not give their role `uiswitch/design`.
 - For one design: leave it out of `AllowedValues[]`, or remove its `DesignChain[]` entry.
 
-See [the guide](../../guides/ui-switch-design.md#turning-it-off-and-on) for the details.
+See [the guide](../../guides/ui-switch-design.md#7-turning-it-off-and-on) for the details.
 
 ## Related pages
 

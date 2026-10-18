@@ -257,8 +257,8 @@ class AdminLogoTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '36px', $phone['#header-logo .brand']['min-width'], 'the mark\'s link as large a target as the tools' );
         $this->assertSame( '36px', $phone['#header-logo .brand']['height'] );
         $tablet = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 576px)' ) );
-        $this->assertSame( 'clamp(6rem, calc(100vw - 454px), 230px)', $tablet['#header .searchblock input.searchtext']['width'],
-            'the field gives the wider logo its 44px, so the tools keep one row at 576px' );
+        $this->assertSame( 'clamp(4.5rem, calc(100vw - 502px), 230px)', $tablet['#header .searchblock input.searchtext']['width'],
+            'the field gives the wider logo its 44px and the help link its 48px, so the tools keep one row at 576px' );
     }
 
     /** The smallest and largest y of a path's absolute coordinates (the letters and squares use M, V, H, L, Q, Z) */

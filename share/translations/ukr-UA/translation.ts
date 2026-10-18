@@ -71333,4 +71333,703 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Немає локалей цього виду.</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Довідка</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Пошук</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Пошук у довідці</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Повідомити про помилку</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Копіювати</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Скопійовано</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Не вдалося скопіювати</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Нічого не знайдено</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Результатів: %count</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Пошук...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Пошук зараз недоступний.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Згорнути</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Розгорнути</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Жодна сторінка не містить усіх слів; ці містять деякі з них.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Очистити</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Початок роботи</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Вміст і редагування</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Адміністрування</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Розробка</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Встановлення й оновлення</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Примітки до випуску</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Історія</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Довідник</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 результат</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Адміністратори</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Редактори</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Розробники</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Кінцеві користувачі</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Копіювати код</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Розвивайте систему: розширення, шаблони, налаштування, API, командний рядок і оновлення.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Створюйте, редагуйте, перекладайте й публікуйте вміст: медіа, макети, пошук і редактор.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Керуйте інсталяцією: сайти, користувачі й ролі, кеші, журнали, безпека та стан системи.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Користуйтеся сайтом: ваш обліковий запис, вхід, двофакторна автентифікація та пошук.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Довідка до цієї сторінки</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Довідка: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Сховати розділ: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Показати розділ: %title</translation>
+    </message>
+    <message>
+        <source>&quot;Saving an article with an image fails with a 500 error&quot;, not &quot;Bug&quot; or &quot;Help&quot;.</source>
+        <translation>«Збереження статті із зображенням завершується помилкою 500», а не «Баг» чи «Допоможіть».</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>%count хв читання</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>Сторінок: %count</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to з %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(нове завдання на GitHub, відкривається в новому вікні)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(відкривається в новому вікні)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>1 сторінка</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>Добре повідомлення допомагає швидко виправити помилку. Ця сторінка підкаже, куди його надіслати й що написати, і дасть безпечний опис цієї інсталяції, який можна вставити.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>Хвилина перевірки часто відповідає на запитання або перетворює нечітке повідомлення на таке, яке можна виправити.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Проблема безпеки? Повідомте про неї приватно, а не в публічному завданні.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>Заголовок, що називає помилку</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>Про вразливість, яка дає змогу читати, змінювати або захоплювати те, що не належить, повідомляють приватно, щоб її виправили раніше, ніж про неї дізнаються інші.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Усі сторінки довідки</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Усі теми</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Усі типи</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension&apos;s repository.</source>
+        <translation>Помилку, яка виникає лише в одному розширенні (тип даних, модуль, власний дизайн), виправляють у репозиторії цього розширення.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>Розширення</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Попросіть адміністратора цього сайту дати відповідні рядки зведення помилок (Налаштування, Журнали). Повідомлення і час, коли воно з&apos;явилося, — це те, що найбільше потрібно супровіднику.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>Спершу запитайте спільноту: запитання про те, як щось працює, ідеї та досвід — саме для неї.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>Перш ніж повідомити</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>Перегляд за темами</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Категорія:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>Виберіть розширення</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>Копіювати діагностику</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Діагностика</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Діагностика як текст</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>Можливо, ви мали на увазі:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Не відкривайте про це публічне завдання, пул-реквест або допис на форумі.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>Написати на %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Кожна частина Exponential має власний публічний трекер на GitHub. Щоб відкрити завдання, потрібен обліковий запис GitHub.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>Редагувати на GitHub</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Усі</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Розширення</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Розширення</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>Рекомендовані посібники</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Заповніть те, що знаєте; форма підготує завдання з діагностикою цієї інсталяції. Нічого не надсилається на GitHub, доки ви самі не відкриєте там завдання й не надішлете його.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>Для</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>Для:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Знайшли проблему безпеки?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Знайшли помилку?</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
+        <translation>Посібники й довідник для всіх, хто працює з %site, створені з документації версії цієї інсталяції.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>Початок довідки</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>Чим ми можемо допомогти?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>Як повідомити про помилку</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>Укажіть версію, версію PHP і рушій (діагностика вище), що може зробити зловмисник, і кроки для відтворення. Не додавайте паролів, секретів і персональних даних. Першу відповідь ви отримаєте протягом одного робочого дня.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>Воно відкриється на GitHub із вашим текстом і діагностикою; перевірте його там і надішліть.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Гарячі клавіші</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Останні зміни</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>Не додавайте нічого приватного</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>Перегляньте журнали</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>Пошукайте наявне повідомлення</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>Бракує сторінки? Повідомте нам</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Ніколи не повідомляйте про це в публічному трекері чи на форумі. Скористайтеся приватним шляхом, описаним у розділі</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Нове завдання</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>Нове завдання для %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Далі</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Жодна сторінка не містить усіх слів; показано сторінки з будь-яким із них.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>Жодна сторінка не відповідає «%query».</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>Жодних паролів, ключів, адрес електронної пошти, імен людей чи даних клієнтів. Форма вилучає очевидне, але прочитайте завдання, перш ніж надсилати.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Не впевнені, що це помилка?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>На цій сторінці</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Відкриті завдання</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Відкрити зведення помилок</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>Відкрити центр довідки</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>Відкрити завдання в %tracker</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Огляд</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Виберіть свою роль, щоб побачити сторінки, написані для неї.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>Популярні сторінки для: %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>Підготувати завдання</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>Попередня й наступна сторінка</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Прочитати політику безпеки</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>Нещодавно оновлено</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Повторіть те, що ви робили. Зазначте, чи це стається щоразу, лише для одного користувача чи сторінки, і чи змінює щось очищення кешів.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>Приватно повідомити про вразливість на GitHub</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>Куди повідомити</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>Сторінки результатів</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>Результати для «%query»</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>Пошук посібників, налаштувань, команд…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Пошукайте серед відкритих завдань трекера нижче. Якщо ваша помилка там є, додайте те, що знаєте, замість відкривати нове.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Проблеми безпеки</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>Щось не так на цій сторінці? Повідомте про помилку</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Вихідний файл:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>Почніть звідси</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>Кроки для відтворення</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>Повідомте нам на GitHub: посібник покаже, який трекер підходить, що додати і які дані системи скопіювати, без жодних секретів.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>Можливо, відповідь уже задокументовано, зокрема відомі обмеження функції.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Зведення помилок показує різні повідомлення про помилки за останні години. Повідомлення і час, коли воно з&apos;явилося, — це те, що найбільше потрібно супровіднику.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>Найкоротший шлях від щойно відкритої сторінки до помилки, один крок на рядок.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>Версія, сервер і розширення цієї інсталяції. Тут ніколи немає паролів, ключів, хостів чи назв баз даних, адрес електронної пошти або шляхів поза інсталяцією.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Заголовок</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>Тема</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>Спробуйте менше або інші слова, іншу аудиторію чи тему.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>Спробуйте ще раз</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Type a word to search every help page.</source>
+        <translation>Введіть слово, щоб шукати на всіх сторінках довідки.</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>Використати це розширення</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Користувачі</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>Що сталося</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>Що мало статися натомість.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Що ви робили і що пішло не так. Наведіть повідомлення про помилку дослівно.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>Чого ви очікували</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>Куди повідомляти</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>Написати повідомлення</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Ваше завдання готове.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>аудиторії</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>очистити</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>переміщення результатами</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>відкрити</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>відкриває GitHub у новому вікні</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>відкривається в новому вікні</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>сторінок</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>пошук</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>розділів</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>Інтерфейс PHP</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Вебсервер</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>Операційна система</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>База даних</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Доступ до сайту</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Дизайн</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Мова</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Налагоджувальний вивід</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Кеш переглядів</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Активні розширення</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Створено</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (програмне забезпечення)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Помилки в ядрі, адмініструванні, вбудованих розширеннях і документації</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (сервер застосунків)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Помилки самого сервера Velocity: запуск, воркери, його кеш відповідей, HTTPS, команда exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Проєкт і спільнота Exponential</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Проєкт, вебсайт, екосистема і все, що не є помилкою в програмі</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Форуми спільноти Exponential</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Чат спільноти в Telegram</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Документація Exponential</translation>
+    </message>
+</context>
 </TS>

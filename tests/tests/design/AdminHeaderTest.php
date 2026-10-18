@@ -296,7 +296,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $top = self::file( 'design/admin4/templates/page_topmenu.tpl' );
         $this->assertSame( 1, substr_count( $top, $include ) );
         $order = array( '<div id="header-logo"', '<div id="a4-navbar-menu"', '<div id="header-search"', $include,
-                        '<div id="header-theme"', "{include uri='design:parts/a4_header_user.tpl'}", '<div class="sidebar-controls">' );
+                        '<div id="header-theme"', "{include uri='design:parts/a4_header_help.tpl'}", "{include uri='design:parts/a4_header_user.tpl'}", '<div class="sidebar-controls">' );
         $last = -1;
         foreach ( $order as $needle )
         {
@@ -320,13 +320,13 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
 
         $css = self::css( 'admin4.css' );
         $tablet = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 576px)' ) );
-        $this->assertSame( '3', $tablet['.header-site, .header-theme']['order'], 'same order as light/dark: the markup puts it first' );
+        $this->assertSame( '3', $tablet['.header-site, .header-theme, .header-help']['order'], 'same order as light/dark: the markup puts it first' );
         $this->assertSame( '4', $tablet['.header-user']['order'] );
         $phone = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px)' ) );
         $this->assertSame( 'auto', $phone['.header-site']['margin-inline-start'], 'the tools stand together at the row\'s end' );
         $this->assertArrayNotHasKey( '.header-theme', $phone, 'light/dark no longer pushes away from the site link' );
         $rules = AdminBaseStylesheetsTest::rules( $css );
-        $this->assertSame( 'flex', $rules['.header-site, .header-user']['display'] );
+        $this->assertSame( 'flex', $rules['.header-site, .header-help, .header-user']['display'] );
         $this->assertDoesNotMatchRegularExpression( '/\.site-preview\s*\{/', $css, 'the link takes .a4-header-btn as it is' );
         $this->assertDoesNotMatchRegularExpression( '/\.site-preview\b/', self::css( 'pagelayout.css' ), 'no rules for the old place beside the logo' );
     }
