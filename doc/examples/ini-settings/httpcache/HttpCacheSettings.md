@@ -1,0 +1,175 @@
+---
+title: httpcache.ini [HttpCacheSettings]
+audience: developer, admin
+category: examples
+summary: "The settings of [HttpCacheSettings] in httpcache.ini: Enabled, CachedSiteAccesses, MaxAge, StaleWhileRevalidate, TagHeader, APCu, MaxBodySize, QueryStringParameters ..."
+keywords: httpcache.ini, HttpCacheSettings, INI, setting, Enabled, CachedSiteAccesses, MaxAge, StaleWhileRevalidate, TagHeader, APCu, MaxBodySize, QueryStringParameters, ContentChangePurges
+type: generated
+generated: exp:help:examples
+---
+# httpcache.ini [HttpCacheSettings]
+
+The block `[HttpCacheSettings]` of `settings/httpcache.ini`, with 9 setting(s).
+
+Never edit `settings/httpcache.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
+
+- `settings/override/httpcache.ini.append.php` for every siteaccess,
+- `settings/siteaccess/<siteaccess>/httpcache.ini.append.php` for one siteaccess,
+- `extension/<extension>/settings/httpcache.ini.append.php` in an extension (read when the extension is active).
+
+## Enabled
+
+> enabled or disabled. The early exit and Velocity only serve what exists, and  
+> nothing is stored while this is disabled.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+Enabled=disabled
+*/ ?>
+```
+
+## CachedSiteAccesses
+
+> Siteaccesses whose pages are cached. Matched by host, by URI (URIMatchType  
+> element or map) or by host and URI (host\_uri); a siteaccess found by another  
+> rule (port, servervar, index, the text and regexp types) is never served  
+> early, since that cannot be known before the kernel starts.  
+
+Default: a list of 1: `site`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+# an empty "CachedSiteAccesses[]" first replaces the shipped list; without it the items are added
+CachedSiteAccesses[]
+CachedSiteAccesses[]=site
+*/ ?>
+```
+
+## MaxAge
+
+> Seconds a cached page may be served at most, even if nothing purged it.  
+
+Default: `3600`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+MaxAge=3600
+*/ ?>
+```
+
+## StaleWhileRevalidate
+
+> Seconds an expired (not purged) page may still be served, marked STALE, while  
+> one request renders it again. 0 serves nothing expired.  
+
+Default: `60`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+StaleWhileRevalidate=60
+*/ ?>
+```
+
+## TagHeader
+
+> The purge tags of each page (its nodes, objects and layouts) in one response  
+> header, for a purging proxy in front that reads them, or to see them while  
+> debugging: xkey (Varnish xkey vmod), Surrogate-Key (Fastly), Cache-Tag  
+> (Cloudflare), or another header name. disabled (the default) sends none:  
+> the tags name internal ids, so no visitor should see them otherwise.  
+> ProxyHeaders=enabled, the setting before this one, still means xkey.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+TagHeader=disabled
+*/ ?>
+```
+
+## APCu
+
+> Keep hot entries in APCu in front of the files (when APCu is usable).  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+APCu=enabled
+*/ ?>
+```
+
+## MaxBodySize
+
+> Largest page body, in bytes, that is stored.  
+
+Default: `2097152`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+MaxBodySize=2097152
+*/ ?>
+```
+
+## QueryStringParameters
+
+> Query string parameters a cached page may carry. A request with any other  
+> parameter is not cached (every random query string would add an entry).  
+> Exponential passes view parameters in the path, /(offset)/10.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+# an empty "QueryStringParameters[]" first replaces the shipped list; without it the items are added
+QueryStringParameters[]
+*/ ?>
+```
+
+## ContentChangePurges
+
+> What a content change purges. A whole page also holds what the view cache  
+> never did (the pagelayout's menus, layout blocks that run queries), and the  
+> tags of a change cannot name all of those yet.  
+>   all  - every cached page (safe; the default)  
+>   tags - only pages tagged with the changed objects, their nodes and parents,  
+>          and pages with layout blocks that run queries (their items are tagged)  
+> Changes made in the layout editor always purge every page.  
+
+Default: `all`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/httpcache.ini.append.php
+[HttpCacheSettings]
+ContentChangePurges=all
+*/ ?>
+```
+
+## Related
+
+- [All blocks of httpcache.ini](README.md)
+- [All INI files](../README.md)
+- [The settings page](../../../guides/settings-page.md)
+
+---
+
+Generated by `./console exp:help:examples` from `settings/httpcache.ini`. Do not edit this page: change the source and generate again ([how](../../README.md#how-the-generated-pages-are-made)). Free documentation: [GFDL 1.3 or later](../../../help/free-documentation.md).
