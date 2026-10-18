@@ -306,6 +306,41 @@
 .a4-help-noresults { display: grid; justify-items: center; gap: var(--a4-space-2); padding: var(--a4-space-6) var(--a4-space-4); text-align: center; }
 .a4-help-noresults p { margin: 0; }
 
+/* browsing a topic: its introduction, the topic links, the page numbers */
+.a4-help-searchpage .a4-pagehead-title .a4-icon { color: var(--a4-accent-text); }
+.a4-help-catintro { max-width: 80ch; color: var(--a4-ink); font-size: var(--a4-text-m); }
+.a4-help-topics__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-topics__list a.a4-tag,
+.a4-help-topics__list a.a4-tag:visited {
+  min-height: 28px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  color: var(--a4-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.a4-help-topics__list a.a4-tag:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-help-topics__list a.a4-tag.is-current { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.a4-help-topics__count { color: inherit; font-weight: 400; font-variant-numeric: tabular-nums; opacity: .8; }
+.a4-help-results__list.is-browse .a4-help-result__snippet { color: var(--a4-muted); }
+.a4-help-result__title .a4-icon { color: var(--a4-accent-text); }
+.a4-help-pager__pages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--a4-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-pager__page { min-width: var(--a4-control-h); justify-content: center; font-variant-numeric: tabular-nums; }
+.a4-help-pager__page.is-current { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+
 /* ---- dashboard: audience cards------------------------------------------------------------------------------- */
 
 .a4-help { container-type: inline-size; }
