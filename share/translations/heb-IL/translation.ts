@@ -50538,6 +50538,38 @@ See the requirements page for more information.</source>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>בגישה לפי שם מארח, המוסכמה היא %site לאתר, %admin לניהול ו־%editor לעריכת תוכן.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>אתר זה כבר מותקן</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>אשף ההתקנה מתקין את Exponential באתר חדש. הוא אינו פועל באתר מותקן, ופתיחתו אינה משנה דבר: האתר נשאר זמין.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>התקנה מחדש מתבצעת באמצעות ה־kickstarter (%file, ולאחר מכן php bin/php/kickstarter.php) או באמצעות התקנה חדשה.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>האם להתקין את האתר מחדש?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>אתר זה כבר מותקן. אשף ההתקנה מופעל עבור אתרים מותקנים (AllowWizardOnInstalledSite), אפשרות המיועדת לפיתוח בלבד.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>הפעלת האשף מעבירה את האתר כולו למצב תחזוקה: כל מבקר אחר יקבל דף תחזוקה עד לסיום האשף, או עד שיחלפו 15 דקות מאז שהאשף ננטש.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>הפעלת אשף ההתקנה</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
