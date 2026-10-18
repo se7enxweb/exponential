@@ -3,7 +3,8 @@
    names a tab. The header and the fragment simply leave out what they cannot use; this says why.
    * a MegaMenuTabs[] value whose [Topmenu_<tab>] has no MegaMenuTemplate or NavigationPartIdentifier
    * a key of the tab's MegaMenuLinks[] (in the section its [Topmenu_<tab>] MegaMenuSection names) that is no link of
-     that section (Links[]) and no <group>-<key> of a section its GroupSections[] adds: an unknown key, or the link of
+     that section (Links[]) and no <group>-<key> of a section its GroupSections[] adds (one, or several separated by
+     ";"): an unknown key, or the link of
      an extension that is not active here
    * more than 19 keys: only the first 19 links the user may open are shown
    Drawn in the page's cache blocks, so a message shows when the block is built, not on every page. *}
@@ -29,9 +30,12 @@
         {if $mmc_known|not}
             {set $mmc_parts = $mmc_key|explode( '-' )}
             {if and( $mmc_parts|count|gt( 1 ), is_set( $mmc_added[ $mmc_parts[0] ] ) )}
-                {if ezini_hasvariable( $mmc_added[ $mmc_parts[0] ], 'Links', 'menu.ini' )}
-                    {set $mmc_known = is_set( ezini( $mmc_added[ $mmc_parts[0] ], 'Links', 'menu.ini' )[ $mmc_parts|extract_right( $mmc_parts|count|dec )|implode( '-' ) ] )}
-                {/if}
+                {* the group adds one section or several, separated by ";" *}
+                {foreach $mmc_added[ $mmc_parts[0] ]|explode( ';' ) as $mmc_added_section}
+                    {if and( $mmc_known|not, $mmc_added_section, ezini_hasvariable( $mmc_added_section, 'Links', 'menu.ini' ) )}
+                        {set $mmc_known = is_set( ezini( $mmc_added_section, 'Links', 'menu.ini' )[ $mmc_parts|extract_right( $mmc_parts|count|dec )|implode( '-' ) ] )}
+                    {/if}
+                {/foreach}
             {/if}
         {/if}
         {if $mmc_known|not}

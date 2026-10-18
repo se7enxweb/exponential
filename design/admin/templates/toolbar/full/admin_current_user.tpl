@@ -22,7 +22,7 @@
     <ul>
     <li><div>
     {if $current_user.contentobject.can_edit}
-        <a href={concat( '/content/edit/',  $current_user.contentobject_id, '/' )|ezurl} title="{'Change name, email, password, etc.'|i18n( 'design/admin/pagelayout' )}">{'Change information'|i18n( 'design/admin/pagelayout' )}</a>
+        <a href={'/user/edit'|ezurl} title="{'Change name, email, password, etc.'|i18n( 'design/admin/pagelayout' )}">{'Change information'|i18n( 'design/admin/pagelayout' )}</a>
     {else}
         <span class="disabled">{'Change user info'|i18n( 'design/admin/pagelayout' )}</span>
     {/if}</div></li>

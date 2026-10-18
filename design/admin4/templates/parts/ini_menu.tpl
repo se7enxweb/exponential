@@ -31,7 +31,8 @@
    top menu (left out of [TopAdminMenu] Tabs[], named in HiddenTabs[], or named in SetupTabs[] for a user who may
    open setup/menu); while the tab is shown, the group and the
    links of its GroupLinks_<group>[] are not drawn at all. GroupSections[<group>]=<section> (optional) adds the links
-   of another menu.ini section to the group, after its own: that section's Links[], LinkNames[] (translated in its
+   of another menu.ini section to the group, after its own (several sections separated by ";", in that order; keep
+   their link keys apart, as an item is <group>-<key>): that section's Links[], LinkNames[] (translated in its
    context, design/admin/parts/<name>/menu), PolicyList[], PolicyList_<key>[], Enabled_<key>[] and tile settings; the
    i18n_hash names them as <group>-<key>. A link of this menu to an address the added section has too is left out, so
    the moved tab's menu keeps it. Both are read only where groups are (doc/features/6.0/admin4-design.md, "Moving a
@@ -163,9 +164,12 @@
                 {continue}
             {/if}
             {set $ini_menu_group_list = $ini_menu_group_list|append( $group )}
-            {if and( $group_section, $group_section|ne( $ini_section ), ezini_hasvariable( $group_section, 'Links', 'menu.ini' ) )}
-                {set $menu_sections = $menu_sections|append( hash( 'section', $group_section, 'group', $group ) )}
-            {/if}
+            {* one section, or several separated by ";" (the Dashboard's mega menu: Leftmenu_my;Leftmenu_design), in that order *}
+            {foreach $group_section|explode( ';' ) as $group_section_name}
+                {if and( $group_section_name, $group_section_name|ne( $ini_section ), ezini_hasvariable( $group_section_name, 'Links', 'menu.ini' ) )}
+                    {set $menu_sections = $menu_sections|append( hash( 'section', $group_section_name, 'group', $group ) )}
+                {/if}
+            {/foreach}
         {/foreach}
         {undef $group_tabs $group_sections $top_tabs $hidden_tabs $setup_tabs $group_tab $group_section}
     {/if}

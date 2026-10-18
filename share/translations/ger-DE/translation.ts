@@ -16884,6 +16884,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/parts/audit/menu</name>
     <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Die Ereignisse von Exponential Intelligence in der Audit-Konsole.</translation>
+    </message>
+    <message>
         <source>Health, activity, security and alerts at a glance.</source>
         <translation>Zustand, Aktivität, Sicherheit und Alarme auf einen Blick.</translation>
     </message>
@@ -16970,6 +16974,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/parts/design/menu</name>
     <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Bilder ohne Alternativtext und Vorschläge dafür.</translation>
+    </message>
+    <message>
         <source>Templates</source>
         <translation type="obsolete">Templates</translation>
     </message>
@@ -17035,6 +17043,62 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 </context>
 <context>
     <name>design/admin/parts/my/menu</name>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Ihre Arbeit</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Aktivität und Audit</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Ihre Startseite: Ihre Arbeit, Ihre Aufgaben und was sich geändert hat.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Elemente, die auf Ihre Freigabe warten, und Ihre, die auf andere warten.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Ihre Elemente, die auf die Veröffentlichung warten.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Die Entwürfe, die Sie begonnen und noch nicht veröffentlicht haben.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>Die Inhalte, die Sie markiert haben, um sie wiederzufinden.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>Die Startseite von Exponential Intelligence: ihre Werkzeuge und ihre Nutzung.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Threads, die Inhalte mit KI ändern, unter Ihrer Kontrolle.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Inhalte, in Schritten geschrieben: die Läufe und ihre Prüfpunkte.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>Die KI-Anfragen, ihre Tokens und ihre Kosten.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Wie die KI-Funktionen arbeiten und wie Sie sie nutzen.</translation>
+    </message>
     <message>
         <source>My notification settings</source>
         <translation>Meine Benachrichtigungseinstellungen</translation>

@@ -49,7 +49,7 @@
                 {if $a4_user_help}<li><span class="disabled" aria-disabled="true"><span class="a4-icon a4-bi-question-circle" aria-hidden="true"></span>{'Help center'|i18n( 'design/admin/pagelayout' )|wash}</span></li>{/if}
             {else}
                 {if $current_user.contentobject.can_edit}
-                <li><a href={concat( '/content/edit/', $current_user.contentobject_id, '/' )|ezurl} title="{'Change name, email, password, etc.'|i18n( 'design/admin/pagelayout' )|wash}"><span class="a4-icon a4-bi-pencil-square" aria-hidden="true"></span>{'Change information'|i18n( 'design/admin/pagelayout' )|wash}</a></li>
+                <li><a href={'/user/edit'|ezurl} title="{'Change name, email, password, etc.'|i18n( 'design/admin/pagelayout' )|wash}"><span class="a4-icon a4-bi-pencil-square" aria-hidden="true"></span>{'Change information'|i18n( 'design/admin/pagelayout' )|wash}</a></li>
                 {/if}
                 {if fetch( 'user', 'can_open', hash( 'uri', 'user/password' ) )}
                 <li><a href={'/user/password/'|ezurl}><span class="a4-icon a4-bi-key" aria-hidden="true"></span>{'Change password'|i18n( 'design/admin/pagelayout' )|wash}</a></li>

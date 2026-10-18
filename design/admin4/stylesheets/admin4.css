@@ -212,6 +212,12 @@ body,
   transition: background-color .15s ease, color .15s ease;
 }
 .navbar-menu li a > .a4-icon { margin-inline-end: 0.4em; }   /* menu.ini [Topmenu_<tab>] Icon */
+/* In the header's one-line row the tabs show their icons from 1600px: below, the row needs that room for the tabs
+   themselves (about 22px a tab; at 1440px it keeps Setup and the mega menus' carets in the row). In "More" and in the
+   phone menu's tiles the icons stay. */
+@media screen and (min-width: 576px) and (max-width: 1599.98px) {
+  .navbar-menu .navbar-bar > li > a > .a4-icon { display: none; }
+}
 .navbar-menu li a:hover {
   background-color: var(--a4-header-hover);
   color: var(--a4-header-ink);
@@ -1060,11 +1066,24 @@ body,
 .a4-mega-toggle,
 .a4-mega-panel { display: none; }
 @media screen and (min-width: 576px) {
+  /* the button is a caret inside the tab's pill, in its end padding (24px instead of 12px): a tab with a mega menu is
+     12px wider than one without (26px with the button beside it until 6.0.15), and a selected tab keeps its pill, the
+     caret in it. The tab stays a link (Enter follows it); the caret is the button (Enter, Space, ArrowDown open). */
   .navbar-bar > li.a4-mega-item {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 2px;
   }
+  .navbar-menu .navbar-bar > li.a4-mega-item > a,
+  .navbar-menu .navbar-bar > li.a4-mega-item > a.selected,
+  .navbar-menu .navbar-bar > li.a4-mega-item > a.selected:hover { padding-inline-end: var(--a4-space-5); }
+  .navbar-bar > li.a4-mega-item > .a4-mega-toggle {
+    position: absolute;
+    inset-inline-end: 0;
+    top: 50%;
+    margin-top: calc(-1 * var(--a4-space-3));
+  }
+  .navbar-bar > li.a4-mega-item > a.selected + .a4-mega-toggle { color: var(--a4-on-accent); }
   .a4-mega-toggle {
     display: inline-flex;
     align-items: center;
@@ -1112,6 +1131,14 @@ body,
     white-space: normal;
   }
   .a4-mega-panel[hidden] { display: none; }
+  /* under its own tab (a4_mega_menu.js sets --a4-mega-start: the tab's start edge, kept inside the window with the
+     margin of the centred card, --a4-space-5); right to left the start is the right edge. Without the script the
+     panel stays centred under the header. */
+  .a4-mega-panel.is-anchored {
+    inset-inline-start: var(--a4-mega-start, var(--a4-space-5));
+    inset-inline-end: auto;
+    margin-inline: 0;
+  }
   /* the hover bridge: the gap between the header and the card belongs to the panel, so the mouse crossing it does
      not leave the menu (the script's 400 ms close delay covers the rest of the way from the tab) */
   .a4-mega-panel::before {
@@ -1133,6 +1160,23 @@ body,
   .a4-mega-group {
     flex: 0 0 17rem;
     margin: 0;
+  }
+  /* menu.ini [Topmenu_<tab>] MegaMenuLayout=wide (the Dashboard): a long choice in up to four balanced columns of
+     15rem, so it fits the window's height instead of scrolling: the card takes the width of four columns where the
+     window has it, three at 960px (200% zoom), two below; a group is never split between two columns */
+  .a4-mega-panel.a4-mega-wide {
+    width: min(calc(4 * 15rem + 3 * var(--a4-space-5) + 2 * var(--a4-space-5) + 2px), calc(100vw - 2 * var(--a4-space-5)));
+    max-width: none;
+  }
+  .a4-mega-wide .a4-mega-groups {
+    display: block;
+    max-width: none;
+    columns: 15rem 4;
+    column-gap: var(--a4-space-5);
+  }
+  .a4-mega-wide .a4-mega-group {
+    break-inside: avoid;
+    margin-bottom: var(--a4-space-4);
   }
   .a4-mega-group-title {
     margin: 0 0 var(--a4-space-1);

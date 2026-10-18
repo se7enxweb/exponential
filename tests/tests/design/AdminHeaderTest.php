@@ -112,7 +112,9 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
                          "var more = document.querySelector('#header .a4-nav-more');",
                          "toggle.classList.toggle('has-current', !!list.querySelector('[aria-current]'));",
                          "button.setAttribute('aria-expanded', state ? 'true' : 'false');", "e.key === 'Escape'", "e.key === 'ArrowDown'",
-                         "nav.classList.toggle('a4-nav-fits', wide.matches);", "window.matchMedia('(min-width: 576px)')" ) as $needle )
+                         "nav.classList.toggle('a4-nav-fits', wide.matches);", "window.matchMedia('(min-width: 576px)')",
+                         // the current page's tab is the last to leave the row (setup/menu with many tabs: Setup, not "More", selected)
+                         "if (tabs[i] === current) continue;", "c.tagName === 'A' && c.hasAttribute('aria-current')", "if (current && !fits()) {" ) as $needle )
             $this->assertStringContainsString( $needle, $js, $needle );
         // the tab the user is on stays recognisable inside "More"
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );

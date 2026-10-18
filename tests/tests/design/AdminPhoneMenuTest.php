@@ -254,7 +254,7 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         $header = self::template( 'admin4/templates/parts/a4_header_user.tpl' );
         $this->assertStringContainsString( '<li class="a4-phone-only a4-phone-user">', $user );
         foreach ( array( '{if $current_user.is_logged_in}', '{if $current_user.contentobject.can_edit}', "{if fetch( 'user', 'can_open', hash( 'uri', 'user/password' ) )}",
-                         "{concat( '/content/edit/', \$current_user.contentobject_id, '/' )|ezurl}", "{'/user/password/'|ezurl}", "{'/mailpreferences/settings'|ezurl}",
+                         "{'/user/edit'|ezurl}", "{'/user/password/'|ezurl}", "{'/mailpreferences/settings'|ezurl}",
                          "'Change information'", "'Change password'", "'My e-mail preferences'", "'Change user info'", "'Open your user object'" ) as $needle )
         {
             $this->assertStringContainsString( $needle, $user, $needle );

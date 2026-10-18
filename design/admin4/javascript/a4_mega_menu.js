@@ -6,7 +6,9 @@
  * hover preview of another tab.
  *
  * The WAI-ARIA disclosure navigation pattern, not a menu: the tab stays a link, the button beside it
- * (.a4-mega-toggle, aria-expanded, aria-controls) opens and closes a panel of plain links under the header.
+ * (.a4-mega-toggle, aria-expanded, aria-controls) opens and closes a panel of plain links under the header. The
+ * button is a caret inside the tab's pill (admin4.css); the panel is placed under its own tab, its start edge at the
+ * tab's (the right edge right to left), moved back inside the window when the tab is near its end (place()).
  * - A click, Enter or Space on the button opens or closes the panel; ArrowDown opens it and goes to its first link.
  *   Tab goes through the panel's links in their order; the focus leaving the tab, the button and the panel closes
  *   it, as does a click outside them. Escape closes it and gives the focus back to the button when the focus was in
@@ -228,6 +230,7 @@
                 body.innerHTML = '';
                 body.appendChild(groups);
                 markCurrent(panel);
+                place();   // the links make the panel wider: under the tab again
                 panel.removeAttribute('aria-busy');
             }, function (failure) {
                 loading = null;
@@ -243,6 +246,25 @@
             return loading;
         }
 
+        // the panel under its own tab: its start edge at the tab's start edge (the right edge right to left), moved back
+        // inside the window when the tab is too near its end, with the margin of admin4.css (--a4-space-5, 24px) on both
+        // sides. Set as the panel's --a4-mega-start through the CSSOM (no style attribute in the markup); admin4.css
+        // reads it once the panel is .is-anchored. Without the script the panel is centred under the header.
+        function place() {
+            if (panel.hidden || !panel.style || typeof panel.style.setProperty !== 'function' || !item.getBoundingClientRect) return;
+            var root = document.documentElement;
+            var width = (root && root.clientWidth) || window.innerWidth || 0;
+            var margin = 24;
+            var rtl = !!(window.getComputedStyle && window.getComputedStyle(item).direction === 'rtl');
+            var tab = item.getBoundingClientRect();
+            panel.classList.add('is-anchored');
+            // measured at the window's start first: further in, the window leaves the card less room and it would shrink
+            panel.style.setProperty('--a4-mega-start', margin + 'px');
+            var start = rtl ? width - tab.right : tab.left;
+            start = Math.max(margin, Math.min(start, width - margin - panel.offsetWidth));
+            panel.style.setProperty('--a4-mega-start', Math.round(start) + 'px');
+        }
+
         function set(next, focusToggle) {
             stop();
             if (next && !usable()) next = null;
@@ -252,6 +274,7 @@
             item.classList.toggle('is-mega-open', !!next);
             if (next) {
                 menus.forEach(function (m) { if (m !== self) m.close(); });
+                place();
                 load();
             }
             else if (focusToggle) toggle.focus();
@@ -330,6 +353,7 @@
         // narrower than one header row, or the tab moved into "More": closed
         function check() {
             if (mode && !usable()) set(null, false);
+            else if (mode) place();
         }
         if (wide.addEventListener) wide.addEventListener('change', check);
         else if (wide.addListener) wide.addListener(check);
