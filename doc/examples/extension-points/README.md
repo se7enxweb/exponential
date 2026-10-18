@@ -43,7 +43,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [setup.ini](setup.md) | kernel | 1 | TestClass |
 | [shop.ini](shop.md) | kernel | 7 | MathHandler, ExchangeRatesUpdateHandler, ExtensionDirectories, ExtensionDirectories, Handler, ExtensionDirectories ... |
 | [shopaccount.ini](shopaccount.md) | kernel | 4 | Repositories, ExtensionRepositories, Handler, Handler |
-| [site.ini](site.md) | kernel | 24 | purgeClass, DatabaseImplementation, Listeners, Implementation, Listeners, ExtensionDirectory ... |
+| [site.ini](site.md) | kernel | 25 | purgeClass, DatabaseImplementation, Listeners, Implementation, Listeners, ExtensionDirectory ... |
 | [subitemscolumns.ini](subitemscolumns.md) | kernel | 112 | Class, Class, Class, Class, Class, Class ... |
 | [template.ini](template.md) | kernel | 2 | DefaultFormatter, OutputFormatter |
 | [uiswitch.ini](uiswitch.md) | kernel | 2 | Class, Class |

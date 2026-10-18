@@ -2,14 +2,14 @@
 title: site.ini [UserSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [UserSettings] in site.ini: MaxNumberOfFailedLogin, TrustedIPList, ShowMessageIfExceeded, MinPasswordLength, GeneratePasswordIfEmpty, GeneratePasswordLength, AnonymousUserID, DefaultUserPlacement ..."
-keywords: site.ini, UserSettings, INI, setting, MaxNumberOfFailedLogin, TrustedIPList, ShowMessageIfExceeded, MinPasswordLength, GeneratePasswordIfEmpty, GeneratePasswordLength, AnonymousUserID, DefaultUserPlacement, DefaultSectionID, RegistrationFeedback, RegistrationEmail, VerifyUserType, PasswordInRegistrationEmail, EmailRegistrationInfo, ActivationByAdministratorSendsApprovalMail, RegistrationAdminLinks, RegistrationAdminBaseURL, RegistrationAdminSiteAccess, RegistrationActionTTL, RegisterAutoLogin, UserClassID, UserGroupClassID, UserClassGroupID, UserCreatorID, DeactivateAndMove, DeactivatedUserGroupNodeID, HashType, SiteName, UpdateHash, AuthenticateMatch
+summary: "The settings of [UserSettings] in site.ini: MaxNumberOfFailedLogin, TrustedIPList, ShowMessageIfExceeded, MinPasswordLength, WeakPasswordCheck, WeakPasswordFile, ForgotPasswordKeyLifetime, GeneratePasswordIfEmpty ..."
+keywords: site.ini, UserSettings, INI, setting, MaxNumberOfFailedLogin, TrustedIPList, ShowMessageIfExceeded, MinPasswordLength, WeakPasswordCheck, WeakPasswordFile, ForgotPasswordKeyLifetime, GeneratePasswordIfEmpty, GeneratePasswordLength, AnonymousUserID, DefaultUserPlacement, DefaultSectionID, RegistrationFeedback, RegistrationEmail, VerifyUserType, PasswordInRegistrationEmail, EmailRegistrationInfo, ActivationByAdministratorSendsApprovalMail, RegistrationAdminLinks, RegistrationAdminBaseURL, RegistrationAdminSiteAccess, RegistrationActionTTL, RegisterAutoLogin, UserClassID, UserGroupClassID, UserClassGroupID, UserCreatorID, DeactivateAndMove, DeactivatedUserGroupNodeID, HashType
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [UserSettings]
 
-The block `[UserSettings]` of `settings/site.ini`, with 41 setting(s).
+The block `[UserSettings]` of `settings/site.ini`, with 44 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -75,6 +75,63 @@ Default: `10`.
 # settings/override/site.ini.append.php
 [UserSettings]
 MinPasswordLength=10
+*/ ?>
+```
+
+## WeakPasswordCheck
+
+> Refuse a well-known or common password (expWeakPasswordList: "admin", "password",  
+> "qwerty", "123456", the software's own names and the like, with their simple  
+> variants: case, digits and symbols at the ends, letter swaps such as "p@ssw0rd",  
+> common endings, a word typed twice; also keyboard runs and repeated characters).  
+> Checked for every new password: user/password, registration, the user edit form,  
+> exp:resetuserpassword and the web services. Signing in with an existing password  
+> is never refused. The installers (setup wizard, kickstarter, exp:install) always  
+> check, whatever this says. disabled: only the length and \[PasswordSettings\] count.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSettings]
+WeakPasswordCheck=enabled
+*/ ?>
+```
+
+## WeakPasswordFile
+
+> More words to refuse, one per line, in their base form (variants are refused too)  
+> WeakPasswordList\[\]  
+> WeakPasswordList\[\]=ourcompanyname  
+> A file with more words, one per line (# starts a comment), relative to the  
+> installation root or absolute; read once per process while it is unchanged  
+> WeakPasswordFile=settings/weak-passwords.txt  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSettings]
+WeakPasswordFile=
+*/ ?>
+```
+
+## ForgotPasswordKeyLifetime
+
+> Seconds a "Forgot your password?" link works after it was sent (3600: one hour).  
+> An expired link is refused with its own message; expired links are removed on  
+> the next visit of user/forgotpassword. 0: a link works until it is used (the  
+> behavior before 6.0.15).  
+
+Default: `3600`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[UserSettings]
+ForgotPasswordKeyLifetime=3600
 */ ?>
 ```
 

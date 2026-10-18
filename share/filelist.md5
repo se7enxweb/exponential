@@ -3573,7 +3573,7 @@ e37753efe1f2a6c778455cb8e00e16bb  doc/examples/datatypes/eztext.md
 9cee0e1a1d73c3a713eac4c3ecba22f0  doc/examples/datatypes/ezurl.md
 0b82da1b146d3a9a199231c2db490836  doc/examples/datatypes/ezuser.md
 27147271b09243c44cc4d27c71933d93  doc/examples/datatypes/ezxmltext.md
-30f00f824f9185e7ebe83cefbf168b9b  doc/examples/extension-points/README.md
+5dcfd6fb4bf4ef079d6b0adc5bd8e9d8  doc/examples/extension-points/README.md
 3927857be2f6cba3af19a9994fcfb4f2  doc/examples/extension-points/audit.md
 c2cafe9e2e4dc86fd5103ebc3fca26e9  doc/examples/extension-points/binaryfile.md
 83664bb0f5266345795e93f2bc414687  doc/examples/extension-points/browse.md
@@ -3603,7 +3603,7 @@ be3a94174b5b36c8fc92be339872a2ef  doc/examples/extension-points/requestrules.md
 e199b0a0ede1481bd174e5eab20256a9  doc/examples/extension-points/setup.md
 41c716fe66f9d62a80fc53fdb70aa933  doc/examples/extension-points/shop.md
 e4c27f944fa18d46d44095a17e607bcf  doc/examples/extension-points/shopaccount.md
-705c891f4dd383cb6961714e13a15853  doc/examples/extension-points/site.md
+a6f849aea038076d6006a43d45721d80  doc/examples/extension-points/site.md
 795c65c65446d822875f5cb7430cc843  doc/examples/extension-points/subitemscolumns.md
 8b6bf2aeb85b62f25225b59969b5e5a7  doc/examples/extension-points/template.md
 b6d8c2f2aadc2c4bcd1b4334a65ebc0f  doc/examples/extension-points/uiswitch.md
@@ -4319,12 +4319,12 @@ d9eee41b354d44edaa02d269af60d80b  doc/examples/ini-settings/error/HTTPError-301.
 d7242053330bdcb5eebf5ba020ab24bd  doc/examples/ini-settings/error/HTTPError-403.md
 397dcc317ce855be5813c04a6c501781  doc/examples/ini-settings/error/HTTPError-404.md
 caf60908b53ecf82087e9a61ba87f97f  doc/examples/ini-settings/error/README.md
-fe3cfee350de07fc3da272a93b203b7c  doc/examples/ini-settings/exphelp/AudienceSettings.md
-2529d6b8dd3e288d9b78cb8ad7a73bcf  doc/examples/ini-settings/exphelp/CategorySettings.md
+852088f15ed61e7e6680994a92605a9b  doc/examples/ini-settings/exphelp/AudienceSettings.md
+baa8ddb4c4308aef09908b34138e63e8  doc/examples/ini-settings/exphelp/CategorySettings.md
 401bd0989a64a7870f4dc86b138198b4  doc/examples/ini-settings/exphelp/ContentSettings.md
 4710fe922c525ac18b9a92002f5a2418  doc/examples/ini-settings/exphelp/ContextHelp.md
 f061de7f497a2136ee1e1fdf1c629209  doc/examples/ini-settings/exphelp/DashboardSettings.md
-ef95aafe91ab5c65b44854dceb1d194a  doc/examples/ini-settings/exphelp/FeaturedSettings.md
+a1d055ad862eaafb26b0801446790c20  doc/examples/ini-settings/exphelp/FeaturedSettings.md
 0e61eddfd553bb8e7338120de2a880bb  doc/examples/ini-settings/exphelp/HelpSettings.md
 13bbbf43010a843f89681c4de83aec18  doc/examples/ini-settings/exphelp/IndexSettings.md
 589ce74d483c621dd08c2fe9a147566d  doc/examples/ini-settings/exphelp/IssueTrackers.md
@@ -4866,7 +4866,7 @@ fdbc65080664b0008ae3fafa5bee743b  doc/examples/ini-settings/site/MailSettings.md
 2b08f309f91b7ba163fae82c1ba8dc54  doc/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/examples/ini-settings/site/ProxySettings.md
-cf9bb1969374246ecf28bbce31db32c1  doc/examples/ini-settings/site/README.md
+79259a25f3b2935df10f4d0898f39f07  doc/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/examples/ini-settings/site/RSSSettings.md
 2b2b4808ddb2c376e2a4a165f1475bbf  doc/examples/ini-settings/site/RegionalSettings.md
 f28588e05ec0e35f21c7961596721b67  doc/examples/ini-settings/site/RequestLogSettings.md
@@ -4887,7 +4887,7 @@ d8beb4432fa6fad26ef64958cf78cf27  doc/examples/ini-settings/site/SiteSettings.md
 f71ee5c2e368a56f3de8ca5747acc89e  doc/examples/ini-settings/site/TipAFriend.md
 b67ea9c59c86876ab4042883844451db  doc/examples/ini-settings/site/URLTranslator.md
 daa5454492380b74d1f3f81dc57185f5  doc/examples/ini-settings/site/UnitSettings.md
-fa206b88b866b389842d713ab22844ad  doc/examples/ini-settings/site/UserSettings.md
+bc99bcdd0fe1cf279788aa386bb620e9  doc/examples/ini-settings/site/UserSettings.md
 f242aaf0d866300b0ad778b33a97d64d  doc/examples/ini-settings/site/eZINISettings.md
 6ec5340a58634f23d35eb668e0d4f94f  doc/examples/ini-settings/soap/ExtensionSettings.md
 e94a792189737daf9faba5d983f30005  doc/examples/ini-settings/soap/GeneralSettings.md
@@ -5587,7 +5587,7 @@ f2a50c3f8ce9f472873147e1fcd9ebe5  doc/examples/template-operators/crc32.md
 68afbe6c6b5dad32ef302229022857e0  doc/examples/template-operators/csp_nonce.md
 9758cdd5af58a7fc4abd3d7dfdc88727  doc/examples/template-operators/currentdate.md
 93b4ae09ea0a38ce5b70dc418147d69f  doc/examples/template-operators/d18n.md
-00cf3f1a69ebd9d32cab8de24b96168a  doc/examples/template-operators/datetime.md
+c4777bd2e64ec5f58d9b2dea62f90cf0  doc/examples/template-operators/datetime.md
 804269193aeca09f5c94e1f42ec5f3f9  doc/examples/template-operators/dec.md
 3dacba264257e7dd5e35f4b61b3bddde  doc/examples/template-operators/div.md
 11291d86fd6455fc9ec886ce54d5de8b  doc/examples/template-operators/downcase.md

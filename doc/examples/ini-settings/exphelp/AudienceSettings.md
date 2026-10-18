@@ -20,10 +20,12 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 ## Audiences
 
 > editor: writes and publishes content; admin: runs the site; developer: builds on it; user: a site's visitor or  
-> member. Who a page is for: its front matter (audience: editor, admin), else the first PathRules\[\] that matches,  
-> else its file name (...-developer.md) or opening lines ("for editors"), else TypeDefaults\[<type>\]  
+> member; project-manager: plans and leads projects built on it; sales-marketing: presents, sells and promotes it  
+> and grows its community. Who a page is for: its front matter (audience: editor, admin), else the first PathRules\[\]  
+> that matches, else its file name (...-developer.md) or opening lines ("for editors"), else TypeDefaults\[<type>\].  
+> The order here is the order of the dashboard's audience cards and the search filters.  
 
-Default: a list of 4: `editor`, `admin`, `developer`, `user`.
+Default: a list of 6: `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -35,12 +37,14 @@ Audiences[]=editor
 Audiences[]=admin
 Audiences[]=developer
 Audiences[]=user
+Audiences[]=project-manager
+Audiences[]=sales-marketing
 */ ?>
 ```
 
 ## AudienceNames
 
-Default: a hash of 4: `editor=Editors`, `admin=Administrators`, `developer=Developers`, `user=Users`.
+Default: a hash of 6: `editor=Editors`, `admin=Administrators`, `developer=Developers`, `user=Users`, `project-manager=Project managers`, `sales-marketing=Sales & marketing`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -52,6 +56,8 @@ AudienceNames[editor]=Editors
 AudienceNames[admin]=Administrators
 AudienceNames[developer]=Developers
 AudienceNames[user]=Users
+AudienceNames[project-manager]=Project managers
+AudienceNames[sales-marketing]=Sales & marketing
 */ ?>
 ```
 
@@ -59,7 +65,7 @@ AudienceNames[user]=Users
 
 > Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
 
-Default: a hash of 4: `editor=pencil`, `admin=shield-lock`, `developer=code-square`, `user=person`.
+Default: a hash of 6: `editor=pencil`, `admin=shield-lock`, `developer=code-square`, `user=person`, `project-manager=diagram-3`, `sales-marketing=graph-up-arrow`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -71,6 +77,8 @@ AudienceIcons[editor]=pencil
 AudienceIcons[admin]=shield-lock
 AudienceIcons[developer]=code-square
 AudienceIcons[user]=person
+AudienceIcons[project-manager]=diagram-3
+AudienceIcons[sales-marketing]=graph-up-arrow
 */ ?>
 ```
 
@@ -78,7 +86,7 @@ AudienceIcons[user]=person
 
 > <pattern>;<audience,audience>, first match wins ("\*" also matches "/")  
 
-Default: a list of 56: `doc/LICENSE-GFDL-1.3.txt;editor,admin,developer,user`, `doc/glossary.md;editor,admin,developer,user`, `doc/languages.md;admin,developer`, `doc/guides/README.md;editor,admin,developer`, `doc/guides/getting-started.md;admin,developer`, `doc/guides/content-model-and-editing.md;editor,developer`, `doc/guides/bookmarks.md;editor`, `doc/guides/collected-information.md;editor,admin`, `doc/guides/urls-and-aliases.md;editor,admin`, `doc/guides/content-history.md;editor,admin`, `doc/guides/drafts-and-pending.md;editor`, `doc/guides/pdf-exports.md;editor,admin` ....
+Default: a list of 58: `doc/help/leadership/*;project-manager`, `doc/help/business/*;sales-marketing`, `doc/LICENSE-GFDL-1.3.txt;editor,admin,developer,user`, `doc/glossary.md;editor,admin,developer,user`, `doc/languages.md;admin,developer`, `doc/guides/README.md;editor,admin,developer`, `doc/guides/getting-started.md;admin,developer`, `doc/guides/content-model-and-editing.md;editor,developer`, `doc/guides/bookmarks.md;editor`, `doc/guides/collected-information.md;editor,admin`, `doc/guides/urls-and-aliases.md;editor,admin`, `doc/guides/content-history.md;editor,admin` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -86,6 +94,8 @@ Default: a list of 56: `doc/LICENSE-GFDL-1.3.txt;editor,admin,developer,user`, `
 [AudienceSettings]
 # an empty "PathRules[]" first replaces the shipped list; without it the items are added
 PathRules[]
+PathRules[]=doc/help/leadership/*;project-manager
+PathRules[]=doc/help/business/*;sales-marketing
 PathRules[]=doc/LICENSE-GFDL-1.3.txt;editor,admin,developer,user
 PathRules[]=doc/glossary.md;editor,admin,developer,user
 PathRules[]=doc/languages.md;admin,developer
@@ -104,9 +114,7 @@ PathRules[]=doc/guides/test-language-lorem-ipsum.md;admin,developer
 PathRules[]=doc/guides/ui-switch-design.md;admin
 PathRules[]=doc/guides/ui-switch-settings.md;admin
 PathRules[]=doc/guides/two-factor-login.md;user,admin
-PathRules[]=doc/guides/api-keys.md;user,developer
-PathRules[]=doc/guides/mail-preferences-administrator.md;admin
-# ... 36 more in the shipped file
+# ... 38 more in the shipped file
 */ ?>
 ```
 

@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > The sections of the help, in dashboard order. A page's category: its front matter (category: editing), else the  
 > first PathRules\[\] that matches, else TypeDefaults\[<type>\]  
 
-Default: a list of 18: `getting-started`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `shortcuts`, `support`, `administration`, `features` ....
+Default: a list of 20: `getting-started`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `shortcuts`, `support`, `leadership`, `business` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -40,6 +40,8 @@ Categories[]=account
 Categories[]=layouts
 Categories[]=shortcuts
 Categories[]=support
+Categories[]=leadership
+Categories[]=business
 Categories[]=administration
 Categories[]=features
 Categories[]=development
@@ -53,7 +55,7 @@ Categories[]=reference
 
 ## CategoryNames
 
-Default: a hash of 18: `getting-started=Getting started`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `shortcuts=Keyboard shortcuts`, `support=Help and support`, `administration=Administration`, `features=Features` ....
+Default: a hash of 20: `getting-started=Getting started`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `shortcuts=Keyboard shortcuts`, `support=Help and support`, `leadership=Project leadership`, `business=Sales and marketing` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -71,6 +73,8 @@ CategoryNames[account]=Your account
 CategoryNames[layouts]=Layouts
 CategoryNames[shortcuts]=Keyboard shortcuts
 CategoryNames[support]=Help and support
+CategoryNames[leadership]=Project leadership
+CategoryNames[business]=Sales and marketing
 CategoryNames[administration]=Administration
 CategoryNames[features]=Features
 CategoryNames[development]=Development
@@ -86,7 +90,7 @@ CategoryNames[reference]=Reference
 
 > Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
 
-Default: a hash of 18: `getting-started=signpost-split`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `shortcuts=input-cursor-text`, `support=info-circle`, `administration=gear`, `features=stars` ....
+Default: a hash of 20: `getting-started=signpost-split`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `shortcuts=input-cursor-text`, `support=info-circle`, `leadership=diagram-3`, `business=graph-up-arrow` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -104,6 +108,8 @@ CategoryIcons[account]=person-lock
 CategoryIcons[layouts]=layout-sidebar-inset
 CategoryIcons[shortcuts]=input-cursor-text
 CategoryIcons[support]=info-circle
+CategoryIcons[leadership]=diagram-3
+CategoryIcons[business]=graph-up-arrow
 CategoryIcons[administration]=gear
 CategoryIcons[features]=stars
 CategoryIcons[development]=code-square
@@ -119,7 +125,7 @@ CategoryIcons[reference]=collection
 
 > <pattern>;<category>, first match wins  
 
-Default: a list of 58: `doc/LICENSE-GFDL-1.3.txt;reference`, `doc/glossary.md;reference`, `doc/languages.md;languages`, `doc/guides/README.md;getting-started`, `doc/guides/getting-started.md;getting-started`, `doc/guides/content-model-and-editing.md;editing`, `doc/guides/bookmarks.md;editing`, `doc/guides/collected-information.md;editing`, `doc/guides/urls-and-aliases.md;editing`, `doc/guides/content-history.md;publishing`, `doc/guides/drafts-and-pending.md;publishing`, `doc/guides/pdf-exports.md;publishing` ....
+Default: a list of 60: `doc/help/leadership/*;leadership`, `doc/help/business/*;business`, `doc/LICENSE-GFDL-1.3.txt;reference`, `doc/glossary.md;reference`, `doc/languages.md;languages`, `doc/guides/README.md;getting-started`, `doc/guides/getting-started.md;getting-started`, `doc/guides/content-model-and-editing.md;editing`, `doc/guides/bookmarks.md;editing`, `doc/guides/collected-information.md;editing`, `doc/guides/urls-and-aliases.md;editing`, `doc/guides/content-history.md;publishing` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -127,6 +133,8 @@ Default: a list of 58: `doc/LICENSE-GFDL-1.3.txt;reference`, `doc/glossary.md;re
 [CategorySettings]
 # an empty "PathRules[]" first replaces the shipped list; without it the items are added
 PathRules[]
+PathRules[]=doc/help/leadership/*;leadership
+PathRules[]=doc/help/business/*;business
 PathRules[]=doc/LICENSE-GFDL-1.3.txt;reference
 PathRules[]=doc/glossary.md;reference
 PathRules[]=doc/languages.md;languages
@@ -145,9 +153,7 @@ PathRules[]=doc/guides/test-language-lorem-ipsum.md;languages
 PathRules[]=doc/guides/ui-switch-design.md;administration
 PathRules[]=doc/guides/ui-switch-settings.md;administration
 PathRules[]=doc/guides/two-factor-login.md;account
-PathRules[]=doc/guides/api-keys.md;account
-PathRules[]=doc/guides/mail-preferences-administrator.md;account
-# ... 38 more in the shipped file
+# ... 40 more in the shipped file
 */ ?>
 ```
 
