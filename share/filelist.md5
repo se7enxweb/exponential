@@ -513,13 +513,12 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
 067116b34b78ad2ee423617355ed5ea7  design/admin/templates/exphelp/contents.tpl
 6bc5205957e7e8cf59c6c82497af95ef  design/admin/templates/exphelp/dashboard.tpl
-66fc626e98e589508f1415f157ece1cb  design/admin/templates/exphelp/manual.tpl
+d5bcab372dd034d664fb7485189939e5  design/admin/templates/exphelp/manual.tpl
 4af31edbdd39507b6b158a0db77af880  design/admin/templates/exphelp/parts/dashboard_about.tpl
 5ed77b74cfcb4441ec7ebbc677c22267  design/admin/templates/exphelp/parts/dashboard_content.tpl
 87514195ac59a4522941bb33f4e220d1  design/admin/templates/exphelp/parts/dashboard_grow.tpl
 72a51caf3dafb458a6a435c1da7ab562  design/admin/templates/exphelp/parts/license_dashboard.tpl
 4af3a4d70a9b9827ee3f63d0830d3d07  design/admin/templates/exphelp/parts/license_notice.tpl
-d7baa6ee646fff454b4689f8ef2279cb  design/admin/templates/exphelp/parts/manual_toc.tpl
 6db946f97b2f7abb378eb8b96e9f60b4  design/admin/templates/exphelp/parts/viewer_actions.tpl
 c505b56371004e72eab821c4b50ac3bc  design/admin/templates/exphelp/parts/viewer_meta.tpl
 69992051147dd0f6b3dbc0892bee4fa9  design/admin/templates/exphelp/parts/viewer_toc.tpl
@@ -1264,13 +1263,12 @@ b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
 067116b34b78ad2ee423617355ed5ea7  design/admin4/templates/exphelp/contents.tpl
 6bc5205957e7e8cf59c6c82497af95ef  design/admin4/templates/exphelp/dashboard.tpl
-66fc626e98e589508f1415f157ece1cb  design/admin4/templates/exphelp/manual.tpl
+d5bcab372dd034d664fb7485189939e5  design/admin4/templates/exphelp/manual.tpl
 4af31edbdd39507b6b158a0db77af880  design/admin4/templates/exphelp/parts/dashboard_about.tpl
 5ed77b74cfcb4441ec7ebbc677c22267  design/admin4/templates/exphelp/parts/dashboard_content.tpl
 87514195ac59a4522941bb33f4e220d1  design/admin4/templates/exphelp/parts/dashboard_grow.tpl
 72a51caf3dafb458a6a435c1da7ab562  design/admin4/templates/exphelp/parts/license_dashboard.tpl
 4af3a4d70a9b9827ee3f63d0830d3d07  design/admin4/templates/exphelp/parts/license_notice.tpl
-d7baa6ee646fff454b4689f8ef2279cb  design/admin4/templates/exphelp/parts/manual_toc.tpl
 6db946f97b2f7abb378eb8b96e9f60b4  design/admin4/templates/exphelp/parts/viewer_actions.tpl
 c505b56371004e72eab821c4b50ac3bc  design/admin4/templates/exphelp/parts/viewer_meta.tpl
 69992051147dd0f6b3dbc0892bee4fa9  design/admin4/templates/exphelp/parts/viewer_toc.tpl
@@ -5501,7 +5499,7 @@ b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 55f92f1a206b102c012d371f1dd5f36a  kernel/classes/help/content/exphelpcontentinstaller.php
 cd2fe14e4eaec5d6c152ec03dc0b9c9a  kernel/classes/help/content/exphelpcontentprovider.php
 ac511aa456e80d00093d0b638a2c7e3a  kernel/classes/help/content/exphelpcontentrepository.php
-b37160bc17524e98f28e2d14ed957a2f  kernel/classes/help/content/exphelpcontentschema.php
+7da0272003eac891eaa8756319395f20  kernel/classes/help/content/exphelpcontentschema.php
 731dacfbc9e210d26a6115321f360d89  kernel/classes/help/content/exphelpcontentseeder.php
 ccb98eef4c622a21501d839063227698  kernel/classes/help/content/exphelpcontentvalidator.php
 9a98927e99674e2355bd255881d0bda1  kernel/classes/help/exphelp.php
@@ -6183,7 +6181,7 @@ d9f32563966a8b1506a892bdb7f4f812  kernel/private/classes/views/contentfinder/sea
 167efda06e6649f67bd2acdd585c5265  kernel/private/classes/views/exphelp/contents.php
 809e9aaead81f9dad4ffc4f3eccba86b  kernel/private/classes/views/exphelp/context.php
 8ba00d66094c5c8d146fe84bfd991db0  kernel/private/classes/views/exphelp/dashboard.php
-92453bab1c7991b8691db3a188fd49ad  kernel/private/classes/views/exphelp/manual.php
+0d6b2e82653d856347684ade46ae9294  kernel/private/classes/views/exphelp/manual.php
 4c7c1959ab8911d0b75318ecf6ee859a  kernel/private/classes/views/exphelp/pdf.php
 0aff94d13bc40ee02538815ceb7cc5b5  kernel/private/classes/views/exphelp/report.php
 b8bb2c2bc0fb8767816b8eff9ffde34c  kernel/private/classes/views/exphelp/search.php
