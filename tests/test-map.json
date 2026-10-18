@@ -1665,6 +1665,7 @@
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
     ],
     "kernel/classes/help/exphelpdocumentindex.php": [
+      "tests/tests/kernel/classes/help/expHelpPageTitlesTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
       "tests/tests/kernel/classes/help/expHelpLinksTest.php"
@@ -1677,6 +1678,7 @@
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php"
     ],
     "kernel/classes/help/exphelpaudience.php": [
+      "tests/tests/kernel/classes/help/expHelpPageTitlesTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
     ],
@@ -1735,6 +1737,7 @@
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "settings/exphelp.ini": [
+      "tests/tests/kernel/classes/help/expHelpPageTitlesTest.php",
       "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php",
       "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",

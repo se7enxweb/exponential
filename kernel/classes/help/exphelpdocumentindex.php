@@ -863,9 +863,15 @@ class expHelpDocumentIndex
             $title = $records['title'];
         if ( $title === '' )
             $title = self::fallbackTitle( $path, $body );
+        // exphelp.ini [TitleSettings]: a clearer title for a page whose own is unclear (front matter always wins)
+        $ownTitle = isset( $meta['title'] ) && is_string( $meta['title'] ) && trim( $meta['title'] ) !== '';
+        if ( !$ownTitle )
+            $title = $this->audience->pageTitle( $path, $title );
 
         $summary = isset( $meta['summary'] ) && is_string( $meta['summary'] ) ? trim( $meta['summary'] )
                  : ( isset( $meta['description'] ) && is_string( $meta['description'] ) ? trim( $meta['description'] ) : '' );
+        if ( $summary === '' )
+            $summary = $this->audience->pageSummary( $path, '' );
         if ( $summary === '' && $records !== null )
             $summary = $records['summary'];
         if ( $summary === '' )
