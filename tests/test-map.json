@@ -872,7 +872,8 @@
     "extension/ezmultiupload/*": [
       "tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php",
       "tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php",
-      "tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php"
+      "tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php",
+      "tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsScriptTest.php"
     ],
     "design/admin4/javascript/subitems_priority_drag.js": [
       "tests/tests/design/AdminSubitemsPriorityDragTest.php"
