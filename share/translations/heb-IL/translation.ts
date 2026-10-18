@@ -71104,6 +71104,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אבטחה (מסווג בקשות)</translation>
     </message>
     <message>
+        <source>Content Security Policy reports</source>
+        <translation>דוחות Content Security Policy</translation>
+    </message>
+    <message>
         <source>Web server access log</source>
         <translation>יומן הגישה של שרת האינטרנט</translation>
     </message>

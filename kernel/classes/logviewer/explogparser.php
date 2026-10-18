@@ -8,6 +8,8 @@
  *  - eZLog:    [ Oct 17 2026 01:54:58 ][ siteaccess ][ url ] message   (or [ date ] message)
  *  - the request logs (404.log, security.log): [ Oct 17 2026 01:54:58 ] [ip] 404 GET /uri siteaccess=site reason=...
  *              or [ ... ] [ip] probe/wp-login confidence=high 404 GET /uri siteaccess=site ... (requestHeader())
+ *              or [ ... ] [ip] csp/script-src blocked=inline disposition=enforce document=https://... siteaccess=admin ...
+ *              (csp.log, the reports of the Content Security Policy)
  *  - ISO:      2026-10-17T01:54:58+02:00 message, or [2026-10-17 01:54:58] message
  *  - JSON:     one object per line with time / ts / timestamp, level, message / msg, ip, url / uri
  * Any other line continues the entry before it (a message over several lines, a stack trace); a chunk that starts
@@ -38,6 +40,9 @@ class expLogParser
 
     /** security.log, after the prefix: <category>/<rule> confidence=<c> <status|-> <method> <uri> siteaccess=<sa> ... */
     const RE_SECURITY = '#^([a-z0-9_\-]+)/([A-Za-z0-9_.:\-]+) confidence=(low|medium|high) (\d{3}|-) (\S+) (\S+) siteaccess=(\S*)#';
+
+    /** csp.log, after the prefix: csp/<directive> blocked=<b> disposition=<enforce|report> document=<uri> siteaccess=<sa> ... */
+    const RE_CSP = '#^csp/([a-z][a-z0-9\-]*) blocked=(\S+) disposition=(enforce|report) document=(\S+) siteaccess=(\S*)#';
 
     /** ISO 8601 or SQL time at the start, optionally in brackets */
     const RE_ISO = '/^\[?(\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2}(?:[.,]\d{1,6})?(?:Z|[+\-]\d{2}:?\d{2})?)\]?\s*(.*)$/s';
@@ -146,7 +151,8 @@ class expLogParser
     /**
      * The fields of a line of the request logs (doc/features/6.0/request-logs.md), when the message after the eZLog
      * prefix is one: the request (url), siteaccess, status, the reason of a not found request or the category and
-     * rule of a security one (source). Any other message is left as it is. Pure.
+     * rule of a security one (source), the directive, disposition and blocked source of a CSP report (csp.log). Any
+     * other message is left as it is. Pure.
      *
      * @param array $header a header of the eZDebug / eZLog format with neither siteaccess nor request
      * @return array
@@ -164,6 +170,16 @@ class expLogParser
             $header['url'] = $m[6];
             $header['siteaccess'] = $m[7];
             $header['source'] = $m[1] . '/' . $m[2];
+        }
+        else if ( strncmp( $message, 'csp/', 4 ) === 0 && preg_match( self::RE_CSP, $message, $m ) )
+        {
+            $header['format'] = 'csp';
+            $header['directive'] = $m[1];
+            $header['blocked'] = $m[2];
+            $header['disposition'] = $m[3];
+            $header['url'] = $m[4] === '-' ? '' : $m[4];
+            $header['siteaccess'] = $m[5] === '-' ? '' : $m[5];
+            $header['source'] = 'csp/' . $m[1];
         }
         else if ( preg_match( self::RE_NOT_FOUND, $message, $m ) )
         {
@@ -268,7 +284,7 @@ class expLogParser
      */
     public static function source( array $header )
     {
-        // a request log's line names it: the status (404.log) or <category>/<rule> (security.log)
+        // a request log's line names it: the status (404.log), <category>/<rule> (security.log) or csp/<directive> (csp.log)
         if ( isset( $header['source'] ) && is_string( $header['source'] ) )
             return $header['source'];
         $message = trim( (string)$header['message'] );

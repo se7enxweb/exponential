@@ -105,6 +105,68 @@ siteaccesses and none on the sites. Enforcing is a decision per siteaccess, made
 Sites (non-administration siteaccesses) get no policy with `auto`. Their designs and the rich text they render
 (`style=""` from content, embedded players) are not checked by the test: start them with `Mode=report-only`.
 
+## Reports
+
+The kernel collects the reports itself: the view **`csp/report`** takes what the browser sends and writes one line
+per violation to `var/log/csp.log`, which the log viewer lists as **Content Security Policy reports** (Setup > Log
+files, key `csp`). Point the policy at it with `ReportEndpoint=enabled` (the `report-uri` and the
+`Reporting-Endpoints` header then name the `csp/report` of the siteaccess), or with `ReportURI=/csp/report`.
+
+- **Both formats**: `application/csp-report` (the `report-uri` of Firefox and older browsers) and
+  `application/reports+json` (the Reporting API: `Reporting-Endpoints` and `report-to`, Chrome and Edge);
+  `application/json` is read as either. Reports of the Reporting API of another type (deprecation, intervention)
+  are skipped.
+- **Open to every visitor**: browsers send reports without signing in, also on an administration that asks
+  everyone to sign in. `site.ini [SiteAccessSettings] AnonymousAccessList[]` and `[RoleSettings] PolicyOmitList[]`
+  name `csp/report`. A signed-in browser may send its session cookie with a report: the form token check
+  (ezformtoken) leaves a POST to `csp/report` with one of these content types alone; a form of another site can send
+  none of them, and the view only writes a log line.
+- **Nothing comes back**: the answer is a status without a body: `204` for a report taken, `405` for another method
+  than POST, `415` for another content type, `413` above `MaxReportBytes`, `400` for a body that is no report and
+  `429` (with `Retry-After: 60`) above a rate limit. It is never cached (`Cache-Control: no-store`).
+- **Rate limited**: per client (`ReportsPerMinute`, counted by the salted address hash of the request classifier,
+  so no address is stored) and for all clients together (`ReportsPerMinuteTotal`). The first refused report of a
+  client in a minute is written to `security.log` as `abuse/csp-report-flood` by the
+  [request classifier](request-logs.md), so a flood is one line a minute there, not one per request.
+- **Bounded and masked**: the address is masked as in the request logs (`203.0.x.x`, `site.ini
+  [RequestLogSettings] MaskIP`); the query of every URI goes through the masks of the log viewer (secrets, e-mail
+  and IP addresses), a user name or password in a URI and the fragment are taken off, a `data:` or `blob:` URI is
+  written as its scheme only, the sample is cut to 40 characters, and no value can add a line or a field. At most
+  `MaxViolationsPerReport` lines are written from one report.
+
+```ini
+[ContentSecurityPolicy]
+# per client and minute; above it 429 and one abuse/csp-report-flood line in security.log
+ReportsPerMinute=60
+# all clients together, per minute
+ReportsPerMinuteTotal=600
+# the biggest report body taken, in bytes
+MaxReportBytes=65536
+# the most violations written from one report
+MaxViolationsPerReport=20
+# the log file, in the log directory
+LogFile=csp.log
+```
+
+A line of `csp.log`, after the date and the masked address:
+
+```
+[ Oct 17 2026 12:00:00 ] [203.0.x.x] csp/script-src-elem blocked=inline disposition=enforce document=https://example.com/admin/content/view/full/2 siteaccess=admin line=12 column=5 source=https://example.com/admin/content/view/full/2 status=200 sample="alert(1)" ua=3f2a9c1b "Mozilla/5.0 (X11; Linux x86_64)"
+```
+
+- `csp/<directive>`: the directive that was violated (`script-src-elem`, `style-src-attr`, `img-src` ...).
+- `blocked=`: what it blocked: a keyword (`inline`, `eval`, `wasm-eval`, `data`, `blob`, `self`,
+  `trusted-types-policy`) or the address.
+- `disposition=`: `enforce` (the browser blocked it) or `report` (a report-only policy: nothing was blocked).
+- `document=`, `source=`, `line=`, `column=`: the page, and the file and position of the code, where the browser
+  names them. `sample=`: the first characters of the inline code or style.
+
+**In the log viewer** the lines are read field by field (source `csp/<directive>`, request the page). The **error
+digest** groups `csp.log` by directive and what it blocked, an address cut to its origin
+(`[DigestSettings] GroupBy[csp]=directive-blocked`): `csp/script-src-elem blocked=inline 42`,
+`csp/img-src blocked=https://maps.example.com 3`. It is rotated like the request logs: 5 archives, compressed, 10 MB,
+pruned after 30 days (`logviewer.ini [RotationSettings]`, key `csp`).
+
 ## The directives shipped
 
 - `script-src 'self'` allows script files of this site only: no inline `<script>`, no `on...=` attribute, no

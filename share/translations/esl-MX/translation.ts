@@ -74847,6 +74847,10 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <translation>Seguridad (clasificador de solicitudes)</translation>
     </message>
     <message>
+        <source>Content Security Policy reports</source>
+        <translation>Informes de la Content Security Policy</translation>
+    </message>
+    <message>
         <source>Web server access log</source>
         <translation>Registro de accesos del servidor web</translation>
     </message>

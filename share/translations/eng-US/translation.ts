@@ -71134,6 +71134,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Security (request classifier)</translation>
     </message>
     <message>
+        <source>Content Security Policy reports</source>
+        <translation>Content Security Policy reports</translation>
+    </message>
+    <message>
         <source>Web server access log</source>
         <translation>Web server access log</translation>
     </message>

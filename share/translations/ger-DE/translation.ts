@@ -78078,6 +78078,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Sicherheit (Anfrageklassifizierung)</translation>
     </message>
     <message>
+        <source>Content Security Policy reports</source>
+        <translation>Berichte der Content Security Policy</translation>
+    </message>
+    <message>
         <source>Web server access log</source>
         <translation>Zugriffsprotokoll des Webservers</translation>
     </message>
