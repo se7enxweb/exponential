@@ -211,6 +211,7 @@ body,
   color: var(--a4-header-ink);
   transition: background-color .15s ease, color .15s ease;
 }
+.navbar-menu li a > .a4-icon { margin-inline-end: 0.4em; }   /* menu.ini [Topmenu_<tab>] Icon */
 .navbar-menu li a:hover {
   background-color: var(--a4-header-hover);
   color: var(--a4-header-ink);
@@ -421,6 +422,9 @@ body,
     width: 44px;
     height: 44px;
   }
+  /* the tab's icon (menu.ini [Topmenu_<tab>] Icon) stands above its name in a tile, so a wrapped name never leaves
+     it alone at a line's end */
+  .navbar-menu .navbar-bar > li > a > .a4-icon { display: block; margin: 0 auto var(--a4-space-1); }
   /* a tab is a tile: the whole cell is the target, its name may wrap */
   .navbar-menu .navbar-bar > li > a,
   .navbar-menu .navbar-bar > li > a.selected,
