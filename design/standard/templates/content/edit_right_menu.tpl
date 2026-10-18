@@ -71,7 +71,7 @@
             <p class="menufieldlabel">{'No translation'|i18n( 'design/standard/content/edit' )}</p>
         </td>
         <td>
-            <input type="radio" name="FromLanguage" value=""{if $from_language|not} checked="checked"{/if}{if $object.status|eq(0)} disabled="disabled"{/if} />
+            <input type="radio" name="FromLanguage" value="" aria-label="{'No translation'|i18n( 'design/standard/content/edit' )}"{if $from_language|not} checked="checked"{/if}{if $object.status|eq(0)} disabled="disabled"{/if} />
         </td>
     </tr>
     {if $object.status}
@@ -81,7 +81,7 @@
                 <p class="menufieldlabel">{$language.name|wash}</p>
             </td>
             <td>
-                <input type="radio" name="FromLanguage" value="{$language.locale|wash}"{if $language.locale|eq($from_language)} checked="checked"{/if} />
+                <input type="radio" name="FromLanguage" value="{$language.locale|wash}" aria-label="{$language.name|wash}"{if $language.locale|eq($from_language)} checked="checked"{/if} />
             </td>
         </tr>
         {/foreach}
@@ -106,7 +106,7 @@
 	  <span class="small">&lt;object id='{$Object:item.id}' /&gt;</span>
 	</td>
         <td class="{$Object:sequence}" align="right" colspan="1" width="1">
-          <input type="checkbox" name="DeleteRelationIDArray[]" value="{$Object:item.id}" />
+          <input type="checkbox" name="DeleteRelationIDArray[]" value="{$Object:item.id}" aria-label="{'Remove'|i18n('design/standard/content/edit')} {$Object:item.name|wash}" />
 	</td>
     </tr>
     {/section}
@@ -114,10 +114,10 @@
         <td align="right" colspan="2">
           <div class="buttonblock">
 {*          <input class="menubutton" type="submit" name="BrowseObjectButton" value="{'Find'|i18n('design/standard/content/edit')}" />*}
-            <input class="menubutton" type="image" name="BrowseObjectButton" value="{'Find'|i18n('design/standard/content/edit')}" src={"find.png"|ezimage} />
+            <input class="menubutton" type="image" name="BrowseObjectButton" value="{'Find'|i18n('design/standard/content/edit')}" alt="{'Find'|i18n('design/standard/content/edit')}" src={"find.png"|ezimage} />
     {if $related_contentobjects}
 {*          <input class="menubutton" type="submit" name="DeleteRelationButton" value="{'Remove'|i18n('design/standard/content/edit')}" />*}
-            <input class="menubutton" type="image" name="DeleteRelationButton" value="{'Remove'|i18n('design/standard/content/edit')}" src={"trash.png"|ezimage} />
+            <input class="menubutton" type="image" name="DeleteRelationButton" value="{'Remove'|i18n('design/standard/content/edit')}" alt="{'Remove'|i18n('design/standard/content/edit')}" src={"trash.png"|ezimage} />
     {/if}
           </div>
         </td>
@@ -125,7 +125,7 @@
     <tr>
         <td colspan="2" align="right">
 	<br />
-	<select	name="ClassID" class="classcreate">
+	<select	name="ClassID" class="classcreate" aria-label="{'Class name'|i18n('design/standard/content/edit')}">
 	    {section name=Classes loop=$object.can_create_class_list}
 	    <option value="{$Classes:item.id}">{$Classes:item.name}</option>
 	    {/section}

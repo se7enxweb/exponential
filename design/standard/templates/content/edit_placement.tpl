@@ -77,22 +77,22 @@
 	{/switch} / {$object.name|wash}
         </td>
         <td class="{$Node:sequence}">
-          <select name="SortFieldMap[{$Node:item.id}]">
+          <select name="SortFieldMap[{$Node:item.id}]" aria-label="{"Sort by"|i18n("design/standard/content/edit")}">
           {section name=Sort loop=$Node:sort_fields}
             <option value="{$Node:Sort:key}" {if eq($Node:Sort:key,$Node:item.sort_field)}selected="selected"{/if}>{$Node:Sort:item}</option>
           {/section}
           </select>
         </td>
         <td class="{$Node:sequence}" width="25">
-	<nobr><img src={"asc-transp.gif"|ezimage} alt="{'Ascending'|i18n( 'design/standard/content/edit' )}" /><input type="radio" name="SortOrderMap[{$Node:item.id}]" value="1" {if eq($Node:item.sort_order,1)}checked="checked"{/if} /></nobr>
+	<nobr><img src={"asc-transp.gif"|ezimage} alt="{'Ascending'|i18n( 'design/standard/content/edit' )}" /><input type="radio" name="SortOrderMap[{$Node:item.id}]" value="1" aria-label="{'Ascending'|i18n( 'design/standard/content/edit' )}" {if eq($Node:item.sort_order,1)}checked="checked"{/if} /></nobr>
 	</td>
         <td class="{$Node:sequence}" width="25">
-	<nobr><img src={"desc-transp.gif"|ezimage} alt="{'Descending'|i18n( 'design/standard/content/edit' )}" /><input type="radio" name="SortOrderMap[{$Node:item.id}]" value="0" {if eq($Node:item.sort_order,0)}checked="checked"{/if} /></nobr>
+	<nobr><img src={"desc-transp.gif"|ezimage} alt="{'Descending'|i18n( 'design/standard/content/edit' )}" /><input type="radio" name="SortOrderMap[{$Node:item.id}]" value="0" aria-label="{'Descending'|i18n( 'design/standard/content/edit' )}" {if eq($Node:item.sort_order,0)}checked="checked"{/if} /></nobr>
         </td>
 
         {if $:has_top_levels|not}
         <td class="{$Node:sequence}" align="right">
-            <input type="radio" name="MainNodeID" {if eq($main_node_id,$Node:item.parent_node)}checked="checked"{/if} value="{$Node:item.parent_node}" />
+            <input type="radio" name="MainNodeID" aria-label="{"Main"|i18n("design/standard/content/edit")}" {if eq($main_node_id,$Node:item.parent_node)}checked="checked"{/if} value="{$Node:item.parent_node}" />
         </td>
         {/if}
 
@@ -100,11 +100,11 @@
         <td class="{$Node:sequence}" align="right">
             {switch match=$Node:item.parent_node}
             {case in=$Node:existingParentNodes}
-             <input type="image" name="{concat('MoveNodeID_',$Node:item.parent_node)}" src={"move.gif"|ezimage} value="{$Node:item.parent_node}"  />
+             <input type="image" name="{concat('MoveNodeID_',$Node:item.parent_node)}" src={"move.gif"|ezimage} value="{$Node:item.parent_node}" alt="{"Move"|i18n("design/standard/content/edit")}" />
             {/case}
             {case}
               {if $Node:item.from_node_id|gt(0)}
-                <input type="image" name="{concat('MoveNodeID_',$Node:item.parent_node)}" src={"move.gif"|ezimage} value="{$Node:item.parent_node}"  />
+                <input type="image" name="{concat('MoveNodeID_',$Node:item.parent_node)}" src={"move.gif"|ezimage} value="{$Node:item.parent_node}" alt="{"Move"|i18n("design/standard/content/edit")}" />
               {else}
               {/if}
              {/case}
@@ -112,7 +112,7 @@
         </td>
         <td class="{$Node:sequence}" align="right">
 {*     {if eq($Node:item.parent_node,$main_node_id)|not}*}
-            <input type="image" name="{concat('RemoveNodeID_',$Node:item.parent_node)}" src={"trash.png"|ezimage} value="{$Node:item.parent_node}"  />
+            <input type="image" name="{concat('RemoveNodeID_',$Node:item.parent_node)}" src={"trash.png"|ezimage} value="{$Node:item.parent_node}" alt="{"Remove"|i18n("design/standard/content/edit")}" />
 {*     {/if}*}
         </td>
         {/if}

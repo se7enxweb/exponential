@@ -182,7 +182,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-8129fbb05a96498c5659d0ed636e215e  composer.json
+c27f4fa46201a7f6bbdc2f0bdffa6943  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -2457,13 +2457,13 @@ c747620857acc5decddfeecf14399756  design/standard/templates/content/datatype/vie
 45cd061424ff7268210ade91cd5e92fe  design/standard/templates/content/datatype/view/plain/ezxmltext.tpl
 d06d9d8dfac5787752ea2938a6670b7f  design/standard/templates/content/draft.tpl
 9ce76845b1f18e60a751604199e3ae01  design/standard/templates/content/edit.tpl
-1446de28b12166b0693c9fe5f1921fd3  design/standard/templates/content/edit_attribute.tpl
+78f844176acdc32dccbdb96e8cae1bbe  design/standard/templates/content/edit_attribute.tpl
 511e6926226a8d4a7ff7dd175062dff1  design/standard/templates/content/edit_conflict.tpl
 119ffc782b77946fc36270b5d91da7de  design/standard/templates/content/edit_draft.tpl
 7ca164e73065352e657da7c3de8244ab  design/standard/templates/content/edit_languages.tpl
-681975f4b609ea5464b7cee93facf3c0  design/standard/templates/content/edit_placement.tpl
+b898e8ef7724e37b2b6286d5f10119c1  design/standard/templates/content/edit_placement.tpl
 23dcd6d6ce6130caf3174bafbef08b4f  design/standard/templates/content/edit_redirection.tpl
-e763a23a6ec2a5da7cf2d747ef30c83d  design/standard/templates/content/edit_right_menu.tpl
+b47784b07d7484a95f2ca4c6d6fe8703  design/standard/templates/content/edit_right_menu.tpl
 adae0def427fd51706089f0a31a1063e  design/standard/templates/content/edit_validation.tpl
 a634488f758570d50d423218f7c883f8  design/standard/templates/content/history.tpl
 a716d7ff7c19c5cac43aaafeeb84c4a1  design/standard/templates/content/history_access_messages.tpl
@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-b340cf556c608a706eca5416c0f32158  doc/changelogs/6.0/6.0.15.md
+1754ac9c696084dc1a60b4924ea2b1e5  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7696,7 +7696,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-276846f5472378e9ea73c3951091d135  tests/test-map.json
+8531845c3d146beafdf15749d745605b  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
@@ -7786,6 +7786,7 @@ be0d65eb9d0dbf34d048d809f070c37f  tests/tests/design/ExtensionInlineScriptsTest.
 6e105b5c448762ee4581368f59aff5cf  tests/tests/design/FormSubmitButtonDisableTest.php
 375fe339c03acdb153a03aadbc24784d  tests/tests/design/LogViewerCopyMessagesTest.php
 3ded02ca57016d193d7c9df51a8dbe84  tests/tests/design/LogViewerNavTest.php
+e5afb96904ddba6129f583e0eb0f3bd6  tests/tests/design/StandardContentEditAccessibleNamesTest.php
 1f2baeab4e97de344ff2a905bdb76154  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
 06249d1308ccf3eeb0d366548bae10a4  tests/tests/design/TranslationFilesValidTest.php
 5582056a45ff633ad8831432b6074f3c  tests/tests/design/js/asynchronous_publishing.js
