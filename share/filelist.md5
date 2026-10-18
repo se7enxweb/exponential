@@ -6995,7 +6995,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
 2c4c64d6057a3119262cb387c39bc7d4  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
-866bd4c1d059e75b492fc2c1b776ed03  settings/menu.ini
+32ba956fcc83a8e3620038d34b6df128  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 e1d9c5932ac1b3e42db487331851a747  settings/module.ini
 1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
@@ -7967,7 +7967,7 @@ d00495e13b2643dca44135655f503e9e  tests/tests/design/AdminLanguageBadgeTest.php
 bd3ad8901b548dce716e5a6f3bb28e17  tests/tests/design/AdminLeftMenuGroupsTest.php
 dc14dee54a308e172d9c1703fd9e8154  tests/tests/design/AdminLegacyControlsTest.php
 787c93133cc75367bb9363930408a431  tests/tests/design/AdminLogoTest.php
-b1f2c82b4ceccdbe263b64b2e378cb52  tests/tests/design/AdminMegaMenuTest.php
+a5a1a6c78cccdcf98f5d48d871f5fdb3  tests/tests/design/AdminMegaMenuTest.php
 b91ebdadc3ad541ef7590c9f79877960  tests/tests/design/AdminMenuPolicyListTest.php
 8bd26f4d83a90026832a3696b7335882  tests/tests/design/AdminNewsletterPreviewTest.php
 4e03fd4b653ac220610d62cb9b415422  tests/tests/design/AdminNodeBinary.php
