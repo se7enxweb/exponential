@@ -1,0 +1,80 @@
+---
+title: "From the wizard's output to the first commit"
+audience: designer
+category: theme-extensions
+order: 270
+summary: The first hour after generating a theme - check every file, fix the metadata and composer.json, switch the theme on for a test siteaccess, see it render, and make the first commit.
+keywords: first commit, wizard output, checklist, test siteaccess, composer.json fix, metadata, git init
+type: help
+---
+# From the wizard's output to the first commit
+
+This page is for designers who just generated a theme with the [design extension wizard](design-extension-wizard.md).
+Follow it once, in order; at the end you have a theme that renders and a clean first commit.
+
+## Step by step
+
+1. **Look at the tree**:
+
+   ```bash
+   find extension/mytheme -type f | sort
+   ```
+
+   Compare with [The design wizard's parts](design-wizard-parts-reference.md).
+
+2. **Check the PHP and XML files**:
+
+   ```bash
+   php -l extension/mytheme/ezinfo.php
+   xmllint --noout extension/mytheme/extension.xml
+   ```
+
+   Expected: `No syntax errors detected` and no output from `xmllint`.
+
+3. **Fix `composer.json`**: add `"ezpublish-legacy-extension-name": "mytheme"` under `extra`, set the PHP versions
+   you test, add `homepage`, `support` and `authors`
+   ([composer.json for a theme](composer-json-for-a-theme.md)). Check: `composer validate extension/mytheme/composer.json`.
+
+   Make the three edits of the generated head and layout (the title, `{ezcss_load()}` and `{ezscript_load()}`, a
+   plain `<meta charset="utf-8" />`) unless your installation already has the corrected wizard
+   ([Three edits the generated head and layout need](design-wizard-parts-reference.md#three-edits-the-generated-head-and-layout-need)).
+
+4. **Switch it on** for the installation and choose it for one test siteaccess
+   ([Activating a theme](activating-a-theme-extension.md),
+   [The design settings a theme ships](design-settings-a-theme-ships.md)).
+
+5. **Make it visible**:
+
+   ```bash
+   php bin/php/ezpgenerateautoloads.php -e
+   php bin/php/ezcache.php --clear-all --allow-root-user
+   ```
+
+6. **Open the test siteaccess** in a browser. The page uses your `pagelayout.tpl`; with template debugging on, the
+   path comments name files in `extension/mytheme/design/mytheme/`.
+
+7. **Read the README the wizard wrote** and correct anything that is not true for your theme.
+
+8. **Commit**:
+
+   ```bash
+   cd extension/mytheme
+   git init -b main
+   git add .
+   git status --short
+   git commit -m "Added: The mytheme theme extension"
+   ```
+
+   Read `git status --short` before committing: only the theme's files should be listed.
+
+## What usually needs changing next
+
+- The pagelayout's head: stylesheet and script loading ([Loading stylesheets](../theme-design/loading-stylesheets.md)).
+- The example override for `article` ([Override basics](../templates/override-ini-basics.md)).
+- `ezinfo.php` and `extension.xml`: website and copyright.
+
+## Related pages
+
+- [Putting a theme under Git](putting-a-theme-under-git.md)
+- [Checklist: the theme extension is ready](checklist-theme-extension-ready.md)
+- [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
