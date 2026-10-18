@@ -937,6 +937,10 @@
 .a4-help-meta-item { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); margin: 0; padding: 0; }
 .a4-help-meta-item > .a4-icon { flex: none; }
 .a4-help-meta-item .a4-tag .a4-icon { flex: none; }
+/* The category and audience tags link to the search listing every page of theirs */
+.a4-help-meta a.a4-tag { text-decoration: none; }
+.a4-help-meta a.a4-tag:hover { border-color: var(--a4-line-strong); text-decoration: underline; }
+.a4-help-meta a.a4-help-pill:hover { box-shadow: inset 0 0 0 1px currentColor; }
 .a4-help-meta-path {
   padding: 0 var(--a4-space-1);
   border-radius: var(--a4-radius-s);
