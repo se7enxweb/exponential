@@ -72532,6 +72532,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>Представлення й просування Exponential: позиціювання, демонстрації, заперечення, ліцензування, бренд і зростання спільноти.</translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Оновлення з Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Отримуйте оновлення, щойно їх надіслано на GitHub, а потім оновлюйте Composer відповідно: щогодини, щодня, щотижня, щомісяця або лише з кожним випуском.</translation>
+    </message>
+    <message>
+        <source>Partners</source>
+        <translation>Партнери</translation>
+    </message>
+    <message>
+        <source>Advocates</source>
+        <translation>Амбасадори</translation>
+    </message>
+    <message>
+        <source>Designers</source>
+        <translation>Дизайнери</translation>
+    </message>
+    <message>
+        <source>Hosting companies</source>
+        <translation>Хостинг-компанії</translation>
+    </message>
+    <message>
+        <source>Application creators</source>
+        <translation>Творці застосунків</translation>
+    </message>
+    <message>
+        <source>Website creators</source>
+        <translation>Творці вебсайтів</translation>
+    </message>
+    <message>
+        <source>Supporters</source>
+        <translation>Прихильники</translation>
+    </message>
+    <message>
+        <source>Sponsors</source>
+        <translation>Спонсори</translation>
+    </message>
+    <message>
+        <source>Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.</source>
+        <translation>Створюйте, розміщуйте й продавайте з Exponential: партнерська програма, класи партнерів, переваги, вимоги та як подати заявку.</translation>
+    </message>
+    <message>
+        <source>Spread the word: talking points, events, community channels, demos and helping new users find their way.</source>
+        <translation>Поширюйте слово: тези, події, канали спільноти, демонстрації та допомога новим користувачам.</translation>
+    </message>
+    <message>
+        <source>Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.</source>
+        <translation>Створюйте теми й шаблони, розробляйте розширення, а потім публікуйте, продавайте й підтримуйте їх протягом життєвого циклу.</translation>
+    </message>
+    <message>
+        <source>Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.</source>
+        <translation>Розміщуйте сайти Exponential: вимоги до сервера, PHP і бази даних, Velocity, кешування, безпека, резервні копії та експлуатація.</translation>
+    </message>
+    <message>
+        <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
+        <translation>Створюйте застосунки на Exponential: моделі вмісту, модулі й подання, API, розширення та тестування.</translation>
+    </message>
+    <message>
+        <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
+        <translation>Створюйте вебсайти з Exponential: планування сайту, класи вмісту, дизайни, макети, запуск і супровід.</translation>
+    </message>
+    <message>
+        <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
+        <translation>Допоможіть проєкту рости: долучайте код, документацію, переклади й тестування та діліться тим, що створюєте.</translation>
+    </message>
+    <message>
+        <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
+        <translation>Фінансуйте роботу над Exponential: чому спонсорство важливе, що воно оплачує і як підтримати 7x та Фонд.</translation>
+    </message>
+    <message>
+        <source>Partnership</source>
+        <translation>Партнерство</translation>
+    </message>
+    <message>
+        <source>Advocacy and community</source>
+        <translation>Популяризація та спільнота</translation>
+    </message>
+    <message>
+        <source>Theme design</source>
+        <translation>Дизайн тем</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Шаблони</translation>
+    </message>
+    <message>
+        <source>Extension development</source>
+        <translation>Розробка розширень</translation>
+    </message>
+    <message>
+        <source>Theme extensions</source>
+        <translation>Розширення тем</translation>
+    </message>
+    <message>
+        <source>Publishing and distribution</source>
+        <translation>Публікація та розповсюдження</translation>
+    </message>
+    <message>
+        <source>Selling themes and services</source>
+        <translation>Продаж тем і послуг</translation>
+    </message>
+    <message>
+        <source>Maintenance life cycle</source>
+        <translation>Життєвий цикл супроводу</translation>
+    </message>
+    <message>
+        <source>Hosting</source>
+        <translation>Хостинг</translation>
+    </message>
+    <message>
+        <source>Building applications</source>
+        <translation>Створення застосунків</translation>
+    </message>
+    <message>
+        <source>Building websites</source>
+        <translation>Створення вебсайтів</translation>
+    </message>
+    <message>
+        <source>Supporting Exponential</source>
+        <translation>Підтримка Exponential</translation>
+    </message>
+    <message>
+        <source>Sponsorship</source>
+        <translation>Спонсорство</translation>
+    </message>
+    <message>
+        <source>Working with Exponential as a partner: the partner program, partner classes, benefits and how to apply.</source>
+        <translation>Робота з Exponential як партнер: партнерська програма, класи партнерів, переваги та як подати заявку.</translation>
+    </message>
+    <message>
+        <source>Spreading the word about Exponential: talking points, events, channels and welcoming new users.</source>
+        <translation>Поширення інформації про Exponential: тези, події, канали та привітання нових користувачів.</translation>
+    </message>
+    <message>
+        <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
+        <translation>Дизайн тем для Exponential: дизайни, система перевизначень, стилі, ресурси та доступність.</translation>
+    </message>
+    <message>
+        <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
+        <translation>Мова шаблонів: змінні, оператори, функції, вибірки, включення та перевизначення.</translation>
+    </message>
+    <message>
+        <source>Building extensions step by step: structure, settings, modules, templates, classes and contributing back.</source>
+        <translation>Створення розширень крок за кроком: структура, налаштування, модулі, шаблони, класи та внесок назад у проєкт.</translation>
+    </message>
+    <message>
+        <source>Packaging a theme as an extension: structure, settings, dependencies and the designs it adds.</source>
+        <translation>Пакування теми як розширення: структура, налаштування, залежності та дизайни, які вона додає.</translation>
+    </message>
+    <message>
+        <source>Publishing themes and extensions: repositories, packages, releases, versions and licenses.</source>
+        <translation>Публікація тем і розширень: репозиторії, пакети, випуски, версії та ліцензії.</translation>
+    </message>
+    <message>
+        <source>Selling themes and the services around them: offers, pricing, support and working with clients.</source>
+        <translation>Продаж тем і супутніх послуг: пропозиції, ціни, підтримка та робота з клієнтами.</translation>
+    </message>
+    <message>
+        <source>Keeping themes and extensions alive: upgrades, compatibility, security fixes and retirement.</source>
+        <translation>Підтримка тем і розширень: оновлення, сумісність, виправлення безпеки та виведення з ужитку.</translation>
+    </message>
+    <message>
+        <source>Hosting Exponential: servers, PHP, databases, web servers, Velocity, caching, backups and operations.</source>
+        <translation>Хостинг Exponential: сервери, PHP, бази даних, вебсервери, Velocity, кешування, резервні копії та експлуатація.</translation>
+    </message>
+    <message>
+        <source>Building applications on Exponential: content models, modules, views, APIs and testing.</source>
+        <translation>Створення застосунків на Exponential: моделі вмісту, модулі, подання, API та тестування.</translation>
+    </message>
+    <message>
+        <source>Building websites with Exponential: planning, content structure, designs, layouts and the launch.</source>
+        <translation>Створення вебсайтів з Exponential: планування, структура вмісту, дизайни, макети та запуск.</translation>
+    </message>
+    <message>
+        <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
+        <translation>Допомога Exponential рости: внесок коду, документації, перекладів, тестування та поширення інформації.</translation>
+    </message>
+    <message>
+        <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
+        <translation>Фінансування Exponential: що оплачує спонсорство і як підтримати 7x та Фонд Exponential.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
