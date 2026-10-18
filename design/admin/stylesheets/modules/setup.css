@@ -1385,3 +1385,40 @@ label.a4-package-option-label {
 .a4-setup-logmanage-bundle { flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: var(--a4-space-2) var(--a4-space-3); margin: 0 0 var(--a4-space-4); }
 .a4-setup-logmanage-bundle .a4-help { flex-basis: 100%; }
 .a4-setup-logmanage-bundle-warn { flex-basis: 100%; margin: 0; }
+
+/* ---- oauthadmin/*: the REST administration (applications and API keys, design:oauthadmin/*.tpl) ---------------- */
+/* "Select all on this page" at the end of the list's heading, the box of each application card */
+.a4-setup-oauth-all { margin-inline-start: auto; font-size: var(--a4-text-s); }
+.a4-setup-oauth-select { flex: 0 0 auto; width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); }
+/* A client identifier or secret to copy: a framed value, selected whole with one click */
+.a4-setup-oauth-value {
+  display: block;
+  padding: var(--a4-space-1) var(--a4-space-2);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  overflow-wrap: anywhere;
+  user-select: all;
+  -webkit-user-select: all;
+}
+.a4-setup-oauth-reveal { margin-top: 2px; }
+/* The key list: a value under another in one cell, the key's name, the revoke button at the row's end */
+.a4-setup-oauth-line { display: block; margin-top: 2px; }
+.a4-setup-oauth-key-name { display: block; margin-bottom: var(--a4-space-1); overflow-wrap: anywhere; }
+.a4-setup-oauth-keys td { vertical-align: top; overflow-wrap: anywhere; }
+.a4-setup-oauth-keys td:first-child { width: 34px; }
+.a4-setup-oauth-keys td:first-child input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--a4-accent-strong); }
+.a4-setup-oauth-keys .a4-setup-oauth-key-actions { text-align: end; white-space: nowrap; }
+.a4-setup-oauth-keys tr.is-revoked > td,
+.a4-setup-oauth-keys tr.is-expired > td { color: var(--a4-muted); }
+/* On a narrow screen one block per key: the box beside it, every other cell under the one before with its label */
+@media (max-width: 720px) {
+  .a4-setup-oauth-keys thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .a4-setup-oauth-keys tbody tr { display: grid; grid-template-columns: 34px minmax(0, 1fr); border-bottom: 1px solid var(--a4-line); }
+  .a4-setup-oauth-keys tbody tr:last-child { border-bottom: 0; }
+  .a4-setup-oauth-keys tbody td { display: block; grid-column: 2; border-bottom: 0; }
+  .a4-setup-oauth-keys tbody td:first-child { grid-column: 1; grid-row: 1 / span 6; width: auto; }
+  .a4-setup-oauth-keys td[data-label]::before { content: attr(data-label); display: block; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
+  .a4-setup-oauth-keys .a4-setup-oauth-key-actions { text-align: start; }
+}

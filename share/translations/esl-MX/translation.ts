@@ -64356,6 +64356,18 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <translation>Claves</translation>
     </message>
     <message>
+        <source>Select</source>
+        <translation>Seleccionar</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acciones</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obligatorio</translation>
+    </message>
+    <message>
         <source>%from to %to of %count</source>
         <translation>%from a %to de %count</translation>
     </message>

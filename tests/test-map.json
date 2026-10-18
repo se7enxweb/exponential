@@ -1358,6 +1358,13 @@
     "kernel/private/modules/oauth/authorize.php": [
       "tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php"
     ],
+    "design/admin*/templates/oauthadmin/*": [
+      "tests/tests/design/AdminOauthadminPagesTest.php",
+      "tests/tests/design/AdminStylingRulesTest.php"
+    ],
+    "design/standard/javascript/oauthadmin_list.js": [
+      "tests/tests/design/AdminOauthadminPagesTest.php"
+    ],
     "extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php": [
       "tests/tests/extension/ezjscore/ezjscServerFunctionsPublishingQueueStatusTest.php"
     ],
