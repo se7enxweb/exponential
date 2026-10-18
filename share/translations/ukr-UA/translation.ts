@@ -13767,6 +13767,10 @@ Note: The packages will not be uninstalled.</source>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Докладніше див. &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14218,6 +14222,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Quick search</source>
         <translation>Швидкий пошук</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14443,6 +14451,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Ваше ім&apos;я, адреса ел. пошти та інші дані.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Посібники, пошук і як повідомити про помилку.</translation>
     </message>
 </context>
 <context>
@@ -14852,6 +14868,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Стежити за файлами журналів, шукати в них і зіставляти їх.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Посібники, пошук і як повідомити про помилку.</translation>
     </message>
     <message>
         <source>Interface languages</source>
@@ -64930,6 +64954,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Nothing was published in the last 14 days.</source>
         <translation>За останні 14 днів нічого не опубліковано.</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -71115,225 +71143,6 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
-    <name>design/admin/setup/languages</name>
-    <message>
-        <source>Interface languages</source>
-        <translation>Мови інтерфейсу</translation>
-    </message>
-    <message>
-        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
-        <translation>Адміністрування показується мовою своєї локалі. Локаль без власного перекладу показує перший переклад зі свого ланцюжка резервних мов, а якщо такого немає, то англійські вихідні тексти. Ця сторінка перелічує кожну локаль із тим, що вона показує, і наскільки це повно. Вона нічого не змінює: резервні мови задаються в i18n.ini [TranslationSettings].</translation>
-    </message>
-    <message>
-        <source>Overview</source>
-        <translation>Огляд</translation>
-    </message>
-    <message>
-        <source>Locales</source>
-        <translation>Локалі</translation>
-    </message>
-    <message>
-        <source>With a translation of their own</source>
-        <translation>З власним перекладом</translation>
-    </message>
-    <message>
-        <source>Translated through a fallback</source>
-        <translation>Перекладені через резервну мову</translation>
-    </message>
-    <message>
-        <source>In the English source texts</source>
-        <translation>Англійськими вихідними текстами</translation>
-    </message>
-    <message>
-        <source>Problems</source>
-        <translation>Проблеми</translation>
-    </message>
-    <message>
-        <source>Its chain comes back to %target.</source>
-        <translation>Її ланцюжок повертається до %target.</translation>
-    </message>
-    <message>
-        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
-        <translation>Її ланцюжок довший за FallbackMaxDepth і обривається на %target.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which is no locale code.</source>
-        <translation>Резервна мова %target не є кодом локалі.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
-        <translation>Резервна мова %target не має ні файлу локалі, ні перекладу.</translation>
-    </message>
-    <message>
-        <source>FallbackRules[] names %target, which is no fallback rule.</source>
-        <translation>FallbackRules[] називає %target, але це не правило резервної мови.</translation>
-    </message>
-    <message>
-        <source>Has a fallback, but no locale file.</source>
-        <translation>Має резервну мову, але не має файлу локалі.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
-        <translation>Резервна мова %target ще не має перекладу: показуються англійські вихідні тексти.</translation>
-    </message>
-    <message>
-        <source>All locales</source>
-        <translation>Усі локалі</translation>
-    </message>
-    <message>
-        <source>The installation has no locale file for %locale.</source>
-        <translation>У встановленні немає файлу локалі для %locale.</translation>
-    </message>
-    <message>
-        <source>Translation of its own</source>
-        <translation>Власний переклад</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>Так</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>Ні</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>Інтерфейс</translation>
-    </message>
-    <message>
-        <source>%percent % translated</source>
-        <translation>%percent % перекладено</translation>
-    </message>
-    <message>
-        <source>through %locale</source>
-        <translation>через %locale</translation>
-    </message>
-    <message>
-        <source>English source texts</source>
-        <translation>Англійські вихідні тексти</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>Розширення</translation>
-    </message>
-    <message>
-        <source>%translated of %total translated, %complete complete</source>
-        <translation>Перекладено %translated з %total, повністю %complete</translation>
-    </message>
-    <message>
-        <source>Fallback chain</source>
-        <translation>Ланцюжок резервних мов</translation>
-    </message>
-    <message>
-        <source>no translation</source>
-        <translation>немає перекладу</translation>
-    </message>
-    <message>
-        <source>by FallbackLanguages[]</source>
-        <translation>через FallbackLanguages[]</translation>
-    </message>
-    <message>
-        <source>by the automatic same-language fallback</source>
-        <translation>через автоматичну резервну мову в межах тієї самої мови</translation>
-    </message>
-    <message>
-        <source>by the rule %rule</source>
-        <translation>за правилом %rule</translation>
-    </message>
-    <message>
-        <source>None: without a translation of its own it shows the English source texts.</source>
-        <translation>Немає: без власного перекладу показуються англійські вихідні тексти.</translation>
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation>Розширення</translation>
-    </message>
-    <message>
-        <source>Translated</source>
-        <translation>Перекладено</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Налаштування</translation>
-    </message>
-    <message>
-        <source>%count locales with a configured fallback</source>
-        <translation>Локалей із налаштованою резервною мовою: %count</translation>
-    </message>
-    <message>
-        <source>merge: every translation of the chain, the most specific winning</source>
-        <translation>merge: усі переклади ланцюжка, перевагу має найконкретніший</translation>
-    </message>
-    <message>
-        <source>first: the first translation of the chain</source>
-        <translation>first: перший переклад ланцюжка</translation>
-    </message>
-    <message>
-        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
-        <translation>увімкнено: локаль без перекладу й без налаштованої резервної мови бере найповніший переклад своєї мови</translation>
-    </message>
-    <message>
-        <source>Never for: %list</source>
-        <translation>Ніколи для: %list</translation>
-    </message>
-    <message>
-        <source>disabled</source>
-        <translation>вимкнено</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Немає</translation>
-    </message>
-    <message>
-        <source>The same list on the command line: %command</source>
-        <translation>Той самий список у командному рядку: %command</translation>
-    </message>
-    <message>
-        <source>%count shown</source>
-        <translation>Показано: %count</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Показати</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Локаль</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Мова</translation>
-    </message>
-    <message>
-        <source>This siteaccess</source>
-        <translation>Цей доступ до сайту</translation>
-    </message>
-    <message>
-        <source>source texts</source>
-        <translation>вихідні тексти</translation>
-    </message>
-    <message>
-        <source>problem</source>
-        <translation>проблема</translation>
-    </message>
-    <message>
-        <source>%translated of %total</source>
-        <translation>%translated з %total</translation>
-    </message>
-    <message>
-        <source>%percent % on average</source>
-        <translation>%percent % у середньому</translation>
-    </message>
-    <message>
-        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
-        <translation>Виділений крок знайдено автоматичною резервною мовою в межах тієї самої мови; решту налаштовано або взято з правила.</translation>
-    </message>
-    <message>
-        <source>No locale is of this kind.</source>
-        <translation>Немає локалей цього виду.</translation>
-    </message>
-</context>
-<context>
     <name>kernel/exphelp</name>
     <message>
         <source>Help</source>
@@ -72054,6 +71863,513 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Посібники й довідник для всіх, хто працює з цією інсталяцією, створені з документації її власної версії.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Застосувати фільтри</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Перегляд</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Переглянути всі сторінки довідки</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Перегляд довідки</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Виберіть іншу аудиторію, тему або тип.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Цитуйте її</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Надсилайте виправлення</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Копіюйте її й поширюйте</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Повідомлення про авторські права й ліцензію</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Створення й зміна вмісту: редактор, поля, чернетки й версії.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Ліцензія документації</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Пошук вмісту в адмініструванні та на сайті.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Перші кроки в адмініструванні: вхід, орієнтування й щоденні завдання.</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Вільна документація: користуйтеся нею, щоб допомагати собі й іншим</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Як отримати допомогу й повідомити про помилку.</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Передавайте сторінки іншим, на папері або як файли. Зберігайте з кожною копією повідомлення про авторські права, повідомлення про ліцензію та копію ліцензії.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Зображення, файли та інші медіа: завантаження, вибір і повторне використання.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Встановлення Exponential і його оновлення до нового випуску.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Гарячі клавіші, що прискорюють роботу в адмініструванні.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Для цього вибору сторінок немає.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Старіші документи, збережені для довідки.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Макети сторінок: зони, блоки й правила, що вибирають макет.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Публікація, планування, приховування й переміщення вмісту.</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Читайте будь-яку сторінку скільки завгодно, з будь-якою метою.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Прочитати ліцензію</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Посилайтеся на сторінку за її назвою та адресою в довідці або за її файлом у каталозі doc.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Довідкові матеріали: налаштування, команди й формати.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Керування сайтом: налаштування, користувачі й ролі, кеші, завдання cron і журнали.</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Поширюйте свою версію під тією самою ліцензією, з початковими повідомленнями й приміткою про те, що ви змінили.</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Вивчайте її</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Шаблони, розширення, API і код, що стоїть за ними.</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Ліцензія в інтернеті</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Ця документація є вільною документацією за ліцензією %license %version або пізнішою.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Ця документація є вільною документацією за ліцензією %license %version.</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Ця довідка є вільною документацією за ліцензією %license %version або пізнішою. Ви можете використовувати, поширювати й покращувати її:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Ця довідка є вільною документацією за ліцензією %license %version. Ви можете використовувати, поширювати й покращувати її:</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Це текст %license, версії %version, у тому вигляді, як його публікує Free Software Foundation. Кожен може дослівно копіювати й поширювати його; змінювати його не дозволено.</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Ця сторінка є частиною документації розширення %extension і поширюється за ліцензією цього розширення.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Ця сторінка успадкована з документації початкового програмного забезпечення. На неї не поширюється %license; вона поширюється за %other.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Теми</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Перекладайте, адаптуйте й покращуйте її</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Переклади й мови сайту.</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Скористайтеся «Редагувати на GitHub» на будь-якій сторінці. Зміни приймаються за тією самою ліцензією, тож вони залишаються вільними для всіх.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Що змінилося в кожному випуску.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Що робить кожна функція і як її налаштувати.</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Що можна робити з вільною документацією</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Які сторінки мають яку ліцензію</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Ваш обліковий запис: пароль, двоетапний вхід і вподобання.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>Відповідних сторінок: %count</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>Сторінок у теках документації: %count. Відкрийте теку або відфільтруйте за словом із назви.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>Про цю документацію</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Переглянути всю довідку</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Фільтрувати сторінки</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Фільтрувати сторінки довідки</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Жодна назва сторінки не відповідає</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Зворотна сумісність</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Журнали змін</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Приклади</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Посібники</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Робота в адмініструванні</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Інсталяція</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Магазин</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Специфікації</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Стандарти</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Надрукувати цю сторінку</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Завантажити як PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Надрукувати або завантажити цю сторінку</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Адреса:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Довідка Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Сторінка %number з %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Зображення: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Зображення</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Мови інтерфейсу</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Адміністрування показується мовою своєї локалі. Локаль без власного перекладу показує перший переклад зі свого ланцюжка резервних мов, а якщо такого немає, то англійські вихідні тексти. Ця сторінка перелічує кожну локаль із тим, що вона показує, і наскільки це повно. Вона нічого не змінює: резервні мови задаються в i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Огляд</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Локалі</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>З власним перекладом</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Перекладені через резервну мову</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>Англійськими вихідними текстами</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Проблеми</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Її ланцюжок повертається до %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Її ланцюжок довший за FallbackMaxDepth і обривається на %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Резервна мова %target не є кодом локалі.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Резервна мова %target не має ні файлу локалі, ні перекладу.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] називає %target, але це не правило резервної мови.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Має резервну мову, але не має файлу локалі.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Резервна мова %target ще не має перекладу: показуються англійські вихідні тексти.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Усі локалі</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>У встановленні немає файлу локалі для %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Власний переклад</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Інтерфейс</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % перекладено</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>через %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Англійські вихідні тексти</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Розширення</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>Перекладено %translated з %total, повністю %complete</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Ланцюжок резервних мов</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>немає перекладу</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>через FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>через автоматичну резервну мову в межах тієї самої мови</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>за правилом %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Немає: без власного перекладу показуються англійські вихідні тексти.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Розширення</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Перекладено</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>Локалей із налаштованою резервною мовою: %count</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: усі переклади ланцюжка, перевагу має найконкретніший</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: перший переклад ланцюжка</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>увімкнено: локаль без перекладу й без налаштованої резервної мови бере найповніший переклад своєї мови</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Ніколи для: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>вимкнено</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Немає</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>Той самий список у командному рядку: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>Показано: %count</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Показати</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локаль</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Мова</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Цей доступ до сайту</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>вихідні тексти</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>проблема</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated з %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % у середньому</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Виділений крок знайдено автоматичною резервною мовою в межах тієї самої мови; решту налаштовано або взято з правила.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Немає локалей цього виду.</translation>
     </message>
 </context>
 </TS>

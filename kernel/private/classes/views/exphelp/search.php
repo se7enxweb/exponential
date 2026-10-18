@@ -76,7 +76,7 @@ class Search extends \Exponential\Runnable\ModuleView
             \eZExecution::cleanExit();
         }
 
-        $categories = $index->categories();
+        $categories = \expHelp::translatedNames( $index->categories() );
         $category = false;
         if ( count( $state['category'] ) === 1 && isset( $categories[$state['category'][0]] ) )
         {
@@ -93,7 +93,7 @@ class Search extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_facet_urls', self::facetUrls( $state, $known, $defaultLimit ) );
         $tpl->setVariable( 'help_pager', self::pager( $state, (int)$result['total'], $defaultLimit ) );
         $tpl->setVariable( 'help_category', $category );
-        $tpl->setVariable( 'help_audiences', $index->audiences() );
+        $tpl->setVariable( 'help_audiences', \expHelp::translatedNames( $index->audiences() ) );
         $tpl->setVariable( 'help_categories', $categories );
         $tpl->setVariable( 'help_types', $index->types() );
 

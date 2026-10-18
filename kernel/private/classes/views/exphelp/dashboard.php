@@ -36,15 +36,15 @@ class Dashboard extends \Exponential\Runnable\ModuleView
 
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'help_i18n_json', \expHelp::clientStringsJson() );
-        $tpl->setVariable( 'help_audiences', $index->audiences() );
-        $tpl->setVariable( 'help_categories', $index->categories() );
+        $tpl->setVariable( 'help_audiences', \expHelp::translatedNames( $index->audiences() ) );
+        $tpl->setVariable( 'help_categories', \expHelp::translatedNames( $index->categories() ) );
         $tpl->setVariable( 'help_featured', $featured );
         $tpl->setVariable( 'help_recent', $index->recentChanges( (int)\expHelp::setting( 'DashboardSettings', 'RecentLimit', 8 ) ) );
         $tpl->setVariable( 'help_audience_pages', self::audiencePages( $documents, (int)\expHelp::setting( 'DashboardSettings', 'AudiencePageLimit', 4 ),
             (array)\expHelp::setting( 'DashboardSettings', 'AudienceExcludeTypes', array( 'changelog', 'history', 'bc', 'specification' ) ) ) );
         $tpl->setVariable( 'help_stats', $stats );
         $tpl->setVariable( 'help_tree', $index->tree() );
-        $tpl->setVariable( 'help_trackers', $report->trackers() );
+        $tpl->setVariable( 'help_trackers', \expHelp::translatedNames( $report->trackers(), array( 'label', 'description' ) ) );
         $tpl->setVariable( 'help_search_url', \expHelp::url( 'search' ) );
         $tpl->setVariable( 'help_report_url', \expHelp::url( 'report' ) );
 

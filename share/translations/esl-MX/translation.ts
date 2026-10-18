@@ -15174,6 +15174,10 @@ Nota: los paquetes no serán desinstalados.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Para más información, consulta &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centro de ayuda</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -15685,6 +15689,10 @@ Nota: los paquetes no serán desinstalados.</translation>
         <source>Hide quick settings</source>
         <translation type="obsolete">Ocultar la configuración rápida</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centro de ayuda</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15938,6 +15946,14 @@ Nota: los paquetes no serán desinstalados.</translation>
     <message>
         <source>Disable &amp;quot;Tabs&amp;quot; by default  while browsing content.</source>
         <translation type="obsolete">Deshabilitar &amp;quot;Pestañas&amp;quot; por defecto durante la navegación de contenido.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centro de ayuda</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guías, búsqueda y cómo reportar un error.</translation>
     </message>
 </context>
 <context>
@@ -16351,6 +16367,14 @@ Nota: los paquetes no serán desinstalados.</translation>
     <message>
         <source>URL management</source>
         <translation type="obsolete">Administración de URL</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centro de ayuda</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guías, búsqueda y cómo reportar un error.</translation>
     </message>
     <message>
         <source>Interface languages</source>
@@ -68687,6 +68711,10 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>Nothing was published in the last 14 days.</source>
         <translation>No se publicó nada en los últimos 14 días.</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centro de ayuda</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -75356,225 +75384,6 @@ Gracias por la retroalimentación</translation>
     </message>
 </context>
 <context>
-    <name>design/admin/setup/languages</name>
-    <message>
-        <source>Interface languages</source>
-        <translation>Idiomas de la interfaz</translation>
-    </message>
-    <message>
-        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
-        <translation>La administración se muestra en el idioma de su configuración regional. Una configuración regional sin traducción propia muestra la primera traducción de su cadena de respaldo o, si no hay ninguna, los textos fuente en inglés. Esta página enumera cada configuración regional con lo que muestra y qué tan completo está. No cambia nada: los respaldos se definen en i18n.ini [TranslationSettings].</translation>
-    </message>
-    <message>
-        <source>Overview</source>
-        <translation>Vista general</translation>
-    </message>
-    <message>
-        <source>Locales</source>
-        <translation>Configuraciones regionales</translation>
-    </message>
-    <message>
-        <source>With a translation of their own</source>
-        <translation>Con traducción propia</translation>
-    </message>
-    <message>
-        <source>Translated through a fallback</source>
-        <translation>Traducidas mediante un respaldo</translation>
-    </message>
-    <message>
-        <source>In the English source texts</source>
-        <translation>Con los textos fuente en inglés</translation>
-    </message>
-    <message>
-        <source>Problems</source>
-        <translation>Problemas</translation>
-    </message>
-    <message>
-        <source>Its chain comes back to %target.</source>
-        <translation>Su cadena regresa a %target.</translation>
-    </message>
-    <message>
-        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
-        <translation>Su cadena es más larga que FallbackMaxDepth y se corta en %target.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which is no locale code.</source>
-        <translation>Recurre a %target, que no es un código regional.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
-        <translation>Recurre a %target, que no tiene ni archivo de configuración regional ni traducción.</translation>
-    </message>
-    <message>
-        <source>FallbackRules[] names %target, which is no fallback rule.</source>
-        <translation>FallbackRules[] nombra %target, que no es una regla de respaldo.</translation>
-    </message>
-    <message>
-        <source>Has a fallback, but no locale file.</source>
-        <translation>Tiene un respaldo, pero ningún archivo de configuración regional.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
-        <translation>Recurre a %target, que todavía no tiene traducción: muestra los textos fuente en inglés.</translation>
-    </message>
-    <message>
-        <source>All locales</source>
-        <translation>Todas las configuraciones regionales</translation>
-    </message>
-    <message>
-        <source>The installation has no locale file for %locale.</source>
-        <translation>La instalación no tiene archivo de configuración regional para %locale.</translation>
-    </message>
-    <message>
-        <source>Translation of its own</source>
-        <translation>Traducción propia</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>Sí</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>No</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>Interfaz</translation>
-    </message>
-    <message>
-        <source>%percent % translated</source>
-        <translation>%percent % traducido</translation>
-    </message>
-    <message>
-        <source>through %locale</source>
-        <translation>mediante %locale</translation>
-    </message>
-    <message>
-        <source>English source texts</source>
-        <translation>Textos fuente en inglés</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>Extensiones</translation>
-    </message>
-    <message>
-        <source>%translated of %total translated, %complete complete</source>
-        <translation>%translated de %total traducidas, %complete completas</translation>
-    </message>
-    <message>
-        <source>Fallback chain</source>
-        <translation>Cadena de respaldo</translation>
-    </message>
-    <message>
-        <source>no translation</source>
-        <translation>sin traducción</translation>
-    </message>
-    <message>
-        <source>by FallbackLanguages[]</source>
-        <translation>por FallbackLanguages[]</translation>
-    </message>
-    <message>
-        <source>by the automatic same-language fallback</source>
-        <translation>por el respaldo automático del mismo idioma</translation>
-    </message>
-    <message>
-        <source>by the rule %rule</source>
-        <translation>por la regla %rule</translation>
-    </message>
-    <message>
-        <source>None: without a translation of its own it shows the English source texts.</source>
-        <translation>Ninguna: sin traducción propia muestra los textos fuente en inglés.</translation>
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation>Extensión</translation>
-    </message>
-    <message>
-        <source>Translated</source>
-        <translation>Traducido</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Configuraciones</translation>
-    </message>
-    <message>
-        <source>%count locales with a configured fallback</source>
-        <translation>%count configuraciones regionales con un respaldo configurado</translation>
-    </message>
-    <message>
-        <source>merge: every translation of the chain, the most specific winning</source>
-        <translation>merge: todas las traducciones de la cadena; gana la más específica</translation>
-    </message>
-    <message>
-        <source>first: the first translation of the chain</source>
-        <translation>first: la primera traducción de la cadena</translation>
-    </message>
-    <message>
-        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
-        <translation>activado: una configuración regional sin traducción y sin respaldo configurado toma la traducción más completa de su idioma</translation>
-    </message>
-    <message>
-        <source>Never for: %list</source>
-        <translation>Nunca para: %list</translation>
-    </message>
-    <message>
-        <source>disabled</source>
-        <translation>desactivado</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Ninguna</translation>
-    </message>
-    <message>
-        <source>The same list on the command line: %command</source>
-        <translation>La misma lista en la línea de comandos: %command</translation>
-    </message>
-    <message>
-        <source>%count shown</source>
-        <translation>%count mostradas</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Mostrar</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Configuración regional</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Idioma</translation>
-    </message>
-    <message>
-        <source>This siteaccess</source>
-        <translation>Este acceso al sitio</translation>
-    </message>
-    <message>
-        <source>source texts</source>
-        <translation>textos fuente</translation>
-    </message>
-    <message>
-        <source>problem</source>
-        <translation>problema</translation>
-    </message>
-    <message>
-        <source>%translated of %total</source>
-        <translation>%translated de %total</translation>
-    </message>
-    <message>
-        <source>%percent % on average</source>
-        <translation>%percent % en promedio</translation>
-    </message>
-    <message>
-        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
-        <translation>Un paso resaltado lo encontró el respaldo automático del mismo idioma; los demás están configurados o vienen de una regla.</translation>
-    </message>
-    <message>
-        <source>No locale is of this kind.</source>
-        <translation>Ninguna configuración regional es de este tipo.</translation>
-    </message>
-</context>
-<context>
     <name>kernel/exphelp</name>
     <message>
         <source>Help</source>
@@ -76295,6 +76104,513 @@ Gracias por la retroalimentación</translation>
     <message>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Guías y referencia para todos los que trabajan con esta instalación, a partir de la documentación de su propia versión.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Aplicar filtros</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Explorar</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Explorar todas las páginas de ayuda</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Explorar la ayuda</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Elige otro público, tema o tipo.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Citarla</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Aportar correcciones</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Copiarla y compartirla</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Aviso de copyright y licencia</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Crear y cambiar contenido: el editor, los campos, los borradores y las versiones.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Licencia de la documentación</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Encontrar contenido en la administración y en el sitio.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Primeros pasos en la administración: iniciar sesión, orientarse y las tareas diarias.</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Documentación libre: úsala para ayudarte a ti y a los demás</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Obtener ayuda y reportar un error.</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Da páginas a otros usuarios, en papel o como archivos. Conserva el aviso de copyright, el aviso de licencia y una copia de la licencia con cada copia.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Imágenes, archivos y otros medios: subirlos, elegirlos y reutilizarlos.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Instalar Exponential y actualizarlo a una nueva versión.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Atajos de teclado que agilizan la administración.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>No hay ninguna página para esta selección.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Documentos antiguos conservados como referencia.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Disposiciones de página: zonas, bloques y las reglas que eligen una disposición.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Publicar, programar, ocultar y mover contenido.</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Lee cualquier página tantas veces como quieras, con cualquier fin.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Leer la licencia</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Haz referencia a una página por su título y su dirección en la ayuda, o por su archivo en el directorio doc.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Material de referencia: configuraciones, comandos y formatos.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Operar el sitio: configuración, usuarios y roles, cachés, tareas cron y registros.</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Comparte tu versión con la misma licencia, con los avisos originales y una nota de lo que cambiaste.</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Estudiarla</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Plantillas, extensiones, la API y el código que hay detrás.</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>La licencia en la web</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Esta documentación es documentación libre, con licencia %license %version o posterior.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Esta documentación es documentación libre, con licencia %license %version.</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Esta ayuda es documentación libre, con licencia %license %version o posterior. Puedes usarla, compartirla y mejorarla:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Esta ayuda es documentación libre, con licencia %license %version. Puedes usarla, compartirla y mejorarla:</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Este es el texto de la %license, versión %version, tal como lo publica la Free Software Foundation. Cualquiera puede copiarlo y compartirlo literalmente; no se permite modificarlo.</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Esta página forma parte de la documentación de la extensión %extension y se distribuye con la licencia de esa extensión.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Esta página proviene de la documentación del software original. No está cubierta por la %license; se distribuye con la %other.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Temas</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Traducirla, adaptarla y mejorarla</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Las traducciones y los idiomas del sitio.</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Usa “Editar en GitHub” en cualquier página. Los cambios se aceptan con la misma licencia, así que siguen siendo libres para todos.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Qué cambió en cada versión.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Qué hace cada función y cómo configurarla.</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Qué puedes hacer con la documentación libre</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Qué páginas tienen qué licencia</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Tu cuenta: contraseña, inicio de sesión en dos pasos y preferencias.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count páginas coinciden</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>%count páginas en las carpetas de la documentación. Abre una carpeta o filtra por una palabra del título.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>Acerca de esta documentación</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Explorar toda la ayuda</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Filtrar páginas</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Filtrar las páginas de ayuda</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Ningún título de página coincide</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Compatibilidad con versiones anteriores</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Registros de cambios</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Ejemplos</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Guías</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Usar la administración</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Instalación</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Tienda</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Especificaciones</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Estándares</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Imprimir esta página</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Descargar como PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Imprimir o descargar esta página</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Dirección:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Ayuda de Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Página %number de %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Imagen: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Imagen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Idiomas de la interfaz</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>La administración se muestra en el idioma de su configuración regional. Una configuración regional sin traducción propia muestra la primera traducción de su cadena de respaldo o, si no hay ninguna, los textos fuente en inglés. Esta página enumera cada configuración regional con lo que muestra y qué tan completo está. No cambia nada: los respaldos se definen en i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Vista general</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Configuraciones regionales</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>Con traducción propia</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Traducidas mediante un respaldo</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>Con los textos fuente en inglés</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problemas</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Su cadena regresa a %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Su cadena es más larga que FallbackMaxDepth y se corta en %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Recurre a %target, que no es un código regional.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Recurre a %target, que no tiene ni archivo de configuración regional ni traducción.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] nombra %target, que no es una regla de respaldo.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Tiene un respaldo, pero ningún archivo de configuración regional.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Recurre a %target, que todavía no tiene traducción: muestra los textos fuente en inglés.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Todas las configuraciones regionales</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>La instalación no tiene archivo de configuración regional para %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Traducción propia</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Interfaz</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % traducido</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>mediante %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Textos fuente en inglés</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensiones</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated de %total traducidas, %complete completas</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Cadena de respaldo</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>sin traducción</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>por FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>por el respaldo automático del mismo idioma</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>por la regla %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Ninguna: sin traducción propia muestra los textos fuente en inglés.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensión</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Traducido</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Configuraciones</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count configuraciones regionales con un respaldo configurado</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: todas las traducciones de la cadena; gana la más específica</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: la primera traducción de la cadena</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>activado: una configuración regional sin traducción y sin respaldo configurado toma la traducción más completa de su idioma</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Nunca para: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>desactivado</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ninguna</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>La misma lista en la línea de comandos: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count mostradas</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Configuración regional</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Idioma</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Este acceso al sitio</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>textos fuente</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>problema</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated de %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % en promedio</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Un paso resaltado lo encontró el respaldo automático del mismo idioma; los demás están configurados o vienen de una regla.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Ninguna configuración regional es de este tipo.</translation>
     </message>
 </context>
 </TS>

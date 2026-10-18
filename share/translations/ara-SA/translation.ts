@@ -13767,6 +13767,10 @@ Note: The packages will not be uninstalled.</source>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;لمزيد من المعلومات انظر &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>مركز المساعدة</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14218,6 +14222,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Quick search</source>
         <translation>بحث سريع</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>مركز المساعدة</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14443,6 +14451,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>اسمك وعنوان بريدك الإلكتروني والتفاصيل الأخرى.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>مركز المساعدة</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>أدلة وبحث وكيفية الإبلاغ عن خطأ.</translation>
     </message>
 </context>
 <context>
@@ -14852,6 +14868,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>تتبّع ملفات السجل والبحث فيها والمقارنة بينها.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>مركز المساعدة</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>أدلة وبحث وكيفية الإبلاغ عن خطأ.</translation>
     </message>
 </context>
 <context>
@@ -64962,6 +64986,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Nothing was published in the last 14 days.</source>
         <translation>لم يُنشر شيء خلال آخر 14 يومًا.</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>مركز المساعدة</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -71867,6 +71895,294 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>أدلة ومراجع لكل من يعمل مع هذا التثبيت، مأخوذة من وثائق إصداره.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>تطبيق عوامل التصفية</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>تصفّح</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>تصفّح كل صفحات المساعدة</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>تصفّح المساعدة</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>اختر جمهورًا أو موضوعًا أو نوعًا آخر.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>استشهد بها</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>ساهم بالإصلاحات</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>انسخها وشاركها</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>إشعار حقوق النشر والترخيص</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>إنشاء المحتوى وتغييره: المحرّر والحقول والمسودات والإصدارات.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>ترخيص الوثائق</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>العثور على المحتوى في الإدارة وعلى الموقع.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>الخطوات الأولى في الإدارة: تسجيل الدخول والتنقل والمهام اليومية.</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>وثائق حرة: استخدمها لمساعدة نفسك والآخرين</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>الحصول على المساعدة والإبلاغ عن خطأ.</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>أعطِ الصفحات لمستخدمين آخرين، على الورق أو كملفات. احتفظ بإشعار حقوق النشر وإشعار الترخيص ونسخة من الترخيص مع كل نسخة.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>الصور والملفات والوسائط الأخرى: رفعها واختيارها وإعادة استخدامها.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>تثبيت Exponential وترقيته إلى إصدار جديد.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>اختصارات لوحة المفاتيح التي تجعل الإدارة أسرع.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>لا توجد صفحة لهذا الاختيار.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>وثائق أقدم محفوظة للرجوع إليها.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>تخطيطات الصفحات: المناطق والكتل والقواعد التي تختار التخطيط.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>نشر المحتوى وجدولته وإخفاؤه ونقله.</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>اقرأ أي صفحة كلما شئت، لأي غرض.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>اقرأ الترخيص</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>أشر إلى الصفحة بعنوانها وعنوانها في المساعدة، أو بملفها في دليل doc.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>مواد مرجعية: الإعدادات والأوامر والصيغ.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>تشغيل الموقع: الإعدادات والمستخدمون والأدوار وذاكرات التخزين المؤقت والمهام المجدولة والسجلات.</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>شارك نسختك بالترخيص نفسه، مع الإشعارات الأصلية وملاحظة بما غيّرته.</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>ادرسها</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>القوالب والامتدادات وواجهة البرمجة والشيفرة التي تقف وراءها.</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>الترخيص على الويب</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>هذه الوثائق وثائق حرة، مرخّصة بموجب %license %version أو أي إصدار لاحق.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>هذه الوثائق وثائق حرة، مرخّصة بموجب %license %version.</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>هذه المساعدة وثائق حرة، مرخّصة بموجب %license %version أو أي إصدار لاحق. يمكنك استخدامها ومشاركتها وتحسينها:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>هذه المساعدة وثائق حرة، مرخّصة بموجب %license %version. يمكنك استخدامها ومشاركتها وتحسينها:</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>هذا نص %license، الإصدار %version، كما تنشره مؤسسة البرمجيات الحرة. يحق لأي شخص نسخه ومشاركته حرفيًا؛ ولا يُسمح بتغييره.</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>هذه الصفحة جزء من وثائق الامتداد %extension وتُوزَّع بموجب ترخيص ذلك الامتداد.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>ورثت هذه الصفحة من وثائق البرنامج الأصلي. وهي لا تخضع لـ %license؛ بل تُوزَّع بموجب %other.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>المواضيع</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>ترجمها وكيّفها وحسّنها</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>الترجمات ولغات الموقع.</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>استخدم &quot;تحرير على GitHub&quot; في أي صفحة. تُقبَل التغييرات بالترخيص نفسه، فتبقى حرة للجميع.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>ما الذي تغيّر في كل إصدار.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>ما الذي تفعله كل ميزة وكيفية إعدادها.</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>ما الذي يمكنك فعله بالوثائق الحرة</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>أي الصفحات تحمل أي ترخيص</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>حسابك: كلمة المرور وتسجيل الدخول بخطوتين والتفضيلات.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count صفحة مطابقة</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>%count صفحة في مجلدات الوثائق. افتح مجلدًا، أو صفِّ بكلمة من العنوان.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>حول هذه الوثائق</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>تصفّح كل المساعدة</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>تصفية الصفحات</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>تصفية صفحات المساعدة</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>لا يوجد عنوان صفحة مطابق</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>التوافق مع الإصدارات السابقة</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>سجلات التغييرات</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>أمثلة</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>الأدلة</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>استخدام الإدارة</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>التثبيت</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>المتجر</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>المواصفات</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>المعايير</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>طباعة هذه الصفحة</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>تنزيل بصيغة PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>طباعة هذه الصفحة أو تنزيلها</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>العنوان:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>مساعدة Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>الصفحة %number من %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>صورة: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>صورة</translation>
     </message>
 </context>
 </TS>
