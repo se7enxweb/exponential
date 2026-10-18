@@ -4,8 +4,8 @@ The one place that says which languages Exponential supports, at which level, an
 were taken on 15 October 2026, those of the administration translations on 16 October 2026 (Exponential 6.0.15).
 
 In short: **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations, in 32 scripts, 40 of them written
-right to left) can be chosen as content languages and siteaccess locales; **31 administration translations**
-exist, nine of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Ukrainian, Hebrew, Latin
+right to left) can be chosen as content languages and siteaccess locales; **32 administration translations**
+exist, ten of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Ukrainian, Hebrew, Arabic, Latin
 and, for fun, Klingon).
 Every locale is plain INI: nothing here needs a PHP extension at run time.
 
@@ -119,7 +119,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `ara-OM` | Arabic (Oman) | العربية (عُمان) | Middle East | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-PS` | Arabic (Palestinian Territories) | العربية (الأراضي الفلسطينية) | Middle East | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-QA` | Arabic (Qatar) | العربية (قطر) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
-| `ara-SA` | Arabic | العربية | Middle East | RTL | Arabic (`Arab`) | older, hand-made | — |
+| `ara-SA` | Arabic | العربية | Middle East | RTL | Arabic (`Arab`) | older, hand-made | 100% |
 | `ara-SD` | Arabic (Sudan) | العربية (السودان) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-SO` | Arabic (Somalia) | العربية (الصومال) | Africa | RTL | Arabic (`Arab`) | CLDR 48 | — |
 | `ara-SY` | Arabic (Syria) | العربية (سوريا) | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
@@ -357,6 +357,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `tur-TR` | Turkish | Türkçe | Middle East | LTR | Latin (`Latn`) | older, hand-made | — |
 | `uig-CN` | Uyghur | ئۇيغۇرچە | East Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ukr-UA` | Ukrainian | Українська | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made, fixed in 6.0.15 | 100% |
+| `ara-SA` | 100% (17307 of 17307) | 100% (17307 of 17307) |
 | `urd-IN` | Urdu (India) | اردو (بھارت) | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `urd-PK` | Urdu (Pakistan) | اردو (پاکستان) | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `uzb-UZ` | Uzbek | O‘zbek | Central Asia and Caucasus | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -499,6 +500,9 @@ Notes:
 
 - **Spanish** (`esl-ES`, `esl-MX`) was complete for an older release; the strings added since were translated
   for 6.0.15, machine-assisted, in each country's own usage. A review by a native speaker is welcome.
+- **Arabic** (`ara-SA`) is new: Modern Standard Arabic for every Arab country, machine-assisted and checked
+  against a glossary in a second pass; product names, file names and settings stay in Latin letters. A review
+  by a native speaker is welcome.
 - **Hebrew** (`heb-IL`), **Latin** (`lat-VA`) and **Klingon** (`tlh-QO`) are complete since 6.0.15. They are
   machine-assisted and should get a review before a site relies on them: Hebrew by a native speaker, Latin by a
   Latinist (new terms follow the conventions of modern Latin software translations), Klingon in the style of the
