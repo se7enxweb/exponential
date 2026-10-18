@@ -6106,7 +6106,7 @@ d9f32563966a8b1506a892bdb7f4f812  kernel/private/classes/views/contentfinder/sea
 4da8ed162f09512a7e7e9823736a6ed3  kernel/private/classes/views/csp/report.php
 0e249b72e4e5e91f5bb6e7df0fdc9d50  kernel/private/classes/views/error/view.php
 35ccefd9b29e0d8d208048fbbf84306b  kernel/private/classes/views/exphelp/asset.php
-8f40c5f71187f99e3485b1f94279a7ea  kernel/private/classes/views/exphelp/dashboard.php
+510927f530810b688e7f516a80974f16  kernel/private/classes/views/exphelp/dashboard.php
 0aff94d13bc40ee02538815ceb7cc5b5  kernel/private/classes/views/exphelp/report.php
 4a454db30bc4abd848f89901f08b02aa  kernel/private/classes/views/exphelp/search.php
 1a91bdb5220ddeca762e35134f83f264  kernel/private/classes/views/exphelp/viewer.php
@@ -6913,7 +6913,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 a111b660f8e29a00cb059785bda7df42  settings/debugbar.ini
 08f821366e5c9acffe72e23388068297  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-4e54a4f8f7930e6149e3d2872f4a84a0  settings/exphelp.ini
+56ca678932b7ee83e4bd34326e0e8c79  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
