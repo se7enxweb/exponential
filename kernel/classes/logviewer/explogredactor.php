@@ -45,6 +45,9 @@ class expLogRedactor
     /** @var string[] the values of the secret settings, longest first */
     protected $settingSecrets;
 
+    /** @var expLogRedactor|null masked(), made once */
+    protected $maskedRedactor = null;
+
     /**
      * @param bool $emails mask e-mail addresses
      * @param bool $ips mask IP addresses
@@ -208,7 +211,78 @@ class expLogRedactor
     public function ip( $ip )
     {
         $ip = (string)$ip;
-        return $this->ips ? $this->ipText( $ip ) : $ip;
+        if ( !$this->ips )
+            return $ip;
+        $shown = $this->ipText( $ip );
+        // a compressed address with one group before the :: (2001::7334, fe80::1) is not matched by IPV6, which needs
+        // two groups or a leading :: so as not to take "Class::method" in a text; the field holds an address only
+        if ( $shown === $ip && strpos( $ip, '::' ) !== false && filter_var( trim( $ip ), FILTER_VALIDATE_IP, FILTER_FLAG_IPV6 ) !== false
+             && preg_match( '/^\s*([0-9A-Fa-f]{1,4})::/', $ip, $m ) )
+            $shown = $m[1] . '::x';
+        return $shown;
+    }
+
+    /** @return bool whether IP addresses are masked */
+    public function masksIps()
+    {
+        return $this->ips;
+    }
+
+    /**
+     * The redactor with every mask on and the same secret setting values: what a viewer without setup/unmasklogs is
+     * shown. A filter that holds a mark of the masks (x in an address, *** in a request) is also compared with it.
+     *
+     * @return expLogRedactor
+     */
+    public function masked()
+    {
+        if ( $this->emails && $this->ips && $this->secrets )
+            return $this;
+        if ( $this->maskedRedactor === null )
+            $this->maskedRedactor = new self( true, true, true, $this->settingSecrets );
+        return $this->maskedRedactor;
+    }
+
+    /**
+     * A client address filter (the start of an address, expLogSearch) as it is written in a link when IP addresses
+     * are masked: the parts the masks hide are x, so a link never carries more of an address than the viewer is
+     * shown. 203.0.113.7 is 203.0.x.x, 203.0.113 is 203.0.x, 203.0. stays; 2001:db8:85a3::7 is 2001:db8:x:x,
+     * 2001::7 is 2001::x, ::1 is ::x. A filter that is already masked stays as it is. Pure.
+     *
+     * @param string $filter
+     * @return string
+     */
+    public static function ipFilter( $filter )
+    {
+        $filter = (string)$filter;
+        if ( $filter === '' )
+            return $filter;
+        if ( strpos( $filter, ':' ) === false )
+        {
+            $parts = explode( '.', $filter );
+            foreach ( $parts as $i => $part )
+                if ( $i >= 2 && $part !== '' )
+                    $parts[$i] = 'x';
+            return implode( '.', $parts );
+        }
+        if ( substr( $filter, 0, 2 ) === '::' )
+            return strlen( $filter ) > 2 ? '::x' : $filter;
+        if ( preg_match( '/^([0-9A-Fa-f]{1,4}::)(.*)$/s', $filter, $m ) )
+            return $m[1] . ( $m[2] !== '' ? 'x' : '' );
+        if ( preg_match( '/^((?:[0-9A-Fa-f]{1,4}:){2})(.*)$/s', $filter, $m ) )
+            return $m[1] . ( $m[2] === '' ? '' : ( strpos( $m[2], ':' ) !== false || strpos( $m[2], '.' ) !== false ? 'x:x' : 'x' ) );
+        return $filter;
+    }
+
+    /**
+     * A client address filter as a link of this redactor writes it: ipFilter() when IP addresses are masked.
+     *
+     * @param string $filter
+     * @return string
+     */
+    public function ipFilterOf( $filter )
+    {
+        return $this->ips ? self::ipFilter( $filter ) : (string)$filter;
     }
 
     /**

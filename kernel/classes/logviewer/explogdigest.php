@@ -403,16 +403,41 @@ class expLogDigest
     /**
      * The permalink of a group: the log, filtered by the group's literal and level, from the window's start. Pure.
      *
+     * A log grouped by uri (404.log, security.log) also gets the request filter: the group's path up to its first
+     * placeholder, as the masks show it, which the search compares with the request as the viewer is shown it.
+     *
      * @param array $group
      * @param int $since
+     * @param string $grouping the log's (groupingFor()); 'message' for the links before it was given
      * @return string a path for ezurl
      */
-    public static function link( array $group, $since )
+    public static function link( array $group, $since, $grouping = 'message' )
     {
         $state = array( 'levels' => array( $group['level'] ), 'from' => date( 'Y-m-d H:i', (int)$since ) );
         if ( $group['literal'] !== '' )
             $state['q'] = $group['literal'];
+        $uri = $grouping === 'uri' ? self::uriFilterOf( (string)$group['text'] ) : '';
+        if ( $uri !== '' )
+            $state['uri'] = $uri;
         return expLogPermalink::build( $group['key'], $state );
+    }
+
+    /**
+     * The request filter of a group's text of the uri grouping ("GET /blog/#"): the path up to its first placeholder
+     * (/blog/), '' when that is no more than "/" or the text is not of that grouping. The text is masked already, so
+     * the filter holds no value a masked viewer is not shown. Pure.
+     *
+     * @param string $text
+     * @return string
+     */
+    public static function uriFilterOf( $text )
+    {
+        if ( !preg_match( '#^[A-Z]{3,10} (/\S*)$#', (string)$text, $m ) )
+            return '';
+        $path = $m[1];
+        $cut = strcspn( $path, '#<' );
+        $path = substr( $path, 0, $cut );
+        return strlen( $path ) > 1 ? $path : '';
     }
 
     /**

@@ -5,7 +5,8 @@
    log_related, log_searching, log_criteria, log_scope, log_rotations, log_levels, log_actions, log_can_unmask,
    log_unmasked, log_masking, log_client, log_token_field, log_token, log_done, log_done_ok, log_siteaccesses,
    log_max_download, log_groups, log_state_json, log_permalink (setup/logs/view/<key>... of this view, without done, ok
-   and unmask), log_key, log_view_state.
+   and unmask), log_share_permalink (the same with the request and client address filters as the masks show them: the
+   link to copy and share; log_permalink when not set), log_key, log_view_state.
 
    Every link of the page is a permalink by log key (expLogPermalink): setup/logs/view/<key>/(name)/value. The search
    form and the paging link go through setup/logs?key=<key>&..., which answers 303 with the permalink, so they work
@@ -136,9 +137,10 @@
 </form>
 
 {* The permalink of this view (never with the unmasked choice): selectable without JavaScript, copied with the button *}
+{if is_set( $log_share_permalink )}{def $log_share_link = $log_share_permalink}{else}{def $log_share_link = $log_permalink}{/if}
 <div class="a4-row a4-setup-log-permalink">
     <label for="log-permalink">{'Permalink'|i18n( 'design/admin/setup/logs' )}</label>
-    <input type="text" id="log-permalink" class="a4-input" readonly="readonly" value={$log_permalink|ezurl( 'double', 'full' )} aria-describedby="log-permalink-help" />
+    <input type="text" id="log-permalink" class="a4-input" readonly="readonly" value={$log_share_link|ezurl( 'double', 'full' )} aria-describedby="log-permalink-help" />
     <div class="a4-setup-log-picker-actions"><button type="button" class="a4-btn a4-btn-primary" id="log-copy-messages" disabled="disabled" aria-describedby="log-copy-messages-help"><span class="a4-icon a4-bi-files" aria-hidden="true"></span>{'Copy messages'|i18n( 'design/admin/setup/logs' )}</button><button type="button" class="a4-btn a4-btn-primary" id="log-copy-link" disabled="disabled"><span class="a4-icon a4-bi-link-45deg" aria-hidden="true"></span>{'Copy permalink'|i18n( 'design/admin/setup/logs' )}</button></div>
     <span class="a4-help" id="log-copy-messages-help">{'Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.'|i18n( 'design/admin/setup/logs' )}</span>
     <span class="a4-help" id="log-permalink-help">{'A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.'|i18n( 'design/admin/setup/logs' )}</span>
@@ -378,6 +380,7 @@
      data-audit-url={if $log_can_audit}{'audit/console'|ezurl}{else}""{/if}
      data-search-query="{$log_q|wash}"
      data-permalink-url={$log_permalink|ezurl}
+     data-share-url={$log_share_link|ezurl}
      data-base-url={$log_base|ezurl}
      data-text-copied="{'Link copied'|i18n( 'design/admin/setup/logs' )|wash}"
      data-text-lines-copied="{'%count lines copied'|i18n( 'design/admin/setup/logs' )|wash}"
@@ -431,4 +434,4 @@
 
 </div></div></div>
 </div>
-{undef $log_level_names $log_group_names $log_entries $log_q $log_crit $log_page_q $log_base $log_label $log_has_file $log_can_templates $log_can_finder $log_can_audit}
+{undef $log_level_names $log_group_names $log_entries $log_q $log_crit $log_page_q $log_base $log_label $log_has_file $log_can_templates $log_can_finder $log_can_audit $log_share_link}
