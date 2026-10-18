@@ -14853,6 +14853,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>تتبّع ملفات السجل والبحث فيها والمقارنة بينها.</translation>
     </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>لغات الواجهة</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>الترجمة التي تعرضها كل لغة من لغات الواجهة، وما تعود إليه احتياطيًا.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -57134,6 +57142,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Error digest</source>
         <translation>ملخص الأخطاء</translation>
     </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>لغات الواجهة</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -71148,6 +71160,944 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Web server error log</source>
         <translation>سجل أخطاء خادم الويب</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>مساعدة</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>بحث</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>البحث في المساعدة</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>الإبلاغ عن خطأ</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>نسخ</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>تم النسخ</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>تعذّر النسخ</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>لا توجد نتائج</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count نتيجة</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>جارٍ البحث...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>البحث غير متاح حاليًا.</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>لا توجد صفحة تحتوي على كل الكلمات؛ هذه الصفحات تحتوي على بعضها.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>مسح</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>البدء</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>الإدارة</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>التطوير</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>التثبيت والترقيات</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>ملاحظات الإصدار</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>السجل</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>المرجع</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>نتيجة واحدة</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>المسؤولون</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>المحررون</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>المطوّرون</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>المستخدمون النهائيون</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>نسخ الشيفرة</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>البناء عليه: الامتدادات والقوالب والإعدادات وواجهات البرمجة وسطر الأوامر والترقيات.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>إنشاء المحتوى وتحريره وترجمته ونشره: الوسائط والتخطيطات والبحث والمحرّر.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>تشغيل التثبيت: المواقع والمستخدمون والأدوار وذاكرات التخزين المؤقت والسجلات والأمان وسلامة النظام.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>استخدام الموقع: حسابك وتسجيل الدخول والمصادقة الثنائية والعثور على ما تبحث عنه.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>مساعدة لهذه الصفحة</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>مساعدة: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>إخفاء القسم: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>إظهار القسم: %title</translation>
+    </message>
+    <message>
+        <source>&quot;Saving an article with an image fails with a 500 error&quot;, not &quot;Bug&quot; or &quot;Help&quot;.</source>
+        <translation>&quot;حفظ مقال يحتوي على صورة يفشل بخطأ 500&quot;، وليس &quot;خلل&quot; أو &quot;مساعدة&quot;.</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>%count دقيقة قراءة</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>%count صفحة</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to من %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(بلاغ جديد على GitHub، يُفتح في نافذة جديدة)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(يُفتح في نافذة جديدة)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>صفحة واحدة</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>البلاغ الجيد يجعل الخطأ يُصلَح بسرعة. تخبرك هذه الصفحة إلى أين ترسله وماذا تكتب، وتعطيك ملخصًا آمنًا لهذا التثبيت للصقه.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>دقيقة من التحقق كثيرًا ما تجيب عن السؤال، أو تحوّل بلاغًا غامضًا إلى بلاغ يمكن إصلاحه.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>مشكلة أمنية؟ أبلغ عنها بشكل خاص، لا في بلاغ عام.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>عنوان يسمّي الخطأ</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>الثغرة التي تتيح لأحد قراءة ما لا يحق له أو تغييره أو الاستيلاء عليه يُبلَّغ عنها بشكل خاص، حتى تُصلَح قبل أن يعلم بها غيرك.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>كل صفحات المساعدة</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>كل المواضيع</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>كل الأنواع</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension&apos;s repository.</source>
+        <translation>الخطأ الذي يحدث في امتداد واحد فقط (نوع بيانات، وحدة، تصميم خاص به) يُصلَح في مستودع ذلك الامتداد.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>امتداد</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>اطلب من مسؤول هذا الموقع الأسطر المطابقة من ملخص الأخطاء (الإعداد، السجلات). الرسالة ووقت حدوثها هما أكثر ما يحتاج إليه المشرف على الصيانة.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>اسأل المجتمع أولًا: الأسئلة عن طريقة عمل شيء ما والأفكار والتجارب مكانها هناك.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>قبل أن تُبلغ</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>تصفّح حسب الموضوع</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>الفئة:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>اختر امتدادًا</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>نسخ بيانات التشخيص</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>بيانات التشخيص</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>بيانات التشخيص كنص</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>هل تقصد:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>لا تفتح بلاغًا عامًا أو طلب سحب أو منشورًا في المنتدى عنها.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>البريد الإلكتروني %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>لكل جزء من Exponential متتبّع عام خاص به على GitHub. تحتاج إلى حساب GitHub لفتح بلاغ.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>تحرير على GitHub</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>الجميع</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>الامتداد</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>الامتدادات</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>أدلة مميّزة</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>املأ ما تعرفه؛ يُعدّ النموذج البلاغ مع بيانات التشخيص لهذا التثبيت. لا يُرسَل شيء إلى GitHub حتى تفتح البلاغ هناك وترسله بنفسك.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>لـ</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>لـ:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>وجدت مشكلة أمنية؟</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>وجدت خطأ؟</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
+        <translation>أدلة ومراجع لكل من يعمل مع %site، مأخوذة من وثائق إصدار هذا التثبيت.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>مركز المساعدة</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>بداية المساعدة</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>كيف يمكننا المساعدة؟</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>كيفية الإبلاغ عن خطأ</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>اذكر الإصدار وإصدار PHP والمحرّك (بيانات التشخيص أعلاه)، وما يستطيع المهاجم فعله وخطوات إعادة إنتاجه. لا تضمّن كلمات المرور والأسرار والبيانات الشخصية. ستتلقى ردًا أوليًا خلال يوم عمل واحد.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>يُفتح على GitHub مع نصك وبيانات التشخيص معبّأة؛ راجعه هناك ثم أرسله.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>اختصارات لوحة المفاتيح</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>آخر تغيير</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>لا تضمّن أي شيء خاص</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>راجع السجلات</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>ابحث عن بلاغ موجود</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>هل تنقص صفحة؟ أخبرنا</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>لا تُبلغ عنها أبدًا في متتبّع عام أو منتدى. استخدم المسار الخاص الموصوف تحت</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>بلاغ جديد</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>بلاغ جديد لـ %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>التالي</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>لا توجد صفحة تحتوي على كل الكلمات؛ تُعرض الصفحات التي تحتوي على أيٍّ منها.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>لا توجد صفحة تطابق «%query».</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>لا كلمات مرور ولا مفاتيح ولا عناوين بريد إلكتروني ولا أسماء أشخاص ولا بيانات عملاء. يزيل النموذج الواضح منها، لكن اقرأ البلاغ قبل إرساله.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>لست متأكدًا من أنه خطأ؟</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>في هذه الصفحة</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>البلاغات المفتوحة</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>فتح ملخص الأخطاء</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>فتح مركز المساعدة</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>فتح البلاغ في %tracker</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نظرة عامة</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>اختر دورك لترى الصفحات المكتوبة له.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>صفحات شائعة لـ %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>إعداد البلاغ</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>السابق</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>الصفحة السابقة والتالية</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>قراءة سياسة الأمان</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>حُدّث مؤخرًا</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>كرّر ما فعلته. لاحظ ما إذا كان يفشل في كل مرة، أو لمستخدم واحد أو صفحة واحدة فقط، وما إذا كان مسح ذاكرات التخزين المؤقت يغيّر شيئًا.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>الإبلاغ عن ثغرة بشكل خاص على GitHub</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>الإبلاغ إلى</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>صفحات النتائج</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>نتائج «%query»</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>ابحث في الأدلة والإعدادات والأوامر…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>ابحث في البلاغات المفتوحة للمتتبّع أدناه. إذا كان خطؤك موجودًا هناك، أضف ما تعرفه إليه بدلًا من فتح بلاغ جديد.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>المشكلات الأمنية</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>هل هناك خطأ في هذه الصفحة؟ أبلغ عن خطأ</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>الملف المصدر:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>ابدأ من حيث أنت</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>خطوات إعادة الإنتاج</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>أخبرنا على GitHub: يوضح الدليل أي متتبّع يناسب، وما الذي يجب تضمينه، وتفاصيل النظام التي تنسخها، دون أي أسرار.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>قد تكون الإجابة موثّقة بالفعل، بما في ذلك الحدود المعروفة لميزة ما.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>يسرد ملخص الأخطاء رسائل الخطأ المختلفة في الساعات الأخيرة. الرسالة ووقت حدوثها هما أكثر ما يحتاج إليه المشرف على الصيانة.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>أقصر طريق من صفحة جديدة إلى الخطأ، خطوة واحدة في كل سطر.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>الإصدار والخادم والامتدادات لهذا التثبيت. لا يحتوي أبدًا على كلمات مرور أو مفاتيح أو خوادم قواعد البيانات أو أسمائها أو عناوين بريد إلكتروني أو مسارات خارج التثبيت.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>العنوان</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>الموضوع</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>جرّب كلمات أقل أو أخرى، أو جمهورًا أو موضوعًا آخر.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>حاول مرة أخرى</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>النوع</translation>
+    </message>
+    <message>
+        <source>Type a word to search every help page.</source>
+        <translation>اكتب كلمة للبحث في كل صفحات المساعدة.</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>استخدام هذا الامتداد</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>المستخدمون</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>ما الذي حدث</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>ما الذي كان يجب أن يحدث بدلًا من ذلك.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>ما الذي فعلته وما الذي حدث بشكل خاطئ. اقتبس رسالة الخطأ بدقة.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>ما الذي توقعته</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>أين تُبلغ</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>كتابة البلاغ</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>بلاغك جاهز.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>جماهير</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>مسح</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>التنقل بين النتائج</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>فتح</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>يفتح GitHub في نافذة جديدة</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>يُفتح في نافذة جديدة</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>صفحات</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>بحث</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>أقسام</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>واجهة PHP</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>خادم الويب</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>نظام التشغيل</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>قاعدة البيانات</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>siteaccess</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>التصميم</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>اللغة</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>مخرجات التصحيح</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>ذاكرة التخزين المؤقت للعرض</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>الامتدادات النشطة</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>أُنشئ</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (البرنامج)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>أخطاء في النواة والإدارة والامتدادات المرفقة والوثائق</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (خادم التطبيقات)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>أخطاء خادم Velocity نفسه: التشغيل، العمّال، ذاكرة الاستجابات المؤقتة، HTTPS، الأمر exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>مشروع Exponential ومجتمعه</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>المشروع والموقع والمنظومة وكل ما ليس خطأً في برنامج</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>منتديات مجتمع Exponential</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>دردشة المجتمع على Telegram</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>وثائق Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>تحرير المحتوى</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>الميزات</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>المساعدة والدعم</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>الصور والوسائط</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>اللغات</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>التخطيطات</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>النشر</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>حسابك</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>لغات الواجهة</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>تُعرض الإدارة بلغة إعداداتها المحلية. الإعدادات المحلية التي ليست لها ترجمة خاصة بها تعرض أول ترجمة في سلسلتها الاحتياطية، وإلا فالنصوص المصدرية الإنجليزية. تسرد هذه الصفحة كل إعدادات محلية مع ما تعرضه ومدى اكتماله. لا تغيّر هذه الصفحة شيئًا: تُضبط البدائل الاحتياطية في i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نظرة عامة</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>الإعدادات المحلية</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>لها ترجمة خاصة بها</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>مترجمة عبر بديل احتياطي</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>بالنصوص المصدرية الإنجليزية</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>المشكلات</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>تعود سلسلتها إلى %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>سلسلتها أطول من FallbackMaxDepth وتُقطع عند %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>تعود احتياطيًا إلى %target، وهو ليس رمز إعدادات محلية.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>تعود احتياطيًا إلى %target، الذي ليس له ملف إعدادات محلية ولا ترجمة.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>تذكر FallbackRules[] القيمة %target، وهي ليست قاعدة احتياطية.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>لها بديل احتياطي، لكن ليس لها ملف إعدادات محلية.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>تعود احتياطيًا إلى %target، الذي ليست له ترجمة بعد: تُعرض النصوص المصدرية الإنجليزية.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>كل الإعدادات المحلية</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>لا يوجد في التثبيت ملف إعدادات محلية لـ %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>ترجمة خاصة بها</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>الواجهة</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>مترجمة بنسبة %percent %</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>عبر %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>النصوص المصدرية الإنجليزية</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>الامتدادات</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated من %total مترجمة، %complete مكتملة</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>السلسلة الاحتياطية</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>لا توجد ترجمة</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>حسب FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>حسب البديل الاحتياطي التلقائي من اللغة نفسها</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>حسب القاعدة %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>لا شيء: من دون ترجمة خاصة بها تُعرض النصوص المصدرية الإنجليزية.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>الامتداد</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>مترجمة</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>الإعدادات</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count من الإعدادات المحلية لها بديل احتياطي مضبوط</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: كل ترجمات السلسلة، والأكثر تحديدًا هي الغالبة</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: أول ترجمة في السلسلة</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>مفعّل: الإعدادات المحلية التي ليست لها ترجمة ولا بديل احتياطي مضبوط تأخذ أكمل ترجمة للغتها</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>أبدًا لـ: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>معطّل</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>لا شيء</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>القائمة نفسها في سطر الأوامر: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>معروض: %count</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>إظهار</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>الإعدادات المحلية</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>اللغة</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>هذا الـ siteaccess</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>النصوص المصدرية</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>مشكلة</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated من %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % في المتوسط</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>الخطوة المميَّزة وجدها البديل الاحتياطي التلقائي من اللغة نفسها؛ أما الخطوات الأخرى فمضبوطة أو مأخوذة من قاعدة.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>لا توجد إعدادات محلية من هذا النوع.</translation>
     </message>
 </context>
 </TS>

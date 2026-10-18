@@ -181,8 +181,8 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
     {
         $tablet = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (min-width: 576px)' ) );
         $width = $tablet['#header .searchblock input.searchtext']['width'];
-        // 454px with the inline logo (152px wide, the old image 114px): the tools keep one row at 576px
-        $this->assertSame( 'clamp(6rem, calc(100vw - 454px), 230px)', $width );
+        // 502px with the inline logo (152px wide, the old image 114px) and the help link: the tools keep one row at 576px
+        $this->assertSame( 'clamp(4.5rem, calc(100vw - 502px), 230px)', $width );
     }
 
     /** PM-04 */
@@ -287,8 +287,9 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'hidden', $closed['.navbar-menu:not(.show)']['visibility'] );
         $this->assertSame( 'max-height 300ms ease, visibility 0s linear 300ms', $closed['.navbar-menu:not(.show)']['transition'], 'hidden after its slide' );
         $this->assertSame( 'visible', $closed['.navbar-menu.show']['visibility'] );
-        $this->assertSame( '"\\00D7"', $closed['#header .navbar-icon[aria-expanded="true"]::before']['content'] );
-        $this->assertSame( 'none', $closed['#header .navbar-icon[aria-expanded="true"] > span']['display'] );
+        // the button shows Bootstrap Icons list, and x-lg while the menu is open
+        $this->assertSame( 'none', $closed['#header .navbar-icon > .a4-bi-x-lg, #header .navbar-icon[aria-expanded="true"] > .a4-bi-list']['display'] );
+        $this->assertSame( 'inline-block', $closed['#header .navbar-icon[aria-expanded="true"] > .a4-bi-x-lg']['display'] );
 
         $css = self::css( 'admin4.css' );
         $motion = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (max-width: 575.98px) and (prefers-reduced-motion: reduce)' ) );

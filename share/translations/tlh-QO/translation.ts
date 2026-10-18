@@ -64945,6 +64945,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Nothing was published in the last 14 days.</source>
         <translation>Qav 14 jaj Doch ngevlu&apos;pu&apos;be&apos;.</translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -71346,6 +71350,705 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>No locale is of this kind.</source>
         <translation>Hol Sep Segh vam tu'lu'be'.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>QaH</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>yInej</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>QaH yInej</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Qagh yIja&apos;</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>yIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>qonqa&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>qonqa&apos;laHbe&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>pagh tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>nejlI&apos;...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>DaH nejlu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>yIQIH</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>yIDach</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Hoch mu&apos; ghajbe&apos; pagh nav; &apos;op ghaj nav&apos;meyvam.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>yIchImmoH</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>wa&apos;DIch mIw</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>De&apos; &apos;ej choHmeH mIw</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>loHghach</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>chenmoHmeH Daq</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>jom &apos;ej Dub</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>chen ghItlh</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>qun</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>De&apos; paq</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>wa&apos; tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>loHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>ghItlhwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>chenmoHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>lo&apos;wI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>ngoq yIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Dachenqa&apos;: nIvmoHwI&apos;mey, tamghay&apos;mey, SeHlaw mIwmey, API, ra&apos;meH tlhegh &apos;ej Dub.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>De&apos; yIchenmoH, yIchoH, yImugh &apos;ej yIngangmoH: Hol, nab, nej &apos;ej ghItlhwI&apos;.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>jom yIloH: Daqmey, lo&apos;wI&apos;pu&apos; &apos;ej Qu&apos;mey, pegh Daqmey, ghItlhmey, Hung &apos;ej pat Dotlh.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Daq yIlo&apos;: De&apos;lIj, &apos;el, cha&apos; tobmeH mIw &apos;ej Dochmey Sam.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>nav vIvmo&apos; QaH</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>QaH: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>&apos;ay&apos; yISo&apos;: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>&apos;ay&apos; yI&apos;ang: %title</translation>
+    </message>
+    <message>
+        <source>&quot;Saving an article with an image fails with a 500 error&quot;, not &quot;Bug&quot; or &quot;Help&quot;.</source>
+        <translation>«De&apos; wIngaQmoHDI&apos; mIllogh ghajbogh ghItlh, Qagh 500 tu&apos;lu&apos;», ghobe&apos; «ghew» ghobe&apos; «QaH».</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>%count tup laD</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>%count nav</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to %total vo&apos;</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(GitHub Dat Qagh chu&apos;, Qorwagh chu&apos; poSmoH)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(Qorwagh chu&apos; poSmoH)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>wa&apos; nav</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>Qagh tI&apos;lu&apos;meH nom, ja&apos;chuq QaQ lo&apos;. nuqDaq ngeHlu&apos;meH, nuq ghItlhlu&apos;meH ja&apos; navvam, &apos;ej jom De&apos; Hung nobjaj.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>wa&apos; tup nuDlu&apos;chugh, pIj jang, pagh ja&apos;chuq QaQ moj ja&apos;chuq Hurgh.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Hung Qagh? pegh yIja&apos;, ghaH yIja&apos;Qo&apos; Hoch leghlaHbogh Qagh Daq.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>Qagh pongbogh pong</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>pagh laD, choH pagh yov net chaw&apos;be&apos;bogh ghajchugh vay&apos;, pegh ja&apos;lu&apos;, vaj latlh ghojpa&apos; tI&apos;lu&apos;laH.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Hoch QaH nav</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Hoch qech</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Hoch Segh</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension&apos;s repository.</source>
+        <translation>wa&apos; chelwI&apos; neH Daq Qagh tu&apos;lu&apos;chugh (De&apos; Segh, ghom, nab), chelwI&apos; pa&apos; Daq tI&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>wa&apos; chelwI&apos;</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Daqvam loHwI&apos; yItlhob Qagh ghItlh tlheghmey (SeHlaw, ghItlhmey). QIn &apos;ej poH Qaghpu&apos;DI&apos;, &apos;Iv pochbogh ghot poQ law&apos; Hoch poQ puS.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>wa&apos;DIch ghom yItlhob: chay&apos; Qap Doch, qechmey &apos;ej Dochmey pa&apos; lo&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>bIja&apos;pa&apos;</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>qech yIlegh</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Segh:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>chelwI&apos; yIwIv</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>Qagh De&apos; yIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Qagh De&apos;</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Qagh De&apos; ghItlh</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>DaQIjnIS&apos;a&apos;:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Hoch leghlaHbogh Qagh, pull request pagh ghom QIn yIchenmoHQo&apos;.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>%address yIQIn</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Exponential &apos;ay&apos; Hoch ghaj GitHub Daq Qagh tetlh. Qagh DachenmoHmeH, GitHub De&apos;lIj DaghajnIS.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>GitHub Daq yIchoH</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>chelwI&apos;</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>chelwI&apos;mey</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>nav&apos;e&apos; wIwIvpu&apos;bogh</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Dasovbogh yIghItlh; Qagh ghItlh qeqmoH wa&apos; ghItlh, jomvam Qagh De&apos; lan. GitHub Daq vay&apos; ngeHbe&apos;lu&apos; Qagh DapoSmoH &apos;ej DangeH jIH neH.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>chaH</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>chaH:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Hung Qagh Datu&apos;&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Qagh Datu&apos;&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
+        <translation>%site lo&apos;bogh Hoch ghotvaD nav &apos;ej De&apos; paq, jomvam mI&apos; De&apos; ghItlh vo&apos; ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>QaH botlh</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>QaH tagh</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>chay&apos; maQaHlaH?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>chay&apos; Qagh ja&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>mI&apos;, PHP mI&apos; &apos;ej jo&apos;Qo&apos; (Qagh De&apos; Dung), nuq ta&apos;laH HIvwI&apos;, &apos;ej ta&apos;qa&apos;meH mIw yIghItlh. mu&apos;mey pegh, pegh &apos;ej nuvpu&apos; De&apos; yIlanQo&apos;. wa&apos; Qapla&apos; jaj qaSpa&apos; wa&apos;DIch jang Dalaj.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>GitHub Daq poSmoHlu&apos;, ghItlhlIj &apos;ej Qagh De&apos; ghaj; pa&apos; yIlegh &apos;ej yIngeH.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>SeHlaw leQ</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Qav choHlu&apos;</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>pegh De&apos; Hoch yIlanQo&apos;</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>ghItlhmey yIlegh</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>ja&apos;chuq tu&apos;lu&apos;bogh yInej</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>nav tu&apos;be&apos;lu&apos;&apos;a&apos;? HIja&apos;</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Hoch leghlaHbogh Qagh tetlh pagh ghom Daq not yIja&apos;. pegh He yIlo&apos;, Daq Del</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Qagh chu&apos;</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>%name Qagh chu&apos;</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>yIghoS</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Hoch mu&apos; ghajbe&apos; pagh nav; wa&apos; mu&apos; ghajbogh nav&apos;e&apos; &apos;anglu&apos;.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>«%query» rapbe&apos; pagh nav.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>mu&apos;mey pegh, ngaQHa&apos;moHwI&apos;mey, QIn Daqmey, nuvpu&apos; pongmey pagh Duj De&apos; yIlanQo&apos;. Dochmey le&apos;be&apos; teq ghItlh, &apos;ach Qagh yIlaD bIngeHpa&apos;.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Qagh&apos;a&apos; &apos;e&apos; DaSovbe&apos;&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>navvam Daq</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Qagh poSmoHlu&apos;bogh</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Qagh ghItlh yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>QaH botlh yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>%tracker Daq Qagh yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>naQ leghghach</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Qu&apos;lIj yIwIv, vaj nav&apos;e&apos; ghItlhlu&apos;bogh DaleghlaH.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>%audience nav Daj</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>Qagh yIqeqmoH</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>nungbogh</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>nav nungbogh &apos;ej nav veb</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Hung chut yIlaD</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>qen De&apos; chu&apos;</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Data&apos;pu&apos;bogh yIta&apos;qa&apos;. reH Qaghchugh, wa&apos; lo&apos;wI&apos; pagh wa&apos; nav neH Qaghchugh, &apos;ej pegh Daqmey Dachimchugh vay&apos; choHchugh yIghItlh.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>GitHub Daq pegh Hung Qagh yIja&apos;</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>ja&apos;meH Daq</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>tu&apos;lu&apos;bogh nav</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>«%query» tu&apos;lu&apos;bogh</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>nav, SeHlaw, ra&apos;mey yInej…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Qagh tetlh bIngDaq Qagh poSmoHlu&apos;bogh yInej. pa&apos; Qaghlij tu&apos;lu&apos;chugh, Dasovbogh yIchel; Qagh chu&apos; yIchenmoHQo&apos;.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Hung Qaghmey</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>navvam Daq Qagh tu&apos;lu&apos;&apos;a&apos;? Qagh yIja&apos;</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Hal De&apos;wI&apos; ghItlh:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>naDev yItagh</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>ta&apos;qa&apos;meH mIw</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>GitHub Daq HIja&apos;: Qagh tetlh &apos;IHbogh, nuq lanlu&apos;meH &apos;ej pat De&apos; qonqa&apos;lu&apos;meH &apos;ang nav, pegh pagh.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>chaq ghItlhlu&apos;pu&apos; jang, Qap Doch veH Sovlu&apos;bogh je.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Qagh ghItlh &apos;ang Qagh QIn pIm Hoch qaSpu&apos;bogh rep. QIn &apos;ej poH Qaghpu&apos;DI&apos;, &apos;Iv pochbogh ghot poQ law&apos; Hoch poQ puS.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>nav chu&apos; vo&apos; Qagh, He ngaj law&apos; Hoch ngaj puS, wa&apos; tlheghDaq wa&apos; mIw.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>jomvam mI&apos;, jabwI&apos; &apos;ej chelwI&apos;mey. not ghaj mu&apos;mey pegh, ngaQHa&apos;moHwI&apos;mey, De&apos; pa&apos; jabwI&apos; pagh pongmey, QIn Daqmey pagh jom Hur He.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>qech</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>mu&apos;mey puS pagh latlh, pagh latlh ghotpu&apos; pagh latlh qech yIlo&apos;.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>yInIDqa&apos;</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Segh</translation>
+    </message>
+    <message>
+        <source>Type a word to search every help page.</source>
+        <translation>Hoch QaH nav Danejmeh, wa&apos; mu&apos; yIghItlh.</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>chelwI&apos;vam yIlo&apos;</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>lo&apos;wI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>qaSpu&apos;bogh</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>qaSnIS&apos;pu&apos;bogh.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Data&apos;pu&apos;bogh &apos;ej Qaghpu&apos;bogh. Qagh QIn yIghItlhqa&apos; lugh.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>DaghIQpu&apos;bogh</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>nuqDaq ja&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>ja&apos;chuq yIghItlh</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Qaghlij ghuS.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>ghotpu&apos; Segh</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>chImmoH</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>tu&apos;lu&apos;bogh Dochmey vegh</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>poSmoH</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>Qorwagh chu&apos;Daq GitHub poSmoH</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>Qorwagh chu&apos; poSmoH</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>nav</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>nej</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>&apos;ay&apos;mey</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>PHP rar</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>jabwI&apos;</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>De&apos;wI&apos; pat</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>De&apos; pa&apos;</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>mIllogh nab</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Hol</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>ghew tI&apos;meH De&apos;</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>legh pegh Daq</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>chu&apos;lu&apos;ta&apos;bogh chelwI&apos;mey</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>chenmoHlu&apos;</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (De&apos;wI&apos; ghun)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Qaghmey botlh, loHghach, chelwI&apos;mey nobta&apos;bogh &apos;ej De&apos; ghItlh Daq</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (ghun jabwI&apos;)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Velocity jabwI&apos; Qaghmey: tagh, vumwI&apos;pu&apos;, jang pegh Daq, HTTPS, exp:velocity ra&apos;</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Exponential Qu&apos; &apos;ej ghom</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Qu&apos;, Daq, yIn Sep &apos;ej De&apos;wI&apos; ghun Qagh ghobe&apos;bogh Hoch</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Exponential ghom QIn Daqmey</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Telegram ghom ja&apos;chuq</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Exponential De&apos; ghItlh</translation>
     </message>
 </context>
 </TS>

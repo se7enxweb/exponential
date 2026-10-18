@@ -64976,6 +64976,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Nothing was published in the last 14 days.</source>
         <translation>דבר לא פורסם ב־14 הימים האחרונים.</translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -71377,6 +71381,705 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>No locale is of this kind.</source>
         <translation>אין הגדרה אזורית מסוג זה.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>עזרה</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>חיפוש</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>חיפוש בעזרה</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>דיווח על שגיאה</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>העתקה</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>הועתק</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>ההעתקה נכשלה</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>אין תוצאות</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count תוצאות</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>מחפש...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>החיפוש אינו זמין כרגע.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>כיווץ</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>הרחבה</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>אף דף אינו מכיל את כל המילים; בדפים אלה יש חלק מהן.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ניקוי</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>צעדים ראשונים</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>תוכן ועריכה</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ניהול</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>פיתוח</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>התקנה ושדרוגים</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>הערות גרסה</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>היסטוריה</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>סימוכין</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>תוצאה אחת</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>מנהלי מערכת</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>עורכים</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>מפתחים</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>משתמשי קצה</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>העתקת הקוד</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>לבנות על גבי המערכת: הרחבות, תבניות, הגדרות, ממשקי ה-API, שורת הפקודה ושדרוגים.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>יצירה, עריכה, תרגום ופרסום של תוכן: מדיה, פריסות, חיפוש והעורך.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>תפעול ההתקנה: אתרים, משתמשים ותפקידים, מטמונים, יומנים, אבטחה ותקינות המערכת.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>שימוש באתר: החשבון שלך, כניסה, אימות דו-שלבי ומציאת דברים.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>עזרה לדף זה</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>עזרה: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>הסתרת הסעיף: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>הצגת הסעיף: %title</translation>
+    </message>
+    <message>
+        <source>&quot;Saving an article with an image fails with a 500 error&quot;, not &quot;Bug&quot; or &quot;Help&quot;.</source>
+        <translation>„שמירת מאמר עם תמונה נכשלת בשגיאה 500”, ולא „באג” או „עזרה”.</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>%count דק׳ קריאה</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>%count דפים</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to מתוך %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(דיווח חדש ב-GitHub, נפתח בחלון חדש)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(נפתח בחלון חדש)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>דף אחד</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>דיווח טוב מביא לתיקון מהיר של שגיאה. דף זה מסביר לאן לשלוח אותו, מה לכתוב, ונותן לך סיכום בטוח של התקנה זו להדבקה.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>דקה של בדיקה עונה לעיתים קרובות על השאלה, או הופכת דיווח מעורפל לדיווח שאפשר לתקן.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>בעיית אבטחה? דווחו עליה באופן פרטי, לא בדיווח ציבורי.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>כותרת שמציינת את השגיאה</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>חולשה שמאפשרת למישהו לקרוא, לשנות או להשתלט על מה שאסור לו מדווחת באופן פרטי, כדי שתתוקן לפני שאחרים ילמדו עליה.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>כל דפי העזרה</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>כל הנושאים</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>כל הסוגים</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension&apos;s repository.</source>
+        <translation>שגיאה שקורית רק בהרחבה אחת (סוג נתונים, מודול, עיצוב משלה) מתוקנת במאגר של אותה הרחבה.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>הרחבה</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>בקשו ממנהל של אתר זה את השורות המתאימות מתקציר השגיאות (הגדרות, יומנים). ההודעה והזמן שבו היא התרחשה הם מה שמתחזק צריך יותר מכל.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>שאלו קודם את הקהילה: שאלות על אופן הפעולה, רעיונות וחוויות שייכים לשם.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>לפני הדיווח</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>עיון לפי נושא</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>קטגוריה:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>בחירת הרחבה</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>העתקת נתוני האבחון</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>נתוני אבחון</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>נתוני אבחון כטקסט</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>האם התכוונת ל:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>אל תפתחו על כך דיווח ציבורי, בקשת משיכה או פוסט בפורום.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>דוא״ל אל %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>לכל חלק של Exponential יש מעקב ציבורי משלו ב-GitHub. כדי לפתוח דיווח צריך חשבון GitHub.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>עריכה ב-GitHub</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>כולם</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>הרחבה</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>הרחבות</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>מדריכים מומלצים</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>מלאו את מה שאתם יודעים; הטופס מכין את הדיווח עם נתוני האבחון של התקנה זו. דבר אינו נשלח ל-GitHub עד שתפתחו שם את הדיווח ותשלחו אותו בעצמכם.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>עבור</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>עבור:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>מצאתם בעיית אבטחה?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>מצאתם שגיאה?</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
+        <translation>מדריכים וחומר עיון לכל מי שעובד עם %site, מתוך התיעוד של הגרסה של התקנה זו.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>מרכז העזרה</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>דף הבית של העזרה</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>איך נוכל לעזור?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>איך מדווחים על שגיאה</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>ציינו את הגרסה, את גרסת PHP ואת המנוע (נתוני האבחון למעלה), מה תוקף יכול לעשות ואת הצעדים לשחזור. השמיטו סיסמאות, סודות ומידע אישי. תשובה ראשונה תתקבל בתוך יום עסקים אחד.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>הוא נפתח ב-GitHub עם הטקסט שלכם ונתוני האבחון; בדקו אותו שם ושלחו.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>קיצורי מקלדת</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>שונה לאחרונה</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>השמיטו כל דבר פרטי</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>בדקו את היומנים</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>חפשו דיווח קיים</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>חסר דף? ספרו לנו</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>לעולם אל תדווחו על כך במעקב ציבורי או בפורום. השתמשו בדרך הפרטית המתוארת תחת</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>דיווח חדש</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>דיווח חדש עבור %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>הבא</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>אף דף אינו מכיל את כל המילים; מוצגים דפים עם חלק מהן.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>אין דף שמתאים ל„%query”.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>בלי סיסמאות, מפתחות, כתובות דוא״ל, שמות של אנשים או נתוני לקוחות. הטופס מסיר את המובן מאליו, אך קראו את הדיווח לפני שליחתו.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>לא בטוחים שזו שגיאה?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>בדף זה</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>דיווחים פתוחים</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>פתיחת תקציר השגיאות</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>פתיחת מרכז העזרה</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>פתיחת הדיווח ב-%tracker</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>סקירה</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>בחרו את התפקיד שלכם כדי לראות את הדפים שנכתבו עבורו.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>דפים פופולריים עבור %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>הכנת הדיווח</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>הקודם</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>הדף הקודם והבא</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>קריאת מדיניות האבטחה</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>עודכן לאחרונה</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>חזרו על מה שעשיתם. ציינו אם זה נכשל בכל פעם, רק אצל משתמש אחד או בדף אחד, והאם ניקוי המטמונים משנה משהו.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>דיווח פרטי על פגיעות ב-GitHub</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>דיווח אל</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>דפי תוצאות</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>תוצאות עבור „%query”</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>חיפוש מדריכים, הגדרות, פקודות…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>חפשו בדיווחים הפתוחים של המעקב שלהלן. אם השגיאה שלכם שם, הוסיפו לה את מה שאתם יודעים במקום לפתוח חדש.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>בעיות אבטחה</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>משהו לא תקין בדף זה? דווחו על שגיאה</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>קובץ מקור:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>התחילו מכאן</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>צעדים לשחזור</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>ספרו לנו ב-GitHub: המדריך מראה איזה מעקב מתאים, מה לכלול ואילו פרטי מערכת להעתיק, בלי סודות.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>ייתכן שהתשובה כבר מתועדת, כולל המגבלות הידועות של תכונה.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>תקציר השגיאות מפרט את הודעות השגיאה השונות מהשעות האחרונות. ההודעה והזמן שבו היא התרחשה הם מה שמתחזק צריך יותר מכל.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>הדרך הקצרה ביותר מדף חדש עד לשגיאה, צעד אחד בכל שורה.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>הגרסה, השרת וההרחבות של התקנה זו. לעולם אינו מכיל סיסמאות, מפתחות, שרתים או שמות של מסדי נתונים, כתובות דוא״ל או נתיבים מחוץ להתקנה.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>כותרת</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>נושא</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>נסו פחות מילים או מילים אחרות, או קהל או נושא אחר.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>נסו שוב</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>סוג</translation>
+    </message>
+    <message>
+        <source>Type a word to search every help page.</source>
+        <translation>הקלידו מילה כדי לחפש בכל דפי העזרה.</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>שימוש בהרחבה זו</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>משתמשים</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>מה קרה</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>מה היה צריך לקרות במקום זאת.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>מה עשיתם ומה השתבש. צטטו את הודעת השגיאה במדויק.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>מה ציפיתם</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>לאן לדווח</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>כתיבת הדיווח</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>הדיווח שלכם מוכן.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>קהלים</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>ניקוי</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>מעבר בין התוצאות</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>פתיחה</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>פותח את GitHub בחלון חדש</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>נפתח בחלון חדש</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>דפים</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>חיפוש</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>מדורים</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>ממשק PHP</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>שרת אינטרנט</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>מערכת הפעלה</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>מסד נתונים</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>גישת אתר</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>עיצוב</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>שפה</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>פלט ניפוי שגיאות</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>מטמון תצוגות</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>הרחבות פעילות</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>נוצר</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (התוכנה)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>שגיאות בליבה, בממשק הניהול, בהרחבות המצורפות ובתיעוד</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (שרת היישומים)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>שגיאות של שרת Velocity עצמו: הפעלה, תהליכי עבודה, מטמון התגובות שלו, HTTPS, הפקודה exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>הפרויקט והקהילה של Exponential</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>הפרויקט, האתר, המערכת האקולוגית וכל מה שאינו שגיאה בתוכנה</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>פורומי הקהילה של Exponential</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>צ׳אט הקהילה בטלגרם</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>התיעוד של Exponential</translation>
     </message>
 </context>
 </TS>

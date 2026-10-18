@@ -1,0 +1,1254 @@
+/*
+ * Module stylesheet: the help system (exphelp/*: dashboard, viewer, search, report).
+ *
+ * Only what the shared components (stylesheets/components.css) cannot do, as .a4-help-* classes, with colours,
+ * radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases), so the dark mode
+ * follows from the tokens. Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules:
+ * doc/bc/6.0/admin4-styling.md. The same file is in design/admin (classic) and design/admin4.
+ *
+ * Sections: the page frame and the shared parts (audience pills, icon tiles); the dashboard (search hero, search
+ * results as exphelp.js draws them, audience cards, featured pages, recently changed pages, quick links, report an
+ * error, keyboard hints); then the viewer and the renderer's markup.
+ */
+
+/* ---- page frame and shared parts ----------------------------------------------------------------------------- */
+
+.a4-help {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--a4-space-5);
+  min-width: 0;
+  max-width: var(--a4-content-max);
+  margin: 0 auto;
+}
+.a4-help-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--a4-space-1) var(--a4-space-3);
+  margin: 0 0 var(--a4-space-3);
+}
+.a4-help-section-head h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0;
+  font-size: var(--a4-text-l);
+  font-weight: 650;
+  line-height: var(--a4-leading-tight);
+  color: var(--a4-ink);
+}
+.a4-help-section-head h2 .a4-icon { color: var(--a4-accent-text); }
+.a4-help-section-head p { margin: 0; font-size: var(--a4-text-s); color: var(--a4-muted); }
+.a4-help-section-head a { font-size: var(--a4-text-s); font-weight: 600; }
+
+/* An icon on a tinted square: the audience cards, featured pages, the report entry */
+.a4-help-tile {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+  color: var(--a4-accent-text);
+  font-size: var(--a4-text-xl);
+}
+.a4-help-tile.is-small { width: 32px; height: 32px; font-size: var(--a4-text-l); }
+/* one colour per audience, the same everywhere (cards, pills, results): editors the accent, admins blue,
+   developers green, end users violet (the chart palette, which has its dark values) */
+.a4-help-tile.is-editor { color: var(--a4-accent-text); }
+.a4-help-tile.is-admin { color: var(--a4-chart-1); }
+.a4-help-tile.is-developer { color: var(--a4-chart-3); }
+.a4-help-tile.is-user { color: var(--a4-chart-7); }
+
+/* The audience of a page as a small pill (on top of .a4-tag) */
+.a4-help-pill {
+  gap: var(--a4-space-1);
+  font-size: var(--a4-text-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.a4-help-pill.is-editor { border-color: transparent; background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+.a4-help-pill.is-admin { border-color: transparent; background-color: var(--a4-info-bg); color: var(--a4-info); }
+.a4-help-pill.is-developer { border-color: transparent; background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-help-pill.is-user { border-color: transparent; background-color: var(--a4-warn-bg); color: var(--a4-warn); }
+
+/* ---- dashboard: the search hero ------------------------------------------------------------------------------ */
+
+.a4-help-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--a4-space-4);
+  padding: var(--a4-space-7) var(--a4-space-6) var(--a4-space-6);
+  border-radius: var(--a4-radius-s);
+  background:
+    radial-gradient(60% 120% at 100% 0%, var(--a4-accent-soft), transparent 70%),
+    radial-gradient(50% 110% at 0% 100%, var(--a4-info-bg), transparent 70%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line), var(--a4-shadow-m);
+  text-align: center;
+}
+.a4-help-hero-pre {
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-accent-text);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.a4-help-hero h1 {
+  margin: 0;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-3xl);
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  line-height: var(--a4-leading-tight);
+}
+.a4-help-hero-sub {
+  max-width: 62ch;
+  margin: 0 auto;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-l);
+}
+.a4-help-search {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: start;
+}
+.a4-help-search-field {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  padding: var(--a4-space-1) var(--a4-space-1) var(--a4-space-1) var(--a4-space-4);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  box-shadow: var(--a4-shadow-m);
+}
+.a4-help-search-field:focus-within { border-color: var(--a4-ring); box-shadow: 0 0 0 3px var(--a4-accent-soft), var(--a4-shadow-m); }
+.a4-help-search-field > .a4-icon { color: var(--a4-muted); font-size: var(--a4-text-l); }
+.a4-help-search-field input[type="search"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-l);
+}
+/* the field's frame shows the focus (:focus-within above), so the input itself needs no second ring */
+.a4-help-search-field input[type="search"]:focus-visible { outline: 2px solid transparent; }
+.a4-help-search-field input[type="search"]::placeholder { color: var(--a4-muted); opacity: 1; }
+.a4-help-search-field .a4-kbd { margin: 0; }
+.a4-help-search-field .a4-btn { flex: 0 0 auto; }
+
+/* the audience filter: radio buttons drawn as chips (the input stays, for the keyboard and the form) */
+.a4-help-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--a4-space-2);
+  margin: var(--a4-space-3) 0 0;
+  padding: 0;
+  border: 0;
+}
+.a4-help-filters legend { float: left; width: auto; margin: 0 var(--a4-space-1) 0 0; padding: var(--a4-space-1) 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-filter { position: relative; display: inline-flex; }
+.a4-help-filter input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.a4-help-filter span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+  min-height: 28px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+}
+.a4-help-filter input:hover + span { border-color: var(--a4-line-strong); }
+.a4-help-filter input:checked + span { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.a4-help-filter input:focus-visible + span { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-help-filter [data-exphelp-count]:not(:empty) { color: inherit; font-weight: 400; opacity: .8; }
+.a4-help-filter [data-exphelp-count]:not(:empty)::before { content: "("; }
+.a4-help-filter [data-exphelp-count]:not(:empty)::after { content: ")"; }
+
+/* key figures under the search */
+.a4-help-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--a4-space-2) var(--a4-space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-help-stats li { display: inline-flex; align-items: center; gap: var(--a4-space-2); }
+.a4-help-stats strong { color: var(--a4-ink); font-size: var(--a4-text-l); font-variant-numeric: tabular-nums; }
+
+/* ---- search results (exphelp.js draws them; the search page renders the same markup without the script) ------ */
+
+.a4-help-search-box { position: relative; }
+.a4-help-search-box [data-exphelp-results] {
+  position: absolute;
+  z-index: var(--a4-z-popover);
+  top: calc(100% + var(--a4-space-2));
+  inset-inline: 0;
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-m);
+  text-align: start;
+}
+.a4-help-results,
+.a4-help-results__list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: var(--a4-space-1);
+  list-style: none;
+}
+.a4-help-result { margin: 0; border-radius: var(--a4-radius-s); }
+.a4-help-result + .a4-help-result { border-top: 1px solid var(--a4-line); }
+.a4-help-result__link,
+.a4-help-result__link:visited {
+  display: grid;
+  gap: 2px;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-help-result__link:hover,
+.a4-help-result.is-active .a4-help-result__link,
+.a4-help-result__link:focus-visible { background-color: var(--a4-info-bg); color: var(--a4-ink); }
+.a4-help-result.is-active .a4-help-result__link,
+.a4-help-result__link:focus-visible { box-shadow: inset 3px 0 0 var(--a4-accent); }
+.a4-help-result__title { font-weight: 650; font-size: var(--a4-text-m); }
+.a4-help-result__section { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-help-result__snippet { color: var(--a4-muted); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-help-result__snippet mark,
+.a4-help-result__title mark {
+  padding: 0 2px;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-ink);
+  font-weight: 650;
+}
+.a4-help-result__meta { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); margin-top: var(--a4-space-1); }
+.a4-help-result__link:hover, .a4-help-result__link:focus-visible { text-decoration: none; }
+.a4-help-results__status { margin: 0; padding: var(--a4-space-2) var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-results__status:empty { display: none; }
+.a4-help-results__relaxed { margin: 0; padding: var(--a4-space-2) var(--a4-space-3) 0; color: var(--a4-warn); font-size: var(--a4-text-xs); font-weight: 600; }
+.a4-help-result__link:focus-visible { outline-offset: -3px; }
+
+/* ---- the search page (exphelp/search) ------------------------------------------------------------------------ */
+
+.a4-help-search.a4-help-search-wide { max-width: none; margin: 0; }
+.a4-help-facets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--a4-space-3) var(--a4-space-5);
+  margin: var(--a4-space-3) 0 0;
+}
+.a4-help-facets .a4-help-filters { justify-content: flex-start; margin: 0; }
+.a4-help-facets .a4-field { margin: 0; }
+.a4-help-searchresults {
+  min-width: 0;
+  padding: var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
+}
+.a4-help-searchresults .a4-help-result__link { padding: var(--a4-space-3) var(--a4-space-4); }
+.a4-help-searchresults .a4-help-result__title { font-size: var(--a4-text-l); }
+.a4-help-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--a4-space-3);
+  padding: var(--a4-space-3) 0 var(--a4-space-1);
+  border-top: 1px solid var(--a4-line);
+}
+.a4-help-noresults { display: grid; justify-items: center; gap: var(--a4-space-2); padding: var(--a4-space-6) var(--a4-space-4); text-align: center; }
+.a4-help-noresults p { margin: 0; }
+
+/* ---- dashboard: audience cards------------------------------------------------------------------------------- */
+
+.a4-help { container-type: inline-size; }
+.a4-help-audiences {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--a4-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-audience {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--a4-space-3);
+  min-width: 0;
+  padding: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.a4-help-audience::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0;
+  background-color: var(--a4-accent);
+}
+.a4-help-audience.is-admin::before { background-color: var(--a4-chart-1); }
+.a4-help-audience.is-developer::before { background-color: var(--a4-chart-3); }
+.a4-help-audience.is-user::before { background-color: var(--a4-chart-7); }
+.a4-help-audience:hover,
+.a4-help-audience:focus-within { box-shadow: inset 0 0 0 1px var(--a4-line-strong), var(--a4-shadow-m); transform: translateY(-2px); }
+.a4-help-audience h3 { margin: 0; font-size: var(--a4-text-l); font-weight: 650; line-height: var(--a4-leading-tight); }
+.a4-help-audience h3 a,
+.a4-help-audience h3 a:visited { color: var(--a4-ink); text-decoration: none; }
+/* the whole card is the link to the audience's pages; the page links inside stay clickable above it */
+.a4-help-audience h3 a::after { content: ""; position: absolute; inset: 0; border-radius: var(--a4-radius-s); }
+.a4-help-audience h3 a:focus-visible { outline: 2px solid transparent; }
+.a4-help-audience h3 a:focus-visible::after { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-help-audience p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-audience-head { display: flex; align-items: center; justify-content: space-between; gap: var(--a4-space-3); }
+.a4-help-audience-count { color: var(--a4-muted); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; }
+.a4-help-audience ul { display: grid; gap: var(--a4-space-1); margin: auto 0 0; padding: 0; list-style: none; }
+.a4-help-audience li a {
+  position: relative;
+  z-index: var(--a4-z-raised);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+  font-size: var(--a4-text-s);
+}
+.a4-help-audience li a .a4-icon { color: var(--a4-muted); }
+
+@container (max-width: 1080px) {
+  .a4-help-audiences { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container (max-width: 520px) {
+  .a4-help-audiences { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---- dashboard: featured pages and recently changed pages, side by side ------------------------------------- */
+
+.a4-help-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--a4-space-5);
+  align-items: start;
+}
+@media (max-width: 1100px) {
+  .a4-help-columns { grid-template-columns: minmax(0, 1fr); }
+}
+.a4-help-featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-feature a,
+.a4-help-feature a:visited {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-3);
+  height: 100%;
+  padding: var(--a4-space-4);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+  color: var(--a4-ink);
+  text-decoration: none;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.a4-help-feature a:hover { box-shadow: inset 0 0 0 1px var(--a4-accent), var(--a4-shadow-m); transform: translateY(-1px); }
+.a4-help-feature-text { display: grid; gap: var(--a4-space-1); min-width: 0; }
+.a4-help-feature-title { font-weight: 650; font-size: var(--a4-text-m); line-height: var(--a4-leading-tight); }
+.a4-help-feature-summary { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-feature-meta { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); }
+
+/* recently changed pages: a list with the date at the end of each row */
+.a4-help-recent { margin: 0; padding: 0; list-style: none; }
+.a4-help-recent li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--a4-space-1) var(--a4-space-3);
+  padding: var(--a4-space-2) 0;
+  border-bottom: 1px solid var(--a4-line);
+}
+.a4-help-recent li:last-child { border-bottom: 0; }
+.a4-help-recent li > .a4-icon { color: var(--a4-muted); }
+.a4-help-recent-main { display: grid; min-width: 0; }
+.a4-help-recent-main a { font-weight: 600; overflow-wrap: anywhere; }
+.a4-help-recent-path { color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+.a4-help-recent time { color: var(--a4-muted); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---- dashboard: quick links (categories) --------------------------------------------------------------------- */
+
+.a4-help-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-links a,
+.a4-help-links a:visited {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-height: 40px;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-weight: 600;
+  font-size: var(--a4-text-s);
+  text-decoration: none;
+}
+.a4-help-links a:hover { background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+.a4-help-links a .a4-icon { color: var(--a4-accent-text); }
+.a4-help-links-count { margin-inline-start: auto; color: var(--a4-muted); font-weight: 400; font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; }
+
+/* ---- dashboard: report an error ------------------------------------------------------------------------------ */
+
+.a4-help-report {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--a4-space-4) var(--a4-space-5);
+  padding: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background:
+    linear-gradient(120deg, var(--a4-bad-bg), transparent 55%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-bad-line);
+}
+.a4-help-report .a4-help-tile { color: var(--a4-bad); background-color: var(--a4-card); box-shadow: inset 0 0 0 1px var(--a4-bad-line); }
+.a4-help-report h2 { margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-l); font-weight: 650; }
+.a4-help-report p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-report-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
+.a4-help-report-security { display: inline-flex; align-items: center; gap: var(--a4-space-1); margin-top: var(--a4-space-2); font-size: var(--a4-text-xs); }
+.a4-help-report-actions { grid-column: 2; }
+@media (max-width: 600px) {
+  .a4-help-report-actions { grid-column: 1 / -1; }
+}
+
+/* ---- dashboard: keyboard hints ------------------------------------------------------------------------------- */
+
+.a4-help-keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--a4-space-2) var(--a4-space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+}
+.a4-help-keys li { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
+.a4-help-keys .a4-kbd { margin: 0; }
+
+/* ---- small windows ------------------------------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .a4-help { gap: var(--a4-space-4); }
+  .a4-help-hero { padding: var(--a4-space-5) var(--a4-space-4); }
+  .a4-help-hero h1 { font-size: var(--a4-text-2xl); }
+  .a4-help-hero-sub { font-size: var(--a4-text-m); }
+  .a4-help-search-field { padding-inline-start: var(--a4-space-3); }
+  .a4-help-search-field .a4-kbd { display: none; }
+  .a4-help-audience { padding: var(--a4-space-4); }
+  .a4-help-report { padding: var(--a4-space-4); }
+  .a4-help-recent li { grid-template-columns: minmax(0, 1fr) auto; }
+  .a4-help-recent li > .a4-icon { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .a4-help-audience,
+  .a4-help-feature a { transition: none; }
+  .a4-help-audience:hover,
+  .a4-help-audience:focus-within,
+  .a4-help-feature a:hover { transform: none; }
+}
+
+@media print {
+  .a4-help-search,
+  .a4-help-keys,
+  .a4-help-report-actions { display: none; }
+  .a4-help-hero,
+  .a4-help-audience,
+  .a4-help-feature a { box-shadow: none; transform: none; }
+}
+
+/* ---- renderer (A): the markup of expHelpMarkdownRenderer and expHelpHighlighter ---------------------------------
+   Code blocks, syntax tokens, callouts, tables, figures, quotes, task lists, footnotes, heading anchors, inline code,
+   keys and refused links. Prose margins of bare p / ul / h2-h6 are the viewer's (E). Colours from the tokens only;
+   the code tokens (--a4-code-*) live in components.css, the same in both themes because code sits on --a4-code-bg. */
+
+/* inline code and keys */
+.a4-help-body :not(pre) > code {
+  padding: 0 var(--a4-space-1);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-soft);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-s);
+  overflow-wrap: anywhere;
+}
+.a4-help-body kbd {
+  display: inline-block;
+  padding: 0 var(--a4-space-1);
+  border: 1px solid var(--a4-line-strong);
+  border-bottom-width: 2px;
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-card);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+  line-height: var(--a4-leading-tight);
+}
+.a4-help-body mark {
+  background: var(--a4-warn-bg);
+  color: var(--a4-ink);
+}
+
+/* heading anchors: shown on hover / focus within the heading */
+.a4-help-h {
+  scroll-margin-top: var(--a4-space-7);
+}
+.a4-help-anchor {
+  margin-inline-start: var(--a4-space-1);
+  color: var(--a4-muted);
+  text-decoration: none;
+  opacity: 0;
+}
+.a4-help-h:hover > .a4-help-anchor,
+.a4-help-h:focus-within > .a4-help-anchor,
+.a4-help-target:target + .a4-help-anchor {
+  opacity: 1;
+}
+.a4-help-target {
+  scroll-margin-top: var(--a4-space-7);
+}
+
+/* code blocks */
+.a4-help-code {
+  position: relative;
+  margin: var(--a4-space-3) 0 var(--a4-space-4);
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-code-bg);
+}
+.a4-help-pre,
+.a4-help-body .a4-help-pre {
+  margin: 0;
+  padding: var(--a4-space-3) var(--a4-space-4);
+  overflow-x: auto;
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-code-bg);
+  color: var(--a4-code-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-s);
+  line-height: var(--a4-leading);
+  tab-size: 4;
+  white-space: pre;
+}
+.a4-help-pre > code {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+}
+.a4-help-code[data-label]::before {
+  content: attr(data-label);
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  padding: 0 var(--a4-space-2);
+  border-end-start-radius: var(--a4-radius-s);
+  color: var(--a4-code-comment);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-xs);
+  pointer-events: none;
+}
+.a4-help-plain .a4-help-pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* syntax tokens */
+.a4-help-tok-comment { color: var(--a4-code-comment); font-style: italic; }
+.a4-help-tok-keyword { color: var(--a4-code-keyword); }
+.a4-help-tok-string { color: var(--a4-code-string); }
+.a4-help-tok-number { color: var(--a4-code-number); }
+.a4-help-tok-variable { color: var(--a4-code-variable); }
+.a4-help-tok-function { color: var(--a4-code-function); }
+.a4-help-tok-tag { color: var(--a4-code-tag); }
+.a4-help-tok-attr { color: var(--a4-code-attr); }
+.a4-help-tok-operator { color: var(--a4-code-operator); }
+.a4-help-tok-constant { color: var(--a4-code-constant); }
+.a4-help-tok-meta { color: var(--a4-code-meta); }
+.a4-help-tok-section { color: var(--a4-code-section); font-weight: 700; }
+.a4-help-tok-inserted { color: var(--a4-code-inserted); }
+.a4-help-tok-deleted { color: var(--a4-code-deleted); }
+.a4-help-tok-property { color: var(--a4-code-property); }
+.a4-help-tok-type { color: var(--a4-code-type); }
+
+/* callouts: > [!NOTE], > **Warning:**, :::tip */
+.a4-help-callout {
+  margin: var(--a4-space-3) 0 var(--a4-space-4);
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-info-line);
+  border-inline-start-width: 4px;
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-info-bg);
+  color: var(--a4-ink);
+}
+.a4-help-callout > :last-child {
+  margin-bottom: 0;
+}
+.a4-help-callout-title {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-2);
+  color: var(--a4-info);
+  font-weight: 700;
+}
+.a4-help-callout-title:only-child {
+  margin-bottom: 0;
+}
+.a4-help-callout--tip {
+  border-color: var(--a4-ok-line);
+  background: var(--a4-ok-bg);
+}
+.a4-help-callout--tip > .a4-help-callout-title {
+  color: var(--a4-ok);
+}
+.a4-help-callout--important {
+  border-color: var(--a4-accent);
+  background: var(--a4-accent-soft);
+}
+.a4-help-callout--important > .a4-help-callout-title {
+  color: var(--a4-accent-text);
+}
+.a4-help-callout--warning {
+  border-color: var(--a4-warn-line);
+  background: var(--a4-warn-bg);
+}
+.a4-help-callout--warning > .a4-help-callout-title {
+  color: var(--a4-warn);
+}
+.a4-help-callout--caution {
+  border-color: var(--a4-bad-line);
+  background: var(--a4-bad-bg);
+}
+.a4-help-callout--caution > .a4-help-callout-title {
+  color: var(--a4-bad);
+}
+
+/* tables: the wrapper scrolls, the table is .a4-table */
+.a4-help-table-wrap {
+  max-width: 100%;
+  margin: var(--a4-space-3) 0 var(--a4-space-4);
+  overflow-x: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+}
+.a4-help-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+.a4-help-table th,
+.a4-help-table td {
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.a4-help-align-left { text-align: start; }
+.a4-help-align-center { text-align: center; }
+.a4-help-align-right { text-align: end; }
+
+/* quotes, rules, figures, images */
+.a4-help-quote {
+  margin: var(--a4-space-3) 0 var(--a4-space-4);
+  padding: var(--a4-space-1) var(--a4-space-4);
+  border-inline-start: 4px solid var(--a4-line-strong);
+  color: var(--a4-muted);
+}
+.a4-help-hr {
+  height: 0;
+  margin: var(--a4-space-5) 0;
+  border: 0;
+  border-top: 1px solid var(--a4-line);
+}
+.a4-help-figure {
+  margin: var(--a4-space-4) 0;
+}
+.a4-help-figure > figcaption {
+  margin-top: var(--a4-space-2);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-help-img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-card);
+}
+
+/* collapsible sections */
+.a4-help-details {
+  margin: var(--a4-space-3) 0;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-card);
+}
+.a4-help-details > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.a4-help-details[open] > summary {
+  margin-bottom: var(--a4-space-2);
+}
+
+/* task lists */
+.a4-help-tasks {
+  padding-inline-start: 0;
+  list-style: none;
+}
+.a4-help-task {
+  display: flex;
+  align-items: baseline;
+  gap: var(--a4-space-2);
+}
+.a4-help-task-box {
+  display: inline-block;
+  flex: none;
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  vertical-align: -0.125em;
+}
+.a4-help-task-box--done {
+  border: 0;
+  color: var(--a4-ok);
+}
+
+/* links */
+.a4-help-ext::after {
+  content: "\2197";
+  margin-inline-start: 2px;
+  font-size: var(--a4-text-xs);
+}
+.a4-help-deadlink {
+  color: var(--a4-muted);
+  text-decoration: underline dotted;
+}
+
+/* footnotes */
+.a4-help-fnref {
+  line-height: 0;
+}
+.a4-help-fnref > a {
+  padding: 0 2px;
+  text-decoration: none;
+}
+.a4-help-footnotes {
+  margin-top: var(--a4-space-6);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-help-fnback {
+  text-decoration: none;
+}
+
+@media print {
+  .a4-help-pre,
+  .a4-help-body .a4-help-pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .a4-help-anchor,
+  .a4-help-code[data-label]::before {
+    display: none;
+  }
+}
+
+/* ---- viewer (E) ---------------------------------------------------------------------------------------------- */
+/* exphelp/viewer: a bar (start, all pages, search), then a grid of the page, the tree of all help pages and the
+   contents of the page. The grid follows the width of the page column (container queries), not the window, so it
+   adapts when the admin's left column is shown or hidden:
+   - from 72rem: tree | page | contents (the tree and the contents stay in view while the page scrolls);
+   - from 48rem: tree | page, the contents folded above the page;
+   - narrower: one column, the tree after the page (it is after the page in the source, too). */
+
+.a4-help-viewer { container-type: inline-size; container-name: a4-help-viewer; }
+.a4-help-viewer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2) var(--a4-space-3);
+  margin: 0 0 var(--a4-space-5);
+  padding: 0 0 var(--a4-space-3);
+  border-bottom: 1px solid var(--a4-line);
+}
+.a4-help-viewer-bar .a4-btn .a4-icon { flex: none; }
+.a4-help-viewer-search {
+  display: flex;
+  flex: 1 1 18rem;
+  align-items: center;
+  gap: var(--a4-space-2);
+  max-width: 34rem;
+  margin: 0 0 0 auto;
+}
+.a4-help-viewer-search .a4-input { flex: 1 1 auto; min-width: 0; }
+
+.a4-help-viewer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "main" "nav";
+  gap: var(--a4-space-6);
+  align-items: start;
+}
+.a4-help-main { grid-area: main; min-width: 0; }
+.a4-help-nav { grid-area: nav; min-width: 0; }
+.a4-help-toc-side { grid-area: toc; display: none; min-width: 0; }
+
+@container a4-help-viewer (min-width: 48rem) {
+  .a4-help-viewer-grid {
+    grid-template-columns: minmax(13rem, 16rem) minmax(0, 1fr);
+    grid-template-areas: "nav main";
+  }
+  .a4-help-viewer-tonav { display: none; }
+  .a4-help-nav {
+    position: sticky;
+    top: calc(var(--header-height, 6.25rem) + var(--a4-space-3));
+    max-height: calc(100vh - var(--header-height, 6.25rem) - var(--a4-space-6));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+}
+@container a4-help-viewer (min-width: 72rem) {
+  .a4-help-viewer-grid {
+    grid-template-columns: minmax(13rem, 16rem) minmax(0, 1fr) minmax(11rem, 14rem);
+    grid-template-areas: "nav main toc";
+  }
+  .a4-help-toc-side {
+    display: block;
+    position: sticky;
+    top: calc(var(--header-height, 6.25rem) + var(--a4-space-3));
+    max-height: calc(100vh - var(--header-height, 6.25rem) - var(--a4-space-6));
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .a4-help-toc-fold { display: none; }
+}
+
+/* The page: title, summary, meta */
+.a4-help-pagehead { margin: 0 0 var(--a4-space-5); }
+.a4-help-title {
+  margin: 0 0 var(--a4-space-2);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-3xl);
+  font-weight: 700;
+  line-height: var(--a4-leading-tight);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+.a4-help-summary {
+  max-width: 72ch;
+  margin: 0 0 var(--a4-space-3);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-l);
+  line-height: var(--a4-leading);
+}
+.a4-help-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2) var(--a4-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-help-meta-item { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); margin: 0; padding: 0; }
+.a4-help-meta-item > .a4-icon { flex: none; }
+.a4-help-meta-item .a4-tag .a4-icon { flex: none; }
+.a4-help-meta-path {
+  padding: 0 var(--a4-space-1);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xs);
+}
+.a4-help-meta-item.is-edit { margin-inline-start: auto; }
+
+/* The document: the renderer's body (A's section styles what is inside) at a readable measure. The document's own
+   first heading repeats the page title above it, so it is left out. */
+.a4-help-article { max-width: 80ch; min-width: 0; color: var(--a4-ink); line-height: var(--a4-leading); }
+.a4-help-article > .a4-help-body > h1:first-child { display: none; }
+.a4-help-article :is(h2, h3, h4)[id] { scroll-margin-top: calc(var(--header-height, 6.25rem) + var(--a4-space-4)); }
+.a4-help-article .a4-help-target[id] { scroll-margin-top: calc(var(--header-height, 6.25rem) + var(--a4-space-4)); }
+
+/* Prose of the document (element level; the renderer's own classes are styled in the renderer section) */
+.a4-help-body { font-size: var(--a4-text-body); overflow-wrap: break-word; }
+.a4-help-body > :first-child,
+.a4-help-body > h1:first-child + * { margin-top: 0; }
+.a4-help-body :is(p, ul, ol, dl) { margin: 0 0 var(--a4-space-4); }
+.a4-help-body :is(ul, ol) { padding-inline-start: var(--a4-space-6); }
+.a4-help-body li { margin: 0 0 var(--a4-space-1); }
+.a4-help-body li > :is(ul, ol) { margin: var(--a4-space-1) 0 0; }
+.a4-help-body li > p { margin: 0 0 var(--a4-space-2); }
+.a4-help-body :is(h2, h3, h4, h5, h6) { color: var(--a4-ink); line-height: var(--a4-leading-tight); overflow-wrap: anywhere; }
+.a4-help-body h2 {
+  margin: var(--a4-space-7) 0 var(--a4-space-3);
+  padding: 0 0 var(--a4-space-2);
+  border-bottom: 1px solid var(--a4-line);
+  font-size: var(--a4-text-2xl);
+  font-weight: 700;
+}
+.a4-help-body h3 { margin: var(--a4-space-6) 0 var(--a4-space-2); font-size: var(--a4-text-xl); font-weight: 650; }
+.a4-help-body h4 { margin: var(--a4-space-5) 0 var(--a4-space-2); font-size: var(--a4-text-l); font-weight: 650; }
+.a4-help-body :is(h5, h6) { margin: var(--a4-space-4) 0 var(--a4-space-1); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-help-body dt { font-weight: 600; }
+.a4-help-body dd { margin: 0 0 var(--a4-space-2); padding-inline-start: var(--a4-space-4); }
+.a4-help-body strong { font-weight: 650; color: var(--a4-ink); }
+
+/* Collapsible sections (exphelp.js: a button after each h2 heading's text, the section in .a4-help-section) */
+.a4-help-collapse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--a4-control-h);
+  height: var(--a4-control-h);
+  margin: 0 0 0 var(--a4-space-2);
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--a4-radius-s);
+  background-color: transparent;
+  color: var(--a4-muted);
+  font: inherit;
+  font-size: var(--a4-text-s);
+  vertical-align: middle;
+  cursor: pointer;
+}
+.a4-help-collapse:hover { border-color: var(--a4-line); background-color: var(--a4-soft); color: var(--a4-ink); }
+.a4-help-collapse::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/chevron-down.svg) center / contain no-repeat;
+  mask: url(../../../../share/icons/bootstrap-icons/svg/chevron-down.svg) center / contain no-repeat;
+  transition: rotate 0.15s ease;
+}
+.a4-help-collapse[aria-expanded="false"]::before { rotate: -90deg; }
+:where([dir="rtl"]) .a4-help-collapse[aria-expanded="false"]::before { rotate: 90deg; }
+.a4-help-section[hidden] { display: none; }
+
+/* Copy buttons of code blocks (exphelp.js), at the top end corner of .a4-help-code */
+.a4-help-code { position: relative; }
+.a4-help-copy {
+  position: absolute;
+  z-index: var(--a4-z-raised);
+  top: var(--a4-space-2);
+  inset-inline-end: var(--a4-space-2);
+  min-height: 0;
+  padding: 2px var(--a4-space-2);
+  font-size: var(--a4-text-xs);
+  opacity: 0.85;
+}
+.a4-help-code:hover .a4-help-copy,
+.a4-help-copy:focus-visible { opacity: 1; }
+.a4-help-copy.is-copied { border-color: var(--a4-ok-line); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+
+/* Previous and next page */
+.a4-help-pager {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--a4-space-3);
+  max-width: 80ch;
+  margin: var(--a4-space-7) 0 var(--a4-space-4);
+  padding: var(--a4-space-5) 0 0;
+  border-top: 1px solid var(--a4-line);
+}
+.a4-help-pager-link,
+.a4-help-pager-link:visited {
+  display: grid;
+  gap: var(--a4-space-1);
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.a4-help-pager-link:hover { border-color: var(--a4-accent); box-shadow: var(--a4-shadow-s); color: var(--a4-ink); }
+.a4-help-pager-link.is-next { grid-column: -2; text-align: end; }
+.a4-help-pager-dir { display: inline-flex; align-items: center; gap: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.a4-help-pager-link.is-next .a4-help-pager-dir { justify-content: flex-end; }
+.a4-help-pager-link.is-prev .a4-help-pager-dir .a4-icon { scale: -1 1; }
+:where([dir="rtl"]) .a4-help-pager-link.is-prev .a4-help-pager-dir .a4-icon { scale: 1 1; }
+.a4-help-pager-title { color: var(--a4-accent-text); font-size: var(--a4-text-m); font-weight: 600; overflow-wrap: anywhere; }
+.a4-help-foot { max-width: 80ch; margin: var(--a4-space-4) 0 0; }
+.a4-help-foot a { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
+
+/* The tree of all help pages: folders as <details>, open on the way to the current page */
+.a4-help-nav { font-size: var(--a4-text-s); }
+.a4-help-nav:focus { outline: 2px solid transparent; }
+.a4-help-nav-head,
+.a4-help-toc-head {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-2);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.a4-help-nav-list { margin: 0; padding: 0; list-style: none; }
+.a4-help-nav-list .a4-help-nav-list {
+  margin: 2px 0 var(--a4-space-1) var(--a4-space-3);
+  padding: 0 0 0 var(--a4-space-2);
+  border-inline-start: 1px solid var(--a4-line);
+}
+:where([dir="rtl"]) .a4-help-nav-list .a4-help-nav-list { margin: 2px var(--a4-space-3) var(--a4-space-1) 0; padding: 0 var(--a4-space-2) 0 0; }
+.a4-help-nav-folder,
+.a4-help-nav-page { margin: 0; padding: 0; }
+.a4-help-nav-summary,
+.a4-help-nav-link,
+.a4-help-nav-link:visited {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-height: 2rem;
+  padding: 2px var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.a4-help-nav-summary { cursor: pointer; font-weight: 600; list-style: none; }
+.a4-help-nav-summary::-webkit-details-marker { display: none; }
+.a4-help-nav-summary::after {
+  content: "";
+  flex: none;
+  width: 0.75em;
+  height: 0.75em;
+  margin-inline-start: auto;
+  background-color: var(--a4-muted);
+  -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/chevron-right.svg) center / contain no-repeat;
+  mask: url(../../../../share/icons/bootstrap-icons/svg/chevron-right.svg) center / contain no-repeat;
+  transition: rotate 0.15s ease;
+}
+:where([dir="rtl"]) .a4-help-nav-summary::after { scale: -1 1; }
+.a4-help-nav-details[open] > .a4-help-nav-summary::after { rotate: 90deg; }
+.a4-help-nav-summary .a4-icon { flex: none; color: var(--a4-muted); }
+.a4-help-nav-summary:hover,
+.a4-help-nav-link:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+.a4-help-nav-link.is-index { color: var(--a4-muted); font-style: italic; }
+.a4-help-nav-link[aria-current="page"] {
+  background-color: var(--a4-accent-soft);
+  box-shadow: inset 3px 0 0 var(--a4-accent);
+  color: var(--a4-accent-text);
+  font-weight: 600;
+  font-style: normal;
+}
+:where([dir="rtl"]) .a4-help-nav-link[aria-current="page"] { box-shadow: inset -3px 0 0 var(--a4-accent); }
+.a4-help-nav-text { min-width: 0; }
+
+/* The contents of the page: at the side (scrollspy marks the heading in view) or folded above the page */
+.a4-help-toc-list { margin: 0; padding: 0; list-style: none; border-inline-start: 2px solid var(--a4-line); }
+.a4-help-toc-item { margin: 0; padding: 0; }
+.a4-help-toc-link,
+.a4-help-toc-link:visited {
+  display: block;
+  margin-inline-start: -2px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border-inline-start: 2px solid transparent;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+  line-height: var(--a4-leading-tight);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.a4-help-toc-item.is-l3 .a4-help-toc-link { padding-inline-start: var(--a4-space-5); font-size: var(--a4-text-xs); }
+.a4-help-toc-link:hover { color: var(--a4-ink); border-inline-start-color: var(--a4-line-strong); }
+.a4-help-toc-link.is-current,
+.a4-help-toc-link[aria-current="location"] { border-inline-start-color: var(--a4-accent); color: var(--a4-accent-text); font-weight: 600; }
+.a4-help-toc-fold {
+  max-width: 80ch;
+  margin: 0 0 var(--a4-space-5);
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-help-toc-fold > .a4-help-toc-head { margin: 0; cursor: pointer; }
+.a4-help-toc-fold[open] > .a4-help-toc-head { margin: 0 0 var(--a4-space-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .a4-help-collapse::before,
+  .a4-help-nav-summary::after,
+  .a4-help-pager-link { transition: none; }
+}
+
+/* Print: the page alone, at full width, with the address of every outside link and no buttons */
+@media print {
+  .a4-help-viewer-bar,
+  .a4-help-nav,
+  .a4-help-toc-side,
+  .a4-help-toc-fold,
+  .a4-help-pager,
+  .a4-help-foot,
+  .a4-help-copy,
+  .a4-help-collapse,
+  .a4-help-meta-item.is-edit { display: none; }
+  .a4-help-viewer-grid { display: block; }
+  .a4-help-article,
+  .a4-help-summary { max-width: none; }
+  .a4-help-section[hidden] { display: block; }
+  .a4-help-article a.a4-help-ext[href]::after { content: " (" attr(href) ")"; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+  .a4-help-article :is(pre, .a4-help-code, .a4-help-callout, figure, table, img) { break-inside: avoid; }
+  .a4-help-article :is(h2, h3, h4) { break-after: avoid; }
+  .a4-help-article pre { white-space: pre-wrap; }
+}
+
+/* ---- Report an error (exphelp/report.tpl, workstream H) ----------------------------------------------------- */
+.a4-help-reportpage { display: grid; gap: var(--a4-space-5); }
+.a4-help-issue-jump { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin-top: var(--a4-space-3); }
+.a4-help-issue-jump .a4-icon { margin-inline-end: var(--a4-space-1); }
+.a4-help-issue-secwarn { display: flex; gap: var(--a4-space-2); align-items: flex-start; margin: 0; }
+.a4-help-issue-secwarn p { margin: 0; }
+.a4-help-issue-section { display: grid; gap: var(--a4-space-3); scroll-margin-top: var(--a4-space-6); }
+.a4-help-issue-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: a4helpissue;
+}
+.a4-help-issue-steps li {
+  position: relative;
+  padding: var(--a4-space-3) var(--a4-space-3) var(--a4-space-3) var(--a4-space-7);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  counter-increment: a4helpissue;
+}
+:where([dir="rtl"]) .a4-help-issue-steps li { padding: var(--a4-space-3) var(--a4-space-7) var(--a4-space-3) var(--a4-space-3); }
+.a4-help-issue-steps li::before {
+  content: counter(a4helpissue);
+  position: absolute;
+  inset-block-start: var(--a4-space-3);
+  inset-inline-start: var(--a4-space-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--a4-space-5);
+  height: var(--a4-space-5);
+  border-radius: 50%;
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-accent-text);
+  font-size: var(--a4-text-s);
+  font-weight: 700;
+}
+.a4-help-issue-steps h3 { margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-m); color: var(--a4-ink); }
+.a4-help-issue-steps p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-issue-steps.is-compact li { padding-block: var(--a4-space-2); }
+.a4-help-issue-trackers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-issue-tracker, .a4-help-issue-extension { display: flex; flex-direction: column; gap: var(--a4-space-2); margin: 0; }
+.a4-help-issue-tracker > p, .a4-help-issue-extension > p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-issue-tracker .a4-actions { margin-top: auto; }
+.a4-help-issue-tracker.is-chosen { border-color: var(--a4-accent); box-shadow: 0 0 0 1px var(--a4-accent); }
+.a4-help-issue-tracker-head { display: flex; align-items: center; gap: var(--a4-space-2); }
+.a4-help-issue-tracker-head h3 { margin: 0; font-size: var(--a4-text-m); color: var(--a4-ink); }
+.a4-help-issue-repo { display: flex; align-items: center; gap: var(--a4-space-1); overflow-wrap: anywhere; font-family: var(--a4-mono); font-size: var(--a4-text-xs); }
+.a4-help-issue-extension-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2); }
+.a4-help-issue-extension-row .a4-field { flex: 1 1 240px; margin: 0; }
+.a4-help-issue-community h3 { display: flex; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-m); }
+.a4-help-issue-community p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); }
+.a4-help-issue-ready { margin: 0; }
+.a4-help-issue-ready p { margin: 0; }
+.a4-help-issue-form { display: grid; gap: var(--a4-space-3); margin: 0; }
+.a4-help-issue-form textarea { min-height: calc(var(--a4-space-7) * 2); resize: vertical; }
+.a4-help-issue-facts { margin: 0; }
+.a4-help-issue-env { position: relative; }
+.a4-help-issue-env .a4-pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.a4-help-issue-env .a4-help-copy { position: absolute; inset-block-start: var(--a4-space-2); inset-inline-end: var(--a4-space-2); }
+.a4-help-issue-security .a4-notice { margin: 0; }
+.a4-help-issue-security .a4-notice p { margin: 0 0 var(--a4-space-2); }
+.a4-help-issue-security-list { display: grid; gap: var(--a4-space-1); margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }
+.a4-help-issue-security-list a { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 650; }
+
+/* Forced colors (Windows high contrast) drop backgrounds: a chosen filter, which differs only by its background, gets a
+   Highlight outline. */
+@media (forced-colors: active) {
+  .a4-help-filter input:checked + span { outline: 2px solid Highlight; }
+}
