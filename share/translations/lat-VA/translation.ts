@@ -71267,5 +71267,553 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Show section: %title</source>
         <translation>Sectionem ostendere: %title</translation>
     </message>
+    <message>
+        <source>&quot;Saving an article with an image fails with a 500 error&quot;, not &quot;Bug&quot; or &quot;Help&quot;.</source>
+        <translation>«Articulus cum imagine servari non potest, error 500», non «Vitium» aut «Auxilium».</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>%count min. legendi</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>%count paginae</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to ex %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(nova quaestio in GitHub, in nova fenestra aperitur)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(in nova fenestra aperitur)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>1 pagina</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>Bona relatio errorem cito corrigi facit. Haec pagina dicit quo eam mittas, quid scribas, et tutum compendium huius institutionis inserendum dat.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>Unum minutum inspectionis saepe quaestioni respondet, aut relationem vagam in eam vertit quae corrigi potest.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Quaestio securitatis? Privatim nuntia, non in quaestione publica.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>Titulus qui errorem nominat</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>Infirmitas qua quis legere, mutare aut occupare potest quod non debet privatim nuntiatur, ut corrigatur antequam alii de ea cognoscant.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Omnes paginae auxilii</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Omnia argumenta</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Omnia genera</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension&apos;s repository.</source>
+        <translation>Error qui in una tantum extensione accidit (genus datorum, modulus, designatio propria) in repositorio illius extensionis corrigitur.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>Extensio</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Pete ab administratore huius situs versus congruentes compendii errorum (Constitutio, Acta). Nuntius et tempus quo accidit sunt quae curator maxime requirit.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>Primum communitatem interroga: quaestiones de ratione operandi, consilia et experientiae eo pertinent.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>Antequam nuntias</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>Per argumenta perlustrare</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Categoria:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>Extensionem elige</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>Diagnosin exscribere</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Diagnosis</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Diagnosis ut textus</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>Num hoc voluisti:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Noli de ea quaestionem publicam, petitionem mutationis aut nuntium in foro aperire.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>Epistula ad %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Quaeque pars Exponential suum indicem publicum in GitHub habet. Ratio GitHub requiritur ut quaestionem aperias.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>In GitHub emendare</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Omnes</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensio</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensiones</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>Duces praecipui</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Imple quae scis; forma quaestionem cum diagnosi huius institutionis parat. Nihil ad GitHub mittitur donec quaestionem ibi aperias et ipse mittas.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>Pro</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>Pro:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Quaestionem securitatis invenisti?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Errorem invenisti?</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
+        <translation>Duces et index rerum omnibus qui cum %site laborant, ex documentis versionis huius institutionis scripti.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum auxilii</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>Initium auxilii</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>Quomodo adiuvare possumus?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>Quomodo errorem nunties</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>Adde versionem, versionem PHP et machinam (diagnosin supra), quid oppugnator facere possit et gradus ad id reddendum. Omitte tesseras, arcana et data personalia. Primum responsum intra unum diem negotiosum accipies.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>In GitHub aperitur cum textu tuo et diagnosi impletis; ibi inspice et mitte.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Compendia claviaturae</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Postremo mutatum</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>Omitte omnia privata</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>Acta inspice</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>Relationem exstantem quaere</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>Deest pagina? Dic nobis</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Numquam in indice publico aut foro nuntia. Utere via privata descripta sub</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Nova quaestio</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>Nova quaestio pro %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Sequens</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Nulla pagina omnia verba habet; paginae cum aliquo eorum ostenduntur.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>Nulla pagina «%query» congruit.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>Nullae tesserae, claves, inscriptiones electronicae, nomina hominum aut data clientium. Forma manifesta removet, sed quaestionem lege antequam mittas.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Incertus es num error sit?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>In hac pagina</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Quaestiones apertae</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Compendium errorum aperire</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>Centrum auxilii aperire</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>Quaestionem in %tracker aperire</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Conspectus</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Munus tuum elige ut paginas ei scriptas videas.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>Paginae celebres pro %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>Quaestionem parare</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Prior</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>Pagina prior et sequens</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Rationem securitatis legere</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>Nuper renovata</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Repete quod fecisti. Nota utrum semper deficiat, an uni tantum usori aut paginae, et utrum memoriis purgatis quid mutetur.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>Infirmitatem privatim in GitHub nuntiare</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>Nuntiare ad</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>Paginae inventorum</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>Inventa pro «%query»</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>Duces, optiones, mandata quaerere…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Quaere in quaestionibus apertis indicis infra. Si error tuus ibi est, adde quae scis potius quam novam aperias.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Quaestiones securitatis</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>Aliquid in hac pagina erratum? Errorem nuntia</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Fasciculus fons:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>Hic incipe</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>Gradus ad reddendum</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>Dic nobis in GitHub: dux ostendit quis index conveniat, quid includendum sit et quae notitiae systematis exscribendae sint, sine ullis arcanis.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>Responsum fortasse iam scriptum est, etiam fines noti functionis.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Compendium errorum nuntios errorum distinctos horarum proximarum enumerat. Nuntius et tempus quo accidit sunt quae curator maxime requirit.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>Via brevissima a pagina nova ad errorem, unus gradus in quoque versu.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>Versio, servitrum et extensiones huius institutionis. Numquam tesseras, claves, hospites aut nomina basium datorum, inscriptiones electronicas aut vias extra institutionem continet.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titulus</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>Argumentum</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>Tempta pauciora aut alia verba, aut alios lectores aut aliud argumentum.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>Iterum tempta</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Genus</translation>
+    </message>
+    <message>
+        <source>Type a word to search every help page.</source>
+        <translation>Verbum scribe ut omnes paginas auxilii quaeras.</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>Hac extensione uti</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Usores</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>Quid accidit</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>Quid potius accidere debuit.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Quid fecisti et quid erravit. Nuntium erroris ad verbum affer.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>Quid exspectabas</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>Quo nuntiare</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>Relationem scribere</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Quaestio tua parata est.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>lectorum genera</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>purgare</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>per inventa moveri</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>aperire</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>GitHub in nova fenestra aperit</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>in nova fenestra aperitur</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>paginae</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>quaerere</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>sectiones</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>Interfacies PHP</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Servitrum interretiale</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>Systema operativum</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Basis datorum</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Designatio</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingua</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Exitus purgationis</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Memoria aspectuum</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Extensiones activae</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Generatum</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (programma)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Errores in nucleo, in administratione, in extensionibus adiunctis et in documentis</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (servitrum applicationum)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Errores ipsius servitri Velocity: initium, operarii, memoria responsorum, HTTPS, mandatum exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Inceptum et communitas Exponential</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Inceptum, situs, oecosystema et quidquid non est error in programmate</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Fora communitatis Exponential</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Colloquium communitatis in Telegram</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Documenta Exponential</translation>
+    </message>
 </context>
 </TS>
