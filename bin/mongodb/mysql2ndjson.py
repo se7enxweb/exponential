@@ -3,7 +3,8 @@
 mysql2ndjson.py — export all Exponential tables from MySQL/MariaDB to NDJSON files.
 
 Usage:
-    python3 mysql2ndjson.py --host localhost --user root --password X --db exp --outdir ./json_export
+    MYSQL_PASSWORD=... python3 mysql2ndjson.py --host localhost --user root --db exp --outdir ./json_export
+    (--password also works, but shows the password in the process list)
 
 Install dependency:
     pip install mysql-connector-python
@@ -52,11 +53,16 @@ def main():
     ap = argparse.ArgumentParser(description='Export MySQL/MariaDB Exponential tables to NDJSON')
     ap.add_argument('--host', default='localhost')
     ap.add_argument('--user', required=True)
-    ap.add_argument('--password', required=True)
+    # the password: --password, else the environment variable MYSQL_PASSWORD (preferred: not in the process list)
+    ap.add_argument('--password', default=None)
     ap.add_argument('--db', required=True)
     ap.add_argument('--outdir', default='./json_export')
     ap.add_argument('--tables', nargs='*', help='Specific tables (default: all)')
     args = ap.parse_args()
+    if args.password is None:
+        args.password = os.environ.get('MYSQL_PASSWORD')
+    if not args.password:
+        ap.error('no password: set MYSQL_PASSWORD in the environment (or pass --password)')
 
     os.makedirs(args.outdir, exist_ok=True)
     conn = mysql.connector.connect(
