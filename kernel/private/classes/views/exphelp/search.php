@@ -38,8 +38,8 @@ class Search extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_i18n_json', \expHelp::clientStringsJson() );
         $tpl->setVariable( 'help_search', $result );
         $tpl->setVariable( 'help_filters', $request['filters'] );
-        $tpl->setVariable( 'help_audiences', $index->audiences() );
-        $tpl->setVariable( 'help_categories', $index->categories() );
+        $tpl->setVariable( 'help_audiences', \expHelp::translatedNames( $index->audiences() ) );
+        $tpl->setVariable( 'help_categories', \expHelp::translatedNames( $index->categories() ) );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:exphelp/search.tpl' );

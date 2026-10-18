@@ -34,7 +34,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
             return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
 
         $rendered = self::rendered( $index, $document, $id, $source );
-        $categories = $index->categories();
+        $categories = \expHelp::translatedNames( $index->categories() );
         $neighbours = $index->neighbours( $id );
         $editBase = (string)\expHelp::setting( 'HelpSettings', 'EditBaseURL', '' );
 

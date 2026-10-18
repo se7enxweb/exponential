@@ -5446,7 +5446,7 @@ ce0bb66240c7036cda2021294a47d14f  kernel/classes/ezworkflowgrouplink.php
 08af60f44b4c8d91729d951cbbf01ac5  kernel/classes/ezworkflowgrouptype.php
 b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 4ff841d8b07c17168f3063c415ba91b6  kernel/classes/ezworkflowtype.php
-0bcd9c6c9ff33e848198091ffdb6240c  kernel/classes/help/exphelp.php
+0a6c3da02400aaea9a3a169140639643  kernel/classes/help/exphelp.php
 8ffca0fdaac65df717d7eaf676c75902  kernel/classes/help/exphelpallowlist.php
 3dbf137371ac711427fa2f3222a1ea2d  kernel/classes/help/exphelpaudience.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
@@ -6106,10 +6106,10 @@ d9f32563966a8b1506a892bdb7f4f812  kernel/private/classes/views/contentfinder/sea
 4da8ed162f09512a7e7e9823736a6ed3  kernel/private/classes/views/csp/report.php
 0e249b72e4e5e91f5bb6e7df0fdc9d50  kernel/private/classes/views/error/view.php
 35ccefd9b29e0d8d208048fbbf84306b  kernel/private/classes/views/exphelp/asset.php
-510927f530810b688e7f516a80974f16  kernel/private/classes/views/exphelp/dashboard.php
+10a6678f1143f63600b68e96950831c8  kernel/private/classes/views/exphelp/dashboard.php
 0aff94d13bc40ee02538815ceb7cc5b5  kernel/private/classes/views/exphelp/report.php
-4a454db30bc4abd848f89901f08b02aa  kernel/private/classes/views/exphelp/search.php
-1a91bdb5220ddeca762e35134f83f264  kernel/private/classes/views/exphelp/viewer.php
+f9b4637986ba7b6fab06d60d2de1024d  kernel/private/classes/views/exphelp/search.php
+e4e8268a28e09b8b730e238a7149d6cb  kernel/private/classes/views/exphelp/viewer.php
 aad26363a27c2cb19acf4d33e055e53a  kernel/private/classes/views/ezinfo/about.php
 bb1ec8ba0c555192359eb58e004d8b65  kernel/private/classes/views/ezinfo/copyright.php
 cf544b983924d800e72fd6e275e038f1  kernel/private/classes/views/ezinfo/isalive.php

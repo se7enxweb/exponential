@@ -107,6 +107,30 @@ class expHelp
     }
 
     /**
+     * Rows of the index or of exphelp.ini (audiences, categories, trackers) with their display names in the interface
+     * language: each $keys field goes through the kernel/exphelp context. The index caches the names in English for
+     * every language, so the views translate them when they hand them to a template.
+     *
+     * @param array $rows id => array( name ... )
+     * @param string[] $keys the fields to translate
+     * @return array
+     */
+    public static function translatedNames( array $rows, array $keys = array( 'name' ) )
+    {
+        if ( !class_exists( 'ezpI18n' ) )
+            return $rows;
+        foreach ( $rows as $id => $row )
+        {
+            foreach ( $keys as $key )
+            {
+                if ( is_array( $row ) && isset( $row[$key] ) && is_string( $row[$key] ) && $row[$key] !== '' )
+                    $rows[$id][$key] = ezpI18n::tr( self::I18N_CONTEXT, $row[$key] );
+            }
+        }
+        return $rows;
+    }
+
+    /**
      * The translated strings the client script (exphelp.js) shows, keyed as it reads them.
      *
      * @return array<string,string>
