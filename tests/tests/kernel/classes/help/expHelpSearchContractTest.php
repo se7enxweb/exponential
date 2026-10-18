@@ -170,7 +170,11 @@ class expHelpSearchContractTest extends PHPUnit\Framework\TestCase
             $r = $s->search( $q );
             $this->assertIsArray( $r['hits'], var_export( substr( $q, 0, 20 ), true ) );
         }
-        $this->assertSame( 0, $s->search( '' )['total'] );
+        // an empty query browses (wave 2): every served page, with the browse mode, never an empty page
+        $browse = $s->search( '' );
+        $this->assertSame( 'browse', $browse['mode'] );
+        $this->assertGreaterThan( 0, $browse['total'] );
+        $this->assertNotContains( 'help/untracked.md', self::ids( $s->search( '', array(), 50 ) ) );
         $this->assertSame( array(), self::ids( $s->search( 'zebra', array(), 10, 1000 ) ) );
     }
 

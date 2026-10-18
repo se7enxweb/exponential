@@ -7,7 +7,7 @@
  *
  *   exphelp/dashboard              the help start page: search, audiences, featured pages, recent changes, trackers
  *   exphelp/viewer/<page id>       one page; <page id> is its path below doc/ (features/6.0/help-system.md); ?p= too
- *   exphelp/search?q=...           the results page; with format=json the JSON the client's instant search reads
+ *   exphelp/search/(q)/<words>/(category)/<id>/...  search, or browse without (q); format=json: the client's JSON
  *   exphelp/asset/<path>           an image below doc/, with its content type (only git-tracked files)
  *   exphelp/report                 how to report an error: which tracker, a prefilled issue, safe diagnostics
  *
@@ -36,12 +36,21 @@ $ViewList['viewer'] = array(
     'functions' => array( 'read' ),
     'params' => array() );
 
-// GET q, audience, category, type, offset, limit, format (html|json)
+// View parameters (q)/(category)/(audience)/(type)/(offset)/(limit)/(format), canonical order: expHelp::searchUrl().
+// Without (q) it browses the pages the filters allow. A GET ?q=... is redirected to the canonical address; JSON
+// (format=json or Accept: application/json) takes both forms and is never redirected.
 $ViewList['search'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'search.php',
     'functions' => array( 'read' ),
-    'params' => array() );
+    'params' => array(),
+    'unordered_params' => array( 'q' => 'Query',
+                                 'category' => 'Category',
+                                 'audience' => 'Audience',
+                                 'type' => 'Type',
+                                 'offset' => 'Offset',
+                                 'limit' => 'Limit',
+                                 'format' => 'Format' ) );
 
 // The file is the rest of the address (exphelp/asset/images/foo.png) or GET p
 $ViewList['asset'] = array(

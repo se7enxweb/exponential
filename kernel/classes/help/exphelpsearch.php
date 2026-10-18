@@ -18,12 +18,13 @@
  * escaped HTML ('snippet') and as parts ('snippet_parts': list of array( text, isMatch )) for clients that build
  * the DOM with text nodes.
  *
- * search() result: array( 'query', 'terms', 'total', 'offset', 'limit', 'took_ms', 'relaxed',
+ * search() result: array( 'query', 'terms', 'total', 'offset', 'limit', 'took_ms', 'relaxed', 'mode',
  *   'hits' (also as 'results', the same list) => list of array( id, path, title, url, href, section, anchor, snippet,
  *                            snippet_parts, audience[], category, type, score ),
  *   'facets' => array( 'audience' => value => count, 'category' => ..., 'type' => ... ), 'suggest' => words )
  * A facet is counted with the other facets' filters applied, not its own, so a client can show what each choice
- * would give. A query without words gives no hits and the facets of the whole (filtered) set.
+ * would give. A query without words browses (mode 'browse'): it lists every page the filters allow, featured and
+ * help pages first, with the page summary as the snippet; a query with words has mode 'search'.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -33,7 +34,7 @@
 class expHelpSearch
 {
     /** Version of the index file format; a change builds a new index. */
-    const FORMAT = 2;
+    const FORMAT = 3;
 
     const DEFAULT_LIMIT = 20;
     const MAX_LIMIT = 50;
@@ -186,17 +187,11 @@ class expHelpSearch
         $parsed = $this->parseQuery( $query );
         $result = array(
             'query' => $query, 'terms' => $parsed['terms'], 'total' => 0, 'offset' => $offset, 'limit' => $limit,
-            'took_ms' => 0.0, 'relaxed' => false, 'hits' => array(), 'results' => array(), 'facets' => array(), 'suggest' => array(),
+            'took_ms' => 0.0, 'relaxed' => false, 'mode' => 'search', 'hits' => array(), 'results' => array(), 'facets' => array(), 'suggest' => array(),
         );
 
         if ( !$parsed['terms'] )
-        {
-            // no terms: the facets of the whole set (or of the filtered set), no results
-            $all = array_fill_keys( array_keys( $index['docs'] ), 0.0 );
-            $result['facets'] = $this->facets( $all, $filters );
-            $result['took_ms'] = round( ( microtime( true ) - $start ) * 1000, 2 );
-            return $result;
-        }
+            return $this->browse( $result, $parsed['exclude'], $filters, $start );
 
         $expansions = $this->expandTerms( $parsed, $index );
         $scores = $this->score( $expansions, $index, true );
@@ -253,6 +248,69 @@ class expHelpSearch
             $result['suggest'] = array_slice( array_keys( end( $expansions ) ), 0, 8 );
         $result['took_ms'] = round( ( microtime( true ) - $start ) * 1000, 2 );
         return $result;
+    }
+
+    /**
+     * Browse mode, for a query without words: every page the filters allow (minus -excluded words), featured pages
+     * first, then by the rank of their type and release (TypeBoost[], VersionBoost[]: help pages and guides before
+     * reference material, current before old releases), then their front matter order, then their title. A hit
+     * carries the page summary as its snippet and no section.
+     */
+    protected function browse( array $result, array $exclude, array $filters, $start )
+    {
+        $index = $this->index();
+        $result['mode'] = 'browse';
+        $all = array_fill_keys( array_keys( $index['docs'] ), 0.0 );
+        foreach ( $exclude as $term )
+        {
+            if ( isset( $index['terms'][$term] ) )
+                $all = array_diff_key( $all, self::postings( $index['terms'][$term] ) );
+        }
+        $result['facets'] = $this->facets( $all, $filters );
+        $docs = array_keys( $this->applyFilters( $all, $filters, $index ) );
+        $rank = array();
+        foreach ( $docs as $doc )
+            $rank[$doc] = $this->rank( $index['docs'][$doc] );
+        usort( $docs, function ( $a, $b ) use ( $index, $rank )
+        {
+            $da = $index['docs'][$a];
+            $db = $index['docs'][$b];
+            if ( $da[8] !== $db[8] )
+                return $da[8] ? -1 : 1;
+            if ( $rank[$a] !== $rank[$b] )
+                return $rank[$a] < $rank[$b] ? 1 : -1;
+            $oa = $da[7] > 0 ? $da[7] : PHP_INT_MAX;
+            $ob = $db[7] > 0 ? $db[7] : PHP_INT_MAX;
+            if ( $oa !== $ob )
+                return $oa < $ob ? -1 : 1;
+            return strnatcasecmp( $da[1], $db[1] ) ?: strcmp( $da[0], $db[0] );
+        } );
+        $result['total'] = count( $docs );
+        foreach ( array_slice( $docs, $result['offset'], $result['limit'] ) as $doc )
+        {
+            list( $id, $title, $audience, $category, $type, $path ) = $index['docs'][$doc];
+            $summary = $index['docs'][$doc][9];
+            $parts = $summary !== '' ? array( array( $summary, false ) ) : array();
+            $result['hits'][] = array(
+                'id' => $id, 'path' => $path, 'title' => $title, 'section' => null, 'anchor' => null,
+                'url' => self::viewerUrl( $id ), 'href' => self::absoluteUrl( self::viewerUrl( $id ) ),
+                'snippet' => self::snippetHtml( $parts ), 'snippet_parts' => $parts,
+                'audience' => $audience, 'category' => $category, 'type' => $type, 'score' => 0.0,
+                'featured' => $index['docs'][$doc][8],
+            );
+        }
+        $result['results'] = $result['hits'];
+        $result['took_ms'] = round( ( microtime( true ) - $start ) * 1000, 2 );
+        return $result;
+    }
+
+    /** The factor of a page's type and release (TypeBoost[] times VersionBoost[]). */
+    protected function rank( array $doc )
+    {
+        $rank = isset( $this->settings['typeBoost'][$doc[4]] ) ? $this->settings['typeBoost'][$doc[4]] : 1.0;
+        if ( $doc[6] !== '' && isset( $this->settings['versionBoost'][$doc[6]] ) )
+            $rank *= $this->settings['versionBoost'][$doc[6]];
+        return (float)$rank;
     }
 
     /**
@@ -581,6 +639,19 @@ class expHelpSearch
         return $out;
     }
 
+    /** At most $length characters, cut at a word with an ellipsis. */
+    public static function truncate( $text, $length )
+    {
+        $text = (string)$text;
+        if ( mb_strlen( $text, 'UTF-8' ) <= $length )
+            return $text;
+        $cut = mb_substr( $text, 0, $length, 'UTF-8' );
+        $space = mb_strrpos( $cut, ' ', 0, 'UTF-8' );
+        if ( $space !== false && $space > $length / 2 )
+            $cut = mb_substr( $cut, 0, $space, 'UTF-8' );
+        return rtrim( $cut, " ,.;:" ) . ' …';
+    }
+
     /** Whether a page is Markdown (rendered with heading anchors) rather than plain text, by its suffix. */
     public static function isMarkdown( $id )
     {
@@ -853,6 +924,7 @@ class expHelpSearch
             }
         }
         $plain = preg_replace( '/"[^"]*"?/u', ' $0 ', $query );
+        $stopped = array();
         foreach ( preg_split( '/\s+/u', trim( $plain ) ) as $raw )
         {
             $negative = strlen( $raw ) > 1 && $raw[0] === '-';
@@ -862,16 +934,14 @@ class expHelpSearch
                     $exclude[] = $token;
                 elseif ( !isset( $stop[$token] ) )
                     $terms[] = $token;
+                else
+                    $stopped[] = $token;
             }
         }
         $terms = array_values( array_unique( $terms ) );
+        // a query of stop words only searches for them (and finds nothing: they are not indexed)
         if ( !$terms )
-        {
-            // a query of stop words only searches for them
-            foreach ( self::tokenize( $plain ) as $token )
-                $terms[] = $token;
-            $terms = array_values( array_unique( $terms ) );
-        }
+            $terms = array_values( array_unique( $stopped ) );
         $terms = array_slice( $terms, 0, self::MAX_TERMS );
         // prefix matching for the word being typed: the last term, unless the query ends with a space or quote
         $prefix = null;
@@ -1075,7 +1145,7 @@ class expHelpSearch
      *
      * @param array $documents id => array( title, headings, audience, category, type, keywords, path, text )
      * @return array docs (list of array( id, title, audience[], category, type, path, major version of the
-     *               version directory the page is in or "" ), terms
+     *               version directory the page is in or "", order, featured, summary ), terms
      *               (term => "<document frequency>|<doc>:<tf x 100> ..."), vocabulary (the terms, sorted)
      */
     public function build( array $documents )
@@ -1101,6 +1171,9 @@ class expHelpSearch
                 isset( $doc['type'] ) ? (string)$doc['type'] : '',
                 $path,
                 preg_match( '#(?:^|/)(\d{1,2})\.\d+(?:\.\d+)?/#', $key, $version ) ? (string)(int)$version[1] : '',
+                isset( $doc['order'] ) ? (int)$doc['order'] : 0,
+                !empty( $doc['featured'] ),
+                isset( $doc['summary'] ) && is_string( $doc['summary'] ) ? self::truncate( trim( preg_replace( '/\s+/u', ' ', $doc['summary'] ) ), 300 ) : '',
             );
             $text = isset( $doc['text'] ) ? (string)$doc['text'] : '';
             $headings = array();
