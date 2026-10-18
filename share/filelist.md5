@@ -184,7 +184,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-46bfef93e2aff392d66b6d2923bb2dca  composer.json
+8a5eb56a17051781707d2a31aea2bb03  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -1358,8 +1358,8 @@ a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
 41b309bce99292420eca74f538bedc24  design/admin4/templates/parts/a4_header_site.tpl
 00db5d35ab013fe23cfb4a5db5d5ffe5  design/admin4/templates/parts/a4_header_user.tpl
 302762e589dd7ade916c47265ed2955f  design/admin4/templates/parts/a4_logo.tpl
-f3bd26c7f112faafd8d3ffd752270812  design/admin4/templates/parts/a4_mega_menu.tpl
-917b0a91b7c9395af23d2afcea272c6d  design/admin4/templates/parts/a4_mega_menu_check.tpl
+0aaca979fea6bab366ebc931ba876ee9  design/admin4/templates/parts/a4_mega_menu.tpl
+5bd4c3dd90a271cb28aac9a2f08bd325  design/admin4/templates/parts/a4_mega_menu_check.tpl
 f3e3cfde385fe96ecd6534c0437066a9  design/admin4/templates/parts/a4_navigation_part.tpl
 4850ed0fb8728d9f792f9cd76b744d6a  design/admin4/templates/parts/a4_phone_user.tpl
 d4696f13eec2ef1d087413002e35c015  design/admin4/templates/parts/a4_preference_attributes.tpl
@@ -1368,7 +1368,7 @@ e7cbcc8548bbdec86d4686f2b042bb78  design/admin4/templates/parts/a4_topmenu_items
 54851d580ce5e5052a843ac97c96163b  design/admin4/templates/parts/audit/menu.tpl
 e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.tpl
 6a10200587ee6c7b9979159497aa6167  design/admin4/templates/parts/content/menu.tpl
-27a79799bc804be62cc1de24d1009e4c  design/admin4/templates/parts/ini_menu.tpl
+2ef575d74ab73edb8d1b9e93f13858f4  design/admin4/templates/parts/ini_menu.tpl
 3dff8ecf3c880bf2261cc89a9b39d8bd  design/admin4/templates/parts/ini_menu_items.tpl
 e36329025b09f023b15222452941ff02  design/admin4/templates/parts/ini_menu_tiles.tpl
 377177c4ae5a5b55ebaad3add2df9f24  design/admin4/templates/parts/language_badge.tpl
@@ -3273,7 +3273,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-a752e98a8c9628e5f53499208b6e29a3  doc/changelogs/6.0/6.0.15.md
+60842bfdaf59d9bf9c020028e2922724  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3601,7 +3601,7 @@ d054ec0eb0da44b4658d442f6b051953  doc/features/6.0/admin-content-tree-top-node.m
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-cda0ef9ab49ba0e71eed9bf8d57bb610  doc/features/6.0/admin4-design.md
+a42c789141ce55cc9b0bb0957356f34c  doc/features/6.0/admin4-design.md
 71bb2f64a4847b2614637164a40765b6  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -3614,7 +3614,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-03437e5b4bce1615e092d63127278518  doc/features/6.0/content-security-policy.md
+ad5f14eb9d9467850d3878892ca6a93c  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
@@ -4265,7 +4265,7 @@ f9f738c497f745bb5e02d68375b9f630  doc/specifications/4.3/admin_refresh/functiona
 e14335da02fc54b98c731ab8152fbda6  doc/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/specifications/4.5/asynchronous_publishing.txt
-573eb04938818e9ac9ed26bf59156763  doc/specifications/6.0/README.md
+33faf32c6fa6802e8ba2ce51b4c1a8ed  doc/specifications/6.0/README.md
 c7d48dabae7613771d017ddaf603bc61  doc/specifications/6.0/audit-event-model.md
 ab66e2db16090f3e2b4beeeb0a27f87e  doc/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/specifications/6.0/cjw_newsletter.md
@@ -4276,6 +4276,8 @@ b88aeca39b0d6fa40e6915f555e710d5  doc/specifications/6.0/database-drivers-sqlite
 d70689709994d00ac9e2ce8220874fbb  doc/specifications/6.0/explayouts-ui-api.md
 a274fa30292611fe64574bef2b9630f5  doc/specifications/6.0/expservices.md
 9f6990d78cc3c9ffde53cc08589e1fbc  doc/specifications/6.0/extension-metadata.md
+b947c37eaf28c9792c6d22f5346ba28b  doc/specifications/6.0/help-style-guide.md
+d4d73e5401649bde1a06325d0a30922e  doc/specifications/6.0/help-system.md
 fe1fc6a8426eefb3fc55d53530292a99  doc/specifications/6.0/ini-override-placements.md
 88d7df3fd4249b7257554244e41edb62  doc/specifications/6.0/installer-logs-and-seed-data.md
 f95c9c889acfa7d8b75e98252eb6cb4d  doc/specifications/6.0/legacy-bridge-bundle.md
@@ -4993,7 +4995,7 @@ c5a96d944b1e1854cb5de425c9950607  extension/ezoe/settings/rad.ini.append.php
 853d4572f6ec46ab643772d8502836f1  extension/ezoe/settings/site.ini.append.php
 7292c40010858802f38d44d59c6e1f2e  extension/ezoe/tests/ezoexmltext_regression.php
 f8a85b1a0304fa337737229280fcb45c  extension/ezoe/tests/suite.php
-fd014e654ed74460017cdb86ba6fd79e  extension/ezoe/translations/ara-SA/translation.ts
+823495d42f8ad8d95afbf5b5c2cc5c7a  extension/ezoe/translations/ara-SA/translation.ts
 010cab40ddf9f9075fd8ebebaeb4dd53  extension/ezoe/translations/cat-ES/translation.ts
 89352618462fa235c9a4d73edfcde79a  extension/ezoe/translations/cze-CZ/translation.ts
 7a01cb19a8749a323545c01659a2ddba  extension/ezoe/translations/dan-DK/translation.ts
@@ -6895,7 +6897,7 @@ b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.ph
 72ac1e093ee82d6fbf003d4432240000  phpcs.xml.dist
 ef2da25522d8ed3513c81b1343870c7e  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-5650b10f166e2bcd71ab5f87c35d4cb9  phpunit.xml
+874233841191fbe6ff5f632be4b5499a  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -6936,7 +6938,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
 2c4c64d6057a3119262cb387c39bc7d4  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
-f07c95c80081edbf101df1418cc1ac6e  settings/menu.ini
+32d1f4e6b44fdba8a27a81a19d6c881f  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 e1d9c5932ac1b3e42db487331851a747  settings/module.ini
 1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
@@ -7764,7 +7766,7 @@ bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 99862a3b59cc584c3fcba01e689aaa17  share/transformations/hebrew.tr
 06361e73b7836778b599fa55f3300ebf  share/transformations/latin.tr
 9c0a310f00eb6c3334a8c41198ec3161  share/transformations/search.tr
-45129007c08b48c495ae551848612bdf  share/translations/ara-SA/translation.ts
+98c7a995c7469ee478a39386fdbbb2c8  share/translations/ara-SA/translation.ts
 460da6761ad0f2e5f4e9482a3688df97  share/translations/cat-ES/translation.ts
 4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
 dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
@@ -7903,7 +7905,7 @@ d00495e13b2643dca44135655f503e9e  tests/tests/design/AdminLanguageBadgeTest.php
 e67d11b4120f80af5e51a0620111b80c  tests/tests/design/AdminLeftMenuGroupsTest.php
 dc14dee54a308e172d9c1703fd9e8154  tests/tests/design/AdminLegacyControlsTest.php
 787c93133cc75367bb9363930408a431  tests/tests/design/AdminLogoTest.php
-7073f28b97e53a5ce556db6c4fbfb198  tests/tests/design/AdminMegaMenuTest.php
+973cba42a1b0c3c51973cc7656877946  tests/tests/design/AdminMegaMenuTest.php
 d15c80b2a7f326f7bfffe8510e68905a  tests/tests/design/AdminMenuPolicyListTest.php
 8bd26f4d83a90026832a3696b7335882  tests/tests/design/AdminNewsletterPreviewTest.php
 4e03fd4b653ac220610d62cb9b415422  tests/tests/design/AdminNodeBinary.php
@@ -8158,6 +8160,7 @@ a1a9edde9c0872dfbf4f774d28b9c6ae  tests/tests/extension/git_manager/GitManagerAd
 51cd083de51e3fe4c44f83b15733f6b5  tests/tests/extension/git_manager/GitManagerLogPagingTest.php
 a259b36c8795f576c46cb9b5ea46ea25  tests/tests/extension/maps/expMapAddressEscapingTest.php
 267144e1bae65a62d6434f56daf8fe80  tests/tests/extension/sevenx_dse/SevenxDseAdminNeoViewTest.php
+924a92bcd13a2f7159be39fcf533816f  tests/tests/extension/sevenx_dse/SevenxDseAdminNeoWorkerStateTest.php
 68ae76f0ecbdae3536129edaf2dd63b8  tests/tests/extension/sevenx_dse/SevenxDseAdminStylingTest.php
 2abc7e0d7ab556d758e40d7c95bc1dbb  tests/tests/extension/sevenx_dse/fixtures/adminneo_ends_with_ezexit.php
 14ed0fd86bd419c3abc2e81c07d0cdc0  tests/tests/extension/sevenx_dse/fixtures/adminneo_runs_to_end.php
