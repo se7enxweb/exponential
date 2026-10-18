@@ -16,6 +16,9 @@ what to do when you forgot your password, and how to keep your account safe with
 
 ## Sign in
 
+Every detail of the sign-in pages: [Logging into the Editor](logging-into-the-editor.md) and
+[Logging into the admin](logging-into-the-admin.md).
+
 1. Choose **Login** on the site (often in the user menu of the header), or open the administration's address.
 2. Type your **Username** and **Password** and press **Sign in** (**Login** on the site).
 3. If two-step sign-in is on for your account, enter the code the next page asks for. See

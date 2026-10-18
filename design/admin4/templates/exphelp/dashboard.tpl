@@ -1,5 +1,5 @@
 {* exphelp/dashboard: the help start page (doc/features/6.0/help-system.md). From top to bottom: the search hero
-   (instant search through exphelp.js, a plain GET form to exphelp/search without it), the audiences (six, each with its pages; the project-manager and sales-marketing cards link their start page), featured
+   (instant search through exphelp.js, a plain GET form to exphelp/search without it), the audiences (fourteen, each with its pages; the project-manager and sales-marketing cards link their start page), featured
    pages next to the recently changed pages, the sections as quick links, how to report an error, and the
    keyboard shortcuts. Styles: stylesheets/modules/help.css (.a4-help-*); no inline CSS or script.
 
@@ -9,7 +9,7 @@
    new_issue_url), help_search_url, help_report_url; optional help_i18n_json (client strings) and help_stats
    (pages, categories). Every part is left out when its list is empty. *}
 {def $help_ctx = 'kernel/exphelp'
-     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing' )
+     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing', 'partner', 'advocate', 'designer', 'hosting', 'app-creator', 'website-creator', 'supporter', 'sponsor' )
      $help_audience_meta = hash(
         'editor',    hash( 'icon', 'pencil-square', 'name', 'Editors'|i18n( 'kernel/exphelp' ),        'text', 'Create, edit, translate and publish content: media, layouts, search and the editor.'|i18n( 'kernel/exphelp' ) ),
         'admin',     hash( 'icon', 'gear',          'name', 'Administrators'|i18n( 'kernel/exphelp' ), 'text', 'Run the installation: sites, users and roles, caches, logs, security and the system\'s health.'|i18n( 'kernel/exphelp' ) ),
@@ -18,7 +18,15 @@
         'project-manager', hash( 'icon', 'diagram-3', 'name', 'Project managers'|i18n( 'kernel/exphelp' ), 'text', 'Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.'|i18n( 'kernel/exphelp' ),
                            'start', 'help/leadership/project-managers-start-here.md' ),
         'sales-marketing', hash( 'icon', 'graph-up-arrow', 'name', 'Sales & marketing'|i18n( 'kernel/exphelp' ), 'text', 'Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.'|i18n( 'kernel/exphelp' ),
-                           'start', 'help/business/sales-and-marketing-start-here.md' ) )
+                           'start', 'help/business/sales-and-marketing-start-here.md' ),
+        'partner', hash( 'icon', 'building', 'name', 'Partners'|i18n( 'kernel/exphelp' ), 'text', 'Build, host and sell with Exponential: the partner program, partner classes, benefits, requirements and how to apply.'|i18n( 'kernel/exphelp' ) ),
+        'advocate', hash( 'icon', 'people', 'name', 'Advocates'|i18n( 'kernel/exphelp' ), 'text', 'Spread the word: talking points, events, community channels, demos and helping new users find their way.'|i18n( 'kernel/exphelp' ) ),
+        'designer', hash( 'icon', 'palette', 'name', 'Designers'|i18n( 'kernel/exphelp' ), 'text', 'Design themes and templates, build extensions, then publish, sell and maintain them through their life cycle.'|i18n( 'kernel/exphelp' ) ),
+        'hosting', hash( 'icon', 'database', 'name', 'Hosting companies'|i18n( 'kernel/exphelp' ), 'text', 'Host Exponential sites: server requirements, PHP and databases, Velocity, caching, security, backups and operations.'|i18n( 'kernel/exphelp' ) ),
+        'app-creator', hash( 'icon', 'phone', 'name', 'Application creators'|i18n( 'kernel/exphelp' ), 'text', 'Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.'|i18n( 'kernel/exphelp' ) ),
+        'website-creator', hash( 'icon', 'globe', 'name', 'Website creators'|i18n( 'kernel/exphelp' ), 'text', 'Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.'|i18n( 'kernel/exphelp' ) ),
+        'supporter', hash( 'icon', 'star', 'name', 'Supporters'|i18n( 'kernel/exphelp' ), 'text', 'Help the project grow: contribute code, documentation, translations and testing, and share what you build.'|i18n( 'kernel/exphelp' ) ),
+        'sponsor', hash( 'icon', 'piggy-bank', 'name', 'Sponsors'|i18n( 'kernel/exphelp' ), 'text', 'Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.'|i18n( 'kernel/exphelp' ) ) )
      $help_search_action = cond( is_set( $help_search_url ), $help_search_url, '/exphelp/search' )
      $help_report = cond( is_set( $help_report_url ), $help_report_url, '/exphelp/report' )
      $help_i18n = cond( is_set( $help_i18n_json ), $help_i18n_json, '' )
