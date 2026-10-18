@@ -41,7 +41,27 @@
     <section class="a4-card" aria-labelledby="exphelp-manual-toc">
         <h2 class="a4-help-section-head" id="exphelp-manual-toc">{'Contents'|i18n( 'kernel/exphelp' )}</h2>
         {if $help_manual_toc|count}
-        {include name=ManualToc uri='design:exphelp/parts/manual_toc.tpl' toc_entries=$help_manual_toc}
+        <ol class="a4-help-manual-toc">
+        {foreach $help_manual_toc as $toc_e}
+            <li>
+            {if eq( $toc_e.kind, 'chapter' )}
+                <strong dir="auto">{$toc_e.title|wash}</strong>{if $toc_e.preview} <span class="a4-tag is-warn">{'Preview'|i18n( 'kernel/exphelp' )}</span>{/if}
+                {if $toc_e.shortdesc|ne( '' )}<br /><span class="a4-meta">{$toc_e.shortdesc|wash}</span>{/if}
+                {if $toc_e.children|count}
+                <ol>
+                {foreach $toc_e.children as $toc_c}
+                    <li>{if eq( $toc_c.kind, 'chapter' )}<strong dir="auto">{$toc_c.title|wash}</strong>{else}<a href={$toc_c.url|ezurl} dir="auto">{$toc_c.title|wash}</a>{/if}{if $toc_c.preview} <span class="a4-tag is-warn">{'Preview'|i18n( 'kernel/exphelp' )}</span>{/if}
+                        {if $toc_c.shortdesc|ne( '' )}<br /><span class="a4-meta">{$toc_c.shortdesc|wash}</span>{/if}</li>
+                {/foreach}
+                </ol>
+                {/if}
+            {else}
+                <a href={$toc_e.url|ezurl} dir="auto">{$toc_e.title|wash}</a>{if $toc_e.preview} <span class="a4-tag is-warn">{'Preview'|i18n( 'kernel/exphelp' )}</span>{/if}
+                {if $toc_e.shortdesc|ne( '' )}<br /><span class="a4-meta">{$toc_e.shortdesc|wash}</span>{/if}
+            {/if}
+            </li>
+        {/foreach}
+        </ol>
         {else}
         <p class="a4-meta">{'This manual has no topics you can read yet.'|i18n( 'kernel/exphelp' )}</p>
         {/if}

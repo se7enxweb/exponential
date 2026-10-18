@@ -513,8 +513,7 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
 067116b34b78ad2ee423617355ed5ea7  design/admin/templates/exphelp/contents.tpl
 997d8ee735c29c16130b2fb5f3511ed7  design/admin/templates/exphelp/dashboard.tpl
-66fc626e98e589508f1415f157ece1cb  design/admin/templates/exphelp/manual.tpl
-d7baa6ee646fff454b4689f8ef2279cb  design/admin/templates/exphelp/parts/manual_toc.tpl
+d5bcab372dd034d664fb7485189939e5  design/admin/templates/exphelp/manual.tpl
 c505b56371004e72eab821c4b50ac3bc  design/admin/templates/exphelp/parts/viewer_meta.tpl
 69992051147dd0f6b3dbc0892bee4fa9  design/admin/templates/exphelp/parts/viewer_toc.tpl
 531d9d1d54c0683eca68c623119174f9  design/admin/templates/exphelp/report.tpl
@@ -1258,8 +1257,7 @@ b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
 067116b34b78ad2ee423617355ed5ea7  design/admin4/templates/exphelp/contents.tpl
 04d2a9342a5dfe10794e31266fa6da72  design/admin4/templates/exphelp/dashboard.tpl
-66fc626e98e589508f1415f157ece1cb  design/admin4/templates/exphelp/manual.tpl
-d7baa6ee646fff454b4689f8ef2279cb  design/admin4/templates/exphelp/parts/manual_toc.tpl
+d5bcab372dd034d664fb7485189939e5  design/admin4/templates/exphelp/manual.tpl
 c505b56371004e72eab821c4b50ac3bc  design/admin4/templates/exphelp/parts/viewer_meta.tpl
 69992051147dd0f6b3dbc0892bee4fa9  design/admin4/templates/exphelp/parts/viewer_toc.tpl
 531d9d1d54c0683eca68c623119174f9  design/admin4/templates/exphelp/report.tpl
@@ -6139,7 +6137,7 @@ d9f32563966a8b1506a892bdb7f4f812  kernel/private/classes/views/contentfinder/sea
 167efda06e6649f67bd2acdd585c5265  kernel/private/classes/views/exphelp/contents.php
 809e9aaead81f9dad4ffc4f3eccba86b  kernel/private/classes/views/exphelp/context.php
 10a6678f1143f63600b68e96950831c8  kernel/private/classes/views/exphelp/dashboard.php
-92453bab1c7991b8691db3a188fd49ad  kernel/private/classes/views/exphelp/manual.php
+0d6b2e82653d856347684ade46ae9294  kernel/private/classes/views/exphelp/manual.php
 0aff94d13bc40ee02538815ceb7cc5b5  kernel/private/classes/views/exphelp/report.php
 5a685157eafb56bd02809af79ffd6553  kernel/private/classes/views/exphelp/search.php
 252fab437f629b9029d9e5985e4cd08c  kernel/private/classes/views/exphelp/topic.php
