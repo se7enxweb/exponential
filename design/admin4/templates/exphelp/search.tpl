@@ -26,7 +26,7 @@
      $help_results = cond( and( is_set( $help_search ), is_set( $help_search.results ) ), $help_search.results, array() )
      $help_facets = cond( and( is_set( $help_search ), is_set( $help_search.facets ) ), $help_search.facets, hash() )
      $help_links = cond( is_set( $help_facet_urls ), $help_facet_urls, hash() )
-     $help_cat = cond( and( is_set( $help_category ), $help_category ), $help_category, false )
+     $help_cat = cond( and( is_set( $help_category ), $help_category ), $help_category, false() )
      $help_i18n = cond( is_set( $help_i18n_json ), $help_i18n_json, '' )
      $help_url = ''
      $help_count = 0}
