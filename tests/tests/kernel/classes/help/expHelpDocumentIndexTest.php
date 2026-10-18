@@ -34,7 +34,7 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         self::$root = $base . '/install';
         self::$outside = $base . '/outside';
         $files = array(
-            'doc/help/start.md' => "---\ntitle: Getting started\naudience: editor\ncategory: basics\norder: 1\n---\n# Start here\n\nWelcome.\n\n## First step\n\nSee [next](editing.md).\n",
+            'doc/help/start.md' => "---\ntitle: Getting started\naudience: editor\ncategory: getting-started\norder: 1\n---\n# Start here\n\nWelcome.\n\n## First step\n\nSee [next](editing.md).\n",
             'doc/help/editing.md' => "---\naudience: [editor, user]\norder: 2\n---\n# Editing content\n\n## Store a draft\n\nText.\n",
             'doc/help/zz-last.md' => "# Zebra\n\norder by title\n",
             'doc/features/6.0/feature.md' => "# A feature\n\n```php\necho 1;\n```\n",
@@ -151,7 +151,7 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'doc/help/start.md', $doc['path'] );
         $this->assertSame( 'Getting started', $doc['title'] );
         $this->assertSame( array( 'editor' ), array_values( (array)$doc['audience'] ) );
-        $this->assertSame( 'basics', $doc['category'] );
+        $this->assertSame( 'getting-started', $doc['category'] );
         $this->assertSame( 1, (int)$doc['order'] );
         $this->assertContains( 'First step', array_column( $doc['headings'], 'text' ) );
         $this->assertEqualsCanonicalizing( array( 'editor', 'user' ), array_values( (array)$index->document( 'help/editing.md' )['audience'] ) );

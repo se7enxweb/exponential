@@ -26,10 +26,10 @@ class expHelpSearchContractTest extends PHPUnit\Framework\TestCase
             return;
         self::$root = sys_get_temp_dir() . '/exphelp-search-' . bin2hex( random_bytes( 6 ) );
         $pages = array(
-            'doc/help/zebra-title.md' => "---\naudience: editor\ncategory: basics\n---\n# Zebra crossings\n\nNothing else here.\n",
-            'doc/help/zebra-heading.md' => "---\naudience: admin\ncategory: setup\n---\n# Traffic\n\n## Zebra rules\n\nRules.\n",
-            'doc/help/zebra-body.md' => "---\naudience: developer\ncategory: setup\n---\n# Animals\n\nA zebra appears once in the body.\n",
-            'doc/help/zebra-body-many.md' => "---\naudience: developer\ncategory: setup\n---\n# Stripes\n\nzebra zebra zebra zebra and more zebra.\n",
+            'doc/help/zebra-title.md' => "---\naudience: editor\ncategory: getting-started\n---\n# Zebra crossings\n\nNothing else here.\n",
+            'doc/help/zebra-heading.md' => "---\naudience: admin\ncategory: layouts\n---\n# Traffic\n\n## Zebra rules\n\nRules.\n",
+            'doc/help/zebra-body.md' => "---\naudience: developer\ncategory: layouts\n---\n# Animals\n\nA zebra appears once in the body.\n",
+            'doc/help/zebra-body-many.md' => "---\naudience: developer\ncategory: layouts\n---\n# Stripes\n\nzebra zebra zebra zebra and more zebra.\n",
             'doc/help/xss.md' => "# Snippets\n\nThe word quagga <script>alert(1)</script> next to <img src=x onerror=alert(1)> markup.\n",
             'doc/help/unicode.md' => "# Übersicht\n\nGrüße aus Köln: Straßenbahn.\n",
             'doc/notes.txt' => "Plain text page about the quagga too.\n",
@@ -118,7 +118,7 @@ class expHelpSearchContractTest extends PHPUnit\Framework\TestCase
     {
         $s = self::search();
         $this->assertSame( array( 'help/zebra-title.md' ), self::ids( $s->search( 'zebra', array( 'audience' => 'editor' ) ) ) );
-        $setup = self::ids( $s->search( 'zebra', array( 'category' => 'setup' ) ) );
+        $setup = self::ids( $s->search( 'zebra', array( 'category' => 'layouts' ) ) );
         $this->assertNotContains( 'help/zebra-title.md', $setup );
         $this->assertCount( 3, $setup );
         $this->assertSame( array(), self::ids( $s->search( 'zebra', array( 'audience' => 'nobody' ) ) ) );
