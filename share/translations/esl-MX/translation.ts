@@ -15527,7 +15527,7 @@ Nota: los paquetes no serán desinstalados.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Almacenar</translation>
+        <translation>Tienda</translation>
     </message>
     <message>
         <source>Advanced search</source>

@@ -8,7 +8,7 @@
  */
 
 /**
- * The translations of the administration that are kept complete (Spanish of Spain and of Mexico, Hebrew, Latin and
+ * The translations of the administration that are kept complete (Spanish of Spain and of Mexico, German, Hebrew, Latin and
  * Klingon, the kernel's catalogue and those of ezoe and ezjscore, which ship with it) must stay usable: a finished translation keeps the
  * placeholders (%1, %name ...), the HTML tags and entities, the leading and trailing whitespace and the number of
  * line breaks of its source, is not empty, and is not the English text itself unless that is right in the language
@@ -19,7 +19,7 @@
  */
 class expTranslationQualityTest extends PHPUnit\Framework\TestCase
 {
-    const LANGUAGES = array( 'esl-ES', 'esl-MX', 'fre-FR', 'heb-IL', 'lat-VA', 'tlh-QO', 'ukr-UA' );
+    const LANGUAGES = array( 'esl-ES', 'esl-MX', 'fre-FR', 'ger-DE', 'heb-IL', 'lat-VA', 'tlh-QO', 'ukr-UA' );
 
     const TAG = '/<[ \t\n\r]*\/?[ \t\n\r]*[A-Za-z][A-Za-z0-9]*(?:[ \t\n\r][^<>]*)?\/?[ \t\n\r]*>/';
     const ENTITY = '/&(?:#[0-9]+|#x[0-9A-Fa-f]+|[A-Za-z][A-Za-z0-9]*);/';

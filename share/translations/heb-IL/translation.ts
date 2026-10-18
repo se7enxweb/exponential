@@ -14122,7 +14122,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>שמירה</translation>
+        <translation>חנות</translation>
     </message>
     <message>
         <source>Advanced search</source>

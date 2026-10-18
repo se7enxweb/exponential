@@ -14123,7 +14123,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>yIpol</translation>
+        <translation>Suy qach</translation>
     </message>
     <message>
         <source>Advanced search</source>

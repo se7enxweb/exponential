@@ -14120,7 +14120,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>Зберегти</translation>
+        <translation>Магазин</translation>
     </message>
     <message>
         <source>Advanced search</source>

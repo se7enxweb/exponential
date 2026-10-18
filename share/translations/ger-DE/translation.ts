@@ -601,7 +601,7 @@
     </message>
     <message>
         <source>Use this field to configure how the url alias of the objects are generated (applies to nice URLs). Type in the identifiers of the attributes that should be used. The identifiers must be enclosed in angle brackets. Text outside angle brackets will be included as is.</source>
-        <translation>Hier können Sie konfigurieren, wie der URL Alias der Objekte der Klasse erstellt wird. Um den Inhalt eines Attributes für den URL Alias zu verwenden, geben Sie den Attribut Bezeichner in spitzen Klammern an (Bsp.: &lt;name&gt;). Text, der außerhalb der Klammern steht, wird so übernommen. Sie können auch mehrere Attribute angeben.</translation>
+        <translation>Hier können Sie konfigurieren, wie der URL Alias der Objekte der Klasse erstellt wird. Um den Inhalt eines Attributes für den URL Alias zu verwenden, geben Sie den Attribut Bezeichner in spitzen Klammern an. Text, der außerhalb der Klammern steht, wird so übernommen. Sie können auch mehrere Attribute angeben.</translation>
     </message>
     <message>
         <source>Use this field to set the internal name of the class. The identifier will be used in templates and in PHP code. Allowed characters are letters, numbers and underscores.</source>
@@ -609,7 +609,7 @@
     </message>
     <message>
         <source>Use this field to configure how the name of the objects are generated. Type in the identifiers of the attributes that should be used. The identifiers must be enclosed in angle brackets. Text outside angle brackets will be included as it is shown here.</source>
-        <translation>Verwenden Sie dieses Feld, um festzulegen, wie der Name der Objekte dieser Klasse erstellt werden soll. Geben Sie die Bezeichner der Attribute in spitzen Klammern an (Bsp.: &lt;name&gt;). Text außerhalb der spitzen Klammern wird in allen Objekt Namen genau so aufgenommen.</translation>
+        <translation>Verwenden Sie dieses Feld, um festzulegen, wie der Name der Objekte dieser Klasse erstellt werden soll. Geben Sie die Bezeichner der Attribute in spitzen Klammern an. Text außerhalb der spitzen Klammern wird in allen Objekt Namen genau so aufgenommen.</translation>
     </message>
     <message>
         <source>Use this checkbox to allow instances of the class to have sub items. If checked, it will be possible to create new sub items. If not checked, the sub items will not be displayed.</source>
@@ -5914,7 +5914,7 @@
     <name>design/admin/content/reverserelatedlist</name>
     <message>
         <source>&quot;%contentObjectName&quot; [%children_count]: Sub items that are used by other objects </source>
-        <translation>&quot;%contentObjectName&quot; [%children_count]: Unterelemente, die von anderen Objekten verwendet werden</translation>
+        <translation>&quot;%contentObjectName&quot; [%children_count]: Unterelemente, die von anderen Objekten verwendet werden </translation>
     </message>
     <message>
         <source>This subtree/item has no external relations.</source>
@@ -5922,7 +5922,7 @@
     </message>
     <message>
         <source>&quot;%contentObjectName&quot; (%children_count): Sub items that are used by other objects </source>
-        <translation>&quot;%contentObjectName&quot; (%children_count): Unterelemente, die von anderen Objekten verwendet werden</translation>
+        <translation>&quot;%contentObjectName&quot; (%children_count): Unterelemente, die von anderen Objekten verwendet werden </translation>
     </message>
 </context>
 <context>
@@ -7725,7 +7725,7 @@
     </message>
     <message>
         <source>With &lt;em&gt;Alias should redirect to its destination&lt;/em&gt; checked Exponential will redirect to the destination using a HTTP 301 response. Un-check it and the URL will stay the same &amp;#8212; no redirection will be performed.</source>
-        <translation>Wenn Sie &lt;em&gt;Alias soll zu seinem Ziel weiterleiten&lt;/em&gt; auswählen, wird Exponential zum Ziel mit einem HTTP 301 Status (permanente Weiterleitung) weiterleiten. Wenn nicht ausgewählt, wird keine Weiterleitung durchgeführt, die URL bleibt die gleiche.</translation>
+        <translation>Wenn Sie &lt;em&gt;Alias soll zu seinem Ziel weiterleiten&lt;/em&gt; auswählen, wird Exponential zum Ziel mit einem HTTP 301 Status (permanente Weiterleitung) weiterleiten. Wenn nicht ausgewählt, bleibt die URL gleich &amp;#8212; es wird keine Weiterleitung durchgeführt.</translation>
     </message>
     <message>
         <source>If checked the alias will start from the parent of the current node. If un-checked the aliases will start from the root of the site.</source>
@@ -7980,7 +7980,7 @@
     </message>
     <message>
         <source>A module view such as user/login or content/search, or an existing address of content such as about-us. A node given as content/view/full/&lt;node ID&gt; becomes an alias of that node, listed on its URL aliases tab.</source>
-        <translation>Eine Modulansicht wie user/login oder content/search oder eine vorhandene Adresse eines Inhalts wie ueber-uns. Ein als content/view/full/&lt;Knoten-ID&gt; angegebener Knoten wird zum Alias dieses Knotens und steht in dessen Reiter URL-Aliase.</translation>
+        <translation>Eine Modulansicht wie user/login oder content/search oder eine vorhandene Adresse eines Inhalts wie ueber-uns. Ein als content/view/full/&lt;node ID&gt; angegebener Knoten wird zum Alias dieses Knotens und steht in dessen Reiter URL-Aliase.</translation>
     </message>
     <message>
         <source>Enter a module view or an existing address.</source>
@@ -8103,7 +8103,7 @@
     </message>
     <message>
         <source>All wildcard aliases were successfully removed.</source>
-        <translation>Alle Aliase wurden erfolgreich entfernt. </translation>
+        <translation>Alle Aliase wurden erfolgreich entfernt.</translation>
     </message>
     <message>
         <source>Text is missing for the URL alias</source>
@@ -9462,7 +9462,7 @@
     </message>
     <message>
         <source>Your account does not have the proper privileges to access the requested page.</source>
-        <translation>Ihr Benutzerkonto hat nicht die notwendigen Privilegien um Zugriff auf die angeforderte Seite zu erhalten. </translation>
+        <translation>Ihr Benutzerkonto hat nicht die notwendigen Privilegien um Zugriff auf die angeforderte Seite zu erhalten.</translation>
     </message>
     <message>
         <source>You are not logged into the system. Please log in.</source>
@@ -12408,7 +12408,7 @@
     </message>
     <message>
         <source>content/view/full/&lt;node id&gt;: the address that always works, whatever the aliases.</source>
-        <translation>content/view/full/&lt;Knoten-ID&gt;: die Adresse, die immer funktioniert, gleich welche Aliase es gibt.</translation>
+        <translation>content/view/full/&lt;node id&gt;: die Adresse, die immer funktioniert, gleich welche Aliase es gibt.</translation>
     </message>
     <message>
         <source>Public path</source>
@@ -17101,7 +17101,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Disable &amp;quot;Back to edit&amp;quot; checkbox when editing content.</source>
-        <translation>&amp;uqot;Zurück zum Bearbeiten&amp;quot; während des Bearbeitens deaktivieren.</translation>
+        <translation>&amp;quot;Zurück zum Bearbeiten&amp;quot;-Checkbox beim Bearbeiten von Inhalten deaktivieren.</translation>
     </message>
     <message>
         <source>Enable &amp;quot;Back to edit&amp;quot; checkbox when editing content.</source>
@@ -17793,7 +17793,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <name>design/admin/pdf/edit</name>
     <message>
         <source>PDF Export</source>
-        <translation>PDF Export</translation>
+        <translation>PDF-Export</translation>
     </message>
     <message>
         <source>%pdf_export_title [PDF export]</source>
@@ -18076,7 +18076,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>PDF Export</source>
-        <translation>PDF Export</translation>
+        <translation>PDF-Export</translation>
     </message>
     <message>
         <source>There are no PDF exports in the list.</source>
@@ -20854,7 +20854,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Use this field to set the URL where the RSS export should be available. Note that &quot;rss/feed/&quot; will be appended to the real URL. </source>
-        <translation>Benutzen Sie dieses Feld, um die URL, unter der der RSS Export verfügbar sein soll, zu definieren. Beachten Sie, dass &quot;rss/feed/&quot; der fertigen URL hinzugefügt wird.</translation>
+        <translation>Benutzen Sie dieses Feld, um die URL, unter der der RSS Export verfügbar sein soll, zu definieren. Beachten Sie, dass &quot;rss/feed/&quot; der fertigen URL hinzugefügt wird. </translation>
     </message>
     <message>
         <source>Source</source>
@@ -21601,7 +21601,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>RSS Version</source>
-        <translation>RSS Version</translation>
+        <translation>RSS-Version</translation>
     </message>
     <message>
         <source>Class Attributes</source>
@@ -23045,7 +23045,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>This section is not used for limiting roles that are assigned to users or user groups. </source>
-        <translation>Diese Sektion wird nicht verwendet um Rollen zu limitieren, die Benutzern oder Benutzergruppen zugeordnet sind.</translation>
+        <translation>Diese Sektion wird nicht verwendet um Rollen zu limitieren, die Benutzern oder Benutzergruppen zugeordnet sind. </translation>
     </message>
     <message>
         <source>Objects within this section [%number_of_objects]</source>
@@ -23248,7 +23248,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Tip</source>
-        <translation>Tip</translation>
+        <translation>Tipp</translation>
     </message>
     <message>
         <source>To create an empty array leave the first line empty</source>
@@ -23348,7 +23348,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>A valid numeric can only contain 0-9 and one . (dot). </source>
-        <translation>Eine gültige Ziffer darf nur 0-9 oder einen . (Punkt) enthalten.</translation>
+        <translation>Eine gültige Ziffer darf nur 0-9 oder einen . (Punkt) enthalten. </translation>
     </message>
     <message>
         <source>$valfield does not contain valid array.</source>
@@ -23728,7 +23728,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Every INI file is read in layers: settings/&lt;file&gt;.ini first, then the files of the active extensions and of the siteaccess, then settings/override. A later file wins: it replaces a plain value, and adds to an array unless it empties the array first. This page shows the value in effect, the file it comes from and every file that sets it. Passwords, keys, tokens and other secrets are never shown.</source>
-        <translation>Jede INI-Datei wird in Schichten gelesen: zuerst settings/&lt;Datei&gt;.ini, dann die Dateien der aktiven Extensions und des Siteaccess, dann settings/override. Eine spätere Datei gewinnt: Sie ersetzt einen einfachen Wert und ergänzt ein Array, außer sie leert es zuerst. Diese Seite zeigt den wirksamen Wert, die Datei, aus der er kommt, und jede Datei, die ihn setzt. Passwörter, Schlüssel, Tokens und andere Geheimnisse werden nie angezeigt.</translation>
+        <translation>Jede INI-Datei wird in Schichten gelesen: zuerst settings/&lt;file&gt;.ini, dann die Dateien der aktiven Extensions und des Siteaccess, dann settings/override. Eine spätere Datei gewinnt: Sie ersetzt einen einfachen Wert und ergänzt ein Array, außer sie leert es zuerst. Diese Seite zeigt den wirksamen Wert, die Datei, aus der er kommt, und jede Datei, die ihn setzt. Passwörter, Schlüssel, Tokens und andere Geheimnisse werden nie angezeigt.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>
@@ -30758,11 +30758,11 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>rad.ini [RegistrySettings] Registries[]=&lt;key&gt; and [Registry_&lt;key&gt;] with Title, Ini, Section and Entries[&lt;variable&gt;]=&lt;check&gt;, or List=&lt;class&gt;::&lt;constant or method&gt;</source>
-        <translation>rad.ini [RegistrySettings] Registries[]=&lt;Schlüssel&gt; und [Registry_&lt;Schlüssel&gt;] mit Title, Ini, Section und Entries[&lt;Variable&gt;]=&lt;Prüfung&gt;, oder List=&lt;Klasse&gt;::&lt;Konstante oder Methode&gt;</translation>
+        <translation>rad.ini [RegistrySettings] Registries[]=&lt;key&gt; und [Registry_&lt;key&gt;] mit Title, Ini, Section und Entries[&lt;variable&gt;]=&lt;check&gt;, oder List=&lt;class&gt;::&lt;constant or method&gt;</translation>
     </message>
     <message>
         <source>Each entry passes its check: a class or interface, callable, listener, template, section:&lt;prefix&gt;, in:&lt;class&gt;::&lt;list&gt;, one-of:&lt;words&gt; or name</source>
-        <translation>Jeder Eintrag besteht seine Prüfung: eine Klasse oder ein Interface, callable, listener, template, section:&lt;Präfix&gt;, in:&lt;Klasse&gt;::&lt;Liste&gt;, one-of:&lt;Wörter&gt; oder name</translation>
+        <translation>Jeder Eintrag besteht seine Prüfung: eine Klasse oder ein Interface, callable, listener, template, section:&lt;prefix&gt;, in:&lt;class&gt;::&lt;list&gt;, one-of:&lt;words&gt; oder name</translation>
     </message>
     <message>
         <source>Filter event listener</source>
@@ -38234,7 +38234,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>SUM</source>
-        <translation>SUM</translation>
+        <translation>SUMME</translation>
     </message>
     <message>
         <source>The list is empty.</source>
@@ -40575,7 +40575,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source> (in trash)</source>
-        <translation>(in Papierkorb)</translation>
+        <translation> (im Papierkorb)</translation>
     </message>
     <message>
         <source>All</source>
@@ -40649,8 +40649,9 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
         <source>Your account was successfully created. An email will be sent to the specified
 email address. Follow the instructions in that mail to activate
 your account.</source>
-        <translation>Ihr Benutzerkonto wurde erfolgreich eingerichtet. Eine Email zur angegebenen Adresse wurde Ihnen zugestellt.
-Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</translation>
+        <translation>Ihr Benutzerkonto wurde erfolgreich eingerichtet. Eine E-Mail wird an die angegebene
+Adresse gesendet. Bitte folgen Sie den Anweisungen in dieser E-Mail, um Ihr
+Konto zu aktivieren.</translation>
     </message>
     <message>
         <source>Unactivated users (%users_count)</source>
@@ -41240,7 +41241,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>The new passwords did not match.</source>
-        <translation>Die neuen Passwörter stimmen nicht überein. </translation>
+        <translation>Die neuen Passwörter stimmen nicht überein.</translation>
     </message>
     <message>
         <source>Please retype the new passwords and try again.</source>
@@ -45398,7 +45399,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Author: </source>
-        <translation>Autor:</translation>
+        <translation>Autor: </translation>
     </message>
     <message>
         <source>#page of #total</source>
@@ -45495,11 +45496,11 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</source>
-        <translation>Powered by %linkStartTag Exponential&amp;reg;&amp;trade; open source content management system %linkEndTag and development framework.</translation>
+        <translation>Betrieben mit dem %linkStartTag Exponential&amp;reg;&amp;trade; Open-Source-Content-Management-System %linkEndTag und Entwicklungs-Framework.</translation>
     </message>
     <message>
         <source>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</source>
-        <translation>Powered by %linkStartTag Exponential&amp;reg; open source content management system %linkEndTag and development framework.</translation>
+        <translation>Betrieben mit dem %linkStartTag Exponential&amp;reg; Open-Source-Content-Management-System %linkEndTag und Entwicklungs-Framework.</translation>
     </message>
     <message>
         <source>Anonymous users are not allowed to vote in this poll. Please log in.</source>
@@ -45890,7 +45891,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     <name>design/standard/class/classlist</name>
     <message>
         <source>No classes in </source>
-        <translation>Keine Klassen in</translation>
+        <translation>Keine Klassen in </translation>
     </message>
     <message>
         <source>Click on the &apos;New&apos; button to create a class.</source>
@@ -46245,7 +46246,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Ini Value: </source>
-        <translation>Ini Wert:</translation>
+        <translation>Ini Wert: </translation>
     </message>
     <message>
         <source>Enabled</source>
@@ -46713,11 +46714,11 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>Warning: the ini file settings value and object value does not match.</source>
-        <translation>Warnung: Die INI-Einstellungen und Objektwerte stimmen nicht überein. </translation>
+        <translation>Warnung: Die INI-Einstellungen und Objektwerte stimmen nicht überein.</translation>
     </message>
     <message>
         <source>Ini File: </source>
-        <translation>Ini Datei:</translation>
+        <translation>Ini Datei: </translation>
     </message>
     <message>
         <source>Use seconds</source>
@@ -47455,7 +47456,7 @@ Bitte folgen Sie den Instruktionen in der Email um Ihr Konto zu aktivieren.</tra
     </message>
     <message>
         <source>[%sitename] Approval of &quot;%objectname&quot; awaits your attention</source>
-        <translation>[%sitename] Die Bestätigung von &quot;%objectname&quot; wartet auf Bearbeitung </translation>
+        <translation>[%sitename] Die Bestätigung von &quot;%objectname&quot; wartet auf Bearbeitung</translation>
     </message>
     <message>
         <source>This email is to inform you that &quot;%objectname&quot; awaits your attention at %sitename.
@@ -47573,7 +47574,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>Pick one of the translations from the list to change to or enter a new custom one in the input fields.</source>
-        <translation>Wählen Sie eine der Übersetzungen aus der Liste zum Ändern oder geben Sie eine individuelle in das Eingabefeld ein.  </translation>
+        <translation>Wählen Sie eine der Übersetzungen aus der Liste zum Ändern oder geben Sie eine individuelle in das Eingabefeld ein.</translation>
     </message>
     <message>
         <source>New translation for content</source>
@@ -47581,7 +47582,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>Pick one of the translations from the list to add or enter a new custom one in the input fields.</source>
-        <translation>Wähle eine der Übersetzungen aus der Liste zum Hinzufügen oder gebe eine Individuelle in das Eingabefeld ein.  </translation>
+        <translation>Wähle eine der Übersetzungen aus der Liste zum Hinzufügen oder gebe eine Individuelle in das Eingabefeld ein.</translation>
     </message>
     <message>
         <source>Translations</source>
@@ -47717,7 +47718,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>Below you will find a list of active translations that content objects may be translated into.</source>
-        <translation>Unten finden Sie eine Liste von aktiven Übersetzungen, in die Content Objekte übersetzt werden können. </translation>
+        <translation>Unten finden Sie eine Liste von aktiven Übersetzungen, in die Content Objekte übersetzt werden können.</translation>
     </message>
     <message>
         <source>Your content is being published</source>
@@ -48534,7 +48535,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation>Automatisch</translation>
     </message>
     <message>
         <source>Remove selected prices.</source>
@@ -48702,7 +48703,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>Dis</source>
-        <translation>Dis</translation>
+        <translation>Deakt.</translation>
     </message>
     <message>
         <source>Select if you want to disallow this option choice</source>
@@ -50740,7 +50741,8 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     <message>
         <source>Choose a file from your locale machine then click the &quot;Upload&quot; button. An object will be created according to file type and placed in your chosen location.
 </source>
-        <translation>Wählen Sie eine Datei auf Ihrem lokalen Rechner aus und klicken Sie danach die &quot;Hochladen&quot; Schaltfläche. Es wird ein Objekt gemäß des Dateityps erstellt und an dem gewählen Ort platziert.</translation>
+        <translation>Wählen Sie eine Datei auf Ihrem lokalen Rechner aus und klicken Sie danach die &quot;Hochladen&quot; Schaltfläche. Es wird ein Objekt gemäß des Dateityps erstellt und an dem gewählen Ort platziert.
+</translation>
     </message>
     <message>
         <source>Your browser does not support iframes. Please see this &lt;a href=%url&gt;link&lt;/a&gt; instead.</source>
@@ -50809,7 +50811,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Invalid name. You can only use the characters a-z, numbers and _.</source>
-        <translation>Ungültiger Name. Sie können nur die Buchstaben a-z, Ziffern und _ benutzen. </translation>
+        <translation>Ungültiger Name. Sie können nur die Buchstaben a-z, Ziffern und _ benutzen.</translation>
     </message>
     <message>
         <source>Create new template override for &lt;%template_name&gt;</source>
@@ -51225,7 +51227,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>The view %module/%view is disabled and cannot be accessed.</source>
-        <translation>Die Sicht %module/%view is deaktiviert und kann nicht angefordert werden. </translation>
+        <translation>Die Ansicht %module/%view ist deaktiviert und kann nicht aufgerufen werden.</translation>
     </message>
     <message>
         <source>The module %module is disabled and cannot be accessed.</source>
@@ -51233,7 +51235,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>You should automatically be redirected to the new location. If not click %url.</source>
-        <translation>Sie sollten nun automatisch weitergeleitet werden zum neuen Bestimmungsort. Wenn nicht %url klicken. </translation>
+        <translation>Sie sollten nun automatisch zum neuen Ort weitergeleitet werden. Falls nicht, klicken Sie %url.</translation>
     </message>
     <message>
         <source>You are currently not logged in to the site, to get proper access create a new user or login with an existing user.</source>
@@ -51249,7 +51251,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Function : </source>
-        <translation>Funktion :</translation>
+        <translation>Funktion : </translation>
     </message>
     <message>
         <source>You misspelled some parts of your URL, try changing it.</source>
@@ -51340,7 +51342,7 @@ Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startL
     </message>
     <message>
         <source>Third-Party Software</source>
-        <translation>Third-Party Software</translation>
+        <translation>Software von Drittanbietern</translation>
     </message>
     <message>
         <source>Extensions</source>
@@ -51789,7 +51791,7 @@ Falls Sie das machen, werden die Unterelemente ebenfalls entfernt.</translation>
     </message>
     <message>
         <source>Notify me about updates</source>
-        <translation>Benachrichtigen über Updates </translation>
+        <translation>Benachrichtigen über Updates</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -52971,7 +52973,7 @@ Sie können das Paket auch entfernen ohne es von der Paketliste zu entfernen.</t
     </message>
     <message>
         <source>Main</source>
-        <translation>Main</translation>
+        <translation>Übersicht</translation>
     </message>
     <message>
         <source>Modules</source>
@@ -53166,7 +53168,7 @@ Die Sektionen können Sie über das Menü oben erreichen.</translation>
     </message>
     <message>
         <source>Role edit %1</source>
-        <translation>Rolle &quot;%1&quot; editieren </translation>
+        <translation>Rolle &quot;%1&quot; editieren</translation>
     </message>
     <message>
         <source>Edit policy</source>
@@ -53234,7 +53236,7 @@ Die Sektionen können Sie über das Menü oben erreichen.</translation>
     </message>
     <message>
         <source>Specify limitations for function %functionname in module %modulename. &apos;Any&apos; means no limitation by this parameter</source>
-        <translation>Spezifizieren Sie Limitierungen für die Funktion %functionname in Modul %modulename. &apos;Beliebig&apos; heißt, dass keine Limitierung gesetzt wird </translation>
+        <translation>Spezifizieren Sie Limitierungen für die Funktion %functionname in Modul %modulename. &apos;Beliebig&apos; heißt, dass keine Limitierung gesetzt wird</translation>
     </message>
     <message>
         <source>Section</source>
@@ -53408,7 +53410,7 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
     </message>
     <message>
         <source>RSS Export</source>
-        <translation>RSS Export</translation>
+        <translation>RSS-Export</translation>
     </message>
     <message>
         <source>Title</source>
@@ -53504,7 +53506,7 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
     </message>
     <message>
         <source>PDF Export</source>
-        <translation>PDF Export</translation>
+        <translation>PDF-Export</translation>
     </message>
     <message>
         <source>Intro text</source>
@@ -54055,7 +54057,7 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
     </message>
     <message>
         <source>Invalid name. You can only use the characters a-z, numbers and _.</source>
-        <translation>Ungültiger name. Sie können nur die Buchstaben a-z, Nummern und _ benutzen. </translation>
+        <translation>Ungültiger Name. Sie können nur die Buchstaben a-z, Ziffern und _ benutzen.</translation>
     </message>
     <message>
         <source>Template will be placed in</source>
@@ -54321,8 +54323,8 @@ Wenn Sie auf den Namen klicken, können Sie navigieren. Sie können zur Auswahl 
         <source>Handles the datatype %datatypename
 By using %datatypename you can ...</source>
         <comment>Datatype default description</comment>
-        <translation>Handles the datatype %datatypename
-By using %datatypename you can ...</translation>
+        <translation>Verarbeitet den Datentyp %datatypename
+Mit %datatypename können Sie ...</translation>
     </message>
     <message>
         <source>Once the download button is clicked the code will be generated and the browser will ask you to store the generated file.</source>
@@ -54438,8 +54440,8 @@ By using %datatypename you can ...</translation>
         <source>Handles template operator %operatorname
 By using %operatorname you can ...</source>
         <comment>Template operator default description</comment>
-        <translation>Handles template operator %operatorname
-By using %operatorname you can ...</translation>
+        <translation>Verarbeitet den Template-Operator %operatorname
+Mit %operatorname können Sie ...</translation>
     </message>
     <message>
         <source>Example code</source>
@@ -54796,7 +54798,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern, die Sie ausgewählt haben
     </message>
     <message>
         <source>Warning: it is not safe to upgrade without checking the modifications done to the following files </source>
-        <translation>Warnung, es ist nicht sicher ein Upgrade durchzuführen ohne die Änderungen in den folgende Dateien zu überprüfen</translation>
+        <translation>Warnung, es ist nicht sicher ein Upgrade durchzuführen ohne die Änderungen in den folgende Dateien zu überprüfen </translation>
     </message>
     <message>
         <source>If you want you can add some example code to explain how your operator should work.
@@ -54996,7 +54998,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>Views</source>
-        <translation>Views</translation>
+        <translation>Ansichten</translation>
     </message>
     <message>
         <source>Policies</source>
@@ -55286,11 +55288,11 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>MySQL is the world&apos;s most popular Open Source Database, designed for speed, power and precision in mission critical, heavy load use.</source>
-        <translation>MySQL is the world&apos;s most popular Open Source Database, designed for speed, power and precision in mission critical, heavy load use.</translation>
+        <translation>MySQL ist die weltweit beliebteste Open-Source-Datenbank, entwickelt für Geschwindigkeit, Leistung und Präzision im geschäftskritischen Einsatz unter hoher Last.</translation>
     </message>
     <message>
         <source>More information can be found on</source>
-        <translation>More information can be found on</translation>
+        <translation>Weitere Informationen finden Sie auf</translation>
     </message>
     <message>
         <source>Details</source>
@@ -55306,15 +55308,15 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>By using the</source>
-        <translation>By using the</translation>
+        <translation>Mit der</translation>
     </message>
     <message>
         <source>configuration option you enable PHP to access MySQL databases. If you use this option without specifying the path to MySQL, PHP will use the built-in MySQL client libraries.</source>
-        <translation>configuration option you enable PHP to access MySQL databases. If you use this option without specifying the path to MySQL, PHP will use the built-in MySQL client libraries.</translation>
+        <translation>Konfigurationsoption ermöglichen Sie PHP den Zugriff auf MySQL-Datenbanken. Wenn Sie diese Option ohne Pfad zu MySQL verwenden, nutzt PHP die eingebauten MySQL-Clientbibliotheken.</translation>
     </message>
     <message>
         <source>More information on the MySQL extension can be found at</source>
-        <translation>More information on the MySQL extension can be found at</translation>
+        <translation>Weitere Informationen zur MySQL-Extension finden Sie unter</translation>
     </message>
     <message>
         <source>PostgreSQL</source>
@@ -55322,7 +55324,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>PostgreSQL is a database management system developed at the University of California at Berkeley Computer Science Department.</source>
-        <translation>PostgreSQL is a database management system developed at the University of California at Berkeley Computer Science Department.</translation>
+        <translation>PostgreSQL ist ein Datenbankmanagementsystem, das am Fachbereich Informatik der University of California in Berkeley entwickelt wurde.</translation>
     </message>
     <message>
         <source>It&apos;s a very popular database in the Open Source community and provides highly advanced database functionality.</source>
@@ -55330,23 +55332,23 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>PostgreSQL is a sophisticated Object-Relational DBMS, supporting almost all SQL constructs, including subselects, transactions, and user-defined types and functions. It is the most advanced open-source database available anywhere.</source>
-        <translation>PostgreSQL is a sophisticated Object-Relational DBMS, supporting almost all SQL constructs, including subselects, transactions, and user-defined types and functions. It is the most advanced open-source database available anywhere.</translation>
+        <translation>PostgreSQL ist ein ausgereiftes objektrelationales DBMS, das fast alle SQL-Konstrukte unterstützt, einschließlich Unterabfragen, Transaktionen sowie benutzerdefinierter Typen und Funktionen. Es ist die fortschrittlichste Open-Source-Datenbank überhaupt.</translation>
     </message>
     <message>
         <source>PostgreSQL is a good choice for handling most languages, including Unicode, but may require some configuration to get good speed.</source>
-        <translation>PostgreSQL is a good choice for handling most languages, including Unicode, but may require some configuration to get good speed.</translation>
+        <translation>PostgreSQL ist eine gute Wahl für die meisten Sprachen, einschließlich Unicode, benötigt aber eventuell etwas Konfiguration für eine gute Geschwindigkeit.</translation>
     </message>
     <message>
         <source>In order to enable PostgreSQL support,</source>
-        <translation>In order to enable PostgreSQL support,</translation>
+        <translation>Um die PostgreSQL-Unterstützung zu aktivieren,</translation>
     </message>
     <message>
         <source>is required when you compile PHP.</source>
-        <translation>is required when you compile PHP.</translation>
+        <translation>wird beim Kompilieren von PHP benötigt.</translation>
     </message>
     <message>
         <source>More information on the PostgreSQL extension can be found at</source>
-        <translation>More information on the PostgreSQL extension can be found at</translation>
+        <translation>Weitere Informationen zur PostgreSQL-Extension finden Sie unter</translation>
     </message>
     <message>
         <source>From their homepage</source>
@@ -55776,11 +55778,11 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>Monolingual</source>
-        <translation>Monolingual</translation>
+        <translation>Einsprachig</translation>
     </message>
     <message>
         <source>Multilingual</source>
-        <translation>Multilingual</translation>
+        <translation>Mehrsprachig</translation>
     </message>
     <message>
         <source>Languages</source>
@@ -55788,7 +55790,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>No problems was found with your system, you can continue by clicking the</source>
-        <translation>Es wurden keine Probleme bei Ihrem System gefunden. Sie können fortfahren, wenn Sie die </translation>
+        <translation>Es wurden keine Probleme bei Ihrem System gefunden. Sie können fortfahren, wenn Sie die</translation>
     </message>
     <message>
         <source>Finetune System</source>
@@ -56086,15 +56088,15 @@ Um das Problem zu lösen, müssen Sie eins der folgenden Dinge tun:</translation
     </message>
     <message>
         <source>Server name: </source>
-        <translation>Servername:</translation>
+        <translation>Servername: </translation>
     </message>
     <message>
         <source>Username (optional): </source>
-        <translation>Benutzername (otpional):</translation>
+        <translation>Benutzername (optional): </translation>
     </message>
     <message>
         <source>Password (optional): </source>
-        <translation>Passwort (optional):</translation>
+        <translation>Passwort (optional): </translation>
     </message>
     <message>
         <source>The Exponential system uses E-mail to send out important notices such as user registration and content approval. On Linux/UNIX: try to use sendmail. On Windows: use an SMTP server.</source>
@@ -56488,7 +56490,7 @@ Es wird möglich sein, diese später zu ändern.</translation>
     </message>
     <message>
         <source>It is also possible to do some finetuning of your system, click &lt;i&gt;Finetune&lt;/i&gt; instead &lt;i&gt;Next&lt;/i&gt; if you want to see the finetuning hints.</source>
-        <translation>Es ist auch möglich die Feineinstellungen des Systems zu überprüfen. Klicken Sie dazu auf &lt;i&gt;Feineinstellungen&lt;/i&gt;, falls Sie Tipps für Feineinstellungen erhalten wollen.</translation>
+        <translation>Es ist auch möglich die Feineinstellungen des Systems zu überprüfen. Klicken Sie dazu auf &lt;i&gt;Feineinstellungen&lt;/i&gt; statt &lt;i&gt;Weiter&lt;/i&gt;, falls Sie Tipps für Feineinstellungen erhalten wollen.</translation>
     </message>
     <message>
         <source>There are some issues that should be resolved to get maximum performance and features. A list of issues is presented below. Each section contains a description and a suggested / recommended solution.</source>
@@ -57020,7 +57022,7 @@ This functionality is also available at a later time from the Administration Int
     </message>
     <message>
         <source>Welcome to the Exponential content management system and development framework. This wizard will help you set up Exponential.&lt;br&gt;Click &lt;i&gt;Next&lt;/i&gt; to continue.</source>
-        <translation>Willkommen im Exponential Content Management System and Development Framework. Dieser Assistent wird Ihnen dabei helfen, eine erste Installation von Exponential vorzunehmen. Klicken Sie einfach auf &lt;i&gt;Weiter&lt;/i&gt;, um mit der Einrichtung zu beginnen.</translation>
+        <translation>Willkommen im Exponential Content Management System and Development Framework. Dieser Assistent wird Ihnen dabei helfen, eine erste Installation von Exponential vorzunehmen.&lt;br&gt;Klicken Sie einfach auf &lt;i&gt;Weiter&lt;/i&gt;, um mit der Einrichtung zu beginnen.</translation>
     </message>
     <message>
         <source>The selected user has not got access to any databases. Change user or create a database for the user.</source>
@@ -57072,7 +57074,7 @@ This functionality is also available at a later time from the Administration Int
     </message>
     <message>
         <source>to enable write access then click the</source>
-        <translation>Um den Schreibzugriff zu aktivieren klicken Sie auf </translation>
+        <translation>Um den Schreibzugriff zu aktivieren klicken Sie auf</translation>
     </message>
     <message>
         <source>&lt;b&gt;SMTP&lt;/b&gt;: If you are unsure what to enter, refer to the settings in your email application.</source>
@@ -57632,15 +57634,15 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     <name>design/standard/setup/tests</name>
     <message>
         <source>Missing database handlers</source>
-        <translation>Missing database handlers</translation>
+        <translation>Fehlende Datenbank-Handler</translation>
     </message>
     <message>
         <source>Also some databases has more advanced features, such as charset, than others.</source>
-        <translation>Also some databases has more advanced features, such as charset, than others.</translation>
+        <translation>Außerdem bieten manche Datenbanken mehr fortgeschrittene Funktionen als andere, zum Beispiel Zeichensätze.</translation>
     </message>
     <message>
         <source>To obtain more database support you need to recompile PHP, the exact recompile options are specified below.</source>
-        <translation>To obtain more database support you need to recompile PHP, the exact recompile options are specified below.</translation>
+        <translation>Um weitere Datenbankunterstützung zu erhalten, müssen Sie PHP neu kompilieren. Die genauen Optionen dafür stehen unten.</translation>
     </message>
     <message>
         <source>Missing database handler</source>
@@ -57648,35 +57650,35 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     </message>
     <message>
         <source>To obtain database support you need to recompile PHP, the exact recompile options are specified below.</source>
-        <translation>To obtain database support you need to recompile PHP, the exact recompile options are specified below.</translation>
+        <translation>Um Datenbankunterstützung zu erhalten, müssen Sie PHP neu kompilieren. Die genauen Optionen dafür stehen unten.</translation>
     </message>
     <message>
         <source>Insufficient directory permissions</source>
-        <translation>Insufficient directory permissions</translation>
+        <translation>Unzureichende Verzeichnisberechtigungen</translation>
     </message>
     <message>
         <source>It&apos;s recommended that you fix this by running the commands below.</source>
-        <translation>It&apos;s recommended that you fix this by running the commands below.</translation>
+        <translation>Es wird empfohlen, dies durch Ausführen der folgenden Befehle zu beheben.</translation>
     </message>
     <message>
         <source>Shell commands</source>
-        <translation>Shell commands</translation>
+        <translation>Shell-Befehle</translation>
     </message>
     <message>
         <source>Missing image conversion support</source>
-        <translation>Missing image conversion support</translation>
+        <translation>Fehlende Unterstützung für die Bildkonvertierung</translation>
     </message>
     <message>
         <source>template operator will not be available.</source>
-        <translation>template operator will not be available.</translation>
+        <translation>Template-Operator wird nicht verfügbar sein.</translation>
     </message>
     <message>
         <source>Note:</source>
-        <translation>Note:</translation>
+        <translation>Hinweis:</translation>
     </message>
     <message>
         <source>Missing ImageMagick program</source>
-        <translation>Missing ImageMagick program</translation>
+        <translation>Fehlendes ImageMagick-Programm</translation>
     </message>
     <message>
         <source>If you known where the program is installed (the executable is called</source>
@@ -57684,11 +57686,11 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     </message>
     <message>
         <source>or</source>
-        <translation>or</translation>
+        <translation>oder</translation>
     </message>
     <message>
         <source>)then enter the directory in the input field below and do a recheck (Separate multiple directories with a</source>
-        <translation>), dann geben Sie das Verzeichnis in das Textfeld unten ein und machen Sie einen erneuten Check. (Mehrere Verzeichnisse mit einem </translation>
+        <translation>), dann geben Sie das Verzeichnis in das Textfeld unten ein und machen Sie einen erneuten Check. (Mehrere Verzeichnisse mit einem</translation>
     </message>
     <message>
         <source>colon</source>
@@ -57740,7 +57742,7 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     </message>
     <message>
         <source>Your PHP version, which is </source>
-        <translation>Ihre PHP Version</translation>
+        <translation>Ihre PHP-Version, nämlich </translation>
     </message>
     <message>
         <source>, does not meet the minimum requirements of</source>
@@ -57752,7 +57754,7 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     </message>
     <message>
         <source>You must upgrade to at least version </source>
-        <translation>Sie müssen mindestens auf diese Version upgraden</translation>
+        <translation>Sie müssen mindestens auf diese Version aktualisieren: </translation>
     </message>
     <message>
         <source>directory, without this the setup cannot disable itself.</source>
@@ -57792,7 +57794,7 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     </message>
     <message>
         <source>More information on the subject can be found at %1.</source>
-        <translation>Mehr Informationen zu diesen Thema können gefunden werden bei %1. </translation>
+        <translation>Mehr Informationen zu diesen Thema können gefunden werden bei %1.</translation>
     </message>
     <message>
         <source>php.ini example:</source>
@@ -57812,7 +57814,7 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     </message>
     <message>
         <source>It&apos;s recommended that the option is turned off. To turn it off edit your %1 configuration and set %2 to %3.</source>
-        <translation>Es wird empfohlen diese Option auszuschalten. Um sie auszuschalten, bearbeiten Sie Ihre %1 Konfiguration und setzen Sie %2 auf %3. </translation>
+        <translation>Es wird empfohlen diese Option auszuschalten. Um sie auszuschalten, bearbeiten Sie Ihre %1 Konfiguration und setzen Sie %2 auf %3.</translation>
     </message>
     <message>
         <source>PHP safe mode is enabled</source>
@@ -58150,7 +58152,7 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     </message>
     <message>
         <source>The imagegd2 extension is not available to Exponential. Without it Exponential will only be able to do conversion using ImageMagick and the</source>
-        <translation>Die imagegd2-Extension ist nicht verfügbar. Ohne diese wird Exponential nur dann Bilder konvertieren können, wenn ImageMagick installiert ist und </translation>
+        <translation>Die imagegd2-Extension ist nicht verfügbar. Ohne diese wird Exponential nur dann Bilder konvertieren können, wenn ImageMagick installiert ist und</translation>
     </message>
     <message>
         <source>Future releases of Exponential will have more advanced image support by using the imagegd extension.</source>
@@ -59484,12 +59486,11 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     Select your customers then click the %buttonname button.
     Using the recent and bookmark items for quick selection is also possible.
     Click on object names to change the browse listing.</source>
-        <translation>Bitte wählen Sie die Kunden die Sie zur Ermäßigungsgruppe %groupname hinzufügen möchten.
+        <translation>Bitte wählen Sie die Kunden, die Sie zur Ermäßigungsgruppe %groupname hinzufügen möchten.
 
 Wählen Sie Ihre Kunden aus und klicken Sie die Schaltfläche %buttonname.
-Sollte die Liste der zuletzt verwendeten Elemente oder die der Lesezeichen zur Verfügung stehen, 
-können Sie den Ort auch daraus wählen.
-Klicken Sie auf die Namen der Orte, um durch die angezeigten Elemente zu blättern.</translation>
+Sollte die Liste der zuletzt verwendeten Elemente oder die der Lesezeichen zur Verfügung stehen, können Sie die Kunden auch daraus wählen.
+Klicken Sie auf die Namen der Objekte, um durch die angezeigten Elemente zu blättern.</translation>
     </message>
     <message>
         <source>Please choose the products you want to add to discount rule %discountname in discount group %groupname.
@@ -59499,10 +59500,9 @@ Klicken Sie auf die Namen der Orte, um durch die angezeigten Elemente zu blätte
     Click on product names to change the browse listing.</source>
         <translation>Bitte wählen Sie die Produkte aus, die Sie zur Ermäßigungsregel %discountname in der Ermäßigungsgruppe %groupname hinzufügen möchten.
 
-Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
- Sollte die Liste der zuletzt verwendeten Elemente oder die der Lesezeichen zur Verfügung stehen, 
- können Sie den Ort auch daraus wählen.
- Klicken Sie auf die Namen der Orte, um durch die angezeigten Elemente zu blättern.</translation>
+Wählen Sie Ihre Produkte aus und klicken Sie die Schaltfläche %buttonname.
+Sollte die Liste der zuletzt verwendeten Elemente oder die der Lesezeichen zur Verfügung stehen, können Sie die Produkte auch daraus wählen.
+Klicken Sie auf die Namen der Produkte, um durch die angezeigten Elemente zu blättern.</translation>
     </message>
 </context>
 <context>
@@ -59737,7 +59737,7 @@ Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
     </message>
     <message>
         <source>Search: </source>
-        <translation>Suche:</translation>
+        <translation>Suche: </translation>
     </message>
 </context>
 <context>
@@ -59841,7 +59841,7 @@ Wählen Sie Ihre Kunden und klicken Sie die Schaltfläche %buttonname.
     </message>
     <message>
         <source>URL has not been checked</source>
-        <translation>Die URL wurde noch nicht überprüft </translation>
+        <translation>Die URL wurde noch nicht überprüft</translation>
     </message>
     <message>
         <source>Store</source>
@@ -60306,7 +60306,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>The key is invalid or has been used. </source>
-        <translation>Der Schlüssel ist ungültig oder verbraucht.</translation>
+        <translation>Der Schlüssel ist ungültig oder verbraucht. </translation>
     </message>
     <message>
         <source>Password was successfully generated and sent to: %1</source>
@@ -62616,7 +62616,7 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     </message>
     <message>
         <source>Invalid price for &apos;%currencyCode&apos; currency </source>
-        <translation>Ungültiger Preis für &apos;%currencyCode&apos; Währung</translation>
+        <translation>Ungültiger Preis für die Währung &apos;%currencyCode&apos; </translation>
     </message>
     <message>
         <source>Missing objectrelation list input.</source>
@@ -62908,14 +62908,18 @@ wenn Sie die Option &quot;%3&quot; von &quot;%4&quot; ausgewählt haben </transl
     <message>
         <source>The creditcard was not accepted.
                                                                   Please check the creditcard data.</source>
-        <translation>Die Kreditkarte wurde nicht akzeptiert. Bitte prüfen Sie die Kreditkartendaten.</translation>
+        <translation>Die Kreditkarte wurde nicht akzeptiert.
+Bitte prüfen Sie die Kreditkartendaten.</translation>
     </message>
     <message>
         <source>This transaction has failed to
                 verify that the use of a secure transaction (MD5 Hash Failed).
                 Please contact the site administrator and inform them of
                 this error. Please do not try to resubmit payment.</source>
-        <translation>Bei dieser Transaktion konnte die Verwendung einer sicheren Transaktion nicht überprüft werden (MD5-Hash fehlgeschlagen). Bitte wenden Sie sich an den Administrator der Website und informieren Sie ihn über diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</translation>
+        <translation>Bei dieser Transaktion konnte die Verwendung einer sicheren
+Transaktion nicht überprüft werden (MD5-Hash fehlgeschlagen).
+Bitte wenden Sie sich an den Administrator der Website und informieren Sie ihn über
+diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</translation>
     </message>
     <message>
         <source>Virgio</source>
@@ -66398,7 +66402,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <name>kernel/pdf</name>
     <message>
         <source>PDF Export</source>
-        <translation>PDF Export</translation>
+        <translation>PDF-Export</translation>
     </message>
     <message>
         <source>An export with such filename already exists.</source>
@@ -66597,7 +66601,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>System Upgrade</source>
-        <translation>System Upgrade</translation>
+        <translation>System-Upgrade</translation>
     </message>
     <message>
         <source>File %1 does not exist. You should copy it from the recent Exponential distribution.</source>
@@ -67427,7 +67431,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <name>pdf/edit</name>
     <message>
         <source>PDF Export</source>
-        <translation>PDF Export</translation>
+        <translation>PDF-Export</translation>
     </message>
 </context>
 <context>
@@ -68446,7 +68450,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>not &lt;event&gt;@&lt;callback&gt;</source>
-        <translation>nicht &lt;Ereignis&gt;@&lt;Callback&gt;</translation>
+        <translation>nicht &lt;event&gt;@&lt;callback&gt;</translation>
     </message>
     <message>
         <source>no such function</source>
@@ -68466,7 +68470,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>not &lt;class&gt;::&lt;constant or method&gt;</source>
-        <translation>nicht &lt;Klasse&gt;::&lt;Konstante oder Methode&gt;</translation>
+        <translation>nicht &lt;class&gt;::&lt;constant or method&gt;</translation>
     </message>
     <message>
         <source>the class has no such constant or method</source>
@@ -68490,7 +68494,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>The listeners attached to kernel events and filters: site.ini [Event] Listeners[] and [RunnableSettings] Listeners[], each &lt;event&gt;@&lt;callback&gt;.</source>
-        <translation>Die Listener an Kernel-Ereignissen und -Filtern: site.ini [Event] Listeners[] und [RunnableSettings] Listeners[], jeweils &lt;Ereignis&gt;@&lt;Callback&gt;.</translation>
+        <translation>Die Listener an Kernel-Ereignissen und -Filtern: site.ini [Event] Listeners[] und [RunnableSettings] Listeners[], jeweils &lt;event&gt;@&lt;callback&gt;.</translation>
     </message>
     <message>
         <source>Cronjob part scripts</source>
@@ -68498,7 +68502,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>The scripts of every cronjob part (cronjob.ini [CronjobPart-&lt;part&gt;] Scripts[]). Most of them are commands counted as runnables already, so they are listed and not added to the total.</source>
-        <translation>Die Skripte jedes Cronjob-Teils (cronjob.ini [CronjobPart-&lt;Teil&gt;] Scripts[]). Die meisten sind Befehle, die schon als Runnables gezählt sind; sie werden daher aufgelistet und nicht zur Summe addiert.</translation>
+        <translation>Die Skripte jedes Cronjob-Teils (cronjob.ini [CronjobPart-&lt;part&gt;] Scripts[]). Die meisten sind Befehle, die schon als Runnables gezählt sind; sie werden daher aufgelistet und nicht zur Summe addiert.</translation>
     </message>
     <message>
         <source>Audit console sources</source>
@@ -68506,15 +68510,15 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>What shows an extension's own audit records in the audit console (audit.ini [AuditSourceSettings] Sources[&lt;name&gt;]=, implementing expAuditSource).</source>
-        <translation>Was die eigenen Audit-Einträge einer Extension in der Audit-Konsole zeigt (audit.ini [AuditSourceSettings] Sources[&lt;Name&gt;]=, implementiert expAuditSource).</translation>
+        <translation>Was die eigenen Audit-Einträge einer Extension in der Audit-Konsole zeigt (audit.ini [AuditSourceSettings] Sources[&lt;name&gt;]=, implementiert expAuditSource).</translation>
     </message>
     <message>
         <source>The server functions of ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), each called as ezjscore/call/&lt;name&gt;::&lt;function&gt;.</source>
-        <translation>Die Serverfunktionen von ezjscore (ezjscore.ini [ezjscServer_&lt;Name&gt;] Class=), jeweils aufgerufen als ezjscore/call/&lt;Name&gt;::&lt;Funktion&gt;.</translation>
+        <translation>Die Serverfunktionen von ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), jeweils aufgerufen als ezjscore/call/&lt;name&gt;::&lt;function&gt;.</translation>
     </message>
     <message>
         <source>The editors the Online Editor offers (ezoe.ini [EditorSettings] Engines[&lt;id&gt;]=&lt;class&gt;), each a class implementing expOEEditorEngine.</source>
-        <translation>Die Editoren, die der Online-Editor anbietet (ezoe.ini [EditorSettings] Engines[&lt;ID&gt;]=&lt;Klasse&gt;), jeweils eine Klasse, die expOEEditorEngine implementiert.</translation>
+        <translation>Die Editoren, die der Online-Editor anbietet (ezoe.ini [EditorSettings] Engines[&lt;id&gt;]=&lt;class&gt;), jeweils eine Klasse, die expOEEditorEngine implementiert.</translation>
     </message>
     <message>
         <source>the class does not exist</source>
@@ -70456,7 +70460,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>View: ?</source>
-        <translation>View: ?</translation>
+        <translation>Ansicht: ?</translation>
     </message>
     <message>
         <source>Content view cache</source>
@@ -70680,7 +70684,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Deprecations</source>
-        <translation>Deprecations</translation>
+        <translation>Veraltete Funktionen</translation>
     </message>
     <message>
         <source>Module</source>

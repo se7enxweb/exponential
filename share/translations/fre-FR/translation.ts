@@ -14591,7 +14591,7 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Sauvegarder</translation>
+        <translation>Boutique</translation>
     </message>
     <message>
         <source>Advanced search</source>
