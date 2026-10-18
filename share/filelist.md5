@@ -5482,7 +5482,7 @@ b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 55f92f1a206b102c012d371f1dd5f36a  kernel/classes/help/content/exphelpcontentinstaller.php
 cd2fe14e4eaec5d6c152ec03dc0b9c9a  kernel/classes/help/content/exphelpcontentprovider.php
 ac511aa456e80d00093d0b638a2c7e3a  kernel/classes/help/content/exphelpcontentrepository.php
-c0c8f7b1244fe73801ecb80b43a6b679  kernel/classes/help/content/exphelpcontentschema.php
+b37160bc17524e98f28e2d14ed957a2f  kernel/classes/help/content/exphelpcontentschema.php
 731dacfbc9e210d26a6115321f360d89  kernel/classes/help/content/exphelpcontentseeder.php
 ccb98eef4c622a21501d839063227698  kernel/classes/help/content/exphelpcontentvalidator.php
 9a98927e99674e2355bd255881d0bda1  kernel/classes/help/exphelp.php

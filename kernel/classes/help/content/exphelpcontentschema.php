@@ -87,7 +87,10 @@ class expHelpContentSchema
                 $value = $ini->variable( 'ContentSettings', $name );
                 if ( is_array( $default ) )
                 {
-                    $value = array_values( array_filter( (array)$value, function ( $v ) { return is_scalar( $v ) && trim( (string)$v ) !== ''; } ) );
+                    $value = array_filter( (array)$value, function ( $v ) { return is_scalar( $v ) && trim( (string)$v ) !== ''; } );
+                    // a list is renumbered; a map (AudienceMap[<name>]=<audience>) keeps its keys
+                    if ( !array_filter( array_keys( $value ), 'is_string' ) )
+                        $value = array_values( $value );
                     return $value ? $value : $default;
                 }
                 return $value;
