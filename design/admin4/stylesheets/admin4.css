@@ -1860,7 +1860,8 @@ a.a4-dash-figure:is(:hover, :focus-visible) > span:not(.a4-dash-figure-ico):not(
 .a4-dash-system #mainteinance-text p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-s); line-height: 1.5; }
 .a4-dash-facts { display: grid; grid-template-columns: auto 1fr; gap: var(--a4-space-2) var(--a4-space-3); margin: var(--a4-space-3) 0; }
 .a4-dash-facts dt { color: var(--a4-muted); }
-.a4-dash-facts dd { margin: 0; font-weight: 600; unicode-bidi: plaintext; } /* a value (6.0.15stable, ezmysqli) takes the direction of its own first letter */
+.a4-dash-facts dd { margin: 0; font-weight: 600; unicode-bidi: plaintext; text-align: left; } /* a value (6.0.15stable, ezmysqli) takes the direction of its own first letter */
+:where([dir="rtl"]) .a4-dash-facts dd { text-align: right; }   /* and stands beside its label whatever its own direction (plaintext would align it to its own start) */
 .a4-dash-links { display: flex; flex-wrap: wrap; gap: var(--a4-space-2) var(--a4-space-3); margin: 0; }
 
 .a4-dash-blocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--a4-space-5); align-items: start; }
