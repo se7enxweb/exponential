@@ -71272,5 +71272,61 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Reference</source>
         <translation>Reference</translation>
     </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 result</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administrators</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Editors</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Developers</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>End users</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Copy code</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Create, edit, translate and publish content: media, layouts, search and the editor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Use the site: your account, signing in, two-factor authentication and finding things.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Help for this page</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Help: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Hide section: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Show section: %title</translation>
+    </message>
 </context>
 </TS>

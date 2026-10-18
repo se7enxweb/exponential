@@ -71196,5 +71196,61 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Reference</source>
         <translation>Довідник</translation>
     </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 результат</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Адміністратори</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Редактори</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Розробники</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Кінцеві користувачі</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Копіювати код</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Розвивайте систему: розширення, шаблони, налаштування, API, командний рядок і оновлення.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Створюйте, редагуйте, перекладайте й публікуйте вміст: медіа, макети, пошук і редактор.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Керуйте інсталяцією: сайти, користувачі й ролі, кеші, журнали, безпека та стан системи.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Користуйтеся сайтом: ваш обліковий запис, вхід, двофакторна автентифікація та пошук.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Довідка до цієї сторінки</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Довідка: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Сховати розділ: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Показати розділ: %title</translation>
+    </message>
 </context>
 </TS>

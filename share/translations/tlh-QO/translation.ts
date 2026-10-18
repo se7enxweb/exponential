@@ -71211,5 +71211,61 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Reference</source>
         <translation>De&apos; paq</translation>
     </message>
+    <message>
+        <source>1 result</source>
+        <translation>wa&apos; tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>loHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>ghItlhwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>chenmoHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>lo&apos;wI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>ngoq yIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Dachenqa&apos;: nIvmoHwI&apos;mey, tamghay&apos;mey, SeHlaw mIwmey, API, ra&apos;meH tlhegh &apos;ej Dub.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>De&apos; yIchenmoH, yIchoH, yImugh &apos;ej yIngangmoH: Hol, nab, nej &apos;ej ghItlhwI&apos;.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>jom yIloH: Daqmey, lo&apos;wI&apos;pu&apos; &apos;ej Qu&apos;mey, pegh Daqmey, ghItlhmey, Hung &apos;ej pat Dotlh.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Daq yIlo&apos;: De&apos;lIj, &apos;el, cha&apos; tobmeH mIw &apos;ej Dochmey Sam.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>nav vIvmo&apos; QaH</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>QaH: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>&apos;ay&apos; yISo&apos;: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>&apos;ay&apos; yI&apos;ang: %title</translation>
+    </message>
 </context>
 </TS>

@@ -72606,5 +72606,61 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Reference</source>
         <translation>Référence</translation>
     </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 résultat</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administrateurs</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Rédacteurs</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Développeurs</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Utilisateurs finaux</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Copier le code</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Construire dessus : extensions, templates, réglages, les API, la ligne de commande et les mises à jour.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Créer, modifier, traduire et publier du contenu : médias, mises en page, recherche et l&apos;éditeur.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Exploiter l&apos;installation : sites, utilisateurs et rôles, caches, journaux, sécurité et santé du système.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Utiliser le site : votre compte, la connexion, l&apos;authentification à deux facteurs et la recherche.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Aide sur cette page</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Aide : %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Masquer la section : %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Afficher la section : %title</translation>
+    </message>
 </context>
 </TS>

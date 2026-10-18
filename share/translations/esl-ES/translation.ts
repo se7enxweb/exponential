@@ -72660,5 +72660,61 @@ Gracias por tu feedback</translation>
         <source>Reference</source>
         <translation>Referencia</translation>
     </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 resultado</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administradores</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Editores</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Desarrolladores</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Usuarios finales</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Copiar el código</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Construir sobre él: extensiones, plantillas, ajustes, las API, la línea de órdenes y las actualizaciones.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Crear, editar, traducir y publicar contenido: multimedia, diseños, búsqueda y el editor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Gestionar la instalación: sitios, usuarios y roles, cachés, registros, seguridad y el estado del sistema.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Usar el sitio: su cuenta, el inicio de sesión, la autenticación en dos pasos y cómo encontrar cosas.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Ayuda sobre esta página</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Ayuda: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Ocultar la sección: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Mostrar la sección: %title</translation>
+    </message>
 </context>
 </TS>

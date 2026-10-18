@@ -71211,5 +71211,61 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Reference</source>
         <translation>Index rerum</translation>
     </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 inventum</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administratores</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Editores</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Artifices programmatum</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Usores</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Codicem exscribere</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Super eam aedificare: extensiones, formae, optiones, interfacies, linea mandatorum et renovationes.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Contenta creare, emendare, vertere et edere: media, dispositiones, quaestio et editor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Institutionem regere: situs, usores et munera, memorias, acta, securitatem et valetudinem systematis.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Situ uti: ratio tua, ingressus, confirmatio duplex et res inveniendae.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Auxilium huius paginae</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Auxilium: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Sectionem celare: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Sectionem ostendere: %title</translation>
+    </message>
 </context>
 </TS>

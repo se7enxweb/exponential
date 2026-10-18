@@ -71210,5 +71210,61 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Reference</source>
         <translation>סימוכין</translation>
     </message>
+    <message>
+        <source>1 result</source>
+        <translation>תוצאה אחת</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>מנהלי מערכת</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>עורכים</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>מפתחים</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>משתמשי קצה</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>העתקת הקוד</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>לבנות על גבי המערכת: הרחבות, תבניות, הגדרות, ממשקי ה-API, שורת הפקודה ושדרוגים.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>יצירה, עריכה, תרגום ופרסום של תוכן: מדיה, פריסות, חיפוש והעורך.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>תפעול ההתקנה: אתרים, משתמשים ותפקידים, מטמונים, יומנים, אבטחה ותקינות המערכת.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>שימוש באתר: החשבון שלך, כניסה, אימות דו-שלבי ומציאת דברים.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>עזרה לדף זה</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>עזרה: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>הסתרת הסעיף: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>הצגת הסעיף: %title</translation>
+    </message>
 </context>
 </TS>

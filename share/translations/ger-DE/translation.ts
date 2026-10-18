@@ -78216,5 +78216,61 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Reference</source>
         <translation>Referenz</translation>
     </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 Treffer</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administratoren</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Redakteure</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Entwickler</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Endbenutzer</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Code kopieren</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Darauf aufbauen: Erweiterungen, Templates, Einstellungen, die APIs, die Kommandozeile und Aktualisierungen.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Inhalte erstellen, bearbeiten, übersetzen und veröffentlichen: Medien, Layouts, Suche und der Editor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Die Installation betreiben: Sites, Benutzer und Rollen, Caches, Logs, Sicherheit und der Zustand des Systems.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Die Website nutzen: Ihr Konto, die Anmeldung, die Zwei-Faktor-Authentifizierung und das Finden von Inhalten.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Hilfe zu dieser Seite</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Hilfe: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Abschnitt ausblenden: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Abschnitt einblenden: %title</translation>
+    </message>
 </context>
 </TS>
