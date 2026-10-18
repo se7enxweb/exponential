@@ -6,3 +6,349 @@
  * has a dark value. Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules:
  * doc/bc/6.0/admin4-styling.md. The same file is in design/admin and design/admin4.
  */
+
+/* ---- viewer (E) ---------------------------------------------------------------------------------------------- */
+/* exphelp/viewer: a bar (start, all pages, search), then a grid of the page, the tree of all help pages and the
+   contents of the page. The grid follows the width of the page column (container queries), not the window, so it
+   adapts when the admin's left column is shown or hidden:
+   - from 72rem: tree | page | contents (the tree and the contents stay in view while the page scrolls);
+   - from 48rem: tree | page, the contents folded above the page;
+   - narrower: one column, the tree after the page (it is after the page in the source, too). */
+
+.a4-help-viewer { container-type: inline-size; container-name: a4-help-viewer; }
+.a4-help-viewer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2) var(--a4-space-3);
+  margin: 0 0 var(--a4-space-5);
+  padding: 0 0 var(--a4-space-3);
+  border-bottom: 1px solid var(--a4-line);
+}
+.a4-help-viewer-bar .a4-btn .a4-icon { flex: none; }
+.a4-help-viewer-search {
+  display: flex;
+  flex: 1 1 18rem;
+  align-items: center;
+  gap: var(--a4-space-2);
+  max-width: 34rem;
+  margin: 0 0 0 auto;
+}
+.a4-help-viewer-search .a4-input { flex: 1 1 auto; min-width: 0; }
+
+.a4-help-viewer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "main" "nav";
+  gap: var(--a4-space-6);
+  align-items: start;
+}
+.a4-help-main { grid-area: main; min-width: 0; }
+.a4-help-nav { grid-area: nav; min-width: 0; }
+.a4-help-toc-side { grid-area: toc; display: none; min-width: 0; }
+
+@container a4-help-viewer (min-width: 48rem) {
+  .a4-help-viewer-grid {
+    grid-template-columns: minmax(13rem, 16rem) minmax(0, 1fr);
+    grid-template-areas: "nav main";
+  }
+  .a4-help-viewer-tonav { display: none; }
+  .a4-help-nav {
+    position: sticky;
+    top: calc(var(--header-height, 6.25rem) + var(--a4-space-3));
+    max-height: calc(100vh - var(--header-height, 6.25rem) - var(--a4-space-6));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+}
+@container a4-help-viewer (min-width: 72rem) {
+  .a4-help-viewer-grid {
+    grid-template-columns: minmax(13rem, 16rem) minmax(0, 1fr) minmax(11rem, 14rem);
+    grid-template-areas: "nav main toc";
+  }
+  .a4-help-toc-side {
+    display: block;
+    position: sticky;
+    top: calc(var(--header-height, 6.25rem) + var(--a4-space-3));
+    max-height: calc(100vh - var(--header-height, 6.25rem) - var(--a4-space-6));
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .a4-help-toc-fold { display: none; }
+}
+
+/* The page: title, summary, meta */
+.a4-help-pagehead { margin: 0 0 var(--a4-space-5); }
+.a4-help-title {
+  margin: 0 0 var(--a4-space-2);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-3xl);
+  font-weight: 700;
+  line-height: var(--a4-leading-tight);
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+.a4-help-summary {
+  max-width: 72ch;
+  margin: 0 0 var(--a4-space-3);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-l);
+  line-height: var(--a4-leading);
+}
+.a4-help-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2) var(--a4-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-help-meta-item { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1); margin: 0; padding: 0; }
+.a4-help-meta-item > .a4-icon { flex: none; }
+.a4-help-meta-item .a4-tag .a4-icon { flex: none; }
+.a4-help-meta-path {
+  padding: 0 var(--a4-space-1);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-xs);
+}
+.a4-help-meta-item.is-edit { margin-inline-start: auto; }
+
+/* The document: the renderer's body (A's section styles what is inside) at a readable measure. The document's own
+   first heading repeats the page title above it, so it is left out. */
+.a4-help-article { max-width: 80ch; min-width: 0; color: var(--a4-ink); line-height: var(--a4-leading); }
+.a4-help-article > .a4-help-body > h1:first-child { display: none; }
+.a4-help-article :is(h2, h3, h4)[id] { scroll-margin-top: calc(var(--header-height, 6.25rem) + var(--a4-space-4)); }
+.a4-help-article .a4-help-target[id] { scroll-margin-top: calc(var(--header-height, 6.25rem) + var(--a4-space-4)); }
+
+/* Prose of the document (element level; the renderer's own classes are styled in the renderer section) */
+.a4-help-body { font-size: var(--a4-text-body); overflow-wrap: break-word; }
+.a4-help-body > :first-child,
+.a4-help-body > h1:first-child + * { margin-top: 0; }
+.a4-help-body :is(p, ul, ol, dl) { margin: 0 0 var(--a4-space-4); }
+.a4-help-body :is(ul, ol) { padding-inline-start: var(--a4-space-6); }
+.a4-help-body li { margin: 0 0 var(--a4-space-1); }
+.a4-help-body li > :is(ul, ol) { margin: var(--a4-space-1) 0 0; }
+.a4-help-body li > p { margin: 0 0 var(--a4-space-2); }
+.a4-help-body :is(h2, h3, h4, h5, h6) { color: var(--a4-ink); line-height: var(--a4-leading-tight); overflow-wrap: anywhere; }
+.a4-help-body h2 {
+  margin: var(--a4-space-7) 0 var(--a4-space-3);
+  padding: 0 0 var(--a4-space-2);
+  border-bottom: 1px solid var(--a4-line);
+  font-size: var(--a4-text-2xl);
+  font-weight: 700;
+}
+.a4-help-body h3 { margin: var(--a4-space-6) 0 var(--a4-space-2); font-size: var(--a4-text-xl); font-weight: 650; }
+.a4-help-body h4 { margin: var(--a4-space-5) 0 var(--a4-space-2); font-size: var(--a4-text-l); font-weight: 650; }
+.a4-help-body :is(h5, h6) { margin: var(--a4-space-4) 0 var(--a4-space-1); font-size: var(--a4-text-m); font-weight: 650; }
+.a4-help-body dt { font-weight: 600; }
+.a4-help-body dd { margin: 0 0 var(--a4-space-2); padding-inline-start: var(--a4-space-4); }
+.a4-help-body strong { font-weight: 650; color: var(--a4-ink); }
+
+/* Collapsible sections (exphelp.js: a button after each h2 heading's text, the section in .a4-help-section) */
+.a4-help-collapse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--a4-control-h);
+  height: var(--a4-control-h);
+  margin: 0 0 0 var(--a4-space-2);
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--a4-radius-s);
+  background-color: transparent;
+  color: var(--a4-muted);
+  font: inherit;
+  font-size: var(--a4-text-s);
+  vertical-align: middle;
+  cursor: pointer;
+}
+.a4-help-collapse:hover { border-color: var(--a4-line); background-color: var(--a4-soft); color: var(--a4-ink); }
+.a4-help-collapse::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/chevron-down.svg) center / contain no-repeat;
+  mask: url(../../../../share/icons/bootstrap-icons/svg/chevron-down.svg) center / contain no-repeat;
+  transition: rotate 0.15s ease;
+}
+.a4-help-collapse[aria-expanded="false"]::before { rotate: -90deg; }
+:where([dir="rtl"]) .a4-help-collapse[aria-expanded="false"]::before { rotate: 90deg; }
+.a4-help-section[hidden] { display: none; }
+
+/* Copy buttons of code blocks (exphelp.js), at the top end corner of .a4-help-code */
+.a4-help-code { position: relative; }
+.a4-help-copy {
+  position: absolute;
+  z-index: var(--a4-z-raised);
+  top: var(--a4-space-2);
+  inset-inline-end: var(--a4-space-2);
+  min-height: 0;
+  padding: 2px var(--a4-space-2);
+  font-size: var(--a4-text-xs);
+  opacity: 0.85;
+}
+.a4-help-code:hover .a4-help-copy,
+.a4-help-copy:focus-visible { opacity: 1; }
+.a4-help-copy.is-copied { border-color: var(--a4-ok-line); background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+
+/* Previous and next page */
+.a4-help-pager {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--a4-space-3);
+  max-width: 80ch;
+  margin: var(--a4-space-7) 0 var(--a4-space-4);
+  padding: var(--a4-space-5) 0 0;
+  border-top: 1px solid var(--a4-line);
+}
+.a4-help-pager-link,
+.a4-help-pager-link:visited {
+  display: grid;
+  gap: var(--a4-space-1);
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.a4-help-pager-link:hover { border-color: var(--a4-accent); box-shadow: var(--a4-shadow-s); color: var(--a4-ink); }
+.a4-help-pager-link.is-next { grid-column: -2; text-align: end; }
+.a4-help-pager-dir { display: inline-flex; align-items: center; gap: var(--a4-space-1); color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.a4-help-pager-link.is-next .a4-help-pager-dir { justify-content: flex-end; }
+.a4-help-pager-link.is-prev .a4-help-pager-dir .a4-icon { scale: -1 1; }
+:where([dir="rtl"]) .a4-help-pager-link.is-prev .a4-help-pager-dir .a4-icon { scale: 1 1; }
+.a4-help-pager-title { color: var(--a4-accent-text); font-size: var(--a4-text-m); font-weight: 600; overflow-wrap: anywhere; }
+.a4-help-foot { max-width: 80ch; margin: var(--a4-space-4) 0 0; }
+.a4-help-foot a { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
+
+/* The tree of all help pages: folders as <details>, open on the way to the current page */
+.a4-help-nav { font-size: var(--a4-text-s); }
+.a4-help-nav:focus { outline: 2px solid transparent; }
+.a4-help-nav-head,
+.a4-help-toc-head {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-2);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.a4-help-nav-list { margin: 0; padding: 0; list-style: none; }
+.a4-help-nav-list .a4-help-nav-list {
+  margin: 2px 0 var(--a4-space-1) var(--a4-space-3);
+  padding: 0 0 0 var(--a4-space-2);
+  border-inline-start: 1px solid var(--a4-line);
+}
+:where([dir="rtl"]) .a4-help-nav-list .a4-help-nav-list { margin: 2px var(--a4-space-3) var(--a4-space-1) 0; padding: 0 var(--a4-space-2) 0 0; }
+.a4-help-nav-folder,
+.a4-help-nav-page { margin: 0; padding: 0; }
+.a4-help-nav-summary,
+.a4-help-nav-link,
+.a4-help-nav-link:visited {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-height: 2rem;
+  padding: 2px var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.a4-help-nav-summary { cursor: pointer; font-weight: 600; list-style: none; }
+.a4-help-nav-summary::-webkit-details-marker { display: none; }
+.a4-help-nav-summary::after {
+  content: "";
+  flex: none;
+  width: 0.75em;
+  height: 0.75em;
+  margin-inline-start: auto;
+  background-color: var(--a4-muted);
+  -webkit-mask: url(../../../../share/icons/bootstrap-icons/svg/chevron-right.svg) center / contain no-repeat;
+  mask: url(../../../../share/icons/bootstrap-icons/svg/chevron-right.svg) center / contain no-repeat;
+  transition: rotate 0.15s ease;
+}
+:where([dir="rtl"]) .a4-help-nav-summary::after { scale: -1 1; }
+.a4-help-nav-details[open] > .a4-help-nav-summary::after { rotate: 90deg; }
+.a4-help-nav-summary .a4-icon { flex: none; color: var(--a4-muted); }
+.a4-help-nav-summary:hover,
+.a4-help-nav-link:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
+.a4-help-nav-link.is-index { color: var(--a4-muted); font-style: italic; }
+.a4-help-nav-link[aria-current="page"] {
+  background-color: var(--a4-accent-soft);
+  box-shadow: inset 3px 0 0 var(--a4-accent);
+  color: var(--a4-accent-text);
+  font-weight: 600;
+  font-style: normal;
+}
+:where([dir="rtl"]) .a4-help-nav-link[aria-current="page"] { box-shadow: inset -3px 0 0 var(--a4-accent); }
+.a4-help-nav-text { min-width: 0; }
+
+/* The contents of the page: at the side (scrollspy marks the heading in view) or folded above the page */
+.a4-help-toc-list { margin: 0; padding: 0; list-style: none; border-inline-start: 2px solid var(--a4-line); }
+.a4-help-toc-item { margin: 0; padding: 0; }
+.a4-help-toc-link,
+.a4-help-toc-link:visited {
+  display: block;
+  margin-inline-start: -2px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border-inline-start: 2px solid transparent;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+  line-height: var(--a4-leading-tight);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.a4-help-toc-item.is-l3 .a4-help-toc-link { padding-inline-start: var(--a4-space-5); font-size: var(--a4-text-xs); }
+.a4-help-toc-link:hover { color: var(--a4-ink); border-inline-start-color: var(--a4-line-strong); }
+.a4-help-toc-link.is-current,
+.a4-help-toc-link[aria-current="location"] { border-inline-start-color: var(--a4-accent); color: var(--a4-accent-text); font-weight: 600; }
+.a4-help-toc-fold {
+  max-width: 80ch;
+  margin: 0 0 var(--a4-space-5);
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+}
+.a4-help-toc-fold > .a4-help-toc-head { margin: 0; cursor: pointer; }
+.a4-help-toc-fold[open] > .a4-help-toc-head { margin: 0 0 var(--a4-space-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .a4-help-collapse::before,
+  .a4-help-nav-summary::after,
+  .a4-help-pager-link { transition: none; }
+}
+
+/* Print: the page alone, at full width, with the address of every outside link and no buttons */
+@media print {
+  .a4-help-viewer-bar,
+  .a4-help-nav,
+  .a4-help-toc-side,
+  .a4-help-toc-fold,
+  .a4-help-pager,
+  .a4-help-foot,
+  .a4-help-copy,
+  .a4-help-collapse,
+  .a4-help-meta-item.is-edit { display: none; }
+  .a4-help-viewer-grid { display: block; }
+  .a4-help-article,
+  .a4-help-summary { max-width: none; }
+  .a4-help-section[hidden] { display: block; }
+  .a4-help-article a.a4-help-ext[href]::after { content: " (" attr(href) ")"; color: var(--a4-muted); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+  .a4-help-article :is(pre, .a4-help-code, .a4-help-callout, figure, table, img) { break-inside: avoid; }
+  .a4-help-article :is(h2, h3, h4) { break-after: avoid; }
+  .a4-help-article pre { white-space: pre-wrap; }
+}

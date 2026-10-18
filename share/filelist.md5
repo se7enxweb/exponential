@@ -332,7 +332,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin/stylesheets/modules/content.css
-fdb5d91d47ee94c5216f56ea6bebf0a0  design/admin/stylesheets/modules/help.css
+7792863254f72959a658e73c7954722a  design/admin/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin/stylesheets/modules/people.css
 be099ebbbccdeae8ab7385dc4fd795dc  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
@@ -1048,7 +1048,7 @@ d810c1bfa553da326702439802441b11  design/admin4/stylesheets/content.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin4/stylesheets/modules/content.css
-fdb5d91d47ee94c5216f56ea6bebf0a0  design/admin4/stylesheets/modules/help.css
+7792863254f72959a658e73c7954722a  design/admin4/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin4/stylesheets/modules/people.css
 be099ebbbccdeae8ab7385dc4fd795dc  design/admin4/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin4/stylesheets/modules/structure.css
@@ -1245,9 +1245,12 @@ b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 61b4fd1fca8330170ce7e6b1425a3962  design/admin4/templates/error/shop/3.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
 0ca4e7cf37ab557fd2b130c73236d0a9  design/admin4/templates/exphelp/dashboard.tpl
+09875679251690e7ef0399b30260fdb4  design/admin4/templates/exphelp/parts/viewer_meta.tpl
+835295e2c2b1ba2b36871512ccae3213  design/admin4/templates/exphelp/parts/viewer_nav.tpl
+69992051147dd0f6b3dbc0892bee4fa9  design/admin4/templates/exphelp/parts/viewer_toc.tpl
 57eb37d7989ad1cb413dcd0d76f5285e  design/admin4/templates/exphelp/report.tpl
 5a5c40d20a82d36b4844b63e8de147d2  design/admin4/templates/exphelp/search.tpl
-48e5e2c5149f022935e62a032ecb04a3  design/admin4/templates/exphelp/viewer.tpl
+04f7d4eeeaf00ae78f83533fc6b2cf92  design/admin4/templates/exphelp/viewer.tpl
 7deb1dc6bd320de93789f39eb322d1f4  design/admin4/templates/ezinfo/about.tpl
 6c10e7f9eea0fc7029c8110b0b33fb28  design/admin4/templates/ezinfo/copyright.tpl
 1930afe53fb5c2737daf2736356f4ca7  design/admin4/templates/infocollection_validation.tpl
