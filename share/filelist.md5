@@ -6946,7 +6946,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
 2c4c64d6057a3119262cb387c39bc7d4  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
-6d6e3ed3c83125bd6f547e58ef1ed551  settings/menu.ini
+f61d7abe61b384cc46a6d5834e07c093  settings/menu.ini
 4f061cecd40623be1294a7695c5cd454  settings/mime.ini
 e1d9c5932ac1b3e42db487331851a747  settings/module.ini
 1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
@@ -7916,7 +7916,7 @@ e67d11b4120f80af5e51a0620111b80c  tests/tests/design/AdminLeftMenuGroupsTest.php
 dc14dee54a308e172d9c1703fd9e8154  tests/tests/design/AdminLegacyControlsTest.php
 787c93133cc75367bb9363930408a431  tests/tests/design/AdminLogoTest.php
 b1f2c82b4ceccdbe263b64b2e378cb52  tests/tests/design/AdminMegaMenuTest.php
-d15c80b2a7f326f7bfffe8510e68905a  tests/tests/design/AdminMenuPolicyListTest.php
+b91ebdadc3ad541ef7590c9f79877960  tests/tests/design/AdminMenuPolicyListTest.php
 8bd26f4d83a90026832a3696b7335882  tests/tests/design/AdminNewsletterPreviewTest.php
 4e03fd4b653ac220610d62cb9b415422  tests/tests/design/AdminNodeBinary.php
 5e8c8e49b0bb0d4896f3b6772a4b5150  tests/tests/design/AdminNodeTabsHeightTest.php
@@ -9118,7 +9118,7 @@ cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackC
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 c80fd248275f1e8f1cbfc16674668c09  tests/tests/lib/ezi18n/expTranslationQualityTest.php
-2d53462daf9ae6fc51688e14bce5c0b4  tests/tests/lib/ezi18n/translation-identical-allowlist.json
+ffcb6890240e75ab43cabcbd26586eb4  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg
