@@ -72532,6 +72532,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>Представлення й просування Exponential: позиціювання, демонстрації, заперечення, ліцензування, бренд і зростання спільноти.</translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Оновлення з Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Отримуйте оновлення, щойно їх надіслано на GitHub, а потім оновлюйте Composer відповідно: щогодини, щодня, щотижня, щомісяця або лише з кожним випуском.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
