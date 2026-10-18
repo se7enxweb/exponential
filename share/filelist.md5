@@ -1360,7 +1360,7 @@ c13004679d63848d4d5f9d8027f91910  design/admin4/templates/package/uninstall_erro
 30a75ad0b7435079d6b8019090ab7a56  design/admin4/templates/package/view/file_card.tpl
 9ef992b5bb2e88db3607c6b170822939  design/admin4/templates/package/view/files.tpl
 af68f3fce2973ae86d658d092a8994c9  design/admin4/templates/package/view/full.tpl
-7cdbee141da671ea2fd7c7d2ce3391c7  design/admin4/templates/page_copyright.tpl
+bc644f14514239af3bbbc2bc34ea845c  design/admin4/templates/page_copyright.tpl
 74374abe14cc3234e95eb3bfe02f79dc  design/admin4/templates/page_head_script.tpl
 7c10a5e1255ce4701b4eb2e4b146548e  design/admin4/templates/page_head_style.tpl
 dbcd6a019f44c7b1bcf92f13c30f641f  design/admin4/templates/page_head_style_inline.tpl
@@ -1376,12 +1376,12 @@ a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
 e5e563614f536f1e1eae5fd3ef9049c0  design/admin4/templates/parts/a4_header_help.tpl
 41b309bce99292420eca74f538bedc24  design/admin4/templates/parts/a4_header_site.tpl
-ecd4b17c6cf57df652fb41087c429f8a  design/admin4/templates/parts/a4_header_user.tpl
+4321818ff67ec7372e68e6559a776370  design/admin4/templates/parts/a4_header_user.tpl
 302762e589dd7ade916c47265ed2955f  design/admin4/templates/parts/a4_logo.tpl
 872df5ea86816a733b3af3d804c1ac76  design/admin4/templates/parts/a4_mega_menu.tpl
 1c88e915acb7959ec0704b62f7eeb3d2  design/admin4/templates/parts/a4_mega_menu_check.tpl
 f3e3cfde385fe96ecd6534c0437066a9  design/admin4/templates/parts/a4_navigation_part.tpl
-595989f257fbcdf2e33d9875f1252025  design/admin4/templates/parts/a4_phone_user.tpl
+b214ea906caad9f94859b45e0c660032  design/admin4/templates/parts/a4_phone_user.tpl
 d4696f13eec2ef1d087413002e35c015  design/admin4/templates/parts/a4_preference_attributes.tpl
 f23c9e1796dd3ab29e1af6ef0039b859  design/admin4/templates/parts/a4_tabs_height.tpl
 e7cbcc8548bbdec86d4686f2b042bb78  design/admin4/templates/parts/a4_topmenu_items.tpl
