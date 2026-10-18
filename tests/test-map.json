@@ -1678,6 +1678,15 @@
     ],
     "bin/php/addexphelpreadpolicy.php": [
       "tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php"
+    ],
+    "design/admin4/javascript/exphelp.js": [
+      "tests/tests/design/AdminHelpScriptTest.php"
+    ],
+    "design/admin/javascript/exphelp.js": [
+      "tests/tests/design/AdminHelpScriptTest.php"
+    ],
+    "tests/tests/design/js/exphelp.js": [
+      "tests/tests/design/AdminHelpScriptTest.php"
     ]
   },
   "generated": {
