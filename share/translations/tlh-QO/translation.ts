@@ -60614,6 +60614,18 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ngaQHa&apos;moHwI&apos;mey</translation>
     </message>
     <message>
+        <source>Select</source>
+        <translation>yIwIv</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>vangghachmey</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>poQlu&apos;</translation>
+    </message>
+    <message>
         <source>%from to %to of %count</source>
         <translation>%from - %to (Hoch: %count)</translation>
     </message>
