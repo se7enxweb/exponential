@@ -58,6 +58,35 @@ dialogs are not affected by the setting. The value reaches the editor as the opt
 `expOEEditor::resolve()` takes the first of: the user preference `ezoe_engine`, the siteaccess `EditorEngine`, the
 global `EditorEngine`, then `tinymce3`. An unknown, broken or unavailable choice is skipped, never an error.
 
+### Under an enforced Content Security Policy
+
+TinyMCE 3 cannot run where the siteaccess enforces its Content Security Policy without `'unsafe-inline'` in
+`script-src` (`site.ini [ContentSecurityPolicy] Mode=enforce`): its edit template starts it with an inline script,
+and `tiny_mce.js` and its dialogs write `onclick` attributes and `javascript:` links themselves, which neither a nonce
+nor a hash can allow. There the engine is **blocked** for that request:
+
+- a preference, `EditorEngine` or `ForceEngine` naming `tinymce3` is skipped; when the configured engine is blocked,
+  editors get the first engine of the registry that runs (TinyMCE 8 as shipped), so the field never stays without an
+  editor;
+- the engine switch and the page `/ezoe/engine` leave it out of the choices (the page lists it with the status
+  "Cannot be used" and the reason), and choosing it is refused;
+- under report-only (the shipped `Mode=auto`) and with `'unsafe-inline'` in `script-src` nothing changes.
+
+An engine says it needs inline scripts with the optional method `needsInlineScripts()` (`expOETinyMCE3Engine`: true;
+an engine built on `expOEEditorEngineBase` reads `[Engine_<id>] NeedsInlineScripts=true`, false when not set).
+`expOEEditor::blockedByPolicy( $engine )` and `expOEEditor::inlineScriptsAllowed()` (which asks
+`expContentSecurityPolicy::allowsInlineScripts()`) are the checks. A siteaccess that must edit with TinyMCE 3 sets,
+for itself only:
+
+```ini
+# settings/siteaccess/<siteaccess>/site.ini.append.php
+[ContentSecurityPolicy]
+Directives[script-src]='self' 'unsafe-inline'
+Directives[style-src]='self' 'unsafe-inline'
+```
+
+The kernel then sends no nonce in that `script-src` (a nonce would switch `'unsafe-inline'` off in the browser).
+
 A user chooses with:
 
 - the page `/ezoe/engine` (a table of every registered engine with its version, description and status, the ones
@@ -191,6 +220,7 @@ and the INI values back.
 | File | Covers |
 |---|---|
 | `expOEEditorRegistryTest` | registry, resolution (preference, siteaccess, global), unknown / broken / unavailable engines, third engine, the details (version, description, status) of every entry, audit, setup/rad |
+| `expOEContentSecurityPolicyEngineTest` | an engine that needs inline scripts (TinyMCE 3) under an enforced policy: fallback of preference, configuration and ForceEngine, left out of the switch and the engine page, choosing it refused; unchanged when allowed |
 | `expOEEngineConfigTest` | each engine's template, toolbar map, plugins and config, shipped defaults, vendored TinyMCE 8 and its license, translations |
 | `expOEUploadRulesTest` | allowed and refused file names, the three check modes, the order of the check in the upload view |
 | `expOEViewsJsonTest` | every ezoe PHP file has no text before `<?php` or after `?>`, the module definition prints nothing, `ezoe/load` answers JSON with nothing in front of it, browse and bookmarks |

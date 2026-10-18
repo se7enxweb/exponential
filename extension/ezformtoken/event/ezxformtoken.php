@@ -130,6 +130,12 @@ class ezxFormToken
             return null;
         }
 
+        if ( self::isContentSecurityPolicyReport( $uri ) )
+        {
+            eZDebugSetting::writeDebug( 'ezformtoken', 'Input not protected (CSP report)', __METHOD__ );
+            return null;
+        }
+
         /* Not a safe assumtion, just kept for reference
         if ( !empty( $_SERVER['HTTP_X_REQUESTED_WITH'] )
           && trim( strtolower( $_SERVER['HTTP_X_REQUESTED_WITH'] ) ) === 'xmlhttprequest' )
@@ -320,6 +326,32 @@ class ezxFormToken
     static public function isEnabled()
     {
         return (bool)self::$isEnabled;
+    }
+
+    /**
+     * Whether a POST is a report of the Content Security Policy for the
+     * kernel's csp/report view: the browser sends it on its own, with the
+     * session cookie of a signed-in user but without a form token. Only that
+     * view, and only with a report content type (application/csp-report,
+     * application/reports+json, application/json): a form of another site can
+     * send none of them, and the view only writes a log line.
+     *
+     * @param eZURI|mixed $uri the request's URI, siteaccess taken off
+     * @param string|null $contentType null: the request's Content-Type header
+     * @return bool
+     */
+    static public function isContentSecurityPolicyReport( $uri, $contentType = null )
+    {
+        if ( !$uri instanceof eZURI )
+            return false;
+        if ( strtolower( (string)$uri->element( 0 ) ) !== 'csp'
+             || strtolower( (string)$uri->element( 1 ) ) !== 'report' )
+            return false;
+        if ( $contentType === null )
+            $contentType = isset( $_SERVER['CONTENT_TYPE'] ) ? $_SERVER['CONTENT_TYPE']
+                         : ( isset( $_SERVER['HTTP_CONTENT_TYPE'] ) ? $_SERVER['HTTP_CONTENT_TYPE'] : '' );
+        $mediaType = strtolower( trim( explode( ';', (string)$contentType, 2 )[0] ) );
+        return in_array( $mediaType, array( 'application/csp-report', 'application/reports+json', 'application/json' ), true );
     }
 
     /**

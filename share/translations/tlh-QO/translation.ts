@@ -71105,6 +71105,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>Hung (tlhobghach SeghmoHwI&apos;)</translation>
     </message>
     <message>
+        <source>Content Security Policy reports</source>
+        <translation>Content Security Policy ja&apos;ghachmey</translation>
+    </message>
+    <message>
         <source>Web server access log</source>
         <translation>jabwI&apos; &apos;elghach wanI&apos; tetlh</translation>
     </message>

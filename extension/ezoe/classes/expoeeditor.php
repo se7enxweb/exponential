@@ -27,6 +27,11 @@ class expOEEditor
     protected static $engines = null;
     /** @var array list of array( id, class, why ) */
     protected static $problems = array();
+    /**
+     * @var bool|null whether engines that need inline scripts may run; null (the default): ask the Content Security
+     *                Policy of the request each time (expContentSecurityPolicy::allowsInlineScripts()). Tests set it.
+     */
+    protected static $inlineScriptsAllowed = null;
 
     /** Forgets what was read (tests, or after the ini cache was cleared in a long-running process). */
     public static function reset()
@@ -99,19 +104,72 @@ class expOEEditor
         return self::$problems;
     }
 
-    /** @return bool */
+    /**
+     * @return bool whether the engine is available and can run under the Content Security Policy of this request
+     *              (an engine that needs inline scripts cannot where the policy is enforced without 'unsafe-inline')
+     */
     public static function hasEngine( $id )
     {
         $engines = self::engines();
-        return is_string( $id ) && isset( $engines[$id] );
+        return is_string( $id ) && isset( $engines[$id] ) && !self::blockedByPolicy( $engines[$id] );
     }
 
-    /** @return string the engine the siteaccess and global settings ask for, tinymce3 when that is not usable */
+    /**
+     * Whether an engine that needs inline scripts (needsInlineScripts(), TinyMCE 3) may run in this request: false
+     * where the Content Security Policy is enforced and its script-src lacks 'unsafe-inline' (site.ini
+     * [ContentSecurityPolicy]); true otherwise, and without the policy class. Not cached: the policy is per request.
+     *
+     * @return bool
+     */
+    public static function inlineScriptsAllowed()
+    {
+        if ( self::$inlineScriptsAllowed !== null )
+            return self::$inlineScriptsAllowed;
+        if ( !class_exists( 'expContentSecurityPolicy' ) || !method_exists( 'expContentSecurityPolicy', 'allowsInlineScripts' ) )
+            return true;
+        return (bool) expContentSecurityPolicy::allowsInlineScripts();
+    }
+
+    /**
+     * Sets whether engines that need inline scripts may run, whatever the policy says (tests); null asks the policy again.
+     *
+     * @param bool|null $allowed
+     */
+    public static function setInlineScriptsAllowed( $allowed )
+    {
+        self::$inlineScriptsAllowed = $allowed === null ? null : (bool) $allowed;
+    }
+
+    /**
+     * @param expOEEditorEngine $engine
+     * @return bool whether the engine needs inline scripts (optional method needsInlineScripts()) and the policy of
+     *              this request runs none
+     */
+    public static function blockedByPolicy( $engine )
+    {
+        return method_exists( $engine, 'needsInlineScripts' ) && $engine->needsInlineScripts() && !self::inlineScriptsAllowed();
+    }
+
+    /**
+     * @return string the engine the siteaccess and global settings ask for, tinymce3 when that is not usable; where
+     *                the Content Security Policy blocks tinymce3 (enforced without 'unsafe-inline'), the first engine
+     *                of the registry that can run (TinyMCE 8 as shipped), so an editor still gets one
+     */
     public static function configuredEngine()
     {
         $ini = eZINI::instance( 'ezoe.ini' );
         $id = $ini->hasVariable( 'EditorSettings', 'EditorEngine' ) ? $ini->variable( 'EditorSettings', 'EditorEngine' ) : self::DEFAULT_ENGINE;
-        return self::hasEngine( $id ) ? $id : self::DEFAULT_ENGINE;
+        if ( self::hasEngine( $id ) )
+            return $id;
+        if ( !self::hasEngine( self::DEFAULT_ENGINE ) )
+        {
+            foreach ( array_keys( self::engines() ) as $other )
+            {
+                if ( self::hasEngine( (string) $other ) )
+                    return (string) $other;
+            }
+        }
+        return self::DEFAULT_ENGINE;
     }
 
     /**
@@ -162,12 +220,18 @@ class expOEEditor
                       'config'      => $engine->config( $context ) );
     }
 
-    /** @return array of identifier => translated label, every available engine */
+    /**
+     * @return array of identifier => translated label, every available engine that can run under the Content Security
+     *               Policy of this request (the engine switch and the engine page offer only these)
+     */
     public static function labels()
     {
         $labels = array();
         foreach ( self::engines() as $id => $engine )
-            $labels[$id] = ezpI18n::tr( 'design/standard/ezoe', $engine->label() );
+        {
+            if ( !self::blockedByPolicy( $engine ) )
+                $labels[$id] = ezpI18n::tr( 'design/standard/ezoe', $engine->label() );
+        }
         return $labels;
     }
 
@@ -177,7 +241,8 @@ class expOEEditor
      * has both, reading [Engine_<id>] Version and Description); without them both are empty.
      *
      * @return array list of array( identifier, class, label, version, description, status, why ), status being
-     *               'available', 'unavailable' (the class works, its files are missing) or 'broken'
+     *               'available', 'unavailable' (the class works, its files are missing), 'blocked' (it needs inline
+     *               scripts and the Content Security Policy of this request runs none) or 'broken'
      */
     public static function details()
     {
@@ -192,6 +257,11 @@ class expOEEditor
             $id = (string) $id;
             $engine = isset( $engines[$id] ) ? $engines[$id] : null;
             $status = $engine ? 'available' : 'broken';
+            if ( $engine && self::blockedByPolicy( $engine ) )
+            {
+                $status = 'blocked';
+                $problems[$id] = 'it needs inline scripts, which the Content Security Policy of this siteaccess does not run';
+            }
             if ( !$engine && isset( $problems[$id] ) && preg_match( '/^[a-z0-9_]+$/', $id ) && class_exists( $class )
                  && is_subclass_of( $class, 'expOEEditorEngine' ) )
             {

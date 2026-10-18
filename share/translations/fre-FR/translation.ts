@@ -72500,6 +72500,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Sécurité (classificateur de requêtes)</translation>
     </message>
     <message>
+        <source>Content Security Policy reports</source>
+        <translation>Rapports de la Content Security Policy</translation>
+    </message>
+    <message>
         <source>Web server access log</source>
         <translation>Journal d&apos;accès du serveur web</translation>
     </message>

@@ -70986,6 +70986,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Content Security Policy reports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Web server access log</source>
         <translation type="unfinished"></translation>
     </message>

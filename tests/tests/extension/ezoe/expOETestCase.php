@@ -65,6 +65,9 @@ abstract class expOETestCase extends expServicesCoreTestCase
         $this->savedSwitch = $ini->hasVariable( 'EditorSettings', 'EngineSwitch' ) ? $ini->variable( 'EditorSettings', 'EngineSwitch' ) : null;
         $this->savedPreference = $this->dbPreference();
         expOEEditor::reset();
+        // the engines as such, whatever Content Security Policy the siteaccess enforces (expOEContentSecurityPolicyEngineTest tests that)
+        if ( method_exists( 'expOEEditor', 'setInlineScriptsAllowed' ) )
+            expOEEditor::setInlineScriptsAllowed( true );
     }
 
     public function tearDown(): void
@@ -91,6 +94,8 @@ abstract class expOETestCase extends expServicesCoreTestCase
             else
                 eZPreferences::setValue( expOEEditor::PREFERENCE, $this->savedPreference );
             expOEEditor::reset();
+            if ( method_exists( 'expOEEditor', 'setInlineScriptsAllowed' ) )
+                expOEEditor::setInlineScriptsAllowed( null );
         }
         parent::tearDown();
     }
