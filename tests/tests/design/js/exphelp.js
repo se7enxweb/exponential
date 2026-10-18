@@ -80,6 +80,7 @@ function setup(html, opts) {
     const requests = [];
     const copied = [];
     const assigned = [];
+    const replaced = [];
     const winListeners = {};
     const sandbox = {
         document, console, JSON, Array, Object, String, Math, Error, Promise, encodeURIComponent, decodeURIComponent,
@@ -88,8 +89,8 @@ function setup(html, opts) {
         requestAnimationFrame: (fn) => fn(),
         fetch: (url, init) => new Promise((resolve, reject) => { requests.push({ url, init, resolve, reject }); }),
         navigator: { clipboard: opts.noClipboard ? undefined : { writeText: (t) => { copied.push(t); return Promise.resolve(); } } },
-        location: { hash: opts.hash || '', assign: (u) => assigned.push(u) },
-        history: { replaceState: (a, b, h) => { sandbox.location.hash = h; } },
+        location: { hash: opts.hash || '', pathname: opts.pathname || '/admin/exphelp/dashboard', assign: (u) => assigned.push(u) },
+        history: { replaceState: (a, b, h) => { replaced.push(h); if (String(h).charAt(0) === '#') sandbox.location.hash = h; } },
         addEventListener: (type, fn) => { (winListeners[type] = winListeners[type] || []).push(fn); },
     };
     if (opts.noFetch) delete sandbox.fetch;
@@ -118,7 +119,7 @@ function setup(html, opts) {
         requests[i].resolve({ ok: ok !== false, status: ok === false ? 500 : 200, json: () => Promise.resolve(data) });
         await flush(); await flush(); await flush();
     };
-    return { document, sandbox, requests, copied, assigned, scrolled, timers, runTimers, flush, type, key, answer, winListeners };
+    return { document, sandbox, requests, copied, assigned, replaced, scrolled, timers, runTimers, flush, type, key, answer, winListeners };
 }
 
 const RESULTS = {
@@ -316,6 +317,44 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
         const sortDesc = buttons[0].parentNode.getAttribute('aria-sort');
         out('records', { afterStats, filtered, wraps, status, cleared, buttons: buttons.length, labels, asc, sortAsc, desc, sortDesc,
             type: input.getAttribute('type'), label: tools.querySelector('label').textContent });
+    }
+    {
+        // the canonical address: the form sent with JavaScript, the search page kept in step, browse results
+        const CANON = SEARCH.replace('data-exphelp-endpoint="/admin/exphelp/search"',
+            'data-exphelp-endpoint="/admin/exphelp/search" data-exphelp-canonical-base="/admin/exphelp/search/"');
+        const h = setup(CANON);
+        const d = h.document;
+        d.getElementById('q').value = ' a/b (c)  d+e ';
+        d.getElementById('aud-editor').checked = true;
+        d.querySelector('select').value = 'guides';
+        const submit = d.dispatch('submit', d.querySelector('form'), {});
+        const plain = setup(SEARCH);
+        const plainSubmit = plain.document.dispatch('submit', plain.document.querySelector('form'), {});
+        const empty = setup(CANON);
+        empty.document.dispatch('submit', empty.document.querySelector('form'), {});
+
+        // the dashboard: no address change; an empty field with a filter browses
+        const dash = setup(CANON);
+        dash.document.getElementById('aud-editor').checked = true;
+        dash.document.dispatch('change', dash.document.getElementById('aud-editor'), {});
+        await dash.flush();
+        await dash.answer(0, { mode: 'browse', total: 2, results: [{ url: '/x', href: '/admin/exphelp/viewer/x.md', title: 'X', snippet_parts: [['Summary', false]] }],
+            canonical_href: '/admin/exphelp/search/(audience)/editor' });
+        const dashBox = dash.document.getElementById('res');
+
+        // the search page itself: the address follows the search
+        const page = setup(CANON, { pathname: '/admin/exphelp/search/(q)/old' });
+        await page.type('cache');
+        await page.answer(0, { total: 1, results: [{ href: '/y', title: 'Y' }], canonical_href: '/admin/exphelp/search/(q)/cache' });
+        await page.type('cach');
+        await page.answer(1, { total: 1, results: [{ href: '/y', title: 'Y' }], canonical_href: 'javascript:alert(1)' });
+        await page.type('');
+        out('canonical address', {
+            submitPrevented: submit.defaultPrevented, assigned: h.assigned, plainPrevented: plainSubmit.defaultPrevented, emptyAssigned: empty.assigned,
+            browseUrl: dash.requests[0] && dash.requests[0].url, browseLinks: dashBox.querySelectorAll('a').map((a) => a.getAttribute('href')),
+            browseStatus: dashBox.querySelector('[data-exphelp-status]').textContent, dashReplaced: dash.replaced,
+            pageReplaced: page.replaced,
+        });
     }
     {
         // the admin header's search and its / shortcut (admin4.js) on the same page

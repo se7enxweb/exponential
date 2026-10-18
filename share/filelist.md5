@@ -289,7 +289,7 @@ d04051dd86493ca0c7a5a7d8ef2e9788  design/admin/javascript/contentcheck_storage.j
 8efbbdaa6de1c48f6827f760b04f2dd0  design/admin/javascript/contentstructuremenu_dynamic.js
 3bf53d527c77fbe92265242d582073ff  design/admin/javascript/exp_admin_head.js
 ccc9542289d65bc6f5a7bbf6dbe04821  design/admin/javascript/expajaxuploader.js
-2c548e0abcb2702e8201a36a44832d42  design/admin/javascript/exphelp.js
+affc1aebd750a3d9c1035330a9ed848d  design/admin/javascript/exphelp.js
 57d8995b892a18ef13ca0b9779bc29c7  design/admin/javascript/ezajaxrelations_jquery.js
 a7c1e5a25f185f993412621b9a08cd32  design/admin/javascript/ezajaxsubitems_expdatatable.js
 0008a7955d1f67c5efd0f08fe978f284  design/admin/javascript/leftmenu_widthcontrol.js
@@ -939,7 +939,7 @@ bfafd7d7df0571b71ba1cbacadfb2949  design/admin4/javascript/contentcheck_select.j
 d04051dd86493ca0c7a5a7d8ef2e9788  design/admin4/javascript/contentcheck_storage.js
 8efbbdaa6de1c48f6827f760b04f2dd0  design/admin4/javascript/contentstructuremenu_dynamic.js
 ccc9542289d65bc6f5a7bbf6dbe04821  design/admin4/javascript/expajaxuploader.js
-2c548e0abcb2702e8201a36a44832d42  design/admin4/javascript/exphelp.js
+affc1aebd750a3d9c1035330a9ed848d  design/admin4/javascript/exphelp.js
 bac30bec66631791ce7970d4a26f98d5  design/admin4/javascript/ezadmin_menubar.js
 57d8995b892a18ef13ca0b9779bc29c7  design/admin4/javascript/ezajaxrelations_jquery.js
 a7c1e5a25f185f993412621b9a08cd32  design/admin4/javascript/ezajaxsubitems_expdatatable.js
@@ -7899,7 +7899,7 @@ a732e808d64b9a5a30633dd745cae6fe  tests/tests/design/AdminFirstPaintColumnsTest.
 0aedf29b682213c1a48cba48309e286a  tests/tests/design/AdminFormLabelsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
 d4e001470666eb2d099f828b664db4e8  tests/tests/design/AdminHeaderTest.php
-854296d3cdb1b6a6cd76cbfed141f946  tests/tests/design/AdminHelpScriptTest.php
+6e7415e9f84d42a3917ecb505e465ba6  tests/tests/design/AdminHelpScriptTest.php
 a13f54f073b8bc239713a92f6d5df138  tests/tests/design/AdminIconsTest.php
 ef7f72e6efae269cefa3d98124eee4f2  tests/tests/design/AdminJobTranslationsTest.php
 c4203a41bbd488652891f9765e4f56ae  tests/tests/design/AdminKeyboardTest.php
@@ -7972,7 +7972,7 @@ e5afb96904ddba6129f583e0eb0f3bd6  tests/tests/design/StandardContentEditAccessib
 b24983c34e0ac1bf2b048fd6feb0a26a  tests/tests/design/js/csp_tinymce8.js
 e75cdee3134002eb94b3b2b9c3f68d1b  tests/tests/design/js/csp_tree.js
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
-101bec54a54ffa96ddca68236b88f80e  tests/tests/design/js/exphelp.js
+6b7dcb9d811eeccf5cf628424769777f  tests/tests/design/js/exphelp.js
 d26a12327326fb58236058ff32d5505c  tests/tests/design/js/first_paint.js
 b7cffb5712803f903d80c45a0cd3f90d  tests/tests/design/js/language_states.js
 3fb04664014985853b8533ab65da9911  tests/tests/design/js/left_resize.js

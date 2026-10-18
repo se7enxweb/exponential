@@ -8,6 +8,8 @@
  * - form[data-exphelp-search] with data-exphelp-endpoint (the JSON search view), an input [data-exphelp-search-input],
  *   filters [data-exphelp-filter] (select, checkbox or radio named audience, category or type) and a results
  *   container [data-exphelp-results] (the input's aria-controls, or the first one in the form or the page).
+ *   With data-exphelp-canonical-base (the search view's address) the form goes to the canonical address of the search,
+ *   and on the search page the address follows the search; an empty field with a filter set lists that filter's pages.
  * - [data-exphelp-content] the rendered page; data-exphelp-collapsible="h2" adds a show/hide button to each h2.
  * - nav[data-exphelp-toc] links to #ids of the headings; the one being read gets aria-current="location".
  * - a[data-exphelp-prev], a[data-exphelp-next] the previous and next page.
@@ -88,12 +90,31 @@
 
     /* ---------------------------------------------------------------- search */
 
+    // /exphelp/search/(q)/<words>/(category)/<id>/(audience)/<id>/(type)/<id>: only the parts that are set, in this
+    // order; '/', '(' and ')' in the words become spaces, a space shows as '+'
+    function canonicalUrl(base, p) {
+        var url = base, q = String(p.q || '').replace(/[\/()]/g, ' ').replace(/\s+/g, ' ').trim();
+        if (q !== '') { url += '/(q)/' + encodeURIComponent(q).replace(/%20/g, '+'); }
+        ['category', 'audience', 'type'].forEach(function (name) {
+            var values = p.groups && p.groups[name];
+            if (values && values.length) { url += '/(' + name + ')/' + encodeURIComponent(values.join(',')); }
+        });
+        return url;
+    }
+
+    // history.replaceState refuses an address of another origin; the address then stays as it is
+    function replaceAddress(url) {
+        if (!url || !window.history || typeof window.history.replaceState !== 'function') { return; }
+        try { window.history.replaceState(null, '', url); } catch (e) { return; }
+    }
+
     function Search(form) {
         this.form = form;
         this.root = closestRoot(form);
         this.t = strings(this.root);
         this.input = form.querySelector('[data-exphelp-search-input]');
         this.endpoint = form.getAttribute('data-exphelp-endpoint') || '';
+        this.base = String(form.getAttribute('data-exphelp-canonical-base') || '').replace(/\/+$/, '');
         this.seq = 0;
         this.timer = null;
         this.lastKey = null;
@@ -126,6 +147,13 @@
             f.addEventListener('change', function () { self.run(); });
         });
         this.form.addEventListener('keydown', function (event) { self.key(event); });
+        // sent with JavaScript, the form goes to the canonical address of the search
+        // (/exphelp/search/(q)/<words>/(category)/<id>/...), the one the server's pages link to as well
+        this.form.addEventListener('submit', function (event) {
+            if (!self.base) { return; }
+            event.preventDefault();
+            window.location.assign(canonicalUrl(self.base, self.params()));
+        });
         // the results may sit outside the form: their keys reach the search too
         if (!this.form.contains(this.box)) { this.box.addEventListener('keydown', function (event) { self.key(event); }); }
     };
@@ -146,7 +174,8 @@
             if (groups[name].length) { parts.push(encodeURIComponent(name) + '=' + encodeURIComponent(groups[name].join(','))); }
         });
         parts.push('limit=' + LIMIT, 'format=json');
-        return { q: q, query: parts.join('&') };
+        var filtered = order.some(function (name) { return groups[name].length > 0; });
+        return { q: q, groups: groups, filtered: filtered, query: parts.join('&') };
     };
 
     Search.prototype.schedule = function () {
@@ -157,7 +186,12 @@
 
     Search.prototype.run = function () {
         var self = this, p = this.params();
-        if (p.q === '') { this.seq += 1; this.lastKey = null; this.close(true); return; }
+        // an empty field with a filter set lists the pages of that filter (the server's browse mode)
+        if (p.q === '' && !p.filtered) {
+            this.seq += 1; this.lastKey = null; this.close(true);
+            if (this.onSearchPage()) { replaceAddress(this.base); }
+            return;
+        }
         if (p.query === this.lastKey && !this.box.hidden) { return; }
         this.lastKey = p.query;
         var seq = (this.seq += 1);
@@ -169,8 +203,21 @@
                 if (!response.ok) { throw new Error('HTTP ' + response.status); }
                 return response.json();
             })
-            .then(function (data) { if (seq === self.seq) { self.render(data); } })
+            .then(function (data) { if (seq === self.seq) { self.render(data); self.sync(data); } })
             .catch(function () { if (seq === self.seq) { self.fail(); } });
+    };
+
+    // Only the search page itself keeps its address in step with the search
+    Search.prototype.onSearchPage = function () {
+        if (!this.base || !window.location) { return false; }
+        var path = String(window.location.pathname || '');
+        return path === this.base || path.indexOf(this.base + '/') === 0;
+    };
+
+    Search.prototype.sync = function (data) {
+        if (!data || !this.onSearchPage()) { return; }
+        var href = typeof data.canonical_href === 'string' ? safeUrl(data.canonical_href) : '';
+        replaceAddress(href || canonicalUrl(this.base, this.params()));
     };
 
     Search.prototype.fail = function () {
