@@ -71553,10 +71553,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>وجدت خطأ؟</translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation>أدلة ومراجع لكل من يعمل مع %site، مأخوذة من وثائق إصدار هذا التثبيت.</translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation>مركز المساعدة</translation>
     </message>
@@ -71775,10 +71771,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Type</source>
         <translation>النوع</translation>
-    </message>
-    <message>
-        <source>Type a word to search every help page.</source>
-        <translation>اكتب كلمة للبحث في كل صفحات المساعدة.</translation>
     </message>
     <message>
         <source>Use this extension</source>
@@ -72431,6 +72423,90 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
         <translation>المنظمة غير الربحية وعائلة المنتجات والتزاماتها.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count موضوع مساعدة</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>كل الأدلة</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>مفهوم</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>المحتويات</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>تنزيل EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>تنزيل PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>تحرير هذا الموضوع</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>الإصدار %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>من الإصدار %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>مواضيع المساعدة</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>الأدلة</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>الأدلة ومواضيع المساعدة</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>المنصة:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>معاينة</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>معاينة: %state، لا تُعرض على القرّاء</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>مهمة</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>لا توجد أدلة يمكنك قراءتها بعد.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>لا يحتوي هذا الدليل على مواضيع يمكنك قراءتها بعد.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>نوع الموضوع:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>استكشاف الأخطاء وإصلاحها</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>الإصدارات من %from إلى %to</translation>
     </message>
 </context>
 <context>

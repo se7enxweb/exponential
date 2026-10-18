@@ -78748,10 +78748,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Einen Fehler gefunden?</translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation>Anleitungen und Referenz für alle, die mit %site arbeiten, erstellt aus der Dokumentation der Version dieser Installation.</translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation>Hilfe-Center</translation>
     </message>
@@ -78972,10 +78968,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Typ</translation>
     </message>
     <message>
-        <source>Type a word to search every help page.</source>
-        <translation>Geben Sie ein Wort ein, um alle Hilfeseiten zu durchsuchen.</translation>
-    </message>
-    <message>
         <source>Use this extension</source>
         <translation>Diese Extension verwenden</translation>
     </message>
@@ -79190,18 +79182,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>What's new</source>
         <translation>Neuigkeiten</translation>
-    </message>
-    <message>
-        <source>Collapse</source>
-        <translation>Einklappen</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Ausklappen</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Inhalte und Bearbeitung</translation>
     </message>
     <message>
         <source>Grow from user to developer</source>
@@ -79638,6 +79618,90 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
         <translation>Die gemeinnützige Organisation, die Produktfamilie und ihre Zusagen.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count Hilfethemen</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Alle Handbücher</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>Konzept</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>Inhalt</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>EPUB herunterladen</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>PDF herunterladen</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>Dieses Thema bearbeiten</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>Ausgabe %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>Ab Version %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>Hilfethemen</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>Handbücher</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>Handbücher und Hilfethemen</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>Plattform:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Vorschau</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>Vorschau: %state, wird Lesern nicht gezeigt</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Anleitung</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>Es gibt noch keine Handbücher, die Sie lesen können.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>Dieses Handbuch hat noch keine Themen, die Sie lesen können.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>Art des Themas:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Fehlerbehebung</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>Versionen %from bis %to</translation>
     </message>
 </context>
 </TS>

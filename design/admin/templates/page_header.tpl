@@ -55,6 +55,7 @@
                 <input type="search" id="header-help-q" class="a4-input" name="q" maxlength="200" autocomplete="off" placeholder="{'Search the help'|i18n( 'kernel/exphelp' )|wash}" />
                 <button type="submit" class="a4-btn">{'Search'|i18n( 'kernel/exphelp' )|wash}</button>
             </form>
+            <a class="header-help-center" href={'/exphelp/dashboard'|ezurl}>{'Open the Help center'|i18n( 'kernel/exphelp' )|wash}</a>
             <a class="header-help-front" href={$header_help_ctx.url|ezurl} title="{$header_help_label|wash}"><strong>{'Help for this page'|i18n( 'kernel/exphelp' )|wash}</strong>{if $header_help_ctx.title}<span>{$header_help_ctx.title|wash}</span>{/if}</a>
             {if $header_help_menu.topics|count}
             <p class="header-help-heading" id="header-help-topics">{'Related topics'|i18n( 'kernel/exphelp' )|wash}</p>
@@ -72,7 +73,6 @@
                 {/foreach}
             </ul>
             {/if}
-            <a class="header-help-center" href={'/exphelp/dashboard'|ezurl}>{'Open the Help center'|i18n( 'kernel/exphelp' )|wash}</a>
         </div>
     </details>
     {undef $header_help_names}

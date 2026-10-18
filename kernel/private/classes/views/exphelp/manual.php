@@ -46,7 +46,7 @@ class Manual extends \Exponential\Runnable\ModuleView
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'help_i18n_json', \expHelp::clientStringsJson() );
         $tpl->setVariable( 'help_manual', $manual === false ? false : $manual );
-        $tpl->setVariable( 'help_manual_toc', $toc );
+        $tpl->setVariable( 'help_manual_toc', self::twoLevels( $toc ) );
         $tpl->setVariable( 'help_manuals', $manuals );
         $tpl->setVariable( 'help_ebook_formats', $manual ? \expHelpContentExport::formats() : array() );
         $tpl->setVariable( 'help_json_url', $manual ? ltrim( \expHelp::url( 'context', 'manual/' . $manual['remote_id'] ), '/' ) : '' );
@@ -101,6 +101,39 @@ class Manual extends \Exponential\Runnable\ModuleView
         echo $data;
         \eZExecution::cleanExit();
         return null;
+    }
+
+    /**
+     * The table of contents in two levels for the template (no recursive include): the entries of the manual, each
+     * chapter with every entry below it in reading order; a chapter inside a chapter is one of those entries, with
+     * the depth it has.
+     *
+     * @param array $toc expHelpContentProvider::toc()
+     * @return array
+     */
+    public static function twoLevels( array $toc )
+    {
+        $flat = function ( array $entries, $depth ) use ( &$flat ) {
+            $list = array();
+            foreach ( $entries as $entry )
+            {
+                $children = isset( $entry['children'] ) ? $entry['children'] : array();
+                $entry['children'] = array();
+                $entry['depth'] = $depth;
+                $list[] = $entry;
+                if ( $children )
+                    $list = array_merge( $list, $flat( $children, $depth + 1 ) );
+            }
+            return $list;
+        };
+        $out = array();
+        foreach ( $toc as $entry )
+        {
+            if ( $entry['kind'] === 'chapter' )
+                $entry['children'] = $flat( $entry['children'], 1 );
+            $out[] = $entry;
+        }
+        return $out;
     }
 }
 
