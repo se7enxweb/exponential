@@ -17,6 +17,9 @@
  * names and icons are [CategorySettings] Categories[], CategoryNames[] and CategoryIcons[]. An extension adds rules
  * and categories in its own exphelp.ini.append.php.
  *
+ * It also gives pages whose own title is unclear a clearer title and summary ([TitleSettings], pageTitle() and
+ * pageSummary()); a page's front matter title and summary always win.
+ *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package kernel
@@ -165,6 +168,13 @@ class expHelpAudience
                     $config[$key] = array_merge( $key === 'audienceDefaults' ? self::AUDIENCE_DEFAULTS : self::CATEGORY_DEFAULTS, $defaults );
             if ( is_array( $types = $get( 'TypeSettings', 'TypeNames' ) ) && $types )
                 $config['types'] = array_merge( self::TYPES, $types );
+            foreach ( array( 'titles' => 'Titles', 'summaries' => 'Summaries' ) as $key => $name )
+                if ( is_array( $map = $get( 'TitleSettings', $name ) ) && $map )
+                    $config[$key] = array_filter( $map, function ( $value, $path ) {
+                        return is_string( $path ) && is_string( $value ) && trim( $value ) !== '';
+                    }, ARRAY_FILTER_USE_BOTH );
+            if ( is_array( $rules = $get( 'TitleSettings', 'TitleRules' ) ) && $rules )
+                $config['titleRules'] = array_values( $rules );
         }
         return new self( $config );
     }
@@ -218,6 +228,7 @@ class expHelpAudience
             'typeRules' => self::TYPE_RULES, 'audienceRules' => self::AUDIENCE_RULES,
             'audienceDefaults' => self::AUDIENCE_DEFAULTS, 'categoryRules' => self::CATEGORY_RULES,
             'categoryDefaults' => self::CATEGORY_DEFAULTS,
+            'titles' => array(), 'summaries' => array(), 'titleRules' => array(),
         );
     }
 
@@ -311,6 +322,56 @@ class expHelpAudience
             $category = (string)key( $this->config['categories'] );
 
         return array( 'type' => $type, 'audience' => $audience, 'category' => $category );
+    }
+
+    /**
+     * The title a page is shown with when its own is unclear (a raw file name, "README", a bare version, a source code
+     * comment). A page's front matter title wins over this and is never passed here. First answer wins:
+     * [TitleSettings] Titles[<path>] (exact path relative to the installation root), then the first
+     * TitleRules[] "<pattern>;<template>" whose shell pattern matches. A template may use {title} (the title the page
+     * gives itself), {name} (its file name, humanized), {fileversion} (the version at the end of the file name,
+     * "2.9-3" of CHANGELOG-desc-2.9-3) and {dirversion} (the nearest version directory, "4.5" of features/4.5/x.txt).
+     *
+     * @param string $path relative to the installation root
+     * @param string $title the title the page gives itself
+     * @return string
+     */
+    public function pageTitle( $path, $title )
+    {
+        $title = (string)$title;
+        if ( isset( $this->config['titles'][$path] ) && trim( $this->config['titles'][$path] ) !== '' )
+            return trim( $this->config['titles'][$path] );
+        $template = self::match( isset( $this->config['titleRules'] ) ? $this->config['titleRules'] : array(), $path, null );
+        if ( !is_string( $template ) || $template === '' )
+            return $title;
+        $base = preg_replace( '/\.(md|markdown|txt|rst)$/i', '', basename( $path ) );
+        $fileVersion = preg_match( '/(\d+(?:\.\d+)+(?:-\d+)?[a-z0-9]*)$/i', $base, $m ) ? $m[1] : '';
+        $dirVersion = '';
+        foreach ( array_reverse( explode( '/', dirname( $path ) ) ) as $segment )
+            if ( preg_match( '/^\d+(\.\d+)+$/', $segment ) )
+            {
+                $dirVersion = $segment;
+                break;
+            }
+        $result = strtr( $template, array( '{title}' => $title, '{name}' => expHelpDocumentIndex::humanize( $base ),
+                                           '{fileversion}' => $fileVersion, '{dirversion}' => $dirVersion ) );
+        $result = rtrim( trim( (string)preg_replace( '/\s+/u', ' ', $result ) ), '.' );
+        return $result !== '' ? $result : $title;
+    }
+
+    /**
+     * The summary a page is shown with when it has none of its own in front matter: [TitleSettings] Summaries[<path>],
+     * else the one given (the page's first paragraph).
+     *
+     * @param string $path relative to the installation root
+     * @param string $summary
+     * @return string
+     */
+    public function pageSummary( $path, $summary )
+    {
+        if ( isset( $this->config['summaries'][$path] ) && trim( $this->config['summaries'][$path] ) !== '' )
+            return trim( $this->config['summaries'][$path] );
+        return (string)$summary;
     }
 
     /**

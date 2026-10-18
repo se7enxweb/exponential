@@ -71624,10 +71624,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71848,10 +71844,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Type a word to search every help page.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Use this extension</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72065,18 +72057,6 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>What's new</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Collapse</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -72513,6 +72493,90 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

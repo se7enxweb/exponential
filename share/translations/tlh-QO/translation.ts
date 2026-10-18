@@ -71272,14 +71272,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>DaH nejlu&apos;laHbe&apos;.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>yIQIH</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>yIDach</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Hoch mu&apos; ghajbe&apos; pagh nav; &apos;op ghaj nav&apos;meyvam.</translation>
     </message>
@@ -71290,10 +71282,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Getting started</source>
         <translation>wa&apos;DIch mIw</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>De&apos; &apos;ej choHmeH mIw</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -71536,10 +71524,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>Qagh Datu&apos;&apos;a&apos;?</translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation>%site lo&apos;bogh Hoch ghotvaD nav &apos;ej De&apos; paq, jomvam mI&apos; De&apos; ghItlh vo&apos; ghItlhlu&apos;.</translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation>QaH botlh</translation>
     </message>
@@ -71758,10 +71742,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Type</source>
         <translation>Segh</translation>
-    </message>
-    <message>
-        <source>Type a word to search every help page.</source>
-        <translation>Hoch QaH nav Danejmeh, wa&apos; mu&apos; yIghItlh.</translation>
     </message>
     <message>
         <source>Use this extension</source>
@@ -72414,6 +72394,90 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
         <translation>ghom, Doch qorDu' 'ej lay'mey.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count QaH qech</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>Hoch paq</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>qech</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>De&apos; tetlh</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>EPUB yIlI&apos;</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>PDF yIlI&apos;</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>qechvam yIchoH</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>ngangmoH %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>mI&apos; %from vo&apos;</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>QaH qechmey</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>paqmey</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>paqmey &apos;ej QaH qechmey</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>pat:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>wa&apos;DIch legh</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>wa&apos;DIch legh: %state, laDwI&apos;pu&apos;vaD ngeHbe&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>Qu&apos;</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>DaH paq DalaDlaHbogh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>DaH paqvam ghajbe&apos; qech DalaDlaHbogh.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>qech Segh:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>Qagh tI&apos;meH mIw</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>mI&apos;mey %from vo&apos; %to</translation>
     </message>
 </context>
 <context>
