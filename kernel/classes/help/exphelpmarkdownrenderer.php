@@ -191,7 +191,16 @@ class expHelpMarkdownRenderer
         if ( strpos( (string)$text, "\n- " ) !== false )
         {
             $used = array();
-            $records = new expHelpRecordRenderer( array( 'translate' => array( $this, 't' ) ) );
+            // relative paths in the records (changelogs/6.0/6.0.14.md) follow the same link policy as a Markdown page
+            $this->path = (string)self::normalizePath( (string)$currentId );
+            $records = new expHelpRecordRenderer( array(
+                'translate' => array( $this, 't' ),
+                'link' => function( $href )
+                {
+                    $target = $this->resolveUrl( $href );
+                    return $target === null ? null : $target['href'];
+                },
+            ) );
             $rendered = $records->render( $text, function( $heading ) use ( &$used )
             {
                 return $this->options['id_prefix'] . self::slug( $heading, $used );

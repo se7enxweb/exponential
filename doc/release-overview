@@ -1108,3 +1108,798 @@ Datatype branch:
 - Version url=http://svn.ez.no/svn/exponential/versions/4.2.0rc2
 - Date 22-Sep-2009
 - Revision=24152
+
+# The records below follow 4.2. They were added in 2026 from sources only: the git tags of this repository,
+# doc/changelogs/, the GitHub releases of se7enxweb/exponential and the releases and tags of the archived
+# upstream repository github.com/ezsystems/ezpublish-legacy. Each record names its source; a date that no
+# source gives is "unknown". 5.90 is the alias of the 2017.08 and later legacy releases (doc/bc/5.90/README.md).
+
+4.0.20:
+- Tag=4.0.20
+- Date 02-Feb-2009
+- Source=git tag 4.0.20 (tagger date)
+
+4.3.0:
+- Tag=4.3.0
+- Date 14-Jul-2010
+- Changelog url=changelogs/4.3/CHANGELOG-4.2.0-to-4.3.0
+- Source=git tag 4.3.0 (tagger date)
+
+4.4.0:
+- Tag=4.4.0
+- Date 29-Sep-2010
+- Changelog url=changelogs/4.4/CHANGELOG-4.3.0-to-4.4.0
+- Source=git tag 4.4.0 (tagger date)
+
+4.6.0:
+- Date unknown (no tag in this repository)
+- Changelog url=changelogs/4.6/CHANGELOG-4.5.0-to-4.6.0.txt
+- Source=changelogs/4.6/CHANGELOG-4.5.0-to-4.6.0.txt
+
+4.7.0:
+- Date unknown (no tag in this repository)
+- Changelog url=changelogs/4.7/CHANGELOG-4.6.0-to-4.7.0.txt
+- Source=changelogs/4.7/CHANGELOG-4.6.0-to-4.7.0.txt
+
+5.0:
+- Series=5.x
+- Part=5.0 to 5.2
+- Date unknown (no tag in this repository)
+- Source=named in doc/changelogs/5.1/CHANGELOG-5.0.0-to-5.1.0.txt
+
+5.1.0:
+- Series=5.x
+- Part=5.0 to 5.2
+- Date unknown (no tag in this repository)
+- Changelog url=changelogs/5.1/CHANGELOG-5.0.0-to-5.1.0.txt
+- Online changelog url=https://confluence.ez.no/display/EZP/5.1+Changelog
+- Source=changelogs/5.1/CHANGELOG-5.0.0-to-5.1.0.txt
+
+5.2.0:
+- Series=5.x
+- Part=5.0 to 5.2
+- Date unknown (no tag in this repository)
+- Changelog url=changelogs/5.2/CHANGELOG-5.1.0-to-5.2.0.txt
+- Online changelog url=https://confluence.ez.no/display/EZP/5.2+Changelog
+- Source=changelogs/5.2/CHANGELOG-5.1.0-to-5.2.0.txt
+
+2011.9:
+- Series=5.x
+- Part=Community builds 2011
+- Date unknown (tag set later than its code)
+- Tag date=2013-01-14
+- Commit date=2012-10-08
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/2011.9
+- Source=GitHub tag ezsystems/ezpublish-legacy 2011.9 (tag date); no release
+
+2012.9:
+- Series=5.x
+- Part=Community builds 2012
+- Date unknown (tag set later than its code)
+- Tag date=2013-01-14
+- Commit date=2012-10-08
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/2012.9
+- Source=GitHub tag ezsystems/ezpublish-legacy 2012.9 (tag date); no release
+
+2012.11:
+- Series=5.x
+- Part=Community builds 2012
+- Date 14-Dec-2012
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/2012.11
+- Source=GitHub tag ezsystems/ezpublish-legacy 2012.11 (tag date); no release
+
+2012.12:
+- Series=5.x
+- Part=Community builds 2012
+- Date 14-Jan-2013
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/2012.12
+- Source=GitHub tag ezsystems/ezpublish-legacy 2012.12 (tag date); no release
+
+2013.1:
+- Series=5.x
+- Part=Community builds 2013
+- Date 18-Feb-2013
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/2013.1
+- Source=GitHub tag ezsystems/ezpublish-legacy 2013.1 (tag date); no release
+
+v2013.04.0:
+- Series=5.x
+- Part=Community builds 2013
+- Date 30-Apr-2013
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.04.0
+- Source=GitHub tag ezsystems/ezpublish-legacy v2013.04.0 (tag date); no release
+
+2013.05:
+- Series=5.x
+- Part=Community builds 2013
+- Date 17-May-2013
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/2013.05
+- Source=GitHub tag ezsystems/ezpublish-legacy 2013.05 (tag date); no release
+
+v2013.05.0:
+- Series=5.x
+- Part=Community builds 2013
+- Date 07-Jun-2013
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.05.0
+- Source=GitHub tag ezsystems/ezpublish-legacy v2013.05.0 (tag date); no release
+
+v2013.06.0:
+- Series=5.x
+- Part=Community builds 2013
+- Date 13-Jun-2013
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.06.0
+- Source=GitHub tag ezsystems/ezpublish-legacy v2013.06.0 (tag date); no release
+
+v2013.07.0:
+- Series=5.x
+- Part=Community builds 2013
+- Date 18-Jul-2013
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.07.0
+- Source=GitHub tag ezsystems/ezpublish-legacy v2013.07.0 (tag date); no release
+
+v2013.07.1:
+- Series=5.x
+- Part=Community builds 2013
+- AKA Community Project build v2013.07.1
+- Date 30-Jul-2013
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2013.07.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2013.07.1 (published date)
+
+v2013.07.3:
+- Series=5.x
+- Part=Community builds 2013
+- Date unknown (tag set later than its code)
+- Tag date=2013-08-12
+- Commit date=2013-06-05
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.07.3
+- Source=GitHub tag ezsystems/ezpublish-legacy v2013.07.3 (tag date); no release
+
+v2013.09.0:
+- Series=5.x
+- Part=Community builds 2013
+- AKA Community Project build v2013.09.0
+- Date 01-Oct-2013
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2013.09.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2013.09.0 (published date)
+
+v2013.11:
+- Series=5.x
+- Part=Community builds 2013
+- Date 29-Nov-2013
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.11
+- Source=GitHub tag ezsystems/ezpublish-legacy v2013.11 (tag date); no release
+
+v2013.11.0:
+- Series=5.x
+- Part=Community builds 2013
+- AKA Community Project build v2013.11.0
+- Date 28-Jan-2014
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2013.11.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2013.11.0 (published date)
+
+v2014.01.0:
+- Series=5.x
+- Part=Community builds 2014
+- AKA Community Project build v2014.01.0
+- Date 28-Jan-2014
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.01.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2014.01.0 (published date)
+
+v2014.01.1:
+- Series=5.x
+- Part=Community builds 2014
+- AKA Community Project build v2014.01.1
+- Date 29-Jan-2014
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.01.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2014.01.1 (published date)
+
+v2014.01.2:
+- Series=5.x
+- Part=Community builds 2014
+- Date 29-Sep-2014
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.01.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2014.01.2 (tag date); no release
+
+v2014.03.1:
+- Series=5.x
+- Part=Community builds 2014
+- Date 16-Apr-2014
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.03.1
+- Source=GitHub tag ezsystems/ezpublish-legacy v2014.03.1 (tag date); no release
+
+v2014.03.2:
+- Series=5.x
+- Part=Community builds 2014
+- Date 29-Sep-2014
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.03.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2014.03.2 (tag date); no release
+
+v2014.05.0:
+- Series=5.x
+- Part=Community builds 2014
+- Date 12-Jun-2014
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.05.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2014.05.0 (published date)
+
+v2014.05.1:
+- Series=5.x
+- Part=Community builds 2014
+- Date 12-Jun-2014
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.05.1
+- Source=GitHub tag ezsystems/ezpublish-legacy v2014.05.1 (tag date); no release
+
+v2014.05.2:
+- Series=5.x
+- Part=Community builds 2014
+- Date 29-Sep-2014
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.05.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2014.05.2 (tag date); no release
+
+v2014.07.0:
+- Series=5.x
+- Part=Community builds 2014
+- Date 04-Aug-2014
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.07.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2014.07.0 (published date)
+
+v2014.07.1:
+- Series=5.x
+- Part=Community builds 2014
+- Date 07-Aug-2014
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.07.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2014.07.1 (published date)
+
+v2014.07.2:
+- Series=5.x
+- Part=Community builds 2014
+- Date 29-Sep-2014
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.07.2
+- Source=GitHub release ezsystems/ezpublish-legacy v2014.07.2 (published date)
+
+v2014.11.0:
+- Series=5.x
+- Part=Community builds 2014
+- Date 04-Nov-2014
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.11.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2014.11.0 (published date)
+
+v2014.11.1:
+- Series=5.x
+- Part=Community builds 2014
+- Date 04-Nov-2014
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.11.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2014.11.1 (published date)
+
+v2014.11.2:
+- Series=5.x
+- Part=Community builds 2014
+- Date 11-May-2015
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.11.2
+- Source=GitHub release ezsystems/ezpublish-legacy v2014.11.2 (published date)
+
+v2015.01.0:
+- Series=5.x
+- Part=Community builds 2015
+- Date 26-Jan-2015
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2015.01.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2015.01.0 (published date)
+
+v2015.01.1:
+- Series=5.x
+- Part=Community builds 2015
+- Date 24-Feb-2015
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2015.01.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2015.01.1 (published date)
+
+v2015.01.2:
+- Series=5.x
+- Part=Community builds 2015
+- Date 16-Apr-2015
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2015.01.2
+- Source=GitHub release ezsystems/ezpublish-legacy v2015.01.2 (published date)
+
+v2015.01.3:
+- Series=5.x
+- Part=Community builds 2015
+- Date 19-May-2015
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2015.01.3
+- Source=GitHub release ezsystems/ezpublish-legacy v2015.01.3 (published date)
+
+v2017.08.0:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- AKA 2017.08
+- Date 22-Aug-2017
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.08.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.08.0 (published date)
+
+v2017.08.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 05-Sep-2017
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.08.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.08.1 (published date)
+
+v2017.08.1.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 11-Sep-2017
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.08.1.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.08.1.1 (published date)
+
+v2017.10.0-RC1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 26-Oct-2017
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.10.0-RC1
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.10.0-RC1 (published date)
+
+v2017.10.0:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 31-Oct-2017
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.10.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.10.0 (published date)
+
+v2017.10.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 21-Nov-2017
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.10.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.10.1 (published date)
+
+v2017.12.0:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 22-Dec-2017
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.12.0 (published date)
+
+v2017.12.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 15-Jan-2018
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.12.1 (published date)
+
+v2017.12.1.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 18-Jan-2018
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.1.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.12.1.1 (published date)
+
+v2017.12.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 06-Feb-2018
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.2
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.12.2 (published date)
+
+v2017.12.2.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 06-Feb-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.2.1
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.2.1 (date of the tagged commit); no release
+
+v2017.12.2.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 22-Jun-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.2.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.2.2 (date of the tagged commit); no release
+
+v2017.12.3:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 29-Jun-2018
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.3
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.12.3 (published date)
+
+v2017.12.3.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 06-Jul-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.3.1
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.3.1 (date of the tagged commit); no release
+
+v2017.12.3.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 18-Jul-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.3.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.3.2 (date of the tagged commit); no release
+
+v2017.12.4:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 29-Oct-2018
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.4
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.12.4 (published date)
+
+v2017.12.4.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 05-Oct-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.4.1
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.4.1 (date of the tagged commit); no release
+
+v2017.12.4.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 17-Oct-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.4.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.4.2 (date of the tagged commit); no release
+
+v2017.12.4.3:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 11-Oct-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.4.3
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.4.3 (date of the tagged commit); no release
+
+v2017.12.5:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 18-Jan-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.5
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.12.5 (published date)
+
+v2017.12.6:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 18-Feb-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.6
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.12.6 (published date)
+
+v2017.12.7:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 14-May-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.7
+- Source=GitHub release ezsystems/ezpublish-legacy v2017.12.7 (published date)
+
+v2017.12.7.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 03-Mar-2020
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.7.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.7.2 (date of the tagged commit); no release
+
+v2017.12.7.3:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 05-Oct-2020
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.7.3
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.7.3 (date of the tagged commit); no release
+
+v2017.12.7.4:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 03-Sep-2021
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.7.4
+- Source=GitHub tag ezsystems/ezpublish-legacy v2017.12.7.4 (date of the tagged commit); no release
+
+v2018.06.0:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 29-Jun-2018
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.06.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2018.06.0 (published date)
+
+v2018.06.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 11-Jul-2018
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.06.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2018.06.1 (published date)
+
+v2018.06.1.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 18-Jul-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.06.1.1
+- Source=GitHub tag ezsystems/ezpublish-legacy v2018.06.1.1 (date of the tagged commit); no release
+
+v2018.06.1.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 05-Oct-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.06.1.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2018.06.1.2 (date of the tagged commit); no release
+
+v2018.06.1.3:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 17-Oct-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.06.1.3
+- Source=GitHub tag ezsystems/ezpublish-legacy v2018.06.1.3 (date of the tagged commit); no release
+
+v2018.06.1.4:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 11-Oct-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.06.1.4
+- Source=GitHub tag ezsystems/ezpublish-legacy v2018.06.1.4 (date of the tagged commit); no release
+
+v2018.09.0:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 05-Oct-2018
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.0
+- Source=GitHub release ezsystems/ezpublish-legacy v2018.09.0 (published date)
+
+v2018.09.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 29-Oct-2018
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2018.09.1 (published date)
+
+v2018.09.1.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 31-Oct-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.09.1.1
+- Source=GitHub tag ezsystems/ezpublish-legacy v2018.09.1.1 (date of the tagged commit); no release
+
+v2018.09.1.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 01-Nov-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.09.1.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2018.09.1.2 (date of the tagged commit); no release
+
+v2018.09.1.3:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 21-Nov-2018
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.09.1.3
+- Source=GitHub tag ezsystems/ezpublish-legacy v2018.09.1.3 (date of the tagged commit); no release
+
+v2018.09.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 09-Jan-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.2
+- Source=GitHub release ezsystems/ezpublish-legacy v2018.09.2 (published date)
+
+v2018.09.3:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 18-Jan-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.3
+- Source=GitHub release ezsystems/ezpublish-legacy v2018.09.3 (published date)
+
+v2018.09.4:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 18-Feb-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.4
+- Source=GitHub release ezsystems/ezpublish-legacy v2018.09.4 (published date)
+
+v2018.09.5:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 14-May-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.5
+- Source=GitHub release ezsystems/ezpublish-legacy v2018.09.5 (published date)
+
+v2019.03.0-rc1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 02-Apr-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.0-rc1
+- Source=GitHub release ezsystems/ezpublish-legacy v2019.03.0-rc1 (published date)
+
+v2019.03.0-rc2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 14-May-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.0-rc2
+- Source=GitHub release ezsystems/ezpublish-legacy v2019.03.0-rc2 (published date)
+
+v2019.03.0:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 16-May-2019
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2019.03.0
+- Source=GitHub tag ezsystems/ezpublish-legacy v2019.03.0 (tag date); no release
+
+v2019.03.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 09-Aug-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.1
+- Source=GitHub release ezsystems/ezpublish-legacy v2019.03.1 (published date)
+
+v2019.03.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 01-Nov-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.2
+- Source=GitHub release ezsystems/ezpublish-legacy v2019.03.2 (published date)
+
+v2019.03.3:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 18-Dec-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.3
+- Source=GitHub release ezsystems/ezpublish-legacy v2019.03.3 (published date)
+
+v2019.03.4:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 18-Dec-2019
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.4
+- Source=GitHub release ezsystems/ezpublish-legacy v2019.03.4 (published date)
+
+v2019.03.4.2:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 03-Mar-2020
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2019.03.4.2
+- Source=GitHub tag ezsystems/ezpublish-legacy v2019.03.4.2 (date of the tagged commit); no release
+
+v2019.03.5:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 27-Aug-2020
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.5
+- Source=GitHub release ezsystems/ezpublish-legacy v2019.03.5 (published date)
+
+v2019.03.5.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 05-Oct-2020
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2019.03.5.1
+- Source=GitHub tag ezsystems/ezpublish-legacy v2019.03.5.1 (date of the tagged commit); no release
+
+v2019.03.6:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 16-Oct-2020
+- Release url=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.6
+- Source=GitHub release ezsystems/ezpublish-legacy v2019.03.6 (published date)
+
+v2019.03.6.1:
+- Series=5.x
+- Part=5.90 line (2017.08 and later)
+- Date 03-Sep-2021
+- Tag url=https://github.com/ezsystems/ezpublish-legacy/tree/v2019.03.6.1
+- Source=GitHub tag ezsystems/ezpublish-legacy v2019.03.6.1 (date of the tagged commit); no release
+
+6.0.0:
+- AKA Exponential 6.0.0
+- Tag=v6.0.0
+- Date 01-Jan-2024
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.0
+- Changelog url=changelogs/6.0/6.0.0.md
+- Source=changelogs/6.0/6.0.0.md, git tag v6.0.0, GitHub release (published date)
+
+6.0.1:
+- AKA Exponential 6.0.1
+- Tag=v6.0.1
+- Date 29-Jan-2024
+- Release date 01-Feb-2024
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.1
+- Changelog url=changelogs/6.0/6.0.1.md
+- Source=changelogs/6.0/6.0.1.md, git tag v6.0.1, GitHub release (published date)
+
+6.0.2:
+- AKA Exponential 6.0.2
+- Tag=v6.0.2
+- Date 29-Feb-2024
+- Release date 01-Mar-2024
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.2
+- Changelog url=changelogs/6.0/6.0.2.md
+- Source=changelogs/6.0/6.0.2.md, git tag v6.0.2, GitHub release (published date)
+
+6.0.3:
+- AKA Exponential 6.0.3
+- Tag=v6.0.3
+- Date 02-Apr-2024
+- Release date 03-Apr-2024
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.3
+- Changelog url=changelogs/6.0/6.0.3.md
+- Source=changelogs/6.0/6.0.3.md, git tag v6.0.3, GitHub release (published date)
+
+6.0.4:
+- AKA Exponential 6.0.4
+- Tag=v6.0.4
+- Date 05-Sep-2024
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.4
+- Changelog url=changelogs/6.0/6.0.4.md
+- Source=changelogs/6.0/6.0.4.md, git tag v6.0.4, GitHub release (published date)
+
+6.0.5:
+- AKA Exponential 6.0.5
+- Tag=v6.0.5
+- Date 01-Oct-2024
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.5
+- Changelog url=changelogs/6.0/6.0.5.md
+- Source=changelogs/6.0/6.0.5.md, git tag v6.0.5, GitHub release (published date)
+
+6.0.6:
+- AKA Exponential 6.0.6
+- Tag=v6.0.6
+- Date 17-Dec-2024
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.6
+- Changelog url=changelogs/6.0/6.0.6.md
+- Source=changelogs/6.0/6.0.6.md, git tag v6.0.6, GitHub release (published date)
+
+6.0.7:
+- AKA Exponential 6.0.7
+- Tag=v6.0.7
+- Date 01-Feb-2025
+- Release date 14-Feb-2025
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.7
+- Changelog url=changelogs/6.0/6.0.7.md
+- Source=changelogs/6.0/6.0.7.md, git tag v6.0.7, GitHub release (published date)
+
+6.0.8:
+- AKA Exponential 6.0.8
+- Tag=v6.0.8
+- Date 02-May-2025
+- Release date 05-May-2025
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.8
+- Changelog url=changelogs/6.0/6.0.8.md
+- Source=changelogs/6.0/6.0.8.md, git tag v6.0.8, GitHub release (published date)
+
+6.0.9:
+- AKA Exponential 6.0.9
+- Tag=v6.0.9
+- Date 10-Jun-2025
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.9
+- Changelog url=changelogs/6.0/6.0.9.md
+- Source=changelogs/6.0/6.0.9.md, git tag v6.0.9, GitHub release (published date)
+
+6.0.10:
+- AKA Exponential 6.0.10
+- Tag=v6.0.10
+- Date 28-Aug-2025
+- Release date 29-Aug-2025
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.10
+- Changelog url=changelogs/6.0/6.0.10.md
+- Source=changelogs/6.0/6.0.10.md, git tag v6.0.10, GitHub release (published date)
+
+6.0.11:
+- AKA Exponential 6.0.11
+- Tag=v6.0.11
+- Date 30-Dec-2025
+- Release date 01-Jan-2026
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.11
+- Changelog url=changelogs/6.0/6.0.11.md
+- Source=changelogs/6.0/6.0.11.md, git tag v6.0.11, GitHub release (published date)
+
+6.0.12:
+- AKA Exponential 6.0.12
+- Tag=v6.0.12
+- Date 10-Feb-2026
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.12
+- Changelog url=changelogs/6.0/6.0.12.md
+- Source=changelogs/6.0/6.0.12.md, git tag v6.0.12, GitHub release (published date)
+
+6.0.13:
+- AKA Exponential 6.0.13
+- Tag=v6.0.13
+- Date 18-Apr-2026
+- Release date 20-Apr-2026
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.13
+- Changelog url=changelogs/6.0/6.0.13.md
+- Source=changelogs/6.0/6.0.13.md, git tag v6.0.13, GitHub release (published date)
+
+6.0.14:
+- AKA Exponential 6.0.14
+- Tag=v6.0.14
+- Date 07-Jun-2026
+- Release url=https://github.com/se7enxweb/exponential/releases/tag/v6.0.14
+- Changelog url=changelogs/6.0/6.0.14.md
+- Source=changelogs/6.0/6.0.14.md, git tag v6.0.14, GitHub release (published date)
+
+6.0.15:
+- AKA Exponential 6.0.15
+- Date not released yet
+- Changelog url=changelogs/6.0/6.0.15.md
+- Source=changelogs/6.0/6.0.15.md (no tag)

@@ -336,7 +336,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin/stylesheets/modules/content.css
-f34acfc22aceb2fc8a1686dcfd5d0b01  design/admin/stylesheets/modules/help.css
+c062300a2c2cc0779ef4037e73fb2e54  design/admin/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin/stylesheets/modules/people.css
 ef2a553f3e9a28390f0d235e3098b593  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
@@ -1056,7 +1056,7 @@ fef6201f7a8970ad72c4e5d3fc5147ce  design/admin4/stylesheets/content.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin4/stylesheets/modules/content.css
-f34acfc22aceb2fc8a1686dcfd5d0b01  design/admin4/stylesheets/modules/help.css
+c062300a2c2cc0779ef4037e73fb2e54  design/admin4/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin4/stylesheets/modules/people.css
 ef2a553f3e9a28390f0d235e3098b593  design/admin4/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin4/stylesheets/modules/structure.css
@@ -4232,7 +4232,7 @@ e6d2e7ade028ccf4e972ed4ff1b8c589  doc/install/15-migrating-from-5x-legacy.md
 c16be8cb22d2ac62ecb044e4af371544  doc/install/17-migration-reference.md
 ce0b3f77ce09c1b78d7b56dac34a2b38  doc/install/README.md
 05f9d724ce55d70ce86eb8ed6267f5a3  doc/languages.md
-96f498c48962f624f83d7484bd72ba84  doc/release-overview
+8e7c9006e0f7a7a9797dc17271627047  doc/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/shop/examples/paypal/extensionfiles.html
 a1e3c950706dd33def6792de8bedd512  doc/shop/examples/paypal/gatewayclass.html
@@ -5456,17 +5456,17 @@ b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 3dbf137371ac711427fa2f3222a1ea2d  kernel/classes/help/exphelpaudience.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 f5c1ad322237308b48a3ef0e2530ef37  kernel/classes/help/exphelpcontextregistry.php
-9d8d337d3e9ba54a7d03017582e4e203  kernel/classes/help/exphelpdocumentindex.php
+9cf67f7e61b74576a3a5655b49dcc505  kernel/classes/help/exphelpdocumentindex.php
 d737f4b8cee16a8ecd9af63aa5d73613  kernel/classes/help/exphelpfrontmatter.php
 99520b445ecac9996f6de9f6721a83a4  kernel/classes/help/exphelpfunctioncollection.php
 17d029ee9edac44ce5ec6bfdb6436178  kernel/classes/help/exphelphighlighter.php
 fbe202253abbc1bce78eaaa73f6207ea  kernel/classes/help/exphelpissuereport.php
 0f072cc096b3f9ad306f5e7c52ca386d  kernel/classes/help/exphelplinkcheck.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
-507870eb99f85021ed0773fb574c3f31  kernel/classes/help/exphelpmarkdownrenderer.php
+3e266c07a62be736b13083ba12415067  kernel/classes/help/exphelpmarkdownrenderer.php
 2eda45c57fc0cf7218eee489b8cf3b6d  kernel/classes/help/exphelpnavigation.php
 4bb23e416344f44ac2989a7746f1ed2f  kernel/classes/help/exphelpreadpolicygrant.php
-0b0dd185ded8d87aed2437d75387fcc3  kernel/classes/help/exphelprecordrenderer.php
+10a5b20709d8afb8e952e9101258ed69  kernel/classes/help/exphelprecordrenderer.php
 bc6aa3784c57700a0a833cf17cc14874  kernel/classes/help/exphelpsearch.php
 9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
 63e8afbb944019671f8b369642eb12d7  kernel/classes/ini/actions/expiniaction.php
@@ -8477,7 +8477,7 @@ ee73cc3a2f8f76b722448da9b9642a81  tests/tests/kernel/classes/help/expHelpMarkdow
 f5af6333a0efac158e183917cda8b55a  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
 a558003ce1675245c192838a17c92ed0  tests/tests/kernel/classes/help/expHelpNavigationTest.php
 c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
-15bc4aa421fecb44051cb5ccce92a704  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
+16ad77bb9df8fdd4d56c37fed9c2e897  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
 450e2a87a53cc8ae3fe778916dba5a1c  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 b61aa9c1f66c7026dff764569d8ea15d  tests/tests/kernel/classes/help/expHelpSearchTest.php
 ba6f0d36f853bb5ab423e870f2540f9f  tests/tests/kernel/classes/help/expHelpSearchViewParametersTest.php

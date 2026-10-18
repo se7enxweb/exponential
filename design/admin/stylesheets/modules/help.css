@@ -913,6 +913,11 @@
 .a4-help-records-note {
   font-style: italic;
 }
+/* ---- record pages: sources of the records (A, batch 2) ---- */
+.a4-help-records-source {
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
 .a4-help-records-tools {
   display: flex;
   flex-wrap: wrap;

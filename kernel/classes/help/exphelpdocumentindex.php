@@ -910,7 +910,7 @@ class expHelpDocumentIndex
             'changed'  => $mtime,
             'size'     => isset( $file['size'] ) ? (int)$file['size'] : strlen( $text ),
             'root'     => isset( $file['root'] ) ? $file['root'] : strtok( $path, '/' ),
-            // the newest major version a record page (the release history) covers; search ranks older versions lower
+            // the major version most records of a record page (the release history) belong to; search ranks older versions lower
             'version'  => $records !== null ? $records['version'] : '',
         );
     }
