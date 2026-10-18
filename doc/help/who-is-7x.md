@@ -53,9 +53,9 @@ says so instead of choosing one. Where something could not be checked, it is lef
 - **7x leads Exponential.** "7x took over leadership of the project and it's development, support, adoption and
   community growth in 2023" ([README.md](https://github.com/se7enxweb/exponential/blob/main/README.md), section
   "Who is 7x").
-- **7x used to be Brookins Consulting.** The README says: "Previously before 2022, 7x was called Brookins
-  Consulting". Brookins Consulting was an eZ Publish partner in the USA
-  (<https://se7enx.com/about/exponential-hosting-usa>).
+- **7x used to be Brookins Consulting.** Brookins Consulting was an eZ Publish partner in the USA
+  (<https://se7enx.com/about/exponential-hosting-usa>). 7x grew from it in three stages: the idea in 2014, the start
+  of the project in 2022 and its launch in December 2023 ([From Brookins Consulting to 7x](#from-brookins-consulting-to-7x-in-three-stages)).
 - **Nearly thirty years.** The copyright notice of Exponential reads "Copyright (C) 1998 - 2026 7x & Exponential
   Foundation" next to "Copyright (C) 1999 - 2014 eZ Systems AS"
   ([COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md)).
@@ -117,17 +117,20 @@ as Brookins Consulting".
 | **Exponential** | The product, formerly eZ Publish. Renamed in the repository on 12 August 2025 (`837c7b835d` and the commits around it). | [August 2025](../history/2025/2025-08.md), [The product is called Exponential](../features/6.0/rebranding-to-exponential.md) |
 | **exponential.earth** | The website of the open source project, with documentation, forums and downloads. | <https://exponential.earth/> |
 
-### When did Brookins Consulting become 7x?
+### From Brookins Consulting to 7x, in three stages
 
-The public sources do not agree on the year, so this page gives all three:
+Brookins Consulting was founded in 2001 (<https://graham.se7enx.com/7x>). 7x did not appear on one day: according to
+7x's own account (the owner's statement of 18 October 2026, for this page), it grew in three stages.
 
-- "I founded 7x in 2001 as Brookins Consulting (rebranded in 2014)" (<https://graham.se7enx.com/7x>).
-- "Previously before 2022, 7x was called Brookins Consulting" ([README.md](https://github.com/se7enxweb/exponential/blob/main/README.md)).
-- "In 2023/12 Brookins Consulting an eZ Partner in USA ... renamed the company to '7x'"
-  (<https://se7enx.com/about/exponential-hosting-usa>).
+| Stage | Year | What happened | Sources that mark it |
+|---|---|---|---|
+| The idea | 2014 | The initial idea, started quietly: the se7enx.com domain was registered and the fork of the entire ecosystem, every resource of it, was prepared. | 7x's account; "I founded 7x in 2001 as Brookins Consulting (rebranded in 2014)" (<https://graham.se7enx.com/7x>) |
+| The start | 2022 | The project started. | 7x's account; "Previously before 2022, 7x was called Brookins Consulting" ([README.md](https://github.com/se7enxweb/exponential/blob/main/README.md)) |
+| The launch | December 2023 | The project was launched: the company works under the name 7x, and the fork's first outside change is merged on 11 December 2023. | "In 2023/12 Brookins Consulting an eZ Partner in USA ... renamed the company to '7x'" (<https://se7enx.com/about/exponential-hosting-usa>); "7x took over leadership of the project ... in 2023" (README.md); [December 2023](../history/2023/2023-12.md) |
 
-What all three agree on: Brookins Consulting and 7x are the same company, and it has worked with this software since
-its first versions.
+Each of the three public sources names the stage it describes, which is why they give three different years. Through
+all three, Brookins Consulting and 7x are the same company, and it has worked with this software since its first
+versions.
 
 ### Why the product is called Exponential
 
@@ -161,12 +164,14 @@ overview" is the file [doc/release-overview](../release-overview), which lists e
 | 14 July 2010 | eZ Publish 4.3.0. | release overview, tag 4.3.0 |
 | 29 September 2010 | eZ Publish 4.4.0. | release overview, tag 4.4.0 |
 | 2011 to 2015 | Community Project builds (2011.9 to 2014.11 and later) on GitHub (`ezsystems/ezpublish-legacy`), next to the 5.x line that put the legacy kernel beside a Symfony stack. | release overview |
+| 2014 | 7x, stage one: the initial idea, started quietly by registering the se7enx.com domain and preparing the fork of the entire ecosystem. | 7x's account (owner, 18 October 2026); <https://graham.se7enx.com/7x> |
 | 26 August 2014 | The first pull request from the GitHub account brookinsconsulting merged into the code base. | `git log` |
 | 2017 to 2021 | The "5.90 line" releases v2017.08 to v2019.03.x of `ezsystems/ezpublish-legacy`; the last one listed is v2019.03.6.1, dated 3 September 2021. | release overview |
 | 2021 | "The platform originally known as eZ Publish reached end-of-life in 2021. We kept going." | se7enxweb GitHub profile README |
 | 6 June 2019 | The GitHub account se7enxweb is created. | GitHub API, `users/se7enxweb` |
+| 2022 | 7x, stage two: the project starts. | 7x's account (owner, 18 October 2026); README.md |
 | 5 October 2023 | The repository `se7enxweb/exponential` is created on GitHub, as a fork of `netgen/ezpublish-legacy`. | GitHub API |
-| 11 December 2023 | The first outside change of the fork is merged (pull request #40, `2ddbc4c624`); the stewardship era begins. | [December 2023](../history/2023/2023-12.md) |
+| December 2023 | 7x, stage three: the project is launched. The first outside change of the fork is merged on 11 December (pull request #40, `2ddbc4c624`); the stewardship era begins. | [December 2023](../history/2023/2023-12.md) |
 | 1 January 2024 | 6.0.0 is stable, and SQLite arrives as a database that needs no server. | [January 2024](../history/2024/2024-01a.md) |
 | 4 February 2024 | The repository `exponential-platform` (Exponential Platform 3.2.9, Symfony only) is created. | GitHub API |
 | 22 August 2024 | admin3, a complete responsive administration design. | [August 2024](../history/2024/2024-08.md) |
@@ -187,8 +192,11 @@ overview" is the file [doc/release-overview](../release-overview), which lists e
 
 ## The eZ Publish years, 1999 to 2021
 
-Exponential did not start in 2023. Its code is the code of **eZ Publish**, the content management system that the
-Norwegian company eZ Systems developed from 1999 (COPYRIGHT.md; <https://se7enx.com/about/exponential-hosting-usa>).
+Exponential did not start in 2023. Its code was first the code of **eZ Publish**, the content management system that
+the Norwegian company eZ Systems developed from 1999 (COPYRIGHT.md; <https://se7enx.com/about/exponential-hosting-usa>).
+eZ Publish was a product that its creator discontinued after almost eighteen years of service to the world (7x's
+account, owner, 18 October 2026); its last releases are listed until 2021 in the release overview. The name belongs
+to that past: the software you use today is Exponential.
 The history of this repository goes back to 2 September 2002, when the 3.0 line was in development, and contains
 every commit since: 27,242 commits on `main` on 18 October 2026 (`git rev-list --count origin/main`).
 
@@ -200,7 +208,7 @@ What the history shows, generation by generation:
   eZCommunity2 repositories "for the continued development and improvement of eZ Publish 2.2 + PHP5 support"
   (<https://exponential.earth/about/about-exponential/features-added-by-7x/7x-core-contributions-to-ez-publish-cms-2000-2015>).
   That line lives on as [Exponential Basic](#exponential-basic).
-- **eZ Publish 3** (2002 to 2007): the content model you still use, with classes, objects, versions, siteaccesses
+- **eZ Publish 3** (2002 to 2007): introduced the content model you still use in Exponential, with classes, objects, versions, siteaccesses
   and the template language. The [changelogs from 2.9 to 3.10](../changelogs/README.md) are in the help.
 - **eZ Publish 4** (2007 to 2012): the PHP 5 generation, with ezjscore, the online editor and the 4.x
   administration. [Changelogs 4.0 to 4.7](../changelogs/README.md).
@@ -391,7 +399,8 @@ it, is in the README section "Exponential Velocity — the fast option" and on
 and the GitHub profile README:
 
 - web design and development, e-commerce and payment integration, training;
-- "CMS Upgrades: Migration from eZ Publish to Exponential v6";
+- "CMS Upgrades: Migration from eZ Publish to Exponential v6", that is, moving a site built while the software was
+  still called eZ Publish onto the current Exponential 6;
 - support and maintenance contracts for existing sites;
 - managed hosting: "Exponential Website Hosting" and "Exponential Platform SSD Hosting" (<https://se7enx.com/>).
 
@@ -492,7 +501,7 @@ Counted on 18 October 2026. Numbers change; the command or page in the last colu
 - **Fund the work.** "A wide range of donation options available at sponsor.se7enx.com, paypal.com/paypalme/7xweb and
   github.com/sponsors/se7enxweb" (README, "Donate and make a support subscription"); the Foundation has its own
   sponsor page, <https://github.com/sponsors/exponentialcms>.
-- **Hire 7x.** For a new site, a migration from eZ Publish or support of an existing site: <https://se7enx.com/>.
+- **Hire 7x.** For a new site, the migration of a site built in the eZ Publish years, or support of an existing site: <https://se7enx.com/>.
 
 ## Sources
 
@@ -508,6 +517,8 @@ Repository files (all in `se7enxweb/exponential`):
 - [The 6.0.15 changelog](../changelogs/6.0/6.0.15.md), [Languages](../languages.md),
   [The license of this documentation](../README-LICENSE.md)
 - The git history: `git log`, `git tag`, `git shortlog`
+
+7x's own account of its three stages (2014, 2022, 2023), given by the owner of 7x for this page on 18 October 2026.
 
 Public web pages (read on 18 October 2026):
 
