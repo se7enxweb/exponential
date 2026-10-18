@@ -510,8 +510,9 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 5d35317c921d3787c8da593f097cc2f4  design/admin/templates/error/shop/2.tpl
 60e288bd8fb5708e034ac8c4000e36e1  design/admin/templates/error/shop/3.tpl
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
-e9586bed991a7873dd972c56008ae4e8  design/admin/templates/exphelp/dashboard.tpl
+a21abf4515a9de1f22cc061b2b9831c2  design/admin/templates/exphelp/dashboard.tpl
 5e5f404b3aef9f255982ee00972db267  design/admin/templates/exphelp/manual.tpl
+3267dc924dc6e8bb85f80453aee65b52  design/admin/templates/exphelp/parts/dashboard_content.tpl
 d7baa6ee646fff454b4689f8ef2279cb  design/admin/templates/exphelp/parts/manual_toc.tpl
 09875679251690e7ef0399b30260fdb4  design/admin/templates/exphelp/parts/viewer_meta.tpl
 835295e2c2b1ba2b36871512ccae3213  design/admin/templates/exphelp/parts/viewer_nav.tpl
@@ -1255,8 +1256,9 @@ dfc9f60f6f8ad15792eef04ef82dae7a  design/admin4/templates/error/shop/1.tpl
 b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 61b4fd1fca8330170ce7e6b1425a3962  design/admin4/templates/error/shop/3.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
-e9586bed991a7873dd972c56008ae4e8  design/admin4/templates/exphelp/dashboard.tpl
+a21abf4515a9de1f22cc061b2b9831c2  design/admin4/templates/exphelp/dashboard.tpl
 5e5f404b3aef9f255982ee00972db267  design/admin4/templates/exphelp/manual.tpl
+3267dc924dc6e8bb85f80453aee65b52  design/admin4/templates/exphelp/parts/dashboard_content.tpl
 d7baa6ee646fff454b4689f8ef2279cb  design/admin4/templates/exphelp/parts/manual_toc.tpl
 09875679251690e7ef0399b30260fdb4  design/admin4/templates/exphelp/parts/viewer_meta.tpl
 835295e2c2b1ba2b36871512ccae3213  design/admin4/templates/exphelp/parts/viewer_nav.tpl
@@ -6129,10 +6131,10 @@ d9f32563966a8b1506a892bdb7f4f812  kernel/private/classes/views/contentfinder/sea
 0e249b72e4e5e91f5bb6e7df0fdc9d50  kernel/private/classes/views/error/view.php
 35ccefd9b29e0d8d208048fbbf84306b  kernel/private/classes/views/exphelp/asset.php
 809e9aaead81f9dad4ffc4f3eccba86b  kernel/private/classes/views/exphelp/context.php
-8f40c5f71187f99e3485b1f94279a7ea  kernel/private/classes/views/exphelp/dashboard.php
+af07c835c6581395f9a588a9167d3a2a  kernel/private/classes/views/exphelp/dashboard.php
 bc9a72fa84d0f8804a48b4e5d89b0a65  kernel/private/classes/views/exphelp/manual.php
 0aff94d13bc40ee02538815ceb7cc5b5  kernel/private/classes/views/exphelp/report.php
-4a454db30bc4abd848f89901f08b02aa  kernel/private/classes/views/exphelp/search.php
+c3f9c14390feeb921d092e277a08a577  kernel/private/classes/views/exphelp/search.php
 252fab437f629b9029d9e5985e4cd08c  kernel/private/classes/views/exphelp/topic.php
 e8984674a3ccd15bfebaa2a84ddbef61  kernel/private/classes/views/exphelp/viewer.php
 aad26363a27c2cb19acf4d33e055e53a  kernel/private/classes/views/ezinfo/about.php
@@ -6944,7 +6946,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 a111b660f8e29a00cb059785bda7df42  settings/debugbar.ini
 3ec24b98a92d3433c648d7ab3e76f93a  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-65624fa06ab2e989e859d3bc130b937c  settings/exphelp.ini
+3f9d87b7789be66555adbdca74866406  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini

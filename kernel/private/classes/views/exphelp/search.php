@@ -24,6 +24,7 @@ class Search extends \Exponential\Runnable\ModuleView
         $index = \expHelpDocumentIndex::instance();
         $search = new \expHelpSearch( $index );
         $result = $search->search( $request['q'], $request['filters'], $request['limit'], $request['offset'] );
+        $result = self::withContentTopics( $result, $request );
 
         if ( $request['format'] === 'json' )
         {
@@ -46,6 +47,39 @@ class Search extends \Exponential\Runnable\ModuleView
         $Result['path'] = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ),
                                  array( 'url' => false, 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Search' ) ) );
         return $Result;
+    }
+
+    /**
+     * Help topics maintained as content (doc/features/6.0/help-content.md) the user may see, put before the pages of
+     * doc/ on the first page of results; the total counts them too. Nothing when help as content is not installed.
+     *
+     * @param array $result expHelpSearch::search()'s array
+     * @param array $request self::request()
+     * @return array
+     */
+    public static function withContentTopics( array $result, array $request )
+    {
+        if ( $request['q'] === '' || !class_exists( 'expHelpContentProvider' ) || !\expHelpContentProvider::isEnabled() )
+            return $result;
+        try
+        {
+            $topics = \expHelpContentProvider::instance()->search( $request['q'], $request['filters'], $request['limit'] );
+        }
+        catch ( \Exception $e )
+        {
+            \eZDebug::writeWarning( 'Help topics could not be searched: ' . $e->getMessage(), __METHOD__ );
+            return $result;
+        }
+        if ( !$topics['hits'] )
+            return $result;
+        if ( (int)$request['offset'] === 0 )
+        {
+            $hits = array_slice( array_merge( $topics['hits'], isset( $result['hits'] ) ? $result['hits'] : array() ), 0, $request['limit'] );
+            $result['hits'] = $result['results'] = $hits;
+        }
+        $result['total'] = ( isset( $result['total'] ) ? (int)$result['total'] : 0 ) + $topics['total'];
+        $result['topics_total'] = $topics['total'];
+        return $result;
     }
 
     /**

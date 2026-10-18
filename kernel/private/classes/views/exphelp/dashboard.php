@@ -46,6 +46,8 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_trackers', $report->trackers() );
         $tpl->setVariable( 'help_search_url', \expHelp::url( 'search' ) );
         $tpl->setVariable( 'help_report_url', \expHelp::url( 'report' ) );
+        // help maintained as content (doc/features/6.0/help-content.md): the manuals and topics the user may see
+        $tpl->setVariable( 'help_content', self::contentSummary() );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:exphelp/dashboard.tpl' );
@@ -89,6 +91,35 @@ class Dashboard extends \Exponential\Runnable\ModuleView
     public static function stats( array $documents, array $categories )
     {
         return array( 'pages' => count( $documents ), 'categories' => count( $categories ) );
+    }
+
+    /**
+     * The manuals and the newest topics of help maintained as content the user may see, false when it is not installed
+     *
+     * @return array|false array( 'manuals' => list of title, remote_id, shortdesc, preview; 'topics' => documents, newest
+     *                     first, at most 6; 'count' => int )
+     */
+    public static function contentSummary()
+    {
+        if ( !class_exists( 'expHelpContentProvider' ) || !\expHelpContentProvider::isEnabled() )
+            return false;
+        try
+        {
+            $provider = \expHelpContentProvider::instance();
+            $topics = array();
+            foreach ( $provider->topics() as $topic )
+                $topics[] = \expHelpContentProvider::document( $topic );
+            usort( $topics, function ( $a, $b ) { return $b['mtime'] <=> $a['mtime']; } );
+            $manuals = array();
+            foreach ( $provider->manuals() as $manual )
+                $manuals[] = array( 'title' => $manual['title'], 'remote_id' => $manual['remote_id'], 'shortdesc' => $manual['shortdesc'], 'preview' => $manual['preview'] );
+            return array( 'manuals' => $manuals, 'topics' => array_slice( $topics, 0, 6 ), 'count' => count( $topics ) );
+        }
+        catch ( \Exception $e )
+        {
+            \eZDebug::writeWarning( 'Help topics could not be read: ' . $e->getMessage(), __METHOD__ );
+            return false;
+        }
     }
 }
 
