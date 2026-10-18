@@ -253,6 +253,10 @@ are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside th
   `icon`; `page_topmenuitem.tpl` draws it only when `design.ini [AdminDesignSettings] IconList[]` has the name, so a
   tab of an extension sets `Icon=` in its `menu.ini.append.php` with a name of that list, and a tab without one shows
   its name alone.
+- **One set of symbols:** the quick actions of the dashboard show the tabs' icons (and `upload`, `tags`,
+  `layout-sidebar-inset`, `arrow-clockwise`), the header's user menu the icons of the phone menu's action tiles
+  (`pencil-square`, `key`, `envelope`), and the phone menu's button the icons `list` and, while it is open, `x-lg`;
+  no text symbol (☰, ×, ▣, ☻) is left in the header and the dashboard.
 - The classic designs (`admin`, `admin3`) keep their images; `.a4-icon` and `.a4-icon-btn` are in their
   copy of `components.css` as well, for templates shared by every administration design.
 

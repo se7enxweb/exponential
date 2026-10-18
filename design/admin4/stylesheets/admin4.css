@@ -343,13 +343,17 @@ body,
   #header-logo .brand { justify-content: center; min-width: 36px; height: 36px; }   /* a target as large as the tools */
   #header .navbar-icon {
     order: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 36px;
     height: 36px;
     margin: 0;
     padding: 0;
-    font-size: 1.75rem;
     line-height: 1;
   }
+  /* the menu (Bootstrap Icons list) and, while it is open, the cross (x-lg): the icons of the header's other tools */
+  #header .navbar-icon > .a4-icon { width: 24px; height: 24px; }
 }
 
 /* ---- The phone menu (below 576px) --------------------------------------------------------------------------------
@@ -539,8 +543,9 @@ body,
      no such row, keeps them) */
   .navbar-main:has(.a4-phone-user) > .header-user { display: none; }
   /* the open menu's button shows a cross */
-  #header .navbar-icon[aria-expanded="true"] > span { display: none; }
-  #header .navbar-icon[aria-expanded="true"]::before { content: "\00D7"; font-size: 2rem; }
+  #header .navbar-icon > .a4-bi-x-lg,
+  #header .navbar-icon[aria-expanded="true"] > .a4-bi-list { display: none; }
+  #header .navbar-icon[aria-expanded="true"] > .a4-bi-x-lg { display: inline-block; }
   #header .navbar-icon:focus-visible {
     outline: 3px solid var(--a4-ring);
     outline-offset: 2px;
@@ -914,9 +919,11 @@ body,
 .a4-user-menu-self:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
 .a4-user-menu-links { margin: 0; padding: 0; list-style: none; }
 .a4-user-menu-links li { margin: 0; }
-.a4-user-menu-links :is(a, span) {
+/* li > : not the icon inside a link (the icons of the phone menu's action tiles, parts/a4_header_user.tpl) */
+.a4-user-menu-links li > :is(a, span) {
   display: flex;
   align-items: center;
+  gap: var(--a4-space-2);
   min-height: 32px;
   padding: var(--a4-space-1) var(--a4-space-3);
   border-radius: var(--a4-radius-s);
