@@ -37,7 +37,8 @@
       "tests/tests/kernel/classes/ini/expIniRoundTripTest.php",
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php",
       "tests/tests/design/AdminStylingRulesTest.php",
-      "tests/tests/design/ExtensionInlineScriptsTest.php"
+      "tests/tests/design/ExtensionInlineScriptsTest.php",
+      "tests/tests/extension/ezflow/ezflowEditScriptTest.php"
     ],
     "kernel/classes/mail/expmailtemplatebody.php": [
       "tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php",
@@ -1538,6 +1539,12 @@
     ],
     "design/admin4/templates/role/edit.tpl": [
       "tests/tests/design/AdminRoleListZebraTest.php"
+    ],
+    "extension/ezflow/*": [
+      "tests/tests/extension/ezflow/ezflowEditScriptTest.php"
+    ],
+    "tests/tests/extension/ezflow/js/*": [
+      "tests/tests/extension/ezflow/ezflowEditScriptTest.php"
     ]
   },
   "generated": {
