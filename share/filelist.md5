@@ -23,7 +23,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6317a4c9d5332abdff2cdede49edebb7  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-5d8a039a4303547505fabb7b686c83e6  autoload/ezp_kernel.php
+0fadcea69238a39491e5339846124816  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -69,6 +69,7 @@ a1662394f65bf0ee0f7e4f56fba44099  bin/php/contentcheck.php
 0a7d1915373ef3451e32dbafc6b08c6e  bin/php/convertprice2multiprice.php
 c0e2aa3b432485dd3e2c0edad20c76c5  bin/php/dfscleanup.php
 f0f67c88d699385e2c4f30e0c72a413f  bin/php/expcontentjob.php
+cb1ca5dda99e313bd81d336a932992eb  bin/php/exphelp.php
 750486c94e3433b65e6e660310dbfeaa  bin/php/explogs.php
 11d39b208faceec003544ef794daf0aa  bin/php/exploremipsumfill.php
 6a4db46d8822245538c5ab3e1a5ccc3a  bin/php/explovestack.php
@@ -5411,14 +5412,15 @@ ce0bb66240c7036cda2021294a47d14f  kernel/classes/ezworkflowgrouplink.php
 b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 4ff841d8b07c17168f3063c415ba91b6  kernel/classes/ezworkflowtype.php
 0bcd9c6c9ff33e848198091ffdb6240c  kernel/classes/help/exphelp.php
-3b8c4b4066f28a8bc8bd6b6a3f45540b  kernel/classes/help/exphelpallowlist.php
-0d030bd3f723a441d9ea6d3920e6905f  kernel/classes/help/exphelpaudience.php
+e1969d8c3db392bdbc782e8bfdeb3eb6  kernel/classes/help/exphelpallowlist.php
+434bc17747f1f9c2f1690c32ac2b84eb  kernel/classes/help/exphelpaudience.php
 31815b5ce967703cb2b0878d3c91eaca  kernel/classes/help/exphelpcontextregistry.php
-495304c89d810ad638727a31210c7ef2  kernel/classes/help/exphelpdocumentindex.php
-cde091ff977a26a609f39108326c5020  kernel/classes/help/exphelpfrontmatter.php
+1c7a0c470f3ef48884c2041531cb72ac  kernel/classes/help/exphelpdocumentindex.php
+d737f4b8cee16a8ecd9af63aa5d73613  kernel/classes/help/exphelpfrontmatter.php
 99520b445ecac9996f6de9f6721a83a4  kernel/classes/help/exphelpfunctioncollection.php
 17d029ee9edac44ce5ec6bfdb6436178  kernel/classes/help/exphelphighlighter.php
 fbe202253abbc1bce78eaaa73f6207ea  kernel/classes/help/exphelpissuereport.php
+5cd589a125cac9cb56a3fd6b0243e10d  kernel/classes/help/exphelplinkcheck.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
 beb74ae4c50906226bf0cfd83fddb2b2  kernel/classes/help/exphelpmarkdownrenderer.php
 f2f4f7222b423446d90fefa0a0ab25d6  kernel/classes/help/exphelpsearch.php
@@ -5809,6 +5811,7 @@ fc100209dee85f836a6d9ed383e3a0c1  kernel/private/classes/commands/collaborations
 f12e48ebe5663a2c1f489acdd31489af  kernel/private/classes/commands/convertprice2multiprice.php
 21a07ab99816048c850eb65e8735a3c7  kernel/private/classes/commands/dfscleanup.php
 629cddb79ec70350f282b31fd6fe7387  kernel/private/classes/commands/expcontentjob.php
+2f04c352eb94531cfa604b8686bf6b59  kernel/private/classes/commands/exphelp.php
 38cae746f9bac5322791cb4baa80962d  kernel/private/classes/commands/explogs.php
 18d2c1913478f7c8b2d159c94a55cd54  kernel/private/classes/commands/exploremipsumfill.php
 a9b9d8e9a77fb33ca2dc94227b9c3c4a  kernel/private/classes/commands/explovestack.php
@@ -6872,7 +6875,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 a111b660f8e29a00cb059785bda7df42  settings/debugbar.ini
 3bfabc5627f3aa07599a418d6ff989ec  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-a97dc9cb027507a215e7628b505c2467  settings/exphelp.ini
+c072ce48ffd3a9d6eb2bbf0a57e43a96  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
