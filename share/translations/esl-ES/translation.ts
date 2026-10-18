@@ -51240,17 +51240,17 @@ How do you access it?&lt;/p&gt;
     &lt;a href=&quot;http://share.ez.no/events&quot;&gt;events&lt;/a&gt;, &lt;a href=&quot;http://share.ez.no/members-partners/find-a-partner&quot;&gt;partners&lt;/a&gt;...&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
 &lt;p&gt;We<byte value="x19"/>re looking forward to seeing what you share with the Community!&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Si quiere compartir conocimiento, intercambiar ideas con otros desarrolladores o simplemente encontrar algunos trucos para mejorar su aplicación, la Exponential Community es el sitio al que ir.&lt;/p&gt;
+        <translation>&lt;p&gt;Si quieres compartir conocimiento, intercambiar ideas con otros desarrolladores o simplemente encontrar algunos trucos para mejorar tu aplicación, la Exponential Community es el sitio al que ir.&lt;/p&gt;
 
 &lt;p&gt;
-¿Cómo puede acceder a él?&lt;/p&gt;
+¿Cómo puedes acceder a él?&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Vaya a &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;Exponential Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Haga click en Register (parte superior de la página) y cree su perfil&lt;/li&gt;
-&lt;li&gt;Aquí puede ver los &lt;a href=&quot;http://share.ez.no/blogs&quot;&gt;artículos de los blogs&lt;/a&gt;,
+&lt;li&gt;Ve a &lt;a href=&quot;http://share.ez.no/&quot; title=&quot;Exponential Community&quot;&gt;share.ez.no&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Haz click en Register (parte superior de la página) y crea tu perfil&lt;/li&gt;
+&lt;li&gt;Aquí puedes ver los &lt;a href=&quot;http://share.ez.no/blogs&quot;&gt;artículos de los blogs&lt;/a&gt;,
     &lt;a href=&quot;http://share.ez.no/events&quot;&gt;eventos&lt;/a&gt;, &lt;a href=&quot;http://share.ez.no/members-partners/find-a-partner&quot;&gt;compañías asociadas&lt;/a&gt;...&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;¡Estamos ansiosos por ver lo que compartirá con la Exponential Community!&lt;/p&gt;</translation>
+&lt;p&gt;¡Estamos ansiosos por ver lo que compartirás con la Exponential Community!&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Exponential Platform</source>
@@ -55236,11 +55236,11 @@ tu cuenta.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this application?</source>
-        <translation>¿Está seguro de querer borrar esta aplicación?</translation>
+        <translation>¿Estás seguro de querer borrar esta aplicación?</translation>
     </message>
     <message>
         <source>Are you sure you want to remove these applications?</source>
-        <translation>¿Está seguro de querer borrar estas aplicaciones?</translation>
+        <translation>¿Estás seguro de querer borrar estas aplicaciones?</translation>
     </message>
     <message>
         <source>Confirm</source>
@@ -56612,7 +56612,7 @@ si has elegido la opción &quot;%3&quot; desde &quot;%4&quot; </translation>
     </message>
     <message>
         <source>No main node selected, please select one.</source>
-        <translation>No hay seleccionado ningún nudo principal. por favor, seleccione uno.</translation>
+        <translation>No hay seleccionado ningún nudo principal. por favor, selecciona uno.</translation>
     </message>
     <message>
         <source>My bookmarks</source>

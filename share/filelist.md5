@@ -4946,7 +4946,7 @@ f8a85b1a0304fa337737229280fcb45c  extension/ezoe/tests/suite.php
 7a01cb19a8749a323545c01659a2ddba  extension/ezoe/translations/dan-DK/translation.ts
 78a42e2ad90b2c482030782011ab6e00  extension/ezoe/translations/dut-NL/translation.ts
 67cb7be35027df96b22b278bb5aa711c  extension/ezoe/translations/eng-US/translation.ts
-c8d9a21567d8486e424fac34cee46c0e  extension/ezoe/translations/esl-ES/translation.ts
+6934ea1af19949728e9a7e85d46bea2f  extension/ezoe/translations/esl-ES/translation.ts
 b59cd7d092dc44ca3d8ef742afe760f3  extension/ezoe/translations/esl-MX/translation.ts
 bb5bd9726ef6de446fc6c037ac7cd59a  extension/ezoe/translations/fin-FI/translation.ts
 68fdefd9ef2d189d414c17943634f75d  extension/ezoe/translations/fre-FR/translation.ts
@@ -7638,7 +7638,7 @@ a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
 be85463c48c81bcc90584d34cf6e4fd4  share/translations/eng-US/translation.ts
-05beec953d759a72a73e713a04855399  share/translations/esl-ES/translation.ts
+753301941526b757537f6d30ce6095ac  share/translations/esl-ES/translation.ts
 5739873d1d5cb5cfb0d1b717fe5f3d26  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 0cb20c118304eeec40845a3e08b67b78  share/translations/fre-FR/translation.ts
