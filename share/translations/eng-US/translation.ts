@@ -72179,9 +72179,5 @@ You will need to change the class of the node by using the swap functionality.</
         <source>What's new</source>
         <translation>What's new</translation>
     </message>
-    <message>
-        <source>Develop with Git</source>
-        <translation>Develop with Git</translation>
-    </message>
 </context>
 </TS>

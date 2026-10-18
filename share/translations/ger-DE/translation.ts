@@ -79123,9 +79123,5 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>What's new</source>
         <translation>Neuigkeiten</translation>
     </message>
-    <message>
-        <source>Develop with Git</source>
-        <translation>Mit Git entwickeln</translation>
-    </message>
 </context>
 </TS>

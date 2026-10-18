@@ -71999,9 +71999,5 @@ You will need to change the class of the node by using the swap functionality.</
         <source>What's new</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Develop with Git</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 </TS>
