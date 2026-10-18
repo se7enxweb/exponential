@@ -23,7 +23,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6317a4c9d5332abdff2cdede49edebb7  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-f5443d7fad155099d6e2957022d22b52  autoload/ezp_kernel.php
+9b6e0737056ffeba18026b39c6622da8  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3247,7 +3247,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-5dc5b3bb39727f146688b0725eff7167  doc/changelogs/6.0/6.0.15.md
+9a54258bf8474a1c59746cd4d1164768  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3588,7 +3588,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-ecbb852db73a35878993d3c6accb68fe  doc/features/6.0/content-security-policy.md
+89fbb5e6874a7193e2115f03b6131373  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
@@ -5569,6 +5569,7 @@ e5173154b8dda8d8a484430bcd35dd78  kernel/collaboration/function_definition.php
 8fe60791c573fda9930b833dce8011cd  kernel/collaboration/item.php
 016c85ad64baf306bb039e9e8abc4c61  kernel/collaboration/module.php
 4155124ccecac18bd7349c0a3adf710a  kernel/collaboration/view.php
+b8369d01fe310ba84d33228f874acefe  kernel/common/expcontentsecuritypolicyoperator.php
 83b9bd0b40804f348548707386c287a8  kernel/common/expenvironmentoperator.php
 6b1ab582228ad8b1a974afd05782f76e  kernel/common/ezalphabetoperator.php
 1d5dbf2bba242879e3056e3933e4d10a  kernel/common/ezautolinkoperator.php
@@ -5584,7 +5585,7 @@ ce9600aa8d2d9a4d05280d8739b41630  kernel/common/ezpi18n.php
 9daf325c493906c07b4054d04b32d0a4  kernel/common/ezpsiteaccessmenuoperator.php
 f96a90033dfa982c5532d6e86250f804  kernel/common/ezpsiteaccessurloperator.php
 017b674d3da82376774e263117ee3ce8  kernel/common/ezsimpletagsoperator.php
-9113b4a29e35bbf1618e4e2e0f8f30a1  kernel/common/eztemplateautoload.php
+7a3f6591d68ad8724ffb6ec3b0f85dbd  kernel/common/eztemplateautoload.php
 5bd855003c810187b6d3b2b35b650ae5  kernel/common/eztemplatedesignresource.php
 9a8a326aaf46c622ad345e92a192ab41  kernel/common/eztemplatesstatisticsreporter.php
 b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
@@ -5880,7 +5881,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 3a2502512e2a0a3ccb164d51db7a3889  kernel/private/classes/exceptions/kernel/moduleviewdisabled.php
 2898970b3f0a92a99c65c02bf7b1ffab  kernel/private/classes/exceptions/kernel/moduleviewnotfound.php
 330a3389deaa6670e6677eaf993b9a73  kernel/private/classes/expcontentaccessreport.php
-4bb13d9c22059edb3a5915ae794c3cca  kernel/private/classes/expcontentsecuritypolicy.php
+2012a3f8a2cf9c54b6aae2d04abf02a8  kernel/private/classes/expcontentsecuritypolicy.php
 7006dcb750cb36c53efb10d3cd301720  kernel/private/classes/expfileconsistencyreport.php
 30b99d6b38fac3eb85094f52e824516c  kernel/private/classes/expschemaconsistencyreport.php
 c8700385d42c2101f6400b13287cb99a  kernel/private/classes/ezautoloadgenerator.php
@@ -5902,7 +5903,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 28b56f2df1290892158aedc26b81b0c8  kernel/private/classes/ezpkernelredirect.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
 e6ce6d62141661a4cf4b57a97febf591  kernel/private/classes/ezpkerneltreemenu.php
-07c7a8056858c2eb31fda676f344e812  kernel/private/classes/ezpkernelweb.php
+5e87536db3e573aaf1a883928473741f  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
 c40373eb533e1704ca522996e35b8e1e  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -6852,7 +6853,7 @@ ad97f94775c35151cdab893306a21b6e  settings/rest.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-049c0bc205c28b07a711d18248a87c1f  settings/site.ini
+a94ba825f8084d4a1d76bdeb82cce6a1  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -8625,7 +8626,7 @@ f1ed9827441bcdec26fee547eb0757de  tests/tests/kernel/logviewer/expLogWebServerFo
 77927d3c943bbb393761f88c40789cfc  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 60f8f3fb91c8a7da7e20ca1f9c518136  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
-f91a2ed3b9402ffc1fedd9131643693b  tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php
+e9a48b4fe06371aac0b69750fe319beb  tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php
 b6656c954acf5e5f6db1a2607a7564e4  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
 0133feca9084b5d356221439d79d6841  tests/tests/kernel/private/classes/ezpExtensionInfoTest.php
 5277128e032a8ba916fd550e97672c58  tests/tests/kernel/private/classes/ezpFormTokenRefusalTest.php

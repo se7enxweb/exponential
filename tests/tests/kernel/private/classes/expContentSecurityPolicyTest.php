@@ -20,6 +20,14 @@ class expContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         chdir( dirname( __DIR__, 5 ) );
+        // The tests of one setting see none of the others; each test turns on what it checks
+        $this->setting( 'ContentSecurityPolicy', 'Nonce', 'disabled' );
+        $this->setting( 'ContentSecurityPolicy', 'ReportEndpoint', 'disabled' );
+        $this->setting( 'ContentSecurityPolicy', 'AdditionalSources', array() );
+        $this->setting( 'ContentSecurityPolicy', 'ReportOnlyDirectives', array() );
+        $this->setting( 'ContentSecurityPolicy', 'ReportOnlyDesigns', array() );
+        $this->setting( 'DesignSettings', 'AdditionalSiteDesignList', array() );
+        expContentSecurityPolicy::reset();
     }
 
     protected function tearDown(): void
@@ -234,5 +242,202 @@ class expContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( $directive, $policy );
         // the strict default: nothing that lets inline code or eval() run
         $this->assertStringNotContainsString( 'unsafe-', $policy );
+        // the settings of enforcing: none changes the policy of a new installation but the nonce of a report-only one
+        $this->assertSame( 'enabled', $ini->variable( 'ContentSecurityPolicy', 'Nonce' ) );
+        $this->assertSame( array( 'script-src' ), $ini->variable( 'ContentSecurityPolicy', 'NonceDirectives' ) );
+        $this->assertSame( 'disabled', $ini->variable( 'ContentSecurityPolicy', 'ReportEndpoint' ) );
+        $this->assertSame( array(), $ini->variable( 'ContentSecurityPolicy', 'AdditionalSources' ) );
+        $this->assertSame( array(), $ini->variable( 'ContentSecurityPolicy', 'ReportOnlyDirectives' ) );
+        $this->assertSame( array( 'admin', 'admin2', 'admin_classic' ), $ini->variable( 'ContentSecurityPolicy', 'ReportOnlyDesigns' ) );
+    }
+
+    // ------------------------------------------------------------ enforcing (#600)
+
+    public function testModeAutoCountsAnAdditionalAdministrationDesign()
+    {
+        $this->assertSame( 'report-only', expContentSecurityPolicy::mode( 'auto', 'editor', array( 'admin4l' ) ) );
+        $this->assertSame( 'disabled', expContentSecurityPolicy::mode( 'auto', 'editor', array( 'standard', 'base' ) ) );
+        $this->assertSame( 'disabled', expContentSecurityPolicy::mode( 'auto', 'editor', 'admin4l' ), 'not a list' );
+        $this->assertSame( 'enforce', expContentSecurityPolicy::mode( 'enforce', 'editor', array() ) );
+    }
+
+    public function testAdditionalSourcesAddToExistingDirectivesOnly()
+    {
+        $directives = array( 'default-src' => "'self'", 'script-src' => "'self'", 'img-src' => "'self' data:" );
+        $this->assertSame(
+            array( 'default-src' => "'self'", 'script-src' => "'self' https://maps.example.com https://captcha.example.com",
+                   'img-src' => "'self' data: https://maps.example.com" ),
+            expContentSecurityPolicy::withSources( $directives, array(
+                'script-src https://maps.example.com',
+                'Script-Src  https://captcha.example.com   https://maps.example.com',
+                'img-src data: https://maps.example.com',
+                'frame-src https://not-there.example.com',   // no frame-src in the list: ignored
+                'script-src https://a.example.com; object-src *', // would add a directive: ignored
+                "script-src https://b.example.com,https://c.example.com",
+                'script-src',
+                array( 'script-src x' ),
+                '',
+            ) )
+        );
+        $this->assertSame( array( 'script-src' => "'self'" ), expContentSecurityPolicy::withSources( array( 'script-src' => "'self'" ), 'script-src x' ) );
+    }
+
+    public function testNonceIsAddedWhereNoUnsafeInlineIs()
+    {
+        $directives = array( 'script-src' => "'self'", 'style-src' => "'self' 'unsafe-inline'", 'object-src' => "'none'", 'img-src' => "'self'" );
+        $this->assertSame(
+            array( 'script-src' => "'self' 'nonce-abc_D-1'", 'style-src' => "'self' 'unsafe-inline'", 'object-src' => "'none'", 'img-src' => "'self'" ),
+            expContentSecurityPolicy::withNonce( $directives, 'abc_D-1', array( 'script-src', 'style-src', 'object-src', 'frame-src' ) )
+        );
+        $this->assertSame( $directives, expContentSecurityPolicy::withNonce( $directives, '', array( 'script-src' ) ) );
+        $this->assertSame( $directives, expContentSecurityPolicy::withNonce( $directives, "x' 'unsafe-eval", array( 'script-src' ) ) );
+        $this->assertSame( $directives, expContentSecurityPolicy::withNonce( $directives, 'abc', 'script-src' ) );
+    }
+
+    public function testNonceIsStablePerRequestAndNewAfterReset()
+    {
+        $nonce = expContentSecurityPolicy::nonce();
+        $this->assertMatchesRegularExpression( '/^[A-Za-z0-9_-]{22}$/D', $nonce );
+        $this->assertSame( $nonce, expContentSecurityPolicy::nonce() );
+        expContentSecurityPolicy::reset();
+        $this->assertNotSame( $nonce, expContentSecurityPolicy::nonce() );
+
+        // a persistent worker that serves the next request without reset() gets a new one too
+        $saved = $_SERVER['REQUEST_TIME_FLOAT'] ?? null;
+        $before = expContentSecurityPolicy::nonce();
+        $_SERVER['REQUEST_TIME_FLOAT'] = microtime( true ) + 1000;
+        $after = expContentSecurityPolicy::nonce();
+        if ( $saved === null )
+            unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+        else
+            $_SERVER['REQUEST_TIME_FLOAT'] = $saved;
+        $this->assertNotSame( $before, $after );
+    }
+
+    public function testHeadersCarryTheNonceOfTheRequest()
+    {
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'script-src' => "'self'", 'style-src' => "'self'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'ReportURI', '' );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
+        $this->setting( 'ContentSecurityPolicy', 'Nonce', 'enabled' );
+        $this->setting( 'ContentSecurityPolicy', 'NonceDirectives', array( 'script-src' ) );
+        $nonce = expContentSecurityPolicy::nonce();
+        $this->assertSame( array( 'Content-Security-Policy' => "script-src 'self' 'nonce-$nonce'; style-src 'self'" ),
+                           expContentSecurityPolicy::headers() );
+        $this->assertSame( $nonce, expContentSecurityPolicy::templateNonce() );
+
+        $operator = new expContentSecurityPolicyOperator();
+        $this->assertSame( array( 'csp_nonce' ), $operator->operatorList() );
+        $value = null;
+        $operator->modify( null, 'csp_nonce', array(), '', '', $value, array(), false );
+        $this->assertSame( $nonce, $value );
+
+        $this->setting( 'ContentSecurityPolicy', 'Nonce', 'disabled' );
+        $this->assertSame( array( 'Content-Security-Policy' => "script-src 'self'; style-src 'self'" ), expContentSecurityPolicy::headers() );
+        $this->assertSame( '', expContentSecurityPolicy::templateNonce() );
+        $this->setting( 'ContentSecurityPolicy', 'Nonce', 'enabled' );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'disabled' );
+        $this->assertSame( '', expContentSecurityPolicy::templateNonce() );
+    }
+
+    public function testEnforceWithAStricterReportOnlyCompanion()
+    {
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'default-src' => "'self'", 'script-src' => "'self'",
+                                                                      'style-src' => "'self' 'unsafe-inline'", 'frame-ancestors' => "'self'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'ReportOnlyDirectives', array( 'style-src' => "'self'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'AdditionalSources', array( 'style-src https://fonts.example.com' ) );
+        $this->setting( 'ContentSecurityPolicy', 'ReportURI', '/csp/report' );
+        $this->setting( 'DesignSettings', 'SiteDesign', 'admin4l' );
+
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
+        $this->assertSame( array(
+            'Content-Security-Policy' => "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.example.com; frame-ancestors 'self'; report-uri /csp/report",
+            'Content-Security-Policy-Report-Only' => "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.example.com; report-uri /csp/report",
+        ), expContentSecurityPolicy::headers() );
+
+        // the rollback: report-only sends the policy that was enforced, and no companion
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'report-only' );
+        $this->assertSame( array(
+            'Content-Security-Policy-Report-Only' => "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.example.com; report-uri /csp/report",
+        ), expContentSecurityPolicy::headers() );
+
+        // through the kernel: the enforced policy after SecurityHeaders[Content-Security-Policy], the companion of its own
+        $this->setting( 'HTTPHeaderSettings', 'SecurityHeaders', array( 'Content-Security-Policy' => "frame-ancestors 'self'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
+        $headers = ezpKernelWeb::securityHeaders();
+        $this->assertStringStartsWith( "frame-ancestors 'self', default-src 'self'; script-src 'self';", $headers['Content-Security-Policy'] );
+        $this->assertStringContainsString( "style-src 'self' https://fonts.example.com;", $headers['Content-Security-Policy-Report-Only'] );
+    }
+
+    public function testReportOnlyDesignsAreNeverEnforced()
+    {
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'script-src' => "'self'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'ReportURI', '' );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
+        $this->setting( 'ContentSecurityPolicy', 'ReportOnlyDesigns', array( 'admin', 'Admin_Classic' ) );
+        $this->setting( 'ContentSecurityPolicy', 'ReportOnlyDirectives', array( 'style-src' => "'self'" ) );
+
+        foreach ( array( 'admin', 'admin_classic' ) as $design )
+        {
+            $this->setting( 'DesignSettings', 'SiteDesign', $design );
+            $this->assertSame( array( 'Content-Security-Policy-Report-Only' => "script-src 'self'" ), expContentSecurityPolicy::headers(), $design );
+            $this->assertTrue( expContentSecurityPolicy::allowsInlineScripts(), $design );
+        }
+        $this->setting( 'DesignSettings', 'SiteDesign', 'admin4l' );
+        $this->assertArrayHasKey( 'Content-Security-Policy', expContentSecurityPolicy::headers() );
+        $this->assertFalse( expContentSecurityPolicy::designListed( 'admin4', array( 'admin' ) ) );
+        $this->assertFalse( expContentSecurityPolicy::designListed( '', array( '' ) ) );
+        $this->assertFalse( expContentSecurityPolicy::designListed( 'admin', 'admin' ) );
+    }
+
+    public function testAllowsInlineScripts()
+    {
+        $this->setting( 'DesignSettings', 'SiteDesign', 'admin4l' );
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'default-src' => "'self'", 'script-src' => "'self'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'report-only' );
+        $this->assertTrue( expContentSecurityPolicy::allowsInlineScripts() );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
+        $this->assertFalse( expContentSecurityPolicy::allowsInlineScripts() );
+        $this->setting( 'ContentSecurityPolicy', 'AdditionalSources', array( "script-src 'unsafe-inline'" ) );
+        $this->assertTrue( expContentSecurityPolicy::allowsInlineScripts() );
+        $this->setting( 'ContentSecurityPolicy', 'AdditionalSources', array() );
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'default-src' => "'self' 'unsafe-inline'" ) );
+        $this->assertTrue( expContentSecurityPolicy::allowsInlineScripts(), 'default-src without script-src' );
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'default-src' => "'self'" ) );
+        $this->assertFalse( expContentSecurityPolicy::allowsInlineScripts() );
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'img-src' => "'self'" ) );
+        $this->assertTrue( expContentSecurityPolicy::allowsInlineScripts(), 'no script restriction at all' );
+    }
+
+    public function testReportPartsAndTheReportingEndpoint()
+    {
+        $this->assertSame( array( 'report-uri' => '', 'report-to' => '', 'endpoints' => '' ), expContentSecurityPolicy::reportParts( '' ) );
+        $this->assertSame( array( 'report-uri' => '/csp/report', 'report-to' => '', 'endpoints' => '' ),
+                           expContentSecurityPolicy::reportParts( '/csp/report' ) );
+        $this->assertSame( array( 'report-uri' => 'https://r.example.com/x', 'report-to' => 'csp-endpoint',
+                                  'endpoints' => 'csp-endpoint="https://r.example.com/x"' ),
+                           expContentSecurityPolicy::reportParts( ' https://r.example.com/x ', true, 'https://own.example.com/csp/report' ) );
+        $this->assertSame( array( 'report-uri' => 'https://own.example.com/admin/csp/report', 'report-to' => 'csp-endpoint',
+                                  'endpoints' => 'csp-endpoint="https://own.example.com/admin/csp/report"' ),
+                           expContentSecurityPolicy::reportParts( '', true, 'https://own.example.com/admin/csp/report' ) );
+        $this->assertSame( array( 'report-uri' => '', 'report-to' => '', 'endpoints' => '' ),
+                           expContentSecurityPolicy::reportParts( '', false, 'https://own.example.com/csp/report' ) );
+        // nothing that would end the header value or the quoted endpoint
+        foreach ( array( 'https://a.example.com/"x', 'https://a.example.com/\\x' ) as $uri )
+            $this->assertSame( '', expContentSecurityPolicy::reportParts( $uri )['endpoints'], $uri );
+        foreach ( array( 'https://a.example.com/x;y', "https://a.example.com/x\ny", 'https://a.example.com/x,y' ) as $uri )
+            $this->assertSame( array( 'report-uri' => '', 'report-to' => '', 'endpoints' => '' ), expContentSecurityPolicy::reportParts( $uri ), $uri );
+
+        $this->assertSame( "script-src 'self'; report-uri https://r.example.com/x; report-to csp-endpoint",
+                           expContentSecurityPolicy::policy( array( 'script-src' => "'self'", 'report-to' => 'evil' ), 'https://r.example.com/x', 'csp-endpoint' ) );
+        $this->assertSame( "script-src 'self'", expContentSecurityPolicy::policy( array( 'script-src' => "'self'" ), '', 'a b' ) );
+
+        $this->setting( 'ContentSecurityPolicy', 'Directives', array( 'script-src' => "'self'" ) );
+        $this->setting( 'ContentSecurityPolicy', 'Mode', 'enforce' );
+        $this->setting( 'DesignSettings', 'SiteDesign', 'admin4l' );
+        $this->setting( 'ContentSecurityPolicy', 'ReportURI', 'https://r.example.com/x' );
+        $this->assertSame( array( 'Content-Security-Policy' => "script-src 'self'; report-uri https://r.example.com/x; report-to csp-endpoint",
+                                  'Reporting-Endpoints' => 'csp-endpoint="https://r.example.com/x"' ),
+                           expContentSecurityPolicy::headers() );
     }
 }

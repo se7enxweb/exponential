@@ -38,7 +38,8 @@ ReportURI=
     second policy after `SecurityHeaders[Content-Security-Policy]` (`frame-ancestors 'self'` by default); the browser
     applies both.
   - `auto` (the default): `report-only` on administration siteaccesses, those whose `[DesignSettings] SiteDesign`
-    begins with `admin` (admin, admin3, admin4, admin4l, adminui), `disabled` on all others.
+    begins with `admin` (admin, admin3, admin4, admin4l, adminui) or whose `AdditionalSiteDesignList[]` has such a
+    design (an editor siteaccess on admin4l), `disabled` on all others.
 - **Directives[]**: the policy, one directive per entry. Set an entry empty in an override to leave the directive out;
   an override that starts with `Directives[]` alone replaces the whole list. An entry whose value holds `;` or `,`, or
   whose name is not a directive name, is ignored, so a setting cannot split the header or add a directive of its own.
@@ -269,5 +270,75 @@ an ad server of ezflow) need their hosts in `script-src`.
   submenus) then no longer open. Add to `menuArray`, never assign it.
 - **Plugins and inline PDF**: see `object-src` above.
 
-A nonce for inline scripts is not offered on purpose: the admin pagelayout, its menus and the tree sit in cache-blocks,
-and a cached nonce would no longer match the header of the next request.
+## Enforcing: nonce, more sources, a stricter companion, rollback
+
+These settings of `site.ini [ContentSecurityPolicy]` make an enforced policy practical. None of them changes the
+policy of a new installation, except that the report-only policy of the administration carries a nonce.
+
+```ini
+[ContentSecurityPolicy]
+# sources added to a directive of Directives[], a list
+AdditionalSources[]
+# with Mode=enforce: a stricter Content-Security-Policy-Report-Only beside it
+ReportOnlyDirectives[]
+# designs that stay report-only under Mode=enforce
+ReportOnlyDesigns[]
+ReportOnlyDesigns[]=admin
+ReportOnlyDesigns[]=admin2
+ReportOnlyDesigns[]=admin_classic
+Nonce=enabled
+NonceDirectives[]
+NonceDirectives[]=script-src
+ReportURI=
+ReportEndpoint=disabled
+```
+
+- **AdditionalSources[]** `=<directive> <sources>`: adds sources to a directive that `Directives[]` already has, for
+  example `AdditionalSources[]=script-src https://maps.googleapis.com`. Because it is a list, an extension's
+  `site.ini.append.php` and the siteaccess can each add their hosts without restating `'self'` or each other's
+  hosts. An entry for a directive that `Directives[]` does not have is ignored: it would otherwise start a directive
+  that replaces the `default-src` fallback. Duplicates are dropped.
+- **ReportOnlyDirectives[]**: only with `Mode=enforce`. A second header, `Content-Security-Policy-Report-Only`, carries
+  `Directives[]` with these entries in their place (and the same additional sources, nonce and report address).
+  The browser enforces the first one and only reports what the second would block. Use it to measure the way to a
+  stricter policy, for example `style-src 'self'` while the enforced policy still allows `'unsafe-inline'` styles:
+
+  ```ini
+  Mode=enforce
+  Directives[style-src]='self' 'unsafe-inline'
+  ReportOnlyDirectives[style-src]='self'
+  ```
+- **ReportOnlyDesigns[]**: a request whose design (`[DesignSettings] SiteDesign`, after the UI switch has applied the
+  user's choice) is listed gets the report-only policy even when the siteaccess enforces. The classic administration
+  (`admin`, and `admin2`, which renders its pagelayout) has inline scripts in many templates; a user who picks it with
+  the UI switch keeps a working page.
+- **Nonce**, **NonceDirectives[]**: with `Nonce=enabled`, every request gets a nonce (16 random bytes, base64url)
+  that is added as `'nonce-...'` to each directive of `NonceDirectives[]`. A template prints it with the operator
+  `csp_nonce()`:
+
+  ```html
+  <script nonce="{csp_nonce()}">...</script>
+  ```
+
+  The operator returns an empty string when the policy carries no nonce. The nonce is not added to a directive that
+  allows `'unsafe-inline'`, because browsers ignore `'unsafe-inline'` next to a nonce. That keeps a siteaccess that
+  still needs `'unsafe-inline'` (TinyMCE 3) working. Velocity's persistent workers get a new nonce per request (the
+  kernel resets it at the start of each one). **Never print `csp_nonce()` inside a `{cache-block}`, a view-cached
+  template or a static cache**: the cached copy would carry the nonce of another request and the browser would block
+  the script. Prefer, in this order: a file loaded with `ezscript` (a script in the head runs before the first paint,
+  so it does not flash), a hash of a static inline script (`AdditionalSources[]=script-src 'sha256-...'`), then the
+  nonce, for uncached output only. The kernel's HTTP cache stores a page with its headers, so a cached page and its
+  nonce stay together.
+- **ReportURI**, **ReportEndpoint**: with `ReportEndpoint=enabled` and `ReportURI` empty, the reports go to the
+  `csp/report` view of the siteaccess, which logs one line per violation to `var/log/csp.log` (log viewer key `csp`).
+  An absolute report address is also announced as the reporting endpoint `csp-endpoint`, with the header
+  `Reporting-Endpoints` and the directive `report-to`. Chrome sends to that one; Firefox to `report-uri`.
+- `allowsInlineScripts()`: `expContentSecurityPolicy::allowsInlineScripts()` tells code (an editor that chooses its
+  engine, for example) whether inline scripts and handler attributes run under the current siteaccess's policy.
+
+**Rollback.** Set `Mode=report-only` in the siteaccess, clear the INI cache (`php bin/php/ezcache.php
+--clear-tag=ini`), reload PHP-FPM and restart Velocity. Nothing else changes: the same policy is sent as
+`Content-Security-Policy-Report-Only` and the stricter companion is no longer sent.
+
+The shipped default stays `Mode=auto`, report-only on the administration. Enforcing is a decision per installation,
+taken after the audit above.

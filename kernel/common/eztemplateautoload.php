@@ -78,6 +78,9 @@ $eZTemplateOperatorArray[] = array( 'class' => 'expAuditTemplateOperator',
 $eZTemplateOperatorArray[] = array( 'class' => 'expEnvironmentOperator',
                                     'operator_names' => array( 'exp_environment', 'exp_environment_badge' ) );
 
+$eZTemplateOperatorArray[] = array( 'class' => 'expContentSecurityPolicyOperator',
+                                    'operator_names' => array( 'csp_nonce' ) );
+
 // Function autoloading
 
 $eZTemplateFunctionArray = array();

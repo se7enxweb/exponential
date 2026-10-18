@@ -1077,6 +1077,7 @@ return array(
       'expContentLanguageStates'                                     => 'kernel/classes/expcontentlanguagestates.php',
       'expContentPendingList'                                        => 'kernel/classes/expcontentpendinglist.php',
       'expContentSecurityPolicy'                                     => 'kernel/private/classes/expcontentsecuritypolicy.php',
+      'expContentSecurityPolicyOperator'                             => 'kernel/common/expcontentsecuritypolicyoperator.php',
       'expCountryGroups'                                             => 'kernel/classes/datatypes/ezcountry/expcountrygroups.php',
       'expCronjobPause'                                              => 'kernel/classes/expcronjobpause.php',
       'expCronjobRunner'                                             => 'kernel/setup/expcronjobrunner.php',

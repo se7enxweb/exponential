@@ -132,6 +132,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             eZDBQueryCache::resetRequest();
         if ( method_exists( 'eZDBInterface', 'resetSQLProfile' ) )
             eZDBInterface::resetSQLProfile();
+        // The Content Security Policy nonce of the request before is not reused
+        if ( method_exists( 'expContentSecurityPolicy', 'reset' ) )
+            expContentSecurityPolicy::reset();
         // The audit too: what a previous request left is flushed, then its buffer, request id, open parent
         // events and cached actors are cleared (doc/bc/6.0/audit.md, "Buffering and flushing")
         if ( class_exists( 'expAudit' ) )
