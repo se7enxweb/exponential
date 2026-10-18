@@ -44,7 +44,7 @@
         "se7enxweb/exponential-legacy-installer": "*",
         "se7enxweb/ezautosave": "~6.0.12",
         "se7enxweb/ezdemo": "~6.0.12",
-        "se7enxweb/ezflow": "~6.1.9",
+        "se7enxweb/ezflow": "~6.1.10",
         "se7enxweb/ezoracle": "~2.3.7",
         "se7enxweb/ezwebin": "~6.0.22",
         "se7enxweb/sevenx_dse": "~1.1.11",
