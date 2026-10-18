@@ -1976,6 +1976,25 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-pick:hover { background-color: var(--a4-soft); }
 .a4-pick input { width: 18px; height: 18px; margin: 0; accent-color: var(--a4-accent-strong); cursor: pointer; }
 
+/* request W608: quick location buttons (expNodeQuickPick): labelled rows of small buttons or links to well-known places
+   (Websites, Media, the sites below them). The current place is filled (aria-pressed or aria-current on the button, or
+   .a4-btn-primary), the place the current one lies in is outlined (.is-within). Used by design:contentcheck/scope.tpl
+   (links) and the upload page's target location (buttons). Put .a4-toolbar on it for the framed look. */
+.a4-quickpick { display: flex; flex-direction: column; align-items: stretch; gap: var(--a4-space-2); margin: var(--a4-space-2) 0 0; }
+.a4-quickpick-label { flex: 0 0 auto; min-width: 9rem; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: 600; }
+.a4-quickpick .a4-btn:is([aria-pressed="true"], [aria-current="true"]) {
+  border-color: var(--a4-accent-strong);
+  background-color: var(--a4-accent-strong);
+  color: var(--a4-on-accent);
+}
+.a4-quickpick .a4-btn.is-within { border-color: var(--a4-accent); }
+@media (max-width: 600px) {
+  .a4-quickpick-label { flex-basis: 100%; }
+}
+@media (forced-colors: active) {
+  .a4-quickpick .a4-btn:is([aria-pressed="true"], [aria-current="true"]) { outline: 2px solid Highlight; outline-offset: 1px; }
+}
+
 /* ---- Small utilities that replaced style="" attributes in the shared admin templates ---------------------- */
 .a4-middle,
 .a4-flag { vertical-align: middle; }
