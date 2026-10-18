@@ -18,7 +18,7 @@ section as published at the end of <https://exponential.earth/partner/program> (
 
 ## How the contract is used
 
-"This contract must be signed and emailed to 7x via partners@exponential.earth" and is "Valid as long as requirements
+"This contract must be signed and emailed to 7x" (the address is on the program page) and is "Valid as long as requirements
 are met. 7x may terminate for violations" (program page). The parties are 7x and your company.
 
 ## Section by section
@@ -44,7 +44,7 @@ are met. 7x may terminate for violations" (program page). The parties are 7x and
 - [ ] Which version of the levels, prices and requirements is part of the contract? (The pages disagree in places;
       see [The points system](the-points-system.md).)
 - [ ] Which response times apply to our level, and in which hours and time zone?
-- [ ] How are commissions calculated, reported and paid (15% or 10% for cold leads)?
+- [ ] How are commissions calculated, reported and paid (the official terms: <https://exponential.earth/partner/benefits>)?
 - [ ] What exactly may we do with the logos at our level?
 - [ ] Which law governs the contract, besides the place for disputes?
 - [ ] How are personal data handled when leads are exchanged ([Protecting customer data](protecting-customer-data.md))?
