@@ -51518,6 +51518,38 @@ See the requirements page for more information.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>This site is already installed</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Reinstall this site?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>Start the setup wizard</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -71132,6 +71164,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Security (request classifier)</source>
         <translation>Security (request classifier)</translation>
+    </message>
+    <message>
+        <source>Content Security Policy reports</source>
+        <translation>Content Security Policy reports</translation>
     </message>
     <message>
         <source>Web server access log</source>

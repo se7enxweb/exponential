@@ -30,17 +30,17 @@ class expLogViewerConfig
             'FilePatterns' => array( '*.log', '*.log.[0-9]', '*.log.[0-9][0-9]', '*.log.[0-9].gz', '*.log.[0-9][0-9].gz', '*.log.gz' ),
             'ExcludePatterns' => array(),
             'KernelLogs' => array( 'error.log', 'warning.log', 'notice.log', 'debug.log', 'strict.log', 'deprecated.log', 'auth.log',
-                                   'cronjob*.log', 'storage.log', 'setup.log', 'mail.log', 'trashpurge.log', '404.log', 'security.log' ),
+                                   'cronjob*.log', 'storage.log', 'setup.log', 'mail.log', 'trashpurge.log', '404.log', 'security.log', 'csp.log' ),
             'DefaultFile' => 'var/log/error.log',
             'DefaultKey' => 'error',
             'LogList' => array( 'webserver-access', 'webserver-error' ),
             'LogPath' => array(),
             'LogLabel' => array( 'webserver-access' => 'Web server access log', 'webserver-error' => 'Web server error log',
-                                 '404' => 'Not found requests (404)', 'security' => 'Security (request classifier)',
+                                 '404' => 'Not found requests (404)', 'security' => 'Security (request classifier)', 'csp' => 'Content Security Policy reports',
                                  'velocity-watchdog' => 'Velocity watchdog' ),
             'LogGroup' => array(),
             'FileLevels' => array( 'error.log*;error', '*error*.log*;error', 'warning.log*;warning', 'strict.log*;warning',
-                                   'deprecated.log*;notice', 'notice.log*;notice', 'debug.log*;debug', '404.log*;notice', 'security.log*;warning' ),
+                                   'deprecated.log*;notice', 'notice.log*;notice', 'debug.log*;debug', '404.log*;notice', 'security.log*;warning', 'csp.log*;warning' ),
         ),
         'TailSettings' => array(
             'InitialBytes' => 65536, 'MaxBytesPerPoll' => 262144, 'PollInterval' => 1000, 'MaxPollInterval' => 15000,
@@ -65,7 +65,7 @@ class expLogViewerConfig
         'DigestSettings' => array(
             'Hours' => 24, 'MaxMessages' => 50, 'MaxBytesPerFile' => 8388608, 'Levels' => array( 'error', 'warning' ),
             'LogLevels' => array( '404' => 'error,warning,notice' ),
-            'GroupBy' => array( '404' => 'reason', 'security' => 'category-rule' ),
+            'GroupBy' => array( '404' => 'reason', 'security' => 'category-rule', 'csp' => 'directive-blocked' ),
         ),
     );
 

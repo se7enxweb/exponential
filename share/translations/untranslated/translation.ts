@@ -50411,6 +50411,38 @@ See the requirements page for more information.</source>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -70951,6 +70983,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Security (request classifier)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content Security Policy reports</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

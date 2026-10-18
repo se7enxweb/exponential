@@ -57451,6 +57451,38 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>Beim Zugriff über Hostnamen gilt die Konvention %site für die Site, %admin für die Administration und %editor für die Inhaltsbearbeitung.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>Diese Website ist bereits installiert</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>Der Einrichtungsassistent installiert Exponential auf einer neuen Website. Auf einer installierten Website läuft er nicht, und ihn zu öffnen ändert nichts: Die Website bleibt online.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Neu installiert wird mit dem Kickstarter (%file, dann php bin/php/kickstarter.php) oder mit einer frischen Installation.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Diese Website neu installieren?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>Diese Website ist bereits installiert. Der Einrichtungsassistent ist für installierte Websites eingeschaltet (AllowWizardOnInstalledSite), was nur für die Entwicklung gedacht ist.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Der Start des Assistenten versetzt die ganze Website in den Wartungsmodus: Jeder andere Besucher erhält eine Wartungsseite, bis der Assistent fertig ist oder 15 Minuten lang verlassen wurde.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>Einrichtungsassistenten starten</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -78076,6 +78108,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Security (request classifier)</source>
         <translation>Sicherheit (Anfrageklassifizierung)</translation>
+    </message>
+    <message>
+        <source>Content Security Policy reports</source>
+        <translation>Berichte der Content Security Policy</translation>
     </message>
     <message>
         <source>Web server access log</source>

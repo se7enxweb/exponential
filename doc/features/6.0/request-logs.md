@@ -252,6 +252,11 @@ MaxAgeDays[security]=365
 
 **Log health** (Setup > Log files > Health) counts both against the disk budget and shows their growth and limits.
 
+The reports of the Content Security Policy have a log of their own, `var/log/csp.log` (key `csp`, "Content Security
+Policy reports"), with the same rotation and a digest grouped by directive and blocked source
+(`GroupBy[csp]=directive-blocked`); a flood of reports is one `abuse/csp-report-flood` line in security.log a
+minute. See [Content Security Policy](content-security-policy.md), "Reports".
+
 With `NotFoundLogFile=notfound.log` the key is `notfound`: give it its settings under that key
 (`LogLabel[notfound]=...`, `KernelLogs[]=notfound.log`, `FileLevels[]=notfound.log*;notice`, `GroupBy[notfound]=reason`,
 `LogLevels[notfound]=error,warning,notice` and its `[RotationSettings]`).

@@ -71105,6 +71105,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Securitas (classificator petitionum)</translation>
     </message>
     <message>
+        <source>Content Security Policy reports</source>
+        <translation>Relationes Content Security Policy</translation>
+    </message>
+    <message>
         <source>Web server access log</source>
         <translation>Acta aditus servitri interretialis</translation>
     </message>

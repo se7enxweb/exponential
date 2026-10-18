@@ -28,4 +28,13 @@ class expOETinyMCE3Engine extends expOEEditorEngineBase
     {
         return 'The Online Editor on TinyMCE 3.5, the editor of every installation.';
     }
+
+    /**
+     * @return bool true: ezxmltext_ezoe.tpl starts TinyMCE 3 with an inline script, and tiny_mce.js and its dialogs
+     *              write onclick attributes and javascript: links themselves, so a nonce or a hash cannot cover it
+     */
+    public function needsInlineScripts()
+    {
+        return true;
+    }
 }

@@ -38,7 +38,8 @@ ReportURI=
     second policy after `SecurityHeaders[Content-Security-Policy]` (`frame-ancestors 'self'` by default); the browser
     applies both.
   - `auto` (the default): `report-only` on administration siteaccesses, those whose `[DesignSettings] SiteDesign`
-    begins with `admin` (admin, admin3, admin4, admin4l, adminui), `disabled` on all others.
+    begins with `admin` (admin, admin3, admin4, admin4l, adminui) or whose `AdditionalSiteDesignList[]` has such a
+    design (an editor siteaccess on admin4l), `disabled` on all others.
 - **Directives[]**: the policy, one directive per entry. Set an entry empty in an override to leave the directive out;
   an override that starts with `Directives[]` alone replaces the whole list. An entry whose value holds `;` or `,`, or
   whose name is not a directive name, is ignored, so a setting cannot split the header or add a directive of its own.
@@ -103,6 +104,68 @@ siteaccesses and none on the sites. Enforcing is a decision per siteaccess, made
 
 Sites (non-administration siteaccesses) get no policy with `auto`. Their designs and the rich text they render
 (`style=""` from content, embedded players) are not checked by the test: start them with `Mode=report-only`.
+
+## Reports
+
+The kernel collects the reports itself: the view **`csp/report`** takes what the browser sends and writes one line
+per violation to `var/log/csp.log`, which the log viewer lists as **Content Security Policy reports** (Setup > Log
+files, key `csp`). Point the policy at it with `ReportEndpoint=enabled` (the `report-uri` and the
+`Reporting-Endpoints` header then name the `csp/report` of the siteaccess), or with `ReportURI=/csp/report`.
+
+- **Both formats**: `application/csp-report` (the `report-uri` of Firefox and older browsers) and
+  `application/reports+json` (the Reporting API: `Reporting-Endpoints` and `report-to`, Chrome and Edge);
+  `application/json` is read as either. Reports of the Reporting API of another type (deprecation, intervention)
+  are skipped.
+- **Open to every visitor**: browsers send reports without signing in, also on an administration that asks
+  everyone to sign in. `site.ini [SiteAccessSettings] AnonymousAccessList[]` and `[RoleSettings] PolicyOmitList[]`
+  name `csp/report`. A signed-in browser may send its session cookie with a report: the form token check
+  (ezformtoken) leaves a POST to `csp/report` with one of these content types alone; a form of another site can send
+  none of them, and the view only writes a log line.
+- **Nothing comes back**: the answer is a status without a body: `204` for a report taken, `405` for another method
+  than POST, `415` for another content type, `413` above `MaxReportBytes`, `400` for a body that is no report and
+  `429` (with `Retry-After: 60`) above a rate limit. It is never cached (`Cache-Control: no-store`).
+- **Rate limited**: per client (`ReportsPerMinute`, counted by the salted address hash of the request classifier,
+  so no address is stored) and for all clients together (`ReportsPerMinuteTotal`). The first refused report of a
+  client in a minute is written to `security.log` as `abuse/csp-report-flood` by the
+  [request classifier](request-logs.md), so a flood is one line a minute there, not one per request.
+- **Bounded and masked**: the address is masked as in the request logs (`203.0.x.x`, `site.ini
+  [RequestLogSettings] MaskIP`); the query of every URI goes through the masks of the log viewer (secrets, e-mail
+  and IP addresses), a user name or password in a URI and the fragment are taken off, a `data:` or `blob:` URI is
+  written as its scheme only, the sample is cut to 40 characters, and no value can add a line or a field. At most
+  `MaxViolationsPerReport` lines are written from one report.
+
+```ini
+[ContentSecurityPolicy]
+# per client and minute; above it 429 and one abuse/csp-report-flood line in security.log
+ReportsPerMinute=60
+# all clients together, per minute
+ReportsPerMinuteTotal=600
+# the biggest report body taken, in bytes
+MaxReportBytes=65536
+# the most violations written from one report
+MaxViolationsPerReport=20
+# the log file, in the log directory
+LogFile=csp.log
+```
+
+A line of `csp.log`, after the date and the masked address:
+
+```
+[ Oct 17 2026 12:00:00 ] [203.0.x.x] csp/script-src-elem blocked=inline disposition=enforce document=https://example.com/admin/content/view/full/2 siteaccess=admin line=12 column=5 source=https://example.com/admin/content/view/full/2 status=200 sample="alert(1)" ua=3f2a9c1b "Mozilla/5.0 (X11; Linux x86_64)"
+```
+
+- `csp/<directive>`: the directive that was violated (`script-src-elem`, `style-src-attr`, `img-src` ...).
+- `blocked=`: what it blocked: a keyword (`inline`, `eval`, `wasm-eval`, `data`, `blob`, `self`,
+  `trusted-types-policy`) or the address.
+- `disposition=`: `enforce` (the browser blocked it) or `report` (a report-only policy: nothing was blocked).
+- `document=`, `source=`, `line=`, `column=`: the page, and the file and position of the code, where the browser
+  names them. `sample=`: the first characters of the inline code or style.
+
+**In the log viewer** the lines are read field by field (source `csp/<directive>`, request the page). The **error
+digest** groups `csp.log` by directive and what it blocked, an address cut to its origin
+(`[DigestSettings] GroupBy[csp]=directive-blocked`): `csp/script-src-elem blocked=inline 42`,
+`csp/img-src blocked=https://maps.example.com 3`. It is rotated like the request logs: 5 archives, compressed, 10 MB,
+pruned after 30 days (`logviewer.ini [RotationSettings]`, key `csp`).
 
 ## The directives shipped
 
@@ -269,5 +332,89 @@ an ad server of ezflow) need their hosts in `script-src`.
   submenus) then no longer open. Add to `menuArray`, never assign it.
 - **Plugins and inline PDF**: see `object-src` above.
 
-A nonce for inline scripts is not offered on purpose: the admin pagelayout, its menus and the tree sit in cache-blocks,
-and a cached nonce would no longer match the header of the next request.
+## Enforcing: nonce, more sources, a stricter companion, rollback
+
+These settings of `site.ini [ContentSecurityPolicy]` make an enforced policy practical. None of them changes the
+policy of a new installation, except that the report-only policy of the administration carries a nonce.
+
+```ini
+[ContentSecurityPolicy]
+# sources added to a directive of Directives[], a list
+AdditionalSources[]
+# with Mode=enforce: a stricter Content-Security-Policy-Report-Only beside it
+ReportOnlyDirectives[]
+# designs that stay report-only under Mode=enforce
+ReportOnlyDesigns[]
+ReportOnlyDesigns[]=admin
+ReportOnlyDesigns[]=admin2
+ReportOnlyDesigns[]=admin_classic
+Nonce=enabled
+NonceDirectives[]
+NonceDirectives[]=script-src
+ReportURI=
+ReportEndpoint=disabled
+```
+
+- **AdditionalSources[]** `=<directive> <sources>`: adds sources to a directive that `Directives[]` already has, for
+  example `AdditionalSources[]=script-src https://maps.googleapis.com`. Because it is a list, an extension's
+  `site.ini.append.php` and the siteaccess can each add their hosts without restating `'self'` or each other's
+  hosts. An entry for a directive that `Directives[]` does not have is ignored: it would otherwise start a directive
+  that replaces the `default-src` fallback. Duplicates are dropped.
+- **ReportOnlyDirectives[]**: only with `Mode=enforce`. A second header, `Content-Security-Policy-Report-Only`, carries
+  `Directives[]` with these entries in their place (and the same additional sources, nonce and report address).
+  The browser enforces the first one and only reports what the second would block. Use it to measure the way to a
+  stricter policy, for example `style-src 'self'` while the enforced policy still allows `'unsafe-inline'` styles:
+
+  ```ini
+  Mode=enforce
+  Directives[style-src]='self' 'unsafe-inline'
+  ReportOnlyDirectives[style-src]='self'
+  ```
+- **ReportOnlyDesigns[]**: a request whose design (`[DesignSettings] SiteDesign`, after the UI switch has applied the
+  user's choice) is listed gets the report-only policy even when the siteaccess enforces. The classic administration
+  (`admin`, and `admin2`, which renders its pagelayout) has inline scripts in many templates; a user who picks it with
+  the UI switch keeps a working page.
+- **Nonce**, **NonceDirectives[]**: with `Nonce=enabled`, every request gets a nonce (16 random bytes, base64url)
+  that is added as `'nonce-...'` to each directive of `NonceDirectives[]`. A template prints it with the operator
+  `csp_nonce()`:
+
+  ```html
+  <script nonce="{csp_nonce()}">...</script>
+  ```
+
+  The operator returns an empty string when the policy carries no nonce. The nonce is not added to a directive that
+  allows `'unsafe-inline'`, because browsers ignore `'unsafe-inline'` next to a nonce. That keeps a siteaccess that
+  still needs `'unsafe-inline'` (TinyMCE 3) working. Velocity's persistent workers get a new nonce per request (the
+  kernel resets it at the start of each one). **Never print `csp_nonce()` inside a `{cache-block}`, a view-cached
+  template or a static cache**: the cached copy would carry the nonce of another request and the browser would block
+  the script. Prefer, in this order: a file loaded with `ezscript` (a script in the head runs before the first paint,
+  so it does not flash), a hash of a static inline script (`AdditionalSources[]=script-src 'sha256-...'`), then the
+  nonce, for uncached output only. The kernel's HTTP cache stores a page with its headers, so a cached page and its
+  nonce stay together.
+- **ReportURI**, **ReportEndpoint**: with `ReportEndpoint=enabled` and `ReportURI` empty, the reports go to the
+  `csp/report` view of the siteaccess, which logs one line per violation to `var/log/csp.log` (log viewer key `csp`).
+  An absolute report address is also announced as the reporting endpoint `csp-endpoint`, with the header
+  `Reporting-Endpoints` and the directive `report-to`. Chrome sends to that one; Firefox to `report-uri`.
+- `allowsInlineScripts()`: `expContentSecurityPolicy::allowsInlineScripts()` tells code (an editor that chooses its
+  engine, for example) whether inline scripts and handler attributes run under the current siteaccess's policy.
+
+**Rollback.** Set `Mode=report-only` in the siteaccess, clear the INI cache (`php bin/php/ezcache.php
+--clear-tag=ini`), reload PHP-FPM and restart Velocity. Nothing else changes: the same policy is sent as
+`Content-Security-Policy-Report-Only` and the stricter companion is no longer sent.
+
+The shipped default stays `Mode=auto`, report-only on the administration. Enforcing is a decision per installation,
+taken after the audit above.
+
+**Inline guards and editors.** No administration pagelayout needs a nonce or a hash: admin4 and admin4l run their
+pre-paint code from `a4_head.js`, admin3 from `admin3_head.js`, both loaded in the head. The online editor does not
+offer TinyMCE 3 where the policy is enforced without `'unsafe-inline'` in `script-src` (TinyMCE 3 writes handler
+attributes); it falls back to TinyMCE 8. A siteaccess that must keep TinyMCE 3 sets
+`Directives[script-src]='self' 'unsafe-inline'` and `Directives[style-src]='self' 'unsafe-inline'` for itself. The
+shipped policy also names `worker-src 'self'`, so `AdditionalSources[]=worker-src blob:` can allow a blob worker
+where a feature needs one.
+
+**A view with a policy of its own.** The kernel sends its headers before the view runs. A view that sends its own
+`Content-Security-Policy` with PHP's `header()` (the database tool AdminNeo of sevenx_dse, with its own nonce) replaces
+the kernel's enforced policy for that response; the stricter report-only companion stays. That is intended: the view's
+policy fits its own inline scripts. A view that wants the kernel's policy as well adds its header with
+`header( ..., false )`.

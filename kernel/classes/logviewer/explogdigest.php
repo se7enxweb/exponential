@@ -76,7 +76,7 @@ class expLogDigest
     }
 
     /** The ways a digest groups a log's entries ([DigestSettings] GroupBy[<key>]) */
-    const GROUPINGS = array( 'message', 'category-rule', 'reason', 'reason-kind', 'uri' );
+    const GROUPINGS = array( 'message', 'category-rule', 'reason', 'reason-kind', 'uri', 'directive-blocked' );
 
     /**
      * The levels a digest lists for one log: [DigestSettings] LogLevels[<key>] (a comma list), else levels().
@@ -118,6 +118,8 @@ class expLogDigest
      *   reason         "reason=module:no-such-page", "reason=node:#" (404.log: ids, numbers and paths set aside)
      *   reason-kind    "reason=module:"
      *   uri            "GET /blog/#" (the method and the path, without the query; numbers set aside)
+     *   directive-blocked "csp/script-src blocked=inline", "csp/img-src blocked=https://maps.example.com" (csp.log: the
+     *                  directive and what it blocked, a URI cut to its origin)
      *
      * @param string $mode one of GROUPINGS
      * @param string $masked the masked headline of the entry
@@ -144,6 +146,15 @@ class expLogDigest
                     if ( strlen( $detail ) > 120 )
                         $detail = substr( $detail, 0, 120 );
                     return 'reason=' . $m[1] . ':' . $detail;
+                }
+                break;
+            case 'directive-blocked':
+                if ( preg_match( '~^(csp/[a-z][a-z0-9\-]*) blocked=(\S+)~', $masked, $m ) )
+                {
+                    $blocked = $m[2];
+                    if ( preg_match( '~^([a-z][a-z0-9+.\-]*://[^/?#]+)~i', $blocked, $o ) )
+                        $blocked = $o[1];
+                    return $m[1] . ' blocked=' . substr( $blocked, 0, 120 );
                 }
                 break;
             case 'uri':

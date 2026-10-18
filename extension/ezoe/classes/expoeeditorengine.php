@@ -9,6 +9,9 @@
  *
  * Optional: version() and description() (both returning a string) are shown on the page ezoe/engine when an
  * engine has them; expOEEditorEngineBase answers both from [Engine_<identifier>] Version and Description.
+ * Optional: needsInlineScripts() (bool): true for an engine that cannot run without inline scripts or event handler
+ * attributes (TinyMCE 3). Where the Content Security Policy is enforced without 'unsafe-inline' in script-src, such an
+ * engine is not offered and editors get the configured or first other engine (expOEEditor::blockedByPolicy()).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
