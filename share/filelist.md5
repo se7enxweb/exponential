@@ -610,7 +610,7 @@ fda9299f029c731efb3f2a7d8cae2fe8  design/admin/templates/page_head_script.tpl
 9b35e3bf7adb0350c55c63dadb305f35  design/admin/templates/page_head_style.tpl
 dbcd6a019f44c7b1bcf92f13c30f641f  design/admin/templates/page_head_style_inline.tpl
 ecb3c141d6f8940074a7432d3bb63bac  design/admin/templates/page_header.tpl
-2fbd947226762a9f26b46f0f28d34ea4  design/admin/templates/page_leftmenu.tpl
+658df4da89d3c912a6bc9a3335604445  design/admin/templates/page_leftmenu.tpl
 169f988a44a2a3bfa2f9dfc53663645c  design/admin/templates/page_login_copyright.tpl
 1bf2256ccd6061ee7f354a26834937c1  design/admin/templates/page_menuheadenabled.tpl
 9f4f8bdbbdfbfd8c6d873c03eded7ef6  design/admin/templates/page_menuheadgray.tpl
@@ -619,7 +619,7 @@ ecb3c141d6f8940074a7432d3bb63bac  design/admin/templates/page_header.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 def1e69baea2cb9d93a8d1af2bf5f692  design/admin/templates/page_toppath.tpl
-2a9016a3646eca940e4e8e68ae84a879  design/admin/templates/pagelayout.tpl
+2d4f55ed3969d34e6941a18e00754546  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 6f4962eafc7286ab584e17db8f6c7b00  design/admin/templates/parts/content/menu.tpl
 d7600cfd918e52be3b4f25b90a040ba7  design/admin/templates/parts/ini_menu.tpl
