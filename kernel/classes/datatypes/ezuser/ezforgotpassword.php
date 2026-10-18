@@ -61,6 +61,86 @@ class eZForgotPassword extends eZPersistentObject
                                                 true );
     }
 
+    /** How long a forgot-password link works when site.ini says nothing: one hour */
+    const DEFAULT_LIFETIME = 3600;
+
+    /**
+     * How long a forgot-password key works after it was made: site.ini [UserSettings] ForgotPasswordKeyLifetime, in
+     * seconds. 0 switches the expiry off (the behavior before 6.0.15: a key works until it is used); a missing or
+     * negative value is the default of one hour.
+     *
+     * @param eZINI|null $ini site.ini (tests pass their own)
+     * @return int seconds, 0 for never
+     */
+    public static function lifetime( $ini = null )
+    {
+        if ( !$ini instanceof eZINI )
+            $ini = eZINI::instance();
+        if ( !$ini->hasVariable( 'UserSettings', 'ForgotPasswordKeyLifetime' ) )
+            return self::DEFAULT_LIFETIME;
+        $value = trim( (string)$ini->variable( 'UserSettings', 'ForgotPasswordKeyLifetime' ) );
+        if ( $value === '' || !is_numeric( $value ) || (int)$value < 0 )
+            return self::DEFAULT_LIFETIME;
+        return (int)$value;
+    }
+
+    /**
+     * @param int $time when the key was made (the row's time)
+     * @param int $lifetime seconds, 0 for never
+     * @param int $now
+     * @return bool the key no longer works
+     */
+    public static function isExpiredAt( $time, $lifetime, $now )
+    {
+        $lifetime = (int)$lifetime;
+        if ( $lifetime <= 0 )
+            return false;
+        return (int)$now >= (int)$time + $lifetime;
+    }
+
+    /**
+     * @param int|null $now default: time()
+     * @param int|null $lifetime default: lifetime()
+     * @return bool this key no longer works
+     */
+    public function isExpired( $now = null, $lifetime = null )
+    {
+        return self::isExpiredAt( (int)$this->attribute( 'time' ), $lifetime === null ? self::lifetime() : (int)$lifetime,
+                                  $now === null ? time() : (int)$now );
+    }
+
+    /**
+     * @param int|null $lifetime default: lifetime()
+     * @return int|null the Unix time until which this key works, null when keys do not expire
+     */
+    public function expiresAt( $lifetime = null )
+    {
+        $lifetime = $lifetime === null ? self::lifetime() : (int)$lifetime;
+        return $lifetime > 0 ? (int)$this->attribute( 'time' ) + $lifetime : null;
+    }
+
+    /**
+     * Removes the keys that no longer work. Called by user/forgotpassword on every request (one DELETE on a small
+     * table), so no cronjob is needed; nothing happens when keys do not expire.
+     *
+     * @param int|null $lifetime default: lifetime()
+     * @param int|null $now default: time()
+     * @return bool something was asked to be removed
+     */
+    public static function removeExpired( $lifetime = null, $now = null )
+    {
+        $lifetime = $lifetime === null ? self::lifetime() : (int)$lifetime;
+        if ( $lifetime <= 0 )
+            return false;
+        $limit = ( $now === null ? time() : (int)$now ) - $lifetime;
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'mongo' )
+            $db->deleteWhere( 'ezforgot_password', array( 'time' => array( '$lte' => $limit ) ) );
+        else
+            eZPersistentObject::removeObject( self::definition(), array( 'time' => array( '<=', $limit ) ) );
+        return true;
+    }
+
     /*!
      \static
      Removes all password reminders in the database.

@@ -33,17 +33,34 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'wrong_email', false );
         $tpl->setVariable( 'link', false );
         $tpl->setVariable( 'wrong_key', false );
+        $tpl->setVariable( 'key_expired', false );
 
         $http = \eZHTTPTool::instance();
         $module = $Params['Module'];
         // No key in the address (the plain form) arrives as null: treat it as an empty key
         $hashKey = (string)( $scope['Params']["HashKey"] ?? "" );
         $ini = \eZINI::instance();
+        // how long a key works ([UserSettings] ForgotPasswordKeyLifetime, 0: until it is used)
+        $keyLifetime = \eZForgotPassword::lifetime( $ini );
+        $tpl->setVariable( 'key_lifetime', $keyLifetime );
+        $tpl->setVariable( 'key_lifetime_minutes', $keyLifetime > 0 ? (int)ceil( $keyLifetime / 60 ) : 0 );
 
         if ( strlen( $hashKey ) == 32 )
         {
             $forgotPasswdObj = \eZForgotPassword::fetchByKey( $hashKey );
-            if ( $forgotPasswdObj )
+            if ( $forgotPasswdObj && $forgotPasswdObj->isExpired( null, $keyLifetime ) )
+            {
+                // A key that is too old: it is removed and refused, with its own message (designs that do not know
+                // key_expired show their wrong_key text)
+                $forgotPasswdObj->remove();
+                $forgotPasswdObj = null;
+                $tpl->setVariable( 'wrong_key', true );
+                $tpl->setVariable( 'key_expired', true );
+                if ( class_exists( 'expAuditHook' ) )
+                    \expAuditHook::emit( 'access.user.password.reset.failed', array( 'object' => array( 'type' => 'user' ),
+                        'result' => 'refused', 'reason' => 'expired' ) );
+            }
+            else if ( $forgotPasswdObj )
             {
                 $userID = $forgotPasswdObj->attribute( 'user_id' );
                 $user   = \eZUser::fetch( $userID  );
@@ -125,6 +142,16 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
             if ( class_exists( 'expAuditHook' ) )
                 \expAuditHook::emit( 'access.user.password.reset.failed', array( 'object' => array( 'type' => 'user' ),
                     'result' => 'refused', 'reason' => 'unknown_key' ) );
+        }
+
+        // the keys nobody used in time go away (no cronjob needed); a failure here never stops the page
+        try
+        {
+            \eZForgotPassword::removeExpired( $keyLifetime );
+        }
+        catch ( \Throwable $e )
+        {
+            \eZDebug::writeError( 'Could not remove expired forgot-password keys: ' . $e->getMessage(), __METHOD__ );
         }
 
         if ( $module->isCurrentAction( "Generate" ) )

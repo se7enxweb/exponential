@@ -11,7 +11,8 @@
  * NO MAIL LEAVES THE SERVER. The mail transport is forced to "file" (into var/tmp) in the process's own ini, never
  * in a settings file; setUp() refuses to run otherwise. The only address is on the reserved .invalid domain.
  *
- *  PWD-01  The shipped defaults are today's rules: the length only, from [UserSettings] MinPasswordLength
+ *  PWD-01  The shipped defaults: the length ([UserSettings] MinPasswordLength) and the well-known password check;
+ *          with WeakPasswordCheck=disabled the length only, as before
  *  PWD-02  Each optional rule refuses what it should and accepts the rest (also outside ASCII)
  *  PWD-03  not_login and not_current read the user
  *  PWD-04  The client config: rules, fields, translated strings, the login only with ForbidLogin
@@ -248,11 +249,20 @@ class expPasswordPolicyTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'enabled', $file['EndOtherSessions'] );
         $this->assertSame( 'enabled', $file['ChangeNotificationMail'] );
 
+        // since 6.0.15 the well-known password check is on as well ([UserSettings] WeakPasswordCheck)
         $policy = new expPasswordPolicy();
         $rules = $policy->rules();
-        $this->assertCount( 1, $rules );
-        $this->assertSame( 'length', $rules[0]['id'] );
+        $this->assertSame( array( 'length', 'not_common' ), array_column( $rules, 'id' ) );
         $this->assertSame( 10, $rules[0]['min'] );
+        $this->assertSame( array( 'length' ), $policy->validate( 'kfjwqpzmb' ) );
+        $this->assertSame( array(), $policy->validate( 'kfjwqpzmbx' ), 'ten lowercase letters pass' );
+        $this->assertSame( array( 'not_common' ), $policy->validate( 'aaaaaaaaaa' ), 'one letter repeated is refused' );
+        $this->assertSame( array( 'not_common' ), $policy->validate( 'abcdefghij' ), 'a run of the alphabet is refused' );
+
+        // switched off: the rules of before
+        $this->setIni( 'UserSettings', 'WeakPasswordCheck', 'disabled' );
+        $policy = new expPasswordPolicy();
+        $this->assertSame( array( 'length' ), array_column( $policy->rules(), 'id' ) );
         $this->assertSame( array( 'length' ), $policy->validate( 'abcdefghi' ) );
         $this->assertSame( array(), $policy->validate( 'abcdefghij' ), 'ten lowercase letters pass, as before' );
         $this->assertSame( array(), $policy->validate( 'aaaaaaaaaa' ) );
@@ -271,6 +281,8 @@ class expPasswordPolicyTest extends PHPUnit\Framework\TestCase
 
     public function testOptionalRules()
     {
+        // the composition rules on their own (the well-known check is expWeakPasswordListTest's)
+        $this->setIni( 'UserSettings', 'WeakPasswordCheck', 'disabled' );
         $this->setIni( 'UserSettings', 'MinPasswordLength', '4' );
         foreach ( array( 'RequireLowercase', 'RequireUppercase', 'RequireDigit', 'RequireSymbol' ) as $v )
             $this->setIni( 'PasswordSettings', $v, 'enabled' );
@@ -313,7 +325,8 @@ class expPasswordPolicyTest extends PHPUnit\Framework\TestCase
         $policy = new expPasswordPolicy();
         $config = $policy->clientConfig( $this->user() );
         $this->assertSame( 10, $config['minLength'] );
-        $this->assertSame( array( array( 'id' => 'length', 'min' => 10, 'text' => 'At least 10 characters' ) ), $config['rules'] );
+        $this->assertSame( array( array( 'id' => 'length', 'min' => 10, 'text' => 'At least 10 characters' ),
+                                 array( 'id' => 'not_common', 'min' => 0, 'text' => 'Is not a well-known or common password' ) ), $config['rules'] );
         $this->assertSame( array( 'current' => 'password-old', 'new' => 'password-new', 'confirm' => 'password-confirm' ), $config['fields'] );
         foreach ( array( 'show', 'hide', 'showPassword', 'hidePassword', 'match', 'noMatch', 'strength', 'strength0', 'strength4', 'generated' ) as $k )
             $this->assertNotSame( '', (string)$config['i18n'][$k], $k );
@@ -507,11 +520,15 @@ class expPasswordPolicyTest extends PHPUnit\Framework\TestCase
         list( $state, $error ) = $this->validateAccount( 'short' );
         $this->assertSame( eZInputValidator::STATE_INVALID, $state );
         $this->assertSame( 'The password must be at least 10 characters long.', $error, 'the sentence of before' );
-        list( $state ) = $this->validateAccount( 'abcdefghij' );
+        list( $state ) = $this->validateAccount( 'kfjwqpzmbx' );
         $this->assertSame( eZInputValidator::STATE_ACCEPTED, $state );
-        list( $state, $error ) = $this->validateAccount( 'abcdefghij', 'abcdefghik' );
+        list( $state, $error ) = $this->validateAccount( 'kfjwqpzmbx', 'kfjwqpzmby' );
         $this->assertSame( eZInputValidator::STATE_INVALID, $state );
         $this->assertSame( 'The passwords do not match.', $error );
+        // a well-known word with an ending and a year: long enough, and refused (built here, not written out)
+        list( $state, $error ) = $this->validateAccount( 'Administrator' . '2026' );
+        $this->assertSame( eZInputValidator::STATE_INVALID, $state );
+        $this->assertSame( 'The password is well-known or too common. Choose another one.', $error );
     }
 
     public function testAccountFormChecksTheOptionalRules()
@@ -544,6 +561,16 @@ class expPasswordPolicyTest extends PHPUnit\Framework\TestCase
         $this->assertNotSame( 0, $rc, $text );
         $this->assertStringContainsString( 'Target password does not validate.', $text );
         $this->assertStringContainsString( 'characters long', $text );
+        $this->assertSame( $before, $this->user()->attribute( 'password_hash' ), 'nothing changed' );
+
+        // a well-known password that is long enough
+        $out = array();
+        $cmd = escapeshellarg( PHP_BINARY ) . ' bin/php/resetuserpassword.php --allow-root-user -u ' . escapeshellarg( self::LOGIN ) . ' -p '
+             . escapeshellarg( 'Welcome' . 'Welcome' . '1' ) . ' 2>&1';
+        exec( 'cd ' . escapeshellarg( self::$installation ) . ' && ' . $cmd, $out, $rc );
+        $text = implode( "\n", $out );
+        $this->assertNotSame( 0, $rc, $text );
+        $this->assertStringContainsString( 'well-known', $text );
         $this->assertSame( $before, $this->user()->attribute( 'password_hash' ), 'nothing changed' );
     }
 }
