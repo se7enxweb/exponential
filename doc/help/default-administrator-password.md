@@ -4,7 +4,7 @@ audience: admin, developer
 category: administration
 order: 31
 summary: Which administrator login and password a fresh installation starts with, for each way of installing (setup wizard, kickstarter, console install, the shipped database seed, packages), and why it must be changed at once.
-keywords: default password, admin password, administrator, publish, publishing, initial-admin-password, setup wizard, kickstarter, kickstart.ini, exp:install, install, first login, well-known password, cleandata, db_data.dba
+keywords: default password, admin password, administrator, publish, initial-admin-password, setup wizard, kickstarter, kickstart.ini, exp:install, install, first login, well-known password, cleandata, db_data.dba
 featured: true
 context: setup/init
 type: help
@@ -42,7 +42,7 @@ first name, last name, e-mail address, and the password typed twice. The login i
 - There is **no default password**. The step refuses an empty password, two passwords that differ, and one shorter
   than `[UserSettings] MinPasswordLength` (10 as shipped).
 - It does **not** check for well-known words beyond the length: `publish` (7 characters) is refused because it is too
-  short, but a 10-character word such as `publishing` or `exponential` is accepted. Choose a long, random password;
+  short, but a common word of 10 or more characters, such as `password12`, is accepted. Choose a long, random password;
   a password manager can generate one.
 - If you chose to **keep the existing data** of a database, the step is skipped and the administrator account stays
   as that database has it. A database created from the shipped seed then still has `publish`: change it at once.
@@ -111,9 +111,9 @@ Check and change it at once:
 ./console exp:resetuserpassword --allow-root-user -u admin -g -l 24
 ```
 
-Nothing in Exponential 6 ships or sets **`publishing`**. It is merely a password some people choose because it passes
-the 10-character rule, and it is as easy to guess as `publish`. Do not use either on a site that can be reached from
-outside, not even for a test.
+No installer of Exponential 6 sets any other fixed password. A common word that merely passes the
+10-character rule is just as easy to guess: do not use one on a site that can be reached from outside, not even for a
+test.
 
 ## Site packages and demo content
 
