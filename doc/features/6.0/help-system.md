@@ -70,6 +70,7 @@ Security Policy.
 | `[PdfSettings] Enabled` | `true` | `false` hides "Download as PDF" and makes `exphelp/pdf` a 404 |
 | `[PdfSettings] PageSize` | `A4` | `A4` or `Letter` |
 | `[PdfSettings] FontFiles[]` and the others | DejaVu Sans, Droid Sans Fallback | TrueType fonts of the PDF, first readable file of each list (see below) |
+| `[TitleSettings] Titles[]`, `Summaries[]`, `TitleRules[]` | about 50 inherited pages | a clearer title and summary for a page whose own is unclear (see below) |
 
 ### Front matter
 
@@ -85,6 +86,29 @@ order: 20
 ```
 
 Without it, `[AudienceSettings] PathRules[]` and `[CategorySettings] PathRules[]` decide.
+
+
+### Titles of unclear pages
+
+Plain text files have no front matter, and many of the inherited ones begin with a line that makes a poor title: a
+source code comment (`doc/standards/header.txt` began with `//`), a bare version (`5.90`), the word `CHANGELOG`, or
+the same title as another page. Such files keep their names, because other files refer to them; the help gives them a
+clearer title in `[TitleSettings]` instead:
+
+```ini
+[TitleSettings]
+Titles[doc/standards/header.txt]=Source file header template (inherited, 4.1)
+Summaries[doc/standards/header.txt]=The copyright and license header that every PHP file of the inherited 4.x code base started with ...
+TitleRules[]=doc/changelogs/*/CHANGELOG-desc-*;Release {fileversion} summary: {title}
+TitleRules[]=doc/features/*/event.*;{title} ({dirversion})
+```
+
+`Titles[]` and `Summaries[]` are keyed by the path relative to the installation root. A `TitleRules[]` entry is
+`<pattern>;<template>` (first match wins, only for pages without a `Titles[]` entry); the template may use `{title}`
+(the page's own title), `{name}` (its file name), `{fileversion}` (the version at the end of the file name) and
+`{dirversion}` (the nearest version directory). A front matter `title:` or `summary:` always wins. To find unclear
+titles, list every page with `./console exp:help index --list` and look for file names, `README`, versions and
+duplicates.
 
 ## Help from extensions
 

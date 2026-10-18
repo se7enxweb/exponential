@@ -3710,7 +3710,7 @@ efbf2cf79f254018df640a05a54f55d9  doc/features/6.0/extensions/xrowmetadata.md
 3961785a8af896cb1fddd1e9be1eb080  doc/features/6.0/file-consistency-check.md
 dfa9c308bb3efde44b47784f72b7e244  doc/features/6.0/form-expired-page.md
 1d25daac4da9c47f9f764dd33b7b4653  doc/features/6.0/help-content.md
-d7b3605558be1e31aa375627709f8347  doc/features/6.0/help-system.md
+223f38fc2fd4589933c89d4166974fe1  doc/features/6.0/help-system.md
 8de8fa7cc57c60a79a0dbb7e6698bfac  doc/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/features/6.0/icon-themes-in-extensions.md
 32d4de8b46c395678441a270357e7b08  doc/features/6.0/install-in-one-command.md
@@ -5506,11 +5506,11 @@ b37160bc17524e98f28e2d14ed957a2f  kernel/classes/help/content/exphelpcontentsche
 ccb98eef4c622a21501d839063227698  kernel/classes/help/content/exphelpcontentvalidator.php
 9a98927e99674e2355bd255881d0bda1  kernel/classes/help/exphelp.php
 8ffca0fdaac65df717d7eaf676c75902  kernel/classes/help/exphelpallowlist.php
-3dbf137371ac711427fa2f3222a1ea2d  kernel/classes/help/exphelpaudience.php
+e4a2236c4ec51b1b0a369b5608191de2  kernel/classes/help/exphelpaudience.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 705e12f46e612abaecfd6cd91913b884  kernel/classes/help/exphelpcontextregistry.php
-9cf67f7e61b74576a3a5655b49dcc505  kernel/classes/help/exphelpdocumentindex.php
+d24f9182522e074f44d8602a2f5d184a  kernel/classes/help/exphelpdocumentindex.php
 d737f4b8cee16a8ecd9af63aa5d73613  kernel/classes/help/exphelpfrontmatter.php
 2b4f170525630a0acb5287c535570570  kernel/classes/help/exphelpfunctioncollection.php
 17d029ee9edac44ce5ec6bfdb6436178  kernel/classes/help/exphelphighlighter.php
@@ -6998,7 +6998,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 a111b660f8e29a00cb059785bda7df42  settings/debugbar.ini
 4b416234270f760995d688bae2746170  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-4063c9943639fc1a1ba88eade8e35f48  settings/exphelp.ini
+08b71b213f02787f7b8a537b2eceaf7a  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -7941,7 +7941,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-f903451891afccfd2d50804f2c9115fe  tests/test-map.json
+94b4ce5038f7ceeb47c47d7e7ce2f02a  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -8551,6 +8551,7 @@ ead998cc3d4822efd40bb9da2d72d733  tests/tests/kernel/classes/help/expHelpLinksTe
 ee73cc3a2f8f76b722448da9b9642a81  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
 14d6d667ebe2d3935fe84e54ec3ead1e  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
 a558003ce1675245c192838a17c92ed0  tests/tests/kernel/classes/help/expHelpNavigationTest.php
+b015cc94ed316b93aee9989aca280db7  tests/tests/kernel/classes/help/expHelpPageTitlesTest.php
 b21f6a4b2fd7c4c6679e6f498f67fdfa  tests/tests/kernel/classes/help/expHelpPdfTest.php
 c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 16ad77bb9df8fdd4d56c37fed9c2e897  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
