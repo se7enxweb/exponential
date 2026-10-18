@@ -138,10 +138,12 @@ class expLogManager implements expLogManagerInterface
     /**
      * The logs that may be managed, with their archives, growth and limits.
      *
-     * @return array key => key, id, path, name, group, size, mtime, archives [{id, name, rotation, size, gz, mtime}],
-     *               archive_bytes, growth (bytes an hour since the last rotation, null when not known), limits
-     *               {max_size, keep, compress, max_age_days, source{<limit>: {file, section, var}}}, writable, owner, owner_group
-     *               (group is the log viewer's group: kernel, site, extensions)
+     * @return array key => key, id, path, name, label, group, size, mtime, lines (about), archives [{id, name, rotation,
+     *               size, gz, mtime}], archive_bytes, growth (bytes an hour since the last rotation, null when not known),
+     *               limits {max_size, keep, compress, max_age_days, source{<limit>: {file, section, var}}}, writable, owner,
+     *               owner_group, managed (true: every log listed here may be managed)
+     *               (group is the log viewer's group: kernel, site, extensions). The key is always a string, also for a
+     *               key of digits only (404 of var/log/404.log), which PHP turns into an integer as the array key.
      */
     public function logs()
     {
@@ -154,10 +156,10 @@ class expLogManager implements expLogManagerInterface
                     continue;
                 $file = $this->locator->resolve( $info['id'] );
                 if ( $file !== null )
-                    $out[$file['key']] = $this->describe( $file );
+                    $out[(string)$file['key']] = $this->describe( $file );
             }
         }
-        ksort( $out );
+        ksort( $out, SORT_STRING );
         return $out;
     }
 
@@ -194,11 +196,14 @@ class expLogManager implements expLogManagerInterface
         }
         $limits['source'] = $sources;
         $stat = @stat( $file['path'] );
-        return array( 'key' => $file['key'], 'id' => $file['id'], 'path' => $file['path'], 'name' => $file['name'],
-                      'group' => $file['group'], 'size' => (int)$file['size'], 'mtime' => (int)$file['mtime'],
+        $size = (int)$file['size'];
+        return array( 'key' => (string)$file['key'], 'id' => $file['id'], 'path' => $file['path'], 'name' => $file['name'],
+                      'label' => isset( $file['label'] ) && (string)$file['label'] !== '' ? (string)$file['label'] : (string)$file['name'],
+                      'group' => $file['group'], 'size' => $size, 'mtime' => (int)$file['mtime'],
+                      'lines' => (int)round( $size / max( 1.0, expLogFileStats::averageLineLength( $file['path'], $size ) ) ),
                       'archives' => $archives, 'archive_bytes' => $bytes, 'growth' => $growth, 'limits' => $limits,
                       'writable' => self::writableByOthers( $stat ), 'owner' => self::userName( $stat ? $stat['uid'] : null ),
-                      'owner_group' => self::groupName( $stat ? $stat['gid'] : null ) );
+                      'owner_group' => self::groupName( $stat ? $stat['gid'] : null ), 'managed' => self::manageable( $file ) );
     }
 
     /**
@@ -257,7 +262,7 @@ class expLogManager implements expLogManagerInterface
                 $unknown[] = $name;
                 continue;
             }
-            $found[$file['key']] = $file;
+            $found[(string)$file['key']] = $file;
         }
         return array( 'found' => $found, 'unknown' => $unknown );
     }
@@ -295,6 +300,8 @@ class expLogManager implements expLogManagerInterface
         $steps = array();
         foreach ( $selection['found'] as $key => $file )
         {
+            // a key of digits only (404) is an integer as an array key: the steps name it as the string it is
+            $key = (string)$key;
             $limits = $this->limits( $key );
             $path = $file['path'];
             $size = (int)$file['size'];

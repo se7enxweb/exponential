@@ -19,10 +19,11 @@
 interface expLogManagerInterface
 {
     /**
-     * @return array key => key, id, path, name, group (kernel, site, extensions), size, mtime,
+     * @return array key => key, id, path, name, label, group (kernel, site, extensions), size, mtime, lines (about),
      *               archives [{id, name, rotation, size, gz, mtime}], archive_bytes, growth (bytes an hour or null),
      *               limits {max_size, keep, compress, max_age_days, source{<limit>: {file, section, var}}}, writable,
-     *               owner, owner_group
+     *               owner, owner_group, managed (false: the web server's, shown read only). key is a string, also for
+     *               a key of digits only (404), which is an integer as the array key: compare keys as strings.
      */
     public function logs();
 

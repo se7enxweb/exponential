@@ -178,9 +178,10 @@ class expLogHealth
             {
                 try
                 {
-                    $effective = $manager->effectiveSettings( $key );
+                    // (string): a key of digits only (404) is an integer as the array key
+                    $effective = $manager->effectiveSettings( (string)$key );
                     if ( is_array( $effective ) && $effective )
-                        $limits = $effective + $limits;
+                        $limits = self::flatLimits( $effective ) + $limits;
                 }
                 catch ( Exception $e )
                 {
@@ -198,6 +199,35 @@ class expLogHealth
             }
             $out[$key] = $list;
         }
+        return $out;
+    }
+
+    /**
+     * The effective settings as limits: name => value plus source{name => {file, section, var}}. Takes both shapes:
+     * expLogManager's (name => {value, source}) and the flat one of expLogManagerFallback::limits(). Pure.
+     *
+     * @param array $effective
+     * @return array
+     */
+    public static function flatLimits( array $effective )
+    {
+        $out = array();
+        $source = isset( $effective['source'] ) && is_array( $effective['source'] ) ? $effective['source'] : array();
+        foreach ( $effective as $name => $entry )
+        {
+            if ( $name === 'source' )
+                continue;
+            if ( is_array( $entry ) && array_key_exists( 'value', $entry ) )
+            {
+                $out[$name] = $entry['value'];
+                if ( isset( $entry['source'] ) && is_array( $entry['source'] ) )
+                    $source[$name] = $entry['source'];
+            }
+            else
+                $out[$name] = $entry;
+        }
+        if ( $source )
+            $out['source'] = $source;
         return $out;
     }
 }
