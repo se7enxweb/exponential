@@ -327,7 +327,7 @@ ff4131909f10bebbceb2afa3d873ae3c  design/admin/override/templates/template_look_
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-3b102f7ccab562607c9af9744d827088  design/admin/stylesheets/components.css
+199741fc016aef1f726bae0dc4a188bd  design/admin/stylesheets/components.css
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
@@ -1042,7 +1042,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 34e99fd2e2e267149aaa63217eb3803e  design/admin4/stylesheets/admin4.css
-3b102f7ccab562607c9af9744d827088  design/admin4/stylesheets/components.css
+199741fc016aef1f726bae0dc4a188bd  design/admin4/stylesheets/components.css
 d810c1bfa553da326702439802441b11  design/admin4/stylesheets/content.css
 399bdd34c0eb57e51468449154ad9911  design/admin4/stylesheets/core.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
@@ -5416,10 +5416,10 @@ b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 495304c89d810ad638727a31210c7ef2  kernel/classes/help/exphelpdocumentindex.php
 cde091ff977a26a609f39108326c5020  kernel/classes/help/exphelpfrontmatter.php
 99520b445ecac9996f6de9f6721a83a4  kernel/classes/help/exphelpfunctioncollection.php
-77d5132ce45e3ede09d0140edaae0954  kernel/classes/help/exphelphighlighter.php
+17d029ee9edac44ce5ec6bfdb6436178  kernel/classes/help/exphelphighlighter.php
 805e475381946954ba100e1d59d77268  kernel/classes/help/exphelpissuereport.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
-a4551b9b071dc4b1f31aa64925139e61  kernel/classes/help/exphelpmarkdownrenderer.php
+beb74ae4c50906226bf0cfd83fddb2b2  kernel/classes/help/exphelpmarkdownrenderer.php
 f2f4f7222b423446d90fefa0a0ab25d6  kernel/classes/help/exphelpsearch.php
 63e8afbb944019671f8b369642eb12d7  kernel/classes/ini/actions/expiniaction.php
 85b05708b2165d0dc398973d33ba0a0e  kernel/classes/ini/actions/expiniactionactions.php
