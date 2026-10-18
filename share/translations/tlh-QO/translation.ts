@@ -71835,5 +71835,9 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Your account</source>
         <translation>De&apos;lIj</translation>
     </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>jomvam lo&apos;bogh Hoch ghotvaD nav &apos;ej De&apos; paq, mI&apos;Daj De&apos; ghItlh vo&apos; ghItlhlu&apos;.</translation>
+    </message>
 </context>
 </TS>

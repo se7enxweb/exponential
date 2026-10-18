@@ -78840,5 +78840,9 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Your account</source>
         <translation>Ihr Konto</translation>
     </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Anleitungen und Referenz für alle, die mit dieser Installation arbeiten, erstellt aus der Dokumentation ihrer eigenen Version.</translation>
+    </message>
 </context>
 </TS>

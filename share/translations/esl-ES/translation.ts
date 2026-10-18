@@ -73284,5 +73284,9 @@ Gracias por tu feedback</translation>
         <source>Your account</source>
         <translation>Su cuenta</translation>
     </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Guías y referencia para todos los que trabajan con esta instalación, a partir de la documentación de su propia versión.</translation>
+    </message>
 </context>
 </TS>

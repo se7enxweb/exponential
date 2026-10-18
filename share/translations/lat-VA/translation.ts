@@ -71835,5 +71835,9 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Your account</source>
         <translation>Ratio tua</translation>
     </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Duces et index rerum omnibus qui cum hac institutione laborant, ex documentis versionis eius propriae scripti.</translation>
+    </message>
 </context>
 </TS>
