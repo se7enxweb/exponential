@@ -14343,6 +14343,62 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/parts/my/menu</name>
     <message>
+        <source>Overview</source>
+        <translation>סקירה</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>העבודה שלך</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>פעילות וביקורת</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>דף הבית שלך: העבודה שלך, המשימות שלך ומה השתנה.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>פריטים הממתינים לאישורך, ופריטים שלך הממתינים לאחרים.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>הפריטים שלך הממתינים לפרסום.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>הטיוטות שהתחלת ועדיין לא פרסמת.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>התוכן שסימנת כדי למצוא אותו שוב.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>דף הבית של Exponential Intelligence: הכלים שלו והשימוש בהם.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>שרשורים שמשנים תוכן בעזרת בינה מלאכותית, בשליטתך.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>תוכן שנכתב בשלבים: ההרצות ונקודות הבדיקה שלהן.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>בקשות הבינה המלאכותית, האסימונים שלהן והעלות שלהן.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>כיצד פועלות תכונות הבינה המלאכותית וכיצד להשתמש בהן.</translation>
+    </message>
+    <message>
         <source>My notification settings</source>
         <translation>הגדרות ההתראות שלי</translation>
     </message>
@@ -67232,6 +67288,10 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>design/admin/parts/audit/menu</name>
     <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>האירועים של Exponential Intelligence במסוף הביקורת.</translation>
+    </message>
+    <message>
         <source>Health, activity, security and alerts at a glance.</source>
         <translation>תקינות, פעילות, אבטחה והתראות במבט אחד.</translation>
     </message>
@@ -67266,6 +67326,10 @@ You will need to change the class of the node by using the swap functionality.</
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>תמונות ללא טקסט חלופי, והצעות עבורו.</translation>
+    </message>
     <message>
         <source>The look of the site.</source>
         <translation>המראה של האתר.</translation>

@@ -27,6 +27,7 @@
     },
     "*": {
         "Exponential": "product name",
+        "Exponential Intelligence": "product name (extension expai), kept in every language",
         "Exponential Velocity": "product name",
         "Velocity": "product name",
         "AdminUI": "product name",

@@ -14341,6 +14341,62 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/parts/my/menu</name>
     <message>
+        <source>Overview</source>
+        <translation>نظرة عامة</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>عملك</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>النشاط والتدقيق</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>صفحتك الرئيسية: عملك ومهامك وما تغيّر.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>العناصر التي تنتظر موافقتك، وعناصرك التي تنتظر الآخرين.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>عناصرك التي تنتظر النشر.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>المسودات التي بدأتها ولم تنشرها بعد.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>المحتوى الذي وضعت عليه إشارة لتجده مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>الصفحة الرئيسية لـ Exponential Intelligence: أدواتها واستخدامها.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>سلاسل تغيّر المحتوى بالذكاء الاصطناعي، تحت سيطرتك.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>محتوى يُكتب على خطوات: عمليات التشغيل ونقاط التحقق الخاصة بها.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>طلبات الذكاء الاصطناعي ورموزها وتكلفتها.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>كيف تعمل ميزات الذكاء الاصطناعي وكيف تستخدمها.</translation>
+    </message>
+    <message>
         <source>My notification settings</source>
         <translation>إعدادات إشعاراتي</translation>
     </message>
@@ -67230,6 +67286,10 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>design/admin/parts/audit/menu</name>
     <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>أحداث Exponential Intelligence في وحدة تحكم التدقيق.</translation>
+    </message>
+    <message>
         <source>Health, activity, security and alerts at a glance.</source>
         <translation>الصحة والنشاط والأمان والتنبيهات في لمحة.</translation>
     </message>
@@ -67264,6 +67324,10 @@ You will need to change the class of the node by using the swap functionality.</
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>الصور التي ليس لها نص بديل، واقتراحات له.</translation>
+    </message>
     <message>
         <source>The look of the site.</source>
         <translation>مظهر الموقع.</translation>

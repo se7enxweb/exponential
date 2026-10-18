@@ -15816,6 +15816,62 @@ Nota: los paquetes no serán desinstalados.</translation>
 <context>
     <name>design/admin/parts/my/menu</name>
     <message>
+        <source>Overview</source>
+        <translation>Vista general</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Tu trabajo</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Actividad y auditoría</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Tu página de inicio: tu trabajo, tus tareas y lo que cambió.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Elementos que esperan tu aprobación, y los tuyos que esperan a otros.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Tus elementos que esperan su publicación.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Los borradores que empezaste y aún no publicas.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>El contenido que marcaste para volver a encontrarlo.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>La página de inicio de Exponential Intelligence: sus herramientas y su uso.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Hilos que cambian el contenido con IA, bajo tu control.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Contenido escrito por pasos: las ejecuciones y sus puntos de control.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>Las solicitudes de IA, sus tokens y su costo.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Cómo funcionan las funciones de IA y cómo usarlas.</translation>
+    </message>
+    <message>
         <source>My notification settings</source>
         <translation>Mis preferencias de notificación</translation>
     </message>
@@ -70943,6 +70999,10 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
 <context>
     <name>design/admin/parts/audit/menu</name>
     <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Los eventos de Exponential Intelligence en la consola de auditoría.</translation>
+    </message>
+    <message>
         <source>Health, activity, security and alerts at a glance.</source>
         <translation>Estado, actividad, seguridad y alertas de un vistazo.</translation>
     </message>
@@ -70977,6 +71037,10 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Imágenes sin texto alternativo y sugerencias para él.</translation>
+    </message>
     <message>
         <source>The look of the site.</source>
         <translation>El aspecto del sitio.</translation>

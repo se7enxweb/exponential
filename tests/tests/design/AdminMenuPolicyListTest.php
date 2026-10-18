@@ -24,11 +24,14 @@ class AdminMenuPolicyListTest extends PHPUnit\Framework\TestCase
 
     /**
      * Returns the policy functions of a kernel module (the keys of its FunctionList), or null when there is no such
-     * module
+     * module in the kernel's repositories (settings/module.ini ModuleRepositories[]: kernel, kernel/private/modules); a
+     * kernel module of either is found
      */
     public static function moduleFunctions( $module )
     {
         $file = self::root() . "/kernel/$module/module.php";
+        if ( !is_file( $file ) )
+            $file = self::root() . "/kernel/private/modules/$module/module.php";
         if ( !preg_match( '/^\w+$/', $module ) || !is_file( $file ) )
             return null;
         // read, not included: some modules build their limitation values from the database
