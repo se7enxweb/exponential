@@ -1678,7 +1678,8 @@
     ],
     "kernel/classes/help/exphelpaudience.php": [
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
-      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
+      "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php"
     ],
     "kernel/classes/help/exphelpsearch.php": [
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
@@ -1726,15 +1727,24 @@
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "design/admin*/templates/exphelp/*": [
-      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php",
+      "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php"
+    ],
+    "doc/help/leadership/*": [
+      "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php"
+    ],
+    "doc/help/business/*": [
+      "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php"
     ],
     "design/admin*/javascript/exphelp.js": [
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "design/admin*/stylesheets/modules/help.css": [
-      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php",
+      "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php"
     ],
     "settings/exphelp.ini": [
+      "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php",
       "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",

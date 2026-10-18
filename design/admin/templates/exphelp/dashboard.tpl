@@ -1,5 +1,5 @@
 {* exphelp/dashboard: the help start page (doc/features/6.0/help-system.md). From top to bottom: the search hero
-   (instant search through exphelp.js, a plain GET form to exphelp/search without it), the four audiences, featured
+   (instant search through exphelp.js, a plain GET form to exphelp/search without it), the audiences (six, each with its pages; the project-manager and sales-marketing cards link their start page), featured
    pages next to the recently changed pages, the sections as quick links, how to report an error, and the
    keyboard shortcuts. Styles: stylesheets/modules/help.css (.a4-help-*); no inline CSS or script.
 
@@ -9,12 +9,16 @@
    new_issue_url), help_search_url, help_report_url; optional help_i18n_json (client strings) and help_stats
    (pages, categories). Every part is left out when its list is empty. *}
 {def $help_ctx = 'kernel/exphelp'
-     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user' )
+     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing' )
      $help_audience_meta = hash(
         'editor',    hash( 'icon', 'pencil-square', 'name', 'Editors'|i18n( 'kernel/exphelp' ),        'text', 'Create, edit, translate and publish content: media, layouts, search and the editor.'|i18n( 'kernel/exphelp' ) ),
         'admin',     hash( 'icon', 'gear',          'name', 'Administrators'|i18n( 'kernel/exphelp' ), 'text', 'Run the installation: sites, users and roles, caches, logs, security and the system\'s health.'|i18n( 'kernel/exphelp' ) ),
         'developer', hash( 'icon', 'code-square',   'name', 'Developers'|i18n( 'kernel/exphelp' ),     'text', 'Build on it: extensions, templates, settings, the APIs, the command line and upgrades.'|i18n( 'kernel/exphelp' ) ),
-        'user',      hash( 'icon', 'person',        'name', 'End users'|i18n( 'kernel/exphelp' ),      'text', 'Use the site: your account, signing in, two-factor authentication and finding things.'|i18n( 'kernel/exphelp' ) ) )
+        'user',      hash( 'icon', 'person',        'name', 'End users'|i18n( 'kernel/exphelp' ),      'text', 'Use the site: your account, signing in, two-factor authentication and finding things.'|i18n( 'kernel/exphelp' ) ),
+        'project-manager', hash( 'icon', 'diagram-3', 'name', 'Project managers'|i18n( 'kernel/exphelp' ), 'text', 'Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.'|i18n( 'kernel/exphelp' ),
+                           'start', 'help/leadership/project-managers-start-here.md' ),
+        'sales-marketing', hash( 'icon', 'graph-up-arrow', 'name', 'Sales & marketing'|i18n( 'kernel/exphelp' ), 'text', 'Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.'|i18n( 'kernel/exphelp' ),
+                           'start', 'help/business/sales-and-marketing-start-here.md' ) )
      $help_search_action = cond( is_set( $help_search_url ), $help_search_url, '/exphelp/search' )
      $help_report = cond( is_set( $help_report_url ), $help_report_url, '/exphelp/report' )
      $help_i18n = cond( is_set( $help_i18n_json ), $help_i18n_json, '' )
@@ -54,7 +58,7 @@
         <ul class="a4-help-stats">
             <li><strong>{$help_stats.pages|wash}</strong> {'pages'|i18n( $help_ctx )}</li>
             {if is_set( $help_stats.categories )}<li><strong>{$help_stats.categories|wash}</strong> {'sections'|i18n( $help_ctx )}</li>{/if}
-            <li><strong>4</strong> {'audiences'|i18n( $help_ctx )}</li>
+            <li><strong>{$help_audience_ids|count}</strong> {'audiences'|i18n( $help_ctx )}</li>
         </ul>
         {/if}
     </section>
@@ -78,6 +82,9 @@
                 </div>
                 <h3><a href={concat( '/exphelp/search/(audience)/', $aid )|ezurl}>{cond( and( $help_audience, is_set( $help_audience.name ) ), $help_audience.name, $help_audience_meta[$aid].name )|wash}</a></h3>
                 <p>{$help_audience_meta[$aid].text|wash}</p>
+                {if is_set( $help_audience_meta[$aid].start )}
+                <a class="a4-help-audience-start" href={concat( '/exphelp/viewer/', $help_audience_meta[$aid].start )|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span>{'Start here'|i18n( $help_ctx )}<span class="a4-sr-only">: {$help_audience_meta[$aid].name|wash}</span></a>
+                {/if}
                 {set $help_pages = cond( and( is_set( $help_audience_pages ), is_set( $help_audience_pages[$aid] ) ), $help_audience_pages[$aid], array() )}
                 {if $help_pages|count|gt( 0 )}
                 <ul aria-label="{'Popular pages for %audience'|i18n( $help_ctx,, hash( '%audience', $help_audience_meta[$aid].name ) )|wash}">

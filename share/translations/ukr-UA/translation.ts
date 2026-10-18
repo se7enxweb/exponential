@@ -72464,6 +72464,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Versions %from to %to</source>
         <translation>Версії від %from до %to</translation>
     </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Менеджери проєктів</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Продажі та маркетинг</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Плануйте й ведіть проєкти: етапи та ролі, вибір хостингу, обсяг робіт, контрольні списки, критерії якості, випуски та ризики.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Представляйте й просувайте Exponential: позиціювання, ключові можливості, демонстрації, заперечення, ліцензування, бренд і спільнота.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Почніть тут</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Керування проєктами</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Продажі та маркетинг</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Планування, ведення й розвиток проєктів на Exponential: етапи, ролі, контрольні списки, ризики та співпраця зі спільнотою.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Представлення й просування Exponential: позиціювання, демонстрації, заперечення, ліцензування, бренд і зростання спільноти.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

@@ -12,10 +12,11 @@
    next, from, to, total, pages of number, url, current), help_category (id, name, icon, count, intro) or false,
    help_audiences, help_categories, help_types (id => name, count), help_i18n_json. *}
 {def $help_ctx = 'kernel/exphelp'
-     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user' )
+     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing' )
      $help_audience_names = hash( 'editor', 'Editors'|i18n( 'kernel/exphelp' ), 'admin', 'Administrators'|i18n( 'kernel/exphelp' ),
-                                  'developer', 'Developers'|i18n( 'kernel/exphelp' ), 'user', 'End users'|i18n( 'kernel/exphelp' ) )
-     $help_audience_icons = hash( 'editor', 'pencil-square', 'admin', 'gear', 'developer', 'code-square', 'user', 'person' )
+                                  'developer', 'Developers'|i18n( 'kernel/exphelp' ), 'user', 'End users'|i18n( 'kernel/exphelp' ),
+                                  'project-manager', 'Project managers'|i18n( 'kernel/exphelp' ), 'sales-marketing', 'Sales & marketing'|i18n( 'kernel/exphelp' ) )
+     $help_audience_icons = hash( 'editor', 'pencil-square', 'admin', 'gear', 'developer', 'code-square', 'user', 'person', 'project-manager', 'diagram-3', 'sales-marketing', 'graph-up-arrow' )
      $help_q = cond( and( is_set( $help_search ), is_set( $help_search.query ) ), $help_search.query, '' )
      $help_browse = and( is_set( $help_search.mode ), $help_search.mode|eq( 'browse' ) )
      $help_f = cond( is_set( $help_filters ), $help_filters, hash() )
