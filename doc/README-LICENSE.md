@@ -53,7 +53,7 @@ The help shows a different notice on these pages. They are:
   (`doc/features/2.x` to `doc/features/5.x`, `doc/bc/4.x` and `doc/bc/5.x`, `doc/specifications/3.x`,
   `doc/specifications/4.x` and `doc/specifications/trunk`, `doc/changelogs/2.9` to `doc/changelogs/5.x`, and
   `doc/changelogs/README.md`);
-- `doc/shop/`, `doc/branch-overview`, `doc/release-overview`, `doc/standards/header.txt`, and the example
+- `doc/shop/`, `doc/branch-overview.md`, `doc/release-overview`, `doc/standards/header.txt`, and the example
   configuration files `doc/examples/ezpublish.conf` and `doc/examples/htaccess`.
 
 The list is the setting `[License] OtherLicensePathRules[]` in `settings/exphelp.ini`, which the help reads to

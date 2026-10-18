@@ -70,7 +70,7 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
 
     public static function files()
     {
-        return array( 'release-overview' => array( 'release-overview' ), 'branch-overview' => array( 'branch-overview' ) );
+        return array( 'release-overview' => array( 'release-overview' ), 'branch-overview' => array( 'branch-overview.md' ) );
     }
 
     /** RR-01 RR-02 RR-03 RR-04 */
@@ -138,7 +138,7 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/^\d+ releases from 2002-11-01 to 2026-\d\d-\d\d /', $release['summary'] );
         $this->assertStringContainsString( 'historical', $release['summary'] );
 
-        $branch = self::renderer()->describe( self::source( 'branch-overview' ) );
+        $branch = self::renderer()->describe( self::source( 'branch-overview.md' ) );
         $this->assertSame( 'Branch history (3.x, from the original SVN)', $branch['title'] );
         $this->assertStringStartsWith( '10 branches from 2003-04-09 to 2006-02-20', $branch['summary'] );
 
@@ -155,13 +155,13 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         // 2.9-3 "AKA 3.0-beta2" belongs to 3.0
         $this->assertMatchesRegularExpression( '#id="30".*?2\.9-3.*?id="31"#s', $rendered['html'] );
 
-        $branches = self::renderer()->render( self::source( 'branch-overview' ) );
+        $branches = self::renderer()->render( self::source( 'branch-overview.md' ) );
         $this->assertSame( array( 'Series 3.x', 'Various development branches' ),
                            array_map( function( $h ) { return $h['text']; }, $branches['toc'] ) );
         $this->assertStringContainsString( 'This an overview of the various branches.', $branches['html'] );
 
         // through the Markdown renderer, as the viewer calls it
-        $viewer = ( new expHelpMarkdownRenderer( array( 'translate' => function( $t ) { return $t; } ) ) )->renderPlainText( self::source( 'branch-overview' ), 'branch-overview' );
+        $viewer = ( new expHelpMarkdownRenderer( array( 'translate' => function( $t ) { return $t; } ) ) )->renderPlainText( self::source( 'branch-overview.md' ), 'branch-overview.md' );
         $this->assertStringContainsString( 'a4-help-records', $viewer['html'] );
         $this->assertSame( $branch['title'], $viewer['title'] );
     }
@@ -216,7 +216,7 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
     {
         $described = self::renderer()->describe( self::source( 'release-overview' ) );
         $this->assertSame( '3', $described['version'] );
-        $this->assertSame( '3', self::renderer()->describe( self::source( 'branch-overview' ) )['version'] );
+        $this->assertSame( '3', self::renderer()->describe( self::source( 'branch-overview.md' ) )['version'] );
 
         $text = "# Release notes\n\nRelease 4.2 of the revision history.\n";
         $documents = array(

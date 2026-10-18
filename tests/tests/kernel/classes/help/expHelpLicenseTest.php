@@ -168,7 +168,7 @@ class expHelpLicenseTest extends PHPUnit\Framework\TestCase
                          'changelogs/6.0/6.0.15.md', 'glossary.md', 'LICENSE-GFDL-1.3.txt' ) as $id )
             $this->assertFalse( expHelpLicense::isOtherLicense( $id ), $id );
         foreach ( array( 'features/3.8/foo.txt', 'features/4.4/extension_xml.txt', 'bc/5.4/changes.txt', 'changelogs/2.9/CHANGELOG-2.9-7',
-                         'specifications/trunk/x.txt', 'shop/index.html', 'branch-overview', 'release-overview',
+                         'specifications/trunk/x.txt', 'shop/index.html', 'branch-overview.md', 'release-overview',
                          'standards/header.txt', 'changelogs/README.md', 'doc/features/3.9/x.txt' ) as $id )
             $this->assertTrue( expHelpLicense::isOtherLicense( $id ), $id );
 
