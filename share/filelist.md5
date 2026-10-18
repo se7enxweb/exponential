@@ -6758,7 +6758,7 @@ f8e92677e7dfa02f5c12c3ba4f51ade5  kernel/setup/designextension.php
 ed6865ef97c920d6eb14d15012b89e2f  kernel/setup/expcontentextensionwizard.php
 b20c13a0e5edf0bdd480ed6e22163175  kernel/setup/expcronjobrunner.php
 85793a606ddbd4ee54b0270da49553d4  kernel/setup/expdatatypewizard.php
-881799255dbd1feb026ddb939906d0df  kernel/setup/expdesignextensionwizard.php
+3bd7503fac50342ed7be185ce7d3cd6a  kernel/setup/expdesignextensionwizard.php
 8fd7ffb384e671b10a78a5b3a9dde18d  kernel/setup/expextensionwizard.php
 f2c50c5f8c0e207075044631515494e3  kernel/setup/exphandlerwizard.php
 11cd35571a5011c7ea5ec0f99593199b  kernel/setup/expkerneloverridewizard.php
@@ -8161,7 +8161,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-0d23dcadeb88e5209a7e9facf714b41e  tests/test-map.json
+9b503356e80cd2b5814f5ee813726660  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -8852,6 +8852,7 @@ b56a3b9639c786b875f98c6f42c8a035  tests/tests/kernel/classes/permissions/fixture
 e9b9542174ecd2cca586e407edaba656  tests/tests/kernel/classes/processtools/ExpPreloadStartUrlsTest.php
 57076f462adaed80c14c9883a0779e27  tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php
 8f7aaecdccb5cb38c3f738034ac781fe  tests/tests/kernel/classes/radwizards/expContentExtensionWizardTest.php
+3dae9daceaa4e3ed5bf4f0c42ce7dc37  tests/tests/kernel/classes/radwizards/expDesignExtensionWizardTest.php
 786026da4135d9ca5173810226bbbd69  tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php
 94cef15579368cffdb3346797016694f  tests/tests/kernel/classes/radwizards/expModuleExtensionWizardTest.php
 90077aa03acd6d1efc2f870f94e20c8a  tests/tests/kernel/classes/radwizards/expModuleWizardTest.php

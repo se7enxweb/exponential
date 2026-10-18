@@ -2360,6 +2360,10 @@
     "kernel/setup/expcronjobrunner.php": [
       "tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php"
     ],
+    "kernel/setup/expdesignextensionwizard.php": [
+      "tests/tests/kernel/classes/radwizards/expDesignExtensionWizardTest.php",
+      "tests/tests/kernel/classes/radwizards/expRadWizardsGeneratedFilesTest.php"
+    ],
     "kernel/setup/expextensionwizard.php": [
       "tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php"
     ],
