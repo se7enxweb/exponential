@@ -1,5 +1,12 @@
 {def $liclass='unselected '
-     $item_mega=''}
+     $item_mega=''
+     $item_icon=''}
+    {* menu.ini [Topmenu_<tab>] Icon: drawn before the name when design.ini [AdminDesignSettings] IconList[] knows it *}
+    {if and( is_set( $menu_item.icon ), $menu_item.icon|ne( '' ), ezini_hasvariable( 'AdminDesignSettings', 'IconList', 'design.ini' ) )}
+        {if ezini( 'AdminDesignSettings', 'IconList', 'design.ini' )|contains( $menu_item.icon )}
+            {set $item_icon=$menu_item.icon}
+        {/if}
+    {/if}
     {if eq( $navigationpart_identifier, $menu_item.navigationpart_identifier ) }
         {set $liclass='selected '}
     {/if}
@@ -11,9 +18,9 @@
     {/if}
     <li{if $item_mega} class="a4-mega-item"{/if}>
         {if and( $menu_item.enabled, or(is_unset( $menu_item.access ), $menu_item.access ) )}
-            <a href={$menu_item.url|ezurl} class="{$liclass}{$menu_item.position} {$menu_item.navigationpart_identifier}" title="{$menu_item.tooltip}"{if eq( $liclass, 'selected ' )} aria-current="page"{/if}>{$menu_item.name|wash}</a>
+            <a href={$menu_item.url|ezurl} class="{$liclass}{$menu_item.position} {$menu_item.navigationpart_identifier}" title="{$menu_item.tooltip}"{if eq( $liclass, 'selected ' )} aria-current="page"{/if}>{if $item_icon}<span class="a4-icon a4-bi-{$item_icon|wash}" aria-hidden="true"></span>{/if}{$menu_item.name|wash}</a>
         {else}
-            <a href='#' class="disabled" title="{$menu_item.tooltip}" aria-disabled="true" tabindex="-1">{$menu_item.name|wash}</a>
+            <a href='#' class="disabled" title="{$menu_item.tooltip}" aria-disabled="true" tabindex="-1">{if $item_icon}<span class="a4-icon a4-bi-{$item_icon|wash}" aria-hidden="true"></span>{/if}{$menu_item.name|wash}</a>
         {/if}
         {if $item_mega}
             {* The mega menu (prototype; doc/features/6.0/admin4-design.md, "Mega menu"): the WAI-ARIA disclosure
@@ -38,4 +45,4 @@
             </div>
         {/if}
     </li>
-{undef $liclass $item_mega}
+{undef $liclass $item_mega $item_icon}

@@ -230,6 +230,42 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * The tabs of the header's main menu show an icon before their name: menu.ini [Topmenu_<tab>] Icon, read by the
+     * topmenu operator, drawn by page_topmenuitem.tpl only when design.ini [AdminDesignSettings] IconList[] has the
+     * name. Every Icon in the kernel's and the extensions' menu.ini is such a name, with its .a4-bi-<name> class.
+     */
+    public function testEveryTopMenuTabShowsAKnownIcon()
+    {
+        $root = self::root();
+        preg_match_all( '/^IconList\[\]=(\S+)\s*$/m', AdminFiles::read( "$root/settings/design.ini" ), $m );
+        $known = $m[1];
+        $css = AdminFiles::read( "$root/design/admin4/stylesheets/components.css" );
+        // the extensions' tabs where there are any (a bare kernel has none)
+        $files = array_merge( array( "$root/settings/menu.ini" ), (array)glob( "$root/extension/*/settings/menu.ini.append.php" ) );
+        $seen = array();
+        foreach ( $files as $file )
+        {
+            if ( !preg_match_all( '/^\[Topmenu_(\w+)\]\s*\n((?:(?!^\[).*\n?)*)/m', file_get_contents( $file ), $blocks, PREG_SET_ORDER ) )
+                continue;
+            foreach ( $blocks as $block )
+            {
+                if ( !preg_match( '/^Icon=(.*)$/m', $block[2], $icon ) )
+                    continue;
+                $name = trim( $icon[1] );
+                $seen[$block[1]] = $name;
+                $this->assertContains( $name, $known, basename( dirname( $file, 2 ) ) . " [Topmenu_{$block[1]}] Icon=$name: not in IconList[]" );
+                $this->assertStringContainsString( ".a4-bi-$name {", $css, "[Topmenu_{$block[1]}] Icon=$name: no class" );
+            }
+        }
+        foreach ( array( 'content', 'media', 'users', 'shop', 'design', 'setup', 'audit', 'dashboard' ) as $tab )
+            $this->assertArrayHasKey( $tab, $seen, "the kernel's tab $tab has an icon" );
+        $this->assertStringContainsString( "\$menuItem['icon'] = \$ini->hasVariable( 'Topmenu_' . \$tabID , 'Icon' )", AdminFiles::read( "$root/kernel/common/eztopmenuoperator.php" ) );
+        $item = AdminFiles::read( "$root/design/admin4/templates/page_topmenuitem.tpl" );
+        $this->assertStringContainsString( "ezini( 'AdminDesignSettings', 'IconList', 'design.ini' )|contains( \$menu_item.icon )", $item, 'only icons of IconList[]' );
+        $this->assertSame( 2, substr_count( $item, '{if $item_icon}<span class="a4-icon a4-bi-{$item_icon|wash}" aria-hidden="true"></span>{/if}{$menu_item.name|wash}</a>' ), 'the icon stands before the name, in the link and in a disabled tab' );
+    }
+
     /** The site links of admin4 and admin4l, by template, with the markup of their icon */
     const SITE_LINKS = array(
         'design/admin4/templates/parts/a4_header_site.tpl' => '<span class="a4-icon a4-bi-globe2" aria-hidden="true"></span>',

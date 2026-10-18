@@ -77,25 +77,25 @@
         </div>
         <nav class="a4-dash-actions" aria-label="{'Quick actions'|i18n( 'design/admin/dashboard' )|wash}">
             {if $can.content}
-            <a class="a4-dash-action a4-primary" href={concat( 'content/view/full/', $root_node )|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#9776;</span>{'Content structure'|i18n( 'design/admin/dashboard' )}</a>
+            <a class="a4-dash-action a4-primary" href={concat( 'content/view/full/', $root_node )|ezurl}><span class="a4-icon a4-bi-diagram-3 a4-dash-ico" aria-hidden="true"></span>{'Content structure'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
             {if $can.media}
-            <a class="a4-dash-action" href={concat( 'content/view/full/', $media_node )|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#9635;</span>{'Media library'|i18n( 'design/admin/dashboard' )}</a>
+            <a class="a4-dash-action" href={concat( 'content/view/full/', $media_node )|ezurl}><span class="a4-icon a4-bi-images a4-dash-ico" aria-hidden="true"></span>{'Media library'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
             {if $can.upload}
-            <a class="a4-dash-action" href={concat( 'ezmultiupload/upload/', $upload_node )|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#8679;</span>{'Upload files'|i18n( 'design/admin/dashboard' )}</a>
+            <a class="a4-dash-action" href={concat( 'ezmultiupload/upload/', $upload_node )|ezurl}><span class="a4-icon a4-bi-upload a4-dash-ico" aria-hidden="true"></span>{'Upload files'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
             {if $can.users}
-            <a class="a4-dash-action" href={concat( 'content/view/full/', $users_node )|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#9787;</span>{'Users'|i18n( 'design/admin/dashboard' )}</a>
+            <a class="a4-dash-action" href={concat( 'content/view/full/', $users_node )|ezurl}><span class="a4-icon a4-bi-people a4-dash-ico" aria-hidden="true"></span>{'Users'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
             {if $can.tags}
-            <a class="a4-dash-action" href={'tags/dashboard'|ezurl}><span class="a4-dash-ico" aria-hidden="true">#</span>{'Tags'|i18n( 'design/admin/dashboard' )}</a>
+            <a class="a4-dash-action" href={'tags/dashboard'|ezurl}><span class="a4-icon a4-bi-tags a4-dash-ico" aria-hidden="true"></span>{'Tags'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
             {if $can.layouts}
-            <a class="a4-dash-action" href={'explayouts_ui/dashboard'|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#9638;</span>{'Layouts'|i18n( 'design/admin/dashboard' )}</a>
+            <a class="a4-dash-action" href={'explayouts_ui/dashboard'|ezurl}><span class="a4-icon a4-bi-layout-sidebar-inset a4-dash-ico" aria-hidden="true"></span>{'Layouts'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
             {if $can.cache}
-            <a class="a4-dash-action" href={'setup/cache'|ezurl}><span class="a4-dash-ico" aria-hidden="true">&#8635;</span>{'Caches'|i18n( 'design/admin/dashboard' )}</a>
+            <a class="a4-dash-action" href={'setup/cache'|ezurl}><span class="a4-icon a4-bi-arrow-clockwise a4-dash-ico" aria-hidden="true"></span>{'Caches'|i18n( 'design/admin/dashboard' )}</a>
             {/if}
         </nav>
     </section>

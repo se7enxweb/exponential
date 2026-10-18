@@ -247,6 +247,16 @@ are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside th
   (`crystal-admin` in an admin siteaccess), but the content tree (`icon_info`) reads only the first theme and shows the theme's
   `Default`: add a class of your own to `ClassMap` in an `icon.ini.append.php`. In dark mode a filter in `admin4.css` turns these
   `<img>` icons light, since an SVG in an `<img>` cannot take the page's colours.
+- **The tabs of the header's main menu:** each tab shows an icon before its name, named by `menu.ini
+  [Topmenu_<tab>] Icon` (Content structure `diagram-3`, Media `images`, Users `people`, Store `box-seam`, Design
+  `palette`, Setup `gear`, Audit `shield-fill-check`, Dashboard `speedometer2`). The `topmenu` operator passes it on as
+  `icon`; `page_topmenuitem.tpl` draws it only when `design.ini [AdminDesignSettings] IconList[]` has the name, so a
+  tab of an extension sets `Icon=` in its `menu.ini.append.php` with a name of that list, and a tab without one shows
+  its name alone.
+- **One set of symbols:** the quick actions of the dashboard show the tabs' icons (and `upload`, `tags`,
+  `layout-sidebar-inset`, `arrow-clockwise`), the header's user menu the icons of the phone menu's action tiles
+  (`pencil-square`, `key`, `envelope`), and the phone menu's button the icons `list` and, while it is open, `x-lg`;
+  no text symbol (☰, ×, ▣, ☻) is left in the header and the dashboard.
 - The classic designs (`admin`, `admin3`) keep their images; `.a4-icon` and `.a4-icon-btn` are in their
   copy of `components.css` as well, for templates shared by every administration design.
 
