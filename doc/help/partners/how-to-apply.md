@@ -18,7 +18,7 @@ The apply page recommends two things:
 
 - "Talk to existing partners. Consider contacting some of Exponential's existing partners to find how the partner plan
   works for them."
-- "Talk to us. If you have any questions or concerns, please contact us to discuss at partner@exponential.earth".
+- "Talk to us." Contact the partner team through <https://exponential.earth/partner/contact-us>.
 
 The why page adds: "Read the Program in Full. Understand the structure and your potential."
 
@@ -31,7 +31,7 @@ Use the [Application checklist](application-checklist.md) to prepare what the fo
 | 1 | Fill in the application form at <https://exponential.earth/partner/apply> | "Fill out the contact form with details about your company, team, and project experience." |
 | 2 | Add supporting information | "Include examples of past work, relevant certifications, and a brief statement on why you want to partner with us." |
 | 3 | Review | "The Exponential Partner Team will review the application and may contact you to discuss further. The partner team will notify of their decision within 10 working days." The same page also says "within 5–10 business days". |
-| 4 | Sign the agreement | "If your application is approved. Please review and sign the attached contract and email it to our head office at partner@exponential.earth." |
+| 4 | Sign the agreement | "If your application is approved. Please review and sign the attached contract" and send it as the apply page says (<https://exponential.earth/partner/apply>). |
 | 5 | Buy the subscription | "You will then need to purchase the partnership from the 7x store": <https://my.se7enx.com/store/exponential-partners> |
 | 6 | Activation | "Once we receive your signed agreement and confirm your subscription, your partnership will be activated." |
 
@@ -51,7 +51,6 @@ Go straight to the [Onboarding checklist](onboarding-checklist.md) and [Your fir
 
 ## Contacts
 
-- partner@exponential.earth (apply page); the program page names partners@exponential.earth.
 - The contact form <https://exponential.earth/partner/contact-us>.
 
 ## Related pages

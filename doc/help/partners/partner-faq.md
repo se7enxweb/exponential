@@ -72,9 +72,6 @@ Yes, under the GFDL 1.3 or later. [Free documentation](../free-documentation.md)
 **Is there a code of conduct?**
 Not a formal one yet; the expected conduct is collected here: [Partner code of conduct](partner-code-of-conduct.md).
 
-**What else is not decided?**
-[Open questions for the Foundation](open-questions-for-the-foundation.md)
-
 ## Related pages
 
 - [Partners: start here](partners-start-here.md)
