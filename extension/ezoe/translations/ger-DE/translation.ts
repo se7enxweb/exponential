@@ -1464,11 +1464,11 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>Make the selected text &lt;b&gt;bold&lt;/b&gt;. If the selected text is &lt;b&gt;bold&lt;/b&gt; already, this button will remove the formating.</source>
-        <translation>Ausgewählten Text fett darstellen. Wenn der ausgewählte Text bereits fett ist, wird die Formatierung zurückgesetzt.</translation>
+        <translation>Ausgewählten Text &lt;b&gt;fett&lt;/b&gt; darstellen. Wenn der ausgewählte Text bereits &lt;b&gt;fett&lt;/b&gt; ist, wird die Formatierung zurückgesetzt.</translation>
     </message>
     <message>
         <source>Make the selected text &lt;i&gt;italic&lt;/i&gt;. If the selected text is &lt;i&gt;italic&lt;/i&gt; already, this button will remove the formating.</source>
-        <translation>Ausgewählten Text kursiv darstellen. Wenn der ausgewählte Text bereits kursiv ist, wird die Formatierung zurückgesetzt.</translation>
+        <translation>Ausgewählten Text &lt;i&gt;kursiv&lt;/i&gt; darstellen. Wenn der ausgewählte Text bereits &lt;i&gt;kursiv&lt;/i&gt; ist, wird die Formatierung zurückgesetzt.</translation>
     </message>
     <message>
         <source>Make the selected text &lt;u&gt;underline&lt;/u&gt;. This button is only enabled if you have a custom tag named underline, template code to handle underline custom tags is not included in Online Editor.</source>
@@ -1592,7 +1592,7 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     </message>
     <message>
         <source>Tips &amp;amp; Tricks</source>
-        <translation>Tipps &amp; Tricks</translation>
+        <translation>Tipps &amp;amp; Tricks</translation>
     </message>
     <message>
         <source>You can adjust the height of the editor by draging the bottom right corner of the editor.</source>

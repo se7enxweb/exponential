@@ -660,7 +660,9 @@ machine-assisted catalogues and those of ezoe and ezjscore: a finished translati
 and entities, leading and trailing whitespace and line breaks of its source, and is neither empty nor the English
 text itself. Where the English text is right (a product name, a code, a word spelled the same), add it with its
 reason to `tests/tests/lib/ezi18n/translation-identical-allowlist.json`; never weaken the test. A newly completed
-language joins the test's list of languages.
+language joins the test's list of languages. German (`ger-DE`) is on it since 6.0.15, with the kernel's, ezoe's and
+ezjscore's catalogues; the words German keeps from English (Cache, Layout, Login, Siteaccess, Extension ...) are in
+the allowlist's `ger-DE` list.
 
 Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the eight
 Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the nine
