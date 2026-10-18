@@ -1010,9 +1010,13 @@
   gap: var(--a4-space-6);
   align-items: start;
 }
-.a4-help-main { grid-area: main; min-width: 0; }
-.a4-help-nav { grid-area: nav; min-width: 0; }
-.a4-help-toc-side { grid-area: toc; display: none; min-width: 0; }
+.a4-help-main { min-width: 0; }
+.a4-help-viewer-grid > .a4-help-main { grid-area: main; }
+.a4-help-nav { min-width: 0; }
+/* the areas only inside the viewer's grid: the contents page puts the tree straight into the help root, a grid too */
+.a4-help-viewer-grid > .a4-help-nav { grid-area: nav; }
+.a4-help-toc-side { display: none; min-width: 0; }
+.a4-help-viewer-grid > .a4-help-toc-side { grid-area: toc; }
 
 @container a4-help-viewer (min-width: 48rem) {
   .a4-help-viewer-grid {
@@ -1300,7 +1304,9 @@
 
 /* The contents page (exphelp/contents): the whole tree, its top folders in columns on wide pages */
 .a4-help-contents { container-type: inline-size; container-name: a4-help-contents; }
-.a4-help-contents-links { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: var(--a4-space-3) 0 0; }
+.a4-help-contents > .a4-help-viewer-bar,
+.a4-help-contents > .a4-help-pagehead { margin-bottom: 0; }
+.a4-help-contents > .a4-help-pagehead .a4-help-summary { margin-bottom: 0; }
 .a4-help-nav.is-contents .a4-help-nav-tools { max-width: 32rem; }
 @container a4-help-contents (min-width: 60rem) {
   .a4-help-nav.is-contents .a4-help-nav-list.is-top { columns: 2; column-gap: var(--a4-space-6); }

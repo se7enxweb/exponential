@@ -4,7 +4,7 @@
 
    Variables (kernel/private/classes/views/exphelp/manual.php): help_manual (false for the list; else title, subtitle,
    shortdesc, edition, license, authors[], preview), help_manual_toc (nested: kind chapter|topic, title, shortdesc,
-   url, preview, children), help_manuals (title, subtitle, shortdesc, remote_id, edition, preview), help_json_url,
+   url, preview, children), help_manuals (title, subtitle, shortdesc, remote_id, edition, preview), help_ebook_formats (epub, pdf), help_json_url,
    help_i18n_json.
 
    The same file is in design/admin and design/admin4. *}
@@ -30,6 +30,9 @@
             {/if}
             {if $help_manual.edition|ne( '' )}<li class="a4-help-meta-item"><span class="a4-icon a4-bi-tag" aria-hidden="true"></span>{'Edition %edition'|i18n( 'kernel/exphelp',, hash( '%edition', $help_manual.edition ) )|wash}</li>{/if}
             {if $help_manual.license|ne( '' )}<li class="a4-help-meta-item">{$help_manual.license|wash}</li>{/if}
+            {foreach $help_ebook_formats as $help_fmt}
+            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small" href={concat( 'exphelp/manual/', $help_manual.remote_id, '?format=', $help_fmt )|ezurl} download><span class="a4-icon a4-bi-download" aria-hidden="true"></span> {cond( eq( $help_fmt, 'pdf' ), 'Download PDF'|i18n( 'kernel/exphelp' ), 'Download EPUB'|i18n( 'kernel/exphelp' ) )}</a></li>
+            {/foreach}
             <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={$help_json_url|ezurl}><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> JSON</a></li>
         </ul>
         {if $help_manual.shortdesc|ne( '' )}<p dir="auto">{$help_manual.shortdesc|wash}</p>{/if}
@@ -38,7 +41,27 @@
     <section class="a4-card" aria-labelledby="exphelp-manual-toc">
         <h2 class="a4-help-section-head" id="exphelp-manual-toc">{'Contents'|i18n( 'kernel/exphelp' )}</h2>
         {if $help_manual_toc|count}
-        {include name=ManualToc uri='design:exphelp/parts/manual_toc.tpl' toc_entries=$help_manual_toc}
+        <ol class="a4-help-manual-toc">
+        {foreach $help_manual_toc as $toc_e}
+            <li>
+            {if eq( $toc_e.kind, 'chapter' )}
+                <strong dir="auto">{$toc_e.title|wash}</strong>{if $toc_e.preview} <span class="a4-tag is-warn">{'Preview'|i18n( 'kernel/exphelp' )}</span>{/if}
+                {if $toc_e.shortdesc|ne( '' )}<br /><span class="a4-meta">{$toc_e.shortdesc|wash}</span>{/if}
+                {if $toc_e.children|count}
+                <ol>
+                {foreach $toc_e.children as $toc_c}
+                    <li>{if eq( $toc_c.kind, 'chapter' )}<strong dir="auto">{$toc_c.title|wash}</strong>{else}<a href={$toc_c.url|ezurl} dir="auto">{$toc_c.title|wash}</a>{/if}{if $toc_c.preview} <span class="a4-tag is-warn">{'Preview'|i18n( 'kernel/exphelp' )}</span>{/if}
+                        {if $toc_c.shortdesc|ne( '' )}<br /><span class="a4-meta">{$toc_c.shortdesc|wash}</span>{/if}</li>
+                {/foreach}
+                </ol>
+                {/if}
+            {else}
+                <a href={$toc_e.url|ezurl} dir="auto">{$toc_e.title|wash}</a>{if $toc_e.preview} <span class="a4-tag is-warn">{'Preview'|i18n( 'kernel/exphelp' )}</span>{/if}
+                {if $toc_e.shortdesc|ne( '' )}<br /><span class="a4-meta">{$toc_e.shortdesc|wash}</span>{/if}
+            {/if}
+            </li>
+        {/foreach}
+        </ol>
         {else}
         <p class="a4-meta">{'This manual has no topics you can read yet.'|i18n( 'kernel/exphelp' )}</p>
         {/if}

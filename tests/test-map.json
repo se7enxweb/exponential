@@ -1766,6 +1766,9 @@
     ],
     "kernel/private/classes/views/exphelp/context.php": [
       "tests/tests/kernel/classes/help/expHelpContentTest.php"
+    ],
+    "kernel/classes/help/content/exphelpcontentexport.php": [
+      "tests/tests/kernel/classes/help/expHelpContentExportTest.php"
     ]
   },
   "generated": {

@@ -51,7 +51,13 @@ class Search extends \Exponential\Runnable\ModuleView
         if ( !$json && self::redirectsGet( $_GET, isset( $_SERVER['REQUEST_METHOD'] ) ? $_SERVER['REQUEST_METHOD'] : 'GET' ) )
         {
             $state = self::state( array_merge( $viewState, self::getState( $_GET ) ), $known, $defaultLimit );
-            return $Module->redirectTo( \expHelp::searchUrl( $state, $defaultLimit ) );
+            // Sent here, not through $Module->redirectTo(): the kernel carries the query string over a module redirect,
+            // so the canonical address would arrive with ?q=... again and redirect to itself forever. Without HTML
+            // escaping: the address goes into the Location header.
+            $target = \expHelp::searchUrl( $state, $defaultLimit );
+            \eZURI::transformURI( $target, false, 'full', false );
+            \eZHTTPTool::redirect( $target, array(), '302 Found', false );
+            \eZExecution::cleanExit();
         }
 
         $state = self::state( $json ? array_merge( self::getState( $_GET ), array_filter( $viewState, function ( $v ) { return $v !== false && $v !== null && $v !== ''; } ) )
