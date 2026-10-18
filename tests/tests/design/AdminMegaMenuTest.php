@@ -20,9 +20,9 @@
  *  MM-08 - the Users tab: [Topmenu_users] MegaMenuTemplate draws [Leftmenu_user_mega], which adds [Leftmenu_user] and
  *          [Leftmenu_my] instead of restating their links; its MegaMenuLinks[] names existing links with icons,
  *          descriptions and names in ger-DE and eng-US
- *  MM-07 - curated: menu.ini [Leftmenu_setup] MegaMenuLinks[] names at most 18 existing links; the panel's template
+ *  MM-07 - curated: menu.ini [Leftmenu_setup] MegaMenuLinks[] names at most 19 existing links; the panel's template
  *          shows only those, in that order, the user may open, each in its group, groups without one left out, at most
- *          18; with no MegaMenuLinks[] every link (parts/a4_mega_menu.tpl rendered with eZTemplate, no database)
+ *          19; with no MegaMenuLinks[] every link (parts/a4_mega_menu.tpl rendered with eZTemplate, no database)
  *  MM-08 - with a tab moved into Setup (GroupSections[]) a chosen key whose link is not drawn takes the group's link
  *          of the same address (audit: the audit group's Settings); audit-<key> chooses a group link directly
  *
@@ -362,7 +362,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $choice = $m[1];
         $this->assertMatchesRegularExpression( '/^MegaMenuLinks\[\]$/m', $section, 'the list is reset before it is set' );
         $this->assertGreaterThanOrEqual( 6, count( $choice ) );
-        $this->assertLessThanOrEqual( 18, count( $choice ), 'at most 18 links' );
+        $this->assertLessThanOrEqual( 19, count( $choice ), 'at most 19 links' );
         $this->assertSame( array_values( array_unique( $choice ) ), $choice );
         // every key is a link of the menu or of one of its groups (the extensions' links are named in GroupLinks_*)
         preg_match_all( '/^(?:Links\[([a-z0-9_]+)\]=|GroupLinks_[a-z_]+\[\]=([a-z0-9_]+)$)/m', $section, $known );
@@ -374,6 +374,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             $this->assertContains( $key, $choice );
         // the owner's additions of 6.0.15: Collected information (Content model), RSS, Preload sites and Packages (Site and URLs), after Sections
         $this->assertSame( array( 'classes', 'sections', 'collected', 'rss', 'preload', 'packages' ), array_slice( $choice, 0, 6 ) );
+        $this->assertSame( array( 'audit', 'oauth_list' ), array_slice( $choice, 6, 2 ), 'oAuth admin follows Audit in Users and messages' );
         // the template reads the choice from the menu's own section, nowhere else
         $this->assertStringContainsString( "mega_links=cond( ezini_hasvariable( \$ini_section, 'MegaMenuLinks', 'menu.ini' ), ezini( \$ini_section, 'MegaMenuLinks', 'menu.ini' ), array() )",
                                            self::read( 'design/admin4/templates/parts/ini_menu.tpl' ) );
@@ -393,7 +394,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     }
 
     /** MM-07 */
-    public function testAtMostEighteenLinksShow()
+    public function testAtMostNineteenLinksShow()
     {
         $groups = self::fakeGroups( 7, 3 );
         $keys = array();
@@ -401,8 +402,8 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
             foreach ( $group['items'] as $item )
                 $keys[] = $item['key'];
         $shown = self::renderGroups( $keys, $groups );
-        $this->assertSame( 18, count( call_user_func_array( 'array_merge', array_values( $shown ) ) ) );
-        $this->assertSame( array( 'L3_1', 'L3_2', 'L3_3', 'L3_4' ), $shown['g3'], 'the first eighteen chosen' );
+        $this->assertSame( 19, count( call_user_func_array( 'array_merge', array_values( $shown ) ) ) );
+        $this->assertSame( array( 'L3_1', 'L3_2', 'L3_3', 'L3_4', 'L3_5' ), $shown['g3'], 'the first nineteen chosen' );
     }
 
     /**
@@ -914,7 +915,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $choice = $mega['MegaMenuLinks'];
         $this->assertMatchesRegularExpression( '/^MegaMenuLinks\[\]$/m', substr( self::read( 'settings/menu.ini' ), strpos( self::read( 'settings/menu.ini' ), '[Leftmenu_user_mega]' ) ), 'the list is reset before it is set' );
         $this->assertGreaterThanOrEqual( 6, count( $choice ) );
-        $this->assertLessThanOrEqual( 18, count( $choice ) );
+        $this->assertLessThanOrEqual( 19, count( $choice ) );
         $this->assertSame( array_values( array_unique( $choice ) ), $choice );
 
         preg_match_all( '/^IconList\[\]=(\S+)$/m', self::read( 'settings/design.ini' ), $icons );
@@ -999,8 +1000,8 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'MegaMenuTabs[]=setup:', $text );
         $this->assertStringNotContainsString( 'MegaMenuTabs[]=users:', $text );
 
-        $this->menuIni( array( 'Leftmenu_user_mega' => array( 'MegaMenuLinks' => array_fill( 0, 19, 'accounts' ) ) ) );
-        $this->assertStringContainsString( '19 keys, the mega menu shows the first 18', implode( "\n", self::debugMessagesOf( 'file:design/admin4/templates/parts/a4_mega_menu_check.tpl' ) ) );
+        $this->menuIni( array( 'Leftmenu_user_mega' => array( 'MegaMenuLinks' => array_fill( 0, 20, 'accounts' ) ) ) );
+        $this->assertStringContainsString( '20 keys, the mega menu shows the first 19', implode( "\n", self::debugMessagesOf( 'file:design/admin4/templates/parts/a4_mega_menu_check.tpl' ) ) );
     }
 
     /** Renders a template with the debug report switched on; returns the debug messages it wrote */
