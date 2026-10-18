@@ -71837,7 +71837,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>The kernel and every extension as clones with history.</source>
-        <translation>botlh &apos;ej Hoch chuq velqa&apos; qun ghaj.</translation>
+        <translation>botlh &apos;ej Hoch chelwI&apos; velqa&apos; qun ghaj.</translation>
     </message>
     <message>
         <source>Contribute back</source>
