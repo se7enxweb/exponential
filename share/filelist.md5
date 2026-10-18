@@ -3284,7 +3284,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-aaaf5b8efca06cd5a02cb2dc86de81d3  doc/changelogs/6.0/6.0.15.md
+17d726e4e1f9f6b6c7ae8a4336994ac9  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3697,7 +3697,7 @@ efbf2cf79f254018df640a05a54f55d9  doc/features/6.0/extensions/xrowmetadata.md
 1d5d1d68f0fdcf825e81bc6ad49ee3c0  doc/features/6.0/ezpm-package-manager-cli.md
 3961785a8af896cb1fddd1e9be1eb080  doc/features/6.0/file-consistency-check.md
 dfa9c308bb3efde44b47784f72b7e244  doc/features/6.0/form-expired-page.md
-64baadb5e703ed2f11a5936a35873559  doc/features/6.0/help-system.md
+d7b3605558be1e31aa375627709f8347  doc/features/6.0/help-system.md
 8de8fa7cc57c60a79a0dbb7e6698bfac  doc/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/features/6.0/icon-themes-in-extensions.md
 084d3e79b84e8ab0d8c13663d37c531e  doc/features/6.0/install-in-one-command.md
