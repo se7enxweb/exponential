@@ -1545,6 +1545,9 @@
     ],
     "tests/tests/extension/ezflow/js/*": [
       "tests/tests/extension/ezflow/ezflowEditScriptTest.php"
+    ],
+    "design/standard/templates/content/datatype/edit/*.tpl": [
+      "tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php"
     ]
   },
   "generated": {

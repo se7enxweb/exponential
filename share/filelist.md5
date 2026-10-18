@@ -2255,7 +2255,7 @@ dcaa6cd5933cbd4daafa84bcc06521c4  design/standard/templates/content/datatype/edi
 332a75e0bdd87b8d62504c60ffc26a89  design/standard/templates/content/datatype/edit/ezobjectrelation.tpl
 29b017f30ad5cb73ba0852726752e185  design/standard/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
 1a68fb4b7b0d164fd1752a20a3c00c86  design/standard/templates/content/datatype/edit/ezobjectrelation_ajaxuploader.tpl
-153af206d9d4ff137a23a18621332cc3  design/standard/templates/content/datatype/edit/ezobjectrelationlist.tpl
+e91eb75189b70ed0f07e548a4b9543e6  design/standard/templates/content/datatype/edit/ezobjectrelationlist.tpl
 01da2dd0e05d842e8a9fe97b1b0ac3aa  design/standard/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl
 7eaf59a62a97383faefc85c16bb732bc  design/standard/templates/content/datatype/edit/ezobjectrelationlist_controls.tpl
 75ee0d3ded9fe34f9507ea47c2107dce  design/standard/templates/content/datatype/edit/ezoption.tpl
@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-90f418a7f61aeeb8a5ccbb117384ee87  doc/changelogs/6.0/6.0.15.md
+42b81e5ab5aadf81cdaaa7ce49418798  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7690,7 +7690,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-9842aaf89fac1608a81fd916388e6fa3  tests/test-map.json
+93df0f2a69f55708af7179ba2a45fda4  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
 8b29711fe10a56c5c5b90916f35d0a00  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
@@ -7780,6 +7780,7 @@ be0d65eb9d0dbf34d048d809f070c37f  tests/tests/design/ExtensionInlineScriptsTest.
 6e105b5c448762ee4581368f59aff5cf  tests/tests/design/FormSubmitButtonDisableTest.php
 375fe339c03acdb153a03aadbc24784d  tests/tests/design/LogViewerCopyMessagesTest.php
 3ded02ca57016d193d7c9df51a8dbe84  tests/tests/design/LogViewerNavTest.php
+1f2baeab4e97de344ff2a905bdb76154  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
 06249d1308ccf3eeb0d366548bae10a4  tests/tests/design/TranslationFilesValidTest.php
 5582056a45ff633ad8831432b6074f3c  tests/tests/design/js/asynchronous_publishing.js
 2a8929569939f458f12dc199e3fb5064  tests/tests/design/js/content_job.js
