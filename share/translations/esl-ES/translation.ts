@@ -46215,7 +46215,7 @@ Puedes editar uno de tus borradores o crear uno nuevo.</translation>
     </message>
     <message>
         <source>Reload the form and send it again.</source>
-        <translation>Vuelva a cargar el formulario y envíelo de nuevo.</translation>
+        <translation>Vuelve a cargar el formulario y envíalo de nuevo.</translation>
     </message>
     <message>
         <source>You may have been signed out in the meantime. If so, please sign in again.</source>
@@ -54131,7 +54131,7 @@ tu cuenta.</translation>
     <name>design/standard/user/password</name>
     <message>
         <source>Change your password</source>
-        <translation>Cambie su contraseña</translation>
+        <translation>Cambia tu contraseña</translation>
     </message>
     <message>
         <source>Your password has been changed</source>
@@ -57150,7 +57150,7 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
     </message>
     <message>
         <source>Reload the form and send it again.</source>
-        <translation>Vuelva a cargar el formulario y envíelo de nuevo.</translation>
+        <translation>Vuelve a cargar el formulario y envíalo de nuevo.</translation>
     </message>
     <message>
         <source>Form expired</source>

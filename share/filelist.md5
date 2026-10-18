@@ -1331,7 +1331,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 1a7132e097c854ce731d22d75ca6db9a  design/admin4/templates/page_mainarea.tpl
 ad2b16b7e90d3d850e074f97acd807d4  design/admin4/templates/page_search.tpl
 40b90d9c714dfc364e1baf7e0e703b2b  design/admin4/templates/page_topmenu.tpl
-5abb4b0607fc46c1dfd5bb792c1f0f3d  design/admin4/templates/page_topmenuitem.tpl
+211d3c69a7c5747b9c92aea4ea3cf6a3  design/admin4/templates/page_topmenuitem.tpl
 a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
 5cfd1b383b5c79e3d4e47435720fc6e8  design/admin4/templates/pagelayout.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
@@ -3253,7 +3253,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-d9985e5c47166ef3f5154d4bfbfd803b  doc/changelogs/6.0/6.0.15.md
+04d75e280156eebe29705832cc33d7f0  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3581,7 +3581,7 @@ d054ec0eb0da44b4658d442f6b051953  doc/features/6.0/admin-content-tree-top-node.m
 8ee6875c6693489d567c309177b49b81  doc/features/6.0/admin-list-paging.md
 41099ca247392d7ed963caa4b857e51c  doc/features/6.0/admin3-responsive-admin.md
 98b1eb658a2475fc31af9b9cbfaba709  doc/features/6.0/admin3-sidebar-width-and-font-size.md
-2dcfa9a75363ae4b37568f38f75d6ad8  doc/features/6.0/admin4-design.md
+f6f9a6d8a908a4295695b60f1ebd13e8  doc/features/6.0/admin4-design.md
 71bb2f64a4847b2614637164a40765b6  doc/features/6.0/admin4l.md
 cb077d1f37f8e8811c377ede4bc99357  doc/features/6.0/adminneo-database-manager.md
 ae7d698fad5f10287ad37ade2f97d8aa  doc/features/6.0/audit-trail.md
@@ -6844,7 +6844,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
 a111b660f8e29a00cb059785bda7df42  settings/debugbar.ini
-952540f88a625013d33e5a1a97459cf3  settings/design.ini
+a299fede8db54175047c46b18463bf48  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
@@ -7688,7 +7688,7 @@ bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 99862a3b59cc584c3fcba01e689aaa17  share/transformations/hebrew.tr
 06361e73b7836778b599fa55f3300ebf  share/transformations/latin.tr
 9c0a310f00eb6c3334a8c41198ec3161  share/transformations/search.tr
-cfe1b5aa0551488ea45c0429d0d34aa7  share/translations/ara-SA/translation.ts
+bd8ca1ad168d7d4699b4fe9fc9437b5c  share/translations/ara-SA/translation.ts
 460da6761ad0f2e5f4e9482a3688df97  share/translations/cat-ES/translation.ts
 4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
 dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
@@ -7701,8 +7701,8 @@ a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
 7c311a24bc6ab8ce0f4aaa53a7a627fb  share/translations/eng-US/translation.ts
-0fbe6b2e122d06618dab70a9ea977751  share/translations/esl-ES/translation.ts
-0afa490d86636f30fe48b19a3efebe55  share/translations/esl-MX/translation.ts
+5a9e4a05fd5cfa5d37e966123d55d2a7  share/translations/esl-ES/translation.ts
+5cde802b287e771825789ff29342ec99  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 ad18ef627eaa23b51ee73eb2168b91a4  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
@@ -7784,7 +7784,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-8c14ae3ac61b2002b775b12b7b14d913  tests/test-map.json
+b29053e53b8fa37c2332a742c751955a  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -7816,7 +7816,7 @@ a732e808d64b9a5a30633dd745cae6fe  tests/tests/design/AdminFirstPaintColumnsTest.
 0aedf29b682213c1a48cba48309e286a  tests/tests/design/AdminFormLabelsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
 27eb0bbbc80fcd113ba8b2db3b1fbbb3  tests/tests/design/AdminHeaderTest.php
-868e95eca453440b7cde9a4b3757efd1  tests/tests/design/AdminIconsTest.php
+ffae66982f72a7a9adc99acd43b3d662  tests/tests/design/AdminIconsTest.php
 ef7f72e6efae269cefa3d98124eee4f2  tests/tests/design/AdminJobTranslationsTest.php
 c4203a41bbd488652891f9765e4f56ae  tests/tests/design/AdminKeyboardTest.php
 eaa571e25f4d997c960ade977fffd5b5  tests/tests/design/AdminLandmarksTest.php
@@ -9013,6 +9013,7 @@ cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackC
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
 f1ba69a86fb54b17de2d0692afd1fb34  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
+b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 c80fd248275f1e8f1cbfc16674668c09  tests/tests/lib/ezi18n/expTranslationQualityTest.php
 2d53462daf9ae6fc51688e14bce5c0b4  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
