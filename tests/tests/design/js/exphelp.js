@@ -23,12 +23,12 @@ const SEARCH = '<div class="a4-help" data-exphelp data-exphelp-i18n="' + attr({ 
 const VIEWER = '<div class="a4-help" data-exphelp><form data-exphelp-search data-exphelp-endpoint="/admin/exphelp/search?x=1">'
     + '<input type="search" name="q" id="q" data-exphelp-search-input /></form>'
     + '<nav data-exphelp-toc><a href="#one" id="t1">One</a><a href="#two" id="t2">Two</a><a href="#deep" id="t3">Deep</a></nav>'
-    + '<article data-exphelp-content data-exphelp-collapsible="h2">'
+    + '<article class="a4-help-body a4-help-prose" data-exphelp-content data-exphelp-collapsible="h2"><div class="a4-help-body">'
     + '<h1 id="top">Title</h1><p>intro</p>'
-    + '<h2 id="one">One</h2><p>a</p><pre><code>echo 1;</code></pre>'
-    + '<h2 id="two">Two</h2><h3 id="deep">Deep</h3><div class="a4-help-code" data-lang="php"><pre class="a4-help-pre"><code class="language-php">$a = 1 &lt; 2;</code></pre></div>'
+    + '<h2 id="one" class="a4-help-h">One <a class="a4-help-anchor" href="#one" aria-hidden="true" tabindex="-1">#</a></h2><p>a</p><pre><code>echo 1;</code></pre>'
+    + '<h2 id="two" class="a4-help-h">Two <a class="a4-help-anchor" href="#two" aria-hidden="true" tabindex="-1">#</a></h2><h3 id="deep">Deep</h3><div class="a4-help-code" data-lang="php" data-label="PHP"><pre class="a4-help-pre" tabindex="0"><code class="language-php">$a = 1 &lt; 2;</code></pre></div>'
     + '<details class="a4-help-details" id="det"><summary>More</summary><p id="inner">hidden</p></details>'
-    + '</article>'
+    + '</div></article>'
     + '<a href="/admin/exphelp/viewer/(path)/doc/a.md" data-exphelp-prev rel="prev">Prev</a>'
     + '<a href="javascript:alert(1)" data-exphelp-next rel="next">Next</a></div>';
 

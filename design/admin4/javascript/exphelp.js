@@ -349,7 +349,10 @@
     function setupCollapse(content, t) {
         var level = String(content.getAttribute('data-exphelp-collapsible') || '').toLowerCase();
         if (level !== 'h2') { return; }
-        arr(content.children).forEach(function (h) {
+        // the h2s sit in the renderer's div.a4-help-body or straight in the content
+        var first = content.querySelector('h2');
+        var box = first && first.parentNode && content.contains(first.parentNode) ? first.parentNode : content;
+        arr(box.children).forEach(function (h) {
             if (h.tagName !== 'H2' || h.querySelector('[data-exphelp-collapse]')) { return; }
             var section = el('div', 'a4-help-section');
             var next = h.nextSibling;
@@ -358,8 +361,8 @@
                 next = next.nextSibling;
                 section.appendChild(move);
             }
-            if (next) { content.insertBefore(section, next); } else { content.appendChild(section); }
-            var title = h.textContent.replace(/\s+/g, ' ').trim();
+            if (next) { box.insertBefore(section, next); } else { box.appendChild(section); }
+            var title = headingText(h);
             var button = el('button', 'a4-help-collapse');
             button.setAttribute('type', 'button');
             button.setAttribute('data-exphelp-collapse', '');
@@ -369,6 +372,13 @@
             button.setAttribute('data-exphelp-title', title);
             h.appendChild(button);
         });
+    }
+
+    // A heading's text without its # anchor link
+    function headingText(h) {
+        return arr(h.childNodes).filter(function (n) {
+            return !(n.nodeType === 1 && n.classList.contains('a4-help-anchor'));
+        }).map(function (n) { return n.textContent; }).join('').replace(/\s+/g, ' ').trim();
     }
 
     // "Hide section: %title", or a plain "Collapse" followed by the heading
