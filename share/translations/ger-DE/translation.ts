@@ -79383,5 +79383,73 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Version, name, year or revision</source>
         <translation>Version, Name, Jahr oder Revision</translation>
     </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count Einträge, %first bis %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 Eintrag, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adressen und Hinweise</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Adressen auf Servern, die nicht mehr online sind, bleiben als historischer Text erhalten.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Bezeichnung</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Sonstige</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revisionen</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Reihe %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Quelle</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Die älteren Einträge stammen aus dem ursprünglichen SVN-Repository.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>aus dem ursprünglichen SVN</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historisch (nicht mehr online)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nicht erfasst</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>Revision %s</translation>
+    </message>
 </context>
 </TS>

@@ -72423,5 +72423,73 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version, name, year or revision</source>
         <translation>Версія, назва, рік або ревізія</translation>
     </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>Записів: %count, від %first до %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 запис, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Адреси й примітки</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Адреси на серверах, які вже не працюють, збережено як історичний текст.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Інше</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Випущено</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Ревізії</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Серія %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Джерело</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Старіші записи походять з початкового репозиторію SVN.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Версія</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>з початкового SVN</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>історичне (вже не працює)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>не записано</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>ревізія %s</translation>
+    </message>
 </context>
 </TS>
