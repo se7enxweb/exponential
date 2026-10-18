@@ -74,8 +74,33 @@ $ViewList['report'] = array(
     'functions' => array( 'read' ),
     'params' => array() );
 
+// Help maintained as content (doc/features/6.0/help-content.md): a topic by its help_id, rendered
+// (exphelp/topic/content.publish-article); what the user may see is decided by content/read and the state
+$ViewList['topic'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'topic.php',
+    'functions' => array( 'read' ),
+    'params' => array() );
+
+// A manual of help maintained as content by its remote_id: its table of contents (exphelp/manual/help-manual-editors)
+$ViewList['manual'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'manual.php',
+    'functions' => array( 'read' ),
+    'params' => array() );
+
+// Context help as JSON for other clients: exphelp/context/<help_id> and exphelp/context/manual/<remote_id>, with
+// an ETag. Its own function, so a site can give it to readers without giving them the help of the administration
+$ViewList['context'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'context.php',
+    'functions' => array( 'context' ),
+    'params' => array() );
+
 $FunctionList = array();
 // Reading the help: the dashboard, the pages, the search, the images and the error report guide
 $FunctionList['read'] = array();
+// Context help as JSON (exphelp/context): only topics the user may read (content/read) and that are Released
+$FunctionList['context'] = array();
 
 ?>

@@ -1,7 +1,8 @@
 # Editorial style guide: help topics in Exponential
 
 Status: proposal, 18 October 2026. Basis: [the help system plan](help-system.md) (content model, access,
-workflow).
+workflow). The machine-checkable rules are checked by `./console exp:help:content check` since 6.0.15
+([help maintained as content](../../features/6.0/help-content.md#the-validator)).
 
 This guide applies to every topic in the topic pool (`help-pool`). Part of it
 is checked by the validator `check_help.php`; the rest is the job of the
