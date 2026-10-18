@@ -1118,7 +1118,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Tags</source>
-        <translation>Mots clés</translation>
+        <translation>Étiquettes</translation>
     </message>
     <message>
         <source>There are no related images.</source>
@@ -1131,6 +1131,270 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     <message>
         <source>Use left and right arrows to navigate.</source>
         <translation>Utilisez les flèches gauche et droite pour naviguer.</translation>
+    </message>
+    <message>
+        <source>Custom tag controls</source>
+        <translation>Commandes de la balise personnalisée</translation>
+    </message>
+    <message>
+        <source>Move the custom tag up</source>
+        <translation>Monter la balise personnalisée</translation>
+    </message>
+    <message>
+        <source>Move the custom tag down</source>
+        <translation>Descendre la balise personnalisée</translation>
+    </message>
+    <message>
+        <source>Edit the custom tag</source>
+        <translation>Modifier la balise personnalisée</translation>
+    </message>
+    <message>
+        <source>Remove the custom tag</source>
+        <translation>Supprimer la balise personnalisée</translation>
+    </message>
+    <message>
+        <source>Example</source>
+        <translation>Exemple</translation>
+    </message>
+    <message>
+        <source>Example of the tag %tag_name</source>
+        <translation>Exemple de la balise %tag_name</translation>
+    </message>
+    <message>
+        <source>TinyMCE 3</source>
+        <translation>TinyMCE 3</translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation>TinyMCE 8</translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation>Passer à l&apos;éditeur %engine</translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation>Ce type de fichier n&apos;est pas accepté par l&apos;éditeur : %file</translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation>Éditeur en ligne</translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation>L&apos;éditeur de votre utilisateur a été enregistré.</translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation>Cet éditeur n&apos;est pas disponible.</translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation>Éditeur des champs de texte</translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation>Par défaut pour ce site (%engine)</translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation>Utilisé actuellement : %engine. Enregistré uniquement pour votre utilisateur ; le texte de votre contenu est le même avec chaque éditeur.</translation>
+    </message>
+    <message>
+        <source>Editor engines</source>
+        <translation>Moteurs d&apos;édition</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Éditeur</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statut</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Disponible</translation>
+    </message>
+    <message>
+        <source>Available, in use now</source>
+        <translation>Disponible, utilisé actuellement</translation>
+    </message>
+    <message>
+        <source>Not available: its files are missing</source>
+        <translation>Non disponible : ses fichiers sont manquants</translation>
+    </message>
+    <message>
+        <source>Cannot be used: %reason</source>
+        <translation>Inutilisable : %reason</translation>
+    </message>
+    <message>
+        <source>The edit form also has a button to switch to each of the other available editors.</source>
+        <translation>Le formulaire de modification comporte aussi un bouton pour passer à chacun des autres éditeurs disponibles.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
+        <translation>L&apos;Online Editor sur TinyMCE 3.5, l&apos;éditeur de toute installation.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
+        <translation>L&apos;Online Editor sur TinyMCE 8 (GPL), avec les boîtes de dialogue de l&apos;Online Editor.</translation>
+    </message>
+    <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation>Passer au nouvel éditeur (TinyMCE 8)</translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation>Revenir à l&apos;éditeur précédent (TinyMCE 3)</translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation>Le texte est conservé, le choix est enregistré pour votre utilisateur.</translation>
+    </message>
+    <message>
+        <source>Go back</source>
+        <translation>Retour en arrière</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>aucun</translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation>caché</translation>
+    </message>
+    <message>
+        <source>dotted</source>
+        <translation>pointillé</translation>
+    </message>
+    <message>
+        <source>dashed</source>
+        <translation>tirets</translation>
+    </message>
+    <message>
+        <source>solid</source>
+        <translation>plein</translation>
+    </message>
+    <message>
+        <source>double</source>
+        <translation>double</translation>
+    </message>
+    <message>
+        <source>groove</source>
+        <translation>rainure</translation>
+    </message>
+    <message>
+        <source>ridge</source>
+        <translation>arête</translation>
+    </message>
+    <message>
+        <source>inset</source>
+        <translation>incrustée</translation>
+    </message>
+    <message>
+        <source>outset</source>
+        <translation>en relief</translation>
+    </message>
+    <message>
+        <source>Size inputs for all 4 edges</source>
+        <translation>Champs de taille pour les 4 bords</translation>
+    </message>
+    <message>
+        <source>Tel</source>
+        <translation>Tél.</translation>
+    </message>
+    <message>
+        <source>Click to select table size</source>
+        <translation>Cliquez pour choisir la taille du tableau</translation>
+    </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation>L&apos;adresse n&apos;est pas une URL http ou https valide.</translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation>Seules les adresses http et https peuvent être récupérées.</translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation>Les adresses contenant un nom d&apos;utilisateur ou un mot de passe ne sont pas acceptées.</translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation>L&apos;adresse pointe vers un hôte qui n&apos;est pas accessible depuis le serveur à cette fin.</translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation>Le nom d&apos;hôte %host n&apos;a pas pu être résolu.</translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation>L&apos;adresse redirige trop souvent.</translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation>Le serveur a répondu avec le statut %status ; aucun fichier n&apos;a été récupéré.</translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation>Le serveur a envoyé un fichier vide.</translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation>Le contenu du fichier n&apos;est pas du type qu&apos;indique son nom : %file</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Le fichier n&apos;a pas pu être récupéré.</translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation>Le téléversement depuis une URL est désactivé.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation>Le fichier dépasse la taille autorisée de %size.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation>Le serveur n&apos;a pas répondu à temps.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Source</translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation>Depuis votre ordinateur</translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation>Depuis une URL</translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation>Adresse du fichier (URL)</translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation>Le serveur récupère le fichier à cette adresse.</translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation>Téléverser depuis une URL</translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation>Veuillez saisir l&apos;adresse d&apos;un fichier.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
+        <translation>Veuillez saisir une adresse http ou https valide, sans nom d&apos;utilisateur ni mot de passe.</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>requis</translation>
     </message>
 </context>
 <context>
@@ -1145,11 +1409,43 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Node &amp;apos;%1&amp;apos; does not exist.</source>
-        <translation>Le nœud &apos;%1&apos; n&apos;existe pas.</translation>
+        <translation>Le nœud &amp;apos;%1&amp;apos; n&apos;existe pas.</translation>
     </message>
     <message>
         <source>Some objects used in embed(-inline) tags have been deleted and are no longer available.</source>
         <translation>Des objets inclus ont été supprimés et ne sont plus disponibles.</translation>
+    </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target object does not exist.</source>
+        <translation>Lien non valide : « %1 ». L&apos;objet cible n&apos;existe pas.</translation>
+    </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target node does not exist.</source>
+        <translation>Lien non valide : « %1 ». Le nœud cible n&apos;existe pas.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target (%2) no longer exists, not even in the trash. Remove the link or choose a new target.</source>
+        <translation>Le lien « %1 » ne peut pas être enregistré : sa cible (%2) n&apos;existe plus, pas même dans la corbeille. Supprimez le lien ou choisissez une nouvelle cible.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target (%2) is in the trash. Remove the link or choose a new target.</source>
+        <translation>Le lien « %1 » ne peut pas être enregistré : sa cible (%2) se trouve dans la corbeille. Supprimez le lien ou choisissez une nouvelle cible.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target &quot;%2&quot; (%3), located at %4, was moved to the trash on %6. Remove the link or choose a new target. (Link: %5)</source>
+        <translation>Le lien « %1 » ne peut pas être enregistré : sa cible « %2 » (%3), située à %4, a été placée dans la corbeille le %6. Supprimez le lien ou choisissez une nouvelle cible. (Lien : %5)</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target &quot;%2&quot; (%3), located at %4, was moved to the trash. Remove the link or choose a new target. (Link: %5)</source>
+        <translation>Le lien « %1 » ne peut pas être enregistré : sa cible « %2 » (%3), située à %4, a été placée dans la corbeille. Supprimez le lien ou choisissez une nouvelle cible. (Lien : %5)</translation>
+    </message>
+    <message>
+        <source>Restoring the target from the trash does not repair the link, because the restored object gets a new location: set the link again afterwards, or link to the object instead of its location.</source>
+        <translation>Restaurer la cible depuis la corbeille ne répare pas le lien, car l&apos;objet restauré reçoit un nouvel emplacement : redéfinissez ensuite le lien, ou liez l&apos;objet plutôt que son emplacement.</translation>
+    </message>
+    <message>
+        <source>Using scripts in links is not allowed, '%1' has been removed</source>
+        <translation>L&apos;utilisation de scripts dans les liens n&apos;est pas autorisée, « %1 » a été supprimé</translation>
     </message>
 </context>
 <context>
@@ -1168,7 +1464,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Make the selected text &lt;u&gt;underline&lt;/u&gt;. This button is only enabled if you have a custom tag named underline, template code to handle underline custom tags is not included in Online Editor.</source>
-        <translation type="obsolete">&lt;u&gt;Souligne&lt;u&gt; le texte sélectionné. Ce bouton est activé uniquement si une balise personnalisée nommée underline existe. Le template pour gérer la balise personnalisée underline n&apos;est pas inclus dans l&apos;extension Online Editor.</translation>
+        <translation type="obsolete">&lt;u&gt;Souligne&lt;/u&gt; le texte sélectionné. Ce bouton est activé uniquement si une balise personnalisée nommée underline existe. Le template pour gérer la balise personnalisée underline n&apos;est pas inclus dans l&apos;extension Online Editor.</translation>
     </message>
     <message>
         <source>Create a bullet list. To create a new list item, press &quot;Enter&quot;. To end a list, press &quot;Enter&quot; key on an empty list item. If you click this button when the cursor is on a list item, the formatting will be removed.</source>
@@ -1324,11 +1620,11 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Toggle &lt;sub&gt;subscript&lt;/sub&gt; style on the selected text. This button is only enabled if you have a custom tag named subscript, template code to handle subscript custom tags is not included in Online Editor.</source>
-        <translation>(Dés)active le style &lt;u&gt;indice&lt;/u&gt; sur le texte sélectionné. Ce bouton est activé seulement si une balise personnalisée appelée subscript existe.</translation>
+        <translation>Active ou désactive le style &lt;sub&gt;indice&lt;/sub&gt; sur le texte sélectionné. Ce bouton n&apos;est disponible que si vous disposez d&apos;une balise personnalisée nommée subscript ; le code de template qui gère les balises personnalisées subscript n&apos;est pas fourni avec l&apos;Online Editor.</translation>
     </message>
     <message>
         <source>Toggle &lt;sup&gt;superscript&lt;/sup&gt; style on the selected text. This button is only enabled if you have a custom tag named superscript, template code to handle superscript custom tags is not included in Online Editor.</source>
-        <translation>(Dés)active le style &lt;u&gt;exposant&lt;/u&gt; sur le texte sélectionné. Ce bouton est activé seulement si une balise personnalisée appelée superscript existe.</translation>
+        <translation>Active ou désactive le style &lt;sup&gt;exposant&lt;/sup&gt; sur le texte sélectionné. Ce bouton n&apos;est disponible que si vous disposez d&apos;une balise personnalisée nommée superscript ; le code de template qui gère les balises personnalisées superscript n&apos;est pas fourni avec l&apos;Online Editor.</translation>
     </message>
     <message>
         <source>Toggle left align text, or float block content to the left.</source>
@@ -1562,6 +1858,14 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     <message>
         <source>Invalid e-mail address: &apos;%1&apos;</source>
         <translation>Adresse email invalide : &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Class &apos;%1&apos; is not allowed for element &amp;lt;%2&amp;gt; (check content.ini).</source>
+        <translation>La classe &apos;%1&apos; n&apos;est pas autorisée pour l&apos;élément &amp;lt;%2&amp;gt; (vérifiez le fichier content.ini).</translation>
+    </message>
+    <message>
+        <source>Required attribute &apos;%1&apos; is not presented in tag &amp;lt;%2&amp;gt;.</source>
+        <translation>L&apos;attribut obligatoire &apos;%1&apos; ne figure pas dans la balise &amp;lt;%2&amp;gt;.</translation>
     </message>
 </context>
 <context>
