@@ -48,7 +48,9 @@ class expHelpModulePolicyTest extends PHPUnit\Framework\TestCase
         foreach ( $m['views'] as $name => $view )
         {
             $this->assertArrayHasKey( 'functions', $view, $name . ' must name its policy function' );
-            $this->assertSame( array( 'read' ), array_values( (array)$view['functions'] ), $name . ' needs exphelp/read' );
+            // the context help JSON of help maintained as content has its own function (doc/features/6.0/help-content.md)
+            $expected = $name === 'context' ? array( 'context' ) : array( 'read' );
+            $this->assertSame( $expected, array_values( (array)$view['functions'] ), $name . ' needs exphelp/' . $expected[0] );
         }
     }
 
@@ -56,7 +58,7 @@ class expHelpModulePolicyTest extends PHPUnit\Framework\TestCase
     public function testFunctionList()
     {
         $m = self::module();
-        $this->assertSame( array( 'read' ), array_keys( $m['functions'] ) );
+        $this->assertSame( array( 'read', 'context' ), array_keys( $m['functions'] ) );
         $this->assertSame( 'read', expHelp::POLICY_FUNCTION );
     }
 
