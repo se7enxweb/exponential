@@ -8,7 +8,7 @@
     if (!all) { return; }
     all.parentNode.hidden = false;
     all.addEventListener('change', function () {
-        var boxes = document.querySelectorAll('.exp-oauth input[name="DeleteIDArray[]"]');
+        var boxes = document.querySelectorAll('form[name="ApplicationList"] input[name="DeleteIDArray[]"]');
         for (var i = 0; i < boxes.length; i++) { boxes[i].checked = all.checked; }
     });
 }());
