@@ -53,7 +53,10 @@ class expLogNumericKeyTest extends PHPUnit\Framework\TestCase
         $values = array( 'LogViewerSettings' => array( 'Directories' => array( 'var/log' ) ) );
         if ( $label )
             $values['LogViewerSettings']['LogLabel'] = array( '404' => 'Not found requests (404)', 'error' => 'Errors' );
-        $values['RotationSettings'] = array( 'Keep' => array( '404' => '5' ) );
+        // every [RotationSettings] variable set here: one left out is read from the installation's logviewer.ini once eZSys
+        // is loaded (a whole PHPUnit run), which compresses the archives of 404.log (Compress[404]=enabled)
+        $values['RotationSettings'] = array( 'Keep' => array( '404' => '5' ), 'Compress' => array( '404' => 'disabled' ),
+                                             'MaxSize' => array( '404' => '1000' ), 'MaxAgeDays' => array( '404' => '0' ) );
         $values['DigestSettings'] = array( 'LogLevels' => array( '404' => 'error,warning,notice' ), 'GroupBy' => array( '404' => 'reason' ) );
         return expLogViewerTestFixtures::config( $this->root, $values );
     }
@@ -167,7 +170,8 @@ class expLogNumericKeyTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $plan['unknown'] );
         $result = $fallback->apply( $plan );
         $this->assertTrue( $result['ok'] );
-        $this->assertSame( "again\n", file_get_contents( $this->root . '/var/log/404.log.1' ) );
+        $rotated = $this->root . '/var/log/404.log.1';
+        $this->assertSame( "again\n", is_file( $rotated ) ? file_get_contents( $rotated ) : gzdecode( (string)file_get_contents( $rotated . '.gz' ) ) );
     }
 
     public function testPermalinkStaysView404()
