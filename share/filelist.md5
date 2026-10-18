@@ -508,7 +508,7 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 5d35317c921d3787c8da593f097cc2f4  design/admin/templates/error/shop/2.tpl
 60e288bd8fb5708e034ac8c4000e36e1  design/admin/templates/error/shop/3.tpl
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
-268433558acca11df2282e1903781c9a  design/admin/templates/exphelp/dashboard.tpl
+e9586bed991a7873dd972c56008ae4e8  design/admin/templates/exphelp/dashboard.tpl
 09875679251690e7ef0399b30260fdb4  design/admin/templates/exphelp/parts/viewer_meta.tpl
 835295e2c2b1ba2b36871512ccae3213  design/admin/templates/exphelp/parts/viewer_nav.tpl
 69992051147dd0f6b3dbc0892bee4fa9  design/admin/templates/exphelp/parts/viewer_toc.tpl

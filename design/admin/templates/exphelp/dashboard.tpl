@@ -127,7 +127,7 @@
             <ul class="a4-help-recent">
             {foreach $help_recent as $change}
                 <li>
-                    <span class="a4-icon a4-bi-file-earmark-text" aria-hidden="true"></span>
+                    <span class="a4-icon a4-bi-file-earmark" aria-hidden="true"></span>
                     <span class="a4-help-recent-main">
                         <a href={concat( '/exphelp/viewer/', $change.id )|ezurl}>{$change.title|wash}</a>
                         {if and( is_set( $change.subject ), $change.subject|ne( '' ) )}<span class="a4-help-recent-path">{$change.subject|shorten( 90 )|wash}</span>{/if}
