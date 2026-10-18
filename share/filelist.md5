@@ -1123,7 +1123,7 @@ f3c70a3819d45856f62d41d3287dd790  design/admin4/templates/content/collectedinfo/
 7ca072d4a5fe41a218147375afada152  design/admin4/templates/content/copy.tpl
 4472b4af73e3412a49edc7b938681e61  design/admin4/templates/content/copy_subtree.tpl
 afe296b9f61bc7df7010688feac4bb9a  design/admin4/templates/content/create_languages.tpl
-01d341e11e13fd17bb6daec9996550d6  design/admin4/templates/content/dashboard.tpl
+6ae174f79e9b8aedcea456c895d22244  design/admin4/templates/content/dashboard.tpl
 8b9a7b74d36d5b80929b387bb98e4c51  design/admin4/templates/content/datatype/edit/ezbinaryfile.tpl
 16263fa6b8802aac1a17a5ddd7e4215c  design/admin4/templates/content/datatype/edit/ezdate.tpl
 9d52e6f4ec347feb21f912efc6c2f71f  design/admin4/templates/content/datatype/edit/ezdatetime.tpl
@@ -3247,7 +3247,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-8944c7a4f756acac228c32a954fa4ff0  doc/changelogs/6.0/6.0.15.md
+2e76ca01b2425fe56850eda1154f32a2  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7712,7 +7712,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-3bd803c0a4f5f580775a83727b859214  tests/test-map.json
+edeb1f7b0977f257f61a0294c0b693f8  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -7949,7 +7949,7 @@ a7f1588e0a629132d1903a8cb5a065a7  tests/tests/extension/ezjscore/ezjscServerFunc
 9c4dc8893e7dbfc3a44db815e9d751f1  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
 708d1e986b92531457d34829727a367b  tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php
 9004bfc49f5764c617f188163c4ed482  tests/tests/extension/ezjscore/fixtures/publishingqueue_harness.php
-e9e2d21d4c54630b4ddb3d5fb43cb891  tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php
+87dfb442b2f908684c39f95a820c497c  tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php
 66e6cbee478fb7265fcc9ee62f4981c3  tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php
 dfb38e0e8ada903c6cf26e6b85182c3d  tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php
 6af13ee38eecd73f9d1a8488684b3b9d  tests/tests/extension/ezoe/expOEAtdRemovedTest.php

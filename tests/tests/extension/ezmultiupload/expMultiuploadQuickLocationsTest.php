@@ -13,6 +13,10 @@
  *  QL-04  the settings: QuickLocations=disabled, the keys and the limit bounded; the fetch function refuses bad ids
  *  QL-05  the template and the scripts: buttons with aria-pressed and an accessible name, the shared .a4-quickpick,
  *         no inline CSS or script, the same hidden field as the picker
+ *  QL-06  Images and Files right after Media (found by their paths, translated labels), not again in Media's row,
+ *         with the same permission filtering and current marking
+ *  QL-07  the dashboard's upload target: Media > Images where the user can upload, else Media
+ *  QL-08  the dashboards of admin4 (admin4l) and exp_adminui open the upload page at that target
  *
  * Run: php vendor/bin/phpunit tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php
  *
@@ -180,7 +184,8 @@ class expMultiuploadQuickLocationsTest extends PHPUnit\Framework\TestCase
                          array( 54, 43, 'Articles only' ), array( 55, 43, 'A page', array( 'is_container' => false, 'class_identifier' => 'article' ) ),
                          array( 56, 43, 'Banners' ), array( 510, 51, 'Logos' ) ) as $row )
             expMuQuickTestService::$nodes[$row[0]] = $n( $row[0], $row[1], $row[2], isset( $row[3] ) ? $row[3] : array() );
-        expMuQuickTestService::$keys = array( 'content' => 2, 'media' => 43 );
+        expMuQuickTestService::$keys = array( 'content' => 2, 'media' => 43, 'media/images' => 51, 'media/files' => 52 );
+        eZINI::instance( 'content.ini' )->setVariable( 'NodeSettings', 'MediaRootNode', '43' );
         expMuQuickTestService::$classes = array( 54 => array( 'article' ) );
     }
 
@@ -190,6 +195,7 @@ class expMultiuploadQuickLocationsTest extends PHPUnit\Framework\TestCase
         {
             eZINI::resetInstance( 'ezmultiupload.ini' );
             eZINI::resetInstance( 'upload.ini' );
+            eZINI::resetInstance( 'content.ini' );
             chdir( $this->cwd );
         }
     }
@@ -299,7 +305,8 @@ class expMultiuploadQuickLocationsTest extends PHPUnit\Framework\TestCase
     public function testSettingsAndFetchFunction()
     {
         $settings = expMuQuickTestService::quickLocationSettings();
-        $this->assertSame( array( 'enabled' => true, 'presets' => array( 'content', 'media' ), 'rows' => array( 'content', 'media' ), 'limit' => 12 ), $settings );
+        $this->assertSame( array( 'enabled' => true, 'presets' => array( 'content', 'media' ), 'rows' => array( 'content', 'media' ), 'limit' => 12,
+                                 'labels' => array( 'media/images' => 'Images', 'media/files' => 'Files' ) ), $settings );
         $ini = eZINI::instance( 'ezmultiupload.ini' );
         $ini->setVariable( 'QuickLocationSettings', 'ChildRowLimit', '500' );
         $ini->setVariable( 'QuickLocationSettings', 'PresetList', array( 'media', 'media', '', array( 'x' ), 'remote:abc' ) );
@@ -351,5 +358,82 @@ class expMultiuploadQuickLocationsTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( $needle, $old );
         foreach ( array( $page, $old ) as $script )
             $this->assertDoesNotMatchRegularExpression( '/\.style\.|cssText|innerHTML\s*=\s*loc/', $script );
+    }
+
+    /** QL-06 */
+    public function testImagesAndFilesAfterMedia()
+    {
+        $ini = eZINI::instance( 'ezmultiupload.ini' );
+        $ini->setVariable( 'QuickLocationSettings', 'PresetList', array( 'content', 'media', 'media/images', 'media/files' ) );
+        $ini->setVariable( 'QuickLocationSettings', 'PresetLabels', array( 'media/images' => 'Images', 'media/files' => 'Files' ) );
+        expMuQuickTestService::$nodes[51]->values['name'] = 'Pictures folder';
+        $quick = expMuQuickTestService::quickLocations( $this->target( 51 ) );
+        $this->assertSame( array( 2, 43, 51, 52 ), self::ids( $quick['presets'] ), 'Websites | Media | Images | Files' );
+        $this->assertSame( array( 'Websites', 'Media', 'Images', 'Files' ), array_column( $quick['presets'], 'label' ), 'the label, not the node name' );
+        $this->assertSame( array( 53, 56 ), self::ids( $quick['rows'][1]['items'] ), 'not again in the row under Media' );
+        $this->assertTrue( $quick['presets'][2]['current'] );
+        $this->assertTrue( $quick['presets'][1]['within'] );
+        $this->assertSame( 'Images', expMuQuickTestService::quickLabel( 'media/images', 'x', array( 'media/images' => 'Images' ) ) );
+        $this->assertSame( 'Pictures', expMuQuickTestService::quickLabel( 'media/x', 'Pictures', array() ) );
+
+        // Images closed to the user: no button, and nothing else moves
+        expMuQuickTestService::$classes[51] = array( 'article' );
+        $quick = expMuQuickTestService::quickLocations( $this->target( 43 ) );
+        $this->assertSame( array( 2, 43, 52 ), self::ids( $quick['presets'] ) );
+        $this->assertSame( array( 53, 56 ), self::ids( $quick['rows'][1]['items'] ) );
+        // Files not there on this site
+        expMuQuickTestService::$keys['media/files'] = 0;
+        $this->assertSame( array( 2, 43 ), self::ids( expMuQuickTestService::quickLocations( $this->target( 43 ) )['presets'] ) );
+        // the shipped settings
+        $shipped = (string)file_get_contents( dirname( __DIR__, 4 ) . '/extension/ezmultiupload/settings/ezmultiupload.ini' );
+        $this->assertMatchesRegularExpression( '/PresetList\[\]=media\nPresetList\[\]=media\/images\nPresetList\[\]=media\/files\n/', $shipped );
+        $this->assertStringContainsString( 'PresetLabels[media/images]=Images', $shipped );
+    }
+
+    /** QL-07 */
+    public function testDashboardTarget()
+    {
+        $this->assertSame( 51, expMuQuickTestService::dashboardTarget(), 'Media > Images' );
+        expMuQuickTestService::$classes[51] = array( 'article' );
+        $this->assertSame( 43, expMuQuickTestService::dashboardTarget(), 'Media when the user may not upload to Images' );
+        unset( expMuQuickTestService::$classes[51] );
+        expMuQuickTestService::$keys['media/images'] = 0;
+        $this->assertSame( 43, expMuQuickTestService::dashboardTarget(), 'Media when there is no Images folder' );
+        expMuQuickTestService::$nodes[43]->values['creatable'] = false;
+        $this->assertSame( 43, expMuQuickTestService::dashboardTarget(), 'the media root as before when nothing takes files' );
+        eZINI::instance( 'ezmultiupload.ini' )->setVariable( 'DashboardSettings', 'UploadTargetList', array( 'media/files', 'media' ) );
+        $this->assertSame( 52, expMuQuickTestService::dashboardTarget() );
+
+        expMuQuickTestFunctions::$service = 'expMuQuickTestService';
+        try
+        {
+            $this->assertSame( array( 'result' => 52 ), expMuQuickTestFunctions::fetchDashboardTarget() );
+            expMuQuickTestFunctions::$service = 'expNoSuchService';
+            $this->assertSame( array( 'result' => 43 ), expMuQuickTestFunctions::fetchDashboardTarget(), 'an older service: the media root' );
+        }
+        finally
+        {
+            expMuQuickTestFunctions::$service = 'expMultiuploadService';
+        }
+    }
+
+    /** QL-08 */
+    public function testDashboardsUseTheTarget()
+    {
+        $root = dirname( __DIR__, 4 );
+        $files = array( $root . '/design/admin4/templates/content/dashboard.tpl' );
+        if ( is_file( $root . '/extension/exp_adminui/design/adminui/templates/content/dashboard.tpl' ) )
+            $files[] = $root . '/extension/exp_adminui/design/adminui/templates/content/dashboard.tpl';
+        foreach ( $files as $file )
+        {
+            $tpl = (string)file_get_contents( $file );
+            if ( strpos( $tpl, 'dashboard_target' ) === false && strpos( $file, 'exp_adminui' ) !== false )
+                continue; // an exp_adminui release before 1.0.0.43
+            $this->assertStringContainsString( "fetch( 'ezmultiupload', 'dashboard_target', hash() )", $tpl, $file );
+            $this->assertStringContainsString( "ezmodule( 'ezmultiupload/upload' )", $tpl, $file );
+            $this->assertStringContainsString( "href={concat( 'ezmultiupload/upload/', \$upload_node )|ezurl}", $tpl, $file );
+            $this->assertStringContainsString( "concat( 'ezmultiupload/upload/', \$upload_node ) ) ) )", $tpl, $file );
+            $this->assertStringNotContainsString( "ezmultiupload/upload/', \$media_node", $tpl, $file );
+        }
     }
 }

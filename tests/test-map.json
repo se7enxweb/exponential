@@ -1236,7 +1236,8 @@
       "tests/tests/design/AdminReviewTemplateWarningsTest.php"
     ],
     "design/admin4/templates/content/dashboard.tpl": [
-      "tests/tests/design/AdminReviewTemplateWarningsTest.php"
+      "tests/tests/design/AdminReviewTemplateWarningsTest.php",
+      "tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php"
     ],
     "design/admin4/templates/content/datatype/edit/ezobjectrelationlist.tpl": [
       "tests/tests/design/AdminReviewTemplateWarningsTest.php"
