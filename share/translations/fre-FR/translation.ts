@@ -43857,6 +43857,10 @@ Consultez la page des prérequis pour plus d&apos;informations.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>Avec un accès par nom d&apos;hôte, la convention est %site pour le site, %admin pour l&apos;administration et %editor pour l&apos;édition de contenu.</translation>
     </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Ce mot de passe est connu ou trop courant : n'importe qui pourrait le deviner. Choisissez-en un autre.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -46274,6 +46278,22 @@ votre compte.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Veuillez saisir une adresse e-mail valide.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Ce lien a expiré.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Pour votre sécurité, un lien de réinitialisation du mot de passe ne fonctionne que pendant %1 minutes et une seule fois. Demandez un nouveau lien ci-dessous.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Demander un nouveau lien</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>Le lien ne fonctionne qu'une fois et pendant %1 minutes seulement.</translation>
     </message>
 </context>
 <context>
@@ -59373,6 +59393,14 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>The new password does not meet the requirements.</source>
         <translation>Le nouveau mot de passe ne satisfait pas aux exigences.</translation>
     </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>N'est pas un mot de passe connu ou courant</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Le nouveau mot de passe est connu ou trop courant. Choisissez-en un autre.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/setup/rad</name>
@@ -71271,6 +71299,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>The password does not meet the requirements.</source>
         <translation>Le mot de passe ne répond pas aux exigences.</translation>
+    </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Le mot de passe est connu ou trop courant. Choisissez-en un autre.</translation>
     </message>
 </context>
 <context>

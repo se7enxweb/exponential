@@ -44,6 +44,15 @@ the rules any stricter:
 | `ForbidLogin=enabled` | `not_login` | not contain the login name (case is ignored; only logins of 3 or more characters) |
 | `ForbidCurrentPassword=enabled` | `not_current` | differ from the current password |
 
+Since 6.0.15 one more rule is **on** by default, in `site.ini [UserSettings]`:
+
+| Setting | Rule id | The new password must |
+|---|---|---|
+| `WeakPasswordCheck=enabled` | `not_common` | not be a well-known or common password, nor a simple variant of one (`expWeakPasswordList`; more words with `WeakPasswordList[]` and `WeakPasswordFile`) |
+
+It applies to new passwords only; nobody is refused at sign-in. `WeakPasswordCheck=disabled` brings back the rules of
+before. Details: [doc/bc/6.0/weak-passwords-and-reset-key-lifetime.md](../../bc/6.0/weak-passwords-and-reset-key-lifetime.md).
+
 To turn a rule on, use an override, for example `settings/override/site.ini.append.php`:
 
 ```ini

@@ -50627,6 +50627,10 @@ latlh De&apos; DaneHchugh, poQghachmey nav yIlegh.</translation>
         <source>With hostname access the convention is %site for the site, %admin for the administration and %editor for content editing.</source>
         <translation>jabwI&apos; pong &apos;el mIwDaq: yoSvaD %site, loHghachvaD %admin, De&apos; choHghachvaD %editor.</translation>
     </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Qagh! pegh mu' vam Sovlu'; Hoch Sovlaw'. latlh yIwIv.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53095,6 +53099,22 @@ yIlob.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>De&apos;wI&apos; QIn Daq lugh yIghItlh.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>rIn rar'eghwI' poH.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Qan'meH, %1 tup neH je wa'logh neH Qap pegh mu' rar'eghwI'. rar'eghwI' chu' yItlhob.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>rar'eghwI' chu' yItlhob</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>wa'logh neH je %1 tup neH Qap rar'eghwI'.</translation>
     </message>
 </context>
 <context>
@@ -57769,6 +57789,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>The new password does not meet the requirements.</source>
         <translation>poQlu&apos;bogh Dochmey ta&apos;be&apos; pegh mu&apos; chu&apos;.</translation>
+    </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>pegh mu' Sovlu'bogh pagh motlhbogh ghaHbe'</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Qagh! DaH pegh mu' Sovlu'. latlh yIwIv.</translation>
     </message>
 </context>
 <context>
@@ -69876,6 +69904,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>The password does not meet the requirements.</source>
         <translation>poQghachmey ta&apos;be&apos; pegh mu&apos;.</translation>
+    </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Qagh! pegh mu' Sovlu'. latlh yIwIv.</translation>
     </message>
 </context>
 <context>

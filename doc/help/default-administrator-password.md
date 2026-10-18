@@ -4,7 +4,7 @@ audience: admin, developer
 category: administration
 order: 31
 summary: Which administrator login and password a fresh installation starts with, for each way of installing (setup wizard, kickstarter, console install, the shipped database seed, packages), and why it must be changed at once.
-keywords: default password, admin password, administrator, publish, initial-admin-password, setup wizard, kickstarter, kickstart.ini, exp:install, install, first login, well-known password, cleandata, db_data.dba
+keywords: default password, admin password, administrator, publish, initial-admin-password, setup wizard, kickstarter, kickstart.ini, exp:install, install, first login, well-known password, weak password, WeakPasswordList, WeakPasswordCheck, cleandata, db_data.dba
 featured: true
 context: setup/init
 type: help
@@ -26,7 +26,7 @@ installed. This page lists it for each way, as the code of Exponential 6.0.15 do
 | How the site was installed | Login | Password after the installation |
 |---|---|---|
 | [Setup wizard](#the-setup-wizard) in the browser | `admin` | the one you typed in the wizard; there is no default |
-| [Kickstarter](#the-kickstarter-kickstartini) (`exp:kickstarter run` with `kickstart.ini`) | `admin` | `[site_admin] Password=` from `kickstart.ini`; when it is empty or a well-known word, a random 20-character password, printed once and written to `var/log/initial-admin-password` |
+| [Kickstarter](#the-kickstarter-kickstartini) (`exp:kickstarter run` with `kickstart.ini`) | `admin` | `[site_admin] Password=` from `kickstart.ini`; when it is empty, shorter than `MinPasswordLength` or a well-known word, a random 20-character password, printed once and written to `var/log/initial-admin-password` |
 | [Console install](#the-console-install-expinstall) (`exp:install`) | `admin` | `--password=` when it is long enough and not a well-known word; otherwise a random 24-character password, printed at the end and written to `var/log/initial-admin-password` |
 | [The shipped database seed](#the-shipped-database-seed-publish), loaded by hand without an installer | `admin` | **`publish`**: the historical default, known to everyone |
 | [Site packages](#site-packages-and-demo-content) (the 7x and community packages) | `admin` | no change: packages carry no accounts; the installer above sets the password |
@@ -39,11 +39,11 @@ seed without an installer, or where the wizard was told to keep an existing data
 The web setup wizard (`setup/init`, [chapter 5](../install/05-setup-wizard.md)) has a step for the administrator:
 first name, last name, e-mail address, and the password typed twice. The login is always `admin`.
 
-- There is **no default password**. The step refuses an empty password, two passwords that differ, and one shorter
-  than `[UserSettings] MinPasswordLength` (10 as shipped).
-- It does **not** check for well-known words beyond the length: `publish` (7 characters) is refused because it is too
-  short, but a common word of 10 or more characters, such as `password12`, is accepted. Choose a long, random password;
-  a password manager can generate one.
+- There is **no default password**. The step refuses an empty password, two passwords that differ, one shorter
+  than `[UserSettings] MinPasswordLength` (10 as shipped), and, since 6.0.15, a well-known or common password of any
+  length: "This password is well-known or too common, so anyone could guess it. Choose another one." That covers the
+  words of the [shared list](#the-list-of-well-known-passwords) and their simple variants, such as a common word with
+  digits or `!` at the end. Choose a long, random password; a password manager can generate one.
 - If you chose to **keep the existing data** of a database, the step is skipped and the administrator account stays
   as that database has it. A database created from the shipped seed then still has `publish`: change it at once.
 
@@ -63,11 +63,12 @@ Password=
 - **Empty or missing `Password=`** (as in the shipped `kickstart.ini-dist` and `kickstart.ini--example`): the
   installer generates a random 20-character password (letters and digits without the look-alikes), prints it on the
   console and writes it to `var/log/initial-admin-password` with mode `0600`, owner-only.
-- **A well-known word** is replaced the same way. The list, in `eZStepSiteAdmin::isWeakDefaultPassword()`, is
-  `publish`, `admin`, `password`, `changeme`, `change-me`, `secret`, `exponential`, `demo` and `123456`, in any case.
-- **Any other value is installed as it is.** The kickstarter does not apply `MinPasswordLength` to it, so a short
-  password in `kickstart.ini` becomes the administrator's password. Leave `Password=` empty and use the generated one,
-  or put a long random value there.
+- **A well-known or common password** (the [shared list](#the-list-of-well-known-passwords), with its variants) is
+  replaced the same way.
+- **A password shorter than `[UserSettings] MinPasswordLength`** (10 as shipped) is replaced the same way, since
+  6.0.15; before, the kickstarter installed it as it was. These are the rules `exp:install` applies.
+- Any other value is installed as it is. Leave `Password=` empty and use the generated one, or put a long random
+  value there.
 - `kickstart.ini` holds passwords in clear text: create it with mode `0600`, never commit it, and remove it after the
   installation. The run's log, `var/log/kickstart.log`, masks passwords.
 
@@ -77,8 +78,8 @@ Password=
 kickstarter ([chapter 7](../install/07-console-install.md#75-the-administrator-password)):
 
 - **Without `--password`**, or with `--random-password`: a random 24-character password.
-- **With `--password=<value>`**: used when it is at least `MinPasswordLength` (10) characters long and not one of the
-  well-known words above; otherwise it is replaced by a random one, and the summary says why. An empty `--password=`
+- **With `--password=<value>`**: used when it is at least `MinPasswordLength` (10) characters long and not on the
+  [shared list](#the-list-of-well-known-passwords); otherwise it is replaced by a random one, and the summary says why. An empty `--password=`
   is refused.
 - A generated password is printed once in the summary at the end and written to `var/log/initial-admin-password`
   (mode `0600`). The summary tells you to change it and delete that file. A password you gave is shown once and stored
@@ -87,6 +88,32 @@ kickstarter ([chapter 7](../install/07-console-install.md#75-the-administrator-p
 
 In a pipeline, take the password from your secret store (`--password="${ADMIN_PASSWORD}"`), or let it be generated and
 collect it from the summary; never write it into a script or an image.
+
+## The list of well-known passwords
+
+Since 6.0.15 one list, `expWeakPasswordList` (`kernel/classes/expweakpasswordlist.php`), is used everywhere a password
+is set: the setup wizard, the kickstarter, `exp:install`, the **Change password** page, registration, the user edit
+form, `exp:resetuserpassword` and the web services. It holds:
+
+- the software's own names and old defaults (`publish`, `exponential`, `ezpublish`, `demo`), account names (`admin`,
+  `administrator`, `root`, `test`), the classics (`password`, `changeme`, `secret`, `welcome`, `letmein`, `qwerty`,
+  `123456` ...);
+- their simple variants: any case, digits or symbols at the end or the start, spaces, `-` or `_` inside, letter swaps
+  such as `p@ssw0rd`, the endings `-s`, `-es`, `-ed`, `-er`, `-ers`, `-ing`, `-ings`, and a word typed twice;
+- repeated characters and runs of the keyboard, the alphabet or the digits (`aaaaaaaaaa`, `qwertyuiop`, `1234567890`).
+
+A password is compared as a whole, so a long passphrase that only contains such a word is accepted. Add your own words
+(the company's name, the site's name) in an override:
+
+```ini
+[UserSettings]
+WeakPasswordList[]=ourcompany
+WeakPasswordFile=settings/weak-passwords.txt   # one word per line, # for comments
+```
+
+`WeakPasswordCheck=disabled` switches the check off for the forms; the installers always check. An existing password is
+never refused at sign-in: the list applies when a password is set. Details:
+[the upgrade note](../bc/6.0/weak-passwords-and-reset-key-lifetime.md).
 
 ## The shipped database seed: publish
 

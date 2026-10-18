@@ -50658,6 +50658,10 @@ See the requirements page for more information.</source>
         <source>Cancel</source>
         <translation>ביטול</translation>
     </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>סיסמה זו מוכרת או נפוצה מדי, כך שכל אחד יכול לנחש אותה. יש לבחור סיסמה אחרת.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53126,6 +53130,22 @@ your account.</source>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>נא להזין כתובת דוא&quot;ל תקינה.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>תוקף הקישור פג.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>למען אבטחתך, קישור לאיפוס הסיסמה פועל רק במשך %1 דקות ורק פעם אחת. ניתן לבקש קישור חדש למטה.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>בקשת קישור חדש</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>הקישור פועל פעם אחת בלבד ורק במשך %1 דקות.</translation>
     </message>
 </context>
 <context>
@@ -57800,6 +57820,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The new password does not meet the requirements.</source>
         <translation>הסיסמה החדשה אינה עומדת בדרישות.</translation>
+    </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>אינה סיסמה מוכרת או נפוצה</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>הסיסמה החדשה מוכרת או נפוצה מדי. יש לבחור סיסמה אחרת.</translation>
     </message>
 </context>
 <context>
@@ -69907,6 +69935,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The password does not meet the requirements.</source>
         <translation>הסיסמה אינה עומדת בדרישות.</translation>
+    </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>הסיסמה מוכרת או נפוצה מדי. יש לבחור סיסמה אחרת.</translation>
     </message>
 </context>
 <context>

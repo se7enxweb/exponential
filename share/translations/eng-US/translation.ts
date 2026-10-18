@@ -51646,6 +51646,10 @@ See the requirements page for more information.</translation>
         <source>Cancel</source>
         <translation>Cancel</translation>
     </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>This password is well-known or too common, so anyone could guess it. Choose another one.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54189,6 +54193,22 @@ your account.</translation>
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Please enter a valid email address.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>This link has expired.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Ask for a new link</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>The link works only once and only for %1 minutes.</translation>
     </message>
 </context>
 <context>
@@ -66941,6 +66961,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your current password is not correct.</source>
         <translation>Your current password is not correct.</translation>
     </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Is not a well-known or common password</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>The new password is well-known or too common. Choose another one.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/password/js</name>
@@ -67088,6 +67116,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The password does not meet the requirements.</source>
         <translation>The password does not meet the requirements.</translation>
+    </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>The password is well-known or too common. Choose another one.</translation>
     </message>
 </context>
 <context>

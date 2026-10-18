@@ -519,6 +519,7 @@ site is secure and has proper name and email set.", then "Administrator settings
 | empty password | "You need to fill in a password." |
 | the two passwords differ | "Your passwords do not match." |
 | shorter than `site.ini [UserSettings] MinPasswordLength` (10) | "The password is too short." |
+| a well-known or common password, also when it is long enough (`exponential`, `administrator`, `qwertyuiop`, a word with a year or `!` at the end, letter swaps such as `p@ssw0rd`; the list of `expWeakPasswordList`, since 6.0.15) | "This password is well-known or too common, so anyone could guess it. Choose another one." |
 
 In the browser wizard you choose the password yourself and an empty one is refused. (The automatic replacement of an
 empty or well-known password applies to `kickstart.ini`, [chapter 6](06-kickstarter.md#64-kickstartini-reference).)

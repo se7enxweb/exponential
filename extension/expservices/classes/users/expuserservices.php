@@ -45,7 +45,7 @@ class expUserServices extends expUsersBase
         'settings' => array( 'summary' => 'Account settings: enabled and the maximum number of logins', 'access' => 'user', 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'is_enabled, max_login' ),
         'setMaxLogin' => array( 'summary' => 'Change the maximum number of simultaneous logins (POST id, max_login)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'max_login' => 'int' ), 'returns' => 'max_login' ),
         'validateLogin' => array( 'summary' => 'Check a login name against the validation rules and whether it is taken', 'access' => 'public', 'write' => false, 'args' => array( 'login' => 'string' ), 'returns' => 'valid, error, taken' ),
-        'validatePassword' => array( 'summary' => 'Check a password against the length rule', 'access' => 'public', 'write' => false, 'args' => array( 'password' => 'string' ), 'returns' => 'valid' ),
+        'validatePassword' => array( 'summary' => 'Check a password against the password rules (length, [PasswordSettings], well-known passwords)', 'access' => 'public', 'write' => false, 'args' => array( 'password' => 'string' ), 'returns' => 'valid' ),
         'passwordPolicy' => array( 'summary' => 'The password and e-mail rules of the site', 'access' => 'public', 'write' => false, 'args' => array(), 'returns' => 'min_length, generated_length, unique_email' ),
         'generatePassword' => array( 'summary' => 'A generated password', 'access' => 'user', 'write' => false, 'args' => array( 'length' => 'int' ), 'returns' => 'password' ),
         'rolesOf' => array( 'summary' => 'The roles a user has, directly and through groups', 'access' => array( 'role', 'list' ), 'write' => false, 'args' => array( 'id' => 'int' ), 'returns' => 'roles' ),
@@ -317,8 +317,7 @@ class expUserServices extends expUsersBase
         $id = self::post( 'id', 'int' );
         self::requireEdit( $id );
         $pw = self::post( 'password', 'string' );
-        if ( !eZUser::validatePassword( $pw ) )
-            throw new expServiceException( 'The password is too short', 422 );
+        self::requireAcceptablePassword( $pw, eZUser::fetch( (int)$id ) );
         $r = eZUserOperationCollection::password( $id, $pw );
         if ( empty( $r['status'] ) )
             throw new expServiceException( 'The password could not be changed', 422 );
@@ -419,7 +418,8 @@ class expUserServices extends expUsersBase
     public static function validatePassword( array $a = array() )
     {
         self::guard( 'validatePassword' );
-        return self::ok( array( 'valid' => (bool)eZUser::validatePassword( self::arg( $a, 0, 'string' ) ) ) );
+        $errors = self::passwordErrors( self::arg( $a, 0, 'string' ) );
+        return self::ok( array( 'valid' => !$errors, 'errors' => array_values( $errors ) ) );
     }
 
     public static function passwordPolicy( array $a = array() )
