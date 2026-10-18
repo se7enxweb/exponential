@@ -71303,14 +71303,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>החיפוש אינו זמין כרגע.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>כיווץ</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>הרחבה</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>אף דף אינו מכיל את כל המילים; בדפים אלה יש חלק מהן.</translation>
     </message>
@@ -71321,10 +71313,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Getting started</source>
         <translation>צעדים ראשונים</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>תוכן ועריכה</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -71567,10 +71555,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>מצאתם שגיאה?</translation>
     </message>
     <message>
-        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
-        <translation>מדריכים וחומר עיון לכל מי שעובד עם %site, מתוך התיעוד של הגרסה של התקנה זו.</translation>
-    </message>
-    <message>
         <source>Help center</source>
         <translation>מרכז העזרה</translation>
     </message>
@@ -71789,10 +71773,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Type</source>
         <translation>סוג</translation>
-    </message>
-    <message>
-        <source>Type a word to search every help page.</source>
-        <translation>הקלידו מילה כדי לחפש בכל דפי העזרה.</translation>
     </message>
     <message>
         <source>Use this extension</source>
@@ -72445,6 +72425,90 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
         <translation>הארגון ללא מטרות רווח, משפחת המוצרים וההתחייבויות שלו.</translation>
+    </message>
+    <message>
+        <source>%count help topics</source>
+        <translation>%count נושאי עזרה</translation>
+    </message>
+    <message>
+        <source>All manuals</source>
+        <translation>כל המדריכים</translation>
+    </message>
+    <message>
+        <source>Concept</source>
+        <translation>מושג</translation>
+    </message>
+    <message>
+        <source>Contents</source>
+        <translation>תוכן העניינים</translation>
+    </message>
+    <message>
+        <source>Download EPUB</source>
+        <translation>הורדת EPUB</translation>
+    </message>
+    <message>
+        <source>Download PDF</source>
+        <translation>הורדת PDF</translation>
+    </message>
+    <message>
+        <source>Edit this topic</source>
+        <translation>עריכת נושא זה</translation>
+    </message>
+    <message>
+        <source>Edition %edition</source>
+        <translation>מהדורה %edition</translation>
+    </message>
+    <message>
+        <source>From version %from</source>
+        <translation>מגרסה %from</translation>
+    </message>
+    <message>
+        <source>Help topics</source>
+        <translation>נושאי עזרה</translation>
+    </message>
+    <message>
+        <source>Manuals</source>
+        <translation>מדריכים</translation>
+    </message>
+    <message>
+        <source>Manuals and help topics</source>
+        <translation>מדריכים ונושאי עזרה</translation>
+    </message>
+    <message>
+        <source>Platform:</source>
+        <translation>פלטפורמה:</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>תצוגה מקדימה</translation>
+    </message>
+    <message>
+        <source>Preview: %state, not delivered to readers</source>
+        <translation>תצוגה מקדימה: %state, לא מוצג לקוראים</translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation>משימה</translation>
+    </message>
+    <message>
+        <source>There are no manuals you can read yet.</source>
+        <translation>עדיין אין מדריכים שאתם יכולים לקרוא.</translation>
+    </message>
+    <message>
+        <source>This manual has no topics you can read yet.</source>
+        <translation>במדריך זה עדיין אין נושאים שאתם יכולים לקרוא.</translation>
+    </message>
+    <message>
+        <source>Topic type:</source>
+        <translation>סוג הנושא:</translation>
+    </message>
+    <message>
+        <source>Troubleshooting</source>
+        <translation>פתרון בעיות</translation>
+    </message>
+    <message>
+        <source>Versions %from to %to</source>
+        <translation>גרסאות %from עד %to</translation>
     </message>
 </context>
 <context>
