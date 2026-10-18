@@ -528,7 +528,7 @@
   background: var(--a4-soft);
   color: var(--a4-ink);
   font-family: var(--a4-mono);
-  font-size: 0.9em;
+  font-size: var(--a4-text-s);
   overflow-wrap: anywhere;
 }
 .a4-help-body kbd {
@@ -540,7 +540,7 @@
   background: var(--a4-card);
   color: var(--a4-ink);
   font-family: var(--a4-mono);
-  font-size: 0.85em;
+  font-size: var(--a4-text-xs);
   line-height: var(--a4-leading-tight);
 }
 .a4-help-body mark {
@@ -778,7 +778,7 @@
 .a4-help-ext::after {
   content: "\2197";
   margin-inline-start: 2px;
-  font-size: 0.8em;
+  font-size: var(--a4-text-xs);
 }
 .a4-help-deadlink {
   color: var(--a4-muted);
