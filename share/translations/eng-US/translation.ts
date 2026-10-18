@@ -71225,14 +71225,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>The search is not available right now.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Collapse</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Expand</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>No page has every word; these have some of them.</translation>
     </message>
@@ -71243,10 +71235,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Getting started</source>
         <translation>Getting started</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Content and editing</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -71875,6 +71863,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Exponential documentation</source>
         <translation>Exponential documentation</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Editing content</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Features</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Help and support</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Images and media</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Languages</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Layouts</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Publishing</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Your account</translation>
     </message>
 </context>
 </TS>

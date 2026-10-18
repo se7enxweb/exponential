@@ -72613,14 +72613,6 @@ Gracias por tu feedback</translation>
         <translation>La búsqueda no está disponible en este momento.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Contraer</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Expandir</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Ninguna página contiene todas las palabras; estas contienen algunas.</translation>
     </message>
@@ -72631,10 +72623,6 @@ Gracias por tu feedback</translation>
     <message>
         <source>Getting started</source>
         <translation>Primeros pasos</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Contenido y edición</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -73263,6 +73251,38 @@ Gracias por tu feedback</translation>
     <message>
         <source>Exponential documentation</source>
         <translation>Documentación de Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Editar contenido</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Funciones</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Ayuda y soporte</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Imágenes y multimedia</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Idiomas</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Disposiciones</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Publicación</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Su cuenta</translation>
     </message>
 </context>
 </TS>

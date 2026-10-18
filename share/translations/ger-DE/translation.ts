@@ -78169,14 +78169,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Die Suche ist gerade nicht verfügbar.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Einklappen</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Ausklappen</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Keine Seite enthält alle Wörter; diese enthalten einige davon.</translation>
     </message>
@@ -78187,10 +78179,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Getting started</source>
         <translation>Erste Schritte</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Inhalte und Bearbeitung</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -78819,6 +78807,38 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Exponential documentation</source>
         <translation>Exponential-Dokumentation</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Inhalte bearbeiten</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Funktionen</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Hilfe und Support</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Bilder und Medien</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Sprachen</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Seitenlayouts</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Ihr Konto</translation>
     </message>
 </context>
 </TS>

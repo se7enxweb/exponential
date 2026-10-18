@@ -71164,14 +71164,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>DaH nejlu&apos;laHbe&apos;.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>yIQIH</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>yIDach</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Hoch mu&apos; ghajbe&apos; pagh nav; &apos;op ghaj nav&apos;meyvam.</translation>
     </message>
@@ -71182,10 +71174,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Getting started</source>
         <translation>wa&apos;DIch mIw</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>De&apos; &apos;ej choHmeH mIw</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -71814,6 +71802,38 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Exponential documentation</source>
         <translation>Exponential De&apos; ghItlh</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>De&apos; choH</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>laHmey</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>QaH &apos;ej boQ</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>mIllogh &apos;ej Hol</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Holmey</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>mIch mIwmey</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>ngangmoH</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>De&apos;lIj</translation>
     </message>
 </context>
 </TS>

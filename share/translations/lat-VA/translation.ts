@@ -71164,14 +71164,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Quaerere nunc non licet.</translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation>Contrahere</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Explicare</translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Nulla pagina omnia verba habet; hae quaedam habent.</translation>
     </message>
@@ -71182,10 +71174,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Getting started</source>
         <translation>Initia</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Contenta et emendatio</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -71814,6 +71802,38 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Exponential documentation</source>
         <translation>Documenta Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Contenta emendare</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Facultates</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Auxilium et subsidium</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Imagines et media</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Linguae</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Dispositiones</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Editio</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Ratio tua</translation>
     </message>
 </context>
 </TS>

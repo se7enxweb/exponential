@@ -71045,14 +71045,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71062,10 +71054,6 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Getting started</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -71694,6 +71682,38 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Exponential documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
