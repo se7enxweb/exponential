@@ -72223,6 +72223,42 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Image</source>
         <translation>mIllogh</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>QaH HIDjolev</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>qechmey rap</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>rar nom</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>QaH botlh yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>nuq chu&apos;</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count, %total ghItlh vo&apos;</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>yInIH</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>%title yIlo&apos; &apos;ej yIpabmoH</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>mI&apos;, pong, DIS pagh choH mI&apos;</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

@@ -72208,6 +72208,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Image</source>
         <translation>Зображення</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Меню довідки</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Пов&apos;язані теми</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Швидкі посилання</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Відкрити центр довідки</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>Що нового</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count з %total записів</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фільтр</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Сортувати за: %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Версія, назва, рік або ревізія</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

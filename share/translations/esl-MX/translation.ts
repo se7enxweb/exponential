@@ -76449,6 +76449,42 @@ Gracias por la retroalimentación</translation>
         <source>Image</source>
         <translation>Imagen</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Menú de ayuda</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Temas relacionados</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Enlaces rápidos</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Abrir el centro de ayuda</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>Novedades</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count de %total entradas</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Ordenar por %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Versión, nombre, año o revisión</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

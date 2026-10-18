@@ -72254,6 +72254,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Image</source>
         <translation>תמונה</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>תפריט העזרה</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>נושאים קשורים</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>קישורים מהירים</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>פתיחת מרכז העזרה</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>מה חדש</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count מתוך %total רשומות</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>סינון</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>מיון לפי %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>גרסה, שם, שנה או מהדורה</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

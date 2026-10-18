@@ -72223,6 +72223,42 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Image</source>
         <translation>Imago</translation>
     </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Index auxilii</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Argumenta cognata</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Nexus celeres</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Centrum auxilii aperire</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>Quae nova sunt</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count ex %total inscriptionibus</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Colare</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Ordinare per %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Versio, nomen, annus aut recensio</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
