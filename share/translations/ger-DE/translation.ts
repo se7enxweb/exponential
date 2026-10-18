@@ -79132,5 +79132,21 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Image</source>
         <translation>Bild</translation>
     </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count von %total Einträgen</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtern</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Nach %title sortieren</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Version, Name, Jahr oder Revision</translation>
+    </message>
 </context>
 </TS>

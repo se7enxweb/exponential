@@ -72160,5 +72160,21 @@ You will need to change the class of the node by using the swap functionality.</
         <source>What&apos;s new</source>
         <translation>Що нового</translation>
     </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count з %total записів</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фільтр</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Сортувати за: %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Версія, назва, рік або ревізія</translation>
+    </message>
 </context>
 </TS>

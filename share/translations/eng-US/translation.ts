@@ -72188,5 +72188,21 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Image</source>
         <translation>Image</translation>
     </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count of %total entries</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Sort by %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Version, name, year or revision</translation>
+    </message>
 </context>
 </TS>

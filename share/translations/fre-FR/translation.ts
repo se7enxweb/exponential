@@ -73570,5 +73570,21 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>What&apos;s new</source>
         <translation>Nouveautés</translation>
     </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count entrées sur %total</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrer</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Trier par %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Version, nom, année ou révision</translation>
+    </message>
 </context>
 </TS>

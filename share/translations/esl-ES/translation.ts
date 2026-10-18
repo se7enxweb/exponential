@@ -73624,5 +73624,21 @@ Gracias por tu feedback</translation>
         <source>What&apos;s new</source>
         <translation>Novedades</translation>
     </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count de %total entradas</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Ordenar por %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Versión, nombre, año o revisión</translation>
+    </message>
 </context>
 </TS>

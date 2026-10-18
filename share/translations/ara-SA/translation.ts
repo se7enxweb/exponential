@@ -72204,5 +72204,21 @@ You will need to change the class of the node by using the swap functionality.</
         <source>What&apos;s new</source>
         <translation>ما الجديد</translation>
     </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count من %total إدخال</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>تصفية</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>الترتيب حسب %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>الإصدار أو الاسم أو السنة أو المراجعة</translation>
+    </message>
 </context>
 </TS>

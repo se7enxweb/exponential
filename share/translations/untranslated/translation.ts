@@ -72008,5 +72008,21 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Image</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
