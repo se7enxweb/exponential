@@ -53,11 +53,8 @@ Each plan has its own store page under <https://my.se7enx.com/store/exponential-
 | Item | As published | Source |
 |---|---|---|
 | Program fee as a way in | "A monthly subscription fee of $45 USD grants you initial access to the partner program" | requirements page |
-| Kick-Off Package | "Includes program fee, book, online training, certification, and 8h support for $3,200 (30% discount)" for Basic | benefits page |
-| Kick-Off Package | "USD 2900 for Bronze (30% discount)" | program page |
+| Kick-Off Package | Includes "program fee, book, online training, certification, and 8h support"; for the price see the official page | <https://exponential.earth/partner/benefits> |
 | Setup fee | The store pages show a "Setup Fee" heading; no amount was readable in the page text | <https://my.se7enx.com/store/exponential-partners> |
-
-The two Kick-Off Package prices differ, and "Bronze" is not one of the published levels. Ask before you buy.
 
 ## How to budget
 

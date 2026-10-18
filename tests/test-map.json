@@ -1749,6 +1749,12 @@
       "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php"
     ],
+    "doc/install/migration/*": [
+      "tests/tests/kernel/classes/help/expHelpMigrationHubTest.php"
+    ],
+    "doc/install/README.md": [
+      "tests/tests/kernel/classes/help/expHelpMigrationHubTest.php"
+    ],
     "design/admin*/javascript/exphelp.js": [
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
@@ -1764,6 +1770,7 @@
       "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
       "tests/tests/kernel/classes/help/expHelpPdfTest.php",
+      "tests/tests/kernel/classes/help/expHelpMigrationHubTest.php",
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php"
     ],
     "settings/module.ini": [

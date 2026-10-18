@@ -10,7 +10,7 @@ type: help
 # The folder structure of a theme extension
 
 This page is for designers who want to know where each file of a theme goes. How the folders below `design/<name>/`
-are organized in detail is explained in [Design directory layout](../theme-design/design-directory-layout.md).
+are organized in detail is explained in Design directory layout.
 
 ## The complete tree
 
@@ -84,6 +84,6 @@ Or let [the design extension wizard](design-extension-wizard.md) write all of it
 
 ## Related pages
 
-- [Tutorial: create a theme extension](../theme-design/tutorial-create-a-theme-extension.md)
+- Tutorial: create a theme extension
 - [What a theme extension is](what-a-theme-extension-is.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

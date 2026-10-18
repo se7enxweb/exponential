@@ -61,8 +61,7 @@ published sources stop and the Exponential Foundation still has to decide.
    program" (<https://exponential.earth/partner/program>).
 2. **Where the sources disagree, you see both.** Some program pages give different numbers for the same thing. The
    pages show both values and ask you to confirm in writing before you rely on one.
-3. **Where the sources are silent, the page says so.** "To be defined by the Foundation" marks every open question;
-   they are collected on [Open questions for the Foundation](open-questions-for-the-foundation.md).
+3. **Where the sources are silent, the page says so.** "To be defined by the Foundation" marks every open question.
 4. **Ideas are labeled as proposals.** Certification ideas and similar suggestions are marked "Proposal, not a
    program".
 5. **No invented names.** No page names partner companies or members; the published directory requires sign-in
@@ -97,13 +96,13 @@ published sources stop and the Exponential Foundation still has to decide.
 | Stories and listings | [Writing a case study](writing-a-case-study.md) · [Case study template](case-study-template.md) · [Customer references](customer-references.md) · [Directories](partner-directories.md) · [Your partner page](your-partner-page.md) |
 | Giving back | [Roadmap](roadmap-participation.md) · [Feature requests](feature-requests-and-sponsored-features.md) · [Code](contributing-code-back.md) · [Extensions](contributing-extensions-back.md) · [Docs and translations](contributing-docs-and-translations.md) · [Bug filing](filing-bugs-as-a-partner.md) · [Testing releases](testing-releases.md) |
 | Responsibilities | [Keeping customers current](keeping-customers-current.md) · [Security](security-responsibilities.md) · [Licensing](licensing-for-partners.md) · [Customer data](protecting-customer-data.md) |
-| Reference | [FAQ](partner-faq.md) · [Glossary](partner-glossary.md) · [Open questions](open-questions-for-the-foundation.md) · [Reading path](partner-reading-path.md) |
+| Reference | [FAQ](partner-faq.md) · [Glossary](partner-glossary.md) · [Reading path](partner-reading-path.md) |
 
 ## Who to ask
 
 | Question | Where | Source |
 |---|---|---|
-| The partner program, your application, your level | partner@exponential.earth (the program page also names partners@exponential.earth), or the form at <https://exponential.earth/partner/contact-us> | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
+| The partner program, your application, your level | The partner team, through the form at <https://exponential.earth/partner/contact-us> | <https://exponential.earth/partner/apply>, <https://exponential.earth/partner/program> |
 | Paid support and services from 7x | <https://se7enx.com/contact> | <https://exponential.earth/support> |
 | The Foundation | <https://foundation.exponential.earth/> | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md) |
 | Technical questions | Forums <https://share.exponential.earth/forums>, Telegram <https://t.me/exponentialcms> | <https://exponential.earth/about/project> |
