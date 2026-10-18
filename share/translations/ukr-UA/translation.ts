@@ -71147,225 +71147,6 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
-    <name>design/admin/setup/languages</name>
-    <message>
-        <source>Interface languages</source>
-        <translation>Мови інтерфейсу</translation>
-    </message>
-    <message>
-        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
-        <translation>Адміністрування показується мовою своєї локалі. Локаль без власного перекладу показує перший переклад зі свого ланцюжка резервних мов, а якщо такого немає, то англійські вихідні тексти. Ця сторінка перелічує кожну локаль із тим, що вона показує, і наскільки це повно. Вона нічого не змінює: резервні мови задаються в i18n.ini [TranslationSettings].</translation>
-    </message>
-    <message>
-        <source>Overview</source>
-        <translation>Огляд</translation>
-    </message>
-    <message>
-        <source>Locales</source>
-        <translation>Локалі</translation>
-    </message>
-    <message>
-        <source>With a translation of their own</source>
-        <translation>З власним перекладом</translation>
-    </message>
-    <message>
-        <source>Translated through a fallback</source>
-        <translation>Перекладені через резервну мову</translation>
-    </message>
-    <message>
-        <source>In the English source texts</source>
-        <translation>Англійськими вихідними текстами</translation>
-    </message>
-    <message>
-        <source>Problems</source>
-        <translation>Проблеми</translation>
-    </message>
-    <message>
-        <source>Its chain comes back to %target.</source>
-        <translation>Її ланцюжок повертається до %target.</translation>
-    </message>
-    <message>
-        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
-        <translation>Її ланцюжок довший за FallbackMaxDepth і обривається на %target.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which is no locale code.</source>
-        <translation>Резервна мова %target не є кодом локалі.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
-        <translation>Резервна мова %target не має ні файлу локалі, ні перекладу.</translation>
-    </message>
-    <message>
-        <source>FallbackRules[] names %target, which is no fallback rule.</source>
-        <translation>FallbackRules[] називає %target, але це не правило резервної мови.</translation>
-    </message>
-    <message>
-        <source>Has a fallback, but no locale file.</source>
-        <translation>Має резервну мову, але не має файлу локалі.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
-        <translation>Резервна мова %target ще не має перекладу: показуються англійські вихідні тексти.</translation>
-    </message>
-    <message>
-        <source>All locales</source>
-        <translation>Усі локалі</translation>
-    </message>
-    <message>
-        <source>The installation has no locale file for %locale.</source>
-        <translation>У встановленні немає файлу локалі для %locale.</translation>
-    </message>
-    <message>
-        <source>Translation of its own</source>
-        <translation>Власний переклад</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>Так</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>Ні</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>Інтерфейс</translation>
-    </message>
-    <message>
-        <source>%percent % translated</source>
-        <translation>%percent % перекладено</translation>
-    </message>
-    <message>
-        <source>through %locale</source>
-        <translation>через %locale</translation>
-    </message>
-    <message>
-        <source>English source texts</source>
-        <translation>Англійські вихідні тексти</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>Розширення</translation>
-    </message>
-    <message>
-        <source>%translated of %total translated, %complete complete</source>
-        <translation>Перекладено %translated з %total, повністю %complete</translation>
-    </message>
-    <message>
-        <source>Fallback chain</source>
-        <translation>Ланцюжок резервних мов</translation>
-    </message>
-    <message>
-        <source>no translation</source>
-        <translation>немає перекладу</translation>
-    </message>
-    <message>
-        <source>by FallbackLanguages[]</source>
-        <translation>через FallbackLanguages[]</translation>
-    </message>
-    <message>
-        <source>by the automatic same-language fallback</source>
-        <translation>через автоматичну резервну мову в межах тієї самої мови</translation>
-    </message>
-    <message>
-        <source>by the rule %rule</source>
-        <translation>за правилом %rule</translation>
-    </message>
-    <message>
-        <source>None: without a translation of its own it shows the English source texts.</source>
-        <translation>Немає: без власного перекладу показуються англійські вихідні тексти.</translation>
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation>Розширення</translation>
-    </message>
-    <message>
-        <source>Translated</source>
-        <translation>Перекладено</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Налаштування</translation>
-    </message>
-    <message>
-        <source>%count locales with a configured fallback</source>
-        <translation>Локалей із налаштованою резервною мовою: %count</translation>
-    </message>
-    <message>
-        <source>merge: every translation of the chain, the most specific winning</source>
-        <translation>merge: усі переклади ланцюжка, перевагу має найконкретніший</translation>
-    </message>
-    <message>
-        <source>first: the first translation of the chain</source>
-        <translation>first: перший переклад ланцюжка</translation>
-    </message>
-    <message>
-        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
-        <translation>увімкнено: локаль без перекладу й без налаштованої резервної мови бере найповніший переклад своєї мови</translation>
-    </message>
-    <message>
-        <source>Never for: %list</source>
-        <translation>Ніколи для: %list</translation>
-    </message>
-    <message>
-        <source>disabled</source>
-        <translation>вимкнено</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Немає</translation>
-    </message>
-    <message>
-        <source>The same list on the command line: %command</source>
-        <translation>Той самий список у командному рядку: %command</translation>
-    </message>
-    <message>
-        <source>%count shown</source>
-        <translation>Показано: %count</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Показати</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Локаль</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Мова</translation>
-    </message>
-    <message>
-        <source>This siteaccess</source>
-        <translation>Цей доступ до сайту</translation>
-    </message>
-    <message>
-        <source>source texts</source>
-        <translation>вихідні тексти</translation>
-    </message>
-    <message>
-        <source>problem</source>
-        <translation>проблема</translation>
-    </message>
-    <message>
-        <source>%translated of %total</source>
-        <translation>%translated з %total</translation>
-    </message>
-    <message>
-        <source>%percent % on average</source>
-        <translation>%percent % у середньому</translation>
-    </message>
-    <message>
-        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
-        <translation>Виділений крок знайдено автоматичною резервною мовою в межах тієї самої мови; решту налаштовано або взято з правила.</translation>
-    </message>
-    <message>
-        <source>No locale is of this kind.</source>
-        <translation>Немає локалей цього виду.</translation>
-    </message>
-</context>
-<context>
     <name>kernel/exphelp</name>
     <message>
         <source>Help</source>
@@ -71412,6 +71193,14 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Пошук зараз недоступний.</translation>
     </message>
     <message>
+        <source>Collapse</source>
+        <translation>Згорнути</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Розгорнути</translation>
+    </message>
+    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Жодна сторінка не містить усіх слів; ці містять деякі з них.</translation>
     </message>
@@ -71422,6 +71211,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Getting started</source>
         <translation>Початок роботи</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Вміст і редагування</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -72052,6 +71845,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Документація Exponential</translation>
     </message>
     <message>
+        <source>Grow from user to developer</source>
+        <translation>Від користувача до розробника</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential — вільне програмне забезпечення з повною історією на GitHub. Встановіть його як клони Git, рекомендований спосіб створення сайтів, і ви зможете стежити за кожною зміною, пробувати виправлення до їх випуску та надсилати власні покращення.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Користуйтеся адмініструванням</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Увійдіть, редагуйте та публікуйте.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Встановіть за допомогою Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Ядро та кожне розширення як клони з історією.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Робіть внесок</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Зробіть форк, виправте та відкрийте pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Розробка з Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Посібник зі встановлення</translation>
+    </message>
+    <message>
         <source>Editing content</source>
         <translation>Редагування вмісту</translation>
     </message>
@@ -72182,18 +72015,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
         <translation>Скористайтеся «Редагувати на GitHub» на будь-якій сторінці. Зміни приймаються за тією ж ліцензією, тож вони залишаються вільними для всіх.</translation>
-    </message>
-    <message>
-        <source>Collapse</source>
-        <translation>Згорнути</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Розгорнути</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Вміст і редагування</translation>
     </message>
     <message>
         <source>Apply filters</source>
@@ -72386,6 +72207,225 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Image</source>
         <translation>Зображення</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Мови інтерфейсу</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Адміністрування показується мовою своєї локалі. Локаль без власного перекладу показує перший переклад зі свого ланцюжка резервних мов, а якщо такого немає, то англійські вихідні тексти. Ця сторінка перелічує кожну локаль із тим, що вона показує, і наскільки це повно. Вона нічого не змінює: резервні мови задаються в i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Огляд</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Локалі</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>З власним перекладом</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Перекладені через резервну мову</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>Англійськими вихідними текстами</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Проблеми</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Її ланцюжок повертається до %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Її ланцюжок довший за FallbackMaxDepth і обривається на %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Резервна мова %target не є кодом локалі.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Резервна мова %target не має ні файлу локалі, ні перекладу.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] називає %target, але це не правило резервної мови.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Має резервну мову, але не має файлу локалі.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Резервна мова %target ще не має перекладу: показуються англійські вихідні тексти.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Усі локалі</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>У встановленні немає файлу локалі для %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Власний переклад</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Інтерфейс</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % перекладено</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>через %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Англійські вихідні тексти</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Розширення</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>Перекладено %translated з %total, повністю %complete</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Ланцюжок резервних мов</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>немає перекладу</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>через FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>через автоматичну резервну мову в межах тієї самої мови</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>за правилом %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Немає: без власного перекладу показуються англійські вихідні тексти.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Розширення</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Перекладено</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>Локалей із налаштованою резервною мовою: %count</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: усі переклади ланцюжка, перевагу має найконкретніший</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: перший переклад ланцюжка</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>увімкнено: локаль без перекладу й без налаштованої резервної мови бере найповніший переклад своєї мови</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Ніколи для: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>вимкнено</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Немає</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>Той самий список у командному рядку: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>Показано: %count</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Показати</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Локаль</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Мова</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Цей доступ до сайту</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>вихідні тексти</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>проблема</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated з %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % у середньому</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Виділений крок знайдено автоматичною резервною мовою в межах тієї самої мови; решту налаштовано або взято з правила.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Немає локалей цього виду.</translation>
     </message>
 </context>
 </TS>

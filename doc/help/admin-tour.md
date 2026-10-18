@@ -103,3 +103,7 @@ When you open an item, its page shows:
 - [Creating and editing content](editing-content.md)
 - [Searching](searching.md)
 - [Keyboard shortcuts](keyboard-shortcuts.md)
+
+Curious how the administration is made, or want to change your site's templates and code? Every part of Exponential
+is free software with its full history on GitHub. [Develop with Git](develop-with-git.md) shows how to install it as
+Git clones and grow from user to developer, one step at a time.

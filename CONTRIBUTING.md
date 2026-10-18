@@ -14,7 +14,7 @@ Please make sure to review our [Code of Conduct](CODE_OF_CONDUCT.md) before cont
 1. Fork the repository and clone your fork to your local machine.
 
 ```bash
-git clone https://github.com/your-username/expontential.git
+git clone https://github.com/your-username/exponential.git
 ```
 
 2. Install the project dependencies.

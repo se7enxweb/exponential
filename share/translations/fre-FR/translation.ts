@@ -72557,225 +72557,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
 </context>
 <context>
-    <name>design/admin/setup/languages</name>
-    <message>
-        <source>Interface languages</source>
-        <translation>Langues de l'interface</translation>
-    </message>
-    <message>
-        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
-        <translation>L'administration s'affiche dans la langue de sa locale. Une locale sans traduction propre affiche la première traduction de sa chaîne de repli, sinon les textes source anglais. Cette page liste chaque locale avec ce qu'elle affiche et son degré de complétude. Elle ne modifie rien : les replis se définissent dans i18n.ini [TranslationSettings].</translation>
-    </message>
-    <message>
-        <source>Overview</source>
-        <translation>Vue d'ensemble</translation>
-    </message>
-    <message>
-        <source>Locales</source>
-        <translation>Localisations</translation>
-    </message>
-    <message>
-        <source>With a translation of their own</source>
-        <translation>Avec une traduction propre</translation>
-    </message>
-    <message>
-        <source>Translated through a fallback</source>
-        <translation>Traduites par un repli</translation>
-    </message>
-    <message>
-        <source>In the English source texts</source>
-        <translation>Dans les textes source anglais</translation>
-    </message>
-    <message>
-        <source>Problems</source>
-        <translation>Problèmes</translation>
-    </message>
-    <message>
-        <source>Its chain comes back to %target.</source>
-        <translation>Sa chaîne revient à %target.</translation>
-    </message>
-    <message>
-        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
-        <translation>Sa chaîne dépasse FallbackMaxDepth et s'arrête à %target.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which is no locale code.</source>
-        <translation>Se replie sur %target, qui n'est pas un code de locale.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
-        <translation>Se replie sur %target, qui n'a ni fichier de locale ni traduction.</translation>
-    </message>
-    <message>
-        <source>FallbackRules[] names %target, which is no fallback rule.</source>
-        <translation>FallbackRules[] nomme %target, qui n'est pas une règle de repli.</translation>
-    </message>
-    <message>
-        <source>Has a fallback, but no locale file.</source>
-        <translation>A un repli, mais aucun fichier de locale.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
-        <translation>Se replie sur %target, qui n'a pas encore de traduction : elle affiche les textes source anglais.</translation>
-    </message>
-    <message>
-        <source>All locales</source>
-        <translation>Toutes les localisations</translation>
-    </message>
-    <message>
-        <source>The installation has no locale file for %locale.</source>
-        <translation>L'installation n'a aucun fichier de locale pour %locale.</translation>
-    </message>
-    <message>
-        <source>Translation of its own</source>
-        <translation>Traduction propre</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>Oui</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>Non</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>Interface</translation>
-    </message>
-    <message>
-        <source>%percent % translated</source>
-        <translation>%percent % traduit</translation>
-    </message>
-    <message>
-        <source>through %locale</source>
-        <translation>via %locale</translation>
-    </message>
-    <message>
-        <source>English source texts</source>
-        <translation>Textes source anglais</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>Extensions</translation>
-    </message>
-    <message>
-        <source>%translated of %total translated, %complete complete</source>
-        <translation>%translated sur %total traduites, %complete complètes</translation>
-    </message>
-    <message>
-        <source>Fallback chain</source>
-        <translation>Chaîne de repli</translation>
-    </message>
-    <message>
-        <source>no translation</source>
-        <translation>aucune traduction</translation>
-    </message>
-    <message>
-        <source>by FallbackLanguages[]</source>
-        <translation>par FallbackLanguages[]</translation>
-    </message>
-    <message>
-        <source>by the automatic same-language fallback</source>
-        <translation>par le repli automatique dans la même langue</translation>
-    </message>
-    <message>
-        <source>by the rule %rule</source>
-        <translation>par la règle %rule</translation>
-    </message>
-    <message>
-        <source>None: without a translation of its own it shows the English source texts.</source>
-        <translation>Aucune : sans traduction propre, elle affiche les textes source anglais.</translation>
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation>Extension</translation>
-    </message>
-    <message>
-        <source>Translated</source>
-        <translation>Traduit</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Paramètres</translation>
-    </message>
-    <message>
-        <source>%count locales with a configured fallback</source>
-        <translation>%count locales avec un repli configuré</translation>
-    </message>
-    <message>
-        <source>merge: every translation of the chain, the most specific winning</source>
-        <translation>merge : toutes les traductions de la chaîne, la plus spécifique l'emportant</translation>
-    </message>
-    <message>
-        <source>first: the first translation of the chain</source>
-        <translation>first : la première traduction de la chaîne</translation>
-    </message>
-    <message>
-        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
-        <translation>activé : une locale sans traduction et sans repli configuré prend la traduction la plus complète de sa langue</translation>
-    </message>
-    <message>
-        <source>Never for: %list</source>
-        <translation>Jamais pour : %list</translation>
-    </message>
-    <message>
-        <source>disabled</source>
-        <translation>désactivé</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Aucune</translation>
-    </message>
-    <message>
-        <source>The same list on the command line: %command</source>
-        <translation>La même liste en ligne de commande : %command</translation>
-    </message>
-    <message>
-        <source>%count shown</source>
-        <translation>%count affichées</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Afficher</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Localisation</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Langue</translation>
-    </message>
-    <message>
-        <source>This siteaccess</source>
-        <translation>Ce siteaccess</translation>
-    </message>
-    <message>
-        <source>source texts</source>
-        <translation>textes source</translation>
-    </message>
-    <message>
-        <source>problem</source>
-        <translation>problème</translation>
-    </message>
-    <message>
-        <source>%translated of %total</source>
-        <translation>%translated sur %total</translation>
-    </message>
-    <message>
-        <source>%percent % on average</source>
-        <translation>%percent % en moyenne</translation>
-    </message>
-    <message>
-        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
-        <translation>Une étape mise en évidence a été trouvée par le repli automatique dans la même langue ; les autres sont configurées ou proviennent d'une règle.</translation>
-    </message>
-    <message>
-        <source>No locale is of this kind.</source>
-        <translation>Aucune locale de ce type.</translation>
-    </message>
-</context>
-<context>
     <name>kernel/exphelp</name>
     <message>
         <source>Help</source>
@@ -72822,6 +72603,14 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>La recherche n&apos;est pas disponible pour le moment.</translation>
     </message>
     <message>
+        <source>Collapse</source>
+        <translation>Réduire</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Développer</translation>
+    </message>
+    <message>
         <source>No page has every word; these have some of them.</source>
         <translation>Aucune page ne contient tous les mots ; celles-ci en contiennent une partie.</translation>
     </message>
@@ -72832,6 +72621,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Getting started</source>
         <translation>Premiers pas</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Contenu et édition</translation>
     </message>
     <message>
         <source>Administration</source>
@@ -73462,6 +73255,46 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Documentation d&apos;Exponential</translation>
     </message>
     <message>
+        <source>Grow from user to developer</source>
+        <translation>D&apos;utilisateur à développeur</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential est un logiciel libre dont tout l&apos;historique est sur GitHub. Installez-le sous forme de clones Git, la méthode recommandée pour créer des sites, et vous pourrez suivre chaque modification, essayer les correctifs avant leur publication et proposer vos propres améliorations.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Utiliser l&apos;administration</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Connectez-vous, modifiez et publiez.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Installer avec Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Le noyau et chaque extension sous forme de clones avec leur historique.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Contribuer en retour</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Forkez, corrigez et ouvrez une pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Développer avec Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Guide d&apos;installation</translation>
+    </message>
+    <message>
         <source>Editing content</source>
         <translation>Modifier le contenu</translation>
     </message>
@@ -73592,18 +73425,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
         <translation>Utilisez « Modifier sur GitHub » sur n&apos;importe quelle page. Les modifications sont acceptées sous la même licence et restent ainsi libres pour tous.</translation>
-    </message>
-    <message>
-        <source>Collapse</source>
-        <translation>Réduire</translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation>Développer</translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
-        <translation>Contenu et édition</translation>
     </message>
     <message>
         <source>Apply filters</source>
@@ -73796,6 +73617,225 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Image</source>
         <translation>Illustration</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Langues de l'interface</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>L'administration s'affiche dans la langue de sa locale. Une locale sans traduction propre affiche la première traduction de sa chaîne de repli, sinon les textes source anglais. Cette page liste chaque locale avec ce qu'elle affiche et son degré de complétude. Elle ne modifie rien : les replis se définissent dans i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Vue d'ensemble</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Localisations</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>Avec une traduction propre</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Traduites par un repli</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>Dans les textes source anglais</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problèmes</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Sa chaîne revient à %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Sa chaîne dépasse FallbackMaxDepth et s'arrête à %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Se replie sur %target, qui n'est pas un code de locale.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Se replie sur %target, qui n'a ni fichier de locale ni traduction.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] nomme %target, qui n'est pas une règle de repli.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>A un repli, mais aucun fichier de locale.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Se replie sur %target, qui n'a pas encore de traduction : elle affiche les textes source anglais.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Toutes les localisations</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>L'installation n'a aucun fichier de locale pour %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Traduction propre</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Oui</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Interface</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % traduit</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>via %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Textes source anglais</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensions</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated sur %total traduites, %complete complètes</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Chaîne de repli</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>aucune traduction</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>par FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>par le repli automatique dans la même langue</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>par la règle %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Aucune : sans traduction propre, elle affiche les textes source anglais.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Traduit</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Paramètres</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count locales avec un repli configuré</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge : toutes les traductions de la chaîne, la plus spécifique l'emportant</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first : la première traduction de la chaîne</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>activé : une locale sans traduction et sans repli configuré prend la traduction la plus complète de sa langue</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Jamais pour : %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>désactivé</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Aucune</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>La même liste en ligne de commande : %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count affichées</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Afficher</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Localisation</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Langue</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Ce siteaccess</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>textes source</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>problème</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated sur %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % en moyenne</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Une étape mise en évidence a été trouvée par le repli automatique dans la même langue ; les autres sont configurées ou proviennent d'une règle.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Aucune locale de ce type.</translation>
     </message>
 </context>
 </TS>

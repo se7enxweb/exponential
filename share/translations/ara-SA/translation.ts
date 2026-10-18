@@ -71909,6 +71909,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>حسابك</translation>
     </message>
     <message>
+        <source>Grow from user to developer</source>
+        <translation>من مستخدم إلى مطوّر</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential برنامج حر بتاريخه الكامل على GitHub. ثبّته كنسخ Git، وهي الطريقة الموصى بها لبناء المواقع، فتتابع كل تغيير وتجرّب الإصلاحات قبل صدورها وترسل تحسيناتك بنفسك.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>استخدم لوحة الإدارة</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>سجّل الدخول وحرّر وانشر.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>ثبّت باستخدام Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>النواة وكل إضافة كنسخ مع تاريخها.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>ساهم بالمقابل</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>انسخ المستودع (fork) وأصلح وافتح طلب دمج.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>طوّر باستخدام Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>دليل التثبيت</translation>
+    </message>
+    <message>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>أدلة ومراجع لكل من يعمل مع هذا التثبيت، مأخوذة من وثائق إصداره.</translation>
     </message>
