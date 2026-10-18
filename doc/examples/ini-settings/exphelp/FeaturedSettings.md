@@ -21,7 +21,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 
 > Page ids (paths below doc/) shown first on the dashboard  
 
-Default: a list of 16: `help/getting-started.md`, `help/admin-tour.md`, `help/editing-content.md`, `help/who-is-7x.md`, `help/who-is-the-exponential-foundation.md`, `help/publishing-and-versions.md`, `help/accounts-and-sign-in.md`, `help/when-something-goes-wrong.md`, `help/develop-with-git.md`, `help/leadership/project-managers-start-here.md`, `help/business/sales-and-marketing-start-here.md`, `help/leadership/leadership-reading-path.md` ....
+Default: a list of 17: `help/getting-started.md`, `help/admin-tour.md`, `help/editing-content.md`, `help/who-is-7x.md`, `help/who-is-the-exponential-foundation.md`, `help/publishing-and-versions.md`, `help/accounts-and-sign-in.md`, `help/when-something-goes-wrong.md`, `help/develop-with-git.md`, `help/leadership/project-managers-start-here.md`, `help/business/sales-and-marketing-start-here.md`, `help/leadership/leadership-reading-path.md` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -45,6 +45,7 @@ PageList[]=help/database-support.md
 PageList[]=help/os-support.md
 PageList[]=examples/README.md
 PageList[]=standards/README.md
+PageList[]=install/migration/README.md
 */ ?>
 ```
 
