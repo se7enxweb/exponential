@@ -5501,7 +5501,7 @@ c1b25293911761413b722cfd93864ecf  kernel/classes/help/exphelplicense.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
 3e266c07a62be736b13083ba12415067  kernel/classes/help/exphelpmarkdownrenderer.php
 2eda45c57fc0cf7218eee489b8cf3b6d  kernel/classes/help/exphelpnavigation.php
-c431f54c4d39bcd7b5cf58e0fc1931e0  kernel/classes/help/exphelppdf.php
+73abdd47f3ccdd80e820d10dbaacd18a  kernel/classes/help/exphelppdf.php
 eab2bbfd4344e0307d7750258677fe7e  kernel/classes/help/exphelppdfcanvas.php
 e14bfaf3e3eee52666e6afb4badcead4  kernel/classes/help/exphelppdffontsubset.php
 f3f4f086dcc7f610aa9a28066ac2a7fd  kernel/classes/help/exphelppdfwriter.php

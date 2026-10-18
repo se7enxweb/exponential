@@ -128,7 +128,8 @@ class expHelpPdf
             $tmp = $file . '.' . getmypid() . '.tmp';
             if ( @file_put_contents( $tmp, $data ) === strlen( $data ) )
             {
-                @chmod( $tmp, octdec( eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) ) );
+                $permissions = eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' );
+                @chmod( $tmp, eZFile::fileMode( preg_match( '/^0?[0-7]{3}$/', (string)$permissions ) ? octdec( $permissions ) : 0664 ) );
                 if ( @rename( $tmp, $file ) )
                     return array( 'file' => $file, 'data' => null, 'filename' => $filename, 'size' => strlen( $data ), 'cached' => false );
             }
