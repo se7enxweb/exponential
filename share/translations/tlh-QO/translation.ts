@@ -71941,7 +71941,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>%extension De&apos;wI&apos; ghItlh &apos;ay&apos; ghaH nav&apos;e&apos;. %extension chaw&apos; lo&apos;taHvIS DIvumlu&apos;.</translation>
+        <translation>%extension De&apos;wI&apos; ghItlh &apos;ay&apos; ghaH nav&apos;e&apos;. chaw&apos;Daj lo&apos;taHvIS DIvumlu&apos;.</translation>
     </message>
     <message>
         <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
