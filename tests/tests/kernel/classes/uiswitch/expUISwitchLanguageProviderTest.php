@@ -93,9 +93,9 @@ class expUISwitchLanguageProviderTest extends PHPUnit\Framework\TestCase
         file_put_contents( $dir . '/translation.ts', $xml );
     }
 
-    protected function catalogue( $cache = '' )
+    protected function catalogue( $cache = '', array $fallbacks = array() )
     {
-        return new expUISwitchLanguageCatalogue( $this->fixture, $cache );
+        return new expUISwitchLanguageCatalogue( $this->fixture, $cache, $fallbacks );
     }
 
     protected function provider( array $settings, $default = 'eng-GB', $cache = '' )
@@ -126,6 +126,53 @@ class expUISwitchLanguageProviderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'German', $entries['ger-DE']['english'] );
         $this->assertSame( 'de-DE', $entries['ger-DE']['http'] );
         $this->assertArrayHasKey( 'eng-GB@euro', $entries, 'variants are known, for a value named in the settings' );
+    }
+
+    public function testALocaleWithoutItsOwnTranslationCountsWithItsFallback()
+    {
+        $this->locale( 'ger-AT', 'Deutsch (Österreich)', 'German (Austria)', 'de-AT' );
+        $this->locale( 'fre-CA', 'Français (Canada)', 'French (Canada)', 'fr-CA' );
+        $this->locale( 'ger-CH', 'Deutsch (Schweiz)', 'German (Switzerland)', 'de-CH' );
+        $catalogue = $this->catalogue( '', array( 'ger-AT' => 'ger-DE', 'fre-CA' => 'fre-FR', 'swa-KE' => 'untranslated',
+                                                  'ger-CH' => 'ger-LI', 'eng-US' => 'eng-GB' ) );
+        $entries = $catalogue->entries();
+        $this->assertSame( 100, $entries['ger-AT']['coverage'], 'the translator loads ger-DE for ger-AT' );
+        $this->assertSame( 'ger-DE', $entries['ger-AT']['fallback'] );
+        $this->assertSame( 25, $entries['fre-CA']['coverage'] );
+        $this->assertNull( $entries['swa-KE']['coverage'], '"untranslated" is no translation' );
+        $this->assertNull( $entries['ger-CH']['coverage'], 'a fallback without a file is no translation' );
+        $this->assertSame( '', $entries['ger-CH']['fallback'] );
+        $this->assertSame( '', $entries['ger-DE']['fallback'], 'a locale with its own translation does not fall back' );
+        $this->assertSame( 100, $entries['eng-GB@euro']['coverage'], 'English' );
+        $this->locale( 'ger-DE@euro', '', '', '' );
+        $this->locale( 'ger-AT@euro', '', '', '' );
+        $entries = $this->catalogue( '', array( 'ger-AT' => 'ger-DE' ) )->entries();
+        $this->assertSame( 100, $entries['ger-DE@euro']['coverage'], 'a variant loads the translation of its locale' );
+        $this->assertSame( 'ger-DE', $entries['ger-DE@euro']['fallback'] );
+        $this->assertSame( 100, $entries['ger-AT@euro']['coverage'], 'and that one\'s fallback' );
+        $this->assertSame( array( 'fre-CA' => 'fre-FR', 'ger-AT' => 'ger-DE', 'ger-CH' => 'ger-LI' ), $catalogue->fallbacks() );
+        $this->assertNotSame( $catalogue->signature(), $this->catalogue()->signature(), 'other fallbacks, another catalogue' );
+    }
+
+    public function testShippedFallbacksGiveEveryCountryOfATranslatedLanguageItsTranslation()
+    {
+        // The shipped file, not the settings the installation resolves (siteaccesses, extensions, the INI cache).
+        preg_match_all( '/^FallbackLanguages\[([^\]]+)\]=(.*)$/m', file_get_contents( $this->root . '/settings/i18n.ini' ), $matches );
+        $this->assertNotEmpty( $matches[1] );
+        $catalogue = new expUISwitchLanguageCatalogue( $this->root, '', array_combine( $matches[1], array_map( 'trim', $matches[2] ) ) );
+        $fallbacks = $catalogue->fallbacks();
+        foreach ( $catalogue->localeCodes() as $code )
+        {
+            $language = substr( $code, 0, 3 );
+            if ( $language === 'eng' || is_file( $this->root . '/share/translations/' . $code . '/translation.ts' ) )
+                continue;
+            $translated = glob( $this->root . '/share/translations/' . $language . '-*/translation.ts' );
+            if ( !$translated )
+                continue;
+            $this->assertArrayHasKey( $code, $fallbacks, "$code: a translation of its language exists, FallbackLanguages[$code] should name it" );
+            $this->assertFileExists( $this->root . '/share/translations/' . $fallbacks[$code] . '/translation.ts', $code );
+            $this->assertSame( $language, substr( $fallbacks[$code], 0, 3 ), "$code falls back to its own language" );
+        }
     }
 
     public function testCoveragePercentRoundsDownSoOnlyCompleteSays100()

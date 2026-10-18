@@ -115,11 +115,15 @@ class SevenxDseAdminNeoViewTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'try', preg_replace( '~//[^\n]*~', '', $run ), 'run() has no try block' );
         $retire = strpos( $run, 'self::retireWorkerAfterResponse()' );
         $include = strpos( $run, 'self::includeAdminNeo(' );
-        $exit = strrpos( $run, '\eZExecution::cleanExit()' ); // the last one: a used worker ends earlier (#619)
+        // run() may end early (sevenx_dse 1.1.13 answers "reload soon" in a process that already ran AdminNeo), so
+        // the request's own ending is the last cleanExit(), and every cleanExit() comes after the worker is retired.
+        $firstExit = strpos( $run, '\eZExecution::cleanExit()' );
+        $exit = strrpos( $run, '\eZExecution::cleanExit()' );
         $this->assertNotFalse( $retire );
         $this->assertNotFalse( $include );
         $this->assertNotFalse( $exit );
         $this->assertLessThan( $include, $retire, 'the worker is retired before AdminNeo runs' );
+        $this->assertLessThan( $firstExit, $retire, 'the worker is retired before any early exit' );
         $this->assertLessThan( $exit, $include, 'the request ends with cleanExit() after AdminNeo' );
         $this->assertStringContainsString( "session_id( self::sessionIdFromCookie( \$_COOKIE, 'neo_sid' ) )", $run );
     }
