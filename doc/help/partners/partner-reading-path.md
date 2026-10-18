@@ -20,7 +20,6 @@ read top to bottom.
 4. [Partner plans and prices](partner-plans-and-prices.md)
 5. [The partnership agreement](the-partnership-agreement.md)
 6. [Your first year as a partner](your-first-year.md)
-7. [Open questions for the Foundation](open-questions-for-the-foundation.md)
 
 ## Sales and marketing
 

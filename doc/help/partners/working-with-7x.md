@@ -35,7 +35,7 @@ its early years. The full story: [Who is 7x?](../who-is-7x.md).
 
 | Purpose | Contact |
 |---|---|
-| Partner program | partner@exponential.earth (also partners@exponential.earth), <https://exponential.earth/partner/contact-us> |
+| Partner program | The partner team, through <https://exponential.earth/partner/contact-us> |
 | Services and general | <https://se7enx.com/contact> |
 | Security | security@se7enx.com |
 | Technical support under your plan | GitHub issue tickets ([Opening a partner support ticket](opening-a-partner-support-ticket.md)) |
