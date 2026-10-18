@@ -10,6 +10,9 @@
  *  LV-45  the byte budget and the time budget stop with a cursor
  *  LV-46  a catastrophic expression stops with regex_limit, quickly, and pcre.backtrack_limit and pcre.jit are restored
  *  LV-47  compressed rotations are searched; several files in order; an invalid search reads nothing
+ *  LV-48  with the viewer's redactor the request and the client address are compared as shown: a masked part of
+ *         either is not found by guessing it; without masking they are compared as written; the values of secret
+ *         settings are not found even unmasked
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -122,6 +125,67 @@ class expLogSearchTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $run( array( 'q' => 'jane' ), $redact ), 'a masked address is not found by its hidden value' );
         $this->assertSame( array( 'https://example.test/news' ), $run( array( 'q' => 'failed' ), $redact ) );
         $this->assertSame( array( 'https://example.test/admin/content/view/full/2' ), $run( array( 'q' => 'slow\s+QUERY', 'regex' => 1 ) ) );
+    }
+
+    /** LV-48 */
+    public function testMaskedCriteriaCompareWhatIsShown()
+    {
+        $t = date( 'M d Y H:i:s', self::START );
+        $content = "[ $t ] [203.0.113.7] [admin] [https://example.test/user/reset?token=abc123def456&mail=jane@example.com] Error: reset failed\n"
+                 . "[ $t ] [203.0.200.9] [admin] [https://example.test/news] Error: DB login with Sup3rS3cretValue refused\n"
+                 . "[ $t ] [2001:db8:85a3::8a2e:370:7334] [admin] [https://example.test/v6] Error: from v6\n";
+        $file = $this->file( 'masked.log', $content );
+        $s = $this->search();
+        $run = function ( array $in, $redact = null ) use ( $s, $file ) {
+            $r = $s->run( array( $file ), expLogSearch::criteria( $in ), '', $redact );
+            return array_map( function ( $e ) { return $e['url']; }, $r['entries'] );
+        };
+        $reset = 'https://example.test/user/reset?token=abc123def456&mail=jane@example.com';
+        $news = 'https://example.test/news';
+        $v6 = 'https://example.test/v6';
+        $masked = new expLogRedactor( true, true, true, array( 'Sup3rS3cretValue' ) );
+        $unmasked = new expLogRedactor( false, false, false, array( 'Sup3rS3cretValue' ) );
+
+        // shown as 203.0.x.x: the shown prefix finds both, any guess at the hidden part finds nothing
+        $this->assertSame( array( $reset, $news ), $run( array( 'ip' => '203.0.' ), $masked ) );
+        $this->assertSame( array(), $run( array( 'ip' => '203.0.1' ), $masked ), 'the host part of a masked address is not an oracle' );
+        $this->assertSame( array(), $run( array( 'ip' => '203.0.113' ), $masked ) );
+        $this->assertSame( array(), $run( array( 'ip' => '203.0.113.7' ), $masked ) );
+        $this->assertSame( array( $v6 ), $run( array( 'ip' => '2001:db8:' ), $masked ) );
+        $this->assertSame( array(), $run( array( 'ip' => '2001:db8:85a3' ), $masked ) );
+        // the request: a masked token or e-mail address is not found by its hidden value, the rest is
+        $this->assertSame( array(), $run( array( 'uri' => 'token=abc' ), $masked ), 'a masked part of the request is not an oracle' );
+        $this->assertSame( array(), $run( array( 'uri' => 'jane@' ), $masked ) );
+        $this->assertSame( array( $reset ), $run( array( 'uri' => '/user/reset?token=' ), $masked ) );
+        // nor the text
+        $this->assertSame( array(), $run( array( 'q' => 'Sup3rS3cret' ), $masked ) );
+
+        // unmasked (setup/unmasklogs, Show unmasked): compared as written, as without a redactor
+        foreach ( array( null, $unmasked ) as $redact )
+        {
+            $this->assertSame( array( $reset ), $run( array( 'ip' => '203.0.113' ), $redact ) );
+            $this->assertSame( array( $reset ), $run( array( 'ip' => '203.0.113.7' ), $redact ) );
+            $this->assertSame( array( $v6 ), $run( array( 'ip' => '2001:db8:85a3' ), $redact ) );
+            $this->assertSame( array( $reset ), $run( array( 'uri' => 'mail=jane@example.com' ), $redact ) );
+            $this->assertSame( array( $news ), $run( array( 'q' => 'refused' ), $redact ) );
+        }
+        // the value of a secret setting and a token in an address are hidden from every viewer, so they are not found
+        // unmasked either
+        $this->assertSame( array( $news ), $run( array( 'q' => 'Sup3rS3cret' ) ), 'without a redactor: as written' );
+        $this->assertSame( array(), $run( array( 'q' => 'Sup3rS3cret' ), $unmasked ) );
+        $this->assertSame( array( $reset ), $run( array( 'uri' => 'token=abc123' ) ), 'without a redactor: as written' );
+        $this->assertSame( array(), $run( array( 'uri' => 'token=abc123' ), $unmasked ) );
+
+        // entryMatches() alone
+        $entry = expLogParser::parse( "[ $t ] [203.0.113.7] [admin] [https://example.test/a?token=abc123def456] Error: x\n" )[0];
+        $c = expLogSearch::criteria( array( 'ip' => '203.0.113', 'uri' => 'token=abc' ) );
+        $this->assertSame( 1, expLogSearch::entryMatches( $entry, $c ) );
+        $this->assertSame( 1, expLogSearch::entryMatches( $entry, expLogSearch::criteria( array( 'ip' => '203.0.113' ) ), $unmasked ) );
+        $this->assertSame( 0, expLogSearch::entryMatches( $entry, $c, $unmasked ), 'the token is hidden unmasked too' );
+        $this->assertSame( 0, expLogSearch::entryMatches( $entry, $c, $masked ) );
+        $this->assertSame( 0, expLogSearch::entryMatches( $entry, expLogSearch::criteria( array( 'ip' => '203.0.113' ) ), $masked ) );
+        $this->assertSame( 0, expLogSearch::entryMatches( $entry, expLogSearch::criteria( array( 'uri' => 'token=abc' ) ), $masked ) );
+        $this->assertSame( 1, expLogSearch::entryMatches( $entry, expLogSearch::criteria( array( 'ip' => '203.0.', 'uri' => 'token=' ) ), $masked ) );
     }
 
     /** LV-43 */

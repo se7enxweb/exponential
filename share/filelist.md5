@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-38928de7712d2c1c28ec80b209584c65  doc/changelogs/6.0/6.0.15.md
+93471f83c974d47afdb802977382a4e3  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3654,7 +3654,7 @@ ee9fbd196fef3a6c34b154e3bedaf179  doc/features/6.0/installation-name-in-pages.md
 97fe3d0e639c493744f4e8208391c95b  doc/features/6.0/kickstarter-cli.md
 fcc435d9803fe432b0b4baeb2676948c  doc/features/6.0/legacy-bridge.md
 ebabdb07b696edf707333308d72c8e50  doc/features/6.0/log-rotation.md
-468cf460b9cf0d305ed9e1e663bc83f9  doc/features/6.0/log-viewer.md
+7be8fbcdf0c9a2011c5089a723915ab8  doc/features/6.0/log-viewer.md
 990e1c65645859f009d8edce234b6b21  doc/features/6.0/mail-preferences.md
 9d02e374df7accf9f0b0774fb42cf5af  doc/features/6.0/maintenance-mode.md
 7dede757e1c12399dda823cca059ce7c  doc/features/6.0/managed-by-deployment.md
@@ -5419,9 +5419,9 @@ dfc899d3ce066b3b45761fd24fe8e4e5  kernel/classes/logviewer/explogmanagerinterfac
 a1db25ec318110b9b9f4259ce59bc27b  kernel/classes/logviewer/explogpermalink.php
 eb57a9b3e9f9d772150bedcc96f6db3d  kernel/classes/logviewer/explogratelimit.php
 769aa666bd8cfc4dc6dd38b8edb9262c  kernel/classes/logviewer/explogredactor.php
-ea0de1820d4f8933ddda6a3c4a3d6ddc  kernel/classes/logviewer/explogsearch.php
+7cc7e3007c806d9584a58ebf79477dee  kernel/classes/logviewer/explogsearch.php
 d318c1d56d892e1b52a04b6e1e98f0f4  kernel/classes/logviewer/explogtail.php
-1d34a1bdc540a32edc3c5259e65b24db  kernel/classes/logviewer/explogviewer.php
+6b5447d59b13ca4a54566760a29e744b  kernel/classes/logviewer/explogviewer.php
 be39d8c0caad394b7c816c6a60858e89  kernel/classes/logviewer/explogviewerconfig.php
 e0743bbaada56d3b5fc0b60d63816f34  kernel/classes/mail/expmailtemplatebody.php
 433fa0d8a63f3ab1be70354c7a4c145d  kernel/classes/mailpreferences/expconsentcontext.php
@@ -8595,9 +8595,9 @@ cf659ce9a5d8174daa838f20f12ac9b1  tests/tests/kernel/logviewer/expLogParserTest.
 7ca6ac5eec7f9a7e802fd7f852a2849c  tests/tests/kernel/logviewer/expLogPermalinkTest.php
 777b688d58416f641f1bdc7aa6fc61a1  tests/tests/kernel/logviewer/expLogRedactorTest.php
 a8187b8c6bed221b0ec1fa538912da8d  tests/tests/kernel/logviewer/expLogRequestLogsTest.php
-d6c3929cec44a0017fd020dc1ba97ed1  tests/tests/kernel/logviewer/expLogSearchTest.php
+2050af9ff35484302d73a791de8fd574  tests/tests/kernel/logviewer/expLogSearchTest.php
 178b052562304f35fab4cdaa8e4b524f  tests/tests/kernel/logviewer/expLogTailTest.php
-288fe1528e238bb565fc822cd426be71  tests/tests/kernel/logviewer/expLogViewerTest.php
+58295647ea82ac37d7c9d7a7161aa11c  tests/tests/kernel/logviewer/expLogViewerTest.php
 b1c296f0db3b7c1ccce27af4161421f0  tests/tests/kernel/logviewer/expLogViewerTestFixtures.php
 f1ed9827441bcdec26fee547eb0757de  tests/tests/kernel/logviewer/expLogWebServerFormatsTest.php
 7c7a98a1fb713f9be90f9ec9f794ecd9  tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php
