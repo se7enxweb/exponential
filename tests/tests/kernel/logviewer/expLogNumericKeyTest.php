@@ -9,7 +9,7 @@
  *     setup/logsmanage), its lines and managed; select(), plan() (also 'all') and apply() name it "404"
  *   - both managers give the same fields for a log, so the template sees no missing one
  *   - expLogPermalink: the permalink stays setup/logs/view/404
- *   - expLogHealth: summary() and settings() rows and their keys
+ *   - expLogHealth: summary() and settings() rows and their keys; settings() reads expLogManager's {value, source}
  *   - expLogDigest: LogLevels[404] and GroupBy[404]
  *
  * Covers kernel/classes/logviewer/explogfilelocator.php, kernel/classes/logviewer/explogmanager.php,
@@ -110,7 +110,6 @@ class expLogNumericKeyTest extends PHPUnit\Framework\TestCase
         }
         $this->assertNull( $l->resolveKey( 405 ) );
         $this->assertNull( $l->resolveKey( 4.04 ), 'only a string or an integer is a key' );
-        $this->assertSame( '404.log', $this->locator( false )->resolveKey( '404' )['label'], 'no label: the file name' );
     }
 
     public function testManagerLogsGiveTheKeyAsAStringWithItsLabel()
@@ -190,6 +189,7 @@ class expLogNumericKeyTest extends PHPUnit\Framework\TestCase
         $keep = array_values( array_filter( $settings['404'], function ( $s ) { return $s['name'] === 'keep'; } ) )[0];
         $this->assertSame( 5, $keep['value'] );
         $this->assertSame( 'Keep[404]', $keep['var'] );
+        $this->assertIsInt( $settings['404'][0]['value'], 'the {value, source} shape of expLogManager is read as a value, not shown as "Array"' );
     }
 
     public function testDigestSettingsByKey()

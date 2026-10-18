@@ -3250,7 +3250,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-1b30b79d04c4d25ae3ac02a8fc8d85eb  doc/changelogs/6.0/6.0.15.md
+19bf546eae6be3f87947771c2d89f796  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -5430,7 +5430,7 @@ f073bd9cc1ae524af2cdd0c8e4f411cb  kernel/classes/ini/expsettingstarget.php
 d129d7acf71d576d0594d36d7f3feb1e  kernel/classes/logviewer/explogdigest.php
 266446f6cac3cd4660a69419feeb3c68  kernel/classes/logviewer/explogfilelocator.php
 d28c555e0fae0bc6037dc04b569f6271  kernel/classes/logviewer/explogfilestats.php
-16a4e6c0850e6d1fb84762fa75307d86  kernel/classes/logviewer/exploghealth.php
+46da65edc3e9f127426a74f0bc77ac7e  kernel/classes/logviewer/exploghealth.php
 fa1617b8eae3fff979926b34cbf0a85b  kernel/classes/logviewer/explogmanager.php
 17ac42fcff5b733a2809e1ec218999b1  kernel/classes/logviewer/explogmanagerfactory.php
 b7bded09d1541c6beb853d4b664a3e9d  kernel/classes/logviewer/explogmanagerfallback.php
@@ -8629,7 +8629,7 @@ fa6dd2b59cf85f7b5e628292568c3244  tests/tests/kernel/logviewer/expLogHealthTest.
 e9db92ed572648e00f5f0fbf1956bd4c  tests/tests/kernel/logviewer/expLogManagerFallbackTest.php
 46f8bc21f64d617aab3f625ffd32b209  tests/tests/kernel/logviewer/expLogManagerTest.php
 32c949b29fc85c98a6e6272e09f157f7  tests/tests/kernel/logviewer/expLogMaskedFilterTest.php
-a2ee47366df073fa2599f92654e967ce  tests/tests/kernel/logviewer/expLogNumericKeyTest.php
+c2358e3dec36ff4455e3a97b046a72bc  tests/tests/kernel/logviewer/expLogNumericKeyTest.php
 cf659ce9a5d8174daa838f20f12ac9b1  tests/tests/kernel/logviewer/expLogParserTest.php
 7ca6ac5eec7f9a7e802fd7f852a2849c  tests/tests/kernel/logviewer/expLogPermalinkTest.php
 777b688d58416f641f1bdc7aa6fc61a1  tests/tests/kernel/logviewer/expLogRedactorTest.php
