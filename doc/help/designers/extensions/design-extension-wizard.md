@@ -71,5 +71,5 @@ it writes anything.
 
 - [From the wizard's output to the first commit](from-wizard-output-to-first-commit.md)
 - [RAD tools](../../../features/6.0/rad-tools.md), [RAD security](../../../bc/6.0/rad-security.md)
-- [Tutorial: create a theme extension](../theme-design/tutorial-create-a-theme-extension.md)
+- Tutorial: create a theme extension
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

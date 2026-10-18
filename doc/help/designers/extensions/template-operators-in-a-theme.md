@@ -81,6 +81,6 @@ a template that uses it reports an unknown operator. Add the file as in step 2 b
 
 ## Related pages
 
-- [Operators overview](../templates/operators-overview.md)
+- Operators overview
 - [RAD tools](../../../features/6.0/rad-tools.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
