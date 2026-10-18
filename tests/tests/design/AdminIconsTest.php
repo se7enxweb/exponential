@@ -298,4 +298,15 @@ class AdminIconsTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/^IconList\[\]=globe2$/m', AdminFiles::read( "$root/settings/design.ini" ) );
         $this->assertStringStartsWith( '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16">', AdminFiles::read( "$root/" . self::THEME . '/svg/globe2.svg' ) );
     }
+
+    /**
+     * The tab icons can be switched off as a whole: design.ini [AdminDesignSettings] TopMenuIcons (enabled by default),
+     * read by page_topmenuitem.tpl before it draws an icon.
+     */
+    public function testTheTabIconsCanBeSwitchedOff()
+    {
+        $this->assertMatchesRegularExpression( '/^TopMenuIcons=enabled$/m', AdminFiles::read( self::root() . '/settings/design.ini' ) );
+        $this->assertStringContainsString( "ezini( 'AdminDesignSettings', 'TopMenuIcons', 'design.ini' )|ne( 'disabled' )",
+                                           AdminFiles::read( self::root() . '/design/admin4/templates/page_topmenuitem.tpl' ) );
+    }
 }

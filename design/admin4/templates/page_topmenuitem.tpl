@@ -1,8 +1,9 @@
 {def $liclass='unselected '
      $item_mega=''
      $item_icon=''}
-    {* menu.ini [Topmenu_<tab>] Icon: drawn before the name when design.ini [AdminDesignSettings] IconList[] knows it *}
-    {if and( is_set( $menu_item.icon ), $menu_item.icon|ne( '' ), ezini_hasvariable( 'AdminDesignSettings', 'IconList', 'design.ini' ) )}
+    {* menu.ini [Topmenu_<tab>] Icon: drawn before the name when design.ini [AdminDesignSettings] IconList[] knows it and
+       TopMenuIcons is not disabled *}
+    {if and( is_set( $menu_item.icon ), $menu_item.icon|ne( '' ), ezini_hasvariable( 'AdminDesignSettings', 'IconList', 'design.ini' ), ezini( 'AdminDesignSettings', 'TopMenuIcons', 'design.ini' )|ne( 'disabled' ) )}
         {if ezini( 'AdminDesignSettings', 'IconList', 'design.ini' )|contains( $menu_item.icon )}
             {set $item_icon=$menu_item.icon}
         {/if}
