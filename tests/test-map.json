@@ -1665,6 +1665,15 @@
     ],
     "kernel/sql/common/cleandata.sql": [
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+    ],
+    "design/admin4/javascript/exphelp.js": [
+      "tests/tests/design/AdminHelpScriptTest.php"
+    ],
+    "design/admin/javascript/exphelp.js": [
+      "tests/tests/design/AdminHelpScriptTest.php"
+    ],
+    "tests/tests/design/js/exphelp.js": [
+      "tests/tests/design/AdminHelpScriptTest.php"
     ]
   },
   "generated": {
