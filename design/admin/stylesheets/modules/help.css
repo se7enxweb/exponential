@@ -131,6 +131,22 @@
   letter-spacing: .08em;
   text-transform: uppercase;
 }
+/* The Exponential logo above "Help center" (exphelp/parts/dashboard_brand.tpl): the header's drawing in admin4 (its
+   ink, surface and brand tokens follow the dark mode), the image file in the classic design; 32px high at the
+   logo's 380:60 proportion, fixed so the hero never moves while it loads */
+.a4-help-brand {
+  display: flex;
+  justify-self: center;
+  margin: 0;
+  color: var(--a4-ink);
+}
+.a4-help-brand .a4-logo-full,
+.a4-help-brand-img {
+  display: block;
+  width: calc(var(--a4-space-6) * 380 / 60);
+  height: var(--a4-space-6);
+}
+.a4-help-brand .a4-logo-mark { display: none; }
 .a4-help-hero h1 {
   margin: 0;
   color: var(--a4-ink);

@@ -11,6 +11,8 @@
  *          translated (empty only in untranslated); the client strings carry the two announcements
  *  HCP-04  help.css places the control with tokens, at the logical end side, above the debug bar by
  *          --exp-debug-clearance, which expdebugbar.css sets for the bar and for its minimised tab
+ *  HCP-05  the help dashboard shows the Exponential logo right above "Help center": admin4 the header's inline drawing
+ *          (dark mode through its tokens), classic the same drawing's file; named "Exponential", a fixed size
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -91,7 +93,7 @@ class expHelpContentsPageTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'id="exphelp-folder-help" data-nav-path="help"', $html );
         $this->assertStringContainsString( 'id="exphelp-folder-help-editors" data-nav-path="help/editors"', $html );
         $this->assertStringContainsString( 'id="exphelp-folder-help-editors-2" data-nav-path="help/Editors"', $html, 'ids are unique' );
-        $this->assertStringContainsString( '<span class="a4-help-nav-text" dir="auto">Bc</span><span class="a4-help-nav-count" aria-hidden="true">2</span>', $html,
+        $this->assertMatchesRegularExpression( '#id="exphelp-folder-bc" data-nav-path="bc"><summary class="a4-help-nav-summary"><span class="a4-help-nav-text" dir="auto">[^<]+</span><span class="a4-help-nav-count" aria-hidden="true">2</span>#', $html,
                                            'a closed folder shows its title and page count' );
         $view = (string)file_get_contents( self::root() . '/kernel/private/classes/views/exphelp/contents.php' );
         $this->assertStringContainsString( "self::folderIds( \$navigation->html() )", $view );
@@ -148,6 +150,29 @@ class expHelpContentsPageTest extends PHPUnit\Framework\TestCase
         $php = (string)file_get_contents( self::root() . '/kernel/classes/help/exphelp.php' );
         $this->assertStringContainsString( "'allOpen' => ezpI18n::tr( \$c, 'Every folder is open.' )", $php );
         $this->assertStringContainsString( "'allClosed' => ezpI18n::tr( \$c, 'Every folder is closed.' )", $php );
+    }
+
+    /** HCP-05 */
+    public function testDashboardShowsTheLogoAboveHelpCenter()
+    {
+        foreach ( array( 'design/admin4', 'design/admin' ) as $design )
+        {
+            $tpl = (string)file_get_contents( self::root() . "/$design/templates/exphelp/dashboard.tpl" );
+            $this->assertMatchesRegularExpression( "#\{include uri='design:exphelp/parts/dashboard_brand.tpl'\}\s*<p class=\"a4-help-hero-pre\">#", $tpl, "$design: the logo right above Help center" );
+        }
+        $admin4 = (string)file_get_contents( self::root() . '/design/admin4/templates/exphelp/parts/dashboard_brand.tpl' );
+        $this->assertStringContainsString( '<p class="a4-help-brand" role="img" aria-label="Exponential">{include uri=\'design:parts/a4_logo.tpl\'}</p>', $admin4,
+                                           "admin4: the header's own drawing, named Exponential" );
+        $logo = (string)file_get_contents( self::root() . '/design/admin4/templates/parts/a4_logo.tpl' );
+        $this->assertStringContainsString( 'fill="currentColor"', $logo, 'the drawing takes the ink color, so it follows the dark mode' );
+        $classic = (string)file_get_contents( self::root() . '/design/admin/templates/exphelp/parts/dashboard_brand.tpl' );
+        $this->assertStringContainsString( "src={'design/admin4/images/admin4/exponential-logo.svg'|ezroot} width=\"203\" height=\"32\" alt=\"Exponential\"", $classic,
+                                           'classic: the same drawing as a file of this repository, with its size and name' );
+        $this->assertFileExists( self::root() . '/design/admin4/images/admin4/exponential-logo.svg' );
+        foreach ( array( $admin4, $classic ) as $part )
+            $this->assertDoesNotMatchRegularExpression( '#<style|style="|<script|https?://#i', preg_replace( '/\{\*.*?\*\}/s', '', $part ) );
+        $css = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/modules/help.css' );
+        $this->assertMatchesRegularExpression( '#\.a4-help-brand \.a4-logo-full,\s*\.a4-help-brand-img \{[^}]*width: calc\(var\(--a4-space-6\) \* 380 / 60\);\s*height: var\(--a4-space-6\);#', $css, 'a fixed size' );
     }
 
     /** HCP-04 */

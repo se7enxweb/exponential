@@ -5,7 +5,8 @@ if you write documentation (in `doc/` or in an extension) that should show up in
 
 ## In short
 
-- **Help dashboard** (`/exphelp/dashboard`): a search field, the help for each audience (editors, administrators,
+- **Help dashboard** (`/exphelp/dashboard`): the Exponential logo above "Help center" (the header's drawing,
+  `exphelp/parts/dashboard_brand.tpl`, per design), a search field, the help for each audience (editors, administrators,
   developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters and sponsors; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
   report an error.
 - **Help pages** (`/exphelp/viewer/<page>`): every git-tracked Markdown and text file under `doc/`, rendered with
