@@ -29822,7 +29822,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>VAT handler</source>
-        <translation>MwSt-Handler</translation>
+        <translation>USt-Handler</translation>
     </message>
     <message>
         <source>Shipping handler</source>
@@ -32330,7 +32330,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>VAT handler</source>
-        <translation>MwSt-Handler</translation>
+        <translation>USt-Handler</translation>
     </message>
     <message>
         <source>XML text input handler</source>
@@ -32494,7 +32494,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>This runs after the prices, the VAT and the shipping are known and may change the totals. It is where a discount code, a member price, a rounding rule or a minimum order charge belongs - in one place, rather than in every template that shows a total.</source>
-        <translation>Dies läuft, nachdem Preise, MwSt und Versand bekannt sind, und darf die Summen ändern. Hierher gehört ein Rabattcode, ein Mitgliederpreis, eine Rundungsregel oder ein Mindermengenzuschlag - an einer Stelle statt in jedem Template, das eine Summe zeigt.</translation>
+        <translation>Dies läuft, nachdem Preise, USt und Versand bekannt sind, und darf die Summen ändern. Hierher gehört ein Rabattcode, ein Mitgliederpreis, eine Rundungsregel oder ein Mindermengenzuschlag - an einer Stelle statt in jedem Template, das eine Summe zeigt.</translation>
     </message>
     <message>
         <source>The default stores files under var/ and sends them with php. A handler of your own can put them somewhere else, hand the download to the web server, or check who is asking before it answers.</source>
@@ -33374,7 +33374,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Which of the configured VAT types applies to a category in a country. This is the rule, in one place; getVatPercent() only reads the number off what this chooses.</source>
-        <translation>Welcher der konfigurierten MwSt-Typen für eine Kategorie in einem Land gilt. Dies ist die Regel, an einer Stelle; getVatPercent() liest nur die Zahl von dem ab, was dies wählt.</translation>
+        <translation>Welcher der konfigurierten USt-Typen für eine Kategorie in einem Land gilt. Dies ist die Regel, an einer Stelle; getVatPercent() liest nur die Zahl von dem ab, was dies wählt.</translation>
     </message>
     <message>
         <source>Checks what was submitted before anything is stored. Return false and the editor is sent back to the form, so every rule about what may be published belongs here.</source>
@@ -34626,7 +34626,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Weitere Registries sind in rad.ini deklariert, vom Kernel und von jeder aktiven Erweiterung in ihrer eigenen rad.ini.append.php: Ereignis-Listener, KI-Anbieter, -Werkzeuge und -Ketten, MCP-Werkzeuge, Jobtypen der Warteschlange und mehr. Jede sagt, welche INI-Blöcke oder welche Klassenliste ihre Einträge enthalten und was jeder Eintrag sein muss; eine mit InTotal=disabled deklarierte verweist auf anderswo gezählte Punkte und wird geprüft, ohne addiert zu werden. Anleitung: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <translation>Weitere Registries sind in rad.ini deklariert, vom Kernel und von jeder aktiven Extension in ihrer eigenen rad.ini.append.php: Ereignis-Listener, KI-Anbieter, -Werkzeuge und -Ketten, MCP-Werkzeuge, Jobtypen der Warteschlange und mehr. Jede sagt, welche INI-Blöcke oder welche Klassenliste ihre Einträge enthalten und was jeder Eintrag sein muss; eine mit InTotal=disabled deklarierte verweist auf anderswo gezählte Punkte und wird geprüft, ohne addiert zu werden. Anleitung: doc/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -55240,7 +55240,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Weitere Registries sind in rad.ini deklariert, vom Kernel und von jeder aktiven Erweiterung in ihrer eigenen rad.ini.append.php: Ereignis-Listener, KI-Anbieter, -Werkzeuge und -Ketten, MCP-Werkzeuge, Jobtypen der Warteschlange und mehr. Jede sagt, welche INI-Blöcke oder welche Klassenliste ihre Einträge enthalten und was jeder Eintrag sein muss; eine mit InTotal=disabled deklarierte verweist auf anderswo gezählte Punkte und wird geprüft, ohne addiert zu werden. Anleitung: doc/bc/6.0/rad-extension-surface.md.</translation>
+        <translation>Weitere Registries sind in rad.ini deklariert, vom Kernel und von jeder aktiven Extension in ihrer eigenen rad.ini.append.php: Ereignis-Listener, KI-Anbieter, -Werkzeuge und -Ketten, MCP-Werkzeuge, Jobtypen der Warteschlange und mehr. Jede sagt, welche INI-Blöcke oder welche Klassenliste ihre Einträge enthalten und was jeder Eintrag sein muss; eine mit InTotal=disabled deklarierte verweist auf anderswo gezählte Punkte und wird geprüft, ohne addiert zu werden. Anleitung: doc/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

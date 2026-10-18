@@ -3233,7 +3233,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-38928de7712d2c1c28ec80b209584c65  doc/changelogs/6.0/6.0.15.md
+7b992a8eddc0218101cd2a905f4fa2ea  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4371,7 +4371,7 @@ e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 53322d752c21521e6736059158a8dd4b  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
-ea2fc855e0133c56081b86f7f6fd29b9  extension/ezjscore/CHANGELOG
+e9d3e625406c710ba46169bed40bb639  extension/ezjscore/CHANGELOG
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezjscore/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezjscore/README
 8901b1cdb8d2fd269beef27e7322be09  extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php
@@ -4408,8 +4408,8 @@ a7bf61ace40268bc56e89998941eec49  extension/ezjscore/design/standard/templates/e
 a2a8b366e1eca7ce170c33b9eeed6135  extension/ezjscore/design/standard/templates/ezjsctemplate/test.tpl
 4f71f4fd05bd14ecadea3d748f370a5c  extension/ezjscore/doc/FAQ
 693f3589fef421f20391f7f19ee241fb  extension/ezjscore/doc/INSTALL
-3a4fe9a1908c61e5c775ffaa4be90d6d  extension/ezjscore/extension.xml
-5a49fe23fa1e8b43756edbca0ca0b221  extension/ezjscore/ezinfo.php
+5938c1f23ab50bd1852994802fe25ed2  extension/ezjscore/extension.xml
+32eadeaef1ebc836a6b6e7e0da418be5  extension/ezjscore/ezinfo.php
 1ce5d9f4713290f0b03a3128aa0898ae  extension/ezjscore/modules/ezjscore/call.php
 dd9ea2c4abeb36e89c5120deddce6dd0  extension/ezjscore/modules/ezjscore/hello.php
 b89ef61ec84f55e7c56dc26e74b2a3cd  extension/ezjscore/modules/ezjscore/module.php
@@ -7619,7 +7619,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 a9d2328c5910972be1c4dff16c0a188c  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-66fe5dbb3773b57a2c62ef52e91416b7  share/translations/ger-DE/translation.ts
+dd8cf0c66164b091da9d0cc5f1b0cf81  share/translations/ger-DE/translation.ts
 395e483360ab97cf01224df3acf7359f  share/translations/heb-IL/translation.ts
 e97831dd958115eac1866c1c6edbac10  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
