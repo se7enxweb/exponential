@@ -59,7 +59,7 @@ DesignExtensions[]=cjw_themes_jumper
    value in effect.
 
 6. Open a page of the siteaccess. With template debugging on, the template path comments show files from
-   `extension/mytheme/design/...` ([Debugging a design](../theme-design/debugging-a-design.md)).
+   `extension/mytheme/design/...` (Debugging a design).
 
 ## Symptoms when it is missing
 
@@ -71,7 +71,7 @@ DesignExtensions[]=cjw_themes_jumper
 
 ## Related pages
 
-- [The design cascade](../theme-design/the-design-cascade.md)
-- [Design extensions](../theme-design/design-extensions.md)
+- The design cascade
+- Design extensions
 - [Loading order and which theme wins](loading-order-for-themes.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
