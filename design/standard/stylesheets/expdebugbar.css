@@ -350,3 +350,8 @@ textarea.exp-debug-copy-area { position: fixed; top: 0; left: -9999px; width: 1p
 #debug ul.exp-debug-tree code { font-family: inherit; color: var(--xd-fg); background: transparent; }
 #debug .exp-debug-render-override { color: var(--xd-accent); font-weight: 600; }
 #debug .exp-debug-render-ms { color: var(--xd-fg-soft); }
+
+/* Printing: the bar and its panel are a tool for the screen; a printed page (a help page, an article) leaves them out. */
+@media print {
+  #debug, #debug > button.exp-debug-restore { display: none !important; }
+}
