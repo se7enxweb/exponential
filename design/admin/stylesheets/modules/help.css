@@ -515,6 +515,301 @@
   .a4-help-feature a { box-shadow: none; transform: none; }
 }
 
-/* ---- viewer (E) ---------------------------------------------------------------------------------------------- */
+/* ---- renderer (A): the markup of expHelpMarkdownRenderer and expHelpHighlighter ---------------------------------
+   Code blocks, syntax tokens, callouts, tables, figures, quotes, task lists, footnotes, heading anchors, inline code,
+   keys and refused links. Prose margins of bare p / ul / h2-h6 are the viewer's (E). Colours from the tokens only;
+   the code tokens (--a4-code-*) live in components.css, the same in both themes because code sits on --a4-code-bg. */
 
-/* ---- renderer markup: code, highlighting, callouts (A) -------------------------------------------------------- */
+/* inline code and keys */
+.a4-help-body :not(pre) > code {
+  padding: 0 var(--a4-space-1);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-soft);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+.a4-help-body kbd {
+  display: inline-block;
+  padding: 0 var(--a4-space-1);
+  border: 1px solid var(--a4-line-strong);
+  border-bottom-width: 2px;
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-card);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: 0.85em;
+  line-height: var(--a4-leading-tight);
+}
+.a4-help-body mark {
+  background: var(--a4-warn-bg);
+  color: var(--a4-ink);
+}
+
+/* heading anchors: shown on hover / focus within the heading */
+.a4-help-h {
+  scroll-margin-top: var(--a4-space-7);
+}
+.a4-help-anchor {
+  margin-inline-start: var(--a4-space-1);
+  color: var(--a4-muted);
+  text-decoration: none;
+  opacity: 0;
+}
+.a4-help-h:hover > .a4-help-anchor,
+.a4-help-h:focus-within > .a4-help-anchor,
+.a4-help-target:target + .a4-help-anchor {
+  opacity: 1;
+}
+.a4-help-target {
+  scroll-margin-top: var(--a4-space-7);
+}
+
+/* code blocks */
+.a4-help-code {
+  position: relative;
+  margin: var(--a4-space-3) 0 var(--a4-space-4);
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-code-bg);
+}
+.a4-help-pre,
+.a4-help-body .a4-help-pre {
+  margin: 0;
+  padding: var(--a4-space-3) var(--a4-space-4);
+  overflow-x: auto;
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-code-bg);
+  color: var(--a4-code-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-s);
+  line-height: var(--a4-leading);
+  tab-size: 4;
+  white-space: pre;
+}
+.a4-help-pre > code {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+}
+.a4-help-code[data-label]::before {
+  content: attr(data-label);
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  padding: 0 var(--a4-space-2);
+  border-end-start-radius: var(--a4-radius-s);
+  color: var(--a4-code-comment);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-xs);
+  pointer-events: none;
+}
+.a4-help-plain .a4-help-pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* syntax tokens */
+.a4-help-tok-comment { color: var(--a4-code-comment); font-style: italic; }
+.a4-help-tok-keyword { color: var(--a4-code-keyword); }
+.a4-help-tok-string { color: var(--a4-code-string); }
+.a4-help-tok-number { color: var(--a4-code-number); }
+.a4-help-tok-variable { color: var(--a4-code-variable); }
+.a4-help-tok-function { color: var(--a4-code-function); }
+.a4-help-tok-tag { color: var(--a4-code-tag); }
+.a4-help-tok-attr { color: var(--a4-code-attr); }
+.a4-help-tok-operator { color: var(--a4-code-operator); }
+.a4-help-tok-constant { color: var(--a4-code-constant); }
+.a4-help-tok-meta { color: var(--a4-code-meta); }
+.a4-help-tok-section { color: var(--a4-code-section); font-weight: 700; }
+.a4-help-tok-inserted { color: var(--a4-code-inserted); }
+.a4-help-tok-deleted { color: var(--a4-code-deleted); }
+.a4-help-tok-property { color: var(--a4-code-property); }
+.a4-help-tok-type { color: var(--a4-code-type); }
+
+/* callouts: > [!NOTE], > **Warning:**, :::tip */
+.a4-help-callout {
+  margin: var(--a4-space-3) 0 var(--a4-space-4);
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-info-line);
+  border-inline-start-width: 4px;
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-info-bg);
+  color: var(--a4-ink);
+}
+.a4-help-callout > :last-child {
+  margin-bottom: 0;
+}
+.a4-help-callout-title {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-2);
+  color: var(--a4-info);
+  font-weight: 700;
+}
+.a4-help-callout-title:only-child {
+  margin-bottom: 0;
+}
+.a4-help-callout--tip {
+  border-color: var(--a4-ok-line);
+  background: var(--a4-ok-bg);
+}
+.a4-help-callout--tip > .a4-help-callout-title {
+  color: var(--a4-ok);
+}
+.a4-help-callout--important {
+  border-color: var(--a4-accent);
+  background: var(--a4-accent-soft);
+}
+.a4-help-callout--important > .a4-help-callout-title {
+  color: var(--a4-accent-text);
+}
+.a4-help-callout--warning {
+  border-color: var(--a4-warn-line);
+  background: var(--a4-warn-bg);
+}
+.a4-help-callout--warning > .a4-help-callout-title {
+  color: var(--a4-warn);
+}
+.a4-help-callout--caution {
+  border-color: var(--a4-bad-line);
+  background: var(--a4-bad-bg);
+}
+.a4-help-callout--caution > .a4-help-callout-title {
+  color: var(--a4-bad);
+}
+
+/* tables: the wrapper scrolls, the table is .a4-table */
+.a4-help-table-wrap {
+  max-width: 100%;
+  margin: var(--a4-space-3) 0 var(--a4-space-4);
+  overflow-x: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+}
+.a4-help-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+.a4-help-table th,
+.a4-help-table td {
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.a4-help-align-left { text-align: start; }
+.a4-help-align-center { text-align: center; }
+.a4-help-align-right { text-align: end; }
+
+/* quotes, rules, figures, images */
+.a4-help-quote {
+  margin: var(--a4-space-3) 0 var(--a4-space-4);
+  padding: var(--a4-space-1) var(--a4-space-4);
+  border-inline-start: 4px solid var(--a4-line-strong);
+  color: var(--a4-muted);
+}
+.a4-help-hr {
+  height: 0;
+  margin: var(--a4-space-5) 0;
+  border: 0;
+  border-top: 1px solid var(--a4-line);
+}
+.a4-help-figure {
+  margin: var(--a4-space-4) 0;
+}
+.a4-help-figure > figcaption {
+  margin-top: var(--a4-space-2);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-help-img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-card);
+}
+
+/* collapsible sections */
+.a4-help-details {
+  margin: var(--a4-space-3) 0;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background: var(--a4-card);
+}
+.a4-help-details > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.a4-help-details[open] > summary {
+  margin-bottom: var(--a4-space-2);
+}
+
+/* task lists */
+.a4-help-tasks {
+  padding-inline-start: 0;
+  list-style: none;
+}
+.a4-help-task {
+  display: flex;
+  align-items: baseline;
+  gap: var(--a4-space-2);
+}
+.a4-help-task-box {
+  display: inline-block;
+  flex: none;
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--a4-line-strong);
+  border-radius: var(--a4-radius-s);
+  vertical-align: -0.125em;
+}
+.a4-help-task-box--done {
+  border: 0;
+  color: var(--a4-ok);
+}
+
+/* links */
+.a4-help-ext::after {
+  content: "\2197";
+  margin-inline-start: 2px;
+  font-size: 0.8em;
+}
+.a4-help-deadlink {
+  color: var(--a4-muted);
+  text-decoration: underline dotted;
+}
+
+/* footnotes */
+.a4-help-fnref {
+  line-height: 0;
+}
+.a4-help-fnref > a {
+  padding: 0 2px;
+  text-decoration: none;
+}
+.a4-help-footnotes {
+  margin-top: var(--a4-space-6);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-help-fnback {
+  text-decoration: none;
+}
+
+@media print {
+  .a4-help-pre,
+  .a4-help-body .a4-help-pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .a4-help-anchor,
+  .a4-help-code[data-label]::before {
+    display: none;
+  }
+}
