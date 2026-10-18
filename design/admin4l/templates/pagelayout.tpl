@@ -30,6 +30,15 @@
      $main_wrapped         = false()
      $env_badge            = exp_environment_badge()
 }
+    {* The header's context help (parts/a4_header_help.tpl), looked up before the cache blocks so that the header's
+       block, shared by the pages of a navigation part, is keyed by it; false for a user without exphelp/read *}
+    {def $a4_help_params = module_params()}
+    {def $a4_help = fetch( 'exphelp', 'context', hash( 'module', first_set( $a4_help_params.module_name, '' ),
+                                                      'view', first_set( $a4_help_params.function_name, '' ),
+                                                      'design', ezini( 'DesignSettings', 'SiteDesign' ) ) )
+         $a4_help_key = ''}
+    {if $a4_help}{set $a4_help_key = $a4_help.key}{/if}
+    {undef $a4_help_params}
     {* admin4l: the admin layout for this page. The safety switch is explayouts.ini [AdminLayoutSettings]
        Enabled=enabled|disabled: anything but "enabled" gives the plain admin4 page. When no layout resolves, or
        the resolved layout has no blocks, the page is admin4's too, and a zone that renders nothing is drawn
@@ -101,7 +110,7 @@
                    of the request, and Apache and Velocity share this cache. The user's object id: the header's
                    user menu and logout button name the signed-in user (parts/a4_header_user.tpl). siteaccess_menu_key(): the
        site menu lists the siteaccesses of the settings at the addresses of the request (parts/a4_header_site.tpl). *}
-                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), siteaccess_menu_key(), $admin_layout_id, $env_badge.key ) ignore_content_expiry}
+                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), siteaccess_menu_key(), $admin_layout_id, $env_badge.key, $a4_help_key ) ignore_content_expiry}
 
                 {* HEADER ( SEARCH, LOGO AND USERMENU ): the navbar. The header zone fills it with the logo, the menu
                    button, search, theme switch and sidebar controls, the topmenu zone with the tab menu. Either zone

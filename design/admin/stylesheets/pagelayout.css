@@ -110,6 +110,27 @@ a.image-text:hover > span
 
 #header-usermenu a:hover { color: #fff; }
 
+/* The context Help control (page_header.tpl), left of the user menu, drawn like its link */
+#header-help
+{
+    float: right;
+    margin-top: 12px;
+    margin-inline-end: var(--a4-space-4);
+    padding: 2px;
+}
+:where([dir="rtl"]) #header-help { float: left; }
+#header-help a
+{
+    display: inline-flex;
+    align-items: center;
+    gap: var(--a4-space-1);
+    color: #ddd;
+    text-decoration: none;
+    font-size: 0.94em;
+}
+#header-help a:hover, #header-help a:focus { color: #fff; text-decoration: underline; }
+#header-help a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
 #header-usermenu span.header-usermenu-name
 {
     display: block;
@@ -1527,6 +1548,10 @@ html .exp-dt, html .exp-dt-actions, html .exp-dt-pager, html .exp-dt-dialog {
   #header-logo { order: 1; }
   #header-usermenu { order: 2; float: none; margin: 0; margin-inline-start: auto; }
   #header-usermenu a, #header-usermenu span { display: inline-flex; align-items: center; min-height: var(--a4-control-h); padding-inline: var(--a4-space-2); }
+  #header-help { order: 2; float: none; margin: 0; margin-inline-start: auto; padding: 0; }
+  #header-help + #header-usermenu, #header-usermenu + #header-help { margin-inline-start: 0; }
+  #header-help a { min-height: var(--a4-control-h); padding-inline: var(--a4-space-2); }
+  #header-help .header-help-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   #header-search { order: 3; flex: 1 1 100%; float: none; padding: 0 0 var(--a4-space-2); }
   #header-search .searchblock { float: none; }
   #header-search .searchblock > form { display: flex; align-items: center; gap: var(--a4-space-1); }

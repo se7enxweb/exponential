@@ -78353,4 +78353,703 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Keine Locale dieser Art.</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Hilfe</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Hilfe durchsuchen</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Fehler melden</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopiert</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Kopieren fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Keine Treffer</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count Treffer</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Suche läuft...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Die Suche ist gerade nicht verfügbar.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Einklappen</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Ausklappen</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Keine Seite enthält alle Wörter; diese enthalten einige davon.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leeren</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Erste Schritte</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Inhalte und Bearbeitung</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Verwaltung</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Installation und Aktualisierung</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Versionshinweise</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Geschichte</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Referenz</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 Treffer</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administratoren</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Redakteure</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Entwickler</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Endbenutzer</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Code kopieren</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Darauf aufbauen: Erweiterungen, Templates, Einstellungen, die APIs, die Kommandozeile und Aktualisierungen.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Inhalte erstellen, bearbeiten, übersetzen und veröffentlichen: Medien, Layouts, Suche und der Editor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Die Installation betreiben: Sites, Benutzer und Rollen, Caches, Logs, Sicherheit und der Zustand des Systems.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Die Website nutzen: Ihr Konto, die Anmeldung, die Zwei-Faktor-Authentifizierung und das Finden von Inhalten.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Hilfe zu dieser Seite</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Hilfe: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Abschnitt ausblenden: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Abschnitt einblenden: %title</translation>
+    </message>
+    <message>
+        <source>&quot;Saving an article with an image fails with a 500 error&quot;, not &quot;Bug&quot; or &quot;Help&quot;.</source>
+        <translation>„Speichern eines Artikels mit Bild schlägt mit Fehler 500 fehl“, nicht „Bug“ oder „Hilfe“.</translation>
+    </message>
+    <message>
+        <source>%count min read</source>
+        <translation>%count Min. Lesezeit</translation>
+    </message>
+    <message>
+        <source>%count pages</source>
+        <translation>%count Seiten</translation>
+    </message>
+    <message>
+        <source>%from–%to of %total</source>
+        <translation>%from–%to von %total</translation>
+    </message>
+    <message>
+        <source>(new issue on GitHub, opens in a new window)</source>
+        <translation>(neues Issue auf GitHub, öffnet in einem neuen Fenster)</translation>
+    </message>
+    <message>
+        <source>(opens in a new window)</source>
+        <translation>(öffnet in einem neuen Fenster)</translation>
+    </message>
+    <message>
+        <source>1 page</source>
+        <translation>1 Seite</translation>
+    </message>
+    <message>
+        <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
+        <translation>Eine gute Meldung sorgt dafür, dass ein Fehler schnell behoben wird. Diese Seite sagt Ihnen, wohin Sie sie schicken, was Sie schreiben, und gibt Ihnen eine sichere Zusammenfassung dieser Installation zum Einfügen.</translation>
+    </message>
+    <message>
+        <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
+        <translation>Eine Minute Prüfen beantwortet oft die Frage oder macht aus einer vagen Meldung eine, die sich beheben lässt.</translation>
+    </message>
+    <message>
+        <source>A security issue? Report it privately, not in a public issue.</source>
+        <translation>Ein Sicherheitsproblem? Melden Sie es vertraulich, nicht in einem öffentlichen Issue.</translation>
+    </message>
+    <message>
+        <source>A title that names the error</source>
+        <translation>Ein Titel, der den Fehler benennt</translation>
+    </message>
+    <message>
+        <source>A weakness that lets someone read, change or take over what they should not is reported privately, so it can be fixed before anyone else learns about it.</source>
+        <translation>Eine Schwachstelle, mit der jemand lesen, ändern oder übernehmen kann, was er nicht dürfte, wird vertraulich gemeldet, damit sie behoben werden kann, bevor andere davon erfahren.</translation>
+    </message>
+    <message>
+        <source>All help pages</source>
+        <translation>Alle Hilfeseiten</translation>
+    </message>
+    <message>
+        <source>All topics</source>
+        <translation>Alle Themen</translation>
+    </message>
+    <message>
+        <source>All types</source>
+        <translation>Alle Typen</translation>
+    </message>
+    <message>
+        <source>An error that only happens in one extension (a datatype, a module, a design of its own) is fixed in that extension&apos;s repository.</source>
+        <translation>Ein Fehler, der nur in einer Extension auftritt (ein Datentyp, ein Modul, ein eigenes Design), wird im Repository dieser Extension behoben.</translation>
+    </message>
+    <message>
+        <source>An extension</source>
+        <translation>Eine Extension</translation>
+    </message>
+    <message>
+        <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Bitten Sie einen Administrator dieser Website um die passenden Zeilen des Fehlerberichts (Setup, Logs). Die Meldung und der Zeitpunkt, zu dem sie auftrat, sind das, was ein Maintainer am meisten braucht.</translation>
+    </message>
+    <message>
+        <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
+        <translation>Fragen Sie zuerst die Community: Fragen dazu, wie etwas funktioniert, Ideen und Erfahrungen gehören dorthin.</translation>
+    </message>
+    <message>
+        <source>Before you report</source>
+        <translation>Bevor Sie melden</translation>
+    </message>
+    <message>
+        <source>Browse by topic</source>
+        <translation>Nach Themen stöbern</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation>Kategorie:</translation>
+    </message>
+    <message>
+        <source>Choose an extension</source>
+        <translation>Extension auswählen</translation>
+    </message>
+    <message>
+        <source>Copy the diagnostics</source>
+        <translation>Diagnosedaten kopieren</translation>
+    </message>
+    <message>
+        <source>Diagnostics</source>
+        <translation>Diagnosedaten</translation>
+    </message>
+    <message>
+        <source>Diagnostics as text</source>
+        <translation>Diagnosedaten als Text</translation>
+    </message>
+    <message>
+        <source>Did you mean:</source>
+        <translation>Meinten Sie:</translation>
+    </message>
+    <message>
+        <source>Do not open a public issue, a pull request or a forum post about it.</source>
+        <translation>Öffnen Sie dazu kein öffentliches Issue, keinen Pull Request und keinen Forumsbeitrag.</translation>
+    </message>
+    <message>
+        <source>E-mail %address</source>
+        <translation>E-Mail an %address</translation>
+    </message>
+    <message>
+        <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
+        <translation>Jeder Teil von Exponential hat seinen eigenen öffentlichen Tracker auf GitHub. Um ein Issue zu eröffnen, brauchen Sie ein GitHub-Konto.</translation>
+    </message>
+    <message>
+        <source>Edit on GitHub</source>
+        <translation>Auf GitHub bearbeiten</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensions</translation>
+    </message>
+    <message>
+        <source>Featured guides</source>
+        <translation>Empfohlene Anleitungen</translation>
+    </message>
+    <message>
+        <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
+        <translation>Füllen Sie aus, was Sie wissen; das Formular bereitet das Issue mit den Diagnosedaten dieser Installation vor. Nichts wird an GitHub gesendet, bis Sie das Issue dort öffnen und selbst absenden.</translation>
+    </message>
+    <message>
+        <source>For</source>
+        <translation>Für</translation>
+    </message>
+    <message>
+        <source>For:</source>
+        <translation>Für:</translation>
+    </message>
+    <message>
+        <source>Found a security problem?</source>
+        <translation>Ein Sicherheitsproblem gefunden?</translation>
+    </message>
+    <message>
+        <source>Found an error?</source>
+        <translation>Einen Fehler gefunden?</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
+        <translation>Anleitungen und Referenz für alle, die mit %site arbeiten, erstellt aus der Dokumentation der Version dieser Installation.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
+    <message>
+        <source>Help start</source>
+        <translation>Hilfe-Startseite</translation>
+    </message>
+    <message>
+        <source>How can we help?</source>
+        <translation>Wie können wir helfen?</translation>
+    </message>
+    <message>
+        <source>How to report an error</source>
+        <translation>So melden Sie einen Fehler</translation>
+    </message>
+    <message>
+        <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
+        <translation>Geben Sie die Version, die PHP-Version und die Engine an (die Diagnosedaten oben), was ein Angreifer tun kann und die Schritte, um es nachzustellen. Lassen Sie Passwörter, Geheimnisse und personenbezogene Daten weg. Sie erhalten innerhalb eines Werktags eine erste Antwort.</translation>
+    </message>
+    <message>
+        <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
+        <translation>Es öffnet sich auf GitHub mit Ihrem Text und den Diagnosedaten; prüfen Sie es dort und senden Sie es ab.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Tastenkürzel</translation>
+    </message>
+    <message>
+        <source>Last changed</source>
+        <translation>Zuletzt geändert</translation>
+    </message>
+    <message>
+        <source>Leave out anything private</source>
+        <translation>Lassen Sie alles Private weg</translation>
+    </message>
+    <message>
+        <source>Look at the logs</source>
+        <translation>Schauen Sie in die Logs</translation>
+    </message>
+    <message>
+        <source>Look for an existing report</source>
+        <translation>Nach einer vorhandenen Meldung suchen</translation>
+    </message>
+    <message>
+        <source>Missing a page? Tell us</source>
+        <translation>Fehlt eine Seite? Sagen Sie es uns</translation>
+    </message>
+    <message>
+        <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
+        <translation>Melden Sie es nie in einem öffentlichen Tracker oder Forum. Nutzen Sie den vertraulichen Weg, beschrieben unter</translation>
+    </message>
+    <message>
+        <source>New issue</source>
+        <translation>Neues Issue</translation>
+    </message>
+    <message>
+        <source>New issue for %name</source>
+        <translation>Neues Issue für %name</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Weiter</translation>
+    </message>
+    <message>
+        <source>No page has every word; showing pages with any of them.</source>
+        <translation>Keine Seite enthält alle Wörter; angezeigt werden Seiten mit einigen davon.</translation>
+    </message>
+    <message>
+        <source>No page matches “%query”.</source>
+        <translation>Keine Seite passt zu „%query“.</translation>
+    </message>
+    <message>
+        <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
+        <translation>Keine Passwörter, Schlüssel, E-Mail-Adressen, Namen von Personen oder Kundendaten. Das Formular entfernt das Offensichtliche, aber lesen Sie das Issue, bevor Sie es absenden.</translation>
+    </message>
+    <message>
+        <source>Not sure it is an error?</source>
+        <translation>Nicht sicher, ob es ein Fehler ist?</translation>
+    </message>
+    <message>
+        <source>On this page</source>
+        <translation>Auf dieser Seite</translation>
+    </message>
+    <message>
+        <source>Open issues</source>
+        <translation>Offene Issues</translation>
+    </message>
+    <message>
+        <source>Open the error digest</source>
+        <translation>Fehlerbericht öffnen</translation>
+    </message>
+    <message>
+        <source>Open the help center</source>
+        <translation>Hilfe-Center öffnen</translation>
+    </message>
+    <message>
+        <source>Open the issue in %tracker</source>
+        <translation>Das Issue in %tracker öffnen</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Pick your role to see the pages written for it.</source>
+        <translation>Wählen Sie Ihre Rolle, um die Seiten zu sehen, die dafür geschrieben sind.</translation>
+    </message>
+    <message>
+        <source>Popular pages for %audience</source>
+        <translation>Beliebte Seiten für %audience</translation>
+    </message>
+    <message>
+        <source>Prepare the issue</source>
+        <translation>Das Issue vorbereiten</translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation>Zurück</translation>
+    </message>
+    <message>
+        <source>Previous and next page</source>
+        <translation>Vorherige und nächste Seite</translation>
+    </message>
+    <message>
+        <source>Read the security policy</source>
+        <translation>Sicherheitsrichtlinie lesen</translation>
+    </message>
+    <message>
+        <source>Recently updated</source>
+        <translation>Kürzlich aktualisiert</translation>
+    </message>
+    <message>
+        <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
+        <translation>Wiederholen Sie, was Sie getan haben. Notieren Sie, ob es jedes Mal fehlschlägt, nur bei einem Benutzer oder einer Seite, und ob das Leeren der Caches etwas ändert.</translation>
+    </message>
+    <message>
+        <source>Report a vulnerability privately on GitHub</source>
+        <translation>Eine Schwachstelle vertraulich auf GitHub melden</translation>
+    </message>
+    <message>
+        <source>Report to</source>
+        <translation>Melden an</translation>
+    </message>
+    <message>
+        <source>Result pages</source>
+        <translation>Ergebnisseiten</translation>
+    </message>
+    <message>
+        <source>Results for “%query”</source>
+        <translation>Treffer für „%query“</translation>
+    </message>
+    <message>
+        <source>Search guides, settings, commands…</source>
+        <translation>Anleitungen, Einstellungen, Befehle durchsuchen…</translation>
+    </message>
+    <message>
+        <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
+        <translation>Durchsuchen Sie die offenen Issues des Trackers unten. Ist Ihr Fehler dort, ergänzen Sie, was Sie wissen, statt ein neues zu eröffnen.</translation>
+    </message>
+    <message>
+        <source>Security issues</source>
+        <translation>Sicherheitsprobleme</translation>
+    </message>
+    <message>
+        <source>Something wrong on this page? Report an error</source>
+        <translation>Stimmt etwas auf dieser Seite nicht? Fehler melden</translation>
+    </message>
+    <message>
+        <source>Source file:</source>
+        <translation>Quelldatei:</translation>
+    </message>
+    <message>
+        <source>Start where you are</source>
+        <translation>Hier beginnen</translation>
+    </message>
+    <message>
+        <source>Steps to reproduce</source>
+        <translation>Schritte zum Nachstellen</translation>
+    </message>
+    <message>
+        <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
+        <translation>Sagen Sie es uns auf GitHub: Die Anleitung zeigt, welcher Tracker passt, was hineingehört und welche Systemangaben Sie kopieren können, ganz ohne Geheimnisse.</translation>
+    </message>
+    <message>
+        <source>The answer may already be documented, including the known limits of a feature.</source>
+        <translation>Die Antwort ist vielleicht schon dokumentiert, auch die bekannten Grenzen einer Funktion.</translation>
+    </message>
+    <message>
+        <source>The error digest lists the distinct error messages of the last hours. The message and the time it happened are what a maintainer needs most.</source>
+        <translation>Der Fehlerbericht listet die unterschiedlichen Fehlermeldungen der letzten Stunden. Die Meldung und der Zeitpunkt, zu dem sie auftrat, sind das, was ein Maintainer am meisten braucht.</translation>
+    </message>
+    <message>
+        <source>The shortest way from a fresh page to the error, one step per line.</source>
+        <translation>Der kürzeste Weg von einer frischen Seite zum Fehler, ein Schritt pro Zeile.</translation>
+    </message>
+    <message>
+        <source>The version, the server and the extensions of this installation. It never contains passwords, keys, database hosts or names, e-mail addresses or paths outside the installation.</source>
+        <translation>Die Version, der Server und die Extensions dieser Installation. Sie enthält nie Passwörter, Schlüssel, Datenbank-Hosts oder -Namen, E-Mail-Adressen oder Pfade außerhalb der Installation.</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Topic</source>
+        <translation>Thema</translation>
+    </message>
+    <message>
+        <source>Try fewer or other words, or another audience or topic.</source>
+        <translation>Versuchen Sie weniger oder andere Wörter, eine andere Zielgruppe oder ein anderes Thema.</translation>
+    </message>
+    <message>
+        <source>Try it again</source>
+        <translation>Versuchen Sie es noch einmal</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Type a word to search every help page.</source>
+        <translation>Geben Sie ein Wort ein, um alle Hilfeseiten zu durchsuchen.</translation>
+    </message>
+    <message>
+        <source>Use this extension</source>
+        <translation>Diese Extension verwenden</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>What happened</source>
+        <translation>Was passiert ist</translation>
+    </message>
+    <message>
+        <source>What should have happened instead.</source>
+        <translation>Was stattdessen hätte passieren sollen.</translation>
+    </message>
+    <message>
+        <source>What you did, and what went wrong. Quote the error message exactly.</source>
+        <translation>Was Sie getan haben und was schiefging. Zitieren Sie die Fehlermeldung genau.</translation>
+    </message>
+    <message>
+        <source>What you expected</source>
+        <translation>Was Sie erwartet haben</translation>
+    </message>
+    <message>
+        <source>Where to report</source>
+        <translation>Wohin melden</translation>
+    </message>
+    <message>
+        <source>Write the report</source>
+        <translation>Die Meldung schreiben</translation>
+    </message>
+    <message>
+        <source>Your issue is ready.</source>
+        <translation>Ihr Issue ist bereit.</translation>
+    </message>
+    <message>
+        <source>audiences</source>
+        <translation>Zielgruppen</translation>
+    </message>
+    <message>
+        <source>clear</source>
+        <translation>leeren</translation>
+    </message>
+    <message>
+        <source>move through the results</source>
+        <translation>durch die Treffer bewegen</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation>öffnen</translation>
+    </message>
+    <message>
+        <source>opens GitHub in a new window</source>
+        <translation>öffnet GitHub in einem neuen Fenster</translation>
+    </message>
+    <message>
+        <source>opens in a new window</source>
+        <translation>öffnet in einem neuen Fenster</translation>
+    </message>
+    <message>
+        <source>pages</source>
+        <translation>Seiten</translation>
+    </message>
+    <message>
+        <source>search</source>
+        <translation>suchen</translation>
+    </message>
+    <message>
+        <source>sections</source>
+        <translation>Bereiche</translation>
+    </message>
+    <message>
+        <source>Exponential</source>
+        <translation>Exponential</translation>
+    </message>
+    <message>
+        <source>PHP</source>
+        <translation>PHP</translation>
+    </message>
+    <message>
+        <source>PHP interface</source>
+        <translation>PHP-Schnittstelle</translation>
+    </message>
+    <message>
+        <source>Web server</source>
+        <translation>Webserver</translation>
+    </message>
+    <message>
+        <source>Operating system</source>
+        <translation>Betriebssystem</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Datenbank</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Design</source>
+        <translation>Design</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>Debug output</source>
+        <translation>Debug-Ausgabe</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>View-Cache</translation>
+    </message>
+    <message>
+        <source>Active extensions</source>
+        <translation>Aktive Extensions</translation>
+    </message>
+    <message>
+        <source>Generated</source>
+        <translation>Erstellt</translation>
+    </message>
+    <message>
+        <source>Exponential (the software)</source>
+        <translation>Exponential (die Software)</translation>
+    </message>
+    <message>
+        <source>Errors in the kernel, the administration, the bundled extensions and the documentation</source>
+        <translation>Fehler im Kernel, in der Administration, in den mitgelieferten Extensions und in der Dokumentation</translation>
+    </message>
+    <message>
+        <source>Exponential Velocity (the application server)</source>
+        <translation>Exponential Velocity (der Anwendungsserver)</translation>
+    </message>
+    <message>
+        <source>Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command</source>
+        <translation>Fehler des Velocity-Servers selbst: Start, Worker, sein Antwort-Cache, HTTPS, der Befehl exp:velocity</translation>
+    </message>
+    <message>
+        <source>Exponential project and community</source>
+        <translation>Exponential-Projekt und Community</translation>
+    </message>
+    <message>
+        <source>The project, the website, the ecosystem and anything that is not an error in a piece of software</source>
+        <translation>Das Projekt, die Website, das Ökosystem und alles, was kein Fehler in einer Software ist</translation>
+    </message>
+    <message>
+        <source>Exponential community forums</source>
+        <translation>Exponential-Community-Foren</translation>
+    </message>
+    <message>
+        <source>Telegram community chat</source>
+        <translation>Telegram-Community-Chat</translation>
+    </message>
+    <message>
+        <source>Exponential documentation</source>
+        <translation>Exponential-Dokumentation</translation>
+    </message>
+</context>
 </TS>

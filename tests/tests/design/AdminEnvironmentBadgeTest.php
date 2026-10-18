@@ -300,7 +300,7 @@ class AdminEnvironmentBadgeTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'calc(4rem + var(--a4-space-2) - 122px)', $compact['#header:has(.a4-env-always)']['--a4-env-room'] );
         $this->assertSame( 'calc(13rem + var(--a4-space-2))', $media( 'screen and (min-width: 768px) and (max-width: 1279.98px)' )['#header:has(.a4-env-always)']['--a4-env-room'] );
         $room = $media( 'screen and (min-width: 576px) and (max-width: 1279.98px)' );
-        $this->assertSame( 'clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px)', $room['#header:has(.a4-env-always) .searchblock input.searchtext']['width'],
+        $this->assertSame( 'clamp(5.5rem, calc(100vw - 502px - var(--a4-env-room)), 230px)', $room['#header:has(.a4-env-always) .searchblock input.searchtext']['width'],
                            'the field gives the badge its room up to 1279px; from 1280px the main menu does' );
         // with a mouse or a trackpad a hover badge changes nothing in the header's layout: every rule that makes room
         // asks for .a4-env-always, or for .a4-env-hover only where the pointer cannot hover finely (a touch screen)
