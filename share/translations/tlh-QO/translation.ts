@@ -71258,225 +71258,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
 </context>
 <context>
-    <name>design/admin/setup/languages</name>
-    <message>
-        <source>Interface languages</source>
-        <translation>rarmeH jIH Holmey</translation>
-    </message>
-    <message>
-        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
-        <translation>Hol Sep Hol lo'taH loH. ghaj'eghbogh mughghach ghajbe'chugh Hol Sep, tam Hol mIr mughghach wa'DIch 'ang; pagh DIvI' Hol Hal ghItlhmey 'ang. Hol Sep Hoch tetlh ghItlh vam: nuq 'ang, 'ar naQ je. pagh choH: i18n.ini [TranslationSettings] Daq tam Holmey cherlu'.</translation>
-    </message>
-    <message>
-        <source>Overview</source>
-        <translation>naQ leghghach</translation>
-    </message>
-    <message>
-        <source>Locales</source>
-        <translation>Hol Sepmey</translation>
-    </message>
-    <message>
-        <source>With a translation of their own</source>
-        <translation>ghaj'eghbogh mughghach ghaj</translation>
-    </message>
-    <message>
-        <source>Translated through a fallback</source>
-        <translation>tam Hol vegh mughlu'</translation>
-    </message>
-    <message>
-        <source>In the English source texts</source>
-        <translation>DIvI' Hol Hal ghItlhmey lo'</translation>
-    </message>
-    <message>
-        <source>Problems</source>
-        <translation>Sengmey</translation>
-    </message>
-    <message>
-        <source>Its chain comes back to %target.</source>
-        <translation>%target ghoSqa' mIr.</translation>
-    </message>
-    <message>
-        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
-        <translation>FallbackMaxDepth tlhoy nI' mIr; %target Daq pe'lu'.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which is no locale code.</source>
-        <translation>tam Hol: %target. Hol Sep ngoq 'oHbe'.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
-        <translation>tam Hol: %target. Hol Sep teywI' ghajbe', mughghach ghajbe' je.</translation>
-    </message>
-    <message>
-        <source>FallbackRules[] names %target, which is no fallback rule.</source>
-        <translation>FallbackRules[] Daq %target ponglu'; tam chut 'oHbe'.</translation>
-    </message>
-    <message>
-        <source>Has a fallback, but no locale file.</source>
-        <translation>tam Hol ghaj, 'ach Hol Sep teywI' ghajbe'.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
-        <translation>tam Hol: %target. wej mughghach ghaj; DIvI' Hol Hal ghItlhmey 'anglu'.</translation>
-    </message>
-    <message>
-        <source>All locales</source>
-        <translation>Hol Sep Hoch</translation>
-    </message>
-    <message>
-        <source>The installation has no locale file for %locale.</source>
-        <translation>%locale Hol Sep teywI' ghajbe' jom.</translation>
-    </message>
-    <message>
-        <source>Translation of its own</source>
-        <translation>ghaj'eghbogh mughghach</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>HISlaH</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>ghobe'</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>rarmeH jIH</translation>
-    </message>
-    <message>
-        <source>%percent % translated</source>
-        <translation>%percent % mughlu'ta'</translation>
-    </message>
-    <message>
-        <source>through %locale</source>
-        <translation>%locale vegh</translation>
-    </message>
-    <message>
-        <source>English source texts</source>
-        <translation>DIvI' Hol Hal ghItlhmey</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>chelwI'mey</translation>
-    </message>
-    <message>
-        <source>%translated of %total translated, %complete complete</source>
-        <translation>%total vo' %translated mughlu'ta'; %complete naQ</translation>
-    </message>
-    <message>
-        <source>Fallback chain</source>
-        <translation>tam Hol mIr</translation>
-    </message>
-    <message>
-        <source>no translation</source>
-        <translation>mughghach tu'lu'be'</translation>
-    </message>
-    <message>
-        <source>by FallbackLanguages[]</source>
-        <translation>FallbackLanguages[] chenmoH</translation>
-    </message>
-    <message>
-        <source>by the automatic same-language fallback</source>
-        <translation>Hol rap tam nIteb chenmoH</translation>
-    </message>
-    <message>
-        <source>by the rule %rule</source>
-        <translation>chut %rule chenmoH</translation>
-    </message>
-    <message>
-        <source>None: without a translation of its own it shows the English source texts.</source>
-        <translation>pagh: ghaj'eghbogh mughghach ghajbe'chugh, DIvI' Hol Hal ghItlhmey 'ang.</translation>
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation>chelwI'</translation>
-    </message>
-    <message>
-        <source>Translated</source>
-        <translation>mughlu'ta'</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>DuHmey</translation>
-    </message>
-    <message>
-        <source>%count locales with a configured fallback</source>
-        <translation>%count Hol Sepmey: tam Hol cherlu'ta'</translation>
-    </message>
-    <message>
-        <source>merge: every translation of the chain, the most specific winning</source>
-        <translation>merge: mIr mughghach Hoch; mughghach le'qu' Qap</translation>
-    </message>
-    <message>
-        <source>first: the first translation of the chain</source>
-        <translation>first: mIr mughghach wa'DIch</translation>
-    </message>
-    <message>
-        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
-        <translation>chu'lu'ta': mughghach ghajbe'chugh Hol Sep 'ej tam Hol cherlu'be'chugh, Holvetlh mughghach naQqu' tlhap</translation>
-    </message>
-    <message>
-        <source>Never for: %list</source>
-        <translation>not lo'lu'be': %list</translation>
-    </message>
-    <message>
-        <source>disabled</source>
-        <translation>chu'Ha'lu'ta'</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>pagh</translation>
-    </message>
-    <message>
-        <source>The same list on the command line: %command</source>
-        <translation>ra'meH tlheghDaq tetlh rap: %command</translation>
-    </message>
-    <message>
-        <source>%count shown</source>
-        <translation>%count 'anglu'</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>yI'ang</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Hol Sep</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Hol</translation>
-    </message>
-    <message>
-        <source>This siteaccess</source>
-        <translation>yoS lojmIt vam</translation>
-    </message>
-    <message>
-        <source>source texts</source>
-        <translation>Hal ghItlhmey</translation>
-    </message>
-    <message>
-        <source>problem</source>
-        <translation>Seng</translation>
-    </message>
-    <message>
-        <source>%translated of %total</source>
-        <translation>%total vo' %translated</translation>
-    </message>
-    <message>
-        <source>%percent % on average</source>
-        <translation>%percent % motlh</translation>
-    </message>
-    <message>
-        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
-        <translation>Hol rap tam nIteb tu'ta' 'ay' wovmoHlu'bogh; latlh 'aymey cherlu' pagh chutvo' chenlu'.</translation>
-    </message>
-    <message>
-        <source>No locale is of this kind.</source>
-        <translation>Hol Sep Segh vam tu'lu'be'.</translation>
-    </message>
-</context>
-<context>
     <name>kernel/exphelp</name>
     <message>
         <source>Help</source>
@@ -72175,6 +71956,46 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>Exponential De&apos; ghItlh</translation>
     </message>
     <message>
+        <source>Grow from user to developer</source>
+        <translation>lo&apos;wI&apos; DaHjaj, chenmoHwI&apos; wa&apos;leS</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential jo&apos;Daq Hoch qun GitHub Daq tu&apos;lu&apos;. Git velqa&apos; DaH yIjom; Daq chenmoHmeH mIw nIvqu&apos; &apos;oH. vaj Hoch choH DaghoS, Qagh tI&apos;meH DaH yInID, &apos;ej DuHIvDI&apos; Dumaq.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>loHwI&apos; yIlo&apos;</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>yI&apos;el, yIchoH, yImaq.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Git lo&apos;taHvIS yIjom</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>botlh &apos;ej Hoch chelwI&apos; velqa&apos; qun ghaj.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>yIQaH</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>fork yIchenmoH, yItI&apos;, pull request yIpoSmoH.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Git lo&apos;taHvIS yIchenmoH</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>jom ghItlh</translation>
+    </message>
+    <message>
         <source>Editing content</source>
         <translation>De&apos; choH</translation>
     </message>
@@ -72211,6 +72032,102 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>jomvam lo&apos;bogh Hoch ghotvaD nav &apos;ej De&apos; paq, mI&apos;Daj De&apos; ghItlh vo&apos; ghItlhlu&apos;.</translation>
     </message>
     <message>
+        <source>Documentation license</source>
+        <translation>De&apos; ghItlh chaw&apos;</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>%extension chelwI&apos; De&apos; ghItlh &apos;ay&apos; &apos;oH navvam&apos;e&apos;, chelwI&apos; chaw&apos; lo&apos;.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>wa&apos;DIch ghun De&apos; ghItlh vo&apos; navvam Suqlu&apos;. %license lo&apos;be&apos;; %other lo&apos;.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>nav chaw&apos; Segh</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>%license ghItlh &apos;oH, mI&apos; %version, Free Software Foundation ngangmoHmeH. Hoch ghotvaD mu&apos; Hoch qonqa&apos;laH &apos;ej DIblaH; choHlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>De&apos; ghItlhvam tlhab, %license %version pagh tlhaQ chaw&apos; lo&apos;.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>De&apos; ghItlhvam tlhab, %license %version chaw&apos; lo&apos;.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>chaw&apos; yIlaD</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>De&apos;wI&apos; Qorwagh Daq chaw&apos;</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>De&apos; ghItlh tlhab Dalo&apos;DI&apos; nuq Data&apos;laH</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>ghItlh Dub &apos;ej chaw&apos; QIn</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>De&apos; ghItlh tlhab: yIlo&apos; bIQaHjaj &apos;ej latlh DaQaHjaj</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>QaHvam tlhab, %license %version pagh tlhaQ chaw&apos; lo&apos;. Dalo&apos;laH, DaDIblaH &apos;ej DapIvmoHlaH:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>QaHvam tlhab, %license %version chaw&apos; lo&apos;. Dalo&apos;laH, DaDIblaH &apos;ej DapIvmoHlaH:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>yIHaD</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>nav Hoch yIlaD, poH Hoch, ngoQ Hoch.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>yIqonqa&apos; &apos;ej yIDIb</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>latlh lo&apos;wI&apos;pu&apos;vaD nav yInob, nav Dap pagh De&apos;wI&apos; ghItlh. Hoch qonqa&apos;Daq ghItlh Dub QIn, chaw&apos; QIn &apos;ej chaw&apos; qonqa&apos; yIpol.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>yImugh, yIchoH &apos;ej yIpIvmoH</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>rap chaw&apos; yIlo&apos; mI&apos;lIj DaDIbDI&apos;, wa&apos;DIch QInmey &apos;ej Dachoghta&apos;bogh QIn je.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>yIghItlhqa&apos;</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>QaH Daq nav pong &apos;ej Daq, pagh doc Daq De&apos;wI&apos; ghItlh yIlo&apos; nav DaghItlhmeH.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>tI&apos;meH choHmey yInob</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>nav Hoch Daq «GitHub Daq yIchoH» yIlo&apos;. rap chaw&apos; lo&apos;bogh choHmey laj, vaj Hoch ghotvaD tlhab ratlh.</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>nIHwI&apos;mey yIlo&apos;</translation>
     </message>
@@ -72231,28 +72148,8 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>latlh ghotpu&apos;, latlh qech pagh latlh Segh yIwIv.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>yIghItlhqa&apos;</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>tI&apos;meH choHmey yInob</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>yIqonqa&apos; &apos;ej yIDIb</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>ghItlh Dub &apos;ej chaw&apos; QIn</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>De&apos; chenmoH &apos;ej choH: ghItlhwI&apos;, yotlhmey, nab ghItlhmey &apos;ej mI&apos;mey.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>De&apos; ghItlh chaw&apos;</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -72263,16 +72160,8 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>loHghach wa&apos;DIch mIwmey: &apos;el, He Sam &apos;ej jaj Hoch Qu&apos;mey.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>De&apos; ghItlh tlhab: yIlo&apos; bIQaHjaj &apos;ej latlh DaQaHjaj</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>QaH Suq &apos;ej Qagh ja&apos;.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>latlh lo&apos;wI&apos;pu&apos;vaD nav yInob, nav Dap pagh De&apos;wI&apos; ghItlh. Hoch qonqa&apos;Daq ghItlh Dub QIn, chaw&apos; QIn &apos;ej chaw&apos; qonqa&apos; yIpol.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -72303,18 +72192,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>De&apos; ngangmoH, poH yIlan, So&apos; &apos;ej vIH.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>nav Hoch yIlaD, poH Hoch, ngoQ Hoch.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>chaw&apos; yIlaD</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>QaH Daq nav pong &apos;ej Daq, pagh doc Daq De&apos;wI&apos; ghItlh yIlo&apos; nav DaghItlhmeH.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>De&apos; paq: SeHlaw, ra&apos;mey &apos;ej mIwmey.</translation>
     </message>
@@ -72323,64 +72200,16 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>Daq yIloH: SeHlaw, lo&apos;wI&apos;pu&apos; &apos;ej Qu&apos;mey, pegh Daqmey, poH Qu&apos;mey &apos;ej ghItlhmey.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>rap chaw&apos; yIlo&apos; mI&apos;lIj DaDIbDI&apos;, wa&apos;DIch QInmey &apos;ej Dachoghta&apos;bogh QIn je.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>yIHaD</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>tamghay&apos;mey, chelwI&apos;mey, API &apos;ej ngoq &apos;emDaq.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>De&apos;wI&apos; Qorwagh Daq chaw&apos;</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>De&apos; ghItlhvam tlhab, %license %version pagh tlhaQ chaw&apos; lo&apos;.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>De&apos; ghItlhvam tlhab, %license %version chaw&apos; lo&apos;.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>QaHvam tlhab, %license %version pagh tlhaQ chaw&apos; lo&apos;. Dalo&apos;laH, DaDIblaH &apos;ej DapIvmoHlaH:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>QaHvam tlhab, %license %version chaw&apos; lo&apos;. Dalo&apos;laH, DaDIblaH &apos;ej DapIvmoHlaH:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>%license ghItlh &apos;oH, mI&apos; %version, Free Software Foundation ngangmoHmeH. Hoch ghotvaD mu&apos; Hoch qonqa&apos;laH &apos;ej DIblaH; choHlu&apos;be&apos;.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>%extension chelwI&apos; De&apos; ghItlh &apos;ay&apos; &apos;oH navvam&apos;e&apos;, chelwI&apos; chaw&apos; lo&apos;.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>wa&apos;DIch ghun De&apos; ghItlh vo&apos; navvam Suqlu&apos;. %license lo&apos;be&apos;; %other lo&apos;.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>qechmey</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>yImugh, yIchoH &apos;ej yIpIvmoH</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>mughmey &apos;ej Daq Holmey.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>nav Hoch Daq «GitHub Daq yIchoH» yIlo&apos;. rap chaw&apos; lo&apos;bogh choHmey laj, vaj Hoch ghotvaD tlhab ratlh.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -72389,14 +72218,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>nuq ta&apos; laH Hoch &apos;ej chay&apos; SeHlu&apos;.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>De&apos; ghItlh tlhab Dalo&apos;DI&apos; nuq Data&apos;laH</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>nav chaw&apos; Segh</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
@@ -72497,6 +72318,353 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Image</source>
         <translation>mIllogh</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>QaH HIDjolev</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>qechmey rap</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>rar nom</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>QaH botlh yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>nuq chu&apos;</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count, %total ghItlh vo&apos;</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>yInIH</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>%title yIlo&apos; &apos;ej yIpabmoH</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>mI&apos;, pong, DIS pagh choH mI&apos;</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count ghItlh, %first vo&apos; %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>wa&apos; ghItlh, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Daqmey &apos;ej QInmey</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>jabwI&apos;mey Qapbe&apos;chu&apos;bogh Daqmey qun ghItlh ratlh.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>poH</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>latlh</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>ngangmoHlu&apos;</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>choH mI&apos;mey</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>%s mI&apos; tlhegh</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>wa&apos;DIch SVN pa&apos; vo&apos; ghItlhmey ngo&apos; ghoS.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>mI&apos;</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>wa&apos;DIch SVN vo&apos;</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>qun (Qapbe&apos;chu&apos;)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ghItlhlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>choH mI&apos; %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Exponential chenmoHbogh ghom</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential tlhab ghun 'oH; DIS wejmaH Hoch qun ghaj. Exponential DevwI' kampa'nI' yIghov, 'ej Ho'DoS poSmoHbogh ghom yIghov.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>7x 'Iv?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Exponential DevwI' kampa'nI', wa'DIch vo' DaHjaj.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Exponential Foundation 'Iv?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>ghom, Doch qorDu' 'ej lay'mey.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>rarmeH jIH Holmey</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Hol Sep Hol lo'taH loH. ghaj'eghbogh mughghach ghajbe'chugh Hol Sep, tam Hol mIr mughghach wa'DIch 'ang; pagh DIvI' Hol Hal ghItlhmey 'ang. Hol Sep Hoch tetlh ghItlh vam: nuq 'ang, 'ar naQ je. pagh choH: i18n.ini [TranslationSettings] Daq tam Holmey cherlu'.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>naQ leghghach</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Hol Sepmey</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>ghaj'eghbogh mughghach ghaj</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>tam Hol vegh mughlu'</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>DIvI' Hol Hal ghItlhmey lo'</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Sengmey</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>%target ghoSqa' mIr.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>FallbackMaxDepth tlhoy nI' mIr; %target Daq pe'lu'.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>tam Hol: %target. Hol Sep ngoq 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>tam Hol: %target. Hol Sep teywI' ghajbe', mughghach ghajbe' je.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] Daq %target ponglu'; tam chut 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>tam Hol ghaj, 'ach Hol Sep teywI' ghajbe'.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>tam Hol: %target. wej mughghach ghaj; DIvI' Hol Hal ghItlhmey 'anglu'.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Hol Sep Hoch</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>%locale Hol Sep teywI' ghajbe' jom.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>ghaj'eghbogh mughghach</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>HISlaH</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ghobe'</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>rarmeH jIH</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % mughlu'ta'</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>%locale vegh</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>DIvI' Hol Hal ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>chelwI'mey</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%total vo' %translated mughlu'ta'; %complete naQ</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>tam Hol mIr</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>mughghach tu'lu'be'</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>FallbackLanguages[] chenmoH</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>Hol rap tam nIteb chenmoH</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>chut %rule chenmoH</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>pagh: ghaj'eghbogh mughghach ghajbe'chugh, DIvI' Hol Hal ghItlhmey 'ang.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>chelwI'</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>mughlu'ta'</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>DuHmey</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count Hol Sepmey: tam Hol cherlu'ta'</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: mIr mughghach Hoch; mughghach le'qu' Qap</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: mIr mughghach wa'DIch</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>chu'lu'ta': mughghach ghajbe'chugh Hol Sep 'ej tam Hol cherlu'be'chugh, Holvetlh mughghach naQqu' tlhap</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>not lo'lu'be': %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>chu'Ha'lu'ta'</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>pagh</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>ra'meH tlheghDaq tetlh rap: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count 'anglu'</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>yI'ang</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Hol Sep</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Hol</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>yoS lojmIt vam</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>Hal ghItlhmey</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>Seng</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%total vo' %translated</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % motlh</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Hol rap tam nIteb tu'ta' 'ay' wovmoHlu'bogh; latlh 'aymey cherlu' pagh chutvo' chenlu'.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Hol Sep Segh vam tu'lu'be'.</translation>
     </message>
 </context>
 </TS>

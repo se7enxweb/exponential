@@ -71258,225 +71258,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
     </message>
 </context>
 <context>
-    <name>design/admin/setup/languages</name>
-    <message>
-        <source>Interface languages</source>
-        <translation>Linguae interfaciei</translation>
-    </message>
-    <message>
-        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
-        <translation>Administratio lingua localizationis suae ostenditur. Localizatio sine translatione propria primam translationem catenae subsidiariae ostendit, alioquin textus fontis Anglicos. Haec pagina quamque localizationem enumerat cum eo quod ostendit et quam perfectum id sit. Nihil mutat: subsidia in i18n.ini [TranslationSettings] statuuntur.</translation>
-    </message>
-    <message>
-        <source>Overview</source>
-        <translation>Conspectus</translation>
-    </message>
-    <message>
-        <source>Locales</source>
-        <translation>Localizationes</translation>
-    </message>
-    <message>
-        <source>With a translation of their own</source>
-        <translation>Cum translatione propria</translation>
-    </message>
-    <message>
-        <source>Translated through a fallback</source>
-        <translation>Per subsidium versae</translation>
-    </message>
-    <message>
-        <source>In the English source texts</source>
-        <translation>Textibus fontis Anglicis</translation>
-    </message>
-    <message>
-        <source>Problems</source>
-        <translation>Difficultates</translation>
-    </message>
-    <message>
-        <source>Its chain comes back to %target.</source>
-        <translation>Catena eius ad %target redit.</translation>
-    </message>
-    <message>
-        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
-        <translation>Catena eius longior est quam FallbackMaxDepth et apud %target abscinditur.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which is no locale code.</source>
-        <translation>Ad %target recurrit, qui codex localizationis non est.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
-        <translation>Ad %target recurrit, cui neque fasciculus localizationis neque translatio est.</translation>
-    </message>
-    <message>
-        <source>FallbackRules[] names %target, which is no fallback rule.</source>
-        <translation>FallbackRules[] %target nominat, quae norma subsidiaria non est.</translation>
-    </message>
-    <message>
-        <source>Has a fallback, but no locale file.</source>
-        <translation>Subsidium habet, sed nullum fasciculum localizationis.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
-        <translation>Ad %target recurrit, cui nondum translatio est: textus fontis Anglicos ostendit.</translation>
-    </message>
-    <message>
-        <source>All locales</source>
-        <translation>Omnes localizationes</translation>
-    </message>
-    <message>
-        <source>The installation has no locale file for %locale.</source>
-        <translation>Installationi nullus fasciculus localizationis est pro %locale.</translation>
-    </message>
-    <message>
-        <source>Translation of its own</source>
-        <translation>Translatio propria</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>Ita</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>Non</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>Interfacies</translation>
-    </message>
-    <message>
-        <source>%percent % translated</source>
-        <translation>%percent % versa</translation>
-    </message>
-    <message>
-        <source>through %locale</source>
-        <translation>per %locale</translation>
-    </message>
-    <message>
-        <source>English source texts</source>
-        <translation>Textus fontis Anglici</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>Extensiones</translation>
-    </message>
-    <message>
-        <source>%translated of %total translated, %complete complete</source>
-        <translation>%translated ex %total versae, %complete perfectae</translation>
-    </message>
-    <message>
-        <source>Fallback chain</source>
-        <translation>Catena subsidiaria</translation>
-    </message>
-    <message>
-        <source>no translation</source>
-        <translation>nulla translatio</translation>
-    </message>
-    <message>
-        <source>by FallbackLanguages[]</source>
-        <translation>per FallbackLanguages[]</translation>
-    </message>
-    <message>
-        <source>by the automatic same-language fallback</source>
-        <translation>per subsidium automaticum eiusdem linguae</translation>
-    </message>
-    <message>
-        <source>by the rule %rule</source>
-        <translation>per normam %rule</translation>
-    </message>
-    <message>
-        <source>None: without a translation of its own it shows the English source texts.</source>
-        <translation>Nulla: sine translatione propria textus fontis Anglicos ostendit.</translation>
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation>Extensio</translation>
-    </message>
-    <message>
-        <source>Translated</source>
-        <translation>Versa</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Optiones</translation>
-    </message>
-    <message>
-        <source>%count locales with a configured fallback</source>
-        <translation>%count localizationes cum subsidio statuto</translation>
-    </message>
-    <message>
-        <source>merge: every translation of the chain, the most specific winning</source>
-        <translation>merge: omnes translationes catenae, specialissima praevalente</translation>
-    </message>
-    <message>
-        <source>first: the first translation of the chain</source>
-        <translation>first: prima translatio catenae</translation>
-    </message>
-    <message>
-        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
-        <translation>activum: localizatio sine translatione et sine subsidio statuto translationem perfectissimam linguae suae sumit</translation>
-    </message>
-    <message>
-        <source>Never for: %list</source>
-        <translation>Numquam pro: %list</translation>
-    </message>
-    <message>
-        <source>disabled</source>
-        <translation>inactivum</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Nulla</translation>
-    </message>
-    <message>
-        <source>The same list on the command line: %command</source>
-        <translation>Idem index in linea mandatorum: %command</translation>
-    </message>
-    <message>
-        <source>%count shown</source>
-        <translation>%count ostensae</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Ostendere</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Localizatio</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Lingua</translation>
-    </message>
-    <message>
-        <source>This siteaccess</source>
-        <translation>Hic aditus situs</translation>
-    </message>
-    <message>
-        <source>source texts</source>
-        <translation>textus fontis</translation>
-    </message>
-    <message>
-        <source>problem</source>
-        <translation>difficultas</translation>
-    </message>
-    <message>
-        <source>%translated of %total</source>
-        <translation>%translated ex %total</translation>
-    </message>
-    <message>
-        <source>%percent % on average</source>
-        <translation>%percent % medio numero</translation>
-    </message>
-    <message>
-        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
-        <translation>Gradus illustratus per subsidium automaticum eiusdem linguae inventus est; ceteri statuti sunt aut ex norma veniunt.</translation>
-    </message>
-    <message>
-        <source>No locale is of this kind.</source>
-        <translation>Nulla localizatio huius generis est.</translation>
-    </message>
-</context>
-<context>
     <name>kernel/exphelp</name>
     <message>
         <source>Help</source>
@@ -72175,6 +71956,46 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Documenta Exponential</translation>
     </message>
     <message>
+        <source>Grow from user to developer</source>
+        <translation>Ab usore ad artificem</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential programma liberum est, cuius tota historia in GitHub servatur. Id ut exemplaria Git instituito, quae via ad situs aedificandos commendatur: omnem mutationem sequi, emendationes ante editionem experiri et tuas emendationes remittere poteris.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Administratione utere</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Intra, muta et ede.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Per Git institue</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Nucleus et omnis extensio ut exemplaria cum historia.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Vicissim confer</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Furcam fac, emenda et petitionem pull request aperi.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Cum Git aedifica</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Dux institutionis</translation>
+    </message>
+    <message>
         <source>Editing content</source>
         <translation>Contenta emendare</translation>
     </message>
@@ -72211,6 +72032,102 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Duces et index rerum omnibus qui cum hac institutione laborant, ex documentis versionis eius propriae scripti.</translation>
     </message>
     <message>
+        <source>Documentation license</source>
+        <translation>Licentia documentorum</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Haec pagina pars est documentorum extensionis %extension et sub licentia eius extensionis distribuitur.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Haec pagina ex documentis programmatis originalis hereditate accepta est. %license non tegitur; sub %other distribuitur.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Quae paginae quam licentiam habeant</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Hic est textus %license, versionis %version, ut Free Software Foundation eum edit. Quisque eum ad verbum exscribere et communicare potest; mutare non licet.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Haec documenta libera sunt, sub licentia %license %version aut posteriore.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Haec documenta libera sunt, sub licentia %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Licentiam legere</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Licentia in interreti</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Quid documentis liberis facere possis</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Nota iuris auctoris et licentiae</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Documenta libera: iis utere ut tibi et aliis auxilieris</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Hoc auxilium documenta libera est, sub licentia %license %version aut posteriore. Eo uti, id communicare et emendare licet:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Hoc auxilium documenta libera est, sub licentia %license %version. Eo uti, id communicare et emendare licet:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Eam studere</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Quamlibet paginam quotiens vis lege, quolibet consilio.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Exscribere et communicare</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Paginas aliis da, in charta aut ut fasciculos. Notam iuris auctoris, notam licentiae et exemplar licentiae cum quoque exemplari serva.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Vertere, accommodare et emendare</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Versionem tuam sub eadem licentia communica, cum notis originalibus et nota eorum quae mutavisti.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Eam citare</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Paginam per titulum et inscriptionem in auxilio, aut per fasciculum in indice doc nomina.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Correctiones reddere</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Utere «In GitHub emendare» in qualibet pagina. Mutationes sub eadem licentia accipiuntur, ut omnibus liberae maneant.</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>Filtra adhibere</translation>
     </message>
@@ -72231,28 +72148,8 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Alios lectores, aliud argumentum aut aliud genus elige.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>Eam citare</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>Correctiones reddere</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>Exscribere et communicare</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>Nota iuris auctoris et licentiae</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>Contenta creare et mutare: editor, campi, adumbrationes et versiones.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>Licentia documentorum</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -72263,16 +72160,8 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Primi gradus in administratione: ingressus, via invenienda et officia cotidiana.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>Documenta libera: iis utere ut tibi et aliis auxilieris</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>Auxilium petere et errorem nuntiare.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Paginas aliis da, in charta aut ut fasciculos. Notam iuris auctoris, notam licentiae et exemplar licentiae cum quoque exemplari serva.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -72303,18 +72192,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Contenta edere, in tempus ponere, celare et movere.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>Quamlibet paginam quotiens vis lege, quolibet consilio.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>Licentiam legere</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>Paginam per titulum et inscriptionem in auxilio, aut per fasciculum in indice doc nomina.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>Materia consultationis: optiones, mandata et formae.</translation>
     </message>
@@ -72323,64 +72200,16 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Situm regere: optiones, usores et munera, memoriae, opera statuta et acta.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Versionem tuam sub eadem licentia communica, cum notis originalibus et nota eorum quae mutavisti.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>Eam studere</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>Formae, extensiones, interfacies et codex qui post eas est.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>Licentia in interreti</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>Haec documenta libera sunt, sub licentia %license %version aut posteriore.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>Haec documenta libera sunt, sub licentia %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>Hoc auxilium documenta libera est, sub licentia %license %version aut posteriore. Eo uti, id communicare et emendare licet:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>Hoc auxilium documenta libera est, sub licentia %license %version. Eo uti, id communicare et emendare licet:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>Hic est textus %license, versionis %version, ut Free Software Foundation eum edit. Quisque eum ad verbum exscribere et communicare potest; mutare non licet.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>Haec pagina pars est documentorum extensionis %extension et sub licentia eius extensionis distribuitur.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>Haec pagina ex documentis programmatis originalis hereditate accepta est. %license non tegitur; sub %other distribuitur.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>Argumenta</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>Vertere, accommodare et emendare</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>Versiones et linguae situs.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Utere «In GitHub emendare» in qualibet pagina. Mutationes sub eadem licentia accipiuntur, ut omnibus liberae maneant.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -72389,14 +72218,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>Quid quaeque facultas faciat et quomodo instituatur.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>Quid documentis liberis facere possis</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>Quae paginae quam licentiam habeant</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
@@ -72497,6 +72318,353 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Image</source>
         <translation>Imago</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Index auxilii</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Argumenta cognata</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Nexus celeres</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Centrum auxilii aperire</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>Quae nova sunt</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count ex %total inscriptionibus</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Colare</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Ordinare per %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Versio, nomen, annus aut recensio</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count inscriptiones, a %first ad %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 inscriptio, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Inscriptiones et notae</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Inscriptiones in servitris quae iam non in linea sunt ut textus historicus servantur.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dies</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Alia</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Edita</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Recensiones</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Series %s versionum</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Fons</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Inscriptiones antiquiores ex repositorio SVN originali veniunt.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>ex SVN originali</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historicum (iam non in linea)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>non inscriptum</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>recensio %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Qui Exponential faciunt</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential programma liberum est, cuius historia fere triginta annos complectitur. Cognosce societatem quae id ducit et fundationem non quaestuosam quae inceptum fontis aperti administrat.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Quis est 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Societas post Exponential, a prima editione usque ad hodiernum diem.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Quid est Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>Institutum non quaestuosum, familia productorum et eius promissa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Linguae interfaciei</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>Administratio lingua localizationis suae ostenditur. Localizatio sine translatione propria primam translationem catenae subsidiariae ostendit, alioquin textus fontis Anglicos. Haec pagina quamque localizationem enumerat cum eo quod ostendit et quam perfectum id sit. Nihil mutat: subsidia in i18n.ini [TranslationSettings] statuuntur.</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Conspectus</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Localizationes</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>Cum translatione propria</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Per subsidium versae</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>Textibus fontis Anglicis</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Difficultates</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Catena eius ad %target redit.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Catena eius longior est quam FallbackMaxDepth et apud %target abscinditur.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Ad %target recurrit, qui codex localizationis non est.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Ad %target recurrit, cui neque fasciculus localizationis neque translatio est.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] %target nominat, quae norma subsidiaria non est.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>Subsidium habet, sed nullum fasciculum localizationis.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Ad %target recurrit, cui nondum translatio est: textus fontis Anglicos ostendit.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Omnes localizationes</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>Installationi nullus fasciculus localizationis est pro %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Translatio propria</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ita</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Interfacies</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % versa</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>per %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Textus fontis Anglici</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensiones</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated ex %total versae, %complete perfectae</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Catena subsidiaria</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>nulla translatio</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>per FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>per subsidium automaticum eiusdem linguae</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>per normam %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Nulla: sine translatione propria textus fontis Anglicos ostendit.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensio</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Versa</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Optiones</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count localizationes cum subsidio statuto</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: omnes translationes catenae, specialissima praevalente</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: prima translatio catenae</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>activum: localizatio sine translatione et sine subsidio statuto translationem perfectissimam linguae suae sumit</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Numquam pro: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>inactivum</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nulla</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>Idem index in linea mandatorum: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count ostensae</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ostendere</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Localizatio</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingua</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Hic aditus situs</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>textus fontis</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>difficultas</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated ex %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % medio numero</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Gradus illustratus per subsidium automaticum eiusdem linguae inventus est; ceteri statuti sunt aut ex norma veniunt.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Nulla localizatio huius generis est.</translation>
     </message>
 </context>
 </TS>

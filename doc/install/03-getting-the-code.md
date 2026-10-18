@@ -1,9 +1,10 @@
 # 3. Getting the code
 
-This chapter puts the Exponential code on your machine. There are three ways: `composer create-project` (the
-quickest for a new site), a `git clone` followed by `composer install` (when you want the history and to follow
-development) and `composer require` into an empty directory (when the installation should be a project of your own).
-All three end with the same files. The chapter explains which version each way gives you and how to choose one, how
+This chapter puts the Exponential code on your machine. There are three ways: a `git clone` followed by
+`composer install`, with every se7enxweb package arriving as a Git clone with its full history (**the recommended way
+for anyone who builds websites**), `composer create-project` (the quickest way to a site you only run) and
+`composer require` into an empty directory (when the installation should be a project of your own). All three end
+with the same files. The chapter explains which version each way gives you and how to choose one, how
 the extensions arrive as Composer packages, how to add the optional Exponential Velocity package, what is different
 on PHP 8.0 to 8.3, and closes with a tour of every top-level entry of the installation root and the permissions to
 set before you install.
@@ -72,10 +73,73 @@ Without the alias `dev-main` satisfies no version constraint and such an install
 
 ## 3.2 Three ways to get the code
 
-### A. composer create-project
+| Way | Gives you | Best for |
+|---|---|---|
+| [A. git clone and composer install](#a-git-clone-and-composer-install-recommended) | the kernel and every se7enxweb extension as Git clones with their full history | **building websites**: development machines, staging, and every site whose code you change (recommended) |
+| [B. composer create-project](#b-composer-create-project) | release archives without history (or clones, with two options) | a site you only run, a quick evaluation |
+| [C. composer require into an empty directory](#c-composer-require-into-an-empty-directory) | the kernel as a package of your own project | an installation managed as a project of your own |
 
-The quickest way to a new site. Composer downloads the package, makes the directory your project and installs every
-dependency:
+### A. git clone and composer install (recommended)
+
+The recommended way for anyone who builds websites with Exponential. With Git clones you see what changed
+(`git status`, `git diff`), why a line is there (`git log`, `git blame`), which change broke something
+(`git bisect`), can use a fix before it is released, keep your own changes on a branch that updates never overwrite,
+and send fixes back as pull requests. [Develop with Git](../help/develop-with-git.md) explains each of these step by
+step.
+
+First tell Composer, once per user account, to install every `se7enxweb/*` package as a Git clone and everything
+else (the Zeta Components and other libraries) as a release archive:
+
+```bash
+composer config --global 'preferred-install.se7enxweb/*' source
+```
+
+Then clone the kernel, start a branch of your own and install:
+
+```bash
+git clone https://github.com/se7enxweb/exponential.git
+cd exponential
+git switch -c my-site               # or: git switch -c my-site v6.0.14, to build on a release instead of main
+composer install
+```
+
+The clone holds the kernel with its whole history (more than 27,000 commits, about 370 MB), the kernel-shipped
+extensions (`ezjscore`, `ezoe`, `ezformtoken`, `expservices`) and the designs. `composer install` adds `vendor/` and
+clones every extension `composer.json` requires into `extension/<name>`, each a Git repository of its own (67 on
+`main`; the first install takes a few minutes). Those extensions are not part of the kernel's repository, so
+`git status` lists them as untracked; that is expected. Each sits on the release tag Composer chose, so
+`git -C extension/<name> status` says `HEAD detached at <tag>`: normal, and a branch is one `git switch -c` away.
+
+Check that the extensions are clones:
+
+```bash
+composer status -v                  # "No local changes"
+ls -d extension/*/.git | wc -l      # the number of extensions installed as clones
+git -C extension/eztags log --oneline -3
+```
+
+Without the `preferred-install` setting the extensions arrive as archives; `composer reinstall 'se7enxweb/*'` turns
+them into clones later ([Develop with Git](../help/develop-with-git.md#the-extensions)). To keep the setting with the
+project rather than your account, run the `composer config` command without `--global` inside the clone; it is then
+written into `composer.json` on your branch.
+
+To update later, on your branch:
+
+```bash
+git fetch origin --tags
+git merge origin/main               # or the release you move to: git merge v6.0.<n>
+composer install
+```
+
+and `composer update se7enxweb/<package>` for one extension. Composer refuses to update a clone with uncommitted
+changes or with commits that exist only on your machine, so your work is never overwritten;
+[When Composer refuses](../help/develop-with-git.md#when-composer-refuses) lists the messages and what to do. Moving the
+code is only half of an upgrade: the database update files of [chapter 11](11-upgrading.md) are the other half.
+
+### B. composer create-project
+
+The quickest way to a site you only run. Composer downloads the package, makes the directory your project and
+installs every dependency:
 
 ```bash
 cd /var/www
@@ -95,28 +159,15 @@ allows `se7enxweb/exponential-legacy-installer`) and its `post-install-cmd` scri
 at the end (`php bin/php/ezpgenerateautoloads.php`). On a production server add `--no-dev`, which leaves out the test
 tools.
 
-### B. git clone and composer install
-
-When you want the history, want to follow `main` or switch between tags:
-
-```bash
-git clone https://github.com/se7enxweb/exponential.git
-cd exponential
-git checkout v6.0.14        # optional: a release instead of main
-composer install
-```
-
-The clone holds the kernel, the kernel-shipped extensions (`ezjscore`, `ezoe`, `ezformtoken`, `expservices`) and the
-designs; `composer install` adds `vendor/` and the extensions `composer.json` requires. Those extensions are not part
-of the repository, so `git status` lists them as untracked; that is expected. To update later:
+By default every package, the kernel included, arrives as a release archive without history. To get clones from
+`create-project` as well, give both options:
 
 ```bash
-git pull
-composer install
+composer create-project se7enxweb/exponential exponential --prefer-source --keep-vcs
 ```
 
-or, to move to a release, `git checkout v6.0.<n>` followed by `composer install`. Moving the code is only half of an
-upgrade: the database update files of [chapter 11](11-upgrading.md) are the other half.
+Without `--keep-vcs` Composer deletes the kernel's `.git` folder at the end. A site installed from archives can be
+turned into clones later, without reinstalling it: [Develop with Git](../help/develop-with-git.md#step-3-turn-an-existing-site-into-clones).
 
 ### C. composer require into an empty directory
 
@@ -287,9 +338,12 @@ has the steps.
 admin's extension list shows it.
 
 > **Do not run `composer update` casually on a live site.** It moves every package to the newest version its
-> constraint allows. When an extension directory is a Git working copy of its own (common on development machines),
-> Composer replaces it. Update one package deliberately (`composer update se7enxweb/<package>`) and read its release
-> notes first.
+> constraint allows. Update one package deliberately (`composer update se7enxweb/<package>`) and read its release
+> notes first. Clones that Composer made itself (way A) are safe: Composer refuses to update one with uncommitted
+> changes or unpushed commits. A clone made **by hand** (`git clone` into `extension/<name>`) in place of a package
+> Composer installed as an archive is not: Composer still treats the folder as an archive and replaces it, history
+> and commits included. To turn an archive into a clone, let Composer do it with `composer reinstall <package>`
+> after setting `preferred-install` ([way A](#a-git-clone-and-composer-install-recommended)).
 
 More: [Extensions guide](../guides/extensions.md), [Extension list and downloads](../features/6.0/extension-list-and-downloads.md),
 [Default extension distribution](../features/6.0/default-extension-distribution.md),

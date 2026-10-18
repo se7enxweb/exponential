@@ -40,6 +40,7 @@
                 <p class="a4-help-summary" dir="auto">{$help_page.summary|wash}</p>
                 {/if}
                 {include uri='design:exphelp/parts/viewer_meta.tpl' meta_page=$help_page meta_audiences=$help_audience_list meta_edit_url=$help_edit_url meta_category=cond( is_set( $help_category ), $help_category, false() )}
+                {include uri='design:exphelp/parts/viewer_actions.tpl' actions_page=$help_page actions_pdf=cond( is_set( $help_pdf_enabled ), $help_pdf_enabled, false() )}
             </header>
 
             {if $help_toc_items|count|ge( 2 )}
@@ -71,6 +72,8 @@
             {/if}
 
             <p class="a4-help-foot a4-meta"><a href={'exphelp/report'|ezurl}><span class="a4-icon a4-bi-exclamation-diamond" aria-hidden="true"></span> {'Something wrong on this page? Report an error'|i18n( 'kernel/exphelp' )}</a></p>
+
+            {include uri='design:exphelp/parts/license_notice.tpl' license_page_id=$help_page.id}
         </div>
 
         <nav class="a4-help-nav" id="exphelp-nav" aria-labelledby="exphelp-nav-title" tabindex="-1" data-exphelp-nav>

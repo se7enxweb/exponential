@@ -75,6 +75,13 @@ you know to that issue instead of opening a new one.
 Never put passwords, keys, session cookies, database addresses, or the personal data of customers or users into a
 public issue.
 
+### Even better: send the fix
+
+If you found the cause yourself, you can send the fix along with the report. With the code installed as Git clones,
+a fix is a branch in your fork and a pull request away, and it reaches every site in the next release.
+[Develop with Git](develop-with-git.md#contribute-a-change-with-a-pull-request) shows how, step by step. Mention the
+issue in the pull request (for example `Fixes #123`) so both are linked.
+
 ## Security problems
 
 If you find a security problem, such as a way to see or change what you should not, do **not** file it in a public

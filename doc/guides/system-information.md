@@ -265,3 +265,11 @@ the rate rises as it serves. The check ignores it under Velocity.
 
 **The cronjob check warns though cron runs.** Cron runs that write neither to `var/log/cronjob*.log` nor through
 Setup > Cronjobs are not seen. Send their output to `var/log/cronjob-<part>.log`.
+
+## Related pages
+
+- [Database support](../help/database-support.md): what the Database card's engine and version mean, the supported
+  databases in their official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL) and the versions each
+  needs.
+- [Operating system support](../help/os-support.md): the operating systems, processors, web servers and PHP SAPIs the
+  Server and PHP cards may show, sorted into tiers.

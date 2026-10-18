@@ -72005,8 +72005,144 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>حسابك</translation>
     </message>
     <message>
+        <source>Grow from user to developer</source>
+        <translation>من مستخدم إلى مطوّر</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential برنامج حر بتاريخه الكامل على GitHub. ثبّته كنسخ Git، وهي الطريقة الموصى بها لبناء المواقع، فتتابع كل تغيير وتجرّب الإصلاحات قبل صدورها وترسل تحسيناتك بنفسك.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>استخدم لوحة الإدارة</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>سجّل الدخول وحرّر وانشر.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>ثبّت باستخدام Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>النواة وكل إضافة كنسخ مع تاريخها.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>ساهم بالمقابل</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>انسخ المستودع (fork) وأصلح وافتح طلب دمج.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>طوّر باستخدام Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>دليل التثبيت</translation>
+    </message>
+    <message>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>أدلة ومراجع لكل من يعمل مع هذا التثبيت، مأخوذة من وثائق إصداره.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>ترخيص الوثائق</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>هذه الصفحة جزء من وثائق الامتداد %extension وتُوزَّع بموجب ترخيص ذلك الامتداد.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>ورثت هذه الصفحة من وثائق البرنامج الأصلي. وهي لا تخضع لـ %license؛ بل تُوزَّع بموجب %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>أي الصفحات تحمل أي ترخيص</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>هذا نص %license، الإصدار %version، كما تنشره مؤسسة البرمجيات الحرة. يحق لأي شخص نسخه ومشاركته حرفيًا؛ ولا يُسمح بتغييره.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>هذه الوثائق وثائق حرة، مرخّصة بموجب %license %version أو أي إصدار لاحق.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>هذه الوثائق وثائق حرة، مرخّصة بموجب %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>اقرأ الترخيص</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>الترخيص على الويب</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>ما الذي يمكنك فعله بالوثائق الحرة</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>إشعار حقوق النشر والترخيص</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>وثائق حرة: استخدمها لمساعدة نفسك والآخرين</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>هذه المساعدة وثائق حرة، مرخّصة بموجب %license %version أو أي إصدار لاحق. يمكنك استخدامها ومشاركتها وتحسينها:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>هذه المساعدة وثائق حرة، مرخّصة بموجب %license %version. يمكنك استخدامها ومشاركتها وتحسينها:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>ادرسها</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>اقرأ أي صفحة كلما شئت، لأي غرض.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>انسخها وشاركها</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>أعطِ الصفحات لمستخدمين آخرين، على الورق أو كملفات. احتفظ بإشعار حقوق النشر وإشعار الترخيص ونسخة من الترخيص مع كل نسخة.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>ترجمها وكيّفها وحسّنها</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>شارك نسختك بالترخيص نفسه، مع الإشعارات الأصلية وملاحظة بما غيّرته.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>استشهد بها</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>أشر إلى الصفحة بعنوانها وعنوانها في المساعدة، أو بملفها في دليل doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>ساهم بالإصلاحات</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>استخدم &quot;تحرير على GitHub&quot; في أي صفحة. تُقبَل التغييرات بالترخيص نفسه، فتبقى حرة للجميع.</translation>
     </message>
     <message>
         <source>Apply filters</source>
@@ -72029,28 +72165,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>اختر جمهورًا أو موضوعًا أو نوعًا آخر.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>استشهد بها</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>ساهم بالإصلاحات</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>انسخها وشاركها</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>إشعار حقوق النشر والترخيص</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>إنشاء المحتوى وتغييره: المحرّر والحقول والمسودات والإصدارات.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>ترخيص الوثائق</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -72061,16 +72177,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>الخطوات الأولى في الإدارة: تسجيل الدخول والتنقل والمهام اليومية.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>وثائق حرة: استخدمها لمساعدة نفسك والآخرين</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>الحصول على المساعدة والإبلاغ عن خطأ.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>أعطِ الصفحات لمستخدمين آخرين، على الورق أو كملفات. احتفظ بإشعار حقوق النشر وإشعار الترخيص ونسخة من الترخيص مع كل نسخة.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -72101,18 +72209,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>نشر المحتوى وجدولته وإخفاؤه ونقله.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>اقرأ أي صفحة كلما شئت، لأي غرض.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>اقرأ الترخيص</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>أشر إلى الصفحة بعنوانها وعنوانها في المساعدة، أو بملفها في دليل doc.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>مواد مرجعية: الإعدادات والأوامر والصيغ.</translation>
     </message>
@@ -72121,64 +72217,16 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>تشغيل الموقع: الإعدادات والمستخدمون والأدوار وذاكرات التخزين المؤقت والمهام المجدولة والسجلات.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>شارك نسختك بالترخيص نفسه، مع الإشعارات الأصلية وملاحظة بما غيّرته.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>ادرسها</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>القوالب والامتدادات وواجهة البرمجة والشيفرة التي تقف وراءها.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>الترخيص على الويب</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>هذه الوثائق وثائق حرة، مرخّصة بموجب %license %version أو أي إصدار لاحق.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>هذه الوثائق وثائق حرة، مرخّصة بموجب %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>هذه المساعدة وثائق حرة، مرخّصة بموجب %license %version أو أي إصدار لاحق. يمكنك استخدامها ومشاركتها وتحسينها:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>هذه المساعدة وثائق حرة، مرخّصة بموجب %license %version. يمكنك استخدامها ومشاركتها وتحسينها:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>هذا نص %license، الإصدار %version، كما تنشره مؤسسة البرمجيات الحرة. يحق لأي شخص نسخه ومشاركته حرفيًا؛ ولا يُسمح بتغييره.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>هذه الصفحة جزء من وثائق الامتداد %extension وتُوزَّع بموجب ترخيص ذلك الامتداد.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>ورثت هذه الصفحة من وثائق البرنامج الأصلي. وهي لا تخضع لـ %license؛ بل تُوزَّع بموجب %other.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>المواضيع</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>ترجمها وكيّفها وحسّنها</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>الترجمات ولغات الموقع.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>استخدم &quot;تحرير على GitHub&quot; في أي صفحة. تُقبَل التغييرات بالترخيص نفسه، فتبقى حرة للجميع.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -72187,14 +72235,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>ما الذي تفعله كل ميزة وكيفية إعدادها.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>ما الذي يمكنك فعله بالوثائق الحرة</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>أي الصفحات تحمل أي ترخيص</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
@@ -72295,6 +72335,134 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Image</source>
         <translation>صورة</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>قائمة المساعدة</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>مواضيع ذات صلة</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>روابط سريعة</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>فتح مركز المساعدة</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>ما الجديد</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count من %total إدخال</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>تصفية</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>الترتيب حسب %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>الإصدار أو الاسم أو السنة أو المراجعة</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count إدخال، من %first إلى %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>إدخال واحد، %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>العناوين والملاحظات</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>العناوين على خوادم لم تعد متصلة تُحفظ كنص تاريخي.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>التاريخ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>أخرى</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>تاريخ الإصدار</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>المراجعات</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>السلسلة %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>المصدر</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>السجلات الأقدم مأخوذة من مستودع SVN الأصلي.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>الإصدار</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>من SVN الأصلي</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>تاريخي (لم يعد متصلًا)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>غير مسجّل</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>المراجعة %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>من يصنع Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential برنامج حر له تاريخ يمتد قرابة ثلاثين عامًا. تعرّف على الشركة التي تقوده والمؤسسة غير الربحية التي تدير مشروع المصدر المفتوح.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>من هي 7x؟</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>الشركة التي تقف وراء Exponential، من الإصدار الأول حتى اليوم.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>ما هي Exponential Foundation؟</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>المنظمة غير الربحية وعائلة المنتجات والتزاماتها.</translation>
     </message>
 </context>
 <context>

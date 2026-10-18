@@ -1683,6 +1683,12 @@
     "kernel/classes/help/exphelpsearch.php": [
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
     ],
+    "kernel/classes/help/exphelplicense.php": [
+      "tests/tests/kernel/classes/help/expHelpLicenseTest.php"
+    ],
+    "design/*/templates/exphelp/parts/license_*.tpl": [
+      "tests/tests/kernel/classes/help/expHelpLicenseTest.php"
+    ],
     "kernel/classes/help/exphelpcontextregistry.php": [
       "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php",
       "tests/tests/kernel/classes/help/expHelpContentTest.php"
@@ -1700,20 +1706,39 @@
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php",
       "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
-      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "kernel/classes/help/exphelppdf*.php": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "lib/ezpdf/classes/*": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "kernel/exphelp/*": [
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
-      "tests/tests/kernel/classes/help/expHelpLinksTest.php"
+      "tests/tests/kernel/classes/help/expHelpLinksTest.php",
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "kernel/private/classes/views/exphelp/*": [
       "tests/tests/kernel/classes/help/expHelpLinksTest.php",
-      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "design/admin*/templates/exphelp/*": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "design/admin*/javascript/exphelp.js": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
+    ],
+    "design/admin*/stylesheets/modules/help.css": [
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "settings/exphelp.ini": [
       "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php",
       "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
-      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php"
+      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
+      "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "settings/module.ini": [
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"

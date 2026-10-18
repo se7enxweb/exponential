@@ -28,7 +28,7 @@
     <section class="a4-help-hero" aria-labelledby="help-dash-title">
         <p class="a4-help-hero-pre"><span class="a4-icon a4-bi-journal-text" aria-hidden="true"></span>{'Help center'|i18n( $help_ctx )}</p>
         <h1 id="help-dash-title">{'How can we help?'|i18n( $help_ctx )}</h1>
-        <p class="a4-help-hero-sub">{'Guides and reference for everyone who works with %site, written from the documentation of this installation\'s version.'|i18n( $help_ctx,, hash( '%site', ezini( 'SiteSettings', 'SiteName' ) ) )|wash}</p>
+        <p class="a4-help-hero-sub">{'Guides and reference for everyone who works with this installation, written from the documentation of its own version.'|i18n( $help_ctx )}</p>
 
         <form class="a4-help-search" action={$help_search_action|ezurl} method="get" role="search" data-exphelp-search data-exphelp-endpoint={$help_search_action|ezurl}>
             <div class="a4-help-search-box">
@@ -59,6 +59,9 @@
         {/if}
     </section>
 
+    {* ---- Who makes Exponential (parts/dashboard_about.tpl) ---- *}
+    {include uri='design:exphelp/parts/dashboard_about.tpl'}
+
     {* ---- Audiences ---- *}
     <section aria-labelledby="help-dash-audiences">
         <div class="a4-help-section-head">
@@ -73,7 +76,7 @@
                     <span class="a4-help-tile is-{$aid}" aria-hidden="true"><span class="a4-icon a4-bi-{$help_audience_meta[$aid].icon}"></span></span>
                     {if and( $help_audience, is_set( $help_audience.count ) )}<span class="a4-help-audience-count">{'%count pages'|i18n( $help_ctx,, hash( '%count', $help_audience.count ) )|wash}</span>{/if}
                 </div>
-                <h3><a href={concat( $help_search_action, '?audience=', $aid )|ezurl}>{cond( and( $help_audience, is_set( $help_audience.name ) ), $help_audience.name, $help_audience_meta[$aid].name )|wash}</a></h3>
+                <h3><a href={concat( '/exphelp/search/(audience)/', $aid )|ezurl}>{cond( and( $help_audience, is_set( $help_audience.name ) ), $help_audience.name, $help_audience_meta[$aid].name )|wash}</a></h3>
                 <p>{$help_audience_meta[$aid].text|wash}</p>
                 {set $help_pages = cond( and( is_set( $help_audience_pages ), is_set( $help_audience_pages[$aid] ) ), $help_audience_pages[$aid], array() )}
                 {if $help_pages|count|gt( 0 )}
@@ -87,6 +90,11 @@
         {/foreach}
         </ul>
     </section>
+
+    {* ---- Help maintained as content: manuals and topics (doc/features/6.0/help-content.md) ---- *}
+    {if and( is_set( $help_content ), $help_content, or( $help_content.manuals|count|gt( 0 ), $help_content.topics|count|gt( 0 ) ) )}
+    {include uri='design:exphelp/parts/dashboard_content.tpl' content=$help_content}
+    {/if}
 
     {* ---- Featured and recently changed pages ---- *}
     {if or( and( is_set( $help_featured ), $help_featured|count|gt( 0 ) ), and( is_set( $help_recent ), $help_recent|count|gt( 0 ) ) )}
@@ -150,11 +158,14 @@
         </div>
         <ul class="a4-help-links">
         {foreach $help_categories as $help_category}
-            <li><a href={concat( $help_search_action, '?category=', $help_category.id|urlencode )|ezurl}><span class="a4-icon a4-bi-{cond( and( is_set( $help_category.icon ), $help_category.icon|ne( '' ) ), $help_category.icon, 'journal-text' )|wash}" aria-hidden="true"></span>{$help_category.name|wash}{if is_set( $help_category.count )}<span class="a4-help-links-count">{$help_category.count|wash}</span>{/if}</a></li>
+            <li><a href={concat( '/exphelp/search/(category)/', $help_category.id|urlencode )|ezurl}><span class="a4-icon a4-bi-{cond( and( is_set( $help_category.icon ), $help_category.icon|ne( '' ) ), $help_category.icon, 'journal-text' )|wash}" aria-hidden="true"></span>{$help_category.name|wash}{if is_set( $help_category.count )}<span class="a4-help-links-count">{$help_category.count|wash}</span>{/if}</a></li>
         {/foreach}
         </ul>
     </section>
     {/if}
+
+    {* ---- Grow from user to developer (parts/dashboard_grow.tpl) ---- *}
+    {include uri='design:exphelp/parts/dashboard_grow.tpl'}
 
     {* ---- Report an error ---- *}
     <section class="a4-help-report" aria-labelledby="help-dash-report">
@@ -175,6 +186,9 @@
             {/if}
         </div>
     </section>
+
+    {* ---- Free documentation: the license and what readers may do with it ---- *}
+    {include uri='design:exphelp/parts/license_dashboard.tpl'}
 
     {* ---- Keyboard ---- *}
     <ul class="a4-help-keys" id="help-dash-keys" aria-label="{'Keyboard shortcuts'|i18n( $help_ctx )|wash}">

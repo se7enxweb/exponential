@@ -1008,6 +1008,23 @@ body,
 }
 .a4-site-menu-list { margin: 0; padding: 0; list-style: none; }
 .a4-site-menu-list li { margin: 0; }
+/* The Help menu (parts/a4_header_help.tpl): the site menu's panel and entries, with a search of the help on top and
+   the Help center at the end */
+.a4-help-menu { min-width: 18rem; }
+.a4-help-menu-search {
+  display: flex;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-1);
+  padding: var(--a4-space-2);
+}
+.a4-help-menu-search .a4-input { flex: 1 1 auto; min-width: 0; }
+.a4-help-menu-search .a4-btn { flex: 0 0 auto; }
+.a4-site-menu .a4-help-menu-center {
+  margin-top: var(--a4-space-1);
+  border-top: 1px solid var(--a4-line);
+  border-radius: 0 0 var(--a4-radius-s) var(--a4-radius-s);
+  font-weight: 600;
+}
 /* Phones: the globe stands mid-row, so the panel is placed under the header, the window's width less the gutters */
 @media screen and (max-width: 575.98px) {
   .a4-site-menu {
@@ -1804,6 +1821,7 @@ html .exp-dt tbody tr:has(> td > input[type="checkbox"]:checked) > td { backgrou
 #footer a {
   color: var(--a4-footer-link);
 }
+.a4-footer-help .a4-icon { margin-inline-end: var(--a4-space-1); }   /* the Help center link (page_copyright.tpl) */
 #footer a:hover {
   color: var(--a4-footer-link-hover);
 }

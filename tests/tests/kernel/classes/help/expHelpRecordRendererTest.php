@@ -10,7 +10,9 @@
  *  RR-05  title and summary for the index; grouping by series and section; table of contents
  *  RR-06  other texts are not taken for records (changelogs with "- " lists, prose)
  *  RR-07  the date formats of the old files
- *  RR-08  search ranks the history like the pages of its newest version (VersionBoost)
+ *  RR-08  search ranks the history like the pages of the version most of its records belong to (VersionBoost)
+ *  RR-09  the records after 4.2 (5.x, 6.x): sourced, dates from their changelogs, unknown dates marked, live links
+ *         only to hosts that are online (GitHub), changelogs open in the help
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -86,7 +88,8 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         preg_match_all( '/^- (?:Release )?[Dd]ate\s+(.+)$/m', $text, $dates );
         foreach ( $parsed['records'] as $record )
             foreach ( array( 'date' => 'date_text', 'release_date' => 'release_date_text' ) as $iso => $raw )
-                if ( $record[$raw] !== '' )
+                // every date is read, unless the record says it has none ("unknown", "not released yet")
+                if ( $record[$raw] !== '' && !preg_match( '/^(unknown|not released)/i', $record[$raw] ) )
                     $this->assertMatchesRegularExpression( '/^\d{4}-\d{2}-\d{2}$/', $record[$iso], "date of {$record['name']}: {$record[$raw]}" );
 
         $rendered = self::renderer()->render( $text );
@@ -131,8 +134,8 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
     public function testTitlesSummariesAndGroups()
     {
         $release = self::renderer()->describe( self::source( 'release-overview' ) );
-        $this->assertSame( "Release history (3.x\u{2013}4.x, from the original SVN)", $release['title'] );
-        $this->assertMatchesRegularExpression( '/^\d+ releases from 2002-11-01 to 2009-\d\d-\d\d /', $release['summary'] );
+        $this->assertSame( "Release history (3.x\u{2013}6.x)", $release['title'], 'not "from the original SVN": the newer records come from other sources' );
+        $this->assertMatchesRegularExpression( '/^\d+ releases from 2002-11-01 to 2026-\d\d-\d\d /', $release['summary'] );
         $this->assertStringContainsString( 'historical', $release['summary'] );
 
         $branch = self::renderer()->describe( self::source( 'branch-overview' ) );
@@ -142,7 +145,7 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         $rendered = self::renderer()->render( self::source( 'release-overview' ) );
         $level2 = array_values( array_map( function( $h ) { return $h['text']; },
             array_filter( $rendered['toc'], function( $h ) { return $h['level'] === 2; } ) ) );
-        $this->assertSame( array( 'Series 3.x', 'Series 4.x' ), $level2 );
+        $this->assertSame( array( 'Series 3.x', 'Series 4.x', 'Series 5.x', 'Series 6.x' ), $level2 );
         $level3 = array_values( array_map( function( $h ) { return $h['text']; },
             array_filter( $rendered['toc'], function( $h ) { return $h['level'] === 3; } ) ) );
         $this->assertContains( '3.0', $level3 );
@@ -208,11 +211,11 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
             $this->assertSame( $iso, expHelpRecordRenderer::isoDate( $text ), "'$text'" );
     }
 
-    /** RR-08 the index gives the page its newest major version, so the search ranks it like pages of that version */
+    /** RR-08 the index gives the page the major version most of its records belong to, so search ranks it like those pages */
     public function testSearchRanksTheHistoryLikeItsVersion()
     {
         $described = self::renderer()->describe( self::source( 'release-overview' ) );
-        $this->assertSame( '4', $described['version'] );
+        $this->assertSame( '3', $described['version'] );
         $this->assertSame( '3', self::renderer()->describe( self::source( 'branch-overview' ) )['version'] );
 
         $text = "# Release notes\n\nRelease 4.2 of the revision history.\n";
@@ -224,5 +227,74 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         $result = $search->search( 'release history ' );
         $ids = array_map( function( $hit ) { return $hit['id']; }, $result['hits'] );
         $this->assertSame( array( 'features/6.0/releases.md', 'release-overview' ), $ids );
+    }
+
+    /** RR-09 the records after 4.2: 5.x and 6.x, each with its source, dates only where a source gives one */
+    public function testRecordsAfterFourTwo()
+    {
+        $parsed = expHelpRecordRenderer::parse( self::source( 'release-overview' ) );
+        $this->assertNotEmpty( $parsed['comments'], 'the appended records say where they come from' );
+        $bySeries = array();
+        $byName = array();
+        foreach ( $parsed['records'] as $record )
+        {
+            $bySeries[$record['series']][] = $record;
+            $byName[$record['name']] = $record;
+        }
+        $this->assertArrayHasKey( '5.x', $bySeries );
+        $this->assertArrayHasKey( '6.x', $bySeries );
+        $this->assertGreaterThanOrEqual( 50, count( $bySeries['5.x'] ) );
+
+        // every record after 4.2 names its source, and its date is ISO or says why there is none
+        $after = false;
+        foreach ( $parsed['records'] as $record )
+        {
+            if ( in_array( $record['series'], array( '5.x', '6.x' ), true ) || $record['sources'] )
+                $after = true;
+            if ( !$after )
+                continue;
+            $this->assertNotEmpty( $record['sources'], "{$record['name']} names its source" );
+            if ( $record['date'] === '' )
+                $this->assertMatchesRegularExpression( '/unknown|not released/i', $record['date_text'], "{$record['name']}: a missing date is marked" );
+        }
+
+        // 6.x: one record per changelog page, with the date and tag the page gives
+        $changelogs = glob( self::root() . '/doc/changelogs/6.*/6.*.md' ) ?: array();
+        $this->assertNotEmpty( $changelogs );
+        foreach ( $changelogs as $file )
+        {
+            $version = basename( $file, '.md' );
+            $this->assertArrayHasKey( $version, $byName, "a record for $version" );
+            $record = $byName[$version];
+            $this->assertSame( '6.x', $record['series'] );
+            $head = implode( '', array_slice( file( $file ), 0, 6 ) );
+            if ( preg_match( '/Released (\d{4}-\d\d-\d\d)\. Tag `([^`]+)`/', $head, $m ) )
+            {
+                $this->assertSame( $m[1], $record['date'], "$version: the date of its changelog" );
+                $this->assertContains( array( 'Tag', $m[2] ), $record['revisions'], "$version: its tag" );
+            }
+            else
+                $this->assertSame( '', $record['date'], "$version is not released: no date" );
+            $links = array_map( function( $url ) { return $url[1]; }, $record['urls'] );
+            $this->assertContains( 'changelogs/' . basename( dirname( $file ) ) . '/' . basename( $file ), $links, "$version links its changelog" );
+        }
+
+        // only hosts that are online are links: GitHub yes, the old ez.no servers no
+        $html = ( new expHelpMarkdownRenderer( array(
+            'translate' => function( $t ) { return $t; },
+            'link_resolver' => function( $href, $id ) { return '/admin/exphelp/viewer/' . expHelpMarkdownRenderer::resolvePath( $id, $href ); },
+        ) ) )->renderPlainText( self::source( 'release-overview' ), 'release-overview' )['html'];
+        $dom = self::dom( $html );
+        $github = 0;
+        foreach ( $dom->getElementsByTagName( 'a' ) as $a )
+        {
+            $href = $a->getAttribute( 'href' );
+            $this->assertDoesNotMatchRegularExpression( '#//[^/]*\.ez\.no#i', $href, 'no link to the old ez.no servers' );
+            if ( strpos( $href, 'https://github.com/' ) === 0 )
+                $github++;
+        }
+        $this->assertGreaterThanOrEqual( 40, $github, 'GitHub releases and tags are links' );
+        $this->assertStringContainsString( 'href="/admin/exphelp/viewer/changelogs/6.0/6.0.14.md"', $html, 'a changelog opens in the help' );
+        $this->assertStringContainsString( 'confluence.ez.no', $html, 'the dead address stays as text' );
     }
 }

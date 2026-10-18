@@ -16324,6 +16324,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Weitere Informationen finden Sie unter &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -16843,6 +16847,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Open your user object</source>
         <translation>Eigenes Benutzerobjekt öffnen</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -17234,6 +17242,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Ihr Name, Ihre E-Mail-Adresse und weitere Angaben.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Anleitungen, Suche und wie Sie einen Fehler melden.</translation>
     </message>
 </context>
 <context>
@@ -17651,6 +17667,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>The translation each interface language shows, and what it falls back to.</source>
         <translation>Die Übersetzung, die jede Oberflächensprache zeigt, und worauf sie zurückfällt.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Anleitungen, Suche und wie Sie einen Fehler melden.</translation>
     </message>
 </context>
 <context>
@@ -73573,6 +73597,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Zahlen anzeigen</translation>
     </message>
     <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
+    <message>
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
@@ -79176,6 +79204,174 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Anleitungen und Referenz für alle, die mit dieser Installation arbeiten, erstellt aus der Dokumentation ihrer eigenen Version.</translation>
     </message>
     <message>
+        <source>Help menu</source>
+        <translation>Hilfemenü</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Verwandte Themen</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Schnellzugriff</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Hilfe-Center öffnen</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>Neuigkeiten</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Einklappen</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Ausklappen</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Inhalte und Bearbeitung</translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Vom Benutzer zum Entwickler</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential ist freie Software mit ihrer vollständigen Geschichte auf GitHub. Installieren Sie es als Git-Klone, den empfohlenen Weg zum Bau von Websites, und Sie können jede Änderung verfolgen, Korrekturen vor ihrer Veröffentlichung ausprobieren und Ihre eigenen Verbesserungen zurückschicken.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Die Administration nutzen</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Anmelden, bearbeiten und veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Mit Git installieren</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Den Kernel und jede Erweiterung als Klone mit Geschichte.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Zurückgeben</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Forken, korrigieren und einen Pull Request öffnen.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Mit Git entwickeln</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Installationsanleitung</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Lizenz der Dokumentation</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Diese Seite gehört zur Dokumentation der Extension %extension und wird unter der Lizenz dieser Extension verbreitet.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Diese Seite stammt aus der Dokumentation der ursprünglichen Software. Sie fällt nicht unter die %license, sondern wird unter der %other verbreitet.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Welche Seiten welche Lizenz haben</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Dies ist der Text der %license, Version %version, wie ihn die Free Software Foundation veröffentlicht. Jeder darf ihn wörtlich kopieren und weitergeben; ändern darf man ihn nicht.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version oder später.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Die Lizenz lesen</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Die Lizenz im Web</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Was Sie mit freier Dokumentation tun dürfen</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Urheberrechts- und Lizenzhinweis</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Freie Dokumentation: Nutzen Sie sie, um sich und anderen zu helfen</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version oder später. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Studieren</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Lesen Sie jede Seite, so oft Sie wollen, zu jedem Zweck.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Kopieren und weitergeben</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Geben Sie Seiten an andere weiter, auf Papier oder als Dateien. Behalten Sie bei jeder Kopie den Urheberrechtshinweis, den Lizenzhinweis und eine Kopie der Lizenz bei.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Übersetzen, anpassen und verbessern</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Geben Sie Ihre Fassung unter derselben Lizenz weiter, mit den ursprünglichen Hinweisen und einem Vermerk, was Sie geändert haben.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Zitieren</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Verweisen Sie auf eine Seite mit ihrem Titel und ihrer Adresse in der Hilfe oder mit ihrer Datei im Verzeichnis doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Korrekturen zurückgeben</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Nutzen Sie „Auf GitHub bearbeiten“ auf jeder Seite. Änderungen werden unter derselben Lizenz angenommen, damit sie für alle frei bleiben.</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>Filter anwenden</translation>
     </message>
@@ -79196,28 +79392,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Wählen Sie eine andere Zielgruppe, ein anderes Thema oder einen anderen Typ.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>Zitieren</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>Korrekturen zurückgeben</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>Kopieren und weitergeben</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>Urheberrechts- und Lizenzhinweis</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>Inhalte erstellen und ändern: der Editor, Felder, Entwürfe und Versionen.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>Lizenz der Dokumentation</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -79228,16 +79404,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Erste Schritte in der Administration: anmelden, sich zurechtfinden und die täglichen Aufgaben.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>Freie Dokumentation: Nutzen Sie sie, um sich und anderen zu helfen</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>Hilfe bekommen und einen Fehler melden.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Geben Sie Seiten an andere weiter, auf Papier oder als Dateien. Behalten Sie bei jeder Kopie den Urheberrechtshinweis, den Lizenzhinweis und eine Kopie der Lizenz bei.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -79268,18 +79436,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Inhalte veröffentlichen, planen, verbergen und verschieben.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>Lesen Sie jede Seite, so oft Sie wollen, zu jedem Zweck.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>Die Lizenz lesen</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>Verweisen Sie auf eine Seite mit ihrem Titel und ihrer Adresse in der Hilfe oder mit ihrer Datei im Verzeichnis doc.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>Nachschlagematerial: Einstellungen, Befehle und Formate.</translation>
     </message>
@@ -79288,64 +79444,16 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Die Website betreiben: Einstellungen, Benutzer und Rollen, Caches, Cronjobs und Logs.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Geben Sie Ihre Fassung unter derselben Lizenz weiter, mit den ursprünglichen Hinweisen und einem Vermerk, was Sie geändert haben.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>Studieren</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>Templates, Extensions, die API und der Code dahinter.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>Die Lizenz im Web</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version oder später.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>Diese Dokumentation ist freie Dokumentation, lizenziert unter der %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version oder später. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>Diese Hilfe ist freie Dokumentation, lizenziert unter der %license %version. Sie dürfen sie nutzen, weitergeben und verbessern:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>Dies ist der Text der %license, Version %version, wie ihn die Free Software Foundation veröffentlicht. Jeder darf ihn wörtlich kopieren und weitergeben; ändern darf man ihn nicht.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>Diese Seite gehört zur Dokumentation der Extension %extension und wird unter der Lizenz dieser Extension verbreitet.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>Diese Seite stammt aus der Dokumentation der ursprünglichen Software. Sie fällt nicht unter die %license, sondern wird unter der %other verbreitet.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>Themen</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>Übersetzen, anpassen und verbessern</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>Übersetzungen und die Sprachen der Website.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Nutzen Sie „Auf GitHub bearbeiten“ auf jeder Seite. Änderungen werden unter derselben Lizenz angenommen, damit sie für alle frei bleiben.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -79354,14 +79462,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>Was jede Funktion tut und wie man sie einrichtet.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>Was Sie mit freier Dokumentation tun dürfen</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>Welche Seiten welche Lizenz haben</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
@@ -79462,6 +79562,114 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Image</source>
         <translation>Bild</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count von %total Einträgen</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtern</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Nach %title sortieren</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Version, Name, Jahr oder Revision</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count Einträge, %first bis %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 Eintrag, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adressen und Hinweise</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Adressen auf Servern, die nicht mehr online sind, bleiben als historischer Text erhalten.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Bezeichnung</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Sonstige</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Veröffentlicht</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revisionen</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Reihe %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Quelle</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Die älteren Einträge stammen aus dem ursprünglichen SVN-Repository.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>aus dem ursprünglichen SVN</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historisch (nicht mehr online)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nicht erfasst</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>Revision %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Wer Exponential macht</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential ist freie Software mit einer Geschichte von fast dreißig Jahren. Lernen Sie das Unternehmen kennen, das es leitet, und die gemeinnützige Stiftung, die das Open-Source-Projekt betreibt.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Wer ist 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>Das Unternehmen hinter Exponential, von der ersten Version bis heute.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Wer ist die Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>Die gemeinnützige Organisation, die Produktfamilie und ihre Zusagen.</translation>
     </message>
 </context>
 </TS>

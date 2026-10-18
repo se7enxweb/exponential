@@ -70,6 +70,7 @@ class Search extends \Exponential\Runnable\ModuleView
         }
         $search = new \expHelpSearch( $index );
         $result = $search->search( $state['q'], $filters, $state['limit'], $state['offset'] );
+        $result = self::withContentTopics( $result, array( 'q' => $state['q'], 'filters' => $filters, 'limit' => $state['limit'], 'offset' => $state['offset'] ) );
         $result['canonical'] = \expHelp::searchUrl( $state, $defaultLimit );
         $result['canonical_href'] = \expHelpLinks::absolute( $result['canonical'] );
 
@@ -113,6 +114,40 @@ class Search extends \Exponential\Runnable\ModuleView
     }
 
     /**
+     * Help topics maintained as content (doc/features/6.0/help-content.md) the user may see, put before the pages of
+     * doc/ on the first page of results; the total counts them too. Nothing when help as content is not installed.
+     *
+     * @param array $result expHelpSearch::search()'s array
+     * @param array $request q, filters, limit, offset
+     * @return array
+     */
+    public static function withContentTopics( array $result, array $request )
+    {
+        if ( $request['q'] === '' || !class_exists( 'expHelpContentProvider' ) || !\expHelpContentProvider::isEnabled() )
+            return $result;
+        try
+        {
+            $topics = \expHelpContentProvider::instance()->search( $request['q'], $request['filters'], $request['limit'] );
+        }
+        catch ( \Exception $e )
+        {
+            \eZDebug::writeWarning( 'Help topics could not be searched: ' . $e->getMessage(), __METHOD__ );
+            return $result;
+        }
+        if ( !$topics['hits'] )
+            return $result;
+        if ( (int)$request['offset'] === 0 )
+        {
+            $hits = array_slice( array_merge( $topics['hits'], isset( $result['hits'] ) ? $result['hits'] : array() ), 0, $request['limit'] );
+            $result['hits'] = $result['results'] = $hits;
+        }
+        $result['total'] = ( isset( $result['total'] ) ? (int)$result['total'] : 0 ) + $topics['total'];
+        $result['topics_total'] = $topics['total'];
+        return $result;
+    }
+
+    /**
+     * The search parameters of a request, bounded.
      * The view parameters of the request, by name (q, category, ...): string, or false when not given.
      *
      * @param array $params the view's $Params

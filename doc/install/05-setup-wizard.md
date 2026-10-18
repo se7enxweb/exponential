@@ -228,6 +228,10 @@ using an SMTP relay server.") and the note "SMTP is recommended for MS Windows u
 
 ### 5.3.5 Choose database system
 
+> **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
+> at this time. Details: [Database support](../help/database-support.md).
+
 **Purpose.** Which database system the site uses. The list holds the systems whose PHP extension the system check
 found, limited to the ones the installer knows (`eZSetupDatabaseMap()` in `kernel/setup/ezsetupcommon.php`):
 

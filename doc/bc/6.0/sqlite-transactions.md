@@ -63,6 +63,7 @@ php bin/php/ezcache.php --clear-tag=ini --allow-root-user
 
 ## Related pages
 
+- [Database support](../../help/database-support.md): the supported databases in their official order, SQLite first
 - [Specification: database drivers (SQLite and Oracle)](../../specifications/6.0/database-drivers-sqlite-oracle.md)
 - [SQLite database support](../../features/6.0/sqlite-database.md)
 - [Specification: the SQLite3 database driver](../../specifications/6.0/sqlite3-database-driver.md)

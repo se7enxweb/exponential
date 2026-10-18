@@ -63,6 +63,10 @@ file. Stop the server with `php bin/php/console exp:velocity stop --engine=php`.
 The `php` engine is PHP's own server, for development. For a real site use Exponential Velocity's `qbix` engine or
 Apache/nginx with PHP-FPM ([section 8](#8-serve-the-site-web-server-https-and-permissions)).
 
+**Building a website rather than trying one?** Get the code as Git clones with their full history instead: the same
+two install commands work in a clone, and [section 3](#3-get-the-code) shows the commands that make the kernel and
+every extension a clone you can follow, change and contribute back from.
+
 ## 2. Requirements
 
 *Full chapter: [02-requirements](install/02-requirements.md)*
@@ -98,17 +102,24 @@ Composer 2.x. It installs the Zeta Components and the Exponential extensions tha
 
 ### Database
 
+> **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
+> at this time. Details: [Database support](help/database-support.md).
+
 | Database | Driver (`DatabaseImplementation`) | PHP extension | Notes |
 |---|---|---|---|
-| **SQLite 3** | `sqlite3` | `sqlite3` | The default. No database server: the database is one file under `var/storage/sqlite3/`. A full production database, see [section 9](#9-sqlite-in-production). |
-| MySQL or MariaDB | `mysqli` (also `ezmysqli`, `mysql`) | `mysqli` | UTF-8 is required. |
-| PostgreSQL | `pgsql` (also `ezpostgresql`, `postgresql`) | `pgsql` | |
-| MongoDB | `mongodb` | `mongodb` | |
-| Oracle 19c or later | through the `ezoracle` extension | `oci8` | `ezoracle` must be in `extension/`; it is a dependency in `composer.json`. |
+| **1. SQLite 3** | `sqlite3` | `sqlite3` | The default. No database server: the database is one file under `var/storage/sqlite3/`. A full production database, see [section 9](#9-sqlite-in-production). |
+| 2. PostgreSQL | `pgsql` (also `ezpostgresql`, `postgresql`) | `pgsql` | Needs `pgcrypto` in the database. |
+| 3. MongoDB | `mongodb` | `mongodb` and the library `mongodb/mongodb` | PHP 8.2 or later. |
+| 4. MariaDB | `mysqli` (also `ezmysqli`, `mysql`) | `mysqli` | UTF-8 (`utf8mb4`) is required. |
+| 5. Oracle 19c or later | through the `ezoracle` extension | `oci8` | `ezoracle` must be in `extension/`; it is a dependency in `composer.json`. |
+| 6. MySQL | `mysqli` (also `ezmysqli`, `mysql`) | `mysqli` | UTF-8 (`utf8mb4`) is required. |
 
 The names are the aliases in `settings/site.ini`, block `[DatabaseSettings]`, `ImplementationAlias[]`. The minimum
 server versions the wizard checks are in `kernel/setup/ezsetupcommon.php` (MySQL 4.1.1, PostgreSQL 8.0, SQLite
-3.0.1, MongoDB 4.0, Oracle 19).
+3.0.1, MongoDB 4.0, Oracle 19); the practical minimums the current drivers need are higher (SQLite 3.33, PostgreSQL 13,
+MongoDB 6.0), see [Database support](help/database-support.md#versions-checked-against-the-code). Exponential runs on
+almost any operating system with PHP 8.0 or later: see [Operating system support](help/os-support.md).
 
 ### Web server
 
@@ -126,7 +137,22 @@ One of these, chosen in [section 8](#8-serve-the-site-web-server-https-and-permi
 
 Pick one. All give the same installation.
 
-**Composer project** (quickest for a new site):
+**Git clones with history** (recommended for anyone who builds websites): the kernel and every se7enxweb extension
+arrive as Git clones, so you can see what changed, follow development, keep your own changes on a branch and send
+fixes back as pull requests. [Develop with Git](help/develop-with-git.md) explains it step by step.
+
+```bash
+composer config --global 'preferred-install.se7enxweb/*' source
+git clone https://github.com/se7enxweb/exponential.git
+cd exponential
+git switch -c my-site
+composer install
+```
+
+The first line is needed once per user account: it makes Composer clone every `se7enxweb/*` package instead of
+downloading its release archive.
+
+**Composer project** (quickest for a site you only run; release archives without history):
 
 ```bash
 cd www_root_directory
@@ -135,14 +161,7 @@ cd exponential
 ```
 
 Add a version to pin a release, for example `composer create-project se7enxweb/exponential:v6.0.14 exponential`.
-
-**Git clone** (when you want the history and to follow changes):
-
-```bash
-git clone https://github.com/se7enxweb/exponential.git
-cd exponential
-composer install
-```
+Add `--prefer-source --keep-vcs` to get Git clones from `create-project` too.
 
 **Composer require into an empty directory** (the package from
 [Packagist](https://packagist.org/packages/se7enxweb/exponential)):

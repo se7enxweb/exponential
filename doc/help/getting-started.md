@@ -82,8 +82,16 @@ shared computer, always sign out.
   themselves when you point at them.
 - If something looks broken, see [When something goes wrong](when-something-goes-wrong.md).
 
+## Grow from user to developer
+
+Everything you use here is free software, and every page of this help is free documentation. When you are ready to
+go further than editing content, to change templates, try a fix or build a site of your own, start with
+[Develop with Git](develop-with-git.md): it shows the recommended way to install Exponential as Git clones with their
+full history, step by step, and how to send your improvements back to the project.
+
 ## Next steps
 
 - [A tour of the administration](admin-tour.md)
 - [Creating and editing content](editing-content.md)
 - [Keyboard shortcuts](keyboard-shortcuts.md)
+- [Develop with Git](develop-with-git.md)

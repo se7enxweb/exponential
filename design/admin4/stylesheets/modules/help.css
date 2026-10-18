@@ -196,7 +196,7 @@
 .a4-help-filter > input:hover + span { border-color: var(--a4-line-strong); }
 .a4-help-filter > input:checked + span { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
 .a4-help-filter > input:focus-visible + span { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
-.a4-help-filter [data-exphelp-count]:not(:empty) { color: inherit; font-weight: 400; opacity: .8; }
+.a4-help-filter [data-exphelp-count]:not(:empty) { color: inherit; font-weight: 400; }
 .a4-help-filter [data-exphelp-count]:not(:empty)::before { content: "("; }
 .a4-help-filter [data-exphelp-count]:not(:empty)::after { content: ")"; }
 
@@ -309,6 +309,7 @@
 /* browsing a topic: its introduction, the topic links, the page numbers */
 .a4-help-searchpage .a4-pagehead-title .a4-icon { color: var(--a4-accent-text); }
 .a4-help-catintro { max-width: 80ch; color: var(--a4-ink); font-size: var(--a4-text-m); }
+.a4-help-topics { min-height: var(--a4-control-h); }
 .a4-help-topics__list {
   display: flex;
   flex-wrap: wrap;
@@ -327,7 +328,7 @@
 }
 .a4-help-topics__list a.a4-tag:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
 .a4-help-topics__list a.a4-tag.is-current { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
-.a4-help-topics__count { color: inherit; font-weight: 400; font-variant-numeric: tabular-nums; opacity: .8; }
+.a4-help-topics__count { color: inherit; font-weight: 400; font-variant-numeric: tabular-nums; }
 .a4-help-results__list.is-browse .a4-help-result__snippet { color: var(--a4-muted); }
 .a4-help-result__title .a4-icon { color: var(--a4-accent-text); }
 .a4-help-pager__pages {
@@ -512,6 +513,118 @@
 .a4-help-report-actions { grid-column: 2; }
 @media (max-width: 600px) {
   .a4-help-report-actions { grid-column: 1 / -1; }
+}
+
+/* ---- dashboard: grow from user to developer (parts/dashboard_grow.tpl) ---------------------------------------- */
+
+.a4-help-grow {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--a4-space-4) var(--a4-space-5);
+  padding: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background:
+    linear-gradient(120deg, var(--a4-ok-bg), transparent 55%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-ok-line);
+}
+.a4-help-grow .a4-help-tile { color: var(--a4-ok); background-color: var(--a4-card); box-shadow: inset 0 0 0 1px var(--a4-ok-line); }
+.a4-help-grow h2 { margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-l); font-weight: 650; }
+.a4-help-grow p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-grow-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--a4-space-2);
+  margin: var(--a4-space-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-grow-steps a {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-2);
+  height: 100%;
+  padding: var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-help-grow-steps a:hover { box-shadow: inset 0 0 0 1px var(--a4-ok-line); }
+.a4-help-grow-steps a:hover strong { text-decoration: underline; }
+.a4-help-grow-num {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--a4-ok-bg);
+  color: var(--a4-ok);
+  font-weight: 650;
+  font-size: var(--a4-text-s);
+  font-variant-numeric: tabular-nums;
+}
+.a4-help-grow-step { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-grow-step strong { display: block; color: var(--a4-ink); font-weight: 600; }
+.a4-help-grow-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); grid-column: 2; }
+@media (max-width: 600px) {
+  .a4-help-grow { padding: var(--a4-space-4); }
+  .a4-help-grow-actions { grid-column: 1 / -1; }
+}
+@media print {
+  .a4-help-grow-actions { display: none; }
+}
+
+/* ---- dashboard: who makes Exponential (parts/dashboard_about.tpl) -------------------------------------------- */
+
+.a4-help-about {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--a4-space-4) var(--a4-space-5);
+  padding: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background:
+    linear-gradient(120deg, var(--a4-info-bg), transparent 55%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-info-line);
+}
+.a4-help-about .a4-help-tile { color: var(--a4-info); background-color: var(--a4-card); box-shadow: inset 0 0 0 1px var(--a4-info-line); }
+.a4-help-about h2 { margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-l); font-weight: 650; }
+.a4-help-about p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-about-links {
+  display: grid;
+  grid-column: 2;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-about-links a {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-2);
+  height: 100%;
+  padding: var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-help-about-links a:hover { box-shadow: inset 0 0 0 1px var(--a4-info-line); }
+.a4-help-about-links a:hover strong { text-decoration: underline; }
+.a4-help-about-links .a4-icon { flex: 0 0 auto; margin-top: var(--a4-space-1); color: var(--a4-info); }
+.a4-help-about-text { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-about-text strong { display: block; color: var(--a4-ink); font-weight: 600; }
+@media (max-width: 600px) {
+  .a4-help-about { padding: var(--a4-space-4); }
+  .a4-help-about-links { grid-column: 1 / -1; }
 }
 
 /* ---- dashboard: keyboard hints ------------------------------------------------------------------------------- */
@@ -912,6 +1025,11 @@
 }
 .a4-help-records-note {
   font-style: italic;
+}
+/* ---- record pages: sources of the records (A, batch 2) ---- */
+.a4-help-records-source {
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
 }
 .a4-help-records-tools {
   display: flex;
@@ -1373,6 +1491,54 @@
   .a4-help-article pre { white-space: pre-wrap; }
 }
 
+/* ---- Print and PDF (exphelp/parts/viewer_actions.tpl) --------------------------------------------------------
+   "Print this page" (shown by exphelp.js) and "Download as PDF" under the page's facts; on paper only the document:
+   no frame of the administration (admin4.css hides admin4's, the ids below are the classic admin's), no tree,
+   contents, buttons or pager; the address of the page under its facts, readable code on paper, outside link
+   addresses after the link (above), nothing split inside a code block, table or callout. Paper is light: admin4
+   switches to the light theme before printing (a4_head.js), and the code blocks drop their dark background. */
+.a4-help-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--a4-space-2);
+  margin: var(--a4-space-2) 0 0;
+}
+.a4-help-actions .a4-btn[hidden] { display: none; }
+.a4-help-print-url { display: none; }
+
+@media print {
+  body:has(.a4-help-viewer) :is(#header, #path, #leftmenu, #rightmenu, #footer, #left-panels-separator,
+    #right-panels-separator, #widthcontrol-handler, #leftmenu-showhide, #rightmenu-showhide) { display: none !important; }
+  body:has(.a4-help-viewer) :is(#maincolumn, #maincontent, #columns) { margin: 0 !important; padding: 0 !important; width: auto !important; }
+  .a4-help-actions,
+  .a4-help-meta-item.is-audience .a4-sr-only { display: none; }
+  .a4-help-print-url {
+    display: block;
+    margin: var(--a4-space-1) 0 0;
+    color: var(--a4-muted);
+    font-size: var(--a4-text-xs);
+    overflow-wrap: anywhere;
+  }
+  .a4-help-viewer,
+  .a4-help-article {
+    color: var(--a4-ink);
+    background: none;
+  }
+  .a4-help-article { font-size: var(--a4-text-m); line-height: 1.55; orphans: 3; widows: 3; }
+  .a4-help-article img { max-width: 100%; height: auto; }
+  .a4-help-article .a4-help-code,
+  .a4-help-article .a4-help-pre {
+    border: 1px solid var(--a4-line);
+    background: var(--a4-soft);
+    color: var(--a4-ink);
+  }
+  .a4-help-article .a4-help-pre [class^="a4-help-tok-"] { color: var(--a4-ink); }
+  .a4-help-article .a4-help-pre .a4-help-tok-comment { color: var(--a4-muted); font-style: italic; }
+  .a4-help-article :is(.a4-help-callout, .a4-help-table thead, .a4-help-code) { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .a4-help-article .a4-help-table-wrap { overflow: visible; }
+  .a4-help-article tr { break-inside: avoid; }
+}
+
 /* ---- Report an error (exphelp/report.tpl, workstream H) ----------------------------------------------------- */
 .a4-help-reportpage { display: grid; gap: var(--a4-space-5); }
 .a4-help-issue-jump { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin-top: var(--a4-space-3); }
@@ -1455,4 +1621,62 @@
   .a4-help-filter > input:checked + span,
   .a4-help-topics__list a.a4-tag.is-current,
   .a4-help-pager__page.is-current { outline: 2px solid Highlight; }
+}
+
+/* ---- documentation license (O): the notice under every help page and the dashboard's free documentation block --
+   parts/license_notice.tpl and parts/license_dashboard.tpl (exphelp.ini [License], doc/README-LICENSE.md).
+   Tokens only; the notice stays in print, so a printed page carries its license. */
+.a4-help-license {
+  max-width: 80ch;
+  margin: var(--a4-space-5) 0 0;
+  padding: var(--a4-space-3) var(--a4-space-4);
+  border: 1px solid var(--a4-line);
+  border-inline-start: 4px solid var(--a4-info);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+}
+.a4-help-license.is-other { border-inline-start-color: var(--a4-line-strong); }
+.a4-help-license p { margin: 0 0 var(--a4-space-2); }
+.a4-help-license-title {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-2);
+  font-size: var(--a4-text-m);
+  font-weight: 650;
+  line-height: var(--a4-leading-tight);
+}
+.a4-help-license-title .a4-icon { color: var(--a4-accent-text); }
+.a4-help-license-copy { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-help-license-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--a4-space-1) var(--a4-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-license-links a { display: inline-flex; align-items: center; gap: var(--a4-space-1); font-weight: 600; }
+
+.a4-help-freedoc .a4-help-section-head p { margin: var(--a4-space-1) 0 0; color: var(--a4-muted); }
+.a4-help-freedoc-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--a4-space-3) var(--a4-space-4);
+  margin: var(--a4-space-3) 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-freedoc-list li { display: flex; align-items: flex-start; gap: var(--a4-space-2); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-freedoc-list li > .a4-icon { flex: none; margin-top: var(--a4-space-1); color: var(--a4-accent-text); }
+.a4-help-freedoc-list strong { display: block; color: var(--a4-ink); }
+.a4-help-freedoc .a4-help-license-copy { margin: 0 0 var(--a4-space-3); }
+.a4-help-freedoc-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
+
+@media print {
+  .a4-help-license { break-inside: avoid; border-color: var(--a4-line-strong); background: none; }
+  .a4-help-license-links a[href^="http"]::after { content: " (" attr(href) ")"; font-weight: 400; }
+  .a4-help-freedoc-actions { display: none; }
 }

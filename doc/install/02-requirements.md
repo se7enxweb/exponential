@@ -19,7 +19,7 @@ package install, found half-way through an install it costs a restart of the ins
 | PHP for Exponential Velocity | 8.1, with `sockets` | as above, with `pcntl` and `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.1"`, `"ext-sockets": "*"`) |
 | PHP extensions | see [2.3](#23-php-extensions) | plus the recommended ones | Composer (`ext-*`), the setup wizard's system check |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` set, `file_uploads` on, `allow_url_fopen` on | | the setup wizard's system check |
-| Database | SQLite 3 (no server) | SQLite, MySQL/MariaDB or PostgreSQL; MongoDB and Oracle are supported | the setup wizard's database step |
+| Database | SQLite 3 (no server) | in the official order: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([2.6](#26-databases)) | the setup wizard's database step |
 | Composer | 2.x | the current 2.x | you |
 | Web server | none (Velocity or PHP's built-in server) | Velocity, or Apache/nginx with PHP-FPM | you |
 | Image conversion | GD (`imagegd2`) or ImageMagick's `convert` | both | the setup wizard's system check |
@@ -127,11 +127,12 @@ a production Velocity.
 
 | Database | PHP extension | Notes |
 |---|---|---|
-| SQLite 3 | `sqlite3` | The default; nothing else needed. |
-| MySQL or MariaDB | `mysqli` | `composer.json` suggests `ext-mysqli`. |
-| PostgreSQL | `pgsql` | |
-| MongoDB | `mongodb` (PECL) | The driver (`lib/ezdb/classes/expmongodb.php`) also needs the PHP library `mongodb/mongodb` (`MongoDB\Client`), which `composer.json` suggests but does not require: add it with `composer require mongodb/mongodb`. The [MongoDB page](../features/6.0/mongodb-database-support.md) names PHP 8.2 or newer as the prerequisite. |
-| Oracle | `oci8` | Through the `ezoracle` extension, which `composer.json` requires; `oci8` itself comes from your vendor, EPEL or Remi. |
+| 1. SQLite 3 | `sqlite3` | The default; nothing else needed. |
+| 2. PostgreSQL | `pgsql` | |
+| 3. MongoDB | `mongodb` (PECL) | The driver (`lib/ezdb/classes/expmongodb.php`) also needs the PHP library `mongodb/mongodb` (`MongoDB\Client`), which `composer.json` suggests but does not require: add it with `composer require mongodb/mongodb`. The [MongoDB page](../features/6.0/mongodb-database-support.md) names PHP 8.2 or newer as the prerequisite. |
+| 4. MariaDB | `mysqli` | The same driver as MySQL. |
+| 5. Oracle | `oci8` | Through the `ezoracle` extension, which `composer.json` requires; `oci8` itself comes from your vendor, EPEL or Remi. |
+| 6. MySQL | `mysqli` | `composer.json` suggests `ext-mysqli` (its description still calls mysqli the default handler, from before SQLite became the default). |
 
 The optional test `database_all_extensions` reports which of `sqlite3`, `mysqli`, `pgsql` and `mongodb` are
 missing; it is only information. Install only the extension of the database you use.
@@ -262,29 +263,37 @@ change to the file the other PHP reads.
 
 ## 2.6 Databases
 
-| Database | `DatabaseImplementation` and aliases (`settings/site.ini`, `[DatabaseSettings] ImplementationAlias[]`) | Minimum server version the wizard checks |
-|---|---|---|
-| SQLite 3 | `sqlite3` | 3.0.1 |
-| MySQL or MariaDB | `mysqli`, `mysql`, `ezmysqli`, `ezmysql` | 4.1.1 |
-| PostgreSQL | `pgsql`, `postgresql`, `ezpostgresql` | 8.0 |
-| MongoDB | `mongodb` | 4.0 |
-| Oracle | `oracle`, `ezoracle` (from `extension/ezoracle/settings/site.ini.append.php`) | 19 |
+> **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
+> at this time. Details: [Database support](../help/database-support.md).
 
-The minimum versions are those of `eZSetupDatabaseMap()` in `kernel/setup/ezsetupcommon.php`. They are floors, not
-recommendations: run a version your vendor still supports. The [MongoDB page](../features/6.0/mongodb-database-support.md)
-gives MongoDB 6.0 as the practical minimum.
+| Database | `DatabaseImplementation` and aliases (`settings/site.ini`, `[DatabaseSettings] ImplementationAlias[]`) | Minimum server version the wizard checks | Practical minimum |
+|---|---|---|---|
+| 1. SQLite 3 | `sqlite3` | 3.0.1 | 3.33 (`UPDATE ... FROM`) |
+| 2. PostgreSQL | `pgsql`, `postgresql`, `ezpostgresql` | 8.0 | 13 (`pgcrypto` as a trusted extension) |
+| 3. MongoDB | `mongodb` | 4.0 | 6.0, with PHP 8.2 |
+| 4. MariaDB | `mysqli`, `mysql`, `ezmysqli`, `ezmysql` | 4.1.1 | a release your vendor supports |
+| 5. Oracle | `oracle`, `ezoracle` (from `extension/ezoracle/settings/site.ini.append.php`) | 19 | 19c |
+| 6. MySQL | `mysqli`, `mysql`, `ezmysqli`, `ezmysql` | 4.1.1 | a release your vendor supports |
+
+The minimum versions the wizard checks are those of `eZSetupDatabaseMap()` in `kernel/setup/ezsetupcommon.php`. They
+are floors, not recommendations: run a version your vendor still supports. The practical minimums come from the
+drivers; [Database support](../help/database-support.md#versions-checked-against-the-code) explains each one and lists
+the versions seen working on the development server and in CI.
 
 - **SQLite** is the default (`settings/setup.ini`, `[DatabaseSettings] DefaultType=sqlite3`) and needs no server: the
   database is one file under `var/storage/sqlite3/`. It is a full production database; see the
   [SQLite feature page](../features/6.0/sqlite-database.md).
-- **MySQL or MariaDB**: the database must use UTF-8. When the database's character set differs from the one the
-  wizard wants, the wizard stops with "The database [...] cannot be used, the setup wizard wants to create the site in
-  [...] but the database has been created using character set [...]". Create the database with
-  `CHARACTER SET utf8mb4` and this cannot happen.
 - **PostgreSQL** needs the `pgcrypto` extension in the database (its `digest` function). The wizard tries to create
   it; when it cannot, it says so and asks for `CREATE EXTENSION pgcrypto;` by the database owner or a superuser.
 - **MongoDB** and **Oracle**: see their pages, [MongoDB](../features/6.0/mongodb-database-support.md) and
   [SQLite and Oracle drivers](../specifications/6.0/database-drivers-sqlite-oracle.md).
+- **MariaDB or MySQL**: the database must use UTF-8. When the database's character set differs from the one the
+  wizard wants, the wizard stops with "The database [...] cannot be used, the setup wizard wants to create the site in
+  [...] but the database has been created using character set [...]". Create the database with
+  `CHARACTER SET utf8mb4` and this cannot happen.
+- **Microsoft SQL Server** has no driver in 6.0.x; what it would take is listed in
+  [Database support](../help/database-support.md#microsoft-sql-server-possible-with-additional-work).
 
 For a database server, create the database and a user that may create tables in it before you install; the
 installers do not create databases or users. Choosing and tuning a database is the subject of
@@ -382,6 +391,11 @@ prints.
 The Velocity manifest also knows Alpine (`apk`), FreeBSD (`pkg`), macOS (Homebrew) and Windows. The kernel's setup
 tests have Windows paths for ImageMagick (`convertim.exe`, `convert.exe`), but this book is written for Linux.
 
+Exponential runs on almost any operating system with PHP 8.0 or later and a web server. [Operating system
+support](../help/os-support.md) sorts them into tiers (tested here, known to work, expected to work, not possible
+today), from the Linux distributions, the BSDs, macOS and Windows to IBM i, Haiku and the 8-bit machines, and lists
+the web servers and PHP SAPIs.
+
 ## 2.10 Memory, CPU and disk
 
 The documentation gives few hard numbers, and this book does not invent others. What it does state:
@@ -405,6 +419,7 @@ than the machine really uses.
 In this repository:
 
 - [Installation overview](../INSTALL.md), section 2.
+- [Database support](../help/database-support.md) and [Operating system support](../help/os-support.md).
 - [PHP 8.0 support](../bc/6.0/php-8.0-support.md) and [PHP 8 support](../bc/6.0/php8.md).
 - [SQLite database support](../features/6.0/sqlite-database.md),
   [SQLite 3 driver](../specifications/6.0/sqlite3-database-driver.md),

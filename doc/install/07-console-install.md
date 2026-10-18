@@ -102,6 +102,10 @@ with exit status 1.
 
 ### Database
 
+> **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
+> at this time. Details: [Database support](../help/database-support.md).
+
 | Option | Default | Meaning and checks |
 |---|---|---|
 | `--db=<type>` | `sqlite` | `sqlite`, `mysql`, `pgsql`, `mongodb` or `oracle`. Also accepted: `sqlite3`; `mysqli`, `mariadb`; `postgresql`, `postgres`; `mongo`; `oci8`, `ezoracle`. Anything else: "Unknown database type '...': use sqlite, mysql, pgsql, mongodb or oracle" |

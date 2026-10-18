@@ -73057,7 +73057,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
-        <translation>Usar el sitio: su cuenta, el inicio de sesión, la autenticación en dos pasos y cómo encontrar cosas.</translation>
+        <translation>Usar el sitio: tu cuenta, el inicio de sesión, la autenticación en dos pasos y cómo encontrar cosas.</translation>
     </message>
     <message>
         <source>Help for this page</source>
@@ -73105,7 +73105,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>A good report gets an error fixed fast. This page tells you where to send it, what to write, and gives you a safe summary of this installation to paste in.</source>
-        <translation>Un buen informe hace que un error se corrija rápido. Esta página le indica adónde enviarlo, qué escribir y le da un resumen seguro de esta instalación para pegarlo.</translation>
+        <translation>Un buen informe hace que un error se corrija rápido. Esta página te indica adónde enviarlo, qué escribir y te da un resumen seguro de esta instalación para pegarlo.</translation>
     </message>
     <message>
         <source>A minute of checking often answers the question, or turns a vague report into one that can be fixed.</source>
@@ -73113,7 +73113,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>A security issue? Report it privately, not in a public issue.</source>
-        <translation>¿Un problema de seguridad? Infórmelo en privado, no en una incidencia pública.</translation>
+        <translation>¿Un problema de seguridad? Infórmalo en privado, no en una incidencia pública.</translation>
     </message>
     <message>
         <source>A title that names the error</source>
@@ -73145,11 +73145,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
-        <translation>Pida a un administrador de este sitio las líneas correspondientes del resumen de errores (Configuración, Registros). El mensaje y la hora en que ocurrió es lo que más necesita quien mantiene el software.</translation>
+        <translation>Pide a un administrador de este sitio las líneas correspondientes del resumen de errores (Configuración, Registros). El mensaje y la hora en que ocurrió es lo que más necesita quien mantiene el software.</translation>
     </message>
     <message>
         <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
-        <translation>Pregunte primero a la comunidad: las dudas sobre cómo funciona algo, las ideas y las experiencias van allí.</translation>
+        <translation>Pregunta primero a la comunidad: las dudas sobre cómo funciona algo, las ideas y las experiencias van allí.</translation>
     </message>
     <message>
         <source>Before you report</source>
@@ -73181,11 +73181,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Did you mean:</source>
-        <translation>Quizás quiso decir:</translation>
+        <translation>Quizás quisiste decir:</translation>
     </message>
     <message>
         <source>Do not open a public issue, a pull request or a forum post about it.</source>
-        <translation>No abra una incidencia pública, una pull request ni una publicación en el foro sobre ello.</translation>
+        <translation>No abras una incidencia pública, una pull request ni una publicación en el foro sobre ello.</translation>
     </message>
     <message>
         <source>E-mail %address</source>
@@ -73193,7 +73193,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
-        <translation>Cada parte de Exponential tiene su propio gestor público en GitHub. Necesita una cuenta de GitHub para abrir una incidencia.</translation>
+        <translation>Cada parte de Exponential tiene su propio gestor público en GitHub. Necesitas una cuenta de GitHub para abrir una incidencia.</translation>
     </message>
     <message>
         <source>Edit on GitHub</source>
@@ -73229,11 +73229,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Found a security problem?</source>
-        <translation>¿Ha encontrado un problema de seguridad?</translation>
+        <translation>¿Has encontrado un problema de seguridad?</translation>
     </message>
     <message>
         <source>Found an error?</source>
-        <translation>¿Ha encontrado un error?</translation>
+        <translation>¿Has encontrado un error?</translation>
     </message>
     <message>
         <source>Guides and reference for everyone who works with %site, written from the documentation of this installation&apos;s version.</source>
@@ -73249,7 +73249,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>How can we help?</source>
-        <translation>¿En qué podemos ayudarle?</translation>
+        <translation>¿En qué podemos ayudarte?</translation>
     </message>
     <message>
         <source>How to report an error</source>
@@ -73257,11 +73257,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
-        <translation>Incluya la versión, la versión de PHP y el motor (el diagnóstico de arriba), lo que puede hacer un atacante y los pasos para reproducirlo. Omita contraseñas, secretos y datos personales. Recibirá una primera respuesta en un día laborable.</translation>
+        <translation>Incluye la versión, la versión de PHP y el motor (el diagnóstico de arriba), lo que puede hacer un atacante y los pasos para reproducirlo. Omite contraseñas, secretos y datos personales. Recibirás una primera respuesta en un día laborable.</translation>
     </message>
     <message>
         <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
-        <translation>Se abre en GitHub con su texto y el diagnóstico ya rellenados; revíselo allí y envíelo.</translation>
+        <translation>Se abre en GitHub con tu texto y el diagnóstico ya rellenados; revísalo allí y envíalo.</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
@@ -73273,7 +73273,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Leave out anything private</source>
-        <translation>Omita todo lo privado</translation>
+        <translation>Omite todo lo privado</translation>
     </message>
     <message>
         <source>Look at the logs</source>
@@ -73281,15 +73281,15 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Look for an existing report</source>
-        <translation>Busque un informe existente</translation>
+        <translation>Busca un informe existente</translation>
     </message>
     <message>
         <source>Missing a page? Tell us</source>
-        <translation>¿Falta una página? Díganoslo</translation>
+        <translation>¿Falta una página? Dínoslo</translation>
     </message>
     <message>
         <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
-        <translation>No lo informe nunca en un gestor público ni en un foro. Use la vía privada descrita en</translation>
+        <translation>No lo informes nunca en un gestor público ni en un foro. Usa la vía privada descrita en</translation>
     </message>
     <message>
         <source>New issue</source>
@@ -73313,11 +73313,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>No passwords, keys, e-mail addresses, names of people or customer data. The form removes the obvious ones, but read the issue before you submit it.</source>
-        <translation>Nada de contraseñas, claves, direcciones de correo, nombres de personas ni datos de clientes. El formulario quita lo evidente, pero lea la incidencia antes de enviarla.</translation>
+        <translation>Nada de contraseñas, claves, direcciones de correo, nombres de personas ni datos de clientes. El formulario quita lo evidente, pero lee la incidencia antes de enviarla.</translation>
     </message>
     <message>
         <source>Not sure it is an error?</source>
-        <translation>¿No está seguro de que sea un error?</translation>
+        <translation>¿No estás seguro de que sea un error?</translation>
     </message>
     <message>
         <source>On this page</source>
@@ -73373,7 +73373,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
-        <translation>Repita lo que hizo. Anote si falla siempre, solo con un usuario o una página, y si vaciar las cachés cambia algo.</translation>
+        <translation>Repite lo que hiciste. Anota si falla siempre, solo con un usuario o una página, y si vaciar las cachés cambia algo.</translation>
     </message>
     <message>
         <source>Report a vulnerability privately on GitHub</source>
@@ -73397,7 +73397,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
-        <translation>Busque en las incidencias abiertas del gestor de abajo. Si su error está allí, añada lo que sepa en lugar de abrir una nueva.</translation>
+        <translation>Busca en las incidencias abiertas del gestor de abajo. Si tu error está allí, añade lo que sepas en lugar de abrir una nueva.</translation>
     </message>
     <message>
         <source>Security issues</source>
@@ -73405,7 +73405,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Something wrong on this page? Report an error</source>
-        <translation>¿Algo está mal en esta página? Informe de un error</translation>
+        <translation>¿Algo está mal en esta página? Informa de un error</translation>
     </message>
     <message>
         <source>Source file:</source>
@@ -73413,7 +73413,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Start where you are</source>
-        <translation>Empiece aquí</translation>
+        <translation>Empieza aquí</translation>
     </message>
     <message>
         <source>Steps to reproduce</source>
@@ -73421,7 +73421,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
-        <translation>Cuéntenoslo en GitHub: la guía indica qué gestor corresponde, qué incluir y los datos del sistema que copiar, sin ningún secreto.</translation>
+        <translation>Cuéntanoslo en GitHub: la guía indica qué gestor corresponde, qué incluir y los datos del sistema que copiar, sin ningún secreto.</translation>
     </message>
     <message>
         <source>The answer may already be documented, including the known limits of a feature.</source>
@@ -73449,11 +73449,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Try fewer or other words, or another audience or topic.</source>
-        <translation>Pruebe con menos palabras u otras, o con otro público o tema.</translation>
+        <translation>Prueba con menos palabras u otras, o con otro público o tema.</translation>
     </message>
     <message>
         <source>Try it again</source>
-        <translation>Inténtelo de nuevo</translation>
+        <translation>Inténtalo de nuevo</translation>
     </message>
     <message>
         <source>Type</source>
@@ -73481,11 +73481,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>What you did, and what went wrong. Quote the error message exactly.</source>
-        <translation>Lo que hizo y lo que salió mal. Cite el mensaje de error tal cual.</translation>
+        <translation>Lo que hiciste y lo que salió mal. Cita el mensaje de error tal cual.</translation>
     </message>
     <message>
         <source>What you expected</source>
-        <translation>Lo que esperaba</translation>
+        <translation>Lo que esperabas</translation>
     </message>
     <message>
         <source>Where to report</source>
@@ -73497,7 +73497,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Your issue is ready.</source>
-        <translation>Su incidencia está lista.</translation>
+        <translation>Tu incidencia está lista.</translation>
     </message>
     <message>
         <source>audiences</source>
@@ -73653,7 +73653,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Your account</source>
-        <translation>Su cuenta</translation>
+        <translation>Tu cuenta</translation>
     </message>
     <message>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
@@ -73713,7 +73713,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Free documentation: use it to help yourself and others</source>
-        <translation>Documentación libre: úsela para ayudarse a sí mismo y a los demás</translation>
+        <translation>Documentación libre: úsala para ayudarte a ti y a los demás</translation>
     </message>
     <message>
         <source>Getting help and reporting an error.</source>
@@ -73721,7 +73721,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Dé páginas a otros usuarios, en papel o como archivos. Conserve el aviso de copyright, el aviso de licencia y una copia de la licencia con cada copia.</translation>
+        <translation>Da páginas a otros usuarios, en papel o como archivos. Conserva el aviso de copyright, el aviso de licencia y una copia de la licencia con cada copia.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -73753,7 +73753,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Read any page as often as you like, for any purpose.</source>
-        <translation>Lea cualquier página tantas veces como quiera, con cualquier fin.</translation>
+        <translation>Lee cualquier página tantas veces como quieras, con cualquier fin.</translation>
     </message>
     <message>
         <source>Read the license</source>
@@ -73761,7 +73761,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>Haga referencia a una página por su título y su dirección en la ayuda, o por su archivo en el directorio doc.</translation>
+        <translation>Haz referencia a una página por su título y su dirección en la ayuda, o por su archivo en el directorio doc.</translation>
     </message>
     <message>
         <source>Reference material: settings, commands and formats.</source>
@@ -73773,7 +73773,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Comparta su versión con la misma licencia, con los avisos originales y una nota de lo que ha cambiado.</translation>
+        <translation>Comparte tu versión con la misma licencia, con los avisos originales y una nota de lo que has cambiado.</translation>
     </message>
     <message>
         <source>Study it</source>
@@ -73797,11 +73797,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>Esta ayuda es documentación libre, con licencia %license %version o posterior. Puede usarla, compartirla y mejorarla:</translation>
+        <translation>Esta ayuda es documentación libre, con licencia %license %version o posterior. Puedes usarla, compartirla y mejorarla:</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>Esta ayuda es documentación libre, con licencia %license %version. Puede usarla, compartirla y mejorarla:</translation>
+        <translation>Esta ayuda es documentación libre, con licencia %license %version. Puedes usarla, compartirla y mejorarla:</translation>
     </message>
     <message>
         <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
@@ -73829,7 +73829,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Use «Editar en GitHub» en cualquier página. Los cambios se aceptan con la misma licencia, así que siguen siendo libres para todos.</translation>
+        <translation>Usa «Editar en GitHub» en cualquier página. Los cambios se aceptan con la misma licencia, así que siguen siendo libres para todos.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -73841,7 +73841,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>What you can do with free documentation</source>
-        <translation>Qué puede hacer con la documentación libre</translation>
+        <translation>Qué puedes hacer con la documentación libre</translation>
     </message>
     <message>
         <source>Which pages have which license</source>
@@ -73849,7 +73849,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
-        <translation>Su cuenta: contraseña, inicio de sesión en dos pasos y preferencias.</translation>
+        <translation>Tu cuenta: contraseña, inicio de sesión en dos pasos y preferencias.</translation>
     </message>
     <message>
         <source>%count pages match</source>
@@ -73857,7 +73857,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
-        <translation>%count páginas en las carpetas de la documentación. Abra una carpeta o filtre por una palabra del título.</translation>
+        <translation>%count páginas en las carpetas de la documentación. Abre una carpeta o filtra por una palabra del título.</translation>
     </message>
     <message>
         <source>About this documentation</source>
@@ -73946,6 +73946,174 @@ Gracias por tu feedback</translation>
     <message>
         <source>Image</source>
         <translation>Imagen</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Menú de ayuda</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Temas relacionados</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Enlaces rápidos</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Abrir el centro de ayuda</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>Novedades</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count de %total entradas</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Ordenar por %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Versión, nombre, año o revisión</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count entradas, de %first a %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 entrada, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Direcciones y notas</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Las direcciones de servidores que ya no están en línea se conservan como texto histórico.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Fecha</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nombre</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Otros</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Publicada</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revisiones</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Serie %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origen</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Los registros más antiguos proceden del repositorio SVN original.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>del SVN original</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>histórico (ya no está en línea)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>no registrado</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>revisión %s</translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>De usuario a desarrollador</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential es software libre con todo su historial en GitHub. Instálalo como clones de Git, la forma recomendada de crear sitios web, y podrás seguir cada cambio, probar correcciones antes de que se publiquen y enviar tus propias mejoras.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Usa la administración</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Inicia sesión, edita y publica.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Instala con Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>El núcleo y cada extensión como clones con su historial.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Contribuye</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Haz un fork, corrige y abre un pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Desarrolla con Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Guía de instalación</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Quién hace Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential es software libre con una historia de casi treinta años. Conoce la empresa que lo dirige y la fundación sin ánimo de lucro que gestiona el proyecto de código abierto.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>¿Quién es 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>La empresa detrás de Exponential, desde su primera versión hasta hoy.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>¿Quién es la Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>La organización sin ánimo de lucro, la familia de productos y sus compromisos.</translation>
     </message>
 </context>
 </TS>

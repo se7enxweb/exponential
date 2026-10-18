@@ -71289,225 +71289,6 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
-    <name>design/admin/setup/languages</name>
-    <message>
-        <source>Interface languages</source>
-        <translation>שפות הממשק</translation>
-    </message>
-    <message>
-        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
-        <translation>ממשק הניהול מוצג בשפה של ההגדרות האזוריות שלו. הגדרה אזורית ללא תרגום משלה מציגה את התרגום הראשון בשרשרת החלופות שלה, ואם אין כזה, את טקסטי המקור באנגלית. דף זה מפרט כל הגדרה אזורית, מה היא מציגה ועד כמה התרגום שלם. הדף אינו משנה דבר: החלופות מוגדרות ב־i18n.ini [TranslationSettings].</translation>
-    </message>
-    <message>
-        <source>Overview</source>
-        <translation>סקירה</translation>
-    </message>
-    <message>
-        <source>Locales</source>
-        <translation>הגדרות אזוריות</translation>
-    </message>
-    <message>
-        <source>With a translation of their own</source>
-        <translation>עם תרגום משלהן</translation>
-    </message>
-    <message>
-        <source>Translated through a fallback</source>
-        <translation>מתורגמות דרך חלופה</translation>
-    </message>
-    <message>
-        <source>In the English source texts</source>
-        <translation>בטקסטי המקור באנגלית</translation>
-    </message>
-    <message>
-        <source>Problems</source>
-        <translation>בעיות</translation>
-    </message>
-    <message>
-        <source>Its chain comes back to %target.</source>
-        <translation>השרשרת שלה חוזרת אל %target.</translation>
-    </message>
-    <message>
-        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
-        <translation>השרשרת שלה ארוכה מ־FallbackMaxDepth ונקטעת ב־%target.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which is no locale code.</source>
-        <translation>החלופה היא %target, שאינו קוד אזורי.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
-        <translation>החלופה היא %target, שאין לו קובץ הגדרות אזוריות וגם לא תרגום.</translation>
-    </message>
-    <message>
-        <source>FallbackRules[] names %target, which is no fallback rule.</source>
-        <translation>FallbackRules[] מציין את %target, שאינו כלל חלופה.</translation>
-    </message>
-    <message>
-        <source>Has a fallback, but no locale file.</source>
-        <translation>יש חלופה, אך אין קובץ הגדרות אזוריות.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
-        <translation>החלופה היא %target, שעדיין אין לו תרגום: מוצגים טקסטי המקור באנגלית.</translation>
-    </message>
-    <message>
-        <source>All locales</source>
-        <translation>כל ההגדרות האזוריות</translation>
-    </message>
-    <message>
-        <source>The installation has no locale file for %locale.</source>
-        <translation>בהתקנה אין קובץ הגדרות אזוריות עבור %locale.</translation>
-    </message>
-    <message>
-        <source>Translation of its own</source>
-        <translation>תרגום משלה</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>כן</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>לא</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>ממשק</translation>
-    </message>
-    <message>
-        <source>%percent % translated</source>
-        <translation>%percent % מתורגם</translation>
-    </message>
-    <message>
-        <source>through %locale</source>
-        <translation>דרך %locale</translation>
-    </message>
-    <message>
-        <source>English source texts</source>
-        <translation>טקסטי המקור באנגלית</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>הרחבות</translation>
-    </message>
-    <message>
-        <source>%translated of %total translated, %complete complete</source>
-        <translation>%translated מתוך %total מתורגמות, %complete שלמות</translation>
-    </message>
-    <message>
-        <source>Fallback chain</source>
-        <translation>שרשרת חלופות</translation>
-    </message>
-    <message>
-        <source>no translation</source>
-        <translation>אין תרגום</translation>
-    </message>
-    <message>
-        <source>by FallbackLanguages[]</source>
-        <translation>לפי FallbackLanguages[]</translation>
-    </message>
-    <message>
-        <source>by the automatic same-language fallback</source>
-        <translation>לפי החלופה האוטומטית באותה שפה</translation>
-    </message>
-    <message>
-        <source>by the rule %rule</source>
-        <translation>לפי הכלל %rule</translation>
-    </message>
-    <message>
-        <source>None: without a translation of its own it shows the English source texts.</source>
-        <translation>אין: ללא תרגום משלה מוצגים טקסטי המקור באנגלית.</translation>
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation>הרחבה</translation>
-    </message>
-    <message>
-        <source>Translated</source>
-        <translation>מתורגם</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>הגדרות</translation>
-    </message>
-    <message>
-        <source>%count locales with a configured fallback</source>
-        <translation>%count הגדרות אזוריות עם חלופה מוגדרת</translation>
-    </message>
-    <message>
-        <source>merge: every translation of the chain, the most specific winning</source>
-        <translation>merge: כל התרגומים בשרשרת, והספציפי ביותר גובר</translation>
-    </message>
-    <message>
-        <source>first: the first translation of the chain</source>
-        <translation>first: התרגום הראשון בשרשרת</translation>
-    </message>
-    <message>
-        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
-        <translation>מופעל: הגדרה אזורית ללא תרגום וללא חלופה מוגדרת מקבלת את התרגום השלם ביותר של שפתה</translation>
-    </message>
-    <message>
-        <source>Never for: %list</source>
-        <translation>לעולם לא עבור: %list</translation>
-    </message>
-    <message>
-        <source>disabled</source>
-        <translation>מושבת</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>אין</translation>
-    </message>
-    <message>
-        <source>The same list on the command line: %command</source>
-        <translation>אותה רשימה בשורת הפקודה: %command</translation>
-    </message>
-    <message>
-        <source>%count shown</source>
-        <translation>%count מוצגות</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>הצגה</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>הגדרה אזורית</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>שפה</translation>
-    </message>
-    <message>
-        <source>This siteaccess</source>
-        <translation>גישת אתר זו</translation>
-    </message>
-    <message>
-        <source>source texts</source>
-        <translation>טקסטי מקור</translation>
-    </message>
-    <message>
-        <source>problem</source>
-        <translation>בעיה</translation>
-    </message>
-    <message>
-        <source>%translated of %total</source>
-        <translation>%translated מתוך %total</translation>
-    </message>
-    <message>
-        <source>%percent % on average</source>
-        <translation>%percent % בממוצע</translation>
-    </message>
-    <message>
-        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
-        <translation>שלב מודגש נמצא על ידי החלופה האוטומטית באותה שפה; האחרים מוגדרים או נובעים מכלל.</translation>
-    </message>
-    <message>
-        <source>No locale is of this kind.</source>
-        <translation>אין הגדרה אזורית מסוג זה.</translation>
-    </message>
-</context>
-<context>
     <name>kernel/exphelp</name>
     <message>
         <source>Help</source>
@@ -72206,6 +71987,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>התיעוד של Exponential</translation>
     </message>
     <message>
+        <source>Grow from user to developer</source>
+        <translation>ממשתמש למפתח</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential היא תוכנה חופשית שכל ההיסטוריה שלה ב-GitHub. התקינו אותה כשכפולי Git, הדרך המומלצת לבניית אתרים, ותוכלו לעקוב אחר כל שינוי, לנסות תיקונים לפני שהם יוצאים ולשלוח בחזרה שיפורים משלכם.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>השתמשו בממשק הניהול</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>התחברו, ערכו ופרסמו.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>התקינו עם Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>הליבה וכל הרחבה כשכפולים עם היסטוריה.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>תרמו בחזרה</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>צרו fork, תקנו ופתחו pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>פיתוח עם Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>מדריך התקנה</translation>
+    </message>
+    <message>
         <source>Editing content</source>
         <translation>עריכת תוכן</translation>
     </message>
@@ -72242,6 +72063,102 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>מדריכים וחומר עיון לכל מי שעובד עם התקנה זו, מתוך התיעוד של הגרסה שלה.</translation>
     </message>
     <message>
+        <source>Documentation license</source>
+        <translation>רישיון התיעוד</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>דף זה הוא חלק מהתיעוד של ההרחבה %extension ומופץ ברישיון של אותה הרחבה.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>דף זה נורש מהתיעוד של התוכנה המקורית. הוא אינו מכוסה על ידי %license; הוא מופץ תחת %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>לאילו דפים יש איזה רישיון</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>זהו הטקסט של %license, גרסה %version, כפי שקרן התוכנה החופשית מפרסמת אותו. כל אחד רשאי להעתיק ולשתף אותו מילה במילה; אסור לשנות אותו.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version או מאוחר יותר.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>קריאת הרישיון</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>הרישיון ברשת</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>מה מותר לעשות בתיעוד חופשי</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>הודעת זכויות יוצרים ורישיון</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>תיעוד חופשי: השתמשו בו כדי לעזור לעצמכם ולאחרים</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version או מאוחר יותר. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>ללמוד אותו</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>קראו כל דף כמה פעמים שתרצו, לכל מטרה.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>להעתיק ולשתף אותו</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>תנו דפים למשתמשים אחרים, על נייר או כקבצים. השאירו עם כל עותק את הודעת זכויות היוצרים, את הודעת הרישיון ועותק של הרישיון.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>לתרגם, להתאים ולשפר אותו</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>שתפו את הגרסה שלכם תחת אותו רישיון, עם ההודעות המקוריות והערה על מה ששיניתם.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>לצטט אותו</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>הפנו לדף לפי הכותרת והכתובת שלו בעזרה, או לפי הקובץ שלו בתיקיית doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>לתרום תיקונים בחזרה</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>השתמשו ב„עריכה ב-GitHub” בכל דף. שינויים מתקבלים באותו רישיון, כך שהם נשארים חופשיים לכולם.</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>החלת מסננים</translation>
     </message>
@@ -72262,28 +72179,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>בחרו קהל, נושא או סוג אחר.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>לצטט אותו</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>לתרום תיקונים בחזרה</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>להעתיק ולשתף אותו</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>הודעת זכויות יוצרים ורישיון</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>יצירה ושינוי של תוכן: העורך, השדות, הטיוטות והגרסאות.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>רישיון התיעוד</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -72294,16 +72191,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>צעדים ראשונים בממשק הניהול: כניסה, התמצאות והמשימות היומיומיות.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>תיעוד חופשי: השתמשו בו כדי לעזור לעצמכם ולאחרים</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>קבלת עזרה ודיווח על שגיאה.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>תנו דפים למשתמשים אחרים, על נייר או כקבצים. השאירו עם כל עותק את הודעת זכויות היוצרים, את הודעת הרישיון ועותק של הרישיון.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -72334,18 +72223,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>פרסום, תזמון, הסתרה והעברה של תוכן.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>קראו כל דף כמה פעמים שתרצו, לכל מטרה.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>קריאת הרישיון</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>הפנו לדף לפי הכותרת והכתובת שלו בעזרה, או לפי הקובץ שלו בתיקיית doc.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>חומר עיון: הגדרות, פקודות ותבניות.</translation>
     </message>
@@ -72354,64 +72231,16 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הפעלת האתר: הגדרות, משתמשים ותפקידים, מטמונים, משימות מתוזמנות ויומנים.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>שתפו את הגרסה שלכם תחת אותו רישיון, עם ההודעות המקוריות והערה על מה ששיניתם.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>ללמוד אותו</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>תבניות, הרחבות, ה-API והקוד שמאחוריהם.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>הרישיון ברשת</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version או מאוחר יותר.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version או מאוחר יותר. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>זהו הטקסט של %license, גרסה %version, כפי שקרן התוכנה החופשית מפרסמת אותו. כל אחד רשאי להעתיק ולשתף אותו מילה במילה; אסור לשנות אותו.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>דף זה הוא חלק מהתיעוד של ההרחבה %extension ומופץ ברישיון של אותה הרחבה.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>דף זה נורש מהתיעוד של התוכנה המקורית. הוא אינו מכוסה על ידי %license; הוא מופץ תחת %other.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>נושאים</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>לתרגם, להתאים ולשפר אותו</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>תרגומים והשפות של האתר.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>השתמשו ב„עריכה ב-GitHub” בכל דף. שינויים מתקבלים באותו רישיון, כך שהם נשארים חופשיים לכולם.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -72420,14 +72249,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>מה עושה כל תכונה ואיך מגדירים אותה.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>מה מותר לעשות בתיעוד חופשי</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>לאילו דפים יש איזה רישיון</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
@@ -72528,6 +72349,353 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Image</source>
         <translation>תמונה</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>תפריט העזרה</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>נושאים קשורים</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>קישורים מהירים</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>פתיחת מרכז העזרה</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>מה חדש</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count מתוך %total רשומות</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>סינון</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>מיון לפי %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>גרסה, שם, שנה או מהדורה</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count רשומות, מ-%first עד %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>רשומה אחת, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>כתובות והערות</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>כתובות בשרתים שכבר אינם מקוונים נשמרות כטקסט היסטורי.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>תאריך</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>אחר</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>שוחרר</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>מהדורות</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>סדרה %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>מקור</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>הרשומות הישנות יותר מגיעות ממאגר ה-SVN המקורי.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>גרסה</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>מה-SVN המקורי</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>היסטורי (כבר לא מקוון)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>לא נרשם</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>מהדורה %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>מי עומד מאחורי Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential היא תוכנה חופשית עם היסטוריה של כמעט שלושים שנה. הכירו את החברה שמובילה אותה ואת הקרן ללא מטרות רווח שמפעילה את פרויקט הקוד הפתוח.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>מי זו 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>החברה שמאחורי Exponential, מהגרסה הראשונה ועד היום.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>מהי Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>הארגון ללא מטרות רווח, משפחת המוצרים וההתחייבויות שלו.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>שפות הממשק</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>ממשק הניהול מוצג בשפה של ההגדרות האזוריות שלו. הגדרה אזורית ללא תרגום משלה מציגה את התרגום הראשון בשרשרת החלופות שלה, ואם אין כזה, את טקסטי המקור באנגלית. דף זה מפרט כל הגדרה אזורית, מה היא מציגה ועד כמה התרגום שלם. הדף אינו משנה דבר: החלופות מוגדרות ב־i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>סקירה</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>הגדרות אזוריות</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>עם תרגום משלהן</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>מתורגמות דרך חלופה</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>בטקסטי המקור באנגלית</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>בעיות</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>השרשרת שלה חוזרת אל %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>השרשרת שלה ארוכה מ־FallbackMaxDepth ונקטעת ב־%target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>החלופה היא %target, שאינו קוד אזורי.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>החלופה היא %target, שאין לו קובץ הגדרות אזוריות וגם לא תרגום.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] מציין את %target, שאינו כלל חלופה.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>יש חלופה, אך אין קובץ הגדרות אזוריות.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>החלופה היא %target, שעדיין אין לו תרגום: מוצגים טקסטי המקור באנגלית.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>כל ההגדרות האזוריות</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>בהתקנה אין קובץ הגדרות אזוריות עבור %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>תרגום משלה</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>ממשק</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % מתורגם</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>דרך %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>טקסטי המקור באנגלית</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>הרחבות</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated מתוך %total מתורגמות, %complete שלמות</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>שרשרת חלופות</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>אין תרגום</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>לפי FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>לפי החלופה האוטומטית באותה שפה</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>לפי הכלל %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>אין: ללא תרגום משלה מוצגים טקסטי המקור באנגלית.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>הרחבה</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>מתורגם</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count הגדרות אזוריות עם חלופה מוגדרת</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: כל התרגומים בשרשרת, והספציפי ביותר גובר</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: התרגום הראשון בשרשרת</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>מופעל: הגדרה אזורית ללא תרגום וללא חלופה מוגדרת מקבלת את התרגום השלם ביותר של שפתה</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>לעולם לא עבור: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>מושבת</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>אין</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>אותה רשימה בשורת הפקודה: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count מוצגות</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>הצגה</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>הגדרה אזורית</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>שפה</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>גישת אתר זו</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>טקסטי מקור</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>בעיה</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated מתוך %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % בממוצע</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>שלב מודגש נמצא על ידי החלופה האוטומטית באותה שפה; האחרים מוגדרים או נובעים מכלל.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>אין הגדרה אזורית מסוג זה.</translation>
     </message>
 </context>
 </TS>

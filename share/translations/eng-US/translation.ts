@@ -14026,6 +14026,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14477,6 +14481,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>Open your user object</source>
         <translation>Open your user object</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14824,6 +14832,14 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Your name, e-mail address and other details.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guides, search and how to report an error.</translation>
     </message>
 </context>
 <context>
@@ -15241,6 +15257,14 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>The translation each interface language shows, and what it falls back to.</source>
         <translation>The translation each interface language shows, and what it falls back to.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guides, search and how to report an error.</translation>
     </message>
 </context>
 <context>
@@ -64866,6 +64890,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Show the numbers</translation>
     </message>
     <message>
+        <source>Help center</source>
+        <translation>Help center</translation>
+    </message>
+    <message>
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
@@ -72232,6 +72260,174 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</translation>
     </message>
     <message>
+        <source>Help menu</source>
+        <translation>Help menu</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Related topics</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Quick links</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Open the Help center</translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation>What's new</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Collapse</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Expand</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Content and editing</translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation>Grow from user to developer</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Use the administration</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Sign in, edit and publish.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Install with Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>The kernel and every extension as clones with history.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Contribute back</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Fork, fix and open a pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Develop with Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Installation guide</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Documentation license</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Which pages have which license</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>This documentation is free documentation, licensed under the %license %version or later.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>This documentation is free documentation, licensed under the %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Read the license</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>The license on the web</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>What you can do with free documentation</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Copyright and license notice</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Free documentation: use it to help yourself and others</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Study it</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Read any page as often as you like, for any purpose.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Copy it and share it</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Translate, adapt and improve it</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Share your version under the same license, with the original notices and a note of what you changed.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Cite it</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Refer to a page by its title and its address in the help, or its file in the doc directory.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Contribute fixes back</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>Apply filters</translation>
     </message>
@@ -72252,28 +72448,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Choose another audience, topic or type.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>Cite it</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>Contribute fixes back</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>Copy it and share it</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>Copyright and license notice</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>Creating and changing content: the editor, fields, drafts and versions.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>Documentation license</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -72284,16 +72460,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>First steps in the administration: signing in, finding your way and the everyday tasks.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>Free documentation: use it to help yourself and others</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>Getting help and reporting an error.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -72324,18 +72492,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Publishing, scheduling, hiding and moving content.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>Read any page as often as you like, for any purpose.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>Read the license</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>Refer to a page by its title and its address in the help, or its file in the doc directory.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>Reference material: settings, commands and formats.</translation>
     </message>
@@ -72344,64 +72500,16 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Running the site: settings, users and roles, caches, cronjobs and logs.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Share your version under the same license, with the original notices and a note of what you changed.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>Study it</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>Templates, extensions, the API and the code behind it.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>The license on the web</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>This documentation is free documentation, licensed under the %license %version or later.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>This documentation is free documentation, licensed under the %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>Topics</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>Translate, adapt and improve it</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>Translations and the languages of the site.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -72410,14 +72518,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>What each feature does and how to set it up.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>What you can do with free documentation</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>Which pages have which license</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
@@ -72518,6 +72618,114 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Image</source>
         <translation>Image</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count of %total entries</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Sort by %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Version, name, year or revision</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count entries, %first to %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 entry, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Addresses and notes</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Addresses on servers that are no longer online are kept as historical text.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Date</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Other</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Released</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Revisions</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Series %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Source</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>The older records come from the original SVN repository.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>from the original SVN</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historical (no longer online)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>not recorded</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>revision %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Who makes Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Who is 7x?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>The company behind Exponential, from its first release to today.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Who is the Exponential Foundation?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>The nonprofit, the product family and its commitments.</translation>
     </message>
 </context>
 </TS>

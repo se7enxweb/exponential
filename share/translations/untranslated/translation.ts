@@ -13760,6 +13760,10 @@ Note: The packages will not be uninstalled.</source>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14211,6 +14215,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Quick search</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14491,6 +14499,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Your name, e-mail address and other details.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14908,6 +14924,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -64911,6 +64935,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>%greeting, %name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72052,6 +72080,174 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Help menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What's new</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grow from user to developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72072,27 +72268,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -72104,15 +72280,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -72144,18 +72312,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -72164,47 +72320,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -72212,15 +72328,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -72229,14 +72337,6 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>What each feature does and how to set it up.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -72337,6 +72437,114 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

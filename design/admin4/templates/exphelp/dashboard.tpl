@@ -59,6 +59,9 @@
         {/if}
     </section>
 
+    {* ---- Who makes Exponential (parts/dashboard_about.tpl) ---- *}
+    {include uri='design:exphelp/parts/dashboard_about.tpl'}
+
     {* ---- Audiences ---- *}
     <section aria-labelledby="help-dash-audiences">
         <div class="a4-help-section-head">
@@ -87,6 +90,11 @@
         {/foreach}
         </ul>
     </section>
+
+    {* ---- Help maintained as content: manuals and topics (doc/features/6.0/help-content.md) ---- *}
+    {if and( is_set( $help_content ), $help_content, or( $help_content.manuals|count|gt( 0 ), $help_content.topics|count|gt( 0 ) ) )}
+    {include uri='design:exphelp/parts/dashboard_content.tpl' content=$help_content}
+    {/if}
 
     {* ---- Featured and recently changed pages ---- *}
     {if or( and( is_set( $help_featured ), $help_featured|count|gt( 0 ) ), and( is_set( $help_recent ), $help_recent|count|gt( 0 ) ) )}
@@ -156,6 +164,9 @@
     </section>
     {/if}
 
+    {* ---- Grow from user to developer (parts/dashboard_grow.tpl) ---- *}
+    {include uri='design:exphelp/parts/dashboard_grow.tpl'}
+
     {* ---- Report an error ---- *}
     <section class="a4-help-report" aria-labelledby="help-dash-report">
         <span class="a4-help-tile" aria-hidden="true"><span class="a4-icon a4-bi-exclamation-diamond"></span></span>
@@ -175,6 +186,9 @@
             {/if}
         </div>
     </section>
+
+    {* ---- Free documentation: the license and what readers may do with it ---- *}
+    {include uri='design:exphelp/parts/license_dashboard.tpl'}
 
     {* ---- Keyboard ---- *}
     <ul class="a4-help-keys" id="help-dash-keys" aria-label="{'Keyboard shortcuts'|i18n( $help_ctx )|wash}">

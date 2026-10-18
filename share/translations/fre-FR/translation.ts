@@ -72653,225 +72653,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
 </context>
 <context>
-    <name>design/admin/setup/languages</name>
-    <message>
-        <source>Interface languages</source>
-        <translation>Langues de l'interface</translation>
-    </message>
-    <message>
-        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
-        <translation>L'administration s'affiche dans la langue de sa locale. Une locale sans traduction propre affiche la première traduction de sa chaîne de repli, sinon les textes source anglais. Cette page liste chaque locale avec ce qu'elle affiche et son degré de complétude. Elle ne modifie rien : les replis se définissent dans i18n.ini [TranslationSettings].</translation>
-    </message>
-    <message>
-        <source>Overview</source>
-        <translation>Vue d'ensemble</translation>
-    </message>
-    <message>
-        <source>Locales</source>
-        <translation>Localisations</translation>
-    </message>
-    <message>
-        <source>With a translation of their own</source>
-        <translation>Avec une traduction propre</translation>
-    </message>
-    <message>
-        <source>Translated through a fallback</source>
-        <translation>Traduites par un repli</translation>
-    </message>
-    <message>
-        <source>In the English source texts</source>
-        <translation>Dans les textes source anglais</translation>
-    </message>
-    <message>
-        <source>Problems</source>
-        <translation>Problèmes</translation>
-    </message>
-    <message>
-        <source>Its chain comes back to %target.</source>
-        <translation>Sa chaîne revient à %target.</translation>
-    </message>
-    <message>
-        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
-        <translation>Sa chaîne dépasse FallbackMaxDepth et s'arrête à %target.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which is no locale code.</source>
-        <translation>Se replie sur %target, qui n'est pas un code de locale.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
-        <translation>Se replie sur %target, qui n'a ni fichier de locale ni traduction.</translation>
-    </message>
-    <message>
-        <source>FallbackRules[] names %target, which is no fallback rule.</source>
-        <translation>FallbackRules[] nomme %target, qui n'est pas une règle de repli.</translation>
-    </message>
-    <message>
-        <source>Has a fallback, but no locale file.</source>
-        <translation>A un repli, mais aucun fichier de locale.</translation>
-    </message>
-    <message>
-        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
-        <translation>Se replie sur %target, qui n'a pas encore de traduction : elle affiche les textes source anglais.</translation>
-    </message>
-    <message>
-        <source>All locales</source>
-        <translation>Toutes les localisations</translation>
-    </message>
-    <message>
-        <source>The installation has no locale file for %locale.</source>
-        <translation>L'installation n'a aucun fichier de locale pour %locale.</translation>
-    </message>
-    <message>
-        <source>Translation of its own</source>
-        <translation>Traduction propre</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>Oui</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>Non</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>Interface</translation>
-    </message>
-    <message>
-        <source>%percent % translated</source>
-        <translation>%percent % traduit</translation>
-    </message>
-    <message>
-        <source>through %locale</source>
-        <translation>via %locale</translation>
-    </message>
-    <message>
-        <source>English source texts</source>
-        <translation>Textes source anglais</translation>
-    </message>
-    <message>
-        <source>Extensions</source>
-        <translation>Extensions</translation>
-    </message>
-    <message>
-        <source>%translated of %total translated, %complete complete</source>
-        <translation>%translated sur %total traduites, %complete complètes</translation>
-    </message>
-    <message>
-        <source>Fallback chain</source>
-        <translation>Chaîne de repli</translation>
-    </message>
-    <message>
-        <source>no translation</source>
-        <translation>aucune traduction</translation>
-    </message>
-    <message>
-        <source>by FallbackLanguages[]</source>
-        <translation>par FallbackLanguages[]</translation>
-    </message>
-    <message>
-        <source>by the automatic same-language fallback</source>
-        <translation>par le repli automatique dans la même langue</translation>
-    </message>
-    <message>
-        <source>by the rule %rule</source>
-        <translation>par la règle %rule</translation>
-    </message>
-    <message>
-        <source>None: without a translation of its own it shows the English source texts.</source>
-        <translation>Aucune : sans traduction propre, elle affiche les textes source anglais.</translation>
-    </message>
-    <message>
-        <source>Extension</source>
-        <translation>Extension</translation>
-    </message>
-    <message>
-        <source>Translated</source>
-        <translation>Traduit</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Paramètres</translation>
-    </message>
-    <message>
-        <source>%count locales with a configured fallback</source>
-        <translation>%count locales avec un repli configuré</translation>
-    </message>
-    <message>
-        <source>merge: every translation of the chain, the most specific winning</source>
-        <translation>merge : toutes les traductions de la chaîne, la plus spécifique l'emportant</translation>
-    </message>
-    <message>
-        <source>first: the first translation of the chain</source>
-        <translation>first : la première traduction de la chaîne</translation>
-    </message>
-    <message>
-        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
-        <translation>activé : une locale sans traduction et sans repli configuré prend la traduction la plus complète de sa langue</translation>
-    </message>
-    <message>
-        <source>Never for: %list</source>
-        <translation>Jamais pour : %list</translation>
-    </message>
-    <message>
-        <source>disabled</source>
-        <translation>désactivé</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Aucune</translation>
-    </message>
-    <message>
-        <source>The same list on the command line: %command</source>
-        <translation>La même liste en ligne de commande : %command</translation>
-    </message>
-    <message>
-        <source>%count shown</source>
-        <translation>%count affichées</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation>Afficher</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Localisation</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Langue</translation>
-    </message>
-    <message>
-        <source>This siteaccess</source>
-        <translation>Ce siteaccess</translation>
-    </message>
-    <message>
-        <source>source texts</source>
-        <translation>textes source</translation>
-    </message>
-    <message>
-        <source>problem</source>
-        <translation>problème</translation>
-    </message>
-    <message>
-        <source>%translated of %total</source>
-        <translation>%translated sur %total</translation>
-    </message>
-    <message>
-        <source>%percent % on average</source>
-        <translation>%percent % en moyenne</translation>
-    </message>
-    <message>
-        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
-        <translation>Une étape mise en évidence a été trouvée par le repli automatique dans la même langue ; les autres sont configurées ou proviennent d'une règle.</translation>
-    </message>
-    <message>
-        <source>No locale is of this kind.</source>
-        <translation>Aucune locale de ce type.</translation>
-    </message>
-</context>
-<context>
     <name>kernel/exphelp</name>
     <message>
         <source>Help</source>
@@ -73570,6 +73351,46 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Documentation d&apos;Exponential</translation>
     </message>
     <message>
+        <source>Grow from user to developer</source>
+        <translation>D&apos;utilisateur à développeur</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
+        <translation>Exponential est un logiciel libre dont tout l&apos;historique est sur GitHub. Installez-le sous forme de clones Git, la méthode recommandée pour créer des sites, et vous pourrez suivre chaque modification, essayer les correctifs avant leur publication et proposer vos propres améliorations.</translation>
+    </message>
+    <message>
+        <source>Use the administration</source>
+        <translation>Utiliser l&apos;administration</translation>
+    </message>
+    <message>
+        <source>Sign in, edit and publish.</source>
+        <translation>Connectez-vous, modifiez et publiez.</translation>
+    </message>
+    <message>
+        <source>Install with Git</source>
+        <translation>Installer avec Git</translation>
+    </message>
+    <message>
+        <source>The kernel and every extension as clones with history.</source>
+        <translation>Le noyau et chaque extension sous forme de clones avec leur historique.</translation>
+    </message>
+    <message>
+        <source>Contribute back</source>
+        <translation>Contribuer en retour</translation>
+    </message>
+    <message>
+        <source>Fork, fix and open a pull request.</source>
+        <translation>Forkez, corrigez et ouvrez une pull request.</translation>
+    </message>
+    <message>
+        <source>Develop with Git</source>
+        <translation>Développer avec Git</translation>
+    </message>
+    <message>
+        <source>Installation guide</source>
+        <translation>Guide d&apos;installation</translation>
+    </message>
+    <message>
         <source>Editing content</source>
         <translation>Modifier le contenu</translation>
     </message>
@@ -73606,6 +73427,102 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Guides et référence pour tous ceux qui travaillent avec cette installation, tirés de la documentation de sa propre version.</translation>
     </message>
     <message>
+        <source>Documentation license</source>
+        <translation>Licence de la documentation</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Cette page fait partie de la documentation de l&apos;extension %extension et est distribuée sous la licence de cette extension.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Cette page provient de la documentation du logiciel d&apos;origine. Elle n&apos;est pas couverte par la %license ; elle est distribuée sous la %other.</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Quelles pages ont quelle licence</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Voici le texte de la %license, version %version, tel que le publie la Free Software Foundation. Chacun peut le copier et le partager mot pour mot ; il est interdit de le modifier.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Cette documentation est une documentation libre, sous licence %license %version ou ultérieure.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Cette documentation est une documentation libre, sous licence %license %version.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Lire la licence</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>La licence sur le web</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Ce que vous pouvez faire avec une documentation libre</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Mention de droits d&apos;auteur et de licence</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Documentation libre : utilisez-la pour vous aider et aider les autres</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Cette aide est une documentation libre, sous licence %license %version ou ultérieure. Vous pouvez l&apos;utiliser, la partager et l&apos;améliorer :</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Cette aide est une documentation libre, sous licence %license %version. Vous pouvez l&apos;utiliser, la partager et l&apos;améliorer :</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>L&apos;étudier</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Lisez n&apos;importe quelle page aussi souvent que vous le souhaitez, dans n&apos;importe quel but.</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>La copier et la partager</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Donnez des pages à d&apos;autres utilisateurs, sur papier ou sous forme de fichiers. Gardez la mention de droits d&apos;auteur, la mention de licence et une copie de la licence avec chaque copie.</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>La traduire, l&apos;adapter et l&apos;améliorer</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Partagez votre version sous la même licence, avec les mentions d&apos;origine et une note de ce que vous avez modifié.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>La citer</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Désignez une page par son titre et son adresse dans l&apos;aide, ou par son fichier dans le répertoire doc.</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Contribuer vos corrections</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Utilisez « Modifier sur GitHub » sur n&apos;importe quelle page. Les modifications sont acceptées sous la même licence, elles restent donc libres pour tous.</translation>
+    </message>
+    <message>
         <source>Apply filters</source>
         <translation>Appliquer les filtres</translation>
     </message>
@@ -73626,28 +73543,8 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Choisissez un autre public, un autre thème ou un autre type.</translation>
     </message>
     <message>
-        <source>Cite it</source>
-        <translation>La citer</translation>
-    </message>
-    <message>
-        <source>Contribute fixes back</source>
-        <translation>Contribuer vos corrections</translation>
-    </message>
-    <message>
-        <source>Copy it and share it</source>
-        <translation>La copier et la partager</translation>
-    </message>
-    <message>
-        <source>Copyright and license notice</source>
-        <translation>Mention de droits d&apos;auteur et de licence</translation>
-    </message>
-    <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
         <translation>Créer et modifier du contenu : l&apos;éditeur, les champs, les brouillons et les versions.</translation>
-    </message>
-    <message>
-        <source>Documentation license</source>
-        <translation>Licence de la documentation</translation>
     </message>
     <message>
         <source>Finding content in the administration and on the site.</source>
@@ -73658,16 +73555,8 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Premiers pas dans l&apos;administration : se connecter, s&apos;orienter et les tâches quotidiennes.</translation>
     </message>
     <message>
-        <source>Free documentation: use it to help yourself and others</source>
-        <translation>Documentation libre : utilisez-la pour vous aider et aider les autres</translation>
-    </message>
-    <message>
         <source>Getting help and reporting an error.</source>
         <translation>Obtenir de l&apos;aide et signaler une erreur.</translation>
-    </message>
-    <message>
-        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>Donnez des pages à d&apos;autres utilisateurs, sur papier ou sous forme de fichiers. Gardez la mention de droits d&apos;auteur, la mention de licence et une copie de la licence avec chaque copie.</translation>
     </message>
     <message>
         <source>Images, files and other media: uploading, choosing and reusing them.</source>
@@ -73698,18 +73587,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Publier, planifier, masquer et déplacer du contenu.</translation>
     </message>
     <message>
-        <source>Read any page as often as you like, for any purpose.</source>
-        <translation>Lisez n&apos;importe quelle page aussi souvent que vous le souhaitez, dans n&apos;importe quel but.</translation>
-    </message>
-    <message>
-        <source>Read the license</source>
-        <translation>Lire la licence</translation>
-    </message>
-    <message>
-        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>Désignez une page par son titre et son adresse dans l&apos;aide, ou par son fichier dans le répertoire doc.</translation>
-    </message>
-    <message>
         <source>Reference material: settings, commands and formats.</source>
         <translation>Documentation de référence : réglages, commandes et formats.</translation>
     </message>
@@ -73718,64 +73595,16 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Exploiter le site : réglages, utilisateurs et rôles, caches, tâches cron et journaux.</translation>
     </message>
     <message>
-        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>Partagez votre version sous la même licence, avec les mentions d&apos;origine et une note de ce que vous avez modifié.</translation>
-    </message>
-    <message>
-        <source>Study it</source>
-        <translation>L&apos;étudier</translation>
-    </message>
-    <message>
         <source>Templates, extensions, the API and the code behind it.</source>
         <translation>Templates, extensions, l&apos;API et le code qui se trouve derrière.</translation>
-    </message>
-    <message>
-        <source>The license on the web</source>
-        <translation>La licence sur le web</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
-        <translation>Cette documentation est une documentation libre, sous licence %license %version ou ultérieure.</translation>
-    </message>
-    <message>
-        <source>This documentation is free documentation, licensed under the %license %version.</source>
-        <translation>Cette documentation est une documentation libre, sous licence %license %version.</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>Cette aide est une documentation libre, sous licence %license %version ou ultérieure. Vous pouvez l&apos;utiliser, la partager et l&apos;améliorer :</translation>
-    </message>
-    <message>
-        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>Cette aide est une documentation libre, sous licence %license %version. Vous pouvez l&apos;utiliser, la partager et l&apos;améliorer :</translation>
-    </message>
-    <message>
-        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
-        <translation>Voici le texte de la %license, version %version, tel que le publie la Free Software Foundation. Chacun peut le copier et le partager mot pour mot ; il est interdit de le modifier.</translation>
-    </message>
-    <message>
-        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
-        <translation>Cette page fait partie de la documentation de l&apos;extension %extension et est distribuée sous la licence de cette extension.</translation>
-    </message>
-    <message>
-        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
-        <translation>Cette page provient de la documentation du logiciel d&apos;origine. Elle n&apos;est pas couverte par la %license ; elle est distribuée sous la %other.</translation>
     </message>
     <message>
         <source>Topics</source>
         <translation>Thèmes</translation>
     </message>
     <message>
-        <source>Translate, adapt and improve it</source>
-        <translation>La traduire, l&apos;adapter et l&apos;améliorer</translation>
-    </message>
-    <message>
         <source>Translations and the languages of the site.</source>
         <translation>Les traductions et les langues du site.</translation>
-    </message>
-    <message>
-        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Utilisez « Modifier sur GitHub » sur n&apos;importe quelle page. Les modifications sont acceptées sous la même licence, elles restent donc libres pour tous.</translation>
     </message>
     <message>
         <source>What changed in each release.</source>
@@ -73784,14 +73613,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>What each feature does and how to set it up.</source>
         <translation>Ce que fait chaque fonctionnalité et comment la configurer.</translation>
-    </message>
-    <message>
-        <source>What you can do with free documentation</source>
-        <translation>Ce que vous pouvez faire avec une documentation libre</translation>
-    </message>
-    <message>
-        <source>Which pages have which license</source>
-        <translation>Quelles pages ont quelle licence</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
@@ -73892,6 +73713,353 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Image</source>
         <translation>Illustration</translation>
+    </message>
+    <message>
+        <source>Help menu</source>
+        <translation>Menu d&apos;aide</translation>
+    </message>
+    <message>
+        <source>Related topics</source>
+        <translation>Sujets connexes</translation>
+    </message>
+    <message>
+        <source>Quick links</source>
+        <translation>Liens rapides</translation>
+    </message>
+    <message>
+        <source>Open the Help center</source>
+        <translation>Ouvrir le centre d&apos;aide</translation>
+    </message>
+    <message>
+        <source>What&apos;s new</source>
+        <translation>Nouveautés</translation>
+    </message>
+    <message>
+        <source>%count of %total entries</source>
+        <translation>%count entrées sur %total</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrer</translation>
+    </message>
+    <message>
+        <source>Sort by %title</source>
+        <translation>Trier par %title</translation>
+    </message>
+    <message>
+        <source>Version, name, year or revision</source>
+        <translation>Version, nom, année ou révision</translation>
+    </message>
+    <message>
+        <source>%count entries, %first to %last</source>
+        <translation>%count entrées, de %first à %last</translation>
+    </message>
+    <message>
+        <source>1 entry, %first</source>
+        <translation>1 entrée, %first</translation>
+    </message>
+    <message>
+        <source>Addresses and notes</source>
+        <translation>Adresses et remarques</translation>
+    </message>
+    <message>
+        <source>Addresses on servers that are no longer online are kept as historical text.</source>
+        <translation>Les adresses de serveurs qui ne sont plus en ligne sont conservées comme texte historique.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Date de sortie</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Autres</translation>
+    </message>
+    <message>
+        <source>Released</source>
+        <translation>Publiée</translation>
+    </message>
+    <message>
+        <source>Revisions</source>
+        <translation>Révisions</translation>
+    </message>
+    <message>
+        <source>Series %s</source>
+        <translation>Série %s</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origine</translation>
+    </message>
+    <message>
+        <source>The older records come from the original SVN repository.</source>
+        <translation>Les entrées plus anciennes proviennent du dépôt SVN d&apos;origine.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>from the original SVN</source>
+        <translation>du SVN d&apos;origine</translation>
+    </message>
+    <message>
+        <source>historical (no longer online)</source>
+        <translation>historique (plus en ligne)</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>non consigné</translation>
+    </message>
+    <message>
+        <source>revision %s</source>
+        <translation>révision %s</translation>
+    </message>
+    <message>
+        <source>Who makes Exponential</source>
+        <translation>Qui fait Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
+        <translation>Exponential est un logiciel libre dont l'histoire couvre près de trente ans. Découvrez l'entreprise qui le dirige et la fondation à but non lucratif qui gère le projet open source.</translation>
+    </message>
+    <message>
+        <source>Who is 7x?</source>
+        <translation>Qui est 7x ?</translation>
+    </message>
+    <message>
+        <source>The company behind Exponential, from its first release to today.</source>
+        <translation>L'entreprise derrière Exponential, de la première version à aujourd'hui.</translation>
+    </message>
+    <message>
+        <source>Who is the Exponential Foundation?</source>
+        <translation>Qui est l'Exponential Foundation ?</translation>
+    </message>
+    <message>
+        <source>The nonprofit, the product family and its commitments.</source>
+        <translation>L'organisation à but non lucratif, la famille de produits et ses engagements.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>Langues de l'interface</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>L'administration s'affiche dans la langue de sa locale. Une locale sans traduction propre affiche la première traduction de sa chaîne de repli, sinon les textes source anglais. Cette page liste chaque locale avec ce qu'elle affiche et son degré de complétude. Elle ne modifie rien : les replis se définissent dans i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Vue d'ensemble</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>Localisations</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>Avec une traduction propre</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>Traduites par un repli</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>Dans les textes source anglais</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>Problèmes</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>Sa chaîne revient à %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>Sa chaîne dépasse FallbackMaxDepth et s'arrête à %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>Se replie sur %target, qui n'est pas un code de locale.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>Se replie sur %target, qui n'a ni fichier de locale ni traduction.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>FallbackRules[] nomme %target, qui n'est pas une règle de repli.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>A un repli, mais aucun fichier de locale.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>Se replie sur %target, qui n'a pas encore de traduction : elle affiche les textes source anglais.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>Toutes les localisations</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>L'installation n'a aucun fichier de locale pour %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>Traduction propre</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Oui</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Interface</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>%percent % traduit</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>via %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>Textes source anglais</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>Extensions</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated sur %total traduites, %complete complètes</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>Chaîne de repli</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>aucune traduction</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>par FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>par le repli automatique dans la même langue</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>par la règle %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>Aucune : sans traduction propre, elle affiche les textes source anglais.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>Traduit</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Paramètres</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count locales avec un repli configuré</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge : toutes les traductions de la chaîne, la plus spécifique l'emportant</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first : la première traduction de la chaîne</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>activé : une locale sans traduction et sans repli configuré prend la traduction la plus complète de sa langue</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>Jamais pour : %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>désactivé</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Aucune</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>La même liste en ligne de commande : %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>%count affichées</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Afficher</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>Localisation</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Langue</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>Ce siteaccess</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>textes source</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>problème</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated sur %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % en moyenne</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>Une étape mise en évidence a été trouvée par le repli automatique dans la même langue ; les autres sont configurées ou proviennent d'une règle.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>Aucune locale de ce type.</translation>
     </message>
 </context>
 </TS>
