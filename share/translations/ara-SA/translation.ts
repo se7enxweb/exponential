@@ -10218,7 +10218,7 @@
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Users</source>
@@ -11803,7 +11803,7 @@ You can also remove the package without uninstalling it from the package list.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>MIME type</source>
@@ -14120,7 +14120,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>حفظ</translation>
+        <translation>المتجر</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -20821,7 +20821,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>empty</source>
-        <translation>إفراغ</translation>
+        <translation>فارغ</translation>
     </message>
     <message>
         <source>No setting matches.</source>
@@ -32892,7 +32892,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Count</source>
@@ -33898,7 +33898,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>State</source>
-        <translation>الحالة</translation>
+        <translation>الولاية/المنطقة</translation>
     </message>
     <message>
         <source>Email</source>
@@ -35369,7 +35369,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>State</source>
-        <translation>الحالة</translation>
+        <translation>الولاية/المنطقة</translation>
     </message>
     <message>
         <source>Comments</source>
@@ -37195,7 +37195,7 @@ your account.</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail</source>
@@ -37365,7 +37365,7 @@ your account.</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail</source>
@@ -45537,7 +45537,7 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -49660,7 +49660,7 @@ To fix this problem you must do one of the following:</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>The login name is fixed and cannot be changed.
@@ -50632,7 +50632,7 @@ See the requirements page for more information.</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Full name</source>
@@ -51864,7 +51864,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>State</source>
-        <translation>الحالة</translation>
+        <translation>الولاية/المنطقة</translation>
     </message>
     <message>
         <source>Comment</source>
@@ -52522,7 +52522,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Password</source>
@@ -57606,7 +57606,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -59415,7 +59415,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>empty</source>
-        <translation>إفراغ</translation>
+        <translation>فارغ</translation>
     </message>
     <message>
         <source>Triggers</source>
@@ -63512,7 +63512,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Logins and failed logins per day</source>
@@ -64126,7 +64126,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Moved to the trash</source>
@@ -66167,7 +66167,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>empty</source>
-        <translation>إفراغ</translation>
+        <translation>فارغ</translation>
     </message>
     <message>
         <source>Compiled templates run</source>
@@ -66797,7 +66797,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail address</source>
@@ -67596,7 +67596,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail</source>
@@ -68573,7 +68573,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail preferences administration</source>

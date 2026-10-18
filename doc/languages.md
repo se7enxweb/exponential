@@ -54,7 +54,7 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `lat-VA`, `tlh-QO`, `ukr-UA` (the last seven machine-assisted, see [section 4](#4-every-administration-translation)) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA` (the last eight machine-assisted, see [section 4](#4-every-administration-translation)) |
 | **Partial interface, full content** | An administration translation exists but covers 16 to 39% of today's strings (it was complete for an older release). Strings without a translation show in English. Content as above. | the 21 older translations with strings, see [section 4](#4-every-administration-translation) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 170 added in 6.0.15 |
 
@@ -63,7 +63,7 @@ The details are elsewhere and not repeated here:
 A country without a translation of its own speaks the one `i18n.ini [TranslationSettings] FallbackLanguages[]`
 names, at the same level: every German-, French- and Spanish-speaking country falls back to `ger-DE`, `fre-FR` and
 `esl-ES` (Latin America too: `esl-ES` is the complete one, `esl-MX` lacks some kernel strings and four extensions;
-`esl-MX` itself takes `esl-ES` for those extensions), the Arabic countries to `ara-SA` once that translation exists,
+`esl-MX` itself takes `esl-ES` for those extensions), the Arabic countries to `ara-SA`,
 and the other languages likewise (`por-PT` to `por-BR`, `ita-CH` to `ita-IT`). The translator looks the fallback
 up for the kernel and for each extension on its own. `expUISwitchLanguageProviderTest` fails when a country of a
 translated language has neither. The "Translation coverage" column below counts only a locale's own translation;
@@ -783,9 +783,18 @@ their layout skeleton (header, left menu, content, right toolbar) is direction-s
 of it being placed by left and right. The details, the CSS rules and what still needs checking are in
 [Right-to-left languages](features/6.0/right-to-left.md).
 
-**Interface translations.** Hebrew (`heb-IL`) is the one right-to-left language with an administration translation.
-It is complete but machine-assisted, and needs a review by a native speaker before a site relies on it
-([section 8](#8-adding-or-completing-an-administration-translation)).
+**Interface translations.** Two right-to-left languages have a complete administration translation: Hebrew
+(`heb-IL`) and Arabic (`ara-SA`, Modern Standard Arabic, so every Arabic country falls back to it). Both cover the
+kernel and the bundled ezoe and ezjscore catalogues, and both are machine-assisted: they need a review by a native
+speaker before a site relies on them ([section 8](#8-adding-or-completing-an-administration-translation)).
+Choosing either as the interface language turns the whole administration (admin4l, admin4 and the classic admin)
+right to left. Their placeholders (`%name`, `%1`) stay as they are inside the right-to-left text; the browser's
+bidirectional algorithm places them, so a translation needs no direction marks of its own. The translator has no
+plural forms (no `numerus` messages), so a count is best written with a neutral wording rather than a plural.
+`expTranslationQualityTest` checks placeholders, markup and untranslated English (with the reasons in
+`tests/tests/lib/ezi18n/translation-identical-allowlist.json`), and `expAdminTranslationsRegisteredTest` that each
+catalogue is complete, registered and written in its script, and that a word with two senses ("Store" the shop tab,
+"Login" the user name) takes the right one.
 
 ## 10. No PHP extension at run time
 
