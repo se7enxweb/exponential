@@ -5406,7 +5406,7 @@ ce0bb66240c7036cda2021294a47d14f  kernel/classes/ezworkflowgrouplink.php
 08af60f44b4c8d91729d951cbbf01ac5  kernel/classes/ezworkflowgrouptype.php
 b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 4ff841d8b07c17168f3063c415ba91b6  kernel/classes/ezworkflowtype.php
-b6cfc26748e521566fe99b5abd17b6e2  kernel/classes/help/exphelp.php
+0bcd9c6c9ff33e848198091ffdb6240c  kernel/classes/help/exphelp.php
 3b8c4b4066f28a8bc8bd6b6a3f45540b  kernel/classes/help/exphelpallowlist.php
 0d030bd3f723a441d9ea6d3920e6905f  kernel/classes/help/exphelpaudience.php
 31815b5ce967703cb2b0878d3c91eaca  kernel/classes/help/exphelpcontextregistry.php

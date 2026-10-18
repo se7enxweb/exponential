@@ -115,14 +115,16 @@ class expHelp
     {
         $c = self::I18N_CONTEXT;
         return array( 'copy' => ezpI18n::tr( $c, 'Copy' ),
+                      'copyLabel' => ezpI18n::tr( $c, 'Copy code' ),
                       'copied' => ezpI18n::tr( $c, 'Copied' ),
                       'copyFailed' => ezpI18n::tr( $c, 'Copying failed' ),
                       'noResults' => ezpI18n::tr( $c, 'No results' ),
                       'resultsCount' => ezpI18n::tr( $c, '%count results' ),
+                      'resultCount' => ezpI18n::tr( $c, '1 result' ),
                       'searching' => ezpI18n::tr( $c, 'Searching...' ),
                       'error' => ezpI18n::tr( $c, 'The search is not available right now.' ),
-                      'collapse' => ezpI18n::tr( $c, 'Collapse' ),
-                      'expand' => ezpI18n::tr( $c, 'Expand' ),
+                      'collapse' => ezpI18n::tr( $c, 'Hide section: %title' ),
+                      'expand' => ezpI18n::tr( $c, 'Show section: %title' ),
                       'relaxed' => ezpI18n::tr( $c, 'No page has every word; these have some of them.' ),
                       'clear' => ezpI18n::tr( $c, 'Clear' ) );
     }
