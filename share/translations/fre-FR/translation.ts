@@ -66340,6 +66340,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Nothing was published in the last 14 days.</source>
         <translation>Rien n&apos;a été publié au cours des 14 derniers jours.</translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>

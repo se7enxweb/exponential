@@ -47,7 +47,7 @@
      (a design: template included with figure_key=<key>).
    * tiles_layout : (optional, with menu_layout='tiles') 'mega' draws the same groups as those of admin4's mega menu
      (parts/a4_mega_menu.tpl; user/megamenu.tpl): a heading per group, each link with its icon and description,
-     without figures, and only the links the section's MegaMenuLinks[] names (in that order, at most 18; all of them
+     without figures, and only the links the section's MegaMenuLinks[] names (in that order, at most 19; all of them
      when it names none).
 *}
 

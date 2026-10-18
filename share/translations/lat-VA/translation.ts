@@ -64945,6 +64945,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Nothing was published in the last 14 days.</source>
         <translation>Nihil proximis XIV diebus editum est.</translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>

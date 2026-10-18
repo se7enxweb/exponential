@@ -247,6 +247,17 @@ are in `share/icons/bootstrap-icons/svg/`, unchanged, with the license beside th
   (`crystal-admin` in an admin siteaccess), but the content tree (`icon_info`) reads only the first theme and shows the theme's
   `Default`: add a class of your own to `ClassMap` in an `icon.ini.append.php`. In dark mode a filter in `admin4.css` turns these
   `<img>` icons light, since an SVG in an `<img>` cannot take the page's colours.
+- **The tabs of the header's main menu:** each tab shows an icon before its name, named by `menu.ini
+  [Topmenu_<tab>] Icon` (Content structure `diagram-3`, Media `images`, Users `people`, Store `box-seam`, Design
+  `palette`, Setup `gear`, Audit `shield-fill-check`, Dashboard `speedometer2`). The `topmenu` operator passes it on as
+  `icon`; `page_topmenuitem.tpl` draws it only when `design.ini [AdminDesignSettings] IconList[]` has the name, so a
+  tab of an extension sets `Icon=` in its `menu.ini.append.php` with a name of that list, and a tab without one shows
+  its name alone. `design.ini [AdminDesignSettings] TopMenuIcons=disabled` leaves every tab icon out (default
+  `enabled`); a siteaccess or an extension may set another `Icon` for any tab in its own `menu.ini.append.php`.
+- **One set of symbols:** the quick actions of the dashboard show the tabs' icons (and `upload`, `tags`,
+  `layout-sidebar-inset`, `arrow-clockwise`), the header's user menu the icons of the phone menu's action tiles
+  (`pencil-square`, `key`, `envelope`), and the phone menu's button the icons `list` and, while it is open, `x-lg`;
+  no text symbol (☰, ×, ▣, ☻) is left in the header and the dashboard.
 - The classic designs (`admin`, `admin3`) keep their images; `.a4-icon` and `.a4-icon-btn` are in their
   copy of `components.css` as well, for templates shared by every administration design.
 
@@ -497,7 +508,7 @@ icons, descriptions and access checks of a menu.ini section:
 
 | Tab | `MegaMenuTemplate` | Section | Default choice (`MegaMenuLinks[]`) |
 |---|---|---|---|
-| `setup` | `design:parts/setup/mega_menu.tpl` (the Setup menu's own `parts/setup/menu.tpl`) | `Leftmenu_setup` | eighteen, see below |
+| `setup` | `design:parts/setup/mega_menu.tpl` (the Setup menu's own `parts/setup/menu.tpl`) | `Leftmenu_setup` | nineteen, see below |
 | `users` | `design:parts/user/mega_menu.tpl` | `Leftmenu_user_mega` | eight, see below |
 
 To give another tab one (an extension's, say): write a template in admin4 that includes `parts/ini_menu.tpl` with
@@ -531,13 +542,13 @@ There is no link to create a user: content is created by a POST from the tree (`
 opens the user form directly. A permission check for one user has no view in the kernel either.
 
 - **A short choice, not the whole menu.** The section's `MegaMenuLinks[]` (for Setup `[Leftmenu_setup]`) names the links shown, by link key,
-  in their order; at most 18 are shown (6 to 18 read best). It is a choice from the menu's links, not a second
+  in their order; at most 19 are shown (6 to 19 read best). It is a choice from the menu's links, not a second
   menu: each link keeps its name, icon, description, group (`GroupNames[]`) and access checks. A link the user may
   not open, or whose extension is not active, is left out, and so is a group with no link left; the groups follow
-  the order of their first chosen link. The default in `settings/menu.ini` is eighteen, here by group: Classes, Sections,
-  Collected information (Content model) | RSS, Preload sites, Packages (Site and URLs) | Audit (Users and messages) | Cache management, Cronjobs, Log files,
+  the order of their first chosen link. The default in `settings/menu.ini` is nineteen, here by group: Classes, Sections,
+  Collected information (Content model) | RSS, Preload sites, Packages (Site and URLs) | Audit, oAuth admin (Users and messages) | Cache management, Cronjobs, Log files,
   Extensions, System information, Ini settings (System) | `expai_summary`, `expai_models`, `expai_budgets` (AI) | `ezupdate`, `git_manager` (Updates). Without `expai`, `ezupdate` and `git_manager` the AI and Updates
-  groups are not there, here as on the overview, and thirteen links remain. To choose others, restate the list:
+  groups are not there, here as on the overview, and fourteen links remain. To choose others, restate the list:
 
   ```ini
   [Leftmenu_setup]
@@ -640,7 +651,7 @@ opens the user form directly. A permission check for one user has no view in the
 `tests/tests/design/AdminMegaMenuTest.php` holds the defaults of both tabs, the markup, the source and the view
 (which tabs it serves, and only while the user has them: hidden, disabled, not shown, not listed), the widths and
 the strings, the Users section (its added menus, existing links, icons, names and descriptions in both languages), renders the panel's template with fake groups (the choice, its order, access, groups left out, the
-limit of 18, no choice, a key of a moved tab that falls back to the group's link of the same address), and runs the script in node (`tests/tests/design/js/mega_menu.js`: click, ArrowDown, Escape, Tab, a
+limit of 19, no choice, a key of a moved tab that falls back to the group's link of the same address), and runs the script in node (`tests/tests/design/js/mega_menu.js`: click, ArrowDown, Escape, Tab, a
 click outside, the delays, touch, the focus coming into a preview, the width, the "More" list, one load and a
 failed one, two tabs with one panel open at a time), checks that admin4 and admin4l draw the tabs with the one
 template, and renders the settings check with unknown tabs and keys and reads the debug messages it writes.
@@ -943,7 +954,7 @@ Policies of a role (`role/view`, `role/edit`) and the role cards of `role/list` 
 | `settings/menu.ini` | `TopAdminMenu` | `MegaMenuTabs[]` | empty; `setup` and `users` have a template (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuTemplate` | `design:parts/setup/mega_menu.tpl` (setup), `design:parts/user/mega_menu.tpl` (users) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_user_mega` | `MegaMenuLinks[]` | eight links of the Users tab (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
-| `settings/menu.ini` | `Leftmenu_setup` | `MegaMenuLinks[]` | eighteen frequent links, at most 18 shown (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
+| `settings/menu.ini` | `Leftmenu_setup` | `MegaMenuLinks[]` | nineteen frequent links, at most 19 shown (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the nine groups of `Leftmenu_setup` (Design and Audit for moved tabs, AI and Updates for extensions' links) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |

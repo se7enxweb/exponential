@@ -73488,6 +73488,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Show the numbers</source>
         <translation>Zahlen anzeigen</translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting, %name</translation>
+    </message>
 </context>
 <context>
     <name>extension/autorss</name>
