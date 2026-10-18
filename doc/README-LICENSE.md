@@ -34,7 +34,8 @@ words what the license lets you do.
 The notice covers the documentation the Exponential project wrote and maintains in the `doc/` directory of the
 repository: the help pages (`doc/help/`), the guides, the installation chapters, the feature, upgrade and
 specification documents of the 6.x line (`doc/features/6.0/`, `doc/bc/6.0/`, `doc/specifications/6.0/`), the
-changelogs of 6.x and of the extensions, the history, and the other pages at the top of `doc/`.
+changelogs of 6.x and of the extensions, the history, and the other pages at the top of `doc/`. This includes
+every 6.x page contributed through pull requests by the Exponential contributors.
 
 The software itself is not documentation: its source code stays under the GNU General Public License, version 2
 or any later version ([LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) and
