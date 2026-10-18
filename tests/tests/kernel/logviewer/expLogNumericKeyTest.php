@@ -53,8 +53,10 @@ class expLogNumericKeyTest extends PHPUnit\Framework\TestCase
         $values = array( 'LogViewerSettings' => array( 'Directories' => array( 'var/log' ) ) );
         if ( $label )
             $values['LogViewerSettings']['LogLabel'] = array( '404' => 'Not found requests (404)', 'error' => 'Errors' );
-        // Compress[404] is enabled in the shipped defaults: switched off here, so the rotated file is read as written
-        $values['RotationSettings'] = array( 'Keep' => array( '404' => '5' ), 'Compress' => array( '404' => 'disabled' ) );
+        // every [RotationSettings] variable set here: one left out is read from the installation's logviewer.ini once eZSys
+        // is loaded (a whole PHPUnit run), which compresses the archives of 404.log (Compress[404]=enabled)
+        $values['RotationSettings'] = array( 'Keep' => array( '404' => '5' ), 'Compress' => array( '404' => 'disabled' ),
+                                             'MaxSize' => array( '404' => '1000' ), 'MaxAgeDays' => array( '404' => '0' ) );
         $values['DigestSettings'] = array( 'LogLevels' => array( '404' => 'error,warning,notice' ), 'GroupBy' => array( '404' => 'reason' ) );
         return expLogViewerTestFixtures::config( $this->root, $values );
     }
