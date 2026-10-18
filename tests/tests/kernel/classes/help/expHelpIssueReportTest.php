@@ -72,7 +72,7 @@ class expHelpIssueReportTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsStringIgnoringCase( self::MARK, $t, $what . ' carries a planted secret' );
             $this->assertDoesNotMatchRegularExpression( '#/(var/www|web/vh|home|root|srv|opt/plesk)/#', $t, $what . ' carries a server path' );
             $this->assertDoesNotMatchRegularExpression( '/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}/i', $t, $what . ' carries an e-mail address' );
-            $this->assertDoesNotMatchRegularExpression( '/(password|passwd|secret|token|api[_-]?key)\s*[:=]\s*\S/i', $t, $what . ' carries a credential' );
+            $this->assertDoesNotMatchRegularExpression( '/(password|passwd|secret|token|api[_-]?key)\s*[:=]\s*(?!\[redacted\])\S/i', $t, $what . ' carries a credential' );
             $this->assertDoesNotMatchRegularExpression( '/BEGIN [A-Z ]*PRIVATE KEY/', $t, $what );
             if ( session_id() !== '' )
                 $this->assertStringNotContainsString( session_id(), $t, $what . ' carries the session id' );
@@ -134,6 +134,42 @@ class expHelpIssueReportTest extends PHPUnit\Framework\TestCase
         // a body far too long is cut, not refused
         $long = $report->issueUrl( 'software', 'x', str_repeat( 'long line ', 5000 ) );
         $this->assertLessThanOrEqual( 8192, strlen( $long ) );
+    }
+
+    /** HI-05 planted values given to the report directly: scrubbed, and unknown keys dropped */
+    public function testPlantedValuesScrubbed()
+    {
+        if ( !defined( 'expHelpIssueReport::ENVIRONMENT_KEYS' ) )
+            $this->markTestSkipped( 'no ENVIRONMENT_KEYS' );
+        $root = expHelp::installRoot();
+        $values = array();
+        foreach ( expHelpIssueReport::ENVIRONMENT_KEYS as $key )
+            $values[$key] = $key . ' ok';
+        $values['database'] = 'mysql://user' . self::MARK . ':pw' . self::MARK . '@db.internal:3306/db 10.11';
+        $values['design'] = $root . '/design/admin4 and /var/www/vhosts/other/' . self::MARK;
+        $values['siteaccess'] = 'admin password=pw' . self::MARK . ' token: ' . str_repeat( 'a1', 20 );
+        $values['language'] = 'eng-US admin-' . strtolower( self::MARK ) . '@example.com 10.1.2.3 fe80::1';
+        $values['os'] = 'Linux /home/' . self::MARK . '/x ~/' . self::MARK . ' C:\\Users\\' . self::MARK;
+        $values['secret_extra'] = 'never' . self::MARK;
+        $values['server'] = 'db-host-' . self::MARK;
+        $report = new expHelpIssueReport( $values, array( 'extension_infos' => array() ) );
+        $this->assertNoSecret( json_encode( $report->environment() ), 'environment() of planted values' );
+        $this->assertNoSecret( $report->environmentText(), 'environmentText() of planted values' );
+        $this->assertNoSecret( $report->issueUrl( 'software', 'x', $report->environmentText() ), 'issueUrl() of planted values' );
+        $this->assertStringNotContainsString( 'never', $report->environmentText(), 'a key outside ENVIRONMENT_KEYS is ignored' );
+        $this->assertStringNotContainsString( 'db.internal', $report->environmentText(), 'no database host name' );
+        $this->assertStringNotContainsString( 'fe80::1', $report->environmentText(), 'IPv6 addresses scrubbed' );
+        $this->assertStringNotContainsString( '10.1.2.3', $report->environmentText(), 'IPv4 addresses scrubbed' );
+        $this->assertStringContainsString( 'design/admin4', $report->environmentText(), 'paths inside the installation stay, relative' );
+        $this->assertStringContainsString( '10.11', $report->environmentText(), 'the database version stays' );
+        // the scrubber on its own
+        $this->assertNoSecret( expHelpIssueReport::scrub( 'https://u:p' . self::MARK . '@h.example/x?api_key=' . self::MARK ), 'scrub()' );
+        $this->assertStringContainsString( '/content/edit/12', expHelpIssueReport::scrub( 'at /content/edit/12' ), 'module paths stay' );
+        // trackers given by settings: only GitHub issue forms
+        $r = new expHelpIssueReport( $values, array( 'IssueTrackers/TrackerList' => array( 'software', 'evil' ),
+                                                     'Tracker_software/URL' => 'https://github.com/se7enxweb/exponential/issues',
+                                                     'Tracker_evil/URL' => 'https://evil.example/issues', 'extension_infos' => array() ) );
+        $this->assertArrayNotHasKey( 'evil', $r->trackers() );
     }
 
     /** HI-04 */

@@ -15,7 +15,7 @@
  * @package tests
  */
 
-class expHelpSearchTest extends PHPUnit\Framework\TestCase
+class expHelpSearchContractTest extends PHPUnit\Framework\TestCase
 {
     private static $root = '';
 

@@ -1609,22 +1609,22 @@
     ],
     "kernel/classes/help/exphelpdocumentindex.php": [
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
-      "tests/tests/kernel/classes/help/expHelpSearchTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
       "tests/tests/kernel/classes/help/expHelpLinksTest.php"
     ],
     "kernel/classes/help/exphelpallowlist.php": [
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
-      "tests/tests/kernel/classes/help/expHelpSearchTest.php"
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
     ],
     "kernel/classes/help/exphelpfrontmatter.php": [
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php"
     ],
     "kernel/classes/help/exphelpaudience.php": [
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
-      "tests/tests/kernel/classes/help/expHelpSearchTest.php"
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
     ],
     "kernel/classes/help/exphelpsearch.php": [
-      "tests/tests/kernel/classes/help/expHelpSearchTest.php"
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
     ],
     "kernel/classes/help/exphelpcontextregistry.php": [
       "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php"
@@ -1642,7 +1642,7 @@
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php",
       "tests/tests/kernel/classes/help/expHelpIssueReportTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
-      "tests/tests/kernel/classes/help/expHelpSearchTest.php"
+      "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"
     ],
     "kernel/exphelp/*": [
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",

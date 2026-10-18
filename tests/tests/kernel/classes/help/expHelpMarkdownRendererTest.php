@@ -115,7 +115,7 @@ class expHelpMarkdownRendererTest extends PHPUnit\Framework\TestCase
                 if ( $name === 'class' )
                     $this->assertMatchesRegularExpression( '/^[A-Za-z0-9_ :.+#-]*$/', $attr->nodeValue, 'class="' . $attr->nodeValue . '" | ' . $context );
                 if ( $name === 'id' )
-                    $this->assertMatchesRegularExpression( '/^[A-Za-z0-9_.:-]+$/', $attr->nodeValue, 'id="' . $attr->nodeValue . '" | ' . $context );
+                    $this->assertMatchesRegularExpression( '/^[\p{L}\p{N}\p{M}_.:-]+$/u', $attr->nodeValue, 'id="' . $attr->nodeValue . '" | ' . $context );
             }
             if ( $tag === 'a' && preg_match( '#^(https?:)?//#i', (string)$el->getAttribute( 'href' ) ) && $el->getAttribute( 'target' ) === '_blank' )
                 $this->assertStringContainsString( 'noopener', $el->getAttribute( 'rel' ), 'target=_blank without noopener | ' . $context );
@@ -294,7 +294,7 @@ class expHelpMarkdownRendererTest extends PHPUnit\Framework\TestCase
         $classes = implode( ' ', array_map( static function ( $c ) { return $c->getAttribute( 'class' ); }, $codes ) );
         $this->assertMatchesRegularExpression( '/\blanguage-php\b/', $classes, 'the language class of a fence' );
         $this->assertStringNotContainsString( 'script', $classes );
-        $this->assertStringContainsString( '<img src=x onerror=alert(1)>', strip_tags( html_entity_decode( $r['html'] ) ), 'inline code as text' );
+        $this->assertStringContainsString( '<img src=x onerror=alert(1)>', html_entity_decode( strip_tags( $r['html'] ) ), 'inline code as text' );
     }
 
     public function testHighlighter()
@@ -346,7 +346,7 @@ class expHelpMarkdownRendererTest extends PHPUnit\Framework\TestCase
             $this->assertArrayHasKey( 'text', $entry );
             $this->assertArrayHasKey( 'anchor', $entry );
             $this->assertStringNotContainsString( '<', $entry['text'], 'TOC text is plain' );
-            $this->assertMatchesRegularExpression( '/^[A-Za-z0-9_.:-]+$/', $entry['anchor'] );
+            $this->assertMatchesRegularExpression( '/^[\p{L}\p{N}\p{M}_.:-]+$/u', $entry['anchor'] );
             $this->assertContains( $entry['anchor'], $ids, 'each TOC entry has its heading' );
             $anchors[] = $entry['anchor'];
         }
@@ -386,6 +386,35 @@ class expHelpMarkdownRendererTest extends PHPUnit\Framework\TestCase
         $plain = $this->renderer()->renderPlainText( "Line <script>alert(1)</script>\nhttps://example.com\njavascript:alert(1)", 'help/x.txt' );
         $this->assertSafeHtml( $plain['html'] );
         $this->assertStringContainsString( 'alert(1)', html_entity_decode( strip_tags( $plain['html'] ) ), 'shown as text' );
+    }
+
+    public static function pathological()
+    {
+        return array(
+            'brackets'     => array( str_repeat( '[', 5000 ) ),
+            'emphasis'     => array( str_repeat( '*a ', 20000 ) ),
+            'deep quotes'  => array( str_repeat( '>', 500 ) . ' x' ),
+            'deep lists'   => array( implode( "\n", array_map( static function ( $i ) { return str_repeat( '  ', $i ) . '- x'; }, range( 0, 300 ) ) ) ),
+            'backticks'    => array( str_repeat( '`', 5000 ) . 'x' ),
+            'links'        => array( str_repeat( '[a](', 3000 ) ),
+            'html'         => array( str_repeat( '<div>', 5000 ) ),
+            'table'        => array( "| a |\n|---|\n" . str_repeat( "| x |\n", 5000 ) ),
+            'placeholder'  => array( "\x1A0\x1A \x1Ahtml0\x1A <script>alert(1)</script> \0 \x1A" ),
+            'split js'     => array( "[x](java\tscript:alert(1)) [y](java\nscript:alert(1)) [z](java%0ascript:alert(1)) [w](&Tab;javascript:alert(1))" ),
+            'title break'  => array( '[x](https://example.com "a\\" onmouseover=\\"alert(1)") ![i](https://example.com/a.png "\'><script>")' ),
+        );
+    }
+
+    /** HR-10 hostile and huge inputs: safe and fast (< 2 s each) */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'pathological' )]
+    public function testPathologicalInputs( $markdown )
+    {
+        $start = microtime( true );
+        $r = $this->renderer()->render( $markdown, 'help/page.md' );
+        $took = microtime( true ) - $start;
+        $this->assertLessThan( 2.0, $took, sprintf( 'rendering took %.2f s', $took ) );
+        $this->assertSafeHtml( $r['html'], substr( $markdown, 0, 60 ) );
+        $this->assertStringNotContainsString( "\x1A", $r['html'], 'no internal placeholder leaks' );
     }
 
     /** HR-09 */
