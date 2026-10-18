@@ -72762,6 +72762,158 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>מימון Exponential: מה החסות מממנת ואיך לתת חסות ל-7x ולקרן Exponential.</translation>
     </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>עזרה עבור %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>חיפוש בעזרה עבור %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>כל הדפים עבור %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>כל קהלי היעד</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>קראו את הדפים האלה בסדר הזה.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>כדאי לדעת</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>חיפוש לפי נושא</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>כל כפתור מציג את הדפים של נושא אחד עבור %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>דפים מרכזיים</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>קהלי יעד קשורים</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>הקומיטים האחרונים ב-Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>ההיסטוריה המלאה ב-GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>מה השתנה לאחרונה בקוד המקור: הענף הראשי של se7enxweb/exponential, כפי שהשרת הזה קורא אותו מהפיד הציבורי שלו.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>לא ניתן היה להגיע ל-GitHub כרגע. אלה הקומיטים שנקראו ב-%date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>לא ניתן היה לקרוא את הקומיטים מ-GitHub. פתחו במקום זאת את ההיסטוריה ב-GitHub.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>הסתרת קומיטים של מיזוג</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>הצגת גם קומיטים של מיזוג</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>הודעה</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>מוצגים %from–%to מתוך %total קומיטים</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>אין עדיין קומיטים להצגה.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>החסות שלכם מממנת:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>אודות %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>חסות חודשית, גם קטנה, היא הכנסה שאפשר לתכנן: היא מממנת עבודה שתרומות חד-פעמיות לא יכולות להחזיק.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>מה החסות מממנת</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>תמכו ב-Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential היא תוכנה חופשית. כל תכונה חדשה, דף עזרה, הרחבה, ערכת נושא ויישום הם עבודה שמישהו משלם עליה בזמנו. חסות חודשית קבועה, בכל סכום, שומרת על העבודה הזאת ומאפשרת לה לגדול.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>תנו חסות ל-7x ב-GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>תנו חסות לקרן Exponential ב-GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>החברה שמובילה את Exponential והנותנת הראשונה של חסות לפרויקט: היא מפתחת, תומכת ומארחת אותו ומוציאה את הגרסאות.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>הארגון ללא מטרות רווח שמפעיל את פרויקט הקוד הפתוח ומוקדש למימון, לאימוץ, לתמיכה, להדרכה, לפיתוח, לקידום ולתיעוד שלו.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>גרסאות חודשיות והעבודה שמחזיקה הכול פועל</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>תיקוני אבטחה לספריות ש-Exponential בנויה עליהן, כמו Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>תכונות חדשות שחוזרות לקהילה כקוד פתוח</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>הגשרים, הפיצולים והכלים סביב הפלטפורמה</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>תחזוקת ספריות הליבה</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>תיעוד, מדריכים, הוראות שימוש ושאלות נפוצות</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>שכבות שילוב: GraphQL, ‏REST ו-Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>תשתית הקהילה: צ&apos;אט, אתרי מראה, ויקי ומשאבים למפתחים</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

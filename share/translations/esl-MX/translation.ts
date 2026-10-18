@@ -76957,6 +76957,158 @@ Gracias por la retroalimentación</translation>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Financiar Exponential: qué paga el patrocinio y cómo patrocinar a 7x y a la Fundación Exponential.</translation>
     </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Ayuda para %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Busca en la ayuda para %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Todas las páginas para %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Todos los públicos</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Lee estas páginas en este orden.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Es bueno saber</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Buscar por tema</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Cada botón muestra las páginas de un tema para %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Páginas clave</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Públicos relacionados</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Últimos commits de Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Historial completo en GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Lo que cambió hace poco en el código fuente: la rama principal de se7enxweb/exponential, leída por este servidor de su feed público.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>No se pudo acceder a GitHub en este momento. Estos son los commits leídos el %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>No se pudieron leer los commits desde GitHub. Abre el historial en GitHub.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Ocultar los commits de fusión</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Mostrar también los commits de fusión</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mensaje</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Mostrando %from–%to de %total commits</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Todavía no hay commits para mostrar.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Tu patrocinio paga:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>Acerca de %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Un patrocinio mensual, aunque sea pequeño, es un ingreso con el que se puede planear: paga un trabajo que las donaciones únicas no pueden sostener.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Qué financia el patrocinio</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Apoya a Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential es software libre. Cada función nueva, página de ayuda, extensión, tema y aplicación es trabajo que alguien paga con su tiempo. Un patrocinio mensual continuo, de cualquier monto, mantiene ese trabajo y le permite crecer.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Patrocina a 7x en GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Patrocina a la Fundación Exponential en GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>La empresa que dirige Exponential y el primer patrocinador del proyecto: lo desarrolla, le da soporte, lo hospeda y publica las versiones.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>La organización sin fines de lucro que opera el proyecto de código abierto y se dedica a su financiamiento, adopción, soporte, capacitación, desarrollo, promoción y documentación.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Versiones mensuales y el trabajo que mantiene todo funcionando</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Parches de seguridad para las bibliotecas en las que se basa Exponential, como Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Funciones nuevas que regresan a la comunidad como código abierto</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Los puentes, forks y herramientas en torno a la plataforma</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>El mantenimiento de las bibliotecas principales</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Documentación, tutoriales, guías prácticas y preguntas frecuentes</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Capas de integración: GraphQL, REST y Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Infraestructura de la comunidad: chat, espejos, wikis y recursos para desarrolladores</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

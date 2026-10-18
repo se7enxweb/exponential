@@ -124,6 +124,49 @@ Map[mymodule/edit]=ext/myextension/usage.md#editing
 and, to show its own `doc/` directory, an administrator adds it to `[IndexSettings] ExtensionDocDirs[]`. Its pages
 then have the ids `ext/<extension>/<path>`.
 
+## Landing pages of the audiences
+
+Each audience has its own landing page, `exphelp/audience/<audience>` (for example `exphelp/audience/developer`).
+The title of each audience card on the dashboard opens it. The page is made of blocks, in the order that
+`[LandingSettings] Blocks[]` gives, or `[Landing_<audience>] Blocks[]` for one audience:
+
+| Block | What it shows |
+|---|---|
+| `hero` | The audience's name, a summary, its number of pages, a search box limited to the audience, and buttons: **Start here**, **All pages for ...** and **All audiences** |
+| `start` | The reading path: `ReadingPath[]`, else the start page and the audience's help pages in their order |
+| `boxes` | Info boxes: the title and summary of `InfoPages[]`, else of the next pages that have a summary |
+| `categories` | A search button for each category with pages for the audience (`Categories[]` limits them); each opens `exphelp/search/(category)/<id>/(audience)/<audience>` |
+| `key` | Key pages: `KeyPages[]`, else the next pages in order |
+| `latest` | Recently updated pages of the audience, from the git history |
+| `related` | The landing pages of `Related[]` audiences |
+| `commits` | The latest commits of the project, page by page (developers) |
+| `support` | The Support Exponential block (supporters and sponsors) |
+
+A page that a list names but that is not in the help (not written yet, hidden) is left out, so a landing page never
+links a missing page. Every list comes from the cached help index; nothing else is read to draw the page.
+`[LandingSettings] Enabled=disabled` turns the pages off; the cards then open the search, as before.
+
+### The commit log
+
+The developers' landing page lists the latest commits of `se7enxweb/exponential` (`[CommitFeedSettings]`). The
+server reads the repository's Atom feed (`FeedURL`), never the browser, so the admin's Content Security Policy is
+kept and no visitor's address reaches GitHub. It reads at most once every `CacheTTL` seconds (600), with a timeout of
+`Timeout` seconds (4), and one process at a time. The feed holds the newest 20 commits; each read is added to the
+cached list (at most `MaxCommits`, 500), which the page shows `PageSize` (10) at a time with the shared pager.
+Merge commits are hidden unless **Show merge commits too** is chosen (`/(merges)/1`). When GitHub cannot be
+reached, the page keeps the cached commits and says when they were read; a failed read is retried after
+`RetryAfter` seconds (120). Titles, messages and authors are shown as escaped text, the links are built from each
+commit's hash (`CommitBaseURL`), and no avatars or other remote images are shown.
+
+### Support Exponential
+
+The bottom of the dashboard, and the landing pages of supporters and sponsors, ask readers to fund the work with a
+monthly sponsorship through GitHub Sponsors, to 7x (<https://github.com/sponsors/se7enxweb>) and to the Exponential
+Foundation (<https://github.com/sponsors/exponentialcms>), and say what each organization's funding pays for.
+`[SupportSettings]` holds the title, the text and the order of the organizations; each organization's
+`[SupportOrganization_<id>]` group holds its name, its sponsor address (https only), the button text, its page in the
+help, its mission and `Funds[]`. `Enabled=disabled` removes the block.
+
 ## Finding a page
 
 - **All pages** (`/exphelp/contents`): every help page as one tree, all folders open, with a filter field that
