@@ -39,7 +39,8 @@ class expAccountServices extends expUsersBase
         'cancelReset' => array( 'summary' => 'Cancel the open reset requests of a user (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'cancelled' ),
     );
 
-    /** Seconds a forgotten password or activation key stays usable through the services. */
+    /** Seconds an activation key stays usable through the services (a forgot-password key follows
+     *  site.ini [UserSettings] ForgotPasswordKeyLifetime, eZForgotPassword::lifetime()). */
     const KEY_LIFETIME = 86400;
 
     protected static function keyOk( $key )
@@ -168,13 +169,13 @@ class expAccountServices extends expUsersBase
         self::guard( 'forgotKeyValid' );
         $key = self::arg( $a, 0, 'string' );
         $k = self::keyOk( $key ) ? eZForgotPassword::fetchByKey( $key ) : null;
-        return self::ok( array( 'valid' => $k instanceof eZForgotPassword && (int)$k->attribute( 'time' ) + self::KEY_LIFETIME > time() ) );
+        return self::ok( array( 'valid' => $k instanceof eZForgotPassword && !$k->isExpired() ) );
     }
 
     protected static function resetKey( $key )
     {
         $k = self::keyOk( $key ) ? eZForgotPassword::fetchByKey( $key ) : null;
-        if ( !$k instanceof eZForgotPassword || (int)$k->attribute( 'time' ) + self::KEY_LIFETIME <= time() )
+        if ( !$k instanceof eZForgotPassword || $k->isExpired() )
         {
             self::failed( 'unknown_key' );
             throw new expServiceException( 'The key is not valid', 404 );
@@ -187,9 +188,8 @@ class expAccountServices extends expUsersBase
         self::guard( 'reset' );
         $k = self::resetKey( self::post( 'key', 'string' ) );
         $password = self::post( 'password', 'string' );
-        if ( !eZUser::validatePassword( $password ) )
-            throw new expServiceException( 'The password is too short', 422 );
         $id = (int)$k->attribute( 'user_id' );
+        self::requireAcceptablePassword( $password, eZUser::fetch( $id ) );
         $change = function () use ( $id, $password ) { return eZUserOperationCollection::password( $id, $password ); };
         $r = class_exists( 'expAuditHook' ) ? expAuditHook::muted( 'access.user.password.change', $change ) : $change();
         if ( empty( $r['status'] ) )
@@ -217,8 +217,7 @@ class expAccountServices extends expUsersBase
         }
         if ( $new !== $confirm )
             throw new expServiceException( 'The new password and its confirmation differ', 422 );
-        if ( !eZUser::validatePassword( $new ) )
-            throw new expServiceException( 'The password is too short', 422 );
+        self::requireAcceptablePassword( $new, $user );
         $r = eZUserOperationCollection::password( $id, $new );
         if ( empty( $r['status'] ) )
             throw new expServiceException( 'The password could not be changed', 422 );

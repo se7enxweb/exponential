@@ -57579,6 +57579,10 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation>Dieses Passwort ist bekannt oder zu häufig, jeder könnte es erraten. Bitte wählen Sie ein anderes.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -60479,6 +60483,22 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>Please enter a valid email address.</source>
         <translation>Bitte geben Sie eine gültige E-Mail-Adresse ein.</translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation>Dieser Link ist abgelaufen.</translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation>Zu Ihrer Sicherheit funktioniert ein Link zum Zurücksetzen des Passworts nur %1 Minuten lang und nur einmal. Fordern Sie unten einen neuen Link an.</translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation>Neuen Link anfordern</translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
+        <translation>Der Link funktioniert nur einmal und nur %1 Minuten lang.</translation>
     </message>
 </context>
 <context>
@@ -75648,6 +75668,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Your current password is not correct.</source>
         <translation>Ihr aktuelles Passwort ist nicht richtig.</translation>
     </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation>Kein bekanntes oder häufiges Passwort</translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
+        <translation>Das neue Passwort ist bekannt oder zu häufig. Bitte wählen Sie ein anderes.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/password/js</name>
@@ -75795,6 +75823,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The password does not meet the requirements.</source>
         <translation>Das Passwort erfüllt die Anforderungen nicht.</translation>
+    </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation>Das Passwort ist bekannt oder zu häufig. Bitte wählen Sie ein anderes.</translation>
     </message>
 </context>
 <context>
@@ -79702,6 +79734,42 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Versions %from to %to</source>
         <translation>Versionen %from bis %to</translation>
+    </message>
+    <message>
+        <source>Project managers</source>
+        <translation>Projektmanager</translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation>Vertrieb &amp; Marketing</translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation>Projekte planen und leiten: Phasen und Rollen, Hosting-Wahl, Umfang, Checklisten, Qualitätsschranken, Releases und Risiken.</translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation>Exponential präsentieren und bewerben: Positionierung, Funktions-Highlights, Demos, Einwände, Lizenzen, Marke und Community.</translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation>Hier beginnen</translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation>Projektleitung</translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation>Vertrieb und Marketing</translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation>Exponential-Projekte planen, durchführen und ausbauen: Phasen, Rollen, Checklisten, Risiken und die Zusammenarbeit mit der Community.</translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
+        <translation>Exponential präsentieren und bewerben: Positionierung, Demos, Einwände, Lizenzen, Marke und das Wachstum der Community.</translation>
     </message>
 </context>
 </TS>

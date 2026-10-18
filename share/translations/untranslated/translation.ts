@@ -50531,6 +50531,10 @@ See the requirements page for more information.</source>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -52981,6 +52985,22 @@ your account.</source>
     </message>
     <message>
         <source>Please enter a valid email address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This link has expired.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For your security, a link to reset your password works only for %1 minutes and only once. Ask for a new link below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ask for a new link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The link works only once and only for %1 minutes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -57649,6 +57669,14 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The new password does not meet the requirements.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Is not a well-known or common password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The new password is well-known or too common. Choose another one.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -69758,6 +69786,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The password does not meet the requirements.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The password is well-known or too common. Choose another one.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/setupmenu</name>
@@ -72577,6 +72609,42 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Versions %from to %to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project managers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sales &amp; marketing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project leadership</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sales and marketing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

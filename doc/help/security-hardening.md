@@ -75,7 +75,9 @@ services work wherever people reuse them.
 login as for a wrong password, and **Forgot your password?** answers the same for every address, so neither reveals
 which accounts exist. The audit trail's alert rules `brute_force` (20 failures from one network in 5 minutes) and
 `brute_force_user` (10 for one account in 15 minutes) report attacks. Two-step sign-in (`sevenx_authentication_2fa`)
-makes a stolen password useless on its own.
+makes a stolen password useless on its own. Every form that sets a password refuses well-known and common ones
+(`WeakPasswordCheck`, the list attackers try first), and a **Forgot your password?** link works once and for one hour
+(`ForgotPasswordKeyLifetime`).
 
 **Harden.**
 
@@ -95,7 +97,7 @@ makes a stolen password useless on its own.
 old guide. Shared accounts hide who did what.
 
 **Built in.** No installer of Exponential 6 leaves `publish` in place: the kickstarter and `exp:install` replace an
-empty or well-known password with a random one, the setup wizard asks for one of at least 10 characters
+empty, short or well-known password with a random one, and the setup wizard refuses a short or well-known one
 ([The default administrator password](default-administrator-password.md)).
 
 **Harden.** Change the administrator password after installing, delete `var/log/initial-admin-password`, create a

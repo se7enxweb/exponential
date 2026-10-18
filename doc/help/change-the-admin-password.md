@@ -202,6 +202,19 @@ ForbidLogin=disabled      # must not contain the login name
 ForbidCurrentPassword=disabled
 ```
 
+Since 6.0.15 every form also refuses a well-known or common password, of any length ("The new password is well-known
+or too common. Choose another one."): the words of the shared list and their simple variants, see
+[The list of well-known passwords](default-administrator-password.md#the-list-of-well-known-passwords).
+
+```ini
+[UserSettings]
+WeakPasswordCheck=enabled      # disabled: the rules above only, as before 6.0.15
+#WeakPasswordList[]=ourcompany # more words
+WeakPasswordFile=              # a file with more words, one per line
+```
+
+It applies when a password is set; an existing password is never refused at sign-in.
+
 For administrators, length beats composition rules: a production policy of `MinPasswordLength=15` with
 `ForbidLogin=enabled` and `ForbidCurrentPassword=enabled` is recommended in
 [chapter 13.6 of the installation guide](../install/13-security-hardening.md#136-passwords-and-sign-in), which also
@@ -242,8 +255,13 @@ The sign-in page offers **Forgot your password?** (`user/forgotpassword`), for e
 1. The user enters the e-mail address of the account.
 2. Exponential sends a mail with a link. The page answers the same whether or not an account has that address, so
    it cannot be used to find out who has an account.
-3. The link works once. Opening it gives the account a new generated password (`GeneratePasswordLength` characters)
-   and mails it to the same address. The user signs in and changes it at once.
+3. The link works once, and only for one hour (`site.ini [UserSettings] ForgotPasswordKeyLifetime=3600`, in seconds;
+   the mail says how long). Opening it gives the account a new generated password (`GeneratePasswordLength`
+   characters) and mails it to the same address. The user signs in and changes it at once.
+4. A link opened too late shows "This link has expired." with a way to ask for a new one; the old link is removed.
+   Unused links are removed when they expire. `ForgotPasswordKeyLifetime=0` keeps a link working until it is used, the
+   behavior before 6.0.15; a shorter value (900, a quarter of an hour) narrows the window for a mailbox that was read
+   by someone else.
 
 It only works when the account has a real e-mail address and the site can send mail. Give the administrator account a
 real, monitored address right after installing ([chapter 10.1](../install/10-after-installing.md#101-first-login-and-the-administrator-password)).

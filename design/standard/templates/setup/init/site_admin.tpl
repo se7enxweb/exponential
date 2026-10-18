@@ -49,6 +49,11 @@
                 {"The password is too short."|i18n("design/standard/setup/init")}
             </p>
         {/if}
+        {if eq( first_set( $password_too_common, 0 ), 1 )}
+            <p>
+                {"This password is well-known or too common, so anyone could guess it. Choose another one."|i18n("design/standard/setup/init")}
+            </p>
+        {/if}
     </blockquote>
 {/if}
 

@@ -24,6 +24,7 @@ class eZStepSiteAdmin extends eZStepInstaller
     const EMAIL_INVALID = 5;
     const PASSWORD_MISSING = 6;
     const PASSWORD_TOO_SHORT = 7;
+    const PASSWORD_TOO_COMMON = 8;
 
     /**
      * Constructor
@@ -39,8 +40,9 @@ class eZStepSiteAdmin extends eZStepInstaller
     }
 
     /**
-     * Passwords a kickstart file must not install: none at all, and the ones
-     * printed in every example and tutorial.
+     * Passwords an installation must not install: none at all, and the well-known and common ones
+     * (expWeakPasswordList: the built-in words with their simple variants, site.ini [UserSettings]
+     * WeakPasswordList[] and WeakPasswordFile). The installers always check, whatever WeakPasswordCheck says.
      *
      * @param mixed $password
      * @return bool
@@ -49,9 +51,40 @@ class eZStepSiteAdmin extends eZStepInstaller
     {
         if ( !is_string( $password ) || trim( $password ) === '' )
             return true;
-        return in_array( strtolower( trim( $password ) ),
-                         array( 'publish', 'admin', 'password', 'changeme', 'change-me', 'secret', 'exponential', 'demo', '123456' ),
-                         true );
+        return expWeakPasswordList::instance()->isWeak( $password );
+    }
+
+    /**
+     * @return int the shortest administrator password an installation accepts: site.ini [UserSettings]
+     *             MinPasswordLength, 10 when it is not set
+     */
+    public static function minAdminPasswordLength()
+    {
+        $min = 10;
+        if ( class_exists( 'eZINI', false ) )
+        {
+            $configured = (int)eZINI::instance( 'site.ini' )->variable( 'UserSettings', 'MinPasswordLength' );
+            if ( $configured > 0 )
+                $min = $configured;
+        }
+        return $min;
+    }
+
+    /**
+     * Why a kickstart file's administrator password cannot be installed, null when it can.
+     *
+     * @param mixed $password
+     * @return string|null "empty", "well-known" or "too short"
+     */
+    public static function kickstartPasswordProblem( $password )
+    {
+        if ( !is_string( $password ) || trim( $password ) === '' )
+            return 'empty';
+        if ( self::isWeakDefaultPassword( $password ) )
+            return 'well-known';
+        if ( strlen( $password ) < self::minAdminPasswordLength() )
+            return 'too short';
+        return null;
     }
 
     /**
@@ -77,7 +110,7 @@ class eZStepSiteAdmin extends eZStepInstaller
         $written = @file_put_contents( $file,
             "Exponential administrator login: admin\n" .
             "Password: $password\n" .
-            "Generated " . date( 'c' ) . " because the kickstart file set no password or a well-known one.\n" .
+            "Generated " . date( 'c' ) . " because the kickstart file set no password, a well-known one or one that is too short.\n" .
             "Log in, change it, then delete this file.\n" );
         umask( $old );
         if ( $written !== false )
@@ -85,7 +118,7 @@ class eZStepSiteAdmin extends eZStepInstaller
 
         if ( class_exists( 'eZCLI', false ) && PHP_SAPI === 'cli' )
         {
-            eZCLI::instance()->warning( "The administrator password was not set or is a well-known one; generated a random one." );
+            eZCLI::instance()->warning( "The administrator password was not set, is a well-known one or is shorter than " . self::minAdminPasswordLength() . " characters; generated a random one." );
             eZCLI::instance()->output( "  admin password: $password" );
             eZCLI::instance()->output( "  (also written to $file - change the password after the first login and delete that file)" );
         }
@@ -137,6 +170,11 @@ class eZStepSiteAdmin extends eZStepInstaller
         {
             $this->Error[] = self::PASSWORD_TOO_SHORT;
         }
+        else if ( self::isWeakDefaultPassword( $posted['password1'] ) )
+        {
+            // a long word everybody knows is no better than a short one
+            $this->Error[] = self::PASSWORD_TOO_COMMON;
+        }
         else
         {
             $user['password'] = $posted['password1'];
@@ -175,14 +213,17 @@ class eZStepSiteAdmin extends eZStepInstaller
             if ( isset( $data['Password'] ) )
                 $adminUser['password'] = $data['Password'];
 
-            // No password, or one everybody knows: the new site would open
-            // with a login anyone can guess. Give it a random one instead.
+            // No password, one everybody knows or one shorter than
+            // MinPasswordLength (the rules of exp:install): the new site would
+            // open with a login anyone can guess. Give it a random one instead.
             // (A step can be initialised again later in the same setup; keep
             // the one already generated rather than making another.)
-            if ( self::isWeakDefaultPassword( $adminUser['password'] ) )
+            $problem = self::kickstartPasswordProblem( $adminUser['password'] );
+            if ( $problem !== null )
             {
+                eZDebug::writeNotice( "The kickstart administrator password was refused ($problem); a random one is used", __METHOD__ );
                 $previous = $this->PersistenceList['admin']['password'] ?? false;
-                $adminUser['password'] = self::isWeakDefaultPassword( $previous )
+                $adminUser['password'] = self::kickstartPasswordProblem( $previous ) !== null
                     ? self::generateAdminPassword()
                     : $previous;
             }
@@ -213,6 +254,7 @@ class eZStepSiteAdmin extends eZStepInstaller
         $this->Tpl->setVariable( 'password_missmatch', 0 );
         $this->Tpl->setVariable( 'password_missing', 0 );
         $this->Tpl->setVariable( 'password_too_short', 0 );
+        $this->Tpl->setVariable( 'password_too_common', 0 );
 
         if ( isset( $this->Error[0] ) )
         {
@@ -251,6 +293,11 @@ class eZStepSiteAdmin extends eZStepInstaller
                 case self::PASSWORD_TOO_SHORT:
                 {
                     $this->Tpl->setVariable( 'password_too_short', 1 );
+                } break;
+
+                case self::PASSWORD_TOO_COMMON:
+                {
+                    $this->Tpl->setVariable( 'password_too_common', 1 );
                 } break;
             }
         }
