@@ -60613,6 +60613,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>מפתחות</translation>
     </message>
     <message>
+        <source>Select</source>
+        <translation>בחירה</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>פעולות</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>חובה</translation>
+    </message>
+    <message>
         <source>%from to %to of %count</source>
         <translation>%from עד %to מתוך %count</translation>
     </message>
