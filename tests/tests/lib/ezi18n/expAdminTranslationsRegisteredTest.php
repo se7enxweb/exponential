@@ -4,7 +4,8 @@
  * share/locale whose HTTP code matches the catalogue's language, the catalogue itself (complete against the source
  * texts, as the interface language switch measures it), the switch's ranked groups in settings/uiswitch.ini, the
  * catalogues of the bundled ezoe and ezjscore extensions, and the table of doc/languages.md. Ukrainian additionally
- * checks its Cyrillic names, its left-to-right direction and its fallback in settings/i18n.ini. Without a database.
+ * checks its Cyrillic names, its left-to-right direction and its fallback in settings/i18n.ini; Arabic and Hebrew their
+ * right-to-left locale, their script in every catalogue and the user-name sense of "Login". Without a database.
  *
  * Run: php vendor/bin/phpunit tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
  *
@@ -20,10 +21,10 @@ unset( $expAdminTranslationsRoot );
 class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
 {
     /** The complete administration translations besides English (doc/languages.md, section 4). */
-    const COMPLETE = array( 'ger-DE', 'esl-ES', 'esl-MX', 'fre-FR', 'heb-IL', 'lat-VA', 'tlh-QO', 'ukr-UA' );
+    const COMPLETE = array( 'ger-DE', 'esl-ES', 'esl-MX', 'fre-FR', 'heb-IL', 'lat-VA', 'tlh-QO', 'ukr-UA', 'ara-SA' );
 
     /** Those whose ezoe and ezjscore catalogues are complete too. */
-    const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA' );
+    const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL' );
 
     /** @var string the repository */
     protected $root;
@@ -51,7 +52,8 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     protected function iniValues( $file )
     {
         $values = array();
-        foreach ( preg_split( '/\R/', (string)file_get_contents( $file ) ) as $line )
+        // not /\R/: without the u modifier it also splits at the byte 0x85, which is inside UTF-8 letters (Arabic م)
+        foreach ( preg_split( '/\r\n|\n|\r/', (string)file_get_contents( $file ) ) as $line )
         {
             if ( preg_match( '/^([A-Za-z0-9_]+)=(.*)$/', trim( $line ), $m ) )
                 $values[$m[1]] = $m[2];
@@ -183,5 +185,59 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         preg_match_all( '/<translation>([^<]+)<\/translation>/u', $ts, $m );
         $cyrillic = count( preg_grep( '/\p{Cyrillic}/u', $m[1] ) );
         $this->assertGreaterThan( 0.9 * count( $m[1] ), $cyrillic, 'Ukrainian translations in Cyrillic' );
+    }
+
+    public static function rightToLeftTranslations()
+    {
+        return array(
+            'Arabic' => array( 'ara-SA', 'ar-SA', 'Arabic', '\p{Arabic}' ),
+            'Hebrew' => array( 'heb-IL', 'he-IL', 'Hebrew', '\p{Hebrew}' ),
+        );
+    }
+
+    /**
+     * The complete right-to-left translations: the locale is right to left and names itself in its script, the
+     * interface language switch offers it as right to left, the catalogue, its ezoe and its ezjscore catalogues are
+     * written in the script, not left in English, and it needs no fallback of its own: the other countries of the
+     * language fall back to it.
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'rightToLeftTranslations' )]
+    public function testRightToLeftTranslationIsWrittenInItsScript( $code, $http, $name, $script )
+    {
+        $values = $this->iniValues( $this->root . '/share/locale/' . $code . '.ini' );
+        $this->assertSame( 'rtl', strtolower( $values['TextDirection'] ?? '' ), "$code: TextDirection" );
+        $this->assertSame( $http, $values['ContentLanguage'] ?? '', "$code: ContentLanguage" );
+        // "Arabic" or, from CLDR, "Arabic (Saudi Arabia)"
+        $this->assertMatchesRegularExpression( '/^' . $name . '( \(.+\))?$/', $values['InternationalLanguageName'] ?? '', "$code: InternationalLanguageName" );
+        $this->assertMatchesRegularExpression( '/^[' . $script . '\s()]+$/u', $values['LanguageName'] ?? '', "$code: LanguageName" );
+        // the translation has its own file, so it needs no fallback; every other country of the language that
+        // settings/i18n.ini names falls back to it
+        $i18n = (string)file_get_contents( $this->root . '/settings/i18n.ini' );
+        $this->assertDoesNotMatchRegularExpression( '/^FallbackLanguages\[' . preg_quote( $code, '/' ) . '\]=/m', $i18n );
+        preg_match_all( '/^FallbackLanguages\[(' . substr( $code, 0, 3 ) . '-[A-Z]+)\]=(\S*)\s*$/m', $i18n, $m, PREG_SET_ORDER );
+        foreach ( $m as $row )
+            $this->assertSame( $code, $row[2], "FallbackLanguages[{$row[1]}]" );
+        foreach ( array( 'share', 'extension/ezoe', 'extension/ezjscore' ) as $base )
+        {
+            $ts = (string)file_get_contents( $this->root . '/' . $base . '/translations/' . $code . '/translation.ts' );
+            preg_match_all( '/<translation>([^<]+)<\/translation>/u', $ts, $m );
+            $inScript = count( preg_grep( '/' . $script . '/u', $m[1] ) );
+            $this->assertGreaterThan( 0.85 * count( $m[1] ), $inScript, "$base $code: translations in the $name script" );
+        }
+    }
+
+    /**
+     * "Login" names the user's login (user name) in the user, session, audit and package lists and forms, not the
+     * act of logging in: the right-to-left translations say so, as Hebrew did from the start.
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'rightToLeftTranslations' )]
+    public function testTheLoginColumnIsNamedLikeAUserName( $code, $http, $name, $script )
+    {
+        $ts = $this->root . '/share/translations/' . $code . '/translation.ts';
+        $field = $this->translationOf( $ts, 'design/admin/user/edit', 'Login' );
+        foreach ( array( 'design/admin/user', 'design/admin/setup/session', 'design/admin/audit', 'kernel/user' ) as $context )
+            $this->assertSame( $field, $this->translationOf( $ts, $context, 'Login' ), "$code: Login in $context" );
+        $this->assertNotSame( $field, $this->translationOf( $ts, 'design/admin/error/kernel', 'Login' ),
+                              "$code: the Login button of the error page is the act of logging in" );
     }
 }

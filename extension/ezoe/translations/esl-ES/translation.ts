@@ -1468,11 +1468,11 @@ Do you want more information about this issue?</source>
     </message>
     <message>
         <source>Create a bullet list. To create a new list item, press &quot;Enter&quot;. To end a list, press &quot;Enter&quot; key on an empty list item. If you click this button when the cursor is on a list item, the formatting will be removed.</source>
-        <translation>Crear una lista con viñetas. Para crear un nuevo elemento en la lista, pulsa &quot;Intro&quot;. Para finalizar una lista con viñetas, pulse &quot;Intro&quot; en un elemento vacío de la lista. Si pulsas este botón y el cursor se encuentra situado sobre un elemento de la lista, el formato se elimina.</translation>
+        <translation>Crear una lista con viñetas. Para crear un nuevo elemento en la lista, pulsa &quot;Intro&quot;. Para finalizar una lista con viñetas, pulsa &quot;Intro&quot; en un elemento vacío de la lista. Si pulsas este botón y el cursor se encuentra situado sobre un elemento de la lista, el formato se elimina.</translation>
     </message>
     <message>
         <source>Create a numbered list. To create a new list item, press &quot;Enter&quot;. To end a list, press &quot;Enter&quot; key on an empty list item. If you click this button when the cursor is on a list item, the formatting will be removed.</source>
-        <translation>Crear una lista numerada. Para crear un nuevo elemento en la lista, pulsa &quot;Intro&quot;. Para finalizar una lista, pulse &quot;Intro&quot; en un elemento vacío de la lista. Si pulsas este botón cuando el cursor está en un elemento de la lista, el formato se elimina.</translation>
+        <translation>Crear una lista numerada. Para crear un nuevo elemento en la lista, pulsa &quot;Intro&quot;. Para finalizar una lista, pulsa &quot;Intro&quot; en un elemento vacío de la lista. Si pulsas este botón cuando el cursor está en un elemento de la lista, el formato se elimina.</translation>
     </message>
     <message>
         <source>Increase list indent. Use this button to change the level of a list item in a nested list.</source>
@@ -1504,7 +1504,7 @@ Do you want more information about this issue?</source>
     </message>
     <message>
         <source>Insert an image from the related images list, upload a new image, search for an existing images or browse for it. To upload a local image choose the local file, specify the name of the new object, choose placement from list, optionally write some caption text (You can use simple html formating here) and then click &quot;Upload&quot; button.</source>
-        <translation>Inserta una imagen de la lista de imágenes relacionadas, carga una imagen nueva o busca una imagen existente. Para cargar un archivo local especifica el nombre del objeto nuevo, selecciona una ubicación de la lista, de forma opcional también puede incluir subtítulos (utiliza el formato html sencillo) y a continuación haz clic en el botón &quot;Cargar&quot;.</translation>
+        <translation>Inserta una imagen de la lista de imágenes relacionadas, carga una imagen nueva o busca una imagen existente. Para cargar un archivo local especifica el nombre del objeto nuevo, selecciona una ubicación de la lista, de forma opcional también puedes incluir subtítulos (utiliza el formato html sencillo) y a continuación haz clic en el botón &quot;Cargar&quot;.</translation>
     </message>
     <message>
         <source>Insert an object from the related objects list, upload a new object, search for an existing object or browse for it. To upload a local file, click &quot;Upload new&quot; button choose the local file, specify the name of the new object, choose placement from list and then click &quot;Upload&quot; button. Note that embedded object will begin on a new line when displayed in the resulting XHTML.</source>

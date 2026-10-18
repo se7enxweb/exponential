@@ -80,6 +80,7 @@ function setup(html, opts) {
     const requests = [];
     const copied = [];
     const assigned = [];
+    const replaced = [];
     const winListeners = {};
     const sandbox = {
         document, console, JSON, Array, Object, String, Math, Error, Promise, encodeURIComponent, decodeURIComponent,
@@ -88,8 +89,8 @@ function setup(html, opts) {
         requestAnimationFrame: (fn) => fn(),
         fetch: (url, init) => new Promise((resolve, reject) => { requests.push({ url, init, resolve, reject }); }),
         navigator: { clipboard: opts.noClipboard ? undefined : { writeText: (t) => { copied.push(t); return Promise.resolve(); } } },
-        location: { hash: opts.hash || '', assign: (u) => assigned.push(u) },
-        history: { replaceState: (a, b, h) => { sandbox.location.hash = h; } },
+        location: { hash: opts.hash || '', pathname: opts.pathname || '/admin/exphelp/dashboard', assign: (u) => assigned.push(u) },
+        history: { replaceState: (a, b, h) => { replaced.push(h); if (String(h).charAt(0) === '#') sandbox.location.hash = h; } },
         addEventListener: (type, fn) => { (winListeners[type] = winListeners[type] || []).push(fn); },
     };
     if (opts.noFetch) delete sandbox.fetch;
@@ -118,7 +119,7 @@ function setup(html, opts) {
         requests[i].resolve({ ok: ok !== false, status: ok === false ? 500 : 200, json: () => Promise.resolve(data) });
         await flush(); await flush(); await flush();
     };
-    return { document, sandbox, requests, copied, assigned, scrolled, timers, runTimers, flush, type, key, answer, winListeners };
+    return { document, sandbox, requests, copied, assigned, replaced, scrolled, timers, runTimers, flush, type, key, answer, winListeners };
 }
 
 const RESULTS = {
@@ -277,6 +278,83 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
         const next = h.key(d.body, ']').defaultPrevented;
         const ctrl = d.dispatch('keydown', d.body, { key: '/', ctrlKey: true }).defaultPrevented;
         out('page keys', { scrolled: h.scrolled, hash: h.sandbox.location.hash, typingJ, prev, next, assigned: h.assigned, ctrl });
+    }
+    {
+        // a record page (expHelpRecordRenderer): a filter field over every row, sort buttons in the headers
+        const table = (rows) => '<div class="a4-help-table-wrap"><table class="a4-table a4-help-records-table" data-exphelp-sortable><thead><tr>'
+            + '<th scope="col">Version</th><th scope="col">Date</th><th scope="col" data-sort="none">Notes</th></tr></thead><tbody>'
+            + rows.map((r) => '<tr id="' + r[0] + '"><th scope="row" data-sort-value="' + r[1] + '">' + r[0] + '</th><td data-sort-value="' + r[2] + '">' + r[2] + '</td><td>' + r[3] + '</td></tr>').join('')
+            + '</tbody></table></div>';
+        const page = '<div class="a4-help" data-exphelp data-exphelp-i18n="' + attr({ recordsCount: '%count von %total' }) + '">'
+            + '<article data-exphelp-content><div class="a4-help-body a4-help-records" data-exphelp-records><h1 id="top">Release history</h1>'
+            + '<p class="a4-help-records-stats">3 releases</p>'
+            + '<h2 id="s3">Series 3.x</h2>' + table([['3.0-1', '000003.000000-000001', '2003-03-24', 'first'], ['3.10-1', '000003.000010-000001', '2008-01-01', '']])
+            + '<h2 id="s4">Series 4.x</h2>' + table([['4.0.0', '000004.000000.000000', '2007-11-19', 'beta <b>x</b>']])
+            + '</div></article></div>';
+        const h = setup(page);
+        const d = h.document;
+        const input = d.querySelector('[data-exphelp-records-filter]');
+        const tools = d.querySelector('.a4-help-records-tools');
+        const afterStats = tools && tools.parentNode.children.indexOf(tools) === tools.parentNode.children.indexOf(d.querySelector('.a4-help-records-stats')) + 1;
+        const visible = () => d.querySelectorAll('tbody tr').filter((r) => !r.hidden).map((r) => r.id);
+        input.value = '4.0';
+        d.dispatch('input', input, { bubbles: true });
+        h.runTimers(500);
+        const filtered = visible();
+        const wraps = d.querySelectorAll('.a4-help-table-wrap').map((w) => w.hidden);
+        const status = d.querySelector('.a4-help-records-count').textContent;
+        input.value = '';
+        d.dispatch('input', input, { bubbles: true });
+        h.runTimers(500);
+        const cleared = visible();
+        const buttons = d.querySelectorAll('.a4-help-sort');
+        const labels = buttons.map((b) => b.getAttribute('aria-label'));
+        d.dispatch('click', buttons[0], {});
+        const asc = d.querySelectorAll('tbody tr').map((r) => r.id).slice(0, 2);
+        const sortAsc = buttons[0].parentNode.getAttribute('aria-sort');
+        d.dispatch('click', buttons[0], {});
+        const desc = d.querySelectorAll('tbody tr').map((r) => r.id).slice(0, 2);
+        const sortDesc = buttons[0].parentNode.getAttribute('aria-sort');
+        out('records', { afterStats, filtered, wraps, status, cleared, buttons: buttons.length, labels, asc, sortAsc, desc, sortDesc,
+            type: input.getAttribute('type'), label: tools.querySelector('label').textContent });
+    }
+    {
+        // the canonical address: the form sent with JavaScript, the search page kept in step, browse results
+        const CANON = SEARCH.replace('data-exphelp-endpoint="/admin/exphelp/search"',
+            'data-exphelp-endpoint="/admin/exphelp/search" data-exphelp-canonical-base="/admin/exphelp/search/"');
+        const h = setup(CANON);
+        const d = h.document;
+        d.getElementById('q').value = ' a/b (c)  d+e ';
+        d.getElementById('aud-editor').checked = true;
+        d.querySelector('select').value = 'guides';
+        const submit = d.dispatch('submit', d.querySelector('form'), {});
+        const plain = setup(SEARCH);
+        const plainSubmit = plain.document.dispatch('submit', plain.document.querySelector('form'), {});
+        const empty = setup(CANON);
+        empty.document.dispatch('submit', empty.document.querySelector('form'), {});
+
+        // the dashboard: no address change; an empty field with a filter browses
+        const dash = setup(CANON);
+        dash.document.getElementById('aud-editor').checked = true;
+        dash.document.dispatch('change', dash.document.getElementById('aud-editor'), {});
+        await dash.flush();
+        await dash.answer(0, { mode: 'browse', total: 2, results: [{ url: '/x', href: '/admin/exphelp/viewer/x.md', title: 'X', snippet_parts: [['Summary', false]] }],
+            canonical_href: '/admin/exphelp/search/(audience)/editor' });
+        const dashBox = dash.document.getElementById('res');
+
+        // the search page itself: the address follows the search
+        const page = setup(CANON, { pathname: '/admin/exphelp/search/(q)/old' });
+        await page.type('cache');
+        await page.answer(0, { total: 1, results: [{ href: '/y', title: 'Y' }], canonical_href: '/admin/exphelp/search/(q)/cache' });
+        await page.type('cach');
+        await page.answer(1, { total: 1, results: [{ href: '/y', title: 'Y' }], canonical_href: 'javascript:alert(1)' });
+        await page.type('');
+        out('canonical address', {
+            submitPrevented: submit.defaultPrevented, assigned: h.assigned, plainPrevented: plainSubmit.defaultPrevented, emptyAssigned: empty.assigned,
+            browseUrl: dash.requests[0] && dash.requests[0].url, browseLinks: dashBox.querySelectorAll('a').map((a) => a.getAttribute('href')),
+            browseStatus: dashBox.querySelector('[data-exphelp-status]').textContent, dashReplaced: dash.replaced,
+            pageReplaced: page.replaced,
+        });
     }
     {
         // the admin header's search and its / shortcut (admin4.js) on the same page

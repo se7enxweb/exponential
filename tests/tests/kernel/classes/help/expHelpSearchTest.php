@@ -186,13 +186,47 @@ class expHelpSearchTest extends PHPUnit\Framework\TestCase
         return $list;
     }
 
-    public function testAnEmptyQueryGivesTheFacetsOfTheWholeSet()
+    public function testAnEmptyQueryBrowsesEveryPageTheFiltersAllow()
     {
         $result = self::search()->search( '' );
-        $this->assertSame( 0, $result['total'] );
-        $this->assertSame( array(), $result['hits'] );
+        $this->assertSame( 'browse', $result['mode'] );
+        $this->assertSame( 5, $result['total'] );
+        $this->assertSame( $result['hits'], $result['results'] );
+        // help pages and guides first, changelogs last
+        $this->assertSame( 'help/editing.md', $result['hits'][0]['id'] );
+        $this->assertSame( 'guides/velocity.md', $result['hits'][1]['id'] );
+        $this->assertSame( 'changelogs/6.0.15.md', end( $result['hits'] )['id'] );
         $this->assertSame( 1, $result['facets']['type']['guide'] );
         $this->assertSame( 3, $result['facets']['audience']['developer'] );
+        $this->assertNull( $result['hits'][0]['anchor'] );
+        $this->assertStringEndsWith( '/exphelp/viewer/help/editing.md', $result['hits'][0]['url'] );
+
+        $ops = self::search()->search( '', array( 'category' => 'operations' ) );
+        $this->assertSame( array( 'guides/velocity.md', 'features/cache.md' ), self::ids( $ops ) );
+        $this->assertSame( 1, $ops['facets']['category']['content'], 'the category facet ignores its own filter' );
+
+        $paged = self::search()->search( '', array(), 2, 4 );
+        $this->assertSame( 5, $paged['total'] );
+        $this->assertCount( 1, $paged['hits'] );
+
+        $this->assertNotContains( 'changelogs/6.0.15.md', self::ids( self::search()->search( '-changelog' ) ), 'an excluded word alone browses without it' );
+        $this->assertSame( 'browse', self::search()->search( '-changelog' )['mode'] );
+    }
+
+    public function testBrowseOrderFeaturedThenOrderThenTitle()
+    {
+        $page = function ( $title, $order = 0, $featured = false ) {
+            return array( 'title' => $title, 'type' => 'help', 'category' => 'layouts', 'order' => $order, 'featured' => $featured,
+                          'summary' => "About $title.", 'text' => "# $title\n\nText.\n" );
+        };
+        $search = expHelpSearch::fromDocuments( array(
+            'help/zeta.md' => $page( 'Zeta' ), 'help/alpha.md' => $page( 'Alpha' ), 'help/second.md' => $page( 'Second', 2 ),
+            'help/first.md' => $page( 'First', 1 ), 'help/star.md' => $page( 'Star', 9, true ) ) );
+        $result = $search->search( '', array( 'category' => 'layouts' ) );
+        $this->assertSame( array( 'help/star.md', 'help/first.md', 'help/second.md', 'help/alpha.md', 'help/zeta.md' ), self::ids( $result ) );
+        $this->assertTrue( $result['hits'][0]['featured'] );
+        $this->assertSame( 'About Star.', $result['hits'][0]['snippet'] );
+        $this->assertSame( array( array( 'About Star.', false ) ), $result['hits'][0]['snippet_parts'] );
     }
 
     public function testSnippetsEscapeEverythingAndMarkTheWords()
@@ -247,6 +281,7 @@ class expHelpSearchTest extends PHPUnit\Framework\TestCase
     {
         $result = self::search()->search( 'the ' );
         $this->assertSame( array( 'the' ), $result['terms'] );
+        $this->assertSame( 'search', $result['mode'] );
         $this->assertSame( 0, $result['total'] );
         $this->assertArrayHasKey( 'audience', $result['facets'] );
         $this->assertSame( 'features/cache.md', self::search()->search( 'the template cache ' )['hits'][0]['id'] );

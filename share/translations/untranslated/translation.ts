@@ -14846,6 +14846,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Follow, search and cross-reference the log files.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Interface languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -56986,6 +56994,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Error digest</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Interface languages</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -64814,6 +64826,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Nothing was published in the last 14 days.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -70995,6 +71011,225 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Web server error log</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

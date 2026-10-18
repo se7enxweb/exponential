@@ -10218,7 +10218,7 @@
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Users</source>
@@ -11803,7 +11803,7 @@ You can also remove the package without uninstalling it from the package list.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>MIME type</source>
@@ -14124,7 +14124,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>حفظ</translation>
+        <translation>المتجر</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -14868,6 +14868,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>تتبّع ملفات السجل والبحث فيها والمقارنة بينها.</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>لغات الواجهة</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>الترجمة التي تعرضها كل لغة من لغات الواجهة، وما تعود إليه احتياطيًا.</translation>
     </message>
     <message>
         <source>Help center</source>
@@ -20837,7 +20845,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>empty</source>
-        <translation>إفراغ</translation>
+        <translation>فارغ</translation>
     </message>
     <message>
         <source>No setting matches.</source>
@@ -32908,7 +32916,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Count</source>
@@ -33914,7 +33922,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>State</source>
-        <translation>الحالة</translation>
+        <translation>الولاية/المنطقة</translation>
     </message>
     <message>
         <source>Email</source>
@@ -35385,7 +35393,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>State</source>
-        <translation>الحالة</translation>
+        <translation>الولاية/المنطقة</translation>
     </message>
     <message>
         <source>Comments</source>
@@ -37211,7 +37219,7 @@ your account.</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail</source>
@@ -37381,7 +37389,7 @@ your account.</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail</source>
@@ -45553,7 +45561,7 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -49676,7 +49684,7 @@ To fix this problem you must do one of the following:</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>The login name is fixed and cannot be changed.
@@ -50648,7 +50656,7 @@ See the requirements page for more information.</source>
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Full name</source>
@@ -51880,7 +51888,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>State</source>
-        <translation>الحالة</translation>
+        <translation>الولاية/المنطقة</translation>
     </message>
     <message>
         <source>Comment</source>
@@ -52538,7 +52546,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Password</source>
@@ -57128,7 +57136,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>File %1 lists no files. Copy it from the Exponential release this installation runs.</source>
-        <translation>لا يدرج الملف %1 أي ملفات. انسخه من إصدار Exponential الذي تعمل به هذه التثبيتة.</translation>
+        <translation>لا يدرج الملف %1 أي ملفات. انسخه من إصدار Exponential الذي تعمل به هذا التثبيت.</translation>
     </message>
     <message>
         <source>Site data</source>
@@ -57157,6 +57165,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Error digest</source>
         <translation>ملخص الأخطاء</translation>
+    </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>لغات الواجهة</translation>
     </message>
 </context>
 <context>
@@ -57618,7 +57630,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -57956,7 +57968,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This installation has no zip support, so an archive cannot be built.</source>
-        <translation>لا تدعم هذه التثبيتة zip، لذا لا يمكن إنشاء أرشيف.</translation>
+        <translation>لا تدعم هذا التثبيت zip، لذا لا يمكن إنشاء أرشيف.</translation>
     </message>
     <message>
         <source>The archive could not be opened for writing.</source>
@@ -57980,7 +57992,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A module called %module already exists on this installation. Two modules of the same name cannot both answer; choose another.</source>
-        <translation>توجد وحدة باسم %module بالفعل في هذه التثبيتة. لا يمكن لوحدتين بالاسم نفسه أن تجيبا معًا؛ اختر اسمًا آخر.</translation>
+        <translation>توجد وحدة باسم %module بالفعل في هذا التثبيت. لا يمكن لوحدتين بالاسم نفسه أن تجيبا معًا؛ اختر اسمًا آخر.</translation>
     </message>
     <message>
         <source>A module with no views answers nothing. Name at least one.</source>
@@ -58004,11 +58016,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A content class called %class already exists on this installation. The script this writes refuses to run against it rather than change it; choose another identifier, or expect to run this somewhere else.</source>
-        <translation>توجد فئة محتوى باسم %class بالفعل في هذه التثبيتة. يرفض البرنامج النصي الذي يُكتب هنا العمل عليها بدلًا من تغييرها؛ اختر معرّفًا آخر، أو توقّع تشغيله في مكان آخر.</translation>
+        <translation>توجد فئة محتوى باسم %class بالفعل في هذا التثبيت. يرفض البرنامج النصي الذي يُكتب هنا العمل عليها بدلًا من تغييرها؛ اختر معرّفًا آخر، أو توقّع تشغيله في مكان آخر.</translation>
     </message>
     <message>
         <source>There is no datatype called %datatype on this installation, so the attribute %attribute cannot be made. It may exist where the script is run; if it does not, the script stops there.</source>
-        <translation>لا يوجد نوع بيانات باسم %datatype في هذه التثبيتة، لذا لا يمكن إنشاء السمة %attribute. قد يكون موجودًا حيث يُشغَّل البرنامج النصي؛ وإن لم يكن، يتوقف البرنامج النصي عند هذه النقطة.</translation>
+        <translation>لا يوجد نوع بيانات باسم %datatype في هذا التثبيت، لذا لا يمكن إنشاء السمة %attribute. قد يكون موجودًا حيث يُشغَّل البرنامج النصي؛ وإن لم يكن، يتوقف البرنامج النصي عند هذه النقطة.</translation>
     </message>
     <message>
         <source>Custom tags were chosen and none were named.</source>
@@ -58016,7 +58028,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A custom tag called %tag already exists on this installation. Naming it again redefines its attributes rather than adding a tag; choose another name.</source>
-        <translation>يوجد وسم مخصص باسم %tag بالفعل في هذه التثبيتة. تسميته مرة أخرى تعيد تعريف سماته بدلًا من إضافة وسم؛ اختر اسمًا آخر.</translation>
+        <translation>يوجد وسم مخصص باسم %tag بالفعل في هذا التثبيت. تسميته مرة أخرى تعيد تعريف سماته بدلًا من إضافة وسم؛ اختر اسمًا آخر.</translation>
     </message>
     <message>
         <source>A translation needs a locale, in the shape eng-GB: three letters, a dash, two letters.</source>
@@ -58272,7 +58284,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The path is read relative to the installation root, so it wants to be %path from %root - not from wherever the setting file is.</source>
-        <translation>يُقرأ المسار نسبةً إلى جذر التثبيتة، لذا يجب أن يكون %path انطلاقًا من %root - لا من مكان ملف الإعداد.</translation>
+        <translation>يُقرأ المسار نسبةً إلى جذر التثبيت، لذا يجب أن يكون %path انطلاقًا من %root - لا من مكان ملف الإعداد.</translation>
     </message>
     <message>
         <source>If the directory should exist, create it, or correct the value of %variable in %ini [%section].</source>
@@ -58380,7 +58392,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>It extends or implements %class, and nothing on this installation declares that.</source>
-        <translation>ترث أو تنفّذ %class، ولا شيء في هذه التثبيتة يعرّفها.</translation>
+        <translation>ترث أو تنفّذ %class، ولا شيء في هذا التثبيت يعرّفها.</translation>
     </message>
     <message>
         <source>Usually an extension that needs another one. Find what provides %class and install it, or switch this extension off if it is not wanted.</source>
@@ -58404,7 +58416,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This is the fault that stopped every payment gateway on this installation loading, and the fix was one keyword in the kernel.</source>
-        <translation>هذا هو الخلل الذي منع تحميل كل بوابات الدفع في هذه التثبيتة، وكان الإصلاح كلمة مفتاحية واحدة في نواة النظام.</translation>
+        <translation>هذا هو الخلل الذي منع تحميل كل بوابات الدفع في هذا التثبيت، وكان الإصلاح كلمة مفتاحية واحدة في نواة النظام.</translation>
     </message>
     <message>
         <source>If some callers use an instance, the method has to stay as it is and the static calls have to change instead.</source>
@@ -58516,7 +58528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This installation's own database</source>
-        <translation>قاعدة بيانات هذه التثبيتة</translation>
+        <translation>قاعدة بيانات هذا التثبيت</translation>
     </message>
     <message>
         <source>Another database - given below</source>
@@ -58572,7 +58584,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose the database file, or give a path to one inside the installation.</source>
-        <translation>اختر ملف قاعدة البيانات، أو أعطِ مسارًا إلى ملف داخل التثبيتة.</translation>
+        <translation>اختر ملف قاعدة البيانات، أو أعطِ مسارًا إلى ملف داخل التثبيت.</translation>
     </message>
     <message>
         <source>An ODBC connection needs a data source name.</source>
@@ -58592,11 +58604,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Using this installation's own database.</source>
-        <translation>تُستخدم قاعدة بيانات هذه التثبيتة.</translation>
+        <translation>تُستخدم قاعدة بيانات هذا التثبيت.</translation>
     </message>
     <message>
         <source>This installation's own database is not connected.</source>
-        <translation>قاعدة بيانات هذه التثبيتة غير متصلة.</translation>
+        <translation>قاعدة بيانات هذا التثبيت غير متصلة.</translation>
     </message>
     <message>
         <source>Choose a database file.</source>
@@ -58652,7 +58664,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A class called %class already exists on this installation. Choose another name.</source>
-        <translation>توجد فئة باسم %class بالفعل في هذه التثبيتة. اختر اسمًا آخر.</translation>
+        <translation>توجد فئة باسم %class بالفعل في هذا التثبيت. اختر اسمًا آخر.</translation>
     </message>
     <message>
         <source>A datatype called %type is already installed. Two datatypes with the same identifier cannot both work; choose another.</source>
@@ -58708,7 +58720,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Additional extension roots were chosen and none were named. One per line, relative to the installation: %example</source>
-        <translation>اختيرت جذور امتدادات إضافية ولم يُسمَّ أي منها. جذر واحد في كل سطر، نسبةً إلى التثبيتة: %example</translation>
+        <translation>اختيرت جذور امتدادات إضافية ولم يُسمَّ أي منها. جذر واحد في كل سطر، نسبةً إلى التثبيت: %example</translation>
     </message>
     <message>
         <source>%root is already the first root and does not need naming again. Naming it twice changes nothing, but it reads as though it does.</source>
@@ -58724,7 +58736,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>An icon theme called %theme is already searched on this installation. Two themes of the same name shadow each other by root order rather than merging; choose another name.</source>
-        <translation>سمة أيقونات باسم %theme يُبحث فيها بالفعل في هذه التثبيتة. تحجب السمتان بالاسم نفسه إحداهما الأخرى بحسب ترتيب الجذور بدلًا من الدمج؛ اختر اسمًا آخر.</translation>
+        <translation>سمة أيقونات باسم %theme يُبحث فيها بالفعل في هذا التثبيت. تحجب السمتان بالاسم نفسه إحداهما الأخرى بحسب ترتيب الجذور بدلًا من الدمج؛ اختر اسمًا آخر.</translation>
     </message>
     <message>
         <source>Siteaccess settings were chosen and no siteaccess was named.</source>
@@ -58736,7 +58748,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>An image alias called %alias already exists on this installation. Writing it again redefines it, and every image served through it changes. Choose another name, or say so deliberately by removing this check.</source>
-        <translation>يوجد حجم صورة بديل باسم %alias بالفعل في هذه التثبيتة. كتابته مرة أخرى تعيد تعريفه، وتتغير كل صورة تُقدَّم عبره. اختر اسمًا آخر، أو عبّر عن ذلك عمدًا بإزالة هذا الفحص.</translation>
+        <translation>يوجد حجم صورة بديل باسم %alias بالفعل في هذا التثبيت. كتابته مرة أخرى تعيد تعريفه، وتتغير كل صورة تُقدَّم عبره. اختر اسمًا آخر، أو عبّر عن ذلك عمدًا بإزالة هذا الفحص.</translation>
     </message>
     <message>
         <source>Announced in %where. Read the call to see what it is handed.</source>
@@ -59427,7 +59439,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>empty</source>
-        <translation>إفراغ</translation>
+        <translation>فارغ</translation>
     </message>
     <message>
         <source>Triggers</source>
@@ -63524,7 +63536,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Logins and failed logins per day</source>
@@ -64138,7 +64150,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>Moved to the trash</source>
@@ -64985,6 +64997,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Nothing was published in the last 14 days.</source>
         <translation>لم يُنشر شيء خلال آخر 14 يومًا.</translation>
+    </message>
+    <message>
+        <source>%greeting, %name</source>
+        <translation>%greeting، %name</translation>
     </message>
     <message>
         <source>Help center</source>
@@ -66179,7 +66195,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>empty</source>
-        <translation>إفراغ</translation>
+        <translation>فارغ</translation>
     </message>
     <message>
         <source>Compiled templates run</source>
@@ -66809,7 +66825,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail address</source>
@@ -67608,7 +67624,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail</source>
@@ -68585,7 +68601,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Login</source>
-        <translation>تسجيل الدخول</translation>
+        <translation>اسم المستخدم</translation>
     </message>
     <message>
         <source>E-mail preferences administration</source>
@@ -72219,6 +72235,225 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version, name, year or revision</source>
         <translation>الإصدار أو الاسم أو السنة أو المراجعة</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>لغات الواجهة</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>تُعرض الإدارة بلغة إعداداتها المحلية. الإعدادات المحلية التي ليست لها ترجمة خاصة بها تعرض أول ترجمة في سلسلتها الاحتياطية، وإلا فالنصوص المصدرية الإنجليزية. تسرد هذه الصفحة كل إعدادات محلية مع ما تعرضه ومدى اكتماله. لا تغيّر هذه الصفحة شيئًا: تُضبط البدائل الاحتياطية في i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نظرة عامة</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>الإعدادات المحلية</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>لها ترجمة خاصة بها</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>مترجمة عبر بديل احتياطي</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>بالنصوص المصدرية الإنجليزية</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>المشكلات</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>تعود سلسلتها إلى %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>سلسلتها أطول من FallbackMaxDepth وتُقطع عند %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>تعود احتياطيًا إلى %target، وهو ليس رمز إعدادات محلية.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>تعود احتياطيًا إلى %target، الذي ليس له ملف إعدادات محلية ولا ترجمة.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>تذكر FallbackRules[] القيمة %target، وهي ليست قاعدة احتياطية.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>لها بديل احتياطي، لكن ليس لها ملف إعدادات محلية.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>تعود احتياطيًا إلى %target، الذي ليست له ترجمة بعد: تُعرض النصوص المصدرية الإنجليزية.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>كل الإعدادات المحلية</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>لا يوجد في التثبيت ملف إعدادات محلية لـ %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>ترجمة خاصة بها</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>الواجهة</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>مترجمة بنسبة %percent %</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>عبر %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>النصوص المصدرية الإنجليزية</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>الامتدادات</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated من %total مترجمة، %complete مكتملة</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>السلسلة الاحتياطية</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>لا توجد ترجمة</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>حسب FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>حسب البديل الاحتياطي التلقائي من اللغة نفسها</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>حسب القاعدة %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>لا شيء: من دون ترجمة خاصة بها تُعرض النصوص المصدرية الإنجليزية.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>الامتداد</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>مترجمة</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>الإعدادات</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count من الإعدادات المحلية لها بديل احتياطي مضبوط</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: كل ترجمات السلسلة، والأكثر تحديدًا هي الغالبة</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: أول ترجمة في السلسلة</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>مفعّل: الإعدادات المحلية التي ليست لها ترجمة ولا بديل احتياطي مضبوط تأخذ أكمل ترجمة للغتها</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>أبدًا لـ: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>معطّل</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>لا شيء</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>القائمة نفسها في سطر الأوامر: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>معروض: %count</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>إظهار</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>الإعدادات المحلية</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>اللغة</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>هذا الـ siteaccess</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>النصوص المصدرية</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>مشكلة</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated من %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % في المتوسط</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>الخطوة المميَّزة وجدها البديل الاحتياطي التلقائي من اللغة نفسها؛ أما الخطوات الأخرى فمضبوطة أو مأخوذة من قاعدة.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>لا توجد إعدادات محلية من هذا النوع.</translation>
     </message>
 </context>
 </TS>

@@ -306,6 +306,41 @@
 .a4-help-noresults { display: grid; justify-items: center; gap: var(--a4-space-2); padding: var(--a4-space-6) var(--a4-space-4); text-align: center; }
 .a4-help-noresults p { margin: 0; }
 
+/* browsing a topic: its introduction, the topic links, the page numbers */
+.a4-help-searchpage .a4-pagehead-title .a4-icon { color: var(--a4-accent-text); }
+.a4-help-catintro { max-width: 80ch; color: var(--a4-ink); font-size: var(--a4-text-m); }
+.a4-help-topics__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-topics__list a.a4-tag,
+.a4-help-topics__list a.a4-tag:visited {
+  min-height: 28px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  color: var(--a4-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.a4-help-topics__list a.a4-tag:hover { border-color: var(--a4-accent); color: var(--a4-accent-text); }
+.a4-help-topics__list a.a4-tag.is-current { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.a4-help-topics__count { color: inherit; font-weight: 400; font-variant-numeric: tabular-nums; opacity: .8; }
+.a4-help-results__list.is-browse .a4-help-result__snippet { color: var(--a4-muted); }
+.a4-help-result__title .a4-icon { color: var(--a4-accent-text); }
+.a4-help-pager__pages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--a4-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-pager__page { min-width: var(--a4-control-h); justify-content: center; font-variant-numeric: tabular-nums; }
+.a4-help-pager__page.is-current { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+
 /* ---- dashboard: audience cards------------------------------------------------------------------------------- */
 
 .a4-help { container-type: inline-size; }
@@ -814,6 +849,118 @@
   text-decoration: none;
 }
 
+/* record pages (expHelpRecordRenderer): the release and branch history as tables per series */
+.a4-help-records-intro {
+  color: var(--a4-ink);
+}
+.a4-help-records-stats {
+  color: var(--a4-muted);
+}
+.a4-help-records-group {
+  margin-top: var(--a4-space-6);
+}
+.a4-help-records .a4-help-h > .a4-tag {
+  margin-inline-start: var(--a4-space-2);
+  vertical-align: middle;
+}
+.a4-help-records-details > summary,
+.a4-help-records-range {
+  color: var(--a4-muted);
+}
+.a4-help-records-table th[scope="row"] {
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-s);
+  white-space: nowrap;
+}
+.a4-help-records-table td,
+.a4-help-records-table th {
+  font-size: var(--a4-text-s);
+}
+.a4-help-records-table time {
+  white-space: nowrap;
+}
+.a4-help-records-table tr:target {
+  outline: 2px solid var(--a4-accent);
+  outline-offset: -2px;
+}
+.a4-help-records-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-records-list > li + li {
+  margin-top: var(--a4-space-1);
+}
+.a4-help-records-key {
+  color: var(--a4-muted);
+}
+.a4-help-records-sub {
+  display: block;
+  color: var(--a4-muted);
+}
+.a4-help-records-none {
+  color: var(--a4-muted);
+  font-style: italic;
+}
+.a4-help-records-url {
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+.a4-help-records-dead {
+  margin-inline-start: var(--a4-space-1);
+  white-space: nowrap;
+}
+.a4-help-records-note {
+  font-style: italic;
+}
+.a4-help-records-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-3);
+  margin: var(--a4-space-3) 0;
+}
+.a4-help-records-filter {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+}
+.a4-help-records-filter > .a4-field {
+  min-width: 16rem;
+  max-width: 100%;
+}
+.a4-help-records-count {
+  margin: 0;
+  color: var(--a4-muted);
+}
+.a4-help-records-table tr[hidden] {
+  display: none;
+}
+.a4-help-sort {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.a4-help-sort::after {
+  content: "\2195";
+  margin-inline-start: var(--a4-space-1);
+  color: var(--a4-muted);
+}
+[aria-sort="ascending"] > .a4-help-sort::after {
+  content: "\2191";
+}
+[aria-sort="descending"] > .a4-help-sort::after {
+  content: "\2193";
+}
+@media print {
+  .a4-help-records-tools {
+    display: none;
+  }
+}
 @media print {
   .a4-help-pre,
   .a4-help-body .a4-help-pre {
@@ -863,9 +1010,13 @@
   gap: var(--a4-space-6);
   align-items: start;
 }
-.a4-help-main { grid-area: main; min-width: 0; }
-.a4-help-nav { grid-area: nav; min-width: 0; }
-.a4-help-toc-side { grid-area: toc; display: none; min-width: 0; }
+.a4-help-main { min-width: 0; }
+.a4-help-viewer-grid > .a4-help-main { grid-area: main; }
+.a4-help-nav { min-width: 0; }
+/* the areas only inside the viewer's grid: the contents page puts the tree straight into the help root, a grid too */
+.a4-help-viewer-grid > .a4-help-nav { grid-area: nav; }
+.a4-help-toc-side { display: none; min-width: 0; }
+.a4-help-viewer-grid > .a4-help-toc-side { grid-area: toc; }
 
 @container a4-help-viewer (min-width: 48rem) {
   .a4-help-viewer-grid {
@@ -1128,7 +1279,42 @@
   font-style: normal;
 }
 :where([dir="rtl"]) .a4-help-nav-link[aria-current="page"] { box-shadow: inset -3px 0 0 var(--a4-accent); }
-.a4-help-nav-text { min-width: 0; }
+.a4-help-nav-text { flex: 1 1 auto; min-width: 0; }
+.a4-help-nav-count {
+  flex: none;
+  padding: 0 var(--a4-space-1);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+.a4-help-nav li[hidden] { display: none; }
+.a4-help-nav-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0 0 var(--a4-space-3);
+}
+.a4-help-nav-filter { flex: 1 1 10rem; min-width: 0; }
+.a4-help-nav-all { font-size: var(--a4-text-xs); }
+.a4-help-section-more { display: inline-flex; align-items: center; gap: var(--a4-space-1); font-size: var(--a4-text-s); }
+
+/* The contents page (exphelp/contents): the whole tree, its top folders in columns on wide pages */
+.a4-help-contents { container-type: inline-size; container-name: a4-help-contents; }
+.a4-help-contents > .a4-help-viewer-bar,
+.a4-help-contents > .a4-help-pagehead { margin-bottom: 0; }
+.a4-help-contents > .a4-help-pagehead .a4-help-summary { margin-bottom: 0; }
+.a4-help-nav.is-contents .a4-help-nav-tools { max-width: 32rem; }
+@container a4-help-contents (min-width: 60rem) {
+  .a4-help-nav.is-contents .a4-help-nav-list.is-top { columns: 2; column-gap: var(--a4-space-6); }
+  .a4-help-nav.is-contents .a4-help-nav-list.is-top > li { break-inside: avoid-column; }
+}
+@container a4-help-contents (min-width: 90rem) {
+  .a4-help-nav.is-contents .a4-help-nav-list.is-top { columns: 3; }
+}
 
 /* The contents of the page: at the side (scrollspy marks the heading in view) or folded above the page */
 .a4-help-toc-list { margin: 0; padding: 0; list-style: none; border-inline-start: 2px solid var(--a4-line); }
@@ -1262,3 +1448,11 @@
 .a4-help-issue-security .a4-notice p { margin: 0 0 var(--a4-space-2); }
 .a4-help-issue-security-list { display: grid; gap: var(--a4-space-1); margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }
 .a4-help-issue-security-list a { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 650; }
+
+/* Forced colors (Windows high contrast) drop backgrounds: a chosen filter, the current topic and the current pager page,
+   which differ only by their background, get a Highlight outline. */
+@media (forced-colors: active) {
+  .a4-help-filter > input:checked + span,
+  .a4-help-topics__list a.a4-tag.is-current,
+  .a4-help-pager__page.is-current { outline: 2px solid Highlight; }
+}

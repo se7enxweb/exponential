@@ -251,7 +251,8 @@ class expHelpDocumentIndex
         // the code that builds the entries: a deploy of a changed parser or slugger builds the index again
         foreach ( array( __FILE__, ( new ReflectionClass( 'expHelpFrontMatter' ) )->getFileName(),
                          ( new ReflectionClass( 'expHelpAudience' ) )->getFileName(),
-                         class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '' ) as $code )
+                         class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '',
+                         class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
             if ( is_string( $code ) && $code !== '' )
                 $parts[] = basename( $code ) . ':' . (int)@filemtime( $code ) . ':' . (int)@filesize( $code );
         if ( $this->statFiles )
@@ -856,11 +857,17 @@ class expHelpDocumentIndex
                     $title = $heading['text'];
                     break;
                 }
+        // a plain text list of records (the release and branch history) is titled and summarized by its records
+        $records = $format === 'text' && strpos( $body, "\n- " ) !== false ? ( new expHelpRecordRenderer() )->describe( $body ) : null;
+        if ( $title === '' && $records !== null )
+            $title = $records['title'];
         if ( $title === '' )
             $title = self::fallbackTitle( $path, $body );
 
         $summary = isset( $meta['summary'] ) && is_string( $meta['summary'] ) ? trim( $meta['summary'] )
                  : ( isset( $meta['description'] ) && is_string( $meta['description'] ) ? trim( $meta['description'] ) : '' );
+        if ( $summary === '' && $records !== null )
+            $summary = $records['summary'];
         if ( $summary === '' )
             $summary = self::summary( $body, $format );
         $summary = self::truncate( $summary, self::SUMMARY_LENGTH );
@@ -903,6 +910,8 @@ class expHelpDocumentIndex
             'changed'  => $mtime,
             'size'     => isset( $file['size'] ) ? (int)$file['size'] : strlen( $text ),
             'root'     => isset( $file['root'] ) ? $file['root'] : strtok( $path, '/' ),
+            // the newest major version a record page (the release history) covers; search ranks older versions lower
+            'version'  => $records !== null ? $records['version'] : '',
         );
     }
 
@@ -1051,6 +1060,9 @@ class expHelpDocumentIndex
                 continue;
             if ( preg_match( '/^title:\s*(.+)$/i', $line, $m ) )
                 $line = rtrim( trim( $m[1] ), '.' );
+            // a label that opens a list ("2.9-3:", "stable/3.0:") names nothing: the file name does
+            elseif ( substr( $line, -1 ) === ':' )
+                break;
             if ( mb_strlen( $line, 'UTF-8' ) <= 80 && !preg_match( '/^[0-9a-f]{7,}\b|^(\$|<|\{|https?:)/', $line ) )
                 return self::inlineText( $line );
             break;
@@ -1204,7 +1216,7 @@ class expHelpDocumentIndex
         $temporary = $dir . '/.' . $name . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         if ( @file_put_contents( $temporary, $content, LOCK_EX ) === false )
             return false;
-        @chmod( $temporary, self::filePermissions() );
+        @chmod( $temporary, eZFile::fileMode( self::filePermissions() ) );
         if ( !@rename( $temporary, $dir . '/' . $name ) )
         {
             @unlink( $temporary );
@@ -1245,6 +1257,6 @@ class expHelpDocumentIndex
         if ( class_exists( 'eZDir' ) )
             eZDir::mkdir( $dir, false, true );
         else
-            @mkdir( $dir, 0777, true );
+            @mkdir( $dir, eZDir::dirMode( 0777 ), true );
     }
 }
