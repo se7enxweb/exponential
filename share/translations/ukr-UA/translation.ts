@@ -71102,4 +71102,99 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Журнал помилок вебсервера</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Довідка</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Пошук</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Пошук у довідці</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Повідомити про помилку</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Копіювати</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Скопійовано</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Не вдалося скопіювати</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Нічого не знайдено</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Результатів: %count</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Пошук...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Пошук зараз недоступний.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Згорнути</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Розгорнути</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Жодна сторінка не містить усіх слів; ці містять деякі з них.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Очистити</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Початок роботи</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Вміст і редагування</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Адміністрування</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Розробка</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Встановлення й оновлення</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Примітки до випуску</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Історія</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Довідник</translation>
+    </message>
+</context>
 </TS>

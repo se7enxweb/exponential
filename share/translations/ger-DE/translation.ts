@@ -78122,4 +78122,99 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Fehlerprotokoll des Webservers</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Hilfe</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Hilfe durchsuchen</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Fehler melden</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopiert</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Kopieren fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Keine Treffer</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count Treffer</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Suche läuft...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Die Suche ist gerade nicht verfügbar.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Einklappen</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Ausklappen</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Keine Seite enthält alle Wörter; diese enthalten einige davon.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leeren</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Erste Schritte</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Inhalte und Bearbeitung</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Verwaltung</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Installation und Aktualisierung</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Versionshinweise</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Geschichte</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Referenz</translation>
+    </message>
+</context>
 </TS>

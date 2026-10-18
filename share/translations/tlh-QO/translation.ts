@@ -71117,4 +71117,99 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>jabwI&apos; Qagh wanI&apos; tetlh</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>QaH</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>yInej</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>QaH yInej</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Qagh yIja&apos;</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>yIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>qonqa&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>qonqa&apos;laHbe&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>pagh tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>nejlI&apos;...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>DaH nejlu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>yIQIH</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>yIDach</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Hoch mu&apos; ghajbe&apos; pagh nav; &apos;op ghaj nav&apos;meyvam.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>yIchImmoH</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>wa&apos;DIch mIw</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>De&apos; &apos;ej choHmeH mIw</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>loHghach</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>chenmoHmeH Daq</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>jom &apos;ej Dub</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>chen ghItlh</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>qun</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>De&apos; paq</translation>
+    </message>
+</context>
 </TS>

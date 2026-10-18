@@ -71117,4 +71117,99 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Acta errorum servitri interretialis</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Auxilium</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Quaerere</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>In auxilio quaerere</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Errorem nuntiare</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Exscribere</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Exscriptum</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Exscribere non successit</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Nulla inventa</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count inventa</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Quaeritur...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Quaerere nunc non licet.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Contrahere</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Explicare</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Nulla pagina omnia verba habet; hae quaedam habent.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Purgare</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Initia</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Contenta et emendatio</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administratio</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Evolutio</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Institutio et renovationes</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Notae editionis</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historia</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Index rerum</translation>
+    </message>
+</context>
 </TS>

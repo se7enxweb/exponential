@@ -72512,4 +72512,99 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Journal d&apos;erreurs du serveur web</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Aide</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Recherche</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Rechercher dans l&apos;aide</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Signaler une erreur</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copier</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copié</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>La copie a échoué</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Aucun résultat</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count résultats</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Recherche en cours...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>La recherche n&apos;est pas disponible pour le moment.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Réduire</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Développer</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Aucune page ne contient tous les mots ; celles-ci en contiennent une partie.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Vider</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Premiers pas</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Contenu et édition</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Développement</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Installation et mises à jour</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Notes de version</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historique</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Référence</translation>
+    </message>
+</context>
 </TS>

@@ -71116,4 +71116,99 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>יומן השגיאות של שרת האינטרנט</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>עזרה</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>חיפוש</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>חיפוש בעזרה</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>דיווח על שגיאה</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>העתקה</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>הועתק</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>ההעתקה נכשלה</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>אין תוצאות</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count תוצאות</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>מחפש...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>החיפוש אינו זמין כרגע.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>כיווץ</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>הרחבה</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>אף דף אינו מכיל את כל המילים; בדפים אלה יש חלק מהן.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ניקוי</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>צעדים ראשונים</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>תוכן ועריכה</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ניהול</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>פיתוח</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>התקנה ושדרוגים</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>הערות גרסה</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>היסטוריה</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>סימוכין</translation>
+    </message>
+</context>
 </TS>

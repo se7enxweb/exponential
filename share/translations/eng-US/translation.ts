@@ -71178,4 +71178,99 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Web server error log</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Help</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Search</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Search the help</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Report an error</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copy</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copied</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Copying failed</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>No results</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count results</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Searching...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>The search is not available right now.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Collapse</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Expand</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>No page has every word; these have some of them.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Clear</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Getting started</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Content and editing</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Development</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Installation and upgrades</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Release notes</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>History</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Reference</translation>
+    </message>
+</context>
 </TS>
