@@ -14853,6 +14853,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>تتبّع ملفات السجل والبحث فيها والمقارنة بينها.</translation>
     </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>لغات الواجهة</translation>
+    </message>
+    <message>
+        <source>The translation each interface language shows, and what it falls back to.</source>
+        <translation>الترجمة التي تعرضها كل لغة من لغات الواجهة، وما تعود إليه احتياطيًا.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -57134,6 +57142,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Error digest</source>
         <translation>ملخص الأخطاء</translation>
     </message>
+    <message>
+        <source>Interface languages</source>
+        <translation>لغات الواجهة</translation>
+    </message>
 </context>
 <context>
     <name>kernel/shop</name>
@@ -71144,6 +71156,225 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Web server error log</source>
         <translation>سجل أخطاء خادم الويب</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/languages</name>
+    <message>
+        <source>Interface languages</source>
+        <translation>لغات الواجهة</translation>
+    </message>
+    <message>
+        <source>The administration is shown in the language of its locale. A locale without a translation of its own shows the first translation of its fallback chain, else the English source texts. This page lists each locale with what it shows and how complete that is. It changes nothing: the fallbacks are set in i18n.ini [TranslationSettings].</source>
+        <translation>تُعرض الإدارة بلغة إعداداتها المحلية. الإعدادات المحلية التي ليست لها ترجمة خاصة بها تعرض أول ترجمة في سلسلتها الاحتياطية، وإلا فالنصوص المصدرية الإنجليزية. تسرد هذه الصفحة كل إعدادات محلية مع ما تعرضه ومدى اكتماله. لا تغيّر هذه الصفحة شيئًا: تُضبط البدائل الاحتياطية في i18n.ini [TranslationSettings].</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نظرة عامة</translation>
+    </message>
+    <message>
+        <source>Locales</source>
+        <translation>الإعدادات المحلية</translation>
+    </message>
+    <message>
+        <source>With a translation of their own</source>
+        <translation>لها ترجمة خاصة بها</translation>
+    </message>
+    <message>
+        <source>Translated through a fallback</source>
+        <translation>مترجمة عبر بديل احتياطي</translation>
+    </message>
+    <message>
+        <source>In the English source texts</source>
+        <translation>بالنصوص المصدرية الإنجليزية</translation>
+    </message>
+    <message>
+        <source>Problems</source>
+        <translation>المشكلات</translation>
+    </message>
+    <message>
+        <source>Its chain comes back to %target.</source>
+        <translation>تعود سلسلتها إلى %target.</translation>
+    </message>
+    <message>
+        <source>Its chain is longer than FallbackMaxDepth and is cut at %target.</source>
+        <translation>سلسلتها أطول من FallbackMaxDepth وتُقطع عند %target.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which is no locale code.</source>
+        <translation>تعود احتياطيًا إلى %target، وهو ليس رمز إعدادات محلية.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has neither a locale file nor a translation.</source>
+        <translation>تعود احتياطيًا إلى %target، الذي ليس له ملف إعدادات محلية ولا ترجمة.</translation>
+    </message>
+    <message>
+        <source>FallbackRules[] names %target, which is no fallback rule.</source>
+        <translation>تذكر FallbackRules[] القيمة %target، وهي ليست قاعدة احتياطية.</translation>
+    </message>
+    <message>
+        <source>Has a fallback, but no locale file.</source>
+        <translation>لها بديل احتياطي، لكن ليس لها ملف إعدادات محلية.</translation>
+    </message>
+    <message>
+        <source>Falls back to %target, which has no translation yet: it shows the English source texts.</source>
+        <translation>تعود احتياطيًا إلى %target، الذي ليست له ترجمة بعد: تُعرض النصوص المصدرية الإنجليزية.</translation>
+    </message>
+    <message>
+        <source>All locales</source>
+        <translation>كل الإعدادات المحلية</translation>
+    </message>
+    <message>
+        <source>The installation has no locale file for %locale.</source>
+        <translation>لا يوجد في التثبيت ملف إعدادات محلية لـ %locale.</translation>
+    </message>
+    <message>
+        <source>Translation of its own</source>
+        <translation>ترجمة خاصة بها</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>الواجهة</translation>
+    </message>
+    <message>
+        <source>%percent % translated</source>
+        <translation>مترجمة بنسبة %percent %</translation>
+    </message>
+    <message>
+        <source>through %locale</source>
+        <translation>عبر %locale</translation>
+    </message>
+    <message>
+        <source>English source texts</source>
+        <translation>النصوص المصدرية الإنجليزية</translation>
+    </message>
+    <message>
+        <source>Extensions</source>
+        <translation>الامتدادات</translation>
+    </message>
+    <message>
+        <source>%translated of %total translated, %complete complete</source>
+        <translation>%translated من %total مترجمة، %complete مكتملة</translation>
+    </message>
+    <message>
+        <source>Fallback chain</source>
+        <translation>السلسلة الاحتياطية</translation>
+    </message>
+    <message>
+        <source>no translation</source>
+        <translation>لا توجد ترجمة</translation>
+    </message>
+    <message>
+        <source>by FallbackLanguages[]</source>
+        <translation>حسب FallbackLanguages[]</translation>
+    </message>
+    <message>
+        <source>by the automatic same-language fallback</source>
+        <translation>حسب البديل الاحتياطي التلقائي من اللغة نفسها</translation>
+    </message>
+    <message>
+        <source>by the rule %rule</source>
+        <translation>حسب القاعدة %rule</translation>
+    </message>
+    <message>
+        <source>None: without a translation of its own it shows the English source texts.</source>
+        <translation>لا شيء: من دون ترجمة خاصة بها تُعرض النصوص المصدرية الإنجليزية.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>الامتداد</translation>
+    </message>
+    <message>
+        <source>Translated</source>
+        <translation>مترجمة</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>الإعدادات</translation>
+    </message>
+    <message>
+        <source>%count locales with a configured fallback</source>
+        <translation>%count من الإعدادات المحلية لها بديل احتياطي مضبوط</translation>
+    </message>
+    <message>
+        <source>merge: every translation of the chain, the most specific winning</source>
+        <translation>merge: كل ترجمات السلسلة، والأكثر تحديدًا هي الغالبة</translation>
+    </message>
+    <message>
+        <source>first: the first translation of the chain</source>
+        <translation>first: أول ترجمة في السلسلة</translation>
+    </message>
+    <message>
+        <source>enabled: a locale without a translation and without a configured fallback takes the most complete translation of its language</source>
+        <translation>مفعّل: الإعدادات المحلية التي ليست لها ترجمة ولا بديل احتياطي مضبوط تأخذ أكمل ترجمة للغتها</translation>
+    </message>
+    <message>
+        <source>Never for: %list</source>
+        <translation>أبدًا لـ: %list</translation>
+    </message>
+    <message>
+        <source>disabled</source>
+        <translation>معطّل</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>لا شيء</translation>
+    </message>
+    <message>
+        <source>The same list on the command line: %command</source>
+        <translation>القائمة نفسها في سطر الأوامر: %command</translation>
+    </message>
+    <message>
+        <source>%count shown</source>
+        <translation>معروض: %count</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>إظهار</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation>الإعدادات المحلية</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>اللغة</translation>
+    </message>
+    <message>
+        <source>This siteaccess</source>
+        <translation>هذا الـ siteaccess</translation>
+    </message>
+    <message>
+        <source>source texts</source>
+        <translation>النصوص المصدرية</translation>
+    </message>
+    <message>
+        <source>problem</source>
+        <translation>مشكلة</translation>
+    </message>
+    <message>
+        <source>%translated of %total</source>
+        <translation>%translated من %total</translation>
+    </message>
+    <message>
+        <source>%percent % on average</source>
+        <translation>%percent % في المتوسط</translation>
+    </message>
+    <message>
+        <source>A highlighted step was found by the automatic same-language fallback; the others are configured or come from a rule.</source>
+        <translation>الخطوة المميَّزة وجدها البديل الاحتياطي التلقائي من اللغة نفسها؛ أما الخطوات الأخرى فمضبوطة أو مأخوذة من قاعدة.</translation>
+    </message>
+    <message>
+        <source>No locale is of this kind.</source>
+        <translation>لا توجد إعدادات محلية من هذا النوع.</translation>
     </message>
 </context>
 </TS>
