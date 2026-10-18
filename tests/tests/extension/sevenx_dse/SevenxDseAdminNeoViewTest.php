@@ -115,7 +115,7 @@ class SevenxDseAdminNeoViewTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'try', preg_replace( '~//[^\n]*~', '', $run ), 'run() has no try block' );
         $retire = strpos( $run, 'self::retireWorkerAfterResponse()' );
         $include = strpos( $run, 'self::includeAdminNeo(' );
-        $exit = strpos( $run, '\eZExecution::cleanExit()' );
+        $exit = strrpos( $run, '\eZExecution::cleanExit()' ); // the last one: a used worker ends earlier (#619)
         $this->assertNotFalse( $retire );
         $this->assertNotFalse( $include );
         $this->assertNotFalse( $exit );
