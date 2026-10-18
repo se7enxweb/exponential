@@ -39,6 +39,7 @@
     'user_hygiene',       'Check user accounts'|i18n( 'design/admin/parts/setup/menu' ),
     'sitedata',           'Site data'|i18n( 'design/admin/parts/setup/menu' ),
     'system_information', 'System information'|i18n( 'design/admin/parts/setup/menu' ),
+    'help_center',        'Help center'|i18n( 'design/admin/parts/setup/menu' ),
     'upgrade_check',      'Upgrade check'|i18n( 'design/admin/parts/setup/menu' ),
     'triggers',           'Triggers'|i18n( 'design/admin/parts/setup/menu' ),
     'url_management',     'Link management'|i18n( 'design/admin/parts/setup/menu' ),

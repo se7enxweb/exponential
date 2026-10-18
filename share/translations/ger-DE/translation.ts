@@ -16324,6 +16324,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Weitere Informationen finden Sie unter &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -16843,6 +16847,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>Open your user object</source>
         <translation>Eigenes Benutzerobjekt öffnen</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -17170,6 +17178,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Ihr Name, Ihre E-Mail-Adresse und weitere Angaben.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Anleitungen, Suche und wie Sie einen Fehler melden.</translation>
     </message>
 </context>
 <context>
@@ -17579,6 +17595,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Die Logdateien verfolgen, durchsuchen und querverweisen.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Anleitungen, Suche und wie Sie einen Fehler melden.</translation>
     </message>
 </context>
 <context>
@@ -73475,6 +73499,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Show the numbers</source>
         <translation>Zahlen anzeigen</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Hilfe-Center</translation>
     </message>
 </context>
 <context>
