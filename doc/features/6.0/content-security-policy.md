@@ -418,3 +418,15 @@ where a feature needs one.
 the kernel's enforced policy for that response; the stricter report-only companion stays. That is intended: the view's
 policy fits its own inline scripts. A view that wants the kernel's policy as well adds its header with
 `header( ..., false )`.
+Not every server lets the view's header replace the kernel's: Exponential Velocity keeps the kernel's enforced policy
+for AdminNeo's response. List such a view in `ReportOnlyViews[]` (`module/view`); the kernel then sends its policy
+report-only for that view, so the view's own policy is the only one enforced:
+
+```ini
+[ContentSecurityPolicy]
+ReportOnlyViews[]=dse/adminneo
+```
+
+`'report-sample'` in `script-src` and `style-src` (for example `Directives[script-src]='self' 'report-sample'`) makes
+browsers send the first 40 characters of a blocked inline script or style with the report; `csp.log` shows them as
+`sample="..."`. It changes nothing about what the policy allows.

@@ -3253,7 +3253,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-10e9522233a7caacef70b93b816d3df2  doc/changelogs/6.0/6.0.15.md
+7685d4a1bb3a951529bbd2bbf1aff29b  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -3594,7 +3594,7 @@ a7de42ade5e309311b5e346ced1a7cf2  doc/features/6.0/clean-install-defaults.md
 7c5f248706ac05dd54ed07abbcb7bb83  doc/features/6.0/content-finder.md
 f1c1fb56a9242d2efa91dd58ead7449e  doc/features/6.0/content-jobs.md
 0e0369149f51247d6b31d8fcfe8fb949  doc/features/6.0/content-limitation-handlers.md
-0c35049b3484becd7d593bcf66b4c680  doc/features/6.0/content-security-policy.md
+03437e5b4bce1615e092d63127278518  doc/features/6.0/content-security-policy.md
 d2aeb94cafe09e6bda98c15168826937  doc/features/6.0/country-groups.md
 75c167003b97bad4b0226315b2182509  doc/features/6.0/cronjob-part-filter.md
 35be9b689349870dbd25f7737b4c0cb6  doc/features/6.0/cronjob-pause.md
@@ -5894,7 +5894,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 3a2502512e2a0a3ccb164d51db7a3889  kernel/private/classes/exceptions/kernel/moduleviewdisabled.php
 2898970b3f0a92a99c65c02bf7b1ffab  kernel/private/classes/exceptions/kernel/moduleviewnotfound.php
 330a3389deaa6670e6677eaf993b9a73  kernel/private/classes/expcontentaccessreport.php
-2012a3f8a2cf9c54b6aae2d04abf02a8  kernel/private/classes/expcontentsecuritypolicy.php
+aab9f5cb84611f6efa382e83b90a342b  kernel/private/classes/expcontentsecuritypolicy.php
 774b249d5d747623e1d63ec5d7c976d5  kernel/private/classes/expcontentsecuritypolicyreport.php
 7006dcb750cb36c53efb10d3cd301720  kernel/private/classes/expfileconsistencyreport.php
 30b99d6b38fac3eb85094f52e824516c  kernel/private/classes/expschemaconsistencyreport.php
@@ -6874,7 +6874,7 @@ ad97f94775c35151cdab893306a21b6e  settings/rest.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-d2cde6e4fc8e03790fb556523f70ebc5  settings/site.ini
+087d35e29a62bf51ba85e29b07934126  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -8695,7 +8695,7 @@ fa6dd2b59cf85f7b5e628292568c3244  tests/tests/kernel/logviewer/expLogHealthTest.
 e9db92ed572648e00f5f0fbf1956bd4c  tests/tests/kernel/logviewer/expLogManagerFallbackTest.php
 46f8bc21f64d617aab3f625ffd32b209  tests/tests/kernel/logviewer/expLogManagerTest.php
 32c949b29fc85c98a6e6272e09f157f7  tests/tests/kernel/logviewer/expLogMaskedFilterTest.php
-c2358e3dec36ff4455e3a97b046a72bc  tests/tests/kernel/logviewer/expLogNumericKeyTest.php
+38e5484410cb8df17cc77dff80d1e7fc  tests/tests/kernel/logviewer/expLogNumericKeyTest.php
 cf659ce9a5d8174daa838f20f12ac9b1  tests/tests/kernel/logviewer/expLogParserTest.php
 7ca6ac5eec7f9a7e802fd7f852a2849c  tests/tests/kernel/logviewer/expLogPermalinkTest.php
 777b688d58416f641f1bdc7aa6fc61a1  tests/tests/kernel/logviewer/expLogRedactorTest.php
@@ -8710,7 +8710,7 @@ f1ed9827441bcdec26fee547eb0757de  tests/tests/kernel/logviewer/expLogWebServerFo
 aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 60f8f3fb91c8a7da7e20ca1f9c518136  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
 d74dbdb50cbaeff996f841e63a2de9c8  tests/tests/kernel/private/classes/expContentSecurityPolicyReportTest.php
-e9a48b4fe06371aac0b69750fe319beb  tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php
+1b02f4ed24a2eb1c795a5baeb4308753  tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php
 b6656c954acf5e5f6db1a2607a7564e4  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
 0133feca9084b5d356221439d79d6841  tests/tests/kernel/private/classes/ezpExtensionInfoTest.php
 5277128e032a8ba916fd550e97672c58  tests/tests/kernel/private/classes/ezpFormTokenRefusalTest.php

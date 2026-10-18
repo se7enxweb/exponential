@@ -14,7 +14,8 @@
  *   block and blocks nothing), enforce (Content-Security-Policy), or auto: report-only on an administration
  *   siteaccess ([DesignSettings] SiteDesign or one of AdditionalSiteDesignList[] begins with "admin"), disabled
  *   elsewhere. ReportOnlyDesigns[]: designs whose requests stay report-only under Mode=enforce (the classic
- *   administration, with inline code, which a user can pick with the UI switch).
+ *   administration, with inline code, which a user can pick with the UI switch). ReportOnlyViews[]: the same for views
+ *   (module/view) that send a policy of their own.
  * - Directives[<directive>]=<sources>: the policy, one directive per entry; an empty value leaves the directive out.
  *   frame-ancestors and sandbox are sent only when the policy is enforced (browsers ignore them in report-only).
  * - AdditionalSources[]=<directive> <sources>: sources added to a directive of Directives[], a list so that several
@@ -66,11 +67,12 @@ class expContentSecurityPolicy
      * when the reports go to an absolute address.
      *
      * @param eZINI|null $ini site.ini; null: the current siteaccess's
+     * @param string|null $view module/view of the request, for ReportOnlyViews[]; null: the current request's
      * @return array header name => value
      */
-    public static function headers( $ini = null )
+    public static function headers( $ini = null, $view = null )
     {
-        $settings = self::settings( $ini );
+        $settings = self::settings( $ini, $view );
         $mode = $settings['mode'];
         if ( $mode === self::MODE_DISABLED )
             return array();
@@ -186,7 +188,7 @@ class expContentSecurityPolicy
      * @param eZINI|null $ini
      * @return array
      */
-    private static function settings( $ini )
+    private static function settings( $ini, $view = null )
     {
         if ( !$ini instanceof eZINI )
             $ini = eZINI::instance();
@@ -202,6 +204,12 @@ class expContentSecurityPolicy
         if ( $mode === self::MODE_ENFORCE
              && self::designListed( $siteDesign, $value( 'ContentSecurityPolicy', 'ReportOnlyDesigns', array() ) ) )
             $mode = self::MODE_REPORT_ONLY;
+        // A view that sends a policy of its own (for its own inline scripts) is not enforced by the kernel's: under a
+        // server that does not let the view's header replace the kernel's, both would apply and block the view
+        if ( $mode === self::MODE_ENFORCE
+             && self::designListed( $view === null ? self::currentView() : $view,
+                                    $value( 'ContentSecurityPolicy', 'ReportOnlyViews', array() ) ) )
+            $mode = self::MODE_REPORT_ONLY;
         return array(
             'mode' => $mode,
             'directives' => $value( 'ContentSecurityPolicy', 'Directives', array() ),
@@ -215,7 +223,23 @@ class expContentSecurityPolicy
     }
 
     /**
-     * Whether a design is in ReportOnlyDesigns[] (names compared without case).
+     * The module/view of the current request ("dse/adminneo"), from the request's URI after the siteaccess was
+     * matched; empty before that or outside a web request.
+     *
+     * @return string
+     */
+    public static function currentView()
+    {
+        if ( !isset( $GLOBALS['eZURIRequestInstance'] ) || !$GLOBALS['eZURIRequestInstance'] instanceof eZURI )
+            return '';
+        $uri = $GLOBALS['eZURIRequestInstance'];
+        $module = (string)$uri->element( 0 );
+        $view = (string)$uri->element( 1 );
+        return $module === '' ? '' : strtolower( $module . '/' . $view );
+    }
+
+    /**
+     * Whether a design (or a module/view) is in a list such as ReportOnlyDesigns[] (names compared without case).
      *
      * @param mixed $siteDesign [DesignSettings] SiteDesign
      * @param mixed $designs ReportOnlyDesigns[]
