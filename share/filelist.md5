@@ -3037,7 +3037,7 @@ cf9e3712f778ce6bfbb6aaca39d7f82b  doc/bc/6.0/expinfo-operator.md
 14c4b5bce1de1987b27c6063156cb566  doc/bc/6.0/exponentialsdk-and-exponential-cron.md
 e03549b98a5316616e86c5e6aea94193  doc/bc/6.0/extension-package-secret-check.md
 752aea91430d400eddc733c9ca34c007  doc/bc/6.0/extensions-behaviour-changes.md
-e77db7f5d239cecbc118152a1b49b684  doc/bc/6.0/ezoe-tinymce8.md
+f7b960f9e3417b2f6b65b82c1bd5f7c2  doc/bc/6.0/ezoe-tinymce8.md
 02f9c4098af6775e9b9fc4a0553bf473  doc/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
 4182afe4de0ebf523b622ca208b721fe  doc/bc/6.0/file-modes.md
 2830240c5b94103d5fc28cb3e736daba  doc/bc/6.0/frankenphp.md
@@ -4454,10 +4454,10 @@ b0f5bd88831c7033e2c72319ff3efaa5  extension/ezoe/TODO
 9655931d38090a38cdae06a00209c79a  extension/ezoe/autoloads/eztemplateautoload.php
 14d7547c20ad560e0b1bec59c7f25206  extension/ezoe/changelog.txt
 066a5e61612ca5b7e5f6a3165be95ec2  extension/ezoe/classes/expoeauditbranch.php
-136a45f5769d05111b03d1e69b2ccbad  extension/ezoe/classes/expoeeditor.php
-635f6cc4e77fb1a603e7afc035ceee0c  extension/ezoe/classes/expoeeditorengine.php
-90dedcb598e6890bff82ca5e3d9a2822  extension/ezoe/classes/expoeeditorenginebase.php
-9967558259bbaaae5656e5e65ba44da7  extension/ezoe/classes/expoetinymce3engine.php
+3c1ad617d3b937971bbd562769f277d3  extension/ezoe/classes/expoeeditor.php
+4e92233528cb5b86d6bd8394393314f8  extension/ezoe/classes/expoeeditorengine.php
+76389da812c5af5a0b8384e944134020  extension/ezoe/classes/expoeeditorenginebase.php
+1ec8203cfd646d8a946621707f895770  extension/ezoe/classes/expoetinymce3engine.php
 4976171ff2e48212bfe82cc1119d0018  extension/ezoe/classes/expoetinymce8engine.php
 a816b6bff7b91f94b91681927dd330eb  extension/ezoe/classes/expoeurlexception.php
 e1d52c075995457287ece4462015a16e  extension/ezoe/classes/expoeurlfetcher.php
@@ -7953,6 +7953,7 @@ a7f1588e0a629132d1903a8cb5a065a7  tests/tests/extension/ezjscore/ezjscServerFunc
 66e6cbee478fb7265fcc9ee62f4981c3  tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php
 dfb38e0e8ada903c6cf26e6b85182c3d  tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php
 6af13ee38eecd73f9d1a8488684b3b9d  tests/tests/extension/ezoe/expOEAtdRemovedTest.php
+2267db5c84398aaead9c2fb2019917ec  tests/tests/extension/ezoe/expOEContentSecurityPolicyEngineTest.php
 be082c2cbbd69c12eee01261f6b2f622  tests/tests/extension/ezoe/expOEContentTypeAndLoadTest.php
 6906807b9889862db50ae887ad8a8a8d  tests/tests/extension/ezoe/expOECustomTagAssetsTest.php
 e705197d70c864da1fd7a87fb1e031f9  tests/tests/extension/ezoe/expOECustomTagListTest.php
@@ -7977,7 +7978,7 @@ dbd0bda355096c5da0a52429cb51a1a9  tests/tests/extension/ezoe/expOEInputValidFlag
 9a7f16efa0e2944384ae92ca524a9ede  tests/tests/extension/ezoe/expOEPastedStylesTest.php
 56d13995de752f9df356105bb88a23d9  tests/tests/extension/ezoe/expOERelationsEmbedIdTest.php
 99228dda821a37c0106edf780cc078b8  tests/tests/extension/ezoe/expOERoundTripTest.php
-701eb4e58b81d2f7aefd4c80e55301c8  tests/tests/extension/ezoe/expOETestCase.php
+729ae2b177774365bcaa285e8e611f4c  tests/tests/extension/ezoe/expOETestCase.php
 36373666aad7344d51c42d386bcb5a74  tests/tests/extension/ezoe/expOEUploadExecutableTest.php
 1ed3c1be8e04c209b35c7ecc5c8bfe83  tests/tests/extension/ezoe/expOEUploadPostStringTest.php
 abe87695b0129240038005d88c363c48  tests/tests/extension/ezoe/expOEUploadRulesTest.php

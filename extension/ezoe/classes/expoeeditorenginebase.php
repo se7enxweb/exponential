@@ -28,6 +28,15 @@ abstract class expOEEditorEngineBase implements expOEEditorEngine
         return true;
     }
 
+    /**
+     * @return bool whether the engine needs inline scripts or event handler attributes (optional, see
+     *              expOEEditorEngine); [Engine_<id>] NeedsInlineScripts=true, false when not set
+     */
+    public function needsInlineScripts()
+    {
+        return $this->setting( 'NeedsInlineScripts', 'false' ) === 'true';
+    }
+
     /** @return string the version of the editor, shown on ezoe/engine; [Engine_<id>] Version, '' when unknown */
     public function version()
     {
