@@ -1669,6 +1669,12 @@
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
       "tests/tests/kernel/classes/help/expHelpLinksTest.php"
     ],
+    "kernel/classes/help/exphelpexamplesgenerator.php": [
+      "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php"
+    ],
+    "kernel/private/classes/commands/exphelpexamples.php": [
+      "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php"
+    ],
     "kernel/classes/help/exphelpallowlist.php": [
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php"

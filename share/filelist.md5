@@ -23,7 +23,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 c0734b489466065315b286a540851aa0  README.md
 fd07fac4ce74813bf1e9bda18fbcf1b0  SECURITY.md
 7a103568d7c533e99e2d7a5e9f1b5ffb  autoload.php
-20a1c4790103ea8a508150b339c51c19  autoload/ezp_kernel.php
+ab7a520d3f925a9862f7161f6c7f2dba  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -72,6 +72,7 @@ c0e2aa3b432485dd3e2c0edad20c76c5  bin/php/dfscleanup.php
 f0f67c88d699385e2c4f30e0c72a413f  bin/php/expcontentjob.php
 cb1ca5dda99e313bd81d336a932992eb  bin/php/exphelp.php
 193d8125cb80843e5f5080f7d81bc4cc  bin/php/exphelpcontent.php
+de75e5edac1a1026586488f132510f7f  bin/php/exphelpexamples.php
 750486c94e3433b65e6e660310dbfeaa  bin/php/explogs.php
 11d39b208faceec003544ef794daf0aa  bin/php/exploremipsumfill.php
 6a4db46d8822245538c5ab3e1a5ccc3a  bin/php/explovestack.php
@@ -5511,6 +5512,7 @@ ccb98eef4c622a21501d839063227698  kernel/classes/help/content/exphelpcontentvali
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 705e12f46e612abaecfd6cd91913b884  kernel/classes/help/exphelpcontextregistry.php
 9cf67f7e61b74576a3a5655b49dcc505  kernel/classes/help/exphelpdocumentindex.php
+c2210a87dc934b662c651b5c62ab4b8f  kernel/classes/help/exphelpexamplesgenerator.php
 d737f4b8cee16a8ecd9af63aa5d73613  kernel/classes/help/exphelpfrontmatter.php
 2b4f170525630a0acb5287c535570570  kernel/classes/help/exphelpfunctioncollection.php
 17d029ee9edac44ce5ec6bfdb6436178  kernel/classes/help/exphelphighlighter.php
@@ -5923,6 +5925,7 @@ f12e48ebe5663a2c1f489acdd31489af  kernel/private/classes/commands/convertprice2m
 629cddb79ec70350f282b31fd6fe7387  kernel/private/classes/commands/expcontentjob.php
 6d5cfb901ac00dadb2951404ea2bc845  kernel/private/classes/commands/exphelp.php
 e780223983e471ff9dc6495ba70ce155  kernel/private/classes/commands/exphelpcontent.php
+0d636b43ceb568f366a92e759cca070a  kernel/private/classes/commands/exphelpexamples.php
 38cae746f9bac5322791cb4baa80962d  kernel/private/classes/commands/explogs.php
 18d2c1913478f7c8b2d159c94a55cd54  kernel/private/classes/commands/exploremipsumfill.php
 a9b9d8e9a77fb33ca2dc94227b9c3c4a  kernel/private/classes/commands/explovestack.php
@@ -7941,7 +7944,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-f903451891afccfd2d50804f2c9115fe  tests/test-map.json
+36c6c2e4cfa244448a2751a076e64aa7  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -8545,6 +8548,7 @@ d1046a764cd9965e41cb1a4576148d32  tests/tests/kernel/classes/help/expHelpContent
 19fa0f5f2358b00a9b0a8b6fe0a822ca  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 d5f0c069ee7bdfa401c24c1a92e29968  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
 63751e825a3e7a8eab2e03bde858a6e7  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
+16faa84a8e0b1443114bb00b44e3aee9  tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php
 71c9e5ae21978534c250ee6455633a7e  tests/tests/kernel/classes/help/expHelpIssueReportTest.php
 c76de01464fb1ec244257b1d8283d9e6  tests/tests/kernel/classes/help/expHelpLicenseTest.php
 ead998cc3d4822efd40bb9da2d72d733  tests/tests/kernel/classes/help/expHelpLinksTest.php
