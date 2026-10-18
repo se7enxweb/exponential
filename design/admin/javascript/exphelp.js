@@ -512,15 +512,18 @@
             });
         });
 
+        // "/" in the capture phase: on a help page it goes to the help search, before the admin's own "/" handler
+        // (admin4.js, bubbling) moves the focus to the site search in the header; that one skips a handled event
+        document.addEventListener('keydown', function (event) {
+            if (event.key !== '/' || !searches.length || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || event.isComposing || typing(event.target)) { return; }
+            event.preventDefault();
+            searches[0].input.focus();
+            if (searches[0].input.select) { searches[0].input.select(); }
+        }, true);
+
         document.addEventListener('keydown', function (event) {
             if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey || typing(event.target)) { return; }
             var key = event.key;
-            if (key === '/' && searches.length) {
-                event.preventDefault();
-                searches[0].input.focus();
-                if (searches[0].input.select) { searches[0].input.select(); }
-                return;
-            }
             var c = contentOf(document);
             if ((key === 'j' || key === 'k') && c) {
                 if (jump(c, key === 'j' ? 1 : -1)) { event.preventDefault(); if (spy) { spy.schedule(); } }
