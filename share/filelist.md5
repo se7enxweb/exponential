@@ -8602,6 +8602,7 @@ d5f0c069ee7bdfa401c24c1a92e29968  tests/tests/kernel/classes/help/expHelpDevelop
 c76de01464fb1ec244257b1d8283d9e6  tests/tests/kernel/classes/help/expHelpLicenseTest.php
 ead998cc3d4822efd40bb9da2d72d733  tests/tests/kernel/classes/help/expHelpLinksTest.php
 ee73cc3a2f8f76b722448da9b9642a81  tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php
+c07b2e1b3f43824d7ea805871f04de36  tests/tests/kernel/classes/help/expHelpMigrationHubTest.php
 14d6d667ebe2d3935fe84e54ec3ead1e  tests/tests/kernel/classes/help/expHelpModulePolicyTest.php
 a558003ce1675245c192838a17c92ed0  tests/tests/kernel/classes/help/expHelpNavigationTest.php
 b015cc94ed316b93aee9989aca280db7  tests/tests/kernel/classes/help/expHelpPageTitlesTest.php
