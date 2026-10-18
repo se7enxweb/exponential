@@ -63,6 +63,7 @@ allowed to use is shown grayed out or not at all.
 | Page | What it helps you do |
 |---|---|
 | [Develop with Git](develop-with-git.md) | Install Exponential as Git clones with their full history (the recommended way to build websites), keep them up to date, and send fixes back as pull requests |
+| [Update with Git](update-with-git.md) | Get updates as they are pushed to GitHub and update Composer to match, hourly, daily, weekly, monthly or only at each release, by hand or automatically |
 | [Getting the code](../install/03-getting-the-code.md) | Every way to install the code, with versions, tags and extensions explained |
 
 ## Deeper guides

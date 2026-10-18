@@ -73942,6 +73942,14 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>Présenter et promouvoir Exponential : positionnement, démonstrations, objections, licences, marque et croissance de la communauté.</translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Mettre à jour avec Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Récupérez les mises à jour dès qu&apos;elles sont publiées sur GitHub, puis mettez Composer à jour en conséquence : toutes les heures, chaque jour, chaque semaine, chaque mois ou seulement à chaque version.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

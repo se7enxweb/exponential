@@ -76773,6 +76773,14 @@ Gracias por la retroalimentación</translation>
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>Presentar y promover Exponential: posicionamiento, demos, objeciones, licencias, marca y crecimiento de la comunidad.</translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Actualiza con Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Recibe las actualizaciones en cuanto se suben a GitHub y luego actualiza Composer para que coincida: cada hora, cada día, cada semana, cada mes o solo en cada versión.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

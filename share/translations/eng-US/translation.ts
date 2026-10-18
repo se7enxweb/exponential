@@ -72827,5 +72827,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Update with Git</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</translation>
+    </message>
 </context>
 </TS>

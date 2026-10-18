@@ -72547,6 +72547,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>Exponential ostendere et commendare: positio, demonstrationes, obiectiones, licentiae, nota et communitas augenda.</translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Per Git renova</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>Renovationes cape statim ut in GitHub mittuntur, deinde Composer congruenter renova: singulis horis, diebus, hebdomadibus, mensibus aut tantum in singulis editionibus.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

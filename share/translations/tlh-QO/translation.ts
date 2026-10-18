@@ -72547,6 +72547,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
         <translation>Exponential 'ang 'ej maq: Daq, 'aghmeH Qu'mey, Hoghmey, chaw'mey, pong, ghom ghurmoH je.</translation>
     </message>
+    <message>
+        <source>Update with Git</source>
+        <translation>Git lo&apos;taHvIS yIchu&apos;qa&apos;</translation>
+    </message>
+    <message>
+        <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
+        <translation>GitHub Daq chu&apos; De&apos; lI&apos;lu&apos;DI&apos; yItlhap, ghIq Composer yIchu&apos;qa&apos;: Hoch rep, Hoch jaj, Hoch Hogh, Hoch jar, pagh Hoch chu&apos; ghom neH.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
