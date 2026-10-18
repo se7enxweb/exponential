@@ -6,6 +6,7 @@
    the way to this page open; its filter box (exphelp.js) narrows it as you type. Works without JavaScript; exphelp.js
    (w612/F hooks) adds the instant search, the scrollspy of the contents, the copy buttons of code blocks, collapsible
    sections and the keys / j k [ ].
+   The documentation is written in English, so the article is lang="en" dir="ltr" also on a right-to-left admin.
 
    Variables (kernel/private/classes/views/exphelp/viewer.php): help_page (document: id, path, title, summary, type,
    category, audience[], changed, size ...), help_html (rendered by expHelpMarkdownRenderer and safe: NOT washed),
@@ -48,7 +49,7 @@
             </details>
             {/if}
 
-            <article class="a4-help-article" data-exphelp-content data-exphelp-collapsible="h2" aria-label="{$help_title|wash}">
+            <article class="a4-help-article" data-exphelp-content data-exphelp-collapsible="h2" aria-label="{$help_title|wash}" lang="en" dir="ltr">
 {$help_html}
             </article>
 

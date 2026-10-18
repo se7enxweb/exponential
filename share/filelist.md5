@@ -515,7 +515,7 @@ c505b56371004e72eab821c4b50ac3bc  design/admin/templates/exphelp/parts/viewer_me
 69992051147dd0f6b3dbc0892bee4fa9  design/admin/templates/exphelp/parts/viewer_toc.tpl
 531d9d1d54c0683eca68c623119174f9  design/admin/templates/exphelp/report.tpl
 51b24a03beb437397748f04b2547a222  design/admin/templates/exphelp/search.tpl
-3b5a6df9104727b135e60144ba084d98  design/admin/templates/exphelp/viewer.tpl
+d2f3172f74944efae3d3a38d32632c69  design/admin/templates/exphelp/viewer.tpl
 779a3d4311505cfeb78de4b8f1ca2751  design/admin/templates/ezinfo/about.tpl
 6c10e7f9eea0fc7029c8110b0b33fb28  design/admin/templates/ezinfo/copyright.tpl
 be642b13d020aa2e44360d60c283fbc5  design/admin/templates/infocollection_validation.tpl
@@ -1256,7 +1256,7 @@ c505b56371004e72eab821c4b50ac3bc  design/admin4/templates/exphelp/parts/viewer_m
 69992051147dd0f6b3dbc0892bee4fa9  design/admin4/templates/exphelp/parts/viewer_toc.tpl
 531d9d1d54c0683eca68c623119174f9  design/admin4/templates/exphelp/report.tpl
 51b24a03beb437397748f04b2547a222  design/admin4/templates/exphelp/search.tpl
-3b5a6df9104727b135e60144ba084d98  design/admin4/templates/exphelp/viewer.tpl
+d2f3172f74944efae3d3a38d32632c69  design/admin4/templates/exphelp/viewer.tpl
 7deb1dc6bd320de93789f39eb322d1f4  design/admin4/templates/ezinfo/about.tpl
 6c10e7f9eea0fc7029c8110b0b33fb28  design/admin4/templates/ezinfo/copyright.tpl
 1930afe53fb5c2737daf2736356f4ca7  design/admin4/templates/infocollection_validation.tpl
