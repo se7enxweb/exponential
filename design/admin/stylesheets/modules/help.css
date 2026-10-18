@@ -1,8 +1,520 @@
 /*
- * Module stylesheet: the help system (exphelp/*, doc/features/6.0/help-system.md).
+ * Module stylesheet: the help system (exphelp/*: dashboard, viewer, search, report).
  *
  * Only what the shared components (stylesheets/components.css) cannot do, as .a4-help-* classes, with colours,
- * radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases); every new token
- * has a dark value. Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules:
- * doc/bc/6.0/admin4-styling.md. The same file is in design/admin and design/admin4.
+ * radius, spacing and fonts from the --a4-* tokens only (no hard-coded values, no local aliases), so the dark mode
+ * follows from the tokens. Registered in design.ini [StylesheetSettings] AdminComponentCSSFileList; rules:
+ * doc/bc/6.0/admin4-styling.md. The same file is in design/admin (classic) and design/admin4.
+ *
+ * Sections: the page frame and the shared parts (audience pills, icon tiles); the dashboard (search hero, search
+ * results as exphelp.js draws them, audience cards, featured pages, recently changed pages, quick links, report an
+ * error, keyboard hints); then the viewer and the renderer's markup.
  */
+
+/* ---- page frame and shared parts ----------------------------------------------------------------------------- */
+
+.a4-help {
+  display: grid;
+  gap: var(--a4-space-5);
+  min-width: 0;
+  max-width: var(--a4-content-max);
+  margin: 0 auto;
+}
+.a4-help-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--a4-space-1) var(--a4-space-3);
+  margin: 0 0 var(--a4-space-3);
+}
+.a4-help-section-head h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  margin: 0;
+  font-size: var(--a4-text-l);
+  font-weight: 650;
+  line-height: var(--a4-leading-tight);
+  color: var(--a4-ink);
+}
+.a4-help-section-head h2 .a4-icon { color: var(--a4-accent-text); }
+.a4-help-section-head p { margin: 0; font-size: var(--a4-text-s); color: var(--a4-muted); }
+.a4-help-section-head a { font-size: var(--a4-text-s); font-weight: 600; }
+
+/* An icon on a tinted square: the audience cards, featured pages, the report entry */
+.a4-help-tile {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+  color: var(--a4-accent-text);
+  font-size: var(--a4-text-xl);
+}
+.a4-help-tile.is-small { width: 32px; height: 32px; font-size: var(--a4-text-l); }
+/* one colour per audience, the same everywhere (cards, pills, results): editors the accent, admins blue,
+   developers green, end users violet (the chart palette, which has its dark values) */
+.a4-help-tile.is-editor { color: var(--a4-accent-text); }
+.a4-help-tile.is-admin { color: var(--a4-chart-1); }
+.a4-help-tile.is-developer { color: var(--a4-chart-3); }
+.a4-help-tile.is-user { color: var(--a4-chart-7); }
+
+/* The audience of a page as a small pill (on top of .a4-tag) */
+.a4-help-pill {
+  gap: var(--a4-space-1);
+  font-size: var(--a4-text-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.a4-help-pill.is-editor { border-color: transparent; background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+.a4-help-pill.is-admin { border-color: transparent; background-color: var(--a4-info-bg); color: var(--a4-info); }
+.a4-help-pill.is-developer { border-color: transparent; background-color: var(--a4-ok-bg); color: var(--a4-ok); }
+.a4-help-pill.is-user { border-color: transparent; background-color: var(--a4-warn-bg); color: var(--a4-warn); }
+
+/* ---- dashboard: the search hero ------------------------------------------------------------------------------ */
+
+.a4-help-hero {
+  position: relative;
+  display: grid;
+  gap: var(--a4-space-4);
+  padding: var(--a4-space-7) var(--a4-space-6) var(--a4-space-6);
+  border-radius: var(--a4-radius-s);
+  background:
+    radial-gradient(60% 120% at 100% 0%, var(--a4-accent-soft), transparent 70%),
+    radial-gradient(50% 110% at 0% 100%, var(--a4-info-bg), transparent 70%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line), var(--a4-shadow-m);
+  text-align: center;
+}
+.a4-help-hero-pre {
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-accent-text);
+  font-size: var(--a4-text-xs);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.a4-help-hero h1 {
+  margin: 0;
+  color: var(--a4-ink);
+  font-size: var(--a4-text-3xl);
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  line-height: var(--a4-leading-tight);
+}
+.a4-help-hero-sub {
+  max-width: 62ch;
+  margin: 0 auto;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-l);
+}
+.a4-help-search {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: start;
+}
+.a4-help-search-field {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  padding: var(--a4-space-1) var(--a4-space-1) var(--a4-space-1) var(--a4-space-4);
+  border: 1px solid var(--a4-field-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-field);
+  box-shadow: var(--a4-shadow-m);
+}
+.a4-help-search-field:focus-within { border-color: var(--a4-ring); box-shadow: 0 0 0 3px var(--a4-accent-soft), var(--a4-shadow-m); }
+.a4-help-search-field > .a4-icon { color: var(--a4-muted); font-size: var(--a4-text-l); }
+.a4-help-search-field input[type="search"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--a4-ink);
+  font-family: var(--a4-font);
+  font-size: var(--a4-text-l);
+}
+/* the field's frame shows the focus (:focus-within above), so the input itself needs no second ring */
+.a4-help-search-field input[type="search"]:focus-visible { outline: 2px solid transparent; }
+.a4-help-search-field input[type="search"]::placeholder { color: var(--a4-muted); opacity: 1; }
+.a4-help-search-field .a4-kbd { margin: 0; }
+.a4-help-search-field .a4-btn { flex: 0 0 auto; }
+
+/* the audience filter: radio buttons drawn as chips (the input stays, for the keyboard and the form) */
+.a4-help-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--a4-space-2);
+  margin: var(--a4-space-3) 0 0;
+  padding: 0;
+  border: 0;
+}
+.a4-help-filters legend { float: left; width: auto; margin: 0 var(--a4-space-1) 0 0; padding: var(--a4-space-1) 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-filter { position: relative; display: inline-flex; }
+.a4-help-filter input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.a4-help-filter span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+  min-height: 28px;
+  padding: var(--a4-space-1) var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  font-size: var(--a4-text-s);
+  font-weight: 600;
+}
+.a4-help-filter input:hover + span { border-color: var(--a4-line-strong); }
+.a4-help-filter input:checked + span { border-color: var(--a4-accent-strong); background-color: var(--a4-accent-strong); color: var(--a4-on-accent); }
+.a4-help-filter input:focus-visible + span { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-help-filter [data-exphelp-count]:not(:empty) { color: inherit; font-weight: 400; opacity: .8; }
+.a4-help-filter [data-exphelp-count]:not(:empty)::before { content: "("; }
+.a4-help-filter [data-exphelp-count]:not(:empty)::after { content: ")"; }
+
+/* key figures under the search */
+.a4-help-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--a4-space-2) var(--a4-space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-s);
+}
+.a4-help-stats li { display: inline-flex; align-items: center; gap: var(--a4-space-2); }
+.a4-help-stats strong { color: var(--a4-ink); font-size: var(--a4-text-l); font-variant-numeric: tabular-nums; }
+
+/* ---- search results (exphelp.js draws them; the search page renders the same markup without the script) ------ */
+
+.a4-help-search-box { position: relative; }
+.a4-help-search-box [data-exphelp-results] {
+  position: absolute;
+  z-index: var(--a4-z-popover);
+  top: calc(100% + var(--a4-space-2));
+  inset-inline: 0;
+  max-height: min(70vh, 560px);
+  overflow-y: auto;
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: var(--a4-shadow-m);
+  text-align: start;
+}
+.a4-help-results,
+.a4-help-results__list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: var(--a4-space-1);
+  list-style: none;
+}
+.a4-help-result { margin: 0; border-radius: var(--a4-radius-s); }
+.a4-help-result + .a4-help-result { border-top: 1px solid var(--a4-line); }
+.a4-help-result__link,
+.a4-help-result__link:visited {
+  display: grid;
+  gap: 2px;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-help-result__link:hover,
+.a4-help-result.is-active .a4-help-result__link,
+.a4-help-result__link:focus-visible { background-color: var(--a4-info-bg); color: var(--a4-ink); }
+.a4-help-result.is-active .a4-help-result__link,
+.a4-help-result__link:focus-visible { box-shadow: inset 3px 0 0 var(--a4-accent); }
+.a4-help-result__title { font-weight: 650; font-size: var(--a4-text-m); }
+.a4-help-result__section { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-help-result__snippet { color: var(--a4-muted); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-help-result__snippet mark,
+.a4-help-result__title mark {
+  padding: 0 2px;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-ink);
+  font-weight: 650;
+}
+.a4-help-result__meta { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); margin-top: var(--a4-space-1); }
+.a4-help-results__status { margin: 0; padding: var(--a4-space-2) var(--a4-space-3); color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-results__status:empty { display: none; }
+.a4-help-results__relaxed { margin: 0; padding: var(--a4-space-2) var(--a4-space-3) 0; color: var(--a4-warn); font-size: var(--a4-text-xs); font-weight: 600; }
+.a4-help-result__link:focus-visible { outline-offset: -3px; }
+
+/* ---- the search page (exphelp/search) ------------------------------------------------------------------------ */
+
+.a4-help-search.a4-help-search-wide { max-width: none; margin: 0; }
+.a4-help-facets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--a4-space-3) var(--a4-space-5);
+  margin: var(--a4-space-3) 0 0;
+}
+.a4-help-facets .a4-help-filters { justify-content: flex-start; margin: 0; }
+.a4-help-facets .a4-field { margin: 0; }
+.a4-help-searchresults {
+  min-width: 0;
+  padding: var(--a4-space-2);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
+}
+.a4-help-searchresults .a4-help-result__link { padding: var(--a4-space-3) var(--a4-space-4); }
+.a4-help-searchresults .a4-help-result__title { font-size: var(--a4-text-l); }
+.a4-help-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--a4-space-3);
+  padding: var(--a4-space-3) 0 var(--a4-space-1);
+  border-top: 1px solid var(--a4-line);
+}
+.a4-help-noresults { display: grid; justify-items: center; gap: var(--a4-space-2); padding: var(--a4-space-6) var(--a4-space-4); text-align: center; }
+.a4-help-noresults p { margin: 0; }
+
+/* ---- dashboard: audience cards------------------------------------------------------------------------------- */
+
+.a4-help-audiences {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: var(--a4-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-audience {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--a4-space-3);
+  min-width: 0;
+  padding: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line), var(--a4-shadow-s);
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.a4-help-audience::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0;
+  background-color: var(--a4-accent);
+}
+.a4-help-audience.is-admin::before { background-color: var(--a4-chart-1); }
+.a4-help-audience.is-developer::before { background-color: var(--a4-chart-3); }
+.a4-help-audience.is-user::before { background-color: var(--a4-chart-7); }
+.a4-help-audience:hover,
+.a4-help-audience:focus-within { box-shadow: inset 0 0 0 1px var(--a4-line-strong), var(--a4-shadow-m); transform: translateY(-2px); }
+.a4-help-audience h3 { margin: 0; font-size: var(--a4-text-l); font-weight: 650; line-height: var(--a4-leading-tight); }
+.a4-help-audience h3 a,
+.a4-help-audience h3 a:visited { color: var(--a4-ink); text-decoration: none; }
+/* the whole card is the link to the audience's pages; the page links inside stay clickable above it */
+.a4-help-audience h3 a::after { content: ""; position: absolute; inset: 0; border-radius: var(--a4-radius-s); }
+.a4-help-audience h3 a:focus-visible { outline: 2px solid transparent; }
+.a4-help-audience h3 a:focus-visible::after { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-help-audience p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-audience-head { display: flex; align-items: center; justify-content: space-between; gap: var(--a4-space-3); }
+.a4-help-audience-count { color: var(--a4-muted); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; }
+.a4-help-audience ul { display: grid; gap: var(--a4-space-1); margin: auto 0 0; padding: 0; list-style: none; }
+.a4-help-audience li a {
+  position: relative;
+  z-index: var(--a4-z-raised);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--a4-space-1);
+  font-size: var(--a4-text-s);
+}
+.a4-help-audience li a .a4-icon { color: var(--a4-muted); }
+
+/* ---- dashboard: featured pages and recently changed pages, side by side ------------------------------------- */
+
+.a4-help-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--a4-space-5);
+  align-items: start;
+}
+@media (max-width: 1100px) {
+  .a4-help-columns { grid-template-columns: minmax(0, 1fr); }
+}
+.a4-help-featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-feature a,
+.a4-help-feature a:visited {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-3);
+  height: 100%;
+  padding: var(--a4-space-4);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+  color: var(--a4-ink);
+  text-decoration: none;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.a4-help-feature a:hover { box-shadow: inset 0 0 0 1px var(--a4-accent), var(--a4-shadow-m); transform: translateY(-1px); }
+.a4-help-feature-text { display: grid; gap: var(--a4-space-1); min-width: 0; }
+.a4-help-feature-title { font-weight: 650; font-size: var(--a4-text-m); line-height: var(--a4-leading-tight); }
+.a4-help-feature-summary { color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-feature-meta { display: flex; flex-wrap: wrap; gap: var(--a4-space-1); }
+
+/* recently changed pages: a list with the date at the end of each row */
+.a4-help-recent { margin: 0; padding: 0; list-style: none; }
+.a4-help-recent li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--a4-space-1) var(--a4-space-3);
+  padding: var(--a4-space-2) 0;
+  border-bottom: 1px solid var(--a4-line);
+}
+.a4-help-recent li:last-child { border-bottom: 0; }
+.a4-help-recent li > .a4-icon { color: var(--a4-muted); }
+.a4-help-recent-main { display: grid; min-width: 0; }
+.a4-help-recent-main a { font-weight: 600; overflow-wrap: anywhere; }
+.a4-help-recent-path { color: var(--a4-muted); font-family: var(--a4-mono); font-size: var(--a4-text-xs); overflow-wrap: anywhere; }
+.a4-help-recent time { color: var(--a4-muted); font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---- dashboard: quick links (categories) --------------------------------------------------------------------- */
+
+.a4-help-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-links a,
+.a4-help-links a:visited {
+  display: flex;
+  align-items: center;
+  gap: var(--a4-space-2);
+  min-height: 40px;
+  padding: var(--a4-space-2) var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-weight: 600;
+  font-size: var(--a4-text-s);
+  text-decoration: none;
+}
+.a4-help-links a:hover { background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+.a4-help-links a .a4-icon { color: var(--a4-accent-text); }
+.a4-help-links-count { margin-inline-start: auto; color: var(--a4-muted); font-weight: 400; font-size: var(--a4-text-xs); font-variant-numeric: tabular-nums; }
+
+/* ---- dashboard: report an error ------------------------------------------------------------------------------ */
+
+.a4-help-report {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--a4-space-4) var(--a4-space-5);
+  padding: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background:
+    linear-gradient(120deg, var(--a4-bad-bg), transparent 55%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-bad-line);
+}
+.a4-help-report .a4-help-tile { color: var(--a4-bad); background-color: var(--a4-card); box-shadow: inset 0 0 0 1px var(--a4-bad-line); }
+.a4-help-report h2 { margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-l); font-weight: 650; }
+.a4-help-report p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-report-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
+.a4-help-report-security { display: inline-flex; align-items: center; gap: var(--a4-space-1); margin-top: var(--a4-space-2); font-size: var(--a4-text-xs); }
+@media (max-width: 800px) {
+  .a4-help-report { grid-template-columns: auto minmax(0, 1fr); }
+  .a4-help-report-actions { grid-column: 1 / -1; }
+}
+
+/* ---- dashboard: keyboard hints ------------------------------------------------------------------------------- */
+
+.a4-help-keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--a4-space-2) var(--a4-space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--a4-muted);
+  font-size: var(--a4-text-xs);
+}
+.a4-help-keys li { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
+.a4-help-keys .a4-kbd { margin: 0; }
+
+/* ---- small windows ------------------------------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .a4-help { gap: var(--a4-space-4); }
+  .a4-help-hero { padding: var(--a4-space-5) var(--a4-space-4); }
+  .a4-help-hero h1 { font-size: var(--a4-text-2xl); }
+  .a4-help-hero-sub { font-size: var(--a4-text-m); }
+  .a4-help-search-field { padding-inline-start: var(--a4-space-3); }
+  .a4-help-search-field .a4-kbd { display: none; }
+  .a4-help-audience { padding: var(--a4-space-4); }
+  .a4-help-report { padding: var(--a4-space-4); }
+  .a4-help-recent li { grid-template-columns: minmax(0, 1fr) auto; }
+  .a4-help-recent li > .a4-icon { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .a4-help-audience,
+  .a4-help-feature a { transition: none; }
+  .a4-help-audience:hover,
+  .a4-help-audience:focus-within,
+  .a4-help-feature a:hover { transform: none; }
+}
+
+@media print {
+  .a4-help-search,
+  .a4-help-keys,
+  .a4-help-report-actions { display: none; }
+  .a4-help-hero,
+  .a4-help-audience,
+  .a4-help-feature a { box-shadow: none; transform: none; }
+}
+
+/* ---- viewer (E) ---------------------------------------------------------------------------------------------- */
+
+/* ---- renderer markup: code, highlighting, callouts (A) -------------------------------------------------------- */
