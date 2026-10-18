@@ -1,6 +1,7 @@
-{* The facts under the title of a help page (exphelp/viewer.tpl): who it is for (the audience pills of the dashboard),
-   its category and type, the source file in the repository, when it last changed, about how long it takes to read,
-   and the link that opens the file on GitHub to edit it.
+{* The facts under the title of a help page (exphelp/viewer.tpl): who it is for (the audience pills of the dashboard)
+   and its category, each a link to the help search listing every page of that audience or category
+   (exphelp/search/(audience)/<id>, /(category)/<id>), the source file in the repository, when it last changed, about
+   how long it takes to read, and the link that opens the file on GitHub to edit it.
    Variables: meta_page (document), meta_audiences (list of editor|admin|developer|user), meta_edit_url (may be ''),
    meta_category (id, name, icon of the page's category, or false).
    The same file is in design/admin and design/admin4. *}
@@ -14,12 +15,12 @@
     <li class="a4-help-meta-item is-audience">
         <span class="a4-sr-only">{'For:'|i18n( 'kernel/exphelp' )}</span>
         {foreach $meta_audiences as $meta_audience}
-        <span class="a4-tag a4-help-pill is-{$meta_audience|wash}">{switch match=$meta_audience}{case match='editor'}{'Editors'|i18n( 'kernel/exphelp' )}{/case}{case match='admin'}{'Administrators'|i18n( 'kernel/exphelp' )}{/case}{case match='developer'}{'Developers'|i18n( 'kernel/exphelp' )}{/case}{case match='user'}{'Users'|i18n( 'kernel/exphelp' )}{/case}{case}{$meta_audience|wash}{/case}{/switch}</span>
+        <a class="a4-tag a4-help-pill is-{$meta_audience|wash}" href={concat( '/exphelp/search/(audience)/', $meta_audience )|ezurl}>{switch match=$meta_audience}{case match='editor'}{'Editors'|i18n( 'kernel/exphelp' )}{/case}{case match='admin'}{'Administrators'|i18n( 'kernel/exphelp' )}{/case}{case match='developer'}{'Developers'|i18n( 'kernel/exphelp' )}{/case}{case match='user'}{'Users'|i18n( 'kernel/exphelp' )}{/case}{case}{$meta_audience|wash}{/case}{/switch}</a>
         {/foreach}
     </li>
     {/if}
     {if and( is_set( $meta_page.category ), $meta_page.category|ne( '' ) )}
-    <li class="a4-help-meta-item"><span class="a4-tag">{if $meta_cat_icon|ne( '' )}<span class="a4-icon a4-bi-{$meta_cat_icon|wash}" aria-hidden="true"></span> {/if}<span class="a4-sr-only">{'Category:'|i18n( 'kernel/exphelp' )} </span>{cond( $meta_cat_name|ne( '' ), $meta_cat_name, $meta_page.category )|wash}</span></li>
+    <li class="a4-help-meta-item"><a class="a4-tag" href={concat( '/exphelp/search/(category)/', $meta_page.category )|ezurl}>{if $meta_cat_icon|ne( '' )}<span class="a4-icon a4-bi-{$meta_cat_icon|wash}" aria-hidden="true"></span> {/if}<span class="a4-sr-only">{'Category:'|i18n( 'kernel/exphelp' )} </span>{cond( $meta_cat_name|ne( '' ), $meta_cat_name, $meta_page.category )|wash}</a></li>
     {/if}
     {if and( is_set( $meta_page.path ), $meta_page.path|ne( '' ) )}
     <li class="a4-help-meta-item"><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span><span class="a4-sr-only">{'Source file:'|i18n( 'kernel/exphelp' )} </span><code class="a4-help-meta-path" dir="ltr">{$meta_page.path|wash}</code></li>

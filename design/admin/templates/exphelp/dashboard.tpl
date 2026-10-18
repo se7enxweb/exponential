@@ -146,6 +146,7 @@
     <section aria-labelledby="help-dash-sections">
         <div class="a4-help-section-head">
             <h2 id="help-dash-sections"><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span>{'Browse by topic'|i18n( $help_ctx )}</h2>
+            <a class="a4-help-section-more" href={'exphelp/contents'|ezurl}><span class="a4-icon a4-bi-list-ul" aria-hidden="true"></span> {'Browse all help'|i18n( 'kernel/exphelp' )}</a>
         </div>
         <ul class="a4-help-links">
         {foreach $help_categories as $help_category}

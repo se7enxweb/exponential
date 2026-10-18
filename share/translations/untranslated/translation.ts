@@ -71344,14 +71344,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Collapse</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Expand</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>No page has every word; these have some of them.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -71361,10 +71353,6 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Getting started</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Content and editing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -71993,6 +71981,330 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Exponential documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -13769,6 +13769,10 @@ Note: The packages will not be uninstalled.</source>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;למידע נוסף יש לעיין ב־&lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>מרכז העזרה</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14220,6 +14224,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Quick search</source>
         <translation>חיפוש מהיר</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>מרכז העזרה</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14501,6 +14509,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>השם, כתובת הדוא&quot;ל ופרטים נוספים שלך.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>מרכז העזרה</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>מדריכים, חיפוש ואיך מדווחים על שגיאה.</translation>
     </message>
 </context>
 <context>
@@ -14918,6 +14934,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>The translation each interface language shows, and what it falls back to.</source>
         <translation>התרגום שכל שפת ממשק מציגה, ומהי החלופה שלה.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>מרכז העזרה</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>מדריכים, חיפוש ואיך מדווחים על שגיאה.</translation>
     </message>
 </context>
 <context>
@@ -65036,6 +65060,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>מרכז העזרה</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -72144,6 +72172,330 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Exponential documentation</source>
         <translation>התיעוד של Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>עריכת תוכן</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>תכונות</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>עזרה ותמיכה</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>תמונות ומדיה</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>שפות</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>פריסות</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>פרסום</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>החשבון שלך</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>מדריכים וחומר עיון לכל מי שעובד עם התקנה זו, מתוך התיעוד של הגרסה שלה.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>החלת מסננים</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>עיון</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>עיון בכל דפי העזרה</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>עיון בעזרה</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>בחרו קהל, נושא או סוג אחר.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>לצטט אותו</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>לתרום תיקונים בחזרה</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>להעתיק ולשתף אותו</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>הודעת זכויות יוצרים ורישיון</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>יצירה ושינוי של תוכן: העורך, השדות, הטיוטות והגרסאות.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>רישיון התיעוד</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>מציאת תוכן בממשק הניהול ובאתר.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>צעדים ראשונים בממשק הניהול: כניסה, התמצאות והמשימות היומיומיות.</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>תיעוד חופשי: השתמשו בו כדי לעזור לעצמכם ולאחרים</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>קבלת עזרה ודיווח על שגיאה.</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>תנו דפים למשתמשים אחרים, על נייר או כקבצים. השאירו עם כל עותק את הודעת זכויות היוצרים, את הודעת הרישיון ועותק של הרישיון.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>תמונות, קבצים ומדיה אחרת: העלאה, בחירה ושימוש חוזר.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>התקנת Exponential ושדרוגה לגרסה חדשה.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>קיצורי מקלדת שמאיצים את העבודה בממשק הניהול.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>אין דף לבחירה זו.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>מסמכים ישנים יותר שנשמרו לעיון.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>פריסות דפים: אזורים, בלוקים והכללים שבוחרים פריסה.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>פרסום, תזמון, הסתרה והעברה של תוכן.</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>קראו כל דף כמה פעמים שתרצו, לכל מטרה.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>קריאת הרישיון</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>הפנו לדף לפי הכותרת והכתובת שלו בעזרה, או לפי הקובץ שלו בתיקיית doc.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>חומר עיון: הגדרות, פקודות ותבניות.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>הפעלת האתר: הגדרות, משתמשים ותפקידים, מטמונים, משימות מתוזמנות ויומנים.</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>שתפו את הגרסה שלכם תחת אותו רישיון, עם ההודעות המקוריות והערה על מה ששיניתם.</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>ללמוד אותו</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>תבניות, הרחבות, ה-API והקוד שמאחוריהם.</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>הרישיון ברשת</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version או מאוחר יותר.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>תיעוד זה הוא תיעוד חופשי, ברישיון %license %version.</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version או מאוחר יותר. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>זהו הטקסט של %license, גרסה %version, כפי שקרן התוכנה החופשית מפרסמת אותו. כל אחד רשאי להעתיק ולשתף אותו מילה במילה; אסור לשנות אותו.</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>דף זה הוא חלק מהתיעוד של ההרחבה %extension ומופץ ברישיון של אותה הרחבה.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>דף זה נורש מהתיעוד של התוכנה המקורית. הוא אינו מכוסה על ידי %license; הוא מופץ תחת %other.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>נושאים</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>לתרגם, להתאים ולשפר אותו</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>תרגומים והשפות של האתר.</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>השתמשו ב„עריכה ב-GitHub” בכל דף. שינויים מתקבלים באותו רישיון, כך שהם נשארים חופשיים לכולם.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>מה השתנה בכל גרסה.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>מה עושה כל תכונה ואיך מגדירים אותה.</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>מה מותר לעשות בתיעוד חופשי</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>לאילו דפים יש איזה רישיון</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>החשבון שלך: סיסמה, כניסה בשני שלבים והעדפות.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count דפים מתאימים</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>%count דפים בתיקיות התיעוד. פתחו תיקייה, או סננו לפי מילה מהכותרת.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>אודות תיעוד זה</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>עיון בכל העזרה</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>סינון דפים</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>סינון דפי העזרה</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>אין כותרת דף מתאימה</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>תאימות לאחור</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>יומני שינויים</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>דוגמאות</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>מדריכים</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>שימוש בממשק הניהול</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>התקנה</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>חנות</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>מפרטים</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>תקנים</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>הדפסת דף זה</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>הורדה כ-PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>הדפסה או הורדה של דף זה</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>כתובת:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>העזרה של Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>עמוד %number מתוך %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>תמונה: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>תמונה</translation>
     </message>
 </context>
 </TS>

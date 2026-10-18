@@ -251,7 +251,8 @@ class expHelpDocumentIndex
         // the code that builds the entries: a deploy of a changed parser or slugger builds the index again
         foreach ( array( __FILE__, ( new ReflectionClass( 'expHelpFrontMatter' ) )->getFileName(),
                          ( new ReflectionClass( 'expHelpAudience' ) )->getFileName(),
-                         class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '' ) as $code )
+                         class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '',
+                         class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
             if ( is_string( $code ) && $code !== '' )
                 $parts[] = basename( $code ) . ':' . (int)@filemtime( $code ) . ':' . (int)@filesize( $code );
         if ( $this->statFiles )
@@ -856,11 +857,17 @@ class expHelpDocumentIndex
                     $title = $heading['text'];
                     break;
                 }
+        // a plain text list of records (the release and branch history) is titled and summarized by its records
+        $records = $format === 'text' && strpos( $body, "\n- " ) !== false ? ( new expHelpRecordRenderer() )->describe( $body ) : null;
+        if ( $title === '' && $records !== null )
+            $title = $records['title'];
         if ( $title === '' )
             $title = self::fallbackTitle( $path, $body );
 
         $summary = isset( $meta['summary'] ) && is_string( $meta['summary'] ) ? trim( $meta['summary'] )
                  : ( isset( $meta['description'] ) && is_string( $meta['description'] ) ? trim( $meta['description'] ) : '' );
+        if ( $summary === '' && $records !== null )
+            $summary = $records['summary'];
         if ( $summary === '' )
             $summary = self::summary( $body, $format );
         $summary = self::truncate( $summary, self::SUMMARY_LENGTH );
@@ -903,6 +910,8 @@ class expHelpDocumentIndex
             'changed'  => $mtime,
             'size'     => isset( $file['size'] ) ? (int)$file['size'] : strlen( $text ),
             'root'     => isset( $file['root'] ) ? $file['root'] : strtok( $path, '/' ),
+            // the newest major version a record page (the release history) covers; search ranks older versions lower
+            'version'  => $records !== null ? $records['version'] : '',
         );
     }
 
@@ -1032,8 +1041,9 @@ class expHelpDocumentIndex
     }
 
     /**
-     * The title of a page without a heading: the first line of a text file when it is short, else the file name
-     * ("README" names its directory).
+     * The title of a page without a heading: the first line of a text file when it is short ("*Title: ..." of the
+     * old feature pages without its label; reStructuredText comments such as ".. -*- coding: utf-8 -*-" skipped),
+     * else the file name ("README" names its directory).
      *
      * @param string $path
      * @param string $body
@@ -1041,11 +1051,18 @@ class expHelpDocumentIndex
      */
     public static function fallbackTitle( $path, $body )
     {
-        foreach ( preg_split( '/\r\n|\r|\n/', (string)$body, 20 ) as $line )
+        foreach ( array_slice( preg_split( '/\r\n|\r|\n/', (string)$body ), 0, 20 ) as $line )
         {
+            if ( preg_match( '/^\.\.(\s|$)/', $line ) )
+                continue;
             $line = trim( $line, " \t=-*#" );
             if ( $line === '' )
                 continue;
+            if ( preg_match( '/^title:\s*(.+)$/i', $line, $m ) )
+                $line = rtrim( trim( $m[1] ), '.' );
+            // a label that opens a list ("2.9-3:", "stable/3.0:") names nothing: the file name does
+            elseif ( substr( $line, -1 ) === ':' )
+                break;
             if ( mb_strlen( $line, 'UTF-8' ) <= 80 && !preg_match( '/^[0-9a-f]{7,}\b|^(\$|<|\{|https?:)/', $line ) )
                 return self::inlineText( $line );
             break;
@@ -1095,6 +1112,13 @@ class expHelpDocumentIndex
             if ( $fence )
                 continue;
             $trimmed = trim( $line );
+            // reStructuredText comments and field lists (":Date: ..."), and the bare labels of the old text pages ("*Documentation:")
+            if ( preg_match( '/^\.\.(\s|$)/', $line ) || ( $format === 'text' && preg_match( '/^(\*?[A-Za-z][A-Za-z ]{0,30}:$|:[A-Za-z][A-Za-z ]{0,30}:)/', $trimmed ) ) )
+            {
+                if ( $paragraph )
+                    break;
+                continue;
+            }
             $isHeading = preg_match( '/^ {0,3}#{1,6}(\s|$)/', $line ) || ( isset( $lines[$i + 1] ) && $trimmed !== '' && preg_match( '/^ {0,3}(=+|-+)\s*$/', $lines[$i + 1] ) );
             if ( $trimmed === '' || preg_match( '/^ {0,3}(=+|-+)\s*$/', $line ) )
             {

@@ -13770,6 +13770,10 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Plura vide in &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum auxilii</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14221,6 +14225,10 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>Quick search</source>
         <translation>Quaestio celeris</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum auxilii</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14502,6 +14510,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Nomen tuum, inscriptio electronica aliaque singula.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum auxilii</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Duces, quaestio et quomodo errorem nunties.</translation>
     </message>
 </context>
 <context>
@@ -14919,6 +14935,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>The translation each interface language shows, and what it falls back to.</source>
         <translation>Translatio quam quaeque lingua interfaciei ostendit, et ad quam recurrit.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum auxilii</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Duces, quaestio et quomodo errorem nunties.</translation>
     </message>
 </context>
 <context>
@@ -65005,6 +65029,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>%greeting, %name</source>
         <translation>%greeting, %name</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centrum auxilii</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -72113,6 +72141,330 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Exponential documentation</source>
         <translation>Documenta Exponential</translation>
+    </message>
+    <message>
+        <source>Editing content</source>
+        <translation>Contenta emendare</translation>
+    </message>
+    <message>
+        <source>Features</source>
+        <translation>Facultates</translation>
+    </message>
+    <message>
+        <source>Help and support</source>
+        <translation>Auxilium et subsidium</translation>
+    </message>
+    <message>
+        <source>Images and media</source>
+        <translation>Imagines et media</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Linguae</translation>
+    </message>
+    <message>
+        <source>Layouts</source>
+        <translation>Dispositiones</translation>
+    </message>
+    <message>
+        <source>Publishing</source>
+        <translation>Editio</translation>
+    </message>
+    <message>
+        <source>Your account</source>
+        <translation>Ratio tua</translation>
+    </message>
+    <message>
+        <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
+        <translation>Duces et index rerum omnibus qui cum hac institutione laborant, ex documentis versionis eius propriae scripti.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Filtra adhibere</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Perlustrare</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Omnes paginas auxilii perlustrare</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Auxilium perlustrare</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Alios lectores, aliud argumentum aut aliud genus elige.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Eam citare</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Correctiones reddere</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Exscribere et communicare</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Nota iuris auctoris et licentiae</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Contenta creare et mutare: editor, campi, adumbrationes et versiones.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Licentia documentorum</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Contenta in administratione et in situ invenire.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Primi gradus in administratione: ingressus, via invenienda et officia cotidiana.</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Documenta libera: iis utere ut tibi et aliis auxilieris</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Auxilium petere et errorem nuntiare.</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Paginas aliis da, in charta aut ut fasciculos. Notam iuris auctoris, notam licentiae et exemplar licentiae cum quoque exemplari serva.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Imagines, fasciculi et alia media: imponere, eligere et iterum adhibere.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Exponential instituere et ad novam editionem renovare.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Compendia claviaturae quae administrationem celeriorem faciunt.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Nulla pagina huic electioni.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Documenta antiquiora ad consultandum servata.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Dispositiones paginarum: zonae, partes et regulae quae dispositionem eligunt.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Contenta edere, in tempus ponere, celare et movere.</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Quamlibet paginam quotiens vis lege, quolibet consilio.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Licentiam legere</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Paginam per titulum et inscriptionem in auxilio, aut per fasciculum in indice doc nomina.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Materia consultationis: optiones, mandata et formae.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Situm regere: optiones, usores et munera, memoriae, opera statuta et acta.</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Versionem tuam sub eadem licentia communica, cum notis originalibus et nota eorum quae mutavisti.</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Eam studere</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Formae, extensiones, interfacies et codex qui post eas est.</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Licentia in interreti</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Haec documenta libera sunt, sub licentia %license %version aut posteriore.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Haec documenta libera sunt, sub licentia %license %version.</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Hoc auxilium documenta libera est, sub licentia %license %version aut posteriore. Eo uti, id communicare et emendare licet:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Hoc auxilium documenta libera est, sub licentia %license %version. Eo uti, id communicare et emendare licet:</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Hic est textus %license, versionis %version, ut Free Software Foundation eum edit. Quisque eum ad verbum exscribere et communicare potest; mutare non licet.</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Haec pagina pars est documentorum extensionis %extension et sub licentia eius extensionis distribuitur.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Haec pagina ex documentis programmatis originalis hereditate accepta est. %license non tegitur; sub %other distribuitur.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Argumenta</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Vertere, accommodare et emendare</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Versiones et linguae situs.</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Utere «In GitHub emendare» in qualibet pagina. Mutationes sub eadem licentia accipiuntur, ut omnibus liberae maneant.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Quid in quaque editione mutatum sit.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Quid quaeque facultas faciat et quomodo instituatur.</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Quid documentis liberis facere possis</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Quae paginae quam licentiam habeant</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Ratio tua: tessera, ingressus duobus gradibus et optiones.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count paginae congruunt</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>%count paginae in indicibus documentorum. Indicem aperi, aut per verbum tituli cola.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>De his documentis</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Totum auxilium perlustrare</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Paginas colare</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Paginas auxilii colare</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Nullus titulus paginae congruit</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Congruentia retrorsum</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Acta mutationum</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Exempla</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Duces</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Administratione uti</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Institutio</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Taberna</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Descriptiones</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Normae</translation>
+    </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Hanc paginam imprimere</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Ut PDF depromere</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Hanc paginam imprimere aut depromere</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Inscriptio:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Auxilium Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Pagina %number ex %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Imago: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Imago</translation>
     </message>
 </context>
 </TS>
