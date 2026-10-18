@@ -1555,6 +1555,15 @@
     ],
     "design/standard/templates/content/datatype/edit/*.tpl": [
       "tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php"
+    ],
+    "design/standard/templates/content/edit_placement.tpl": [
+      "tests/tests/design/StandardContentEditAccessibleNamesTest.php"
+    ],
+    "design/standard/templates/content/edit_right_menu.tpl": [
+      "tests/tests/design/StandardContentEditAccessibleNamesTest.php"
+    ],
+    "design/standard/templates/content/edit_attribute.tpl": [
+      "tests/tests/design/StandardContentEditAccessibleNamesTest.php"
     ]
   },
   "generated": {
