@@ -75343,4 +75343,155 @@ Gracias por la retroalimentación</translation>
         <translation type="obsolete">Documentación de referencia</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Ayuda</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Buscar</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Buscar en la ayuda</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Reportar un error</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Copiar</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copiado</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>No se pudo copiar</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>No hay resultados</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count resultados</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Buscando...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>La búsqueda no está disponible en este momento.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Contraer</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Expandir</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Ninguna página contiene todas las palabras; estas contienen algunas.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Borrar</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Primeros pasos</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Contenido y edición</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administración</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Desarrollo</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Instalación y actualizaciones</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Notas de la versión</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historia</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Referencia</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 resultado</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administradores</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Editores</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Desarrolladores</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Usuarios finales</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Copiar el código</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Construir sobre él: extensiones, plantillas, configuración, las API, la línea de comandos y las actualizaciones.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Crear, editar, traducir y publicar contenido: multimedia, diseños, búsqueda y el editor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Operar la instalación: sitios, usuarios y roles, cachés, registros, seguridad y el estado del sistema.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Usar el sitio: tu cuenta, el inicio de sesión, la autenticación de dos factores y cómo encontrar cosas.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Ayuda sobre esta página</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Ayuda: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Ocultar la sección: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Mostrar la sección: %title</translation>
+    </message>
+</context>
 </TS>

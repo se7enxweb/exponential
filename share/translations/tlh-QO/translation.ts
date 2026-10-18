@@ -71117,4 +71117,155 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>jabwI&apos; Qagh wanI&apos; tetlh</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>QaH</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>yInej</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>QaH yInej</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Qagh yIja&apos;</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>yIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>qonqa&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>qonqa&apos;laHbe&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>pagh tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>nejlI&apos;...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>DaH nejlu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>yIQIH</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>yIDach</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Hoch mu&apos; ghajbe&apos; pagh nav; &apos;op ghaj nav&apos;meyvam.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>yIchImmoH</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>wa&apos;DIch mIw</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>De&apos; &apos;ej choHmeH mIw</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>loHghach</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>chenmoHmeH Daq</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>jom &apos;ej Dub</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>chen ghItlh</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>qun</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>De&apos; paq</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>wa&apos; tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>loHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>ghItlhwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>chenmoHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>lo&apos;wI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>ngoq yIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Dachenqa&apos;: nIvmoHwI&apos;mey, tamghay&apos;mey, SeHlaw mIwmey, API, ra&apos;meH tlhegh &apos;ej Dub.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>De&apos; yIchenmoH, yIchoH, yImugh &apos;ej yIngangmoH: Hol, nab, nej &apos;ej ghItlhwI&apos;.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>jom yIloH: Daqmey, lo&apos;wI&apos;pu&apos; &apos;ej Qu&apos;mey, pegh Daqmey, ghItlhmey, Hung &apos;ej pat Dotlh.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Daq yIlo&apos;: De&apos;lIj, &apos;el, cha&apos; tobmeH mIw &apos;ej Dochmey Sam.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>nav vIvmo&apos; QaH</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>QaH: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>&apos;ay&apos; yISo&apos;: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>&apos;ay&apos; yI&apos;ang: %title</translation>
+    </message>
+</context>
 </TS>

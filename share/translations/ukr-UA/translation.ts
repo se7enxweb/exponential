@@ -71102,4 +71102,155 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Журнал помилок вебсервера</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Довідка</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Пошук</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Пошук у довідці</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Повідомити про помилку</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Копіювати</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Скопійовано</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Не вдалося скопіювати</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Нічого не знайдено</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Результатів: %count</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Пошук...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Пошук зараз недоступний.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Згорнути</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Розгорнути</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Жодна сторінка не містить усіх слів; ці містять деякі з них.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Очистити</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Початок роботи</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Вміст і редагування</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Адміністрування</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Розробка</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Встановлення й оновлення</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Примітки до випуску</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Історія</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Довідник</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 результат</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Адміністратори</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Редактори</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Розробники</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Кінцеві користувачі</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Копіювати код</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Розвивайте систему: розширення, шаблони, налаштування, API, командний рядок і оновлення.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Створюйте, редагуйте, перекладайте й публікуйте вміст: медіа, макети, пошук і редактор.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Керуйте інсталяцією: сайти, користувачі й ролі, кеші, журнали, безпека та стан системи.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Користуйтеся сайтом: ваш обліковий запис, вхід, двофакторна автентифікація та пошук.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Довідка до цієї сторінки</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Довідка: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Сховати розділ: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Показати розділ: %title</translation>
+    </message>
+</context>
 </TS>

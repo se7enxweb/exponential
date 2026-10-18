@@ -71116,4 +71116,155 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>יומן השגיאות של שרת האינטרנט</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>עזרה</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>חיפוש</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>חיפוש בעזרה</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>דיווח על שגיאה</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>העתקה</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>הועתק</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>ההעתקה נכשלה</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>אין תוצאות</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count תוצאות</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>מחפש...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>החיפוש אינו זמין כרגע.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>כיווץ</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>הרחבה</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>אף דף אינו מכיל את כל המילים; בדפים אלה יש חלק מהן.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>ניקוי</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>צעדים ראשונים</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>תוכן ועריכה</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ניהול</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>פיתוח</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>התקנה ושדרוגים</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>הערות גרסה</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>היסטוריה</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>סימוכין</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>תוצאה אחת</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>מנהלי מערכת</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>עורכים</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>מפתחים</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>משתמשי קצה</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>העתקת הקוד</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>לבנות על גבי המערכת: הרחבות, תבניות, הגדרות, ממשקי ה-API, שורת הפקודה ושדרוגים.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>יצירה, עריכה, תרגום ופרסום של תוכן: מדיה, פריסות, חיפוש והעורך.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>תפעול ההתקנה: אתרים, משתמשים ותפקידים, מטמונים, יומנים, אבטחה ותקינות המערכת.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>שימוש באתר: החשבון שלך, כניסה, אימות דו-שלבי ומציאת דברים.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>עזרה לדף זה</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>עזרה: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>הסתרת הסעיף: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>הצגת הסעיף: %title</translation>
+    </message>
+</context>
 </TS>

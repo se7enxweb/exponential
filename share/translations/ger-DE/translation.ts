@@ -78122,4 +78122,155 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Fehlerprotokoll des Webservers</translation>
     </message>
 </context>
+<context>
+    <name>kernel/exphelp</name>
+    <message>
+        <source>Help</source>
+        <translation>Hilfe</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
+    <message>
+        <source>Search the help</source>
+        <translation>Hilfe durchsuchen</translation>
+    </message>
+    <message>
+        <source>Report an error</source>
+        <translation>Fehler melden</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopieren</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopiert</translation>
+    </message>
+    <message>
+        <source>Copying failed</source>
+        <translation>Kopieren fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>No results</source>
+        <translation>Keine Treffer</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count Treffer</translation>
+    </message>
+    <message>
+        <source>Searching...</source>
+        <translation>Suche läuft...</translation>
+    </message>
+    <message>
+        <source>The search is not available right now.</source>
+        <translation>Die Suche ist gerade nicht verfügbar.</translation>
+    </message>
+    <message>
+        <source>Collapse</source>
+        <translation>Einklappen</translation>
+    </message>
+    <message>
+        <source>Expand</source>
+        <translation>Ausklappen</translation>
+    </message>
+    <message>
+        <source>No page has every word; these have some of them.</source>
+        <translation>Keine Seite enthält alle Wörter; diese enthalten einige davon.</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Leeren</translation>
+    </message>
+    <message>
+        <source>Getting started</source>
+        <translation>Erste Schritte</translation>
+    </message>
+    <message>
+        <source>Content and editing</source>
+        <translation>Inhalte und Bearbeitung</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Verwaltung</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <source>Installation and upgrades</source>
+        <translation>Installation und Aktualisierung</translation>
+    </message>
+    <message>
+        <source>Release notes</source>
+        <translation>Versionshinweise</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Geschichte</translation>
+    </message>
+    <message>
+        <source>Reference</source>
+        <translation>Referenz</translation>
+    </message>
+    <message>
+        <source>1 result</source>
+        <translation>1 Treffer</translation>
+    </message>
+    <message>
+        <source>Administrators</source>
+        <translation>Administratoren</translation>
+    </message>
+    <message>
+        <source>Editors</source>
+        <translation>Redakteure</translation>
+    </message>
+    <message>
+        <source>Developers</source>
+        <translation>Entwickler</translation>
+    </message>
+    <message>
+        <source>End users</source>
+        <translation>Endbenutzer</translation>
+    </message>
+    <message>
+        <source>Copy code</source>
+        <translation>Code kopieren</translation>
+    </message>
+    <message>
+        <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
+        <translation>Darauf aufbauen: Erweiterungen, Templates, Einstellungen, die APIs, die Kommandozeile und Aktualisierungen.</translation>
+    </message>
+    <message>
+        <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
+        <translation>Inhalte erstellen, bearbeiten, übersetzen und veröffentlichen: Medien, Layouts, Suche und der Editor.</translation>
+    </message>
+    <message>
+        <source>Run the installation: sites, users and roles, caches, logs, security and the system&apos;s health.</source>
+        <translation>Die Installation betreiben: Sites, Benutzer und Rollen, Caches, Logs, Sicherheit und der Zustand des Systems.</translation>
+    </message>
+    <message>
+        <source>Use the site: your account, signing in, two-factor authentication and finding things.</source>
+        <translation>Die Website nutzen: Ihr Konto, die Anmeldung, die Zwei-Faktor-Authentifizierung und das Finden von Inhalten.</translation>
+    </message>
+    <message>
+        <source>Help for this page</source>
+        <translation>Hilfe zu dieser Seite</translation>
+    </message>
+    <message>
+        <source>Help: %title</source>
+        <translation>Hilfe: %title</translation>
+    </message>
+    <message>
+        <source>Hide section: %title</source>
+        <translation>Abschnitt ausblenden: %title</translation>
+    </message>
+    <message>
+        <source>Show section: %title</source>
+        <translation>Abschnitt einblenden: %title</translation>
+    </message>
+</context>
 </TS>
