@@ -1,7 +1,8 @@
 <?php
 /**
  * DB-less tests of expHelpRecordRenderer: the release and branch history (doc/release-overview,
- * doc/branch-overview) shown as tables per series, recognised by the shape of the text.
+ * and the SVN branch records doc/branch-overview had, kept as fixtures/branch-overview-svn.txt) shown as tables per
+ * series, recognised by the shape of the text.
  *
  *  RR-01  both files are recognised; every record of the file becomes one table row
  *  RR-02  every date is read and written as ISO 8601
@@ -13,6 +14,7 @@
  *  RR-08  search ranks the history like the pages of the version most of its records belong to (VersionBoost)
  *  RR-09  the records after 4.2 (5.x, 6.x): sourced, dates from their changelogs, unknown dates marked, live links
  *         only to hosts that are online (GitHub), changelogs open in the help
+ *  RR-10  doc/branch-overview.md (Markdown) keeps every SVN branch of the old record file, title "Branch history"
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -33,9 +35,10 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         return dirname( __DIR__, 5 );
     }
 
+    /** A page of doc/, or "branch-overview-svn": the SVN branch records doc/branch-overview had until it became Markdown */
     protected static function source( $name )
     {
-        $text = file_get_contents( self::root() . '/doc/' . $name );
+        $text = file_get_contents( $name === 'branch-overview-svn' ? __DIR__ . '/fixtures/branch-overview-svn.txt' : self::root() . '/doc/' . $name );
         self::assertIsString( $text );
         return $text;
     }
@@ -70,7 +73,7 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
 
     public static function files()
     {
-        return array( 'release-overview' => array( 'release-overview' ), 'branch-overview' => array( 'branch-overview.md' ) );
+        return array( 'release-overview' => array( 'release-overview' ), 'branch-overview' => array( 'branch-overview-svn' ) );
     }
 
     /** RR-01 RR-02 RR-03 RR-04 */
@@ -138,7 +141,7 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/^\d+ releases from 2002-11-01 to 2026-\d\d-\d\d /', $release['summary'] );
         $this->assertStringContainsString( 'historical', $release['summary'] );
 
-        $branch = self::renderer()->describe( self::source( 'branch-overview.md' ) );
+        $branch = self::renderer()->describe( self::source( 'branch-overview-svn' ) );
         $this->assertSame( 'Branch history (3.x, from the original SVN)', $branch['title'] );
         $this->assertStringStartsWith( '10 branches from 2003-04-09 to 2006-02-20', $branch['summary'] );
 
@@ -155,13 +158,13 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         // 2.9-3 "AKA 3.0-beta2" belongs to 3.0
         $this->assertMatchesRegularExpression( '#id="30".*?2\.9-3.*?id="31"#s', $rendered['html'] );
 
-        $branches = self::renderer()->render( self::source( 'branch-overview.md' ) );
+        $branches = self::renderer()->render( self::source( 'branch-overview-svn' ) );
         $this->assertSame( array( 'Series 3.x', 'Various development branches' ),
                            array_map( function( $h ) { return $h['text']; }, $branches['toc'] ) );
         $this->assertStringContainsString( 'This an overview of the various branches.', $branches['html'] );
 
         // through the Markdown renderer, as the viewer calls it
-        $viewer = ( new expHelpMarkdownRenderer( array( 'translate' => function( $t ) { return $t; } ) ) )->renderPlainText( self::source( 'branch-overview.md' ), 'branch-overview.md' );
+        $viewer = ( new expHelpMarkdownRenderer( array( 'translate' => function( $t ) { return $t; } ) ) )->renderPlainText( self::source( 'branch-overview-svn' ), 'branch-overview-svn' );
         $this->assertStringContainsString( 'a4-help-records', $viewer['html'] );
         $this->assertSame( $branch['title'], $viewer['title'] );
     }
@@ -216,7 +219,7 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
     {
         $described = self::renderer()->describe( self::source( 'release-overview' ) );
         $this->assertSame( '3', $described['version'] );
-        $this->assertSame( '3', self::renderer()->describe( self::source( 'branch-overview.md' ) )['version'] );
+        $this->assertSame( '3', self::renderer()->describe( self::source( 'branch-overview-svn' ) )['version'] );
 
         $text = "# Release notes\n\nRelease 4.2 of the revision history.\n";
         $documents = array(
@@ -296,5 +299,28 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         $this->assertGreaterThanOrEqual( 40, $github, 'GitHub releases and tags are links' );
         $this->assertStringContainsString( 'href="/admin/exphelp/viewer/changelogs/6.0/6.0.14.md"', $html, 'a changelog opens in the help' );
         $this->assertStringContainsString( 'confluence.ez.no', $html, 'the dead address stays as text' );
+    }
+
+    /** RR-10 doc/branch-overview.md is a Markdown page, not a record list, and keeps every SVN branch of the old file */
+    public function testBranchOverviewKeepsTheSvnBranches()
+    {
+        $page = self::source( 'branch-overview.md' );
+        $this->assertNull( expHelpRecordRenderer::parse( $page ), 'a Markdown page, not records' );
+        $this->assertMatchesRegularExpression( '/^# Branch history$/m', $page, 'the title is just "Branch history"' );
+        $this->assertStringContainsString( '## Historical branches (original SVN, 3.x)', $page );
+        $this->assertStringContainsString( 'eZ Systems AS', $page, 'the inherited section names its authors and terms' );
+        $old = expHelpRecordRenderer::parse( self::source( 'branch-overview-svn' ) );
+        $this->assertCount( 10, $old['records'] );
+        foreach ( $old['records'] as $record )
+        {
+            $first = '';
+            foreach ( $record['revisions'] as $revision )
+                if ( $revision[0] === 'Revision' )
+                    $first = $revision[1];
+            $this->assertMatchesRegularExpression( '/^\| `' . preg_quote( $record['name'], '/' ) . '` \| ' . preg_quote( $first, '/' ) . ' \| [^|]+ \| '
+                                                   . preg_quote( $record['date'], '/' ) . ' \|$/m', $page, $record['name'] . ' with its revision and date' );
+        }
+        $rendered = ( new expHelpMarkdownRenderer( array( 'translate' => function( $t ) { return $t; } ) ) )->render( $page, 'branch-overview.md' );
+        $this->assertSame( 'Branch history', $rendered['title'] );
     }
 }

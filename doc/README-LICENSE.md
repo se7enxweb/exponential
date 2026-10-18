@@ -53,8 +53,12 @@ The help shows a different notice on these pages. They are:
   (`doc/features/2.x` to `doc/features/5.x`, `doc/bc/4.x` and `doc/bc/5.x`, `doc/specifications/3.x`,
   `doc/specifications/4.x` and `doc/specifications/trunk`, `doc/changelogs/2.9` to `doc/changelogs/5.x`, and
   `doc/changelogs/README.md`);
-- `doc/shop/`, `doc/branch-overview.md`, `doc/release-overview`, `doc/standards/header.txt`, and the example
+- `doc/shop/`, `doc/release-overview`, `doc/standards/header.txt`, and the example
   configuration files `doc/examples/ezpublish.conf` and `doc/examples/htaccess`.
+
+`doc/branch-overview.md` is new documentation under the GNU Free Documentation License, except its section "Historical branches
+(original SVN, 3.x)", which keeps the branch records of the original SVN repository under the terms they came with and
+says so in the page.
 
 The list is the setting `[License] OtherLicensePathRules[]` in `settings/exphelp.ini`, which the help reads to
 choose the notice of a page.

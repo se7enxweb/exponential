@@ -145,8 +145,8 @@ then have the ids `ext/<extension>/<path>`.
 
 ## Record pages
 
-The release and branch history kept from the original SVN repository (`doc/release-overview`,
-`doc/branch-overview`) are shown as tables per series by `expHelpRecordRenderer`: version, name, date, revisions,
+The release history (`doc/release-overview`) and any other plain text list of version records
+are shown as tables per series by `expHelpRecordRenderer`: version, name, date, revisions,
 addresses and notes, with a filter field over all rows and sort buttons in the column headers (without the script
 the tables are complete and in date order). Any plain text file written in the same "name line, then `- Key=value`
 lines" shape is shown the same way. Addresses on the old SVN hosts are shown as text marked "historical", never as
