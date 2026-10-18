@@ -79100,5 +79100,37 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Standards</source>
         <translation>Normen</translation>
     </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Diese Seite drucken</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Als PDF herunterladen</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Diese Seite drucken oder herunterladen</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Adresse:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Exponential-Hilfe</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Seite %number von %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Bild: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Bild</translation>
+    </message>
 </context>
 </TS>

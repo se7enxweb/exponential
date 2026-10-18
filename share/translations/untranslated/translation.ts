@@ -71976,5 +71976,37 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Standards</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Print this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

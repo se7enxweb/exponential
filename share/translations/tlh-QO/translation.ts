@@ -72123,5 +72123,37 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Standards</source>
         <translation>chutmey</translation>
     </message>
+    <message>
+        <source>Print this page</source>
+        <translation>navvam yIgher</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>PDF yIlI&apos;</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>navvam yIgher pagh yIlI&apos;</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Daq:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Exponential QaH</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>nav %number, %count vo&apos;</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>mIllogh: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>mIllogh</translation>
+    </message>
 </context>
 </TS>

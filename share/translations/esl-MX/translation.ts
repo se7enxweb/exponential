@@ -76349,5 +76349,37 @@ Gracias por la retroalimentación</translation>
         <source>Standards</source>
         <translation>Estándares</translation>
     </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Imprimir esta página</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Descargar como PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Imprimir o descargar esta página</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Dirección:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Ayuda de Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Página %number de %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Imagen: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Imagen</translation>
+    </message>
 </context>
 </TS>

@@ -72123,5 +72123,37 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Standards</source>
         <translation>Normae</translation>
     </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Hanc paginam imprimere</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Ut PDF depromere</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Hanc paginam imprimere aut depromere</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Inscriptio:</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Auxilium Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Pagina %number ex %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Imago: %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Imago</translation>
+    </message>
 </context>
 </TS>

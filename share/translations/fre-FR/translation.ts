@@ -73518,5 +73518,37 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Standards</source>
         <translation>Normes</translation>
     </message>
+    <message>
+        <source>Print this page</source>
+        <translation>Imprimer cette page</translation>
+    </message>
+    <message>
+        <source>Download as PDF</source>
+        <translation>Télécharger en PDF</translation>
+    </message>
+    <message>
+        <source>Print or download this page</source>
+        <translation>Imprimer ou télécharger cette page</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Adresse :</translation>
+    </message>
+    <message>
+        <source>Exponential help</source>
+        <translation>Aide d&apos;Exponential</translation>
+    </message>
+    <message>
+        <source>Page %number of %count</source>
+        <translation>Page %number sur %count</translation>
+    </message>
+    <message>
+        <source>Image: %alt</source>
+        <translation>Image : %alt</translation>
+    </message>
+    <message>
+        <source>Image</source>
+        <translation>Illustration</translation>
+    </message>
 </context>
 </TS>
