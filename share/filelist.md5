@@ -7913,7 +7913,7 @@ e4a2236c4ec51b1b0a369b5608191de2  kernel/classes/help/exphelpaudience.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 705e12f46e612abaecfd6cd91913b884  kernel/classes/help/exphelpcontextregistry.php
-d24f9182522e074f44d8602a2f5d184a  kernel/classes/help/exphelpdocumentindex.php
+98f8b234bff378b805e680a339e33dfa  kernel/classes/help/exphelpdocumentindex.php
 c2210a87dc934b662c651b5c62ab4b8f  kernel/classes/help/exphelpexamplesgenerator.php
 d737f4b8cee16a8ecd9af63aa5d73613  kernel/classes/help/exphelpfrontmatter.php
 2b4f170525630a0acb5287c535570570  kernel/classes/help/exphelpfunctioncollection.php
@@ -10950,7 +10950,7 @@ d1046a764cd9965e41cb1a4576148d32  tests/tests/kernel/classes/help/expHelpContent
 19fa0f5f2358b00a9b0a8b6fe0a822ca  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 d5f0c069ee7bdfa401c24c1a92e29968  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
 63751e825a3e7a8eab2e03bde858a6e7  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
-16faa84a8e0b1443114bb00b44e3aee9  tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php
+6be5b0ed27c9e3c5dd9c9ec5b6c0df08  tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php
 71c9e5ae21978534c250ee6455633a7e  tests/tests/kernel/classes/help/expHelpIssueReportTest.php
 c76de01464fb1ec244257b1d8283d9e6  tests/tests/kernel/classes/help/expHelpLicenseTest.php
 ead998cc3d4822efd40bb9da2d72d733  tests/tests/kernel/classes/help/expHelpLinksTest.php

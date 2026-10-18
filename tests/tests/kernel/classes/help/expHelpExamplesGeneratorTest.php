@@ -2,13 +2,14 @@
 /**
  * The generated reference examples (expHelpExamplesGenerator, ./console exp:help:examples), without a database.
  *
- *  HX-01  INI files are read with their comments: blocks, scalars, lists, hashes, the reset line
- *  HX-02  a command's help text and options are read from its code without running it
- *  HX-03  pages carry the help's front matter and the generated marker; the same sources give the same bytes
- *  HX-04  write() writes changed pages only and removes generated pages whose source is gone, never other files;
+ *  HE-01  INI files are read with their comments: blocks, scalars, lists, hashes, the reset line
+ *  HE-02  a command's help text and options are read from its code without running it
+ *  HE-03  pages carry the help's front matter and the generated marker; the same sources give the same bytes
+ *  HE-04  write() writes changed pages only and removes generated pages whose source is gone, never other files;
  *         compare() reports missing, different and stale pages
- *  HX-05  file names are safe; module views and policies come from module.php
- *  HX-06  comments quoted from shipped files are text (escaped), and the link check honors the escapes
+ *  HE-05  file names are safe; module views and policies come from module.php
+ *  HE-06  comments quoted from shipped files are text (escaped), and the link check honors the escapes
+ *  HE-07  pageTitles() (included by every admin page for its Help menu) leaves the generated pages out
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -53,7 +54,7 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         return new expHelpExamplesGenerator( $this->root, 'doc/examples', array( 'bin/php/sample.php', 'kernel/sample/module.php', 'settings/sample.ini' ) );
     }
 
-    /** HX-01 */
+    /** HE-01 */
     public function testIniParsing()
     {
         $ini = expHelpExamplesGenerator::parseIniText( (string)file_get_contents( $this->root . '/settings/sample.ini' ) );
@@ -70,7 +71,7 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( array( 'x', '1' ), array( 'y', '2' ) ), $ini['blocks']['Second']['settings']['Map']['items'] );
     }
 
-    /** HX-02 */
+    /** HE-02 */
     public function testScriptHelpFromCode()
     {
         $help = expHelpExamplesGenerator::scriptHelp( (string)file_get_contents( $this->root . '/bin/php/sample.php' ) );
@@ -81,7 +82,7 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '[FILE]', $help['arguments'] );
     }
 
-    /** HX-03 */
+    /** HE-03 */
     public function testPagesAreDeterministicAndMarked()
     {
         $one = $this->generator()->build( array( 'ini-settings', 'commands' ) );
@@ -102,7 +103,7 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertDoesNotMatchRegularExpression( '/\b20\d\d-\d\d-\d\d\b/', implode( '', $one ), 'no dates' );
     }
 
-    /** HX-04 */
+    /** HE-04 */
     public function testWriteCompareAndStale()
     {
         $generator = $this->generator();
@@ -128,7 +129,7 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $pages['doc/examples/commands/sample.md'], file_get_contents( "$dir/sample.md" ) );
     }
 
-    /** HX-05 */
+    /** HE-05 */
     public function testModuleViewsPoliciesAndFileNames()
     {
         $this->assertSame( 'CronjobPart-infrequent', expHelpExamplesGenerator::fileName( 'CronjobPart-infrequent' ) );
@@ -146,7 +147,7 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'Checked by the views: [show]', $policies );
     }
 
-    /** HX-06 a comment quoted from a shipped file is text: its Markdown characters are escaped, the link check skips them */
+    /** HE-06 a comment quoted from a shipped file is text: its Markdown characters are escaped, the link check skips them */
     public function testQuotedCommentsAreText()
     {
         $text = "[Block]\n# load it with {ezscript[_require]('some.js')} or *this*\nName=1\n";
@@ -160,5 +161,28 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertNotContains( "'some.js'", $targets, 'the comment holds no link' );
         $this->assertContains( 'README.md', $targets, 'the page\'s own links are found' );
         $this->assertCount( 1, expHelpLinkCheck::links( "[a](b.md) \\[c\\](d.md)" ) );
+    }
+
+    /** HE-07 the page titles every admin page includes for its Help menu leave the generated pages out */
+    public function testPageTitlesLeaveGeneratedPagesOut()
+    {
+        if ( !class_exists( 'expHelpDocumentIndex' ) )
+            $this->markTestSkipped( 'expHelpDocumentIndex is not loadable here' );
+        $dir = $this->root . '/cache';
+        mkdir( $dir );
+        $index = new expHelpDocumentIndex( null, array( 'cache_dir' => $dir ) );
+        $data = new ReflectionProperty( 'expHelpDocumentIndex', 'data' );
+        if ( PHP_VERSION_ID < 80100 )
+            $data->setAccessible( true );
+        $data->setValue( $index, array( 'signature' => 'sig', 'documents' => array(
+            'help/start.md' => array( 'title' => 'Start', 'type' => 'help' ),
+            'examples/README.md' => array( 'title' => 'Examples', 'type' => 'example' ),
+            'examples/datatypes/ezstring.md' => array( 'title' => 'ezstring datatype', 'type' => 'generated' ),
+        ) ) );
+        $store = new ReflectionMethod( 'expHelpDocumentIndex', 'storePageTitles' );
+        if ( PHP_VERSION_ID < 80100 )
+            $store->setAccessible( true );
+        $this->assertTrue( $store->invoke( $index ) );
+        $this->assertSame( array( 'help/start.md' => 'Start', 'examples/README.md' => 'Examples' ), expHelpDocumentIndex::pageTitles( $dir ) );
     }
 }
