@@ -1019,10 +1019,11 @@ body,
 }
 .a4-help-menu-search .a4-input { flex: 1 1 auto; min-width: 0; }
 .a4-help-menu-search .a4-btn { flex: 0 0 auto; }
+/* the Help center, right below the search, set apart from the page's own help by a line */
 .a4-site-menu .a4-help-menu-center {
-  margin-top: var(--a4-space-1);
-  border-top: 1px solid var(--a4-line);
-  border-radius: 0 0 var(--a4-radius-s) var(--a4-radius-s);
+  margin-bottom: var(--a4-space-1);
+  border-bottom: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s) var(--a4-radius-s) 0 0;
   font-weight: 600;
 }
 /* Phones: the globe stands mid-row, so the panel is placed under the header, the window's width less the gutters */
