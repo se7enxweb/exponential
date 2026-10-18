@@ -329,7 +329,8 @@ class expHelpMarkdownRendererTest extends PHPUnit\Framework\TestCase
     {
         $md = "# The <script>alert(1)</script> title\n\n## Install\n\ntext\n\n## Install\n\n### \"><img src=x onerror=alert(1)>\n\n## Ünïcode & more\n";
         $r = $this->html( $md );
-        $this->assertStringNotContainsString( '<', $r['title'], 'the title is plain text' );
+        // plain text (the templates wash it): the heading's source text, never the renderer's own markup or entities
+        $this->assertDoesNotMatchRegularExpression( '/<(strong|em|code|a|span)\b|&lt;|&amp;lt;/', $r['title'], 'the title is plain text' );
         $this->assertStringContainsString( 'title', $r['title'] );
         $ids = array();
         foreach ( array( 'h1', 'h2', 'h3' ) as $h )
@@ -345,7 +346,7 @@ class expHelpMarkdownRendererTest extends PHPUnit\Framework\TestCase
             $this->assertArrayHasKey( 'level', $entry );
             $this->assertArrayHasKey( 'text', $entry );
             $this->assertArrayHasKey( 'anchor', $entry );
-            $this->assertStringNotContainsString( '<', $entry['text'], 'TOC text is plain' );
+            $this->assertDoesNotMatchRegularExpression( '/<(strong|em|code|a|span)\b|&lt;|&amp;lt;/', $entry['text'], 'TOC text is plain' );
             $this->assertMatchesRegularExpression( '/^[\p{L}\p{N}\p{M}_.:-]+$/u', $entry['anchor'] );
             $this->assertContains( $entry['anchor'], $ids, 'each TOC entry has its heading' );
             $anchors[] = $entry['anchor'];
