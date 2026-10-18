@@ -8478,7 +8478,7 @@ bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regressi
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 b6f45ce384a24cccf17ed74d9da7c988  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 972ceff89325d374430b9f9d976d4f69  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
-ef76664b2fbed14fd6c6ac43e4e029a5  tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php
+f673ec91908450c171ed3372b6fe86b5  tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php
 9d8efd686f8d700dc0ea739ff30fa782  tests/tests/kernel/classes/user/expRegistrationFeedbackMailTest.php
 fc63055bcb0f1d48ebb5c64f8a116fb7  tests/tests/kernel/classes/user/expRegistrationUserMailsTest.php
 0cf0917e21fbd4ebf5783aff05d50b0a  tests/tests/kernel/classes/user/expUserAccountOverviewTest.php

@@ -153,7 +153,8 @@ class expRegistrationAdminActionTest extends PHPUnit\Framework\TestCase
             $this->withPart( $token, 2, '17x' ),                      // non-digit expiry
             $this->withPart( $token, 2, '' ),
             $this->withPart( $token, 2, '-1' ),
-            $this->withPart( $token, 3, strtoupper( $parts[3] ) ),    // nonce in capitals
+            // nonce in capitals: a fixed one, as a random nonce can be all digits, which capitals do not change
+            $this->withPart( $token, 3, 'ABCDEF0123456789ABCDEF01' ),
             $this->withPart( $token, 3, substr( $parts[3], 0, 23 ) ), // nonce too short
             $this->withPart( $token, 3, $parts[3] . '0' ),            // nonce too long
             $this->withPart( $token, 3, str_repeat( 'g', 24 ) ),      // not hex
