@@ -102,17 +102,24 @@ Composer 2.x. It installs the Zeta Components and the Exponential extensions tha
 
 ### Database
 
+> **Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
+> 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work
+> at this time. Details: [Database support](help/database-support.md).
+
 | Database | Driver (`DatabaseImplementation`) | PHP extension | Notes |
 |---|---|---|---|
-| **SQLite 3** | `sqlite3` | `sqlite3` | The default. No database server: the database is one file under `var/storage/sqlite3/`. A full production database, see [section 9](#9-sqlite-in-production). |
-| MySQL or MariaDB | `mysqli` (also `ezmysqli`, `mysql`) | `mysqli` | UTF-8 is required. |
-| PostgreSQL | `pgsql` (also `ezpostgresql`, `postgresql`) | `pgsql` | |
-| MongoDB | `mongodb` | `mongodb` | |
-| Oracle 19c or later | through the `ezoracle` extension | `oci8` | `ezoracle` must be in `extension/`; it is a dependency in `composer.json`. |
+| **1. SQLite 3** | `sqlite3` | `sqlite3` | The default. No database server: the database is one file under `var/storage/sqlite3/`. A full production database, see [section 9](#9-sqlite-in-production). |
+| 2. PostgreSQL | `pgsql` (also `ezpostgresql`, `postgresql`) | `pgsql` | Needs `pgcrypto` in the database. |
+| 3. MongoDB | `mongodb` | `mongodb` and the library `mongodb/mongodb` | PHP 8.2 or later. |
+| 4. MariaDB | `mysqli` (also `ezmysqli`, `mysql`) | `mysqli` | UTF-8 (`utf8mb4`) is required. |
+| 5. Oracle 19c or later | through the `ezoracle` extension | `oci8` | `ezoracle` must be in `extension/`; it is a dependency in `composer.json`. |
+| 6. MySQL | `mysqli` (also `ezmysqli`, `mysql`) | `mysqli` | UTF-8 (`utf8mb4`) is required. |
 
 The names are the aliases in `settings/site.ini`, block `[DatabaseSettings]`, `ImplementationAlias[]`. The minimum
 server versions the wizard checks are in `kernel/setup/ezsetupcommon.php` (MySQL 4.1.1, PostgreSQL 8.0, SQLite
-3.0.1, MongoDB 4.0, Oracle 19).
+3.0.1, MongoDB 4.0, Oracle 19); the practical minimums the current drivers need are higher (SQLite 3.33, PostgreSQL 13,
+MongoDB 6.0), see [Database support](help/database-support.md#versions-checked-against-the-code). Exponential runs on
+almost any operating system with PHP 8.0 or later: see [Operating system support](help/os-support.md).
 
 ### Web server
 

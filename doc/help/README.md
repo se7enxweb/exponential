@@ -64,3 +64,12 @@ When a help page is not enough, the guides go into every detail of one area. A f
 [Content languages](../guides/content-languages.md), [Two-step sign-in](../guides/two-factor-login.md) and
 [The content model and editing content](../guides/content-model-and-editing.md). All guides are listed in
 [the guides' table of contents](../guides/README.md), and every term is explained in [the glossary](../glossary.md).
+
+## Choosing where Exponential runs
+
+For administrators and developers who choose the machine and the database of a site:
+
+| Page | What it helps you do |
+|---|---|
+| [Database support](database-support.md) | Choose a database from the supported ones, in their official order (SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL), and know what each needs |
+| [Operating system support](os-support.md) | Check whether an operating system, processor and web server can run Exponential, from Linux to Windows and beyond |

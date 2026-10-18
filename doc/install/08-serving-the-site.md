@@ -1305,6 +1305,8 @@ What can go wrong behind a proxy:
 
 In this repository:
 
+- [Operating system support](../help/os-support.md): the operating systems, web servers and PHP SAPIs, sorted into
+  tiers (tested here, known to work, expected to work, not possible today)
 - [Velocity engines](../bc/6.0/velocity-engines.md): engines, `deploy`, `Instances`, FrankenPHP, logs, the files each
   engine serves, the `/Q/` views
 - [Velocity: running Exponential in a persistent-worker web server](../features/6.0/velocity-persistent-worker-server.md)
