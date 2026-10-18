@@ -181,8 +181,8 @@ class AdminPhoneMenuTest extends PHPUnit\Framework\TestCase
     {
         $tablet = AdminBaseStylesheetsTest::rules( self::media( self::css( 'admin4.css' ), 'screen and (min-width: 576px)' ) );
         $width = $tablet['#header .searchblock input.searchtext']['width'];
-        // 454px with the inline logo (152px wide, the old image 114px): the tools keep one row at 576px
-        $this->assertSame( 'clamp(6rem, calc(100vw - 454px), 230px)', $width );
+        // 502px with the inline logo (152px wide, the old image 114px) and the help link: the tools keep one row at 576px
+        $this->assertSame( 'clamp(4.5rem, calc(100vw - 502px), 230px)', $width );
     }
 
     /** PM-04 */

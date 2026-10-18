@@ -258,7 +258,8 @@ body,
     margin-inline-start: auto;
   }
   .header-site,
-  .header-theme { order: 3; }   /* the site link first: same order, so the markup's order decides */
+  .header-theme,
+  .header-help { order: 3; }   /* the site link first: same order, so the markup's order decides */
   .header-user { order: 4; }
   .navbar-menu {
     order: 5;
@@ -289,11 +290,11 @@ body,
     flex: 0 0 auto;
   }
   .navbar-bar a:focus-visible { outline-offset: -3px; }   /* a scrolling row clips: the ring is drawn inside the tab */
-  /* the field gives way first, so the tools keep one row down to 576px. The rest of the row takes 439px (the
+  /* the field gives way first, so the tools keep one row down to 576px. The rest of the row takes 487px (the
      paddings 48, the logo 158 (114 until the inline logo), the site link, the gaps, the search button 41, light/dark
-     36, the user menu and logout 80); 454px leaves room for one more tool, so the field is 122px wide at 576px
-     (166px with the old 114px logo, 106px until 2026-10) and its full 230px from 684px. */
-  #header .searchblock input.searchtext { width: clamp(6rem, calc(100vw - 454px), 230px); }
+     36, the help link 36 and its gap 12, the user menu and logout 80; 439px before the help link); 502px leaves 15px to spare,
+     so the field is 74px wide at 576px (measured: the tools keep the row) and its full 230px from 732px. */
+  #header .searchblock input.searchtext { width: clamp(4.5rem, calc(100vw - 502px), 230px); }
   /* With the script the row never overflows (ezadmin_menubar.js moves what does not fit into "More"), so it need not
      clip, and the "More" list can open below it. */
   .navbar-menu.a4-nav-fits .navbar-bar { overflow: visible; }
@@ -739,7 +740,7 @@ body,
   #header .a4-env-always { max-width: 18rem; }   /* the main menu gives the room, its last tabs going into "More" */
 }
 @media screen and (min-width: 576px) and (max-width: 1279.98px) {
-  #header:has(.a4-env-always) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px); }
+  #header:has(.a4-env-always) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 502px - var(--a4-env-room)), 230px); }
 }
 /* the same for hover where the pointer cannot hover finely (touch screens): the badge is in the row there */
 @media screen and (max-width: 767.98px) and (not ((hover: hover) and (pointer: fine))) {
@@ -771,7 +772,7 @@ body,
   #header .a4-env-hover { max-width: 18rem; }
 }
 @media screen and (min-width: 576px) and (max-width: 1279.98px) and (not ((hover: hover) and (pointer: fine))) {
-  #header:has(.a4-env-hover) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 454px - var(--a4-env-room)), 230px); }
+  #header:has(.a4-env-hover) .searchblock input.searchtext { width: clamp(5.5rem, calc(100vw - 502px - var(--a4-env-room)), 230px); }
 }
 /* the sign-in page: the name beside the logo at every width (it has the room), no release (nobody is signed in);
    with hover, as in the header */
@@ -864,9 +865,10 @@ body,
 }
 .navbar-menu .a4-nav-more-list li a:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
 
-/* The site link, the user menu and the logout button: round icon buttons as high as light/dark and the search field (36px, more
+/* The site link, the help link, the user menu and the logout button: round icon buttons as high as light/dark and the search field (36px, more
    than the 32px a header control is meant to have at least), in the header's colours */
 .header-site,
+.header-help,
 .header-user {
   display: flex;
   align-items: center;

@@ -54,6 +54,24 @@
   --a4-overlay: rgba(16, 24, 40, 0.45);
   --a4-code-bg: #1f2430;
   --a4-code-ink: #e8ebf0;
+  /* syntax highlighting of code blocks (help pages, span.a4-help-tok-<kind>): on --a4-code-bg, dark in both themes,
+     so the light and dark values are the same; every colour keeps 4.5:1 on both code backgrounds */
+  --a4-code-comment: #9aa5b8;
+  --a4-code-keyword: #c792ea;
+  --a4-code-string: #a5d6a7;
+  --a4-code-number: #f9ae77;
+  --a4-code-variable: #f78c8c;
+  --a4-code-function: #82aaff;
+  --a4-code-tag: #7fdbca;
+  --a4-code-attr: #ffcb6b;
+  --a4-code-operator: #89ddff;
+  --a4-code-constant: #f9ae77;
+  --a4-code-meta: #b4bcd0;
+  --a4-code-section: #ffd580;
+  --a4-code-inserted: #a5d6a7;
+  --a4-code-deleted: #ff9e9e;
+  --a4-code-property: #addb67;
+  --a4-code-type: #ffcb8b;
 
   /* states: text, tint, edge */
   --a4-ok: #166534;
@@ -232,6 +250,24 @@ html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {
   --a4-overlay: rgba(0, 0, 0, 0.6);
   --a4-code-bg: #0e1218;
   --a4-code-ink: #e8ebf0;
+  /* syntax highlighting of code blocks (help pages, span.a4-help-tok-<kind>): on --a4-code-bg, dark in both themes,
+     so the light and dark values are the same; every colour keeps 4.5:1 on both code backgrounds */
+  --a4-code-comment: #9aa5b8;
+  --a4-code-keyword: #c792ea;
+  --a4-code-string: #a5d6a7;
+  --a4-code-number: #f9ae77;
+  --a4-code-variable: #f78c8c;
+  --a4-code-function: #82aaff;
+  --a4-code-tag: #7fdbca;
+  --a4-code-attr: #ffcb6b;
+  --a4-code-operator: #89ddff;
+  --a4-code-constant: #f9ae77;
+  --a4-code-meta: #b4bcd0;
+  --a4-code-section: #ffd580;
+  --a4-code-inserted: #a5d6a7;
+  --a4-code-deleted: #ff9e9e;
+  --a4-code-property: #addb67;
+  --a4-code-type: #ffcb8b;
 
   --a4-ok: #86efac;
   --a4-ok-bg: rgba(34, 197, 94, 0.14);
@@ -1917,6 +1953,7 @@ a.a4-icon-btn, a.a4-icon-btn:visited { color: var(--a4-muted); }
 .a4-bi-plus-lg { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/plus-lg.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/plus-lg.svg); }
 .a4-bi-power { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/power.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/power.svg); }
 .a4-bi-puzzle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/puzzle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/puzzle.svg); }
+.a4-bi-question-circle { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/question-circle.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/question-circle.svg); }
 .a4-bi-rss { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/rss.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/rss.svg); }
 .a4-bi-search { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/search.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/search.svg); }
 .a4-bi-shield-fill-check { -webkit-mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); mask-image: url(../../../share/icons/bootstrap-icons/svg/shield-fill-check.svg); }
