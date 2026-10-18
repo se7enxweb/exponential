@@ -35,6 +35,29 @@ const VIEWER = '<div class="a4-help" data-exphelp><form data-exphelp-search data
 function setup(html, opts) {
     opts = opts || {};
     const document = createDocument(html);
+    // the capture phase, which mini_dom leaves out: the document's capture listeners run before every other one
+    const capture = [];
+    const add = document.addEventListener;
+    document.addEventListener = function (type, fn, useCapture) {
+        if (useCapture === true || (useCapture && useCapture.capture)) { capture.push({ type, fn }); return; }
+        add.call(document, type, fn);
+    };
+    const dispatch = document.dispatch;
+    document.dispatch = function (type, target, props) {
+        const pre = Object.assign({ type, target, defaultPrevented: false, ctrlKey: false, metaKey: false, altKey: false }, props || {});
+        pre.preventDefault = () => { pre.defaultPrevented = true; };
+        pre.stopPropagation = () => {};
+        capture.filter((c) => c.type === type).forEach((c) => c.fn.call(document, pre));
+        return dispatch.call(document, type, target, Object.assign({}, props || {}, { defaultPrevented: pre.defaultPrevented }));
+    };
+    // admin4.js: its own / shortcut to the header search, registered before exphelp.js, skips a prevented event
+    if (opts.admin4) {
+        add.call(document, 'keydown', (e) => {
+            if (e.key !== '/' || e.defaultPrevented) return;
+            e.preventDefault();
+            document.getElementById('searchtext').focus();
+        });
+    }
     // what mini_dom leaves out and the script uses
     const proto = Object.getPrototypeOf(Object.getPrototypeOf(document.body));
     proto.insertBefore = function (child, ref) {
@@ -254,6 +277,20 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
         const next = h.key(d.body, ']').defaultPrevented;
         const ctrl = d.dispatch('keydown', d.body, { key: '/', ctrlKey: true }).defaultPrevented;
         out('page keys', { scrolled: h.scrolled, hash: h.sandbox.location.hash, typingJ, prev, next, assigned: h.assigned, ctrl });
+    }
+    {
+        // the admin header's search and its / shortcut (admin4.js) on the same page
+        const page = '<form id="header"><input type="text" id="searchtext" name="SearchText" /></form>' + SEARCH;
+        const h = setup(page, { admin4: true });
+        const slash = h.key(h.document.body, '/');
+        const help = h.document.activeElement && h.document.activeElement.id;
+        const hidden = setup(page.replace('data-exphelp-search-input', 'data-exphelp-search-input disabled'), { admin4: true });
+        hidden.key(hidden.document.body, '/');
+        const dialog = setup('<div role="dialog"><button id="d">x</button></div>' + page, { admin4: true });
+        dialog.key(dialog.document.getElementById('d'), '/');
+        out('slash beats the header search', { prevented: slash.defaultPrevented, focused: help,
+            disabledGoesToHeader: hidden.document.activeElement && hidden.document.activeElement.id,
+            fromDialog: dialog.document.activeElement && dialog.document.activeElement.id });
     }
     {
         const h = setup('<div><p>no help here</p></div>');
