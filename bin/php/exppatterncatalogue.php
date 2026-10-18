@@ -1405,7 +1405,12 @@ function exppcCompare( $pages )
 function exppcWrite( $pages )
 {
     if ( !is_dir( EXPPC_OUT ) )
-        mkdir( EXPPC_OUT, 0775, true );
+    {
+        // the installation's directory mode limits (EZP_DIR_MODE_MAX in config.php) apply here too
+        require_once 'lib/ezfile/classes/ezfile.php';
+        require_once 'lib/ezfile/classes/ezdir.php';
+        mkdir( EXPPC_OUT, eZDir::dirMode( 0775 ), true );
+    }
     foreach ( $pages as $path => $text )
         if ( !is_file( $path ) || file_get_contents( $path ) !== $text )
             file_put_contents( $path, $text );
