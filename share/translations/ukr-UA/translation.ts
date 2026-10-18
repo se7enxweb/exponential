@@ -13767,6 +13767,10 @@ Note: The packages will not be uninstalled.</source>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Докладніше див. &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14218,6 +14222,10 @@ Note: The packages will not be uninstalled.</source>
         <source>Quick search</source>
         <translation>Швидкий пошук</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14443,6 +14451,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Ваше ім&apos;я, адреса ел. пошти та інші дані.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Посібники, пошук і як повідомити про помилку.</translation>
     </message>
 </context>
 <context>
@@ -14852,6 +14868,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Стежити за файлами журналів, шукати в них і зіставляти їх.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Посібники, пошук і як повідомити про помилку.</translation>
     </message>
 </context>
 <context>
@@ -64918,6 +64942,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Nothing was published in the last 14 days.</source>
         <translation>За останні 14 днів нічого не опубліковано.</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Центр довідки</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -71823,6 +71851,262 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Посібники й довідник для всіх, хто працює з цією інсталяцією, створені з документації її власної версії.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Застосувати фільтри</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Перегляд</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Переглянути всі сторінки довідки</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Перегляд довідки</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Виберіть іншу аудиторію, тему або тип.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>Цитуйте її</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Надсилайте виправлення</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>Копіюйте її й поширюйте</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Повідомлення про авторські права й ліцензію</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Створення й зміна вмісту: редактор, поля, чернетки й версії.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Ліцензія документації</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Пошук вмісту в адмініструванні та на сайті.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Перші кроки в адмініструванні: вхід, орієнтування й щоденні завдання.</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Вільна документація: користуйтеся нею, щоб допомагати собі й іншим</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Як отримати допомогу й повідомити про помилку.</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Передавайте сторінки іншим, на папері або як файли. Зберігайте з кожною копією повідомлення про авторські права, повідомлення про ліцензію та копію ліцензії.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Зображення, файли та інші медіа: завантаження, вибір і повторне використання.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Встановлення Exponential і його оновлення до нового випуску.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Гарячі клавіші, що прискорюють роботу в адмініструванні.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Для цього вибору сторінок немає.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Старіші документи, збережені для довідки.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Макети сторінок: зони, блоки й правила, що вибирають макет.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Публікація, планування, приховування й переміщення вмісту.</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Читайте будь-яку сторінку скільки завгодно, з будь-якою метою.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Прочитати ліцензію</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Посилайтеся на сторінку за її назвою та адресою в довідці або за її файлом у каталозі doc.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Довідкові матеріали: налаштування, команди й формати.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Керування сайтом: налаштування, користувачі й ролі, кеші, завдання cron і журнали.</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Поширюйте свою версію під тією самою ліцензією, з початковими повідомленнями й приміткою про те, що ви змінили.</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>Вивчайте її</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Шаблони, розширення, API і код, що стоїть за ними.</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>Ліцензія в інтернеті</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Ця документація є вільною документацією за ліцензією %license %version або пізнішою.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Ця документація є вільною документацією за ліцензією %license %version.</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Ця довідка є вільною документацією за ліцензією %license %version або пізнішою. Ви можете використовувати, поширювати й покращувати її:</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Ця довідка є вільною документацією за ліцензією %license %version. Ви можете використовувати, поширювати й покращувати її:</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Це текст %license, версії %version, у тому вигляді, як його публікує Free Software Foundation. Кожен може дослівно копіювати й поширювати його; змінювати його не дозволено.</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Ця сторінка є частиною документації розширення %extension і поширюється за ліцензією цього розширення.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Ця сторінка успадкована з документації початкового програмного забезпечення. На неї не поширюється %license; вона поширюється за %other.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Теми</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>Перекладайте, адаптуйте й покращуйте її</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Переклади й мови сайту.</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Скористайтеся «Редагувати на GitHub» на будь-якій сторінці. Зміни приймаються за тією самою ліцензією, тож вони залишаються вільними для всіх.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Що змінилося в кожному випуску.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Що робить кожна функція і як її налаштувати.</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Що можна робити з вільною документацією</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Які сторінки мають яку ліцензію</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Ваш обліковий запис: пароль, двоетапний вхід і вподобання.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>Відповідних сторінок: %count</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>Сторінок у теках документації: %count. Відкрийте теку або відфільтруйте за словом із назви.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>Про цю документацію</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Переглянути всю довідку</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Фільтрувати сторінки</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Фільтрувати сторінки довідки</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Жодна назва сторінки не відповідає</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Зворотна сумісність</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Журнали змін</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Приклади</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Посібники</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Робота в адмініструванні</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Інсталяція</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Магазин</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Специфікації</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Стандарти</translation>
     </message>
 </context>
 </TS>

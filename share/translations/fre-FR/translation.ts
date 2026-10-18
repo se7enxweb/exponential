@@ -14178,6 +14178,10 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <source>&lt;p&gt;For more information see &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Pour plus d&apos;informations, consultez &lt;a href=%about_link&gt;ezinfo/about&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centre d&apos;aide</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout</name>
@@ -14689,6 +14693,10 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <source>Quick search</source>
         <translation>Recherche rapide</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centre d&apos;aide</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14946,6 +14954,14 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
     <message>
         <source>Your name, e-mail address and other details.</source>
         <translation>Votre nom, votre adresse électronique et d&apos;autres informations.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centre d&apos;aide</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guides, recherche et comment signaler une erreur.</translation>
     </message>
 </context>
 <context>
@@ -15359,6 +15375,14 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
         <translation>Suivre, rechercher et recouper les fichiers journaux.</translation>
+    </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centre d&apos;aide</translation>
+    </message>
+    <message>
+        <source>Guides, search and how to report an error.</source>
+        <translation>Guides, recherche et comment signaler une erreur.</translation>
     </message>
 </context>
 <context>
@@ -66328,6 +66352,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Nothing was published in the last 14 days.</source>
         <translation>Rien n&apos;a été publié au cours des 14 derniers jours.</translation>
     </message>
+    <message>
+        <source>Help center</source>
+        <translation>Centre d&apos;aide</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/debugbar</name>
@@ -73233,6 +73261,262 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Guides and reference for everyone who works with this installation, written from the documentation of its own version.</source>
         <translation>Guides et référence pour tous ceux qui travaillent avec cette installation, tirés de la documentation de sa propre version.</translation>
+    </message>
+    <message>
+        <source>Apply filters</source>
+        <translation>Appliquer les filtres</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Parcourir</translation>
+    </message>
+    <message>
+        <source>Browse all help pages</source>
+        <translation>Parcourir toutes les pages d&apos;aide</translation>
+    </message>
+    <message>
+        <source>Browse the help</source>
+        <translation>Parcourir l&apos;aide</translation>
+    </message>
+    <message>
+        <source>Choose another audience, topic or type.</source>
+        <translation>Choisissez un autre public, un autre thème ou un autre type.</translation>
+    </message>
+    <message>
+        <source>Cite it</source>
+        <translation>La citer</translation>
+    </message>
+    <message>
+        <source>Contribute fixes back</source>
+        <translation>Contribuer vos corrections</translation>
+    </message>
+    <message>
+        <source>Copy it and share it</source>
+        <translation>La copier et la partager</translation>
+    </message>
+    <message>
+        <source>Copyright and license notice</source>
+        <translation>Mention de droits d&apos;auteur et de licence</translation>
+    </message>
+    <message>
+        <source>Creating and changing content: the editor, fields, drafts and versions.</source>
+        <translation>Créer et modifier du contenu : l&apos;éditeur, les champs, les brouillons et les versions.</translation>
+    </message>
+    <message>
+        <source>Documentation license</source>
+        <translation>Licence de la documentation</translation>
+    </message>
+    <message>
+        <source>Finding content in the administration and on the site.</source>
+        <translation>Trouver du contenu dans l&apos;administration et sur le site.</translation>
+    </message>
+    <message>
+        <source>First steps in the administration: signing in, finding your way and the everyday tasks.</source>
+        <translation>Premiers pas dans l&apos;administration : se connecter, s&apos;orienter et les tâches quotidiennes.</translation>
+    </message>
+    <message>
+        <source>Free documentation: use it to help yourself and others</source>
+        <translation>Documentation libre : utilisez-la pour vous aider et aider les autres</translation>
+    </message>
+    <message>
+        <source>Getting help and reporting an error.</source>
+        <translation>Obtenir de l&apos;aide et signaler une erreur.</translation>
+    </message>
+    <message>
+        <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
+        <translation>Donnez des pages à d&apos;autres utilisateurs, sur papier ou sous forme de fichiers. Gardez la mention de droits d&apos;auteur, la mention de licence et une copie de la licence avec chaque copie.</translation>
+    </message>
+    <message>
+        <source>Images, files and other media: uploading, choosing and reusing them.</source>
+        <translation>Images, fichiers et autres médias : les téléverser, les choisir et les réutiliser.</translation>
+    </message>
+    <message>
+        <source>Installing Exponential and upgrading it to a new release.</source>
+        <translation>Installer Exponential et le mettre à jour vers une nouvelle version.</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts that make the administration faster.</source>
+        <translation>Les raccourcis clavier qui accélèrent l&apos;administration.</translation>
+    </message>
+    <message>
+        <source>No page for this choice.</source>
+        <translation>Aucune page pour ce choix.</translation>
+    </message>
+    <message>
+        <source>Older documents kept for reference.</source>
+        <translation>Documents plus anciens conservés pour référence.</translation>
+    </message>
+    <message>
+        <source>Page layouts: zones, blocks and the rules that choose a layout.</source>
+        <translation>Mises en page : zones, blocs et les règles qui choisissent une mise en page.</translation>
+    </message>
+    <message>
+        <source>Publishing, scheduling, hiding and moving content.</source>
+        <translation>Publier, planifier, masquer et déplacer du contenu.</translation>
+    </message>
+    <message>
+        <source>Read any page as often as you like, for any purpose.</source>
+        <translation>Lisez n&apos;importe quelle page aussi souvent que vous le souhaitez, dans n&apos;importe quel but.</translation>
+    </message>
+    <message>
+        <source>Read the license</source>
+        <translation>Lire la licence</translation>
+    </message>
+    <message>
+        <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
+        <translation>Désignez une page par son titre et son adresse dans l&apos;aide, ou par son fichier dans le répertoire doc.</translation>
+    </message>
+    <message>
+        <source>Reference material: settings, commands and formats.</source>
+        <translation>Documentation de référence : réglages, commandes et formats.</translation>
+    </message>
+    <message>
+        <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
+        <translation>Exploiter le site : réglages, utilisateurs et rôles, caches, tâches cron et journaux.</translation>
+    </message>
+    <message>
+        <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
+        <translation>Partagez votre version sous la même licence, avec les mentions d&apos;origine et une note de ce que vous avez modifié.</translation>
+    </message>
+    <message>
+        <source>Study it</source>
+        <translation>L&apos;étudier</translation>
+    </message>
+    <message>
+        <source>Templates, extensions, the API and the code behind it.</source>
+        <translation>Templates, extensions, l&apos;API et le code qui se trouve derrière.</translation>
+    </message>
+    <message>
+        <source>The license on the web</source>
+        <translation>La licence sur le web</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version or later.</source>
+        <translation>Cette documentation est une documentation libre, sous licence %license %version ou ultérieure.</translation>
+    </message>
+    <message>
+        <source>This documentation is free documentation, licensed under the %license %version.</source>
+        <translation>Cette documentation est une documentation libre, sous licence %license %version.</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
+        <translation>Cette aide est une documentation libre, sous licence %license %version ou ultérieure. Vous pouvez l&apos;utiliser, la partager et l&apos;améliorer :</translation>
+    </message>
+    <message>
+        <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
+        <translation>Cette aide est une documentation libre, sous licence %license %version. Vous pouvez l&apos;utiliser, la partager et l&apos;améliorer :</translation>
+    </message>
+    <message>
+        <source>This is the text of the %license, version %version, as the Free Software Foundation publishes it. Everyone may copy and share it word for word; changing it is not allowed.</source>
+        <translation>Voici le texte de la %license, version %version, tel que le publie la Free Software Foundation. Chacun peut le copier et le partager mot pour mot ; il est interdit de le modifier.</translation>
+    </message>
+    <message>
+        <source>This page is part of the documentation of the extension %extension and is distributed under the license of that extension.</source>
+        <translation>Cette page fait partie de la documentation de l&apos;extension %extension et est distribuée sous la licence de cette extension.</translation>
+    </message>
+    <message>
+        <source>This page was inherited from the documentation of the original software. It is not covered by the %license; it is distributed under the %other.</source>
+        <translation>Cette page provient de la documentation du logiciel d&apos;origine. Elle n&apos;est pas couverte par la %license ; elle est distribuée sous la %other.</translation>
+    </message>
+    <message>
+        <source>Topics</source>
+        <translation>Thèmes</translation>
+    </message>
+    <message>
+        <source>Translate, adapt and improve it</source>
+        <translation>La traduire, l&apos;adapter et l&apos;améliorer</translation>
+    </message>
+    <message>
+        <source>Translations and the languages of the site.</source>
+        <translation>Les traductions et les langues du site.</translation>
+    </message>
+    <message>
+        <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
+        <translation>Utilisez « Modifier sur GitHub » sur n&apos;importe quelle page. Les modifications sont acceptées sous la même licence, elles restent donc libres pour tous.</translation>
+    </message>
+    <message>
+        <source>What changed in each release.</source>
+        <translation>Ce qui a changé dans chaque version.</translation>
+    </message>
+    <message>
+        <source>What each feature does and how to set it up.</source>
+        <translation>Ce que fait chaque fonctionnalité et comment la configurer.</translation>
+    </message>
+    <message>
+        <source>What you can do with free documentation</source>
+        <translation>Ce que vous pouvez faire avec une documentation libre</translation>
+    </message>
+    <message>
+        <source>Which pages have which license</source>
+        <translation>Quelles pages ont quelle licence</translation>
+    </message>
+    <message>
+        <source>Your account: password, two-step sign-in and preferences.</source>
+        <translation>Votre compte : mot de passe, connexion en deux étapes et préférences.</translation>
+    </message>
+    <message>
+        <source>%count pages match</source>
+        <translation>%count pages correspondantes</translation>
+    </message>
+    <message>
+        <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
+        <translation>%count pages dans les dossiers de la documentation. Ouvrez un dossier ou filtrez par un mot du titre.</translation>
+    </message>
+    <message>
+        <source>About this documentation</source>
+        <translation>À propos de cette documentation</translation>
+    </message>
+    <message>
+        <source>Browse all help</source>
+        <translation>Parcourir toute l&apos;aide</translation>
+    </message>
+    <message>
+        <source>Filter pages</source>
+        <translation>Filtrer les pages</translation>
+    </message>
+    <message>
+        <source>Filter the help pages</source>
+        <translation>Filtrer les pages d&apos;aide</translation>
+    </message>
+    <message>
+        <source>No page title matches</source>
+        <translation>Aucun titre de page ne correspond</translation>
+    </message>
+    <message>
+        <source>Backward compatibility</source>
+        <translation>Compatibilité ascendante</translation>
+    </message>
+    <message>
+        <source>Changelogs</source>
+        <translation>Journaux des modifications</translation>
+    </message>
+    <message>
+        <source>Examples</source>
+        <translation>Exemples</translation>
+    </message>
+    <message>
+        <source>Guides</source>
+        <translation>Guides pratiques</translation>
+    </message>
+    <message>
+        <source>Using the administration</source>
+        <translation>Utiliser l&apos;administration</translation>
+    </message>
+    <message>
+        <source>Installation</source>
+        <translation>Installation</translation>
+    </message>
+    <message>
+        <source>Shop</source>
+        <translation>Boutique</translation>
+    </message>
+    <message>
+        <source>Specifications</source>
+        <translation>Spécifications</translation>
+    </message>
+    <message>
+        <source>Standards</source>
+        <translation>Normes</translation>
     </message>
 </context>
 </TS>
