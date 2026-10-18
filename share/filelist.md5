@@ -332,7 +332,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin/stylesheets/modules/content.css
-3dd489105a00fadcaf87cbbd0b8bf7af  design/admin/stylesheets/modules/help.css
+ab55a1a4f3c79c30892fe30933ca2965  design/admin/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin/stylesheets/modules/people.css
 be099ebbbccdeae8ab7385dc4fd795dc  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
@@ -1048,7 +1048,7 @@ d810c1bfa553da326702439802441b11  design/admin4/stylesheets/content.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin4/stylesheets/modules/content.css
-3dd489105a00fadcaf87cbbd0b8bf7af  design/admin4/stylesheets/modules/help.css
+ab55a1a4f3c79c30892fe30933ca2965  design/admin4/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin4/stylesheets/modules/people.css
 be099ebbbccdeae8ab7385dc4fd795dc  design/admin4/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin4/stylesheets/modules/structure.css
@@ -1245,7 +1245,7 @@ b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 61b4fd1fca8330170ce7e6b1425a3962  design/admin4/templates/error/shop/3.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
 268433558acca11df2282e1903781c9a  design/admin4/templates/exphelp/dashboard.tpl
-57eb37d7989ad1cb413dcd0d76f5285e  design/admin4/templates/exphelp/report.tpl
+531d9d1d54c0683eca68c623119174f9  design/admin4/templates/exphelp/report.tpl
 51b24a03beb437397748f04b2547a222  design/admin4/templates/exphelp/search.tpl
 48e5e2c5149f022935e62a032ecb04a3  design/admin4/templates/exphelp/viewer.tpl
 7deb1dc6bd320de93789f39eb322d1f4  design/admin4/templates/ezinfo/about.tpl
@@ -5414,7 +5414,7 @@ b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 cde091ff977a26a609f39108326c5020  kernel/classes/help/exphelpfrontmatter.php
 99520b445ecac9996f6de9f6721a83a4  kernel/classes/help/exphelpfunctioncollection.php
 77d5132ce45e3ede09d0140edaae0954  kernel/classes/help/exphelphighlighter.php
-218d3ad7519acc017685e8ea58de0b0d  kernel/classes/help/exphelpissuereport.php
+805e475381946954ba100e1d59d77268  kernel/classes/help/exphelpissuereport.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
 a4551b9b071dc4b1f31aa64925139e61  kernel/classes/help/exphelpmarkdownrenderer.php
 f2f4f7222b423446d90fefa0a0ab25d6  kernel/classes/help/exphelpsearch.php
@@ -6062,7 +6062,7 @@ d9f32563966a8b1506a892bdb7f4f812  kernel/private/classes/views/contentfinder/sea
 0e249b72e4e5e91f5bb6e7df0fdc9d50  kernel/private/classes/views/error/view.php
 35ccefd9b29e0d8d208048fbbf84306b  kernel/private/classes/views/exphelp/asset.php
 8f40c5f71187f99e3485b1f94279a7ea  kernel/private/classes/views/exphelp/dashboard.php
-b973dd3b3f4da0458fb26dca0c3df9b6  kernel/private/classes/views/exphelp/report.php
+0aff94d13bc40ee02538815ceb7cc5b5  kernel/private/classes/views/exphelp/report.php
 4a454db30bc4abd848f89901f08b02aa  kernel/private/classes/views/exphelp/search.php
 ab555c86cf4ebe8a48ebf0cf292dcbf9  kernel/private/classes/views/exphelp/viewer.php
 aad26363a27c2cb19acf4d33e055e53a  kernel/private/classes/views/ezinfo/about.php
@@ -6868,7 +6868,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 a111b660f8e29a00cb059785bda7df42  settings/debugbar.ini
 3bfabc5627f3aa07599a418d6ff989ec  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-0b04e5a7fe892bfdea3ea414bc92a06d  settings/exphelp.ini
+a97dc9cb027507a215e7628b505c2467  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini

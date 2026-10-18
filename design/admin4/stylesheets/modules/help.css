@@ -518,3 +518,79 @@
 /* ---- viewer (E) ---------------------------------------------------------------------------------------------- */
 
 /* ---- renderer markup: code, highlighting, callouts (A) -------------------------------------------------------- */
+
+/* ---- Report an error (exphelp/report.tpl, workstream H) ----------------------------------------------------- */
+.a4-help-reportpage { display: grid; gap: var(--a4-space-5); }
+.a4-help-issue-jump { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin-top: var(--a4-space-3); }
+.a4-help-issue-jump .a4-icon { margin-inline-end: var(--a4-space-1); }
+.a4-help-issue-secwarn { display: flex; gap: var(--a4-space-2); align-items: flex-start; margin: 0; }
+.a4-help-issue-secwarn p { margin: 0; }
+.a4-help-issue-section { display: grid; gap: var(--a4-space-3); scroll-margin-top: var(--a4-space-6); }
+.a4-help-issue-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: a4helpissue;
+}
+.a4-help-issue-steps li {
+  position: relative;
+  padding: var(--a4-space-3) var(--a4-space-3) var(--a4-space-3) var(--a4-space-7);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  counter-increment: a4helpissue;
+}
+:where([dir="rtl"]) .a4-help-issue-steps li { padding: var(--a4-space-3) var(--a4-space-7) var(--a4-space-3) var(--a4-space-3); }
+.a4-help-issue-steps li::before {
+  content: counter(a4helpissue);
+  position: absolute;
+  inset-block-start: var(--a4-space-3);
+  inset-inline-start: var(--a4-space-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--a4-space-5);
+  height: var(--a4-space-5);
+  border-radius: 50%;
+  background-color: var(--a4-accent-soft);
+  color: var(--a4-accent-text);
+  font-size: var(--a4-text-s);
+  font-weight: 700;
+}
+.a4-help-issue-steps h3 { margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-m); color: var(--a4-ink); }
+.a4-help-issue-steps p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-issue-steps.is-compact li { padding-block: var(--a4-space-2); }
+.a4-help-issue-trackers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-issue-tracker, .a4-help-issue-extension { display: flex; flex-direction: column; gap: var(--a4-space-2); margin: 0; }
+.a4-help-issue-tracker > p, .a4-help-issue-extension > p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-issue-tracker .a4-actions { margin-top: auto; }
+.a4-help-issue-tracker.is-chosen { border-color: var(--a4-accent); box-shadow: 0 0 0 1px var(--a4-accent); }
+.a4-help-issue-tracker-head { display: flex; align-items: center; gap: var(--a4-space-2); }
+.a4-help-issue-tracker-head h3 { margin: 0; font-size: var(--a4-text-m); color: var(--a4-ink); }
+.a4-help-issue-repo { display: flex; align-items: center; gap: var(--a4-space-1); overflow-wrap: anywhere; font-family: var(--a4-mono); font-size: var(--a4-text-xs); }
+.a4-help-issue-extension-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--a4-space-2); }
+.a4-help-issue-extension-row .a4-field { flex: 1 1 240px; margin: 0; }
+.a4-help-issue-community h3 { display: flex; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-m); }
+.a4-help-issue-community p { margin: 0 0 var(--a4-space-2); color: var(--a4-muted); }
+.a4-help-issue-ready { margin: 0; }
+.a4-help-issue-ready p { margin: 0; }
+.a4-help-issue-form { display: grid; gap: var(--a4-space-3); margin: 0; }
+.a4-help-issue-form textarea { min-height: calc(var(--a4-space-7) * 2); resize: vertical; }
+.a4-help-issue-facts { margin: 0; }
+.a4-help-issue-env { position: relative; }
+.a4-help-issue-env .a4-pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.a4-help-issue-env .a4-help-copy { position: absolute; inset-block-start: var(--a4-space-2); inset-inline-end: var(--a4-space-2); }
+.a4-help-issue-security .a4-notice { margin: 0; }
+.a4-help-issue-security .a4-notice p { margin: 0 0 var(--a4-space-2); }
+.a4-help-issue-security-list { display: grid; gap: var(--a4-space-1); margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }
+.a4-help-issue-security-list a { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 650; }
