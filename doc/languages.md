@@ -148,11 +148,15 @@ The table is generated from the locale files; do not edit it by hand.
 | `chi-SG` | Simplified Chinese (Singapore) | 简体中文 (新加坡) | Southeast Asia | LTR | Han (Simplified) (`Hans`) | CLDR 44 | — |
 | `chi-TW` | Traditional Chinese (Taiwan) | 繁體中文 (臺灣) | East Asia | LTR | Han (Traditional) (`Hant`) | older, hand-made | 27% |
 | `ckb-IQ` | Central Kurdish | کوردیی ناوەندی | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `cro-HR` | Croatian (Hrvatski) | Croatian (Hrvatski) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `cym-GB` | Welsh | Cymraeg | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `cze-CZ` | Czech | Čeština | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `dan-DK` | Danish | Dansk | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `div-MV` | Dhivehi | ދިވެހި | South Asia | RTL | Thaana (`Thaa`) | hand-made names, CLDR 44 conventions | — |
 | `doi-IN` | Dogri | डोगरी | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `dsb-DE` | Lower Sorbian | Dolnoserbšćina | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `dut-BE` | Dutch (Belgium) | Nederlands (België) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `dut-NL` | Dutch | Nederlands | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `dzo-BT` | Dzongkha | རྫོང་ཁ | South Asia | LTR | Tibetan (`Tibt`) | CLDR 44 | — |
 | `ell-GR` | Greek (Hellenic) | Ελληνικά | Europe | LTR | Greek (`Grek`) | older, hand-made, fixed in 6.0.15 | 36% |
 | `eng-AU` | English (Australia) | English (Australia) | Oceania | LTR | Latin (`Latn`) | older, hand-made | 100% |
@@ -259,6 +263,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `ind-ID` | Indonesian | Indonesian | Southeast Asia | LTR | Latin (`Latn`) | older, hand-made | — |
 | `isl-IS` | Icelandic | Íslenska | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ita-CH` | Italian (Switzerland) | Italiano (Svizzera) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `ita-IT` | Italian | Italiano | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `jav-ID` | Javanese | Jawa | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `jpn-JP` | Japanese | 日本語 | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older, hand-made | 37% |
 | `jpn-JP@international` | Variant of `jpn-JP`: @international |  | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older variation, hand-made | — |
@@ -297,6 +302,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `mya-MM` | Burmese | မြန်မာ | Southeast Asia | LTR | Myanmar (`Mymr`) | CLDR 44 | — |
 | `nep-NP` | Nepali | नेपाली | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `nno-NO` | Norwegian (Nynorsk) | Norsk (Nynorsk) | Europe | LTR | Latin (`Latn`) | older, hand-made | 0% |
+| `nor-NO` | Norwegian (Bokmal) | Norsk (Bokmål) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `nor-NO@intl` | Variant of `nor-NO`: Internasjonalt Format |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
 | `nor-NO@spraakraad` | Variant of `nor-NO`: Norsk Språkråd |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
 | `nqo-GN` | N’Ko | ߒߞߏ | Africa | RTL | N’Ko (`Nkoo`) | CLDR 44 | — |
@@ -306,7 +312,9 @@ The table is generated from the locale files; do not edit it by hand.
 | `pan-IN` | Punjabi | ਪੰਜਾਬੀ | South Asia | LTR | Gurmukhi (`Guru`) | CLDR 44 | — |
 | `pcm-NG` | Nigerian Pidgin | Naijíriá Píjin | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `pnb-PK` | Western Punjabi (Shahmukhi) | پنجابی | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `pol-PL` | Polish | Polski | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `por-AO` | Portuguese (Angola) | Português (Angola) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `por-BR` | Portuguese (Brazil) | Português | Americas | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `por-CV` | Portuguese (Cape Verde) | Português (Cabo Verde) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `por-MZ` | Portuguese (Mozambique) | Português | Africa | LTR | Latin (`Latn`) | older, hand-made | — |
 | `por-PT` | Portuguese (Portugal) | Português | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
@@ -333,6 +341,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `sun-ID` | Sundanese | Basa Sunda | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `swe-SE` | Swedish | Svenska | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `syr-IQ` | Syriac (Iraq) | ܣܘܪܝܝܐ (ܥܝܪܩ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | — |
 | `syr-SY` | Syriac (Syria) | ܣܘܪܝܝܐ (ܣܘܪܝܐ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | — |
 | `tam-IN` | Tamil (India) | தமிழ் (இந்தியா) | South Asia | LTR | Tamil (`Taml`) | CLDR 44 | — |
@@ -346,7 +355,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `tlh-QO` | Klingon | tlhIngan Hol | Worldwide (fictional) | LTR | Latin (`Latn`) | hand-made | 100% |
 | `ton-TO` | Tongan | Lea fakatonga | Oceania | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `tuk-TM` | Turkmen | Türkmen dili | Central Asia and Caucasus | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `tur-TR` | Turkish | Türkçe | Middle East | LTR | Latin (`Latn`) | older, hand-made | 98% |
+| `tur-TR` | Turkish | Türkçe | Middle East | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `uig-CN` | Uyghur | ئۇيغۇرچە | East Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `ukr-UA` | Ukrainian | Українська | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made, fixed in 6.0.15 | 100% |
 | `ara-SA` | 100% (17307 of 17307) | 100% (17307 of 17307) |
@@ -439,7 +448,7 @@ between ideographs. The Klingon script pIqaD is never used (see Klingon above).
 
 ## 4. Every administration translation
 
-Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,633 strings of that day), in two ways (both rounded down):
+Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,763 strings of that day), in two ways (both rounded down):
 
 - **Own file finished**: finished messages of the file divided by all its messages, obsolete ones left out, each
   context, source and comment counted once. `php bin/php/ezchecktranslation.php <code>` prints a similar "Percent
@@ -464,38 +473,29 @@ source text, and the interface language choice counts English as 100%.
 | `tlh-QO` | 100% (16,623 of 16,623) | 100% (16,623 of 16,623) |
 | `fre-FR` | 100% (17,295 of 17,295) | 100% (17,295 of 17,295) |
 | `ukr-UA` | 100% (17,295 of 17,295) | 100% (17,295 of 17,295) |
-| `tur-TR` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
-| `pol-PL` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
-| `ita-IT` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
-| `por-BR` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
-| `dut-NL` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
-| `swe-SE` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
-| `nor-NO` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
-| `dan-DK` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
-| `cze-CZ` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
-| `cro-HR` | 100% (17,287 of 17,287) | 98% (17,286 of 17,633) |
+| `tur-TR` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `pol-PL` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `ita-IT` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `por-BR` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `dut-NL` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `swe-SE` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `nor-NO` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `dan-DK` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `cze-CZ` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `cro-HR` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
 | `ger-DE` | 99% (16,514 of 16,529) | 99% (16,509 of 16,623) |
-| `por-BR` | 99% (6,465 of 6,512) | 38% (6,465 of 16,623) |
-| `swe-SE` | 99% (6,463 of 6,512) | 38% (6,463 of 16,623) |
-| `ita-IT` | 97% (6,319 of 6,512) | 38% (6,319 of 16,623) |
 | `cat-ES` | 96% (6,314 of 6,512) | 37% (6,314 of 16,623) |
 | `jpn-JP` | 96% (6,281 of 6,513) | 37% (6,281 of 16,623) |
 | `chi-CN` | 95% (6,210 of 6,512) | 37% (6,210 of 16,623) |
 | `ell-GR` | 92% (6,019 of 6,512) | 36% (6,019 of 16,623) |
-| `nor-NO` | 92% (6,003 of 6,512) | 36% (6,003 of 16,623) |
-| `dut-NL` | 85% (5,565 of 6,512) | 33% (5,565 of 16,623) |
 | `eng-AU` | 84% (5,499 of 6,512) | 33% (5,499 of 16,623) |
 | `eng-NZ` | 84% (5,499 of 6,512) | 33% (5,499 of 16,623) |
-| `cro-HR` | 83% (5,463 of 6,512) | 32% (5,463 of 16,623) |
-| `pol-PL` | 83% (5,407 of 6,512) | 32% (5,407 of 16,623) |
 | `fin-FI` | 82% (5,369 of 6,512) | 32% (5,369 of 16,623) |
-| `cze-CZ` | 82% (5,367 of 6,512) | 32% (5,367 of 16,623) |
 | `srp-RS` | 82% (5,357 of 6,511) | 32% (5,357 of 16,623) |
 | `rus-RU` | 82% (5,351 of 6,512) | 32% (5,351 of 16,623) |
 | `chi-HK` | 70% (4,592 of 6,509) | 27% (4,592 of 16,623) |
 | `chi-TW` | 70% (4,592 of 6,509) | 27% (4,592 of 16,623) |
 | `ser-SR` | 60% (3,957 of 6,512) | 23% (3,957 of 16,623) |
-| `dan-DK` | 41% (2,696 of 6,512) | 16% (2,696 of 16,623) |
 | `nno-NO` | 0% (0 of 6,512) | 0% (0 of 16,623) |
 
 Notes:
@@ -522,8 +522,9 @@ Notes:
 - **Turkish** (`tur-TR`, new), **Polish** (`pol-PL`), **Italian** (`ita-IT`), **Portuguese (Brazil)** (`por-BR`), **Dutch**
   (`dut-NL`), **Swedish** (`swe-SE`), **Norwegian Bokmål** (`nor-NO`), **Danish** (`dan-DK`), **Czech** (`cze-CZ`) and
   **Croatian** (`cro-HR`) are complete since 18 October 2026 for the kernel's 17,287 strings, machine-assisted with a
-  glossary per language; the catalogues of ezoe and ezjscore are complete too. The strings added to the untranslated
-  file since then show in English until they are translated (98% of today's 17,633). Forms of address: Polish formal
+  glossary per language; the catalogues of ezoe and ezjscore are complete too. The 478 messages added to
+  the untranslated file while the work was under way were translated the same way when it was merged, so each
+  covers all 17,763 strings of 18 October 2026. Forms of address: Polish formal
   like Ukrainian (infinitive on buttons, impersonal sentences), Turkish *siz*, Italian *tu*, Brazilian Portuguese
   *você*, Dutch *je*, Czech and Croatian formal *vy* / *vi*, Swedish, Norwegian and Danish *du*. The older
   translations of these languages that had broken placeholders, tags, line breaks, English leftovers, wrong terms or
