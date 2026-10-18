@@ -5477,7 +5477,7 @@ c1b25293911761413b722cfd93864ecf  kernel/classes/help/exphelplicense.php
 0f072cc096b3f9ad306f5e7c52ca386d  kernel/classes/help/exphelplinkcheck.php
 797e765856674a2478642f320c6247e5  kernel/classes/help/exphelplinks.php
 507870eb99f85021ed0773fb574c3f31  kernel/classes/help/exphelpmarkdownrenderer.php
-8f34309e3cd5cd796269a02e2845ac23  kernel/classes/help/exphelpnavigation.php
+2eda45c57fc0cf7218eee489b8cf3b6d  kernel/classes/help/exphelpnavigation.php
 c431f54c4d39bcd7b5cf58e0fc1931e0  kernel/classes/help/exphelppdf.php
 eab2bbfd4344e0307d7750258677fe7e  kernel/classes/help/exphelppdfcanvas.php
 e14bfaf3e3eee52666e6afb4badcead4  kernel/classes/help/exphelppdffontsubset.php
@@ -7807,7 +7807,7 @@ a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
 1208c5696efab5daf3a3c3c140304ab1  share/translations/eng-US/translation.ts
-fbd9b8936a4cc917b07bcb0d80bfdb22  share/translations/esl-ES/translation.ts
+6edbdb1fd42f37f3563af44231838e7c  share/translations/esl-ES/translation.ts
 f20c5f9881f2a88c7ecb3fb18635366d  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 bde05a54773ed9c07a07ad0ae0ef8c74  share/translations/fre-FR/translation.ts
