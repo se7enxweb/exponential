@@ -176,6 +176,9 @@ table tbody tr.ezasi-sort-drag-handler
 #ez-version
 {
     font-weight: bold;
+    /* a version such as 6.0-stable is read left to right also inside a right-to-left sentence */
+    direction: ltr;
+    unicode-bidi: isolate;
 }
 
 /* GENERIC DIFF STYLES: added text in the ok colour, removed text in the bad colour, both readable on every surface
