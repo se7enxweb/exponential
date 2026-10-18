@@ -1443,8 +1443,10 @@
 .a4-help-issue-security-list { display: grid; gap: var(--a4-space-1); margin: 0 0 var(--a4-space-2); padding: 0; list-style: none; }
 .a4-help-issue-security-list a { display: inline-flex; align-items: center; gap: var(--a4-space-2); font-weight: 650; }
 
-/* Forced colors (Windows high contrast) drop backgrounds: a chosen filter, which differs only by its background, gets a
-   Highlight outline. */
+/* Forced colors (Windows high contrast) drop backgrounds: a chosen filter, the current topic and the current pager page,
+   which differ only by their background, get a Highlight outline. */
 @media (forced-colors: active) {
-  .a4-help-filter input:checked + span { outline: 2px solid Highlight; }
+  .a4-help-filter > input:checked + span,
+  .a4-help-topics__list a.a4-tag.is-current,
+  .a4-help-pager__page.is-current { outline: 2px solid Highlight; }
 }
