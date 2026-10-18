@@ -14510,6 +14510,10 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/parts/audit/menu</name>
     <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>The events of Exponential Intelligence in the audit console.</translation>
+    </message>
+    <message>
         <source>Health, activity, security and alerts at a glance.</source>
         <translation>Health, activity, security and alerts at a glance.</translation>
     </message>
@@ -14588,6 +14592,10 @@ Note: The packages will not be uninstalled.</translation>
 <context>
     <name>design/admin/parts/design/menu</name>
     <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Images without alternative text, and suggestions for it.</translation>
+    </message>
+    <message>
         <source>The look of the site.</source>
         <translation>The look of the site.</translation>
     </message>
@@ -14649,6 +14657,62 @@ Note: The packages will not be uninstalled.</translation>
 </context>
 <context>
     <name>design/admin/parts/my/menu</name>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Your work</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Activity and audit</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Your start page: your work, your tasks and what changed.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Items that wait for your approval, and yours that wait for others.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Your items that wait to be published.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>The drafts you started and have not published yet.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>The content you marked to find it again.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>The start page of Exponential Intelligence: its tools and their use.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Threads that change content with AI, under your control.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Content written in steps: the runs and their checkpoints.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>The AI requests, their tokens and their cost.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>How the AI features work and how to use them.</translation>
+    </message>
     <message>
         <source>My notification settings</source>
         <translation>My notification settings</translation>

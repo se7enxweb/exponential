@@ -25,7 +25,8 @@
                     aria-label="{'%tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
                     title="{'%tab menu'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
                     data-a4-mega-src={concat( 'user/megamenu/', $item_mega )|ezurl}><span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span></button>
-            <div id="a4-mega-{$item_mega|wash}" class="a4-mega-panel" hidden
+            {* [Topmenu_<tab>] MegaMenuLayout=wide: the groups in up to four balanced columns (a long choice, the Dashboard) *}
+            <div id="a4-mega-{$item_mega|wash}" class="a4-mega-panel{if ezini_hasvariable( concat( 'Topmenu_', $item_mega ), 'MegaMenuLayout', 'menu.ini' )}{if eq( ezini( concat( 'Topmenu_', $item_mega ), 'MegaMenuLayout', 'menu.ini' ), 'wide' )} a4-mega-wide{/if}{/if}" hidden
                  data-a4-mega-error="{'The %tab menu could not be loaded.'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"
                  data-a4-mega-retry="{'Try again'|i18n( 'design/admin/pagelayout' )|wash}"
                  data-a4-mega-signed-out="{'You are signed out. Sign in again to see the %tab menu.'|i18n( 'design/admin/pagelayout',, hash( '%tab', $menu_item.name ) )|wash}"

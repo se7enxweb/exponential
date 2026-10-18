@@ -14333,6 +14333,62 @@ Note: The packages will not be uninstalled.</source>
 <context>
     <name>design/admin/parts/my/menu</name>
     <message>
+        <source>Overview</source>
+        <translation>Огляд</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Ваша робота</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Активність і аудит</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Ваша стартова сторінка: ваша робота, ваші завдання і що змінилося.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Елементи, що чекають вашого схвалення, і ваші, що чекають на інших.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Ваші елементи, що чекають на публікацію.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Чернетки, які ви почали і ще не опублікували.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>Вміст, який ви позначили, щоб знайти його знову.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>Стартова сторінка Exponential Intelligence: її інструменти та їх використання.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Потоки, що змінюють вміст за допомогою ШІ, під вашим контролем.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Вміст, написаний крок за кроком: запуски та їхні контрольні точки.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>Запити до ШІ, їхні токени та вартість.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Як працюють функції ШІ і як ними користуватися.</translation>
+    </message>
+    <message>
         <source>My notification settings</source>
         <translation>Мої налаштування сповіщень</translation>
     </message>
@@ -67126,6 +67182,10 @@ You will need to change the class of the node by using the swap functionality.</
 <context>
     <name>design/admin/parts/audit/menu</name>
     <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Події Exponential Intelligence у консолі аудиту.</translation>
+    </message>
+    <message>
         <source>Health, activity, security and alerts at a glance.</source>
         <translation>Стан, активність, безпека та сповіщення з першого погляду.</translation>
     </message>
@@ -67160,6 +67220,10 @@ You will need to change the class of the node by using the swap functionality.</
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Зображення без альтернативного тексту і пропозиції для нього.</translation>
+    </message>
     <message>
         <source>The look of the site.</source>
         <translation>Зовнішній вигляд сайту.</translation>

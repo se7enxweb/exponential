@@ -14336,6 +14336,62 @@ Nota: institutio sarcinarum non revocabitur.</translation>
 <context>
     <name>design/admin/parts/my/menu</name>
     <message>
+        <source>Overview</source>
+        <translation>Conspectus</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Opus tuum</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Actuositas et inspectio</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Pagina tua prima: opus tuum, munera tua et quae mutata sunt.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Res quae approbationem tuam exspectant, et tuae quae alios exspectant.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Res tuae quae publicari exspectant.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Adumbrationes quas incepisti nec adhuc publicavisti.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>Contentum quod signavisti ut iterum invenias.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>Pagina prima Exponential Intelligence: instrumenta eius et usus eorum.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Fila quae contentum per IA mutant, te moderante.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Contentum gradatim scriptum: cursus et puncta probationis eorum.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>Petitiones IA, signa earum et pretium earum.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Quomodo facultates IA operentur et quomodo eis utaris.</translation>
+    </message>
+    <message>
         <source>My notification settings</source>
         <translation>Optiones monitionum mearum</translation>
     </message>
@@ -67141,6 +67197,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
 <context>
     <name>design/admin/parts/audit/menu</name>
     <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Eventus Exponential Intelligence in pulpito inspectionis.</translation>
+    </message>
+    <message>
         <source>Health, activity, security and alerts at a glance.</source>
         <translation>Valetudo, actio, securitas et admonitiones uno conspectu.</translation>
     </message>
@@ -67175,6 +67235,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Imagines sine textu alterno, et consilia ei.</translation>
+    </message>
     <message>
         <source>The look of the site.</source>
         <translation>Species situs.</translation>

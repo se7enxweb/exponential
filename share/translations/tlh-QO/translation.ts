@@ -14336,6 +14336,62 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
 <context>
     <name>design/admin/parts/my/menu</name>
     <message>
+        <source>Overview</source>
+        <translation>naQ leghghach</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Qu'lIj</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>vangghachmey 'olghach je</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence QaHwI'</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>tagh nav'e' Daghajbogh: Qu'lIj, Qu'meylIj, choHbogh je.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>chaw'ghachlIj loSbogh Doch, latlh loSbogh DochmeylIj je.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>DochmeylIj ngevmeH loSbogh.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>nabmey Dataghpu'bogh 'ach not Dangevpu'bogh.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>De' DaghItlhpu'bogh, DaSammeH.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>Exponential Intelligence tagh nav: jan Hommey, lo'ghach je.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>yab ngeb lo'taHvIS De' choHbogh SIrgh, SoH Devu'.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>mI'mey ghItlhlu'pu'bogh De': Qapmey, nuDmeH Daqmey je.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>yab ngeb tlhobmey, chavmeymey, Huch je.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>yab ngeb laHmey Qapmo' mIw, lo'meH mIw je.</translation>
+    </message>
+    <message>
         <source>My notification settings</source>
         <translation>ghuH QIn DuHmeywIj</translation>
     </message>
@@ -67141,6 +67197,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
 <context>
     <name>design/admin/parts/audit/menu</name>
     <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>'olghach SeHlaw'Daq Exponential Intelligence wanI'mey.</translation>
+    </message>
+    <message>
         <source>Health, activity, security and alerts at a glance.</source>
         <translation>pIvghach, vangghach, Hung, ghuH QInmey je: wa&apos; leghghachDaq.</translation>
     </message>
@@ -67175,6 +67235,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>ghItlh latlh ghajbe'bogh mIlloghmey, chupmey je.</translation>
+    </message>
     <message>
         <source>The look of the site.</source>
         <translation>yoS mIllogh.</translation>

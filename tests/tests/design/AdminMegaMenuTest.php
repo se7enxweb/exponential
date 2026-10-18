@@ -25,6 +25,11 @@
  *          18; with no MegaMenuLinks[] every link (parts/a4_mega_menu.tpl rendered with eZTemplate, no database)
  *  MM-08 - with a tab moved into Setup (GroupSections[]) a chosen key whose link is not drawn takes the group's link
  *          of the same address (audit: the audit group's Settings); audit-<key> chooses a group link directly
+ *  MM-10 - the Dashboard tab: [Topmenu_dashboard] MegaMenuTemplate draws [Leftmenu_my_mega], whose groups add
+ *          [Leftmenu_my], [Leftmenu_audit] and [Leftmenu_design] (a group may add several sections, separated by ";");
+ *          its MegaMenuLinks[] names at most 18 links, every link of Exponential Intelligence among them, with icons,
+ *          descriptions and names in every complete catalogue; a link the user may not open or of an inactive
+ *          extension is left out; MegaMenuLayout=wide sets the panel in up to four balanced columns
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminMegaMenuTest.php
  *
@@ -114,6 +119,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertDoesNotMatchRegularExpression( '/^MegaMenuTabs\[\]=/m', $ini, 'no tab has a mega menu by default' );
         $this->assertStringContainsString( '#   MegaMenuTabs[]=setup', $section, 'the comment says how to switch it on' );
         $this->assertStringContainsString( '#   MegaMenuTabs[]=users', $section );
+        $this->assertStringContainsString( '#   MegaMenuTabs[]=dashboard', $section );
 
         // the header asks for the setting, and for the user's access to the fragment, before it draws a button
         // one template draws the tabs for every header: admin4's page_topmenu.tpl and admin4l's tab menu block
@@ -162,7 +168,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "data-a4-mega-src={concat( 'user/megamenu/', \$item_mega )|ezurl}", $tag );
         $this->assertStringContainsString( '<span class="a4-icon a4-bi-chevron-down" aria-hidden="true"></span>', $item );
         // the panel it controls: hidden, a status line until the links arrive, the link to the tab
-        $this->assertStringContainsString( '<div id="a4-mega-{$item_mega|wash}" class="a4-mega-panel" hidden', $item );
+        $this->assertStringContainsString( '<div id="a4-mega-{$item_mega|wash}" class="a4-mega-panel{if ezini_hasvariable( concat( \'Topmenu_\', $item_mega ), \'MegaMenuLayout\', \'menu.ini\' )}', $item );
         $this->assertStringContainsString( '<p class="a4-mega-status" role="status">', $item );
         // the way to the tab's own page, which stays when the links cannot be loaded
         $this->assertStringContainsString( "<a href={\$menu_item.url|ezurl}>{'Go to %tab'|i18n( 'design/admin/pagelayout',, hash( '%tab', \$menu_item.name ) )|wash}", $item );
@@ -1001,6 +1007,241 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
 
         $this->menuIni( array( 'Leftmenu_user_mega' => array( 'MegaMenuLinks' => array_fill( 0, 19, 'accounts' ) ) ) );
         $this->assertStringContainsString( '19 keys, the mega menu shows the first 18', implode( "\n", self::debugMessagesOf( 'file:design/admin4/templates/parts/a4_mega_menu_check.tpl' ) ) );
+    }
+
+    /** The links of Exponential Intelligence (extension expai) the Dashboard's mega menu offers: [section, key] */
+    const DASHBOARD_EI_LINKS = array( array( 'Leftmenu_my', 'expai' ), array( 'Leftmenu_my', 'expai_vector' ),
+                                      array( 'Leftmenu_my', 'expai_chain' ), array( 'Leftmenu_my', 'expai_log' ),
+                                      array( 'Leftmenu_my', 'expai_help' ), array( 'Leftmenu_design', 'expai_alttext' ),
+                                      array( 'Leftmenu_audit', 'expai_events' ) );
+
+    /** Links other code appends to the sections (extensions, the help center): not in core menu.ini's Links[] */
+    const DASHBOARD_APPENDED_LINKS = array( 'expai', 'expai_vector', 'expai_chain', 'expai_log', 'expai_help', 'expai_alttext',
+                                            'expai_events', 'help_center' );
+
+    /** The complete kernel catalogues (doc/languages.md), English and the template for new ones */
+    const COMPLETE_CATALOGUES = array( 'eng-US', 'ger-DE', 'fre-FR', 'esl-ES', 'esl-MX', 'ukr-UA', 'heb-IL', 'lat-VA', 'tlh-QO', 'ara-SA' );
+
+    /** MM-10 */
+    public function testTheDashboardTabReusesTheMenusThatDefineItsLinks()
+    {
+        $ini = self::iniSections();
+        $tab = $ini['Topmenu_dashboard'];
+        $this->assertSame( 'design:parts/my/mega_menu.tpl', $tab['MegaMenuTemplate'] ?? null );
+        $this->assertSame( 'Leftmenu_my_mega', $tab['MegaMenuSection'] ?? null );
+        $this->assertSame( 'wide', $tab['MegaMenuLayout'] ?? null );
+        $this->assertSame( 'ezmynavigationpart', $tab['NavigationPartIdentifier'] );
+        $this->assertSame( array( 'content/dashboard' ), $tab['PolicyList'], 'the tab is access checked' );
+        $this->assertFileExists( self::root() . '/design/admin4/templates/parts/my/mega_menu.tpl' );
+
+        $mega = $ini['Leftmenu_my_mega'];
+        $this->assertSame( array( 'overview', 'work', 'activity', 'ei', 'account' ), $mega['Groups'] );
+        $this->assertSame( array( 'overview' => 'Leftmenu_my', 'work' => 'Leftmenu_my', 'activity' => 'Leftmenu_audit',
+                                  'ei' => 'Leftmenu_my;Leftmenu_design', 'account' => 'Leftmenu_my' ), $mega['GroupSections'] );
+        // no links of its own: every link is one of the menu that defines it, with its policies
+        $this->assertArrayNotHasKey( 'Links', $mega );
+        $this->assertDoesNotMatchRegularExpression( '/^(Links|PolicyList_[a-z_]+)\[[a-z_]*\]=/m',
+                                                     self::sectionText( 'Leftmenu_my_mega' ), 'restates no link or policy' );
+        // the left menu of the tab stays one list
+        $this->assertArrayNotHasKey( 'Groups', $ini['Leftmenu_my'] );
+        $this->assertStringContainsString( "{include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_my' i18n_hash=", self::read( 'design/admin4/templates/parts/my/menu.tpl' ) );
+
+        // the template: the section, as the mega menu's groups, with the audit menu's hidden channel links
+        $template = self::read( 'design/admin4/templates/parts/my/mega_menu.tpl' );
+        $this->assertStringContainsString( "{include uri='design:parts/ini_menu.tpl' ini_section='Leftmenu_my_mega'", $template );
+        $this->assertStringContainsString( "menu_layout='tiles'", $template );
+        $this->assertStringContainsString( "tiles_layout='mega'", $template );
+        $this->assertStringContainsString( "section_hidden_links=hash( 'Leftmenu_audit', fetch( 'audit', 'hidden_menu_links', hash( 'section', 'Leftmenu_audit' ) ) )", $template );
+        // a group adds one section or several, in that order
+        $menu = self::read( 'design/admin4/templates/parts/ini_menu.tpl' );
+        $this->assertStringContainsString( "{foreach \$group_section|explode( ';' ) as \$group_section_name}", $menu );
+        $this->assertStringContainsString( "hash( 'section', \$group_section_name, 'group', \$group )", $menu );
+        $this->assertStringContainsString( "{foreach \$mmc_added[ \$mmc_parts[0] ]|explode( ';' ) as \$mmc_added_section}",
+                                           self::read( 'design/admin4/templates/parts/a4_mega_menu_check.tpl' ) );
+    }
+
+    /** The text of one section of settings/menu.ini, up to the next section */
+    private static function sectionText( $name )
+    {
+        $ini = self::read( 'settings/menu.ini' );
+        $section = substr( $ini, strpos( $ini, "\n[$name]" ) );
+        return substr( $section, 0, strpos( $section, "\n[", 2 ) ?: strlen( $section ) );
+    }
+
+    /** MM-10 */
+    public function testTheDashboardChoiceCoversTheTabWithEveryEiLink()
+    {
+        $ini = self::iniSections();
+        $mega = $ini['Leftmenu_my_mega'];
+        $choice = $mega['MegaMenuLinks'];
+        $this->assertMatchesRegularExpression( '/^MegaMenuLinks\[\]$/m', self::sectionText( 'Leftmenu_my_mega' ), 'the list is reset before it is set' );
+        $this->assertLessThanOrEqual( 18, count( $choice ), 'at most 18 links' );
+        $this->assertGreaterThanOrEqual( 16, count( $choice ), 'almost every function of the tab' );
+        $this->assertSame( array_values( array_unique( $choice ) ), $choice );
+
+        // [group, section, key] of each chosen link: the key is a link of a section its group adds
+        $chosen = array();
+        foreach ( $choice as $key )
+        {
+            $this->assertStringContainsString( '-', $key, "MegaMenuLinks[]=$key: the section has no links of its own" );
+            list( $group, $link ) = explode( '-', $key, 2 );
+            $this->assertArrayHasKey( $group, $mega['GroupSections'], "MegaMenuLinks[]=$key: no such group adds a section" );
+            $sections = explode( ';', $mega['GroupSections'][$group] );
+            $found = null;
+            foreach ( $sections as $section )
+                if ( isset( $ini[$section]['Links'][$link] ) )
+                    $found = $section;
+            if ( $found === null )
+            {
+                // a link the extension or the help appends: in one of the group's sections, never restated in core
+                $this->assertContains( $link, self::DASHBOARD_APPENDED_LINKS, "MegaMenuLinks[]=$key is no link of " . implode( ', ', $sections ) );
+                foreach ( self::DASHBOARD_EI_LINKS as $ei )
+                    if ( $ei[1] === $link )
+                        $found = $ei[0];
+                $found = $found ?? 'Leftmenu_my';
+                $this->assertContains( $found, $sections, "$key is in a group that adds [$found]" );
+            }
+            $chosen[$key] = array( $group, $found, $link );
+        }
+        // every function of the tab's menu but the shop's
+        foreach ( array_keys( $ini['Leftmenu_my']['Links'] ) as $link )
+        {
+            if ( in_array( $link, array( 'preferred_currency', 'audit' ), true ) )
+                continue;
+            $this->assertNotEmpty( array_filter( $chosen, function ( $c ) use ( $link ) { return $c[1] === 'Leftmenu_my' && $c[2] === $link; } ),
+                                   "[Leftmenu_my] $link is in the Dashboard's mega menu" );
+        }
+        // the audit console of the tab's menu (audit/console) as the audit menu's console
+        $this->assertSame( $ini['Leftmenu_my']['Links']['audit'], $ini['Leftmenu_audit']['Links']['console'] );
+        $this->assertContains( 'activity-console', $choice );
+        // every link of Exponential Intelligence, and the Help center
+        foreach ( self::DASHBOARD_EI_LINKS as list( $section, $link ) )
+            $this->assertNotEmpty( array_filter( $chosen, function ( $c ) use ( $section, $link ) { return $c[1] === $section && $c[2] === $link; } ),
+                                   "the EI link [$section] $link is in the Dashboard's mega menu" );
+        $this->assertContains( 'overview-help_center', $choice );
+        // the order of the left menu: the audit before Exponential Intelligence, Change password and Edit profile last
+        $this->assertLessThan( array_search( 'ei-expai', $choice ), array_search( 'activity-console', $choice ) );
+        $this->assertSame( array( 'account-change_password', 'account-edit_profile' ), array_slice( $choice, -2 ) );
+        $this->assertSame( 'overview-dashboard', $choice[0], 'the tab\'s own page first' );
+    }
+
+    /** MM-10 */
+    public function testTheDashboardLinksHaveIconsAndStringsInEveryCompleteCatalogue()
+    {
+        $ini = self::iniSections();
+        $mega = $ini['Leftmenu_my_mega'];
+        preg_match_all( '/^IconList\[\]=(\S+)$/m', self::read( 'settings/design.ini' ), $icons );
+        $hash = self::read( 'design/admin4/templates/parts/my/mega_menu.tpl' );
+        $strings = array();
+        foreach ( $mega['MegaMenuLinks'] as $key )
+        {
+            list( $group, $link ) = explode( '-', $key, 2 );
+            $section = null;
+            foreach ( explode( ';', $mega['GroupSections'][$group] ) as $candidate )
+                if ( isset( $ini[$candidate]['LinkIcons'][$link] ) )
+                    $section = $section ?? $candidate;
+            if ( $link === 'help_center' && $section === null )
+                continue;   // the help center's own icon and description come with its link
+            $this->assertNotNull( $section, "LinkIcons[$link] in a section of the group $group" );
+            $icon = $ini[$section]['LinkIcons'][$link];
+            $this->assertContains( $icon, $icons[1], "LinkIcons[$link]=$icon is not in design.ini IconList[]" );
+            $this->assertFileExists( self::root() . "/share/icons/bootstrap-icons/svg/$icon.svg" );
+            $text = $ini[$section]['LinkDescriptions'][$link] ?? null;
+            $this->assertNotNull( $text, "[$section] LinkDescriptions[$link]" );
+            $strings[] = array( 'design/admin/parts/' . explode( '_', $section )[1] . '/menu', $text );
+            // the name: the template's i18n_hash, or the link's LinkNames[] (the extensions' links)
+            if ( preg_match( "/^\s*'" . preg_quote( $key, '/' ) . "',\s+'([^']+)'\|i18n\( '([^']+)' \),$/m", $hash, $name ) )
+                $strings[] = array( $name[2], $name[1] );
+            else
+                $this->assertContains( $link, self::DASHBOARD_APPENDED_LINKS, "$key has a name in parts/my/mega_menu.tpl or LinkNames[]" );
+        }
+        foreach ( $mega['GroupNames'] as $name )
+            $strings[] = array( 'design/admin/parts/my/menu', $name );
+        foreach ( self::COMPLETE_CATALOGUES as $language )
+        {
+            $dom = new DOMDocument();
+            $this->assertTrue( $dom->load( self::root() . "/share/translations/$language/translation.ts" ) );
+            $xpath = new DOMXPath( $dom );
+            foreach ( $strings as list( $context, $source ) )
+            {
+                if ( $source === 'Help center' )
+                    continue;   // added with the help center's link
+                $found = $xpath->query( "//context[name='$context']/message[source=" . self::xpathString( $source ) . ']/translation[not(@type)]' );
+                $this->assertGreaterThanOrEqual( 1, $found->length, "$language, $context: $source" );
+                $this->assertNotSame( '', trim( $found->item( 0 )->textContent ), "$language, $context: $source" );
+            }
+        }
+    }
+
+    /**
+     * MM-10: the groups as ini_menu.tpl hands them over for the Dashboard: only the chosen links the user may open, in
+     * their groups and order; a link of an inactive extension is not in the groups at all, and a group left without a
+     * link is not drawn
+     */
+    public function testTheDashboardShowsOnlyTheLinksTheUserMayOpen()
+    {
+        $item = function ( $key, $state = 'link' ) {
+            return array( 'key' => $key, 'url' => 'x/' . $key, 'name' => strtoupper( $key ), 'state' => $state, 'group' => explode( '-', $key )[0],
+                          'icon' => 'gear', 'text' => '', 'context' => 'design/admin/parts/my/menu', 'figure' => '' );
+        };
+        $choice = self::iniSections()['Leftmenu_my_mega']['MegaMenuLinks'];
+        // every group adds all of [Leftmenu_my]: the overview group holds the drafts too, but shows only its choice
+        $groups = array(
+            array( 'id' => 'overview', 'name' => 'Overview', 'items' => array( $item( 'overview-dashboard' ), $item( 'overview-my_drafts' ) ) ),
+            array( 'id' => 'work', 'name' => 'Your work', 'items' => array( $item( 'work-dashboard' ), $item( 'work-my_drafts' ), $item( 'work-my_pending', 'no-access' ),
+                                                                            $item( 'work-collaboration', 'disabled' ), $item( 'work-my_bookmarks' ) ) ),
+            array( 'id' => 'activity', 'name' => 'Activity and audit', 'items' => array( $item( 'activity-console', 'no-access' ) ) ),
+            array( 'id' => 'account', 'name' => 'My account', 'items' => array( $item( 'account-edit_profile' ), $item( 'account-change_password' ) ) ),
+        );
+        // no ei group: expai is not active (its links are in no section), and the audit console is closed to this user
+        $this->assertSame( array( 'overview' => array( 'OVERVIEW-DASHBOARD' ), 'work' => array( 'WORK-MY_DRAFTS', 'WORK-MY_BOOKMARKS' ),
+                                  'account' => array( 'ACCOUNT-CHANGE_PASSWORD', 'ACCOUNT-EDIT_PROFILE' ) ),
+                           self::renderGroups( $choice, $groups ) );
+        // with expai: its group after the audit, in the order of the choice
+        $groups[] = array( 'id' => 'ei', 'name' => 'Exponential Intelligence', 'items' => array( $item( 'ei-expai_log' ), $item( 'ei-expai' ), $item( 'ei-look_and_feel' ),
+                                                                                              $item( 'ei-expai_alttext' ), $item( 'ei-expai_vector', 'no-access' ) ) );
+        $groups[2]['items'][0]['state'] = 'link';
+        $shown = self::renderGroups( $choice, $groups );
+        $this->assertSame( array( 'overview', 'work', 'activity', 'ei', 'account' ), array_keys( $shown ) );
+        $this->assertSame( array( 'EI-EXPAI', 'EI-EXPAI_ALTTEXT', 'EI-EXPAI_LOG' ), $shown['ei'], 'the design menu\'s other links are not chosen' );
+    }
+
+    /** MM-10: MegaMenuLayout=wide: up to four balanced columns that fit 960px at 200% zoom; other tabs as before */
+    public function testTheDashboardPanelIsWide()
+    {
+        $tabs = array( 'ezmynavigationpart' => 'dashboard', 'ezusernavigationpart' => 'users' );
+        $dashboard = self::renderItem( array( 'navigationpart_identifier' => 'ezmynavigationpart', 'url' => 'content/dashboard', 'name' => 'Dashboard' ), $tabs );
+        $this->assertStringContainsString( '<div id="a4-mega-dashboard" class="a4-mega-panel a4-mega-wide" hidden', $dashboard );
+        $this->assertMatchesRegularExpression( '#data-a4-mega-src="[^"]*/user/megamenu/dashboard"#', $dashboard );
+        $users = self::renderItem( array( 'navigationpart_identifier' => 'ezusernavigationpart', 'url' => 'content/view/full/5', 'name' => 'Users' ), $tabs );
+        $this->assertStringContainsString( '<div id="a4-mega-users" class="a4-mega-panel" hidden', $users );
+
+        $wide = self::media( self::css(), 'screen and (min-width: 576px)' );
+        $this->assertStringContainsString( '.a4-mega-panel.a4-mega-wide {', $wide );
+        $this->assertStringContainsString( 'max-width: min(calc(4 * 15rem + 3 * var(--a4-space-5) + 2 * var(--a4-space-5) + 2px), calc(100vw - 2 * var(--a4-space-5)));', $wide );
+        $this->assertStringContainsString( 'columns: 15rem 4;', $wide );
+        $this->assertMatchesRegularExpression( '/\.a4-mega-wide \.a4-mega-group \{[^}]*break-inside: avoid;/', $wide, 'a group is never split' );
+        // three columns of 15rem (16px) and their gaps fit 960px less the card's insets and padding: no inner scroll there
+        $this->assertLessThanOrEqual( 960 - 2 * 24 - 2 * 24 - 2, 3 * 15 * 16 + 2 * 24 );
+    }
+
+    /** MM-10: the check knows the links of every section a group adds */
+    public function testTheCheckReadsEverySectionOfAGroup()
+    {
+        $this->menuIni( array(
+            // the same tabs as testIgnoredSettingsAreNamedInTheDebugReport: the compiled check holds the constant list of tabs
+            'TopAdminMenu' => array( 'MegaMenuTabs' => array( 'setup', 'users', 'mmt_unknown' ) ),
+            'Topmenu_users' => array( 'NavigationPartIdentifier' => 'ezusernavigationpart', 'MegaMenuTemplate' => 'design:parts/user/mega_menu.tpl',
+                                      'MegaMenuSection' => 'Leftmenu_mmt_multi' ),
+            'Leftmenu_my' => array( 'Links' => array( 'dashboard' => 'content/dashboard' ) ),
+            'Leftmenu_design' => array( 'Links' => array( 'look_and_feel' => 'content/edit/54' ) ),
+            'Leftmenu_mmt_multi' => array( 'GroupSections' => array( 'ei' => 'Leftmenu_my;Leftmenu_design' ),
+                                           'MegaMenuLinks' => array( 'ei-dashboard', 'ei-look_and_feel', 'ei-mmt_nolink' ) ),
+        ) );
+        $text = implode( "\n", self::debugMessagesOf( 'file:design/admin4/templates/parts/a4_mega_menu_check.tpl' ) );
+        $this->assertStringNotContainsString( 'MegaMenuLinks[]=ei-dashboard:', $text, 'a link of the first section' );
+        $this->assertStringNotContainsString( 'MegaMenuLinks[]=ei-look_and_feel:', $text, 'a link of the second section' );
+        $this->assertStringContainsString( '[Leftmenu_mmt_multi] MegaMenuLinks[]=ei-mmt_nolink:', $text );
     }
 
     /** Renders a template with the debug report switched on; returns the debug messages it wrote */

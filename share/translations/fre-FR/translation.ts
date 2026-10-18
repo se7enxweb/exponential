@@ -14812,6 +14812,62 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
 <context>
     <name>design/admin/parts/my/menu</name>
     <message>
+        <source>Overview</source>
+        <translation>Vue d'ensemble</translation>
+    </message>
+    <message>
+        <source>Your work</source>
+        <translation>Votre travail</translation>
+    </message>
+    <message>
+        <source>Activity and audit</source>
+        <translation>Activité et audit</translation>
+    </message>
+    <message>
+        <source>Exponential Intelligence</source>
+        <translation>Exponential Intelligence</translation>
+    </message>
+    <message>
+        <source>Your start page: your work, your tasks and what changed.</source>
+        <translation>Votre page d'accueil : votre travail, vos tâches et ce qui a changé.</translation>
+    </message>
+    <message>
+        <source>Items that wait for your approval, and yours that wait for others.</source>
+        <translation>Les éléments qui attendent votre approbation, et les vôtres qui attendent les autres.</translation>
+    </message>
+    <message>
+        <source>Your items that wait to be published.</source>
+        <translation>Vos éléments en attente de publication.</translation>
+    </message>
+    <message>
+        <source>The drafts you started and have not published yet.</source>
+        <translation>Les brouillons que vous avez commencés et pas encore publiés.</translation>
+    </message>
+    <message>
+        <source>The content you marked to find it again.</source>
+        <translation>Les contenus que vous avez marqués pour les retrouver.</translation>
+    </message>
+    <message>
+        <source>The start page of Exponential Intelligence: its tools and their use.</source>
+        <translation>La page d'accueil d'Exponential Intelligence : ses outils et leur utilisation.</translation>
+    </message>
+    <message>
+        <source>Threads that change content with AI, under your control.</source>
+        <translation>Des fils qui modifient le contenu avec l'IA, sous votre contrôle.</translation>
+    </message>
+    <message>
+        <source>Content written in steps: the runs and their checkpoints.</source>
+        <translation>Du contenu écrit par étapes : les exécutions et leurs points de contrôle.</translation>
+    </message>
+    <message>
+        <source>The AI requests, their tokens and their cost.</source>
+        <translation>Les requêtes d'IA, leurs jetons et leur coût.</translation>
+    </message>
+    <message>
+        <source>How the AI features work and how to use them.</source>
+        <translation>Comment fonctionnent les fonctions d'IA et comment les utiliser.</translation>
+    </message>
+    <message>
         <source>My notification settings</source>
         <translation>Mes paramètres de notification</translation>
     </message>
@@ -68536,6 +68592,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
 <context>
     <name>design/admin/parts/audit/menu</name>
     <message>
+        <source>The events of Exponential Intelligence in the audit console.</source>
+        <translation>Les événements d'Exponential Intelligence dans la console d'audit.</translation>
+    </message>
+    <message>
         <source>Health, activity, security and alerts at a glance.</source>
         <translation>Santé, activité, sécurité et alertes en un coup d&apos;œil.</translation>
     </message>
@@ -68570,6 +68630,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
 </context>
 <context>
     <name>design/admin/parts/design/menu</name>
+    <message>
+        <source>Images without alternative text, and suggestions for it.</source>
+        <translation>Les images sans texte alternatif, et des suggestions pour celui-ci.</translation>
+    </message>
     <message>
         <source>The look of the site.</source>
         <translation>L&apos;apparence du site.</translation>

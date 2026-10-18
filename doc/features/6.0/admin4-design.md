@@ -471,7 +471,7 @@ when a tab is hidden by default, and draws `parts/a4_navigation_part.tpl` with t
 
 A small button beside a top tab opens a panel under the header with the most used functions of the tab in their
 groups: each with its icon, its name and its description under it, up to three groups side by side, and "Go to
-<tab>" (the tab's own page, for Setup the overview) at the end for the rest. Setup and Users have one. Off by
+<tab>" (the tab's own page, for Setup the overview) at the end for the rest. Setup, Users and Dashboard have one. Off by
 default; to switch them on, in a siteaccess or override `menu.ini.append.php`:
 
 ```ini
@@ -480,6 +480,7 @@ default; to switch them on, in a siteaccess or override `menu.ini.append.php`:
 [TopAdminMenu]
 MegaMenuTabs[]=setup
 MegaMenuTabs[]=users
+MegaMenuTabs[]=dashboard
 */ ?>
 ```
 
@@ -499,6 +500,7 @@ icons, descriptions and access checks of a menu.ini section:
 |---|---|---|---|
 | `setup` | `design:parts/setup/mega_menu.tpl` (the Setup menu's own `parts/setup/menu.tpl`) | `Leftmenu_setup` | eighteen, see below |
 | `users` | `design:parts/user/mega_menu.tpl` | `Leftmenu_user_mega` | eight, see below |
+| `dashboard` | `design:parts/my/mega_menu.tpl` | `Leftmenu_my_mega` | eighteen, see below |
 
 To give another tab one (an extension's, say): write a template in admin4 that includes `parts/ini_menu.tpl` with
 the tab's section, `menu_layout='tiles'`, `tiles_layout='mega'` and the `i18n_hash` of its link names; name it in
@@ -529,6 +531,41 @@ context of the tab's menu, `design/admin/parts/user/menu`. The default choice, b
 
 There is no link to create a user: content is created by a POST from the tree (`content/action`), and no address
 opens the user form directly. A permission check for one user has no view in the kernel either.
+
+#### The Dashboard tab
+
+The Dashboard tab's left menu is `[Leftmenu_my]`, one list (`parts/my/menu.tpl`), to which the extensions append
+their links: Exponential Intelligence (extension expai) adds its dashboard, Vector, Chains, Log and Help there, and
+the help adds the Help center. Its mega menu (`[Topmenu_dashboard] MegaMenuTemplate=design:parts/my/mega_menu.tpl`)
+sorts these into groups with a section of its own, `[Leftmenu_my_mega]`, which, like the Users tab's, defines no
+link: each group adds the menus that define its links (`GroupSections[]`), so every link keeps its address,
+policies, icon and description, and a link of an extension that is not active is simply not there. A group may add
+several sections, separated by `;`, in that order (`GroupSections[ei]=Leftmenu_my;Leftmenu_design`); their link
+keys must differ, as an item is named `<group>-<key>`. The group "Activity and audit" adds `[Leftmenu_audit]` (the
+audit console, which is the Dashboard menu's Audit trail, and expai's AI events; the links into channels the user
+may not read are left out as in the audit menu), the group "Exponential Intelligence" adds `[Leftmenu_my]` and
+`[Leftmenu_design]` (expai's Missing alt text). The icons and descriptions of the expai links are set in core
+`menu.ini` beside the menu they belong to, as for the Setup menu's EI links; they are read only where a menu is drawn
+as tiles or as a mega menu. The default choice, by group, in this order (the audit before Exponential Intelligence,
+Change password and Edit profile last, as in the left menu):
+
+| Group | Links (`MegaMenuLinks[]`) |
+|---|---|
+| Overview | `overview-dashboard` (Dashboard), `overview-help_center` (Help center) |
+| Your work | `work-my_drafts`, `work-my_pending`, `work-collaboration`, `work-my_bookmarks` |
+| Activity and audit | `activity-console` (Audit trail), `activity-expai_events` (AI events) |
+| Exponential Intelligence | `ei-expai`, `ei-expai_vector`, `ei-expai_chain`, `ei-expai_alttext`, `ei-expai_log`, `ei-expai_help` |
+| My account | `account-my_notifications`, `account-my_mail`, `account-change_password`, `account-edit_profile` |
+
+Eighteen links, every function of the tab but the shop's preferred currency, which stays in the left menu. Each is
+shown only to a user who may open it (the expai links need `expai/write` and their own policies, the audit links
+`audit/read`, the Help center `exphelp/read`), and a group left without a link is not drawn.
+
+The panel is wide (`[Topmenu_dashboard] MegaMenuLayout=wide`): instead of up to three groups of 17rem side by side,
+the groups are set in up to four balanced columns of 15rem (CSS columns; a group is never split), four at 1440px,
+three at 960px (a 1920px screen at 200% zoom), two below. Eighteen links with their descriptions then fit the
+window's height without scrolling inside the panel. Another tab with a long choice can take the same layout with
+`MegaMenuLayout=wide` in its `[Topmenu_<tab>]`; without it (Setup, Users) the panel is drawn as before.
 
 - **A short choice, not the whole menu.** The section's `MegaMenuLinks[]` (for Setup `[Leftmenu_setup]`) names the links shown, by link key,
   in their order; at most 18 are shown (6 to 18 read best). It is a choice from the menu's links, not a second
@@ -639,7 +676,7 @@ opens the user form directly. A permission check for one user has no view in the
 
 `tests/tests/design/AdminMegaMenuTest.php` holds the defaults of both tabs, the markup, the source and the view
 (which tabs it serves, and only while the user has them: hidden, disabled, not shown, not listed), the widths and
-the strings, the Users section (its added menus, existing links, icons, names and descriptions in both languages), renders the panel's template with fake groups (the choice, its order, access, groups left out, the
+the strings, the Users section (its added menus, existing links, icons, names and descriptions in both languages), the Dashboard section (its added menus, one group adding two, every EI link chosen, icons, names and descriptions in every complete catalogue, links without access or of an inactive extension left out, the wide layout), renders the panel's template with fake groups (the choice, its order, access, groups left out, the
 limit of 18, no choice, a key of a moved tab that falls back to the group's link of the same address), and runs the script in node (`tests/tests/design/js/mega_menu.js`: click, ArrowDown, Escape, Tab, a
 click outside, the delays, touch, the focus coming into a preview, the width, the "More" list, one load and a
 failed one, two tabs with one panel open at a time), checks that admin4 and admin4l draw the tabs with the one
@@ -940,9 +977,11 @@ Policies of a role (`role/view`, `role/edit`) and the role cards of `role/list` 
 | `settings/menu.ini` | `MenuAccessSettings` | `NoAccessLinks` | `hidden` | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `SetupTabs[]` | empty (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
-| `settings/menu.ini` | `TopAdminMenu` | `MegaMenuTabs[]` | empty; `setup` and `users` have a template (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
-| `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuTemplate` | `design:parts/setup/mega_menu.tpl` (setup), `design:parts/user/mega_menu.tpl` (users) | siteaccess |
+| `settings/menu.ini` | `TopAdminMenu` | `MegaMenuTabs[]` | empty; `setup`, `users` and `dashboard` have a template (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
+| `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuTemplate` | `design:parts/setup/mega_menu.tpl` (setup), `design:parts/user/mega_menu.tpl` (users), `design:parts/my/mega_menu.tpl` (dashboard) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_user_mega` | `MegaMenuLinks[]` | eight links of the Users tab (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
+| `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuLayout` | unset (up to three groups side by side); `wide` for dashboard (up to four balanced columns) | siteaccess |
+| `settings/menu.ini` | `Leftmenu_my_mega` | `MegaMenuLinks[]` | eighteen links of the Dashboard tab, every Exponential Intelligence link among them (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_setup` | `MegaMenuLinks[]` | eighteen frequent links, at most 18 shown (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the nine groups of `Leftmenu_setup` (Design and Audit for moved tabs, AI and Updates for extensions' links) | siteaccess |
