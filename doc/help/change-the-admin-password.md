@@ -388,8 +388,8 @@ wiki article ["Reseting the admin password in eZ publish"](https://ezpedia.expon
 on eZpedia, written by kracker, xavier, Graham Brookins and other contributors since 2006, and distributed under the
 GNU Free Documentation License. The adapted text was rewritten and corrected for Exponential 6 and is distributed under
 the GNU Free Documentation License 1.3 or any later version, like the rest of this documentation
-([The license of this documentation](../README-LICENSE.md)). Everything else on this page was written from the
-Exponential 6 source code.
+(<https://www.gnu.org/licenses/fdl-1.3.html>; the copyright and permission notice is `doc/README-LICENSE.md`).
+Everything else on this page was written from the Exponential 6 source code.
 
 ## Related pages
 
