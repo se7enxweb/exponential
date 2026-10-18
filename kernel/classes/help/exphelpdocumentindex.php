@@ -1032,8 +1032,9 @@ class expHelpDocumentIndex
     }
 
     /**
-     * The title of a page without a heading: the first line of a text file when it is short, else the file name
-     * ("README" names its directory).
+     * The title of a page without a heading: the first line of a text file when it is short ("*Title: ..." of the
+     * old feature pages without its label; reStructuredText comments such as ".. -*- coding: utf-8 -*-" skipped),
+     * else the file name ("README" names its directory).
      *
      * @param string $path
      * @param string $body
@@ -1041,11 +1042,15 @@ class expHelpDocumentIndex
      */
     public static function fallbackTitle( $path, $body )
     {
-        foreach ( preg_split( '/\r\n|\r|\n/', (string)$body, 20 ) as $line )
+        foreach ( array_slice( preg_split( '/\r\n|\r|\n/', (string)$body ), 0, 20 ) as $line )
         {
+            if ( preg_match( '/^\.\.(\s|$)/', $line ) )
+                continue;
             $line = trim( $line, " \t=-*#" );
             if ( $line === '' )
                 continue;
+            if ( preg_match( '/^title:\s*(.+)$/i', $line, $m ) )
+                $line = rtrim( trim( $m[1] ), '.' );
             if ( mb_strlen( $line, 'UTF-8' ) <= 80 && !preg_match( '/^[0-9a-f]{7,}\b|^(\$|<|\{|https?:)/', $line ) )
                 return self::inlineText( $line );
             break;
@@ -1095,6 +1100,13 @@ class expHelpDocumentIndex
             if ( $fence )
                 continue;
             $trimmed = trim( $line );
+            // reStructuredText comments and field lists (":Date: ..."), and the bare labels of the old text pages ("*Documentation:")
+            if ( preg_match( '/^\.\.(\s|$)/', $line ) || ( $format === 'text' && preg_match( '/^(\*?[A-Za-z][A-Za-z ]{0,30}:$|:[A-Za-z][A-Za-z ]{0,30}:)/', $trimmed ) ) )
+            {
+                if ( $paragraph )
+                    break;
+                continue;
+            }
             $isHeading = preg_match( '/^ {0,3}#{1,6}(\s|$)/', $line ) || ( isset( $lines[$i + 1] ) && $trimmed !== '' && preg_match( '/^ {0,3}(=+|-+)\s*$/', $lines[$i + 1] ) );
             if ( $trimmed === '' || preg_match( '/^ {0,3}(=+|-+)\s*$/', $line ) )
             {
