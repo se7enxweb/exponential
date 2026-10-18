@@ -85,7 +85,7 @@ class expHelpDocumentIndex
      *                       audience (expHelpAudience, default from exphelp.ini), stat_files (bool, default true),
      *                       git_history (bool, default true)
      */
-    public function __construct( expHelpAllowlist $allowlist = null, array $options = array() )
+    public function __construct( ?expHelpAllowlist $allowlist = null, array $options = array() )
     {
         $this->allowlist = $allowlist !== null ? $allowlist : expHelpAllowlist::fromIni();
         $this->audience = isset( $options['audience'] ) && $options['audience'] instanceof expHelpAudience
@@ -121,7 +121,7 @@ class expHelpDocumentIndex
      *
      * @param expHelpDocumentIndex|null $index
      */
-    public static function setInstance( expHelpDocumentIndex $index = null )
+    public static function setInstance( ?expHelpDocumentIndex $index = null )
     {
         self::$instance = $index;
         self::$instanceFixed = $index !== null;
@@ -913,7 +913,7 @@ class expHelpDocumentIndex
      * @param array $used the anchors given so far in the document
      * @return string
      */
-    public static function slug( $text, array &$used = null )
+    public static function slug( $text, ?array &$used = null )
     {
         if ( $used === null )
             $used = array();
