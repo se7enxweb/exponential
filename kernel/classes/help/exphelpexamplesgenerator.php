@@ -180,7 +180,7 @@ class expHelpExamplesGenerator
                 continue;
             }
             if ( !is_dir( dirname( $file ) ) )
-                mkdir( dirname( $file ), 0777, true );
+                eZDir::mkdir( dirname( $file ), false, true );
             file_put_contents( $file, $content );
             ++$stats['written'];
         }
