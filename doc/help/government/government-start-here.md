@@ -62,9 +62,9 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 |---|---|
 | [Levels of government](levels/README.md) | What a ministry, a region or state, a council, an agency, a library, a school or university, a court, a parliament, a public health body or an emergency service typically publishes, a content model for it, roles, priorities and a first-90-days plan |
 | [Accessibility](accessibility/README.md) | WCAG 2.2 AA, EN 301 549 and Section 508 mapped to what Exponential provides, with every claim backed by [Accessibility standards](../../standards/accessibility.md); statements, audits, accessible content |
-| Security (`security/`) | OWASP, hardening, the audit trail, two-step sign-in, the Content Security Policy, request-shield |
-| Privacy (`privacy/`) | GDPR features, data minimization, retention, consent records, erasure; other jurisdictions framed generally |
-| Records and archiving (`records-and-archiving/`) | Versions, history, archiving notices, retention schedules, exports, preserving URLs |
+| [Security](security/README.md) | OWASP, hardening, the audit trail, two-step sign-in, the Content Security Policy, request-shield |
+| [Privacy](privacy/README.md) | GDPR features, data minimization, retention, consent records, erasure; other jurisdictions framed generally |
+| [Records and archiving](records-and-archiving/README.md) | Versions, history, archiving notices, retention schedules, exports, preserving URLs |
 | [Open data](open-data/README.md) | Publishing datasets with metadata, licenses and stable URLs, and the APIs and feeds that exist |
 | [Transparency and FOI](transparency-and-foi/README.md) | Proactive disclosure, disclosure logs, publication schemes, decision registers |
 | Languages (`languages/`) | Official languages, translation workflows, right-to-left, plain language |
