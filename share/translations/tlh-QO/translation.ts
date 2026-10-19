@@ -72995,6 +72995,22 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
         <translation>qum ghommey je Exponential: lo&apos;laHghach, pegh, Hung, ngoq poSmoH, je&apos;meH, Qorgh nI&apos; je.</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>je&apos;wI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Exponential Daq Datu&apos;lI&apos; yIQorgh: ghomlIj Hoch jaj vum je, Suy&apos;, DevwI&apos;lIj tlhej QorghtaHghach, Sach, lI&apos;ghach je.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>je&apos;wI&apos; Qapla&apos;</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Exponential Daq tu&apos;Daj Qorghbogh ghommey nuvpu&apos; je: ghom, ghItlh, Suy&apos;, Qorghghach, Sach, boqpu&apos; je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

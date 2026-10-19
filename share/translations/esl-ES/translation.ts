@@ -74663,5 +74663,21 @@ Gracias por tu feedback</translation>
         <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
         <translation>Exponential para administraciones y organismos públicos: accesibilidad, privacidad, seguridad, código abierto, contratación y mantenimiento a largo plazo.</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Clientes</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Gestione el sitio que ya tiene en Exponential: su equipo y el trabajo diario, el comercio, el mantenimiento con su proveedor, el crecimiento y el valor que obtiene.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Éxito del cliente</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Para organizaciones y personas que gestionan su propio sitio en Exponential: equipo, publicación, comercio, mantenimiento, crecimiento y socios.</translation>
+    </message>
 </context>
 </TS>

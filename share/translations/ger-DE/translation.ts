@@ -80219,5 +80219,21 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
         <translation>Exponential für Behörden und öffentliche Einrichtungen: Barrierefreiheit, Datenschutz, Sicherheit, Open Source, Beschaffung und langfristige Pflege.</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Kunden</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Die Site betreiben, die Sie mit Exponential haben: Ihr Team und die tägliche Arbeit, Commerce, die Pflege mit Ihrem Anbieter, Wachstum und echter Nutzen.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Kundenerfolg</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Für Organisationen und Menschen, die ihre eigene Site mit Exponential betreiben: Team, Veröffentlichen, Commerce, Pflege, Wachstum und Partner.</translation>
+    </message>
 </context>
 </TS>

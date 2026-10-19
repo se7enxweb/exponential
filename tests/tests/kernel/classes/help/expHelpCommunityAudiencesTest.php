@@ -1,7 +1,7 @@
 <?php
 /**
  * The community audiences of the help: partners, advocates, designers, hosting companies, application creators,
- * website creators, supporters, sponsors, trainers and press, media and influencers, with their folders and categories (doc/features/6.0/help-system.md).
+ * website creators, supporters, sponsors, trainers, press, media and influencers, businesses, governments and customers, with their folders and categories (doc/features/6.0/help-system.md).
  * No database.
  *
  *  CA-01  expHelpAudience knows the ten audiences and their categories by default, after the first six, with icons
@@ -45,10 +45,11 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
         'press'           => array( 'Press, media and influencers', 'doc/help/press/fact-sheet.md', 'press-media' ),
         'businesses'      => array( 'Businesses', 'doc/help/businesses/why-exponential.md', 'business-solutions' ),
         'government'      => array( 'Governments', 'doc/help/government/accessibility.md', 'public-sector' ),
+        'customer'        => array( 'Customers', 'doc/help/customers/day-to-day/content-calendar.md', 'customer-success' ),
     );
     const CATEGORIES = array( 'partnership', 'advocacy', 'theme-design', 'templates', 'extension-development', 'theme-extensions',
                               'theme-distribution', 'theme-sales', 'theme-lifecycle', 'hosting', 'app-creation',
-                              'website-creation', 'supporting', 'sponsorship', 'training', 'press-media', 'project', 'build-two-ways', 'business-solutions', 'public-sector' );
+                              'website-creation', 'supporting', 'sponsorship', 'training', 'press-media', 'project', 'build-two-ways', 'business-solutions', 'public-sector', 'customer-success' );
     const CATALOGUES = array( 'ara-SA', 'cro-HR', 'cze-CZ', 'dan-DK', 'dut-NL', 'eng-US', 'esl-ES', 'esl-MX', 'fre-FR', 'ger-DE',
                               'heb-IL', 'ita-IT', 'lat-VA', 'nor-NO', 'pol-PL', 'por-BR', 'swe-SE', 'tlh-QO', 'tur-TR', 'ukr-UA',
                               'untranslated' );

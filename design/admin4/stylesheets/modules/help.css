@@ -76,6 +76,7 @@
 .a4-help-tile.is-website-creator { color: var(--a4-chart-7); }
 .a4-help-tile.is-supporter { color: var(--a4-chart-4); }
 .a4-help-tile.is-sponsor { color: var(--a4-chart-5); }
+.a4-help-tile.is-customer { color: var(--a4-chart-4); }
 .a4-help-tile.is-government { color: var(--a4-chart-7); }
 .a4-help-tile.is-businesses { color: var(--a4-chart-3); }
 .a4-help-tile.is-press { color: var(--a4-chart-6); }
@@ -103,6 +104,7 @@
 .a4-help-pill.is-website-creator { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-supporter { border-color: var(--a4-chart-4); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-sponsor { border-color: var(--a4-chart-5); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-customer { border-color: var(--a4-chart-4); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-government { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-businesses { border-color: var(--a4-chart-3); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-press { border-color: var(--a4-chart-6); background-color: var(--a4-card); color: var(--a4-ink); }
@@ -433,6 +435,7 @@
 .a4-help-audience.is-website-creator::before { background-color: var(--a4-chart-7); }
 .a4-help-audience.is-supporter::before { background-color: var(--a4-chart-4); }
 .a4-help-audience.is-sponsor::before { background-color: var(--a4-chart-5); }
+.a4-help-audience.is-customer::before { background-color: var(--a4-chart-4); }
 .a4-help-audience.is-government::before { background-color: var(--a4-chart-7); }
 .a4-help-audience.is-businesses::before { background-color: var(--a4-chart-3); }
 .a4-help-audience.is-press::before { background-color: var(--a4-chart-6); }
