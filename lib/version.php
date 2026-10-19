@@ -96,6 +96,22 @@ class ExponentialSDK
     }
 
     /*!
+     \return the directory of this release on a package server, relative to
+             [RepositorySettings] RemotePackagesIndexURLBase in package.ini: "x.y/x.y.z" for a
+             stable release (6.0/6.0.15), "x.y/x.y.z<state>" otherwise (6.0/6.0.16alpha1).
+             Before 6.0.15 the state was always appended, so the fallback asked for
+             6.0/6.0.15stable/index.xml, which the package server does not have.
+    */
+    static function packageServerPath()
+    {
+        $path = self::version( false, false, false ) . '/' . self::version( true, false, false );
+        $state = (string)self::state();
+        if ( $state !== '' and strtolower( $state ) !== 'stable' )
+            $path .= $state;
+        return $path;
+    }
+
+    /*!
      \return the alias name for the release, this is often used for beta releases and release candidates.
     */
     static function alias()

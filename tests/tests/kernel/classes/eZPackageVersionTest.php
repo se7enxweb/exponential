@@ -92,6 +92,39 @@ class eZPackageVersionTest extends ezpTestCase
                            eZPackageVersion::sort( array( '2.0-1', '1.10-1', '1.0.0-2', '2.0.0-alpha-1', '1.2.3-1', '0.9-3', '1.0.1-1', '1.0-1' ), true ) );
     }
 
+    /**
+     * The 7x site packages carry <number>6.0</number> <release>15-stable</release>; before
+     * 6.0.15 that read as the prerelease "15-stable" of 6.0.0, so min-version="6.0" was never met.
+     */
+    public function testReleaseWithStateWord()
+    {
+        $this->assertSame( array( '6.0', 15 ), eZPackageVersion::splitRelease( '6.0-15-stable' ) );
+        $this->assertSame( array( '6.0', 15, array() ), eZPackageVersion::splitReleaseState( '6.0-15-stable' ) );
+        $this->assertSame( array( '6.0', 15, array() ), eZPackageVersion::splitReleaseState( '6.0-15stable' ) );
+        $this->assertSame( array( '6.0', 15, array( 'rc1' ) ), eZPackageVersion::splitReleaseState( '6.0-15-rc1' ) );
+        $this->assertSame( 1, eZPackageVersion::compareFull( '6.0-15-stable', '6.0' ) );
+        $this->assertTrue( eZPackageVersion::compareFull( '6.0-15-stable', '6.0' ) >= 0, 'min-version="6.0" is met' );
+        $this->assertSame( 1, eZPackageVersion::compareFull( '6.0-15-stable', '5.1' ) );
+        $this->assertSame( 0, eZPackageVersion::compareFull( '6.0-15-stable', '6.0-15' ) );
+        $this->assertSame( 0, eZPackageVersion::compareFull( '6.0-15-STABLE', '6.0-15-final' ) );
+        $this->assertSame( -1, eZPackageVersion::compareFull( '6.0-9-stable', '6.0-15-stable' ), 'releases compare numerically' );
+        $this->assertSame( -1, eZPackageVersion::compareFull( '6.0-10-stable', '6.0-14-stable' ) );
+        $this->assertSame( -1, eZPackageVersion::compareFull( '6.0-15-rc1', '6.0-15-stable' ), 'a prerelease state comes first' );
+        $this->assertSame( -1, eZPackageVersion::compareFull( '6.0-15-stable', '6.0.1-1' ) );
+        $this->assertSame( 1, eZPackageVersion::compareFull( '6.0-15-stable', 0 ) );
+    }
+
+    public function testLegacyStableWordIsNoPrerelease()
+    {
+        $this->assertSame( 0, eZPackageVersion::compare( '6.0.15stable', '6.0.15' ) );
+        $this->assertSame( 0, eZPackageVersion::compare( '1.0-final', '1.0.0' ) );
+        $this->assertSame( -1, eZPackageVersion::compare( '6.0.15beta1', '6.0.15stable' ) );
+        // strict SemVer keeps its meaning: 1.0.0-stable is a prerelease
+        $this->assertSame( -1, eZPackageVersion::compare( '1.0.0-stable', '1.0.0' ) );
+        $this->assertFalse( eZPackageVersion::isStableWord( 'beta' ) );
+        $this->assertTrue( eZPackageVersion::isStableWord( 'GA' ) );
+    }
+
     public function testUnreadableVersionsSortFirstInNaturalOrder()
     {
         $this->assertFalse( eZPackageVersion::parse( 'latest' ) );

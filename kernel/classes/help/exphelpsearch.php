@@ -34,7 +34,7 @@
 class expHelpSearch
 {
     /** Version of the index file format; a change builds a new index. */
-    const FORMAT = 3;
+    const FORMAT = 4;
 
     const DEFAULT_LIMIT = 20;
     const MAX_LIMIT = 50;
@@ -220,9 +220,7 @@ class expHelpSearch
                 $score *= $this->settings['versionBoost'][$major];
             $score *= $this->audienceFactor( $index['docs'][$doc], $filters );
             // every group matches a word of the title: the page is about the query
-            $titleWords = array();
-            foreach ( self::tokenize( $index['docs'][$doc][1] ) as $word )
-                $titleWords[$word] = $titleWords[self::stem( $word )] = true;
+            $titleWords = $this->titleWords( $doc, $index['docs'][$doc][1] );
             $all = true;
             foreach ( $expansions as $group )
             {
@@ -333,6 +331,43 @@ class expHelpSearch
             $factor = min( $factor, (float)$this->settings['audienceBoost'][$audience] );
         }
         return $factor;
+    }
+
+    /** @var array doc => the words and stems of its title, for the title match (filled as queries need them) */
+    protected $titleWordCache = array();
+
+    /**
+     * The words of a page's title and their stems, as a set; kept for the next query of the same request, so a
+     * query that matches most of the help does not tokenize and stem thousands of titles again.
+     *
+     * @param int|string $doc
+     * @param string $title
+     * @return array word => true
+     */
+    protected function titleWords( $doc, $title )
+    {
+        if ( isset( $this->titleWordCache[$doc] ) )
+            return $this->titleWordCache[$doc];
+        $index = $this->index();
+        // an index built since format 4 carries them (docs[10]); an older one is tokenized here
+        $words = isset( $index['docs'][$doc][10] ) && is_string( $index['docs'][$doc][10] )
+            ? array_fill_keys( $index['docs'][$doc][10] === '' ? array() : explode( ' ', $index['docs'][$doc][10] ), true )
+            : self::titleWordSet( $title );
+        return $this->titleWordCache[$doc] = $words;
+    }
+
+    /**
+     * The words of a title and their stems, as a set.
+     *
+     * @param string $title
+     * @return array word => true
+     */
+    public static function titleWordSet( $title )
+    {
+        $words = array();
+        foreach ( self::tokenize( $title ) as $word )
+            $words[$word] = $words[self::stem( $word )] = true;
+        return $words;
     }
 
     /** The factor of a page's type and release (TypeBoost[] times VersionBoost[]). */
@@ -1208,6 +1243,8 @@ class expHelpSearch
                 isset( $doc['order'] ) ? (int)$doc['order'] : 0,
                 !empty( $doc['featured'] ),
                 isset( $doc['summary'] ) && is_string( $doc['summary'] ) ? self::truncate( trim( preg_replace( '/\s+/u', ' ', $doc['summary'] ) ), 300 ) : '',
+                // the words of the title and their stems, for the title match of every query (built once, not per query)
+                implode( ' ', array_keys( self::titleWordSet( $title ) ) ),
             );
             $text = isset( $doc['text'] ) ? (string)$doc['text'] : '';
             $headings = array();
