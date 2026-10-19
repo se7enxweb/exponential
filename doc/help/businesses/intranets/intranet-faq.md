@@ -10,7 +10,7 @@ type: help
 # Intranet FAQ
 
 This page is for managers and project leads who need quick answers. Each answer is short and links to the page with
-the details. If your question is not here, the Businesses FAQ covers general questions.
+the details. If your question is not here, the [Businesses FAQ](../businesses-faq.md) covers general questions.
 
 ## Contents
 
@@ -129,5 +129,5 @@ app codes is used ([Mobile and headless](../mobile-and-headless/README.md)).
 - [Intranets](README.md)
 - [Intranet rollout checklist](intranet-rollout-checklist.md)
 - [Extranet FAQ](../extranets/extranet-faq.md)
-- Businesses FAQ
+- [Businesses FAQ](../businesses-faq.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

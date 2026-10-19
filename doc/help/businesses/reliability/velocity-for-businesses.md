@@ -27,7 +27,7 @@ better answer. The technical entry point is
 
 ## What Velocity is
 
-From the README, "How Exponential is served":
+From the [README, "How Exponential is served"](https://github.com/se7enxweb/exponential/blob/main/README.md#exponential-velocity--the-fast-option):
 "Velocity is a web server written in PHP, bundled with Exponential, that keeps the application loaded between
 requests." It is based on the Qbix server and developed alongside Exponential.
 
@@ -36,7 +36,7 @@ afterwards. Velocity loads the application once and keeps workers ready, and it 
 repeat request without waking the application at all (README, "Why it is faster").
 
 Velocity can run three engines, chosen with one setting
-(README, "Engines"):
+([README, "Engines"](https://github.com/se7enxweb/exponential/blob/main/README.md#engines-frankenphp-phps-built-in-server-or-qbix)):
 
 | Engine | Role, as the README states it |
 |---|---|
@@ -48,7 +48,7 @@ Velocity can run three engines, chosen with one setting
 
 The README states: "**0.36 ms per cached page, 8,941 requests per second sustained, and repeat visits never touch
 the network.**" It then explains each figure, and the explanations matter as much as the numbers
-(README, "What that measures as"):
+([README, "What that measures as"](https://github.com/se7enxweb/exponential/blob/main/README.md#what-that-measures-as)):
 
 | Figure | What it measures, per the README |
 |---|---|
@@ -72,7 +72,7 @@ To measure your own site, your operator can use `exp:benchmark`, which compares 
 
 The README is explicit that "Most of the speed came from fixing Exponential and the cache, not from the server
 process model", and that "Exponential 6.0.15+ is fast under load on Apache or Nginx too"
-(README, "The part that matters even if you never run Velocity").
+([README, "The part that matters even if you never run Velocity"](https://github.com/se7enxweb/exponential/blob/main/README.md#the-part-that-matters-even-if-you-never-run-velocity)).
 Among those fixes: a returning visitor's reload answered with 202 bytes instead of the whole page, and an expired
 page rebuilt by one request while everyone else is served the existing copy. See
 [Caching for availability](caching-for-availability.md).
@@ -83,29 +83,29 @@ So the choice of Velocity is about raising the ceiling, not about whether the si
 
 | Feature | What it means for the business | Source |
 |---|---|---|
-| Graceful reload | `graceful` "re-executes the server without releasing the listening socket, so a deploy does not drop requests" | README |
-| Status for monitoring | "`status --json` is there for monitoring"; `status` says `running` only when the server answers | README, [Velocity engines](../../../bc/6.0/velocity-engines.md#stop-restart-and-status-of-the-qbix-engine) |
+| Graceful reload | `graceful` "re-executes the server without releasing the listening socket, so a deploy does not drop requests" | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#using-it) |
+| Status for monitoring | "`status --json` is there for monitoring"; `status` says `running` only when the server answers | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#using-it), [Velocity engines](../../../bc/6.0/velocity-engines.md#stop-restart-and-status-of-the-qbix-engine) |
 | Watchdog | A systemd timer starts the server again after a crash or out-of-memory kill | [Health checks and uptime](../../hosting/operations/health-checks-and-uptime.md#velocity-health-endpoint-and-watchdog) |
 | Restart that finishes on its own | A restart whose caller is killed between stop and start no longer leaves the server down | [Velocity engines](../../../bc/6.0/velocity-engines.md#a-restart-or-deploy-that-is-cut-off) |
 | One-command deploy | `exp:velocity deploy` runs every step of shipping a PHP change in the right order | [Graceful deploys](graceful-deploys.md) |
-| Its own HTTPS | Serves HTTPS itself and swaps a renewed certificate in without a restart | README |
+| Its own HTTPS | Serves HTTPS itself and swaps a renewed certificate in without a restart | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#when-a-traditional-server-is-still-the-right-answer) |
 | Control panel and dashboard | Views of the server that keep working when the application is broken | [Velocity control panel](../../../features/6.0/velocity-control-panel.md) |
 
 ## What it needs from your hosting
 
-- **PHP 8.1 or later** (README, "What version of PHP is required").
+- **PHP 8.1 or later** ([README, "What version of PHP is required"](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required)).
 - **A long-lived process.** "Shared hosting usually will not" allow one
-  (README). A VPS, a dedicated server,
+  ([README](https://github.com/se7enxweb/exponential/blob/main/README.md#when-a-traditional-server-is-still-the-right-answer)). A VPS, a dedicated server,
   a container or managed hosting that supports it is needed
   ([Choosing a hosting model](../../hosting/models/choosing-a-hosting-model.md)).
 - **A restart after code changes.** "Workers keep the application in memory between requests. After changing a
   template, a setting or a class, restart the server — clearing caches alone will not dislodge what a worker already
-  holds" (README, "One thing to know before you rely on it").
+  holds" ([README, "One thing to know before you rely on it"](https://github.com/se7enxweb/exponential/blob/main/README.md#one-thing-to-know-before-you-rely-on-it)).
   The deploy command does this for you.
 
 ## When a traditional server is the right answer
 
-From the README (When a traditional server is still the right answer):
+From the README ([When a traditional server is still the right answer](https://github.com/se7enxweb/exponential/blob/main/README.md#when-a-traditional-server-is-still-the-right-answer)):
 
 - **You need per-site operating-system isolation.** "A single server process serving several sites is a routing
   convenience, not a security boundary." Run one Velocity instance per site, each as its own user, or a traditional

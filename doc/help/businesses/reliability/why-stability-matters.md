@@ -49,7 +49,7 @@ generation and is still the model of Exponential (same source).
 
 The README states the project's status plainly: "Exponential has made it beyond it's end of life in 2021 and
 survived. Current releases are primarily aimed at easing the requirements to support current versions of the PHP
-language" (README, "Exponential Project Status").
+language" ([README, "Exponential Project Status"](https://github.com/se7enxweb/exponential/blob/main/README.md#exponential-project-status)).
 
 For a business this means:
 
@@ -64,9 +64,9 @@ The rules below are written down in the repository, not just practiced:
 
 | Rule | What it means for you | Source |
 |---|---|---|
-| A published version never changes | The version you tested is exactly the version you deploy | SECURITY.md |
-| Security fixes come with the next 6.0.x release | You get fixes by upgrading within the same line | SECURITY.md |
-| Exponential 6.0 is the maintained line | You know which line to be on | SECURITY.md |
+| A published version never changes | The version you tested is exactly the version you deploy | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
+| Security fixes come with the next 6.0.x release | You get fixes by upgrading within the same line | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
+| Exponential 6.0 is the maintained line | You know which line to be on | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) |
 | Every package is on GitHub and Packagist | You can always get the exact code of your version | [Release and upgrade planning](../../leadership/release-and-upgrade-planning.md#the-rules-every-release-follows) |
 
 Details are on [Release line and support policy](release-line-and-support-policy.md).
@@ -109,7 +109,7 @@ Be clear with your team and your customers about the limits:
   hosting partners, not by the open source project
   ([SLA options](../../hosting/business/sla-options.md)).
 - A stable line still needs upgrading. A site that stays on an old tag only gets security fixes by moving to a newer
-  6.0.x (SECURITY.md).
+  6.0.x ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
 - Your own extensions and templates are your responsibility; the upgrade check shows where they differ from the
   release.
 
@@ -126,7 +126,7 @@ If any answer is "no" or "not sure", the [Reliability scorecard](reliability-sco
 ## Related pages
 
 - [Reliability for businesses](README.md)
-- Why businesses rely on Exponential
+- [Why businesses rely on Exponential](../why-businesses-rely-on-exponential.md)
 - [Release line and support policy](release-line-and-support-policy.md)
 - [Risk management](../../leadership/risk-management.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

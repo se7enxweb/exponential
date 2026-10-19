@@ -30,7 +30,7 @@ are in [Upgrading](../../../guides/upgrading.md).
 
 Security fixes reach you only through the next 6.0.x release: "A published tag is never changed: a fix for a problem
 in `v6.0.14` or an earlier tag reaches you as the next release, not as a corrected copy of the old one"
-(SECURITY.md). A site that does not upgrade slowly collects known problems, and its next
+([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). A site that does not upgrade slowly collects known problems, and its next
 upgrade grows larger and riskier.
 
 Small, regular upgrades are the opposite: each one is short, well understood and easy to rehearse. The planning page

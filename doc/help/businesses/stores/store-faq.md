@@ -129,11 +129,11 @@ Public pages can be cached; basket and checkout cannot, so plan capacity for the
 See [Store performance at peak times](store-performance-at-peak-times.md).
 
 **Where do I report a security problem in Exponential?**
-Privately, to the address in SECURITY.md, never in a public issue.
+Privately, to the address in [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), never in a public issue.
 
 ## Related pages
 
 - [Online stores and small shops](README.md)
-- Businesses FAQ
+- [Businesses FAQ](../businesses-faq.md)
 - [Website creator FAQ](../../creators/website-creators/website-creator-faq.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

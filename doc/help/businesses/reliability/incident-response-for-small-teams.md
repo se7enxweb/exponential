@@ -121,7 +121,7 @@ Exponential's tools help here:
   ([Logs and error references](logs-and-error-references.md#the-logs-and-what-each-is-for)).
 
 If the cause is a security problem in Exponential itself, report it privately as described in
-SECURITY.md, never in a public tracker. Personal data breaches may have legal reporting
+[SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), never in a public tracker. Personal data breaches may have legal reporting
 duties; see [Security basics for businesses](../security/security-basics-for-businesses.md) and ask your data
 protection officer or lawyer. This page is not legal advice.
 

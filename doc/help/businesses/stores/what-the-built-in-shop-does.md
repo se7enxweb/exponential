@@ -26,7 +26,7 @@ included. Each section links to the page with the details.
 ## In one paragraph
 
 The shop is part of Exponential itself, not an add-on: the README lists "Advanced e-Commerce Stores (Built in)"
-(README.md), and the shop module with all its views is defined in `kernel/shop/module.php`.
+([README.md](https://github.com/se7enxweb/exponential/blob/main/README.md)), and the shop module with all its views is defined in `kernel/shop/module.php`.
 Products are content like any other page, with a price field. Customers fill a basket, check out, confirm, pay
 through a payment gateway, and receive a confirmation mail. Staff manage orders, customers, VAT, currencies and
 discounts in the **Store** tab of the administration, which opens with a dashboard
@@ -117,6 +117,6 @@ work ([App creators: start here](../../creators/app-creators/app-creators-start-
 ## Related pages
 
 - [Running a shop: overview](../../creators/website-creators/shop-overview.md)
-- How businesses sell online
+- [How businesses sell online](../how-businesses-sell-online.md)
 - [Store FAQ](store-faq.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

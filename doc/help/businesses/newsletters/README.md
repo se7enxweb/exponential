@@ -96,13 +96,13 @@ consent system of its own ([cjw_newsletter, The features of 4.2.0](../../../feat
 - [Members](../members/README.md): member sites often send a members' newsletter.
 - [Stores](../stores/README.md): promoting a store, including by newsletter.
 - [Security and data protection](../security/README.md): GDPR basics and consent for forms.
-- Non-profits and Associations and small groups: newsletters
+- [Non-profits](../nonprofits/README.md) and [Associations and small groups](../associations/README.md): newsletters
   for supporters and members.
 - Government organizations have their own section: Governments: start here.
 
 ## Related pages
 
-- Businesses: start here
+- [Businesses: start here](../businesses-start-here.md)
 - [Newsletters with cjw_newsletter](../../creators/website-creators/newsletters-with-cjw-newsletter.md)
 - [cjw_newsletter feature page](../../../features/6.0/extensions/cjw_newsletter.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

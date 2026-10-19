@@ -88,7 +88,7 @@ The tools are the same, so the [Intranets](../intranets/README.md) section is us
 
 ## Related pages
 
-- Businesses: start here
-- How businesses sell online
+- [Businesses: start here](../businesses-start-here.md)
+- [How businesses sell online](../how-businesses-sell-online.md)
 - [Member registration and members-only areas](../../creators/website-creators/member-registration-and-areas.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

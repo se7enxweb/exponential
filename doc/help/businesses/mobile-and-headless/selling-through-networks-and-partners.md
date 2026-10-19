@@ -28,7 +28,7 @@ this page says so.
 
 | Channel | Feature | Read |
 |---|---|---|
-| Your website and store | The built-in shop | How businesses sell online, [Stores](../stores/README.md) |
+| Your website and store | The built-in shop | [How businesses sell online](../how-businesses-sell-online.md), [Stores](../stores/README.md) |
 | Partner or dealer sites on Exponential | `syndication`, one way or both ways | [Feeds and syndication](feeds-and-syndication.md#syndication-between-installations) |
 | Partner or dealer sites on other systems | RSS or Atom feeds; the REST API; scheduled file exports | below |
 | A portal where partners sign in | An extranet; the remote services and sample portals | [Extranets](../extranets/README.md), [Remote services](remote-services.md) |
@@ -100,7 +100,7 @@ Before content or data leaves your installation for a partner:
 
 - [Feeds and syndication](feeds-and-syndication.md)
 - [Remote services](remote-services.md)
-- How businesses sell online
+- [How businesses sell online](../how-businesses-sell-online.md)
 - [Promoting your store](../stores/promoting-your-store.md)
 - [Partner portal planning](../extranets/partner-portal-planning.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

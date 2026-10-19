@@ -80,7 +80,7 @@ is switched off, and says to "enable them on production"
 ## Protection built into the cache
 
 The README lists fixes in Exponential 6.0.15 that "apply wherever Exponential runs", on Apache and Nginx as well as
-Velocity (README, "The part that matters even if you never run Velocity"):
+Velocity ([README, "The part that matters even if you never run Velocity"](https://github.com/se7enxweb/exponential/blob/main/README.md#the-part-that-matters-even-if-you-never-run-velocity)):
 
 - **Conditional requests**: "a returning visitor's reload is answered with 202 bytes instead of the whole page,
   because cached pages now answer conditional requests properly".

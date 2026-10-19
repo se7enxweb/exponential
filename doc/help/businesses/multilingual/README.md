@@ -81,7 +81,7 @@ From [Languages in Exponential](../../../languages.md), the reference page for e
 - [Several brands on one installation](../multisite/README.md): a language is often one more siteaccess
 - [Stores](../stores/README.md), especially [prices and currencies](../stores/prices-and-currencies.md)
 - [Mobile apps, headless use and networks](../mobile-and-headless/README.md)
-- Businesses start here
+- [Businesses start here](../businesses-start-here.md)
 - Public sector organizations: Governments start here
 
 ## Related pages

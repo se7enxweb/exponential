@@ -87,7 +87,7 @@ From the project's hardening checklist ([Security hardening](../../security-hard
 ## Updates
 
 - [ ] Someone follows Exponential's releases and applies security fixes. Exponential 6.0 is the maintained line, and
-  fixes are published with the next 6.0.x release (SECURITY.md).
+  fixes are published with the next 6.0.x release ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
 - [ ] Extensions (including payment gateways) are updated with the system.
 - [ ] Updates are tested on a copy before the live store ([Upgrades without surprises](../reliability/upgrades-without-surprises.md)).
 
@@ -116,7 +116,7 @@ From the project's hardening checklist ([Security hardening](../../security-hard
 ## If something happens
 
 - Follow the host's runbook for a compromised site ([Compromised site](../../hosting/runbooks/compromised-site.md)).
-- Report a vulnerability in Exponential privately to the address in SECURITY.md, not in a
+- Report a vulnerability in Exponential privately to the address in [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), not in a
   public issue.
 - Tell your payment provider at once if payment data may be involved.
 - Write down what happened ([Incident response for small teams](../reliability/incident-response-for-small-teams.md)).

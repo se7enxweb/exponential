@@ -102,5 +102,5 @@ desk.
 - [Headless with the REST API](headless-with-the-rest-api.md)
 - [Mobile checklist](mobile-checklist.md)
 - [Headless Exponential](../../creators/app-creators/headless-exponential.md)
-- How businesses sell online
+- [How businesses sell online](../how-businesses-sell-online.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

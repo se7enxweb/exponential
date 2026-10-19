@@ -78,7 +78,7 @@ Records can be brought in by a developer script or through the REST API
 
 - [Newsletters](../newsletters/README.md): a newsletter of new acquisitions.
 - [Members](../members/README.md): reader accounts and members-only content.
-- Non-profits and Associations and small groups: many
+- [Non-profits](../nonprofits/README.md) and [Associations and small groups](../associations/README.md): many
   libraries are run by one or support one.
 - [Multilingual sites](../multilingual/README.md): catalogs in several languages.
 - Public libraries run by a government body: see also
@@ -86,7 +86,7 @@ Records can be brought in by a developer script or through the REST API
 
 ## Related pages
 
-- Businesses: start here
+- [Businesses: start here](../businesses-start-here.md)
 - [Designing your content model](../../creators/website-creators/designing-your-content-model.md)
 - [What you can build](../../creators/website-creators/what-you-can-build.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -32,7 +32,7 @@ Reliability is not one feature. It is the sum of a stable product, a careful rel
 the team running the site keeps every week. This section covers all three:
 
 - **The product**: a long-lived release line, published versions that never change, a supported PHP range, and a
-  maintained security policy (SECURITY.md).
+  maintained security policy ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)).
 - **The tools that ship with it**: health checks, logs with error references, a tamper-evident audit trail,
   maintenance mode, an upgrade check, caches, the Exponential Velocity server and its watchdog.
 - **The habits**: backups that are restored on purpose, monitoring that someone reads, upgrades that are rehearsed,
@@ -110,8 +110,8 @@ the team running the site keeps every week. This section covers all three:
 
 ## Neighboring sections
 
-- Businesses start here and
-  Why businesses rely on Exponential: the section's entry pages.
+- [Businesses start here](../businesses-start-here.md) and
+  [Why businesses rely on Exponential](../why-businesses-rely-on-exponential.md): the section's entry pages.
 - [Costs](../costs/README.md): the cost of downtime and the return on stability, in numbers you fill in yourself.
 - [Security](../security/README.md): security and data protection basics for businesses.
 - [Choosing hosting and partners](../choosing/README.md): who runs the servers for you.

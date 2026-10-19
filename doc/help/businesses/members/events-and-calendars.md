@@ -138,8 +138,8 @@ Ask a partner to estimate what you need ([Choosing a partner](../choosing/choosi
 
 ## Related pages
 
-- Events and news for groups
+- [Events and news for groups](../associations/events-and-news-for-groups.md)
 - [Member communications](member-communications.md)
 - [Content classes for websites](../../creators/website-creators/content-classes-for-websites.md)
-- Volunteers and sign-up forms
+- [Volunteers and sign-up forms](../nonprofits/volunteers-and-sign-up-forms.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

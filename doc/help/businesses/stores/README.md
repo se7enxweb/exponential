@@ -26,7 +26,7 @@ links to the technical pages for whoever sets the store up.
 ## What this section covers
 
 Exponential ships a shop in its kernel. The project README lists "Advanced e-Commerce Stores (Built in)" among the
-main features (README.md). Products are ordinary content with a price field; visitors add them
+main features ([README.md](https://github.com/se7enxweb/exponential/blob/main/README.md)). Products are ordinary content with a price field; visitors add them
 to a basket, check out, pay through a payment gateway, and the shop staff handle the orders in the **Store** tab of
 the administration, which opens the Store dashboard
 ([Store dashboard and order statuses](../../../features/6.0/store-dashboard.md)).
@@ -103,7 +103,7 @@ software does.
 
 ## Neighboring sections
 
-- Businesses: start here and How businesses sell online
+- [Businesses: start here](../businesses-start-here.md) and [How businesses sell online](../how-businesses-sell-online.md)
 - [Newsletters](../newsletters/README.md) for keeping customers informed
 - [Costs](../costs/README.md), including [a worked example for a small store](../costs/worked-example-small-store.md)
 - [Security](../security/README.md) and [Reliability](../reliability/README.md)

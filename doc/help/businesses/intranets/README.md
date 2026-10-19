@@ -100,7 +100,7 @@ handlers, configured in `settings/ldap.ini` and `settings/textfile.ini`).
 
 ## Related pages
 
-- Businesses: start here
-- Which section fits your organization
+- [Businesses: start here](../businesses-start-here.md)
+- [Which section fits your organization](../which-section-fits-your-organization.md)
 - [Planning an Exponential project](../../leadership/planning-an-exponential-project.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

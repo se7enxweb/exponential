@@ -97,7 +97,7 @@ Member organizations often rely on volunteers. Plan:
 - someone who approves new members;
 - a host or partner for the technical side ([Choosing hosting](../choosing/choosing-hosting.md)).
 
-The Associations section covers working with volunteers and handing over when they
+The [Associations](../associations/README.md) section covers working with volunteers and handing over when they
 change.
 
 ## Personal data
@@ -130,6 +130,6 @@ plan with a partner ([Choosing a partner](../choosing/choosing-a-partner.md)).
 
 - [Member sites](README.md)
 - [Member site checklist](member-site-checklist.md)
-- Small group site planning
+- [Small group site planning](../associations/small-group-site-planning.md)
 - [Planning your website](../../creators/website-creators/planning-your-website.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

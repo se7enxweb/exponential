@@ -112,7 +112,7 @@ Adapt the rhythm to the size of your organization.
 ## Related pages
 
 - [Member sites](README.md)
-- Small group checklist
+- [Small group checklist](../associations/small-group-checklist.md)
 - [Launch checklist for website creators](../../creators/website-creators/launch-checklist.md)
 - [Go-live checklist template](../templates/go-live-checklist.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

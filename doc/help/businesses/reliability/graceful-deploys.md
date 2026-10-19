@@ -40,7 +40,7 @@ and the rules a business should agree on. The technical guide is
 ## Graceful reload: no dropped requests
 
 On Exponential Velocity, `graceful` "re-executes the server without releasing the listening socket, so a deploy does
-not drop requests" (README, "Using it"):
+not drop requests" ([README, "Using it"](https://github.com/se7enxweb/exponential/blob/main/README.md#using-it)):
 
 ```bash
 php bin/php/console exp:velocity graceful --allow-root-user

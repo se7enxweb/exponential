@@ -81,7 +81,7 @@ Offer the newsletter at checkout or on the receipt page as an unticked choice, a
 A sale, a season or a new collection deserves its own page. Layouts let editors build such pages from zones and blocks,
 with drafts and a preview before publishing
 ([Landing pages with layouts](../../creators/website-creators/landing-pages-with-layouts.md),
-Campaigns and landing pages). Put the campaign's products on the page
+[Campaigns and landing pages](../nonprofits/campaigns-and-landing-pages.md)). Put the campaign's products on the page
 as extra locations or related objects, so prices stay in one place
 ([Store search and navigation](store-search-and-navigation.md#one-product-in-several-places)).
 

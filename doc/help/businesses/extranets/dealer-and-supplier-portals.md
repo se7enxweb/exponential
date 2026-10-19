@@ -122,7 +122,7 @@ integrations ([Headless with the REST API](../mobile-and-headless/headless-with-
 ## Related pages
 
 - [Stores](../stores/README.md)
-- How businesses sell online
+- [How businesses sell online](../how-businesses-sell-online.md)
 - [Selling through networks and partners](../mobile-and-headless/selling-through-networks-and-partners.md)
 - [Basket, checkout and orders](../../creators/website-creators/basket-checkout-and-orders.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

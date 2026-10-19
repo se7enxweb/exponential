@@ -42,7 +42,7 @@ what it brings in, and how to count the hours volunteers give.
 > **Note**
 > The repository has no dedicated donation module. A donation page is built with the built-in shop and a payment
 > gateway, or with a link to your payment provider's own donation page; see
-> Donations and fundraising pages. The provider's fees apply.
+> [Donations and fundraising pages](../nonprofits/donations-and-fundraising-pages.md). The provider's fees apply.
 
 ## The inputs
 
@@ -99,21 +99,21 @@ not inside them.
 
 Present it as: "The site costs 640 in cash a year and about 192 volunteer hours." The board can then decide whether
 those hours are well spent. Shared editing with clear roles and a written handover keep the hours down
-(Handover when volunteers change).
+([Handover when volunteers change](../associations/handover-when-volunteers-change.md)).
 
 ## What to change for your organization
 
 - [ ] Your donation figures from last year's accounts, and a realistic share that the site adds.
 - [ ] Your payment provider's fee structure from its contract.
 - [ ] Any grant or in-kind hosting you receive; ask hosts and partners whether they offer it.
-- [ ] Accessibility work, which a nonprofit often must provide (Accessibility for nonprofits).
+- [ ] Accessibility work, which a nonprofit often must provide ([Accessibility for nonprofits](../nonprofits/accessibility-for-nonprofits.md)).
 - [ ] Data protection basics for donor and member data ([Security and data protection](../security/README.md)).
-- [ ] A plan for the low-budget years: Low-budget operations.
+- [ ] A plan for the low-budget years: [Low-budget operations](../nonprofits/low-budget-operations.md).
 
 ## Related pages
 
-- Nonprofits
-- Nonprofit site planning
+- [Nonprofits](../nonprofits/README.md)
+- [Nonprofit site planning](../nonprofits/nonprofit-site-planning.md)
 - [What you do not pay for](what-you-do-not-pay-for.md)
 - [ROI worksheet template](../templates/roi-worksheet-template.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

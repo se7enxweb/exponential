@@ -11,7 +11,7 @@ type: help
 
 This page is for owners, managers and decision makers who want quick answers. Each answer is short, says where the
 fact comes from, and links to the page with the details. If your question is not here, start at
-[Reliability for businesses](README.md) or the section-wide Businesses FAQ.
+[Reliability for businesses](README.md) or the section-wide [Businesses FAQ](../businesses-faq.md).
 
 ## Contents
 
@@ -26,7 +26,7 @@ fact comes from, and links to the page with the details. If your question is not
 
 **Is Exponential still maintained?**
 Yes. "Exponential 6.0 is the maintained line"; security fixes are made on `main` and published with the next 6.0.x
-release (SECURITY.md). Exponential 6.0.0 was released on 1 January 2024 and 6.0.14 on
+release ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). Exponential 6.0.0 was released on 1 January 2024 and 6.0.14 on
 7 June 2026 ([Who is 7x?](../../who-is-7x.md#the-60x-releases)). See
 [Release line and support policy](release-line-and-support-policy.md).
 
@@ -36,11 +36,11 @@ The repository's history goes back to 2 September 2002; the code started as eZ P
 [Why stability matters](why-stability-matters.md).
 
 **Can a released version change under us?**
-No. "A published tag is never changed" (SECURITY.md). A fix comes as the next version.
+No. "A published tag is never changed" ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). A fix comes as the next version.
 
 **Which PHP versions are supported?**
 PHP 8.0 is the oldest supported version, 8.1 to 8.5 are supported, and Velocity needs 8.1 or later
-(README, "What version of PHP is required").
+([README, "What version of PHP is required"](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required)).
 
 **Is there an official end-of-life date or support contract?**
 The project publishes neither a release calendar nor a service level agreement. Commercial support and hosting come
@@ -102,7 +102,7 @@ Run **Setup > Upgrade check** before you start: it lists release files that were
 **Can a deploy happen without dropping visitors?**
 On Velocity, `graceful` "re-executes the server without releasing the listening socket, so a deploy does not drop
 requests", and `exp:velocity deploy` runs every step in the right order and stops at the first failure
-(README, [Deploying](../../../guides/deploying.md#7-ship-a-php-change-with-one-command)).
+([README](https://github.com/se7enxweb/exponential/blob/main/README.md#using-it), [Deploying](../../../guides/deploying.md#7-ship-a-php-change-with-one-command)).
 See [Graceful deploys](graceful-deploys.md).
 
 **Can updates install themselves?**
@@ -163,5 +163,5 @@ Report it in the public tracker; security problems go privately to the address i
 
 - [Reliability for businesses](README.md)
 - [Reliability scorecard](reliability-scorecard.md)
-- Businesses FAQ
+- [Businesses FAQ](../businesses-faq.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

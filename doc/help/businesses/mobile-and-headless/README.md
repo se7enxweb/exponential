@@ -77,7 +77,7 @@ working.
 
 ## Neighboring sections
 
-- How businesses sell online
+- [How businesses sell online](../how-businesses-sell-online.md)
 - [Stores](../stores/README.md), for the shop your app or partners sell from
 - [Reliability](../reliability/README.md) and [Security](../security/README.md)
 - [Several brands on one installation](../multisite/README.md) and

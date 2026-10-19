@@ -29,7 +29,7 @@ The full technical comparison is [Database support](../../database-support.md); 
 "**Supported databases (Exponential 6.0.x), in order of preference:** 1. SQLite 3 (the default) · 2. PostgreSQL ·
 3. MongoDB · 4. MariaDB · 5. Oracle · 6. MySQL. Microsoft SQL Server is known to be possible with additional work at
 this time" ([Database support](../../database-support.md#the-supported-databases-in-order), also in the
-README, "Requirements").
+[README, "Requirements"](https://github.com/se7enxweb/exponential/blob/main/README.md#requirements)).
 
 The order is a recommendation for new sites. All six are supported; the page notes that MySQL "is last in the order,
 not because it works less well, but because the project recommends the others first for new sites".

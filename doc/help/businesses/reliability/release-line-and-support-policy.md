@@ -26,7 +26,7 @@ project has written down and says what each one means for a business. It does no
 
 ## The maintained line
 
-From SECURITY.md:
+From [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md):
 
 | Version | Supported |
 |---|---|
@@ -63,7 +63,7 @@ Releases that matter for planning, from
 
 ## How security fixes reach you
 
-SECURITY.md sets out the process:
+[SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md) sets out the process:
 
 1. A security problem is reported privately by e-mail to the address in SECURITY.md, not in the public issue
    tracker. "You can expect a first answer within one business day."
@@ -78,7 +78,7 @@ line as a recurring task. The security section has more on this:
 
 ## PHP versions
 
-From the README, "What version of PHP is required" and
+From the [README, "What version of PHP is required"](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) and
 [Who is the Exponential Foundation?, PHP versions](../../who-is-the-exponential-foundation.md#php-versions):
 
 | PHP | Exponential 6 |

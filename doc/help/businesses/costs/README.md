@@ -82,7 +82,7 @@ A blank form for the calculation is in the templates section:
 - [Security and data protection](../security/README.md): the basics a business needs to protect customer data.
 - [Choosing hosting and partners](../choosing/README.md): where the hosting and services money goes.
 - [Templates](../templates/README.md): copy-ready worksheets and checklists.
-- Businesses: start here
+- [Businesses: start here](../businesses-start-here.md)
 - Governments have their own section: Governments: start here.
 
 ## Related pages

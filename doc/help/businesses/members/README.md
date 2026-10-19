@@ -76,8 +76,8 @@ A member site is a public website with a members area. The pieces come from the 
 
 ## Neighboring sections
 
-- Associations and small groups: running a site with volunteers.
-- Non-profits: donations, volunteers and campaigns.
+- [Associations and small groups](../associations/README.md): running a site with volunteers.
+- [Non-profits](../nonprofits/README.md): donations, volunteers and campaigns.
 - [Newsletters](../newsletters/README.md): the newsletter system in depth.
 - [Extranets](../extranets/README.md) and [Intranets](../intranets/README.md): the same tools for partners and staff.
 - [Security](../security/README.md): GDPR basics, consent and accounts.
@@ -85,7 +85,7 @@ A member site is a public website with a members area. The pieces come from the 
 
 ## Related pages
 
-- Businesses: start here
-- Which section fits your organization
+- [Businesses: start here](../businesses-start-here.md)
+- [Which section fits your organization](../which-section-fits-your-organization.md)
 - [What visitors may see: the Anonymous role](../../creators/website-creators/visitor-permissions.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

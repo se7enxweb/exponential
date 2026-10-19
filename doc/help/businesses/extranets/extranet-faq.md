@@ -121,5 +121,5 @@ At a fixed rhythm you agree with your security officer; the review routine is in
 - [Extranets and partner portals](README.md)
 - [Intranet FAQ](../intranets/intranet-faq.md)
 - [Member site FAQ](../members/member-site-faq.md)
-- Businesses FAQ
+- [Businesses FAQ](../businesses-faq.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

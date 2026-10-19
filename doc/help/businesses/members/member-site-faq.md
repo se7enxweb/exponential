@@ -122,7 +122,7 @@ Disable their accounts, or use Deactivate and move when enabled
 ([Check user accounts](../../../features/6.0/user-hygiene.md)).
 
 **What happens when our volunteers change?**
-See Handover when volunteers change.
+See [Handover when volunteers change](../associations/handover-when-volunteers-change.md).
 
 **What does it cost?**
 See the [Costs](../costs/README.md) section, whose worked examples use labeled example assumptions.
@@ -132,5 +132,5 @@ See the [Costs](../costs/README.md) section, whose worked examples use labeled e
 - [Member sites](README.md)
 - [Member site checklist](member-site-checklist.md)
 - [Extranet FAQ](../extranets/extranet-faq.md)
-- Businesses FAQ
+- [Businesses FAQ](../businesses-faq.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

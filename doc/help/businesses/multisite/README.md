@@ -82,7 +82,7 @@ Governments start here.
 
 ## Neighboring sections
 
-- Businesses start here and the reading path
+- [Businesses start here](../businesses-start-here.md) and the [reading path](../businesses-reading-path.md)
 - [Selling in several languages and markets](../multilingual/README.md)
 - [Mobile apps, headless use and networks](../mobile-and-headless/README.md)
 - [Reliability](../reliability/README.md) and [Costs](../costs/README.md) for the operational side of many sites
