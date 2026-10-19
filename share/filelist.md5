@@ -188,7 +188,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-46633b5bbbe0a83255dfb17a3c731c14  composer.json
+21243ad7e8fb571bd8fb052501061b93  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 2d91308b2fa30038d9cc37afd0e2d44a  config.env.php.example
 e7da3e13ed7cc993f3d31886d4a42ddc  config.php-RECOMMENDED
@@ -3305,7 +3305,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-af96ee25cb5c61660b2574a84bc88605  doc/changelogs/6.0/6.0.15.md
+e3d5792f9a5e6d799340aab14bd67239  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -12023,6 +12023,7 @@ f129e8f6df7dcda001d08dac96f1e4e2  tests/tests/extension/ezoe/ezoeSpellcheckRpcRe
 7cbc222f8785f2bf803a6704595b6cbc  tests/tests/extension/ezupdate/ezUpdateComposerVersionCacheTest.php
 228e5c524d3f47d50fb5303b7b76e37c  tests/tests/extension/ezupdate/ezUpdateInstallabilityTest.php
 33bd8c266652b5fde6c294bb124e06fd  tests/tests/extension/ezupdate/ezUpdateJobOutcomeTest.php
+788012156028e9b78de78c0ab3ba6a28  tests/tests/extension/ezupdate/ezUpdatePackageServersReleasePathTest.php
 d8a39fc3bd087161b6f65e8726bf93d6  tests/tests/extension/ezupdate/fixtures/composer_outdated_semver_safe.json
 4cec563a9fc3cc469df20bd2fd858000  tests/tests/extension/ezupdate/fixtures/composer_require_installs.log
 877a53f2e5c8a1ad2fc0f74648593518  tests/tests/extension/ezupdate/fixtures/composer_update_dry_run_lock_mismatch.log
