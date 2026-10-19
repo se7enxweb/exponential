@@ -7478,7 +7478,7 @@ c17a987df4573973127a5186accf6460  doc/help/template-language/values-and-literals
 618140992a4caf9a5a48e3e5a48b6d70  doc/help/template-language/variables-in-depth.md
 72035cbfad11a4284b61cd6b5ff06a82  doc/help/template-language/view-parameters.md
 b00314b112643c1606d1700afbf81577  doc/help/template-language/what-the-template-language-is.md
-0596c6b1f7306c691ee78bd650eb902e  doc/help/template-operators/README.md
+1a4877dbd0f5def001af25e5a0afd3fc  doc/help/template-operators/README.md
 646af74ee729541071b15cd78d5011ef  doc/help/template-operators/arithmetic-operators.md
 5832508cea71c8afa45f7908259d8697  doc/help/template-operators/array-operators.md
 eebe22ac2b13c520e734c63601e86026  doc/help/template-operators/attribute-and-dump-operators.md
@@ -7489,7 +7489,7 @@ c25443814428a7778dd776bbec1c8030  doc/help/template-operators/control-operators.
 4d06054f1354fd2269bbe73e9f11769e  doc/help/template-operators/expinfo-operator.md
 dc251a0a47e82dc069a88da467ff93c1  doc/help/template-operators/exponential-kernel-operators.md
 cae39d3fc8ecc039611b9b312e0c986a  doc/help/template-operators/ezjscore-operators.md
-20ec303d4f10930605aa1bf659f19789  doc/help/template-operators/eztags-and-starrating-operators.md
+d076623d223b2808dadceefb349adcfd  doc/help/template-operators/eztags-and-starrating-operators.md
 7dda0b2b975ff0bdec9cd0740eb9ac6e  doc/help/template-operators/ezwebin-operators.md
 0d7f08ff54405583e510c004772c6e00  doc/help/template-operators/fetch-aliases.md
 673ce45acbc0d50d9a3c8278ec7ac6fe  doc/help/template-operators/fetch-functions-how-they-work.md
@@ -7504,7 +7504,7 @@ cae39d3fc8ecc039611b9b312e0c986a  doc/help/template-operators/ezjscore-operators
 a23f1c728ccaafbe1117f5be65c84c16  doc/help/template-operators/menu-and-tree-operators.md
 5b19f6a871aa9b8dd70b47216451a383  doc/help/template-operators/newsletter-operators.md
 9808012ece77cec56d82ac78e3aade7f  doc/help/template-operators/operator-class-reference.md
-e495be47f79993d2591e760364ec5b88  doc/help/template-operators/operator-index.md
+889f40a264a8da818b118f97ef0400b0  doc/help/template-operators/operator-index.md
 2eaebf3499626b129d22a35b3bc89e64  doc/help/template-operators/overriding-kernel-operators.md
 c7402564865a1d480da06079b63be5f4  doc/help/template-operators/owsimpleoperator-limitations.md
 b751553e9ddf6f3de6441dbbfa706a1d  doc/help/template-operators/owsimpleoperator-your-own-operators.md
