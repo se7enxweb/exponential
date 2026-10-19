@@ -30,6 +30,8 @@ regularly keeps each one small. The full procedure is in [Upgrading](../../../in
 | Velocity | the engine package, then `exp:velocity restart` |
 | PHP | the operating system |
 
+![Updates and packages: how many packages Composer installed, which need attention, and when updates were last checked](../../images/creators/update-overview.webp)
+
 Published versions are permanent: a fix comes as the next version, never as a changed old one.
 
 ## Before you update
@@ -57,6 +59,8 @@ Use maintenance mode for the database step ([Maintenance mode during changes](ma
 - **Setup > Upgrade check**: file consistency and database checks ([Upgrade check](../../../guides/upgrade-check.md)).
 - Click through every page type and form; run your accessibility and benchmark checks.
 - Watch the error log for a day.
+
+![Setup, Upgrade check: the file and the database consistency checks to run after an update](../../images/creators/upgrade-check.webp)
 
 ## PHP versions
 

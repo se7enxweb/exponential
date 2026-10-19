@@ -1,7 +1,7 @@
 ---
 title: Footer menu items
 audience: designer, website-creator, editor, admin, developer
-category: layouts
+category: build-two-ways
 order: 200
 summary: The Fit & Healthy footer has two link lines with two different sources - FooterMenuID in menu.ini (like the header) and the Footer links folder in the content tree. How to add to each, in the administration and by command line, with before and after screenshots.
 keywords: footer, footer menu, FooterMenuID, footer links, ng_menu_item, menu item, Footer links folder, menu.ini, exp:ini, content tree, social links

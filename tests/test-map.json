@@ -1675,13 +1675,15 @@
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
       "tests/tests/kernel/classes/help/expHelpLinksTest.php",
       "tests/tests/kernel/classes/help/expHelpCachePruneTest.php",
-      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php"
+      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php"
     ],
     "kernel/classes/help/exphelpallowlist.php": [
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
       "tests/tests/kernel/classes/help/expHelpCachePruneTest.php",
-      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php"
+      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php"
     ],
     "kernel/classes/help/exphelpfrontmatter.php": [
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
@@ -1695,11 +1697,13 @@
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php",
       "tests/tests/kernel/classes/help/expHelpCachePruneTest.php",
-      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php"
+      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php"
     ],
     "kernel/classes/help/exphelpsearch.php": [
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
-      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php"
+      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php"
     ],
     "kernel/classes/help/exphelplicense.php": [
       "tests/tests/kernel/classes/help/expHelpLicenseTest.php"
@@ -1727,7 +1731,8 @@
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
       "tests/tests/kernel/classes/help/expHelpPdfTest.php",
       "tests/tests/kernel/classes/help/expHelpCachePruneTest.php",
-      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php"
+      "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php",
+      "tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php"
     ],
     "kernel/classes/help/exphelppdf*.php": [
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"

@@ -116,7 +116,7 @@ to newsletter users that no longer exist', with a **Remove them** button)". From
 - [ ] Review pending subscriptions older than a few weeks; many of them point to a confirmation mail problem.
 - [ ] Remove lists nobody sends to any more, after exporting what you must keep.
 - [ ] Delete exports and CSV files that served their purpose.
-- [ ] Record what you did in your operations log (Monthly operations checklist).
+- [ ] Record what you did in your operations log ([Monthly operations checklist](../templates/monthly-operations-checklist.md)).
 
 ## Related pages
 

@@ -16,6 +16,8 @@ leaves, and how to hand the first sign-in to a customer safely.
 
 ![Check user accounts: accounts nobody uses or that need a look, to disable, unlock or export](../../images/hosting/user-hygiene.webp)
 
+![The sign-in page of the administration, where the first sign-in with a new administrator account happens](../../images/hosting/sign-in-page.webp)
+
 > **Warning**
 > This page never prints a password. The historical default password of the shipped database seed, and every rule
 > about generated passwords, are documented on [The default administrator password](../../default-administrator-password.md).

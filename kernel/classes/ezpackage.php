@@ -1150,6 +1150,17 @@ class eZPackage
                 eZDir::copy( $dir, $destDir );
         }
 
+        // Everything else at the top of the package goes along too: side files an installer script reads (the
+        // cjw-*.json and cjw-*.xml of cjw_multisite_democontent) and directories no install item names. Before
+        // 6.0.15 an exported package lost them.
+        foreach ( self::extraTopLevelEntries( $path, $directoryList ) as $entry )
+        {
+            if ( is_dir( $path . '/' . $entry ) )
+                eZDir::copy( $path . '/' . $entry, $tempPath );
+            else
+                copy( $path . '/' . $entry, $tempPath . '/' . $entry );
+        }
+
         // Another serialization than the stored one: the documents are converted into a second directory
         $archiveSource = $tempPath;
         $convertedPath = false;
@@ -1173,6 +1184,31 @@ class eZPackage
             $this->removeFiles( $convertedPath );
         $this->removeFiles( $tempPath );
         return $result;
+    }
+
+    /**
+     * The entries at the top of a package directory that exportToArchive() does not copy otherwise: not the
+     * definition file (package.xml, package.json), not a directory of \a $copiedDirectories, not a hidden entry
+     * (a name starting with a dot) and no symbolic link.
+     *
+     * @param string $packagePath
+     * @param array $copiedDirectories
+     * @return string[] names, sorted
+     */
+    static function extraTopLevelEntries( $packagePath, array $copiedDirectories )
+    {
+        if ( !is_dir( $packagePath ) )
+            return array();
+        $skip = array_flip( array_merge( array( self::definitionFilename(), self::definitionFilenameJSON() ), $copiedDirectories ) );
+        $entries = array();
+        foreach ( scandir( $packagePath ) as $entry )
+        {
+            if ( $entry === '' || $entry[0] === '.' || isset( $skip[$entry] ) || is_link( $packagePath . '/' . $entry ) )
+                continue;
+            $entries[] = $entry;
+        }
+        sort( $entries );
+        return $entries;
     }
 
     /**
@@ -3221,6 +3257,20 @@ class eZPackage
 
         $root->appendChild( $dependencyNode );
 
+        // The install scripts of a site package (<settings><settings-file filename=""/></settings>), which
+        // CreateSites runs; written back as read (before 6.0.15 a stored or exported package lost them)
+        if ( !empty( $this->Parameters['settings-files'] ) && is_array( $this->Parameters['settings-files'] ) )
+        {
+            $settingsNode = $dom->createElement( 'settings' );
+            foreach ( $this->Parameters['settings-files'] as $settingsFileName )
+            {
+                $settingsFileNode = $dom->createElement( 'settings-file' );
+                $settingsFileNode->setAttribute( 'filename', (string)$settingsFileName );
+                $settingsNode->appendChild( $settingsFileNode );
+            }
+            $root->appendChild( $settingsNode );
+        }
+
         $installNode = $dom->createElement( 'install' );
 
         $uninstallNode = $dom->createElement( 'uninstall' );
@@ -3352,6 +3402,17 @@ class eZPackage
             $dependencyNode->setAttribute( 'name', isset( $dependencyItem['name'] ) ? (string)$dependencyItem['name'] : '' );
             if ( !empty( $dependencyItem['value'] ) )
                 $dependencyNode->setAttribute( 'value', $dependencyItem['value'] );
+            // Every other attribute the dependency was read with (min-version, max-version ...), so a stored or
+            // exported package keeps its version requirements (before 6.0.15 they were lost)
+            foreach ( $dependencyItem as $attributeName => $attributeValue )
+            {
+                if ( in_array( $attributeName, array( 'type', 'name', 'value' ), true ) || !is_string( $attributeName ) ||
+                     !preg_match( '/^[A-Za-z_][A-Za-z0-9_.-]*$/', $attributeName ) ||
+                     !( is_string( $attributeValue ) || is_int( $attributeValue ) || is_float( $attributeValue ) ) ||
+                     (string)$attributeValue === '' )
+                    continue;
+                $dependencyNode->setAttribute( $attributeName, (string)$attributeValue );
+            }
             $dependenciesNode->appendChild( $dependencyNode );
             $handler = isset( $dependencyItem['name'] ) ? $this->packageHandler( $dependencyItem['name'] ) : false;
             if ( $handler )

@@ -13,6 +13,8 @@ This page is for website creators who decide which content classes a site gets. 
 lasting decision of a site: templates and designs change often, the structure of content much less. A good model is
 easy for editors, easy to template and easy to extend.
 
+![The classes of the Content group: each class with its identifier, the number of objects and when it was changed](../../images/creators/class-list.webp)
+
 ## Contents
 
 1. [The building blocks](#the-building-blocks)

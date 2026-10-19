@@ -1,7 +1,7 @@
 ---
 title: Footer links from the content tree
 audience: editor, website-creator, admin
-category: layouts
+category: build-two-ways
 order: 210
 summary: Step by step with screenshots - add a link to the footer's second line by creating a Menu item in Media > Configuration > Footer links; no settings, no code, no cache clear. Also sorting, hiding and the special URLs the footer understands.
 keywords: footer links, menu item, ng_menu_item, Footer links folder, content tree, item URL, target blank, priority, sort, editor, no code

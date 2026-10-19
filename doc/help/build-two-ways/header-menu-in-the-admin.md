@@ -1,7 +1,7 @@
 ---
 title: Header menu in the administration
 audience: website-creator, admin, editor, designer
-category: layouts
+category: build-two-ways
 order: 110
 summary: Step by step with screenshots - add a page to the header menu without code, through Setup > Ini settings, then clear the Template & content caches.
 keywords: header menu, main menu, add menu item, Setup, Ini settings, menu.ini, MainMenuID, settings edit, clear cache, Template & content

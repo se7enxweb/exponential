@@ -24,6 +24,8 @@ answers: how focus must look, how it must move, and which elements to use.
 
 Every element that can receive focus must show it. admin4's rule (`components.css`):
 
+![The theme switch of the header with the keyboard focus ring around it](../../images/designers/focus-ring.webp)
+
 ```css
 .a4-page :focus-visible,
 .a4-focus:focus-visible,

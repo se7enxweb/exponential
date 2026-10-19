@@ -28,6 +28,10 @@ whether it stays good. Project managers find a handover template in [Project tem
 - Limit each team to its subtree or section.
 - Two-step login for everyone who can publish ([Two-factor login](../../../guides/two-factor-login.md)).
 
+![The administration as an editor sees it: fewer tabs, the dashboard with drafts and recent content](../../images/creators/editor-dashboard.webp)
+
+![The Users tab: the user groups such as Administrator users, Editors and Members as folders of the tree](../../images/creators/users-tree.webp)
+
 ## The editor guide
 
 Write a short guide specific to this site; link to the help for the general parts:

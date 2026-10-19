@@ -23,6 +23,8 @@ on the site changes while you use the wizard; it only writes a new package into 
 1. Open **Setup > Packages** (`/package/list`) and press **Create new package** (`/package/create`).
 2. Choose a wizard and press **Start the wizard**:
 
+![Create package: the wizards Content class export, Content object export, Extension export and Site style, with Start the wizard](../../images/designers/package-create.webp)
+
    | Wizard | Exports | Its own steps |
    |---|---|---|
    | Content class export | Class definitions | Content classes to include |

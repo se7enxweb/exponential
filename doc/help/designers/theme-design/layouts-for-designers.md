@@ -33,6 +33,8 @@ the full reference: [Exponential Layouts](../../../bc/6.0/LAYOUTS.md).
 | **Collection** | the content a list-like block shows (picked or queried) | how items are drawn |
 | **Rule** | which pages get which layout | none, but it explains which layout you see |
 
+![The Layouts dashboard: the counts of layouts, zones, blocks, rules and collections and the recent layouts](../../images/designers/layouts-dashboard.webp)
+
 ## The rendering chain
 
 1. The pagelayout asks for a layout: `fetch( 'explayouts', 'resolve_layout', hash() )` (or

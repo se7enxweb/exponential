@@ -22,6 +22,20 @@ class eZINIAddonPackageHandler extends eZPackageHandler
         parent::__construct( 'eziniaddon', array( 'extract-install-content' => true ) );
     }
 
+    /**
+     * The INI blocks install() wrote are not removed: the files may have been changed since, and a block can hold
+     * values of other packages or of the site. Nothing is changed and the item counts as not uninstalled, as before
+     * 6.0.15; the reason is written to the debug output. Remove the blocks by hand.
+     */
+    function uninstall( $package, $installType, $parameters,
+                        $name, $os, $filename, $subdirectory,
+                        $content, &$installParameters,
+                        &$installData )
+    {
+        eZDebug::writeWarning( "The INI additions '$filename' of package '" . $package->attribute( 'name' ) . "' are not removed on uninstall: remove them by hand.", __METHOD__ );
+        return false;
+    }
+
     /*!
      Creates a new override setting for the specified override.
 

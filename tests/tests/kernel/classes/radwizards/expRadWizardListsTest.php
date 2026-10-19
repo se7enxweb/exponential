@@ -250,7 +250,8 @@ class expRadWizardListsTest extends PHPUnit\Framework\TestCase
                                                                  'aliases' => 'latest', 'parameters' => "limit integer", 'submitted' => 1, 'input' => 1, 'children' => 1 ) );
         $usage = expTemplateExtensionWizard::usage( $settings );
         $this->assertSame( array( 'operator', 'function', 'fetch', 'alias' ), array_column( $usage, 'kind' ) );
-        $this->assertStringStartsWith( '{$value|shout( limit=', $usage[0]['example'] );
+        // an operator takes its parameters by position: the parser refuses name=value in its brackets
+        $this->assertStringStartsWith( '{$value|shout( 3 )', $usage[0]['example'] );
         $this->assertStringNotContainsString( '|wash', $usage[0]['example'] );
         $this->assertStringContainsString( '{/box}', $usage[1]['example'] );
         $this->assertSame( '{def $thing=fetch( k1e_tpl_ext, list, hash( id, 42 ) )}', $usage[2]['example'] );

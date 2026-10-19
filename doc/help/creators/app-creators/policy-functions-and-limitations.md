@@ -66,6 +66,8 @@ switch ( $access['accessWord'] )
 For content, ask the object or node; they apply every content limitation (class, section, owner, subtree, state,
 language):
 
+![The Editor role: its policies, each a module and function with its limitations, and where the role is assigned](../../images/creators/role-policies.webp)
+
 ```php
 if ( !$node->canRead() ) { /* deny */ }
 if ( !$object->canEdit() ) { /* deny */ }

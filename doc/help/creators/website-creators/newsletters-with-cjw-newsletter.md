@@ -35,6 +35,8 @@ administration (`/newsletter/index`).
 | Public forms | `newsletter/subscribe`, `configure`, `unsubscribe`, `subscribe_infomail` |
 | Sending | `newsletter/send` schedules; cron builds and processes the mail queue |
 
+![The newsletter dashboard: newsletter systems, lists, editions and subscriptions](../../images/creators/newsletter-dashboard.webp)
+
 ## Setting it up
 
 1. Activate `cjw_newsletter` and install its class packages (they ship with the extension).

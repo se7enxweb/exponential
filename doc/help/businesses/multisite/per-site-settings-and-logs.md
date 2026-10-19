@@ -105,7 +105,7 @@ installation in front of the page title, so nobody edits the wrong copy
 - [ ] Are caches per brand, and on which storage?
 - [ ] Who may clear caches for a brand, and how is Velocity restarted after a settings change?
 - [ ] Who reads the logs, how often, and how is a brand owner told about errors on their site?
-- [ ] Is log retention in line with your privacy policy (Security)?
+- [ ] Is log retention in line with your privacy policy ([Security](../security/README.md))?
 
 ## Related pages
 

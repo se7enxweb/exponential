@@ -310,4 +310,57 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         $this->assertNotSame( $one, self::index()->signature(), 'a commit changes the signature' );
         $this->assertSame( 'Zebra changed', self::index()->document( 'help/zz-last.md' )['title'] );
     }
+
+    /** an index of the fixture with a cache directory and a StatFilesInterval */
+    private static function cachedIndex( $interval )
+    {
+        $allowlist = new expHelpAllowlist( array( 'root' => self::$root, 'roots' => array( 'doc' ), 'max_size' => 1024 * 1024 ) );
+        $dir = dirname( self::$root ) . '/cache';
+        @mkdir( $dir, 0777, true );
+        return new expHelpDocumentIndex( $allowlist, array( 'root' => self::$root, 'cache_dir' => $dir, 'stat_interval' => $interval ) );
+    }
+
+    /** HX-08 StatFilesInterval: the look at the files is reused by other instances for that long, never longer */
+    public function testSignatureIntervalReusesTheLookAtTheFiles()
+    {
+        $file = self::$root . '/doc/help/editing.md';
+        $checked = dirname( self::$root ) . '/cache/' . expHelpDocumentIndex::CHECKED_SIGNATURE_FILE;
+        $one = self::cachedIndex( 60 )->signature();
+        $this->assertSame( $one, self::cachedIndex( 0 )->signature(), 'the same signature as without the interval' );
+        $this->assertFileExists( $checked );
+
+        // an edit without a commit: seen at once without the interval, after the interval with it
+        file_put_contents( $file, file_get_contents( $file ) . "\nMore text.\n" );
+        touch( $file, time() + 5 );
+        $fresh = self::cachedIndex( 0 )->signature();
+        $this->assertNotSame( $one, $fresh, 'without the interval the edit is seen at once' );
+        $this->assertSame( $one, self::cachedIndex( 60 )->signature(), 'within the interval the last look is reused' );
+
+        // the look is too old: the files are looked at again, and that look is reused in turn
+        $data = include $checked;
+        $data['checked'] = time() - 120;
+        file_put_contents( $checked, "<?php\nreturn " . var_export( $data, true ) . ";\n" );
+        if ( function_exists( 'opcache_invalidate' ) )
+            @opcache_invalidate( $checked, true );
+        $this->assertSame( $fresh, self::cachedIndex( 60 )->signature(), 'an old look is not reused' );
+        file_put_contents( $file, file_get_contents( $file ) . "Even more.\n" );
+        touch( $file, time() + 10 );
+        $two = self::cachedIndex( 0 )->signature();
+        $this->assertNotSame( $fresh, $two );
+        $this->assertSame( $fresh, self::cachedIndex( 60 )->signature(), 'the new look is reused' );
+
+        // a rebuild always looks at the files
+        file_put_contents( $file, file_get_contents( $file ) . "And more.\n" );
+        touch( $file, time() + 15 );
+        $rebuilt = self::cachedIndex( 60 )->rebuild();
+        $this->assertNotSame( $two, $rebuilt['signature'], 'a rebuild looks at the files' );
+        $this->assertSame( $rebuilt['signature'], self::cachedIndex( 60 )->signature(), 'and leaves its look for the others' );
+
+        // a commit changes the git index: seen at once, whatever the interval
+        file_put_contents( $file, file_get_contents( $file ) . "Committed.\n" );
+        self::git( 'add -A doc/help/editing.md' );
+        self::git( 'commit -q -m edit' );
+        $this->assertNotSame( $rebuilt['signature'], self::cachedIndex( 60 )->signature(), 'a commit is seen at once' );
+        $this->assertSame( self::cachedIndex( 0 )->signature(), self::cachedIndex( 60 )->signature() );
+    }
 }

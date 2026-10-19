@@ -67,6 +67,8 @@ Rules are evaluated by priority and the first match wins. The most common confus
 a broader rule with a higher priority catches the request first. Give specific rules (one node) a higher priority than
 general ones (a subtree, a class).
 
+![Layouts, Rules: the mappings with their priority, target, the layout they choose and whether they are enabled](../../images/layouts/rule-list.webp)
+
 ## Recipes
 
 | Goal | Target | Conditions | Priority |

@@ -1,7 +1,7 @@
 ---
 title: Add a header menu item
 audience: designer, website-creator, editor, admin, developer
-category: layouts
+category: build-two-ways
 order: 100
 featured: true
 summary: Add a page from the content tree to the site header's main menu in Exponential 6.0.15+, in the administration (no code) or with one console command, and see why the Layouts editor does not list the menu items.

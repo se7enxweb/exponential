@@ -36,6 +36,8 @@ managed in the **Store** tab of the administration, which opens the Store dashbo
 | Discounts | `shop/discountgroup` |
 | Dashboard | `shop/dashboard` |
 
+![The Store dashboard: orders, customers, products and the shop settings at a glance](../../images/creators/shop-dashboard.webp)
+
 The shop's module and views are defined in `kernel/shop/module.php`; its settings in `settings/shop.ini`.
 
 ## The visitor's path

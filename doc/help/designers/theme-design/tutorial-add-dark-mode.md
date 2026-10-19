@@ -24,6 +24,8 @@ setting (no script); part B adds a switch. Allow two to four hours, most of it i
 
 1. List every color in your stylesheets:
 
+![The help center in the dark mode, a page whose colors come only from tokens](../../images/designers/help-dashboard-dark.webp)
+
    ```bash
    grep -n -o -E "#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)" extension/mytheme/design/mytheme/stylesheets/*.css | sort | uniq -c | sort -rn
    ```
@@ -84,6 +86,8 @@ Set your operating system to dark and reload. Measure the contrast of every text
 
 Use the [dark mode checklist](checklist-dark-mode.md). In short: every page type in light and dark, at 1440 px and
 960 px with scale 2; no white boxes; contrast measured; reload keeps the choice; no flash on load; print is light.
+
+![The Setup page in the dark mode, a good page to check cards, icons and links on](../../images/designers/setup-cards-dark.webp)
 
 ## Related pages
 

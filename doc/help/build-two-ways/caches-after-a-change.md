@@ -1,7 +1,7 @@
 ---
 title: Caches after a change
 audience: admin, website-creator, designer, developer, editor
-category: layouts
+category: build-two-ways
 order: 170
 summary: Which cache to clear after which kind of change - menu settings, templates, layouts, content - in the administration's Clear cache box and with exp:cache, and what each choice covers.
 keywords: cache, clear cache, Template & content, exp:cache, exphttpcache, compiled templates, template-block, content view cache, ini cache, Velocity, layouts resolver

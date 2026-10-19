@@ -28,6 +28,8 @@ limitations, who may do what.
 
 `settings/content.ini [NodeSettings]` names the top nodes:
 
+![Content structure: the root of the content tree with its sub items, one folder per site](../../images/creators/content-tree-roots.webp)
+
 | Setting | Node | Holds |
 |---|---|---|
 | `RootNode` | 2 | the content: everything visitors see |
@@ -63,6 +65,8 @@ sites share one tree ([Several sites in one tree](#several-sites-in-one-tree)).
 Each container has a sort field and direction: by name, published or modified date, priority, class, and others. Set
 it on the folder (the sub-items list), and choose the class default for new containers
 ([Content classes for websites](content-classes-for-websites.md)).
+
+![The Ordering tab of a folder: the field and direction its sub items are sorted by, with the Set button](../../images/creators/sort-order.webp)
 
 | Content | Sort by |
 |---|---|

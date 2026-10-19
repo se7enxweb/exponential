@@ -51,7 +51,7 @@ The pages in this folder translate that into business questions:
 | Administrator | A short summary and the exact technical page for each task |
 
 Organizations in the public sector have their own section:
-Governments start here.
+[Governments start here](../../government/government-start-here.md).
 
 ## Pages in this section
 
@@ -77,16 +77,16 @@ Governments start here.
 
 > **Tip**
 > Most organizations with several brands also publish in several languages. Read the
-> multilingual section together with this one: a language is often just one more
+> [multilingual section](../multilingual/README.md) together with this one: a language is often just one more
 > siteaccess on the same installation.
 
 ## Neighboring sections
 
-- Businesses start here and the reading path
-- Selling in several languages and markets
-- Mobile apps, headless use and networks
-- Reliability and Costs for the operational side of many sites
-- Extranets, when a partner portal runs beside your public brands
+- [Businesses start here](../businesses-start-here.md) and the [reading path](../businesses-reading-path.md)
+- [Selling in several languages and markets](../multilingual/README.md)
+- [Mobile apps, headless use and networks](../mobile-and-headless/README.md)
+- [Reliability](../reliability/README.md) and [Costs](../costs/README.md) for the operational side of many sites
+- [Extranets](../extranets/README.md), when a partner portal runs beside your public brands
 - For the technical team: [Setting up several sites in one installation](../../creators/website-creators/multisite-setup.md)
   and, for hosting companies, [Multisite on one installation](../../hosting/provisioning/multisite-on-one-installation.md)
 

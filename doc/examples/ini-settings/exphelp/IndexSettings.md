@@ -3,13 +3,13 @@ title: exphelp.ini [IndexSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [IndexSettings] in exphelp.ini: Roots, ExtensionDocDirs, AllowlistSources, DocumentSuffixes, PlainTextWithoutSuffix, AssetSuffixes, ExcludePatterns, MaxFileSize ..."
-keywords: exphelp.ini, IndexSettings, INI, setting, Roots, ExtensionDocDirs, AllowlistSources, DocumentSuffixes, PlainTextWithoutSuffix, AssetSuffixes, ExcludePatterns, MaxFileSize, StatFiles, GitHistory
+keywords: exphelp.ini, IndexSettings, INI, setting, Roots, ExtensionDocDirs, AllowlistSources, DocumentSuffixes, PlainTextWithoutSuffix, AssetSuffixes, ExcludePatterns, MaxFileSize, StatFiles, StatFilesInterval, GitHistory
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [IndexSettings]
 
-The block `[IndexSettings]` of `settings/exphelp.ini`, with 10 setting(s).
+The block `[IndexSettings]` of `settings/exphelp.ini`, with 11 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -170,6 +170,24 @@ Default: `enabled`.
 # settings/override/exphelp.ini.append.php
 [IndexSettings]
 StatFiles=enabled
+*/ ?>
+```
+
+## StatFilesInterval
+
+> With StatFiles enabled: seconds for which that comparison, once made, is reused by every request and process (it is  
+> kept in the help cache directory). Thousands of listed files make it the most expensive part of a help request,  
+> about 25 ms behind PHP-FPM and 0.5 s under Velocity. An edited page then shows within this many seconds; a page  
+> added or removed changes the git index and shows at once, and "./console exp:help index" always looks again.  
+> 0: compare on every request  
+
+Default: `5`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[IndexSettings]
+StatFilesInterval=5
 */ ?>
 ```
 

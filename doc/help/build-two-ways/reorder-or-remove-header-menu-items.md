@@ -1,7 +1,7 @@
 ---
 title: Reorder or remove header menu items
 audience: website-creator, admin, developer, editor
-category: layouts
+category: build-two-ways
 order: 140
 summary: Change the order of the header menu or take an item out, in the administration (edit the lines) or with exp:ini rem and exp:ini clear, with the real diffs the console shows.
 keywords: header menu, reorder menu, remove menu item, MainMenuID, exp:ini rem, exp:ini clear, menu order, menu.ini

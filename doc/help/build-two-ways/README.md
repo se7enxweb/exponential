@@ -1,7 +1,7 @@
 ---
 title: Two ways to build, every page
 audience: designer, website-creator, editor, admin, developer
-category: layouts
+category: build-two-ways
 order: 1
 featured: true
 summary: The index of the "two ways to build" help - templates in a design extension and the Layouts editor - with the header and footer how-tos worked out on the real Fit & Healthy site of Exponential 6.0.15+.
@@ -31,18 +31,39 @@ menu? Go to [Add a header menu item](add-a-header-menu-item.md).
 - [Reorder or remove header menu items](reorder-or-remove-header-menu-items.md).
 - [How the header is built](how-the-header-is-built.md): from the shared layout to `menu.ini`.
 - [Header menu troubleshooting](header-menu-troubleshooting.md).
+- [A header menu that follows the tree](header-menu-from-the-tree.md): the template way, tested.
 
 ## The footer
 
 - [Footer menu items](footer-menu-items.md): the two link lines and their sources.
 - [Footer links from the content tree](footer-links-from-the-content-tree.md): step by step, no code, no cache clear.
 - [How the footer is built](how-the-footer-is-built.md).
+- [Change the prefooter in the Layouts editor](prefooter-in-the-layouts-editor.md): step by step, no code.
 
 ## Layouts and the connection to templates
 
+- [The Layouts editor, a tour](layouts-editor-tour.md).
+- [The Design tab](design-tab-options.md).
+- [Manual and dynamic collections](manual-and-dynamic-collections.md).
+- [Which layout does a page get?](layout-mappings.md).
+- [How a block maps to its templates](block-to-template-map.md).
 - [Shared layouts and zone linking](shared-layouts-and-zone-linking.md): why one header serves every page.
 - [Why doesn't my change appear?](why-doesnt-my-change-appear.md): the check list.
 - [Caches after a change](caches-after-a-change.md): which cache for which change.
+- [Known editor behaviors](known-editor-behaviors.md).
+
+## Building with templates
+
+- [Your own design extension](your-own-design-extension.md): set up, activation order, overrides.
+- [Add a view type](add-a-view-type.md).
+- [Add a block type](add-a-block-type.md).
+- [Your own template blocks](template-blocks.md).
+- [Styling your blocks](styling-your-blocks.md).
+
+## Moving and keeping layouts
+
+- [Export and import layouts](export-and-import-layouts.md).
+- [Roll a layout back](roll-back-a-layout.md).
 
 ## Tools
 

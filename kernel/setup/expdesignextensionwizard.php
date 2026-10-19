@@ -302,8 +302,10 @@ class expDesignExtensionWizard extends expExtensionWizard
 
         $ini = self::iniHeader( $settings, 'Design settings' );
         $ini .= "[ExtensionSettings]\n";
-        $ini .= "# Puts design/" . $name . " into the design chain of every siteaccess\n";
-        $ini .= "# this extension is active for.\n";
+        $ini .= "# Makes the designs of this extension searchable: design/<design> here is\n";
+        $ini .= "# used for every design in a siteaccess's chain. design/" . $name . " is used\n";
+        $ini .= "# only by a siteaccess that names it in SiteDesign or\n";
+        $ini .= "# AdditionalSiteDesignList[].\n";
         $ini .= "DesignExtensions[]=" . $name . "\n\n";
 
         if ( $settings['parts']['stylesheets'] || $settings['parts']['print_stylesheet'] )
@@ -631,15 +633,26 @@ class expDesignExtensionWizard extends expExtensionWizard
                 . "```ini\n" . self::activation( $settings ) . "\n```\n\n"
                 . "Then clear the caches:\n\n"
                 . "```sh\nphp bin/php/ezcache.php --clear-all\n```\n\n"
-                . "`settings/design.ini.append.php` puts `design/" . $name . "` into the design\n"
-                . "chain, so templates and images are found without anything else being set.\n\n";
+                . "`settings/design.ini.append.php` names this extension in `DesignExtensions[]`,\n"
+                . "so the designs of this extension are searched. That alone does not make a\n"
+                . "siteaccess draw with `design/" . $name . "`: a design is used only when a\n"
+                . "siteaccess names it.\n\n"
+                . "## Making it the design of a site\n\n";
 
         if ( $settings['parts']['siteaccess'] && $settings['siteaccess'] !== '' )
         {
-            $readme .= "## Making it the design of a site\n\n"
-                     . "`settings/siteaccess/" . $settings['siteaccess'] . "/site.ini.append.php` sets this design\n"
+            $readme .= "`settings/siteaccess/" . $settings['siteaccess'] . "/site.ini.append.php` sets this design\n"
                      . "as the one that siteaccess draws with, falling back on `"
                      . $settings['base_design'] . "`.\n\n";
+        }
+        else
+        {
+            $readme .= "Name it in the `site.ini.append.php` of the siteaccess that should use it\n"
+                     . "(`settings/siteaccess/<siteaccess>/site.ini.append.php`):\n\n"
+                     . "```ini\n[DesignSettings]\nSiteDesign=" . $name . "\nAdditionalSiteDesignList[]="
+                     . $settings['base_design'] . "\n```\n\n"
+                     . "Or add `AdditionalSiteDesignList[]=" . $name . "` to keep the current\n"
+                     . "design and let this one override some of its templates.\n\n";
         }
 
         $readme .= "## What is inside\n\n";
