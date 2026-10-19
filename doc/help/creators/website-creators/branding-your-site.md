@@ -95,7 +95,7 @@ to support the project.
 - [ ] The logo has a meaningful alternative text.
 - [ ] Favicons and the manifest replaced in your design extension, not in the theme.
 - [ ] The social sharing image shows your brand.
-- [ ] Mail sent by the site carries the site name (Notifications and mail).
+- [ ] Mail sent by the site carries the site name ([Notifications and mail](../app-creators/notifications-and-mail.md)).
 
 ## Related pages
 

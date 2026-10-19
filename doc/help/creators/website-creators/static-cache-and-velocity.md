@@ -63,6 +63,6 @@ A second anonymous request for the same page should show an `Age` header.
 ## Related pages
 
 - [Performance and caching for websites](performance-and-caching.md)
-- Deploying with Velocity
+- [Deploying with Velocity](../app-creators/deploying-with-velocity.md)
 - [Velocity web server](../../../features/6.0/velocity-web-server.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

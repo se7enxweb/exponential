@@ -88,5 +88,5 @@ reload PHP and restart Velocity, and only then the content, template-block and r
 
 - [View cache and cache blocks](view-cache-and-cache-blocks.md)
 - [Caches](../../../guides/caches.md)
-- Profiling and performance
+- [Profiling and performance](../app-creators/profiling-and-performance.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
