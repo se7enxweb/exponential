@@ -60,6 +60,11 @@ menu? Go to [Add a header menu item](add-a-header-menu-item.md).
 - [Your own template blocks](template-blocks.md).
 - [Styling your blocks](styling-your-blocks.md).
 
+## Worked example and life-cycle examples
+
+- [Build a campaign page, start to finish](build-a-campaign-page.md): every screen, then the template way.
+- [Life-cycle examples](examples/README.md): one task per page, done both ways, by phase of a site's life.
+
 ## Moving and keeping layouts
 
 - [Export and import layouts](export-and-import-layouts.md).
