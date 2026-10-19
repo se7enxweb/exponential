@@ -50,7 +50,8 @@ theme and finds its bugs.
 If your theme comes with a complete site package (the kind the setup wizard installs a new site from), 7x and the
 Exponential Foundation strongly encourage you to submit it by pull request to
 [se7enxweb/exponential.packages.exponential.earth](https://github.com/se7enxweb/exponential.packages.exponential.earth),
-the repository of the package server the setup wizard uses. Then every new installation can start from it.
+the repository of the package server the setup wizard uses. Then every new installation can start from it. How:
+[Contribute your site package](../../site-packages/contribute-your-site-package.md).
 
 ## Related pages
 

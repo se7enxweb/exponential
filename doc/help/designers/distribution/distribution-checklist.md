@@ -44,7 +44,7 @@ This page is for designers about to publish a release. The theme itself should a
 - [ ] Screenshots current ([Screenshot checklist](screenshot-checklist.md)); demo updated ([Running a demo site](demo-sites.md)).
 - [ ] Project page and news on projects.exponential.earth ([Listing](listing-on-projects-exponential-earth.md)).
 - [ ] Announcement for notable releases ([Announcing on share.exponential.earth](announcing-on-share-exponential-earth.md)).
-- [ ] A site package, if the theme has one, submitted by pull request to [se7enxweb/exponential.packages.exponential.earth](https://github.com/se7enxweb/exponential.packages.exponential.earth) (strongly encouraged by 7x and the Exponential Foundation).
+- [ ] A site package, if the theme has one, submitted by pull request to [se7enxweb/exponential.packages.exponential.earth](https://github.com/se7enxweb/exponential.packages.exponential.earth) (strongly encouraged by 7x and the Exponential Foundation; [how](../../site-packages/contribute-your-site-package.md)).
 - [ ] Support channels stated ([Issue tracker and support channel](issue-tracker-and-support-channel.md)).
 
 ## Related pages
