@@ -67,8 +67,8 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 | [Records and archiving](records-and-archiving/README.md) | Versions, history, archiving notices, retention schedules, exports, preserving URLs |
 | [Open data](open-data/README.md) | Publishing datasets with metadata, licenses and stable URLs, and the APIs and feeds that exist |
 | [Transparency and FOI](transparency-and-foi/README.md) | Proactive disclosure, disclosure logs, publication schemes, decision registers |
-| Languages (`languages/`) | Official languages, translation workflows, right-to-left, plain language |
-| Sovereignty (`sovereignty/`) | Self-hosting, data location, open-source licensing and procurement, avoiding vendor lock-in |
+| [Languages](languages/README.md) | Official languages, translation workflows, right-to-left, plain language |
+| [Sovereignty](sovereignty/README.md) | Self-hosting, data location, open-source licensing and procurement, avoiding vendor lock-in |
 | Building public-service sites (`building/`) | Service catalogs, forms, citizen accounts, news and alerts, events, documents, search, maps, newsletters, multi-site, intranets, extranets |
 | Operations (`operations/`) | Hosting on-premise and in the government cloud, availability, backups, monitoring, incidents, upgrades, change management, staff roles, editorial workflows |
 | [Procurement and lifecycle](procurement/README.md) | Requirements, tender templates, evaluation, total cost of ownership, exit plans, training, the product lifecycle |
