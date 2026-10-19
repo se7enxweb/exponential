@@ -39,7 +39,7 @@
      $help_category = false()
      $help_icon = ''
      $help_landing_on = ezini( 'LandingSettings', 'Enabled', 'exphelp.ini' )|eq( 'enabled' )}
-<div class="a4-page a4-help" data-exphelp{if $help_i18n|ne( '' )} data-exphelp-i18n="{$help_i18n|wash}"{/if}>
+<div class="a4-page a4-help-frame" data-exphelp{if $help_i18n|ne( '' )} data-exphelp-i18n="{$help_i18n|wash}"{/if}>
 
     {* ---- Search hero ---- *}
     <section class="a4-help-hero" aria-labelledby="help-dash-title">

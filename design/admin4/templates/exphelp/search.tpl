@@ -41,7 +41,7 @@
      $help_i18n = cond( is_set( $help_i18n_json ), $help_i18n_json, '' )
      $help_url = ''
      $help_count = 0}
-<div class="a4-page a4-help a4-help-searchpage" data-exphelp{if $help_i18n|ne( '' )} data-exphelp-i18n="{$help_i18n|wash}"{/if}>
+<div class="a4-page a4-help-frame a4-help-searchpage" data-exphelp{if $help_i18n|ne( '' )} data-exphelp-i18n="{$help_i18n|wash}"{/if}>
 
     <header class="a4-pagehead">
         <div class="a4-pagehead-main">
