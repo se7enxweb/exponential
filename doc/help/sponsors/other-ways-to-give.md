@@ -46,4 +46,5 @@ name of 7x or the Foundation through another channel, check it with them first (
 - [Sponsors: start here](sponsors-start-here.md)
 - [Billing, receipts and tax](billing-receipts-and-tax.md)
 - [Funding the work](../supporters/funding-the-work.md)
+- [Give and donate](../project/give-and-donate.md): the ways to give on exponential.earth and where each link goes
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
