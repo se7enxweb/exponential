@@ -11,7 +11,7 @@ type: help
 
 Part 2, chapter 19. A **workflow** runs steps around an operation of the system, most often publishing: "send every
 article to an editor for approval before it is published", "publish this at a date". Builders set workflows up in the
-administration; developers add new kinds of steps (Workflow event types).
+administration; developers add new kinds of steps ([Workflow event types](../part-3-extension-developer/workflow-event-types.md)).
 The complete guide is [Workflows](../../../guides/workflows.md); this chapter is the builder's summary.
 
 ## The pieces
@@ -64,8 +64,8 @@ workflow a **Multiplexer** that starts "Approve articles" only for the class Art
 
 | You need | Use |
 |---|---|
-| A step the list does not have (notify an external system, set a field, move content) | a custom workflow event type (With RAD: a workflow event) |
-| Something on publish that never waits and never asks | often simpler as an event listener (Events, listeners and filters) |
+| A step the list does not have (notify an external system, set a field, move content) | a custom workflow event type ([With RAD: a workflow event](../part-3-extension-developer/tutorials/rad-workflow-event.md)) |
+| Something on publish that never waits and never asks | often simpler as an event listener ([Events, listeners and filters](../part-3-extension-developer/events-and-filters.md)) |
 
 ## Troubleshooting
 
@@ -80,5 +80,5 @@ workflow a **Multiplexer** that starts "Approve articles" only for the class Art
 - Previous: [Sections, roles and access for builders](sections-roles-and-access-for-builders.md)
 - Next: [Cronjobs for builders](cronjobs-for-builders.md)
 - [Workflows](../../../guides/workflows.md)
-- Triggers and workflows for developers
+- [Triggers and workflows for developers](../part-3-extension-developer/triggers-and-workflows-for-developers.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

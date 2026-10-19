@@ -11,7 +11,7 @@ type: help
 
 Part 1, chapter 18. The fastest way to understand extensions is to take a small one apart. This chapter reads two real
 extensions from your installation, file by file, in the order the kernel reads them. You will meet the template
-operator mechanism here first; Template operators covers it
+operator mechanism here first; [Template operators](../part-3-extension-developer/template-operators.md) covers it
 fully later.
 
 ## Extension 1: str_replace
@@ -127,7 +127,7 @@ how to find and fix every case.
 
 `ezinfo.php` names the extension, version `1.0.0`, the copyright of 7x and of the original author (2005), and the
 license. Its `info()` method is not declared `static`, which still works but differs from the convention the kernel
-reads best; see ezinfo.php. `composer.json` declares the package
+reads best; see [ezinfo.php](../part-3-extension-developer/ezinfo-php.md). `composer.json` declares the package
 `se7enxweb/str_replace` of type `ezpublish-legacy-extension`, `GPL-2.0-or-later`, and requires `"php": ">=5.0.0"`,
 another sign of its age: a modernized package states the PHP versions it was tested on.
 
@@ -212,7 +212,7 @@ page was written.
 
 - Previous: [Evaluating an old extension before you use it](evaluating-an-old-extension.md)
 - Next: [Debug output and logs for developers](debug-output-and-logs-for-developers.md)
-- Template operators
-- By hand: a template operator
+- [Template operators](../part-3-extension-developer/template-operators.md)
+- [By hand: a template operator](../part-3-extension-developer/tutorials/by-hand-template-operator.md)
 - [owsimpleoperator in the extension catalogue](../../../features/6.0/extensions/owsimpleoperator.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

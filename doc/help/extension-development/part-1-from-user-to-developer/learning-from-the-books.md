@@ -34,9 +34,9 @@ The books describe older releases. Read them for concepts and keep this table at
 | Installing from a tarball and a web wizard | `composer`, Git clones, `exp:install`, the kickstarter or the setup wizard | [Setting up a development installation](setting-up-a-development-installation.md) |
 | Editing `settings/override/site.ini.append.php` by hand | Still possible; `./console exp:ini` does it with a backup and a diff | [Changing settings with exp:ini](../part-2-builder/the-exp-ini-command.md) |
 | The `design/` folders, the override system | Unchanged in principle; more designs (admin4, admin4l) | [Part 2](../part-2-builder/README.md) |
-| Extensions with `include_once()` of kernel files | Autoloading | Autoloads and class naming |
+| Extensions with `include_once()` of kernel files | Autoloading | [Autoloads and class naming](../part-3-extension-developer/autoloads-and-class-naming.md) |
 | PHP 4 and PHP 5 examples | PHP 8.0 to 8.5 | Part 4 |
-| JavaScript in templates | Script files only, under a Content Security Policy | Content Security Policy for extension authors |
+| JavaScript in templates | Script files only, under a Content Security Policy | [Content Security Policy for extension authors](../part-3-extension-developer/content-security-policy-for-extensions.md) |
 
 ## Reusing their text
 

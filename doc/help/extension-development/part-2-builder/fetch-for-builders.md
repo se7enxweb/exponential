@@ -125,5 +125,5 @@ Turn on `[DatabaseSettings] SQLOutput` while you develop to see the queries a pa
 - Previous: [View modes for builders](view-modes-for-builders.md)
 - Next: [The template operators builders use most](template-operators-builders-use-most.md)
 - Built-in fetch functions by module
-- Fetch functions: writing your own
+- [Fetch functions](../part-3-extension-developer/fetch-functions.md): writing your own
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

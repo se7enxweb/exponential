@@ -107,6 +107,6 @@ and clear the caches. Some extensions need more (a database table, a content cla
 
 - Previous: [Finding ideas on GitHub](finding-ideas-on-github.md)
 - Next: [Share Exponential (share.exponential.earth)](share-exponential-earth.md)
-- composer.json for an extension
+- [composer.json for an extension](../part-3-extension-developer/composer-json-for-extensions.md)
 - Composer and Packagist
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

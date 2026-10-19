@@ -35,21 +35,21 @@ held 338 projects, in subtypes that map one to one to the chapters of this book:
 
 | Subtype | Projects | Book chapter |
 |---|---|---|
-| Module | 121 | Modules and views |
-| Datatype | 73 | Datatypes |
-| Template operator | 71 | Template operators |
-| Command line script | 61 | CLI scripts and console commands |
-| Workflow event type | 38 | Workflow event types |
-| Template function | 27 | Template functions |
-| Admin interface integration | 26 | Admin pages in the admin4 style |
+| Module | 121 | [Modules and views](../part-3-extension-developer/modules-and-views.md) |
+| Datatype | 73 | [Datatypes](../part-3-extension-developer/datatypes.md) |
+| Template operator | 71 | [Template operators](../part-3-extension-developer/template-operators.md) |
+| Command line script | 61 | [CLI scripts and console commands](../part-3-extension-developer/cli-scripts-and-console-commands.md) |
+| Workflow event type | 38 | [Workflow event types](../part-3-extension-developer/workflow-event-types.md) |
+| Template function | 27 | [Template functions](../part-3-extension-developer/template-functions.md) |
+| Admin interface integration | 26 | [Admin pages in the admin4 style](../part-3-extension-developer/admin-pages-in-admin4-style.md) |
 | Content classes | 20 | [Content classes for builders](../part-2-builder/content-classes-for-builders.md) |
-| Translation | 14 | Translations in an extension |
-| Extended attribute filter | 11 | Fetch functions |
-| Content action handler | 10 | Handlers named by settings |
-| Payment gateway | 9 | Handlers named by settings |
-| Search plugin | 9 | Handlers named by settings |
-| Login handler | 8 | Handlers named by settings |
-| Binary file handler | 7 | Handlers named by settings |
+| Translation | 14 | [Translations in an extension](../part-3-extension-developer/translations-in-an-extension.md) |
+| Extended attribute filter | 11 | [Fetch functions](../part-3-extension-developer/fetch-functions.md) |
+| Content action handler | 10 | [Handlers named by settings](../part-3-extension-developer/handlers-named-by-settings.md) |
+| Payment gateway | 9 | [Handlers named by settings](../part-3-extension-developer/handlers-named-by-settings.md) |
+| Search plugin | 9 | [Handlers named by settings](../part-3-extension-developer/handlers-named-by-settings.md) |
+| Login handler | 8 | [Handlers named by settings](../part-3-extension-developer/handlers-named-by-settings.md) |
+| Binary file handler | 7 | [Handlers named by settings](../part-3-extension-developer/handlers-named-by-settings.md) |
 
 Smaller subtypes include single sign-on handlers, collaboration handlers, notification events and handlers, XML
 custom tags, database plugins, SOAP functions, shop account, VAT and shipping handlers. A second type,

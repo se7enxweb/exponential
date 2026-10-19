@@ -25,18 +25,18 @@ PHP is small and in the right place.
 
 | You need | Mechanism | Part 3 chapter | RAD wizard |
 |---|---|---|---|
-| A value or transformation in templates (`{$price\|mysite_tax}`) | template operator | Template operators | `/setup/templateoperator` |
-| A list or object that `fetch()` cannot express | fetch function | Fetch functions | `/setup/templateoperator` |
-| A page with its own address, a form, a report | module and view | Modules and views | `/setup/moduleextension`, `/setup/modulewizard` |
-| A new kind of field for editors | datatype | Datatypes | `/setup/datatype` |
-| A step around publishing that can wait or ask | workflow event | Workflow event types | `/setup/workflowevent` |
-| Something on a schedule | cronjob part | Cronjob parts | `/setup/cronjobs` |
-| A command for administrators | console command | CLI scripts and console commands | |
-| A reaction to a kernel event, or a filter of a value | event listener | Events, listeners and filters | `/setup/settingsextension` |
-| A different mail transport, login, session, search, VAT | handler named by a setting | Handlers named by settings | `/setup/handlerextension/<kind>` |
-| A dynamic part of a page from JavaScript | ezjscore server function | Ajax with ezjscore server functions | `/setup/handlerextension/ajaxfunction` |
-| Your own table | persistent object | Persistent objects and your own tables | `/setup/modulewizard` |
-| To change a kernel class's behavior and nothing else works | kernel override | Kernel class overrides: the last resort | `/setup/kerneloverride` |
+| A value or transformation in templates (`{$price\|mysite_tax}`) | template operator | [Template operators](../part-3-extension-developer/template-operators.md) | `/setup/templateoperator` |
+| A list or object that `fetch()` cannot express | fetch function | [Fetch functions](../part-3-extension-developer/fetch-functions.md) | `/setup/templateoperator` |
+| A page with its own address, a form, a report | module and view | [Modules and views](../part-3-extension-developer/modules-and-views.md) | `/setup/moduleextension`, `/setup/modulewizard` |
+| A new kind of field for editors | datatype | [Datatypes](../part-3-extension-developer/datatypes.md) | `/setup/datatype` |
+| A step around publishing that can wait or ask | workflow event | [Workflow event types](../part-3-extension-developer/workflow-event-types.md) | `/setup/workflowevent` |
+| Something on a schedule | cronjob part | [Cronjob parts](../part-3-extension-developer/cronjob-parts.md) | `/setup/cronjobs` |
+| A command for administrators | console command | [CLI scripts and console commands](../part-3-extension-developer/cli-scripts-and-console-commands.md) | |
+| A reaction to a kernel event, or a filter of a value | event listener | [Events, listeners and filters](../part-3-extension-developer/events-and-filters.md) | `/setup/settingsextension` |
+| A different mail transport, login, session, search, VAT | handler named by a setting | [Handlers named by settings](../part-3-extension-developer/handlers-named-by-settings.md) | `/setup/handlerextension/<kind>` |
+| A dynamic part of a page from JavaScript | ezjscore server function | [Ajax with ezjscore server functions](../part-3-extension-developer/ajax-with-ezjscore-server-functions.md) | `/setup/handlerextension/ajaxfunction` |
+| Your own table | persistent object | [Persistent objects and your own tables](../part-3-extension-developer/persistent-objects-and-tables.md) | `/setup/modulewizard` |
+| To change a kernel class's behavior and nothing else works | kernel override | [Kernel class overrides: the last resort](../part-3-extension-developer/kernel-overrides-the-last-resort.md) | `/setup/kerneloverride` |
 
 The RAD catalogue at `/setup/rad` lists every extension point with the same information; this table is the short
 version.
@@ -61,14 +61,14 @@ string replacement, a tags field, a sitemap: all exist already.
 
 ## Your first PHP
 
-Start with Part 3: The extension developer and the
-tutorials: the smallest extension takes five minutes, and a
+Start with [Part 3: The extension developer](../part-3-extension-developer/README.md) and the
+[tutorials](../part-3-extension-developer/tutorials/README.md): the smallest extension takes five minutes, and a
 template operator is a good first piece of code because it is small, pure and visible at once.
 
 ## Related pages
 
 - Previous: [Building a site without writing code](building-a-site-without-code.md)
-- Next: Part 3: The extension developer
+- Next: [Part 3: The extension developer](../part-3-extension-developer/README.md)
 - [Extension points](../../../bc/6.0/rad-extension-points.md)
 - [RAD tools](../../../features/6.0/rad-tools.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

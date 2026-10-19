@@ -78,7 +78,7 @@ grep -rnE '\{\$[a-zA-Z_.]+\}' extension/<name>/design | grep -v '|wash' | head -
 
 Variables printed without `|wash` are a cross-site scripting risk when their value can come from a visitor (a view
 parameter, a form field, a search word). Not every hit is a bug (a number from the kernel is safe), but each one deserves
-a look. See Security in extensions.
+a look. See [Security in extensions](../part-3-extension-developer/security-in-extensions.md).
 
 ## 7. SQL (5 minutes)
 
@@ -126,5 +126,5 @@ Write your findings down. If you adopt or fix the extension, they become the fir
 - Previous: [Linking versus copying: citing sources fairly](linking-versus-copying.md)
 - Next: [Learning from an extension, step by step](learning-from-an-extension-step-by-step.md)
 - The upgrade checklist
-- Security in extensions
+- [Security in extensions](../part-3-extension-developer/security-in-extensions.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

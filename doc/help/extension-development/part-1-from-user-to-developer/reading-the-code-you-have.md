@@ -69,7 +69,7 @@ grep -n "ViewList\['view'\]" -A6 kernel/content/module.php
 ```
 
 You see the view's script and its parameters. The same three steps work for every module in the system; the chapter
-Modules and views explains what you see.
+[Modules and views](../part-3-extension-developer/modules-and-views.md) explains what you see.
 
 ## Technique 3: from a page to its template
 
@@ -139,5 +139,5 @@ your first piece of the kernel.
 - Previous: [Your first hour as a developer](your-first-hour-as-a-developer.md)
 - Next: [Finding the extensions installed on your site](finding-the-extensions-on-your-site.md)
 - [Develop with Git](../../develop-with-git.md)
-- The extension directory layout
+- [The extension directory layout](../part-3-extension-developer/extension-directory-layout.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

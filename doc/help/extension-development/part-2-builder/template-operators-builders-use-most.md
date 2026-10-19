@@ -105,7 +105,7 @@ the other way of choosing, test first.
 
 prints the text in the user's language when a translation exists in a `.ts` file for that context, and the English
 text otherwise. Every text a template prints should go through `i18n`; see
-Translations in an extension.
+[Translations in an extension](../part-3-extension-developer/translations-in-an-extension.md).
 
 ## URLs and files
 

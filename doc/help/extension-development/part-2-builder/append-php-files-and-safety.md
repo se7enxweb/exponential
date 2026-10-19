@@ -98,5 +98,5 @@ Neither may return the file's contents. The full list of addresses to test is in
 - Previous: [Settings in the administration](settings-in-the-admin.md)
 - Next: [Templates for builders](templates-for-builders.md)
 - [Security hardening](../../../install/13-security-hardening.md)
-- Security in extensions
+- [Security in extensions](../part-3-extension-developer/security-in-extensions.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

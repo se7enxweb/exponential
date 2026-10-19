@@ -40,8 +40,8 @@ extension/mysite_settings/
                 site.ini.append.php
 ```
 
-The metadata files are the same as for any extension; see ezinfo.php
-and extension.xml.
+The metadata files are the same as for any extension; see [ezinfo.php](../part-3-extension-developer/ezinfo-php.md)
+and [extension.xml](../part-3-extension-developer/extension-xml.md).
 
 ## Build it in one command
 
@@ -126,5 +126,5 @@ shows the loading order the kernel really uses; see [Extension loading order](..
 - Previous: [Siteaccess settings](siteaccess-settings.md)
 - Next: [Changing settings with exp:ini](the-exp-ini-command.md)
 - [Per-site settings inside extensions](../../../features/6.0/multi-site-ini-overrides.md)
-- With RAD: a settings-only extension
+- [With RAD: a settings-only extension](../part-3-extension-developer/tutorials/rad-settings-extension.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -12,7 +12,7 @@ type: help
 Part 2, chapter 20. Some work happens outside a page request: resuming workflows, sending notifications, cleaning up
 drafts, rotating logs. Exponential groups such scripts into **cronjob parts** and runs them with `runcronjobs.php`,
 started by the system's crontab. This chapter is the builder's view; writing your own script is
-Cronjob parts in Part 3, and the complete guide is
+[Cronjob parts](../part-3-extension-developer/cronjob-parts.md) in Part 3, and the complete guide is
 [Cronjobs](../../../guides/cronjobs.md).
 
 ## Parts and scripts

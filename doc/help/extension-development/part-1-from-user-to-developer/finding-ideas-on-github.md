@@ -108,7 +108,7 @@ to offer the change to its author.
 1. Search `org:se7enxweb datatype` and open three results.
 2. For each, note: license, date of the last commit, archived or not, Packagist package or not.
 3. Pick the one that looks most alive and read its datatype class. You will meet the same methods in
-   Datatypes.
+   [Datatypes](../part-3-extension-developer/datatypes.md).
 
 ## Related pages
 

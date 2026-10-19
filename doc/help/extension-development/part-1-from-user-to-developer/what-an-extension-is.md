@@ -36,7 +36,7 @@ Inside, an extension uses the same directory names the kernel uses, so once you 
 
 | Folder or file | What it holds |
 |---|---|
-| `ezinfo.php`, `extension.xml` | Who made it, which version, which license (see ezinfo.php) |
+| `ezinfo.php`, `extension.xml` | Who made it, which version, which license (see [ezinfo.php](../part-3-extension-developer/ezinfo-php.md)) |
 | `settings/` | `.ini.append.php` files that add to or change the kernel's settings |
 | `classes/` | PHP classes, found through the autoload array |
 | `autoloads/` | Template operator registrations (`eztemplateautoload.php`) |
@@ -49,7 +49,7 @@ Inside, an extension uses the same directory names the kernel uses, so once you 
 | `translations/<locale>/` | Translations of the extension's texts |
 | `share/`, `sql/` | Database schema and data, packages |
 
-The complete map is in The extension directory layout.
+The complete map is in [The extension directory layout](../part-3-extension-developer/extension-directory-layout.md).
 
 ## The switch
 

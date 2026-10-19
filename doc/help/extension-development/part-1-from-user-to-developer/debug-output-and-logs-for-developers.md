@@ -133,7 +133,7 @@ The file appears under `var/log/`. Never write personal data, passwords or keys 
 4. Add `eZDebug::writeDebug()` lines around the code you suspect; reload; read.
 5. When you understand it, remove the debug lines, fix the code, and check that the log stays quiet.
 
-Debugging extensions goes further: class loading, autoloads,
+[Debugging extensions](../part-3-extension-developer/debugging-extensions.md) goes further: class loading, autoloads,
 caches and the RAD health check.
 
 ## Related pages

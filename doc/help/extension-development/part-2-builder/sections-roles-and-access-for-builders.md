@@ -81,7 +81,7 @@ way to understand an "access denied".
 - Keep a policy on every module (`*`) for administrators only; the role list marks such roles in red.
 - A policy on the `role` module lets its users give themselves anything: treat it as administrator access.
 - New extension modules declare their own policy functions; grant them deliberately
-  (Policy functions and access checks).
+  ([Policy functions and access checks](../part-3-extension-developer/policy-functions-and-access.md)).
 
 ## Related pages
 

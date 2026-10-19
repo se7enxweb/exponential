@@ -66,7 +66,7 @@ usually are not. A builder's lists (`fetch( 'content', 'list' )`) only make sens
 | one class per real kind of content | one class with a "type" selection that changes everything |
 | a relation attribute to shared content (an author, a location) | copying the same data into many objects |
 | rich text for long text | many small text fields for paragraphs |
-| a datatype that exists | a new datatype, until you are sure (see Datatypes) |
+| a datatype that exists | a new datatype, until you are sure (see [Datatypes](../part-3-extension-developer/datatypes.md)) |
 
 Model the content as editors think about it; the templates follow.
 

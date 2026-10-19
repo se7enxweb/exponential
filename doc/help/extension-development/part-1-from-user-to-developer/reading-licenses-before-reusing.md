@@ -107,7 +107,7 @@ For a deeper explanation of how licenses combine, see the FSF's
 Choose one before your first commit and write it in every place listed above. Most extensions in this ecosystem use
 "GNU General Public License v2.0 (or any later version)", which keeps your work combinable with the kernel and with
 nearly every other extension. How to write it into `ezinfo.php` and `extension.xml` is in
-ezinfo.php; the deeper story is
+[ezinfo.php](../part-3-extension-developer/ezinfo-php.md); the deeper story is
 Licenses and how they combine.
 
 ## Checklist before you copy
@@ -123,5 +123,6 @@ Licenses and how they combine.
 - Previous: [Learning from the free books](learning-from-the-books.md)
 - Next: [Linking versus copying: citing sources fairly](linking-versus-copying.md)
 - Licenses and how they combine
+- Contribute your extensions back, Licensing FAQ
 - [The license of this documentation](../../../README-LICENSE.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

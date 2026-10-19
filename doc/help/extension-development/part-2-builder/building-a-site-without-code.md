@@ -28,7 +28,7 @@ mkdir -p extension/mysite_design/settings extension/mysite_design/design/mysite/
          extension/mysite_design/design/mysite/override/templates extension/mysite_design/design/mysite/stylesheets
 ```
 
-Give both an `ezinfo.php` and `extension.xml` (ezinfo.php), register the
+Give both an `ezinfo.php` and `extension.xml` ([ezinfo.php](../part-3-extension-developer/ezinfo-php.md)), register the
 design in `extension/mysite_design/settings/design.ini.append.php`:
 
 ```ini
@@ -150,7 +150,7 @@ Members user group.
 
 A real site, under version control, with no code. When a requirement appears that settings and templates cannot meet
 (an import from another system, a field type that does not exist, a page that computes something), it is time for
-Part 3; the next chapter helps you decide.
+[Part 3](../part-3-extension-developer/README.md); the next chapter helps you decide.
 
 ## Related pages
 

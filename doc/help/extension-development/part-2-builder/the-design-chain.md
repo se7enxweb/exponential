@@ -85,7 +85,7 @@ Check:
 |---|---|
 | One site's look | `extension/<yours>/design/<that site's design>/templates/` |
 | Every site, any design (a module's own page, a datatype's view) | `extension/<yours>/design/standard/templates/` (the `StandardDesign`, at the end of every chain) |
-| The administration | `extension/<yours>/design/admin/templates/` and, for the modern admin, `design/admin4/` (see Admin pages in the admin4 style) |
+| The administration | `extension/<yours>/design/admin/templates/` and, for the modern admin, `design/admin4/` (see [Admin pages in the admin4 style](../part-3-extension-developer/admin-pages-in-admin4-style.md)) |
 
 Putting a module's templates in `standard` means they work under any site design; a site design can still replace
 them by having the same path earlier in the chain.

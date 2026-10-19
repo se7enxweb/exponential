@@ -19,7 +19,7 @@ ladder, then read upward.
 |---|---|---|---|
 | **User** | Content: articles, images, menus, users | the administration | Part 1 (this part) |
 | **Builder** | Settings, templates, overrides, content classes, roles, workflows | a text editor, the INI and template languages, patience | [Part 2](../part-2-builder/README.md) |
-| **Extension developer** | New modules, datatypes, operators, workflow events, cronjobs, commands | PHP, the kernel's classes, Git | Part 3, Part 4 |
+| **Extension developer** | New modules, datatypes, operators, workflow events, cronjobs, commands | PHP, the kernel's classes, Git | [Part 3](../part-3-extension-developer/README.md), Part 4 |
 | **Theme developer** | The look: a design extension with templates, CSS, JavaScript | HTML, CSS, the template language, the design chain | Part 6 |
 
 Two more roles sit beside the ladder rather than on it:
@@ -95,9 +95,9 @@ something you do not need yet.
 1. Read Part 1 fully, and do [Your first hour as a developer](your-first-hour-as-a-developer.md).
 2. Build something real with Part 2: a settings extension for your own site.
 3. Do the first three tutorials in Part 3: the
-   smallest extension by hand, a
-   template operator and a
-   module with a view.
+   [smallest extension by hand](../part-3-extension-developer/tutorials/by-hand-minimal-extension.md), a
+   [template operator](../part-3-extension-developer/tutorials/by-hand-template-operator.md) and a
+   [module with a view](../part-3-extension-developer/tutorials/by-hand-module-with-a-view.md).
 4. Take an old extension that you like and bring it up to date with Part 4. Nothing teaches the kernel faster.
 5. Publish it (Part 7) and offer your changes to its author (Part 5).
 
