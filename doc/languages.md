@@ -55,7 +55,7 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR` (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR` (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
 | **Partial interface, full content** | An administration translation exists but covers 23 to 37% of today's strings (it was complete for an older release). Strings without a translation show in English. Content as above. | the 12 older translations with strings, see [section 4](#4-every-administration-translation) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 170 added in 6.0.15 |
 
@@ -201,8 +201,8 @@ The table is generated from the locale files; do not edit it by hand.
 | `eus-ES` | Basque | Euskara | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ewe-GH` | Ewe | Eʋegbe | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fao-FO` | Faroese | Føroyskt | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `fas-AF` | Dari (Afghanistan) | دری (افغانستان) | Central Asia and Caucasus | RTL | Arabic (`Arab`) | CLDR 44 | — |
-| `fas-IR` | Persian | فارسی | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `fas-AF` | Dari (Afghanistan) | دری (افغانستان) | Central Asia and Caucasus | RTL | Arabic (`Arab`) | CLDR 44 | 100% (falls back to `fas-IR`) |
+| `fas-IR` | Persian | فارسی | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | 100% |
 | `fil-PH` | Filipino | Filipino | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fin-FI` | Finnish | Suomi | Europe | LTR | Latin (`Latn`) | older, hand-made | 32% |
 | `fre-BE` | French (Belgium) | Français (Belgique) | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
@@ -279,7 +279,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `kir-KG` | Kyrgyz | Кыргызча | Central Asia and Caucasus | LTR | Cyrillic (`Cyrl`) | CLDR 44 | — |
 | `kok-IN` | Konkani | कोंकणी | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `kor-KR` | Korean | 한국어 | East Asia | LTR | Korean (Hangul, Han) (`Kore`) | older, regenerated from CLDR 44 | — |
-| `kur-TR` | Kurdish | Kurdî (kurmancî) | Middle East | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `kur-TR` | Kurdish | Kurdî (kurmancî) | Middle East | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `lao-LA` | Lao | ລາວ | Southeast Asia | LTR | Lao (`Laoo`) | CLDR 44 | — |
 | `lat-VA` | Latin | Latina | Europe | LTR | Latin (`Latn`) | hand-made names, CLDR 44 conventions | 100% |
 | `lav-LV` | Latvian | Latviešu | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -319,7 +319,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `por-MZ` | Portuguese (Mozambique) | Português | Africa | LTR | Latin (`Latn`) | older, hand-made | — |
 | `por-PT` | Portuguese (Portugal) | Português | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
 | `por-PT@euro` | Variant of `por-PT`: Suporte para Euro |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
-| `pus-AF` | Pashto | پښتو | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
+| `pus-AF` | Pashto | پښتو | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | 100% |
 | `qlo-ZZ` | Lorem Ipsum | Lorem Ipsum | None (test language) | LTR | Latin (`Latn`) | hand-made, test language only | — |
 | `que-PE` | Quechua | Runasimi | Americas | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `roh-CH` | Romansh | Rumantsch | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -448,7 +448,7 @@ between ideographs. The Klingon script pIqaD is never used (see Klingon above).
 
 ## 4. Every administration translation
 
-Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,763 strings of that day), in two ways (both rounded down):
+Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,763 strings of that day, the three added on 19 October 2026 against the 17,834 strings of that day), in two ways (both rounded down):
 
 - **Own file finished**: finished messages of the file divided by all its messages, obsolete ones left out, each
   context, source and comment counted once. `php bin/php/ezchecktranslation.php <code>` prints a similar "Percent
@@ -483,6 +483,9 @@ source text, and the interface language choice counts English as 100%.
 | `dan-DK` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
 | `cze-CZ` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
 | `cro-HR` | 100% (17,764 of 17,764) | 100% (17,763 of 17,763) |
+| `fas-IR` | 100% (17,834 of 17,834) | 100% (17,834 of 17,834) |
+| `pus-AF` | 100% (17,834 of 17,834) | 100% (17,834 of 17,834) |
+| `kur-TR` | 100% (17,834 of 17,834) | 100% (17,834 of 17,834) |
 | `ger-DE` | 99% (16,514 of 16,529) | 99% (16,509 of 16,623) |
 | `cat-ES` | 96% (6,314 of 6,512) | 37% (6,314 of 16,623) |
 | `jpn-JP` | 96% (6,281 of 6,513) | 37% (6,281 of 16,623) |
@@ -530,6 +533,14 @@ Notes:
   Swedish, Norwegian and Danish *du*. The older translations of these languages that had broken
   placeholders, tags, line breaks, English leftovers, wrong terms or mixed forms of address were redone; obsolete
   entries stay as they were. A review by a native speaker is welcome.
+- **Persian** (`fas-IR`, new), **Pashto** (`pus-AF`, new) and **Kurdish** (`kur-TR`, new, Kurmanji in Latin script)
+  are complete since 19 October 2026 for all 17,834 strings of that day, machine-assisted with a glossary per
+  language, its terms settled after the first pass, and reviewed in a second pass; the catalogues of ezoe and
+  ezjscore are complete too, those of the other bundled extensions come with their own releases. All three address
+  the user formally (Persian *shomā*, Pashto *tāso*, Kurmanji *hûn*); buttons and menu items are nouns or verbal
+  nouns. Persian is standard written Persian with the Persian letters ی and ک and the zero-width non-joiner; Dari
+  (`fas-AF`) has no catalogue of its own and falls back to it. Kurmanji has no catalogue for other countries yet.
+  A review by a native speaker is welcome.
 - Each extension releases its own catalogues. Of the ten languages above, ezoe, ezjscore and explayouts_ui (the
   Layouts tab) carry complete ones; the other extensions show their texts in English in these languages until they
   get one.
@@ -571,7 +582,7 @@ which takes its figures from Ethnologue (2026 edition); read on 15 October 2026.
 | 24 | Tamil | 86 | `tam-IN`, `tam-LK`, `tam-SG` | none |
 | 25 | Yue Chinese (Cantonese) | 86 | `chi-HK` (written Traditional Chinese) | `chi-HK` partial |
 | 26 | Wu Chinese | 83 | written as Simplified Chinese: `chi-CN` | `chi-CN` partial |
-| 27 | Persian | 82 | `fas-IR`, `fas-AF` (Dari) | none |
+| 27 | Persian | 82 | `fas-IR`, `fas-AF` (Dari) | `fas-IR` complete, `fas-AF` falls back to it |
 | 28 | Korean | 82 | `kor-KR` | none |
 | 29 | Amharic | 78 | `amh-ET` | none |
 | 30 | Thai | 71 | `tha-TH` | none |
@@ -798,9 +809,10 @@ their layout skeleton (header, left menu, content, right toolbar) is direction-s
 of it being placed by left and right. The details, the CSS rules and what still needs checking are in
 [Right-to-left languages](features/6.0/right-to-left.md).
 
-**Interface translations.** Two right-to-left languages have a complete administration translation: Hebrew
-(`heb-IL`) and Arabic (`ara-SA`, Modern Standard Arabic, so every Arabic country falls back to it). Both cover the
-kernel and the bundled ezoe and ezjscore catalogues, and both are machine-assisted: they need a review by a native
+**Interface translations.** Four right-to-left languages have a complete administration translation: Hebrew
+(`heb-IL`), Arabic (`ara-SA`, Modern Standard Arabic, so every Arabic country falls back to it), Persian (`fas-IR`,
+Dari `fas-AF` falls back to it) and Pashto (`pus-AF`). All cover the kernel and the bundled ezoe and ezjscore
+catalogues, and all are machine-assisted: they need a review by a native
 speaker before a site relies on them ([section 8](#8-adding-or-completing-an-administration-translation)).
 Choosing either as the interface language turns the whole administration (admin4l, admin4 and the classic admin)
 right to left. Their placeholders (`%name`, `%1`) stay as they are inside the right-to-left text; the browser's
