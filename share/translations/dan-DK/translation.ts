@@ -14328,7 +14328,7 @@ Bemærk: Pakkerne afinstalleres ikke.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Gem</translation>
+        <translation>Butik</translation>
     </message>
     <message>
         <source>Advanced search</source>

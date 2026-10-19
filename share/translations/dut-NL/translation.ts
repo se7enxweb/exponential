@@ -14560,7 +14560,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Opslaan</translation>
+        <translation>Winkel</translation>
     </message>
     <message>
         <source>Advanced search</source>

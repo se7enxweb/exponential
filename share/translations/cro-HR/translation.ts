@@ -14467,7 +14467,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Spremi</translation>
+        <translation>Trgovina</translation>
     </message>
     <message>
         <source>Advanced search</source>

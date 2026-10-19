@@ -14813,7 +14813,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Lagre</translation>
+        <translation>Butikk</translation>
     </message>
     <message>
         <source>Advanced search</source>

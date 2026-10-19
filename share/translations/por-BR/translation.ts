@@ -15391,7 +15391,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Salvar</translation>
+        <translation>Loja</translation>
     </message>
     <message>
         <source>Advanced search</source>

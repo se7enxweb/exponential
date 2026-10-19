@@ -14539,7 +14539,7 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Uložit</translation>
+        <translation>Obchod</translation>
     </message>
     <message>
         <source>Advanced search</source>
