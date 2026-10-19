@@ -14560,7 +14560,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Opslaan</translation>
+        <translation>Winkel</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74357,6 +74357,54 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infrastructuur van de gemeenschap: chat, mirrors, wiki&apos;s en bronnen voor ontwikkelaars</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Trainers en docenten</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Pers, media en influencers</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Geef les in Exponential: cursussen voor redacteuren, beheerders, ontwikkelaars en ontwerpers, workshops, oefeningen en toetsen.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Schrijf en praat over Exponential: de feiten, de geschiedenis, de mensen, citaten, beelden en wie u kunt benaderen.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Opleiding</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Pers en media</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Lesgeven in Exponential: cursussen, lesplannen, workshops, oefeningen en toetsen voor elke rol.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Voor journalisten, media en influencers: feiten, geschiedenis, aankondigingen, beelden en contacten.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Deel uw extensies</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Deel de extensies die u verspreidt, zoals de GPL vereist, zodat iedereen er baat bij heeft.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Het Exponential-project</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Het Exponential-project: wat het is, de licenties, de roadmap, ondersteuning, kanalen van de gemeenschap en hoe u bijdraagt en geeft.</translation>
     </message>
 </context>
 </TS>

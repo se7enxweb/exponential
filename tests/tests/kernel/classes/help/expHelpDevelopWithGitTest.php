@@ -12,8 +12,10 @@
  *  HG-06  every string of the part is in the eng-US and ger-DE catalogues under kernel/exphelp
  *  HG-07  the commands the page recommends are the ones that were verified (clone URL, preferred-install, keep-vcs)
  *  HG-08  help/update-with-git.md: front matter, the verified update commands per schedule, linked from the band, served
- *  HG-09  its maintenance window in the administration: the six steps, the views and policies, the checklist, every
- *         screenshot a webp with alt text, and no host name, server path or credential
+ *  HG-09  command line or administration: the decision box first, then Track A and Track B with the same seven steps in
+ *         order, screenshots in both (webp, alt text), the views, policies and checklist of Track B, the safe order of
+ *         mixing them, and no host name, server path or credential
+ *  HG-10  Track A: the verified commands, each step with its terminal capture
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -164,7 +166,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
     public function testStringsTranslated()
     {
         preg_match_all( "/\\{'((?:[^'\\\\]|\\\\.)+)'\\|i18n\\( \\\$help_grow_ctx \\)/", self::read( 'design/admin4/' . self::PART ), $m );
-        $this->assertCount( 12, $m[1] );
+        $this->assertCount( 14, $m[1] );
         foreach ( array( 'eng-US', 'ger-DE' ) as $lang )
         {
             $ts = self::read( 'share/translations/' . $lang . '/translation.ts' );
@@ -191,7 +193,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
         foreach ( array(
             'git fetch origin --tags',
             'git merge origin/main',
-            "git merge \"\$(git tag -l 'v6.*' --sort=version:refname | tail -1)\"",
+            "git merge --no-edit \"\$(git tag -l 'v6.*' --sort=version:refname | tail -1)\"",
             'composer update',
             'git log --oneline ORIG_HEAD..HEAD',
             'exp:velocity deploy',
@@ -207,36 +209,88 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
             $this->assertTrue( ( new expHelpAllowlist( array( 'root' => self::root() ) ) )->allows( self::UPDATE_PAGE ) );
     }
 
-    /** HG-09 */
-    public function testMaintenanceWindowInTheAdministration()
+    /**
+     * The text of one "## " section of the update page (up to the next "## ")
+     */
+    private static function updateSection( $heading )
     {
         $text = self::read( self::UPDATE_PAGE );
-        $start = strpos( $text, '## Update in the administration: a maintenance window' );
-        $this->assertNotFalse( $start, 'the section exists' );
+        $start = strpos( $text, "\n## " . $heading . "\n" );
+        if ( $start === false )
+            return false;
         $end = strpos( $text, "\n## ", $start + 5 );
-        $section = substr( $text, $start, $end === false ? null : $end - $start );
-        foreach ( array( '### 1. Start the window', '### 2. Update the kernel with Git Manager',
-                         '### 3. Update the extensions with Updates and packages', '### 4. Check, update the database, clear the caches',
-                         '### 5. Check the site', '### 6. Leave the window', '**Checklist**' ) as $heading )
-            $this->assertStringContainsString( $heading, $section );
-        // the views and the policy a role needs for each step
-        foreach ( array( 'setup/maintenance', 'git_manager/dashboard', 'update/dashboard', 'update/installed', 'update/browse',
-                         'update/servers', 'update/fund', 'setup/systemupgrade', 'setup/cache', 'setup/logs',
-                         '`setup/administrate`', '`git_manager/git_manager`', '`update/ezupdate`', '`update/manage`',
-                         '`setup/setup`', '`setup/managecache`', '`setup/logs`', '`dse/dse`' ) as $name )
-            $this->assertStringContainsString( $name, $section );
-        $this->assertGreaterThanOrEqual( 9, substr_count( $section, '- [ ] ' ), 'the checklist' );
-        // every screenshot: webp below doc/help/images, with alt text, on disk
+        return substr( $text, $start, $end === false ? null : $end - $start );
+    }
+
+    /**
+     * Every image of a section: webp below doc/help/images, a describing alt text, on disk; returns how many
+     */
+    private function assertSectionImages( $section )
+    {
         preg_match_all( '/!\[([^\]]*)\]\((images\/[^)]+)\)/', $section, $m, PREG_SET_ORDER );
-        $this->assertGreaterThanOrEqual( 10, count( $m ) );
         foreach ( $m as $image )
         {
             $this->assertGreaterThan( 40, strlen( $image[1] ), $image[2] . ' has a describing alt text' );
             $this->assertStringEndsWith( '.webp', $image[2] );
             $this->assertFileExists( self::root() . '/doc/help/' . $image[2] );
         }
-        // no host name, server path or credential of the machine the screenshots were made on
-        $this->assertDoesNotMatchRegularExpression( '/alpha\.se7enx|vhosts|\/web\/vh|github-as-7x|w612p|publishing\$/i', $text );
+        return count( $m );
+    }
+
+    /** HG-09 */
+    public function testCommandLineOrAdministrationInTwoParallelTracks()
+    {
+        $decision = self::updateSection( 'Command line or administration?' );
+        $this->assertNotFalse( $decision, 'the decision box comes first' );
+        $text = self::read( self::UPDATE_PAGE );
+        $this->assertLessThan( strpos( $text, '## Track A: the command line' ), strpos( $text, '## Command line or administration?' ) );
+        foreach ( array( 'release tag', 'Git Manager', 'Updates and packages', 'Run it for real', 'DS Editor', 'restart Velocity' ) as $what )
+            $this->assertStringContainsStringIgnoringCase( $what, $decision );
+        $a = self::updateSection( 'Track A: the command line' );
+        $b = self::updateSection( 'Track B: the administration' );
+        $this->assertNotFalse( $a );
+        $this->assertNotFalse( $b );
+        // the same seven steps in both tracks, in order
+        foreach ( array( 'A' => $a, 'B' => $b ) as $track => $section )
+        {
+            $last = 0;
+            for ( $step = 1; $step <= 7; ++$step )
+            {
+                $at = strpos( $section, '### ' . $track . $step . '. ' );
+                $this->assertNotFalse( $at, $track . $step );
+                $this->assertGreaterThan( $last, $at, $track . $step . ' in order' );
+                $last = $at;
+            }
+            $this->assertGreaterThanOrEqual( 6, $this->assertSectionImages( $section ), 'Track ' . $track . ' has screenshots' );
+        }
+        // Track B: the views and the policy a role needs, and the checklist
+        foreach ( array( 'setup/maintenance', 'git_manager/dashboard', 'update/dashboard', 'setup/systemupgrade', 'setup/cache', 'setup/logs',
+                         '`setup/administrate`', '`git_manager/git_manager`', '`update/ezupdate`', '`update/manage`',
+                         '`setup/setup`', '`setup/managecache`', '`setup/logs`', '`dse/dse`' ) as $name )
+            $this->assertStringContainsString( $name, $b );
+        $this->assertGreaterThanOrEqual( 9, substr_count( $b, '- [ ] ' ), 'the checklist' );
+        // mixing: the safe order
+        $mixing = self::updateSection( 'Mixing the two tracks' );
+        $this->assertNotFalse( $mixing );
+        $this->assertStringContainsString( 'Git first, then Composer', $mixing );
+        // no host name, server path or credential of the machines the pictures were made on
+        $this->assertDoesNotMatchRegularExpression( '/alpha\.se7enx|vhosts|\/web\/vh|github-as-7x|w612p|publishing\$|sandbox3/i', $text );
+    }
+
+    /** HG-10 */
+    public function testCommandLineStepsShowCommandsAndCapturedOutput()
+    {
+        $a = self::updateSection( 'Track A: the command line' );
+        foreach ( array( 'php bin/php/maintenance.php on', 'git fetch origin --tags', 'git merge --no-edit origin/main',
+                         'composer update', 'php bin/php/checkmanifest.php --all', 'php bin/php/ezcache.php --clear-all',
+                         'exp:velocity deploy', 'git log --oneline ORIG_HEAD..HEAD', 'php bin/php/maintenance.php off' ) as $command )
+            $this->assertStringContainsString( $command, $a );
+        // each terminal capture is a real file and is shown
+        foreach ( array( 'a1-maintenance', 'a2-waiting', 'a3-kernel', 'a4-composer', 'a5-check', 'a6-caches', 'a7-leave' ) as $capture )
+        {
+            $this->assertStringContainsString( '(images/update-cli-' . $capture . '.webp)', $a );
+            $this->assertFileExists( self::root() . '/doc/help/images/update-cli-' . $capture . '.webp' );
+        }
     }
 
     /** HG-07 */
