@@ -14,7 +14,7 @@
  * @package tests
  */
 
-class eZPackageDefinitionRoundTripTest extends PHPUnit\Framework\TestCase
+class eZPackageSitePackageExportTest extends PHPUnit\Framework\TestCase
 {
     private $tempDir;
 
@@ -98,7 +98,7 @@ XML;
 
     public function testExtraTopLevelEntriesAreTheSideFiles()
     {
-        $this->tempDir = dirname( __DIR__, 4 ) . '/var/tmp/package-roundtrip-test-' . getmypid();
+        $this->tempDir = dirname( __DIR__, 5 ) . '/var/tmp/package-roundtrip-test-' . getmypid();
         $dir = $this->tempDir . '/example_democontent';
         foreach ( array( 'documents', 'settings', 'ezcontentobject', 'extra-dir', '.git' ) as $sub )
             mkdir( $dir . '/' . $sub, 0777, true );
@@ -112,7 +112,7 @@ XML;
 
     public function testExportCopiesTheExtraEntries()
     {
-        $source = file_get_contents( dirname( __DIR__, 4 ) . '/kernel/classes/ezpackage.php' );
+        $source = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/classes/ezpackage.php' );
         $this->assertStringContainsString( 'self::extraTopLevelEntries( $path, $directoryList )', $source );
     }
 

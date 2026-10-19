@@ -3305,7 +3305,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-e3d5792f9a5e6d799340aab14bd67239  doc/changelogs/6.0/6.0.15.md
+391e9e06b8fe11f41e7e3155f3c8efd4  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -12172,14 +12172,12 @@ c50ed4541f1fb9c0614ec8dad537f6a1  tests/tests/kernel/classes/eZDynamicProperties
 c5b0906382598e118d038175ada1cc30  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
 ae5b1048f8e08ec7094ae01547fdcee1  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
 b78b2f659b4281a0dead0cdea8bae0b1  tests/tests/kernel/classes/eZExtensionWithoutOrderingTest.php
-a212764f52d9876a3830543d8e7c491f  tests/tests/kernel/classes/eZFilePackageHandlerUninstallTest.php
 cbfe9686d5c1b5bc8335c7ef7f985b45  tests/tests/kernel/classes/eZNamePatternResolverClassTest.php
 5fc77f0769c23410fe52003fa08cfc7a  tests/tests/kernel/classes/eZNamePatternResolverLimitTest.php
 5177bfc3e5766c1569122d4c4c6a299d  tests/tests/kernel/classes/eZNamePatternResolverPatternTest.php
 9169fade253bff5d12cacfca741df2be  tests/tests/kernel/classes/eZNodeAssignmentTest.php
 34a30d04bc83a3f957f992301d260afc  tests/tests/kernel/classes/eZNodeviewfunctionsViewCacheTest.php
 a986db475d0da16b07622a5bb52b3ef2  tests/tests/kernel/classes/eZPHP8RemovedFunctionCallsTest.php
-744e36639112ca2f81ee29439593fd6e  tests/tests/kernel/classes/eZPackageDefinitionRoundTripTest.php
 1a61ba02eb30739edcb683230c3cfc97  tests/tests/kernel/classes/eZPackageLicenseTest.php
 249d283b41a3433b61b35756daba5034  tests/tests/kernel/classes/eZPackageVersionTest.php
 7a21b3cc90e141e63b00372345c15fba  tests/tests/kernel/classes/eZPendingActionsTest.php
@@ -12401,6 +12399,7 @@ e612f43fc85b8406b0acb712148bae69  tests/tests/kernel/classes/notification/handle
 535e3b4e669a530fcbcfbb1f88485fc3  tests/tests/kernel/classes/packagecomparison/eZPackageComparisonDiffTest.php
 1dad9aa475bb1320880a5ade92ddf26c  tests/tests/kernel/classes/packagecomparison/eZPackageComparisonImportOfferTest.php
 f1bd2950cc165249465e5bd92292d4c5  tests/tests/kernel/classes/packagecomparison/eZPackageComparisonValuesTest.php
+9e4e68a522064dbaacb63d0aa8eabad1  tests/tests/kernel/classes/packages/eZFilePackageHandlerUninstallTest.php
 9b649086922fb3af6b02bb9c2c12dbde  tests/tests/kernel/classes/packages/eZPackageCatalogTest.php
 853a5ec29fdfb1c71986c51a3d4ccbc0  tests/tests/kernel/classes/packages/eZPackageCreationHandlerTest.php
 9225a203a3ffcc5c62e44bc458998914  tests/tests/kernel/classes/packages/eZPackageDefinitionRoundTripTest.php
@@ -12409,6 +12408,7 @@ a1ea30fdd18621437862c8b9679aa573  tests/tests/kernel/classes/packages/eZPackageD
 d64bdad5402373bbe9400f06956f1036  tests/tests/kernel/classes/packages/eZPackageFileBrowserJsonTest.php
 13b0a545c9564ea78efae088f8483a31  tests/tests/kernel/classes/packages/eZPackageFileBrowserTest.php
 eacca614b86b64086f3813c700dc4fd8  tests/tests/kernel/classes/packages/eZPackageRequestGuardTest.php
+c5023bde0ea213df997e6d6203683f9a  tests/tests/kernel/classes/packages/eZPackageSitePackageExportTest.php
 421f83967d60e0a3bb57aea1920b5d2b  tests/tests/kernel/classes/packages/eZPackageTestFixtures.php
 61fc1c296b5ef4cef7424c44161d8126  tests/tests/kernel/classes/packages/eZPackageUploadInspectorTest.php
 e10e23767fe5e72162d8e8b63877a64b  tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php

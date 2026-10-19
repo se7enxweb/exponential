@@ -17,7 +17,7 @@ class eZFilePackageHandlerUninstallTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        $this->root = dirname( __DIR__, 4 ) . '/var/tmp/ezfile-uninstall-test-' . getmypid();
+        $this->root = dirname( __DIR__, 5 ) . '/var/tmp/ezfile-uninstall-test-' . getmypid();
         $this->cwd = getcwd();
         mkdir( $this->root . '/site/design/example/templates', 0777, true );
         mkdir( $this->root . '/package/files', 0777, true );
@@ -103,7 +103,7 @@ class eZFilePackageHandlerUninstallTest extends PHPUnit\Framework\TestCase
 
     public function testInstallRecordsOnlyFilesItCreates()
     {
-        $source = file_get_contents( dirname( __DIR__, 4 ) . '/kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php' );
+        $source = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php' );
         $this->assertStringContainsString( '$existedBefore = file_exists( $newFilePath );', $source );
         $this->assertStringContainsString( "if ( !\$existedBefore && is_file( \$newFilePath ) )", $source );
     }
@@ -119,7 +119,7 @@ class eZFilePackageHandlerUninstallTest extends PHPUnit\Framework\TestCase
 
     public function testExtensionIsAPackageType()
     {
-        $ini = file_get_contents( dirname( __DIR__, 4 ) . '/settings/package.ini' );
+        $ini = file_get_contents( dirname( __DIR__, 5 ) . '/settings/package.ini' );
         $this->assertMatchesRegularExpression( '/^TypeList\[extension\]=Extension$/m', $ini );
     }
 }
