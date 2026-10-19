@@ -3,7 +3,7 @@ title: Life-cycle examples
 audience: designer, website-creator, editor, admin, developer
 category: build-two-ways
 order: 999
-summary: 35 examples along the life of a site - plan, build, launch, maintain, redesign, migrate - each one task done in the Layouts editor and with templates, worked out on the Fit & Healthy site.
+summary: 70 examples along the life of a site - plan, build, launch, maintain, redesign, migrate - each one task done in the Layouts editor and with templates, worked out on the Fit & Healthy site.
 keywords: examples, life cycle, plan, build, launch, maintain, redesign, migrate, layouts, templates
 type: help
 ---
@@ -14,8 +14,9 @@ Each example is one task, done both ways where both apply: in the **Layouts edit
 | Phase | Examples | What happens |
 |---|---|---|
 | [Plan](plan/README.md) | 35 | Decide page types, layouts, menus, languages and who changes what, before building. |
+| [Build](build/README.md) | 35 | Make the blocks, lists, galleries, columns and templates of the pages. |
 
-Total: 35 examples.
+Total: 70 examples.
 
 ## Related pages
 

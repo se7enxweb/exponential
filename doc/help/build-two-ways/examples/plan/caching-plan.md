@@ -16,7 +16,7 @@ No change is called broken when it is only cached.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [Which cache](#which-cache)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ No change is called broken when it is only cached.
 
 1. Publishing in the Layouts editor and publishing content refreshed the pages by itself on the test copy.
 
-## With templates
+## Which cache
 
 1. Settings read in templates (menus): **Template & content**. New templates: **Template & content**. Stylesheets: **Template & content** (packed files). Command-line layout imports: **Content**.
 
