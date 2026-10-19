@@ -126,8 +126,8 @@ php bin/php/ezexec.php extension/mysite_hello/scripts/hello.php
 
 `bin/php/ezexec.php` loads the kernel (settings, database, autoloads) and then runs your file. You just used two of
 the kernel's classes: `eZINI`, which reads settings, and `eZCLI`, which writes to the terminal. Both are described in
-Part 8: eZINI and
-eZScript and eZCLI.
+[Part 8](../part-8-reference/README.md): [eZINI](../part-8-reference/ezini.md) and
+[eZScript and eZCLI](../part-8-reference/ezscript-and-ezcli.md).
 
 ## Undo everything
 
@@ -152,6 +152,6 @@ the same way when you are done. Every write made a backup under `var/backup/ini/
 
 - Previous: [Setting up a development installation](setting-up-a-development-installation.md)
 - Next: [Reading the code you already have](reading-the-code-you-have.md)
-- Changing settings with exp:ini
-- Debugging templates
+- [Changing settings with exp:ini](../part-2-builder/the-exp-ini-command.md)
+- [Debugging templates](../part-2-builder/debugging-templates.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

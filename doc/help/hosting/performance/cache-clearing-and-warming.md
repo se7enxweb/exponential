@@ -31,6 +31,8 @@ afterwards so the first visitors do not pay for it. The sources are [Caches](../
 
 From [Chapter 10, Which to clear](../../../install/10-after-installing.md#which-to-clear), with `php bin/php/ezcache.php`:
 
+![Setup, Cache management: clear all caches, the content view cache, the INI and template caches, or single caches from the list](../../images/hosting/cache-management.webp)
+
 | You changed | Clear |
 |---|---|
 | an `.ini` setting | `--clear-tag=ini` (not `--clear-id=ini`, which misses the global INI cache) |
@@ -99,6 +101,8 @@ Since 6.0.15 a clear **renames** a cache directory aside in one step and deletes
 ([Cache clears that move directories aside](../../../features/6.0/cache-clear-rename-aside.md)): it returns quickly even
 for hundreds of thousands of files, and nothing generated meanwhile is caught by the delete. Settings:
 `site.ini [FileSettings] RenameBeforeDelete=enabled` and `RenameExpiredCaches=enabled` (both shipped).
+
+![The Clear cache box at the top of the right column, with a list of caches and the Clear button](../../images/hosting/clear-cache-box.webp)
 
 When a change would clear the view caches of `[ContentSettings] CacheThreshold` nodes or more (250), the whole view
 cache is expired instead and the log says "Expiring all view cache". Now and then after a large move is expected; for

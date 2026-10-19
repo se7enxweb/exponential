@@ -13,6 +13,8 @@ This page is for website creators who build a site in more than one language. In
 translation per content language, and every siteaccess decides which languages it shows, in which order. The full
 reference is [Content languages](../../../guides/content-languages.md); this page is the site builder's path through it.
 
+![The translations overview: the languages of the installation and how many items exist in each](../../images/creators/translations-overview.webp)
+
 ## Contents
 
 1. [How languages work](#how-languages-work)

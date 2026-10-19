@@ -43,6 +43,4 @@
 </form>
 
 {* Highlight "SetSorting" button on change *}
-{literal}
 {ezscript( array( 'page/node_ordering.js' ) )}
-{/literal}

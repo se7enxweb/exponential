@@ -15,6 +15,8 @@ administration is where content is published, roles are granted and settings are
 ([Security hardening](../../security-hardening.md#brute-force-and-credential-stuffing-on-the-sign-in)). The
 reference is [13.5 The administration siteaccess](../../../install/13-security-hardening.md#135-the-administration-siteaccess).
 
+![Setup, Sessions: who is signed in now, with the buttons to end sessions](../../images/hosting/sessions.webp)
+
 ## Contents
 
 1. [What is there by default](#what-is-there-by-default)

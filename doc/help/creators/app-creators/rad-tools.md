@@ -13,6 +13,8 @@ This page is for application creators who want working skeletons instead of typi
 (`/setup/rad`) lists every point where Exponential can be extended, how it is registered, and offers wizards that write a
 complete extension ([RAD tools](../../../features/6.0/rad-tools.md), [Extension points](../../../bc/6.0/rad-extension-points.md)).
 
+![Setup, RAD: the wizards that create the skeleton of a template operator or a datatype](../../images/creators/rad-tools.webp)
+
 ## Contents
 
 1. [Five minutes to a working extension](#five-minutes-to-a-working-extension)

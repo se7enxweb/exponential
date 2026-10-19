@@ -35,6 +35,8 @@ The full references are [The log viewer](../../../features/6.0/log-viewer.md) an
 each site and of extensions, and their rotations (`.gz` read only). A navigator groups them as **Kernel**, **Site**,
 **Extensions**, **Web server** and **Rotated archives**, with size, last write and lines a minute.
 
+![Setup, Log files, Log health: each log file of the installation with its size, growth and last change](../../images/hosting/log-files.webp)
+
 - Each view has a **permalink** without a query string, such as `/setup/logs/view/error`, safe to paste into a ticket.
 - A file is **followed live** with short requests; nothing holds a server process open.
 - **Search** covers a file, every kernel log or every file, optionally with rotations, by text or bounded regular
@@ -68,6 +70,8 @@ keys, session ids and cookies are masked, and "the values of secret settings are
 
 An error page shows a reference such as `ERR-0123456789`, and the same reference is in `error.log`
 ([Finding an error by its reference](../../../guides/finding-an-error-by-its-reference.md)):
+
+![The digest of the log files: recent errors and warnings grouped across files](../../images/hosting/log-digest.webp)
 
 1. Ask the customer for the reference and roughly when it happened.
 2. **Setup > Log files**, field **Error reference**, **Search**; or open

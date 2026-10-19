@@ -7,7 +7,7 @@ if you write documentation (in `doc/` or in an extension) that should show up in
 
 - **Help dashboard** (`/exphelp/dashboard`): the Exponential logo above "Help center" (the header's drawing,
   `exphelp/parts/dashboard_brand.tpl`, per design), a search field, the help for each audience (editors, administrators,
-  developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters, sponsors, trainers and press, media and influencers; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
+  developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters, sponsors, trainers, press, media and influencers, businesses and governments; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
   report an error.
 - **Help pages** (`/exphelp/viewer/<page>`): every git-tracked Markdown and text file under `doc/`, rendered with
   headings, a table of contents, tables, callouts, highlighted code and images, with the navigation of its section,
@@ -63,6 +63,7 @@ Security Policy.
 | `[AudienceSettings] PathRules[]` | per directory | `<glob>;<audience,...>`, first match wins |
 | `[CategorySettings]` | eight categories | names, icons and path rules |
 | `[SearchSettings]` | 20 results | result count and the weights of title, headings and text |
+| `[SearchSettings] AudienceBoost[]` | `trainer` 0.6 | a factor for the pages of an audience (the lowest of a page's audiences), not applied while the search is filtered to that audience: the trainers' lessons rank below the editor and administrator pages they teach |
 | `[FeaturedSettings] PageList[]` | six help pages | the "Featured guides" of the dashboard |
 | `[ContextHelp] Map[]` | kernel modules | `Map[<module>/<view>]=<page>#<anchor>` |
 | `[IssueTrackers]` | the Exponential tracker | where errors are reported |

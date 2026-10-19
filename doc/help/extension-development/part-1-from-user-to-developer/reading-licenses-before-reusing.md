@@ -69,7 +69,7 @@ copied files. Some upstream packages that Exponential extensions were ported fro
 `netgen/layouts-core` and `netgen/query-translator` (the sources of `explayouts_core` and `expquery_translator`) as
 MIT, while `netgen/site-bundle` and `netgen/ibexa-site-api` are listed as GPL-2.0-only. Part 5 shows how such ports
 give credit
-(Case study: porting a package from another project with credit).
+([Case study: porting a package from another project with credit](../part-5-extend-fork-contribute/case-study-ported-from-another-project.md)).
 
 ### GNU Free Documentation License (for documentation)
 
@@ -107,8 +107,8 @@ For a deeper explanation of how licenses combine, see the FSF's
 Choose one before your first commit and write it in every place listed above. Most extensions in this ecosystem use
 "GNU General Public License v2.0 (or any later version)", which keeps your work combinable with the kernel and with
 nearly every other extension. How to write it into `ezinfo.php` and `extension.xml` is in
-ezinfo.php; the deeper story is
-Licenses and how they combine.
+[ezinfo.php](../part-3-extension-developer/ezinfo-php.md); the deeper story is
+[Licenses and how they combine](../part-5-extend-fork-contribute/licenses-and-compatibility.md).
 
 ## Checklist before you copy
 
@@ -116,12 +116,13 @@ Licenses and how they combine.
 - [ ] It allows copying and changing.
 - [ ] It is compatible with the license of my extension.
 - [ ] I keep every copyright line and the license notice in the files I copy.
-- [ ] I say where the code came from (see Attribution and copyright notices).
+- [ ] I say where the code came from (see [Attribution and copyright notices](../part-5-extend-fork-contribute/attribution-and-copyright-notices.md)).
 
 ## Related pages
 
 - Previous: [Learning from the free books](learning-from-the-books.md)
 - Next: [Linking versus copying: citing sources fairly](linking-versus-copying.md)
-- Licenses and how they combine
+- [Licenses and how they combine](../part-5-extend-fork-contribute/licenses-and-compatibility.md)
+- [Contribute your extensions back](../../contribute-extensions-back.md), [Licensing FAQ](../../project/licensing-faq.md)
 - [The license of this documentation](../../../README-LICENSE.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

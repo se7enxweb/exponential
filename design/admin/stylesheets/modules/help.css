@@ -13,7 +13,7 @@
 
 /* ---- page frame and shared parts ----------------------------------------------------------------------------- */
 
-.a4-help {
+.a4-help-frame {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--a4-space-5);
@@ -76,6 +76,8 @@
 .a4-help-tile.is-website-creator { color: var(--a4-chart-7); }
 .a4-help-tile.is-supporter { color: var(--a4-chart-4); }
 .a4-help-tile.is-sponsor { color: var(--a4-chart-5); }
+.a4-help-tile.is-government { color: var(--a4-chart-7); }
+.a4-help-tile.is-businesses { color: var(--a4-chart-3); }
 .a4-help-tile.is-press { color: var(--a4-chart-6); }
 .a4-help-tile.is-trainer { color: var(--a4-chart-2); }
 
@@ -101,6 +103,8 @@
 .a4-help-pill.is-website-creator { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-supporter { border-color: var(--a4-chart-4); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-sponsor { border-color: var(--a4-chart-5); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-government { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-businesses { border-color: var(--a4-chart-3); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-press { border-color: var(--a4-chart-6); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-trainer { border-color: var(--a4-chart-2); background-color: var(--a4-card); color: var(--a4-ink); }
 
@@ -387,7 +391,7 @@
 
 /* ---- dashboard: audience cards------------------------------------------------------------------------------- */
 
-.a4-help { container-type: inline-size; }
+.a4-help-frame { container-type: inline-size; }
 .a4-help-audiences {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -429,6 +433,8 @@
 .a4-help-audience.is-website-creator::before { background-color: var(--a4-chart-7); }
 .a4-help-audience.is-supporter::before { background-color: var(--a4-chart-4); }
 .a4-help-audience.is-sponsor::before { background-color: var(--a4-chart-5); }
+.a4-help-audience.is-government::before { background-color: var(--a4-chart-7); }
+.a4-help-audience.is-businesses::before { background-color: var(--a4-chart-3); }
 .a4-help-audience.is-press::before { background-color: var(--a4-chart-6); }
 .a4-help-audience.is-trainer::before { background-color: var(--a4-chart-2); }
 .a4-help-audience:hover,
@@ -712,7 +718,7 @@
 /* ---- small windows ------------------------------------------------------------------------------------------- */
 
 @media (max-width: 600px) {
-  .a4-help { gap: var(--a4-space-4); }
+  .a4-help-frame { gap: var(--a4-space-4); }
   .a4-help-hero { padding: var(--a4-space-5) var(--a4-space-4); }
   .a4-help-hero h1 { font-size: var(--a4-text-2xl); }
   .a4-help-hero-sub { font-size: var(--a4-text-m); }
