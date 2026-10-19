@@ -72,6 +72,8 @@ See [Maintenance mode](maintenance-mode.md).
 
 Run these on a schedule as the site's user and alert on a non-zero exit status:
 
+![Setup, System information: PHP, database and server with health checks](../../images/hosting/system-information.webp)
+
 ```bash
 ./console exp:systeminfo --json                      # exit 1 when a health check fails
 php bin/php/cache.php status --json --allow-root-user   # ends in PASS

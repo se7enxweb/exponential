@@ -33,6 +33,8 @@ before they go public, departments that edit only their own pages, a review step
 | Policies limit by | `Section` | `StateGroup_<group identifier>` |
 | Override match | `Match[section_identifier]` | `Match[state_identifier]` |
 
+![The Details tab of an item with its section and object states, and the Set buttons to change them](../../images/creators/details-tab-section.webp)
+
 Neither is a place in the tree or a siteaccess: an area of the tree is assigned to a section, and objects keep the
 section when moved, unless reassigned.
 
@@ -45,6 +47,8 @@ section when moved, unless reassigned.
 | 3 | Media | `media` | the media library |
 | 4 | Setup | `setup` | setup objects |
 | 5 | Design | `design` | design objects |
+
+![Setup, Sections: the sections of the installation with their identifier and navigation part](../../images/creators/sections-list.webp)
 
 The Anonymous role reads Section Standard only. That one limitation keeps everything else away from visitors
 ([2. The sections of a new installation](../../../guides/sections.md#2-the-sections-of-a-new-installation)).
@@ -75,6 +79,8 @@ one **Assign content** to Standard.
 2. Give Anonymous `content/read` limited to Section( Standard ) **and** `StateGroup_review` ( Approved ).
 3. Give authors `state/assign` with `NewState` ( In review ); give reviewers `state/assign` with `NewState` ( Approved ).
 4. Authors publish and set In review; reviewers check and set Approved; only then visitors see the page.
+
+![Setup, States: the object state groups and their states](../../images/creators/state-groups.webp)
 
 The full worked example is [9. A worked example: a review workflow](../../../guides/object-states.md#9-a-worked-example-a-review-workflow).
 For an approval step before publishing (not after), see the approve event of workflows

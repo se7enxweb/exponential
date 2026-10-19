@@ -114,7 +114,7 @@ You do not need to install these; they come with Exponential:
 - **A database client** for the database your installation uses, to look at tables while you learn. Read, do not
   write: the content tables are maintained by the kernel and break when edited by hand.
 - **PHPStan and PHP_CodeSniffer**: the kernel's own quality checks use them (`phpstan.neon.dist`, `phpcs.xml.dist`
-  in the root). See Tests for extensions.
+  in the root). See [Tests for extensions](../part-3-extension-developer/tests-for-extensions.md).
 - **A GitHub account**, once you want to publish or contribute. Installing needs none.
 
 ## Check everything at once

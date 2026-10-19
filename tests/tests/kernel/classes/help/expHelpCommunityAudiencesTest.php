@@ -43,10 +43,12 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
         'sponsor'         => array( 'Sponsors', 'doc/help/sponsors/why-sponsor.md', 'sponsorship' ),
         'trainer'         => array( 'Trainers', 'doc/help/trainers/editors/lesson-1.md', 'training' ),
         'press'           => array( 'Press, media and influencers', 'doc/help/press/fact-sheet.md', 'press-media' ),
+        'businesses'      => array( 'Businesses', 'doc/help/businesses/why-exponential.md', 'business-solutions' ),
+        'government'      => array( 'Governments', 'doc/help/government/accessibility.md', 'public-sector' ),
     );
     const CATEGORIES = array( 'partnership', 'advocacy', 'theme-design', 'templates', 'extension-development', 'theme-extensions',
                               'theme-distribution', 'theme-sales', 'theme-lifecycle', 'hosting', 'app-creation',
-                              'website-creation', 'supporting', 'sponsorship', 'training', 'press-media', 'project' );
+                              'website-creation', 'supporting', 'sponsorship', 'training', 'press-media', 'project', 'build-two-ways', 'business-solutions', 'public-sector' );
     const CATALOGUES = array( 'ara-SA', 'cro-HR', 'cze-CZ', 'dan-DK', 'dut-NL', 'eng-US', 'esl-ES', 'esl-MX', 'fre-FR', 'ger-DE',
                               'heb-IL', 'ita-IT', 'lat-VA', 'nor-NO', 'pol-PL', 'por-BR', 'swe-SE', 'tlh-QO', 'tur-TR', 'ukr-UA',
                               'untranslated' );
@@ -78,7 +80,7 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
         $audience = new expHelpAudience();
         $ids = array_keys( $audience->audiences() );
         $this->assertSame( array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing' ), array_slice( $ids, 0, 6 ) );
-        $this->assertSame( array_keys( self::AUDIENCES ), array_slice( $ids, 6, 10 ) );
+        $this->assertSame( array_keys( self::AUDIENCES ), array_slice( $ids, 6, count( self::AUDIENCES ) ) );
         $components = array( self::read( 'design/admin4/stylesheets/components.css' ), self::read( 'design/admin/stylesheets/components.css' ) );
         foreach ( self::AUDIENCES as $id => $info )
         {
@@ -116,7 +118,7 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
         }
         foreach ( array( 'partners' => 'partner', 'advocates' => 'advocate', 'designers' => 'designer', 'hosting' => 'hosting',
                          'creators/app-creators' => 'app-creator', 'creators/website-creators' => 'website-creator',
-                         'supporters' => 'supporter', 'sponsors' => 'sponsor', 'trainers' => 'trainer', 'press' => 'press',
+                         'supporters' => 'supporter', 'sponsors' => 'sponsor', 'trainers' => 'trainer', 'press' => 'press', 'businesses' => 'businesses', 'government' => 'government',
                          'extension-development' => 'developer,designer' ) as $folder => $ids )
             $this->assertMatchesRegularExpression( '#^PathRules\[\]=doc/help/' . preg_quote( $folder, '#' ) . '/\*;' . $ids . '\s*$#m', $section );
     }
@@ -198,7 +200,7 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
         foreach ( self::AUDIENCES as $id => $info )
         {
             $this->assertMatchesRegularExpression( "#\\\$help_audience_ids = array\\([^)]*'" . $id . "'#", $dashboard, $id );
-            $this->assertMatchesRegularExpression( "#'" . $id . "', hash\\( 'icon', '[a-z0-9-]+', 'name', '" . preg_quote( $info[0], '#' ) . "'\\|i18n\\( 'kernel/exphelp' \\), 'text', '[^']+'\\|i18n\\( 'kernel/exphelp' \\)#", $dashboard, $id );
+            $this->assertMatchesRegularExpression( "#'" . $id . "', hash\\( 'icon', '[a-z0-9-]+', 'name', '" . preg_quote( $info[0], '#' ) . "'\\|i18n\\( 'kernel/exphelp' \\), 'text', '(?:[^'\\\\]|\\\\.)+'\\|i18n\\( 'kernel/exphelp' \\)#", $dashboard, $id );
             $this->assertStringContainsString( "'" . $id . "', '" . $info[0] . "'|i18n( 'kernel/exphelp' )", $search, $id );
             $this->assertStringContainsString( "{case match='" . $id . "'}{'" . $info[0] . "'|i18n( 'kernel/exphelp' )}{/case}", $meta, $id );
             foreach ( array( '.a4-help-tile.is-' . $id . ' {', '.a4-help-pill.is-' . $id . ' {', '.a4-help-audience.is-' . $id . '::before {' ) as $selector )
@@ -207,7 +209,7 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
         foreach ( array( $dashboard, $search, $meta ) as $tpl )
             $this->assertDoesNotMatchRegularExpression( '/<style|style\s*=|<script|\son[a-z]+\s*=/i', $tpl );
         preg_match_all( '/^\.a4-help-[a-z-]+\.is-(?:' . implode( '|', array_map( 'preg_quote', array_keys( self::AUDIENCES ) ) ) . ')[^{]*\{([^}]*)\}/m', $css, $m );
-        $this->assertCount( 30, $m[1] );
+        $this->assertCount( 3 * count( self::AUDIENCES ), $m[1] );
         foreach ( $m[1] as $rule )
             $this->assertDoesNotMatchRegularExpression( '/#[0-9a-f]{3,8}\b|rgba?\(|\d+px/i', $rule );
     }
@@ -224,9 +226,9 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
         $dashboard = self::read( 'design/admin4/templates/exphelp/dashboard.tpl' );
         foreach ( array_keys( self::AUDIENCES ) as $id )
         {
-            $this->assertMatchesRegularExpression( "#'" . $id . "', hash\\( 'icon', [^\n]*?'text', '([^']+)'\\|i18n#", $dashboard );
-            preg_match( "#'" . $id . "', hash\\( 'icon', [^\n]*?'text', '([^']+)'\\|i18n#", $dashboard, $m );
-            $sources[] = $m[1];
+            $this->assertMatchesRegularExpression( "#'" . $id . "', hash\\( 'icon', [^\n]*?'text', '((?:[^'\\\\]|\\\\.)+)'\\|i18n#", $dashboard );
+            preg_match( "#'" . $id . "', hash\\( 'icon', [^\n]*?'text', '((?:[^'\\\\]|\\\\.)+)'\\|i18n#", $dashboard, $m );
+            $sources[] = stripslashes( $m[1] );
         }
         if ( class_exists( Search::class ) && class_exists( 'ezpI18n' ) )
             foreach ( self::CATEGORIES as $category )
@@ -239,7 +241,8 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
             $context = substr( $ts, $start, strpos( $ts, '</context>', $start ) - $start );
             foreach ( $sources as $source )
             {
-                $pattern = '#<source>' . preg_quote( htmlspecialchars( $source, ENT_NOQUOTES | ENT_XML1 ), '#' ) . '</source>\s*<translation'
+                // an apostrophe is written as is or as &apos;
+                $pattern = '#<source>' . str_replace( "'", "(?:'|&apos;)", preg_quote( htmlspecialchars( $source, ENT_NOQUOTES | ENT_XML1 ), '#' ) ) . '</source>\s*<translation'
                          . ( $lang === 'untranslated' ? '[^>]*>' : '>[^<]+' ) . '</translation>#';
                 $this->assertMatchesRegularExpression( $pattern, $context, $lang . ': ' . $source );
             }

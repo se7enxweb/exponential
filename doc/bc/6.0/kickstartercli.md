@@ -129,9 +129,9 @@ php bin/php/console exp:kickstarter run --force
 
 ### Remote package handling
 
-`exp:kickstarter run` is designed to install the site package from the remote package repository configured in `package.ini` (e.g. `https://exponential.packages.exponential.earth/exponential/6.0/6.0.14/index.xml`). The remote `index.xml` lists packages with a `version` attribute, but that attribute does **not** match the version reported by the package's own `package.xml`.
+`exp:kickstarter run` is designed to install the site package from the remote package repository configured in `package.ini` (e.g. `https://exponential.packages.exponential.earth/exponential/6.0/6.0.15/index.xml`). The remote `index.xml` lists packages with a `version` attribute. Up to 2026-10-19 that attribute did **not** match the version reported by the package's own `package.xml`; since then the 6.0.15 index lists the 7x site packages and `cjw_multisite` with exactly the text `eZPackage::getVersion()` returns (`6.0-15-stable`).
 
-For example, `sevenx_site` in the remote index has `version="1.0.0-0"`, while the downloaded `.ezpkg` contains:
+For example, `sevenx_site` in the remote index had `version="1.0.0-0"`, while the downloaded `.ezpkg` contained:
 
 ```xml
 <version>6.0.10-stable</version>
@@ -141,7 +141,7 @@ For example, `sevenx_site` in the remote index has `version="1.0.0-0"`, while th
 </version>
 ```
 
-So `eZPackage::getVersion()` returns `6.0-10-stable`. A naive `version_compare('1.0.0-0', '6.0-10-stable')` would decide the local copy is newer and skip the download. This is an unfortunate API data convention that the kickstart workflow has to accept.
+So `eZPackage::getVersion()` returned `6.0-10-stable`. A naive `version_compare('1.0.0-0', '6.0-10-stable')` would decide the local copy is newer and skip the download. The kickstart workflow does not rely on the index version either way.
 
 When `kickstart.ini` has a `[site_types]` section, `eZStepSiteTypes::createSitePackagesList()` sees `hasKickstartData()` is true and keeps the remote entry (with its URL) even if a local copy exists, so the version comparison above cannot hide the package. `eZStepSiteTypes::init()` then calls `downloadAndImportPackage()` with `forceDownload=false`: a site package that is already in `var/storage/packages/` is used as it is, and only a missing one is downloaded. `downloadDependantPackages()` checks each required dependency against its `min-version` and downloads only missing or older packages, using the remote `index.xml` to obtain the URLs. To install a newer copy of a package that is already there, remove the local copy first.
 
@@ -514,7 +514,7 @@ No. `DatabaseChoice` and `DatabaseInit` still test the connection. But no data i
 
 ### Why does the remote package index use a different version?
 
-The remote `index.xml` uses a simple version like `1.0.0-0`, but the actual `.ezpkg` file contains `6.0.10-stable`. `eZPackage::getVersion()` returns `6.0-10-stable`. A plain version comparison would think the local copy is newer, so kickstart mode always keeps the remote entry.
+It no longer does for the 7x site packages and `cjw_multisite`: since 2026-10-19 the 6.0.15 index lists them as `6.0-15-stable`, the text `eZPackage::getVersion()` returns for their `package.xml` (before, `1.0.0-0` and `6.0.15-0`). Other entries still carry versions of their own, so kickstart mode keeps the remote entry whatever the comparison says.
 
 ### Does this break the normal web setup wizard?
 

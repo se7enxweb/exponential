@@ -110,7 +110,7 @@ eZDebug::writeError( 'Could not load node ' . $nodeID, __METHOD__ );
 Use `__METHOD__` as the label: the report then names the class and method.
 
 From a template, `{debug-log var=$node msg='node in my template'}` writes a value into the debug report (see
-Debugging templates).
+[Debugging templates](../part-2-builder/debugging-templates.md)).
 
 ## Writing your own log file
 
@@ -133,7 +133,7 @@ The file appears under `var/log/`. Never write personal data, passwords or keys 
 4. Add `eZDebug::writeDebug()` lines around the code you suspect; reload; read.
 5. When you understand it, remove the debug lines, fix the code, and check that the log stays quiet.
 
-Debugging extensions goes further: class loading, autoloads,
+[Debugging extensions](../part-3-extension-developer/debugging-extensions.md) goes further: class loading, autoloads,
 caches and the RAD health check.
 
 ## Related pages
@@ -141,6 +141,6 @@ caches and the RAD health check.
 - Previous: [Learning from an extension, step by step](learning-from-an-extension-step-by-step.md)
 - Next: [Asking the community for help](asking-the-community.md)
 - [The Exp Debug bar](../../../bc/6.0/debug-bar.md)
-- eZDebug and logging
+- [eZDebug and logging](../part-8-reference/ezdebug-and-logging.md)
 - [When something goes wrong](../../when-something-goes-wrong.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

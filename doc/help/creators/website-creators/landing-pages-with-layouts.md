@@ -45,6 +45,8 @@ From [The five ideas you need](../../../bc/6.0/LAYOUTS.md#the-five-ideas-you-nee
 - Permissions: the `explayouts` module's policies; at least `explayouts/read`
   ([Permissions](../../../bc/6.0/LAYOUTS.md#permissions)).
 
+![The Layouts tab: the layouts of the site with their type, status and the pages that use them](../../images/creators/layouts-dashboard.webp)
+
 ## A campaign page from scratch
 
 1. **Create the content page.** Create a landing page object (for example of class Landing page) where the campaign
