@@ -71,9 +71,9 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 | Sovereignty (`sovereignty/`) | Self-hosting, data location, open-source licensing and procurement, avoiding vendor lock-in |
 | Building public-service sites (`building/`) | Service catalogs, forms, citizen accounts, news and alerts, events, documents, search, maps, newsletters, multi-site, intranets, extranets |
 | Operations (`operations/`) | Hosting on-premise and in the government cloud, availability, backups, monitoring, incidents, upgrades, change management, staff roles, editorial workflows |
-| Procurement and lifecycle (`procurement/`) | Requirements, tender templates, evaluation, total cost of ownership, exit plans, training, the product lifecycle |
-| Tasks (`tasks/`) | Hundreds of step-by-step procedures: publish a council meeting agenda, add a service page with an accessible form, set up a department subsite, translate a page, archive last year's notices ... |
-| Checklists, FAQ and glossary | Go-live, accessibility, security, privacy and readiness checklists; answers to common questions; terms |
+| [Procurement and lifecycle](procurement/README.md) | Requirements, tender templates, evaluation, total cost of ownership, exit plans, training, the product lifecycle |
+| [Tasks](tasks/README.md) | Hundreds of step-by-step procedures: publish a council meeting agenda, add a service page with an accessible form, set up a department subsite, translate a page, archive last year's notices ... |
+| [Checklists](checklists/README.md), [FAQ](faq/README.md) and [glossary](glossary/README.md) | Go-live, accessibility, security, privacy and readiness checklists; answers to common questions; terms |
 
 Sections shown with their folder name in plain text are being written and will be linked from here as they are
 published.
@@ -93,14 +93,14 @@ published.
 
 | If you are ... | Start with |
 |---|---|
-| a procurement officer or project manager | Procurement and lifecycle (`procurement/`), then the requirements and evaluation pages it lists |
+| a procurement officer or project manager | [Procurement and lifecycle](procurement/README.md), then the requirements and evaluation pages it lists |
 | a head of digital or web manager | this page, Levels of government (`levels/`) for your kind of organization, then Operations (`operations/`) |
 | an accessibility coordinator | [Accessibility standards](../../standards/accessibility.md), then the accessibility section of this help |
 | an information security officer | [Security standards](../../standards/security.md), [Security hardening](../security-hardening.md) |
 | a data protection officer | [Privacy standards](../../standards/privacy.md) |
 | an IT operations team | Operations (`operations/`) and the [hosting help](../hosting/hosting-companies-start-here.md), which covers servers in depth |
-| an editor | the tasks section of this help, and [Editing content](../editing-content.md) |
-| a trainer | [Trainers: start here](../trainers/trainers-start-here.md) and the training pages of the procurement section |
+| an editor | the [tasks](tasks/README.md), and [Editing content](../editing-content.md) |
+| a trainer | [Trainers: start here](../trainers/trainers-start-here.md) and [Training for a public body](procurement/training/README.md) |
 | a website builder or supplier | [Website creators: start here](../creators/website-creators/website-creators-start-here.md) |
 
 ## Your first month
@@ -116,7 +116,7 @@ published.
    Levels of government (`levels/`): content model, sections and roles.
 4. **Week 4: plan operations and people.** Read Operations (`operations/`) and decide who hosts, who
    backs up, who patches, who approves content and who trains editors
-   (the training pages of the procurement section).
+   ([Training for a public body](procurement/training/README.md)).
 
 ## Related sections of the help
 
