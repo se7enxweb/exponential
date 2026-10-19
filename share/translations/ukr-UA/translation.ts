@@ -72980,6 +72980,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
         <translation>Exponential для органів влади та державних установ: доступність, приватність, безпека, відкритий код, закупівлі та довгострокова підтримка.</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Клієнти</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Керуйте своїм сайтом на Exponential: команда й щоденна робота, торгівля, супровід разом із провайдером, зростання та користь.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Успіх клієнтів</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Для організацій і людей, які ведуть власний сайт на Exponential: команда, публікації, торгівля, супровід, зростання й партнери.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

@@ -73026,6 +73026,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
         <translation>Exponential לממשלות ולגופים ציבוריים: נגישות, פרטיות, אבטחה, קוד פתוח, רכש ותחזוקה לטווח ארוך.</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>לקוחות</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>נהלו את האתר שלכם ב-Exponential: הצוות והעבודה היומיומית, מסחר, תחזוקה עם הספק, צמיחה והפקת ערך.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>הצלחת לקוחות</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>לארגונים ולאנשים המפעילים אתר משלהם ב-Exponential: צוות, פרסום, מסחר, תחזוקה, צמיחה ושותפים.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

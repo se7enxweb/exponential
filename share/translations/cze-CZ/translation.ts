@@ -74527,5 +74527,21 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Open or close every folder</source>
         <translation>Otevřít nebo zavřít všechny složky</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Zákazníci</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Provozujte svůj web na Exponential: tým a každodenní práce, obchod, údržba s poskytovatelem, růst a skutečný přínos.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Úspěch zákazníků</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Pro organizace a lidi, kteří provozují vlastní web na Exponential: tým, publikování, obchod, údržba, růst a partneři.</translation>
+    </message>
 </context>
 </TS>

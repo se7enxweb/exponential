@@ -74470,5 +74470,21 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Open or close every folder</source>
         <translation>Alle mappen openen of sluiten</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Klanten</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Beheer de site die u op Exponential hebt: uw team en het dagelijkse werk, commerce, onderhoud met uw leverancier, groei en de waarde die het oplevert.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Klantsucces</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Voor organisaties en mensen die hun eigen site op Exponential beheren: team, publiceren, commerce, onderhoud, groei en partners.</translation>
+    </message>
 </context>
 </TS>

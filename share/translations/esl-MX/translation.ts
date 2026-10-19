@@ -77221,6 +77221,22 @@ Gracias por la retroalimentación</translation>
         <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
         <translation>Exponential para gobiernos y organismos públicos: accesibilidad, privacidad, seguridad, código abierto, adquisiciones y mantenimiento a largo plazo.</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Clientes</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Administra el sitio que ya tienes en Exponential: tu equipo y el trabajo diario, el comercio, el mantenimiento con tu proveedor, el crecimiento y el valor que obtienes.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Éxito del cliente</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Para organizaciones y personas que administran su propio sitio en Exponential: equipo, publicación, comercio, mantenimiento, crecimiento y socios.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

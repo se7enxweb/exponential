@@ -73921,5 +73921,21 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Open or close every folder</source>
         <translation>Åbn eller luk alle mapper</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Kunder</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Driv det website, du har på Exponential: dit team og det daglige arbejde, handel, vedligeholdelse med din leverandør, vækst og reel værdi.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Kundesucces</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Til organisationer og personer, der driver deres eget website på Exponential: team, publicering, handel, vedligeholdelse, vækst og partnere.</translation>
+    </message>
 </context>
 </TS>

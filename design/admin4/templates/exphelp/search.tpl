@@ -12,7 +12,7 @@
    next, from, to, total, pages of number, url, current), help_category (id, name, icon, count, intro) or false,
    help_audiences, help_categories, help_types (id => name, count), help_i18n_json. *}
 {def $help_ctx = 'kernel/exphelp'
-     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing', 'partner', 'advocate', 'designer', 'hosting', 'app-creator', 'website-creator', 'supporter', 'sponsor', 'trainer', 'press', 'businesses', 'government' )
+     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing', 'partner', 'advocate', 'designer', 'hosting', 'app-creator', 'website-creator', 'supporter', 'sponsor', 'trainer', 'press', 'businesses', 'government', 'customer' )
      $help_audience_names = hash( 'editor', 'Editors'|i18n( 'kernel/exphelp' ), 'admin', 'Administrators'|i18n( 'kernel/exphelp' ),
                                   'developer', 'Developers'|i18n( 'kernel/exphelp' ), 'user', 'End users'|i18n( 'kernel/exphelp' ),
                                   'project-manager', 'Project managers'|i18n( 'kernel/exphelp' ), 'sales-marketing', 'Sales & marketing'|i18n( 'kernel/exphelp' ),
@@ -24,11 +24,12 @@
                                   'website-creator', 'Website creators'|i18n( 'kernel/exphelp' ),
                                   'supporter', 'Supporters'|i18n( 'kernel/exphelp' ),
                                   'sponsor', 'Sponsors'|i18n( 'kernel/exphelp' ),
+                                  'customer', 'Customers'|i18n( 'kernel/exphelp' ),
                                   'government', 'Governments'|i18n( 'kernel/exphelp' ),
                                   'businesses', 'Businesses'|i18n( 'kernel/exphelp' ),
                                   'press', 'Press, media and influencers'|i18n( 'kernel/exphelp' ),
                                   'trainer', 'Trainers'|i18n( 'kernel/exphelp' ) )
-     $help_audience_icons = hash( 'editor', 'pencil-square', 'admin', 'gear', 'developer', 'code-square', 'user', 'person', 'project-manager', 'diagram-3', 'sales-marketing', 'graph-up-arrow', 'partner', 'building', 'advocate', 'people', 'designer', 'palette', 'hosting', 'database', 'app-creator', 'phone', 'website-creator', 'globe', 'supporter', 'star', 'sponsor', 'piggy-bank', 'government', 'bank', 'businesses', 'briefcase', 'press', 'megaphone', 'trainer', 'easel' )
+     $help_audience_icons = hash( 'editor', 'pencil-square', 'admin', 'gear', 'developer', 'code-square', 'user', 'person', 'project-manager', 'diagram-3', 'sales-marketing', 'graph-up-arrow', 'partner', 'building', 'advocate', 'people', 'designer', 'palette', 'hosting', 'database', 'app-creator', 'phone', 'website-creator', 'globe', 'supporter', 'star', 'sponsor', 'piggy-bank', 'customer', 'person-check', 'government', 'bank', 'businesses', 'briefcase', 'press', 'megaphone', 'trainer', 'easel' )
      $help_q = cond( and( is_set( $help_search ), is_set( $help_search.query ) ), $help_search.query, '' )
      $help_browse = and( is_set( $help_search.mode ), $help_search.mode|eq( 'browse' ) )
      $help_f = cond( is_set( $help_filters ), $help_filters, hash() )
