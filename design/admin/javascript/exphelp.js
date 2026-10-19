@@ -812,14 +812,52 @@
         });
     }
 
+    /**
+     * The stored navigation state, applied before the first paint, so restoring it moves nothing (layout shift). This
+     * file is loaded in the page's head: while the page is still being parsed, a MutationObserver opens each stored
+     * folder as the parser inserts it (its callback runs before the browser draws the new nodes). It only opens: a
+     * folder the reader closed is closed in the server's tree already, unless it holds the current page, which stays
+     * open. A stored filter hides the tree's list (html.exp-help-nav-pending, help.css) until init() has applied it.
+     */
+    var PENDING = 'exp-help-nav-pending';
+    function openStored(node, open) {
+        var list = node.matches && node.matches('details[data-nav-path]') ? [node] : [];
+        if (node.querySelectorAll) { list = list.concat(arr(node.querySelectorAll('details[data-nav-path]'))); }
+        list.forEach(function (d) {
+            if (open[d.getAttribute('data-nav-path')] === true && !d.hasAttribute('open')) { d.setAttribute('open', ''); }
+        });
+    }
+    function earlyRestore() {
+        if (document.readyState !== 'loading') { return null; }
+        var st = readNav(), root = document.documentElement;
+        var opens = Object.keys(st.open).some(function (k) { return st.open[k] === true; });
+        if (st.filter !== '' && root && root.classList) { root.classList.add(PENDING); }
+        if (!opens || typeof window.MutationObserver !== 'function') { return null; }
+        var observer = new window.MutationObserver(function (records) {
+            records.forEach(function (r) { arr(r.addedNodes).forEach(function (n) { if (n.nodeType === 1) { openStored(n, st.open); } }); });
+        });
+        try { observer.observe(root, { childList: true, subtree: true }); } catch (e) { return null; }
+        return observer;
+    }
+    var earlyObserver = null;
+    function endEarly() {
+        if (earlyObserver) { earlyObserver.disconnect(); earlyObserver = null; }
+        if (document.documentElement && document.documentElement.classList) { document.documentElement.classList.remove(PENDING); }
+    }
+
     function init() {
-        if (started || !document.querySelector('[data-exphelp]')) { return; }
+        if (started || !document.querySelector('[data-exphelp]')) { endEarly(); return; }
         started = true;
         arr(document.querySelectorAll('form[data-exphelp-search]')).forEach(function (form) {
             var s = new Search(form);
             if (s.box) { searches.push(s); }
         });
-        arr(document.querySelectorAll("nav[data-exphelp-nav]")).forEach(function (nav) { setupNavFilter(nav, strings(closestRoot(nav))); });
+        try {
+            arr(document.querySelectorAll("nav[data-exphelp-nav]")).forEach(function (nav) { setupNavFilter(nav, strings(closestRoot(nav))); });
+        } finally {
+            // the tree is complete and the stored filter applied: show it, stop watching the parser
+            endEarly();
+        }
         var controls = arr(document.querySelectorAll('[data-exphelp-contents-controls]'));
         controls.forEach(function (box) { setupContentsControls(box, strings(closestRoot(box))); });
         // the contents page: an #anchor of a folder opens it (and the folders around it)
@@ -888,8 +926,9 @@
         });
     }
 
-    window.expHelp = { init: init, snippetParts: snippetParts, safeUrl: safeUrl };
+    window.expHelp = { init: init, snippetParts: snippetParts, safeUrl: safeUrl, openStored: openStored };
 
+    earlyObserver = earlyRestore();
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {

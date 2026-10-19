@@ -47,8 +47,8 @@ from the page cache (`X-Exp-Cache: HIT`) with the old blocks. Publishing in the 
 
 ## Some explayouts helper commands stop with an error
 
-**Seen:** `./console ext:explayouts:block_list <id>`, `ext:explayouts:layout_info <id>` and
-`ext:explayouts:collection_list <id>` ended with `PHP Fatal error: Uncaught Error: Class "..." not found`.
+**Seen:** `./console ext:explayouts:block_list <id>`, `layout_info`, `collection_list`, `layout_copy`,
+`layout_list`, `rule_list` and `share_create` (all `ext:explayouts:...`) ended with `PHP Fatal error: Uncaught Error: Class "..." not found`.
 
 **Work with it:** use `./console exp:layouts list` and `exp:layouts export --only=<identifier>` (the archive's
 `layouts.json` has zones, blocks, parameters and items).

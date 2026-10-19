@@ -6,10 +6,14 @@
 
 /* WHOLE PAGE */
 
+/* overflow: clip clips as hidden did but is no scroll box, so position: sticky inside the page (the help contents'
+   Expand all / Collapse all) sticks to the window, as in admin4 (admin4.css #page); display: flow-root keeps the
+   page containing its floating columns, which hidden did as a side effect. */
 #page
 {
     background: url('../../images/3/dark_back.png');
-    overflow: hidden;
+    overflow: clip;
+    display: flow-root;
     margin: 0 auto -1px;
     min-height: 100%;
 }
