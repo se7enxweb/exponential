@@ -125,5 +125,6 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 - [Website creators: start here](../creators/website-creators/website-creators-start-here.md)
 - [Application creators: start here](../creators/app-creators/app-creators-start-here.md)
 - [Partners](../partners/partners-start-here.md), for finding a support provider
+- [Businesses: start here](../businesses/businesses-start-here.md), the companion section for companies, nonprofits and associations
 - [Security hardening](../security-hardening.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
