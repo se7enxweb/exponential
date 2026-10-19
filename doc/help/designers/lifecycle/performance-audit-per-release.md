@@ -10,8 +10,8 @@ type: help
 # A performance audit for every release
 
 This page is for designers maintaining a theme. Performance degrades release by release unless measured. How to build
-a fast theme is in Theme performance and
-Measuring CLS and LCP.
+a fast theme is in [Theme performance](../theme-design/theme-performance.md) and
+[Measuring CLS and LCP](../theme-design/measuring-cls-and-lcp.md).
 
 ## What to measure
 
@@ -34,6 +34,6 @@ Measure on the test installation with the packer active, so stylesheets and scri
 
 ## Related pages
 
-- Image performance
+- [Image performance](../theme-design/image-performance.md)
 - [Benchmarking](../../../guides/benchmarking.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

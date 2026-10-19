@@ -286,7 +286,9 @@ composer update
 
 (or merge the newest release tag instead of `origin/main`). Merging keeps your own commits on `my-site`; `composer
 update`, not `composer install`, because the kernel's `composer.json` changed and your lock file has to follow it.
-[Update with Git](update-with-git.md) has the whole routine for the schedule you choose (hourly, daily, weekly,
+Always Git first (the kernel), then Composer (the extensions). [Update with Git](update-with-git.md) has the whole
+routine, on the command line (Track A) or in the administration with Git Manager and Updates and packages (Track B),
+for the schedule you choose (hourly, daily, weekly,
 monthly or only at each release), how to see what changed, and an automatic update. Moving the code is half of an
 upgrade; [Upgrading](../install/11-upgrading.md) has the database half.
 

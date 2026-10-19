@@ -14560,7 +14560,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Opslaan</translation>
+        <translation>Winkel</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74205,6 +74205,158 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Exponential financieren: wat sponsoring betaalt en hoe je 7x en de Exponential Foundation sponsort.</translation>
+    </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Hulp voor %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Zoek in de hulp voor %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Alle pagina&apos;s voor %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Alle doelgroepen</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Lees deze pagina&apos;s in deze volgorde.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Goed om te weten</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Zoeken op onderwerp</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Elke knop toont de pagina&apos;s van één onderwerp voor %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Belangrijkste pagina&apos;s</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Verwante doelgroepen</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Nieuwste commits in Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Volledige geschiedenis op GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Wat er het laatst in de broncode is veranderd: de hoofdtak van se7enxweb/exponential, door deze server uit de openbare feed gelezen.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub was zojuist niet bereikbaar. Dit zijn de commits die op %date zijn gelezen.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>De commits konden niet van GitHub worden gelezen. Open in plaats daarvan de geschiedenis op GitHub.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Merge-commits verbergen</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Ook merge-commits tonen</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Bericht</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>%from–%to van %total commits</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Nog geen commits om te tonen.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Uw sponsoring betaalt:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>Over %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Een maandelijkse sponsoring, ook een kleine, is planbaar inkomen: zij betaalt werk dat eenmalige giften niet gaande kunnen houden.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Wat sponsoring financiert</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Steun Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential is vrije software. Elke nieuwe functie, hulppagina, extensie, thema en toepassing is werk dat iemand met zijn tijd betaalt. Een doorlopende maandelijkse sponsoring, van welk bedrag ook, houdt dat werk gaande en laat het groeien.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Sponsor 7x op GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Sponsor de Exponential Foundation op GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Het bedrijf dat Exponential leidt en de eerste sponsor van het project: het ontwikkelt, ondersteunt en host het en maakt de releases.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>De non-profitorganisatie die het open-sourceproject beheert en zich inzet voor de financiering, adoptie, ondersteuning, educatie, ontwikkeling, promotie en documentatie ervan.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Maandelijkse releases en het werk dat alles draaiende houdt</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Beveiligingspatches voor de bibliotheken waarop Exponential bouwt, zoals Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Nieuwe functies die als open source aan de gemeenschap worden teruggegeven</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>De bruggen, forks en tools rond het platform</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Onderhoud van de kernbibliotheken</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Documentatie, tutorials, handleidingen en veelgestelde vragen</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Integratielagen: GraphQL, REST en Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Infrastructuur van de gemeenschap: chat, mirrors, wiki&apos;s en bronnen voor ontwikkelaars</translation>
     </message>
 </context>
 </TS>
