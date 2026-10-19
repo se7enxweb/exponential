@@ -106,6 +106,8 @@ How these were counted: [Measured steps and times](measured-steps-and-times.md).
 
 - [Two ways to build, every page](README.md)
 - [Which way: the decision table](decision-table.md)
+- [Life-cycle examples](examples/README.md): 206 tasks from planning to migration, each done both ways
+- [Build a campaign page, start to finish](build-a-campaign-page.md)
 - [Add a header menu item](add-a-header-menu-item.md)
 - [The layouts editor](../layouts-editor.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
