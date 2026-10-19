@@ -218,6 +218,9 @@ instead, so you need no write access to the project. For the kernel itself, read
 installation first: it explains the commit hook (`make hooks`) and the file manifest (`make manifest-fix`) that every
 kernel pull request keeps current.
 
+Built an extension of your own? [Contribute extensions back](contribute-extensions-back.md) shows how to publish it on
+GitHub and Packagist so every site can install it, and what the GPL requires when you hand an extension to others.
+
 Improving the documentation works the same way: these help pages are the files in `doc/` of the kernel. See
 [Free documentation](free-documentation.md) for what you may do with them.
 
