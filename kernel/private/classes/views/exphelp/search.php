@@ -366,6 +366,8 @@ class Search extends \Exponential\Runnable\ModuleView
             case 'press-media': return \ezpI18n::tr( $ctx, 'For journalists, media and influencers: facts, history, announcements, images and contacts.' );
             case 'project': return \ezpI18n::tr( $ctx, 'The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.' );
             case 'build-two-ways': return \ezpI18n::tr( $ctx, 'Two ways to build a site with Exponential: how they differ and how to choose between them.' );
+            case 'business-solutions': return \ezpI18n::tr( $ctx, 'Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.' );
+            case 'public-sector': return \ezpI18n::tr( $ctx, 'Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.' );
             case 'administration': return \ezpI18n::tr( $ctx, 'Running the site: settings, users and roles, caches, cronjobs and logs.' );
             case 'features': return \ezpI18n::tr( $ctx, 'What each feature does and how to set it up.' );
             case 'development': return \ezpI18n::tr( $ctx, 'Templates, extensions, the API and the code behind it.' );

@@ -72959,6 +72959,38 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
         <translation>Exponential Dalo&apos;taHvIS Daq chenmoHmeH cha&apos; mIw: chay&apos; pIm &apos;ej chay&apos; yIwIv.</translation>
     </message>
+    <message>
+        <source>Businesses</source>
+        <translation>malja&apos;mey</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>qum</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Exponential Dalo&apos;taHvIS ghom Daq yIDev: malja&apos;vaD nuq nob, Huch QaH je, &apos;aD, Hung, jupma&apos; wIv.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential qum Daq: lo&apos;laHghach, pegh Hung je, ngoq poSmoH je&apos;meH je, &apos;aD, Qorgh nI&apos; je.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>malja&apos;mey Exponential</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>qum Hal</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>kampa&apos;nIymey ghommey je Exponential: nuq nob, Huch, QaH, &apos;aD, Hung, jupma&apos; tlhej.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>qum ghommey je Exponential: lo&apos;laHghach, pegh, Hung, ngoq poSmoH, je&apos;meH, Qorgh nI&apos; je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

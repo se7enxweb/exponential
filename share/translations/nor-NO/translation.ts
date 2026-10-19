@@ -74447,5 +74447,37 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
         <translation>To måter å bygge et nettsted med Exponential på: hvordan de skiller seg og hvordan du velger.</translation>
     </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Bedrifter</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Offentlig sektor og myndigheter</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Kjør organisasjonens nettsted på Exponential: hva det gir en bedrift, kostnader og støtte, drift, sikkerhet og valg av partnere.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential i offentlig sektor: universell utforming, personvern og sikkerhet, åpen kildekode og anskaffelser, drift og langsiktig vedlikehold.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential for bedrifter</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Offentlig sektor</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential for bedrifter og organisasjoner: hva det tilbyr, kostnader, støtte, drift, sikkerhet og samarbeid med partnere.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential for myndigheter og offentlige virksomheter: universell utforming, personvern, sikkerhet, åpen kildekode, anskaffelser og langsiktig vedlikehold.</translation>
+    </message>
 </context>
 </TS>

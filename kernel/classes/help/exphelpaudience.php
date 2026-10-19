@@ -42,6 +42,8 @@ class expHelpAudience
     const WEBSITE_CREATOR = 'website-creator';
     const SUPPORTER = 'supporter';
     const SPONSOR = 'sponsor';
+    const GOVERNMENT = 'government';
+    const BUSINESSES = 'businesses';
     const PRESS = 'press';
     const TRAINER = 'trainer';
 
@@ -63,6 +65,8 @@ class expHelpAudience
         'sponsor'         => array( 'name' => 'Sponsors', 'icon' => 'piggy-bank' ),
         'trainer'         => array( 'name' => 'Trainers', 'icon' => 'easel' ),
         'press'           => array( 'name' => 'Press, media and influencers', 'icon' => 'megaphone' ),
+        'businesses'      => array( 'name' => 'Businesses', 'icon' => 'briefcase' ),
+        'government'      => array( 'name' => 'Governments', 'icon' => 'bank' ),
     );
 
     /** The categories, in their dashboard order, with names and icons */
@@ -94,6 +98,8 @@ class expHelpAudience
         'website-creation' => array( 'name' => 'Building websites', 'icon' => 'globe' ),
         'supporting'      => array( 'name' => 'Supporting Exponential', 'icon' => 'star' ),
         'sponsorship'     => array( 'name' => 'Sponsorship', 'icon' => 'piggy-bank' ),
+        'public-sector'   => array( 'name' => 'Public sector', 'icon' => 'bank' ),
+        'business-solutions' => array( 'name' => 'Exponential for businesses', 'icon' => 'briefcase' ),
         'press-media'     => array( 'name' => 'Press and media', 'icon' => 'megaphone' ),
         'training'        => array( 'name' => 'Training', 'icon' => 'easel' ),
         'project'         => array( 'name' => 'The Exponential project', 'icon' => 'globe' ),
@@ -133,6 +139,8 @@ class expHelpAudience
         'doc/help/creators/*;app-creator,website-creator',
         'doc/help/supporters/*;supporter',
         'doc/help/sponsors/*;sponsor',
+        'doc/help/government/*;government',
+        'doc/help/businesses/*;businesses',
         'doc/help/press/*;press',
         'doc/help/trainers/*;trainer',
         'doc/help/project/*;user,editor,admin,developer,partner,supporter',
@@ -175,6 +183,8 @@ class expHelpAudience
         'doc/help/creators/*;website-creation',
         'doc/help/supporters/*;supporting',
         'doc/help/sponsors/*;sponsorship',
+        'doc/help/government/*;public-sector',
+        'doc/help/businesses/*;business-solutions',
         'doc/help/press/*;press-media',
         'doc/help/trainers/*;training',
         'doc/help/project/*;project',
@@ -492,6 +502,8 @@ class expHelpAudience
                           'app-creators' => 'app-creator', 'application-creator' => 'app-creator',
                           'application-creators' => 'app-creator', 'website-creators' => 'website-creator',
                           'supporters' => 'supporter', 'sponsors' => 'sponsor',
+                          'governments' => 'government', 'public-sector' => 'government', 'agency' => 'government', 'agencies' => 'government',
+                          'companies' => 'businesses', 'company' => 'businesses', 'enterprise' => 'businesses', 'enterprises' => 'businesses',
                           'media' => 'press', 'journalist' => 'press', 'journalists' => 'press', 'influencer' => 'press', 'influencers' => 'press', 'press-media' => 'press',
                           'trainers' => 'trainer', 'teacher' => 'trainer', 'teachers' => 'trainer', 'instructor' => 'trainer', 'instructors' => 'trainer', 'all' => '*' );
         $wanted = array();
@@ -520,7 +532,7 @@ class expHelpAudience
      */
     public function guessAudience( $path, $intro )
     {
-        if ( preg_match( '/-(project-manager|sales-marketing|app-creator|website-creator|partner|advocate|designer|supporter|sponsor|press|trainer|editor|editors|administrator|admin|developer|user)\.[a-z]+$/', basename( $path ), $m ) )
+        if ( preg_match( '/-(project-manager|sales-marketing|app-creator|website-creator|partner|advocate|designer|supporter|sponsor|government|businesses|press|trainer|editor|editors|administrator|admin|developer|user)\.[a-z]+$/', basename( $path ), $m ) )
             return $this->audienceList( array( $m[1] ) );
         $intro = strtolower( substr( (string)$intro, 0, 600 ) );
         $found = array();

@@ -74492,5 +74492,37 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
         <translation>Två sätt att bygga en webbplats med Exponential: hur de skiljer sig och hur du väljer.</translation>
     </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Företag</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Myndigheter</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Kör organisationens webbplats på Exponential: vad det ger ett företag, kostnader och support, drift, säkerhet och val av partner.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential i offentlig sektor: tillgänglighet, integritet och säkerhet, öppen källkod och upphandling, drift och långsiktigt underhåll.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential för företag</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Offentlig sektor</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential för företag och organisationer: vad det erbjuder, kostnader, support, drift, säkerhet och samarbete med partner.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential för myndigheter och offentliga organ: tillgänglighet, integritet, säkerhet, öppen källkod, upphandling och långsiktigt underhåll.</translation>
+    </message>
 </context>
 </TS>

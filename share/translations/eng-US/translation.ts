@@ -73239,5 +73239,37 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
         <translation>Two ways to build a site with Exponential: how they differ and how to choose between them.</translation>
     </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Businesses</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Governments</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential for businesses</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Public sector</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</translation>
+    </message>
 </context>
 </TS>
