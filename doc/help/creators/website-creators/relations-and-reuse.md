@@ -107,5 +107,5 @@ confirm: a removed image leaves a gap in every article that embedded it.
 
 - [Designing your content model](designing-your-content-model.md)
 - [Choosing datatypes for your fields](choosing-datatypes.md)
-- Fetch functions: reading data in templates
+- [Fetch functions: reading data in templates](../app-creators/fetch-functions.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

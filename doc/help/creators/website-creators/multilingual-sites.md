@@ -80,7 +80,7 @@ read access to the content. They then edit only their translation
 ## Templates and interface texts
 
 - Texts written in templates go through `|i18n( 'design/mysite' )` and are translated in `.ts` files of your design
-  extension; `TextTranslation=enabled` and `Locale` choose the catalogue (Translations cookbook).
+  extension; `TextTranslation=enabled` and `Locale` choose the catalogue (the translations cookbook, `doc/examples/cookbook/translations.md`).
 - Dates and numbers follow the siteaccess's `Locale`.
 - Set `lang` on the `<html>` element from `$site.http_equiv.Content-language`.
 

@@ -12,6 +12,8 @@
  *  HG-06  every string of the part is in the eng-US and ger-DE catalogues under kernel/exphelp
  *  HG-07  the commands the page recommends are the ones that were verified (clone URL, preferred-install, keep-vcs)
  *  HG-08  help/update-with-git.md: front matter, the verified update commands per schedule, linked from the band, served
+ *  HG-09  its maintenance window in the administration: the six steps, the views and policies, the checklist, every
+ *         screenshot a webp with alt text, and no host name, server path or credential
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -203,6 +205,38 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
         @exec( 'git -C ' . escapeshellarg( self::root() ) . ' ls-files -- ' . escapeshellarg( self::UPDATE_PAGE ) . ' 2>/dev/null', $out, $rc );
         if ( $rc === 0 && $out )
             $this->assertTrue( ( new expHelpAllowlist( array( 'root' => self::root() ) ) )->allows( self::UPDATE_PAGE ) );
+    }
+
+    /** HG-09 */
+    public function testMaintenanceWindowInTheAdministration()
+    {
+        $text = self::read( self::UPDATE_PAGE );
+        $start = strpos( $text, '## Update in the administration: a maintenance window' );
+        $this->assertNotFalse( $start, 'the section exists' );
+        $end = strpos( $text, "\n## ", $start + 5 );
+        $section = substr( $text, $start, $end === false ? null : $end - $start );
+        foreach ( array( '### 1. Start the window', '### 2. Update the kernel with Git Manager',
+                         '### 3. Update the extensions with Updates and packages', '### 4. Check, update the database, clear the caches',
+                         '### 5. Check the site', '### 6. Leave the window', '**Checklist**' ) as $heading )
+            $this->assertStringContainsString( $heading, $section );
+        // the views and the policy a role needs for each step
+        foreach ( array( 'setup/maintenance', 'git_manager/dashboard', 'update/dashboard', 'update/installed', 'update/browse',
+                         'update/servers', 'update/fund', 'setup/systemupgrade', 'setup/cache', 'setup/logs',
+                         '`setup/administrate`', '`git_manager/git_manager`', '`update/ezupdate`', '`update/manage`',
+                         '`setup/setup`', '`setup/managecache`', '`setup/logs`', '`dse/dse`' ) as $name )
+            $this->assertStringContainsString( $name, $section );
+        $this->assertGreaterThanOrEqual( 9, substr_count( $section, '- [ ] ' ), 'the checklist' );
+        // every screenshot: webp below doc/help/images, with alt text, on disk
+        preg_match_all( '/!\[([^\]]*)\]\((images\/[^)]+)\)/', $section, $m, PREG_SET_ORDER );
+        $this->assertGreaterThanOrEqual( 10, count( $m ) );
+        foreach ( $m as $image )
+        {
+            $this->assertGreaterThan( 40, strlen( $image[1] ), $image[2] . ' has a describing alt text' );
+            $this->assertStringEndsWith( '.webp', $image[2] );
+            $this->assertFileExists( self::root() . '/doc/help/' . $image[2] );
+        }
+        // no host name, server path or credential of the machine the screenshots were made on
+        $this->assertDoesNotMatchRegularExpression( '/alpha\.se7enx|vhosts|\/web\/vh|github-as-7x|w612p|publishing\$/i', $text );
     }
 
     /** HG-07 */

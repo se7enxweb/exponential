@@ -68,5 +68,5 @@ staging like any other update.
 
 - [Release and upgrade planning](../../leadership/release-and-upgrade-planning.md)
 - [Maintaining your website](maintaining-your-website.md)
-- Versions and releases of your extension
+- [Versions and releases of your extension](../app-creators/versions-and-releases.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

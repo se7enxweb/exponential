@@ -83,7 +83,7 @@ image fields can require an alternative text, and text lines can trim the stored
 ## Moving classes between installations
 
 Do not rebuild classes by hand on the production site. Export them from the development installation as a package
-and import it (Content packages (.ezpkg), [Packages](../../../guides/packages.md)).
+and import it ([Content packages (.ezpkg)](../app-creators/packages-and-ezpkg.md), [Packages](../../../guides/packages.md)).
 Identifiers and remote IDs keep templates and overrides working on both sides.
 
 ## Related pages
