@@ -72736,6 +72736,250 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Every folder is closed.</source>
         <translation>Усі папки закрито.</translation>
     </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Довідка для: %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Пошук у довідці для: %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Усі сторінки для: %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Усі аудиторії</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Прочитайте ці сторінки в такому порядку.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Корисно знати</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Пошук за темою</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Кожна кнопка показує сторінки однієї теми для: %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Ключові сторінки</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Пов&apos;язані аудиторії</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Останні коміти Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Уся історія на GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Що нещодавно змінилося у вихідному коді: основна гілка se7enxweb/exponential, прочитана цим сервером з її публічної стрічки.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub зараз недоступний. Це коміти, прочитані %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Не вдалося прочитати коміти з GitHub. Відкрийте історію на GitHub.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Сховати коміти злиття</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Показати також коміти злиття</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Повідомлення</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Показано %from–%to з %total комітів</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Поки що немає комітів для показу.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Ваше спонсорство оплачує:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>Про %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Щомісячне спонсорство, навіть невелике, — це передбачуваний дохід: воно оплачує роботу, яку разові пожертви не можуть підтримувати.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Що фінансує спонсорство</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Підтримайте Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential — вільне програмне забезпечення. Кожна нова функція, сторінка довідки, розширення, тема й застосунок — це робота, яку хтось оплачує своїм часом. Постійне щомісячне спонсорство будь-якого розміру підтримує цю роботу і дає їй рости.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Підтримати 7x на GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Підтримати Фонд Exponential на GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Компанія, яка очолює Exponential, і перший спонсор проєкту: вона розробляє, підтримує й розміщує його та випускає релізи.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Неприбуткова організація, яка керує проєктом з відкритим кодом і присвячена його фінансуванню, поширенню, підтримці, навчанню, розробці, просуванню та документуванню.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Щомісячні релізи та робота, яка підтримує все в робочому стані</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Виправлення безпеки бібліотек, на яких побудовано Exponential, як-от Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Нові функції, повернені спільноті як відкритий код</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Мости, форки та інструменти навколо платформи</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Супровід основних бібліотек</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Документація, посібники, практичні інструкції та FAQ</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Рівні інтеграції: GraphQL, REST і Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Інфраструктура спільноти: чат, дзеркала, вікі та ресурси для розробників</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Тренери</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Преса, медіа та інфлюенсери</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Навчайте Exponential: курси для редакторів, адміністраторів, розробників і дизайнерів, воркшопи, вправи та оцінювання.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Пишіть і розповідайте про Exponential: факти, історія, люди, цитати, зображення та контакти.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Навчання</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Преса та медіа</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Навчання Exponential: курси, плани занять, воркшопи, вправи та оцінювання для кожної ролі.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Для журналістів, медіа та інфлюенсерів: факти, історія, оголошення, зображення та контакти.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Поверніть розширення спільноті</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Діліться розширеннями, які ви поширюєте, як вимагає GPL, щоб усі отримали користь.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Проєкт Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Проєкт Exponential: що це, його ліцензії, дорожня карта, підтримка, канали спільноти та як долучитися й підтримати.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Очистити фільтр</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Два способи створення</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Два способи створити сайт з Exponential: чим вони відрізняються і як обрати.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Бізнес</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Органи влади</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Запустіть сайт своєї організації на Exponential: що він дає бізнесу, витрати й підтримка, хостинг, безпека та вибір партнерів.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential у державному секторі: доступність, приватність і безпека, відкритий код і закупівлі, хостинг і довгострокова підтримка.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential для бізнесу</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Державний сектор</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential для компаній і організацій: що він пропонує, витрати, підтримка, хостинг, безпека та робота з партнерами.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential для органів влади та державних установ: доступність, приватність, безпека, відкритий код, закупівлі та довгострокова підтримка.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

@@ -45,6 +45,8 @@ there lets every new installation start from your work, and credits you as its a
 
 Before you send one, remove all customer content, names and credentials from it, and check the licenses of every
 image and font it contains ([Publishing a theme or design as a partner](publishing-a-theme.md#assets-and-their-licenses)).
+The repository to fork, the folder layout, the checklist and the pull request step by step:
+[Contribute your site package](../site-packages/contribute-your-site-package.md).
 
 ## Maintenance duties
 

@@ -182,6 +182,120 @@ class expDesignExtensionWizardTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "{'stylesheets/print.css'|ezdesign}", $this->template( 'page_head.tpl' ) );
     }
 
+    public function testThePageTemplatesReadTheFrontendLists()
+    {
+        $this->assertStringContainsString( "ezini( 'StylesheetSettings', 'FrontendCSSFileList', 'design.ini' )", $this->template( 'page_head.tpl' ) );
+        $this->assertStringContainsString( "ezini( 'JavaScriptSettings', 'FrontendJavaScriptList', 'design.ini' )", $this->template( 'pagelayout.tpl' ) );
+    }
+
+    /**
+     * design.ini marks CSSFileList[] and JavaScriptList[] as deprecated; the wizard writes the Frontend lists,
+     * which the generated page_head.tpl and pagelayout.tpl load.
+     */
+    public function testDesignIniUsesNoDeprecatedKeys()
+    {
+        $ini = $this->generated()['settings/design.ini.append.php'];
+
+        $this->assertMatchesRegularExpression( '/^FrontendCSSFileList\[\]=site\.css$/m', $ini );
+        $this->assertMatchesRegularExpression( '/^FrontendJavaScriptList\[\]=site\.js$/m', $ini );
+        $this->assertDoesNotMatchRegularExpression( '/^\s*CSSFileList\[\]/m', $ini );
+        $this->assertDoesNotMatchRegularExpression( '/^\s*JavaScriptList\[\]/m', $ini );
+    }
+
+    /**
+     * The folder the legacy extension installer puts the package in, by the rule of
+     * LegacyExtensionInstaller::getInstallPath(): extra.ezpublish-legacy-extension-name, else the part of the
+     * package name behind the slash.
+     */
+    private static function installerFolder( array $composer )
+    {
+        if ( isset( $composer['extra']['ezpublish-legacy-extension-name'] ) )
+            return $composer['extra']['ezpublish-legacy-extension-name'];
+        list( , $folder ) = explode( '/', $composer['name'], 2 );
+        return $folder;
+    }
+
+    public function testComposerJsonInstallsIntoAFolderNamedAfterTheExtension()
+    {
+        $composer = json_decode( $this->generated()['composer.json'], true );
+
+        $this->assertSame( 'ezpublish-legacy-extension', $composer['type'] );
+        $this->assertSame( 'acme/k1e-design-tpl', $composer['name'] );
+        $this->assertSame( self::NAME, self::installerFolder( $composer ) );
+
+        // the rule above is the installer's: it reads this key and no other
+        $installer = expRadWizardTestHelper::root() . '/vendor/se7enxweb/exponential-legacy-installer/src/eZ/Publish/Composer/LegacyExtensionInstaller.php';
+        if ( is_file( $installer ) )
+        {
+            $source = file_get_contents( $installer );
+            $this->assertStringContainsString( "\$extra['ezpublish-legacy-extension-name']", $source );
+            $this->assertStringNotContainsString( 'installer-name', $source );
+        }
+    }
+
+    public function testTheTemplateOperatorsPartWritesTheAutoloadFile()
+    {
+        $files = $this->generated();
+
+        $this->assertArrayHasKey( 'autoloads/eztemplateautoload.php', $files );
+        $this->assertArrayHasKey( 'autoloads/' . self::NAME . 'operators.php', $files );
+        $this->assertStringContainsString( "ExtensionAutoloadPath[]=" . self::NAME . "\n", $files['settings/site.ini.append.php'] );
+        expRadWizardTestHelper::assertPhpParses( $this, $files['autoloads/eztemplateautoload.php'], 'eztemplateautoload.php' );
+        expRadWizardTestHelper::assertPhpParses( $this, $files['autoloads/' . self::NAME . 'operators.php'], 'operators.php' );
+
+        // without the part, neither file
+        $settings = expDesignExtensionWizard::settings( array( 'name' => self::NAME, 'licence' => 'MIT', 'parts' => array( 'pagelayout' ) ) );
+        $this->assertArrayNotHasKey( 'autoloads/eztemplateautoload.php', expDesignExtensionWizard::files( $settings ) );
+    }
+
+    /**
+     * The extension switched on: the template engine is handed its autoloads directory, as eZTemplate::factory()
+     * does for every ExtensionAutoloadPath[], and the operator is then registered and works.
+     */
+    public function testTheOperatorIsRegisteredWhenTheExtensionIsActive()
+    {
+        $files = $this->generated();
+        $scratch = expRadWizardTestHelper::scratch( 'design-operators' );
+        try
+        {
+            mkdir( $scratch . '/autoloads' );
+            foreach ( array( 'autoloads/eztemplateautoload.php', 'autoloads/' . self::NAME . 'operators.php' ) as $path )
+                file_put_contents( $scratch . '/' . $path, $files[$path] );
+
+            // the script path in the autoload file is where the extension lives once installed
+            $definitions = ( static function ( $file )
+            {
+                $eZTemplateOperatorArray = array();
+                include $file;
+                return $eZTemplateOperatorArray;
+            } )( $scratch . '/autoloads/eztemplateautoload.php' );
+            $this->assertCount( 1, $definitions );
+            $this->assertSame( 'extension/' . self::NAME . '/autoloads/' . self::NAME . 'operators.php', $definitions[0]['script'] );
+            $this->assertSame( self::NAME . 'Operators', $definitions[0]['class'] );
+
+            // the class is loaded from the scratch copy, so the engine does not look for it under extension/
+            if ( !class_exists( self::NAME . 'Operators', false ) )
+                require $scratch . '/autoloads/' . self::NAME . 'operators.php';
+
+            $tpl = new eZTemplate();
+            $tpl->setAutoloadPathList( array( substr( $scratch, strlen( expRadWizardTestHelper::root() ) + 1 ) . '/autoloads/' ) );
+            $tpl->autoload();
+            $this->assertArrayHasKey( self::NAME . '_excerpt', $tpl->Operators );
+
+            $tpl->loadAndRegisterOperators( $tpl->Operators[self::NAME . '_excerpt'] );
+            $operator = $tpl->Operators[self::NAME . '_excerpt'];
+            $this->assertInstanceOf( self::NAME . 'Operators', $operator );
+
+            $value = '<p>A sentence that is longer than ten characters</p>';
+            $operator->modify( $tpl, self::NAME . '_excerpt', array(), '', '', $value, array( 'length' => 10 ) );
+            $this->assertSame( 'A sentence...', $value );
+        }
+        finally
+        {
+            expRadWizardTestHelper::removeTree( $scratch );
+        }
+    }
+
     private static function withoutComments( $template )
     {
         return preg_replace( '/\{\*.*?\*\}/s', '', $template );

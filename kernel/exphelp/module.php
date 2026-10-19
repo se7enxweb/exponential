@@ -6,6 +6,7 @@
  * exphelp.ini [HelpSettings] ExtensionDocDirs[]) and shows them rendered, searchable and filtered by audience.
  *
  *   exphelp/dashboard              the help start page: search, audiences, featured pages, recent changes, trackers
+ *   exphelp/audience/<audience>    the landing page of an audience (expHelpLanding)
  *   exphelp/viewer/<page id>       one page; <page id> is its path below doc/ (features/6.0/help-system.md); ?p= too
  *   exphelp/contents               every help page as one tree (all folders open), with a filter box
  *   exphelp/search/(q)/<words>/(category)/<id>/...  search, or browse without (q); format=json: the client's JSON
@@ -30,6 +31,16 @@ $ViewList['dashboard'] = array(
     'script' => 'dashboard.php',
     'functions' => array( 'read' ),
     'params' => array() );
+
+// The landing page of an audience (exphelp/audience/developer): blocks from exphelp.ini [LandingSettings]; (offset)
+// pages the developers' commit log, (merges)/1 shows merge commits too
+$ViewList['audience'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'audience.php',
+    'functions' => array( 'read' ),
+    'params' => array( 'Audience' ),
+    'unordered_params' => array( 'offset' => 'Offset',
+                                 'merges' => 'Merges' ) );
 
 // The page is the rest of the address (exphelp/viewer/features/6.0/help-system.md) or GET p
 $ViewList['viewer'] = array(

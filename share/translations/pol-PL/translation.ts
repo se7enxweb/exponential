@@ -16,7 +16,7 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>%state_name [Content object state]</source>
@@ -70,11 +70,11 @@
     </message>
     <message>
         <source>Choose this location</source>
-        <translation>Wybrać tę lokalizację</translation>
+        <translation>Wybierz tę lokalizację</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknąć</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Step 3/3: Preview of &apos;%name&apos; (%class)</source>
@@ -82,7 +82,7 @@
     </message>
     <message>
         <source>Add</source>
-        <translation>Dodać</translation>
+        <translation>Dodaj</translation>
     </message>
     <message>
         <source>File</source>
@@ -98,7 +98,7 @@
     </message>
     <message>
         <source>Upload the file</source>
-        <translation>Przesłać plik</translation>
+        <translation>Prześlij plik</translation>
     </message>
     <message>
         <source>Alternative text</source>
@@ -121,11 +121,11 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Classes inside &lt;%group_name&gt; [%class_count]</source>
@@ -133,7 +133,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -165,7 +165,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>New class</source>
@@ -173,35 +173,35 @@
     </message>
     <message>
         <source>Edit this class group.</source>
-        <translation>Edytować tę grupę klas.</translation>
+        <translation>Edytuj tę grupę klas.</translation>
     </message>
     <message>
         <source>Remove this class group.</source>
-        <translation>Usunąć tę grupę klas.</translation>
+        <translation>Usuń tę grupę klas.</translation>
     </message>
     <message>
         <source>Back to class groups.</source>
-        <translation>Wrócić do grup klas.</translation>
+        <translation>Wróć do grup klas.</translation>
     </message>
     <message>
         <source>Select class for removal.</source>
-        <translation>Zaznaczyć klasę do usunięcia.</translation>
+        <translation>Zaznacz klasę do usunięcia.</translation>
     </message>
     <message>
         <source>Create a copy of the &lt;%class_name&gt; class.</source>
-        <translation>Utworzyć kopię klasy &lt;%class_name&gt;.</translation>
+        <translation>Utwórz kopię klasy &lt;%class_name&gt;.</translation>
     </message>
     <message>
         <source>Edit the &lt;%class_name&gt; class.</source>
-        <translation>Edytować klasę &lt;%class_name&gt;.</translation>
+        <translation>Edytuj klasę &lt;%class_name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected classes from the &lt;%class_group_name&gt; class group.</source>
-        <translation>Usunąć zaznaczone klasy z grupy klas &lt;%class_group_name&gt;.</translation>
+        <translation>Usuń zaznaczone klasy z grupy klas &lt;%class_group_name&gt;.</translation>
     </message>
     <message>
         <source>Create a new class within the &lt;%class_group_name&gt; class group.</source>
-        <translation>Utworzyć nową klasę w grupie klas &lt;%class_group_name&gt;.</translation>
+        <translation>Utwórz nową klasę w grupie klas &lt;%class_group_name&gt;.</translation>
     </message>
     <message>
         <source>Use this menu to select the language you to want use then click the &quot;New class&quot; button. The item will be created within the current location.</source>
@@ -217,11 +217,11 @@
     </message>
     <message>
         <source>copy</source>
-        <translation>kopiować</translation>
+        <translation>kopiuj</translation>
     </message>
     <message>
         <source>edit</source>
-        <translation>edytować</translation>
+        <translation>edytuj</translation>
     </message>
     <message>
         <source>The classes listed in this group. A class can be in several groups; removing a class here asks first and says how many objects go with it, while a class that is also in another group only leaves this one.</source>
@@ -237,7 +237,7 @@
     </message>
     <message>
         <source>Find a class</source>
-        <translation>Znaleźć klasę</translation>
+        <translation>Znajdź klasę</translation>
     </message>
     <message>
         <source>Language of the new class</source>
@@ -253,7 +253,7 @@
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Also in</source>
@@ -273,11 +273,11 @@
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>No class on this page matches. Clear the search.</source>
@@ -390,7 +390,7 @@
     </message>
     <message>
         <source>Disable translation</source>
-        <translation>Wyłączyć tłumaczenie</translation>
+        <translation>Wyłącz tłumaczenie</translation>
     </message>
     <message>
         <source>This class does not have any attributes.</source>
@@ -398,11 +398,11 @@
     </message>
     <message>
         <source>Remove selected attributes</source>
-        <translation>Usunąć zaznaczone atrybuty</translation>
+        <translation>Usuń zaznaczone atrybuty</translation>
     </message>
     <message>
         <source>Add attribute</source>
-        <translation>Dodać atrybut</translation>
+        <translation>Dodaj atrybut</translation>
     </message>
     <message>
         <source>OK</source>
@@ -410,11 +410,11 @@
     </message>
     <message>
         <source>Apply</source>
-        <translation>Zastosować</translation>
+        <translation>Zastosuj</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Use this field to set the informal name of the class. The name field can contain whitespaces and special characters.</source>
@@ -438,23 +438,23 @@
     </message>
     <message>
         <source>Remove the selected attributes.</source>
-        <translation>Usunąć zaznaczone atrybuty.</translation>
+        <translation>Usuń zaznaczone atrybuty.</translation>
     </message>
     <message>
         <source>Add a new attribute to the class. Use the menu on the left to select the attribute type.</source>
-        <translation>Dodać nowy atrybut do klasy. Typ atrybutu wybiera się w menu po lewej stronie.</translation>
+        <translation>Dodaj nowy atrybut do klasy. Typ atrybutu wybiera się w menu po lewej stronie.</translation>
     </message>
     <message>
         <source>Store changes and exit from edit mode.</source>
-        <translation>Zapisać zmiany i zakończyć edycję.</translation>
+        <translation>Zapisz zmiany i zakończyć edycję.</translation>
     </message>
     <message>
         <source>Store changes and continue editing.</source>
-        <translation>Zapisać zmiany i kontynuować edycję.</translation>
+        <translation>Zapisz zmiany i kontynuować edycję.</translation>
     </message>
     <message>
         <source>Discard all changes and exit from edit mode.</source>
-        <translation>Odrzucić wszystkie zmiany i zakończyć edycję.</translation>
+        <translation>Odrzuć wszystkie zmiany i zakończyć edycję.</translation>
     </message>
     <message>
         <source>The class definition contains the following errors</source>
@@ -506,7 +506,7 @@
     </message>
     <message>
         <source>Select attribute for removal. Click the &quot;Remove selected attributes&quot; button to remove the selected attributes.</source>
-        <translation>Zaznaczyć atrybut do usunięcia. Przycisk „Usunąć zaznaczone atrybuty” usuwa zaznaczone atrybuty.</translation>
+        <translation>Zaznacz atrybut do usunięcia. Przycisk „Usunąć zaznaczone atrybuty” usuwa zaznaczone atrybuty.</translation>
     </message>
     <message>
         <source>Use this field to set the internal name of the attribute. The identifier will be used in templates and in PHP code. Allowed characters are letters, numbers and underscores.</source>
@@ -610,7 +610,7 @@
     </message>
     <message>
         <source>Move this attribute to the top.</source>
-        <translation>Przesunąć ten atrybut na górę.</translation>
+        <translation>Przesuń ten atrybut na górę.</translation>
     </message>
     <message>
         <source>Bottom</source>
@@ -618,7 +618,7 @@
     </message>
     <message>
         <source>Move this attribute to the bottom.</source>
-        <translation>Przesunąć ten atrybut na dół.</translation>
+        <translation>Przesuń ten atrybut na dół.</translation>
     </message>
     <message>
         <source>Position</source>
@@ -649,11 +649,11 @@
     </message>
     <message>
         <source>Contact the person who is editing the class.</source>
-        <translation>Skontaktować się z osobą edytującą klasę.</translation>
+        <translation>Skontaktuj się z osobą edytującą klasę.</translation>
     </message>
     <message>
         <source>Wait until the lock expires and try again.</source>
-        <translation>Odczekać, aż blokada wygaśnie, i spróbować ponownie.</translation>
+        <translation>Odczekaj, aż blokada wygaśnie, i spróbować ponownie.</translation>
     </message>
     <message>
         <source>Edit &lt;%class_name&gt; [Class]</source>
@@ -673,11 +673,11 @@
     </message>
     <message>
         <source>Retry</source>
-        <translation>Ponowić</translation>
+        <translation>Ponów</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>The class is temporarily locked and thus it cannot be edited by you.</source>
@@ -692,7 +692,7 @@
     <name>design/admin/class/edit_language</name>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
 </context>
 <context>
@@ -711,7 +711,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>A class group files classes so they are easy to find. Its name is shown on Setup &gt; Classes and in the class lists; renaming it changes nothing for the classes or their objects.</source>
@@ -734,7 +734,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -750,23 +750,23 @@
     </message>
     <message>
         <source>Select class group for removal.</source>
-        <translation>Zaznaczyć grupę klas do usunięcia.</translation>
+        <translation>Zaznacz grupę klas do usunięcia.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit the &lt;%class_group_name&gt; class group.</source>
-        <translation>Edytować grupę klas &lt;%class_group_name&gt;.</translation>
+        <translation>Edytuj grupę klas &lt;%class_group_name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove the selected class groups. This will also remove all classes that only exist within the selected groups.</source>
-        <translation>Usunąć zaznaczone grupy klas. Zostaną też usunięte wszystkie klasy, które istnieją tylko w zaznaczonych grupach.</translation>
+        <translation>Usuń zaznaczone grupy klas. Zostaną też usunięte wszystkie klasy, które istnieją tylko w zaznaczonych grupach.</translation>
     </message>
     <message>
         <source>New class group</source>
@@ -774,7 +774,7 @@
     </message>
     <message>
         <source>Create a new class group.</source>
-        <translation>Utworzyć nową grupę klas.</translation>
+        <translation>Utwórz nową grupę klas.</translation>
     </message>
     <message>
         <source>Recently modified classes</source>
@@ -790,7 +790,7 @@
     </message>
     <message>
         <source>Edit the &lt;%class_name&gt; class.</source>
-        <translation>Edytować klasę &lt;%class_name&gt;.</translation>
+        <translation>Edytuj klasę &lt;%class_name&gt;.</translation>
     </message>
     <message>
         <source>Class groups (%group_count)</source>
@@ -826,11 +826,11 @@
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Select %name for removal</source>
-        <translation>Zaznaczyć %name do usunięcia</translation>
+        <translation>Zaznacz %name do usunięcia</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -858,7 +858,7 @@
     </message>
     <message>
         <source>Find a group or class</source>
-        <translation>Znaleźć grupę lub klasę</translation>
+        <translation>Znajdź grupę lub klasę</translation>
     </message>
     <message>
         <source>Group name, class name or identifier.</source>
@@ -890,7 +890,7 @@
     </message>
     <message>
         <source>Open</source>
-        <translation>Otworzyć</translation>
+        <translation>Otwórz</translation>
     </message>
     <message>
         <source>and %count more</source>
@@ -965,7 +965,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Confirm class removal</source>
@@ -1032,7 +1032,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Confirm class group removal</source>
@@ -1095,11 +1095,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Cancel the removal of translations.</source>
-        <translation>Anulować usuwanie tłumaczeń.</translation>
+        <translation>Anuluj usuwanie tłumaczeń.</translation>
     </message>
     <message>
         <source>The class name, description and attribute names in these languages go. The class, its attributes and its objects stay.</source>
@@ -1126,7 +1126,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Translate the class: its name, description and attribute names in another language. Its attributes and objects stay as they are.</source>
@@ -1232,7 +1232,7 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Input did not validate</source>
@@ -1244,11 +1244,11 @@
     </message>
     <message>
         <source>Edit this class.</source>
-        <translation>Edytować tę klasę.</translation>
+        <translation>Edytuj tę klasę.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Member of class groups [%group_count]</source>
@@ -1260,23 +1260,23 @@
     </message>
     <message>
         <source>Select class group for removal.</source>
-        <translation>Zaznaczyć grupę klas do usunięcia.</translation>
+        <translation>Zaznacz grupę klas do usunięcia.</translation>
     </message>
     <message>
         <source>Remove from selected</source>
-        <translation>Usunąć z zaznaczonych</translation>
+        <translation>Usuń z zaznaczonych</translation>
     </message>
     <message>
         <source>Remove the &lt;%class_name&gt; class from the selected class groups.</source>
-        <translation>Usunąć klasę &lt;%class_name&gt; z zaznaczonych grup klas.</translation>
+        <translation>Usuń klasę &lt;%class_name&gt; z zaznaczonych grup klas.</translation>
     </message>
     <message>
         <source>Add to class group</source>
-        <translation>Dodać do grupy klas</translation>
+        <translation>Dodaj do grupy klas</translation>
     </message>
     <message>
         <source>Add the &lt;%class_name&gt; class to the group specified in the menu on the left.</source>
-        <translation>Dodać klasę &lt;%class_name&gt; do grupy wybranej w menu po lewej stronie.</translation>
+        <translation>Dodaj klasę &lt;%class_name&gt; do grupy wybranej w menu po lewej stronie.</translation>
     </message>
     <message>
         <source>The &lt;%class_name&gt; class already exists within all class groups.</source>
@@ -1292,11 +1292,11 @@
     </message>
     <message>
         <source>View template overrides for the &lt;%source_template_name&gt; template.</source>
-        <translation>Wyświetlić szablony nadpisujące szablon &lt;%source_template_name&gt;.</translation>
+        <translation>Wyświetl szablony nadpisujące szablon &lt;%source_template_name&gt;.</translation>
     </message>
     <message>
         <source>Edit the override template for the &lt;%override_name&gt; override.</source>
-        <translation>Edytować szablon nadpisujący dla nadpisania &lt;%override_name&gt;.</translation>
+        <translation>Edytuj szablon nadpisujący dla nadpisania &lt;%override_name&gt;.</translation>
     </message>
     <message>
         <source>This class does not have any class-level override templates.</source>
@@ -1324,7 +1324,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Language</source>
@@ -1340,7 +1340,7 @@
     </message>
     <message>
         <source>View translation.</source>
-        <translation>Wyświetlić tłumaczenie.</translation>
+        <translation>Wyświetl tłumaczenie.</translation>
     </message>
     <message>
         <source>Use these radio buttons to select the desired main language.</source>
@@ -1348,15 +1348,15 @@
     </message>
     <message>
         <source>Edit in &lt;%language_name&gt;.</source>
-        <translation>Edytować w języku &lt;%language_name&gt;.</translation>
+        <translation>Edytuj w języku &lt;%language_name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected languages from the list above.</source>
-        <translation>Usunąć zaznaczone języki z powyższej listy.</translation>
+        <translation>Usuń zaznaczone języki z powyższej listy.</translation>
     </message>
     <message>
         <source>There is no removable language.</source>
@@ -1364,7 +1364,7 @@
     </message>
     <message>
         <source>Set main</source>
-        <translation>Ustawić jako główny</translation>
+        <translation>Ustaw jako główny</translation>
     </message>
     <message>
         <source>Default sorting of children</source>
@@ -1376,7 +1376,7 @@
     </message>
     <message>
         <source>Hide class groups.</source>
-        <translation>Ukryć grupy klas.</translation>
+        <translation>Ukryj grupy klas.</translation>
     </message>
     <message>
         <source>Class groups</source>
@@ -1384,11 +1384,11 @@
     </message>
     <message>
         <source>Show class groups.</source>
-        <translation>Pokazać grupy klas.</translation>
+        <translation>Pokaż grupy klas.</translation>
     </message>
     <message>
         <source>Hide override templates.</source>
-        <translation>Ukryć szablony nadpisujące.</translation>
+        <translation>Ukryj szablony nadpisujące.</translation>
     </message>
     <message>
         <source>Override templates</source>
@@ -1396,11 +1396,11 @@
     </message>
     <message>
         <source>Show override templates.</source>
-        <translation>Pokazać szablony nadpisujące.</translation>
+        <translation>Pokaż szablony nadpisujące.</translation>
     </message>
     <message>
         <source>Hide available translations.</source>
-        <translation>Ukryć dostępne tłumaczenia.</translation>
+        <translation>Ukryj dostępne tłumaczenia.</translation>
     </message>
     <message>
         <source>Translations</source>
@@ -1408,7 +1408,7 @@
     </message>
     <message>
         <source>Show available translations.</source>
-        <translation>Pokazać dostępne tłumaczenia.</translation>
+        <translation>Pokaż dostępne tłumaczenia.</translation>
     </message>
     <message>
         <source>Select a group that the &lt;%class_name&gt; class should be added to.</source>
@@ -1508,7 +1508,7 @@
     </message>
     <message>
         <source>Show on this page</source>
-        <translation>Pokazać na tej stronie</translation>
+        <translation>Pokaż na tej stronie</translation>
     </message>
 </context>
 <context>
@@ -1560,7 +1560,7 @@
     </message>
     <message>
         <source>Edit the object</source>
-        <translation>Edytować obiekt</translation>
+        <translation>Edytuj obiekt</translation>
     </message>
     <message>
         <source>The content object %1 was not accepted but will be available as a draft for the author.</source>
@@ -1572,15 +1572,15 @@
     </message>
     <message>
         <source>Add Comment</source>
-        <translation>Dodać komentarz</translation>
+        <translation>Dodaj komentarz</translation>
     </message>
     <message>
         <source>Approve</source>
-        <translation>Zatwierdzić</translation>
+        <translation>Zatwierdź</translation>
     </message>
     <message>
         <source>Deny</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -1719,7 +1719,7 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>There are no bookmarks in the list.</source>
@@ -1727,31 +1727,31 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select bookmark for removal.</source>
-        <translation>Zaznaczyć zakładkę do usunięcia.</translation>
+        <translation>Zaznacz zakładkę do usunięcia.</translation>
     </message>
     <message>
         <source>Edit &lt;%bookmark_name&gt;.</source>
-        <translation>Edytować &lt;%bookmark_name&gt;.</translation>
+        <translation>Edytuj &lt;%bookmark_name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected bookmarks.</source>
-        <translation>Usunąć zaznaczone zakładki.</translation>
+        <translation>Usuń zaznaczone zakładki.</translation>
     </message>
     <message>
         <source>Add items</source>
-        <translation>Dodać elementy</translation>
+        <translation>Dodaj elementy</translation>
     </message>
     <message>
         <source>Add items to your personal bookmark list.</source>
-        <translation>Dodać elementy do osobistej listy zakładek.</translation>
+        <translation>Dodaj elementy do osobistej listy zakładek.</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -1807,7 +1807,7 @@
     </message>
     <message>
         <source>Drag to arrange, or use the up and down arrow keys</source>
-        <translation>Przeciągnąć, aby uporządkować, lub użyć klawiszy strzałek w górę i w dół</translation>
+        <translation>Przeciągnij, aby uporządkować, lub użyć klawiszy strzałek w górę i w dół</translation>
     </message>
     <message>
         <source>%count bookmarks, with the folders inside</source>
@@ -1835,7 +1835,7 @@
     </message>
     <message>
         <source>Create folder</source>
-        <translation>Utworzyć folder</translation>
+        <translation>Utwórz folder</translation>
     </message>
     <message>
         <source>Folder path</source>
@@ -1855,7 +1855,7 @@
     </message>
     <message>
         <source>Rename</source>
-        <translation>Zmienić nazwę</translation>
+        <translation>Zmień nazwę</translation>
     </message>
     <message>
         <source>New name</source>
@@ -1867,7 +1867,7 @@
     </message>
     <message>
         <source>Save name</source>
-        <translation>Zapisać nazwę</translation>
+        <translation>Zapisz nazwę</translation>
     </message>
     <message>
         <source>Move</source>
@@ -1875,7 +1875,7 @@
     </message>
     <message>
         <source>Put this folder inside</source>
-        <translation>Umieścić ten folder w</translation>
+        <translation>Umieść ten folder w</translation>
     </message>
     <message>
         <source>Its bookmarks and folders move with it.</source>
@@ -1895,15 +1895,15 @@
     </message>
     <message>
         <source>Move up</source>
-        <translation>Przesunąć w górę</translation>
+        <translation>Przesuń w górę</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Przesunąć w dół</translation>
+        <translation>Przesuń w dół</translation>
     </message>
     <message>
         <source>Remove folder</source>
-        <translation>Usunąć folder</translation>
+        <translation>Usuń folder</translation>
     </message>
     <message>
         <source>What happens to what is inside?</source>
@@ -1911,7 +1911,7 @@
     </message>
     <message>
         <source>Keep what is inside: it moves to %target (bookmarks: %count, folders: %folders).</source>
-        <translation>Zachować zawartość: zostanie przeniesiona do %target (zakładki: %count, foldery: %folders).</translation>
+        <translation>Zachowaj zawartość: zostanie przeniesiona do %target (zakładki: %count, foldery: %folders).</translation>
     </message>
     <message>
         <source>the top level</source>
@@ -1919,7 +1919,7 @@
     </message>
     <message>
         <source>Remove everything inside with it (bookmarks: %all, folders: %folders).</source>
-        <translation>Usunąć razem z nim całą zawartość (zakładki: %all, foldery: %folders).</translation>
+        <translation>Usuń razem z nim całą zawartość (zakładki: %all, foldery: %folders).</translation>
     </message>
     <message>
         <source>Only bookmarks are removed, never the items they point to.</source>
@@ -1927,19 +1927,19 @@
     </message>
     <message>
         <source>Find bookmarks</source>
-        <translation>Znaleźć zakładki</translation>
+        <translation>Znajdź zakładki</translation>
     </message>
     <message>
         <source>Find a bookmark</source>
-        <translation>Znaleźć zakładkę</translation>
+        <translation>Znajdź zakładkę</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>Searches the names, types, locations and folders of all your bookmarks.</source>
@@ -1983,7 +1983,7 @@
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Items you add go into this folder.</source>
@@ -2015,7 +2015,7 @@
     </message>
     <message>
         <source>Search all bookmarks</source>
-        <translation>Przeszukać wszystkie zakładki</translation>
+        <translation>Przeszukaj wszystkie zakładki</translation>
     </message>
     <message>
         <source>You have no bookmarks yet.</source>
@@ -2059,11 +2059,11 @@
     </message>
     <message>
         <source>Select this bookmark.</source>
-        <translation>Zaznaczyć tę zakładkę.</translation>
+        <translation>Zaznacz tę zakładkę.</translation>
     </message>
     <message>
         <source>Select %name</source>
-        <translation>Zaznaczyć %name</translation>
+        <translation>Zaznacz %name</translation>
     </message>
     <message>
         <source>Hidden: visitors of the site do not see it.</source>
@@ -2091,15 +2091,15 @@
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Move %name up</source>
-        <translation>Przesunąć %name w górę</translation>
+        <translation>Przesuń %name w górę</translation>
     </message>
     <message>
         <source>Move %name down</source>
-        <translation>Przesunąć %name w dół</translation>
+        <translation>Przesuń %name w dół</translation>
     </message>
     <message>
         <source>The item was removed, is in the trash, or is not in a language of this site. Remove the bookmark, or restore the item.</source>
@@ -2139,7 +2139,7 @@
     </message>
     <message>
         <source>Show %count bookmarks per page.</source>
-        <translation>Pokazywać %count zakładek na stronie.</translation>
+        <translation>Pokazuj %count zakładek na stronie.</translation>
     </message>
     <message>
         <source>Move the selected bookmarks to</source>
@@ -2155,7 +2155,7 @@
     </message>
     <message>
         <source>Remove the selected bookmarks</source>
-        <translation>Usunąć zaznaczone zakładki</translation>
+        <translation>Usuń zaznaczone zakładki</translation>
     </message>
     <message>
         <source>Tick bookmarks to move or remove them.</source>
@@ -2183,11 +2183,11 @@
     </message>
     <message>
         <source>Also delete the bookmarks and folders inside</source>
-        <translation>Usunąć także zakładki i foldery wewnątrz</translation>
+        <translation>Usuń także zakładki i foldery wewnątrz</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Drag a bookmark or folder onto a folder to move it; the buttons do the same from the keyboard.</source>
@@ -2195,7 +2195,7 @@
     </message>
     <message>
         <source>Expand all</source>
-        <translation>Rozwinąć wszystko</translation>
+        <translation>Rozwiń wszystko</translation>
     </message>
     <message>
         <source>Move to</source>
@@ -2203,31 +2203,31 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Collapse all</source>
-        <translation>Zwinąć wszystko</translation>
+        <translation>Zwiń wszystko</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Search bookmarks</source>
-        <translation>Przeszukać zakładki</translation>
+        <translation>Przeszukaj zakładki</translation>
     </message>
     <message>
         <source>Rename folder</source>
-        <translation>Zmienić nazwę folderu</translation>
+        <translation>Zmień nazwę folderu</translation>
     </message>
     <message>
         <source>Delete folder</source>
-        <translation>Usunąć folder</translation>
+        <translation>Usuń folder</translation>
     </message>
     <message>
         <source>Delete the folder "%name"? Its bookmarks and folders move up one level. No bookmark is deleted.</source>
-        <translation>Usunąć folder „%name”? Jego zakładki i foldery zostaną przeniesione o jeden poziom wyżej. Żadna zakładka nie zostanie usunięta.</translation>
+        <translation>Usuń folder „%name”? Jego zakładki i foldery zostaną przeniesione o jeden poziom wyżej. Żadna zakładka nie zostanie usunięta.</translation>
     </message>
     <message>
         <source>Move bookmark</source>
@@ -2235,14 +2235,14 @@
     </message>
     <message>
         <source>Open or close the folder</source>
-        <translation>Otworzyć lub zamknąć folder</translation>
+        <translation>Otwórz lub zamknąć folder</translation>
     </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Top level</source>
@@ -2262,15 +2262,15 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Display sub items using a simple list.</source>
-        <translation>Wyświetlać elementy podrzędne jako prostą listę.</translation>
+        <translation>Wyświetlaj elementy podrzędne jako prostą listę.</translation>
     </message>
     <message>
         <source>List</source>
@@ -2282,7 +2282,7 @@
     </message>
     <message>
         <source>Display sub items as thumbnails.</source>
-        <translation>Wyświetlać elementy podrzędne jako miniatury.</translation>
+        <translation>Wyświetlaj elementy podrzędne jako miniatury.</translation>
     </message>
     <message>
         <source>Bookmarks</source>
@@ -2294,7 +2294,7 @@
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>To select objects, choose the appropriate radio button or checkbox(es), then click the &quot;Select&quot; button.</source>
@@ -2475,7 +2475,7 @@
     </message>
     <message>
         <source>Return to site</source>
-        <translation>Wrócić do witryny</translation>
+        <translation>Wróć do witryny</translation>
     </message>
     <message>
         <source>You have already submitted feedback. The previously submitted data was:</source>
@@ -2552,7 +2552,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -2571,7 +2571,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>You do not have permission to create an object of the requested class in any language.</source>
@@ -2613,11 +2613,11 @@
     </message>
     <message>
         <source>Upload a file</source>
-        <translation>Przesłać plik</translation>
+        <translation>Prześlij plik</translation>
     </message>
     <message>
         <source>Upload a file to create a new object and add it to the relation</source>
-        <translation>Przesłać plik, aby utworzyć nowy obiekt i dodać go do relacji</translation>
+        <translation>Prześlij plik, aby utworzyć nowy obiekt i dodać go do relacji</translation>
     </message>
     <message>
         <source>Please choose a location</source>
@@ -2633,15 +2633,15 @@
     </message>
     <message>
         <source>Upload a file and add the resulting object in the relation</source>
-        <translation>Przesłać plik i dodać powstały obiekt do relacji</translation>
+        <translation>Prześlij plik i dodać powstały obiekt do relacji</translation>
     </message>
     <message>
         <source>Choose a date</source>
-        <translation>Wybrać datę</translation>
+        <translation>Wybierz datę</translation>
     </message>
     <message>
         <source>Choose a date for %name</source>
-        <translation>Wybrać datę dla %name</translation>
+        <translation>Wybierz datę dla %name</translation>
     </message>
 </context>
 <context>
@@ -2735,11 +2735,11 @@
     <name>design/admin/content/draft</name>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove all</source>
-        <translation>Usunąć wszystko</translation>
+        <translation>Usuń wszystko</translation>
     </message>
     <message>
         <source>My drafts [%draft_count]</source>
@@ -2747,7 +2747,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2767,11 +2767,11 @@
     </message>
     <message>
         <source>Select draft for removal.</source>
-        <translation>Zaznaczyć wersję roboczą do usunięcia.</translation>
+        <translation>Zaznacz wersję roboczą do usunięcia.</translation>
     </message>
     <message>
         <source>Edit &lt;%draft_name&gt;.</source>
-        <translation>Edytować &lt;%draft_name&gt;.</translation>
+        <translation>Edytuj &lt;%draft_name&gt;.</translation>
     </message>
     <message>
         <source>There are no drafts that belong to you.</source>
@@ -2779,11 +2779,11 @@
     </message>
     <message>
         <source>Remove selected drafts.</source>
-        <translation>Usunąć zaznaczone wersje robocze.</translation>
+        <translation>Usuń zaznaczone wersje robocze.</translation>
     </message>
     <message>
         <source>Remove all drafts that belong to you.</source>
-        <translation>Usunąć wszystkie wersje robocze bieżącego użytkownika.</translation>
+        <translation>Usuń wszystkie wersje robocze bieżącego użytkownika.</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -2791,7 +2791,7 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Language</source>
@@ -2863,19 +2863,19 @@
     </message>
     <message>
         <source>Find drafts</source>
-        <translation>Znaleźć wersje robocze</translation>
+        <translation>Znajdź wersje robocze</translation>
     </message>
     <message>
         <source>Find a draft</source>
-        <translation>Znaleźć wersję roboczą</translation>
+        <translation>Znajdź wersję roboczą</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>Any part of the name, the location or the class. Upper and lower case are the same.</source>
@@ -2927,7 +2927,7 @@
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>A draft appears here when you start editing and leave without publishing.</source>
@@ -2939,11 +2939,11 @@
     </message>
     <message>
         <source>Show all drafts</source>
-        <translation>Pokazać wszystkie wersje robocze</translation>
+        <translation>Pokaż wszystkie wersje robocze</translation>
     </message>
     <message>
         <source>Select %name for removal</source>
-        <translation>Zaznaczyć %name do usunięcia</translation>
+        <translation>Zaznacz %name do usunięcia</translation>
     </message>
     <message>
         <source>New object</source>
@@ -2955,11 +2955,11 @@
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>This draft of a new object is removed for good, and the new object with it.</source>
@@ -2971,7 +2971,7 @@
     </message>
     <message>
         <source>Remove for good</source>
-        <translation>Usunąć na stałe</translation>
+        <translation>Usuń na stałe</translation>
     </message>
     <message>
         <source>Location</source>
@@ -3011,7 +3011,7 @@
     </message>
     <message>
         <source>Show %count drafts per page.</source>
-        <translation>Pokazywać %count wersji roboczych na stronie.</translation>
+        <translation>Pokazuj %count wersji roboczych na stronie.</translation>
     </message>
     <message>
         <source>The ticked drafts are removed for good. A draft of a new object takes the new object with it.</source>
@@ -3019,11 +3019,11 @@
     </message>
     <message>
         <source>Remove selected for good</source>
-        <translation>Usunąć zaznaczone na stałe</translation>
+        <translation>Usuń zaznaczone na stałe</translation>
     </message>
     <message>
         <source>Remove old drafts</source>
-        <translation>Usunąć stare wersje robocze</translation>
+        <translation>Usuń stare wersje robocze</translation>
     </message>
     <message>
         <source>Drafts not modified for</source>
@@ -3039,7 +3039,7 @@
     </message>
     <message>
         <source>Remove these drafts for good</source>
-        <translation>Usunąć te wersje robocze na stałe</translation>
+        <translation>Usuń te wersje robocze na stałe</translation>
     </message>
     <message>
         <source>All %count of your drafts are removed for good, whatever the filters show.</source>
@@ -3047,7 +3047,7 @@
     </message>
     <message>
         <source>Remove all for good</source>
-        <translation>Usunąć wszystkie na stałe</translation>
+        <translation>Usuń wszystkie na stałe</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -3074,19 +3074,19 @@
     </message>
     <message>
         <source>Send for publishing</source>
-        <translation>Wysłać do publikacji</translation>
+        <translation>Wyślij do publikacji</translation>
     </message>
     <message>
         <source>Store draft</source>
-        <translation>Zapisać wersję roboczą</translation>
+        <translation>Zapisz wersję roboczą</translation>
     </message>
     <message>
         <source>Store the contents of the draft that is being edited and continue editing. Use this button to periodically save your work while editing.</source>
-        <translation>Zapisać zawartość edytowanej wersji roboczej i kontynuować edycję. Tego przycisku warto używać regularnie podczas edycji, aby zapisywać postęp pracy.</translation>
+        <translation>Zapisz zawartość edytowanej wersji roboczej i kontynuować edycję. Tego przycisku warto używać regularnie podczas edycji, aby zapisywać postęp pracy.</translation>
     </message>
     <message>
         <source>Discard draft</source>
-        <translation>Odrzucić wersję roboczą</translation>
+        <translation>Odrzuć wersję roboczą</translation>
     </message>
     <message>
         <source>Published</source>
@@ -3118,7 +3118,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Location</source>
@@ -3146,7 +3146,7 @@
     </message>
     <message>
         <source>Select location for removal.</source>
-        <translation>Zaznaczyć lokalizację do usunięcia.</translation>
+        <translation>Zaznacz lokalizację do usunięcia.</translation>
     </message>
     <message>
         <source>Desc.</source>
@@ -3182,19 +3182,19 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected locations.</source>
-        <translation>Usunąć zaznaczone lokalizacje.</translation>
+        <translation>Usuń zaznaczone lokalizacje.</translation>
     </message>
     <message>
         <source>Add locations</source>
-        <translation>Dodać lokalizacje</translation>
+        <translation>Dodaj lokalizacje</translation>
     </message>
     <message>
         <source>Add one or more locations for the object being edited.</source>
-        <translation>Dodać jedną lub więcej lokalizacji edytowanego obiektu.</translation>
+        <translation>Dodaj jedną lub więcej lokalizacji edytowanego obiektu.</translation>
     </message>
     <message>
         <source>Object information</source>
@@ -3218,11 +3218,11 @@
     </message>
     <message>
         <source>Manage versions</source>
-        <translation>Zarządzać wersjami</translation>
+        <translation>Zarządzaj wersjami</translation>
     </message>
     <message>
         <source>View and manage (copy, delete, etc.) the versions of this object.</source>
-        <translation>Wyświetlać wersje tego obiektu i zarządzać nimi (kopiować, usuwać itp.).</translation>
+        <translation>Wyświetlaj wersje tego obiektu i zarządzać nimi (kopiować, usuwać itp.).</translation>
     </message>
     <message>
         <source>Current draft</source>
@@ -3234,11 +3234,11 @@
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Preview the draft that is being edited.</source>
-        <translation>Wyświetlić podgląd edytowanej wersji roboczej.</translation>
+        <translation>Wyświetl podgląd edytowanej wersji roboczej.</translation>
     </message>
     <message>
         <source>Store and exit</source>
@@ -3290,23 +3290,23 @@
     </message>
     <message>
         <source>Remove the selected items from the list(s) above. It is only the relations that will be removed. The items will not be deleted.</source>
-        <translation>Usunąć zaznaczone elementy z powyższych list. Usunięte zostaną tylko relacje; same elementy nie zostaną usunięte.</translation>
+        <translation>Usuń zaznaczone elementy z powyższych list. Usunięte zostaną tylko relacje; same elementy nie zostaną usunięte.</translation>
     </message>
     <message>
         <source>Add existing</source>
-        <translation>Dodać istniejący</translation>
+        <translation>Dodaj istniejący</translation>
     </message>
     <message>
         <source>Add an existing item as a related object.</source>
-        <translation>Dodać istniejący element jako obiekt powiązany.</translation>
+        <translation>Dodaj istniejący element jako obiekt powiązany.</translation>
     </message>
     <message>
         <source>Upload new</source>
-        <translation>Przesłać nowy</translation>
+        <translation>Prześlij nowy</translation>
     </message>
     <message>
         <source>Upload a file and add it as a related object.</source>
-        <translation>Przesłać plik i dodać go jako obiekt powiązany.</translation>
+        <translation>Prześlij plik i dodać go jako obiekt powiązany.</translation>
     </message>
     <message>
         <source>The draft could not be stored.</source>
@@ -3334,11 +3334,11 @@
     </message>
     <message>
         <source>Discard the draft that is being edited. This will also remove the translations that belong to the draft (if any).</source>
-        <translation>Odrzucić edytowaną wersję roboczą. Zostaną także usunięte tłumaczenia należące do tej wersji roboczej (jeśli istnieją).</translation>
+        <translation>Odrzuć edytowaną wersję roboczą. Zostaną także usunięte tłumaczenia należące do tej wersji roboczej (jeśli istnieją).</translation>
     </message>
     <message>
         <source>Publish data</source>
-        <translation>Opublikować dane</translation>
+        <translation>Opublikuj dane</translation>
     </message>
     <message>
         <source>Translate from</source>
@@ -3350,11 +3350,11 @@
     </message>
     <message>
         <source>Edit the current object showing the selected language as a reference.</source>
-        <translation>Edytować bieżący obiekt z zaznaczonym językiem jako odniesieniem.</translation>
+        <translation>Edytuj bieżący obiekt z zaznaczonym językiem jako odniesieniem.</translation>
     </message>
     <message>
         <source>Back to edit</source>
-        <translation>Wrócić do edycji</translation>
+        <translation>Wróć do edycji</translation>
     </message>
     <message>
         <source>Common</source>
@@ -3390,7 +3390,7 @@
     </message>
     <message>
         <source>Publish the contents of the draft that is being edited. The draft will become the published version of the object.</source>
-        <translation>Opublikować zawartość edytowanej wersji roboczej. Wersja robocza stanie się opublikowaną wersją obiektu.</translation>
+        <translation>Opublikuj zawartość edytowanej wersji roboczej. Wersja robocza stanie się opublikowaną wersją obiektu.</translation>
     </message>
     <message>
         <source>Class identifier</source>
@@ -3454,11 +3454,11 @@
     </message>
     <message>
         <source>Store draft and exit</source>
-        <translation>Zapisać wersję roboczą i zakończyć</translation>
+        <translation>Zapisz wersję roboczą i zakończyć</translation>
     </message>
     <message>
         <source>Store the draft that is being edited and exit from edit mode. Use when you need to exit your work and return later to continue.</source>
-        <translation>Zapisać edytowaną wersję roboczą i zakończyć edycję. Przydatne, gdy pracę trzeba przerwać i dokończyć później.</translation>
+        <translation>Zapisz edytowaną wersję roboczą i zakończyć edycję. Przydatne, gdy pracę trzeba przerwać i dokończyć później.</translation>
     </message>
     <message>
         <source>Edit &lt;%object_name&gt; (%class_name)</source>
@@ -3478,7 +3478,7 @@
     </message>
     <message>
         <source>Base translation on</source>
-        <translation>Oprzeć tłumaczenie na</translation>
+        <translation>Oprzyj tłumaczenie na</translation>
     </message>
     <message>
         <source>None</source>
@@ -3526,11 +3526,11 @@
     </message>
     <message>
         <source>Publish without notification</source>
-        <translation>Opublikować bez powiadomienia</translation>
+        <translation>Opublikuj bez powiadomienia</translation>
     </message>
     <message>
         <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
-        <translation>Opublikować bez powiadamiania subskrybentów lokalizacji: dla tej wersji nie zostanie wysłany e-mail z powiadomieniem.</translation>
+        <translation>Opublikuj bez powiadamiania subskrybentów lokalizacji: dla tej wersji nie zostanie wysłany e-mail z powiadomieniem.</translation>
     </message>
     <message>
         <source>Code to embed the object</source>
@@ -3728,15 +3728,15 @@
     </message>
     <message>
         <source>Continue editing one of your drafts.</source>
-        <translation>Kontynuować edycję jednej z własnych wersji roboczych.</translation>
+        <translation>Kontynuuj edycję jednej z własnych wersji roboczych.</translation>
     </message>
     <message>
         <source>Create a new draft and start editing it.</source>
-        <translation>Utworzyć nową wersję roboczą i rozpocząć jej edycję.</translation>
+        <translation>Utwórz nową wersję roboczą i rozpocząć jej edycję.</translation>
     </message>
     <message>
         <source>Cancel the edit operation.</source>
-        <translation>Anulować edycję.</translation>
+        <translation>Anuluj edycję.</translation>
     </message>
     <message>
         <source>Current drafts [%draft_count]</source>
@@ -3756,19 +3756,19 @@
     </message>
     <message>
         <source>Select draft version #%version for editing.</source>
-        <translation>Wybrać wersję roboczą #%version do edycji.</translation>
+        <translation>Wybierz wersję roboczą #%version do edycji.</translation>
     </message>
     <message>
         <source>View the contents of version #%version_number. Translation: %translation.</source>
-        <translation>Wyświetlić zawartość wersji #%version_number. Tłumaczenie: %translation.</translation>
+        <translation>Wyświetl zawartość wersji #%version_number. Tłumaczenie: %translation.</translation>
     </message>
     <message>
         <source>Edit selected</source>
-        <translation>Edytować zaznaczone</translation>
+        <translation>Edytuj zaznaczone</translation>
     </message>
     <message>
         <source>Edit the selected draft.</source>
-        <translation>Edytować zaznaczoną wersję roboczą.</translation>
+        <translation>Edytuj zaznaczoną wersję roboczą.</translation>
     </message>
     <message>
         <source>New draft</source>
@@ -3776,7 +3776,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>The object has already been published by someone else.</source>
@@ -3784,11 +3784,11 @@
     </message>
     <message>
         <source>Publish data as it is (and overwriting the published data).</source>
-        <translation>Opublikować dane w obecnej postaci (nadpisując opublikowane dane).</translation>
+        <translation>Opublikuj dane w obecnej postaci (nadpisując opublikowane dane).</translation>
     </message>
     <message>
         <source>Go back to editing and show the published data.</source>
-        <translation>Wrócić do edycji i pokazać opublikowane dane.</translation>
+        <translation>Wróć do edycji i pokazać opublikowane dane.</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3796,11 +3796,11 @@
     </message>
     <message>
         <source>View the contents of version #%version. Translation: %translation.</source>
-        <translation>Wyświetlić zawartość wersji #%version. Tłumaczenie: %translation.</translation>
+        <translation>Wyświetl zawartość wersji #%version. Tłumaczenie: %translation.</translation>
     </message>
     <message>
         <source>Show the published data</source>
-        <translation>Pokazać opublikowane dane</translation>
+        <translation>Pokaż opublikowane dane</translation>
     </message>
     <message>
         <source>Conflicting versions [%draft_count]</source>
@@ -3808,7 +3808,7 @@
     </message>
     <message>
         <source>Create a new draft. The contents of the new draft will be copied from the published version.</source>
-        <translation>Utworzyć nową wersję roboczą. Zawartość nowej wersji roboczej zostanie skopiowana z wersji opublikowanej.</translation>
+        <translation>Utwórz nową wersję roboczą. Zawartość nowej wersji roboczej zostanie skopiowana z wersji opublikowanej.</translation>
     </message>
     <message>
         <source>You cannot select draft version #%version for editing because it belongs to another user. Please select a draft that belongs to you or create a new draft and then edit it.</source>
@@ -3907,7 +3907,7 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>OK</source>
@@ -3915,7 +3915,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>You do not have permission to create a translation in another language.</source>
@@ -3943,7 +3943,7 @@
     </message>
     <message>
         <source>Translate based on</source>
-        <translation>Tłumaczyć na podstawie</translation>
+        <translation>Tłumacz na podstawie</translation>
     </message>
 </context>
 <context>
@@ -4002,11 +4002,11 @@
     </message>
     <message>
         <source>Select version #%version_number for removal.</source>
-        <translation>Zaznaczyć wersję #%version_number do usunięcia.</translation>
+        <translation>Zaznacz wersję #%version_number do usunięcia.</translation>
     </message>
     <message>
         <source>View the contents of version #%version_number. Translation: %translation.</source>
-        <translation>Wyświetlić zawartość wersji #%version_number. Tłumaczenie: %translation.</translation>
+        <translation>Wyświetl zawartość wersji #%version_number. Tłumaczenie: %translation.</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -4034,11 +4034,11 @@
     </message>
     <message>
         <source>Create a copy of version #%version_number.</source>
-        <translation>Utworzyć kopię wersji #%version_number.</translation>
+        <translation>Utwórz kopię wersji #%version_number.</translation>
     </message>
     <message>
         <source>Edit the contents of version #%version_number.</source>
-        <translation>Edytować zawartość wersji #%version_number.</translation>
+        <translation>Edytuj zawartość wersji #%version_number.</translation>
     </message>
     <message>
         <source>This object does not have any versions.</source>
@@ -4046,15 +4046,15 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove the selected versions from the object.</source>
-        <translation>Usunąć zaznaczone wersje obiektu.</translation>
+        <translation>Usuń zaznaczone wersje obiektu.</translation>
     </message>
     <message>
         <source>Show differences</source>
-        <translation>Pokazać różnice</translation>
+        <translation>Pokaż różnice</translation>
     </message>
     <message>
         <source>Back</source>
@@ -4066,7 +4066,7 @@
     </message>
     <message>
         <source>Copy translation</source>
-        <translation>Skopiować tłumaczenie</translation>
+        <translation>Skopiuj tłumaczenie</translation>
     </message>
     <message>
         <source>New drafts [%newerDraftCount]</source>
@@ -4098,7 +4098,7 @@
     </message>
     <message>
         <source>Back to history</source>
-        <translation>Wrócić do historii</translation>
+        <translation>Wróć do historii</translation>
     </message>
     <message>
         <source>Version is not a draft</source>
@@ -4150,7 +4150,7 @@
     </message>
     <message>
         <source>Toggle selection</source>
-        <translation>Przełączyć zaznaczenie</translation>
+        <translation>Przełącz zaznaczenie</translation>
     </message>
     <message>
         <source>You may edit this object, but not read it</source>
@@ -4250,7 +4250,7 @@
     </message>
     <message>
         <source>Close the comparison</source>
-        <translation>Zamknąć porównanie</translation>
+        <translation>Zamknij porównanie</translation>
     </message>
     <message>
         <source>Removed text is struck through, added text is underlined. Choose how the changes are shown:</source>
@@ -4306,7 +4306,7 @@
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Opening the versions needs the policy content/versionread; you see what each version is, and compare and copy those you may read.</source>
@@ -4322,15 +4322,15 @@
     </message>
     <message>
         <source>Show all versions</source>
-        <translation>Pokazać wszystkie wersje</translation>
+        <translation>Pokaż wszystkie wersje</translation>
     </message>
     <message>
         <source>Select version %number for removal.</source>
-        <translation>Zaznaczyć wersję %number do usunięcia.</translation>
+        <translation>Zaznacz wersję %number do usunięcia.</translation>
     </message>
     <message>
         <source>Select version %number for removal</source>
-        <translation>Zaznaczyć wersję %number do usunięcia</translation>
+        <translation>Zaznacz wersję %number do usunięcia</translation>
     </message>
     <message>
         <source>Version %number</source>
@@ -4346,23 +4346,23 @@
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Compare with the newest other version you may read.</source>
-        <translation>Porównać z najnowszą inną wersją, którą można odczytać.</translation>
+        <translation>Porównaj z najnowszą inną wersją, którą można odczytać.</translation>
     </message>
     <message>
         <source>Compare with the current version.</source>
-        <translation>Porównać z bieżącą wersją.</translation>
+        <translation>Porównaj z bieżącą wersją.</translation>
     </message>
     <message>
         <source>Compare</source>
-        <translation>Porównać</translation>
+        <translation>Porównaj</translation>
     </message>
     <message>
         <source>modified</source>
@@ -4374,7 +4374,7 @@
     </message>
     <message>
         <source>Make a new draft</source>
-        <translation>Utworzyć nową wersję roboczą</translation>
+        <translation>Utwórz nową wersję roboczą</translation>
     </message>
     <message>
         <source>Per page</source>
@@ -4382,11 +4382,11 @@
     </message>
     <message>
         <source>Show %count versions per page.</source>
-        <translation>Pokazywać %count wersji na stronie.</translation>
+        <translation>Pokazuj %count wersji na stronie.</translation>
     </message>
     <message>
         <source>Compare two versions</source>
-        <translation>Porównać dwie wersje</translation>
+        <translation>Porównaj dwie wersje</translation>
     </message>
     <message>
         <source>Only the versions whose content you may read are offered.</source>
@@ -4402,7 +4402,7 @@
     </message>
     <message>
         <source>Remove selected versions</source>
-        <translation>Usunąć zaznaczone wersje</translation>
+        <translation>Usuń zaznaczone wersje</translation>
     </message>
     <message>
         <source>The ticked versions are removed for good, with all their translations.</source>
@@ -4414,11 +4414,11 @@
     </message>
     <message>
         <source>Remove for good</source>
-        <translation>Usunąć na stałe</translation>
+        <translation>Usuń na stałe</translation>
     </message>
     <message>
         <source>Stay on this page after making a new draft (untick to open the new draft in the editor at once).</source>
-        <translation>Pozostać na tej stronie po utworzeniu nowej wersji roboczej (odznaczyć, aby od razu otworzyć nową wersję roboczą w edytorze).</translation>
+        <translation>Pozostań na tej stronie po utworzeniu nowej wersji roboczej (odznacz, aby od razu otworzyć nową wersję roboczą w edytorze).</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -4513,7 +4513,7 @@
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All</source>
@@ -4553,7 +4553,7 @@
     </message>
     <message>
         <source>Show all</source>
-        <translation>Pokazać wszystko</translation>
+        <translation>Pokaż wszystko</translation>
     </message>
     <message>
         <source>Pending</source>
@@ -4569,11 +4569,11 @@
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Open the approval</source>
-        <translation>Otworzyć zatwierdzenie</translation>
+        <translation>Otwórz zatwierdzenie</translation>
     </message>
     <message>
         <source>Approval and comments</source>
@@ -4633,7 +4633,7 @@
     </message>
     <message>
         <source>Show %count versions per page.</source>
-        <translation>Pokazywać %count wersji na stronie.</translation>
+        <translation>Pokazuj %count wersji na stronie.</translation>
     </message>
 </context>
 <context>
@@ -4664,7 +4664,7 @@
     </message>
     <message>
         <source>Manage versions</source>
-        <translation>Zarządzać wersjami</translation>
+        <translation>Zarządzaj wersjami</translation>
     </message>
     <message>
         <source>Current draft</source>
@@ -4720,15 +4720,15 @@
     </message>
     <message>
         <source>Remove the locations along with all the sub items.</source>
-        <translation>Usunąć lokalizacje wraz ze wszystkimi elementami podrzędnymi.</translation>
+        <translation>Usuń lokalizacje wraz ze wszystkimi elementami podrzędnymi.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Cancel the removal of locations.</source>
-        <translation>Anulować usuwanie lokalizacji.</translation>
+        <translation>Anuluj usuwanie lokalizacji.</translation>
     </message>
     <message>
         <source>The locations marked with red contain items that you do not have permission to remove.</source>
@@ -4779,11 +4779,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Manage versions</source>
-        <translation>Zarządzać wersjami</translation>
+        <translation>Zarządzaj wersjami</translation>
     </message>
     <message>
         <source>Current draft</source>
@@ -4817,15 +4817,15 @@
     </message>
     <message>
         <source>Restore at original location (below &lt;%nodeName&gt;).</source>
-        <translation>Przywrócić w pierwotnej lokalizacji (poniżej &lt;%nodeName&gt;).</translation>
+        <translation>Przywróć w pierwotnej lokalizacji (poniżej &lt;%nodeName&gt;).</translation>
     </message>
     <message>
         <source>Select a location.</source>
-        <translation>Wybrać lokalizację.</translation>
+        <translation>Wybierz lokalizację.</translation>
     </message>
     <message>
         <source>Restore at original location (unavailable).</source>
-        <translation>Przywrócić w pierwotnej lokalizacji (niedostępne).</translation>
+        <translation>Przywróć w pierwotnej lokalizacji (niedostępne).</translation>
     </message>
     <message>
         <source>OK</source>
@@ -4833,11 +4833,11 @@
     </message>
     <message>
         <source>Continue restoring &lt;%name&gt;.</source>
-        <translation>Kontynuować przywracanie &lt;%name&gt;.</translation>
+        <translation>Kontynuuj przywracanie &lt;%name&gt;.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Do not restore &lt;%name&gt; and return to trash.</source>
@@ -4853,19 +4853,19 @@
     </message>
     <message>
         <source>Restore original location &lt;%nodeName&gt;</source>
-        <translation>Przywrócić pierwotną lokalizację &lt;%nodeName&gt;</translation>
+        <translation>Przywróć pierwotną lokalizację &lt;%nodeName&gt;</translation>
     </message>
     <message>
         <source>Browse for location</source>
-        <translation>Wyszukać lokalizację w drzewie</translation>
+        <translation>Wyszukaj lokalizację w drzewie</translation>
     </message>
     <message>
         <source>Restore original locations</source>
-        <translation>Przywrócić pierwotne lokalizacje</translation>
+        <translation>Przywróć pierwotne lokalizacje</translation>
     </message>
     <message>
         <source>Restore &lt;%name&gt; to the specified location.</source>
-        <translation>Przywrócić &lt;%name&gt; we wskazanej lokalizacji.</translation>
+        <translation>Przywróć &lt;%name&gt; we wskazanej lokalizacji.</translation>
     </message>
     <message>
         <source>The system will prompt you to specify a location by browsing the tree.</source>
@@ -4895,11 +4895,11 @@
     <name>design/admin/content/search</name>
     <message>
         <source>Update attributes</source>
-        <translation>Zaktualizować atrybuty</translation>
+        <translation>Zaktualizuj atrybuty</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>All content</source>
@@ -4948,11 +4948,11 @@
     </message>
     <message>
         <source>Search for all of the following words</source>
-        <translation>Wyszukać wszystkie poniższe słowa</translation>
+        <translation>Wyszukaj wszystkie poniższe słowa</translation>
     </message>
     <message>
         <source>Search for an exact phrase</source>
-        <translation>Wyszukać dokładną frazę</translation>
+        <translation>Wyszukaj dokładną frazę</translation>
     </message>
     <message>
         <source>Class</source>
@@ -5048,19 +5048,19 @@
     </message>
     <message>
         <source>Select every result on this page.</source>
-        <translation>Zaznaczyć wszystkie wyniki na tej stronie.</translation>
+        <translation>Zaznacz wszystkie wyniki na tej stronie.</translation>
     </message>
     <message>
         <source>Select this item for editing.</source>
-        <translation>Zaznaczyć ten element do edycji.</translation>
+        <translation>Zaznacz ten element do edycji.</translation>
     </message>
     <message>
         <source>Edit selected</source>
-        <translation>Edytować zaznaczone</translation>
+        <translation>Edytuj zaznaczone</translation>
     </message>
     <message>
         <source>Edit every ticked result in one form.</source>
-        <translation>Edytować wszystkie zaznaczone wyniki w jednym formularzu.</translation>
+        <translation>Edytuj wszystkie zaznaczone wyniki w jednym formularzu.</translation>
     </message>
     <message>
         <source>Search for</source>
@@ -5119,11 +5119,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Add a content language</source>
-        <translation>Dodać język treści</translation>
+        <translation>Dodaj język treści</translation>
     </message>
     <message>
         <source>Adds a language content can be translated into. It does not translate anything and changes no siteaccess: afterwards, translate content into it in the editor and add it to the SiteLanguageList of the siteaccesses that should show it.</source>
@@ -5143,7 +5143,7 @@
     </message>
     <message>
         <source>Find a language</source>
-        <translation>Znaleźć język</translation>
+        <translation>Znajdź język</translation>
     </message>
     <message>
         <source>Name, code or country, e.g. German, ger, Austria</source>
@@ -5199,7 +5199,7 @@
     </message>
     <message>
         <source>Add language</source>
-        <translation>Dodać język</translation>
+        <translation>Dodaj język</translation>
     </message>
     <message>
         <source>%shown of %count languages match</source>
@@ -5222,11 +5222,11 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Add language</source>
-        <translation>Dodać język</translation>
+        <translation>Dodaj język</translation>
     </message>
     <message>
         <source>Available languages for translation of content [%translations_count]</source>
@@ -5234,7 +5234,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Translations</source>
@@ -5242,15 +5242,15 @@
     </message>
     <message>
         <source>Select language for removal.</source>
-        <translation>Zaznaczyć język do usunięcia.</translation>
+        <translation>Zaznacz język do usunięcia.</translation>
     </message>
     <message>
         <source>Remove selected languages.</source>
-        <translation>Usunąć zaznaczone języki.</translation>
+        <translation>Usuń zaznaczone języki.</translation>
     </message>
     <message>
         <source>Add a new language. The new language can then be used when translating content.</source>
-        <translation>Dodać nowy język. Nowego języka można następnie używać przy tłumaczeniu treści.</translation>
+        <translation>Dodaj nowy język. Nowego języka można następnie używać przy tłumaczeniu treści.</translation>
     </message>
     <message>
         <source>Classes translations</source>
@@ -5270,7 +5270,7 @@
     </message>
     <message>
         <source>Toggle all.</source>
-        <translation>Przełączyć wszystkie.</translation>
+        <translation>Przełącz wszystkie.</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -5338,7 +5338,7 @@
     </message>
     <message>
         <source>Select for removal</source>
-        <translation>Zaznaczyć do usunięcia</translation>
+        <translation>Zaznacz do usunięcia</translation>
     </message>
     <message>
         <source>Objects</source>
@@ -5394,7 +5394,7 @@
     </message>
     <message>
         <source>See the classes</source>
-        <translation>Zobaczyć klasy</translation>
+        <translation>Zobacz klasy</translation>
     </message>
     <message>
         <source>Unused.</source>
@@ -5414,7 +5414,7 @@
     </message>
     <message>
         <source>See the objects</source>
-        <translation>Zobaczyć obiekty</translation>
+        <translation>Zobacz obiekty</translation>
     </message>
     <message>
         <source>Not used yet.</source>
@@ -5565,7 +5565,7 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>%locale [Locale]</source>
@@ -5817,7 +5817,7 @@
     </message>
     <message>
         <source>Remove %name</source>
-        <translation>Usunąć %name</translation>
+        <translation>Usuń %name</translation>
     </message>
     <message>
         <source>The %shown changed last, of %count</source>
@@ -5884,11 +5884,11 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Permanently remove the selected items.</source>
@@ -5896,7 +5896,7 @@
     </message>
     <message>
         <source>Empty trash</source>
-        <translation>Opróżnić kosz</translation>
+        <translation>Opróżnij kosz</translation>
     </message>
     <message>
         <source>Permanently remove all items from the trash.</source>
@@ -5924,7 +5924,7 @@
     </message>
     <message>
         <source>Restore</source>
-        <translation>Przywrócić</translation>
+        <translation>Przywróć</translation>
     </message>
     <message>
         <source>Original Placement</source>
@@ -6012,15 +6012,15 @@
     </message>
     <message>
         <source>Restore this item: to its original place, or choose another one.</source>
-        <translation>Przywrócić ten element: w pierwotnym miejscu lub w innym wybranym.</translation>
+        <translation>Przywróć ten element: w pierwotnym miejscu lub w innym wybranym.</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation>Pokazać wszystko</translation>
+        <translation>Pokaż wszystko</translation>
     </message>
     <message>
         <source>Show only the items that match.</source>
-        <translation>Pokazać tylko pasujące elementy.</translation>
+        <translation>Pokaż tylko pasujące elementy.</translation>
     </message>
     <message>
         <source>Still in the tree at</source>
@@ -6072,7 +6072,7 @@
     </message>
     <message>
         <source>Click to sort %sort_order</source>
-        <translation>Kliknąć, aby sortować %sort_order</translation>
+        <translation>Kliknij, aby sortować %sort_order</translation>
     </message>
 </context>
 <context>
@@ -6127,7 +6127,7 @@
     </message>
     <message>
         <source>Upload file</source>
-        <translation>Przesłać plik</translation>
+        <translation>Prześlij plik</translation>
     </message>
     <message>
         <source>Location</source>
@@ -6147,15 +6147,15 @@
     </message>
     <message>
         <source>Upload</source>
-        <translation>Przesłać</translation>
+        <translation>Prześlij</translation>
     </message>
     <message>
         <source>Proceed with uploading the selected file.</source>
-        <translation>Kontynuować przesyłanie zaznaczonego pliku.</translation>
+        <translation>Kontynuuj przesyłanie zaznaczonego pliku.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Name</source>
@@ -6171,14 +6171,14 @@
     </message>
     <message>
         <source>Abort the upload operation.</source>
-        <translation>Przerwać przesyłanie.</translation>
+        <translation>Przerwij przesyłanie.</translation>
     </message>
 </context>
 <context>
     <name>design/admin/content/upload_related</name>
     <message>
         <source>Upload a file and relate it to &lt;%version_name&gt;</source>
-        <translation>Przesłać plik i powiązać go z &lt;%version_name&gt;</translation>
+        <translation>Prześlij plik i powiązać go z &lt;%version_name&gt;</translation>
     </message>
     <message>
         <source>This operation allows you to upload a file and add it as a related object.</source>
@@ -6253,7 +6253,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>URL alias</source>
@@ -6277,11 +6277,11 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected alias from the list above.</source>
-        <translation>Usunąć zaznaczony alias z powyższej listy.</translation>
+        <translation>Usuń zaznaczony alias z powyższej listy.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the selected aliases?</source>
@@ -6289,11 +6289,11 @@
     </message>
     <message>
         <source>Remove all</source>
-        <translation>Usunąć wszystko</translation>
+        <translation>Usuń wszystko</translation>
     </message>
     <message>
         <source>Remove all aliases for this node.</source>
-        <translation>Usunąć wszystkie aliasy tego węzła.</translation>
+        <translation>Usuń wszystkie aliasy tego węzła.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove all aliases for this node?</source>
@@ -6317,7 +6317,7 @@
     </message>
     <message>
         <source>Edit the contents for language %language.</source>
-        <translation>Edytować zawartość w języku %language.</translation>
+        <translation>Edytuj zawartość w języku %language.</translation>
     </message>
     <message>
         <source>You cannot edit the contents for language %language because you do not have permission to edit the object.</source>
@@ -6325,7 +6325,7 @@
     </message>
     <message>
         <source>Create new alias</source>
-        <translation>Utworzyć nowy alias</translation>
+        <translation>Utwórz nowy alias</translation>
     </message>
     <message>
         <source>URL alias name:</source>
@@ -6369,7 +6369,7 @@
     </message>
     <message>
         <source>Place alias on the site root</source>
-        <translation>Umieścić alias w korzeniu witryny</translation>
+        <translation>Umieść alias w korzeniu witryny</translation>
     </message>
     <message>
         <source>The new alias be placed under %link</source>
@@ -6381,11 +6381,11 @@
     </message>
     <message>
         <source>Include in other languages</source>
-        <translation>Uwzględnić w innych językach</translation>
+        <translation>Uwzględnij w innych językach</translation>
     </message>
     <message>
         <source>Create new URL forwarding with wildcard</source>
-        <translation>Utworzyć nowe przekierowanie URL z symbolem wieloznacznym</translation>
+        <translation>Utwórz nowe przekierowanie URL z symbolem wieloznacznym</translation>
     </message>
     <message>
         <source>Redirecting URL</source>
@@ -6412,11 +6412,11 @@
     </message>
     <message>
         <source>Create</source>
-        <translation>Utworzyć</translation>
+        <translation>Utwórz</translation>
     </message>
     <message>
         <source>Create a new global URL alias.</source>
-        <translation>Utworzyć nowy globalny alias URL.</translation>
+        <translation>Utwórz nowy globalny alias URL.</translation>
     </message>
     <message>
         <source>The selected aliases were successfully removed.</source>
@@ -6492,7 +6492,7 @@
     </message>
     <message>
         <source>Show %number_of items per page.</source>
-        <translation>Pokazywać %number_of elementów na stronie.</translation>
+        <translation>Pokazuj %number_of elementów na stronie.</translation>
     </message>
     <message>
         <source>The global list does not contain any aliases.</source>
@@ -6500,7 +6500,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>URL alias</source>
@@ -6532,11 +6532,11 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected aliases from the list above.</source>
-        <translation>Usunąć zaznaczone aliasy z powyższej listy.</translation>
+        <translation>Usuń zaznaczone aliasy z powyższej listy.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the selected aliases?</source>
@@ -6544,11 +6544,11 @@
     </message>
     <message>
         <source>Remove all</source>
-        <translation>Usunąć wszystko</translation>
+        <translation>Usuń wszystko</translation>
     </message>
     <message>
         <source>Remove all global aliases.</source>
-        <translation>Usunąć wszystkie aliasy globalne.</translation>
+        <translation>Usuń wszystkie aliasy globalne.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove all global aliases?</source>
@@ -6636,19 +6636,19 @@
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Find an alias</source>
-        <translation>Znaleźć alias</translation>
+        <translation>Znajdź alias</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>Any part of the last segment of the alias (login in campaign/login) or of its destination.</source>
@@ -6656,7 +6656,7 @@
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All</source>
@@ -6676,11 +6676,11 @@
     </message>
     <message>
         <source>Select this alias for removal.</source>
-        <translation>Zaznaczyć ten alias do usunięcia.</translation>
+        <translation>Zaznacz ten alias do usunięcia.</translation>
     </message>
     <message>
         <source>Select %alias for removal</source>
-        <translation>Zaznaczyć %alias do usunięcia</translation>
+        <translation>Zaznacz %alias do usunięcia</translation>
     </message>
     <message>
         <source>Visitors are sent on to the destination with a 301 redirect.</source>
@@ -6724,7 +6724,7 @@
     </message>
     <message>
         <source>Remove all global aliases</source>
-        <translation>Usunąć wszystkie aliasy globalne</translation>
+        <translation>Usuń wszystkie aliasy globalne</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -6771,7 +6771,7 @@
     </message>
     <message>
         <source>Show %number_of items per page.</source>
-        <translation>Pokazywać %number_of elementów na stronie.</translation>
+        <translation>Pokazuj %number_of elementów na stronie.</translation>
     </message>
     <message>
         <source>The URL wildcard list does not contain any aliases.</source>
@@ -6779,7 +6779,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>URL alias wildcard</source>
@@ -6807,11 +6807,11 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected aliases from the list above.</source>
-        <translation>Usunąć zaznaczone aliasy z powyższej listy.</translation>
+        <translation>Usuń zaznaczone aliasy z powyższej listy.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the selected wildcards?</source>
@@ -6819,11 +6819,11 @@
     </message>
     <message>
         <source>Remove all</source>
-        <translation>Usunąć wszystko</translation>
+        <translation>Usuń wszystko</translation>
     </message>
     <message>
         <source>Remove all wildcard aliases.</source>
-        <translation>Usunąć wszystkie aliasy z symbolami wieloznacznymi.</translation>
+        <translation>Usuń wszystkie aliasy z symbolami wieloznacznymi.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove all wildcard aliases?</source>
@@ -6839,15 +6839,15 @@
     </message>
     <message>
         <source>Perform redirecting.</source>
-        <translation>Wykonywać przekierowanie.</translation>
+        <translation>Wykonuj przekierowanie.</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>Utworzyć</translation>
+        <translation>Utwórz</translation>
     </message>
     <message>
         <source>Create a new wildcard URL alias.</source>
-        <translation>Utworzyć nowy alias URL z symbolem wieloznacznym.</translation>
+        <translation>Utwórz nowy alias URL z symbolem wieloznacznym.</translation>
     </message>
     <message>
         <source>Enter the URL for the new wildcard. Example: developer/*</source>
@@ -6911,7 +6911,7 @@
     </message>
     <message>
         <source>Try an address</source>
-        <translation>Wypróbować adres</translation>
+        <translation>Wypróbuj adres</translation>
     </message>
     <message>
         <source>See which wildcard an address matches and where it would lead. Nothing is changed.</source>
@@ -6923,7 +6923,7 @@
     </message>
     <message>
         <source>Try</source>
-        <translation>Wypróbować</translation>
+        <translation>Wypróbuj</translation>
     </message>
     <message>
         <source>Without the host, for example news/2026/october.</source>
@@ -6975,19 +6975,19 @@
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Find a wildcard</source>
-        <translation>Znaleźć symbol wieloznaczny</translation>
+        <translation>Znajdź symbol wieloznaczny</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>Any part of the pattern or of the destination.</source>
@@ -6995,7 +6995,7 @@
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All</source>
@@ -7015,11 +7015,11 @@
     </message>
     <message>
         <source>Select this wildcard for removal.</source>
-        <translation>Zaznaczyć ten symbol wieloznaczny do usunięcia.</translation>
+        <translation>Zaznacz ten symbol wieloznaczny do usunięcia.</translation>
     </message>
     <message>
         <source>Select %wildcard for removal</source>
-        <translation>Zaznaczyć %wildcard do usunięcia</translation>
+        <translation>Zaznacz %wildcard do usunięcia</translation>
     </message>
     <message>
         <source>leads to</source>
@@ -7051,7 +7051,7 @@
     </message>
     <message>
         <source>Remove all wildcards</source>
-        <translation>Usunąć wszystkie symbole wieloznaczne</translation>
+        <translation>Usuń wszystkie symbole wieloznaczne</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -7202,7 +7202,7 @@
     </message>
     <message>
         <source>Repeat</source>
-        <translation>Powtórzyć</translation>
+        <translation>Powtórz</translation>
     </message>
 </context>
 <context>
@@ -7233,11 +7233,11 @@
     </message>
     <message>
         <source>Manage versions</source>
-        <translation>Zarządzać wersjami</translation>
+        <translation>Zarządzaj wersjami</translation>
     </message>
     <message>
         <source>View and manage (copy, delete, etc.) the versions of this object.</source>
-        <translation>Wyświetlać wersje tego obiektu i zarządzać nimi (kopiować, usuwać itp.).</translation>
+        <translation>Wyświetlaj wersje tego obiektu i zarządzać nimi (kopiować, usuwać itp.).</translation>
     </message>
     <message>
         <source>Version information</source>
@@ -7293,11 +7293,11 @@
     </message>
     <message>
         <source>Update view</source>
-        <translation>Odświeżyć widok</translation>
+        <translation>Odśwież widok</translation>
     </message>
     <message>
         <source>View the version that is currently being displayed using the selected language, location and design.</source>
-        <translation>Wyświetlić bieżącą wersję w wybranym języku, lokalizacji i projekcie graficznym.</translation>
+        <translation>Wyświetl bieżącą wersję w wybranym języku, lokalizacji i projekcie graficznym.</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -7305,7 +7305,7 @@
     </message>
     <message>
         <source>Edit the draft that is being displayed.</source>
-        <translation>Edytować wyświetlaną wersję roboczą.</translation>
+        <translation>Edytuj wyświetlaną wersję roboczą.</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -7313,11 +7313,11 @@
     </message>
     <message>
         <source>Publish</source>
-        <translation>Opublikować</translation>
+        <translation>Opublikuj</translation>
     </message>
     <message>
         <source>Publish the draft that is being displayed.</source>
-        <translation>Opublikować wyświetlaną wersję roboczą.</translation>
+        <translation>Opublikuj wyświetlaną wersję roboczą.</translation>
     </message>
     <message>
         <source>You cannot manage the versions of this object because there is only one version available (the one that is being displayed).</source>
@@ -7337,7 +7337,7 @@
     </message>
     <message>
         <source>Back to edit</source>
-        <translation>Wrócić do edycji</translation>
+        <translation>Wróć do edycji</translation>
     </message>
     <message>
         <source>Back</source>
@@ -7353,11 +7353,11 @@
     </message>
     <message>
         <source>Publish without notification</source>
-        <translation>Opublikować bez powiadomienia</translation>
+        <translation>Opublikuj bez powiadomienia</translation>
     </message>
     <message>
         <source>Publish without notifying the subscribers of its location: no notification mail is sent for this version.</source>
-        <translation>Opublikować bez powiadamiania subskrybentów lokalizacji: dla tej wersji nie zostanie wysłany e-mail z powiadomieniem.</translation>
+        <translation>Opublikuj bez powiadamiania subskrybentów lokalizacji: dla tej wersji nie zostanie wysłany e-mail z powiadomieniem.</translation>
     </message>
     <message>
         <source>Preview of the version</source>
@@ -7365,7 +7365,7 @@
     </message>
     <message>
         <source>Open the preview in a new window</source>
-        <translation>Otworzyć podgląd w nowym oknie</translation>
+        <translation>Otwórz podgląd w nowym oknie</translation>
     </message>
     <message>
         <source>iPhone</source>
@@ -7409,7 +7409,7 @@
     </message>
     <message>
         <source>Repeat</source>
-        <translation>Powtórzyć</translation>
+        <translation>Powtórz</translation>
     </message>
     <message>
         <source>Untouched draft</source>
@@ -7420,7 +7420,7 @@
     <name>design/admin/contentstructuremenu</name>
     <message>
         <source>Fold/Unfold</source>
-        <translation>Zwinąć/rozwinąć</translation>
+        <translation>Zwiń/rozwiń</translation>
     </message>
     <message>
         <source>Click on the icon to display a context-sensitive menu.</source>
@@ -7519,11 +7519,11 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit &lt;%child_name&gt;.</source>
-        <translation>Edytować &lt;%child_name&gt;.</translation>
+        <translation>Edytuj &lt;%child_name&gt;.</translation>
     </message>
     <message>
         <source>You do not have permission to edit &lt;%child_name&gt;.</source>
@@ -7573,11 +7573,11 @@
     </message>
     <message>
         <source>Edit &lt;%draft_name&gt;.</source>
-        <translation>Edytować &lt;%draft_name&gt;.</translation>
+        <translation>Edytuj &lt;%draft_name&gt;.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Currently you do not have any drafts available.</source>
@@ -7604,11 +7604,11 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit &lt;%child_name&gt;.</source>
-        <translation>Edytować &lt;%child_name&gt;.</translation>
+        <translation>Edytuj &lt;%child_name&gt;.</translation>
     </message>
     <message>
         <source>You do not have permission to edit &lt;%child_name&gt;.</source>
@@ -7695,11 +7695,11 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit &lt;%item_name&gt;.</source>
-        <translation>Edytować &lt;%item_name&gt;.</translation>
+        <translation>Edytuj &lt;%item_name&gt;.</translation>
     </message>
     <message>
         <source>You do not have permission to edit &lt;%item_name&gt;.</source>
@@ -7747,7 +7747,7 @@
     <message>
         <source>Login</source>
         <comment>Button</comment>
-        <translation>Zalogować</translation>
+        <translation>Zaloguj</translation>
     </message>
     <message>
         <source>The requested page could not be displayed. (2)</source>
@@ -8069,11 +8069,11 @@
     </message>
     <message>
         <source>Read the full copyright notice</source>
-        <translation>Przeczytać pełną informację o prawach autorskich</translation>
+        <translation>Przeczytaj pełną informację o prawach autorskich</translation>
     </message>
     <message>
         <source>Read the license text</source>
-        <translation>Przeczytać tekst licencji</translation>
+        <translation>Przeczytaj tekst licencji</translation>
     </message>
     <message>
         <source>Software</source>
@@ -8136,7 +8136,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Collection ID</source>
@@ -8152,7 +8152,7 @@
     </message>
     <message>
         <source>Select collected information for removal.</source>
-        <translation>Zaznaczyć zebrane informacje do usunięcia.</translation>
+        <translation>Zaznacz zebrane informacje do usunięcia.</translation>
     </message>
     <message>
         <source>No information has been collected by this object.</source>
@@ -8160,11 +8160,11 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected collection.</source>
-        <translation>Usunąć zaznaczony zbiór.</translation>
+        <translation>Usuń zaznaczony zbiór.</translation>
     </message>
     <message>
         <source>Creator</source>
@@ -8180,7 +8180,7 @@
     </message>
     <message>
         <source>Select collection %id for removal</source>
-        <translation>Zaznaczyć zbiór %id do usunięcia</translation>
+        <translation>Zaznacz zbiór %id do usunięcia</translation>
     </message>
 </context>
 <context>
@@ -8207,7 +8207,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>What the visitors sent is deleted and cannot be brought back; export it as CSV first if it is still needed. The objects and their forms stay and go on collecting.</source>
@@ -8215,7 +8215,7 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
 </context>
 <context>
@@ -8226,7 +8226,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -8250,7 +8250,7 @@
     </message>
     <message>
         <source>Select collections for removal.</source>
-        <translation>Zaznaczyć zbiory do usunięcia.</translation>
+        <translation>Zaznacz zbiory do usunięcia.</translation>
     </message>
     <message>
         <source>section</source>
@@ -8262,11 +8262,11 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove all information that was collected by the selected objects.</source>
-        <translation>Usunąć wszystkie informacje zebrane przez zaznaczone obiekty.</translation>
+        <translation>Usuń wszystkie informacje zebrane przez zaznaczone obiekty.</translation>
     </message>
     <message>
         <source>Objects that have collected information (%object_count)</source>
@@ -8274,7 +8274,7 @@
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>1 collection</source>
@@ -8330,11 +8330,11 @@
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>Find an object</source>
-        <translation>Znaleźć obiekt</translation>
+        <translation>Znajdź obiekt</translation>
     </message>
     <message>
         <source>Part of the name of a form, poll or page.</source>
@@ -8342,11 +8342,11 @@
     </message>
     <message>
         <source>Update list</source>
-        <translation>Odświeżyć listę</translation>
+        <translation>Odśwież listę</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>%from to %to of %count</source>
@@ -8354,7 +8354,7 @@
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Sort by</source>
@@ -8366,7 +8366,7 @@
     </message>
     <message>
         <source>Select the collections of %name for removal</source>
-        <translation>Zaznaczyć zbiory %name do usunięcia</translation>
+        <translation>Zaznacz zbiory %name do usunięcia</translation>
     </message>
     <message>
         <source>%count in the last %days days</source>
@@ -8374,11 +8374,11 @@
     </message>
     <message>
         <source>Download every collection of this object as a CSV file for a spreadsheet.</source>
-        <translation>Pobrać wszystkie zbiory tego obiektu jako plik CSV do arkusza kalkulacyjnego.</translation>
+        <translation>Pobierz wszystkie zbiory tego obiektu jako plik CSV do arkusza kalkulacyjnego.</translation>
     </message>
     <message>
         <source>Export CSV</source>
-        <translation>Eksportować CSV</translation>
+        <translation>Eksportuj CSV</translation>
     </message>
     <message>
         <source>Object</source>
@@ -8429,11 +8429,11 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Remove collection.</source>
-        <translation>Usunąć zbiór.</translation>
+        <translation>Usuń zbiór.</translation>
     </message>
     <message>
         <source>Unknown user</source>
@@ -8494,7 +8494,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Note</source>
@@ -8545,11 +8545,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Cancel the removal of locations.</source>
-        <translation>Anulować usuwanie lokalizacji.</translation>
+        <translation>Anuluj usuwanie lokalizacji.</translation>
     </message>
     <message>
         <source>Type</source>
@@ -8565,7 +8565,7 @@
     </message>
     <message>
         <source>Cancel the removal of translations.</source>
-        <translation>Anulować usuwanie tłumaczeń.</translation>
+        <translation>Anuluj usuwanie tłumaczeń.</translation>
     </message>
     <message>
         <source>Some of the subtrees or objects selected for removal are used by other objects. Select the menu from the content tree, and</source>
@@ -8646,7 +8646,7 @@
     <name>design/admin/node/view/full</name>
     <message>
         <source>Hide preview of content.</source>
-        <translation>Ukryć podgląd treści.</translation>
+        <translation>Ukryj podgląd treści.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -8654,19 +8654,19 @@
     </message>
     <message>
         <source>Show preview of content.</source>
-        <translation>Pokazać podgląd treści.</translation>
+        <translation>Pokaż podgląd treści.</translation>
     </message>
     <message>
         <source>Hide available translations.</source>
-        <translation>Ukryć dostępne tłumaczenia.</translation>
+        <translation>Ukryj dostępne tłumaczenia.</translation>
     </message>
     <message>
         <source>Show available translations.</source>
-        <translation>Pokazać dostępne tłumaczenia.</translation>
+        <translation>Pokaż dostępne tłumaczenia.</translation>
     </message>
     <message>
         <source>Hide location overview.</source>
-        <translation>Ukryć przegląd lokalizacji.</translation>
+        <translation>Ukryj przegląd lokalizacji.</translation>
     </message>
     <message>
         <source>Locations</source>
@@ -8674,11 +8674,11 @@
     </message>
     <message>
         <source>Show location overview.</source>
-        <translation>Pokazać przegląd lokalizacji.</translation>
+        <translation>Pokaż przegląd lokalizacji.</translation>
     </message>
     <message>
         <source>Hide relation overview.</source>
-        <translation>Ukryć przegląd relacji.</translation>
+        <translation>Ukryj przegląd relacji.</translation>
     </message>
     <message>
         <source>Relations</source>
@@ -8686,11 +8686,11 @@
     </message>
     <message>
         <source>Show relation overview.</source>
-        <translation>Pokazać przegląd relacji.</translation>
+        <translation>Pokaż przegląd relacji.</translation>
     </message>
     <message>
         <source>Hide role overview.</source>
-        <translation>Ukryć przegląd ról.</translation>
+        <translation>Ukryj przegląd ról.</translation>
     </message>
     <message>
         <source>Roles</source>
@@ -8698,11 +8698,11 @@
     </message>
     <message>
         <source>Show role overview.</source>
-        <translation>Pokazać przegląd ról.</translation>
+        <translation>Pokaż przegląd ról.</translation>
     </message>
     <message>
         <source>Hide policy overview.</source>
-        <translation>Ukryć przegląd zasad.</translation>
+        <translation>Ukryj przegląd zasad.</translation>
     </message>
     <message>
         <source>Policies</source>
@@ -8710,7 +8710,7 @@
     </message>
     <message>
         <source>Show policy overview.</source>
-        <translation>Pokazać przegląd zasad.</translation>
+        <translation>Pokaż przegląd zasad.</translation>
     </message>
     <message>
         <source>Up one level</source>
@@ -8726,7 +8726,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove the selected items from the list above.</source>
@@ -8770,11 +8770,11 @@
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Modifier</source>
@@ -8782,7 +8782,7 @@
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Create a copy of &lt;%child_name&gt;.</source>
@@ -8790,7 +8790,7 @@
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit &lt;%child_name&gt;.</source>
@@ -8850,11 +8850,11 @@
     </message>
     <message>
         <source>Remove selected locations from the list above.</source>
-        <translation>Usunąć zaznaczone lokalizacje z powyższej listy.</translation>
+        <translation>Usuń zaznaczone lokalizacje z powyższej listy.</translation>
     </message>
     <message>
         <source>Set main</source>
-        <translation>Ustawić jako główny</translation>
+        <translation>Ustaw jako główny</translation>
     </message>
     <message>
         <source>Last modified</source>
@@ -8870,11 +8870,11 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Remove this item.</source>
-        <translation>Usunąć ten element.</translation>
+        <translation>Usuń ten element.</translation>
     </message>
     <message>
         <source>Function</source>
@@ -8914,7 +8914,7 @@
     </message>
     <message>
         <source>Edit role.</source>
-        <translation>Edytować rolę.</translation>
+        <translation>Edytuj rolę.</translation>
     </message>
     <message>
         <source>There are no assigned roles.</source>
@@ -8922,7 +8922,7 @@
     </message>
     <message>
         <source>Hide details.</source>
-        <translation>Ukryć szczegóły.</translation>
+        <translation>Ukryj szczegóły.</translation>
     </message>
     <message>
         <source>Details</source>
@@ -8930,7 +8930,7 @@
     </message>
     <message>
         <source>Show details.</source>
-        <translation>Pokazać szczegóły.</translation>
+        <translation>Pokaż szczegóły.</translation>
     </message>
     <message>
         <source>Up one level.</source>
@@ -8938,15 +8938,15 @@
     </message>
     <message>
         <source>Show 10 items per page.</source>
-        <translation>Pokazywać 10 elementów na stronie.</translation>
+        <translation>Pokazuj 10 elementów na stronie.</translation>
     </message>
     <message>
         <source>Show 50 items per page.</source>
-        <translation>Pokazywać 50 elementów na stronie.</translation>
+        <translation>Pokazuj 50 elementów na stronie.</translation>
     </message>
     <message>
         <source>Show 25 items per page.</source>
-        <translation>Pokazywać 25 elementów na stronie.</translation>
+        <translation>Pokazuj 25 elementów na stronie.</translation>
     </message>
     <message>
         <source>Display sub items using a simple list.</source>
@@ -9018,7 +9018,7 @@
     </message>
     <message>
         <source>Select location for removal.</source>
-        <translation>Zaznaczyć lokalizację do usunięcia.</translation>
+        <translation>Zaznacz lokalizację do usunięcia.</translation>
     </message>
     <message>
         <source>Hidden</source>
@@ -9026,11 +9026,11 @@
     </message>
     <message>
         <source>Make location and all sub items visible.</source>
-        <translation>Uczynić lokalizację i wszystkie elementy podrzędne widocznymi.</translation>
+        <translation>Uczyń lokalizację i wszystkie elementy podrzędne widocznymi.</translation>
     </message>
     <message>
         <source>Reveal</source>
-        <translation>Odkryć</translation>
+        <translation>Odkryj</translation>
     </message>
     <message>
         <source>Hidden by superior</source>
@@ -9038,11 +9038,11 @@
     </message>
     <message>
         <source>Hide location and all sub items.</source>
-        <translation>Ukryć lokalizację i wszystkie elementy podrzędne.</translation>
+        <translation>Ukryj lokalizację i wszystkie elementy podrzędne.</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>Ukryć</translation>
+        <translation>Ukryj</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -9054,11 +9054,11 @@
     </message>
     <message>
         <source>Add locations</source>
-        <translation>Dodać lokalizacje</translation>
+        <translation>Dodaj lokalizacje</translation>
     </message>
     <message>
         <source>Add one or more new locations.</source>
-        <translation>Dodać jedną lub więcej nowych lokalizacji.</translation>
+        <translation>Dodaj jedną lub więcej nowych lokalizacji.</translation>
     </message>
     <message>
         <source>It is not possible to add locations to a top level node.</source>
@@ -9070,7 +9070,7 @@
     </message>
     <message>
         <source>Edit the contents of this item.</source>
-        <translation>Edytować zawartość tego elementu.</translation>
+        <translation>Edytuj zawartość tego elementu.</translation>
     </message>
     <message>
         <source>Module</source>
@@ -9094,7 +9094,7 @@
     </message>
     <message>
         <source>View translation.</source>
-        <translation>Wyświetlić tłumaczenie.</translation>
+        <translation>Wyświetl tłumaczenie.</translation>
     </message>
     <message>
         <source>Hide object relation overview.</source>
@@ -9102,7 +9102,7 @@
     </message>
     <message>
         <source>Show object relation overview.</source>
-        <translation>Pokazać przegląd relacji obiektu.</translation>
+        <translation>Pokaż przegląd relacji obiektu.</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -9158,11 +9158,11 @@
     </message>
     <message>
         <source>Edit in &lt;%language_name&gt;.</source>
-        <translation>Edytować w języku &lt;%language_name&gt;.</translation>
+        <translation>Edytuj w języku &lt;%language_name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected languages from the list above.</source>
-        <translation>Usunąć zaznaczone języki z powyższej listy.</translation>
+        <translation>Usuń zaznaczone języki z powyższej listy.</translation>
     </message>
     <message>
         <source>There is no removable language.</source>
@@ -9170,11 +9170,11 @@
     </message>
     <message>
         <source>Use the main language if there is no prioritized translation.</source>
-        <translation>Używać języka głównego, jeśli brak tłumaczenia o wyższym priorytecie.</translation>
+        <translation>Używaj języka głównego, jeśli brak tłumaczenia o wyższym priorytecie.</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Zaktualizować</translation>
+        <translation>Zaktualizuj</translation>
     </message>
     <message>
         <source>Use this button to store the value of the checkbox above.</source>
@@ -9186,7 +9186,7 @@
     </message>
     <message>
         <source>Choose section</source>
-        <translation>Wybrać sekcję</translation>
+        <translation>Wybierz sekcję</translation>
     </message>
     <message>
         <source>Relation type</source>
@@ -9346,11 +9346,11 @@
     </message>
     <message>
         <source>Set states</source>
-        <translation>Ustawić stany</translation>
+        <translation>Ustaw stany</translation>
     </message>
     <message>
         <source>Apply states from the list above.</source>
-        <translation>Zastosować stany z powyższej listy.</translation>
+        <translation>Zastosuj stany z powyższej listy.</translation>
     </message>
     <message>
         <source>No state to be applied to this content object. You might need to be assigned a more permissive access policy.</source>
@@ -9486,11 +9486,11 @@
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Show simplified view of content.</source>
-        <translation>Pokazać uproszczony widok treści.</translation>
+        <translation>Pokaż uproszczony widok treści.</translation>
     </message>
     <message>
         <source>Ordering</source>
@@ -9498,7 +9498,7 @@
     </message>
     <message>
         <source>Show published ordering overview.</source>
-        <translation>Pokazać przegląd kolejności publikacji.</translation>
+        <translation>Pokaż przegląd kolejności publikacji.</translation>
     </message>
     <message>
         <source>Loading ...</source>
@@ -9526,23 +9526,23 @@
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknąć</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Select all visible</source>
-        <translation>Zaznaczyć wszystkie widoczne</translation>
+        <translation>Zaznacz wszystkie widoczne</translation>
     </message>
     <message>
         <source>Select none</source>
-        <translation>Odznaczyć wszystkie</translation>
+        <translation>Odznacz wszystkie</translation>
     </message>
     <message>
         <source>Create new</source>
-        <translation>Utworzyć nowy</translation>
+        <translation>Utwórz nowy</translation>
     </message>
     <message>
         <source>More actions</source>
@@ -9570,7 +9570,7 @@
     </message>
     <message>
         <source>Invert selection</source>
-        <translation>Odwrócić zaznaczenie</translation>
+        <translation>Odwróć zaznaczenie</translation>
     </message>
     <message>
         <source>Path String</source>
@@ -9606,7 +9606,7 @@
     </message>
     <message>
         <source>Drag, or use the arrow keys, to change the height; double-click for the default size</source>
-        <translation>Przeciągnąć lub użyć klawiszy strzałek, aby zmienić wysokość; dwukrotne kliknięcie przywraca rozmiar domyślny</translation>
+        <translation>Przeciągnij lub użyć klawiszy strzałek, aby zmienić wysokość; dwukrotne kliknięcie przywraca rozmiar domyślny</translation>
     </message>
     <message>
         <source>Could not copy</source>
@@ -9626,23 +9626,23 @@
     </message>
     <message>
         <source>Copy selected</source>
-        <translation>Skopiować zaznaczone</translation>
+        <translation>Skopiuj zaznaczone</translation>
     </message>
     <message>
         <source>Hide selected</source>
-        <translation>Ukryć zaznaczone</translation>
+        <translation>Ukryj zaznaczone</translation>
     </message>
     <message>
         <source>Unhide selected</source>
-        <translation>Odkryć zaznaczone</translation>
+        <translation>Odkryj zaznaczone</translation>
     </message>
     <message>
         <source>Create multiple new</source>
-        <translation>Utworzyć wiele nowych</translation>
+        <translation>Utwórz wiele nowych</translation>
     </message>
     <message>
         <source>Edit selected</source>
-        <translation>Edytować zaznaczone</translation>
+        <translation>Edytuj zaznaczone</translation>
     </message>
     <message>
         <source>%count more in the %role_name role</source>
@@ -9650,7 +9650,7 @@
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>Top node</source>
@@ -9666,7 +9666,7 @@
     </message>
     <message>
         <source>Add a location</source>
-        <translation>Dodać lokalizację</translation>
+        <translation>Dodaj lokalizację</translation>
     </message>
     <message>
         <source>Class menu</source>
@@ -9674,11 +9674,11 @@
     </message>
     <message>
         <source>Click to copy</source>
-        <translation>Kliknąć, aby skopiować</translation>
+        <translation>Kliknij, aby skopiować</translation>
     </message>
     <message>
         <source>Click to copy the remote ID</source>
-        <translation>Kliknąć, aby skopiować zdalne ID</translation>
+        <translation>Kliknij, aby skopiować zdalne ID</translation>
     </message>
     <message>
         <source>Column name</source>
@@ -9694,11 +9694,11 @@
     </message>
     <message>
         <source>Delete preset</source>
-        <translation>Usunąć zestaw</translation>
+        <translation>Usuń zestaw</translation>
     </message>
     <message>
         <source>Download the items with the visible columns as a CSV file</source>
-        <translation>Pobrać elementy z widocznymi kolumnami jako plik CSV</translation>
+        <translation>Pobierz elementy z widocznymi kolumnami jako plik CSV</translation>
     </message>
     <message>
         <source>Drag a column to move it, or use its arrow buttons.</source>
@@ -9706,15 +9706,15 @@
     </message>
     <message>
         <source>Enter number</source>
-        <translation>Wpisać liczbę</translation>
+        <translation>Wpisz liczbę</translation>
     </message>
     <message>
         <source>Export CSV</source>
-        <translation>Eksportować CSV</translation>
+        <translation>Eksportuj CSV</translation>
     </message>
     <message>
         <source>Find a column:</source>
-        <translation>Znaleźć kolumnę:</translation>
+        <translation>Znajdź kolumnę:</translation>
     </message>
     <message>
         <source>Hidden by a parent</source>
@@ -9726,11 +9726,11 @@
     </message>
     <message>
         <source>Move %name down</source>
-        <translation>Przesunąć %name w dół</translation>
+        <translation>Przesuń %name w dół</translation>
     </message>
     <message>
         <source>Move %name up</source>
-        <translation>Przesunąć %name w górę</translation>
+        <translation>Przesuń %name w górę</translation>
     </message>
     <message>
         <source>Name of the new preset</source>
@@ -9762,7 +9762,7 @@
     </message>
     <message>
         <source>Drag to change the order</source>
-        <translation>Przeciągnąć, aby zmienić kolejność</translation>
+        <translation>Przeciągnij, aby zmienić kolejność</translation>
     </message>
     <message>
         <source>Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.</source>
@@ -9794,7 +9794,7 @@
     </message>
     <message>
         <source>Copy this item to another location.</source>
-        <translation>Skopiować ten element do innej lokalizacji.</translation>
+        <translation>Skopiuj ten element do innej lokalizacji.</translation>
     </message>
     <message>
         <source>You do not have permission to copy this item.</source>
@@ -9818,7 +9818,7 @@
     </message>
     <message>
         <source>Show tabs</source>
-        <translation>Pokazać karty</translation>
+        <translation>Pokaż karty</translation>
     </message>
     <message>
         <source>Basic</source>
@@ -10910,11 +10910,11 @@
     </message>
     <message>
         <source>Translate into %language</source>
-        <translation>Przetłumaczyć na %language</translation>
+        <translation>Przetłumacz na %language</translation>
     </message>
     <message>
         <source>Deactivate and move</source>
-        <translation>Dezaktywować i przenieść</translation>
+        <translation>Dezaktywuj i przenieść</translation>
     </message>
     <message>
         <source>Reactivate and move back</source>
@@ -10922,11 +10922,11 @@
     </message>
     <message>
         <source>Disable this account and move it to the group of deactivated users, remembering where it was. Nothing is removed.</source>
-        <translation>Wyłączyć to konto i przenieść je do grupy dezaktywowanych użytkowników, zapamiętując, gdzie było. Nic nie zostanie usunięte.</translation>
+        <translation>Wyłącz to konto i przenieść je do grupy dezaktywowanych użytkowników, zapamiętując, gdzie było. Nic nie zostanie usunięte.</translation>
     </message>
     <message>
         <source>Enable this account and move it back to the locations it had.</source>
-        <translation>Włączyć to konto i przenieść je z powrotem do jego poprzednich lokalizacji.</translation>
+        <translation>Włącz to konto i przenieść je z powrotem do jego poprzednich lokalizacji.</translation>
     </message>
     <message>
         <source>Import/Export</source>
@@ -10934,7 +10934,7 @@
     </message>
     <message>
         <source>Export this item or import into it.</source>
-        <translation>Wyeksportować ten element lub zaimportować do niego.</translation>
+        <translation>Wyeksportuj ten element lub zaimportować do niego.</translation>
     </message>
     <message>
         <source>Move canceled. %name is back at position %position of %count.</source>
@@ -10946,7 +10946,7 @@
     </message>
     <message>
         <source>Undo</source>
-        <translation>Cofnąć</translation>
+        <translation>Cofnij</translation>
     </message>
     <message>
         <source>Previous order restored</source>
@@ -11010,7 +11010,7 @@
     </message>
     <message>
         <source>Save current as...</source>
-        <translation>Zapisać bieżący jako...</translation>
+        <translation>Zapisz bieżący jako...</translation>
     </message>
     <message>
         <source>Secondary location</source>
@@ -11022,11 +11022,11 @@
     </message>
     <message>
         <source>View on site</source>
-        <translation>Wyświetlić w witrynie</translation>
+        <translation>Wyświetl w witrynie</translation>
     </message>
     <message>
         <source>View on site (new window)</source>
-        <translation>Wyświetlić w witrynie (nowe okno)</translation>
+        <translation>Wyświetl w witrynie (nowe okno)</translation>
     </message>
     <message>
         <source>by</source>
@@ -11038,11 +11038,11 @@
     </message>
     <message>
         <source>Upload</source>
-        <translation>Przesłać</translation>
+        <translation>Prześlij</translation>
     </message>
     <message>
         <source>Upload files to this location.</source>
-        <translation>Przesłać pliki do tej lokalizacji.</translation>
+        <translation>Prześlij pliki do tej lokalizacji.</translation>
     </message>
     <message>
         <source>The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.</source>
@@ -11083,7 +11083,7 @@
     </message>
     <message>
         <source>Add to my notifications</source>
-        <translation>Dodać do moich powiadomień</translation>
+        <translation>Dodaj do moich powiadomień</translation>
     </message>
     <message>
         <source>Notification for node &lt;%node_name&gt; already exists.</source>
@@ -11125,7 +11125,7 @@
     <name>design/admin/notification/handler/ezgeneraldigest/settings/edit</name>
     <message>
         <source>Receive all messages combined in one digest</source>
-        <translation>Otrzymywać wszystkie wiadomości zebrane w jednym zestawieniu</translation>
+        <translation>Otrzymuj wszystkie wiadomości zebrane w jednym zestawieniu</translation>
     </message>
     <message>
         <source>Daily, at</source>
@@ -11141,7 +11141,7 @@
     </message>
     <message>
         <source>Receive digests</source>
-        <translation>Otrzymywać zestawienia</translation>
+        <translation>Otrzymuj zestawienia</translation>
     </message>
     <message>
         <source>Once per month, on day number</source>
@@ -11164,7 +11164,7 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>My item notifications [%notification_count]</source>
@@ -11172,11 +11172,11 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select item for removal.</source>
-        <translation>Zaznaczyć element do usunięcia.</translation>
+        <translation>Zaznacz element do usunięcia.</translation>
     </message>
     <message>
         <source>You have not subscribed to receive notifications about any items.</source>
@@ -11184,15 +11184,15 @@
     </message>
     <message>
         <source>Remove selected items.</source>
-        <translation>Usunąć zaznaczone elementy.</translation>
+        <translation>Usuń zaznaczone elementy.</translation>
     </message>
     <message>
         <source>Add items</source>
-        <translation>Dodać elementy</translation>
+        <translation>Dodaj elementy</translation>
     </message>
     <message>
         <source>Add items to your personal notification list.</source>
-        <translation>Dodać elementy do osobistej listy powiadomień.</translation>
+        <translation>Dodaj elementy do osobistej listy powiadomień.</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -11215,7 +11215,7 @@
     </message>
     <message>
         <source>Spawn time event</source>
-        <translation>Wygenerować zdarzenie czasowe</translation>
+        <translation>Wygeneruj zdarzenie czasowe</translation>
     </message>
     <message>
         <source>The notification filter processed all available notification events.</source>
@@ -11223,7 +11223,7 @@
     </message>
     <message>
         <source>Run notification filter</source>
-        <translation>Uruchomić filtr powiadomień</translation>
+        <translation>Uruchom filtr powiadomień</translation>
     </message>
     <message>
         <source>%events events handled, %mails messages sent.</source>
@@ -11250,15 +11250,15 @@
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Add items</source>
-        <translation>Dodać elementy</translation>
+        <translation>Dodaj elementy</translation>
     </message>
     <message>
         <source>Add items to your personal notification list.</source>
-        <translation>Dodać elementy do osobistej listy powiadomień.</translation>
+        <translation>Dodaj elementy do osobistej listy powiadomień.</translation>
     </message>
     <message>
         <source>Added %count notification(s).</source>
@@ -11278,7 +11278,7 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Choose Add items to pick content, or open an item and choose Notify me in its menu. You are then told by e-mail when something new is published below it.</source>
@@ -11314,7 +11314,7 @@
     </message>
     <message>
         <source>Dismiss</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>E-mail digest</source>
@@ -11394,11 +11394,11 @@
     </message>
     <message>
         <source>Receive all messages combined in one digest</source>
-        <translation>Otrzymywać wszystkie wiadomości zebrane w jednym zestawieniu</translation>
+        <translation>Otrzymuj wszystkie wiadomości zebrane w jednym zestawieniu</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Remove %count items from your notifications?</source>
@@ -11406,11 +11406,11 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected items.</source>
-        <translation>Usunąć zaznaczone elementy.</translation>
+        <translation>Usuń zaznaczone elementy.</translation>
     </message>
     <message>
         <source>Removed %count notification(s).</source>
@@ -11418,27 +11418,27 @@
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Save collaboration settings</source>
-        <translation>Zapisać ustawienia współpracy</translation>
+        <translation>Zapisz ustawienia współpracy</translation>
     </message>
     <message>
         <source>Save digest settings</source>
-        <translation>Zapisać ustawienia zestawienia</translation>
+        <translation>Zapisz ustawienia zestawienia</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Select item for removal.</source>
-        <translation>Zaznaczyć element do usunięcia.</translation>
+        <translation>Zaznacz element do usunięcia.</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation>Pokazać wszystko</translation>
+        <translation>Pokaż wszystko</translation>
     </message>
     <message>
         <source>Switched off: one e-mail for each change, at once.</source>
@@ -11543,7 +11543,7 @@
     </message>
     <message>
         <source>Create package</source>
-        <translation>Utworzyć pakiet</translation>
+        <translation>Utwórz pakiet</translation>
     </message>
     <message>
         <source>Available wizards</source>
@@ -11563,7 +11563,7 @@
     </message>
     <message>
         <source>Include class definitions.</source>
-        <translation>Dołączyć definicje klas.</translation>
+        <translation>Dołącz definicje klas.</translation>
     </message>
     <message>
         <source>Select templates from the following siteaccesses</source>
@@ -11595,7 +11595,7 @@
     </message>
     <message>
         <source>Keep all in selected nodes</source>
-        <translation>Zachować wszystkie w wybranych węzłach</translation>
+        <translation>Zachowaj wszystkie w wybranych węzłach</translation>
     </message>
     <message>
         <source>Main only</source>
@@ -11615,7 +11615,7 @@
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Node</source>
@@ -11627,15 +11627,15 @@
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Add subtree</source>
-        <translation>Dodać poddrzewo</translation>
+        <translation>Dodaj poddrzewo</translation>
     </message>
     <message>
         <source>Add node</source>
-        <translation>Dodać węzeł</translation>
+        <translation>Dodaj węzeł</translation>
     </message>
     <message>
         <source>Please select the site CSS file to be included in the package.</source>
@@ -11655,15 +11655,15 @@
     </message>
     <message>
         <source>Install package</source>
-        <translation>Zainstalować pakiet</translation>
+        <translation>Zainstaluj pakiet</translation>
     </message>
     <message>
         <source>Install items</source>
-        <translation>Zainstalować elementy</translation>
+        <translation>Zainstaluj elementy</translation>
     </message>
     <message>
         <source>Skip installation</source>
-        <translation>Pominąć instalację</translation>
+        <translation>Pomiń instalację</translation>
     </message>
     <message>
         <source>Package install wizard: %wizardname</source>
@@ -11679,11 +11679,11 @@
     </message>
     <message>
         <source>Upload package</source>
-        <translation>Przesłać pakiet</translation>
+        <translation>Prześlij pakiet</translation>
     </message>
     <message>
         <source>Import package</source>
-        <translation>Zaimportować pakiet</translation>
+        <translation>Zaimportuj pakiet</translation>
     </message>
     <message>
         <source>Installed</source>
@@ -11707,15 +11707,15 @@
     </message>
     <message>
         <source>Uninstall</source>
-        <translation>Odinstalować</translation>
+        <translation>Odinstaluj</translation>
     </message>
     <message>
         <source>Install</source>
-        <translation>Zainstalować</translation>
+        <translation>Zainstaluj</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation>Wyeksportować do pliku</translation>
+        <translation>Wyeksportuj do pliku</translation>
     </message>
     <message>
         <source>State</source>
@@ -11739,23 +11739,23 @@
     </message>
     <message>
         <source>Uninstall package</source>
-        <translation>Odinstalować pakiet</translation>
+        <translation>Odinstaluj pakiet</translation>
     </message>
     <message>
         <source>Uninstall items</source>
-        <translation>Odinstalować elementy</translation>
+        <translation>Odinstaluj elementy</translation>
     </message>
     <message>
         <source>Skip uninstallation</source>
-        <translation>Pominąć deinstalację</translation>
+        <translation>Pomiń deinstalację</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Continue</source>
-        <translation>Kontynuować</translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <source>Email</source>
@@ -11763,7 +11763,7 @@
     </message>
     <message>
         <source>Send email to the maintainer</source>
-        <translation>Wysłać e-mail do opiekuna</translation>
+        <translation>Wyślij e-mail do opiekuna</translation>
     </message>
     <message>
         <source>Provide some basic information for your package.</source>
@@ -11779,7 +11779,7 @@
     </message>
     <message>
         <source>Include templates related to exported objects.</source>
-        <translation>Dołączyć szablony związane z eksportowanymi obiektami.</translation>
+        <translation>Dołącz szablony związane z eksportowanymi obiektami.</translation>
     </message>
     <message>
         <source>Choose the objects to include in the package.</source>
@@ -11843,7 +11843,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Apply</source>
-        <translation>Zastosować</translation>
+        <translation>Zastosuj</translation>
     </message>
     <message>
         <source>Attribute</source>
@@ -11855,11 +11855,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Clear filters</source>
-        <translation>Wyczyścić filtry</translation>
+        <translation>Wyczyść filtry</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknąć</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Content class</source>
@@ -11879,7 +11879,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Download</source>
-        <translation>Pobrać</translation>
+        <translation>Pobierz</translation>
     </message>
     <message>
         <source>File</source>
@@ -11935,7 +11935,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Reinstall</source>
-        <translation>Zainstalować ponownie</translation>
+        <translation>Zainstaluj ponownie</translation>
     </message>
     <message>
         <source>Released %date</source>
@@ -11947,7 +11947,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Search path/name</source>
-        <translation>Wyszukać ścieżkę/nazwę</translation>
+        <translation>Wyszukaj ścieżkę/nazwę</translation>
     </message>
     <message>
         <source>Size</source>
@@ -11963,7 +11963,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Object</source>
@@ -11983,7 +11983,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Compare the package's content with the site's content tree</source>
-        <translation>Porównać zawartość pakietu z drzewem treści witryny</translation>
+        <translation>Porównaj zawartość pakietu z drzewem treści witryny</translation>
     </message>
     <message>
         <source>The package's classes and objects next to the site's own. Nothing is installed or changed.</source>
@@ -12059,11 +12059,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Back to the package</source>
-        <translation>Wrócić do pakietu</translation>
+        <translation>Wróć do pakietu</translation>
     </message>
     <message>
         <source>Build the comparison anew; takes a few seconds for a large package</source>
-        <translation>Utworzyć porównanie od nowa; dla dużego pakietu trwa to kilka sekund</translation>
+        <translation>Utwórz porównanie od nowa; dla dużego pakietu trwa to kilka sekund</translation>
     </message>
     <message>
         <source>Category</source>
@@ -12083,15 +12083,15 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Compare %name with the site</source>
-        <translation>Porównać %name z witryną</translation>
+        <translation>Porównaj %name z witryną</translation>
     </message>
     <message>
         <source>Compare again</source>
-        <translation>Porównać ponownie</translation>
+        <translation>Porównaj ponownie</translation>
     </message>
     <message>
         <source>Compare</source>
-        <translation>Porównać</translation>
+        <translation>Porównaj</translation>
     </message>
     <message>
         <source>Compared by the serialized XML of the value.</source>
@@ -12127,7 +12127,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Filter by status</source>
-        <translation>Filtrować według stanu</translation>
+        <translation>Filtruj według stanu</translation>
     </message>
     <message>
         <source>Identical</source>
@@ -12231,7 +12231,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Open on the site</source>
-        <translation>Otworzyć w witrynie</translation>
+        <translation>Otwórz w witrynie</translation>
     </message>
     <message>
         <source>Package file</source>
@@ -12259,7 +12259,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Search name/remote ID</source>
-        <translation>Wyszukać nazwę/zdalne ID</translation>
+        <translation>Wyszukaj nazwę/zdalne ID</translation>
     </message>
     <message>
         <source>Searchable</source>
@@ -12423,15 +12423,15 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Import</source>
-        <translation>Zaimportować</translation>
+        <translation>Zaimportuj</translation>
     </message>
     <message>
         <source>Import %count item(s)</source>
-        <translation>Zaimportować elementy (%count)</translation>
+        <translation>Zaimportuj elementy (%count)</translation>
     </message>
     <message>
         <source>Import all changes of this filter (%count)</source>
-        <translation>Zaimportować wszystkie zmiany tego filtru (%count)</translation>
+        <translation>Zaimportuj wszystkie zmiany tego filtru (%count)</translation>
     </message>
     <message>
         <source>Import from the package: confirm</source>
@@ -12443,19 +12443,19 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Import selected</source>
-        <translation>Zaimportować zaznaczone</translation>
+        <translation>Zaimportuj zaznaczone</translation>
     </message>
     <message>
         <source>Import the next ones (%count left in this filter)</source>
-        <translation>Zaimportować kolejne (pozostało w tym filtrze: %count)</translation>
+        <translation>Zaimportuj kolejne (pozostało w tym filtrze: %count)</translation>
     </message>
     <message>
         <source>Import this item</source>
-        <translation>Zaimportować ten element</translation>
+        <translation>Zaimportuj ten element</translation>
     </message>
     <message>
         <source>Import what the package brings for this item; a confirmation follows</source>
-        <translation>Zaimportować to, co pakiet dostarcza dla tego elementu; nastąpi potwierdzenie</translation>
+        <translation>Zaimportuj to, co pakiet dostarcza dla tego elementu; nastąpi potwierdzenie</translation>
     </message>
     <message>
         <source>Imported.</source>
@@ -12523,11 +12523,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Select %name</source>
-        <translation>Zaznaczyć %name</translation>
+        <translation>Zaznacz %name</translation>
     </message>
     <message>
         <source>The class is created, with %count attribute(s).</source>
@@ -12619,11 +12619,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Import %name</source>
-        <translation>Zaimportować %name</translation>
+        <translation>Zaimportuj %name</translation>
     </message>
     <message>
         <source>Import the ticked items</source>
-        <translation>Zaimportować zaznaczone elementy</translation>
+        <translation>Zaimportuj zaznaczone elementy</translation>
     </message>
     <message>
         <source>New translation</source>
@@ -12683,7 +12683,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Untick to leave this item out</source>
-        <translation>Odznaczyć, aby pominąć ten element</translation>
+        <translation>Odznacz, aby pominąć ten element</translation>
     </message>
     <message>
         <source>Values (%count): choose which to import</source>
@@ -12867,11 +12867,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Back to the packages</source>
-        <translation>Wrócić do pakietów</translation>
+        <translation>Wróć do pakietów</translation>
     </message>
     <message>
         <source>Download the package as an .ezpkg file.</source>
-        <translation>Pobrać pakiet jako plik .ezpkg.</translation>
+        <translation>Pobierz pakiet jako plik .ezpkg.</translation>
     </message>
     <message>
         <source>Asks first and says what goes.</source>
@@ -12879,7 +12879,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>The installer takes this package as a source.</source>
@@ -12887,7 +12887,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Change it only on purpose: new installations and published packages are built from it.</source>
-        <translation>Zmieniać tylko celowo: budowane są z niego nowe instalacje i publikowane pakiety.</translation>
+        <translation>Zmieniaj tylko celowo: budowane są z niego nowe instalacje i publikowane pakiety.</translation>
     </message>
     <message>
         <source>Repository</source>
@@ -13055,11 +13055,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Install as drafts</source>
-        <translation>Zainstalować jako wersje robocze</translation>
+        <translation>Zainstaluj jako wersje robocze</translation>
     </message>
     <message>
         <source>Install the content objects as drafts</source>
-        <translation>Zainstalować obiekty treści jako wersje robocze</translation>
+        <translation>Zainstaluj obiekty treści jako wersje robocze</translation>
     </message>
     <message>
         <source>Nothing is published and no published object is changed: each draft is reviewed and published by a person. Classes, settings, design files and extensions are not installed.</source>
@@ -13083,11 +13083,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Download the package in the JSON format (package.json), as a .json.ezpkg file.</source>
-        <translation>Pobrać pakiet w formacie JSON (package.json) jako plik .json.ezpkg.</translation>
+        <translation>Pobierz pakiet w formacie JSON (package.json) jako plik .json.ezpkg.</translation>
     </message>
     <message>
         <source>Download as JSON</source>
-        <translation>Pobrać jako JSON</translation>
+        <translation>Pobierz jako JSON</translation>
     </message>
     <message>
         <source>Format</source>
@@ -13143,7 +13143,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Install in the background</source>
-        <translation>Zainstalować w tle</translation>
+        <translation>Zainstaluj w tle</translation>
     </message>
     <message>
         <source>The install runs in the background: %description. The package page and the job page show its progress; nothing waits for this page.</source>
@@ -13191,11 +13191,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Check every document of the package and, in the JSON format, the schema and the checksums.</source>
-        <translation>Sprawdzić każdy dokument pakietu, a w formacie JSON także schemat i sumy kontrolne.</translation>
+        <translation>Sprawdź każdy dokument pakietu, a w formacie JSON także schemat i sumy kontrolne.</translation>
     </message>
     <message>
         <source>Validate</source>
-        <translation>Zwalidować</translation>
+        <translation>Zwaliduj</translation>
     </message>
     <message>
         <source>Background installs</source>
@@ -13239,11 +13239,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>View as XML</source>
-        <translation>Wyświetlić jako XML</translation>
+        <translation>Wyświetl jako XML</translation>
     </message>
     <message>
         <source>View as JSON</source>
-        <translation>Wyświetlić jako JSON</translation>
+        <translation>Wyświetl jako JSON</translation>
     </message>
     <message>
         <source>An SVG image may carry script, so it is shown as text here; Download gives the file.</source>
@@ -13311,7 +13311,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Add image</source>
-        <translation>Dodać obraz</translation>
+        <translation>Dodaj obraz</translation>
     </message>
     <message>
         <source>Add the images the stylesheets use, one at a time. Continue without a file when all are added.</source>
@@ -13371,11 +13371,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Filter by name</source>
-        <translation>Filtrować według nazwy</translation>
+        <translation>Filtruj według nazwy</translation>
     </message>
     <message>
         <source>Filter by name or identifier</source>
-        <translation>Filtrować według nazwy lub identyfikatora</translation>
+        <translation>Filtruj według nazwy lub identyfikatora</translation>
     </message>
     <message>
         <source>Format and license</source>
@@ -13399,7 +13399,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Include</source>
-        <translation>Dołączyć</translation>
+        <translation>Dołącz</translation>
     </message>
     <message>
         <source>Included</source>
@@ -13475,7 +13475,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Select for removal</source>
-        <translation>Zaznaczyć do usunięcia</translation>
+        <translation>Zaznacz do usunięcia</translation>
     </message>
     <message>
         <source>Semantic versioning: MAJOR.MINOR.PATCH, for example 1.0.0 or 1.2.0-beta.1.</source>
@@ -13487,7 +13487,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Start the wizard</source>
-        <translation>Uruchomić kreator</translation>
+        <translation>Uruchom kreator</translation>
     </message>
     <message>
         <source>Step %number of %total</source>
@@ -13555,7 +13555,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Show the %count extensions of this site</source>
-        <translation>Pokazać rozszerzenia tej witryny (%count)</translation>
+        <translation>Pokaż rozszerzenia tej witryny (%count)</translation>
     </message>
     <message>
         <source>Image file</source>
@@ -13578,7 +13578,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Package removal was canceled.</source>
@@ -13598,11 +13598,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Change repository</source>
-        <translation>Zmienić repozytorium</translation>
+        <translation>Zmień repozytorium</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -13638,15 +13638,15 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Import new package</source>
-        <translation>Zaimportować nowy pakiet</translation>
+        <translation>Zaimportuj nowy pakiet</translation>
     </message>
     <message>
         <source>Create new package</source>
-        <translation>Utworzyć nowy pakiet</translation>
+        <translation>Utwórz nowy pakiet</translation>
     </message>
     <message>
         <source>Are you sure you want to remove the following packages?
@@ -13658,7 +13658,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>It is in the setup wizard's repository, which the published packages are built from.</source>
@@ -13770,7 +13770,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove %count package(s)</source>
-        <translation>Usunąć pakiety (%count)</translation>
+        <translation>Usuń pakiety (%count)</translation>
     </message>
     <message>
         <source>Nothing selected can be removed.</source>
@@ -13778,7 +13778,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Back to the packages</source>
-        <translation>Wrócić do pakietów</translation>
+        <translation>Wróć do pakietów</translation>
     </message>
     <message>
         <source>Imported, nothing to install</source>
@@ -13910,11 +13910,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find packages</source>
-        <translation>Znaleźć pakiety</translation>
+        <translation>Znajdź pakiety</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Name, summary, type, vendor, version, maintainer or a required package.</source>
@@ -13938,11 +13938,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation>Zastosować</translation>
+        <translation>Zastosuj</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Matching packages</source>
@@ -13966,11 +13966,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation>Odwrócić</translation>
+        <translation>Odwróć</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>There are no packages yet. Import one with Import new package, or make one with Create new package.</source>
@@ -13982,11 +13982,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select the package for removal.</source>
-        <translation>Zaznaczyć pakiet do usunięcia.</translation>
+        <translation>Zaznacz pakiet do usunięcia.</translation>
     </message>
     <message>
         <source>Select %name for removal</source>
-        <translation>Zaznaczyć %name do usunięcia</translation>
+        <translation>Zaznacz %name do usunięcia</translation>
     </message>
     <message>
         <source>Contains links</source>
@@ -13994,15 +13994,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Download the package as an .ezpkg file.</source>
-        <translation>Pobrać pakiet jako plik .ezpkg.</translation>
+        <translation>Pobierz pakiet jako plik .ezpkg.</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Pobrać</translation>
+        <translation>Pobierz</translation>
     </message>
     <message>
         <source>Maintainers</source>
@@ -14046,7 +14046,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show %count packages per page.</source>
-        <translation>Pokazywać %count pakietów na stronie.</translation>
+        <translation>Pokazuj %count pakietów na stronie.</translation>
     </message>
     <message>
         <source>Pages</source>
@@ -14078,7 +14078,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Download the package in the JSON format (package.json), as a .json.ezpkg file.</source>
-        <translation>Pobrać pakiet w formacie JSON (package.json) jako plik .json.ezpkg.</translation>
+        <translation>Pobierz pakiet w formacie JSON (package.json) jako plik .json.ezpkg.</translation>
     </message>
     <message>
         <source>JSON</source>
@@ -14128,7 +14128,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <name>design/admin/pagelayout</name>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>All content</source>
@@ -14184,19 +14184,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Change information</source>
-        <translation>Zmienić informacje</translation>
+        <translation>Zmień informacje</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Zmienić hasło</translation>
+        <translation>Zmień hasło</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation>Wylogować</translation>
+        <translation>Wyloguj</translation>
     </message>
     <message>
         <source>Change user info</source>
-        <translation>Zmienić informacje o użytkowniku</translation>
+        <translation>Zmień informacje o użytkowniku</translation>
     </message>
     <message>
         <source>Bookmarks</source>
@@ -14216,35 +14216,35 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Manage the main content structure of the site.</source>
-        <translation>Zarządzać główną strukturą treści witryny.</translation>
+        <translation>Zarządzaj główną strukturą treści witryny.</translation>
     </message>
     <message>
         <source>Manage images, files, documents, etc.</source>
-        <translation>Zarządzać obrazami, plikami, dokumentami itd.</translation>
+        <translation>Zarządzaj obrazami, plikami, dokumentami itd.</translation>
     </message>
     <message>
         <source>Manage users, user groups and permission settings.</source>
-        <translation>Zarządzać użytkownikami, grupami użytkowników i ustawieniami uprawnień.</translation>
+        <translation>Zarządzaj użytkownikami, grupami użytkowników i ustawieniami uprawnień.</translation>
     </message>
     <message>
         <source>Manage customers, orders, discounts and VAT types; view sales statistics.</source>
-        <translation>Zarządzać klientami, zamówieniami, rabatami i typami VAT; przeglądać statystyki sprzedaży.</translation>
+        <translation>Zarządzaj klientami, zamówieniami, rabatami i typami VAT; przeglądać statystyki sprzedaży.</translation>
     </message>
     <message>
         <source>Manage templates, menus, toolbars and other things related to appearence.</source>
-        <translation>Zarządzać szablonami, menu, paskami narzędzi i innymi elementami związanymi z wyglądem.</translation>
+        <translation>Zarządzaj szablonami, menu, paskami narzędzi i innymi elementami związanymi z wyglądem.</translation>
     </message>
     <message>
         <source>Configure settings and manage advanced functionality.</source>
-        <translation>Konfigurować ustawienia i zarządzać zaawansowanymi funkcjami.</translation>
+        <translation>Konfiguruj ustawienia i zarządzać zaawansowanymi funkcjami.</translation>
     </message>
     <message>
         <source>Manage items and settings that belong to your account.</source>
-        <translation>Zarządzać elementami i ustawieniami należącymi do konta.</translation>
+        <translation>Zarządzaj elementami i ustawieniami należącymi do konta.</translation>
     </message>
     <message>
         <source>Change password for &lt;%username&gt;.</source>
-        <translation>Zmienić hasło użytkownika &lt;%username&gt;.</translation>
+        <translation>Zmień hasło użytkownika &lt;%username&gt;.</translation>
     </message>
     <message>
         <source>There is %basket_count item in the shopping basket.</source>
@@ -14260,7 +14260,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Logout from the system.</source>
-        <translation>Wylogować się z systemu.</translation>
+        <translation>Wyloguj się z systemu.</translation>
     </message>
     <message>
         <source>Hide bookmarks.</source>
@@ -14276,11 +14276,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Add to bookmarks</source>
-        <translation>Dodać do zakładek</translation>
+        <translation>Dodaj do zakładek</translation>
     </message>
     <message>
         <source>Add the current item to your bookmarks.</source>
-        <translation>Dodać bieżący element do zakładek.</translation>
+        <translation>Dodaj bieżący element do zakładek.</translation>
     </message>
     <message>
         <source>Hide clear cache menu.</source>
@@ -14292,7 +14292,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear cache</source>
-        <translation>Wyczyścić pamięć podręczną</translation>
+        <translation>Wyczyść pamięć podręczną</translation>
     </message>
     <message>
         <source>Show clear cache menu.</source>
@@ -14316,11 +14316,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Change name, email, password, etc.</source>
-        <translation>Zmienić nazwę, e-mail, hasło itd.</translation>
+        <translation>Zmień nazwę, e-mail, hasło itd.</translation>
     </message>
     <message>
         <source>[%classname] Click on the icon to display a context-sensitive menu.</source>
@@ -14328,11 +14328,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Search in all content</source>
-        <translation>Wyszukać w całej treści</translation>
+        <translation>Wyszukaj w całej treści</translation>
     </message>
     <message>
         <source>Search in &apos;%node&apos;</source>
-        <translation>Wyszukać w &apos;%node&apos;</translation>
+        <translation>Wyszukaj w &apos;%node&apos;</translation>
     </message>
     <message>
         <source>User preferences</source>
@@ -14340,7 +14340,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknąć</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Loading...</source>
@@ -14360,7 +14360,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Search only from the current location</source>
-        <translation>Wyszukać tylko od bieżącej lokalizacji</translation>
+        <translation>Wyszukaj tylko od bieżącej lokalizacji</translation>
     </message>
     <message>
         <source>Environment</source>
@@ -14408,7 +14408,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Color mode: light</source>
@@ -14424,15 +14424,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Switch to dark mode</source>
-        <translation>Przełączyć na tryb ciemny</translation>
+        <translation>Przełącz na tryb ciemny</translation>
     </message>
     <message>
         <source>Switch to system mode</source>
-        <translation>Przełączyć na tryb systemowy</translation>
+        <translation>Przełącz na tryb systemowy</translation>
     </message>
     <message>
         <source>Switch to light mode</source>
-        <translation>Przełączyć na tryb jasny</translation>
+        <translation>Przełącz na tryb jasny</translation>
     </message>
     <message>
         <source>Compact view</source>
@@ -14440,7 +14440,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Switch between normal and compact view</source>
-        <translation>Przełączać między widokiem normalnym a kompaktowym</translation>
+        <translation>Przełączaj między widokiem normalnym a kompaktowym</translation>
     </message>
     <message>
         <source>Light mode</source>
@@ -14460,7 +14460,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Try again</source>
-        <translation>Spróbować ponownie</translation>
+        <translation>Spróbuj ponownie</translation>
     </message>
     <message>
         <source>You are signed out. Sign in again to see the %tab menu.</source>
@@ -14468,7 +14468,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Sign in</source>
-        <translation>Zalogować się</translation>
+        <translation>Zaloguj się</translation>
     </message>
     <message>
         <source>Go to %tab</source>
@@ -14476,11 +14476,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Open the site</source>
-        <translation>Otworzyć witrynę</translation>
+        <translation>Otwórz witrynę</translation>
     </message>
     <message>
         <source>Open the site or another siteaccess</source>
-        <translation>Otworzyć witrynę lub inny dostęp do witryny</translation>
+        <translation>Otwórz witrynę lub inny dostęp do witryny</translation>
     </message>
     <message>
         <source>Sites</source>
@@ -14496,7 +14496,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Switch between light and dark mode</source>
-        <translation>Przełączać między trybem jasnym a ciemnym</translation>
+        <translation>Przełączaj między trybem jasnym a ciemnym</translation>
     </message>
     <message>
         <source>Where</source>
@@ -14532,7 +14532,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Sklep</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -14548,7 +14548,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Export parts of the content tree as feeds, import the feeds of other sites</source>
-        <translation>Eksportować części drzewa treści jako kanały, importować kanały innych witryn</translation>
+        <translation>Eksportuj części drzewa treści jako kanały, importować kanały innych witryn</translation>
     </message>
     <message>
         <source>Skip to main content</source>
@@ -14588,15 +14588,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show or hide the left sidebar</source>
-        <translation>Pokazać lub ukryć lewy pasek boczny</translation>
+        <translation>Pokaż lub ukryć lewy pasek boczny</translation>
     </message>
     <message>
         <source>Show or hide the right sidebar</source>
-        <translation>Pokazać lub ukryć prawy pasek boczny</translation>
+        <translation>Pokaż lub ukryć prawy pasek boczny</translation>
     </message>
     <message>
         <source>Logout (%login)</source>
-        <translation>Wylogować (%login)</translation>
+        <translation>Wyloguj (%login)</translation>
     </message>
     <message>
         <source>User menu (%name)</source>
@@ -14604,7 +14604,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Open your user object</source>
-        <translation>Otworzyć własny obiekt użytkownika</translation>
+        <translation>Otwórz własny obiekt użytkownika</translation>
     </message>
     <message>
         <source>Side menu</source>
@@ -14639,11 +14639,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <name>design/admin/pagelayout/leftmenu</name>
     <message>
         <source>Show / Hide leftmenu</source>
-        <translation>Pokazać / ukryć lewe menu</translation>
+        <translation>Pokaż / ukryć lewe menu</translation>
     </message>
     <message>
         <source>Hide / Show leftmenu</source>
-        <translation>Ukryć / pokazać lewe menu</translation>
+        <translation>Ukryj / pokazać lewe menu</translation>
     </message>
 </context>
 <context>
@@ -14657,11 +14657,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <name>design/admin/pagelayout/rightmenu</name>
     <message>
         <source>Show / Hide rightmenu</source>
-        <translation>Pokazać / ukryć prawe menu</translation>
+        <translation>Pokaż / ukryć prawe menu</translation>
     </message>
     <message>
         <source>Hide / Show rightmenu</source>
-        <translation>Ukryć / pokazać prawe menu</translation>
+        <translation>Ukryj / pokazać prawe menu</translation>
     </message>
 </context>
 <context>
@@ -14688,19 +14688,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View and manage the contents of the trash bin.</source>
-        <translation>Przeglądać zawartość kosza i zarządzać nią.</translation>
+        <translation>Przeglądaj zawartość kosza i zarządzać nią.</translation>
     </message>
     <message>
         <source>Change the left menu width to small size.</source>
-        <translation>Ustawić małą szerokość lewego menu.</translation>
+        <translation>Ustaw małą szerokość lewego menu.</translation>
     </message>
     <message>
         <source>Change the left menu width to medium size.</source>
-        <translation>Ustawić średnią szerokość lewego menu.</translation>
+        <translation>Ustaw średnią szerokość lewego menu.</translation>
     </message>
     <message>
         <source>Change the left menu width to large size.</source>
-        <translation>Ustawić dużą szerokość lewego menu.</translation>
+        <translation>Ustaw dużą szerokość lewego menu.</translation>
     </message>
     <message>
         <source>Hide content structure.</source>
@@ -14739,19 +14739,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View and manage the contents of the trash bin.</source>
-        <translation>Przeglądać zawartość kosza i zarządzać nią.</translation>
+        <translation>Przeglądaj zawartość kosza i zarządzać nią.</translation>
     </message>
     <message>
         <source>Change the left menu width to small size.</source>
-        <translation>Ustawić małą szerokość lewego menu.</translation>
+        <translation>Ustaw małą szerokość lewego menu.</translation>
     </message>
     <message>
         <source>Change the left menu width to medium size.</source>
-        <translation>Ustawić średnią szerokość lewego menu.</translation>
+        <translation>Ustaw średnią szerokość lewego menu.</translation>
     </message>
     <message>
         <source>Change the left menu width to large size.</source>
-        <translation>Ustawić dużą szerokość lewego menu.</translation>
+        <translation>Ustaw dużą szerokość lewego menu.</translation>
     </message>
 </context>
 <context>
@@ -14770,7 +14770,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Zmienić hasło</translation>
+        <translation>Zmień hasło</translation>
     </message>
     <message>
         <source>My account</source>
@@ -14802,7 +14802,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Disable location window when editing content.</source>
-        <translation>Wyłączyć okno lokalizacji podczas edycji treści.</translation>
+        <translation>Wyłącz okno lokalizacji podczas edycji treści.</translation>
     </message>
     <message>
         <source>off</source>
@@ -14810,7 +14810,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Enable location window when editing content.</source>
-        <translation>Włączyć okno lokalizacji podczas edycji treści.</translation>
+        <translation>Włącz okno lokalizacji podczas edycji treści.</translation>
     </message>
     <message>
         <source>Locations</source>
@@ -14822,15 +14822,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Disable &amp;quot;Back to edit&amp;quot; checkbox when editing content.</source>
-        <translation>Wyłączyć pole wyboru &amp;quot;Wrócić do edycji&amp;quot; podczas edycji treści.</translation>
+        <translation>Wyłącz pole wyboru &amp;quot;Wrócić do edycji&amp;quot; podczas edycji treści.</translation>
     </message>
     <message>
         <source>Enable &amp;quot;Back to edit&amp;quot; checkbox when editing content.</source>
-        <translation>Włączyć pole wyboru &amp;quot;Wrócić do edycji&amp;quot; podczas edycji treści.</translation>
+        <translation>Włącz pole wyboru &amp;quot;Wrócić do edycji&amp;quot; podczas edycji treści.</translation>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation>Edytować profil</translation>
+        <translation>Edytuj profil</translation>
     </message>
     <message>
         <source>Dashboard</source>
@@ -14870,7 +14870,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Set a new password for your account.</source>
-        <translation>Ustawić nowe hasło konta.</translation>
+        <translation>Ustaw nowe hasło konta.</translation>
     </message>
     <message>
         <source>Your name, e-mail address and other details.</source>
@@ -15131,7 +15131,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Browse and query the database directly.</source>
-        <translation>Przeglądać bazę danych i wykonywać zapytania bezpośrednio.</translation>
+        <translation>Przeglądaj bazę danych i wykonywać zapytania bezpośrednio.</translation>
     </message>
     <message>
         <source>Packages with a newer release, and their updates.</source>
@@ -15143,7 +15143,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Make, download and remove backups.</source>
-        <translation>Tworzyć, pobierać i usuwać kopie zapasowe.</translation>
+        <translation>Twórz, pobierać i usuwać kopie zapasowe.</translation>
     </message>
     <message>
         <source>Design</source>
@@ -15175,7 +15175,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Check user accounts</source>
-        <translation>Sprawdzić konta użytkowników</translation>
+        <translation>Sprawdź konta użytkowników</translation>
     </message>
     <message>
         <source>Accounts nobody uses or that need a look; disable, unlock or export them.</source>
@@ -15187,7 +15187,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear or regenerate the caches.</source>
-        <translation>Wyczyścić lub ponownie wygenerować pamięć podręczną.</translation>
+        <translation>Wyczyść lub ponownie wygenerować pamięć podręczną.</translation>
     </message>
     <message>
         <source>The content classes and their attributes.</source>
@@ -15199,7 +15199,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find content by its id, remote id or path.</source>
-        <translation>Znaleźć treść według ID, zdalnego ID lub ścieżki.</translation>
+        <translation>Znajdź treść według ID, zdalnego ID lub ścieżki.</translation>
     </message>
     <message>
         <source>The cronjob parts, their scripts and last runs.</source>
@@ -15207,7 +15207,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Activate and deactivate extensions.</source>
-        <translation>Aktywować i dezaktywować rozszerzenia.</translation>
+        <translation>Aktywuj i dezaktywować rozszerzenia.</translation>
     </message>
     <message>
         <source>The settings of the whole site.</source>
@@ -15215,7 +15215,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Read and edit the INI settings.</source>
-        <translation>Odczytywać i edytować ustawienia INI.</translation>
+        <translation>Odczytuj i edytować ustawienia INI.</translation>
     </message>
     <message>
         <source>The languages content is written in.</source>
@@ -15231,7 +15231,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Run the maintenance tasks of the installation.</source>
-        <translation>Uruchamiać zadania konserwacyjne instalacji.</translation>
+        <translation>Uruchamiaj zadania konserwacyjne instalacji.</translation>
     </message>
     <message>
         <source>The menus of the classic site designs.</source>
@@ -15247,15 +15247,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Import, export and install packages.</source>
-        <translation>Importować, eksportować i instalować pakiety.</translation>
+        <translation>Importuj, eksportować i instalować pakiety.</translation>
     </message>
     <message>
         <source>Export parts of the content tree as PDF.</source>
-        <translation>Eksportować części drzewa treści do PDF.</translation>
+        <translation>Eksportuj części drzewa treści do PDF.</translation>
     </message>
     <message>
         <source>Warm the caches of the sites.</source>
-        <translation>Rozgrzać pamięć podręczną witryn.</translation>
+        <translation>Rozgrzej pamięć podręczną witryn.</translation>
     </message>
     <message>
         <source>Wizards for template operators and datatypes.</source>
@@ -15299,7 +15299,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>List and edit templates.</source>
-        <translation>Wyświetlać i edytować szablony.</translation>
+        <translation>Wyświetlaj i edytować szablony.</translation>
     </message>
     <message>
         <source>The toolbars and their tools.</source>
@@ -15311,11 +15311,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Compare files and database with this release.</source>
-        <translation>Porównać pliki i bazę danych z tym wydaniem.</translation>
+        <translation>Porównaj pliki i bazę danych z tym wydaniem.</translation>
     </message>
     <message>
         <source>Check the links in the content.</source>
-        <translation>Sprawdzić linki w treści.</translation>
+        <translation>Sprawdź linki w treści.</translation>
     </message>
     <message>
         <source>Custom URL aliases and forwards.</source>
@@ -15351,7 +15351,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Follow, search and cross-reference the log files.</source>
-        <translation>Śledzić, przeszukiwać i porównywać pliki dziennika.</translation>
+        <translation>Śledź, przeszukiwać i porównywać pliki dziennika.</translation>
     </message>
     <message>
         <source>Interface languages</source>
@@ -15469,19 +15469,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View and manage the contents of the trash bin.</source>
-        <translation>Przeglądać zawartość kosza i zarządzać nią.</translation>
+        <translation>Przeglądaj zawartość kosza i zarządzać nią.</translation>
     </message>
     <message>
         <source>Change the left menu width to small size.</source>
-        <translation>Ustawić małą szerokość lewego menu.</translation>
+        <translation>Ustaw małą szerokość lewego menu.</translation>
     </message>
     <message>
         <source>Change the left menu width to medium size.</source>
-        <translation>Ustawić średnią szerokość lewego menu.</translation>
+        <translation>Ustaw średnią szerokość lewego menu.</translation>
     </message>
     <message>
         <source>Change the left menu width to large size.</source>
-        <translation>Ustawić dużą szerokość lewego menu.</translation>
+        <translation>Ustaw dużą szerokość lewego menu.</translation>
     </message>
     <message>
         <source>Role information</source>
@@ -15497,7 +15497,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Check user accounts</source>
-        <translation>Sprawdzić konta użytkowników</translation>
+        <translation>Sprawdź konta użytkowników</translation>
     </message>
     <message>
         <source>Users and user groups</source>
@@ -15583,7 +15583,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Display frontpage</source>
-        <translation>Wyświetlać stronę tytułową</translation>
+        <translation>Wyświetlaj stronę tytułową</translation>
     </message>
     <message>
         <source>Intro text</source>
@@ -15599,7 +15599,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Export structure</source>
@@ -15619,7 +15619,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Frontpage</source>
@@ -15651,11 +15651,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Generate once</source>
-        <translation>Wygenerować raz</translation>
+        <translation>Wygeneruj raz</translation>
     </message>
     <message>
         <source>Generate on the fly</source>
-        <translation>Generować na bieżąco</translation>
+        <translation>Generuj na bieżąco</translation>
     </message>
     <message>
         <source>Filename (if generated on the fly)</source>
@@ -15723,7 +15723,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Choose another source node. What is typed in the form is kept.</source>
-        <translation>Wybrać inny węzeł źródłowy. Wpisane w formularzu dane zostaną zachowane.</translation>
+        <translation>Wybierz inny węzeł źródłowy. Wpisane w formularzu dane zostaną zachowane.</translation>
     </message>
     <message>
         <source>Node %id no longer exists.</source>
@@ -15731,11 +15731,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Choose another source node.</source>
-        <translation>Wybrać inny węzeł źródłowy.</translation>
+        <translation>Wybierz inny węzeł źródłowy.</translation>
     </message>
     <message>
         <source>Choose the node the PDF starts from.</source>
-        <translation>Wybrać węzeł, od którego zaczyna się PDF.</translation>
+        <translation>Wybierz węzeł, od którego zaczyna się PDF.</translation>
     </message>
     <message>
         <source>The source node only.</source>
@@ -15763,7 +15763,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Print a footer line</source>
-        <translation>Drukować wiersz stopki</translation>
+        <translation>Drukuj wiersz stopki</translation>
     </message>
     <message>
         <source>Whether the PDF is written once and kept, or made anew whenever somebody downloads it.</source>
@@ -15858,7 +15858,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -15874,23 +15874,23 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select PDF export for removal.</source>
-        <translation>Zaznaczyć eksport PDF do usunięcia.</translation>
+        <translation>Zaznacz eksport PDF do usunięcia.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit the &lt;%pdf_export_name&gt; PDF export.</source>
-        <translation>Edytować eksport PDF &lt;%pdf_export_name&gt;.</translation>
+        <translation>Edytuj eksport PDF &lt;%pdf_export_name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected PDF exports.</source>
-        <translation>Usunąć zaznaczone eksporty PDF.</translation>
+        <translation>Usuń zaznaczone eksporty PDF.</translation>
     </message>
     <message>
         <source>New PDF export</source>
@@ -15898,7 +15898,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create a new PDF export.</source>
-        <translation>Utworzyć nowy eksport PDF.</translation>
+        <translation>Utwórz nowy eksport PDF.</translation>
     </message>
     <message>
         <source>PDF exports [%export_count]</source>
@@ -15982,15 +15982,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove the export</source>
-        <translation>Usunąć eksport</translation>
+        <translation>Usuń eksport</translation>
     </message>
     <message>
         <source>Remove %count exports</source>
-        <translation>Usunąć eksporty (%count)</translation>
+        <translation>Usuń eksporty (%count)</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Nothing has been removed yet.</source>
@@ -16094,7 +16094,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find an export</source>
-        <translation>Znaleźć eksport</translation>
+        <translation>Znajdź eksport</translation>
     </message>
     <message>
         <source>Title, file name, ID, source node or class. Every word must match.</source>
@@ -16102,15 +16102,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All</source>
@@ -16158,11 +16158,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Select %name for removal</source>
-        <translation>Zaznaczyć %name do usunięcia</translation>
+        <translation>Zaznacz %name do usunięcia</translation>
     </message>
     <message>
         <source>File ready</source>
@@ -16178,23 +16178,23 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Generate the PDF now and download it.</source>
-        <translation>Wygenerować PDF teraz i pobrać go.</translation>
+        <translation>Wygeneruj PDF teraz i pobrać go.</translation>
     </message>
     <message>
         <source>Download the stored file.</source>
-        <translation>Pobrać przechowywany plik.</translation>
+        <translation>Pobierz przechowywany plik.</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Pobrać</translation>
+        <translation>Pobierz</translation>
     </message>
     <message>
         <source>Generate the stored file anew from the current content.</source>
-        <translation>Wygenerować przechowywany plik od nowa z bieżącej treści.</translation>
+        <translation>Wygeneruj przechowywany plik od nowa z bieżącej treści.</translation>
     </message>
     <message>
         <source>Regenerate</source>
-        <translation>Wygenerować ponownie</translation>
+        <translation>Wygeneruj ponownie</translation>
     </message>
     <message>
         <source>node %id</source>
@@ -16262,7 +16262,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show %count exports per page.</source>
-        <translation>Pokazywać %count eksportów na stronie.</translation>
+        <translation>Pokazuj %count eksportów na stronie.</translation>
     </message>
     <message>
         <source>Remove selected asks for confirmation first and says which stored files go with the exports.</source>
@@ -16305,15 +16305,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <name>design/admin/popupmenu</name>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Move</source>
@@ -16321,7 +16321,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Advanced</source>
@@ -16337,19 +16337,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Add to my bookmarks</source>
-        <translation>Dodać do moich zakładek</translation>
+        <translation>Dodaj do moich zakładek</translation>
     </message>
     <message>
         <source>Add to my notifications</source>
-        <translation>Dodać do moich powiadomień</translation>
+        <translation>Dodaj do moich powiadomień</translation>
     </message>
     <message>
         <source>Swap with another node</source>
-        <translation>Zamienić z innym węzłem</translation>
+        <translation>Zamień z innym węzłem</translation>
     </message>
     <message>
         <source>Hide / unhide</source>
-        <translation>Ukryć / odkryć</translation>
+        <translation>Ukryj / odkryć</translation>
     </message>
     <message>
         <source>View index</source>
@@ -16357,23 +16357,23 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View class</source>
-        <translation>Wyświetlić klasę</translation>
+        <translation>Wyświetl klasę</translation>
     </message>
     <message>
         <source>Edit class</source>
-        <translation>Edytować klasę</translation>
+        <translation>Edytuj klasę</translation>
     </message>
     <message>
         <source>Delete view cache</source>
-        <translation>Usunąć pamięć podręczną widoku</translation>
+        <translation>Usuń pamięć podręczną widoku</translation>
     </message>
     <message>
         <source>Delete template cache</source>
-        <translation>Usunąć pamięć podręczną szablonów</translation>
+        <translation>Usuń pamięć podręczną szablonów</translation>
     </message>
     <message>
         <source>Delete view cache from here</source>
-        <translation>Usunąć pamięć podręczną widoku od tego miejsca</translation>
+        <translation>Usuń pamięć podręczną widoku od tego miejsca</translation>
     </message>
     <message>
         <source>Template overrides</source>
@@ -16389,7 +16389,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove bookmark</source>
-        <translation>Usunąć zakładkę</translation>
+        <translation>Usuń zakładkę</translation>
     </message>
     <message>
         <source>Reverse related for subtree</source>
@@ -16397,7 +16397,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit in</source>
-        <translation>Edytować w</translation>
+        <translation>Edytuj w</translation>
     </message>
     <message>
         <source>Another language</source>
@@ -16405,35 +16405,35 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create here</source>
-        <translation>Utworzyć tutaj</translation>
+        <translation>Utwórz tutaj</translation>
     </message>
     <message>
         <source>Manage versions</source>
-        <translation>Zarządzać wersjami</translation>
+        <translation>Zarządzaj wersjami</translation>
     </message>
     <message>
         <source>Edit class in</source>
-        <translation>Edytować klasę w</translation>
+        <translation>Edytuj klasę w</translation>
     </message>
     <message>
         <source>Copy subtree</source>
-        <translation>Skopiować poddrzewo</translation>
+        <translation>Skopiuj poddrzewo</translation>
     </message>
     <message>
         <source>Manage URL aliases</source>
-        <translation>Zarządzać aliasami URL</translation>
+        <translation>Zarządzaj aliasami URL</translation>
     </message>
     <message>
         <source>Choose siteaccess</source>
-        <translation>Wybrać dostęp do witryny</translation>
+        <translation>Wybierz dostęp do witryny</translation>
     </message>
     <message>
         <source>Create RSS/ATOM feed</source>
-        <translation>Utworzyć kanał RSS/ATOM</translation>
+        <translation>Utwórz kanał RSS/ATOM</translation>
     </message>
     <message>
         <source>Remove RSS/ATOM feed</source>
-        <translation>Usunąć kanał RSS/ATOM</translation>
+        <translation>Usuń kanał RSS/ATOM</translation>
     </message>
     <message>
         <source>New translation</source>
@@ -16449,7 +16449,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Upload multiple files</source>
-        <translation>Przesłać wiele plików</translation>
+        <translation>Prześlij wiele plików</translation>
     </message>
     <message>
         <source>Unreferenced objects in subtree</source>
@@ -16481,11 +16481,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Open the package wizard…</source>
-        <translation>Otworzyć kreator pakietów…</translation>
+        <translation>Otwórz kreator pakietów…</translation>
     </message>
     <message>
         <source>Deactivate and move (user accounts)</source>
-        <translation>Dezaktywować i przenieść (konta użytkowników)</translation>
+        <translation>Dezaktywuj i przenieść (konta użytkowników)</translation>
     </message>
     <message>
         <source>Reactivate and move back (user accounts)</source>
@@ -16557,7 +16557,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <name>design/admin/preview/folder</name>
     <message>
         <source>Show children</source>
-        <translation>Pokazywać elementy podrzędne</translation>
+        <translation>Pokazuj elementy podrzędne</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -16590,7 +16590,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <name>design/admin/preview/product</name>
     <message>
         <source>Download this product sheet as PDF</source>
-        <translation>Pobrać kartę produktu w formacie PDF</translation>
+        <translation>Pobierz kartę produktu w formacie PDF</translation>
     </message>
     <message>
         <source>People who bought this also bought</source>
@@ -16625,7 +16625,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Assign &lt;%role_name&gt; in one section</source>
@@ -16676,11 +16676,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Grant access to all functions</source>
-        <translation>Przyznać dostęp do wszystkich funkcji</translation>
+        <translation>Przyznaj dostęp do wszystkich funkcji</translation>
     </message>
     <message>
         <source>Grant access to one function</source>
-        <translation>Przyznać dostęp do jednej funkcji</translation>
+        <translation>Przyznaj dostęp do jednej funkcji</translation>
     </message>
     <message>
         <source>OK</source>
@@ -16688,7 +16688,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Welcome to the policy wizard. This three-step wizard will help you create a new policy that will be added to the role that is currently being edited. The wizard can be aborted at any stage by using the &quot;Cancel&quot; button.</source>
@@ -16783,11 +16783,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Grant full access</source>
-        <translation>Przyznać pełny dostęp</translation>
+        <translation>Przyznaj pełny dostęp</translation>
     </message>
     <message>
         <source>Grant limited access</source>
-        <translation>Przyznać ograniczony dostęp</translation>
+        <translation>Przyznaj ograniczony dostęp</translation>
     </message>
     <message>
         <source>The selected module (%module_name) does not support limitations on the function level. Please go back to step one and use the &quot;Grant access to all functions&quot; option instead.</source>
@@ -16795,7 +16795,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Go back to step one</source>
-        <translation>Wrócić do kroku pierwszego</translation>
+        <translation>Wróć do kroku pierwszego</translation>
     </message>
     <message>
         <source>OK</source>
@@ -16803,7 +16803,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Create a new policy for the &lt;%role_name&gt; role</source>
@@ -16922,11 +16922,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Add nodes</source>
-        <translation>Dodać węzły</translation>
+        <translation>Dodaj węzły</translation>
     </message>
     <message>
         <source>Subtrees [%subtree_count]</source>
@@ -16942,15 +16942,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Add subtrees</source>
-        <translation>Dodać poddrzewa</translation>
+        <translation>Dodaj poddrzewa</translation>
     </message>
     <message>
         <source>Go back to step one</source>
-        <translation>Wrócić do kroku pierwszego</translation>
+        <translation>Wróć do kroku pierwszego</translation>
     </message>
     <message>
         <source>Go back to step two</source>
-        <translation>Wrócić do kroku drugiego</translation>
+        <translation>Wróć do kroku drugiego</translation>
     </message>
     <message>
         <source>OK</source>
@@ -16958,7 +16958,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Welcome to the policy wizard. This three-step wizard will help you set up a new policy. The policy will be added to the role that is currently being edited. The wizard can be aborted at any stage by using the &quot;Cancel&quot; button.</source>
@@ -17013,7 +17013,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Module</source>
@@ -17033,11 +17033,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>OK</source>
@@ -17045,7 +17045,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Role</source>
@@ -17053,7 +17053,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select policy for removal.</source>
-        <translation>Zaznaczyć zasadę do usunięcia.</translation>
+        <translation>Zaznacz zasadę do usunięcia.</translation>
     </message>
     <message>
         <source>all modules</source>
@@ -17065,7 +17065,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit the policy&apos;s function limitations.</source>
-        <translation>Edytować ograniczenia funkcji zasady.</translation>
+        <translation>Edytuj ograniczenia funkcji zasady.</translation>
     </message>
     <message>
         <source>There are no policies set up for this role.</source>
@@ -17073,7 +17073,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected policies.</source>
-        <translation>Usunąć zaznaczone zasady.</translation>
+        <translation>Usuń zaznaczone zasady.</translation>
     </message>
     <message>
         <source>New policy</source>
@@ -17081,15 +17081,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create a new policy.</source>
-        <translation>Utworzyć nową zasadę.</translation>
+        <translation>Utwórz nową zasadę.</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Save policy changes to this role</source>
-        <translation>Zapisać zmiany zasad tej roli</translation>
+        <translation>Zapisz zmiany zasad tej roli</translation>
     </message>
     <message>
         <source>Policies (%policy_count)</source>
@@ -17161,7 +17161,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Reverse the order</source>
-        <translation>Odwrócić kolejność</translation>
+        <translation>Odwróć kolejność</translation>
     </message>
     <message>
         <source>Drag a policy by its grip to a new place, or focus the grip and press the up or down arrow key. The arrow buttons move a policy one place, also across pages; the position field moves it to any place in the whole list. The order is kept in the draft until you save.</source>
@@ -17181,7 +17181,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select policy %id for removal</source>
-        <translation>Zaznaczyć zasadę %id do usunięcia</translation>
+        <translation>Zaznacz zasadę %id do usunięcia</translation>
     </message>
     <message>
         <source>Move policy at position %position</source>
@@ -17189,19 +17189,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Drag to move, or use the up and down arrow keys</source>
-        <translation>Przeciągnąć, aby przenieść, lub użyć klawiszy strzałek w górę i w dół</translation>
+        <translation>Przeciągnij, aby przenieść, lub użyć klawiszy strzałek w górę i w dół</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Przesunąć w górę</translation>
+        <translation>Przesuń w górę</translation>
     </message>
     <message>
         <source>Move policy %id up</source>
-        <translation>Przesunąć zasadę %id w górę</translation>
+        <translation>Przesuń zasadę %id w górę</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Przesunąć w dół</translation>
+        <translation>Przesuń w dół</translation>
     </message>
     <message>
         <source>Use the order buttons to set the order of the policies. The up arrow moves the policy one place up. The down arrow moves the policy one place down.</source>
@@ -17209,7 +17209,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Move policy %id down</source>
-        <translation>Przesunąć zasadę %id w dół</translation>
+        <translation>Przesuń zasadę %id w dół</translation>
     </message>
     <message>
         <source>Position of policy %id</source>
@@ -17233,7 +17233,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove the ticked policies</source>
-        <translation>Usunąć zaznaczone zasady</translation>
+        <translation>Usuń zaznaczone zasady</translation>
     </message>
     <message>
         <source>Unsaved changes</source>
@@ -17268,15 +17268,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected roles.</source>
-        <translation>Usunąć zaznaczone role.</translation>
+        <translation>Usuń zaznaczone role.</translation>
     </message>
     <message>
         <source>New role</source>
@@ -17284,35 +17284,35 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create a new role.</source>
-        <translation>Utworzyć nową rolę.</translation>
+        <translation>Utwórz nową rolę.</translation>
     </message>
     <message>
         <source>Toggle selection</source>
-        <translation>Przełączyć zaznaczenie</translation>
+        <translation>Przełącz zaznaczenie</translation>
     </message>
     <message>
         <source>Select role for removal.</source>
-        <translation>Zaznaczyć rolę do usunięcia.</translation>
+        <translation>Zaznacz rolę do usunięcia.</translation>
     </message>
     <message>
         <source>Assign</source>
-        <translation>Przypisać</translation>
+        <translation>Przypisz</translation>
     </message>
     <message>
         <source>Assign the &lt;%role_name&gt; role to a user or a user group.</source>
-        <translation>Przypisać rolę &lt;%role_name&gt; użytkownikowi lub grupie użytkowników.</translation>
+        <translation>Przypisz rolę &lt;%role_name&gt; użytkownikowi lub grupie użytkowników.</translation>
     </message>
     <message>
         <source>Edit the &lt;%role_name&gt; role.</source>
-        <translation>Edytować rolę &lt;%role_name&gt;.</translation>
+        <translation>Edytuj rolę &lt;%role_name&gt;.</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Copy the &lt;%role_name&gt; role.</source>
-        <translation>Skopiować rolę &lt;%role_name&gt;.</translation>
+        <translation>Skopiuj rolę &lt;%role_name&gt;.</translation>
     </message>
     <message>
         <source>Roles (%role_count)</source>
@@ -17332,7 +17332,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show the users and user groups of the &lt;%role_name&gt; role.</source>
-        <translation>Pokazać użytkowników i grupy użytkowników roli &lt;%role_name&gt;.</translation>
+        <translation>Pokaż użytkowników i grupy użytkowników roli &lt;%role_name&gt;.</translation>
     </message>
     <message>
         <source>A role is a set of policies; each policy lets its users use one module or function, possibly only in some sections, classes or subtrees. A role does nothing until it is assigned to users or user groups; a user has every policy of every role assigned to them or to one of their groups.</source>
@@ -17348,19 +17348,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find roles</source>
-        <translation>Znaleźć role</translation>
+        <translation>Znajdź role</translation>
     </message>
     <message>
         <source>Find a role</source>
-        <translation>Znaleźć rolę</translation>
+        <translation>Znajdź rolę</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>Any part of the name, or the ID. Upper and lower case are the same.</source>
@@ -17376,7 +17376,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Reverse the order</source>
-        <translation>Odwrócić kolejność</translation>
+        <translation>Odwróć kolejność</translation>
     </message>
     <message>
         <source>Ordered by</source>
@@ -17396,7 +17396,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>No role matches this search.</source>
@@ -17408,7 +17408,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select %role_name</source>
-        <translation>Zaznaczyć %role_name</translation>
+        <translation>Zaznacz %role_name</translation>
     </message>
     <message>
         <source>A policy of this role gives access to every function of every module.</source>
@@ -17436,7 +17436,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Assigned to users and groups</source>
@@ -17448,7 +17448,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>The ticked roles are removed for good, with their policies. Every user and group they are assigned to loses what they gave. This cannot be undone.</source>
@@ -17456,7 +17456,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove the ticked roles</source>
-        <translation>Usunąć zaznaczone role</translation>
+        <translation>Usuń zaznaczone role</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -17503,11 +17503,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Add nodes</source>
-        <translation>Dodać węzły</translation>
+        <translation>Dodaj węzły</translation>
     </message>
     <message>
         <source>Subtrees [%subtree_count]</source>
@@ -17523,7 +17523,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Add subtrees</source>
-        <translation>Dodać poddrzewa</translation>
+        <translation>Dodaj poddrzewa</translation>
     </message>
     <message>
         <source>OK</source>
@@ -17531,7 +17531,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>The function limitations of this policy cannot be edited. This is either because the function does not support limitations or because the function was assigned without limitations when the policy was created.</source>
@@ -17586,11 +17586,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit this role.</source>
-        <translation>Edytować tę rolę.</translation>
+        <translation>Edytuj tę rolę.</translation>
     </message>
     <message>
         <source>Users and groups using the &lt;%role_name&gt; role [%users_count]</source>
@@ -17606,11 +17606,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Assign</source>
-        <translation>Przypisać</translation>
+        <translation>Przypisz</translation>
     </message>
     <message>
         <source>Subtree</source>
@@ -17634,11 +17634,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Toggle selection</source>
-        <translation>Przełączyć zaznaczenie</translation>
+        <translation>Przełącz zaznaczenie</translation>
     </message>
     <message>
         <source>Select user or user group for removal.</source>
-        <translation>Zaznaczyć użytkownika lub grupę użytkowników do usunięcia.</translation>
+        <translation>Zaznacz użytkownika lub grupę użytkowników do usunięcia.</translation>
     </message>
     <message>
         <source>This role is not assigned to any users or user groups.</source>
@@ -17646,23 +17646,23 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected users and/or user groups.</source>
-        <translation>Usunąć zaznaczonych użytkowników i/lub grupy użytkowników.</translation>
+        <translation>Usuń zaznaczonych użytkowników i/lub grupy użytkowników.</translation>
     </message>
     <message>
         <source>Assign the &lt;%role_name&gt; role to a user or a user group.</source>
-        <translation>Przypisać rolę &lt;%role_name&gt; użytkownikowi lub grupie użytkowników.</translation>
+        <translation>Przypisz rolę &lt;%role_name&gt; użytkownikowi lub grupie użytkowników.</translation>
     </message>
     <message>
         <source>Select limitation.</source>
-        <translation>Wybrać ograniczenie.</translation>
+        <translation>Wybierz ograniczenie.</translation>
     </message>
     <message>
         <source>Assign with limitation</source>
-        <translation>Przypisać z ograniczeniem</translation>
+        <translation>Przypisz z ograniczeniem</translation>
     </message>
     <message>
         <source>Assign the &lt;%role_name&gt; role with limitation (specified to the left) to a user or a user group.</source>
-        <translation>Przypisać rolę &lt;%role_name&gt; z ograniczeniem (określonym po lewej) użytkownikowi lub grupie użytkowników.</translation>
+        <translation>Przypisz rolę &lt;%role_name&gt; z ograniczeniem (określonym po lewej) użytkownikowi lub grupie użytkowników.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -17698,7 +17698,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show only the users and user groups whose name contains this text.</source>
-        <translation>Pokazać tylko użytkowników i grupy użytkowników, których nazwa zawiera ten tekst.</translation>
+        <translation>Pokaż tylko użytkowników i grupy użytkowników, których nazwa zawiera ten tekst.</translation>
     </message>
     <message>
         <source>Filter</source>
@@ -17706,7 +17706,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation>Pokazać wszystko</translation>
+        <translation>Pokaż wszystko</translation>
     </message>
     <message>
         <source>%count of %total match "%filter".</source>
@@ -17738,7 +17738,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>All roles</source>
@@ -17822,7 +17822,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Reverse the order</source>
-        <translation>Odwrócić kolejność</translation>
+        <translation>Odwróć kolejność</translation>
     </message>
     <message>
         <source>Every module</source>
@@ -17842,15 +17842,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Select %name for removal</source>
-        <translation>Zaznaczyć %name do usunięcia</translation>
+        <translation>Zaznacz %name do usunięcia</translation>
     </message>
     <message>
         <source>Only in the subtree %name</source>
@@ -17866,7 +17866,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove the ticked assignments</source>
-        <translation>Usunąć zaznaczone przypisania</translation>
+        <translation>Usuń zaznaczone przypisania</translation>
     </message>
     <message>
         <source>With a limitation, the role applies only inside one subtree or section. You choose the users and groups in the next step.</source>
@@ -17969,7 +17969,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>RSS version</source>
@@ -17993,7 +17993,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Title</source>
@@ -18001,7 +18001,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove this source</source>
-        <translation>Usunąć to źródło</translation>
+        <translation>Usuń to źródło</translation>
     </message>
     <message>
         <source>OK</source>
@@ -18009,7 +18009,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Edit &lt;%rss_export_name&gt; [RSS Export]</source>
@@ -18041,23 +18041,23 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Click to remove this source from the RSS export.</source>
-        <translation>Kliknąć, aby usunąć to źródło z eksportu RSS.</translation>
+        <translation>Kliknij, aby usunąć to źródło z eksportu RSS.</translation>
     </message>
     <message>
         <source>Add source</source>
-        <translation>Dodać źródło</translation>
+        <translation>Dodaj źródło</translation>
     </message>
     <message>
         <source>Click to add a new source to the RSS export.</source>
-        <translation>Kliknąć, aby dodać nowe źródło do eksportu RSS.</translation>
+        <translation>Kliknij, aby dodać nowe źródło do eksportu RSS.</translation>
     </message>
     <message>
         <source>Apply the changes and return to the RSS overview.</source>
-        <translation>Zastosować zmiany i wrócić do przeglądu RSS.</translation>
+        <translation>Zastosuj zmiany i wrócić do przeglądu RSS.</translation>
     </message>
     <message>
         <source>Cancel the changes and return to the RSS overview.</source>
-        <translation>Anulować zmiany i wrócić do przeglądu RSS.</translation>
+        <translation>Anuluj zmiany i wrócić do przeglądu RSS.</translation>
     </message>
     <message>
         <source>If RSS Export is Active then a valid Access URL is required.</source>
@@ -18073,7 +18073,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Check if you want to only feed the object from the main node.</source>
-        <translation>Zaznaczyć, aby udostępniać tylko obiekty z węzła głównego.</translation>
+        <translation>Zaznacz, aby udostępniać tylko obiekty z węzła głównego.</translation>
     </message>
     <message>
         <source>Subnodes</source>
@@ -18081,11 +18081,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove image</source>
-        <translation>Usunąć obraz</translation>
+        <translation>Usuń obraz</translation>
     </message>
     <message>
         <source>Click to remove image from RSS export.</source>
-        <translation>Kliknąć, aby usunąć obraz z eksportu RSS.</translation>
+        <translation>Kliknij, aby usunąć obraz z eksportu RSS.</translation>
     </message>
     <message>
         <source>Invalid input</source>
@@ -18145,7 +18145,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Skip</source>
-        <translation>Pominąć</translation>
+        <translation>Pomiń</translation>
     </message>
     <message>
         <source>Enclosure (media)</source>
@@ -18209,7 +18209,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Choose one</source>
-        <translation>Wybrać jedną</translation>
+        <translation>Wybierz jedną</translation>
     </message>
     <message>
         <source>Subcategory</source>
@@ -18365,7 +18365,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select this outline for removal.</source>
-        <translation>Zaznaczyć ten konspekt do usunięcia.</translation>
+        <translation>Zaznacz ten konspekt do usunięcia.</translation>
     </message>
     <message>
         <source>Lower numbers come first in the document.</source>
@@ -18377,15 +18377,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Point this outline at a content node instead of a feed.</source>
-        <translation>Skierować ten konspekt na węzeł treści zamiast na kanał.</translation>
+        <translation>Skieruj ten konspekt na węzeł treści zamiast na kanał.</translation>
     </message>
     <message>
         <source>Browse content</source>
-        <translation>Przeglądać treść</translation>
+        <translation>Przeglądaj treść</translation>
     </message>
     <message>
         <source>What a reader shows on the line. Left empty, the feed&apos;s own name is used.</source>
@@ -18441,7 +18441,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>include subnodes</source>
-        <translation>uwzględnić węzły podrzędne</translation>
+        <translation>uwzględnij węzły podrzędne</translation>
     </message>
     <message>
         <source>Nothing is listed yet. Find feeds below and add them.</source>
@@ -18449,27 +18449,27 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Take the ticked outlines out of the document.</source>
-        <translation>Usunąć zaznaczone konspekty z dokumentu.</translation>
+        <translation>Usuń zaznaczone konspekty z dokumentu.</translation>
     </message>
     <message>
         <source>Add group</source>
-        <translation>Dodać grupę</translation>
+        <translation>Dodaj grupę</translation>
     </message>
     <message>
         <source>Add a folder that other outlines can sit inside. OPML nests outlines, and readers show that nesting as groups.</source>
-        <translation>Dodać folder, w którym mogą się znajdować inne konspekty. OPML zagnieżdża konspekty, a czytniki pokazują to zagnieżdżenie jako grupy.</translation>
+        <translation>Dodaj folder, w którym mogą się znajdować inne konspekty. OPML zagnieżdża konspekty, a czytniki pokazują to zagnieżdżenie jako grupy.</translation>
     </message>
     <message>
         <source>Find feeds to add</source>
-        <translation>Znaleźć kanały do dodania</translation>
+        <translation>Znajdź kanały do dodania</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Looks in the name, the address and the description.</source>
@@ -18481,7 +18481,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation>Zastosować</translation>
+        <translation>Zastosuj</translation>
     </message>
     <message>
         <source>Showing %from to %to of %count</source>
@@ -18521,11 +18521,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Add selected feeds</source>
-        <translation>Dodać zaznaczone kanały</translation>
+        <translation>Dodaj zaznaczone kanały</translation>
     </message>
     <message>
         <source>Add the ticked feeds to this document.</source>
-        <translation>Dodać zaznaczone kanały do tego dokumentu.</translation>
+        <translation>Dodaj zaznaczone kanały do tego dokumentu.</translation>
     </message>
     <message>
         <source>No feed matches that.</source>
@@ -18533,7 +18533,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Sort by %column</source>
-        <translation>Sortować według %column</translation>
+        <translation>Sortuj według %column</translation>
     </message>
     <message>
         <source>ID %id</source>
@@ -18561,7 +18561,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Open feed</source>
-        <translation>Otworzyć kanał</translation>
+        <translation>Otwórz kanał</translation>
     </message>
     <message>
         <source>Only an active export answers at its address. Clear this to stop a feed for a while without losing its settings.</source>
@@ -18616,7 +18616,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Imported objects will be owned by</source>
@@ -18624,7 +18624,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Change user</source>
-        <translation>Zmienić użytkownika</translation>
+        <translation>Zmień użytkownika</translation>
     </message>
     <message>
         <source>Class</source>
@@ -18632,11 +18632,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Ignore</source>
-        <translation>Ignorować</translation>
+        <translation>Ignoruj</translation>
     </message>
     <message>
         <source>Active</source>
@@ -18648,7 +18648,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Edit &lt;%rss_import_name&gt; [RSS Import]</source>
@@ -18672,15 +18672,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Apply the changes and return to the RSS overview.</source>
-        <translation>Zastosować zmiany i wrócić do przeglądu RSS.</translation>
+        <translation>Zastosuj zmiany i wrócić do przeglądu RSS.</translation>
     </message>
     <message>
         <source>Cancel the changes and return to the RSS overview.</source>
-        <translation>Anulować zmiany i wrócić do przeglądu RSS.</translation>
+        <translation>Anuluj zmiany i wrócić do przeglądu RSS.</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Zaktualizować</translation>
+        <translation>Zaktualizuj</translation>
     </message>
     <message>
         <source>RSS Version</source>
@@ -18700,7 +18700,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Click this button to proceed and analyze the import feed.</source>
-        <translation>Kliknąć ten przycisk, aby kontynuować i przeanalizować kanał importu.</translation>
+        <translation>Kliknij ten przycisk, aby kontynuować i przeanalizować kanał importu.</translation>
     </message>
     <message>
         <source>Use this drop-down to select the type of object the import should create. Click the &quot;Set&quot; button to load the attribute types for the remaining fields.</source>
@@ -18823,7 +18823,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>New export</source>
@@ -18843,47 +18843,47 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection</source>
-        <translation>Odwrócić zaznaczenie</translation>
+        <translation>Odwróć zaznaczenie</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select RSS export for removal.</source>
-        <translation>Zaznaczyć eksport RSS do usunięcia.</translation>
+        <translation>Zaznacz eksport RSS do usunięcia.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit the &lt;%name&gt; RSS export.</source>
-        <translation>Edytować eksport RSS &lt;%name&gt;.</translation>
+        <translation>Edytuj eksport RSS &lt;%name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected RSS exports.</source>
-        <translation>Usunąć zaznaczone eksporty RSS.</translation>
+        <translation>Usuń zaznaczone eksporty RSS.</translation>
     </message>
     <message>
         <source>Create a new RSS export.</source>
-        <translation>Utworzyć nowy eksport RSS.</translation>
+        <translation>Utwórz nowy eksport RSS.</translation>
     </message>
     <message>
         <source>Select RSS import for removal.</source>
-        <translation>Zaznaczyć import RSS do usunięcia.</translation>
+        <translation>Zaznacz import RSS do usunięcia.</translation>
     </message>
     <message>
         <source>Edit the &lt;%name&gt; RSS import.</source>
-        <translation>Edytować import RSS &lt;%name&gt;.</translation>
+        <translation>Edytuj import RSS &lt;%name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected RSS imports.</source>
-        <translation>Usunąć zaznaczone importy RSS.</translation>
+        <translation>Usuń zaznaczone importy RSS.</translation>
     </message>
     <message>
         <source>Create a new RSS import.</source>
-        <translation>Utworzyć nowy import RSS.</translation>
+        <translation>Utwórz nowy import RSS.</translation>
     </message>
     <message>
         <source>RSS exports (%exports_count)</source>
@@ -19015,15 +19015,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove %count exports</source>
-        <translation>Usunąć eksporty (%count)</translation>
+        <translation>Usuń eksporty (%count)</translation>
     </message>
     <message>
         <source>Remove %count imports</source>
-        <translation>Usunąć importy (%count)</translation>
+        <translation>Usuń importy (%count)</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Nothing has been removed yet.</source>
@@ -19031,7 +19031,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Back to the RSS list</source>
-        <translation>Wrócić do listy RSS</translation>
+        <translation>Wróć do listy RSS</translation>
     </message>
     <message>
         <source>RSS feeds</source>
@@ -19083,7 +19083,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find a feed</source>
-        <translation>Znaleźć kanał</translation>
+        <translation>Znajdź kanał</translation>
     </message>
     <message>
         <source>Name, address, format, source, destination or ID, on this page of each list.</source>
@@ -19091,7 +19091,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All</source>
@@ -19107,7 +19107,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>Feeds are written anew for every request (site.ini [RSSSettings] CacheTime is 0).</source>
@@ -19135,11 +19135,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Select %name for removal</source>
-        <translation>Zaznaczyć %name do usunięcia</translation>
+        <translation>Zaznacz %name do usunięcia</translation>
     </message>
     <message>
         <source>Needs attention</source>
@@ -19147,7 +19147,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Open feed</source>
-        <translation>Otworzyć kanał</translation>
+        <translation>Otwórz kanał</translation>
     </message>
     <message>
         <source>None</source>
@@ -19243,7 +19243,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Open the cronjob</source>
-        <translation>Otworzyć zadanie cron</translation>
+        <translation>Otwórz zadanie cron</translation>
     </message>
     <message>
         <source>There are no RSS imports. Create one with New import: give it the address of a feed, choose where its items go and which class they become.</source>
@@ -19251,7 +19251,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View destination</source>
-        <translation>Wyświetlić miejsce docelowe</translation>
+        <translation>Wyświetl miejsce docelowe</translation>
     </message>
     <message>
         <source>Creates</source>
@@ -19354,7 +19354,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Reset statistics</source>
-        <translation>Wyzerować statystyki</translation>
+        <translation>Wyzeruj statystyki</translation>
     </message>
     <message>
         <source>The list is empty.</source>
@@ -19362,11 +19362,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear the search log.</source>
-        <translation>Wyczyścić dziennik wyszukiwania.</translation>
+        <translation>Wyczyść dziennik wyszukiwania.</translation>
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>Which words visitors search for on the site, how often, and how many results they got on average. A phrase that is searched for often and finds nothing points to content that is missing, or to words the content does not use.</source>
@@ -19410,19 +19410,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find phrases</source>
-        <translation>Znaleźć frazy</translation>
+        <translation>Znajdź frazy</translation>
     </message>
     <message>
         <source>Find a phrase</source>
-        <translation>Znaleźć frazę</translation>
+        <translation>Znajdź frazę</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>Any part of a phrase. Upper and lower case are the same.</source>
@@ -19430,7 +19430,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All phrases</source>
@@ -19490,11 +19490,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Run this search in the administration interface to see what it finds now.</source>
-        <translation>Uruchomić to wyszukiwanie w interfejsie administracyjnym, aby zobaczyć, co znajduje teraz.</translation>
+        <translation>Uruchom to wyszukiwanie w interfejsie administracyjnym, aby zobaczyć, co znajduje teraz.</translation>
     </message>
     <message>
         <source>Search now</source>
-        <translation>Wyszukać teraz</translation>
+        <translation>Wyszukaj teraz</translation>
     </message>
     <message>
         <source>Per page</source>
@@ -19506,7 +19506,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove all recorded phrases</source>
-        <translation>Usunąć wszystkie zarejestrowane frazy</translation>
+        <translation>Usuń wszystkie zarejestrowane frazy</translation>
     </message>
     <message>
         <source>There is nothing to reset.</source>
@@ -19549,7 +19549,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Back to the section list.</source>
-        <translation>Wrócić do listy sekcji.</translation>
+        <translation>Wróć do listy sekcji.</translation>
     </message>
 </context>
 <context>
@@ -19579,7 +19579,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Confirm section removal</source>
@@ -19647,11 +19647,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove these sections</source>
-        <translation>Usunąć te sekcje</translation>
+        <translation>Usuń te sekcje</translation>
     </message>
     <message>
         <source>Back to the sections</source>
-        <translation>Wrócić do sekcji</translation>
+        <translation>Wróć do sekcji</translation>
     </message>
     <message>
         <source>Cancel keeps every section.</source>
@@ -19678,7 +19678,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Navigation part</source>
@@ -19762,11 +19762,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create section</source>
-        <translation>Utworzyć sekcję</translation>
+        <translation>Utwórz sekcję</translation>
     </message>
     <message>
         <source>Save section</source>
-        <translation>Zapisać sekcję</translation>
+        <translation>Zapisz sekcję</translation>
     </message>
     <message>
         <source>Cancel goes back to the section list without saving.</source>
@@ -19793,7 +19793,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>New section</source>
@@ -19801,15 +19801,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select section for removal.</source>
-        <translation>Zaznaczyć sekcję do usunięcia.</translation>
+        <translation>Zaznacz sekcję do usunięcia.</translation>
     </message>
     <message>
         <source>Assign</source>
-        <translation>Przypisać</translation>
+        <translation>Przypisz</translation>
     </message>
     <message>
         <source>Assign the &lt;%section_name&gt; section to a subtree.</source>
@@ -19817,19 +19817,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit the &lt;%section_name&gt; section.</source>
-        <translation>Edytować sekcję &lt;%section_name&gt;.</translation>
+        <translation>Edytuj sekcję &lt;%section_name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected sections.</source>
-        <translation>Usunąć zaznaczone sekcje.</translation>
+        <translation>Usuń zaznaczone sekcje.</translation>
     </message>
     <message>
         <source>Create a new section.</source>
-        <translation>Utworzyć nową sekcję.</translation>
+        <translation>Utwórz nową sekcję.</translation>
     </message>
     <message>
         <source>You are not allowed to assign the &lt;%section_name&gt; section.</source>
@@ -19841,7 +19841,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Assign a subtree to the &lt;%section_name&gt; section.</source>
-        <translation>Przypisać poddrzewo do sekcji &lt;%section_name&gt;.</translation>
+        <translation>Przypisz poddrzewo do sekcji &lt;%section_name&gt;.</translation>
     </message>
     <message>
         <source>Identifier</source>
@@ -19849,7 +19849,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>Sections</source>
@@ -19905,7 +19905,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find a section</source>
-        <translation>Znaleźć sekcję</translation>
+        <translation>Znajdź sekcję</translation>
     </message>
     <message>
         <source>Name, identifier, ID, navigation part or role.</source>
@@ -19917,7 +19917,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All</source>
@@ -19937,7 +19937,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>There are no sections. A section is needed for every object; create one with New section.</source>
@@ -19945,7 +19945,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select %name for removal</source>
-        <translation>Zaznaczyć %name do usunięcia</translation>
+        <translation>Zaznacz %name do usunięcia</translation>
     </message>
     <message>
         <source>ID %id</source>
@@ -19969,11 +19969,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Assign content</source>
-        <translation>Przypisać treść</translation>
+        <translation>Przypisz treść</translation>
     </message>
     <message>
         <source>Navigation part</source>
@@ -20048,7 +20048,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>%section_name [Section]</source>
@@ -20064,7 +20064,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit this section.</source>
-        <translation>Edytować tę sekcję.</translation>
+        <translation>Edytuj tę sekcję.</translation>
     </message>
     <message>
         <source>Roles containing limitations associated with this section [%number_of_roles]</source>
@@ -20116,11 +20116,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Assign subtree</source>
-        <translation>Przypisać poddrzewo</translation>
+        <translation>Przypisz poddrzewo</translation>
     </message>
     <message>
         <source>Assign subtree of objects to this section</source>
-        <translation>Przypisać poddrzewo obiektów do tej sekcji</translation>
+        <translation>Przypisz poddrzewo obiektów do tej sekcji</translation>
     </message>
     <message>
         <source>Identifier</source>
@@ -20136,7 +20136,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Assign content</source>
-        <translation>Przypisać treść</translation>
+        <translation>Przypisz treść</translation>
     </message>
     <message>
         <source>All sections</source>
@@ -20275,7 +20275,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Change setting type</source>
-        <translation>Zmienić typ ustawienia</translation>
+        <translation>Zmień typ ustawienia</translation>
     </message>
     <message>
         <source>Tip</source>
@@ -20315,11 +20315,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Input did not validate</source>
@@ -20371,7 +20371,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View settings</source>
-        <translation>Wyświetlić ustawienia</translation>
+        <translation>Wyświetl ustawienia</translation>
     </message>
     <message>
         <source>Using siteaccess</source>
@@ -20391,7 +20391,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Settings for %inifile in siteaccess %siteaccess</source>
@@ -20411,11 +20411,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Ini setting</source>
@@ -20475,7 +20475,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit setting</source>
-        <translation>Edytować ustawienie</translation>
+        <translation>Edytuj ustawienie</translation>
     </message>
     <message>
         <source>Setting information</source>
@@ -20543,7 +20543,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>New setting in [%block]</source>
@@ -20627,7 +20627,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Change type</source>
-        <translation>Zmienić typ</translation>
+        <translation>Zmień typ</translation>
     </message>
     <message>
         <source>One element per line: =value adds an element, [key]=value sets a key. Leave the first line empty to empty the array before these elements; without it they are added to what the earlier files give.</source>
@@ -20635,7 +20635,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Leave empty to keep the value it has.</source>
-        <translation>Pozostawić puste, aby zachować obecną wartość.</translation>
+        <translation>Pozostaw puste, aby zachować obecną wartość.</translation>
     </message>
     <message>
         <source>One line. A value cannot contain a line break or */.</source>
@@ -20643,7 +20643,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Save it in</source>
-        <translation>Zapisać w</translation>
+        <translation>Zapisz w</translation>
     </message>
     <message>
         <source>Siteaccess %siteaccess only</source>
@@ -20787,7 +20787,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show settings</source>
-        <translation>Pokazać ustawienia</translation>
+        <translation>Pokaż ustawienia</translation>
     </message>
     <message>
         <source>Pick an INI file and a siteaccess to see its settings.</source>
@@ -20863,7 +20863,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Block, setting name or value. The values of secrets are never searched.</source>
@@ -20871,7 +20871,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Search in</source>
-        <translation>Szukać w</translation>
+        <translation>Szukaj w</translation>
     </message>
     <message>
         <source>This file</source>
@@ -20883,7 +20883,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Compare with siteaccess</source>
-        <translation>Porównać z dostępem do witryny</translation>
+        <translation>Porównaj z dostępem do witryny</translation>
     </message>
     <message>
         <source>No comparison</source>
@@ -20895,11 +20895,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation>Pokazać wszystko</translation>
+        <translation>Pokaż wszystko</translation>
     </message>
     <message>
         <source>%count settings in every file match "%query"</source>
@@ -20963,15 +20963,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Add setting</source>
-        <translation>Dodać ustawienie</translation>
+        <translation>Dodaj ustawienie</translation>
     </message>
     <message>
         <source>Remove %setting from %file</source>
-        <translation>Usunąć %setting z %file</translation>
+        <translation>Usuń %setting z %file</translation>
     </message>
     <message>
         <source>Remove from %file</source>
-        <translation>Usunąć z %file</translation>
+        <translation>Usuń z %file</translation>
     </message>
     <message>
         <source>secret, masked</source>
@@ -21027,7 +21027,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show %count more</source>
-        <translation>Pokazać więcej (%count)</translation>
+        <translation>Pokaż więcej (%count)</translation>
     </message>
     <message>
         <source>This server does not have this setting yet.</source>
@@ -21055,7 +21055,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit %setting</source>
-        <translation>Edytować %setting</translation>
+        <translation>Edytuj %setting</translation>
     </message>
     <message>
         <source>Remove takes a ticked setting out of settings/override or the siteaccess file that sets it last; the value of the next file down, or the default, takes over. Settings from settings/%file and from extensions cannot be removed here.</source>
@@ -21094,11 +21094,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Check file consistency</source>
-        <translation>Sprawdzić spójność plików</translation>
+        <translation>Sprawdź spójność plików</translation>
     </message>
     <message>
         <source>Check database consistency</source>
-        <translation>Sprawdzić spójność bazy danych</translation>
+        <translation>Sprawdź spójność bazy danych</translation>
     </message>
     <message>
         <source>Warning: it is not safe to upgrade without checking the modifications done to the following files</source>
@@ -21153,7 +21153,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear template caches</source>
-        <translation>Wyczyścić pamięć podręczną szablonów</translation>
+        <translation>Wyczyść pamięć podręczną szablonów</translation>
     </message>
     <message>
         <source>Content views and template blocks</source>
@@ -21161,11 +21161,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear content caches</source>
-        <translation>Wyczyścić pamięć podręczną treści</translation>
+        <translation>Wyczyść pamięć podręczną treści</translation>
     </message>
     <message>
         <source>Clear all caches</source>
-        <translation>Wyczyścić całą pamięć podręczną</translation>
+        <translation>Wyczyść całą pamięć podręczną</translation>
     </message>
     <message>
         <source>Name</source>
@@ -21177,7 +21177,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear selected</source>
-        <translation>Wyczyścić zaznaczone</translation>
+        <translation>Wyczyść zaznaczone</translation>
     </message>
     <message>
         <source>The following caches were cleared</source>
@@ -21185,7 +21185,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear caches</source>
-        <translation>Wyczyścić pamięć podręczną</translation>
+        <translation>Wyczyść pamięć podręczną</translation>
     </message>
     <message>
         <source>Configuration (ini) caches</source>
@@ -21201,15 +21201,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select the &lt;%cache_name&gt; for clearing.</source>
-        <translation>Zaznaczyć &lt;%cache_name&gt; do wyczyszczenia.</translation>
+        <translation>Zaznacz &lt;%cache_name&gt; do wyczyszczenia.</translation>
     </message>
     <message>
         <source>Clear the selected caches.</source>
-        <translation>Wyczyścić zaznaczone rodzaje pamięci podręcznej.</translation>
+        <translation>Wyczyść zaznaczone rodzaje pamięci podręcznej.</translation>
     </message>
     <message>
         <source>Static content cache was regenerated</source>
@@ -21221,11 +21221,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Regenerate static content cache</source>
-        <translation>Wygenerować ponownie statyczną pamięć podręczną treści</translation>
+        <translation>Wygeneruj ponownie statyczną pamięć podręczną treści</translation>
     </message>
     <message>
         <source>Create new</source>
-        <translation>Utworzyć nowy</translation>
+        <translation>Utwórz nowy</translation>
     </message>
     <message>
         <source>This operation will clear all the template override caches and the compiled templates. It may lead to slower site performance until the caches are recreated.</source>
@@ -21237,7 +21237,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear Ini caches</source>
-        <translation>Wyczyścić pamięć podręczną INI</translation>
+        <translation>Wyczyść pamięć podręczną INI</translation>
     </message>
     <message>
         <source>This operation will clear all the configuration caches. Use it to force the system to re-read the configuration files if you have changed settings.</source>
@@ -21273,7 +21273,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear query cache</source>
-        <translation>Wyczyścić pamięć podręczną zapytań</translation>
+        <translation>Wyczyść pamięć podręczną zapytań</translation>
     </message>
     <message>
         <source>Makes every stored SQL result stale at once, on every server sharing this installation. Writes already invalidate the tables they touch; use this after changing the database outside Exponential, for example with a SQL client or a restore.</source>
@@ -21289,7 +21289,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear HTTP cache</source>
-        <translation>Wyczyścić pamięć podręczną HTTP</translation>
+        <translation>Wyczyść pamięć podręczną HTTP</translation>
     </message>
     <message>
         <source>Drops every cached page for every permission context, including the copies the Velocity response cache holds. Publishing already purges the pages it affects.</source>
@@ -21333,7 +21333,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Zatrzymać</translation>
+        <translation>Zatrzymaj</translation>
     </message>
     <message>
         <source>Stops listening and leaves the pages written so far in place.</source>
@@ -21361,7 +21361,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Reset OPcache</source>
-        <translation>Zresetować OPcache</translation>
+        <translation>Zresetuj OPcache</translation>
     </message>
     <message>
         <source>Empties the opcode cache of the server process answering this page. Every PHP file is compiled again on its next include, so the next requests are slower. Use it when an edited PHP file is not picked up.</source>
@@ -21373,7 +21373,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Empty APCu</source>
-        <translation>Opróżnić APCu</translation>
+        <translation>Opróżnij APCu</translation>
     </message>
     <message>
         <source>Empties APCu for the server process answering this page: every entry any application stored there is gone, including the memory tier of a Qbix response cache.</source>
@@ -21405,7 +21405,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear INI caches</source>
-        <translation>Wyczyścić pamięć podręczną INI</translation>
+        <translation>Wyczyść pamięć podręczną INI</translation>
     </message>
     <message>
         <source>selected</source>
@@ -21457,7 +21457,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Measure the sizes</source>
-        <translation>Zmierzyć rozmiary</translation>
+        <translation>Zmierz rozmiary</translation>
     </message>
     <message>
         <source>last clear</source>
@@ -21465,7 +21465,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear all caches…</source>
-        <translation>Wyczyścić całą pamięć podręczną…</translation>
+        <translation>Wyczyść całą pamięć podręczną…</translation>
     </message>
     <message>
         <source>These %count caches are cleared:</source>
@@ -21489,7 +21489,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Measure sizes</source>
-        <translation>Zmierzyć rozmiary</translation>
+        <translation>Zmierz rozmiary</translation>
     </message>
     <message>
         <source>Sizes were measured for this view, within three seconds; a size marked ≥ was cut short.</source>
@@ -21513,7 +21513,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Name, id, tag or directory</source>
@@ -21545,7 +21545,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Cache</source>
@@ -21597,11 +21597,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear this group…</source>
-        <translation>Wyczyścić tę grupę…</translation>
+        <translation>Wyczyść tę grupę…</translation>
     </message>
     <message>
         <source>Clear %group</source>
-        <translation>Wyczyścić %group</translation>
+        <translation>Wyczyść %group</translation>
     </message>
     <message>
         <source>Hit rates and entries are on</source>
@@ -21613,11 +21613,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove dead entries</source>
-        <translation>Usunąć nieaktualne wpisy</translation>
+        <translation>Usuń nieaktualne wpisy</translation>
     </message>
     <message>
         <source>Reset counters</source>
-        <translation>Zresetować liczniki</translation>
+        <translation>Zresetuj liczniki</translation>
     </message>
     <message>
         <source>Writes already invalidate the tables they touch; clear it after changing the database outside Exponential.</source>
@@ -21625,7 +21625,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Reset the counters</source>
-        <translation>Zresetować liczniki</translation>
+        <translation>Zresetuj liczniki</translation>
     </message>
     <message>
         <source>SQL profile of every request</source>
@@ -21641,11 +21641,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
-        <translation>Wyłączyć profil SQL</translation>
+        <translation>Wyłącz profil SQL</translation>
     </message>
     <message>
         <source>Switch the SQL profile on</source>
-        <translation>Włączyć profil SQL</translation>
+        <translation>Włącz profil SQL</translation>
     </message>
     <message>
         <source>Velocity response cache</source>
@@ -21665,7 +21665,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear Velocity's response cache</source>
-        <translation>Wyczyścić pamięć podręczną odpowiedzi Velocity</translation>
+        <translation>Wyczyść pamięć podręczną odpowiedzi Velocity</translation>
     </message>
     <message>
         <source>Of the server process that answered this page only; another server or pool keeps its own.</source>
@@ -21677,7 +21677,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select all shown</source>
-        <translation>Zaznaczyć wszystkie wyświetlone</translation>
+        <translation>Zaznacz wszystkie wyświetlone</translation>
     </message>
     <message>
         <source>Tick caches in the lists above, then clear them.</source>
@@ -21689,11 +21689,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear them</source>
-        <translation>Wyczyścić je</translation>
+        <translation>Wyczyść je</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>pages stored as files, answered by the web server without the CMS</source>
@@ -21943,7 +21943,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Activate or deactivate extension. Use the &quot;Apply changes&quot; button to apply the changes.</source>
@@ -21959,7 +21959,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Regenerate autoload arrays for extensions</source>
-        <translation>Wygenerować ponownie tablice autoload rozszerzeń</translation>
+        <translation>Wygeneruj ponownie tablice autoload rozszerzeń</translation>
     </message>
     <message>
         <source>Click this button to regenerate the autoload arrays used by the system for extensions.</source>
@@ -21975,11 +21975,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Activate</source>
-        <translation>Aktywować</translation>
+        <translation>Aktywuj</translation>
     </message>
     <message>
         <source>Activate or deactivate extension. Use the &quot;Update&quot; button to apply the changes.</source>
@@ -21987,7 +21987,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Zaktualizować</translation>
+        <translation>Zaktualizuj</translation>
     </message>
     <message>
         <source>The extension or the archive format is not known.</source>
@@ -21999,7 +21999,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Download %name as %format</source>
-        <translation>Pobrać %name jako %format</translation>
+        <translation>Pobierz %name jako %format</translation>
     </message>
     <message>
         <source>Extension</source>
@@ -22039,11 +22039,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Pobrać</translation>
+        <translation>Pobierz</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknąć</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>The extensions were not changed</source>
@@ -22079,15 +22079,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Load earlier</source>
-        <translation>Ładować wcześniej</translation>
+        <translation>Ładuj wcześniej</translation>
     </message>
     <message>
         <source>Load later</source>
-        <translation>Ładować później</translation>
+        <translation>Ładuj później</translation>
     </message>
     <message>
         <source>Filter this page</source>
-        <translation>Filtrować tę stronę</translation>
+        <translation>Filtruj tę stronę</translation>
     </message>
     <message>
         <source>Name, extension or license</source>
@@ -22175,11 +22175,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Review the changes</source>
-        <translation>Przejrzeć zmiany</translation>
+        <translation>Przejrzyj zmiany</translation>
     </message>
     <message>
         <source>Nothing is written yet. Apply changes writes the list below to %file, keeps a copy of the previous file, regenerates the autoload arrays and clears the caches built on the list.</source>
@@ -22223,11 +22223,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Back to the list</source>
-        <translation>Wrócić do listy</translation>
+        <translation>Wróć do listy</translation>
     </message>
     <message>
         <source>Discard changes</source>
-        <translation>Odrzucić zmiany</translation>
+        <translation>Odrzuć zmiany</translation>
     </message>
     <message>
         <source>Not applied yet: %added to activate, %removed to deactivate, %moved moved.</source>
@@ -22239,15 +22239,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Review changes</source>
-        <translation>Przejrzeć zmiany</translation>
+        <translation>Przejrzyj zmiany</translation>
     </message>
     <message>
         <source>Find extensions</source>
-        <translation>Znaleźć rozszerzenia</translation>
+        <translation>Znajdź rozszerzenia</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Name, description or license</source>
@@ -22367,27 +22367,27 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Load %name earlier</source>
-        <translation>Ładować %name wcześniej</translation>
+        <translation>Ładuj %name wcześniej</translation>
     </message>
     <message>
         <source>Load %name later</source>
-        <translation>Ładować %name później</translation>
+        <translation>Ładuj %name później</translation>
     </message>
     <message>
         <source>Deactivate %name</source>
-        <translation>Dezaktywować %name</translation>
+        <translation>Dezaktywuj %name</translation>
     </message>
     <message>
         <source>Deactivate</source>
-        <translation>Dezaktywować</translation>
+        <translation>Dezaktywuj</translation>
     </message>
     <message>
         <source>Remove from the list</source>
-        <translation>Usunąć z listy</translation>
+        <translation>Usuń z listy</translation>
     </message>
     <message>
         <source>Activate %name</source>
-        <translation>Aktywować %name</translation>
+        <translation>Aktywuj %name</translation>
     </message>
     <message>
         <source>Changes are written only by Apply changes, after the review. Regenerate the autoload arrays after adding classes to an extension.</source>
@@ -22395,7 +22395,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Regenerate autoload arrays</source>
-        <translation>Wygenerować ponownie tablice autoload</translation>
+        <translation>Wygeneruj ponownie tablice autoload</translation>
     </message>
     <message>
         <source>%file cannot be read.</source>
@@ -22475,7 +22475,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Sort</source>
-        <translation>Sortować</translation>
+        <translation>Sortuj</translation>
     </message>
     <message>
         <source>Name (A to Z)</source>
@@ -22745,7 +22745,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Measure again</source>
-        <translation>Zmierzyć ponownie</translation>
+        <translation>Zmierz ponownie</translation>
     </message>
     <message>
         <source>Siteaccesses</source>
@@ -22913,7 +22913,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Type</source>
@@ -22941,7 +22941,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>stop it with</source>
-        <translation>zatrzymać poleceniem</translation>
+        <translation>zatrzymaj poleceniem</translation>
     </message>
     <message>
         <source>Started from this installation as well. A site is served by one engine; another one running is usually left from a test or a benchmark.</source>
@@ -23077,15 +23077,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Purge all pages</source>
-        <translation>Usunąć wszystkie strony</translation>
+        <translation>Usuń wszystkie strony</translation>
     </message>
     <message>
         <source>Remove dead entries</source>
-        <translation>Usunąć nieaktualne wpisy</translation>
+        <translation>Usuń nieaktualne wpisy</translation>
     </message>
     <message>
         <source>Reset counters</source>
-        <translation>Zresetować liczniki</translation>
+        <translation>Zresetuj liczniki</translation>
     </message>
     <message>
         <source>Database queries</source>
@@ -23181,11 +23181,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear the query cache</source>
-        <translation>Wyczyścić pamięć podręczną zapytań</translation>
+        <translation>Wyczyść pamięć podręczną zapytań</translation>
     </message>
     <message>
         <source>Reset the counters</source>
-        <translation>Zresetować liczniki</translation>
+        <translation>Zresetuj liczniki</translation>
     </message>
     <message>
         <source>Over the last %n profiled requests</source>
@@ -23257,11 +23257,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
-        <translation>Wyłączyć profil SQL</translation>
+        <translation>Wyłącz profil SQL</translation>
     </message>
     <message>
         <source>Switch the SQL profile on</source>
-        <translation>Włączyć profil SQL</translation>
+        <translation>Włącz profil SQL</translation>
     </message>
     <message>
         <source>Response cache (web server)</source>
@@ -23465,7 +23465,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>stop it with %command</source>
-        <translation>zatrzymać poleceniem %command</translation>
+        <translation>zatrzymaj poleceniem %command</translation>
     </message>
     <message>
         <source>Individual files on disk &amp;mdash; the archive below is not being used, because the EXP_ENGINE_PHAR environment variable is not set</source>
@@ -23637,15 +23637,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Copy report as text</source>
-        <translation>Skopiować raport jako tekst</translation>
+        <translation>Skopiuj raport jako tekst</translation>
     </message>
     <message>
         <source>Download report (.txt)</source>
-        <translation>Pobrać raport (.txt)</translation>
+        <translation>Pobierz raport (.txt)</translation>
     </message>
     <message>
         <source>Download as JSON</source>
-        <translation>Pobrać jako JSON</translation>
+        <translation>Pobierz jako JSON</translation>
     </message>
     <message>
         <source>Without sizes (faster)</source>
@@ -23653,7 +23653,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Measure sizes</source>
-        <translation>Zmierzyć rozmiary</translation>
+        <translation>Zmierz rozmiary</translation>
     </message>
     <message>
         <source>Generated %time.</source>
@@ -24589,11 +24589,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Open %siteaccess</source>
-        <translation>Otworzyć %siteaccess</translation>
+        <translation>Otwórz %siteaccess</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otworzyć</translation>
+        <translation>Otwórz</translation>
     </message>
     <message>
         <source>Settings of %siteaccess</source>
@@ -24735,7 +24735,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Restart</source>
-        <translation>Uruchomić ponownie</translation>
+        <translation>Uruchom ponownie</translation>
     </message>
     <message>
         <source>Next</source>
@@ -24779,11 +24779,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Type to narrow: a name, a setting, a class, a file</source>
-        <translation>Wpisać, aby zawęzić: nazwa, ustawienie, klasa, plik</translation>
+        <translation>Wpisz, aby zawęzić: nazwa, ustawienie, klasa, plik</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Nothing matches that.</source>
@@ -26071,7 +26071,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
 </context>
 <context>
@@ -26082,7 +26082,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Restart</source>
-        <translation>Uruchomić ponownie</translation>
+        <translation>Uruchom ponownie</translation>
     </message>
     <message>
         <source>Next</source>
@@ -26130,7 +26130,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Finish and generate</source>
-        <translation>Zakończyć i wygenerować</translation>
+        <translation>Zakończ i wygenerować</translation>
     </message>
     <message>
         <source>Welcome to the wizard for creating a new datatype. Everything stored in a content object are called attributes. Attributes are defined as data types. To customize storing and validation of attributes, you can create your own data types.</source>
@@ -26274,11 +26274,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>lines</source>
@@ -26290,19 +26290,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>%methods methods</source>
@@ -26386,7 +26386,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Read what an editor typed, check it, and store it.</source>
-        <translation>Odczytać to, co wpisał redaktor, sprawdzić i zapisać.</translation>
+        <translation>Odczytaj to, co wpisał redaktor, sprawdzić i zapisać.</translation>
     </message>
     <message>
         <source>Settings an editor chooses once, when the attribute is added to a content class.</source>
@@ -26402,59 +26402,59 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Let what is in this attribute be found by a search.</source>
-        <translation>Umożliwić znalezienie zawartości tego atrybutu przez wyszukiwanie.</translation>
+        <translation>Umożliw znalezienie zawartości tego atrybutu przez wyszukiwanie.</translation>
     </message>
     <message>
         <source>Let a listing be sorted by this attribute.</source>
-        <translation>Umożliwić sortowanie listy według tego atrybutu.</translation>
+        <translation>Umożliw sortowanie listy według tego atrybutu.</translation>
     </message>
     <message>
         <source>Turn the value into one line of text, and read it back.</source>
-        <translation>Zamienić wartość na jeden wiersz tekstu i odczytać ją z powrotem.</translation>
+        <translation>Zamień wartość na jeden wiersz tekstu i odczytać ją z powrotem.</translation>
     </message>
     <message>
         <source>Let a visitor fill this in on a published page, without editing the content.</source>
-        <translation>Umożliwić odwiedzającemu wypełnienie tego na opublikowanej stronie bez edytowania treści.</translation>
+        <translation>Umożliw odwiedzającemu wypełnienie tego na opublikowanej stronie bez edytowania treści.</translation>
     </message>
     <message>
         <source>Accept an uploaded file, and hand it back on download.</source>
-        <translation>Przyjąć przesłany plik i zwrócić go przy pobieraniu.</translation>
+        <translation>Przyjmij przesłany plik i zwrócić go przy pobieraniu.</translation>
     </message>
     <message>
         <source>Let a script set the value from one string, without a form.</source>
-        <translation>Umożliwić skryptowi ustawienie wartości z jednego ciągu znaków, bez formularza.</translation>
+        <translation>Umożliw skryptowi ustawienie wartości z jednego ciągu znaków, bez formularza.</translation>
     </message>
     <message>
         <source>Travel between installations inside a package.</source>
-        <translation>Przenosić się między instalacjami w pakiecie.</translation>
+        <translation>Przenoś się między instalacjami w pakiecie.</translation>
     </message>
     <message>
         <source>Show what changed between two versions of an attribute.</source>
-        <translation>Pokazać, co zmieniło się między dwiema wersjami atrybutu.</translation>
+        <translation>Pokaż, co zmieniło się między dwiema wersjami atrybutu.</translation>
     </message>
     <message>
         <source>Add a button inside the editing field that does something without leaving the form.</source>
-        <translation>Dodać w polu edycji przycisk, który coś robi bez opuszczania formularza.</translation>
+        <translation>Dodaj w polu edycji przycisk, który coś robi bez opuszczania formularza.</translation>
     </message>
     <message>
         <source>Do something when the object is published, not when it is saved.</source>
-        <translation>Zrobić coś, gdy obiekt jest publikowany, a nie gdy jest zapisywany.</translation>
+        <translation>Zrób coś, gdy obiekt jest publikowany, a nie gdy jest zapisywany.</translation>
     </message>
     <message>
         <source>Remove whatever the attribute left elsewhere when it goes.</source>
-        <translation>Usunąć to, co atrybut pozostawił gdzie indziej, gdy jest usuwany.</translation>
+        <translation>Usuń to, co atrybut pozostawił gdzie indziej, gdy jest usuwany.</translation>
     </message>
     <message>
         <source>Hold a different value per language.</source>
-        <translation>Przechowywać inną wartość dla każdego języka.</translation>
+        <translation>Przechowuj inną wartość dla każdego języka.</translation>
     </message>
     <message>
         <source>Say that this attribute points at other content.</source>
-        <translation>Wskazać, że ten atrybut odnosi się do innej treści.</translation>
+        <translation>Wskaż, że ten atrybut odnosi się do innej treści.</translation>
     </message>
     <message>
         <source>Fill in the new attribute on existing content in one statement.</source>
-        <translation>Wypełnić nowy atrybut w istniejącej treści jednym poleceniem.</translation>
+        <translation>Wypełnij nowy atrybut w istniejącej treści jednym poleceniem.</translation>
     </message>
     <message>
         <source>Without this the attribute can be added to a class and will never hold anything. Everything else here is optional; this is not.</source>
@@ -26749,7 +26749,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Restart</source>
-        <translation>Uruchomić ponownie</translation>
+        <translation>Uruchom ponownie</translation>
     </message>
     <message>
         <source>Next</source>
@@ -26789,7 +26789,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Finish and generate</source>
-        <translation>Zakończyć i wygenerować</translation>
+        <translation>Zakończ i wygenerować</translation>
     </message>
 </context>
 <context>
@@ -26820,11 +26820,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove all sessions</source>
-        <translation>Usunąć wszystkie sesje</translation>
+        <translation>Usuń wszystkie sesje</translation>
     </message>
     <message>
         <source>Remove timed out / old sessions</source>
-        <translation>Usunąć wygasłe / stare sesje</translation>
+        <translation>Usuń wygasłe / stare sesje</translation>
     </message>
     <message>
         <source>Filtered sessions</source>
@@ -26856,19 +26856,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Update list</source>
-        <translation>Odświeżyć listę</translation>
+        <translation>Odśwież listę</translation>
     </message>
     <message>
         <source>Include inactive users</source>
-        <translation>Uwzględnić nieaktywnych użytkowników</translation>
+        <translation>Uwzględnij nieaktywnych użytkowników</translation>
     </message>
     <message>
         <source>Invert selection</source>
-        <translation>Odwrócić zaznaczenie</translation>
+        <translation>Odwróć zaznaczenie</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Login</source>
@@ -26892,7 +26892,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select session for removal.</source>
-        <translation>Zaznaczyć sesję do usunięcia.</translation>
+        <translation>Zaznacz sesję do usunięcia.</translation>
     </message>
     <message>
         <source>Time skew detected</source>
@@ -26904,11 +26904,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected sessions.</source>
-        <translation>Usunąć zaznaczone sesje.</translation>
+        <translation>Usuń zaznaczone sesje.</translation>
     </message>
     <message>
         <source>Email</source>
@@ -26924,15 +26924,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Repeat the operation several times to complete it.</source>
-        <translation>Powtórzyć operację kilka razy, aby ją ukończyć.</translation>
+        <translation>Powtórz operację kilka razy, aby ją ukończyć.</translation>
     </message>
     <message>
         <source>Clear the timed out session data from command-line using: &amp;gt;php bin/php/ezsessiongc.php</source>
-        <translation>Wyczyścić dane wygasłych sesji z wiersza poleceń: &amp;gt;php bin/php/ezsessiongc.php</translation>
+        <translation>Wyczyść dane wygasłych sesji z wiersza poleceń: &amp;gt;php bin/php/ezsessiongc.php</translation>
     </message>
     <message>
         <source>Install the session cleanup cronjob &apos;session_gc.php&apos; and run on nightly intervals (see cronjob.ini or doc for how)</source>
-        <translation>Zainstalować zadanie cron czyszczenia sesji &apos;session_gc.php&apos; i uruchamiać je co noc (sposób opisano w cronjob.ini lub dokumentacji)</translation>
+        <translation>Zainstaluj zadanie cron czyszczenia sesji &apos;session_gc.php&apos; i uruchamiać je co noc (sposób opisano w cronjob.ini lub dokumentacji)</translation>
     </message>
     <message>
         <source>The operation was cut short in order to avoid execution timeout.</source>
@@ -27020,7 +27020,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find a user</source>
-        <translation>Znaleźć użytkownika</translation>
+        <translation>Znajdź użytkownika</translation>
     </message>
     <message>
         <source>Part of a name, login or e-mail address.</source>
@@ -27032,7 +27032,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>Showing users matching “%search”.</source>
@@ -27044,7 +27044,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Sort by</source>
@@ -27064,11 +27064,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select the session %hint for removal</source>
-        <translation>Zaznaczyć sesję %hint do usunięcia</translation>
+        <translation>Zaznacz sesję %hint do usunięcia</translation>
     </message>
     <message>
         <source>Select the sessions of %name for removal</source>
-        <translation>Zaznaczyć sesje użytkownika %name do usunięcia</translation>
+        <translation>Zaznacz sesje użytkownika %name do usunięcia</translation>
     </message>
     <message>
         <source>Session</source>
@@ -27076,7 +27076,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show the sessions of this user one by one.</source>
-        <translation>Pokazać sesje tego użytkownika pojedynczo.</translation>
+        <translation>Pokaż sesje tego użytkownika pojedynczo.</translation>
     </message>
     <message>
         <source>The session you are using now</source>
@@ -27128,7 +27128,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>The ticked sessions are signed out. Asks first.</source>
@@ -27140,7 +27140,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove sessions</source>
-        <translation>Usunąć sesje</translation>
+        <translation>Usuń sesje</translation>
     </message>
     <message>
         <source>Remove all %count sessions?</source>
@@ -27180,11 +27180,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove the sessions</source>
-        <translation>Usunąć sesje</translation>
+        <translation>Usuń sesje</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Sessions are kept by %handler (PHP session storage: %storage), not in a table this page can read, so they cannot be counted or removed one by one here. Each session ends by itself %lifetime after its last use.</source>
@@ -27256,11 +27256,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Keep sessions in the database: in settings/override/site.ini.append.php set</source>
-        <translation>Przechowywać sesje w bazie danych: w settings/override/site.ini.append.php ustawić</translation>
+        <translation>Przechowuj sesje w bazie danych: w settings/override/site.ini.append.php ustawić</translation>
     </message>
     <message>
         <source>Clear the INI cache and reload the PHP workers (or deploy). Everybody signs in again once, because the sessions kept by PHP are not carried over.</source>
-        <translation>Wyczyścić pamięć podręczną INI i przeładować procesy robocze PHP (lub wykonać wdrożenie). Wszyscy logują się ponownie jeden raz, ponieważ sesje przechowywane przez PHP nie są przenoszone.</translation>
+        <translation>Wyczyść pamięć podręczną INI i przeładować procesy robocze PHP (lub wykonać wdrożenie). Wszyscy logują się ponownie jeden raz, ponieważ sesje przechowywane przez PHP nie są przenoszone.</translation>
     </message>
     <message>
         <source>This page then lists every session with its user and last activity, and removes the sessions of chosen users. Set ForceStart=enabled only if anonymous visitors should be counted too: it opens a session for every visitor.</source>
@@ -27338,7 +27338,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>ID</source>
@@ -27358,7 +27358,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select order for removal.</source>
-        <translation>Zaznaczyć zamówienie do usunięcia.</translation>
+        <translation>Zaznacz zamówienie do usunięcia.</translation>
     </message>
     <message>
         <source>The order list is empty.</source>
@@ -27366,11 +27366,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Unarchive selected</source>
-        <translation>Przywrócić zaznaczone z archiwum</translation>
+        <translation>Przywróć zaznaczone z archiwum</translation>
     </message>
     <message>
         <source>Unarchive selected orders.</source>
-        <translation>Przywrócić zaznaczone zamówienia z archiwum.</translation>
+        <translation>Przywróć zaznaczone zamówienia z archiwum.</translation>
     </message>
     <message>
         <source>Archived orders (%count)</source>
@@ -27421,15 +27421,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Continue shopping</source>
-        <translation>Kontynuować zakupy</translation>
+        <translation>Kontynuuj zakupy</translation>
     </message>
     <message>
         <source>Checkout</source>
@@ -27445,11 +27445,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select item for removal.</source>
-        <translation>Zaznaczyć element do usunięcia.</translation>
+        <translation>Zaznacz element do usunięcia.</translation>
     </message>
     <message>
         <source>There are no items in your shopping basket.</source>
@@ -27457,7 +27457,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected items from the basket.</source>
-        <translation>Usunąć zaznaczone elementy z koszyka.</translation>
+        <translation>Usuń zaznaczone elementy z koszyka.</translation>
     </message>
     <message>
         <source>Click this button to update the basket if you have modified any quantity and/or option fields.</source>
@@ -27465,7 +27465,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Leave the basket and continue shopping.</source>
-        <translation>Opuścić koszyk i kontynuować zakupy.</translation>
+        <translation>Opuść koszyk i kontynuować zakupy.</translation>
     </message>
     <message>
         <source>Proceed to checkout and purchase the items that are in the basket.</source>
@@ -27622,11 +27622,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Confirm order</source>
-        <translation>Potwierdzić zamówienie</translation>
+        <translation>Potwierdź zamówienie</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -27637,19 +27637,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show 10 items per page.</source>
-        <translation>Pokazywać 10 elementów na stronie.</translation>
+        <translation>Pokazuj 10 elementów na stronie.</translation>
     </message>
     <message>
         <source>Show 50 items per page.</source>
-        <translation>Pokazywać 50 elementów na stronie.</translation>
+        <translation>Pokazuj 50 elementów na stronie.</translation>
     </message>
     <message>
         <source>Show 25 items per page.</source>
-        <translation>Pokazywać 25 elementów na stronie.</translation>
+        <translation>Pokazuj 25 elementów na stronie.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -27693,7 +27693,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select status</source>
-        <translation>Wybrać status</translation>
+        <translation>Wybierz status</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -27701,11 +27701,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit &apos;%currency_code&apos; currency.</source>
-        <translation>Edytować walutę &apos;%currency_code&apos;.</translation>
+        <translation>Edytuj walutę &apos;%currency_code&apos;.</translation>
     </message>
     <message>
         <source>The available currency list is empty</source>
@@ -27713,11 +27713,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected currencies from the list above.</source>
-        <translation>Usunąć zaznaczone waluty z powyższej listy.</translation>
+        <translation>Usuń zaznaczone waluty z powyższej listy.</translation>
     </message>
     <message>
         <source>New currency</source>
@@ -27725,27 +27725,27 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Update auto rates</source>
-        <translation>Zaktualizować kursy automatyczne</translation>
+        <translation>Zaktualizuj kursy automatyczne</translation>
     </message>
     <message>
         <source>Update auto rates.</source>
-        <translation>Zaktualizować kursy automatyczne.</translation>
+        <translation>Zaktualizuj kursy automatyczne.</translation>
     </message>
     <message>
         <source>Update autoprices</source>
-        <translation>Zaktualizować ceny automatyczne</translation>
+        <translation>Zaktualizuj ceny automatyczne</translation>
     </message>
     <message>
         <source>Update autoprices.</source>
-        <translation>Zaktualizować ceny automatyczne.</translation>
+        <translation>Zaktualizuj ceny automatyczne.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Apply statuses, custom rates, factor values.</source>
-        <translation>Zastosować statusy, kursy niestandardowe i wartości współczynników.</translation>
+        <translation>Zastosuj statusy, kursy niestandardowe i wartości współczynników.</translation>
     </message>
     <message>
         <source>Preferred currency</source>
@@ -27753,7 +27753,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Add new currency to the list above.</source>
-        <translation>Dodać nową walutę do powyższej listy.</translation>
+        <translation>Dodaj nową walutę do powyższej listy.</translation>
     </message>
     <message>
         <source>Use these checkboxes to select items for removal. Click the &quot;Remove selected&quot; button to  remove the selected items.</source>
@@ -27761,7 +27761,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>Active</source>
@@ -27866,11 +27866,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>New discount group</source>
@@ -27878,15 +27878,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select discount group for removal.</source>
-        <translation>Zaznaczyć grupę rabatową do usunięcia.</translation>
+        <translation>Zaznacz grupę rabatową do usunięcia.</translation>
     </message>
     <message>
         <source>Edit the &lt;%discountgroup_name&gt; discount group.</source>
-        <translation>Edytować grupę rabatową &lt;%discountgroup_name&gt;.</translation>
+        <translation>Edytuj grupę rabatową &lt;%discountgroup_name&gt;.</translation>
     </message>
     <message>
         <source>There are no discount groups.</source>
@@ -27894,11 +27894,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected discount groups.</source>
-        <translation>Usunąć zaznaczone grupy rabatowe.</translation>
+        <translation>Usuń zaznaczone grupy rabatowe.</translation>
     </message>
     <message>
         <source>Create a new discount group.</source>
-        <translation>Utworzyć nową grupę rabatową.</translation>
+        <translation>Utwórz nową grupę rabatową.</translation>
     </message>
     <message>
         <source>Discount groups (%discount_groups)</source>
@@ -27921,7 +27921,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -27936,11 +27936,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Discount rules [%rule_count]</source>
@@ -27952,11 +27952,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Apply to</source>
-        <translation>Zastosować do</translation>
+        <translation>Zastosuj do</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>New discount rule</source>
@@ -27964,23 +27964,23 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit this discount group.</source>
-        <translation>Edytować tę grupę rabatową.</translation>
+        <translation>Edytuj tę grupę rabatową.</translation>
     </message>
     <message>
         <source>Remove this discount group.</source>
-        <translation>Usunąć tę grupę rabatową.</translation>
+        <translation>Usuń tę grupę rabatową.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select discount rule for removal.</source>
-        <translation>Zaznaczyć regułę rabatową do usunięcia.</translation>
+        <translation>Zaznacz regułę rabatową do usunięcia.</translation>
     </message>
     <message>
         <source>Edit the &lt;%discount_rule_name&gt; discount rule.</source>
-        <translation>Edytować regułę rabatową &lt;%discount_rule_name&gt;.</translation>
+        <translation>Edytuj regułę rabatową &lt;%discount_rule_name&gt;.</translation>
     </message>
     <message>
         <source>There are no discount rules in this group.</source>
@@ -27988,11 +27988,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected discount rules.</source>
-        <translation>Usunąć zaznaczone reguły rabatowe.</translation>
+        <translation>Usuń zaznaczone reguły rabatowe.</translation>
     </message>
     <message>
         <source>Create a new discount rule and add it to the &lt;%discount_group_name&gt; discount group.</source>
-        <translation>Utworzyć nową regułę rabatową i dodać ją do grupy rabatowej &lt;%discount_group_name&gt;.</translation>
+        <translation>Utwórz nową regułę rabatową i dodać ją do grupy rabatowej &lt;%discount_group_name&gt;.</translation>
     </message>
     <message>
         <source>Customers (users and user groups) [%customer_count]</source>
@@ -28004,7 +28004,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select user or user group for removal.</source>
-        <translation>Zaznaczyć użytkownika lub grupę użytkowników do usunięcia.</translation>
+        <translation>Zaznacz użytkownika lub grupę użytkowników do usunięcia.</translation>
     </message>
     <message>
         <source>There are no customers in this discount group.</source>
@@ -28012,15 +28012,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected users and/or user groups.</source>
-        <translation>Usunąć zaznaczonych użytkowników i/lub grupy użytkowników.</translation>
+        <translation>Usuń zaznaczonych użytkowników i/lub grupy użytkowników.</translation>
     </message>
     <message>
         <source>Add customers</source>
-        <translation>Dodać klientów</translation>
+        <translation>Dodaj klientów</translation>
     </message>
     <message>
         <source>Add users and/or user groups to the &lt;%discount_group_name&gt; discount group.</source>
-        <translation>Dodać użytkowników lub grupy użytkowników do grupy rabatowej &lt;%discount_group_name&gt;.</translation>
+        <translation>Dodaj użytkowników lub grupy użytkowników do grupy rabatowej &lt;%discount_group_name&gt;.</translation>
     </message>
     <message>
         <source>Discount rules (%rule_count)</source>
@@ -28055,7 +28055,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>New discount rule</source>
@@ -28075,7 +28075,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>The individual product list is empty.</source>
@@ -28083,18 +28083,18 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Add products</source>
-        <translation>Dodać produkty</translation>
+        <translation>Dodaj produkty</translation>
     </message>
 </context>
 <context>
     <name>design/admin/shop/editcurrency</name>
     <message>
         <source>Create currency</source>
-        <translation>Utworzyć walutę</translation>
+        <translation>Utwórz walutę</translation>
     </message>
     <message>
         <source>Edit &apos;%currency_code&apos; currency</source>
@@ -28118,7 +28118,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select locale for formatting price values.</source>
-        <translation>Wybrać ustawienia regionalne do formatowania cen.</translation>
+        <translation>Wybierz ustawienia regionalne do formatowania cen.</translation>
     </message>
     <message>
         <source>Custom rate</source>
@@ -28134,23 +28134,23 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>Utworzyć</translation>
+        <translation>Utwórz</translation>
     </message>
     <message>
         <source>Store changes</source>
-        <translation>Zapisać zmiany</translation>
+        <translation>Zapisz zmiany</translation>
     </message>
     <message>
         <source>Store changes.</source>
-        <translation>Zapisać zmiany.</translation>
+        <translation>Zapisz zmiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Cancel creating new currency.</source>
-        <translation>Anulować tworzenie nowej waluty.</translation>
+        <translation>Anuluj tworzenie nowej waluty.</translation>
     </message>
     <message>
         <source>Back</source>
@@ -28158,11 +28158,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Back to the currency list</source>
-        <translation>Wrócić do listy walut</translation>
+        <translation>Wróć do listy walut</translation>
     </message>
     <message>
         <source>Finish creating currency.</source>
-        <translation>Zakończyć tworzenie waluty.</translation>
+        <translation>Zakończ tworzenie waluty.</translation>
     </message>
 </context>
 <context>
@@ -28189,27 +28189,27 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Store changes</source>
-        <translation>Zapisać zmiany</translation>
+        <translation>Zapisz zmiany</translation>
     </message>
     <message>
         <source>Store changes.</source>
-        <translation>Zapisać zmiany.</translation>
+        <translation>Zapisz zmiany.</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>Utworzyć</translation>
+        <translation>Utwórz</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Cancel creating new currency.</source>
-        <translation>Anulować tworzenie nowej waluty.</translation>
+        <translation>Anuluj tworzenie nowej waluty.</translation>
     </message>
     <message>
         <source>Finish creating currency.</source>
-        <translation>Zakończyć tworzenie waluty.</translation>
+        <translation>Zakończ tworzenie waluty.</translation>
     </message>
     <message>
         <source>Country/region</source>
@@ -28252,11 +28252,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select order for removal.</source>
-        <translation>Zaznaczyć zamówienie do usunięcia.</translation>
+        <translation>Zaznacz zamówienie do usunięcia.</translation>
     </message>
     <message>
         <source>The order list is empty.</source>
@@ -28268,7 +28268,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click this button to store changes if you have modified any of the fields above.</source>
@@ -28276,11 +28276,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Archive selected</source>
-        <translation>Zarchiwizować zaznaczone</translation>
+        <translation>Zarchiwizuj zaznaczone</translation>
     </message>
     <message>
         <source>Archive selected orders.</source>
-        <translation>Zarchiwizować zaznaczone zamówienia.</translation>
+        <translation>Zarchiwizuj zaznaczone zamówienia.</translation>
     </message>
     <message>
         <source>( removed )</source>
@@ -28323,7 +28323,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>SUM</source>
@@ -28335,15 +28335,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select the year for which you want to view statistics.</source>
-        <translation>Wybrać rok, dla którego mają zostać wyświetlone statystyki.</translation>
+        <translation>Wybierz rok, dla którego mają zostać wyświetlone statystyki.</translation>
     </message>
     <message>
         <source>Select the month for which you want to view statistics.</source>
-        <translation>Wybrać miesiąc, dla którego mają zostać wyświetlone statystyki.</translation>
+        <translation>Wybierz miesiąc, dla którego mają zostać wyświetlone statystyki.</translation>
     </message>
     <message>
         <source>Update the list using the values specified by the menus to the left.</source>
-        <translation>Zaktualizować listę według wartości wybranych w menu po lewej.</translation>
+        <translation>Zaktualizuj listę według wartości wybranych w menu po lewej.</translation>
     </message>
     <message>
         <source>Product statistics (%count)</source>
@@ -28354,7 +28354,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <name>design/admin/shop/orderview</name>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Product items</source>
@@ -28398,7 +28398,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove this order.</source>
-        <translation>Usunąć to zamówienie.</translation>
+        <translation>Usuń to zamówienie.</translation>
     </message>
     <message>
         <source>Order #%order_id [%order_status]</source>
@@ -28460,7 +28460,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -28468,7 +28468,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select product category for removal.</source>
-        <translation>Zaznaczyć kategorię produktów do usunięcia.</translation>
+        <translation>Zaznacz kategorię produktów do usunięcia.</translation>
     </message>
     <message>
         <source>There are no product categories.</source>
@@ -28476,11 +28476,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected product categories.</source>
-        <translation>Usunąć zaznaczone kategorie produktów.</translation>
+        <translation>Usuń zaznaczone kategorie produktów.</translation>
     </message>
     <message>
         <source>New product category</source>
@@ -28488,11 +28488,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create a new product category.</source>
-        <translation>Utworzyć nową kategorię produktów.</translation>
+        <translation>Utwórz nową kategorię produktów.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click this button to store changes if you have modified any of the fields above.</source>
@@ -28523,15 +28523,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show 10 items per page.</source>
-        <translation>Pokazywać 10 elementów na stronie.</translation>
+        <translation>Pokazuj 10 elementów na stronie.</translation>
     </message>
     <message>
         <source>Show 50 items per page.</source>
-        <translation>Pokazywać 50 elementów na stronie.</translation>
+        <translation>Pokazuj 50 elementów na stronie.</translation>
     </message>
     <message>
         <source>Show 25 items per page.</source>
-        <translation>Pokazywać 25 elementów na stronie.</translation>
+        <translation>Pokazuj 25 elementów na stronie.</translation>
     </message>
     <message>
         <source>The product list is empty.</source>
@@ -28539,15 +28539,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select product class.</source>
-        <translation>Wybrać klasę produktu.</translation>
+        <translation>Wybierz klasę produktu.</translation>
     </message>
     <message>
         <source>Show products</source>
-        <translation>Pokazać produkty</translation>
+        <translation>Pokaż produkty</translation>
     </message>
     <message>
         <source>Show products of selected class.</source>
-        <translation>Pokazać produkty wybranej klasy.</translation>
+        <translation>Pokaż produkty wybranej klasy.</translation>
     </message>
     <message>
         <source>Sorting</source>
@@ -28555,11 +28555,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select sorting field.</source>
-        <translation>Wybrać pole sortowania.</translation>
+        <translation>Wybierz pole sortowania.</translation>
     </message>
     <message>
         <source>Select sorting order.</source>
-        <translation>Wybrać kierunek sortowania.</translation>
+        <translation>Wybierz kierunek sortowania.</translation>
     </message>
     <message>
         <source>Descending</source>
@@ -28571,15 +28571,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Sort products</source>
-        <translation>Sortować produkty</translation>
+        <translation>Sortuj produkty</translation>
     </message>
     <message>
         <source>Sort products.</source>
-        <translation>Sortować produkty.</translation>
+        <translation>Sortuj produkty.</translation>
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
 </context>
 <context>
@@ -28590,7 +28590,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Confirm order removal</source>
@@ -28645,7 +28645,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -28708,7 +28708,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Back</source>
@@ -28727,7 +28727,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Status ID</source>
@@ -28743,7 +28743,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select order status for removal.</source>
-        <translation>Zaznaczyć status zamówienia do usunięcia.</translation>
+        <translation>Zaznacz status zamówienia do usunięcia.</translation>
     </message>
     <message>
         <source>Check this if you want the status to be usable in the shopping system.</source>
@@ -28755,11 +28755,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected order statuses.</source>
-        <translation>Usunąć zaznaczone statusy zamówień.</translation>
+        <translation>Usuń zaznaczone statusy zamówień.</translation>
     </message>
     <message>
         <source>New order status</source>
@@ -28767,11 +28767,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create a new order status.</source>
-        <translation>Utworzyć nowy status zamówienia.</translation>
+        <translation>Utwórz nowy status zamówienia.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click this button to store changes if you have modified any of the fields above.</source>
@@ -28830,7 +28830,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Email</source>
@@ -28861,7 +28861,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Product categories</source>
@@ -28873,7 +28873,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select rule for removal.</source>
-        <translation>Zaznaczyć regułę do usunięcia.</translation>
+        <translation>Zaznacz regułę do usunięcia.</translation>
     </message>
     <message>
         <source>Any</source>
@@ -28881,11 +28881,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit rule.</source>
-        <translation>Edytować regułę.</translation>
+        <translation>Edytuj regułę.</translation>
     </message>
     <message>
         <source>There are no VAT charging rules.</source>
@@ -28893,11 +28893,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected VAT charging rules.</source>
-        <translation>Usunąć zaznaczone reguły naliczania VAT.</translation>
+        <translation>Usuń zaznaczone reguły naliczania VAT.</translation>
     </message>
     <message>
         <source>New rule</source>
@@ -28905,7 +28905,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create a new VAT charging rule.</source>
-        <translation>Utworzyć nową regułę naliczania VAT.</translation>
+        <translation>Utwórz nową regułę naliczania VAT.</translation>
     </message>
     <message>
         <source>Country/region</source>
@@ -28932,11 +28932,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select VAT type for removal.</source>
-        <translation>Zaznaczyć typ VAT do usunięcia.</translation>
+        <translation>Zaznacz typ VAT do usunięcia.</translation>
     </message>
     <message>
         <source>There are no VAT types.</source>
@@ -28944,11 +28944,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected VAT types.</source>
-        <translation>Usunąć zaznaczone typy VAT.</translation>
+        <translation>Usuń zaznaczone typy VAT.</translation>
     </message>
     <message>
         <source>New VAT type</source>
@@ -28956,11 +28956,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create a new VAT type.</source>
-        <translation>Utworzyć nowy typ VAT.</translation>
+        <translation>Utwórz nowy typ VAT.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click this button to store changes if you have modified any of the fields above.</source>
@@ -28983,7 +28983,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -29019,7 +29019,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select item for removal.</source>
-        <translation>Zaznaczyć element do usunięcia.</translation>
+        <translation>Zaznacz element do usunięcia.</translation>
     </message>
     <message>
         <source>Selected options</source>
@@ -29031,15 +29031,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected items.</source>
-        <translation>Usunąć zaznaczone elementy.</translation>
+        <translation>Usuń zaznaczone elementy.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click this button to store changes if you have modified quantity and/or option values.</source>
@@ -29090,19 +29090,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Save changes</source>
-        <translation>Zapisać zmiany</translation>
+        <translation>Zapisz zmiany</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Cancel saving any changes.</source>
-        <translation>Anulować zapisywanie zmian.</translation>
+        <translation>Anuluj zapisywanie zmian.</translation>
     </message>
     <message>
         <source>Save changes to this state.</source>
-        <translation>Zapisać zmiany tego stanu.</translation>
+        <translation>Zapisz zmiany tego stanu.</translation>
     </message>
     <message>
         <source>New state in %group</source>
@@ -29158,7 +29158,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Create state</source>
-        <translation>Utworzyć stan</translation>
+        <translation>Utwórz stan</translation>
     </message>
 </context>
 <context>
@@ -29185,7 +29185,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Object count</source>
@@ -29197,31 +29197,31 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select content object state group for removal.</source>
-        <translation>Zaznaczyć grupę stanów obiektów treści do usunięcia.</translation>
+        <translation>Zaznacz grupę stanów obiektów treści do usunięcia.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected states.</source>
-        <translation>Usunąć zaznaczone stany.</translation>
+        <translation>Usuń zaznaczone stany.</translation>
     </message>
     <message>
         <source>Create new</source>
-        <translation>Utworzyć nowy</translation>
+        <translation>Utwórz nowy</translation>
     </message>
     <message>
         <source>Create a new state.</source>
-        <translation>Utworzyć nowy stan.</translation>
+        <translation>Utwórz nowy stan.</translation>
     </message>
     <message>
         <source>Update ordering</source>
-        <translation>Zaktualizować kolejność</translation>
+        <translation>Zaktualizuj kolejność</translation>
     </message>
     <message>
         <source>Update the order of the content object states in this group.</source>
-        <translation>Zaktualizować kolejność stanów obiektów treści w tej grupie.</translation>
+        <translation>Zaktualizuj kolejność stanów obiektów treści w tej grupie.</translation>
     </message>
     <message>
         <source>Object states in this group (%state_count)</source>
@@ -29293,11 +29293,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove for good</source>
-        <translation>Usunąć na stałe</translation>
+        <translation>Usuń na stałe</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Default state</source>
@@ -29353,7 +29353,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Przesunąć w górę</translation>
+        <translation>Przesuń w górę</translation>
     </message>
     <message>
         <source>Move %state down</source>
@@ -29361,19 +29361,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Przesunąć w dół</translation>
+        <translation>Przesuń w dół</translation>
     </message>
     <message>
         <source>Edit the state %state</source>
-        <translation>Edytować stan %state</translation>
+        <translation>Edytuj stan %state</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Save order keeps the positions above. Remove selected asks first and says where the objects of the removed states go.</source>
@@ -29381,7 +29381,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Save order</source>
-        <translation>Zapisać kolejność</translation>
+        <translation>Zapisz kolejność</translation>
     </message>
     <message>
         <source>Translations (%count)</source>
@@ -29389,7 +29389,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit group and translations</source>
-        <translation>Edytować grupę i tłumaczenia</translation>
+        <translation>Edytuj grupę i tłumaczenia</translation>
     </message>
     <message>
         <source>Language</source>
@@ -29405,7 +29405,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show the group in %language</source>
-        <translation>Pokazać grupę w języku %language</translation>
+        <translation>Pokaż grupę w języku %language</translation>
     </message>
     <message>
         <source>No</source>
@@ -29488,31 +29488,31 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Save changes</source>
-        <translation>Zapisać zmiany</translation>
+        <translation>Zapisz zmiany</translation>
     </message>
     <message>
         <source>Save changes to this state group.</source>
-        <translation>Zapisać zmiany tej grupy stanów.</translation>
+        <translation>Zapisz zmiany tej grupy stanów.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Cancel saving any changes.</source>
-        <translation>Anulować zapisywanie zmian.</translation>
+        <translation>Anuluj zapisywanie zmian.</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>Utworzyć</translation>
+        <translation>Utwórz</translation>
     </message>
     <message>
         <source>Create this state group.</source>
-        <translation>Utworzyć tę grupę stanów.</translation>
+        <translation>Utwórz tę grupę stanów.</translation>
     </message>
     <message>
         <source>Cancel creating this state group.</source>
-        <translation>Anulować tworzenie tej grupy stanów.</translation>
+        <translation>Anuluj tworzenie tej grupy stanów.</translation>
     </message>
     <message>
         <source>New state group</source>
@@ -29591,7 +29591,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>ID</source>
@@ -29607,23 +29607,23 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select content object state group for removal.</source>
-        <translation>Zaznaczyć grupę stanów obiektów treści do usunięcia.</translation>
+        <translation>Zaznacz grupę stanów obiektów treści do usunięcia.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected state groups.</source>
-        <translation>Usunąć zaznaczone grupy stanów.</translation>
+        <translation>Usuń zaznaczone grupy stanów.</translation>
     </message>
     <message>
         <source>Create new</source>
-        <translation>Utworzyć nowy</translation>
+        <translation>Utwórz nowy</translation>
     </message>
     <message>
         <source>Create a new state group.</source>
-        <translation>Utworzyć nową grupę stanów.</translation>
+        <translation>Utwórz nową grupę stanów.</translation>
     </message>
     <message>
         <source>Object states</source>
@@ -29675,11 +29675,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove for good</source>
-        <translation>Usunąć na stałe</translation>
+        <translation>Usuń na stałe</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -29739,23 +29739,23 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit the group %group</source>
-        <translation>Edytować grupę %group</translation>
+        <translation>Edytuj grupę %group</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Open the group %group</source>
-        <translation>Otworzyć grupę %group</translation>
+        <translation>Otwórz grupę %group</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otworzyć</translation>
+        <translation>Otwórz</translation>
     </message>
     <message>
         <source>States of %group, in order</source>
@@ -29890,7 +29890,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show the state in %language</source>
-        <translation>Pokazać stan w języku %language</translation>
+        <translation>Pokaż stan w języku %language</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -29918,11 +29918,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Back to the group</source>
-        <translation>Wrócić do grupy</translation>
+        <translation>Wróć do grupy</translation>
     </message>
 </context>
 <context>
@@ -29960,7 +29960,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Workflow triggers [%trigger_count]</source>
@@ -30028,7 +30028,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find a trigger</source>
-        <translation>Znaleźć wyzwalacz</translation>
+        <translation>Znajdź wyzwalacz</translation>
     </message>
     <message>
         <source>Operation in words, module, operation or workflow.</source>
@@ -30036,7 +30036,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All</source>
@@ -30132,11 +30132,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Select the trigger %label for removal</source>
-        <translation>Zaznaczyć wyzwalacz %label do usunięcia</translation>
+        <translation>Zaznacz wyzwalacz %label do usunięcia</translation>
     </message>
     <message>
         <source>Workflow %id</source>
@@ -30148,7 +30148,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Removing one of these changes nothing that runs now: an operation not offered here does not run its triggers. The workflow stays.</source>
@@ -30183,7 +30183,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>URL</source>
@@ -30242,7 +30242,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>open</source>
-        <translation>otworzyć</translation>
+        <translation>otwórz</translation>
     </message>
     <message>
         <source>Never</source>
@@ -30254,31 +30254,31 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show all URLs.</source>
-        <translation>Pokazać wszystkie adresy URL.</translation>
+        <translation>Pokaż wszystkie adresy URL.</translation>
     </message>
     <message>
         <source>Show only invalid URLs.</source>
-        <translation>Pokazać tylko nieprawidłowe adresy URL.</translation>
+        <translation>Pokaż tylko nieprawidłowe adresy URL.</translation>
     </message>
     <message>
         <source>Show only valid URLs.</source>
-        <translation>Pokazać tylko prawidłowe adresy URL.</translation>
+        <translation>Pokaż tylko prawidłowe adresy URL.</translation>
     </message>
     <message>
         <source>View information about URL.</source>
-        <translation>Wyświetlić informacje o adresie URL.</translation>
+        <translation>Wyświetl informacje o adresie URL.</translation>
     </message>
     <message>
         <source>Open URL in new window.</source>
-        <translation>Otworzyć adres URL w nowym oknie.</translation>
+        <translation>Otwórz adres URL w nowym oknie.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit URL.</source>
-        <translation>Edytować adres URL.</translation>
+        <translation>Edytuj adres URL.</translation>
     </message>
     <message>
         <source>The requested list is empty.</source>
@@ -30338,19 +30338,19 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Find links</source>
-        <translation>Znaleźć linki</translation>
+        <translation>Znajdź linki</translation>
     </message>
     <message>
         <source>Find a link</source>
-        <translation>Znaleźć link</translation>
+        <translation>Znajdź link</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>Any part of the address, such as a domain or a path. Upper and lower case are the same.</source>
@@ -30358,7 +30358,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Order</source>
@@ -30390,7 +30390,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>No link matches this search. Check the spelling, search for a shorter part of the address, or show all links.</source>
@@ -30414,11 +30414,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Select this link.</source>
-        <translation>Zaznaczyć ten link.</translation>
+        <translation>Zaznacz ten link.</translation>
     </message>
     <message>
         <source>Select %url</source>
-        <translation>Zaznaczyć %url</translation>
+        <translation>Zaznacz %url</translation>
     </message>
     <message>
         <source>For an e-mail address the link check looks up the mail server of its domain.</source>
@@ -30462,11 +30462,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otworzyć</translation>
+        <translation>Otwórz</translation>
     </message>
     <message>
         <source>Used by</source>
@@ -30490,15 +30490,15 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>Mark selected valid</source>
-        <translation>Oznaczyć zaznaczone jako prawidłowe</translation>
+        <translation>Oznacz zaznaczone jako prawidłowe</translation>
     </message>
     <message>
         <source>Mark selected invalid</source>
-        <translation>Oznaczyć zaznaczone jako nieprawidłowe</translation>
+        <translation>Oznacz zaznaczone jako nieprawidłowe</translation>
     </message>
     <message>
         <source>Marking changes only the state shown here and in templates that hide invalid links; nothing is removed and no content changes. The next link check tests the links again.</source>
@@ -30549,7 +30549,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Objects using URL #%url_id [%url_count]</source>
@@ -30573,11 +30573,11 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Edit this URL.</source>
-        <translation>Edytować ten URL.</translation>
+        <translation>Edytuj ten URL.</translation>
     </message>
     <message>
         <source>Edit &lt;%object_name&gt;.</source>
-        <translation>Edytować &lt;%object_name&gt;.</translation>
+        <translation>Edytuj &lt;%object_name&gt;.</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -30609,7 +30609,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>View the contents of version #%version_number.</source>
-        <translation>Wyświetlić zawartość wersji #%version_number.</translation>
+        <translation>Wyświetl zawartość wersji #%version_number.</translation>
     </message>
     <message>
         <source>Objects using URL #%url_id (%url_count)</source>
@@ -30621,7 +30621,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     </message>
     <message>
         <source>Repeat</source>
-        <translation>Powtórzyć</translation>
+        <translation>Powtórz</translation>
     </message>
     <message>
         <source>Untouched draft</source>
@@ -30632,7 +30632,7 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
     <name>design/admin/user</name>
     <message>
         <source>Activate account</source>
-        <translation>Aktywować konto</translation>
+        <translation>Aktywuj konto</translation>
     </message>
     <message>
         <source>User registered</source>
@@ -30668,7 +30668,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Toggle selection</source>
-        <translation>Przełączyć zaznaczenie</translation>
+        <translation>Przełącz zaznaczenie</translation>
     </message>
     <message>
         <source>Registration date</source>
@@ -30688,19 +30688,19 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Activate selected users</source>
-        <translation>Aktywować zaznaczonych użytkowników</translation>
+        <translation>Aktywuj zaznaczonych użytkowników</translation>
     </message>
     <message>
         <source>Activate selected users.</source>
-        <translation>Aktywować zaznaczonych użytkowników.</translation>
+        <translation>Aktywuj zaznaczonych użytkowników.</translation>
     </message>
     <message>
         <source>Remove selected users</source>
-        <translation>Usunąć zaznaczonych użytkowników</translation>
+        <translation>Usuń zaznaczonych użytkowników</translation>
     </message>
     <message>
         <source>Remove selected users.</source>
-        <translation>Usunąć zaznaczonych użytkowników.</translation>
+        <translation>Usuń zaznaczonych użytkowników.</translation>
     </message>
 </context>
 <context>
@@ -30763,7 +30763,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <message>
         <source>Log in</source>
         <comment>Login button</comment>
-        <translation>Zalogować się</translation>
+        <translation>Zaloguj się</translation>
     </message>
     <message>
         <source>Click here to log in using the username/password combination entered in the fields above.</source>
@@ -30784,7 +30784,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remember me</source>
-        <translation>Zapamiętać mnie</translation>
+        <translation>Zapamiętaj mnie</translation>
     </message>
     <message>
         <source>&quot;%user_login&quot; is not allowed to log in because failed login attempts by this user exceeded allowable number of failed login attempts!</source>
@@ -30820,7 +30820,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Register new account</source>
-        <translation>Zarejestrować nowe konto</translation>
+        <translation>Zarejestruj nowe konto</translation>
     </message>
     <message>
         <source>Sign in to Exponential</source>
@@ -30836,11 +30836,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Show password</source>
-        <translation>Pokazać hasło</translation>
+        <translation>Pokaż hasło</translation>
     </message>
     <message>
         <source>Hide password</source>
-        <translation>Ukryć hasło</translation>
+        <translation>Ukryj hasło</translation>
     </message>
     <message>
         <source>Signing in…</source>
@@ -30852,7 +30852,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Sign in</source>
-        <translation>Zalogować się</translation>
+        <translation>Zaloguj się</translation>
     </message>
     <message>
         <source>No account yet?</source>
@@ -30879,7 +30879,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>The password could not be changed.</source>
@@ -30934,7 +30934,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Register new user</source>
-        <translation>Zarejestrować nowego użytkownika</translation>
+        <translation>Zarejestruj nowego użytkownika</translation>
     </message>
     <message>
         <source>OK</source>
@@ -30942,7 +30942,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Unable to register new user</source>
@@ -30961,7 +30961,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Enable user account</source>
-        <translation>Włączyć konto użytkownika</translation>
+        <translation>Włącz konto użytkownika</translation>
     </message>
     <message>
         <source>Use this checkbox to enable or disable the user account.</source>
@@ -30973,7 +30973,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>This functionality is not currently not available. [Use this field to specify the maximum allowed number of concurrent logins.]</source>
@@ -30993,7 +30993,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Wyzerować</translation>
+        <translation>Wyzeruj</translation>
     </message>
     <message>
         <source>Account has been locked because the maximum number of failed login attempts was exceeded.</source>
@@ -31009,7 +31009,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Show and revoke the API keys of this user</source>
-        <translation>Pokazać i unieważnić klucze API tego użytkownika</translation>
+        <translation>Pokaż i unieważnić klucze API tego użytkownika</translation>
     </message>
 </context>
 <context>
@@ -31020,7 +31020,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Menu positioning</source>
@@ -31028,7 +31028,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click here to store the changes if you have modified the menu settings above.</source>
@@ -31128,7 +31128,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Open the layout editor</source>
-        <translation>Otworzyć edytor układów</translation>
+        <translation>Otwórz edytor układów</translation>
     </message>
     <message>
         <source>None of the siteaccesses listed here reads these settings.</source>
@@ -31156,7 +31156,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>The pages of %siteaccess read these settings: what you save here changes their menus.</source>
@@ -31428,11 +31428,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Save the chosen arrangement for this siteaccess.</source>
-        <translation>Zapisać wybrany układ dla tego dostępu do witryny.</translation>
+        <translation>Zapisz wybrany układ dla tego dostępu do witryny.</translation>
     </message>
     <message>
         <source>Save for %siteaccess</source>
-        <translation>Zapisać dla %siteaccess</translation>
+        <translation>Zapisz dla %siteaccess</translation>
     </message>
     <message>
         <source>menu.ini [MenuSettings] AvailableMenuArray lists no menu arrangement, so there is nothing to choose.</source>
@@ -31564,7 +31564,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Put it where the menus go in your pagelayout.tpl. The cache-block keys are those of design/base: the address, and the roles and limitations of the user, so every visitor gets the selected item of the page and only what their rights allow; the siteaccess is part of every cache-block key by itself, and the block expires whenever content is published.</source>
@@ -31672,7 +31672,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Show its settings</source>
-        <translation>Pokazać jego ustawienia</translation>
+        <translation>Pokaż jego ustawienia</translation>
     </message>
 </context>
 <context>
@@ -31755,7 +31755,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Invalid name. You can only use the characters a-z, numbers, _ and / (for subdirectories).</source>
@@ -31794,7 +31794,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click this button to save the contents of the text field above to the template file.</source>
@@ -31802,11 +31802,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Back to overrides</source>
-        <translation>Wrócić do nadpisań</translation>
+        <translation>Wróć do nadpisań</translation>
     </message>
     <message>
         <source>Back to override overview.</source>
-        <translation>Wrócić do przeglądu nadpisań.</translation>
+        <translation>Wróć do przeglądu nadpisań.</translation>
     </message>
     <message>
         <source>The web server does not have write access to the requested template.</source>
@@ -31834,11 +31834,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Open as read only</source>
-        <translation>Otworzyć tylko do odczytu</translation>
+        <translation>Otwórz tylko do odczytu</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>You do not have permission to save the contents of the text field above to the template file.</source>
@@ -31865,7 +31865,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Manage overrides for template.</source>
-        <translation>Zarządzać nadpisaniami szablonu.</translation>
+        <translation>Zarządzaj nadpisaniami szablonu.</translation>
     </message>
     <message>
         <source>Most common templates</source>
@@ -31892,11 +31892,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -31916,15 +31916,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit override template.</source>
-        <translation>Edytować szablon nadpisujący.</translation>
+        <translation>Edytuj szablon nadpisujący.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected template overrides.</source>
-        <translation>Usunąć zaznaczone nadpisania szablonu.</translation>
+        <translation>Usuń zaznaczone nadpisania szablonu.</translation>
     </message>
     <message>
         <source>New override</source>
@@ -31932,11 +31932,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Create a new template override.</source>
-        <translation>Utworzyć nowe nadpisanie szablonu.</translation>
+        <translation>Utwórz nowe nadpisanie szablonu.</translation>
     </message>
     <message>
         <source>Update priorities</source>
-        <translation>Zaktualizować priorytety</translation>
+        <translation>Zaktualizuj priorytety</translation>
     </message>
     <message>
         <source>The overrides could not be removed.</source>
@@ -31968,11 +31968,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add condition</source>
-        <translation>Dodać warunek</translation>
+        <translation>Dodaj warunek</translation>
     </message>
     <message>
         <source>Update overrides</source>
-        <translation>Zaktualizować nadpisania</translation>
+        <translation>Zaktualizuj nadpisania</translation>
     </message>
     <message>
         <source>Clear the filter to move overrides.</source>
@@ -31984,11 +31984,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Drag to move</source>
-        <translation>Przeciągnąć, aby przenieść</translation>
+        <translation>Przeciągnij, aby przenieść</translation>
     </message>
     <message>
         <source>Filter this page</source>
-        <translation>Filtrować tę stronę</translation>
+        <translation>Filtruj tę stronę</translation>
     </message>
     <message>
         <source>Name, file or condition</source>
@@ -32000,15 +32000,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Save conditions</source>
-        <translation>Zapisać warunki</translation>
+        <translation>Zapisz warunki</translation>
     </message>
     <message>
         <source>Save the conditions edited above. The order is saved on its own, as you move the overrides.</source>
-        <translation>Zapisać warunki edytowane powyżej. Kolejność jest zapisywana osobno, podczas przenoszenia nadpisań.</translation>
+        <translation>Zapisz warunki edytowane powyżej. Kolejność jest zapisywana osobno, podczas przenoszenia nadpisań.</translation>
     </message>
     <message>
         <source>Saving...</source>
@@ -32032,11 +32032,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Try earlier</source>
-        <translation>Próbować wcześniej</translation>
+        <translation>Próbuj wcześniej</translation>
     </message>
     <message>
         <source>Try later</source>
-        <translation>Próbować później</translation>
+        <translation>Próbuj później</translation>
     </message>
     <message>
         <source>Value</source>
@@ -32060,15 +32060,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Try %name earlier</source>
-        <translation>Próbować %name wcześniej</translation>
+        <translation>Próbuj %name wcześniej</translation>
     </message>
     <message>
         <source>Try %name later</source>
-        <translation>Próbować %name później</translation>
+        <translation>Próbuj %name później</translation>
     </message>
     <message>
         <source>Remove this condition</source>
-        <translation>Usunąć ten warunek</translation>
+        <translation>Usuń ten warunek</translation>
     </message>
     <message>
         <source>class</source>
@@ -32100,7 +32100,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>%file cannot be written.</source>
@@ -32143,7 +32143,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <name>design/admin/visual/toolbar</name>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>True</source>
@@ -32167,19 +32167,19 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Update priorities</source>
-        <translation>Zaktualizować priorytety</translation>
+        <translation>Zaktualizuj priorytety</translation>
     </message>
     <message>
         <source>Add Tool</source>
-        <translation>Dodać narzędzie</translation>
+        <translation>Dodaj narzędzie</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click this button to store changes if you have modified the parameters above.</source>
@@ -32187,11 +32187,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Back to toolbars</source>
-        <translation>Wrócić do pasków narzędzi</translation>
+        <translation>Wróć do pasków narzędzi</translation>
     </message>
     <message>
         <source>Go back to the toolbar list.</source>
-        <translation>Wrócić do listy pasków narzędzi.</translation>
+        <translation>Wróć do listy pasków narzędzi.</translation>
     </message>
     <message>
         <source>Toolbar management</source>
@@ -32207,7 +32207,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Available toolbars for the &lt;%siteaccess&gt; siteaccess</source>
@@ -32250,11 +32250,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Przesunąć w dół</translation>
+        <translation>Przesuń w dół</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Przesunąć w górę</translation>
+        <translation>Przesuń w górę</translation>
     </message>
     <message>
         <source>Description / comments</source>
@@ -32266,11 +32266,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove selected events</source>
-        <translation>Usunąć zaznaczone zdarzenia</translation>
+        <translation>Usuń zaznaczone zdarzenia</translation>
     </message>
     <message>
         <source>Add event</source>
-        <translation>Dodać zdarzenie</translation>
+        <translation>Dodaj zdarzenie</translation>
     </message>
     <message>
         <source>OK</source>
@@ -32278,7 +32278,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>The workflow could not be stored.</source>
@@ -32337,7 +32337,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Update attributes</source>
-        <translation>Zaktualizować atrybuty</translation>
+        <translation>Zaktualizuj atrybuty</translation>
     </message>
     <message>
         <source>Attribute</source>
@@ -32345,7 +32345,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select attribute</source>
-        <translation>Wybrać atrybut</translation>
+        <translation>Wybierz atrybut</translation>
     </message>
     <message>
         <source>Class/attribute combinations [%count]</source>
@@ -32357,11 +32357,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Modify the objects&apos; publishing dates</source>
-        <translation>Zmienić daty publikacji obiektów</translation>
+        <translation>Zmień daty publikacji obiektów</translation>
     </message>
     <message>
         <source>Please install a payment extension first.</source>
@@ -32385,7 +32385,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add groups</source>
-        <translation>Dodać grupy</translation>
+        <translation>Dodaj grupy</translation>
     </message>
     <message>
         <source>Affected languages</source>
@@ -32401,7 +32401,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add users</source>
-        <translation>Dodać użytkowników</translation>
+        <translation>Dodaj użytkowników</translation>
     </message>
     <message>
         <source>Group</source>
@@ -32460,7 +32460,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -32475,7 +32475,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>There are no workflow groups.</source>
@@ -32483,11 +32483,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected workflow groups.</source>
-        <translation>Usunąć zaznaczone grupy przepływów pracy.</translation>
+        <translation>Usuń zaznaczone grupy przepływów pracy.</translation>
     </message>
     <message>
         <source>New workflow group</source>
@@ -32495,19 +32495,19 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select workflow group for removal.</source>
-        <translation>Zaznaczyć grupę przepływów pracy do usunięcia.</translation>
+        <translation>Zaznacz grupę przepływów pracy do usunięcia.</translation>
     </message>
     <message>
         <source>Edit the &lt;%workflow_group_name&gt; workflow group.</source>
-        <translation>Edytować grupę przepływów pracy &lt;%workflow_group_name&gt;.</translation>
+        <translation>Edytuj grupę przepływów pracy &lt;%workflow_group_name&gt;.</translation>
     </message>
     <message>
         <source>Create a new workflow group.</source>
-        <translation>Utworzyć nową grupę przepływów pracy.</translation>
+        <translation>Utwórz nową grupę przepływów pracy.</translation>
     </message>
     <message>
         <source>Workflow groups (%groups_count)</source>
@@ -32583,11 +32583,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove %count groups</source>
-        <translation>Usunąć grupy (%count)</translation>
+        <translation>Usuń grupy (%count)</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Nothing has been removed yet.</source>
@@ -32643,7 +32643,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Find a group or workflow</source>
-        <translation>Znaleźć grupę lub przepływ pracy</translation>
+        <translation>Znajdź grupę lub przepływ pracy</translation>
     </message>
     <message>
         <source>Open a group to create workflows in it, change their order of events or remove them. Triggers connect a workflow to an operation.</source>
@@ -32663,7 +32663,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>There are no workflow groups. Create one with New workflow group, then create workflows in it.</source>
@@ -32671,7 +32671,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select %name for removal</source>
-        <translation>Zaznaczyć %name do usunięcia</translation>
+        <translation>Zaznacz %name do usunięcia</translation>
     </message>
     <message>
         <source>Empty</source>
@@ -32687,7 +32687,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otworzyć</translation>
+        <translation>Otwórz</translation>
     </message>
     <message>
         <source>Events</source>
@@ -32929,7 +32929,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Open the cronjob</source>
-        <translation>Otworzyć zadanie cron</translation>
+        <translation>Otwórz zadanie cron</translation>
     </message>
     <message>
         <source>No cronjob part runs workflow.php, so processes waiting for the workflow cronjob never move on. Add Scripts[]=workflow.php to a part in cronjob.ini, for example [CronjobPart-frequent].</source>
@@ -32985,7 +32985,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Stopped</source>
@@ -32997,7 +32997,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Find a process</source>
-        <translation>Znaleźć proces</translation>
+        <translation>Znajdź proces</translation>
     </message>
     <message>
         <source>Content, user, workflow or status</source>
@@ -33009,11 +33009,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Cancel selected processes...</source>
-        <translation>Anulować zaznaczone procesy...</translation>
+        <translation>Anuluj zaznaczone procesy...</translation>
     </message>
     <message>
         <source>You confirm on the next page before anything happens.</source>
@@ -33033,11 +33033,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select process %id (%name)</source>
-        <translation>Zaznaczyć proces %id (%name)</translation>
+        <translation>Zaznacz proces %id (%name)</translation>
     </message>
     <message>
         <source>View the version this process runs for</source>
-        <translation>Wyświetlić wersję, dla której działa ten proces</translation>
+        <translation>Wyświetl wersję, dla której działa ten proces</translation>
     </message>
     <message>
         <source>No change for %age</source>
@@ -33049,15 +33049,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Cancel process %id (%name)...</source>
-        <translation>Anulować proces %id (%name)...</translation>
+        <translation>Anuluj proces %id (%name)...</translation>
     </message>
     <message>
         <source>Cancel...</source>
-        <translation>Anulować...</translation>
+        <translation>Anuluj...</translation>
     </message>
     <message>
         <source>Open the approval request</source>
-        <translation>Otworzyć prośbę o zatwierdzenie</translation>
+        <translation>Otwórz prośbę o zatwierdzenie</translation>
     </message>
     <message>
         <source>Content</source>
@@ -33141,7 +33141,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Show the %count stopped processes</source>
-        <translation>Pokazać zatrzymane procesy (%count)</translation>
+        <translation>Pokaż zatrzymane procesy (%count)</translation>
     </message>
     <message>
         <source>No stopped processes.</source>
@@ -33201,7 +33201,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Wyzerować</translation>
+        <translation>Wyzeruj</translation>
     </message>
     <message>
         <source>Done</source>
@@ -33536,7 +33536,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Member of groups [%group_count]</source>
@@ -33544,7 +33544,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Group</source>
@@ -33552,11 +33552,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Add to group</source>
-        <translation>Dodać do grupy</translation>
+        <translation>Dodaj do grupy</translation>
     </message>
     <message>
         <source>No group</source>
@@ -33607,11 +33607,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Workflows [%workflow_count]</source>
@@ -33631,7 +33631,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>New workflow</source>
@@ -33639,35 +33639,35 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit this workflow group.</source>
-        <translation>Edytować tę grupę przepływów pracy.</translation>
+        <translation>Edytuj tę grupę przepływów pracy.</translation>
     </message>
     <message>
         <source>Remove this workflow group.</source>
-        <translation>Usunąć tę grupę przepływów pracy.</translation>
+        <translation>Usuń tę grupę przepływów pracy.</translation>
     </message>
     <message>
         <source>Back to workflow groups.</source>
-        <translation>Wrócić do grup przepływów pracy.</translation>
+        <translation>Wróć do grup przepływów pracy.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Select workflow for removal.</source>
-        <translation>Zaznaczyć przepływ pracy do usunięcia.</translation>
+        <translation>Zaznacz przepływ pracy do usunięcia.</translation>
     </message>
     <message>
         <source>Edit the &lt;%workflow_name&gt; workflow.</source>
-        <translation>Edytować przepływ pracy &lt;%workflow_name&gt;.</translation>
+        <translation>Edytuj przepływ pracy &lt;%workflow_name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected workflows.</source>
-        <translation>Usunąć zaznaczone przepływy pracy.</translation>
+        <translation>Usuń zaznaczone przepływy pracy.</translation>
     </message>
     <message>
         <source>Create a new workflow.</source>
-        <translation>Utworzyć nowy przepływ pracy.</translation>
+        <translation>Utwórz nowy przepływ pracy.</translation>
     </message>
     <message>
         <source>Workflows (%workflow_count)</source>
@@ -33686,7 +33686,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Notify me about updates</source>
-        <translation>Powiadamiać o aktualizacjach</translation>
+        <translation>Powiadamiaj o aktualizacjach</translation>
     </message>
     <message>
         <source>Sticky</source>
@@ -33694,7 +33694,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Read more...</source>
-        <translation>Czytać więcej...</translation>
+        <translation>Czytaj więcej...</translation>
     </message>
     <message>
         <source>Contact information</source>
@@ -33710,15 +33710,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Tip a friend</source>
-        <translation>Polecić znajomemu</translation>
+        <translation>Poleć znajomemu</translation>
     </message>
     <message>
         <source>Download PDF</source>
-        <translation>Pobrać PDF</translation>
+        <translation>Pobierz PDF</translation>
     </message>
     <message>
         <source>Download PDF version of this page</source>
-        <translation>Pobrać wersję PDF tej strony</translation>
+        <translation>Pobierz wersję PDF tej strony</translation>
     </message>
     <message>
         <source>Comments</source>
@@ -33734,7 +33734,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Send form</source>
-        <translation>Wysłać formularz</translation>
+        <translation>Wyślij formularz</translation>
     </message>
     <message>
         <source>here</source>
@@ -33786,11 +33786,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add to basket</source>
-        <translation>Dodać do koszyka</translation>
+        <translation>Dodaj do koszyka</translation>
     </message>
     <message>
         <source>Download this product sheet as PDF</source>
-        <translation>Pobrać kartę produktu w formacie PDF</translation>
+        <translation>Pobierz kartę produktu w formacie PDF</translation>
     </message>
     <message>
         <source>Product reviews</source>
@@ -33846,11 +33846,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Back to poll</source>
-        <translation>Wrócić do ankiety</translation>
+        <translation>Wróć do ankiety</translation>
     </message>
     <message>
         <source>Create new weblog</source>
-        <translation>Utworzyć nowy blog</translation>
+        <translation>Utwórz nowy blog</translation>
     </message>
     <message>
         <source>New Comment</source>
@@ -33862,7 +33862,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Keep me updated</source>
-        <translation>Powiadamiać o zmianach</translation>
+        <translation>Powiadamiaj o zmianach</translation>
     </message>
     <message>
         <source>New reply</source>
@@ -33870,7 +33870,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>View as slideshow</source>
-        <translation>Wyświetlić jako pokaz slajdów</translation>
+        <translation>Wyświetl jako pokaz slajdów</translation>
     </message>
     <message>
         <source>Previous image</source>
@@ -33886,11 +33886,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>View flash</source>
-        <translation>Wyświetlić animację Flash</translation>
+        <translation>Wyświetl animację Flash</translation>
     </message>
     <message>
         <source>View list</source>
-        <translation>Wyświetlić listę</translation>
+        <translation>Wyświetl listę</translation>
     </message>
     <message>
         <source>Enter gallery</source>
@@ -33898,15 +33898,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Vote</source>
-        <translation>Głosować</translation>
+        <translation>Głosuj</translation>
     </message>
     <message>
         <source>View movie</source>
-        <translation>Obejrzeć film</translation>
+        <translation>Obejrzyj film</translation>
     </message>
     <message>
         <source>View comments</source>
-        <translation>Pokazać komentarze</translation>
+        <translation>Pokaż komentarze</translation>
     </message>
     <message>
         <source>Details...</source>
@@ -33946,7 +33946,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove Selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Price</source>
@@ -33966,23 +33966,23 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Send for publishing</source>
-        <translation>Wysłać do publikacji</translation>
+        <translation>Wyślij do publikacji</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Publish</source>
-        <translation>Opublikować</translation>
+        <translation>Opublikuj</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Post</source>
@@ -33998,7 +33998,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Number of Topics</source>
@@ -34022,7 +34022,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>For more options try the %1Advanced search%2</source>
@@ -34150,7 +34150,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Selected options</source>
@@ -34162,11 +34162,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Continue shopping</source>
-        <translation>Kontynuować zakupy</translation>
+        <translation>Kontynuuj zakupy</translation>
     </message>
     <message>
         <source>Store quantities</source>
-        <translation>Zapisać ilości</translation>
+        <translation>Zapisz ilości</translation>
     </message>
     <message>
         <source>You have no products in your basket</source>
@@ -34174,7 +34174,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Confirm order</source>
-        <translation>Potwierdzić zamówienie</translation>
+        <translation>Potwierdź zamówienie</translation>
     </message>
     <message>
         <source>Product items</source>
@@ -34190,11 +34190,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Order %order_id [%order_status]</source>
@@ -34317,7 +34317,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
 </context>
 <context>
@@ -34328,7 +34328,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Retry</source>
-        <translation>Ponowić</translation>
+        <translation>Ponów</translation>
     </message>
     <message>
         <source>The class %class is currently locked by %modifier and was last modified at %modified.</source>
@@ -34379,15 +34379,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>New class</source>
@@ -34399,7 +34399,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>edit</source>
-        <translation>edytować</translation>
+        <translation>edytuj</translation>
     </message>
 </context>
 <context>
@@ -34630,23 +34630,23 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Remove selection</source>
-        <translation>Usunąć zaznaczenie</translation>
+        <translation>Usuń zaznaczenie</translation>
     </message>
     <message>
         <source>Allow fuzzy match</source>
-        <translation>Zezwalać na dopasowanie przybliżone</translation>
+        <translation>Zezwalaj na dopasowanie przybliżone</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Make empty array</source>
-        <translation>Utworzyć pustą tablicę</translation>
+        <translation>Utwórz pustą tablicę</translation>
     </message>
     <message>
         <source>Year</source>
@@ -34686,11 +34686,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add a new enum element.</source>
-        <translation>Dodać nowy element wyliczenia.</translation>
+        <translation>Dodaj nowy element wyliczenia.</translation>
     </message>
     <message>
         <source>Remove selected elements.</source>
-        <translation>Usunąć zaznaczone elementy.</translation>
+        <translation>Usuń zaznaczone elementy.</translation>
     </message>
     <message>
         <source>Current value</source>
@@ -34714,11 +34714,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add a new column.</source>
-        <translation>Dodać nową kolumnę.</translation>
+        <translation>Dodaj nową kolumnę.</translation>
     </message>
     <message>
         <source>Remove selected columns.</source>
-        <translation>Usunąć zaznaczone kolumny.</translation>
+        <translation>Usuń zaznaczone kolumny.</translation>
     </message>
     <message>
         <source>New objects will not be placed in the content tree.</source>
@@ -34726,15 +34726,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select location</source>
-        <translation>Wybrać lokalizację</translation>
+        <translation>Wybierz lokalizację</translation>
     </message>
     <message>
         <source>Remove location</source>
-        <translation>Usunąć lokalizację</translation>
+        <translation>Usuń lokalizację</translation>
     </message>
     <message>
         <source>Select option for removal.</source>
-        <translation>Zaznaczyć opcję do usunięcia.</translation>
+        <translation>Zaznacz opcję do usunięcia.</translation>
     </message>
     <message>
         <source>There are no options.</source>
@@ -34742,11 +34742,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add a new option.</source>
-        <translation>Dodać nową opcję.</translation>
+        <translation>Dodaj nową opcję.</translation>
     </message>
     <message>
         <source>Remove selected options.</source>
-        <translation>Usunąć zaznaczone opcje.</translation>
+        <translation>Usuń zaznaczone opcje.</translation>
     </message>
     <message>
         <source>Current date and time adjusted by</source>
@@ -34790,7 +34790,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select item</source>
-        <translation>Wybrać element</translation>
+        <translation>Wybierz element</translation>
     </message>
     <message>
         <source>Package type</source>
@@ -34934,7 +34934,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Use seconds</source>
-        <translation>Używać sekund</translation>
+        <translation>Używaj sekund</translation>
     </message>
     <message>
         <source>Second</source>
@@ -34966,7 +34966,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Import ISBN range data</source>
-        <translation>Zaimportować dane zakresów ISBN</translation>
+        <translation>Zaimportuj dane zakresów ISBN</translation>
     </message>
     <message>
         <source>RealPlayer</source>
@@ -35018,7 +35018,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select element for removal.</source>
-        <translation>Zaznaczyć element do usunięcia.</translation>
+        <translation>Zaznacz element do usunięcia.</translation>
     </message>
     <message>
         <source>(See &apos;%location&apos;)</source>
@@ -35038,7 +35038,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Trim the stored value</source>
-        <translation>Przycinać zapisywaną wartość</translation>
+        <translation>Przycinaj zapisywaną wartość</translation>
     </message>
     <message>
         <source>Spaces, tabs and line breaks at the start and the end of the text are removed when it is stored.</source>
@@ -35056,11 +35056,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <name>design/standard/class/edit</name>
     <message>
         <source>Add to group</source>
-        <translation>Dodać do grupy</translation>
+        <translation>Dodaj do grupy</translation>
     </message>
     <message>
         <source>Remove from groups</source>
-        <translation>Usunąć z grup</translation>
+        <translation>Usuń z grup</translation>
     </message>
     <message>
         <source>Input did not validate</source>
@@ -35100,19 +35100,19 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation>Zastosować</translation>
+        <translation>Zastosuj</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Are you sure you want to remove these classes?</source>
@@ -35124,11 +35124,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Are you sure you want to remove these class groups?</source>
@@ -35176,7 +35176,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Disable translation</source>
-        <translation>Wyłączyć tłumaczenie</translation>
+        <translation>Wyłącz tłumaczenie</translation>
     </message>
     <message>
         <source>Modified by %username on %time</source>
@@ -35212,7 +35212,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Discard changes</source>
-        <translation>Odrzucić zmiany</translation>
+        <translation>Odrzuć zmiany</translation>
     </message>
     <message>
         <source>Description</source>
@@ -35263,11 +35263,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Retry</source>
-        <translation>Ponowić</translation>
+        <translation>Ponów</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -35290,11 +35290,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>New group</source>
@@ -35322,11 +35322,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>edit</source>
-        <translation>edytować</translation>
+        <translation>edytuj</translation>
     </message>
 </context>
 <context>
@@ -35341,7 +35341,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Object count</source>
@@ -35523,15 +35523,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add Comment</source>
-        <translation>Dodać komentarz</translation>
+        <translation>Dodaj komentarz</translation>
     </message>
     <message>
         <source>Approve</source>
-        <translation>Zatwierdzić</translation>
+        <translation>Zatwierdź</translation>
     </message>
     <message>
         <source>Deny</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Participants</source>
@@ -35543,7 +35543,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit the object</source>
-        <translation>Edytować obiekt</translation>
+        <translation>Edytuj obiekt</translation>
     </message>
     <message>
         <source>The content object %1 was not accepted but will be available as a draft for the author.</source>
@@ -35623,11 +35623,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Change translation for content</source>
@@ -35667,7 +35667,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Create</source>
-        <translation>Utworzyć</translation>
+        <translation>Utwórz</translation>
     </message>
     <message>
         <source>Content translations</source>
@@ -35675,7 +35675,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>New</source>
@@ -35691,7 +35691,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Below you will find a list of active translations that content objects may be translated into.</source>
@@ -35718,11 +35718,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <name>design/standard/content/browse</name>
     <message>
         <source>Create new</source>
-        <translation>Utworzyć nowy</translation>
+        <translation>Utwórz nowy</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Name</source>
@@ -35774,11 +35774,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>New</source>
@@ -35797,19 +35797,19 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <name>design/standard/content/copy</name>
     <message>
         <source>Copy all versions</source>
-        <translation>Skopiować wszystkie wersje</translation>
+        <translation>Skopiuj wszystkie wersje</translation>
     </message>
     <message>
         <source>Copy current version</source>
-        <translation>Skopiować bieżącą wersję</translation>
+        <translation>Skopiuj bieżącą wersję</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Copying %1</source>
@@ -35828,35 +35828,35 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Copy all versions.</source>
-        <translation>Skopiować wszystkie wersje.</translation>
+        <translation>Skopiuj wszystkie wersje.</translation>
     </message>
     <message>
         <source>Copy current version.</source>
-        <translation>Skopiować bieżącą wersję.</translation>
+        <translation>Skopiuj bieżącą wersję.</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Keep creators of content objects being copied unchanged.</source>
-        <translation>Zachować bez zmian twórców kopiowanych obiektów treści.</translation>
+        <translation>Zachowaj bez zmian twórców kopiowanych obiektów treści.</translation>
     </message>
     <message>
         <source>Set new creator for content objects being copied.</source>
-        <translation>Ustawić nowego twórcę kopiowanych obiektów treści.</translation>
+        <translation>Ustaw nowego twórcę kopiowanych obiektów treści.</translation>
     </message>
     <message>
         <source>Keep time of creation and modification of content objects being copied unchanged.</source>
-        <translation>Zachować bez zmian czas utworzenia i modyfikacji kopiowanych obiektów treści.</translation>
+        <translation>Zachowaj bez zmian czas utworzenia i modyfikacji kopiowanych obiektów treści.</translation>
     </message>
     <message>
         <source>Copy and publish content objects at current time.</source>
-        <translation>Skopiować i opublikować obiekty treści z bieżącym czasem.</translation>
+        <translation>Skopiuj i opublikować obiekty treści z bieżącym czasem.</translation>
     </message>
 </context>
 <context>
@@ -35886,15 +35886,15 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <name>design/standard/content/create</name>
     <message>
         <source>Create new</source>
-        <translation>Utworzyć nowy</translation>
+        <translation>Utwórz nowy</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -35909,11 +35909,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Create</source>
-        <translation>Utworzyć</translation>
+        <translation>Utwórz</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>You do not have permissions to create an object of the requested class in any language.</source>
@@ -35924,11 +35924,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <name>design/standard/content/datatype</name>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Remove image</source>
-        <translation>Usunąć obraz</translation>
+        <translation>Usuń obraz</translation>
     </message>
     <message>
         <source>High</source>
@@ -36048,7 +36048,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove object</source>
-        <translation>Usunąć obiekt</translation>
+        <translation>Usuń obiekt</translation>
     </message>
     <message>
         <source>Options</source>
@@ -36124,23 +36124,23 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Select author row for removal.</source>
-        <translation>Zaznaczyć wiersz autora do usunięcia.</translation>
+        <translation>Zaznacz wiersz autora do usunięcia.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected rows from the author list.</source>
-        <translation>Usunąć zaznaczone wiersze z listy autorów.</translation>
+        <translation>Usuń zaznaczone wiersze z listy autorów.</translation>
     </message>
     <message>
         <source>Add author</source>
-        <translation>Dodać autora</translation>
+        <translation>Dodaj autora</translation>
     </message>
     <message>
         <source>Add a new row to the author list.</source>
-        <translation>Dodać nowy wiersz do listy autorów.</translation>
+        <translation>Dodaj nowy wiersz do listy autorów.</translation>
     </message>
     <message>
         <source>MIME type</source>
@@ -36152,11 +36152,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove the file from this draft.</source>
-        <translation>Usunąć plik z tej wersji roboczej.</translation>
+        <translation>Usuń plik z tej wersji roboczej.</translation>
     </message>
     <message>
         <source>Remove selected rows from the matrix.</source>
-        <translation>Usunąć zaznaczone wiersze z macierzy.</translation>
+        <translation>Usuń zaznaczone wiersze z macierzy.</translation>
     </message>
     <message>
         <source>Number of rows to add.</source>
@@ -36164,15 +36164,15 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Add rows</source>
-        <translation>Dodać wiersze</translation>
+        <translation>Dodaj wiersze</translation>
     </message>
     <message>
         <source>Add new rows to the matrix.</source>
-        <translation>Dodać nowe wiersze do macierzy.</translation>
+        <translation>Dodaj nowe wiersze do macierzy.</translation>
     </message>
     <message>
         <source>Select multioption for removal.</source>
-        <translation>Zaznaczyć opcję wielokrotną do usunięcia.</translation>
+        <translation>Zaznacz opcję wielokrotną do usunięcia.</translation>
     </message>
     <message>
         <source>Use the radio buttons to set the default option.</source>
@@ -36180,31 +36180,31 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Add option</source>
-        <translation>Dodać opcję</translation>
+        <translation>Dodaj opcję</translation>
     </message>
     <message>
         <source>Add a new option.</source>
-        <translation>Dodać nową opcję.</translation>
+        <translation>Dodaj nową opcję.</translation>
     </message>
     <message>
         <source>Remove selected options.</source>
-        <translation>Usunąć zaznaczone opcje.</translation>
+        <translation>Usuń zaznaczone opcje.</translation>
     </message>
     <message>
         <source>Add multioption</source>
-        <translation>Dodać opcję wielokrotną</translation>
+        <translation>Dodaj opcję wielokrotną</translation>
     </message>
     <message>
         <source>Add a new multioption.</source>
-        <translation>Dodać nową opcję wielokrotną.</translation>
+        <translation>Dodaj nową opcję wielokrotną.</translation>
     </message>
     <message>
         <source>Remove selected multioptions.</source>
-        <translation>Usunąć zaznaczone opcje wielokrotne.</translation>
+        <translation>Usuń zaznaczone opcje wielokrotne.</translation>
     </message>
     <message>
         <source>Select option for removal.</source>
-        <translation>Zaznaczyć opcję do usunięcia.</translation>
+        <translation>Zaznacz opcję do usunięcia.</translation>
     </message>
     <message>
         <source>There are no options.</source>
@@ -36240,7 +36240,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Select row for removal.</source>
-        <translation>Zaznaczyć wiersz do usunięcia.</translation>
+        <translation>Zaznacz wiersz do usunięcia.</translation>
     </message>
     <message>
         <source>Type</source>
@@ -36276,11 +36276,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Edit selected</source>
-        <translation>Edytować zaznaczone</translation>
+        <translation>Edytuj zaznaczone</translation>
     </message>
     <message>
         <source>Create new object</source>
-        <translation>Utworzyć nowy obiekt</translation>
+        <translation>Utwórz nowy obiekt</translation>
     </message>
     <message>
         <source>There are no authors in the author list.</source>
@@ -36296,7 +36296,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Configure user account settings</source>
-        <translation>Skonfigurować ustawienia konta użytkownika</translation>
+        <translation>Skonfiguruj ustawienia konta użytkownika</translation>
     </message>
     <message>
         <source>Add object</source>
@@ -36304,7 +36304,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Edit &lt;%object_name&gt; [%object_class]</source>
@@ -36312,7 +36312,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Add objects</source>
-        <translation>Dodać obiekty</translation>
+        <translation>Dodaj obiekty</translation>
     </message>
     <message>
         <source>Current account status:</source>
@@ -36380,7 +36380,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Select price for removal.</source>
-        <translation>Zaznaczyć cenę do usunięcia.</translation>
+        <translation>Zaznacz cenę do usunięcia.</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -36388,7 +36388,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove selected prices.</source>
-        <translation>Usunąć zaznaczone ceny.</translation>
+        <translation>Usuń zaznaczone ceny.</translation>
     </message>
     <message>
         <source>Price list is empty</source>
@@ -36396,11 +36396,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Set custom price</source>
-        <translation>Ustawić cenę niestandardową</translation>
+        <translation>Ustaw cenę niestandardową</translation>
     </message>
     <message>
         <source>Set custom price.</source>
-        <translation>Ustawić cenę niestandardową.</translation>
+        <translation>Ustaw cenę niestandardową.</translation>
     </message>
     <message>
         <source>There are no available currencies.</source>
@@ -36448,7 +36448,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Create new object with name</source>
-        <translation>Utworzyć nowy obiekt o nazwie</translation>
+        <translation>Utwórz nowy obiekt o nazwie</translation>
     </message>
     <message>
         <source>locked</source>
@@ -36484,11 +36484,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Add group</source>
-        <translation>Dodać grupę</translation>
+        <translation>Dodaj grupę</translation>
     </message>
     <message>
         <source>Add a new group.</source>
-        <translation>Dodać nową grupę.</translation>
+        <translation>Dodaj nową grupę.</translation>
     </message>
     <message>
         <source>Rules</source>
@@ -36496,11 +36496,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Set rules</source>
-        <translation>Ustawić reguły</translation>
+        <translation>Ustaw reguły</translation>
     </message>
     <message>
         <source>Reset rules</source>
-        <translation>Zresetować reguły</translation>
+        <translation>Zresetuj reguły</translation>
     </message>
     <message>
         <source>Multioption:</source>
@@ -36524,15 +36524,15 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Add multioption sub level</source>
-        <translation>Dodać podpoziom opcji wielokrotnej</translation>
+        <translation>Dodaj podpoziom opcji wielokrotnej</translation>
     </message>
     <message>
         <source>Add a new multioption sub level.</source>
-        <translation>Dodać nowy podpoziom opcji wielokrotnej.</translation>
+        <translation>Dodaj nowy podpoziom opcji wielokrotnej.</translation>
     </message>
     <message>
         <source>Remove multioption</source>
-        <translation>Usunąć opcję wielokrotną</translation>
+        <translation>Usuń opcję wielokrotną</translation>
     </message>
     <message>
         <source>Group</source>
@@ -36548,11 +36548,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Find object</source>
-        <translation>Znaleźć obiekt</translation>
+        <translation>Znajdź obiekt</translation>
     </message>
     <message>
         <source>Find objects</source>
-        <translation>Znaleźć obiekty</translation>
+        <translation>Znajdź obiekty</translation>
     </message>
     <message>
         <source>The related objects will be edited in the same language as this object. If such translations do not exist they will be created, based on the source language of your choice.</source>
@@ -36584,15 +36584,15 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Add an object in the relation</source>
-        <translation>Dodać obiekt do relacji</translation>
+        <translation>Dodaj obiekt do relacji</translation>
     </message>
     <message>
         <source>Add an existing object</source>
-        <translation>Dodać istniejący obiekt</translation>
+        <translation>Dodaj istniejący obiekt</translation>
     </message>
     <message>
         <source>Browse to add an existing object in this relation</source>
-        <translation>Przeglądać, aby dodać istniejący obiekt do tej relacji</translation>
+        <translation>Przeglądaj, aby dodać istniejący obiekt do tej relacji</translation>
     </message>
     <message>
         <source>Objects in the relation</source>
@@ -36600,19 +36600,19 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove selected elements from the relation</source>
-        <translation>Usunąć zaznaczone elementy z relacji</translation>
+        <translation>Usuń zaznaczone elementy z relacji</translation>
     </message>
     <message>
         <source>Add objects in the relation</source>
-        <translation>Dodać obiekty do relacji</translation>
+        <translation>Dodaj obiekty do relacji</translation>
     </message>
     <message>
         <source>Add existing objects</source>
-        <translation>Dodać istniejące obiekty</translation>
+        <translation>Dodaj istniejące obiekty</translation>
     </message>
     <message>
         <source>Browse to add existing objects in this relation</source>
-        <translation>Przeglądać, aby dodać istniejące obiekty do tej relacji</translation>
+        <translation>Przeglądaj, aby dodać istniejące obiekty do tej relacji</translation>
     </message>
     <message>
         <source>Html5 Video</source>
@@ -36636,11 +36636,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Select currency</source>
-        <translation>Wybrać walutę</translation>
+        <translation>Wybierz walutę</translation>
     </message>
     <message>
         <source>Create New</source>
-        <translation>Utworzyć nowy</translation>
+        <translation>Utwórz nowy</translation>
     </message>
     <message>
         <source>ISBN %data_text</source>
@@ -36660,7 +36660,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Browse to add an existing object</source>
-        <translation>Przeglądać, aby dodać istniejący obiekt</translation>
+        <translation>Przeglądaj, aby dodać istniejący obiekt</translation>
     </message>
     <message>
         <source>required</source>
@@ -36746,7 +36746,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <name>design/standard/content/edit</name>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -36754,11 +36754,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Send for publishing</source>
-        <translation>Wysłać do publikacji</translation>
+        <translation>Wyślij do publikacji</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Location</source>
@@ -36782,7 +36782,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Name</source>
@@ -36810,7 +36810,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Add locations</source>
-        <translation>Dodać lokalizacje</translation>
+        <translation>Dodaj lokalizacje</translation>
     </message>
     <message>
         <source>Object info</source>
@@ -36826,7 +36826,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Manage</source>
-        <translation>Zarządzać</translation>
+        <translation>Zarządzaj</translation>
     </message>
     <message>
         <source>Translations</source>
@@ -36838,7 +36838,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>New</source>
@@ -36862,11 +36862,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Collected information from %1</source>
@@ -36878,7 +36878,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Store draft</source>
-        <translation>Zapisać wersję roboczą</translation>
+        <translation>Zapisz wersję roboczą</translation>
     </message>
     <message>
         <source>New draft</source>
@@ -36966,7 +36966,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Translate</source>
-        <translation>Przetłumaczyć</translation>
+        <translation>Przetłumacz</translation>
     </message>
     <message>
         <source>This object is already being edited by yourself or someone else.
@@ -36996,7 +36996,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Publish without notification</source>
-        <translation>Opublikować bez powiadomienia</translation>
+        <translation>Opublikuj bez powiadomienia</translation>
     </message>
 </context>
 <context>
@@ -37031,15 +37031,15 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Use an empty, untranslated draft</source>
-        <translation>Użyć pustej, nieprzetłumaczonej wersji roboczej</translation>
+        <translation>Użyj pustej, nieprzetłumaczonej wersji roboczej</translation>
     </message>
     <message>
         <source>You do not have permission to create a translation in another language.</source>
@@ -37061,7 +37061,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Return to site</source>
-        <translation>Wrócić do witryny</translation>
+        <translation>Wróć do witryny</translation>
     </message>
     <message>
         <source>You have already submitted feedback. The previously submitted data was:</source>
@@ -37080,7 +37080,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Return to site</source>
-        <translation>Wrócić do witryny</translation>
+        <translation>Wróć do witryny</translation>
     </message>
     <message>
         <source>Collected information</source>
@@ -37131,11 +37131,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Select version #%version_number for removal.</source>
-        <translation>Zaznaczyć wersję #%version_number do usunięcia.</translation>
+        <translation>Zaznacz wersję #%version_number do usunięcia.</translation>
     </message>
     <message>
         <source>View the contents of version #%version_number. Translation: %translation.</source>
-        <translation>Wyświetlić zawartość wersji #%version_number. Tłumaczenie: %translation.</translation>
+        <translation>Wyświetl zawartość wersji #%version_number. Tłumaczenie: %translation.</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -37163,11 +37163,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Create a copy of version #%version_number.</source>
-        <translation>Utworzyć kopię wersji #%version_number.</translation>
+        <translation>Utwórz kopię wersji #%version_number.</translation>
     </message>
     <message>
         <source>Edit the contents of version #%version_number.</source>
-        <translation>Edytować zawartość wersji #%version_number.</translation>
+        <translation>Edytuj zawartość wersji #%version_number.</translation>
     </message>
     <message>
         <source>This object does not have any versions.</source>
@@ -37175,15 +37175,15 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove the selected versions from the object.</source>
-        <translation>Usunąć zaznaczone wersje obiektu.</translation>
+        <translation>Usuń zaznaczone wersje obiektu.</translation>
     </message>
     <message>
         <source>Show differences</source>
-        <translation>Pokazać różnice</translation>
+        <translation>Pokaż różnice</translation>
     </message>
     <message>
         <source>Back</source>
@@ -37199,7 +37199,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Copy translation</source>
-        <translation>Skopiować tłumaczenie</translation>
+        <translation>Skopiuj tłumaczenie</translation>
     </message>
     <message>
         <source>New drafts [%newerDraftCount]</source>
@@ -37231,7 +37231,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Back to history</source>
-        <translation>Wrócić do historii</translation>
+        <translation>Wróć do historii</translation>
     </message>
     <message>
         <source>Version is not a draft</source>
@@ -37271,7 +37271,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Repeat</source>
-        <translation>Powtórzyć</translation>
+        <translation>Powtórz</translation>
     </message>
     <message>
         <source>Queued</source>
@@ -37279,7 +37279,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Toggle selection</source>
-        <translation>Przełączyć zaznaczenie</translation>
+        <translation>Przełącz zaznaczenie</translation>
     </message>
 </context>
 <context>
@@ -37359,7 +37359,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -37374,7 +37374,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Update attributes</source>
-        <translation>Zaktualizować atrybuty</translation>
+        <translation>Zaktualizuj atrybuty</translation>
     </message>
     <message>
         <source>Any section</source>
@@ -37406,7 +37406,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>For more options try the %1Advanced search%2</source>
@@ -37423,15 +37423,15 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Search all the words</source>
-        <translation>Wyszukać wszystkie słowa</translation>
+        <translation>Wyszukaj wszystkie słowa</translation>
     </message>
     <message>
         <source>Search the exact phrase</source>
-        <translation>Wyszukać dokładną frazę</translation>
+        <translation>Wyszukaj dokładną frazę</translation>
     </message>
     <message>
         <source>Search with at least one of the words</source>
-        <translation>Wyszukać co najmniej jedno ze słów</translation>
+        <translation>Wyszukaj co najmniej jedno ze słów</translation>
     </message>
     <message>
         <source>Class</source>
@@ -37514,7 +37514,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <name>design/standard/content/tipafriend</name>
     <message>
         <source>Tip a friend</source>
-        <translation>Polecić znajomemu</translation>
+        <translation>Poleć znajomemu</translation>
     </message>
     <message>
         <source>The message was sent.</source>
@@ -37558,11 +37558,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Send</source>
-        <translation>Wysłać</translation>
+        <translation>Wyślij</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>This message was sent to you because &quot;%1 &lt;%2&gt;&quot; thought you might find the page &quot;%3&quot; at %4 interesting.</source>
@@ -37589,7 +37589,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Trash is empty</source>
@@ -37597,7 +37597,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Empty Trash</source>
-        <translation>Opróżnić kosz</translation>
+        <translation>Opróżnij kosz</translation>
     </message>
     <message>
         <source>Name</source>
@@ -37617,22 +37617,22 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Restore</source>
-        <translation>Przywrócić</translation>
+        <translation>Przywróć</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation>Zaznaczyć wszystko</translation>
+        <translation>Zaznacz wszystko</translation>
     </message>
     <message>
         <source>Deselect all</source>
-        <translation>Odznaczyć wszystko</translation>
+        <translation>Odznacz wszystko</translation>
     </message>
 </context>
 <context>
     <name>design/standard/content/upload</name>
     <message>
         <source>Upload file</source>
-        <translation>Przesłać plik</translation>
+        <translation>Prześlij plik</translation>
     </message>
     <message>
         <source>Some errors occurred</source>
@@ -37648,7 +37648,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Upload</source>
-        <translation>Przesłać</translation>
+        <translation>Prześlij</translation>
     </message>
     <message>
         <source>Click here to upload a file. The file will be placed within the location that is specified using the dropdown menu on the top.</source>
@@ -37729,7 +37729,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <name>design/standard/content/view</name>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>My drafts</source>
@@ -37737,7 +37737,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>You have no drafts</source>
@@ -37757,11 +37757,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Publish</source>
-        <translation>Opublikować</translation>
+        <translation>Opublikuj</translation>
     </message>
     <message>
         <source>Versions</source>
@@ -37777,7 +37777,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Add bookmarks</source>
-        <translation>Dodać zakładki</translation>
+        <translation>Dodaj zakładki</translation>
     </message>
     <message>
         <source>Name</source>
@@ -37841,11 +37841,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Select all</source>
-        <translation>Zaznaczyć wszystko</translation>
+        <translation>Zaznacz wszystko</translation>
     </message>
     <message>
         <source>Deselect all</source>
-        <translation>Odznaczyć wszystko</translation>
+        <translation>Odznacz wszystko</translation>
     </message>
     <message>
         <source>My pending list</source>
@@ -37869,7 +37869,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Upload file</source>
-        <translation>Przesłać plik</translation>
+        <translation>Prześlij plik</translation>
     </message>
     <message>
         <source>Site Access</source>
@@ -38041,14 +38041,14 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Publish without notification</source>
-        <translation>Opublikować bez powiadomienia</translation>
+        <translation>Opublikuj bez powiadomienia</translation>
     </message>
 </context>
 <context>
     <name>design/standard/contentstructuremenu</name>
     <message>
         <source>Fold/Unfold</source>
-        <translation>Zwinąć/rozwinąć</translation>
+        <translation>Zwiń/rozwiń</translation>
     </message>
     <message>
         <source>[%classname] Click on the icon to display a context-sensitive menu.</source>
@@ -38083,11 +38083,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
 </context>
 <context>
@@ -38170,7 +38170,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>The newly created template file will be placed in %path.</source>
@@ -38216,7 +38216,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Name</source>
@@ -38236,7 +38236,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>New override</source>
@@ -38244,11 +38244,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Update priorities</source>
-        <translation>Zaktualizować priorytety</translation>
+        <translation>Zaktualizuj priorytety</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
 </context>
 <context>
@@ -38267,7 +38267,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>True</source>
@@ -38287,19 +38287,19 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Update Placement</source>
-        <translation>Zaktualizować położenie</translation>
+        <translation>Zaktualizuj położenie</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Add Tool</source>
-        <translation>Dodać narzędzie</translation>
+        <translation>Dodaj narzędzie</translation>
     </message>
     <message>
         <source>Toolbar management</source>
@@ -38315,7 +38315,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Available toolbars</source>
@@ -38458,7 +38458,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <message>
         <source>Login</source>
         <comment>Button</comment>
-        <translation>Zalogować</translation>
+        <translation>Zaloguj</translation>
     </message>
     <message>
         <source>The module name was misspelled, try changing the URL.</source>
@@ -38586,7 +38586,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <name>design/standard/gui</name>
     <message>
         <source>Delete</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
 </context>
 <context>
@@ -38597,7 +38597,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Login</source>
@@ -38605,7 +38605,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Logout</source>
-        <translation>Wylogować</translation>
+        <translation>Wyloguj</translation>
     </message>
     <message>
         <source>Printable version</source>
@@ -38633,7 +38633,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Change Password</source>
-        <translation>Zmienić hasło</translation>
+        <translation>Zmień hasło</translation>
     </message>
     <message>
         <source>Redirect</source>
@@ -38653,7 +38653,7 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>Search %sitetitle</source>
-        <translation>Wyszukać w %sitetitle</translation>
+        <translation>Wyszukaj w %sitetitle</translation>
     </message>
     <message>
         <source>Redirecting to %url</source>
@@ -38706,11 +38706,11 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Remove locations</source>
-        <translation>Usunąć lokalizacje</translation>
+        <translation>Usuń lokalizacje</translation>
     </message>
     <message>
         <source>Cancel removal</source>
-        <translation>Anulować usuwanie</translation>
+        <translation>Anuluj usuwanie</translation>
     </message>
     <message>
         <source>Please wait while your content is being published</source>
@@ -38722,7 +38722,7 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>View the published item</source>
-        <translation>Wyświetlić opublikowany element</translation>
+        <translation>Wyświetl opublikowany element</translation>
     </message>
     <message>
         <source>Publishing has been deferred to crontab and will be published when the operation resumes. The object is also listed in your dashboard under pending items.</source>
@@ -38730,7 +38730,7 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>View your pending content</source>
-        <translation>Wyświetlić oczekującą treść</translation>
+        <translation>Wyświetl oczekującą treść</translation>
     </message>
     <message>
         <source>A fatal error occured while checking the version status, you can try to refresh this page or contact your administrator.</source>
@@ -38765,7 +38765,7 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Menu positioning</source>
@@ -38773,11 +38773,11 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -38807,11 +38807,11 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Note:</source>
@@ -38866,7 +38866,7 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     <name>design/standard/node/view</name>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>User</source>
@@ -38882,15 +38882,15 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Zaktualizować</translation>
+        <translation>Zaktualizuj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Site map</source>
@@ -38898,7 +38898,7 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Create here</source>
-        <translation>Utworzyć tutaj</translation>
+        <translation>Utwórz tutaj</translation>
     </message>
     <message>
         <source>Name</source>
@@ -38918,11 +38918,11 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Add to Bookmarks</source>
-        <translation>Dodać do zakładek</translation>
+        <translation>Dodaj do zakładek</translation>
     </message>
     <message>
         <source>Notify me about updates</source>
-        <translation>Powiadamiać o aktualizacjach</translation>
+        <translation>Powiadamiaj o aktualizacjach</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -38930,11 +38930,11 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Select all</source>
-        <translation>Zaznaczyć wszystko</translation>
+        <translation>Zaznacz wszystko</translation>
     </message>
     <message>
         <source>Deselect all</source>
-        <translation>Odznaczyć wszystko</translation>
+        <translation>Odznacz wszystko</translation>
     </message>
     <message>
         <source>Click to create a custom template</source>
@@ -38969,7 +38969,7 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     <name>design/standard/notification</name>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>%sitename notification system</source>
@@ -38981,7 +38981,7 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Receive all messages combined in one digest</source>
-        <translation>Otrzymywać wszystkie wiadomości zebrane w jednym zestawieniu</translation>
+        <translation>Otrzymuj wszystkie wiadomości zebrane w jednym zestawieniu</translation>
     </message>
     <message>
         <source>[%sitename] Digest for %date</source>
@@ -39005,7 +39005,7 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -39021,19 +39021,19 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Run notification filter</source>
-        <translation>Uruchomić filtr powiadomień</translation>
+        <translation>Uruchom filtr powiadomień</translation>
     </message>
     <message>
         <source>Run</source>
-        <translation>Uruchomić</translation>
+        <translation>Uruchom</translation>
     </message>
     <message>
         <source>Spawn time event</source>
-        <translation>Wygenerować zdarzenie czasowe</translation>
+        <translation>Wygeneruj zdarzenie czasowe</translation>
     </message>
     <message>
         <source>Spawn</source>
-        <translation>Wygenerować</translation>
+        <translation>Wygeneruj</translation>
     </message>
     <message>
         <source>Notification settings</source>
@@ -39089,7 +39089,7 @@ W takim przypadku zostaną usunięte również wszystkie elementy podrzędne.</t
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Notification filter processed all available notification events</source>
@@ -39146,7 +39146,7 @@ Element można wyświetlić pod poniższym adresem URL.</translation>
     </message>
     <message>
         <source>Add to my notifications</source>
-        <translation>Dodać do moich powiadomień</translation>
+        <translation>Dodaj do moich powiadomień</translation>
     </message>
     <message>
         <source>Notification for node &lt;%node_name&gt; already exists.</source>
@@ -39196,11 +39196,11 @@ Element można wyświetlić pod poniższym adresem URL.</translation>
     </message>
     <message>
         <source>Upload package</source>
-        <translation>Przesłać pakiet</translation>
+        <translation>Prześlij pakiet</translation>
     </message>
     <message>
         <source>Install package</source>
-        <translation>Zainstalować pakiet</translation>
+        <translation>Zainstaluj pakiet</translation>
     </message>
     <message>
         <source>Please provide information on the changes.</source>
@@ -39238,7 +39238,7 @@ Element można wyświetlić pod poniższym adresem URL.</translation>
     </message>
     <message>
         <source>Create package</source>
-        <translation>Utworzyć pakiet</translation>
+        <translation>Utwórz pakiet</translation>
     </message>
     <message>
         <source>Available wizards</source>
@@ -39262,11 +39262,11 @@ Element można wyświetlić pod poniższym adresem URL.</translation>
     </message>
     <message>
         <source>Install items</source>
-        <translation>Zainstalować elementy</translation>
+        <translation>Zainstaluj elementy</translation>
     </message>
     <message>
         <source>Skip installation</source>
-        <translation>Pominąć instalację</translation>
+        <translation>Pomiń instalację</translation>
     </message>
     <message>
         <source>Removal of packages</source>
@@ -39278,7 +39278,7 @@ Element można wyświetlić pod poniższym adresem URL.</translation>
     </message>
     <message>
         <source>Keep packages</source>
-        <translation>Zachować pakiety</translation>
+        <translation>Zachowaj pakiety</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -39298,11 +39298,11 @@ Element można wyświetlić pod poniższym adresem URL.</translation>
     </message>
     <message>
         <source>Remove package</source>
-        <translation>Usunąć pakiet</translation>
+        <translation>Usuń pakiet</translation>
     </message>
     <message>
         <source>Import package</source>
-        <translation>Zaimportować pakiet</translation>
+        <translation>Zaimportuj pakiet</translation>
     </message>
     <message>
         <source>Next %arrowright</source>
@@ -39310,19 +39310,19 @@ Element można wyświetlić pod poniższym adresem URL.</translation>
     </message>
     <message>
         <source>Finish</source>
-        <translation>Zakończyć</translation>
+        <translation>Zakończ</translation>
     </message>
     <message>
         <source>Uninstall package</source>
-        <translation>Odinstalować pakiet</translation>
+        <translation>Odinstaluj pakiet</translation>
     </message>
     <message>
         <source>Uninstall items</source>
-        <translation>Odinstalować elementy</translation>
+        <translation>Odinstaluj elementy</translation>
     </message>
     <message>
         <source>Skip uninstallation</source>
-        <translation>Pominąć deinstalację</translation>
+        <translation>Pomiń deinstalację</translation>
     </message>
     <message>
         <source>Files [%collectionname]</source>
@@ -39334,15 +39334,15 @@ Element można wyświetlić pod poniższym adresem URL.</translation>
     </message>
     <message>
         <source>Uninstall</source>
-        <translation>Odinstalować</translation>
+        <translation>Odinstaluj</translation>
     </message>
     <message>
         <source>Install</source>
-        <translation>Zainstalować</translation>
+        <translation>Zainstaluj</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation>Wyeksportować do pliku</translation>
+        <translation>Wyeksportuj do pliku</translation>
     </message>
     <message>
         <source>State</source>
@@ -39386,7 +39386,7 @@ Element można wyświetlić pod poniższym adresem URL.</translation>
     </message>
     <message>
         <source>Change repository</source>
-        <translation>Zmienić repozytorium</translation>
+        <translation>Zmień repozytorium</translation>
     </message>
     <message>
         <source>You must now choose which siteaccess the package contents should be installed to.
@@ -39406,7 +39406,7 @@ W razie wątpliwości należy wybrać dostęp do witryny odpowiadający części
     </message>
     <message>
         <source>Place %object_name in node %node_placement</source>
-        <translation>Umieścić %object_name w węźle %node_placement</translation>
+        <translation>Umieść %object_name w węźle %node_placement</translation>
     </message>
     <message>
         <source>Choose placement for %object_name</source>
@@ -39422,27 +39422,27 @@ W razie wątpliwości należy wybrać dostęp do witryny odpowiadający części
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Add subtree</source>
-        <translation>Dodać poddrzewo</translation>
+        <translation>Dodaj poddrzewo</translation>
     </message>
     <message>
         <source>Add node</source>
-        <translation>Dodać węzeł</translation>
+        <translation>Dodaj węzeł</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Map %siteaccess_name to</source>
-        <translation>Mapować %siteaccess_name na</translation>
+        <translation>Mapuj %siteaccess_name na</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Repositories</source>
@@ -39450,7 +39450,7 @@ W razie wątpliwości należy wybrać dostęp do witryny odpowiadający części
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Installing package</source>
@@ -39462,15 +39462,15 @@ W razie wątpliwości należy wybrać dostęp do witryny odpowiadający części
     </message>
     <message>
         <source>Use this choice for all the items</source>
-        <translation>Użyć tego wyboru dla wszystkich elementów</translation>
+        <translation>Użyj tego wyboru dla wszystkich elementów</translation>
     </message>
     <message>
         <source>Continue</source>
-        <translation>Kontynuować</translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <source>Cancel installation</source>
-        <translation>Anulować instalację</translation>
+        <translation>Anuluj instalację</translation>
     </message>
     <message>
         <source>Uninstalling package</source>
@@ -39478,11 +39478,11 @@ W razie wątpliwości należy wybrać dostęp do witryny odpowiadający części
     </message>
     <message>
         <source>Cancel uninstallation</source>
-        <translation>Anulować odinstalowywanie</translation>
+        <translation>Anuluj odinstalowywanie</translation>
     </message>
     <message>
         <source>Use this choice for all items</source>
-        <translation>Użyć tego wyboru dla wszystkich elementów</translation>
+        <translation>Użyj tego wyboru dla wszystkich elementów</translation>
     </message>
     <message>
         <source>Email</source>
@@ -39490,7 +39490,7 @@ W razie wątpliwości należy wybrać dostęp do witryny odpowiadający części
     </message>
     <message>
         <source>Send email to the maintainer</source>
-        <translation>Wysłać e-mail do opiekuna</translation>
+        <translation>Wyślij e-mail do opiekuna</translation>
     </message>
     <message>
         <source>Please select a thumbnail file to be included in the package,
@@ -39582,7 +39582,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Use content object modification and publication dates from the package.</source>
-        <translation>Użyć dat modyfikacji i publikacji obiektów treści z pakietu.</translation>
+        <translation>Użyj dat modyfikacji i publikacji obiektów treści z pakietu.</translation>
     </message>
     <message>
         <source>%arrowleft Back</source>
@@ -39590,11 +39590,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Toggle all.</source>
-        <translation>Przełączyć wszystkie.</translation>
+        <translation>Przełącz wszystkie.</translation>
     </message>
     <message>
         <source>Modified</source>
@@ -39614,7 +39614,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknąć</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Installing package &apos;%name&apos;.</source>
@@ -39646,7 +39646,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Back to the package</source>
-        <translation>Wrócić do pakietu</translation>
+        <translation>Wróć do pakietu</translation>
     </message>
     <message>
         <source>Package list</source>
@@ -39665,11 +39665,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Choose node for export</source>
-        <translation>Wybrać węzeł do eksportu</translation>
+        <translation>Wybierz węzeł do eksportu</translation>
     </message>
     <message>
         <source>Choose subtree for export</source>
-        <translation>Wybrać poddrzewo do eksportu</translation>
+        <translation>Wybierz poddrzewo do eksportu</translation>
     </message>
     <message>
         <source>Miscellaneous</source>
@@ -39677,7 +39677,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Include class definitions.</source>
-        <translation>Dołączyć definicje klas.</translation>
+        <translation>Dołącz definicje klas.</translation>
     </message>
     <message>
         <source>Select templates from the following siteaccesses</source>
@@ -39709,7 +39709,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Keep all in selected nodes</source>
-        <translation>Zachować wszystkie w wybranych węzłach</translation>
+        <translation>Zachowaj wszystkie w wybranych węzłach</translation>
     </message>
     <message>
         <source>Main only</source>
@@ -39729,14 +39729,14 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Include templates related to exported objects.</source>
-        <translation>Dołączyć szablony związane z eksportowanymi obiektami.</translation>
+        <translation>Dołącz szablony związane z eksportowanymi obiektami.</translation>
     </message>
 </context>
 <context>
     <name>design/standard/package/installers/ezcontentobject</name>
     <message>
         <source>Choose parent node</source>
-        <translation>Wybrać węzeł nadrzędny</translation>
+        <translation>Wybierz węzeł nadrzędny</translation>
     </message>
     <message>
         <source>Select parent node for new node.</source>
@@ -39779,7 +39779,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Siteaccess:</source>
@@ -39791,7 +39791,7 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
 </context>
 <context>
@@ -39810,11 +39810,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>PDF exports</source>
@@ -39837,11 +39837,11 @@ Pakiet można też usunąć z listy pakietów bez odinstalowywania.</translation
     </message>
     <message>
         <source>Download and install doxygen</source>
-        <translation>Pobrać i zainstalować doxygen</translation>
+        <translation>Pobierz i zainstalować doxygen</translation>
     </message>
     <message>
         <source>Generate the documentation by running the following command</source>
-        <translation>Wygenerować dokumentację, uruchamiając następujące polecenie</translation>
+        <translation>Wygeneruj dokumentację, uruchamiając następujące polecenie</translation>
     </message>
     <message>
         <source>Download doxygen from %doxygenurl.</source>
@@ -39904,7 +39904,7 @@ menu u góry.</translation>
     <name>design/standard/role</name>
     <message>
         <source>Create policy for</source>
-        <translation>Utworzyć zasadę dla</translation>
+        <translation>Utwórz zasadę dla</translation>
     </message>
     <message>
         <source>Step 1</source>
@@ -39916,15 +39916,15 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Allow all</source>
-        <translation>Zezwolić na wszystko</translation>
+        <translation>Zezwól na wszystko</translation>
     </message>
     <message>
         <source>Allow limited</source>
-        <translation>Zezwolić z ograniczeniami</translation>
+        <translation>Zezwól z ograniczeniami</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Limited</source>
@@ -39932,7 +39932,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Go back to step 1</source>
-        <translation>Wrócić do kroku 1</translation>
+        <translation>Wróć do kroku 1</translation>
     </message>
     <message>
         <source>You are not able to give access to limited functions of module</source>
@@ -39948,11 +39948,11 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Specify function in module</source>
-        <translation>Określić funkcję w module</translation>
+        <translation>Określ funkcję w module</translation>
     </message>
     <message>
         <source>Go back to step 2</source>
-        <translation>Wrócić do kroku 2</translation>
+        <translation>Wróć do kroku 2</translation>
     </message>
     <message>
         <source>Step 3</source>
@@ -39972,15 +39972,15 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Discard changes</source>
-        <translation>Odrzucić zmiany</translation>
+        <translation>Odrzuć zmiany</translation>
     </message>
     <message>
         <source>Role list</source>
@@ -39992,7 +39992,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Role policies</source>
@@ -40004,11 +40004,11 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Assign</source>
-        <translation>Przypisać</translation>
+        <translation>Przypisz</translation>
     </message>
     <message>
         <source>Give access to module</source>
-        <translation>Nadać dostęp do modułu</translation>
+        <translation>Nadaj dostęp do modułu</translation>
     </message>
     <message>
         <source>Module</source>
@@ -40044,7 +40044,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Edit policy</source>
-        <translation>Edytować zasadę</translation>
+        <translation>Edytuj zasadę</translation>
     </message>
     <message>
         <source>Policy</source>
@@ -40064,7 +40064,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Zaktualizować</translation>
+        <translation>Zaktualizuj</translation>
     </message>
     <message>
         <source>Role</source>
@@ -40080,31 +40080,31 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>Remove selected policies</source>
-        <translation>Usunąć zaznaczone zasady</translation>
+        <translation>Usuń zaznaczone zasady</translation>
     </message>
     <message>
         <source>Edit role</source>
-        <translation>Edytować rolę</translation>
+        <translation>Edytuj rolę</translation>
     </message>
     <message>
         <source>Assign role to user or group</source>
-        <translation>Przypisać rolę do użytkownika lub grupy</translation>
+        <translation>Przypisz rolę do użytkownika lub grupy</translation>
     </message>
     <message>
         <source>Remove selected roles</source>
-        <translation>Usunąć zaznaczone role</translation>
+        <translation>Usuń zaznaczone role</translation>
     </message>
     <message>
         <source>Edit current role</source>
-        <translation>Edytować bieżącą rolę</translation>
+        <translation>Edytuj bieżącą rolę</translation>
     </message>
     <message>
         <source>Remove selected assignments</source>
-        <translation>Usunąć zaznaczone przypisania</translation>
+        <translation>Usuń zaznaczone przypisania</translation>
     </message>
     <message>
         <source>Section</source>
@@ -40116,19 +40116,19 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Assign role to user or group to subtree</source>
-        <translation>Przypisać rolę do użytkownika lub grupy w poddrzewie</translation>
+        <translation>Przypisz rolę do użytkownika lub grupy w poddrzewie</translation>
     </message>
     <message>
         <source>Assign limited</source>
-        <translation>Przypisać z ograniczeniem</translation>
+        <translation>Przypisz z ograniczeniem</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Copy role</source>
-        <translation>Skopiować rolę</translation>
+        <translation>Skopiuj rolę</translation>
     </message>
 </context>
 <context>
@@ -40139,23 +40139,23 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Choose import destination</source>
-        <translation>Wybrać miejsce docelowe importu</translation>
+        <translation>Wybierz miejsce docelowe importu</translation>
     </message>
     <message>
         <source>Choose RSS image</source>
-        <translation>Wybrać obraz RSS</translation>
+        <translation>Wybierz obraz RSS</translation>
     </message>
     <message>
         <source>Choose export source</source>
-        <translation>Wybrać źródło eksportu</translation>
+        <translation>Wybierz źródło eksportu</translation>
     </message>
     <message>
         <source>Choose owner of imported objects</source>
-        <translation>Wybrać właściciela importowanych obiektów</translation>
+        <translation>Wybierz właściciela importowanych obiektów</translation>
     </message>
     <message>
         <source>RSS export is locked</source>
@@ -40171,7 +40171,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Retry</source>
-        <translation>Ponowić</translation>
+        <translation>Ponów</translation>
     </message>
     <message>
         <source>RSS import is locked</source>
@@ -40238,7 +40238,7 @@ menu u góry.</translation>
     <name>design/standard/rss/edit</name>
     <message>
         <source>Display frontpage</source>
-        <translation>Wyświetlać stronę tytułową</translation>
+        <translation>Wyświetlaj stronę tytułową</translation>
     </message>
     <message>
         <source>RSS Export</source>
@@ -40262,7 +40262,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Site Access</source>
@@ -40290,23 +40290,23 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Zaktualizować</translation>
+        <translation>Zaktualizuj</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Add Source</source>
-        <translation>Dodać źródło</translation>
+        <translation>Dodaj źródło</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Remove Source</source>
-        <translation>Usunąć źródło</translation>
+        <translation>Usuń źródło</translation>
     </message>
     <message>
         <source>PDF Export</source>
@@ -40366,7 +40366,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Check if you want to only feed the object from the main node.</source>
-        <translation>Zaznaczyć, aby udostępniać tylko obiekty z węzła głównego.</translation>
+        <translation>Zaznacz, aby udostępniać tylko obiekty z węzła głównego.</translation>
     </message>
     <message>
         <source>Subnodes</source>
@@ -40394,7 +40394,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Skip</source>
-        <translation>Pominąć</translation>
+        <translation>Pomiń</translation>
     </message>
     <message>
         <source>Enclosure (media)</source>
@@ -40429,11 +40429,11 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -40500,14 +40500,14 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Reset statistics</source>
-        <translation>Wyzerować statystyki</translation>
+        <translation>Wyzeruj statystyki</translation>
     </message>
 </context>
 <context>
     <name>design/standard/section</name>
     <message>
         <source>Assign section to node</source>
-        <translation>Przypisać sekcję do węzła</translation>
+        <translation>Przypisz sekcję do węzła</translation>
     </message>
     <message>
         <source>Are you sure you want to remove these sections?</source>
@@ -40515,11 +40515,11 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Section edit</source>
@@ -40527,7 +40527,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Section list</source>
@@ -40539,11 +40539,11 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Choose section assignment</source>
-        <translation>Wybrać przypisanie sekcji</translation>
+        <translation>Wybierz przypisanie sekcji</translation>
     </message>
     <message>
         <source>Name</source>
@@ -40555,11 +40555,11 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Assign</source>
-        <translation>Przypisać</translation>
+        <translation>Przypisz</translation>
     </message>
     <message>
         <source>Assign section - %section</source>
@@ -40567,7 +40567,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Remove selected sections</source>
-        <translation>Usunąć zaznaczone sekcje</translation>
+        <translation>Usuń zaznaczone sekcje</translation>
     </message>
     <message>
         <source>Please choose where you want to start the section assignment for section %sectionname.
@@ -40630,7 +40630,7 @@ menu u góry.</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Ini cache</source>
@@ -40685,7 +40685,7 @@ menu u góry.</translation>
     <message>
         <source>Restart</source>
         <comment>Datatype restart</comment>
-        <translation>Zacząć od nowa</translation>
+        <translation>Zacznij od nowa</translation>
     </message>
     <message>
         <source>Optional information</source>
@@ -40726,7 +40726,7 @@ Za pomocą %datatypename można ...</translation>
     <message>
         <source>Download</source>
         <comment>Datatype download</comment>
-        <translation>Pobrać</translation>
+        <translation>Pobierz</translation>
     </message>
     <message>
         <source>Extension setup</source>
@@ -40823,7 +40823,7 @@ Za pomocą %datatypename można ...</translation>
     </message>
     <message>
         <source>Create new template override for</source>
-        <translation>Utworzyć nowy szablon nadpisujący dla</translation>
+        <translation>Utwórz nowy szablon nadpisujący dla</translation>
     </message>
     <message>
         <source>Could not create template, permission denied.</source>
@@ -40944,7 +40944,7 @@ Za pomocą %datatypename można ...</translation>
     <message>
         <source>Restart</source>
         <comment>Template operator restart</comment>
-        <translation>Zacząć od nowa</translation>
+        <translation>Zacznij od nowa</translation>
     </message>
     <message>
         <source>Name of class</source>
@@ -40986,7 +40986,7 @@ Za pomocą %operatorname można ...</translation>
     <message>
         <source>Download</source>
         <comment>Template operator download</comment>
-        <translation>Pobrać</translation>
+        <translation>Pobierz</translation>
     </message>
     <message>
         <source>Template view</source>
@@ -40998,7 +40998,7 @@ Za pomocą %operatorname można ...</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Override</source>
@@ -41014,15 +41014,15 @@ Za pomocą %operatorname można ...</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Create new</source>
-        <translation>Utworzyć nowy</translation>
+        <translation>Utwórz nowy</translation>
     </message>
     <message>
         <source>Version</source>
@@ -41100,7 +41100,7 @@ Za pomocą %operatorname można ...</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation>Zaktualizować</translation>
+        <translation>Zaktualizuj</translation>
     </message>
     <message>
         <source>All caches were cleared.</source>
@@ -41172,7 +41172,7 @@ Za pomocą %operatorname można ...</translation>
     </message>
     <message>
         <source>Clear selected</source>
-        <translation>Wyczyścić zaznaczone</translation>
+        <translation>Wyczyść zaznaczone</translation>
     </message>
     <message>
         <source>Content view cache</source>
@@ -41208,7 +41208,7 @@ Za pomocą %operatorname można ...</translation>
     </message>
     <message>
         <source>Check files</source>
-        <translation>Sprawdzić pliki</translation>
+        <translation>Sprawdź pliki</translation>
     </message>
     <message>
         <source>warning, this might take a while</source>
@@ -41220,7 +41220,7 @@ Za pomocą %operatorname można ...</translation>
     </message>
     <message>
         <source>Check database</source>
-        <translation>Sprawdzić bazę danych</translation>
+        <translation>Sprawdź bazę danych</translation>
     </message>
     <message>
         <source>Any</source>
@@ -41228,7 +41228,7 @@ Za pomocą %operatorname można ...</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>Utworzyć</translation>
+        <translation>Utwórz</translation>
     </message>
     <message>
         <source>Here you can activate/deactivate you extensions. Only system wide extensions can be activated, for site access specific extensions, modify these configuration files.</source>
@@ -41278,7 +41278,7 @@ Za pomocą %operatorname można ...</translation>
     </message>
     <message>
         <source>Activate extensions</source>
-        <translation>Aktywować rozszerzenia</translation>
+        <translation>Aktywuj rozszerzenia</translation>
     </message>
     <message>
         <source>Template edit</source>
@@ -41286,11 +41286,11 @@ Za pomocą %operatorname można ...</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Toolbar management</source>
@@ -41438,11 +41438,11 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>A datatype is a kind of value a content class attribute can hold, with its own editing field, validation, storage and display. Say what it has to do and only the methods that answer to that are written.</source>
@@ -41494,7 +41494,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Find a kernel class</source>
-        <translation>Znaleźć klasę jądra</translation>
+        <translation>Znajdź klasę jądra</translation>
     </message>
     <message>
         <source>Why an override</source>
@@ -41502,7 +41502,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>Module wizard</source>
@@ -41682,7 +41682,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Clear cache:</source>
-        <translation>Wyczyścić pamięć podręczną:</translation>
+        <translation>Wyczyść pamięć podręczną:</translation>
     </message>
     <message>
         <source>Quick settings:</source>
@@ -41967,7 +41967,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     <name>design/standard/setup/extensions</name>
     <message>
         <source>Regenerate autoload arrays for extensions</source>
-        <translation>Wygenerować ponownie tablice autoload rozszerzeń</translation>
+        <translation>Wygeneruj ponownie tablice autoload rozszerzeń</translation>
     </message>
     <message>
         <source>Click this button to regenerate the autoload arrays used by the system for extensions.</source>
@@ -42030,11 +42030,11 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Continue but leave the data as it is.</source>
-        <translation>Kontynuować, pozostawiając dane bez zmian.</translation>
+        <translation>Kontynuuj, pozostawiając dane bez zmian.</translation>
     </message>
     <message>
         <source>Let me choose a new database.</source>
-        <translation>Wybrać nową bazę danych.</translation>
+        <translation>Wybierz nową bazę danych.</translation>
     </message>
     <message>
         <source>Language Options</source>
@@ -42050,7 +42050,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Configure</source>
-        <translation>Skonfigurować</translation>
+        <translation>Skonfiguruj</translation>
     </message>
     <message>
         <source>button.</source>
@@ -42078,7 +42078,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Check Again</source>
-        <translation>Sprawdzić ponownie</translation>
+        <translation>Sprawdź ponownie</translation>
     </message>
     <message>
         <source>Issues</source>
@@ -42102,11 +42102,11 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Try Again</source>
-        <translation>Spróbować ponownie</translation>
+        <translation>Spróbuj ponownie</translation>
     </message>
     <message>
         <source>Change the second line from</source>
-        <translation>Zmienić drugi wiersz z</translation>
+        <translation>Zmień drugi wiersz z</translation>
     </message>
     <message>
         <source>to</source>
@@ -42210,7 +42210,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Setup Database</source>
-        <translation>Skonfigurować bazę danych</translation>
+        <translation>Skonfiguruj bazę danych</translation>
     </message>
     <message>
         <source>However if you want to change your settings click the</source>
@@ -42218,7 +42218,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Start Over</source>
-        <translation>Zacząć od nowa</translation>
+        <translation>Zacznij od nowa</translation>
     </message>
     <message>
         <source>button which will restart the collecting of information (Existing settings are kept).</source>
@@ -42266,7 +42266,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Finetune System</source>
-        <translation>Dostroić system</translation>
+        <translation>Dostrój system</translation>
     </message>
     <message>
         <source>Please have a look through the results below for more information on what the problems are.</source>
@@ -42282,15 +42282,15 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Continue</source>
-        <translation>Kontynuować</translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <source>Continue but remove the data first.</source>
-        <translation>Kontynuować, ale najpierw usunąć dane.</translation>
+        <translation>Kontynuuj, ale najpierw usunąć dane.</translation>
     </message>
     <message>
         <source>Keep data and skip database initialization.</source>
-        <translation>Zachować dane i pominąć inicjalizację bazy danych.</translation>
+        <translation>Zachowaj dane i pominąć inicjalizację bazy danych.</translation>
     </message>
     <message>
         <source>Type</source>
@@ -42382,7 +42382,7 @@ Domyślny kod utworzono na podstawie wybranych podstawowych parametrów.</transl
     </message>
     <message>
         <source>Choose database system</source>
-        <translation>Wybrać system bazy danych</translation>
+        <translation>Wybierz system bazy danych</translation>
     </message>
     <message>
         <source>Socket (optional)</source>
@@ -42424,7 +42424,7 @@ Aby rozwiązać ten problem, należy wykonać jedną z następujących czynnośc
     </message>
     <message>
         <source>Make sure the database server is configured to use Unicode or that it has the latest software which supports Unicode.</source>
-        <translation>Upewnić się, że serwer bazy danych jest skonfigurowany do korzystania z Unicode lub ma najnowsze oprogramowanie obsługujące Unicode.</translation>
+        <translation>Upewnij się, że serwer bazy danych jest skonfigurowany do korzystania z Unicode lub ma najnowsze oprogramowanie obsługujące Unicode.</translation>
     </message>
     <message>
         <source>These and other additional languages can also be installed later.</source>
@@ -42484,15 +42484,15 @@ Aby rozwiązać ten problem, należy wykonać jedną z następujących czynnośc
     </message>
     <message>
         <source>Leave the data and add new</source>
-        <translation>Pozostawić dane i dodać nowe</translation>
+        <translation>Pozostaw dane i dodać nowe</translation>
     </message>
     <message>
         <source>Remove existing data</source>
-        <translation>Usunąć istniejące dane</translation>
+        <translation>Usuń istniejące dane</translation>
     </message>
     <message>
         <source>Leave the data and do nothing</source>
-        <translation>Pozostawić dane i nic nie robić</translation>
+        <translation>Pozostaw dane i nic nie robić</translation>
     </message>
     <message>
         <source>Select which sites you would like to install on your system.</source>
@@ -42504,7 +42504,7 @@ Aby rozwiązać ten problem, należy wykonać jedną z następujących czynnośc
     </message>
     <message>
         <source>Ignore this test</source>
-        <translation>Zignorować ten test</translation>
+        <translation>Zignoruj ten test</translation>
     </message>
     <message>
         <source>which will relay the emails. If unsure what to use, ask your webhost. Some webhosts do not support</source>
@@ -42716,12 +42716,12 @@ Aby rozwiązać ten problem, należy wykonać jedną z następujących czynnośc
     <message>
         <source>Back</source>
         <comment>back button in installation</comment>
-        <translation>Wrócić</translation>
+        <translation>Wróć</translation>
     </message>
     <message>
         <source>Refresh</source>
         <comment>Refresh button in installation</comment>
-        <translation>Odświeżyć</translation>
+        <translation>Odśwież</translation>
     </message>
     <message>
         <source>Next</source>
@@ -42754,7 +42754,7 @@ Aby rozwiązać ten problem, należy wykonać jedną z następujących czynnośc
     <message>
         <source>Finetune</source>
         <comment>Finetune button in installation</comment>
-        <translation>Dostroić</translation>
+        <translation>Dostrój</translation>
     </message>
     <message>
         <source>Your database already contain data.
@@ -42897,7 +42897,7 @@ Po zakończeniu instalacji można zalogować się jako %admin_login przy użyciu
     <message>
         <source>Retry</source>
         <comment>Retry button in installation</comment>
-        <translation>Ponowić</translation>
+        <translation>Ponów</translation>
     </message>
     <message>
         <source>The following errors were detected</source>
@@ -42985,11 +42985,11 @@ Po zakończeniu instalacji można zalogować się jako %admin_login przy użyciu
     </message>
     <message>
         <source>Upload package</source>
-        <translation>Przesłać pakiet</translation>
+        <translation>Prześlij pakiet</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation>Przesłać</translation>
+        <translation>Prześlij</translation>
     </message>
     <message>
         <source>Outgoing Email</source>
@@ -43178,15 +43178,15 @@ Po zakończeniu instalacji można zalogować się jako %admin_login przy użyciu
     </message>
     <message>
         <source>Skip content in this language</source>
-        <translation>Pominąć treść w tym języku</translation>
+        <translation>Pomiń treść w tym języku</translation>
     </message>
     <message>
         <source>Create language</source>
-        <translation>Utworzyć język</translation>
+        <translation>Utwórz język</translation>
     </message>
     <message>
         <source>Map to </source>
-        <translation>Mapować na </translation>
+        <translation>Mapuj na </translation>
     </message>
     <message>
         <source>Select the language this site should support.</source>
@@ -43388,7 +43388,7 @@ Jak uzyskać do niej dostęp?&lt;/p&gt;
     </message>
     <message>
         <source>Discover the Exponential Platform forums</source>
-        <translation>Odkryć fora Exponential Platform</translation>
+        <translation>Odkryj fora Exponential Platform</translation>
     </message>
     <message>
         <source>Exponential 5 platform</source>
@@ -43688,11 +43688,11 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
     </message>
     <message>
         <source>Start the setup wizard</source>
-        <translation>Uruchomić kreator instalacji</translation>
+        <translation>Uruchom kreator instalacji</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
@@ -43746,11 +43746,11 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
     </message>
     <message>
         <source>Remove all sessions</source>
-        <translation>Usunąć wszystkie sesje</translation>
+        <translation>Usuń wszystkie sesje</translation>
     </message>
     <message>
         <source>Remove timed out / old sessions</source>
-        <translation>Usunąć wygasłe / stare sesje</translation>
+        <translation>Usuń wygasłe / stare sesje</translation>
     </message>
     <message>
         <source>Login</source>
@@ -43782,11 +43782,11 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
     </message>
     <message>
         <source>Show from all users</source>
-        <translation>Pokazać od wszystkich użytkowników</translation>
+        <translation>Pokaż od wszystkich użytkowników</translation>
     </message>
     <message>
         <source>Filter sessions</source>
-        <translation>Filtrować sesje</translation>
+        <translation>Filtruj sesje</translation>
     </message>
     <message>
         <source>Everyone</source>
@@ -43802,11 +43802,11 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
     </message>
     <message>
         <source>Include inactive users</source>
-        <translation>Uwzględnić nieaktywnych użytkowników</translation>
+        <translation>Uwzględnij nieaktywnych użytkowników</translation>
     </message>
     <message>
         <source>Update list</source>
-        <translation>Odświeżyć listę</translation>
+        <translation>Odśwież listę</translation>
     </message>
     <message>
         <source>Count</source>
@@ -43818,7 +43818,7 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Email</source>
@@ -43834,15 +43834,15 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
     </message>
     <message>
         <source>Repeat the operation several times to complete it.</source>
-        <translation>Powtórzyć operację kilka razy, aby ją ukończyć.</translation>
+        <translation>Powtórz operację kilka razy, aby ją ukończyć.</translation>
     </message>
     <message>
         <source>Clear the timed out session data from command-line using: &amp;gt;php bin/php/ezsessiongc.php</source>
-        <translation>Wyczyścić dane wygasłych sesji z wiersza poleceń: &amp;gt;php bin/php/ezsessiongc.php</translation>
+        <translation>Wyczyść dane wygasłych sesji z wiersza poleceń: &amp;gt;php bin/php/ezsessiongc.php</translation>
     </message>
     <message>
         <source>Install the session cleanup cronjob &apos;session_gc.php&apos; and run on nightly intervals (see cronjob.ini or doc for how)</source>
-        <translation>Zainstalować zadanie cron czyszczenia sesji &apos;session_gc.php&apos; i uruchamiać je co noc (sposób opisano w cronjob.ini lub dokumentacji)</translation>
+        <translation>Zainstaluj zadanie cron czyszczenia sesji &apos;session_gc.php&apos; i uruchamiać je co noc (sposób opisano w cronjob.ini lub dokumentacji)</translation>
     </message>
     <message>
         <source>The operation was cut short in order to avoid execution timeout.</source>
@@ -43854,11 +43854,11 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation>Zaznaczyć wszystko</translation>
+        <translation>Zaznacz wszystko</translation>
     </message>
     <message>
         <source>Deselect all</source>
-        <translation>Odznaczyć wszystko</translation>
+        <translation>Odznacz wszystko</translation>
     </message>
 </context>
 <context>
@@ -44594,19 +44594,19 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Update Placement</source>
-        <translation>Zaktualizować położenie</translation>
+        <translation>Zaktualizuj położenie</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>True</source>
@@ -44630,7 +44630,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Add Tool</source>
-        <translation>Dodać narzędzie</translation>
+        <translation>Dodaj narzędzie</translation>
     </message>
 </context>
 <context>
@@ -44641,15 +44641,15 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Continue shopping</source>
-        <translation>Kontynuować zakupy</translation>
+        <translation>Kontynuuj zakupy</translation>
     </message>
     <message>
         <source>Checkout</source>
@@ -44661,7 +44661,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Confirm order</source>
-        <translation>Potwierdzić zamówienie</translation>
+        <translation>Potwierdź zamówienie</translation>
     </message>
     <message>
         <source>Product items</source>
@@ -44669,15 +44669,15 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>New</source>
@@ -44685,7 +44685,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Group view</source>
@@ -44697,11 +44697,11 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Add Rule</source>
-        <translation>Dodać regułę</translation>
+        <translation>Dodaj regułę</translation>
     </message>
     <message>
         <source>Remove Rule</source>
-        <translation>Usunąć regułę</translation>
+        <translation>Usuń regułę</translation>
     </message>
     <message>
         <source>Customers</source>
@@ -44709,11 +44709,11 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Add customer</source>
-        <translation>Dodać klienta</translation>
+        <translation>Dodaj klienta</translation>
     </message>
     <message>
         <source>Remove customer</source>
-        <translation>Usunąć klienta</translation>
+        <translation>Usuń klienta</translation>
     </message>
     <message>
         <source>Editing rule</source>
@@ -44805,7 +44805,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Apply to</source>
-        <translation>Zastosować do</translation>
+        <translation>Zastosuj do</translation>
     </message>
     <message>
         <source>Discount percent</source>
@@ -44841,7 +44841,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -44865,7 +44865,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Sort</source>
-        <translation>Sortować</translation>
+        <translation>Sortuj</translation>
     </message>
     <message>
         <source>Order Time</source>
@@ -44913,7 +44913,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Sort ascending</source>
-        <translation>Sortować rosnąco</translation>
+        <translation>Sortuj rosnąco</translation>
     </message>
     <message>
         <source>Descending</source>
@@ -44921,11 +44921,11 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Sort descending</source>
-        <translation>Sortować malejąco</translation>
+        <translation>Sortuj malejąco</translation>
     </message>
     <message>
         <source>Remove items</source>
-        <translation>Usunąć pozycje</translation>
+        <translation>Usuń pozycje</translation>
     </message>
     <message>
         <source>Name</source>
@@ -44974,7 +44974,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Are you sure you want to remove order: </source>
@@ -45014,7 +45014,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Continue</source>
-        <translation>Kontynuować</translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <source>Attempted to add object without price to basket.</source>
@@ -45082,7 +45082,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Unarchive</source>
-        <translation>Przywrócić z archiwum</translation>
+        <translation>Przywróć z archiwum</translation>
     </message>
     <message>
         <source>VAT is unknown</source>
@@ -45320,15 +45320,15 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Set the selected currency as preferred.</source>
-        <translation>Ustawić zaznaczoną walutę jako preferowaną.</translation>
+        <translation>Ustaw zaznaczoną walutę jako preferowaną.</translation>
     </message>
     <message>
         <source>Select currency</source>
-        <translation>Wybrać walutę</translation>
+        <translation>Wybierz walutę</translation>
     </message>
 </context>
 <context>
@@ -45351,15 +45351,15 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Show 10 items per page.</source>
-        <translation>Pokazywać 10 elementów na stronie.</translation>
+        <translation>Pokazuj 10 elementów na stronie.</translation>
     </message>
     <message>
         <source>Show 50 items per page.</source>
-        <translation>Pokazywać 50 elementów na stronie.</translation>
+        <translation>Pokazuj 50 elementów na stronie.</translation>
     </message>
     <message>
         <source>Show 25 items per page.</source>
-        <translation>Pokazywać 25 elementów na stronie.</translation>
+        <translation>Pokazuj 25 elementów na stronie.</translation>
     </message>
     <message>
         <source>The product list is empty.</source>
@@ -45367,23 +45367,23 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Select product class.</source>
-        <translation>Wybrać klasę produktu.</translation>
+        <translation>Wybierz klasę produktu.</translation>
     </message>
     <message>
         <source>Show products</source>
-        <translation>Pokazać produkty</translation>
+        <translation>Pokaż produkty</translation>
     </message>
     <message>
         <source>Show products of selected class.</source>
-        <translation>Pokazać produkty wybranej klasy.</translation>
+        <translation>Pokaż produkty wybranej klasy.</translation>
     </message>
     <message>
         <source>Select sorting field.</source>
-        <translation>Wybrać pole sortowania.</translation>
+        <translation>Wybierz pole sortowania.</translation>
     </message>
     <message>
         <source>Select sorting order.</source>
-        <translation>Wybrać kierunek sortowania.</translation>
+        <translation>Wybierz kierunek sortowania.</translation>
     </message>
     <message>
         <source>Descending</source>
@@ -45395,22 +45395,22 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Sort products</source>
-        <translation>Sortować produkty</translation>
+        <translation>Sortuj produkty</translation>
     </message>
     <message>
         <source>Sort products.</source>
-        <translation>Sortować produkty.</translation>
+        <translation>Sortuj produkty.</translation>
     </message>
 </context>
 <context>
     <name>design/standard/shop/view</name>
     <message>
         <source>Choose customers</source>
-        <translation>Wybrać klientów</translation>
+        <translation>Wybierz klientów</translation>
     </message>
     <message>
         <source>Choose product for discount</source>
-        <translation>Wybrać produkt do rabatu</translation>
+        <translation>Wybierz produkt do rabatu</translation>
     </message>
     <message>
         <source>Please choose the customers you want to add to discount group %groupname.
@@ -45441,7 +45441,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     <name>design/standard/simplified_treemenu</name>
     <message>
         <source>Fold/Unfold</source>
-        <translation>Zwinąć/rozwinąć</translation>
+        <translation>Zwiń/rozwiń</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -45537,7 +45537,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>View all details</source>
-        <translation>Wyświetlić wszystkie szczegóły</translation>
+        <translation>Wyświetl wszystkie szczegóły</translation>
     </message>
     <message>
         <source>Your basket is empty</source>
@@ -45569,15 +45569,15 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Edit account</source>
-        <translation>Edytować konto</translation>
+        <translation>Edytuj konto</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Zmienić hasło</translation>
+        <translation>Zmień hasło</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation>Wylogować</translation>
+        <translation>Wyloguj</translation>
     </message>
     <message>
         <source>Login</source>
@@ -45605,7 +45605,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>View basket</source>
-        <translation>Wyświetlić koszyk</translation>
+        <translation>Wyświetl koszyk</translation>
     </message>
     <message>
         <source>Online: %logged_in_count:%anonymous_count</source>
@@ -45622,11 +45622,11 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Set the selected currency as preferred.</source>
-        <translation>Ustawić zaznaczoną walutę jako preferowaną.</translation>
+        <translation>Ustaw zaznaczoną walutę jako preferowaną.</translation>
     </message>
     <message>
         <source>There are no available currencies</source>
@@ -45642,14 +45642,14 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Select currency</source>
-        <translation>Wybrać walutę</translation>
+        <translation>Wybierz walutę</translation>
     </message>
 </context>
 <context>
     <name>design/standard/toolbar/search</name>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Global</source>
@@ -45672,11 +45672,11 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Apply</source>
-        <translation>Zastosować</translation>
+        <translation>Zastosuj</translation>
     </message>
     <message>
         <source>Use the selected country for VAT charging.</source>
-        <translation>Użyć zaznaczonego kraju do naliczania VAT.</translation>
+        <translation>Użyj zaznaczonego kraju do naliczania VAT.</translation>
     </message>
 </context>
 <context>
@@ -45687,7 +45687,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Trigger list</source>
@@ -45750,7 +45750,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>URL</source>
@@ -45837,11 +45837,11 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -45852,11 +45852,11 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Activate account</source>
-        <translation>Aktywować konto</translation>
+        <translation>Aktywuj konto</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Could not login</source>
@@ -45896,11 +45896,11 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Register</source>
-        <translation>Zarejestrować się</translation>
+        <translation>Zarejestruj się</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>User setting</source>
@@ -45916,7 +45916,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Update</source>
-        <translation>Zaktualizować</translation>
+        <translation>Zaktualizuj</translation>
     </message>
     <message>
         <source>User registered</source>
@@ -45929,7 +45929,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     <message>
         <source>Login</source>
         <comment>Button</comment>
-        <translation>Zalogować</translation>
+        <translation>Zaloguj</translation>
     </message>
     <message>
         <source>User profile</source>
@@ -45946,7 +45946,7 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     <message>
         <source>Sign Up</source>
         <comment>Button</comment>
-        <translation>Zarejestrować się</translation>
+        <translation>Zarejestruj się</translation>
     </message>
     <message>
         <source>Please retype your old password.</source>
@@ -45958,15 +45958,15 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
     </message>
     <message>
         <source>Edit profile</source>
-        <translation>Edytować profil</translation>
+        <translation>Edytuj profil</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Zmienić hasło</translation>
+        <translation>Zmień hasło</translation>
     </message>
     <message>
         <source>Change setting</source>
-        <translation>Zmienić ustawienia</translation>
+        <translation>Zmień ustawienia</translation>
     </message>
     <message>
         <source>Old password</source>
@@ -46043,7 +46043,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Try again</source>
-        <translation>Spróbować ponownie</translation>
+        <translation>Spróbuj ponownie</translation>
     </message>
     <message>
         <source>The new password must be at least %1 characters long. Please retype your new password.</source>
@@ -46062,7 +46062,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Generate new password</source>
-        <translation>Wygenerować nowe hasło</translation>
+        <translation>Wygeneruj nowe hasło</translation>
     </message>
     <message>
         <source>Your account information</source>
@@ -46122,7 +46122,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Ask for a new link</source>
-        <translation>Poprosić o nowy link</translation>
+        <translation>Poproś o nowy link</translation>
     </message>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
@@ -46242,23 +46242,23 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Approve</source>
-        <translation>Zatwierdzić</translation>
+        <translation>Zatwierdź</translation>
     </message>
     <message>
         <source>Activate account</source>
-        <translation>Aktywować konto</translation>
+        <translation>Aktywuj konto</translation>
     </message>
     <message>
         <source>View account</source>
-        <translation>Wyświetlić konto</translation>
+        <translation>Wyświetl konto</translation>
     </message>
     <message>
         <source>Reject and remove</source>
-        <translation>Odrzucić i usunąć</translation>
+        <translation>Odrzuć i usunąć</translation>
     </message>
     <message>
         <source>Open approval item</source>
-        <translation>Otworzyć element zatwierdzenia</translation>
+        <translation>Otwórz element zatwierdzenia</translation>
     </message>
     <message>
         <source>All unactivated users</source>
@@ -46282,7 +46282,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Sign in</source>
-        <translation>Zalogować się</translation>
+        <translation>Zaloguj się</translation>
     </message>
     <message>
         <source>If the button does not work, copy this address into your browser: %url</source>
@@ -46313,7 +46313,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Menu positioning</source>
@@ -46321,7 +46321,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click here to store the changes if you have modified the menu settings above.</source>
@@ -46412,7 +46412,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Extension</source>
@@ -46455,7 +46455,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click this button to save the contents of the text field above to the template file.</source>
@@ -46463,11 +46463,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Back to overrides</source>
-        <translation>Wrócić do nadpisań</translation>
+        <translation>Wróć do nadpisań</translation>
     </message>
     <message>
         <source>Back to override overview.</source>
-        <translation>Wrócić do przeglądu nadpisań.</translation>
+        <translation>Wróć do przeglądu nadpisań.</translation>
     </message>
     <message>
         <source>The web server does not have write access to the requested template.</source>
@@ -46495,11 +46495,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Open as read only</source>
-        <translation>Otworzyć tylko do odczytu</translation>
+        <translation>Otwórz tylko do odczytu</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>You do not have permission to save the contents of the text field above to the template file.</source>
@@ -46530,7 +46530,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Manage overrides for template.</source>
-        <translation>Zarządzać nadpisaniami szablonu.</translation>
+        <translation>Zarządzaj nadpisaniami szablonu.</translation>
     </message>
     <message>
         <source>Most common templates</source>
@@ -46561,11 +46561,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -46589,15 +46589,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit override template.</source>
-        <translation>Edytować szablon nadpisujący.</translation>
+        <translation>Edytuj szablon nadpisujący.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove selected template overrides.</source>
-        <translation>Usunąć zaznaczone nadpisania szablonu.</translation>
+        <translation>Usuń zaznaczone nadpisania szablonu.</translation>
     </message>
     <message>
         <source>New override</source>
@@ -46605,11 +46605,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Create a new template override.</source>
-        <translation>Utworzyć nowe nadpisanie szablonu.</translation>
+        <translation>Utwórz nowe nadpisanie szablonu.</translation>
     </message>
     <message>
         <source>Update priorities</source>
-        <translation>Zaktualizować priorytety</translation>
+        <translation>Zaktualizuj priorytety</translation>
     </message>
     <message>
         <source>There are no overrides for the &lt;%template_name&gt; template.</source>
@@ -46625,14 +46625,14 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
 </context>
 <context>
     <name>design/standard/visual/toolbar</name>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>True</source>
@@ -46656,19 +46656,19 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Update priorities</source>
-        <translation>Zaktualizować priorytety</translation>
+        <translation>Zaktualizuj priorytety</translation>
     </message>
     <message>
         <source>Add Tool</source>
-        <translation>Dodać narzędzie</translation>
+        <translation>Dodaj narzędzie</translation>
     </message>
     <message>
         <source>Apply changes</source>
-        <translation>Zastosować zmiany</translation>
+        <translation>Zastosuj zmiany</translation>
     </message>
     <message>
         <source>Click this button to store changes if you have modified the parameters above.</source>
@@ -46676,11 +46676,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Back to toolbars</source>
-        <translation>Wrócić do pasków narzędzi</translation>
+        <translation>Wróć do pasków narzędzi</translation>
     </message>
     <message>
         <source>Go back to the toolbar list.</source>
-        <translation>Wrócić do listy pasków narzędzi.</translation>
+        <translation>Wróć do listy pasków narzędzi.</translation>
     </message>
     <message>
         <source>Toolbar management</source>
@@ -46696,7 +46696,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Ustawić</translation>
+        <translation>Ustaw</translation>
     </message>
     <message>
         <source>Available toolbars for the &lt;%siteaccess&gt; siteaccess</source>
@@ -46715,7 +46715,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <name>design/standard/workflow</name>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Editing workflow</source>
@@ -46743,11 +46743,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>on</source>
@@ -46759,7 +46759,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Workflow process</source>
@@ -46839,7 +46839,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Wyzerować</translation>
+        <translation>Wyzeruj</translation>
     </message>
     <message>
         <source>Next step</source>
@@ -46900,7 +46900,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add group</source>
-        <translation>Dodać grupę</translation>
+        <translation>Dodaj grupę</translation>
     </message>
     <message>
         <source>Editing workflow group - %1</source>
@@ -46912,11 +46912,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit workflow</source>
-        <translation>Edytować przepływ pracy</translation>
+        <translation>Edytuj przepływ pracy</translation>
     </message>
     <message>
         <source>Remove selected workflows</source>
-        <translation>Usunąć zaznaczone przepływy pracy</translation>
+        <translation>Usuń zaznaczone przepływy pracy</translation>
     </message>
     <message>
         <source>Workflow process was created at %creation and modified at %modification.</source>
@@ -46924,15 +46924,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select gateway</source>
-        <translation>Wybrać bramkę</translation>
+        <translation>Wybierz bramkę</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Additional information</source>
@@ -46944,11 +46944,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Przesunąć w dół</translation>
+        <translation>Przesuń w dół</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Przesunąć w górę</translation>
+        <translation>Przesuń w górę</translation>
     </message>
 </context>
 <context>
@@ -46979,19 +46979,19 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Load attributes</source>
-        <translation>Wczytać atrybuty</translation>
+        <translation>Wczytaj atrybuty</translation>
     </message>
     <message>
         <source>Modify publish date</source>
-        <translation>Zmodyfikować datę publikacji</translation>
+        <translation>Zmodyfikuj datę publikacji</translation>
     </message>
     <message>
         <source>Add entry</source>
-        <translation>Dodać wpis</translation>
+        <translation>Dodaj wpis</translation>
     </message>
     <message>
         <source>Type</source>
@@ -47096,11 +47096,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <name>extension/oauth/authorize</name>
     <message>
         <source>Authorize</source>
-        <translation>Autoryzować</translation>
+        <translation>Autoryzuj</translation>
     </message>
     <message>
         <source>Deny</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Click on &quot;Authorize&quot; to grant the requested access</source>
@@ -47155,19 +47155,19 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit this application.</source>
-        <translation>Edytować tę aplikację.</translation>
+        <translation>Edytuj tę aplikację.</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Delete this application.</source>
-        <translation>Usunąć tę aplikację.</translation>
+        <translation>Usuń tę aplikację.</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this application?</source>
@@ -47179,15 +47179,15 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Confirm removal of these applications.</source>
-        <translation>Potwierdzić usunięcie tych aplikacji.</translation>
+        <translation>Potwierdź usunięcie tych aplikacji.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Edit application &lt;%application_name&gt;</source>
@@ -47219,7 +47219,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
-        <translation>Odwrócić zaznaczenie.</translation>
+        <translation>Odwróć zaznaczenie.</translation>
     </message>
     <message>
         <source>Modifier</source>
@@ -47231,19 +47231,19 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Select application for removal.</source>
-        <translation>Zaznaczyć aplikację do usunięcia.</translation>
+        <translation>Zaznacz aplikację do usunięcia.</translation>
     </message>
     <message>
         <source>Edit the &lt;%application_name&gt; application.</source>
-        <translation>Edytować aplikację &lt;%application_name&gt;.</translation>
+        <translation>Edytuj aplikację &lt;%application_name&gt;.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Usunąć zaznaczone</translation>
+        <translation>Usuń zaznaczone</translation>
     </message>
     <message>
         <source>Remove the selected applications.</source>
-        <translation>Usunąć zaznaczone aplikacje.</translation>
+        <translation>Usuń zaznaczone aplikacje.</translation>
     </message>
     <message>
         <source>New application</source>
@@ -47251,7 +47251,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Create a new application.</source>
-        <translation>Utworzyć nową aplikację.</translation>
+        <translation>Utwórz nową aplikację.</translation>
     </message>
     <message>
         <source>Back</source>
@@ -47400,7 +47400,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove class</source>
-        <translation>Usunąć klasę</translation>
+        <translation>Usuń klasę</translation>
     </message>
     <message>
         <source>Class edit</source>
@@ -47589,19 +47589,19 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Replace existing object</source>
-        <translation>Zastąpić istniejący obiekt</translation>
+        <translation>Zastąp istniejący obiekt</translation>
     </message>
     <message>
         <source>Skip object</source>
-        <translation>Pominąć obiekt</translation>
+        <translation>Pomiń obiekt</translation>
     </message>
     <message>
         <source>Keep existing and create a new one</source>
-        <translation>Zachować istniejący i utworzyć nowy</translation>
+        <translation>Zachowaj istniejący i utworzyć nowy</translation>
     </message>
     <message>
         <source>Update existing object</source>
-        <translation>Zaktualizować istniejący obiekt</translation>
+        <translation>Zaktualizuj istniejący obiekt</translation>
     </message>
     <message>
         <source>Workflow was canceled</source>
@@ -47666,11 +47666,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Add to basket</source>
-        <translation>Dodać do koszyka</translation>
+        <translation>Dodaj do koszyka</translation>
     </message>
     <message>
         <source>Add to wish list</source>
-        <translation>Dodać do listy życzeń</translation>
+        <translation>Dodaj do listy życzeń</translation>
     </message>
     <message>
         <source>URL</source>
@@ -47699,7 +47699,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <message>
         <source>Send</source>
         <comment>Datatype information collector action</comment>
-        <translation>Wysłać</translation>
+        <translation>Wyślij</translation>
     </message>
     <message>
         <source>Missing objectrelation input.</source>
@@ -48503,7 +48503,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <name>kernel/content</name>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Advanced</source>
@@ -48519,7 +48519,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>My drafts</source>
@@ -48527,11 +48527,11 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove editing version</source>
-        <translation>Usunąć edytowaną wersję</translation>
+        <translation>Usuń edytowaną wersję</translation>
     </message>
     <message>
         <source>Remove object</source>
-        <translation>Usunąć obiekt</translation>
+        <translation>Usuń obiekt</translation>
     </message>
     <message>
         <source>Translation</source>
@@ -48567,7 +48567,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Tip a friend</source>
-        <translation>Polecić znajomemu</translation>
+        <translation>Poleć znajomemu</translation>
     </message>
     <message>
         <source>My pending list</source>
@@ -48587,7 +48587,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Remove location</source>
-        <translation>Usunąć lokalizację</translation>
+        <translation>Usuń lokalizację</translation>
     </message>
     <message>
         <source>You are not allowed to place this object under: %1</source>
@@ -48623,7 +48623,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Remove translation</source>
@@ -48687,7 +48687,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Copy subtree</source>
-        <translation>Skopiować poddrzewo</translation>
+        <translation>Skopiuj poddrzewo</translation>
     </message>
     <message>
         <source>Dashboard</source>
@@ -48711,7 +48711,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     </message>
     <message>
         <source>Copy subtrees</source>
-        <translation>Skopiować poddrzewa</translation>
+        <translation>Skopiuj poddrzewa</translation>
     </message>
     <message>
         <source>Edit several items</source>
@@ -48894,7 +48894,7 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <name>kernel/content/restore</name>
     <message>
         <source>Restore object</source>
-        <translation>Przywrócić obiekt</translation>
+        <translation>Przywróć obiekt</translation>
     </message>
 </context>
 <context>
@@ -49050,7 +49050,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create new template</source>
-        <translation>Utworzyć nowy szablon</translation>
+        <translation>Utwórz nowy szablon</translation>
     </message>
     <message>
         <source>Template edit</source>
@@ -49227,7 +49227,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Add to my notifications</source>
-        <translation>Dodać do moich powiadomień</translation>
+        <translation>Dodaj do moich powiadomień</translation>
     </message>
     <message>
         <source>Mail is written to files, not sent (site.ini MailSettings Transport=file).</source>
@@ -49305,7 +49305,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Upload</source>
-        <translation>Przesłać</translation>
+        <translation>Prześlij</translation>
     </message>
     <message>
         <source>Package information</source>
@@ -49401,15 +49401,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create package</source>
-        <translation>Utworzyć pakiet</translation>
+        <translation>Utwórz pakiet</translation>
     </message>
     <message>
         <source>Install</source>
-        <translation>Zainstalować</translation>
+        <translation>Zainstaluj</translation>
     </message>
     <message>
         <source>Uninstall</source>
-        <translation>Odinstalować</translation>
+        <translation>Odinstaluj</translation>
     </message>
     <message>
         <source>Package %packagename already exists, cannot import the package</source>
@@ -49501,7 +49501,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Replace existing class</source>
-        <translation>Zastąpić istniejącą klasę</translation>
+        <translation>Zastąp istniejącą klasę</translation>
     </message>
     <message>
         <source>(Warning! $objectsCount content object(s) and their sub-items will be removed)</source>
@@ -49509,11 +49509,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Skip installing this class</source>
-        <translation>Pominąć instalację tej klasy</translation>
+        <translation>Pomiń instalację tej klasy</translation>
     </message>
     <message>
         <source>Keep existing and create a new one</source>
-        <translation>Zachować istniejący i utworzyć nowy</translation>
+        <translation>Zachowaj istniejący i utworzyć nowy</translation>
     </message>
     <message>
         <source>%number content objects</source>
@@ -49525,11 +49525,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Keep object</source>
-        <translation>Zachować obiekt</translation>
+        <translation>Zachowaj obiekt</translation>
     </message>
     <message>
         <source>Object &apos;%objectname&apos; has %childrencount sub-item(s) that will be removed.</source>
@@ -49545,11 +49545,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Replace extension</source>
-        <translation>Zastąpić rozszerzenie</translation>
+        <translation>Zastąp rozszerzenie</translation>
     </message>
     <message>
         <source>Skip</source>
-        <translation>Pominąć</translation>
+        <translation>Pomiń</translation>
     </message>
     <message>
         <source>Install script: %description</source>
@@ -49585,7 +49585,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove object and its sub-item(s)</source>
-        <translation>Usunąć obiekt i jego elementy podrzędne</translation>
+        <translation>Usuń obiekt i jego elementy podrzędne</translation>
     </message>
     <message>
         <source>Package contains an invalid extension name: %extensionname</source>
@@ -49609,7 +49609,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Select parent nodes</source>
-        <translation>Wybrać węzły nadrzędne</translation>
+        <translation>Wybierz węzły nadrzędne</translation>
     </message>
     <message>
         <source>You must assign all nodes to new parent nodes.</source>
@@ -49673,7 +49673,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Update existing class (attributes are added and updated, none removed)</source>
-        <translation>Zaktualizować istniejącą klasę (atrybuty są dodawane i aktualizowane, żaden nie jest usuwany)</translation>
+        <translation>Zaktualizuj istniejącą klasę (atrybuty są dodawane i aktualizowane, żaden nie jest usuwany)</translation>
     </message>
     <message>
         <source>License</source>
@@ -49813,7 +49813,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Install in the background</source>
-        <translation>Zainstalować w tle</translation>
+        <translation>Zainstaluj w tle</translation>
     </message>
     <message>
         <source>Validation</source>
@@ -49837,11 +49837,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Install the package %1 as drafts (%2 content objects)</source>
-        <translation>Zainstalować pakiet %1 jako wersje robocze (obiekty treści: %2)</translation>
+        <translation>Zainstaluj pakiet %1 jako wersje robocze (obiekty treści: %2)</translation>
     </message>
     <message>
         <source>Install the package %1 (%2 content objects)</source>
-        <translation>Zainstalować pakiet %1 (obiekty treści: %2)</translation>
+        <translation>Zainstaluj pakiet %1 (obiekty treści: %2)</translation>
     </message>
     <message>
         <source>The package %1 does not exist (any more).</source>
@@ -49925,7 +49925,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
 </context>
 <context>
@@ -50111,7 +50111,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove sessions</source>
-        <translation>Usunąć sesje</translation>
+        <translation>Usuń sesje</translation>
     </message>
     <message>
         <source>%count s</source>
@@ -50159,11 +50159,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Manage logs</source>
-        <translation>Zarządzać dziennikami</translation>
+        <translation>Zarządzaj dziennikami</translation>
     </message>
     <message>
         <source>Log health</source>
@@ -50186,7 +50186,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Confirm order</source>
-        <translation>Potwierdzić zamówienie</translation>
+        <translation>Potwierdź zamówienie</translation>
     </message>
     <message>
         <source>Discount group</source>
@@ -50226,7 +50226,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove order</source>
-        <translation>Usunąć zamówienie</translation>
+        <translation>Usuń zamówienie</translation>
     </message>
     <message>
         <source>VAT type</source>
@@ -50521,7 +50521,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Assign</source>
-        <translation>Przypisać</translation>
+        <translation>Przypisz</translation>
     </message>
     <message>
         <source>Groups</source>
@@ -50541,7 +50541,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
 </context>
 <context>
@@ -50610,7 +50610,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>URL edit</source>
@@ -50629,11 +50629,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Zmienić hasło</translation>
+        <translation>Zmień hasło</translation>
     </message>
     <message>
         <source>Register</source>
-        <translation>Zarejestrować się</translation>
+        <translation>Zarejestruj się</translation>
     </message>
     <message>
         <source>Forgot password</source>
@@ -50649,7 +50649,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Activate</source>
-        <translation>Aktywować</translation>
+        <translation>Aktywuj</translation>
     </message>
     <message>
         <source>Success</source>
@@ -50687,7 +50687,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>kernel/workflow</name>
     <message>
         <source>Edit workflow</source>
-        <translation>Edytować przepływ pracy</translation>
+        <translation>Edytuj przepływ pracy</translation>
     </message>
     <message>
         <source>Workflow</source>
@@ -50695,7 +50695,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit workflow group</source>
@@ -50727,7 +50727,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>You have to have at least one group that the workflow belongs to!</source>
@@ -50753,7 +50753,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Approve</source>
-        <translation>Zatwierdzić</translation>
+        <translation>Zatwierdź</translation>
     </message>
     <message>
         <source>Multiplexer</source>
@@ -50836,7 +50836,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
 </context>
 <context>
@@ -50847,14 +50847,14 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
 </context>
 <context>
     <name>shop</name>
     <message>
         <source>Remove orders</source>
-        <translation>Usunąć zamówienia</translation>
+        <translation>Usuń zamówienia</translation>
     </message>
 </context>
 <context>
@@ -50903,11 +50903,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Nothing has been copied yet.</source>
@@ -51014,19 +51014,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Expand all</source>
-        <translation>Rozwinąć wszystko</translation>
+        <translation>Rozwiń wszystko</translation>
     </message>
     <message>
         <source>Open every item.</source>
-        <translation>Otworzyć wszystkie elementy.</translation>
+        <translation>Otwórz wszystkie elementy.</translation>
     </message>
     <message>
         <source>Collapse all</source>
-        <translation>Zwinąć wszystko</translation>
+        <translation>Zwiń wszystko</translation>
     </message>
     <message>
         <source>Close every item. Closed items are still saved and published; nothing is left out.</source>
-        <translation>Zamknąć wszystkie elementy. Zamknięte elementy nadal są zapisywane i publikowane; nic nie zostaje pominięte.</translation>
+        <translation>Zamknij wszystkie elementy. Zamknięte elementy nadal są zapisywane i publikowane; nic nie zostaje pominięte.</translation>
     </message>
     <message>
         <source>version</source>
@@ -51050,35 +51050,35 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create them</source>
-        <translation>Utworzyć je</translation>
+        <translation>Utwórz je</translation>
     </message>
     <message>
         <source>Make this many drafts and open them all for editing.</source>
-        <translation>Utworzyć tyle wersji roboczych i otworzyć wszystkie do edycji.</translation>
+        <translation>Utwórz tyle wersji roboczych i otworzyć wszystkie do edycji.</translation>
     </message>
     <message>
         <source>Publish all</source>
-        <translation>Opublikować wszystko</translation>
+        <translation>Opublikuj wszystko</translation>
     </message>
     <message>
         <source>Publish every item in this form. Each is published separately.</source>
-        <translation>Opublikować wszystkie elementy tego formularza. Każdy jest publikowany osobno.</translation>
+        <translation>Opublikuj wszystkie elementy tego formularza. Każdy jest publikowany osobno.</translation>
     </message>
     <message>
         <source>Save drafts</source>
-        <translation>Zapisać wersje robocze</translation>
+        <translation>Zapisz wersje robocze</translation>
     </message>
     <message>
         <source>Keep what has been typed without publishing anything.</source>
-        <translation>Zachować to, co wpisano, bez publikowania czegokolwiek.</translation>
+        <translation>Zachowaj to, co wpisano, bez publikowania czegokolwiek.</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Throw away the drafts this form opened and go back.</source>
-        <translation>Odrzucić wersje robocze otwarte przez ten formularz i wrócić.</translation>
+        <translation>Odrzuć wersje robocze otwarte przez ten formularz i wrócić.</translation>
     </message>
     <message>
         <source>Item</source>
@@ -51100,7 +51100,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>design/admin/parts/sortheader</name>
     <message>
         <source>Sort by %column</source>
-        <translation>Sortować według %column</translation>
+        <translation>Sortuj według %column</translation>
     </message>
 </context>
 <context>
@@ -51141,11 +51141,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Make the copy</source>
-        <translation>Utworzyć kopię</translation>
+        <translation>Utwórz kopię</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -51199,15 +51199,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>do everything, in every module</source>
-        <translation>robić wszystko we wszystkich modułach</translation>
+        <translation>rób wszystko we wszystkich modułach</translation>
     </message>
     <message>
         <source>use every function of the %module module</source>
-        <translation>używać wszystkich funkcji modułu %module</translation>
+        <translation>używaj wszystkich funkcji modułu %module</translation>
     </message>
     <message>
         <source>use the function %function of the %module module</source>
-        <translation>używać funkcji %function modułu %module</translation>
+        <translation>używaj funkcji %function modułu %module</translation>
     </message>
     <message>
         <source>%label: none of the chosen values exists any more</source>
@@ -51339,251 +51339,251 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>do everything with content</source>
-        <translation>robić wszystko z treścią</translation>
+        <translation>rób wszystko z treścią</translation>
     </message>
     <message>
         <source>do everything in the user module (log in, edit accounts, activate users)</source>
-        <translation>robić wszystko w module user (logowanie, edycja kont, aktywacja użytkowników)</translation>
+        <translation>rób wszystko w module user (logowanie, edycja kont, aktywacja użytkowników)</translation>
     </message>
     <message>
         <source>manage roles and policies</source>
-        <translation>zarządzać rolami i zasadami</translation>
+        <translation>zarządzaj rolami i zasadami</translation>
     </message>
     <message>
         <source>use every setup and maintenance page</source>
-        <translation>używać wszystkich stron konfiguracji i konserwacji</translation>
+        <translation>używaj wszystkich stron konfiguracji i konserwacji</translation>
     </message>
     <message>
         <source>manage sections</source>
-        <translation>zarządzać sekcjami</translation>
+        <translation>zarządzaj sekcjami</translation>
     </message>
     <message>
         <source>manage content classes</source>
-        <translation>zarządzać klasami treści</translation>
+        <translation>zarządzaj klasami treści</translation>
     </message>
     <message>
         <source>manage object states</source>
-        <translation>zarządzać stanami obiektów</translation>
+        <translation>zarządzaj stanami obiektów</translation>
     </message>
     <message>
         <source>do everything in the shop</source>
-        <translation>robić wszystko w sklepie</translation>
+        <translation>rób wszystko w sklepie</translation>
     </message>
     <message>
         <source>manage and read RSS feeds</source>
-        <translation>zarządzać kanałami RSS i je czytać</translation>
+        <translation>zarządzaj kanałami RSS i je czytać</translation>
     </message>
     <message>
         <source>manage links</source>
-        <translation>zarządzać linkami</translation>
+        <translation>zarządzaj linkami</translation>
     </message>
     <message>
         <source>use every search function</source>
-        <translation>używać wszystkich funkcji wyszukiwania</translation>
+        <translation>używaj wszystkich funkcji wyszukiwania</translation>
     </message>
     <message>
         <source>read content</source>
-        <translation>odczytywać treść</translation>
+        <translation>odczytuj treść</translation>
     </message>
     <message>
         <source>create content</source>
-        <translation>tworzyć treść</translation>
+        <translation>twórz treść</translation>
     </message>
     <message>
         <source>edit content</source>
-        <translation>edytować treść</translation>
+        <translation>edytuj treść</translation>
     </message>
     <message>
         <source>remove content</source>
-        <translation>usuwać treść</translation>
+        <translation>usuwaj treść</translation>
     </message>
     <message>
         <source>move content</source>
-        <translation>przenosić treść</translation>
+        <translation>przenoś treść</translation>
     </message>
     <message>
         <source>hide and reveal content</source>
-        <translation>ukrywać i odkrywać treść</translation>
+        <translation>ukrywaj i odkrywać treść</translation>
     </message>
     <message>
         <source>translate content</source>
-        <translation>tłumaczyć treść</translation>
+        <translation>tłumacz treść</translation>
     </message>
     <message>
         <source>manage the locations of content</source>
-        <translation>zarządzać lokalizacjami treści</translation>
+        <translation>zarządzaj lokalizacjami treści</translation>
     </message>
     <message>
         <source>read old versions and drafts of content</source>
-        <translation>odczytywać stare wersje i wersje robocze treści</translation>
+        <translation>odczytuj stare wersje i wersje robocze treści</translation>
     </message>
     <message>
         <source>remove versions of content</source>
-        <translation>usuwać wersje treści</translation>
+        <translation>usuwaj wersje treści</translation>
     </message>
     <message>
         <source>compare versions of content</source>
-        <translation>porównywać wersje treści</translation>
+        <translation>porównuj wersje treści</translation>
     </message>
     <message>
         <source>view content as PDF</source>
-        <translation>wyświetlać treść jako PDF</translation>
+        <translation>wyświetlaj treść jako PDF</translation>
     </message>
     <message>
         <source>view embedded content</source>
-        <translation>wyświetlać osadzoną treść</translation>
+        <translation>wyświetlaj osadzoną treść</translation>
     </message>
     <message>
         <source>see what links to content</source>
-        <translation>sprawdzać, co linkuje do treści</translation>
+        <translation>sprawdzaj, co linkuje do treści</translation>
     </message>
     <message>
         <source>restore content from the trash</source>
-        <translation>przywracać treść z kosza</translation>
+        <translation>przywracaj treść z kosza</translation>
     </message>
     <message>
         <source>empty the trash</source>
-        <translation>opróżniać kosz</translation>
+        <translation>opróżniaj kosz</translation>
     </message>
     <message>
         <source>use bookmarks</source>
-        <translation>korzystać z zakładek</translation>
+        <translation>korzystaj z zakładek</translation>
     </message>
     <message>
         <source>use the dashboard</source>
-        <translation>korzystać z pulpitu</translation>
+        <translation>korzystaj z pulpitu</translation>
     </message>
     <message>
         <source>see the list of pending content</source>
-        <translation>wyświetlać listę oczekującej treści</translation>
+        <translation>wyświetlaj listę oczekującej treści</translation>
     </message>
     <message>
         <source>send content to a friend</source>
-        <translation>wysyłać treść znajomemu</translation>
+        <translation>wysyłaj treść znajomemu</translation>
     </message>
     <message>
         <source>manage URL aliases</source>
-        <translation>zarządzać aliasami URL</translation>
+        <translation>zarządzaj aliasami URL</translation>
     </message>
     <message>
         <source>publish content</source>
-        <translation>publikować treść</translation>
+        <translation>publikuj treść</translation>
     </message>
     <message>
         <source>log in</source>
-        <translation>logować się</translation>
+        <translation>loguj się</translation>
     </message>
     <message>
         <source>change their password</source>
-        <translation>zmieniać własne hasło</translation>
+        <translation>zmieniaj własne hasło</translation>
     </message>
     <message>
         <source>change their preferences</source>
-        <translation>zmieniać własne preferencje</translation>
+        <translation>zmieniaj własne preferencje</translation>
     </message>
     <message>
         <source>register an account</source>
-        <translation>rejestrować konto</translation>
+        <translation>rejestruj konto</translation>
     </message>
     <message>
         <source>edit their own account</source>
-        <translation>edytować własne konto</translation>
+        <translation>edytuj własne konto</translation>
     </message>
     <message>
         <source>activate user accounts</source>
-        <translation>aktywować konta użytkowników</translation>
+        <translation>aktywuj konta użytkowników</translation>
     </message>
     <message>
         <source>use the setup pages</source>
-        <translation>korzystać ze stron konfiguracji</translation>
+        <translation>korzystaj ze stron konfiguracji</translation>
     </message>
     <message>
         <source>clear caches</source>
-        <translation>czyścić pamięć podręczną</translation>
+        <translation>czyść pamięć podręczną</translation>
     </message>
     <message>
         <source>view the system information</source>
-        <translation>wyświetlać informacje o systemie</translation>
+        <translation>wyświetlaj informacje o systemie</translation>
     </message>
     <message>
         <source>assign sections to content</source>
-        <translation>przypisywać treści do sekcji</translation>
+        <translation>przypisuj treści do sekcji</translation>
     </message>
     <message>
         <source>edit sections</source>
-        <translation>edytować sekcje</translation>
+        <translation>edytuj sekcje</translation>
     </message>
     <message>
         <source>view sections</source>
-        <translation>wyświetlać sekcje</translation>
+        <translation>wyświetlaj sekcje</translation>
     </message>
     <message>
         <source>change the states of content</source>
-        <translation>zmieniać stany treści</translation>
+        <translation>zmieniaj stany treści</translation>
     </message>
     <message>
         <source>read RSS feeds</source>
-        <translation>czytać kanały RSS</translation>
+        <translation>czytaj kanały RSS</translation>
     </message>
     <message>
         <source>edit RSS feeds</source>
-        <translation>edytować kanały RSS</translation>
+        <translation>edytuj kanały RSS</translation>
     </message>
     <message>
         <source>buy in the shop</source>
-        <translation>kupować w sklepie</translation>
+        <translation>kupuj w sklepie</translation>
     </message>
     <message>
         <source>administer the shop</source>
-        <translation>administrować sklepem</translation>
+        <translation>administruj sklepem</translation>
     </message>
     <message>
         <source>change the status of orders</source>
-        <translation>zmieniać stan zamówień</translation>
+        <translation>zmieniaj stan zamówień</translation>
     </message>
     <message>
         <source>set up the shop</source>
-        <translation>konfigurować sklep</translation>
+        <translation>konfiguruj sklep</translation>
     </message>
     <message>
         <source>edit content classes</source>
-        <translation>edytować klasy treści</translation>
+        <translation>edytuj klasy treści</translation>
     </message>
     <message>
         <source>use notifications</source>
-        <translation>korzystać z powiadomień</translation>
+        <translation>korzystaj z powiadomień</translation>
     </message>
     <message>
         <source>use collaboration</source>
-        <translation>korzystać ze współpracy</translation>
+        <translation>korzystaj ze współpracy</translation>
     </message>
     <message>
         <source>search</source>
-        <translation>wyszukiwać</translation>
+        <translation>wyszukuj</translation>
     </message>
     <message>
         <source>view tags</source>
-        <translation>wyświetlać tagi</translation>
+        <translation>wyświetlaj tagi</translation>
     </message>
     <message>
         <source>edit tags</source>
-        <translation>edytować tagi</translation>
+        <translation>edytuj tagi</translation>
     </message>
     <message>
         <source>call server functions from the browser</source>
-        <translation>wywoływać funkcje serwera z przeglądarki</translation>
+        <translation>wywołuj funkcje serwera z przeglądarki</translation>
     </message>
     <message>
         <source>use the website toolbar</source>
-        <translation>korzystać z paska narzędzi witryny</translation>
+        <translation>korzystaj z paska narzędzi witryny</translation>
     </message>
     <message>
         <source>check user accounts, and disable, enable and unlock them</source>
-        <translation>sprawdzać konta użytkowników oraz je wyłączać, włączać i odblokowywać</translation>
+        <translation>sprawdzaj konta użytkowników oraz je wyłączać, włączać i odblokowywać</translation>
     </message>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
-        <translation>dezaktywować konta użytkowników i przenosić je do grupy dezaktywowanych użytkowników oraz z powrotem</translation>
+        <translation>dezaktywuj konta użytkowników i przenosić je do grupy dezaktywowanych użytkowników oraz z powrotem</translation>
     </message>
 </context>
 <context>
@@ -51626,19 +51626,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Run for site</source>
-        <translation>Uruchomić dla witryny</translation>
+        <translation>Uruchom dla witryny</translation>
     </message>
     <message>
         <source>Stop running job</source>
-        <translation>Zatrzymać działające zadanie</translation>
+        <translation>Zatrzymaj działające zadanie</translation>
     </message>
     <message>
         <source>Clear logs</source>
-        <translation>Wyczyścić dzienniki</translation>
+        <translation>Wyczyść dzienniki</translation>
     </message>
     <message>
         <source>Show or hide the output</source>
-        <translation>Pokazać lub ukryć dane wyjściowe</translation>
+        <translation>Pokaż lub ukryć dane wyjściowe</translation>
     </message>
     <message>
         <source>Output</source>
@@ -51654,7 +51654,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Run</source>
-        <translation>Uruchomić</translation>
+        <translation>Uruchom</translation>
     </message>
     <message>
         <source>Runs every part, one after another.</source>
@@ -51746,7 +51746,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Compact</source>
@@ -51806,15 +51806,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Resume all parts</source>
-        <translation>Wznowić wszystkie części</translation>
+        <translation>Wznów wszystkie części</translation>
     </message>
     <message>
         <source>Pause all parts</source>
-        <translation>Wstrzymać wszystkie części</translation>
+        <translation>Wstrzymaj wszystkie części</translation>
     </message>
     <message>
         <source>Leave every cronjob part out until resumed, whoever starts it</source>
-        <translation>Pomijać każdą część zadania cron do czasu wznowienia, niezależnie od tego, kto ją uruchamia</translation>
+        <translation>Pomijaj każdą część zadania cron do czasu wznowienia, niezależnie od tego, kto ją uruchamia</translation>
     </message>
     <message>
         <source>Left out by runcronjobs.php until resumed</source>
@@ -51826,19 +51826,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Resume the %part part</source>
-        <translation>Wznowić część %part</translation>
+        <translation>Wznów część %part</translation>
     </message>
     <message>
         <source>Resume</source>
-        <translation>Wznowić</translation>
+        <translation>Wznów</translation>
     </message>
     <message>
         <source>Leave the %part part out until resumed, whoever starts it</source>
-        <translation>Pomijać część %part do czasu wznowienia, niezależnie od tego, kto ją uruchamia</translation>
+        <translation>Pomijaj część %part do czasu wznowienia, niezależnie od tego, kto ją uruchamia</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Wstrzymać</translation>
+        <translation>Wstrzymaj</translation>
     </message>
     <message>
         <source>Since %since by %user</source>
@@ -51882,7 +51882,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Run the whole %part part now</source>
-        <translation>Uruchomić teraz całą część %part</translation>
+        <translation>Uruchom teraz całą część %part</translation>
     </message>
     <message>
         <source>not found in any cronjob directory</source>
@@ -51890,7 +51890,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Run %script on its own</source>
-        <translation>Uruchomić osobno %script</translation>
+        <translation>Uruchom osobno %script</translation>
     </message>
     <message>
         <source>This script cannot be run from here</source>
@@ -51946,7 +51946,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show or hide the crontab</source>
-        <translation>Pokazać lub ukryć crontab</translation>
+        <translation>Pokaż lub ukryć crontab</translation>
     </message>
     <message>
         <source>What is scheduled now, and the lines that would schedule the rest</source>
@@ -52182,11 +52182,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Find a part or script</source>
-        <translation>Znaleźć część lub skrypt</translation>
+        <translation>Znajdź część lub skrypt</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All</source>
@@ -52218,7 +52218,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Run part</source>
-        <translation>Uruchomić część</translation>
+        <translation>Uruchom część</translation>
     </message>
     <message>
         <source>Schedule</source>
@@ -52254,11 +52254,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy the command that runs %part</source>
-        <translation>Skopiować polecenie uruchamiające %part</translation>
+        <translation>Skopiuj polecenie uruchamiające %part</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Scripts (%count)</source>
@@ -52266,11 +52266,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy the command that runs %script on its own</source>
-        <translation>Skopiować polecenie uruchamiające osobno %script</translation>
+        <translation>Skopiuj polecenie uruchamiające osobno %script</translation>
     </message>
     <message>
         <source>Copy command</source>
-        <translation>Skopiować polecenie</translation>
+        <translation>Skopiuj polecenie</translation>
     </message>
     <message>
         <source>No cronjob part on this page matches.</source>
@@ -52294,7 +52294,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy the suggested entries</source>
-        <translation>Skopiować sugerowane wpisy</translation>
+        <translation>Skopiuj sugerowane wpisy</translation>
     </message>
     <message>
         <source>Every part is scheduled.</source>
@@ -52441,7 +52441,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Let my own address (%ip) still see the site</source>
-        <translation>Pozwolić własnemu adresowi (%ip) nadal widzieć witrynę</translation>
+        <translation>Pozwól własnemu adresowi (%ip) nadal widzieć witrynę</translation>
     </message>
     <message>
         <source>The administration stays reachable while the site is offline, so it can be switched off again here.</source>
@@ -52449,11 +52449,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Switch maintenance off</source>
-        <translation>Wyłączyć konserwację</translation>
+        <translation>Wyłącz konserwację</translation>
     </message>
     <message>
         <source>Switch maintenance on</source>
-        <translation>Włączyć konserwację</translation>
+        <translation>Włącz konserwację</translation>
     </message>
     <message>
         <source>Takes the public site offline while you work on it: every visitor gets a maintenance page instead of the site, and the administration stays reachable so the site can be brought back from here.</source>
@@ -52489,7 +52489,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Bring the site back online</source>
-        <translation>Przywrócić witrynę online</translation>
+        <translation>Przywróć witrynę online</translation>
     </message>
     <message>
         <source>An installation is still running: visitors would meet a half-built site.</source>
@@ -52565,7 +52565,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Plan the maintenance window</source>
-        <translation>Zaplanować okno konserwacji</translation>
+        <translation>Zaplanuj okno konserwacji</translation>
     </message>
     <message>
         <source>Left empty, the page says: %text</source>
@@ -52601,7 +52601,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Take the site offline</source>
-        <translation>Wyłączyć witrynę</translation>
+        <translation>Wyłącz witrynę</translation>
     </message>
     <message>
         <source>Also empties the caches that answer ahead of the site.</source>
@@ -52641,11 +52641,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy the command: %what</source>
-        <translation>Skopiować polecenie: %what</translation>
+        <translation>Skopiuj polecenie: %what</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Switch on takes --message="...", --until=30m, 2h or a date and time, and --allow-ip=1.2.3.4,5.6.7.8. Run as root, add --allow-root-user. ./console exp:maintenance on|off|status does the same.</source>
@@ -52785,15 +52785,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Switch on</source>
-        <translation>Włączyć</translation>
+        <translation>Włącz</translation>
     </message>
     <message>
         <source>Switch off</source>
-        <translation>Wyłączyć</translation>
+        <translation>Wyłącz</translation>
     </message>
     <message>
         <source>Show the state</source>
-        <translation>Pokazać stan</translation>
+        <translation>Pokaż stan</translation>
     </message>
     <message>
         <source>1 day</source>
@@ -52852,11 +52852,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Start preloading</source>
-        <translation>Rozpocząć wstępne ładowanie</translation>
+        <translation>Rozpocznij wstępne ładowanie</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Zatrzymać</translation>
+        <translation>Zatrzymaj</translation>
     </message>
     <message>
         <source>Idle. Press Start preloading to begin.</source>
@@ -53024,7 +53024,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation>Odświeżyć</translation>
+        <translation>Odśwież</translation>
     </message>
     <message>
         <source>Output</source>
@@ -53036,7 +53036,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Start a preload</source>
-        <translation>Rozpocząć wstępne ładowanie</translation>
+        <translation>Rozpocznij wstępne ładowanie</translation>
     </message>
     <message>
         <source>Choose the site and how far to go. A dry run shows the address and the starting pages without requesting anything.</source>
@@ -53060,7 +53060,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Also check the images on each page</source>
-        <translation>Sprawdzić także obrazy na każdej stronie</translation>
+        <translation>Sprawdź także obrazy na każdej stronie</translation>
     </message>
     <message>
         <source>The pages make their image aliases when they are rendered. This also requests every image they show, once, and lists the ones that are missing with the pages that show them.</source>
@@ -53168,7 +53168,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Run</source>
-        <translation>Uruchomić</translation>
+        <translation>Uruchom</translation>
     </message>
     <message>
         <source>Result</source>
@@ -53244,7 +53244,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show it in the list of runs</source>
-        <translation>Pokazać na liście uruchomień</translation>
+        <translation>Pokaż na liście uruchomień</translation>
     </message>
 </context>
 <context>
@@ -53407,11 +53407,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>lines</source>
@@ -53423,19 +53423,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>required</source>
@@ -53634,15 +53634,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Tick all</source>
-        <translation>Zaznaczyć wszystkie</translation>
+        <translation>Zaznacz wszystkie</translation>
     </message>
     <message>
         <source>Tick none</source>
-        <translation>Odznaczyć wszystkie</translation>
+        <translation>Odznacz wszystkie</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>What it will write</source>
@@ -53682,11 +53682,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>bytes</source>
@@ -53694,15 +53694,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>Becomes extension/%name and design/%name.</source>
@@ -53945,11 +53945,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>lines</source>
@@ -53961,19 +53961,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -54881,7 +54881,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Send the visitor somewhere else, if that is the answer. Doing nothing here keeps them where they are and lets the templates differ instead, which is usually the better of the two.</source>
-        <translation>Przekierować odwiedzającego gdzie indziej, jeśli taka jest odpowiedź. Brak działania tutaj pozostawia go na miejscu i pozwala zamiast tego różnić się szablonom, co zwykle jest lepszym z dwóch rozwiązań.</translation>
+        <translation>Przekieruj odwiedzającego gdzie indziej, jeśli taka jest odpowiedź. Brak działania tutaj pozostawia go na miejscu i pozwala zamiast tego różnić się szablonom, co zwykle jest lepszym z dwóch rozwiązań.</translation>
     </message>
     <message>
         <source>Looks at one event and adds whoever should hear about it, with $event-&gt;addCollectionItem(). Called once per event by the notification cronjob. Return STATUS_ACCEPTED when done.</source>
@@ -55033,7 +55033,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Change the request, or let it be. Nothing has answered yet.</source>
-        <translation>Zmienić żądanie lub pozostawić je bez zmian. Nic jeszcze nie odpowiedziało.</translation>
+        <translation>Zmień żądanie lub pozostawić je bez zmian. Nic jeszcze nie odpowiedziało.</translation>
     </message>
     <message>
         <source>The last word on what is sent. Change the response in place; nothing looks at what this returns.</source>
@@ -55041,7 +55041,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Change the result in place. It has not been serialised yet, so this is the last point at which it is still ordinary php.</source>
-        <translation>Zmienić wynik na miejscu. Nie został jeszcze serializowany, więc to ostatni moment, w którym jest nadal zwykłym PHP.</translation>
+        <translation>Zmień wynik na miejscu. Nie został jeszcze serializowany, więc to ostatni moment, w którym jest nadal zwykłym PHP.</translation>
     </message>
     <message>
         <source>Whether this route still has to be authenticated. True means it does, which is the safe answer; false lets the request past without a caller. Returning true when unsure is how a mistake here costs nothing.</source>
@@ -55336,11 +55336,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>lines</source>
@@ -55352,19 +55352,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -55519,7 +55519,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Choose a file this installation can see...</source>
-        <translation>Wybrać plik widoczny dla tej instalacji...</translation>
+        <translation>Wybierz plik widoczny dla tej instalacji...</translation>
     </message>
     <message>
         <source>Typed again each time it is needed; it is never written back into this page.</source>
@@ -55531,7 +55531,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Connect and list tables</source>
-        <translation>Połączyć i wyświetlić tabele</translation>
+        <translation>Połącz i wyświetlić tabele</translation>
     </message>
     <message>
         <source>%count tables visible</source>
@@ -55559,11 +55559,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Tick none</source>
-        <translation>Odznaczyć wszystkie</translation>
+        <translation>Odznacz wszystkie</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>Table</source>
@@ -55683,11 +55683,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>lines</source>
@@ -55699,15 +55699,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -55986,11 +55986,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>bytes</source>
@@ -55998,19 +55998,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>ezcontentobject, or classes/datatypes</source>
@@ -56289,11 +56289,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>lines</source>
@@ -56305,19 +56305,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -56676,15 +56676,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Narrow the list</source>
-        <translation>Zawęzić listę</translation>
+        <translation>Zawęź listę</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Showing %shown of %total.</source>
@@ -56700,7 +56700,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Also load every class</source>
-        <translation>Załadować także każdą klasę</translation>
+        <translation>Załaduj także każdą klasę</translation>
     </message>
     <message>
         <source>Takes a few seconds. It loads every class this installation declares, in a child process so that one php refuses cannot take this page with it - which is how the last fault of that kind was found.</source>
@@ -56768,7 +56768,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>Settings that name a class</source>
@@ -56868,7 +56868,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Clear the caches: php bin/php/ezcache.php --clear-all</source>
-        <translation>Wyczyścić pamięć podręczną: php bin/php/ezcache.php --clear-all</translation>
+        <translation>Wyczyść pamięć podręczną: php bin/php/ezcache.php --clear-all</translation>
     </message>
     <message>
         <source>If it carries no templates, take the line out of design.ini: it costs a directory lookup per design resolution and buys nothing.</source>
@@ -57127,11 +57127,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>lines</source>
@@ -57143,19 +57143,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>%open...%close, with the body handed over unprocessed to draw none, one or many times. This is how section and foreach work.</source>
@@ -57386,11 +57386,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Tick none</source>
-        <translation>Odznaczyć wszystkie</translation>
+        <translation>Odznacz wszystkie</translation>
     </message>
     <message>
         <source>Refresh preview</source>
-        <translation>Odświeżyć podgląd</translation>
+        <translation>Odśwież podgląd</translation>
     </message>
     <message>
         <source>Operation</source>
@@ -57490,11 +57490,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open all</source>
-        <translation>Otworzyć wszystkie</translation>
+        <translation>Otwórz wszystkie</translation>
     </message>
     <message>
         <source>Close all</source>
-        <translation>Zamknąć wszystkie</translation>
+        <translation>Zamknij wszystkie</translation>
     </message>
     <message>
         <source>lines</source>
@@ -57506,15 +57506,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create in extension/</source>
-        <translation>Utworzyć w extension/</translation>
+        <translation>Utwórz w extension/</translation>
     </message>
     <message>
         <source>Download as zip</source>
-        <translation>Pobrać jako zip</translation>
+        <translation>Pobierz jako zip</translation>
     </message>
     <message>
         <source>Back to the RAD tools</source>
-        <translation>Wrócić do narzędzi RAD</translation>
+        <translation>Wróć do narzędzi RAD</translation>
     </message>
     <message>
         <source>Lower case letters and digits.</source>
@@ -57522,7 +57522,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Require approval</source>
-        <translation>Wymagać zatwierdzenia</translation>
+        <translation>Wymagaj zatwierdzenia</translation>
     </message>
     <message>
         <source>%lines lines, %bytes bytes</source>
@@ -57893,11 +57893,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download CSV</source>
-        <translation>Pobrać CSV</translation>
+        <translation>Pobierz CSV</translation>
     </message>
     <message>
         <source>Download text</source>
-        <translation>Pobrać tekst</translation>
+        <translation>Pobierz tekst</translation>
     </message>
     <message>
         <source>Compares the tables, fields and indexes of the database with the schema that ships with Exponential and the active extensions, and shows the SQL that would bring the database in line. Nothing is run: read the SQL, make a backup, then run what you agree with yourself.</source>
@@ -57905,7 +57905,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download SQL</source>
-        <translation>Pobrać SQL</translation>
+        <translation>Pobierz SQL</translation>
     </message>
     <message>
         <source>Checking. This takes a few seconds; the page reloads with the result.</source>
@@ -57973,7 +57973,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Find a file</source>
-        <translation>Znaleźć plik</translation>
+        <translation>Znajdź plik</translation>
     </message>
     <message>
         <source>Where</source>
@@ -57989,7 +57989,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>All</source>
@@ -58332,15 +58332,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation>Edytować profil</translation>
+        <translation>Edytuj profil</translation>
     </message>
     <message>
         <source>Show in the content tree</source>
-        <translation>Pokazać w drzewie treści</translation>
+        <translation>Pokaż w drzewie treści</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Security hints</source>
@@ -58468,11 +58468,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Manage your account</source>
-        <translation>Zarządzać kontem</translation>
+        <translation>Zarządzaj kontem</translation>
     </message>
     <message>
         <source>Manage this account</source>
-        <translation>Zarządzać tym kontem</translation>
+        <translation>Zarządzaj tym kontem</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -58492,15 +58492,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Change the password you sign in with.</source>
-        <translation>Zmienić hasło używane do logowania.</translation>
+        <translation>Zmień hasło używane do logowania.</translation>
     </message>
     <message>
         <source>Set a new password for this user.</source>
-        <translation>Ustawić nowe hasło dla tego użytkownika.</translation>
+        <translation>Ustaw nowe hasło dla tego użytkownika.</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Zmienić hasło</translation>
+        <translation>Zmień hasło</translation>
     </message>
     <message>
         <source>Account settings</source>
@@ -58508,11 +58508,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Enable or disable the account, reset failed sign-ins, and see its API keys.</source>
-        <translation>Włączyć lub wyłączyć konto, wyzerować nieudane logowania i zobaczyć jego klucze API.</translation>
+        <translation>Włącz lub wyłączyć konto, wyzerować nieudane logowania i zobaczyć jego klucze API.</translation>
     </message>
     <message>
         <source>Open settings</source>
-        <translation>Otworzyć ustawienia</translation>
+        <translation>Otwórz ustawienia</translation>
     </message>
     <message>
         <source>Two-step sign-in</source>
@@ -58528,11 +58528,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Manage</source>
-        <translation>Zarządzać</translation>
+        <translation>Zarządzaj</translation>
     </message>
     <message>
         <source>Turn on</source>
-        <translation>Włączyć</translation>
+        <translation>Włącz</translation>
     </message>
     <message>
         <source>On, authenticator app</source>
@@ -58556,15 +58556,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show and revoke the API keys of this user.</source>
-        <translation>Pokazać i unieważnić klucze API tego użytkownika.</translation>
+        <translation>Pokaż i unieważnić klucze API tego użytkownika.</translation>
     </message>
     <message>
         <source>Manage my API keys</source>
-        <translation>Zarządzać moimi kluczami API</translation>
+        <translation>Zarządzaj moimi kluczami API</translation>
     </message>
     <message>
         <source>Show API keys</source>
-        <translation>Pokazać klucze API</translation>
+        <translation>Pokaż klucze API</translation>
     </message>
     <message>
         <source>%active active, %total in all</source>
@@ -58580,7 +58580,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open bookmarks</source>
-        <translation>Otworzyć zakładki</translation>
+        <translation>Otwórz zakładki</translation>
     </message>
     <message>
         <source>Notifications</source>
@@ -58600,7 +58600,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Choose which e-mail you get, download your e-mail data, or stop all optional e-mail.</source>
-        <translation>Wybrać otrzymywane wiadomości e-mail, pobrać dane e-mail lub zrezygnować ze wszystkich opcjonalnych wiadomości e-mail.</translation>
+        <translation>Wybierz otrzymywane wiadomości e-mail, pobrać dane e-mail lub zrezygnować ze wszystkich opcjonalnych wiadomości e-mail.</translation>
     </message>
     <message>
         <source>The e-mail preferences and consents of this user.</source>
@@ -58608,7 +58608,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open e-mail preferences</source>
-        <translation>Otworzyć preferencje e-mail</translation>
+        <translation>Otwórz preferencje e-mail</translation>
     </message>
 </context>
 <context>
@@ -58671,19 +58671,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Find users</source>
-        <translation>Znaleźć użytkowników</translation>
+        <translation>Znajdź użytkowników</translation>
     </message>
     <message>
         <source>Find a registration</source>
-        <translation>Znaleźć rejestrację</translation>
+        <translation>Znajdź rejestrację</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Clear search</source>
-        <translation>Wyczyścić wyszukiwanie</translation>
+        <translation>Wyczyść wyszukiwanie</translation>
     </message>
     <message>
         <source>Any part of the login, the e-mail address or the name.</source>
@@ -58695,7 +58695,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Reverse the order</source>
-        <translation>Odwrócić kolejność</translation>
+        <translation>Odwróć kolejność</translation>
     </message>
     <message>
         <source>Registrations matching “%search”</source>
@@ -58711,11 +58711,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Registered</source>
@@ -58759,11 +58759,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Activate the ticked users</source>
-        <translation>Aktywować zaznaczonych użytkowników</translation>
+        <translation>Aktywuj zaznaczonych użytkowników</translation>
     </message>
     <message>
         <source>Send the activation mail again</source>
-        <translation>Wysłać ponownie wiadomość aktywacyjną</translation>
+        <translation>Wyślij ponownie wiadomość aktywacyjną</translation>
     </message>
     <message>
         <source>Each ticked user gets a new activation mail with a new link; the link of the earlier mail stops working.</source>
@@ -58775,7 +58775,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Send the mail to the ticked users</source>
-        <translation>Wysłać wiadomość do zaznaczonych użytkowników</translation>
+        <translation>Wyślij wiadomość do zaznaczonych użytkowników</translation>
     </message>
     <message>
         <source>The ticked registrations are removed for good, with their user objects. This cannot be undone. Activated users are never removed here.</source>
@@ -58783,15 +58783,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove the ticked users</source>
-        <translation>Usunąć zaznaczonych użytkowników</translation>
+        <translation>Usuń zaznaczonych użytkowników</translation>
     </message>
     <message>
         <source>Remove all %count matching the search</source>
-        <translation>Usunąć wszystkich pasujących do wyszukiwania (%count)</translation>
+        <translation>Usuń wszystkich pasujących do wyszukiwania (%count)</translation>
     </message>
     <message>
         <source>Remove all unactivated users</source>
-        <translation>Usunąć wszystkich nieaktywowanych użytkowników</translation>
+        <translation>Usuń wszystkich nieaktywowanych użytkowników</translation>
     </message>
     <message>
         <source>The %count unactivated users matching “%search” are removed for good, on every page, not only this one. This cannot be undone.</source>
@@ -58807,11 +58807,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove the %count matching users</source>
-        <translation>Usunąć pasujących użytkowników (%count)</translation>
+        <translation>Usuń pasujących użytkowników (%count)</translation>
     </message>
     <message>
         <source>Remove all %count</source>
-        <translation>Usunąć wszystkich (%count)</translation>
+        <translation>Usuń wszystkich (%count)</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -58839,7 +58839,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Activate your account</source>
-        <translation>Aktywować konto</translation>
+        <translation>Aktywuj konto</translation>
     </message>
     <message>
         <source>Email</source>
@@ -58847,11 +58847,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Activate account</source>
-        <translation>Aktywować konto</translation>
+        <translation>Aktywuj konto</translation>
     </message>
     <message>
         <source>Sign in</source>
-        <translation>Zalogować się</translation>
+        <translation>Zaloguj się</translation>
     </message>
     <message>
         <source>If the button does not work, copy this address into your browser: %url</source>
@@ -58877,7 +58877,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Comment this article!</source>
-        <translation>Skomentować ten artykuł!</translation>
+        <translation>Skomentuj ten artykuł!</translation>
     </message>
     <message>
         <source>New comment</source>
@@ -58888,7 +58888,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>design/mysite/line_article</name>
     <message>
         <source>Read more...</source>
-        <translation>Czytać więcej...</translation>
+        <translation>Czytaj więcej...</translation>
     </message>
 </context>
 <context>
@@ -58937,7 +58937,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Reload the form</source>
-        <translation>Wczytać formularz ponownie</translation>
+        <translation>Wczytaj formularz ponownie</translation>
     </message>
     <message>
         <source>Go to the front page</source>
@@ -58959,11 +58959,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>design/standard/shop/orderreceipt</name>
     <message>
         <source>Print</source>
-        <translation>Drukować</translation>
+        <translation>Drukuj</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Pobrać</translation>
+        <translation>Pobierz</translation>
     </message>
     <message>
         <source>Bookmark this page to come back to your receipt at any time; you will be asked to sign in.</source>
@@ -59070,7 +59070,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Continue</source>
-        <translation>Kontynuować</translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <source>Your password was not changed</source>
@@ -59102,7 +59102,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Generate a strong password</source>
-        <translation>Wygenerować silne hasło</translation>
+        <translation>Wygeneruj silne hasło</translation>
     </message>
     <message>
         <source>Confirm new password</source>
@@ -59114,11 +59114,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Zmienić hasło</translation>
+        <translation>Zmień hasło</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -59495,7 +59495,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Install the extension, or take the line out of design.ini.</source>
-        <translation>Zainstalować rozszerzenie albo usunąć ten wiersz z design.ini.</translation>
+        <translation>Zainstaluj rozszerzenie albo usunąć ten wiersz z design.ini.</translation>
     </message>
     <message>
         <source>If the extension is supposed to carry templates, the directory has to be extension/%name/design/&lt;designname&gt;/templates/ - the design name in the middle is the part that is usually missed.</source>
@@ -59523,7 +59523,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Clear the caches: php bin/php/ezcache.php --clear-all</source>
-        <translation>Wyczyścić pamięć podręczną: php bin/php/ezcache.php --clear-all</translation>
+        <translation>Wyczyść pamięć podręczną: php bin/php/ezcache.php --clear-all</translation>
     </message>
     <message>
         <source>Every address beginning /%name/ answers with a module not found error.</source>
@@ -59623,7 +59623,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Clear the template caches: php bin/php/ezcache.php --clear-tag=template</source>
-        <translation>Wyczyścić pamięć podręczną szablonów: php bin/php/ezcache.php --clear-tag=template</translation>
+        <translation>Wyczyść pamięć podręczną szablonów: php bin/php/ezcache.php --clear-tag=template</translation>
     </message>
     <message>
         <source>It is in the override autoload map and the kernel has no class of that name, so it overrides nothing and is simply an ordinary class loaded by an unusual route.</source>
@@ -60618,7 +60618,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Products overview with prices</source>
@@ -60934,7 +60934,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Check</source>
-        <translation>Sprawdzić</translation>
+        <translation>Sprawdź</translation>
     </message>
     <message>
         <source>Tip</source>
@@ -61816,7 +61816,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Back to the object</source>
-        <translation>Wrócić do obiektu</translation>
+        <translation>Wróć do obiektu</translation>
     </message>
 </context>
 <context>
@@ -61871,11 +61871,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Revoke</source>
-        <translation>Unieważnić</translation>
+        <translation>Unieważnij</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>API keys of %name</source>
@@ -61915,7 +61915,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show every user</source>
-        <translation>Pokazać wszystkich użytkowników</translation>
+        <translation>Pokaż wszystkich użytkowników</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -61943,7 +61943,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Find keys</source>
-        <translation>Znaleźć klucze</translation>
+        <translation>Znajdź klucze</translation>
     </message>
     <message>
         <source>Name, prefix, login or e-mail</source>
@@ -61959,11 +61959,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Keys</source>
@@ -62007,7 +62007,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Select the key %name for revoking</source>
-        <translation>Zaznaczyć klucz %name do unieważnienia</translation>
+        <translation>Zaznacz klucz %name do unieważnienia</translation>
     </message>
     <message>
         <source>Expires soon</source>
@@ -62035,7 +62035,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Revoke the key %name of %owner</source>
-        <translation>Unieważnić klucz %name użytkownika %owner</translation>
+        <translation>Unieważnij klucz %name użytkownika %owner</translation>
     </message>
     <message>
         <source>Revoking cannot be undone: the owner makes a new key if one is still needed.</source>
@@ -62043,7 +62043,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Revoke selected</source>
-        <translation>Unieważnić zaznaczone</translation>
+        <translation>Unieważnij zaznaczone</translation>
     </message>
     <message>
         <source>Applications sign users in with OAuth and act for them through the REST interface. Personal API keys are the other way in: a user makes one on the site for a script or an integration of their own.</source>
@@ -62071,7 +62071,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>No REST application is registered yet. An application is what a mobile app, a partner site or a service uses to sign users in and call the REST interface for them: create one with New application.</source>
@@ -62079,7 +62079,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Select %name for removal</source>
-        <translation>Zaznaczyć %name do usunięcia</translation>
+        <translation>Zaznacz %name do usunięcia</translation>
     </message>
     <message>
         <source>Authorized by: %count</source>
@@ -62091,11 +62091,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>View the application %name</source>
-        <translation>Wyświetlić aplikację %name</translation>
+        <translation>Wyświetl aplikację %name</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Removed user</source>
@@ -62115,7 +62115,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show the secret</source>
-        <translation>Pokazać sekret</translation>
+        <translation>Pokaż sekret</translation>
     </message>
     <message>
         <source>None: the authorization page cannot send anyone back to the application.</source>
@@ -62163,7 +62163,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -62190,7 +62190,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Sign in to manage your keys</source>
-        <translation>Zalogować się, aby zarządzać kluczami</translation>
+        <translation>Zaloguj się, aby zarządzać kluczami</translation>
     </message>
     <message>
         <source>Keys belong to an account and act as it, so you need to be signed in. You come back to this page afterwards.</source>
@@ -62206,7 +62206,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Sign in</source>
-        <translation>Zalogować się</translation>
+        <translation>Zaloguj się</translation>
     </message>
     <message>
         <source>Forgot your password?</source>
@@ -62222,7 +62222,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Create an account</source>
-        <translation>Utworzyć konto</translation>
+        <translation>Utwórz konto</translation>
     </message>
     <message>
         <source>The key was not made:</source>
@@ -62242,7 +62242,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy key</source>
-        <translation>Skopiować klucz</translation>
+        <translation>Skopiuj klucz</translation>
     </message>
     <message>
         <source>Try it:</source>
@@ -62258,11 +62258,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Revoke the key</source>
-        <translation>Unieważnić klucz</translation>
+        <translation>Unieważnij klucz</translation>
     </message>
     <message>
         <source>Keep it</source>
-        <translation>Zachować</translation>
+        <translation>Zachowaj</translation>
     </message>
     <message>
         <source>Your keys</source>
@@ -62294,11 +62294,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Revoke the key %name</source>
-        <translation>Unieważnić klucz %name</translation>
+        <translation>Unieważnij klucz %name</translation>
     </message>
     <message>
         <source>Revoke</source>
-        <translation>Unieważnić</translation>
+        <translation>Unieważnij</translation>
     </message>
     <message>
         <source>Key</source>
@@ -62330,7 +62330,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Make a new key</source>
-        <translation>Utworzyć nowy klucz</translation>
+        <translation>Utwórz nowy klucz</translation>
     </message>
     <message>
         <source>Your account may not make API keys. If you need one, ask the site administrator to allow it for you.</source>
@@ -62386,7 +62386,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Make the key</source>
-        <translation>Utworzyć klucz</translation>
+        <translation>Utwórz klucz</translation>
     </message>
     <message>
         <source>Using a key</source>
@@ -62406,11 +62406,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Make a personal key for your own scripts and tools to publish through the REST interface.</source>
-        <translation>Utworzyć osobisty klucz dla własnych skryptów i narzędzi, aby publikować przez interfejs REST.</translation>
+        <translation>Utwórz osobisty klucz dla własnych skryptów i narzędzi, aby publikować przez interfejs REST.</translation>
     </message>
     <message>
         <source>Manage my API keys</source>
-        <translation>Zarządzać moimi kluczami API</translation>
+        <translation>Zarządzaj moimi kluczami API</translation>
     </message>
     <message>
         <source>My account</source>
@@ -62525,7 +62525,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Leave out the nodes below</source>
-        <translation>Pominąć węzły poniżej</translation>
+        <translation>Pomiń węzły poniżej</translation>
     </message>
     <message>
         <source>Node ids, separated by commas.</source>
@@ -62545,7 +62545,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Check</source>
-        <translation>Sprawdzić</translation>
+        <translation>Sprawdź</translation>
     </message>
     <message>
         <source>Findings</source>
@@ -62597,7 +62597,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Per page</source>
@@ -62625,7 +62625,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Back to the list</source>
-        <translation>Wrócić do listy</translation>
+        <translation>Wróć do listy</translation>
     </message>
     <message>
         <source>Only the first %count ticked objects are taken; move the others afterwards.</source>
@@ -62669,7 +62669,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Not found, or you have no access to it.</source>
@@ -62769,7 +62769,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Objects</source>
@@ -62781,7 +62781,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Size</source>
@@ -62797,7 +62797,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show %count items per page.</source>
-        <translation>Pokazywać %count elementów na stronie.</translation>
+        <translation>Pokazuj %count elementów na stronie.</translation>
     </message>
     <message>
         <source>Move ticked objects to the trash</source>
@@ -62957,7 +62957,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Choose with the node picker</source>
-        <translation>Wybrać za pomocą selektora węzłów</translation>
+        <translation>Wybierz za pomocą selektora węzłów</translation>
     </message>
     <message>
         <source>Wrong owner</source>
@@ -63089,19 +63089,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Continue the scan</source>
-        <translation>Kontynuować skanowanie</translation>
+        <translation>Kontynuuj skanowanie</translation>
     </message>
     <message>
         <source>Start again</source>
-        <translation>Zacząć od nowa</translation>
+        <translation>Zacznij od nowa</translation>
     </message>
     <message>
         <source>Scan again</source>
-        <translation>Skanować ponownie</translation>
+        <translation>Skanuj ponownie</translation>
     </message>
     <message>
         <source>Scan the storage</source>
-        <translation>Skanować magazyn</translation>
+        <translation>Skanuj magazyn</translation>
     </message>
     <message>
         <source>The scan runs in steps of a few seconds and can be continued later; on a large storage run ./console exp:content-check --storage.</source>
@@ -63181,11 +63181,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Fix owner and mode of ticked files</source>
-        <translation>Naprawić właściciela i uprawnienia zaznaczonych plików</translation>
+        <translation>Napraw właściciela i uprawnienia zaznaczonych plików</translation>
     </message>
     <message>
         <source>Restore ticked files</source>
-        <translation>Przywrócić zaznaczone pliki</translation>
+        <translation>Przywróć zaznaczone pliki</translation>
     </message>
     <message>
         <source>Delete ticked files permanently</source>
@@ -63201,15 +63201,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Restore from the quarantine</source>
-        <translation>Przywrócić z kwarantanny</translation>
+        <translation>Przywróć z kwarantanny</translation>
     </message>
     <message>
         <source>Delete from the quarantine</source>
-        <translation>Usunąć z kwarantanny</translation>
+        <translation>Usuń z kwarantanny</translation>
     </message>
     <message>
         <source>Fix owner and mode</source>
-        <translation>Naprawić właściciela i uprawnienia</translation>
+        <translation>Napraw właściciela i uprawnienia</translation>
     </message>
     <message>
         <source>Moved to the quarantine</source>
@@ -63325,7 +63325,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Confirm for %count files</source>
-        <translation>Potwierdzić dla plików (%count)</translation>
+        <translation>Potwierdź dla plików (%count)</translation>
     </message>
     <message>
         <source>Scanning the storage</source>
@@ -63337,7 +63337,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Stop here</source>
-        <translation>Zatrzymać tutaj</translation>
+        <translation>Zatrzymaj tutaj</translation>
     </message>
     <message>
         <source>The scan goes on by itself. Stop it at any time; it can be continued later.</source>
@@ -63357,11 +63357,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
     <message>
         <source>Choose classes</source>
-        <translation>Wybrać klasy</translation>
+        <translation>Wybierz klasy</translation>
     </message>
     <message>
         <source>All classes</source>
@@ -63373,11 +63373,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Select none</source>
-        <translation>Odznaczyć wszystkie</translation>
+        <translation>Odznacz wszystkie</translation>
     </message>
     <message>
         <source>%selected of %total selected</source>
@@ -63393,15 +63393,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Fix owner and mode of all %count results</source>
-        <translation>Naprawić właściciela i uprawnienia wszystkich wyników (%count)</translation>
+        <translation>Napraw właściciela i uprawnienia wszystkich wyników (%count)</translation>
     </message>
     <message>
         <source>Restore all %count files</source>
-        <translation>Przywrócić wszystkie pliki (%count)</translation>
+        <translation>Przywróć wszystkie pliki (%count)</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation>Zaznaczyć wszystko</translation>
+        <translation>Zaznacz wszystko</translation>
     </message>
     <message>
         <source>File missing</source>
@@ -63433,23 +63433,23 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Regenerate</source>
-        <translation>Wygenerować ponownie</translation>
+        <translation>Wygeneruj ponownie</translation>
     </message>
     <message>
         <source>Restore</source>
-        <translation>Przywrócić</translation>
+        <translation>Przywróć</translation>
     </message>
     <message>
         <source>Re-upload</source>
-        <translation>Przesłać ponownie</translation>
+        <translation>Prześlij ponownie</translation>
     </message>
     <message>
         <source>Remove reference</source>
-        <translation>Usunąć odwołanie</translation>
+        <translation>Usuń odwołanie</translation>
     </message>
     <message>
         <source>Mark for review</source>
-        <translation>Oznaczyć do sprawdzenia</translation>
+        <translation>Oznacz do sprawdzenia</translation>
     </message>
     <message>
         <source>Version %version</source>
@@ -63473,15 +63473,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Restore from another version</source>
-        <translation>Przywrócić z innej wersji</translation>
+        <translation>Przywróć z innej wersji</translation>
     </message>
     <message>
         <source>Re-upload or replace the file</source>
-        <translation>Przesłać ponownie lub zastąpić plik</translation>
+        <translation>Prześlij ponownie lub zastąpić plik</translation>
     </message>
     <message>
         <source>Remove the dead reference</source>
-        <translation>Usunąć martwe odwołanie</translation>
+        <translation>Usuń martwe odwołanie</translation>
     </message>
     <message>
         <source>Missing files in %dir</source>
@@ -63645,7 +63645,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Resolve missing files</source>
-        <translation>Rozwiązać problemy z brakującymi plikami</translation>
+        <translation>Rozwiąż problemy z brakującymi plikami</translation>
     </message>
     <message>
         <source>No row was ticked or no action chosen. Tick the rows first.</source>
@@ -63693,7 +63693,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Confirm for %count field versions</source>
-        <translation>Potwierdzić dla wersji pól (%count)</translation>
+        <translation>Potwierdź dla wersji pól (%count)</translation>
     </message>
     <message>
         <source>%done of %total field versions done, %failed not done, %left to go.</source>
@@ -63701,7 +63701,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Go on with the next batch</source>
-        <translation>Kontynuować z następną partią</translation>
+        <translation>Kontynuuj z następną partią</translation>
     </message>
     <message>
         <source>This page only takes the form of the missing files of the broken relations.</source>
@@ -63713,7 +63713,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Resolve</source>
-        <translation>Rozwiązać</translation>
+        <translation>Rozwiąż</translation>
     </message>
     <message>
         <source>Websites</source>
@@ -63745,7 +63745,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Choose another site or section with the node picker</source>
-        <translation>Wybrać inną witrynę lub sekcję za pomocą selektora węzłów</translation>
+        <translation>Wybierz inną witrynę lub sekcję za pomocą selektora węzłów</translation>
     </message>
 </context>
 <context>
@@ -63764,7 +63764,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>Move to trash</source>
@@ -63780,7 +63780,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove version</source>
-        <translation>Usunąć wersję</translation>
+        <translation>Usuń wersję</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -63860,11 +63860,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Back to the finder</source>
-        <translation>Wrócić do wyszukiwarki</translation>
+        <translation>Wróć do wyszukiwarki</translation>
     </message>
     <message>
         <source>Nothing found, or you have no access to what was found.</source>
@@ -63940,7 +63940,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Repeat</source>
-        <translation>Powtórzyć</translation>
+        <translation>Powtórz</translation>
     </message>
     <message>
         <source>Queued</source>
@@ -64144,11 +64144,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Restore</source>
-        <translation>Przywrócić</translation>
+        <translation>Przywróć</translation>
     </message>
     <message>
         <source>Recognise automatically</source>
-        <translation>Rozpoznać automatycznie</translation>
+        <translation>Rozpoznaj automatycznie</translation>
     </message>
     <message>
         <source>Attribute id</source>
@@ -64216,7 +64216,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Confirm</source>
-        <translation>Potwierdzić</translation>
+        <translation>Potwierdź</translation>
     </message>
 </context>
 <context>
@@ -64411,11 +64411,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Confirm and continue</source>
-        <translation>Potwierdzić i kontynuować</translation>
+        <translation>Potwierdź i kontynuować</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>A filter is not valid, so nothing is shown:</source>
@@ -64451,7 +64451,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download now</source>
-        <translation>Pobrać teraz</translation>
+        <translation>Pobierz teraz</translation>
     </message>
     <message>
         <source>The file starts at once and is sent while it is read; %count events.</source>
@@ -64471,7 +64471,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Start the export</source>
-        <translation>Rozpocząć eksport</translation>
+        <translation>Rozpocznij eksport</translation>
     </message>
     <message>
         <source>Started</source>
@@ -64483,7 +64483,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Pobrać</translation>
+        <translation>Pobierz</translation>
     </message>
     <message>
         <source>%count events</source>
@@ -64635,7 +64635,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Back to the console</source>
-        <translation>Wrócić do konsoli</translation>
+        <translation>Wróć do konsoli</translation>
     </message>
     <message>
         <source>Before</source>
@@ -64695,7 +64695,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download the record (JSON)</source>
-        <translation>Pobrać wpis (JSON)</translation>
+        <translation>Pobierz wpis (JSON)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -64723,7 +64723,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Export audit events</source>
-        <translation>Eksportować zdarzenia audytu</translation>
+        <translation>Eksportuj zdarzenia audytu</translation>
     </message>
     <message>
         <source>Field</source>
@@ -64739,11 +64739,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Filter the audit events</source>
-        <translation>Filtrować zdarzenia audytu</translation>
+        <translation>Filtruj zdarzenia audytu</translation>
     </message>
     <message>
         <source>Filter the charts</source>
-        <translation>Filtrować wykresy</translation>
+        <translation>Filtruj wykresy</translation>
     </message>
     <message>
         <source>Fingerprint</source>
@@ -64939,7 +64939,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove this filter</source>
-        <translation>Usunąć ten filtr</translation>
+        <translation>Usuń ten filtr</translation>
     </message>
     <message>
         <source>Request</source>
@@ -64947,7 +64947,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Wyzerować</translation>
+        <translation>Wyzeruj</translation>
     </message>
     <message>
         <source>Result</source>
@@ -64971,7 +64971,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Search: %kind. Opening this page is itself recorded (system.audit.read).</source>
@@ -65239,7 +65239,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Verify now</source>
-        <translation>Zweryfikować teraz</translation>
+        <translation>Zweryfikuj teraz</translation>
     </message>
     <message>
         <source>not verified yet</source>
@@ -65286,11 +65286,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Change it</source>
-        <translation>Zmienić</translation>
+        <translation>Zmień</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -65357,7 +65357,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Cancelled</source>
@@ -65377,7 +65377,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Continue from the last finished batch.</source>
-        <translation>Kontynuować od ostatniej zakończonej partii.</translation>
+        <translation>Kontynuuj od ostatniej zakończonej partii.</translation>
     </message>
     <message>
         <source>Counts</source>
@@ -65393,7 +65393,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download the whole log</source>
-        <translation>Pobrać cały dziennik</translation>
+        <translation>Pobierz cały dziennik</translation>
     </message>
     <message>
         <source>Duration</source>
@@ -65465,15 +65465,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open the node that failed</source>
-        <translation>Otworzyć węzeł, przy którym wystąpił błąd</translation>
+        <translation>Otwórz węzeł, przy którym wystąpił błąd</translation>
     </message>
     <message>
         <source>Open the parent</source>
-        <translation>Otworzyć element nadrzędny</translation>
+        <translation>Otwórz element nadrzędny</translation>
     </message>
     <message>
         <source>Open the partial copy</source>
-        <translation>Otworzyć częściową kopię</translation>
+        <translation>Otwórz częściową kopię</translation>
     </message>
     <message>
         <source>Opening the result in %seconds s</source>
@@ -65497,7 +65497,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove the partial copy</source>
-        <translation>Usunąć częściową kopię</translation>
+        <translation>Usuń częściową kopię</translation>
     </message>
     <message>
         <source>Remove the partial copy starts a job that deletes it. To copy the subtree, start the copy again.</source>
@@ -65521,7 +65521,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Resume</source>
-        <translation>Wznowić</translation>
+        <translation>Wznów</translation>
     </message>
     <message>
         <source>Running</source>
@@ -65541,7 +65541,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Start a job that removes what the cancelled copy created.</source>
-        <translation>Uruchomić zadanie, które usunie to, co utworzyło anulowane kopiowanie.</translation>
+        <translation>Uruchom zadanie, które usunie to, co utworzyło anulowane kopiowanie.</translation>
     </message>
     <message>
         <source>Started</source>
@@ -65557,7 +65557,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Stop after the current batch. What is done so far is kept.</source>
-        <translation>Zatrzymać po bieżącej partii. To, co już wykonano, zostanie zachowane.</translation>
+        <translation>Zatrzymaj po bieżącej partii. To, co już wykonano, zostanie zachowane.</translation>
     </message>
     <message>
         <source>Stopping after the current batch</source>
@@ -65665,7 +65665,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open the result</source>
-        <translation>Otworzyć wynik</translation>
+        <translation>Otwórz wynik</translation>
     </message>
     <message>
         <source>%done of %total</source>
@@ -65725,7 +65725,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Clear the filters</source>
-        <translation>Wyczyścić filtry</translation>
+        <translation>Wyczyść filtry</translation>
     </message>
     <message>
         <source>Content jobs (%count)</source>
@@ -65789,7 +65789,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otworzyć</translation>
+        <translation>Otwórz</translation>
     </message>
     <message>
         <source>Progress and items</source>
@@ -65797,15 +65797,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Run in the background (%count items: you can leave the page)</source>
-        <translation>Wykonać w tle (elementy: %count; można opuścić stronę)</translation>
+        <translation>Wykonaj w tle (elementy: %count; można opuścić stronę)</translation>
     </message>
     <message>
         <source>Run in the background (recommended for %count items: you can leave the page)</source>
-        <translation>Wykonać w tle (zalecane przy %count elementach; można opuścić stronę)</translation>
+        <translation>Wykonaj w tle (zalecane przy %count elementach; można opuścić stronę)</translation>
     </message>
     <message>
         <source>Run now (this page waits until it is done)</source>
-        <translation>Wykonać teraz (strona czeka na zakończenie)</translation>
+        <translation>Wykonaj teraz (strona czeka na zakończenie)</translation>
     </message>
     <message>
         <source>Selected locations</source>
@@ -65817,7 +65817,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show the job</source>
-        <translation>Pokazać zadanie</translation>
+        <translation>Pokaż zadanie</translation>
     </message>
     <message>
         <source>Source and target</source>
@@ -65869,7 +65869,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove %count locations of %name</source>
-        <translation>Usunąć lokalizacje (%count) obiektu %name</translation>
+        <translation>Usuń lokalizacje (%count) obiektu %name</translation>
     </message>
     <message>
         <source>Only the selected locations are removed; the object keeps its other locations.</source>
@@ -65917,7 +65917,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy subtree</source>
-        <translation>Skopiować poddrzewo</translation>
+        <translation>Skopiuj poddrzewo</translation>
     </message>
     <message>
         <source>The subtree has been copied.</source>
@@ -65925,7 +65925,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open the copy</source>
-        <translation>Otworzyć kopię</translation>
+        <translation>Otwórz kopię</translation>
     </message>
     <message>
         <source>Remove subtree, move to trash</source>
@@ -65941,7 +65941,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open the node</source>
-        <translation>Otworzyć węzeł</translation>
+        <translation>Otwórz węzeł</translation>
     </message>
     <message>
         <source>Node %id</source>
@@ -65961,7 +65961,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Assign the section %section to %name</source>
-        <translation>Przypisać sekcję %section do %name</translation>
+        <translation>Przypisz sekcję %section do %name</translation>
     </message>
     <message>
         <source>Every object in the subtree gets the section; objects you may not assign it to are skipped.</source>
@@ -66100,7 +66100,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Hide the selected items</source>
-        <translation>Ukryć zaznaczone elementy</translation>
+        <translation>Ukryj zaznaczone elementy</translation>
     </message>
     <message>
         <source>The selected items and everything below them are hidden from the site.</source>
@@ -66191,11 +66191,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open the Git manager</source>
-        <translation>Otworzyć menedżera Git</translation>
+        <translation>Otwórz menedżera Git</translation>
     </message>
     <message>
         <source>Open the Updates dashboard</source>
-        <translation>Otworzyć pulpit aktualizacji</translation>
+        <translation>Otwórz pulpit aktualizacji</translation>
     </message>
     <message>
         <source>Published in the last 7 days</source>
@@ -66255,7 +66255,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Upload files</source>
-        <translation>Przesłać pliki</translation>
+        <translation>Prześlij pliki</translation>
     </message>
     <message>
         <source>Users</source>
@@ -66283,7 +66283,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show the numbers</source>
-        <translation>Pokazać liczby</translation>
+        <translation>Pokaż liczby</translation>
     </message>
     <message>
         <source>Nothing was published in the last 14 days.</source>
@@ -66486,7 +66486,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Keep open on reload</source>
-        <translation>Pozostawić otwarte po odświeżeniu</translation>
+        <translation>Pozostaw otwarte po odświeżeniu</translation>
     </message>
     <message>
         <source>SQL query cache</source>
@@ -66618,7 +66618,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Resize the debug panel</source>
-        <translation>Zmienić rozmiar panelu debugowania</translation>
+        <translation>Zmień rozmiar panelu debugowania</translation>
     </message>
     <message>
         <source>Drag or use the arrow keys to change the height; double-click for the default height.</source>
@@ -66698,7 +66698,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Clear filter</source>
-        <translation>Wyczyścić filtr</translation>
+        <translation>Wyczyść filtr</translation>
     </message>
     <message>
         <source>All</source>
@@ -66730,11 +66730,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show messages</source>
-        <translation>Pokazać komunikaty</translation>
+        <translation>Pokaż komunikaty</translation>
     </message>
     <message>
         <source>Copy Messages</source>
-        <translation>Skopiować komunikaty</translation>
+        <translation>Skopiuj komunikaty</translation>
     </message>
     <message>
         <source>Copied 1 message</source>
@@ -66754,11 +66754,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Sort by time</source>
-        <translation>Sortować według czasu</translation>
+        <translation>Sortuj według czasu</translation>
     </message>
     <message>
         <source>Sort by order</source>
-        <translation>Sortować według kolejności</translation>
+        <translation>Sortuj według kolejności</translation>
     </message>
     <message>
         <source>Slowest first</source>
@@ -66774,7 +66774,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Retry</source>
-        <translation>Ponowić</translation>
+        <translation>Ponów</translation>
     </message>
     <message>
         <source>Sign in with a user who may change settings (setup/setup) to change them here.</source>
@@ -66782,11 +66782,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Sign in with setup access to change debug settings</source>
-        <translation>Zalogować się z dostępem do konfiguracji, aby zmieniać ustawienia debugowania</translation>
+        <translation>Zaloguj się z dostępem do konfiguracji, aby zmieniać ustawienia debugowania</translation>
     </message>
     <message>
         <source>Sign in with cache access to manage caches</source>
-        <translation>Zalogować się z dostępem do pamięci podręcznej, aby nią zarządzać</translation>
+        <translation>Zaloguj się z dostępem do pamięci podręcznej, aby nią zarządzać</translation>
     </message>
     <message>
         <source>The settings service is not available yet. The classic controls below still work.</source>
@@ -66802,11 +66802,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Write to</source>
-        <translation>Zapisać w</translation>
+        <translation>Zapisz w</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation>Zastosować</translation>
+        <translation>Zastosuj</translation>
     </message>
     <message>
         <source>Applied</source>
@@ -66818,7 +66818,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Wyzerować</translation>
+        <translation>Wyzeruj</translation>
     </message>
     <message>
         <source>Help</source>
@@ -66866,11 +66866,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation>Dodać</translation>
+        <translation>Dodaj</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Label</source>
@@ -66894,19 +66894,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Add my IPv4 address</source>
-        <translation>Dodać mój adres IPv4</translation>
+        <translation>Dodaj mój adres IPv4</translation>
     </message>
     <message>
         <source>Add my IPv6 address</source>
-        <translation>Dodać mój adres IPv6</translation>
+        <translation>Dodaj mój adres IPv6</translation>
     </message>
     <message>
         <source>Add my /24</source>
-        <translation>Dodać moją sieć /24</translation>
+        <translation>Dodaj moją sieć /24</translation>
     </message>
     <message>
         <source>Add my /64</source>
-        <translation>Dodać moją sieć /64</translation>
+        <translation>Dodaj moją sieć /64</translation>
     </message>
     <message>
         <source>Your address as the server sees it: %ip</source>
@@ -66942,7 +66942,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Test an address</source>
-        <translation>Przetestować adres</translation>
+        <translation>Przetestuj adres</translation>
     </message>
     <message>
         <source>Test</source>
@@ -66978,11 +66978,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Add me</source>
-        <translation>Dodać mnie</translation>
+        <translation>Dodaj mnie</translation>
     </message>
     <message>
         <source>Find a user</source>
-        <translation>Znaleźć użytkownika</translation>
+        <translation>Znajdź użytkownika</translation>
     </message>
     <message>
         <source>User ID or name</source>
@@ -67002,15 +67002,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Apply preset</source>
-        <translation>Zastosować ustawienie predefiniowane</translation>
+        <translation>Zastosuj ustawienie predefiniowane</translation>
     </message>
     <message>
         <source>Revert preset</source>
-        <translation>Cofnąć ustawienie predefiniowane</translation>
+        <translation>Cofnij ustawienie predefiniowane</translation>
     </message>
     <message>
         <source>Save current as preset</source>
-        <translation>Zapisać bieżące jako ustawienie predefiniowane</translation>
+        <translation>Zapisz bieżące jako ustawienie predefiniowane</translation>
     </message>
     <message>
         <source>Preset name</source>
@@ -67030,7 +67030,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation>Cofnąć</translation>
+        <translation>Cofnij</translation>
     </message>
     <message>
         <source>Undone</source>
@@ -67054,11 +67054,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Reload now</source>
-        <translation>Odświeżyć teraz</translation>
+        <translation>Odśwież teraz</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Cleared</source>
@@ -67258,19 +67258,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknąć</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Open the debug report</source>
-        <translation>Otworzyć raport debugowania</translation>
+        <translation>Otwórz raport debugowania</translation>
     </message>
     <message>
         <source>Minimise debug bar</source>
-        <translation>Zminimalizować pasek debugowania</translation>
+        <translation>Zminimalizuj pasek debugowania</translation>
     </message>
     <message>
         <source>Show debug bar</source>
-        <translation>Pokazać pasek debugowania</translation>
+        <translation>Pokaż pasek debugowania</translation>
     </message>
     <message>
         <source>%count errors</source>
@@ -67438,7 +67438,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>View class</source>
-        <translation>Wyświetlić klasę</translation>
+        <translation>Wyświetl klasę</translation>
     </message>
     <message>
         <source>Script</source>
@@ -67566,7 +67566,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>node %node</source>
@@ -67669,7 +67669,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show all</source>
-        <translation>Pokazać wszystko</translation>
+        <translation>Pokaż wszystko</translation>
     </message>
     <message>
         <source>A whole name, or * for any characters (ezpublish-*).</source>
@@ -67712,7 +67712,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Deactivate and move</source>
-        <translation>Dezaktywować i przenieść</translation>
+        <translation>Dezaktywuj i przenieść</translation>
     </message>
     <message>
         <source>Reactivate and move back</source>
@@ -67844,7 +67844,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>%count accounts deactivated and moved.</source>
@@ -67892,7 +67892,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Check user accounts</source>
-        <translation>Sprawdzić konta użytkowników</translation>
+        <translation>Sprawdź konta użytkowników</translation>
     </message>
     <message>
         <source>was disabled already before; enabled now</source>
@@ -67985,7 +67985,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Back to the dashboard</source>
-        <translation>Wrócić do pulpitu</translation>
+        <translation>Wróć do pulpitu</translation>
     </message>
 </context>
 <context>
@@ -68132,15 +68132,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open the approval item</source>
-        <translation>Otworzyć element zatwierdzenia</translation>
+        <translation>Otwórz element zatwierdzenia</translation>
     </message>
     <message>
         <source>Open the account</source>
-        <translation>Otworzyć konto</translation>
+        <translation>Otwórz konto</translation>
     </message>
     <message>
         <source>Preview the account (not published yet)</source>
-        <translation>Wyświetlić podgląd konta (jeszcze nieopublikowane)</translation>
+        <translation>Wyświetl podgląd konta (jeszcze nieopublikowane)</translation>
     </message>
     <message>
         <source>The account no longer exists. It was removed, or the registration was rejected.</source>
@@ -68148,15 +68148,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Approve</source>
-        <translation>Zatwierdzić</translation>
+        <translation>Zatwierdź</translation>
     </message>
     <message>
         <source>Reject and remove</source>
-        <translation>Odrzucić i usunąć</translation>
+        <translation>Odrzuć i usunąć</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Nothing has been changed yet.</source>
@@ -68164,11 +68164,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Reject</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Back to the account</source>
-        <translation>Wrócić do konta</translation>
+        <translation>Wróć do konta</translation>
     </message>
     <message>
         <source>This link works until %date.</source>
@@ -68194,7 +68194,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Choose a country</source>
-        <translation>Wybrać kraj</translation>
+        <translation>Wybierz kraj</translation>
     </message>
 </context>
 <context>
@@ -68228,7 +68228,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>design/admin/toolbar/uiswitch/language</name>
     <message>
         <source>Apply</source>
-        <translation>Zastosować</translation>
+        <translation>Zastosuj</translation>
     </message>
 </context>
 <context>
@@ -68247,7 +68247,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation>Dodać</translation>
+        <translation>Dodaj</translation>
     </message>
     <message>
         <source>All</source>
@@ -68299,7 +68299,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Delete the group</source>
-        <translation>Usunąć grupę</translation>
+        <translation>Usuń grupę</translation>
     </message>
     <message>
         <source>Delete this group and its subgroups? Their items move to the main group.</source>
@@ -68315,7 +68315,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <source>Group</source>
@@ -68343,7 +68343,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Manage this group</source>
-        <translation>Zarządzać tą grupą</translation>
+        <translation>Zarządzaj tą grupą</translation>
     </message>
     <message>
         <source>Move</source>
@@ -68391,19 +68391,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otworzyć</translation>
+        <translation>Otwórz</translation>
     </message>
     <message>
         <source>Open the content</source>
-        <translation>Otworzyć treść</translation>
+        <translation>Otwórz treść</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Zmienić nazwę</translation>
+        <translation>Zmień nazwę</translation>
     </message>
     <message>
         <source>Rename the group</source>
-        <translation>Zmienić nazwę grupy</translation>
+        <translation>Zmień nazwę grupy</translation>
     </message>
     <message>
         <source>Sent</source>
@@ -68415,7 +68415,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show all items</source>
-        <translation>Pokazać wszystkie elementy</translation>
+        <translation>Pokaż wszystkie elementy</translation>
     </message>
     <message>
         <source>Status</source>
@@ -68545,7 +68545,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>List and edit templates.</source>
-        <translation>Wyświetlać i edytować szablony.</translation>
+        <translation>Wyświetlaj i edytować szablony.</translation>
     </message>
     <message>
         <source>The templates of the designs and their overrides.</source>
@@ -68560,7 +68560,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>design/admin/user/password_page</name>
     <message>
         <source>Change password</source>
-        <translation>Zmienić hasło</translation>
+        <translation>Zmień hasło</translation>
     </message>
     <message>
         <source>Signed in as %login.</source>
@@ -68584,7 +68584,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Continue</source>
-        <translation>Kontynuować</translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <source>The password could not be changed.</source>
@@ -68596,7 +68596,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>New password</source>
@@ -68604,7 +68604,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Generate a strong password</source>
-        <translation>Wygenerować silne hasło</translation>
+        <translation>Wygeneruj silne hasło</translation>
     </message>
     <message>
         <source>Strength</source>
@@ -68628,7 +68628,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Your current password is not correct.</source>
@@ -68751,19 +68751,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Disable</source>
-        <translation>Wyłączyć</translation>
+        <translation>Wyłącz</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation>Włączyć</translation>
+        <translation>Włącz</translation>
     </message>
     <message>
         <source>Unlock</source>
-        <translation>Odblokować</translation>
+        <translation>Odblokuj</translation>
     </message>
     <message>
         <source>Check user accounts</source>
-        <translation>Sprawdzić konta użytkowników</translation>
+        <translation>Sprawdź konta użytkowników</translation>
     </message>
     <message>
         <source>This page needs an SQL database; it is not available on MongoDB.</source>
@@ -68811,7 +68811,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Find accounts nobody uses or that need a look: never signed in, not seen for a long time, disabled, locked after failed sign-ins, without a user object or location, or sharing an e-mail address. Disable, enable or unlock them in bulk, or export the list.</source>
@@ -68863,11 +68863,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Narrow the list</source>
-        <translation>Zawęzić listę</translation>
+        <translation>Zawęź listę</translation>
     </message>
     <message>
         <source>Find an account</source>
-        <translation>Wyszukać konto</translation>
+        <translation>Wyszukaj konto</translation>
     </message>
     <message>
         <source>Any part of the name, the login or the e-mail address.</source>
@@ -68895,11 +68895,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Accounts</source>
@@ -68911,11 +68911,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Select all on this page</source>
-        <translation>Zaznaczyć wszystko na tej stronie</translation>
+        <translation>Zaznacz wszystko na tej stronie</translation>
     </message>
     <message>
         <source>Name</source>
@@ -68951,7 +68951,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Reverse the order</source>
-        <translation>Odwrócić kolejność</translation>
+        <translation>Odwróć kolejność</translation>
     </message>
     <message>
         <source>Never changed here: the anonymous user, the administrator account or you.</source>
@@ -68987,19 +68987,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Disable the ticked accounts</source>
-        <translation>Wyłączyć zaznaczone konta</translation>
+        <translation>Wyłącz zaznaczone konta</translation>
     </message>
     <message>
         <source>Enable the ticked accounts</source>
-        <translation>Włączyć zaznaczone konta</translation>
+        <translation>Włącz zaznaczone konta</translation>
     </message>
     <message>
         <source>Unlock the ticked accounts</source>
-        <translation>Odblokować zaznaczone konta</translation>
+        <translation>Odblokuj zaznaczone konta</translation>
     </message>
     <message>
         <source>Export the list as CSV (%count)</source>
-        <translation>Wyeksportować listę jako CSV (%count)</translation>
+        <translation>Wyeksportuj listę jako CSV (%count)</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -69011,7 +69011,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Deactivate and move the ticked accounts</source>
-        <translation>Dezaktywować i przenieść zaznaczone konta</translation>
+        <translation>Dezaktywuj i przenieść zaznaczone konta</translation>
     </message>
     <message>
         <source>Reactivate and move back the ticked accounts</source>
@@ -69104,19 +69104,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>syndication/list</name>
     <message>
         <source>Add Filter</source>
-        <translation>Dodać filtr</translation>
+        <translation>Dodaj filtr</translation>
     </message>
     <message>
         <source>Add Source</source>
-        <translation>Dodać źródło</translation>
+        <translation>Dodaj źródło</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit Filter</source>
-        <translation>Edytować filtr</translation>
+        <translation>Edytuj filtr</translation>
     </message>
     <message>
         <source>List</source>
@@ -69153,7 +69153,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>design/admin/notification/addconfirm</name>
     <message>
         <source>Add to my notifications</source>
-        <translation>Dodać do moich powiadomień</translation>
+        <translation>Dodaj do moich powiadomień</translation>
     </message>
     <message>
         <source>Back</source>
@@ -69161,7 +69161,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Get an e-mail when something new is published below %node_name?</source>
@@ -69169,15 +69169,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Notify me</source>
-        <translation>Powiadamiać mnie</translation>
+        <translation>Powiadamiaj mnie</translation>
     </message>
     <message>
         <source>Notify me about updates</source>
-        <translation>Powiadamiać o aktualizacjach</translation>
+        <translation>Powiadamiaj o aktualizacjach</translation>
     </message>
     <message>
         <source>Stop notifications for this item</source>
-        <translation>Zatrzymać powiadomienia dla tego elementu</translation>
+        <translation>Zatrzymaj powiadomienia dla tego elementu</translation>
     </message>
     <message>
         <source>You already follow %node_name. You get an e-mail when something is published below it.</source>
@@ -69367,11 +69367,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>Usunąć</translation>
+        <translation>Usuń</translation>
     </message>
     <message>
         <source>Remove %count subscriptions whose content is gone</source>
-        <translation>Usunąć subskrypcje, których treść już nie istnieje (%count)</translation>
+        <translation>Usuń subskrypcje, których treść już nie istnieje (%count)</translation>
     </message>
     <message>
         <source>Remove all events older than the chosen age, with their waiting messages? This cannot be undone.</source>
@@ -69379,11 +69379,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove events older than</source>
-        <translation>Usunąć zdarzenia starsze niż</translation>
+        <translation>Usuń zdarzenia starsze niż</translation>
     </message>
     <message>
         <source>Remove handled events with nothing left to send</source>
-        <translation>Usunąć obsłużone zdarzenia, dla których nie pozostało nic do wysłania</translation>
+        <translation>Usuń obsłużone zdarzenia, dla których nie pozostało nic do wysłania</translation>
     </message>
     <message>
         <source>Removed %count events older than the chosen age (%unknown of unknown age were kept).</source>
@@ -69403,7 +69403,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Run now</source>
-        <translation>Uruchomić teraz</translation>
+        <translation>Uruchom teraz</translation>
     </message>
     <message>
         <source>Run now needs a background process: %reason</source>
@@ -69411,7 +69411,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Run the notifications</source>
-        <translation>Uruchomić powiadomienia</translation>
+        <translation>Uruchom powiadomienia</translation>
     </message>
     <message>
         <source>Run the notifications now? Messages that are due are sent.</source>
@@ -69518,7 +69518,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>design/standard/notification/addconfirm</name>
     <message>
         <source>Add to my notifications</source>
-        <translation>Dodać do moich powiadomień</translation>
+        <translation>Dodaj do moich powiadomień</translation>
     </message>
     <message>
         <source>Back</source>
@@ -69526,7 +69526,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Get an e-mail when something new is published below %node_name?</source>
@@ -69534,11 +69534,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Notify me</source>
-        <translation>Powiadamiać mnie</translation>
+        <translation>Powiadamiaj mnie</translation>
     </message>
     <message>
         <source>Stop notifications for this item</source>
-        <translation>Zatrzymać powiadomienia dla tego elementu</translation>
+        <translation>Zatrzymaj powiadomienia dla tego elementu</translation>
     </message>
     <message>
         <source>You already follow %node_name. You get an e-mail when something is published below it.</source>
@@ -69628,7 +69628,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
     <message>
         <source>Edit "%name"</source>
@@ -69672,19 +69672,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Ask for a confirmation by e-mail before the first message (double opt-in; use it for newsletters and marketing)</source>
-        <translation>Prosić o potwierdzenie e-mailem przed pierwszą wiadomością (podwójna zgoda; do newsletterów i marketingu)</translation>
+        <translation>Proś o potwierdzenie e-mailem przed pierwszą wiadomością (podwójna zgoda; do newsletterów i marketingu)</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Create category</source>
-        <translation>Utworzyć kategorię</translation>
+        <translation>Utwórz kategorię</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Use the defined name and description again</source>
@@ -69692,7 +69692,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Remove this category</source>
-        <translation>Usunąć tę kategorię</translation>
+        <translation>Usuń tę kategorię</translation>
     </message>
     <message>
         <source>E-mail preferences: consent log</source>
@@ -69732,15 +69732,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Export as CSV</source>
-        <translation>Wyeksportować jako CSV</translation>
+        <translation>Wyeksportuj jako CSV</translation>
     </message>
     <message>
         <source>Records</source>
@@ -69820,7 +69820,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Check an address</source>
-        <translation>Sprawdzić adres</translation>
+        <translation>Sprawdź adres</translation>
     </message>
     <message>
         <source>E-mail address</source>
@@ -69828,7 +69828,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Check</source>
-        <translation>Sprawdzić</translation>
+        <translation>Sprawdź</translation>
     </message>
     <message>
         <source>This address is on the list (%reason, since %date).</source>
@@ -69840,11 +69840,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Lift the block for this address</source>
-        <translation>Zdjąć blokadę tego adresu</translation>
+        <translation>Zdejmij blokadę tego adresu</translation>
     </message>
     <message>
         <source>Add an address</source>
-        <translation>Dodać adres</translation>
+        <translation>Dodaj adres</translation>
     </message>
     <message>
         <source>Reason</source>
@@ -69856,7 +69856,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Add to the list</source>
-        <translation>Dodać do listy</translation>
+        <translation>Dodaj do listy</translation>
     </message>
     <message>
         <source>On the list</source>
@@ -69876,7 +69876,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Lift</source>
-        <translation>Zdjąć</translation>
+        <translation>Zdejmij</translation>
     </message>
     <message>
         <source>E-mail preferences: a user</source>
@@ -69892,7 +69892,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>No user found.</source>
@@ -69940,7 +69940,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Find another user</source>
-        <translation>Wyszukać innego użytkownika</translation>
+        <translation>Wyszukaj innego użytkownika</translation>
     </message>
     <message>
         <source>People with stored preferences</source>
@@ -70144,7 +70144,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Save the sender details</source>
-        <translation>Zapisać dane nadawcy</translation>
+        <translation>Zapisz dane nadawcy</translation>
     </message>
     <message>
         <source>The sender details were saved.</source>
@@ -70199,7 +70199,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Send me a link to my preferences</source>
-        <translation>Wysłać link do preferencji</translation>
+        <translation>Wyślij link do preferencji</translation>
     </message>
     <message>
         <source>Thank you, your e-mail address is confirmed.</source>
@@ -70219,7 +70219,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Manage my e-mail preferences</source>
-        <translation>Zarządzać preferencjami e-mail</translation>
+        <translation>Zarządzaj preferencjami e-mail</translation>
     </message>
     <message>
         <source>Use %email for this account?</source>
@@ -70291,7 +70291,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Unsubscribe</source>
-        <translation>Zrezygnować z subskrypcji</translation>
+        <translation>Zrezygnuj z subskrypcji</translation>
     </message>
     <message>
         <source>Your link to manage e-mail from %site</source>
@@ -70327,11 +70327,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open my e-mail preferences</source>
-        <translation>Otworzyć preferencje e-mail</translation>
+        <translation>Otwórz preferencje e-mail</translation>
     </message>
     <message>
         <source>Manage my e-mail without an account</source>
-        <translation>Zarządzać e-mailami bez konta</translation>
+        <translation>Zarządzaj e-mailami bez konta</translation>
     </message>
     <message>
         <source>At once</source>
@@ -70359,7 +70359,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Send me optional e-mail</source>
-        <translation>Wysyłać opcjonalne e-maile</translation>
+        <translation>Wysyłaj opcjonalne e-maile</translation>
     </message>
     <message>
         <source>On</source>
@@ -70379,11 +70379,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Turn off all optional e-mail</source>
-        <translation>Wyłączyć wszystkie opcjonalne e-maile</translation>
+        <translation>Wyłącz wszystkie opcjonalne e-maile</translation>
     </message>
     <message>
         <source>Turn on optional e-mail</source>
-        <translation>Włączyć opcjonalne e-maile</translation>
+        <translation>Włącz opcjonalne e-maile</translation>
     </message>
     <message>
         <source>What you want to receive</source>
@@ -70419,7 +70419,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Save my choices</source>
-        <translation>Zapisać wybór</translation>
+        <translation>Zapisz wybór</translation>
     </message>
     <message>
         <source>Always sent</source>
@@ -70443,19 +70443,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download as JSON</source>
-        <translation>Pobrać jako JSON</translation>
+        <translation>Pobierz jako JSON</translation>
     </message>
     <message>
         <source>Download my e-mail data (JSON)</source>
-        <translation>Pobrać dane e-mail (JSON)</translation>
+        <translation>Pobierz dane e-mail (JSON)</translation>
     </message>
     <message>
         <source>Download as CSV</source>
-        <translation>Pobrać jako CSV</translation>
+        <translation>Pobierz jako CSV</translation>
     </message>
     <message>
         <source>Download my e-mail data (CSV)</source>
-        <translation>Pobrać dane e-mail (CSV)</translation>
+        <translation>Pobierz dane e-mail (CSV)</translation>
     </message>
     <message>
         <source>No changes recorded yet.</source>
@@ -70523,7 +70523,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Send me the link</source>
-        <translation>Wysłać link</translation>
+        <translation>Wyślij link</translation>
     </message>
     <message>
         <source>Have an account? Sign in and open your e-mail preferences directly.</source>
@@ -70531,7 +70531,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Sign in</source>
-        <translation>Zalogować się</translation>
+        <translation>Zaloguj się</translation>
     </message>
     <message>
         <source>E-mail preferences of %name</source>
@@ -70571,7 +70571,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Send me a new link</source>
-        <translation>Wysłać nowy link</translation>
+        <translation>Wyślij nowy link</translation>
     </message>
     <message>
         <source>You are unsubscribed.</source>
@@ -70635,7 +70635,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation>Zaimportować</translation>
+        <translation>Zaimportuj</translation>
     </message>
     <message>
         <source>Registration form</source>
@@ -70739,7 +70739,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download my e-mail data</source>
-        <translation>Pobrać dane e-mail</translation>
+        <translation>Pobierz dane e-mail</translation>
     </message>
     <message>
         <source>Your subscriptions:</source>
@@ -70754,7 +70754,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>kernel/mailpreferences</name>
     <message>
         <source>Manage e-mail</source>
-        <translation>Zarządzać e-mailami</translation>
+        <translation>Zarządzaj e-mailami</translation>
     </message>
     <message>
         <source>E-mail preferences</source>
@@ -70762,7 +70762,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Send me a link</source>
-        <translation>Wysłać link</translation>
+        <translation>Wyślij link</translation>
     </message>
     <message>
         <source>My e-mail preferences</source>
@@ -70781,11 +70781,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Manage your e-mail preferences</source>
-        <translation>Zarządzać preferencjami e-mail</translation>
+        <translation>Zarządzaj preferencjami e-mail</translation>
     </message>
     <message>
         <source>Unsubscribe from "%category"</source>
-        <translation>Zrezygnować z „%category”</translation>
+        <translation>Zrezygnuj z „%category”</translation>
     </message>
     <message>
         <source>Please confirm: %category</source>
@@ -70983,7 +70983,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Count which newsletters I open and which links I click, so the newsletters get better</source>
-        <translation>Zliczać, które newslettery są otwierane i które linki są klikane, aby ulepszać newslettery</translation>
+        <translation>Zliczaj, które newslettery są otwierane i które linki są klikane, aby ulepszać newslettery</translation>
     </message>
     <message>
         <source>Newsletters by SMS</source>
@@ -70998,19 +70998,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>kernel/user/password/js</name>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>Ukryć</translation>
+        <translation>Ukryj</translation>
     </message>
     <message>
         <source>Show password</source>
-        <translation>Pokazać hasło</translation>
+        <translation>Pokaż hasło</translation>
     </message>
     <message>
         <source>Hide password</source>
-        <translation>Ukryć hasło</translation>
+        <translation>Ukryj hasło</translation>
     </message>
     <message>
         <source>The passwords match.</source>
@@ -71333,7 +71333,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Sign in</source>
-        <translation>Zalogować się</translation>
+        <translation>Zaloguj się</translation>
     </message>
     <message>
         <source>My profile</source>
@@ -71341,11 +71341,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation>Edytować profil</translation>
+        <translation>Edytuj profil</translation>
     </message>
     <message>
         <source>Register</source>
-        <translation>Zarejestrować się</translation>
+        <translation>Zarejestruj się</translation>
     </message>
     <message>
         <source>Home</source>
@@ -71368,7 +71368,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <name>design/standard/ezie</name>
     <message>
         <source>Edit</source>
-        <translation>Edytować</translation>
+        <translation>Edytuj</translation>
     </message>
 </context>
 <context>
@@ -71471,7 +71471,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otworzyć</translation>
+        <translation>Otwórz</translation>
     </message>
     <message>
         <source>Changed %time</source>
@@ -71511,7 +71511,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Wstrzymać</translation>
+        <translation>Wstrzymaj</translation>
     </message>
     <message>
         <source>Newest</source>
@@ -71519,11 +71519,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Follow</source>
-        <translation>Śledzić</translation>
+        <translation>Śledź</translation>
     </message>
     <message>
         <source>Wrap lines</source>
-        <translation>Zawijać wiersze</translation>
+        <translation>Zawijaj wiersze</translation>
     </message>
     <message>
         <source>Mask again</source>
@@ -71531,15 +71531,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show unmasked</source>
-        <translation>Pokazać bez maskowania</translation>
+        <translation>Pokaż bez maskowania</translation>
     </message>
     <message>
         <source>Find in the loaded lines</source>
-        <translation>Znaleźć we wczytanych wierszach</translation>
+        <translation>Znajdź we wczytanych wierszach</translation>
     </message>
     <message>
         <source>Find in view</source>
-        <translation>Znaleźć w widoku</translation>
+        <translation>Znajdź w widoku</translation>
     </message>
     <message>
         <source>Previous match (Shift+Enter)</source>
@@ -71563,11 +71563,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Search the log files</source>
-        <translation>Przeszukać pliki dziennika</translation>
+        <translation>Przeszukaj pliki dziennika</translation>
     </message>
     <message>
         <source>Text</source>
@@ -71583,7 +71583,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Match case</source>
-        <translation>Uwzględniać wielkość liter</translation>
+        <translation>Uwzględniaj wielkość liter</translation>
     </message>
     <message>
         <source>Levels</source>
@@ -71619,7 +71619,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Search in</source>
-        <translation>Szukać w</translation>
+        <translation>Szukaj w</translation>
     </message>
     <message>
         <source>This file</source>
@@ -71635,11 +71635,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Include rotated files</source>
-        <translation>Uwzględniać pliki po rotacji</translation>
+        <translation>Uwzględniaj pliki po rotacji</translation>
     </message>
     <message>
         <source>Back to following</source>
-        <translation>Wrócić do śledzenia</translation>
+        <translation>Wróć do śledzenia</translation>
     </message>
     <message>
         <source>%count entries found</source>
@@ -71695,7 +71695,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknąć</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Actions</source>
@@ -71711,7 +71711,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download (gzip)</source>
-        <translation>Pobrać (gzip)</translation>
+        <translation>Pobierz (gzip)</translation>
     </message>
     <message>
         <source>Empty fields: the last %size of the file. Masked as shown here; recorded in the audit.</source>
@@ -71719,15 +71719,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Rotate now</source>
-        <translation>Wykonać rotację teraz</translation>
+        <translation>Wykonaj rotację teraz</translation>
     </message>
     <message>
         <source>Empty the file</source>
-        <translation>Opróżnić plik</translation>
+        <translation>Opróżnij plik</translation>
     </message>
     <message>
         <source>Remove this rotation</source>
-        <translation>Usunąć tę rotację</translation>
+        <translation>Usuń tę rotację</translation>
     </message>
     <message>
         <source>Each of these asks for a confirmation first and is recorded in the audit.</source>
@@ -71735,7 +71735,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Resume</source>
-        <translation>Wznowić</translation>
+        <translation>Wznów</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -71823,11 +71823,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Find %reference everywhere</source>
-        <translation>Znaleźć %reference wszędzie</translation>
+        <translation>Znajdź %reference wszędzie</translation>
     </message>
     <message>
         <source>Open the request</source>
-        <translation>Otworzyć żądanie</translation>
+        <translation>Otwórz żądanie</translation>
     </message>
     <message>
         <source>(cut: the entry is longer than the viewer keeps)</source>
@@ -71887,7 +71887,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>A link to this log and this view (filters, search, paused or following, the focused line), to bookmark or share. It never shows the lines unmasked.</source>
@@ -71895,7 +71895,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy permalink</source>
-        <translation>Skopiować permalink</translation>
+        <translation>Skopiuj permalink</translation>
     </message>
     <message>
         <source>Link copied</source>
@@ -71915,11 +71915,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy messages</source>
-        <translation>Skopiować komunikaty</translation>
+        <translation>Skopiuj komunikaty</translation>
     </message>
     <message>
         <source>Copy messages copies the lines shown as plain text: every kept line while following, the lines in view while paused. They are masked as shown.</source>
-        <translation>Skopiować komunikaty kopiuje wyświetlane wiersze jako zwykły tekst: wszystkie zachowane wiersze podczas śledzenia, wiersze w widoku podczas wstrzymania. Są zamaskowane tak jak na ekranie.</translation>
+        <translation>Skopiuj komunikaty kopiuje wyświetlane wiersze jako zwykły tekst: wszystkie zachowane wiersze podczas śledzenia, wiersze w widoku podczas wstrzymania. Są zamaskowane tak jak na ekranie.</translation>
     </message>
     <message>
         <source>%count lines copied</source>
@@ -71963,7 +71963,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Back to the logs</source>
-        <translation>Wrócić do dzienników</translation>
+        <translation>Wróć do dzienników</translation>
     </message>
     <message>
         <source>Becomes</source>
@@ -71971,11 +71971,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Carry out %count steps</source>
-        <translation>Wykonać kroki (%count)</translation>
+        <translation>Wykonaj kroki (%count)</translation>
     </message>
     <message>
         <source>Compress archives…</source>
-        <translation>Skompresować archiwa…</translation>
+        <translation>Skompresuj archiwa…</translation>
     </message>
     <message>
         <source>Compress the archives of %key?</source>
@@ -71987,7 +71987,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Delete archives…</source>
-        <translation>Usunąć archiwa…</translation>
+        <translation>Usuń archiwa…</translation>
     </message>
     <message>
         <source>Delete the old archives of %key?</source>
@@ -71999,7 +71999,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Pobrać</translation>
+        <translation>Pobierz</translation>
     </message>
     <message>
         <source>Empty %key after archiving it?</source>
@@ -72007,7 +72007,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Empty (archive first)…</source>
-        <translation>Opróżnić (najpierw zarchiwizować)…</translation>
+        <translation>Opróżnij (najpierw zarchiwizować)…</translation>
     </message>
     <message>
         <source>Growth</source>
@@ -72015,7 +72015,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Keep %count</source>
-        <translation>Zachować %count</translation>
+        <translation>Zachowaj %count</translation>
     </message>
     <message>
         <source>Last write</source>
@@ -72035,7 +72035,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Manage logs</source>
-        <translation>Zarządzać dziennikami</translation>
+        <translation>Zarządzaj dziennikami</translation>
     </message>
     <message>
         <source>Not compressed</source>
@@ -72063,7 +72063,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Prune all archives…</source>
-        <translation>Przyciąć wszystkie archiwa…</translation>
+        <translation>Przytnij wszystkie archiwa…</translation>
     </message>
     <message>
         <source>Prune the archives of every log?</source>
@@ -72075,7 +72075,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Rotate all over their limit…</source>
-        <translation>Wykonać rotację wszystkich ponad limitem…</translation>
+        <translation>Wykonaj rotację wszystkich ponad limitem…</translation>
     </message>
     <message>
         <source>Rotate at %size</source>
@@ -72087,7 +72087,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Rotate now…</source>
-        <translation>Wykonać rotację teraz…</translation>
+        <translation>Wykonaj rotację teraz…</translation>
     </message>
     <message>
         <source>Rotate, empty, compress and prune the log files. Every action shows exactly what it will do before anything changes, and every step is recorded in the audit. The web server owns its logs: they are shown here but never changed.</source>
@@ -72131,7 +72131,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>copy</source>
-        <translation>kopiować</translation>
+        <translation>kopiuj</translation>
     </message>
     <message>
         <source>delete</source>
@@ -72227,7 +72227,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Manage</source>
-        <translation>Zarządzać</translation>
+        <translation>Zarządzaj</translation>
     </message>
     <message>
         <source>Newest error</source>
@@ -72343,11 +72343,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Hide known messages</source>
-        <translation>Ukryć znane komunikaty</translation>
+        <translation>Ukryj znane komunikaty</translation>
     </message>
     <message>
         <source>Show known messages</source>
-        <translation>Pokazać znane komunikaty</translation>
+        <translation>Pokaż znane komunikaty</translation>
     </message>
     <message>
         <source>Since %time; levels: %levels.</source>
@@ -72391,19 +72391,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open the newest entry</source>
-        <translation>Otworzyć najnowszy wpis</translation>
+        <translation>Otwórz najnowszy wpis</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>List again</source>
-        <translation>Wyświetlić ponownie</translation>
+        <translation>Wyświetl ponownie</translation>
     </message>
     <message>
         <source>Mark as known</source>
-        <translation>Oznaczyć jako znane</translation>
+        <translation>Oznacz jako znane</translation>
     </message>
     <message>
         <source>No error or warning in this window.</source>
@@ -72431,11 +72431,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download all logs</source>
-        <translation>Pobrać wszystkie dzienniki</translation>
+        <translation>Pobierz wszystkie dzienniki</translation>
     </message>
     <message>
         <source>Include archives</source>
-        <translation>Uwzględniać archiwa</translation>
+        <translation>Uwzględniaj archiwa</translation>
     </message>
     <message>
         <source>Unredacted</source>
@@ -72680,7 +72680,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokazać</translation>
+        <translation>Pokaż</translation>
     </message>
     <message>
         <source>Locale</source>
@@ -72727,19 +72727,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
     <message>
         <source>Search the help</source>
-        <translation>Przeszukać pomoc</translation>
+        <translation>Przeszukaj pomoc</translation>
     </message>
     <message>
         <source>Report an error</source>
-        <translation>Zgłosić błąd</translation>
+        <translation>Zgłoś błąd</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Copied</source>
@@ -72771,7 +72771,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyścić</translation>
+        <translation>Wyczyść</translation>
     </message>
     <message>
         <source>Getting started</source>
@@ -72823,7 +72823,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy code</source>
-        <translation>Kopiować kod</translation>
+        <translation>Kopiuj kod</translation>
     </message>
     <message>
         <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
@@ -72851,11 +72851,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Hide section: %title</source>
-        <translation>Ukryć sekcję: %title</translation>
+        <translation>Ukryj sekcję: %title</translation>
     </message>
     <message>
         <source>Show section: %title</source>
-        <translation>Pokazać sekcję: %title</translation>
+        <translation>Pokaż sekcję: %title</translation>
     </message>
     <message>
         <source>"Saving an article with an image fails with a 500 error", not "Bug" or "Help".</source>
@@ -72939,7 +72939,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Browse by topic</source>
-        <translation>Przeglądać według tematu</translation>
+        <translation>Przeglądaj według tematu</translation>
     </message>
     <message>
         <source>Category:</source>
@@ -72947,11 +72947,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Choose an extension</source>
-        <translation>Wybrać rozszerzenie</translation>
+        <translation>Wybierz rozszerzenie</translation>
     </message>
     <message>
         <source>Copy the diagnostics</source>
-        <translation>Skopiować diagnostykę</translation>
+        <translation>Skopiuj diagnostykę</translation>
     </message>
     <message>
         <source>Diagnostics</source>
@@ -72979,7 +72979,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Edit on GitHub</source>
-        <translation>Edytować w serwisie GitHub</translation>
+        <translation>Edytuj w serwisie GitHub</translation>
     </message>
     <message>
         <source>Everyone</source>
@@ -73051,15 +73051,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Leave out anything private</source>
-        <translation>Pominąć wszystko, co prywatne</translation>
+        <translation>Pomiń wszystko, co prywatne</translation>
     </message>
     <message>
         <source>Look at the logs</source>
-        <translation>Sprawdzić logi</translation>
+        <translation>Sprawdź logi</translation>
     </message>
     <message>
         <source>Look for an existing report</source>
-        <translation>Poszukać istniejącego zgłoszenia</translation>
+        <translation>Poszukaj istniejącego zgłoszenia</translation>
     </message>
     <message>
         <source>Missing a page? Tell us</source>
@@ -73107,15 +73107,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open the error digest</source>
-        <translation>Otworzyć zestawienie błędów</translation>
+        <translation>Otwórz zestawienie błędów</translation>
     </message>
     <message>
         <source>Open the help center</source>
-        <translation>Otworzyć centrum pomocy</translation>
+        <translation>Otwórz centrum pomocy</translation>
     </message>
     <message>
         <source>Open the issue in %tracker</source>
-        <translation>Otworzyć zgłoszenie w %tracker</translation>
+        <translation>Otwórz zgłoszenie w %tracker</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -73131,7 +73131,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Prepare the issue</source>
-        <translation>Przygotować zgłoszenie</translation>
+        <translation>Przygotuj zgłoszenie</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -73143,7 +73143,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Read the security policy</source>
-        <translation>Przeczytać zasady bezpieczeństwa</translation>
+        <translation>Przeczytaj zasady bezpieczeństwa</translation>
     </message>
     <message>
         <source>Recently updated</source>
@@ -73155,11 +73155,11 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Report a vulnerability privately on GitHub</source>
-        <translation>Zgłosić lukę poufnie w serwisie GitHub</translation>
+        <translation>Zgłoś lukę poufnie w serwisie GitHub</translation>
     </message>
     <message>
         <source>Report to</source>
-        <translation>Zgłosić do</translation>
+        <translation>Zgłoś do</translation>
     </message>
     <message>
         <source>Result pages</source>
@@ -73171,7 +73171,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Search guides, settings, commands…</source>
-        <translation>Wyszukać poradniki, ustawienia, polecenia…</translation>
+        <translation>Wyszukaj poradniki, ustawienia, polecenia…</translation>
     </message>
     <message>
         <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
@@ -73191,7 +73191,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Start where you are</source>
-        <translation>Zacząć tam, gdzie się jest</translation>
+        <translation>Zacznij tam, gdzie się jest</translation>
     </message>
     <message>
         <source>Steps to reproduce</source>
@@ -73231,7 +73231,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Try it again</source>
-        <translation>Spróbować ponownie</translation>
+        <translation>Spróbuj ponownie</translation>
     </message>
     <message>
         <source>Type</source>
@@ -73239,7 +73239,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Use this extension</source>
-        <translation>Użyć tego rozszerzenia</translation>
+        <translation>Użyj tego rozszerzenia</translation>
     </message>
     <message>
         <source>Users</source>
@@ -73267,7 +73267,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Write the report</source>
-        <translation>Napisać zgłoszenie</translation>
+        <translation>Napisz zgłoszenie</translation>
     </message>
     <message>
         <source>Your issue is ready.</source>
@@ -73279,7 +73279,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>clear</source>
-        <translation>wyczyścić</translation>
+        <translation>wyczyść</translation>
     </message>
     <message>
         <source>move through the results</source>
@@ -73287,7 +73287,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>open</source>
-        <translation>otworzyć</translation>
+        <translation>otwórz</translation>
     </message>
     <message>
         <source>opens GitHub in a new window</source>
@@ -73303,7 +73303,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>search</source>
-        <translation>wyszukać</translation>
+        <translation>wyszukaj</translation>
     </message>
     <message>
         <source>sections</source>
@@ -73447,7 +73447,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Open the Help center</source>
-        <translation>Otworzyć Centrum pomocy</translation>
+        <translation>Otwórz Centrum pomocy</translation>
     </message>
     <message>
         <source>What's new</source>
@@ -73463,7 +73463,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Use the administration</source>
-        <translation>Korzystać z administracji</translation>
+        <translation>Korzystaj z administracji</translation>
     </message>
     <message>
         <source>Sign in, edit and publish.</source>
@@ -73471,7 +73471,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Install with Git</source>
-        <translation>Zainstalować za pomocą Git</translation>
+        <translation>Zainstaluj za pomocą Git</translation>
     </message>
     <message>
         <source>The kernel and every extension as clones with history.</source>
@@ -73479,7 +73479,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Contribute back</source>
-        <translation>Przekazać zmiany</translation>
+        <translation>Przekaż zmiany</translation>
     </message>
     <message>
         <source>Fork, fix and open a pull request.</source>
@@ -73487,7 +73487,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Develop with Git</source>
-        <translation>Programować z Git</translation>
+        <translation>Programuj z Git</translation>
     </message>
     <message>
         <source>Installation guide</source>
@@ -73523,7 +73523,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Read the license</source>
-        <translation>Przeczytać licencję</translation>
+        <translation>Przeczytaj licencję</translation>
     </message>
     <message>
         <source>The license on the web</source>
@@ -73551,7 +73551,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Study it</source>
-        <translation>Studiować</translation>
+        <translation>Studiuj</translation>
     </message>
     <message>
         <source>Read any page as often as you like, for any purpose.</source>
@@ -73559,7 +73559,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Copy it and share it</source>
-        <translation>Kopiować i rozpowszechniać</translation>
+        <translation>Kopiuj i rozpowszechniać</translation>
     </message>
     <message>
         <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
@@ -73567,7 +73567,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Translate, adapt and improve it</source>
-        <translation>Tłumaczyć, dostosowywać i ulepszać</translation>
+        <translation>Tłumacz, dostosowywać i ulepszać</translation>
     </message>
     <message>
         <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
@@ -73575,7 +73575,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Cite it</source>
-        <translation>Cytować</translation>
+        <translation>Cytuj</translation>
     </message>
     <message>
         <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
@@ -73583,7 +73583,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Contribute fixes back</source>
-        <translation>Przekazywać poprawki</translation>
+        <translation>Przekazuj poprawki</translation>
     </message>
     <message>
         <source>Use "Edit on GitHub" on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
@@ -73591,19 +73591,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Apply filters</source>
-        <translation>Zastosować filtry</translation>
+        <translation>Zastosuj filtry</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Browse all help pages</source>
-        <translation>Przeglądać wszystkie strony pomocy</translation>
+        <translation>Przeglądaj wszystkie strony pomocy</translation>
     </message>
     <message>
         <source>Browse the help</source>
-        <translation>Przeglądać pomoc</translation>
+        <translation>Przeglądaj pomoc</translation>
     </message>
     <message>
         <source>Choose another audience, topic or type.</source>
@@ -73699,15 +73699,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Browse all help</source>
-        <translation>Przeglądać całą pomoc</translation>
+        <translation>Przeglądaj całą pomoc</translation>
     </message>
     <message>
         <source>Filter pages</source>
-        <translation>Filtrować strony</translation>
+        <translation>Filtruj strony</translation>
     </message>
     <message>
         <source>Filter the help pages</source>
-        <translation>Filtrować strony pomocy</translation>
+        <translation>Filtruj strony pomocy</translation>
     </message>
     <message>
         <source>No page title matches</source>
@@ -73751,15 +73751,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Print this page</source>
-        <translation>Wydrukować tę stronę</translation>
+        <translation>Wydrukuj tę stronę</translation>
     </message>
     <message>
         <source>Download as PDF</source>
-        <translation>Pobrać jako PDF</translation>
+        <translation>Pobierz jako PDF</translation>
     </message>
     <message>
         <source>Print or download this page</source>
-        <translation>Wydrukować lub pobrać tę stronę</translation>
+        <translation>Wydrukuj lub pobrać tę stronę</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -73791,7 +73791,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Sort by %title</source>
-        <translation>Sortować według: %title</translation>
+        <translation>Sortuj według: %title</translation>
     </message>
     <message>
         <source>Version, name, year or revision</source>
@@ -73907,15 +73907,15 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Download EPUB</source>
-        <translation>Pobrać EPUB</translation>
+        <translation>Pobierz EPUB</translation>
     </message>
     <message>
         <source>Download PDF</source>
-        <translation>Pobrać PDF</translation>
+        <translation>Pobierz PDF</translation>
     </message>
     <message>
         <source>Edit this topic</source>
-        <translation>Edytować ten temat</translation>
+        <translation>Edytuj ten temat</translation>
     </message>
     <message>
         <source>Edition %edition</source>
@@ -74011,7 +74011,7 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     </message>
     <message>
         <source>Update with Git</source>
-        <translation>Aktualizować za pomocą Git</translation>
+        <translation>Aktualizuj za pomocą Git</translation>
     </message>
     <message>
         <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
@@ -74192,6 +74192,270 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Finansowanie Exponential: co finansuje sponsoring i jak sponsorować 7x oraz Exponential Foundation.</translation>
+    </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Pomoc dla: %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Szukaj w pomocy dla: %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Wszystkie strony dla: %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Wszyscy odbiorcy</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Przeczytaj te strony w tej kolejności.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Warto wiedzieć</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Szukaj według tematu</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Każdy przycisk pokazuje strony jednego tematu dla: %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Najważniejsze strony</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Powiązani odbiorcy</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Najnowsze commity w Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Pełna historia na GitHubie</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Co ostatnio zmieniło się w kodzie źródłowym: główna gałąź se7enxweb/exponential, odczytana przez ten serwer z jej publicznego kanału.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub jest w tej chwili niedostępny. Oto commity odczytane %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Nie udało się odczytać commitów z GitHuba. Otwórz zamiast tego historię na GitHubie.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Ukryj commity scalające</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Pokaż także commity scalające</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Wiadomość</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Wyświetlono %from–%to z %total commitów</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Brak commitów do wyświetlenia.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Twoje sponsorowanie finansuje:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>O %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Comiesięczne sponsorowanie, nawet niewielkie, to przewidywalny dochód: opłaca pracę, której jednorazowe darowizny nie utrzymają.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Co finansuje sponsorowanie</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Wspieraj Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential to wolne oprogramowanie. Każda nowa funkcja, strona pomocy, rozszerzenie, motyw i aplikacja to praca, za którą ktoś płaci swoim czasem. Stałe comiesięczne sponsorowanie, w dowolnej wysokości, podtrzymuje tę pracę i pozwala jej się rozwijać.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Sponsoruj 7x na GitHubie</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Sponsoruj fundację Exponential Foundation na GitHubie</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Firma, która prowadzi Exponential, i pierwszy sponsor projektu: rozwija go, wspiera, hostuje i przygotowuje wydania.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Organizacja non-profit, która prowadzi projekt open source i zajmuje się jego finansowaniem, upowszechnianiem, wsparciem, edukacją, rozwojem, promocją i dokumentacją.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Comiesięczne wydania i praca, która utrzymuje wszystko w ruchu</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Poprawki bezpieczeństwa bibliotek, na których opiera się Exponential, takich jak Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Nowe funkcje oddawane społeczności jako open source</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Mosty, forki i narzędzia wokół platformy</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Utrzymanie głównych bibliotek</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Dokumentacja, samouczki, poradniki i najczęstsze pytania</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Warstwy integracji: GraphQL, REST i Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Infrastruktura społeczności: czat, serwery lustrzane, wiki i zasoby dla programistów</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Trenerzy</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Prasa, media i influencerzy</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Ucz Exponential: kursy dla redaktorów, administratorów, programistów i projektantów, warsztaty, ćwiczenia i sprawdziany.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Pisz i mów o Exponential: fakty, historia, ludzie, cytaty, obrazy i z kim się kontaktować.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Szkolenia</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Prasa i media</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Nauczanie Exponential: kursy, plany lekcji, warsztaty, ćwiczenia i sprawdziany dla każdej roli.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Dla dziennikarzy, mediów i influencerów: fakty, historia, ogłoszenia, obrazy i kontakty.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Udostępniaj swoje rozszerzenia</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Udostępniaj rozszerzenia, które rozpowszechniasz, jak wymaga GPL, aby wszyscy na tym korzystali.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Projekt Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Projekt Exponential: czym jest, jego licencje, plan rozwoju, wsparcie, kanały społeczności oraz jak współtworzyć i wspierać.</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dwa sposoby budowania</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dwa sposoby budowania witryny w Exponential: czym się różnią i jak wybrać.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Firmy i przedsiębiorstwa</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Administracja publiczna</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Prowadź witrynę swojej organizacji na Exponential: co oferuje firmie, koszty i wsparcie, hosting, bezpieczeństwo i wybór partnerów.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential w sektorze publicznym: dostępność, prywatność i bezpieczeństwo, open source i zamówienia, hosting i długoterminowe utrzymanie.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential dla firm</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Sektor publiczny</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential dla firm i organizacji: co oferuje, koszty, wsparcie, hosting, bezpieczeństwo i współpraca z partnerami.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential dla administracji i instytucji publicznych: dostępność, prywatność, bezpieczeństwo, open source, zamówienia i długoterminowe utrzymanie.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Wyczyść filtr</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Zwiń wszystko</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Wszystkie foldery są zamknięte.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Wszystkie foldery są otwarte.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Rozwiń wszystko</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Otwórz lub zamknij wszystkie foldery</translation>
     </message>
 </context>
 </TS>

@@ -61,4 +61,5 @@ be licensed under the GNU General Public License, version 2.0 or later", CONTRIB
 - [Licensing explained for buyers](../business/licensing-for-buyers.md)
 - [Who is 7x?](../who-is-7x.md)
 - [Distribution partners and resellers](distribution-partners.md)
+- [Licensing questions](../project/licensing-faq.md): the licensing FAQ of exponential.earth in plain words
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -15391,7 +15391,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Salvar</translation>
+        <translation>Loja</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74972,6 +74972,270 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Financiar o Exponential: o que o patrocínio financia e como patrocinar a 7x e a Exponential Foundation.</translation>
+    </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Ajuda para %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Pesquisar na ajuda para %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Todas as páginas para %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Todos os públicos</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Leia estas páginas nesta ordem.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Bom saber</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Pesquisar por tema</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Cada botão lista as páginas de um tema para %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Páginas principais</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Públicos relacionados</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Commits mais recentes do Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Histórico completo no GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>O que mudou mais recentemente no código-fonte: o ramo principal de se7enxweb/exponential, lido por este servidor do seu feed público.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>Não foi possível acessar o GitHub agora. Estes são os commits lidos em %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Não foi possível ler os commits do GitHub. Abra o histórico no GitHub.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Ocultar commits de merge</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Mostrar também commits de merge</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mensagem</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Mostrando %from–%to de %total commits</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Ainda não há commits para mostrar.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Seu patrocínio paga:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>Sobre %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Um patrocínio mensal, mesmo pequeno, é uma receita com que se pode planejar: paga um trabalho que doações únicas não conseguem manter.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>O que o patrocínio financia</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Apoie o Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential é software livre. Cada novo recurso, página de ajuda, extensão, tema e aplicação é trabalho que alguém paga com seu tempo. Um patrocínio mensal contínuo, de qualquer valor, mantém esse trabalho e permite que ele cresça.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Patrocine a 7x no GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Patrocine a Exponential Foundation no GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>A empresa que lidera o Exponential e o primeiro patrocinador do projeto: desenvolve, dá suporte, hospeda e publica as versões.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>A organização sem fins lucrativos que opera o projeto de código aberto e se dedica ao seu financiamento, adoção, suporte, educação, desenvolvimento, promoção e documentação.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Versões mensais e o trabalho que mantém tudo funcionando</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Correções de segurança nas bibliotecas em que o Exponential se baseia, como Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Novos recursos devolvidos à comunidade como código aberto</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>As pontes, forks e ferramentas em torno da plataforma</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Manutenção das bibliotecas principais</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Documentação, tutoriais, guias práticos e perguntas frequentes</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Camadas de integração: GraphQL, REST e Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Infraestrutura da comunidade: chat, espelhos, wikis e recursos para desenvolvedores</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Instrutores</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Imprensa, mídia e influenciadores</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Ensine o Exponential: cursos para editores, administradores, desenvolvedores e designers, workshops, exercícios e avaliações.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Escreva e fale sobre o Exponential: os fatos, a história, as pessoas, citações, imagens e quem contatar.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Treinamento</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Imprensa e mídia</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Ensino do Exponential: cursos, planos de aula, workshops, exercícios e avaliações para cada função.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Para jornalistas, mídia e influenciadores: fatos, história, anúncios, imagens e contatos.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Compartilhe suas extensões</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Compartilhe as extensões que você distribui, como exige a GPL, para o benefício de todos.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>O projeto Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>O projeto Exponential: o que é, suas licenças, o roteiro, o suporte, os canais da comunidade e como contribuir e doar.</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Duas formas de construir</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Duas formas de construir um site com o Exponential: como diferem e como escolher.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Empresas e negócios</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Governos</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Mantenha o site da sua organização no Exponential: o que oferece a uma empresa, custos e suporte, hospedagem, segurança e escolha de parceiros.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential no setor público: acessibilidade, privacidade e segurança, código aberto e compras públicas, hospedagem e manutenção de longo prazo.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential para empresas</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Setor público</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential para empresas e organizações: o que oferece, custos, suporte, hospedagem, segurança e trabalho com parceiros.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential para governos e órgãos públicos: acessibilidade, privacidade, segurança, código aberto, compras públicas e manutenção de longo prazo.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Limpar filtro</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Recolher tudo</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Todas as pastas estão fechadas.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Todas as pastas estão abertas.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Expandir tudo</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Abrir ou fechar todas as pastas</translation>
     </message>
 </context>
 </TS>

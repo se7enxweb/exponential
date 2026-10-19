@@ -152,6 +152,6 @@ the same way when you are done. Every write made a backup under `var/backup/ini/
 
 - Previous: [Setting up a development installation](setting-up-a-development-installation.md)
 - Next: [Reading the code you already have](reading-the-code-you-have.md)
-- Changing settings with exp:ini
-- Debugging templates
+- [Changing settings with exp:ini](../part-2-builder/the-exp-ini-command.md)
+- [Debugging templates](../part-2-builder/debugging-templates.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

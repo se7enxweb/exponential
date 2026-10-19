@@ -41086,7 +41086,7 @@ o e-postadaki yönergeleri izleyin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -42211,7 +42211,7 @@ o e-postadaki yönergeleri izleyin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -42997,7 +42997,7 @@ Onaylayana yorum göndermek veya durumu görüntülemek istiyorsanız aşağıda
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -45272,7 +45272,7 @@ Onaylayana yorum göndermek veya durumu görüntülemek istiyorsanız aşağıda
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Add Tool</source>
@@ -45789,7 +45789,7 @@ Kaldırırsanız tüm alt öğeler de kaldırılacak.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -46038,7 +46038,7 @@ The item can viewed by using the URL below.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Notification admin</source>
@@ -46991,7 +46991,7 @@ menüden erişilebilir.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Discard changes</source>
@@ -47309,7 +47309,7 @@ menüden erişilebilir.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Add Source</source>
@@ -47542,7 +47542,7 @@ menüden erişilebilir.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Section list</source>
@@ -51540,7 +51540,7 @@ Bunun için Alternatif kabuk komutları altındaki %chown komutlarını değişt
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -51579,7 +51579,7 @@ Bunun için Alternatif kabuk komutları altındaki %chown komutlarını değişt
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -52716,7 +52716,7 @@ Bunun için Alternatif kabuk komutları altındaki %chown komutlarını değişt
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Trigger list</source>
@@ -52854,7 +52854,7 @@ Bunun için Alternatif kabuk komutları altındaki %chown komutlarını değişt
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -53835,7 +53835,7 @@ o e-postadaki yönergeleri izleyin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -72985,6 +72985,270 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Exponential'ı finanse etme: sponsorluğun neyi karşıladığı ve 7x ile Exponential Foundation'a nasıl sponsor olunacağı.</translation>
+    </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>%audience için yardım</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>%audience için yardımda ara</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>%audience için tüm sayfalar</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Tüm hedef kitleler</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Bu sayfaları bu sırayla okuyun.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Bilmekte fayda var</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Konuya göre ara</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Her düğme %audience için bir konunun sayfalarını listeler.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Temel sayfalar</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>İlgili hedef kitleler</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Exponential&apos;a son commit&apos;ler</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>GitHub&apos;da tüm geçmiş</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Kaynak kodda en son neyin değiştiği: se7enxweb/exponential deposunun ana dalı, bu sunucu tarafından herkese açık akışından okunur.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub&apos;a şu anda ulaşılamadı. Bunlar %date tarihinde okunan commit&apos;ler.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Commit&apos;ler GitHub&apos;dan okunamadı. Bunun yerine GitHub&apos;daki geçmişi açın.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Birleştirme commit&apos;lerini gizle</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Birleştirme commit&apos;lerini de göster</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>İleti</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>%total commit&apos;ten %from–%to gösteriliyor</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Henüz gösterilecek commit yok.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Sponsorluğunuz şunları karşılar:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>%name hakkında</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Aylık bir sponsorluk, küçük bile olsa, planlanabilir bir gelirdir: tek seferlik bağışların sürdüremeyeceği işi karşılar.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Sponsorluk neleri finanse eder</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Exponential&apos;ı destekleyin</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential özgür bir yazılımdır. Her yeni özellik, yardım sayfası, eklenti, tema ve uygulama, birinin zamanıyla ödediği bir emektir. Her büyüklükte sürekli bir aylık sponsorluk bu emeği sürdürür ve büyümesini sağlar.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>GitHub&apos;da 7x&apos;e sponsor olun</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>GitHub&apos;da Exponential Foundation&apos;a sponsor olun</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Exponential&apos;ı yöneten şirket ve projenin ilk sponsoru: onu geliştirir, destekler, barındırır ve sürümlerini yayımlar.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Açık kaynak projesini yürüten ve projenin finansmanına, benimsenmesine, desteğine, eğitimine, geliştirilmesine, tanıtımına ve belgelenmesine kendini adamış kâr amacı gütmeyen kuruluş.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Aylık sürümler ve her şeyi ayakta tutan emek</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Exponential&apos;ın dayandığı kitaplıklara, örneğin Zeta Components&apos;a güvenlik yamaları</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Açık kaynak olarak topluluğa geri verilen yeni özellikler</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Platformun çevresindeki köprüler, çatallar ve araçlar</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Çekirdek kitaplıkların bakımı</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Belgeler, eğitimler, nasıl yapılır kılavuzları ve SSS</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Entegrasyon katmanları: GraphQL, REST ve Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Topluluk altyapısı: sohbet, yansılar, wiki&apos;ler ve geliştirici kaynakları</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Eğitmenler</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Basın, medya ve etkileyiciler</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Exponential&apos;ı öğretin: editörler, yöneticiler, geliştiriciler ve tasarımcılar için kurslar, atölyeler, alıştırmalar ve değerlendirmeler.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Exponential hakkında yazın ve konuşun: gerçekler, tarihçe, kişiler, alıntılar, görseller ve kiminle iletişime geçileceği.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Eğitim</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Basın ve medya</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Exponential öğretimi: her rol için kurslar, ders planları, atölyeler, alıştırmalar ve değerlendirmeler.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Gazeteciler, medya ve etkileyiciler için: gerçekler, tarihçe, duyurular, görseller ve iletişim bilgileri.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Eklentilerinizi paylaşın</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Dağıttığınız eklentileri GPL&apos;in gerektirdiği şekilde paylaşın, böylece herkes yararlansın.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Exponential projesi</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Exponential projesi: nedir, lisansları, yol haritası, destek, topluluk kanalları ve nasıl katkıda bulunup bağış yapılır.</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>İki yapım yolu</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Exponential ile site oluşturmanın iki yolu: nasıl farklılaştıkları ve nasıl seçileceği.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>İşletmeler</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Kamu kurumları</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Kuruluşunuzun web sitesini Exponential ile çalıştırın: bir işletmeye ne sunduğu, maliyetler ve destek, barındırma, güvenlik ve iş ortağı seçimi.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Kamu sektöründe Exponential: erişilebilirlik, gizlilik ve güvenlik, açık kaynak ve satın alma, barındırma ve uzun vadeli bakım.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>İşletmeler için Exponential</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Kamu sektörü</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Şirketler ve kuruluşlar için Exponential: neler sunduğu, maliyetler, destek, barındırma, güvenlik ve iş ortaklarıyla çalışma.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Kamu kurumları ve hükümetler için Exponential: erişilebilirlik, gizlilik, güvenlik, açık kaynak, satın alma ve uzun vadeli bakım.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Filtreyi temizle</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Tümünü daralt</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Tüm klasörler kapalı.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Tüm klasörler açık.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Tümünü genişlet</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Tüm klasörleri aç veya kapat</translation>
     </message>
 </context>
 </TS>

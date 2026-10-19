@@ -14813,7 +14813,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Lagre</translation>
+        <translation>Butikk</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74238,6 +74238,270 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Å finansiere Exponential: hva sponsing betaler for og hvordan du sponser 7x og Exponential Foundation.</translation>
+    </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Hjelp for %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Søk i hjelpen for %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Alle sider for %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Alle målgrupper</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Les disse sidene i denne rekkefølgen.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Greit å vite</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Søk etter emne</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Hver knapp viser sidene om ett emne for %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Viktige sider</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Beslektede målgrupper</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Siste commits i Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Hele historikken på GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Hva som sist er endret i kildekoden: hovedgrenen til se7enxweb/exponential, lest fra den offentlige feeden av denne serveren.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub kunne ikke nås akkurat nå. Dette er commitene som ble lest %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Commitene kunne ikke leses fra GitHub. Åpne historikken på GitHub i stedet.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Skjul merge-commits</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Vis også merge-commits</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Melding</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Viser %from–%to av %total commits</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Ingen commits å vise ennå.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Sponsingen din betaler for:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>Om %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Et månedlig sponsorat, selv et lite, er inntekt det går an å planlegge med: det betaler for arbeid som engangsgaver ikke kan holde i gang.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Hva sponsing finansierer</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Støtt Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential er fri programvare. Hver ny funksjon, hjelpeside, utvidelse, tema og applikasjon er arbeid som noen betaler med tiden sin. Et fast månedlig sponsorat, uansett størrelse, holder arbeidet i gang og lar det vokse.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Spons 7x på GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Spons Exponential Foundation på GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Selskapet som leder Exponential og prosjektets første sponsor: det utvikler, støtter og drifter det og lager utgivelsene.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Den ideelle organisasjonen som driver åpen kildekode-prosjektet og arbeider for finansiering, utbredelse, støtte, opplæring, utvikling, markedsføring og dokumentasjon.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Månedlige utgivelser og arbeidet som holder alt i gang</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Sikkerhetsrettelser til bibliotekene Exponential bygger på, for eksempel Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Nye funksjoner gitt tilbake til fellesskapet som åpen kildekode</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Broene, forkene og verktøyene rundt plattformen</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Vedlikehold av kjernebibliotekene</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Dokumentasjon, veiledninger, fremgangsmåter og vanlige spørsmål</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Integrasjonslag: GraphQL, REST og Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Fellesskapets infrastruktur: chat, speil, wikier og ressurser for utviklere</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Instruktører</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Presse, medier og influensere</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Undervis i Exponential: kurs for redaktører, administratorer, utviklere og designere, workshops, øvelser og prøver.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Skriv og snakk om Exponential: fakta, historien, menneskene, sitater, bilder og hvem du kan kontakte.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Opplæring</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Presse og medier</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Undervisning i Exponential: kurs, undervisningsplaner, workshops, øvelser og prøver for hver rolle.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>For journalister, medier og influensere: fakta, historie, kunngjøringer, bilder og kontakter.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Del utvidelsene dine</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Del utvidelsene du distribuerer, slik GPL krever, så alle får glede av dem.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Exponential-prosjektet</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Exponential-prosjektet: hva det er, lisensene, veikartet, støtte, fellesskapets kanaler og hvordan du bidrar og gir.</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>To måter å bygge på</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>To måter å bygge et nettsted med Exponential på: hvordan de skiller seg og hvordan du velger.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Bedrifter</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Offentlig sektor og myndigheter</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Kjør organisasjonens nettsted på Exponential: hva det gir en bedrift, kostnader og støtte, drift, sikkerhet og valg av partnere.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential i offentlig sektor: universell utforming, personvern og sikkerhet, åpen kildekode og anskaffelser, drift og langsiktig vedlikehold.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential for bedrifter</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Offentlig sektor</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential for bedrifter og organisasjoner: hva det tilbyr, kostnader, støtte, drift, sikkerhet og samarbeid med partnere.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential for myndigheter og offentlige virksomheter: universell utforming, personvern, sikkerhet, åpen kildekode, anskaffelser og langsiktig vedlikehold.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Tøm filter</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Lukk alle</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Alle mapper er lukket.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Alle mapper er åpne.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Åpne alle</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Åpne eller lukk alle mapper</translation>
     </message>
 </context>
 </TS>
