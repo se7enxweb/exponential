@@ -4224,7 +4224,7 @@ f93ada02b07d3654c801d1a50db6aa9b  doc/help/designers/templates/attributes-and-do
 2f4c07b5f4404d706cd3775e008ee2c5  doc/help/designers/templates/breadcrumbs.md
 9326e7da076cb71927103c7439989e3a  doc/help/designers/templates/cache-block.md
 98b4c41af52876224d90c3baee09f458  doc/help/designers/templates/comments.md
-9a79352c5c4e3e927ece94cffdc97475  doc/help/designers/templates/common-template-mistakes.md
+d24feff9c7b9dff713677f1c2f983505  doc/help/designers/templates/common-template-mistakes.md
 bc73335be4bed4162c16d6cb8f0fd653  doc/help/designers/templates/cond-and-first-set.md
 342902d1a71e7f93d420d4ea4e841b22  doc/help/designers/templates/content-view-gui.md
 745e4836e70b63b2bf973024928d74d7  doc/help/designers/templates/custom-tags-templates.md
@@ -4261,7 +4261,7 @@ c97df01144873251bf366365d26ba150  doc/help/designers/templates/module-result-and
 93f88a836d7f4a39be8223e335c1115f  doc/help/designers/templates/node-view-gui.md
 9b7a22c7c244f9a4300f30e36e991d26  doc/help/designers/templates/nodes-objects-attributes.md
 9ada6a2ad451636faeefd1d4bf516e58  doc/help/designers/templates/operator-reference.md
-452a5f220fe434dcce93a680603d1f53  doc/help/designers/templates/operators-overview.md
+469c354f8438c9df287c96b64e6e3368  doc/help/designers/templates/operators-overview.md
 53529d17d0d4961653c0725b91d86881  doc/help/designers/templates/override-a-single-node.md
 8b12018f46871ec38a901e7259336e20  doc/help/designers/templates/override-by-parent.md
 48150eb10e491cf6d258087bc5915b3c  doc/help/designers/templates/override-by-section.md
@@ -4271,7 +4271,7 @@ e64a2e59b373dee16399487b6d253f3e  doc/help/designers/templates/override-ordering
 6e70e68db723237e17b64076669d6579  doc/help/designers/templates/pagination.md
 0b1324860761f5bb31da6fa9eef10a9c  doc/help/designers/templates/persistent-variable.md
 b0346f0022ba336b29538e5f6013e1d7  doc/help/designers/templates/rich-text-templates.md
-003e953d64378ac3250975a528fba4e5  doc/help/designers/templates/role-and-policy-operators.md
+6a5516c50910dcdfe65f0e633eff0853  doc/help/designers/templates/role-and-policy-operators.md
 fc3a527fb4bc5b34727872323b603216  doc/help/designers/templates/run-once.md
 86bf5a5fbcc590d82be568ddff4fb3c4  doc/help/designers/templates/search-results-template.md
 4aaa75a556a1581ff795c24bfff864d8  doc/help/designers/templates/section-legacy.md
@@ -4280,7 +4280,7 @@ bb763042c05f2dfeb1c814b1f7815956  doc/help/designers/templates/string-operators.
 23f6ba70324c97b29983595ed15de1a0  doc/help/designers/templates/string-template-operators.md
 d75d4d97898d55cfbdf06621121d2104  doc/help/designers/templates/switch-case.md
 eca4ca3fc2726148f96ae6d5914b7c0f  doc/help/designers/templates/template-compilation-and-cache.md
-3b9eedfbe2ff048e0f55425c5f68bc66  doc/help/designers/templates/template-debugging.md
+43b90931729b7c7846d047738c133597  doc/help/designers/templates/template-debugging.md
 fb8a1145a4860d7262d2e7a75ebb8c41  doc/help/designers/templates/template-editor-overrides.md
 7ceb55ec5219a6849433aa6a12e38e33  doc/help/designers/templates/template-path-comments.md
 1664af8e6dd3c2bd87ba5cd74dd22991  doc/help/designers/templates/template-style-guide.md
@@ -4316,7 +4316,7 @@ ae7e4c732945ec45a9f07f9a3d710394  doc/help/designers/theme-design/checklist-righ
 eccb784570e667f35728e7e5ccb4b7c9  doc/help/designers/theme-design/csp-safe-design.md
 012a30cdb5913ada50f579e205cf3845  doc/help/designers/theme-design/dark-mode-overview.md
 2156318f26323b2493cfe200b7352352  doc/help/designers/theme-design/dark-mode-with-prefers-color-scheme.md
-fb8a5b8c9070f146058d048d3c212b4a  doc/help/designers/theme-design/debugging-a-design.md
+88a5925e83e74fc2d538f36117e873d7  doc/help/designers/theme-design/debugging-a-design.md
 20d2fdb3669085e74c6f910746208231  doc/help/designers/theme-design/design-directory-layout.md
 4d577ccc89e5cb17c0c297e622b0d4d7  doc/help/designers/theme-design/design-extensions.md
 e3bb6d7f78cb6af4817bc7f191dcd921  doc/help/designers/theme-design/design-glossary.md

@@ -19,7 +19,7 @@ show?". It lists the tools, in the order you usually need them.
 3. [My new template or override is ignored](#my-new-template-or-override-is-ignored)
 4. [My stylesheet change does not show](#my-stylesheet-change-does-not-show)
 5. [Template syntax errors](#template-syntax-errors)
-6. [Errors and warnings in the log](#errors-and-warnings-in-the-log)
+6. [Errors and warnings](#errors-and-warnings)
 7. [The page shows old content](#the-page-shows-old-content)
 8. [Quick reference](#quick-reference)
 
@@ -99,10 +99,11 @@ It prints "Template file valid" or the parse error for each file. Run it before 
 syntax only: an operator that does not exist (or is not active on the siteaccess) parses fine and fails only when
 the page is rendered, so open the pages as well.
 
-## Errors and warnings in the log
+## Errors and warnings
 
-Template errors (unknown operators, unknown functions, missing include files) are written to `var/log/error.log`
-(or the site's own `var/<site>/log/`) and shown in the debug output. An unknown operator is the usual result of using an
+Template errors and warnings (unregistered operators, unknown functions, missing include files) are shown in the
+debug output; errors are also written to the error log (`site.ini [DebugSettings] AlwaysLog[]=error`), which Setup >
+Log files shows. An unknown operator is the usual result of using an
 operator from an extension that is not active on the siteaccess.
 
 ## The page shows old content
@@ -125,7 +126,7 @@ operator from an extension that is not active on the siteaccess.
 | Changed view template, old page | `--clear-id=content` |
 | Changed part in a cache-block | `--clear-id=template-block` |
 | CSS change missing in admin | deploy with `--packer`, then hard-reload |
-| "unknown operator" in the log | extension of that operator not active here |
+| "Operator '...' is not registered" | extension of that operator not active here |
 | Template does not parse | `./console exp:eztemplatecheck` |
 
 ## Related pages

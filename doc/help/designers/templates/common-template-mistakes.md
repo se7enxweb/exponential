@@ -55,7 +55,7 @@ to find the cause of a problem.
 | `$a == $b` | parse error | `eq( $a, $b )` |
 | `{def}` of an existing variable | warning, includer's value overwritten | prefixes and `{undef}` ([Variables and def](variables-and-def.md)) |
 | comparing strings with `gt` | unexpected results | `gt` compares lengths of non-numeric strings ([Logic and comparison operators](logic-and-comparison-operators.md)) |
-| an operator from an inactive extension | "unknown operator" in the log, nothing printed | activate the extension or use another operator |
+| an operator from an inactive extension | "Operator '...' is not registered" in the debug output, nothing printed | activate the extension or use another operator |
 
 ## Files and caches
 

@@ -75,7 +75,7 @@ missing variables.
 
 | Message (debug output or `var/log/error.log`) | Meaning |
 |---|---|
-| unknown operator | the operator does not exist, or its extension is not active here |
+| Operator '...' is not registered | the operator does not exist, or its extension is not active here |
 | Variable '...' is already defined | a `{def}` of an existing variable ([Variables and def](variables-and-def.md)) |
 | Variable '...' is not defined with {def} | `{undef}` of a variable that was not defined |
 | Custom match file: path '...' not found in any resource | an override's `MatchFile` does not exist |

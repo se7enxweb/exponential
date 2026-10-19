@@ -59,7 +59,7 @@ Some operators take no input and are only called: `fetch( ... )`, `array( ... )`
 ## Does this operator exist here?
 
 An operator from an extension exists only on siteaccesses where the extension is active. An unknown operator is
-reported in the debug output and the error log ("unknown operator"), and the template prints nothing for it. The
+reported in the debug output as "Operator '<name>' is not registered", and the template prints nothing for it. The
 generated example pages of the help list operators with examples where available. When you depend on an extension's
 operator, say so in your theme's README.
 
