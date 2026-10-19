@@ -39,6 +39,15 @@
   "1.0.0-beta.1" without a release is the prerelease "beta.1". A version number on its own
   (compare(), parse()) is never split this way.
 
+  A release may carry a state word after its digits, the form the 7x site packages were
+  made with: "6.0-15-stable" is version 6.0 release 15 (stable), "6.0-15stable" the same.
+  A stable word (stable, final, release, ga) means "no prerelease"; any other word (alpha1,
+  beta, rc2) makes it a prerelease of that release: 6.0-15-rc1 < 6.0-15 = 6.0-15-stable.
+  The same stable words after a legacy version number ("6.0.15stable", "1.0-final") are not
+  a prerelease either; in strict SemVer ("1.0.0-stable") the text stays a prerelease.
+  Before 6.0.15, "6.0-15-stable" was read as version 6.0.0 with the prerelease "15-stable",
+  lower than 6.0, so a min-version="6.0" was never met.
+
   New packages from the creation wizards must have a strict SemVer 2.0.0 version, see
   isValidNew(); reading and comparing stay as tolerant as described above.
 */
@@ -107,6 +116,9 @@ class eZPackageVersion
             $prerelease[] = $m[2];
         if ( isset( $m[3] ) and $m[3] !== '' )
             $prerelease = array_merge( $prerelease, explode( '.', $m[3] ) );
+        // "6.0.15stable", "1.0-final": a stable word on its own is no prerelease
+        if ( count( $prerelease ) == 1 and self::isStableWord( $prerelease[0] ) )
+            $prerelease = array();
         return array( 'numbers' => $numbers,
                       'prerelease' => $prerelease,
                       'build' => ( isset( $m[4] ) and $m[4] !== '' ) ? $m[4] : false,
@@ -147,27 +159,55 @@ class eZPackageVersion
     */
     static function splitRelease( $full )
     {
+        list( $number, $release ) = self::splitReleaseState( $full );
+        return array( $number, $release );
+    }
+
+    /*!
+     Splits a "<number>-<release>" pair like splitRelease(), also reading a state word after
+     the release digits ("6.0-15-stable", "6.0-15rc1"; see the class description).
+     \return array( number, release, state ): the release an integer or \c false, the state a
+             list of prerelease identifiers, empty for none or for a stable word.
+    */
+    static function splitReleaseState( $full )
+    {
         $full = trim( (string)$full );
         if ( preg_match( '/^(.+)-([0-9]+)$/', $full, $m ) )
-            return array( $m[1], (int)$m[2] );
-        return array( $full, false );
+            return array( $m[1], (int)$m[2], array() );
+        if ( preg_match( '/^(.+)-([0-9]+)-?([a-zA-Z][0-9a-zA-Z]*)$/', $full, $m ) and self::parse( $m[1] ) !== false )
+        {
+            $state = self::isStableWord( $m[3] ) ? array() : array( $m[3] );
+            return array( $m[1], (int)$m[2], $state );
+        }
+        return array( $full, false, array() );
     }
 
     /*!
      Compares two "<number>-<release>" pairs (eZPackage::getVersion(), a site package's
-     min-version): the version numbers first, then the release numbers, a missing one as 0.
+     min-version): the version numbers first, then the release numbers, a missing one as 0,
+     then a release's state (a prerelease state before none).
      \return -1, 0 or 1.
     */
     static function compareFull( $a, $b )
     {
-        list( $na, $ra ) = self::splitRelease( $a );
-        list( $nb, $rb ) = self::splitRelease( $b );
+        list( $na, $ra, $sa ) = self::splitReleaseState( $a );
+        list( $nb, $rb, $sb ) = self::splitReleaseState( $b );
         $result = self::compare( $na, $nb );
         if ( $result != 0 )
             return $result;
         $ra = $ra === false ? 0 : $ra;
         $rb = $rb === false ? 0 : $rb;
-        return $ra == $rb ? 0 : ( $ra < $rb ? -1 : 1 );
+        if ( $ra != $rb )
+            return $ra < $rb ? -1 : 1;
+        return self::comparePrerelease( $sa, $sb );
+    }
+
+    /*!
+     \return \c true if \a $word names a final release: stable, final, release or ga, in any case.
+    */
+    static function isStableWord( $word )
+    {
+        return in_array( strtolower( (string)$word ), array( 'stable', 'final', 'release', 'ga' ), true );
     }
 
     /*!

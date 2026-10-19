@@ -40,7 +40,7 @@ class eZStepSiteTypes extends eZStepInstaller
             {
                 $indexURL .= '/';
             }
-            $indexURL .= ExponentialSDK::version( false, false, false ) . '/' . ExponentialSDK::version() . '/';
+            $indexURL .= ExponentialSDK::packageServerPath() . '/';
         }
         $this->IndexURL = $indexURL;
 
@@ -398,15 +398,22 @@ class eZStepSiteTypes extends eZStepInstaller
 
 
     /*!
-     * Download packages required by the given package.
+     * Download packages required by the given package, and the packages those require, down the whole chain
+     * (from 6.0.15 on; before only the direct requirements were downloaded).
      *
+     * \param $visited            names of the packages looked at already (filled in; for the recursion)
+     * \param $remotePackagesInfo the index list, read once for the whole chain (null: read it here)
      * \private
      */
-    function downloadDependantPackages( $sitePackage, $repositoryID = false, $skipExisting = false )
+    function downloadDependantPackages( $sitePackage, $repositoryID = false, $skipExisting = false, &$visited = null, $remotePackagesInfo = null )
     {
+        if ( !is_array( $visited ) )
+            $visited = array();
+        $visited[$sitePackage->attribute( 'name' )] = true;
         $dependencies = $sitePackage->attribute( 'dependencies' );
         $requirements = $dependencies['requires'];
-        $remotePackagesInfo = $this->retrieveRemotePackagesList();
+        if ( $remotePackagesInfo === null )
+            $remotePackagesInfo = $this->retrieveRemotePackagesList();
 
         foreach ( $requirements as $req )
         {
@@ -479,7 +486,19 @@ class eZStepSiteTypes extends eZStepInstaller
                 {
                     return false;
                 }
+                $package = $rc;
             }
+
+            // The requirements of the requirement, and theirs: every package of the chain is in place before the
+            // site is created. Each package is looked at once, so a cycle ends.
+            if ( isset( $package ) && is_object( $package ) && !isset( $visited[$package->attribute( 'name' )] ) )
+            {
+                if ( !$this->downloadDependantPackages( $package, $repositoryID, $skipExisting, $visited, $remotePackagesInfo ) )
+                {
+                    return false;
+                }
+            }
+            unset( $package );
         }
 
         return true;
@@ -863,16 +882,102 @@ class eZStepSiteTypes extends eZStepInstaller
     /**
      * Retrieve list of packages available to download.
      *
+     * The index of RemotePackagesIndexURL (or its offline copy in the system repository) comes first; then the
+     * index of every further package server (remoteIndexURLs(): package.ini [RepositorySettings]
+     * AdditionalRemotePackagesIndexURLs[] and the server lists named by RemotePackagesIndexSources[], such as the
+     * servers added on ezupdate's Package servers page). A package listed by an earlier index is kept as it is; a
+     * further server only adds packages the earlier ones do not have. A further server that cannot be read is
+     * skipped with a warning in the debug output.
+     *
      * Example of return value:
      * array(
-     *  'packages' => array(
-     *                      '<package_name1>' => array( "name" =>... , "version" =>... , "summary" => ... "url" =>... ),
-     *                      '<package_name2>' => array( "name" =>... , "version" =>... , "summary" => ... "url" =>... )
-     *                     )
-     *      );
-     *
+     *  '<package_name1>' => array( "name" =>... , "version" =>... , "summary" => ... "url" =>... ),
+     *  '<package_name2>' => array( "name" =>... , "version" =>... , "summary" => ... "url" =>... )
+     * );
+     * false when no index could be read.
      */
     function retrieveRemotePackagesList( $onlySitePackages = false )
+    {
+        $packageList = $this->retrievePrimaryRemotePackagesList( $onlySitePackages );
+        foreach ( $this->remoteIndexURLs() as $indexURL )
+        {
+            $errorMsg = $this->ErrorMsg;
+            $idxFileName = $this->downloadFile( $indexURL . '/index.xml', eZStepSiteTypes::tempDir(), 'index-additional.xml' );
+            // a further server never changes the message of the main one
+            $this->ErrorMsg = $errorMsg;
+            if ( $idxFileName === false )
+            {
+                eZDebug::writeWarning( "Skipped the package server '$indexURL': its index.xml could not be downloaded." );
+                continue;
+            }
+            $list = $this->readIndexFile( $idxFileName, $onlySitePackages, $indexURL . '/index.xml' );
+            if ( $list === false )
+                continue;
+            $packageList = is_array( $packageList ) ? $packageList + $list : $list;
+        }
+        return $packageList;
+    }
+
+    /**
+     * The further package servers, in this order: package.ini [RepositorySettings]
+     * AdditionalRemotePackagesIndexURLs[], then each list named by RemotePackagesIndexSources[] as
+     * <file>;<block>;<setting> (an array setting of <name>=<URL>, e.g. ezupdate.ini;PackageServerSettings;Servers).
+     * Only http(s) URLs, without a trailing slash, each once, never the main server's.
+     *
+     * \return array of URLs
+     */
+    function remoteIndexURLs()
+    {
+        $ini = eZINI::instance( 'package.ini' );
+        $urls = array();
+        if ( $ini->hasVariable( 'RepositorySettings', 'AdditionalRemotePackagesIndexURLs' ) )
+            $urls = array_values( (array)$ini->variable( 'RepositorySettings', 'AdditionalRemotePackagesIndexURLs' ) );
+        if ( $ini->hasVariable( 'RepositorySettings', 'RemotePackagesIndexSources' ) )
+        {
+            foreach ( (array)$ini->variable( 'RepositorySettings', 'RemotePackagesIndexSources' ) as $source )
+            {
+                $parts = array_map( 'trim', explode( ';', (string)$source ) );
+                if ( count( $parts ) != 3 || !preg_match( '/^[A-Za-z0-9_.-]+\.ini$/', $parts[0] ) || $parts[1] === '' || $parts[2] === '' )
+                {
+                    eZDebug::writeWarning( "package.ini [RepositorySettings] RemotePackagesIndexSources[]: '$source' is not <file>.ini;<block>;<setting>." );
+                    continue;
+                }
+                $sourceINI = eZINI::instance( $parts[0] );
+                if ( $sourceINI->hasVariable( $parts[1], $parts[2] ) )
+                    $urls = array_merge( $urls, array_values( (array)$sourceINI->variable( $parts[1], $parts[2] ) ) );
+            }
+        }
+        return self::normalizeIndexURLs( $urls, $this->IndexURL );
+    }
+
+    /**
+     * Keeps the http(s) URLs of \a $urls, without trailing slashes, each once, and never \a $mainURL.
+     */
+    static function normalizeIndexURLs( array $urls, $mainURL = '' )
+    {
+        $seen = array( rtrim( trim( (string)$mainURL ), '/' ) => true );
+        $result = array();
+        foreach ( $urls as $url )
+        {
+            $url = rtrim( trim( (string)$url ), '/' );
+            if ( $url === '' || isset( $seen[$url] ) )
+                continue;
+            if ( !self::isHttpURL( $url ) )
+            {
+                eZDebug::writeWarning( "Skipped the package server '$url': only http:// and https:// addresses are read." );
+                continue;
+            }
+            $seen[$url] = true;
+            $result[] = $url;
+        }
+        return $result;
+    }
+
+    /**
+     * The packages of the main index, RemotePackagesIndexURL, or of the system repository's index.xml when it
+     * cannot be downloaded (an offline installation).
+     */
+    function retrievePrimaryRemotePackagesList( $onlySitePackages = false )
     {
         // Download index file.
         $idxFileName = $this->downloadFile( $this->XMLIndexURL, /* $outDir = */ eZStepSiteTypes::tempDir(), 'index.xml' );
@@ -906,24 +1011,35 @@ class eZStepSiteTypes extends eZStepInstaller
             return false;
         }
 
-        // Parse it.
+        return $this->readIndexFile( $idxFileName, $onlySitePackages, $this->XMLIndexURL );
+    }
+
+    /**
+     * Reads a downloaded index.xml (and removes the file): name => attributes of each <package>, only the site
+     * packages when \a $onlySitePackages, each entry checked by sanitizeRemotePackageAttributes().
+     * \return the list, or false when the file is no package index.
+     */
+    function readIndexFile( $idxFileName, $onlySitePackages, $indexURL )
+    {
         $dom = new DOMDocument( '1.0', 'utf-8' );
         $dom->preserveWhiteSpace = false;
-        $success = $dom->load( realpath( $idxFileName ) );
+        $previous = libxml_use_internal_errors( true );
+        $success = $dom->load( realpath( $idxFileName ), LIBXML_NONET );
+        libxml_use_internal_errors( $previous );
 
         @unlink( $idxFileName );
 
         if ( !$success )
         {
-            eZDebug::writeError( "Unable to open index file." );
+            eZDebug::writeError( "Unable to open index file of '$indexURL'." );
             return false;
         }
 
         $root = $dom->documentElement;
 
-        if ( $root->localName != 'packages' )
+        if ( !$root || $root->localName != 'packages' )
         {
-            eZDebug::writeError( "Malformed index file." );
+            eZDebug::writeError( "Malformed index file of '$indexURL'." );
             return false;
         }
 
@@ -939,10 +1055,59 @@ class eZStepSiteTypes extends eZStepInstaller
             {
                 $packageAttributes[$attributeNode->localName] = $attributeNode->value;
             }
+            $packageAttributes = self::sanitizeRemotePackageAttributes( $packageAttributes );
+            if ( $packageAttributes === false )
+            {
+                eZDebug::writeWarning( "Skipped a package entry of '$indexURL' with no valid name." );
+                continue;
+            }
             $packageList[$packageAttributes['name']] = $packageAttributes;
         }
 
         return $packageList;
+    }
+
+    /**
+     * Checks one <package> entry of a remote index.xml, which is data from another server.
+     *
+     * - name: letters, digits, dot, dash and underscore only, else the entry is skipped (false)
+     * - url, thumbnail_url: kept only when they are http:// or https:// URLs; anything else
+     *   (javascript:, data:, file://, a relative path) is removed, so the package cannot be
+     *   downloaded from it and no thumbnail is shown
+     * - every other attribute stays text; the templates escape it when they print it
+     *
+     * \return the attributes, or false when the entry has no valid name.
+     */
+    static function sanitizeRemotePackageAttributes( array $attributes )
+    {
+        if ( !isset( $attributes['name'] ) || !is_string( $attributes['name'] ) ||
+             !preg_match( '/^[A-Za-z0-9_][A-Za-z0-9_.-]*$/', $attributes['name'] ) )
+        {
+            return false;
+        }
+        foreach ( array( 'url', 'thumbnail_url' ) as $key )
+        {
+            if ( isset( $attributes[$key] ) && !self::isHttpURL( $attributes[$key] ) )
+            {
+                unset( $attributes[$key] );
+            }
+        }
+        return $attributes;
+    }
+
+    /**
+     * \return true if \a $url is an absolute http:// or https:// URL with a host.
+     */
+    static function isHttpURL( $url )
+    {
+        if ( !is_string( $url ) || $url !== trim( $url ) || preg_match( '/[\x00-\x20"\'<>\\\\`]/', $url ) )
+        {
+            return false;
+        }
+        $scheme = parse_url( $url, PHP_URL_SCHEME );
+        $host = parse_url( $url, PHP_URL_HOST );
+        return is_string( $scheme ) && in_array( strtolower( $scheme ), array( 'http', 'https' ), true ) &&
+               is_string( $host ) && $host !== '';
     }
 
     /**

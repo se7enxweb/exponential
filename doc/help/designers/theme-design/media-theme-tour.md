@@ -35,6 +35,8 @@ copy, and what to keep in mind when you build on it.
 - Stylesheets, scripts and fonts in `stylesheets/`, `javascript/`, `fonts/`; SCSS sources under `sass/`.
 - Its README states that the templates are hand-maintained source: edit them directly.
 
+![The media design on the public site: the Fit and Healthy front page drawn by layouts](../../images/designers/site-front-page.webp)
+
 ## The pagelayout and its parts
 
 `templates/pagelayout.tpl` prepares a few variables (the current node, the breadcrumb path), includes

@@ -32,7 +32,7 @@ checklist assumes the decisions on [Planning several brands](multi-brand-plannin
       ([Deciding what to share](shared-content-across-brands.md#deciding-what-to-share)).
 - [ ] Address scheme chosen: own host, path below another brand, or both
       ([How visitors reach a brand](one-installation-many-sites.md#how-visitors-reach-a-brand)).
-- [ ] Languages of the brand decided (Multilingual checklist).
+- [ ] Languages of the brand decided ([Multilingual checklist](../multilingual/multilingual-checklist.md)).
 
 ## Build
 
@@ -84,7 +84,7 @@ checklist assumes the decisions on [Planning several brands](multi-brand-plannin
 - [ ] The other brands still look and behave exactly as before.
 - [ ] Sitemaps and feeds of the brand point to its own address
       ([Sitemaps](../../creators/website-creators/sitemaps.md),
-      Feeds and syndication).
+      [Feeds and syndication](../mobile-and-headless/feeds-and-syndication.md)).
 
 ## The first month
 

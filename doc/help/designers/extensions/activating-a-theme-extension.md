@@ -25,6 +25,8 @@ This page is for designers testing a theme on an installation, and for administr
 3. Press **Review changes**: the page shows the resulting `ActiveExtensions[]` lines and the risks.
 4. Press **Apply changes**. The page names the file it saved and the backup copy it kept.
 
+![Setup, Extensions: the counters, search, sort and filter of the extensions, above the cards with Activate and Deactivate](../../images/designers/extensions-activate.webp)
+
 The whole page: [The Extensions page](../../../guides/extensions-page.md).
 
 ## On the command line
