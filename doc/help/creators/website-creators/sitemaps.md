@@ -86,5 +86,5 @@ rewrite rules must let them through (`RewriteRule ^sitemap[^/]*\.xml - [L]`)
 
 - [robots.txt for your site](robots-txt.md)
 - [SEO basics for Exponential sites](seo-basics.md)
-- Cronjobs for applications
+- [Cronjobs for applications](../app-creators/cronjobs-for-applications.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
