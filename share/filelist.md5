@@ -5550,7 +5550,7 @@ f75c6717404d181c69a0f42a30bc82e4  doc/examples/template-functions/shop_account_v
 776e2096125ef925f91741d7419d3187  doc/examples/template-functions/tool_bar.md
 eb53f689889b090a6a6decbed5277d91  doc/examples/template-functions/undef.md
 e5355c40fe515527462c85a880edcf0a  doc/examples/template-functions/while.md
-5969de56635e3d5abd4c2fa8beaf8986  doc/examples/template-operators/README.md
+698d1220acf94af97fcaf3060413d5b8  doc/examples/template-operators/README.md
 94284652ab561535f9c054c1aff5639f  doc/examples/template-operators/abs.md
 6339c9515ce47d063fccf61d1a758040  doc/examples/template-operators/action_icon.md
 1fa93d6ac83b522d8c35b316154ce5cc  doc/examples/template-operators/addcslashes.md
@@ -5639,6 +5639,13 @@ e469ecf9727732100512cc6e94e137c6  doc/examples/template-operators/float.md
 eaabf75d2671323ea17b04c32c01d90d  doc/examples/template-operators/gettime.md
 48213a3bafdef11e5a9f8c873bd979ab  doc/examples/template-operators/gt.md
 f98ca34eb9aa91e1c388a95fac8f8930  doc/examples/template-operators/has_access_to_limitation.md
+343d9a09c25d7d29a815823da9eb70d0  doc/examples/template-operators/has_any_role.md
+c915b6b11a4284ae75ec0541853d6662  doc/examples/template-operators/has_policy.md
+701f547a47c8f0c9e77ad092387f2ffb  doc/examples/template-operators/has_policy_by_user.md
+86bd8426d6f42991676f329a032f6fe8  doc/examples/template-operators/has_role.md
+014cc8d36d5c61738dfb99fe598b6f04  doc/examples/template-operators/has_role_by_user.md
+856062cd0c0ee1166bd41d78ed2f2170  doc/examples/template-operators/has_role_by_user_id.md
+745adf6658ecb8ff528472a41ca018b8  doc/examples/template-operators/has_role_id.md
 20c14a0a7eb3e73d960e75b83ac906df  doc/examples/template-operators/hash.md
 93e367b11ae48b0671840b1411ad0da9  doc/examples/template-operators/hebrev.md
 db01d3b7fcfa76d95e73042e49914825  doc/examples/template-operators/hex2bin.md
@@ -7485,7 +7492,7 @@ d355246fd0485dd8399e0aeb99a66299  doc/standards/databases-and-sql.md
 23e878be585f79567fd29b5407aa9a06  doc/standards/documentation-and-publishing.md
 449ebadd494411a6149712074de173e8  doc/standards/header.txt
 06e9a6bdc8881cea34b7256f8dfbeed3  doc/standards/internationalization.md
-6ea7e3e4ce2d0c9f5613c3e0cb1bef76  doc/standards/patterns/README.md
+e5456089e17b1a3d73658df6a287c316  doc/standards/patterns/README.md
 db5af8323066f3f7c28b63c188f839f7  doc/standards/patterns/active-record.md
 236a15387b09a00e86fcd8d659f0a5d4  doc/standards/patterns/adapter.md
 89593d8fb0713684734145a635f89276  doc/standards/patterns/area-extension-adminaid.md
@@ -7626,10 +7633,10 @@ bb3b6bb9e219c02fe354fd467da44617  doc/standards/patterns/area-lib-ezmath.md
 298950e6c473be4bcc67dec917922921  doc/standards/patterns/area-lib-ezpdf.md
 ab60e06628c4ccb2308856db10aea7fc  doc/standards/patterns/area-lib-ezsession.md
 27e2a492b494c2b84946efce6faa7d30  doc/standards/patterns/area-lib-ezsoap.md
-39b1857ace75c0ea42172e2f8e74010f  doc/standards/patterns/area-lib-eztemplate.md
+6cba6d9591ab43d24717ba529244a85d  doc/standards/patterns/area-lib-eztemplate.md
 a6ba9e05b130ada3369e589850db54dd  doc/standards/patterns/area-lib-ezutils.md
 f56f52be9dcadf413e89bfbb6eefe733  doc/standards/patterns/area-lib.md
-f0b92f61e94145f5be7e36d30e8d0990  doc/standards/patterns/area-settings.md
+8aa44109806151fcee173b1a976a72fa  doc/standards/patterns/area-settings.md
 a4ef695b674c0add62856e3d28ea491c  doc/standards/patterns/builder.md
 8b86164ff04a96e58338bec9b80140d8  doc/standards/patterns/chain.md
 77752d0373c51f948d495b846a0fd580  doc/standards/patterns/command.md
@@ -7641,7 +7648,7 @@ ace043d83d8a64806f2d8e67d82ecfa0  doc/standards/patterns/facade.md
 7fead0871fc382dac31e1fafb726ddba  doc/standards/patterns/factory.md
 2d5a85d89a682e90a4685ced0d54a03b  doc/standards/patterns/fetch-function.md
 9f1e881de6eb53d0bdaf07c0a66668e2  doc/standards/patterns/front-controller.md
-8a733ef6444e677dd56053ec25cfebe6  doc/standards/patterns/ini-plugin-point.md
+9801106d5eef0e0053ff7208ecdd633d  doc/standards/patterns/ini-plugin-point.md
 2a979f2464e87eb2fcd24c0c459ae627  doc/standards/patterns/interface.md
 49f14f915edd11c4e7b9c18cdbcc9daf  doc/standards/patterns/iterator.md
 ae60f3891bc0ba525d2989391a15a0a0  doc/standards/patterns/module-view.md
@@ -7650,9 +7657,9 @@ ae60f3891bc0ba525d2989391a15a0a0  doc/standards/patterns/module-view.md
 a6f0fb6acd617d97307826c5c3e16fce  doc/standards/patterns/registry.md
 2a8d488fe0973bf6740a73d8b117de32  doc/standards/patterns/singleton.md
 cdfb65fade39da53da1bfb855c32c550  doc/standards/patterns/strategy-handler.md
-e74e2f46f028d57b400dd75b92c557af  doc/standards/patterns/template-function.md
+52614ff39045a8cabba2231fabe1bac8  doc/standards/patterns/template-function.md
 d94c51bf69ec4126190e0fdbe32b8fc3  doc/standards/patterns/template-method.md
-46336932be10a46d66acef133e81286a  doc/standards/patterns/template-operator.md
+0f4ee7679e93ddf86695ada4a59ac74d  doc/standards/patterns/template-operator.md
 106ef17564fdc6b2b1f38807e68c547d  doc/standards/patterns/trait.md
 3fcdf5a3fb1556c009598b02d27017e8  doc/standards/patterns/utility.md
 eb2886cb8c8d25c60a74b742733a7ffb  doc/standards/patterns/value-object.md

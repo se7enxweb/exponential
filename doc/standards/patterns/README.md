@@ -3,7 +3,7 @@ title: Design pattern catalogue
 audience: developer
 category: standards
 order: 300
-summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 5060 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
+summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 5067 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
 keywords: design patterns, pattern catalogue, abstractions, architecture, factory, singleton, registry, strategy, handler, template method, observer, adapter, facade, active record, eZPersistentObject, datatype, template operator, fetch function, module view, policy function, workflow event, extension point, plugin, INI
 type: reference
 ---
@@ -19,13 +19,13 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 
 | | |
 |---|---|
-| Instances (all categories) | 5060 |
+| Instances (all categories) | 5067 |
 | Classes, interfaces, traits and enums | 2877 (2804 classes, 72 interfaces, 1 trait) |
 | ... with at least one pattern | 2297 |
 | Module views | 491 |
 | Policy functions | 232 |
 | Fetch functions | 290 |
-| Template operators | 236 |
+| Template operators | 243 |
 | Cronjob parts | 36 |
 | Event hooks | 97 |
 | INI plugin points | 574 |
@@ -39,7 +39,7 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | [Active Record (eZPersistentObject)](active-record.md) | Data access | 194 | Extends eZPersistentObject, directly or through a parent class. |
 | [Datatype (Strategy for content fields)](datatype.md) | Plugins | 54 | Extends eZDataType, directly or through a parent class. |
 | [Workflow event type (Command, plugin)](workflow-event.md) | Plugins | 12 | Extends eZWorkflowEventType. |
-| [Template operator (Interpreter plugin)](template-operator.md) | Plugins | 314 | Registered in an eztemplateautoload.php ($eZTemplateOperatorArray[]), or has operatorList() and modify(). |
+| [Template operator (Interpreter plugin)](template-operator.md) | Plugins | 321 | Registered in an eztemplateautoload.php ($eZTemplateOperatorArray[]), or has operatorList() and modify(). |
 | [Template function (Interpreter plugin)](template-function.md) | Plugins | 45 | Registered in an eztemplateautoload.php ($eZTemplateFunctionArray[]), or has functionList() and process(). |
 | [Fetch function (Query Object, Facade)](fetch-function.md) | Plugins | 319 | An entry of a module's function_definition.php, or a class named *FunctionCollection. |
 | [Module view (Page Controller)](module-view.md) | Request handling | 921 | An entry of $ViewList in a module.php, or a class that extends ModuleView or Page (the runnable form of a view). |
@@ -211,7 +211,7 @@ One page per part of the code base: every class with its patterns, and the views
 | [lib/ezpdf](area-lib-ezpdf.md) | 5 | 0 | 0 | 1 | 0 |
 | [lib/ezsession](area-lib-ezsession.md) | 6 | 0 | 0 | 0 | 0 |
 | [lib/ezsoap](area-lib-ezsoap.md) | 10 | 0 | 0 | 0 | 0 |
-| [lib/eztemplate](area-lib-eztemplate.md) | 56 | 0 | 0 | 108 | 0 |
+| [lib/eztemplate](area-lib-eztemplate.md) | 56 | 0 | 0 | 115 | 0 |
 | [lib/ezutils](area-lib-ezutils.md) | 47 | 0 | 0 | 0 | 0 |
 | [settings](area-settings.md) | 0 | 0 | 0 | 0 | 219 |
 

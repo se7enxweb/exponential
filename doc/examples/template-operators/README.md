@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Every operator the kernel, its libraries and the bundled extensions register (the `$eZTemplateOperatorArray` of each `eztemplateautoload.php`, and `settings/template.ini` `[PHP] PHPOperatorList[]`), with its parameters and an example. "Used in" says whether a shipped template uses it; its page quotes the first use.
 
-228 operators.
+235 operators.
 
 | Operator | Class | Parameters | Used in a shipped template |
 |---|---|---|---|
@@ -104,6 +104,13 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [gettime](gettime.md) | eZTemplateLocaleOperator | 1 |  |
 | [gt](gt.md) | eZTemplateLogicOperator | 1 | yes |
 | [has_access_to_limitation](has_access_to_limitation.md) | ezjscAccessTemplateFunctions | 4 |  |
+| [has_any_role](has_any_role.md) | eZTemplateRoleOperator | 3 |  |
+| [has_policy](has_policy.md) | eZTemplateRoleOperator | 3 |  |
+| [has_policy_by_user](has_policy_by_user.md) | eZTemplateRoleOperator | 3 |  |
+| [has_role](has_role.md) | eZTemplateRoleOperator | 2 |  |
+| [has_role_by_user](has_role_by_user.md) | eZTemplateRoleOperator | 2 |  |
+| [has_role_by_user_id](has_role_by_user_id.md) | eZTemplateRoleOperator | 2 |  |
+| [has_role_id](has_role_id.md) | eZTemplateRoleOperator | 2 |  |
 | [hash](hash.md) | eZTemplateArrayOperator | 0 | yes |
 | [hebrev](hebrev.md) | eZTemplateStringsOperator | ? |  |
 | [hex2bin](hex2bin.md) | eZTemplateStringsOperator | ? |  |
