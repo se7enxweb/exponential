@@ -1,7 +1,7 @@
 ---
 title: exp:ini for site builders
 audience: admin, developer, website-creator, designer, hosting
-category: layouts
+category: build-two-ways
 order: 420
 summary: The exp:ini commands a site builder needs for menus and theme settings - where, get, add, rem, clear, set, scopes, dry runs and backups - with the scopes of an installation.
 keywords: exp:ini, console, ini.php, where, get, add, rem, clear, set, scopes, dry-run, backup, siteaccess scope, global, extension scope, menu.ini

@@ -1,7 +1,7 @@
 ---
 title: Two ways to build, the words
 audience: designer, website-creator, editor, admin, developer
-category: layouts
+category: build-two-ways
 order: 40
 summary: The terms of layouts and templates as these pages use them - layout, layout type, zone, block, block definition, view type, item view type, collection, shared layout, linked zone, template block, design, design extension, override, siteaccess, scope, node ID.
 keywords: glossary, terms, layout, zone, block, block definition, view type, item view type, collection, manual, dynamic, shared layout, linked zone, template block, design extension, override, siteaccess, scope

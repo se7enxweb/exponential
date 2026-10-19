@@ -1,7 +1,7 @@
 ---
 title: "Which way: the decision table"
 audience: designer, website-creator, editor, admin, developer
-category: layouts
+category: build-two-ways
 order: 20
 summary: For each kind of change on a site - layout, block look, menu, chrome, content view, new block type - which way to build it (Layouts editor, template override, settings, content) and why, with the Fit & Healthy example for each row.
 keywords: decision table, when to use layouts, when to use templates, template override, Layouts editor, settings, content, block types, menus, header, footer
