@@ -22,7 +22,7 @@ The shipped settings of `settings/exphelp.ini`: 19 blocks, 102 settings.
 | Block | Settings |
 |---|---|
 | [HelpSettings](HelpSettings.md) | 3 |
-| [IndexSettings](IndexSettings.md) | 10 |
+| [IndexSettings](IndexSettings.md) | 11 |
 | [AudienceSettings](AudienceSettings.md) | 5 |
 | [CategorySettings](CategorySettings.md) | 5 |
 | [TypeSettings](TypeSettings.md) | 2 |

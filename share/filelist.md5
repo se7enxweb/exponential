@@ -3305,7 +3305,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-da1c4e1a62d00e023337f72035fb89ea  doc/changelogs/6.0/6.0.15.md
+e08df792e76b8966b9773e787b0cab59  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4336,12 +4336,12 @@ ebb1ce0c0068db635357d22176c3309a  doc/examples/ini-settings/exphelp/AudienceSett
 3d307f778430f1bdd6462b040e20299c  doc/examples/ini-settings/exphelp/DashboardSettings.md
 8d49674be696cecab03cd2801a4ee73a  doc/examples/ini-settings/exphelp/FeaturedSettings.md
 0e61eddfd553bb8e7338120de2a880bb  doc/examples/ini-settings/exphelp/HelpSettings.md
-13bbbf43010a843f89681c4de83aec18  doc/examples/ini-settings/exphelp/IndexSettings.md
+1302746aeae3886b4d552fdae5644e3c  doc/examples/ini-settings/exphelp/IndexSettings.md
 589ce74d483c621dd08c2fe9a147566d  doc/examples/ini-settings/exphelp/IssueTrackers.md
 c46567ea2a0855ca6f41e1fa356c47fc  doc/examples/ini-settings/exphelp/License.md
 1101a760f6eb6cc2f30d28a0f0d19ec9  doc/examples/ini-settings/exphelp/NavigationSettings.md
 a13bbc950bdaa9e2fdceb8ce86dc90e3  doc/examples/ini-settings/exphelp/PdfSettings.md
-e991c8ed3857731628c6e2919c4c4557  doc/examples/ini-settings/exphelp/README.md
+68dfdf83ed35792571b8874ade80637a  doc/examples/ini-settings/exphelp/README.md
 ddc3e9885053489e977ffa32a29ae8b7  doc/examples/ini-settings/exphelp/SearchSettings.md
 a049551ead973f7c0d01d422b681c6a1  doc/examples/ini-settings/exphelp/SecuritySettings.md
 0d482dd4e7993d690a621e90e3b8b302  doc/examples/ini-settings/exphelp/TitleSettings.md
@@ -10435,7 +10435,7 @@ ccb98eef4c622a21501d839063227698  kernel/classes/help/content/exphelpcontentvali
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 705e12f46e612abaecfd6cd91913b884  kernel/classes/help/exphelpcontextregistry.php
-d3185ec8ff16d63e0b4712115236973d  kernel/classes/help/exphelpdocumentindex.php
+4ce50c947f7ddcefb789b60133d99c93  kernel/classes/help/exphelpdocumentindex.php
 d9eb2408dfe0b89e1a29c6605069d07d  kernel/classes/help/exphelpexamplesgenerator.php
 d737f4b8cee16a8ecd9af63aa5d73613  kernel/classes/help/exphelpfrontmatter.php
 2b4f170525630a0acb5287c535570570  kernel/classes/help/exphelpfunctioncollection.php
@@ -11928,7 +11928,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 a111b660f8e29a00cb059785bda7df42  settings/debugbar.ini
 e17867b5893b583b1b4b3087cb7435bb  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-03c97af578587054b8f77099bc2c2acd  settings/exphelp.ini
+3b3c8d5ceddb139a90edef261eb97930  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -13484,7 +13484,7 @@ d1046a764cd9965e41cb1a4576148d32  tests/tests/kernel/classes/help/expHelpContent
 ee5e9d4c60345cc4da5a520c7bed6150  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 19fa0f5f2358b00a9b0a8b6fe0a822ca  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 2ea77389ad2236c60fccff7806f68509  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
-63751e825a3e7a8eab2e03bde858a6e7  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
+6ee06a604bb66288f14ccc5719c8f0c7  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
 6be5b0ed27c9e3c5dd9c9ec5b6c0df08  tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php
 71c9e5ae21978534c250ee6455633a7e  tests/tests/kernel/classes/help/expHelpIssueReportTest.php
 5179a8201d89115a45c42a76a5e93bde  tests/tests/kernel/classes/help/expHelpLandingPagesTest.php
