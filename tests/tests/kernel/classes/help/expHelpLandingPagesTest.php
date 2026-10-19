@@ -16,7 +16,7 @@
  *  LP-06  module and templates: the audience view with the read function; audience.tpl and its parts are the same in
  *         admin4 and the classic admin, have no inline CSS or script, external links open with rel="noopener
  *         noreferrer"; the dashboard cards open the landing page and the dashboard shows the support block
- *  LP-07  every new string is in the eleven complete catalogues under kernel/exphelp
+ *  LP-07  every new string is in the complete catalogues (twenty-one) under kernel/exphelp
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/help/expHelpLandingPagesTest.php
  *
@@ -65,8 +65,9 @@ class expHelpLandingTestIndex extends expHelpDocumentIndex
 
 class expHelpLandingPagesTest extends PHPUnit\Framework\TestCase
 {
-    const CATALOGUES = array( 'ara-SA', 'eng-US', 'esl-ES', 'esl-MX', 'fre-FR', 'ger-DE', 'heb-IL', 'lat-VA', 'tlh-QO',
-                              'ukr-UA', 'untranslated' );
+    const CATALOGUES = array( 'ara-SA', 'cro-HR', 'cze-CZ', 'dan-DK', 'dut-NL', 'eng-US', 'esl-ES', 'esl-MX', 'fre-FR', 'ger-DE',
+                              'heb-IL', 'ita-IT', 'lat-VA', 'nor-NO', 'pol-PL', 'por-BR', 'swe-SE', 'tlh-QO', 'tur-TR', 'ukr-UA',
+                              'untranslated' );
 
     private static function root()
     {
