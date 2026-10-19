@@ -73095,5 +73095,21 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

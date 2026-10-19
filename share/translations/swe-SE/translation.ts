@@ -74548,5 +74548,21 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Open or close every folder</source>
         <translation>Öppna eller stäng alla mappar</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Kunder</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Driv webbplatsen du har på Exponential: ditt team och det dagliga arbetet, handel, underhåll med din leverantör, tillväxt och verklig nytta.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Kundframgång</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>För organisationer och personer som driver en egen webbplats på Exponential: team, publicering, handel, underhåll, tillväxt och partner.</translation>
+    </message>
 </context>
 </TS>

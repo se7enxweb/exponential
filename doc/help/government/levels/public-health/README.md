@@ -43,7 +43,7 @@ public-sector practice. Health advice itself is the responsibility of your clini
 3. **Content model** and **Structure, sections and roles**.
 4. **First 90 days**.
 
-Up: [Levels of government](../README.md). The landing page of the Governments section, government-start-here.md,
+Up: [Levels of government](../README.md). The landing page of the Governments section, [Governments: start here](../../government-start-here.md),
 is the starting point for every reader. Emergency management organizations will find related advice in
 [Emergency services](../emergency-services/README.md).
 

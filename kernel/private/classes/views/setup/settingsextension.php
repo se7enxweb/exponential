@@ -133,7 +133,8 @@ class Settingsextension extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'wizard_methods', \expSettingsExtensionWizard::clearMethods() );
         $tpl->setVariable( 'wizard_types', \expSettingsExtensionWizard::collectTypes() );
         $tpl->setVariable( 'wizard_chosen', \expSettingsExtensionWizard::chosenTopics( $settings ) );
-        $tpl->setVariable( 'wizard_problems', $problems );
+        // Shown once the form has been sent: a first visit is not a list of errors
+        $tpl->setVariable( 'wizard_problems', \expExtensionWizard::shownProblems( $problems, $http->hasPostVariable( 'Submitted' ) ) );
         $tpl->setVariable( 'wizard_feedback', $feedback );
         $tpl->setVariable( 'wizard_files', $preview );
         $tpl->setVariable( 'wizard_file_count', count( $files ) );

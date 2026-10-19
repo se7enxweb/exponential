@@ -74390,6 +74390,22 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
         <translation>Exponential pour les administrations et les organismes publics : accessibilité, vie privée, sécurité, open source, marchés publics et maintenance à long terme.</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Clients</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Faites vivre le site que vous avez sur Exponential : votre équipe et le travail quotidien, le commerce, la maintenance avec votre prestataire, la croissance et la valeur obtenue.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Réussite client</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Pour les organisations et les personnes qui exploitent leur propre site sur Exponential : équipe, publication, commerce, maintenance, croissance et partenaires.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

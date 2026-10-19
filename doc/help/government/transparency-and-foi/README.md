@@ -14,8 +14,7 @@ website built with Exponential: managers, records and FOI officers, editors, sit
 describes features and common practice; it is not legal advice, and the rules of your jurisdiction decide what you
 must publish and when.
 
-Up: the government help index (README.md one level up) and the landing page government-start-here.md, both in
-the government folder.
+Up: [Governments: start here](../government-start-here.md).
 
 ## Contents
 

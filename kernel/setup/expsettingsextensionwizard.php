@@ -1910,7 +1910,7 @@ class expSettingsExtensionWizard extends expExtensionWizard
 
         if ( in_array( 'event', $chosen, true ) )
             $readme .= "4. Regenerate the autoloads, or the listener class is never found:\n\n"
-                     . "```\nphp bin/php/ezpgenerateautoloads.php --extension=" . $settings['name'] . "\n```\n\n";
+                     . "```\nphp bin/php/ezpgenerateautoloads.php --extension\n```\n\n";
 
         $readme .= "## What it says\n\n";
 

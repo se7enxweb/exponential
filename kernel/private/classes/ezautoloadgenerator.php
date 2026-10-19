@@ -882,6 +882,17 @@ class eZAutoloadGenerator
                                     break;
                                 }
 
+                                /**
+                                 * Ignore the keyword where it is a name, not a declaration: a method called
+                                 * "class" or "enum" (function class(), $o->class(), $o?->enum, A::class(),
+                                 * const ENUM). A declaration is the keyword followed by a name; anything else
+                                 * gave an entry with a blank class name.
+                                 */
+                                if ( !self::declaresName( $tokens, $key ) )
+                                {
+                                    break;
+                                }
+
                                 // Increment stat for found class.
                                 $this->incrementProgressStat( self::OUTPUT_PROGRESS_PHASE2, 'classCount' );
 
@@ -1198,6 +1209,35 @@ ENDL;
 ?>
 
 END;
+    }
+
+    /**
+     * Whether the class, interface, trait or enum keyword at $key declares something: it is followed by a name
+     * (whitespace, then a T_STRING) and is not itself used as a name, after "function", "->", "?->", "::" or
+     * "const". PHP allows a method called class or enum, and a constant called ENUM.
+     *
+     * @param array $tokens from token_get_all()
+     * @param int $key the keyword's position
+     * @return bool
+     */
+    public static function declaresName( array $tokens, $key )
+    {
+        $previous = $key - 1;
+        while ( $previous >= 0 && is_array( $tokens[$previous] ) && in_array( $tokens[$previous][0], array( T_WHITESPACE, T_COMMENT, T_DOC_COMMENT ), true ) )
+            $previous--;
+
+        if ( $previous >= 0 && is_array( $tokens[$previous] ) )
+        {
+            $asName = array( T_FUNCTION, T_OBJECT_OPERATOR, T_DOUBLE_COLON, T_CONST );
+            if ( defined( 'T_NULLSAFE_OBJECT_OPERATOR' ) )
+                $asName[] = T_NULLSAFE_OBJECT_OPERATOR;
+            if ( in_array( $tokens[$previous][0], $asName, true ) )
+                return false;
+        }
+
+        return isset( $tokens[$key + 1], $tokens[$key + 2] )
+               && is_array( $tokens[$key + 1] ) && $tokens[$key + 1][0] === T_WHITESPACE
+               && is_array( $tokens[$key + 2] ) && $tokens[$key + 2][0] === T_STRING;
     }
 
     /**

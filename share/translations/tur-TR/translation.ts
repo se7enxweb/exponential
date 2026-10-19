@@ -73250,5 +73250,21 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Open or close every folder</source>
         <translation>Tüm klasörleri aç veya kapat</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Müşteriler</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Exponential üzerindeki sitenizi yönetin: ekibiniz ve günlük işler, ticaret, sağlayıcınızla bakım, büyüme ve elde edilen değer.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Müşteri başarısı</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Kendi sitesini Exponential üzerinde işleten kuruluşlar ve kişiler için: ekip, yayıncılık, ticaret, bakım, büyüme ve iş ortakları.</translation>
+    </message>
 </context>
 </TS>

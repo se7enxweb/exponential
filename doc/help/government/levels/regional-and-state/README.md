@@ -43,7 +43,7 @@ public-sector practice, and the split of responsibilities between levels differs
 4. **First 90 days** as the project plan.
 5. **Shared services for the municipalities of a region** if you host or plan to host municipal sites.
 
-Up: [Levels of government](../README.md). The landing page of the Governments section, government-start-here.md,
+Up: [Levels of government](../README.md). The landing page of the Governments section, [Governments: start here](../../government-start-here.md),
 is the starting point for every reader.
 
 ## What sets regional government apart

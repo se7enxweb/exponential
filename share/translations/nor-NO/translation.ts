@@ -74503,5 +74503,21 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>Open or close every folder</source>
         <translation>Åpne eller lukk alle mapper</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Kunder</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Driv nettstedet du har på Exponential: teamet ditt og det daglige arbeidet, handel, vedlikehold med leverandøren din, vekst og reell verdi.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Kundesuksess</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>For organisasjoner og personer som driver sitt eget nettsted på Exponential: team, publisering, handel, vedlikehold, vekst og partnere.</translation>
+    </message>
 </context>
 </TS>

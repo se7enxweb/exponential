@@ -73,10 +73,6 @@
         <label for="dwTitle">{'Name in the class editor'|i18n( 'design/admin/setup/rad/datatype' )}</label>
         <input type="text" id="dwTitle" name="title" value="{$wizard_settings.title|wash}" />
     </div>
-    <div class="a4-field">
-        <label for="dwGroup">{'Group it is listed under'|i18n( 'design/admin/setup/rad/datatype' )}</label>
-        <input type="text" id="dwGroup" name="group" value="{$wizard_settings.group|wash}" />
-    </div>
 </div>
 
 <div class="a4-field">

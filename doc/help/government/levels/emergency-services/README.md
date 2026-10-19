@@ -45,7 +45,7 @@ telephone networks are outside Exponential.
 4. **Content model** and **Structure, sections and roles**.
 5. **First 90 days**.
 
-Up: [Levels of government](../README.md). The landing page of the Governments section, government-start-here.md,
+Up: [Levels of government](../README.md). The landing page of the Governments section, [Governments: start here](../../government-start-here.md),
 is the starting point for every reader. Health alerts are covered in
 [Alerts in many languages and plain language](../public-health/alerts-multilingual-and-plain-language.md).
 

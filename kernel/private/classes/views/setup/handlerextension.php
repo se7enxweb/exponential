@@ -99,7 +99,8 @@ class Handlerextension extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'wizard_kinds', $others );
         $tpl->setVariable( 'wizard_parts', \expHandlerWizard::parts() );
         $tpl->setVariable( 'wizard_licences', \expHandlerWizard::licences() );
-        $tpl->setVariable( 'wizard_problems', $problems );
+        // Shown once the form has been sent: a first visit is not a list of errors
+        $tpl->setVariable( 'wizard_problems', \expExtensionWizard::shownProblems( $problems, $http->hasPostVariable( 'Submitted' ) ) );
         $tpl->setVariable( 'wizard_feedback', $feedback );
         $tpl->setVariable( 'wizard_files', $preview );
         $tpl->setVariable( 'wizard_file_count', count( $files ) );

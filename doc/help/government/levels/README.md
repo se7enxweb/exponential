@@ -67,10 +67,11 @@ particular government.
    [Internationalization standards](../../../standards/internationalization.md).
 5. Use **First 90 days** as the skeleton of your project plan.
 
-The requirement sections of this Governments help (accessibility, security, privacy, and records and archiving) and
-the building guides (service catalog, forms, citizen accounts, news and alerts, events, documents and publications)
-go deeper on each topic. The step-by-step publishing tasks for editors are in the folder `tasks/publishing/` of this
-section.
+The requirement sections of this Governments help ([accessibility](../accessibility/README.md),
+[security](../security/README.md), [privacy](../privacy/README.md) and
+[records and archiving](../records-and-archiving/README.md)) and the [building guides](../building/README.md) go
+deeper on each topic. The step-by-step [publishing tasks](../tasks/publishing/README.md) for editors are in the tasks folder of this
+section. Up: [Governments: start here](../government-start-here.md).
 
 ## Organizations that span several levels
 

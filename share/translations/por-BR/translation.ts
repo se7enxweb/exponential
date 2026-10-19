@@ -75237,5 +75237,21 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>Open or close every folder</source>
         <translation>Abrir ou fechar todas as pastas</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Clientes</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Administre o site que você já tem no Exponential: sua equipe e o trabalho do dia a dia, comércio, manutenção com seu provedor, crescimento e o valor obtido.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Sucesso do cliente</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Para organizações e pessoas que mantêm o próprio site no Exponential: equipe, publicação, comércio, manutenção, crescimento e parceiros.</translation>
+    </message>
 </context>
 </TS>

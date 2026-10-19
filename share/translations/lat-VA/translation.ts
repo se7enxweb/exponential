@@ -72995,6 +72995,22 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
         <translation>Exponential pro civitatibus et corporibus publicis: accessibilitas, secretum, securitas, fons apertus, emptio publica et cura diuturna.</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Clientes</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Situm tuum in Exponential rege: turma tua et opus cotidianum, commercium, cura cum provisore, incrementum et fructus.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Prosperitas clientium</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Societatibus et hominibus qui situm suum in Exponential regunt: turma, editio, commercium, cura, incrementum et socii.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

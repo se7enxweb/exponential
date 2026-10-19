@@ -308,6 +308,13 @@ class expHelpLandingPagesTest extends PHPUnit\Framework\TestCase
         }
         $this->assertMatchesRegularExpression( '/^Blocks\[\]=commits\s*$/m', self::iniSection( 'Landing_developer' ) );
         $this->assertMatchesRegularExpression( '/^Blocks\[\]=support\s*$/m', self::iniSection( 'Landing_sponsor' ) );
+        // the customers (site owners and their teams) start at their own page and point to editors, admins and partners
+        $this->assertContains( 'customer', $m[1] );
+        $customer = self::iniSection( 'Landing_customer' );
+        $this->assertMatchesRegularExpression( '#^StartPage=help/customers/customers-start-here\.md\s*$#m', $customer );
+        foreach ( array( 'editor', 'admin', 'hosting', 'partner' ) as $rel )
+            $this->assertMatchesRegularExpression( '/^Related\[\]=' . $rel . '\s*$/m', $customer );
+        $this->assertSame( '/exphelp/audience/customer', expHelpLanding::url( 'customer' ) );
         $feed = self::iniSection( 'CommitFeedSettings' );
         $this->assertStringContainsString( "\nFeedURL=https://github.com/se7enxweb/exponential/commits/main.atom\n", $feed );
         $this->assertStringContainsString( "\nCacheTTL=600\n", $feed );

@@ -76,11 +76,11 @@ and off on sites, HSTS empty by default, no `security.txt` shipped, no dependenc
 | [Backups and recovery](backups-and-recovery.md) | consistent backups, restore tests, smaller recoveries |
 | [Incident response for an Exponential site](incident-response.md) | contain, investigate, rebuild, notify |
 
-Tasks that apply these pages step by step are in the compliance tasks of this help (tasks/compliance).
+Tasks that apply these pages step by step are in the compliance tasks of this help ([Compliance tasks](../tasks/compliance/README.md)).
 
 ## Related pages
 
-- Up: the Governments start page (government-start-here.md) and the Governments index (README.md one level up)
+- Up: [Governments: start here](../government-start-here.md)
 - [Security standards](../../../standards/security.md)
 - [Security hardening](../../security-hardening.md)
 - [Security for hosts](../../hosting/security/README.md)

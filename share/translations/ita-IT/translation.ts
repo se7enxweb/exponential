@@ -74652,5 +74652,21 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>Open or close every folder</source>
         <translation>Apri o chiudi tutte le cartelle</translation>
     </message>
+    <message>
+        <source>Customers</source>
+        <translation>Clienti</translation>
+    </message>
+    <message>
+        <source>Run the site you have on Exponential: your team and daily work, commerce, upkeep with your provider, growth and getting value.</source>
+        <translation>Gestisci il sito che hai su Exponential: il tuo team e il lavoro quotidiano, il commercio, la manutenzione con il tuo fornitore, la crescita e il valore ottenuto.</translation>
+    </message>
+    <message>
+        <source>Customer success</source>
+        <translation>Successo dei clienti</translation>
+    </message>
+    <message>
+        <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
+        <translation>Per organizzazioni e persone che gestiscono il proprio sito su Exponential: team, pubblicazione, commercio, manutenzione, crescita e partner.</translation>
+    </message>
 </context>
 </TS>
