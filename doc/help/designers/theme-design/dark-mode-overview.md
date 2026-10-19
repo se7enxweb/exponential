@@ -36,6 +36,10 @@ A good switch offers three choices: light, dark, and "system" (follow the operat
 changes while the page is open). Without any choice, a public design can follow the system with
 `prefers-color-scheme` alone ([Dark mode with prefers-color-scheme](dark-mode-with-prefers-color-scheme.md)).
 
+![The administration in the light mode: the dashboard with its header, left column and cards](../../images/designers/dashboard-light.webp)
+
+![The same dashboard in the dark mode: every card, text and control takes its dark token value](../../images/designers/dashboard-dark.webp)
+
 ## How admin4 does it
 
 - **Tokens** `--a4-*` in `design/admin4/stylesheets/components.css`; every color token has a dark value under
