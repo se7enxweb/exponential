@@ -252,6 +252,7 @@ class expDesignExtensionWizard extends expExtensionWizard
         if ( $parts['autoloads'] )
         {
             $files['autoloads/' . $name . 'operators.php'] = self::operatorClass( $settings );
+            $files['autoloads/eztemplateautoload.php'] = self::operatorAutoload( $settings );
             $files['settings/site.ini.append.php'] = self::operatorIni( $settings );
         }
 
@@ -309,8 +310,9 @@ class expDesignExtensionWizard extends expExtensionWizard
         {
             $ini .= "[StylesheetSettings]\n";
             $ini .= "# Loaded on every page without a template having to name them.\n";
+            $ini .= "# FrontendCSSFileList, not the deprecated CSSFileList.\n";
             if ( $settings['parts']['stylesheets'] )
-                $ini .= "CSSFileList[]=site.css\n";
+                $ini .= "FrontendCSSFileList[]=site.css\n";
             if ( $settings['parts']['print_stylesheet'] )
                 $ini .= "# print.css is loaded by page_head.tpl with media=\"print\" instead,\n"
                       . "# because this list has no way to say which medium a file is for.\n";
@@ -320,7 +322,8 @@ class expDesignExtensionWizard extends expExtensionWizard
         if ( $settings['parts']['javascript'] )
         {
             $ini .= "[JavaScriptSettings]\n";
-            $ini .= "JavaScriptList[]=site.js\n\n";
+            $ini .= "# FrontendJavaScriptList, not the deprecated JavaScriptList.\n";
+            $ini .= "FrontendJavaScriptList[]=site.js\n\n";
         }
 
         $ini .= "*/ ?>\n";
@@ -364,10 +367,40 @@ class expDesignExtensionWizard extends expExtensionWizard
 
         $ini = self::iniHeader( $settings, 'Template operators' );
         $ini .= "[TemplateSettings]\n";
+        $ini .= "# The template engine reads autoloads/eztemplateautoload.php of every\n";
+        $ini .= "# extension named here.\n";
         $ini .= "ExtensionAutoloadPath[]=" . $name . "\n\n";
         $ini .= "*/ ?>\n";
 
         return $ini;
+    }
+
+    /**
+     * autoloads/eztemplateautoload.php: the file the template engine includes from every ExtensionAutoloadPath[],
+     * and the only place an operator is registered. Without it the operator class is never loaded.
+     *
+     * @param array $settings
+     * @return string
+     */
+    protected static function operatorAutoload( array $settings )
+    {
+        $name = $settings['name'];
+
+        return "<?php\n"
+             . "/**\n"
+             . " * The template operators of the " . self::commentText( $settings['title'] ) . " design.\n"
+             . " *\n"
+             . " * The template engine includes this file from every extension listed in\n"
+             . " * [TemplateSettings] ExtensionAutoloadPath[] (settings/site.ini.append.php).\n"
+             . " * The script path is from the installation root.\n"
+             . " *\n"
+             . self::licenceNotice( $settings )
+             . " */\n\n"
+             . "\$eZTemplateOperatorArray = array();\n\n"
+             . "\$eZTemplateOperatorArray[] = array(\n"
+             . "    'script' => 'extension/" . self::phpString( $name ) . "/autoloads/" . self::phpString( $name ) . "operators.php',\n"
+             . "    'class'  => '" . self::phpString( $name ) . "Operators',\n"
+             . "    'operator_names' => array( '" . self::phpString( $name ) . "_excerpt' ) );\n";
     }
 
     protected static function pageLayout( array $settings )
@@ -390,7 +423,8 @@ class expDesignExtensionWizard extends expExtensionWizard
              . "{\$module_result.content}\n"
              . "</main>\n\n"
              . "{include uri='design:page_footer.tpl'}\n\n"
-             . "{* The scripts: jQuery, the JavaScriptList of design.ini, and whatever a\n"
+             . "{* The scripts: jQuery, the FrontendJavaScriptList of design.ini\n"
+             . "   (and the older JavaScriptList, which other extensions may still fill), and whatever a\n"
              . "   template on this page asked for with ezscript_require(). They are\n"
              . "   printed here, at the end of the body, so every template has had its say. *}\n"
              . "{ezscript_load( array( 'ezjsc::jquery',\n"
@@ -540,7 +574,9 @@ class expDesignExtensionWizard extends expExtensionWizard
              . "/**\n"
              . " * Template operators for the " . $settings['title'] . " design.\n"
              . " *\n"
-             . " * Registered through ExtensionAutoloadPath in settings/site.ini.append.php.\n"
+             . " * Registered in autoloads/eztemplateautoload.php, which the template engine\n"
+             . " * reads because settings/site.ini.append.php names this extension in\n"
+             . " * ExtensionAutoloadPath[].\n"
              . " * Use one from a template as {\$value|" . $name . "_excerpt( 40 )}.\n"
              . " *\n"
              . self::licenceNotice( $settings )

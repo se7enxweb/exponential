@@ -31,9 +31,11 @@ The folder is `<legacy root>/extension/<folder name>`.
 
 ## A trap in generated files
 
-The [design extension wizard](design-extension-wizard.md) writes `"name": "<vendor>/<name with dashes>"` and
-`"extra": { "installer-name": "<name>" }`. This installer does **not** read `installer-name`. For a theme named
-`my_theme` the package installs into `extension/my-theme`. Add the key the installer reads:
+The [design extension wizard](design-extension-wizard.md) writes `"name": "<vendor>/<name with dashes>"`. From
+Exponential 6.0.15 on it also writes `extra.ezpublish-legacy-extension-name`, so the folder is the extension name.
+Older wizards wrote only `"extra": { "installer-name": "<name>" }`, and this installer does **not** read
+`installer-name`: for a theme named `my_theme` the package installs into `extension/my-theme`. In such a file, add the
+key the installer reads:
 
 ```json
 "extra": {
