@@ -19,8 +19,9 @@ wins.*
 
 1. [Targets and conditions](#targets-and-conditions)
 2. [The mappings of Fit & Healthy](#the-mappings-of-fit--healthy)
-3. [Finding the layout of one page](#finding-the-layout-of-one-page)
-4. [Templates and mappings](#templates-and-mappings)
+3. [Create a mapping](#create-a-mapping)
+4. [Finding the layout of one page](#finding-the-layout-of-one-page)
+5. [Templates and mappings](#templates-and-mappings)
 
 ## Targets and conditions
 
@@ -47,6 +48,24 @@ Location mappings tie the landing pages Fitness (92), Healthy eating (130), Runn
 (192) to their layouts; further mappings serve the Bold Agency and
 Starter sites. A recipe matches the recipe mapping (160) before the article one (130); a page no other
 mapping takes falls through to **Default Layout** (10), which links its `header` and `footer` to Header / Footer.
+
+## Create a mapping
+
+**New mapping** opens a panel: **Link layout** (the layout), **Priority**, **Enabled**, then targets and conditions. The
+target types offered are Path, Path prefix, Path regex, Location, Subtree and Route (Route never matches on the site);
+the condition types Siteaccess, Class, Query parameter, Route parameter and Time. *Any target can be met*; every
+condition must be.
+
+![The New mapping panel: Mapped layout, Link layout, Priority with Enabled, No targets with a Path choice and Add target, No conditions with a Siteaccess choice and Add condition](images/mp-01-new-mapping.webp)
+
+A Siteaccess condition is a list of the installation's siteaccesses to choose from:
+
+![A Siteaccess condition with the list site, admin, classic, bold](images/mp-04-siteaccess-condition.webp)
+
+The resolver remembers its answer per address and siteaccess for `[ResolverSettings] CacheTTL` (3600 seconds on this
+installation), without the query string. So a Query parameter or Time condition takes effect only for addresses whose
+remembered answer has expired: on the test copy `/showcase` and `/showcase?variant=b` always showed the same layout,
+the one of whichever was requested first.
 
 ## Finding the layout of one page
 

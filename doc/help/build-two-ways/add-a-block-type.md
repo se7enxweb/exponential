@@ -98,6 +98,8 @@ Open a layout in the editor and the palette's **Basic** group has **Notice**:
 
 ## 5. Use it
 
+![The Notice block dropped into the Prefooter, still without content](images/nb-02-notice-dropped.webp)
+
 Drag **Notice** into a zone. It arrives with the view type `default`; select it, open **Design**, choose `warning`,
 type the text into **Content**, and **Publish layout**.
 
