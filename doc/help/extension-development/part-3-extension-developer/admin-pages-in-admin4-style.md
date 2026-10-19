@@ -124,6 +124,6 @@ no horizontal scroll bar, no console errors (including Content Security Policy r
 - Previous: [Content Security Policy for extension authors](content-security-policy-for-extensions.md)
 - Next: [Tests for extensions](tests-for-extensions.md)
 - [Styling the administration](../../../bc/6.0/admin4-styling.md)
-- admin4 components and tokens
+- [admin4 components and tokens](../part-8-reference/admin4-components-and-tokens.md)
 - [admin4 styling for extension pages](../part-4-upgrading/admin4-styling-for-extension-pages.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

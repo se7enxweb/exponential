@@ -153,7 +153,7 @@ if ( $Module->isCurrentAction( 'Confirm' ) )
 
 With `single_post_actions`, a POST containing `ConfirmButton` makes `isCurrentAction( 'Confirm' )` true. Forms that
 change anything must carry the form token (the `ezformtoken` extension adds it to forms and checks it); see
-ezformtoken and CSRF protection.
+[ezformtoken and CSRF protection](../part-8-reference/ezformtoken-and-csrf.md).
 
 ## Errors
 
@@ -198,5 +198,5 @@ existing module with the RAD wizard **View for an existing module**.
 - Previous: [Autoloads and class naming](autoloads-and-class-naming.md)
 - Next: [View parameters, unordered parameters and POST](view-parameters.md)
 - [By hand: a module with a view](tutorials/by-hand-module-with-a-view.md)
-- eZModule and module results
+- [eZModule and module results](../part-8-reference/ezmodule.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

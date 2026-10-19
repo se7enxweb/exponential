@@ -27,7 +27,7 @@ rendered by the template engine on an installation with sample content.
 | `fetch( 'content', 'related_objects', hash( 'object_id', ... ) )` | related objects |
 | `fetch( 'content', 'reverse_related_objects', hash( 'object_id', ... ) )` | objects that relate to this one |
 
-The full list of fetch functions of every module is in Built-in fetch functions by module.
+The full list of fetch functions of every module is in [Built-in fetch functions by module](../part-8-reference/fetch-functions-reference.md).
 
 ## Parameters of list and tree
 
@@ -124,6 +124,6 @@ Turn on `[DatabaseSettings] SQLOutput` while you develop to see the queries a pa
 
 - Previous: [View modes for builders](view-modes-for-builders.md)
 - Next: [The template operators builders use most](template-operators-builders-use-most.md)
-- Built-in fetch functions by module
+- [Built-in fetch functions by module](../part-8-reference/fetch-functions-reference.md)
 - [Fetch functions](../part-3-extension-developer/fetch-functions.md): writing your own
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -96,5 +96,5 @@ your `doc/` in its README.
 - Previous: [Performance in extensions](performance-in-extensions.md)
 - Next: [Tutorials: build real extensions step by step](tutorials/README.md)
 - [The help system](../../../features/6.0/help-system.md), [Help system specification](../../../specifications/6.0/help-system.md)
-- The help system for extensions
+- [The help system for extensions](../part-8-reference/help-system-for-extensions.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

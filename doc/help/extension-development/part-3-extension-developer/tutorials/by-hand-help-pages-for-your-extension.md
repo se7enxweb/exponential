@@ -87,5 +87,5 @@ php bin/php/ezcache.php --clear-tag=ini
 
 - Previous: [By hand: translating an extension](by-hand-translation.md)
 - Next: [By hand: a PHPUnit test for your extension](by-hand-phpunit-test.md)
-- The help system for extensions
+- [The help system for extensions](../../part-8-reference/help-system-for-extensions.md)
 - [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

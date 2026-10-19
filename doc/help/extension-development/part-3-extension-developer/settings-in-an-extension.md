@@ -103,7 +103,7 @@ $blocked = $ini->variable( 'HelloSettings', 'BlockedNames' );   // an array
 | Never cache an `eZINI` value in a static property of your own | under a persistent server (Velocity) a static outlives the request; `eZINI` handles its own cache |
 
 `eZINI::instance( $fileName = 'site.ini', $rootDir = 'settings', ... )` is the signature; the defaults are what you
-want almost always. The full API is in eZINI: reading settings.
+want almost always. The full API is in [eZINI: reading settings](../part-8-reference/ezini.md).
 
 ## Reading settings in templates
 
