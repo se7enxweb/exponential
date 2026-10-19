@@ -110,6 +110,8 @@ Use the training installation. Nobody presses **Send now** during steps 1 to 6. 
 - Learners can explain the three tracking modes and why consent is needed for per-person counting.
 - The trainer checks the dashboard's **Last sends** on the projector.
 
+![The newsletter report: the editions sent with their counts](../../../images/trainers/nl-report.webp)
+
 ## Quiz
 
 1. When can a send still be aborted completely?

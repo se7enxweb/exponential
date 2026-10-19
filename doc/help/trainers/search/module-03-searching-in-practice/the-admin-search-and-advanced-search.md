@@ -103,6 +103,8 @@ Use your own training installation, signed in as an administrator. Choose words 
 - Step 6 finds only articles with the word in the title; step 7 only those published in the last week.
 - The trainer asks two learners to explain their result counts from step 8.
 
+![The advanced search of the administration](../../../images/trainers/se-quick.webp)
+
 ## Quiz
 
 1. Which key starts the quick search from anywhere in the administration?

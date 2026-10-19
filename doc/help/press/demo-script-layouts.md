@@ -49,6 +49,8 @@ Source: [Layouts, zones and blocks](../layouts-editor.md#layouts-zones-and-block
 3. Point at the four areas: the name and buttons at the top, **Add a block** on the left, the zones in the middle, the
    properties on the right (*Select a block to access its properties.*).
 
+![Part 1: the Layouts dashboard with New layout](../images/help/pr-layouts-dash.webp)
+
 ## Part 2: blocks (3 minutes)
 
 1. Press **Add a block** (the plus button). Show the groups: **Basic**, **Components**, **Listing**, **Gallery**,
@@ -69,6 +71,8 @@ Switch to an existing layout that has a linked zone (**Layouts**, **Open**).
 3. Press **Link zone with shared layout zone** at the bottom left. Show step 1 (**Link zone** on each zone) and say what
    step 2 asks for: the shared layout and its zone. Press **Back**.
 
+![Part 3: the shared layouts](../images/help/pr-layouts-shared.webp)
+
 ## Part 4: publish or discard, and mappings (2 minutes)
 
 1. Open the menu with three dots at the top and show **Publish and continue editing** and **Save draft and close**.
@@ -79,6 +83,8 @@ Switch to an existing layout that has a linked zone (**Layouts**, **Open**).
    ([Which pages use a layout](../layouts-editor.md#which-pages-use-a-layout))
 
 If you publish on camera and the editor asks whether to clear caches, choose **Clear caches** so the change shows.
+
+![Part 4: the layout mappings](../images/help/pr-layouts-rules.webp)
 
 ## What not to claim
 

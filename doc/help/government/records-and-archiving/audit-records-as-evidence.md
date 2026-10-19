@@ -13,6 +13,8 @@ This page is for administrators, records managers and investigators. When a deci
 is disputed, the audit trail can show who did what and when. Its value as evidence depends on how the records are
 selected, verified and handed over ([Audit](../../../bc/6.0/audit.md)).
 
+![The audit dashboard: the health of the hash chains, the events and the security events](../../images/government/gov-audit-dash.webp)
+
 > **Note** This page describes features and common practice; it is not legal advice. Check the law that applies to
 > your organization with your legal counsel.
 

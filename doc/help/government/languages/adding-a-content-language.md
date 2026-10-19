@@ -12,6 +12,8 @@ type: help
 This page is for administrators who add a language editors can write content in, for example a second official
 language. The steps and messages come from [Content languages, section 4](../../../guides/content-languages.md#4-adding-a-language).
 
+![Content languages: the languages content can be written in, with Add language](../../images/government/gov-add-language.webp)
+
 ## Contents
 
 1. [Before you start](#before-you-start)

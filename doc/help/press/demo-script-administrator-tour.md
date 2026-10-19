@@ -35,6 +35,8 @@ design of the 6.0.15 development line; say which version you show.
    extendable content model."
 4. Do not change a class on camera. Source: [The content model and editing content](../../guides/content-model-and-editing.md).
 
+![Setup, Classes: the class groups shown in part 1 of the administrator tour](../images/help/pr-admin-classes.webp)
+
 ## Part 2: users, roles and languages (2 minutes)
 
 1. **Users > Roles and policies**: open the *Editor* role. Say: "What each group may do is a set of policies." Source:
@@ -44,6 +46,8 @@ design of the 6.0.15 development line; say which version you show.
 3. **Setup > Languages**: show the content languages. Say the documented numbers with their source: 268 locale files
    can be used as content languages; 33 administration translations exist, nineteen of them complete (19 October 2026)
    ([Languages in Exponential](../../languages.md)).
+
+![Roles, shown in part 2](../images/help/pr-admin-roles.webp)
 
 ## Part 3: operations (3 minutes)
 
@@ -58,6 +62,8 @@ design of the 6.0.15 development line; say which version you show.
    ([System information](../../guides/system-information.md)).
 5. Optional: **Setup > Maintenance** ([Maintenance mode](../../guides/maintenance-mode.md)).
 
+![Cache management, shown in part 3](../images/help/pr-admin-cache.webp)
+
 ## Part 4: security (3 minutes)
 
 1. Open the **Audit** tab (`/audit/dashboard`), then **Console**. Say: "My sign-in is already recorded. Every record
@@ -71,6 +77,8 @@ design of the 6.0.15 development line; say which version you show.
 
 Say nothing like "it is secure" or "it has never had a vulnerability". Say: "Here is the process and the checklist;
 vulnerabilities are reported privately to the address in `SECURITY.md`."
+
+![The audit dashboard, shown in part 4](../images/help/pr-admin-audit.webp)
 
 ## Screens that need care
 

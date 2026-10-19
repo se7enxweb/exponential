@@ -13,6 +13,8 @@ This page is for administrators, project managers and procurement or audit staff
 software runs a public website and be sure it is the same code everyone else calls by that version. The policy is in
 the [Source control and releases standard](../../../../standards/source-control-and-releases.md#releases).
 
+![The About page shows the release the installation runs](../../../images/government/gov-about.webp)
+
 ## Contents
 1. [The rule](#the-rule)
 2. [How versions are numbered](#how-versions-are-numbered)

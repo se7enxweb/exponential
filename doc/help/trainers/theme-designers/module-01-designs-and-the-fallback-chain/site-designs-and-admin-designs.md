@@ -119,6 +119,8 @@ administrator account.
 - Step 9: the dark mode changes cards and columns as well as the page background.
 - The trainer checks that every learner ended in the siteaccess's own design and their own color mode.
 
+![The Administration design list of the right column, where each user picks an admin design](../../../images/trainers/td-design-switch.webp)
+
 ## Quiz
 
 1. Which administration design is complete on its own, with a light and a dark mode?

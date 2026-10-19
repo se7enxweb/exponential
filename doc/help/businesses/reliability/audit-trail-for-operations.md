@@ -15,6 +15,8 @@ what to set up once. The full reference is [The audit trail](../../../features/6
 [Security and audit](../../../guides/security-and-audit.md#3-read-the-audit-trail-5-minutes). Compliance use is
 covered separately in [Compliance evidence from the audit trail](../security/compliance-evidence-from-the-audit-trail.md).
 
+![The audit dashboard](../../images/help/bu-audit-ops.webp)
+
 ## Contents
 
 1. [Why operations needs an audit trail](#why-operations-needs-an-audit-trail)

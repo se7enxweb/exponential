@@ -104,6 +104,8 @@ Use the training installation and your admin training account. Replace `<name>` 
 - The newsletter left menu stays visible on the new system's page, which shows the section works.
 - The trainer checks by opening the root and counting one new system per learner.
 
+![The newsletter settings page](../../../images/trainers/nl-settings.webp)
+
 ## Quiz
 
 1. What does `[NewsletterSettings] RootFolderNodeId` name?

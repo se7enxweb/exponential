@@ -13,6 +13,8 @@ This page is for writers and sub-editors who want their copy to match how the pr
 how to treat technical terms. Your house style wins where it differs; this page tells you what the project does and
 why, so you can choose.
 
+![The Setup area, written with a capital S in coverage](../images/help/pr-style-setup.webp)
+
 ## Contents
 
 1. [Spelling](#spelling)

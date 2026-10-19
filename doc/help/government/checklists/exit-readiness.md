@@ -13,6 +13,8 @@ This checklist is for the contract manager and site administrator of a public bo
 a supplier relationship fair. Exponential's license and exports make leaving possible; this checklist keeps it
 practical. The export tools come from [Migrating away from Exponential](../../../install/migration/leaving-exponential.md).
 
+![Backups: a full site backup or the database and files, the base of an exit plan](../../images/government/gov-backups.webp)
+
 > **Note** This page describes features and common practice; it is not legal advice. Check your contract with your
 > legal counsel.
 

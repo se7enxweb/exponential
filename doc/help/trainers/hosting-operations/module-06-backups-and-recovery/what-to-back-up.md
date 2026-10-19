@@ -106,6 +106,8 @@ exercise only.
   caches.
 - The trainer checks one learner's archive listing on the projector, without showing file contents.
 
+![Backups in the administration](../../../images/trainers/ho-backups.webp)
+
 ## Quiz
 
 1. Why must database and files be taken at the same moment?

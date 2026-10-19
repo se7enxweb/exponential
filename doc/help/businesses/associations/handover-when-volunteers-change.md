@@ -14,6 +14,8 @@ volunteer-run group. Committees change every year or two; the site should not ha
 lists what to hand over, the Exponential features that make it clean, and what to do when the previous administrator
 can no longer be reached.
 
+![Workflow processes waiting, to check before a volunteer leaves](../../images/help/bu-workflow.webp)
+
 ## Contents
 
 1. [What a handover covers](#what-a-handover-covers)

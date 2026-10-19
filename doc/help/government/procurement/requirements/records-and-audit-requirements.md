@@ -14,6 +14,8 @@ publishes can be accounted for later: who published it, when, what it said, and 
 It gives requirement wording and maps it to Exponential's documented features. A CMS is not a records management
 system; the requirements below cover what the CMS must hand over to one.
 
+![The health of the audit trail: every hash chain verified intact](../../../images/government/gov-audit-req.webp)
+
 > **Note** This page describes features and common practice; it is not legal advice. Check the law that applies to
 > your organization with your legal counsel.
 

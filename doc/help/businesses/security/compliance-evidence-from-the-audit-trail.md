@@ -13,6 +13,8 @@ This page is for owners, compliance staff and managers who must show an auditor,
 the site is run under control: who changed what, when, and that the record itself was not altered. Exponential's
 audit trail was built for this. The page explains what it gives you and how to hand evidence over.
 
+![The audit dashboard: health of the chains, events and security](../../images/help/bu-audit.webp)
+
 > **Warning**
 > Basics, not legal advice. Whether audit records satisfy a particular law, standard or contract is for you and your
 > adviser or auditor to decide. The audit guide itself says the same about its privacy tasks

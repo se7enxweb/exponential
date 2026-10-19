@@ -13,6 +13,8 @@ This page is for campaign leads, communication staff and editors of non-profits.
 in Exponential Layouts without a developer, how it can switch itself on and off by date, and how it connects to the
 donate button, the volunteer form and the newsletter.
 
+![The Layouts dashboard, where a campaign page starts](../../images/help/bu-layouts.webp)
+
 ## Contents
 
 1. [Why Layouts for campaigns](#why-layouts-for-campaigns)

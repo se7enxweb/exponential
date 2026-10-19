@@ -106,6 +106,8 @@ Use your training installation with *Site B* (lesson 1.3) and your administrator
   sites.
 - The trainer checks step 8 on one learner's screen.
 
+![One administration for several sites: each site is a folder below the root of the tree](../../../images/trainers/ms-tree.webp)
+
 ## Quiz
 
 1. What does `SiteList[]` do?

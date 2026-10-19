@@ -90,6 +90,8 @@ Use the training installation and your training account.
 - Each card lists three habits.
 - The trainer checks two cards.
 
+![Budgets: the monthly budget and what was spent this month](../../../images/trainers/ei-budgets.webp)
+
 ## Quiz
 
 1. Where do you see the cost of one click in the edit form?

@@ -94,6 +94,8 @@ Use the training installation and your published article from module 2.
 - The record showed the model, tokens and estimated cost of the request.
 - The trainer checks by asking two learners what the defaults line said.
 
+![The field actions of a text field: Write, Rewrite, Translate, Suggest and Improve](../../../images/trainers/ei-edit-box.webp)
+
 ## Quiz
 
 1. Where in the edit form is the assistant's bar of buttons?

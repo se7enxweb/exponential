@@ -13,6 +13,8 @@ This page is for owners, marketing leads and administrators who want their conte
 news aggregators, into podcast directories, onto partner sites, or between several Exponential installations of their
 own. It explains the options in business terms and links to the guides for the people who set them up.
 
+![RSS: the feeds the site exports](../../images/help/bu-rss.webp)
+
 ## Contents
 
 1. [Why feeds still matter](#why-feeds-still-matter)

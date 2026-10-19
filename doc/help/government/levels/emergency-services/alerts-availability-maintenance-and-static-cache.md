@@ -14,6 +14,8 @@ whose site must stay up when it matters most. It explains the tools Exponential 
 interact with publishing an urgent update, and what the product does not do. Every behavior below is documented in
 the pages linked; test each on your own installation before an incident tests it for you.
 
+![The maintenance window shows visitors a page while the administration stays reachable](../../../images/government/gov-maint-alerts.webp)
+
 ## Contents
 
 1. [The layers](#the-layers)

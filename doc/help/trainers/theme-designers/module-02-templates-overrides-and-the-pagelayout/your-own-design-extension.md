@@ -135,6 +135,8 @@ a shell in the installation root. `<site>` is your public siteaccess from module
 - Step 12: the administration is unchanged.
 - The trainer checks one learner's page source on the projector.
 
+![The design extension wizard](../../../images/trainers/td-design-wizard.webp)
+
 ## Quiz
 
 1. Which two names does the **Extension name** in the wizard become?

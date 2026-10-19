@@ -14,6 +14,8 @@ configures the caches. It explains why caching is a reliability measure, which l
 out of the box, and the few rules that keep caches from causing problems of their own. The full technical map is
 [Caching layers](../../hosting/performance/caching-layers.md) and [Caches](../../../guides/caches.md).
 
+![System information with the health checks](../../images/help/bu-sysinfo.webp)
+
 ## Contents
 
 1. [Why caching is a reliability measure](#why-caching-is-a-reliability-measure)

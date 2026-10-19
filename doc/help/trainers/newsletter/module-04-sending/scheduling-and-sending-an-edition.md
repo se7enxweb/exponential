@@ -113,6 +113,8 @@ Use the training installation. Replace `<name>` with your first name.
 - The dashboard's **Last sends** shows the send with its **Status**, **Mails** and **Failed**.
 - The trainer checks by comparing the dashboard numbers with two learners' predictions.
 
+![Scheduled sends of the newsletters](../../../images/trainers/nl-schedule.webp)
+
 ## Quiz
 
 1. Which subscribers receive a send?

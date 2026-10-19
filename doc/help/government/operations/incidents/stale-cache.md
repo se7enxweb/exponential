@@ -13,6 +13,8 @@ This runbook is for administrators, and for web managers who must explain why a 
 public site has several caches; clear the smallest one that fixes the problem, and clear caches that hold finished
 pages last. Reference: [Caches](../../../../guides/caches.md) and [Operating a site, section 2](../../../../guides/operating-a-site.md#2-clear-the-right-cache).
 
+![Cache management: clear all caches, content caches, template caches or INI caches](../../../images/government/gov-cache.webp)
+
 ## Contents
 1. [First, look](#first-look)
 2. [Which cache?](#which-cache)

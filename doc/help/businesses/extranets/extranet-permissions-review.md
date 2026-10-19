@@ -13,6 +13,8 @@ This page is for portal owners and administrators. Access that was right when a 
 year later: people change jobs, contracts end, tiers change. A short review at a fixed rhythm keeps the portal clean.
 The page gives the routine and the Exponential pages that make each step quick.
 
+![Sections, with the roles that use them](../../images/help/bu-sections.webp)
+
 ## Contents
 
 1. [Why review](#why-review)

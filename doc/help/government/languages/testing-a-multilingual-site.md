@@ -13,6 +13,8 @@ This page is for administrators and site builders who check a multilingual site.
 for testing, **Lorem Ipsum** (`qlo-ZZ`), which no installation adds by itself
 ([The test language Lorem Ipsum](../../../guides/test-language-lorem-ipsum.md)).
 
+![The Translations tab of an item, with the existing and the missing translations](../../images/government/gov-translations-tab.webp)
+
 ## Contents
 
 1. [Testing with Lorem Ipsum](#testing-with-lorem-ipsum)

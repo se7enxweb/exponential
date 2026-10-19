@@ -59,6 +59,8 @@ Do not take screenshots of somebody else's live site or administration without t
 | Help | The help dashboard and a help page | [Story: the help system](story-the-help-system.md) |
 | Exponential Intelligence | A draft suggestion in the editor (only after you configured a provider yourself) | [Exponential Intelligence](../../features/6.0/extensions/expai.md) |
 
+![A screenshot taken at 1440 pixels wide in the light mode](../images/help/pr-shots-dash.webp)
+
 ## Settings for good images
 
 - **Window size**: a common desktop width such as 1440 pixels, and a phone width such as 375 pixels for responsive
@@ -66,6 +68,8 @@ Do not take screenshots of somebody else's live site or administration without t
 - **Theme**: admin4 has light and dark themes; show both if the story is about the interface.
 - **Format**: PNG for editing; WebP or JPEG for publication at the size your page needs.
 - **No browser clutter**: hide bookmarks and extensions; crop the address bar unless it shows only a demo address.
+
+![The same kind of screen in the dark mode](../images/help/pr-shots-dark.webp)
 
 ## Checks before publishing
 

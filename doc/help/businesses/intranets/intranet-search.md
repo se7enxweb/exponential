@@ -14,6 +14,8 @@ search that comes with Exponential does, when a larger search server pays off, a
 search for. The technical setup is in the [Site search](../../creators/website-creators/site-search.md) and
 [Search with ezfind and Solr](../../creators/website-creators/search-with-ezfind-and-solr.md) pages.
 
+![Search statistics: what people searched for and found](../../images/help/bu-search-stats.webp)
+
 ## Contents
 
 1. [Search shows only what a person may read](#search-shows-only-what-a-person-may-read)

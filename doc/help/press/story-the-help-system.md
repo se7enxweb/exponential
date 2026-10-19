@@ -30,12 +30,16 @@ administrators, developers, site users and many more, now including the press), 
 button on every administration page ([Help system](../../features/6.0/help-system.md)). The pages are free
 documentation under the GNU FDL ([Story: free documentation](story-free-documentation.md)).
 
+![The help center in the administration](../images/help/pr-help-dash.webp)
+
 ## What is new, and when
 
 | What | When | Source |
 |---|---|---|
 | The help system in the administration | October 2026, in the 6.0.15 line (in development) | [October 2026](../../history/2026/2026-10.md), [6.0.15 changelog](../../changelogs/6.0/6.0.15.md) |
 | Help pages written as content in the database, phase 1 | 6.0.15 line | [Help as content](../../features/6.0/help-content.md) |
+
+![A page of the help with its contents and headings](../images/help/pr-help-page.webp)
 
 ## Facts you can print
 

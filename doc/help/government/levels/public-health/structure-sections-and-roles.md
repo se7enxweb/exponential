@@ -13,6 +13,8 @@ This page is for administrators and website creators of a public health site. Ad
 alerts go out at once from an on-call team. The mechanisms are in [Sections](../../../../guides/sections.md),
 [Roles and policies](../../../../guides/roles-and-policies.md) and [Workflows](../../../../guides/workflows.md).
 
+![Sections, which group content for access and design](../../../images/government/gov-sections.webp)
+
 ## Contents
 
 1. [The content tree](#the-content-tree)

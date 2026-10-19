@@ -13,6 +13,8 @@ This page is for administrators and records staff. **Setup > PDF export** (`/pdf
 PDF document from a **source node**, or from a tree of nodes of chosen classes
 ([PDF exports](../../../guides/pdf-exports.md), [PDF export](../../../features/6.0/pdf-export.md)).
 
+![PDF exports: exports of parts of the content tree, stored or made for each download](../../images/government/gov-pdf.webp)
+
 ## Contents
 
 1. [Two kinds of export](#two-kinds-of-export)

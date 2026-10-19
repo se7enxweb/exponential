@@ -95,6 +95,8 @@ Use the training installation and your training account.
 - No request was sent.
 - The trainer checks by asking a learner to explain the difference between **Mine** and **Site**.
 
+![The Exponential Intelligence dashboard](../../../images/trainers/ei-dashboard.webp)
+
 ## Quiz
 
 1. Which policy is needed to see the page at all?
