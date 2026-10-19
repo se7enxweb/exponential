@@ -29,7 +29,7 @@ invite all staff until every block is ticked.
 ## Phase 1: foundations
 
 - [ ] Purpose, owner and scope written down ([Intranet planning](intranet-planning.md)).
-- [ ] Hosting chosen and the installation running (Choosing hosting).
+- [ ] Hosting chosen and the installation running ([Choosing hosting](../choosing/choosing-hosting.md)).
 - [ ] Host name and HTTPS certificate in place
   ([Going live: hosts and HTTPS](../../creators/website-creators/going-live-hosts-https.md)).
 - [ ] The intranet siteaccess has `RequireUserLogin=true`
@@ -88,12 +88,12 @@ invite all staff until every block is ticked.
 
 - [ ] Cronjobs scheduled, including the `frequent` group (workflow, notification, audit)
   ([Cronjobs](../../../guides/cronjobs.md)).
-- [ ] Backups scheduled and one restore tested (Backups that restore).
+- [ ] Backups scheduled and one restore tested ([Backups that restore](../reliability/backups-that-restore.md)).
 - [ ] Audit trail status checked: `./console exp:audit status`
   ([The audit trail](../../../features/6.0/audit-trail.md#try-it-in-two-minutes)).
-- [ ] Update plan agreed (Upgrades without surprises).
+- [ ] Update plan agreed ([Upgrades without surprises](../reliability/upgrades-without-surprises.md)).
 - [ ] Monitoring of the intranet address in place
-  (Health checks and monitoring).
+  ([Health checks and monitoring](../reliability/health-checks-and-monitoring.md)).
 
 ## Phase 7: pilot group
 
@@ -112,16 +112,16 @@ invite all staff until every block is ticked.
 ## After launch
 
 - [ ] Review after 30 days: what staff searched for and did not find, which areas are not updated.
-- [ ] First access review after 90 days (Access reviews).
+- [ ] First access review after 90 days ([Access reviews](../security/access-reviews.md)).
 - [ ] Unused accounts checked on **Users > Check user accounts**
   ([Check user accounts](../../../features/6.0/user-hygiene.md)).
 - [ ] Monthly operations routine in place
-  (Monthly operations checklist).
+  ([Monthly operations checklist](../templates/monthly-operations-checklist.md)).
 
 ## Related pages
 
 - [Intranets](README.md)
-- Go-live checklist template
+- [Go-live checklist template](../templates/go-live-checklist.md)
 - [Quality gates and acceptance](../../leadership/quality-gates-and-acceptance.md)
 - [Launch checklist for website creators](../../creators/website-creators/launch-checklist.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

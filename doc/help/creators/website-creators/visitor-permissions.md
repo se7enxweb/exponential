@@ -26,6 +26,8 @@ This page is for website creators who decide what the public can see and do. A v
 Every request without a login runs as the Anonymous user, a member of the Anonymous user group. Its permissions come
 from the role assigned to that group, usually called Anonymous ([Roles and policies](../../../guides/roles-and-policies.md)).
 
+![Setup, Roles: the roles of the installation, Anonymous among them, with their policies and assignments](../../images/creators/roles-list.webp)
+
 ## What it grants by default
 
 The default Anonymous role has `content/read` and `content/pdf` limited to Section Standard. That one limitation keeps

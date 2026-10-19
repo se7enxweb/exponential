@@ -12,6 +12,8 @@ type: help
 This page is for application creators who decide where work runs. A web request should answer fast; anything slow,
 periodic or large belongs elsewhere. Exponential offers four places.
 
+![The job queue dashboard, where background work queued by an application shows up](../../images/creators/job-queue-dashboard.webp)
+
 ## Contents
 
 1. [The four places](#the-four-places)

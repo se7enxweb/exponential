@@ -14,6 +14,8 @@ services, bulk updates, sending, AI requests. `expqueue` is a database-backed jo
 call; workers run it on the command line ([expqueue](../../../features/6.0/extensions/expqueue.md)). Its full
 documentation is in `extension/expqueue/doc/` (`api.md`, `scheduling.md`, `workers-cron-systemd.md`).
 
+![The job queue in the administration: jobs waiting, running, done and failed, per queue](../../images/creators/job-queue-dashboard.webp)
+
 ## Contents
 
 1. [Switching it on](#switching-it-on)

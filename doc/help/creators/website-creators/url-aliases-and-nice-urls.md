@@ -56,6 +56,8 @@ site). Global aliases for module views and wildcards for patterns are in **Setup
 
 ![The Locations tab of an article: the places in the tree where it appears, each with its own address](../../images/creators/locations-tab.webp)
 
+![The URL aliases of one item: the generated address and the form to add a custom alias in a language](../../images/creators/url-alias-tab.webp)
+
 ## Linking in templates
 
 ```text

@@ -71,6 +71,8 @@ Defending well means making all of these cheap to refuse and expensive to succee
 **The risk.** `/user/login` and `/admin/user/login` are the most attacked URLs of any site. Leaked passwords from other
 services work wherever people reuse them.
 
+![The sign-in page of the administration, the page brute force attacks aim at](images/help/sign-in-hardening.webp)
+
 **Built in.** Passwords are stored as bcrypt hashes (`HashType=php_default`). The sign-in costs the same for an unknown
 login as for a wrong password, and **Forgot your password?** answers the same for every address, so neither reveals
 which accounts exist. The audit trail's alert rules `brute_force` (20 failures from one network in 5 minutes) and
@@ -223,6 +225,8 @@ refused, as are `javascript:` and `data:` targets and the usual encoding tricks.
 
 **The risk.** A known vulnerability in an old release of the kernel, an extension, a Composer dependency, PHP or the
 database; a tampered file on the server.
+
+![The version of the installation at the top of the About page, the first thing to compare with the latest release](images/help/about-page-security.webp)
 
 **Built in.** Releases are immutable tags on Packagist and GitHub, with changelogs. **Setup** > **Upgrade check**
 compares every file with the release's `share/filelist.md5` ("Check file consistency") and the schema with the
@@ -382,6 +386,8 @@ for every rule is in the library's `docs/use-cases/exponential.md`.
 ## Watching: logs, the request classifier and the audit trail
 
 Hardening without watching only delays the moment you learn of an attack.
+
+![The audit trail: who did what and when, with filters by actor, action and time](images/help/audit-dashboard-security.webp)
 
 | Source | What it records | Where to read it |
 |---|---|---|

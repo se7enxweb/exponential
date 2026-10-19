@@ -52,7 +52,7 @@ Source: [Files and downloads, Protected downloads](../../creators/website-creato
 > "Do not link files directly from `var/.../storage/`: that bypasses the permission check" (same page). Always link
 > through `content/download`, which the file field's own template does.
 
-Reader accounts and members-only areas are explained in Members and
+Reader accounts and members-only areas are explained in [Members](../members/README.md) and
 [Member registration and areas](../../creators/website-creators/member-registration-and-areas.md).
 
 ## Stating the license of each item
@@ -60,7 +60,7 @@ Reader accounts and members-only areas are explained in Members and
 The `xrowmetadata` extension, required by `composer.json`, lets an editor state under which license a page's content is
 published. Its guide (`extension/xrowmetadata/doc/licenses.md`) describes:
 
-- a catalogue of licenses including "every Creative Commons license ever published", public domain tools, and
+- a catalog of licenses including "every Creative Commons license ever published", public domain tools, and
   non-free terms such as "all rights reserved";
 - three levels: per object, per class default, and the installation default; the first that applies wins;
 - output in the page head as `rel="license"`, schema.org `license` in JSON-LD, and Dublin Core `dcterms.license`,

@@ -64,6 +64,8 @@ Do not hide it with `display: none` or `visibility: hidden`: it could then never
 - **media**: `pagelayout/accessibility_links.tpl` prints a "Skip to main content" link to `#main`, included right after
   `<body>`.
 
+![The skip link of the administration, shown when Tab is pressed first on a page, outlined](../../images/designers/skip-link.webp)
+
 ## Checks
 
 - [ ] Press Tab once on a fresh page: the skip link appears.

@@ -12,6 +12,10 @@ type: help
 This page is for designers who pick colors. It answers: which ratios to meet, how to check them in both themes, and
 where contrast usually fails.
 
+![The title line of an item's page with its type and visibility badges, small text that must keep a 4.5:1 contrast](../../images/designers/contrast-badges.webp)
+
+![The same title line in the dark mode, with its own badge colors](../../images/designers/contrast-badges-dark.webp)
+
 ## Contents
 
 1. [The targets](#the-targets)

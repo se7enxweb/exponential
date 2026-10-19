@@ -12,6 +12,8 @@ type: help
 This page is for designers who make a design work on every screen. It answers: what the pagelayout needs, how to plan
 breakpoints, and which widths and zoom levels to test.
 
+![An item's page of the administration at 375 pixels wide, the width of a phone](../../images/designers/item-page-375.webp)
+
 ## Contents
 
 1. [The basics](#the-basics)

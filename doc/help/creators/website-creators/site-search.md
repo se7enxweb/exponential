@@ -15,6 +15,8 @@ Solr ([Search with ezfind and Solr](search-with-ezfind-and-solr.md)).
 
 ![Search statistics: what visitors searched for and how many results they got](../../images/creators/search-statistics.webp)
 
+![The search page of the public site with the results for running](../../images/creators/site-search-results.webp)
+
 ## Contents
 
 1. [The built-in engine](#the-built-in-engine)

@@ -83,6 +83,8 @@ Or fetch all objects the current object relates to, through one field or all rel
 The other direction, "everything that points to this object", answers questions such as "which events take place in
 this room" or "which articles use this image":
 
+![The Relations tab of an item: the items it relates to and the items that relate to it](../../images/creators/relations-tab.webp)
+
 ```text
 {def $events = fetch( 'content', 'reverse_related_objects', hash(
     'object_id', $node.contentobject_id,

@@ -20,6 +20,8 @@ instead; both are parts of the same installation and work on the same content.
 The Editor has its own address. Which one depends on how your site is set up; your administrator tells you. The
 usual forms are:
 
+![The sign-in page of the editor's administration](images/accounts/editor-sign-in.webp)
+
 | Form | Example |
 |---|---|
 | A path after the site's address | `https://www.example.com/editor` |

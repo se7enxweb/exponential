@@ -14,6 +14,8 @@ A layout marked **shared** is not mapped to pages by a rule; it exists to be bor
 be **linked** to one of its zones and then shows that layout's blocks instead of its own
 ([Shared layouts and linked zones](../../../bc/6.0/LAYOUTS.md#shared-layouts-and-linked-zones)).
 
+![Shared layouts with the Header / Footer layout outlined, the layout other layouts link their header and footer zones to](../../images/creators/shared-layout-header.webp)
+
 ## Contents
 
 1. [Why shared layouts](#why-shared-layouts)

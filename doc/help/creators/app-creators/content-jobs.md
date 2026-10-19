@@ -13,6 +13,8 @@ This page is for application creators who work with large subtrees. The kernel t
 **content jobs** that run in the background in batches, with a progress page, instead of one long request
 ([Content jobs](../../../bc/6.0/content-jobs.md)).
 
+![The job queue dashboard, which lists the content jobs and their state](../../images/creators/job-queue-dashboard.webp)
+
 ## Contents
 
 1. [What becomes a job](#what-becomes-a-job)
