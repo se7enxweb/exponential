@@ -18,6 +18,8 @@ built from event types) and **kernel event listeners** (code). The administrator
 
 ![Setup, Triggers: which workflow runs before or after each operation](../../images/creators/triggers.webp)
 
+![Setup, Workflow processes: the workflow runs that wait, for example for an approval](../../images/creators/workflow-processes.webp)
+
 ## Contents
 
 1. [The pieces](#the-pieces)

@@ -50,7 +50,7 @@ sections, classes and roles later without rebuilding the site
 | How staff find things | built-in search; Solr for large collections | [Intranet search](intranet-search.md) |
 | How staff hear about changes | notifications, digests, a newsletter | [Notifications for staff](notifications-for-staff.md) |
 | Where it is reachable | only from the office network; from anywhere with a sign-in | [Restricting the administration: network restrictions](../../hosting/security/restricting-the-administration.md#network-restrictions) |
-| Languages | one; several | Multilingual |
+| Languages | one; several | [Multilingual](../multilingual/README.md) |
 
 ## How an intranet is built in Exponential
 
@@ -110,7 +110,7 @@ These questions change the size of the project. Answer them early and give the a
 
 ## A planning worksheet
 
-Copy this list into the project brief (Project brief template).
+Copy this list into the project brief ([Project brief template](../templates/project-brief-template.md)).
 
 - [ ] Purpose of the intranet in two sentences.
 - [ ] List of user groups and their size.
@@ -120,8 +120,8 @@ Copy this list into the project brief (Project brief template).
 - [ ] Document inventory and migration plan.
 - [ ] Search decision: built-in or Solr.
 - [ ] Notification decision: which items staff follow by default.
-- [ ] Hosting and backups decided (Reliability).
-- [ ] Named owner and a date for the first access review (Access reviews).
+- [ ] Hosting and backups decided ([Reliability](../reliability/README.md)).
+- [ ] Named owner and a date for the first access review ([Access reviews](../security/access-reviews.md)).
 
 ## Related pages
 
@@ -129,5 +129,5 @@ Copy this list into the project brief (Project brief template).
 - [Intranet rollout checklist](intranet-rollout-checklist.md)
 - [Planning an Exponential project](../../leadership/planning-an-exponential-project.md)
 - [Content modeling workshops](../../leadership/content-modeling-workshops.md)
-- Worked example: an intranet
+- [Worked example: an intranet](../costs/worked-example-intranet.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

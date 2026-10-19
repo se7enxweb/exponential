@@ -81,7 +81,7 @@ There is no license fee: "Using Exponential under the terms of the GNU GPL is fr
 and the extension's own license is the GNU GPL v2 or later (`doc/README.md` of the extension). What you pay for is
 work and services you choose to buy, plus the mail service that delivers the messages
 ([Licensing for buyers](../../business/licensing-for-buyers.md#no-license-fees-and-what-buyers-do-pay-for)). For a
-cost model with your own figures, see Total cost of ownership.
+cost model with your own figures, see [Total cost of ownership](../costs/total-cost-of-ownership.md).
 
 ## What it does not do
 

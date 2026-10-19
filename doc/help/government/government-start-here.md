@@ -60,20 +60,20 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 
 | Section | What it answers |
 |---|---|
-| Levels of government (`levels/`) | What a ministry, a region or state, a council, an agency, a library, a school or university, a court, a parliament, a public health body or an emergency service typically publishes, a content model for it, roles, priorities and a first-90-days plan |
+| [Levels of government](levels/README.md) | What a ministry, a region or state, a council, an agency, a library, a school or university, a court, a parliament, a public health body or an emergency service typically publishes, a content model for it, roles, priorities and a first-90-days plan |
 | [Accessibility](accessibility/README.md) | WCAG 2.2 AA, EN 301 549 and Section 508 mapped to what Exponential provides, with every claim backed by [Accessibility standards](../../standards/accessibility.md); statements, audits, accessible content |
-| Security (`security/`) | OWASP, hardening, the audit trail, two-step sign-in, the Content Security Policy, request-shield |
-| Privacy (`privacy/`) | GDPR features, data minimization, retention, consent records, erasure; other jurisdictions framed generally |
-| Records and archiving (`records-and-archiving/`) | Versions, history, archiving notices, retention schedules, exports, preserving URLs |
+| [Security](security/README.md) | OWASP, hardening, the audit trail, two-step sign-in, the Content Security Policy, request-shield |
+| [Privacy](privacy/README.md) | GDPR features, data minimization, retention, consent records, erasure; other jurisdictions framed generally |
+| [Records and archiving](records-and-archiving/README.md) | Versions, history, archiving notices, retention schedules, exports, preserving URLs |
 | [Open data](open-data/README.md) | Publishing datasets with metadata, licenses and stable URLs, and the APIs and feeds that exist |
 | [Transparency and FOI](transparency-and-foi/README.md) | Proactive disclosure, disclosure logs, publication schemes, decision registers |
-| Languages (`languages/`) | Official languages, translation workflows, right-to-left, plain language |
-| Sovereignty (`sovereignty/`) | Self-hosting, data location, open-source licensing and procurement, avoiding vendor lock-in |
+| [Languages](languages/README.md) | Official languages, translation workflows, right-to-left, plain language |
+| [Sovereignty](sovereignty/README.md) | Self-hosting, data location, open-source licensing and procurement, avoiding vendor lock-in |
 | Building public-service sites (`building/`) | Service catalogs, forms, citizen accounts, news and alerts, events, documents, search, maps, newsletters, multi-site, intranets, extranets |
-| Operations (`operations/`) | Hosting on-premise and in the government cloud, availability, backups, monitoring, incidents, upgrades, change management, staff roles, editorial workflows |
-| Procurement and lifecycle (`procurement/`) | Requirements, tender templates, evaluation, total cost of ownership, exit plans, training, the product lifecycle |
-| Tasks (`tasks/`) | Hundreds of step-by-step procedures: publish a council meeting agenda, add a service page with an accessible form, set up a department subsite, translate a page, archive last year's notices ... |
-| Checklists, FAQ and glossary | Go-live, accessibility, security, privacy and readiness checklists; answers to common questions; terms |
+| [Operations](operations/README.md) | Hosting on-premise and in the government cloud, availability, backups, monitoring, incidents, upgrades, change management, staff roles, editorial workflows |
+| [Procurement and lifecycle](procurement/README.md) | Requirements, tender templates, evaluation, total cost of ownership, exit plans, training, the product lifecycle |
+| [Tasks](tasks/README.md) | Hundreds of step-by-step procedures: publish a council meeting agenda, add a service page with an accessible form, set up a department subsite, translate a page, archive last year's notices ... |
+| [Checklists](checklists/README.md), [FAQ](faq/README.md) and [glossary](glossary/README.md) | Go-live, accessibility, security, privacy and readiness checklists; answers to common questions; terms |
 
 Sections shown with their folder name in plain text are being written and will be linked from here as they are
 published.
@@ -93,14 +93,14 @@ published.
 
 | If you are ... | Start with |
 |---|---|
-| a procurement officer or project manager | Procurement and lifecycle (`procurement/`), then the requirements and evaluation pages it lists |
-| a head of digital or web manager | this page, Levels of government (`levels/`) for your kind of organization, then Operations (`operations/`) |
+| a procurement officer or project manager | [Procurement and lifecycle](procurement/README.md), then the requirements and evaluation pages it lists |
+| a head of digital or web manager | this page, [Levels of government](levels/README.md) for your kind of organization, then [Operations](operations/README.md) |
 | an accessibility coordinator | [Accessibility standards](../../standards/accessibility.md), then the accessibility section of this help |
 | an information security officer | [Security standards](../../standards/security.md), [Security hardening](../security-hardening.md) |
 | a data protection officer | [Privacy standards](../../standards/privacy.md) |
-| an IT operations team | Operations (`operations/`) and the [hosting help](../hosting/hosting-companies-start-here.md), which covers servers in depth |
-| an editor | the tasks section of this help, and [Editing content](../editing-content.md) |
-| a trainer | [Trainers: start here](../trainers/trainers-start-here.md) and the training pages of the procurement section |
+| an IT operations team | [Operations](operations/README.md) and the [hosting help](../hosting/hosting-companies-start-here.md), which covers servers in depth |
+| an editor | the [tasks](tasks/README.md), and [Editing content](../editing-content.md) |
+| a trainer | [Trainers: start here](../trainers/trainers-start-here.md) and [Training for a public body](procurement/training/README.md) |
 | a website builder or supplier | [Website creators: start here](../creators/website-creators/website-creators-start-here.md) |
 
 ## Your first month
@@ -113,10 +113,10 @@ published.
    ([Install in one command](../../features/6.0/install-in-one-command.md)) and walk through the administration with
    the people who will edit ([Getting started](../getting-started.md), [Admin tour](../admin-tour.md)).
 3. **Week 3: model your organization.** Read the page of your level of government in
-   Levels of government (`levels/`): content model, sections and roles.
-4. **Week 4: plan operations and people.** Read Operations (`operations/`) and decide who hosts, who
+   [Levels of government](levels/README.md): content model, sections and roles.
+4. **Week 4: plan operations and people.** Read [Operations](operations/README.md) and decide who hosts, who
    backs up, who patches, who approves content and who trains editors
-   (the training pages of the procurement section).
+   ([Training for a public body](procurement/training/README.md)).
 
 ## Related sections of the help
 

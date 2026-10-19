@@ -1,7 +1,7 @@
 ---
 title: Find a node ID
 audience: editor, website-creator, admin, designer, developer
-category: layouts
+category: build-two-ways
 order: 400
 summary: Menus, layouts and templates name pages by their node ID (location ID). Where the administration shows it, how to tell it from the object ID, and how to look a page up by ID, path or URL.
 keywords: node ID, location ID, object ID, content ID, find node, content finder, MainMenuID, FooterMenuID, value_id, URL alias, content/view/full

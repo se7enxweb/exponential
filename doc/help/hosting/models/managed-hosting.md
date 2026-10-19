@@ -15,6 +15,8 @@ answers which tasks such a service usually takes over, which tool in Exponential
 who does what, and what the project's steward 7x offers itself. It names no prices or service levels: those are
 choices a host makes ([SLA options](../business/sla-options.md)).
 
+![Setup, System information: the PHP, database and web server a managed host keeps up to date](../../images/hosting/system-info-managed.webp)
+
 ## Contents
 
 1. [What "managed" can cover](#what-managed-can-cover)

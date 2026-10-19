@@ -12,6 +12,8 @@ type: help
 This page is for designers who decide where a layout changes. It answers: which breakpoints the administration uses
 and why, how to pick yours, and how to keep them consistent.
 
+![The front page of the media design at 375 pixels wide, with the menu folded behind a button](../../images/designers/site-375.webp)
+
 ## Contents
 
 1. [admin4 as an example](#admin4-as-an-example)

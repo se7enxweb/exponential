@@ -1,7 +1,7 @@
 ---
 title: Measured steps and times
 audience: designer, website-creator, admin, developer, editor
-category: layouts
+category: build-two-ways
 order: 30
 summary: How the steps and times quoted in these pages were measured - on a throwaway copy of a real Exponential 6.0.15+ installation - and the raw numbers, so anyone can repeat them on their own site.
 keywords: measured, speed, steps, timing, benchmark, exp:ini, exp:cache, page render time, page cache, method, repeatable

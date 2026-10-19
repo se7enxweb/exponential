@@ -12,6 +12,8 @@ type: help
 This page is for website creators who want a site search engines understand. Most of what matters is already built in
 or one extension away; this page lists it as a checklist and points to the page that explains each item.
 
+![An article's page in the administration: its title, which also makes its address and the page title in search results](../../images/creators/seo-url-alias.webp)
+
 ## Contents
 
 1. [What Exponential gives you](#what-exponential-gives-you)

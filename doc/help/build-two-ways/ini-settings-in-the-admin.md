@@ -1,7 +1,7 @@
 ---
 title: Ini settings in the administration
 audience: admin, website-creator, designer, developer
-category: layouts
+category: build-two-ways
 order: 410
 summary: The Setup > Ini settings pages - how they show the layers of an INI file, which file wins, how an array is edited, where a change is saved - the no-code tool behind the header and footer menus.
 keywords: Ini settings, settings view, settings edit, INI layers, override, siteaccess settings, extension settings, array, reset line, Save it in, menu.ini

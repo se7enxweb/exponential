@@ -129,6 +129,8 @@ first sign-in.
 
 ![My e-mail preferences: the categories of mail and whether you receive each](images/accounts/email-preferences.webp)
 
+![My notification settings: the parts of the site you follow and how often you get mail about them](images/accounts/notification-settings.webp)
+
 ## Learn more
 
 - [Two-step sign-in](../guides/two-factor-login.md), for administrators who set it up.

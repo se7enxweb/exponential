@@ -4,7 +4,7 @@ audience: businesses, project-manager, website-creator, editor
 category: business-solutions
 order: 1
 summary: The landing page of the libraries section - what a library, archive, documentation center or any organization with a catalog can build with Exponential, what it is not, the pages of the section and the order to read them.
-keywords: library, catalog, catalogue, archive, collection, records, subject headings, digital collection, documentation center, library website
+keywords: library, catalog, archive, collection, records, subject headings, digital collection, documentation center, library website
 type: help
 ---
 # Libraries and catalogs
@@ -20,7 +20,7 @@ where a dedicated library system is still needed.
 2. [What Exponential is not](#what-exponential-is-not)
 3. [The pages of this section](#the-pages-of-this-section)
 4. [Suggested reading order](#suggested-reading-order)
-5. [Neighbouring sections](#neighbouring-sections)
+5. [Neighboring sections](#neighboring-sections)
 
 ## What you can build
 
@@ -74,19 +74,19 @@ Records can be brought in by a developer script or through the REST API
 6. [Feeds for new acquisitions](feeds-for-new-acquisitions.md) and [PDF and print exports](pdf-and-print-exports.md)
 7. [Library site checklist](library-site-checklist.md)
 
-## Neighbouring sections
+## Neighboring sections
 
 - [Newsletters](../newsletters/README.md): a newsletter of new acquisitions.
-- Members: reader accounts and members-only content.
-- Non-profits and Associations and small groups: many
+- [Members](../members/README.md): reader accounts and members-only content.
+- [Non-profits](../nonprofits/README.md) and [Associations and small groups](../associations/README.md): many
   libraries are run by one or support one.
-- Multilingual sites: catalogs in several languages.
+- [Multilingual sites](../multilingual/README.md): catalogs in several languages.
 - Public libraries run by a government body: see also
-  Governments: start here.
+  [Governments: start here](../../government/government-start-here.md).
 
 ## Related pages
 
-- Businesses: start here
+- [Businesses: start here](../businesses-start-here.md)
 - [Designing your content model](../../creators/website-creators/designing-your-content-model.md)
 - [What you can build](../../creators/website-creators/what-you-can-build.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

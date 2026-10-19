@@ -36,6 +36,8 @@ and reflow without horizontal scrolling at 320 CSS pixels wide.
   looks like a 1920 px screen at 200%.
 - **Automated:** the project's browser checks use 1440 px at scale 1, 960 px at scale 2 and 375 px at scale 2.
 
+![An item's page at 960 pixels wide, as at 200 percent zoom on a laptop: the columns fold away and nothing overflows](../../images/designers/edit-form-960.webp)
+
 ## What usually breaks
 
 - **Controls hidden "for phones".** A rule that hides a search preview or slider arrows below a breakpoint also hides

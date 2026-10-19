@@ -29,6 +29,8 @@ it, and the site keeps showing the published version until you publish.
 When a draft is published, the version that was published before becomes archived. A site keeps a limited number of
 versions per item; when the limit is reached, the oldest archived version is removed to make room.
 
+![The versions of an article with the status of each: published, archived or draft](images/publishing/version-history.webp)
+
 ## Publish
 
 In the edit form, press **Send for publishing**. On most sites the change is on the site at once. If your site uses

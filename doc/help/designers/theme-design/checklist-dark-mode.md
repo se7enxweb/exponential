@@ -24,6 +24,8 @@ This page is for designers who check a dark mode. Background: [Dark mode overvie
 - [ ] `color-scheme: dark` in the dark block (form controls and scrollbars follow).
 - [ ] For admin designs: the admin styling rules test passes ([The admin styling rules test](admin-styling-rules-test.md)).
 
+![A list page in the dark mode: cards, counters, badges and buttons all take their dark token values](../../images/designers/sections-dark.webp)
+
 ## Looks
 
 - [ ] No white or light box on a dark page (cards, tables, code blocks, dialogs, third-party widgets).
@@ -34,6 +36,8 @@ This page is for designers who check a dark mode. Background: [Dark mode overvie
 - [ ] Focus ring visible on dark surfaces.
 - [ ] Checked at 1440 px and 960 px with scale 2.
 
+![An item's page in the dark mode: badges, buttons, tabs and the content keep their contrast](../../images/designers/item-page-dark.webp)
+
 ## Behavior
 
 - [ ] Follows the system setting when no choice is made, also when the system changes while the page is open.
@@ -41,6 +45,8 @@ This page is for designers who check a dark mode. Background: [Dark mode overvie
 - [ ] No light flash when loading a page in dark mode.
 - [ ] The choice survives reloads and navigation.
 - [ ] Printing produces a light page.
+
+![The edit form in the dark mode: fields, the field bar and the rich text editor follow the theme](../../images/designers/edit-form-dark.webp)
 
 ## Related pages
 

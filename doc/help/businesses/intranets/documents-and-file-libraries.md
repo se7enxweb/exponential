@@ -123,6 +123,6 @@ network drive, ask your partner to test it on your installation before you promi
 
 - [Files and downloads](../../creators/website-creators/files-and-downloads.md)
 - [Organizing the media library](../../creators/website-creators/organizing-the-media-library.md)
-- Sharing files with partners
+- [Sharing files with partners](../extranets/sharing-files-with-partners.md)
 - [Intranet search](intranet-search.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

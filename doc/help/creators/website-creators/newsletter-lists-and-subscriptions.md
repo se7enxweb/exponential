@@ -13,6 +13,8 @@ This page is for website creators and editors who look after newsletter subscrib
 statuses mean, where subscribers are managed, importing and exporting, and keeping lists clean
 ([cjw_newsletter](../../../features/6.0/extensions/cjw_newsletter.md)).
 
+![The newsletter dashboard: lists, subscribers, editions and the state of sending](../../images/creators/newsletter-lists.webp)
+
 ## Contents
 
 1. [Statuses](#statuses)
