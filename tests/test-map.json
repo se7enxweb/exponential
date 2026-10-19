@@ -1777,6 +1777,9 @@
     "design/admin*/javascript/exphelp.js": [
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
+    "design/admin/stylesheets/theme/rounded.css": [
+      "tests/tests/kernel/classes/help/expHelpContentsPageTest.php"
+    ],
     "design/admin*/stylesheets/modules/help.css": [
       "tests/tests/kernel/classes/help/expHelpPdfTest.php",
       "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php",

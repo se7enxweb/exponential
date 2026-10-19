@@ -89,6 +89,8 @@ Use the training installation, with an approval workflow that covers the learner
 - The approval page (if opened) says that the content awaits approval before it can be published.
 - The trainer checks by opening one learner's **My pending items** on the projector.
 
+![My pending items, where a version waiting for approval is listed](../../../images/trainers/e201-pending.webp)
+
 ## Quiz
 
 1. What holds a version back from publishing on a site with approval?

@@ -99,6 +99,8 @@ Use the training installation and your course folder.
 - **Reverse related for subtree** listed the items outside the course folder that point into it (possibly none).
 - The trainer checks by opening the embedded image's **Relations** tab on the projector.
 
+![The Relations tab: related objects and reverse related objects](../../../images/trainers/e201-relations-tab.webp)
+
 ## Quiz
 
 1. Name the three ways an item can point at another item.

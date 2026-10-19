@@ -103,6 +103,8 @@ Use the training installation and your course folder.
 - **My pending items** shows *My pending items (0)* on a training site without approval.
 - The trainer checks by asking each learner how many drafts they have left (usually zero).
 
+![My drafts listing a stored draft, with the buttons to edit or remove it](../../../images/trainers/e101-my-drafts.webp)
+
 ## Quiz
 
 1. Which state does a version have after it was published and a newer version was published after it?

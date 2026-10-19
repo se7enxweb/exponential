@@ -119,6 +119,8 @@ Use your own training installation, in the browser and in a terminal at the inst
 - Step 9 prints `INTACT` for each channel and exits with code 0.
 - The trainer checks by asking a learner to show the event of step 5 on the projector, with its address truncated.
 
+![The audit dashboard: health of the hash chains, events of today and 7 days, security](../../../images/trainers/sa-audit-dash.webp)
+
 ## Quiz
 
 1. Which channel records a settings write?

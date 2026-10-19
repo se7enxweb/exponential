@@ -101,6 +101,8 @@ On your training installation, signed in as an administrator:
   steps 9 and 10 remove it. (An upgraded site may show it from the start, through `PolicyOmitList[]`.)
 - The trainer checks the Anonymous role on one learner's screen after step 9: no `user / register` policy left.
 
+![The Anonymous role's policies: what visitors who are not signed in may read](../../../images/trainers/sa-anonymous.webp)
+
 ## Quiz
 
 1. Which section may anonymous visitors read on a new installation?

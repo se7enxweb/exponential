@@ -102,6 +102,8 @@ On your training installation, signed in as an administrator:
 - After step 11 only the original role remains.
 - The trainer checks the role page on one learner's screen and asks why the role gives nobody anything yet.
 
+![A role's page: its policies with module, function and limitations](../../../images/trainers/sa-editor-role.webp)
+
 ## Quiz
 
 1. What are the three steps of the policy wizard?

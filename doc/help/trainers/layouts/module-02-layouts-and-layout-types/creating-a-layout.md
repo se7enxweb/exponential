@@ -91,6 +91,8 @@ Use the training installation and your layouts training account.
   *Select a block to access its properties.*
 - The trainer checks by sorting the **Layouts** list by **Last modified** on the projector.
 
+![The New layout button on the Layouts dashboard](../../../images/trainers/ly-new-layout.webp)
+
 ## Quiz
 
 1. Which four fields does the **New layout** form have?

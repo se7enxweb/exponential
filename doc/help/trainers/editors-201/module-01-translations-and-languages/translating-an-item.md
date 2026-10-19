@@ -99,6 +99,8 @@ Use the training installation and your course folder from Editors 101 (or a fold
 - Step 9 showed empty fields and was discarded; that article still has one language.
 - The trainer checks by opening the article in both languages on the projector.
 
+![The language list next to Edit and the language badges below, a filled badge per existing translation](../../../images/trainers/e201-language-badges.webp)
+
 ## Quiz
 
 1. Name two ways to start a translation.

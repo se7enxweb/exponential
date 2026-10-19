@@ -96,6 +96,8 @@ Use your own training installation, signed in as an administrator. This exercise
 - After step 7 nothing was written: the list in step 8 is the same as before the exercise.
 - The trainer checks the file of two learners with the command of step 8.
 
+![The Extensions page: counters, search, filters and a card per extension](../../../images/trainers/sa-extensions.webp)
+
 ## Quiz
 
 1. Two active extensions ship the same template. Which one wins?

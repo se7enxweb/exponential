@@ -99,6 +99,8 @@ Use paper and the public site of the training installation.
 - The trainer shows the real layout of the front page in the editor on the projector (module 2) and compares it with
   two sketches.
 
+![Layout types, zones and block definitions](../../../images/trainers/ly-components.webp)
+
 ## Quiz
 
 1. What does a layout type fix?

@@ -128,6 +128,8 @@ Each learner builds a training installation on their own machine (see
 - The editor siteaccess shows no Setup area.
 - The trainer checks by asking two learners to show their Setup page and their list of tasks.
 
+![The dashboard of a site administrator, with the system box and the quick links](../../../images/trainers/sa-dashboard.webp)
+
 ## Quiz
 
 1. Name three duties of a site administrator that are not part of an editor's job.

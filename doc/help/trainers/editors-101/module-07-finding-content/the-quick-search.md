@@ -95,6 +95,8 @@ Use the training installation and your Editor training account.
 - Step 6: the multi-item form opened with both news articles.
 - The trainer checks by asking one learner to repeat step 5 on the projector.
 
+![The result of a quick search: Search for workout returned n matches, with the In list to narrow it](../../../images/trainers/e101-quick-search.webp)
+
 ## Quiz
 
 1. Which key jumps to the search field?

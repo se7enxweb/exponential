@@ -95,6 +95,8 @@ On your training installation, signed in as an administrator:
 - `sam.sample` still exists; only the assignment was removed.
 - The trainer checks the role page of one learner and the sentence of step 10.
 
+![The users and groups a role is assigned to, with Assign and Assign with limitation](../../../images/trainers/sa-assign-role.webp)
+
 ## Quiz
 
 1. Why assign roles to groups rather than to users?

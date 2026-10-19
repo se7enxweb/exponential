@@ -94,6 +94,8 @@ Use the training installation and your layouts training account.
 - The learner can describe the export and import screens.
 - The trainer checks the **Layouts** list on the projector: one layout per learner, no copies left.
 
+![The list of layouts with status, type and the actions per layout](../../../images/trainers/ly-list.webp)
+
 ## Quiz
 
 1. How do you find the layouts that are used by the most mappings?

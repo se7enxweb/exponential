@@ -123,6 +123,8 @@ Use your own training installation, in a terminal at the installation root.
 - Step 7 says what would be rotated and changes nothing.
 - The trainer checks by asking a learner to read their 404 line aloud and explain the reason field.
 
+![Log health: each log file with its size, growth and last change](../../../images/trainers/sa-log-health.webp)
+
 ## Quiz
 
 1. A visitor opens a page that does not exist. Which log gets the line?

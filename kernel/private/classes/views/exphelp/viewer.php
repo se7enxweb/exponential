@@ -18,6 +18,9 @@ namespace Exponential\View\Kernel\Exphelp
 
 class Viewer extends \Exponential\Runnable\ModuleView
 {
+    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height) */
+    const RENDER_VERSION = 2;
+
     public function run( array $scope )
     {
         $Params = $scope['Params'];
@@ -112,7 +115,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
         $markdown = isset( $document['suffix'] ) && in_array( $document['suffix'], array( 'md', 'markdown' ), true );
         $dir = rtrim( (string)$index->cacheDir(), '/' ) . '/render';
         // the siteaccess prefix is in the links, so it is part of the key
-        $file = $dir . '/' . sha1( $index->signature() . "\0" . $id . "\0" . \eZSys::indexDir() . "\0" . md5( (string)$source ) ) . '.json';
+        $file = $dir . '/' . sha1( self::RENDER_VERSION . "\0" . $index->signature() . "\0" . $id . "\0" . \eZSys::indexDir() . "\0" . md5( (string)$source ) ) . '.json';
         if ( is_file( $file ) )
         {
             $cached = json_decode( (string)@file_get_contents( $file ), true );
@@ -137,7 +140,8 @@ class Viewer extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The renderer, with relative links resolved to the viewer and images to the asset view.
+     * The renderer, with relative links resolved to the viewer and images to the asset view, with their size (so the
+     * page keeps their room while they load).
      *
      * @return \expHelpMarkdownRenderer
      */
@@ -145,7 +149,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
     {
         return new \expHelpMarkdownRenderer( array(
             'link_resolver' => array( 'expHelpLinks', 'link' ),
-            'image_resolver' => array( 'expHelpLinks', 'image' ) ) );
+            'image_resolver' => array( 'expHelpLinks', 'sizedImage' ) ) );
     }
 }
 

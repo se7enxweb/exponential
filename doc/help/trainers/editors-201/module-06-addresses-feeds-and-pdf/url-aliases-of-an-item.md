@@ -92,6 +92,8 @@ Use the training installation and your article *Opening hours* (moved to `Archiv
 - The extra alias is gone after step 8.
 - The trainer checks by trying one learner's alias on the projector before step 8.
 
+![The URL aliases of an item: the generated alias and the form to add another](../../../images/trainers/e201-url-aliases.webp)
+
 ## Quiz
 
 1. From what is an item's address generated?

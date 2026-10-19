@@ -250,6 +250,14 @@ class expHelpContentsPageTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( '.a4-js .a4-help-contents-controls[hidden] { display: flex; visibility: hidden; }', $css, 'its room is kept until the script shows it (no layout shift)' );
             $this->assertStringContainsString( '.a4-help-contents-controls[hidden] { display: none; }', $css );
         }
+        // the classic page frame clips without being a scroll box, or sticky sticks to it instead of the window
+        $theme = (string)file_get_contents( self::root() . '/design/admin/stylesheets/theme/rounded.css' );
+        $this->assertMatchesRegularExpression( '/#page\s*\{[^}]*overflow: clip;[^}]*display: flow-root;/', $theme, 'classic #page: overflow clip (no scroll box) and still containing its floats' );
+        $this->assertDoesNotMatchRegularExpression( '/#page\s*\{[^}]*overflow: hidden/', $theme );
+        // a stored filter: the tree and the clear button keep their room, invisible, until it is applied
+        $css = (string)file_get_contents( self::root() . '/design/admin4/stylesheets/modules/help.css' );
+        $this->assertStringContainsString( '.exp-help-nav-pending [data-exphelp-nav] .a4-help-nav-list.is-top { visibility: hidden; }', $css );
+        $this->assertStringContainsString( '.exp-help-nav-pending [data-exphelp-nav] .a4-help-nav-clear[hidden] { display: inline-flex; visibility: hidden; }', $css );
         $debug = (string)file_get_contents( self::root() . '/design/standard/stylesheets/expdebugbar.css' );
         $this->assertStringContainsString( 'body.exp-debug-bar { --exp-debug-clearance: var(--exp-debug-bar-h, 38px); }', $debug );
         $this->assertStringContainsString( 'body:has(#debug.exp-debug-min:not([hidden])) { --exp-debug-clearance: 54px; }', $debug );

@@ -102,6 +102,8 @@ On your training installation, signed in as an administrator, with a terminal in
 - Step 9: German cannot be removed while the article has a German translation.
 - The trainer checks the German card on one learner's site.
 
+![The languages content can be written in, with the number of items in each](../../../images/trainers/sa-languages.webp)
+
 ## Quiz
 
 1. Which setting decides the words of the administration's buttons?

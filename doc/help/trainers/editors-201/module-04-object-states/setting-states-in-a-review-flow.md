@@ -102,6 +102,8 @@ reviewer; the trainer gave the reviewer accounts a reviewer role.
 - Step 9 set the state on the whole course folder.
 - The trainer checks by opening `Review me`'s **Details** tab on the projector.
 
+![The object states of an item on its Details tab, with Set states](../../../images/trainers/e201-states.webp)
+
 ## Quiz
 
 1. Which button sets the state chosen in the **Content state** box?

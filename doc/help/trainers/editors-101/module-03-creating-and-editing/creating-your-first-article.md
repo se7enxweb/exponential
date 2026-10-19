@@ -103,6 +103,8 @@ Use the training installation and your Editor training account.
 - After step 12 the draft is gone and the published title is unchanged.
 - The trainer checks by opening one learner's article and its **Manage versions** page on the projector.
 
+![The edit form refusing to publish: the message at the top names the empty required Title field](../../../images/trainers/e101-required-error.webp)
+
 ## Quiz
 
 1. You press **Edit** on a published article. What do visitors see while you write?

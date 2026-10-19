@@ -105,6 +105,8 @@ Use your own training installation. Every test account uses an address at `examp
 - Step 10 lists the refusals of the test user.
 - The trainer checks the role of one learner: exactly one policy, `audit/read`.
 
+![The audit settings: index, keys, sinks, archive formats and sources](../../../images/trainers/sa-audit-settings.webp)
+
 ## Quiz
 
 1. An article disappeared yesterday. Which channel and which filters do you use first?

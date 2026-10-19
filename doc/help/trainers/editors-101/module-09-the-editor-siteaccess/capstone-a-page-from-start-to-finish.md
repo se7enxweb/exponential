@@ -98,6 +98,8 @@ The trainer checks each article against this list:
 A learner who meets five of the seven checks has the skills of Editors 101; the trainer suggests the lessons behind
 any missing check for review.
 
+![A finished article's page in the administration, the starting point of the trainer's checks](../../../images/trainers/e101-capstone-view.webp)
+
 ## Quiz
 
 1. You need to restore an earlier title of a published article. Which page do you use and which button?

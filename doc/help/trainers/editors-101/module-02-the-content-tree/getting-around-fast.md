@@ -99,6 +99,8 @@ Use the training installation and your Editor training account. Nothing in this 
   arrow keys.
 - The trainer checks by asking a learner to open an item named by the trainer, using the keyboard only.
 
+![The Content finder in the left column, which opens an item by its address or node number](../../../images/trainers/e101-content-finder.webp)
+
 ## Quiz
 
 1. Name the three things the **Content finder** accepts.

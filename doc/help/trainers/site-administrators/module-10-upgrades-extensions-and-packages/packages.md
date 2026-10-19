@@ -114,6 +114,8 @@ removed.
   new installations from the wizard would lose it.
 - The trainer checks the answer of step 8 with two learners.
 
+![Setup, Packages: the packages in the repositories](../../../images/trainers/sa-packages.webp)
+
 ## Quiz
 
 1. What is the difference between installing and importing a package?

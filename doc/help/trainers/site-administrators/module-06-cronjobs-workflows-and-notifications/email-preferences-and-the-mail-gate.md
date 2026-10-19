@@ -128,6 +128,8 @@ Use your own training installation, in a terminal at the installation root.
 - Step 9: the entry is found, then lifted.
 - The trainer checks the `.mail` file of one learner on the projector: the footer names the training organization.
 
+![E-mail preferences: the mail categories and the mail gate](../../../images/trainers/sa-mail-prefs.webp)
+
 ## Quiz
 
 1. Which kind of mail still goes to an address on the suppression list?

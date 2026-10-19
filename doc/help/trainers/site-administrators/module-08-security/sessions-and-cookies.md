@@ -117,6 +117,8 @@ private window).
 - Step 10 includes `CookieSecure=true`, `CookieHttponly=true`, `CookieSameSite=Lax` and a chosen `SessionTimeout`.
 - The trainer checks by asking one learner to explain what else they would do after a real account takeover.
 
+![Session administration: sessions signed in within the last hour, day and lifetime](../../../images/trainers/sa-sessions.webp)
+
 ## Quiz
 
 1. How long does a session last by default after its last use?
