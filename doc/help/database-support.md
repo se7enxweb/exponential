@@ -4,7 +4,7 @@ audience: admin, developer
 category: install-upgrade
 order: 10
 summary: Which databases Exponential 6.0.x supports and in which order (SQLite first, then PostgreSQL, MongoDB, MariaDB, Oracle and MySQL), with the versions, PHP extensions, settings, installers, character sets, performance, backup and restore, limits, migration and test coverage of each, and what it would take to run on Microsoft SQL Server.
-keywords: database, databases, supported databases, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, DatabaseImplementation, DatabaseSettings, site.ini, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions
+keywords: database, databases, supported databases, SQLite, SQLite3, PostgreSQL, Postgres, MongoDB, MariaDB, MySQL, Oracle, ezoracle, oci8, pgsql, mysqli, sqlite3, mongodb, Microsoft SQL Server, MSSQL, SQL Server, sqlsrv, xrowmssql, xrow, FreeTDS, dblib, DatabaseImplementation, DatabaseSettings, site.ini, backup, restore, migration, character set, utf8mb4, AL32UTF8, CI, requirements, versions
 featured: true
 context: setup/info, setup/systemupgrade, dse
 type: help
@@ -36,6 +36,7 @@ support statement; it links to that chapter wherever the details are.
 11. [Oracle](#5-oracle)
 12. [MySQL](#6-mysql)
 13. [Microsoft SQL Server: possible with additional work](#microsoft-sql-server-possible-with-additional-work)
+    - [A starting point: the xrowmssql extension](#a-starting-point-the-xrowmssql-extension)
 14. [Character sets and collations](#character-sets-and-collations)
 15. [Performance and scaling](#performance-and-scaling)
 16. [Backup and restore](#backup-and-restore)
@@ -72,7 +73,8 @@ What the order means in practice:
 
 Microsoft SQL Server has no driver in Exponential 6.0.x. It is known to be possible: the database layer is a small,
 documented interface, and everything that would have to be written is listed in
-[Microsoft SQL Server](#microsoft-sql-server-possible-with-additional-work).
+[Microsoft SQL Server](#microsoft-sql-server-possible-with-additional-work). An extension written for the 4.x line,
+`se7enxweb/xrowmssql`, is the natural starting point for that work.
 
 ## At a glance
 
@@ -452,6 +454,53 @@ this page should be read as a promise of a release that has one.
 - **PHP drivers.** Microsoft publishes the `sqlsrv` and `pdo_sqlsrv` extensions for PHP on Linux and Windows. Check
   Microsoft's support matrix for the PHP versions a release covers; this has not been tested with Exponential.
 
+### A starting point: the xrowmssql extension
+
+A SQL Server extension already exists, written for earlier editions of the database API:
+[se7enxweb/xrowmssql](https://github.com/se7enxweb/xrowmssql), "A full-featured open source Microsoft SQL Server
+database plugin" (repository description). Its README calls it the "Microsoft SQL Server database extension for eZ
+Publish 4.x and SQL Server 2005/2008", "Developed by xrow GmbH", and says it includes a database driver and a database
+schema definition. The repository holds the code as copied from `xrow/xrowmssql` in October 2013; since then only
+funding files were added (its `git log`). It has not been run on Exponential 6, and this page does not claim that it
+works there.
+
+**What it provided** (read from its `classes/`, `settings/`, `sql/`, `patch/` and `docs/` on 18 October 2026):
+
+| Part | File | What it did |
+|---|---|---|
+| Driver | `classes/ezmssqldb.php` (`eZMSSQLDB`) | An `eZDBInterface` driver: connect, query, `arrayQuery()`, transactions, `lastSerialID()` through `SELECT @@identity`, `escapeString()` (doubled quotes), `subString()` (`substring()`), `concatString()` (the `+` operator), `md5()` (`HashBytes('md5', ...)` converted to hex), `eZTableList()` from `sysobjects`, database lists and server version |
+| Connection layer | `classes/ezmssqlconnector.php` (`eZMSSQLFunctions`) | Two back ends: Microsoft's `sqlsrv` extension on Windows, and the old `mssql_*` functions over FreeTDS (`dblib`) on Linux |
+| Unicode literals | `eZMSSQLDB::_appendN()` | Prefixed non-numeric string literals with `N`, so text went into `NVARCHAR` columns as Unicode |
+| Identity inserts | `eZMSSQLDB::query()` | Switched `IDENTITY_INSERT` on and off around inserts that set the key column |
+| Schema handler | `classes/ezmssqlschema.php` (`eZMssqlSchema`) | Turned `.dba` into SQL Server DDL (`nvarchar`, `ntext`, `int IDENTITY(0,1)`, primary keys and indexes, insert triggers) and read an existing database back into a schema |
+| Settings | `settings/site.ini.append`, `settings/dbschema.ini.append` | The aliases `mssql` and `ezmssql` for `ImplementationAlias[]`, port 1433, the schema handler under `SchemaHandlerClasses[mssql]`, and per-column type and `NOT NULL` translations for long text columns |
+| Server objects | `sql/PROCEDURE.sql`, `sql/FUNCTION.sql`, `sql/clustering.sql` | A stored procedure and function to create in SQL Server first, and the cluster tables |
+| Kernel patch | `patch/4.3/kernel.patch` | A change to `kernel/classes/ezcontentlanguage.php` for SQL Server's arithmetic on language masks |
+| Install notes | `README`, `docs/` | Client setup (SQL Server Native Client on Windows, FreeTDS on Linux), loading the schema with `ezsqlinsertschema.php --type=mssql`, troubleshooting and known bugs |
+
+Its `extension.xml` names version 1.0.0 and "GNU General Public License v2.0", while the repository's `LICENSE` file
+is the GPL version 3; check both before reusing code. The settings expect the extension directory to be named
+`extension/mssql`.
+
+**How it maps to the work list below, and what would need modernizing:**
+
+| Work list row | What xrowmssql already has | What would need to change |
+|---|---|---|
+| A driver class | Most methods of `eZDBInterface` | PHP 8: its PHP 4 style constructor (`function eZMSSQLDB()` calling `$this->eZDBInterface()`) does not run on PHP 8, where `eZDBInterface` has only `__construct()`; `connect()` lacks the `$port` parameter of today's drivers; the `mssql_*` functions were removed from PHP 7 on, so only `sqlsrv` remains as a back end, on Linux too |
+| Offset and limit | Nothing in use: the `ROW_NUMBER()` rewrite in `arrayQuery()` is commented out, so `limit` and `offset` are ignored | `ORDER BY ... OFFSET n ROWS FETCH NEXT m ROWS ONLY`, which needs SQL Server 2012 or later |
+| `lastSerialID()` | `@@identity` | `SCOPE_IDENTITY()`, which is not changed by triggers, or `OUTPUT inserted.id` |
+| `md5()`, `subString()`, `concatString()` | Present | `CONVERT(VARCHAR(32), HASHBYTES('MD5', ...), 2)` instead of `master.dbo.fn_varbintohexstr`; `NVARCHAR(MAX)` instead of the 8000 character cap |
+| `bitAnd()`/`bitOr()` | The kernel's defaults (the bitwise AND and OR operators) already fit SQL Server | Nothing |
+| The `BIT_OR` aggregate | Not present | Still to do, as described below |
+| `UPDATE ... JOIN` | Not present | Still to do (`UPDATE t SET ... FROM t JOIN ...`) |
+| A schema handler | `eZMssqlSchema`, both directions | PHP 8 constructor; `NVARCHAR(MAX)` instead of the deprecated `ntext`; a review of the column translations against today's `share/db_schema.dba` |
+| SQL files, installer entries, extensions, tests and CI | Install notes only | All still to do |
+| Session statements, case and collation | Not handled | Still to do |
+
+Taken together, xrowmssql shows how each piece was solved once for SQL Server and gives a schema handler and a
+driver skeleton to start from; making it run on Exponential 6 means porting it to PHP 8 and `sqlsrv`, replacing its
+SQL Server 2005 idioms, and adding the rows it never covered.
+
 **What is missing, the work list.**
 
 | Piece | Where | What it involves |
@@ -468,8 +517,8 @@ this page should be read as a promise of a release that has one.
 | Tests and CI | `tests/`, `.github/workflows/` | a CI job with a SQL Server container, as the MySQL and PostgreSQL jobs have |
 
 How large that work is has not been measured, and no estimate is given here. Anyone who wants to take it on is
-welcome: start from the `ezoracle` extension as the model of
-a driver shipped outside the kernel, and open an issue on the
+welcome: start from [xrowmssql](#a-starting-point-the-xrowmssql-extension) for the SQL Server specifics and from the
+`ezoracle` extension as the model of a current driver shipped outside the kernel, and open an issue on the
 [software tracker](https://github.com/se7enxweb/exponential/issues) to coordinate.
 
 ## Character sets and collations

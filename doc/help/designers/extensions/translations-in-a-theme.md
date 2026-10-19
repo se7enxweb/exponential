@@ -11,7 +11,7 @@ type: help
 
 This page is for designers whose theme shows texts of its own ("Read more", "Search this site", button labels) and
 should work in more than one language. Writing the template side is explained in
-Translating template strings; here: the files in the extension.
+[Translating template strings](../templates/translating-template-strings.md); here: the files in the extension.
 
 ## The files
 
@@ -58,10 +58,10 @@ extension/mytheme/translations/
 - Ship `untranslated/translation.ts` with every source string, so a new language starts from a complete list.
 - Never repeat the same message twice in one context.
 - A right-to-left language (`heb-IL`, `ara-SA`) needs the layout to follow too
-  (Right-to-left designs).
+  ([Right-to-left designs](../theme-design/right-to-left-designs.md)).
 
 ## Related pages
 
 - [Languages](../../languages.md)
-- Tutorial: internationalize a theme
+- [Tutorial: internationalize a theme](../theme-design/tutorial-internationalize-a-theme.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -47,5 +47,5 @@ Example: `parts/teaser.tpl` is replaced by `parts/card.tpl`.
 ## Related pages
 
 - [Giving a theme its own settings file](../extensions/your-own-ini-file.md)
-- The ezini operator
+- [The ezini operator](../templates/ezini-operator.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

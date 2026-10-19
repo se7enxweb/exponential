@@ -56,6 +56,6 @@ list on **Setup > Extensions** (the order is changed in the list, reviewed, then
 ## Related pages
 
 - [Setup > Extensions: loading order and safe saving](../../../features/6.0/extension-loading-order.md)
-- The design cascade
-- Override ordering
+- [The design cascade](../theme-design/the-design-cascade.md)
+- [Override ordering](../templates/override-ordering.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

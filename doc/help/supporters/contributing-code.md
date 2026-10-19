@@ -60,4 +60,5 @@ database, so a development installation needs no database server ([Database supp
 - [Develop with Git](../develop-with-git.md)
 - [Testing and reporting bugs](testing-and-reporting-bugs.md)
 - [Contributing code back (for partners)](../partners/contributing-code-back.md)
+- [Contribute to the project](../project/contribute-to-the-project.md): every way to help build Exponential
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

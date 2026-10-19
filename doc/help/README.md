@@ -33,6 +33,7 @@ allowed to use is shown grayed out or not at all.
 |---|---|
 | [Who is 7x?](who-is-7x.md) | Know the company behind Exponential: nearly thirty years with this code, from the eZ Publish years to Exponential 6, the products, the community and how to take part |
 | [Who is the Exponential Foundation?](who-is-the-exponential-foundation.md) | Know the nonprofit that operates the open source project, the whole family of Exponential products and what the project commits to |
+| [The Exponential project](project/README.md) | Find the FAQ, the licensing questions, the roadmap, support, the community channels, how to build, contribute and give, as the project website exponential.earth presents them |
 
 ## Everyday work
 
@@ -57,6 +58,7 @@ allowed to use is shown grayed out or not at all.
 |---|---|
 | [Keyboard shortcuts](keyboard-shortcuts.md) | Work with the keyboard alone, in the administration and in these help pages |
 | [When something goes wrong](when-something-goes-wrong.md) | Tell the right people about an error, with what they need to fix it |
+| [Getting support](project/getting-support.md) | Get free help from the community (forums, Telegram, Discord, Slack) or paid help from 7x |
 
 ## Grow from user to developer
 
@@ -64,6 +66,7 @@ allowed to use is shown grayed out or not at all.
 |---|---|
 | [Develop with Git](develop-with-git.md) | Install Exponential as Git clones with their full history (the recommended way to build websites), keep them up to date, and send fixes back as pull requests |
 | [Update with Git](update-with-git.md) | Get updates as they are pushed to GitHub and update Composer to match, hourly, daily, weekly, monthly or only at each release, by hand or automatically |
+| [Contribute extensions back](contribute-extensions-back.md) | Publish your extensions so everyone can use them, and know what the GPL requires when you distribute one |
 | [Getting the code](../install/03-getting-the-code.md) | Every way to install the code, with versions, tags and extensions explained |
 
 ## Deeper guides
