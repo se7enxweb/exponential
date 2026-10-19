@@ -19,7 +19,7 @@ The program does not publish an escalation procedure. A reasonable ladder, built
 | Step | When | How |
 |---|---|---|
 | 1 | The response time of your level has passed | Comment on the ticket with the time it was opened and your level |
-| 2 | Production impact continues | Write to the partner team (partner@exponential.earth) with the ticket link |
+| 2 | Production impact continues | Write to the partner team (<https://exponential.earth/partner/contact-us>) with the ticket link |
 | 3 | Bring it to the next guidance meeting, or request one early | [Partner meetings](partner-meetings-and-briefings.md) |
 | 4 | You need guaranteed help now | Buy paid support from 7x (<https://exponential.earth/support>) |
 

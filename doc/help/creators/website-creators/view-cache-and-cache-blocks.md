@@ -90,5 +90,5 @@ The debug bar shows which caches were used for a page ([Exp debug bar](../../../
 
 - [Performance and caching for websites](performance-and-caching.md)
 - [Caches](../../../guides/caches.md)
-- Caching in applications
+- [Caching in applications](../app-creators/caching-in-applications.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
