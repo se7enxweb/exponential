@@ -170,6 +170,26 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( "K1\\{$p}\\Named" => 'classes/mixed.php', "{$p}Global" => 'classes/mixed.php' ), $entries );
     }
 
+    /**
+     * A method called class (extension/expservices' expObjectServices::class(), an ezjscore call) is not a
+     * declaration: it gave an entry with the blank class name ' '.
+     */
+    public function testAMethodCalledClassIsNoDeclaration()
+    {
+        $p = $this->name;
+        $this->file( 'classes/methods.php', "<?php\nclass {$p}Services\n{\n    public static function class( \$args ) { return 1; }\n"
+                                          . "    function enum() { return \$this->class( 1 ) + static::class( 2 ); }\n"
+                                          . "    function nullsafe( \$o ) { return \$o?->class( 3 ); }\n}\n" );
+        list( $generator, $entries ) = $this->generated();
+        $this->assertSame( array( "{$p}Services" => 'classes/methods.php' ), $entries );
+        $this->assertSame( array(), $generator->getWarnings() );
+
+        $tokens = token_get_all( "<?php class A {} function class() {}" );
+        $keys = array_keys( array_filter( $tokens, function ( $t ) { return is_array( $t ) && $t[0] === T_CLASS; } ) );
+        $this->assertTrue( eZAutoloadGenerator::declaresName( $tokens, $keys[0] ) );
+        $this->assertFalse( eZAutoloadGenerator::declaresName( $tokens, $keys[1] ) );
+    }
+
     public function testEnumsBecomeEntries()
     {
         if ( PHP_VERSION_ID < 80100 )

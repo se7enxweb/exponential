@@ -95,8 +95,17 @@ class expHandlerWizard extends expExtensionWizard
             'note'     => 'Set Transport in the same section to the alias, or the default is still used.',
             'methods'  => array(
                 array( 'name' => 'sendMail', 'signature' => 'sendMail( eZMail $mail )',
-                       'returns' => 'true',
-                       'what' => 'Sends one mail and says whether it went. Returning false is how a failure is reported; nothing else is read.' ) ) ),
+                       'returns' => 'false',
+                       'what' => 'Sends one mail and says whether it went. Returning false is how a failure is reported; nothing else is read.',
+                       'stub' => array(
+                           '// TODO: send $mail here (through an api, a queue, a file) and return true',
+                           '// only once it has really gone.',
+                           '//',
+                           '// This is a stub. It sends nothing, and says so: it logs an error and',
+                           '// reports the mail as not sent, so it can never pass for a working',
+                           '// transport that silently drops mail.',
+                           "eZDebug::writeError( 'The mail transport %class% is a stub and sent nothing', __METHOD__ );",
+                           'return false;' ) ) ) ),
 
 
         'search' => array(
@@ -1649,6 +1658,13 @@ class expHandlerWizard extends expExtensionWizard
                            . "        // and php will not make one out of an expression.\n"
                            . "        return \$result;\n"
                          : "        return parent::" . self::callOf( $method['signature'] ) . ";\n";
+            }
+            else if ( !empty( $method['stub'] ) )
+            {
+                // A method whose harmless answer does not exist: a mail transport that says "sent" and sends
+                // nothing loses mail without a trace. The stub says so, loudly, until it is written.
+                foreach ( $method['stub'] as $line )
+                    $body .= ( $line === '' ? '' : "        " . str_replace( '%class%', $settings['class'], $line ) ) . "\n";
             }
             else
             {

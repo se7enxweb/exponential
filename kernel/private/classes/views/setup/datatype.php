@@ -26,7 +26,7 @@ class Datatype extends \Exponential\Runnable\ModuleView
 
         $input = array();
         foreach ( array( 'name', 'type', 'class', 'title', 'summary', 'author',
-                         'vendor', 'version', 'licence', 'group' ) as $field )
+                         'vendor', 'version', 'licence' ) as $field )
         {
             if ( $http->hasPostVariable( $field ) && is_scalar( $http->postVariable( $field ) ) )
                 $input[$field] = $http->postVariable( $field );

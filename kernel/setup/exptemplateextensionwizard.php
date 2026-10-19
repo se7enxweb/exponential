@@ -505,11 +505,17 @@ class expTemplateExtensionWizard extends expExtensionWizard
     {
         $usage = array();
 
+        // A function takes its parameters by name ({name a=1 b=2}); an operator by position ({$x|name( 1, 2 )}):
+        // the template parser refuses name=value inside an operator's brackets
         $arguments = array();
+        $values = array();
         foreach ( $settings['parameters'] as $parameter )
+        {
             $arguments[] = $parameter['name'] . '=' . self::sampleFor( $parameter['type'] );
+            $values[] = self::sampleFor( $parameter['type'] );
+        }
 
-        $call = count( $arguments ) ? '( ' . implode( ', ', $arguments ) . ' )' : '';
+        $call = count( $values ) ? '( ' . implode( ', ', $values ) . ' )' : '';
 
         foreach ( $settings['operators'] as $name )
         {
@@ -743,7 +749,6 @@ class expTemplateExtensionWizard extends expExtensionWizard
             $php .= "            '" . $key . "' => " . ( !empty( $settings['hints'][$key] ) ? 'true' : 'false' ) . ",\n";
         }
 
-        $php .= "            'input-as-parameter' => " . ( !empty( $settings['hints']['input-as-parameter'] ) ? 'true' : 'false' ) . ",\n";
         $php .= "        );\n\n";
         $php .= "        \$list = array();\n";
         $php .= "        foreach ( \$this->Operators as \$operator )\n";
@@ -1270,7 +1275,7 @@ class expTemplateExtensionWizard extends expExtensionWizard
         $readme .= "2. Add it to `settings/override/site.ini.append.php`:\n\n";
         $readme .= "```\n" . self::activation( $settings ) . "\n```\n\n";
         $readme .= "3. Regenerate the autoloads and clear the caches:\n\n";
-        $readme .= "```\nphp bin/php/ezpgenerateautoloads.php --extension=" . $settings['name'] . "\nphp bin/php/ezcache.php --clear-all\n```\n\n";
+        $readme .= "```\nphp bin/php/ezpgenerateautoloads.php --extension\nphp bin/php/ezcache.php --clear-all\n```\n\n";
 
         if ( count( $settings['operators'] ) || count( $settings['functions'] ) )
         {

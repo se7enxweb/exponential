@@ -442,25 +442,25 @@ class expDatatypeWizard extends expExtensionWizard
     public static function templates()
     {
         return array(
-            'templates/content/datatype/edit/%type%.tpl' => array(
+            'design/standard/templates/content/datatype/edit/%type%.tpl' => array(
                 'needs' => 'object_input',
                 'what'  => 'The editing field. What an editor types into.' ),
-            'templates/content/datatype/view/%type%.tpl' => array(
+            'design/standard/templates/content/datatype/view/%type%.tpl' => array(
                 'needs' => false,
                 'what'  => 'The attribute as a visitor sees it.' ),
-            'templates/class/datatype/edit/%type%.tpl' => array(
+            'design/standard/templates/class/datatype/edit/%type%.tpl' => array(
                 'needs' => 'class_settings',
                 'what'  => 'The settings form in the class editor.' ),
-            'templates/class/datatype/view/%type%.tpl' => array(
+            'design/standard/templates/class/datatype/view/%type%.tpl' => array(
                 'needs' => 'class_settings',
                 'what'  => 'The settings as the class overview shows them.' ),
-            'templates/content/datatype/collect/%type%.tpl' => array(
+            'design/standard/templates/content/datatype/collect/%type%.tpl' => array(
                 'needs' => 'collect',
                 'what'  => 'The field a visitor fills in on a published page.' ),
-            'templates/content/datatype/result/%type%.tpl' => array(
+            'design/standard/templates/content/datatype/result/%type%.tpl' => array(
                 'needs' => 'collect',
                 'what'  => 'What the visitor is shown after they have filled it in.' ),
-            'templates/content/datatype/diff/%type%.tpl' => array(
+            'design/standard/templates/content/datatype/diff/%type%.tpl' => array(
                 'needs' => 'diff',
                 'what'  => 'The difference between two versions.' ),
         );
@@ -541,8 +541,9 @@ class expDatatypeWizard extends expExtensionWizard
             'vendor'   => self::safeName( isset( $input['vendor'] ) ? $input['vendor'] : '', true ),
             'version'  => self::text( isset( $input['version'] ) ? $input['version'] : '', 20 ),
             'licence'  => self::licence_id( isset( $input['licence'] ) ? $input['licence'] : '' ),
-            'group'    => self::text( isset( $input['group'] ) ? $input['group'] : '', 60 ),
         );
+        // No "group": the class editor lists every datatype in one list, and no setting groups them
+        // (content.ini has no DataTypeGroup[], and nothing reads one).
 
         if ( $settings['type'] === '' && $settings['name'] !== '' )
             $settings['type'] = self::safeType( str_replace( '_', '', $settings['name'] ) );
@@ -554,8 +555,6 @@ class expDatatypeWizard extends expExtensionWizard
             $settings['version'] = '1.0.0';
         if ( $settings['vendor'] === '' )
             $settings['vendor'] = 'exponential';
-        if ( $settings['group'] === '' )
-            $settings['group'] = 'Custom';
         if ( $settings['summary'] === '' )
             $settings['summary'] = 'A content datatype for Exponential.';
 
@@ -846,6 +845,19 @@ class expDatatypeWizard extends expExtensionWizard
         $php .= "     */\n";
         $php .= "    const DATA_TYPE_STRING = '" . self::phpString( $type ) . "';\n\n";
 
+        // The form field the edit and collect templates post, and the column the value is kept in: two names the
+        // templates and this class must agree on.
+        $valueColumn = self::valueColumn( $settings );
+        $php .= "    /**\n";
+        $php .= "     * The form field the edit template posts: \$base . VALUE_VARIABLE . \$attribute->attribute( 'id' ).\n";
+        $php .= "     */\n";
+        $php .= "    const VALUE_VARIABLE = '" . self::phpString( self::inputVariable( $settings ) ) . "';\n\n";
+        if ( $valueColumn !== '' )
+        {
+            $php .= "    /** The column of ezcontentobject_attribute the value is kept in. */\n";
+            $php .= "    const VALUE_FIELD = '" . self::phpString( $valueColumn ) . "';\n\n";
+        }
+
         // The class settings, as constants: the column, and the form field name
         // that goes with it. Two names that must agree, in one place.
         foreach ( $settings['settings_used'] as $column => $label )
@@ -884,7 +896,11 @@ class expDatatypeWizard extends expExtensionWizard
             $php .= "    public function " . $method['signature'] . "\n    {\n";
             $php .= "        // Not written yet. Returning " . self::shortReturn( $method['returns'] ) . " is what the\n";
             $php .= "        // datatype that ships closest to this one does.\n";
-            $php .= "        return " . $method['returns'] . ";\n";
+            $returns = $method['returns'];
+            // .content reads the column the value was chosen to live in, not always data_text
+            if ( $method['name'] === 'objectAttributeContent' )
+                $returns = $valueColumn !== '' ? "\$contentObjectAttribute->attribute( self::VALUE_FIELD )" : 'null';
+            $php .= "        return " . $returns . ";\n";
             $php .= "    }\n";
         }
 
@@ -926,6 +942,37 @@ class expDatatypeWizard extends expExtensionWizard
         return $used ? $used : array( 'no column' );
     }
 
+    /**
+     * The column the value is kept in: the first of data_text, data_int and data_float that was chosen, or ''
+     * when none was (the datatype keeps a table of its own, or stores nothing).
+     *
+     * @param array $settings
+     * @return string
+     */
+    public static function valueColumn( array $settings )
+    {
+        foreach ( array( 'data_text', 'data_int', 'data_float' ) as $column )
+            if ( !empty( $settings['storage'][$column] ) )
+                return $column;
+
+        return '';
+    }
+
+    /**
+     * The middle of the form field name the edit and collect templates post, between {$attribute_base} and the
+     * attribute id: _<type>_<column>_, after the storage chosen, the way the shipped datatypes name theirs
+     * (_ezstring_data_text_, _ezinteger_data_integer_). The class's VALUE_VARIABLE constant holds the same.
+     *
+     * @param array $settings
+     * @return string
+     */
+    public static function inputVariable( array $settings )
+    {
+        $column = self::valueColumn( $settings );
+
+        return '_' . $settings['type'] . '_' . ( $column !== '' ? $column : 'value' ) . '_';
+    }
+
     // ── Templates ────────────────────────────────────────────────────────────
 
     /**
@@ -938,7 +985,7 @@ class expDatatypeWizard extends expExtensionWizard
     protected static function templateFor( array $settings, $path )
     {
         $type  = $settings['type'];
-        $base  = '$attribute_base' . '}_data_text_{$attribute.id';
+        $base  = '$attribute_base' . '}' . self::inputVariable( $settings ) . '{$attribute.id';
         $notice = "{* " . self::commentText( $settings['title'] ) . " datatype.\n"
                 . "   Written by the datatype wizard. This is a working template, not a\n"
                 . "   placeholder: change it rather than start from nothing. *}\n";
@@ -1024,7 +1071,7 @@ class expDatatypeWizard extends expExtensionWizard
             return $notice
                  . "{* What the visitor is shown once they have sent it. *}\n"
                  . "<p>{\$collection_attribute.contentobject_attribute.contentclass_attribute_name|wash}:\n"
-                 . "   {\$collection_attribute.data_text|wash}</p>\n";
+                 . "   {\$collection_attribute." . ( self::valueColumn( $settings ) !== '' ? self::valueColumn( $settings ) : 'data_text' ) . "|wash}</p>\n";
 
         if ( strpos( $path, 'content/datatype/diff' ) !== false )
             return $notice
@@ -1052,12 +1099,6 @@ class expDatatypeWizard extends expExtensionWizard
         $ini .= "# What the class editor offers. The file is looked for at\n";
         $ini .= "# datatypes/" . $settings['type'] . "/" . $settings['type'] . "type.php inside this extension.\n";
         $ini .= "AvailableDataTypes[]=" . $settings['type'] . "\n";
-
-        if ( $settings['group'] !== '' )
-        {
-            $ini .= "\n# Which group the class editor lists it under.\n";
-            $ini .= "DataTypeGroup[" . $settings['type'] . "]=" . self::iniValue( $settings['group'], 60 ) . "\n";
-        }
 
         $ini .= "\n*/ ?>\n";
 
@@ -1252,9 +1293,8 @@ class expDatatypeWizard extends expExtensionWizard
         $readme .= "2. Add it to `settings/override/site.ini.append.php`:\n\n";
         $readme .= "```\n" . self::activation( $settings ) . "\n```\n\n";
         $readme .= "3. Clear the caches, and regenerate the autoloads:\n\n";
-        $readme .= "```\nphp bin/php/ezpgenerateautoloads.php --extension=" . $settings['name'] . "\nphp bin/php/ezcache.php --clear-all\n```\n\n";
-        $readme .= "4. The datatype then appears in the class editor";
-        $readme .= $settings['group'] !== '' ? ", under " . $settings['group'] . ".\n\n" : ".\n\n";
+        $readme .= "```\nphp bin/php/ezpgenerateautoloads.php --extension\nphp bin/php/ezcache.php --clear-all\n```\n\n";
+        $readme .= "4. The datatype then appears in the class editor's list of datatypes.\n\n";
 
         $readme .= "## What it can do\n\n";
         foreach ( self::capabilities() as $key => $capability )
