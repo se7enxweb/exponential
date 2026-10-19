@@ -88,6 +88,8 @@ Use the training installation and your layouts training account.
 - The learner can say where the footer of the training site is edited.
 - The trainer checks by asking a learner where they would change the phone number in the footer.
 
+![Shared layouts, such as the header and footer other layouts link to](../../../images/trainers/ly-shared.webp)
+
 ## Quiz
 
 1. Why does a shared layout make sense for a footer?

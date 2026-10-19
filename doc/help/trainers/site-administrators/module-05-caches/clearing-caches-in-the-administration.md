@@ -106,6 +106,10 @@ On your training installation, signed in as an administrator:
 - Step 8 names the learner's account.
 - The trainer checks one learner's result notice and asks which shell command it showed.
 
+![Cache management: clear all, the content view cache, INI and template caches, or chosen caches](../../../images/trainers/sa-cache-page.webp)
+
+![The Clear cache box at the top of the right column](../../../images/trainers/sa-cache-box.webp)
+
 ## Quiz
 
 1. You changed a template. Which caches do you clear?

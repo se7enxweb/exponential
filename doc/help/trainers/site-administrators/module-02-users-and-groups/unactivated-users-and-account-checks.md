@@ -102,6 +102,10 @@ On your training installation, signed in as an administrator:
 - Step 10: a UTF-8 CSV file with the filtered list.
 - The trainer checks the counts of step 4 on one screen and the CSV of one learner.
 
+![Check user accounts: never signed in, not seen, disabled, locked, orphaned and shared accounts](../../../images/trainers/sa-user-hygiene.webp)
+
+![Unactivated users: accounts that registered but never confirmed their e-mail address](../../../images/trainers/sa-unactivated.webp)
+
 ## Quiz
 
 1. Which accounts are never removed by **Remove all unactivated users**?

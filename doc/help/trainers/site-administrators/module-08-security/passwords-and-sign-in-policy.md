@@ -119,6 +119,8 @@ Use your own training installation, in a terminal at the installation root and i
 - The trainer checks one learner's `settings/override/site.ini.append.php`: the two new settings are there, nothing
   in `settings/site.ini` changed.
 
+![The sign-in form whose rules the sign-in policy sets](../../../images/trainers/sa-signin-policy.webp)
+
 ## Quiz
 
 1. Which setting decides how many failed sign-ins lock an account, and what does `0` mean?

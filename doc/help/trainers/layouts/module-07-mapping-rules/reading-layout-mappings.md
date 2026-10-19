@@ -90,6 +90,8 @@ Use the training installation and your layouts training account. Nothing is chan
 - The answers agree with the trainer's check.
 - The trainer checks by working through step 5 on the projector.
 
+![Layout mappings with their priority, target, layout and status](../../../images/trainers/ly-rules.webp)
+
 ## Quiz
 
 1. Complete the rule: the first enabled mapping by ... whose ... and ... match the page wins.

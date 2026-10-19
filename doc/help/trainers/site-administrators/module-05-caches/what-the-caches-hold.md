@@ -97,6 +97,8 @@ On your training installation, signed in as an administrator:
 - Step 7 leaves the image alias cache (`imagealias`).
 - The trainer checks the table of step 9 with two learners.
 
+![The list of caches with what each holds, its size and Clear selected](../../../images/trainers/sa-cache-list.webp)
+
 ## Quiz
 
 1. Which group holds the image aliases?

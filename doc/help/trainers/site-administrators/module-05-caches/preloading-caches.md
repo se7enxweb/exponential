@@ -95,6 +95,8 @@ On your training installation, signed in as an administrator, with a terminal in
 - The list of last runs shows both runs, one from the page and one from the shell.
 - The trainer checks the last runs list on one learner's page.
 
+![Preload Sites: request the pages of a site so its caches fill again after a clear](../../../images/trainers/sa-preload.webp)
+
 ## Quiz
 
 1. Which caches does a preload warm?

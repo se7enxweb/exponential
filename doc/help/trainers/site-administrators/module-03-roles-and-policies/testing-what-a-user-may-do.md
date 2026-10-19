@@ -95,6 +95,8 @@ On your training installation, signed in as an administrator:
 - Editing another user's article is refused if the `content/edit` policy was limited to Owner *Self*.
 - The trainer checks one learner's list from step 9.
 
+![The Users tab, where a test account in each group is the way to try what a role allows](../../../images/trainers/sa-access-check.webp)
+
 ## Quiz
 
 1. Why test with a dedicated test account rather than the administrator account?

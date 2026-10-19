@@ -100,6 +100,8 @@ Use your own training installation, in the browser and in a terminal at the inst
 - After step 8 the file is no longer listed.
 - The trainer checks that every learner's `index.php` was restored (step 8) and the site still answers.
 
+![The upgrade check: file and database consistency](../../../images/trainers/sa-upgrade-check.webp)
+
 ## Quiz
 
 1. Which finding stops a safe upgrade?

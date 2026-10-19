@@ -116,6 +116,8 @@ Use your own training installation, signed in to the administration as an admini
 - The trainer checks by opening one learner's **Pauses** section on the projector: it shows the pause and the
   resume with the note.
 
+![The cronjobs page: each part with its scripts, the last run and Run now or Pause](../../../images/trainers/sa-cronjobs.webp)
+
 ## Quiz
 
 1. Which policy does a role need to open **Setup > Cronjobs**?
