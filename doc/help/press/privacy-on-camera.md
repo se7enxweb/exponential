@@ -48,7 +48,7 @@ Record on an installation you set up for the purpose, never on a production site
 - **Questions with screenshots from viewers**: do not show a viewer's administration on stream; ask them to describe
   the problem, or to send a screenshot with personal data removed.
 - **Customers and employers**: never name a site's owner as a user of Exponential without their written consent
-  (Privacy in your coverage).
+  ([Privacy in your coverage](privacy-in-coverage.md)).
 
 ## If personal data was shown
 

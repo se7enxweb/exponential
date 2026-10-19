@@ -89,6 +89,6 @@ handles can change.
 ## Related pages
 
 - [Press contacts](press-contacts.md)
-- Writing about the community
+- [Writing about the community](writing-about-the-community.md)
 - [Social media guidelines](../advocates/social-media-guidelines.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

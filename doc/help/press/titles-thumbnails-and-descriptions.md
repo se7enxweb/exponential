@@ -103,6 +103,6 @@ License of this video: <your choice>. Help pages quoted are under the GNU FDL 1.
 ## Related pages
 
 - [Video walkthrough guide](video-walkthrough-guide.md)
-- Third-party music, fonts and assets
+- [Third-party music, fonts and assets](third-party-music-fonts-and-assets.md)
 - [Disclosure and sponsorship ethics](disclosure-and-sponsorship-ethics.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

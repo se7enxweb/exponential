@@ -42,7 +42,7 @@ If you print an address, take it from the Foundation's site and check it is mean
 | A local organization that runs its site on Exponential | Find it yourself and get its consent to be named; the sources name no customers |
 | A local developer or agency that contributes | Ask them directly; contributions are public in the Git history, but a person's name and location are theirs to share |
 | A local meetup or class | The sources document no events; report one only if you can confirm it with its organizer ([Proposing a meetup](../advocates/proposing-a-meetup.md)) |
-| A student project | See Briefing for education and student media |
+| A student project | See [Briefing for education and student media](briefing-for-education-and-student-media.md) |
 
 ## Explaining Exponential to a general audience
 

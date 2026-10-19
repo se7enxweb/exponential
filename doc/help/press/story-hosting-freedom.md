@@ -89,6 +89,6 @@ host it. 7x sells managed hosting, but "Anyone" may host it; "you choose"
 
 - [Talking points: hosting, databases and freedom](../advocates/talking-points-hosting-databases-and-freedom.md)
 - [Story: six databases](story-databases.md)
-- Story: operating systems
+- [Story: operating systems](story-operating-systems.md)
 - [Feature stories: index](feature-stories-index.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

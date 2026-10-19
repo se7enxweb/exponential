@@ -56,7 +56,7 @@ Longer and shorter versions you may copy are on [Boilerplate descriptions you ma
 3. **Get the names right** (3 minutes): [Naming quick reference for news editors](naming-quick-reference-for-editors.md).
 4. **Know whom to ask** (3 minutes): [Press contacts](press-contacts.md) and [The press kit](the-press-kit.md).
 5. **Know what not to claim** (3 minutes): [What the sources do not say](what-the-sources-do-not-say.md) and
-   Myths and corrections.
+   [Myths and corrections](myths-and-corrections.md).
 
 ## Five rules for every story
 
@@ -69,7 +69,7 @@ Longer and shorter versions you may copy are on [Boilerplate descriptions you ma
 4. **Keep vulnerabilities private.** If you learn of an unfixed security problem, it goes privately to the address
    in `SECURITY.md`, not into a story ([If you find a vulnerability](if-you-find-a-vulnerability.md)).
 5. **Protect people.** No customer names without their consent, no personal data, no passwords on screen
-   (Privacy in your coverage).
+   ([Privacy in your coverage](privacy-in-coverage.md)).
 
 ## Map of the press pages
 
@@ -102,7 +102,7 @@ Longer and shorter versions you may copy are on [Boilerplate descriptions you ma
 | [Writing about the eZ Publish years](writing-about-the-ez-publish-years.md), [Not associated with eZ Systems or Ibexa](not-associated-with-ez-systems-or-ibexa.md), [Crediting Netgen, Mugo Web and CJW Network](crediting-other-projects.md) | Write about the past and about other companies fairly |
 | [Logos and brand assets](logos-and-brand-assets.md), [Screenshots: what you may use](screenshots-what-you-may-use.md), [Taking your own screenshots](taking-your-own-screenshots.md) | Use images within the published rules |
 | [Quoting and reusing the documentation](quoting-and-reusing-the-documentation.md), [Licenses explained for reporters](licenses-explained-for-reporters.md) | Reuse text legally and explain GPL, GFDL and MIT |
-| [Headlines: do and don't](headlines-dos-and-donts.md), [Version numbers in print](version-numbers-in-print.md), Style and spelling for coverage | Write headlines and copy that stay accurate |
+| [Headlines: do and don't](headlines-dos-and-donts.md), [Version numbers in print](version-numbers-in-print.md), [Style and spelling for coverage](style-and-spelling-for-coverage.md) | Write headlines and copy that stay accurate |
 
 ### Feature stories
 
@@ -127,8 +127,8 @@ Longer and shorter versions you may copy are on [Boilerplate descriptions you ma
 | Page | What it helps you do |
 |---|---|
 | [Requesting an interview](requesting-an-interview.md), [Preparing a briefing](preparing-a-briefing.md), [Interview question bank](interview-question-bank.md) | Get and prepare an interview |
-| [Briefing for technical press](briefing-for-technical-press.md), [for business press](briefing-for-business-press.md), [for local and regional press](briefing-for-local-and-regional-press.md), for education and student media, Podcast and radio guests | Brief each kind of outlet |
-| [Fact-checking guide](fact-checking-guide.md), Fact-checking checklist, [Verifying numbers](verifying-numbers.md), [Verifying dates](verifying-dates.md), Verifying quotes | Check before you publish |
+| [Briefing for technical press](briefing-for-technical-press.md), [for business press](briefing-for-business-press.md), [for local and regional press](briefing-for-local-and-regional-press.md), [for education and student media](briefing-for-education-and-student-media.md), [Podcast and radio guests](podcast-and-radio-guests.md) | Brief each kind of outlet |
+| [Fact-checking guide](fact-checking-guide.md), [Fact-checking checklist](fact-checking-checklist.md), [Verifying numbers](verifying-numbers.md), [Verifying dates](verifying-dates.md), [Verifying quotes](verifying-quotes.md) | Check before you publish |
 | [Quotes policy](quotes-policy.md), [Attributing statements](attributing-statements.md), [Embargoes and timing](embargoes-and-timing.md) | Quote and attribute correctly |
 | [Common errors in coverage](common-errors-in-coverage.md), [Corrections and updates](corrections-and-updates.md), [Comparisons done fairly](comparisons-done-fairly.md) | Avoid and fix mistakes |
 
@@ -141,17 +141,17 @@ Longer and shorter versions you may copy are on [Boilerplate descriptions you ma
 | [Setting up a demo installation](setting-up-a-demo-installation.md), [Video walkthrough guide](video-walkthrough-guide.md), [Live stream guide](live-stream-guide.md) | Show Exponential on an installation you control |
 | [Demo script: five-minute overview](demo-script-five-minute-overview.md), [editor tour](demo-script-editor-tour.md), [Exponential Layouts](demo-script-layouts.md), [Exponential Intelligence](demo-script-exponential-intelligence.md), [Velocity](demo-script-velocity.md), [install from zero](demo-script-install-from-zero.md), [administrator tour](demo-script-administrator-tour.md) | Follow a tested demo script |
 | [Keeping secrets off screen](keeping-secrets-off-screen.md), [Privacy on camera](privacy-on-camera.md), [Captions and accessible video](captions-and-accessible-video.md) | Record safely and accessibly |
-| [Writing a fair review](writing-a-fair-review.md), Creator checklist, Creator FAQ | Review fairly and check your work |
+| [Writing a fair review](writing-a-fair-review.md), [Creator checklist](creator-checklist.md), [Creator FAQ](creator-faq.md) | Review fairly and check your work |
 
 ### Reference
 
 | Page | What it helps you do |
 |---|---|
-| Glossary for journalists, Reporter FAQ | Terms and quick answers |
-| Press reading path, Press checklists, Help pages by topic, for the press | Read in order, check, and find the deeper pages |
-| [Questions to ask 7x](questions-to-ask-7x.md), Questions to ask the Foundation, Myths and corrections | Prepare questions and correct common myths |
-| Privacy in your coverage, Making your coverage accessible | Protect people and reach everyone |
-| Writing about the community, Writing about funding and sponsors | Cover the people and the money behind the project |
+| [Glossary for journalists](glossary-for-journalists.md), [Reporter FAQ](reporter-faq.md) | Terms and quick answers |
+| [Press reading path](press-reading-path.md), [Press checklists](press-checklists.md), [Help pages by topic, for the press](help-pages-by-topic-for-press.md) | Read in order, check, and find the deeper pages |
+| [Questions to ask 7x](questions-to-ask-7x.md), [Questions to ask the Foundation](questions-to-ask-the-foundation.md), [Myths and corrections](myths-and-corrections.md) | Prepare questions and correct common myths |
+| [Privacy in your coverage](privacy-in-coverage.md), [Making your coverage accessible](making-your-coverage-accessible.md) | Protect people and reach everyone |
+| [Writing about the community](writing-about-the-community.md), [Writing about funding and sponsors](writing-about-funding-and-sponsors.md) | Cover the people and the money behind the project |
 
 ## Pages from other audiences you will use
 

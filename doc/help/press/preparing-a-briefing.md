@@ -36,7 +36,7 @@ About 30 minutes covers the basics:
 
 Then add the briefing for your kind of outlet: [technical press](briefing-for-technical-press.md),
 [business press](briefing-for-business-press.md), [local and regional press](briefing-for-local-and-regional-press.md)
-or education and student media.
+or [education and student media](briefing-for-education-and-student-media.md).
 
 ## The briefing sheet
 
@@ -94,7 +94,7 @@ Exponential Intelligence - Exponential Platform (Legacy, Nexus, DXP)
 | Transcribe or note quotes the same day | Memory changes words |
 | Check every fact you heard against the documentation | A spoken number may be from memory; the source wins, or you report both |
 | Mark which statements are quotes, which are paraphrase, which are background | So nothing background ends up attributed |
-| Send a follow-up for anything unclear | Better than guessing (Verifying quotes) |
+| Send a follow-up for anything unclear | Better than guessing ([Verifying quotes](verifying-quotes.md)) |
 | Delete recordings when you no longer need them, if you promised to | Privacy ([Protecting people's privacy](../advocates/protecting-peoples-privacy.md)) |
 
 ## Related pages

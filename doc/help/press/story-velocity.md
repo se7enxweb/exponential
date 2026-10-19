@@ -95,6 +95,6 @@ Velocity in Exponential belongs to the 6.0.15 development line, which is not rel
 
 - [Talking points: speed and Velocity](../advocates/talking-points-speed-and-velocity.md)
 - [Story: engines, Velocity, FrankenPHP and the classic servers](story-engines-velocity-frankenphp-and-classic.md)
-- Story: the Velocity control panel
+- [Story: the Velocity control panel](story-velocity-control-panel.md)
 - [Feature stories: index](feature-stories-index.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

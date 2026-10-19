@@ -91,6 +91,6 @@ The September and October changes belong to the 6.0.15 line, which is in develop
 
 - [Database support](../database-support.md)
 - [Story: SQLite by default](story-sqlite-by-default.md)
-- Story: MongoDB as a database
+- [Story: MongoDB as a database](story-mongodb.md)
 - [Feature stories: index](feature-stories-index.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

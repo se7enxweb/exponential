@@ -78,7 +78,7 @@ CAPTION  <one sentence> Source: <link>. <disclosure>. #OpenSource
 
 ## Related pages
 
-- Social posts for creators
+- [Social posts for creators](social-posts-for-creators.md)
 - [Titles, thumbnails and descriptions](titles-thumbnails-and-descriptions.md)
 - [Demo script: five-minute overview](demo-script-five-minute-overview.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

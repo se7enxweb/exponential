@@ -58,7 +58,7 @@ The full naming rules: [Brand and naming rules](../business/brand-and-naming-rul
 - Publish a transcript with every video and podcast episode: in the description, on your site, or as a file.
 - Put commands and links in the transcript so people can copy them; nobody can copy from a video frame.
 - For a podcast, the transcript is the accessible version of the episode. Put the show notes and sources at its end
-  (Podcast episode outlines).
+  ([Podcast episode outlines](podcast-episode-outlines.md)).
 
 ## Say what you do
 

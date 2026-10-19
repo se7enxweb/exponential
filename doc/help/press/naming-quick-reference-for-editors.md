@@ -89,5 +89,5 @@ identifiers did not change; `eZContentObject` is the real class name.
 
 - [Brand and naming for media](brand-and-naming-for-media.md)
 - [Naming rules quick card](../advocates/naming-rules-quick-card.md)
-- Style and spelling for coverage
+- [Style and spelling for coverage](style-and-spelling-for-coverage.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

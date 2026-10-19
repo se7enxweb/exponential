@@ -90,5 +90,5 @@ If you think the documentation should answer a question, open an issue on the
 
 - [Claims you must not make](../advocates/claims-you-must-not-make.md)
 - [Questions to ask 7x](questions-to-ask-7x.md)
-- Questions to ask the Foundation
+- [Questions to ask the Foundation](questions-to-ask-the-foundation.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

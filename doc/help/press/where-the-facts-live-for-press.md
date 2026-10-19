@@ -87,5 +87,5 @@ git log -1 --format='%ad %s' v6.0.14
 
 - [Fact-checking guide](fact-checking-guide.md)
 - [What the sources do not say](what-the-sources-do-not-say.md)
-- Help pages by topic, for the press
+- [Help pages by topic, for the press](help-pages-by-topic-for-press.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

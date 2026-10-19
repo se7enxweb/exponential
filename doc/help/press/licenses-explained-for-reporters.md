@@ -40,7 +40,7 @@ Anyone may use the software for any purpose, study and change its code, and pass
 copies. Whoever distributes the software or a changed version must pass on the same freedoms and the source code.
 Running it on your own server for your own site does not require publishing your changes under GPL v2. This is the
 license that let 7x carry the code forward after its original developer stopped
-(Story: open source and licenses).
+([Story: open source and licenses](story-open-source-and-licenses.md)).
 
 ## The GFDL in plain words
 
@@ -62,7 +62,7 @@ their contributions under the GPL. Write "7x and the Exponential Foundation hold
 - 7x sells services around the software: development, support, hosting, training and migrations
   ([7x for reporters](7x-for-reporters.md#what-it-sells-and-what-stays-free)).
 - The partner program has paid levels for companies ([Partner plans and prices](../partners/partner-plans-and-prices.md)).
-- Sponsorship funds the work (Writing about funding and sponsors).
+- Sponsorship funds the work ([Writing about funding and sponsors](writing-about-funding-and-sponsors.md)).
 
 ## Phrases often reported wrongly
 

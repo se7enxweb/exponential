@@ -72,7 +72,7 @@ Paste the help links into the chat at each part; viewers can read along while yo
 ## Chat, questions and requests
 
 - **Answer with a source.** If the help answers it, paste the link. If not: "The documentation does not say. I will
-  check and post the source." Write it down (Handling comments and questions).
+  check and post the source." Write it down ([Handling comments and questions](handling-comments-and-questions.md)).
 - **"Look at my site, it's broken."** Decline on stream, kindly. A real site on screen can show its owner's data and
   settings. Point them to the forums or the help's **Report an error** page.
 - **A viewer posts a password, a key or personal data in chat.** Delete the message, tell them to change it, never read

@@ -43,7 +43,7 @@ contributor. Sources: <https://foundation.exponential.earth/>, <https://exponent
 The se7enxweb profile lists what a sponsorship of the Foundation pays for: core library maintenance, API and core
 documentation, GraphQL, REST and Solr integration layers, community infrastructure, and Zeta Components security
 hardening ([What the Foundation funds](../who-is-the-exponential-foundation.md#what-the-foundation-funds)). Its sponsor
-page is <https://github.com/sponsors/exponentialcms>. See Writing about funding and sponsors.
+page is <https://github.com/sponsors/exponentialcms>. See [Writing about funding and sponsors](writing-about-funding-and-sponsors.md).
 
 ## How it relates to 7x
 
@@ -71,7 +71,7 @@ them, and a story rarely needs them.
 ## Asking the Foundation
 
 Use its website, <https://foundation.exponential.earth/>, or the general contacts on [Press contacts](press-contacts.md).
-Prepared questions: Questions to ask the Foundation.
+Prepared questions: [Questions to ask the Foundation](questions-to-ask-the-foundation.md).
 
 ## Related pages
 

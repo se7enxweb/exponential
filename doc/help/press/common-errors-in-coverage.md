@@ -93,7 +93,7 @@ you publish.
 
 ## Related pages
 
-- Myths and corrections
-- Fact-checking checklist
+- [Myths and corrections](myths-and-corrections.md)
+- [Fact-checking checklist](fact-checking-checklist.md)
 - [Claims you must not make](../advocates/claims-you-must-not-make.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

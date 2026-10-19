@@ -90,7 +90,7 @@ Source: [Database support, SQLite 3](../database-support.md#1-sqlite-3-the-defau
 ## Related pages
 
 - [Story: six databases](story-databases.md)
-- Story: install in one command
+- [Story: install in one command](story-install-in-one-command.md)
 - [SQLite database support](../../features/6.0/sqlite-database.md)
 - [Feature stories: index](feature-stories-index.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

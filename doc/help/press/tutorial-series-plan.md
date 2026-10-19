@@ -93,5 +93,5 @@ Keep a small table of your episodes with the version and the date you last check
 
 - [Writing a tutorial that works](../advocates/writing-a-tutorial-that-works.md)
 - [Video walkthrough guide](video-walkthrough-guide.md)
-- Podcast episode outlines
+- [Podcast episode outlines](podcast-episode-outlines.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

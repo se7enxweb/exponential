@@ -47,7 +47,7 @@ The facts that connect the names are about **code**, not companies:
   ([Why it is called Exponential](why-it-is-called-exponential.md)).
 - Ibexa's own line went another way: eZ Platform, then Ibexa DXP (README, "What was eZ Platform?").
 - The Exponential Platform line continues the free eZ Platform and Ibexa OSS code with its own name
-  (Story: Exponential Platform DXP).
+  ([Story: Exponential Platform DXP](story-exponential-platform-dxp.md)).
 
 ```text
 "Exponential's code was first developed by eZ Systems as eZ Publish. The project, led by 7x since 2023,
@@ -71,5 +71,5 @@ documentation does not speak for them and contains no statements from them beyon
 
 - [Writing about the eZ Publish years](writing-about-the-ez-publish-years.md)
 - [Brand and naming for media](brand-and-naming-for-media.md)
-- Myths and corrections
+- [Myths and corrections](myths-and-corrections.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

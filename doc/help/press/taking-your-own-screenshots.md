@@ -56,7 +56,7 @@ Do not take screenshots of somebody else's live site or administration without t
 | Search | The search page with results | [Searching](../searching.md) |
 | Security | The two-step sign-in setup | [Accounts and sign-in](../accounts-and-sign-in.md) |
 | Languages | A right-to-left language in the administration | [Right to left](../../features/6.0/right-to-left.md) |
-| Help | The help dashboard and a help page | Story: the help system |
+| Help | The help dashboard and a help page | [Story: the help system](story-the-help-system.md) |
 | Exponential Intelligence | A draft suggestion in the editor (only after you configured a provider yourself) | [Exponential Intelligence](../../features/6.0/extensions/expai.md) |
 
 ## Settings for good images

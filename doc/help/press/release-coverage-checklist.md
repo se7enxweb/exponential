@@ -100,7 +100,7 @@ existing site".
 
 ## Related pages
 
-- Fact-checking checklist
+- [Fact-checking checklist](fact-checking-checklist.md)
 - [Common errors in coverage](common-errors-in-coverage.md)
 - [Covering a release](covering-a-release.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

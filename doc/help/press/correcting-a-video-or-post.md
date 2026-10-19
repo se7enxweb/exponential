@@ -71,6 +71,6 @@ the confusion.
 ## Related pages
 
 - [Corrections and updates](corrections-and-updates.md)
-- Handling comments and questions
+- [Handling comments and questions](handling-comments-and-questions.md)
 - [Responding in public](../advocates/responding-in-public.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

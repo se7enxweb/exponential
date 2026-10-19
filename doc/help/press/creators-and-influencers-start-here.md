@@ -76,7 +76,7 @@ Exponential Foundation reviews your content before you publish it, and these pag
 | [Demo script: five-minute overview](demo-script-five-minute-overview.md), [editor tour](demo-script-editor-tour.md), [Exponential Layouts](demo-script-layouts.md) | Show editing and the page builder |
 | [Demo script: Exponential Intelligence](demo-script-exponential-intelligence.md), [Velocity](demo-script-velocity.md) | Show the writing assistant and the application server |
 | [Demo script: install from zero](demo-script-install-from-zero.md), [administrator tour](demo-script-administrator-tour.md) | Show installing and running a site |
-| [Tutorial series plan](tutorial-series-plan.md), Podcast episode outlines | Plan a series |
+| [Tutorial series plan](tutorial-series-plan.md), [Podcast episode outlines](podcast-episode-outlines.md) | Plan a series |
 
 ### Safety, privacy and accessibility
 
@@ -84,16 +84,16 @@ Exponential Foundation reviews your content before you publish it, and these pag
 |---|---|
 | [Keeping secrets off screen](keeping-secrets-off-screen.md), [Privacy on camera](privacy-on-camera.md) | Leak nothing, show nobody without consent |
 | [Captions and accessible video](captions-and-accessible-video.md) | Reach viewers who read, listen or use a keyboard |
-| Third-party music, fonts and assets | Use only material you may use |
+| [Third-party music, fonts and assets](third-party-music-fonts-and-assets.md) | Use only material you may use |
 
 ### Publishing and after
 
 | Page | What it helps you do |
 |---|---|
 | [Titles, thumbnails and descriptions](titles-thumbnails-and-descriptions.md) | Package a video honestly |
-| Newsletters and blogs for creators, Social posts for creators | Write about Exponential in text |
-| Handling comments and questions, [Correcting a video or post](correcting-a-video-or-post.md) | Answer viewers and fix mistakes |
-| Creator checklist, Creator FAQ | Check your work and find quick answers |
+| [Newsletters and blogs for creators](newsletters-and-blogs-for-creators.md), [Social posts for creators](social-posts-for-creators.md) | Write about Exponential in text |
+| [Handling comments and questions](handling-comments-and-questions.md), [Correcting a video or post](correcting-a-video-or-post.md) | Answer viewers and fix mistakes |
+| [Creator checklist](creator-checklist.md), [Creator FAQ](creator-faq.md) | Check your work and find quick answers |
 
 ## Pages from other audiences you will use
 
@@ -117,6 +117,6 @@ Where a source exists, the pages above link it. Where it does not, say "the sour
 
 - [Press, media and influencers: start here](press-start-here.md)
 - [Disclosure and sponsorship ethics](disclosure-and-sponsorship-ethics.md)
-- Creator checklist
+- [Creator checklist](creator-checklist.md)
 - [Advocates: start here](../advocates/advocates-start-here.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

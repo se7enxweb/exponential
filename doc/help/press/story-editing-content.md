@@ -87,12 +87,12 @@ development line", never "released on".
 | Logos and the press kit | the address in the press kit's README | support@exponential.earth |
 | How editors use it day to day | the community, in public | <https://share.exponential.earth/forums> |
 
-To try it yourself, install your own copy with one command (Story: install in one command).
+To try it yourself, install your own copy with one command ([Story: install in one command](story-install-in-one-command.md)).
 
 ## Related pages
 
 - [Talking points for editors](../advocates/talking-points-for-editors.md)
 - [Story: the online editor, TinyMCE 8](story-online-editor-tinymce-8.md)
-- Story: content jobs
+- [Story: content jobs](story-content-jobs.md)
 - [Feature stories: index](feature-stories-index.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -71,7 +71,7 @@ where the story of Exponential 6 begins: the month a dormant code base changed h
 | Open source as insurance | The GPL let a new steward continue the code | [Licenses explained for reporters](licenses-explained-for-reporters.md) |
 | Twenty-plus years of one code base | Commits since 2002, copyright since 1999 | [Who is 7x?, 7x in numbers](../who-is-7x.md#7x-in-numbers) |
 | A small company and a new nonprofit | Two organizations with one project | [Two organizations, one project](two-organizations-one-project.md) |
-| Old code, current PHP | PHP 8.0 to 8.5 supported | Story: current PHP |
+| Old code, current PHP | PHP 8.0 to 8.5 supported | [Story: current PHP](story-current-php.md) |
 | Credit across companies | Netgen, Mugo Web and CJW Network's work credited by name | [Crediting Netgen, Mugo Web and CJW Network](crediting-other-projects.md) |
 
 ## Lines not to cross
@@ -99,6 +99,6 @@ git tag -l 'v6.0.*' --sort=version:refname           # the releases, in order
 
 - [Timeline for reporters](timeline-for-reporters.md)
 - [Writing about the eZ Publish years](writing-about-the-ez-publish-years.md)
-- Story: a code base kept alive
+- [Story: a code base kept alive](story-longevity.md)
 - [Writing history posts](../advocates/writing-history-posts.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

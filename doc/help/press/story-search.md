@@ -81,7 +81,7 @@ All in the 6.0.15 line, which is in development and not released.
 ## Related pages
 
 - [Searching](../searching.md)
-- Story: the help system
-- Story: operations tools for administrators
+- [Story: the help system](story-the-help-system.md)
+- [Story: operations tools for administrators](story-maintenance-mode-and-operations.md)
 - [Feature stories: index](feature-stories-index.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

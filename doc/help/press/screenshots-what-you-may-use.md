@@ -67,7 +67,7 @@ For your own:
 - [ ] No passwords, keys, tokens or one-time codes; no address bar with a private host name.
 - [ ] The version shown matches the version you name in the text.
 - [ ] The design is named correctly (admin4, the classic admin, AdminUI) if it matters to the story.
-- [ ] Alt text describes what the screenshot shows (Making your coverage accessible).
+- [ ] Alt text describes what the screenshot shows ([Making your coverage accessible](making-your-coverage-accessible.md)).
 
 ## Related pages
 

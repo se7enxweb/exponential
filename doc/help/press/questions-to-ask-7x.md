@@ -59,7 +59,7 @@ Already documented: what Velocity, Exponential Intelligence and Exponential Layo
 
 ## Business and funding
 
-Already documented: 7x sells services; the software is free; sponsor pages exist (Writing about funding and sponsors).
+Already documented: 7x sells services; the software is free; sponsor pages exist ([Writing about funding and sponsors](writing-about-funding-and-sponsors.md)).
 
 - What share of the work is funded by services, and what by sponsorship?
 - What would more sponsorship change?
@@ -75,7 +75,7 @@ Already documented: private reporting, first answer within one business day, pub
 
 ## Community
 
-Already documented: the channels, every pull request merged (Story: the community).
+Already documented: the channels, every pull request merged ([Story: the community](story-community.md)).
 
 - Who outside 7x contributes most, and how can a newcomer start?
 - Are events or meetups planned?
@@ -88,7 +88,7 @@ Already documented: the channels, every pull request merged (Story: the communit
 
 ## Related pages
 
-- Questions to ask the Foundation
+- [Questions to ask the Foundation](questions-to-ask-the-foundation.md)
 - [Interview question bank](interview-question-bank.md)
 - [Requesting an interview](requesting-an-interview.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -92,7 +92,7 @@ assistive technology are the best testers; report problems as bugs in the public
 ## Related pages
 
 - [Talking points: accessibility](../advocates/talking-points-accessibility.md)
-- Story: admin4, the administration design
+- [Story: admin4, the administration design](story-admin4.md)
 - [Story: languages and right to left](story-languages-and-right-to-left.md)
 - [Feature stories: index](feature-stories-index.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

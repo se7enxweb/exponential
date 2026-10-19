@@ -36,7 +36,7 @@ someone actually said or wrote it, and you can show where.**
    never "7x said" ([Attributing statements](attributing-statements.md)).
 5. **People speak for themselves.** A community member, advocate or partner quoted in a story speaks for themselves
    unless 7x or the Foundation asked them to speak for it ([Disclosure and conflicts of interest](../advocates/disclosure-and-conflicts-of-interest.md)).
-6. **Consent for names.** Name a private person or a customer only with their consent (Privacy in your coverage).
+6. **Consent for names.** Name a private person or a customer only with their consent ([Privacy in your coverage](privacy-in-coverage.md)).
 
 ## Three kinds of quotable material
 
@@ -87,6 +87,6 @@ an organization wrongly in your coverage, tell the organization you corrected it
 ## Related pages
 
 - [Attributing statements](attributing-statements.md)
-- Verifying quotes
+- [Verifying quotes](verifying-quotes.md)
 - [Press releases and announcements](../partners/press-releases-and-announcements.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

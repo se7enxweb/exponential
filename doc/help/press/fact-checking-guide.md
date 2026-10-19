@@ -37,7 +37,7 @@ story, a video script or a social post.
 |---|---|---|
 | A version or release date | The Git tags | [Verifying dates](verifying-dates.md), [Verifying a release yourself](verifying-a-release-yourself.md) |
 | A count | The method given with it, or recount | [Verifying numbers](verifying-numbers.md) |
-| A quote | The original text or your recording | Verifying quotes |
+| A quote | The original text or your recording | [Verifying quotes](verifying-quotes.md) |
 | A product name | The naming rules | [Naming quick reference for news editors](naming-quick-reference-for-editors.md) |
 | What a feature does | Its feature page in `doc/features/6.0/` and the changelog | [Feature stories: index](feature-stories-index.md) |
 | A history fact | The history pages and the timelines | [Timeline for reporters](timeline-for-reporters.md) |
@@ -90,7 +90,7 @@ Foundation founded 19 March 2026     foundation.exponential.earth             20
 
 ## Related pages
 
-- Fact-checking checklist
+- [Fact-checking checklist](fact-checking-checklist.md)
 - [Common errors in coverage](common-errors-in-coverage.md)
 - [Honesty and accuracy](../advocates/honesty-and-accuracy.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -84,5 +84,5 @@ Exact spellings and short forms: [Naming quick reference for news editors](namin
 
 - [Knowing the product family](../advocates/knowing-the-product-family.md)
 - [Feature stories: index](feature-stories-index.md)
-- Story: Exponential Platform DXP
+- [Story: Exponential Platform DXP](story-exponential-platform-dxp.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

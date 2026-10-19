@@ -68,9 +68,9 @@ else ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)):
 | Exponential Velocity | A web server written in PHP that keeps the application loaded between requests | [Story: Exponential Velocity](story-velocity.md) |
 | Exponential Layouts | A visual page builder with layouts, zones, blocks and rules | [Story: Exponential Layouts, the page builder](story-exponential-layouts.md) |
 | Exponential Intelligence | A writing assistant that writes drafts and never publishes on its own | [Story: Exponential Intelligence](story-exponential-intelligence.md) |
-| admin4 | A new administration design with light and dark themes | Story: admin4, the administration design |
+| admin4 | A new administration design with light and dark themes | [Story: admin4, the administration design](story-admin4.md) |
 | Audit trail | A tamper-evident record of what happened in the administration | [Story: the audit trail](story-audit-trail.md) |
-| The help system | This documentation inside the administration, searchable by audience | Story: the help system |
+| The help system | This documentation inside the administration, searchable by audience | [Story: the help system](story-the-help-system.md) |
 
 Do not give 6.0.15 a release date: none is published ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
 
