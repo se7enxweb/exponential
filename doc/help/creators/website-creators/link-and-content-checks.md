@@ -29,22 +29,30 @@ object ([1. The link list](../../../guides/urls-and-aliases.md#1-the-link-list),
 [2. How links are checked](../../../guides/urls-and-aliases.md#2-how-links-are-checked)). Settings are in
 `cronjob.ini [linkCheckSettings]`.
 
+![Link management: the links in the content with their status, last check and where they are used](../../images/creators/link-management.webp)
+
 ## Unreferenced objects
 
 `/contentcheck/unreferenced/<node id>` lists published images, files and media below a node that nothing uses: no
 object, layout, setting, template, role, shop or newsletter entry. Tick and move them to the trash after a confirmation
 ([The content checks](../../../features/6.0/content-checks.md)).
 
+![Unreferenced objects: images and files nothing uses, to tidy up or move to the trash](../../images/creators/unreferenced-objects.webp)
+
 ## Broken relations
 
 `/contentcheck/brokenrelations/<node id>` lists published content that refers to something deleted, in the trash,
 hidden or never published, with a link to edit the source; and layouts whose blocks name such content. Read only.
+
+![Broken relations: visible content that links to deleted, hidden or trashed content](../../images/creators/broken-relations.webp)
 
 ## Storage files and missing files
 
 `/contentcheck/storage/<node id>` lists files in `var/<site>/storage` no content uses (they can go to a quarantine) and
 file problems (owner, mode, empty files). Missing files lists images and files whose file is gone
 ([Missing files](../../../guides/missing-files.md)).
+
+![Storage files: files in the storage that nothing uses, and files with the wrong owner or mode](../../images/creators/storage-files.webp)
 
 The checks are in the Setup menu and the context menu of the content tree (**Advanced**). Their policies are
 `contentcheck/unreferenced`, `trash` and `brokenrelations`.

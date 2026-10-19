@@ -12,6 +12,8 @@ type: help
 This page is for website creators who offer feeds of news, blog posts or podcasts, or who show other sites' feeds.
 Feeds are managed in **Setup > RSS** ([RSS feeds](../../../guides/rss-feeds.md)).
 
+![Setup, RSS: the RSS exports and imports of the site](../../images/creators/rss-list.webp)
+
 ## Contents
 
 1. [Exports and imports](#exports-and-imports)
