@@ -3,7 +3,7 @@ title: Builder
 audience: developer
 category: standards
 order: 322
-summary: Builds a complex object or text step by step. 8 instances in Exponential.
+summary: Builds a complex object or text step by step. 9 instances in Exponential.
 keywords: design pattern, builder, creation, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Builds a complex object or text step by step.
 | | |
 |---|---|
 | Group | Creation |
-| Instances | 8 |
+| Instances | 9 |
 | Recognized by | Class name contains Builder or Generator. |
 
 ## Classes by area
@@ -70,6 +70,14 @@ Builds a complex object or text step by step.
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `xrowMetaDataLicenseCatalogueGenerator` | class | `extension/xrowmetadata/bin/php/xrowmetadatalicenses.php:84` | Builds the license catalogue share/licenses/licenses.json of xrowmetadata from two downloaded files, never from the network: | – |
+
+### kernel/classes/help (1)
+
+[All patterns of kernel/classes/help](area-kernel-classes-help.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expHelpExamplesGenerator` | class | `kernel/classes/help/exphelpexamplesgenerator.php:25` | Writes the generated reference examples below doc/examples/ (doc/examples/README.md, "How the generated pages are made"): one Markdown page per templ… | – |
 
 ### kernel/classes/pdfexport (1)
 

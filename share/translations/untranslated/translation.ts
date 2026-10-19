@@ -72831,5 +72831,25 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Expand all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
