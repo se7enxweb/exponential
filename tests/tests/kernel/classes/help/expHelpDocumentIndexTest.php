@@ -13,6 +13,8 @@
  *         every root *.md are refused; every allowed id is tracked and below doc/
  *  HX-06  tree order and neighbours(); front matter is not shown as text
  *  HX-07  the cache follows a change (signature), a stale cache entry for a file that is gone is not served
+ *  HX-08  StatFilesInterval: the look at the files is reused within the interval, never after it
+ *  HX-09  the allowlist stamp sees a same-size rewrite of a source file within the same second
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -362,5 +364,22 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         self::git( 'commit -q -m edit' );
         $this->assertNotSame( $rebuilt['signature'], self::cachedIndex( 60 )->signature(), 'a commit is seen at once' );
         $this->assertSame( self::cachedIndex( 0 )->signature(), self::cachedIndex( 60 )->signature() );
+    }
+
+    /** HX-09 a source file rewritten with the same size within the same second still changes the allowlist stamp */
+    public function testStampSeesASameSizeRewriteInTheSameSecond()
+    {
+        $manifest = self::$root . '/' . expHelpAllowlist::MANIFEST;
+        @mkdir( dirname( $manifest ), 0777, true );
+        $allowlist = new expHelpAllowlist( array( 'root' => self::$root, 'roots' => array( 'doc' ), 'max_size' => 1024 * 1024 ) );
+        $now = time();
+        file_put_contents( $manifest, "aaaa\n" );
+        touch( $manifest, $now );
+        $one = $allowlist->stamp();
+        file_put_contents( $manifest, "bbbb\n" );
+        touch( $manifest, $now );
+        $this->assertNotSame( $one, $allowlist->stamp(), 'same size, same second, other content' );
+        unlink( $manifest );
+        $this->assertNotSame( $one, $allowlist->stamp(), 'a removed file changes it too' );
     }
 }

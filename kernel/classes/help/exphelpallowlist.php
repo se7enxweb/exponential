@@ -299,9 +299,34 @@ class expHelpAllowlist
             foreach ( array( $repo['gitdir'] ? $repo['gitdir'] . '/index' : null,
                              $repo['top'] . '/' . self::MANIFEST ) as $file )
                 if ( $file !== null && is_file( $file ) )
-                    $parts[] = $file . ':' . filesize( $file ) . ':' . filemtime( $file );
+                    $parts[] = self::fileState( $file );
         }
         return sha1( implode( "\n", $parts ) );
+    }
+
+    /**
+     * A file's size and time, and its content's hash while the time is too recent to tell two versions apart.
+     *
+     * A time is whole seconds, and the git index keeps its size when only a page changes (the blob hash in it is
+     * replaced): a commit in the same second as the last look left size and time as they were, so the change went
+     * unseen until something else changed. The same answer git gives its own "racy" index entries: a file changed
+     * within the last two seconds is identified by its content as well. Once it is older, size and time are enough
+     * again (a later write gives a later time); the stamp then changes once, which only makes the next look fresh.
+     *
+     * @param string $file
+     * @return string
+     */
+    protected static function fileState( $file )
+    {
+        clearstatcache( true, $file );
+        $mtime = (int)filemtime( $file );
+        $state = $file . ':' . (int)filesize( $file ) . ':' . $mtime;
+        if ( time() - $mtime < 2 )
+        {
+            $hash = @sha1_file( $file );
+            $state .= ':' . ( is_string( $hash ) ? $hash : 'unreadable' );
+        }
+        return $state;
     }
 
     /**
