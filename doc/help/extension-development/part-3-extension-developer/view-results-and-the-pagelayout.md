@@ -89,6 +89,6 @@ Module views simply put what the pagelayout needs into the result or into templa
 
 - Previous: [Policy functions and access checks](policy-functions-and-access.md)
 - Next: [Template operators](template-operators.md)
-- eZModule and module results
-- Error codes and module results
+- [eZModule and module results](../part-8-reference/ezmodule.md)
+- [Error codes and module results](../part-8-reference/error-codes-and-module-results.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

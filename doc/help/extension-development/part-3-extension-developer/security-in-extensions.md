@@ -34,7 +34,7 @@ session. Defenses:
   `request/input`). Keep it active. A POST without a valid token is refused before your view runs.
 - Ajax: `Exp.io` sends the token with its POST calls ([Ajax with ezjscore server functions](ajax-with-ezjscore-server-functions.md)).
 
-Details: ezformtoken and CSRF protection.
+Details: [ezformtoken and CSRF protection](../part-8-reference/ezformtoken-and-csrf.md).
 
 ## 3. Escape output
 

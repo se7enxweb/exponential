@@ -142,7 +142,7 @@ Templates read them with the `ezini` operator:
 {ezini( 'SiteSettings', 'SiteName', 'site.ini' )|wash}
 ```
 
-Both are covered in detail in eZINI: reading settings.
+Both are covered in detail in [eZINI: reading settings](../part-8-reference/ezini.md).
 
 ## The INI cache
 

@@ -141,6 +141,6 @@ caches and the RAD health check.
 - Previous: [Learning from an extension, step by step](learning-from-an-extension-step-by-step.md)
 - Next: [Asking the community for help](asking-the-community.md)
 - [The Exp Debug bar](../../../bc/6.0/debug-bar.md)
-- eZDebug and logging
+- [eZDebug and logging](../part-8-reference/ezdebug-and-logging.md)
 - [When something goes wrong](../../when-something-goes-wrong.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -104,5 +104,5 @@ A few registrations, from [Extension points](../../../bc/6.0/rad-extension-point
 - Previous: [Events, listeners and filters](events-and-filters.md)
 - Next: [Kernel class overrides: the last resort](kernel-overrides-the-last-resort.md)
 - [With RAD: handlers and kernel overrides](tutorials/rad-handlers-and-kernel-overrides.md)
-- Sending mail with eZMail
+- [Sending mail with eZMail](../part-8-reference/ezmail.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
