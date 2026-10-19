@@ -126,6 +126,10 @@ Use the training installation the trainer prepared and the account card you were
 - Step 10: the page asks for the e-mail address of the account and offers **Generate new password**.
 - The trainer checks by asking each learner to show their dashboard greeting.
 
+![The sign-in form with Username, Password and the Sign in button](../../../images/trainers/e101-sign-in.webp)
+
+![The dashboard after signing in, greeting the learner by name, with My drafts and My pending items below](../../../images/trainers/e101-dashboard-greeting.webp)
+
 ## Quiz
 
 1. You see *Access denied! You do not have permission to access ...* after typing the right password. What is the

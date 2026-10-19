@@ -95,6 +95,8 @@ On your training installation, signed in as an administrator:
 - Step 9: the learner's account is located in **Administrator users**.
 - The trainer checks by opening **Users** on one learner's screen and the new group's **Roles** tab.
 
+![The Users tab: user groups as folders, with the accounts inside](../../../images/trainers/sa-users-groups.webp)
+
 ## Quiz
 
 1. What decides which groups a user belongs to?

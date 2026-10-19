@@ -99,6 +99,8 @@ section *Training* the trainer created).
   explains the result.
 - The trainer checks by asking each learner for their prediction in step 4 and the result.
 
+![The Details tab with the item's section and the Set button to change it](../../../images/trainers/e201-section-set.webp)
+
 ## Quiz
 
 1. How many sections can one item belong to?

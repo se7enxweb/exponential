@@ -99,6 +99,8 @@ Use the training installation, your course folder and one more sample image on y
 - After step 9 the published article still has its image, because the draft was discarded.
 - The trainer checks by reading two learners' alternative texts aloud and discussing them.
 
+![The relation field of an article with Add existing objects and Upload a file](../../../images/trainers/e101-image-field.webp)
+
 ## Quiz
 
 1. What does **Add an existing object** do?

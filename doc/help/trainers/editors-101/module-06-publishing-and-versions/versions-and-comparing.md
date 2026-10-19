@@ -100,6 +100,8 @@ Use the training installation and your article *My first article*.
 - **Show differences** marked the title change and the body changes of lessons 4.1 to 4.3.
 - The trainer checks by comparing two versions of one learner's article on the projector.
 
+![The versions page of an item with several versions, the filters and Compare two versions](../../../images/trainers/e101-versions.webp)
+
 ## Quiz
 
 1. Name two ways to open the versions page.

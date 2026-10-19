@@ -28,6 +28,10 @@
  * - HELPJS-10: a record page ([data-exphelp-records]) gets a filter field after its summary that hides the rows without
  *   every word (and a table left without rows), with the count in the page's language, and a sort button in each
  *   header of its table[data-exphelp-sortable] but a data-sort="none" one (aria-sort, natural order, both ways).
+ * - HELPJS-13: the stored state is applied before the first paint: while the page is parsed (the script is in the head)
+ *   a MutationObserver opens each stored folder as the parser inserts it (only opens; the current page's stays open),
+ *   a stored filter keeps html.exp-help-nav-pending (the tree hidden, help.css) until init() applied it; the watch
+ *   stops then; nothing stored or blocked storage starts nothing; the class never stays on other pages.
  * - HELPJS-12: the help navigation keeps its state in localStorage ("exphelp-nav") from page to page: the filter text
  *   and each folder the reader opened or closed (a summary click, Expand all / Collapse all) by its data-nav-path; the
  *   current page's folder always stays open; [data-exphelp-navfilter-clear] (shown with a filter) and Esc empty the
@@ -276,6 +280,27 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $js = self::read( self::SCRIPT );
         $this->assertSame( 3, preg_match_all( '/try \{[^}]*(localStorage|getItem|setItem)/', $js ), 'every storage access is in a try' );
         $this->assertDoesNotMatchRegularExpression( '/sessionStorage|document\.cookie/', $js );
+    }
+
+    /** HELPJS-13 */
+    public function testStoredNavigationStateIsAppliedBeforeTheFirstPaint()
+    {
+        $c = $this->cases()['nav state before paint'];
+        $this->assertSame( 1, $c['observers'], 'while the page is parsed, a stored open folder starts a watch of the parser' );
+        $this->assertTrue( $c['watching'] );
+        $this->assertFalse( $c['pendingWithoutFilter'], 'without a stored filter the tree is never hidden' );
+        $this->assertSame( array( false, true, false ), $c['beforeParse'] );
+        $this->assertSame( array( true, true, false ), $c['afterParse'], "a stored folder opens as it is inserted; the current page's stays open" );
+        $this->assertSame( array( true, true, false ), $c['afterInit'] );
+        $this->assertTrue( $c['stopped'], 'the watch stops once the page is parsed' );
+        $this->assertSame( 0, $c['filterObservers'], 'a filter alone needs no watch' );
+        $this->assertTrue( $c['pending'], 'a stored filter hides the tree until it is applied' );
+        $this->assertFalse( $c['pendingAfterInit'] );
+        $this->assertSame( 'upgrade', $c['filterValue'] );
+        $this->assertTrue( $c['clearShown'] );
+        $this->assertSame( array( 'observers' => 0, 'pending' => false ), $c['nothingStored'] );
+        $this->assertSame( array( 'observers' => 0, 'pending' => false ), $c['blocked'], 'blocked storage: nothing before the paint' );
+        $this->assertFalse( $c['otherPagePending'], 'the class never stays on a page without help' );
     }
 
     /** HELPJS-07 */

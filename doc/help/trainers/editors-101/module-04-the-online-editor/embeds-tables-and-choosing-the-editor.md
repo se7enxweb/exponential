@@ -106,6 +106,8 @@ Use the training installation and your article *My first article*.
 - In step 10 the same text opened in another editor, and the learner switched back in step 11.
 - The trainer checks by opening one learner's article on the site and the **Online editor** page on the projector.
 
+![Below a rich text field, the switch between the editors the site offers, outlined](../../../images/trainers/e101-editor-switch.webp)
+
 ## Quiz
 
 1. How do you change the size of an image already embedded in a text?

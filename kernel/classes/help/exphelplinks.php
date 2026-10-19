@@ -61,6 +61,28 @@ class expHelpLinks
     }
 
     /**
+     * image() with the size of a served image, for the renderer's image_resolver: array( 'url', 'width', 'height' ),
+     * so the page reserves the image's room and nothing moves when it loads (layout shift). An https image, or a file
+     * whose size cannot be read (SVG), is its address only.
+     *
+     * @param string $src as written in the page
+     * @param string $currentId
+     * @return array|string|null
+     */
+    public static function sizedImage( $src, $currentId = '' )
+    {
+        $url = self::image( $src, $currentId );
+        if ( $url === null || preg_match( '#^https://#i', trim( (string)$src ) ) )
+            return $url;
+        $id = self::resolvePath( preg_replace( '/[?#].*$/', '', trim( (string)$src ) ), $currentId );
+        $file = $id === null ? null : expHelpDocumentIndex::instance()->asset( $id );
+        $size = $file !== null && is_file( $file ) ? @getimagesize( $file ) : false;
+        if ( !is_array( $size ) || empty( $size[0] ) || empty( $size[1] ) )
+            return $url;
+        return array( 'url' => $url, 'width' => (int)$size[0], 'height' => (int)$size[1] );
+    }
+
+    /**
      * A relative path resolved against the directory of the current page, normalised; null when it leaves the root.
      * Ids are paths below doc/ ("features/6.0/x.md"); a leading "/" or "doc/" means from the doc root.
      *

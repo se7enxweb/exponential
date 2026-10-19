@@ -94,6 +94,8 @@ On your training installation, signed in as an administrator:
 - The sentence of step 8 names every limitation, joined by "and".
 - The trainer checks by asking two learners to read their step 8 sentence aloud.
 
+![The roles of the installation with their policies and where they are assigned](../../../images/trainers/sa-roles.webp)
+
 ## Quiz
 
 1. What does a role do before it is assigned?

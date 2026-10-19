@@ -114,6 +114,10 @@ at `example.invalid` (create one in **Users** if you have none; see lesson 2.5 o
 - After step 12 publishing works without approval again.
 - The trainer checks by asking each learner to show the trigger row reset to **No workflow**.
 
+![Workflow processes waiting, for example for an approval or the workflow cronjob](../../../images/trainers/sa-workflow-processes.webp)
+
+![Triggers: which workflow runs before or after publishing and other operations](../../../images/trainers/sa-triggers.webp)
+
 ## Quiz
 
 1. What connects a workflow to the publish operation?

@@ -117,6 +117,8 @@ On your training installation, signed in as an administrator, with a terminal in
 - After step 9, `exp:ini where site.ini/UserSettings/MaxNumberOfFailedLogin` shows the default 0 in effect.
 - The trainer checks the audit records later in the course, or asks a learner to show step 7.
 
+![The Change password form](../../../images/trainers/sa-change-password.webp)
+
 ## Quiz
 
 1. How long does a **Forgot your password?** link work on a new installation?

@@ -97,6 +97,10 @@ Use the training installation's Editor address, which the trainer writes on the 
 - Signing out of the Editor did not sign the learner out of the administration.
 - The trainer checks by asking a learner to name one tab the administration has and the Editor does not.
 
+![The sign-in form of the Editor, named Administration of Editor](../../../images/trainers/e101-editor-signin.webp)
+
+![The header of the Editor with its shorter list of tabs: Dashboard, Content structure and Media](../../../images/trainers/e101-editor-tabs.webp)
+
 ## Quiz
 
 1. What are the three siteaccesses of a new installation?

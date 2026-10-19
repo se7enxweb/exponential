@@ -109,6 +109,8 @@ Use the training installation and the article from lesson 3.2.
 - The draft appeared in **My drafts** after **Store draft and exit** and was published as *Version 3*.
 - The trainer checks by asking two learners to point at **Current draft** and **Preview** on their screens.
 
+![The edit form of an article: the buttons, the title line with type and language, the field bar and the first fields with their kind](../../../images/trainers/e101-edit-form.webp)
+
 ## Quiz
 
 1. Where in the form do you see which version you are working on?

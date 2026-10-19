@@ -104,6 +104,8 @@ On your training installation, signed in as an administrator:
 - The public site shows the new name after step 9 and the earlier name after step 12.
 - The trainer checks by asking learners where `SiteName` comes from before and after step 9.
 
+![The settings page: choose a siteaccess and an INI file to read its settings](../../../images/trainers/sa-settings-page.webp)
+
 ## Quiz
 
 1. Two files set the same plain value. Which one wins?

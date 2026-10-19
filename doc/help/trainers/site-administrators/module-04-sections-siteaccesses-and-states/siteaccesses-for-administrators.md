@@ -110,6 +110,8 @@ On your training installation, signed in as an administrator, with a terminal in
 - Step 9: `HostMatchMethod=start` (or the entry `HostMatchMapItems[]=www.example.com;site;start`).
 - The trainer checks by asking a learner to explain the resolution map aloud.
 
+![The Interface box, where the administration design of the admin siteaccess can be switched](../../../images/trainers/sa-siteaccesses.webp)
+
 ## Quiz
 
 1. What are the three parts of a siteaccess?

@@ -96,6 +96,8 @@ On your training installation, signed in as an administrator, with a private win
 - Step 10 lists the role **Anonymous** with its `content/read` policy.
 - The trainer checks the group's card and the private window on one learner's site.
 
+![Object state groups and their states, with the roles that use them](../../../images/trainers/sa-states.webp)
+
 ## Quiz
 
 1. Which state does a new object get in a group?

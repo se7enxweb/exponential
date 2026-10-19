@@ -98,6 +98,8 @@ Use the training installation. The trainer signs in as an administrator on the p
 - Three team rules are on the board.
 - The trainer checks the role designs of two pairs.
 
+![The roles, among them the ones that may edit layouts](../../../images/trainers/ly-roles.webp)
+
 ## Quiz
 
 1. Name the three layouts modules.

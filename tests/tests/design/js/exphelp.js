@@ -97,6 +97,17 @@ function setup(html, opts) {
     // localStorage: a given stand-in, or one whose every access throws (blocked storage)
     if (opts.storage) sandbox.localStorage = opts.storage;
     if (opts.storageThrows) Object.defineProperty(sandbox, 'localStorage', { get() { throw new Error('SecurityError'); } });
+    // a page still being parsed: readyState "loading" and a MutationObserver stand-in the case drives by hand
+    const observers = [];
+    if (opts.loading) {
+        document.readyState = 'loading';
+        sandbox.MutationObserver = class {
+            constructor(fn) { this.fn = fn; this.on = false; observers.push(this); }
+            observe() { this.on = true; }
+            disconnect() { this.on = false; }
+        };
+    }
+    sandbox.__observers = observers;
     sandbox.window = sandbox;
     vm.createContext(sandbox);
     vm.runInContext(source, sandbox);
@@ -479,6 +490,52 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
         d.dispatch('click', d.getElementById('sa'), {});
         res.broken = { opens: opens(d), value: d.getElementById('f').value };
         out('nav state', res);
+    }
+    {
+        // the stored state before the first paint: while the page is parsed, the stored folders open as the parser
+        // inserts them (only opens), a stored filter hides the tree until init() applies it; then the watch stops
+        const NAV = '<div class="a4-help-frame" data-exphelp><nav id="tree" data-exphelp-nav>'
+            + '<input type="search" id="f" data-exphelp-navfilter hidden />'
+            + '<button type="button" id="clr" aria-controls="f" data-exphelp-navfilter-clear hidden>Clear filter</button><ul class="a4-help-nav-list is-top">'
+            + '<li><details data-nav-path="a"><summary>Alpha</summary><ul><li><a href="/x/a1">Install</a></li></ul></details></li>'
+            + '<li><details data-nav-path="b" open><summary>Beta</summary><ul><li><a href="/x/b1" aria-current="page">Cache</a></li></ul></details></li>'
+            + '<li><details data-nav-path="c"><summary>Gamma</summary><ul><li><a href="/x/c1">Upgrade</a></li></ul></details></li>'
+            + '</ul></nav></div>';
+        const store = (value) => ({ getItem: () => value, setItem: () => {} });
+        const opens = (d) => d.querySelectorAll('details').map((x) => x.hasAttribute('open'));
+        const res = {};
+        // folders only: no class, an observer
+        let h = setup(NAV, { loading: true, storage: store(JSON.stringify({ filter: '', open: { a: true, b: false } })) });
+        let d = h.document;
+        const obs = h.sandbox.__observers;
+        res.observers = obs.length;
+        res.watching = obs.length ? obs[0].on : false;
+        res.pendingWithoutFilter = d.documentElement.classList.contains('exp-help-nav-pending');
+        res.beforeParse = opens(d);
+        obs[0].fn([{ addedNodes: [d.getElementById('tree')] }]);   // the parser inserted the tree
+        res.afterParse = opens(d);   // a opened; b (the current page's) stays open although stored closed
+        (d.listeners.DOMContentLoaded || []).forEach((fn) => fn());
+        res.afterInit = opens(d);
+        res.stopped = !obs[0].on;
+        // a stored filter: the tree waits (class) until init() applied it
+        h = setup(NAV, { loading: true, storage: store(JSON.stringify({ filter: 'upgrade', open: {} })) });
+        d = h.document;
+        res.filterObservers = h.sandbox.__observers.length;
+        res.pending = d.documentElement.classList.contains('exp-help-nav-pending');
+        (d.listeners.DOMContentLoaded || []).forEach((fn) => fn());
+        res.pendingAfterInit = d.documentElement.classList.contains('exp-help-nav-pending');
+        res.filterValue = d.getElementById('f').value;
+        res.clearShown = !d.getElementById('clr').hidden;
+        // nothing stored, or storage blocked: nothing to do before the paint
+        h = setup(NAV, { loading: true, storage: store(null) });
+        res.nothingStored = { observers: h.sandbox.__observers.length, pending: h.document.documentElement.classList.contains('exp-help-nav-pending') };
+        h = setup(NAV, { loading: true, storageThrows: true });
+        res.blocked = { observers: h.sandbox.__observers.length, pending: h.document.documentElement.classList.contains('exp-help-nav-pending') };
+        // a page that is not a help page: the class never stays
+        h = setup('<div><p>no help here</p></div>', { loading: true, storage: store(JSON.stringify({ filter: 'x', open: {} })) });
+        (h.document.listeners.DOMContentLoaded || []).forEach((fn) => fn());
+        res.otherPagePending = h.document.documentElement.classList.contains('exp-help-nav-pending');
+        out('nav state before paint', res);
     }
     {
         const h = setup('<div><p>no help here</p></div>');

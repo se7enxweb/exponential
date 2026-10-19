@@ -133,6 +133,8 @@ Use your own training installation (for example one installed with `php bin/php/
 - The trainer checks by asking two learners to read their line aloud and point out the `cd`, the siteaccess and the
   part name.
 
+![The cronjob parts and whether the crontab runs them](../../../images/trainers/sa-cron-parts.webp)
+
 ## Quiz
 
 1. What is a cronjob part?

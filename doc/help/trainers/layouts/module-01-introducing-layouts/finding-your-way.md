@@ -95,6 +95,8 @@ Use the training installation and your layouts training account. Nothing in this
 - The learner saw a preview and did not open the visual editor.
 - The trainer checks by asking a learner to find a named layout's mapping on the projector.
 
+![The Layouts dashboard: counts and the recent layouts](../../../images/trainers/ly-dashboard.webp)
+
 ## Quiz
 
 1. Which numbers does the **Overview** of the **Layouts Dashboard** show?

@@ -121,6 +121,10 @@ Use the training installation and your Editor training account.
 - The trainer checks by asking two learners to point at the **Interface** box and the **Content finder** on the
   projector.
 
+![The header of the administration: the logo, the tabs, the search field and the buttons for language, theme, help, account and sign-out](../../../images/trainers/e101-tour-header.webp)
+
+![The whole screen: the content tree on the left, the item's page in the middle and the right column with Clear cache, Bookmarks and Interface](../../../images/trainers/e101-tour-columns.webp)
+
 ## Quiz
 
 1. Which key jumps to the **Search...** field from anywhere in the administration?

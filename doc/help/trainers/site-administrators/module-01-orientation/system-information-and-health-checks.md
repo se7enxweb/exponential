@@ -110,6 +110,8 @@ On your training installation, signed in as an administrator:
 - Step 10: the terminal report shows the command-line SAPI `cli`, often with OPcache off.
 - The trainer checks by asking each learner for one health check and its advice.
 
+![System information with the health checks of PHP, the database and the server](../../../images/trainers/sa-system-info.webp)
+
 ## Quiz
 
 1. Which policy does a user need to open **System information**?
