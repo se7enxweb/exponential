@@ -7464,9 +7464,9 @@ e1385a7ddada15fd571df04e044733c1  doc/help/images/accounts/editor-sign-in.webp
 cf5c68589449ee0d49b423342bf1bbc7  doc/help/images/accounts/email-preferences.webp
 d07cc938e62907caa75493d2e5f85b6d  doc/help/images/accounts/my-bookmarks.webp
 80dc352af3844d790d3592d06ac9827d  doc/help/images/accounts/notification-settings.webp
-51759008a14b9fd1fb198a8bdb066c3b  doc/help/images/accounts/user-hygiene.webp
+f8e9fbe839cbdc34814eb934f19fad65  doc/help/images/accounts/user-hygiene.webp
 b392982796cc493a76d76997b2321e3c  doc/help/images/accounts/user-password-admin.webp
-0397f95b8d5cf8539ba13ee3245145e4  doc/help/images/accounts/users-sessions.webp
+1d516fbea0b2d840a588db40574d1877  doc/help/images/accounts/users-sessions.webp
 c62bd3523b50c73d0284cce14072b804  doc/help/images/admin-dashboard.webp
 aed66f92cd4fd51069175ad3af41a2c1  doc/help/images/content-view.webp
 3fdb924d0adb52c6ba456bf0aee9df7a  doc/help/images/context-menu.webp
@@ -7477,7 +7477,7 @@ dc5c3a8648fbd4c59f51ff3abd5681c8  doc/help/images/creators/backups.webp
 b4031297ef19b1c7f3073a446fe9f359  doc/help/images/creators/broken-relations.webp
 f54d829e756cc76e0c045c5e3554e8ff  doc/help/images/creators/class-list.webp
 fcd9c1fc0909267912aeb7167a743a06  doc/help/images/creators/class-view.webp
-8d26e56bb15776f18ceb703874e26a74  doc/help/images/creators/classes-groups.webp
+69d0ab751ee5df4d23d3c640f0e576fd  doc/help/images/creators/classes-groups.webp
 0a8586ee02c6580aeeda32f668e7c87c  doc/help/images/creators/collected-information.webp
 bb8107b47950d5d7428cfbf044e02bf9  doc/help/images/creators/content-tree-roots.webp
 a18cafff7a9cc2b20a077acd832f6aee  doc/help/images/creators/details-tab-section.webp
@@ -7602,8 +7602,8 @@ cf8a1f4d10cbb27a2ae4db244db026fc  doc/help/images/hosting/job-queue.webp
 4bdec47b12dd14a43c96cc23150328fc  doc/help/images/hosting/log-files.webp
 68361fa93de23d0b3ac93f7233393d7e  doc/help/images/hosting/mail-preferences-status.webp
 2924ab6e64c26ee32759241f49dfb77c  doc/help/images/hosting/maintenance-window.webp
-70fe491b561b66bd1377643972c8045f  doc/help/images/hosting/notification-status.webp
-3ae0894049956133c81d626e2bed6b31  doc/help/images/hosting/sessions.webp
+0fda565b1ca046feb5a00d63c0efe800  doc/help/images/hosting/notification-status.webp
+27b6a54452711fde41d9db6390ed6965  doc/help/images/hosting/sessions.webp
 e3acd00416bc0d92bff0bef6fe013ed9  doc/help/images/hosting/setup-overview.webp
 5928535dd65f2e0c0ca55b4c82e93445  doc/help/images/hosting/sign-in-page.webp
 4cf6411e067f224c2f6599cae657f10c  doc/help/images/hosting/system-info-managed.webp
@@ -7613,7 +7613,7 @@ a661db58fec89f992504ca431673639c  doc/help/images/hosting/update-find-packages.w
 a40d14de47dd1c8e515b6ed4da0eb41d  doc/help/images/hosting/update-installed.webp
 34ef32eff5a5ad71f06907f1e4e6931b  doc/help/images/hosting/update-package-servers.webp
 3e7e64c4e129ed77b4255ed90e9bb200  doc/help/images/hosting/upgrade-check.webp
-32ee557f2772079a03b1ac600be03631  doc/help/images/hosting/user-hygiene.webp
+b46103a439fe7f68c1785c0de8b671d5  doc/help/images/hosting/user-hygiene.webp
 3795ccd9cfb3ae83e58a6a33fe8a1197  doc/help/images/languages/interface-language.webp
 0801339d98711836648a16a1abb77764  doc/help/images/languages/setup-languages.webp
 7f9df760d02f605989b468812c412c66  doc/help/images/languages/translation-badges.webp
@@ -7642,7 +7642,7 @@ c1ccae99e2654c50a817f44779eaac61  doc/help/images/media/folder-upload-button.web
 9e275269d65e6abc8aa8ddf67485e3f9  doc/help/images/media/upload-target-location.webp
 170860089252fcb9adcbf36a00ec78b9  doc/help/images/multi-upload.webp
 5dd4885f1eb9f500cdbc5ad4ec56343d  doc/help/images/my-account.webp
-fcc2810034ddcb62d7d7f1440dbe498c  doc/help/images/publishing/my-drafts.webp
+7609be2967cf83d921a7d8aced988360  doc/help/images/publishing/my-drafts.webp
 aca6b4857b9a8024e932e978e539f527  doc/help/images/publishing/my-pending-items.webp
 2afaf45a02242653ea90f6950655b3bb  doc/help/images/publishing/publish-buttons.webp
 b60066d60c1eaa921e3218d12ad41a29  doc/help/images/publishing/trash-filters.webp
