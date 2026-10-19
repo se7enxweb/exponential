@@ -236,6 +236,7 @@ license, and credit them in the README
 - [Extensions](../guides/extensions.md): build, configure and release an extension.
 - [Reading licenses before you reuse anything](extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)
 - [Publishing an extension as a partner](partners/publishing-an-extension.md)
+- [Contribute your site package](site-packages/contribute-your-site-package.md): share a whole site (design, classes, demo content) through the setup wizard.
 - The full license texts: [GNU GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) and the
   [GPL FAQ](https://www.gnu.org/licenses/gpl-faq.html).
 - [Free documentation](free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

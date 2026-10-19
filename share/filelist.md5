@@ -6289,7 +6289,7 @@ d55259e5b036dd972962aa0bd877bc3f  doc/guides/ui-switch-settings.md
 96ce9e87d17b31ab1a771517f083e4ea  doc/guides/upgrading.md
 6477f5214f3a7f3dfdf0da2e2284d082  doc/guides/urls-and-aliases.md
 d0260680e11ffdb7581f3bff6191d877  doc/guides/workflows.md
-0d9a333227b5dfa92580abeabae929cf  doc/help/README.md
+c92a8e9a50509f2653769892354777ac  doc/help/README.md
 b409e3a060dd8d98c756d652e742bc27  doc/help/accounts-and-sign-in.md
 b65fabce7ceb9f1766f5b80577f6a5a4  doc/help/admin-tour.md
 2559a76804ca2dd8ccc13a44e3669dd2  doc/help/advocates/7x-and-the-foundation-for-advocates.md
@@ -6400,7 +6400,7 @@ ce2c27ed47d3e90ec6428ea796355d90  doc/help/business/growing-the-community.md
 78ea72499e12286cb19df6f56789c901  doc/help/business/sales-and-marketing-start-here.md
 3bdf16d3cb3308d3caf0e5edc8089f2d  doc/help/business/who-exponential-is-for.md
 255cb6d569c48c608698baf5a8b30f09  doc/help/change-the-admin-password.md
-7a23499a7d57ec11a2a1f06eeb47d005  doc/help/contribute-extensions-back.md
+b1b11ccddbba166589dd140f9905b796  doc/help/contribute-extensions-back.md
 b0ebb923632b52684f3690896fc09313  doc/help/creators/app-creators/access-control-in-code.md
 8828c9303293dabf84248d8f2f0a2c4a  doc/help/creators/app-creators/app-creator-faq.md
 186d7ec435ba67f2f24dda9fcd5a3514  doc/help/creators/app-creators/app-creators-reading-path.md
@@ -7102,7 +7102,7 @@ e57691e6942395da24fb33dc33ca1616  doc/help/os-support.md
 da09f18bbf3006c962955fbbb41c3d79  doc/help/partners/communication-channels.md
 f116e9268001cf2c8fdb1543bdd47d5a  doc/help/partners/contributing-code-back.md
 b2156a31ccc0a3c2eaaeab5e7b670308  doc/help/partners/contributing-docs-and-translations.md
-ac752e609ec45f8911e07974d6b34ab0  doc/help/partners/contributing-extensions-back.md
+ba906d0a67d7efa3b2fb864697d7754d  doc/help/partners/contributing-extensions-back.md
 2ebf476a3ba185b5222e22b7f7a979d7  doc/help/partners/creative-partners.md
 d00adbd52936120527e5ebb127f86ba7  doc/help/partners/customer-references.md
 cca9b544b7c7cc2021088a5b5fffa713  doc/help/partners/distribution-partners.md
@@ -7119,7 +7119,7 @@ ed70c77b6df390fce7f54db1d8b872fd  doc/help/partners/implementation-partners.md
 75adc5a9b70143891930aa5d200c6aa5  doc/help/partners/implementation-project-playbook.md
 419e4cc52a7eea36ed33440b9c0c96b1  doc/help/partners/keeping-customers-current.md
 ceb774231a21caa4614836d1a666eafc  doc/help/partners/lead-handoffs.md
-8580fa70c4342c30217045df8f42d2f5  doc/help/partners/licensing-for-partners.md
+db39a08886b9021fdfd0b45860f2e5fc  doc/help/partners/licensing-for-partners.md
 144c835a3acdeef5a146619c39c42123  doc/help/partners/logging-partner-activity.md
 d561da0a351333b808d9d8968c1a1abc  doc/help/partners/naming-and-brand-for-partners.md
 5afb66941308f1751676d9f66f6def78  doc/help/partners/oem-and-reselling.md
@@ -7145,7 +7145,7 @@ f300ebbb1b7c6feee9742c3f5b890d2c  doc/help/partners/pre-sales-support.md
 c4cdf249a906c023d49c8da24156b609  doc/help/partners/press-releases-and-announcements.md
 1ec71ef99445ca5423a6aa3e0b01b35b  doc/help/partners/protecting-customer-data.md
 6f837678df49b4a744f17c64af77afcc  doc/help/partners/publishing-a-theme.md
-23c23f0bdc30925db580d09bfa926b15  doc/help/partners/publishing-an-extension.md
+742582101070151c5933e2d2ae596cb6  doc/help/partners/publishing-an-extension.md
 ad710b77d6d66636718838115d70b3c9  doc/help/partners/referrals-and-leads.md
 88b3f25508c8289fcc341ed9177d99c0  doc/help/partners/renewals-upgrades-and-downgrades.md
 f74d682ecf06d47a73db990fc3b1bdd3  doc/help/partners/roadmap-participation.md
@@ -7318,6 +7318,17 @@ dddf69f99cb57edef6a2f7cb60b530a4  doc/help/press/writing-a-fair-review.md
 87ca5381983c74f441619764040c3ae7  doc/help/press/writing-about-funding-and-sponsors.md
 21c879c40916fb507e1a36fa7e6e5bcc  doc/help/press/writing-about-the-community.md
 0c4d2324d6b37db33a5baec9d5facf25  doc/help/press/writing-about-the-ez-publish-years.md
+e31b7b5ddb78deb0c3980797f66968e9  doc/help/project/README.md
+87a8f80812f6de1b57e4916be3a31310  doc/help/project/about-the-project.md
+ce2ce7e4643ac6bf14c9e2ec81970227  doc/help/project/build-with-exponential.md
+25346d4ee1c1e941f85943802a0a31c6  doc/help/project/community-channels.md
+2c84aa730291e2c2fcd4e71cf86d255c  doc/help/project/contribute-to-the-project.md
+6bcce69e3076a8d8465e61847f369b28  doc/help/project/documentation-sources.md
+b0d4f171e7482532d18adc3c338fb5b5  doc/help/project/faq.md
+2086cc65c5dca19085a957bb1d7a4f6b  doc/help/project/getting-support.md
+f2c3b5cf6bc9fb272424baa921f9c775  doc/help/project/give-and-donate.md
+6c41be923984d43a2f3abaed1a14901c  doc/help/project/licensing-faq.md
+7be0f8f293f697d538c4ac6a329943f0  doc/help/project/roadmap.md
 0bf642c168fe8af84f64190ce1cff902  doc/help/publishing-and-versions.md
 291f1692bf5590051f383d80da653fe2  doc/help/searching.md
 dc8acfe7a2ee87504513fb463c285310  doc/help/security-hardening.md
@@ -7401,7 +7412,7 @@ b72e3ba07ffee16bd5a3b713181bf473  doc/help/site-packages/your-own/pointing-a-sit
 bc7e976a7c483c0d246fd074182f047e  doc/help/site-packages/your-own/versioning-your-own-packages.md
 f95efefd3c509049bc67d530b1f072f8  doc/help/sponsors/7x-the-first-sponsor.md
 1dec54ddd8d782caee4013533f5cae7c  doc/help/sponsors/billing-receipts-and-tax.md
-9e53aa750b5138e37e909aeb5147e223  doc/help/sponsors/other-ways-to-give.md
+b29b513376b2261ab18c678a8994c898  doc/help/sponsors/other-ways-to-give.md
 b1931f5f9afa220cf8dda2fb94550ac1  doc/help/sponsors/sponsor-faq.md
 4c08f5c6ef08b63569ec910381337481  doc/help/sponsors/sponsor-recognition.md
 1a8bcce5dc2e5aa2c0ec8e4f56bbae50  doc/help/sponsors/sponsoring-7x.md
@@ -7411,7 +7422,7 @@ b1931f5f9afa220cf8dda2fb94550ac1  doc/help/sponsors/sponsor-faq.md
 a92e38f72493c2f2aafc85cfada8c527  doc/help/sponsors/two-organizations-two-sponsor-pages.md
 53276ed81302fd8d7508305ab633fc35  doc/help/sponsors/what-sponsorship-funds.md
 18883fcd8d81dfa3cbad57e95c6350aa  doc/help/supporters/advocacy.md
-870abe19062babca1858d177d8df8991  doc/help/supporters/contributing-code.md
+a3c918179d1fdf15f222cdb061666d42  doc/help/supporters/contributing-code.md
 21207ba575babb371fb147e7de4e3f7b  doc/help/supporters/contributing-documentation.md
 a9ec462b9729a45db42a4566f0ed859e  doc/help/supporters/contributing-translations.md
 80f628b29f7ae38e8e77e3796c06e07c  doc/help/supporters/funding-the-work.md
@@ -7421,7 +7432,7 @@ a9ec462b9729a45db42a4566f0ed859e  doc/help/supporters/contributing-translations.
 ce9facdac8c61ce2a410c587b8025f5e  doc/help/supporters/supporters-start-here.md
 457a76da27b0e835a9ab252c976d8626  doc/help/supporters/supporting-as-a-company.md
 756cca3c7b02a19aed7dc684a35ac63e  doc/help/supporters/testing-and-reporting-bugs.md
-0c5611d9122cc264a4193dff110fc70d  doc/help/supporters/ways-to-support-exponential.md
+5ee72694af42447c656e297194c8e3c2  doc/help/supporters/ways-to-support-exponential.md
 369075c573c2cbdd83c034b386343b0c  doc/help/trainers/course-catalogue.md
 d49534e4558ddfae844aa8f5754f0015  doc/help/trainers/train-the-trainer/README.md
 6e6620b6badc7104040b733d6ece442b  doc/help/trainers/train-the-trainer/module-01-preparing-to-teach/README.md
@@ -7466,7 +7477,7 @@ f7866d2af34d8af6cf1e43cdd3e5dc51  doc/help/trainers/train-the-trainer/module-06-
 be9e0ba42e7b08d9da41d480b3ec3cd3  doc/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/quizzes-and-practical-tasks.md
 f7b87483c24ffb1ce02728b1954640c1  doc/help/trainers/trainers-start-here.md
 07cd912e3bbb1367c11e04abcf618289  doc/help/update-with-git.md
-6cee31f394a1674d1c735bb1e8b585e7  doc/help/when-something-goes-wrong.md
+14ceb6ea8e2f12e5b5f0af0db41d2430  doc/help/when-something-goes-wrong.md
 5ca11aed7eb7120556497445c9099bc8  doc/help/who-is-7x.md
 1789c6d5581540a05554c912dd7dd48e  doc/help/who-is-the-exponential-foundation.md
 bfac4d20e64cf0fff734fc68908cf3e9  doc/history/2023/2023-12.md
