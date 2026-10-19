@@ -74346,6 +74346,50 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Le projet Exponential : ce qu&apos;il est, ses licences, sa feuille de route, le support, les canaux de la communauté, et comment contribuer et donner.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Effacer le filtre</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Deux façons de construire</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Deux façons de construire un site avec Exponential : ce qui les distingue et comment choisir.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Entreprises</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Administrations publiques</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Faire tourner le site de votre organisation sur Exponential : ce qu&apos;il apporte à une entreprise, coûts et support, hébergement, sécurité et choix des partenaires.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential dans le secteur public : accessibilité, vie privée et sécurité, open source et marchés publics, hébergement et maintenance à long terme.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential pour les entreprises</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Secteur public</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential pour les entreprises et les organisations : ce qu&apos;il offre, coûts, support, hébergement, sécurité et travail avec des partenaires.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential pour les administrations et les organismes publics : accessibilité, vie privée, sécurité, open source, marchés publics et maintenance à long terme.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

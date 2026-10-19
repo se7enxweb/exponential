@@ -27,7 +27,7 @@ find extension/<name> -name '*.php' -print0 | xargs -0 -n1 php -l | grep -v '^No
 ```
 
 No output means every file parses. Any line printed is a file PHP 8 refuses; typical causes are listed in
-PHP 8 errors that stop old code.
+[PHP 8 errors that stop old code](../part-4-upgrading/php-8-errors-that-stop-old-code.md).
 
 ## 3. Removed and deprecated functions (5 minutes)
 
@@ -37,13 +37,13 @@ grep -rnE 'function\s+([A-Za-z_]+)\s*\(' extension/<name> --include=*.php | head
 ```
 
 The first search finds functions PHP 8 removed or deprecates; each has a replacement in
-Removed PHP functions and their replacements. The second lists the
+[Removed PHP functions and their replacements](../part-4-upgrading/removed-php-functions.md). The second lists the
 methods, so you can spot **old-style constructors**: a method with the same name as its class. PHP 8 no longer calls
 such a method as a constructor, so the object is created without being set up. The template operator extension
 `str_replace`, still in its original 2005 shape in the kernel tree, is exactly that case: its operator class sets its
 operator list in `function MyStrReplaceOperator()`, which PHP 8 never calls, and the template engine reports
 "Object problem with operator 'ezstr_replace'". The fix is one line, shown in
-Old-style constructors and static calls.
+[Old-style constructors and static calls](../part-4-upgrading/old-constructors-and-static-calls.md).
 
 ## 4. Can every class load? (2 minutes, after switching it on in development)
 
@@ -78,7 +78,7 @@ grep -rnE '\{\$[a-zA-Z_.]+\}' extension/<name>/design | grep -v '|wash' | head -
 
 Variables printed without `|wash` are a cross-site scripting risk when their value can come from a visitor (a view
 parameter, a form field, a search word). Not every hit is a bug (a number from the kernel is safe), but each one deserves
-a look. See Security in extensions.
+a look. See [Security in extensions](../part-3-extension-developer/security-in-extensions.md).
 
 ## 7. SQL (5 minutes)
 
@@ -99,7 +99,7 @@ grep -rnE '<script[^>]*>[^<]|on(click|change|submit|load)=|javascript:|style="' 
 ```
 
 The administration enforces a Content Security Policy: inline scripts, `on...=` handler attributes and `javascript:`
-links do not run there. Every hit is work for Part 4 before the extension's admin
+links do not run there. Every hit is work for [Part 4](../part-4-upgrading/README.md) before the extension's admin
 pages work.
 
 ## 9. What it changes in the system (5 minutes)
@@ -125,6 +125,6 @@ Write your findings down. If you adopt or fix the extension, they become the fir
 
 - Previous: [Linking versus copying: citing sources fairly](linking-versus-copying.md)
 - Next: [Learning from an extension, step by step](learning-from-an-extension-step-by-step.md)
-- The upgrade checklist
-- Security in extensions
+- [The upgrade checklist](../part-4-upgrading/the-upgrade-checklist.md)
+- [Security in extensions](../part-3-extension-developer/security-in-extensions.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
