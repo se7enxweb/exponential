@@ -14,6 +14,8 @@ It explains the kinds of updates an Exponential site receives, the tools that ma
 expensive, and how to put them in a budget. The facts come from `SECURITY.md`, [Upgrading](../../../../guides/upgrading.md)
 and [Source control and releases](../../../../standards/source-control-and-releases.md).
 
+![The upgrade check with the file and database consistency checks](../../../images/government/gov-upgrade.webp)
+
 ## Contents
 1. [Kinds of updates](#kinds-of-updates)
 2. [Tools that reduce the work](#tools-that-reduce-the-work)

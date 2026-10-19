@@ -12,6 +12,8 @@ type: help
 This checklist is for the communications lead, the site administrator and the host of a public body that may need to
 publish urgent information: a storm warning, a water advisory, a closure. It uses features Exponential has.
 
+![The cronjobs page: parts, scripts, last runs and Run now](../../images/government/gov-cron.webp)
+
 Exponential has **no dedicated emergency alert feature**: no alert banner type, no push to phones, no link to public
 warning systems. What it offers is fast publishing, cache control and an engine that can take load. Plan around that.
 

@@ -15,6 +15,8 @@ the caches again with the tools Exponential provides. The references are [Preloa
 [Operating a site](../../../../guides/operating-a-site.md) and the hosting page
 [Cache clearing and warming](../../../hosting/performance/cache-clearing-and-warming.md).
 
+![Preload: request the pages of a site so its caches are warm before visitors come](../../../images/government/gov-preload.webp)
+
 ## Contents
 
 1. [Why warm](#why-warm)

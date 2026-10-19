@@ -13,6 +13,8 @@ This page is for administrators and managers who must offer the administration i
 The interface texts are in translation files, `share/translations/<locale>/translation.ts`, and each extension's
 `translations/` directory ([Translations and languages](../../../features/6.0/translations-and-languages.md)).
 
+![Interface languages: every locale of the administration and how complete its translation is](../../images/government/gov-interface-languages.webp)
+
 ## Contents
 
 1. [What ships](#what-ships)

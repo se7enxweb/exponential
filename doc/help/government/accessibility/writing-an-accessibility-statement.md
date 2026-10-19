@@ -15,6 +15,8 @@ Directive ([Accessibility standards: EN 301 549](../../../standards/accessibilit
 follows the W3C WAI guidance, Developing an Accessibility Statement (<https://www.w3.org/WAI/planning/statements/>).
 If your country publishes a model statement, use that model; it takes precedence.
 
+![An item's page at 375 pixels wide, one of the checks before writing an accessibility statement](../../images/government/gov-a11y-statement.webp)
+
 > **Note** This page describes features and common practice; it is not legal advice. Check the law that applies to
 > your organization with your legal counsel.
 

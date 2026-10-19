@@ -14,6 +14,8 @@ follow. It describes a publishing practice built from Exponential features: the 
 group of [Content model for agencies](content-model.md), the review workflow of
 [Structure, sections and roles for agencies](structure-sections-and-roles.md), and the versions page.
 
+![The sign-in page of the administration](../../../images/government/gov-sign-in.webp)
+
 ## Contents
 
 1. [Principles](#principles)

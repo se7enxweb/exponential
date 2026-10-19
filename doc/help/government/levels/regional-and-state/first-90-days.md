@@ -12,6 +12,8 @@ type: help
 This page is for project managers and administrators who lead the start of a regional or state site on Exponential.
 It follows three phases of about 30 days. It assumes an installation exists ([Getting started](../../../../guides/getting-started.md)).
 
+![The dashboard of the administration after the first sign-in](../../../images/government/gov-dashboard.webp)
+
 ## Contents
 
 1. [Days 1 to 30: scope and stakeholders](#days-1-to-30-scope-and-stakeholders)

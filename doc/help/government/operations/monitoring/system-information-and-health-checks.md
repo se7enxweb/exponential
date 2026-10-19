@@ -13,6 +13,8 @@ This page is for administrators and IT teams who need a quick, reliable picture 
 anyone preparing a support request. **Setup > System information** (`/setup/info`, needs `setup/system_info`) reads
 and changes nothing. Reference: [System information](../../../../guides/system-information.md).
 
+![System information with the health checks: failures, warnings, notes and checks in order](../../../images/government/gov-health.webp)
+
 ## Contents
 1. [Which server answered](#which-server-answered)
 2. [The health checks](#the-health-checks)

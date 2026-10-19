@@ -13,6 +13,8 @@ This page is for administrators and project managers who plan an installation wi
 national portal or many sites sharing one installation. The facts come from
 [Languages in Exponential, section 11](../../../languages.md#11-the-limit-of-62-content-languages).
 
+![The counter of content languages: how many are in use and how many more can be added](../../images/government/gov-languages-limit.webp)
+
 ## Contents
 
 1. [The limit](#the-limit)
