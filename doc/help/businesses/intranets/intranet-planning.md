@@ -120,7 +120,7 @@ Copy this list into the project brief (Project brief template).
 - [ ] Document inventory and migration plan.
 - [ ] Search decision: built-in or Solr.
 - [ ] Notification decision: which items staff follow by default.
-- [ ] Hosting and backups decided (Reliability).
+- [ ] Hosting and backups decided ([Reliability](../reliability/README.md)).
 - [ ] Named owner and a date for the first access review (Access reviews).
 
 ## Related pages

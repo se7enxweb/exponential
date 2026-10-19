@@ -94,7 +94,7 @@ handlers, configured in `settings/ldap.ini` and `settings/textfile.ini`).
 - Extranets: the same tools pointed at partners, customers, dealers and suppliers.
 - Member sites: registration from the public, members-only content and events.
 - Security: access reviews, accounts and passwords, GDPR basics.
-- Reliability: keeping the intranet available every working day.
+- [Reliability](../reliability/README.md): keeping the intranet available every working day.
 - Costs, including the worked example for an intranet.
 - Public bodies: Governments start here.
 

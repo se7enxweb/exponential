@@ -94,7 +94,7 @@ consent system of its own ([cjw_newsletter, The features of 4.2.0](../../../feat
 ## Neighbouring sections
 
 - Members: member sites often send a members' newsletter.
-- Stores: promoting a store, including by newsletter.
+- [Stores](../stores/README.md): promoting a store, including by newsletter.
 - Security and data protection: GDPR basics and consent for forms.
 - Non-profits and Associations and small groups: newsletters
   for supporters and members.

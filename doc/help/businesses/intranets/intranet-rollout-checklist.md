@@ -88,12 +88,12 @@ invite all staff until every block is ticked.
 
 - [ ] Cronjobs scheduled, including the `frequent` group (workflow, notification, audit)
   ([Cronjobs](../../../guides/cronjobs.md)).
-- [ ] Backups scheduled and one restore tested (Backups that restore).
+- [ ] Backups scheduled and one restore tested ([Backups that restore](../reliability/backups-that-restore.md)).
 - [ ] Audit trail status checked: `./console exp:audit status`
   ([The audit trail](../../../features/6.0/audit-trail.md#try-it-in-two-minutes)).
-- [ ] Update plan agreed (Upgrades without surprises).
+- [ ] Update plan agreed ([Upgrades without surprises](../reliability/upgrades-without-surprises.md)).
 - [ ] Monitoring of the intranet address in place
-  (Health checks and monitoring).
+  ([Health checks and monitoring](../reliability/health-checks-and-monitoring.md)).
 
 ## Phase 7: pilot group
 
