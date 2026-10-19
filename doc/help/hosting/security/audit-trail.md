@@ -32,6 +32,8 @@ guide is [Audit](../../../bc/6.0/audit.md).
 Each record is a line of JSON in a file per channel and day, `var/<site>/log/audit/<channel>-<YYYY-MM-DD>.jsonl`, and
 each line carries the hash of the line before it, so a changed, removed or inserted line shows.
 
+![The audit trail in the administration: who changed what and when, with filters](../../images/hosting/audit-dashboard.webp)
+
 | Channel | Examples | Live / archived (days) |
 |---|---|---|
 | `content` | publish, move, remove, hide, trash, versions, classes | 90 / 730 |
@@ -79,6 +81,8 @@ run for an hour. Scheduling per customer: [Cron jobs](../operations/cron-jobs.md
 ## Verifying the chain
 
 `exp:audit verify` exits with 0 (intact), 1 (broken) or 2 (error), so it fits any monitoring system:
+
+![The audit settings: what is recorded, the archives and the check of the chain](../../images/hosting/audit-settings.webp)
 
 ```bash
 ./console exp:audit verify -q --allow-root-user || <your alert command>

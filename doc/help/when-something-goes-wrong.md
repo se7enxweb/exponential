@@ -33,6 +33,8 @@ An error of the site shows a page such as **Something went wrong on our side**, 
 for example `ERR-0123456789`. The error has already been logged; the reference lets an administrator find exactly
 that moment in the logs.
 
+![Setup, Log files: the digest of recent errors and warnings across the log files](images/help/logs-digest.webp)
+
 1. **Note the reference**, the time, and the address of the page (copy it from the browser's address bar).
 2. **Write down what you did**, step by step, right before the error: which page, which button, what you typed.
 3. Try once more. If it works now, mention that it happened once.
@@ -48,6 +50,8 @@ When your administrator (or you, as one) finds that the problem is in the softwa
 setup, file it publicly so it can be fixed for everyone. The **Report an error** page of the help
 (`exphelp/report` in the administration) guides you through it, fills in a summary of the installation for you and
 opens a new issue with a prepared title and text.
+
+![The Report an error page of the help center: which tracker to use and a prefilled issue with a safe summary of the installation](images/help/report-an-error.webp)
 
 Choose the right tracker:
 

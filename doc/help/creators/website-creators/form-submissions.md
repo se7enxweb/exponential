@@ -13,6 +13,8 @@ This page is for website creators who hand forms over to the people who process 
 information collector form is stored as a **collection** and listed in **Setup > Collected information**
 (`/infocollector/overview`). Full reference: [Collected information](../../../guides/collected-information.md).
 
+![Collected information: the forms of the site and what visitors sent through them](../../images/creators/collected-information.webp)
+
 ## Contents
 
 1. [The overview](#the-overview)

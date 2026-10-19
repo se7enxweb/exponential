@@ -72955,6 +72955,46 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Clear filter</source>
         <translation>Filtrum purgare</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Duae viae aedificandi</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Duae viae situm cum Exponential aedificandi: quomodo differant et quomodo eligas.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Negotia</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Res publicae</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Situm societatis tuae in Exponential age: quid negotio praebeat, sumptus et auxilium, hospitium, securitas et socii eligendi.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential in re publica: accessibilitas, secretum et securitas, fons apertus et emptio publica, hospitium et cura diuturna.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential pro negotiis</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Res publica</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential pro societatibus et institutis: quid praebeat, sumptus, auxilium, hospitium, securitas et opus cum sociis.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential pro civitatibus et corporibus publicis: accessibilitas, secretum, securitas, fons apertus, emptio publica et cura diuturna.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

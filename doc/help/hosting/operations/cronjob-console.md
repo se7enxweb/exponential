@@ -32,6 +32,8 @@ reference is [Cronjobs console](../../../features/6.0/cronjobs-console.md). What
 
 **Setup > Cronjobs** (`/setup/cronjobs`) shows one card or row per part:
 
+![Setup, Cronjobs: the cronjob parts with their scripts, last run and the buttons to run or pause them](../../images/hosting/cronjobs-console.webp)
+
 - whether the crontab runs it, its schedule in words, its next and last run;
 - the shell command that runs it, with a **Copy** button;
 - its scripts, with what each one does (from the script's `@description`);
