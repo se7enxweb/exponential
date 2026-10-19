@@ -13,6 +13,8 @@ This runbook is for administrators and security officers when a staff account ma
 password, sign-ins from unknown places, an alert such as `brute_force_user` or `admin_role_granted`, or changes the
 owner did not make. Start with [Incident response basics](incident-response-basics.md).
 
+![Session administration: who signed in within the last hour, day and session lifetime](../../../images/government/gov-sessions.webp)
+
 ## Contents
 1. [Contain the account](#contain-the-account)
 2. [What did it do?](#what-did-it-do)

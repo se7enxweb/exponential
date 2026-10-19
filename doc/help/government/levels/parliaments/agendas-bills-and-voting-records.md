@@ -15,6 +15,8 @@ describes how to publish the three core parts of the record with the classes of
 [Structure, sections and roles for parliaments](structure-sections-and-roles.md). Every product feature named is
 documented on the page linked next to it.
 
+![The Layouts dashboard, where pages such as an agenda are built from blocks](../../../images/government/gov-layouts.webp)
+
 ## Contents
 
 1. [Agendas](#agendas)

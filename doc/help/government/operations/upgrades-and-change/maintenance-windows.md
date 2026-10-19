@@ -14,6 +14,8 @@ migration, a large import. Exponential's maintenance mode answers every visitor 
 header while you work. The tool is described in [Maintenance mode](../../../../guides/maintenance-mode.md); this page
 covers planning and communication.
 
+![Setup, Maintenance: plan a maintenance window and preview the page visitors will see](../../../images/government/gov-maintenance.webp)
+
 ## Contents
 1. [Before the window](#before-the-window)
 2. [Opening the window](#opening-the-window)

@@ -14,6 +14,8 @@ and security, and they contain personal data; their retention is a balance your 
 removes them automatically according to settings per channel
 ([4.3 Retention](../../../bc/6.0/audit.md#43-retention)).
 
+![The audit settings: index, pseudonymised after and kept in the index, keys, sinks and archive formats](../../images/government/gov-audit-settings.webp)
+
 > **Note** This page describes features and common practice; it is not legal advice. Check the law that applies to
 > your organization with your legal counsel.
 

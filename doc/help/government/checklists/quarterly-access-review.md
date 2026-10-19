@@ -13,6 +13,10 @@ This checklist is for the site administrator and the site owner of a public body
 and leave; their access must follow. The pages and commands come from [Roles, policies and unactivated users](../../../guides/roles-and-policies.md),
 [Check user accounts](../../../features/6.0/user-hygiene.md) and [Security and audit](../../../guides/security-and-audit.md).
 
+![Check user accounts: never signed in, not seen for 180 days, disabled and locked accounts, the starting point of an access review](../../images/government/gov-access-review.webp)
+
+![The roles of the installation with their policies and assignments](../../images/government/gov-roles.webp)
+
 ## Contents
 
 1. [Prepare](#prepare)

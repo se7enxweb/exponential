@@ -13,6 +13,10 @@ This page is for data protection officers and administrators who answer access r
 exports for mail preferences and audit records; the rest is collected through separate admin tools, because there is
 no single "export all my data" function ([Privacy standards: Known gaps](../../../standards/privacy.md#known-gaps)).
 
+![Collected information: what visitors sent through forms, to find for a request for access](../../images/government/gov-forms.webp)
+
+![E-mail preferences: the consent log and the suppression list a request for access may touch](../../images/government/gov-mail-consent.webp)
+
 > **Note** This page describes features and common practice; it is not legal advice. Check the law that applies to
 > your organization with your legal counsel.
 

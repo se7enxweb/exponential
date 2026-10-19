@@ -14,6 +14,8 @@ information does not stay online. Exponential has **no built-in review-date fiel
 are object states, date fields that cronjobs act on, and fetches; this page shows how to combine them. Sources:
 [Object states](../../../../guides/object-states.md), `settings/content.ini` and the cronjobs in `cronjobs/`.
 
+![Object state groups and their states, used for review stages](../../../images/government/gov-states.webp)
+
 ## Contents
 1. [What exists](#what-exists)
 2. [Pattern: a "Review" state group](#pattern-a-review-state-group)

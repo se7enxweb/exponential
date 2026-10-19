@@ -13,6 +13,10 @@ This page answers the support questions public bodies ask about Exponential. The
 [Getting support](../../project/getting-support.md), [Support levels and response times](../../partners/support-levels-and-response-times.md)
 and `SECURITY.md`.
 
+![The help center in the administration, with the help for governments among the audiences](../../images/government/gov-help.webp)
+
+![Report an error: where each kind of problem goes and a safe summary of the installation](../../images/government/gov-report.webp)
+
 ## Contents
 
 1. [Who supports Exponential?](#who-supports-exponential)
