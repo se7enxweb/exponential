@@ -13,6 +13,8 @@ This page is for owners and managers of businesses that serve people in the Euro
 under the General Data Protection Regulation (GDPR). It gives the outline of the regulation in plain words and
 shows, for each part, which features of Exponential help and what you must still do yourself.
 
+![Collected information: what visitors sent through forms](../../images/help/bu-forms.webp)
+
 > **Warning**
 > This page is basics, not legal advice. It does not say whether your site complies. Read the regulation text,
 > Regulation (EU) 2016/679, in the official journal (<https://eur-lex.europa.eu/eli/reg/2016/679/oj>), and take

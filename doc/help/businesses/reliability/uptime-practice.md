@@ -15,6 +15,8 @@ software: the commands and pages come with Exponential. The technical detail is 
 [Operating a site](../../../guides/operating-a-site.md) and the
 [hosting operations pages](../../hosting/operations/README.md).
 
+![System information, the first page to look at](../../images/help/bu-uptime.webp)
+
 ## Contents
 
 1. [Availability is a habit](#availability-is-a-habit)

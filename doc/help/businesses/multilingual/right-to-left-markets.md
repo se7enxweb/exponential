@@ -15,6 +15,8 @@ to build, and what a native reader must check before launch. The technical guide
 [Right-to-left sites](../../creators/website-creators/right-to-left-sites.md) for site builders and
 [Right-to-left languages in the administration](../../../features/6.0/right-to-left.md).
 
+![Interface languages of the administration](../../images/help/bu-rtl.webp)
+
 ## Contents
 
 1. [Which languages](#which-languages)

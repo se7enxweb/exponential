@@ -33,6 +33,8 @@ address or a file path, and hardened the administration's search so that malform
 break it ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration)). The
 help system has its own instant search.
 
+![The search of the administration](../images/help/pr-search.webp)
+
 ## What is new, and when
 
 All in the 6.0.15 line, which is in development and not released.

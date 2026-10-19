@@ -13,6 +13,8 @@ This page is for intranet owners and administrators who decide who may read and 
 explains the three pieces Exponential uses (user groups, sections and roles), shows the pattern for departments that
 each keep their own pages, and links to the guides with every click.
 
+![Roles, one per department, limited by section](../../images/help/bu-dept-sections.webp)
+
 ## Contents
 
 1. [Three pieces, three questions](#three-pieces-three-questions)

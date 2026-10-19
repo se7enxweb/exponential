@@ -30,6 +30,10 @@ operating system; the choice follows the user from browser to browser. Printed p
 colors. It uses system fonts only, downloads none, and its styles live in shared stylesheets with color tokens that
 tests check for contrast in light and dark mode.
 
+![The admin4 administration in the light mode](../images/help/pr-admin4-light.webp)
+
+![The same screen in the dark mode](../images/help/pr-admin4-dark.webp)
+
 ## What is new, and when
 
 | What | When | Source |

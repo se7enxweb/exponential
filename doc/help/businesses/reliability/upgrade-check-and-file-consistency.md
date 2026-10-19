@@ -14,6 +14,8 @@ for the administrator who runs the checks. It explains what the upgrade check co
 business, and when to run it. The full guide is [The upgrade check](../../../guides/upgrade-check.md); the manifest
 behind it is described in [File consistency check](../../../features/6.0/file-consistency-check.md).
 
+![The upgrade check with the file and database consistency checks](../../images/help/bu-upgrade.webp)
+
 ## Contents
 
 1. [What it proves](#what-it-proves)

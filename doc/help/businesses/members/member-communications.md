@@ -14,6 +14,8 @@ stop hearing from you with one click. Exponential gives you three channels and o
 what they get. The newsletter system is covered in depth in the [Newsletters](../newsletters/README.md) section; this
 page shows how the pieces fit a member site.
 
+![The newsletter dashboard](../../images/help/bu-newsletter.webp)
+
 ## Contents
 
 1. [The channels](#the-channels)

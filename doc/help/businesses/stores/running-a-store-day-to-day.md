@@ -13,6 +13,8 @@ This page is for shop managers and owners after launch. It gives routines for ev
 nothing is forgotten when the store gets busy or when someone is on holiday. Adapt the lists to your store and keep
 them where the team can see them.
 
+![The Store dashboard](../../images/help/bu-store.webp)
+
 ## Contents
 
 1. [Every day](#every-day)
