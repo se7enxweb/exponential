@@ -37,10 +37,10 @@ theme) that it changes. When the original is fixed upstream, your copy keeps the
 
 The fewer templates you copy, the less there is to compare. Prefer overriding one template for one class over
 copying general ones, and use the design cascade instead of copies where you can
-(The design cascade).
+([The design cascade](../theme-design/the-design-cascade.md)).
 
 ## Related pages
 
 - [Upgrade testing, step by step](upgrade-test-step-by-step.md)
-- Override basics
+- [Override basics](../templates/override-ini-basics.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

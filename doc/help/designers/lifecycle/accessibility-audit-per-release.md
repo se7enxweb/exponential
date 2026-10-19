@@ -11,16 +11,16 @@ type: help
 
 This page is for designers who maintain a theme. Accessibility regresses quietly: a new color, a new icon link without
 a name. A short audit per release catches it. How to design accessibly is explained in
-Accessibility basics for themes and
-Checklist: accessibility.
+[Accessibility basics for themes](../theme-design/accessibility-basics-for-themes.md) and
+[Checklist: accessibility](../theme-design/checklist-accessibility.md).
 
 ## The routine
 
 1. **Automated check** with axe (browser extension or a headless run) on every page of your page list, at 1440 px,
    960 px at 200% zoom, and 375 px, in light and dark mode. Target: no serious or critical issues.
 2. **Keyboard walk**: tab through the front page, an article and a form. Focus is always visible; nothing traps it.
-3. **Zoom**: at 200% the content reflows without horizontal scrolling (Testing at zoom levels).
-4. **Contrast** of new colors: text at least 4.5:1 (Color contrast).
+3. **Zoom**: at 200% the content reflows without horizontal scrolling ([Testing at zoom levels](../theme-design/testing-at-zoom-levels.md)).
+4. **Contrast** of new colors: text at least 4.5:1 ([Color contrast](../theme-design/color-contrast.md)).
 5. **Names**: every link and button has an accessible name, every image a suitable alt text.
 
 ## Record and fix

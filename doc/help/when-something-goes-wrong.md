@@ -93,6 +93,13 @@ file `SECURITY.md` at the root of the installation.
 
 For questions that are not bugs ("how do I ...?"), the community is the right place: the
 [Exponential community forums](https://share.exponential.earth/forums), the
-[Telegram community chat](https://t.me/exponentialcms), and the
-[Exponential documentation](https://exponential.doc.exponential.earth/Exponential). The other help pages may already
-have the answer: see [Help for editors and users](README.md).
+[Telegram community chat](https://t.me/exponentialcms), the [Discord server](https://discord.gg/zXzGMgfzej) and the
+[Slack workspace](https://exponentialcms.slack.com/), all free. Before you ask, look in the
+[Exponential documentation](https://exponential.doc.exponential.earth/Exponential), on
+[eZpedia](https://ezpedia.exponential.earth/) and in the [articles on Share Exponential](https://share.exponential.earth/learn).
+The other help pages may already have the answer: see [Help for editors and users](README.md).
+
+Free help depends on the time people give, so nobody promises an answer time. When you cannot wait, the project's
+[support page](https://exponential.earth/support) recommends paid support from 7x, the company that maintains
+Exponential ([se7enx.com/services](https://se7enx.com/services)). Both kinds of support are explained on
+[Getting support](project/getting-support.md).

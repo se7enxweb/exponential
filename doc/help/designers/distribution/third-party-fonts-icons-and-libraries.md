@@ -35,7 +35,7 @@ is not legal advice.
 
 Load fonts, icons and scripts from the theme's own design folder. A CDN adds a third party to every visit (a privacy
 question for visitors) and needs extra entries in a Content Security Policy; the Exponential administration's policy
-allows only `'self'` by default. See External resources and CDNs.
+allows only `'self'` by default. See [External resources and CDNs](../theme-design/external-resources-and-cdns.md).
 
 ## Step by step
 
@@ -48,5 +48,5 @@ allows only `'self'` by default. See External resources and CDNs.
 ## Related pages
 
 - [Creative Commons for images](creative-commons-for-images.md)
-- Fonts in a design
+- [Fonts in a design](../theme-design/fonts-in-a-design.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

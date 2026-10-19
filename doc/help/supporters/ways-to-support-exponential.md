@@ -47,4 +47,5 @@ dependable time. If you can, combine your contribution with a sponsorship of 7x,
 - [Supporters: start here](supporters-start-here.md)
 - [Recognition for supporters](recognition-for-supporters.md)
 - [Supporter FAQ](supporter-faq.md)
+- [Give and donate](../project/give-and-donate.md): the ways to give on exponential.earth and where each link goes
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -61,6 +61,6 @@ starter siteaccess, so the forms of the theme do not change any other site of th
 
 ## Related pages
 
-- Designs in multisite
+- [Designs in multisite](../theme-design/designs-in-multisite.md)
 - [Settings files in an extension](settings-files-in-an-extension.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

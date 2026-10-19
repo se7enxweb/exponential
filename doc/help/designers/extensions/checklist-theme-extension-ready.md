@@ -36,10 +36,10 @@ This page is for designers about to release or hand over a theme. Copy the list 
 
 ## Design quality
 
-- [ ] Accessibility checklist passed (Checklist: accessibility).
-- [ ] No inline CSS or JavaScript; the CSP checklist passed (Checklist: CSP).
-- [ ] Light and dark mode, 200% zoom and a phone width checked (Checklist: dark mode).
-- [ ] Templates escape output (Checklist: code review for templates).
+- [ ] Accessibility checklist passed ([Checklist: accessibility](../theme-design/checklist-accessibility.md)).
+- [ ] No inline CSS or JavaScript; the CSP checklist passed ([Checklist: CSP](../theme-design/checklist-csp.md)).
+- [ ] Light and dark mode, 200% zoom and a phone width checked ([Checklist: dark mode](../theme-design/checklist-dark-mode.md)).
+- [ ] Templates escape output ([Checklist: code review for templates](../theme-design/checklist-code-review-for-templates.md)).
 
 ## Repository
 
@@ -51,5 +51,5 @@ When every box is ticked, continue with [Checklist: before you publish](../distr
 ## Related pages
 
 - [Troubleshooting theme extensions](troubleshooting-theme-extensions.md)
-- Checklist: theme launch
+- [Checklist: theme launch](../theme-design/checklist-theme-launch.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
