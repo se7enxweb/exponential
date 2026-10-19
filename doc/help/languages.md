@@ -23,6 +23,8 @@ On an item's page, the line under the buttons shows a small badge per language o
 **EN**, is a translation that exists; a dashed badge, such as **DE**, is one that does not exist yet. Point at a
 badge to read it, for example *English (American) – main language* or *Translate into German*.
 
+![The Translations tab of an article: the existing translations with their locale and main language, and the missing ones](images/languages/translations-tab.webp)
+
 The **Translations** tab of the item lists its translations in full.
 
 ## Translate an item
@@ -33,6 +35,8 @@ The **Translations** tab of the item lists its translations in full.
 3. If the page asks, choose the language under **New translation** and, under **Translate based on**, the existing
    translation to start from (its text is copied into the form), or **None** for empty fields.
 4. Translate the fields and press **Send for publishing**.
+
+![The language list next to Edit, where you choose the language to edit or translate into, outlined](images/languages/translation-badges.webp)
 
 To change an existing translation, choose that language in the list next to **Edit**, then press **Edit**. The edit
 form names the language it is editing next to the title.
@@ -52,6 +56,10 @@ cannot remove the main language. Ask an administrator if you are not sure.
 ## The language of the administration
 
 The right column has the box **Interface** with the list **Interface language**.
+
+![The Interface box in the right column with the Interface language list and the Apply button](images/languages/interface-language.webp)
+
+![Setup, Interface languages: every locale of the administration, what it shows and how complete its translation is](images/languages/setup-languages.webp)
 
 1. Open the list. It shows the most used languages first, in groups, then every language from A to Z. Each entry
    shows the language's own name, its name in the current interface language, and how complete its translation is,

@@ -13,6 +13,8 @@ This page is for website creators who create or adapt the content classes of a s
 the class editor, the settings of a class and of each attribute, and which changes are safe once the site holds
 content.
 
+![Setup, Classes: the class groups with the number of classes in each](../../images/creators/classes-groups.webp)
+
 ## Contents
 
 1. [Where classes live](#where-classes-live)

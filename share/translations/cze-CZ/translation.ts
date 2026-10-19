@@ -74463,5 +74463,69 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Projekt Exponential: co to je, jeho licence, plán vývoje, podpora, kanály komunity a jak přispět a darovat.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dva způsoby tvorby</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dva způsoby, jak vytvořit web s Exponential: čím se liší a jak si vybrat.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Firmy</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Státní správa</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Provozujte web své organizace na Exponential: co nabízí firmám, náklady a podpora, hosting, bezpečnost a výběr partnerů.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential ve veřejném sektoru: přístupnost, soukromí a bezpečnost, open source a veřejné zakázky, hosting a dlouhodobá péče.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential pro firmy</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Veřejný sektor</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential pro firmy a organizace: co nabízí, náklady, podpora, hosting, bezpečnost a spolupráce s partnery.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential pro státní správu a veřejné instituce: přístupnost, soukromí, bezpečnost, open source, veřejné zakázky a dlouhodobá péče.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Vymazat filtr</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Sbalit vše</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Všechny složky jsou zavřené.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Všechny složky jsou otevřené.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Rozbalit vše</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Otevřít nebo zavřít všechny složky</translation>
+    </message>
 </context>
 </TS>

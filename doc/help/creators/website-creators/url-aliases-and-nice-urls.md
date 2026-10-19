@@ -54,6 +54,8 @@ The node's **URL aliases** tab adds more aliases to the node (a short campaign a
 site). Global aliases for module views and wildcards for patterns are in **Setup > URL translator** and
 **Setup > URL wildcards** ([URL wildcards and custom aliases](url-wildcards.md)).
 
+![The Locations tab of an article: the places in the tree where it appears, each with its own address](../../images/creators/locations-tab.webp)
+
 ## Linking in templates
 
 ```text

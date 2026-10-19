@@ -75,10 +75,10 @@ composer show --all se7enxweb/eztags | head -30
 
 A version on Packagist comes from a Git tag. A tag, once Packagist has read it, is never read again, so a version
 number means the same code forever. This is why the projects behind these packages never move a tag and publish a new
-version instead (see Tags and releases are permanent).
+version instead (see [Tags and releases are permanent](../part-7-releasing/tags-are-permanent.md)).
 
 When a newer tag exists on GitHub but Packagist does not show it, the repository's webhook to Packagist is usually
-missing; The Packagist webhook explains how to check.
+missing; [The Packagist webhook](../part-7-releasing/the-packagist-webhook.md) explains how to check.
 
 ## Install one on your development installation
 
@@ -107,6 +107,6 @@ and clear the caches. Some extensions need more (a database table, a content cla
 
 - Previous: [Finding ideas on GitHub](finding-ideas-on-github.md)
 - Next: [Share Exponential (share.exponential.earth)](share-exponential-earth.md)
-- composer.json for an extension
-- Composer and Packagist
+- [composer.json for an extension](../part-3-extension-developer/composer-json-for-extensions.md)
+- [Composer and Packagist](../part-7-releasing/composer-and-packagist.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -11,7 +11,7 @@
    (pages, categories), help_support (the Support Exponential block or false). Every part is left out when its list is
    empty. *}
 {def $help_ctx = 'kernel/exphelp'
-     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing', 'partner', 'advocate', 'designer', 'hosting', 'app-creator', 'website-creator', 'supporter', 'sponsor', 'trainer', 'press' )
+     $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing', 'partner', 'advocate', 'designer', 'hosting', 'app-creator', 'website-creator', 'supporter', 'sponsor', 'trainer', 'press', 'businesses', 'government' )
      $help_audience_meta = hash(
         'editor',    hash( 'icon', 'pencil-square', 'name', 'Editors'|i18n( 'kernel/exphelp' ),        'text', 'Create, edit, translate and publish content: media, layouts, search and the editor.'|i18n( 'kernel/exphelp' ) ),
         'admin',     hash( 'icon', 'gear',          'name', 'Administrators'|i18n( 'kernel/exphelp' ), 'text', 'Run the installation: sites, users and roles, caches, logs, security and the system\'s health.'|i18n( 'kernel/exphelp' ) ),
@@ -29,6 +29,8 @@
         'website-creator', hash( 'icon', 'globe', 'name', 'Website creators'|i18n( 'kernel/exphelp' ), 'text', 'Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.'|i18n( 'kernel/exphelp' ) ),
         'supporter', hash( 'icon', 'star', 'name', 'Supporters'|i18n( 'kernel/exphelp' ), 'text', 'Help the project grow: contribute code, documentation, translations and testing, and share what you build.'|i18n( 'kernel/exphelp' ) ),
         'sponsor', hash( 'icon', 'piggy-bank', 'name', 'Sponsors'|i18n( 'kernel/exphelp' ), 'text', 'Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.'|i18n( 'kernel/exphelp' ) ),
+        'government', hash( 'icon', 'bank', 'name', 'Governments'|i18n( 'kernel/exphelp' ), 'text', 'Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.'|i18n( 'kernel/exphelp' ) ),
+        'businesses', hash( 'icon', 'briefcase', 'name', 'Businesses'|i18n( 'kernel/exphelp' ), 'text', 'Run your organization\'s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.'|i18n( 'kernel/exphelp' ) ),
         'press', hash( 'icon', 'megaphone', 'name', 'Press, media and influencers'|i18n( 'kernel/exphelp' ), 'text', 'Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.'|i18n( 'kernel/exphelp' ) ),
         'trainer', hash( 'icon', 'easel', 'name', 'Trainers'|i18n( 'kernel/exphelp' ), 'text', 'Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.'|i18n( 'kernel/exphelp' ) ) )
      $help_search_action = cond( is_set( $help_search_url ), $help_search_url, '/exphelp/search' )

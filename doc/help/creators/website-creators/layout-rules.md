@@ -32,6 +32,8 @@ Source: [Rules](../../../bc/6.0/LAYOUTS.md#rules-deciding-which-layout-a-page-ge
 | Priority | higher wins when several rules match |
 | Enabled | a switch to park a rule without deleting it |
 
+![The Layouts tab of a page: which layout it uses, with Preview, Edit layout, Map layout and New layout](../../images/creators/item-layouts-tab.webp)
+
 ## Targets
 
 | Type | Matches when |

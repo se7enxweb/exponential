@@ -13,6 +13,8 @@ This page is for website creators who add search to a site. Exponential has a bu
 index in the database; it is enough for most sites. Large sites or sites that need facets and relevance tuning move to
 Solr ([Search with ezfind and Solr](search-with-ezfind-and-solr.md)).
 
+![Search statistics: what visitors searched for and how many results they got](../../images/creators/search-statistics.webp)
+
 ## Contents
 
 1. [The built-in engine](#the-built-in-engine)

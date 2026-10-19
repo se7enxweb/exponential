@@ -14,6 +14,8 @@ dedicated machine. It answers: which `php.ini` values the installer insists on, 
 which PHP functions features of Exponential call (and what stops working when a host disables them), and where the
 settings live when Velocity or FrankenPHP runs PHP instead of PHP-FPM.
 
+![Setup, Ini settings: read the INI settings of a siteaccess and where each value comes from](../../images/hosting/ini-settings.webp)
+
 ## Contents
 
 1. [What the installer checks](#what-the-installer-checks)

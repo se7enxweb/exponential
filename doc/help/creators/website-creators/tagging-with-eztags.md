@@ -14,6 +14,8 @@ administration as **Tags**) adds a tag tree you manage, a tags field for classes
 that lists everything tagged with it. It does more than the kernel's `ezkeyword` datatype: a hierarchy, synonyms,
 and closed or open vocabularies ([eztags](../../../features/6.0/extensions/eztags.md)).
 
+![The Tags dashboard: the tag tree and the latest tags](../../images/creators/tags-dashboard.webp)
+
 ## Contents
 
 1. [When to use tags](#when-to-use-tags)
