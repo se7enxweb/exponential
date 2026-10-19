@@ -12,7 +12,7 @@
  *  CA-04  the search counts and filters them and the search view accepts them; every new category has an introduction
  *  CA-05  dashboard, search page and viewer pills of both designs (the same files) name each audience; help.css
  *         colors each one from tokens only; no inline CSS or script
- *  CA-06  every new string is in the eleven complete catalogues under kernel/exphelp
+ *  CA-06  every new string is in the complete catalogues (twenty-one) under kernel/exphelp
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php
  *
@@ -47,8 +47,9 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
     const CATEGORIES = array( 'partnership', 'advocacy', 'theme-design', 'templates', 'extension-development', 'theme-extensions',
                               'theme-distribution', 'theme-sales', 'theme-lifecycle', 'hosting', 'app-creation',
                               'website-creation', 'supporting', 'sponsorship', 'training', 'press-media' );
-    const CATALOGUES = array( 'ara-SA', 'eng-US', 'esl-ES', 'esl-MX', 'fre-FR', 'ger-DE', 'heb-IL', 'lat-VA', 'tlh-QO',
-                              'ukr-UA', 'untranslated' );
+    const CATALOGUES = array( 'ara-SA', 'cro-HR', 'cze-CZ', 'dan-DK', 'dut-NL', 'eng-US', 'esl-ES', 'esl-MX', 'fre-FR', 'ger-DE',
+                              'heb-IL', 'ita-IT', 'lat-VA', 'nor-NO', 'pol-PL', 'por-BR', 'swe-SE', 'tlh-QO', 'tur-TR', 'ukr-UA',
+                              'untranslated' );
 
     private static function root()
     {

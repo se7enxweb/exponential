@@ -118,5 +118,5 @@ The shipped policy, when you turn it on for a site, allows script files and styl
 - [The pagelayout: your site's frame](the-pagelayout.md)
 - [ezjscore](../../../features/6.0/extensions/ezjscore.md)
 - [jQuery 4 and the removal of YUI](../../../features/6.0/jquery4-and-yui-removal.md)
-- Content Security Policy for your code
+- [Content Security Policy for your code](../app-creators/content-security-policy.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

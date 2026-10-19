@@ -332,13 +332,13 @@ class expHelpCommitFeed
         if ( $file === null )
             return false;
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0777, true ) )
+        if ( !is_dir( $dir ) && !self::makeDir( $dir ) )
             return false;
         $temporary = $file . '.' . getmypid() . '.' . mt_rand() . '.tmp';
         $content = "<?php\n// The latest commits for the help (expHelpCommitFeed). Generated, safe to remove.\nreturn " . var_export( $cache, true ) . ";\n";
         if ( @file_put_contents( $temporary, $content, LOCK_EX ) === false )
             return false;
-        @chmod( $temporary, 0666 & ~umask() );
+        @chmod( $temporary, eZFile::fileMode( 0666 ) );
         if ( !@rename( $temporary, $file ) )
         {
             @unlink( $temporary );
@@ -358,7 +358,7 @@ class expHelpCommitFeed
         $dir = $this->options['cacheDir'];
         if ( $dir === null )
             return $this->fetcher !== null;
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0777, true ) )
+        if ( !is_dir( $dir ) && !self::makeDir( $dir ) )
             return false;
         $handle = @fopen( $dir . '/' . self::LOCK_FILE, 'c' );
         if ( !$handle )
@@ -380,6 +380,12 @@ class expHelpCommitFeed
             fclose( $this->lockHandle );
             $this->lockHandle = null;
         }
+    }
+
+    /** Creates a directory with the installation's directory mode (eZDir::dirMode()) */
+    protected static function makeDir( $dir )
+    {
+        return (bool)eZDir::mkdir( $dir, false, true );
     }
 
     /** @return string|null */

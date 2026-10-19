@@ -65,11 +65,11 @@ The notify URL must be reachable from the internet and must not require a login.
 A gateway is a class extending the kernel's gateway classes (`eZPaymentGateway`, or `eZRedirectGateway` for redirect
 providers), registered in `paymentgateways.ini` of an extension, plus a module view for the provider's callback. The
 `doc/shop/examples/paypal/` pages walk through one. This is application creator work: see
-Writing a workflow event type.
+[Writing a workflow event type](../app-creators/writing-a-workflow-event-type.md).
 
 ## Related pages
 
 - [Running a shop: overview](shop-overview.md)
 - [Basket, checkout and orders](basket-checkout-and-orders.md)
-- Security for applications
+- [Security for applications](../app-creators/security-for-applications.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
