@@ -112,7 +112,7 @@ switched on in the settings.
 ## Erasure and data requests
 
 - A person can see their history on their preference page and download it.
-- To erase, a person asks the administrator: preferences are removed and the history is anonymised; a record that the
+- To erase, a person asks the administrator: preferences are removed and the history is anonymized; a record that the
   person withdrew is kept without their address, so the site can prove it stopped writing
   ([Your rights](../../../features/6.0/mail-preferences.md#your-rights)).
 - When an erased person had newsletter data, the category handlers remove their newsletter user, interests, SMS data
@@ -136,7 +136,7 @@ How to handle such requests step by step:
 
 - [Newsletters for businesses](README.md)
 - [Lists and subscriptions](lists-and-subscriptions.md)
-- GDPR basics
-- Consent and forms
+- [GDPR basics](../security/gdpr-basics.md)
+- [Consent and forms](../security/consent-and-forms.md)
 - [E-mail preferences: the administrator's guide](../../../guides/mail-preferences-administrator.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

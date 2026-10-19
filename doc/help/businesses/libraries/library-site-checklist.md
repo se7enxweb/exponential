@@ -110,7 +110,7 @@ From [PDF and print exports](pdf-and-print-exports.md) and [Feeds for new acquis
       landmarks, one `h1`, labels, contrast, 200% zoom.
 - [ ] Covers and scans have alternative texts.
 - [ ] Tested with [Testing your site's accessibility](../../creators/website-creators/testing-accessibility.md).
-- [ ] Reader accounts and members-only areas checked (Members).
+- [ ] Reader accounts and members-only areas checked ([Members](../members/README.md)).
 
 ## Launch
 
@@ -127,7 +127,7 @@ From [PDF and print exports](pdf-and-print-exports.md) and [Feeds for new acquis
 - [ ] Content checks run: unreferenced files, broken relations, missing files
       ([Content checks](../../../features/6.0/content-checks.md)).
 - [ ] Feeds opened in a feed reader; stored PDFs regenerated where needed.
-- [ ] Roles reviewed for staff and volunteers who changed (Access reviews).
+- [ ] Roles reviewed for staff and volunteers who changed ([Access reviews](../security/access-reviews.md)).
 
 ## Every year
 
@@ -139,7 +139,7 @@ From [PDF and print exports](pdf-and-print-exports.md) and [Feeds for new acquis
 ## Related pages
 
 - [Libraries and catalogs](README.md)
-- Go-live checklist
-- Annual review checklist
+- [Go-live checklist](../templates/go-live-checklist.md)
+- [Annual review checklist](../templates/annual-review-checklist.md)
 - [Launch checklist](../../creators/website-creators/launch-checklist.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

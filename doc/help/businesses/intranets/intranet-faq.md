@@ -10,7 +10,7 @@ type: help
 # Intranet FAQ
 
 This page is for managers and project leads who need quick answers. Each answer is short and links to the page with
-the details. If your question is not here, the Businesses FAQ covers general questions.
+the details. If your question is not here, the [Businesses FAQ](../businesses-faq.md) covers general questions.
 
 ## Contents
 
@@ -117,17 +117,17 @@ Disable or deactivate their accounts on **Users > Check user accounts**; removin
 the safer first step ([Check user accounts](../../../features/6.0/user-hygiene.md)).
 
 **What does an intranet cost to run?**
-See the worked example for an intranet, whose inputs are example assumptions
+See the [worked example for an intranet](../costs/worked-example-intranet.md), whose inputs are example assumptions
 for you to replace.
 
 **Do staff need an app on their phones?**
 No app is needed to read the intranet; it is a website. The authenticator app is only needed if two-step sign-in with
-app codes is used (Mobile and headless).
+app codes is used ([Mobile and headless](../mobile-and-headless/README.md)).
 
 ## Related pages
 
 - [Intranets](README.md)
 - [Intranet rollout checklist](intranet-rollout-checklist.md)
-- Extranet FAQ
-- Businesses FAQ
+- [Extranet FAQ](../extranets/extranet-faq.md)
+- [Businesses FAQ](../businesses-faq.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

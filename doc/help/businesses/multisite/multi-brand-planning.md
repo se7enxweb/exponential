@@ -125,6 +125,6 @@ The leadership section has a longer sheet with languages and siteaccess details
 - [One installation, many sites](one-installation-many-sites.md)
 - [Sharing content across brands](shared-content-across-brands.md)
 - [Multi-brand checklist](multi-brand-checklist.md)
-- Multilingual planning
+- [Multilingual planning](../multilingual/multilingual-planning.md)
 - [Planning multisite and multilingual projects](../../leadership/multisite-and-multilingual-planning.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
