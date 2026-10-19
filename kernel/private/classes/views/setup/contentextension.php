@@ -102,7 +102,8 @@ class Contentextension extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'wizard_datatypes', \expContentExtensionWizard::datatypes() );
         $tpl->setVariable( 'wizard_groups', \expContentExtensionWizard::groups() );
         $tpl->setVariable( 'wizard_attributes', $settings['attributes'] );
-        $tpl->setVariable( 'wizard_problems', $problems );
+        // Shown once the form has been sent: a first visit is not a list of errors
+        $tpl->setVariable( 'wizard_problems', \expExtensionWizard::shownProblems( $problems, $http->hasPostVariable( 'Submitted' ) ) );
         $tpl->setVariable( 'wizard_feedback', $feedback );
         $tpl->setVariable( 'wizard_files', $preview );
         $tpl->setVariable( 'wizard_file_count', count( $files ) );
