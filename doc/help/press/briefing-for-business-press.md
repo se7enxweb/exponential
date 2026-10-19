@@ -27,7 +27,7 @@ most business numbers about Exponential are not published. Saying so plainly is 
 | | 7x | The Exponential Foundation |
 |---|---|---|
 | Form | A company: "a responsive North American web design, support, development and website hosting company" | "a 501(c)(3) Non-Profit Corporation founded in Seattle, Washington, USA", on 19 March 2026 |
-| Role | "Leads development, support, hosting and services"; "the current leader in contributions" | "Operates the project; funds and directs it" |
+| Role | Leads development, support, hosting and services; named by the Foundation "the current leader in contributions" | Operates the project; funds and directs it |
 | History | Grew from Brookins Consulting in three stages: the idea in 2014, the project's start in 2022, the launch in December 2023 | Founded in 2026 |
 | Website | [se7enx.com](https://se7enx.com/) | [foundation.exponential.earth](https://foundation.exponential.earth/) |
 
