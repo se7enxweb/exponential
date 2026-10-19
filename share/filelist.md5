@@ -1217,7 +1217,7 @@ cae0a530c33fe61cce6e5ef8e17e6397  design/admin4/templates/content/translations.t
 2717e66ac3198bb58afe5fc47b8e8f9f  design/admin4/templates/content/trash.tpl
 d25e984e2699170bf8c0ca5783fb8984  design/admin4/templates/content/upload.tpl
 38726927dee8a4db82d729a58882095d  design/admin4/templates/content/upload_related.tpl
-efce29b2ad1d52c9354abd8a7053a1ee  design/admin4/templates/content/urlalias.tpl
+da09e0ab4e45230ab5565095ace11fa1  design/admin4/templates/content/urlalias.tpl
 4be2c23e81477c7c1698e4fef465f170  design/admin4/templates/content/urlalias_global.tpl
 1e33f32de7c8dc1f1412f2885fc1a8e5  design/admin4/templates/content/urlalias_wildcard.tpl
 e5dd010d0f29093a8724fe4ca4d17420  design/admin4/templates/content/view/versionview.tpl
@@ -1331,7 +1331,7 @@ b4edd9448fc55ecf35440fdfbb9f1ead  design/admin4/templates/notification/runfilter
 e1d45620896c5ba39be7a794fd13df0c  design/admin4/templates/oauthadmin/list.tpl
 37e7a408f54ffd54b22b4a9c48ba8087  design/admin4/templates/oauthadmin/parts/tabs.tpl
 6dd726077493b46540ca3407e579bd00  design/admin4/templates/oauthadmin/view.tpl
-164f4cb53e7b0fc90b429f2bce02d69b  design/admin4/templates/ordering.tpl
+690ceb7b0291ac0eb0dd4c13a5c19231  design/admin4/templates/ordering.tpl
 68696f04eb30d7d0e0b76e4b403f08ea  design/admin4/templates/package/compare.tpl
 8ebffdba558576340a97e4fe18d4b656  design/admin4/templates/package/compare_import.tpl
 414aeebe08f4941b25a9dcfc3f1c0553  design/admin4/templates/package/confirmremove.tpl
