@@ -12,7 +12,7 @@
      $help_l = $help_landing
      $help_i18n = cond( is_set( $help_i18n_json ), $help_i18n_json, '' )
      $help_search_action = cond( is_set( $help_search_url ), $help_search_url, '/exphelp/search' )}
-<div class="a4-page a4-help a4-help-landing is-{$help_l.id|wash}" data-exphelp{if $help_i18n|ne( '' )} data-exphelp-i18n="{$help_i18n|wash}"{/if}>
+<div class="a4-page a4-help-frame a4-help-landing is-{$help_l.id|wash}" data-exphelp{if $help_i18n|ne( '' )} data-exphelp-i18n="{$help_i18n|wash}"{/if}>
 {foreach $help_l.blocks as $help_block}
 {switch match=$help_block}
 

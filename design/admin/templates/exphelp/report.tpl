@@ -25,7 +25,7 @@
      $help_tracker_icons = hash( 'software', 'code-square', 'velocity', 'lightning', 'community', 'people' )}
 {if and( $help_target|not, is_set( $help_trackers.software ) )}{set $help_target = $help_trackers.software}{/if}
 {if and( $help_target, is_set( $help_issue_urls[$help_target.key] ) )}{set $help_target_url = $help_issue_urls[$help_target.key]}{/if}
-<div class="a4-page a4-help a4-help-reportpage" data-exphelp{if $help_i18n|ne( '' )} data-exphelp-i18n="{$help_i18n|wash}"{/if}>
+<div class="a4-page a4-help-frame a4-help-reportpage" data-exphelp{if $help_i18n|ne( '' )} data-exphelp-i18n="{$help_i18n|wash}"{/if}>
 
     {* ---- Hero ---- *}
     <section class="a4-help-hero" aria-labelledby="help-report-title">

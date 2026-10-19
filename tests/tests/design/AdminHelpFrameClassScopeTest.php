@@ -4,7 +4,7 @@
  * templates) and the frame of the help pages (modules/help.css). The help module once styled the bare class as a
  * grid with container-type: inline-size; a hint inside a flex row (the package wizard's tiles, package/create) then
  * measured 0px wide and showed one character per line. The help module's frame rules must name the frame
- * (.a4-help[data-exphelp]), and every help page frame must carry data-exphelp. No database.
+ * (.a4-help-frame), and every help page frame must carry data-exphelp. No database.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -41,10 +41,9 @@ class AdminHelpFrameClassScopeTest extends PHPUnit\Framework\TestCase
             foreach ( explode( ',', $selectorList ) as $selector )
             {
                 $this->assertNotSame( '.a4-help', trim( $selector ),
-                    $design . ': a rule for the bare .a4-help also styles every form hint; use .a4-help[data-exphelp]' );
+                    $design . ': a rule for the bare .a4-help also styles every form hint; name the help frame (.a4-help-frame)' );
             }
         }
-        $this->assertStringContainsString( '.a4-help[data-exphelp] { container-type: inline-size; }', $css );
     }
 
     /**

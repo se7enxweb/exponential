@@ -13,10 +13,7 @@
 
 /* ---- page frame and shared parts ----------------------------------------------------------------------------- */
 
-/* The help pages' frame (the element with data-exphelp). Not .a4-help alone: that is also the shared class of the hint
-   text under a form field (components.css), and a grid with inline-size containment there measured 0px wide in a
-   flex row, one character per line (the package wizard's tiles, fixed in 6.0.15). */
-.a4-help[data-exphelp] {
+.a4-help-frame {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--a4-space-5);
@@ -394,7 +391,7 @@
 
 /* ---- dashboard: audience cards------------------------------------------------------------------------------- */
 
-.a4-help[data-exphelp] { container-type: inline-size; }
+.a4-help-frame { container-type: inline-size; }
 .a4-help-audiences {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -721,7 +718,7 @@
 /* ---- small windows ------------------------------------------------------------------------------------------- */
 
 @media (max-width: 600px) {
-  .a4-help[data-exphelp] { gap: var(--a4-space-4); }
+  .a4-help-frame { gap: var(--a4-space-4); }
   .a4-help-hero { padding: var(--a4-space-5) var(--a4-space-4); }
   .a4-help-hero h1 { font-size: var(--a4-text-2xl); }
   .a4-help-hero-sub { font-size: var(--a4-text-m); }
