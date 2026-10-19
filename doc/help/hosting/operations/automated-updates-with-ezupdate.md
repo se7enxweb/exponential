@@ -38,6 +38,8 @@ packages**, `/update/dashboard`) and on the command line. The overview is
 | **Live runs** | updates and installs run in the background, one at a time, with a lock; the page follows Composer's output |
 | **Command line** | the same from `php extension/ezupdate/bin/php/ezupdate.php` |
 
+![Updates and packages: an overview of the installed packages, those with a newer release and the package servers](../../images/hosting/update-dashboard.webp)
+
 > **Note**
 > "Automated" here means the checks, the dry runs and the reporting. `ezupdate` has no schedule of its own that
 > updates a site unattended, and the shipped switches keep updating and installing off until an administrator turns
@@ -88,6 +90,8 @@ whether updates are a service the host performs.
 4. After a successful run, `[JobSettings] AfterRunCommands[]` run: by default
    `bin/php/ezpgenerateautoloads.php --extension` and `bin/php/ezcache.php --clear-tag=ini,template,content`.
 5. The page shows the result: up to date, a summary of what changed, or the exit code of a failed run.
+
+![The installed packages with their version and the newest release available](../../images/hosting/update-installed.webp)
 
 On a site served by PHP-FPM or Velocity, the running processes keep the old classes in memory until they are reloaded.
 Finish an update with a deploy, which reloads or waits for PHP-FPM, restarts Velocity and clears the caches in the

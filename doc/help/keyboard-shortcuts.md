@@ -55,6 +55,8 @@ Move into the tree with `Tab`; then:
 
 With the focus on a tab (**View**, **Details**, **Translations** ...):
 
+![The tabs of an item's page: View, Details, Translations, Locations, Relations, Audit, Intelligence, Tags, Authors, Layouts and Ordering](images/shortcuts/item-tabs.webp)
+
 | Key | What it does |
 |---|---|
 | `→` / `←` | Opens the next / previous tab. |
@@ -76,6 +78,8 @@ When a **Sub items** list is sorted by priority, the grip at the start of each r
 ## The width of the left column
 
 Focus the handle with three dots on the edge of the left column:
+
+![The three buttons at the bottom of the left column that set its width](images/shortcuts/left-column-size-buttons.webp)
 
 | Key | What it does |
 |---|---|

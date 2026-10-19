@@ -19,7 +19,7 @@ input shown, with these variables defined:
      $when = 1760745600}
 ```
 
-The complete list, with the extension each one comes from, is Built-in template operators.
+The complete list, with the extension each one comes from, is [Built-in template operators](../part-8-reference/template-operators-reference.md).
 
 ## Escaping: always
 
@@ -141,6 +141,6 @@ See [Debugging templates](debugging-templates.md).
 
 - Previous: [Fetching content in templates](fetch-for-builders.md)
 - Next: [Debugging templates](debugging-templates.md)
-- Built-in template operators
+- [Built-in template operators](../part-8-reference/template-operators-reference.md)
 - [String template operators](../../../features/6.0/string-template-operators.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

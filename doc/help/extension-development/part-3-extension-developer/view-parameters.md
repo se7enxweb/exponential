@@ -110,6 +110,6 @@ the page does not send the form again.
 
 - Previous: [Modules and views](modules-and-views.md)
 - Next: [Policy functions and access checks](policy-functions-and-access.md)
-- eZHTTPTool: requests, sessions and redirects
+- [eZHTTPTool: requests, sessions and redirects](../part-8-reference/ezhttptool.md)
 - [Security in extensions](security-in-extensions.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

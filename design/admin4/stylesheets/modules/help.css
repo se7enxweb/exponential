@@ -13,7 +13,7 @@
 
 /* ---- page frame and shared parts ----------------------------------------------------------------------------- */
 
-.a4-help {
+.a4-help-frame {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--a4-space-5);
@@ -391,7 +391,7 @@
 
 /* ---- dashboard: audience cards------------------------------------------------------------------------------- */
 
-.a4-help { container-type: inline-size; }
+.a4-help-frame { container-type: inline-size; }
 .a4-help-audiences {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -718,7 +718,7 @@
 /* ---- small windows ------------------------------------------------------------------------------------------- */
 
 @media (max-width: 600px) {
-  .a4-help { gap: var(--a4-space-4); }
+  .a4-help-frame { gap: var(--a4-space-4); }
   .a4-help-hero { padding: var(--a4-space-5) var(--a4-space-4); }
   .a4-help-hero h1 { font-size: var(--a4-text-2xl); }
   .a4-help-hero-sub { font-size: var(--a4-text-m); }

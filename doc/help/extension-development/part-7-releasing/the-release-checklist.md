@@ -59,6 +59,6 @@ each release, and tick it off.
 ## Related pages
 
 - Previous: [The maintenance life cycle](the-maintenance-life-cycle.md)
-- Next: Part 8: Reference of built-in features for extension authors
+- Next: [Part 8: Reference of built-in features for extension authors](../part-8-reference/README.md)
 - [Part 7: Releasing your extension](README.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -188,5 +188,5 @@ functions; see [With RAD: a template operator in five minutes](tutorials/rad-tem
 - Previous: [View results, the path and the pagelayout](view-results-and-the-pagelayout.md)
 - Next: [Fetch functions](fetch-functions.md)
 - [By hand: a template operator](tutorials/by-hand-template-operator.md)
-- Built-in template operators
+- [Built-in template operators](../part-8-reference/template-operators-reference.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

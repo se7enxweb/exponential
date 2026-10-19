@@ -29,6 +29,8 @@ switcher template.
 | Host per language | `example.de`, `de.example.com` | `MatchOrder=host`, `HostMatchMapItems[]=example.de;site_de` |
 | Host and path | `example.com/de` on one host, other hosts elsewhere | `host_uri` with `HostUriMatchMapItems[]` |
 
+![Setup, Languages: the languages content can be written in](../../images/creators/languages-setup.webp)
+
 Paths are simplest (one certificate, one host); hosts suit country domains. The settings are in
 `site.ini [SiteAccessSettings]` ([10.2](../../../install/10-after-installing.md#102-siteaccesses-and-site-addresses)).
 

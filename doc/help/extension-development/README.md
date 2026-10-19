@@ -33,7 +33,7 @@ When a page states a fact, it names the file or the page where the fact comes fr
 | [Part 5: Extending, forking and contributing](part-5-extend-fork-contribute/README.md) | developers, designers | Extending without forking, forking and rebranding ethically, licenses, attribution, pull requests, adopting abandoned extensions, the maintainer path |
 | [Part 6: Theme developers](part-6-theme-developers/README.md) | designers | Themes as design extensions, with the RAD wizard and by hand; assets, the packer, CSP, dark mode, distribution |
 | [Part 7: Releasing your extension](part-7-releasing/README.md) | maintainers | Version numbers, metadata, Composer and Packagist, changelogs, GitHub releases, packages, the release checklist |
-| Part 8: Reference | developers | The kernel classes, APIs, operators, functions, settings and commands an extension author uses most |
+| [Part 8: Reference](part-8-reference/README.md) | developers | The kernel classes, APIs, operators, functions, settings and commands an extension author uses most |
 
 ## Where to start
 
@@ -46,8 +46,8 @@ When a page states a fact, it names the file or the page where the fact comes fr
 | Someone with an old extension to bring up to date | [Part 4](part-4-upgrading/README.md) |
 | About to publish an extension | [Part 7](part-7-releasing/README.md) and [Part 5](part-5-extend-fork-contribute/README.md) |
 
-Reading paths through the book gives complete reading orders for each role, and the
-book index lists every topic from A to Z.
+[Reading paths through the book](reading-paths.md) gives complete reading orders for each role, and the
+[book index](index-of-topics.md) lists every topic from A to Z.
 
 ## Fast: what can I build, and how quickly?
 

@@ -35,6 +35,8 @@ In the edit form, press **Send for publishing**. On most sites the change is on 
 an **approval** for your role or that part of the site, the version becomes **pending** instead and is published when
 someone approves it.
 
+![Send for publishing, outlined, next to Store draft and exit and Discard draft at the top of the edit form](images/publishing/publish-buttons.webp)
+
 To stop without publishing:
 
 - **Store draft and exit** keeps the draft for later;
@@ -46,10 +48,14 @@ To stop without publishing:
 published. Open one to continue it, or remove the ones you no longer need. Removing the draft of a new item also
 removes that new item, which was never published.
 
+![My drafts with one stored draft of an article, its version, language and last change](images/publishing/my-drafts.webp)
+
 ### My pending items
 
 **My pending items** lists the versions you sent for publishing that a workflow still holds and, if you approve
 content, the versions waiting for your approval. Open the approval to read its comments or to approve.
+
+![My pending items, the list of versions that a workflow still holds](images/publishing/my-pending-items.webp)
 
 See [My drafts and my pending items](../guides/drafts-and-pending.md) for every detail.
 
@@ -59,6 +65,8 @@ On the item's page press **Manage versions** (the round button with a clock), or
 edit form's left column. The versions page opens:
 
 ![The versions page of an item](images/versions.webp)
+
+![The Manage versions button, a round button with a clock, outlined on an article's page](images/publishing/versions-button.webp)
 
 - **Overview**: how many versions there are, published, archived and your drafts.
 - **Filter and order**: show all versions or only one status, newest or oldest first.
@@ -83,7 +91,11 @@ content that is not ready, or not needed for a while.
 - In the tree, open the item's menu and choose **Advanced** > **Hide / unhide**.
 - In a **Sub items** list, tick items and choose **More actions** > **Hide selected** or **Unhide selected**.
 
+![The Advanced submenu of an item in the tree with Hide / unhide outlined](images/publishing/tree-menu-hide.webp)
+
 Hidden items are marked in the tree and in lists, and the badge next to the type on the item's page shows its visibility.
+
+![The title of an item's page with its type and the Visible badge outlined](images/publishing/visibility-badge.webp)
 
 ## Remove and restore
 
@@ -97,6 +109,8 @@ trash only when its last location is removed.
 
 **Trash** is at the bottom of the tree in the left column. It lists the removed items with who removed them, when,
 and where they were. Filters narrow the list by who removed them, their type and the date.
+
+![The top of the trash: how many items it holds and the filters Trashed by, Type and Trashed from and to](images/publishing/trash-filters.webp)
 
 - **Restore** puts an item back. If its original place still exists, it goes back there; if that place is in the
   trash too, restore the parent first; otherwise you choose a new place.
