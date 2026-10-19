@@ -131,18 +131,19 @@ administrator `admin` and a generated password, shown once at the end. It is des
 ## 4.3 Site packages: what is installed
 
 The steps install a **site package**: an Exponential package of type `site` (`package.xml` with
-`<type>site</type>`), plus the packages it requires. Packages live in the package repository below
+`<type value="site" />`), plus the packages it requires. Packages live in the package repository below
 `var/storage/packages/`; the vendor directory is set by `settings/package.ini [RepositorySettings] Vendor` (`7x`), so
 an imported package lands in `var/storage/packages/7x/<name>/`.
 
 The package index of this version, `[RepositorySettings] RemotePackagesIndexURL`
 (`https://exponential.packages.exponential.earth/exponential/6.0/6.0.15`, whose `index.xml` lists the packages),
-offers eleven site packages. The ones you are most likely to choose:
+offers twelve site packages. The ones you are most likely to choose:
 
 | Site package | Summary in the index | Notes |
 |---|---|---|
 | `sevenx_multisite` | 7x MultiSite Default Installation | the default of `exp:install --package` and of `exp:kickstarter ini --yes`; requires `sevenx_classes` (the content classes) and `sevenx_multisite_democontent` (the demo content), each `min-version 5.1` |
 | `sevenx_multisite_clean` | 7x MultiSite Default Installation (without demo content) | the same site, empty |
+| `cjw_multisite` | CJW Multisite | the starter site of the CJW Themes Jumper design: an English and a German site with the starter content and its layouts |
 | `sevenx_site`, `sevenx_site_clean` | 7x Simple Website Interface | a simpler site, with or without demo content |
 | `ezwebin_site`, `ezflow_site`, `ezdemo_site` (each also as `..._clean`), `plain_site` | Website Interface, eZ Flow, Exponential Demo Site, Plain site | the older site packages, kept for sites built on them |
 
@@ -152,7 +153,7 @@ will fill yourself, and the full one to evaluate Exponential.
 Where packages come from:
 
 - **The remote package index.** `SiteTypes` downloads the index from `[RepositorySettings] RemotePackagesIndexURL`
-  in `settings/package.ini` (when it is empty: `RemotePackagesIndexURLBase` plus the Exponential version), and offers
+  in `settings/package.ini` (when it is empty: `RemotePackagesIndexURLBase` plus `x.y/x.y.z`, such as `6.0/6.0.15`; before 6.0.15 the word `stable` was appended, which the package server does not have), and offers
   the site packages listed there next to the ones already imported. A package that is listed remotely and not yet
   imported is downloaded and imported, followed by the packages it requires.
 - **The local repository.** A package already imported under `var/storage/packages/` is used as it is. When the

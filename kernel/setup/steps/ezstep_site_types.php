@@ -40,7 +40,7 @@ class eZStepSiteTypes extends eZStepInstaller
             {
                 $indexURL .= '/';
             }
-            $indexURL .= ExponentialSDK::version( false, false, false ) . '/' . ExponentialSDK::version() . '/';
+            $indexURL .= ExponentialSDK::packageServerPath() . '/';
         }
         $this->IndexURL = $indexURL;
 
@@ -939,10 +939,59 @@ class eZStepSiteTypes extends eZStepInstaller
             {
                 $packageAttributes[$attributeNode->localName] = $attributeNode->value;
             }
+            $packageAttributes = self::sanitizeRemotePackageAttributes( $packageAttributes );
+            if ( $packageAttributes === false )
+            {
+                eZDebug::writeWarning( "Skipped a package entry of '$this->XMLIndexURL' with no valid name." );
+                continue;
+            }
             $packageList[$packageAttributes['name']] = $packageAttributes;
         }
 
         return $packageList;
+    }
+
+    /**
+     * Checks one <package> entry of a remote index.xml, which is data from another server.
+     *
+     * - name: letters, digits, dot, dash and underscore only, else the entry is skipped (false)
+     * - url, thumbnail_url: kept only when they are http:// or https:// URLs; anything else
+     *   (javascript:, data:, file://, a relative path) is removed, so the package cannot be
+     *   downloaded from it and no thumbnail is shown
+     * - every other attribute stays text; the templates escape it when they print it
+     *
+     * \return the attributes, or false when the entry has no valid name.
+     */
+    static function sanitizeRemotePackageAttributes( array $attributes )
+    {
+        if ( !isset( $attributes['name'] ) || !is_string( $attributes['name'] ) ||
+             !preg_match( '/^[A-Za-z0-9_][A-Za-z0-9_.-]*$/', $attributes['name'] ) )
+        {
+            return false;
+        }
+        foreach ( array( 'url', 'thumbnail_url' ) as $key )
+        {
+            if ( isset( $attributes[$key] ) && !self::isHttpURL( $attributes[$key] ) )
+            {
+                unset( $attributes[$key] );
+            }
+        }
+        return $attributes;
+    }
+
+    /**
+     * \return true if \a $url is an absolute http:// or https:// URL with a host.
+     */
+    static function isHttpURL( $url )
+    {
+        if ( !is_string( $url ) || $url !== trim( $url ) || preg_match( '/[\x00-\x20"\'<>\\\\`]/', $url ) )
+        {
+            return false;
+        }
+        $scheme = parse_url( $url, PHP_URL_SCHEME );
+        $host = parse_url( $url, PHP_URL_HOST );
+        return is_string( $scheme ) && in_array( strtolower( $scheme ), array( 'http', 'https' ), true ) &&
+               is_string( $host ) && $host !== '';
     }
 
     /**

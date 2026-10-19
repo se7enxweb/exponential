@@ -339,10 +339,10 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin/stylesheets/modules/content.css
-cc4e939de9fa1d62f20bc1fed58275f0  design/admin/stylesheets/modules/help.css
+02deee8d0249a3fd9450e12bf3009bfa  design/admin/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin/stylesheets/modules/people.css
 ef2a553f3e9a28390f0d235e3098b593  design/admin/stylesheets/modules/setup.css
-40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
+58860dfa040886c40d48304e3beddaba  design/admin/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin/stylesheets/modules/workflow.css
 6c50ca081feaacea35d0ba88f81f92a0  design/admin/stylesheets/packagecompare.css
 7f0ab761ab91d55e7f22d9456c4d8529  design/admin/stylesheets/pagelayout.css
@@ -1071,10 +1071,10 @@ fef6201f7a8970ad72c4e5d3fc5147ce  design/admin4/stylesheets/content.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin4/stylesheets/modules/content.css
-cc4e939de9fa1d62f20bc1fed58275f0  design/admin4/stylesheets/modules/help.css
+02deee8d0249a3fd9450e12bf3009bfa  design/admin4/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin4/stylesheets/modules/people.css
 ef2a553f3e9a28390f0d235e3098b593  design/admin4/stylesheets/modules/setup.css
-40e6fed92366bdd7fce5f4320b9f8d73  design/admin4/stylesheets/modules/structure.css
+58860dfa040886c40d48304e3beddaba  design/admin4/stylesheets/modules/structure.css
 3b1873b1ae4d1c3ffaa636931d9662ed  design/admin4/stylesheets/modules/workflow.css
 6e999aa90b2660caf0fe3e2ef577ecdf  design/admin4/stylesheets/packagecompare.css
 1e9c7cb2c491cfde1b845e98d4178d5a  design/admin4/stylesheets/pagelayout.css
@@ -2741,7 +2741,7 @@ f70e408b920cba4fbae5c49a137cfa9f  design/standard/templates/package/uninstall.tp
 28f756bb79407c8b690f49bea6225567  design/standard/templates/package/uninstall_error.tpl
 be3d34e4f3fa25b47c595049240ffb49  design/standard/templates/package/upload.tpl
 80d7964d9ba68f53ba35d14a868b40dc  design/standard/templates/package/view/files.tpl
-e23871d5a78b7fb64b4c693674a05ddd  design/standard/templates/package/view/full.tpl
+5ac36fd6064c6cfe98c006f2def4389f  design/standard/templates/package/view/full.tpl
 34cab1093f2705ce9e6842f09a4dde7f  design/standard/templates/page_copyright.tpl
 1833956fbdea8167721bd43891626e4a  design/standard/templates/page_head.tpl
 649640728b12bfcf9981d4df14925d94  design/standard/templates/page_head_displaystyles.tpl
@@ -2847,7 +2847,7 @@ befea00be1edf7cf7f1762fcbced9f26  design/standard/templates/setup/init/site_lang
 d066dd9b074c03768ff7e61bfe030085  design/standard/templates/setup/init/site_packages_help.tpl
 feb6df7b913bec854cb4f2ba65659f53  design/standard/templates/setup/init/site_templates.tpl
 f3c17f1799bc65abdb6f5c1d5a127dbb  design/standard/templates/setup/init/site_templates_help.tpl
-cb2d996dc4c151344084a0ee9aa7ac10  design/standard/templates/setup/init/site_types.tpl
+505574995d89227231274b41d8fb0fc4  design/standard/templates/setup/init/site_types.tpl
 db496f1911d7bfa248f5e0c45bda9313  design/standard/templates/setup/init/site_types_help.tpl
 4846f15bcedba3ba7411aea3961a9aa2  design/standard/templates/setup/init/summary.tpl
 3655364ea8678b59864ebf838ca7c1a6  design/standard/templates/setup/init/system_check.tpl
@@ -3305,7 +3305,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-a59028f601a884a721432dc4653c874e  doc/changelogs/6.0/6.0.15.md
+f3149d3bc1d999173727e2cc8b2acc1d  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -7376,8 +7376,8 @@ d28fef9291e51bfe857995e5cea9b507  doc/help/site-packages/glossary.md
 38168ca965d3fa77f637206c2bee2e52  doc/help/site-packages/package-server/history-of-the-package-server.md
 f8890597302ebb815980ee225a4ff8f6  doc/help/site-packages/package-server/how-a-release-reaches-the-package-server.md
 9a1e1b25b10df35f3e9ebb67593bedf7  doc/help/site-packages/package-server/offline-installs-and-mirrors.md
-a89e09a373965fd9f3f48a0f71089fd1  doc/help/site-packages/package-server/package-server-settings.md
-017d0be37b2902ab702e0b887bb332b6  doc/help/site-packages/package-server/the-index-xml-format.md
+a643a8170dc76cacdb09c821605d4510  doc/help/site-packages/package-server/package-server-settings.md
+be22b088ab979dba591d6097e30f78c2  doc/help/site-packages/package-server/the-index-xml-format.md
 df493eee923e0e96bcecae3068d1dcdf  doc/help/site-packages/package-server/the-package-server-on-github.md
 7410f091dc9cd6256c027748d7fffa23  doc/help/site-packages/package-server/the-source-repositories.md
 ae3475478fbeafe9297fe148a5c89a75  doc/help/site-packages/package-server/what-is-on-the-package-server.md
@@ -7390,9 +7390,9 @@ bccec3c0813a5a430baf96ea60424bbf  doc/help/site-packages/requirements/README.md
 30892fe67237a1984b6ca180ead463cd  doc/help/site-packages/requirements/package-xml-required-fields.md
 ebb0ede4db673b58ede269efc9fd05e0  doc/help/site-packages/requirements/readme-and-repository-docs.md
 70ba92021044162aa70a9ac8a374d22e  doc/help/site-packages/requirements/the-requirements-checklist.md
-89b700ca0802eeacb86adfcb44fd158c  doc/help/site-packages/requirements/thumbnails-and-screenshots.md
+0c1bf9076a270beff542fce1f348f7e5  doc/help/site-packages/requirements/thumbnails-and-screenshots.md
 c58053286b9b98e8483ba3eba67730c3  doc/help/site-packages/requirements/validating-a-package-before-publishing.md
-4c1102fe91260c10c88300d4d5aa82c8  doc/help/site-packages/requirements/version-numbers.md
+ab14be6051e8e1bc9d072a0d875c69e2  doc/help/site-packages/requirements/version-numbers.md
 ec43bd0ca5b6af7401a5e254987c77bd  doc/help/site-packages/sevenx-multisite/README.md
 91cbc688a97aebbcb68cb69379ac6124  doc/help/site-packages/sevenx-multisite/extensions-it-activates.md
 5ad92c8336869e5e82d3eaa6c5de4f77  doc/help/site-packages/sevenx-multisite/layouts-data-and-share-dba.md
@@ -7824,7 +7824,7 @@ af18b6c87c55fc88588ffacded884a0d  doc/history/velocity/installers-and-packages.m
 09d51bb55b69c9ca4d98e2ff9f810a1c  doc/install/01-introduction.md
 f0b1ab40255294f6eb292d070c77503f  doc/install/02-requirements.md
 f9d95af9999820c92cd2b9e6c1a93dcf  doc/install/03-getting-the-code.md
-f71ac215485dd1f34c31daf0f7f2489f  doc/install/04-choosing-an-install-method.md
+bd67fa48624a2cea8b1d0542e4c354ee  doc/install/04-choosing-an-install-method.md
 aae46278ef5052b2cf89e2ee8cc3e986  doc/install/05-setup-wizard.md
 b590a2195bf4d31b3fe4b79d569ff791  doc/install/06-kickstarter.md
 c8132574e98281daa72ec05829a091ed  doc/install/07-console-install.md
@@ -9227,7 +9227,7 @@ f3b29307a8a38c5f06cffb143afde12f  kernel/classes/ezpackageinstallationhandler.ph
 1b2240bb652386289efa96860abc18d7  kernel/classes/ezpackageremovalplan.php
 34c367a4b49c6849732cd7d2e8090cf2  kernel/classes/ezpackagerequestguard.php
 dee39131826612b8eda0d249f761b4b8  kernel/classes/ezpackageuploadinspector.php
-71c365046a6c2b48c9f737c95d407feb  kernel/classes/ezpackageversion.php
+4e41655b035aba11141a8e2cce22b2eb  kernel/classes/ezpackageversion.php
 281fb4c5c551758190a823df8e1c43ed  kernel/classes/ezpathelement.php
 a2852263baec56cf69eb8d53f12b2483  kernel/classes/ezpdfexport.php
 3d3da61017eaaab0308ec6ff06cd9c83  kernel/classes/ezpendingactions.php
@@ -10392,7 +10392,7 @@ fbead82c3bf65a6684c180c170ea34ce  kernel/setup/steps/ezstep_security.php
 1524d76a733d4ff74668d248ffae6dce  kernel/setup/steps/ezstep_site_details.php
 9ccf85d01b8fde71c9490f586339434d  kernel/setup/steps/ezstep_site_packages.php
 fd806de9de6e0bc7e046b71a56335641  kernel/setup/steps/ezstep_site_templates.php
-a464c7839fc8095589db1efaea7a9c18  kernel/setup/steps/ezstep_site_types.php
+9891b53490e03847f7d8bc1ea611c60f  kernel/setup/steps/ezstep_site_types.php
 d8b94dd3d3767d082e176d3d86f92b14  kernel/setup/steps/ezstep_system_check.php
 f1d1232dff6f4addd1c2fdbf108a578b  kernel/setup/steps/ezstep_system_finetune.php
 3722d444a6de2ba0539c9fb8f14b2d73  kernel/setup/steps/ezstep_welcome.php
@@ -10759,7 +10759,7 @@ d1430e6d3fe0292c03f024139ffc91f7  lib/ezutils/classes/eztrustedproxy.php
 eda377e76646ff6d07dd68da9520c5da  lib/ezutils/classes/ezwizardbase.php
 b747687983606af5b5ef77e4a7ff73bd  lib/ezutils/classes/ezwizardbaseclassloader.php
 7dabbf7f2463e9e1009df77ab6598adc  lib/phpcompat.php
-84e594f01e8f4f64e610fdb8eae51b19  lib/version.php
+d0439b8f2b787ccf297f4018fe42e6e1  lib/version.php
 72ac1e093ee82d6fbf003d4432240000  phpcs.xml.dist
 ef2da25522d8ed3513c81b1343870c7e  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
@@ -10809,7 +10809,7 @@ f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 e1d9c5932ac1b3e42db487331851a747  settings/module.ini
 1b0c7c323c1ab385b32320c172cb4032  settings/notification.ini
 ebc1c25ced143cfaaa5d343350676ecc  settings/override.ini
-9f0b7ccb49caba6cf5728600364d5857  settings/package.ini
+56f6c6e43469c0ea1f324aa1705f83ab  settings/package.ini
 33feee634197eb5cde08585beacd9d73  settings/paymentgateways.ini
 3a13a85a0747ba7150891dfbb20b25db  settings/pdf.ini
 660b0d81b874343b1ffa494dc1fd6dbf  settings/querycache.ini
@@ -11766,6 +11766,7 @@ a732e808d64b9a5a30633dd745cae6fe  tests/tests/design/AdminFirstPaintColumnsTest.
 0aedf29b682213c1a48cba48309e286a  tests/tests/design/AdminFormLabelsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
 9deb952d9449e8d3117b32aa700c0343  tests/tests/design/AdminHeaderTest.php
+5ab045e6e74f3596d9344088ec9030cc  tests/tests/design/AdminHelpFrameClassScopeTest.php
 7e6640f8b939ab5b19393a7243162343  tests/tests/design/AdminHelpScriptTest.php
 ffae66982f72a7a9adc99acd43b3d662  tests/tests/design/AdminIconsTest.php
 ef7f72e6efae269cefa3d98124eee4f2  tests/tests/design/AdminJobTranslationsTest.php
@@ -12177,7 +12178,7 @@ cbfe9686d5c1b5bc8335c7ef7f985b45  tests/tests/kernel/classes/eZNamePatternResolv
 34a30d04bc83a3f957f992301d260afc  tests/tests/kernel/classes/eZNodeviewfunctionsViewCacheTest.php
 a986db475d0da16b07622a5bb52b3ef2  tests/tests/kernel/classes/eZPHP8RemovedFunctionCallsTest.php
 1a61ba02eb30739edcb683230c3cfc97  tests/tests/kernel/classes/eZPackageLicenseTest.php
-6855c387598fbee39d880905abac28cc  tests/tests/kernel/classes/eZPackageVersionTest.php
+249d283b41a3433b61b35756daba5034  tests/tests/kernel/classes/eZPackageVersionTest.php
 7a21b3cc90e141e63b00372345c15fba  tests/tests/kernel/classes/eZPendingActionsTest.php
 24550e9f3df4c845e43ccf1ecce61800  tests/tests/kernel/classes/eZPersistentObjectShortNameTest.php
 af2328d092a107a74a930bb217ed1d9e  tests/tests/kernel/classes/eZPhp85NoEffectCallsTest.php
@@ -12492,6 +12493,7 @@ ae30bcf264ae9a0e1b6e2e582bb0e469  tests/tests/kernel/classes/setup/SessionPageTe
 610661b5ad899bb958d0501175455094  tests/tests/kernel/classes/setup/SetupInfoMaskTest.php
 6f791a2bce8d7fd28c8ba73af0026faf  tests/tests/kernel/classes/setup/SetupPackageDownloadTest.php
 2671ef0292727fae9b58c4f6fc4614f4  tests/tests/kernel/classes/setup/SetupPhpVersionTest.php
+07606131aed2c5bebbef6c47273e6578  tests/tests/kernel/classes/setup/SetupRemoteIndexSanitizingTest.php
 6c464bc501b547eae3d4ffb37aa5e3c9  tests/tests/kernel/classes/setup/SetupRunCommandAuditTest.php
 5c009c5724a7a3da87cb98dadbfe917b  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
 be124ca8bd5eed793ebfb648619273d6  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
@@ -13170,6 +13172,7 @@ f314c51e4df6b12a1636cbae31473278  tests/tests/lib/ezutils/server/vh/view/win2008
 1541cfc07670042748eb89b18fce0e9e  tests/tests/lib/ezutils/server/vh/view/winvista_nginx0763_fcgi_php533.php
 18e70020ca5a618f9ac2ca7a2ebb49e8  tests/tests/lib/ezutils/suite.php
 262fcd38b721b469075c4eddb6ee4b8a  tests/tests/lib/ezversion/ExponentialSDKAndPhpCompatTest.php
+1d8aaa6227b00b06ada589f4c97346b9  tests/tests/lib/ezversion/ExponentialSDKPackageServerPathTest.php
 eb5acd70adba577abb6f9c5588a8a4a1  tests/toolkit/extras/kernelwrapper/README
 849d7d7c1b903a9cdcae23dcd6cd377b  tests/toolkit/extras/kernelwrapper/classes/class.php
 4029eebb4d8db645efc4b1343bfeefcc  tests/toolkit/extras/kernelwrapper/classes/node.php
