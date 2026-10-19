@@ -14,6 +14,8 @@ mobile app, a partner's system, an import script, an agency's tool. It explains 
 offers, how each is controlled, what is recorded, and a set of house rules. The technical page is
 [OAuth and API keys](../../creators/app-creators/oauth-and-api-keys.md).
 
+![oAuth admin: the applications with access](../../images/help/bu-oauth.webp)
+
 ## Contents
 
 1. [Three credentials, chosen by who the program acts for](#three-credentials-chosen-by-who-the-program-acts-for)

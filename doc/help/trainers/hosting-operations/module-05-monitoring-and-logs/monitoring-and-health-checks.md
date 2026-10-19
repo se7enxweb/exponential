@@ -111,6 +111,8 @@ Use your own training installation, served by Velocity, and a shell as the site'
 - Step 8 shows `503` with a `Retry-After` header; step 9 still answers `200`.
 - The trainer checks two plans from step 11 for all four layers.
 
+![System information with the health checks](../../../images/trainers/ho-sysinfo.webp)
+
 ## Quiz
 
 1. Why is checking only the front page not enough?

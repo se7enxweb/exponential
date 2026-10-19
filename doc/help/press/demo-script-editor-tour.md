@@ -35,6 +35,8 @@ invented items, a second content language, and no drafts left from a previous ta
 | Open a folder in the tree | "Click the triangle to open a folder, the name to open the item." | [The left column](../admin-tour.md#the-left-column) |
 | On the item's page, point at the buttons | "**Edit**, **Move**, **Copy**, **Remove**, and three round buttons: **View on site**, **Preview** and **Manage versions**." | [An item's page](../admin-tour.md#an-items-page) |
 
+![Part 1: the tree, an item's page and the right column](../images/help/pr-editor-tree.webp)
+
 ## Part 2: editing a folder (4 minutes)
 
 1. Press **Edit** next to the language list. Say: "The form opens with a new draft, a copy of the published version."
@@ -53,12 +55,16 @@ invented items, a second content language, and no drafts left from a previous ta
 
 Mention approval only as documented: "If a site uses an approval, the version waits under **My pending items**."
 
+![Part 2: the edit form](../images/help/pr-editor-form.webp)
+
 ## Part 3: versions (1 minute 30)
 
 1. Press **Manage versions** (the round button with a clock).
 2. Press **Compare** between the two newest versions. Say: "I see exactly what changed."
 3. Point at **Make a new draft**: "Going back means starting a draft from an older version and publishing it."
    ([Go back to an earlier version](../publishing-and-versions.md#go-back-to-an-earlier-version))
+
+![Part 3: the versions of an item](../images/help/pr-editor-versions.webp)
 
 ## Part 4: languages and right to left (2 minutes 30)
 
@@ -72,6 +78,8 @@ Mention approval only as documented: "If a site uses an approval, the version wa
 
 If you give numbers, use the documented ones with their source: 268 locale files usable as content languages, 33
 administration translations, nineteen of them complete (19 October 2026) ([Languages in Exponential](../../languages.md)).
+
+![Part 4: the translations of an item](../images/help/pr-editor-translations.webp)
 
 ## Recovering on camera
 

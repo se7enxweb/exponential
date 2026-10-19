@@ -158,6 +158,8 @@ On your training installation, administration in `admin4` or `admin4l`, signed i
 - Step 10: no match.
 - The trainer checks one learner's dashboard in light and dark mode on the projector.
 
+![A page built from the shared components: counter cards, a filter bar, buttons and cards](../../../images/trainers/td-components.webp)
+
 ## Quiz
 
 1. Where does an extension put the template of its dashboard block so that admin4 finds it?

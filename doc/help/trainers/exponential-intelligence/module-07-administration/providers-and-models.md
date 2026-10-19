@@ -100,6 +100,8 @@ Use the training installation with an administrator account (or follow on the pr
 - The learner can explain why a model reads only.
 - The trainer checks two learners' model choices and reasons.
 
+![Models and providers: each model with its tools, drafts permission, probe and cost](../../../images/trainers/ei-models.webp)
+
 ## Quiz
 
 1. What three things are recorded per provider for the data policy and the summary?

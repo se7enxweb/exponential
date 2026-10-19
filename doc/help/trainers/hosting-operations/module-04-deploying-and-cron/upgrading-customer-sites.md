@@ -117,6 +117,8 @@ site.
 - Step 12: the plan names every item of the checklist in *Upgrading customer sites*.
 - The trainer checks two plans against that checklist.
 
+![The upgrade check of a customer site](../../../images/trainers/ho-upgrade.webp)
+
 ## Quiz
 
 1. Why must you never run `exp:install` over an existing site to upgrade it?

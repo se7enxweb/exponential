@@ -115,6 +115,8 @@ A desk exercise. Write in a document on your own machine, not in the training in
 - No password or real server name of a learner's organization is in a shared document.
 - The training installation's transports are unchanged (the trainer checks the settings viewer at the end).
 
+![The Deliverability part of the dashboard: sending rate, bounces and suppression, test sends](../../../images/trainers/nl-deliverability.webp)
+
 ## Quiz
 
 1. Which method do you switch first, and to whom do you send with it?

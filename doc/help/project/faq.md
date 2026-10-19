@@ -14,6 +14,8 @@ These answers follow the FAQ pages of the project website, [exponential.earth/fa
 read in October 2026, retold in this help's own words and checked against the software in this repository. Where
 the repository says something different, the answer says so and follows the repository.
 
+![An item's page in the administration](../images/help/pj-item.webp)
+
 The website's own FAQ also points to an older FAQ in the archived documentation,
 [doc.ezpublishlegacy.se7enx.com/FAQ.html](https://doc.ezpublishlegacy.se7enx.com/FAQ.html), which it describes as
 "a bit older in age". Its answers about concepts still apply; its version numbers do not.

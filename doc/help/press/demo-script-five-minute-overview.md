@@ -47,6 +47,8 @@ and find help inside the product. **Audience:** people who have never seen Expon
 | 4:05 | Any page | The **Help** button in the header | "The help is built in: this button opens the page that belongs to the screen I'm on." |
 | 4:35 | Title card | | "It is free software under the GNU GPL, and you can host it yourself. The links to everything I showed are below." |
 
+![The dashboard, where the five-minute overview starts](../images/help/pr-five-dash.webp)
+
 Rehearse it once with a timer. If you run long, cut the layouts part, not the disclosure.
 
 ## What not to say

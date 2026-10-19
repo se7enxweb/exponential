@@ -103,6 +103,8 @@ Use your own training installation, signed in as an administrator, and a termina
 - After step 8 the class shows *Is searchable* again for the field, and `kumquat` is found again.
 - The trainer checks the class page of two learners at the end.
 
+![The classes of a group; each class's attributes say whether they are searchable](../../../images/trainers/se-class.webp)
+
 ## Quiz
 
 1. Where do you see whether an attribute is searchable without opening the edit form?

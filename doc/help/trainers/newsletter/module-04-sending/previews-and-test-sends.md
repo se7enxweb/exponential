@@ -108,6 +108,8 @@ Use the training installation; `TransportMethodPreview=file` is checked (step 1)
 - The learner has seen the edition as one subscriber gets it.
 - The trainer checks by opening one learner's test file on the projector.
 
+![Test groups, which receive an edition before it goes to the list](../../../images/trainers/nl-test-groups.webp)
+
 ## Quiz
 
 1. Which transport method carries a test send, and what is its shipped value?

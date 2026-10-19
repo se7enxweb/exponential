@@ -15,6 +15,8 @@ logs are kept small and free of customers' personal data. The technical guides a
 [Finding an error by its reference](../../../guides/finding-an-error-by-its-reference.md) and
 [The log viewer](../../../features/6.0/log-viewer.md).
 
+![The error digest of the log files](../../images/help/bu-logs.webp)
+
 ## Contents
 
 1. [From a customer's report to the cause](#from-a-customers-report-to-the-cause)

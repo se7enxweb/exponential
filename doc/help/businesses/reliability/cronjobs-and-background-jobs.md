@@ -15,6 +15,8 @@ large removals, indexing the audit trail, sending newsletters, building sitemaps
 visibly at first, which is exactly why it needs attention. The full guide is
 [Cronjobs: running, scheduling and following them](../../../guides/cronjobs.md).
 
+![The cronjobs page](../../images/help/bu-cron.webp)
+
 ## Contents
 
 1. [Why background work matters to a business](#why-background-work-matters-to-a-business)

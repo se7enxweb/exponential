@@ -109,6 +109,8 @@ Use the training installation. Replace `<name>` with your first name.
 - The pair's estimate: 20,000 / 120 is about 167 minutes, almost three hours, plus any hourly limit.
 - The trainer checks the test group list and one outbox listing.
 
+![The sending rate limits per transport](../../../images/trainers/nl-throttle.webp)
+
 ## Quiz
 
 1. What happens to a send when its transport's per-hour limit is reached?

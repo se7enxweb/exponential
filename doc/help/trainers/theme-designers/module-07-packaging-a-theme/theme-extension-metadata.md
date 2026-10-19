@@ -100,6 +100,8 @@ On your training installation, in `extension/training_theme/`.
 - Step 8: the About page showed `0.1.1`, proving that `extension.xml` is read first.
 - The trainer checks two learners' rows on the About page.
 
+![The About page reads each theme's version and license from its metadata](../../../images/trainers/td-about.webp)
+
 ## Quiz
 
 1. Which file does the About page read first when it has a `<metadata>` block?

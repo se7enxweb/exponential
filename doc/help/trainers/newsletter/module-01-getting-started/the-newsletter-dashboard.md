@@ -106,6 +106,8 @@ Use the shared training installation (file transport, see lesson 1.2) and your a
 - No background run was started (the **Last actions** section shows nothing new).
 - The trainer checks by asking each pair to explain one hint and its cure.
 
+![The newsletter dashboard: subscribers, sending, bounces, Run now and deliverability](../../../images/trainers/nl-dashboard.webp)
+
 ## Quiz
 
 1. Which button shows what a queue run would do without changing anything?

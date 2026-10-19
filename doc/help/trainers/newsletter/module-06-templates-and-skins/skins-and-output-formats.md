@@ -110,6 +110,8 @@ Use the training installation. Replace `<name>` with your first name.
   subscriber with data.
 - The trainer checks one learner's preview on the projector.
 
+![The skin preview of the newsletter](../../../images/trainers/nl-skin.webp)
+
 ## Quiz
 
 1. Name the four shipped skins.

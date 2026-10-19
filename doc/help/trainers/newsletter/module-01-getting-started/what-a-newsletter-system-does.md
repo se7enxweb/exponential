@@ -112,6 +112,8 @@ Use the shared training installation and your admin training account. You only l
 - They can point at the list page as "what people subscribe to" and the edition page as "what they receive".
 - The trainer checks by asking two learners to explain their drawing to the room.
 
+![The summary line of the newsletter dashboard: lists, subscribers, editions and blacklisted addresses](../../../images/trainers/nl-what.webp)
+
 ## Quiz
 
 1. Put these in tree order, top to bottom: edition, system, article, list.

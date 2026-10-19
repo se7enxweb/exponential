@@ -99,6 +99,8 @@ On your own training installation, signed in to the administration with your tra
 - The trainer checks one learner's README section and their `<dependencies>` note:
   `<dependencies><extends><extension name="base_theme" /></extends></dependencies>`.
 
+![The Extensions page, where a theme extension is activated and its loading order shown](../../../images/trainers/td-extensions.webp)
+
 ## Quiz
 
 1. Which setting activates a theme for only one siteaccess?

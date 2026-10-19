@@ -12,6 +12,8 @@ type: help
 The project keeps its plans in two public places, both on Share Exponential and both linked from
 [exponential.earth/roadmap](https://exponential.earth/roadmap):
 
+![Setup, Updates and packages](../images/help/pj-updates.webp)
+
 | Roadmap | What it is | Address |
 |---|---|---|
 | **Official roadmap** | The plans of 7x and the project, product by product and resource by resource | <https://share.exponential.earth/roadmap> |

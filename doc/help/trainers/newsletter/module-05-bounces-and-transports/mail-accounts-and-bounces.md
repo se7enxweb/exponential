@@ -111,6 +111,8 @@ Use the training installation. Do not store a mail account.
 - The dry run reported that there was nothing (or which accounts there were) to read, and changed nothing.
 - The trainer checks the drawings against the deliverability guide.
 
+![The mail accounts the bounce handling reads](../../../images/trainers/nl-mail-accounts.webp)
+
 ## Quiz
 
 1. Which list address do mail servers send bounces to?

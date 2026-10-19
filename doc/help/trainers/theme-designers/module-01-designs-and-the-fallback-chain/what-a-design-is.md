@@ -128,6 +128,8 @@ that holds `index.php`. Nothing in this exercise changes a file.
 - The trainer checks the sheet: `admin`, `admin3`, `admin4`, `admin4l` and `editor` are on the administration side;
   `standard`, `base` and `plain` on the visitor side, `standard` marked as the fallback for both.
 
+![The media design on the public site](../../../images/trainers/td-front.webp)
+
 ## Quiz
 
 1. Which folder of a design holds templates used only when a rule in `override.ini` matches?

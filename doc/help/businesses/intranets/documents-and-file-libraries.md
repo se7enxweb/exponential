@@ -13,6 +13,8 @@ This page is for intranet owners who want one trusted place for documents: the c
 the brand handbook. It explains how Exponential stores files, why a download from a protected area is safe, what
 helps editors keep documents current, and what to check before moving a shared drive into the intranet.
 
+![The media library with its folders](../../images/help/bu-files.webp)
+
 ## Contents
 
 1. [Files are content](#files-are-content)

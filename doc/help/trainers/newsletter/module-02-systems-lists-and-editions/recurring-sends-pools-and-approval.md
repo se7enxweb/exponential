@@ -102,6 +102,8 @@ Use the training installation (all transports write files, subscribers at `examp
 - Each pair can explain the approval flow and the two schedule modes.
 - The trainer checks the **Recurring sends** list for any schedule that is not paused and pauses it.
 
+![The article pool: articles waiting to go into the next recurring edition](../../../images/trainers/nl-pool.webp)
+
 ## Quiz
 
 1. What are the two modes of a recurring send?

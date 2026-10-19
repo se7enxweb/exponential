@@ -14,6 +14,8 @@ how the `eztags` extension, which ships with Exponential, gives you controlled s
 synonyms, a page per subject and lists of records by subject. The setup steps are in
 [Tagging content with eztags](../../creators/website-creators/tagging-with-eztags.md).
 
+![The Tags dashboard with the tag tree](../../images/help/bu-classes.webp)
+
 ## Contents
 
 1. [What eztags gives a catalog](#what-eztags-gives-a-catalog)

@@ -142,6 +142,8 @@ Use your own training installation, installed with `php bin/php/console exp:inst
 - Step 8: **System information** names the same number of siteaccesses and the same default.
 - The trainer checks by asking two learners to read their `where` output aloud and name the winning file.
 
+![One siteaccess of the installation: the media site on its own address](../../../images/trainers/ms-site-a.webp)
+
 ## Quiz
 
 1. Which three parts make a siteaccess?

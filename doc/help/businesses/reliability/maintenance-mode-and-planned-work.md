@@ -14,6 +14,8 @@ offline. It explains what customers and search engines see, how to plan and anno
 and off, and the rules that keep a short window from becoming an outage. The complete guide is
 [Maintenance mode: taking the site offline and bringing it back](../../../guides/maintenance-mode.md).
 
+![Setup, Maintenance: plan a maintenance window](../../images/help/bu-maint.webp)
+
 ## Contents
 
 1. [Why a clean maintenance page matters](#why-a-clean-maintenance-page-matters)

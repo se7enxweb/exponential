@@ -128,6 +128,10 @@ On your training installation, administration in `admin4` or `admin4l`, with the
   components, and the stylesheet holds no literal color.
 - The trainer checks the final `training_admin.css` of two learners: only tokens, no `html[data-a4-theme]` rule.
 
+![A list page in the light mode](../../../images/trainers/td-tokens-light.webp)
+
+![The same page in the dark mode, only the token values change](../../../images/trainers/td-tokens-dark.webp)
+
 ## Quiz
 
 1. Which attribute on `<html>` switches admin4 to dark mode?

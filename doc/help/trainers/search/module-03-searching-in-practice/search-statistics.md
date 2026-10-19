@@ -111,6 +111,8 @@ Use your own training installation. `<public siteaccess>` is the name of its pub
 - After step 8 the table is empty; after step 9 `exp:ini get` prints `disabled` for the siteaccess.
 - The trainer asks each learner for one content action from step 7.
 
+![Search statistics: what visitors searched for and how many results they got](../../../images/trainers/se-stats.webp)
+
 ## Quiz
 
 1. Why is `LogSearchStats` disabled by default?
