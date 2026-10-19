@@ -95,6 +95,8 @@ Use the training installation and your course folder.
 - The two articles moved into `Archive` and back.
 - The trainer checks by opening one learner's `Archive` on the projector.
 
+![Moving an item: choose the new place from the browser that opens](../../../images/trainers/e201-move.webp)
+
 ## Quiz
 
 1. What happens to the items below an item you move?

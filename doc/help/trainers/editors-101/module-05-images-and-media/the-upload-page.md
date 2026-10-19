@@ -100,6 +100,8 @@ Use the training installation, your course folder and the sample images on your 
 - **My drafts** listed them after the upload and is empty for them after step 11.
 - The trainer checks by opening one learner's folder and one image's **View** tab on the projector.
 
+![The upload page with two images queued, a title and an alternative text for each, before Upload all](../../../images/trainers/e101-upload-queue.webp)
+
 ## Quiz
 
 1. Name two ways to open the upload page.

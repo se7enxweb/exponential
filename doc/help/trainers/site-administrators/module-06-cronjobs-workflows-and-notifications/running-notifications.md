@@ -126,6 +126,8 @@ Use your own training installation. In a terminal at the installation root; all 
 - Step 8 printed *Would remove* lines and changed nothing.
 - The trainer checks the **Recent runs** list of one learner on the projector.
 
+![Notification status: notifications waiting and the last runs](../../../images/trainers/sa-notifications.webp)
+
 ## Quiz
 
 1. A site's users get no notifications at all. What is the most likely cause?

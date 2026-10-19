@@ -105,6 +105,8 @@ Use the training installation and your Editor training account. Nothing in this 
 - **View on site** opened the public site in the browser.
 - The trainer checks by asking one learner to read their notes and opening the same item on the projector.
 
+![An item's page: the path at the top (outlined), and the title line with the type and visibility, version and numbers](../../../images/trainers/e101-item-page.webp)
+
 ## Quiz
 
 1. What is the difference between clicking the triangle in front of a folder and clicking its name?

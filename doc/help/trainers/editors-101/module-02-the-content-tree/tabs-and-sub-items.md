@@ -100,6 +100,8 @@ Use the training installation and your Editor training account. Nothing in this 
 - The **Tabs** switch showed all tabs as one page.
 - The trainer checks by asking a learner to open the **Details** tab on the projector and read the section.
 
+![A folder's page with its tabs, the Tabs switch, and the Sub items list with its columns and paging](../../../images/trainers/e101-tabs-subitems.webp)
+
 ## Quiz
 
 1. Which tab shows the languages an item exists in?

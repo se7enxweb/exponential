@@ -132,6 +132,8 @@ In a terminal, in the root of your training installation:
 - After step 7 the public site shows "CLI training site"; after step 9 the earlier name is back.
 - The trainer checks by asking a learner to read the output of `where` aloud.
 
+![Setup, Ini settings: a setting's value per siteaccess and the file it comes from](../../../images/trainers/sa-ini-settings.webp)
+
 ## Quiz
 
 1. Which scope writes `settings/override/site.ini.append.php`?

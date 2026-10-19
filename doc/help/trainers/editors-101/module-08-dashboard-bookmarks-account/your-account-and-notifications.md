@@ -104,6 +104,8 @@ Use the training installation and your Editor training account.
 - **My notification settings** lists the course folder under **Items I follow**, with a weekly digest on Friday.
 - The trainer checks by opening **My notification settings** of the trainer's own account after doing the same steps.
 
+![My notification settings: the items you follow, the digest and the collaboration notifications](../../../images/trainers/e101-notifications.webp)
+
 ## Quiz
 
 1. Where do you change your password? Name one way to get there.

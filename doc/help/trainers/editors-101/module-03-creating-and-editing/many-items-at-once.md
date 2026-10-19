@@ -97,6 +97,8 @@ Use the training installation and your course folder.
 - The report after **Publish all** listed both items as published.
 - The trainer checks by opening one learner's folder on the projector.
 
+![Two items ticked and More actions open, with Edit selected for one form with both items](../../../images/trainers/e101-edit-selected.webp)
+
 ## Quiz
 
 1. Where do you find **Create multiple new**?

@@ -88,6 +88,8 @@ Use the training installation and your Editor training account.
 - **Upload files** opened the upload page with a target location in the media library.
 - Each learner has a routine card, which the trainer reads aloud for two or three learners.
 
+![The dashboard: quick actions, the counters and the lists of recent content with their authors](../../../images/trainers/e101-dashboard-blocks.webp)
+
 ## Quiz
 
 1. Name the four lists of content at the bottom of the dashboard.

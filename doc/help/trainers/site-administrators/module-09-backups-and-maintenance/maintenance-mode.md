@@ -112,6 +112,8 @@ Use your own training installation, served for example on `http://127.0.0.1:8087
 - After step 10 `var/maintenance.json` no longer exists and the site answers `200`.
 - The trainer checks **Recent changes** on one learner's page: two windows, each switched on and off.
 
+![Setup, Maintenance: plan and start a maintenance window](../../../images/trainers/sa-maintenance.webp)
+
 ## Quiz
 
 1. What HTTP status does a visitor get during maintenance?

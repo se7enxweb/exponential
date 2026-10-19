@@ -98,6 +98,8 @@ On your training installation, signed in as an administrator, with a private win
 - Step 10: the section's page lists `Members area readers` and the objects; it cannot be removed while they use it.
 - The trainer checks by opening the `Members` folder in a private window on one learner's site.
 
+![Sections with their objects and roles](../../../images/trainers/sa-sections.webp)
+
 ## Quiz
 
 1. How many sections can one object belong to?

@@ -93,6 +93,8 @@ Use the training installation; the trainer added a tags field to the *Article* t
 - If **Add new** was offered, a new tag exists below the place the field puts new tags.
 - The trainer checks by opening the tag page on the projector.
 
+![The Tags tab of an article with the tags it carries](../../../images/trainers/e201-tags-tab.webp)
+
 ## Quiz
 
 1. How is a tag different from a folder?

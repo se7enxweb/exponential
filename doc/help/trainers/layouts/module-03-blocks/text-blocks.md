@@ -112,6 +112,8 @@ Use the training installation and your course layout.
 - No HTML snippet block remains.
 - The trainer checks by opening one learner's draft on the projector.
 
+![The template editor, listing the block view templates](../../../images/trainers/ly-templates.webp)
+
 ## Quiz
 
 1. Which block do you use for formatted text with a table?

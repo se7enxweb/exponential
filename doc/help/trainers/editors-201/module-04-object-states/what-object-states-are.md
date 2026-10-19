@@ -90,6 +90,8 @@ Use the training installation (the administration, not the Editor). The trainer 
 - The trainer checks by asking two learners to explain the difference between a draft version and the state
   *Draft*.
 
+![The object state groups of the installation, such as the lock group, and their states](../../../images/trainers/e201-state-groups.webp)
+
 ## Quiz
 
 1. What is a state group?

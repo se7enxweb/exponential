@@ -88,6 +88,8 @@ Use the training installation with a role that may read and add tags.
 - The learners saw a merge and a synonym being made.
 - The trainer checks by opening `Training` in the tag tree: one child per learner.
 
+![The Tags dashboard with the tag tree and the latest tags](../../../images/trainers/e201-tags-dashboard.webp)
+
 ## Quiz
 
 1. Where is the **Tags dashboard**?

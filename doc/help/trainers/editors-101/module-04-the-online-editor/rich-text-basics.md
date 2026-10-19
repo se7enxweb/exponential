@@ -110,6 +110,8 @@ Use the training installation and your article *My first article* (lesson 3.2).
 - The learner read a path such as *Path: heading* in the status bar (TinyMCE 8).
 - The trainer checks by opening one learner's article on the site on the projector.
 
+![A rich text field with its toolbar and the path of the element under the cursor at the bottom](../../../images/trainers/e101-richtext-toolbar.webp)
+
 ## Quiz
 
 1. Why use the paragraph style list for headings instead of making a line bold?

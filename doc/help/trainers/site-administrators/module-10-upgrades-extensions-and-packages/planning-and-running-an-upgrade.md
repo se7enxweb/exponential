@@ -122,6 +122,8 @@ version you already run; nothing is upgraded.
 - Steps 6 to 8 run without errors; the test item appears on the site.
 - The trainer checks by asking one learner to say the steps of Part C in order, from memory.
 
+![Updates and packages: packages that need attention and when updates were last checked](../../../images/trainers/sa-updates.webp)
+
 ## Quiz
 
 1. Where in the administration do you read the version an installation runs?

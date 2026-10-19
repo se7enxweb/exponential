@@ -144,6 +144,8 @@ shows.
   backup.
 - The trainer checks by asking each learner how long the restore took, and writes the times on the board.
 
+![Backups: a full site backup or database and files, optionally encrypted](../../../images/trainers/sa-backups.webp)
+
 ## Quiz
 
 1. In which order do you restore: maintenance, database, files, caches? Put them in order and add the missing steps.

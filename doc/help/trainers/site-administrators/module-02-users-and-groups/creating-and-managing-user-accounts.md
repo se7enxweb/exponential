@@ -104,6 +104,8 @@ On your training installation, signed in as an administrator:
 - Step 11: the sign-in is refused while the account is disabled; step 12 succeeds.
 - The trainer checks by opening **Check user accounts** (lesson 2.4 shows it) or each learner's `Training team`.
 
+![The Administrator users group with its accounts and Create new for a new user](../../../images/trainers/sa-admin-group.webp)
+
 ## Quiz
 
 1. Which fields make up the **User account** field?

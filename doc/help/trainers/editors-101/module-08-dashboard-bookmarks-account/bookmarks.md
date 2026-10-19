@@ -94,6 +94,8 @@ Use the training installation and your course folder.
 - The link dialog's **Bookmarks** tab listed the learner's bookmarks.
 - The trainer checks by asking a learner to show their folder **Course** on the projector.
 
+![My bookmarks with its folders, Find a bookmark and the order buttons](../../../images/trainers/e101-bookmarks.webp)
+
 ## Quiz
 
 1. Who sees your bookmarks?

@@ -93,6 +93,8 @@ folder (created by the learner in Editors 101 style, or by the trainer), and a p
 - Disabling the mapping returned the page to its previous look; enabling it brought the layout back.
 - The trainer checks by opening two learners' test pages in a private window on the projector.
 
+![The Layouts tab with Map layout, which starts a mapping for this location](../../../images/trainers/ly-map.webp)
+
 ## Quiz
 
 1. Which target type do you use for one page?

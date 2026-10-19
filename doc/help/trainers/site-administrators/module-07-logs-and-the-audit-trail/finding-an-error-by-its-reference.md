@@ -107,6 +107,8 @@ Use your own training installation. Your trainer may give you a reference from t
 - Step 8 prints the entry (exit code 0), or exit code 1 when the reference was not found.
 - The trainer checks the short answer of step 9: no address, IP or login of anyone appears in it.
 
+![The error digest of the log files](../../../images/trainers/sa-log-digest.webp)
+
 ## Quiz
 
 1. What should you ask a visitor who reports an error?

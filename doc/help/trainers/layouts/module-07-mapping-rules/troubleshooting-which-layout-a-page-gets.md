@@ -95,6 +95,8 @@ Use the training installation. Before the exercise, the trainer breaks each lear
 - The learner can name the five usual causes in order.
 - The trainer checks by reading the cards aloud and asking each learner how they found it.
 
+![The Layouts tab of a page: the layout it resolves to and the mappings for it](../../../images/trainers/ly-tab.webp)
+
 ## Quiz
 
 1. Name three causes of a page showing the old layout.

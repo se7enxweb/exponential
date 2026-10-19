@@ -101,6 +101,8 @@ On your training installation, signed in as an administrator:
   saving settings).
 - The trainer checks by calling out a task ("where do I see the cronjobs?") and timing the answers.
 
+![The Setup area: its cards for the content model, the site, workflows, users, system and updates](../../../images/trainers/sa-setup-tour.webp)
+
 ## Quiz
 
 1. Which Setup group holds **Cache management** and **Cronjobs**?

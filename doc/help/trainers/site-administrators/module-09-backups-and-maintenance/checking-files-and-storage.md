@@ -114,6 +114,8 @@ Use your own training installation, in the browser and in a terminal at the inst
   development branch may show some).
 - The trainer checks that every learner restored the file of step 3 and the file of step 6.
 
+![Storage files: files nothing uses and files with the wrong owner or mode](../../../images/trainers/sa-storage.webp)
+
 ## Quiz
 
 1. Which state of the missing files check is normal and not a problem?

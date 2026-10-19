@@ -102,6 +102,8 @@ Use the training installation and your article *My first article*.
 - No message about links appeared, because all links were valid.
 - The trainer checks by trying one learner's links on the projector.
 
+![An article on the public site, where links, headings and lists are checked after publishing](../../../images/trainers/e101-site-article.webp)
+
 ## Quiz
 
 1. Name the three tabs of the link dialog for choosing an item of the site.

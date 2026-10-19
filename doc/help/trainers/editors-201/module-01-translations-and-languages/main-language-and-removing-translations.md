@@ -100,6 +100,8 @@ Use the training installation and your article *Opening hours* from lesson 1.2.
 - The trainer checks by opening *Wrong language test* and its **Translations** tab on the projector. If the role may
   not remove translations, the trainer demonstrates step 10.
 
+![The Translations tab with Set main, Remove selected and the Always available setting with its Update button](../../../images/trainers/e201-main-language.webp)
+
 ## Quiz
 
 1. How do you change an item's main language?

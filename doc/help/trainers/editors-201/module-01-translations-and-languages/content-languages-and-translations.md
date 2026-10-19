@@ -100,6 +100,8 @@ Use the training installation and your Editor training account.
 - Step 8 found the article on the site of the other language (the trainer prepared both siteaccesses).
 - The trainer checks by asking a learner to explain the two kinds of badges.
 
+![The Translations tab of an article: its languages, the main language and Always available](../../../images/trainers/e201-translations-tab.webp)
+
 ## Quiz
 
 1. What does a dashed language badge on an item's page mean?
