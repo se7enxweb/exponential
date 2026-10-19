@@ -3,7 +3,7 @@ title: "Theme design: course overview"
 audience: trainer, designer, developer
 category: training
 order: 1
-summary: The course for designers and front-end developers who build themes for Exponential, 8 modules and 31 lessons, about 24 hours of lessons, from the design fallback chain through the pagelayout, overrides, the ezjscore packer, the admin4 styling rules, accessibility, right to left and icons to packaging, licensing and releasing a theme extension.
+summary: The course for designers and front-end developers who build themes for Exponential, 8 modules and 30 lessons, about 24 hours of lessons, from the design fallback chain through the pagelayout, overrides, the ezjscore packer, the admin4 styling rules, accessibility, right to left and icons to packaging, licensing and releasing a theme extension.
 keywords: theme design, theme course, designer training, design, fallback chain, pagelayout, override, ezjscore packer, admin4, tokens, dark mode, accessibility, right to left, icons, theme extension, ezpkg, Composer, license, release, course overview
 type: help
 ---
@@ -34,7 +34,7 @@ theme; ship icons; and package, license and release a theme without ever moving 
 
 | | |
 |---|---|
-| Lessons | 31 lessons in 8 modules |
+| Lessons | 30 lessons in 8 modules |
 | Lesson time | 24 hours 15 minutes (presenting and exercises) |
 | With breaks | about 25 hours 45 minutes, as in the modules' timing plans |
 | Format | Classroom with a projector, or online with screen sharing; every learner at their own computer with a shell |

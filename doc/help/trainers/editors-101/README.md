@@ -3,7 +3,7 @@ title: "Editors 101: course overview"
 audience: trainer, editor
 category: training
 order: 1
-summary: The beginners' course for new editors, 9 modules and 26 lessons, about 19.5 hours of lessons, from signing in to a complete article with images, links, versions and the trash, ending in the Editor siteaccess and a capstone exercise.
+summary: The beginners' course for new editors, 9 modules and 27 lessons, about 19.5 hours of lessons, from signing in to a complete article with images, links, versions and the trash, ending in the Editor siteaccess and a capstone exercise.
 keywords: editors 101, editor training, beginner course, content editing, online editor, TinyMCE 8, media library, upload, publishing, versions, drafts, search, bookmarks, editor siteaccess, course overview
 type: help
 ---
@@ -31,7 +31,7 @@ work in the Editor.
 
 | | |
 |---|---|
-| Lessons | 26 lessons in 9 modules |
+| Lessons | 27 lessons in 9 modules |
 | Lesson time | 19 hours 30 minutes (presenting and exercises) |
 | With breaks | about 21 hours, as in the modules' timing plans |
 | Format | Classroom with a projector, or online with screen sharing; every learner at their own computer |

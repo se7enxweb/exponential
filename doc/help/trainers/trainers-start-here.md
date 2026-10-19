@@ -42,8 +42,8 @@ with it.
 |---|---|
 | [Course catalogue](course-catalogue.md) | Every course with its audience, length, prerequisites and modules |
 | [Train the trainer](train-the-trainer/README.md) | The course for trainers: preparing, the lab, course design, delivery, accessibility, assessment |
-| The subject courses | Editors, administrators, developers, designers, layouts, Exponential Intelligence, hosting, multisite, search, newsletters, migration: listed in the catalogue |
-| Workshops and assessments | Ready agendas for one, three and five days, and assessment material: listed in the catalogue |
+| The subject courses | Twelve courses for editors, administrators, developers, designers and hosting staff: listed in the catalogue |
+| [Workshops and bootcamps](workshops/README.md), [Assessments](assessments/README.md) | Ready agendas for one, three and five days, and assessment material |
 
 ## How a course is built
 
@@ -62,15 +62,15 @@ the structure in detail.
 | Your learners | Start with |
 |---|---|
 | People who will teach Exponential | [Train the trainer](train-the-trainer/README.md) |
-| People who write and publish content | Editors 101, then Editors 201 |
-| People who run a site | Site administration |
-| People who build on Exponential | Developers |
-| People who design themes | Theme design |
-| People who build pages with blocks | Exponential Layouts |
-| People who run servers | Hosting and operations |
-| A team moving a site to Exponential | Migrating to Exponential |
+| People who write and publish content | [Editors 101](editors-101/README.md), then [Editors 201](editors-201/README.md) |
+| People who run a site | [Site administration](site-administrators/README.md) |
+| People who build on Exponential | [Developers](developers/README.md) |
+| People who design themes | [Theme design](theme-designers/README.md) |
+| People who build pages with blocks | [Exponential Layouts](layouts/README.md) |
+| People who run servers | [Hosting and operations](hosting-operations/README.md) |
+| A team moving a site to Exponential | [Migrating to Exponential](migration/README.md) |
 
-The [Course catalogue](course-catalogue.md) has every course, with links as the courses are published.
+The [Course catalogue](course-catalogue.md) has every course: also Exponential Intelligence, Search, Multisite and site packages, Newsletters, Workshops and bootcamps, and Assessments.
 [Lesson 1.3: Knowing your learners](train-the-trainer/module-01-preparing-to-teach/knowing-your-learners.md) shows
 how to find out who your learners are.
 

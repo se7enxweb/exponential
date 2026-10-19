@@ -3,7 +3,7 @@ title: "Migrating to Exponential: course overview"
 audience: trainer, admin, developer
 category: training
 order: 1
-summary: A trainer's course on migrating sites to Exponential 6 - planning, mapping, import and export tools, the in-place paths from the 4.x line and the 5.x legacy stack, the two paths from eZ Platform and Ibexa, WordPress, Drupal, Joomla and static HTML, leaving Exponential, and a capstone plan. Eight modules, 27 lessons, about 22.5 hours of lessons.
+summary: A trainer's course on migrating sites to Exponential 6 - planning, mapping, import and export tools, the in-place paths from the 4.x line and the 5.x legacy stack, the two paths from eZ Platform and Ibexa, WordPress, Drupal, Joomla and static HTML, leaving Exponential, and a capstone plan. Eight modules, 25 lessons, about 22.5 hours of lessons.
 keywords: migrating to exponential, migration course, course overview, reading path, schedule, migration planning, content mapping, xrowextract, 4.x, 5.x, eZ Platform, Ibexa, Nexus, Platform Legacy, WordPress, Drupal, Joomla, static HTML, leaving exponential, capstone
 type: help
 ---
@@ -32,7 +32,7 @@ rollback.
 
 | | |
 |---|---|
-| Duration | About 22.5 hours of lessons in 8 modules (27 lessons), plus breaks |
+| Duration | About 22.5 hours of lessons in 8 modules (25 lessons), plus breaks |
 | Format | Classroom or online; every lesson has a presentation part and a hands-on exercise |
 | Level | Intermediate to advanced |
 | Prerequisites | Working knowledge of a CMS; shell use; SQL basics for modules 4 to 6; PHP for lessons 3.3 and 4.3; Twig and TPL basics for lesson 5.3 |
