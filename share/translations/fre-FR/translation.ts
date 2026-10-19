@@ -74146,6 +74146,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Every folder is closed.</source>
         <translation>Tous les dossiers sont fermés.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Effacer le filtre</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

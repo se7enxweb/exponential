@@ -17,7 +17,10 @@
  *   headers of its table[data-exphelp-sortable] (cells sort by data-sort-value, else their text).
  * - nav[data-exphelp-nav] the tree of all help pages; its input[data-exphelp-navfilter] (hidden until this file shows
  *   it) narrows the tree to the pages whose title or folder has every typed word; the count goes to
- *   [data-exphelp-navfilter-status]. The folders the filter opened close again when the field is emptied.
+ *   [data-exphelp-navfilter-status]. The folders the filter opened close again when the field is emptied; a
+ *   button [data-exphelp-navfilter-clear] (shown while there is a filter) or Esc empties it. The filter text and the
+ *   folders the reader opened or closed (by data-nav-path) are kept in localStorage ("exphelp-nav") from page to
+ *   page; the folders of the current page (a[aria-current="page"]) are always open.
  * - [data-exphelp-contents-controls] (the contents page, hidden until this file shows it): buttons
  *   [data-exphelp-expand-all] and [data-exphelp-collapse-all] open or close every folder of the tree their
  *   aria-controls names; an address with the #id of a folder opens it.
@@ -634,29 +637,87 @@
     var started = false, searches = [], spy = null;
 
     /**
-     * The filter box of the help tree (nav[data-exphelp-nav] with input[data-exphelp-navfilter]): as you type, only the
-     * pages whose title (or folder name) has every typed word stay, their folders open; empty, the tree is back as it
-     * was (the folders on the way to the current page open). The count goes to [data-exphelp-navfilter-status].
+     * The help tree (nav[data-exphelp-nav]) and its filter box (input[data-exphelp-navfilter]): as you type, only the
+     * pages whose title (or folder name) has every typed word stay, their folders open; empty, the folders are back as
+     * the reader left them. The count goes to [data-exphelp-navfilter-status]; [data-exphelp-navfilter-clear] (shown
+     * while there is a filter) and Esc in the box empty it.
+     * The reader's state is kept from page to page in localStorage (NAV_KEY): the filter text and every folder the
+     * reader opened or closed (a click on its summary, Expand all / Collapse all), keyed by its data-nav-path, so a
+     * reordered or grown tree keeps it. The folders on the way to the current page (a[aria-current="page"]) are always
+     * open. Without storage (blocked, private mode, full) everything works for the page in view.
      */
+    var NAV_KEY = 'exphelp-nav';
+
     // <details> open or closed through its attribute (the same as .open in a browser)
     function isOpen(d) { return d.hasAttribute('open'); }
     function setOpen(d, open) { if (open) { d.setAttribute('open', ''); } else { d.removeAttribute('open'); } }
     function ownChild(node, tag) { return arr(node.children).filter(function (c) { return c.tagName === tag; })[0] || null; }
 
+    function storage() {
+        try { return window.localStorage || null; } catch (e) { return null; }
+    }
+    function readNav() {
+        var raw = null, data = null, s = storage();
+        try { raw = s ? s.getItem(NAV_KEY) : null; } catch (e) { raw = null; }
+        try { data = raw ? JSON.parse(raw) : null; } catch (e) { data = null; }
+        if (!data || typeof data !== 'object') { data = {}; }
+        return {
+            filter: typeof data.filter === 'string' ? data.filter.slice(0, 200) : '',
+            open: data.open && typeof data.open === 'object' && !Array.isArray(data.open) ? data.open : {}
+        };
+    }
+    function writeNav(state) {
+        var s = storage();
+        try { if (s) { s.setItem(NAV_KEY, JSON.stringify(state)); } } catch (e) { /* blocked or full: this page only */ }
+    }
+
     function setupNavFilter(nav, t) {
         var details = arr(nav.querySelectorAll('details'));
+        var state = readNav();
+        function pathOf(d) { return d.getAttribute('data-nav-path') || ''; }
+        function remember(d, open) {
+            var p = pathOf(d);
+            if (p === '') { return; }
+            state.open[p] = !!open;
+        }
+        // the folders on the way to the current page: open and shown, whatever was stored or filtered
+        var current = nav.querySelector('a[aria-current="page"]');
+        function keepCurrent() {
+            for (var n = current ? current.parentNode : null; n && n !== nav; n = n.parentNode) {
+                if (n.tagName === 'DETAILS') { setOpen(n, true); }
+                if (n.tagName === 'LI') { n.hidden = false; }
+            }
+        }
+        details.forEach(function (d) {
+            var p = pathOf(d);
+            if (p !== '' && Object.prototype.hasOwnProperty.call(state.open, p)) { setOpen(d, state.open[p] === true); }
+        });
+        keepCurrent();
         // the folders as the reader left them before the filter opened its matches; back when the field is emptied
         var saved = null;
         var api = {
             setAll: function (open) {
-                details.forEach(function (d) { setOpen(d, open); });
+                details.forEach(function (d) { setOpen(d, open); remember(d, open); });
                 if (saved) { saved = details.map(function () { return open; }); }
+                keepCurrent();
+                writeNav(state);
             }
         };
         nav.expHelpNav = api;
+        // a folder opened or closed by the reader (a click, or Enter/Space, on its summary; it toggles after this)
+        nav.addEventListener('click', function (event) {
+            var summary = event.target && event.target.closest ? event.target.closest('summary') : null;
+            var d = summary ? summary.parentNode : null;
+            if (!d || d.tagName !== 'DETAILS' || !nav.contains(d)) { return; }
+            var open = !isOpen(d);
+            remember(d, open);
+            if (saved) { saved[details.indexOf(d)] = open; }
+            writeNav(state);
+        });
         var input = nav.querySelector('[data-exphelp-navfilter]');
         if (!input) { return api; }
         var status = nav.querySelector('[data-exphelp-navfilter-status]');
+        var clear = nav.querySelector('[data-exphelp-navfilter-clear]');
         var items = arr(nav.querySelectorAll('li'));
         function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
         function folderOf(li) { return ownChild(li, 'DETAILS'); }
@@ -670,10 +731,13 @@
         input.hidden = false;
         function apply() {
             var words = norm(input.value).split(/\s+/).filter(function (w) { return w !== ''; });
+            if (clear) { clear.hidden = input.value === ''; }
+            if (state.filter !== input.value) { state.filter = input.value; writeNav(state); }
             if (!words.length) {
                 items.forEach(function (li) { li.hidden = false; });
                 if (saved) { details.forEach(function (d, i) { setOpen(d, saved[i]); }); }
                 saved = null;
+                keepCurrent();
                 if (status) { status.textContent = ''; }
                 return;
             }
@@ -696,17 +760,37 @@
                 li.hidden = !any;
                 setOpen(d, any);
             });
+            keepCurrent();
             if (status) { status.textContent = shown ? t.navCount.replace('%count', shown) : t.navNone; }
+        }
+        function empty() {
+            input.value = '';
+            apply();
         }
         input.addEventListener('input', function () {
             window.clearTimeout(timer);
             timer = window.setTimeout(apply, 80);
         });
         input.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && input.value !== '') { event.preventDefault(); event.stopPropagation(); input.value = ''; apply(); }
+            if ((event.key === 'Escape' || event.key === 'Esc') && input.value !== '') {
+                event.preventDefault(); event.stopPropagation(); window.clearTimeout(timer); empty();
+            }
         });
+        if (clear) {
+            clear.addEventListener('click', function (event) {
+                event.preventDefault(); window.clearTimeout(timer); empty(); input.focus();
+            });
+        }
+        // the filter of the previous page
+        if (state.filter !== '') {
+            input.value = state.filter;
+            apply();
+        } else if (clear) {
+            clear.hidden = true;
+        }
         return api;
     }
+
 
     /**
      * Expand all / Collapse all of the contents page ([data-exphelp-contents-controls], hidden until this file shows

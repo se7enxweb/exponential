@@ -72851,5 +72851,9 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Every folder is closed.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

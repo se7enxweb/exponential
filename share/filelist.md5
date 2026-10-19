@@ -292,7 +292,7 @@ d04051dd86493ca0c7a5a7d8ef2e9788  design/admin/javascript/contentcheck_storage.j
 8efbbdaa6de1c48f6827f760b04f2dd0  design/admin/javascript/contentstructuremenu_dynamic.js
 9d718f7191966f84d8c4fd05a110a6e0  design/admin/javascript/exp_admin_head.js
 ccc9542289d65bc6f5a7bbf6dbe04821  design/admin/javascript/expajaxuploader.js
-021ef1b89527f1be14e8742f94bd7fb1  design/admin/javascript/exphelp.js
+d498c3a544f95a3e8f7ce80a85e9c32a  design/admin/javascript/exphelp.js
 57d8995b892a18ef13ca0b9779bc29c7  design/admin/javascript/ezajaxrelations_jquery.js
 a7c1e5a25f185f993412621b9a08cd32  design/admin/javascript/ezajaxsubitems_expdatatable.js
 0008a7955d1f67c5efd0f08fe978f284  design/admin/javascript/leftmenu_widthcontrol.js
@@ -339,7 +339,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin/stylesheets/modules/content.css
-65e82aa431e81bca63702d2494cab4d0  design/admin/stylesheets/modules/help.css
+c6dc34bac8507777c7de0d61ddad61c9  design/admin/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin/stylesheets/modules/people.css
 ef2a553f3e9a28390f0d235e3098b593  design/admin/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin/stylesheets/modules/structure.css
@@ -513,7 +513,7 @@ e182e0f2a7a67fcb22d23b2e7a6b033d  design/admin/templates/error/parts/formtoken.t
 5d35317c921d3787c8da593f097cc2f4  design/admin/templates/error/shop/2.tpl
 60e288bd8fb5708e034ac8c4000e36e1  design/admin/templates/error/shop/3.tpl
 3d4689743fd941ff1992808dddc736df  design/admin/templates/error/shop/4.tpl
-b8a8fadacf2563584c5e515938060751  design/admin/templates/exphelp/contents.tpl
+9378c73ba1a5d66df4607e7f3f338b2a  design/admin/templates/exphelp/contents.tpl
 c8eb4e469c24997f5bd69d85d64dfa38  design/admin/templates/exphelp/dashboard.tpl
 d5bcab372dd034d664fb7485189939e5  design/admin/templates/exphelp/manual.tpl
 4af31edbdd39507b6b158a0db77af880  design/admin/templates/exphelp/parts/dashboard_about.tpl
@@ -528,7 +528,7 @@ d909e49ac0a762daae35ca847767243b  design/admin/templates/exphelp/parts/viewer_me
 4c26f2f7c00a6a89aadc8a2bb630312b  design/admin/templates/exphelp/report.tpl
 18a610b08ded2205a7b17f68999ee6f2  design/admin/templates/exphelp/search.tpl
 601a5a9008268305f07ebcceec6a9df6  design/admin/templates/exphelp/topic.tpl
-7a7a2a4efbaf123a54909645210e36e9  design/admin/templates/exphelp/viewer.tpl
+357bb63852ba3f7980c6f2f6f80614e3  design/admin/templates/exphelp/viewer.tpl
 779a3d4311505cfeb78de4b8f1ca2751  design/admin/templates/ezinfo/about.tpl
 6c10e7f9eea0fc7029c8110b0b33fb28  design/admin/templates/ezinfo/copyright.tpl
 be642b13d020aa2e44360d60c283fbc5  design/admin/templates/infocollection_validation.tpl
@@ -951,7 +951,7 @@ bfafd7d7df0571b71ba1cbacadfb2949  design/admin4/javascript/contentcheck_select.j
 d04051dd86493ca0c7a5a7d8ef2e9788  design/admin4/javascript/contentcheck_storage.js
 8efbbdaa6de1c48f6827f760b04f2dd0  design/admin4/javascript/contentstructuremenu_dynamic.js
 ccc9542289d65bc6f5a7bbf6dbe04821  design/admin4/javascript/expajaxuploader.js
-021ef1b89527f1be14e8742f94bd7fb1  design/admin4/javascript/exphelp.js
+d498c3a544f95a3e8f7ce80a85e9c32a  design/admin4/javascript/exphelp.js
 bac30bec66631791ce7970d4a26f98d5  design/admin4/javascript/ezadmin_menubar.js
 57d8995b892a18ef13ca0b9779bc29c7  design/admin4/javascript/ezajaxrelations_jquery.js
 a7c1e5a25f185f993412621b9a08cd32  design/admin4/javascript/ezajaxsubitems_expdatatable.js
@@ -1068,7 +1068,7 @@ fef6201f7a8970ad72c4e5d3fc5147ce  design/admin4/stylesheets/content.css
 d57109b58209ac401af2138ffd2ac93d  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 8cc64413ebee3f4375a31c94d48286b9  design/admin4/stylesheets/modules/content.css
-65e82aa431e81bca63702d2494cab4d0  design/admin4/stylesheets/modules/help.css
+c6dc34bac8507777c7de0d61ddad61c9  design/admin4/stylesheets/modules/help.css
 aa82582790ae9045ab54f1183a83a860  design/admin4/stylesheets/modules/people.css
 ef2a553f3e9a28390f0d235e3098b593  design/admin4/stylesheets/modules/setup.css
 40e6fed92366bdd7fce5f4320b9f8d73  design/admin4/stylesheets/modules/structure.css
@@ -1264,7 +1264,7 @@ dfc9f60f6f8ad15792eef04ef82dae7a  design/admin4/templates/error/shop/1.tpl
 b699c8d9f5fd81bafc4807efafad1e8c  design/admin4/templates/error/shop/2.tpl
 61b4fd1fca8330170ce7e6b1425a3962  design/admin4/templates/error/shop/3.tpl
 1f65f7fa06c839574842ea008621140b  design/admin4/templates/error/shop/4.tpl
-b8a8fadacf2563584c5e515938060751  design/admin4/templates/exphelp/contents.tpl
+9378c73ba1a5d66df4607e7f3f338b2a  design/admin4/templates/exphelp/contents.tpl
 c8eb4e469c24997f5bd69d85d64dfa38  design/admin4/templates/exphelp/dashboard.tpl
 d5bcab372dd034d664fb7485189939e5  design/admin4/templates/exphelp/manual.tpl
 4af31edbdd39507b6b158a0db77af880  design/admin4/templates/exphelp/parts/dashboard_about.tpl
@@ -1279,7 +1279,7 @@ d909e49ac0a762daae35ca847767243b  design/admin4/templates/exphelp/parts/viewer_m
 4c26f2f7c00a6a89aadc8a2bb630312b  design/admin4/templates/exphelp/report.tpl
 18a610b08ded2205a7b17f68999ee6f2  design/admin4/templates/exphelp/search.tpl
 601a5a9008268305f07ebcceec6a9df6  design/admin4/templates/exphelp/topic.tpl
-7a7a2a4efbaf123a54909645210e36e9  design/admin4/templates/exphelp/viewer.tpl
+357bb63852ba3f7980c6f2f6f80614e3  design/admin4/templates/exphelp/viewer.tpl
 7deb1dc6bd320de93789f39eb322d1f4  design/admin4/templates/ezinfo/about.tpl
 6c10e7f9eea0fc7029c8110b0b33fb28  design/admin4/templates/ezinfo/copyright.tpl
 1930afe53fb5c2737daf2736356f4ca7  design/admin4/templates/infocollection_validation.tpl
@@ -3299,7 +3299,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-7b77da544006101d6ed6887f591416fb  doc/changelogs/6.0/6.0.15.md
+79381511db1e2c385ca079b6f2a68825  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -6125,7 +6125,7 @@ efbf2cf79f254018df640a05a54f55d9  doc/features/6.0/extensions/xrowmetadata.md
 3961785a8af896cb1fddd1e9be1eb080  doc/features/6.0/file-consistency-check.md
 dfa9c308bb3efde44b47784f72b7e244  doc/features/6.0/form-expired-page.md
 1d25daac4da9c47f9f764dd33b7b4653  doc/features/6.0/help-content.md
-d4acb834af76d4d1c8ad3a831214283e  doc/features/6.0/help-system.md
+6e796371a99fd813c487dab2e0322471  doc/features/6.0/help-system.md
 8de8fa7cc57c60a79a0dbb7e6698bfac  doc/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/features/6.0/icon-themes-in-extensions.md
 32d4de8b46c395678441a270357e7b08  doc/features/6.0/install-in-one-command.md
@@ -11569,7 +11569,7 @@ bb55605f0c73bddb522d4d64444dc239  share/transformations/basic.tr
 99862a3b59cc584c3fcba01e689aaa17  share/transformations/hebrew.tr
 06361e73b7836778b599fa55f3300ebf  share/transformations/latin.tr
 9c0a310f00eb6c3334a8c41198ec3161  share/transformations/search.tr
-03cc02bdf189cfd114cc93ce2b0a0cd6  share/translations/ara-SA/translation.ts
+d186462600290c89dd269528a92d48fd  share/translations/ara-SA/translation.ts
 460da6761ad0f2e5f4e9482a3688df97  share/translations/cat-ES/translation.ts
 4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
 dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
@@ -11581,18 +11581,18 @@ bdfd97e15fff602fff88ee240d9fb0ce  share/translations/cro-HR/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-72343a306951386da2fb233a104f90ec  share/translations/eng-US/translation.ts
-8b8cff20ecfdfbadd00e08cc30ac7e69  share/translations/esl-ES/translation.ts
-e5fb6a43f0f2f46740edeb98daf08736  share/translations/esl-MX/translation.ts
+01ad7bcc76559ef13335e8b87800236e  share/translations/eng-US/translation.ts
+02cb8538896af9e51427239fca9b261e  share/translations/esl-ES/translation.ts
+4055c380aafb7ead098d5d901ffa28f1  share/translations/esl-MX/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
-d0f78984ddf9bbf13ae5fd7f0a269243  share/translations/fre-FR/translation.ts
+b214ff518dadf0c3f3763a5930039b54  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-ee205a394d6ca940caa60f8242b87bb3  share/translations/ger-DE/translation.ts
-1130397b64ababbb152186c1437aa831  share/translations/heb-IL/translation.ts
+126657dc73e5d18cabcd876837c1b7fa  share/translations/ger-DE/translation.ts
+068dd2c08956541171fc81b04c34e8dd  share/translations/heb-IL/translation.ts
 b57225c7a1b533f5eec823d9ebcfc9f6  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
-91b723cef253ba417403cf92e374e76e  share/translations/lat-VA/translation.ts
+c0e0a6a3b1fb247014840b5523fb7f73  share/translations/lat-VA/translation.ts
 92e922de40aae6851e4478c31f8bf4af  share/translations/nno-NO/translation.ts
 8bbbf764eeb595adc4615cdca139f3ad  share/translations/nor-NO/readme.txt
 d8b8592c64f999f5d1137565a6f0e8da  share/translations/nor-NO/translation.ts
@@ -11602,11 +11602,11 @@ d5ee9f6f41a1629151b2c95729988fd1  share/translations/rus-RU/translation.ts
 8d3885ecf29b1a456cefc940ade7f02c  share/translations/ser-SR/translation.ts
 c0bb0e5ef4ff758c9e505585337f7d2a  share/translations/srp-RS/translation.ts
 bad8d89fdd84ba44ff47bc7bea6ef378  share/translations/swe-SE/translation.ts
-ccc95a0a8db5e19e74143f57562b690b  share/translations/tlh-QO/translation.ts
+bad311c0d44cf16f60ed38984564ebbb  share/translations/tlh-QO/translation.ts
 d428c050e671e6235d81acdf6f5e00c5  share/translations/tur-TR/translation.ts
-8b0be2b7457356fb3435f12dbed985a1  share/translations/ukr-UA/translation.ts
+1ecfcbc75d819062d35a4d1f64d4dac7  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-b7c22f42ec6c787748e41ff19401f7a4  share/translations/untranslated/translation.ts
+f97463f2bb7ac32f57cd5080c654daf5  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -11699,7 +11699,7 @@ a732e808d64b9a5a30633dd745cae6fe  tests/tests/design/AdminFirstPaintColumnsTest.
 0aedf29b682213c1a48cba48309e286a  tests/tests/design/AdminFormLabelsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
 9deb952d9449e8d3117b32aa700c0343  tests/tests/design/AdminHeaderTest.php
-7e6640f8b939ab5b19393a7243162343  tests/tests/design/AdminHelpScriptTest.php
+d40ac536eedf24f1a5a2dcc63cf452a6  tests/tests/design/AdminHelpScriptTest.php
 ffae66982f72a7a9adc99acd43b3d662  tests/tests/design/AdminIconsTest.php
 ef7f72e6efae269cefa3d98124eee4f2  tests/tests/design/AdminJobTranslationsTest.php
 c4203a41bbd488652891f9765e4f56ae  tests/tests/design/AdminKeyboardTest.php
@@ -11773,7 +11773,7 @@ e5afb96904ddba6129f583e0eb0f3bd6  tests/tests/design/StandardContentEditAccessib
 b24983c34e0ac1bf2b048fd6feb0a26a  tests/tests/design/js/csp_tinymce8.js
 e75cdee3134002eb94b3b2b9c3f68d1b  tests/tests/design/js/csp_tree.js
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
-ba5abe5f69157b6d3ba0084649d96f3f  tests/tests/design/js/exphelp.js
+cb293001b34bc52d3fee5d2228d7c095  tests/tests/design/js/exphelp.js
 d26a12327326fb58236058ff32d5505c  tests/tests/design/js/first_paint.js
 b7cffb5712803f903d80c45a0cd3f90d  tests/tests/design/js/language_states.js
 3fb04664014985853b8533ab65da9911  tests/tests/design/js/left_resize.js
@@ -12268,7 +12268,7 @@ fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthenticatio
 dec261453f1798ac4bf413bdbc0aa456  tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php
 36b450bc550a4dc82272aa296b1fda36  tests/tests/kernel/classes/help/expHelpContentExportTest.php
 d1046a764cd9965e41cb1a4576148d32  tests/tests/kernel/classes/help/expHelpContentTest.php
-3c163afb5fbdae18085b5425af403441  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
+cfb2191ca404f04de3819a04e949b57c  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 19fa0f5f2358b00a9b0a8b6fe0a822ca  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 ea72cf918aeca7b86c5f50ce2b395b35  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
 63751e825a3e7a8eab2e03bde858a6e7  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php

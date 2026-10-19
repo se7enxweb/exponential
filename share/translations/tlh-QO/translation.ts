@@ -72751,6 +72751,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Every folder is closed.</source>
         <translation>Hoch ghItlh pa'mey SoQmoHlu'pu'.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Say'moHwI' yIchImmoH</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

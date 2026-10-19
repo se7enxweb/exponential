@@ -79975,5 +79975,9 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Every folder is closed.</source>
         <translation>Alle Ordner sind geschlossen.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Filter leeren</translation>
+    </message>
 </context>
 </TS>

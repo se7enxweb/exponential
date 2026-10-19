@@ -76977,6 +76977,10 @@ Gracias por la retroalimentación</translation>
         <source>Every folder is closed.</source>
         <translation>Todas las carpetas están cerradas.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Borrar filtro</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

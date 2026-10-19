@@ -72736,6 +72736,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Every folder is closed.</source>
         <translation>Усі папки закрито.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Очистити фільтр</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

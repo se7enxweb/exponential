@@ -72751,6 +72751,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Every folder is closed.</source>
         <translation>Omnes capsae clausae sunt.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Filtrum purgare</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

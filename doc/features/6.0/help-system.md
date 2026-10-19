@@ -129,10 +129,15 @@ then have the ids `ext/<extension>/<path>`.
 
 - **All pages** (`/exphelp/contents`): every help page as one tree, its folders closed (each shows its title and
   number of pages), with a filter field that narrows the tree to the pages whose title or folder has every typed
-  word and opens their folders; emptied (or with Esc) it puts the folders back as they were. **Expand all** and
-  **Collapse all** open or close every folder; they sit in a small panel fixed at the end side of the window near the
-  bottom (the left side in a right-to-left language), so they stay at hand while scrolling, and appear only with
-  JavaScript. The panel stays above the debug bar, and above its minimised tab, through the custom property
+  word and opens their folders; emptied (with **Clear filter** or Esc) it puts the folders back as they were.
+  **Expand all** and **Collapse all** open or close every folder; they sit in a small panel at the end of the page,
+  sticky at the bottom of the window at the end side of the help column (the left side in a right-to-left language),
+  so they stay at hand while scrolling and never lie over the side menus, and appear only with JavaScript. The
+  filter text and the folders the reader opened or closed (by their path, `data-nav-path`) are kept in the browser's
+  `localStorage` (key `exphelp-nav`), so the contents page and the navigation at the side of every help page show
+  the same filter and folders from page to page; the folders of the page in view are always open, and without
+  storage (blocked or private browsing) everything still works for the page in view.
+  The panel stays above the debug bar, and above its minimised tab, through the custom property
   `--exp-debug-clearance` that `expdebugbar.css` sets (the room the bar keeps free at the bottom of the window; unset
   without the bar); another fixed control at the bottom of a page can use it the same way:
   `bottom: calc(var(--exp-debug-clearance, 0px) + <gap>)`. Each folder has an id from its path, so

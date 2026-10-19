@@ -72782,6 +72782,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Every folder is closed.</source>
         <translation>כל התיקיות סגורות.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>ניקוי המסנן</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
