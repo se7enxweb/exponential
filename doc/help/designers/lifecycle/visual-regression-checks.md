@@ -39,5 +39,5 @@ These are the widths the Exponential project uses to check its own pages.
 ## Related pages
 
 - [Screenshots for a theme](../distribution/screenshots-for-a-theme.md)
-- Checklist: dark mode
+- [Checklist: dark mode](../theme-design/checklist-dark-mode.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

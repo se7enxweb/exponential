@@ -10,8 +10,8 @@ type: help
 # Removing inline scripts and styles
 
 This page is for designers maintaining a theme written before Content Security Policies were common. The how-to of
-CSP-safe templates is in CSP-safe design, No inline JavaScript
-and No inline CSS; this page is the migration routine.
+CSP-safe templates is in [CSP-safe design](../theme-design/csp-safe-design.md), [No inline JavaScript](../theme-design/no-inline-javascript.md)
+and [No inline CSS](../theme-design/no-inline-css.md); this page is the migration routine.
 
 ## Why now
 
@@ -43,5 +43,5 @@ design without inline scripts"), `sevenx_themes_simple` v1.0.24 and `sevenx_them
 ## Related pages
 
 - [A CSP audit for every release](csp-audit-per-release.md)
-- Checklist: CSP
+- [Checklist: CSP](../theme-design/checklist-csp.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
