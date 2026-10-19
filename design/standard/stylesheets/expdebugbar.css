@@ -320,6 +320,12 @@ textarea.exp-debug-copy-area { position: fixed; top: 0; left: -9999px; width: 1p
 }
 #debug .exp-debug-restore-badge[data-level="warn"] { background: #ffc94d; color: #1d1f23; }
 #debug.exp-debug-min { border: 0; padding: 0; overflow: visible; }
+/* --exp-debug-clearance: the room the bar, or its minimised tab, keeps free at the bottom of the window, for the
+   page's own fixed controls there (the help contents' Expand all / Collapse all) to stay above it:
+   bottom: calc(var(--exp-debug-clearance, 0px) + <gap>). Unset (so 0) without the bar or in a frame. The tab is 8px
+   off the bottom, 40px high and its badge reaches 6px above it: 54px. */
+body.exp-debug-bar { --exp-debug-clearance: var(--exp-debug-bar-h, 38px); }
+body:has(#debug.exp-debug-min:not([hidden])) { --exp-debug-clearance: 54px; }
 
 /* Bar layout: the page summary and "Keep open on reload" on the left, the "Exp Debug" title and the logo at the
    right end of the bar (next to where the minimised tab sits). Order only; the reading and tab order of the markup

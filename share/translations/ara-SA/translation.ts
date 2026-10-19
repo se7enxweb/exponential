@@ -72760,6 +72760,178 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>تمويل Exponential: ما الذي تموله الرعاية وكيف ترعى 7x ومؤسسة Exponential.</translation>
     </message>
+    <message>
+        <source>Expand all</source>
+        <translation>توسيع الكل</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>طي الكل</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>فتح جميع المجلدات أو إغلاقها</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>جميع المجلدات مفتوحة.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>جميع المجلدات مغلقة.</translation>
+    </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>مساعدة لـ %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>ابحث في المساعدة لـ %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>كل الصفحات لـ %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>كل الفئات</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>اقرأ هذه الصفحات بهذا الترتيب.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>من المفيد معرفته</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>البحث حسب الموضوع</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>كل زر يعرض صفحات موضوع واحد لـ %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>الصفحات الأساسية</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>فئات ذات صلة</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>أحدث الإيداعات في Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>السجل الكامل على GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>ما تغيّر مؤخرًا في الشيفرة المصدرية: الفرع الرئيسي لـ se7enxweb/exponential، يقرؤه هذا الخادم من خلاصته العامة.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>تعذّر الوصول إلى GitHub الآن. هذه هي الإيداعات المقروءة في %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>تعذّرت قراءة الإيداعات من GitHub. افتح السجل على GitHub بدلًا من ذلك.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>إخفاء إيداعات الدمج</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>إظهار إيداعات الدمج أيضًا</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>الرسالة</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>عرض %from–%to من %total إيداعًا</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>لا توجد إيداعات لعرضها بعد.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>رعايتك تموّل:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>عن %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>الرعاية الشهرية، ولو كانت صغيرة، دخل يمكن التخطيط له: فهي تموّل عملًا لا تستطيع الهبات لمرة واحدة أن تُبقيه مستمرًا.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>ما الذي تموّله الرعاية</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>ادعم Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential برنامج حر. كل ميزة جديدة وصفحة مساعدة وإضافة وسمة وتطبيق هو عمل يدفع ثمنه أحدٌ من وقته. الرعاية الشهرية المستمرة، بأي حجم، تُبقي هذا العمل مستمرًا وتجعله ينمو.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>ارعَ 7x على GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>ارعَ مؤسسة Exponential على GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>الشركة التي تقود Exponential وأول راعٍ للمشروع: تطوّره وتدعمه وتستضيفه وتُصدر نسخه.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>المنظمة غير الربحية التي تدير المشروع مفتوح المصدر وتكرّس نفسها لتمويله واعتماده ودعمه والتعليم حوله وتطويره والترويج له وتوثيقه.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>إصدارات شهرية والعمل الذي يُبقي كل شيء يعمل</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>تصحيحات أمنية للمكتبات التي يُبنى عليها Exponential، مثل Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>ميزات جديدة تُعاد إلى المجتمع كمصدر مفتوح</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>الجسور والتفرعات والأدوات المحيطة بالمنصة</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>صيانة المكتبات الأساسية</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>التوثيق والدروس والأدلة العملية والأسئلة الشائعة</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>طبقات التكامل: GraphQL وREST وSolr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>البنية التحتية للمجتمع: الدردشة والمرايا والويكي وموارد المطورين</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

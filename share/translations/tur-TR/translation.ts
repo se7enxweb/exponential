@@ -72986,5 +72986,157 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Exponential'ı finanse etme: sponsorluğun neyi karşıladığı ve 7x ile Exponential Foundation'a nasıl sponsor olunacağı.</translation>
     </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>%audience için yardım</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>%audience için yardımda ara</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>%audience için tüm sayfalar</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Tüm hedef kitleler</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Bu sayfaları bu sırayla okuyun.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Bilmekte fayda var</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Konuya göre ara</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Her düğme %audience için bir konunun sayfalarını listeler.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Temel sayfalar</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>İlgili hedef kitleler</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Exponential&apos;a son commit&apos;ler</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>GitHub&apos;da tüm geçmiş</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Kaynak kodda en son neyin değiştiği: se7enxweb/exponential deposunun ana dalı, bu sunucu tarafından herkese açık akışından okunur.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub&apos;a şu anda ulaşılamadı. Bunlar %date tarihinde okunan commit&apos;ler.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Commit&apos;ler GitHub&apos;dan okunamadı. Bunun yerine GitHub&apos;daki geçmişi açın.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Birleştirme commit&apos;lerini gizle</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Birleştirme commit&apos;lerini de göster</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>İleti</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>%total commit&apos;ten %from–%to gösteriliyor</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Henüz gösterilecek commit yok.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Sponsorluğunuz şunları karşılar:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>%name hakkında</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Aylık bir sponsorluk, küçük bile olsa, planlanabilir bir gelirdir: tek seferlik bağışların sürdüremeyeceği işi karşılar.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Sponsorluk neleri finanse eder</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Exponential&apos;ı destekleyin</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential özgür bir yazılımdır. Her yeni özellik, yardım sayfası, eklenti, tema ve uygulama, birinin zamanıyla ödediği bir emektir. Her büyüklükte sürekli bir aylık sponsorluk bu emeği sürdürür ve büyümesini sağlar.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>GitHub&apos;da 7x&apos;e sponsor olun</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>GitHub&apos;da Exponential Foundation&apos;a sponsor olun</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Exponential&apos;ı yöneten şirket ve projenin ilk sponsoru: onu geliştirir, destekler, barındırır ve sürümlerini yayımlar.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Açık kaynak projesini yürüten ve projenin finansmanına, benimsenmesine, desteğine, eğitimine, geliştirilmesine, tanıtımına ve belgelenmesine kendini adamış kâr amacı gütmeyen kuruluş.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Aylık sürümler ve her şeyi ayakta tutan emek</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Exponential&apos;ın dayandığı kitaplıklara, örneğin Zeta Components&apos;a güvenlik yamaları</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Açık kaynak olarak topluluğa geri verilen yeni özellikler</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Platformun çevresindeki köprüler, çatallar ve araçlar</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Çekirdek kitaplıkların bakımı</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Belgeler, eğitimler, nasıl yapılır kılavuzları ve SSS</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Entegrasyon katmanları: GraphQL, REST ve Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Topluluk altyapısı: sohbet, yansılar, wiki&apos;ler ve geliştirici kaynakları</translation>
+    </message>
 </context>
 </TS>

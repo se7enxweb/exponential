@@ -246,6 +246,8 @@ class expHelpLinkCheck
             }
             // code spans keep their length, so nothing inside them is a link
             $line = preg_replace_callback( '/(`+)(.+?)\1/', function ( $m ) { return str_repeat( ' ', strlen( $m[0] ) ); }, $line );
+            // a backslash-escaped bracket or parenthesis is text, as the renderer reads it: "\[x\](y)" is no link
+            $line = preg_replace( '/\\\\[\[\]()!]/', '  ', $line );
             if ( strpos( $line, '](' ) === false )
                 continue;
             if ( preg_match_all( '/(!?)\[((?:[^\[\]]|\[[^\]]*\])*)\]\(\s*(<[^>]*>|[^\s()]*(?:\([^\s()]*\)[^\s()]*)*)(?:\s+(?:"[^"]*"|\'[^\']*\'|\([^)]*\)))?\s*\)/', $line, $all, PREG_SET_ORDER ) )

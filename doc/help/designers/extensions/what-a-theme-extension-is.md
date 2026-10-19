@@ -37,7 +37,7 @@ looks quick, but:
 A minimal theme extension has:
 
 - `design/<design name>/templates/` with at least `pagelayout.tpl` (see
-  The pagelayout);
+  [The pagelayout](../theme-design/the-pagelayout.md));
 - `design/<design name>/stylesheets/`, `javascript/`, `images/`;
 - `settings/design.ini.append.php` with `DesignExtensions[]=<extension name>`
   ([Registering the design](registering-the-design.md));
@@ -70,7 +70,7 @@ or an icon set. Everything in this section applies to them too; the word "theme"
 
 ## Related pages
 
-- Design extensions
+- [Design extensions](../theme-design/design-extensions.md)
 - [Extensions: find, install, configure, build and release](../../../guides/extensions.md)
 - [Theme extensions: start here](theme-extensions-start-here.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -72831,5 +72831,177 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Expand all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
