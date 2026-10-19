@@ -74235,6 +74235,46 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Projekt Exponential: što je, njegove licence, plan razvoja, podrška, kanali zajednice te kako doprinijeti i darivati.</translation>
     </message>
     <message>
+        <source>Two ways to build</source>
+        <translation>Dva načina izrade</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dva načina izrade weba s Exponentialom: po čemu se razlikuju i kako odabrati.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Poduzeća</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Javna uprava</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Pokrenite web svoje organizacije na Exponentialu: što nudi poduzeću, troškovi i podrška, hosting, sigurnost i odabir partnera.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential u javnom sektoru: pristupačnost, privatnost i sigurnost, otvoreni kod i javna nabava, hosting i dugoročno održavanje.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential za poduzeća</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Javni sektor</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential za tvrtke i organizacije: što nudi, troškovi, podrška, hosting, sigurnost i rad s partnerima.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential za vlade i javna tijela: pristupačnost, privatnost, sigurnost, otvoreni kod, javna nabava i dugoročno održavanje.</translation>
+    </message>
+    <message>
         <source>Clear filter</source>
         <translation>Očisti filtar</translation>
     </message>

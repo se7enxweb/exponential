@@ -73187,6 +73187,46 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Exponential projesi: nedir, lisansları, yol haritası, destek, topluluk kanalları ve nasıl katkıda bulunup bağış yapılır.</translation>
     </message>
     <message>
+        <source>Two ways to build</source>
+        <translation>İki yapım yolu</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Exponential ile site oluşturmanın iki yolu: nasıl farklılaştıkları ve nasıl seçileceği.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>İşletmeler</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Kamu kurumları</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Kuruluşunuzun web sitesini Exponential ile çalıştırın: bir işletmeye ne sunduğu, maliyetler ve destek, barındırma, güvenlik ve iş ortağı seçimi.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Kamu sektöründe Exponential: erişilebilirlik, gizlilik ve güvenlik, açık kaynak ve satın alma, barındırma ve uzun vadeli bakım.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>İşletmeler için Exponential</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Kamu sektörü</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Şirketler ve kuruluşlar için Exponential: neler sunduğu, maliyetler, destek, barındırma, güvenlik ve iş ortaklarıyla çalışma.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Kamu kurumları ve hükümetler için Exponential: erişilebilirlik, gizlilik, güvenlik, açık kaynak, satın alma ve uzun vadeli bakım.</translation>
+    </message>
+    <message>
         <source>Clear filter</source>
         <translation>Filtreyi temizle</translation>
     </message>

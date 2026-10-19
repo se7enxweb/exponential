@@ -80179,5 +80179,45 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Clear filter</source>
         <translation>Filter leeren</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Zwei Wege zu bauen</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Zwei Wege, eine Site mit Exponential zu bauen: wie sie sich unterscheiden und wie Sie zwischen ihnen wählen.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Unternehmen</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Behörden und Verwaltungen</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Die Website Ihrer Organisation mit Exponential betreiben: was es Unternehmen bietet, Kosten und Support, Hosting, Sicherheit und die Wahl von Partnern.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential in der öffentlichen Verwaltung: Barrierefreiheit, Datenschutz und Sicherheit, Open Source und Beschaffung, Hosting und langfristige Pflege.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential für Unternehmen</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Öffentlicher Sektor</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential für Unternehmen und Organisationen: was es bietet, Kosten, Support, Hosting, Sicherheit und die Zusammenarbeit mit Partnern.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential für Behörden und öffentliche Einrichtungen: Barrierefreiheit, Datenschutz, Sicherheit, Open Source, Beschaffung und langfristige Pflege.</translation>
+    </message>
 </context>
 </TS>

@@ -74589,6 +74589,46 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Il progetto Exponential: cos&apos;è, le licenze, la roadmap, il supporto, i canali della comunità e come contribuire e donare.</translation>
     </message>
     <message>
+        <source>Two ways to build</source>
+        <translation>Due modi di costruire</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Due modi di costruire un sito con Exponential: in cosa differiscono e come scegliere.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Aziende</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Pubbliche amministrazioni</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Gestisci il sito della tua organizzazione con Exponential: cosa offre a un&apos;azienda, costi e supporto, hosting, sicurezza e scelta dei partner.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential nel settore pubblico: accessibilità, privacy e sicurezza, open source e appalti, hosting e manutenzione a lungo termine.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential per le aziende</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Settore pubblico</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential per aziende e organizzazioni: cosa offre, costi, supporto, hosting, sicurezza e lavoro con i partner.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential per pubbliche amministrazioni ed enti pubblici: accessibilità, privacy, sicurezza, open source, appalti e manutenzione a lungo termine.</translation>
+    </message>
+    <message>
         <source>Clear filter</source>
         <translation>Cancella filtro</translation>
     </message>

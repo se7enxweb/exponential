@@ -56,6 +56,8 @@ class expHelpLanding
         'website-creator' => 'Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.',
         'supporter' => 'Help the project grow: contribute code, documentation, translations and testing, and share what you build.',
         'sponsor' => 'Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.',
+        'government' => 'Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.',
+        'businesses' => 'Run your organization\'s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.',
         'press' => 'Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.',
         'trainer' => 'Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.',
     );

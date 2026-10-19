@@ -72984,6 +72984,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Clear filter</source>
         <translation>مسح عامل التصفية</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>طريقتان للبناء</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>طريقتان لبناء موقع باستخدام Exponential: كيف تختلفان وكيف تختار بينهما.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>الشركات</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>الحكومات</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>شغّل موقع مؤسستك على Exponential: ما يقدّمه للأعمال، والتكاليف والدعم، والاستضافة، والأمان، واختيار الشركاء.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential في القطاع العام: سهولة الوصول، والخصوصية والأمان، والمصدر المفتوح والمشتريات، والاستضافة والرعاية طويلة الأمد.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential للشركات</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>القطاع العام</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential للشركات والمؤسسات: ما يقدّمه، والتكاليف، والدعم، والاستضافة، والأمان، والعمل مع الشركاء.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential للحكومات والهيئات العامة: سهولة الوصول، والخصوصية، والأمان، والمصدر المفتوح، والمشتريات، والرعاية طويلة الأمد.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

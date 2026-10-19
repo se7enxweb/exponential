@@ -74407,6 +74407,46 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Het Exponential-project: wat het is, de licenties, de roadmap, ondersteuning, kanalen van de gemeenschap en hoe u bijdraagt en geeft.</translation>
     </message>
     <message>
+        <source>Two ways to build</source>
+        <translation>Twee manieren om te bouwen</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Twee manieren om een site te bouwen met Exponential: waarin ze verschillen en hoe u kiest.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Bedrijven</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Overheden</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Draai de website van uw organisatie op Exponential: wat het een bedrijf biedt, kosten en ondersteuning, hosting, beveiliging en het kiezen van partners.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential in de publieke sector: toegankelijkheid, privacy en beveiliging, open source en aanbesteding, hosting en onderhoud op lange termijn.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential voor bedrijven</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Publieke sector</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential voor bedrijven en organisaties: wat het biedt, kosten, ondersteuning, hosting, beveiliging en samenwerken met partners.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential voor overheden en publieke instellingen: toegankelijkheid, privacy, beveiliging, open source, aanbesteding en onderhoud op lange termijn.</translation>
+    </message>
+    <message>
         <source>Clear filter</source>
         <translation>Filter wissen</translation>
     </message>
