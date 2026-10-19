@@ -100,5 +100,5 @@ Existing ezflow sites keep working; new landing pages are easier with the layout
 
 - [ezflow](../../../features/6.0/extensions/ezflow.md)
 - [ezwebin](../../../features/6.0/extensions/ezwebin.md)
-- Cronjobs for applications
+- [Cronjobs for applications](../app-creators/cronjobs-for-applications.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

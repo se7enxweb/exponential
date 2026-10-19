@@ -44,7 +44,7 @@ five-page company site to a site network in many languages.
 | Members area or intranet | User registration, roles limited by section, a login requirement per siteaccess | [Member registration and members-only areas](member-registration-and-areas.md) |
 | Online shop | Product classes with a price datatype, basket, checkout, orders, VAT, payment gateways | [Running a shop: overview](shop-overview.md) |
 | Newsletter-driven site | `cjw_newsletter`: lists, subscriptions, editions, sending | [Newsletters with cjw_newsletter](newsletters-with-cjw-newsletter.md) |
-| Site with an application inside | Custom modules and views in an extension, next to the content | Application creators: start here |
+| Site with an application inside | Custom modules and views in an extension, next to the content | [Application creators: start here](../app-creators/app-creators-start-here.md) |
 
 ## What every site gets
 
@@ -94,7 +94,7 @@ Answer these before you start; each answer points to a page that explains the op
 - [ ] Do visitors log in, buy or subscribe? ([Member registration](member-registration-and-areas.md),
       [Running a shop](shop-overview.md), [Newsletters](newsletters-with-cjw-newsletter.md))
 - [ ] Does it need logic no extension offers? Then an application creator writes a module
-      (Exponential as an application platform).
+      ([Exponential as an application platform](../app-creators/exponential-as-an-application-platform.md)).
 - [ ] Where will it run? ([Hosting requirements for a website](hosting-for-a-website.md))
 
 > **Note**

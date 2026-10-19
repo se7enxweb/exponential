@@ -80,5 +80,5 @@ visitors use, then clear the generated variations (`php bin/php/cache.php imagea
 
 - [Images and image variations](images-and-image-variations.md)
 - [Redirect, query and image alias guards](../../../bc/6.0/redirect-query-and-image-alias-guards.md)
-- Security for applications
+- [Security for applications](../app-creators/security-for-applications.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
