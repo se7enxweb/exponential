@@ -74345,5 +74345,117 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infrastruktura społeczności: czat, serwery lustrzane, wiki i zasoby dla programistów</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Trenerzy</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Prasa, media i influencerzy</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Ucz Exponential: kursy dla redaktorów, administratorów, programistów i projektantów, warsztaty, ćwiczenia i sprawdziany.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Pisz i mów o Exponential: fakty, historia, ludzie, cytaty, obrazy i z kim się kontaktować.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Szkolenia</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Prasa i media</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Nauczanie Exponential: kursy, plany lekcji, warsztaty, ćwiczenia i sprawdziany dla każdej roli.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Dla dziennikarzy, mediów i influencerów: fakty, historia, ogłoszenia, obrazy i kontakty.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Udostępniaj swoje rozszerzenia</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Udostępniaj rozszerzenia, które rozpowszechniasz, jak wymaga GPL, aby wszyscy na tym korzystali.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Projekt Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Projekt Exponential: czym jest, jego licencje, plan rozwoju, wsparcie, kanały społeczności oraz jak współtworzyć i wspierać.</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dwa sposoby budowania</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dwa sposoby budowania witryny w Exponential: czym się różnią i jak wybrać.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Firmy i przedsiębiorstwa</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Administracja publiczna</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Prowadź witrynę swojej organizacji na Exponential: co oferuje firmie, koszty i wsparcie, hosting, bezpieczeństwo i wybór partnerów.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential w sektorze publicznym: dostępność, prywatność i bezpieczeństwo, open source i zamówienia, hosting i długoterminowe utrzymanie.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential dla firm</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Sektor publiczny</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential dla firm i organizacji: co oferuje, koszty, wsparcie, hosting, bezpieczeństwo i współpraca z partnerami.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential dla administracji i instytucji publicznych: dostępność, prywatność, bezpieczeństwo, open source, zamówienia i długoterminowe utrzymanie.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Wyczyść filtr</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Zwiń wszystko</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Wszystkie foldery są zamknięte.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Wszystkie foldery są otwarte.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Rozwiń wszystko</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Otwórz lub zamknij wszystkie foldery</translation>
+    </message>
 </context>
 </TS>

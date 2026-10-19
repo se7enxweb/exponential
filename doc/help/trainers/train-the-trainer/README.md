@@ -74,8 +74,8 @@ For a trainer preparing to give this course, in this order:
 
 Lesson 6.2 shows how to build an assessment; as a final task, each trainer prepares and runs one lesson from any
 course in the catalogue for the group, judged against a rubric of objectives, accuracy, timing, safety and
-accessibility. The assessments are the trainer's own material; the documentation describes no official
-certification.
+accessibility. The assessments are the trainer's own material, not an official certification; what the partner
+program publishes about its certifications is on [Certifications](../../partners/certifications.md).
 
 ## Related pages
 

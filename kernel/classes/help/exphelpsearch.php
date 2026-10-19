@@ -122,6 +122,8 @@ class expHelpSearch
             'typeBoost' => array( 'help' => 1.5, 'guide' => 1.3, 'specification' => 0.8, 'changelog' => 0.45, 'history' => 0.6 ),
             // pages below a version directory (features/3.8/, bc/4.1/): the older the major version, the lower
             'versionBoost' => array( '3' => 0.5, '4' => 0.6, '5' => 0.75 ),
+            // per audience (the lowest of a page's audiences); not applied while the search is filtered to that audience
+            'audienceBoost' => array(),
             'titleBoost' => 1.4,
             'stopWords' => self::$defaultStopWords,
             'cacheDir' => null,
@@ -146,7 +148,7 @@ class expHelpSearch
         $value = $number( 'TitleMatchBoost' );
         if ( $value !== null )
             $settings['titleBoost'] = $value;
-        foreach ( array( 'TypeBoost' => 'typeBoost', 'VersionBoost' => 'versionBoost' ) as $name => $key )
+        foreach ( array( 'TypeBoost' => 'typeBoost', 'VersionBoost' => 'versionBoost', 'AudienceBoost' => 'audienceBoost' ) as $name => $key )
         {
             if ( !$ini->hasVariable( 'SearchSettings', $name ) )
                 continue;
@@ -216,6 +218,7 @@ class expHelpSearch
             $major = $index['docs'][$doc][6];
             if ( $major !== '' && isset( $this->settings['versionBoost'][$major] ) )
                 $score *= $this->settings['versionBoost'][$major];
+            $score *= $this->audienceFactor( $index['docs'][$doc], $filters );
             // every group matches a word of the title: the page is about the query
             $titleWords = array();
             foreach ( self::tokenize( $index['docs'][$doc][1] ) as $word )
@@ -270,7 +273,7 @@ class expHelpSearch
         $docs = array_keys( $this->applyFilters( $all, $filters, $index ) );
         $rank = array();
         foreach ( $docs as $doc )
-            $rank[$doc] = $this->rank( $index['docs'][$doc] );
+            $rank[$doc] = $this->rank( $index['docs'][$doc] ) * $this->audienceFactor( $index['docs'][$doc], $filters );
         usort( $docs, function ( $a, $b ) use ( $index, $rank )
         {
             $da = $index['docs'][$a];
@@ -302,6 +305,34 @@ class expHelpSearch
         $result['results'] = $result['hits'];
         $result['took_ms'] = round( ( microtime( true ) - $start ) * 1000, 2 );
         return $result;
+    }
+
+    /**
+     * The factor of a page's audiences, [SearchSettings] AudienceBoost[<audience>] (1 when not set; the lowest when a
+     * page has several): the trainers' lessons rank below the editors' and administrators' pages on the same subject.
+     * It is not applied while the search is filtered to one of the page's audiences that has a factor, so under the
+     * Trainers filter the lessons rank on their own.
+     *
+     * @param array $doc a page of the search index (audience list at [2])
+     * @param array $filters cleanFilters()
+     * @return float
+     */
+    public function audienceFactor( array $doc, array $filters )
+    {
+        $audiences = isset( $doc[2] ) ? (array)$doc[2] : array();
+        if ( !$audiences || !$this->settings['audienceBoost'] )
+            return 1.0;
+        $selected = isset( $filters['audience'] ) ? (array)$filters['audience'] : array();
+        $factor = 1.0;
+        foreach ( $audiences as $audience )
+        {
+            if ( !isset( $this->settings['audienceBoost'][$audience] ) )
+                continue;
+            if ( in_array( $audience, $selected, true ) )
+                return 1.0;
+            $factor = min( $factor, (float)$this->settings['audienceBoost'][$audience] );
+        }
+        return $factor;
     }
 
     /** The factor of a page's type and release (TypeBoost[] times VersionBoost[]). */

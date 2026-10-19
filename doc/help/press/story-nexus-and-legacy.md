@@ -35,6 +35,7 @@ sites that keep Exponential 6, including sites built in the eZ Publish years, an
 | Legacy repository created 23 February 2025; Nexus 28 January 2026 | [Who is 7x?, timeline](../who-is-7x.md#nearly-thirty-years-the-timeline) |
 | Legacy lines 2.5.x, 3.3.x, 4.6.x and 5.0.x | [Exponential Platform Legacy](../who-is-the-exponential-foundation.md#exponential-platform-legacy) |
 | Nexus 1.0.0.x to 1.3.0.x, for Platform v2.5 to v5 | [Exponential Platform Nexus](../who-is-the-exponential-foundation.md#exponential-platform-nexus) |
+| The 1.3.0.x line (Platform v5) and the v5 starter have no legacy kernel; the older Nexus lines include Exponential 6 | [Nexus starter](../../features/6.0/platform-nexus-starter.md) |
 | A CJW flavor of Nexus exists, and a ready-to-run starter "Currently In Public Beta" | same; [Nexus starter](../../features/6.0/platform-nexus-starter.md) |
 | The legacy bridge connects the two kernels | [Legacy bridge](../../features/6.0/legacy-bridge.md) |
 
@@ -45,6 +46,7 @@ sites that keep Exponential 6, including sites built in the eZ Publish years, an
 | "Legacy means outdated" | "Legacy" names Exponential 6 running beside Symfony |
 | "Nexus is Netgen's product" | A 7x distribution built on Netgen's open source packages, credited ([Crediting Netgen, Mugo Web and CJW Network](crediting-other-projects.md)) |
 | "The starter is stable" | Its description says public beta |
+| "Every Nexus includes Exponential 6" | The 1.3.0.x line and the v5 starter do not ([Covering Exponential Platform releases](covering-platform-releases.md)) |
 
 ## Angles and headline ideas
 

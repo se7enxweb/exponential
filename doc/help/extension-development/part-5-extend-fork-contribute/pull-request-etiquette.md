@@ -1,0 +1,63 @@
+---
+title: Pull request etiquette
+audience: developer, designer, app-creator
+category: extension-development
+order: 90
+summary: The habits that get pull requests merged and make maintainers glad to see your name - small and focused, explained, tested, patient, open to change - and what to avoid.
+keywords: pull request, etiquette, maintainer, review, small changes, patience, respect, communication, open source
+type: help
+---
+# Pull request etiquette
+
+Part 5, chapter 9. The mechanics of a pull request are in the previous chapter. This one is about the people at the
+other end. A maintainer reads your pull request in the time they have left after their own work, often unpaid. These
+habits make that time count, for them and for you.
+
+## Do
+
+- **Keep it small.** A pull request that changes one thing in fifty lines is reviewed today. One that changes five
+  things in two thousand lines waits for a free weekend that may not come.
+- **Explain the why.** The diff shows what changed. Only you can say why, and what you tried that did not work.
+- **Show how you checked it.** "Tested" means nothing; "a new test that fails without the change, the full suite with
+  the same result as main, and the sign-in tried by hand in two browsers" means a lot.
+- **Follow the project's style**, even where you disagree with it. Propose a style change separately, if at all.
+- **Answer every review comment**, with a change or a reason. "Done" is a fine answer.
+- **Say thank you.** For the review, for the merge, for the project.
+- **Mention what is not yours.** A test that already fails on main, a warning that was there before. Name it, so
+  nobody thinks you caused it.
+
+## Do not
+
+- **Do not mix in unrelated changes.** No reformatting of files you did not otherwise touch, no renaming "while I was
+  there". They hide the real change.
+- **Do not argue about taste in a review.** If the maintainer prefers another name, use it. It is their project.
+- **Do not ping daily.** A friendly reminder after two or three weeks is enough. Maintainers have holidays.
+- **Do not open the same pull request again** after it was closed. Ask why it was closed, in a comment on it.
+- **Do not take a rejection personally.** A project may decline a good change because it does not fit its direction.
+  That is a fork's legitimate reason to exist ([When to fork, and when not to](when-to-fork.md)), not a reason to be
+  angry.
+- **Do not put credit for yourself into the code** (a comment "fixed by ..."). Your name is in the Git history.
+
+## When you are the maintainer
+
+The same habits apply the other way round:
+
+- Answer within a reasonable time, even if only to say "I will look at this next week".
+- Explain what needs to change, with an example where you can.
+- Fix small things yourself on top of a contributor's branch, if they allow edits, instead of a round of comments
+  about a typo.
+- Say thank you, especially to first-time contributors.
+
+See also [Reviewing other people's work](reviewing-other-peoples-work.md).
+
+## Language
+
+Many maintainers and contributors write in a second language. Write short, plain sentences. Avoid irony; it does not
+survive translation. Assume good intent in what you read.
+
+## Related pages
+
+- Previous: [Contributing back with pull requests](contributing-back-with-pull-requests.md)
+- Next: [Writing good issues](writing-good-issues.md)
+- [Case study: a pull request to an upstream author](case-study-a-pull-request-to-an-upstream-author.md)
+- [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

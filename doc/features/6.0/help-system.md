@@ -7,7 +7,7 @@ if you write documentation (in `doc/` or in an extension) that should show up in
 
 - **Help dashboard** (`/exphelp/dashboard`): the Exponential logo above "Help center" (the header's drawing,
   `exphelp/parts/dashboard_brand.tpl`, per design), a search field, the help for each audience (editors, administrators,
-  developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters and sponsors; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
+  developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters, sponsors, trainers, press, media and influencers, businesses and governments; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
   report an error.
 - **Help pages** (`/exphelp/viewer/<page>`): every git-tracked Markdown and text file under `doc/`, rendered with
   headings, a table of contents, tables, callouts, highlighted code and images, with the navigation of its section,
@@ -59,10 +59,11 @@ Security Policy.
 | `[IndexSettings] Roots[]` | `doc` | the directories whose tracked files are shown |
 | `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose `doc/` directory is shown too (opt-in) |
 | `[IndexSettings] ExcludePatterns[]` | doxygen, HTML, SVG | never shown, even when tracked |
-| `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
+| `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor`, `trainer`, `press` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
 | `[AudienceSettings] PathRules[]` | per directory | `<glob>;<audience,...>`, first match wins |
 | `[CategorySettings]` | eight categories | names, icons and path rules |
 | `[SearchSettings]` | 20 results | result count and the weights of title, headings and text |
+| `[SearchSettings] AudienceBoost[]` | `trainer` 0.6 | a factor for the pages of an audience (the lowest of a page's audiences), not applied while the search is filtered to that audience: the trainers' lessons rank below the editor and administrator pages they teach |
 | `[FeaturedSettings] PageList[]` | six help pages | the "Featured guides" of the dashboard |
 | `[ContextHelp] Map[]` | kernel modules | `Map[<module>/<view>]=<page>#<anchor>` |
 | `[IssueTrackers]` | the Exponential tracker | where errors are reported |
@@ -172,10 +173,15 @@ help, its mission and `Funds[]`. `Enabled=disabled` removes the block.
 
 - **All pages** (`/exphelp/contents`): every help page as one tree, its folders closed (each shows its title and
   number of pages), with a filter field that narrows the tree to the pages whose title or folder has every typed
-  word and opens their folders; emptied (or with Esc) it puts the folders back as they were. **Expand all** and
-  **Collapse all** open or close every folder; they sit in a small panel fixed at the end side of the window near the
-  bottom (the left side in a right-to-left language), so they stay at hand while scrolling, and appear only with
-  JavaScript. The panel stays above the debug bar, and above its minimised tab, through the custom property
+  word and opens their folders; emptied (with **Clear filter** or Esc) it puts the folders back as they were.
+  **Expand all** and **Collapse all** open or close every folder; they sit in a small panel at the end of the page,
+  sticky at the bottom of the window at the end side of the help column (the left side in a right-to-left language),
+  so they stay at hand while scrolling and never lie over the side menus, and appear only with JavaScript. The
+  filter text and the folders the reader opened or closed (by their path, `data-nav-path`) are kept in the browser's
+  `localStorage` (key `exphelp-nav`), so the contents page and the navigation at the side of every help page show
+  the same filter and folders from page to page; the folders of the page in view are always open, and without
+  storage (blocked or private browsing) everything still works for the page in view.
+  The panel stays above the debug bar, and above its minimised tab, through the custom property
   `--exp-debug-clearance` that `expdebugbar.css` sets (the room the bar keeps free at the bottom of the window; unset
   without the bar); another fixed control at the bottom of a page can use it the same way:
   `bottom: calc(var(--exp-debug-clearance, 0px) + <gap>)`. Each folder has an id from its path, so
@@ -265,7 +271,9 @@ by `./console exp:help:examples`; `--check` reports pages that are not current. 
 [Examples](../../examples/README.md#how-the-generated-pages-are-made). They have the page type `generated`, which ranks
 below the written pages (`[SearchSettings] TypeBoost[generated]`) and stays off the audience cards of the dashboard.
 
-The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change.
+The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change. A rebuild
+also removes what the older index left: the other `index-<signature>.php` files and the cached navigation trees
+(`nav/`) and rendered pages (`render/`) written before it, so the cache holds only what the current index uses.
 
 ## Languages and accessibility
 

@@ -74436,5 +74436,117 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Gemenskapens infrastruktur: chatt, speglar, wikier och resurser för utvecklare</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Utbildare</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Press, medier och influerare</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Undervisa i Exponential: kurser för redaktörer, administratörer, utvecklare och designers, workshoppar, övningar och prov.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Skriv och berätta om Exponential: fakta, historien, människorna, citat, bilder och vem du kan kontakta.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Utbildning</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Press och medier</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Undervisning i Exponential: kurser, lektionsplaner, workshoppar, övningar och prov för varje roll.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>För journalister, medier och influerare: fakta, historia, meddelanden, bilder och kontakter.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Dela dina tillägg</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Dela de tillägg du distribuerar, som GPL kräver, så att alla har nytta av dem.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Exponential-projektet</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Exponential-projektet: vad det är, dess licenser, färdplan, support, gemenskapens kanaler och hur du bidrar och ger.</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Två sätt att bygga</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Två sätt att bygga en webbplats med Exponential: hur de skiljer sig och hur du väljer.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Företag</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Myndigheter</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Kör organisationens webbplats på Exponential: vad det ger ett företag, kostnader och support, drift, säkerhet och val av partner.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential i offentlig sektor: tillgänglighet, integritet och säkerhet, öppen källkod och upphandling, drift och långsiktigt underhåll.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential för företag</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Offentlig sektor</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential för företag och organisationer: vad det erbjuder, kostnader, support, drift, säkerhet och samarbete med partner.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential för myndigheter och offentliga organ: tillgänglighet, integritet, säkerhet, öppen källkod, upphandling och långsiktigt underhåll.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Rensa filter</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Fäll ihop alla</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Alla mappar är stängda.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Alla mappar är öppna.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Fäll ut alla</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Öppna eller stäng alla mappar</translation>
+    </message>
 </context>
 </TS>

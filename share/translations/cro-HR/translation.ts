@@ -74186,5 +74186,117 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infrastruktura zajednice: chat, zrcala, wikiji i resursi za programere</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Treneri</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Tisak, mediji i influenceri</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Podučavajte Exponential: tečajevi za urednike, administratore, programere i dizajnere, radionice, vježbe i provjere znanja.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Pišite i govorite o Exponentialu: činjenice, povijest, ljudi, citati, slike i kome se obratiti.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Obuka</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Tisak i mediji</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Podučavanje Exponentiala: tečajevi, planovi nastave, radionice, vježbe i provjere znanja za svaku ulogu.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Za novinare, medije i influencere: činjenice, povijest, objave, slike i kontakti.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Vratite proširenja zajednici</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Dijelite proširenja koja distribuirate, kako zahtijeva GPL, da svi imaju koristi.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Projekt Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Projekt Exponential: što je, njegove licence, plan razvoja, podrška, kanali zajednice te kako doprinijeti i darivati.</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dva načina izrade</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dva načina izrade weba s Exponentialom: po čemu se razlikuju i kako odabrati.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Poduzeća</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Javna uprava</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Pokrenite web svoje organizacije na Exponentialu: što nudi poduzeću, troškovi i podrška, hosting, sigurnost i odabir partnera.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential u javnom sektoru: pristupačnost, privatnost i sigurnost, otvoreni kod i javna nabava, hosting i dugoročno održavanje.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential za poduzeća</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Javni sektor</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential za tvrtke i organizacije: što nudi, troškovi, podrška, hosting, sigurnost i rad s partnerima.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential za vlade i javna tijela: pristupačnost, privatnost, sigurnost, otvoreni kod, javna nabava i dugoročno održavanje.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Očisti filtar</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Sažmi sve</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Sve su mape zatvorene.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Sve su mape otvorene.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Proširi sve</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Otvorite ili zatvorite sve mape</translation>
+    </message>
 </context>
 </TS>

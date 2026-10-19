@@ -18,24 +18,23 @@ include the hands-on exercises but not breaks.
 
 | Course | For | Level | Length | Prerequisites |
 |---|---|---|---|---|
-| [Train the trainer](train-the-trainer/README.md) | People who will teach Exponential | Beginner to intermediate | 34 lessons, about 21 hours | Browser and terminal skills |
-| Editors 101 | New editors and authors | Beginner | about 2 days | A browser |
-| Editors 201 | Editors who publish every week | Intermediate | about 2 days | Editors 101 |
-| Exponential Layouts | Editors and site builders who build pages with blocks | Beginner to intermediate | about 2 days | Editors 101 |
-| Exponential Intelligence | Editors and administrators who use the AI features | Intermediate | about 1.5 days | Editors 101 |
-| Site administration | People who run a site | Intermediate | about 4 days | Editors 101, basic command line |
-| Hosting and operations | System administrators and hosting staff | Intermediate to advanced | about 2.5 days | Site administration, Linux |
-| Search | Administrators and developers | Intermediate | about 1.5 days | Site administration |
-| Multisite and site packages | Administrators and developers | Advanced | about 2 days | Site administration |
-| Developers | PHP developers who build on Exponential | Intermediate to advanced | about 4 days | PHP, Git |
-| Theme design | Designers and front-end developers | Intermediate | about 2.5 days | HTML, CSS; Developers module on templates helps |
-| Newsletters | Editors and administrators who send newsletters | Intermediate | about 1.5 days | Editors 101 |
-| Migrating to Exponential | Teams moving a site to Exponential | Advanced | about 2 days | Site administration or Developers |
-| Workshops and bootcamps | Groups that need a compact program | All | 1, 3 and 5 days | Depends on the agenda |
-| Assessments and practical exercises | Trainers who assess learners | All | per course | The course being assessed |
+| [Train the trainer](train-the-trainer/README.md) | People who will teach Exponential | Beginner to intermediate | 34 lessons, about 21 hours (3 to 4 days) | Browser and terminal skills |
+| [Editors 101](editors-101/README.md) | New editors and authors | Beginner | 27 lessons, about 19.5 hours (about 3 days) | A browser |
+| [Editors 201](editors-201/README.md) | Editors who publish every week | Intermediate | 23 lessons, about 16 hours (about 3 days) | Editors 101 |
+| [Exponential Layouts](layouts/README.md) | Editors and site builders who build pages with blocks | Beginner to intermediate | 23 lessons, about 17.5 hours (about 3 days) | Editors 101 |
+| [Exponential Intelligence](exponential-intelligence/README.md) | Editors and administrators who use the AI features | Beginner to advanced | 21 lessons, about 15.5 hours (about 2.5 days) | Editors 101 |
+| [Site administration](site-administrators/README.md) | People who run a site | Intermediate | 48 lessons, about 30 hours (about 5 days) | Editors 101, basic command line |
+| [Hosting and operations](hosting-operations/README.md) | System administrators and hosting staff | Intermediate to advanced | 28 lessons, about 20 hours (3 to 4 days) | Site administration, Linux |
+| [Search](search/README.md) | Administrators and developers | Intermediate | 20 lessons, about 10 hours (1.5 to 2 days) | Site administration |
+| [Multisite and site packages](multisite-and-packages/README.md) | Administrators and developers | Intermediate to advanced | 26 lessons, about 22 hours (about 4 days) | Site administration |
+| [Developers](developers/README.md) | PHP developers who build on Exponential | Intermediate to advanced | 52 lessons, about 44 hours (about 7 days) | PHP, Git |
+| [Theme design](theme-designers/README.md) | Designers and front-end developers | Beginner to advanced | 30 lessons, about 24 hours (about 4 days) | HTML, CSS |
+| [Newsletters](newsletter/README.md) | Editors and administrators who send newsletters | Beginner to advanced | 20 lessons, about 16 hours (about 2.5 days; 1.5 days for the editors' path) | Editors 101 |
+| [Migrating to Exponential](migration/README.md) | Teams moving a site to Exponential | Intermediate to advanced | 25 lessons, about 22.5 hours (about 4 days) | Site administration or Developers |
+| [Workshops and bootcamps](workshops/README.md) | Groups that need a compact program | All | Half-day, 1-, 3- and 5-day programs | Depends on the agenda |
+| [Assessments and practical exercises](assessments/README.md) | Trainers who assess learners | All | About 6 hours for the trainer; tests and tasks per course | The course being assessed |
 
-Courses without a link are being written in this section of the help; their overviews appear here as soon as they
-are published, and the Help center's **Training** category lists every published page.
+Each course overview lists shorter schedules built from its modules.
 
 ## Suggested order
 
@@ -58,9 +57,9 @@ are published, and the Help center's **Training** category lists every published
 
 | Group | Program |
 |---|---|
-| A new editorial team | Editors 101 (2 days), then Exponential Layouts (2 days), a month later Editors 201 |
-| An intranet administrator | Editors 101, day 1 only; then Site administration (4 days) |
-| An agency's developers | Developers (4 days), Theme design (2.5 days), Exponential Layouts (selected modules) |
+| A new editorial team | Editors 101 (3 days), then Exponential Layouts (3 days), a month later Editors 201; or the [editor bootcamp](workshops/module-03-three-day-bootcamps/editor-bootcamp.md) |
+| An intranet administrator | Editors 101, Modules 1 to 3 only; then Site administration (5 days, or its intensive four-day schedule) |
+| An agency's developers | Developers (7 days, or its four-day agency fast track), Theme design (4 days), Exponential Layouts (selected modules) |
 | A hosting company's support staff | Site administration, modules on caches, cronjobs, logs and upgrades; then Hosting and operations |
 | A migration project team | Site administration (selected modules), Migrating to Exponential, then Developers as needed |
 | New trainers | Train the trainer, then one subject course taught back to the group |
