@@ -70,7 +70,7 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 | [Languages](languages/README.md) | Official languages, translation workflows, right-to-left, plain language |
 | [Sovereignty](sovereignty/README.md) | Self-hosting, data location, open-source licensing and procurement, avoiding vendor lock-in |
 | Building public-service sites (`building/`) | Service catalogs, forms, citizen accounts, news and alerts, events, documents, search, maps, newsletters, multi-site, intranets, extranets |
-| Operations (`operations/`) | Hosting on-premise and in the government cloud, availability, backups, monitoring, incidents, upgrades, change management, staff roles, editorial workflows |
+| [Operations](operations/README.md) | Hosting on-premise and in the government cloud, availability, backups, monitoring, incidents, upgrades, change management, staff roles, editorial workflows |
 | [Procurement and lifecycle](procurement/README.md) | Requirements, tender templates, evaluation, total cost of ownership, exit plans, training, the product lifecycle |
 | [Tasks](tasks/README.md) | Hundreds of step-by-step procedures: publish a council meeting agenda, add a service page with an accessible form, set up a department subsite, translate a page, archive last year's notices ... |
 | [Checklists](checklists/README.md), [FAQ](faq/README.md) and [glossary](glossary/README.md) | Go-live, accessibility, security, privacy and readiness checklists; answers to common questions; terms |
@@ -94,11 +94,11 @@ published.
 | If you are ... | Start with |
 |---|---|
 | a procurement officer or project manager | [Procurement and lifecycle](procurement/README.md), then the requirements and evaluation pages it lists |
-| a head of digital or web manager | this page, [Levels of government](levels/README.md) for your kind of organization, then Operations (`operations/`) |
+| a head of digital or web manager | this page, [Levels of government](levels/README.md) for your kind of organization, then [Operations](operations/README.md) |
 | an accessibility coordinator | [Accessibility standards](../../standards/accessibility.md), then the accessibility section of this help |
 | an information security officer | [Security standards](../../standards/security.md), [Security hardening](../security-hardening.md) |
 | a data protection officer | [Privacy standards](../../standards/privacy.md) |
-| an IT operations team | Operations (`operations/`) and the [hosting help](../hosting/hosting-companies-start-here.md), which covers servers in depth |
+| an IT operations team | [Operations](operations/README.md) and the [hosting help](../hosting/hosting-companies-start-here.md), which covers servers in depth |
 | an editor | the [tasks](tasks/README.md), and [Editing content](../editing-content.md) |
 | a trainer | [Trainers: start here](../trainers/trainers-start-here.md) and [Training for a public body](procurement/training/README.md) |
 | a website builder or supplier | [Website creators: start here](../creators/website-creators/website-creators-start-here.md) |
@@ -114,7 +114,7 @@ published.
    the people who will edit ([Getting started](../getting-started.md), [Admin tour](../admin-tour.md)).
 3. **Week 3: model your organization.** Read the page of your level of government in
    [Levels of government](levels/README.md): content model, sections and roles.
-4. **Week 4: plan operations and people.** Read Operations (`operations/`) and decide who hosts, who
+4. **Week 4: plan operations and people.** Read [Operations](operations/README.md) and decide who hosts, who
    backs up, who patches, who approves content and who trains editors
    ([Training for a public body](procurement/training/README.md)).
 
