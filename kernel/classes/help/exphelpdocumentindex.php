@@ -768,7 +768,13 @@ class expHelpDocumentIndex
             return true;
         $titles = array();
         foreach ( $this->data['documents'] as $id => $document )
+        {
+            // the generated reference examples (type generated, ./console exp:help:examples) are never the help of an
+            // admin page: leaving them out keeps this file, included by every admin page, at the size of the written help
+            if ( isset( $document['type'] ) && $document['type'] === 'generated' )
+                continue;
             $titles[(string)$id] = isset( $document['title'] ) && is_scalar( $document['title'] ) ? (string)$document['title'] : '';
+        }
         return $this->store( self::PAGE_TITLES_FILE, array( 'signature' => $this->data['signature'], 'titles' => $titles ), self::PAGE_TITLES_FILE );
     }
 

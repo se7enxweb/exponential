@@ -76958,6 +76958,26 @@ Gracias por la retroalimentación</translation>
         <translation>Financiar Exponential: qué paga el patrocinio y cómo patrocinar a 7x y a la Fundación Exponential.</translation>
     </message>
     <message>
+        <source>Expand all</source>
+        <translation>Expandir todo</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Contraer todo</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Abrir o cerrar todas las carpetas</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Todas las carpetas están abiertas.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Todas las carpetas están cerradas.</translation>
+    </message>
+    <message>
         <source>Help for %audience</source>
         <translation>Ayuda para %audience</translation>
     </message>

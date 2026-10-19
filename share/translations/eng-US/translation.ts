@@ -73012,6 +73012,26 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</translation>
     </message>
     <message>
+        <source>Expand all</source>
+        <translation>Expand all</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Collapse all</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Open or close every folder</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Every folder is open.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Every folder is closed.</translation>
+    </message>
+    <message>
         <source>Help for %audience</source>
         <translation>Help for %audience</translation>
     </message>

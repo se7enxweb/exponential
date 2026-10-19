@@ -72761,6 +72761,26 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>تمويل Exponential: ما الذي تموله الرعاية وكيف ترعى 7x ومؤسسة Exponential.</translation>
     </message>
     <message>
+        <source>Expand all</source>
+        <translation>توسيع الكل</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>طي الكل</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>فتح جميع المجلدات أو إغلاقها</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>جميع المجلدات مفتوحة.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>جميع المجلدات مغلقة.</translation>
+    </message>
+    <message>
         <source>Help for %audience</source>
         <translation>مساعدة لـ %audience</translation>
     </message>

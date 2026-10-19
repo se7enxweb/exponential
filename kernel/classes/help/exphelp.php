@@ -225,7 +225,9 @@ class expHelp
                       'recordsCount' => ezpI18n::tr( $c, '%count of %total entries' ),
                       'sortBy' => ezpI18n::tr( $c, 'Sort by %title' ),
                       'navCount' => ezpI18n::tr( $c, '%count pages match' ),
-                      'navNone' => ezpI18n::tr( $c, 'No page title matches' ) );
+                      'navNone' => ezpI18n::tr( $c, 'No page title matches' ),
+                      'allOpen' => ezpI18n::tr( $c, 'Every folder is open.' ),
+                      'allClosed' => ezpI18n::tr( $c, 'Every folder is closed.' ) );
     }
 
     /**
