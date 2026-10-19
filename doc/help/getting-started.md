@@ -47,6 +47,10 @@ Forgot your password? Choose **Forgot your password?** below the button. See
 After signing in you see the **Dashboard**: a greeting, quick links, a few numbers (your drafts, your pending items,
 content published lately) and lists of recent content. The tabs at the top lead to the main areas:
 
+![The dashboard after signing in: a greeting with quick links, counters for content, drafts and pending items, and the main tabs in the header](images/getting-started/dashboard-overview.webp)
+
+![The header of the administration with the tabs Dashboard, Content structure, Media, Users, Store, Layouts, Setup and More outlined](images/getting-started/header-tabs.webp)
+
 - **Content structure**: the pages of the site, as a tree.
 - **Media**: the media library, with images, files and videos.
 - **Users**, **Layouts**, **Setup** and others, when your role allows them.
@@ -57,6 +61,10 @@ content published lately) and lists of recent content. The tabs at the top lead 
 
 - Click **Content structure** and open the folders in the tree in the left column, or
 - type a word into the **Search...** field at the top and press Enter. [Searching](searching.md) has more ways.
+
+![The Search field at the right of the header, outlined](images/getting-started/header-search.webp)
+
+![The page of the Fitness folder with its buttons Edit, Upload, Import/Export, Move, Copy and Remove outlined](images/getting-started/item-page-buttons.webp)
 
 Click an item's name to open it. Its page shows the item's content and the buttons for what you can do with it:
 **Edit**, **Move**, **Copy**, **Remove** and more.
@@ -71,11 +79,15 @@ Not ready yet? Press **Store draft and exit** and come back later: the draft wai
 dashboard. Changed your mind? **Discard draft** throws the draft away and leaves the published item as it was.
 [Creating and editing content](editing-content.md) explains the form in detail.
 
+![The top of the edit form with the buttons Send for publishing, Store draft and exit and Discard draft outlined](images/getting-started/edit-buttons.webp)
+
 ## 5. Sign out
 
 Use the last button at the right end of the header, an arrow leaving a box; pointing at it shows **Logout** and
 your username. While an item is open for editing the button is grayed out: finish or leave the edit first. On a
 shared computer, always sign out.
+
+![The sign-out button, the last one at the right end of the header, outlined](images/getting-started/sign-out-button.webp)
 
 ## Getting help
 
@@ -84,6 +96,8 @@ shared computer, always sign out.
 - Many pages of the administration explain themselves in a sentence or two under the title; buttons explain
   themselves when you point at them.
 - If something looks broken, see [When something goes wrong](when-something-goes-wrong.md).
+
+![The help center with its search field and buttons that filter the help pages by audience](images/getting-started/help-dashboard.webp)
 
 ## Grow from user to developer
 

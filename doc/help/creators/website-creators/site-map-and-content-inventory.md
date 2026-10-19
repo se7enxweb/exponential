@@ -13,6 +13,8 @@ This page is for website creators before the first class or folder is created. A
 site will hold; a site map shows where it lives. Done the way this page describes, both translate one to one into
 Exponential's content tree, classes and sections.
 
+![PDF export: the exports of parts of the content tree as PDF](../../images/creators/pdf-export.webp)
+
 ## Contents
 
 1. [How the plan maps to Exponential](#how-the-plan-maps-to-exponential)

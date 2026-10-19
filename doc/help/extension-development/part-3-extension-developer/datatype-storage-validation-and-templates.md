@@ -231,6 +231,6 @@ Rendered with an attribute of ID 77 and the value 4, the edit template produces 
 
 - Previous: [Datatypes](datatypes.md)
 - Next: [Workflow event types](workflow-event-types.md)
-- The eZDataType API
+- [The eZDataType API](../part-8-reference/ezdatatype-api.md)
 - [By hand: a datatype](tutorials/by-hand-datatype.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -124,6 +124,6 @@ Templates are compiled to PHP. A function without compile hints is called at run
 
 - Previous: [Fetch functions](fetch-functions.md)
 - Next: [Datatypes](datatypes.md)
-- Built-in template functions
-- eZTemplate from PHP
+- [Built-in template functions](../part-8-reference/template-functions-reference.md)
+- [eZTemplate from PHP](../part-8-reference/eztemplate.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

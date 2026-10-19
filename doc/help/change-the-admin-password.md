@@ -44,6 +44,8 @@ For the password a fresh installation starts with, see
 The page is `user/password`: `/admin/user/password` with the default URL access (the part before `/user/password` is
 your administration siteaccess). It is the same page in every design; only the way to it differs.
 
+![The Change password form of the administration with the new password field outlined](images/accounts/user-password-admin.webp)
+
 | Design | Where to find it |
 |---|---|
 | **Admin 4** and **Admin 4 L** (the same header) | The user menu (the button with your name in the header) > **Change password**. Or **My account** > the **Password** card > **Change password**. |
@@ -236,6 +238,8 @@ so that your own administrators keep a way in.
 
 Set in `site.ini [PasswordSettings]`, both on by default:
 
+![Setup, Sessions: who is signed in, with the buttons to end sessions](images/accounts/users-sessions.webp)
+
 - **`EndOtherSessions=enabled`**: a sign-in stores a stamp of the password in the session; when the password changes,
   every other session of that user no longer matches and is signed out at its next request, with every session
   handler. The session that made the change gets a new session id. This is what makes a password change useful after
@@ -334,6 +338,8 @@ The extension's own recovery details are in its `README.md` and `doc/two-factor-
 
 The account `admin` exists on every installation, so its login name is the first one an attacker tries. Do not use
 it for daily work:
+
+![Check user accounts: accounts nobody uses or that need a look, to disable, unlock or export](images/accounts/user-hygiene.webp)
 
 1. **Create a personal administrator account.** In **Users** > **Administrator users**, create a **User** with a
    login of your own (not `admin`, not `administrator`, not your public e-mail address if you can avoid it), a real

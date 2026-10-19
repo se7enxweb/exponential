@@ -16,6 +16,8 @@ and run the servers, support staff who answer customers, and the people who mark
 Exponential site needs from a server, which hosting models and server stacks fit, how to install, update, back up,
 monitor and secure customer sites, and how to package all of that as a product.
 
+![Setup in the administration: content model, site and URLs, workflows, users and messages, system and updates, each as a card](../images/hosting/setup-overview.webp)
+
 Every command and setting in this section was checked against the source code and the installation book of this
 release. Where the sources give no figure (prices, response times, capacity per server), the pages give none either:
 they show you how to measure and decide.

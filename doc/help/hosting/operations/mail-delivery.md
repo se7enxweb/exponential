@@ -13,6 +13,8 @@ This page is for system administrators who connect Exponential sites to a mail s
 answer "the password mail never arrived". It answers: which transports Exponential has, which settings choose and
 configure them, what the host's mail setup has to provide, and how to stop a test copy from sending real mail.
 
+![Notification status: pending notifications and the last runs](../../images/hosting/notification-status.webp)
+
 The settings are in `settings/site.ini [MailSettings]`; the walkthrough is
 [10.4 Mail: the file transport and real sending](../../../install/10-after-installing.md#104-mail-the-file-transport-and-real-sending).
 Consent, unsubscribe and bounces are on [Mail consent and bounces](mail-consent-and-bounces.md).

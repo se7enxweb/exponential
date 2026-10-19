@@ -14,6 +14,10 @@ after a user registers, at checkout. Exponential offers two mechanisms: **workfl
 built from event types) and **kernel event listeners** (code). The administrator's guide is
 [Workflows](../../../guides/workflows.md).
 
+![Setup, Workflows: the workflow groups of the installation](../../images/creators/workflows.webp)
+
+![Setup, Triggers: which workflow runs before or after each operation](../../images/creators/triggers.webp)
+
 ## Contents
 
 1. [The pieces](#the-pieces)

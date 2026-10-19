@@ -38,6 +38,8 @@ the program acts for.
 3. The app exchanges the code at `POST /api/auth/v1/oauth/token` (`grant_type=authorization_code`).
 4. It sends `Authorization: OAuth <token>`; after `TokenTTL` (one hour by default) it uses `grant_type=refresh_token`.
 
+![oAuth admin: the OAuth clients of the installation and their access](../../images/creators/oauth-admin.webp)
+
 The client secret belongs on a server; an app that cannot keep a secret should go through a back end of yours.
 
 ## Personal API keys

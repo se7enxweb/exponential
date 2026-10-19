@@ -14,6 +14,8 @@ host (a new release, a settings change) or from a customer's developer. It answe
 which order and why, how a reload of PHP-FPM affects other customers on the same server, what is enough for a template
 change, and how to keep the configuration of a deployed site under version control.
 
+![Setup, Extensions: the extensions on disk, which are active, and the button to regenerate the autoload arrays](../../images/hosting/extensions.webp)
+
 The reference is [Deploying a PHP change](../../../bc/6.0/velocity-engines.md#deploying-a-php-change-expvelocity-deploy);
 the walkthrough is [Deploying Exponential](../../../guides/deploying.md#7-ship-a-php-change-with-one-command).
 

@@ -138,6 +138,6 @@ settings and triggers; see [With RAD: a workflow event](tutorials/rad-workflow-e
 
 - Previous: [Datatype storage, validation and templates](datatype-storage-validation-and-templates.md)
 - Next: [Triggers and workflows for developers](triggers-and-workflows-for-developers.md)
-- The eZWorkflowType API
+- [The eZWorkflowType API](../part-8-reference/ezworkflowtype-api.md)
 - [Workflows](../../../guides/workflows.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

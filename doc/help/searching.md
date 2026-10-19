@@ -16,6 +16,8 @@ This page is for editors who need to find an item quickly, and for visitors who 
 
 The **Search...** field in the header of the administration searches all content you may read.
 
+![The results of a quick search for running: each item with its place in the tree and its type](images/search/search-results.webp)
+
 1. Click the field, or press `/` anywhere on the page (not while typing in another field).
 2. Type one or more words and press Enter.
 
@@ -28,6 +30,8 @@ Tick results and press **Edit selected** to edit several of them in one form.
 
 The funnel button in the search field opens **Search scope**:
 
+![The search page with the In list, which narrows the search to one section, outlined](images/search/search-section-filter.webp)
+
 - **Section**: search only in one section of the site, such as *Media* or *Users*.
 - **Where**: search everywhere, or only below the place you are looking at (**Current location**).
 - **Advanced search** opens the advanced form.
@@ -37,6 +41,8 @@ On the results page the **In:** list limits the search to a section as well.
 ## The advanced search
 
 **Advanced search** (in the search scope, or the link under the search form) offers more fields:
+
+![The advanced search: all of the following words, an exact phrase, class and class attribute, section and published time](images/search/advanced-search.webp)
 
 - **Search for all of the following words** and **Search for an exact phrase**;
 - **Class**: only items of one type, such as *Article* or *Image*; with **Class attribute** only one field of that
@@ -48,6 +54,8 @@ On the results page the **In:** list limits the search to a section as well.
 
 When you know an item's number or address, you do not need to search. The **Content finder** below the tree in the
 left column takes:
+
+![The Content finder in the left column, which opens an item by its id, path or address](images/search/content-finder.webp)
 
 - the **node** number (shown as *Node* on the item's page),
 - a path such as `media/images`,
@@ -80,3 +88,5 @@ that the visitor may read are found.
 The help has a search of its own: on the help dashboard and on every help page, type in the help's search field
 (or press `/`) and the matching pages appear as you type. Filters narrow them to an audience or a topic.
 See [Keyboard shortcuts](keyboard-shortcuts.md#in-the-help-pages).
+
+![The help center's search results for upload, with a snippet of each page](images/search/help-search.webp)

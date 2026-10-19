@@ -13,6 +13,8 @@ This page is for application creators who ship content classes or starter conten
 between development and production. A **package** is a directory with a `package.xml` and the files it names; exported,
 it is one `.ezpkg` file ([Packages](../../../guides/packages.md)).
 
+![Setup, Packages: the packages in the repositories of the installation, with import and export](../../images/creators/packages-list.webp)
+
 ## Contents
 
 1. [What a package carries](#what-a-package-carries)

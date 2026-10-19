@@ -112,7 +112,7 @@ data attributes, escaped: `data-name="{$name|wash}"`.
 ## jQuery and expui
 
 The administration runs jQuery 4 and the `Exp` namespace of the `expui` extension; YUI was removed. Use those rather
-than bringing your own copy of a library; see The expui JavaScript API
+than bringing your own copy of a library; see [The expui JavaScript API](../part-8-reference/expui-javascript-api.md)
 and [From old jQuery to jQuery 4](../part-4-upgrading/old-jquery-to-jquery-4.md).
 
 ## Styling admin pages

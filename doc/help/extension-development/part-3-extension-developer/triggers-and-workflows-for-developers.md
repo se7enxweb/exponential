@@ -55,7 +55,7 @@ $result = eZOperationHandler::execute( 'content', 'publish',
 The signature is `execute( $moduleName, $operationName, $operationParameters, $lastTriggerName = null, $useTriggers = true )`.
 `$result['status']` tells you whether the operation finished (`eZModuleOperationInfo::STATUS_CONTINUE`), is held by a
 workflow, or was cancelled. For creating content, `eZContentFunctions::createAndPublishObject()` does the whole job
-(see Creating, publishing and changing content from PHP).
+(see [Creating, publishing and changing content from PHP](../part-8-reference/content-functions-from-php.md)).
 
 ## What happens when an event waits
 
