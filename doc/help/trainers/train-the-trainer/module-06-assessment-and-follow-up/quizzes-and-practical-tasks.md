@@ -14,8 +14,9 @@ skill. This lesson shows how to build a fair end-of-course assessment from the l
 questions, a practical task and a rubric.
 
 > **Note**
-> The documentation describes no official Exponential certification. Any assessment you run is your own; present it
-> as such.
+> The Exponential Partner Program names certifications for partner teams, but their syllabus, exams and examiners
+> are not published ([Certifications](../../../partners/certifications.md)). Any assessment you run is your own;
+> present it as such.
 
 ## At a glance
 
@@ -82,7 +83,7 @@ Build the assessment for Module 2 of this course.
 1. What should every assessment question check?
 2. What should every answer in the key include?
 3. Why write new questions rather than reuse the lesson quizzes?
-4. Is there an official Exponential certification in the documentation?
+4. May you present your assessment as an official Exponential certification?
 
 <details>
 <summary>Answers</summary>
@@ -90,7 +91,7 @@ Build the assessment for Module 2 of this course.
 1. One objective of the course.
 2. A citation of the help page that proves it.
 3. To measure the skill rather than memory of the quiz.
-4. No; assessments are the trainer's own.
+4. No. It is your own assessment; the partner program's certifications are separate and their details are not published ([Certifications](../../../partners/certifications.md)).
 
 </details>
 

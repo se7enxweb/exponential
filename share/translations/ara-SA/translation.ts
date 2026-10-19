@@ -72932,6 +72932,98 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>البنية التحتية للمجتمع: الدردشة والمرايا والويكي وموارد المطورين</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>المدرّبون</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>الصحافة والإعلام والمؤثرون</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>علّم Exponential: دورات للمحررين والمسؤولين والمطورين والمصممين، وورش عمل وتمارين وتقييمات.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>اكتب وتحدّث عن Exponential: الحقائق والتاريخ والأشخاص والاقتباسات والصور وجهات الاتصال.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>التدريب</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>الصحافة والإعلام</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>تعليم Exponential: دورات وخطط دروس وورش عمل وتمارين وتقييمات لكل دور.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>للصحفيين ووسائل الإعلام والمؤثرين: حقائق وتاريخ وإعلانات وصور وجهات اتصال.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>شارك الإضافات مع المجتمع</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>شارك الإضافات التي توزّعها كما تشترط رخصة GPL، ليستفيد الجميع.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>مشروع Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>مشروع Exponential: ما هو، وتراخيصه، وخارطة طريقه، والدعم، وقنوات المجتمع، وكيف تساهم وتتبرع.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>مسح عامل التصفية</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>طريقتان للبناء</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>طريقتان لبناء موقع باستخدام Exponential: كيف تختلفان وكيف تختار بينهما.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>الشركات</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>الحكومات</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>شغّل موقع مؤسستك على Exponential: ما يقدّمه للأعمال، والتكاليف والدعم، والاستضافة، والأمان، واختيار الشركاء.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential في القطاع العام: سهولة الوصول، والخصوصية والأمان، والمصدر المفتوح والمشتريات، والاستضافة والرعاية طويلة الأمد.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential للشركات</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>القطاع العام</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential للشركات والمؤسسات: ما يقدّمه، والتكاليف، والدعم، والاستضافة، والأمان، والعمل مع الشركاء.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential للحكومات والهيئات العامة: سهولة الوصول، والخصوصية، والأمان، والمصدر المفتوح، والمشتريات، والرعاية طويلة الأمد.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

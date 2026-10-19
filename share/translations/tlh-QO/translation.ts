@@ -72903,6 +72903,98 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>ghom Hal: ja&apos;chuqmeH Daq, nejwI&apos;mey, wiki, chenmoHwI&apos; De&apos; je</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>ghojmoHwI&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>De&apos;ghom, ja&apos;wI&apos;pu&apos;, ghojmoHwI&apos; Hem je</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Exponential yIghojmoH: ghojmeH Qu&apos;mey, De&apos; choHwI&apos;pu&apos;, loHwI&apos;pu&apos;, chenmoHwI&apos;pu&apos;, nagh beQ chenmoHwI&apos;pu&apos; je, Qu&apos;mey, waHmey je.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Exponential yIghItlh &apos;ej yIja&apos;: teH De&apos;, qun, nuvpu&apos;, mu&apos;mey, mInDu&apos; je, &apos;ej &apos;Iv DarI&apos;.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>ghojmoHghach</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>De&apos;ghom ja&apos;wI&apos;pu&apos; je</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Exponential ghojmoH: ghojmeH Qu&apos;mey, ghojmeH nabmey, Qu&apos;mey, waHmey je, Qu&apos; Hoch.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>De&apos;ghom, ja&apos;wI&apos;pu&apos;, ghojmoHwI&apos; Hem je: teH De&apos;, qun, maqmey, mInDu&apos;, rI&apos;meH De&apos; je.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>&apos;ay&apos;mey yInob</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>&apos;ay&apos;mey DanobmoHbogh yIDel, GPL poQ, Hoch QaH.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Exponential jInmol</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Exponential jInmol: nuq &apos;oH, chaw&apos;mey, He, QaH, ghom HoSghajmey, chay&apos; Qapla&apos; DanoblaH je.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Say'moHwI' yIchImmoH</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>cha&apos; chenmoHmeH mIw</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Exponential Dalo&apos;taHvIS Daq chenmoHmeH cha&apos; mIw: chay&apos; pIm &apos;ej chay&apos; yIwIv.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>malja&apos;mey</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>qum</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Exponential Dalo&apos;taHvIS ghom Daq yIDev: malja&apos;vaD nuq nob, Huch QaH je, &apos;aD, Hung, jupma&apos; wIv.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential qum Daq: lo&apos;laHghach, pegh Hung je, ngoq poSmoH je&apos;meH je, &apos;aD, Qorgh nI&apos; je.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>malja&apos;mey Exponential</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>qum Hal</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>kampa&apos;nIymey ghommey je Exponential: nuq nob, Huch, QaH, &apos;aD, Hung, jupma&apos; tlhej.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>qum ghommey je Exponential: lo&apos;laHghach, pegh, Hung, ngoq poSmoH, je&apos;meH, Qorgh nI&apos; je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

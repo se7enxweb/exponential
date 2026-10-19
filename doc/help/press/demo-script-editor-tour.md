@@ -40,9 +40,11 @@ invented items, a second content language, and no drafts left from a previous ta
 1. Press **Edit** next to the language list. Say: "The form opens with a new draft, a copy of the published version."
 2. Point at the buttons at the top: **Send for publishing**, **Store draft and exit**, **Discard draft**.
 3. Point at the **field bar**: "One button per field jumps to its card; a red star marks a required field."
-4. Type in **Description**. Point at the toolbar and the **Editor** switch below the field. Say only what the tour
-   says: "TinyMCE 8 is the default on this installation and Tiptap the alternative; switching keeps what I typed."
-   If your installation differs, say what yours shows.
+4. Type in **Description**. Point at the toolbar and the **Editor** switch below the field. Say what your
+   installation shows, for example: "The **Editor** switch changes the editor of this field; switching keeps what I
+   typed." The defaults differ: a fresh installation keeps TinyMCE 3.5.12 as the default with TinyMCE 8 as an opt-in
+   engine ([The online editor on TinyMCE 8](../../features/6.0/online-editor-tinymce8.md)), while the demonstration
+   server in the [tour](../admin-tour.md) uses TinyMCE 8 with Tiptap as the alternative.
 5. Press **Store draft and exit**. Say: "The draft waits under **My drafts**; only I see it. The form also saves by
    itself every few minutes."
 6. Open **My drafts** on the dashboard, press **Edit** on the draft.
@@ -68,8 +70,8 @@ Mention approval only as documented: "If a site uses an approval, the version wa
    ([Right to left](../../features/6.0/right-to-left.md))
 4. Switch back to English.
 
-If you give numbers, use the documented ones with their source: 268 locale files usable as content languages, 32
-administration translations, ten of them complete ([Languages in Exponential](../../languages.md)).
+If you give numbers, use the documented ones with their source: 268 locale files usable as content languages, 33
+administration translations, nineteen of them complete (19 October 2026) ([Languages in Exponential](../../languages.md)).
 
 ## Recovering on camera
 

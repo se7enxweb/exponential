@@ -524,12 +524,15 @@ Notes:
   **Croatian** (`cro-HR`) are complete since 18 October 2026 for the kernel's 17,287 strings, machine-assisted with a
   glossary per language; the catalogues of ezoe and ezjscore are complete too. The 478 messages added to
   the untranslated file while the work was under way were translated the same way when it was merged, so each
-  covers all 17,763 strings of 18 October 2026. Forms of address: Polish formal
-  like Ukrainian (infinitive on buttons, impersonal sentences), Turkish *siz*, Italian *tu*, Brazilian Portuguese
-  *você*, Dutch *je*, Czech and Croatian formal *vy* / *vi*, Swedish, Norwegian and Danish *du*. The older
-  translations of these languages that had broken placeholders, tags, line breaks, English leftovers, wrong terms or
-  mixed forms of address were redone; obsolete entries stay as they were. A review by a native speaker is welcome.
-- The catalogues of the active extensions are complete in these languages too; each extension releases them.
+  covers all 17,763 strings of 18 October 2026. Forms of address: Polish
+  imperative on buttons and actions ("Zapisz", "Otwórz"; questions keep the infinitive) and impersonal sentences,
+  Turkish *siz*, Italian *tu*, Brazilian Portuguese *você*, Dutch *je*, Czech and Croatian formal *vy* / *vi*,
+  Swedish, Norwegian and Danish *du*. The older translations of these languages that had broken
+  placeholders, tags, line breaks, English leftovers, wrong terms or mixed forms of address were redone; obsolete
+  entries stay as they were. A review by a native speaker is welcome.
+- Each extension releases its own catalogues. Of the ten languages above, ezoe, ezjscore and explayouts_ui (the
+  Layouts tab) carry complete ones; the other extensions show their texts in English in these languages until they
+  get one.
 - Two directories have no locale file of the same meaning: `ser-SR` and `srp-RS` are both Serbian (`ser-SR` in Latin
   script, `srp-RS` in Cyrillic; both locale files exist).
 - Translations of extensions live in each extension's `translations/` directory and are not counted here.

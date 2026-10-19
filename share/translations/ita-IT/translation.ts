@@ -14597,7 +14597,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Salva</translation>
+        <translation>Negozio</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74539,6 +74539,118 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infrastruttura della comunità: chat, mirror, wiki e risorse per sviluppatori</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Formatori</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Stampa, media e influencer</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Insegna Exponential: corsi per redattori, amministratori, sviluppatori e designer, workshop, esercizi e valutazioni.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Scrivi e parla di Exponential: i fatti, la storia, le persone, citazioni, immagini e chi contattare.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Formazione</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Stampa e media</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Insegnare Exponential: corsi, piani di lezione, workshop, esercizi e valutazioni per ogni ruolo.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Per giornalisti, media e influencer: fatti, storia, annunci, immagini e contatti.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Condividi le tue estensioni</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Condividi le estensioni che distribuisci, come richiede la GPL, a beneficio di tutti.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Il progetto Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Il progetto Exponential: cos&apos;è, le licenze, la roadmap, il supporto, i canali della comunità e come contribuire e donare.</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Due modi di costruire</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Due modi di costruire un sito con Exponential: in cosa differiscono e come scegliere.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Aziende</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Pubbliche amministrazioni</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Gestisci il sito della tua organizzazione con Exponential: cosa offre a un&apos;azienda, costi e supporto, hosting, sicurezza e scelta dei partner.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential nel settore pubblico: accessibilità, privacy e sicurezza, open source e appalti, hosting e manutenzione a lungo termine.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential per le aziende</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Settore pubblico</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential per aziende e organizzazioni: cosa offre, costi, supporto, hosting, sicurezza e lavoro con i partner.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential per pubbliche amministrazioni ed enti pubblici: accessibilità, privacy, sicurezza, open source, appalti e manutenzione a lungo termine.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Cancella filtro</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Comprimi tutto</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Tutte le cartelle sono chiuse.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Tutte le cartelle sono aperte.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Espandi tutto</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Apri o chiudi tutte le cartelle</translation>
     </message>
 </context>
 </TS>

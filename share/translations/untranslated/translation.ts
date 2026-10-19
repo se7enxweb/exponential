@@ -73003,5 +73003,97 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

@@ -72888,6 +72888,98 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Інфраструктура спільноти: чат, дзеркала, вікі та ресурси для розробників</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Тренери</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Преса, медіа та інфлюенсери</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Навчайте Exponential: курси для редакторів, адміністраторів, розробників і дизайнерів, воркшопи, вправи та оцінювання.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Пишіть і розповідайте про Exponential: факти, історія, люди, цитати, зображення та контакти.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Навчання</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Преса та медіа</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Навчання Exponential: курси, плани занять, воркшопи, вправи та оцінювання для кожної ролі.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Для журналістів, медіа та інфлюенсерів: факти, історія, оголошення, зображення та контакти.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Поверніть розширення спільноті</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Діліться розширеннями, які ви поширюєте, як вимагає GPL, щоб усі отримали користь.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Проєкт Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Проєкт Exponential: що це, його ліцензії, дорожня карта, підтримка, канали спільноти та як долучитися й підтримати.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Очистити фільтр</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Два способи створення</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Два способи створити сайт з Exponential: чим вони відрізняються і як обрати.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Бізнес</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Органи влади</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Запустіть сайт своєї організації на Exponential: що він дає бізнесу, витрати й підтримка, хостинг, безпека та вибір партнерів.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential у державному секторі: доступність, приватність і безпека, відкритий код і закупівлі, хостинг і довгострокова підтримка.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential для бізнесу</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Державний сектор</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential для компаній і організацій: що він пропонує, витрати, підтримка, хостинг, безпека та робота з партнерами.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential для органів влади та державних установ: доступність, приватність, безпека, відкритий код, закупівлі та довгострокова підтримка.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

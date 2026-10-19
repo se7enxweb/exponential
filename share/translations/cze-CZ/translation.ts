@@ -14539,7 +14539,7 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Uložit</translation>
+        <translation>Obchod</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74414,6 +74414,118 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infrastruktura komunity: chat, zrcadla, wiki a zdroje pro vývojáře</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Školitelé</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Tisk, média a influenceři</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Učte Exponential: kurzy pro redaktory, administrátory, vývojáře a designéry, workshopy, cvičení a hodnocení.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Pište a mluvte o Exponential: fakta, historie, lidé, citáty, obrázky a na koho se obrátit.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Školení</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Tisk a média</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Výuka Exponential: kurzy, plány lekcí, workshopy, cvičení a hodnocení pro každou roli.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Pro novináře, média a influencery: fakta, historie, oznámení, obrázky a kontakty.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Vraťte rozšíření komunitě</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Sdílejte rozšíření, která šíříte, jak vyžaduje GPL, aby z nich měli užitek všichni.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Projekt Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Projekt Exponential: co to je, jeho licence, plán vývoje, podpora, kanály komunity a jak přispět a darovat.</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dva způsoby tvorby</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dva způsoby, jak vytvořit web s Exponential: čím se liší a jak si vybrat.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Firmy</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Státní správa</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Provozujte web své organizace na Exponential: co nabízí firmám, náklady a podpora, hosting, bezpečnost a výběr partnerů.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential ve veřejném sektoru: přístupnost, soukromí a bezpečnost, open source a veřejné zakázky, hosting a dlouhodobá péče.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential pro firmy</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Veřejný sektor</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential pro firmy a organizace: co nabízí, náklady, podpora, hosting, bezpečnost a spolupráce s partnery.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential pro státní správu a veřejné instituce: přístupnost, soukromí, bezpečnost, open source, veřejné zakázky a dlouhodobá péče.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Vymazat filtr</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Sbalit vše</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Všechny složky jsou zavřené.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Všechny složky jsou otevřené.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Rozbalit vše</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Otevřít nebo zavřít všechny složky</translation>
     </message>
 </context>
 </TS>
