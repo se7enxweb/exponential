@@ -295,7 +295,8 @@ class expExtensionWizardBaseTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'acme/k1e-base', $data['name'] );
         $this->assertSame( 'ezpublish-legacy-extension', $data['type'] );
         $this->assertSame( 'MIT', $data['license'] );
-        $this->assertSame( array( 'installer-name' => 'k1e_base' ), $data['extra'] );
+        // the legacy extension installer reads ezpublish-legacy-extension-name, else the dashed name behind the slash
+        $this->assertSame( array( 'ezpublish-legacy-extension-name' => 'k1e_base', 'installer-name' => 'k1e_base' ), $data['extra'] );
         $this->assertSame( array( array( 'name' => 'Ada Example' ) ), $data['authors'] );
         $data = json_decode( expExtensionWizardBaseTestWizard::call( 'composerJson', $this->settings( array( 'author' => '' ) ) ), true );
         $this->assertArrayNotHasKey( 'authors', $data );

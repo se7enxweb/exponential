@@ -94,6 +94,9 @@ function setup(html, opts) {
         addEventListener: (type, fn) => { (winListeners[type] = winListeners[type] || []).push(fn); },
     };
     if (opts.noFetch) delete sandbox.fetch;
+    // localStorage: a given stand-in, or one whose every access throws (blocked storage)
+    if (opts.storage) sandbox.localStorage = opts.storage;
+    if (opts.storageThrows) Object.defineProperty(sandbox, 'localStorage', { get() { throw new Error('SecurityError'); } });
     sandbox.window = sandbox;
     vm.createContext(sandbox);
     vm.runInContext(source, sandbox);
@@ -407,6 +410,75 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
         const nojs = setup(CONTENTS.replace(' data-exphelp-contents-controls', ''));
         res.otherBoxHidden = nojs.document.getElementById('ctl').hidden;
         out('contents controls', res);
+    }
+    {
+        // the navigation's state from page to page: filter text and folders by data-nav-path in localStorage, the
+        // current page's folder always open, a clear button and Esc, storage blocked or broken
+        const NAV = '<div class="a4-help" data-exphelp><nav id="tree" data-exphelp-nav>'
+            + '<input type="search" id="f" data-exphelp-navfilter hidden />'
+            + '<button type="button" id="clr" aria-controls="f" data-exphelp-navfilter-clear hidden>Clear filter</button>'
+            + '<p data-exphelp-navfilter-status></p><ul>'
+            + '<li><details data-nav-path="a"><summary id="sa">Alpha</summary><ul><li><a href="/x/a1">Install</a></li></ul></details></li>'
+            + '<li><details data-nav-path="b"><summary id="sb">Beta</summary><ul><li><a href="/x/b1" aria-current="page">Cache</a></li></ul></details></li>'
+            + '<li><details data-nav-path="c" open><summary id="sc">Gamma</summary><ul><li><a href="/x/c1">Upgrade</a></li></ul></details></li>'
+            + '</ul></nav>'
+            + '<div data-exphelp-contents-controls hidden><button type="button" id="ex" aria-controls="tree" data-exphelp-expand-all>E</button>'
+            + '<button type="button" id="co" aria-controls="tree" data-exphelp-collapse-all>C</button></div></div>';
+        const memory = (init) => {
+            const m = Object.assign({}, init || {});
+            return { m, getItem: (k) => (Object.prototype.hasOwnProperty.call(m, k) ? m[k] : null), setItem: (k, v) => { m[k] = String(v); } };
+        };
+        const stored = (s) => JSON.parse(s.m['exphelp-nav'] || 'null');
+        const opens = (d) => d.querySelectorAll('details').map((x) => x.hasAttribute('open'));
+        const shown = (d) => d.querySelectorAll('li').map((li) => !li.hidden);
+        const res = {};
+
+        // a first page: nothing stored
+        const s = memory();
+        let h = setup(NAV, { storage: s });
+        let d = h.document;
+        res.firstOpens = opens(d);
+        res.firstClearHidden = d.getElementById('clr').hidden;
+        d.dispatch('click', d.getElementById('sa'), {});   // the reader opens Alpha (the browser toggles it after the click)
+        d.getElementById('sa').parentNode.setAttribute('open', '');
+        d.dispatch('click', d.getElementById('sc'), {});   // and closes Gamma
+        d.getElementById('sc').parentNode.removeAttribute('open');
+        res.afterClicks = stored(s);
+        const f = d.getElementById('f');
+        f.value = 'upgrade'; d.dispatch('input', f, {}); h.runTimers(500);
+        res.typed = { filter: stored(s).filter, clearShown: !d.getElementById('clr').hidden, opens: opens(d), shown: shown(d) };
+
+        // the next page: the same filter, and Alpha open, Gamma closed underneath it
+        h = setup(NAV, { storage: s });
+        d = h.document;
+        res.next = { value: d.getElementById('f').value, clearShown: !d.getElementById('clr').hidden, opens: opens(d), shown: shown(d) };
+        d.dispatch('click', d.getElementById('clr'), {});
+        res.cleared = { value: d.getElementById('f').value, filter: stored(s).filter, clearHidden: d.getElementById('clr').hidden,
+            opens: opens(d), focused: d.activeElement && d.activeElement.id };
+        // Esc in the box clears it too
+        const f2 = d.getElementById('f');
+        f2.value = 'install'; d.dispatch('input', f2, {}); h.runTimers(500);
+        const esc = h.key(f2, 'Escape');
+        res.esc = { value: f2.value, filter: stored(s).filter, prevented: esc.defaultPrevented };
+        // Expand all / Collapse all are kept too
+        d.dispatch('click', d.getElementById('co'), {});
+        res.collapseAll = { stored: stored(s).open, opens: opens(d) };
+        h = setup(NAV, { storage: s });
+        res.afterCollapseAll = opens(h.document);
+
+        // storage blocked: the page works for itself
+        h = setup(NAV, { storageThrows: true });
+        d = h.document;
+        const f3 = d.getElementById('f');
+        f3.value = 'upgrade'; d.dispatch('input', f3, {}); h.runTimers(500);
+        d.dispatch('click', d.getElementById('sa'), {});
+        res.blocked = { opens: opens(d), shown: shown(d), clearShown: !d.getElementById('clr').hidden };
+        // a broken or foreign value is ignored; a failing setItem too
+        h = setup(NAV, { storage: { getItem: () => '{"filter": 5, "open": [1]', setItem: () => { throw new Error('QuotaExceeded'); } } });
+        d = h.document;
+        d.dispatch('click', d.getElementById('sa'), {});
+        res.broken = { opens: opens(d), value: d.getElementById('f').value };
+        out('nav state', res);
     }
     {
         const h = setup('<div><p>no help here</p></div>');

@@ -80127,5 +80127,57 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Community-Infrastruktur: Chat, Mirrors, Wikis und Ressourcen für Entwickler</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Trainer</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Presse, Medien und Influencer</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Exponential unterrichten: Kurse für Redakteure, Administratoren, Entwickler und Designer, Workshops, Übungen und Prüfungen.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Über Exponential schreiben und sprechen: Fakten, Geschichte, Menschen, Zitate, Bilder und Ansprechpartner.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Schulung</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Presse und Medien</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Exponential unterrichten: Kurse, Unterrichtspläne, Workshops, Übungen und Prüfungen für jede Rolle.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Für Journalisten, Medien und Influencer: Fakten, Geschichte, Ankündigungen, Bilder und Kontakte.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Erweiterungen zurückgeben</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Teilen Sie die Erweiterungen, die Sie weitergeben, wie es die GPL verlangt, damit alle davon profitieren.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Das Exponential-Projekt</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Das Exponential-Projekt: was es ist, seine Lizenzen, die Roadmap, Support, Community-Kanäle und wie Sie beitragen und spenden.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Filter leeren</translation>
+    </message>
 </context>
 </TS>

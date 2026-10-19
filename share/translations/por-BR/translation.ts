@@ -75125,5 +75125,53 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infraestrutura da comunidade: chat, espelhos, wikis e recursos para desenvolvedores</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Instrutores</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Imprensa, mídia e influenciadores</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Ensine o Exponential: cursos para editores, administradores, desenvolvedores e designers, workshops, exercícios e avaliações.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Escreva e fale sobre o Exponential: os fatos, a história, as pessoas, citações, imagens e quem contatar.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Treinamento</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Imprensa e mídia</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Ensino do Exponential: cursos, planos de aula, workshops, exercícios e avaliações para cada função.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Para jornalistas, mídia e influenciadores: fatos, história, anúncios, imagens e contatos.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Compartilhe suas extensões</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Compartilhe as extensões que você distribui, como exige a GPL, para o benefício de todos.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>O projeto Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>O projeto Exponential: o que é, suas licenças, o roteiro, o suporte, os canais da comunidade e como contribuir e doar.</translation>
+    </message>
 </context>
 </TS>

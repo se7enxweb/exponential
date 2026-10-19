@@ -28,6 +28,10 @@
  * - HELPJS-10: a record page ([data-exphelp-records]) gets a filter field after its summary that hides the rows without
  *   every word (and a table left without rows), with the count in the page's language, and a sort button in each
  *   header of its table[data-exphelp-sortable] but a data-sort="none" one (aria-sort, natural order, both ways).
+ * - HELPJS-12: the help navigation keeps its state in localStorage ("exphelp-nav") from page to page: the filter text
+ *   and each folder the reader opened or closed (a summary click, Expand all / Collapse all) by its data-nav-path; the
+ *   current page's folder always stays open; [data-exphelp-navfilter-clear] (shown with a filter) and Esc empty the
+ *   filter; storage that throws, a broken stored value or a failing write leave the page working.
  * - HELPJS-11: the contents page: the folders start closed; Expand all / Collapse all ([data-exphelp-contents-controls],
  *   shown by the script) open or close every folder and say so in the page's language; the filter opens the folders
  *   of its matches and, emptied (Esc), puts the folders back as they were; an #anchor of a folder opens it.
@@ -245,6 +249,33 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( true, true, true ), $c['backOpen'], 'an emptied filter puts back Expand all' );
         $this->assertSame( array( true, true, false ), $c['hash'], 'an #anchor opens its folder and the folders around it' );
         $this->assertTrue( $c['otherBoxHidden'], 'only [data-exphelp-contents-controls] is shown' );
+    }
+
+    /** HELPJS-12 */
+    public function testNavigationStateIsKeptFromPageToPage()
+    {
+        $c = $this->cases()['nav state'];
+        $this->assertSame( array( false, true, true ), $c['firstOpens'], "nothing stored: the server's folders, the current page's open" );
+        $this->assertTrue( $c['firstClearHidden'], 'no filter, no clear button' );
+        $this->assertSame( array( 'filter' => '', 'open' => array( 'a' => true, 'c' => false ) ), $c['afterClicks'],
+                           'a folder the reader opens or closes is stored by its data-nav-path' );
+        $this->assertSame( 'upgrade', $c['typed']['filter'], 'the filter text is stored' );
+        $this->assertTrue( $c['typed']['clearShown'] );
+        $this->assertSame( array( false, false, true, true, true, true ), $c['typed']['shown'], "the current page's folder stays shown and open under a filter" );
+        $this->assertSame( array( 'value' => 'upgrade', 'clearShown' => true, 'opens' => array( false, true, true ), 'shown' => array( false, false, true, true, true, true ) ),
+                           $c['next'], 'the next page applies the stored filter' );
+        $this->assertSame( array( 'value' => '', 'filter' => '', 'clearHidden' => true, 'opens' => array( true, true, false ), 'focused' => 'f' ), $c['cleared'],
+                           'Clear filter empties it, stores that, puts back the stored folders and gives the field the focus' );
+        $this->assertSame( array( 'value' => '', 'filter' => '', 'prevented' => true ), $c['esc'], 'Esc in the box clears it' );
+        $this->assertSame( array( 'a' => false, 'c' => false, 'b' => false ), $c['collapseAll']['stored'], 'Collapse all is stored for every folder' );
+        $this->assertSame( array( false, true, false ), $c['collapseAll']['opens'], "but the current page's folder stays open" );
+        $this->assertSame( array( false, true, false ), $c['afterCollapseAll'] );
+        $this->assertSame( array( 'opens' => array( false, true, true ), 'shown' => array( false, false, true, true, true, true ), 'clearShown' => true ), $c['blocked'],
+                           'storage that throws: the page still works' );
+        $this->assertSame( array( 'opens' => array( false, true, true ), 'value' => '' ), $c['broken'], 'a broken stored value and a failing write are ignored' );
+        $js = self::read( self::SCRIPT );
+        $this->assertSame( 3, preg_match_all( '/try \{[^}]*(localStorage|getItem|setItem)/', $js ), 'every storage access is in a try' );
+        $this->assertDoesNotMatchRegularExpression( '/sessionStorage|document\.cookie/', $js );
     }
 
     /** HELPJS-07 */

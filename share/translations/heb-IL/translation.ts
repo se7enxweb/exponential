@@ -72934,6 +72934,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>תשתית הקהילה: צ&apos;אט, אתרי מראה, ויקי ומשאבים למפתחים</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>מדריכים</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>עיתונות, מדיה ומשפיענים</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>ללמד את Exponential: קורסים לעורכים, למנהלי מערכת, למפתחים ולמעצבים, סדנאות, תרגילים ומבחנים.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>לכתוב ולדבר על Exponential: העובדות, ההיסטוריה, האנשים, ציטוטים, תמונות ולמי לפנות.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>הדרכה</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>עיתונות ומדיה</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>הוראת Exponential: קורסים, מערכי שיעור, סדנאות, תרגילים ומבחנים לכל תפקיד.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>לעיתונאים, למדיה ולמשפיענים: עובדות, היסטוריה, הודעות, תמונות ואנשי קשר.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>שתפו את ההרחבות בחזרה</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>שתפו את ההרחבות שאתם מפיצים, כפי שה-GPL דורש, כדי שכולם ייהנו.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>פרויקט Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>פרויקט Exponential: מה הוא, הרישיונות שלו, מפת הדרכים, תמיכה, ערוצי הקהילה ואיך לתרום ולתת.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>ניקוי המסנן</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
