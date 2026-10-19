@@ -72903,6 +72903,58 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Instrumenta communitatis: colloquia, speculi, wikia et subsidia evolutorum</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Magistri</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Diurnarii, instrumenta communicationis et auctores</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Exponential doce: cursus pro editoribus, administratoribus, evolutoribus et designatoribus, officinae, exercitationes et probationes.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>De Exponential scribe et loquere: res, historia, homines, dicta, imagines et quos adeas.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Institutio</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Diurnarii et media</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Exponential docere: cursus, consilia lectionum, officinae, exercitationes et probationes pro quoque munere.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Pro diurnariis, instrumentis communicationis et auctoribus: res, historia, nuntii, imagines et contactus.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Extensiones communica</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Extensiones quas distribuis communica, ut GPL postulat, ut omnibus prosint.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Inceptum Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Inceptum Exponential: quid sit, licentiae, iter futurum, auxilium, canales communitatis, et quomodo conferas et des.</translation>
+    </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Filtrum purgare</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

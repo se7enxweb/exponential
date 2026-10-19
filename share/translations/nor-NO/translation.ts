@@ -14813,7 +14813,7 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Lagre</translation>
+        <translation>Butikk</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74390,6 +74390,54 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Fellesskapets infrastruktur: chat, speil, wikier og ressurser for utviklere</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Instruktører</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Presse, medier og influensere</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Undervis i Exponential: kurs for redaktører, administratorer, utviklere og designere, workshops, øvelser og prøver.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Skriv og snakk om Exponential: fakta, historien, menneskene, sitater, bilder og hvem du kan kontakte.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Opplæring</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Presse og medier</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Undervisning i Exponential: kurs, undervisningsplaner, workshops, øvelser og prøver for hver rolle.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>For journalister, medier og influensere: fakta, historie, kunngjøringer, bilder og kontakter.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Del utvidelsene dine</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Del utvidelsene du distribuerer, slik GPL krever, så alle får glede av dem.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Exponential-prosjektet</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Exponential-prosjektet: hva det er, lisensene, veikartet, støtte, fellesskapets kanaler og hvordan du bidrar og gir.</translation>
     </message>
 </context>
 </TS>

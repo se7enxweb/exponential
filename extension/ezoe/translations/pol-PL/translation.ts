@@ -31,40 +31,40 @@
     <name>design/admin/content/search</name>
     <message>
         <source>Search</source>
-        <translation>Wyszukać</translation>
+        <translation>Wyszukaj</translation>
     </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
     <message>
         <source>Upload</source>
-        <translation>Przesłać</translation>
+        <translation>Prześlij</translation>
     </message>
 </context>
 <context>
     <name>design/standard/content/datatype</name>
     <message>
         <source>Disable editor</source>
-        <translation>Wyłączyć edytor</translation>
+        <translation>Wyłącz edytor</translation>
     </message>
     <message>
         <source>Enable editor</source>
-        <translation>Włączyć edytor</translation>
+        <translation>Włącz edytor</translation>
     </message>
 </context>
 <context>
     <name>design/standard/content/edit</name>
     <message>
         <source>Store draft</source>
-        <translation>Zapisać wersję roboczą</translation>
+        <translation>Zapisz wersję roboczą</translation>
     </message>
     <message>
         <source>Send for publishing</source>
-        <translation>Wysłać do publikacji</translation>
+        <translation>Wyślij do publikacji</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Odrzucić</translation>
+        <translation>Odrzuć</translation>
     </message>
 </context>
 <context>
@@ -96,7 +96,7 @@
     </message>
     <message>
         <source>Apply</source>
-        <translation>Zastosować</translation>
+        <translation>Zastosuj</translation>
     </message>
     <message>
         <source>Insert</source>
@@ -104,19 +104,19 @@
     </message>
     <message>
         <source>Update</source>
-        <translation>Zaktualizować</translation>
+        <translation>Zaktualizuj</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>Anulować</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknąć</translation>
+        <translation>Zamknij</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>Przeglądać</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <source>Class</source>
@@ -186,7 +186,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Drukować</translation>
+        <translation>Drukuj</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -202,11 +202,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisać</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <source>Cancel all changes</source>
-        <translation>Anulować wszystkie zmiany</translation>
+        <translation>Anuluj wszystkie zmiany</translation>
     </message>
     <message>
         <source>Insert non-breaking space character</source>
@@ -214,11 +214,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>Find/Replace</source>
-        <translation>Znaleźć/zastąpić</translation>
+        <translation>Znajdź/zastąp</translation>
     </message>
     <message>
         <source>Paste as Plain Text</source>
@@ -230,7 +230,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation>Zaznaczyć wszystko</translation>
+        <translation>Zaznacz wszystko</translation>
     </message>
     <message>
         <source>Use CTRL+V on your keyboard to paste the text into the window.</source>
@@ -238,7 +238,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Keep linebreaks</source>
-        <translation>Zachować podziały wierszy</translation>
+        <translation>Zachowaj podziały wierszy</translation>
     </message>
     <message>
         <source>Inserts a new table</source>
@@ -254,7 +254,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Delete row</source>
-        <translation>Usunąć wiersz</translation>
+        <translation>Usuń wiersz</translation>
     </message>
     <message>
         <source>Insert column before</source>
@@ -266,7 +266,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Remove column</source>
-        <translation>Usunąć kolumnę</translation>
+        <translation>Usuń kolumnę</translation>
     </message>
     <message>
         <source>Split merged table cells</source>
@@ -302,11 +302,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Copy table row</source>
-        <translation>Skopiować wiersz tabeli</translation>
+        <translation>Skopiuj wiersz tabeli</translation>
     </message>
     <message>
         <source>Delete table</source>
-        <translation>Usunąć tabelę</translation>
+        <translation>Usuń tabelę</translation>
     </message>
     <message>
         <source>Row</source>
@@ -334,7 +334,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Toggle fullscreen mode</source>
-        <translation>Przełączyć tryb pełnoekranowy</translation>
+        <translation>Przełącz tryb pełnoekranowy</translation>
     </message>
     <message>
         <source>Insert / edit embedded media</source>
@@ -342,7 +342,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Edit embedded media</source>
-        <translation>Edytować osadzone multimedia</translation>
+        <translation>Edytuj osadzone multimedia</translation>
     </message>
     <message>
         <source>Document properties</source>
@@ -354,7 +354,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Visual control characters on/off.</source>
-        <translation>Włączyć/wyłączyć wyświetlanie znaków sterujących.</translation>
+        <translation>Włącz/wyłącz wyświetlanie znaków sterujących.</translation>
     </message>
     <message>
         <source>Insert page break.</source>
@@ -470,11 +470,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Undo (Ctrl+Z)</source>
-        <translation>Cofnąć (Ctrl+Z)</translation>
+        <translation>Cofnij (Ctrl+Z)</translation>
     </message>
     <message>
         <source>Redo (Ctrl+Y)</source>
-        <translation>Ponowić (Ctrl+Y)</translation>
+        <translation>Ponów (Ctrl+Y)</translation>
     </message>
     <message>
         <source>Insert/edit link</source>
@@ -482,7 +482,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Unlink</source>
-        <translation>Usunąć link</translation>
+        <translation>Usuń link</translation>
     </message>
     <message>
         <source>Insert/edit image</source>
@@ -506,11 +506,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Cleanup messy code</source>
-        <translation>Wyczyścić nieuporządkowany kod</translation>
+        <translation>Wyczyść nieuporządkowany kod</translation>
     </message>
     <message>
         <source>Edit HTML Source</source>
-        <translation>Edytować źródło HTML</translation>
+        <translation>Edytuj źródło HTML</translation>
     </message>
     <message>
         <source>Subscript</source>
@@ -522,7 +522,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Remove formatting</source>
-        <translation>Usunąć formatowanie</translation>
+        <translation>Usuń formatowanie</translation>
     </message>
     <message>
         <source>Your custom description here</source>
@@ -534,7 +534,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Toggle guidelines/invisible elements</source>
-        <translation>Przełączyć linie pomocnicze/niewidoczne elementy</translation>
+        <translation>Przełącz linie pomocnicze/niewidoczne elementy</translation>
     </message>
     <message>
         <source>Insert/edit anchor</source>
@@ -546,7 +546,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiować</translation>
+        <translation>Kopiuj</translation>
     </message>
     <message>
         <source>Paste</source>
@@ -586,7 +586,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Wybrać</translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <source>Type</source>
@@ -630,7 +630,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Select a color</source>
-        <translation>Wybrać kolor</translation>
+        <translation>Wybierz kolor</translation>
     </message>
     <message>
         <source>Picker</source>
@@ -666,7 +666,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Select special character</source>
-        <translation>Wybrać znak specjalny</translation>
+        <translation>Wybierz znak specjalny</translation>
     </message>
     <message>
         <source>All</source>
@@ -682,7 +682,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Wyświetlić</translation>
+        <translation>Wyświetl</translation>
     </message>
     <message>
         <source>Inline</source>
@@ -754,11 +754,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Switch embed image</source>
-        <translation>Przełączyć osadzony obraz</translation>
+        <translation>Przełącz osadzony obraz</translation>
     </message>
     <message>
         <source>Switch embed object</source>
-        <translation>Przełączyć osadzony obiekt</translation>
+        <translation>Przełącz osadzony obiekt</translation>
     </message>
     <message>
         <source>Heading Properties</source>
@@ -778,7 +778,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Apply to</source>
-        <translation>Zastosować do</translation>
+        <translation>Zastosuj do</translation>
     </message>
     <message>
         <source>Upload new</source>
@@ -806,7 +806,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Upload local file</source>
-        <translation>Przesłać plik lokalny</translation>
+        <translation>Prześlij plik lokalny</translation>
     </message>
     <message>
         <source>Upload is in progress, it may take a few seconds...</source>
@@ -930,19 +930,19 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Switch embed file</source>
-        <translation>Przełączyć osadzony plik</translation>
+        <translation>Przełącz osadzony plik</translation>
     </message>
     <message>
         <source>Edit file</source>
-        <translation>Edytować plik</translation>
+        <translation>Edytuj plik</translation>
     </message>
     <message>
         <source>Edit image</source>
-        <translation>Edytować obraz</translation>
+        <translation>Edytuj obraz</translation>
     </message>
     <message>
         <source>Edit object</source>
-        <translation>Edytować obiekt</translation>
+        <translation>Edytuj obiekt</translation>
     </message>
     <message>
         <source>[default]</source>
@@ -962,7 +962,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Upload new File</source>
-        <translation>Przesłać nowy plik</translation>
+        <translation>Prześlij nowy plik</translation>
     </message>
     <message>
         <source>There are no related files.</source>
@@ -970,7 +970,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Upload new Image</source>
-        <translation>Przesłać nowy obraz</translation>
+        <translation>Prześlij nowy obraz</translation>
     </message>
     <message>
         <source>Alternative text</source>
@@ -986,11 +986,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Upload new Object</source>
-        <translation>Przesłać nowy obiekt</translation>
+        <translation>Prześlij nowy obiekt</translation>
     </message>
     <message>
         <source>Run spell checking</source>
-        <translation>Uruchomić sprawdzanie pisowni</translation>
+        <translation>Uruchom sprawdzanie pisowni</translation>
     </message>
     <message>
         <source>ieSpell not detected. Do you want to install it now?</source>
@@ -1082,7 +1082,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Toggle spellchecker</source>
-        <translation>Przełączyć sprawdzanie pisowni</translation>
+        <translation>Przełącz sprawdzanie pisowni</translation>
     </message>
     <message>
         <source>Spellchecker settings</source>
@@ -1090,11 +1090,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Ignore word</source>
-        <translation>Pominąć słowo</translation>
+        <translation>Pomiń słowo</translation>
     </message>
     <message>
         <source>Ignore all</source>
-        <translation>Pominąć wszystkie</translation>
+        <translation>Pomiń wszystkie</translation>
     </message>
     <message>
         <source>Languages</source>
@@ -1146,11 +1146,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Edit the custom tag</source>
-        <translation>Edytować znacznik niestandardowy</translation>
+        <translation>Edytuj znacznik niestandardowy</translation>
     </message>
     <message>
         <source>Remove the custom tag</source>
-        <translation>Usunąć znacznik niestandardowy</translation>
+        <translation>Usuń znacznik niestandardowy</translation>
     </message>
     <message>
         <source>Example</source>
@@ -1170,7 +1170,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Switch to the editor %engine</source>
-        <translation>Przełączyć na edytor %engine</translation>
+        <translation>Przełącz na edytor %engine</translation>
     </message>
     <message>
         <source>This file type is not accepted by the editor: %file</source>
@@ -1242,11 +1242,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Switch to the new editor (TinyMCE 8)</source>
-        <translation>Przełączyć na nowy edytor (TinyMCE 8)</translation>
+        <translation>Przełącz na nowy edytor (TinyMCE 8)</translation>
     </message>
     <message>
         <source>Switch to the previous editor (TinyMCE 3)</source>
-        <translation>Przełączyć na poprzedni edytor (TinyMCE 3)</translation>
+        <translation>Przełącz na poprzedni edytor (TinyMCE 3)</translation>
     </message>
     <message>
         <source>The text is kept, the choice is saved for your user.</source>
@@ -1254,7 +1254,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Go back</source>
-        <translation>Wrócić</translation>
+        <translation>Wróć</translation>
     </message>
     <message>
         <source>none</source>
@@ -1382,7 +1382,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Upload from URL</source>
-        <translation>Przesłać z adresu URL</translation>
+        <translation>Prześlij z adresu URL</translation>
     </message>
     <message>
         <source>Please enter the address of a file.</source>
@@ -1675,7 +1675,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     <name>design/standard/ezoe/searchreplace</name>
     <message>
         <source>Find again</source>
-        <translation>Znaleźć ponownie</translation>
+        <translation>Znajdź ponownie</translation>
     </message>
     <message>
         <source>The search has been completed. The search string could not be found.</source>
@@ -1683,11 +1683,11 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation>Znaleźć</translation>
+        <translation>Znajdź</translation>
     </message>
     <message>
         <source>Find/Replace</source>
-        <translation>Znaleźć/zastąpić</translation>
+        <translation>Znajdź/zastąp</translation>
     </message>
     <message>
         <source>All occurrences of the search string were replaced.</source>
@@ -1699,7 +1699,7 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Replace with</source>
-        <translation>Zastąpić przez</translation>
+        <translation>Zastąp przez</translation>
     </message>
     <message>
         <source>Direction</source>
@@ -1715,19 +1715,19 @@ Czy wyświetlić więcej informacji na ten temat?</translation>
     </message>
     <message>
         <source>Match case</source>
-        <translation>Uwzględniać wielkość liter</translation>
+        <translation>Uwzględniaj wielkość liter</translation>
     </message>
     <message>
         <source>Find next</source>
-        <translation>Znaleźć następny</translation>
+        <translation>Znajdź następny</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation>Zastąpić</translation>
+        <translation>Zastąp</translation>
     </message>
     <message>
         <source>Replace all</source>
-        <translation>Zastąpić wszystkie</translation>
+        <translation>Zastąp wszystkie</translation>
     </message>
 </context>
 <context>

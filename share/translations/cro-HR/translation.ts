@@ -14467,7 +14467,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Spremi</translation>
+        <translation>Trgovina</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74185,6 +74185,54 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infrastruktura zajednice: chat, zrcala, wikiji i resursi za programere</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Treneri</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Tisak, mediji i influenceri</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Podučavajte Exponential: tečajevi za urednike, administratore, programere i dizajnere, radionice, vježbe i provjere znanja.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Pišite i govorite o Exponentialu: činjenice, povijest, ljudi, citati, slike i kome se obratiti.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Obuka</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Tisak i mediji</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Podučavanje Exponentiala: tečajevi, planovi nastave, radionice, vježbe i provjere znanja za svaku ulogu.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Za novinare, medije i influencere: činjenice, povijest, objave, slike i kontakti.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Vratite proširenja zajednici</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Dijelite proširenja koja distribuirate, kako zahtijeva GPL, da svi imaju koristi.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Projekt Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Projekt Exponential: što je, njegove licence, plan razvoja, podrška, kanali zajednice te kako doprinijeti i darivati.</translation>
     </message>
 </context>
 </TS>
