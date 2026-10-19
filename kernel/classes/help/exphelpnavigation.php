@@ -37,7 +37,13 @@ class expHelpNavigation
     );
 
     /** Bumped when the markup changes, so cached trees of an older layout are not served */
-    const VERSION = 1;
+    const VERSION = 2;
+
+    /** Where a folded folder's pages go once the current page is inside it (never in a page: built here only) */
+    const FOLD_MARK = '<!--exphelp-fold:%s-->';
+
+    /** @var string[]|null [NavigationSettings] FoldedFolders[], read once */
+    protected $folded = null;
 
     /** @var expHelpDocumentIndex */
     protected $index;
@@ -65,21 +71,134 @@ class expHelpNavigation
     {
         $html = $this->cachedTree();
         if ( $openAll )
-            return str_replace( '<details class="a4-help-nav-details" data-nav-path=', '<details open class="a4-help-nav-details" data-nav-path=', $html );
+            return self::stripFoldMarks( str_replace( '<details class="a4-help-nav-details" data-nav-path=', '<details open class="a4-help-nav-details" data-nav-path=', $html ) );
         $currentId = trim( (string)$currentId, '/' );
         if ( $currentId === '' )
-            return $html;
+            return self::stripFoldMarks( $html );
         $segments = explode( '/', $currentId );
         array_pop( $segments );
         $dir = '';
         foreach ( $segments as $segment )
         {
             $dir = $dir === '' ? $segment : $dir . '/' . $segment;
+            // a folded folder on the way to the page: its own pages are put in (folded folders below it stay folded)
+            $mark = sprintf( self::FOLD_MARK, self::escape( $dir ) );
+            if ( strpos( $html, $mark ) !== false )
+                $html = str_replace( $mark, $this->cachedFolder( $dir ), $html );
             $html = str_replace( '<details class="a4-help-nav-details" data-nav-path="' . self::escape( $dir ) . '">',
                                  '<details open class="a4-help-nav-details" data-nav-path="' . self::escape( $dir ) . '">', $html );
         }
         $href = 'href="' . self::escape( $this->pageUrl( $currentId ) ) . '"';
-        return str_replace( $href, $href . ' aria-current="page"', $html );
+        return self::stripFoldMarks( str_replace( $href, $href . ' aria-current="page"', $html ) );
+    }
+
+    /**
+     * Sets the folded folders instead of [NavigationSettings] FoldedFolders[] (tests, callers with their own list).
+     *
+     * @param string[] $folders paths below doc/
+     * @return $this
+     */
+    public function setFoldedFolders( array $folders )
+    {
+        $this->folded = array_values( array_filter( array_map( function ( $f ) { return trim( (string)$f, '/ ' ); }, $folders ), 'strlen' ) );
+        return $this;
+    }
+
+    /**
+     * Whether a folder is folded: exphelp.ini [NavigationSettings] FoldedFolders[] names it or a folder above it.
+     * A folded folder shows its overview link and its page count; its pages are listed only while the current page
+     * is inside it (the folder's index page links all of them). For the large generated reference trees, which
+     * would otherwise put thousands of links on every page.
+     *
+     * @param string $path
+     * @return bool
+     */
+    public function isFolded( $path )
+    {
+        if ( $this->folded === null )
+        {
+            $this->folded = array();
+            $configured = expHelp::setting( 'NavigationSettings', 'FoldedFolders', array() );
+            foreach ( is_array( $configured ) ? $configured : array() as $folder )
+                if ( is_string( $folder ) && trim( $folder, '/ ' ) !== '' )
+                    $this->folded[] = trim( $folder, '/ ' );
+        }
+        foreach ( $this->folded as $folder )
+            if ( $path === $folder || strpos( $path, $folder . '/' ) === 0 )
+                return true;
+        return false;
+    }
+
+    /**
+     * The list items of a folded folder (its overview link excluded), from the cache or built and stored.
+     *
+     * @param string $path
+     * @return string
+     */
+    protected function cachedFolder( $path )
+    {
+        $file = $this->cacheFile( 'folder' . "\0" . $path );
+        if ( is_file( $file ) && is_string( $html = @file_get_contents( $file ) ) )
+            return $html;
+        $node = $this->index->tree();
+        foreach ( explode( '/', $path ) as $segment )
+        {
+            $found = null;
+            foreach ( isset( $node['children'] ) ? $node['children'] : array() as $child )
+                if ( (string)$child['path'] === ( $node['path'] === '' || !isset( $node['path'] ) ? $segment : $node['path'] . '/' . $segment ) )
+                    $found = $child;
+            if ( $found === null )
+                return '';
+            $node = $found;
+        }
+        $html = $this->buildLevel( $node, self::folderNames(), array( 'overview' => ezpI18n::tr( expHelp::I18N_CONTEXT, 'Overview' ) ) );
+        $this->store( $file, $html );
+        return $html;
+    }
+
+    /**
+     * @param string $html
+     * @return string without the marks of folded folders that stay folded
+     */
+    protected static function stripFoldMarks( $html )
+    {
+        return strpos( $html, '<!--exphelp-fold:' ) === false ? $html : preg_replace( '/<!--exphelp-fold:[^>]*-->/', '', $html );
+    }
+
+    /**
+     * @param string $key what is cached besides the whole tree
+     * @return string the cache file of the tree ($key '') or of a part of it
+     */
+    protected function cacheFile( $key = '' )
+    {
+        $dir = rtrim( (string)$this->index->cacheDir(), '/' ) . '/nav';
+        $locale = class_exists( 'eZLocale' ) ? eZLocale::instance()->localeFullCode() : '';
+        return $dir . '/' . sha1( self::VERSION . "\0" . $this->index->signature() . "\0" . $this->viewerBase . "\0" . $locale
+                                  . "\0" . serialize( self::folderNames() ) . "\0" . serialize( $this->folded ) . "\0" . $key ) . '.html';
+    }
+
+    /**
+     * Writes a cache file atomically (the tree is shared by every request).
+     *
+     * @param string $file
+     * @param string $html
+     */
+    protected function store( $file, $html )
+    {
+        $dir = dirname( $file );
+        if ( !is_dir( $dir ) )
+            eZDir::mkdir( $dir, false, true );
+        if ( is_dir( $dir ) && is_writable( $dir ) )
+        {
+            $tmp = $file . '.' . getmypid() . '.tmp';
+            if ( @file_put_contents( $tmp, $html, LOCK_EX ) !== false )
+            {
+                $permissions = eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' );
+                @chmod( $tmp, eZFile::fileMode( preg_match( '/^0?[0-7]{3}$/', (string)$permissions ) ? octdec( $permissions ) : 0664 ) );
+                if ( !@rename( $tmp, $file ) )
+                    @unlink( $tmp );
+            }
+        }
     }
 
     /**
@@ -99,10 +218,8 @@ class expHelpNavigation
      */
     protected function cachedTree()
     {
-        $dir = rtrim( (string)$this->index->cacheDir(), '/' ) . '/nav';
-        $locale = class_exists( 'eZLocale' ) ? eZLocale::instance()->localeFullCode() : '';
-        $file = $dir . '/' . sha1( self::VERSION . "\0" . $this->index->signature() . "\0" . $this->viewerBase . "\0" . $locale
-                                   . "\0" . serialize( self::folderNames() ) ) . '.html';
+        $this->isFolded( '' );
+        $file = $this->cacheFile();
         if ( is_file( $file ) )
         {
             $html = @file_get_contents( $file );
@@ -110,19 +227,7 @@ class expHelpNavigation
                 return $html;
         }
         $html = $this->build( $this->index->tree() );
-        if ( !is_dir( $dir ) )
-            eZDir::mkdir( $dir, false, true );
-        if ( is_dir( $dir ) && is_writable( $dir ) )
-        {
-            $tmp = $file . '.' . getmypid() . '.tmp';
-            if ( @file_put_contents( $tmp, $html, LOCK_EX ) !== false )
-            {
-                $permissions = eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' );
-                @chmod( $tmp, eZFile::fileMode( preg_match( '/^0?[0-7]{3}$/', (string)$permissions ) ? octdec( $permissions ) : 0664 ) );
-                if ( !@rename( $tmp, $file ) )
-                    @unlink( $tmp );
-            }
-        }
+        $this->store( $file, $html );
         return $html;
     }
 
@@ -169,7 +274,9 @@ class expHelpNavigation
             if ( !empty( $child['index_id'] ) )
                 $out .= '<li class="a4-help-nav-page"><a class="a4-help-nav-link is-index" href="' . self::escape( $this->pageUrl( $child['index_id'] ) ) . '">'
                     . self::escape( $labels['overview'] ) . '</a></li>';
-            $out .= $this->buildLevel( $child, $names, $labels ) . '</ul></details></li>';
+            // a folded folder lists its pages only on the way to the current page (html() puts them in)
+            $out .= ( $this->isFolded( $path ) && !empty( $child['index_id'] ) ? sprintf( self::FOLD_MARK, self::escape( $path ) ) : $this->buildLevel( $child, $names, $labels ) )
+                . '</ul></details></li>';
         }
         foreach ( isset( $node['documents'] ) ? $node['documents'] : array() as $document )
         {

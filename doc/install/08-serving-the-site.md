@@ -909,8 +909,10 @@ process of its own.
 
    If you prefer not to use `.htaccess` (`AllowOverride None` saves a file lookup per directory), copy the rules of
    `.htaccess_root` into the `<Directory>` block; inside `<Directory>` they keep their form. In server context
-   (outside `<Directory>`) every pattern needs a leading slash, as in `doc/examples/ezpublish.conf`, an older example
-   whose rule list predates the current `.htaccess_root`: take the rules from `.htaccess_root`.
+   (outside `<Directory>`) every pattern needs a leading slash, as in `doc/examples/ezpublish.conf`, a complete
+   virtual host (HTTP redirect, HTTPS, HTTP/2, PHP-FPM, headers) with the rules of this release's `.htaccess_root`
+   in server context ([Apache virtual host](../examples/web-servers/apache-virtual-host.md)). Compare your copy with
+   `.htaccess_root` after every upgrade and merge new rules.
 
 4. **HTTPS.** Add a `*:443` virtual host with the same content plus:
 

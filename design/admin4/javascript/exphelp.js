@@ -17,7 +17,10 @@
  *   headers of its table[data-exphelp-sortable] (cells sort by data-sort-value, else their text).
  * - nav[data-exphelp-nav] the tree of all help pages; its input[data-exphelp-navfilter] (hidden until this file shows
  *   it) narrows the tree to the pages whose title or folder has every typed word; the count goes to
- *   [data-exphelp-navfilter-status].
+ *   [data-exphelp-navfilter-status]. The folders the filter opened close again when the field is emptied.
+ * - [data-exphelp-contents-controls] (the contents page, hidden until this file shows it): buttons
+ *   [data-exphelp-expand-all] and [data-exphelp-collapse-all] open or close every folder of the tree their
+ *   aria-controls names; an address with the #id of a folder opens it.
  * Keys: / focuses the search, ArrowDown/ArrowUp move through the results, Enter opens one, Esc closes the results;
  * j/k go to the next/previous heading, [ and ] to the previous/next page.
  */
@@ -32,7 +35,8 @@
         relaxed: 'No page contains every word; these pages contain some of them.',
         recordsFilter: 'Filter', recordsPlaceholder: 'Version, name, year or revision',
         recordsCount: '%count of %total entries', sortBy: 'Sort by %title',
-        navCount: '%count pages match', navNone: 'No page title matches'
+        navCount: '%count pages match', navNone: 'No page title matches',
+        allOpen: 'Every folder is open.', allClosed: 'Every folder is closed.'
     };
     var DEBOUNCE = 150;
     var LIMIT = 20;
@@ -634,45 +638,63 @@
      * pages whose title (or folder name) has every typed word stay, their folders open; empty, the tree is back as it
      * was (the folders on the way to the current page open). The count goes to [data-exphelp-navfilter-status].
      */
+    // <details> open or closed through its attribute (the same as .open in a browser)
+    function isOpen(d) { return d.hasAttribute('open'); }
+    function setOpen(d, open) { if (open) { d.setAttribute('open', ''); } else { d.removeAttribute('open'); } }
+    function ownChild(node, tag) { return arr(node.children).filter(function (c) { return c.tagName === tag; })[0] || null; }
+
     function setupNavFilter(nav, t) {
-        var input = nav.querySelector('[data-exphelp-navfilter]');
-        if (!input) { return; }
-        var status = nav.querySelector('[data-exphelp-navfilter-status]');
         var details = arr(nav.querySelectorAll('details'));
-        var initial = details.map(function (d) { return d.open; });
+        // the folders as the reader left them before the filter opened its matches; back when the field is emptied
+        var saved = null;
+        var api = {
+            setAll: function (open) {
+                details.forEach(function (d) { setOpen(d, open); });
+                if (saved) { saved = details.map(function () { return open; }); }
+            }
+        };
+        nav.expHelpNav = api;
+        var input = nav.querySelector('[data-exphelp-navfilter]');
+        if (!input) { return api; }
+        var status = nav.querySelector('[data-exphelp-navfilter-status]');
         var items = arr(nav.querySelectorAll('li'));
         function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+        function folderOf(li) { return ownChild(li, 'DETAILS'); }
         var texts = items.map(function (li) {
-            var own = li.querySelector(':scope > a, :scope > details > summary');
+            var d = folderOf(li);
+            var own = d ? ownChild(d, 'SUMMARY') : ownChild(li, 'A');
             return norm(own ? own.textContent : '');
         });
+        function parentItem(li) { return li.parentNode && li.parentNode.closest ? li.parentNode.closest('li') : null; }
         var timer = null;
         input.hidden = false;
         function apply() {
             var words = norm(input.value).split(/\s+/).filter(function (w) { return w !== ''; });
             if (!words.length) {
                 items.forEach(function (li) { li.hidden = false; });
-                details.forEach(function (d, i) { d.open = initial[i]; });
+                if (saved) { details.forEach(function (d, i) { setOpen(d, saved[i]); }); }
+                saved = null;
                 if (status) { status.textContent = ''; }
                 return;
             }
+            if (!saved) { saved = details.map(isOpen); }
             var shown = 0;
             // a page matches on its own title plus the names of its folders
             items.forEach(function (li, i) {
-                if (li.querySelector(':scope > details')) { return; }
-                var hay = texts[i], p = li.parentElement ? li.parentElement.closest('li') : null;
-                while (p) { hay += ' ' + texts[items.indexOf(p)]; p = p.parentElement ? p.parentElement.closest('li') : null; }
+                if (folderOf(li)) { return; }
+                var hay = texts[i], p = parentItem(li);
+                while (p) { hay += ' ' + texts[items.indexOf(p)]; p = parentItem(p); }
                 var ok = words.every(function (w) { return hay.indexOf(w) !== -1; });
                 li.hidden = !ok;
                 if (ok) { shown += 1; }
             });
-            // folders: shown and open when a page below them is shown
+            // folders: shown and open when a page below them is shown (the deepest first)
             items.slice().reverse().forEach(function (li) {
-                var d = li.querySelector(':scope > details');
+                var d = folderOf(li);
                 if (!d) { return; }
-                var any = !!d.querySelector('li:not([hidden]) > a');
+                var any = arr(d.querySelectorAll('li')).some(function (x) { return !x.hidden && !!ownChild(x, 'A'); });
                 li.hidden = !any;
-                d.open = any;
+                setOpen(d, any);
             });
             if (status) { status.textContent = shown ? t.navCount.replace('%count', shown) : t.navNone; }
         }
@@ -682,6 +704,27 @@
         });
         input.addEventListener('keydown', function (event) {
             if (event.key === 'Escape' && input.value !== '') { event.preventDefault(); event.stopPropagation(); input.value = ''; apply(); }
+        });
+        return api;
+    }
+
+    /**
+     * Expand all / Collapse all of the contents page ([data-exphelp-contents-controls], hidden until this file shows
+     * it): its buttons [data-exphelp-expand-all] and [data-exphelp-collapse-all] open or close every folder of the
+     * tree their aria-controls names, and say so in the tree's [data-exphelp-navfilter-status].
+     */
+    function setupContentsControls(box, t) {
+        arr(box.querySelectorAll('[data-exphelp-expand-all], [data-exphelp-collapse-all]')).forEach(function (button) {
+            var nav = document.getElementById(button.getAttribute('aria-controls') || '');
+            if (!nav || !nav.expHelpNav) { return; }
+            var open = button.hasAttribute('data-exphelp-expand-all');
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                nav.expHelpNav.setAll(open);
+                var status = nav.querySelector('[data-exphelp-navfilter-status]');
+                if (status) { status.textContent = ''; status.textContent = open ? t.allOpen : t.allClosed; }
+            });
+            box.hidden = false;
         });
     }
 
@@ -693,6 +736,10 @@
             if (s.box) { searches.push(s); }
         });
         arr(document.querySelectorAll("nav[data-exphelp-nav]")).forEach(function (nav) { setupNavFilter(nav, strings(closestRoot(nav))); });
+        var controls = arr(document.querySelectorAll('[data-exphelp-contents-controls]'));
+        controls.forEach(function (box) { setupContentsControls(box, strings(closestRoot(box))); });
+        // the contents page: an #anchor of a folder opens it (and the folders around it)
+        if (controls.length) { revealHash(); }
         var content = contentOf(document);
         if (content) {
             var t = strings(closestRoot(content));
