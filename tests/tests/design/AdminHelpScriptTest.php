@@ -28,6 +28,9 @@
  * - HELPJS-10: a record page ([data-exphelp-records]) gets a filter field after its summary that hides the rows without
  *   every word (and a table left without rows), with the count in the page's language, and a sort button in each
  *   header of its table[data-exphelp-sortable] but a data-sort="none" one (aria-sort, natural order, both ways).
+ * - HELPJS-11: the contents page: the folders start closed; Expand all / Collapse all ([data-exphelp-contents-controls],
+ *   shown by the script) open or close every folder and say so in the page's language; the filter opens the folders
+ *   of its matches and, emptied (Esc), puts the folders back as they were; an #anchor of a folder opens it.
  * - HELPJS-08: with data-exphelp-canonical-base on the form, sending it goes to the canonical address
  *   (/exphelp/search/(q)/<words>/(category)/<id>/(audience)/<id>/(type)/<id>), and on the search page itself the
  *   address follows the search (the answer's canonical_href when it is safe); an empty field with a filter set lists
@@ -222,6 +225,26 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $c['dashReplaced'], 'another page keeps its address' );
         $this->assertSame( array( '/admin/exphelp/search/(q)/cache', '/admin/exphelp/search/(q)/cach', '/admin/exphelp/search' ), $c['pageReplaced'],
                            "the search page follows the search: the server's canonical_href, its own address for an unsafe one, the base when emptied" );
+    }
+
+    /** HELPJS-11 */
+    public function testContentsExpandCollapseAllAndFilter()
+    {
+        $c = $this->cases()['contents controls'];
+        $this->assertTrue( $c['shown'], 'the control is shown once the script runs' );
+        $this->assertTrue( $c['filterShown'] );
+        $this->assertSame( array( false, false, false ), $c['start'], 'the folders start closed' );
+        $this->assertSame( array( true, true, true ), $c['expanded'] );
+        $this->assertSame( 'Alle offen.', $c['expandedStatus'], 'announced in the page language' );
+        $this->assertSame( array( false, false, false ), $c['collapsed'] );
+        $this->assertSame( 'Alle zu.', $c['collapsedStatus'] );
+        $this->assertSame( array( true, true, false ), $c['filtered'], 'the filter opens the folders of its matches' );
+        $this->assertSame( array( false, true, false, false, true, true ), $c['filteredHidden'] );
+        $this->assertSame( array( false, false, false ), $c['cleared'], 'Esc empties the filter and closes what it opened' );
+        $this->assertSame( array( false, false, true ), $c['filteredFromOpen'] );
+        $this->assertSame( array( true, true, true ), $c['backOpen'], 'an emptied filter puts back Expand all' );
+        $this->assertSame( array( true, true, false ), $c['hash'], 'an #anchor opens its folder and the folders around it' );
+        $this->assertTrue( $c['otherBoxHidden'], 'only [data-exphelp-contents-controls] is shown' );
     }
 
     /** HELPJS-07 */

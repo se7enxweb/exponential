@@ -7,6 +7,7 @@
  *  HN-03  titles and addresses are escaped; a folder's README is its "Overview" link, not one of its pages
  *  HN-04  folder names: configured, README title, built-in, humanized
  *  HN-05  the built tree is cached per index signature and rebuilt when it changes
+ *  HN-06  a folded folder ([NavigationSettings] FoldedFolders[]) lists its pages only on the way to the current page
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -136,5 +137,25 @@ class expHelpNavigationTest extends PHPUnit\Framework\TestCase
         $index->signature = 'changed';
         ( new expHelpNavigation( $index ) )->html();
         $this->assertSame( 2, $index->calls );
+    }
+
+    /** HN-06 a folded folder shows its overview and count only; its pages appear on the way to the current page */
+    public function testFoldedFolders()
+    {
+        $nav = ( new expHelpNavigation( $this->index() ) )->setFoldedFolders( array( 'features/6.0/extensions' ) );
+        $html = $nav->html( 'INSTALL.md' );
+        $this->assertStringNotContainsString( 'page7.md', $html, 'folded: its pages are not listed' );
+        $this->assertMatchesRegularExpression( '#extensions/README\.md">Overview</a>#', $html, 'the overview link stays' );
+        $this->assertStringContainsString( '<span class="a4-help-nav-count" aria-hidden="true">151</span>', $html, 'the count stays' );
+        $this->assertStringNotContainsString( '<!--', $html, 'no mark is left in the page' );
+
+        $html = ( new expHelpNavigation( $this->index() ) )->setFoldedFolders( array( 'features/6.0/extensions' ) )->html( 'features/6.0/extensions/page7.md' );
+        $this->assertSame( 150, preg_match_all( '#/extensions/page\d+\.md"#', $html ), 'inside the folder every page is listed' );
+        $this->assertMatchesRegularExpression( '#/page7\.md" aria-current="page"#', $html );
+        $this->assertStringContainsString( '<details open class="a4-help-nav-details" data-nav-path="features/6.0/extensions">', $html );
+
+        $all = ( new expHelpNavigation( $this->index() ) )->setFoldedFolders( array( 'features/6.0/extensions' ) )->html( '', true );
+        $this->assertStringNotContainsString( 'page7.md', $all, 'the contents page keeps folded folders folded' );
+        $this->assertStringNotContainsString( '<!--', $all );
     }
 }
