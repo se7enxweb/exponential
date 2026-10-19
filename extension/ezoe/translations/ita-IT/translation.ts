@@ -60,7 +60,7 @@
     </message>
     <message>
         <source>Store draft</source>
-        <translation>Registra bozza</translation>
+        <translation>Salva bozza</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -514,11 +514,11 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Subscript</source>
-        <translation>Sottoscrivi</translation>
+        <translation>Pedice</translation>
     </message>
     <message>
         <source>Superscript</source>
-        <translation>Sovrascrivi</translation>
+        <translation>Apice</translation>
     </message>
     <message>
         <source>Remove formatting</source>
@@ -602,7 +602,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Plugins</source>
-        <translation>Plugins</translation>
+        <translation>Plugin</translation>
     </message>
     <message>
         <source>Plugin</source>
@@ -694,7 +694,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Offset</source>
-        <translation>Offset</translation>
+        <translation>Scostamento</translation>
     </message>
     <message>
         <source>Limit</source>
@@ -710,7 +710,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Target</source>
-        <translation>Target</translation>
+        <translation>Destinazione</translation>
     </message>
     <message>
         <source>Width</source>
@@ -874,7 +874,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Mail</source>
-        <translation>Mail</translation>
+        <translation>Posta</translation>
     </message>
     <message>
         <source>Anchor</source>
@@ -950,7 +950,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>[default]</source>
-        <translation>[default]</translation>
+        <translation>[predefinito]</translation>
     </message>
     <message>
         <source>New window (_blank)</source>
@@ -1102,7 +1102,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Please wait...</source>
-        <translation>Attendere prego...</translation>
+        <translation>Attendi...</translation>
     </message>
     <message>
         <source>Suggestions</source>
@@ -1127,6 +1127,270 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     <message>
         <source>Use left and right arrows to navigate.</source>
         <translation>Usa le frecce sinistra e destra per navigare.</translation>
+    </message>
+    <message>
+        <source>Custom tag controls</source>
+        <translation>Controlli del tag personalizzato</translation>
+    </message>
+    <message>
+        <source>Move the custom tag up</source>
+        <translation>Sposta il tag personalizzato in alto</translation>
+    </message>
+    <message>
+        <source>Move the custom tag down</source>
+        <translation>Sposta il tag personalizzato in basso</translation>
+    </message>
+    <message>
+        <source>Edit the custom tag</source>
+        <translation>Modifica il tag personalizzato</translation>
+    </message>
+    <message>
+        <source>Remove the custom tag</source>
+        <translation>Rimuovi il tag personalizzato</translation>
+    </message>
+    <message>
+        <source>Example</source>
+        <translation>Esempio</translation>
+    </message>
+    <message>
+        <source>Example of the tag %tag_name</source>
+        <translation>Esempio del tag %tag_name</translation>
+    </message>
+    <message>
+        <source>TinyMCE 3</source>
+        <translation>TinyMCE 3</translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation>TinyMCE 8</translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation>Passa all&apos;editor %engine</translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation>Questo tipo di file non è accettato dall&apos;editor: %file</translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation>Editor online</translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation>L&apos;editor del tuo utente è stato salvato.</translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation>Questo editor non è disponibile.</translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation>Editor per i campi di testo</translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation>Predefinito di questo sito (%engine)</translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation>In uso ora: %engine. Salvato solo per il tuo utente, il testo dei tuoi contenuti è lo stesso con ogni editor.</translation>
+    </message>
+    <message>
+        <source>Editor engines</source>
+        <translation>Motori dell&apos;editor</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Redazione</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Disponibile</translation>
+    </message>
+    <message>
+        <source>Available, in use now</source>
+        <translation>Disponibile, in uso ora</translation>
+    </message>
+    <message>
+        <source>Not available: its files are missing</source>
+        <translation>Non disponibile: mancano i suoi file</translation>
+    </message>
+    <message>
+        <source>Cannot be used: %reason</source>
+        <translation>Non utilizzabile: %reason</translation>
+    </message>
+    <message>
+        <source>The edit form also has a button to switch to each of the other available editors.</source>
+        <translation>Il modulo di modifica ha anche un pulsante per passare a ciascuno degli altri editor disponibili.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
+        <translation>L&apos;Online Editor su TinyMCE 3.5, l&apos;editor di ogni installazione.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
+        <translation>L&apos;Online Editor su TinyMCE 8 (GPL), con le finestre di dialogo dell&apos;Online Editor.</translation>
+    </message>
+    <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation>Passa al nuovo editor (TinyMCE 8)</translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation>Passa all&apos;editor precedente (TinyMCE 3)</translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation>Il testo viene mantenuto, la scelta viene salvata per il tuo utente.</translation>
+    </message>
+    <message>
+        <source>Go back</source>
+        <translation>Indietro</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nessuna</translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation>nascosto</translation>
+    </message>
+    <message>
+        <source>dotted</source>
+        <translation>punteggiato</translation>
+    </message>
+    <message>
+        <source>dashed</source>
+        <translation>tratteggiato</translation>
+    </message>
+    <message>
+        <source>solid</source>
+        <translation>continuo</translation>
+    </message>
+    <message>
+        <source>double</source>
+        <translation>doppio</translation>
+    </message>
+    <message>
+        <source>groove</source>
+        <translation>scanalato</translation>
+    </message>
+    <message>
+        <source>ridge</source>
+        <translation>rilievo</translation>
+    </message>
+    <message>
+        <source>inset</source>
+        <translation>incassato</translation>
+    </message>
+    <message>
+        <source>outset</source>
+        <translation>sporgente</translation>
+    </message>
+    <message>
+        <source>Size inputs for all 4 edges</source>
+        <translation>Campi delle dimensioni per tutti e 4 i lati</translation>
+    </message>
+    <message>
+        <source>Tel</source>
+        <translation>Tel</translation>
+    </message>
+    <message>
+        <source>Click to select table size</source>
+        <translation>Fai clic per selezionare le dimensioni della tabella</translation>
+    </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation>L&apos;indirizzo non è un URL http o https valido.</translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation>Si possono recuperare solo indirizzi http e https.</translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation>Gli indirizzi con nome utente o password non sono accettati.</translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation>L&apos;indirizzo punta a un host che non è raggiungibile dal server per questo scopo.</translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation>Impossibile risolvere il nome host %host.</translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation>L&apos;indirizzo esegue troppi reindirizzamenti.</translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation>Il server ha risposto con lo stato %status, nessun file è stato recuperato.</translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation>Il server ha inviato un file vuoto.</translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation>Il contenuto del file non è del tipo indicato dal suo nome: %file</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Impossibile recuperare il file.</translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation>Il caricamento da URL è disattivato.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation>Il file supera la dimensione consentita di %size.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation>Il server non ha risposto in tempo.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origine</translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation>Dal tuo computer</translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation>Da un URL</translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation>Indirizzo del file (URL)</translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation>Il server recupera il file da questo indirizzo.</translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation>Carica da URL</translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation>Inserisci l&apos;indirizzo di un file.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
+        <translation>Inserisci un indirizzo http o https valido senza nome utente e password.</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>richiesto</translation>
     </message>
 </context>
 <context>
@@ -1174,12 +1438,44 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
         <source>Node &amp;apos;%1&amp;apos; does not exist.</source>
         <translation>Il nodo &amp;apos;%1&amp;apos; non esiste.</translation>
     </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target object does not exist.</source>
+        <translation>Link non valido: &quot;%1&quot;. L&apos;oggetto di destinazione non esiste.</translation>
+    </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target node does not exist.</source>
+        <translation>Link non valido: &quot;%1&quot;. Il nodo di destinazione non esiste.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target (%2) no longer exists, not even in the trash. Remove the link or choose a new target.</source>
+        <translation>Impossibile salvare il link &quot;%1&quot;: la sua destinazione (%2) non esiste più, nemmeno nel cestino. Rimuovi il link o scegli una nuova destinazione.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target (%2) is in the trash. Remove the link or choose a new target.</source>
+        <translation>Impossibile salvare il link &quot;%1&quot;: la sua destinazione (%2) è nel cestino. Rimuovi il link o scegli una nuova destinazione.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target &quot;%2&quot; (%3), located at %4, was moved to the trash on %6. Remove the link or choose a new target. (Link: %5)</source>
+        <translation>Impossibile salvare il link &quot;%1&quot;: la sua destinazione &quot;%2&quot; (%3), collocata in %4, è stata spostata nel cestino il %6. Rimuovi il link o scegli una nuova destinazione. (Link: %5)</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target &quot;%2&quot; (%3), located at %4, was moved to the trash. Remove the link or choose a new target. (Link: %5)</source>
+        <translation>Impossibile salvare il link &quot;%1&quot;: la sua destinazione &quot;%2&quot; (%3), collocata in %4, è stata spostata nel cestino. Rimuovi il link o scegli una nuova destinazione. (Link: %5)</translation>
+    </message>
+    <message>
+        <source>Restoring the target from the trash does not repair the link, because the restored object gets a new location: set the link again afterwards, or link to the object instead of its location.</source>
+        <translation>Ripristinare la destinazione dal cestino non ripara il link, perché l&apos;oggetto ripristinato ottiene una nuova collocazione: imposta di nuovo il link in seguito, oppure collega l&apos;oggetto invece della sua collocazione.</translation>
+    </message>
+    <message>
+        <source>Using scripts in links is not allowed, '%1' has been removed</source>
+        <translation>L&apos;uso di script nei link non è consentito, &apos;%1&apos; è stato rimosso</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/help</name>
     <message>
         <source>Using the toolbar</source>
-        <translation>Usare la barra degli strumenti</translation>
+        <translation>Uso della barra degli strumenti</translation>
     </message>
     <message>
         <source>Make the selected text &lt;b&gt;bold&lt;/b&gt;. If the selected text is &lt;b&gt;bold&lt;/b&gt; already, this button will remove the formating.</source>
@@ -1283,7 +1579,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Merge the selected table cells into one cell. (Select several cells with shift+click or Ctrl+click)</source>
-        <translation>Fondi le celle selezionate in una cella. (Seleziona diverse celle con shift+click or Ctrl+click)</translation>
+        <translation>Fondi le celle selezionate in una cella. (Seleziona diverse celle con Maiusc+clic o Ctrl+clic)</translation>
     </message>
     <message>
         <source>Open Online Editor xhtml source code editor. This button is not enabled by default, and is only intended for experienced users.</source>
@@ -1311,7 +1607,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Tips &amp;amp; Tricks</source>
-        <translation>Tips &amp;amp; Tricks</translation>
+        <translation>Suggerimenti &amp;amp; trucchi</translation>
     </message>
     <message>
         <source>You can adjust the height of the editor by draging the bottom right corner of the editor.</source>
@@ -1461,8 +1757,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     <name>design/standard/ezoe/validator</name>
     <message>
         <source>&amp;quot;%label&amp;quot; is required and must have a value</source>
-        <translation>&amp;quot;%label&amp;quot; è richiesto e deve avere un valore
-</translation>
+        <translation>&amp;quot;%label&amp;quot; è obbligatorio e deve avere un valore</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be a valid number</source>
@@ -1478,7 +1773,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be a valid email address</source>
-        <translation>&amp;quot;%label&amp;quot; dev&apos;essere un indirizzo email valido</translation>
+        <translation>&amp;quot;%label&amp;quot; dev&apos;essere un indirizzo e-mail valido</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be a valid css size/unit value</source>
@@ -1586,7 +1881,15 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     <name>kernel/classes/datatypes/ezxmltext</name>
     <message>
         <source>Invalid e-mail address: &apos;%1&apos;</source>
-        <translation>Indirizzo email non valido : &apos;%1&apos;</translation>
+        <translation>Indirizzo e-mail non valido : &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Class &apos;%1&apos; is not allowed for element &amp;lt;%2&amp;gt; (check content.ini).</source>
+        <translation>La classe &apos;%1&apos; non è permessa per l&apos;elemento &amp;lt;%2&amp;gt; (controlla content.ini).</translation>
+    </message>
+    <message>
+        <source>Required attribute &apos;%1&apos; is not presented in tag &amp;lt;%2&amp;gt;.</source>
+        <translation>L&apos;attributo richiesto &apos;%1&apos; non è presente nella stringa &amp;lt;%2&amp;gt;.</translation>
     </message>
 </context>
 <context>

@@ -87,7 +87,7 @@ menu entry the current page is in. Complete, working menus of the ezwebin-based 
 `extension/ezwebin/design/ezwebin/templates/menu/` (`flat_top.tpl`, `flat_left.tpl`, `double_top.tpl`).
 
 `fetch( 'content', 'list', ... )` returns only content the visitor may read and, by default, not hidden content, so
-the menu follows permissions by itself (Fetch functions).
+the menu follows permissions by itself ([Fetch functions](../app-creators/fetch-functions.md)).
 
 ## Order, hiding and links to elsewhere
 
