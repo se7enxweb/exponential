@@ -72717,6 +72717,26 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Фінансування Exponential: що оплачує спонсорство і як підтримати 7x та Фонд Exponential.</translation>
     </message>
     <message>
+        <source>Expand all</source>
+        <translation>Розгорнути все</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Згорнути все</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Відкрити або закрити всі папки</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Усі папки відкрито.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Усі папки закрито.</translation>
+    </message>
+    <message>
         <source>Help for %audience</source>
         <translation>Довідка для: %audience</translation>
     </message>
@@ -72867,24 +72887,6 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Інфраструктура спільноти: чат, дзеркала, вікі та ресурси для розробників</translation>
-        <source>Expand all</source>
-        <translation>Розгорнути все</translation>
-    </message>
-    <message>
-        <source>Collapse all</source>
-        <translation>Згорнути все</translation>
-    </message>
-    <message>
-        <source>Open or close every folder</source>
-        <translation>Відкрити або закрити всі папки</translation>
-    </message>
-    <message>
-        <source>Every folder is open.</source>
-        <translation>Усі папки відкрито.</translation>
-    </message>
-    <message>
-        <source>Every folder is closed.</source>
-        <translation>Усі папки закрито.</translation>
     </message>
 </context>
 <context>

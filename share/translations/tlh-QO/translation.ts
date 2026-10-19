@@ -72732,6 +72732,26 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>Exponential DIl: Huch nob nuq DIl, chay&apos; 7x, Exponential ghom&apos;a&apos; je QaH.</translation>
     </message>
     <message>
+        <source>Expand all</source>
+        <translation>Hoch tIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Hoch tISoQmoH</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Hoch ghItlh pa'mey tIpoSmoH pagh tISoQmoH</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Hoch ghItlh pa'mey poSmoHlu'pu'.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Hoch ghItlh pa'mey SoQmoHlu'pu'.</translation>
+    </message>
+    <message>
         <source>Help for %audience</source>
         <translation>%audience QaHmeH De&apos;</translation>
     </message>
@@ -72882,24 +72902,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>ghom Hal: ja&apos;chuqmeH Daq, nejwI&apos;mey, wiki, chenmoHwI&apos; De&apos; je</translation>
-        <source>Expand all</source>
-        <translation>Hoch tIpoSmoH</translation>
-    </message>
-    <message>
-        <source>Collapse all</source>
-        <translation>Hoch tISoQmoH</translation>
-    </message>
-    <message>
-        <source>Open or close every folder</source>
-        <translation>Hoch ghItlh pa'mey tIpoSmoH pagh tISoQmoH</translation>
-    </message>
-    <message>
-        <source>Every folder is open.</source>
-        <translation>Hoch ghItlh pa'mey poSmoHlu'pu'.</translation>
-    </message>
-    <message>
-        <source>Every folder is closed.</source>
-        <translation>Hoch ghItlh pa'mey SoQmoHlu'pu'.</translation>
     </message>
 </context>
 <context>

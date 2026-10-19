@@ -79956,6 +79956,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Exponential finanzieren: was Sponsoring bezahlt und wie Sie 7x und die Exponential Foundation sponsern.</translation>
     </message>
     <message>
+        <source>Expand all</source>
+        <translation>Alle aufklappen</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Alle zuklappen</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Alle Ordner öffnen oder schließen</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Alle Ordner sind geöffnet.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Alle Ordner sind geschlossen.</translation>
+    </message>
+    <message>
         <source>Help for %audience</source>
         <translation>Hilfe für %audience</translation>
     </message>
@@ -80106,24 +80126,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Community-Infrastruktur: Chat, Mirrors, Wikis und Ressourcen für Entwickler</translation>
-        <source>Expand all</source>
-        <translation>Alle aufklappen</translation>
-    </message>
-    <message>
-        <source>Collapse all</source>
-        <translation>Alle zuklappen</translation>
-    </message>
-    <message>
-        <source>Open or close every folder</source>
-        <translation>Alle Ordner öffnen oder schließen</translation>
-    </message>
-    <message>
-        <source>Every folder is open.</source>
-        <translation>Alle Ordner sind geöffnet.</translation>
-    </message>
-    <message>
-        <source>Every folder is closed.</source>
-        <translation>Alle Ordner sind geschlossen.</translation>
     </message>
 </context>
 </TS>

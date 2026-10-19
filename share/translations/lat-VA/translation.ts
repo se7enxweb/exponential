@@ -72732,6 +72732,26 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Exponential sustinere: quid sponsio solvat et quomodo 7x et Fundationem Exponential sustineas.</translation>
     </message>
     <message>
+        <source>Expand all</source>
+        <translation>Omnia explicare</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Omnia complicare</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Omnes capsas aperire aut claudere</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Omnes capsae apertae sunt.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Omnes capsae clausae sunt.</translation>
+    </message>
+    <message>
         <source>Help for %audience</source>
         <translation>Auxilium pro %audience</translation>
     </message>
@@ -72882,24 +72902,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Instrumenta communitatis: colloquia, speculi, wikia et subsidia evolutorum</translation>
-        <source>Expand all</source>
-        <translation>Omnia explicare</translation>
-    </message>
-    <message>
-        <source>Collapse all</source>
-        <translation>Omnia complicare</translation>
-    </message>
-    <message>
-        <source>Open or close every folder</source>
-        <translation>Omnes capsas aperire aut claudere</translation>
-    </message>
-    <message>
-        <source>Every folder is open.</source>
-        <translation>Omnes capsae apertae sunt.</translation>
-    </message>
-    <message>
-        <source>Every folder is closed.</source>
-        <translation>Omnes capsae clausae sunt.</translation>
     </message>
 </context>
 <context>
