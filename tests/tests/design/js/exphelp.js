@@ -11,7 +11,7 @@ const { createDocument } = require('./mini_dom.js');
 const source = fs.readFileSync(process.argv[2], 'utf8');
 const attr = (value) => JSON.stringify(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
-const SEARCH = '<div class="a4-help" data-exphelp data-exphelp-i18n="' + attr({ resultsCount: '%count Treffer', copy: 'Kopieren', copied: 'Kopiert' }) + '">'
+const SEARCH = '<div class="a4-help-frame" data-exphelp data-exphelp-i18n="' + attr({ resultsCount: '%count Treffer', copy: 'Kopieren', copied: 'Kopiert' }) + '">'
     + '<form data-exphelp-search action="/admin/exphelp/search" method="get" data-exphelp-endpoint="/admin/exphelp/search">'
     + '<input type="search" name="q" id="q" data-exphelp-search-input aria-controls="res" />'
     + '<label data-exphelp-facet="audience:editor"><input type="radio" name="audience" value="" data-exphelp-filter checked="checked" />All</label>'
@@ -20,7 +20,7 @@ const SEARCH = '<div class="a4-help" data-exphelp data-exphelp-i18n="' + attr({ 
     + '<button type="submit">Search</button></form>'
     + '<div id="res" data-exphelp-results hidden></div></div>';
 
-const VIEWER = '<div class="a4-help" data-exphelp><form data-exphelp-search data-exphelp-endpoint="/admin/exphelp/search?x=1">'
+const VIEWER = '<div class="a4-help-frame" data-exphelp><form data-exphelp-search data-exphelp-endpoint="/admin/exphelp/search?x=1">'
     + '<input type="search" name="q" id="q" data-exphelp-search-input /></form>'
     + '<nav data-exphelp-toc><a href="#one" id="t1">One</a><a href="#two" id="t2">Two</a><a href="#deep" id="t3">Deep</a></nav>'
     + '<article class="a4-help-body a4-help-prose" data-exphelp-content data-exphelp-collapsible="h2"><div class="a4-help-body">'
@@ -288,7 +288,7 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
             + '<th scope="col">Version</th><th scope="col">Date</th><th scope="col" data-sort="none">Notes</th></tr></thead><tbody>'
             + rows.map((r) => '<tr id="' + r[0] + '"><th scope="row" data-sort-value="' + r[1] + '">' + r[0] + '</th><td data-sort-value="' + r[2] + '">' + r[2] + '</td><td>' + r[3] + '</td></tr>').join('')
             + '</tbody></table></div>';
-        const page = '<div class="a4-help" data-exphelp data-exphelp-i18n="' + attr({ recordsCount: '%count von %total' }) + '">'
+        const page = '<div class="a4-help-frame" data-exphelp data-exphelp-i18n="' + attr({ recordsCount: '%count von %total' }) + '">'
             + '<article data-exphelp-content><div class="a4-help-body a4-help-records" data-exphelp-records><h1 id="top">Release history</h1>'
             + '<p class="a4-help-records-stats">3 releases</p>'
             + '<h2 id="s3">Series 3.x</h2>' + table([['3.0-1', '000003.000000-000001', '2003-03-24', 'first'], ['3.10-1', '000003.000010-000001', '2008-01-01', '']])
@@ -376,7 +376,7 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
     {
         // the contents page: folders closed, Expand all / Collapse all, the filter opens its matches and puts back the
         // folders as they were, an #anchor opens its folder
-        const CONTENTS = '<div class="a4-help" data-exphelp data-exphelp-i18n="' + attr({ allOpen: 'Alle offen.', allClosed: 'Alle zu.' }) + '">'
+        const CONTENTS = '<div class="a4-help-frame" data-exphelp data-exphelp-i18n="' + attr({ allOpen: 'Alle offen.', allClosed: 'Alle zu.' }) + '">'
             + '<nav id="tree" data-exphelp-nav><input type="search" id="f" data-exphelp-navfilter hidden /><p data-exphelp-navfilter-status></p>'
             + '<ul><li><details id="exphelp-folder-a" data-nav-path="a"><summary>Alpha</summary><ul>'
             + '<li><a href="/x/a1">Install</a></li>'
@@ -414,7 +414,7 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
     {
         // the navigation's state from page to page: filter text and folders by data-nav-path in localStorage, the
         // current page's folder always open, a clear button and Esc, storage blocked or broken
-        const NAV = '<div class="a4-help" data-exphelp><nav id="tree" data-exphelp-nav>'
+        const NAV = '<div class="a4-help-frame" data-exphelp><nav id="tree" data-exphelp-nav>'
             + '<input type="search" id="f" data-exphelp-navfilter hidden />'
             + '<button type="button" id="clr" aria-controls="f" data-exphelp-navfilter-clear hidden>Clear filter</button>'
             + '<p data-exphelp-navfilter-status></p><ul>'
