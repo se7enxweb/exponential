@@ -3305,7 +3305,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-da1c4e1a62d00e023337f72035fb89ea  doc/changelogs/6.0/6.0.15.md
+bc2db986b0d1030f4a11cfea581841be  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -10631,7 +10631,7 @@ e14bfaf3e3eee52666e6afb4badcead4  kernel/classes/help/exphelppdffontsubset.php
 f3f4f086dcc7f610aa9a28066ac2a7fd  kernel/classes/help/exphelppdfwriter.php
 4bb23e416344f44ac2989a7746f1ed2f  kernel/classes/help/exphelpreadpolicygrant.php
 65ba2facf2a956fb8229b6b88c61be4f  kernel/classes/help/exphelprecordrenderer.php
-e3f73cc8ebb18cf02b0a33507434db93  kernel/classes/help/exphelpsearch.php
+4c81a6da7d295edf683ee470dddec670  kernel/classes/help/exphelpsearch.php
 9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
 63e8afbb944019671f8b369642eb12d7  kernel/classes/ini/actions/expiniaction.php
 85b05708b2165d0dc398973d33ba0a0e  kernel/classes/ini/actions/expiniactionactions.php
@@ -13053,7 +13053,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-b0dec096dc42aeff05507141df548a72  tests/test-map.json
+5641d3ea42d9a337aceb00a26918d810  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -13677,6 +13677,7 @@ b015cc94ed316b93aee9989aca280db7  tests/tests/kernel/classes/help/expHelpPageTit
 b21f6a4b2fd7c4c6679e6f498f67fdfa  tests/tests/kernel/classes/help/expHelpPdfTest.php
 c150e20b9a041af62573120a802856e6  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 3722aed08f58e47b42c8658a17b8fdf9  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
+68e5b5841350ac5b775d9cf5261f08f2  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php
 450e2a87a53cc8ae3fe778916dba5a1c  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 b61aa9c1f66c7026dff764569d8ea15d  tests/tests/kernel/classes/help/expHelpSearchTest.php
 ba6f0d36f853bb5ab423e870f2540f9f  tests/tests/kernel/classes/help/expHelpSearchViewParametersTest.php
