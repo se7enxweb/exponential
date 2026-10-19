@@ -9,8 +9,13 @@
  *          aria-controls = the tree's id), hidden until exphelp.js shows it, translated strings, no inline CSS or JS
  *  HCP-03  the control's strings are in the 11 complete kernel catalogues (context kernel/exphelp), once each,
  *          translated (empty only in untranslated); the client strings carry the two announcements
- *  HCP-04  help.css places the control with tokens, at the logical end side, above the debug bar by
- *          --exp-debug-clearance, which expdebugbar.css sets for the bar and for its minimised tab
+ *  HCP-04  help.css places the control with tokens, sticky at the end side of the help column (never over the side
+ *          menus), its room kept from the first paint, above the debug bar by --exp-debug-clearance, which
+ *          expdebugbar.css sets for the bar and for its minimised tab
+ *  HCP-06  the help navigation of the viewer and the contents page has a "Clear filter" button (type=button,
+ *          aria-controls the filter field, hidden until there is a filter), translated in the 11 catalogues
+ *  HCP-07  help.css never styles .a4-help itself (the shared field help text of components.css; help.css loads on
+ *          every admin page): the help page frame is .a4-help-frame in every exphelp template
  *  HCP-05  the help dashboard shows the Exponential logo right above "Help center": admin4 the header's inline drawing
  *          (dark mode through its tokens), classic the same drawing's file; named "Exponential", a fixed size
  *
@@ -175,13 +180,74 @@ class expHelpContentsPageTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '#\.a4-help-brand \.a4-logo-full,\s*\.a4-help-brand-img \{[^}]*width: calc\(var\(--a4-space-6\) \* 380 / 60\);\s*height: var\(--a4-space-6\);#', $css, 'a fixed size' );
     }
 
+    /** HCP-06 */
+    public function testNavigationHasAClearFilterButton()
+    {
+        $button = '<button type="button" class="a4-btn a4-btn-ghost a4-btn-small a4-help-nav-clear" aria-controls="exphelp-nav-filter" data-exphelp-navfilter-clear hidden>'
+            . '<span class="a4-icon a4-bi-x-lg" aria-hidden="true"></span> {\'Clear filter\'|i18n( \'kernel/exphelp\' )}</button>';
+        foreach ( array( 'design/admin4', 'design/admin' ) as $design )
+        {
+            foreach ( array( 'viewer', 'contents' ) as $view )
+            {
+                $tpl = (string)file_get_contents( self::root() . "/$design/templates/exphelp/$view.tpl" );
+                $this->assertStringContainsString( 'id="exphelp-nav-filter"', $tpl, "$design $view" );
+                $this->assertStringContainsString( $button, $tpl, "$design $view: the clear button" );
+            }
+            $css = (string)file_get_contents( self::root() . "/$design/stylesheets/modules/help.css" );
+            $this->assertStringContainsString( '.a4-help-nav-clear[hidden] { display: none; }', $css );
+        }
+        foreach ( self::CATALOGUES as $lang )
+        {
+            $dom = new DOMDocument();
+            $dom->load( self::root() . "/share/translations/$lang/translation.ts" );
+            $count = 0;
+            foreach ( $dom->getElementsByTagName( 'context' ) as $context )
+            {
+                if ( trim( $context->getElementsByTagName( 'name' )->item( 0 )->textContent ) !== 'kernel/exphelp' )
+                    continue;
+                foreach ( $context->getElementsByTagName( 'message' ) as $message )
+                {
+                    if ( $message->getElementsByTagName( 'source' )->item( 0 )->textContent === 'Clear filter' )
+                    {
+                        $count++;
+                        if ( $lang !== 'untranslated' )
+                            $this->assertNotSame( '', trim( $message->getElementsByTagName( 'translation' )->item( 0 )->textContent ), $lang );
+                    }
+                }
+            }
+            $this->assertSame( 1, $count, "$lang: Clear filter once in kernel/exphelp" );
+        }
+    }
+
+    /** HCP-07 */
+    public function testHelpStylesheetNeverStylesTheSharedFieldHelpClass()
+    {
+        // .a4-help is the shared help text under a form field (components.css); help.css loads on every admin page,
+        // so a rule for .a4-help itself turned every field help across the administration into a narrow grid
+        foreach ( array( 'design/admin4', 'design/admin' ) as $design )
+        {
+            $css = (string)file_get_contents( self::root() . "/$design/stylesheets/modules/help.css" );
+            $this->assertSame( 0, preg_match_all( '/\.a4-help(?![\w-])/', $css, $m ), "$design help.css styles only .a4-help-* classes, never .a4-help: " . implode( ', ', $m[0] ) );
+            $this->assertMatchesRegularExpression( '/^\.a4-help-frame \{/m', $css, 'the help page frame' );
+            foreach ( glob( self::root() . "/$design/templates/exphelp/{,parts/}*.tpl", GLOB_BRACE ) as $tpl )
+            {
+                $html = (string)file_get_contents( $tpl );
+                $this->assertDoesNotMatchRegularExpression( '/class="a4-page a4-help[" ]/', $html, basename( $tpl ) . ': the frame is .a4-help-frame' );
+                if ( preg_match( '/class="a4-page /', $html ) )
+                    $this->assertMatchesRegularExpression( '/class="a4-page a4-help-frame[" ]/', $html, basename( $tpl ) );
+            }
+        }
+    }
+
     /** HCP-04 */
     public function testControlStaysClearOfTheDebugBar()
     {
         foreach ( array( 'design/admin4', 'design/admin' ) as $design )
         {
             $css = (string)file_get_contents( self::root() . "/$design/stylesheets/modules/help.css" );
-            $this->assertMatchesRegularExpression( '#\.a4-help-contents-controls \{[^}]*position: fixed;[^}]*inset-inline-end: var\(--a4-space-4\);[^}]*bottom: calc\(var\(--exp-debug-clearance, 0px\) \+ var\(--a4-space-4\)\);#', $css, $design );
+            $this->assertMatchesRegularExpression( '#\.a4-help-contents-controls \{[^}]*position: sticky;[^}]*bottom: calc\(var\(--exp-debug-clearance, 0px\) \+ var\(--a4-space-4\)\);[^}]*justify-self: end;#', $css, "$design: sticky at the end of the help column, never over the side menus" );
+            $this->assertStringNotContainsString( 'position: fixed', substr( $css, (int)strpos( $css, '.a4-help-contents-controls {' ), 400 ) );
+            $this->assertStringContainsString( '.a4-js .a4-help-contents-controls[hidden] { display: flex; visibility: hidden; }', $css, 'its room is kept until the script shows it (no layout shift)' );
             $this->assertStringContainsString( '.a4-help-contents-controls[hidden] { display: none; }', $css );
         }
         $debug = (string)file_get_contents( self::root() . '/design/standard/stylesheets/expdebugbar.css' );

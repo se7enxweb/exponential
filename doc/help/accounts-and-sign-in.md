@@ -52,6 +52,8 @@ In the administration, **Edit profile** in the dashboard's left column, or your 
 
 ![My account in the administration](images/my-account.webp)
 
+![The Current user box in the right column with Change information and, outlined, Change password](images/accounts/current-user-box.webp)
+
 | Card | What you can do |
 |---|---|
 | **Profile** | Change your name, e-mail address, image and the other fields (**Edit profile**). |
@@ -73,6 +75,8 @@ pending items and your notification settings.
    example *At least 10 characters*, and checks it as you type. **Generate a strong password** makes one for you;
    **Show** reveals what you typed.
 3. Press **Change password**.
+
+![The Change password form with the old password, the new password and its confirmation](images/accounts/change-password-form.webp)
 
 Use a password you do not use anywhere else. A password manager remembers it for you.
 
@@ -122,6 +126,8 @@ first sign-in.
 - **My notification settings** lists the items you follow. You get an e-mail when something is published below
   them. To follow an item, choose **Add to my notifications** in its menu, or **Add items** on the settings page. A
   **digest** collects the messages into one e-mail per day, week or month instead of one per change.
+
+![My e-mail preferences: the categories of mail and whether you receive each](images/accounts/email-preferences.webp)
 
 ## Learn more
 

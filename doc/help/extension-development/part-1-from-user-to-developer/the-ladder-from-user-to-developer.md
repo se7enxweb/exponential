@@ -18,15 +18,15 @@ ladder, then read upward.
 | Step | You change | You need | Book part |
 |---|---|---|---|
 | **User** | Content: articles, images, menus, users | the administration | Part 1 (this part) |
-| **Builder** | Settings, templates, overrides, content classes, roles, workflows | a text editor, the INI and template languages, patience | Part 2 |
-| **Extension developer** | New modules, datatypes, operators, workflow events, cronjobs, commands | PHP, the kernel's classes, Git | Part 3, Part 4 |
-| **Theme developer** | The look: a design extension with templates, CSS, JavaScript | HTML, CSS, the template language, the design chain | Part 6 |
+| **Builder** | Settings, templates, overrides, content classes, roles, workflows | a text editor, the INI and template languages, patience | [Part 2](../part-2-builder/README.md) |
+| **Extension developer** | New modules, datatypes, operators, workflow events, cronjobs, commands | PHP, the kernel's classes, Git | [Part 3](../part-3-extension-developer/README.md), [Part 4](../part-4-upgrading/README.md) |
+| **Theme developer** | The look: a design extension with templates, CSS, JavaScript | HTML, CSS, the template language, the design chain | [Part 6](../part-6-theme-developers/README.md) |
 
 Two more roles sit beside the ladder rather than on it:
 
 - **Maintainer**: you publish your extension so others install it, and you look after it. Releasing is
-  Part 7; contributing to other people's work and growing the community is
-  Part 5.
+  [Part 7](../part-7-releasing/README.md); contributing to other people's work and growing the community is
+  [Part 5](../part-5-extend-fork-contribute/README.md).
 - **Application creator**: you combine content classes, extensions and settings into a complete application (a
   members' area, a shop, a booking system). You use all four steps, mostly the builder's and the extension
   developer's.
@@ -60,7 +60,7 @@ under version control, instead of scattered through `settings/override/`. Part 2
 
 > **Note**
 > Most sites need nothing beyond the builder's tools. Do not write PHP until a setting, a template or an override
-> really cannot do the job. When settings are not enough helps
+> really cannot do the job. [When settings are not enough](../part-2-builder/when-settings-are-not-enough.md) helps
 > you decide.
 
 ## Step 3: extension developer
@@ -74,7 +74,7 @@ You write PHP that the kernel calls:
 - a **cronjob part**, a **command**, an **ajax function**, a **handler** that replaces a part of the system.
 
 You learn the anatomy of an extension and the kernel's classes (`eZINI`, `eZContentObject`, `eZTemplate` and the
-rest, see Part 8). The RAD tools in **Setup > RAD** write a working skeleton of most
+rest, see [Part 8](../part-8-reference/README.md)). The RAD tools in **Setup > RAD** write a working skeleton of most
 of these for you, so you start from code that runs; the tutorials in Part 3 show both the RAD way and the hand way.
 
 ## Step 4: theme developer
@@ -95,13 +95,13 @@ something you do not need yet.
 1. Read Part 1 fully, and do [Your first hour as a developer](your-first-hour-as-a-developer.md).
 2. Build something real with Part 2: a settings extension for your own site.
 3. Do the first three tutorials in Part 3: the
-   smallest extension by hand, a
-   template operator and a
-   module with a view.
+   [smallest extension by hand](../part-3-extension-developer/tutorials/by-hand-minimal-extension.md), a
+   [template operator](../part-3-extension-developer/tutorials/by-hand-template-operator.md) and a
+   [module with a view](../part-3-extension-developer/tutorials/by-hand-module-with-a-view.md).
 4. Take an old extension that you like and bring it up to date with Part 4. Nothing teaches the kernel faster.
 5. Publish it (Part 7) and offer your changes to its author (Part 5).
 
-Reading paths through the book gives ready-made orders for developers, designers and
+[Reading paths through the book](../reading-paths.md) gives ready-made orders for developers, designers and
 application creators.
 
 ## Related pages
@@ -109,5 +109,5 @@ application creators.
 - Previous: [What an extension is](what-an-extension-is.md)
 - Next: [The tools you need](tools-you-need.md)
 - [Develop with Git: grow from user to developer](../../develop-with-git.md)
-- Reading paths through the book
+- [Reading paths through the book](../reading-paths.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

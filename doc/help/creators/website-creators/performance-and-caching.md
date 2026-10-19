@@ -13,6 +13,8 @@ This page is for website creators who want fast pages. Exponential caches at man
 default. This page shows the layers, the levers in order of effect, and how to measure
 ([10.12 Performance tuning](../../../install/10-after-installing.md#1012-performance-tuning)).
 
+![Preload Sites: warm the caches of the sites after a clear](../../images/creators/preload-sites.webp)
+
 ## Contents
 
 1. [The layers](#the-layers)

@@ -13,6 +13,10 @@ This page is for system administrators and support managers at a host who keep m
 current releases. It answers: how to find which release each site runs, how to plan upgrades across customers, which
 steps an upgrade within the 6.0 line takes, how to check the result, and how to recover when a step fails.
 
+![Setup, Upgrade check: compare the files and the database with this release](../../images/hosting/upgrade-check.webp)
+
+![Git Manager: the Git checkout of the installation, its branch, the commits waiting and the buttons to update](../../images/hosting/git-manager.webp)
+
 The procedure is the installation book's [chapter 11, Upgrading](../../../install/11-upgrading.md) and the guide
 [Upgrading](../../../guides/upgrading.md); this page arranges it for a host. Customers coming from older major versions
 or other products are on [Migrating customers](../migrations/README.md).

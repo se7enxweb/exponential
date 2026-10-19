@@ -310,6 +310,4 @@
 
 </form>
 
-{literal}
 {ezscript( array( 'page/content_urlalias.js' ) )}
-{/literal}

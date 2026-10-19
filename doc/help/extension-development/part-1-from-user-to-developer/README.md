@@ -52,10 +52,10 @@ facts come from, so you can check them yourself.
 
 ## After this part
 
-- If you want to change a site without writing PHP, continue with Part 2: The builder.
+- If you want to change a site without writing PHP, continue with [Part 2: The builder](../part-2-builder/README.md).
 - If you already change settings and templates comfortably, jump to
-  Part 3: The extension developer.
-- If you are a designer, Part 6: Theme developers is your shortcut.
+  [Part 3: The extension developer](../part-3-extension-developer/README.md).
+- If you are a designer, [Part 6: Theme developers](../part-6-theme-developers/README.md) is your shortcut.
 
 ## Related pages
 

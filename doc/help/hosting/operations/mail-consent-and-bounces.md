@@ -14,6 +14,8 @@ product managers who describe what the platform does about consent and unsubscri
 decides whether a mail may go, what has to be set up per customer, how bounces and spam complaints reach the
 suppression list, and how requests about personal data are handled.
 
+![E-mail preferences in Setup: mail categories, suppressions and consents](../../images/hosting/mail-preferences-status.webp)
+
 The administrator's guide is [E-mail preferences: setting them up and running them](../../../guides/mail-preferences-administrator.md);
 the settings are in `settings/mailpreferences.ini`. Transports and deliverability are on [Mail delivery](mail-delivery.md).
 

@@ -13,7 +13,7 @@
 
 /* ---- page frame and shared parts ----------------------------------------------------------------------------- */
 
-.a4-help {
+.a4-help-frame {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--a4-space-5);
@@ -76,6 +76,8 @@
 .a4-help-tile.is-website-creator { color: var(--a4-chart-7); }
 .a4-help-tile.is-supporter { color: var(--a4-chart-4); }
 .a4-help-tile.is-sponsor { color: var(--a4-chart-5); }
+.a4-help-tile.is-government { color: var(--a4-chart-7); }
+.a4-help-tile.is-businesses { color: var(--a4-chart-3); }
 .a4-help-tile.is-press { color: var(--a4-chart-6); }
 .a4-help-tile.is-trainer { color: var(--a4-chart-2); }
 
@@ -101,6 +103,8 @@
 .a4-help-pill.is-website-creator { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-supporter { border-color: var(--a4-chart-4); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-sponsor { border-color: var(--a4-chart-5); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-government { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-businesses { border-color: var(--a4-chart-3); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-press { border-color: var(--a4-chart-6); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-trainer { border-color: var(--a4-chart-2); background-color: var(--a4-card); color: var(--a4-ink); }
 
@@ -387,7 +391,7 @@
 
 /* ---- dashboard: audience cards------------------------------------------------------------------------------- */
 
-.a4-help { container-type: inline-size; }
+.a4-help-frame { container-type: inline-size; }
 .a4-help-audiences {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -429,6 +433,8 @@
 .a4-help-audience.is-website-creator::before { background-color: var(--a4-chart-7); }
 .a4-help-audience.is-supporter::before { background-color: var(--a4-chart-4); }
 .a4-help-audience.is-sponsor::before { background-color: var(--a4-chart-5); }
+.a4-help-audience.is-government::before { background-color: var(--a4-chart-7); }
+.a4-help-audience.is-businesses::before { background-color: var(--a4-chart-3); }
 .a4-help-audience.is-press::before { background-color: var(--a4-chart-6); }
 .a4-help-audience.is-trainer::before { background-color: var(--a4-chart-2); }
 .a4-help-audience:hover,
@@ -712,7 +718,7 @@
 /* ---- small windows ------------------------------------------------------------------------------------------- */
 
 @media (max-width: 600px) {
-  .a4-help { gap: var(--a4-space-4); }
+  .a4-help-frame { gap: var(--a4-space-4); }
   .a4-help-hero { padding: var(--a4-space-5) var(--a4-space-4); }
   .a4-help-hero h1 { font-size: var(--a4-text-2xl); }
   .a4-help-hero-sub { font-size: var(--a4-text-m); }
@@ -1483,6 +1489,7 @@
   margin: 0 0 var(--a4-space-3);
 }
 .a4-help-nav-filter { flex: 1 1 10rem; min-width: 0; }
+.a4-help-nav-clear[hidden] { display: none; }
 .a4-help-nav-all { font-size: var(--a4-text-xs); }
 .a4-help-section-more { display: inline-flex; align-items: center; gap: var(--a4-space-1); font-size: var(--a4-text-s); }
 
@@ -1499,18 +1506,19 @@
 @container a4-help-contents (min-width: 90rem) {
   .a4-help-nav.is-contents .a4-help-nav-list.is-top { columns: 3; }
 }
-/* Room under the tree, so its last folder can scroll above the Expand all / Collapse all control */
-.a4-help-contents { padding-bottom: calc(var(--a4-space-7) + var(--a4-space-7)); }
 /* A folder opened from an #anchor is not hidden under the fixed header */
 .a4-help-nav.is-contents .a4-help-nav-details { scroll-margin-top: calc(var(--a4-space-7) + var(--a4-space-7)); }
-/* Expand all / Collapse all (exphelp.js shows it; hidden without JavaScript): fixed at the end side of the window near
-   the bottom, mirrored in a right-to-left interface. It stays above the debug bar, or its minimised tab, by the
-   room the bar keeps free (--exp-debug-clearance, set in expdebugbar.css; 0 without the bar). */
+/* Expand all / Collapse all: the last item of the page, sticky at the bottom of the window at the end side of the
+   help column, so it follows the reader down the page without ever lying over the side menus (the Tools sidebar is
+   at the window's end edge) and is mirrored in a right-to-left interface. It stays above the debug bar, or its
+   minimised tab, by the room the bar keeps free (--exp-debug-clearance, set in expdebugbar.css; 0 without the bar).
+   Hidden without JavaScript; with it (html.a4-js, set before the first paint) its room is kept, invisible, until
+   exphelp.js shows it, so nothing moves. */
 .a4-help-contents-controls {
-  position: fixed;
-  inset-inline-end: var(--a4-space-4);
+  position: sticky;
   bottom: calc(var(--exp-debug-clearance, 0px) + var(--a4-space-4));
   z-index: var(--a4-z-scroll-top);
+  justify-self: end;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -1522,13 +1530,15 @@
   box-shadow: var(--a4-shadow-m);
 }
 .a4-help-contents-controls[hidden] { display: none; }
+.a4-js .a4-help-contents-controls[hidden] { display: flex; visibility: hidden; }
 .a4-help-contents-controls .a4-btn { justify-content: flex-start; }
 .a4-help-contents-controls .a4-icon { rotate: 90deg; }
 @media (max-width: 30rem) {
-  .a4-help-contents-controls { inset-inline-end: var(--a4-space-2); padding: var(--a4-space-1); gap: var(--a4-space-1); }
+  .a4-help-contents-controls { padding: var(--a4-space-1); gap: var(--a4-space-1); }
 }
 @media print {
-  .a4-help-contents-controls { display: none; }
+  .a4-help-contents-controls,
+  .a4-js .a4-help-contents-controls[hidden] { display: none; }
 }
 
 /* The contents of the page: at the side (scrollspy marks the heading in view) or folded above the page */
