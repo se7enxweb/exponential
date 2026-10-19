@@ -1,13 +1,15 @@
 {* exphelp/dashboard: the help start page (doc/features/6.0/help-system.md). From top to bottom: the search hero
    (instant search through exphelp.js, a plain GET form to exphelp/search without it), the audiences (fourteen, each with its pages; the project-manager and sales-marketing cards link their start page), featured
-   pages next to the recently changed pages, the sections as quick links, how to report an error, and the
-   keyboard shortcuts. Styles: stylesheets/modules/help.css (.a4-help-*); no inline CSS or script.
+   pages next to the recently changed pages, the sections as quick links, how to report an error, the license, the
+   Support Exponential block (parts/support.tpl) and the keyboard shortcuts. Each audience card's title opens the
+   audience's landing page (exphelp/audience/<id>) while [LandingSettings] Enabled=enabled, else its search. Styles: stylesheets/modules/help.css (.a4-help-*); no inline CSS or script.
 
    Variables (kernel/private/classes/views/exphelp/dashboard.php): help_audiences (id => id, name, count), help_audience_pages (id => up to 4 documents),
    help_categories (id => id, name, icon, count), help_featured (documents: id, path, title, summary, category,
    audience[]), help_recent (id, title, time, subject), help_trackers (key => key, label, description, url,
    new_issue_url), help_search_url, help_report_url; optional help_i18n_json (client strings) and help_stats
-   (pages, categories). Every part is left out when its list is empty. *}
+   (pages, categories), help_support (the Support Exponential block or false). Every part is left out when its list is
+   empty. *}
 {def $help_ctx = 'kernel/exphelp'
      $help_audience_ids = array( 'editor', 'admin', 'developer', 'user', 'project-manager', 'sales-marketing', 'partner', 'advocate', 'designer', 'hosting', 'app-creator', 'website-creator', 'supporter', 'sponsor' )
      $help_audience_meta = hash(
@@ -33,7 +35,8 @@
      $help_audience = false()
      $help_pages = array()
      $help_category = false()
-     $help_icon = ''}
+     $help_icon = ''
+     $help_landing_on = ezini( 'LandingSettings', 'Enabled', 'exphelp.ini' )|eq( 'enabled' )}
 <div class="a4-page a4-help" data-exphelp{if $help_i18n|ne( '' )} data-exphelp-i18n="{$help_i18n|wash}"{/if}>
 
     {* ---- Search hero ---- *}
@@ -89,7 +92,7 @@
                     <span class="a4-help-tile is-{$aid}" aria-hidden="true"><span class="a4-icon a4-bi-{$help_audience_meta[$aid].icon}"></span></span>
                     {if and( $help_audience, is_set( $help_audience.count ) )}<span class="a4-help-audience-count">{'%count pages'|i18n( $help_ctx,, hash( '%count', $help_audience.count ) )|wash}</span>{/if}
                 </div>
-                <h3><a href={concat( '/exphelp/search/(audience)/', $aid )|ezurl}>{cond( and( $help_audience, is_set( $help_audience.name ) ), $help_audience.name, $help_audience_meta[$aid].name )|wash}</a></h3>
+                <h3><a href={cond( $help_landing_on, concat( '/exphelp/audience/', $aid ), concat( '/exphelp/search/(audience)/', $aid ) )|ezurl}>{cond( and( $help_audience, is_set( $help_audience.name ) ), $help_audience.name, $help_audience_meta[$aid].name )|wash}</a></h3>
                 <p>{$help_audience_meta[$aid].text|wash}</p>
                 {if is_set( $help_audience_meta[$aid].start )}
                 <a class="a4-help-audience-start" href={concat( '/exphelp/viewer/', $help_audience_meta[$aid].start )|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span>{'Start here'|i18n( $help_ctx )}<span class="a4-sr-only">: {$help_audience_meta[$aid].name|wash}</span></a>
@@ -205,6 +208,11 @@
 
     {* ---- Free documentation: the license and what readers may do with it ---- *}
     {include uri='design:exphelp/parts/license_dashboard.tpl'}
+
+    {* ---- Support Exponential: sponsor 7x and the Exponential Foundation (parts/support.tpl, [SupportSettings]) ---- *}
+    {if and( is_set( $help_support ), $help_support )}
+    {include uri='design:exphelp/parts/support.tpl' support=$help_support}
+    {/if}
 
     {* ---- Keyboard ---- *}
     <ul class="a4-help-keys" id="help-dash-keys" aria-label="{'Keyboard shortcuts'|i18n( $help_ctx )|wash}">

@@ -14597,7 +14597,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Salva</translation>
+        <translation>Negozio</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74387,6 +74387,158 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Finanziare Exponential: cosa finanzia la sponsorizzazione e come sponsorizzare 7x e la Exponential Foundation.</translation>
+    </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Guida per %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Cerca nella guida per %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Tutte le pagine per %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Tutti i destinatari</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Leggi queste pagine in quest&apos;ordine.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Buono a sapersi</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Cerca per argomento</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Ogni pulsante elenca le pagine di un argomento per %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Pagine principali</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Destinatari correlati</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Ultimi commit di Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Cronologia completa su GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Cosa è cambiato di recente nel codice sorgente: il ramo principale di se7enxweb/exponential, letto da questo server dal suo feed pubblico.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub non è raggiungibile in questo momento. Questi sono i commit letti il %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Non è stato possibile leggere i commit da GitHub. Apri invece la cronologia su GitHub.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Nascondi i commit di merge</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Mostra anche i commit di merge</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Messaggio</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Commit %from–%to di %total</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Ancora nessun commit da mostrare.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>La tua sponsorizzazione finanzia:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>Informazioni su %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Una sponsorizzazione mensile, anche piccola, è un&apos;entrata su cui pianificare: finanzia un lavoro che le donazioni una tantum non possono sostenere.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Cosa finanzia la sponsorizzazione</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Sostieni Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential è software libero. Ogni nuova funzione, pagina di guida, estensione, tema e applicazione è lavoro che qualcuno paga con il proprio tempo. Una sponsorizzazione mensile continuativa, di qualsiasi importo, mantiene vivo questo lavoro e lo fa crescere.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Sponsorizza 7x su GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Sponsorizza la Exponential Foundation su GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>L&apos;azienda che guida Exponential e il primo sponsor del progetto: lo sviluppa, lo supporta, lo ospita e ne cura i rilasci.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>L&apos;organizzazione senza scopo di lucro che gestisce il progetto open source e si dedica al suo finanziamento, alla diffusione, al supporto, alla formazione, allo sviluppo, alla promozione e alla documentazione.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Rilasci mensili e il lavoro che tiene tutto in funzione</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Patch di sicurezza per le librerie su cui si basa Exponential, come Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Nuove funzioni restituite alla comunità come open source</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>I bridge, i fork e gli strumenti attorno alla piattaforma</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Manutenzione delle librerie principali</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Documentazione, tutorial, guide pratiche e domande frequenti</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Livelli di integrazione: GraphQL, REST e Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Infrastruttura della comunità: chat, mirror, wiki e risorse per sviluppatori</translation>
     </message>
 </context>
 </TS>

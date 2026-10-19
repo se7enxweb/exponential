@@ -14556,7 +14556,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Spara</translation>
+        <translation>Butik</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -74283,6 +74283,158 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Finansiera Exponential: vad sponsring betalar för och hur du sponsrar 7x och Exponential Foundation.</translation>
+    </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Hjälp för %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Sök i hjälpen för %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Alla sidor för %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Alla målgrupper</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Läs de här sidorna i den här ordningen.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Bra att veta</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Sök efter ämne</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Varje knapp listar sidorna om ett ämne för %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Viktiga sidor</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Närliggande målgrupper</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Senaste commits i Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Hela historiken på GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Vad som senast har ändrats i källkoden: huvudgrenen av se7enxweb/exponential, läst från dess offentliga flöde av den här servern.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub gick inte att nå just nu. Det här är de commits som lästes %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Det gick inte att läsa commits från GitHub. Öppna historiken på GitHub i stället.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Dölj merge-commits</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Visa även merge-commits</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Meddelande</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Visar %from–%to av %total commits</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Inga commits att visa ännu.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Ditt sponsorskap betalar för:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>Om %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Ett månatligt sponsorskap, även ett litet, är en inkomst som går att planera: det betalar för arbete som engångsgåvor inte kan hålla igång.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Vad sponsorskap finansierar</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Stöd Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential är fri programvara. Varje ny funktion, hjälpsida, tillägg, tema och applikation är arbete som någon betalar med sin tid. Ett löpande månatligt sponsorskap, oavsett storlek, håller arbetet igång och låter det växa.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Sponsra 7x på GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Sponsra Exponential Foundation på GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Företaget som leder Exponential och projektets första sponsor: det utvecklar, stöder och driftar det och gör releaserna.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Den ideella organisationen som driver open source-projektet och arbetar för dess finansiering, spridning, support, utbildning, utveckling, marknadsföring och dokumentation.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Månatliga releaser och arbetet som håller allt igång</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Säkerhetsrättningar till biblioteken som Exponential bygger på, till exempel Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Nya funktioner som ges tillbaka till gemenskapen som öppen källkod</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Bryggorna, forkarna och verktygen kring plattformen</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Underhåll av kärnbiblioteken</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Dokumentation, självstudier, instruktioner och vanliga frågor</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Integrationslager: GraphQL, REST och Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Gemenskapens infrastruktur: chatt, speglar, wikier och resurser för utvecklare</translation>
     </message>
 </context>
 </TS>
