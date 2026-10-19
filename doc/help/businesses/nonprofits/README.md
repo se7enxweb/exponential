@@ -13,7 +13,7 @@ This section is for charities, foundations, community organizations and other no
 website, campaigns and volunteer recruitment on Exponential. It explains what is available for donations, volunteer
 sign-up, campaigns and accessibility, how to keep running costs low, and it says plainly where you will need an outside
 service. Government bodies have their own section:
-Government: start here.
+[Government: start here](../../government/government-start-here.md).
 
 ## Contents
 
@@ -82,7 +82,7 @@ Government: start here.
 - [Members](../members/README.md): member areas and registration.
 - [Costs](../costs/README.md), including a [worked example for a non-profit](../costs/worked-example-nonprofit.md).
 - [Security and data protection](../security/README.md): GDPR basics, consent and forms.
-- Government: start here for public bodies.
+- [Government: start here](../../government/government-start-here.md) for public bodies.
 
 ## Related pages
 

@@ -83,7 +83,7 @@ A blank form for the calculation is in the templates section:
 - [Choosing hosting and partners](../choosing/README.md): where the hosting and services money goes.
 - [Templates](../templates/README.md): copy-ready worksheets and checklists.
 - [Businesses: start here](../businesses-start-here.md)
-- Governments have their own section: Governments: start here.
+- Governments have their own section: [Governments: start here](../../government/government-start-here.md).
 
 ## Related pages
 

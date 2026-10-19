@@ -98,7 +98,7 @@ consent system of its own ([cjw_newsletter, The features of 4.2.0](../../../feat
 - [Security and data protection](../security/README.md): GDPR basics and consent for forms.
 - [Non-profits](../nonprofits/README.md) and [Associations and small groups](../associations/README.md): newsletters
   for supporters and members.
-- Government organizations have their own section: Governments: start here.
+- Government organizations have their own section: [Governments: start here](../../government/government-start-here.md).
 
 ## Related pages
 

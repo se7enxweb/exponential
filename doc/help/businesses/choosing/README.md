@@ -76,7 +76,7 @@ keep that freedom.
 - [Reliability](../reliability/README.md): what to expect from a well-run site.
 - [Security and data protection](../security/README.md): what to ask a host and partner about data.
 - [Templates](../templates/README.md): project brief, requirements, scorecard.
-- Governments have their own section: Governments: start here.
+- Governments have their own section: [Governments: start here](../../government/government-start-here.md).
 
 ## Related pages
 

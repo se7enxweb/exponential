@@ -103,7 +103,7 @@ Goal: a site that stays available and keeps earning.
 | Several brands | [Multi-site README](multisite/README.md), [multi-brand planning](multisite/multi-brand-planning.md) |
 | Several languages | [Multilingual README](multilingual/README.md), [translation workflow](multilingual/translation-workflow.md) |
 | Mobile app or other systems | [Mobile and headless README](mobile-and-headless/README.md), [mobile strategy](mobile-and-headless/mobile-strategy.md), [app backend reliability](mobile-and-headless/app-backend-reliability.md) |
-| Government body | The separate Governments section |
+| Government body | The separate [Governments](../government/government-start-here.md) section |
 
 ## Who should read what
 

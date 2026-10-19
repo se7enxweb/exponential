@@ -84,7 +84,7 @@ The tools are the same, so the [Intranets](../intranets/README.md) section is us
 - [Stores](../stores/README.md): the built-in shop for selling online.
 - [Security](../security/README.md): access reviews, GDPR basics, accounts and passwords.
 - [Multisite](../multisite/README.md): several sites in one installation.
-- Public bodies: Governments start here.
+- Public bodies: [Governments start here](../../government/government-start-here.md).
 
 ## Related pages
 

@@ -82,7 +82,7 @@ Records can be brought in by a developer script or through the REST API
   libraries are run by one or support one.
 - [Multilingual sites](../multilingual/README.md): catalogs in several languages.
 - Public libraries run by a government body: see also
-  Governments: start here.
+  [Governments: start here](../../government/government-start-here.md).
 
 ## Related pages
 

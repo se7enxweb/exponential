@@ -82,7 +82,7 @@ From [Languages in Exponential](../../../languages.md), the reference page for e
 - [Stores](../stores/README.md), especially [prices and currencies](../stores/prices-and-currencies.md)
 - [Mobile apps, headless use and networks](../mobile-and-headless/README.md)
 - [Businesses start here](../businesses-start-here.md)
-- Public sector organizations: Governments start here
+- Public sector organizations: [Governments start here](../../government/government-start-here.md)
 
 ## Related pages
 

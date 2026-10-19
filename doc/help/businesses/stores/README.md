@@ -109,7 +109,7 @@ software does.
 - [Security](../security/README.md) and [Reliability](../reliability/README.md)
 - [Multilingual sites](../multilingual/README.md) for stores in several languages
 - [Mobile and headless](../mobile-and-headless/README.md) for selling through apps and partners
-- Governments have their own section: Governments: start here
+- Governments have their own section: [Governments: start here](../../government/government-start-here.md)
 
 ## Related pages
 

@@ -88,7 +88,7 @@ The short version, explained in [Why businesses rely on Exponential](why-busines
 | A brand or group with several sites | [Multi-site brands](multisite/README.md) |
 | A business that sells in several languages | [Multilingual businesses](multilingual/README.md) |
 | A business with a mobile app or other systems that use the content | [Mobile and headless](mobile-and-headless/README.md) |
-| A government body or public authority | The separate Governments section |
+| A government body or public authority | The separate [Governments](../government/government-start-here.md) section |
 
 Not sure? [Which section fits your organization](which-section-fits-your-organization.md) asks a few questions and
 points you to the right place. [How businesses sell online with Exponential](how-businesses-sell-online.md) explains

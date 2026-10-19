@@ -81,7 +81,7 @@ The defaults are a strong start. The decisions about your data, your people and 
   [Card payments and PCI basics](../stores/card-payments-and-pci-basics.md).
 - [Newsletters: opt-in and consent](../newsletters/opt-in-and-consent.md).
 - [Costs](../costs/README.md) and [Choosing hosting and partners](../choosing/README.md).
-- Governments have their own section: Governments: start here.
+- Governments have their own section: [Governments: start here](../../government/government-start-here.md).
 
 ## Related pages
 

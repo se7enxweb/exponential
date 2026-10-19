@@ -96,7 +96,7 @@ handlers, configured in `settings/ldap.ini` and `settings/textfile.ini`).
 - [Security](../security/README.md): access reviews, accounts and passwords, GDPR basics.
 - [Reliability](../reliability/README.md): keeping the intranet available every working day.
 - [Costs](../costs/README.md), including the [worked example for an intranet](../costs/worked-example-intranet.md).
-- Public bodies: Governments start here.
+- Public bodies: [Governments start here](../../government/government-start-here.md).
 
 ## Related pages
 

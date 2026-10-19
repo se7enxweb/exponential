@@ -116,7 +116,7 @@ the team running the site keeps every week. This section covers all three:
 - [Security](../security/README.md): security and data protection basics for businesses.
 - [Choosing hosting and partners](../choosing/README.md): who runs the servers for you.
 - [Templates](../templates/README.md): checklists to copy, including a monthly operations checklist.
-- Governments have their own section: Governments start here.
+- Governments have their own section: [Governments start here](../../government/government-start-here.md).
 - The technical side for hosting staff: [Hosting operations](../../hosting/operations/README.md) and
   [Runbooks](../../hosting/runbooks/README.md).
 - For leaders: [Release and upgrade planning](../../leadership/release-and-upgrade-planning.md) and

@@ -46,7 +46,7 @@ Write down short answers before you read further. They decide which sections mat
 | Work with dealers, suppliers or customers behind a sign-in | [Extranets and partner portals](extranets/README.md) | [Intranets](intranets/README.md) |
 | Run several brands or countries | [Multi-site brands](multisite/README.md) | [Multilingual businesses](multilingual/README.md) |
 | Feed an app or other systems with content | [Mobile and headless](mobile-and-headless/README.md) | [Reliability](reliability/README.md) |
-| Serve the public as a government body | The separate Governments section | [Security](security/README.md) |
+| Serve the public as a government body | The separate [Governments](../government/government-start-here.md) section | [Security](security/README.md) |
 
 ## Match by who uses the site
 

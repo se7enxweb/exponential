@@ -80,5 +80,5 @@ These already exist; this section links to them instead of copying them:
 - [Costs](../costs/README.md)
 - [Choosing hosting and partners](../choosing/README.md)
 - [Businesses: start here](../businesses-start-here.md)
-- Governments have their own section: Governments: start here
+- Governments have their own section: [Governments: start here](../../government/government-start-here.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

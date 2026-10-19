@@ -83,7 +83,7 @@ working.
 - [Several brands on one installation](../multisite/README.md) and
   [Selling in several languages and markets](../multilingual/README.md)
 - For developers: [App creators start here](../../creators/app-creators/app-creators-start-here.md)
-- Public sector organizations: Governments start here
+- Public sector organizations: [Governments start here](../../government/government-start-here.md)
 
 ## Related pages
 

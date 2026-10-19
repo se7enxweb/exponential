@@ -66,7 +66,7 @@ extension used at handover are both in the `require` block of `composer.json`.
 - [Newsletters](../newsletters/README.md): mail to members and supporters.
 - [Libraries and catalogs](../libraries/README.md): for groups that keep a collection.
 - [Security and data protection](../security/README.md): accounts, access reviews, GDPR basics.
-- Public bodies have their own section: Government: start here.
+- Public bodies have their own section: [Government: start here](../../government/government-start-here.md).
 
 ## Related pages
 

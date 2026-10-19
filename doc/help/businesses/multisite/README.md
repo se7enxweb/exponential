@@ -51,7 +51,7 @@ The pages in this folder translate that into business questions:
 | Administrator | A short summary and the exact technical page for each task |
 
 Organizations in the public sector have their own section:
-Governments start here.
+[Governments start here](../../government/government-start-here.md).
 
 ## Pages in this section
 
