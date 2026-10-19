@@ -72762,6 +72762,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>מימון Exponential: מה החסות מממנת ואיך לתת חסות ל-7x ולקרן Exponential.</translation>
     </message>
+    <message>
+        <source>Expand all</source>
+        <translation>הרחבת הכול</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>כיווץ הכול</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>פתיחה או סגירה של כל התיקיות</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>כל התיקיות פתוחות.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>כל התיקיות סגורות.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

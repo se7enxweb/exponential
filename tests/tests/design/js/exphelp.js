@@ -371,6 +371,44 @@ const out = (name, data) => cases.push(Object.assign({ name }, data));
             fromDialog: dialog.document.activeElement && dialog.document.activeElement.id });
     }
     {
+        // the contents page: folders closed, Expand all / Collapse all, the filter opens its matches and puts back the
+        // folders as they were, an #anchor opens its folder
+        const CONTENTS = '<div class="a4-help" data-exphelp data-exphelp-i18n="' + attr({ allOpen: 'Alle offen.', allClosed: 'Alle zu.' }) + '">'
+            + '<nav id="tree" data-exphelp-nav><input type="search" id="f" data-exphelp-navfilter hidden /><p data-exphelp-navfilter-status></p>'
+            + '<ul><li><details id="exphelp-folder-a" data-nav-path="a"><summary>Alpha</summary><ul>'
+            + '<li><a href="/x/a1">Install</a></li>'
+            + '<li><details id="exphelp-folder-a-b" data-nav-path="a/b"><summary>Beta</summary><ul><li><a href="/x/b1">Cache</a></li></ul></details></li>'
+            + '</ul></details></li>'
+            + '<li><details id="exphelp-folder-c" data-nav-path="c"><summary>Gamma</summary><ul><li><a href="/x/c1">Upgrade</a></li></ul></details></li></ul></nav>'
+            + '<div id="ctl" data-exphelp-contents-controls hidden><button type="button" id="ex" aria-controls="tree" data-exphelp-expand-all>Expand all</button>'
+            + '<button type="button" id="co" aria-controls="tree" data-exphelp-collapse-all>Collapse all</button></div></div>';
+        const h = setup(CONTENTS);
+        const d = h.document;
+        const opens = () => d.querySelectorAll('details').map((x) => x.hasAttribute('open'));
+        const status = () => d.querySelector('[data-exphelp-navfilter-status]').textContent;
+        const filter = (value) => { const f = d.getElementById('f'); f.value = value; d.dispatch('input', f, {}); h.runTimers(500); };
+        const res = { shown: !d.getElementById('ctl').hidden, filterShown: !d.getElementById('f').hidden, start: opens() };
+        d.dispatch('click', d.getElementById('ex'), {});
+        res.expanded = opens(); res.expandedStatus = status();
+        d.dispatch('click', d.getElementById('co'), {});
+        res.collapsed = opens(); res.collapsedStatus = status();
+        filter('cache');
+        res.filtered = opens();
+        res.filteredHidden = d.querySelectorAll('li').map((li) => li.hidden);
+        h.key(d.getElementById('f'), 'Escape');
+        res.cleared = opens();
+        d.dispatch('click', d.getElementById('ex'), {});
+        filter('upgrade');
+        res.filteredFromOpen = opens();
+        filter('');
+        res.backOpen = opens();
+        const deep = setup(CONTENTS, { hash: '#exphelp-folder-a-b' });
+        res.hash = deep.document.querySelectorAll('details').map((x) => x.hasAttribute('open'));
+        const nojs = setup(CONTENTS.replace(' data-exphelp-contents-controls', ''));
+        res.otherBoxHidden = nojs.document.getElementById('ctl').hidden;
+        out('contents controls', res);
+    }
+    {
         const h = setup('<div><p>no help here</p></div>');
         out('other pages untouched', { listeners: Object.keys(h.document.listeners).length, api: typeof h.sandbox.expHelp.init });
     }
