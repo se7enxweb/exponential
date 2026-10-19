@@ -77149,6 +77149,14 @@ Gracias por la retroalimentación</translation>
         <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
         <translation>Comparte las extensiones que distribuyes, como lo exige la GPL, para que todos se beneficien.</translation>
     </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>El proyecto Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>El proyecto Exponential: qué es, sus licencias, la hoja de ruta, el soporte, los canales de la comunidad y cómo contribuir y donar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

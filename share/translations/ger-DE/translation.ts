@@ -80147,5 +80147,13 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
         <translation>Teilen Sie die Erweiterungen, die Sie weitergeben, wie es die GPL verlangt, damit alle davon profitieren.</translation>
     </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Das Exponential-Projekt</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Das Exponential-Projekt: was es ist, seine Lizenzen, die Roadmap, Support, Community-Kanäle und wie Sie beitragen und spenden.</translation>
+    </message>
 </context>
 </TS>

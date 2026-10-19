@@ -364,6 +364,7 @@ class Search extends \Exponential\Runnable\ModuleView
             case 'sponsorship': return \ezpI18n::tr( $ctx, 'Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.' );
             case 'training': return \ezpI18n::tr( $ctx, 'Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.' );
             case 'press-media': return \ezpI18n::tr( $ctx, 'For journalists, media and influencers: facts, history, announcements, images and contacts.' );
+            case 'project': return \ezpI18n::tr( $ctx, 'The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.' );
             case 'administration': return \ezpI18n::tr( $ctx, 'Running the site: settings, users and roles, caches, cronjobs and logs.' );
             case 'features': return \ezpI18n::tr( $ctx, 'What each feature does and how to set it up.' );
             case 'development': return \ezpI18n::tr( $ctx, 'Templates, extensions, the API and the code behind it.' );

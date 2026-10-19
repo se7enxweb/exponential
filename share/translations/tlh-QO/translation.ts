@@ -72923,6 +72923,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
         <translation>&apos;ay&apos;mey DanobmoHbogh yIDel, GPL poQ, Hoch QaH.</translation>
     </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Exponential jInmol</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Exponential jInmol: nuq &apos;oH, chaw&apos;mey, He, QaH, ghom HoSghajmey, chay&apos; Qapla&apos; DanoblaH je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

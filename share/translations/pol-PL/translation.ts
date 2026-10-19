@@ -74345,5 +74345,53 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infrastruktura społeczności: czat, serwery lustrzane, wiki i zasoby dla programistów</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Trenerzy</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Prasa, media i influencerzy</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Ucz Exponential: kursy dla redaktorów, administratorów, programistów i projektantów, warsztaty, ćwiczenia i sprawdziany.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Pisz i mów o Exponential: fakty, historia, ludzie, cytaty, obrazy i z kim się kontaktować.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Szkolenia</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Prasa i media</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Nauczanie Exponential: kursy, plany lekcji, warsztaty, ćwiczenia i sprawdziany dla każdej roli.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Dla dziennikarzy, mediów i influencerów: fakty, historia, ogłoszenia, obrazy i kontakty.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Udostępniaj swoje rozszerzenia</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Udostępniaj rozszerzenia, które rozpowszechniasz, jak wymaga GPL, aby wszyscy na tym korzystali.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Projekt Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Projekt Exponential: czym jest, jego licencje, plan rozwoju, wsparcie, kanały społeczności oraz jak współtworzyć i wspierać.</translation>
+    </message>
 </context>
 </TS>

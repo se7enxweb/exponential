@@ -72923,6 +72923,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
         <translation>Extensiones quas distribuis communica, ut GPL postulat, ut omnibus prosint.</translation>
     </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Inceptum Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Inceptum Exponential: quid sit, licentiae, iter futurum, auxilium, canales communitatis, et quomodo conferas et des.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

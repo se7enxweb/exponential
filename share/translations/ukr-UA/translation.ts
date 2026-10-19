@@ -72908,6 +72908,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
         <translation>Діліться розширеннями, які ви поширюєте, як вимагає GPL, щоб усі отримали користь.</translation>
     </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Проєкт Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Проєкт Exponential: що це, його ліцензії, дорожня карта, підтримка, канали спільноти та як долучитися й підтримати.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

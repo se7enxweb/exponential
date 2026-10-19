@@ -246,7 +246,9 @@ page or the settings makes a new file.
 ./console exp:help pdf help/searching.md --out=searching.pdf --base-url=https://www.example.com
 ```
 
-The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change.
+The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change. A rebuild
+also removes what the older index left: the other `index-<signature>.php` files and the cached navigation trees
+(`nav/`) and rendered pages (`render/`) written before it, so the cache holds only what the current index uses.
 
 ## Languages and accessibility
 

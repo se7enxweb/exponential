@@ -74318,6 +74318,14 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
         <translation>Partagez les extensions que vous distribuez, comme l&apos;exige la GPL, pour que tout le monde en profite.</translation>
     </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Le projet Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Le projet Exponential : ce qu&apos;il est, ses licences, sa feuille de route, le support, les canaux de la communauté, et comment contribuer et donner.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

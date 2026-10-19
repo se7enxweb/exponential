@@ -74415,5 +74415,53 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infrastruktura komunity: chat, zrcadla, wiki a zdroje pro vývojáře</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Školitelé</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Tisk, média a influenceři</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Učte Exponential: kurzy pro redaktory, administrátory, vývojáře a designéry, workshopy, cvičení a hodnocení.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Pište a mluvte o Exponential: fakta, historie, lidé, citáty, obrázky a na koho se obrátit.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Školení</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Tisk a média</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Výuka Exponential: kurzy, plány lekcí, workshopy, cvičení a hodnocení pro každou roli.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Pro novináře, média a influencery: fakta, historie, oznámení, obrázky a kontakty.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Vraťte rozšíření komunitě</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Sdílejte rozšíření, která šíříte, jak vyžaduje GPL, aby z nich měli užitek všichni.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Projekt Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Projekt Exponential: co to je, jeho licence, plán vývoje, podpora, kanály komunity a jak přispět a darovat.</translation>
+    </message>
 </context>
 </TS>

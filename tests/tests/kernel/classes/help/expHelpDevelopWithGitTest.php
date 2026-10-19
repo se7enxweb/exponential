@@ -164,7 +164,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
     public function testStringsTranslated()
     {
         preg_match_all( "/\\{'((?:[^'\\\\]|\\\\.)+)'\\|i18n\\( \\\$help_grow_ctx \\)/", self::read( 'design/admin4/' . self::PART ), $m );
-        $this->assertCount( 12, $m[1] );
+        $this->assertCount( 14, $m[1] );
         foreach ( array( 'eng-US', 'ger-DE' ) as $lang )
         {
             $ts = self::read( 'share/translations/' . $lang . '/translation.ts' );
