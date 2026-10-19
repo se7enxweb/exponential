@@ -24,7 +24,7 @@
  <blockquote class="error">
    <h2>{"Error"|i18n("design/standard/setup/init")}</h2>
    <p>{$error|wash}</p>
-   <p>{'Remote repository URL:'|i18n( 'design/standard/setup/init' )} <a href={$index_url}>{$index_url|wash}</a></p>
+   <p>{'Remote repository URL:'|i18n( 'design/standard/setup/init' )} <a href="{$index_url|wash}">{$index_url|wash}</a></p>
  </blockquote>
 
 </div>
@@ -41,23 +41,23 @@
     <tr>
     <td>
      {if is_set( $package_info.url )}
-      <input{if and( is_set( $message ), $message )} class="hide"{/if} id="{$package_info.name|wash}" type="radio" name="eZSetup_site_type" value="{$package_info.name}|{$package_info.url}" {if or( eq($package_info.name,$chosen_package), $site_packages|count|eq( 1 ) )} checked="checked"{/if}/>
+      <input{if and( is_set( $message ), $message )} class="hide"{/if} id="{$package_info.name|wash}" type="radio" name="eZSetup_site_type" value="{$package_info.name|wash}|{$package_info.url|wash}" {if or( eq($package_info.name,$chosen_package), $site_packages|count|eq( 1 ) )} checked="checked"{/if}/>
      {else}
-      <input{if and( is_set( $message ), $message )} class="hide"{/if} id="{$package_info.name|wash}" type="radio" name="eZSetup_site_type" value="{$package_info.name}" {if or( eq($package_info.name,$chosen_package), $site_packages|count|eq( 1 ) )} checked="checked"{/if}/>
+      <input{if and( is_set( $message ), $message )} class="hide"{/if} id="{$package_info.name|wash}" type="radio" name="eZSetup_site_type" value="{$package_info.name|wash}" {if or( eq($package_info.name,$chosen_package), $site_packages|count|eq( 1 ) )} checked="checked"{/if}/>
      {/if}
      </td>
     <td>
     {if is_set( $package_info.thumbnail_path )}
           <img class="site-type" src={$package_info.thumbnail_path|ezroot} alt="{$package_info.name|wash}" title="{$package_info.summary|wash}" />
-    {elseif is_set( $package_info.thumbnail_url )}
-          <img class="site-type" src="{$package_info.thumbnail_url}" alt="{$package_info.summary|wash}" title="{$package_info.summary|wash}"/>
+    {elseif and( is_set( $package_info.thumbnail_url ), or( $package_info.thumbnail_url|downcase|begins_with( "https://" ), $package_info.thumbnail_url|downcase|begins_with( "http://" ) ) )}
+          <img class="site-type" src="{$package_info.thumbnail_url|wash}" alt="{$package_info.summary|wash}" title="{$package_info.summary|wash}"/>
     {else}
       <img class="site-type" src={"design/standard/images/setup/eZ_setup_template_default.png"|ezroot} alt="{$package_info.name|wash}" title="{$package_info.summary|wash}"  />
         {/if}
     </td>
     <td>
-        <h2>{'%summary (ver. %version)'|i18n( 'design/standard/setup/init',, hash( '%summary', $package_info.summary, '%version', $package_info.version ) )}</h2>
-    {$package_info.description}
+        <h2>{'%summary (ver. %version)'|i18n( 'design/standard/setup/init',, hash( '%summary', $package_info.summary|wash, '%version', $package_info.version|wash ) )}</h2>
+    {$package_info.description|wash|nl2br}
     </td>
 
     <td class="importstatus">
@@ -83,7 +83,7 @@
         <td></td>
         <td></td>
         <td>
-        {'%req_name (ver.%version):'|i18n( 'design/standard/setup/init',, hash( '%req_name', $req_name, '%version', $req_info.version ) )}
+        {'%req_name (ver.%version):'|i18n( 'design/standard/setup/init',, hash( '%req_name', $req_name|wash, '%version', $req_info.version|wash ) )}
         </td>
         <td>
         {if $req_info.status}
@@ -119,7 +119,7 @@
 <h2>{'Additional packages'|i18n('design/standard/setup/init')}</h2>
 
 <div class="information">
-    <p>{'Looking for other packages? Full archive of all packages can be found <a href="%packages_url" target="_blank">here</a>.'|i18n('design/standard/setup/init', '', hash( '%packages_url', ezini( 'RepositorySettings', 'RemotePackagesIndexURLBase', 'package.ini' ) ) )}</p>
+    <p>{'Looking for other packages? Full archive of all packages can be found <a href="%packages_url" target="_blank">here</a>.'|i18n('design/standard/setup/init', '', hash( '%packages_url', ezini( 'RepositorySettings', 'RemotePackagesIndexURLBase', 'package.ini' )|wash ) )}</p>
 </div>
 
 <fieldset>

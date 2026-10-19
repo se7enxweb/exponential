@@ -153,6 +153,11 @@ class eZStepData
                                    'class' => 'LanguageOptions' ),
                             array( 'file' => 'site_types',
                                    'class' => 'SiteTypes'),
+                           // SitePackages stays off: it offers the packages of the 3.x "addons" repository by the
+                           // site type's eZSetupFunctionality() lists; that function no longer exists (the step would
+                           // stop with a fatal error) and no package of this release is an addon. A site
+                           // package's requirements (and theirs, down the chain) are downloaded by SiteTypes and
+                           // installed by CreateSites. doc/help/site-packages/basics/how-the-setup-wizard-uses-packages.md
                            // array( 'file' => 'site_packages',
                            //        'class' => 'SitePackages' ),
                             array( 'file' => 'package_language_options',

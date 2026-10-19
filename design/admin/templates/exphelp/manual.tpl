@@ -8,7 +8,7 @@
    help_i18n_json.
 
    The same file is in design/admin and design/admin4. *}
-<div class="a4-page a4-help a4-help-manual" data-exphelp data-exphelp-i18n="{$help_i18n_json|wash}">
+<div class="a4-page a4-help-frame a4-help-manual" data-exphelp data-exphelp-i18n="{$help_i18n_json|wash}">
 
     <div class="a4-help-viewer-bar">
         <a class="a4-btn a4-btn-ghost a4-btn-small" href={'exphelp/dashboard'|ezurl}><span class="a4-icon a4-bi-signpost-split" aria-hidden="true"></span> {'Help start'|i18n( 'kernel/exphelp' )}</a>

@@ -22,6 +22,20 @@ class eZDBPackageHandler extends eZPackageHandler
         parent::__construct( 'ezdb' );
     }
 
+    /**
+     * An SQL file cannot be undone in general (no reverse statements are known), so nothing is changed and the item
+     * counts as not uninstalled, as before 6.0.15; the reason is written to the debug output. Remove what the SQL
+     * added by hand, or ship an install script that does it.
+     */
+    function uninstall( $package, $installType, $parameters,
+                        $name, $os, $filename, $subdirectory,
+                        $content, &$installParameters,
+                        &$installData )
+    {
+        eZDebug::writeWarning( "The SQL item '$filename' of package '" . $package->attribute( 'name' ) . "' is not undone on uninstall: SQL cannot be reversed automatically.", __METHOD__ );
+        return false;
+    }
+
     /*!
      Installs the package type
     */
