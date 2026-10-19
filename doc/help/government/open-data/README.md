@@ -14,8 +14,7 @@ program, site builders who set up the catalog, editors who publish datasets and 
 explains the terms (Open Definition, EU Open Data Directive, DCAT) with links to their official texts, and shows
 step by step what Exponential provides and what it does not.
 
-Up: the government help index (README.md one level up) and the landing page government-start-here.md, both in
-the government folder.
+Up: [Governments: start here](../government-start-here.md).
 
 ## Contents
 

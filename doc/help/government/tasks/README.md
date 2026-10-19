@@ -46,7 +46,7 @@ show the same functions with a different layout; the module addresses such as `/
 |---|---|---|
 | Publishing (`tasks/publishing/`) | editors | publish a council meeting agenda, publish minutes after approval, publish a public notice, correct a published notice |
 | [Compliance](compliance/README.md) | administrators, security and data protection officers | turn on two-step sign-in, enforce the Content Security Policy, set log retention, archive last year's notices |
-| Sites and languages (`tasks/sites-and-languages/`) | administrators, website creators | translate a page into the second official language, set up a department subsite, add a right-to-left language |
+| [Sites and languages](sites-and-languages/README.md) | administrators, website creators | translate a page into the second official language, set up a department subsite, add a right-to-left language |
 | [Operations](operations/README.md) | IT operations | maintenance mode for an upgrade, restore a backup to a test server, check that cronjobs run |
 | [People and permissions](people-and-permissions/README.md) | administrators | create a department editor role, remove a leaver, set up an approval workflow |
 | [Procurement and training](procurement-and-training/README.md) | project managers, procurement officers, training coordinators | write an accessibility requirement, run a proof of concept, plan editor training |

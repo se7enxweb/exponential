@@ -69,7 +69,7 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 | [Transparency and FOI](transparency-and-foi/README.md) | Proactive disclosure, disclosure logs, publication schemes, decision registers |
 | [Languages](languages/README.md) | Official languages, translation workflows, right-to-left, plain language |
 | [Sovereignty](sovereignty/README.md) | Self-hosting, data location, open-source licensing and procurement, avoiding vendor lock-in |
-| Building public-service sites (`building/`) | Service catalogs, forms, citizen accounts, news and alerts, events, documents, search, maps, newsletters, multi-site, intranets, extranets |
+| [Building public-service sites](building/README.md) | Service catalogs, forms, citizen accounts, news and alerts, events, documents, search, maps, newsletters, multi-site, intranets, extranets |
 | [Operations](operations/README.md) | Hosting on-premise and in the government cloud, availability, backups, monitoring, incidents, upgrades, change management, staff roles, editorial workflows |
 | [Procurement and lifecycle](procurement/README.md) | Requirements, tender templates, evaluation, total cost of ownership, exit plans, training, the product lifecycle |
 | [Tasks](tasks/README.md) | Hundreds of step-by-step procedures: publish a council meeting agenda, add a service page with an accessible form, set up a department subsite, translate a page, archive last year's notices ... |

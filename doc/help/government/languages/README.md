@@ -13,8 +13,7 @@ This section is for public bodies that serve people in more than one language: m
 policy, administrators and site builders who set it up, editors and translators who write and translate, and
 trainers. It explains what Exponential provides, with links to the reference documentation, and states the gaps.
 
-Up: the government help index (README.md one level up) and the landing page government-start-here.md, both in
-the government folder.
+Up: [Governments: start here](../government-start-here.md).
 
 ## Contents
 
