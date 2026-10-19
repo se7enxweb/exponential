@@ -6092,7 +6092,7 @@ cfee8f1c5800e5ca23d1405e5aba944a  doc/features/6.0/extensions/ez-support-tools.m
 d4d06122a73e39cdf329902d73a7a4bc  doc/features/6.0/extensions/ezautosave.md
 a472bcc217e8e5acee31461b63623c16  doc/features/6.0/extensions/ezdemo.md
 6c2107d2898d52073eb2c3b0acf1cca9  doc/features/6.0/extensions/ezflow.md
-11f147f2578b6d4cf61a430905379ca3  doc/features/6.0/extensions/ezgmaplocation.md
+5bc0ee1735cf3c26c1b8f7819a955145  doc/features/6.0/extensions/ezgmaplocation.md
 d75618879646cabf05b8f01755b2c624  doc/features/6.0/extensions/ezie.md
 0d5cd758c484eb6c9fc0d4b542eab060  doc/features/6.0/extensions/ezjscore.md
 78114b9df3950d3cadd22150641928a9  doc/features/6.0/extensions/ezmbpaex.md
@@ -6180,7 +6180,7 @@ d19ac2813afb3d92cc981015c8ecdfc1  doc/features/6.0/request-rules.md
 24e8ccadcc06ff46a640a76473fd2d4a  doc/features/6.0/reset-user-password.md
 dfc80bc3e8c5193eda53ed0174e12623  doc/features/6.0/reverse-relation-check.md
 a2b854480148165d9d884261749eaecb  doc/features/6.0/rich-text-supplementary-characters-and-tex-source.md
-f3e55ab662ea59e47a493133318f41ee  doc/features/6.0/right-to-left.md
+408787dca270495ad04bc04153678a4c  doc/features/6.0/right-to-left.md
 cb4ba958c01d20e816fc121fd17f2d6d  doc/features/6.0/robots-txt.md
 ebe06d47bd7893ebc9e77ce3774abaf7  doc/features/6.0/role-and-policy-template-operators.md
 0954ae9de88cdf88556032c14ff33a9c  doc/features/6.0/role-assignment-paging.md
@@ -6233,7 +6233,7 @@ e6788c036282afd665d79ed6bb9c4d6d  doc/guides/benchmarking.md
 8f01bc44a84c119de29cd508fe41e05b  doc/guides/collected-information.md
 42311d8c175d353c9ffebeb9431bc599  doc/guides/content-history.md
 168f1e657cae2f6cf19d09ba7dec59b8  doc/guides/content-languages.md
-18e31f5585aae13ae85b1c108c48add9  doc/guides/content-model-and-editing.md
+0b89e220757bc6be9db1fc40133c96bc  doc/guides/content-model-and-editing.md
 f8d25fa0099e98f521de783195e11d7e  doc/guides/cronjobs.md
 9ea97a05fa2a16e68fe3ddeaf00535b2  doc/guides/deploying.md
 b790dd482cd361bdb034bae2f8ee60a5  doc/guides/drafts-and-pending.md
@@ -6266,7 +6266,7 @@ a101a3bb9c015da9204c6718c2598563  doc/guides/images/maintenance/installation-run
 8d19a39038e4b5fd8c9aa3bb1d006424  doc/guides/images/workflows/controls.png
 2d0dfaacccd86266df5bfc75450bbcff  doc/guides/images/workflows/process-card.png
 261f6c6b6a30183007fd97d521ca819d  doc/guides/images/workflows/status-and-overview.png
-fe6be1787f910abc80987d58c54b2d16  doc/guides/mail-preferences-administrator.md
+e0a2937f57cb7248ebbee06152305abd  doc/guides/mail-preferences-administrator.md
 364dd48b8303004ead9033f9b7129759  doc/guides/mail-preferences-developer.md
 bcc36ff60104026b63bd37c7a221d037  doc/guides/maintenance-mode.md
 525e055e53c2e93bdd79ff4b7cd5c636  doc/guides/missing-files.md
@@ -7578,7 +7578,7 @@ e0796d80f7df8730973b656cb45f1fc0  doc/help/government/glossary/terms-a-to-f.md
 256f3028059cd4c07bcddc5650c9cf80  doc/help/government/glossary/terms-g-to-l.md
 eb066fb68fa7c717789ba2e084a2d06a  doc/help/government/glossary/terms-m-to-r.md
 d354ff1a94fb112369b9074487aa57fc  doc/help/government/glossary/terms-s-to-z.md
-eb11fa3c6c90a69839ce5c53b23619b0  doc/help/government/government-start-here.md
+96dae7f7bc184b8c349f88838e50ec64  doc/help/government/government-start-here.md
 9bf61390f8c7231204f08ff13e3f1aaf  doc/help/government/languages/README.md
 4d9713f61498e3f9a3ba7c21a8ef4808  doc/help/government/languages/a-siteaccess-per-language.md
 6cab1d3fec54804e2aeecc141339f572  doc/help/government/languages/adding-a-content-language.md
