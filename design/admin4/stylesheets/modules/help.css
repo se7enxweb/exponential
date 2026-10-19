@@ -709,7 +709,7 @@
 /* ---- small windows ------------------------------------------------------------------------------------------- */
 
 @media (max-width: 600px) {
-  .a4-help { gap: var(--a4-space-4); }
+  .a4-help[data-exphelp] { gap: var(--a4-space-4); }
   .a4-help-hero { padding: var(--a4-space-5) var(--a4-space-4); }
   .a4-help-hero h1 { font-size: var(--a4-text-2xl); }
   .a4-help-hero-sub { font-size: var(--a4-text-m); }
