@@ -43,6 +43,6 @@ Migrate 3.4.1 and jQuery UI 1.10.3 files were removed on 14 October 2026.
 
 ## Related pages
 
-- jQuery in designs
+- [jQuery in designs](../theme-design/jquery-in-designs.md)
 - [Keeping dependencies up to date](dependency-updates.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

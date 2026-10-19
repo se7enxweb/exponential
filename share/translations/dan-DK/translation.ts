@@ -73657,5 +73657,157 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Finansiering af Exponential: hvad sponsorering betaler for, og hvordan du sponsorerer 7x og Exponential Foundation.</translation>
     </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Hjælp til %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Søg i hjælpen til %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Alle sider til %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Alle målgrupper</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Læs disse sider i denne rækkefølge.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Godt at vide</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Søg efter emne</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Hver knap viser siderne om ét emne til %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Vigtige sider</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Beslægtede målgrupper</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Seneste commits til Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Hele historikken på GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Hvad der senest er ændret i kildekoden: hovedgrenen af se7enxweb/exponential, læst fra dens offentlige feed af denne server.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub kunne ikke nås lige nu. Dette er de commits, der blev læst %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Commits kunne ikke læses fra GitHub. Åbn historikken på GitHub i stedet.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Skjul merge-commits</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Vis også merge-commits</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Besked</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Viser %from–%to af %total commits</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Der er endnu ingen commits at vise.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Dit sponsorat betaler for:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>Om %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Et månedligt sponsorat, selv et lille, er en indtægt, man kan planlægge med: det betaler for arbejde, som enkeltgaver ikke kan holde i gang.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Hvad sponsorater finansierer</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Støt Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential er fri software. Hver ny funktion, hjælpeside, udvidelse, tema og applikation er arbejde, som nogen betaler med deres tid. Et løbende månedligt sponsorat, uanset størrelse, holder arbejdet i gang og lader det vokse.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Sponsorér 7x på GitHub</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Sponsorér Exponential Foundation på GitHub</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Virksomheden, der leder Exponential, og projektets første sponsor: den udvikler, understøtter og hoster det og laver udgivelserne.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Nonprofitorganisationen, der driver open source-projektet og arbejder for dets finansiering, udbredelse, support, uddannelse, udvikling, promovering og dokumentation.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Månedlige udgivelser og arbejdet, der holder alt kørende</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Sikkerhedsrettelser til de biblioteker, Exponential bygger på, f.eks. Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Nye funktioner givet tilbage til fællesskabet som open source</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Broerne, forks og værktøjerne omkring platformen</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Vedligeholdelse af kernebibliotekerne</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Dokumentation, vejledninger, how-to-guider og ofte stillede spørgsmål</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Integrationslag: GraphQL, REST og Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Fællesskabets infrastruktur: chat, spejle, wikier og ressourcer til udviklere</translation>
+    </message>
 </context>
 </TS>

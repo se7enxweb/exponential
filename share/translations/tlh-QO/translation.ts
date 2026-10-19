@@ -72751,6 +72751,158 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Every folder is closed.</source>
         <translation>Hoch ghItlh pa'mey SoQmoHlu'pu'.</translation>
     </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>%audience QaHmeH De&apos;</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>%audience QaHmeH De&apos; yInej</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>%audience nav HeHmey Hoch</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>ghommey Hoch</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>nav HeHmeyvam tlha&apos;meyvaD yIlaD.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Sov QaQ</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Qu&apos; Segh nej</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Qu&apos; Segh wa&apos; nav HeHmey &apos;ang leQ Hoch, %audience QaHmeH.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>nav HeHmey potlh</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>ghommey rap</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Exponential choHmey chu&apos;</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>GitHub Daq qun naQ</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>ngoq Hal choHmey chu&apos;: se7enxweb/exponential Sor&apos;a&apos; moQ, jabwI&apos;vam laD De&apos; tlhegh pIn&apos;a&apos;vo&apos;.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>DaH GitHub ghoS ta&apos;laHbe&apos;. %date laDlu&apos;pu&apos;bogh choHmey &apos;oH.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>GitHubvo&apos; choHmey laDlaHbe&apos;lu&apos;. GitHub Daq qun yIpoSmoH.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>muv choHmey yIso&apos;</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>muv choHmey je yI&apos;ang</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>QIn</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>choHmey %from–%to &apos;ang, %total choHmey Hoch</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>wej choHmey &apos;anglu&apos;.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Huch DanobDI&apos; DIl:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>%name De&apos;</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>jar Huch nob, mach &apos;a nab: Qu&apos; DIl, wa&apos;logh nobmey ta&apos;laHbe&apos;bogh.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Huch nob nuq DIl</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Exponential yIQaH</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential ngoq tlhab &apos;oH. laH chu&apos;, QaHmeH nav HeH, &apos;ay&apos;, nagh beQ, ghun je Hoch Qu&apos; &apos;oH, poHchaj DIl vay&apos;. jar Huch nob ruch, tIn pagh mach, Qu&apos; yIntaHmoH &apos;ej ghurmoH.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>GitHub Daq 7x yIQaH</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>GitHub Daq Exponential ghom&apos;a&apos; yIQaH</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Exponential DevwI&apos; kampa&apos;nIy &apos;ej jInmol Huch nobwI&apos; wa&apos;DIch: chenmoH, QaH, &apos;aD, chenmoHmey chaH je.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Huch nejbe&apos;bogh ghom, ngoq poSmoH jInmol vu&apos; &apos;ej DIl, lo&apos;, QaH, ghojmoH, chenmoH, maq, De&apos; ghItlh je Qorgh.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>jar chenmoHmey &apos;ej Qu&apos; wovmoHwI&apos; yIntaHmoH</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Exponential lo&apos;bogh De&apos; pol Hung tI&apos;mey, Zeta Components rur</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>laH chu&apos; ghomvaD nobta&apos; ngoq poSmoH</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>QI&apos;tu&apos; bIQ&apos;a&apos; veDmey, tammey, jan je</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>De&apos; pol potlh Qorgh</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>De&apos; ghItlh, ghojmeH Qu&apos;mey, chay&apos; De&apos;, yu&apos;meH tlhoQmey je</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>muvmeH tlhegh: GraphQL, REST, Solr je</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>ghom Hal: ja&apos;chuqmeH Daq, nejwI&apos;mey, wiki, chenmoHwI&apos; De&apos; je</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

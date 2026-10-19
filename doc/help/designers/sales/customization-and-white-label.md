@@ -13,7 +13,7 @@ This page is for designers who adapt themes for clients or for agencies who rese
 
 ## Keep customizations upgradeable
 
-The design cascade lets a small extension override a base theme without editing it
+[The design cascade](../theme-design/the-design-cascade.md) lets a small extension override a base theme without editing it
 (The design cascade):
 
 1. Leave the base theme untouched.

@@ -74263,5 +74263,157 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Financování Exponential: co sponzorství platí a jak sponzorovat 7x a Exponential Foundation.</translation>
     </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Nápověda pro: %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Hledat v nápovědě pro: %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Všechny stránky pro: %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Všechny skupiny čtenářů</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Přečtěte si tyto stránky v tomto pořadí.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Dobré vědět</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Hledat podle tématu</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Každé tlačítko zobrazí stránky jednoho tématu pro: %audience.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Klíčové stránky</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Související skupiny čtenářů</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Nejnovější commity do Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Celá historie na GitHubu</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Co se nedávno změnilo ve zdrojovém kódu: hlavní větev se7enxweb/exponential, kterou tento server čte z jejího veřejného kanálu.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub teď není dostupný. Toto jsou commity načtené %date.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Commity se nepodařilo načíst z GitHubu. Otevřete místo toho historii na GitHubu.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Skrýt slučovací commity</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Zobrazit i slučovací commity</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Zpráva</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Zobrazeno %from–%to z %total commitů</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Zatím nejsou žádné commity k zobrazení.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Váš sponzorský příspěvek platí:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>O %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Měsíční sponzorství, i malé, je plánovatelný příjem: platí práci, kterou jednorázové dary neudrží.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Co sponzorství financuje</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Podpořte Exponential</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential je svobodný software. Každá nová funkce, stránka nápovědy, rozšíření, téma a aplikace je práce, kterou někdo platí svým časem. Trvalé měsíční sponzorství v jakékoli výši tuto práci udržuje a umožňuje jí růst.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>Sponzorovat 7x na GitHubu</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Sponzorovat nadaci Exponential Foundation na GitHubu</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Společnost, která vede Exponential, a první sponzor projektu: vyvíjí ho, podporuje, hostuje a vydává jeho verze.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Nezisková organizace, která provozuje open source projekt a věnuje se jeho financování, rozšiřování, podpoře, vzdělávání, vývoji, propagaci a dokumentaci.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Měsíční vydání a práce, která vše udržuje v chodu</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Bezpečnostní opravy knihoven, na kterých Exponential staví, například Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Nové funkce vrácené komunitě jako open source</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Mosty, forky a nástroje kolem platformy</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Údržba základních knihoven</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Dokumentace, výukové materiály, návody a časté dotazy</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Integrační vrstvy: GraphQL, REST a Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Infrastruktura komunity: chat, zrcadla, wiki a zdroje pro vývojáře</translation>
+    </message>
 </context>
 </TS>
