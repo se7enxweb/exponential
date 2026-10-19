@@ -21,8 +21,10 @@ fact comes from this documentation, the code or a real installation; when the so
 with it.
 
 > **Note**
-> The assessments in these courses are your material as a trainer. The documentation describes no official
-> Exponential certification program; do not present a course or a certificate as one.
+> The assessments in these courses are your material as a trainer. The Exponential Partner Program names
+> certifications for partner teams (Developer, Design, Solution, Sales), but their syllabus, exams and examiners are
+> not published ([Certifications](../partners/certifications.md)), and these courses are not those certifications.
+> Never present a course, an assessment or a certificate of yours as an official certification.
 
 ## Contents
 
@@ -110,6 +112,7 @@ how to find out who your learners are.
 | [Guides](../../guides/README.md) | Step-by-step guides for administrators, the source of many lessons |
 | [Develop with Git](../develop-with-git.md) | The way from user to developer and contributor |
 | [Free documentation](../free-documentation.md) | What you may do with these pages |
+| [Training partners](../partners/training-partners.md) | Where training fits in the Exponential Partner Program |
 
 ## Finding these pages again
 

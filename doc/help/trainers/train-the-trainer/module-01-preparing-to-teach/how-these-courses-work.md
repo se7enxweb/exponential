@@ -67,8 +67,10 @@ After this lesson, learners can:
 Documentation License 1.3; you may adapt them, as long as your version keeps the license and says that it was
 changed. Lesson 1.4 covers the details.
 
-**Is there an official Exponential certification?** The documentation does not describe one. The assessments in
-these courses are your own material as a trainer; never present them as an official program.
+**Is there an official Exponential certification?** The Exponential Partner Program names certifications for
+partner teams, but their syllabus, exams and examiners are not published
+([Certifications](../../../partners/certifications.md)). The assessments in these courses are your own material as
+a trainer; never present them as an official certification.
 
 **Why do the lessons have exact button names?** So that learners can follow them alone. If your installation shows
 a different label (an older version, a different administration design), note the difference on your handout.
@@ -118,8 +120,8 @@ Use any installation where you can sign in to the administration.
 2. **Trainer's notes**: how to present it, common questions and pitfalls.
 3. Check the version and the administration design of your installation, note the difference on your handout, and
    report or fix the page with **Edit on GitHub** if the lesson is wrong for the current version.
-4. **False.** The documentation describes no official certification; the assessments are the trainer's own
-   material.
+4. **False.** The assessments are the trainer's own material; the partner program's certifications are a separate
+   matter whose details are not published ([Certifications](../../../partners/certifications.md)).
 5. The GNU Free Documentation License 1.3 or any later version
    ([Free documentation](../../../free-documentation.md)).
 
