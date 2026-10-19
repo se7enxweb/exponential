@@ -60,7 +60,7 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 
 | Section | What it answers |
 |---|---|
-| Levels of government (`levels/`) | What a ministry, a region or state, a council, an agency, a library, a school or university, a court, a parliament, a public health body or an emergency service typically publishes, a content model for it, roles, priorities and a first-90-days plan |
+| [Levels of government](levels/README.md) | What a ministry, a region or state, a council, an agency, a library, a school or university, a court, a parliament, a public health body or an emergency service typically publishes, a content model for it, roles, priorities and a first-90-days plan |
 | [Accessibility](accessibility/README.md) | WCAG 2.2 AA, EN 301 549 and Section 508 mapped to what Exponential provides, with every claim backed by [Accessibility standards](../../standards/accessibility.md); statements, audits, accessible content |
 | Security (`security/`) | OWASP, hardening, the audit trail, two-step sign-in, the Content Security Policy, request-shield |
 | Privacy (`privacy/`) | GDPR features, data minimization, retention, consent records, erasure; other jurisdictions framed generally |
@@ -94,7 +94,7 @@ published.
 | If you are ... | Start with |
 |---|---|
 | a procurement officer or project manager | [Procurement and lifecycle](procurement/README.md), then the requirements and evaluation pages it lists |
-| a head of digital or web manager | this page, Levels of government (`levels/`) for your kind of organization, then Operations (`operations/`) |
+| a head of digital or web manager | this page, [Levels of government](levels/README.md) for your kind of organization, then Operations (`operations/`) |
 | an accessibility coordinator | [Accessibility standards](../../standards/accessibility.md), then the accessibility section of this help |
 | an information security officer | [Security standards](../../standards/security.md), [Security hardening](../security-hardening.md) |
 | a data protection officer | [Privacy standards](../../standards/privacy.md) |
@@ -113,7 +113,7 @@ published.
    ([Install in one command](../../features/6.0/install-in-one-command.md)) and walk through the administration with
    the people who will edit ([Getting started](../getting-started.md), [Admin tour](../admin-tour.md)).
 3. **Week 3: model your organization.** Read the page of your level of government in
-   Levels of government (`levels/`): content model, sections and roles.
+   [Levels of government](levels/README.md): content model, sections and roles.
 4. **Week 4: plan operations and people.** Read Operations (`operations/`) and decide who hosts, who
    backs up, who patches, who approves content and who trains editors
    ([Training for a public body](procurement/training/README.md)).
