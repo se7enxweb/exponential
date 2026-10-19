@@ -56,6 +56,27 @@ class SetupRemoteIndexSanitizingTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( eZStepSiteTypes::isHttpURL( 'HTTPS://example.invalid/a.png' ) );
     }
 
+    /**
+     * Further package servers (package.ini AdditionalRemotePackagesIndexURLs[] and the lists RemotePackagesIndexSources[]
+     * names, such as ezupdate's servers): http(s) only, no trailing slash, each once, never the main server again.
+     */
+    public function testFurtherPackageServersAreNormalized()
+    {
+        $urls = eZStepSiteTypes::normalizeIndexURLs( array(
+            'https://packages.example.invalid/6.0/6.0.15/', 'https://packages.example.invalid/6.0/6.0.15',
+            'https://main.example.invalid/6.0/6.0.15', 'http://mirror.example.invalid/x', 'file:///srv/packages',
+            'javascript:alert(1)', '', '  https://third.example.invalid/p  ' ), 'https://main.example.invalid/6.0/6.0.15/' );
+        $this->assertSame( array( 'https://packages.example.invalid/6.0/6.0.15', 'http://mirror.example.invalid/x',
+                                  'https://third.example.invalid/p' ), $urls );
+    }
+
+    public function testPackageIniReadsEzupdateServersByDefault()
+    {
+        $ini = file_get_contents( self::root() . '/settings/package.ini' );
+        $this->assertMatchesRegularExpression( '/^AdditionalRemotePackagesIndexURLs\[\]$/m', $ini );
+        $this->assertMatchesRegularExpression( '/^RemotePackagesIndexSources\[\]=ezupdate\.ini;PackageServerSettings;Servers$/m', $ini );
+    }
+
     public function testSiteTypesTemplateEscapesRemoteFields()
     {
         $tpl = file_get_contents( self::root() . '/design/standard/templates/setup/init/site_types.tpl' );
