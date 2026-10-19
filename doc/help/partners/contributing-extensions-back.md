@@ -58,4 +58,5 @@ If you become maintainer:
 - [Extension and theme partners](extension-and-theme-partners.md)
 - [Publishing an extension as a partner](publishing-an-extension.md)
 - [Contributing code back](contributing-code-back.md)
+- [Contribute extensions back](../contribute-extensions-back.md): publish an extension and what the GPL requires when you distribute it
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
