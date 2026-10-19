@@ -77108,6 +77108,24 @@ Gracias por la retroalimentación</translation>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Infraestructura de la comunidad: chat, espejos, wikis y recursos para desarrolladores</translation>
+        <source>Expand all</source>
+        <translation>Expandir todo</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Contraer todo</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Abrir o cerrar todas las carpetas</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Todas las carpetas están abiertas.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Todas las carpetas están cerradas.</translation>
     </message>
 </context>
 <context>

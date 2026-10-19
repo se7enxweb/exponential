@@ -72913,6 +72913,24 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>תשתית הקהילה: צ&apos;אט, אתרי מראה, ויקי ומשאבים למפתחים</translation>
+        <source>Expand all</source>
+        <translation>הרחבת הכול</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>כיווץ הכול</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>פתיחה או סגירה של כל התיקיות</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>כל התיקיות פתוחות.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>כל התיקיות סגורות.</translation>
     </message>
 </context>
 <context>

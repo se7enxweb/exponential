@@ -41,6 +41,7 @@
 
     {* ---- Search hero ---- *}
     <section class="a4-help-hero" aria-labelledby="help-dash-title">
+        {include uri='design:exphelp/parts/dashboard_brand.tpl'}
         <p class="a4-help-hero-pre"><span class="a4-icon a4-bi-journal-text" aria-hidden="true"></span>{'Help center'|i18n( $help_ctx )}</p>
         <h1 id="help-dash-title">{'How can we help?'|i18n( $help_ctx )}</h1>
         <p class="a4-help-hero-sub">{'Guides and reference for everyone who works with this installation, written from the documentation of its own version.'|i18n( $help_ctx )}</p>

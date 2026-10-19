@@ -73162,6 +73162,24 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Community infrastructure: chat, mirrors, wikis and developer resources</translation>
+        <source>Expand all</source>
+        <translation>Expand all</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Collapse all</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Open or close every folder</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Every folder is open.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Every folder is closed.</translation>
     </message>
 </context>
 </TS>

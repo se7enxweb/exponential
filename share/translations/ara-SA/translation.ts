@@ -72911,6 +72911,24 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>البنية التحتية للمجتمع: الدردشة والمرايا والويكي وموارد المطورين</translation>
+        <source>Expand all</source>
+        <translation>توسيع الكل</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>طي الكل</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>فتح جميع المجلدات أو إغلاقها</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>جميع المجلدات مفتوحة.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>جميع المجلدات مغلقة.</translation>
     </message>
 </context>
 <context>

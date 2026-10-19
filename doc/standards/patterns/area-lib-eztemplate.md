@@ -76,7 +76,7 @@ Every class, interface and trait of `lib/eztemplate` with the patterns it was re
 | `eZTemplateVariableElement` | class | – | `lib/eztemplate/classes/eztemplatevariableelement.php:20` | – |
 | `eZTemplateWhileFunction` | class | [Template function (Interpreter plugin)](template-function.md) | `lib/eztemplate/classes/eztemplatewhilefunction.php:35` | – |
 
-## Template operators (16)
+## Template operators (17)
 
 | Operators | Class | Registered in |
 |---|---|---|
@@ -95,26 +95,27 @@ Every class, interface and trait of `lib/eztemplate` with the patterns it was re
 | upcase, downcase, count_words, count_chars, trim, break, wrap, upfirst, upword, simplify, trim, wash, chr, ord, shorten, pad | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php:83` |
 | crc32, md5, rot13 | `eZTemplateDigestOperator` | `lib/eztemplate/classes/eztemplateautoload.php:101` |
 | expinfo | `eZTemplateExpInfoOperator` | `lib/eztemplate/classes/eztemplateautoload.php:106` |
-| – | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php:109` |
+| has_role, has_role_id, has_any_role, has_role_by_user, has_role_by_user_id, has_policy, has_policy_by_user | `eZTemplateRoleOperator` | `lib/eztemplate/classes/eztemplateautoload.php:110` |
+| – | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php:115` |
 
 ## Template functions (17)
 
 | Functions | Class | Registered in |
 |---|---|---|
-| section | `eZTemplateSectionFunction` | `lib/eztemplate/classes/eztemplateautoload.php:181` |
-| ldelim, rdelim | `eZTemplateDelimitFunction` | `lib/eztemplate/classes/eztemplateautoload.php:187` |
-| include | `eZTemplateIncludeFunction` | `lib/eztemplate/classes/eztemplateautoload.php:189` |
-| switch | `eZTemplateSwitchFunction` | `lib/eztemplate/classes/eztemplateautoload.php:191` |
-| sequence | `eZTemplateSequenceFunction` | `lib/eztemplate/classes/eztemplateautoload.php:194` |
-| set, let, default | `eZTemplateSetFunction` | `lib/eztemplate/classes/eztemplateautoload.php:196` |
-| set-block, append-block, run-once | `eZTemplateBlockFunction` | `lib/eztemplate/classes/eztemplateautoload.php:198` |
-| debug-timing-point, debug-accumulator, debug-log, debug-trace | `eZTemplateDebugFunction` | `lib/eztemplate/classes/eztemplateautoload.php:201` |
-| cache-block | `eZTemplateCacheFunction` | `lib/eztemplate/classes/eztemplateautoload.php:206` |
-| tool_bar | `eZTemplateToolbarFunction` | `lib/eztemplate/classes/eztemplateautoload.php:209` |
-| menu | `eZTemplateMenuFunction` | `lib/eztemplate/classes/eztemplateautoload.php:212` |
-| if | `eZTemplateIfFunction` | `lib/eztemplate/classes/eztemplateautoload.php:216` |
-| while | `eZTemplateWhileFunction` | `lib/eztemplate/classes/eztemplateautoload.php:220` |
-| for | `eZTemplateForFunction` | `lib/eztemplate/classes/eztemplateautoload.php:226` |
-| foreach | `eZTemplateForeachFunction` | `lib/eztemplate/classes/eztemplateautoload.php:233` |
-| do | `eZTemplateDoFunction` | `lib/eztemplate/classes/eztemplateautoload.php:239` |
-| def, undef | `eZTemplateDefFunction` | `lib/eztemplate/classes/eztemplateautoload.php:246` |
+| section | `eZTemplateSectionFunction` | `lib/eztemplate/classes/eztemplateautoload.php:187` |
+| ldelim, rdelim | `eZTemplateDelimitFunction` | `lib/eztemplate/classes/eztemplateautoload.php:193` |
+| include | `eZTemplateIncludeFunction` | `lib/eztemplate/classes/eztemplateautoload.php:195` |
+| switch | `eZTemplateSwitchFunction` | `lib/eztemplate/classes/eztemplateautoload.php:197` |
+| sequence | `eZTemplateSequenceFunction` | `lib/eztemplate/classes/eztemplateautoload.php:200` |
+| set, let, default | `eZTemplateSetFunction` | `lib/eztemplate/classes/eztemplateautoload.php:202` |
+| set-block, append-block, run-once | `eZTemplateBlockFunction` | `lib/eztemplate/classes/eztemplateautoload.php:204` |
+| debug-timing-point, debug-accumulator, debug-log, debug-trace | `eZTemplateDebugFunction` | `lib/eztemplate/classes/eztemplateautoload.php:207` |
+| cache-block | `eZTemplateCacheFunction` | `lib/eztemplate/classes/eztemplateautoload.php:212` |
+| tool_bar | `eZTemplateToolbarFunction` | `lib/eztemplate/classes/eztemplateautoload.php:215` |
+| menu | `eZTemplateMenuFunction` | `lib/eztemplate/classes/eztemplateautoload.php:218` |
+| if | `eZTemplateIfFunction` | `lib/eztemplate/classes/eztemplateautoload.php:222` |
+| while | `eZTemplateWhileFunction` | `lib/eztemplate/classes/eztemplateautoload.php:226` |
+| for | `eZTemplateForFunction` | `lib/eztemplate/classes/eztemplateautoload.php:232` |
+| foreach | `eZTemplateForeachFunction` | `lib/eztemplate/classes/eztemplateautoload.php:239` |
+| do | `eZTemplateDoFunction` | `lib/eztemplate/classes/eztemplateautoload.php:245` |
+| def, undef | `eZTemplateDefFunction` | `lib/eztemplate/classes/eztemplateautoload.php:252` |

@@ -74277,6 +74277,24 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>L&apos;infrastructure de la communauté : chat, miroirs, wikis et ressources pour les développeurs</translation>
+        <source>Expand all</source>
+        <translation>Tout déplier</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Tout replier</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Ouvrir ou fermer tous les dossiers</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Tous les dossiers sont ouverts.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Tous les dossiers sont fermés.</translation>
     </message>
 </context>
 <context>
