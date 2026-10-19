@@ -96,6 +96,8 @@ Use the training installation and your Editor training account. Nothing in this 
   article is published).
 - The trainer checks by asking a learner to show the **Relations** tab on the projector.
 
+![The media library with its folders as sub items](../../../images/trainers/e101-media-library.webp)
+
 ## Quiz
 
 1. What does an uploaded image become?

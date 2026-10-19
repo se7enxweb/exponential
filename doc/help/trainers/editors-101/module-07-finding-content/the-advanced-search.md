@@ -92,6 +92,8 @@ Use the training installation and the items you created in this course.
 - Step 8 found nothing, because articles are not in the *Media* section on a standard installation.
 - The trainer checks by repeating step 7 on the projector.
 
+![The advanced search with its fields and the results below](../../../images/trainers/e101-advanced-search.webp)
+
 ## Quiz
 
 1. What is the difference between **Search for all of the following words** and **Search for an exact phrase**?

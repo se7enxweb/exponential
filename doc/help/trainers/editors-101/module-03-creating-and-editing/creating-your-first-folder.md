@@ -111,6 +111,8 @@ Use the training installation and your Editor training account.
 - **View on site** shows the folder's summary on the public site.
 - The trainer checks by opening **Training** on the projector: one folder per learner.
 
+![Create new open below a folder's sub items, listing the content types in groups](../../../images/trainers/e101-create-new.webp)
+
 ## Quiz
 
 1. Where is a new item created when you press **Create new** under **Sub items**?

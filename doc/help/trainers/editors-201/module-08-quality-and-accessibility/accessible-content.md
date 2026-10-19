@@ -103,6 +103,8 @@ Use the training installation and your article *Our team, two places*.
 - The trainer checks by reading two alternative texts and two link texts aloud and asking the class whether they work
   without seeing the page.
 
+![An image in the upload queue with its alternative text field, which says what the image shows](../../../images/trainers/e201-alt-text.webp)
+
 ## Quiz
 
 1. Write an alternative text for a photo of a team of five at a whiteboard planning a website.

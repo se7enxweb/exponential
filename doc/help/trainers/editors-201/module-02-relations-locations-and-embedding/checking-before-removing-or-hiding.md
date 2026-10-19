@@ -94,6 +94,8 @@ Use the training installation and your items from lessons 2.1 and 2.2.
 - The learner read the hide warning in step 8 (if any item points at the article) and unhid the article.
 - The trainer checks by asking a learner what they would do if the list in step 2 had contained ten articles.
 
+![The removal confirmation listing what else uses the item before it goes to the trash](../../../images/trainers/e201-remove-check.webp)
+
 ## Quiz
 
 1. What does the remove confirmation list with the shipped setting?

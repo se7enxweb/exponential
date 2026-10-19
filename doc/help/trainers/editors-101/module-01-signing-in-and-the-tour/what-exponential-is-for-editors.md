@@ -125,6 +125,8 @@ trainer names). No account is needed.
   be set by the site and that lesson 2.1 shows the real tree.
 - The trainer collects two or three sketches and compares them on the board with the real tree in lesson 2.1.
 
+![The sub items of a site's front page: its sections, each a folder that holds the articles below it](../../../images/trainers/e101-site-tree.webp)
+
 ## Quiz
 
 1. Which of these is a content item in Exponential?

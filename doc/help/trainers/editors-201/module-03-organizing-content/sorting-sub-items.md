@@ -88,6 +88,8 @@ Use the training installation and your course folder (with at least four sub ite
 - Step 9 showed that a column click does not change the folder's sorting.
 - The trainer checks by asking a learner to move a row with the keyboard only on the projector.
 
+![The Ordering tab: the field and direction the sub items are sorted by, and Set](../../../images/trainers/e201-sorting.webp)
+
 ## Quiz
 
 1. Where do you set the order in which a folder's sub items appear on the site?

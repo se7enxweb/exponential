@@ -100,6 +100,8 @@ Use the training installation and your course folder.
 - The trash does not contain the article.
 - The trainer checks by opening one learner's **Locations** tab on the projector.
 
+![The Locations tab: every place the item appears, the main one marked, with Add locations and Set main](../../../images/trainers/e201-locations-tab.webp)
+
 ## Quiz
 
 1. What is the difference between a copy and a second location?

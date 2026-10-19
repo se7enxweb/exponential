@@ -91,6 +91,8 @@ Use the training installation. The trainer prepared, for each learner, a folder 
 - `Old campaign` is back with all its items.
 - The trainer checks by opening one learner's job page or the jobs list on the projector.
 
+![The trash with its filters by who removed the items, their type and the date](../../../images/trainers/e201-trash-filters.webp)
+
 ## Quiz
 
 1. From how many nodes on is "in the background" offered first, with the shipped settings?

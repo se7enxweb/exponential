@@ -88,6 +88,8 @@ sub items, class *Article*, title from **Title** and description from **Intro**.
   (hidden content is not shown to visitors).
 - The trainer checks by opening the feed on the projector and finding one learner's article.
 
+![RSS: the feeds the site exports and the imports](../../../images/trainers/e201-rss-list.webp)
+
 ## Quiz
 
 1. What is an RSS export?

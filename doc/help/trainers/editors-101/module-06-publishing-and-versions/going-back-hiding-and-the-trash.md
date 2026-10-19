@@ -111,6 +111,8 @@ Use the training installation and your course folder.
 - *News two (updated)* went to the trash and came back to the learner's folder.
 - The trainer checks by opening one learner's folder and versions page on the projector.
 
+![The trash: how many items it holds, and the filters by who removed them, type and date](../../../images/trainers/e101-trash.webp)
+
 ## Quiz
 
 1. How do you bring back the text of an older version?

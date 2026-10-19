@@ -92,6 +92,8 @@ steps on the projector).
 - The export and its file are removed after step 10; the content is untouched.
 - The trainer checks by downloading one learner's PDF on the projector before step 10.
 
+![PDF export: the stored exports with New PDF export](../../../images/trainers/e201-pdf-list.webp)
+
 ## Quiz
 
 1. What does a **Tree** export contain?

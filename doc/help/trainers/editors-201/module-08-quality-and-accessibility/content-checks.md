@@ -98,6 +98,8 @@ image nobody uses.
 - The unused image was listed and moved to the trash, where it can be restored.
 - The trainer checks by running **Broken relations** for the **Training** folder on the projector: no findings left.
 
+![Broken relations with the start location, the targets and the references to check, and Show](../../../images/trainers/e201-broken-relations.webp)
+
 ## Quiz
 
 1. Name three target states the **Broken relations** check can look for.
