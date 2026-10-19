@@ -13,6 +13,8 @@ This page is for application creators who add to Exponential Intelligence withou
 your own extension, by settings and small classes. Source: `extension/expai/doc/extending.md`, whose examples were run
 for expai 0.0.1.0; its example extension is in `extension/expai/doc/examples/expaiexample`.
 
+![Exponential Intelligence, Models: the models each provider offers, which is the default, and what each may do](../../images/creators/ai-models.webp)
+
 ## Contents
 
 1. [Your extension](#your-extension)

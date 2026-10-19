@@ -41,6 +41,10 @@ summary.
 
 Light values are on `:root`. Dark values are in one block:
 
+![The dashboard cards in the light mode, drawn with the light values of the admin4 tokens](../../images/designers/admin4-tokens-light.webp)
+
+![The same cards in the dark mode, drawn with the dark values of the same tokens](../../images/designers/admin4-tokens-dark.webp)
+
 ```css
 html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {
   color-scheme: dark;

@@ -12,6 +12,8 @@ type: help
 This page is for website creators and administrators who send newsletters for real. A newsletter goes to many people at
 once and cannot be called back, so rehearse first and switch on real sending deliberately.
 
+![The newsletter dashboard with the sending queue, bounces and the Send now and Count only buttons](../../images/creators/newsletter-sending.webp)
+
 ## Contents
 
 1. [The transports](#the-transports)
