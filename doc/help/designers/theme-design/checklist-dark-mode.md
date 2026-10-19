@@ -34,6 +34,8 @@ This page is for designers who check a dark mode. Background: [Dark mode overvie
 - [ ] Focus ring visible on dark surfaces.
 - [ ] Checked at 1440 px and 960 px with scale 2.
 
+![An item's page in the dark mode: badges, buttons, tabs and the content keep their contrast](../../images/designers/item-page-dark.webp)
+
 ## Behavior
 
 - [ ] Follows the system setting when no choice is made, also when the system changes while the page is open.

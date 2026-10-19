@@ -32,6 +32,8 @@ used. Use it to find a template to learn from, or a design to build on.
 | `ezdemo` (`se7enxweb/ezdemo`) | `ezdemo`, `admin` | the classic demo website design | [ezdemo](../../../features/6.0/extensions/ezdemo.md) |
 | `ezflow` (`se7enxweb/ezflow`) | `ezflow`, `standard`, `admin`, `iphone` | the classic page builder (page datatype with zones and blocks) | [ezflow](../../../features/6.0/extensions/ezflow.md) |
 
+![The bold siteaccess of the demonstration installation, which shows the media design with other content](../../images/designers/themes-public-site.webp)
+
 The demonstration installation also has `sevenx_themes_super`, a small design created with the design extension
 wizard ([The super theme](super-theme-tour.md)). It is not part of the root package.
 

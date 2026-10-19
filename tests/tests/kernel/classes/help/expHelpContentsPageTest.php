@@ -14,6 +14,8 @@
  *          expdebugbar.css sets for the bar and for its minimised tab
  *  HCP-06  the help navigation of the viewer and the contents page has a "Clear filter" button (type=button,
  *          aria-controls the filter field, hidden until there is a filter), translated in the 11 catalogues
+ *  HCP-07  help.css never styles .a4-help itself (the shared field help text of components.css; help.css loads on
+ *          every admin page): the help page frame is .a4-help-frame in every exphelp template
  *  HCP-05  the help dashboard shows the Exponential logo right above "Help center": admin4 the header's inline drawing
  *          (dark mode through its tokens), classic the same drawing's file; named "Exponential", a fixed size
  *
@@ -214,6 +216,26 @@ class expHelpContentsPageTest extends PHPUnit\Framework\TestCase
                 }
             }
             $this->assertSame( 1, $count, "$lang: Clear filter once in kernel/exphelp" );
+        }
+    }
+
+    /** HCP-07 */
+    public function testHelpStylesheetNeverStylesTheSharedFieldHelpClass()
+    {
+        // .a4-help is the shared help text under a form field (components.css); help.css loads on every admin page,
+        // so a rule for .a4-help itself turned every field help across the administration into a narrow grid
+        foreach ( array( 'design/admin4', 'design/admin' ) as $design )
+        {
+            $css = (string)file_get_contents( self::root() . "/$design/stylesheets/modules/help.css" );
+            $this->assertSame( 0, preg_match_all( '/\.a4-help(?![\w-])/', $css, $m ), "$design help.css styles only .a4-help-* classes, never .a4-help: " . implode( ', ', $m[0] ) );
+            $this->assertMatchesRegularExpression( '/^\.a4-help-frame \{/m', $css, 'the help page frame' );
+            foreach ( glob( self::root() . "/$design/templates/exphelp/{,parts/}*.tpl", GLOB_BRACE ) as $tpl )
+            {
+                $html = (string)file_get_contents( $tpl );
+                $this->assertDoesNotMatchRegularExpression( '/class="a4-page a4-help[" ]/', $html, basename( $tpl ) . ': the frame is .a4-help-frame' );
+                if ( preg_match( '/class="a4-page /', $html ) )
+                    $this->assertMatchesRegularExpression( '/class="a4-page a4-help-frame[" ]/', $html, basename( $tpl ) );
+            }
         }
     }
 

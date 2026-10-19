@@ -34,6 +34,8 @@ hours in one click), who still gets in (your own address with one tick, other ad
 before **Take the site offline**. While offline, the page shows an amber banner and **Bring the site back online**.
 Maintenance never ends by itself.
 
+![Setup, Maintenance: the site is online, with the plan for a maintenance window and a preview of the page visitors will see](../../images/creators/maintenance-window.webp)
+
 ## From a shell
 
 ```bash

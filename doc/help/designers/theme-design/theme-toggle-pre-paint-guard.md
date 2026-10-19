@@ -71,6 +71,10 @@ Storage can be blocked (private windows, policies); the `try` keeps the page wor
 
 A real button, its state in text, the handler in your main script file:
 
+![The theme switch in the header of the administration, outlined; it cycles light, dark and system](../../images/designers/theme-toggle.webp)
+
+![The theme switch in the dark mode](../../images/designers/theme-toggle-dark.webp)
+
 ```tpl
 <button type="button" id="theme-toggle" class="theme-toggle">
     <span class="theme-toggle-label">{'Color mode'|i18n( 'design/mytheme' )}</span>

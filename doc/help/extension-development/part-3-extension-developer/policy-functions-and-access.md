@@ -137,6 +137,6 @@ answers what a user may do with a node or object and which limitation refuses it
 - Previous: [View parameters, unordered parameters and POST](view-parameters.md)
 - Next: [View results, the path and the pagelayout](view-results-and-the-pagelayout.md)
 - [Sections, roles and access for builders](../part-2-builder/sections-roles-and-access-for-builders.md)
-- eZUser and access checks
+- [eZUser and access checks](../part-8-reference/ezuser-and-access.md)
 - [Content policy limitations of extensions](../../../features/6.0/content-limitation-handlers.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

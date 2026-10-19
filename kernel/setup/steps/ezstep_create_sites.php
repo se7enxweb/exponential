@@ -497,6 +497,49 @@ class eZStepCreateSites extends eZStepInstaller
     }
 
     /**
+     * The packages a site package requires, and the packages those require, down the whole chain: each once, a
+     * package's own requirements before it, in the order the package.xml files list them. Only "ezpackage"
+     * requirements; a required package that is not in the repository stays in the list, but its own requirements
+     * are unknown. contentObjectLanguageLists() reads the languages of the whole chain with it (from 6.0.15 on;
+     * before only the direct requirements' languages were compared). Installing follows the chain on its own:
+     * eZPackage::install() installs a package's requirements first.
+     *
+     * @param eZPackage|object $sitePackage anything with attribute( 'name' ) and attribute( 'dependencies' )
+     * @param callable|null $fetch name => package object or false (default: eZPackage::fetch())
+     * @return array[] the requirement entries (type, name, min-version ...), the site package itself not included
+     */
+    static function requirementsInInstallOrder( $sitePackage, $fetch = null )
+    {
+        if ( $fetch === null )
+        {
+            $fetch = function( $name ) { return eZPackage::fetch( $name, false, false, false ); };
+        }
+        $order = array();
+        $visiting = array( (string)$sitePackage->attribute( 'name' ) => true );
+        $walk = function( $package ) use ( &$walk, &$order, &$visiting, $fetch )
+        {
+            $dependencies = $package->attribute( 'dependencies' );
+            foreach ( isset( $dependencies['requires'] ) ? (array)$dependencies['requires'] : array() as $require )
+            {
+                if ( !isset( $require['type'] ) || $require['type'] != 'ezpackage' || !isset( $require['name'] ) )
+                    continue;
+                $name = (string)$require['name'];
+                // listed already, or on the way down (a cycle): once is enough
+                if ( isset( $order[$name] ) || isset( $visiting[$name] ) )
+                    continue;
+                $visiting[$name] = true;
+                $required = call_user_func( $fetch, $name );
+                if ( is_object( $required ) )
+                    $walk( $required );
+                $order[$name] = $require;
+                unset( $visiting[$name] );
+            }
+        };
+        $walk( $sitePackage );
+        return array_values( $order );
+    }
+
+    /**
      * The languages of every content object the site package's required packages install (those of install type
      * "install"), read from the packages: one list per object, its initial language first. Empty when the site
      * package is not there.
@@ -514,10 +557,8 @@ class eZStepCreateSites extends eZStepInstaller
         if ( !is_object( $handler ) || !method_exists( $handler, 'objectLanguageLists' ) )
             return array();
         $lists = array();
-        foreach ( isset( $dependencies['requires'] ) ? (array)$dependencies['requires'] : array() as $require )
+        foreach ( self::requirementsInInstallOrder( $sitePackage ) as $require )
         {
-            if ( !isset( $require['type'] ) || $require['type'] != 'ezpackage' )
-                continue;
             $package = eZPackage::fetch( $require['name'], false, false, false );
             if ( !is_object( $package ) || $package->attribute( 'install_type' ) != 'install' )
                 continue;

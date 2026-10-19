@@ -36,6 +36,8 @@ Caches are regenerated and need no backup.
 
 1. Maintenance mode on, so database and files agree:
 
+![Backups in the administration: a full site backup or the database and files, optionally encrypted](../../images/creators/backups.webp)
+
    ```bash
    php bin/php/maintenance.php on --message="Back soon" --until=30m --allow-admin --allow-root-user
    ```

@@ -74,7 +74,7 @@ You write PHP that the kernel calls:
 - a **cronjob part**, a **command**, an **ajax function**, a **handler** that replaces a part of the system.
 
 You learn the anatomy of an extension and the kernel's classes (`eZINI`, `eZContentObject`, `eZTemplate` and the
-rest, see Part 8). The RAD tools in **Setup > RAD** write a working skeleton of most
+rest, see [Part 8](../part-8-reference/README.md)). The RAD tools in **Setup > RAD** write a working skeleton of most
 of these for you, so you start from code that runs; the tutorials in Part 3 show both the RAD way and the hand way.
 
 ## Step 4: theme developer
@@ -101,7 +101,7 @@ something you do not need yet.
 4. Take an old extension that you like and bring it up to date with Part 4. Nothing teaches the kernel faster.
 5. Publish it (Part 7) and offer your changes to its author (Part 5).
 
-Reading paths through the book gives ready-made orders for developers, designers and
+[Reading paths through the book](../reading-paths.md) gives ready-made orders for developers, designers and
 application creators.
 
 ## Related pages
@@ -109,5 +109,5 @@ application creators.
 - Previous: [What an extension is](what-an-extension-is.md)
 - Next: [The tools you need](tools-you-need.md)
 - [Develop with Git: grow from user to developer](../../develop-with-git.md)
-- Reading paths through the book
+- [Reading paths through the book](../reading-paths.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -132,5 +132,5 @@ The helpers (`script()`, `startup()`, `output()`, `error()`, `isQuiet()`, `log()
 - Previous: [Cronjob parts](cronjob-parts.md)
 - Next: [A design inside an extension](design-in-an-extension.md)
 - [The console](../../../bc/6.0/console.md)
-- eZScript and eZCLI
+- [eZScript and eZCLI](../part-8-reference/ezscript-and-ezcli.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -66,7 +66,7 @@ grep -n "ViewList\|'functions'\|FunctionList" extension/<name>/modules/*/module.
 - [ ] Every view that shows or changes data names a `'functions'` entry.
 - [ ] `$FunctionList` declares those functions, so they can be granted through roles.
 - [ ] Views that change data only act on POST and check the form token (see
-      ezformtoken and CSRF protection).
+      [ezformtoken and CSRF protection](../part-8-reference/ezformtoken-and-csrf.md)).
 
 A view without `'functions'` can be opened by anyone who can reach the site.
 
