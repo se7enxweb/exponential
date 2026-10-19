@@ -99,6 +99,8 @@ Use your own training installation, signed in to its administration as an admini
 - Step 9: no part is paused.
 - The trainer checks by asking each learner to read the notice of step 7 aloud.
 
+![The cronjob console in the administration](../../../images/trainers/ho-cronjobs.webp)
+
 ## Quiz
 
 1. Which runs does a pause on the cronjob page hold back?

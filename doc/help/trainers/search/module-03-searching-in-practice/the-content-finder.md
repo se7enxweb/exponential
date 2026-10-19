@@ -101,6 +101,8 @@ Use your own training installation, signed in as an administrator. Do not press 
 - The trainer checks step 8 in a short round: search for support roles, delete only for roles that also remove
   content.
 
+![The content finder: open an item by its id, remote id, path or address](../../../images/trainers/se-finder.webp)
+
 ## Quiz
 
 1. What does the content finder take as input? Name four kinds.

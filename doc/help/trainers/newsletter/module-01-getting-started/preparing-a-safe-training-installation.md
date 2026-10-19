@@ -157,6 +157,8 @@ root directory.
 - `var/log/mail` exists and is writable.
 - The trainer checks each learner's settings viewer page and the list of test addresses before module 2 starts.
 
+![The badge Writes mails to files on the newsletter dashboard: a training installation sends no real mail](../../../images/trainers/nl-safe.webp)
+
 ## Quiz
 
 1. Which newsletter transport method ships with `sendmail`, and what is it used for?

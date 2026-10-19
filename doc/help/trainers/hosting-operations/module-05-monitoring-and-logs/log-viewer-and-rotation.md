@@ -105,6 +105,8 @@ user.
 - Step 11 prints `2097152` and `3` unless overridden.
 - The trainer checks by asking each learner for the `reason=` of their step 2 line.
 
+![Log health in the administration](../../../images/trainers/ho-logs.webp)
+
 ## Quiz
 
 1. A customer sends a screenshot with `ERR-0123456789`. Where do you start?

@@ -97,6 +97,8 @@ the browser. Work in pairs, testing the partner's site.
 - The pages from lesson 5.2 pass the keyboard pass: skip link, visible focus, current item marked by more than color.
 - The trainer collects the tables and lists the three most common template findings on the board.
 
+![An item's page at 375 pixels wide, one of the widths to test a page at](../../../images/trainers/td-rtl-375.webp)
+
 ## Quiz
 
 1. Why test one page per template rather than every page?

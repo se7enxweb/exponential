@@ -139,6 +139,8 @@ your trainer tells you so). Replace `<name>` with your first name.
 - Each learner has two crontab lines with their path and siteaccess.
 - The trainer checks one learner's terminal output and crontab lines.
 
+![The Run now box of the dashboard with Send now, Count only and the cron lines](../../../images/trainers/nl-run-now.webp)
+
 ## Quiz
 
 1. Which cronjob part is not included in the part `cjw_newsletter`?

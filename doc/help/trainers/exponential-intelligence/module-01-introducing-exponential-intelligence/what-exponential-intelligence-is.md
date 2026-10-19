@@ -101,6 +101,8 @@ Use the training installation and your training account (no request is sent in t
 - The card lists: drafts only; as the editor; never publishes on its own.
 - The trainer checks two cards.
 
+![Exponential Intelligence, Summary: providers, models and usage](../../../images/trainers/ei-summary.webp)
+
 ## Quiz
 
 1. What does Exponential Intelligence write?

@@ -108,6 +108,8 @@ an administrator.
 - Step 7 lists help pages, not content.
 - The trainer checks the notes of two learners against the map on the board.
 
+![The Search field in the header of the administration](../../../images/trainers/se-where.webp)
+
 ## Quiz
 
 1. Which setting names the search engine an installation uses?

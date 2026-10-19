@@ -86,6 +86,8 @@ Use the training installation with an administrator account.
 - The learner found the data policy and security pages in **EI: Help**.
 - The trainer checks by asking a learner which section answers "what does the AI feature send where?".
 
+![The help of Exponential Intelligence in the administration](../../../images/trainers/ei-help.webp)
+
 ## Quiz
 
 1. Name four sections of **EI: Summary**.

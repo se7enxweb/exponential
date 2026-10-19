@@ -105,6 +105,8 @@ Use your own training installation, served by Velocity.
 - Step 9 names `X-Forwarded-Proto`, `X-Forwarded-For`, the original `Host`, and the trust list for the server in use.
 - The trainer checks steps 6 and 7 side by side for one learner.
 
+![Cache management, where the caches inside the installation are cleared](../../../images/trainers/ho-cache.webp)
+
 ## Quiz
 
 1. Which caching layers ship switched on? Name two.

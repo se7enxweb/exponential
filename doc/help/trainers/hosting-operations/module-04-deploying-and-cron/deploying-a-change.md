@@ -116,6 +116,8 @@ Use your own training installation, served by Velocity, and a terminal in the in
 - After step 9 the original name is back.
 - The trainer checks by asking for the number of the response-cache step and the reason the PHP-FPM step gave.
 
+![A maintenance window, planned before a deploy](../../../images/trainers/ho-maint.webp)
+
 ## Quiz
 
 1. Why are the content view cache and the response cache cleared near the end of a deploy?

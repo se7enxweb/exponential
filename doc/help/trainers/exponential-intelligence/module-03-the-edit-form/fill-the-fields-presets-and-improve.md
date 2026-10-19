@@ -90,6 +90,8 @@ Use the training installation and your course folder.
   stored or published by the learner.
 - The trainer checks by opening one learner's article and asking which parts they changed by hand.
 
+![The Exponential Intelligence box at the top of the edit form with the defaults in use](../../../images/trainers/ei-edit-top.webp)
+
 ## Quiz
 
 1. What does **Fill the fields** do?

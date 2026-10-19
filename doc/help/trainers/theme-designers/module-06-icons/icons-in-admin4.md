@@ -121,6 +121,8 @@ On your training installation, administration in admin4, files from module 4.
   hidden.
 - The trainer checks one learner's block in both modes and the accessible name of the icon link.
 
+![Icons of admin4 on the cards of the Setup page](../../../images/trainers/td-icons.webp)
+
 ## Quiz
 
 1. Write the markup of a decorative pencil icon in admin4.

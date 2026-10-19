@@ -95,6 +95,8 @@ Use the training installation and your course folder.
 - Two drafts below the learner's course folder are listed in the tab (they are not published).
 - The trainer checks by opening one learner's tab on the projector and showing that the site is unchanged.
 
+![The Intelligence tab of an article, where a conversation about the item starts](../../../images/trainers/ei-tab.webp)
+
 ## Quiz
 
 1. Name the two ways to start a request.

@@ -97,6 +97,8 @@ visitor. Replace `<site>` with the address of your public siteaccess.
 - Step 8 usually finds as many or more matches than the visitor.
 - The trainer checks the addresses of steps 4 and 5 on one learner's screen.
 
+![The search page of the public site](../../../images/trainers/se-site.webp)
+
 ## Quiz
 
 1. Which parameter carries the visitor's words to `content/search`?
