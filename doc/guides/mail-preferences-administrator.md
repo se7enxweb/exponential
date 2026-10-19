@@ -240,8 +240,9 @@ PASS
 
 The anonymised rows keep the time, category and change, without address, IP or user, so you can still prove that mail
 stopped. Without `--yes` the command refuses ("erase removes the preferences and anonymises the consent log: add --yes").
-Removing a user account does not yet erase that account's preferences; erase them on the console when you remove an
-account on request.
+Removing a user account erases that account's preferences and pending confirmations and anonymizes its consent log, as
+`erase --yes` does (`eZUser::removeUser()` calls `expMailPreferences::eraseForRemovedAccount()`); the suppression list
+keeps its salted hash so the address stays blocked. Use the console command for a person who has no account.
 
 ## 7. The suppression list
 

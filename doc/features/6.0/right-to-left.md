@@ -15,7 +15,7 @@ the interface language is (see "Content" below).
 
 | Piece | What it does |
 |---|---|
-| `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl` | The only source. A locale file without the key, or with any other value, is left to right. 28 locale files carry it. |
+| `share/locale/<locale>.ini`, `[LanguageSettings] TextDirection=rtl` | The only source. A locale file without the key, or with any other value, is left to right. 40 locale files carry it. |
 | `eZLocale::textDirection()` | `'rtl'` or `'ltr'` for a locale object. |
 | `eZLocale::isRightToLeft()` | `true` for a right-to-left locale. |
 | `eZLocale::textDirectionOf( 'heb-IL' )` | Static: the direction of a locale code, `'ltr'` for an unknown code. |

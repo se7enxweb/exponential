@@ -16,7 +16,7 @@ The menu lists can be written in one go at launch.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [In the content tree](#in-the-content-tree)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ The menu lists can be written in one go at launch.
 
 1. Each page in the administration shows `Node <id> · Object <id> · Remote ID`.
 
-## With templates
+## In the content tree
 
 1. Write the node IDs into the plan per menu position; keep the remote IDs too, which stay the same when content is moved to another installation by package.
 

@@ -16,7 +16,7 @@ Editors maintain the service links without settings.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [In the settings](#in-the-settings)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ Editors maintain the service links without settings.
 
 1. The folder Media > Configuration > Footer links holds Menu items sorted by priority.
 
-## With templates
+## In the settings
 
 1. Another folder per site: set `FooterLinksRemoteID` in the siteaccess' `menu.ini` to its remote ID.
 

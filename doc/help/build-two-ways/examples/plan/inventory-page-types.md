@@ -16,7 +16,7 @@ Know every page type (home, landing page, article, recipe, topic, video, contact
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [In the content tree and the console](#in-the-content-tree-and-the-console)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -26,7 +26,7 @@ Know every page type (home, landing page, article, recipe, topic, video, contact
 2. Note per mapping the class condition (for example `ng_recipe` for Full / Recipe) and the target (Location 89 for the home page).
 3. Open **Layouts > Shared layouts** to see what all of them share (Header / Footer, Prefooter).
 
-## With templates
+## In the content tree and the console
 
 1. In **Content structure**, open the site root (Fit & Healthy) and note the classes of its children: Landing page, Topic, Category, Contact form, Article, Container.
 2. Run `./console exp:layouts list` for the layouts with their mappings (column *Rules*) and links (column *Links to*).

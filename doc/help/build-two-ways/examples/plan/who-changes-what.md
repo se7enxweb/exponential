@@ -16,7 +16,7 @@ Every kind of change has an owner and a tool.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [Developers](#developers)
 3. [Administrators](#administrators)
 4. [Which to choose](#which-to-choose)
 5. [Check](#check)
@@ -25,7 +25,7 @@ Every kind of change has an owner and a tool.
 
 1. Editors: content in the tree, blocks and collections in the Layouts editor, footer links (Menu items in Footer links).
 
-## With templates
+## Developers
 
 1. Developers: the design extension (templates, stylesheets), new block and view types, settings like the header menu list in `menu.ini`.
 

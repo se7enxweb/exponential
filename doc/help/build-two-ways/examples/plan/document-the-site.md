@@ -16,7 +16,7 @@ A new team member finds where the header menu is in minutes.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [In the site guide](#in-the-site-guide)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ A new team member finds where the header menu is in minutes.
 
 1. List the shared layouts and what links to them; `exp:layouts list` output can be pasted in.
 
-## With templates
+## In the site guide
 
 1. Keep a short guide with the design extension: which `menu.ini` lists exist, which templates are overridden, which block and view types were added.
 
