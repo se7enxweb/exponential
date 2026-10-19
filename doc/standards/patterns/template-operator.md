@@ -3,7 +3,7 @@ title: Template operator (Interpreter plugin)
 audience: developer
 category: standards
 order: 313
-summary: A class that adds operators to the template language: it lists them in operatorList() and computes them in modify(). 314 instances in Exponential.
+summary: A class that adds operators to the template language: it lists them in operatorList() and computes them in modify(). 321 instances in Exponential.
 keywords: design pattern, template-operator, plugins, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class that adds operators to the template language: it lists them in operatorL
 | | |
 |---|---|
 | Group | Plugins |
-| Instances | 314 |
+| Instances | 321 |
 | Recognized by | Registered in an eztemplateautoload.php ($eZTemplateOperatorArray[]), or has operatorList() and modify(). |
 | Extension point | autoloads/eztemplateautoload.php of an extension, enabled by site.ini/template.ini [TemplateSettings] ExtensionAutoloadPath[]. |
 
@@ -298,7 +298,7 @@ A class that adds operators to the template language: it lists them in operatorL
 | `eZTemplateTypeOperator` | class | `lib/eztemplate/classes/eztemplatetypeoperator.php:36` | – | – |
 | `eZTemplateUnitOperator` | class | `lib/eztemplate/classes/eztemplateunitoperator.php:39` | – | – |
 
-## Template operators (75)
+## Template operators (76)
 
 ### extension/bcwebsitestatistics (1)
 
@@ -469,7 +469,7 @@ A class that adds operators to the template language: it lists them in operatorL
 |---|---|---|
 | pdf | `eZPDF` | `lib/ezpdf/classes/eztemplateautoload.php:14` |
 
-### lib/eztemplate (16)
+### lib/eztemplate (17)
 
 | Operators | Class | Registered in |
 |---|---|---|
@@ -488,4 +488,5 @@ A class that adds operators to the template language: it lists them in operatorL
 | upcase, downcase, count_words, count_chars, trim, break, wrap, upfirst, upword, simplify, trim, wash, chr, ord, shorten, pad | `eZTemplateStringOperator` | `lib/eztemplate/classes/eztemplateautoload.php:83` |
 | crc32, md5, rot13 | `eZTemplateDigestOperator` | `lib/eztemplate/classes/eztemplateautoload.php:101` |
 | expinfo | `eZTemplateExpInfoOperator` | `lib/eztemplate/classes/eztemplateautoload.php:106` |
-| – | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php:109` |
+| has_role, has_role_id, has_any_role, has_role_by_user, has_role_by_user_id, has_policy, has_policy_by_user | `eZTemplateRoleOperator` | `lib/eztemplate/classes/eztemplateautoload.php:110` |
+| – | `eZTemplateStringsOperator` | `lib/eztemplate/classes/eztemplateautoload.php:115` |

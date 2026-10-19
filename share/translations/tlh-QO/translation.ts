@@ -72731,6 +72731,26 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Exponential DIl: Huch nob nuq DIl, chay&apos; 7x, Exponential ghom&apos;a&apos; je QaH.</translation>
     </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Hoch tIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Hoch tISoQmoH</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Hoch ghItlh pa'mey tIpoSmoH pagh tISoQmoH</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Hoch ghItlh pa'mey poSmoHlu'pu'.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Hoch ghItlh pa'mey SoQmoHlu'pu'.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
