@@ -687,9 +687,46 @@ class expHelpDocumentIndex
         $this->signature = null;
         $this->data = $this->build();
         $cached = $this->store( 'index-' . $this->data['signature'] . '.php', $this->data, 'index-' );
+        $pruned = $cached ? $this->pruneStale( (int)floor( $start ) ) : 0;
         return array( 'signature' => $this->data['signature'], 'documents' => count( $this->data['documents'] ),
                       'assets' => count( $this->data['assets'] ), 'seconds' => round( microtime( true ) - $start, 3 ),
-                      'sources' => $this->data['sources'], 'cached' => $cached );
+                      'sources' => $this->data['sources'], 'cached' => $cached, 'pruned' => $pruned );
+    }
+
+    /** The cache files that belong to one index signature and are named by a hash of it: subdirectory => suffix */
+    const DERIVED_CACHES = array( 'nav' => 'html', 'render' => 'json' );
+
+    /**
+     * Removes what an older index left in the cache directory: the other index-<signature>.php files and the cached
+     * navigation trees (nav/) and rendered pages (render/), whose names are hashes that include the index signature,
+     * so none of them is read again once the signature changed. Only files written before $before (the start of the
+     * rebuild) go: what another process wrote meanwhile stays, and so does the current index.
+     *
+     * @param int $before a Unix time
+     * @return int the number of files removed
+     */
+    public function pruneStale( $before )
+    {
+        $dir = $this->cacheDir();
+        if ( $dir === null || !is_dir( $dir ) || $this->data === null )
+            return 0;
+        $current = $dir . '/index-' . $this->data['signature'] . '.php';
+        $files = array();
+        foreach ( (array)glob( $dir . '/index-*.php' ) as $file )
+            if ( $file !== $current && preg_match( '/\/index-[a-f0-9]{40}\.php$/', $file ) )
+                $files[] = $file;
+        foreach ( self::DERIVED_CACHES as $sub => $suffix )
+            foreach ( (array)glob( $dir . '/' . $sub . '/*.' . $suffix ) as $file )
+                if ( preg_match( '/\/[a-f0-9]{40}\.' . $suffix . '$/', $file ) )
+                    $files[] = $file;
+        $removed = 0;
+        foreach ( $files as $file )
+        {
+            clearstatcache( true, $file );
+            if ( is_file( $file ) && filemtime( $file ) < (int)$before && @unlink( $file ) )
+                ++$removed;
+        }
+        return $removed;
     }
 
     /**
