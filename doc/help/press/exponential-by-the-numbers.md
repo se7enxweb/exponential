@@ -38,7 +38,7 @@ Counted on 18 October 2026 ([Who is 7x?, 7x in numbers](../who-is-7x.md#7x-in-nu
 | Changes in the history since December 2023 | 6,556 in 53 repositories, 1,037 by the se7enxweb team | [Ecosystem](../../history/ecosystem.md) |
 | Commit authors before 2016 | 194 different names | `git log --until=2016-01-01 --format=%an` |
 | Locale files (content languages and countries) | 268, of which 40 are right to left | [Languages](../../languages.md) |
-| Administration translations | 32, of which 10 are complete | [Languages](../../languages.md) |
+| Administration translations | 33, of which 19 are complete (19 October 2026) | [Languages](../../languages.md) |
 | Supported databases | 6 | README, "Requirements" |
 | Supported PHP versions | 8.0 to 8.5 | README; [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 

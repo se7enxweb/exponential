@@ -39,7 +39,7 @@ fairly.
   others (`git log --grep="Merge pull request"`, cited on [Who is 7x?](../who-is-7x.md#contributors-and-friends-of-the-project)).
 - Before 2016, 194 different commit authors appear in the history.
 - Companies whose open source work is used are credited by name ([Crediting Netgen, Mugo Web and CJW Network](crediting-other-projects.md)).
-- Translators maintain 32 administration translations, ten complete ([Languages in Exponential](../../languages.md)).
+- Translators maintain 33 administration translations, nineteen complete (19 October 2026) ([Languages in Exponential](../../languages.md)).
 
 ## How contributions are handled
 

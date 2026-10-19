@@ -7,7 +7,7 @@ if you write documentation (in `doc/` or in an extension) that should show up in
 
 - **Help dashboard** (`/exphelp/dashboard`): the Exponential logo above "Help center" (the header's drawing,
   `exphelp/parts/dashboard_brand.tpl`, per design), a search field, the help for each audience (editors, administrators,
-  developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters and sponsors; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
+  developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters, sponsors, trainers and press, media and influencers; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
   report an error.
 - **Help pages** (`/exphelp/viewer/<page>`): every git-tracked Markdown and text file under `doc/`, rendered with
   headings, a table of contents, tables, callouts, highlighted code and images, with the navigation of its section,
@@ -59,7 +59,7 @@ Security Policy.
 | `[IndexSettings] Roots[]` | `doc` | the directories whose tracked files are shown |
 | `[IndexSettings] ExtensionDocDirs[]` | empty | extensions whose `doc/` directory is shown too (opt-in) |
 | `[IndexSettings] ExcludePatterns[]` | doxygen, HTML, SVG | never shown, even when tracked |
-| `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
+| `[AudienceSettings] Audiences[]` | `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator`, `supporter`, `sponsor`, `trainer`, `press` | the audiences in dashboard order, with `AudienceNames[]` and `AudienceIcons[]` |
 | `[AudienceSettings] PathRules[]` | per directory | `<glob>;<audience,...>`, first match wins |
 | `[CategorySettings]` | eight categories | names, icons and path rules |
 | `[SearchSettings]` | 20 results | result count and the weights of title, headings and text |
@@ -265,7 +265,9 @@ by `./console exp:help:examples`; `--check` reports pages that are not current. 
 [Examples](../../examples/README.md#how-the-generated-pages-are-made). They have the page type `generated`, which ranks
 below the written pages (`[SearchSettings] TypeBoost[generated]`) and stays off the audience cards of the dashboard.
 
-The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change.
+The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change. A rebuild
+also removes what the older index left: the other `index-<signature>.php` files and the cached navigation trees
+(`nav/`) and rendered pages (`render/`) written before it, so the cache holds only what the current index uses.
 
 ## Languages and accessibility
 

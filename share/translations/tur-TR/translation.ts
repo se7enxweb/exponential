@@ -73138,5 +73138,53 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
         <translation>Topluluk altyapısı: sohbet, yansılar, wiki&apos;ler ve geliştirici kaynakları</translation>
     </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Eğitmenler</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Basın, medya ve etkileyiciler</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Exponential&apos;ı öğretin: editörler, yöneticiler, geliştiriciler ve tasarımcılar için kurslar, atölyeler, alıştırmalar ve değerlendirmeler.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>Exponential hakkında yazın ve konuşun: gerçekler, tarihçe, kişiler, alıntılar, görseller ve kiminle iletişime geçileceği.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Eğitim</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Basın ve medya</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Exponential öğretimi: her rol için kurslar, ders planları, atölyeler, alıştırmalar ve değerlendirmeler.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Gazeteciler, medya ve etkileyiciler için: gerçekler, tarihçe, duyurular, görseller ve iletişim bilgileri.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Eklentilerinizi paylaşın</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Dağıttığınız eklentileri GPL&apos;in gerektirdiği şekilde paylaşın, böylece herkes yararlansın.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Exponential projesi</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Exponential projesi: nedir, lisansları, yol haritası, destek, topluluk kanalları ve nasıl katkıda bulunup bağış yapılır.</translation>
+    </message>
 </context>
 </TS>

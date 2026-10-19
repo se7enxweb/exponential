@@ -343,6 +343,11 @@ class expHelpLandingPagesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "concat( '/exphelp/audience/', \$aid )", $dashboard );
         $this->assertStringContainsString( "{include uri='design:exphelp/parts/support.tpl' support=\$help_support}", $dashboard );
         $this->assertStringContainsString( "'help_support'", self::read( 'kernel/private/classes/views/exphelp/dashboard.php' ) );
+        $grow = self::read( 'design/admin4/templates/exphelp/parts/dashboard_grow.tpl' );
+        $this->assertSame( $grow, self::read( 'design/admin/templates/exphelp/parts/dashboard_grow.tpl' ) );
+        $this->assertStringContainsString( "{'Contribute extensions back'|i18n( \$help_grow_ctx )}", $grow );
+        $this->assertStringContainsString( "\$help_grow_extensions_page|ne( '' )", $grow, 'shown only when its page is in the help' );
+        $this->assertStringContainsString( "'help/contribute-extensions-back.md'", self::read( 'kernel/private/classes/views/exphelp/dashboard.php' ) );
         $css = self::read( 'design/admin4/stylesheets/modules/help.css' );
         foreach ( array( '.a4-help-landing-hero {', '.a4-help-commits-list {', '.a4-help-support {' ) as $selector )
             $this->assertStringContainsString( $selector, $css );
