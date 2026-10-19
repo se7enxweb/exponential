@@ -5,40 +5,40 @@
     <name>design/admin/content/browse</name>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokmärken</translation>
     </message>
 </context>
 <context>
     <name>design/admin/content/edit</name>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Namn</translation>
+        <translation>Namn</translation>
     </message>
     <message>
         <source>File type</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtyp</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">Storlek</translation>
+        <translation>Storlek</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Typ</translation>
+        <translation>Typ</translation>
     </message>
 </context>
 <context>
     <name>design/admin/content/search</name>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök</translation>
     </message>
 </context>
 <context>
     <name>design/admin/content/upload</name>
     <message>
         <source>Upload</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladda upp</translation>
     </message>
 </context>
 <context>
@@ -56,55 +56,55 @@
     <name>design/standard/content/edit</name>
     <message>
         <source>Send for publishing</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka för publicering</translation>
     </message>
     <message>
         <source>Store draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Spara utkast</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasta</translation>
     </message>
 </context>
 <context>
     <name>design/standard/content/search</name>
     <message>
         <source>No results were found when searching for &amp;quot;%1&amp;quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Inga resultat hittades vid sökning efter &amp;quot;%1&amp;quot;</translation>
     </message>
 </context>
 <context>
     <name>design/standard/content/view</name>
     <message>
         <source>You have no bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har inga bokmärken</translation>
     </message>
 </context>
 <context>
     <name>design/standard/error/kernel</name>
     <message>
         <source>Your current user does not have the proper privileges to access this page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Din nuvarande användare har inte tillräckliga rättigheter för att komma åt den här sidan.</translation>
     </message>
 </context>
 <context>
     <name>design/standard/ezoe</name>
     <message>
         <source>Do you want to use the WYSIWYG mode for this textarea?</source>
-        <translation type="unfinished">Vill du använda WYSIWYG-läget för detta textområde?</translation>
+        <translation>Vill du använda WYSIWYG-läget för det här textområdet?</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation type="unfinished">Spara</translation>
+        <translation>Tillämpa</translation>
     </message>
     <message>
         <source>Insert</source>
-        <translation type="unfinished">Infoga</translation>
+        <translation>Infoga</translation>
     </message>
     <message>
         <source>Update</source>
-        <translation type="unfinished">Uppdatera</translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -112,7 +112,7 @@
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Stäng</translation>
+        <translation>Stäng</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -124,29 +124,29 @@
     </message>
     <message>
         <source>-- Not set --</source>
-        <translation type="unfinished">-- Inte vald --</translation>
+        <translation>-- Inte angivet --</translation>
     </message>
     <message>
         <source>Copy/Cut/Paste is not available in Mozilla and Firefox.
 Do you want more information about this issue?</source>
-        <translation type="unfinished">Kopiera/Klipp/Klistra är inte tillgängliga i Mozilla och Firefox.
-Vill du har mer information om detta?</translation>
+        <translation>Kopiera/Klipp ut/Klistra in är inte tillgängligt i Mozilla och Firefox.
+Vill du ha mer information om det här problemet?</translation>
     </message>
     <message>
         <source>Currently not supported by your browser, use keyboard shortcuts instead.</source>
-        <translation type="unfinished">Stöds för tillfället inte av din webbläsare. Använd tangentbordsgenvägar istället.</translation>
+        <translation>Stöds för närvarande inte av din webbläsare, använd kortkommandon i stället.</translation>
     </message>
     <message>
         <source>Sorry, but we have noticed that your popup-blocker has disabled a window that provides application functionality. You will need to disable popup blocking on this site in order to fully utilize this tool.</source>
-        <translation type="unfinished">Din pop-up-blockerare har blockerat ett fönster innehållandes applikationsfunktionalitet. Du måste inaktivera pop-up-blockeringen på denna sida för att kunna använda verktyget.</translation>
+        <translation>Vi har märkt att din popup-blockerare har stoppat ett fönster som tillhandahåller programfunktioner. Du måste inaktivera popup-blockering på den här webbplatsen för att kunna använda verktyget fullt ut.</translation>
     </message>
     <message>
         <source>Error: Invalid values entered, these are marked in red.</source>
-        <translation type="unfinished">Fel: Ogiltiga värden har markerats i rött.</translation>
+        <translation>Fel: ogiltiga värden har angetts, de är markerade med rött.</translation>
     </message>
     <message>
         <source>More colors</source>
-        <translation type="unfinished">Fler färger</translation>
+        <translation>Fler färger</translation>
     </message>
     <message>
         <source>Alignment</source>
@@ -158,7 +158,7 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Center</translation>
+        <translation>Centrerat</translation>
     </message>
     <message>
         <source>Right</source>
@@ -166,111 +166,111 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Full</source>
-        <translation type="unfinished">Full</translation>
+        <translation>Full</translation>
     </message>
     <message>
         <source>%Y-%m-%d</source>
-        <translation type="unfinished">%Y-%m-%d</translation>
+        <translation>%Y-%m-%d</translation>
     </message>
     <message>
         <source>%H:%M:%S</source>
-        <translation type="unfinished">%H:%M:%S</translation>
+        <translation>%H:%M:%S</translation>
     </message>
     <message>
         <source>Insert date</source>
-        <translation type="unfinished">Infoga datum</translation>
+        <translation>Infoga datum</translation>
     </message>
     <message>
         <source>Insert time</source>
-        <translation type="unfinished">Infoga tid</translation>
+        <translation>Infoga tid</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Skriv ut</translation>
+        <translation>Skriv ut</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished">Förhandsgranska</translation>
+        <translation>Förhandsgranska</translation>
     </message>
     <message>
         <source>Direction left to right</source>
-        <translation type="unfinished">Riktning vänster till höger</translation>
+        <translation>Riktning vänster till höger</translation>
     </message>
     <message>
         <source>Direction right to left</source>
-        <translation type="unfinished">Riktning höger till vänster</translation>
+        <translation>Riktning höger till vänster</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Spara</translation>
+        <translation>Spara</translation>
     </message>
     <message>
         <source>Cancel all changes</source>
-        <translation type="unfinished">Avbryt alla ändringar</translation>
+        <translation>Ångra alla ändringar</translation>
     </message>
     <message>
         <source>Insert non-breaking space character</source>
-        <translation type="unfinished">Infoga icke-brytande mellanrumstecken</translation>
+        <translation>Infoga hårt blanksteg</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation type="unfinished">Sök</translation>
+        <translation>Hitta</translation>
     </message>
     <message>
         <source>Find/Replace</source>
-        <translation type="unfinished">Sök/Ersätt</translation>
+        <translation>Sök/ersätt</translation>
     </message>
     <message>
         <source>Paste as Plain Text</source>
-        <translation type="unfinished">Klistra in som vanlig text</translation>
+        <translation>Klistra in som oformaterad text</translation>
     </message>
     <message>
         <source>Paste from Word</source>
-        <translation type="unfinished">Klistra in från Word</translation>
+        <translation>Klistra in från Word</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation type="unfinished">Välj alla</translation>
+        <translation>Markera allt</translation>
     </message>
     <message>
         <source>Use CTRL+V on your keyboard to paste the text into the window.</source>
-        <translation type="unfinished">Använd Ctrl+V på tangentbordet för att klistra in text i fönstret.</translation>
+        <translation>Tryck på CTRL+V på tangentbordet för att klistra in texten i fönstret.</translation>
     </message>
     <message>
         <source>Keep linebreaks</source>
-        <translation type="unfinished">Behåll radbrytning</translation>
+        <translation>Behåll radbrytningar</translation>
     </message>
     <message>
         <source>Inserts a new table</source>
-        <translation type="unfinished">Infogas som ny tabell</translation>
+        <translation>Infogar en ny tabell</translation>
     </message>
     <message>
         <source>Insert row before</source>
-        <translation type="unfinished">Infoga rad innan</translation>
+        <translation>Infoga rad före</translation>
     </message>
     <message>
         <source>Insert row after</source>
-        <translation type="unfinished">Infoga rad efter</translation>
+        <translation>Infoga rad efter</translation>
     </message>
     <message>
         <source>Delete row</source>
-        <translation type="unfinished">Radera rad</translation>
+        <translation>Ta bort rad</translation>
     </message>
     <message>
         <source>Insert column before</source>
-        <translation type="unfinished">Infoga kolumn innan</translation>
+        <translation>Infoga kolumn före</translation>
     </message>
     <message>
         <source>Insert column after</source>
-        <translation type="unfinished">Infoga kolumn efter</translation>
+        <translation>Infoga kolumn efter</translation>
     </message>
     <message>
         <source>Remove column</source>
-        <translation type="unfinished">Ta bort kolumn</translation>
+        <translation>Ta bort kolumn</translation>
     </message>
     <message>
         <source>Split merged table cells</source>
-        <translation type="unfinished">Dela sammanslagna tabellceller</translation>
+        <translation>Dela sammanfogade tabellceller</translation>
     </message>
     <message>
         <source>Merge table cells</source>
@@ -278,35 +278,35 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Table row properties</source>
-        <translation type="unfinished">Tabellradsegenskaper</translation>
+        <translation>Egenskaper för tabellrad</translation>
     </message>
     <message>
         <source>Table cell properties</source>
-        <translation type="unfinished">Tabellcellegenskaper</translation>
+        <translation>Egenskaper för tabellcell</translation>
     </message>
     <message>
         <source>Table properties</source>
-        <translation type="unfinished">Tabellegenskaper</translation>
+        <translation>Tabellegenskaper</translation>
     </message>
     <message>
         <source>Paste table row before</source>
-        <translation type="unfinished">Klistra in tabellrad innan</translation>
+        <translation>Klistra in tabellrad före</translation>
     </message>
     <message>
         <source>Paste table row after</source>
-        <translation type="unfinished">Klistra in tabellrad efter</translation>
+        <translation>Klistra in tabellrad efter</translation>
     </message>
     <message>
         <source>Cut table row</source>
-        <translation type="unfinished">Klipp ut tabellrad</translation>
+        <translation>Klipp ut tabellrad</translation>
     </message>
     <message>
         <source>Copy table row</source>
-        <translation type="unfinished">Kopiera tabellrad</translation>
+        <translation>Kopiera tabellrad</translation>
     </message>
     <message>
         <source>Delete table</source>
-        <translation type="unfinished">Radera tabellrad</translation>
+        <translation>Ta bort tabell</translation>
     </message>
     <message>
         <source>Row</source>
@@ -330,87 +330,87 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>The changes you made will be lost if you navigate away from this page.</source>
-        <translation type="unfinished">Dina ändringar går förlorade om du lämnar denna sida.</translation>
+        <translation>Ändringarna du har gjort går förlorade om du lämnar den här sidan.</translation>
     </message>
     <message>
         <source>Toggle fullscreen mode</source>
-        <translation type="unfinished">Växla till helskärmsläge</translation>
+        <translation>Växla helskärmsläge</translation>
     </message>
     <message>
         <source>Insert / edit embedded media</source>
-        <translation type="unfinished">Infoga / redigera inbäddad media</translation>
+        <translation>Infoga/redigera inbäddat media</translation>
     </message>
     <message>
         <source>Edit embedded media</source>
-        <translation type="unfinished">Redigera inbäddad media</translation>
+        <translation>Redigera inbäddat media</translation>
     </message>
     <message>
         <source>Document properties</source>
-        <translation type="unfinished">Dokumentegenskaper</translation>
+        <translation>Dokumentegenskaper</translation>
     </message>
     <message>
         <source>Insert predefined template content</source>
-        <translation type="unfinished">Infoga förhandsdefinierat mallinnehåll</translation>
+        <translation>Infoga fördefinierat mallinnehåll</translation>
     </message>
     <message>
         <source>Visual control characters on/off.</source>
-        <translation type="unfinished">Visuella kontrolltecken på/av.</translation>
+        <translation>Visuella kontrolltecken på/av.</translation>
     </message>
     <message>
         <source>Insert page break.</source>
-        <translation type="unfinished">Infoga sidbrytning.</translation>
+        <translation>Infoga sidbrytning.</translation>
     </message>
     <message>
         <source>Styles</source>
-        <translation type="unfinished">Stilar</translation>
+        <translation>Stilar</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished">Format</translation>
+        <translation>Format</translation>
     </message>
     <message>
         <source>Paragraph</source>
-        <translation type="unfinished">Paragraf</translation>
+        <translation>Stycke</translation>
     </message>
     <message>
         <source>Div</source>
-        <translation type="unfinished">Div</translation>
+        <translation>Div</translation>
     </message>
     <message>
         <source>Literal</source>
-        <translation type="unfinished">Citat</translation>
+        <translation>Litteral</translation>
     </message>
     <message>
         <source>Heading 1</source>
-        <translation type="unfinished">Rubrik 1</translation>
+        <translation>Rubrik 1</translation>
     </message>
     <message>
         <source>Heading 2</source>
-        <translation type="unfinished">Rubrik 2</translation>
+        <translation>Rubrik 2</translation>
     </message>
     <message>
         <source>Heading 3</source>
-        <translation type="unfinished">Rubrik 3</translation>
+        <translation>Rubrik 3</translation>
     </message>
     <message>
         <source>Heading 4</source>
-        <translation type="unfinished">Rubrik 4</translation>
+        <translation>Rubrik 4</translation>
     </message>
     <message>
         <source>Heading 5</source>
-        <translation type="unfinished">Rubrik 5</translation>
+        <translation>Rubrik 5</translation>
     </message>
     <message>
         <source>Heading 6</source>
-        <translation type="unfinished">Rubrik 6</translation>
+        <translation>Rubrik 6</translation>
     </message>
     <message>
         <source>Code</source>
-        <translation type="unfinished">Kod</translation>
+        <translation>Kod</translation>
     </message>
     <message>
         <source>Code sample</source>
-        <translation type="unfinished">Kodexempel</translation>
+        <translation>Kodexempel</translation>
     </message>
     <message>
         <source>Definition term </source>
@@ -418,147 +418,147 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Definition description</source>
-        <translation type="unfinished">Definitionsbeskrivning</translation>
+        <translation>Definitionsbeskrivning</translation>
     </message>
     <message>
         <source>Bold (Ctrl+B)</source>
-        <translation type="unfinished">Fetstil (Ctrl+B)</translation>
+        <translation>Fetstil (Ctrl+B)</translation>
     </message>
     <message>
         <source>Italic (Ctrl+I)</source>
-        <translation type="unfinished">Kursiv (Ctrl+I)</translation>
+        <translation>Kursiv (Ctrl+I)</translation>
     </message>
     <message>
         <source>Underline (Ctrl+U)</source>
-        <translation type="unfinished">Understruken (Ctrl+U)</translation>
+        <translation>Understruken (Ctrl+U)</translation>
     </message>
     <message>
         <source>Strikethrough</source>
-        <translation type="unfinished">Genomstruken</translation>
+        <translation>Genomstruken</translation>
     </message>
     <message>
         <source>Align left</source>
-        <translation type="unfinished">Justera vänster</translation>
+        <translation>Vänsterjustera</translation>
     </message>
     <message>
         <source>Align center</source>
-        <translation type="unfinished">Justera centrerat</translation>
+        <translation>Centrera</translation>
     </message>
     <message>
         <source>Align right</source>
-        <translation type="unfinished">Justera höger</translation>
+        <translation>Högerjustera</translation>
     </message>
     <message>
         <source>Align full</source>
-        <translation type="unfinished">Justera full</translation>
+        <translation>Marginaljustera</translation>
     </message>
     <message>
         <source>Unordered list</source>
-        <translation type="unfinished">Osorterad lista</translation>
+        <translation>Punktlista</translation>
     </message>
     <message>
         <source>Ordered list</source>
-        <translation type="unfinished">Sorterad lista</translation>
+        <translation>Numrerad lista</translation>
     </message>
     <message>
         <source>Outdent</source>
-        <translation type="unfinished">Minska indrag</translation>
+        <translation>Minska indrag</translation>
     </message>
     <message>
         <source>Indent</source>
-        <translation type="unfinished">Indrag</translation>
+        <translation>Öka indrag</translation>
     </message>
     <message>
         <source>Undo (Ctrl+Z)</source>
-        <translation type="unfinished">Ångra (Ctrl+Z)</translation>
+        <translation>Ångra (Ctrl+Z)</translation>
     </message>
     <message>
         <source>Redo (Ctrl+Y)</source>
-        <translation type="unfinished">Gör om (Ctrl+Y)</translation>
+        <translation>Gör om (Ctrl+Y)</translation>
     </message>
     <message>
         <source>Insert/edit link</source>
-        <translation type="unfinished">Infoga/redigera länk</translation>
+        <translation>Infoga/redigera länk</translation>
     </message>
     <message>
         <source>Unlink</source>
-        <translation type="unfinished">Ta bort länk</translation>
+        <translation>Ta bort länk</translation>
     </message>
     <message>
         <source>Insert/edit image</source>
-        <translation type="unfinished">Infoga/redigera bild</translation>
+        <translation>Infoga/redigera bild</translation>
     </message>
     <message>
         <source>Insert/edit object</source>
-        <translation type="unfinished">Infoga/rediger objekt</translation>
+        <translation>Infoga/redigera objekt</translation>
     </message>
     <message>
         <source>Insert custom tag</source>
-        <translation type="unfinished">Infoga specialtagg</translation>
+        <translation>Infoga anpassad tagg</translation>
     </message>
     <message>
         <source>Insert literal text</source>
-        <translation type="unfinished">Infoga ett citat</translation>
+        <translation>Infoga literal text</translation>
     </message>
     <message>
         <source>Insert pagebreak</source>
-        <translation type="unfinished">Infoga sidbrytning</translation>
+        <translation>Infoga sidbrytning</translation>
     </message>
     <message>
         <source>Cleanup messy code</source>
-        <translation type="unfinished">Städa upp rörig kod</translation>
+        <translation>Rensa rörig kod</translation>
     </message>
     <message>
         <source>Edit HTML Source</source>
-        <translation type="unfinished">Redigera HTML-källa</translation>
+        <translation>Redigera HTML-källkod</translation>
     </message>
     <message>
         <source>Subscript</source>
-        <translation type="unfinished">Nedsänkt</translation>
+        <translation>Nedsänkt</translation>
     </message>
     <message>
         <source>Superscript</source>
-        <translation type="unfinished">Upphöjd</translation>
+        <translation>Upphöjd</translation>
     </message>
     <message>
         <source>Remove formatting</source>
-        <translation type="unfinished">Ta bort formatering</translation>
+        <translation>Ta bort formatering</translation>
     </message>
     <message>
         <source>Your custom description here</source>
-        <translation type="unfinished">Din anpassade beskrivning här</translation>
+        <translation>Din egen beskrivning här</translation>
     </message>
     <message>
         <source>Insert special character</source>
-        <translation type="unfinished">Infoga specialtecken</translation>
+        <translation>Infoga specialtecken</translation>
     </message>
     <message>
         <source>Toggle guidelines/invisible elements</source>
-        <translation type="unfinished">Växla till riktlinjer/osynliga element</translation>
+        <translation>Växla hjälplinjer/osynliga element</translation>
     </message>
     <message>
         <source>Insert/edit anchor</source>
-        <translation type="unfinished">Infoga/redigera fästpunkt</translation>
+        <translation>Infoga/redigera ankare</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished">Klipp ut</translation>
+        <translation>Klipp ut</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Kopiera</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished">Klistra in</translation>
+        <translation>Klistra in</translation>
     </message>
     <message>
         <source>Image properties</source>
-        <translation type="unfinished">Bildegenskaper</translation>
+        <translation>Bildegenskaper</translation>
     </message>
     <message>
         <source>New document</source>
-        <translation type="unfinished">Nytt dokument</translation>
+        <translation>Nytt dokument</translation>
     </message>
     <message>
         <source>Help</source>
@@ -566,31 +566,31 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Path</source>
-        <translation type="unfinished">Sökväg</translation>
+        <translation>Sökväg</translation>
     </message>
     <message>
         <source>Are you sure you want clear all contents?</source>
-        <translation type="unfinished">Är du säker på att du vill ta bort allt innehåll?</translation>
+        <translation>Vill du verkligen rensa allt innehåll?</translation>
     </message>
     <message>
         <source>Jump to tool buttons - Alt+Q, Jump to editor - Alt-Z, Jump to element path - Alt-X</source>
-        <translation type="unfinished">Gå till verktygsknapparna - Alt+Q, Gå till editor - Alt+Z, Gå till elementsökväg - Alt+X</translation>
+        <translation>Gå till verktygsknapparna - Alt+Q, Gå till redigeraren - Alt-Z, Gå till elementsökvägen - Alt-X</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished">Nästa</translation>
+        <translation>Nästa</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished">Föregående</translation>
+        <translation>Föregående</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation type="unfinished">Välj</translation>
+        <translation>Välj</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished">Typ</translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>About</source>
@@ -606,7 +606,7 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Plugin</source>
-        <translation type="unfinished">Plugin</translation>
+        <translation>Plugin</translation>
     </message>
     <message>
         <source>Author</source>
@@ -618,47 +618,47 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Loaded plugins</source>
-        <translation type="unfinished">Laddade plugin</translation>
+        <translation>Inlästa pluginer</translation>
     </message>
     <message>
         <source>HTML Source Editor</source>
-        <translation type="unfinished">HTML-källeditor</translation>
+        <translation>Redigerare för HTML-källkod</translation>
     </message>
     <message>
         <source>Word wrap</source>
-        <translation type="unfinished">Radbrytning</translation>
+        <translation>Radbrytning</translation>
     </message>
     <message>
         <source>Select a color</source>
-        <translation type="unfinished">Välj en färg</translation>
+        <translation>Välj en färg</translation>
     </message>
     <message>
         <source>Picker</source>
-        <translation type="unfinished">Väljare</translation>
+        <translation>Väljare</translation>
     </message>
     <message>
         <source>Color picker</source>
-        <translation type="unfinished">Färgväljare</translation>
+        <translation>Färgväljare</translation>
     </message>
     <message>
         <source>Palette</source>
-        <translation type="unfinished">Palett</translation>
+        <translation>Palett</translation>
     </message>
     <message>
         <source>Palette colors</source>
-        <translation type="unfinished">Palettfärger</translation>
+        <translation>Palettfärger</translation>
     </message>
     <message>
         <source>Named</source>
-        <translation type="unfinished">Namngiven</translation>
+        <translation>Namngivna</translation>
     </message>
     <message>
         <source>Named colors</source>
-        <translation type="unfinished">Namngivna färger</translation>
+        <translation>Namngivna färger</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Färg</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Name</source>
@@ -666,7 +666,7 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Select special character</source>
-        <translation type="unfinished">Välj specialtecken</translation>
+        <translation>Välj specialtecken</translation>
     </message>
     <message>
         <source>All</source>
@@ -802,7 +802,7 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Alternative text</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternativ text</translation>
     </message>
     <message>
         <source>Description</source>
@@ -830,326 +830,622 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Invalid or missing parameter: %parameter</source>
-        <translation type="unfinished">Ogiltig eller saknad parameter: %parameter</translation>
+        <translation>Ogiltig eller saknad parameter: %parameter</translation>
     </message>
     <message>
         <source>Invalid parameter: %parameter = %value</source>
-        <translation type="unfinished">Ogiltig parameter: %parameter = %value</translation>
+        <translation>Ogiltig parameter: %parameter = %value</translation>
     </message>
     <message>
         <source>this</source>
-        <translation type="unfinished"></translation>
+        <translation>den här</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Överst</translation>
     </message>
     <message>
         <source>Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Nederst</translation>
     </message>
     <message>
         <source>List of possible link types. Link types that use the &apos;://&apos; format are technically called protocols.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista över möjliga länktyper. Länktyper som använder formatet &apos;://&apos; kallas tekniskt sett protokoll.</translation>
     </message>
     <message>
         <source>eznode</source>
-        <translation type="unfinished"></translation>
+        <translation>eznode</translation>
     </message>
     <message>
         <source>ezobject</source>
-        <translation type="unfinished"></translation>
+        <translation>ezobject</translation>
     </message>
     <message>
         <source>Ftp</source>
-        <translation type="unfinished"></translation>
+        <translation>Ftp</translation>
     </message>
     <message>
         <source>Http</source>
-        <translation type="unfinished"></translation>
+        <translation>Http</translation>
     </message>
     <message>
         <source>Https</source>
-        <translation type="unfinished"></translation>
+        <translation>Https</translation>
     </message>
     <message>
         <source>Mail</source>
-        <translation type="unfinished"></translation>
+        <translation>E-post</translation>
     </message>
     <message>
         <source>Anchor</source>
-        <translation type="unfinished"></translation>
+        <translation>Ankare</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Övrigt</translation>
     </message>
     <message>
         <source>Id not valid!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogiltigt id!</translation>
     </message>
     <message>
         <source>The url the link points to, starts with link type (like http://).</source>
-        <translation type="unfinished"></translation>
+        <translation>URL:en som länken pekar på, börjar med länktypen (t.ex. http://).</translation>
     </message>
     <message>
         <source>Class are often used to give different design or appearance, either by using a different template, style or both.</source>
-        <translation type="unfinished"></translation>
+        <translation>Klasser används ofta för att ge en annan design eller ett annat utseende, antingen genom en annan mall, stil eller båda.</translation>
     </message>
     <message>
         <source>Lets you specify the target window for the link, if any.</source>
-        <translation type="unfinished"></translation>
+        <translation>Här kan du ange målfönstret för länken, om något.</translation>
     </message>
     <message>
         <source>The title on the (x)html tag, used by screen readers, and to give better explanation like this one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Titeln på (x)html-taggen, används av skärmläsare och för att ge en bättre förklaring som den här.</translation>
     </message>
     <message>
         <source>To set the width of the tag, either as percentage by appending % or as pixel size by just using a number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anger taggens bredd, antingen i procent genom att lägga till % eller i pixlar genom att bara ange ett tal.</translation>
     </message>
     <message>
         <source>The unique identifier used for the element in the (x)html output, used by style sheets and/or anchors.</source>
-        <translation type="unfinished"></translation>
+        <translation>Den unika identifierare som används för elementet i (x)html-utdata, används av formatmallar och/eller ankare.</translation>
     </message>
     <message>
         <source>New %tag_name tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny %tag_name-tagg</translation>
     </message>
     <message>
         <source>Edit %tag_name tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera %tag_name-tagg</translation>
     </message>
     <message>
         <source>Object</source>
-        <translation type="unfinished"></translation>
+        <translation>Objekt</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation type="unfinished"></translation>
+        <translation>Nod</translation>
     </message>
     <message>
         <source>Relation</source>
-        <translation type="unfinished"></translation>
+        <translation>Relation</translation>
     </message>
     <message>
         <source>Switch embed file</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt inbäddad fil</translation>
     </message>
     <message>
         <source>Edit file</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera fil</translation>
     </message>
     <message>
         <source>Edit image</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera bild</translation>
     </message>
     <message>
         <source>Edit object</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera objekt</translation>
     </message>
     <message>
         <source>[default]</source>
-        <translation type="unfinished"></translation>
+        <translation>[standard]</translation>
     </message>
     <message>
         <source>New window (_blank)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nytt fönster (_blank)</translation>
     </message>
     <message>
         <source>Table cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabellcell</translation>
     </message>
     <message>
         <source>Table header</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabellrubrik</translation>
     </message>
     <message>
         <source>Upload new File</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladda upp ny fil</translation>
     </message>
     <message>
         <source>There are no related files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det finns inga relaterade filer.</translation>
     </message>
     <message>
         <source>Upload new Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladda upp ny bild</translation>
     </message>
     <message>
         <source>Tags</source>
-        <translation type="unfinished"></translation>
+        <translation>Taggar</translation>
     </message>
     <message>
         <source>There are no related images.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det finns inga relaterade bilder.</translation>
     </message>
     <message>
         <source>Upload new Object</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladda upp nytt objekt</translation>
     </message>
     <message>
         <source>Run spell checking</source>
-        <translation type="unfinished"></translation>
+        <translation>Kör stavningskontroll</translation>
     </message>
     <message>
         <source>ieSpell not detected. Do you want to install it now?</source>
-        <translation type="unfinished"></translation>
+        <translation>ieSpell hittades inte. Vill du installera det nu?</translation>
     </message>
     <message>
         <source>Horizontale rule</source>
-        <translation type="unfinished"></translation>
+        <translation>Horisontell linje</translation>
     </message>
     <message>
         <source>Emotions</source>
-        <translation type="unfinished"></translation>
+        <translation>Känslor</translation>
     </message>
     <message>
         <source>Insert emotion</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga känsla</translation>
     </message>
     <message>
         <source>Cool</source>
-        <translation type="unfinished"></translation>
+        <translation>Cool</translation>
     </message>
     <message>
         <source>Cry</source>
-        <translation type="unfinished"></translation>
+        <translation>Gråter</translation>
     </message>
     <message>
         <source>Embarassed</source>
-        <translation type="unfinished"></translation>
+        <translation>Generad</translation>
     </message>
     <message>
         <source>Foot in mouth</source>
-        <translation type="unfinished"></translation>
+        <translation>Fot i munnen</translation>
     </message>
     <message>
         <source>Frown</source>
-        <translation type="unfinished"></translation>
+        <translation>Rynkar pannan</translation>
     </message>
     <message>
         <source>Innocent</source>
-        <translation type="unfinished"></translation>
+        <translation>Oskyldig</translation>
     </message>
     <message>
         <source>Kiss</source>
-        <translation type="unfinished"></translation>
+        <translation>Puss</translation>
     </message>
     <message>
         <source>Laughing</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrattar</translation>
     </message>
     <message>
         <source>Money mouth</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengar i munnen</translation>
     </message>
     <message>
         <source>Sealed</source>
-        <translation type="unfinished"></translation>
+        <translation>Förseglad</translation>
     </message>
     <message>
         <source>Smile</source>
-        <translation type="unfinished"></translation>
+        <translation>Leende</translation>
     </message>
     <message>
         <source>Surprised</source>
-        <translation type="unfinished"></translation>
+        <translation>Förvånad</translation>
     </message>
     <message>
         <source>Tongue out</source>
-        <translation type="unfinished"></translation>
+        <translation>Räcker ut tungan</translation>
     </message>
     <message>
         <source>Undecided</source>
-        <translation type="unfinished"></translation>
+        <translation>Obeslutsam</translation>
     </message>
     <message>
         <source>Wink</source>
-        <translation type="unfinished"></translation>
+        <translation>Blinkning</translation>
     </message>
     <message>
         <source>Yell</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriker</translation>
     </message>
     <message>
         <source>Paste is now in plain text mode. Click again to toggle back to regular paste mode. After you paste something you will be returned to regular paste mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inklistring sker nu som oformaterad text. Klicka igen för att växla tillbaka till vanlig inklistring. När du har klistrat in något återgår du till vanlig inklistring.</translation>
     </message>
     <message>
         <source>Paste is now in plain text mode. Click again to toggle back to regular paste mode.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inklistring sker nu som oformaterad text. Klicka igen för att växla tillbaka till vanlig inklistring.</translation>
     </message>
     <message>
         <source>Toggle spellchecker</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla stavningskontroll</translation>
     </message>
     <message>
         <source>Spellchecker settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningar för stavningskontroll</translation>
     </message>
     <message>
         <source>Ignore word</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorera ord</translation>
     </message>
     <message>
         <source>Ignore all</source>
-        <translation type="unfinished"></translation>
+        <translation>Ignorera alla</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Språk</translation>
     </message>
     <message>
         <source>Please wait...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänta...</translation>
     </message>
     <message>
         <source>Suggestions</source>
-        <translation type="unfinished"></translation>
+        <translation>Förslag</translation>
     </message>
     <message>
         <source>No suggestions</source>
-        <translation type="unfinished"></translation>
+        <translation>Inga förslag</translation>
     </message>
     <message>
         <source>No misspellings found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inga felstavningar hittades.</translation>
     </message>
     <message>
         <source>Definition term</source>
-        <translation type="unfinished"></translation>
+        <translation>Definitionsterm</translation>
     </message>
     <message>
         <source>Insert/edit file</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga/redigera fil</translation>
     </message>
     <message>
         <source>Insert horizontal ruler</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga horisontell linje</translation>
     </message>
     <message>
         <source>Use left and right arrows to navigate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd vänster- och högerpilarna för att navigera.</translation>
+    </message>
+    <message>
+        <source>Custom tag controls</source>
+        <translation>Kontroller för anpassad tagg</translation>
+    </message>
+    <message>
+        <source>Move the custom tag up</source>
+        <translation>Flytta upp den anpassade taggen</translation>
+    </message>
+    <message>
+        <source>Move the custom tag down</source>
+        <translation>Flytta ned den anpassade taggen</translation>
+    </message>
+    <message>
+        <source>Edit the custom tag</source>
+        <translation>Redigera den anpassade taggen</translation>
+    </message>
+    <message>
+        <source>Remove the custom tag</source>
+        <translation>Ta bort den anpassade taggen</translation>
+    </message>
+    <message>
+        <source>Example</source>
+        <translation>Exempel</translation>
+    </message>
+    <message>
+        <source>Example of the tag %tag_name</source>
+        <translation>Exempel på taggen %tag_name</translation>
+    </message>
+    <message>
+        <source>TinyMCE 3</source>
+        <translation>TinyMCE 3</translation>
+    </message>
+    <message>
+        <source>TinyMCE 8</source>
+        <translation>TinyMCE 8</translation>
+    </message>
+    <message>
+        <source>Switch to the editor %engine</source>
+        <translation>Växla till redigeraren %engine</translation>
+    </message>
+    <message>
+        <source>This file type is not accepted by the editor: %file</source>
+        <translation>Den här filtypen accepteras inte av redigeraren: %file</translation>
+    </message>
+    <message>
+        <source>Online editor</source>
+        <translation>Online-editor</translation>
+    </message>
+    <message>
+        <source>The editor of your user was saved.</source>
+        <translation>Editorn för din användare har sparats.</translation>
+    </message>
+    <message>
+        <source>This editor is not available.</source>
+        <translation>Den här redigeraren är inte tillgänglig.</translation>
+    </message>
+    <message>
+        <source>Editor for text fields</source>
+        <translation>Editor för textfält</translation>
+    </message>
+    <message>
+        <source>Default of this site (%engine)</source>
+        <translation>Webbplatsens standard (%engine)</translation>
+    </message>
+    <message>
+        <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
+        <translation>Används nu: %engine. Sparas bara för din användare; texten i ditt innehåll är densamma i alla redigerare.</translation>
+    </message>
+    <message>
+        <source>Editor engines</source>
+        <translation>Redigerarmotorer</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Redigerare</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Tillgänglig</translation>
+    </message>
+    <message>
+        <source>Available, in use now</source>
+        <translation>Tillgänglig, används nu</translation>
+    </message>
+    <message>
+        <source>Not available: its files are missing</source>
+        <translation>Inte tillgänglig: dess filer saknas</translation>
+    </message>
+    <message>
+        <source>Cannot be used: %reason</source>
+        <translation>Kan inte användas: %reason</translation>
+    </message>
+    <message>
+        <source>The edit form also has a button to switch to each of the other available editors.</source>
+        <translation>Redigeringsformuläret har också en knapp för att växla till var och en av de andra tillgängliga redigerarna.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 3.5, the editor of every installation.</source>
+        <translation>Onlineredigeraren på TinyMCE 3.5, redigeraren i alla installationer.</translation>
+    </message>
+    <message>
+        <source>The Online Editor on TinyMCE 8 (GPL), with the dialogs of the Online Editor.</source>
+        <translation>Onlineredigeraren på TinyMCE 8 (GPL), med onlineredigerarens dialogrutor.</translation>
+    </message>
+    <message>
+        <source>Switch to the new editor (TinyMCE 8)</source>
+        <translation>Växla till den nya redigeraren (TinyMCE 8)</translation>
+    </message>
+    <message>
+        <source>Switch to the previous editor (TinyMCE 3)</source>
+        <translation>Växla till den tidigare redigeraren (TinyMCE 3)</translation>
+    </message>
+    <message>
+        <source>The text is kept, the choice is saved for your user.</source>
+        <translation>Texten behålls, valet sparas för din användare.</translation>
+    </message>
+    <message>
+        <source>Go back</source>
+        <translation>Gå tillbaka</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>inga</translation>
+    </message>
+    <message>
+        <source>hidden</source>
+        <translation>dold</translation>
+    </message>
+    <message>
+        <source>dotted</source>
+        <translation>prickad</translation>
+    </message>
+    <message>
+        <source>dashed</source>
+        <translation>streckad</translation>
+    </message>
+    <message>
+        <source>solid</source>
+        <translation>heldragen</translation>
+    </message>
+    <message>
+        <source>double</source>
+        <translation>dubbel</translation>
+    </message>
+    <message>
+        <source>groove</source>
+        <translation>fåra</translation>
+    </message>
+    <message>
+        <source>ridge</source>
+        <translation>kant</translation>
+    </message>
+    <message>
+        <source>inset</source>
+        <translation>infälld</translation>
+    </message>
+    <message>
+        <source>outset</source>
+        <translation>utfälld</translation>
+    </message>
+    <message>
+        <source>Size inputs for all 4 edges</source>
+        <translation>Storleksfält för alla 4 kanter</translation>
+    </message>
+    <message>
+        <source>Tel</source>
+        <translation>Tel</translation>
+    </message>
+    <message>
+        <source>Click to select table size</source>
+        <translation>Klicka för att välja tabellstorlek</translation>
+    </message>
+    <message>
+        <source>The address is not a valid http or https URL.</source>
+        <translation>Adressen är inte en giltig http- eller https-URL.</translation>
+    </message>
+    <message>
+        <source>Only http and https addresses can be fetched.</source>
+        <translation>Endast http- och https-adresser kan hämtas.</translation>
+    </message>
+    <message>
+        <source>Addresses with a user name or password are not accepted.</source>
+        <translation>Adresser med användarnamn eller lösenord accepteras inte.</translation>
+    </message>
+    <message>
+        <source>The address points to a host that is not reachable from the server for this purpose.</source>
+        <translation>Adressen pekar på en värd som inte kan nås från servern för det här ändamålet.</translation>
+    </message>
+    <message>
+        <source>The host name %host could not be resolved.</source>
+        <translation>Värdnamnet %host kunde inte slås upp.</translation>
+    </message>
+    <message>
+        <source>The address redirects too often.</source>
+        <translation>Adressen omdirigerar för många gånger.</translation>
+    </message>
+    <message>
+        <source>The server answered with the status %status, no file was fetched.</source>
+        <translation>Servern svarade med status %status, ingen fil hämtades.</translation>
+    </message>
+    <message>
+        <source>The server sent an empty file.</source>
+        <translation>Servern skickade en tom fil.</translation>
+    </message>
+    <message>
+        <source>The content of the file is not of the type its name says: %file</source>
+        <translation>Filens innehåll är inte av den typ som namnet anger: %file</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Filen kunde inte hämtas.</translation>
+    </message>
+    <message>
+        <source>Upload from a URL is switched off.</source>
+        <translation>Uppladdning från URL är avstängd.</translation>
+    </message>
+    <message>
+        <source>The file is larger than the allowed %size.</source>
+        <translation>Filen är större än tillåtna %size.</translation>
+    </message>
+    <message>
+        <source>The server did not answer in time.</source>
+        <translation>Servern svarade inte i tid.</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Källa</translation>
+    </message>
+    <message>
+        <source>From your computer</source>
+        <translation>Från din dator</translation>
+    </message>
+    <message>
+        <source>From a URL</source>
+        <translation>Från en URL</translation>
+    </message>
+    <message>
+        <source>Address of the file (URL)</source>
+        <translation>Filens adress (URL)</translation>
+    </message>
+    <message>
+        <source>The server fetches the file from this address.</source>
+        <translation>Servern hämtar filen från den här adressen.</translation>
+    </message>
+    <message>
+        <source>Upload from URL</source>
+        <translation>Ladda upp från URL</translation>
+    </message>
+    <message>
+        <source>Please enter the address of a file.</source>
+        <translation>Ange adressen till en fil.</translation>
+    </message>
+    <message>
+        <source>Please enter a valid http or https address without user name and password.</source>
+        <translation>Ange en giltig http- eller https-adress utan användarnamn och lösenord.</translation>
+    </message>
+    <message>
+        <source>required</source>
+        <translation>krävs</translation>
     </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>
     <message>
         <source>Object %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Objekt %1 finns inte.</translation>
     </message>
     <message>
         <source>Node %1 does not exist.</source>
-        <translation type="unfinished">Nod %1 finns inte.</translation>
+        <translation>Nod %1 finns inte.</translation>
     </message>
     <message>
         <source>Node &amp;apos;%1&amp;apos; does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Noden &amp;apos;%1&amp;apos; finns inte.</translation>
     </message>
     <message>
         <source>Some objects used in embed(-inline) tags have been deleted and are no longer available.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vissa objekt som används i embed(-inline)-taggar har tagits bort och är inte längre tillgängliga.</translation>
+    </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target object does not exist.</source>
+        <translation>Ogiltig länk: &quot;%1&quot;. Målobjektet finns inte.</translation>
+    </message>
+    <message>
+        <source>Invalid link: &quot;%1&quot;. Target node does not exist.</source>
+        <translation>Ogiltig länk: &quot;%1&quot;. Målnoden finns inte.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target (%2) no longer exists, not even in the trash. Remove the link or choose a new target.</source>
+        <translation>Länken &quot;%1&quot; kan inte sparas: dess mål (%2) finns inte längre, inte ens i papperskorgen. Ta bort länken eller välj ett nytt mål.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target (%2) is in the trash. Remove the link or choose a new target.</source>
+        <translation>Länken &quot;%1&quot; kan inte sparas: dess mål (%2) ligger i papperskorgen. Ta bort länken eller välj ett nytt mål.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target &quot;%2&quot; (%3), located at %4, was moved to the trash on %6. Remove the link or choose a new target. (Link: %5)</source>
+        <translation>Länken &quot;%1&quot; kan inte sparas: dess mål &quot;%2&quot; (%3), som låg på %4, flyttades till papperskorgen %6. Ta bort länken eller välj ett nytt mål. (Länk: %5)</translation>
+    </message>
+    <message>
+        <source>The link &quot;%1&quot; cannot be saved: its target &quot;%2&quot; (%3), located at %4, was moved to the trash. Remove the link or choose a new target. (Link: %5)</source>
+        <translation>Länken &quot;%1&quot; kan inte sparas: dess mål &quot;%2&quot; (%3), som låg på %4, flyttades till papperskorgen. Ta bort länken eller välj ett nytt mål. (Länk: %5)</translation>
+    </message>
+    <message>
+        <source>Restoring the target from the trash does not repair the link, because the restored object gets a new location: set the link again afterwards, or link to the object instead of its location.</source>
+        <translation>Att återställa målet från papperskorgen reparerar inte länken, eftersom det återställda objektet får en ny plats: ange länken igen efteråt, eller länka till objektet i stället för till dess plats.</translation>
+    </message>
+    <message>
+        <source>Using scripts in links is not allowed, '%1' has been removed</source>
+        <translation>Skript i länkar är inte tillåtna, &apos;%1&apos; har tagits bort</translation>
     </message>
 </context>
 <context>
@@ -1160,11 +1456,11 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Make the selected text &lt;b&gt;bold&lt;/b&gt;. If the selected text is &lt;b&gt;bold&lt;/b&gt; already, this button will remove the formating.</source>
-        <translation>Formatera vald text till fetstil. Om vald text redan är fetstil används knappen för att ta bort formateringen.</translation>
+        <translation>Gör den markerade texten &lt;b&gt;fet&lt;/b&gt;. Om den markerade texten redan är &lt;b&gt;fet&lt;/b&gt; tar den här knappen bort formateringen.</translation>
     </message>
     <message>
         <source>Make the selected text &lt;i&gt;italic&lt;/i&gt;. If the selected text is &lt;i&gt;italic&lt;/i&gt; already, this button will remove the formating.</source>
-        <translation>Formatera vald text till kursiv. Om vald text redan är kursiv används knappen för att ta bort formateringen.</translation>
+        <translation>Gör den markerade texten &lt;i&gt;kursiv&lt;/i&gt;. Om den markerade texten redan är &lt;i&gt;kursiv&lt;/i&gt; tar den här knappen bort formateringen.</translation>
     </message>
     <message>
         <source>Make the selected text &lt;u&gt;underline&lt;/u&gt;. This button is only enabled if you have a custom tag named underline, template code to handle underline custom tags is not included in Online Editor.</source>
@@ -1236,11 +1532,11 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Delete the currently selected table.</source>
-        <translation>Radera den valda tabellen.</translation>
+        <translation>Ta bort den markerade tabellen.</translation>
     </message>
     <message>
         <source>Delete the current column.</source>
-        <translation>Radera den valda kolumnen.</translation>
+        <translation>Ta bort den aktuella kolumnen.</translation>
     </message>
     <message>
         <source>Insert a column to the left of the current cell.</source>
@@ -1248,7 +1544,7 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Delete the current row.</source>
-        <translation>Radera markerad rad.</translation>
+        <translation>Ta bort den aktuella raden.</translation>
     </message>
     <message>
         <source>Insert a row bellow the current row.</source>
@@ -1288,7 +1584,7 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Tips &amp;amp; Tricks</source>
-        <translation>Tips &amp; Tricks</translation>
+        <translation>Tips &amp;amp; tricks</translation>
     </message>
     <message>
         <source>You can adjust the height of the editor by draging the bottom right corner of the editor.</source>
@@ -1320,212 +1616,212 @@ Vill du har mer information om detta?</translation>
     </message>
     <message>
         <source>Toggle &lt;u&gt;underline&lt;/u&gt; style on the selected text. This button is only enabled if you have a custom tag named underline.</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla &lt;u&gt;understruken&lt;/u&gt; stil på den markerade texten. Knappen är bara aktiverad om du har en anpassad tagg som heter underline.</translation>
     </message>
     <message>
         <source>Toggle &lt;sub&gt;subscript&lt;/sub&gt; style on the selected text. This button is only enabled if you have a custom tag named subscript, template code to handle subscript custom tags is not included in Online Editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla &lt;sub&gt;nedsänkt&lt;/sub&gt; stil på den markerade texten. Knappen är bara aktiverad om du har en anpassad tagg som heter subscript; mallkod för att hantera anpassade subscript-taggar ingår inte i onlineredigeraren.</translation>
     </message>
     <message>
         <source>Toggle &lt;sup&gt;superscript&lt;/sup&gt; style on the selected text. This button is only enabled if you have a custom tag named superscript, template code to handle superscript custom tags is not included in Online Editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla &lt;sup&gt;upphöjd&lt;/sup&gt; stil på den markerade texten. Knappen är bara aktiverad om du har en anpassad tagg som heter superscript; mallkod för att hantera anpassade superscript-taggar ingår inte i onlineredigeraren.</translation>
     </message>
     <message>
         <source>Toggle left align text, or float block content to the left.</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla vänsterjustering av text, eller låt blockinnehåll flyta till vänster.</translation>
     </message>
     <message>
         <source>Toggle center align text, or float block content to the center (Same as not aligned by default).</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla centrering av text, eller låt blockinnehåll flyta till mitten (samma som ingen justering som standard).</translation>
     </message>
     <message>
         <source>Toggle right align text, or float block content to the right.</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla högerjustering av text, eller låt blockinnehåll flyta till höger.</translation>
     </message>
     <message>
         <source>Toggle justify text, stretches the lines so that each line has equal width.</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla marginaljustering av text; raderna sträcks ut så att alla rader blir lika breda.</translation>
     </message>
     <message>
         <source>Insert an file from the related file list, upload a new file, search for an existing file or browse for it. To upload a local file, click &quot;Upload new&quot; button choose the local file, specify the name of the new file, choose placement from list and then click &quot;Upload&quot; button. This button is not enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga en fil från listan över relaterade filer, ladda upp en ny fil, sök efter en befintlig fil eller bläddra efter den. Om du vill ladda upp en lokal fil klickar du på knappen &quot;Ladda upp ny&quot;, väljer den lokala filen, anger namnet på den nya filen, väljer placering i listan och klickar sedan på knappen &quot;Ladda upp&quot;. Knappen är inte aktiverad som standard.</translation>
     </message>
     <message>
         <source>Allows you to spellcheck your text using google api or other depending on ezoe.ini settings. This button is not enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Här kan du stavningskontrollera texten med Google API eller annat beroende på inställningarna i ezoe.ini. Knappen är inte aktiverad som standard.</translation>
     </message>
     <message>
         <source>Find a string or a word in your text. This button is not enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök efter en sträng eller ett ord i texten. Knappen är inte aktiverad som standard.</translation>
     </message>
     <message>
         <source>Replace a string or a word in your text. This button is not enabled by default.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ersätt en sträng eller ett ord i texten. Knappen är inte aktiverad som standard.</translation>
     </message>
     <message>
         <source>Dialog to paste text from word, the dialog will handle cleaning the content from word.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogruta för att klistra in text från Word; dialogrutan rensar innehållet från Word.</translation>
     </message>
     <message>
         <source>Browse for a node / object in your bookmarks.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bläddra efter en nod/ett objekt bland dina bokmärken.</translation>
     </message>
     <message>
         <source>You can switch text style from paragraph to header using keybord shortcut CTRL+1 to 6, and back to paragraph using CTRL+7</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan växla textstil från stycke till rubrik med kortkommandot CTRL+1 till 6, och tillbaka till stycke med CTRL+7</translation>
     </message>
 </context>
 <context>
     <name>design/standard/ezoe/searchreplace</name>
     <message>
         <source>Find again</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök igen</translation>
     </message>
     <message>
         <source>The search has been completed. The search string could not be found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sökningen är klar. Söksträngen hittades inte.</translation>
     </message>
     <message>
         <source>Find</source>
-        <translation type="unfinished">Sök</translation>
+        <translation>Hitta</translation>
     </message>
     <message>
         <source>Find/Replace</source>
-        <translation type="unfinished">Sök/Ersätt</translation>
+        <translation>Sök/ersätt</translation>
     </message>
     <message>
         <source>All occurrences of the search string were replaced.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla förekomster av söksträngen ersattes.</translation>
     </message>
     <message>
         <source>Find what</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök efter</translation>
     </message>
     <message>
         <source>Replace with</source>
-        <translation type="unfinished"></translation>
+        <translation>Ersätt med</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Riktning</translation>
     </message>
     <message>
         <source>Up</source>
-        <translation type="unfinished"></translation>
+        <translation>Upp</translation>
     </message>
     <message>
         <source>Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Ned</translation>
     </message>
     <message>
         <source>Match case</source>
-        <translation type="unfinished"></translation>
+        <translation>Matcha skiftläge</translation>
     </message>
     <message>
         <source>Find next</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök nästa</translation>
     </message>
     <message>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Ersätt</translation>
     </message>
     <message>
         <source>Replace all</source>
-        <translation type="unfinished"></translation>
+        <translation>Ersätt alla</translation>
     </message>
 </context>
 <context>
     <name>design/standard/ezoe/validator</name>
     <message>
         <source>&amp;quot;%label&amp;quot; is required and must have a value</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;quot;%label&amp;quot; är obligatoriskt och måste ha ett värde</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be a valid number</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;quot;%label&amp;quot; måste vara ett giltigt tal</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be a valid integer number</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;quot;%label&amp;quot; måste vara ett giltigt heltal</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be a valid absolute url address</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;quot;%label&amp;quot; måste vara en giltig absolut URL-adress</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be a valid email address</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;quot;%label&amp;quot; måste vara en giltig e-postadress</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be a valid css size/unit value</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;quot;%label&amp;quot; måste vara ett giltigt CSS-storleks-/enhetsvärde</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be a valid html element id</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;quot;%label&amp;quot; måste vara ett giltigt id för ett HTML-element</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be higher then %min</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;quot;%label&amp;quot; måste vara större än %min</translation>
     </message>
     <message>
         <source>&amp;quot;%label&amp;quot; must be lower then %max</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;quot;%label&amp;quot; måste vara mindre än %max</translation>
     </message>
 </context>
 <context>
     <name>design/standard/ezoe/wai</name>
     <message>
         <source>Upload file from your local machine.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladda upp en fil från din lokala dator.</translation>
     </message>
     <message>
         <source>Search for content already in Exponential.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök efter innehåll som redan finns i Exponential.</translation>
     </message>
     <message>
         <source>Browse the content tree in Exponential.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bläddra i innehållsträdet i Exponential.</translation>
     </message>
     <message>
         <source>Select or browse content among your personal Exponential bookmarks.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj eller bläddra bland innehåll i dina personliga bokmärken i Exponential.</translation>
     </message>
     <message>
         <source>Name for the uploaded object, filename is used if none is specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Namn för det uppladdade objektet; filnamnet används om inget anges.</translation>
     </message>
     <message>
         <source>Choose file to upload from your local machine.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj en fil att ladda upp från din lokala dator.</translation>
     </message>
     <message>
         <source>Lets you specify where in Exponential to store the uploaded object.</source>
-        <translation type="unfinished"></translation>
+        <translation>Här anger du var i Exponential det uppladdade objektet ska sparas.</translation>
     </message>
     <message>
         <source>Alternative text for the image, lets internet clients know what kind of image this is without dowloading it or actually seeing it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternativ text för bilden; den talar om för internetklienter vilken sorts bild det är utan att de behöver ladda ner eller faktiskt se den.</translation>
     </message>
     <message>
         <source>Caption for a image is usually shown bellow it as a description to the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>En bildtext visas vanligen under bilden som en beskrivning av den.</translation>
     </message>
     <message>
         <source>Description to the file your uploading, so internet clients can read more about it before they decide to download it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Beskrivning av filen du laddar upp, så att internetklienter kan läsa mer om den innan de bestämmer sig för att ladda ner den.</translation>
     </message>
     <message>
         <source>Enter the word you want to search for here, for instance the name of the content you are looking for.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ange ordet du vill söka efter här, till exempel namnet på innehållet du letar efter.</translation>
     </message>
     <message>
         <source>Lets you limit the content type your searching for, by limiting the Exponential content classes that are returned in the search result.</source>
-        <translation type="unfinished"></translation>
+        <translation>Här kan du begränsa vilken typ av innehåll du söker efter, genom att begränsa vilka innehållsklasser i Exponential som returneras i sökresultatet.</translation>
     </message>
     <message>
         <source>Tags, aka Keywords are a comma separated list of words thats categorizes the content.</source>
-        <translation type="unfinished"></translation>
+        <translation>Taggar, även kallade nyckelord, är en kommaseparerad lista med ord som kategoriserar innehållet.</translation>
     </message>
 </context>
 <context>
@@ -1550,21 +1846,29 @@ Vill du har mer information om detta?</translation>
     <name>kernel/classes/datatypes</name>
     <message>
         <source>Content required</source>
-        <translation type="unfinished"></translation>
+        <translation>Innehåll krävs</translation>
     </message>
 </context>
 <context>
     <name>kernel/classes/datatypes/ezxmltext</name>
     <message>
         <source>Invalid e-mail address: &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogiltig e-postadress: &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Class &apos;%1&apos; is not allowed for element &amp;lt;%2&amp;gt; (check content.ini).</source>
+        <translation>Klassen &apos;%1&apos; är inte tillåten för elementet &amp;lt;%2&amp;gt; (kontrollera content.ini).</translation>
+    </message>
+    <message>
+        <source>Required attribute &apos;%1&apos; is not presented in tag &amp;lt;%2&amp;gt;.</source>
+        <translation>Det obligatoriska attributet &apos;%1&apos; finns inte i taggen &amp;lt;%2&amp;gt;.</translation>
     </message>
 </context>
 <context>
     <name>kernel/content</name>
     <message>
         <source>Top Level Nodes</source>
-        <translation type="unfinished"></translation>
+        <translation>Noder på toppnivå</translation>
     </message>
 </context>
 </TS>

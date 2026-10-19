@@ -70,5 +70,5 @@ your version before writing facet templates. The online editor's search dialogs 
 
 - [Site search](site-search.md)
 - [Server control commands](../../../features/6.0/web-server-and-solr-commands.md)
-- Scaling applications
+- [Scaling applications](../app-creators/scaling-applications.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -70,7 +70,7 @@ Extensions add datatypes; they register them in their own settings. Examples doc
 [enhancedezbinaryfile](../../../features/6.0/extensions/enhancedezbinaryfile.md),
 [ezgmaplocation](../../../features/6.0/extensions/ezgmaplocation.md) (a map location),
 [ezstarrating](../../../features/6.0/extensions/ezstarrating.md). A datatype of your own is an application
-creator's task (Writing a custom datatype).
+creator's task ([Writing a custom datatype](../app-creators/custom-datatypes.md)).
 
 ## Showing a field in a template
 
@@ -102,5 +102,5 @@ value, read `.content` or test `.has_content`:
 - [Designing your content model](designing-your-content-model.md)
 - [Relations and content reuse](relations-and-reuse.md)
 - [Images and image variations](images-and-image-variations.md)
-- The datatype life cycle
+- [The datatype life cycle](../app-creators/datatype-lifecycle.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
