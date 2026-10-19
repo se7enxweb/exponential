@@ -12,6 +12,8 @@ type: help
 This page is for designers who show "where am I" above the content. The path is already in `$module_result.path`;
 the breadcrumb template turns it into links.
 
+![An article on the public site in the media design, with the site's header above it](../../images/designers/site-breadcrumb.webp)
+
 ## Contents
 
 1. [Markup](#markup)

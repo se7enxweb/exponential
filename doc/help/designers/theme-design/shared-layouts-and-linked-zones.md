@@ -26,6 +26,8 @@ change them in one place. The layouts editor does this with **shared layouts**.
   in place of its own.
 - Edit the shared layout, publish, and every page that links to it follows.
 
+![Layouts, Shared layouts: the layouts other layouts link zones to, such as the header and footer](../../images/layouts/shared-layouts.webp)
+
 On the demonstration installation the "Header / Footer" and "Prefooter" layouts are shared and linked from the other
 layouts (layout type `layout_2`, with zones `header`, `post_header`, `main`, `pre_footer`, `footer`).
 

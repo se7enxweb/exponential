@@ -20,8 +20,9 @@
  *
  * The index is cached in var/<site>/cache/exphelp/index-<signature>.php (a var_export file, so OPcache keeps it), and
  * the allowlist in allowlist-<stamp>.php. The signature covers the git index and manifest (files added or removed),
- * the size and time of every listed file (files changed) and the settings, so a stale index is never used. With
- * [IndexSettings] StatFiles=disabled the files are not looked at on each request: a changed page is then picked up
+ * the size and time of every listed file (files changed) and the settings, so a stale index is never used. The look
+ * at every file is reused for [IndexSettings] StatFilesInterval seconds by every process (signature.php in the cache
+ * directory), so an edited page shows within that time. With [IndexSettings] StatFiles=disabled the files are not looked at on each request: a changed page is then picked up
  * by "./console exp:help index" or the next change of the git index (a deploy). When git can be run, the build also
  * reads the history of the roots once ("git log"): the date of each page's last change and the latest changes for
  * the dashboard ([IndexSettings] GitHistory=disabled leaves it out).
@@ -67,6 +68,15 @@ class expHelpDocumentIndex
     /** @var bool whether signature() looks at every file */
     protected $statFiles;
 
+    /** @var int seconds for which the files' signature, once taken, is reused by every process (0: never) */
+    protected $statInterval;
+
+    /** @var bool whether the next signature() looks at the files whatever was checked before (rebuild()) */
+    protected $statNow = false;
+
+    /** The file in the cache directory that holds the last signature taken from the files and when */
+    const CHECKED_SIGNATURE_FILE = 'signature.php';
+
     /** @var bool whether the build reads the git history */
     protected $gitHistory;
 
@@ -83,7 +93,8 @@ class expHelpDocumentIndex
      * @param expHelpAllowlist|null $allowlist default expHelpAllowlist::fromIni()
      * @param array $options cache_dir (string, or false for no cache; default expHelp::cacheDirectory()),
      *                       audience (expHelpAudience, default from exphelp.ini), stat_files (bool, default true),
-     *                       git_history (bool, default true)
+     *                       stat_interval (int seconds, default 0: look at the files on every call), git_history
+     *                       (bool, default true)
      */
     public function __construct( ?expHelpAllowlist $allowlist = null, array $options = array() )
     {
@@ -93,6 +104,7 @@ class expHelpDocumentIndex
         $cacheDir = array_key_exists( 'cache_dir', $options ) ? $options['cache_dir'] : self::defaultCacheDir();
         $this->cacheDir = $cacheDir === false || $cacheDir === null || $cacheDir === '' ? null : rtrim( (string)$cacheDir, '/' );
         $this->statFiles = array_key_exists( 'stat_files', $options ) ? (bool)$options['stat_files'] : true;
+        $this->statInterval = isset( $options['stat_interval'] ) ? max( 0, (int)$options['stat_interval'] ) : 0;
         $this->gitHistory = array_key_exists( 'git_history', $options ) ? (bool)$options['git_history'] : true;
     }
 
@@ -110,6 +122,7 @@ class expHelpDocumentIndex
         {
             self::$instance = new self( expHelpAllowlist::fromIni(), array(
                 'stat_files' => self::iniSetting( 'StatFiles', 'enabled' ) !== 'disabled',
+                'stat_interval' => (int)self::iniSetting( 'StatFilesInterval', '0' ),
                 'git_history' => self::iniSetting( 'GitHistory', 'enabled' ) !== 'disabled' ) );
             self::$instanceRequest = $request;
         }
@@ -255,15 +268,47 @@ class expHelpDocumentIndex
                          class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
             if ( is_string( $code ) && $code !== '' )
                 $parts[] = basename( $code ) . ':' . (int)@filemtime( $code ) . ':' . (int)@filesize( $code );
-        if ( $this->statFiles )
+        if ( !$this->statFiles )
+            return $this->signature = sha1( implode( "\n", $parts ) );
+        // Looking at every listed file is the expensive part (thousands of stats; under Velocity each one is answered
+        // by its file layer, ~40 microseconds instead of ~2). With StatFilesInterval the answer is kept in the cache
+        // directory for that many seconds, for every process: a page edited meanwhile shows when the time is up.
+        $base = sha1( implode( "\n", $parts ) );
+        $statNow = $this->statNow;
+        $this->statNow = false;
+        if ( !$statNow && $this->statInterval > 0 )
         {
-            foreach ( $this->files() as $path => $file )
-            {
-                $name = $this->allowlist->rootDir() . '/' . $path;
-                $parts[] = $path . ':' . (int)@filesize( $name ) . ':' . (int)@filemtime( $name );
-            }
+            $checked = $this->checkedSignature( $base );
+            if ( $checked !== null )
+                return $this->signature = $checked;
         }
-        return $this->signature = sha1( implode( "\n", $parts ) );
+        foreach ( $this->files() as $path => $file )
+        {
+            $name = $this->allowlist->rootDir() . '/' . $path;
+            $parts[] = $path . ':' . (int)@filesize( $name ) . ':' . (int)@filemtime( $name );
+        }
+        $this->signature = sha1( implode( "\n", $parts ) );
+        if ( $this->statInterval > 0 )
+            $this->store( self::CHECKED_SIGNATURE_FILE, array( 'base' => $base, 'signature' => $this->signature, 'checked' => time() ),
+                          self::CHECKED_SIGNATURE_FILE );
+        return $this->signature;
+    }
+
+    /**
+     * The signature another call took from the files less than StatFilesInterval seconds ago, for the same settings,
+     * allowlist and code; null when there is none.
+     *
+     * @param string $base the hash of everything but the files
+     * @return string|null
+     */
+    protected function checkedSignature( $base )
+    {
+        $checked = $this->read( self::CHECKED_SIGNATURE_FILE );
+        if ( !is_array( $checked ) || !isset( $checked['base'], $checked['signature'], $checked['checked'] )
+             || $checked['base'] !== $base || !is_string( $checked['signature'] ) )
+            return null;
+        $age = time() - (int)$checked['checked'];
+        return $age >= 0 && $age < $this->statInterval ? $checked['signature'] : null;
     }
 
     /**
@@ -685,6 +730,7 @@ class expHelpDocumentIndex
     {
         $start = microtime( true );
         $this->signature = null;
+        $this->statNow = true;
         $this->data = $this->build();
         $cached = $this->store( 'index-' . $this->data['signature'] . '.php', $this->data, 'index-' );
         $pruned = $cached ? $this->pruneStale( (int)floor( $start ) ) : 0;

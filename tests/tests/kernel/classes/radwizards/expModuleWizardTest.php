@@ -157,7 +157,7 @@ class expModuleWizardTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'list', 'show', 'edit' ) as $view )
         {
             $this->assertArrayHasKey( "modules/k1emodule/$view.php", $files );
-            $this->assertArrayHasKey( "design/k1e_mod_ext/templates/k1emodule/$view.tpl", $files );
+            $this->assertArrayHasKey( "design/standard/templates/k1emodule/$view.tpl", $files );
         }
 
         $this->scratch = expRadWizardTestHelper::scratch( 'module-wizard' );

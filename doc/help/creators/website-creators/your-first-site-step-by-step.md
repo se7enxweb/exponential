@@ -14,6 +14,8 @@ empty directory to a site with your own content and one changed template. Each s
 check. It uses the defaults on purpose: SQLite (no database server), the default site package and Velocity. For a
 real site, read [Choosing an install method](choosing-an-install-method.md) afterwards.
 
+![The help center in the administration, where this page and the rest of the website creators' path are](../../images/creators/help-dashboard-first-site.webp)
+
 ## Contents
 
 1. [Before you start](#before-you-start)

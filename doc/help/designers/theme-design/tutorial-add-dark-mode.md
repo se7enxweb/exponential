@@ -24,6 +24,8 @@ setting (no script); part B adds a switch. Allow two to four hours, most of it i
 
 1. List every color in your stylesheets:
 
+![The help center in the dark mode, a page whose colors come only from tokens](../../images/designers/help-dashboard-dark.webp)
+
    ```bash
    grep -n -o -E "#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)" extension/mytheme/design/mytheme/stylesheets/*.css | sort | uniq -c | sort -rn
    ```

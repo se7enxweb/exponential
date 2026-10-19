@@ -42,7 +42,7 @@ publish are general public-sector practice.
 4. **First 90 days** as the project plan.
 5. **Many ministries on one platform** when the site is shared or will be.
 
-Up: [Levels of government](../README.md). The landing page of the Governments section, government-start-here.md,
+Up: [Levels of government](../README.md). The landing page of the Governments section, [Governments: start here](../../government-start-here.md),
 is the starting point for every reader.
 
 ## What sets national government apart

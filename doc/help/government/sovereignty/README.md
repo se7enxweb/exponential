@@ -13,8 +13,7 @@ This section is for public bodies that must keep control of their web platform: 
 where the data is, and how to leave a provider. It states what Exponential provides on each point, with links to the
 evidence, and what stays the body's own work.
 
-Up: the government help index (README.md one level up) and the landing page government-start-here.md, both in
-the government folder.
+Up: [Governments: start here](../government-start-here.md).
 
 ## Contents
 

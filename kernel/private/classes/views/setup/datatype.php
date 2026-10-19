@@ -26,7 +26,7 @@ class Datatype extends \Exponential\Runnable\ModuleView
 
         $input = array();
         foreach ( array( 'name', 'type', 'class', 'title', 'summary', 'author',
-                         'vendor', 'version', 'licence', 'group' ) as $field )
+                         'vendor', 'version', 'licence' ) as $field )
         {
             if ( $http->hasPostVariable( $field ) && is_scalar( $http->postVariable( $field ) ) )
                 $input[$field] = $http->postVariable( $field );
@@ -130,7 +130,8 @@ class Datatype extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'wizard_class_settings', $classSettings );
         $tpl->setVariable( 'wizard_methods', $methods );
         $tpl->setVariable( 'wizard_method_count', count( $methods ) );
-        $tpl->setVariable( 'wizard_problems', $problems );
+        // Shown once the form has been sent: a first visit is not a list of errors
+        $tpl->setVariable( 'wizard_problems', \expExtensionWizard::shownProblems( $problems, $http->hasPostVariable( 'Submitted' ) ) );
         $tpl->setVariable( 'wizard_feedback', $feedback );
         $tpl->setVariable( 'wizard_files', $preview );
         $tpl->setVariable( 'wizard_file_count', count( $files ) );

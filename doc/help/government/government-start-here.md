@@ -69,21 +69,18 @@ with it, and how do you buy, staff and eventually leave it responsibly.
 | [Transparency and FOI](transparency-and-foi/README.md) | Proactive disclosure, disclosure logs, publication schemes, decision registers |
 | [Languages](languages/README.md) | Official languages, translation workflows, right-to-left, plain language |
 | [Sovereignty](sovereignty/README.md) | Self-hosting, data location, open-source licensing and procurement, avoiding vendor lock-in |
-| Building public-service sites (`building/`) | Service catalogs, forms, citizen accounts, news and alerts, events, documents, search, maps, newsletters, multi-site, intranets, extranets |
-| Operations (`operations/`) | Hosting on-premise and in the government cloud, availability, backups, monitoring, incidents, upgrades, change management, staff roles, editorial workflows |
+| [Building public-service sites](building/README.md) | Service catalogs, forms, citizen accounts, news and alerts, events, documents, search, maps, newsletters, multi-site, intranets, extranets |
+| [Operations](operations/README.md) | Hosting on-premise and in the government cloud, availability, backups, monitoring, incidents, upgrades, change management, staff roles, editorial workflows |
 | [Procurement and lifecycle](procurement/README.md) | Requirements, tender templates, evaluation, total cost of ownership, exit plans, training, the product lifecycle |
 | [Tasks](tasks/README.md) | Hundreds of step-by-step procedures: publish a council meeting agenda, add a service page with an accessible form, set up a department subsite, translate a page, archive last year's notices ... |
 | [Checklists](checklists/README.md), [FAQ](faq/README.md) and [glossary](glossary/README.md) | Go-live, accessibility, security, privacy and readiness checklists; answers to common questions; terms |
-
-Sections shown with their folder name in plain text are being written and will be linked from here as they are
-published.
 
 ## What Exponential provides, and what stays with you
 
 | Requirement | What ships with Exponential | What stays with your organization | Source |
 |---|---|---|---|
 | Accessibility | admin4 and admin4l administration designed and regression-tested against WCAG 2.2 AA (status "Partly complies"); EN 301 549 and Section 508 "Unverified"; no VPAT or Accessibility Conformance Report | auditing your public design and content, publishing your accessibility statement | [Accessibility standards](../../standards/accessibility.md) |
-| Security | mitigations for every OWASP Top 10 (2021) category, security headers, CSRF tokens, audit trail on by default, Content Security Policy (report-only on the administration by default) | enabling account lockout, two-step sign-in, HSTS and CSP enforcement; patching; monitoring | [Security standards](../../standards/security.md), [Security hardening](../security-hardening.md) |
+| Security | mitigations for every OWASP Top 10 (2021) category, security headers, CSRF tokens, audit trail on by default, Content Security Policy (report-only on the administration by default) | enabling account lockout, two-step sign-in, HSTS and CSP enforcement; patching; monitoring | [Security standards](../../standards/security.md), [Security hardening](../security-hardening.md), then [Security](security/README.md) |
 | Privacy | consent records for optional e-mail, erasure when an account is removed, pseudonymized audit records, masked logs with retention limits, only functional cookies from the kernel | purposes and legal bases, the privacy notice, the record of processing, any third-party service you add, requests from people | [Privacy standards](../../standards/privacy.md) |
 | Records | version history per content object, trash and restore, object states and sections, tamper-evident audit records | your retention schedule, transfers to an archive | [Content history](../../guides/content-history.md), [Audit trail](../../features/6.0/audit-trail.md) |
 | Languages | translations per object, a siteaccess per language, right-to-left interface and content | translation, terminology, plain-language editing | [Translations and languages](../../features/6.0/translations-and-languages.md) |
@@ -94,11 +91,13 @@ published.
 | If you are ... | Start with |
 |---|---|
 | a procurement officer or project manager | [Procurement and lifecycle](procurement/README.md), then the requirements and evaluation pages it lists |
-| a head of digital or web manager | this page, [Levels of government](levels/README.md) for your kind of organization, then Operations (`operations/`) |
-| an accessibility coordinator | [Accessibility standards](../../standards/accessibility.md), then the accessibility section of this help |
-| an information security officer | [Security standards](../../standards/security.md), [Security hardening](../security-hardening.md) |
-| a data protection officer | [Privacy standards](../../standards/privacy.md) |
-| an IT operations team | Operations (`operations/`) and the [hosting help](../hosting/hosting-companies-start-here.md), which covers servers in depth |
+| a head of digital or web manager | this page, [Levels of government](levels/README.md) for your kind of organization, then [Operations](operations/README.md) |
+| an accessibility coordinator | [Accessibility standards](../../standards/accessibility.md), then [Accessibility](accessibility/README.md) |
+| an information security officer | [Security standards](../../standards/security.md), [Security hardening](../security-hardening.md), then [Security](security/README.md) |
+| a data protection officer | [Privacy standards](../../standards/privacy.md), then [Privacy](privacy/README.md) |
+| a records manager or FOI officer | [Records and archiving](records-and-archiving/README.md) and [Transparency and FOI](transparency-and-foi/README.md) |
+| a translation or communications lead | [Languages](languages/README.md), including plain language |
+| an IT operations team | [Operations](operations/README.md) and the [hosting help](../hosting/hosting-companies-start-here.md), which covers servers in depth |
 | an editor | the [tasks](tasks/README.md), and [Editing content](../editing-content.md) |
 | a trainer | [Trainers: start here](../trainers/trainers-start-here.md) and [Training for a public body](procurement/training/README.md) |
 | a website builder or supplier | [Website creators: start here](../creators/website-creators/website-creators-start-here.md) |
@@ -114,7 +113,7 @@ published.
    the people who will edit ([Getting started](../getting-started.md), [Admin tour](../admin-tour.md)).
 3. **Week 3: model your organization.** Read the page of your level of government in
    [Levels of government](levels/README.md): content model, sections and roles.
-4. **Week 4: plan operations and people.** Read Operations (`operations/`) and decide who hosts, who
+4. **Week 4: plan operations and people.** Read [Operations](operations/README.md) and decide who hosts, who
    backs up, who patches, who approves content and who trains editors
    ([Training for a public body](procurement/training/README.md)).
 

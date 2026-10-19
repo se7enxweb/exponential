@@ -42,7 +42,7 @@ public-sector practice and responsibilities differ between countries.
 3. **Requirements emphasis**.
 4. **First 90 days** as the plan.
 
-Up: [Levels of government](../README.md). The landing page of the Governments section, government-start-here.md,
+Up: [Levels of government](../README.md). The landing page of the Governments section, [Governments: start here](../../government-start-here.md),
 is the starting point for every reader. If your region offers a shared platform, read
 [Shared services for the municipalities of a region](../regional-and-state/shared-services-for-municipalities.md) too.
 

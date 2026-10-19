@@ -1,7 +1,7 @@
 ---
 title: Two ways to build
 audience: designer, website-creator, editor, admin, developer
-category: layouts
+category: build-two-ways
 order: 10
 featured: true
 summary: Exponential 6.0.15+ builds pages two ways - template code in a design extension, and the Layouts editor with no code - and the two meet in blocks and template blocks. What each way is, who uses it, when to choose which and how they combine, shown on the real Fit & Healthy site.

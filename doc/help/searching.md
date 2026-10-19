@@ -75,6 +75,8 @@ Visitors search the public site with its own search field, usually in the header
 type and the first lines of each match, a few per page with links to the next pages. Only published, visible items
 that the visitor may read are found.
 
+![The search of the public site with the results for healthy](images/search/site-search-box.webp)
+
 ## Tips
 
 - Search finds whole words. Try a shorter or a different word if nothing is found.

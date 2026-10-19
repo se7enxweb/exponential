@@ -149,7 +149,8 @@ class Moduleextension extends \Exponential\Runnable\ModuleView
                                $connection['ok'] ? $connection['db'] : false, $schema, $settings['tables'] ) );
         $tpl->setVariable( 'wizard_table_count', count( $schema ) );
         $tpl->setVariable( 'wizard_mapping', $mapping );
-        $tpl->setVariable( 'wizard_problems', $problems );
+        // Shown once the form has been sent: a first visit is not a list of errors
+        $tpl->setVariable( 'wizard_problems', \expExtensionWizard::shownProblems( $problems, $http->hasPostVariable( 'Submitted' ) ) );
         $tpl->setVariable( 'wizard_feedback', $feedback );
         $tpl->setVariable( 'wizard_files', $preview );
         $tpl->setVariable( 'wizard_file_count', count( $files ) );

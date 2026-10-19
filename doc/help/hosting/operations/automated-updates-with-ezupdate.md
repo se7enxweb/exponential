@@ -64,6 +64,8 @@ Run Composer as the user that owns the installation's files, so what it writes b
 
 **Updating and installing are off until you switch them on**, in `settings/override/ezupdate.ini.append.php`:
 
+![Updates and packages, Package servers: the servers Composer reads, such as packagist.org](../../images/hosting/update-package-servers.webp)
+
 ```ini
 [UpdateSettings]
 AllowUpdate=enabled
@@ -128,6 +130,8 @@ codes for use in scripts.
 ## Settings a host cares about
 
 All in `ezupdate.ini`, overridden in `settings/override/ezupdate.ini.append.php`:
+
+![Updates and packages, Find packages: search the package servers for an extension to add](../../images/hosting/update-find-packages.webp)
 
 | Key | Shipped | Why it matters to a host |
 |---|---|---|

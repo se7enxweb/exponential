@@ -49,25 +49,25 @@
 <div class="a4-field">
     <label for="twOperators">{'Operators'|i18n( 'design/admin/setup/rad/template' )}</label>
     <input type="text" id="twOperators" name="operators" value="{$wizard_raw.operators|wash}" placeholder="myoperator, myother" autocomplete="off" />
-    <span class="a4-help">{'{$value|myoperator} — takes the value on the left and gives one back.'|i18n( 'design/admin/setup/rad/template' )}</span>
+    <span class="a4-help">{'{$value|myoperator\} — takes the value on the left and gives one back.'|i18n( 'design/admin/setup/rad/template' )}</span>
 </div>
 
 <div class="a4-field">
     <label for="twFunctions">{'Functions'|i18n( 'design/admin/setup/rad/template' )}</label>
     <input type="text" id="twFunctions" name="functions" value="{$wizard_raw.functions|wash}" placeholder="myfunction" autocomplete="off" />
-    <span class="a4-help">{'{myfunction arg=1} — writes output where it stands.'|i18n( 'design/admin/setup/rad/template' )}</span>
+    <span class="a4-help">{'{myfunction arg=1\} — writes output where it stands.'|i18n( 'design/admin/setup/rad/template' )}</span>
 </div>
 
 <div class="a4-field">
     <label for="twFetches">{'Fetch functions'|i18n( 'design/admin/setup/rad/template' )}</label>
     <input type="text" id="twFetches" name="fetches" value="{$wizard_raw.fetches|wash}" placeholder="thing, thing_list" autocomplete="off" />
-    <span class="a4-help">{'{fetch( module, thing )} — reads something, with a policy check first. Needs a module of its own.'|i18n( 'design/admin/setup/rad/template' )}</span>
+    <span class="a4-help">{'{fetch( module, thing )\} — reads something, with a policy check first. Needs a module of its own.'|i18n( 'design/admin/setup/rad/template' )}</span>
 </div>
 
 <div class="a4-field">
     <label for="twAliases">{'Fetch aliases'|i18n( 'design/admin/setup/rad/template' )}</label>
     <input type="text" id="twAliases" name="aliases" value="{$wizard_raw.aliases|wash}" placeholder="news_list" autocomplete="off" />
-    <span class="a4-help">{'{fetch_alias( news_list )} — a fetch with its arguments fixed in an ini.'|i18n( 'design/admin/setup/rad/template' )}</span>
+    <span class="a4-help">{'{fetch_alias( news_list )\} — a fetch with its arguments fixed in an ini.'|i18n( 'design/admin/setup/rad/template' )}</span>
 </div>
 
 <div class="a4-field">
@@ -79,7 +79,7 @@
 <label class="a4-setup-wz-pick">
     <input type="checkbox" name="UseInput" value="1"{if $wizard_settings.input} checked="checked"{/if} />
     <span><span class="a4-setup-wz-pick-label">{'Operators take input'|i18n( 'design/admin/setup/rad/template' )}</span>
-    <span class="a4-meta">{'There is a value on the left of the pipe. Off means the operator is written {myoperator()} and produces a value out of its parameters alone.'|i18n( 'design/admin/setup/rad/template' )}</span></span>
+    <span class="a4-meta">{'There is a value on the left of the pipe. Off means the operator is written {myoperator()\} and produces a value out of its parameters alone.'|i18n( 'design/admin/setup/rad/template' )}</span></span>
 </label>
 
 <label class="a4-setup-wz-pick">

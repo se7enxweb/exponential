@@ -13,6 +13,8 @@ This page is for application creators who add a step administrators can put into
 on publish, check a field before publishing, wait for an outside approval. **Setup > RAD > Workflow event extension**
 (`/setup/workflowevent`) writes a working skeleton ([RAD tools](rad-tools.md)).
 
+![Setup, RAD, the workflow event wizard, which writes the skeleton of an event type](../../images/creators/workflow-event-wizard.webp)
+
 ## Contents
 
 1. [Files and registration](#files-and-registration)

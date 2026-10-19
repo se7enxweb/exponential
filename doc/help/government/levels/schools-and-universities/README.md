@@ -43,7 +43,7 @@ public-sector practice.
 4. **Requirements emphasis**.
 5. **First 90 days**.
 
-Up: [Levels of government](../README.md). The landing page of the Governments section, government-start-here.md,
+Up: [Levels of government](../README.md). The landing page of the Governments section, [Governments: start here](../../government-start-here.md),
 is the starting point for every reader.
 
 ## What sets education apart

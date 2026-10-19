@@ -61,11 +61,11 @@ to build those processes with the tools that exist.
 | [Form submissions as records](collected-information-as-records.md) | moving submissions into case systems |
 
 Step-by-step tasks (archive last year's notices, restore an archived page, restore an item from the trash, bring back
-an earlier version) are in the compliance tasks of this help (tasks/compliance).
+an earlier version) are in the compliance tasks of this help ([Compliance tasks](../tasks/compliance/README.md)).
 
 ## Related pages
 
-- Up: the Governments start page (government-start-here.md) and the Governments index (README.md one level up)
+- Up: [Governments: start here](../government-start-here.md)
 - [Versions of an object](../../../guides/content-history.md)
 - [Audit](../../../bc/6.0/audit.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

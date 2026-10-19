@@ -1,7 +1,7 @@
 ---
 title: How the header is built
 audience: designer, developer, website-creator, admin
-category: layouts
+category: build-two-ways
 order: 130
 summary: The whole chain from the shared layout Header / Footer to the menu - zone, template block, block template, the tpl_block_template() map, pagelayout/header.tpl, main_menu.tpl and menu.ini - with the real file paths of the Fit & Healthy theme.
 keywords: header, shared layout, Header / Footer, layout 2, zone header, template block, tpl_block, block_name, tpl_block_template, pagelayout/header.tpl, main_menu.tpl, MainMenuID, NexusMainMenuID, sevenx_themes_media
@@ -47,10 +47,13 @@ other. File paths are relative to the installation root.
 
 ![The Header / Footer layout in the editor with the template blocks header and breadcrumb in the header zone](images/hm-08-layout-2-header-template-block.webp)
 
-Selecting the header block shows its properties. The Content tab has only the block label; the template name is
-stored with the block (parameter `block_name`) and shown on the block itself, "Template block: **header**".
+Selecting the header block shows its properties. The Content tab has only the block label; the **Design** tab shows
+the **Template name** (`header`, the parameter `block_name`), which the block also shows on itself, "Template block:
+**header**".
 
 ![The header template block selected; the properties panel shows the Content and Design tabs and the Block label field](images/hm-09-header-block-properties.webp)
+
+![The Design tab of the header template block: Block label, Template name header, Use vertical whitespace, CSS class, CSS ID, Wrap in container](images/tb-01-template-block-design-tab.webp)
 
 Eighteen other layouts of the site link their `header` and `footer` zones to this layout, which is why one header serves the whole
 site. The block definition is in `extension/explayouts/settings/explayouts.ini.append.php`:

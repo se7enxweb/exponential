@@ -81,8 +81,10 @@ Adapt the wording and the priorities to your own needs; see
 
 ## What to leave out or ask separately
 
-- **Features that the documentation does not show.** Scheduled publishing at a future date, for example, is not
-  described in the guides; if you need it, ask the bidder to state how it is delivered and to demonstrate it.
+- **Features that the documentation does not show.** Scheduled publishing at a future date, for example, has
+  no guide of its own; the workflows guide lists a *Wait until date* event type among the workflow events
+  ([Workflows](../../../../guides/workflows.md)). If you need scheduled publishing, ask the bidder to state how it is
+  delivered and to demonstrate it.
 - **Maps and geographic information.** Exponential has no GIS features; a map field from an extension relies on a
   third-party map service. Ask separately and treat the service as a processor.
 - **Analytics.** The kernel ships none; an extension that adds a third-party analytics service needs consent

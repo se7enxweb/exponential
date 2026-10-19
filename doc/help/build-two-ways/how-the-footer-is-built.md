@@ -1,7 +1,7 @@
 ---
 title: How the footer is built
 audience: designer, developer, website-creator, admin
-category: layouts
+category: build-two-ways
 order: 220
 summary: From the footer zone of the shared layout Header / Footer to pagelayout/footer.tpl and its three data sources - FooterMenuID, the site info object and the Footer links folder - with the real file paths.
 keywords: footer, shared layout, Header / Footer, zone footer, template block, block 14, pagelayout/footer.tpl, FooterMenuID, NexusFooterMenuID, FooterLinksRemoteID, site info, ng_menu_item

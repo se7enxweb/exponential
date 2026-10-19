@@ -13,6 +13,8 @@ This page is for website creators who add attributes to classes. A datatype deci
 validated, searched and shown, and it cannot be changed later without migrating data. Choose by what you will do with
 the value.
 
+![A class's page: its attributes, each with its datatype, identifier and whether it is required, searchable or translatable](../../images/creators/class-view.webp)
+
 ## Contents
 
 1. [The shipped datatypes](#the-shipped-datatypes)

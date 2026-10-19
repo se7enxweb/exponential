@@ -13,6 +13,8 @@ This page is for application creators who write command line tools: imports, mai
 kernel with `eZScript`, reads options, does its work and exits with a status. New scripts are classes extending
 `Exponential\Runnable\Command`; the console runs them as `ext:<ext>:<name>`.
 
+![Setup, MCP server: the read-only tools an assistant can use to inspect the installation](../../images/creators/mcp-dashboard.webp)
+
 ## Contents
 
 1. [The class-based command](#the-class-based-command)

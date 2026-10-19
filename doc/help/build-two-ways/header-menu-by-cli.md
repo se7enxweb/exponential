@@ -1,7 +1,7 @@
 ---
 title: Header menu by command line
 audience: admin, developer, website-creator, designer
-category: layouts
+category: build-two-ways
 order: 120
 summary: Add a page to the header menu with ./console exp:ini - see where the list is set, preview the change with --dry-run, write it, clear the caches. Real output from Exponential 6.0.15+.
 keywords: exp:ini, console, command line, CLI, header menu, MainMenuID, menu.ini, dry run, exp:cache, clear cache, siteaccess scope

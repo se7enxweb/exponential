@@ -670,6 +670,20 @@ abstract class expExtensionWizard
     }
 
     /**
+     * The problems a wizard page shows: none on a first visit, before the form has been sent, so the page does not
+     * open on a list of errors about fields nobody has filled in yet; all of them once it has been sent.
+     * write() and archive() check the problems themselves either way.
+     *
+     * @param array $problems from problems()
+     * @param bool $submitted whether the form was sent (its Submitted field was posted)
+     * @return array
+     */
+    public static function shownProblems( array $problems, $submitted )
+    {
+        return $submitted ? $problems : array();
+    }
+
+    /**
      * Which of the parts a set of settings turned on, by name.
      *
      * @param array $settings
