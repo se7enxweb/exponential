@@ -72731,6 +72731,26 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Exponential sustinere: quid sponsio solvat et quomodo 7x et Fundationem Exponential sustineas.</translation>
     </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Omnia explicare</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Omnia complicare</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Omnes capsas aperire aut claudere</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Omnes capsae apertae sunt.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Omnes capsae clausae sunt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

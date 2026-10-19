@@ -439,6 +439,7 @@ The last two show when it runs next and what it said last time.
 ## Where to go next
 
 - [Develop with Git](develop-with-git.md): installing as clones, working on a branch, sending fixes back.
+- [Contribute extensions back](contribute-extensions-back.md): publish your own extensions so everyone can use them, and what the GPL requires when you distribute one.
 - [Upgrading](../install/11-upgrading.md): the database and settings steps of each release.
 - [The upgrade check](../guides/upgrade-check.md) and [git_manager](../features/6.0/extensions/git_manager.md).
 - The project on GitHub: [se7enxweb/exponential](https://github.com/se7enxweb/exponential) and its

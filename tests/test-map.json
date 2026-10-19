@@ -17,7 +17,8 @@
     "share/translations/*/translation.ts": [
       "tests/tests/lib/ezi18n/eZTSTranslatorTest.php",
       "tests/tests/design/TranslationFilesValidTest.php",
-      "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php"
+      "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php",
+      "tests/tests/kernel/classes/help/expHelpContentsPageTest.php"
     ],
     "*.php": [
       "tests/tests/kernel/classes/security/expFileModeLimitsTest.php"
@@ -236,7 +237,8 @@
     ],
     "design/standard/stylesheets/expdebugbar.css": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
-      "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php"
+      "tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php",
+      "tests/tests/kernel/classes/help/expHelpContentsPageTest.php"
     ],
     "design/standard/stylesheets/debug.css": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php"
@@ -1646,7 +1648,8 @@
     ],
     "kernel/classes/help/exphelp.php": [
       "tests/tests/kernel/classes/help/expHelpLinksTest.php",
-      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php"
+      "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
+      "tests/tests/kernel/classes/help/expHelpContentsPageTest.php"
     ],
     "kernel/classes/help/exphelpnavigation.php": [
       "tests/tests/kernel/classes/help/expHelpNavigationTest.php"
@@ -1670,6 +1673,12 @@
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
       "tests/tests/kernel/classes/help/expHelpLinksTest.php"
+    ],
+    "kernel/classes/help/exphelpexamplesgenerator.php": [
+      "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php"
+    ],
+    "kernel/private/classes/commands/exphelpexamples.php": [
+      "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php"
     ],
     "kernel/classes/help/exphelpallowlist.php": [
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
@@ -1726,11 +1735,13 @@
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "kernel/private/classes/views/exphelp/*": [
+      "tests/tests/kernel/classes/help/expHelpContentsPageTest.php",
       "tests/tests/kernel/classes/help/expHelpLinksTest.php",
       "tests/tests/kernel/classes/help/expHelpModulePolicyTest.php",
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "design/admin*/templates/exphelp/*": [
+      "tests/tests/kernel/classes/help/expHelpContentsPageTest.php",
       "tests/tests/kernel/classes/help/expHelpPdfTest.php",
       "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php"
@@ -1753,6 +1764,7 @@
       "tests/tests/kernel/classes/help/expHelpPdfTest.php"
     ],
     "design/admin*/stylesheets/modules/help.css": [
+      "tests/tests/kernel/classes/help/expHelpContentsPageTest.php",
       "tests/tests/kernel/classes/help/expHelpPdfTest.php",
       "tests/tests/kernel/classes/help/expHelpLeadershipAudiencesTest.php",
       "tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php"

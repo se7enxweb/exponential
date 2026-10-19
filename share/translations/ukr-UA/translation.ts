@@ -72716,6 +72716,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Фінансування Exponential: що оплачує спонсорство і як підтримати 7x та Фонд Exponential.</translation>
     </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Розгорнути все</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Згорнути все</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Відкрити або закрити всі папки</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Усі папки відкрито.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Усі папки закрито.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
