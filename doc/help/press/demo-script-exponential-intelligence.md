@@ -89,7 +89,7 @@ complete, honest segment ([Demo scripts, Part 6](../business/demo-scripts.md#par
 
 ```text
 DESCRIPTION BLOCK
-Shows Exponential Intelligence (expai 0.0.1.0) in Exponential <version>, on my own test installation.
+Shows Exponential Intelligence (expai <the version you installed>) in Exponential <version>, on my own test installation.
 It writes drafts only and never publishes on its own.
 Provider used in this video: <provider, region>. Costs of this recording were paid by <me | who>.
 Feature page: <link to "Exponential Intelligence"> - Repository: https://github.com/se7enxweb/expai

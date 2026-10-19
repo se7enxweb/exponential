@@ -76,6 +76,8 @@
 .a4-help-tile.is-website-creator { color: var(--a4-chart-7); }
 .a4-help-tile.is-supporter { color: var(--a4-chart-4); }
 .a4-help-tile.is-sponsor { color: var(--a4-chart-5); }
+.a4-help-tile.is-press { color: var(--a4-chart-6); }
+.a4-help-tile.is-trainer { color: var(--a4-chart-2); }
 
 /* The audience of a page as a small pill (on top of .a4-tag) */
 .a4-help-pill {
@@ -99,6 +101,8 @@
 .a4-help-pill.is-website-creator { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-supporter { border-color: var(--a4-chart-4); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-sponsor { border-color: var(--a4-chart-5); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-press { border-color: var(--a4-chart-6); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-trainer { border-color: var(--a4-chart-2); background-color: var(--a4-card); color: var(--a4-ink); }
 
 /* ---- dashboard: the search hero ------------------------------------------------------------------------------ */
 
@@ -425,6 +429,8 @@
 .a4-help-audience.is-website-creator::before { background-color: var(--a4-chart-7); }
 .a4-help-audience.is-supporter::before { background-color: var(--a4-chart-4); }
 .a4-help-audience.is-sponsor::before { background-color: var(--a4-chart-5); }
+.a4-help-audience.is-press::before { background-color: var(--a4-chart-6); }
+.a4-help-audience.is-trainer::before { background-color: var(--a4-chart-2); }
 .a4-help-audience:hover,
 .a4-help-audience:focus-within { box-shadow: inset 0 0 0 1px var(--a4-line-strong), var(--a4-shadow-m); transform: translateY(-2px); }
 .a4-help-audience h3 { margin: 0; font-size: var(--a4-text-l); font-weight: 650; line-height: var(--a4-leading-tight); }

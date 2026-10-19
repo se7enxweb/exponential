@@ -72933,6 +72933,54 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>البنية التحتية للمجتمع: الدردشة والمرايا والويكي وموارد المطورين</translation>
     </message>
     <message>
+        <source>Trainers</source>
+        <translation>المدرّبون</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>الصحافة والإعلام والمؤثرون</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>علّم Exponential: دورات للمحررين والمسؤولين والمطورين والمصممين، وورش عمل وتمارين وتقييمات.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>اكتب وتحدّث عن Exponential: الحقائق والتاريخ والأشخاص والاقتباسات والصور وجهات الاتصال.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>التدريب</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>الصحافة والإعلام</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>تعليم Exponential: دورات وخطط دروس وورش عمل وتمارين وتقييمات لكل دور.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>للصحفيين ووسائل الإعلام والمؤثرين: حقائق وتاريخ وإعلانات وصور وجهات اتصال.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>شارك الإضافات مع المجتمع</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>شارك الإضافات التي توزّعها كما تشترط رخصة GPL، ليستفيد الجميع.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>مشروع Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>مشروع Exponential: ما هو، وتراخيصه، وخارطة طريقه، والدعم، وقنوات المجتمع، وكيف تساهم وتتبرع.</translation>
+    </message>
+    <message>
         <source>Clear filter</source>
         <translation>مسح عامل التصفية</translation>
     </message>
