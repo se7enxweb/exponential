@@ -7045,6 +7045,9 @@ f2c80163f67c46b601c725c8e4b93e91  doc/help/images/login-forgot-password.webp
 146d0fbcabe3aefe6fce5721c8926e56  doc/help/images/right-column.webp
 d437e31155fd402fe332d481db8e4c12  doc/help/images/search.webp
 4f7748c2489fc884fcb40fe9d391192a  doc/help/images/sign-in.webp
+4b3dfd83a048f55c74d0a694bc84ba5f  doc/help/images/site-packages-ezupdate-servers.webp
+941c51de4db1b126ad40cbd1339e5572  doc/help/images/site-packages-package-list.webp
+215b2acd23ceb0169553375517368c5f  doc/help/images/site-packages-package-page.webp
 91e13ad7f14cb4131408285abd1ec761  doc/help/images/tour-edit-draft-info.webp
 09dbaeabf69cc9cfd93f73504f3cbe05  doc/help/images/tour-edit-form.webp
 c50d09a7aca04995a657f9470fdda3ff  doc/help/images/tour-edit-richtext.webp
@@ -7111,7 +7114,7 @@ d00adbd52936120527e5ebb127f86ba7  doc/help/partners/customer-references.md
 cca9b544b7c7cc2021088a5b5fffa713  doc/help/partners/distribution-partners.md
 4b2404be7d1d87149de5f20260dcca21  doc/help/partners/earning-points-through-community-work.md
 8f83258249cfa306cc1af6d392c19816  doc/help/partners/escalations-and-security-issues.md
-5e2861ad83c4bd773eb4c7013ef67ab6  doc/help/partners/extension-and-theme-partners.md
+8580f72d3b615fbe8197fd53ffb666aa  doc/help/partners/extension-and-theme-partners.md
 3599ea4bdec692d6544907bbb421f4f1  doc/help/partners/feature-requests-and-sponsored-features.md
 b1279058e09df01dd3dc63b31cf0d1da  doc/help/partners/filing-bugs-as-a-partner.md
 c0e9794aa1d6891082f05f120ee5e646  doc/help/partners/governance-and-decisions.md
@@ -7329,9 +7332,9 @@ deba009842ef9843f433f244910b522c  doc/help/site-packages/admin-gui/README.md
 b37282e28248cc64bdd539237b291a3d  doc/help/site-packages/admin-gui/fetching-packages-with-ezupdate.md
 648129810e04fc7404f9dda009c14a01  doc/help/site-packages/admin-gui/importing-a-package.md
 662538d888d885efd02f32cbe5adef2e  doc/help/site-packages/admin-gui/installing-and-uninstalling.md
-06a661b4a7daee766ebd93e33220cd1a  doc/help/site-packages/admin-gui/package-servers-in-ezupdate.md
+6deba12e55839609cfb59a91fb6397fa  doc/help/site-packages/admin-gui/package-servers-in-ezupdate.md
 eda3865504e21db4d14f67f97b136d4e  doc/help/site-packages/admin-gui/permissions-for-packages.md
-e4ec9a0bcf4deae616bd5f3438a7a083  doc/help/site-packages/admin-gui/the-package-list-and-package-page.md
+68b26909edc3fc7ff389bf02b18bf8a1  doc/help/site-packages/admin-gui/the-package-list-and-package-page.md
 573f8aa0c04c449fd4ffdb11d5837d6a  doc/help/site-packages/admin-gui/the-package-wizard.md
 899d57b3fe445435d33f6096eebdfab4  doc/help/site-packages/basics/README.md
 ac20aeac3e190d1a4cca6ec0f1581b6a  doc/help/site-packages/basics/classic-and-json-packages.md
