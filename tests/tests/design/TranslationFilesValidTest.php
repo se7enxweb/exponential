@@ -76,7 +76,9 @@ class TranslationFilesValidTest extends PHPUnit\Framework\TestCase
                 continue;
             preg_match_all( "/'((?:[^'\\\\\\n]|\\\\.){0,400})'\\s*\\|\\s*i18n\\(\\s*'(design\\/[^'\\n]{1,200})'/", $code, $m, PREG_SET_ORDER );
             foreach ( $m as $match )
-                $texts[$match[2]][str_replace( "\\'", "'", $match[1] )] = substr( $file->getPathname(), strlen( self::root() ) + 1 );
+                // The text as the template engine reads it: \' is a quote and \} a closing brace (which would
+                // otherwise end the tag), the way the translation file has them
+                $texts[$match[2]][preg_replace( "/\\\\(['{}])/", '$1', $match[1] )] = substr( $file->getPathname(), strlen( self::root() ) + 1 );
         }
         return $texts;
     }

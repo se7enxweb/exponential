@@ -12975,7 +12975,7 @@ be0d65eb9d0dbf34d048d809f070c37f  tests/tests/design/ExtensionInlineScriptsTest.
 3ded02ca57016d193d7c9df51a8dbe84  tests/tests/design/LogViewerNavTest.php
 e5afb96904ddba6129f583e0eb0f3bd6  tests/tests/design/StandardContentEditAccessibleNamesTest.php
 1f2baeab4e97de344ff2a905bdb76154  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
-06249d1308ccf3eeb0d366548bae10a4  tests/tests/design/TranslationFilesValidTest.php
+f3b5318282b84e8fa64775c32a4684de  tests/tests/design/TranslationFilesValidTest.php
 5582056a45ff633ad8831432b6074f3c  tests/tests/design/js/asynchronous_publishing.js
 2a8929569939f458f12dc199e3fb5064  tests/tests/design/js/content_job.js
 4035ddc391f38efc6f344dc1ce78c73e  tests/tests/design/js/content_job_mode_choice.js
