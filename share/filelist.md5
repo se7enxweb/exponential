@@ -3874,7 +3874,7 @@ d55259e5b036dd972962aa0bd877bc3f  doc/guides/ui-switch-settings.md
 96ce9e87d17b31ab1a771517f083e4ea  doc/guides/upgrading.md
 6477f5214f3a7f3dfdf0da2e2284d082  doc/guides/urls-and-aliases.md
 d0260680e11ffdb7581f3bff6191d877  doc/guides/workflows.md
-0d9a333227b5dfa92580abeabae929cf  doc/help/README.md
+c92a8e9a50509f2653769892354777ac  doc/help/README.md
 b409e3a060dd8d98c756d652e742bc27  doc/help/accounts-and-sign-in.md
 b65fabce7ceb9f1766f5b80577f6a5a4  doc/help/admin-tour.md
 2559a76804ca2dd8ccc13a44e3669dd2  doc/help/advocates/7x-and-the-foundation-for-advocates.md
@@ -4588,6 +4588,17 @@ ff49a18c96a0a3e854b114deda667d34  doc/help/partners/who-runs-the-partner-program
 61eb7f6ad031675060fab991cb63cff7  doc/help/partners/your-first-30-days.md
 3523b894ead2ba6cef33206630332ed0  doc/help/partners/your-first-year.md
 a9183a7583474c8fa6563874a16aeea6  doc/help/partners/your-partner-page.md
+e31b7b5ddb78deb0c3980797f66968e9  doc/help/project/README.md
+192eab39176245fa604de066f578f274  doc/help/project/about-the-project.md
+ce2ce7e4643ac6bf14c9e2ec81970227  doc/help/project/build-with-exponential.md
+25346d4ee1c1e941f85943802a0a31c6  doc/help/project/community-channels.md
+75cee98f1b3c457c0e01c86a096f7b90  doc/help/project/contribute-to-the-project.md
+6bcce69e3076a8d8465e61847f369b28  doc/help/project/documentation-sources.md
+b0d4f171e7482532d18adc3c338fb5b5  doc/help/project/faq.md
+2086cc65c5dca19085a957bb1d7a4f6b  doc/help/project/getting-support.md
+f2c3b5cf6bc9fb272424baa921f9c775  doc/help/project/give-and-donate.md
+6c41be923984d43a2f3abaed1a14901c  doc/help/project/licensing-faq.md
+33d44394585a683afc4089c0c4478c16  doc/help/project/roadmap.md
 0bf642c168fe8af84f64190ce1cff902  doc/help/publishing-and-versions.md
 291f1692bf5590051f383d80da653fe2  doc/help/searching.md
 dc8acfe7a2ee87504513fb463c285310  doc/help/security-hardening.md
@@ -4615,7 +4626,7 @@ ce9facdac8c61ce2a410c587b8025f5e  doc/help/supporters/supporters-start-here.md
 756cca3c7b02a19aed7dc684a35ac63e  doc/help/supporters/testing-and-reporting-bugs.md
 0c5611d9122cc264a4193dff110fc70d  doc/help/supporters/ways-to-support-exponential.md
 07cd912e3bbb1367c11e04abcf618289  doc/help/update-with-git.md
-6cee31f394a1674d1c735bb1e8b585e7  doc/help/when-something-goes-wrong.md
+14ceb6ea8e2f12e5b5f0af0db41d2430  doc/help/when-something-goes-wrong.md
 5ca11aed7eb7120556497445c9099bc8  doc/help/who-is-7x.md
 1789c6d5581540a05554c912dd7dd48e  doc/help/who-is-the-exponential-foundation.md
 bfac4d20e64cf0fff734fc68908cf3e9  doc/history/2023/2023-12.md
