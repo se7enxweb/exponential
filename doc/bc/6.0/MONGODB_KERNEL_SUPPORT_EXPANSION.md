@@ -3328,8 +3328,9 @@ The production migration for `admin.example.com` was performed from the original
 SCRIPTS=extension/sevenx_mongodb/bin/mongodb
 
 # 1. Export from MySQL to NDJSON
+export MYSQL_PASSWORD="$(cat /path/to/mysql-secret)"   # required; no default (or the script asks in a terminal)
 bash $SCRIPTS/export_mysql.sh ./json_export
-# (or directly: python3 $SCRIPTS/mysql2ndjson.py --user db --password 'YOUR_PASSWORD' --db exp --outdir ./json_export)
+# (or directly: python3 $SCRIPTS/mysql2ndjson.py --user db --db exp --outdir ./json_export, password from MYSQL_PASSWORD)
 
 # 2. Fix up types (int fields, NULL strings)
 python3 $SCRIPTS/fixup_ndjson.py ./json_export ./json_fixed
@@ -3425,7 +3426,7 @@ All data-layer migration scripts live in `extension/sevenx_mongodb/bin/mongodb/`
 
 | File | Purpose |
 |------|---------|
-| `export_mysql.sh` | Shell wrapper — calls `mysql2ndjson.py` with credentials from the environment; writes NDJSON to `./json_export/` |
+| `export_mysql.sh` | Shell wrapper — calls `mysql2ndjson.py` with credentials from the environment (`MYSQL_PASSWORD` is required and has no default; asked for in a terminal); writes NDJSON to `./json_export/` |
 | `mysql2ndjson.py` | Python script — exports all MySQL/MariaDB Exponential tables to NDJSON; handles int/float casting, omits NULL fields, sets `_id` from the PK column |
 | `fixup_ndjson.py` | Python script — post-processes NDJSON to fix data type issues (e.g. string `content_version` → int, `'NULL'` strings → omitted) |
 | `validate_ndjson.sh` | Shell script — validates every `.ndjson` file in a directory; exits 1 if any line is not valid JSON |
@@ -3437,7 +3438,7 @@ All data-layer migration scripts live in `extension/sevenx_mongodb/bin/mongodb/`
 cd /path/to/exponential
 SCRIPTS=extension/sevenx_mongodb/bin/mongodb
 
-bash  $SCRIPTS/export_mysql.sh           ./json_export
+MYSQL_PASSWORD="$(cat /path/to/mysql-secret)" bash $SCRIPTS/export_mysql.sh ./json_export
 python3 $SCRIPTS/fixup_ndjson.py         ./json_export ./json_fixed
 bash  $SCRIPTS/validate_ndjson.sh        ./json_fixed
 bash  $SCRIPTS/import_all.sh             ./json_fixed

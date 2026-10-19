@@ -91,7 +91,7 @@ Tick what the site needs; each line is a page of this section:
 | Members area | [Member registration and members-only areas](member-registration-and-areas.md) |
 | RSS | [RSS feeds for your site](rss-feeds-for-your-site.md) |
 | Tags | [Tagging content with eztags](tagging-with-eztags.md) |
-| Custom logic | Application creators: start here |
+| Custom logic | [Application creators: start here](../app-creators/app-creators-start-here.md) |
 
 ## Step 7: hosting and operations
 

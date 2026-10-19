@@ -79,7 +79,7 @@ Sort fixes into template work (once, for every page) and content work (editors, 
 ## After launch
 
 - Re-run the automatic checks after every design change, as part of your release checks
-  (Testing applications).
+  ([Testing applications](../app-creators/testing-applications.md)).
 - Teach editors the content rules ([Accessibility for site builders](accessibility-for-site-builders.md#what-editors-control)).
 - Give visitors a way to report barriers (a contact form), and answer them.
 
