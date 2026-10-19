@@ -15,11 +15,11 @@ Start a redesign or an audit with facts, not memory.
 
 ## Contents
 
-1. [With templates](#with-templates)
+1. [On the command line](#on-the-command-line)
 2. [Which to choose](#which-to-choose)
 3. [Check](#check)
 
-## With templates
+## On the command line
 
 1. `./console exp:layouts list` (add `--drafts`, `--json`).
 2. `./console exp:ini where menu.ini/SiteInfo/MainMenuID site` and the same for `FooterMenuID`.

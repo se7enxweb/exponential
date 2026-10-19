@@ -16,7 +16,7 @@ Know before launch how every menu entry will be changed.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [With settings and templates](#with-settings-and-templates)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ Know before launch how every menu entry will be changed.
 
 1. The Layouts editor does not hold these menus: the header and footer are template blocks.
 
-## With templates
+## With settings and templates
 
 1. Header: `menu.ini [SiteInfo] MainMenuID[]`. Footer first line: `FooterMenuID[]`. Footer second line: Menu items in **Media > Configuration > Footer links**.
 2. For a menu that follows the tree, plan a template override of `pagelayout/header/main_menu.tpl` ([A header menu that follows the tree](../../header-menu-from-the-tree.md)).

@@ -16,7 +16,7 @@ No surprise slow first visits after a deploy.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [After template changes](#after-template-changes)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ No surprise slow first visits after a deploy.
 
 1. Publishing a layout refreshed the affected pages on the test copy (`X-Exp-Cache: MISS (purged)`) without a full clear.
 
-## With templates
+## After template changes
 
 1. After a full **Template & content** clear the next requests recompile templates (2.9 to 3.4 s for the first page on the test copy).
 2. Warm the main pages after a clear (request them once).

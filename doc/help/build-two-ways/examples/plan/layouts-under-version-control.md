@@ -16,7 +16,7 @@ A layout can always be put back.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [On the command line](#on-the-command-line)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ A layout can always be put back.
 
 1. Decide when exports are taken: before every larger change, and on a schedule.
 
-## With templates
+## On the command line
 
 1. `./console exp:layouts export --all --output=layouts-<date>.zip` writes every layout, shared layout and mapping; keep the files with the project.
 

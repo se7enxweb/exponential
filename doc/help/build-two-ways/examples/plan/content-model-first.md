@@ -16,7 +16,7 @@ No layout waits for a field that does not exist.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [In the classes](#in-the-classes)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ No layout waits for a field that does not exist.
 
 1. Item view types show the teaser fields (teaser title, teaser image, teaser intro): plan them as editors' work.
 
-## With templates
+## In the classes
 
 1. **Setup > Classes** lists the classes; NG Article, for example, has `title`, `teaser_title`, `image`, `teaser_image`, `full_intro`, `teaser_intro`, `body`, `related_content`, `main_topic`, `tags`.
 2. Plan new fields before the templates that print them.

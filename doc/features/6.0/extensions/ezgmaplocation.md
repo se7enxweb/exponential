@@ -6,16 +6,19 @@ address under a Google map. The address is stored with the coordinates and is se
 
 ## Set it up
 
-1. Get a Google Maps key and set it in `site.ini [SiteSettings] GMapsKey=<key>` (per siteaccess if you wish).
+1. Get a Google Maps JavaScript API key and set it in `ezgmaplocation.ini [GMapSettings] ApiKey=<key>` (in
+   `settings/override/` or per siteaccess). With an empty key the edit form and the view load no Google script and show
+   the coordinates without a map; a site that sends a Content Security Policy has to allow Google's hosts.
 2. Activate the extension and regenerate the extension autoloads: `php bin/php/ezpgenerateautoloads.php -e`.
 3. Create the table `ezgmaplocation` from `extension/ezgmaplocation/sql/<engine>/` (a SQLite schema ships since 6.0.3).
 4. Add the **Google Maps Location** datatype to a class.
 
 ## Edit a location
 
-1. Type an address under the map and press **Find address**.
-2. Press **Update Values** to take the coordinates.
-3. Move the marker to refine. If you do not, the address is saved as typed.
+1. Type an address under the map and press **Find address**: the map centers on it and the latitude and longitude
+   fields are filled in.
+2. Refine by dragging the marker or clicking the map; the coordinates follow, and the address field is cleared.
+   **Restore** brings back the location stored before, and **My current location** uses the browser's position.
 
 ## Example: find objects close to a point
 

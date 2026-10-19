@@ -16,7 +16,7 @@ A German version of a site with its own menu and, where needed, its own layouts.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [With settings and templates](#with-settings-and-templates)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -25,7 +25,7 @@ A German version of a site with its own menu and, where needed, its own layouts.
 1. A mapping can have a **Siteaccess** condition (a list: site, admin, classic, bold, bold_ger ...). The Starter mappings use `siteaccess: starter, starter_ger`.
 2. Plan which page types need a layout per language and which share one.
 
-## With templates
+## With settings and templates
 
 1. Each siteaccess has its own `menu.ini` (`exp:ini where menu.ini/SiteInfo/MainMenuID <siteaccess>`), so the header menu can differ.
 2. Translatable template texts use `|i18n( 'context' )` and the translation files of your extension.

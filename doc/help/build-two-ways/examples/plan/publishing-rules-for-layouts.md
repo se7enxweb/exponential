@@ -16,7 +16,7 @@ A change to Header / Footer or Prefooter is reviewed before it reaches every pag
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [For templates](#for-templates)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -25,7 +25,7 @@ A change to Header / Footer or Prefooter is reviewed before it reaches every pag
 1. Shared layouts: changes in a draft, reviewed in the editor's preview, then **Publish layout** by the agreed person.
 2. Take an export before publishing a shared layout.
 
-## With templates
+## For templates
 
 1. Template changes are reviewed in the extension's repository like any code.
 

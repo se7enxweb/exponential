@@ -16,7 +16,7 @@ Layouts reach production without being built twice.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [On the command line](#on-the-command-line)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ Layouts reach production without being built twice.
 
 1. The same through **Layouts > Export** and **Layouts > Import** in the administration.
 
-## With templates
+## On the command line
 
 1. On staging: `./console exp:layouts export --only=<identifiers> --output=release.zip`.
 2. On production: `./console exp:layouts import release.zip --dry-run`, then with the chosen `--strategy` and `--publish`.
