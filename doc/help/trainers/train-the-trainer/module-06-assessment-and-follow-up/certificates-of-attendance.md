@@ -13,8 +13,9 @@ Learners often want something to show for a course. A certificate of attendance 
 is honest about who issues it. This lesson gives wording that does not claim what does not exist.
 
 > **Note**
-> The documentation describes no official Exponential certification program. A certificate you issue is from you or
-> your organization, not from 7x or the Exponential Foundation.
+> A certificate you issue is from you or your organization, not from 7x or the Exponential Foundation. The partner
+> program uses "Exponential certified" for certified partners; its certifications' syllabus, exams and examiners are
+> not published ([Certifications](../../../partners/certifications.md)). Do not use that wording for your courses.
 
 ## At a glance
 
