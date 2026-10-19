@@ -31,10 +31,13 @@ The engine is suggested by Exponential's `composer.json` but not installed by de
 the `sockets` extension ([Serving the site, 8.3.1](../../install/08-serving-the-site.md#831-install-the-engine-package)):
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.44
+composer require se7enxweb/exponential-velocity:"<the version the kernel's composer.json suggests>"
 php bin/php/console exp:velocity ext check                         # missing PHP extensions, with the install command
 php bin/php/console exp:velocity config set ServerSettings Engine qbix
 ```
+
+Read the version from the `suggest` block of the kernel's `composer.json`: on 19 October 2026 it was `~0.0.4.52`, while
+the installation book still shows `~0.0.4.44`. The tilde accepts every later 0.0.4.x.
 
 The shipped default engine is `php` (PHP's built-in server, for development only); `qbix` is the recommended engine
 and FrankenPHP the production-ready alternative. Shipped ports: `qbix` 8088 (HTTP) and 8080 (HTTPS), `frankenphp` 8089

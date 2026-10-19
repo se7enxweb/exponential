@@ -53,7 +53,9 @@ PHP line (Exponential 6)                    Symfony line (Exponential Platform)
 ```
 
 "Legacy" and "Nexus" run Exponential 6 beside Symfony; "Platform 3.2.9" and "DXP" do not
-([The platform line](../who-is-7x.md#the-platform-line-exponential-platform-legacy-nexus-and-dxp)).
+([The platform line](../who-is-7x.md#the-platform-line-exponential-platform-legacy-nexus-and-dxp)). One exception:
+the Nexus 1.3.0.x line for Platform v5, and the v5 starter, have no legacy kernel
+([Nexus starter](../../features/6.0/platform-nexus-starter.md)).
 
 ## State on 18 October 2026
 
