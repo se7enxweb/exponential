@@ -74439,5 +74439,29 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Exponential-prosjektet: hva det er, lisensene, veikartet, støtte, fellesskapets kanaler og hvordan du bidrar og gir.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Tøm filter</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Lukk alle</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Alle mapper er lukket.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Alle mapper er åpne.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Åpne alle</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Åpne eller lukk alle mapper</translation>
+    </message>
 </context>
 </TS>

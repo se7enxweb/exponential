@@ -73186,5 +73186,29 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Exponential projesi: nedir, lisansları, yol haritası, destek, topluluk kanalları ve nasıl katkıda bulunup bağış yapılır.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Filtreyi temizle</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Tümünü daralt</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Tüm klasörler kapalı.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Tüm klasörler açık.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Tümünü genişlet</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Tüm klasörleri aç veya kapat</translation>
+    </message>
 </context>
 </TS>

@@ -74406,5 +74406,29 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Het Exponential-project: wat het is, de licenties, de roadmap, ondersteuning, kanalen van de gemeenschap en hoe u bijdraagt en geeft.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Filter wissen</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Alles inklappen</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Alle mappen zijn gesloten.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Alle mappen zijn open.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Alles uitklappen</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Alle mappen openen of sluiten</translation>
+    </message>
 </context>
 </TS>

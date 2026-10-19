@@ -74588,5 +74588,29 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Il progetto Exponential: cos&apos;è, le licenze, la roadmap, il supporto, i canali della comunità e come contribuire e donare.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Cancella filtro</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Comprimi tutto</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Tutte le cartelle sono chiuse.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Tutte le cartelle sono aperte.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Espandi tutto</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Apri o chiudi tutte le cartelle</translation>
+    </message>
 </context>
 </TS>

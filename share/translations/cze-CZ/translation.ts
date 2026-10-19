@@ -74463,5 +74463,29 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Projekt Exponential: co to je, jeho licence, plán vývoje, podpora, kanály komunity a jak přispět a darovat.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Vymazat filtr</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Sbalit vše</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Všechny složky jsou zavřené.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Všechny složky jsou otevřené.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Rozbalit vše</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Otevřít nebo zavřít všechny složky</translation>
+    </message>
 </context>
 </TS>

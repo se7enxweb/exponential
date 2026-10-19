@@ -74393,5 +74393,29 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Projekt Exponential: czym jest, jego licencje, plan rozwoju, wsparcie, kanały społeczności oraz jak współtworzyć i wspierać.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Wyczyść filtr</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Zwiń wszystko</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Wszystkie foldery są zamknięte.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Wszystkie foldery są otwarte.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Rozwiń wszystko</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Otwórz lub zamknij wszystkie foldery</translation>
+    </message>
 </context>
 </TS>

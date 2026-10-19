@@ -74234,5 +74234,29 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Projekt Exponential: što je, njegove licence, plan razvoja, podrška, kanali zajednice te kako doprinijeti i darivati.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Očisti filtar</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Sažmi sve</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Sve su mape zatvorene.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Sve su mape otvorene.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Proširi sve</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Otvorite ili zatvorite sve mape</translation>
+    </message>
 </context>
 </TS>

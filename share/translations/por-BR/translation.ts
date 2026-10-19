@@ -75173,5 +75173,29 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>O projeto Exponential: o que é, suas licenças, o roteiro, o suporte, os canais da comunidade e como contribuir e doar.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Limpar filtro</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Recolher tudo</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Todas as pastas estão fechadas.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Todas as pastas estão abertas.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Expandir tudo</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Abrir ou fechar todas as pastas</translation>
+    </message>
 </context>
 </TS>

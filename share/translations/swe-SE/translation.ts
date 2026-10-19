@@ -74484,5 +74484,29 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Exponential-projektet: vad det är, dess licenser, färdplan, support, gemenskapens kanaler och hur du bidrar och ger.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Rensa filter</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Fäll ihop alla</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Alla mappar är stängda.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Alla mappar är öppna.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Fäll ut alla</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Öppna eller stäng alla mappar</translation>
+    </message>
 </context>
 </TS>

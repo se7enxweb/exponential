@@ -73857,5 +73857,29 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Exponential-projektet: hvad det er, dets licenser, køreplan, support, fællesskabets kanaler, og hvordan du bidrager og giver.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Ryd filter</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Fold alle sammen</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Alle mapper er lukket.</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Alle mapper er åbne.</translation>
+    </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Fold alle ud</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Åbn eller luk alle mapper</translation>
+    </message>
 </context>
 </TS>
