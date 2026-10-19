@@ -82,7 +82,7 @@ good when the trash is emptied (**Empty trash** or `./console exp:trashpurge`).
 | Event pages | keep or hide by year |
 
 The website is rarely the official archive. Transfer records to your records system as your schedule says; the
-records and archiving guides of this Governments help go deeper.
+[records and archiving](../../records-and-archiving/README.md) guides of this Governments help go deeper.
 
 ## Related pages
 

@@ -43,7 +43,7 @@ practice, and procedures differ greatly between parliaments.
 3. **Requirements emphasis**.
 4. **First 90 days**.
 
-Up: [Levels of government](../README.md). The landing page of the Governments section, government-start-here.md,
+Up: [Levels of government](../README.md). The landing page of the Governments section, [Governments: start here](../../government-start-here.md),
 is the starting point for every reader. A municipal council's meetings are covered in
 [Council meetings and local services](../municipal-and-local/council-meetings-and-local-services.md).
 

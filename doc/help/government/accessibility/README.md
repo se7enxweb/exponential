@@ -76,11 +76,11 @@ accessibility statement template. This section never claims conformance.
 
 Tasks that put these pages into practice (require alternative text on an image field, run an accessibility spot
 check, publish an accessibility statement page, check alternative text across images) are in the compliance tasks of
-this help (tasks/compliance).
+this help ([Compliance tasks](../tasks/compliance/README.md)).
 
 ## Related pages
 
-- Up: the Governments start page (government-start-here.md) and the Governments index (README.md one level up)
+- Up: [Governments: start here](../government-start-here.md)
 - [Accessibility standards](../../../standards/accessibility.md)
 - [Accessibility for site builders](../../creators/website-creators/accessibility-for-site-builders.md)
 - [Testing your site's accessibility](../../creators/website-creators/testing-accessibility.md)

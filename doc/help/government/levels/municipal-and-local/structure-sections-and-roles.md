@@ -77,7 +77,7 @@ Many departments edit a few times a month. The **editor siteaccess** gives them 
 content ([Logging into the Editor](../../../logging-into-the-editor.md),
 [Setup wizard and editor siteaccess](../../../../features/6.0/setup-wizard-and-editor-siteaccess.md)). Help them with:
 
-- a one-page instruction per task (the publishing tasks of this Governments help, in `tasks/publishing/`);
+- a one-page instruction per task ([Publishing tasks](../../tasks/publishing/README.md));
 - **My drafts** to find unfinished work ([Drafts and pending](../../../../guides/drafts-and-pending.md));
 - two-step sign-in, because an occasional editor's password is the one most likely reused
   ([Two-step sign-in](../../../../guides/two-factor-login.md)).

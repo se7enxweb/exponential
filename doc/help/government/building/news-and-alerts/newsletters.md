@@ -15,7 +15,7 @@ double opt-in, scheduled sending, bounce handling and an archive. This page cove
 newsletter guides are [Newsletters with cjw_newsletter](../../../creators/website-creators/newsletters-with-cjw-newsletter.md),
 [Newsletter lists and subscriptions](../../../creators/website-creators/newsletter-lists-and-subscriptions.md) and
 [Sending newsletters](../../../creators/website-creators/sending-newsletters.md). The Governments help has its own
-newsletters guide in the building section (building/newsletters/).
+newsletters guide in the building section ([Newsletters](../newsletters/README.md)).
 
 > **Note** This page describes features and common practice; it is not legal advice. Check the law that applies to
 > your organization with your legal counsel.

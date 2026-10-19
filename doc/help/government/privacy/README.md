@@ -71,11 +71,11 @@ removal, logs without an age limit by default, forms without retention, no cooki
 | [Privacy by design checklist](privacy-by-design-checklist.md) | planning to operation |
 
 Step-by-step tasks (answer an access request for mail preferences, erase a user account, export audit records about a
-person, export and remove form submissions) are in the compliance tasks of this help (tasks/compliance).
+person, export and remove form submissions) are in the compliance tasks of this help ([Compliance tasks](../tasks/compliance/README.md)).
 
 ## Related pages
 
-- Up: the Governments start page (government-start-here.md) and the Governments index (README.md one level up)
+- Up: [Governments: start here](../government-start-here.md)
 - [Privacy standards](../../../standards/privacy.md)
 - [Compliance and GDPR for hosts](../../hosting/security/compliance-and-gdpr.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

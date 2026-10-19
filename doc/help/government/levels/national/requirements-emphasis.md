@@ -108,7 +108,7 @@ the [GDPR](https://eur-lex.europa.eu/eli/reg/2016/679/oj) applies in the EU.
 | R5 | Site survives the busiest day | load test with caches on |
 | R6 | Planned work shows a maintenance page | maintenance mode rehearsed |
 
-The requirement sections of this Governments help (accessibility, security, privacy, records and archiving) go deeper.
+The requirement sections of this Governments help go deeper: [accessibility](../../accessibility/README.md), [security](../../security/README.md), [privacy](../../privacy/README.md) and [records and archiving](../../records-and-archiving/README.md).
 
 ## Related pages
 

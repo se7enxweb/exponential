@@ -42,7 +42,7 @@ practice.
 3. **Requirements emphasis**.
 4. **First 90 days**.
 
-Up: [Levels of government](../README.md). The landing page of the Governments section, government-start-here.md,
+Up: [Levels of government](../README.md). The landing page of the Governments section, [Governments: start here](../../government-start-here.md),
 is the starting point for every reader. A library run by a municipality may share its platform; see
 [Municipal and local government](../municipal-and-local/README.md).
 

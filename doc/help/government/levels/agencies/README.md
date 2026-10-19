@@ -43,7 +43,7 @@ practice.
 3. **Requirements emphasis**.
 4. **First 90 days**.
 
-Up: [Levels of government](../README.md). The landing page of the Governments section, government-start-here.md,
+Up: [Levels of government](../README.md). The landing page of the Governments section, [Governments: start here](../../government-start-here.md),
 is the starting point for every reader. An agency of a ministry may also share a platform with it; see
 [Many ministries on one platform](../national/many-ministries-on-one-platform.md).
 
