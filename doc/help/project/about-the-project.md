@@ -72,7 +72,8 @@ The setup wizard installs site designs, extensions and demo content from **packa
 that holds them, at `exponential.packages.exponential.earth`, with a mirror of its contents on GitHub in
 [se7enxweb/exponential.packages.exponential.earth](https://github.com/se7enxweb/exponential.packages.exponential.earth)
 ([/about/packages](https://exponential.earth/about/packages)). You can propose your own site package by forking that
-repository and sending a pull request, the website says.
+repository and sending a pull request, the website says; how, step by step:
+[Contribute your site package](../site-packages/contribute-your-site-package.md).
 
 > **Note**
 > The website's packages page shows a `settings/override/package.ini.append.php` that points the wizard at the 6.0.9

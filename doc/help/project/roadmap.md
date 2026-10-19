@@ -55,7 +55,8 @@ The roadmap asks the community for help with two things that anyone with some ex
    [Contribute extensions back](../contribute-extensions-back.md#4-write-composerjson) shows what the file needs.
 2. **Site packages.** The setup wizard installs site packages such as 7x Simple. The project wants to open the
    wizard's list of site packages to the community, so that users can publish their own. The roadmap asks
-   interested people to write to the community address it gives (community at exponential dot earth).
+   interested people to write to the community address it gives (community at exponential dot earth);
+   [Contribute your site package](../site-packages/contribute-your-site-package.md) shows the pull request route.
 
 It also invites companies to [become partners](https://exponential.earth/partner/apply) and to
 [sponsor 7x's development work](https://github.com/sponsors/se7enxweb) ([Give and donate](give-and-donate.md)).

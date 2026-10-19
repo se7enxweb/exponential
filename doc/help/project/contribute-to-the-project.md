@@ -91,7 +91,8 @@ The official roadmap asks for volunteers for two jobs ([The roadmap](roadmap.md#
 - **Composer packages**: many older extension repositories still lack a `composer.json` and a Packagist entry. Adding
   them is a small, well-defined pull request per extension
   ([Contribute extensions back](../contribute-extensions-back.md#4-write-composerjson)).
-- **Site packages**: the project wants community site packages in the setup wizard's list.
+- **Site packages**: the project wants community site packages in the setup wizard's list
+  ([Contribute your site package](../site-packages/contribute-your-site-package.md)).
 
 ## Help in the community
 
