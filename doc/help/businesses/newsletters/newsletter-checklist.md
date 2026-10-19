@@ -131,7 +131,7 @@ From [Bounces and list hygiene](bounces-and-list-hygiene.md#a-monthly-hygiene-ro
 ## Related pages
 
 - [Newsletters for businesses](README.md)
-- Go-live checklist
-- Monthly operations checklist
+- [Go-live checklist](../templates/go-live-checklist.md)
+- [Monthly operations checklist](../templates/monthly-operations-checklist.md)
 - [Launch checklist for websites](../../creators/website-creators/launch-checklist.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

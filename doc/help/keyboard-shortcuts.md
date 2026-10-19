@@ -111,6 +111,8 @@ In a list box, such as **Interface language**, type the first letters of an entr
 | `j` / `k` | Next / previous heading of the page you read. |
 | `]` / `[` | Next / previous help page. |
 
+![A page of the help: the contents of the help on the left, the page in the middle and its headings on the right](images/help/help-viewer.webp)
+
 These keys are ignored while you type in a field.
 
 ## Learn more

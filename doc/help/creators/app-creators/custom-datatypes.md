@@ -14,6 +14,8 @@ structured address. A datatype is a class extending `eZDataType` (`kernel/classe
 edit template. **Setup > RAD > Datatype extension** (`/setup/datatype`) writes a working skeleton
 ([RAD tools](rad-tools.md)).
 
+![Setup, RAD, the datatype wizard: the name and the class of a new datatype, to generate its skeleton](../../images/creators/rad-datatype-wizard.webp)
+
 ## Contents
 
 1. [Check first](#check-first)

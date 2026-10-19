@@ -12,6 +12,8 @@ type: help
 This page is for application creators who want others (or other installations) to install their application. An
 extension that installs with one `composer require`, activates with one setting and documents itself is easy to adopt.
 
+![The About page lists every extension with what its ezinfo.php or extension.xml says](../../images/creators/about-extensions.webp)
+
 ## Contents
 
 1. [The repository](#the-repository)

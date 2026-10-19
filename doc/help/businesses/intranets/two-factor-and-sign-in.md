@@ -133,6 +133,6 @@ every step to `var/log/auth.log`, never a code or a secret.
 - [Two-step sign-in (guide)](../../../guides/two-factor-login.md)
 - [Two-step sign-in for hosts](../../hosting/security/two-factor-sign-in.md)
 - [Your account and signing in](../../accounts-and-sign-in.md)
-- User accounts and passwords
+- [User accounts and passwords](../security/user-accounts-and-passwords.md)
 - [Directory sign-in and LDAP](directory-sign-in-and-ldap.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

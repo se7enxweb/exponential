@@ -35,6 +35,8 @@ and content, so always use a throwaway installation.
    be undone. Uninstall to check that your package leaves the site clean.
 7. Write down every surprise and fix it in the next version of the package.
 
+![Setup, Packages: the package repositories, where an imported package appears before it is installed](../../images/designers/packages-repositories.webp)
+
 ## On the command line
 
 ```bash

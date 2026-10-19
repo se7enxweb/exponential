@@ -57,6 +57,8 @@ Category=listing
 | components | hero, about, features, logos, quote, lead and the `exp_component_*` blocks |
 | placeholders | tpl_block (a template part of the page), full_view (the page's own content) |
 
+![Layouts, Components: the layout types, zones and block definitions the installation offers](../../images/layouts/layout-components.webp)
+
 The exact list and categories are in the INI file; `doc/bc/6.0/LAYOUTS.md` has a block catalogue with parameters.
 
 ## Adding a view type: no PHP

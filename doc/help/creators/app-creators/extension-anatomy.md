@@ -13,6 +13,8 @@ This page is for application creators who want to know what goes where in an ext
 under `extension/` (or an additional extension directory); the kernel finds its parts by directory names and by the
 settings the extension carries ([Extensions](../../../guides/extensions.md)).
 
+![The About page of the administration, where an extension's version and license show](../../images/creators/about-extensions.webp)
+
 ## Contents
 
 1. [The directory layout](#the-directory-layout)

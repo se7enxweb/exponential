@@ -32,6 +32,8 @@ The **Layouts** tab is shown only to roles that may work with layouts. If you do
 The **Layouts** tab opens the **Layouts Dashboard**: the numbers of layouts, zones, blocks and mappings, the recently
 changed layouts, and buttons to **New layout**, **Layouts** and **Rules** (the mappings).
 
+![Layouts, the list of layouts with their type, status and the button to open each in the editor](images/layouts/layout-list.webp)
+
 **Layouts** lists every layout with its identifier, type, date and number of mappings. Each has **Open** (edit it in
 the editor), **Preview** and **Delete**. **Sort by** and **Order** arrange the list.
 
@@ -39,6 +41,8 @@ the editor), **Preview** and **Delete**. **Sort by** and **Order** arrange the l
 
 Press **New layout**, choose a **Layout type**, give it a **Name** (the **Identifier** and **Description** are
 optional) and press **Create layout**. The editor opens with the empty zones of that type.
+
+![The Layouts dashboard with the New layout button outlined, next to Layouts, Rules, Template editor and Setup DB](images/layouts/layouts-dashboard-buttons.webp)
 
 ## The editor
 
@@ -94,6 +98,8 @@ Where a site does not clear its caches by itself after a publish, the editor ask
 **Enabled**, its **Targets** (a location, a subtree, a module page) and its **Conditions** (for example a content
 type or a siteaccess). The first enabled mapping by priority whose targets and conditions match a page wins.
 **Edit layout** opens the layout of a mapping; **New mapping** adds one.
+
+![The Layouts tab of a page: the layout it resolves to, with Preview and Edit layout, and the mappings applied to this location](images/layouts/item-layouts-tab.webp)
 
 Changing mappings decides what whole parts of the site look like. If you are not sure, ask a site builder.
 

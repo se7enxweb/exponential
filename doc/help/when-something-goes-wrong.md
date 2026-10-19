@@ -19,6 +19,8 @@ a problem so that it gets fixed.
 
 Some pages look like errors but only say that something is not allowed or not there:
 
+![The page a visitor gets for an address that does not exist: a friendly not found page, not an error of the site](images/help/site-not-found.webp)
+
 | What the page says | What it means | What to do |
 |---|---|---|
 | *The requested page could not be displayed. (1)*, *...because of security issues*, *Your account does not have the proper privileges* | Your role may not open this page or do this action. | Ask your administrator for access, if you need it. |
@@ -102,6 +104,8 @@ For questions that are not bugs ("how do I ...?"), the community is the right pl
 [Exponential documentation](https://exponential.doc.exponential.earth/Exponential), on
 [eZpedia](https://ezpedia.exponential.earth/) and in the [articles on Share Exponential](https://share.exponential.earth/learn).
 The other help pages may already have the answer: see [Help for editors and users](README.md).
+
+![Report an error in the dark mode: where each kind of problem goes, and the safe summary of the installation to copy](images/help/help-report.webp)
 
 Free help depends on the time people give, so nobody promises an answer time. When you cannot wait, the project's
 [support page](https://exponential.earth/support) recommends paid support from 7x, the company that maintains

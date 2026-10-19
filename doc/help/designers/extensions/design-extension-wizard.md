@@ -26,6 +26,8 @@ it writes anything.
    `/setup/designextension`.
 2. Under **What it is** fill:
 
+![The design extension wizard: what the theme is, what goes in it, and the preview of every file before it is written](../../images/designers/design-extension-wizard.webp)
+
    | Field | What to enter |
    |---|---|
    | **Extension name** | Lower case letters, digits and underscores, three to forty-one characters, starting with a letter. It "becomes extension/<name> and design/<name>". |

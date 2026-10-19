@@ -67,6 +67,10 @@ right-to-left aware, keyboard accessible, and loaded on every admin page. New CS
 </div>
 ```
 
+![Setup, Sections built from the shared components: counter cards, a filter bar (outlined) and a card per section](../../images/designers/components-page.webp)
+
+![The same page in the dark mode, with no extra CSS: the components take the dark token values](../../images/designers/components-page-dark.webp)
+
 No `<style>`, no `style=""`, every color from tokens through the classes.
 
 ## States and weight

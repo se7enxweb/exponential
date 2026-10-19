@@ -38,6 +38,8 @@ relates to it, and the administration warns before you remove an image something
 | By site (`Site A`, `Site B`) | multisite installations, with roles limited per folder |
 | A `Shared` folder | logos, icons and images used everywhere |
 
+![The media library with its folders Images, Files and Multimedia as sub items](../../images/creators/media-folders.webp)
+
 Keep it at most three levels deep; the upload dialog browses at most `MaxDepth=3` levels (`settings/upload.ini`).
 
 ## Where uploads land
