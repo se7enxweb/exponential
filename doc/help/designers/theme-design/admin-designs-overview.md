@@ -38,6 +38,8 @@ them.
 
 On the demonstration installation:
 
+![The Interface box in the right column with the Administration design list at the bottom, where a user picks the admin design](../../images/designers/admin-design-switch.webp)
+
 ```
 admin    siteaccess: admin4l > admin4 > admin3 > admin2 > admin > standard
 editor   siteaccess: editor > admin4l > admin4 > admin3 > admin2 > admin > standard

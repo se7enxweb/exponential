@@ -28,6 +28,8 @@ limitations, who may do what.
 
 `settings/content.ini [NodeSettings]` names the top nodes:
 
+![Content structure: the root of the content tree with its sub items, one folder per site](../../images/creators/content-tree-roots.webp)
+
 | Setting | Node | Holds |
 |---|---|---|
 | `RootNode` | 2 | the content: everything visitors see |
