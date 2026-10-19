@@ -59,7 +59,7 @@ Do one of each for the same mechanism and compare the files: that is the fastest
 ## Capstone
 
 [A complete extension from idea to release](capstone-a-complete-extension.md) puts the pieces together and publishes
-the result, following Part 7.
+the result, following [Part 7](../../part-7-releasing/README.md).
 
 ## What you need
 

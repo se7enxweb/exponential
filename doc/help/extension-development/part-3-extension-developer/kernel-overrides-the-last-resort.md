@@ -59,7 +59,7 @@ named by a setting, an event listener, a filter, a template override." In order 
 | behavior around publishing, caches, output | an event listener or filter ([Events, listeners and filters](events-and-filters.md)) |
 | a kernel module's view | a view re-implementation (`site.ini [RunnableSettings] Implementation[]`) or an extension module that replaces the module ([An extension can replace a kernel module](../../../features/6.0/extension-module-override.md)) |
 | a datatype's behavior | your own datatype |
-| a bug in the kernel | a pull request to the kernel (Contributing back with pull requests) |
+| a bug in the kernel | a pull request to the kernel ([Contributing back with pull requests](../part-5-extend-fork-contribute/contributing-back-with-pull-requests.md)) |
 
 A fix sent upstream helps everyone and costs you nothing at the next upgrade. An override is the answer only for the
 time it takes the fix to be released, and should then be removed.

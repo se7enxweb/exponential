@@ -90,7 +90,7 @@ php bin/php/checkclasses.php --quiet-ok
 
 Then by hand, on a development installation with debug output on: every page in light and dark mode, the Content
 Security Policy console clean, the RAD health check (`/setup/rad`) without findings for your extension. The full list
-is Testing before a release.
+is [Testing before a release](../../part-7-releasing/testing-before-a-release.md).
 
 ## 5. Version 0.1.0
 
@@ -103,26 +103,26 @@ git -C extension/mysite_hello tag -a v0.1.0 -m "Version 0.1.0"
 ```
 
 A pushed tag can never be moved or replaced; check before you push
-(Tags and releases are permanent).
+([Tags and releases are permanent](../../part-7-releasing/tags-are-permanent.md)).
 
 ## 6. Publish
 
 1. Create the repository on GitHub, push the branch and the tag.
 2. Create a GitHub release for the tag with the changelog (`gh release create v0.1.0 --notes-file CHANGELOG.md`).
 3. Submit the repository to Packagist and add the webhook
-   (Composer and Packagist).
+   ([Composer and Packagist](../../part-7-releasing/composer-and-packagist.md)).
 4. Install it on a fresh installation with `composer require your-organization/mysite_hello:^0.1` to prove it works for
    someone else.
 
 ## 7. Announce and maintain
 
-Announce it where people look (Announcing a release), answer issues, and
+Announce it where people look ([Announcing a release](../../part-7-releasing/announcing-a-release.md)), answer issues, and
 publish fixes as new versions. If it could serve everyone, offer it to the project
-(Contributing back with pull requests).
+([Contributing back with pull requests](../../part-5-extend-fork-contribute/contributing-back-with-pull-requests.md)).
 
 ## Related pages
 
 - Previous: [By hand: a PHPUnit test for your extension](by-hand-phpunit-test.md)
-- Next: Part 4: Upgrading an old extension to Exponential 6
-- Part 7: Releasing your extension
+- Next: [Part 4: Upgrading an old extension to Exponential 6](../../part-4-upgrading/README.md)
+- [Part 7: Releasing your extension](../../part-7-releasing/README.md)
 - [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

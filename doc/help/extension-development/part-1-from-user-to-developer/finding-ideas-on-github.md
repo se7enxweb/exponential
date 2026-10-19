@@ -79,7 +79,7 @@ When you find something promising, read these before you copy a single line:
 3. **The issues and pull requests.** Open issues show known problems; merged pull requests show that someone
    reviews contributions.
 4. **What version it was written for.** `composer.json` `require.php`, the README, `extension.xml`. Code written
-   for PHP 5 needs the changes in Part 4 before it runs on Exponential 6.
+   for PHP 5 needs the changes in [Part 4](../part-4-upgrading/README.md) before it runs on Exponential 6.
 
 ## Is it alive?
 
@@ -93,14 +93,14 @@ When you find something promising, read these before you copy a single line:
 | `composer.json` PHP requirement | 8.x | 5.x or missing |
 
 An extension that "needs adoption" is not useless; it is an opportunity.
-Adopting an abandoned extension explains how
+[Adopting an abandoned extension](../part-5-extend-fork-contribute/adopting-an-abandoned-extension.md) explains how
 to take one over respectfully.
 
 ## Fork, or just read?
 
 For ideas, reading is enough. When you want to change the code and share the change, fork it on GitHub and work on a
-branch; Forking on GitHub, step by step shows how, and
-Contributing back with pull requests how
+branch; [Forking on GitHub, step by step](../part-5-extend-fork-contribute/forking-on-github.md) shows how, and
+[Contributing back with pull requests](../part-5-extend-fork-contribute/contributing-back-with-pull-requests.md) how
 to offer the change to its author.
 
 ## Exercise

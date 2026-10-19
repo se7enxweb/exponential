@@ -130,7 +130,7 @@ the menu in a `cache-block` ([Caching and templates](caching-and-templates.md)):
 
 Put your CSS in `extension/mysite_design/design/mysite/stylesheets/site.css` and load it through the design's settings
 (`design.ini [StylesheetSettings]`), never with `style=""` or a `<style>` block; see
-Theme assets, the packer and CSP.
+[Theme assets, the packer and CSP](../part-6-theme-developers/theme-assets-the-packer-and-csp.md).
 
 ## Step 7: the members area
 

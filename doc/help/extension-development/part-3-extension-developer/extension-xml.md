@@ -92,7 +92,7 @@ print_r( expExtensionCatalogue::dependenciesFromXml( $xml ) );
 ## At every release
 
 `<version>` must equal the release version and the `Version` of `ezinfo.php`, in the commit the tag points at. See
-Bumping ezinfo.php and extension.xml.
+[Bumping ezinfo.php and extension.xml](../part-7-releasing/bumping-ezinfo-and-extension-xml.md).
 
 ## Related pages
 

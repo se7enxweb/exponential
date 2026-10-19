@@ -46,7 +46,7 @@ lists Slack, Discord and a LinkedIn group as well.
 2. Search the forums of the old product name too: many answers from the earlier years still apply to the kernel,
    whose code base Exponential continues.
 3. When you find an answer, check which version it was written for. Settings and templates rarely changed; PHP code
-   written for PHP 5 needs the changes in Part 4.
+   written for PHP 5 needs the changes in [Part 4](../part-4-upgrading/README.md).
 
 ## Using what you find
 
@@ -65,7 +65,7 @@ A portal like this lives on answers. Once you have solved something:
 - Answer the question in the forum where you found it unanswered.
 - Write a tutorial (the **Write a tutorial!** page explains how).
 - Announce your extension in the Extensions forum when you release it; see
-  Announcing a release.
+  [Announcing a release](../part-7-releasing/announcing-a-release.md).
 
 ## Related pages
 

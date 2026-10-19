@@ -104,7 +104,7 @@ Prefer overrides for content templates; use the same-path method for templates t
 
 The same chain finds stylesheets, scripts and images: `{'stylesheets/site.css'|ezdesign}` prints the address of the
 first `stylesheets/site.css` in the chain, for example `"/design/base/stylesheets/site.css"`. The packer of ezjscore
-uses it too (see Theme assets, the packer and CSP).
+uses it too (see [Theme assets, the packer and CSP](../part-6-theme-developers/theme-assets-the-packer-and-csp.md)).
 
 ## Caching
 

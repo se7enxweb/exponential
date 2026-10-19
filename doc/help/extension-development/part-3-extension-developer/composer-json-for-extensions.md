@@ -61,7 +61,7 @@ Packagist. This chapter explains the fields that matter for an extension, using 
 
 Do not put `version` into `composer.json` unless you keep it in step with every tag: Packagist takes versions from
 tags. If you keep one, bump it with `ezinfo.php` and `extension.xml`
-(Bumping ezinfo.php and extension.xml).
+([Bumping ezinfo.php and extension.xml](../part-7-releasing/bumping-ezinfo-and-extension-xml.md)).
 
 ## Crediting the original author
 
@@ -75,7 +75,7 @@ tags. If you keep one, bump it with `ezinfo.php` and `extension.xml`
 ```
 
 (The real file names the person; this page leaves names of individuals out.) Do the same when you fork:
-Attribution and copyright notices.
+[Attribution and copyright notices](../part-5-extend-fork-contribute/attribution-and-copyright-notices.md).
 
 ## Check it
 
@@ -97,7 +97,7 @@ While the package is not on Packagist, a project can install it from Git by addi
 ```
 
 then `composer require your-organization/mysite_hello:dev-main`. Publishing on Packagist is
-Composer and Packagist.
+[Composer and Packagist](../part-7-releasing/composer-and-packagist.md).
 
 > **Warning**
 > Never run `composer update` on a live site to try a new extension. Try it on your development installation, commit

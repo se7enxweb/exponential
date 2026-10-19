@@ -19,7 +19,7 @@ center, next to the kernel's, including the "?" help button of your module's pag
 |---|---|
 | `README.md` | what it does in one paragraph, requirements, installation, activation, settings, a first example, license |
 | `doc/` | longer guides: settings reference, templates and their variables, upgrade notes |
-| `CHANGELOG.md` or `doc/changelogs/` | what changed in each release (Changelogs) |
+| `CHANGELOG.md` or `doc/changelogs/` | what changed in each release ([Changelogs](../part-7-releasing/changelogs.md)) |
 | `LICENSE` | the license text |
 | `ezinfo.php`, `extension.xml` | name, version, license, website ([ezinfo.php](ezinfo-php.md)) |
 
@@ -83,7 +83,7 @@ depends on more than the view, implement `expHelpContextProviderInterface`
 
 The kernel's documentation has a page per shipped extension in `doc/features/6.0/extensions/`. If your extension is
 offered to the project, a short page there (what it does, settings, what changed per release) helps every
-administrator; propose it with a pull request (Contributing back with pull requests).
+administrator; propose it with a pull request ([Contributing back with pull requests](../part-5-extend-fork-contribute/contributing-back-with-pull-requests.md)).
 
 ## License your documentation
 

@@ -85,7 +85,7 @@ return array( 'Name' => "expsite_installer",
 ```
 
 `php -l` does **not** catch this (the file is valid syntax); only running it does. Part 4 has more of these:
-Modernizing ezinfo.php and extension.xml.
+[Modernizing ezinfo.php and extension.xml](../part-4-upgrading/modernizing-ezinfo-and-extension-xml.md).
 
 ## HTML in the values
 
@@ -101,7 +101,7 @@ Keep every earlier holder when you take over or fork an extension, and add yours
 'Copyright' => "Copyright (C) 2011 - 2014 Original Author Organization, 2026 Your Organization",
 ```
 
-See Attribution and copyright notices.
+See [Attribution and copyright notices](../part-5-extend-fork-contribute/attribution-and-copyright-notices.md).
 
 ## Check
 
@@ -115,7 +115,7 @@ Then open **Setup > Extensions**: the card shows your name, version, license and
 ## At every release
 
 The `Version` in `ezinfo.php` and in `extension.xml` equals the release version, changed in the commit the tag points
-at; see Bumping ezinfo.php and extension.xml.
+at; see [Bumping ezinfo.php and extension.xml](../part-7-releasing/bumping-ezinfo-and-extension-xml.md).
 
 ## Related pages
 

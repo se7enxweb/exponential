@@ -143,6 +143,6 @@ against the kernel's `phpcs.xml.dist`.
 - Previous: [Admin pages in the admin4 style](admin-pages-in-admin4-style.md)
 - Next: [Debugging extensions](debugging-extensions.md)
 - [By hand: a PHPUnit test for your extension](tutorials/by-hand-phpunit-test.md)
-- Testing before a release
+- [Testing before a release](../part-7-releasing/testing-before-a-release.md)
 - [phpunit.de](https://phpunit.de/)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

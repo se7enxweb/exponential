@@ -39,7 +39,7 @@ Titles are quoted as the articles name themselves; they use the product name of 
 | Extensions | ["Extensions"](https://ezpedia.exponential.earth/en/learning/extensions) | [What an extension is](what-an-extension-is.md) |
 | Building in an extension | ["Learning: How to develop eZ publish solutions within an extension"](https://ezpedia.exponential.earth/en/learning/learning_how_to_develop_ez_publish_solutions_within_an_extension) | [Part 3](../part-3-extension-developer/README.md) |
 | Troubleshooting | ["HOWTO Troubleshoot eZ Publish Extensions"](https://ezpedia.exponential.earth/en/learning/howto_troubleshoot_ez_publish_extensions) | [Debugging extensions](../part-3-extension-developer/debugging-extensions.md) |
-| Design extensions | ["Learning: How to create a design extension"](https://ezpedia.exponential.earth/en/learning/learning_how_to_create_a_design_extension) | Part 6 |
+| Design extensions | ["Learning: How to create a design extension"](https://ezpedia.exponential.earth/en/learning/learning_how_to_create_a_design_extension) | [Part 6](../part-6-theme-developers/README.md) |
 | Override system | ["Template Override System"](https://ezpedia.exponential.earth/en/learning/template_override_system) | [Template overrides: the basics](../part-2-builder/template-overrides-basics.md) |
 | Template debugging | ["Learning: Template Debugging"](https://ezpedia.exponential.earth/en/learning/learning_template_debugging) | [Debugging templates](../part-2-builder/debugging-templates.md) |
 | Debugging | ["Debugging"](https://ezpedia.exponential.earth/en/learning/debugging) | [Debug output and logs for developers](debug-output-and-logs-for-developers.md) |
@@ -63,7 +63,7 @@ datatypes, workflow events) have hardly changed since. What has changed:
 
 | Then | In Exponential 6 |
 |---|---|
-| PHP 4 and PHP 5 code (`function ClassName()` constructors, `each()`, `create_function()`) | PHP 8.0 to 8.5; see Part 4 |
+| PHP 4 and PHP 5 code (`function ClassName()` constructors, `each()`, `create_function()`) | PHP 8.0 to 8.5; see [Part 4](../part-4-upgrading/README.md) |
 | `include_once( 'kernel/classes/...' )` lines at the top of files | Autoloading; regenerate with `php bin/php/ezpgenerateautoloads.php -e` |
 | Inline `<script>` and `onclick=""` in templates | Forbidden in the administration by its Content Security Policy |
 | YUI and older jQuery | jQuery 4 and the `Exp` namespace of expui |

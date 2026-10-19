@@ -92,7 +92,7 @@ database tables, content classes or content: an extension that created them shou
 | A module of the extension says "not found" | caches not cleared, or `ExtensionRepositories[]` missing in its `module.ini.append.php` |
 | `Class ... not found` | autoloads not regenerated, or the PHP processes still run old code |
 | Works on the command line, not in the browser | PHP-FPM or Velocity not reloaded |
-| The site breaks right after activation | a class that does not load on PHP 8; run `checkclasses.php`, deactivate, fix (Part 4) |
+| The site breaks right after activation | a class that does not load on PHP 8; run `checkclasses.php`, deactivate, fix ([Part 4](../part-4-upgrading/README.md)) |
 
 ## Related pages
 

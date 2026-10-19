@@ -11,7 +11,7 @@ type: help
 
 Tutorial 6. The **Design extension** wizard (`/setup/designextension`) writes the skeleton of a theme: a pagelayout split
 into parts, a stylesheet and a script registered in `design.ini`, an images folder, and an example override. Designers
-continue in Part 6. The output below was produced by the wizard's generator
+continue in [Part 6](../../part-6-theme-developers/README.md). The output below was produced by the wizard's generator
 (`expDesignExtensionWizard::files()`); every PHP file passed `php -l`.
 
 ## 1. The form
@@ -121,6 +121,6 @@ Content Security Policy-friendly pattern: a script file that enhances the page a
 
 - Previous: [With RAD: a workflow event](rad-workflow-event.md)
 - Next: [With RAD: a settings-only extension](rad-settings-extension.md)
-- A theme with the RAD wizard
+- [A theme with the RAD wizard](../../part-6-theme-developers/a-theme-with-the-rad-wizard.md)
 - [A design inside an extension](../design-in-an-extension.md)
 - [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

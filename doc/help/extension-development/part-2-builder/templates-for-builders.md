@@ -171,7 +171,7 @@ added.
 - Escape output (`|wash`) unless you know the value is safe.
 - No inline `<script>` or `style=""`: scripts and styles go in files of the design and are loaded through the design's
   settings (a Content Security Policy forbids inline code in the administration). See
-  Theme assets, the packer and CSP.
+  [Theme assets, the packer and CSP](../part-6-theme-developers/theme-assets-the-packer-and-csp.md).
 - Fetch once, outside loops.
 - Keep logic small. When a template needs a page of logic, the logic belongs in an operator or a fetch function
   ([When settings are not enough](when-settings-are-not-enough.md)).

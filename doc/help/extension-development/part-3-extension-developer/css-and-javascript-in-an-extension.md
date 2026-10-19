@@ -113,7 +113,7 @@ data attributes, escaped: `data-name="{$name|wash}"`.
 
 The administration runs jQuery 4 and the `Exp` namespace of the `expui` extension; YUI was removed. Use those rather
 than bringing your own copy of a library; see The expui JavaScript API
-and From old jQuery to jQuery 4.
+and [From old jQuery to jQuery 4](../part-4-upgrading/old-jquery-to-jquery-4.md).
 
 ## Styling admin pages
 
@@ -125,5 +125,5 @@ tokens before writing CSS of your own; see [Admin pages in the admin4 style](adm
 - Previous: [A design inside an extension](design-in-an-extension.md)
 - Next: [Ajax with ezjscore server functions](ajax-with-ezjscore-server-functions.md)
 - [Content Security Policy for extension authors](content-security-policy-for-extensions.md)
-- Theme assets, the packer and CSP
+- [Theme assets, the packer and CSP](../part-6-theme-developers/theme-assets-the-packer-and-csp.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

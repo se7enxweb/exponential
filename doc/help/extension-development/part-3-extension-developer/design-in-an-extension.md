@@ -11,7 +11,7 @@ type: help
 
 Part 3, chapter 22. Almost every extension has templates: the pages of its module, the views of its datatype, the
 admin screens. They live in a `design/` folder of the extension, found through the design chain. This chapter is for
-extension authors; building a whole **theme** is Part 6.
+extension authors; building a whole **theme** is [Part 6](../part-6-theme-developers/README.md).
 
 ## Register the design folder
 

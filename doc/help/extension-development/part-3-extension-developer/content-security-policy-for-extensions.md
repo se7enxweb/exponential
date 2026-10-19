@@ -66,7 +66,7 @@ document.addEventListener( 'click', function ( e ) {
 One listener on the document handles every button, including those added later. Data goes from the template to the
 script through escaped attributes; the script writes with `textContent`. Many extensions of this project were moved
 to this pattern; Part 4 shows real before and after examples
-(CSP: event handler attributes to data attributes).
+([CSP: event handler attributes to data attributes](../part-4-upgrading/csp-event-handlers-to-data-attributes.md)).
 
 ## The nonce, for the rare case
 
@@ -91,5 +91,5 @@ almost always the better answer.
 - Previous: [Security in extensions](security-in-extensions.md)
 - Next: [Admin pages in the admin4 style](admin-pages-in-admin4-style.md)
 - [Content Security Policy](../../../features/6.0/content-security-policy.md)
-- CSP: moving inline scripts into files
+- [CSP: moving inline scripts into files](../part-4-upgrading/csp-moving-inline-scripts-out.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

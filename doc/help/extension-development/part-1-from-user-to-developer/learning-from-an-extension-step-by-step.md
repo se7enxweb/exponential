@@ -120,7 +120,7 @@ public function __construct()
 
 With that change the same template prints `Hello Exponential` for `{ezstr_replace( 'world', 'Exponential', 'Hello world' )}`.
 This book's harness rendered both versions before this page was written. This is the most common PHP 8 problem in old
-extensions; Old-style constructors and static calls shows
+extensions; [Old-style constructors and static calls](../part-4-upgrading/old-constructors-and-static-calls.md) shows
 how to find and fix every case.
 
 ### Step 6: the metadata

@@ -19,14 +19,14 @@ ladder, then read upward.
 |---|---|---|---|
 | **User** | Content: articles, images, menus, users | the administration | Part 1 (this part) |
 | **Builder** | Settings, templates, overrides, content classes, roles, workflows | a text editor, the INI and template languages, patience | [Part 2](../part-2-builder/README.md) |
-| **Extension developer** | New modules, datatypes, operators, workflow events, cronjobs, commands | PHP, the kernel's classes, Git | [Part 3](../part-3-extension-developer/README.md), Part 4 |
-| **Theme developer** | The look: a design extension with templates, CSS, JavaScript | HTML, CSS, the template language, the design chain | Part 6 |
+| **Extension developer** | New modules, datatypes, operators, workflow events, cronjobs, commands | PHP, the kernel's classes, Git | [Part 3](../part-3-extension-developer/README.md), [Part 4](../part-4-upgrading/README.md) |
+| **Theme developer** | The look: a design extension with templates, CSS, JavaScript | HTML, CSS, the template language, the design chain | [Part 6](../part-6-theme-developers/README.md) |
 
 Two more roles sit beside the ladder rather than on it:
 
 - **Maintainer**: you publish your extension so others install it, and you look after it. Releasing is
-  Part 7; contributing to other people's work and growing the community is
-  Part 5.
+  [Part 7](../part-7-releasing/README.md); contributing to other people's work and growing the community is
+  [Part 5](../part-5-extend-fork-contribute/README.md).
 - **Application creator**: you combine content classes, extensions and settings into a complete application (a
   members' area, a shop, a booking system). You use all four steps, mostly the builder's and the extension
   developer's.

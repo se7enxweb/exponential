@@ -101,5 +101,5 @@ PostgreSQL for this reason ([Continuous integration](../../../bc/6.0/ci.md)).
 - Previous: [Persistent objects and your own tables](persistent-objects-and-tables.md)
 - Next: [Events, listeners and filters](events-and-filters.md)
 - [Databases](../../../install/09-databases.md)
-- Packages (.ezpkg) and the package creator
+- [Packages (.ezpkg) and the package creator](../part-7-releasing/packages-ezpkg.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

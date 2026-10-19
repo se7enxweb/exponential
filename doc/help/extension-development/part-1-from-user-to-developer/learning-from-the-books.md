@@ -35,7 +35,7 @@ The books describe older releases. Read them for concepts and keep this table at
 | Editing `settings/override/site.ini.append.php` by hand | Still possible; `./console exp:ini` does it with a backup and a diff | [Changing settings with exp:ini](../part-2-builder/the-exp-ini-command.md) |
 | The `design/` folders, the override system | Unchanged in principle; more designs (admin4, admin4l) | [Part 2](../part-2-builder/README.md) |
 | Extensions with `include_once()` of kernel files | Autoloading | [Autoloads and class naming](../part-3-extension-developer/autoloads-and-class-naming.md) |
-| PHP 4 and PHP 5 examples | PHP 8.0 to 8.5 | Part 4 |
+| PHP 4 and PHP 5 examples | PHP 8.0 to 8.5 | [Part 4](../part-4-upgrading/README.md) |
 | JavaScript in templates | Script files only, under a Content Security Policy | [Content Security Policy for extension authors](../part-3-extension-developer/content-security-policy-for-extensions.md) |
 
 ## Reusing their text
@@ -57,7 +57,7 @@ The details of what the GNU FDL asks are on [gnu.org](https://www.gnu.org/licens
 A book under a free documentation license can be improved by anyone. If you find a chapter whose example no longer
 works, a pull request to the book's repository with the Exponential 6 version is a welcome contribution, and a fine
 first pull request for a new contributor (see
-Contributing back with pull requests).
+[Contributing back with pull requests](../part-5-extend-fork-contribute/contributing-back-with-pull-requests.md)).
 
 ## Related pages
 

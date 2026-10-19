@@ -29,10 +29,10 @@ When a page states a fact, it names the file or the page where the fact comes fr
 | [Part 2: The builder](part-2-builder/README.md) | builders, designers, application creators | Settings and their scopes, templates, the design chain, overrides, view modes, fetch, content classes, roles, workflows, cronjobs, all without PHP |
 | [Part 3: The extension developer](part-3-extension-developer/README.md) | developers | The anatomy of an extension, chapter by chapter: metadata, settings, autoloads, modules and views, policies, operators, fetch functions, datatypes, workflow events, cronjobs, commands, designs, ajax, translations, tables, events, handlers, security, CSP, admin pages, tests, documentation |
 | [Tutorials](part-3-extension-developer/tutorials/README.md) | developers | Real small extensions built step by step, with the RAD tools and by hand |
-| Part 4: Upgrading an old extension | developers | Bringing an extension written for older PHP and older releases to Exponential 6, with before and after examples from extensions this project modernized |
-| Part 5: Extending, forking and contributing | developers, designers | Extending without forking, forking and rebranding ethically, licenses, attribution, pull requests, adopting abandoned extensions, the maintainer path |
-| Part 6: Theme developers | designers | Themes as design extensions, with the RAD wizard and by hand; assets, the packer, CSP, dark mode, distribution |
-| Part 7: Releasing your extension | maintainers | Version numbers, metadata, Composer and Packagist, changelogs, GitHub releases, packages, the release checklist |
+| [Part 4: Upgrading an old extension](part-4-upgrading/README.md) | developers | Bringing an extension written for older PHP and older releases to Exponential 6, with before and after examples from extensions this project modernized |
+| [Part 5: Extending, forking and contributing](part-5-extend-fork-contribute/README.md) | developers, designers | Extending without forking, forking and rebranding ethically, licenses, attribution, pull requests, adopting abandoned extensions, the maintainer path |
+| [Part 6: Theme developers](part-6-theme-developers/README.md) | designers | Themes as design extensions, with the RAD wizard and by hand; assets, the packer, CSP, dark mode, distribution |
+| [Part 7: Releasing your extension](part-7-releasing/README.md) | maintainers | Version numbers, metadata, Composer and Packagist, changelogs, GitHub releases, packages, the release checklist |
 | Part 8: Reference | developers | The kernel classes, APIs, operators, functions, settings and commands an extension author uses most |
 
 ## Where to start
@@ -41,10 +41,10 @@ When a page states a fact, it names the file or the page where the fact comes fr
 |---|---|
 | An editor or administrator who wants to build | [Part 1](part-1-from-user-to-developer/README.md), then [Part 2](part-2-builder/README.md) |
 | A PHP developer new to Exponential | [What an extension is](part-1-from-user-to-developer/what-an-extension-is.md), then [Part 3](part-3-extension-developer/README.md) and the [tutorials](part-3-extension-developer/tutorials/README.md) |
-| A designer | [Part 2](part-2-builder/README.md), then Part 6 |
+| A designer | [Part 2](part-2-builder/README.md), then [Part 6](part-6-theme-developers/README.md) |
 | An application creator | [Part 2](part-2-builder/README.md), then the [capstone tutorial](part-3-extension-developer/tutorials/capstone-a-complete-extension.md) |
-| Someone with an old extension to bring up to date | Part 4 |
-| About to publish an extension | Part 7 and Part 5 |
+| Someone with an old extension to bring up to date | [Part 4](part-4-upgrading/README.md) |
+| About to publish an extension | [Part 7](part-7-releasing/README.md) and [Part 5](part-5-extend-fork-contribute/README.md) |
 
 Reading paths through the book gives complete reading orders for each role, and the
 book index lists every topic from A to Z.
@@ -58,7 +58,7 @@ book index lists every topic from A to Z.
 | A new kind of field for content | a datatype | [With RAD: a datatype](part-3-extension-developer/tutorials/rad-datatype.md) |
 | Something to happen when content is published | a workflow event | [With RAD: a workflow event](part-3-extension-developer/tutorials/rad-workflow-event.md) |
 | A job that runs every night | a cronjob part | [By hand: a cronjob part](part-3-extension-developer/tutorials/by-hand-cronjob-part.md) |
-| A new look | a design extension | Part 6 |
+| A new look | a design extension | [Part 6](part-6-theme-developers/README.md) |
 | The site's settings under version control | a settings-only extension | [With RAD: a settings-only extension](part-3-extension-developer/tutorials/rad-settings-extension.md) |
 
 The RAD tools live at **Setup > RAD** (`/setup/rad`); they list every place the kernel can be extended and write a
@@ -81,6 +81,6 @@ what the wizard wrote and can work without it.
 - [Develop with Git: grow from user to developer](../develop-with-git.md)
 - [Extensions: find, install, configure, build and release](../../guides/extensions.md)
 - [RAD tools](../../features/6.0/rad-tools.md)
-- Contribute your extensions back
+- [Contribute your extensions back](../contribute-extensions-back.md)
 - [Who is 7x?](../who-is-7x.md), [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md)
 - [Free documentation](../free-documentation.md): this book is free to copy, translate and improve under the GNU FDL 1.3.

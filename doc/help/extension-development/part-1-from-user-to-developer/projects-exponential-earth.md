@@ -64,7 +64,7 @@ description. A project page adds news, downloads, a forum, images and, where con
 
 The "compatible versions" field is the most important one for you: most projects in the historical types were written
 for PHP 5 and older releases of the kernel. Treat them as **ideas and starting points**, then follow
-Part 4 to bring one up to date, or search GitHub for a maintained fork first
+[Part 4](../part-4-upgrading/README.md) to bring one up to date, or search GitHub for a maintained fork first
 ([Finding ideas on GitHub](finding-ideas-on-github.md)).
 
 ## Copyright: link, do not copy
@@ -90,5 +90,5 @@ portal's footer. Read it before you reuse anything:
 - Previous: [Share Exponential (share.exponential.earth)](share-exponential-earth.md)
 - Next: [eZpedia (ezpedia.exponential.earth)](ezpedia-exponential-earth.md)
 - [Evaluating an old extension before you use it](evaluating-an-old-extension.md)
-- Adopting an abandoned extension
+- [Adopting an abandoned extension](../part-5-extend-fork-contribute/adopting-an-abandoned-extension.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

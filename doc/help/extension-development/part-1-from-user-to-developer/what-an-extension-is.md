@@ -109,7 +109,7 @@ The curated description of every entry is [Extension points](../../../bc/6.0/rad
 - **Settings only**: an extension can hold nothing but `.ini.append.php` files, for example the settings of one
   site. That is a perfectly good extension and the safest way to keep a site's configuration in version control.
 - **Design only**: a theme is an extension with a `design/` folder (see
-  Themes are extensions).
+  [Themes are extensions](../part-6-theme-developers/themes-are-extensions.md)).
 
 ## What an extension is not
 
