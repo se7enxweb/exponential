@@ -6296,8 +6296,8 @@ d55259e5b036dd972962aa0bd877bc3f  doc/guides/ui-switch-settings.md
 6477f5214f3a7f3dfdf0da2e2284d082  doc/guides/urls-and-aliases.md
 d0260680e11ffdb7581f3bff6191d877  doc/guides/workflows.md
 c92a8e9a50509f2653769892354777ac  doc/help/README.md
-8e3656ba9b5c1d5a8f229c44e8fa089b  doc/help/accounts-and-sign-in.md
-b65fabce7ceb9f1766f5b80577f6a5a4  doc/help/admin-tour.md
+43bc61455e84e63b09d8ad18e225161a  doc/help/accounts-and-sign-in.md
+fa73f865515cf0a1a572dd10b875dd1e  doc/help/admin-tour.md
 2559a76804ca2dd8ccc13a44e3669dd2  doc/help/advocates/7x-and-the-foundation-for-advocates.md
 560682319a446d16cd3d272f050d2105  doc/help/advocates/a-90-day-advocate-plan.md
 5641c6cce3e2f47e85d534ec79c85e36  doc/help/advocates/a-table-at-someone-elses-event.md
@@ -6515,10 +6515,10 @@ de63d719e4a33cbc4f51ec1b25209bea  doc/help/creators/website-creators/accessibili
 55506e732a572da5ec57f2dbc668cb06  doc/help/creators/website-creators/building-a-contact-form.md
 8d7011d68b7be46867a03211470f5dfe  doc/help/creators/website-creators/choosing-a-design-or-theme.md
 46afdbd244d99565546e7a3fdc3da847  doc/help/creators/website-creators/choosing-an-install-method.md
-77b3f16c6c3f740822de4ded35e4e740  doc/help/creators/website-creators/choosing-datatypes.md
+b3c1de6458bfafdc20451e5a624e12e2  doc/help/creators/website-creators/choosing-datatypes.md
 a8b33efec911869bf1d65c7ecdab110a  doc/help/creators/website-creators/classic-landing-pages-with-ezflow.md
 1ece9f31b0bbb6b2bb8fc46ead534f67  doc/help/creators/website-creators/content-classes-for-websites.md
-21b35c30ccaaee50161cac5d120eb726  doc/help/creators/website-creators/designing-your-content-model.md
+5f3d14ce6cf8532a49b273cf136d8f36  doc/help/creators/website-creators/designing-your-content-model.md
 a792311c5888563352dd6f6440407b9d  doc/help/creators/website-creators/designs-and-the-fallback-chain.md
 42d2c946d8ba4886cabbaedcd3f2e384  doc/help/creators/website-creators/files-and-downloads.md
 dc4e90a2000d18900e20804e5b597688  doc/help/creators/website-creators/form-submissions.md
@@ -6531,13 +6531,13 @@ b6de5fdb147716d928fe7cb94da06c13  doc/help/creators/website-creators/handing-ove
 22f4d3099d8e12708aee441dadce7cf9  doc/help/creators/website-creators/landing-pages-with-layouts.md
 e03ffa3b65ef1f40cc270a3d80d991f5  doc/help/creators/website-creators/language-switcher-and-language-urls.md
 cd5f0c6ad33186a0743a2be753b7dee2  doc/help/creators/website-creators/launch-checklist.md
-c347638714667863d1f9c8958898e29a  doc/help/creators/website-creators/layout-rules.md
+e35fd29134b74802bc9236b272fc766b  doc/help/creators/website-creators/layout-rules.md
 bc2ab84b41901711276c2abb3b284ae6  doc/help/creators/website-creators/layout-types-zones-and-blocks.md
 a121d4c162d5c71ecaf35a8bcf06fb47  doc/help/creators/website-creators/link-and-content-checks.md
 b3721d56acbd4d3086453f07d34587de  doc/help/creators/website-creators/maintaining-your-website.md
 587853276b0754473f0b19d4bb47c700  doc/help/creators/website-creators/maintenance-mode.md
 a673bf26f0c93806493c817b347012dd  doc/help/creators/website-creators/member-registration-and-areas.md
-e4754251e6f6216963bec85541fab867  doc/help/creators/website-creators/menus-and-navigation.md
+0c7766a907cf68fb9202cf2b0b6b7a47  doc/help/creators/website-creators/menus-and-navigation.md
 66bbec573c55da705eed552f32a273ea  doc/help/creators/website-creators/metadata-and-social-sharing.md
 2cad2e69b03862f893b498b9a4e9cd68  doc/help/creators/website-creators/multilingual-sites.md
 e38dda825ec476740e39912f86637ac6  doc/help/creators/website-creators/multisite-setup.md
@@ -6561,7 +6561,7 @@ c66c931ba259c20794422e07d0a7537e  doc/help/creators/website-creators/shared-head
 bbb7fce25ed6c341fcd34b09e8e66b7a  doc/help/creators/website-creators/shop-overview.md
 52289349f2d6128d9d17c01ed6cf5a2a  doc/help/creators/website-creators/site-map-and-content-inventory.md
 6f88d6944004511e9548ce8dee08f99d  doc/help/creators/website-creators/site-packages-and-shipped-themes.md
-2b82eb3519347dd3d2b0a2d8f45f9935  doc/help/creators/website-creators/site-search.md
+ba3ed140b2581ffd5182bb29625d1bb3  doc/help/creators/website-creators/site-search.md
 650ff9ced2b7ab944935ddd5c4a83b0b  doc/help/creators/website-creators/sitemaps.md
 cfd4d0d72ee67cad41f1419e2794f4cd  doc/help/creators/website-creators/spam-protection-for-forms.md
 ae3328bfbbb3f67b72366bd4732f004c  doc/help/creators/website-creators/static-cache-and-velocity.md
@@ -6574,7 +6574,7 @@ b74719ff7b4fc93ee34a76c35b696299  doc/help/creators/website-creators/template-ov
 9fe8bc1e321fe2972afe56d49b1bbb26  doc/help/creators/website-creators/testing-accessibility.md
 9e37edacb5b478e39e0e4fea5dd8627d  doc/help/creators/website-creators/the-pagelayout.md
 789f7eb4ac66e7e9cac0521f8e07f8cb  doc/help/creators/website-creators/updates-and-upgrades.md
-7d2f9f81199de6a5777a5b8fb36ea267  doc/help/creators/website-creators/url-aliases-and-nice-urls.md
+7f8dc33e190b45c8c1ca7978ae907070  doc/help/creators/website-creators/url-aliases-and-nice-urls.md
 10b93d222481d62a855b0caccfbce614  doc/help/creators/website-creators/url-wildcards.md
 be16ec8b4ce36a559300d1c6443b26a1  doc/help/creators/website-creators/view-cache-and-cache-blocks.md
 fb86947397480e62f8ab772567bb43f4  doc/help/creators/website-creators/visitor-permissions.md
@@ -6823,8 +6823,8 @@ d31c7b91ca5af097b3cfb21f7a2f2099  doc/help/designers/theme-design/accessible-for
 dfe115277279469e065c693f28ed5f39  doc/help/designers/theme-design/admin4-components.md
 14b321a07fd9fa575470016dfcf6b1da  doc/help/designers/theme-design/admin4-module-stylesheets.md
 08b1ad12790d6d34bc78d16fcee02a2d  doc/help/designers/theme-design/admin4-tokens.md
-393b24c3a220701b7f3097ea0d792442  doc/help/designers/theme-design/block-definitions.md
-bc977cacc505d07550e6e00f5f3ea4d3  doc/help/designers/theme-design/block-view-templates.md
+ea836dc7438dbae896fb5f322f2f4d00  doc/help/designers/theme-design/block-definitions.md
+ce7176919540e358831587b5ccae287c  doc/help/designers/theme-design/block-view-templates.md
 be58e1cf46ea0088802b8093a79b510c  doc/help/designers/theme-design/breakpoints-and-container-widths.md
 c8a48874a6494bc368162919ffc287a0  doc/help/designers/theme-design/caching-for-designers.md
 a237960d940f8753efd07ee6c7f8ce39  doc/help/designers/theme-design/checklist-accessibility.md
@@ -6876,7 +6876,7 @@ e46aea1e5338a088ac7e79a473d04157  doc/help/designers/theme-design/pagelayout-var
 de8536f587fcd38a3c3a9d3504b6a0c4  doc/help/designers/theme-design/reduced-motion.md
 830cc25326b58f463e336483d38ebaf9  doc/help/designers/theme-design/responsive-design.md
 18968051778064ac04b4be2edc077bac  doc/help/designers/theme-design/right-to-left-designs.md
-d74dc1fecaa04a0abe8b99a83d180925  doc/help/designers/theme-design/shared-layouts-and-linked-zones.md
+6d6a92fff7334b523e1049f598369485  doc/help/designers/theme-design/shared-layouts-and-linked-zones.md
 8056e577762a49543f20567c557141c3  doc/help/designers/theme-design/simple-theme-tour.md
 e8cde795d0afbf9eb4fac70719b574e5  doc/help/designers/theme-design/skip-links.md
 29c24c75c19275cd7d44034a05e14ace  doc/help/designers/theme-design/starter-theme-tour.md
@@ -7233,7 +7233,7 @@ ce81ccb6a22033d9a733cfd7f892244d  doc/help/hosting/runbooks/slow-site.md
 6c503ab3181d8cf192f27b126ae2ead4  doc/help/hosting/security/audit-trail.md
 13523d0e9c17e18a00c8c9260bcc1a06  doc/help/hosting/security/compliance-and-gdpr.md
 71dd683548ac339b69975a5a60dd437a  doc/help/hosting/security/content-security-policy.md
-89883f0efc6c40a74ac923031404b6d1  doc/help/hosting/security/first-sign-in-and-default-passwords.md
+917c664ad83968e634c6e7d455b90e4e  doc/help/hosting/security/first-sign-in-and-default-passwords.md
 61aecc4a126ccab7c44a526094ecd39f  doc/help/hosting/security/hardening-for-hosts.md
 f3ef650750023cfac9e1f854489cc8de  doc/help/hosting/security/log-and-data-retention.md
 bd069b887c2522a8106f13378df0fb08  doc/help/hosting/security/multi-tenant-isolation.md
@@ -7258,6 +7258,8 @@ ca2b004c6c4666c8d25cea94f2d804b3  doc/help/hosting/servers/velocity-https-certif
 58926ad2a9a9b9f7a48a56d711f50cf0  doc/help/images/accounts/change-password-form.webp
 86837f82d2244615e6714193b4b371a0  doc/help/images/accounts/current-user-box.webp
 cf5c68589449ee0d49b423342bf1bbc7  doc/help/images/accounts/email-preferences.webp
+d07cc938e62907caa75493d2e5f85b6d  doc/help/images/accounts/my-bookmarks.webp
+80dc352af3844d790d3592d06ac9827d  doc/help/images/accounts/notification-settings.webp
 51759008a14b9fd1fb198a8bdb066c3b  doc/help/images/accounts/user-hygiene.webp
 b392982796cc493a76d76997b2321e3c  doc/help/images/accounts/user-password-admin.webp
 0397f95b8d5cf8539ba13ee3245145e4  doc/help/images/accounts/users-sessions.webp
@@ -7267,6 +7269,8 @@ aed66f92cd4fd51069175ad3af41a2c1  doc/help/images/content-view.webp
 c2df63287f2461e530eb9837e15b5010  doc/help/images/create-new.webp
 dc5c3a8648fbd4c59f51ff3abd5681c8  doc/help/images/creators/backups.webp
 b4031297ef19b1c7f3073a446fe9f359  doc/help/images/creators/broken-relations.webp
+f54d829e756cc76e0c045c5e3554e8ff  doc/help/images/creators/class-list.webp
+fcd9c1fc0909267912aeb7167a743a06  doc/help/images/creators/class-view.webp
 8d26e56bb15776f18ceb703874e26a74  doc/help/images/creators/classes-groups.webp
 0a8586ee02c6580aeeda32f668e7c87c  doc/help/images/creators/collected-information.webp
 bb8107b47950d5d7428cfbf044e02bf9  doc/help/images/creators/content-tree-roots.webp
@@ -7292,6 +7296,8 @@ cb89201e5030e96efa28b77949579d83  doc/help/images/creators/rss-list.webp
 91b71bf2bccfadb96aba4da3f9c05f4d  doc/help/images/creators/search-statistics.webp
 2b4e228c1e13f9cdece0706259774ac5  doc/help/images/creators/sections-list.webp
 7d573d09aac8b926252ddf6adf4deda9  doc/help/images/creators/shop-dashboard.webp
+29a219d882cf09054a40052fded67eaa  doc/help/images/creators/site-navigation.webp
+492501db822e41a7b89363e4196e2c53  doc/help/images/creators/site-search-results.webp
 297b6a7d34305e05503259f4d1452930  doc/help/images/creators/sort-order.webp
 272e405dbb925d6ae464c2ab9d36c292  doc/help/images/creators/state-groups.webp
 5decff887f59ca8321c0988ec37248de  doc/help/images/creators/storage-files.webp
@@ -7301,6 +7307,7 @@ cb89201e5030e96efa28b77949579d83  doc/help/images/creators/rss-list.webp
 ae9fdd465d73858a5da33e22a85f9f29  doc/help/images/creators/unreferenced-objects.webp
 158d3addcc92f3ca7c65436974e8724d  doc/help/images/creators/update-overview.webp
 7788aee037f0d48ccbab25f94bc04ceb  doc/help/images/creators/upgrade-check.webp
+ebb19cbbfaf5f42ea1f7ad87072f8dbd  doc/help/images/creators/url-alias-tab.webp
 8a95773f5fc84d4eb84ef2289aaa65a3  doc/help/images/creators/url-translator.webp
 52daa95a1286eb1e5ef0bac07f95e842  doc/help/images/creators/url-wildcards.webp
 bd04aeb2fa135580456f1719053e9453  doc/help/images/creators/users-tree.webp
@@ -7329,6 +7336,7 @@ cf2d18f6ce3a224d80eccf6890157663  doc/help/images/editing/edit-conflict.webp
 109310385457a0f413a90e0bca035308  doc/help/images/editing/edit-language-choice.webp
 7a68ad654a091ea4cb0553931aa8e734  doc/help/images/editing/edit-relation-field.webp
 7f7c5a13f1dc1e2f01c9ad46ce1e5134  doc/help/images/editing/edit-richtext-field.webp
+a5d72e21ede8a9a319069ea04db6cf11  doc/help/images/editing/item-details-tab.webp
 d80d6e9bbb1a583d10c4f2c1ce5f8590  doc/help/images/editing/move-choose-location.webp
 f5bcb836da174f3ad7ea22d7f4442acf  doc/help/images/editing/remove-confirm.webp
 c530b9a3e56b2389dd142b5e1820fd75  doc/help/images/editing/subitems-more-actions.webp
@@ -7341,8 +7349,11 @@ c7dfcea298caeb2b454bdce677cb4694  doc/help/images/getting-started/dashboard-over
 7ff5afb78ed825f09b00ff456498a15b  doc/help/images/getting-started/help-dashboard.webp
 a43fbc2dcfb4ccbc64f29222f6093f01  doc/help/images/getting-started/item-page-buttons.webp
 aef7c2da911610f7b9f3dce72cb0cd4d  doc/help/images/getting-started/sign-out-button.webp
+6487db62fdb42ce86f93fc78f4a58bb1  doc/help/images/help/help-report.webp
+508cd5fa822820c423070ffd2c5410ca  doc/help/images/help/help-viewer.webp
 01c16a1954789a0a64133aee51b069bc  doc/help/images/help/logs-digest.webp
 8757ae73038a0d642f4187edd3641ab2  doc/help/images/help/report-an-error.webp
+a9d0d198e95d3809366adc93c5fdeaf6  doc/help/images/help/site-not-found.webp
 fe9f68069bced1c625c1906e6c8fddb3  doc/help/images/hosting/audit-dashboard.webp
 221ca2b00c69225fcce3c78a00db1c9d  doc/help/images/hosting/audit-settings.webp
 17893a2c7ecd0528d1691e9a1a78efb5  doc/help/images/hosting/cache-management.webp
@@ -7360,6 +7371,7 @@ cf8a1f4d10cbb27a2ae4db244db026fc  doc/help/images/hosting/job-queue.webp
 70fe491b561b66bd1377643972c8045f  doc/help/images/hosting/notification-status.webp
 3ae0894049956133c81d626e2bed6b31  doc/help/images/hosting/sessions.webp
 e3acd00416bc0d92bff0bef6fe013ed9  doc/help/images/hosting/setup-overview.webp
+5928535dd65f2e0c0ca55b4c82e93445  doc/help/images/hosting/sign-in-page.webp
 d62b7ae0df59b956647c1eb422b8d0c5  doc/help/images/hosting/system-information.webp
 bff0b6c1f26a3bd68fd7173600d55a0f  doc/help/images/hosting/update-dashboard.webp
 a40d14de47dd1c8e515b6ed4da0eb41d  doc/help/images/hosting/update-installed.webp
@@ -7372,6 +7384,13 @@ a40d14de47dd1c8e515b6ed4da0eb41d  doc/help/images/hosting/update-installed.webp
 f94d5360a36312e9b7222390a9d258f1  doc/help/images/layouts-add-block.webp
 2214d74f4eafbb6aed288ba6074b1110  doc/help/images/layouts-block-added.webp
 436faceb58f9a9928a5b944cdc7de772  doc/help/images/layouts-editor.webp
+61fc28fc9d52e2fb48d3e5e0d6738ded  doc/help/images/layouts/item-layouts-tab.webp
+1302aa1f9569dafec695888bd437eb16  doc/help/images/layouts/layout-components.webp
+265aa6a13df3123da81512c3610ca1de  doc/help/images/layouts/layout-list.webp
+bb8471851d9ba0945b2b9aa9e4d9dbd9  doc/help/images/layouts/layout-template-editor.webp
+efcce2daf7da8209698ff0c87b3b5bdb  doc/help/images/layouts/layouts-dashboard-buttons.webp
+b2198c1cf408ca4ef66caaae750d1b50  doc/help/images/layouts/rule-list.webp
+2062d278bc1749fdfc5cf0d9bdb63dab  doc/help/images/layouts/shared-layouts.webp
 f780537783c8bd0b6f572d83b8f1ce1e  doc/help/images/login-admin-dashboard.webp
 502e573a13a5f9cc385718d9e9d928b2  doc/help/images/login-admin-form.webp
 d945e0e6391276d2f46efb9520cbeb2b  doc/help/images/login-editor-dashboard.webp
@@ -7391,6 +7410,7 @@ aca6b4857b9a8024e932e978e539f527  doc/help/images/publishing/my-pending-items.we
 2afaf45a02242653ea90f6950655b3bb  doc/help/images/publishing/publish-buttons.webp
 b60066d60c1eaa921e3218d12ad41a29  doc/help/images/publishing/trash-filters.webp
 f72a8d5a0d20ccd1ecf6585ad6b4ddaa  doc/help/images/publishing/tree-menu-hide.webp
+b80c7e1c57c0238d6786183848fc44fc  doc/help/images/publishing/version-history.webp
 7c1bcf4a0c322be977600ce08d726272  doc/help/images/publishing/versions-button.webp
 7e13eeee7b87a190c376a85f64598f37  doc/help/images/publishing/visibility-badge.webp
 146d0fbcabe3aefe6fce5721c8926e56  doc/help/images/right-column.webp
@@ -7400,6 +7420,7 @@ d437e31155fd402fe332d481db8e4c12  doc/help/images/search.webp
 bc874ec9f2aa0be21c37ab155f0cd8d8  doc/help/images/search/help-search.webp
 3c28ed5c7681115496cd385bcca3820c  doc/help/images/search/search-results.webp
 7b0ea8651ff89cbbd0f5fc02b9372f39  doc/help/images/search/search-section-filter.webp
+9d4206fa319d26e3e3373fae7230d1fe  doc/help/images/search/site-search-box.webp
 0cfe733674a9917a83406e5e2d244339  doc/help/images/shortcuts/item-tabs.webp
 88bf43cbf889e682559bc753a374b82f  doc/help/images/shortcuts/left-column-size-buttons.webp
 4f7748c2489fc884fcb40fe9d391192a  doc/help/images/sign-in.webp
@@ -7442,9 +7463,9 @@ baf66aa17d127641f5998381cf0a59c3  doc/help/images/update-cli-a5-check.webp
 2ee3c65057ea308d18a427bc3e0450a3  doc/help/images/update-maintenance.webp
 1f80a35c16fb4004febb83c4a11c98e2  doc/help/images/update-upgrade-check.webp
 f7310491d28b2e21502fa6ba5b206888  doc/help/images/versions.webp
-7bb54668b330b8d4fd1ff4ef7d2f18d8  doc/help/keyboard-shortcuts.md
+c40ed3f1049e03983f00f681815ff9e9  doc/help/keyboard-shortcuts.md
 c892f70f33ccedd942cf2ebc0d4d5600  doc/help/languages.md
-5aa4b5b2ef571aa4f1c4849008a97d74  doc/help/layouts-editor.md
+cd3c188fde7075cf619962007497f173  doc/help/layouts-editor.md
 d0272d37decd315ef839369b8afcbeb1  doc/help/leadership/accessibility-security-and-compliance-checklists.md
 001f672aa75bdf9383ff3536dd64112f  doc/help/leadership/becoming-a-community-leader.md
 af6a3dbea55da692cbb34adb45fdadc8  doc/help/leadership/choosing-hosting-database-and-os.md
@@ -7703,8 +7724,8 @@ b0d4f171e7482532d18adc3c338fb5b5  doc/help/project/faq.md
 f2c3b5cf6bc9fb272424baa921f9c775  doc/help/project/give-and-donate.md
 6c41be923984d43a2f3abaed1a14901c  doc/help/project/licensing-faq.md
 7be0f8f293f697d538c4ac6a329943f0  doc/help/project/roadmap.md
-68bdf67ad71f3918fa83e2a5381014e7  doc/help/publishing-and-versions.md
-2309ceaeec41f627a8878a61ab0b63ea  doc/help/searching.md
+6cad11d66949463e63f2a528bcb54eb0  doc/help/publishing-and-versions.md
+80d6321760f10706290ecbdc9009e617  doc/help/searching.md
 dc8acfe7a2ee87504513fb463c285310  doc/help/security-hardening.md
 86162a1255353525620ead81d88b4b67  doc/help/site-packages/README.md
 deba009842ef9843f433f244910b522c  doc/help/site-packages/admin-gui/README.md
@@ -8451,7 +8472,7 @@ df8aafff28c4bb0be5e5535aec81f028  doc/help/trainers/workshops/module-05-capstone
 785349a6b52e4b9b32979a291eeb2774  doc/help/trainers/workshops/module-05-capstone-projects/intranet-news-section.md
 d9ba715ff69a95223caafc139e72c44e  doc/help/trainers/workshops/module-05-capstone-projects/multilingual-event-site.md
 229ea5861825d26d7951d974facd4e1a  doc/help/update-with-git.md
-2037d1035c31c76c09f4a6bb3d31f772  doc/help/when-something-goes-wrong.md
+bb37239f0c91f0bc27b13a820a3bdaed  doc/help/when-something-goes-wrong.md
 5ca11aed7eb7120556497445c9099bc8  doc/help/who-is-7x.md
 1789c6d5581540a05554c912dd7dd48e  doc/help/who-is-the-exponential-foundation.md
 bfac4d20e64cf0fff734fc68908cf3e9  doc/history/2023/2023-12.md

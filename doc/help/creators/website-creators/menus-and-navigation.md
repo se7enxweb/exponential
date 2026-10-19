@@ -13,6 +13,8 @@ This page is for website creators who build the navigation of a site. On an Expo
 separate list you maintain: they are made from the content tree. A folder under the root becomes a menu entry, its
 children become a submenu. You decide which classes count as menu entries and how they are sorted.
 
+![The top menu of the public site, outlined: one entry per folder below the site's root](../../images/creators/site-navigation.webp)
+
 ## Contents
 
 1. [Menus come from the content tree](#menus-come-from-the-content-tree)

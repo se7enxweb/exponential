@@ -86,6 +86,8 @@ The dashboard is the first page after signing in. From the top:
 
 Administrators also see blocks about the system, updates and security events.
 
+![My bookmarks: the items you bookmarked with Add to bookmarks, to open them again in one click](images/accounts/my-bookmarks.webp)
+
 ## An item's page
 
 When you open an item, its page shows:
@@ -100,6 +102,8 @@ When you open an item, its page shows:
 - **Sub items**: the items below it, with buttons to **Create new**, select, sort and act on several at once.
 
 ![The page of a folder](images/content-view.webp)
+
+![The Details tab of an item: creator, creation date, section, versions, translations and the node and object ids](images/editing/item-details-tab.webp)
 
 ## In action: editing a folder
 

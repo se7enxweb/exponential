@@ -12,6 +12,8 @@ type: help
 This page is for designers who write or restyle the template of a layouts block. It answers: what a block template
 receives, how it draws its items, and how a container draws its children.
 
+![Layouts, Template editor: the block view templates of the active designs, to read before overriding one](../../images/layouts/layout-template-editor.webp)
+
 ## Contents
 
 1. [Where block templates live](#where-block-templates-live)
