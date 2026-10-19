@@ -103,7 +103,7 @@ What needs a developer or administrator, per brand siteaccess:
 - [ ] Logo, favicon and social sharing image exist per brand.
 - [ ] No theme file was edited in place; changes are in your own design extension.
 - [ ] Each brand's design is in version control with a named owner.
-- [ ] Every brand was checked on a phone and a desktop (Responsive sites).
+- [ ] Every brand was checked on a phone and a desktop ([Responsive sites](../mobile-and-headless/responsive-sites.md)).
 - [ ] Every brand passes your accessibility review.
 
 ## Related pages

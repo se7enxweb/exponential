@@ -59,7 +59,7 @@ The currency list has the actions **Update autoprices** and **Update auto rates*
 > markets then see round prices, and the rest still see their own currency.
 
 Currency choice is one part of selling to other countries; formats for dates and numbers are covered in
-Currencies, dates and formats.
+[Currencies, dates and formats](../multilingual/currencies-dates-and-formats.md).
 
 ## Exchange rates
 

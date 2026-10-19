@@ -68,7 +68,7 @@ Sell access instead of files: the product is a membership, the files sit in a pr
 membership puts the customer in the group that may read it. Granting the group can be manual at first.
 
 - Good for: libraries of patterns, courses, back issues.
-- Read: Members-only content.
+- Read: [Members-only content](../members/members-only-content.md).
 
 ### 3. A small extension
 

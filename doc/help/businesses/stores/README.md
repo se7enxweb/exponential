@@ -107,8 +107,8 @@ software does.
 - [Newsletters](../newsletters/README.md) for keeping customers informed
 - Costs, including a worked example for a small store
 - Security and [Reliability](../reliability/README.md)
-- Multilingual sites for stores in several languages
-- Mobile and headless for selling through apps and partners
+- [Multilingual sites](../multilingual/README.md) for stores in several languages
+- [Mobile and headless](../mobile-and-headless/README.md) for selling through apps and partners
 - Governments have their own section: Governments: start here
 
 ## Related pages

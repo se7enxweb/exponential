@@ -98,7 +98,7 @@ receiving their own language. Subscribers choose both on their preference page
 ([rendering.md](https://github.com/se7enxweb/cjw_newsletter/blob/4.2.0/doc/rendering.md)). For a small organization,
 interests are often a better choice than many separate lists: one list, one edition, a block that differs per reader.
 
-For sites in several languages, see also Multilingual sites.
+For sites in several languages, see also [Multilingual sites](../multilingual/README.md).
 
 ## Who may see subscriber data
 

@@ -69,9 +69,9 @@ their user account.
 
 Customer accounts are ordinary Exponential users. Registration, activation, approval and member areas are described in
 [Member registration and areas](../../creators/website-creators/member-registration-and-areas.md) and, for business
-use, in Registration and account approval. Account-only checkout
+use, in [Registration and account approval](../extranets/registration-and-account-approval.md). Account-only checkout
 pairs well with a **dealer or wholesale** catalog that only signed-in customers may see
-(Dealer and supplier portals).
+([Dealer and supplier portals](../extranets/dealer-and-supplier-portals.md)).
 
 ## What accounts give your customers
 

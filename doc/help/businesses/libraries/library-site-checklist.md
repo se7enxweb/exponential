@@ -110,7 +110,7 @@ From [PDF and print exports](pdf-and-print-exports.md) and [Feeds for new acquis
       landmarks, one `h1`, labels, contrast, 200% zoom.
 - [ ] Covers and scans have alternative texts.
 - [ ] Tested with [Testing your site's accessibility](../../creators/website-creators/testing-accessibility.md).
-- [ ] Reader accounts and members-only areas checked (Members).
+- [ ] Reader accounts and members-only areas checked ([Members](../members/README.md)).
 
 ## Launch
 

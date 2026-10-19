@@ -67,7 +67,7 @@ percent on everything else.
 
 | Goal | How |
 |---|---|
-| Member prices for a club or association | A group discount for the members' user group (Members) |
+| Member prices for a club or association | A group discount for the members' user group ([Members](../members/README.md)) |
 | Trade prices for resellers | A reseller user group with its discount, plus account-only checkout ([Customer accounts and guest checkout](customer-accounts-and-guest-checkout.md)) |
 | Staff discount | A group discount for the staff user group |
 | A clearance sale | A rule limited to an "Outlet" section, given to everyone |

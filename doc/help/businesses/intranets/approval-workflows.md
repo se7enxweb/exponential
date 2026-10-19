@@ -134,6 +134,6 @@ The audit trail records content changes, including sections and states, in a tam
 - [Workflows](../../../guides/workflows.md)
 - [Object states](../../../guides/object-states.md)
 - [Drafts and pending versions](../../../guides/drafts-and-pending.md)
-- Registration and account approval
+- [Registration and account approval](../extranets/registration-and-account-approval.md)
 - [Preview before you publish](../reliability/preview-before-you-publish.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

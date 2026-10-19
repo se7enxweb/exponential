@@ -81,9 +81,9 @@ Country is one decision among several. A store selling abroad usually also decid
 | VAT per country | [VAT rules and VAT types](vat-rules-and-vat-types.md) |
 | Prices in other currencies | [Prices and currencies](prices-and-currencies.md) |
 | Shipping cost per zone | [Shipping and handling](shipping-and-handling.md) |
-| Store pages in other languages | Multilingual planning |
+| Store pages in other languages | [Multilingual planning](../multilingual/multilingual-planning.md) |
 | Separate sites per country | [Multi-brand planning](../multisite/multi-brand-planning.md) |
-| Right-to-left languages | Right-to-left markets |
+| Right-to-left languages | [Right-to-left markets](../multilingual/right-to-left-markets.md) |
 
 ## Restricting where you sell
 

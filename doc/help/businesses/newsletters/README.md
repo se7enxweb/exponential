@@ -21,7 +21,7 @@ sets it up are linked from every page, so nothing here repeats the configuration
 3. [The pages of this section](#the-pages-of-this-section)
 4. [Suggested reading order](#suggested-reading-order)
 5. [What this section does not cover](#what-this-section-does-not-cover)
-6. [Neighbouring sections](#neighbouring-sections)
+6. [Neighboring sections](#neighboring-sections)
 
 ## What you get
 
@@ -91,9 +91,9 @@ consent system of its own ([cjw_newsletter, The features of 4.2.0](../../../feat
 - Legal advice. The consent pages describe what the software records; what your law requires is a question for your
   lawyer or data protection officer.
 
-## Neighbouring sections
+## Neighboring sections
 
-- Members: member sites often send a members' newsletter.
+- [Members](../members/README.md): member sites often send a members' newsletter.
 - [Stores](../stores/README.md): promoting a store, including by newsletter.
 - Security and data protection: GDPR basics and consent for forms.
 - Non-profits and Associations and small groups: newsletters

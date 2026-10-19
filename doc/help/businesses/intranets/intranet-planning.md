@@ -50,7 +50,7 @@ sections, classes and roles later without rebuilding the site
 | How staff find things | built-in search; Solr for large collections | [Intranet search](intranet-search.md) |
 | How staff hear about changes | notifications, digests, a newsletter | [Notifications for staff](notifications-for-staff.md) |
 | Where it is reachable | only from the office network; from anywhere with a sign-in | [Restricting the administration: network restrictions](../../hosting/security/restricting-the-administration.md#network-restrictions) |
-| Languages | one; several | Multilingual |
+| Languages | one; several | [Multilingual](../multilingual/README.md) |
 
 ## How an intranet is built in Exponential
 

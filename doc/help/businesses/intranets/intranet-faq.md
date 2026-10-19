@@ -122,12 +122,12 @@ for you to replace.
 
 **Do staff need an app on their phones?**
 No app is needed to read the intranet; it is a website. The authenticator app is only needed if two-step sign-in with
-app codes is used (Mobile and headless).
+app codes is used ([Mobile and headless](../mobile-and-headless/README.md)).
 
 ## Related pages
 
 - [Intranets](README.md)
 - [Intranet rollout checklist](intranet-rollout-checklist.md)
-- Extranet FAQ
+- [Extranet FAQ](../extranets/extranet-faq.md)
 - Businesses FAQ
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

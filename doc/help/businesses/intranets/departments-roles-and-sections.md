@@ -134,5 +134,5 @@ Neither belongs on a department editor role. Schedule a regular look at both bad
 - [Roles, policies and unactivated users](../../../guides/roles-and-policies.md)
 - [Sections and object states for site builders](../../creators/website-creators/sections-and-object-states.md)
 - [Approval workflows](approval-workflows.md)
-- Customer and partner areas
+- [Customer and partner areas](../extranets/customer-and-partner-areas.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

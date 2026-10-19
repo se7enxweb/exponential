@@ -59,8 +59,8 @@ Use a product image that works when cropped to a wide format.
 
 RSS feeds can carry new products or offers to readers, partner sites and apps
 ([RSS feeds for your site](../../creators/website-creators/rss-feeds-for-your-site.md)). For selling through partners
-and networks, see Selling through networks and partners
-and Feeds and syndication.
+and networks, see [Selling through networks and partners](../mobile-and-headless/selling-through-networks-and-partners.md)
+and [Feeds and syndication](../mobile-and-headless/feeds-and-syndication.md).
 
 ## Newsletters to customers
 

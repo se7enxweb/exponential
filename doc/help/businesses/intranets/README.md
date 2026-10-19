@@ -3,7 +3,7 @@ title: Intranets
 audience: businesses, project-manager, admin
 category: business-solutions
 order: 1
-summary: The landing page for organizations that run their staff intranet on Exponential - what the section covers, who it is for, every page with one line, a suggested reading order and the neighbouring sections.
+summary: The landing page for organizations that run their staff intranet on Exponential - what the section covers, who it is for, every page with one line, a suggested reading order and the neighboring sections.
 keywords: intranet, staff portal, employee portal, departments, roles, policies, sections, documents, file library, search, news, announcements, approval, workflow, two-factor, LDAP, directory, notifications, rollout
 type: help
 ---
@@ -20,7 +20,7 @@ and then links to the technical page for whoever sets it up.
 2. [The pages of this section](#the-pages-of-this-section)
 3. [A suggested order](#a-suggested-order)
 4. [What you need before you start](#what-you-need-before-you-start)
-5. [Neighbouring sections](#neighbouring-sections)
+5. [Neighboring sections](#neighboring-sections)
 6. [Related pages](#related-pages)
 
 ## What an intranet on Exponential is
@@ -89,10 +89,10 @@ handlers, configured in `settings/ldap.ini` and `settings/textfile.ini`).
 - [ ] A working mail setup for activation, password reset and notifications
   ([Mail delivery](../../hosting/operations/mail-delivery.md)).
 
-## Neighbouring sections
+## Neighboring sections
 
-- Extranets: the same tools pointed at partners, customers, dealers and suppliers.
-- Member sites: registration from the public, members-only content and events.
+- [Extranets](../extranets/README.md): the same tools pointed at partners, customers, dealers and suppliers.
+- [Member sites](../members/README.md): registration from the public, members-only content and events.
 - Security: access reviews, accounts and passwords, GDPR basics.
 - [Reliability](../reliability/README.md): keeping the intranet available every working day.
 - Costs, including the worked example for an intranet.
