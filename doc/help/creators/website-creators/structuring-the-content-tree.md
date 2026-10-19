@@ -66,6 +66,8 @@ Each container has a sort field and direction: by name, published or modified da
 it on the folder (the sub-items list), and choose the class default for new containers
 ([Content classes for websites](content-classes-for-websites.md)).
 
+![The Ordering tab of a folder: the field and direction its sub items are sorted by, with the Set button](../../images/creators/sort-order.webp)
+
 | Content | Sort by |
 |---|---|
 | News, blog posts | published, newest first |
