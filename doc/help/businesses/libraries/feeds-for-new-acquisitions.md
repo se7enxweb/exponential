@@ -132,5 +132,5 @@ in the [Newsletters](../newsletters/README.md) section.
 - [Libraries and catalogs](README.md)
 - [RSS feeds (guide)](../../../guides/rss-feeds.md)
 - [RSS feeds for your site](../../creators/website-creators/rss-feeds-for-your-site.md)
-- Feeds and syndication
+- [Feeds and syndication](../mobile-and-headless/feeds-and-syndication.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

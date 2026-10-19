@@ -120,7 +120,7 @@ With a mapping, department membership in the directory can decide department acc
 The repository, searched on 19 October 2026, has no SAML handler, no OpenID Connect handler for staff sign-in, no
 dedicated Active Directory integration beyond LDAP, and no automatic user provisioning from a directory (users are
 created at their first sign-in). Any of these is an extension project; ask a partner to estimate it
-(Choosing a partner).
+([Choosing a partner](../choosing/choosing-a-partner.md)).
 
 ## Points to settle with your partner
 

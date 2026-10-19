@@ -85,6 +85,8 @@ Set your operating system to dark and reload. Measure the contrast of every text
 Use the [dark mode checklist](checklist-dark-mode.md). In short: every page type in light and dark, at 1440 px and
 960 px with scale 2; no white boxes; contrast measured; reload keeps the choice; no flash on load; print is light.
 
+![The Setup page in the dark mode, a good page to check cards, icons and links on](../../images/designers/setup-cards-dark.webp)
+
 ## Related pages
 
 - [Dark mode overview](dark-mode-overview.md)

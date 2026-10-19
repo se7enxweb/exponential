@@ -97,7 +97,7 @@ searched and the average number of results. Phrases that found nothing show what
 > **Note**
 > Search phrases can be personal data, which is why recording them is off by default. Decide with your data
 > protection contact whether to switch it on, and for how long
-> (GDPR basics).
+> ([GDPR basics](../security/gdpr-basics.md)).
 
 ## Editors and administrators
 

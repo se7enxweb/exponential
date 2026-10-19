@@ -79,6 +79,8 @@ that shows your theme's name, version, license and website on **Setup > About** 
   ([Bumping the version before the tag](../distribution/bumping-versions-before-the-tag.md)).
 - **The license line must match the `LICENSE` file**. If the theme is GPL, write the license's full name as above.
 
+![The About page of the administration, which lists every extension with the version, license and website from its ezinfo.php or extension.xml](../../images/designers/about-page.webp)
+
 ## Related pages
 
 - [extension.xml: the packaged description](extension-xml.md)

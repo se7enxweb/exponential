@@ -58,7 +58,15 @@ class eZFilePackageHandler extends eZPackageHandler
                         {
                             eZDir::mkdir( $matches[1], false, true );
                         }
+                        $existedBefore = file_exists( $newFilePath );
                         eZFileHandler::copy( $filePath, $newFilePath );
+                        // Remembered for uninstall(): only a file this install created, never one it replaced
+                        if ( !$existedBefore && is_file( $newFilePath ) )
+                        {
+                            if ( !isset( $installData['installed_files'] ) || !is_array( $installData['installed_files'] ) )
+                                $installData['installed_files'] = array();
+                            $installData['installed_files'][$newFilePath] = md5_file( $newFilePath );
+                        }
                     }
                 }
                 if ( $fileItem['type'] == 'ini' and $iniFileVariables and $newFilePath )
@@ -81,6 +89,82 @@ class eZFilePackageHandler extends eZPackageHandler
             }
         }
         return true;
+    }
+
+    /**
+     * Removes the files install() created (from 6.0.15 on; before, files stayed on the site and the item counted as
+     * not uninstalled). A file is removed only when all of these hold, so an uninstall never takes away a file the
+     * site has changed or had before:
+     *   - install() created it (it did not exist before; install data "installed_files", path => md5),
+     *   - its path is relative, inside the installation (no "..", no absolute path),
+     *   - its content is still exactly what was installed (same md5), and
+     *   - that content is one of the package's own files (an install data entry can never name another file).
+     * Directories stay. An INI file that got variables at install time differs from the package's copy and stays.
+     * A package installed before 6.0.15 has no "installed_files": nothing is removed, and the item counts as done.
+     */
+    function uninstall( $package, $installType, $parameters,
+                        $name, $os, $filename, $subdirectory,
+                        $content, &$installParameters,
+                        &$installData )
+    {
+        $installed = ( isset( $installData['installed_files'] ) && is_array( $installData['installed_files'] ) )
+                   ? $installData['installed_files'] : array();
+        $packageChecksums = self::packageFileChecksums( $package );
+        $kept = array();
+        foreach ( $installed as $path => $md5 )
+        {
+            $path = (string)$path;
+            if ( !self::isSafeInstalledPath( $path ) || !is_file( $path ) || is_link( $path ) ||
+                 md5_file( $path ) !== (string)$md5 || !isset( $packageChecksums[(string)$md5] ) )
+            {
+                eZDebug::writeNotice( "Kept '$path' on uninstall: changed since the install, or not one of the package's files." );
+                continue;
+            }
+            if ( !@unlink( $path ) )
+            {
+                eZDebug::writeWarning( "Could not remove '$path' on uninstall." );
+                $kept[$path] = $md5;
+            }
+        }
+        $installData['installed_files'] = $kept;
+        return count( $kept ) == 0;
+    }
+
+    /**
+     * \return true if \a $path is a relative path inside the installation: not empty, not absolute, no "..", no
+     *         scheme or NUL byte.
+     */
+    static function isSafeInstalledPath( $path )
+    {
+        if ( !is_string( $path ) || $path === '' || strpos( $path, "\0" ) !== false || strpos( $path, '://' ) !== false )
+            return false;
+        if ( $path[0] === '/' || $path[0] === '\\' || preg_match( '#^[A-Za-z]:#', $path ) )
+            return false;
+        foreach ( preg_split( '#[/\\\\]+#', $path ) as $segment )
+        {
+            if ( $segment === '..' )
+                return false;
+        }
+        return true;
+    }
+
+    /**
+     * \return md5 => true of every file of every file collection of \a $package, read from the package's directory.
+     */
+    static function packageFileChecksums( $package )
+    {
+        $checksums = array();
+        $collections = $package->attribute( 'file-list' );
+        foreach ( is_array( $collections ) ? $collections : array() as $collectionName => $fileList )
+        {
+            foreach ( is_array( $fileList ) ? $fileList : array() as $fileItem )
+            {
+                $filePath = $package->fileItemPath( $fileItem, $collectionName );
+                if ( is_file( $filePath ) )
+                    $checksums[md5_file( $filePath )] = true;
+            }
+        }
+        return $checksums;
     }
 
     function add( $packageType, $package, $cli, $parameters )

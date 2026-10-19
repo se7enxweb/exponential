@@ -123,5 +123,5 @@ Mail delivery itself (sender address, SPF and DKIM at your mail provider) is the
 - [Notifications: the user's guide](../../../features/6.0/notifications.md)
 - [Notifications: the administrator's guide](../../../guides/notifications-administrator.md)
 - [News and announcements](news-and-announcements.md)
-- Member communications
+- [Member communications](../members/member-communications.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
