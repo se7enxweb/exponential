@@ -74588,5 +74588,13 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Il progetto Exponential: cos&apos;è, le licenze, la roadmap, il supporto, i canali della comunità e come contribuire e donare.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Due modi di costruire</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Due modi di costruire un sito con Exponential: in cosa differiscono e come scegliere.</translation>
+    </message>
 </context>
 </TS>

@@ -72980,6 +72980,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>مشروع Exponential: ما هو، وتراخيصه، وخارطة طريقه، والدعم، وقنوات المجتمع، وكيف تساهم وتتبرع.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>طريقتان للبناء</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>طريقتان لبناء موقع باستخدام Exponential: كيف تختلفان وكيف تختار بينهما.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

@@ -77177,6 +77177,14 @@ Gracias por la retroalimentación</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>El proyecto Exponential: qué es, sus licencias, la hoja de ruta, el soporte, los canales de la comunidad y cómo contribuir y donar.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dos formas de construir</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dos formas de construir un sitio con Exponential: en qué se diferencian y cómo elegir entre ellas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

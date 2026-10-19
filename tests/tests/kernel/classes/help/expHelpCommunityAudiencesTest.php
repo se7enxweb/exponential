@@ -46,7 +46,7 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
     );
     const CATEGORIES = array( 'partnership', 'advocacy', 'theme-design', 'templates', 'extension-development', 'theme-extensions',
                               'theme-distribution', 'theme-sales', 'theme-lifecycle', 'hosting', 'app-creation',
-                              'website-creation', 'supporting', 'sponsorship', 'training', 'press-media', 'project' );
+                              'website-creation', 'supporting', 'sponsorship', 'training', 'press-media', 'project', 'build-two-ways' );
     const CATALOGUES = array( 'ara-SA', 'cro-HR', 'cze-CZ', 'dan-DK', 'dut-NL', 'eng-US', 'esl-ES', 'esl-MX', 'fre-FR', 'ger-DE',
                               'heb-IL', 'ita-IT', 'lat-VA', 'nor-NO', 'pol-PL', 'por-BR', 'swe-SE', 'tlh-QO', 'tur-TR', 'ukr-UA',
                               'untranslated' );

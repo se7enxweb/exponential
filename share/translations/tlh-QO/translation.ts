@@ -72951,6 +72951,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Exponential jInmol: nuq &apos;oH, chaw&apos;mey, He, QaH, ghom HoSghajmey, chay&apos; Qapla&apos; DanoblaH je.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>cha&apos; chenmoHmeH mIw</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Exponential Dalo&apos;taHvIS Daq chenmoHmeH cha&apos; mIw: chay&apos; pIm &apos;ej chay&apos; yIwIv.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

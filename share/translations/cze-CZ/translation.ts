@@ -74463,5 +74463,13 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Projekt Exponential: co to je, jeho licence, plán vývoje, podpora, kanály komunity a jak přispět a darovat.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dva způsoby tvorby</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dva způsoby, jak vytvořit web s Exponential: čím se liší a jak si vybrat.</translation>
+    </message>
 </context>
 </TS>

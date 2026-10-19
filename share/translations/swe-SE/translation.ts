@@ -74484,5 +74484,13 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Exponential-projektet: vad det är, dess licenser, färdplan, support, gemenskapens kanaler och hur du bidrar och ger.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Två sätt att bygga</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Två sätt att bygga en webbplats med Exponential: hur de skiljer sig och hur du väljer.</translation>
+    </message>
 </context>
 </TS>

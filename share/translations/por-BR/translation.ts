@@ -75173,5 +75173,13 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>O projeto Exponential: o que é, suas licenças, o roteiro, o suporte, os canais da comunidade e como contribuir e doar.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Duas formas de construir</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Duas formas de construir um site com o Exponential: como diferem e como escolher.</translation>
+    </message>
 </context>
 </TS>

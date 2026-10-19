@@ -74393,5 +74393,13 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Projekt Exponential: czym jest, jego licencje, plan rozwoju, wsparcie, kanały społeczności oraz jak współtworzyć i wspierać.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dwa sposoby budowania</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dwa sposoby budowania witryny w Exponential: czym się różnią i jak wybrać.</translation>
+    </message>
 </context>
 </TS>

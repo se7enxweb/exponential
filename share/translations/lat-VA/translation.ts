@@ -72951,6 +72951,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Inceptum Exponential: quid sit, licentiae, iter futurum, auxilium, canales communitatis, et quomodo conferas et des.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Duae viae aedificandi</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Duae viae situm cum Exponential aedificandi: quomodo differant et quomodo eligas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

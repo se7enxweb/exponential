@@ -74346,6 +74346,14 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Le projet Exponential : ce qu&apos;il est, ses licences, sa feuille de route, le support, les canaux de la communauté, et comment contribuer et donner.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Deux façons de construire</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Deux façons de construire un site avec Exponential : ce qui les distingue et comment choisir.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

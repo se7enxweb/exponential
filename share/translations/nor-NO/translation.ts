@@ -74439,5 +74439,13 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Exponential-prosjektet: hva det er, lisensene, veikartet, støtte, fellesskapets kanaler og hvordan du bidrar og gir.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>To måter å bygge på</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>To måter å bygge et nettsted med Exponential på: hvordan de skiller seg og hvordan du velger.</translation>
+    </message>
 </context>
 </TS>

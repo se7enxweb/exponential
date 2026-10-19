@@ -80175,5 +80175,13 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Das Exponential-Projekt: was es ist, seine Lizenzen, die Roadmap, Support, Community-Kanäle und wie Sie beitragen und spenden.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Zwei Wege zu bauen</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Zwei Wege, eine Site mit Exponential zu bauen: wie sie sich unterscheiden und wie Sie zwischen ihnen wählen.</translation>
+    </message>
 </context>
 </TS>

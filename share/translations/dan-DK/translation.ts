@@ -73857,5 +73857,13 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Exponential-projektet: hvad det er, dets licenser, køreplan, support, fællesskabets kanaler, og hvordan du bidrager og giver.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>To måder at bygge på</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>To måder at bygge et site med Exponential på: hvordan de adskiller sig, og hvordan du vælger.</translation>
+    </message>
 </context>
 </TS>

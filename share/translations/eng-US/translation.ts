@@ -73231,5 +73231,13 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Two ways to build</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Two ways to build a site with Exponential: how they differ and how to choose between them.</translation>
+    </message>
 </context>
 </TS>

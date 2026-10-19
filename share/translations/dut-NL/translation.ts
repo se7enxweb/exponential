@@ -74406,5 +74406,13 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Het Exponential-project: wat het is, de licenties, de roadmap, ondersteuning, kanalen van de gemeenschap en hoe u bijdraagt en geeft.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Twee manieren om te bouwen</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Twee manieren om een site te bouwen met Exponential: waarin ze verschillen en hoe u kiest.</translation>
+    </message>
 </context>
 </TS>

@@ -74234,5 +74234,13 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Projekt Exponential: što je, njegove licence, plan razvoja, podrška, kanali zajednice te kako doprinijeti i darivati.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dva načina izrade</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dva načina izrade weba s Exponentialom: po čemu se razlikuju i kako odabrati.</translation>
+    </message>
 </context>
 </TS>

@@ -73186,5 +73186,13 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>Exponential projesi: nedir, lisansları, yol haritası, destek, topluluk kanalları ve nasıl katkıda bulunup bağış yapılır.</translation>
     </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>İki yapım yolu</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Exponential ile site oluşturmanın iki yolu: nasıl farklılaştıkları ve nasıl seçileceği.</translation>
+    </message>
 </context>
 </TS>
