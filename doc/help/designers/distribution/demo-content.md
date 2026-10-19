@@ -45,6 +45,13 @@ theme and finds its bugs.
 3. Export the subtree: `php ezpm.php add mytheme_demo ezcontentobject <node id>` after `create`, then `export`.
 4. Install it on a fresh test site ([Installing your package on a test site](../extensions/installing-your-package-on-a-test-site.md)).
 
+## Site packages: contribute them
+
+If your theme comes with a complete site package (the kind the setup wizard installs a new site from), 7x and the
+Exponential Foundation strongly encourage you to submit it by pull request to
+[se7enxweb/exponential.packages.exponential.earth](https://github.com/se7enxweb/exponential.packages.exponential.earth),
+the repository of the package server the setup wizard uses. Then every new installation can start from it.
+
 ## Related pages
 
 - [Screenshots for a theme](screenshots-for-a-theme.md)

@@ -69,8 +69,8 @@ Follow it once, in order; at the end you have a theme that renders and a clean f
 
 ## What usually needs changing next
 
-- The pagelayout's head: stylesheet and script loading (Loading stylesheets).
-- The example override for `article` (Override basics).
+- The pagelayout's head: stylesheet and script loading ([Loading stylesheets](../theme-design/loading-stylesheets.md)).
+- The example override for `article` ([Override basics](../templates/override-ini-basics.md)).
 - `ezinfo.php` and `extension.xml`: website and copyright.
 
 ## Related pages

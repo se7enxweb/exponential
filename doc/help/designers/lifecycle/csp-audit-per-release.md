@@ -27,7 +27,7 @@ keep it that way.
 
    Expected: no output.
 4. **External resources**: anything not served from the site itself (fonts, scripts, images) needs a policy entry
-   and a reason; prefer self-hosting (External resources and CDNs).
+   and a reason; prefer self-hosting ([External resources and CDNs](../theme-design/external-resources-and-cdns.md)).
 5. **Interactive parts** (menus, galleries, forms, maps) work with the policy enforced on the test siteaccess.
 
 ## Record
@@ -37,5 +37,5 @@ it is true.
 
 ## Related pages
 
-- Checklist: CSP
+- [Checklist: CSP](../theme-design/checklist-csp.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

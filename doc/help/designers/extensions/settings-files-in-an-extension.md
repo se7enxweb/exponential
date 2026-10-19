@@ -35,8 +35,8 @@ DesignExtensions[]=mytheme
 | File | What a theme puts there |
 |---|---|
 | `design.ini.append.php` | `DesignExtensions[]`, its stylesheet and script lists |
-| `override.ini.append.php` | Template override rules (Override basics) |
-| `image.ini.append.php` | Image aliases the theme's templates use (Image aliases) |
+| `override.ini.append.php` | Template override rules ([Override basics](../templates/override-ini-basics.md)) |
+| `image.ini.append.php` | [Image aliases](../theme-design/image-aliases.md) the theme's templates use (Image aliases) |
 | `site.ini.append.php` | Only what is safe for every siteaccess, for example a template operator's registration |
 | `<theme>.ini` | The theme's own options ([Giving a theme its own settings file](your-own-ini-file.md)) |
 

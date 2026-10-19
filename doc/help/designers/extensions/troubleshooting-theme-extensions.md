@@ -10,8 +10,8 @@ type: help
 # Troubleshooting theme extensions
 
 This page is for designers and administrators when a theme does not behave. Find the symptom, read the cause, apply
-the fix. For problems inside templates, see Debugging a design and
-Common template mistakes.
+the fix. For problems inside templates, see [Debugging a design](../theme-design/debugging-a-design.md) and
+[Common template mistakes](../templates/common-template-mistakes.md).
 
 | You see | Likely cause | Fix |
 |---|---|---|
@@ -24,7 +24,7 @@ Common template mistakes.
 | "Unknown template operator" for the theme's operator | `autoloads/eztemplateautoload.php` or `ExtensionAutoloadPath[]` is missing | [Template operators in a theme](template-operators-in-a-theme.md) |
 | A new PHP class is not found | Autoload array not regenerated, or the PHP service not reloaded | `php bin/php/ezpgenerateautoloads.php -e`, then reload PHP-FPM or Velocity |
 | Theme texts stay in English | `TranslationExtensions[]` missing, or the translation cache | [Translations in a theme](translations-in-a-theme.md) |
-| A changed stylesheet does not reach the browser | The packed stylesheet is cached | Clear the packer and template-block caches (Packer cache and deploy); hard-reload the browser |
+| A changed stylesheet does not reach the browser | The packed stylesheet is cached | Clear the packer and template-block caches ([Packer cache and deploy](../theme-design/packer-cache-and-deploy.md)); hard-reload the browser |
 | Exporting the theme is refused | Exporting is off, or the secret check found something | [Exporting an extension as a package](extension-export-package.md), [The secret check](package-secret-check.md) |
 | Upload of your package: "already exists" | A package of that name is on that installation | Remove the old one there, or rename yours |
 
