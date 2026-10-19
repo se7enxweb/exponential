@@ -133,6 +133,6 @@ method (`ezjscore.ini` documents it). Useful for returning rendered HTML fragmen
 
 - Previous: [CSS and JavaScript in an extension](css-and-javascript-in-an-extension.md)
 - Next: [Translations in an extension](translations-in-an-extension.md)
-- ezjscore server functions reference
+- [ezjscore server functions reference](../part-8-reference/ezjscore-server-functions-reference.md)
 - [Backend ezjscore services](../../../bc/6.0/backend_ezjscore_services.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

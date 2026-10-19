@@ -126,8 +126,8 @@ php bin/php/ezexec.php extension/mysite_hello/scripts/hello.php
 
 `bin/php/ezexec.php` loads the kernel (settings, database, autoloads) and then runs your file. You just used two of
 the kernel's classes: `eZINI`, which reads settings, and `eZCLI`, which writes to the terminal. Both are described in
-Part 8: eZINI and
-eZScript and eZCLI.
+[Part 8](../part-8-reference/README.md): [eZINI](../part-8-reference/ezini.md) and
+[eZScript and eZCLI](../part-8-reference/ezscript-and-ezcli.md).
 
 ## Undo everything
 

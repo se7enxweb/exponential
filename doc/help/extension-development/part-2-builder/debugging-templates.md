@@ -62,7 +62,7 @@ debug output's timing table. Combine with `[DatabaseSettings] SQLOutput=enabled`
 | Message in the debug output | Meaning | Fix |
 |---|---|---|
 | `Unknown template variable 'x' in namespace ''` | the variable was never defined here | `{def}` it, pass it to the include, or use `first_set( $x, default )` |
-| `Operator 'x' is not registered` | no operator of that name (typo, or its extension is not active) | check the name in Built-in template operators; activate the extension |
+| `Operator 'x' is not registered` | no operator of that name (typo, or its extension is not active) | check the name in [Built-in template operators](../part-8-reference/template-operators-reference.md); activate the extension |
 | `Object problem with operator 'x'` | the operator's class could not be set up | a PHP problem in the extension; see [Old-style constructors and static calls](../part-4-upgrading/old-constructors-and-static-calls.md) |
 | `No template could be loaded for "x.tpl" using resource "design"` | the path is not in any design base | check the path and the [design chain](the-design-chain.md) |
 | `parser error` with a line number | a syntax error, for example `max=3` instead of `max 3` in `foreach` | read the line; compare with [Templates for builders](templates-for-builders.md) |

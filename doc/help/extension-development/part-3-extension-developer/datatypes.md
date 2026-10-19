@@ -93,7 +93,7 @@ With the kernel loaded, `eZDataType::create( 'mysiterating' )` returned an objec
 | Removal | `deleteStoredObjectAttribute()`, `deleteStoredClassAttribute()` |
 
 Every method has a default in `eZDataType`; override only what your type needs. The full list with signatures is
-The eZDataType API.
+[The eZDataType API](../part-8-reference/ezdatatype-api.md).
 
 ## Learn from real ones
 

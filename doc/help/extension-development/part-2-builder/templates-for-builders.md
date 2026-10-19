@@ -117,7 +117,7 @@ An operator can be called like a function, `count( $items )`, or with a pipe, `$
 
 reads "count the items, then compare with 2". The most useful operators are collected in
 [The template operators builders use most](template-operators-builders-use-most.md); every built-in one is listed in
-Built-in template operators.
+[Built-in template operators](../part-8-reference/template-operators-reference.md).
 
 ## Fetching content
 
@@ -181,5 +181,5 @@ added.
 - Previous: [.ini.append.php files and keeping settings safe](append-php-files-and-safety.md)
 - Next: [The design chain: where a template is found](the-design-chain.md)
 - [Templates and design](../../../guides/templates-and-design.md)
-- Built-in template functions
+- [Built-in template functions](../part-8-reference/template-functions-reference.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -106,5 +106,5 @@ see [Deploying](../../../guides/deploying.md).
 - Previous: [Debugging templates](debugging-templates.md)
 - Next: [Content classes for builders](content-classes-for-builders.md)
 - [Caches](../../../guides/caches.md)
-- Cache tags, cache blocks and clearing caches
+- [Cache tags, cache blocks and clearing caches](../part-8-reference/cache-tags-and-clearing.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

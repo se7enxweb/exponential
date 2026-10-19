@@ -50,10 +50,10 @@ Titles are quoted as the articles name themselves; they use the product name of 
 | Settings | ["Configuration Files"](https://ezpedia.exponential.earth/en/learning/configuration_files) | [How INI settings work](../part-2-builder/how-ini-settings-work.md) |
 | Kernel overrides | ["Overriding kernel classes within an extension"](https://ezpedia.exponential.earth/en/solution/overriding_kernel_classes_within_an_extension) | [Kernel class overrides: the last resort](../part-3-extension-developer/kernel-overrides-the-last-resort.md) |
 | View parameters | ["How to add view parameter support to your custom module view"](https://ezpedia.exponential.earth/en/solution/how_to_add_view_parameter_support_to_your_custom_module_view) | [View parameters](../part-3-extension-developer/view-parameters.md) |
-| Image aliases from PHP | ["Creating image alias image variations in PHP"](https://ezpedia.exponential.earth/en/solution/creating_image_alias_image_variations_in_php) | Part 8 reference |
-| Rich text from PHP | ["Manipulating ezxml document contents"](https://ezpedia.exponential.earth/en/solution/manipulating_ezxml_document_contents) | Creating, publishing and changing content from PHP |
+| Image aliases from PHP | ["Creating image alias image variations in PHP"](https://ezpedia.exponential.earth/en/solution/creating_image_alias_image_variations_in_php) | [Part 8 reference](../part-8-reference/README.md) |
+| Rich text from PHP | ["Manipulating ezxml document contents"](https://ezpedia.exponential.earth/en/solution/manipulating_ezxml_document_contents) | [Creating, publishing and changing content from PHP](../part-8-reference/content-functions-from-php.md) |
 | Relations from PHP | ["Adding related object programmatic"](https://ezpedia.exponential.earth/en/solution/adding_related_object_programmatic) | the same |
-| PHP API examples | ["PHP eZ Publish API source code examples"](https://ezpedia.exponential.earth/en/snippet/php_ez_publish_api_source_code_examples) | Part 8 |
+| PHP API examples | ["PHP eZ Publish API source code examples"](https://ezpedia.exponential.earth/en/snippet/php_ez_publish_api_source_code_examples) | [Part 8](../part-8-reference/README.md) |
 | Edit and action handlers | ["Content edit handlers"](https://ezpedia.exponential.earth/en/ez/content_edit_handlers), ["Content action handlers"](https://ezpedia.exponential.earth/en/ez/content_action_handlers) | [Handlers named by settings](../part-3-extension-developer/handlers-named-by-settings.md) |
 
 ## How old is it?
