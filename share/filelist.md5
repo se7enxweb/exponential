@@ -6297,7 +6297,7 @@ d55259e5b036dd972962aa0bd877bc3f  doc/guides/ui-switch-settings.md
 d0260680e11ffdb7581f3bff6191d877  doc/guides/workflows.md
 c92a8e9a50509f2653769892354777ac  doc/help/README.md
 43bc61455e84e63b09d8ad18e225161a  doc/help/accounts-and-sign-in.md
-fa73f865515cf0a1a572dd10b875dd1e  doc/help/admin-tour.md
+4c3029bd96587962723ddb46c94e4c4c  doc/help/admin-tour.md
 2559a76804ca2dd8ccc13a44e3669dd2  doc/help/advocates/7x-and-the-foundation-for-advocates.md
 560682319a446d16cd3d272f050d2105  doc/help/advocates/a-90-day-advocate-plan.md
 5641c6cce3e2f47e85d534ec79c85e36  doc/help/advocates/a-table-at-someone-elses-event.md
@@ -6461,7 +6461,7 @@ da546533313723f1c0a3089b01af3178  doc/help/creators/app-creators/console-command
 079cbb59bbd3916e787f2ce1b7d689d3  doc/help/creators/app-creators/content-security-policy.md
 e7155d793be265182d760d8044b8e3de  doc/help/creators/app-creators/creating-content-in-code.md
 22c2801fa7731f3b03f933e37480f7b3  doc/help/creators/app-creators/cronjobs-for-applications.md
-d8ce4ca915eb0ed3eb640194b547dde4  doc/help/creators/app-creators/custom-datatypes.md
+577a81e7910fd6211b534caf6471038d  doc/help/creators/app-creators/custom-datatypes.md
 a161a9f3a54496575a788dfaff6c6b5f  doc/help/creators/app-creators/custom-modules-and-views.md
 10b83bcb979d1f4d0eca2cfd2b9906ce  doc/help/creators/app-creators/database-access.md
 d800cc1c2200265ecea9d9702d09e87f  doc/help/creators/app-creators/datatype-lifecycle.md
@@ -6474,7 +6474,7 @@ af4c97ae6c8ebff68266621e4b137284  doc/help/creators/app-creators/deployment-pipe
 7bb0d605cd7b3588c789945a6c30426c  doc/help/creators/app-creators/exponential-as-an-application-platform.md
 92b7fadd03501488ad5cf441774837cc  doc/help/creators/app-creators/exponential-intelligence.md
 c008089bcde557a3d40b41b52f9527d1  doc/help/creators/app-creators/extending-exponential-intelligence.md
-736f4c1a97cfb6abfdb50f70d04fb4d4  doc/help/creators/app-creators/extension-anatomy.md
+3fce1eaec578f3271f6f017d8a1983ac  doc/help/creators/app-creators/extension-anatomy.md
 43794821912181508a6e245b3a3f9097  doc/help/creators/app-creators/fetch-functions.md
 99990d024a25d4c37f63efa77209477c  doc/help/creators/app-creators/forms-csrf-and-http-input.md
 df72bdbbc6eefeea0acb7560c7ba91b7  doc/help/creators/app-creators/headless-exponential.md
@@ -6484,7 +6484,7 @@ bac5901526a4dd36a76ececd663bab09  doc/help/creators/app-creators/json-endpoints-
 83943608ab7af2d548069f5aa2782dbf  doc/help/creators/app-creators/notifications-and-mail.md
 9b98f1e00d04450488554b4ada2aaff6  doc/help/creators/app-creators/oauth-and-api-keys.md
 ac78709fe0b4c8a7c1a142fdc45b5d65  doc/help/creators/app-creators/packages-and-ezpkg.md
-7c40763b09cc64a3cbf850045c9443e1  doc/help/creators/app-creators/packaging-as-an-extension.md
+8be426cc7a9962f9bbc626c4d613b0ee  doc/help/creators/app-creators/packaging-as-an-extension.md
 7e239970f7038406d6fe1fab44a215aa  doc/help/creators/app-creators/persistent-objects-and-custom-tables.md
 c136c1baf42fe5346aecd657fef6f0c3  doc/help/creators/app-creators/policy-functions-and-limitations.md
 2c3ba999e3e74cda086370ec294d6f71  doc/help/creators/app-creators/profiling-and-performance.md
@@ -6501,12 +6501,12 @@ fe44ba21d4ec9a4e651e88444e35d3ae  doc/help/creators/app-creators/symfony-and-the
 f6ef2129218931ed43b4cb7f8169083e  doc/help/creators/app-creators/template-operators.md
 edb55a8e65f0c3d2592c21f6da63d98a  doc/help/creators/app-creators/testing-applications.md
 8bdcf3aba2a90be57f18008554739bfa  doc/help/creators/app-creators/the-content-api.md
-99122f82ca5e8d3e917ec01aa0963a7c  doc/help/creators/app-creators/versions-and-releases.md
+c7c17351d146f41a1484dc6c6d7dbe11  doc/help/creators/app-creators/versions-and-releases.md
 d7206fd9dd76983a8877dfdffd7b1d1e  doc/help/creators/app-creators/view-results-and-the-pagelayout.md
 88b3d3f1f9d0a5a2ee433047fad11aae  doc/help/creators/app-creators/workflows-and-events.md
 73e48a520fdd30fb0d9c8864de65e637  doc/help/creators/app-creators/writing-a-cronjob-part.md
 b54f4af81947b86dc06f93a236c839e9  doc/help/creators/app-creators/writing-a-fetch-function.md
-4f37c1a49eb187f19272e3533246472b  doc/help/creators/app-creators/writing-a-workflow-event-type.md
+7feda4c9f5a3e29ac5a412182a32debf  doc/help/creators/app-creators/writing-a-workflow-event-type.md
 e734df15cac277675021337a746444e7  doc/help/creators/app-creators/your-first-extension.md
 de63d719e4a33cbc4f51ec1b25209bea  doc/help/creators/website-creators/accessibility-for-site-builders.md
 72f9590e4573618f074a8c1bcf4b5d0e  doc/help/creators/website-creators/backups-and-restores.md
@@ -6556,11 +6556,11 @@ b56386e05ac3fcc95706cdbec74fa307  doc/help/creators/website-creators/robots-txt.
 4aec6543bf06576cf77f967221eef611  doc/help/creators/website-creators/search-with-ezfind-and-solr.md
 feb9093db321aa440f94544ec8432424  doc/help/creators/website-creators/sections-and-object-states.md
 da6a6e5ec444e5c3a0557b24e56bd0f7  doc/help/creators/website-creators/sending-newsletters.md
-c6e20738ba870eb660d261b25aa30ff9  doc/help/creators/website-creators/seo-basics.md
-c66c931ba259c20794422e07d0a7537e  doc/help/creators/website-creators/shared-header-and-footer.md
+4f22d6422bb4f1af894879416bbe8926  doc/help/creators/website-creators/seo-basics.md
+4ec33faabdf6fb6169713339ea6c78f1  doc/help/creators/website-creators/shared-header-and-footer.md
 bbb7fce25ed6c341fcd34b09e8e66b7a  doc/help/creators/website-creators/shop-overview.md
 52289349f2d6128d9d17c01ed6cf5a2a  doc/help/creators/website-creators/site-map-and-content-inventory.md
-6f88d6944004511e9548ce8dee08f99d  doc/help/creators/website-creators/site-packages-and-shipped-themes.md
+3af13e3ab2ea78432e20e7d86ab32d5e  doc/help/creators/website-creators/site-packages-and-shipped-themes.md
 ba3ed140b2581ffd5182bb29625d1bb3  doc/help/creators/website-creators/site-search.md
 650ff9ced2b7ab944935ddd5c4a83b0b  doc/help/creators/website-creators/sitemaps.md
 cfd4d0d72ee67cad41f1419e2794f4cd  doc/help/creators/website-creators/spam-protection-for-forms.md
@@ -6582,7 +6582,7 @@ fb86947397480e62f8ab772567bb43f4  doc/help/creators/website-creators/visitor-per
 750eeeea3eaac765a0e66de2d2a8da3a  doc/help/creators/website-creators/website-creators-reading-path.md
 365c70a29cfbe5161482f77c861e23b4  doc/help/creators/website-creators/website-creators-start-here.md
 631f2d1cc27947b5c562d624d217a6e2  doc/help/creators/website-creators/what-you-can-build.md
-26c382766f855ae2de27008a1f6b9a90  doc/help/creators/website-creators/your-first-site-step-by-step.md
+61e8505c85eff421d07e3e3088ec93eb  doc/help/creators/website-creators/your-first-site-step-by-step.md
 1de643aeb171258ceb95fa2e2981f7a7  doc/help/database-support.md
 32e96048ccd6e37fc959c00b93866c28  doc/help/default-administrator-password.md
 82a83381bc7e81a7cee58bfe4fa89451  doc/help/designers/README.md
@@ -6744,7 +6744,7 @@ f7863466f75586e6e29a18f8ae584317  doc/help/designers/sales/working-with-agencies
 49eed842951091b22aff7a290a0e2132  doc/help/designers/templates/array-operators.md
 2500a3945bdd6c974bb7c11443be9044  doc/help/designers/templates/attribute-view-gui.md
 f93ada02b07d3654c801d1a50db6aa9b  doc/help/designers/templates/attributes-and-dot-notation.md
-2f4c07b5f4404d706cd3775e008ee2c5  doc/help/designers/templates/breadcrumbs.md
+016d5f3e7018831dda8858ee326b5d44  doc/help/designers/templates/breadcrumbs.md
 9326e7da076cb71927103c7439989e3a  doc/help/designers/templates/cache-block.md
 98b4c41af52876224d90c3baee09f458  doc/help/designers/templates/comments.md
 d24feff9c7b9dff713677f1c2f983505  doc/help/designers/templates/common-template-mistakes.md
@@ -6813,7 +6813,7 @@ a4c5f82aaf954ba549ee757204889ca1  doc/help/designers/templates/tpl-syntax-basics
 33d0a561bf1044b0836668a5b7b0dee2  doc/help/designers/templates/url-operators.md
 b9ead97c27bd05fc00ccc8596230a744  doc/help/designers/templates/user-and-login-templates.md
 950e1378988ebd56df29f86a9449d292  doc/help/designers/templates/variables-and-def.md
-7801b6c1c1fc5774f1563ccdeef89f44  doc/help/designers/templates/view-modes.md
+c9fd334f3b41ab8c0b66ba6276f216c0  doc/help/designers/templates/view-modes.md
 f8816ffbc234fe1c4ef89f1eab768974  doc/help/designers/templates/wash-and-escaping.md
 30bba407a8a97b70f1483bdc76f586b4  doc/help/designers/templates/while-and-do-loops.md
 10a3a9e61ce2ab0c33dddc08b9dbf35b  doc/help/designers/theme-design/accessibility-basics-for-themes.md
@@ -7165,7 +7165,7 @@ adc20f336d07e6ffeba5c7292db0853e  doc/help/hosting/models/choosing-a-hosting-mod
 0e2a5e8e04f47ab34143fc8412fb15b6  doc/help/hosting/models/containers-docker-and-podman.md
 aa7baa33a2052ed30bfbd236c9d8b4ff  doc/help/hosting/models/dedicated-servers.md
 af8f76b541a969d17c06f07a2302a324  doc/help/hosting/models/kubernetes.md
-8365035b235ef7d7aa0f27a61389971b  doc/help/hosting/models/managed-hosting.md
+1ddc8d3063e3c6bef51db3c81baaaf14  doc/help/hosting/models/managed-hosting.md
 c3ee51c0e2481727305b93481d8029b1  doc/help/hosting/models/platform-as-a-service.md
 defc93772474f794f90448aee5fd05c9  doc/help/hosting/models/shared-hosting.md
 21034a6d2e20de1b86396e0f16e826b6  doc/help/hosting/models/vps-hosting.md
@@ -7192,7 +7192,7 @@ a1dc65dab18f181ca79191692696e32f  doc/help/hosting/operations/storage-layout.md
 affe2c7407810ac81f1959499aaab1c4  doc/help/hosting/operations/upgrading-customer-sites.md
 c8491c1d2dc0bfeaa1b2cb67c1ff1e03  doc/help/hosting/panels/README.md
 347088688cbc27ce77ca39dea5b11189  doc/help/hosting/panels/cpanel.md
-fd4f996a17cae35b9af5039d7ceee461  doc/help/hosting/panels/cron-and-shell-access.md
+c7b3adcf6e98912dacb57a225c4dc434  doc/help/hosting/panels/cron-and-shell-access.md
 bd3f70da6cec56995bc6ecf84729886f  doc/help/hosting/panels/databases-and-users.md
 db2080c34c04f93df1b0096ab072c712  doc/help/hosting/panels/directadmin.md
 668d6156b289cd501af522c5eeec57b0  doc/help/hosting/panels/ispconfig.md
@@ -7255,8 +7255,10 @@ b5f11faaa868e8c7adcfed6bcff26eb3  doc/help/hosting/servers/nginx-with-php-fpm.md
 77c718b4477e4b904beb8103a1f720e7  doc/help/hosting/servers/velocity-for-hosts.md
 ca2b004c6c4666c8d25cea94f2d804b3  doc/help/hosting/servers/velocity-https-certificates.md
 54c50979644da1d66341d3f643f947f7  doc/help/hosting/servers/velocity-workers-and-pools.md
+fcdea3299a32c3730f641822280611cf  doc/help/images/accounts/admin-tour-header-dark.webp
 58926ad2a9a9b9f7a48a56d711f50cf0  doc/help/images/accounts/change-password-form.webp
 86837f82d2244615e6714193b4b371a0  doc/help/images/accounts/current-user-box.webp
+e1385a7ddada15fd571df04e044733c1  doc/help/images/accounts/editor-sign-in.webp
 cf5c68589449ee0d49b423342bf1bbc7  doc/help/images/accounts/email-preferences.webp
 d07cc938e62907caa75493d2e5f85b6d  doc/help/images/accounts/my-bookmarks.webp
 80dc352af3844d790d3592d06ac9827d  doc/help/images/accounts/notification-settings.webp
@@ -7267,6 +7269,7 @@ c62bd3523b50c73d0284cce14072b804  doc/help/images/admin-dashboard.webp
 aed66f92cd4fd51069175ad3af41a2c1  doc/help/images/content-view.webp
 3fdb924d0adb52c6ba456bf0aee9df7a  doc/help/images/context-menu.webp
 c2df63287f2461e530eb9837e15b5010  doc/help/images/create-new.webp
+a424dc958c7cbe7f93ca708c60a74505  doc/help/images/creators/about-extensions.webp
 dc5c3a8648fbd4c59f51ff3abd5681c8  doc/help/images/creators/backups.webp
 b4031297ef19b1c7f3073a446fe9f359  doc/help/images/creators/broken-relations.webp
 f54d829e756cc76e0c045c5e3554e8ff  doc/help/images/creators/class-list.webp
@@ -7276,6 +7279,7 @@ fcd9c1fc0909267912aeb7167a743a06  doc/help/images/creators/class-view.webp
 bb8107b47950d5d7428cfbf044e02bf9  doc/help/images/creators/content-tree-roots.webp
 a18cafff7a9cc2b20a077acd832f6aee  doc/help/images/creators/details-tab-section.webp
 0a290630853c041d6a53a2e03614ff9d  doc/help/images/creators/editor-dashboard.webp
+5a67187b95c4dc1018251d2d7d93b315  doc/help/images/creators/help-dashboard-first-site.webp
 61fc28fc9d52e2fb48d3e5e0d6738ded  doc/help/images/creators/item-layouts-tab.webp
 443a54938ace7c2e4187032c0a79599e  doc/help/images/creators/languages-setup.webp
 766ffc0c48ae37cd2ac86cb4ba4f2e11  doc/help/images/creators/layouts-dashboard.webp
@@ -7288,6 +7292,7 @@ ec1e31ad6b8519fe71767bf572d7f9f8  doc/help/images/creators/link-management.webp
 9c615e378f5b31cc545da6ee63dc8eef  doc/help/images/creators/packages-list.webp
 f3fa9dbeb82649549a12a70a4d166ed9  doc/help/images/creators/pdf-export.webp
 3eb12bfda7428f2d0183cf0df7016df1  doc/help/images/creators/preload-sites.webp
+2a23bd04a83f9d92f352cc7f87c84992  doc/help/images/creators/rad-datatype-wizard.webp
 aa78a278536ca6ed4a500e3cc6970e47  doc/help/images/creators/rad-tools.webp
 b3c349ce257c43d2bf7c7ce377ef022e  doc/help/images/creators/relations-tab.webp
 64d35f69bece884a7dbf60787a05e56e  doc/help/images/creators/role-policies.webp
@@ -7295,6 +7300,8 @@ b3c349ce257c43d2bf7c7ce377ef022e  doc/help/images/creators/relations-tab.webp
 cb89201e5030e96efa28b77949579d83  doc/help/images/creators/rss-list.webp
 91b71bf2bccfadb96aba4da3f9c05f4d  doc/help/images/creators/search-statistics.webp
 2b4e228c1e13f9cdece0706259774ac5  doc/help/images/creators/sections-list.webp
+bab5a2c320536e06bacb487e161016b8  doc/help/images/creators/seo-url-alias.webp
+2ff3e028a04f3a82128b4b407e65d6d6  doc/help/images/creators/shared-layout-header.webp
 7d573d09aac8b926252ddf6adf4deda9  doc/help/images/creators/shop-dashboard.webp
 29a219d882cf09054a40052fded67eaa  doc/help/images/creators/site-navigation.webp
 492501db822e41a7b89363e4196e2c53  doc/help/images/creators/site-search-results.webp
@@ -7311,9 +7318,11 @@ ebb19cbbfaf5f42ea1f7ad87072f8dbd  doc/help/images/creators/url-alias-tab.webp
 8a95773f5fc84d4eb84ef2289aaa65a3  doc/help/images/creators/url-translator.webp
 52daa95a1286eb1e5ef0bac07f95e842  doc/help/images/creators/url-wildcards.webp
 bd04aeb2fa135580456f1719053e9453  doc/help/images/creators/users-tree.webp
+7070322fb92246148015ae16eec272de  doc/help/images/creators/workflow-event-wizard.webp
 87614224102064f84c0fb57ad24ccf46  doc/help/images/creators/workflows.webp
 40c151d479d4e47efa163ec433ee101b  doc/help/images/designers/about-page.webp
 baae1024ac7dd635f9cfdc14f76f7e70  doc/help/images/designers/admin-design-switch.webp
+99e130549ff955549c66dd672d3f4feb  doc/help/images/designers/admin-full-view.webp
 c18e2e55a4ebc589fb3b5e0e06bb49e8  doc/help/images/designers/components-page-dark.webp
 f50e8de5ae623944e360513463cb5553  doc/help/images/designers/components-page.webp
 6c19b00288639fba0966b7ce338f5dca  doc/help/images/designers/dashboard-dark.webp
@@ -7325,6 +7334,7 @@ b89d123afc2caab0d7e510d441fe69eb  doc/help/images/designers/item-page-dark.webp
 4286837caf55068716aa4b1969e355c7  doc/help/images/designers/package-create.webp
 9c615e378f5b31cc545da6ee63dc8eef  doc/help/images/designers/packages-repositories.webp
 c30711ffc501f613a44c5230fb908164  doc/help/images/designers/setup-cards-dark.webp
+0381650763cb5a95dd7f6e1b34af2c03  doc/help/images/designers/site-breadcrumb.webp
 ed8ef41545a0808fa20774394c45c7f5  doc/help/images/designers/site-front-page.webp
 eb56761ae3447cb1ceeaf051295ba608  doc/help/images/designers/theme-toggle-dark.webp
 a3e7c215c03fbfde752376476832aa42  doc/help/images/designers/theme-toggle.webp
@@ -7349,13 +7359,17 @@ c7dfcea298caeb2b454bdce677cb4694  doc/help/images/getting-started/dashboard-over
 7ff5afb78ed825f09b00ff456498a15b  doc/help/images/getting-started/help-dashboard.webp
 a43fbc2dcfb4ccbc64f29222f6093f01  doc/help/images/getting-started/item-page-buttons.webp
 aef7c2da911610f7b9f3dce72cb0cd4d  doc/help/images/getting-started/sign-out-button.webp
+86ff371aef79b84bf6a20c2a8256f9fa  doc/help/images/help/about-page-security.webp
+99566816399d74dc063cb5b80430a46f  doc/help/images/help/audit-dashboard-security.webp
 6487db62fdb42ce86f93fc78f4a58bb1  doc/help/images/help/help-report.webp
 508cd5fa822820c423070ffd2c5410ca  doc/help/images/help/help-viewer.webp
 01c16a1954789a0a64133aee51b069bc  doc/help/images/help/logs-digest.webp
 8757ae73038a0d642f4187edd3641ab2  doc/help/images/help/report-an-error.webp
+93ec1a6c13270ca6d0a18a7655f418ae  doc/help/images/help/sign-in-hardening.webp
 a9d0d198e95d3809366adc93c5fdeaf6  doc/help/images/help/site-not-found.webp
-fe9f68069bced1c625c1906e6c8fddb3  doc/help/images/hosting/audit-dashboard.webp
+4b0c63a53cf8d72714b05a1589c2fce0  doc/help/images/hosting/audit-dashboard.webp
 221ca2b00c69225fcce3c78a00db1c9d  doc/help/images/hosting/audit-settings.webp
+a3fd59acf103ad85a6f1d2574c758bfb  doc/help/images/hosting/cache-from-panel.webp
 17893a2c7ecd0528d1691e9a1a78efb5  doc/help/images/hosting/cache-management.webp
 95df8f2574fe47c5e2d510da8f5dc47b  doc/help/images/hosting/clear-cache-box.webp
 61427e7da41fc18010b9c17720706593  doc/help/images/hosting/cronjobs-console.webp
@@ -7372,6 +7386,7 @@ cf8a1f4d10cbb27a2ae4db244db026fc  doc/help/images/hosting/job-queue.webp
 3ae0894049956133c81d626e2bed6b31  doc/help/images/hosting/sessions.webp
 e3acd00416bc0d92bff0bef6fe013ed9  doc/help/images/hosting/setup-overview.webp
 5928535dd65f2e0c0ca55b4c82e93445  doc/help/images/hosting/sign-in-page.webp
+4cf6411e067f224c2f6599cae657f10c  doc/help/images/hosting/system-info-managed.webp
 d62b7ae0df59b956647c1eb422b8d0c5  doc/help/images/hosting/system-information.webp
 bff0b6c1f26a3bd68fd7173600d55a0f  doc/help/images/hosting/update-dashboard.webp
 a40d14de47dd1c8e515b6ed4da0eb41d  doc/help/images/hosting/update-installed.webp
@@ -7485,7 +7500,7 @@ f187325c3b09dbdc7f952166874d86fc  doc/help/leadership/running-a-team-on-git.md
 af8d0f921263b8e41d96722507665161  doc/help/leadership/working-together.md
 a12406b76522c0f7dee81286878f2bb7  doc/help/leadership/working-with-the-community.md
 f02271a79b4ca70ad21e1cd939a07704  doc/help/logging-into-the-admin.md
-f4de2cec9df3c6a6461c95c2cb9068fb  doc/help/logging-into-the-editor.md
+1e646432d658a630414ad2cebd7f9938  doc/help/logging-into-the-editor.md
 70f257f9cb2699904ef1474f20e5d836  doc/help/media-and-uploads.md
 e57691e6942395da24fb33dc33ca1616  doc/help/os-support.md
 1f576afa9b39498c85031c5fcb7a5256  doc/help/partners/application-checklist.md
@@ -7726,7 +7741,7 @@ f2c3b5cf6bc9fb272424baa921f9c775  doc/help/project/give-and-donate.md
 7be0f8f293f697d538c4ac6a329943f0  doc/help/project/roadmap.md
 6cad11d66949463e63f2a528bcb54eb0  doc/help/publishing-and-versions.md
 80d6321760f10706290ecbdc9009e617  doc/help/searching.md
-dc8acfe7a2ee87504513fb463c285310  doc/help/security-hardening.md
+731003d7b990ca63fe3ef70df26da63a  doc/help/security-hardening.md
 86162a1255353525620ead81d88b4b67  doc/help/site-packages/README.md
 deba009842ef9843f433f244910b522c  doc/help/site-packages/admin-gui/README.md
 b37282e28248cc64bdd539237b291a3d  doc/help/site-packages/admin-gui/fetching-packages-with-ezupdate.md

@@ -37,6 +37,8 @@ From left to right:
 On a narrow screen (a phone, or a window made small) the tabs and the search move into a menu behind the button with
 three lines.
 
+![The header of the administration in the dark mode](images/accounts/admin-tour-header-dark.webp)
+
 ## The left column
 
 The left column changes with the tab:

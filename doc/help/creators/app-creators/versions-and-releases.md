@@ -12,6 +12,8 @@ type: help
 This page is for application creators who publish releases. The rules are those Exponential's own extensions follow;
 they keep installations able to tell which code they run.
 
+![The Extensions part of the About page: each extension with its version, license and website](../../images/creators/about-extensions.webp)
+
 ## Contents
 
 1. [A published version is permanent](#a-published-version-is-permanent)

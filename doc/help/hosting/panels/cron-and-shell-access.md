@@ -14,6 +14,8 @@ jobs through a panel's cron page, and who decide how much shell access a plan in
 and how often, which PHP binary a cron line must use, what the administration's own Cronjobs page needs, and what a
 customer can do without a shell.
 
+![Setup, Cache management: what to use when a hosting panel gives no shell](../../images/hosting/cache-from-panel.webp)
+
 ## Contents
 
 1. [Why Exponential needs cron](#why-exponential-needs-cron)

@@ -14,6 +14,8 @@ This page is for designers who plan the templates of a design. The same article 
 a list, as a teaser in a block, as an embed in another text. Each of these is a **view mode**, and each has its own
 template.
 
+![The View tab of an article in the administration, its full view drawn by the administration design's templates](../../images/designers/admin-full-view.webp)
+
 ## Contents
 
 1. [The common view modes](#the-common-view-modes)
