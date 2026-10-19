@@ -14597,7 +14597,7 @@ Nota: I pacchetti non verranno disinstallati.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Salva</translation>
+        <translation>Negozio</translation>
     </message>
     <message>
         <source>Advanced search</source>

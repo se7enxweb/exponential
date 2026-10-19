@@ -41086,7 +41086,7 @@ o e-postadaki yönergeleri izleyin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -42211,7 +42211,7 @@ o e-postadaki yönergeleri izleyin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -42997,7 +42997,7 @@ Onaylayana yorum göndermek veya durumu görüntülemek istiyorsanız aşağıda
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -45272,7 +45272,7 @@ Onaylayana yorum göndermek veya durumu görüntülemek istiyorsanız aşağıda
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Add Tool</source>
@@ -45789,7 +45789,7 @@ Kaldırırsanız tüm alt öğeler de kaldırılacak.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -46038,7 +46038,7 @@ The item can viewed by using the URL below.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Notification admin</source>
@@ -46991,7 +46991,7 @@ menüden erişilebilir.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Discard changes</source>
@@ -47309,7 +47309,7 @@ menüden erişilebilir.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Add Source</source>
@@ -47542,7 +47542,7 @@ menüden erişilebilir.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Section list</source>
@@ -51540,7 +51540,7 @@ Bunun için Alternatif kabuk komutları altındaki %chown komutlarını değişt
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -51579,7 +51579,7 @@ Bunun için Alternatif kabuk komutları altındaki %chown komutlarını değişt
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -52716,7 +52716,7 @@ Bunun için Alternatif kabuk komutları altındaki %chown komutlarını değişt
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Trigger list</source>
@@ -52854,7 +52854,7 @@ Bunun için Alternatif kabuk komutları altındaki %chown komutlarını değişt
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -53835,7 +53835,7 @@ o e-postadaki yönergeleri izleyin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Mağaza</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <source>Discard</source>

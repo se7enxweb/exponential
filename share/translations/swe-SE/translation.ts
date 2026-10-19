@@ -14556,7 +14556,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Spara</translation>
+        <translation>Butik</translation>
     </message>
     <message>
         <source>Advanced search</source>
