@@ -72982,6 +72982,50 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>פרויקט Exponential: מה הוא, הרישיונות שלו, מפת הדרכים, תמיכה, ערוצי הקהילה ואיך לתרום ולתת.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>ניקוי המסנן</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>שתי דרכים לבנות</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>שתי דרכים לבנות אתר עם Exponential: במה הן שונות ואיך לבחור ביניהן.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>עסקים</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>ממשלות</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>להריץ את אתר הארגון שלכם על Exponential: מה הוא מציע לעסק, עלויות ותמיכה, אחסון, אבטחה ובחירת שותפים.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential במגזר הציבורי: נגישות, פרטיות ואבטחה, קוד פתוח ורכש, אחסון ותחזוקה לטווח ארוך.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential לעסקים</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>המגזר הציבורי</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential לחברות ולארגונים: מה הוא מציע, עלויות, תמיכה, אחסון, אבטחה ועבודה עם שותפים.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential לממשלות ולגופים ציבוריים: נגישות, פרטיות, אבטחה, קוד פתוח, רכש ותחזוקה לטווח ארוך.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

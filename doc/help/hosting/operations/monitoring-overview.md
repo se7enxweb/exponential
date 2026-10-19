@@ -13,6 +13,8 @@ This page is for system administrators who build monitoring for Exponential site
 know where to look first. It answers: which signals Exponential gives, which of them a monitoring system can read
 (exit codes, JSON, HTTP endpoints), and which belong to a human looking at a page once a week.
 
+![Job queue: background jobs waiting, running and failed](../../images/hosting/job-queue.webp)
+
 "There is no single health URL; combine a check from outside with the status commands inside"
 ([10.11 Monitoring and health checks](../../../install/10-after-installing.md#1011-monitoring-and-health-checks)). The
 external checks are on [Health checks and uptime](health-checks-and-uptime.md).

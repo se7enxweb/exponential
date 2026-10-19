@@ -74619,5 +74619,49 @@ Gracias por tu feedback</translation>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
         <translation>El proyecto Exponential: qué es, sus licencias, la hoja de ruta, el soporte, los canales de la comunidad y cómo contribuir y donar.</translation>
     </message>
+    <message>
+        <source>Clear filter</source>
+        <translation>Limpiar filtro</translation>
+    </message>
+    <message>
+        <source>Two ways to build</source>
+        <translation>Dos formas de construir</translation>
+    </message>
+    <message>
+        <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
+        <translation>Dos formas de construir un sitio con Exponential: en qué se diferencian y cómo elegir entre ellas.</translation>
+    </message>
+    <message>
+        <source>Businesses</source>
+        <translation>Empresas</translation>
+    </message>
+    <message>
+        <source>Governments</source>
+        <translation>Administraciones públicas</translation>
+    </message>
+    <message>
+        <source>Run your organization&apos;s website on Exponential: what it offers a business, costs and support, hosting, security and choosing partners.</source>
+        <translation>Gestiona la web de tu organización con Exponential: qué ofrece a una empresa, costes y soporte, alojamiento, seguridad y elección de socios.</translation>
+    </message>
+    <message>
+        <source>Exponential in the public sector: accessibility, privacy and security, open source and procurement, hosting and long-term care.</source>
+        <translation>Exponential en el sector público: accesibilidad, privacidad y seguridad, código abierto y contratación, alojamiento y mantenimiento a largo plazo.</translation>
+    </message>
+    <message>
+        <source>Exponential for businesses</source>
+        <translation>Exponential para empresas</translation>
+    </message>
+    <message>
+        <source>Public sector</source>
+        <translation>Sector público</translation>
+    </message>
+    <message>
+        <source>Exponential for companies and organizations: what it offers, costs, support, hosting, security and working with partners.</source>
+        <translation>Exponential para empresas y organizaciones: qué ofrece, costes, soporte, alojamiento, seguridad y trabajo con socios.</translation>
+    </message>
+    <message>
+        <source>Exponential for governments and public bodies: accessibility, privacy, security, open source, procurement and long-term care.</source>
+        <translation>Exponential para administraciones y organismos públicos: accesibilidad, privacidad, seguridad, código abierto, contratación y mantenimiento a largo plazo.</translation>
+    </message>
 </context>
 </TS>

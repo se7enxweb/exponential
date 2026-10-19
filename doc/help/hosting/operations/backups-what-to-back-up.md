@@ -14,6 +14,8 @@ This page is for hosting companies that design a backup service for Exponential 
 run it. It answers: which data an Exponential site cannot live without, which files hold keys that cannot be
 recreated, what can be left out because the site rebuilds it, and how to take a backup whose database and files agree.
 
+![Backup in the administration: make, download and remove backups of the installation](../../images/hosting/git-manager-backup.webp)
+
 The facts come from [10.9 Backups and restore](../../../install/10-after-installing.md#109-backups-and-restore),
 [Backup and restore](../../database-support.md#backup-and-restore) and the feature pages linked below.
 

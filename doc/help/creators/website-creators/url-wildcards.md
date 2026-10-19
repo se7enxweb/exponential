@@ -37,11 +37,15 @@ existing address), **Language**, **Include in other languages**, and **Alias sho
 An alias to `content/view/full/<node>` becomes an alias of that node and appears on the node's tab instead. The list
 marks aliases whose module no longer exists.
 
+![URL translator: the global URL aliases and the form to add one](../../images/creators/url-translator.webp)
+
 ## URL wildcards
 
 Each `*` in the pattern matches any text; `{1}`, `{2}` in the destination put it back. The page refuses a destination
 that uses a placeholder the pattern has no `*` for. **Try an address** shows which wildcard an address matches, what it
 becomes and whether visitors are redirected, without changing anything.
+
+![URL wildcards: address patterns that redirect or forward, and the form to add one](../../images/creators/url-wildcards.webp)
 
 | Pattern | Destination | `news/2026/october` becomes |
 |---|---|---|

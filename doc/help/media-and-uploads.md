@@ -20,6 +20,8 @@ The **Media** tab opens the media library, a part of the content tree kept for f
 such as **Images**, **Files** and **Multimedia**. It works like **Content structure**: open folders in the tree on the
 left, open an item to see it, and use **Edit**, **Move** and **Remove** on it.
 
+![The Media tab: the media library's page with its folders as sub items](images/media/media-library.webp)
+
 Files do not have to live in the media library. You can upload into any folder that accepts them, for example next to
 the article that uses them.
 
@@ -30,6 +32,10 @@ The upload page takes one file or hundreds, by button, by dragging, or by pastin
 - **Upload files** in the quick actions of the dashboard (it opens at the media library's images, or at Media);
 - **Upload** on the page of a folder (it uploads into that folder);
 - **Upload multiple files** in the menu of an item in the tree.
+
+![The Upload button on the page of a folder, outlined](images/media/folder-upload-button.webp)
+
+![The menu of the Media folder in the tree with Upload multiple files outlined](images/media/tree-menu-upload.webp)
 
 ![The upload page](images/multi-upload.webp)
 
@@ -46,6 +52,10 @@ The upload page takes one file or hundreds, by button, by dragging, or by pastin
 4. Press **Upload all**. Three files are sent at a time, each with a progress bar. **Cancel all** stops,
    **Retry failed** tries the failed ones again, **Clear finished** tidies the list.
 
+![The target location of the upload page with the Uploads allowed badge and the Quick locations outlined](images/media/upload-target-location.webp)
+
+![The upload queue with two images and a PDF before anything is sent: preview, type, title and alternative text per file, and the Upload all button](images/media/upload-queue.webp)
+
 A file with the same name and size already in the location is marked. You choose whether to skip it, rename the new
 one, or upload it anyway; **Upload all** asks once for all such files.
 
@@ -57,6 +67,8 @@ one, or upload it anyway; **Upload all** asks once for all such files.
   it (also those of ZIP files inside it) are uploaded one by one; you can untick the ones you do not want before the
   import. Images from a ZIP file are skipped where the site requires an alternative text, because a ZIP file has no
   place for it.
+
+![The options Keep as drafts and Import compressed zip file(s) contents on the upload page](images/media/upload-options.webp)
 
 ### After the upload
 

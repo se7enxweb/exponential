@@ -14,6 +14,8 @@ administrators, the automation team and support staff. Every installation starts
 login `admin`. What its password is depends on how the site was installed. This page tells you what each installer
 leaves, and how to hand the first sign-in to a customer safely.
 
+![Check user accounts: accounts nobody uses or that need a look, to disable, unlock or export](../../images/hosting/user-hygiene.webp)
+
 > **Warning**
 > This page never prints a password. The historical default password of the shipped database seed, and every rule
 > about generated passwords, are documented on [The default administrator password](../../default-administrator-password.md).

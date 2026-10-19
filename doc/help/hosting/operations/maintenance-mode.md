@@ -47,6 +47,8 @@ during the window.
 
 From a shell, in the installation directory, as the site's user (as root, add `--allow-root-user`):
 
+![Setup, Maintenance: start and leave the maintenance window and run the maintenance tasks of the installation](../../images/hosting/maintenance-window.webp)
+
 ```bash
 php bin/php/maintenance.php on --message="Back at 06:00 UTC" --until=2h --allow-admin
 php bin/php/maintenance.php status

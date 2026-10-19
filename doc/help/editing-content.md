@@ -30,6 +30,8 @@ Other ways to the same result:
 - The menu of an item in the tree (click the icon in front of its name) has **Create here**, with the same list.
 - **Create multiple new** opens one form in which you fill in several new items below the same place at once.
 
+![The menu of the Fitness folder in the tree with Create here open, listing the content types that can be created there](images/editing/tree-menu-create-here.webp)
+
 If you leave the form with **Discard draft**, the new item is not created at all.
 
 ## Edit an item
@@ -38,6 +40,8 @@ If you leave the form with **Discard draft**, the new item is not created at all
 2. If the item exists in more than one language, choose the language in the list next to **Edit** first.
 3. Press **Edit**. The edit form opens with a new draft, a copy of the published version.
 4. Change what you need and press **Send for publishing**.
+
+![An article's page with the language list and the Edit button next to it outlined](images/editing/edit-language-choice.webp)
 
 You can also choose **Edit in** from the item's menu in the tree, or tick items in a list and choose
 **Edit selected** (see [Many items at once](#many-items-at-once)).
@@ -48,6 +52,8 @@ If you or someone else already has a draft of the item, the page **Possible edit
 the drafts with their creator and time. You can continue one of **your** drafts (select it and press
 **Edit selected**), start a **New draft** from the published version, or **Cancel**. A draft of someone else cannot be
 edited; talk to that person, or make a new draft.
+
+![The page Possible edit conflict listing an existing draft with its creator and time, and the buttons Edit selected, New draft and Cancel](images/editing/edit-conflict.webp)
 
 ## The edit form
 
@@ -66,6 +72,8 @@ edited; talk to that person, or make a new draft.
 - **The left column** shows the item's numbers and dates, the draft you are working on, **Manage versions** and
   **Preview** (see the draft as it will look), the existing translations, and the **section** the item belongs to.
 
+![The edit form of an article with the field bar outlined: one button per field, a red star marks the required Title](images/editing/edit-field-bar.webp)
+
 The draft is saved automatically every few minutes while you work, so a closed browser tab costs little. Pressing
 Enter in a one-line field is the same as pressing **Send for publishing**.
 
@@ -76,12 +84,16 @@ links, tables, special characters, **Embed object** (an image or another item in
 **Source code**. Under the field you can switch between the editors your site offers, for example **TinyMCE 8** and
 **Tiptap**. The **Help** button of TinyMCE lists its keyboard shortcuts.
 
+![The Body text field of an article with the rich text toolbar and the editor switch below the text](images/editing/edit-richtext-field.webp)
+
 ### Relations and images
 
 A field of the type *Relation* (such as *Image* of an article) links to other items. Its buttons:
 
 - **Add existing** (or **Add an existing object**) opens a browser in which you pick an item that is already there;
 - **Upload new** (or **Upload a file**) uploads a file from your computer, creates an item from it, and links it.
+
+![A relation field in the edit form with the buttons Add existing objects and Upload a file outlined](images/editing/edit-relation-field.webp)
 
 Images need an **alternative text**, a short description for people who cannot see the image. Where the site
 requires it, the image field is marked **Alternative image text (required)** and the upload dialogs ask for it.
@@ -91,6 +103,8 @@ requires it, the image field is marked **Alternative image text (required)** and
 If your site has the writing assistant switched on, each text field shows **Exponential Intelligence** with buttons
 such as **Write**, **Rewrite**, **Translate**, **Suggest** and **Improve**. Its suggestions change nothing until you
 accept them and store the draft. The box at the top of the form says which service it uses and what a click costs.
+
+![The Exponential Intelligence box at the top of the edit form and the Write, Rewrite, Translate, Suggest and Improve buttons of the Title field](images/editing/edit-intelligence-box.webp)
 
 ## Move, copy and remove
 
@@ -102,6 +116,10 @@ On the item's page:
 - **Remove** moves the item to the trash, after a confirmation. See
   [Publishing, versions and the trash](publishing-and-versions.md#remove-and-restore).
 
+![Moving an article: the page Choose a new location lists the places to choose from with a radio button each](images/editing/move-choose-location.webp)
+
+![The removal confirmation: what the removal touches, other items that use this one, and the Move to trash option outlined](images/editing/remove-confirm.webp)
+
 A button you may not use is grayed out; pointing at it says why.
 
 ## Many items at once
@@ -109,10 +127,14 @@ A button you may not use is grayed out; pointing at it says why.
 In the **Sub items** list of a folder, tick the items with the checkboxes (or use **Select** to select all, none or
 the opposite), then open **More actions**:
 
+![Two items ticked in a Sub items list and the More actions menu open with Remove, Move, Copy, Hide, Unhide and Edit selected and Add a location](images/editing/subitems-more-actions.webp)
+
 - **Edit selected**: one form with all the selected items; publish them together;
 - **Remove selected**, **Move selected**, **Copy selected**;
 - **Hide selected** and **Unhide selected**;
 - **Add a location**: the items also appear in another place, without being copied.
+
+![The Table options of a Sub items list: items per page, column presets, the visible columns and Export CSV](images/editing/subitems-table-options.webp)
 
 **Table options** chooses, orders and saves the columns of the list, sets how many rows a page shows (10, 25, 50
 or 100) and exports the visible columns as a CSV file. When the list is sorted by
