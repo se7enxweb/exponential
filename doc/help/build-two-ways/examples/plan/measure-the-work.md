@@ -16,7 +16,7 @@ Decisions between the two ways based on your own numbers.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [On the command line](#on-the-command-line)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -24,7 +24,7 @@ Decisions between the two ways based on your own numbers.
 
 1. Count actions in the administration: clicks, choices, typed entries.
 
-## With templates
+## On the command line
 
 1. Time commands with the shell clock (`date +%s%N` before and after) and pages with `curl -w '%{time_total}'`; use `--dry-run` on live installations.
 

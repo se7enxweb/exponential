@@ -16,7 +16,7 @@ No page gets the wrong layout because a general mapping comes first.
 ## Contents
 
 1. [In the Layouts editor](#in-the-layouts-editor)
-2. [With templates](#with-templates)
+2. [Without mappings](#without-mappings)
 3. [Which to choose](#which-to-choose)
 4. [Check](#check)
 
@@ -25,7 +25,7 @@ No page gets the wrong layout because a general mapping comes first.
 1. Fit & Healthy: home (Location 89) 210, recipes 160, articles 130, topics 120, Default Layout (path prefix `/`) 10.
 2. Give single pages (Location, Path) high numbers, class rules middle numbers, catch-alls low numbers.
 
-## With templates
+## Without mappings
 
 1. Without any mapping the page uses `[ResolverSettings] DefaultLayout` of `explayouts.ini` (on this site the identifier of Default Layout), or no layout at all.
 

@@ -15,11 +15,11 @@ Publishing a test layout, mapping or menu never touches the live site.
 
 ## Contents
 
-1. [With templates](#with-templates)
+1. [On a copy of the installation](#on-a-copy-of-the-installation)
 2. [Which to choose](#which-to-choose)
 3. [Check](#check)
 
-## With templates
+## On a copy of the installation
 
 1. A copy needs the code, a copy of `settings/` and of the database, its own `var/` directory and a web server on another address.
 2. These pages were written that way: every publish was on such a copy.

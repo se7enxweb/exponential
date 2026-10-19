@@ -45,7 +45,7 @@ created anywhere its parent's policies allow.
    sub-items list of the folder.
 3. Edit it again with **Edit**. Each save creates a version; an unsaved edit leaves a draft you find again on
    `/content/draft`. The number of archived versions kept per class is limited by
-   `[VersionManagement] DefaultVersionHistoryLimit` (default 10) in `settings/content.ini`; the cleanup is
+   `[VersionManagement] DefaultVersionHistoryLimit` (default 45; `VersionHistoryClass[1]=75` for folders) in `settings/content.ini`; the cleanup is
    `./console exp:cleanupversions --help --allow-root-user` (read the help first; without `--help` it deletes old versions).
 
 Autosave stores a draft every 180 seconds when the `ezautosave` extension is active
@@ -313,7 +313,7 @@ A site with its own override of these templates is not affected.
 | File | Block | Key | Default | Scope |
 |---|---|---|---|---|
 | `settings/content.ini` | `[DataTypeSettings]` | `AvailableDataTypes[]` | 35 datatypes | installation, siteaccess |
-| `settings/content.ini` | `[VersionManagement]` | `DefaultVersionHistoryLimit` | `10` | installation, siteaccess |
+| `settings/content.ini` | `[VersionManagement]` | `DefaultVersionHistoryLimit` | `45` (`VersionHistoryClass[1]=75`) | installation, siteaccess |
 | `settings/content.ini` | `[ContentJobSettings]` | `SynchronousLimit` | `50` nodes | installation, siteaccess |
 | `settings/content.ini` | `[NamePatternSettings]` | `ResolverClasses[]` | empty | installation, siteaccess |
 | `settings/content.ini` | `[FetchSettings]` | `DefaultClassFilterType` | empty (array ignored) | installation, siteaccess |
