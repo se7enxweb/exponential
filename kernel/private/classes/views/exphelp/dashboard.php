@@ -49,6 +49,10 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_report_url', \expHelp::url( 'report' ) );
         // help maintained as content (doc/features/6.0/help-content.md): the manuals and topics the user may see
         $tpl->setVariable( 'help_content', self::contentSummary() );
+        // the fifth step of the grow band, only when its page is in the help (it never links a missing page)
+        $tpl->setVariable( 'help_grow_extensions_page', $index->document( 'help/contribute-extensions-back.md' ) !== null ? 'help/contribute-extensions-back.md' : '' );
+        // the Support Exponential block at the bottom ([SupportSettings]); a worker started before the class existed skips it
+        $tpl->setVariable( 'help_support', class_exists( Audience::class ) ? Audience::support() : false );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:exphelp/dashboard.tpl' );

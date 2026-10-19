@@ -31,8 +31,9 @@ theme needs more than one operator.
 
 The [design extension wizard](design-extension-wizard.md) has a part **Template operators** that writes the operator
 class (`autoloads/<name>operators.php`, with an example operator `<name>_excerpt`) and the `ExtensionAutoloadPath[]`
-line, but **not** `autoloads/eztemplateautoload.php`. Without that file the engine never registers the operator, and
-a template that uses it reports an unknown operator. Add the file as in step 2 below.
+line, and from Exponential 6.0.15 on also `autoloads/eztemplateautoload.php`, which registers the operator. Older
+wizards did **not** write that file. Without it the engine never registers the operator, and a template that uses it
+reports an unknown operator. For a theme generated before 6.0.15, add the file as in step 2 below.
 
 ## Step by step by hand
 
@@ -81,6 +82,6 @@ a template that uses it reports an unknown operator. Add the file as in step 2 b
 
 ## Related pages
 
-- Operators overview
+- [Operators overview](../templates/operators-overview.md)
 - [RAD tools](../../../features/6.0/rad-tools.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

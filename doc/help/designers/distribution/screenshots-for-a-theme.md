@@ -46,5 +46,5 @@ the same sizes lets users compare.
 ## Related pages
 
 - [Running a demo site](demo-sites.md)
-- Testing at zoom levels
+- [Testing at zoom levels](../theme-design/testing-at-zoom-levels.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

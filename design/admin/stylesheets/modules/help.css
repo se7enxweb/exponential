@@ -76,6 +76,8 @@
 .a4-help-tile.is-website-creator { color: var(--a4-chart-7); }
 .a4-help-tile.is-supporter { color: var(--a4-chart-4); }
 .a4-help-tile.is-sponsor { color: var(--a4-chart-5); }
+.a4-help-tile.is-press { color: var(--a4-chart-6); }
+.a4-help-tile.is-trainer { color: var(--a4-chart-2); }
 
 /* The audience of a page as a small pill (on top of .a4-tag) */
 .a4-help-pill {
@@ -99,6 +101,8 @@
 .a4-help-pill.is-website-creator { border-color: var(--a4-chart-7); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-supporter { border-color: var(--a4-chart-4); background-color: var(--a4-card); color: var(--a4-ink); }
 .a4-help-pill.is-sponsor { border-color: var(--a4-chart-5); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-press { border-color: var(--a4-chart-6); background-color: var(--a4-card); color: var(--a4-ink); }
+.a4-help-pill.is-trainer { border-color: var(--a4-chart-2); background-color: var(--a4-card); color: var(--a4-ink); }
 
 /* ---- dashboard: the search hero ------------------------------------------------------------------------------ */
 
@@ -425,6 +429,8 @@
 .a4-help-audience.is-website-creator::before { background-color: var(--a4-chart-7); }
 .a4-help-audience.is-supporter::before { background-color: var(--a4-chart-4); }
 .a4-help-audience.is-sponsor::before { background-color: var(--a4-chart-5); }
+.a4-help-audience.is-press::before { background-color: var(--a4-chart-6); }
+.a4-help-audience.is-trainer::before { background-color: var(--a4-chart-2); }
 .a4-help-audience:hover,
 .a4-help-audience:focus-within { box-shadow: inset 0 0 0 1px var(--a4-line-strong), var(--a4-shadow-m); transform: translateY(-2px); }
 .a4-help-audience h3 { margin: 0; font-size: var(--a4-text-l); font-weight: 650; line-height: var(--a4-leading-tight); }
@@ -1770,4 +1776,148 @@
   .a4-help-license { break-inside: avoid; border-color: var(--a4-line-strong); background: none; }
   .a4-help-license-links a[href^="http"]::after { content: " (" attr(href) ")"; font-weight: 400; }
   .a4-help-freedoc-actions { display: none; }
+}
+
+/* ---- landing pages of the audiences (exphelp/audience/<audience>, audience.tpl) -------------------------------- */
+
+.a4-help-landing { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-5); }
+.a4-help-landing-hero {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--a4-space-4) var(--a4-space-5);
+  padding: var(--a4-space-6);
+  border-radius: var(--a4-radius-s);
+  background:
+    radial-gradient(60% 120% at 100% 0%, var(--a4-accent-soft), transparent 70%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line), var(--a4-shadow-m);
+}
+.a4-help-landing-hero .a4-help-tile { background-color: var(--a4-card); box-shadow: inset 0 0 0 1px var(--a4-line); }
+.a4-help-landing-intro .a4-help-hero-pre { justify-self: start; }
+.a4-help-landing-hero h1 { margin: 0; color: var(--a4-ink); font-size: var(--a4-text-2xl); line-height: var(--a4-leading-tight); }
+.a4-help-landing-summary { max-width: 70ch; margin: var(--a4-space-2) 0 0; color: var(--a4-muted); font-size: var(--a4-text-m); }
+.a4-help-landing-count { margin: var(--a4-space-1) 0 0; color: var(--a4-muted); font-size: var(--a4-text-s); font-variant-numeric: tabular-nums; }
+.a4-help-landing-search,
+.a4-help-landing-actions { grid-column: 1 / -1; }
+.a4-help-landing-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); }
+.a4-help-landing-block { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a4-space-3); }
+.a4-help-landing-block.a4-card + .a4-help-landing-block,
+.a4-help-landing-block + .a4-help-landing-block.a4-card { margin-top: 0; }
+.a4-help-landing-path { margin: 0; padding: 0; list-style: none; }
+.a4-help-landing-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-landing-boxes .a4-card + .a4-card { margin-top: 0; }
+.a4-help-landing-box p { margin: var(--a4-space-2) 0 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-landing-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: var(--a4-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-landing-list a {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--a4-space-2);
+  height: 100%;
+  padding: var(--a4-space-3);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-line);
+  color: var(--a4-ink);
+  text-decoration: none;
+}
+.a4-help-landing-list a:hover { box-shadow: inset 0 0 0 1px var(--a4-line-strong); }
+.a4-help-landing-list a:hover strong { text-decoration: underline; }
+.a4-help-landing-list .a4-icon { flex: 0 0 auto; margin-top: var(--a4-space-1); color: var(--a4-accent-text); }
+.a4-help-landing-list-text { font-size: var(--a4-text-s); }
+.a4-help-landing-list-text strong { display: block; font-weight: 600; }
+.a4-help-landing-list-text span { color: var(--a4-muted); }
+
+/* the commit log of the developers' landing page (parts/landing_commits.tpl) */
+.a4-help-commits-intro,
+.a4-help-commits-filter { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-commits-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.a4-help-commits-list > li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--a4-space-2) var(--a4-space-3);
+  padding: var(--a4-space-3) 0;
+  border-top: 1px solid var(--a4-line);
+}
+.a4-help-commits-list > li > .a4-icon { margin-top: var(--a4-space-1); color: var(--a4-muted); }
+.a4-help-commits-main { display: grid; gap: var(--a4-space-1); min-width: 0; }
+.a4-help-commits-title { overflow-wrap: anywhere; font-weight: 600; }
+.a4-help-commits-meta { color: var(--a4-muted); font-size: var(--a4-text-xs); }
+.a4-help-commits-details summary { color: var(--a4-muted); font-size: var(--a4-text-xs); cursor: pointer; }
+.a4-help-commits-message {
+  margin: var(--a4-space-2) 0 0;
+  padding: var(--a4-space-3);
+  overflow-x: auto;
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-soft);
+  color: var(--a4-ink);
+  font-family: var(--a4-mono);
+  font-size: var(--a4-text-xs);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.a4-help-commits-hash { font-size: var(--a4-text-xs); }
+.a4-help-commits-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--a4-space-2); }
+
+/* ---- Support Exponential (parts/support.tpl: dashboard bottom and landing pages) ------------------------------- */
+
+.a4-help-support {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--a4-space-4);
+  padding: var(--a4-space-5);
+  border-radius: var(--a4-radius-s);
+  background:
+    linear-gradient(120deg, var(--a4-ok-bg), transparent 60%),
+    var(--a4-card);
+  box-shadow: inset 0 0 0 1px var(--a4-ok-line);
+}
+.a4-help-support-head { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: var(--a4-space-4); }
+.a4-help-support .a4-help-tile { color: var(--a4-ok); background-color: var(--a4-card); box-shadow: inset 0 0 0 1px var(--a4-ok-line); }
+.a4-help-support h2 { margin: 0 0 var(--a4-space-1); font-size: var(--a4-text-l); font-weight: 650; }
+.a4-help-support-head p { max-width: 80ch; margin: 0; color: var(--a4-ink); font-size: var(--a4-text-m); }
+.a4-help-support-orgs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: var(--a4-space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-help-support-orgs .a4-card + .a4-card { margin-top: 0; }
+.a4-help-support-org { display: grid; align-content: start; gap: var(--a4-space-2); }
+.a4-help-support-org p { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+.a4-help-support-org .a4-help-support-funds-head { color: var(--a4-ink); font-weight: 600; }
+.a4-help-support-funds { display: grid; gap: var(--a4-space-1); margin: 0; padding: 0; list-style: none; font-size: var(--a4-text-s); }
+.a4-help-support-funds li { display: flex; align-items: flex-start; gap: var(--a4-space-2); }
+.a4-help-support-funds .a4-icon { flex: 0 0 auto; margin-top: var(--a4-space-1); color: var(--a4-ok); }
+.a4-help-support-actions { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin-top: var(--a4-space-2); }
+.a4-help-support-foot { margin: 0; color: var(--a4-muted); font-size: var(--a4-text-s); }
+
+@media (max-width: 600px) {
+  .a4-help-landing-hero,
+  .a4-help-support { padding: var(--a4-space-4); }
+  .a4-help-landing-hero h1 { font-size: var(--a4-text-xl); }
+  .a4-help-commits-list > li { grid-template-columns: auto minmax(0, 1fr); }
+  .a4-help-commits-hash { grid-column: 2; justify-self: start; }
+}
+@media print {
+  .a4-help-landing-search,
+  .a4-help-landing-actions,
+  .a4-help-support-actions { display: none; }
 }

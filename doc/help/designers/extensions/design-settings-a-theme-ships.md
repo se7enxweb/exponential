@@ -10,7 +10,7 @@ type: help
 # The design settings a theme ships
 
 This page is for designers deciding which settings to put in their theme and which to leave to the person who
-installs it. How designs fall back on each other is explained in The design cascade;
+installs it. How designs fall back on each other is explained in [The design cascade](../theme-design/the-design-cascade.md);
 here the question is only **where each setting lives**.
 
 ## The settings involved
@@ -21,7 +21,7 @@ here the question is only **where each setting lives**.
 | `AdditionalSiteDesignList[]` | `site.ini [DesignSettings]` | empty | Further designs searched before the standard one |
 | `StandardDesign` | `site.ini [DesignSettings]` | `standard` | The last fallback |
 | `DesignExtensions[]` | `design.ini [ExtensionSettings]` | empty | Extensions searched for designs |
-| `FrontendCSSFileList[]`, `FrontendJavaScriptList[]` | `design.ini [StylesheetSettings]`, `[JavaScriptSettings]` | empty | Stylesheets and scripts the public pagelayout loads (Loading stylesheets) |
+| `FrontendCSSFileList[]`, `FrontendJavaScriptList[]` | `design.ini [StylesheetSettings]`, `[JavaScriptSettings]` | empty | Stylesheets and scripts the public pagelayout loads ([Loading stylesheets](../theme-design/loading-stylesheets.md)) |
 
 ## The recommended split
 
@@ -56,7 +56,7 @@ applies while that siteaccess runs ([Siteaccess settings inside a theme](siteacc
 
 ## Related pages
 
-- Designs and siteaccesses
+- [Designs and siteaccesses](../theme-design/designs-and-siteaccesses.md)
 - [Registering the design](registering-the-design.md)
 - [Settings files in an extension](settings-files-in-an-extension.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

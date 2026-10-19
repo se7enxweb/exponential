@@ -72751,6 +72751,206 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Every folder is closed.</source>
         <translation>Omnes capsae clausae sunt.</translation>
     </message>
+    <message>
+        <source>Help for %audience</source>
+        <translation>Auxilium pro %audience</translation>
+    </message>
+    <message>
+        <source>Search the help for %audience</source>
+        <translation>Quaere in auxilio pro %audience</translation>
+    </message>
+    <message>
+        <source>All pages for %audience</source>
+        <translation>Omnes paginae pro %audience</translation>
+    </message>
+    <message>
+        <source>All audiences</source>
+        <translation>Omnes lectores</translation>
+    </message>
+    <message>
+        <source>Read these pages in this order.</source>
+        <translation>Has paginas hoc ordine lege.</translation>
+    </message>
+    <message>
+        <source>Good to know</source>
+        <translation>Utile scitu</translation>
+    </message>
+    <message>
+        <source>Search by topic</source>
+        <translation>Quaere per argumentum</translation>
+    </message>
+    <message>
+        <source>Each button lists the pages of one topic for %audience.</source>
+        <translation>Quodque bullae paginas unius argumenti pro %audience enumerat.</translation>
+    </message>
+    <message>
+        <source>Key pages</source>
+        <translation>Paginae praecipuae</translation>
+    </message>
+    <message>
+        <source>Related audiences</source>
+        <translation>Lectores cognati</translation>
+    </message>
+    <message>
+        <source>Latest commits to Exponential</source>
+        <translation>Novissimae mutationes Exponential</translation>
+    </message>
+    <message>
+        <source>Full history on GitHub</source>
+        <translation>Tota historia in GitHub</translation>
+    </message>
+    <message>
+        <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
+        <translation>Quid nuper in codice fontis mutatum sit: ramus principalis se7enxweb/exponential, ab hoc servitore ex fluxu publico lectus.</translation>
+    </message>
+    <message>
+        <source>GitHub could not be reached just now. These are the commits read on %date.</source>
+        <translation>GitHub modo attingi non potuit. Hae sunt mutationes die %date lectae.</translation>
+    </message>
+    <message>
+        <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
+        <translation>Mutationes ex GitHub legi non potuerunt. Historiam in GitHub aperi.</translation>
+    </message>
+    <message>
+        <source>Hide merge commits</source>
+        <translation>Mutationes coniunctionis cela</translation>
+    </message>
+    <message>
+        <source>Show merge commits too</source>
+        <translation>Etiam mutationes coniunctionis ostende</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nuntius</translation>
+    </message>
+    <message>
+        <source>Showing %from–%to of %total commits</source>
+        <translation>Ostenduntur %from–%to ex %total mutationibus</translation>
+    </message>
+    <message>
+        <source>No commits to show yet.</source>
+        <translation>Nullae adhuc mutationes ostendendae.</translation>
+    </message>
+    <message>
+        <source>Your sponsorship pays for:</source>
+        <translation>Sponsio tua solvit:</translation>
+    </message>
+    <message>
+        <source>About %name</source>
+        <translation>De %name</translation>
+    </message>
+    <message>
+        <source>A monthly sponsorship, even a small one, is planned income: it pays for work that one-time gifts cannot keep going.</source>
+        <translation>Sponsio menstrua, etiam parva, reditus certus est: opus solvit quod dona semel data sustinere non possunt.</translation>
+    </message>
+    <message>
+        <source>What sponsorship funds</source>
+        <translation>Quid sponsio sustineat</translation>
+    </message>
+    <message>
+        <source>Support Exponential</source>
+        <translation>Exponential sustine</translation>
+    </message>
+    <message>
+        <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
+        <translation>Exponential programma liberum est. Quaeque nova facultas, pagina auxilii, extensio, thema et applicatio opus est quod aliquis tempore suo solvit. Sponsio menstrua perpetua, cuiusvis magnitudinis, hoc opus sustinet et crescere sinit.</translation>
+    </message>
+    <message>
+        <source>Sponsor 7x on GitHub</source>
+        <translation>7x in GitHub sustine</translation>
+    </message>
+    <message>
+        <source>Sponsor the Exponential Foundation on GitHub</source>
+        <translation>Fundationem Exponential in GitHub sustine</translation>
+    </message>
+    <message>
+        <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
+        <translation>Societas quae Exponential ducit et primus incepti sponsor: id evolvit, sustinet, hospitatur et editiones facit.</translation>
+    </message>
+    <message>
+        <source>The nonprofit that operates the open source project and is dedicated to its funding, adoption, support, education, development, promotion and documentation.</source>
+        <translation>Societas non quaestuosa quae inceptum fontis aperti gerit et eius pecuniae, adoptioni, auxilio, institutioni, evolutioni, promotioni et documentis dedita est.</translation>
+    </message>
+    <message>
+        <source>Monthly releases and the work that keeps the lights on</source>
+        <translation>Editiones menstruae et opus quod lumina accensa servat</translation>
+    </message>
+    <message>
+        <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
+        <translation>Correctiones securitatis bibliothecarum quibus Exponential nititur, ut Zeta Components</translation>
+    </message>
+    <message>
+        <source>New features given back to the community as open source</source>
+        <translation>Novae facultates communitati ut fons apertus redditae</translation>
+    </message>
+    <message>
+        <source>The bridges, forks and tools around the platform</source>
+        <translation>Pontes, furcae et instrumenta circa suggestum</translation>
+    </message>
+    <message>
+        <source>Maintenance of the core libraries</source>
+        <translation>Cura bibliothecarum principalium</translation>
+    </message>
+    <message>
+        <source>Documentation, tutorials, how-tos and FAQs</source>
+        <translation>Documenta, exercitationes, praecepta et quaestiones frequentes</translation>
+    </message>
+    <message>
+        <source>Integration layers: GraphQL, REST and Solr</source>
+        <translation>Strata integrationis: GraphQL, REST et Solr</translation>
+    </message>
+    <message>
+        <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
+        <translation>Instrumenta communitatis: colloquia, speculi, wikia et subsidia evolutorum</translation>
+    </message>
+    <message>
+        <source>Trainers</source>
+        <translation>Magistri</translation>
+    </message>
+    <message>
+        <source>Press, media and influencers</source>
+        <translation>Diurnarii, instrumenta communicationis et auctores</translation>
+    </message>
+    <message>
+        <source>Teach Exponential: courses for editors, administrators, developers and designers, workshops, exercises and assessments.</source>
+        <translation>Exponential doce: cursus pro editoribus, administratoribus, evolutoribus et designatoribus, officinae, exercitationes et probationes.</translation>
+    </message>
+    <message>
+        <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
+        <translation>De Exponential scribe et loquere: res, historia, homines, dicta, imagines et quos adeas.</translation>
+    </message>
+    <message>
+        <source>Training</source>
+        <translation>Institutio</translation>
+    </message>
+    <message>
+        <source>Press and media</source>
+        <translation>Diurnarii et media</translation>
+    </message>
+    <message>
+        <source>Teaching Exponential: courses, lesson plans, workshops, exercises and assessments for every role.</source>
+        <translation>Exponential docere: cursus, consilia lectionum, officinae, exercitationes et probationes pro quoque munere.</translation>
+    </message>
+    <message>
+        <source>For journalists, media and influencers: facts, history, announcements, images and contacts.</source>
+        <translation>Pro diurnariis, instrumentis communicationis et auctoribus: res, historia, nuntii, imagines et contactus.</translation>
+    </message>
+    <message>
+        <source>Contribute extensions back</source>
+        <translation>Extensiones communica</translation>
+    </message>
+    <message>
+        <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
+        <translation>Extensiones quas distribuis communica, ut GPL postulat, ut omnibus prosint.</translation>
+    </message>
+    <message>
+        <source>The Exponential project</source>
+        <translation>Inceptum Exponential</translation>
+    </message>
+    <message>
+        <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
+        <translation>Inceptum Exponential: quid sit, licentiae, iter futurum, auxilium, canales communitatis, et quomodo conferas et des.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
