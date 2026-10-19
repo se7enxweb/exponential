@@ -79955,5 +79955,25 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Exponential finanzieren: was Sponsoring bezahlt und wie Sie 7x und die Exponential Foundation sponsern.</translation>
     </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Alle aufklappen</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Alle zuklappen</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Alle Ordner öffnen oder schließen</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Alle Ordner sind geöffnet.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Alle Ordner sind geschlossen.</translation>
+    </message>
 </context>
 </TS>
