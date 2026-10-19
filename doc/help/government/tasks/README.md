@@ -47,8 +47,8 @@ show the same functions with a different layout; the module addresses such as `/
 | Publishing (`tasks/publishing/`) | editors | publish a council meeting agenda, publish minutes after approval, publish a public notice, correct a published notice |
 | Compliance (`tasks/compliance/`) | administrators, security and data protection officers | turn on two-step sign-in, enforce the Content Security Policy, set log retention, archive last year's notices |
 | Sites and languages (`tasks/sites-and-languages/`) | administrators, website creators | translate a page into the second official language, set up a department subsite, add a right-to-left language |
-| Operations (`tasks/operations/`) | IT operations | maintenance mode for an upgrade, restore a backup to a test server, check that cronjobs run |
-| People and permissions (`tasks/people-and-permissions/`) | administrators | create a department editor role, remove a leaver, set up an approval workflow |
+| [Operations](operations/README.md) | IT operations | maintenance mode for an upgrade, restore a backup to a test server, check that cronjobs run |
+| [People and permissions](people-and-permissions/README.md) | administrators | create a department editor role, remove a leaver, set up an approval workflow |
 | [Procurement and training](procurement-and-training/README.md) | project managers, procurement officers, training coordinators | write an accessibility requirement, run a proof of concept, plan editor training |
 
 Groups shown with their folder name in plain text are being written and will be linked here as they are published.
