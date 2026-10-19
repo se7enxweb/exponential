@@ -1,7 +1,7 @@
 ---
 title: Why doesn't my change appear?
 audience: editor, website-creator, designer, admin, developer
-category: layouts
+category: build-two-ways
 order: 310
 summary: A check list for a change that does not show on the site - draft not published, linked zone, wrong layout mapping, wrong siteaccess or settings file, compiled template, page cache, Velocity - with the command or screen that proves each one.
 keywords: change not showing, not updated, draft, publish layout, linked zone, layout mapping, rule, siteaccess, cache, exp:ini where, exp:layouts list, troubleshooting

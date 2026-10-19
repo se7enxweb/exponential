@@ -1,7 +1,7 @@
 ---
 title: Header menu troubleshooting
 audience: admin, website-creator, developer, designer
-category: layouts
+category: build-two-ways
 order: 160
 summary: The new header menu item does not appear - the causes found on a real installation, in the order to check them - compiled template, page cache, wrong file or scope, wrong siteaccess, a node that cannot be fetched, Velocity workers.
 keywords: header menu not updating, menu item missing, cache, compiled template, ezini, exphttpcache, siteaccess, scope, exp:ini where, Velocity restart, troubleshooting

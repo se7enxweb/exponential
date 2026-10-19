@@ -1,7 +1,7 @@
 ---
 title: Shared layouts and zone linking
 audience: designer, website-creator, editor, admin, developer
-category: layouts
+category: build-two-ways
 order: 300
 summary: Why one header serves every page - shared layouts, linked zones and the real link map of the Fit & Healthy site - and the "why doesn't my change appear" cases that come from it.
 keywords: shared layout, linked zone, zone linking, Header / Footer, Prefooter, linked_layout_id, linked_zone_identifier, layouts editor, exp:layouts list, Links to, why change not shown

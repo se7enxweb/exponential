@@ -1,7 +1,7 @@
 ---
 title: Header menu and the content tree
 audience: editor, website-creator, admin, designer
-category: layouts
+category: build-two-ways
 order: 150
 summary: What editors change in the header menu by working in the content tree - the item's text, its link, its place - and what needs the menu settings or a template change instead. The shipped menu is a fixed list, not a query.
 keywords: header menu, content tree, rename menu item, move page, menu item text, URL alias, editor, fixed list, dynamic menu
@@ -62,7 +62,7 @@ Layout mappings; the menu and the layouts are independent of each other.
 A menu that adds every new section by itself (for example "the children of the site root of the classes Landing page,
 Category and Topic") is a **template** change: `pagelayout/header/main_menu.tpl` would fetch a list of children
 instead of reading `menu.ini`. That is the classic template way of building and belongs in your own design extension,
-so the theme stays untouched; see [Two ways to build](two-ways-to-build.md) for how the two ways combine. The
+so the theme stays untouched: [A header menu that follows the tree](header-menu-from-the-tree.md) has the tested code. The
 Layouts editor can show such a list inside a page today: a **List** block with a dynamic collection on a parent node.
 
 ## Related pages
