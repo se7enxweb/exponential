@@ -53,11 +53,15 @@ The help shows a different notice on these pages. They are:
   (`doc/features/2.x` to `doc/features/5.x`, `doc/bc/4.x` and `doc/bc/5.x`, `doc/specifications/3.x`,
   `doc/specifications/4.x` and `doc/specifications/trunk`, `doc/changelogs/2.9` to `doc/changelogs/5.x`, and
   `doc/changelogs/README.md`);
-- `doc/shop/`, `doc/branch-overview`, `doc/release-overview` and `doc/standards/header.txt`.
+- `doc/shop/`, `doc/release-overview` and `doc/standards/header.txt`.
 
 The example configuration files `doc/examples/htaccess` and `doc/examples/ezpublish.conf` were rewritten for
 Exponential 6 and are free documentation like the rest; the rewrite rules in them are those of `.htaccess_root`, part
 of the software and under its license.
+
+`doc/branch-overview.md` is new documentation under the GNU Free Documentation License, except its section "Historical branches
+(original SVN, 3.x)", which keeps the branch records of the original SVN repository under the terms they came with and
+says so in the page.
 
 The list is the setting `[License] OtherLicensePathRules[]` in `settings/exphelp.ini`, which the help reads to
 choose the notice of a page.

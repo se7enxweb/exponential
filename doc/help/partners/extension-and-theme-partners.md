@@ -35,6 +35,17 @@ partner" profile is published; such partners usually choose the IT profile (exte
 Whether your extension must be GPL depends on how it is combined with Exponential; ask counsel. The project's own
 extensions are GPL ([Licensing for partners](licensing-for-partners.md)).
 
+## Site packages: please contribute yours
+
+7x and the Exponential Foundation strongly encourage partners to submit their site packages (complete site setups
+that the setup wizard installs) by pull request to
+<https://github.com/se7enxweb/exponential.packages.exponential.earth>. That repository is the package server of the
+setup wizard: "Installation / Addons Packages for Exponential CMS" (repository description). A package you contribute
+there lets every new installation start from your work, and credits you as its author.
+
+Before you send one, remove all customer content, names and credentials from it, and check the licenses of every
+image and font it contains ([Publishing a theme or design as a partner](publishing-a-theme.md#assets-and-their-licenses)).
+
 ## Maintenance duties
 
 Customers rely on extensions for years. Publish only what you will maintain, or say clearly that you will not.
