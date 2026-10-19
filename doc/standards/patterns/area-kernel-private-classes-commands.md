@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `kernel/private/classes/commands` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (96)
+## Classes (97)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -43,6 +43,7 @@ Every class, interface and trait of `kernel/private/classes/commands` with the p
 | `Exponential\Command\Kernel\Expcontentjob` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/expcontentjob.php:30` | The command bin/php/expcontentjob.php (./console exp:expcontentjob): content jobs, the large subtree removes and copies that run in batches in the ba… |
 | `Exponential\Command\Kernel\Exphelp` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/exphelp.php:16` | – |
 | `Exponential\Command\Kernel\Exphelpcontent` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/exphelpcontent.php:16` | – |
+| `Exponential\Command\Kernel\Exphelpexamples` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/exphelpexamples.php:16` | – |
 | `Exponential\Command\Kernel\Explogs` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/explogs.php:21` | – |
 | `Exponential\Command\Kernel\Exploremipsumfill` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/exploremipsumfill.php:20` | – |
 | `Exponential\Command\Kernel\Explovestack` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/explovestack.php:16` | – |
