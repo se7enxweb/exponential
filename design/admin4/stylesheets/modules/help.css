@@ -1490,6 +1490,10 @@
 }
 .a4-help-nav-filter { flex: 1 1 10rem; min-width: 0; }
 .a4-help-nav-clear[hidden] { display: none; }
+/* A stored filter (exphelp.js, localStorage): the tree and the Clear filter button wait, invisible but with their room,
+   until the filter is applied, so nothing moves when the script narrows the tree and shows the button */
+.exp-help-nav-pending [data-exphelp-nav] .a4-help-nav-list.is-top { visibility: hidden; }
+.exp-help-nav-pending [data-exphelp-nav] .a4-help-nav-clear[hidden] { display: inline-flex; visibility: hidden; }
 .a4-help-nav-all { font-size: var(--a4-text-xs); }
 .a4-help-section-more { display: inline-flex; align-items: center; gap: var(--a4-space-1); font-size: var(--a4-text-s); }
 
