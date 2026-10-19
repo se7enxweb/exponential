@@ -3375,8 +3375,9 @@ class eZContentObjectTreeNode extends eZPersistentObject
     */
     function viewCount()
     {
+        // No row in ezview_counter: never counted, so 0 (and no "array offset on null" warning)
         $count = eZViewCounter::fetch( $this->attribute( 'node_id' ), false );
-        return (int) $count['count'];
+        return is_array( $count ) && isset( $count['count'] ) ? (int) $count['count'] : 0;
     }
 
     /*!

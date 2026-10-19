@@ -236,6 +236,40 @@ class expModuleWizard extends expExtensionWizard
     }
 
     /**
+     * Whether a view parameter holds a number, read off its name: an id (ID, NodeID, ObjectId), a count, an
+     * offset, a limit, a page or a version. Everything else (a language code, an identifier, a name, a hash) is
+     * text, and casting it to an int would turn it into 0.
+     *
+     * @param string $parameter
+     * @return bool
+     */
+    public static function isNumberParameter( $parameter )
+    {
+        return (bool) preg_match( '/(ID|Id|Count|Offset|Limit|Page|Number|Version|Year|Month|Day)$/', (string) $parameter )
+               || in_array( strtolower( (string) $parameter ), array( 'id', 'offset', 'limit', 'page', 'version' ), true );
+    }
+
+    /**
+     * The line of a view script that takes one parameter out of $Params: an int for a number, otherwise the
+     * text as typed, which the template washes.
+     *
+     * @param string $parameter
+     * @return string
+     */
+    protected static function parameterLine( $parameter )
+    {
+        $variable = lcfirst( $parameter );
+        $name = self::phpString( $parameter );
+
+        if ( self::isNumberParameter( $parameter ) )
+            return "\$" . $variable . " = isset( \$Params['" . $name . "'] )\n"
+                 . "     " . str_repeat( ' ', strlen( $variable ) ) . " ? (int) \$Params['" . $name . "'] : 0;\n";
+
+        return "\$" . $variable . " = isset( \$Params['" . $name . "'] ) && is_scalar( \$Params['" . $name . "'] )\n"
+             . "     " . str_repeat( ' ', strlen( $variable ) ) . " ? (string) \$Params['" . $name . "'] : '';\n";
+    }
+
+    /**
      * The views, one per line: a name, then its policies and parameters.
      *
      * A word in capitals is an ordered parameter, a word in lower case is a
@@ -461,9 +495,11 @@ class expModuleWizard extends expExtensionWizard
             foreach ( $settings['views'] as $view )
                 $files[$base . $view['script']] = self::viewScript( $settings, $view );
 
+        // design/standard: DesignExtensions[] adds extension/<name>/design/<design> for the designs of the chain,
+        // and standard is in every chain; design/<extension name> is in none
         if ( $parts['templates'] )
             foreach ( $settings['views'] as $view )
-                $files['design/' . $settings['name'] . '/templates/' . $settings['module'] . '/'
+                $files['design/standard/templates/' . $settings['module'] . '/'
                        . $view['name'] . '.tpl'] = self::viewTemplate( $settings, $view );
 
         if ( $parts['settings'] )
@@ -684,21 +720,8 @@ class expModuleWizard extends expExtensionWizard
             $php .= "// Everything in \$Params came out of the address, which means it came from\n";
             $php .= "// whoever typed it. The declared type is nothing: cast, and check.\n";
 
-            foreach ( $view['parameters'] as $parameter )
-            {
-                $variable = lcfirst( $parameter );
-                $php .= "\$" . $variable . " = isset( \$Params['" . self::phpString( $parameter ) . "'] )\n";
-                $php .= "     " . str_repeat( ' ', strlen( $variable ) ) . " ? (int) \$Params['"
-                      . self::phpString( $parameter ) . "'] : 0;\n";
-            }
-
-            foreach ( $view['optional'] as $parameter )
-            {
-                $variable = lcfirst( $parameter );
-                $php .= "\$" . $variable . " = isset( \$Params['" . self::phpString( $parameter ) . "'] )\n";
-                $php .= "     " . str_repeat( ' ', strlen( $variable ) ) . " ? (int) \$Params['"
-                      . self::phpString( $parameter ) . "'] : 0;\n";
-            }
+            foreach ( array_merge( $view['parameters'], $view['optional'] ) as $parameter )
+                $php .= self::parameterLine( $parameter );
 
             $php .= "\n";
         }
@@ -709,7 +732,7 @@ class expModuleWizard extends expExtensionWizard
             $php .= "// A parameter that makes no sense is a 404 rather than a page saying so.\n";
             $php .= "// Anything else invites somebody to try every number in turn and read the\n";
             $php .= "// answers.\n";
-            $php .= "if ( \$" . lcfirst( $first ) . " <= 0 )\n";
+            $php .= "if ( \$" . lcfirst( $first ) . ( self::isNumberParameter( $first ) ? " <= 0" : " === ''" ) . " )\n";
             $php .= "    return \$Module->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );\n\n";
         }
 
@@ -878,7 +901,7 @@ class expModuleWizard extends expExtensionWizard
         $php .= "// the address - and still exactly what somebody typed into it.\n\n";
         $php .= "\$Module = \$Params['Module'];\n";
         foreach ( array_merge( $first['parameters'], $first['optional'] ) as $parameter )
-            $php .= "\$" . lcfirst( $parameter ) . " = (int) \$Params['" . $parameter . "'];\n";
+            $php .= self::parameterLine( $parameter );
         $php .= "\n\n";
 
         $php .= "// \xe2\x94\x80\xe2\x94\x80\xe2\x94\x80 What \$Result may carry " . str_repeat( "\xe2\x94\x80", 41 ) . "\n//\n";
