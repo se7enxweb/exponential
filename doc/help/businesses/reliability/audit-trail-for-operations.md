@@ -13,7 +13,7 @@ This page is for managers and administrators who want to know who changed what o
 something has gone wrong. It explains what the audit trail records, how it helps operations, how to read it, and
 what to set up once. The full reference is [The audit trail](../../../features/6.0/audit-trail.md) and
 [Security and audit](../../../guides/security-and-audit.md#3-read-the-audit-trail-5-minutes). Compliance use is
-covered separately in Compliance evidence from the audit trail.
+covered separately in [Compliance evidence from the audit trail](../security/compliance-evidence-from-the-audit-trail.md).
 
 ## Contents
 

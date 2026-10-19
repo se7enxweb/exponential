@@ -91,8 +91,8 @@ frequently forgotten task of any portal ([Extranet permissions review](extranet-
 ## Data and contracts
 
 A portal holds personal data of people at other organizations: names, e-mail addresses, sign-in records. Plan what is
-collected and how long it is kept with your data protection contact (GDPR basics,
-Personal data in Exponential). This page is not legal advice.
+collected and how long it is kept with your data protection contact ([GDPR basics](../security/gdpr-basics.md),
+[Personal data in Exponential](../security/personal-data-in-exponential.md)). This page is not legal advice.
 
 ## Planning worksheet
 
@@ -112,5 +112,5 @@ Personal data in Exponential). This page is not legal advice.
 - [Extranets and partner portals](README.md)
 - [Planning an Exponential project](../../leadership/planning-an-exponential-project.md)
 - [Risk management](../../leadership/risk-management.md)
-- Requirements checklist
+- [Requirements checklist](../templates/requirements-checklist.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

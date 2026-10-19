@@ -45,7 +45,7 @@ PHP 8.0 is the oldest supported version, 8.1 to 8.5 are supported, and Velocity 
 **Is there an official end-of-life date or support contract?**
 The project publishes neither a release calendar nor a service level agreement. Commercial support and hosting come
 from 7x and hosting partners ([SLA options](../../hosting/business/sla-options.md),
-Working with 7x and the project).
+[Working with 7x and the project](../choosing/working-with-7x-and-the-project.md)).
 
 **How fast are security reports answered?**
 SECURITY.md says: "You can expect a first answer within one business day" for a report sent privately as it

@@ -105,7 +105,7 @@ fees and automatic expiry of membership are not documented features
 **What personal data does the site keep?**
 What the user class and forms collect, plus sign-in records, newsletter subscriptions and the e-mail preferences
 consent log. Review it with your data protection contact
-(Personal data in Exponential). This FAQ is not legal advice.
+([Personal data in Exponential](../security/personal-data-in-exponential.md)). This FAQ is not legal advice.
 
 **Can a member download what the site knows about their mail choices?**
 Yes, their e-mail preferences and every change as JSON or CSV
@@ -125,7 +125,7 @@ Disable their accounts, or use Deactivate and move when enabled
 See Handover when volunteers change.
 
 **What does it cost?**
-See the Costs section, whose worked examples use labeled example assumptions.
+See the [Costs](../costs/README.md) section, whose worked examples use labeled example assumptions.
 
 ## Related pages
 

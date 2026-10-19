@@ -112,10 +112,10 @@ the team running the site keeps every week. This section covers all three:
 
 - Businesses start here and
   Why businesses rely on Exponential: the section's entry pages.
-- Costs: the cost of downtime and the return on stability, in numbers you fill in yourself.
-- Security: security and data protection basics for businesses.
-- Choosing hosting and partners: who runs the servers for you.
-- Templates: checklists to copy, including a monthly operations checklist.
+- [Costs](../costs/README.md): the cost of downtime and the return on stability, in numbers you fill in yourself.
+- [Security](../security/README.md): security and data protection basics for businesses.
+- [Choosing hosting and partners](../choosing/README.md): who runs the servers for you.
+- [Templates](../templates/README.md): checklists to copy, including a monthly operations checklist.
 - Governments have their own section: Governments start here.
 - The technical side for hosting staff: [Hosting operations](../../hosting/operations/README.md) and
   [Runbooks](../../hosting/runbooks/README.md).

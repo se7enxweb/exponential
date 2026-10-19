@@ -60,7 +60,7 @@ and invite a first partner only when every block is ticked.
   running.
 - [ ] CAPTCHA on the registration form ([Spam protection for forms](../../creators/website-creators/spam-protection-for-forms.md)).
 - [ ] The registration form and the privacy notice say what data is kept and why
-  (Consent and forms).
+  ([Consent and forms](../security/consent-and-forms.md)).
 
 ## Sign-in
 
@@ -123,6 +123,6 @@ and invite a first partner only when every block is ticked.
 
 - [Extranets and partner portals](README.md)
 - [Intranet rollout checklist](../intranets/intranet-rollout-checklist.md)
-- Go-live checklist template
+- [Go-live checklist template](../templates/go-live-checklist.md)
 - [Security review checklist for hosts](../../hosting/checklists/security-review.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

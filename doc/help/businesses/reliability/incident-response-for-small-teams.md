@@ -32,7 +32,7 @@ without the website:
 
 - [ ] Who is called first, and who is the deputy, with phone numbers.
 - [ ] How to reach the hosting partner's support, and what your contract says about response
-      (Contracts and SLAs basics).
+      ([Contracts and SLAs basics](../choosing/contracts-and-slas-basics.md)).
 - [ ] Where the backups are and who can restore them ([Backups that restore](backups-that-restore.md)).
 - [ ] How to sign in to the server and to the administration, kept in a password manager, never on the printed page.
 - [ ] Where customers will be told: social media, a phone message, a mailing.
@@ -122,7 +122,7 @@ Exponential's tools help here:
 
 If the cause is a security problem in Exponential itself, report it privately as described in
 SECURITY.md, never in a public tracker. Personal data breaches may have legal reporting
-duties; see Security basics for businesses and ask your data
+duties; see [Security basics for businesses](../security/security-basics-for-businesses.md) and ask your data
 protection officer or lawyer. This page is not legal advice.
 
 ## Closing the incident
@@ -147,7 +147,7 @@ Within a week, spend half an hour together on four questions, without blame:
 
 Put the actions in your [Reliability scorecard](reliability-scorecard.md) and the risk register
 ([Risk management](../../leadership/risk-management.md)). The cost of the incident, in your own figures, goes into the
-Cost of downtime worksheet.
+[Cost of downtime worksheet](../costs/cost-of-downtime-worksheet.md).
 
 ## Related pages
 

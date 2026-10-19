@@ -82,7 +82,7 @@ The tools are the same, so the [Intranets](../intranets/README.md) section is us
 - [Intranets](../intranets/README.md): the same tools for staff.
 - [Member sites](../members/README.md): open registration for the public.
 - [Stores](../stores/README.md): the built-in shop for selling online.
-- Security: access reviews, GDPR basics, accounts and passwords.
+- [Security](../security/README.md): access reviews, GDPR basics, accounts and passwords.
 - [Multisite](../multisite/README.md): several sites in one installation.
 - Public bodies: Governments start here.
 

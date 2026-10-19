@@ -117,7 +117,7 @@ Disable or deactivate their accounts on **Users > Check user accounts**; removin
 the safer first step ([Check user accounts](../../../features/6.0/user-hygiene.md)).
 
 **What does an intranet cost to run?**
-See the worked example for an intranet, whose inputs are example assumptions
+See the [worked example for an intranet](../costs/worked-example-intranet.md), whose inputs are example assumptions
 for you to replace.
 
 **Do staff need an app on their phones?**

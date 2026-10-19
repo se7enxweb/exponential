@@ -114,7 +114,7 @@ records commerce events ([Audit trail](../../../features/6.0/audit-trail.md)). R
 Finished orders can be archived (`shop/archiveorder`), which takes them out of the active list without deleting them,
 and brought back (`shop/unarchiveorder`). Orders can also be removed (`shop/removeorder`). Keep in mind that your
 bookkeeping and tax rules may require you to keep order records for years; archive rather than remove, and see
-Data retention and deletion.
+[Data retention and deletion](../security/data-retention-and-deletion.md).
 
 ## Customers
 

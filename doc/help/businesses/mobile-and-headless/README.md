@@ -79,7 +79,7 @@ working.
 
 - How businesses sell online
 - [Stores](../stores/README.md), for the shop your app or partners sell from
-- [Reliability](../reliability/README.md) and Security
+- [Reliability](../reliability/README.md) and [Security](../security/README.md)
 - [Several brands on one installation](../multisite/README.md) and
   [Selling in several languages and markets](../multilingual/README.md)
 - For developers: [App creators start here](../../creators/app-creators/app-creators-start-here.md)

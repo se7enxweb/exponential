@@ -105,8 +105,8 @@ software does.
 
 - Businesses: start here and How businesses sell online
 - [Newsletters](../newsletters/README.md) for keeping customers informed
-- Costs, including a worked example for a small store
-- Security and [Reliability](../reliability/README.md)
+- [Costs](../costs/README.md), including [a worked example for a small store](../costs/worked-example-small-store.md)
+- [Security](../security/README.md) and [Reliability](../reliability/README.md)
 - [Multilingual sites](../multilingual/README.md) for stores in several languages
 - [Mobile and headless](../mobile-and-headless/README.md) for selling through apps and partners
 - Governments have their own section: Governments: start here

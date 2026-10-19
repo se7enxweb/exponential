@@ -103,6 +103,6 @@ tracker. Each item links to the page that explains it.
 
 - [Mobile apps, headless use and networks](README.md)
 - [Multi-brand checklist](../multisite/multi-brand-checklist.md)
-- Go-live checklist template
+- [Go-live checklist template](../templates/go-live-checklist.md)
 - [The launch checklist](../../creators/website-creators/launch-checklist.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

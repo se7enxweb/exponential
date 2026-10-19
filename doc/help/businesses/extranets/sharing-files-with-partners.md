@@ -93,7 +93,7 @@ The audit trail records content changes, sign-ins and refusals by default. Its `
 views, searches and downloads, only when reads are switched on
 ([The audit trail, What is recorded](../../../features/6.0/audit-trail.md#what-is-recorded)). Decide with your data
 protection contact whether a portal needs download records, for how long, and say so in the portal's privacy notice
-(GDPR basics).
+([GDPR basics](../security/gdpr-basics.md)).
 
 Each File object keeps its versions, its owner and its dates, so "which price list did Partner A have in March?" can
 be answered from the versions page ([Versions of an object](../../../guides/content-history.md)).
@@ -119,5 +119,5 @@ service built for them and linked from the portal
 - [Documents and file libraries](../intranets/documents-and-file-libraries.md)
 - [Files and downloads](../../creators/website-creators/files-and-downloads.md)
 - [Dealer and supplier portals](dealer-and-supplier-portals.md)
-- Data retention and deletion
+- [Data retention and deletion](../security/data-retention-and-deletion.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

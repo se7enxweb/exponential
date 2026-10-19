@@ -44,7 +44,7 @@ threats is in [Security hardening](../../security-hardening.md#who-attacks-a-cms
 | The installation's initial administrator password has been changed | Host or partner | [Change the admin password](../../change-the-admin-password.md) |
 | Each person has their own account; nobody shares one | Owner | [Security hardening](../../security-hardening.md#checklist) |
 | Two-step sign-in is required for administrators and shop staff | Host or partner | [Two-factor login](../../../guides/two-factor-login.md), [sevenx_authentication_2fa](../../../features/6.0/extensions/sevenx_authentication_2fa.md) |
-| Accounts of people who left are disabled the same day | Owner | Access reviews |
+| Accounts of people who left are disabled the same day | Owner | [Access reviews](../security/access-reviews.md) |
 | The administration runs on its own host and is restricted | Host | [Restricting the administration](../../hosting/security/restricting-the-administration.md) |
 
 ## Shop permissions
@@ -56,7 +56,7 @@ The shop's functions are `buy`, `administrate`, `setup`, `edit_status` and `sets
   fits ([Orders and order statuses](orders-and-order-statuses.md#who-may-change-a-status)).
 - [ ] Only the owner or accountant has `shop/setup` (VAT, currencies, discounts).
 - [ ] Editors who maintain products have content permissions only on the product folders.
-- [ ] Roles are reviewed twice a year (Access reviews).
+- [ ] Roles are reviewed twice a year ([Access reviews](../security/access-reviews.md)).
 
 ## Payments
 
@@ -109,9 +109,9 @@ From the project's hardening checklist ([Security hardening](../../security-hard
 
 - [ ] Only staff who need it can open the customer list and orders.
 - [ ] Order records are kept as long as your bookkeeping requires, and no longer
-  (Data retention and deletion).
+  ([Data retention and deletion](../security/data-retention-and-deletion.md)).
 - [ ] Marketing mail only with consent ([Opt-in and consent](../newsletters/opt-in-and-consent.md)).
-- [ ] Your privacy notice describes what the store stores (GDPR basics).
+- [ ] Your privacy notice describes what the store stores ([GDPR basics](../security/gdpr-basics.md)).
 
 ## If something happens
 
@@ -124,6 +124,6 @@ From the project's hardening checklist ([Security hardening](../../security-hard
 ## Related pages
 
 - [Security hardening](../../security-hardening.md)
-- Security basics for businesses
+- [Security basics for businesses](../security/security-basics-for-businesses.md)
 - [Store launch checklist](store-launch-checklist.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

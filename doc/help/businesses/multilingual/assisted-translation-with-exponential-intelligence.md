@@ -86,7 +86,7 @@ server". Safeguards from the same source and the [feature page](../../../feature
 - Only models that passed a live tool-calling probe, or are trusted by configuration, may write drafts.
 
 Decide with your data protection officer which content may be sent to which provider, before anyone uses it
-(Security).
+([Security](../security/README.md)).
 
 ## Costs and limits
 

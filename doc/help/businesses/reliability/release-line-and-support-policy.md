@@ -74,7 +74,7 @@ SECURITY.md sets out the process:
 
 For a business this means that **staying current is your security plan**. Budget a routine upgrade within the
 line as a recurring task. The security section has more on this:
-Security updates and disclosure.
+[Security updates and disclosure](../security/security-updates-and-disclosure.md).
 
 ## PHP versions
 
@@ -132,11 +132,11 @@ a service level agreement ([Release and upgrade planning](../../leadership/relea
 [SLA options](../../hosting/business/sla-options.md)). Commercial support and hosting terms come from 7x and from
 hosting partners ([Who is 7x?, services and hosting](../../who-is-7x.md#services-and-hosting)). If your business
 needs a contractual commitment, get it from them in writing; see
-Contracts and SLAs basics.
+[Contracts and SLAs basics](../choosing/contracts-and-slas-basics.md).
 
 ## Related pages
 
 - [Upgrades without surprises](upgrades-without-surprises.md)
 - [Release and upgrade planning](../../leadership/release-and-upgrade-planning.md)
-- Working with 7x and the project
+- [Working with 7x and the project](../choosing/working-with-7x-and-the-project.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

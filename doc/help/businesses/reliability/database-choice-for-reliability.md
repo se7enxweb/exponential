@@ -124,5 +124,5 @@ To see which database a site uses today, open **Setup > System information**; it
 
 - [Database support](../../database-support.md)
 - [Databases in the official order (hosting)](../../hosting/basics/databases-in-the-official-order.md)
-- Choosing hosting
+- [Choosing hosting](../choosing/choosing-hosting.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

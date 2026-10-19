@@ -116,7 +116,7 @@ e-mail verification on ([Spam protection for forms](../../creators/website-creat
 - [ ] Registration, activation and password pages styled like the site.
 - [ ] CAPTCHA on the user class; e-mail verification on.
 - [ ] Approval process decided and tested if members are checked.
-- [ ] The registration form says what data is kept and why (Consent and forms).
+- [ ] The registration form says what data is kept and why ([Consent and forms](../security/consent-and-forms.md)).
 - [ ] A routine for cleaning unactivated and unused accounts.
 
 ## Related pages
@@ -124,5 +124,5 @@ e-mail verification on ([Spam protection for forms](../../creators/website-creat
 - [Member registration and members-only areas](../../creators/website-creators/member-registration-and-areas.md)
 - [Members-only content](members-only-content.md)
 - [Registration and account approval](../extranets/registration-and-account-approval.md)
-- User accounts and passwords
+- [User accounts and passwords](../security/user-accounts-and-passwords.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

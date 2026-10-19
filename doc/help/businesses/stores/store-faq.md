@@ -111,14 +111,14 @@ Not from the shipped order list. Accounting integration is extension or partner 
 See [Store dashboard and reports](store-dashboard-and-reports.md#what-the-dashboard-does-not-do).
 
 **Who can add what is missing?**
-A developer or a partner. See Choosing a partner and
-Working with 7x and the project.
+A developer or a partner. See [Choosing a partner](../choosing/choosing-a-partner.md) and
+[Working with 7x and the project](../choosing/working-with-7x-and-the-project.md).
 
 ## Costs, security and reliability
 
 **What does running a store cost?**
 Mainly hosting, setup and ongoing care, since there is no license fee. Work it out with your own numbers.
-See Total cost of ownership and Worked example: small store.
+See [Total cost of ownership](../costs/total-cost-of-ownership.md) and [Worked example: small store](../costs/worked-example-small-store.md).
 
 **How do I keep the store secure?**
 Personal accounts with two-step sign-in, limited shop permissions, HTTPS, updates and tested backups.

@@ -49,7 +49,7 @@ Name a person for each role, and a deputy. In a small organization one person ma
 | Editors | Report anything strange they see in the administration |
 
 If your hosting partner runs the server, agree in writing which of the checks below they do and how they tell you
-the result (Contracts and SLAs basics).
+the result ([Contracts and SLAs basics](../choosing/contracts-and-slas-basics.md)).
 
 ## Every day
 
@@ -92,13 +92,13 @@ model. In short:
 - [ ] A short report goes to the site owner: availability from the external check, incidents, updates, disk growth.
 
 The business version, ready to copy, is the
-Monthly operations checklist template.
+[Monthly operations checklist template](../templates/monthly-operations-checklist.md).
 
 ## Every quarter
 
 - Score your operations with the [Reliability scorecard](reliability-scorecard.md) and compare with last quarter.
 - Rehearse an incident with the [Incident response for small teams](incident-response-for-small-teams.md) plan.
-- Review who holds administrator rights (Access reviews).
+- Review who holds administrator rights ([Access reviews](../security/access-reviews.md)).
 - Check your peak dates for the next quarter and plan for them ([Peak traffic planning](peak-traffic-planning.md)).
 - Review the risk register with your project lead ([Risk management](../../leadership/risk-management.md)).
 

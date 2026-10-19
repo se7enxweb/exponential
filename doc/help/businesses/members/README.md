@@ -80,7 +80,7 @@ A member site is a public website with a members area. The pieces come from the 
 - Non-profits: donations, volunteers and campaigns.
 - [Newsletters](../newsletters/README.md): the newsletter system in depth.
 - [Extranets](../extranets/README.md) and [Intranets](../intranets/README.md): the same tools for partners and staff.
-- Security: GDPR basics, consent and accounts.
+- [Security](../security/README.md): GDPR basics, consent and accounts.
 - Public bodies: Governments start here.
 
 ## Related pages

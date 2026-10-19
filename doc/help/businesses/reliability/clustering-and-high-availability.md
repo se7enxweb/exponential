@@ -37,7 +37,7 @@ promises that a node can fail without taking the site down"
 | Redundancy | Is the cost of the site being down while one server is repaired higher than the cost of running and maintaining several? |
 
 If the answer to both is "no" or "we do not know", a multi-server setup is probably premature. Use the
-Cost of downtime worksheet to answer the second question with your own
+[Cost of downtime worksheet](../costs/cost-of-downtime-worksheet.md) to answer the second question with your own
 figures.
 
 ## Try these first
@@ -93,7 +93,7 @@ Every routine task now happens on several machines
 - **Monitoring per server** as well as the shared address.
 - **More to back up**: the database server, the shared storage, and the cluster's metadata.
 
-Budget the staff time for this, not only the hardware; see Hosting cost drivers.
+Budget the staff time for this, not only the hardware; see [Hosting cost drivers](../costs/hosting-cost-drivers.md).
 
 ## The parts that can still fail
 
@@ -129,5 +129,5 @@ Each of these needs its own answer, from your hosting partner and from your own 
 
 - [Several web nodes](../../hosting/operations/several-web-nodes.md)
 - [Database choice for reliability](database-choice-for-reliability.md)
-- Contracts and SLAs basics
+- [Contracts and SLAs basics](../choosing/contracts-and-slas-basics.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

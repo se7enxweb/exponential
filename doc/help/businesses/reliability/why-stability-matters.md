@@ -36,7 +36,7 @@ A site that fails costs more than the minutes it is down:
   upgrade bigger and riskier.
 
 The size of each item is different for every organization. To put your own numbers on it, use the
-Cost of downtime worksheet in the costs section. This page does not
+[Cost of downtime worksheet](../costs/cost-of-downtime-worksheet.md) in the costs section. This page does not
 quote industry figures, because the sources of this help give none.
 
 ## A code base with a long memory
@@ -96,8 +96,8 @@ A stable platform lowers cost in ways that add up over the years:
 - **Longer life of what you built**: designs, extensions and content models keep working across releases.
 - **Predictable budgets**: when upgrades are small and regular, they can be planned as operating cost.
 
-To turn this into your own figures, see ROI of stability and
-Total cost of ownership.
+To turn this into your own figures, see [ROI of stability](../costs/roi-of-stability.md) and
+[Total cost of ownership](../costs/total-cost-of-ownership.md).
 
 ## What stability does not mean
 

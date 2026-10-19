@@ -104,5 +104,5 @@ Adapted from the good practice of the technical page:
 - [Remote services](remote-services.md)
 - [OAuth and API keys](../../creators/app-creators/oauth-and-api-keys.md)
 - [Personal API keys](../../../guides/api-keys.md)
-- Access reviews
+- [Access reviews](../security/access-reviews.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

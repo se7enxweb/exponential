@@ -91,7 +91,7 @@ Before content or data leaves your installation for a partner:
 - [ ] **Prices and stock**: who is responsible when a partner shows an outdated price? Agree refresh intervals.
 - [ ] **Rights**: images and texts you send may be licensed only for your own use; check before you syndicate.
 - [ ] **Personal data**: do partners receive customer data? If so, put a data processing agreement in place
-      (Security); this page is not legal advice.
+      ([Security](../security/README.md)); this page is not legal advice.
 - [ ] **Monitoring**: feeds, exports and imports run by cron; someone checks they ran
       ([App backend reliability](app-backend-reliability.md)).
 - [ ] **An exit plan**: how a partner's access and copies are removed when you part.

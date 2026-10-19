@@ -107,7 +107,7 @@ can be written as a redirect-style extension ([Payment gateways for businesses](
 ## Basics for any card-taking store
 
 - [ ] The whole site runs on HTTPS ([TLS and HTTPS](../../hosting/security/tls-and-https.md)).
-- [ ] Exponential and its extensions are kept up to date (Security updates and disclosure).
+- [ ] Exponential and its extensions are kept up to date ([Security updates and disclosure](../security/security-updates-and-disclosure.md)).
 - [ ] Administrators use strong passwords and two-factor sign-in ([Two-factor login](../../../guides/two-factor-login.md)).
 - [ ] The administration is restricted ([Restricting the administration](../../hosting/security/restricting-the-administration.md)).
 - [ ] Logs and debug output never show card data; debug output is off in production.
@@ -126,5 +126,5 @@ can be written as a redirect-style extension ([Payment gateways for businesses](
 
 - [Payment gateways](../../creators/website-creators/payment-gateways.md)
 - [Security for applications](../../creators/app-creators/security-for-applications.md)
-- Security basics for businesses
+- [Security basics for businesses](../security/security-basics-for-businesses.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

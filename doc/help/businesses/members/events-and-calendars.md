@@ -93,7 +93,7 @@ There is no event registration module. Two documented building blocks do the job
 
 Protect public sign-up forms against spam with a CAPTCHA
 ([Spam protection for forms](../../creators/website-creators/spam-protection-for-forms.md)), and say on the form
-what data is kept and why (Consent and forms).
+what data is kept and why ([Consent and forms](../security/consent-and-forms.md)).
 
 ## Announcing events
 
@@ -124,7 +124,7 @@ Searched in the repository on 19 October 2026:
 | Recurring events | one Event object per date |
 | Automatic reminders before an event | a newsletter edition or a mail from the office |
 
-Ask a partner to estimate what you need (Choosing a partner).
+Ask a partner to estimate what you need ([Choosing a partner](../choosing/choosing-a-partner.md)).
 
 ## Checklist
 

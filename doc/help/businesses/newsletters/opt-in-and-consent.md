@@ -136,7 +136,7 @@ How to handle such requests step by step:
 
 - [Newsletters for businesses](README.md)
 - [Lists and subscriptions](lists-and-subscriptions.md)
-- GDPR basics
-- Consent and forms
+- [GDPR basics](../security/gdpr-basics.md)
+- [Consent and forms](../security/consent-and-forms.md)
 - [E-mail preferences: the administrator's guide](../../../guides/mail-preferences-administrator.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -80,7 +80,7 @@ handlers, configured in `settings/ldap.ini` and `settings/textfile.ini`).
 ## What you need before you start
 
 - [ ] An Exponential installation, or a partner or host who provides one
-  (Choosing hosting).
+  ([Choosing hosting](../choosing/choosing-hosting.md)).
 - [ ] A host name for the intranet and an HTTPS certificate
   ([Going live: hosts and HTTPS](../../creators/website-creators/going-live-hosts-https.md)).
 - [ ] A named owner for the intranet and one for each department area.
@@ -93,9 +93,9 @@ handlers, configured in `settings/ldap.ini` and `settings/textfile.ini`).
 
 - [Extranets](../extranets/README.md): the same tools pointed at partners, customers, dealers and suppliers.
 - [Member sites](../members/README.md): registration from the public, members-only content and events.
-- Security: access reviews, accounts and passwords, GDPR basics.
+- [Security](../security/README.md): access reviews, accounts and passwords, GDPR basics.
 - [Reliability](../reliability/README.md): keeping the intranet available every working day.
-- Costs, including the worked example for an intranet.
+- [Costs](../costs/README.md), including the [worked example for an intranet](../costs/worked-example-intranet.md).
 - Public bodies: Governments start here.
 
 ## Related pages

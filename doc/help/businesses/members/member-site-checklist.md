@@ -76,13 +76,13 @@ been configured.
 
 ## Privacy
 
-- [ ] Registration and sign-up forms say what is collected and why (Consent and forms).
+- [ ] Registration and sign-up forms say what is collected and why ([Consent and forms](../security/consent-and-forms.md)).
 - [ ] Only needed fields on the user class.
 - [ ] Search statistics left off, or switched on with a reason
   ([Site search, Search statistics](../../creators/website-creators/site-search.md#search-statistics)).
 - [ ] Retention for unconfirmed and inactive accounts agreed
-  (Data retention and deletion).
-- [ ] Privacy notice published (GDPR basics).
+  ([Data retention and deletion](../security/data-retention-and-deletion.md)).
+- [ ] Privacy notice published ([GDPR basics](../security/gdpr-basics.md)).
 
 ## Operations
 
@@ -105,7 +105,7 @@ been configured.
 | Weekly | approve or clean up registrations | [Roles and policies, 7](../../../guides/roles-and-policies.md#7-clean-up-unactivated-users) |
 | Monthly | newsletter; check bounces and the blacklist | [Newsletter lists and subscriptions](../../creators/website-creators/newsletter-lists-and-subscriptions.md) |
 | Quarterly | check inactive and duplicate accounts | [Check user accounts](../../../features/6.0/user-hygiene.md) |
-| Yearly | review roles, sections and the privacy notice | Access reviews |
+| Yearly | review roles, sections and the privacy notice | [Access reviews](../security/access-reviews.md) |
 
 Adapt the rhythm to the size of your organization.
 
@@ -114,5 +114,5 @@ Adapt the rhythm to the size of your organization.
 - [Member sites](README.md)
 - Small group checklist
 - [Launch checklist for website creators](../../creators/website-creators/launch-checklist.md)
-- Go-live checklist template
+- [Go-live checklist template](../templates/go-live-checklist.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

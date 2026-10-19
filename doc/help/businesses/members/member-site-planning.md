@@ -95,7 +95,7 @@ Member organizations often rely on volunteers. Plan:
 - an owner on the board or staff;
 - editors per area, each with a role limited to their section;
 - someone who approves new members;
-- a host or partner for the technical side (Choosing hosting).
+- a host or partner for the technical side ([Choosing hosting](../choosing/choosing-hosting.md)).
 
 The Associations section covers working with volunteers and handing over when they
 change.
@@ -104,15 +104,15 @@ change.
 
 A member site stores names, e-mail addresses, sign-in records and, depending on the classes, more (a date of birth
 with the `birthday` datatype, for example). Collect only what you need, say why on the registration form, and agree
-retention with your data protection contact (GDPR basics,
-Personal data in Exponential). This page is not legal advice.
+retention with your data protection contact ([GDPR basics](../security/gdpr-basics.md),
+[Personal data in Exponential](../security/personal-data-in-exponential.md)). This page is not legal advice.
 
 ## What is not built in
 
 Searched in the repository on 19 October 2026: recurring membership fees, automatic membership expiry, event
 ticketing with seat limits, and a member directory page are not documented features. A one-off fee can be sold as a
 product through the built-in shop ([Stores](../stores/README.md)); the rest are extension projects or integrations to
-plan with a partner (Choosing a partner).
+plan with a partner ([Choosing a partner](../choosing/choosing-a-partner.md)).
 
 ## Planning worksheet
 

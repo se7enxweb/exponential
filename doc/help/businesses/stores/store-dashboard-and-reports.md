@@ -104,7 +104,7 @@ A suggested fifteen-minute routine for the owner:
 5. Next steps: anything new?
 6. Payment failed orders: is the provider having problems?
 
-A template for the monthly version is in Monthly operations checklist.
+A template for the monthly version is in [Monthly operations checklist](../templates/monthly-operations-checklist.md).
 
 ## What the dashboard does not do
 

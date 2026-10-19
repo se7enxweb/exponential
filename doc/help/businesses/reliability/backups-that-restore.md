@@ -111,7 +111,7 @@ Besides the schedule, take a backup right before each risky change
 - **Watched.** A failed backup job must alert someone, just like a failed health check
   ([Health checks and monitoring](health-checks-and-monitoring.md)).
 - **Data protection.** Backups are subject to the same rules as the live data. See
-  Data retention and deletion; this is not legal advice.
+  [Data retention and deletion](../security/data-retention-and-deletion.md); this is not legal advice.
 
 ## Small mistakes do not need a restore
 

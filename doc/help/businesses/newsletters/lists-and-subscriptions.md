@@ -86,7 +86,7 @@ formulas, and every download is recorded as the audit event `data.export.csv` (s
 
 > **Warning**
 > An export holds personal data. Keep it only as long as the task that needed it, and store it like any other
-> personal data. See Security and data protection.
+> personal data. See [Security and data protection](../security/README.md).
 
 **Coming from the old eznewsletter extension.** The command `ext:cjw_newsletter:import-eznewsletter` migrates lists and
 subscribers from it (same guide, section "Migration from eznewsletter").
@@ -111,7 +111,7 @@ administration, and `import_export` for the import and export of 4.2.0. The exte
 - [ ] Visitors get only the public functions (subscribe, configure, unsubscribe).
 - [ ] Writers get what they need to write and test editions, not the subscriber lists.
 - [ ] One or two named people get the subscriber lists, import and export.
-- [ ] Review these roles when people change jobs (Access reviews).
+- [ ] Review these roles when people change jobs ([Access reviews](../security/access-reviews.md)).
 
 How roles and policies work in general: [Roles, policies and unactivated users](../../../guides/roles-and-policies.md).
 

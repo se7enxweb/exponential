@@ -114,7 +114,7 @@ Logs can contain personal data, such as IP and e-mail addresses. Exponential mas
   ([Audit trail](../../../features/6.0/audit-trail.md#why-you-want-it)).
 
 This is a technical safeguard, not legal advice. For your obligations, see
-GDPR basics and ask your data protection officer or lawyer.
+[GDPR basics](../security/gdpr-basics.md) and ask your data protection officer or lawyer.
 
 ## Checklist
 

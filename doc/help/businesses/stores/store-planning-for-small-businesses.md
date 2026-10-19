@@ -71,8 +71,8 @@ The technical overview lists what the shop does not do and what should be planne
 stock management, invoices in an accounting system, shipping labels and marketplaces
 ([Running a shop: overview](../../creators/website-creators/shop-overview.md)). Decide early whether you need any of
 these, and whether a partner will build or connect them. See
-Choosing a partner and
-Questions to ask a partner.
+[Choosing a partner](../choosing/choosing-a-partner.md) and
+[Questions to ask a partner](../choosing/questions-to-ask-a-partner.md).
 
 ## A planning worksheet
 
@@ -92,8 +92,8 @@ Copy this list into your project brief and fill it in.
 - [ ] Extensions or integrations you need (stock, accounting, labels)
 - [ ] Launch date, and the test period before it
 
-A template for the brief is in Project brief template, and a checklist of
-requirements in Requirements checklist.
+A template for the brief is in [Project brief template](../templates/project-brief-template.md), and a checklist of
+requirements in [Requirements checklist](../templates/requirements-checklist.md).
 
 ## After planning
 
@@ -101,8 +101,8 @@ requirements in Requirements checklist.
    [Running a shop: overview](../../creators/website-creators/shop-overview.md), which has the setup order.
 2. Agree on a test period with real test orders in the payment provider's test mode.
 3. Use the [Store launch checklist](store-launch-checklist.md) before opening.
-4. Estimate the cost with Total cost of ownership and
-   Worked example: small store.
+4. Estimate the cost with [Total cost of ownership](../costs/total-cost-of-ownership.md) and
+   [Worked example: small store](../costs/worked-example-small-store.md).
 
 ## Related pages
 

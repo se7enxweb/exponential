@@ -135,5 +135,5 @@ themselves ([Reset a user's password](../../../features/6.0/reset-user-password.
 - [Member registration](../members/member-registration.md)
 - [Member registration and members-only areas](../../creators/website-creators/member-registration-and-areas.md)
 - [Roles, policies and unactivated users](../../../guides/roles-and-policies.md)
-- Consent and forms
+- [Consent and forms](../security/consent-and-forms.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

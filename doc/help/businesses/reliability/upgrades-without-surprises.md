@@ -136,6 +136,6 @@ The full technical checklist to copy into a ticket is on
 
 - [Upgrade check and file consistency](upgrade-check-and-file-consistency.md)
 - [Upgrading](../../../guides/upgrading.md)
-- Budgeting for upgrades and maintenance
+- [Budgeting for upgrades and maintenance](../costs/budgeting-for-upgrades-and-maintenance.md)
 - [Upgrading customer sites (hosting)](../../hosting/operations/upgrading-customer-sites.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

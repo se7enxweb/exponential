@@ -106,7 +106,7 @@ ends, or assign the sale products to an "Outlet" section and back again (a secti
 in the background as a content job, [Content jobs](../../../features/6.0/content-jobs.md)). Coupon codes,
 gift cards and quantity rules need an extension, for example a workflow event on `before_shop_confirmorder` that adds a
 negative order line; that is developer or partner work ([Writing a workflow event type](../../creators/app-creators/writing-a-workflow-event-type.md),
-Choosing a partner).
+[Choosing a partner](../choosing/choosing-a-partner.md)).
 
 ## Checklist
 

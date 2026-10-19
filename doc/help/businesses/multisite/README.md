@@ -85,7 +85,7 @@ Governments start here.
 - Businesses start here and the reading path
 - [Selling in several languages and markets](../multilingual/README.md)
 - [Mobile apps, headless use and networks](../mobile-and-headless/README.md)
-- [Reliability](../reliability/README.md) and Costs for the operational side of many sites
+- [Reliability](../reliability/README.md) and [Costs](../costs/README.md) for the operational side of many sites
 - [Extranets](../extranets/README.md), when a partner portal runs beside your public brands
 - For the technical team: [Setting up several sites in one installation](../../creators/website-creators/multisite-setup.md)
   and, for hosting companies, [Multisite on one installation](../../hosting/provisioning/multisite-on-one-installation.md)

@@ -81,7 +81,7 @@ optional mail, no login needed) ([E-mail preferences: the user's guide](../../..
 Every change of a preference is written to a **consent log** with the exact text the person saw
 ([E-mail preferences: setting them up](../../../guides/mail-preferences-administrator.md)). That record is useful when
 someone asks why they received a mail. The legal side is covered in
-[Opt-in and consent](../newsletters/opt-in-and-consent.md) and GDPR basics; these pages are
+[Opt-in and consent](../newsletters/opt-in-and-consent.md) and [GDPR basics](../security/gdpr-basics.md); these pages are
 not legal advice.
 
 ## What every optional mail carries

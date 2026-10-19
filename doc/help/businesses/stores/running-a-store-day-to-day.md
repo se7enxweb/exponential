@@ -88,18 +88,18 @@ With ezauthorize, a refund module exists in the administration ([Card payments a
 - [ ] Search terms without results ([Site search](../../creators/website-creators/site-search.md)).
 - [ ] One newsletter edition, to subscribers who opted in ([Newsletters](../newsletters/README.md)).
 - [ ] Check that backups ran and that cron jobs (including basket cleanup) run ([Cron jobs](../../../guides/cronjobs.md)).
-- [ ] Ask the host or partner about Exponential and extension updates (Security updates and disclosure).
-- [ ] The Monthly operations checklist template.
+- [ ] Ask the host or partner about Exponential and extension updates ([Security updates and disclosure](../security/security-updates-and-disclosure.md)).
+- [ ] The [Monthly operations checklist](../templates/monthly-operations-checklist.md) template.
 
 ## Every year
 
 - [ ] VAT rates and rules still right; ask your tax adviser about changes.
 - [ ] Ranked countries match where orders come from ([Country groups and regions](country-groups-and-regions.md)).
-- [ ] Roles and staff accounts reviewed (Access reviews).
-- [ ] Old orders and customer data handled per your retention rules (Data retention and deletion).
+- [ ] Roles and staff accounts reviewed ([Access reviews](../security/access-reviews.md)).
+- [ ] Old orders and customer data handled per your retention rules ([Data retention and deletion](../security/data-retention-and-deletion.md)).
 - [ ] A restore drill ([Restore drills](../reliability/restore-drills.md)).
 - [ ] Payment provider contract and fees compared with alternatives.
-- [ ] The Annual review checklist.
+- [ ] The [Annual review checklist](../templates/annual-review-checklist.md).
 
 ## When the usual person is away
 

@@ -95,7 +95,7 @@ preferences feature treats order mail as essential e-mail that is always sent an
 > **Note**
 > These are basics, not legal advice. For your duties under data protection law, read the regulation that applies to
 > you and ask your lawyer or data protection officer. Start with
-> GDPR basics and Personal data in Exponential.
+> [GDPR basics](../security/gdpr-basics.md) and [Personal data in Exponential](../security/personal-data-in-exponential.md).
 
 ## Choosing
 
@@ -110,5 +110,5 @@ preferences feature treats order mail as essential e-mail that is always sent an
 
 - [Basket and checkout flow](basket-and-checkout-flow.md)
 - [Member registration and areas](../../creators/website-creators/member-registration-and-areas.md)
-- User accounts and passwords
+- [User accounts and passwords](../security/user-accounts-and-passwords.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

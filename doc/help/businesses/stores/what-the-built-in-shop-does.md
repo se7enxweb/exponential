@@ -102,13 +102,13 @@ Being honest saves money. The technical overview names these as things to plan a
 
 Each of these can be added with an extension, a workflow event or a custom handler, which is application creator
 work ([App creators: start here](../../creators/app-creators/app-creators-start-here.md)) or a task for a partner
-(Choosing a partner).
+([Choosing a partner](../choosing/choosing-a-partner.md)).
 
 ## Why it suits small businesses
 
 - One system for the website and the store: products are pages, so editors use the same tools for both.
 - No separate shop product to license: Exponential is GPL v2 or later (`composer.json`, `license`
-  `GPL-2.0-or-later`); see What you do not pay for.
+  `GPL-2.0-or-later`); see [What you do not pay for](../costs/what-you-do-not-pay-for.md).
 - The dashboard tells a small team what needs attention, without reports to build.
 - Long-lived code: the shop's classes carry copyright lines going back to 1998
   (for example `kernel/classes/ezvattype.php`), and the 6.0.15 release still added to it

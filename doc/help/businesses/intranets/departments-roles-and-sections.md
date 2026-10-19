@@ -108,7 +108,7 @@ Article and Folder*, and counts every user the role reaches through its groups
 - **Can change roles** (amber): a policy over the role module, which lets its users give themselves any access.
 
 Neither belongs on a department editor role. Schedule a regular look at both badges
-(Access reviews).
+([Access reviews](../security/access-reviews.md)).
 
 ## Mistakes to avoid
 

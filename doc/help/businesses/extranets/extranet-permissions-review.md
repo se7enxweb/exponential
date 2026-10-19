@@ -32,7 +32,7 @@ The page gives the routine and the Exponential pages that make each step quick.
 - A role edited for one purpose can open more than intended; policies of several roles add up.
 - Content moves; a subtree limitation follows the tree, so moved content changes audience.
 - Data protection rules expect that personal data is kept only as long as needed
-  (GDPR basics; this page is not legal advice).
+  ([GDPR basics](../security/gdpr-basics.md); this page is not legal advice).
 
 ## The rhythm
 
@@ -43,7 +43,7 @@ The page gives the routine and the Exponential pages that make each step quick.
 | Areas and sections | twice a year | the section list and a few spot checks |
 | Full review with relationship managers | once a year | a meeting per audience |
 
-Choose the rhythm with your security officer; the Access reviews page in the
+Choose the rhythm with your security officer; the [Access reviews](../security/access-reviews.md) page in the
 security section gives the general method.
 
 ## Step 1: roles
@@ -121,7 +121,7 @@ marks sections needing attention ([Sections, 3](../../../guides/sections.md#3-th
 The audit trail records role assignments, account locks, sign-ins and content changes in a tamper-evident log, and
 `./console exp:audit verify` proves the record is intact
 ([The audit trail](../../../features/6.0/audit-trail.md)). Write a short note of each review: date, reviewer, what was
-changed. The compliance evidence page shows how to use the
+changed. The [compliance evidence](../security/compliance-evidence-from-the-audit-trail.md) page shows how to use the
 audit trail as evidence.
 
 ## When a partnership ends
@@ -129,12 +129,12 @@ audit trail as evidence.
 1. Remove the organization's role assignments (its subtree assignment and tier groups).
 2. Deactivate and move, or disable, its accounts.
 3. Archive or remove its folder, following the contract and your retention rules
-   (Data retention and deletion).
+   ([Data retention and deletion](../security/data-retention-and-deletion.md)).
 4. Note the change in the review record.
 
 ## Related pages
 
-- Access reviews
+- [Access reviews](../security/access-reviews.md)
 - [Check user accounts](../../../features/6.0/user-hygiene.md)
 - [Roles, policies and unactivated users](../../../guides/roles-and-policies.md)
 - [KPIs from logs and audit](../../leadership/kpis-from-logs-and-audit.md)

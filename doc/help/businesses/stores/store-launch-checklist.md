@@ -125,7 +125,7 @@ Place these in the payment provider's test mode, on a desktop and on a phone
 - [ ] Customer questions collected for the FAQ ([Store FAQ](store-faq.md)).
 - [ ] Day-to-day routine agreed ([Running a store day to day](running-a-store-day-to-day.md)).
 
-A general go-live template is in Go-live checklist.
+A general go-live template is in [Go-live checklist](../templates/go-live-checklist.md).
 
 ## Related pages
 

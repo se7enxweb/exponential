@@ -99,7 +99,7 @@ chooses (`shop/setusercountry`). The country select in the shop forms is the gro
 A different VAT logic, for example one based on the delivery address or on a customer's VAT number, can be written as
 a VAT handler of your own; `shop.ini [VATSettings]` has `RepositoryDirectories[]` and `ExtensionDirectories[]` for it.
 That is developer work ([Writing a workflow event type](../../creators/app-creators/writing-a-workflow-event-type.md)
-shows the general extension pattern; a partner can help, see Choosing a partner).
+shows the general extension pattern; a partner can help, see [Choosing a partner](../choosing/choosing-a-partner.md)).
 
 ## Sales tax outside VAT countries
 

@@ -84,7 +84,7 @@ A score of 2 should point to something you can show a manager, an auditor or a c
 | Incidents | The printed plan, the rehearsal date, the reviews |
 
 For compliance use of the audit trail, see
-Compliance evidence from the audit trail.
+[Compliance evidence from the audit trail](../security/compliance-evidence-from-the-audit-trail.md).
 
 ## A record to copy
 
@@ -105,9 +105,9 @@ Actions before the next review (at most three):
 3.
 ```
 
-The Templates section has more checklists to copy, including the
-Annual review checklist and the
-Monthly operations checklist.
+The [Templates](../templates/README.md) section has more checklists to copy, including the
+[Annual review checklist](../templates/annual-review-checklist.md) and the
+[Monthly operations checklist](../templates/monthly-operations-checklist.md).
 
 ## Related pages
 

@@ -110,7 +110,7 @@ These questions change the size of the project. Answer them early and give the a
 
 ## A planning worksheet
 
-Copy this list into the project brief (Project brief template).
+Copy this list into the project brief ([Project brief template](../templates/project-brief-template.md)).
 
 - [ ] Purpose of the intranet in two sentences.
 - [ ] List of user groups and their size.
@@ -121,7 +121,7 @@ Copy this list into the project brief (Project brief template).
 - [ ] Search decision: built-in or Solr.
 - [ ] Notification decision: which items staff follow by default.
 - [ ] Hosting and backups decided ([Reliability](../reliability/README.md)).
-- [ ] Named owner and a date for the first access review (Access reviews).
+- [ ] Named owner and a date for the first access review ([Access reviews](../security/access-reviews.md)).
 
 ## Related pages
 
@@ -129,5 +129,5 @@ Copy this list into the project brief (Project brief template).
 - [Intranet rollout checklist](intranet-rollout-checklist.md)
 - [Planning an Exponential project](../../leadership/planning-an-exponential-project.md)
 - [Content modeling workshops](../../leadership/content-modeling-workshops.md)
-- Worked example: an intranet
+- [Worked example: an intranet](../costs/worked-example-intranet.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
