@@ -74126,6 +74126,26 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
         <translation>Financer Exponential : ce que le parrainage finance et comment parrainer 7x et la Fondation Exponential.</translation>
     </message>
+    <message>
+        <source>Expand all</source>
+        <translation>Tout déplier</translation>
+    </message>
+    <message>
+        <source>Collapse all</source>
+        <translation>Tout replier</translation>
+    </message>
+    <message>
+        <source>Open or close every folder</source>
+        <translation>Ouvrir ou fermer tous les dossiers</translation>
+    </message>
+    <message>
+        <source>Every folder is open.</source>
+        <translation>Tous les dossiers sont ouverts.</translation>
+    </message>
+    <message>
+        <source>Every folder is closed.</source>
+        <translation>Tous les dossiers sont fermés.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

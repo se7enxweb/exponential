@@ -5,7 +5,8 @@ if you write documentation (in `doc/` or in an extension) that should show up in
 
 ## In short
 
-- **Help dashboard** (`/exphelp/dashboard`): a search field, the help for each audience (editors, administrators,
+- **Help dashboard** (`/exphelp/dashboard`): the Exponential logo above "Help center" (the header's drawing,
+  `exphelp/parts/dashboard_brand.tpl`, per design), a search field, the help for each audience (editors, administrators,
   developers, site users, project managers, sales & marketing, partners, advocates, designers, hosting companies, application creators, website creators, supporters and sponsors; the project-manager and sales-marketing cards link their start page), the categories, featured pages, the latest changes to the documentation, and how to
   report an error.
 - **Help pages** (`/exphelp/viewer/<page>`): every git-tracked Markdown and text file under `doc/`, rendered with
@@ -126,12 +127,24 @@ then have the ids `ext/<extension>/<path>`.
 
 ## Finding a page
 
-- **All pages** (`/exphelp/contents`): every help page as one tree, all folders open, with a filter field that
-  narrows the tree to the pages whose title or folder has every typed word. The viewer shows the same tree at the
+- **All pages** (`/exphelp/contents`): every help page as one tree, its folders closed (each shows its title and
+  number of pages), with a filter field that narrows the tree to the pages whose title or folder has every typed
+  word and opens their folders; emptied (or with Esc) it puts the folders back as they were. **Expand all** and
+  **Collapse all** open or close every folder; they sit in a small panel fixed at the end side of the window near the
+  bottom (the left side in a right-to-left language), so they stay at hand while scrolling, and appear only with
+  JavaScript. The panel stays above the debug bar, and above its minimised tab, through the custom property
+  `--exp-debug-clearance` that `expdebugbar.css` sets (the room the bar keeps free at the bottom of the window; unset
+  without the bar); another fixed control at the bottom of a page can use it the same way:
+  `bottom: calc(var(--exp-debug-clearance, 0px) + <gap>)`. Each folder has an id from its path, so
+  `/exphelp/contents#exphelp-folder-help-editors` opens the folder `doc/help/editors`. The viewer shows the same tree at the
   side of each page, with the folders on the way to the page open. Folders are native disclosure elements, so the
   tree works without JavaScript; a folder's `README.md` or `index.md` is its "Overview" link. A folder is named by
   `exphelp.ini [NavigationSettings] FolderNames[<path>]`, else by the title of its README, else by its directory
   name. The tree is cached per index, siteaccess and language, so a page with 1 200 entries costs one file read.
+  Folders listed in `[NavigationSettings] FoldedFolders[]` (shipped: the generated reference examples below
+  `doc/examples/`) show only their "Overview" link and page count; their pages, and those of the folders below them,
+  are listed while a page inside is open. Without folding, the 2 400 generated pages would put about 2 400 more links
+  on every page of the help.
 - **Search and browse addresses** use view parameters, so they can be bookmarked and linked:
   `/exphelp/search/(q)/publish`, `/exphelp/search/(category)/layouts/(audience)/editor`, with `(type)`,
   `(offset)` and `(limit)` as well. Without `(q)` the page lists every page the filters allow (browse mode); with no
@@ -146,8 +159,8 @@ then have the ids `ext/<extension>/<path>`.
 
 ## Record pages
 
-The release and branch history kept from the original SVN repository (`doc/release-overview`,
-`doc/branch-overview`) are shown as tables per series by `expHelpRecordRenderer`: version, name, date, revisions,
+The release history (`doc/release-overview`) and any other plain text list of version records
+are shown as tables per series by `expHelpRecordRenderer`: version, name, date, revisions,
 addresses and notes, with a filter field over all rows and sort buttons in the column headers (without the script
 the tables are complete and in date order). Any plain text file written in the same "name line, then `- Key=value`
 lines" shape is shown the same way. Addresses on the old SVN hosts are shown as text marked "historical", never as
@@ -202,6 +215,12 @@ page or the settings makes a new file.
 ./console exp:help check     # broken links and images in doc/
 ./console exp:help pdf help/searching.md --out=searching.pdf --base-url=https://www.example.com
 ```
+
+The examples below `doc/examples/` that are generated from the code (template operators, fetch functions, module
+views, policies, INI settings, datatypes, workflow events, cronjobs, console commands, extension points) are written
+by `./console exp:help:examples`; `--check` reports pages that are not current. See
+[Examples](../../examples/README.md#how-the-generated-pages-are-made). They have the page type `generated`, which ranks
+below the written pages (`[SearchSettings] TypeBoost[generated]`) and stays off the audience cards of the dashboard.
 
 The index is cached in `var/<site>/cache/exphelp/` and rebuilt by itself when the tracked files change.
 

@@ -3,7 +3,7 @@ title: Command (console, scripts, cronjobs)
 audience: developer
 category: standards
 order: 319
-summary: A unit of work that runs on its own: a console command (./console exp:...), a CLI script class or a cronjob part. 220 instances in Exponential.
+summary: A unit of work that runs on its own: a console command (./console exp:...), a CLI script class or a cronjob part. 221 instances in Exponential.
 keywords: design pattern, command, request handling, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A unit of work that runs on its own: a console command (./console exp:...), a CL
 | | |
 |---|---|
 | Group | Request handling |
-| Instances | 220 |
+| Instances | 221 |
 | Recognized by | Extends Command, CronjobPart or Runnable (the runnable console commands and cronjob parts), or a cronjobs/*.php file. |
 | Extension point | kernel/private/classes/commands/, cronjob.ini [CronjobSettings] ExtensionDirectories[] and CronjobPart-*. |
 
@@ -182,7 +182,7 @@ A unit of work that runs on its own: a console command (./console exp:...), a CL
 |---|---|---|---|---|
 | `expIniCommand` | class | `kernel/classes/ini/actions/expinicommand.php:15` | The exp:ini command without its script: splitting the command line, the help texts, finding the action in the registry, running it with an expIniComm… | – |
 
-### kernel/private/classes/commands (94)
+### kernel/private/classes/commands (95)
 
 [All patterns of kernel/private/classes/commands](area-kernel-private-classes-commands.md)
 
@@ -211,6 +211,7 @@ A unit of work that runs on its own: a console command (./console exp:...), a CL
 | `Exponential\Command\Kernel\Expcontentjob` | class extends Command | `kernel/private/classes/commands/expcontentjob.php:30` | The command bin/php/expcontentjob.php (./console exp:expcontentjob): content jobs, the large subtree removes and copies that run in batches in the ba… | – |
 | `Exponential\Command\Kernel\Exphelp` | class extends Command | `kernel/private/classes/commands/exphelp.php:16` | – | – |
 | `Exponential\Command\Kernel\Exphelpcontent` | class extends Command | `kernel/private/classes/commands/exphelpcontent.php:16` | – | – |
+| `Exponential\Command\Kernel\Exphelpexamples` | class extends Command | `kernel/private/classes/commands/exphelpexamples.php:16` | – | – |
 | `Exponential\Command\Kernel\Explogs` | class extends Command | `kernel/private/classes/commands/explogs.php:21` | – | – |
 | `Exponential\Command\Kernel\Exploremipsumfill` | class extends Command | `kernel/private/classes/commands/exploremipsumfill.php:20` | – | – |
 | `Exponential\Command\Kernel\Explovestack` | class extends Command | `kernel/private/classes/commands/explovestack.php:16` | – | – |

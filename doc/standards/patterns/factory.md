@@ -519,7 +519,7 @@ A class or static method that creates objects for the caller, so the caller does
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expHelpAllowlist` | class | `kernel/classes/help/exphelpallowlist.php:29` | The files the help system may show (doc/features/6.0/help-system.md, "Which files are shown"). | – |
-| `expHelpAudience` | class | `kernel/classes/help/exphelpaudience.php:28` | Who a help page is for, which section of the help it belongs to and what kind of page it is (doc/features/6.0/help-system.md, "Audiences, categories… | – |
+| `expHelpAudience` | class | `kernel/classes/help/exphelpaudience.php:29` | Who a help page is for, which section of the help it belongs to and what kind of page it is (doc/features/6.0/help-system.md, "Audiences, categories… | – |
 | `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:44` | Context help: which help page answers "help for this page", for a module, view and design. | – |
 | `expHelpMarkdownRenderer` | class | `kernel/classes/help/exphelpmarkdownrenderer.php:50` | Renders the Markdown of the documentation (doc/**.md) to the HTML of the help viewer (exphelp/viewer, doc/features/6.0/help-system.md): CommonMark bl… | – |
 | `expHelpPdf` | class | `kernel/classes/help/exphelppdf.php:18` | A help page as a PDF file (doc/features/6.0/help-system.md, "Print and PDF"): the view exphelp/pdf/ and `./console exp:help pdf ` ask here. | – |
