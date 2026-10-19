@@ -3,8 +3,8 @@ title: "Update with Git: stay in sync with GitHub"
 audience: user, developer, admin
 category: development
 order: 6
-summary: Get Exponential's updates as they are pushed to GitHub, then update Composer to match, on the schedule you choose (hourly, daily, weekly, monthly, or only at each stable release), with the commands to see what changed, the safety steps, and an automatic update you can switch on.
-keywords: update, upgrade, git, pull, fetch, merge, composer update, prefer-source, release, tag, main, cron, systemd, timer, schedule, daily, hourly, weekly, monthly, automatic, stay in sync
+summary: Get Exponential's updates as they are pushed to GitHub, then update Composer to match, on the schedule you choose (hourly, daily, weekly, monthly, or only at each stable release), from the command line or in the administration during a maintenance window, with how to see what changed, the safety steps, and an automatic update you can switch on.
+keywords: update, upgrade, git, pull, fetch, merge, composer update, prefer-source, release, tag, main, cron, systemd, timer, schedule, daily, hourly, weekly, monthly, automatic, stay in sync, maintenance window, maintenance mode, git manager, updates and packages, ezupdate, upgrade check, cache, logs, checklist
 type: help
 ---
 # Update with Git: stay in sync with GitHub
@@ -12,6 +12,9 @@ type: help
 Once your site is made of Git clones ([Develop with Git](develop-with-git.md)), updating is two moves: bring the
 kernel up to date with Git, then let Composer bring every extension up to date to match. This page shows both, for
 the schedule that suits you, how to see what changed, how to stay safe, and how to let the computer do it for you.
+Without a shell, the same update can be done in the administration during a maintenance window:
+[Update in the administration](#update-in-the-administration-a-maintenance-window) goes through it page by page, with a
+checklist.
 
 Every command here was run on a fresh installation first: a kernel clone on a branch `my-site` made from release
 `v6.0.13`, updated to the release `v6.0.14` and then to the development line `main`.
@@ -144,6 +147,175 @@ In the administration:
   `composer update` then moves the extensions back with it (from `main` back to `v6.0.14` it removed the 39 packages
   `main` had added and moved 11 back). Restore the database from your backup if a database
   update already ran.
+
+## Update in the administration: a maintenance window
+
+Everything above can also be done from the administration, without a shell, in a short maintenance window: the public
+site shows a maintenance page, you update and check, and the site comes back when everything passes. What follows
+is what the pages show; the screenshots are of the **Admin 4** design with a test administrator. Each step names the
+policy a role needs for it (`module/function`); the Administrator role has them all.
+
+| Step | Page | Policy |
+|---|---|---|
+| Start the window | **Setup** > **Maintenance** (`setup/maintenance`) | `setup/administrate` |
+| Update the kernel | **Setup** > **Git Manager** (`git_manager/dashboard`) | `git_manager/git_manager` (`git_manager/push` to push, `git_manager/backup` for backups) |
+| Update the extensions | **Setup** > **Updates and packages** (`update/dashboard`) | `update/ezupdate` to look, check and preview; `update/manage` to install, switch updating on and change servers |
+| Check files and database | **Setup** > **Upgrade check** (`setup/systemupgrade`) | `setup/setup` |
+| Apply a database update | **Setup** > **DS Editor** (`dse/dashboard`) | `dse/dse` |
+| Clear the caches | **Setup** > **Cache management** (`setup/cache`) | `setup/managecache` |
+| Read the logs | **Setup** > **Log files** (`setup/logs`) | `setup/logs` |
+
+Git Manager, Updates and packages and the DS Editor are extensions (`git_manager`, `ezupdate`, `sevenx_dse`); they
+appear in the menu when they are active.
+
+### 1. Start the window
+
+Make a backup first: **Setup** > **Backup** (`git_manager/backup`), type **DB + Files caption**.
+
+Then open **Setup** > **Maintenance**. While the site is online, the page shows a green **The site is online** banner
+and a plan in three steps:
+
+1. **Message for visitors** (optional; left empty, the page says "We are working on the site and will be back
+   shortly.").
+2. **Expected duration**: type the minutes or choose **15 min**, **30 min**, **1 h**, **2 h** or **4 h**. Visitors and
+   search engines are told when to come back. Maintenance does not end by itself.
+3. **Who still gets in**: the administration under `/admin` always; tick **Let my own address still see the site** to
+   check your work on the public site while everyone else gets the maintenance page, and add other addresses (your
+   testers) if you like.
+
+Tick **I understand that the public site goes offline for every visitor not listed above, until I switch maintenance
+off again.** and press **Take the site offline**. This also empties the caches that answer ahead of the site. A
+**Preview** further down shows the page visitors get, and **From a shell** has the same switch as a command
+(`php bin/php/maintenance.php on|off|status`).
+
+![Setup > Maintenance with the site online: the green banner and the three steps of the plan: message, expected duration, who still gets in, then the confirmation and the Take the site offline button](images/update-maintenance.webp)
+
+### 2. Update the kernel with Git Manager
+
+Open **Setup** > **Git Manager**. The **Upstream (origin)** card at the top compares the installation with the
+remote: the remote's address, the branch it is compared with, the last fetch, **AHEAD / BEHIND** (local commits /
+commits to get), the files not committed, and two lists: **Missing in this installation** (the commits on GitHub you
+do not have yet, each with its author and a link) and **Only in this installation**.
+
+1. Press **Fetch now**. It runs `git fetch --prune` and nothing else, so the card shows the remote as it is now.
+2. Read **Missing in this installation**: these are the commits the update brings.
+3. Check **NOT COMMITTED**. Files you changed and did not commit can make the next step fail; commit them from a
+   shell first.
+4. Under **Local branch**, choose the branch the site runs on (the one shown after **HEAD**, for example `main` or
+   `my-site`), tick **Regenerate autoloads**, and press **Checkout**. Git Manager checks out that branch and runs
+   `git pull origin <branch>`, which fetches the branch of the same name on the remote and merges it, then
+   regenerates the class maps. The output of Git is shown on the page.
+5. The badge now says **Up to date** and **AHEAD / BEHIND** shows `0 / 0`.
+
+The **Commits log** further down lists the history, 50 commits to a page, with a filter by author and date; each
+commit opens with its changes, and a commit can be checked out by its hash. Git Manager follows branches: to update
+only to a release tag, use the command line ([step 2 above](#2-bring-the-kernel-up-to-date)).
+
+![Setup > Git Manager: the Upstream card with Fetch now, the remote, the branch it is compared with, ahead and behind, the commits missing in this installation, and below it the Local branch and Remote branch boxes with Regenerate autoloads and Checkout](images/update-git-manager.webp)
+
+### 3. Update the extensions with Updates and packages
+
+The kernel's `composer.json` names the extensions and their versions, so after the kernel moved, Composer has to
+follow. **Setup** > **Updates and packages** runs Composer for you. It has five tabs.
+
+**Overview** (`update/dashboard`) shows the counts (installed by Composer, extensions on disk, those that need
+attention), where Composer and its PHP are, and two switches: **UPDATING** (`[UpdateSettings] AllowUpdate`) and
+**INSTALLING NEW PACKAGES** (`AllowInstall`). Both are **Switched off** until you choose otherwise, because Composer
+rewrites `vendor/` and the files of every package it updates. Then:
+
+1. **Check for updates** asks the package servers which packages have a newer release. Nothing is changed.
+2. **Fetch from**: `auto`, `dist (archives)` or `source (git, with history)`. A package keeps the way it was first
+   installed (see [step 3 above](#3-bring-the-extensions-up-to-date)); `source` makes new packages Git clones.
+3. **Preview (dry run)** shows what Composer would change. Each package is marked *Can be installed* or *Blocked by
+   composer.json*.
+4. To install, updating must be on: **Switch on updates** (it writes `AllowUpdate=enabled` into
+   `settings/override/ezupdate.ini.append.php`). With a backup made, tick the packages and press **Install updates**.
+   The run goes on in the background and the page follows its output; afterwards the class maps are regenerated and
+   the INI, template and content caches cleared. A notice at the top says *The installation is up to date!* when
+   there was nothing to do, or what changed.
+5. **Recent runs** lists every run with **Run again**. Switch updating off again when you are done.
+
+![Updates and packages > Overview: the counts, the Composer card with the Updating and Installing new packages switches, the Updates box with Switch on updates, Check for updates, Fetch from, Preview (dry run) and Install updates, and the recent runs](images/update-ezupdate-overview.webp)
+
+**Installed packages** (`update/installed`) puts side by side what `composer.json` requires, what `composer.lock`
+resolved, what is on disk and which extensions are switched on. For each package it shows the versions (the branch
+and commit when it is a Git clone) and a status. Filter with **Needs attention** to see what does not agree (an
+extension on disk that Composer does not know, a version that differs from the lock file), and with **Git clones** to
+see which packages are clones. **JSON** and **CSV** download the table.
+
+![Updates and packages > Installed packages: the dates of composer.json, composer.lock and installed.json, the counts, the filters (In composer.json, Extensions, Libraries, Active, Not active, Not from Composer, Git clones, Needs attention) and the table of packages with their versions and status](images/update-ezupdate-installed.webp)
+
+**Find packages** (`update/browse`) searches packagist.org (Extensions, Kernel, Libraries or Any type) or every server
+in `composer.json`, and marks what is installed. A package's page shows its versions and requirements and installs it
+(with **INSTALLING NEW PACKAGES** switched on).
+
+![Updates and packages > Find packages: the search form with Where and Type, and the list of packages with downloads, stars and the installed version](images/update-ezupdate-browse.webp)
+
+**Package servers** (`update/servers`) lists the **Composer servers** (the `repositories` of `composer.json`;
+packagist.org can be switched off) and the **Exponential package servers** of `.ezpkg` packages that the setup wizard
+reads. Check here that Composer asks the servers you expect before an update.
+
+![Updates and packages > Package servers: the Composer servers with packagist.org switched on, and the Exponential package servers with the built-in server](images/update-ezupdate-servers.webp)
+
+**Funding** (`update/fund`) lists who is behind the installed packages and how to support them: the list
+`composer fund` prints, read from the packages' metadata and their `.github/FUNDING.yml`.
+
+![Updates and packages > Funding: how many packages ask for funding, from how many vendors, and the funding links grouped by vendor](images/update-ezupdate-funding.webp)
+
+### 4. Check, update the database, clear the caches
+
+**Setup** > **Upgrade check** has two checks. Both only read.
+
+- **Check file consistency** compares every file of the installation with the checksums of the release (and of each
+  extension that ships its own list). After an update from Git, every file should match; a file listed as modified is
+  one you changed, or one the update did not reach.
+- **Check database consistency** compares the tables with the schema of the new code and shows the SQL that would
+  bring the database in line. **Download SQL** saves it. Nothing is run.
+
+![Setup > Upgrade check: the version, the number of files in the manifest, the database engine, and the two checks with Check file consistency, Download CSV, Download text, Check database consistency and Download SQL](images/update-upgrade-check.webp)
+
+A release can need a **database update**: [Upgrading](../install/11-upgrading.md#step-2-apply-the-database-update)
+names the file for each release (`update/database/<engine>/6.0/...`). Without a shell, **Setup** > **DS Editor** opens
+the site's database in AdminNeo after a warning page you confirm (**I have taken a full backup and accept full
+responsibility.**, **Proceed to the database**). There you can run SQL statements, or import an SQL file you upload, which
+is how the release's update file is applied. It works on the live data directly, past every check of the
+administration, so use it only with the backup in hand. Apply the release's file once, whole, in order. Run **Check database consistency** again afterwards.
+
+Then **Setup** > **Cache management**: **Clear all caches…** and confirm. On a site served by Exponential Velocity,
+also press **Clear Velocity's response cache** on the same page (in the group **Pages, queries and the server**).
+
+![Setup > Cache management: the counts, Clear all caches, Clear content caches, Clear template caches, Clear INI caches, Measure sizes, and the caches grouped by what they hold](images/update-caches.webp)
+
+### 5. Check the site
+
+- Open the **front page** and a few typical pages of the public site (with **Let my own address still see the site**
+  ticked you see the site, everyone else the maintenance page). Sign in to the administration again and open a
+  content item.
+- **Setup** > **Log files**: **Error digest** lists the distinct errors and warnings of the last 24 hours, most frequent
+  first; **Log health** shows the disk the logs use, the fastest growing logs, the files the web server cannot write
+  and the newest error of each log. New errors since the update are the ones to look at.
+- **Setup** > **Upgrade check** once more, if you changed anything.
+
+![Setup > Log files > Log health: disk use against the budget, the fastest growing logs, logs over their size limit, files the web server cannot write, and every log with its newest error](images/update-logs.webp)
+
+### 6. Leave the window
+
+Only when everything above passes: **Setup** > **Maintenance** > **Bring the site back online**. If something does
+not pass and cannot be fixed now, go back to the state before the update (in Git Manager, check out the commit the
+site ran before from the **Commits log**, or from a shell `git reset --hard ORIG_HEAD` and `composer update`; restore
+the database from the backup if a database update already ran), then bring the site back.
+
+**Checklist**
+
+- [ ] Backup made (**Setup** > **Backup**)
+- [ ] Maintenance on (**Setup** > **Maintenance** > **Take the site offline**)
+- [ ] Kernel updated (**Git Manager**: **Fetch now**, **Checkout** of the site's branch with **Regenerate autoloads**; badge **Up to date**)
+- [ ] Extensions updated (**Updates and packages**: **Check for updates**, **Preview (dry run)**, **Install updates**; switched off again)
+- [ ] **Upgrade check**: files and database consistent; the release's database update applied
+- [ ] Caches cleared (**Cache management** > **Clear all caches…**; Velocity's response cache too)
+- [ ] Front page, a few pages and the administration work
+- [ ] **Log files** > **Error digest**: no new errors
+- [ ] Maintenance off (**Bring the site back online**)
 
 ## Let it update itself
 

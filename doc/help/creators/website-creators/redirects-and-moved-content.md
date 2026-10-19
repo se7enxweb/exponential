@@ -70,7 +70,7 @@ to `www.example.com`. See [Going live: hosts, HTTPS and siteaccesses](going-live
 
 Forms and buttons that send visitors "back where they came from" only follow addresses of the site itself, so an
 attacker cannot use them to send visitors elsewhere ([Safe redirects](../../../features/6.0/safe-redirects.md)). Use
-the same functions in your own code (Forms, CSRF protection and HTTP input).
+the same functions in your own code ([Forms, CSRF protection and HTTP input](../app-creators/forms-csrf-and-http-input.md)).
 
 ## Checklist
 

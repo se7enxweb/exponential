@@ -96,6 +96,10 @@ policy operators were added the same day, the class was renamed
 `has_` names. The `member_of_*` names were never part of a release; if you
 copied an example from a development snapshot, replace `member_of_` by `has_`.
 
+Until 18 October 2026 the class was not registered with the template engine, so a template that used one of the
+operators got "unknown operator". Since then `lib/eztemplate/classes/eztemplateautoload.php` registers all seven;
+`eZTemplateRoleOperatorRegistrationTest` checks the registration and renders each operator.
+
 The idea comes from the community extension `bcmemberofrole`.
 
 ## Related pages
