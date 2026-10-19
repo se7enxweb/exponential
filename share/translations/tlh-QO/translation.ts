@@ -72952,6 +72952,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>Exponential jInmol: nuq &apos;oH, chaw&apos;mey, He, QaH, ghom HoSghajmey, chay&apos; Qapla&apos; DanoblaH je.</translation>
     </message>
     <message>
+        <source>Clear filter</source>
+        <translation>Say'moHwI' yIchImmoH</translation>
+    </message>
+    <message>
         <source>Two ways to build</source>
         <translation>cha&apos; chenmoHmeH mIw</translation>
     </message>

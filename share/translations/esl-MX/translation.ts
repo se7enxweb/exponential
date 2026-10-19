@@ -77178,6 +77178,10 @@ Gracias por la retroalimentación</translation>
         <translation>El proyecto Exponential: qué es, sus licencias, la hoja de ruta, el soporte, los canales de la comunidad y cómo contribuir y donar.</translation>
     </message>
     <message>
+        <source>Clear filter</source>
+        <translation>Borrar filtro</translation>
+    </message>
+    <message>
         <source>Two ways to build</source>
         <translation>Dos formas de construir</translation>
     </message>

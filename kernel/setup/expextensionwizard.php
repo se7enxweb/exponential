@@ -383,6 +383,17 @@ abstract class expExtensionWizard
              . "</extension>\n";
     }
 
+    /**
+     * composer.json for the extension.
+     *
+     * The legacy extension installer (type ezpublish-legacy-extension) names the folder below extension/ after
+     * extra.ezpublish-legacy-extension-name, and without it after the part of the package name behind the slash,
+     * which has dashes where the extension name has underscores. So the key is always written, and the folder
+     * is the extension name. installer-name is kept for installers that read that key instead.
+     *
+     * @param array $settings
+     * @return string
+     */
     protected static function composerJson( array $settings )
     {
         $package = array(
@@ -391,7 +402,8 @@ abstract class expExtensionWizard
             'type'        => 'ezpublish-legacy-extension',
             'license'     => $settings['licence'],
             'require'     => array( 'php' => '>=7.4' ),
-            'extra'       => array( 'installer-name' => $settings['name'] ),
+            'extra'       => array( 'ezpublish-legacy-extension-name' => $settings['name'],
+                                    'installer-name' => $settings['name'] ),
         );
 
         if ( $settings['author'] !== '' )

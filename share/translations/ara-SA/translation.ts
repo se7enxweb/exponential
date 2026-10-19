@@ -72981,6 +72981,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>مشروع Exponential: ما هو، وتراخيصه، وخارطة طريقه، والدعم، وقنوات المجتمع، وكيف تساهم وتتبرع.</translation>
     </message>
     <message>
+        <source>Clear filter</source>
+        <translation>مسح عامل التصفية</translation>
+    </message>
+    <message>
         <source>Two ways to build</source>
         <translation>طريقتان للبناء</translation>
     </message>

@@ -73052,6 +73052,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Clear filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Two ways to build</source>
         <translation type="unfinished"></translation>
     </message>

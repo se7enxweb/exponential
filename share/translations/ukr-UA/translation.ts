@@ -72937,6 +72937,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Проєкт Exponential: що це, його ліцензії, дорожня карта, підтримка, канали спільноти та як долучитися й підтримати.</translation>
     </message>
     <message>
+        <source>Clear filter</source>
+        <translation>Очистити фільтр</translation>
+    </message>
+    <message>
         <source>Two ways to build</source>
         <translation>Два способи створення</translation>
     </message>

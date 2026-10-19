@@ -80176,6 +80176,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Das Exponential-Projekt: was es ist, seine Lizenzen, die Roadmap, Support, Community-Kanäle und wie Sie beitragen und spenden.</translation>
     </message>
     <message>
+        <source>Clear filter</source>
+        <translation>Filter leeren</translation>
+    </message>
+    <message>
         <source>Two ways to build</source>
         <translation>Zwei Wege zu bauen</translation>
     </message>

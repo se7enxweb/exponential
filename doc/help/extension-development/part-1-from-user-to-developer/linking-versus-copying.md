@@ -74,7 +74,7 @@ rollback so that a failed conversion leaves the content untouched.
 That is close to the real first commit of `se7enxweb/expchangeclass` (commit `7c3f164`), which says the extension was
 "forked from eZChangeclass and hardened for PHP 8". When you merge a contributor's pull request, merge it as a merge
 commit so their own commits, with their names, stay in the history (see
-Pull request etiquette).
+[Pull request etiquette](../part-5-extend-fork-contribute/pull-request-etiquette.md)).
 
 ## Giving credit in a help page
 
@@ -99,6 +99,6 @@ That is fair, honest and helps the next reader find the original discussion.
 
 - Previous: [Reading licenses before you reuse anything](reading-licenses-before-reusing.md)
 - Next: [Evaluating an old extension before you use it](evaluating-an-old-extension.md)
-- Attribution and copyright notices
-- Rebranding ethically
+- [Attribution and copyright notices](../part-5-extend-fork-contribute/attribution-and-copyright-notices.md)
+- [Rebranding ethically](../part-5-extend-fork-contribute/rebranding-ethically.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

@@ -72952,6 +72952,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Inceptum Exponential: quid sit, licentiae, iter futurum, auxilium, canales communitatis, et quomodo conferas et des.</translation>
     </message>
     <message>
+        <source>Clear filter</source>
+        <translation>Filtrum purgare</translation>
+    </message>
+    <message>
         <source>Two ways to build</source>
         <translation>Duae viae aedificandi</translation>
     </message>

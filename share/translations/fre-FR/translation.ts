@@ -74347,6 +74347,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Le projet Exponential : ce qu&apos;il est, ses licences, sa feuille de route, le support, les canaux de la communauté, et comment contribuer et donner.</translation>
     </message>
     <message>
+        <source>Clear filter</source>
+        <translation>Effacer le filtre</translation>
+    </message>
+    <message>
         <source>Two ways to build</source>
         <translation>Deux façons de construire</translation>
     </message>

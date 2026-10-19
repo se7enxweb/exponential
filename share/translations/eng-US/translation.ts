@@ -73232,6 +73232,10 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</translation>
     </message>
     <message>
+        <source>Clear filter</source>
+        <translation>Clear filter</translation>
+    </message>
+    <message>
         <source>Two ways to build</source>
         <translation>Two ways to build</translation>
     </message>
