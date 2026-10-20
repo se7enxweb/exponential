@@ -12,7 +12,7 @@ type: help
 Teil 5, Kapitel 6. Wenn Sie Code aus mehreren Quellen in eine Erweiterung bringen (eine Bibliothek, ein Codeschnipsel,
 die Klasse einer anderen Erweiterung), müssen deren Lizenzen zueinander passen. Teil 1 hat die Lizenzen einzeln
 vorgestellt
-([Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md),
+([Lizenzen lesen, bevor Sie etwas wiederverwenden](../teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md),
 mit der Tabelle „Combining licenses: a quick table“). Dieses Kapitel geht weiter: warum die Kombinationen so
 funktionieren, wie sie funktionieren, und wie Sie festhalten, was Sie kombiniert haben.
 
@@ -94,6 +94,6 @@ dann nur unter GPL 3 verbreitet werden. Sagen Sie das in Ihrer README, oder wäh
 
 - Zurück: [Ethisches Rebranding](ethisches-rebranding.md)
 - Weiter: [Namensnennung und Urheberrechtshinweise](namensnennung-und-urheberrechtshinweise.md)
-- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)
+- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md)
 - [Erweiterungen zurückgeben](../../erweiterungen-zurueckgeben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

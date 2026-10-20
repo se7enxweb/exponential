@@ -65,7 +65,7 @@ sie für jedes Release in ein Issue oder in Ihre Notizen und haken Sie sie ab.
 ## Verwandte Seiten
 
 - Zurück: [Der Wartungslebenszyklus](der-wartungslebenszyklus.md)
-- Weiter: [Teil 8: Referenz der eingebauten Funktionen für Erweiterungsautoren](../../../../eng-us/help/extension-development/part-8-reference/README.md)
+- Weiter: [Teil 8: Referenz der eingebauten Funktionen für Erweiterungsautoren](../teil-8-referenz/README.md)
 - [Teil 7: Ihre Erweiterung veröffentlichen](README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

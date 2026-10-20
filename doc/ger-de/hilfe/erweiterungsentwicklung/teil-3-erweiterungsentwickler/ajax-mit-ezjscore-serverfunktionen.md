@@ -138,7 +138,7 @@ Einstellungen; siehe
 
 - Zurück: [CSS und JavaScript in einer Erweiterung](css-und-javascript-in-einer-erweiterung.md)
 - Weiter: [Übersetzungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/translations-in-an-extension.md)
-- [Referenz der ezjscore-Serverfunktionen](../../../../eng-us/help/extension-development/part-8-reference/ezjscore-server-functions-reference.md)
+- [Referenz der ezjscore-Serverfunktionen](../teil-8-referenz/ezjscore-serverfunktionen-referenz.md)
 - [ezjscore-Dienste im Backend](../../../../eng-us/bc/6.0/backend_ezjscore_services.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

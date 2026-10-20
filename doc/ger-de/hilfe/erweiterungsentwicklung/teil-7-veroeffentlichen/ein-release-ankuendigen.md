@@ -19,7 +19,7 @@ müssen die Erweiterung finden. Dieses Kapitel behandelt, wo Sie ankündigen und
 |---|---|---|
 | Das GitHub-Release | alle, die das Repository beobachten | die Release Notes ([GitHub-Releases und Release Notes](github-releases-und-release-notes.md)) |
 | [share.exponential.earth](https://share.exponential.earth) | die Community: ihre Foren haben eines für Erweiterungen | einen kurzen Beitrag zu Releases, auf die es ankommt: eine neue Erweiterung, eine Major-Version, eine Sicherheitskorrektur |
-| [projects.exponential.earth](https://projects.exponential.earth) | Menschen, die das Verzeichnis der Community-Projekte durchsehen | die Projektseite der Erweiterung aktuell halten (Version, Links); siehe [projects.exponential.earth](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/projects-exponential-earth.md) |
+| [projects.exponential.earth](https://projects.exponential.earth) | Menschen, die das Verzeichnis der Community-Projekte durchsehen | die Projektseite der Erweiterung aktuell halten (Version, Links); siehe [projects.exponential.earth](../teil-1-vom-benutzer-zum-entwickler/projects-exponential-earth.md) |
 | [ezpedia.exponential.earth](https://ezpedia.exponential.earth) | Leser der Wissensdatenbank | einen Artikel, wenn das Release eine Technik mitbringt, die eine Erklärung wert ist |
 
 Nicht jedes Patch-Release braucht einen Beitrag. Eine neue Erweiterung, eine neue Major-Version und jedes

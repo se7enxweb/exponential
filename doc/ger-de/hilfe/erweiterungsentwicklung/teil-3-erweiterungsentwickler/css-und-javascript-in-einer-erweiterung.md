@@ -115,7 +115,7 @@ pro Anfrage). Deshalb:
 
 Die Administration verwendet jQuery 4 und den Namensraum `Exp` der Erweiterung `expui`; YUI wurde entfernt. Verwenden
 Sie diese, statt eine eigene Kopie einer Bibliothek mitzubringen; siehe
-[Die JavaScript-API von expui](../../../../eng-us/help/extension-development/part-8-reference/expui-javascript-api.md)
+[Die JavaScript-API von expui](../teil-8-referenz/expui-javascript-api.md)
 und [Vom alten jQuery zu jQuery 4](../../../../eng-us/help/extension-development/part-4-upgrading/old-jquery-to-jquery-4.md).
 
 ## Admin-Seiten gestalten
@@ -128,7 +128,7 @@ die Design-Tokens, bevor Sie eigenes CSS schreiben; siehe [Admin-Seiten im admin
 - Zurück: [Ein Design in einer Erweiterung](design-in-einer-erweiterung.md)
 - Weiter: [Ajax mit ezjscore-Serverfunktionen](ajax-mit-ezjscore-serverfunktionen.md)
 - [Content Security Policy für Autoren von Erweiterungen](content-security-policy-fuer-erweiterungen.md)
-- [Theme-Assets, der Packer und CSP](../../../../eng-us/help/extension-development/part-6-theme-developers/theme-assets-the-packer-and-csp.md)
+- [Theme-Assets, der Packer und CSP](../teil-6-theme-entwickler/theme-assets-der-packer-und-csp.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

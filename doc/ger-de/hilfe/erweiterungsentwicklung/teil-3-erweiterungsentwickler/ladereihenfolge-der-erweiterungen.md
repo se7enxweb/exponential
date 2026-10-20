@@ -53,7 +53,7 @@ tatsächliche Position von der geschriebenen abweicht, und listet Probleme mit A
 `eZExtension::activeExtensions()` die Reihenfolge zurück, die der Kernel verwendet.
 
 Die Designkette zeigt die Auswirkung auf Templates direkt; das Skript in
-[Die Designkette](../../../../eng-us/help/extension-development/part-2-builder/the-design-chain.md) gibt sie aus.
+[Die Designkette](../teil-2-builder/die-design-kette.md) gibt sie aus.
 
 ## Erweiterungen in mehr als einem Ordner
 

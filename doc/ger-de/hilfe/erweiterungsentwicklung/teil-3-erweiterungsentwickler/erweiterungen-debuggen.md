@@ -46,7 +46,7 @@ Installation auf Konfiguration, die nicht funktionieren kann, und nennt für jed
 ## Echte Fehler
 
 - **Debug-Ausgabe**: Fehler mit ihrer Template-Datei und Zeile, Zeitmessung, SQL
-  ([Debug-Ausgabe und Protokolle für Entwickler](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/debug-output-and-logs-for-developers.md)).
+  ([Debug-Ausgabe und Protokolle für Entwickler](../teil-1-vom-benutzer-zum-entwickler/debug-ausgabe-und-logs-fuer-entwickler.md)).
 - **`eZDebug::writeDebug()`**-Zeilen rund um den verdächtigen Code; entfernen Sie sie danach wieder.
 - **Ein Skript mit geladenem Kernel**, um Ihre Klasse direkt aufzurufen: `php bin/php/ezexec.php <script.php>`. Die
   meisten Beispiele in diesem Buch wurden so geprüft.

@@ -55,8 +55,8 @@ Einstellungen mit Geheimnissen), und behalten Sie den Rest.
 | [ezpedia.exponential.earth](https://ezpedia.exponential.earth) | die Wissensdatenbank der Community, in der Artikel Ihre Erweiterung beschreiben und verlinken können |
 
 Teil 1 beschreibt jede Website und was Sie dort finden
-([projects.exponential.earth](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/projects-exponential-earth.md),
-[ezpedia.exponential.earth](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/ezpedia-exponential-earth.md)).
+([projects.exponential.earth](../teil-1-vom-benutzer-zum-entwickler/projects-exponential-earth.md),
+[ezpedia.exponential.earth](../teil-1-vom-benutzer-zum-entwickler/ezpedia-exponential-earth.md)).
 
 ## Teilen Sie, was Sie lernen
 

@@ -136,7 +136,7 @@ aufgeführt.
 - Zurück: [Cronjob-Teile](cronjob-teile.md)
 - Weiter: [Ein Design in einer Erweiterung](design-in-einer-erweiterung.md)
 - [Die Console](../../../../eng-us/bc/6.0/console.md)
-- [eZScript und eZCLI](../../../../eng-us/help/extension-development/part-8-reference/ezscript-and-ezcli.md)
+- [eZScript und eZCLI](../teil-8-referenz/ezscript-und-ezcli.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

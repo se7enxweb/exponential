@@ -26,8 +26,8 @@ weiter ihre Aufgabe.
 | Weg | Was er ändert | Kapitel |
 |---|---|---|
 | 1. Eine Einstellung in `settings/*.ini.append.php` Ihrer Erweiterung | alles, was das Original aus seiner INI-Datei liest | [Einstellungen in einer Erweiterung](../../../../eng-us/help/extension-development/part-3-extension-developer/settings-in-an-extension.md) |
-| 2. Ein Template in Ihrem Design | wie eine Seite oder ein Teil aussieht | [Die Design-Kette](../../../../eng-us/help/extension-development/part-2-builder/the-design-chain.md) |
-| 3. Eine Template-Override-Regel (`override.ini`) | ein Template für eine Klasse, einen Knoten, eine Sektion oder einen View-Modus | [Template-Overrides](../../../../eng-us/help/extension-development/part-2-builder/template-overrides-basics.md) |
+| 2. Ein Template in Ihrem Design | wie eine Seite oder ein Teil aussieht | [Die Design-Kette](../teil-2-builder/die-design-kette.md) |
+| 3. Eine Template-Override-Regel (`override.ini`) | ein Template für eine Klasse, einen Knoten, eine Sektion oder einen View-Modus | [Template-Overrides](../teil-2-builder/grundlagen-der-template-overrides.md) |
 | 4. Ein eigener Template-Operator oder eine eigene Fetch-Funktion | was Templates berechnen oder laden können | [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md) |
 | 5. Ein Event-Listener oder Filter | was vor oder nach Aktionen des Kernels geschieht | [Events, Listener und Filter](../teil-3-erweiterungsentwickler/ereignisse-und-filter.md) |
 | 6. Ein Handler, der über eine Einstellung benannt wird | ein ganzer Dienst (Mail-Transport, Bild-Handler, Suche) | [Handler, die über Einstellungen benannt werden](../teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md) |

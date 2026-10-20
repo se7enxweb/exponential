@@ -79,7 +79,7 @@ Beste aus beiden übernimmt und behebt, was keiner von beiden hatte.
 
 - Zurück: [Erweitern, ohne zu forken](erweitern-ohne-zu-forken.md)
 - Weiter: [Auf GitHub forken, Schritt für Schritt](auf-github-forken.md)
-- [Eine alte Erweiterung bewerten](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/evaluating-an-old-extension.md)
+- [Eine alte Erweiterung bewerten](../teil-1-vom-benutzer-zum-entwickler/eine-alte-erweiterung-bewerten.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

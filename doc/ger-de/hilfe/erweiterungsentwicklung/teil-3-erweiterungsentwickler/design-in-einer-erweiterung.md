@@ -12,7 +12,7 @@ type: help
 Teil 3, Kapitel 22. Fast jede Erweiterung hat Templates: die Seiten ihres Moduls, die Ansichten ihres Datentyps, die
 Bildschirme der Administration. Sie liegen in einem Ordner `design/` der Erweiterung und werden über die Designkette
 gefunden. Dieses Kapitel richtet sich an Autoren von Erweiterungen; ein ganzes **Theme** zu bauen beschreibt
-[Teil 6](../../../../eng-us/help/extension-development/part-6-theme-developers/README.md).
+[Teil 6](../teil-6-theme-entwickler/README.md).
 
 ## Den Designordner registrieren
 
@@ -28,7 +28,7 @@ DesignExtensions[]=mysite_hello
 ```
 
 Jedes `extension/mysite_hello/design/<design>/` ist dann Teil der Designkette für Siteaccesses, die `<design>`
-verwenden ([Die Designkette](../../../../eng-us/help/extension-development/part-2-builder/the-design-chain.md)).
+verwenden ([Die Designkette](../teil-2-builder/die-design-kette.md)).
 
 ## Welcher Designordner
 

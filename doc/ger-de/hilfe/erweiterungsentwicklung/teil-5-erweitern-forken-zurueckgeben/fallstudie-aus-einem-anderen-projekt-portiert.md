@@ -72,7 +72,7 @@ Die Namensnennung steht an jeder Stelle, die dieses Buch empfiehlt
 
 Manche Erweiterungen sind keine Portierungen, sondern Neuimplementierungen: Sie übernehmen die Ideen eines anderen
 Projekts und schreiben neuen Code für Exponential. Ideen sind nicht so geschützt wie Code
-([Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)),
+([Lizenzen lesen, bevor Sie etwas wiederverwenden](../teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md)),
 aber es ist trotzdem richtig zu sagen, woher sie stammen. Die Exponential-Layouts-Erweiterungen tun das in ihren
 READMEs („an Exponential Legacy port inspired by“ die entsprechenden Pakete eines anderen Projekts). Sobald echter
 Code, Templates oder JavaScript aus dem anderen Projekt enthalten sind, ist es eine Portierung im Sinne dieses

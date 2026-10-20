@@ -9,7 +9,7 @@ type: help
 ---
 # Teil 5: Erweitern, fair forken und zurückgeben
 
-Dies ist der fünfte Teil von [Erweiterungsentwicklung: das Buch](../../../../eng-us/help/extension-development/README.md).
+Dies ist der fünfte Teil von [Erweiterungsentwicklung: das Buch](../README.md).
 Kaum jemand schreibt eine Erweiterung allein und aus dem Nichts. Sie bauen auf dem Kernel auf, auf den Erweiterungen
 anderer und auf Bibliotheken. In diesem Teil geht es darum, das gut zu machen: technisch (wie Sie den Code eines
 anderen ändern, ohne dessen Updates zu verlieren) und fair (wie Sie die Namensnennung erhalten, die Lizenz achten und
@@ -55,8 +55,8 @@ um Geld, einen Kundenvertrag oder einen Streit geht, fragen Sie jemanden mit ent
 - Zurück: [Fallstudie: kleine PHP-8-Korrekturen in vielen Erweiterungen](../../../../eng-us/help/extension-development/part-4-upgrading/case-study-small-fixes-across-many-extensions.md)
 - Weiter: [Erweitern, ohne zu forken](erweitern-ohne-zu-forken.md)
 - [Erweiterungen zurückgeben](../../erweiterungen-zurueckgeben.md)
-- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md)
-- [Erweiterungsentwicklung: das Buch](../../../../eng-us/help/extension-development/README.md)
+- [Lizenzen lesen, bevor Sie etwas wiederverwenden](../teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md)
+- [Erweiterungsentwicklung: das Buch](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

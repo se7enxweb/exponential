@@ -109,7 +109,7 @@ zu lernen; siehe
 - Zurück: [Teil 3: Der Erweiterungsentwickler](README.md)
 - Weiter: [ezinfo.php: wer sie gemacht hat und welche Version](ezinfo-php.md)
 - [Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-extension-points.md)
-- [Was eine Erweiterung ist](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/what-an-extension-is.md)
+- [Was eine Erweiterung ist](../teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -102,7 +102,7 @@ verwendet die GNU FDL 1.3, die es jedem erlaubt, sie zu kopieren, zu übersetzen
 - Zurück: [Leistung in Erweiterungen](../../../../eng-us/help/extension-development/part-3-extension-developer/performance-in-extensions.md)
 - Weiter: [Tutorials: echte Erweiterungen Schritt für Schritt bauen](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/README.md)
 - [Das Hilfesystem](../../../../eng-us/features/6.0/help-system.md), [Spezifikation des Hilfesystems](../../../spezifikationen/6.0/hilfesystem.md)
-- [Das Hilfesystem für Erweiterungen](../../../../eng-us/help/extension-development/part-8-reference/help-system-for-extensions.md)
+- [Das Hilfesystem für Erweiterungen](../teil-8-referenz/hilfesystem-fuer-erweiterungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

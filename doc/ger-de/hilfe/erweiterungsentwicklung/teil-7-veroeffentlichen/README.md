@@ -9,7 +9,7 @@ type: help
 ---
 # Teil 7: Ihre Erweiterung veröffentlichen
 
-Dies ist der siebte Teil von [Erweiterungsentwicklung: das Buch](../../../../eng-us/help/extension-development/README.md).
+Dies ist der siebte Teil von [Erweiterungsentwicklung: das Buch](../README.md).
 Ein Release macht aus „dem Code in meinem Repository“ die „Version 1.2.3, die Sie installieren können und auf die Sie
 sich verlassen können“. Es ist ein Versprechen: dass diese Version immer genau diese Dateien bedeutet. Dieser Teil
 zeigt, wie Sie dieses Versprechen sorgfältig geben, denn sobald eine Version veröffentlicht ist, lässt sie sich nicht
@@ -44,11 +44,11 @@ ersten Mal richtig zu machen.
 
 ## Verwandte Seiten
 
-- Zurück: [Wo die Hilfe für Designer weitergeht](../../../../eng-us/help/extension-development/part-6-theme-developers/where-the-designers-help-continues.md)
+- Zurück: [Wo die Hilfe für Designer weitergeht](../teil-6-theme-entwickler/wo-die-hilfe-fuer-designer-weitergeht.md)
 - Weiter: [Regeln für Versionsnummern](regeln-fuer-versionsnummern.md)
 - [Spezifikation: Metadaten von Extensions](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Erweiterungen zurückgeben](../../erweiterungen-zurueckgeben.md)
-- [Erweiterungsentwicklung: das Buch](../../../../eng-us/help/extension-development/README.md)
+- [Erweiterungsentwicklung: das Buch](../README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -12,7 +12,7 @@ type: help
 Teil 3, Kapitel 20. Manche Arbeit sollte nicht während einer Seitenanfrage geschehen: eine Zusammenfassung versenden,
 einen Feed importieren, aufräumen. Eine Erweiterung liefert solche Arbeit als **Cronjob-Skript** aus, gruppiert in
 einem **Teil**, den die Crontab des Systems mit `runcronjobs.php` ausführt. Die Sicht des Builders beschreibt
-[Cronjobs für Builder](../../../../eng-us/help/extension-development/part-2-builder/cronjobs-for-builders.md); dies ist
+[Cronjobs für Builder](../teil-2-builder/cronjobs-fuer-builder.md); dies ist
 die Sicht des Entwicklers.
 
 ## Registrierung

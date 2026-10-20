@@ -164,7 +164,7 @@ Collection-Klasse; siehe
 - Zurück: [Template-Operatoren](../../../../eng-us/help/extension-development/part-3-extension-developer/template-operators.md)
 - Weiter: [Template-Funktionen](../../../../eng-us/help/extension-development/part-3-extension-developer/template-functions.md)
 - [Von Hand: eine Fetch-Funktion](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-fetch-function.md)
-- [Inhalte in Templates abrufen](../../../../eng-us/help/extension-development/part-2-builder/fetch-for-builders.md)
+- [Inhalte in Templates abrufen](../teil-2-builder/fetch-fuer-builder.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

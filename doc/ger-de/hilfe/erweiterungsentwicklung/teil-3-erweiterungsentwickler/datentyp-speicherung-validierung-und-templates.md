@@ -237,7 +237,7 @@ Aussehen in einem Stylesheet fest, nie in einem `style`-Attribut.
 
 - Zurück: [Datentypen](datentypen.md)
 - Weiter: [Workflow-Ereignistypen](../../../../eng-us/help/extension-development/part-3-extension-developer/workflow-event-types.md)
-- [Die API von eZDataType](../../../../eng-us/help/extension-development/part-8-reference/ezdatatype-api.md)
+- [Die API von eZDataType](../teil-8-referenz/ezdatatype-api.md)
 - [Von Hand: ein Datentyp](../../../../eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-datatype.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

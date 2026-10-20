@@ -105,7 +105,7 @@ beschreibt, und die Geschichte unangetastet gelassen.
 ## Verwandte Seiten
 
 - Zurück: [Fallstudie: ein Paket aus einem anderen Projekt mit Namensnennung portieren](fallstudie-aus-einem-anderen-projekt-portiert.md)
-- Weiter: [Teil 6: Theme-Entwickler](../../../../eng-us/help/extension-development/part-6-theme-developers/README.md)
+- Weiter: [Teil 6: Theme-Entwickler](../teil-6-theme-entwickler/README.md)
 - [Mit Pull Requests zurückgeben](mit-pull-requests-zurueckgeben.md)
 - [Pull-Request-Etikette](pull-request-etikette.md)
 - Der Pull Request selbst: `github.com/cjw-network/request-shield/pull/4`

@@ -21,7 +21,7 @@ Templates im Detail.
 Schreiben Sie einen Datentyp, wenn Redakteure eine Art von Wert eingeben müssen, die kein vorhandener Datentyp
 abdeckt, **und** der Wert zum Inhalt gehört (versioniert, übersetzt, durchsuchbar). Bevor Sie einen schreiben, prüfen
 Sie die Liste der verfügbaren Datentypen, wenn Sie einer Klasse ein Attribut hinzufügen, und den
-[Katalog](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/the-se7enxweb-extension-catalogue.md).
+[Katalog](../teil-1-vom-benutzer-zum-entwickler/der-se7enxweb-erweiterungskatalog.md).
 Eine Auswahl, eine Zahl mit Grenzen, eine Beziehung zu anderen Inhalten: All das gibt es bereits.
 
 ## Wie der Kernel ihn findet
@@ -97,7 +97,7 @@ Bei geladenem Kernel gab `eZDataType::create( 'mysiterating' )` ein Objekt der K
 
 Jede Methode hat in `eZDataType` eine Vorgabe; überschreiben Sie nur, was Ihr Typ braucht. Die vollständige Liste mit
 Signaturen steht in
-[Die API von eZDataType](../../../../eng-us/help/extension-development/part-8-reference/ezdatatype-api.md).
+[Die API von eZDataType](../teil-8-referenz/ezdatatype-api.md).
 
 ## Von echten Datentypen lernen
 

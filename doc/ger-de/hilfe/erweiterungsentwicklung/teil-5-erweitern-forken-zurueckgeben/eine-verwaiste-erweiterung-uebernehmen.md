@@ -24,7 +24,7 @@ Anzeichen, von denen keines für sich allein ein Beweis ist:
 | Issues und Pull Requests lange unbeantwortet | die Reiter „Issues“ und „Pull requests“ |
 | Das Repository ist archiviert | ein Hinweisbanner auf GitHub („This repository has been archived by the owner“) |
 | Die README sagt es | „no longer maintained“, „looking for a maintainer“ |
-| Sie läuft auf keiner unterstützten PHP-Version | [Eine alte Erweiterung bewerten](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/evaluating-an-old-extension.md) |
+| Sie läuft auf keiner unterstützten PHP-Version | [Eine alte Erweiterung bewerten](../teil-1-vom-benutzer-zum-entwickler/eine-alte-erweiterung-bewerten.md) |
 
 Eine Erweiterung, die einfach fertig ist (sie erledigt eine Sache, und das gut), hat vielleicht seit Jahren keine
 Commits und wird trotzdem gepflegt. Fragen Sie, bevor Sie etwas annehmen.

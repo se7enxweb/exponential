@@ -72,7 +72,7 @@ Legen Sie keine Geheimnisse oder personenbezogenen Daten in Pakete: Beispielinha
 - Zurück: [filelist.md5 und die Upgrade-Prüfung](filelist-md5-und-die-upgrade-pruefung.md)
 - Weiter: [Vor einem Release testen](vor-einem-release-testen.md)
 - [Anleitung zu Paketen](../../../anleitungen/pakete.md)
-- [Ein Theme verbreiten](../../../../eng-us/help/extension-development/part-6-theme-developers/distributing-a-theme.md)
+- [Ein Theme verbreiten](../teil-6-theme-entwickler/ein-theme-verteilen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

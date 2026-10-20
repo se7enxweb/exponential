@@ -10,7 +10,7 @@ type: help
 # Teil 3: Der Erweiterungsentwickler
 
 Dies ist der dritte und umfangreichste Teil von
-[Erweiterungsentwicklung: das Buch](../../../../eng-us/help/extension-development/README.md). Er erklärt, ein
+[Erweiterungsentwicklung: das Buch](../README.md). Er erklärt, ein
 Mechanismus pro Kapitel, wie eine Erweiterung PHP-Code in den Kernel einbindet: wohin der Code gehört, welche
 Einstellung ihn registriert, den Vertrag (Klasse und Methoden, aus dem Quellcode des Kernels übernommen), ein
 minimales Beispiel, das mit `php -l` geprüft und, wo es gefahrlos möglich war, mit geladenem Kernel ausgeführt wurde;
@@ -86,13 +86,13 @@ Hand gebaut, zum Abschluss eine Abschlusserweiterung von der Idee bis zum Releas
 
 ## Bevor Sie beginnen
 
-Sie sollten [Teil 1](../../../../eng-us/help/extension-development/part-1-from-user-to-developer/README.md) gelesen
-haben und die Werkzeuge des Builders aus [Teil 2](../../../../eng-us/help/extension-development/part-2-builder/README.md)
+Sie sollten [Teil 1](../teil-1-vom-benutzer-zum-entwickler/README.md) gelesen
+haben und die Werkzeuge des Builders aus [Teil 2](../teil-2-builder/README.md)
 kennen. Sie brauchen eine Entwicklungsinstallation mit eingeschalteter Debug-Ausgabe und grundlegende PHP-Kenntnisse.
 
 ## Verwandte Seiten
 
-- Zurück: [Wenn Einstellungen nicht ausreichen](../../../../eng-us/help/extension-development/part-2-builder/when-settings-are-not-enough.md)
+- Zurück: [Wenn Einstellungen nicht ausreichen](../teil-2-builder/wenn-einstellungen-nicht-reichen.md)
 - Weiter: [Der Verzeichnisaufbau einer Erweiterung](verzeichnisaufbau-einer-erweiterung.md)
 - [Erweiterungen: finden, installieren, konfigurieren, bauen und veröffentlichen](../../../anleitungen/extensions.md)
 - [Erweiterungspunkte](../../../../eng-us/bc/6.0/rad-extension-points.md)
