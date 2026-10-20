@@ -11052,7 +11052,7 @@ dd8219b03d60ce0dbee6e5abe1289f20  doc/eng-us/standards/patterns/workflow-event.m
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 94b0410f4d6d290ff0b4dc2b284451c4  doc/ger-de/.dirnames.json
-e9f34dcc656cfe5948045feb779d37d0  doc/ger-de/.paths.json
+18271184027d4459bf53523bae2e6360  doc/ger-de/.paths.json
 2ba7d4102f729a5fa7d53ff750a2cf06  doc/ger-de/anleitungen/README.md
 7751add00ddf65f0ea2d8e6510460828  doc/ger-de/anleitungen/aktualisieren.md
 88e9d7a7e41c216d27d0d009da451c34  doc/ger-de/anleitungen/api-schluessel.md
@@ -11264,6 +11264,7 @@ c7cdad89b2aa2773e38c8a2c86684c93  doc/ger-de/hilfe/hosting/betrieb/einwilligung-
 928d030202abeef7ef9e7aac4f1eee92  doc/ger-de/hilfe/hosting/betrieb/mailzustellung.md
 af7f698ac11431f88e5a896d67e9c38e  doc/ger-de/hilfe/hosting/betrieb/mehrere-web-knoten.md
 964db6a2baacc7b25103d76c2c04ca29  doc/ger-de/hilfe/hosting/betrieb/sicherheitslog.md
+3bbd99b8394a1c192a2083ff5c2045ca  doc/ger-de/hilfe/hosting/betrieb/systemkarte-fuer-hoster.md
 171d3102995a0c3990cb7a175d45e0f0  doc/ger-de/hilfe/hosting/betrieb/ueberblick-ueber-die-ueberwachung.md
 8a79f6f2136e211014b4781c527ebac3  doc/ger-de/hilfe/hosting/betrieb/wartungsmodus.md
 372cc5a679ca86bf234018faabb143a7  doc/ger-de/hilfe/hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md

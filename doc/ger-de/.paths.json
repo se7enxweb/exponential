@@ -210,6 +210,7 @@
     "hilfe/hosting/betrieb/mailzustellung.md": "help/hosting/operations/mail-delivery.md",
     "hilfe/hosting/betrieb/mehrere-web-knoten.md": "help/hosting/operations/several-web-nodes.md",
     "hilfe/hosting/betrieb/sicherheitslog.md": "help/hosting/operations/security-log.md",
+    "hilfe/hosting/betrieb/systemkarte-fuer-hoster.md": "help/hosting/operations/system-card-for-hosts.md",
     "hilfe/hosting/betrieb/ueberblick-ueber-die-ueberwachung.md": "help/hosting/operations/monitoring-overview.md",
     "hilfe/hosting/betrieb/wartungsmodus.md": "help/hosting/operations/maintenance-mode.md",
     "hilfe/hosting/betrieb/wiederherstellung-und-wiederherstellungstests.md": "help/hosting/operations/restore-and-restore-tests.md",
