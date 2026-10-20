@@ -62,3 +62,10 @@ per channel; the shipped channel blocks set both values, so change them per chan
 - [Long-term audit retention](../../records-and-archiving/long-term-audit-retention.md)
 - [Audit guide, 4.3 Retention](../../../../bc/6.0/audit.md#43-retention)
 - [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../../partners/partners-start-here.md) and [How to apply](../../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -515,3 +515,10 @@ loaded: run `./console exp:velocity cache clear`, and after an update of the ker
   `design/admin4/templates/content/translations.tpl`, `translationview.tpl` and `translationnew.tpl` (the same in
   `design/admin`), tests `tests/tests/kernel/classes/expContentLanguagesOverviewTest.php` (no database) and
   `expContentLanguagesCountsLiveTest.php` (read-only, on an installation).
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

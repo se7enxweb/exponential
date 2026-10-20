@@ -267,3 +267,10 @@ From [Chapter 8, Checklist](../../../install/08-serving-the-site.md#89-checklist
 - [Velocity will not start](../runbooks/velocity-will-not-start.md)
 - [Velocity: running Exponential in a persistent-worker web server](../../../features/6.0/velocity-persistent-worker-server.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../partners/partners-start-here.md) and [How to apply](../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

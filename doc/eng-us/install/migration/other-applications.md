@@ -45,5 +45,12 @@ it, import it with remote ids, keep the addresses. This page gives the method an
 Every export of [Migrating away from Exponential](leaving-exponential.md) is a plain format (CSV, JSON, XML, SQL),
 so any application can load it with its own importer.
 
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->
+
 This page is part of the Exponential documentation and is free documentation under the GNU Free Documentation License
 1.3 or any later version ([the license of this documentation](../../README-LICENSE.md)).

@@ -96,3 +96,10 @@ at `expai/help`.
 - [Installing Exponential, section 10](../../../INSTALL.md#10-after-installing)
 - [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)
 - [Extensions index](README.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../../help/partners/partners-start-here.md) and [How to apply](../../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

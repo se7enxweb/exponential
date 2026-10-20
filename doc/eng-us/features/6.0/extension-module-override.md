@@ -70,3 +70,10 @@ different type no longer ends in a fatal error while the page is assembled.
 - [Behaviour changes of the legacy extensions](../../bc/6.0/extensions-behaviour-changes.md)
 - Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md) (module order), [6.0.5](../../../changelogs/6.0/6.0.5.md) (robustness fix)
 - History: [January 2024, second half](../../history/2024/2024-01b.md), [September 2024](../../history/2024/2024-09.md), [October 2024](../../history/2024/2024-10.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -176,3 +176,10 @@ HTTP/2. An uncaught exception's message is never sent to the client unless `Q.we
 - Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (credential store, trust rule), [Velocity engines](../../bc/6.0/velocity-engines.md) (views and who may open them from Exponential)
 - [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [July 2026](../../history/velocity/2026-07.md) (first panel), [24 September](../../history/velocity/2026-09d.md) (passwords, domains), [25 to 30 September](../../history/velocity/2026-09e.md) (SSL, cache, two-factor)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -117,3 +117,10 @@ newer library from another extension, say so in the commit, the changelog and th
 - [From old jQuery to jQuery 4](old-jquery-to-jquery-4.md)
 - [jQuery 4 in the admin, and YUI gone](../../../features/6.0/jquery4-and-yui-removal.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../partners/partners-start-here.md) and [How to apply](../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

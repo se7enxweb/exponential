@@ -316,3 +316,10 @@ empty in every installation, new or upgraded, so nothing changes until you add a
 - Feature pages: [Template editor](../features/6.0/template-editor-overrides.md), [Template path comments](../features/6.0/template-path-comments.md), [Icon themes in extensions](../features/6.0/icon-themes-in-extensions.md), [Hidden admin tabs](../features/6.0/hidden-admin-tabs.md).
 - Upgrade notes: [Debug bar](../bc/6.0/debug-bar.md), [Pagination settings](../bc/6.0/pagination-settings.md).
 - [Extensions](extensions.md): carry your design in an extension of its own.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

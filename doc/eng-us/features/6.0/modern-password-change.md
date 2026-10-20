@@ -131,3 +131,10 @@ working unchanged. The variables and the `data-exp-password-*` hooks of the shar
 ## Demo mode
 
 On a public demo (environment variable `EXP_DEMO_MODE=1`) the page refuses to change the password of an administrator: it shows "This installation is a public demo: the passwords of administrators cannot be changed or reset." before anything is typed (`demo_mode_locked`, `demo_mode_text`) and in the error summary after a post, and nothing is changed. A design that overrides `user/password.tpl` shows the notice with `first_set( $demo_mode_locked, false() )`. [Demo mode](../../bc/6.0/demo-mode.md).
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

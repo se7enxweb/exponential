@@ -68,3 +68,10 @@ See [Subitems "More actions" menu](../../../bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_ME
 - [Change ledger](../../../history/ledger/nxc_powercontent.md)
 - [Behaviour changes of the extensions](../../../bc/6.0/extensions-behaviour-changes.md)
 - Months: [2024-10](../../../history/extensions/months/2024-10.md), [2025-12](../../../history/extensions/months/2025-12.md), [2026-06](../../../history/extensions/months/2026-06.md), [2026-07](../../../history/extensions/months/2026-07.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../../help/partners/partners-start-here.md) and [How to apply](../../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

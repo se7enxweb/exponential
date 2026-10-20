@@ -301,3 +301,10 @@ A digest test needs no waiting: create the event with a time in the future,
 - [The specification](../specifications/6.0/notifications.md), [the INI reference](../specifications/6.0/notifications-ini.md), [the command reference](../specifications/6.0/notifications-cli.md)
 - [The administrator's guide](notifications-administrator.md), [the user's guide](../features/6.0/notifications.md)
 - [Extensions](extensions.md), [commands, cronjob parts and module views as classes](../specifications/6.0/runnable-commands-cronjobs-views.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

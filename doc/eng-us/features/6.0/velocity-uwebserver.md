@@ -143,3 +143,10 @@ Other options: `--access-log` (common, combined or json), `--error-log`, `--quie
 - Upgrade: [Velocity engine upgrade notes](../../bc/6.0/velocity-engine-upgrade-notes.md) (the `0.0.4.42` defaults)
 - [Changelog: Exponential Velocity engine](../../../changelogs/extensions/exponential-velocity.md)
 - History: [August 2026](../../history/velocity/2026-08.md) (first C benchmark server), [25 to 30 September](../../history/velocity/2026-09e.md) (the rebuild)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

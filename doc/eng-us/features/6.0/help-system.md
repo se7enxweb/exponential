@@ -472,3 +472,10 @@ and the previous/next links swap sides and their arrows turn, while paths, code 
 right. Every page has one `h1`, named navigation landmarks, labels for each search field and filter, a visible
 focus ring on everything that takes the keyboard, and a note on each link that opens a new window; `/` moves to
 the help search, and the instant results are announced to screen readers.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

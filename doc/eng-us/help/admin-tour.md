@@ -280,3 +280,10 @@ Which pages use a layout is decided by its **mappings**; see
 Curious how the administration is made, or want to change your site's templates and code? Every part of Exponential
 is free software with its full history on GitHub. [Develop with Git](develop-with-git.md) shows how to install it as
 Git clones and grow from user to developer, one step at a time.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](partners/partners-start-here.md) and [How to apply](partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -81,3 +81,10 @@ A new template file or override rule also needs `template-override`; a styleshee
 - [Velocity engines: deploying a PHP change](../../../bc/6.0/velocity-engines.md)
 - [Velocity web server](../../../features/6.0/velocity-web-server.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../partners/partners-start-here.md) and [How to apply](../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

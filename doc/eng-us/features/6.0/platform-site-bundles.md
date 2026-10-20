@@ -81,3 +81,10 @@ old repository interface name working on Ibexa DXP 4.x and 5.0.
 - Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - Changelog: [platform changelog](../../../changelogs/extensions/exponential-platform.md)
 - History: [site-bundle](../../history/ecosystem/site-bundle.md), [site-legacy-bundle](../../history/ecosystem/site-legacy-bundle.md), [ngsymfonytools](../../history/ecosystem/ngsymfonytools.md), [metadata-bundle](../../history/ecosystem/metadata-bundle.md), [mediata-ezpage-fieldtype-bundle-main](../../history/ecosystem/mediata-ezpage-fieldtype-bundle-main.md), [ez-support-tools](../../history/ecosystem/ez-support-tools.md), [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

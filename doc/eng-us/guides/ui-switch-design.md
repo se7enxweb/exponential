@@ -235,3 +235,10 @@ without the feature. A stored choice is ignored; with `[UISwitch_design] Enabled
 - [Developer notes: the administration design switch](../bc/6.0/ui-switch-design.md)
 - [UI switch](../features/6.0/ui-switch.md) and [its settings](ui-switch-settings.md)
 - [Roles and policies](roles-and-policies.md), [Caches](caches.md), [Templates and design](templates-and-design.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

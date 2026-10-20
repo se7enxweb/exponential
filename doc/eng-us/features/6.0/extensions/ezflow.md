@@ -78,3 +78,10 @@ and clear the template and content caches. `./console exp:ezchecktranslation ger
 - [Chronicle](../../../history/extensions/ezflow.md) and [release notes](../../../../changelogs/extensions/ezflow.md)
 - [Change ledger](../../../history/ledger/ezflow.md)
 - Months: [2023-12](../../../history/extensions/months/2023-12.md), [2024-01](../../../history/extensions/months/2024-01.md), [2026-09](../../../history/extensions/months/2026-09.md), [2026-10](../../../history/extensions/months/2026-10.md) (all extensions)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../../help/partners/partners-start-here.md) and [How to apply](../../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -168,3 +168,10 @@ rendering noise of the live site).
   Other module pages (setup, roles, classes, the edit forms' side menus) and untranslated English interface text
   inside a right-to-left page still follow the plain Unicode bidirectional algorithm; the cure for the latter is the
   translation.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

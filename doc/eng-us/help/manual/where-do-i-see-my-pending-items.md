@@ -43,3 +43,10 @@ Every user who can edit content. You see only your own pending versions.
 - [Drafts and pending items](../../guides/drafts-and-pending.md)
 - [Approvals and review](../customers/day-to-day/approvals-and-review.md)
 - [User manual](README.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../partners/partners-start-here.md) and [How to apply](../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

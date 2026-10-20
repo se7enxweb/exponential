@@ -116,3 +116,10 @@ php vendor/bin/phpunit --no-configuration --bootstrap extension/sevenx_authentic
 
 By use: sign in with a test user, set up the app, sign out, sign in with a code, try a wrong code and the same code
 twice, then turn it off with a current code. Never enrol a real administrator account while trying it out.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

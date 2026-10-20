@@ -74,3 +74,10 @@ php -v
 - Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
 - Changelog: [platform changelog](../../../changelogs/extensions/exponential-platform.md)
 - History: [symfony](../../history/ecosystem/symfony.md), [twig](../../history/ecosystem/twig.md), [DoctrineBundle](../../history/ecosystem/DoctrineBundle.md), [doctrine-dbal-schema](../../history/ecosystem/doctrine-dbal-schema.md), [PHP-Parser](../../history/ecosystem/PHP-Parser.md), [ezpublish-kernel](../../history/ecosystem/ezpublish-kernel.md), [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md), [April 2025](../../history/2025/2025-04.md), [September 2025](../../history/2025/2025-09.md), [December 2025](../../history/2025/2025-12.md), [February 2026](../../history/2026/2026-02.md), [March 2026](../../history/2026/2026-03.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

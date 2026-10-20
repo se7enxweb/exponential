@@ -273,3 +273,10 @@ Setup > Cronjobs are not seen. Send their output to `var/log/cronjob-<part>.log`
   needs.
 - [Operating system support](../help/os-support.md): the operating systems, processors, web servers and PHP SAPIs the
   Server and PHP cards may show, sorted into tiers.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -428,3 +428,10 @@ Everything else on this page was written from the Exponential 6 source code.
   [chapter 13: Security hardening for production](../install/13-security-hardening.md)
 - [Two-step sign-in](../guides/two-factor-login.md), [Sessions](../guides/sessions.md),
   [Check user accounts](../features/6.0/user-hygiene.md), [Audit](../bc/6.0/audit.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](partners/partners-start-here.md) and [How to apply](partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

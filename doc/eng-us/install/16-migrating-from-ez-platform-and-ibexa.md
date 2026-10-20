@@ -1369,3 +1369,10 @@ Frameworks and PHP:
   [PostgreSQL ALTER TABLE](https://www.postgresql.org/docs/current/sql-altertable.html).
 
 [Contents](README.md) · Previous: [15. Migrating from the 5.x legacy stack](15-migrating-from-5x-legacy.md) · Next: [17. Migration reference](17-migration-reference.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

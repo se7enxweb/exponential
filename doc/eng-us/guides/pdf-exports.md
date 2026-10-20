@@ -124,3 +124,10 @@ removed. Reloading never removes twice.
 - `expPDFExportForm::read()`: the form, with the checks that need the database passed in.
 - Tests without a database: `php vendor/bin/phpunit tests/tests/kernel/classes/expPDFExportTest.php`.
 - Velocity: the classes are kernel classes; deploy with `exp:velocity deploy --kernel`.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

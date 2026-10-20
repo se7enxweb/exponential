@@ -52,3 +52,10 @@ replace it later ([A pushed tag is permanent](a-pushed-tag-is-permanent.md)).
 - [Writing release notes](writing-release-notes.md)
 - [Keeping Packagist up to date automatically](packagist-auto-update.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../partners/partners-start-here.md) and [How to apply](../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

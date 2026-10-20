@@ -96,3 +96,10 @@ Losing the key means everyone sets the app up again.
 - [Two-factor sign-in (hosting)](../../../hosting/security/two-factor-sign-in.md)
 - [Security and audit, step 5](../../../../guides/security-and-audit.md#5-two-factor-sign-in-optional-10-minutes)
 - [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../../partners/partners-start-here.md) and [How to apply](../../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -123,3 +123,10 @@ The full detail of the options is the script's own help: `bash bin/shell/generat
 - [Package licenses and Semantic Versioning](package-licenses-and-versions.md), [the product is called Exponential](rebranding-to-exponential.md)
 - [Changelog 6.0.14](../../../changelogs/6.0/6.0.14.md)
 - History: [April 2026](../../history/2026/2026-04.md), [May 2026](../../history/2026/2026-05.md), [June 2026, first half](../../history/2026/2026-06a.md), [June 2026, second half](../../history/2026/2026-06b.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -87,3 +87,10 @@ Or let [the design extension wizard](design-extension-wizard.md) write all of it
 - [Tutorial: create a theme extension](../theme-design/tutorial-create-a-theme-extension.md)
 - [What a theme extension is](what-a-theme-extension-is.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../partners/partners-start-here.md) and [How to apply](../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

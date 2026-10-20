@@ -155,3 +155,10 @@ the same way when you are done. Every write made a backup under `var/backup/ini/
 - [Changing settings with exp:ini](../part-2-builder/the-exp-ini-command.md)
 - [Debugging templates](../part-2-builder/debugging-templates.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../partners/partners-start-here.md) and [How to apply](../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

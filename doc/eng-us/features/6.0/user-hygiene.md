@@ -269,3 +269,10 @@ Both use the link key `user_hygiene`, so a menu that lists links by key can name
 - [Roles, policies and unactivated users](../../guides/roles-and-policies.md)
 - [Security and audit](../../guides/security-and-audit.md)
 - [The admin4 design](admin4-design.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

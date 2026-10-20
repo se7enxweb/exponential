@@ -962,3 +962,10 @@ Code and packages:
   [psql](https://www.postgresql.org/docs/current/app-psql.html), [pgcrypto](https://www.postgresql.org/docs/current/pgcrypto.html).
 
 [Contents](README.md) · Previous: [13. Security hardening for production](13-security-hardening.md) · Next: [15. Migrating from the 5.x legacy stack](15-migrating-from-5x-legacy.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../help/partners/partners-start-here.md) and [How to apply](../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

@@ -136,3 +136,10 @@ method (`ezjscore.ini` documents it). Useful for returning rendered HTML fragmen
 - [ezjscore server functions reference](../part-8-reference/ezjscore-server-functions-reference.md)
 - [Backend ezjscore services](../../../bc/6.0/backend_ezjscore_services.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../partners/partners-start-here.md) and [How to apply](../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->
