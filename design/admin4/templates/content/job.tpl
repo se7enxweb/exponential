@@ -129,5 +129,5 @@
 </div>
 
 {if or( $finished|not, $job.just_finished )}
-{ezscript( array( 'page/content_job.js' ) )}
+{ezscript( array( 'a4_url.js', 'page/content_job.js' ) )}
 {/if}

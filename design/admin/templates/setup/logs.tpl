@@ -430,7 +430,7 @@
      data-text-level-debug="{'Debug'|i18n( 'design/admin/setup/logs' )|wash}"></div>
 {set-block variable=$log_state_block}{$log_state_json}{/set-block}
 <script type="application/json" id="log-state">{$log_state_block|explode( '<' )|implode( '\u003c' )|explode( '>' )|implode( '\u003e' )}</script>
-{ezscript( array( 'page/setup_logs_copy.js', 'page/setup_logs.js' ) )}
+{ezscript( array( 'a4_url.js', 'page/setup_logs_copy.js', 'page/setup_logs.js' ) )}
 
 </div></div></div>
 </div>
