@@ -25,7 +25,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 >   Map\[<module>\]=...                     every view of the module without an entry of its own  
 >   Map\[<design>:<module>/<view>\]=...     only in that design (admin4l, editor, admin, adminui ...); wins over the  
 >   Map\[<design>:<module>\]=...            same key without a design  
-> A page id is the path below doc/ (ext/<extension>/<path> for an extension's doc directory, \[IndexSettings\]  
+> A page id is the path below doc/eng-us/, the same in every language (ext/<extension>/<path> for an extension's doc directory, \[IndexSettings\]  
 > ExtensionDocDirs\[\]); the anchor is the heading's anchor as the viewer makes it. The lookup: Providers\[\], then  
 > design:module/view, module/view, design:module, module, then the help dashboard. An entry whose page the help does  
 > not serve (not written yet, not git-tracked, outside doc/) is skipped, so the next key answers.  

@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > The sections of the help, in dashboard order. A page's category: its front matter (category: editing), else the  
 > first PathRules\[\] that matches, else TypeDefaults\[<type>\]  
 
-Default: a list of 35: `getting-started`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `shortcuts`, `support`, `leadership`, `business` ....
+Default: a list of 45: `getting-started`, `manual`, `editing`, `media`, `publishing`, `search`, `languages`, `account`, `layouts`, `build-two-ways`, `shortcuts`, `support` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -31,6 +31,7 @@ Default: a list of 35: `getting-started`, `editing`, `media`, `publishing`, `sea
 # an empty "Categories[]" first replaces the shipped list; without it the items are added
 Categories[]
 Categories[]=getting-started
+Categories[]=manual
 Categories[]=editing
 Categories[]=media
 Categories[]=publishing
@@ -38,6 +39,7 @@ Categories[]=search
 Categories[]=languages
 Categories[]=account
 Categories[]=layouts
+Categories[]=build-two-ways
 Categories[]=shortcuts
 Categories[]=support
 Categories[]=leadership
@@ -48,15 +50,13 @@ Categories[]=theme-design
 Categories[]=templates
 Categories[]=extension-development
 Categories[]=theme-extensions
-Categories[]=theme-distribution
-Categories[]=theme-sales
-# ... 15 more in the shipped file
+# ... 25 more in the shipped file
 */ ?>
 ```
 
 ## CategoryNames
 
-Default: a hash of 35: `getting-started=Getting started`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `shortcuts=Keyboard shortcuts`, `support=Help and support`, `leadership=Project leadership`, `business=Sales and marketing` ....
+Default: a hash of 45: `getting-started=Getting started`, `manual=User manual`, `editing=Editing content`, `media=Images and media`, `publishing=Publishing`, `search=Search`, `languages=Languages`, `account=Your account`, `layouts=Layouts`, `build-two-ways=Two ways to build`, `shortcuts=Keyboard shortcuts`, `support=Help and support` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -65,6 +65,7 @@ Default: a hash of 35: `getting-started=Getting started`, `editing=Editing conte
 # an empty "CategoryNames[]" first replaces the shipped list; without it the items are added
 CategoryNames[]
 CategoryNames[getting-started]=Getting started
+CategoryNames[manual]=User manual
 CategoryNames[editing]=Editing content
 CategoryNames[media]=Images and media
 CategoryNames[publishing]=Publishing
@@ -72,6 +73,7 @@ CategoryNames[search]=Search
 CategoryNames[languages]=Languages
 CategoryNames[account]=Your account
 CategoryNames[layouts]=Layouts
+CategoryNames[build-two-ways]=Two ways to build
 CategoryNames[shortcuts]=Keyboard shortcuts
 CategoryNames[support]=Help and support
 CategoryNames[leadership]=Project leadership
@@ -82,9 +84,7 @@ CategoryNames[theme-design]=Theme design
 CategoryNames[templates]=Templates
 CategoryNames[extension-development]=Extension development
 CategoryNames[theme-extensions]=Theme extensions
-CategoryNames[theme-distribution]=Publishing and distribution
-CategoryNames[theme-sales]=Selling themes and services
-# ... 15 more in the shipped file
+# ... 25 more in the shipped file
 */ ?>
 ```
 
@@ -92,7 +92,7 @@ CategoryNames[theme-sales]=Selling themes and services
 
 > Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
 
-Default: a hash of 35: `getting-started=signpost-split`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `shortcuts=input-cursor-text`, `support=info-circle`, `leadership=diagram-3`, `business=graph-up-arrow` ....
+Default: a hash of 45: `getting-started=signpost-split`, `manual=question-circle`, `editing=pencil-square`, `media=images`, `publishing=journal-check`, `search=search`, `languages=translate`, `account=person-lock`, `layouts=layout-sidebar-inset`, `build-two-ways=signpost-split`, `shortcuts=input-cursor-text`, `support=info-circle` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -101,6 +101,7 @@ Default: a hash of 35: `getting-started=signpost-split`, `editing=pencil-square`
 # an empty "CategoryIcons[]" first replaces the shipped list; without it the items are added
 CategoryIcons[]
 CategoryIcons[getting-started]=signpost-split
+CategoryIcons[manual]=question-circle
 CategoryIcons[editing]=pencil-square
 CategoryIcons[media]=images
 CategoryIcons[publishing]=journal-check
@@ -108,6 +109,7 @@ CategoryIcons[search]=search
 CategoryIcons[languages]=translate
 CategoryIcons[account]=person-lock
 CategoryIcons[layouts]=layout-sidebar-inset
+CategoryIcons[build-two-ways]=signpost-split
 CategoryIcons[shortcuts]=input-cursor-text
 CategoryIcons[support]=info-circle
 CategoryIcons[leadership]=diagram-3
@@ -118,9 +120,7 @@ CategoryIcons[theme-design]=palette
 CategoryIcons[templates]=file-earmark-code
 CategoryIcons[extension-development]=puzzle
 CategoryIcons[theme-extensions]=puzzle
-CategoryIcons[theme-distribution]=box-seam
-CategoryIcons[theme-sales]=tag
-# ... 15 more in the shipped file
+# ... 25 more in the shipped file
 */ ?>
 ```
 
@@ -128,7 +128,7 @@ CategoryIcons[theme-sales]=tag
 
 > <pattern>;<category>, first match wins  
 
-Default: a list of 72: `doc/eng-us/help/leadership/*;leadership`, `doc/eng-us/help/business/*;business`, `doc/eng-us/help/partners/*;partnership`, `doc/eng-us/help/advocates/*;advocacy`, `doc/eng-us/help/designers/templates/*;templates`, `doc/eng-us/help/designers/*;theme-design`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creation`, `doc/eng-us/help/creators/website-creators/*;website-creation`, `doc/eng-us/help/creators/*;website-creation`, `doc/eng-us/help/supporters/*;supporting`, `doc/eng-us/help/sponsors/*;sponsorship` ....
+Default: a list of 80: `doc/eng-us/help/manual/*;manual`, `doc/eng-us/help/leadership/*;leadership`, `doc/eng-us/help/business/*;business`, `doc/eng-us/help/partners/*;partnership`, `doc/eng-us/help/advocates/*;advocacy`, `doc/eng-us/help/designers/templates/*;templates`, `doc/eng-us/help/designers/*;theme-design`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creation`, `doc/eng-us/help/creators/website-creators/*;website-creation`, `doc/eng-us/help/creators/*;website-creation`, `doc/eng-us/help/supporters/*;supporting` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -136,6 +136,7 @@ Default: a list of 72: `doc/eng-us/help/leadership/*;leadership`, `doc/eng-us/he
 [CategorySettings]
 # an empty "PathRules[]" first replaces the shipped list; without it the items are added
 PathRules[]
+PathRules[]=doc/eng-us/help/manual/*;manual
 PathRules[]=doc/eng-us/help/leadership/*;leadership
 PathRules[]=doc/eng-us/help/business/*;business
 PathRules[]=doc/eng-us/help/partners/*;partnership
@@ -148,15 +149,14 @@ PathRules[]=doc/eng-us/help/creators/website-creators/*;website-creation
 PathRules[]=doc/eng-us/help/creators/*;website-creation
 PathRules[]=doc/eng-us/help/supporters/*;supporting
 PathRules[]=doc/eng-us/help/sponsors/*;sponsorship
-PathRules[]=doc/eng-us/help/extension-development/*;extension-development
-PathRules[]=doc/eng-us/LICENSE-GFDL-1.3.txt;reference
-PathRules[]=doc/eng-us/glossary.md;reference
-PathRules[]=doc/eng-us/languages.md;languages
-PathRules[]=doc/eng-us/guides/README.md;getting-started
-PathRules[]=doc/eng-us/guides/getting-started.md;getting-started
-PathRules[]=doc/eng-us/guides/content-model-and-editing.md;editing
-PathRules[]=doc/eng-us/guides/bookmarks.md;editing
-# ... 52 more in the shipped file
+PathRules[]=doc/eng-us/help/customers/*;customer-success
+PathRules[]=doc/eng-us/help/government/*;public-sector
+PathRules[]=doc/eng-us/help/businesses/*;business-solutions
+PathRules[]=doc/eng-us/help/press/*;press-media
+PathRules[]=doc/eng-us/help/trainers/*;training
+PathRules[]=doc/eng-us/help/project/*;project
+PathRules[]=doc/eng-us/help/build-two-ways/*;build-two-ways
+# ... 60 more in the shipped file
 */ ?>
 ```
 
@@ -164,7 +164,7 @@ PathRules[]=doc/eng-us/guides/bookmarks.md;editing
 
 > <type> => <category>, when nothing else says  
 
-Default: a hash of 12: `help=getting-started`, `guide=administration`, `feature=features`, `bc=install-upgrade`, `install=install-upgrade`, `changelog=release-notes`, `specification=development`, `history=history`, `example=examples`, `generated=examples`, `reference=reference`, `catalogue=standards`.
+Default: a hash of 14: `help=getting-started`, `guide=administration`, `feature=features`, `bc=install-upgrade`, `install=install-upgrade`, `changelog=release-notes`, `specification=development`, `history=history`, `example=examples`, `generated=examples`, `reference=reference`, `project=project-files` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -183,7 +183,9 @@ TypeDefaults[history]=history
 TypeDefaults[example]=examples
 TypeDefaults[generated]=examples
 TypeDefaults[reference]=reference
+TypeDefaults[project]=project-files
 TypeDefaults[catalogue]=standards
+TypeDefaults[extension]=extensions
 */ ?>
 ```
 

@@ -2,14 +2,14 @@
 title: exphelp.ini [IndexSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [IndexSettings] in exphelp.ini: Roots, ExtensionDocDirs, AllowlistSources, DocumentSuffixes, PlainTextWithoutSuffix, AssetSuffixes, ExcludePatterns, MaxFileSize ..."
-keywords: exphelp.ini, IndexSettings, INI, setting, Roots, ExtensionDocDirs, AllowlistSources, DocumentSuffixes, PlainTextWithoutSuffix, AssetSuffixes, ExcludePatterns, MaxFileSize, StatFiles, StatFilesInterval, GitHistory
+summary: "The settings of [IndexSettings] in exphelp.ini: Roots, ActiveExtensionDocs, ExtensionDocDirs, ExtensionTopFiles, AllowlistSources, DocumentSuffixes, PlainTextWithoutSuffix, AssetSuffixes ..."
+keywords: exphelp.ini, IndexSettings, INI, setting, Roots, ActiveExtensionDocs, ExtensionDocDirs, ExtensionTopFiles, AllowlistSources, DocumentSuffixes, PlainTextWithoutSuffix, AssetSuffixes, ExcludePatterns, MaxFileSize, StatFiles, StatFilesInterval, GitHistory
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [IndexSettings]
 
-The block `[IndexSettings]` of `settings/exphelp.ini`, with 11 setting(s).
+The block `[IndexSettings]` of `settings/exphelp.ini`, with 13 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -34,10 +34,27 @@ Roots[]=doc
 */ ?>
 ```
 
+## ActiveExtensionDocs
+
+> enabled: the documentation of every active extension is shown too, found when the help looks (an extension  
+> switched on or off is added or left out at once): the files of extension/<name>/doc tracked by the extension's own  
+> repository (or listed in its share/filelist.md5), and its README, CHANGELOG, LICENSE ... (ExtensionTopFiles\[\]).  
+> Their pages have the id ext/<name>/<path below doc> (ext/<name>/README.md for a top file), in the folder and  
+> category "Extensions" and on exphelp/extensions. disabled: only the extensions of ExtensionDocDirs\[\].  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[IndexSettings]
+ActiveExtensionDocs=enabled
+*/ ?>
+```
+
 ## ExtensionDocDirs
 
-> Opt-in: extensions whose doc directory is shown too, as <extension name> (reads extension/<name>/doc, the files  
-> tracked by the extension's own repository). Empty: none. Their pages have the id ext/<name>/<path below doc>.  
+> Extensions whose doc directory is shown whether active or not, as <extension name>. Empty: none.  
 
 Default: an empty list.
 
@@ -47,6 +64,29 @@ Default: an empty list.
 [IndexSettings]
 # an empty "ExtensionDocDirs[]" first replaces the shipped list; without it the items are added
 ExtensionDocDirs[]
+*/ ?>
+```
+
+## ExtensionTopFiles
+
+> The files at the top of an extension's directory that are shown besides its doc/ (shell patterns, without case);  
+> nothing else outside doc/ is ever read. PHP and other source files are never shown: only DocumentSuffixes\[\] (and  
+> text files without a suffix that do not start like a program, #! or <?) are pages.  
+
+Default: a list of 6: `README*`, `CHANGELOG*`, `LICENSE*`, `INSTALL*`, `USAGE*`, `COPYING*`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[IndexSettings]
+# an empty "ExtensionTopFiles[]" first replaces the shipped list; without it the items are added
+ExtensionTopFiles[]
+ExtensionTopFiles[]=README*
+ExtensionTopFiles[]=CHANGELOG*
+ExtensionTopFiles[]=LICENSE*
+ExtensionTopFiles[]=INSTALL*
+ExtensionTopFiles[]=USAGE*
+ExtensionTopFiles[]=COPYING*
 */ ?>
 ```
 
@@ -125,9 +165,10 @@ AssetSuffixes[]=webp
 ## ExcludePatterns
 
 > Never served, even when tracked (shell patterns on the path relative to the installation root; a pattern without  
-> "/" also matches the file name): generated documentation, HTML, SVG (it can carry scripts) and PHP  
+> "/" also matches the file name): generated documentation, HTML, SVG (it can carry scripts) and PHP, and  
+> doc/README.md (the list of the language directories for readers of the repository; the help chooses the language)  
 
-Default: a list of 5: `doc/eng-us/doxygen/*`, `*.html`, `*.htm`, `*.svg`, `*.php`.
+Default: a list of 6: `doc/eng-us/doxygen/*`, `doc/README.md`, `*.html`, `*.htm`, `*.svg`, `*.php`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -136,6 +177,7 @@ Default: a list of 5: `doc/eng-us/doxygen/*`, `*.html`, `*.htm`, `*.svg`, `*.php
 # an empty "ExcludePatterns[]" first replaces the shipped list; without it the items are added
 ExcludePatterns[]
 ExcludePatterns[]=doc/eng-us/doxygen/*
+ExcludePatterns[]=doc/README.md
 ExcludePatterns[]=*.html
 ExcludePatterns[]=*.htm
 ExcludePatterns[]=*.svg

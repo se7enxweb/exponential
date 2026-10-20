@@ -34,7 +34,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 The first use in the templates of this installation, `design/admin/templates/setup/templateoperator.tpl` line 70:
 
 ```tpl
-<span class="a4-help">{'{fetch_alias( news_list )} — a fetch with its arguments fixed in an ini.'|i18n( 'design/admin/setup/rad/template' )}</span>
+<span class="a4-help">{'{fetch_alias( news_list )\} — a fetch with its arguments fixed in an ini.'|i18n( 'design/admin/setup/rad/template' )}</span>
 ```
 
 ## Related

@@ -29,7 +29,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > that matches, else its file name (...-developer.md) or opening lines ("for editors"), else TypeDefaults\[<type>\].  
 > The order here is the order of the dashboard's audience cards and the search filters.  
 
-Default: a list of 14: `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator` ....
+Default: a list of 19: `editor`, `admin`, `developer`, `user`, `project-manager`, `sales-marketing`, `partner`, `advocate`, `designer`, `hosting`, `app-creator`, `website-creator` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -51,12 +51,17 @@ Audiences[]=app-creator
 Audiences[]=website-creator
 Audiences[]=supporter
 Audiences[]=sponsor
+Audiences[]=trainer
+Audiences[]=press
+Audiences[]=businesses
+Audiences[]=government
+Audiences[]=customer
 */ ?>
 ```
 
 ## AudienceNames
 
-Default: a hash of 14: `editor=Editors`, `admin=Administrators`, `developer=Developers`, `user=Users`, `project-manager=Project managers`, `sales-marketing=Sales & marketing`, `partner=Partners`, `advocate=Advocates`, `designer=Designers`, `hosting=Hosting companies`, `app-creator=Application creators`, `website-creator=Website creators` ....
+Default: a hash of 19: `editor=Editors`, `admin=Administrators`, `developer=Developers`, `user=Users`, `project-manager=Project managers`, `sales-marketing=Sales & marketing`, `partner=Partners`, `advocate=Advocates`, `designer=Designers`, `hosting=Hosting companies`, `app-creator=Application creators`, `website-creator=Website creators` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -78,6 +83,11 @@ AudienceNames[app-creator]=Application creators
 AudienceNames[website-creator]=Website creators
 AudienceNames[supporter]=Supporters
 AudienceNames[sponsor]=Sponsors
+AudienceNames[customer]=Customers
+AudienceNames[government]=Governments
+AudienceNames[businesses]=Businesses
+AudienceNames[press]=Press, media and influencers
+AudienceNames[trainer]=Trainers
 */ ?>
 ```
 
@@ -85,7 +95,7 @@ AudienceNames[sponsor]=Sponsors
 
 > Icon names; each must have an .a4-bi-<name> class in stylesheets/components.css  
 
-Default: a hash of 14: `editor=pencil`, `admin=shield-lock`, `developer=code-square`, `user=person`, `project-manager=diagram-3`, `sales-marketing=graph-up-arrow`, `partner=building`, `advocate=people`, `designer=palette`, `hosting=database`, `app-creator=phone`, `website-creator=globe` ....
+Default: a hash of 19: `editor=pencil`, `admin=shield-lock`, `developer=code-square`, `user=person`, `project-manager=diagram-3`, `sales-marketing=graph-up-arrow`, `partner=building`, `advocate=people`, `designer=palette`, `hosting=database`, `app-creator=phone`, `website-creator=globe` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -107,6 +117,11 @@ AudienceIcons[app-creator]=phone
 AudienceIcons[website-creator]=globe
 AudienceIcons[supporter]=star
 AudienceIcons[sponsor]=piggy-bank
+AudienceIcons[customer]=person-check
+AudienceIcons[government]=bank
+AudienceIcons[businesses]=briefcase
+AudienceIcons[press]=megaphone
+AudienceIcons[trainer]=easel
 */ ?>
 ```
 
@@ -114,7 +129,7 @@ AudienceIcons[sponsor]=piggy-bank
 
 > <pattern>;<audience,audience>, first match wins ("\*" also matches "/")  
 
-Default: a list of 70: `doc/eng-us/help/leadership/*;project-manager`, `doc/eng-us/help/business/*;sales-marketing`, `doc/eng-us/help/partners/*;partner`, `doc/eng-us/help/advocates/*;advocate`, `doc/eng-us/help/designers/*;designer`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creator`, `doc/eng-us/help/creators/website-creators/*;website-creator`, `doc/eng-us/help/creators/*;app-creator,website-creator`, `doc/eng-us/help/supporters/*;supporter`, `doc/eng-us/help/sponsors/*;sponsor`, `doc/eng-us/help/extension-development/*;developer,designer` ....
+Default: a list of 78: `doc/eng-us/help/manual/*;editor,admin,user`, `doc/eng-us/help/leadership/*;project-manager`, `doc/eng-us/help/business/*;sales-marketing`, `doc/eng-us/help/partners/*;partner`, `doc/eng-us/help/advocates/*;advocate`, `doc/eng-us/help/designers/*;designer`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creator`, `doc/eng-us/help/creators/website-creators/*;website-creator`, `doc/eng-us/help/creators/*;app-creator,website-creator`, `doc/eng-us/help/supporters/*;supporter`, `doc/eng-us/help/sponsors/*;sponsor` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -122,6 +137,7 @@ Default: a list of 70: `doc/eng-us/help/leadership/*;project-manager`, `doc/eng-
 [AudienceSettings]
 # an empty "PathRules[]" first replaces the shipped list; without it the items are added
 PathRules[]
+PathRules[]=doc/eng-us/help/manual/*;editor,admin,user
 PathRules[]=doc/eng-us/help/leadership/*;project-manager
 PathRules[]=doc/eng-us/help/business/*;sales-marketing
 PathRules[]=doc/eng-us/help/partners/*;partner
@@ -133,24 +149,24 @@ PathRules[]=doc/eng-us/help/creators/website-creators/*;website-creator
 PathRules[]=doc/eng-us/help/creators/*;app-creator,website-creator
 PathRules[]=doc/eng-us/help/supporters/*;supporter
 PathRules[]=doc/eng-us/help/sponsors/*;sponsor
+PathRules[]=doc/eng-us/help/customers/*;customer
+PathRules[]=doc/eng-us/help/government/*;government
+PathRules[]=doc/eng-us/help/businesses/*;businesses
+PathRules[]=doc/eng-us/help/press/*;press
+PathRules[]=doc/eng-us/help/trainers/*;trainer
+PathRules[]=doc/eng-us/help/project/*;user,editor,admin,developer,partner,supporter
+PathRules[]=doc/eng-us/help/build-two-ways/*;designer,website-creator,editor,admin,developer
 PathRules[]=doc/eng-us/help/extension-development/*;developer,designer
-PathRules[]=doc/eng-us/LICENSE-GFDL-1.3.txt;editor,admin,developer,user
-PathRules[]=doc/eng-us/glossary.md;editor,admin,developer,user
-PathRules[]=doc/eng-us/languages.md;admin,developer
-PathRules[]=doc/eng-us/guides/README.md;editor,admin,developer
-PathRules[]=doc/eng-us/guides/getting-started.md;admin,developer
-PathRules[]=doc/eng-us/guides/content-model-and-editing.md;editor,developer
-PathRules[]=doc/eng-us/guides/bookmarks.md;editor
-PathRules[]=doc/eng-us/guides/collected-information.md;editor,admin
-# ... 50 more in the shipped file
+# ... 58 more in the shipped file
 */ ?>
 ```
 
 ## TypeDefaults
 
 > <type> => <audience,audience>, when nothing else says  
+> an active extension's own documentation (extension/<name>/doc, its README ...)  
 
-Default: a hash of 12: `help=editor,user`, `guide=admin`, `feature=admin,developer`, `bc=developer,admin`, `install=admin,developer`, `changelog=admin,developer`, `specification=developer`, `history=developer`, `example=developer,admin`, `generated=developer,admin`, `reference=developer,admin`, `catalogue=developer`.
+Default: a hash of 14: `help=editor,user`, `guide=admin`, `feature=admin,developer`, `bc=developer,admin`, `install=admin,developer`, `changelog=admin,developer`, `specification=developer`, `history=developer`, `example=developer,admin`, `generated=developer,admin`, `reference=developer,admin`, `project=developer,admin` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -169,7 +185,9 @@ TypeDefaults[history]=developer
 TypeDefaults[example]=developer,admin
 TypeDefaults[generated]=developer,admin
 TypeDefaults[reference]=developer,admin
+TypeDefaults[project]=developer,admin
 TypeDefaults[catalogue]=developer
+TypeDefaults[extension]=editor,admin,developer
 */ ?>
 ```
 

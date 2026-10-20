@@ -3,13 +3,13 @@ title: exphelp.ini [SearchSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [SearchSettings] in exphelp.ini: ResultLimit, TitleBoost, HeadingBoost, BodyBoost, PathBoost, KeywordBoost, TitleMatchBoost, TypeBoost ..."
-keywords: exphelp.ini, SearchSettings, INI, setting, ResultLimit, TitleBoost, HeadingBoost, BodyBoost, PathBoost, KeywordBoost, TitleMatchBoost, TypeBoost, VersionBoost, StopWords
+keywords: exphelp.ini, SearchSettings, INI, setting, ResultLimit, TitleBoost, HeadingBoost, BodyBoost, PathBoost, KeywordBoost, TitleMatchBoost, TypeBoost, VersionBoost, AudienceBoost, StopWords
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [SearchSettings]
 
-The block `[SearchSettings]` of `settings/exphelp.ini`, with 10 setting(s).
+The block `[SearchSettings]` of `settings/exphelp.ini`, with 11 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -150,6 +150,24 @@ VersionBoost[]
 VersionBoost[3]=0.5
 VersionBoost[4]=0.6
 VersionBoost[5]=0.75
+*/ ?>
+```
+
+## AudienceBoost
+
+> Factor per audience for the pages that are for it (the lowest when a page has several); not applied while the  
+> search is filtered to that audience. The trainers' lessons repeat the subjects of the editor and administrator pages,  
+> so they rank below them in a general search and on their own under the Trainers filter.  
+
+Default: a hash of 1: `trainer=0.6`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[SearchSettings]
+# an empty "AudienceBoost[]" first replaces the shipped list; without it the items are added
+AudienceBoost[]
+AudienceBoost[trainer]=0.6
 */ ?>
 ```
 

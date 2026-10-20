@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # package.ini
 
-The shipped settings of `settings/package.ini`: 64 blocks, 178 settings.
+The shipped settings of `settings/package.ini`: 64 blocks, 180 settings.
 
 > Exponential configuration file.  
 >
@@ -24,7 +24,7 @@ The shipped settings of `settings/package.ini`: 64 blocks, 178 settings.
 
 | Block | Settings |
 |---|---|
-| [RepositorySettings](RepositorySettings.md) | 8 |
+| [RepositorySettings](RepositorySettings.md) | 10 |
 | [ExtensionExportSettings](ExtensionExportSettings.md) | 2 |
 | [PackageSettings](PackageSettings.md) | 5 |
 | [MaintainerSettings](MaintainerSettings.md) | 1 |

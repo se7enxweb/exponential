@@ -120,7 +120,7 @@ TextURL=https://www.gnu.org/licenses/fdl-1.3.txt
 
 ## TextPage
 
-> Help page ids (paths below doc/): the unmodified license text, the copyright and permission notice,  
+> Help page ids (paths below doc/eng-us/): the unmodified license text, the copyright and permission notice,  
 > and the plain explanation for readers  
 
 Default: `LICENSE-GFDL-1.3.txt`.
@@ -187,7 +187,7 @@ CopyrightHolder=7x & Exponential Foundation and the Exponential contributors
 > from the original software (eZ Systems AS, 1999 - 2014). They keep the terms of the repository's  
 > LICENSE and show the notice below instead. <pattern> on the doc/ path, "\*" also matches "/".  
 
-Default: a list of 10: `doc/eng-us/features/[2-5].*`, `doc/eng-us/bc/[2-5].*`, `doc/eng-us/specifications/[2-5].*`, `doc/eng-us/specifications/trunk/*`, `doc/changelogs/[2-5].*`, `doc/changelogs/README.md`, `doc/eng-us/shop/*`, `doc/branch-overview`, `doc/eng-us/release-overview`, `doc/eng-us/standards/header.txt`.
+Default: a list of 9: `doc/eng-us/features/[2-5].*`, `doc/eng-us/bc/[2-5].*`, `doc/eng-us/specifications/[2-5].*`, `doc/eng-us/specifications/trunk/*`, `doc/changelogs/[2-5].*`, `doc/changelogs/README.md`, `doc/eng-us/shop/*`, `doc/eng-us/release-overview`, `doc/eng-us/standards/header.txt`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -202,7 +202,6 @@ OtherLicensePathRules[]=doc/eng-us/specifications/trunk/*
 OtherLicensePathRules[]=doc/changelogs/[2-5].*
 OtherLicensePathRules[]=doc/changelogs/README.md
 OtherLicensePathRules[]=doc/eng-us/shop/*
-OtherLicensePathRules[]=doc/branch-overview
 OtherLicensePathRules[]=doc/eng-us/release-overview
 OtherLicensePathRules[]=doc/eng-us/standards/header.txt
 */ ?>

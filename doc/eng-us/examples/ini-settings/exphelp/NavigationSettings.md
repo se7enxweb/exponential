@@ -19,13 +19,14 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 
 ## FoldedFolders
 
-> Folder names in the navigation tree, <path below doc/> => <name> (else the title of the folder's README)  
+> Folder names in the navigation tree, <page id of the folder, its path below doc/eng-us/> => <name> (else the title of the folder's README)  
 > FolderNames\[examples/cookbook\]=Cookbook  
 > Folded folders: the tree shows their overview link and page count, and lists their pages (and those of the  
 > folders below them) only while a page inside is open. For the generated reference examples, which would otherwise  
-> add thousands of links to every page of the help. Paths below doc/; a folder without a README is never folded.  
+> add thousands of links to every page of the help. Paths below doc/eng-us/; a folder without a README is never folded.  
+> The government task pages: six groups of step-by-step tasks below doc/eng-us/help/government/tasks/  
 
-Default: a list of 11: `examples/template-operators`, `examples/template-functions`, `examples/fetch-functions`, `examples/module-views`, `examples/policies`, `examples/ini-settings`, `examples/datatypes`, `examples/workflow-events`, `examples/cronjobs`, `examples/commands`, `examples/extension-points`.
+Default: a list of 12: `examples/template-operators`, `examples/template-functions`, `examples/fetch-functions`, `examples/module-views`, `examples/policies`, `examples/ini-settings`, `examples/datatypes`, `examples/workflow-events`, `examples/cronjobs`, `examples/commands`, `examples/extension-points`, `help/government/tasks`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -44,6 +45,7 @@ FoldedFolders[]=examples/workflow-events
 FoldedFolders[]=examples/cronjobs
 FoldedFolders[]=examples/commands
 FoldedFolders[]=examples/extension-points
+FoldedFolders[]=help/government/tasks
 */ ?>
 ```
 

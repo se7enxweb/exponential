@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > What kind of page a file is: its front matter (type: guide), else the first rule that matches.  
 > <pattern>;<type>, first match wins  
 
-Default: a list of 14: `doc/eng-us/help/*;help`, `doc/eng-us/guides/*;guide`, `doc/eng-us/features/*;feature`, `doc/eng-us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/eng-us/install/*;install`, `doc/eng-us/INSTALL.md;install`, `doc/eng-us/specifications/*;specification`, `doc/eng-us/history/*;history`, `doc/eng-us/release-overview;history`, `doc/branch-overview;history`, `doc/eng-us/examples/*;example` ....
+Default: a list of 14: `doc/eng-us/help/*;help`, `doc/eng-us/guides/*;guide`, `doc/eng-us/features/*;feature`, `doc/eng-us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/eng-us/install/*;install`, `doc/eng-us/INSTALL.md;install`, `doc/eng-us/specifications/*;specification`, `doc/eng-us/history/*;history`, `doc/eng-us/release-overview;history`, `doc/eng-us/examples/*;example`, `doc/eng-us/standards/patterns/*;catalogue` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -40,16 +40,16 @@ PathRules[]=doc/eng-us/INSTALL.md;install
 PathRules[]=doc/eng-us/specifications/*;specification
 PathRules[]=doc/eng-us/history/*;history
 PathRules[]=doc/eng-us/release-overview;history
-PathRules[]=doc/branch-overview;history
 PathRules[]=doc/eng-us/examples/*;example
 PathRules[]=doc/eng-us/standards/patterns/*;catalogue
+PathRules[]=extension/*;extension
 PathRules[]=*;reference
 */ ?>
 ```
 
 ## TypeNames
 
-Default: a hash of 12: `help=Help`, `guide=Guide`, `feature=Feature`, `bc=Upgrade note`, `install=Installation`, `changelog=Changelog`, `specification=Specification`, `history=History`, `example=Example`, `generated=Generated reference`, `reference=Reference`, `catalogue=Generated catalogue`.
+Default: a hash of 14: `help=Help`, `guide=Guide`, `feature=Feature`, `bc=Upgrade note`, `install=Installation`, `changelog=Changelog`, `specification=Specification`, `history=History`, `example=Example`, `generated=Generated reference`, `reference=Reference`, `catalogue=Generated catalogue` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -69,6 +69,8 @@ TypeNames[example]=Example
 TypeNames[generated]=Generated reference
 TypeNames[reference]=Reference
 TypeNames[catalogue]=Generated catalogue
+TypeNames[extension]=Extension documentation
+TypeNames[project]=Project file
 */ ?>
 ```
 
