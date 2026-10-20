@@ -73143,6 +73143,78 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Help Start</source>
         <translation>Initium auxilii</translation>
     </message>
+    <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Haec pagina nondum in linguam %reader versa est. Lingua %original ostenditur.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Anglica</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Germanica</translation>
+    </message>
+    <message>
+        <source>Reading in:</source>
+        <translation>Lingua legendi:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Lingua electa linguam totius administrationis mutat.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count ex %total paginis</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>De auxilio aliis linguis</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Exemplar primigenium lingua %language aperire</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Exemplar primigenium huius paginae lingua %language legis.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Ad paginam lingua %language redire</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Haec pagina versio est.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Exemplar primigenium lingua %language legere</translation>
+    </message>
+    <message>
+        <source>The documentation the active extensions bring with them: their guides, README, changelog and license.</source>
+        <translation>Documenta quae extensiones activae secum afferunt: duces, README, tabulam mutationum et licentiam.</translation>
+    </message>
+    <message>
+        <source>Search the documentation of %extension</source>
+        <translation>In documentis extensionis %extension quaerere</translation>
+    </message>
+    <message>
+        <source>No active extension brings documentation of its own.</source>
+        <translation>Nulla extensio activa documenta propria affert.</translation>
+    </message>
+    <message>
+        <source>Only the documentation of the extension %extension.</source>
+        <translation>Documenta extensionis %extension tantum.</translation>
+    </message>
+    <message>
+        <source>Its pages</source>
+        <translation>Paginae eius</translation>
+    </message>
+    <message>
+        <source>Search the whole help</source>
+        <translation>In toto auxilio quaerere</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

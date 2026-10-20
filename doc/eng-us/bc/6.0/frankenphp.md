@@ -734,8 +734,8 @@ FrankenPHP worker mode by hand — it will leak state between requests.
 
 The most impactful tuning. The embedded PHP honours `opcache.*` via
 `IniOptions[]`. Shipped: `opcache.enable=1` and (from `[PHPSettings]`)
-`opcache.enable_cli=1`, `opcache.memory_consumption=256`,
-`opcache.max_accelerated_files=20000`, `opcache.interned_strings_buffer=32`,
+`opcache.enable_cli=1`, `opcache.memory_consumption=512`,
+`opcache.max_accelerated_files=20000`, `opcache.interned_strings_buffer=64`,
 `opcache.revalidate_freq=0`. Measured on this codebase, OPcache alone gave the
 bulk of the gain (~+26 %); tracing JIT was *slower* on this workload and is
 deliberately absent. Keep `revalidate_freq=0` so edited/regenerated PHP files
