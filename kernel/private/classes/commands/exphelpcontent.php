@@ -74,7 +74,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             $this->shutdown( 2 );
             return;
         }
-        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export', 'dita', 'ebooks' );
+        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export', 'dita', 'ebooks', 'review' );
         if ( !in_array( $action, $known, true ) )
         {
             $cli->error( "Unknown action \"$action\": " . implode( ', ', $known ) . ' (./console exp:help:content --help)' );
@@ -149,13 +149,16 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                             $cli->output( sprintf( '%-8s %-8s %s', $change['step'], $change['action'], $change['what'] ) );
                     }
                     break;
+                case 'review':
+                    $code = $this->review( $json );
+                    break;
                 case 'uninstall':
                     $installer = new \expHelpContentInstaller( $common );
                     $installer->uninstall( !empty( $options['with-content'] ) );
                     $code = $this->printChanges( $installer->changes(), $json );
                     break;
             }
-            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita', 'ebooks' ), true ) )
+            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita', 'ebooks', 'review' ), true ) )
                 \expHelpContentProvider::clearCache();
         }
         catch ( \Exception $e )
@@ -272,6 +275,34 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                $problems ? 'FAIL' : 'PASS', $dir, $counts['manuals'], $counts['chapters'], $counts['topics'], $counts['figures'],
                                $counts['glossary'], $result['unchanged'] ) );
         return $problems ? 1 : 0;
+    }
+
+    /**
+     * The overdue reviews (doc/en/us/features/6.0/help-content.md, "Overdue reviews"): review date passed, or in Review
+     * longer than [ContentSettings] ReviewMaxDays. Exit 0 also when some are overdue: it is a list, not a check
+     * (check reports the past review dates as warnings).
+     */
+    protected function review( $json )
+    {
+        $cli = $this->cli();
+        if ( !\expHelpContentRepository::isInstalled() )
+        {
+            $cli->error( 'FAIL: help as content is not installed (./console exp:help:content install -s <siteaccess>)' );
+            return 2;
+        }
+        $items = \expHelpContentReview::all();
+        if ( $json )
+        {
+            $this->printJson( array( 'max_days' => \expHelpContentReview::maxDays(), 'count' => count( $items ), 'topics' => $items ) );
+            return 0;
+        }
+        foreach ( $items as $item )
+            $cli->output( sprintf( '%-28s %-9s %4d days  %s', $item['help_id'], $item['state'], $item['days'],
+                                   $item['reason'] === \expHelpContentReview::REASON_DATE
+                                       ? 'review date ' . gmdate( 'Y-m-d', $item['since'] ) . ' has passed'
+                                       : 'in Review, unchanged since ' . gmdate( 'Y-m-d', $item['since'] ) ) );
+        $cli->output( sprintf( '%d topics overdue for review (in Review at most %d days)', count( $items ), \expHelpContentReview::maxDays() ) );
+        return 0;
     }
 
     protected function check( $fix, array $common, $json )

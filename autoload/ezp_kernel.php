@@ -1130,6 +1130,7 @@ return array(
       'expHelpContentInstaller'                                      => 'kernel/classes/help/content/exphelpcontentinstaller.php',
       'expHelpContentProvider'                                       => 'kernel/classes/help/content/exphelpcontentprovider.php',
       'expHelpContentRepository'                                     => 'kernel/classes/help/content/exphelpcontentrepository.php',
+      'expHelpContentReview'                                         => 'kernel/classes/help/content/exphelpcontentreview.php',
       'expHelpContentSchema'                                         => 'kernel/classes/help/content/exphelpcontentschema.php',
       'expHelpContentSeeder'                                         => 'kernel/classes/help/content/exphelpcontentseeder.php',
       'expHelpContentValidator'                                      => 'kernel/classes/help/content/exphelpcontentvalidator.php',

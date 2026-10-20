@@ -20,6 +20,7 @@ administration like any other content, and delivered into the help of the admini
 | An e-book (EPUB, PDF) of a manual | `./console exp:help:content export`, **Download EPUB/PDF** on the manual's page |
 | The DITA 1.3 export (bookmaps, DITAVAL, topics, glossary), checked after writing | `./console exp:help:content dita`, **Download DITA** on the manual's page and the list of manuals |
 | The e-books stored as file objects under E-books, versioned, rebuilt on release | `./console exp:help:content ebooks`, and each release of a topic |
+| The topics overdue for review (review date passed, too long in Review) | the help's dashboard, `./console exp:help:content review` |
 | A topic in the help: `exphelp/topic/<help_id>`; a manual: `exphelp/manual/<remote_id>`; the list of manuals: `exphelp/manual` | admin, policy `exphelp/read` |
 | Context help as JSON: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>` | policy `exphelp/context` |
 
@@ -179,6 +180,8 @@ can never name `content/...`, and a provider that does not implement the interfa
 | `ContextHelpIds[<key>]` | none | `module/view` (or `module`, `design:module/view`) = help_id |
 | `AnonymousContextHelp` | `disabled` | `enabled`: the roles step gives Anonymous `exphelp/context` |
 | `EbooksOnRelease` | `enabled` | a release builds the stored e-books of the manuals again; `disabled`: only `exp:help:content ebooks` does |
+| `ReviewMaxDays` | `14` | days a topic may stay in Review without a change before it is overdue |
+| `ReviewListLimit` | `10` | at most this many overdue topics on the help's dashboard |
 
 ## E-books
 
@@ -284,9 +287,37 @@ the same way before it is sent. The DTDs are not shipped and nothing is fetched:
 DITA-OT, or `xmllint --valid` with the OASIS catalog, on the directory (the export of the test set and of the
 shipped seed topics pass it).
 
+## Overdue reviews
+
+The plan's maintenance phase (7) asks for "a list of outdated topics (review date passed) in the admin dashboard".
+The help's start page (`exphelp/dashboard`) shows **Help topics overdue for review** to help editors and release
+managers, and the command lists them all:
+
+```
+./console exp:help:content review -s admin [--json]
+```
+
+A topic is overdue when
+
+- its **review date has passed** (the validator's `review-date.past`, style guide section 8), in any state. The
+  release manager sets a Released topic back to Review, the editor checks it and sets a new review date, and it is
+  released again (plan, "Permissions");
+- or it has been **in Review longer than** `exphelp.ini [ContentSettings] ReviewMaxDays` days (default 14) without a
+  change. The kernel keeps no date of a state change, so the topic's last publication counts: a topic an editor is
+  still changing in Review is not overdue.
+
+The list shows each topic with its state, why it is overdue and for how long, the longest overdue first, and a link
+to the topic in the help and to its object in the administration (**Edit**, or **Set state** for who may only assign
+its state). It is shown only to who can act on a topic: who may edit it, or assign it another state of
+`help_status`. A help editor (Draft and Review) sees the topics in Review; a release manager also the Released ones
+whose review date has passed. Who can act on none sees nothing, and nothing is shown while no topic is overdue. At
+most `ReviewListLimit` topics (default 10) are listed, the rest are counted. The card uses the shared admin
+components (`a4-card`, `a4-table`, `a4-tag`, `a4-btn`) and so follows the light and dark mode of the
+administration; it has no CSS of its own.
+
 ## Later
 
-The dashboard's list of topics with a past review date, "Was this helpful?", editor conveniences.
+"Was this helpful?" on each topic, editor conveniences.
 
 ## Classes
 
@@ -295,8 +326,8 @@ section fixes), `expHelpContentRepository` (reads the help objects into arrays),
 rules, no database), `expHelpContentSeeder`, `expHelpContentProvider` (what the current user may see, rendering,
 JSON, search, context), `expHelpContextPageInterface`, `expHelpContentExport` (EPUB, PDF), `expHelpContentDita`
 (the DITA export, its check, writing and zip), `expHelpDitaMarkup` (the help's HTML as DITA elements),
-`expHelpContentEbooks` (the stored e-books, rebuilt on release) and `expHelpContentEditionProvider` (what goes into a
-stored edition). Views:
+`expHelpContentEbooks` (the stored e-books, rebuilt on release), `expHelpContentEditionProvider` (what goes into a
+stored edition) and `expHelpContentReview` (overdue reviews). Views:
 `Exponential\View\Kernel\Exphelp\Topic`, `Manual`, `Context`. Tests (no database):
 `tests/tests/kernel/classes/help/expHelpContentTest.php`, `expHelpContentExportTest.php`, `expHelpContentDitaTest.php`,
-`expHelpContentEbooksTest.php`.
+`expHelpContentEbooksTest.php`, `expHelpContentReviewTest.php`.

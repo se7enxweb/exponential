@@ -115,6 +115,11 @@
         </ul>
     </section>
 
+    {* ---- Help maintained as content: topics overdue for review, for who can act on them ---- *}
+    {if and( is_set( $help_review ), $help_review )}
+    {include uri='design:exphelp/parts/dashboard_review.tpl' review=$help_review}
+    {/if}
+
     {* ---- Help maintained as content: manuals and topics (doc/en/us/features/6.0/help-content.md) ---- *}
     {if and( is_set( $help_content ), $help_content, or( $help_content.manuals|count|gt( 0 ), $help_content.topics|count|gt( 0 ) ) )}
     {include uri='design:exphelp/parts/dashboard_content.tpl' content=$help_content}

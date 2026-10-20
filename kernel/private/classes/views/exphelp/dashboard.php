@@ -4,7 +4,8 @@
  *
  * Template variables: help_audiences (id => id, name, count), help_categories (id => id, name, icon, count),
  * help_featured (documents), help_recent (id, title, time, subject), help_tree, help_trackers (expHelpIssueReport),
- * help_search_url, help_report_url.
+ * help_search_url, help_report_url, help_content (manuals and topics of help maintained as content), help_review (the
+ * topics overdue for review the user can act on, reviewSummary()).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -49,6 +50,8 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_report_url', \expHelp::url( 'report' ) );
         // help maintained as content (doc/en/us/features/6.0/help-content.md): the manuals and topics the user may see
         $tpl->setVariable( 'help_content', self::contentSummary() );
+        // the topics overdue for review, for help editors and release managers (those who can act on them)
+        $tpl->setVariable( 'help_review', self::reviewSummary() );
         // the fifth step of the grow band, only when its page is in the help (it never links a missing page)
         $tpl->setVariable( 'help_grow_extensions_page', $index->document( 'help/contribute-extensions-back.md' ) !== null ? 'help/contribute-extensions-back.md' : '' );
         // the Support Exponential block at the bottom ([SupportSettings]); a worker started before the class existed skips it
@@ -114,6 +117,35 @@ class Dashboard extends \Exponential\Runnable\ModuleView
     public static function stats( array $documents, array $categories )
     {
         return array( 'pages' => count( $documents ), 'categories' => count( $categories ) );
+    }
+
+    /**
+     * The topics of help maintained as content whose review is overdue and that the user can act on (edit, or assign a
+     * state), false when there are none or help as content is not installed (doc/en/us/features/6.0/help-content.md,
+     * "Overdue reviews")
+     *
+     * @return array|false array( 'items' => list of help_id, title, state, reason, since, days, node_id, can_edit, url;
+     *                     'count' => int, 'max_days' => int )
+     */
+    public static function reviewSummary()
+    {
+        // a server process started before the class existed (a Velocity worker) shows no list
+        if ( !class_exists( 'expHelpContentReview' ) || !class_exists( 'expHelpContentProvider' ) )
+            return false;
+        try
+        {
+            $review = \expHelpContentReview::forCurrentUser( (int)\expHelpContentSchema::setting( 'ReviewListLimit', \expHelpContentReview::DEFAULT_LIMIT ) );
+            if ( !$review || !$review['count'] )
+                return false;
+            foreach ( $review['items'] as $i => $item )
+                $review['items'][$i]['url'] = \expHelp::url( 'topic', $item['help_id'] );
+            return $review;
+        }
+        catch ( \Exception $e )
+        {
+            \eZDebug::writeWarning( 'Overdue help reviews could not be read: ' . $e->getMessage(), __METHOD__ );
+            return false;
+        }
     }
 
     /**
