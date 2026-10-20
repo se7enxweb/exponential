@@ -23,8 +23,8 @@ namespace Exponential\View\Kernel\Exphelp
 
 class Viewer extends \Exponential\Runnable\ModuleView
 {
-    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height) */
-    const RENDER_VERSION = 2;
+    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images) */
+    const RENDER_VERSION = 3;
 
     public function run( array $scope )
     {
@@ -228,7 +228,7 @@ class Viewer extends \Exponential\Runnable\ModuleView
             if ( is_array( $cached ) && isset( $cached['html'], $cached['toc'] ) )
                 return $cached;
         }
-        $renderer = self::renderer();
+        $renderer = self::renderer( isset( $document['path'] ) ? (string)$document['path'] : '' );
         $rendered = $markdown ? $renderer->render( $source, $id ) : $renderer->renderPlainText( $source, $id );
         if ( !is_dir( $dir ) )
             \eZDir::mkdir( $dir, false, true );
@@ -247,15 +247,18 @@ class Viewer extends \Exponential\Runnable\ModuleView
 
     /**
      * The renderer, with relative links resolved to the viewer and images to the asset view, with their size (so the
-     * page keeps their room while they load).
+     * page keeps their room while they load). Links and images are checked against the file the page was read from
+     * (a translation in doc/de/ links the original's images in doc/en/us/).
      *
+     * @param string $sourcePath the page's file, relative to the installation root ('' : its id)
      * @return \expHelpMarkdownRenderer
      */
-    public static function renderer()
+    public static function renderer( $sourcePath = '' )
     {
         return new \expHelpMarkdownRenderer( array(
             'link_resolver' => array( 'expHelpLinks', 'link' ),
-            'image_resolver' => array( 'expHelpLinks', 'sizedImage' ) ) );
+            'image_resolver' => array( 'expHelpLinks', 'sizedImage' ),
+            'source_path' => (string)$sourcePath ) );
     }
 }
 

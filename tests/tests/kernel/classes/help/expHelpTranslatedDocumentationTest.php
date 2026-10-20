@@ -22,6 +22,7 @@
  *         conflict kept from the first map and reported, a git conflict read as its two sides; directory names
  *         follow .dirnames.json
  *  TD-11  how much of the help each language has, the "Reading in" choices of the switch, and ?lang= for the original
+ *  TD-12  a translated page rendered from its file reaches the images and pages of the original's directory
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -440,6 +441,35 @@ class expHelpTranslatedDocumentationTest extends PHPUnit\Framework\TestCase
                    'hilfe/install/x.md' => 'help/install/x.md' ), $dirnames ) );
         $this->assertCount( 2, expHelpLanguage::pathsAgainstDirnames(
             array( 'help/start.md' => 'help/start.md', 'hilfe/anleitung/x.md' => 'help/guides/x.md' ), $dirnames ) );
+    }
+
+    /** TD-12 */
+    public function testTranslatedPageReachesTheOriginalsImagesWhenRendered()
+    {
+        $resolver = function ( $src, $id ) { return '/asset/' . $src; };
+        $markdown = "![Shot](../../en/us/help/img/shot.png) and [the original](../../en/us/help/other.md)\n";
+        $options = array( 'image_resolver' => $resolver, 'link_resolver' => $resolver );
+        // from the page id (help/start.md) the path climbs above the documentation root: refused
+        $byId = ( new expHelpMarkdownRenderer( $options ) )->render( $markdown, 'help/start.md' );
+        $this->assertStringNotContainsString( '<img', $byId['html'] );
+        // from the file the page was read from (doc/de/hilfe/start.md) it stays inside the installation: resolved
+        $byFile = ( new expHelpMarkdownRenderer( $options + array( 'source_path' => 'doc/de/hilfe/start.md' ) ) )->render( $markdown, 'help/start.md' );
+        $this->assertStringContainsString( '<img class="a4-help-img" src="/asset/../../en/us/help/img/shot.png"', $byFile['html'] );
+        $this->assertStringContainsString( 'href="/asset/../../en/us/help/other.md"', $byFile['html'] );
+        // and a path that leaves the installation is refused all the same
+        $out = ( new expHelpMarkdownRenderer( $options + array( 'source_path' => 'doc/de/hilfe/start.md' ) ) )->render( "![x](../../../../etc/passwd)\n", 'help/start.md' );
+        $this->assertStringNotContainsString( '<img', $out['html'] );
+        // the viewer's resolvers turn the file into the original's asset id
+        $german = self::index( 'de' );
+        expHelpDocumentIndex::setInstance( $german );
+        try
+        {
+            $this->assertSame( 'help/img/shot.png', expHelpLinks::resolveId( '../../en/us/help/img/shot.png', 'help/start.md' ) );
+        }
+        finally
+        {
+            expHelpDocumentIndex::setInstance( null );
+        }
     }
 
     /** TD-11 */

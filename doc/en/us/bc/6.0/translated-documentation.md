@@ -119,7 +119,9 @@ that links to `../hilfe/suchen.md` opens the page that file translates, in the r
    and commit them: the help shows only git-tracked files.
 3. Translate as many pages as you like; every page you have not translated yet is shown in English.
 4. Images: an image the translation does not have is taken from `doc/en/us/`. Put a translated screenshot at the same
-   relative path to use it instead.
+   relative path to use it instead. A page with a translated file name links the original's image by its path from
+   the file, as GitHub does (`![...](../../en/us/help/images/x.webp)` in `doc/de/hilfe/x.md`): links and images of a
+   page are resolved from the file it was read from, so they may climb above the page's id.
 
 A directory below `doc/` named by a two letter language code that `Directories[]` does not list (`doc/fr/`) is not
 read, so a translation can be prepared in the repository before it is switched on.
@@ -224,4 +226,6 @@ directory either has its translated name or keeps its English one). It exits wit
 - TD-10: the path maps merge as a union (sorted, the same file whatever the order, a conflict kept from the first map
   and reported, a git conflict read as its two sides) and directory names follow `.dirnames.json`;
 - TD-11: how much of the help each language has, the choices of the "Reading in" switch, and `?lang=` for the
-  original.
+  original;
+- TD-12: a translated page is rendered from its file, so its links and images reach the original's directory
+  (`../../en/us/help/images/x.webp` from `doc/de/hilfe/x.md`).

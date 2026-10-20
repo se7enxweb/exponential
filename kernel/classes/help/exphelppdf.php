@@ -156,7 +156,7 @@ class expHelpPdf
             $rendered = \Exponential\View\Kernel\Exphelp\Viewer::rendered( $index, $document, $id, $source );
         else
         {
-            $renderer = \Exponential\View\Kernel\Exphelp\Viewer::renderer();
+            $renderer = \Exponential\View\Kernel\Exphelp\Viewer::renderer( isset( $document['path'] ) ? (string)$document['path'] : '' );
             $markdown = isset( $document['suffix'] ) && in_array( $document['suffix'], array( 'md', 'markdown' ), true );
             $rendered = $markdown ? $renderer->render( $source, $id ) : $renderer->renderPlainText( $source, $id );
         }

@@ -3397,7 +3397,7 @@ fb85be121ac1186257310cd979fc3c1e  doc/en/us/bc/6.0/sqlite-transactions.md
 83c907c3757df38328000733adcf07ed  doc/en/us/bc/6.0/static-cache-defaults.md
 0c8ae79c442342b781dbf3f7e2c3dea6  doc/en/us/bc/6.0/subitems-table-options.md
 3c9ff9b6730b011a2b825d49fbeff9d6  doc/en/us/bc/6.0/svg-images.md
-ea7529b0ced37a7846fe4768d30beb4b  doc/en/us/bc/6.0/translated-documentation.md
+256165d1fed706e94943eacdc1196f59  doc/en/us/bc/6.0/translated-documentation.md
 9c6663ff7a3916a0b7b61ef8f351ba31  doc/en/us/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/en/us/bc/6.0/trusted-proxies.md
 78f77d46a1c4fda9c55f0f24527261ed  doc/en/us/bc/6.0/ui-switch-design.md
@@ -12093,9 +12093,9 @@ ec7e813ca5c4d3ff8d37fffcb745d34f  kernel/classes/help/exphelplanding.php
 6d7d8ae6bb6cb74bf2241cf97cc10de6  kernel/classes/help/exphelplicense.php
 c7bea0c0b12fa71ef53983e1e0fbb7b7  kernel/classes/help/exphelplinkcheck.php
 cfd4f687ec86fd8d12a6d8a572ed39bb  kernel/classes/help/exphelplinks.php
-c8fa3c73d723f36b125a079433796e1a  kernel/classes/help/exphelpmarkdownrenderer.php
+f48f773352ce829acc339e681680fa84  kernel/classes/help/exphelpmarkdownrenderer.php
 8c9d9e79c08ebd2185606652120f6553  kernel/classes/help/exphelpnavigation.php
-d189eaefa6ff92f313236877991d8e6a  kernel/classes/help/exphelppdf.php
+323d5281459accab9035a37a3e0669a0  kernel/classes/help/exphelppdf.php
 e217b6f378ad261b116de9097ea44f2a  kernel/classes/help/exphelppdfcanvas.php
 16c4c7f20aac7fa06b02550259ce44be  kernel/classes/help/exphelppdffontsubset.php
 b0722d9a3329ba779dcf07c7ce7b5b90  kernel/classes/help/exphelppdfwriter.php
@@ -12768,7 +12768,7 @@ b499a9307b93762a7d57094e3d6a8c70  kernel/private/classes/views/exphelp/dashboard
 2e2c1d825fd4a0dc8a5f80ee8e10b854  kernel/private/classes/views/exphelp/report.php
 7533f7235581ad2ed57241b934140a35  kernel/private/classes/views/exphelp/search.php
 254910eeb56424d4db14fbce5625bfeb  kernel/private/classes/views/exphelp/topic.php
-13a9e176c9990e87bccc32afa6606b01  kernel/private/classes/views/exphelp/viewer.php
+b106b923159e4ca7ceeaab2d45f3627b  kernel/private/classes/views/exphelp/viewer.php
 b41d7e46fe9581f4a9fb38abfd945abc  kernel/private/classes/views/ezinfo/about.php
 804ca78e978dd8bb3715c4df81118929  kernel/private/classes/views/ezinfo/copyright.php
 be890412eb2229b14270ff5ee45d525d  kernel/private/classes/views/ezinfo/isalive.php
@@ -15162,7 +15162,7 @@ c705cb190c311b8df40826aaa8a7cfd9  tests/tests/kernel/classes/help/expHelpSearchB
 e6d565ac01d7c656b6f6389977c9bbe2  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 36800feab65c19bf52df35aa555f0d0d  tests/tests/kernel/classes/help/expHelpSearchTest.php
 d791ed570d023b6dcdc8d7dc7f0ea2b7  tests/tests/kernel/classes/help/expHelpSearchViewParametersTest.php
-0726be85a2a0dcc5a0ac0655dbbc7623  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
+2db59ea17586b05af3bbcce2571a14a1  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
 adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branch-overview-svn.txt
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 444d0db01cc11b5e3f7778567f43f105  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
