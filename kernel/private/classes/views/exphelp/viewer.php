@@ -23,8 +23,8 @@ namespace Exponential\View\Kernel\Exphelp
 
 class Viewer extends \Exponential\Runnable\ModuleView
 {
-    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images) */
-    const RENDER_VERSION = 3;
+    /** part of the render cache key: raise it when the rendered HTML changes (2: images carry width and height; 3: links resolve from the file, so a translation reaches the original's images; 4: anchors map to the shown language's headings) */
+    const RENDER_VERSION = 4;
 
     public function run( array $scope )
     {

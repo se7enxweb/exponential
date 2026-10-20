@@ -1067,6 +1067,60 @@ class expHelpDocumentIndex
                       'documents' => $documents, 'assets' => $assets, 'sources' => $this->sourcesCache, 'recent' => $recent );
     }
 
+    /** @var array path => list of heading anchors of another language's version of a page (anchorOf()) */
+    protected $otherHeadings = array();
+
+    /**
+     * The anchor a link names on the page this index shows for an id, when the link was written for another
+     * language's version of that page: an English page links "guides/x.md#cross-engine-notes" and the reader sees
+     * the German page, whose heading is "#hinweise-zu-den-engines"; or a German page links a German anchor of a page
+     * the reader sees in English. A translation has the headings of its original in the same order (the structure
+     * checks keep it so), so the n-th heading of one version is the n-th of the other. The anchor is kept when the
+     * shown page has it, when no other version has it, or when the versions differ in their number of headings.
+     *
+     * @param string $id the page id
+     * @param string $anchor as written in the link (without "#")
+     * @return string
+     */
+    public function anchorOf( $id, $anchor )
+    {
+        $anchor = (string)$anchor;
+        $document = $anchor === '' ? null : $this->document( $id );
+        if ( $document === null || empty( $document['headings'] ) )
+            return $anchor;
+        $shown = array();
+        foreach ( $document['headings'] as $heading )
+            $shown[] = (string)$heading['anchor'];
+        if ( in_array( $anchor, $shown, true ) || in_array( strtolower( $anchor ), $shown, true ) )
+            return $anchor;
+        $files = $this->files();
+        foreach ( $this->languages->directories() as $directory )
+        {
+            $path = expHelpLanguage::DOC_ROOT . '/' . $directory . '/' . $this->languages->translated( $directory, (string)$id );
+            if ( $path === $document['path'] || !isset( $files[$path] ) )
+                continue;
+            if ( !isset( $this->otherHeadings[$path] ) )
+            {
+                $this->otherHeadings[$path] = array();
+                $name = $this->allowlist->safePath( $path, $files );
+                $text = $name === null ? false : @file_get_contents( $name );
+                if ( is_string( $text ) )
+                {
+                    list( , $body ) = expHelpFrontMatter::split( self::toUtf8( $text ) );
+                    foreach ( self::headings( $body ) as $heading )
+                        $this->otherHeadings[$path][] = (string)$heading['anchor'];
+                }
+            }
+            $other = $this->otherHeadings[$path];
+            $position = array_search( $anchor, $other, true );
+            if ( $position === false )
+                $position = array_search( strtolower( $anchor ), $other, true );
+            if ( $position !== false && count( $other ) === count( $shown ) )
+                return $shown[$position];
+        }
+        return $anchor;
+    }
+
     /**
      * How much of the documentation each configured language has, from the help's file list (cheap: no page is read):
      * per directory, the pages it has of the default language's pages, and that total. The default language has

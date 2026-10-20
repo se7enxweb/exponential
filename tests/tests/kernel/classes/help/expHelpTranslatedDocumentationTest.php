@@ -23,6 +23,8 @@
  *         follow .dirnames.json
  *  TD-11  how much of the help each language has, the "Reading in" choices of the switch, and ?lang= for the original
  *  TD-12  a translated page rendered from its file reaches the images and pages of the original's directory
+ *  TD-13  an anchor written for another language's version of a page maps to the shown page's heading at the same
+ *         position, when rendered and in the link check, in both directions
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -465,6 +467,70 @@ class expHelpTranslatedDocumentationTest extends PHPUnit\Framework\TestCase
         try
         {
             $this->assertSame( 'help/img/shot.png', expHelpLinks::resolveId( '../../en/us/help/img/shot.png', 'help/start.md' ) );
+        }
+        finally
+        {
+            expHelpDocumentIndex::setInstance( null );
+        }
+    }
+
+    /** TD-13 */
+    public function testAnchorsMapToTheShownLanguagesHeadings()
+    {
+        $root = self::$root . '/td13';
+        $files = array(
+            'doc/en/us/help/a.md' => "# Anchors\n\n## First part\n\nText.\n\n## Second part\n\nText.\n",
+            'doc/en/us/help/b.md' => "# Linking\n\nSee [the second part](a.md#second-part) and [nothing](a.md#no-such-part).\n",
+            'doc/de/hilfe/a.md' => "# Anker\n\n## Erster Teil\n\nText.\n\n## Zweiter Teil\n\nText.\n",
+            'doc/de/hilfe/c.md' => "# Verweise\n\nSiehe [den zweiten Teil](a.md#zweiter-teil).\n",
+            'doc/en/us/help/c.md' => "# Links\n\nSee [the second part](a.md#second-part).\n",
+            'doc/en/us/help/d.md' => "# Uneven\n\n## Only part\n",
+            'doc/de/hilfe/d.md' => "# Ungleich\n\n## Einziger Teil\n\n## Noch ein Teil\n",
+            'doc/de/.paths.json' => json_encode( array( 'hilfe/a.md' => 'help/a.md', 'hilfe/c.md' => 'help/c.md', 'hilfe/d.md' => 'help/d.md' ) ),
+        );
+        foreach ( $files as $path => $content )
+        {
+            @mkdir( dirname( $root . '/' . $path ), 0777, true );
+            file_put_contents( $root . '/' . $path, $content );
+        }
+        $tracked = array_keys( $files );
+        sort( $tracked );
+        $index = function ( $language ) use ( $root, $tracked ) {
+            $languages = new expHelpLanguage( array( 'default' => 'en/us', 'directories' => array( 'en/us', 'de' ) ), $root );
+            return new expHelpDocumentIndex( new expHelpAllowlist( array( 'root' => $root, 'roots' => array( 'doc' ), 'tracked' => $tracked ) ),
+                                             array( 'cache_dir' => false, 'git_history' => false, 'languages' => $languages, 'language' => $language ) );
+        };
+        $german = $index( 'de' );
+        $english = $index( 'en/us' );
+        // an English page (b, not translated) links an English anchor of a translated page: the German heading
+        $this->assertSame( 'zweiter-teil', $german->anchorOf( 'help/a.md', 'second-part' ) );
+        $this->assertSame( 'zweiter-teil', $german->anchorOf( 'help/a.md', 'zweiter-teil' ), 'an anchor the page has stays' );
+        $this->assertSame( 'no-such-part', $german->anchorOf( 'help/a.md', 'no-such-part' ), 'an unknown anchor stays' );
+        // the other way: a German anchor on the English page (the original, or a fallback)
+        $this->assertSame( 'second-part', $english->anchorOf( 'help/a.md', 'zweiter-teil' ) );
+        // versions with a different number of headings are not mapped
+        $this->assertSame( 'only-part', $german->anchorOf( 'help/d.md', 'only-part' ) );
+        $this->assertSame( 'zweiter-teil', $german->anchorOf( 'help/x.md', 'zweiter-teil' ), 'an unknown page keeps it' );
+
+        // at render time and in the link check
+        expHelpDocumentIndex::setInstance( $german );
+        try
+        {
+            $this->assertStringEndsWith( '/exphelp/viewer/help/a.md#zweiter-teil', (string)expHelpLinks::link( 'a.md#second-part', 'help/b.md' ) );
+            $check = new expHelpLinkCheck( $german );
+            $problems = $check->check( 'help/b.md' );
+            $anchors = array_values( array_filter( $problems, function ( $p ) { return $p['problem'] === 'anchor'; } ) );
+            $this->assertCount( 1, $anchors, 'only the unknown anchor is reported: ' . json_encode( $problems ) );
+            $this->assertStringEndsWith( '#no-such-part', $anchors[0]['resolved'] );
+        }
+        finally
+        {
+            expHelpDocumentIndex::setInstance( null );
+        }
+        expHelpDocumentIndex::setInstance( $english );
+        try
+        {
+            $this->assertStringEndsWith( '/exphelp/viewer/help/a.md#second-part', (string)expHelpLinks::link( 'a.md#zweiter-teil', 'help/b.md' ) );
         }
         finally
         {

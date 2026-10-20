@@ -110,6 +110,13 @@ Every help address from before the move keeps working unchanged, because the ids
 Links inside a page are resolved against the file the page was read from, as GitHub resolves them. A German page
 that links to `../hilfe/suchen.md` opens the page that file translates, in the reader's language.
 
+An anchor in a link is written for one language's version of the target (`guides/x.md#cross-engine-notes` in an
+English page), but the reader may see the other version, whose headings have other anchors. A translation keeps the
+headings of its original in the same order, so the help maps the anchor by position: the n-th heading of the version
+the link was written for is the n-th heading of the version shown (`expHelpDocumentIndex::anchorOf()`). It does so
+when the page is rendered and in `exp:help check`, from English to a translation and back; an anchor the shown page
+has itself, or versions with a different number of headings, are left as they are.
+
 ## Adding a translation
 
 1. Add the directory to `exphelp.ini [DocLanguages] Directories[]` (in an override, or in the kernel's file for a
@@ -228,4 +235,6 @@ directory either has its translated name or keeps its English one). It exits wit
 - TD-11: how much of the help each language has, the choices of the "Reading in" switch, and `?lang=` for the
   original;
 - TD-12: a translated page is rendered from its file, so its links and images reach the original's directory
-  (`../../en/us/help/images/x.webp` from `doc/de/hilfe/x.md`).
+  (`../../en/us/help/images/x.webp` from `doc/de/hilfe/x.md`);
+- TD-13: an anchor written for another language's version of a page maps to the shown page's heading at the same
+  position, when the page is rendered and in the link check, in both directions.

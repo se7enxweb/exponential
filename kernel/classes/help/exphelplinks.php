@@ -38,8 +38,13 @@ class expHelpLinks
         $id = self::resolveId( $href, $currentId );
         if ( $id === null || !expHelpDocumentIndex::instance()->isAllowed( $id ) )
             return null;
-        $view = expHelpDocumentIndex::instance()->document( $id ) !== null ? 'viewer' : 'asset';
-        return self::absolute( expHelp::url( $view, $id, rawurldecode( $anchor ) ) );
+        $index = expHelpDocumentIndex::instance();
+        $view = $index->document( $id ) !== null ? 'viewer' : 'asset';
+        $anchor = rawurldecode( $anchor );
+        // an anchor written for another language's version of the page: the same heading of the page shown
+        if ( $anchor !== '' && $view === 'viewer' && method_exists( $index, 'anchorOf' ) )
+            $anchor = $index->anchorOf( $id, $anchor );
+        return self::absolute( expHelp::url( $view, $id, $anchor ) );
     }
 
     /**
