@@ -46,7 +46,7 @@ Administration, admin3) zeigen dieselben Funktionen in einer anderen Anordnung; 
 | Gruppe | Für | Beispiele |
 |---|---|---|
 | [Veröffentlichen](veroeffentlichen/README.md) | Redakteure | die Tagesordnung einer Ratssitzung veröffentlichen, das Protokoll nach der Genehmigung veröffentlichen, eine öffentliche Bekanntmachung veröffentlichen, eine veröffentlichte Bekanntmachung korrigieren |
-| [Compliance](../../../../eng-us/help/government/tasks/compliance/README.md) | Administratoren, Sicherheits- und Datenschutzbeauftragte | die zweistufige Anmeldung einschalten, die Content Security Policy durchsetzen, die Aufbewahrung der Logs festlegen, die Bekanntmachungen des Vorjahres archivieren |
+| [Compliance](compliance/README.md) | Administratoren, Sicherheits- und Datenschutzbeauftragte | die zweistufige Anmeldung einschalten, die Content Security Policy durchsetzen, die Aufbewahrung der Logs festlegen, die Bekanntmachungen des Vorjahres archivieren |
 | [Sites und Sprachen](../../../../eng-us/help/government/tasks/sites-and-languages/README.md) | Administratoren, Website-Ersteller | eine Seite in die zweite Amtssprache übersetzen, eine Abteilungs-Site einrichten, eine Sprache mit Schreibrichtung von rechts nach links hinzufügen |
 | [Betrieb](../../../../eng-us/help/government/tasks/operations/README.md) | IT-Betrieb | Wartungsmodus für ein Upgrade, eine Sicherung auf einem Testserver wiederherstellen, prüfen, ob die Cronjobs laufen |
 | [Personen und Berechtigungen](../../../../eng-us/help/government/tasks/people-and-permissions/README.md) | Administratoren | eine Redakteursrolle für eine Abteilung anlegen, einen ausscheidenden Mitarbeiter entfernen, einen Freigabe-Workflow einrichten |
