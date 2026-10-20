@@ -26,7 +26,7 @@ eine Gebühr weitergegeben werden, zu den Bedingungen der Lizenz ([Freie Dokumen
 
 **Darf ich die Lektionen ändern?**
 Ja, und Ihre Fassung unter derselben Lizenz teilen, als geändert gekennzeichnet und mit einem eigenen Titel
-([Lektion 1.4](../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/your-material-and-the-gfdl.md)).
+([Lektion 1.4](train-the-trainer/modul-01-den-unterricht-vorbereiten/ihr-material-und-die-gfdl.md)).
 
 **Eine Lektion ist für die aktuelle Version falsch. Was nun?**
 Korrigieren Sie sie mit **Auf GitHub bearbeiten**, oder melden Sie es auf der Seite **Fehler melden** des Hilfe-Centers

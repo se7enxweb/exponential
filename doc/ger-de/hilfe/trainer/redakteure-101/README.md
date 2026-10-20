@@ -44,7 +44,7 @@ Elemente verbergen und den Papierkorb nutzen, suchen, Lesezeichen pflegen, ihr K
 
 - Teilnehmende: ein Computer mit einem aktuellen Browser; keine Kenntnisse von Exponential.
 - Trainer: Erfahrung als Redakteur mit der Version, die unterrichtet wird, und der Kurs Train the Trainer oder
-  vergleichbare Erfahrung ([Train the Trainer: Kursüberblick](../../../../eng-us/help/trainers/train-the-trainer/README.md)).
+  vergleichbare Erfahrung ([Train the Trainer: Kursüberblick](../train-the-trainer/README.md)).
 
 ## Aufbau der Übungsumgebung
 

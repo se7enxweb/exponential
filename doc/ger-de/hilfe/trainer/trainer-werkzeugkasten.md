@@ -10,17 +10,17 @@ type: help
 # Trainer-Werkzeugkasten
 
 Jeder Kurs braucht dieselbe kleine Sammlung von Dokumenten. Diese Seite fasst sie als Checklisten und Vorlagen zum
-Kopieren zusammen. Jede stammt aus einer Lektion von [Train the Trainer](../../../eng-us/help/trainers/train-the-trainer/README.md), die die Gründe
+Kopieren zusammen. Jede stammt aus einer Lektion von [Train the Trainer](train-the-trainer/README.md), die die Gründe
 erklärt.
 
 ## Checkliste: zwei Wochen vorher
 
-- [ ] Kurs und Module für die Gruppe gewählt ([Lektion 1.3](../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/knowing-your-learners.md))
+- [ ] Kurs und Module für die Gruppe gewählt ([Lektion 1.3](train-the-trainer/modul-01-den-unterricht-vorbereiten/ihre-teilnehmenden-kennen.md))
 - [ ] Umfrage vor dem Kurs verschickt, einschließlich der Frage nach Vorkehrungen ([Lektion 5.4](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accommodations-and-inclusive-practice.md))
 - [ ] Release gewählt; Aufbau der Übungsumgebung gewählt: eine Installation pro Teilnehmer oder eine gemeinsame Website ([Lektion 2.7](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/shared-server-or-one-per-learner.md))
 - [ ] Jede Übung mit diesem Release geprobt ([Lektion 3.4](../../../eng-us/help/trainers/train-the-trainer/module-03-designing-a-course/writing-exercises-that-work.md))
 - [ ] Rechneranforderungen an die Teilnehmenden geschickt ([Lektion 2.1](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/requirements-for-a-training-machine.md))
-- [ ] Handouts barrierefrei und korrekt lizenziert ([Lektion 5.1](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accessible-course-materials.md), [Lektion 1.4](../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/your-material-and-the-gfdl.md))
+- [ ] Handouts barrierefrei und korrekt lizenziert ([Lektion 5.1](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/accessible-course-materials.md), [Lektion 1.4](train-the-trainer/modul-01-den-unterricht-vorbereiten/ihr-material-und-die-gfdl.md))
 
 ## Checkliste: am Tag vorher
 
@@ -113,7 +113,7 @@ Based on the Exponential documentation, free documentation under the GNU FDL 1.3
 
 - [Trainer: hier beginnen](trainer-hier-beginnen.md)
 - [Kurzkarte für die Übungsumgebung](kurzkarte-fuer-die-uebungsumgebung.md)
-- [Train the Trainer: Kursüberblick](../../../eng-us/help/trainers/train-the-trainer/README.md)
+- [Train the Trainer: Kursüberblick](train-the-trainer/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

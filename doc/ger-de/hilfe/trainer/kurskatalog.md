@@ -18,12 +18,12 @@ Die Zeitangaben enthalten die praktischen Übungen, aber keine Pausen.
 
 | Kurs | Für | Niveau | Umfang | Voraussetzungen |
 |---|---|---|---|---|
-| [Train the Trainer](../../../eng-us/help/trainers/train-the-trainer/README.md) | Menschen, die Exponential unterrichten werden | Einsteiger bis Fortgeschrittene | 34 Lektionen, etwa 21 Stunden (3 bis 4 Tage) | Umgang mit Browser und Terminal |
+| [Train the Trainer](train-the-trainer/README.md) | Menschen, die Exponential unterrichten werden | Einsteiger bis Fortgeschrittene | 34 Lektionen, etwa 21 Stunden (3 bis 4 Tage) | Umgang mit Browser und Terminal |
 | [Redakteure 101](redakteure-101/README.md) | Neue Redakteure und Autoren | Einsteiger | 27 Lektionen, etwa 19,5 Stunden (etwa 3 Tage) | Ein Browser |
 | [Redakteure 201](../../../eng-us/help/trainers/editors-201/README.md) | Redakteure, die jede Woche veröffentlichen | Fortgeschrittene | 23 Lektionen, etwa 16 Stunden (etwa 3 Tage) | Redakteure 101 |
 | [Exponential Layouts](../../../eng-us/help/trainers/layouts/README.md) | Redakteure und Website-Bauer, die Seiten aus Blöcken bauen | Einsteiger bis Fortgeschrittene | 23 Lektionen, etwa 17,5 Stunden (etwa 3 Tage) | Redakteure 101 |
 | [Exponential Intelligence](../../../eng-us/help/trainers/exponential-intelligence/README.md) | Redakteure und Administratoren, die die KI-Funktionen nutzen | Einsteiger bis Experten | 21 Lektionen, etwa 15,5 Stunden (etwa 2,5 Tage) | Redakteure 101 |
-| [Website-Administration](../../../eng-us/help/trainers/site-administrators/README.md) | Menschen, die eine Website betreiben | Fortgeschrittene | 48 Lektionen, etwa 30 Stunden (etwa 5 Tage) | Redakteure 101, Grundkenntnisse der Kommandozeile |
+| [Website-Administration](website-administratoren/README.md) | Menschen, die eine Website betreiben | Fortgeschrittene | 48 Lektionen, etwa 30 Stunden (etwa 5 Tage) | Redakteure 101, Grundkenntnisse der Kommandozeile |
 | [Hosting und Betrieb](../../../eng-us/help/trainers/hosting-operations/README.md) | Systemadministratoren und Hosting-Mitarbeiter | Fortgeschrittene bis Experten | 28 Lektionen, etwa 20 Stunden (3 bis 4 Tage) | Website-Administration, Linux |
 | [Suche](../../../eng-us/help/trainers/search/README.md) | Administratoren und Entwickler | Fortgeschrittene | 20 Lektionen, etwa 10 Stunden (1,5 bis 2 Tage) | Website-Administration |
 | [Multisite und Seitenpakete](../../../eng-us/help/trainers/multisite-and-packages/README.md) | Administratoren und Entwickler | Fortgeschrittene bis Experten | 26 Lektionen, etwa 22 Stunden (etwa 4 Tage) | Website-Administration |
@@ -78,7 +78,7 @@ Jeder Kursüberblick listet kürzere Zeitpläne auf, die aus seinen Modulen zusa
 ## Verwandte Seiten
 
 - [Trainer: hier beginnen](trainer-hier-beginnen.md)
-- [Train the Trainer: Kursüberblick](../../../eng-us/help/trainers/train-the-trainer/README.md)
+- [Train the Trainer: Kursüberblick](train-the-trainer/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

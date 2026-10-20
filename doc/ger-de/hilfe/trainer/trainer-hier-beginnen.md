@@ -43,7 +43,7 @@ Jede Angabe stammt aus dieser Dokumentation, aus dem Code oder aus einer echten 
 | Seite | Wofür sie da ist |
 |---|---|
 | [Kurskatalog](kurskatalog.md) | Jeder Kurs mit Zielgruppe, Dauer, Voraussetzungen und Modulen |
-| [Train the Trainer](../../../eng-us/help/trainers/train-the-trainer/README.md) | Der Kurs für Trainer: Vorbereitung, Übungsumgebung, Kursgestaltung, Durchführung, Barrierefreiheit, Prüfung |
+| [Train the Trainer](train-the-trainer/README.md) | Der Kurs für Trainer: Vorbereitung, Übungsumgebung, Kursgestaltung, Durchführung, Barrierefreiheit, Prüfung |
 | Die Fachkurse | Zwölf Kurse für Redakteure, Administratoren, Entwickler, Designer und Hosting-Mitarbeiter: im Katalog aufgeführt |
 | [Workshops und Bootcamps](../../../eng-us/help/trainers/workshops/README.md), [Prüfungen](../../../eng-us/help/trainers/assessments/README.md) | Fertige Ablaufpläne für einen, drei und fünf Tage sowie Prüfungsmaterial |
 
@@ -56,16 +56,16 @@ Course    a course overview: who it is for, the modules, a reading path, schedul
 ```
 
 Jede Lektion hat eine Dauer, die ihre Übung einschließt, sodass der Zeitplan eines Moduls aufgeht. Die
-[erste Lektion von Train the Trainer](../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/how-these-courses-work.md)
+[erste Lektion von Train the Trainer](train-the-trainer/modul-01-den-unterricht-vorbereiten/wie-diese-kurse-funktionieren.md)
 erklärt den Aufbau im Detail.
 
 ## Einen Kurs für eine Gruppe wählen
 
 | Ihre Teilnehmenden | Beginnen Sie mit |
 |---|---|
-| Menschen, die Exponential unterrichten werden | [Train the Trainer](../../../eng-us/help/trainers/train-the-trainer/README.md) |
+| Menschen, die Exponential unterrichten werden | [Train the Trainer](train-the-trainer/README.md) |
 | Menschen, die Inhalte schreiben und veröffentlichen | [Redakteure 101](redakteure-101/README.md), danach [Redakteure 201](../../../eng-us/help/trainers/editors-201/README.md) |
-| Menschen, die eine Website betreiben | [Website-Administration](../../../eng-us/help/trainers/site-administrators/README.md) |
+| Menschen, die eine Website betreiben | [Website-Administration](website-administratoren/README.md) |
 | Menschen, die auf Exponential aufbauen | [Entwickler](entwickler/README.md) |
 | Menschen, die Themes gestalten | [Theme-Design](../../../eng-us/help/trainers/theme-designers/README.md) |
 | Menschen, die Seiten aus Blöcken bauen | [Exponential Layouts](../../../eng-us/help/trainers/layouts/README.md) |
@@ -74,15 +74,15 @@ erklärt den Aufbau im Detail.
 
 Der [Kurskatalog](kurskatalog.md) enthält alle Kurse: auch Exponential Intelligence, Suche, Multisite und
 Seitenpakete, Newsletter, Workshops und Bootcamps sowie Prüfungen.
-[Lektion 1.3: Ihre Teilnehmenden kennen](../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/knowing-your-learners.md)
+[Lektion 1.3: Ihre Teilnehmenden kennen](train-the-trainer/modul-01-den-unterricht-vorbereiten/ihre-teilnehmenden-kennen.md)
 zeigt, wie Sie herausfinden, wer Ihre Teilnehmenden sind.
 
 ## Ihre erste Stunde als Trainer
 
 1. **Lesen Sie, wie die Kurse funktionieren** (10 Minuten):
-   [Lektion 1.1](../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/how-these-courses-work.md).
+   [Lektion 1.1](train-the-trainer/modul-01-den-unterricht-vorbereiten/wie-diese-kurse-funktionieren.md).
 2. **Lernen Sie das Hilfe-Center kennen** (20 Minuten):
-   [Lektion 1.2](../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/the-help-center-as-your-textbook.md).
+   [Lektion 1.2](train-the-trainer/modul-01-den-unterricht-vorbereiten/das-hilfe-center-als-ihr-lehrbuch.md).
 3. **Bauen Sie eine erste Übungsumgebung auf** (25 Minuten): Installieren Sie eine Schulungs-Website mit einem
    Befehl, [Lektion 2.3](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/one-install-per-learner.md), und stellen Sie sie
    bereit, [Lektion 2.4](../../../eng-us/help/trainers/train-the-trainer/module-02-building-the-lab/serving-the-lab-sites.md).
@@ -98,7 +98,7 @@ zeigt, wie Sie herausfinden, wer Ihre Teilnehmenden sind.
 3. **Testkonten verwenden `example.invalid`.** Keine Übung darf E-Mails an eine echte Person senden.
 4. **Verwenden Sie die richtigen Namen.** Das Produkt heißt Exponential; 7x ist das Unternehmen, das es führt; die
    Exponential Foundation ist die gemeinnützige Organisation; der alte Name ist Geschichte
-   ([Namen und Geschichte im Unterricht](../../../eng-us/help/trainers/train-the-trainer/module-01-preparing-to-teach/names-and-history-in-class.md)).
+   ([Namen und Geschichte im Unterricht](train-the-trainer/modul-01-den-unterricht-vorbereiten/namen-und-geschichte-im-unterricht.md)).
 5. **Bleiben Sie barrierefrei und ehrlich.** Barrierefreie Materialien
    ([Modul 5](../../../eng-us/help/trainers/train-the-trainer/module-05-accessibility-and-inclusion/README.md)) und kein Anspruch auf eine
    offizielle Zertifizierung ([Teilnahmebescheinigungen](../../../eng-us/help/trainers/train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md)).
@@ -131,7 +131,7 @@ indem er das Passwort ändert; installieren Sie sie zwischen den Kursen neu. [De
 ## Verwandte Seiten
 
 - [Kurskatalog](kurskatalog.md)
-- [Train the Trainer: Kursüberblick](../../../eng-us/help/trainers/train-the-trainer/README.md)
+- [Train the Trainer: Kursüberblick](train-the-trainer/README.md)
 - [Wer ist 7x?](../wer-ist-7x.md) und [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

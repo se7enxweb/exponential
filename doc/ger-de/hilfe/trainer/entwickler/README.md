@@ -44,8 +44,8 @@ eigenen Erweiterungen bauen, sie testen, unter Velocity deployen und Änderungen
 | [2. Die Template-Sprache](modul-02-die-template-sprache/README.md) | 6 | 5 Std. |
 | [3. Designs, Overrides und Fehlersuche](modul-03-designs-overrides-und-debugging/README.md) | 5 | 4 Std. 15 Min. |
 | [4. Inhaltsklassen und Datentypen](modul-04-inhaltsklassen-und-datentypen/README.md) | 4 | 3 Std. 40 Min. |
-| [5. Fetch-Funktionen](../../../../eng-us/help/trainers/developers/module-05-fetch-functions/README.md) | 4 | 3 Std. 30 Min. |
-| [6. Module und Views](../../../../eng-us/help/trainers/developers/module-06-modules-and-views/README.md) | 4 | 3 Std. 35 Min. |
+| [5. Fetch-Funktionen](modul-05-fetch-funktionen/README.md) | 4 | 3 Std. 30 Min. |
+| [6. Module und Views](modul-06-module-und-views/README.md) | 4 | 3 Std. 35 Min. |
 | [7. Erweiterungen](../../../../eng-us/help/trainers/developers/module-07-extensions/README.md) | 5 | 3 Std. 55 Min. |
 | [8. Einstellungen und Siteaccesses](../../../../eng-us/help/trainers/developers/module-08-settings-and-siteaccesses/README.md) | 4 | 3 Std. 15 Min. |
 | [9. Die Konsole und persistente Objekte](../../../../eng-us/help/trainers/developers/module-09-the-console-and-persistent-objects/README.md) | 4 | 3 Std. 20 Min. |
