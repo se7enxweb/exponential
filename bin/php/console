@@ -765,9 +765,13 @@ $findNearest = function( $typed, array $all )
 //    php runcronjobs.php [-s <siteaccess> ...] <part-name>
 // ══════════════════════════════════════════════════════════════════════════════
 
-$runCommand = function( array $cmd, array $forwardArgs )
+$runCommand = function( array $cmd, array $forwardArgs, $invokedAs = null )
               use ( $rootDir, $dim, $gray, $orange, $abort )
 {
+    // The name the command was called by (an alias too), for a command that shows more under an alias
+    // (exp:info and exp:about are exp:expfetch with more facts).
+    putenv( 'EXP_CONSOLE_COMMAND=' . ( $invokedAs !== null ? $invokedAs : $cmd['name'] ) );
+
     if ( $cmd['type'] === 'cron' )
     {
         // Cron parts run via runcronjobs.php; the part name is appended last so
@@ -1018,7 +1022,7 @@ if ( isset( $allCommands[ $commandInput ] ) )
     $runCommand( $allCommands[ $commandInput ], $forwardArgs );
 
 if ( isset( $aliasMap[ $commandInput ] ) )
-    $runCommand( $allCommands[ $aliasMap[ $commandInput ] ], $forwardArgs );
+    $runCommand( $allCommands[ $aliasMap[ $commandInput ] ], $forwardArgs, $commandInput );
 
 // ── Bare-name shortcut — try exp: → shell: → bin: (no colon in input) ─────────
 if ( strpos( $commandInput, ':' ) === false )
@@ -1029,7 +1033,7 @@ if ( strpos( $commandInput, ':' ) === false )
         if ( isset( $allCommands[ $candidate ] ) )
             $runCommand( $allCommands[ $candidate ], $forwardArgs );
         if ( isset( $aliasMap[ $candidate ] ) )
-            $runCommand( $allCommands[ $aliasMap[ $candidate ] ], $forwardArgs );
+            $runCommand( $allCommands[ $aliasMap[ $candidate ] ], $forwardArgs, $candidate );
     }
 }
 

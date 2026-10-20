@@ -65,12 +65,13 @@ a26b90f83a935a64e5db3eb84f9a5cfd  bin/php/cleanuprss.php
 9e84fc8b16142a64ff93d62e929d89cb  bin/php/clusterize.php
 308cd20b020f9acad2d6c04e2a1a3e47  bin/php/clusterpurge.php
 76598f90b8a0495835911061d5ec1e0c  bin/php/collaborationsampledata.php
-7c83003e7bda19886b01f7d3ec8a64fa  bin/php/console
+88968a88eba173dcaa565cafa4aa9578  bin/php/console
 c79269b9670b5aaeab8accb1a72b653b  bin/php/contentcheck.php
 745bd14e507d9b1d6d852169eaf8f5bc  bin/php/convertezenumtoezselection.php
 0a7d1915373ef3451e32dbafc6b08c6e  bin/php/convertprice2multiprice.php
 c0e2aa3b432485dd3e2c0edad20c76c5  bin/php/dfscleanup.php
 f0f67c88d699385e2c4f30e0c72a413f  bin/php/expcontentjob.php
+18dbf963ecedf6d32e912a17871d532b  bin/php/expfetch.php
 8f6d5c119f5a14a1023ea42794b746bc  bin/php/exphelp.php
 a81196262890f1479e0e93c3ea9a20e2  bin/php/exphelpcontent.php
 c5fa6f71f03886ec54a618b8c4d4151d  bin/php/exphelpexamples.php
@@ -13472,6 +13473,7 @@ a16f75c36ef3d59d2a868941e69f1f35  kernel/private/classes/commands/preload.php
 ef4240ed9121eff258a88fc68f9c98bb  kernel/private/classes/commands/resetuserpassword.php
 2f552023e39e6e771c80fb5d917a9323  kernel/private/classes/commands/runcronjobs.php
 0ecdcdef1e40c154a40bdd4f8b1fbbcb  kernel/private/classes/commands/solr.php
+1139485b9eca6af1f27707560fd21575  kernel/private/classes/commands/syscard.php
 4465a716b5fc1723bd7bcdba839111cf  kernel/private/classes/commands/systeminfo.php
 86b2a5eb0c666fb6c435b5b560158b62  kernel/private/classes/commands/trashpurge.php
 14f7639b6fa7db9302e0dc4c245375cd  kernel/private/classes/commands/updateisbn13.php
