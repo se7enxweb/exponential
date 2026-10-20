@@ -3,7 +3,7 @@
 Diese Seite ist für Designer, die einem öffentlichen Website-Design das Bearbeiten hinzufügen. `ezwt` („eZ Website
 Toolbar LS“) ist die Bearbeitungsleiste, die ein angemeldeter Redakteur auf der öffentlichen Website sieht: bearbeiten,
 verschieben, entfernen, hier anlegen, Unterelemente sortieren, den Zustand ändern, ein Dokument hochladen oder
-exportieren. Sie benötigt `ezjscore`. [ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md), [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md), [ezdemo](ezdemo.md) und das
+exportieren. Sie benötigt `ezjscore`. [ezwebin](ezwebin.md), [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md), [ezdemo](ezdemo.md) und das
 [Simple-Theme](../../../../eng-us/features/6.0/extensions/sevenx_themes_simple.md) bauen alle auf ihr auf.
 
 ## In Ihr Design einbauen
@@ -46,7 +46,7 @@ Das README der Extension enthält den vollständigen Text.
 
 ## Verwandte Seiten
 
-- [ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md), [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md), [ezodf](ezodf.md), [ezmultiupload](ezmultiupload.md)
+- [ezwebin](ezwebin.md), [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md), [ezodf](ezodf.md), [ezmultiupload](ezmultiupload.md)
 - [Chronik](../../../../eng-us/history/extensions/ezwt.md) und [Versionshinweise](../../../../changelogs/extensions/ezwt.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/ezwt.md)
 - [Verhaltensänderungen der Extensions](../../../../eng-us/bc/6.0/extensions-behaviour-changes.md)

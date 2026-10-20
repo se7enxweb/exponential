@@ -2,7 +2,7 @@
 
 Diese Seite ist für alle, die täglich in der Administrationsoberfläche arbeiten. Sie können das linke Menü so breit und
 seinen Text so groß machen, wie Sie es brauchen. Die Wahl wird mit Ihrem Konto gespeichert, sodass sie Ihnen über
-Sitzungen und Computer hinweg folgt. Sie kam im Juni 2026 mit dem [responsiven Admin-Design](../../../eng-us/features/6.0/admin3-responsive-admin.md).
+Sitzungen und Computer hinweg folgt. Sie kam im Juni 2026 mit dem [responsiven Admin-Design](admin3-responsives-admin.md).
 
 Sie hilft:
 
@@ -57,8 +57,8 @@ user/preferences/set_and_exit/admin_left_menu_size/<value>
 
 ## Verwandte Seiten
 
-- [Das responsive Admin-Design (admin3)](../../../eng-us/features/6.0/admin3-responsive-admin.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
-- [Blättern, Sortieren und Seitengrößen](../../../eng-us/features/6.0/admin-list-paging.md)
+- [Das responsive Admin-Design (admin3)](admin3-responsives-admin.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
+- [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md)
 - [Unterelementliste: Spalten, Voreinstellungen und CSV-Export](../../../eng-us/features/6.0/subitems-table-options.md), [ausgewählte Unterelemente kopieren](unterelemente-auswahl-kopieren.md)
 - [Ausgewählte ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) (die Linie 6.0.15 hat noch kein Release-Tag)

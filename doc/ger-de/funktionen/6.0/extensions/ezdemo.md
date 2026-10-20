@@ -2,7 +2,7 @@
 
 Diese Seite ist für alle, die eine vollständige Exponential-Website sehen oder Templates daraus kopieren möchten.
 `ezdemo` („Exponential Demo Design LS“) ist die Demo-Website von Exponential: ein Design, Einstellungen und
-Installationspakete, die zeigen, was [ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md), [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md), [ezwt](ezwt.md) und [ezodf](ezodf.md)
+Installationspakete, die zeigen, was [ezwebin](ezwebin.md), [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md), [ezwt](ezwt.md) und [ezodf](ezodf.md)
 zusammen leisten. Sie hat Galerien, einen Editor für Startseite und Landingpages, Flyouts, einen Kampagnenblock,
 RSS-Seiten und einen Shop. Version 6.0.9 (2. Oktober 2026) ist aktuell.
 
@@ -46,7 +46,7 @@ ezpage-Reiter verwenden die Klassen `.ezpage-tabs*` von ezflow 6.1.4.
 
 ## Verwandte Seiten
 
-- [ezwebin](../../../../eng-us/features/6.0/extensions/ezwebin.md), [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md)
+- [ezwebin](ezwebin.md), [ezflow](../../../../eng-us/features/6.0/extensions/ezflow.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Chronik](../../../../eng-us/history/extensions/ezdemo.md) und [Versionshinweise](../../../../changelogs/extensions/ezdemo.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/ezdemo.md)

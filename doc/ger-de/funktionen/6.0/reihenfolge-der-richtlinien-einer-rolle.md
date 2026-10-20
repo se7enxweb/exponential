@@ -48,10 +48,10 @@ Richtlinien jetzt in der Reihenfolge ihrer IDs zurück statt nach Modul und Funk
 ## Verwandte Seiten
 
 - [Blättern in Rollen und Richtlinien](../../../eng-us/bc/6.0/role-policy-paging.md)
-- [Template-Operatoren für Rollen und Richtlinien](../../../eng-us/features/6.0/role-and-policy-template-operators.md)
+- [Template-Operatoren für Rollen und Richtlinien](template-operatoren-fuer-rollen-und-richtlinien.md)
 - [Sektionen](../../anleitungen/sektionen.md): die Sektions-Einschränkung, für eine Sektion zugewiesene Rollen und wer Sektionen zuweisen darf (`section/assign` mit `NewSection`)
 - [Objektzustände](../../anleitungen/objektzustaende.md): die Einschränkungen `StateGroup_<identifier>` und `NewState`, mit einem ausgearbeiteten Prüf-Workflow
-- [Blättern in Admin-Listen](../../../eng-us/features/6.0/admin-list-paging.md)
+- [Blättern in Admin-Listen](seitenweise-listen-im-admin.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [Januar 2026](../../../eng-us/history/2026/2026-01.md), [16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)

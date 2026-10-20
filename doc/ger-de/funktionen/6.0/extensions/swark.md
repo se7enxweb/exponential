@@ -32,7 +32,7 @@ Jeder Operator hat eine Seite im Ordner `doc/operators` der Extension.
 ## Verwandte Seiten
 
 - [owsimpleoperator](owsimpleoperator.md)
-- [Template-Operatoren für Zeichenketten](../../../../eng-us/features/6.0/string-template-operators.md)
+- [Template-Operatoren für Zeichenketten](../template-operatoren-fuer-zeichenketten.md)
 - [Abstraktionen für Kommandozeile, Cronjobs und Ansichten](../../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Chronik](../../../../eng-us/history/extensions/swark.md) und [Versionshinweise](../../../../changelogs/extensions/swark.md)

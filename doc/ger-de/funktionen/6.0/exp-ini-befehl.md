@@ -64,7 +64,7 @@ Editorklasse (`expIniEditor`) steht hinter dem Reiter für Einstellungen der [De
 - [Platzierungen von INI-Überschreibungen](../../spezifikationen/6.0/ini-override-platzierungen.md)
 - [Audit-Ereignismodell](../../spezifikationen/6.0/audit-ereignismodell.md)
 - [eZINI erhält Kommentare beim Speichern](../../../eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md)
-- [INI-Überschreibungen für mehrere Websites](../../../eng-us/features/6.0/multi-site-ini-overrides.md)
+- [INI-Überschreibungen für mehrere Websites](ini-ueberschreibungen-fuer-mehrere-websites.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - Chronik: [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md), [Oktober 2026](../../../eng-us/history/2026/2026-10.md)

@@ -66,7 +66,7 @@ während die Seite zusammengesetzt wird.
 
 ## Verwandte Seiten
 
-- [Extensions in mehr als einem Ordner](../../../eng-us/features/6.0/additional-extension-directories.md)
+- [Extensions in mehr als einem Ordner](zusaetzliche-extension-verzeichnisse.md)
 - [Ladereihenfolge der Extensions](../../../eng-us/features/6.0/extension-loading-order.md)
 - [Verhaltensänderungen der Legacy-Extensions](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)
 - Changelogs: [6.0.1](../../../changelogs/6.0/6.0.1.md) (Reihenfolge der Module), [6.0.5](../../../changelogs/6.0/6.0.5.md) (Korrektur für Robustheit)

@@ -39,11 +39,11 @@ Tragen Sie Ihre Werte in `settings/override/bcgooglesitemaps.ini.append.php` ein
 | 1.1.6.2 bis 1.1.6.4 | 27. September bis 2. Oktober 2026 | Die Lizenz wird vollständig genannt; die Beschreibung nennt Exponential; Kommandozeilenskripte und Modulansichten sind Klassen, die die Dateien aufrufen; Einstiegsdateien tragen einen Kopf von 7x und der Exponential Foundation; Befehle führen eine Beschreibung. |
 
 Für umfassendere SEO (Titel, Beschreibungen, Open-Graph-Bilder, News- und Mobil-Sitemaps) siehe
-[xrowmetadata](../../../../eng-us/features/6.0/extensions/xrowmetadata.md).
+[xrowmetadata](xrowmetadata.md).
 
 ## Verwandte Seiten
 
-- [xrowmetadata](../../../../eng-us/features/6.0/extensions/xrowmetadata.md)
+- [xrowmetadata](xrowmetadata.md)
 - [Cronjobs in der Konsole](../../../../eng-us/features/6.0/cronjobs-console.md)
 - [Abstraktionen für Kommandozeile, Cronjobs und Ansichten](../../../../eng-us/bc/6.0/cli_cronjob_view_abstractions.md)
 - [Chronik](../../../../eng-us/history/extensions/bcgooglesitemaps.md) und [Versionshinweise](../../../../changelogs/extensions/bcgooglesitemaps.md)

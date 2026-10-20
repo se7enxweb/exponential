@@ -22,7 +22,7 @@ Dieselbe Aktion steht im Kontextmenü eines einzelnen Elements und in der Ansich
 - Ein Knoten kann nicht in sich selbst oder einen seiner eigenen Nachfahren kopiert werden.
 - Ist die Kopie größer als `MaxNodesCopySubtree`, lehnen aktuelle Releases sie nicht ab: Die Kopieransicht bietet an,
   sie als Inhaltsauftrag im Hintergrund auszuführen, der an kein Zeitlimit einer Anfrage stoßen kann (siehe
-  [Inhaltsaufträge](../../../eng-us/features/6.0/content-jobs.md)). Die erste Version der Funktion (Januar 2025) kopierte höchstens so viele Knoten.
+  [Inhaltsaufträge](inhaltsauftraege.md)). Die erste Version der Funktion (Januar 2025) kopierte höchstens so viele Knoten.
 
 ## Einstellungen
 
@@ -48,10 +48,10 @@ Alle Schlüssel stehen in `settings/content.ini`, Block `CopySettings`. Geltungs
 
 ## Verwandte Seiten
 
-- [Inhaltsaufträge](../../../eng-us/features/6.0/content-jobs.md) für große Kopien
+- [Inhaltsaufträge](inhaltsauftraege.md) für große Kopien
 - [Ausgewählte ausblenden und einblenden](../../../eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md)
 - [Optionen der Unterelementtabelle](../../../eng-us/features/6.0/subitems-table-options.md)
-- [Das responsive Admin-Design (admin3)](../../../eng-us/features/6.0/admin3-responsive-admin.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md), [Breite und Schriftgröße der linken Seitenleiste](admin3-seitenleistenbreite-und-schriftgroesse.md)
+- [Das responsive Admin-Design (admin3)](admin3-responsives-admin.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md), [Breite und Schriftgröße der linken Seitenleiste](admin3-seitenleistenbreite-und-schriftgroesse.md)
 - [Changelog 6.0.7](../../../changelogs/6.0/6.0.7.md)
 - Chronik: [August 2024](../../../eng-us/history/2024/2024-08.md), [Oktober 2024](../../../eng-us/history/2024/2024-10.md), [November 2024](../../../eng-us/history/2024/2024-11.md), [Januar 2025](../../../eng-us/history/2025/2025-01.md), [Juni 2025](../../../eng-us/history/2025/2025-06.md), [Juni 2026, zweite Hälfte](../../../eng-us/history/2026/2026-06b.md)
 

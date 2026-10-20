@@ -89,7 +89,7 @@ Tests (ohne Datenbank): `eZContentVersionviewViewModeTest`.
 ## Verwandte Seiten
 
 - [Filter für Zugriff und Ansichts-Cache](../../../eng-us/features/6.0/access-and-cache-filters.md)
-- [PDF-Export](../../../eng-us/features/6.0/pdf-export.md)
+- [PDF-Export](pdf-export.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

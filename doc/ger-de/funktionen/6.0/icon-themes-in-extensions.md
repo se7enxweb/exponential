@@ -95,7 +95,7 @@ Die vollständige Anleitung mit der Klasse und den Hinweisen zur Aktualisierung 
 ## Verwandte Seiten
 
 - [Icon-Unterstützung (Anleitung)](../../../eng-us/bc/6.0/ICONS.md)
-- [Zusätzliche Extension-Verzeichnisse](../../../eng-us/features/6.0/additional-extension-directories.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
+- [Zusätzliche Extension-Verzeichnisse](zusaetzliche-extension-verzeichnisse.md), [das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
 - [Chronik: Juli 2026](../../../eng-us/history/2026/2026-07.md)
 
 <!-- exp-partner-block:start -->

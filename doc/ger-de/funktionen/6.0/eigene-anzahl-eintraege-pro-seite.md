@@ -1,7 +1,7 @@
 # Eigene Anzahl von Einträgen pro Seite
 
 Diese Seite ist in [Die Unterelementliste: Spalten, Voreinstellungen und CSV-Export](../../../eng-us/features/6.0/subitems-table-options.md#custom-page-size)
-aufgegangen, Abschnitt „Eigene Seitengröße“. Verwandt: [Blättern, Sortieren und Seitengrößen](../../../eng-us/features/6.0/admin-list-paging.md).
+aufgegangen, Abschnitt „Eigene Seitengröße“. Verwandt: [Blättern, Sortieren und Seitengrößen](seitenweise-listen-im-admin.md).
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, tragen zum Projekt

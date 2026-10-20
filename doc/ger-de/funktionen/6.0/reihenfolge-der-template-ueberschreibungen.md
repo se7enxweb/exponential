@@ -8,7 +8,7 @@ der Seitengröße und die Tabelle dessen enthält, was die alte Seite falsch mac
 ## Verwandte Seiten
 
 - [Ladereihenfolge der Extensions](../../../eng-us/features/6.0/extension-loading-order.md)
-- [Blättern in Admin-Listen](../../../eng-us/features/6.0/admin-list-paging.md)
+- [Blättern in Admin-Listen](seitenweise-listen-im-admin.md)
 - [Chronik, 16. bis 30. September 2026](../../../eng-us/history/2026/2026-09b.md)
 - [Verhaltensänderungen, 16. bis 30. September 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-09b.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)

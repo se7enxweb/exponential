@@ -63,7 +63,7 @@ php bin/php/exprepair.php --disable   # writes Enabled=false and an empty KeyHas
 
 - [Wartungsmodus](../../../eng-us/features/6.0/maintenance-mode.md)
 - [Dateikonsistenzprüfung](../../../eng-us/features/6.0/file-consistency-check.md)
-- [Velocity und der Opcode-Cache](../../../eng-us/features/6.0/velocity-opcode-cache-and-profile.md)
+- [Velocity und der Opcode-Cache](velocity-opcode-cache-und-profil.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
 - [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)
 - [Chronik Oktober 2026](../../../eng-us/history/2026/2026-10.md)

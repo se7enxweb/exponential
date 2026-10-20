@@ -16,7 +16,7 @@ Zeit und Ihre Bandbreite verschwenden.
    ```
 
    Die Sitemap kann aus der Extension `bcgooglesitemaps` kommen, die Teil der
-   [Auslieferung](../../../eng-us/features/6.0/default-extension-distribution.md) ist.
+   [Auslieferung](standard-extension-auslieferung.md) ist.
 3. Testen Sie sie:
 
    ```bash
@@ -67,7 +67,7 @@ unterscheiden müssen.
 ## Verwandte Seiten
 
 - [Eine saubere Installation, die zu Shared Hosting passt](../../../eng-us/features/6.0/clean-install-defaults.md)
-- [bcgooglesitemaps](extensions/bcgooglesitemaps.md), [xrowmetadata](../../../eng-us/features/6.0/extensions/xrowmetadata.md)
+- [bcgooglesitemaps](extensions/bcgooglesitemaps.md), [xrowmetadata](extensions/xrowmetadata.md)
 - [Changelog 6.0.11](../../../changelogs/6.0/6.0.11.md)
 - [Chronik: September 2025](../../../eng-us/history/2025/2025-09.md)
 

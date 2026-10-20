@@ -37,7 +37,7 @@ unter GPL v2 oder später.
 
 ## Verwandte Seiten
 
-- [Bestellbelege](../../../../eng-us/features/6.0/order-receipts.md)
+- [Bestellbelege](../bestellbelege.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Chronik](../../../../eng-us/history/extensions/ezpaypal.md) und [Versionshinweise](../../../../changelogs/extensions/ezpaypal.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/ezpaypal.md)

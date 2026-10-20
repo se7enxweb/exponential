@@ -57,7 +57,7 @@ nicht erlaubt ist, lässt sich aus einem Template nicht aufrufen.
 ## Verwandte Seiten
 
 - [swark](swark.md): fertige Operatoren im selben Geist
-- [Template-Operatoren für Zeichenketten](../../../../eng-us/features/6.0/string-template-operators.md)
+- [Template-Operatoren für Zeichenketten](../template-operatoren-fuer-zeichenketten.md)
 - [Spezifikation der Extension-Metadaten](../../../spezifikationen/6.0/extension-metadaten.md)
 - [Chronik](../../../../eng-us/history/extensions/owsimpleoperator.md) und [Versionshinweise](../../../../changelogs/extensions/owsimpleoperator.md)
 - [Änderungsverzeichnis](../../../../eng-us/history/ledger/owsimpleoperator.md)

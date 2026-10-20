@@ -50,7 +50,7 @@ grep -n "sort" kernel/private/classes/views/shop/orderlist.php
 
 ## Verwandte Seiten
 
-- [Blättern in Admin-Listen](../../../eng-us/features/6.0/admin-list-paging.md)
+- [Blättern in Admin-Listen](seitenweise-listen-im-admin.md)
 - [Das Design admin4](../../../eng-us/features/6.0/admin4-design.md)
 - [Shop-Dashboard](../../../eng-us/features/6.0/store-dashboard.md)
 - [Checkliste zur Aktualisierung vom 1. und 2. Oktober 2026](../../../eng-us/bc/6.0/behaviour-changes-2026-10.md)
