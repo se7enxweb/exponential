@@ -19,7 +19,7 @@ centers" (<https://exponential.earth/partner/program>, read 18 October 2026).
 |---|---|---|
 | Points for training | "Official training course (per attendee)" 2,000 | <https://exponential.earth/partner/requirements> |
 | Knowledge products | "Knowledge products (Books, training, certs)" with partner discounts | <https://exponential.earth/partner/program> |
-| Kick-Off Package | Includes "book, online training, certification, and 8h support" | <https://exponential.earth/partner/benefits> |
+| Kick-Off Package | Includes "book, online training, certification, and 8h support"; the price is [to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed) | <https://exponential.earth/partner/benefits> |
 | Distribution | Partners may distribute "training, or certifications" | <https://exponential.earth/partner/partner-classes> |
 
 What makes a course "official", and who approves trainers, is not published: **to be defined by the Foundation**

@@ -24,12 +24,29 @@ separately: switch the interface language and the help switches with it.
 The page you are on stays open: every help page has the same address in every language, so you see the same page,
 now in the language you chose.
 
+## Switching from the help itself
+
+The start page of the help and every help page show the language you are reading in, next to the search:
+"Reading in: English / Deutsch". The language you read in is highlighted; choose another one to switch. This is the
+same switch as the interface language switch in the top bar, so the whole administration changes to that language,
+and you stay on the page you were reading.
+
+Only the languages that have help pages are offered. Next to the switch you see how much of the help is translated,
+for example "German: 120 of 7,265 pages". If your account may not change the interface language, the help shows
+the language you are reading in without the switch.
+
+## The English original
+
+A translated page has a link to its English original ("Read the English original") above the text. The original
+opens at the same address with `?lang=en-us`; it is shown in English for that one visit, with a link back to the
+page in your language. Your interface language does not change.
+
 ## A page that is not translated yet
 
 The documentation is written in English first and translated page by page. When a page has no translation in your
 language yet, the help shows the English page and says so above it, for example:
 
-> This page is not translated into German yet. It is shown in English.
+> This page is not translated into German yet. It is shown in English. Open the English original
 
 Everything else works the same: the search, the navigation tree and the links. The changelogs are always in English;
 they are not translated.

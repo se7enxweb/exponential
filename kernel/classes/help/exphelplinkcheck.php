@@ -137,7 +137,12 @@ class expHelpLinkCheck
             return self::problem( file_exists( $rootDir . '/' . $resolved ) ? 'image' : 'missing', $resolved );
         }
         if ( $id !== null && ( $target = $this->index->document( $id ) ) !== null )
+        {
+            // an anchor written for another language's version of the page is checked as the heading it maps to
+            if ( $anchor !== '' && method_exists( $this->index, 'anchorOf' ) )
+                $anchor = $this->index->anchorOf( $id, rawurldecode( $anchor ) );
             return $anchor === '' ? null : $this->checkAnchor( $target, $anchor, $resolved );
+        }
         if ( $id !== null && $this->index->assetInfo( $id ) !== null )
             return null;
         if ( is_dir( $rootDir . '/' . $resolved ) )

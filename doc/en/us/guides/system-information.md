@@ -120,7 +120,7 @@ used to say "not installed" there. Velocity reads them because its PHP has no su
 Folded below the cards, each opens with a click:
 
 - **Active extensions**, in load order, with the version their `extension.xml`, `ezinfo.php` or `composer.json`
-  states (authors, licences and websites are on `ezinfo/about`).
+  states (authors, licenses and websites are on `ezinfo/about`).
 - **PHP extensions and settings**: every loaded extension, `file_uploads`, `open_basedir` (set or not),
   `max_file_uploads`, `display_errors`, the `disable_functions` list, the autoload functions, and the link to
   `phpinfo()`.

@@ -54,7 +54,7 @@ S = Student, N = Now, St = Starter, B = Basic, P = Professional, Si = Silver, G 
 | On subscription products | 4% | 4% | 4% | 4% | 4% | 15% | 20% | 25% |
 | On knowledge products | 20% + K.O.P. | 20% + K.O.P. | 20% + K.O.P. | 20% + K.O.P. | 20% + K.O.P. | 20% | 20% | 20% |
 
-K.O.P. is the Kick-Off Package; see [Partner plans and prices](partner-plans-and-prices.md).
+K.O.P. is the Kick-Off Package; its price is [to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed).
 
 ## Where the program page differs
 
@@ -69,6 +69,9 @@ The program page has an older-looking table for Starter to Platinum. Differences
 | Subscription discount | 4/4/4/15/20/25% | 5/5/15/15/20/25% |
 
 Treat the benefits page as the newer statement, and confirm in writing.
+
+The lead referral commission and the Kick-Off Package price differ between the pages too; both values are listed,
+with a "to be confirmed" note, in [Values still to be confirmed](partner-plans-and-prices.md#values-still-to-be-confirmed).
 
 ## Making each benefit work
 

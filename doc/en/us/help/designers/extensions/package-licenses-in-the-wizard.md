@@ -9,7 +9,7 @@ type: help
 ---
 # Choosing a license in the package wizard
 
-This page is for designers filling the **Package information** step of the package wizard, or the **Licence** field
+This page is for designers filling the **Package information** step of the package wizard, or the **License** field
 of the RAD wizards. Both offer a strict choice from a configured list and refuse any other value. This page is not
 legal advice.
 

@@ -411,6 +411,16 @@ are kept per language (`lang-<language>/` in the help cache), and `./console exp
 address that names a file (`/exphelp/viewer/en/us/guides/caches.md`, `/exphelp/viewer/de/<translated path>`) is
 redirected to the page id.
 
+The start page and every page show the reader's language next to the search: "Reading in: English / Deutsch"
+(`exphelp/parts/reading_language.tpl`, `expHelp::reading()`). It offers each language of `[DocLanguages]
+Directories[]` that has pages and that the interface language switch can choose for the user; a button posts to
+`uiswitch/set` like the language switch of the top bar, so it changes the interface language of the whole
+administration, and comes back to the same page. Below it, how much of the help each translation has ("German: 120
+of 7,265 pages", `expHelpDocumentIndex::languageCoverage()`, counted from the file list without reading a page). A
+translated page links to its English original, and so does the note of a page that is not translated yet: the
+original is the same address with `?lang=en-us`, which shows the page in that language for the one request, with a
+link back to the reader's language.
+
 In a right-to-left interface language (Hebrew, Arabic) the pages are mirrored: the navigation tree, the contents
 and the previous/next links swap sides and their arrows turn, while paths, code and the diagnostics stay left to
 right. Every page has one `h1`, named navigation landmarks, labels for each search field and filter, a visible

@@ -24,7 +24,7 @@ Every entry was checked against the source; the *Kernel* column names the file t
 - **autoload** — A class reached through the extension autoload path, registered once in an ini and then available everywhere.
 - **file** — A file in a place the kernel looks by name. Nothing registers it; being there is the registration.
 - **design** — A template in a design, found through the design chain rather than by being named anywhere.
-- **ini** — Settings only. Nothing is written but ini, and the behaviour changes.
+- **ini** — Settings only. Nothing is written but ini, and the behavior changes.
 - **override** — A kernel class replaced by one of your own through the override autoload path. The heaviest of these mechanisms and the last resort: nothing registers the replacement by name, so two extensions replacing the same class is a fight neither of them knows it is in.
 - **registry** — An entry of a registry that rad.ini declares: the kernel or an extension says which ini blocks, or which class list, hold the entries and what each must be, and the extension point survey counts and checks every entry without the kernel naming the extension.
 - **filter** — A listener of a filter event in site.ini [Event] Listeners[]. The kernel passes a value and goes on with what the listener returns, so a listener that forgets to return it destroys the value.
@@ -98,7 +98,7 @@ What turns stored rich text into what a visitor sees.
 | Mechanism | handler |
 | Kernel | `kernel/classes/datatypes/ezxmltext/ezxmltext.php` |
 
-### Information collection behaviour  
+### Information collection behavior  
 *Tool:* `/setup/settingsextension`
 
 What happens when a visitor fills in a form built out of content: what the submission is called, whether it is kept, whether it is emailed, and what the visitor is shown afterwards. Matched per content class, so a poll and a contact form built the same way behave differently.
