@@ -32,6 +32,12 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                  "./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state\n" .
                                  "./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file]\n" .
                                  "                                              an e-book of the Released topics of a manual (export_manual.php)\n" .
+                                 "./console exp:help:content dita -s ... [--manual=<remote_id>] [--output=dir] [--dry-run]\n" .
+                                 "                                              the DITA 1.3 export (bookmaps, DITAVAL, topics, glossary) into a\n" .
+                                 "                                              directory, checked after writing (also: export --format=dita)\n" .
+                                 "./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--dry-run]   build the e-books of the\n" .
+                                 "                                              Released manuals and store them as file objects under E-books\n" .
+                                 "./console exp:help:content review -s ... [--json]   the topics whose review is overdue\n" .
                                  "./console exp:help:content uninstall -s ... [--with-content] [--dry-run]   take the roles away (and the tree, classes,\n" .
                                  "                                              state group and sections with --with-content)\n" .
                                  "\n" .
@@ -52,9 +58,9 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             'with-content' => 'uninstall: also the help tree (into the trash), the classes, the state group and the sections',
             'login'        => 'The user who creates the classes and objects (default admin)',
             'json'         => 'Print one JSON document instead of the text',
-            'manual'       => 'export: the remote_id of the manual (help-manual-...)',
-            'format'       => 'export: epub or pdf',
-            'output'       => 'export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>)',
+            'manual'       => 'export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual',
+            'format'       => 'export: epub, pdf or dita',
+            'output'       => 'export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); dita: the directory (default <cache>/exphelp/dita/all or /<remote_id>)',
         ) );
 
         $arguments = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
@@ -68,7 +74,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             $this->shutdown( 2 );
             return;
         }
-        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export' );
+        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export', 'dita' );
         if ( !in_array( $action, $known, true ) )
         {
             $cli->error( "Unknown action \"$action\": " . implode( ', ', $known ) . ' (./console exp:help:content --help)' );
@@ -118,7 +124,11 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                     $this->printReport( \expHelpContentInstaller::report(), $json );
                     break;
                 case 'export':
-                    $code = $this->export( $options, $dryRun, $json );
+                    $code = isset( $options['format'] ) && strtolower( (string)$options['format'] ) === 'dita'
+                          ? $this->dita( $options, $dryRun, $json ) : $this->export( $options, $dryRun, $json );
+                    break;
+                case 'dita':
+                    $code = $this->dita( $options, $dryRun, $json );
                     break;
                 case 'uninstall':
                     $installer = new \expHelpContentInstaller( $common );
@@ -126,7 +136,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                     $code = $this->printChanges( $installer->changes(), $json );
                     break;
             }
-            if ( !$dryRun && !in_array( $action, array( 'report', 'export' ), true ) )
+            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita' ), true ) )
                 \expHelpContentProvider::clearCache();
         }
         catch ( \Exception $e )
@@ -201,6 +211,48 @@ class Exphelpcontent extends \Exponential\Runnable\Command
         else
             $cli->output( sprintf( 'PASS wrote %s (%d bytes, %d topics)', $result['file'], $result['bytes'], $result['topics'] ) );
         return 0;
+    }
+
+    /**
+     * The DITA 1.3 export into a directory (doc/en/us/features/6.0/help-content.md, "DITA export"): changed files are
+     * written, files of an earlier export that are gone are removed, then the directory is checked (well-formed, the
+     * DITA 1.3 DOCTYPEs, every reference resolves). Exit 1 when the check finds a problem.
+     */
+    protected function dita( array $options, $dryRun, $json )
+    {
+        $cli = $this->cli();
+        if ( !\expHelpContentRepository::isInstalled() )
+        {
+            $cli->error( 'FAIL: help as content is not installed (./console exp:help:content install -s <siteaccess>)' );
+            return 2;
+        }
+        $manual = !empty( $options['manual'] ) ? (string)$options['manual'] : null;
+        $dir = !empty( $options['output'] ) ? rtrim( (string)$options['output'], '/' )
+             : rtrim( \expHelp::cacheDirectory(), '/' ) . '/dita/' . ( $manual === null ? 'all' : \expHelpContentDita::fileName( $manual ) );
+        $export = ( new \expHelpContentDita( \expHelpContentProvider::instance(), $manual ) )->build();
+        $problems = \expHelpContentDita::validate( $export );
+        $result = \expHelpContentDita::write( $export, $dir, $dryRun || $problems );
+        if ( !$dryRun && !$problems )
+            $problems = \expHelpContentDita::validate( $dir );
+        if ( $json )
+        {
+            $this->printJson( array( 'directory' => $dir, 'counts' => $export['counts'], 'written' => $result['written'], 'unchanged' => $result['unchanged'],
+                                     'removed' => $result['removed'], 'dry_run' => $dryRun, 'problems' => $problems ) );
+            return $problems ? 1 : 0;
+        }
+        foreach ( $result['written'] as $path )
+            $cli->output( sprintf( '%-8s %s', $dryRun ? 'would' : 'write', $path ) );
+        foreach ( $result['removed'] as $path )
+            $cli->output( sprintf( '%-8s %s', $dryRun ? 'would rm' : 'remove', $path ) );
+        if ( !$result['written'] && !$result['removed'] )
+            $cli->output( 'No change.' );
+        foreach ( $problems as $problem )
+            $cli->output( sprintf( 'FAIL     %s: %s', $problem['file'], $problem['message'] ) );
+        $counts = $export['counts'];
+        $cli->output( sprintf( '%s %s: %d manuals, %d chapters, %d topics, %d figures, %d glossary entries; %d unchanged',
+                               $problems ? 'FAIL' : 'PASS', $dir, $counts['manuals'], $counts['chapters'], $counts['topics'], $counts['figures'],
+                               $counts['glossary'], $result['unchanged'] ) );
+        return $problems ? 1 : 0;
     }
 
     protected function check( $fix, array $common, $json )

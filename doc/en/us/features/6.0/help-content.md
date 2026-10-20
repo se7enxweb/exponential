@@ -18,6 +18,7 @@ administration like any other content, and delivered into the help of the admini
 | The initial glossary and topics (the templates of the style guide, one manual) | `./console exp:help:content seed-glossary`, `seed-topics` |
 | What is installed, uninstall | `./console exp:help:content report`, `uninstall` |
 | An e-book (EPUB, PDF) of a manual | `./console exp:help:content export`, **Download EPUB/PDF** on the manual's page |
+| The DITA 1.3 export (bookmaps, DITAVAL, topics, glossary), checked after writing | `./console exp:help:content dita`, **Download DITA** on the manual's page and the list of manuals |
 | A topic in the help: `exphelp/topic/<help_id>`; a manual: `exphelp/manual/<remote_id>`; the list of manuals: `exphelp/manual` | admin, policy `exphelp/read` |
 | Context help as JSON: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>` | policy `exphelp/context` |
 
@@ -200,8 +201,55 @@ default `admin`); a preview never goes into a book. The default file of the comm
 - **PDF** (`writePdf()`) uses the help's PDF writer (`expHelpPdfWriter`, the print and PDF download of help pages):
   one document with the manual's title block, chapters and topics as headings, internal links and the figures. The
   format is offered only where that writer is installed (`expHelpContentExport::formats()`).
-- Not yet: the DITA bookmap export and the e-book stored as a file object under "E-books" (`help-ebooks`), the
-  regular DITA export into a git repository (plan, delivery paths 3 and 4).
+- Not yet: the e-book stored as a file object under "E-books" (`help-ebooks`).
+
+## DITA export
+
+The help is written in Exponential, and leaves it as **DITA 1.3**: the information model of the plan (decision 1),
+for DITA-OT and other DITA tools, and for the change history in git (plan, delivery paths 3 and 4).
+
+```
+./console exp:help:content dita -s admin [--manual=help-manual-editors] [--output=<dir>] [--dry-run] [--json]
+./console exp:help:content export -s admin --format=dita ...     # the same, under the plan's name
+```
+
+and on the help's pages of manuals: **Download DITA** on a manual's page (`exphelp/manual/<remote_id>?format=dita`)
+and **Download all as DITA** on the list of manuals (`exphelp/manual?format=dita`), a zip file. As in an e-book, only
+**Released** objects the user may read go into an export (on the command line: `--login`, default `admin`).
+
+Without `--manual` the export holds every Released manual, every Released topic of the pool and the Released glossary
+entries; with it, one manual and the topics it lists. The default directory is `var/<site>/cache/exphelp/dita/all`
+(or `/<remote_id>`). Only changed files are written, and files of an earlier export that are no longer in it are
+removed (only in `topics/`, `chapters/`, `glossary/`, `images/` and the `.ditamap` and `.ditaval` files of the
+directory itself). So a git repository can be the output directory: its `.git` and anything else stay, and a commit
+after the export records what changed. A second run prints `No change.`.
+
+| Help as content | DITA 1.3 |
+|---|---|
+| `help_concept`, `help_task`, `help_reference`, `help_troubleshooting` | `concept`, `task`, `reference`, `troubleshooting`, one file per topic: `topics/<help_id>.dita` |
+| `help_id` | the topic's `id`, its file name, and `prolog/resourceid/@appid` (the DITA way to name a topic for context help) |
+| `title`, `shortdesc` | `title`, `shortdesc` |
+| `audience`, `platform`, `version_from` | the filter attributes `audience`, `platform` (lower case, blanks as hyphens) and `rev`; the prolog repeats the audiences (`audience/@othertype`) and has `version_from`, `version_to`, `review_date` as `othermeta` and the dates in `critdates` |
+| `body` of a concept | `conbody`; a heading opens a `section` with its `title` |
+| `body` of a reference | `refbody`, every block in a `section` |
+| `context`, `prereq`, `steps`, `result`, `postreq` | `prereq`, `context`, `steps` (each item of the one numbered list a `step` with `cmd` and `info`), `result`, `postreq`. Steps that are not one numbered list become `steps-informal`, and the topic then uses the DITA 1.3 General Task DOCTYPE |
+| `condition`, `cause`, `remedy` | `condition`, `troubleSolution` with `cause` and `remedy` (`steps` or `steps-informal`) |
+| figures | `fig` with `title` (caption) and `image` with `alt`, in the element of the field the figure names (`section`), else at the end; the image file in `images/` |
+| `related` | `related-links` |
+| Markdown | `p`, `ul`, `ol`, `codeblock`, `lq`, `simpletable`, `note` (from a callout, with its type); **bold** (a quoted UI label in the style guide) is `uicontrol`, *italic* `i`, code `codeph`; a `help:` link is an `xref` to the topic in the export, or to its page in the help when it is not in the export |
+| `help_manual` | a `bookmap`, `<remote_id>.ditamap`: `booktitle` (title, subtitle), `bookmeta` (short description, authors, dates, audiences, license, edition), a table of contents, a `chapter` per entry |
+| `help_section` | a `chapter` (`chapters/<remote_id>.dita`, a concept with the chapter's title and short description) with its topics as `topicref`s |
+| the manual's audiences | `<remote_id>.ditaval`: the manual's audiences `include`, the other audience options `exclude` (the edition for its audiences) |
+| `help_glossary_entry` | `glossentry` (`glossary/<term>.dita`): `glossterm`, `glossdef`, the note, and every word to avoid as `glossAlt/glossSynonym` with `glossStatus value="prohibited"` |
+| the whole export | `help-pool.ditamap`: every topic by type, and the glossary |
+
+Every file has the DITA 1.3 DOCTYPE of its root element (`-//OASIS//DTD DITA 1.3 Concept//EN` ...) and `xml:lang`
+from its object's language. After writing, the command checks the directory (`expHelpContentDita::validate()`):
+every file well-formed, the right DOCTYPE, topic ids unique, and every `href` of a map, topic or image that is not
+external resolves to a file of the export; it exits 1 and prints `FAIL` when one does not. The download is checked
+the same way before it is sent. The DTDs are not shipped and nothing is fetched: for a full DTD validation run
+DITA-OT, or `xmllint --valid` with the OASIS catalog, on the directory (the export of the test set and of the
+shipped seed topics pass it).
 
 ## Later
 
@@ -212,5 +260,7 @@ The dashboard's list of topics with a past review date, "Was this helpful?", edi
 `expHelpContentSchema` (the model, data only), `expHelpContentInstaller` (classes, tree, roles, report, uninstall,
 section fixes), `expHelpContentRepository` (reads the help objects into arrays), `expHelpContentValidator` (the
 rules, no database), `expHelpContentSeeder`, `expHelpContentProvider` (what the current user may see, rendering,
-JSON, search, context), `expHelpContextPageInterface`. Views: `Exponential\View\Kernel\Exphelp\Topic`, `Manual`,
-`Context`. Tests: `tests/tests/kernel/classes/help/expHelpContentTest.php` (no database).
+JSON, search, context), `expHelpContextPageInterface`, `expHelpContentExport` (EPUB, PDF), `expHelpContentDita`
+(the DITA export, its check, writing and zip) and `expHelpDitaMarkup` (the help's HTML as DITA elements). Views:
+`Exponential\View\Kernel\Exphelp\Topic`, `Manual`, `Context`. Tests (no database):
+`tests/tests/kernel/classes/help/expHelpContentTest.php`, `expHelpContentExportTest.php`, `expHelpContentDitaTest.php`.

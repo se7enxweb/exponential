@@ -4,7 +4,7 @@
 
    Variables (kernel/private/classes/views/exphelp/manual.php): help_manual (false for the list; else title, subtitle,
    shortdesc, edition, license, authors[], preview), help_manual_toc (nested: kind chapter|topic, title, shortdesc,
-   url, preview, children), help_manuals (title, subtitle, shortdesc, remote_id, edition, preview), help_ebook_formats (epub, pdf), help_json_url,
+   url, preview, children), help_manuals (title, subtitle, shortdesc, remote_id, edition, preview), help_ebook_formats (epub, pdf), help_dita (the DITA download), help_json_url,
    help_i18n_json.
 
    The same file is in design/admin and design/admin4. *}
@@ -33,6 +33,9 @@
             {foreach $help_ebook_formats as $help_fmt}
             <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small" href={concat( 'exphelp/manual/', $help_manual.remote_id, '?format=', $help_fmt )|ezurl} download><span class="a4-icon a4-bi-download" aria-hidden="true"></span> {cond( eq( $help_fmt, 'pdf' ), 'Download PDF'|i18n( 'kernel/exphelp' ), 'Download EPUB'|i18n( 'kernel/exphelp' ) )}</a></li>
             {/foreach}
+            {if $help_dita}
+            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={concat( 'exphelp/manual/', $help_manual.remote_id, '?format=dita' )|ezurl} download><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> {'Download DITA'|i18n( 'kernel/exphelp' )}</a></li>
+            {/if}
             <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={$help_json_url|ezurl}><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> JSON</a></li>
         </ul>
         {if $help_manual.shortdesc|ne( '' )}<p dir="auto">{$help_manual.shortdesc|wash}</p>{/if}
@@ -69,6 +72,11 @@
     {else}
     <header class="a4-help-pagehead">
         <h1 class="a4-help-title">{'Manuals'|i18n( 'kernel/exphelp' )}</h1>
+        {if and( $help_dita, $help_manuals|count )}
+        <ul class="a4-help-meta" role="list">
+            <li class="a4-help-meta-item"><a class="a4-btn a4-btn-small a4-btn-ghost" href={'exphelp/manual?format=dita'|ezurl} download><span class="a4-icon a4-bi-file-earmark-code" aria-hidden="true"></span> {'Download all as DITA'|i18n( 'kernel/exphelp' )}</a></li>
+        </ul>
+        {/if}
     </header>
     {if $help_manuals|count}
     <ul class="a4-help-featured">
