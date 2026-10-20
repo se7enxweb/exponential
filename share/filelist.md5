@@ -3510,8 +3510,8 @@ b5409d7272f8f2302d04c60f5229e570  doc/en/us/bc/6.0/php8.md
 85b860e5a60e498f119c2ea570eb6b9e  doc/en/us/bc/6.0/phpunitv13forPHP841.md
 22f738d1557cf951ed0cee79e4926287  doc/en/us/bc/6.0/platform-package-forks-and-command-renames.md
 6ecbedb530c5c3804b8be217a7b1ad12  doc/en/us/bc/6.0/preload.md
-19250fef698cccf70c1aaaab41b89fa3  doc/en/us/bc/6.0/rad-extension-points.md
-183412870a9c9deb38af9cd63796b35e  doc/en/us/bc/6.0/rad-extension-surface.md
+db67d1c19318298fd11271af7de4a9c1  doc/en/us/bc/6.0/rad-extension-points.md
+a8a0ddaf9c6c49eb8bd8b74c0f33aacd  doc/en/us/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/en/us/bc/6.0/rad-security.md
 4a8181eadee679b8558fe125d10df9c1  doc/en/us/bc/6.0/redirect-query-and-image-alias-guards.md
 8a57888953e9313fb76f11928b7e86e3  doc/en/us/bc/6.0/repair.md
@@ -6428,7 +6428,7 @@ bb8d6835bd7b4751fd30540ba5bdf4c8  doc/en/us/guides/rss-feeds.md
 8084d7340dbd2826f787bc7a1f67a9df  doc/en/us/guides/security-and-audit.md
 f97929850ad96ddb10a8f8f03e4056ef  doc/en/us/guides/sessions.md
 d6248fd6c8f6678c5868d0eb6023ea08  doc/en/us/guides/settings-page.md
-37f824fc88777db13a6ced8b56fae4d7  doc/en/us/guides/system-information.md
+054d4cfc12c620462b4da7caa5c83b95  doc/en/us/guides/system-information.md
 0336ade018fe7f75e7a16ce2eb7356c8  doc/en/us/guides/templates-and-design.md
 101e9fde2c108fc4cd8427efb0172a4b  doc/en/us/guides/test-language-lorem-ipsum.md
 dc5f0aedab105f984fc1d7e71761f4eb  doc/en/us/guides/two-factor-login.md
@@ -7380,7 +7380,7 @@ b1ba7fcee2afd57cef23fb4890938e88  doc/en/us/help/designers/extensions/classic-an
 c23d3f58b84daea9db2dc87e1ddf4966  doc/en/us/help/designers/extensions/composer-require-and-suggest.md
 29e1632948f7812626d9a97d3c6eb058  doc/en/us/help/designers/extensions/copyright-and-author-lines.md
 462b4fd7d7254727f5edbac2ccb0f5ec  doc/en/us/help/designers/extensions/dependencies-in-extension-xml.md
-9f8553192b86d2d54bfcc948b4dd2c83  doc/en/us/help/designers/extensions/design-extension-wizard.md
+48db6d58bf143449813c6394c75c2cc8  doc/en/us/help/designers/extensions/design-extension-wizard.md
 91e1135feafc13c8bb727ae4fcbc0ceb  doc/en/us/help/designers/extensions/design-settings-a-theme-ships.md
 9af5a7c808aadb7b5c1650a070fa5efb  doc/en/us/help/designers/extensions/design-wizard-download-as-zip.md
 41db548fba66c8423060f44387c5aa89  doc/en/us/help/designers/extensions/design-wizard-parts-reference.md
@@ -7398,7 +7398,7 @@ f8b8072d3e0ed039a23f287c809ce4be  doc/en/us/help/designers/extensions/installing
 2a44d6ac29c688a8148f55cd4a2cfcfb  doc/en/us/help/designers/extensions/loading-order-for-themes.md
 8ea68d7d08c8808c01838a05ef560190  doc/en/us/help/designers/extensions/naming-your-theme-extension.md
 93d5b54f874875cf2fc0f770ada06336  doc/en/us/help/designers/extensions/package-creator-wizard-step-by-step.md
-8beaba8ec413be2526d05b72833cdbe8  doc/en/us/help/designers/extensions/package-licenses-in-the-wizard.md
+cc28f45496884ed4e05d73fa494e39b6  doc/en/us/help/designers/extensions/package-licenses-in-the-wizard.md
 855c6ac070b124867f08ab0c67b4cb94  doc/en/us/help/designers/extensions/package-secret-check.md
 d2d8ac5151ec68f4a9fc11dbf3f0e5ba  doc/en/us/help/designers/extensions/putting-a-theme-under-git.md
 001c785d0e8a3d66da70b93765ef8e5d  doc/en/us/help/designers/extensions/readme-for-a-theme.md
@@ -10250,7 +10250,7 @@ f9ea428cd873f203673d44736a1fee57  doc/en/us/help/trainers/site-administrators/mo
 8802ca53d14f62c1b369bfd38cb090af  doc/en/us/help/trainers/site-administrators/module-05-caches/what-the-caches-hold.md
 4ea8e572d5e12707907aaf1938b6e4f3  doc/en/us/help/trainers/site-administrators/module-06-cronjobs-workflows-and-notifications/README.md
 027ab23b7389cc95f39e7344af57667c  doc/en/us/help/trainers/site-administrators/module-06-cronjobs-workflows-and-notifications/cronjob-parts-and-the-crontab.md
-7bec2eb84270e697c3914742fa46118f  doc/en/us/help/trainers/site-administrators/module-06-cronjobs-workflows-and-notifications/email-preferences-and-the-mail-gate.md
+bc0f9e98063a8a5865aae29f5d0e3957  doc/en/us/help/trainers/site-administrators/module-06-cronjobs-workflows-and-notifications/email-preferences-and-the-mail-gate.md
 19347c20fa329879077f8424b8ad0432  doc/en/us/help/trainers/site-administrators/module-06-cronjobs-workflows-and-notifications/running-notifications.md
 ee71b923741d7a1e7ba299855b567784  doc/en/us/help/trainers/site-administrators/module-06-cronjobs-workflows-and-notifications/the-cronjobs-page.md
 f52af99448f08c9d16b8ede2a98dd107  doc/en/us/help/trainers/site-administrators/module-06-cronjobs-workflows-and-notifications/workflows-and-approvals.md
