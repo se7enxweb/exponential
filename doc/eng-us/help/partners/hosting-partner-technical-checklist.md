@@ -16,7 +16,7 @@ or audit an existing one. Each section names the chapter of the documentation th
 
 Source: `doc/eng-us/install/02-requirements.md`.
 
-- [ ] A supported PHP version: 8.0 to 8.5 for the 6.0.15 line (Velocity needs 8.1 or later)
+- [ ] A supported PHP version: 8.0 to 8.5 for the 6.0.15 line (Velocity included, from its release 0.0.4.54)
 - [ ] 64-bit PHP build
 - [ ] Required extensions present in both the web PHP and the CLI PHP: `dom`, `simplexml`, `xsl`, `mbstring`,
       `iconv`, `intl`, `zlib`, and at least one database extension

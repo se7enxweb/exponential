@@ -56,7 +56,7 @@ verbs: `qbix` (Velocity's own server, the subject of this page), `frankenphp` ([
 
 | Need | Detail |
 |---|---|
-| PHP | 8.1 or later; the engine package requires it (`"php": ">=8.1"`) |
+| PHP | 8.0 or later; the engine package requires it (`"php": ">=8.0"` from release 0.0.4.54, `>=8.1` before); RHEL 9's stock PHP 8.0 runs it ([chapter 2](../../../install/02-requirements.md#php-80-and-red-hat-enterprise-linux)) |
 | PHP extensions | `sockets` (required by the package), `pcntl` and `posix` (fork workers, change their user), `openssl` (HTTPS) |
 | A long-running process | allowed by the plan; shared hosting usually does not allow one |
 | Root, or high ports | ports below 1024 need root; started as root, only the parent keeps it |

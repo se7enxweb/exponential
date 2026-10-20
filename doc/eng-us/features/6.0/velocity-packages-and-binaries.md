@@ -14,7 +14,7 @@ Every Velocity release is published in the forms people actually install:
 | **deb and rpm packages** | A system service on Debian 12 and 13, Ubuntu 22.04 and 24.04, Enterprise Linux 9 and 10, using the distribution's own PHP |
 | **Docker images** on `ghcr.io/se7enxweb/exponential-velocity` | Containers, amd64 and arm64, one image per PHP version and variant |
 | **Static binaries** | One file with PHP built in: Linux x86-64 and aarch64, macOS arm64, Windows x64 |
-| **The phar** `sbin/qbixserver.phar` | The server as one PHP archive, run by any PHP 8.1+ |
+| **The phar** `sbin/qbixserver.phar` | The server as one PHP archive, run by any PHP 8.0+ (8.1+ before release 0.0.4.54) |
 | **A source kit** | A build kit for a platform, architecture or PHP version no release covers |
 
 All files of a release carry checksums in `SHA256SUMS`.
@@ -28,6 +28,7 @@ You choose the form that fits the machine instead of building anything: apt or d
 ```bash
 curl -LO https://github.com/se7enxweb/exponential-velocity/releases/download/v<release>/exponential-velocity_<release>-1+deb12_all.deb
 sudo apt install ./exponential-velocity_<release>-1+deb12_all.deb          # Debian, Ubuntu
+sudo dnf install ./exponential-velocity-<release>-1.el9.noarch.rpm         # EL 9, on the stock PHP 8.0
 sudo dnf install ./exponential-velocity-<release>-1.el10.noarch.rpm        # EL 10
 ```
 
@@ -37,7 +38,7 @@ sudo dnf install ./exponential-velocity-<release>-1.el10.noarch.rpm        # EL 
 | Debian 13 | `...+deb13_all.deb` | 8.4 |
 | Ubuntu 22.04 | `...+ubuntu22.04_all.deb` | 8.1 |
 | Ubuntu 24.04 | `...+ubuntu24.04_all.deb` | 8.3 |
-| EL 9 | `exponential-velocity-<release>-1.el9.noarch.rpm` | 8.2 (enable the stream first: `sudo dnf module enable -y php:8.2`) |
+| EL 9 | `exponential-velocity-<release>-1.el9.noarch.rpm` | 8.0, the default AppStream PHP (the package depends on `php-cli >= 8.0`; no module stream needed, a newer one still works) |
 | EL 10 | `...el10.noarch.rpm` | 8.4 |
 
 The packages are architecture-independent (the server is PHP). Nothing starts on install. Start the service when the configuration is ready:
@@ -58,6 +59,23 @@ The service runs as the `qbix` system user with `/var/lib/exponential-velocity` 
 | `QBIX_OPTS` | empty | Any other `qbixserver` options, for example `--workers=16 --https-port=8443` |
 
 The server listens on 8080 until `/etc/qbix/ports.conf` says otherwise.
+
+### PHP 8.0 and Red Hat Enterprise Linux
+
+From release 0.0.4.54 (20 October 2026) the engine runs on PHP 8.0 to 8.5 (`"php": ">=8.0"`, it was `>=8.1`), with
+nothing extra on 8.0: no polyfill package, no extension.
+
+- **RHEL 9 and its rebuilds**: the el9 rpm depends on `php-cli >= 8.0` and installs on the default AppStream PHP 8.0
+  without enabling a module stream; a newer stream still works. Composer works on 8.0 too.
+- **RHEL 8**: the default PHP is 7.2. Enable the 8.0 stream (`sudo dnf module enable php:8.0`) and use the phar or
+  Composer; there is no el8 rpm.
+- **What differs on 8.0**: AVIF image output needs PHP 8.1 (negotiation stops at WebP); the dashboard's per-request
+  memory peak needs PHP 8.2 (the column is empty); `$_FILES` has no `full_path`, as in PHP 8.0 itself; a class
+  declared with `eval()` that has static properties makes its worker get replaced after that request (correct, it
+  costs a fork). The zygote runs on 8.0.
+
+Extensions, the systemd unit, SELinux and how to verify the installation are in the engine's
+[PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md) page.
 
 ### What goes where
 
@@ -141,7 +159,7 @@ Exponential's `exp:velocity` uses the Composer copy of the engine; the package i
 
 ## Limits
 
-- The packages need PHP 8.1 or later; EL 9 needs the PHP stream enabled first.
+- The packages need PHP 8.0 or later (8.1 before release 0.0.4.54); EL 9 installs on its stock PHP 8.0, EL 8 has no package (use the phar or Composer after `dnf module enable php:8.0`).
 - Some recommended extensions (`mongodb`, `redis`, `memcached`) come from EPEL or Remi on EL; `qbixctl ext:check` names them.
 - Release assets exist only for tags that have a section in the engine's changelog; three early tags (`v0.0.4.21`, `v0.0.4.22`, `v0.0.4.26`) have no release.
 

@@ -31,7 +31,7 @@ From [2.2 PHP](../../../install/02-requirements.md#22-php):
 
 | PHP | Status |
 |---|---|
-| 8.0 | the oldest supported version; runs under Apache with mod_php or PHP-FPM; "Velocity does not run on it" |
+| 8.0 | the oldest supported version; runs under Apache with mod_php or PHP-FPM, and under Velocity from its release 0.0.4.54 |
 | 8.1 to 8.4 | supported, Velocity included |
 | 8.5 | supported; the newest version tested |
 | 7.4 and older | not supported by 6.0.8 and later; "A site that must stay on PHP 7.4 stays on 6.0.7" |
@@ -164,7 +164,7 @@ Set `PhpFpmService` to the service name to fix it, or to `disabled` when Velocit
 
 ## Checklist
 
-- [ ] PHP 8.1 or later offered (8.0 only for sites that do not use Velocity and run 6.0.15 or later).
+- [ ] PHP 8.0 or later offered (8.0 only for sites that run 6.0.15 or later; Velocity needs 0.0.4.54 or later on it).
 - [ ] Same version and extensions for web and command line; cron and `PhpCliPath` follow PHP version changes.
 - [ ] One pool per site, running as the site's user.
 - [ ] Pool settings and OPcache as above; `validate_timestamps` on.

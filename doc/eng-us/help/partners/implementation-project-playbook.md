@@ -31,7 +31,7 @@ to your contracts. The project managers' section of the help has the planning de
 
 - **Discovery:** Is there an existing extension for each requirement? Search before you estimate
   ([Extensions](../../guides/extensions.md#2-find-an-extension)).
-- **Environment:** Use a currently supported PHP (8.0 to 8.5 for 6.0.15; Velocity needs 8.1 or later,
+- **Environment:** Use a currently supported PHP (8.0 to 8.5 for 6.0.15; Velocity included from its release 0.0.4.54,
   `doc/eng-us/install/02-requirements.md`).
 - **Build:** Keep generic improvements separate from customer code, so they can go upstream
   ([Contributing code back](contributing-code-back.md)).
