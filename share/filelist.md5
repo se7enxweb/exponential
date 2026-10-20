@@ -15374,7 +15374,7 @@ c98a3ab117e6df5ae2e19f71311140ff  tests/tests/kernel/classes/help/expHelpContent
 55633174d7314090b6467b0c0bb71644  tests/tests/kernel/classes/help/expHelpContentTranslationsTest.php
 7a232b6261dbd79b53bc7e2051513b9c  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 a27bf2c2f2ab96f839caaa6eaf82f7c8  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
-34170aa6637be50c4b1a7603b2f4abfc  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
+925111a6ee5405ba076c5a4f11bad6fd  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
 a8ad322622007b0a428f4b1a2ef9a99e  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
 561be347cf436d46423f1f2add6e64f5  tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php
 850e15ce3f5afa25d00fcac75562123d  tests/tests/kernel/classes/help/expHelpFrontMatterQuotingTest.php
