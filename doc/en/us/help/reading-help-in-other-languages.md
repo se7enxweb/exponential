@@ -38,8 +38,8 @@ the language you are reading in without the switch.
 ## The English original
 
 A translated page has a link to its English original ("Read the English original") above the text. The original
-opens at the same address with `?lang=en-us`; it is shown in English for that one visit, with a link back to the
-page in your language. Your interface language does not change.
+opens at the same address with `?lang=eng-us`; it is shown in English for that one visit, with a link back to the
+page in your language. Your interface language does not change. (An older link with `?lang=en-us` still works.)
 
 ## A page that is not translated yet
 
@@ -62,6 +62,12 @@ there is for you.
 English is the original. German is being translated. Your administrator can add a language in the settings
 (`exphelp.ini`, `[DocLanguages]`); developers and translators find how in
 [Translated documentation](../bc/6.0/translated-documentation.md).
+
+In the files of the documentation, each language is a directory named after the code Exponential uses for the
+language, in small letters: `doc/eng-us/` is the English original (`eng-US`), `doc/ger-de/` the German translation
+(`ger-DE`). A new language gets its directory the same way, for example `doc/fre-fr/` for French (`fre-FR`). You do
+not need these names to read the help: every help address is the same in every language, and links and bookmarks
+from before the directories were renamed still open the right page.
 
 ## Related
 

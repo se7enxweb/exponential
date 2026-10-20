@@ -438,17 +438,21 @@ prepares stay in English on purpose, because the maintainers read them.
 
 ### The pages in the reader's language
 
-The help pages themselves are the documentation, one directory per language below `doc/`: `doc/en/us/` is the
-original, a translation is `doc/<language>/` (`doc/de/`), and `doc/changelogs/` is not translated
+The help pages themselves are the documentation, one directory per language below `doc/`, named by the
+Exponential locale code in lower case: `doc/eng-us/` (`eng-US`) is the original, a translation is `doc/<locale>/`
+(`doc/ger-de/` for `ger-DE`; a future French one `doc/fre-fr/`), and `doc/changelogs/` is not translated
 (`expHelpLanguage`; [Translated documentation](../../bc/6.0/translated-documentation.md)). The reader's language is
-the interface language (`site.ini [RegionalSettings] Locale`, which the language switch sets), mapped by
-`exphelp.ini [DocLanguages] Map[]` (`eng-US`, `eng-GB` to `en/us`, `ger-DE` to `de`). A page id is the path below
-`doc/en/us/` in every language, so an address shows the same page in each; a translation may translate its file
-names and list them in `doc/<language>/.paths.json`. A page the language does not have yet is shown in English with a
-note ("This page is not translated into German yet"); the index, the search, the navigation and the rendered pages
-are kept per language (`lang-<language>/` in the help cache), and `./console exp:help index` builds them all. An
-address that names a file (`/exphelp/viewer/en/us/guides/caches.md`, `/exphelp/viewer/de/<translated path>`) is
-redirected to the page id.
+the interface language (`site.ini [RegionalSettings] Locale`, which the language switch sets): its locale in lower
+case when `exphelp.ini [DocLanguages] Directories[]` lists that directory, else an alias of `Map[]` (`eng-GB` to
+`eng-us`, `ger-AT` and any other `ger-*` to `ger-de`), tried for the locale, the locale without its variant and its
+three-letter language, else `Default=eng-us`. A page id is the path below `doc/eng-us/` in every language, so an
+address shows the same page in each; a translation may translate its file names and list them in
+`doc/<locale>/.paths.json`. A page the language does not have yet is shown in English with a note ("This page is not
+translated into German yet"); the index, the search, the navigation and the rendered pages are kept per language
+(`lang-<directory>/` in the help cache, `lang-ger-de/`), and `./console exp:help index` builds them all. An address
+that names a file (`/exphelp/viewer/doc/eng-us/guides/caches.md`, `/exphelp/viewer/ger-de/<translated path>`) is
+redirected to the page id, and so are the names of before the rename to the locale codes
+(`/exphelp/viewer/en/us/guides/caches.md`, `/exphelp/viewer/doc/en/us/...`, `/exphelp/viewer/de/<translated path>`).
 
 The start page and every page show the reader's language next to the search: "Reading in: English / Deutsch"
 (`exphelp/parts/reading_language.tpl`, `expHelp::reading()`). It offers each language of `[DocLanguages]
@@ -457,8 +461,8 @@ Directories[]` that has pages and that the interface language switch can choose 
 administration, and comes back to the same page. Below it, how much of the help each translation has ("German: 120
 of 7,265 pages", `expHelpDocumentIndex::languageCoverage()`, counted from the file list without reading a page). A
 translated page links to its English original, and so does the note of a page that is not translated yet: the
-original is the same address with `?lang=en-us`, which shows the page in that language for the one request, with a
-link back to the reader's language.
+original is the same address with `?lang=eng-us` (the directory name; the old keys `en-us` and `de` are still
+accepted), which shows the page in that language for the one request, with a link back to the reader's language.
 
 In a right-to-left interface language (Hebrew, Arabic) the pages are mirrored: the navigation tree, the contents
 and the previous/next links swap sides and their arrows turn, while paths, code and the diagnostics stay left to

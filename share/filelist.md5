@@ -3199,7 +3199,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 f4a6fd7fba388894640420c210f94f94  doc/changelogs/6.0/6.0.12.md
 878882418c7ffe32fd4d202a2d889e95  doc/changelogs/6.0/6.0.13.md
 fb8589325fc127b61d43ce5d7cc188d0  doc/changelogs/6.0/6.0.14.md
-4fcc31f920501ff9f7162fbb58609b26  doc/changelogs/6.0/6.0.15.md
+5674e54e1f130718fb01cfe3bcf03860  doc/changelogs/6.0/6.0.15.md
 dc6c1e6747014d6f9b8be9e724b1b763  doc/changelogs/6.0/6.0.2.md
 831f582bbb230b4566621e2b9c913153  doc/changelogs/6.0/6.0.3.md
 4a9ce240f3051c96fce5a2b61580ff2a  doc/changelogs/6.0/6.0.4.md
@@ -3623,7 +3623,7 @@ fb85be121ac1186257310cd979fc3c1e  doc/en/us/bc/6.0/sqlite-transactions.md
 83c907c3757df38328000733adcf07ed  doc/en/us/bc/6.0/static-cache-defaults.md
 0c8ae79c442342b781dbf3f7e2c3dea6  doc/en/us/bc/6.0/subitems-table-options.md
 3c9ff9b6730b011a2b825d49fbeff9d6  doc/en/us/bc/6.0/svg-images.md
-2dc8043c23044b9ce2005c63e2a23f61  doc/en/us/bc/6.0/translated-documentation.md
+aaa727581d230aee346c3c65aa202255  doc/en/us/bc/6.0/translated-documentation.md
 9c6663ff7a3916a0b7b61ef8f351ba31  doc/en/us/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/en/us/bc/6.0/trusted-proxies.md
 78f77d46a1c4fda9c55f0f24527261ed  doc/en/us/bc/6.0/ui-switch-design.md
@@ -6375,7 +6375,7 @@ c5545530f53d980f227c9e2cad67d78c  doc/en/us/features/6.0/extensions/swark.md
 b8686ed08b041700382d969f251b7a73  doc/en/us/features/6.0/file-consistency-check.md
 59921235369f40f7789e0b09d13b8f05  doc/en/us/features/6.0/form-expired-page.md
 8c5c33dddc81c5e6f444b9029806c644  doc/en/us/features/6.0/help-content.md
-cb75abd4c10bc42868f9856c54250741  doc/en/us/features/6.0/help-system.md
+397e9b9295645ee35f9126d58a4158f5  doc/en/us/features/6.0/help-system.md
 b0d4d73922efa2d3bd00e0c098ea0176  doc/en/us/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/en/us/features/6.0/icon-themes-in-extensions.md
 43b1dad028eb5a42a24b626adf88ae81  doc/en/us/features/6.0/install-in-one-command.md
@@ -9822,7 +9822,7 @@ f2c3b5cf6bc9fb272424baa921f9c775  doc/en/us/help/project/give-and-donate.md
 f1fc4c88c3424728d21793c3e699ea46  doc/en/us/help/project/licensing-faq.md
 fe3c09d8cd854a77811a4b52d3cdd2e2  doc/en/us/help/project/roadmap.md
 6cad11d66949463e63f2a528bcb54eb0  doc/en/us/help/publishing-and-versions.md
-bc413c98fdd5e956da138e3d12d18ba0  doc/en/us/help/reading-help-in-other-languages.md
+3da000148542d23aebedfbbffc7bdf6a  doc/en/us/help/reading-help-in-other-languages.md
 80d6321760f10706290ecbdc9009e617  doc/en/us/help/searching.md
 5ad62c89705ae7ba340177e6339d5408  doc/en/us/help/security-hardening.md
 86162a1255353525620ead81d88b4b67  doc/en/us/help/site-packages/README.md
