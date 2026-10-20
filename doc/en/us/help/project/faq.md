@@ -175,8 +175,7 @@ for every code contribution to the kernel, whether it is sent as a pull request,
 it can be merged. **By signing and submitting, you give up control over your contribution:** 7x and the recipients of
 its software receive a perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change,
 sublicense, relicense and distribute it in any way, also under other licenses and in commercial products, without
-asking or paying you, and you cannot withdraw or restrict it later. Under the agreement's wording you remain the
-nominal copyright holder and may still use your own work elsewhere. You sign once for all future contributions. Your
+asking or paying you, and you cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). You sign once for all future contributions. Your
 own custom extensions, site packages and themes are not affected. See
 [Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
 

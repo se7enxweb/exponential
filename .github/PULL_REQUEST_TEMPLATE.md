@@ -7,7 +7,7 @@
 - [ ] **I have signed the 7x Contributor Licensing Agreement (CLA)**, or my employer has, and it has been sent to 7x.
       **I understand that by signing and submitting, I give up control over this contribution:** 7x and the
       recipients of its software may use, change, sublicense, relicense and distribute it in any way, perpetually and
-      irrevocably, without asking or paying me; I remain only the nominal copyright holder.
+      irrevocably, without asking or paying me; formally the CLA is a license (§4).
       A contribution to the core kernel (this repository, se7enxweb/exponential) is merged only once the signed CLA
       has been received. You sign once for all future contributions. How to sign:
       [Copyright and control of your contribution (CLA)](../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla) and the

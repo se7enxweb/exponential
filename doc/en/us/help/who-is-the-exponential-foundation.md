@@ -381,7 +381,7 @@ clones with their full history" (README, "Installation"; [Develop with Git](deve
   Licensing Agreement for every code contribution to the core kernel, in any form, before it is merged. By signing
   and submitting, the contributor gives up control over the contribution: 7x and the recipients of its software may
   use, change, sublicense, relicense and distribute it in any way, perpetually and irrevocably, also in commercial
-  products, without asking or paying the contributor, who remains only the nominal copyright holder. Users' own
+  products, without asking or paying the contributor; formally the CLA is a license (§4). Users' own
   custom extensions are not affected
   ([Copyright and control of your contribution (CLA)](../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)).
 - **Who contributes.** Since December 2023 pull requests have come from se7enxweb, [ekked](https://github.com/ekked),

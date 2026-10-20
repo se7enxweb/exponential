@@ -31,8 +31,7 @@ habits make that time count, for them and for you.
 - **Know what the CLA gives away before a kernel pull request.** The kernel (`se7enxweb/exponential`) merges a code
   contribution only once its author's signed Contributor Licensing Agreement has been received. By signing and
   submitting, you give up control over your contribution: 7x may use, change, sublicense, relicense and distribute
-  it in any way, perpetually and irrevocably, without asking or paying you; you remain only the nominal copyright
-  holder. Tick the checkbox in the pull request template ([Copyright and control of your contribution (CLA)](../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)).
+  it in any way, perpetually and irrevocably, without asking or paying you; formally the CLA is a license (§4). Tick the checkbox in the pull request template ([Copyright and control of your contribution (CLA)](../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)).
 
 ## Do not
 

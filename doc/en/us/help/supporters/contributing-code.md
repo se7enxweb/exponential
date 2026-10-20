@@ -54,8 +54,7 @@ the core kernel, sent in any form (pull request, patch, issue or mail), only aft
 Licensing Agreement. **By signing and submitting, you give up control over your contribution:** 7x and the
 recipients of its software receive a perpetual, worldwide, irrevocable, royalty-free license, patents included, to
 use, change, sublicense, relicense and distribute it in any way, also under other licenses and in commercial
-products, without asking or paying you, and you cannot withdraw or restrict it later. Under the agreement's wording
-you remain the nominal copyright holder and may still use your own work elsewhere. One signature covers all your
+products, without asking or paying you, and you cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). One signature covers all your
 future contributions. Extensions you write for yourself are not affected. How to sign:
 [Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
 

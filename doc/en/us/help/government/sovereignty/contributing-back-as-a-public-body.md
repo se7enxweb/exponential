@@ -56,8 +56,7 @@ Exponential Foundation require a signed Contributor Licensing Agreement from its
 submitting, the body gives up control over the contribution:** 7x and the recipients of its software receive a
 perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change, sublicense, relicense and
 distribute it in any way, also under other licenses and in commercial products, without asking or paying the body,
-which cannot withdraw or restrict it later. Under the agreement's wording the body remains the nominal copyright
-holder and may still use its own work elsewhere. Your internal approvals must accept this, and settle who may sign:
+which cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). Your internal approvals must accept this, and settle who may sign:
 when the body has the rights to its staff's work, the body signs or gives its permission (CLA, section 6). Extensions the body builds and keeps for its own sites are not affected. See
 [Copyright and control of your contribution (CLA)](../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
 

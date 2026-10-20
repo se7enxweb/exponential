@@ -203,14 +203,13 @@ Now anyone can install it with `composer require yourvendor/myextension`.
   does and under which license. A repository can be transferred to the organization or forked into it, with your
   history and your copyright kept. Code that goes into the project's own repositories must be under the same license
   as Exponential, GPL version 2 or later (not "GPL 2 only" or "GPL 3 only"), as the
-  [licensing FAQ](https://exponential.earth/faq/licensing) explains; contributors keep their copyright nominally (for the kernel, see the CLA below for the control they give up).
+  [licensing FAQ](https://exponential.earth/faq/licensing) explains. For the kernel, contributors also give up control of their code under the CLA (below).
 - **Copyright and control of your contribution (CLA).** 7x and the Exponential Foundation merge a code
   contribution to the **core kernel**, `se7enxweb/exponential`, sent in any form, only after you have signed the
   Contributor Licensing Agreement. **By signing and submitting, you give up control over your contribution:** 7x and
   the recipients of its software receive a perpetual, worldwide, irrevocable, royalty-free license, patents included,
   to use, change, sublicense, relicense and distribute it in any way, also under other licenses and in commercial
-  products, without asking or paying you, and you cannot withdraw or restrict it later. Under the agreement's wording
-  you remain the nominal copyright holder and may still use your own work elsewhere. Publishing your own extension in your own repository
+  products, without asking or paying you, and you cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). Publishing your own extension in your own repository
   is not affected: the CLA page says "if you have written a contribution and want to make it available on GitHub
   [...] you do not need to sign the CLA". The page does list "complete/incomplete extensions" among the code that
   needs a signed CLA "which you want 7x to include", so an extension handed over to 7x for inclusion is covered by

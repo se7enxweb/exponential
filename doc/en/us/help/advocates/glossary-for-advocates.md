@@ -67,7 +67,7 @@ technical glossary is [the glossary](../../glossary.md); the product and organiz
 | GPL | GNU General Public License, version 2 or later: the code's license |
 | GFDL | GNU Free Documentation License 1.3 or later: the documentation's license |
 | Pull request | A proposed change sent on GitHub ([Develop with Git](../develop-with-git.md)) |
-| CLA | Contributor Licensing Agreement: signed once before a code contribution to the kernel is merged; by signing and submitting, the contributor gives up control: 7x may use, change, sublicense, relicense and distribute the contribution in any way, perpetually and irrevocably, without asking or paying; the contributor remains only the nominal copyright holder; own extensions are not affected ([Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)) |
+| CLA | Contributor Licensing Agreement: signed once before a code contribution to the kernel is merged; by signing and submitting, the contributor gives up control: 7x may use, change, sublicense, relicense and distribute the contribution in any way, perpetually and irrevocably, without asking or paying; formally the CLA is a license (§4); own extensions are not affected ([Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)) |
 | Issue | A report or proposal in a tracker ([Which tracker for which report](which-tracker-for-which-report.md)) |
 | Fork, clone | Your copy of a repository on GitHub; a local copy with its history |
 | Tag, release | A fixed, published version; tags never change |

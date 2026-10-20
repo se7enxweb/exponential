@@ -30,17 +30,14 @@ compatible with either, such as the GNU Affero GPL version 3, as the website not
 
 The kernel's notice names "7x & Exponential Foundation" for the years from 1998 and eZ Systems AS for 1999 to 2014
 (`COPYRIGHT.md`). The code also contains the work of many contributors over the years. The website's FAQ explains
-the rule: contributors keep the copyright of their code (for the kernel only nominally, see below) and agree to release it under the same license as
-Exponential.
+the rule: contributors agree to release their code under the same license as Exponential.
 
 For code contributions to the core kernel, 7x and the Exponential Foundation also require a signed Contributor
 Licensing Agreement (CLA) before the contribution is merged, and **by signing and submitting, you give up control over
-your contribution.** 7x and the recipients of its software receive "a perpetual, worldwide, non-exclusive,
-no-charge, royalty-free, irrevocable copyright license" (§4) and a patent license (§5) to use, change, sublicense,
-relicense and distribute it in any way, also under other licenses and in commercial products, without asking or
-paying you; you cannot withdraw or restrict it later. Under the agreement's wording you remain the nominal copyright
-holder and may still use your own work elsewhere; the copyright is not transferred. Your own extensions and designs
-are not affected. See
+your contribution.** The license to 7x and the recipients of its software is perpetual and irrevocable, covers
+patents too, and lets them use, change, sublicense, relicense and distribute your contribution in any way, also under
+other licenses and in commercial products, without asking or paying you; you cannot withdraw it or set conditions.
+(Formally the CLA is a license, not a transfer: §4.) Your own extensions and designs are not affected. See
 [Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
 
 ### Is the GPL going to change to version 3 only?

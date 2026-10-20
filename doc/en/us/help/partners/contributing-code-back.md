@@ -45,8 +45,7 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
   require it. **By signing and submitting, the partner gives up control over the contribution:** 7x and the
   recipients of its software receive a perpetual, worldwide, irrevocable, royalty-free license, patents included, to
   use, change, sublicense, relicense and distribute it in any way, also under other licenses and in commercial
-  products, without asking or paying the partner, who cannot withdraw or restrict it later. Under the agreement's
-  wording the partner remains the nominal copyright holder and may still use its own work elsewhere. It does not
+  products, without asking or paying the partner, who cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). It does not
   affect the partner's own custom extensions or its customers' sites.
 
 - "Every pull request is merged, and its commits are kept as the contributor wrote them and never rewritten"

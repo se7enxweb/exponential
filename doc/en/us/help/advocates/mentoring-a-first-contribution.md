@@ -71,8 +71,7 @@ Licensing Agreement that 7x and the Exponential Foundation require, and explain 
 and submitting, they give up control over the contribution.** 7x and the recipients of its software receive a
 perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change, sublicense, relicense and
 distribute it in any way, also under other licenses and in commercial products, without asking or paying them, and
-they cannot withdraw or restrict it later. Under the agreement's wording they remain the nominal copyright holder and
-may still use their own work elsewhere
+they cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4)
 ([Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)). Their own extensions are
 not affected.
 

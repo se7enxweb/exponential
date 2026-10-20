@@ -75,8 +75,7 @@ rounds than usual, sometimes hundreds of revisions, until the change is simple t
 **Do I have to sign anything?** For a code contribution to the kernel, yes: 7x and the Exponential Foundation merge it
 only once the author's signed Contributor Licensing Agreement has been received. Say plainly what it means: by
 signing and submitting, the author gives up control over the contribution; 7x may use, change, sublicense, relicense
-and distribute it in any way, perpetually and irrevocably, without asking or paying the author, who remains only the
-nominal copyright holder. It is signed once. A pull request opened in the course can wait for it. Learners' own extensions are not affected
+and distribute it in any way, perpetually and irrevocably, without asking or paying the author; formally the CLA is a license (§4). It is signed once. A pull request opened in the course can wait for it. Learners' own extensions are not affected
 ([Copyright and control of your contribution (CLA)](../../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)).
 
 ### Pitfalls

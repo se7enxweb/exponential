@@ -39,7 +39,7 @@ signed the Contributor Licensing Agreement. **By signing and submitting, you giv
 contribution:** 7x and the recipients of its software receive a perpetual, worldwide, irrevocable, royalty-free
 license, patents included, to use, change, sublicense, relicense and distribute it in any way, also under other
 licenses and in commercial products, without asking or paying you, and you cannot withdraw or restrict it later.
-Under the agreement's wording you remain the nominal copyright holder and may still use your own work elsewhere. Extending
+Formally the CLA is a license, not a transfer (§4). Extending
 the kernel from your own extension, forking an extension, or publishing your own work is not affected. See
 [Copyright and control of your contribution (CLA)](../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
 

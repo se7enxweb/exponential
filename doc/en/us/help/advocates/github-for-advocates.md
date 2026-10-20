@@ -60,8 +60,7 @@ How to write a good issue: [Reporting bugs well](reporting-bugs-well.md). Which 
 - **Copyright and control of your contribution (CLA)**: a code contribution to the kernel
   (`se7enxweb/exponential`), in any form, is merged only once its author's signed Contributor Licensing Agreement
   has been received. By signing and submitting, you give up control over your contribution: 7x may use, change,
-  sublicense, relicense and distribute it in any way, perpetually and irrevocably, without asking or paying you; you
-  remain only the nominal copyright holder
+  sublicense, relicense and distribute it in any way, perpetually and irrevocably, without asking or paying you; formally the CLA is a license (§4)
   ([Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)). Your own extensions are
   not affected.
 - **Commit messages** start with `Added:`, `Updated:`, `Fixed:`, `Removed:` or `Renamed:`

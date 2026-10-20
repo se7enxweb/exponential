@@ -10,16 +10,10 @@ Thank you for considering contributing to Exponential CMS! We appreciate the tim
 > 7x and the recipients of its software may use, change, sublicense, relicense and distribute your contribution in
 > any way, including under other licenses and in commercial products, **without asking you and without paying
 > you**. You **cannot withdraw it, restrict it, or set conditions on it later**. In practice, control of the
-> contributed code passes to 7x and the project.
+> contributed code passes to 7x and the project. (Formally the CLA is a license, not a transfer: §4 of the
+> [agreement](https://share.se7enx.com/content/download/118895/572198/file/7x%20Contributor%20Licensing%20Agreement%202025v1.0.1.pdf).)
 
-What you keep: under the agreement's wording you remain the nominal copyright holder and may still use your own work
-elsewhere. The agreement does not transfer the copyright; it grants a license. Section 4 of the
-[agreement](https://share.se7enx.com/content/download/118895/572198/file/7x%20Contributor%20Licensing%20Agreement%202025v1.0.1.pdf)
-reads: "You hereby grant to 7x and to recipients of software distributed by 7x a perpetual, worldwide,
-non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare derivative works of,
-publicly display, publicly perform, sub-license, and distribute Your Contributions, including derivative works of
-Your Contributions." Section 5 grants a patent license on the same terms. Read the whole agreement before you sign
-it; this summary does not replace it and is not legal advice.
+Read the whole agreement before you sign it; this summary does not replace it and is not legal advice.
 
 **Who requires it, and for what.** 7x and the Exponential Foundation require a signed Contributor Licensing
 Agreement (CLA) for every code contribution to the core kernel of Exponential, before that contribution can be
@@ -74,19 +68,16 @@ yourself is not.
 
 ### FAQ
 
-**Do I give up control of my contribution?** Yes. Once you have signed and submitted it, 7x and the recipients of
-its software may use, change, sublicense, relicense and distribute it in any way, without asking or paying you
-(§4, §5).
+**Do I give up control of my code?** Yes. Once you sign the CLA and submit a contribution, you give up control of it:
+the license to 7x is perpetual and irrevocable, and 7x may use, change, relicense and distribute your contribution as
+it decides, without asking or paying you. You cannot withdraw it or set conditions. (Formally the CLA is a license,
+not a transfer: §4.)
 
 **Can I take my contribution back?** No. The license is "perpetual" and "irrevocable" (§4); you cannot withdraw it,
 restrict it, or add conditions later.
 
 **Can 7x relicense my contribution?** Yes. The license lets 7x "sub-license, and distribute Your Contributions,
 including derivative works", so 7x may distribute it under other licenses and in commercial products.
-
-**Am I still the copyright holder?** Nominally, yes: the agreement grants a license and does not transfer the
-copyright, so you may still use your own work elsewhere. That does not give you any control over the copy you
-contributed.
 
 **Why is it needed?** "Before we can consider the contributions you provide to us, we must agree on what rights you
 are offering to us" (preamble of the agreement), and "We cannot accept your contributions unless we have a signed

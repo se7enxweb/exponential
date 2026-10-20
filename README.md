@@ -606,7 +606,7 @@ Everyone is encouraged to [contribute](CONTRIBUTING.md) to the development of ne
 Code contributions to the core kernel (this repository), whether by pull request, patch, issue or mail, are merged
 only once the author has signed the 7x Contributor Licensing Agreement. **By signing and submitting, you give up
 control over your contribution:** 7x receives a perpetual, irrevocable license to use, change, sublicense, relicense
-and distribute it in any way, without asking or paying you; you remain only the nominal copyright holder. See
+and distribute it in any way, without asking or paying you; formally the CLA is a license (§4). See
 [Copyright and control of your contribution (CLA)](CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla). Your own custom extensions are not affected.
 
 # Donate and make a support subscription. 

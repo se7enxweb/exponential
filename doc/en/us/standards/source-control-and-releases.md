@@ -47,8 +47,7 @@ published. If you are new to Git, start with [Develop with Git](../help/develop-
   signed Contributor Licensing Agreement for every code contribution to the core kernel, whether it arrives as a
   pull request, a patch, an issue or by mail ([Copyright and control of your contribution (CLA)](../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)).
   By signing and submitting, the contributor gives up control over the contribution: 7x receives a perpetual,
-  irrevocable license to use, change, sublicense, relicense and distribute it in any way; the contributor remains
-  only the nominal copyright holder. The pull request template has a checkbox for it. Users' own custom extensions
+  irrevocable license to use, change, sublicense, relicense and distribute it in any way; formally the CLA is a license (§4). The pull request template has a checkbox for it. Users' own custom extensions
   are not affected.
 - **No force push and no rewriting of published history.** A commit on `main` is public; a rewrite would move every
   later commit and strand any tag that points into the range.

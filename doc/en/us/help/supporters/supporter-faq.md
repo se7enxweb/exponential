@@ -29,7 +29,7 @@ Code: GPL v2 or later (CONTRIBUTING.md). Documentation: GFDL 1.3 or later.
 For code contributions to the core kernel, yes: a Contributor Licensing Agreement (CLA), once, before the first
 merge. By signing and submitting, you give up control over your contribution: 7x may use, change, sublicense,
 relicense and distribute it in any way, perpetually and irrevocably, without asking or paying you, and you cannot
-take it back. You remain only the nominal copyright holder. Your own extensions are not affected.
+take it back. Formally the CLA is a license (§4). Your own extensions are not affected.
 [Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)
 
 **Where do I report a security problem?**

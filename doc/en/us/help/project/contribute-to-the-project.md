@@ -53,8 +53,7 @@ request to 7x's repository, where it is reviewed and, when merged, released to e
    give up control over your contribution:** 7x and the recipients of its software receive a perpetual, worldwide,
    irrevocable, royalty-free license, patents included, to use, change, sublicense, relicense and distribute it in
    any way, also under other licenses and in commercial products, without asking or paying you, and you cannot
-   withdraw or restrict it later. Under the agreement's wording you remain the nominal copyright holder and may still
-   use your own work elsewhere. See
+   withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). See
    [Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla) and the
    [CLA page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla). Your own custom
    extensions, site packages and themes are not affected.
@@ -68,8 +67,8 @@ pull request and keeps the contributor's commits as written, fixing on top whate
 Contribute under the same terms as everyone else: the GNU GPL version 2 or later. The website's FAQ asks for this so
 that contributions stay compatible with the rest of the code and the project can move to later versions of the GPL as
 a whole; `CONTRIBUTING.md` says the same. For the kernel, the CLA additionally gives
-control of your contribution to 7x: a "perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable"
-license that lets 7x sublicense and relicense it; you remain only the nominal copyright holder. If you cannot license a contribution
+control of your contribution to 7x: a perpetual, irrevocable, royalty-free license that lets 7x use, change,
+sublicense and relicense it without asking or paying you. If you cannot license a contribution
 that way, do not submit it ([Licensing questions](licensing-faq.md#may-i-contribute-code-under-gpl-version-3-only-or-gpl-version-2-only)).
 
 ## Test changes before they are released
