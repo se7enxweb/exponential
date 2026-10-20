@@ -228,6 +228,19 @@ class expHelpExtensionDocsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'usage', $list['foo']['pages'][array_search( 'ext/foo/usage/editors.md', $ids )]['folder'] );
     }
 
+    /** HE-04: exphelp/extensions/<name> finds the extension without case, refuses other names, groups by folder */
+    public function testExtensionsViewHelpers()
+    {
+        $list = self::index()->extensions();
+        $this->assertSame( 'foo', \Exponential\View\Kernel\Exphelp\Extensions::find( $list, 'FOO' )['name'] );
+        foreach ( array( 'bar', '../foo', 'foo/doc', '', 'ext' ) as $name )
+            $this->assertNull( \Exponential\View\Kernel\Exphelp\Extensions::find( $list, $name ), $name );
+        $folders = \Exponential\View\Kernel\Exphelp\Extensions::folders( $list['foo'] );
+        $this->assertSame( array( '', 'usage' ), array_column( $folders, 'name' ) );
+        $this->assertSame( 'ext/foo/index.md', $folders[0]['pages'][0]['id'] );
+        $this->assertSame( array( 'ext/foo/usage/editors.md' ), array_column( $folders[1]['pages'], 'id' ) );
+    }
+
     /** HE-05 */
     public function testWithoutActiveExtensionsOnlyTheNamedOnes()
     {

@@ -97,12 +97,12 @@
 
     /* ---------------------------------------------------------------- search */
 
-    // /exphelp/search/(q)/<words>/(category)/<id>/(audience)/<id>/(type)/<id>: only the parts that are set, in this
-    // order; '/', '(' and ')' in the words become spaces, a space shows as '+'
+    // /exphelp/search/(q)/<words>/(category)/<id>/(audience)/<id>/(type)/<id>/(extension)/<name>: only the parts that
+    // are set, in this order; '/', '(' and ')' in the words become spaces, a space shows as '+'
     function canonicalUrl(base, p) {
         var url = base, q = String(p.q || '').replace(/[\/()]/g, ' ').replace(/\s+/g, ' ').trim();
         if (q !== '') { url += '/(q)/' + encodeURIComponent(q).replace(/%20/g, '+'); }
-        ['category', 'audience', 'type'].forEach(function (name) {
+        ['category', 'audience', 'type', 'extension'].forEach(function (name) {
             var values = p.groups && p.groups[name];
             if (values && values.length) { url += '/(' + name + ')/' + encodeURIComponent(values.join(',')); }
         });

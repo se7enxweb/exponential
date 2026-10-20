@@ -232,6 +232,7 @@ return array(
       'Exponential\\View\\Kernel\\Exphelp\\Contents'                 => 'kernel/private/classes/views/exphelp/contents.php',
       'Exponential\\View\\Kernel\\Exphelp\\Context'                  => 'kernel/private/classes/views/exphelp/context.php',
       'Exponential\\View\\Kernel\\Exphelp\\Dashboard'                => 'kernel/private/classes/views/exphelp/dashboard.php',
+      'Exponential\\View\\Kernel\\Exphelp\\Extensions'               => 'kernel/private/classes/views/exphelp/extensions.php',
       'Exponential\\View\\Kernel\\Exphelp\\Manual'                   => 'kernel/private/classes/views/exphelp/manual.php',
       'Exponential\\View\\Kernel\\Exphelp\\Pdf'                      => 'kernel/private/classes/views/exphelp/pdf.php',
       'Exponential\\View\\Kernel\\Exphelp\\Report'                   => 'kernel/private/classes/views/exphelp/report.php',

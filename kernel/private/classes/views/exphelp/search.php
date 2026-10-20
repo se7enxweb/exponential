@@ -32,7 +32,7 @@ class Search extends \Exponential\Runnable\ModuleView
 {
     /** The view parameter variables of module.php's unordered_params, by parameter name. */
     const VIEW_PARAMETERS = array( 'q' => 'Query', 'category' => 'Category', 'audience' => 'Audience', 'type' => 'Type',
-                                   'offset' => 'Offset', 'limit' => 'Limit', 'format' => 'Format' );
+                                   'extension' => 'Extension', 'offset' => 'Offset', 'limit' => 'Limit', 'format' => 'Format' );
 
     public function run( array $scope )
     {
@@ -63,7 +63,7 @@ class Search extends \Exponential\Runnable\ModuleView
         $state = self::state( $json ? array_merge( self::getState( $_GET ), array_filter( $viewState, function ( $v ) { return $v !== false && $v !== null && $v !== ''; } ) )
                                     : $viewState, $known, $defaultLimit );
         $filters = array();
-        foreach ( array( 'audience', 'category', 'type' ) as $facet )
+        foreach ( array( 'audience', 'category', 'type', 'extension' ) as $facet )
         {
             if ( $state[$facet] )
                 $filters[$facet] = implode( ',', $state[$facet] );
@@ -103,6 +103,8 @@ class Search extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_audiences', \expHelp::translatedNames( $index->audiences() ) );
         $tpl->setVariable( 'help_categories', $categories );
         $tpl->setVariable( 'help_types', $index->types() );
+        // the extension whose documentation the search is limited to (exphelp/extensions/<name>), or false
+        $tpl->setVariable( 'help_extension', count( $state['extension'] ) === 1 ? $state['extension'][0] : false );
 
         $title = $state['q'] !== '' ? \ezpI18n::tr( 'kernel/exphelp', 'Search' )
                                     : ( $category ? $category['name'] : \ezpI18n::tr( 'kernel/exphelp', 'Browse' ) );
@@ -222,8 +224,8 @@ class Search extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * A checked state: q (string, at most 200 characters, "/", "(", ")" as spaces), category, audience, type (lists
-     * of known values, at most 10), offset (0 to 10000), limit (1 to 50).
+     * A checked state: q (string, at most 200 characters, "/", "(", ")" as spaces), category, audience, type,
+     * extension (lists of known values, at most 10), offset (0 to 10000), limit (1 to 50).
      *
      * @param array $raw name => string
      * @param array $known facet => list of the known values
@@ -233,7 +235,7 @@ class Search extends \Exponential\Runnable\ModuleView
     public static function state( array $raw, array $known, $defaultLimit = 20 )
     {
         $state = array( 'q' => \expHelp::searchWords( isset( $raw['q'] ) ? $raw['q'] : '' ) );
-        foreach ( array( 'category', 'audience', 'type' ) as $facet )
+        foreach ( array( 'category', 'audience', 'type', 'extension' ) as $facet )
         {
             $values = isset( $raw[$facet] ) && is_string( $raw[$facet] ) ? explode( ',', strtolower( $raw[$facet] ) ) : array();
             $allowed = isset( $known[$facet] ) ? array_flip( $known[$facet] ) : array();
@@ -253,16 +255,22 @@ class Search extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The known values of each facet: the categories, audiences and types of exphelp.ini.
+     * The known values of each facet: the categories, audiences and types of exphelp.ini, and the extensions that
+     * have pages in the help (their names in lower case).
      *
      * @param \expHelpDocumentIndex $index
      * @return array facet => list
      */
     public static function knownValues( $index )
     {
+        $extensions = array();
+        foreach ( array_keys( $index->visibleDocuments() ) as $id )
+            if ( preg_match( '#^ext/([^/]+)/#', (string)$id, $m ) )
+                $extensions[strtolower( $m[1] )] = true;
         return array( 'category' => array_map( 'strval', array_keys( $index->categories() ) ),
                       'audience' => array_map( 'strval', array_keys( $index->audiences() ) ),
-                      'type' => array_map( 'strval', array_keys( $index->types() ) ) );
+                      'type' => array_map( 'strval', array_keys( $index->types() ) ),
+                      'extension' => array_map( 'strval', array_keys( $extensions ) ) );
     }
 
     /**
@@ -283,6 +291,8 @@ class Search extends \Exponential\Runnable\ModuleView
             foreach ( isset( $known[$facet] ) ? $known[$facet] : array() as $value )
                 $urls[$facet][$value] = \expHelp::searchUrl( array( $facet => array( $value ), 'offset' => 0 ) + $state, $defaultLimit );
         }
+        // the extension is no facet with counts: only the address that searches the whole help again
+        $urls['extension'] = array( '' => \expHelp::searchUrl( array( 'extension' => array(), 'offset' => 0 ) + $state, $defaultLimit ) );
         return $urls;
     }
 
@@ -376,6 +386,7 @@ class Search extends \Exponential\Runnable\ModuleView
             case 'release-notes': return \ezpI18n::tr( $ctx, 'What changed in each release.' );
             case 'history': return \ezpI18n::tr( $ctx, 'Older documents kept for reference.' );
             case 'reference': return \ezpI18n::tr( $ctx, 'Reference material: settings, commands and formats.' );
+            case 'extensions': return \ezpI18n::tr( $ctx, 'The documentation the active extensions bring with them: their guides, README, changelog and license.' );
         }
         return '';
     }
