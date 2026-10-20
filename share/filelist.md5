@@ -1339,7 +1339,7 @@ b4edd9448fc55ecf35440fdfbb9f1ead  design/admin4/templates/notification/runfilter
 e1d45620896c5ba39be7a794fd13df0c  design/admin4/templates/oauthadmin/list.tpl
 37e7a408f54ffd54b22b4a9c48ba8087  design/admin4/templates/oauthadmin/parts/tabs.tpl
 6dd726077493b46540ca3407e579bd00  design/admin4/templates/oauthadmin/view.tpl
-690ceb7b0291ac0eb0dd4c13a5c19231  design/admin4/templates/ordering.tpl
+2821e66f9810e51eca316e854dcf4644  design/admin4/templates/ordering.tpl
 68696f04eb30d7d0e0b76e4b403f08ea  design/admin4/templates/package/compare.tpl
 8ebffdba558576340a97e4fe18d4b656  design/admin4/templates/package/compare_import.tpl
 e9b353fdc3dfca7eb8bddc6f3039ff52  design/admin4/templates/package/confirmremove.tpl
@@ -1536,7 +1536,7 @@ b93e11154287ac254e5145bee3990c88  design/admin4/templates/shop/discountgroup.tpl
 7ab8cf69a98693c8c59af7e5b805eec1  design/admin4/templates/shop/productsoverview.tpl
 04078a6dd6d3bbb28d85d2c59dedd6bc  design/admin4/templates/shop/removeorder.tpl
 65c0eb20cc345dc1b62dc4b3fbdb6994  design/admin4/templates/shop/removeproductcategories.tpl
-4641c11ceacad28936b22a0e85528ad1  design/admin4/templates/shop/removevattypes.tpl
+fe3ff98d6f83a23ada6f4327ae1dfa79  design/admin4/templates/shop/removevattypes.tpl
 119bd7e9e795c16ecb7d2310c66933b0  design/admin4/templates/shop/status.tpl
 4a14cf04b3eda3a87136d3d18fec63d7  design/admin4/templates/shop/userregister.tpl
 63452bd9245b7c02f2f6fc0d444cc955  design/admin4/templates/shop/vatrules.tpl
