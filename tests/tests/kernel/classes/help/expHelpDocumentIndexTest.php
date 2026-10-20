@@ -162,7 +162,8 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
         foreach ( $index->documents() as $id => $d )
         {
             $this->assertSame( $id, $d['id'] );
-            $this->assertSame( 'doc/' . $id, $d['path'] );
+            // in the default language's directory, or in no language directory (doc/README)
+            $this->assertContains( $d['path'], array( 'doc/en/us/' . $id, 'doc/' . $id ) );
         }
     }
 

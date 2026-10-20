@@ -3045,6 +3045,7 @@ fc69e6c36c5c24e806f6b99e5ee6f627  design/standard/templates/workflow/run.tpl
 a77770f8eb83d01e998509fa154d877f  design/standard/templates/workflow/view.tpl
 fdad1c71f524d82a51eb60607a767397  design/standard/templates/workflow/workflowlist.tpl
 bd3d93f01abdf7f10a98c56195094ac4  design/standard/templates/workflow/workflowtypes.tpl
+c3006f7487ea9ebb14116d1f49434049  doc/README.md
 0959bdd0da20ca86c663052e954574b8  doc/changelogs/2.9/CHANGELOG-2.9-1
 a33feab70666fd6404e65c9acee9b2f4  doc/changelogs/2.9/CHANGELOG-2.9-2
 9dc085b0bf9d5ad413706bc413b26959  doc/changelogs/2.9/CHANGELOG-2.9-3
@@ -3394,6 +3395,7 @@ fb85be121ac1186257310cd979fc3c1e  doc/en/us/bc/6.0/sqlite-transactions.md
 83c907c3757df38328000733adcf07ed  doc/en/us/bc/6.0/static-cache-defaults.md
 0c8ae79c442342b781dbf3f7e2c3dea6  doc/en/us/bc/6.0/subitems-table-options.md
 3c9ff9b6730b011a2b825d49fbeff9d6  doc/en/us/bc/6.0/svg-images.md
+12c01d19f19df0c2782215620a2cf56a  doc/en/us/bc/6.0/translated-documentation.md
 9c6663ff7a3916a0b7b61ef8f351ba31  doc/en/us/bc/6.0/trash.md
 64389016aada25c568fdafc2ebe6ce5e  doc/en/us/bc/6.0/trusted-proxies.md
 78f77d46a1c4fda9c55f0f24527261ed  doc/en/us/bc/6.0/ui-switch-design.md
@@ -9509,6 +9511,7 @@ f2c3b5cf6bc9fb272424baa921f9c775  doc/en/us/help/project/give-and-donate.md
 6c41be923984d43a2f3abaed1a14901c  doc/en/us/help/project/licensing-faq.md
 fe3c09d8cd854a77811a4b52d3cdd2e2  doc/en/us/help/project/roadmap.md
 6cad11d66949463e63f2a528bcb54eb0  doc/en/us/help/publishing-and-versions.md
+ea37db8e38875dd44cb87ac9d61ec78e  doc/en/us/help/reading-help-in-other-languages.md
 80d6321760f10706290ecbdc9009e617  doc/en/us/help/searching.md
 5ad62c89705ae7ba340177e6339d5408  doc/en/us/help/security-hardening.md
 86162a1255353525620ead81d88b4b67  doc/en/us/help/site-packages/README.md
@@ -15153,6 +15156,7 @@ c705cb190c311b8df40826aaa8a7cfd9  tests/tests/kernel/classes/help/expHelpSearchB
 e6d565ac01d7c656b6f6389977c9bbe2  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 36800feab65c19bf52df35aa555f0d0d  tests/tests/kernel/classes/help/expHelpSearchTest.php
 d791ed570d023b6dcdc8d7dc7f0ea2b7  tests/tests/kernel/classes/help/expHelpSearchViewParametersTest.php
+8f7974601d9c6ac603bc90adcc4236af  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
 adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branch-overview-svn.txt
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 444d0db01cc11b5e3f7778567f43f105  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php

@@ -35,10 +35,10 @@ class expHelpRecordRendererTest extends PHPUnit\Framework\TestCase
         return dirname( __DIR__, 5 );
     }
 
-    /** A page of doc/, or "branch-overview-svn": the SVN branch records doc/branch-overview had until it became Markdown */
+    /** A page of doc/en/us/, or "branch-overview-svn": the SVN branch records doc/branch-overview had until it became Markdown */
     protected static function source( $name )
     {
-        $text = file_get_contents( $name === 'branch-overview-svn' ? __DIR__ . '/fixtures/branch-overview-svn.txt' : self::root() . '/doc/' . $name );
+        $text = file_get_contents( $name === 'branch-overview-svn' ? __DIR__ . '/fixtures/branch-overview-svn.txt' : self::root() . '/doc/en/us/' . $name );
         self::assertIsString( $text );
         return $text;
     }

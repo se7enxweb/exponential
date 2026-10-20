@@ -182,7 +182,7 @@ class expHelpLeadershipAudiencesTest extends PHPUnit\Framework\TestCase
         foreach ( self::START_PAGES as $id => $page )
         {
             $this->assertMatchesRegularExpression( "#'" . $id . "', hash\\( 'icon', '[a-z0-9-]+', 'name', '[^']+'\\|i18n\\( 'kernel/exphelp' \\), 'text', '[^']+'\\|i18n\\( 'kernel/exphelp' \\),\\s+'start', '" . preg_quote( $page, '#' ) . "' \\)#", $admin4 );
-            $this->assertFileExists( self::root() . '/doc/' . $page );
+            $this->assertFileExists( self::root() . '/doc/en/us/' . $page );
         }
         $this->assertStringContainsString( 'class="a4-help-audience-start"', $admin4 );
         $this->assertStringContainsString( '<strong>{$help_audience_ids|count}</strong>', $admin4 );
@@ -327,7 +327,7 @@ class expHelpLeadershipAudiencesTest extends PHPUnit\Framework\TestCase
         $this->assertGreaterThan( 100, $checked );
         foreach ( array_merge( array_values( self::START_PAGES ), array( 'help/leadership/leadership-reading-path.md' ) ) as $page )
         {
-            list( $meta ) = expHelpFrontMatter::split( self::read( 'doc/' . $page ) );
+            list( $meta ) = expHelpFrontMatter::split( self::read( 'doc/en/us/' . $page ) );
             $this->assertTrue( isset( $meta['featured'] ) && ( $meta['featured'] === true || $meta['featured'] === 'true' ), $page . ' is featured' );
         }
     }

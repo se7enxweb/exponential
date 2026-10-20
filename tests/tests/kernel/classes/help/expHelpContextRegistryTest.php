@@ -168,9 +168,11 @@ class expHelpContextRegistryTest extends PHPUnit\Framework\TestCase
         {
             $parsed = expHelpContextRegistry::parseTarget( $target );
             $this->assertNotEmpty( $parsed, 'Map[' . $key . ']=' . $target . ' is valid' );
-            $id = preg_replace( '/#.*$/', '', preg_replace( '#^doc/#', '', $target ) );
+            $id = preg_replace( '/#.*$/', '', $parsed['id'] );
+            // a page id is the path below doc/en/us/ (or below doc/ for a file in no language directory)
             if ( $tracked !== null && strpos( $id, 'ext/' ) !== 0 )
-                $this->assertContains( 'doc/' . $id, $tracked, 'Map[' . $key . '] names a tracked page' );
+                $this->assertTrue( in_array( 'doc/en/us/' . $id, $tracked, true ) || in_array( 'doc/' . $id, $tracked, true ),
+                                   'Map[' . $key . '] names a tracked page' );
         }
     }
 

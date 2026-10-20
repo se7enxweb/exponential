@@ -1676,7 +1676,15 @@
     "kernel/classes/help/exphelphighlighter.php": [
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
     ],
+    "kernel/classes/help/exphelplanguage.php": [
+      "tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php",
+      "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
+      "tests/tests/kernel/classes/help/expHelpLinksTest.php",
+      "tests/tests/kernel/classes/help/expHelpContextRegistryTest.php",
+      "tests/tests/kernel/classes/help/expHelpLicenseTest.php"
+    ],
     "kernel/classes/help/exphelpdocumentindex.php": [
+      "tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php",
       "tests/tests/kernel/classes/help/expHelpPageTitlesTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",

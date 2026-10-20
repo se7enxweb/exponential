@@ -81,7 +81,7 @@ class expHelpLicenseTest extends PHPUnit\Framework\TestCase
         {
             $id = self::ini( 'License', $page );
             $this->assertIsString( $id, $page );
-            $this->assertFileExists( self::root() . '/doc/' . $id, $page );
+            $this->assertFileExists( self::root() . '/doc/en/us/' . $id, $page );
         }
         $this->assertIsArray( self::ini( 'License', 'OtherLicensePathRules' ) );
         // the class falls back to the same list when the setting is missing

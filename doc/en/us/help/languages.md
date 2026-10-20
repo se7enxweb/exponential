@@ -80,3 +80,4 @@ also offers the **Administration design**.
 
 - [Content languages](../guides/content-languages.md), the full guide, including adding a language to the site.
 - [Interface language and the UI switch](../features/6.0/ui-switch.md)
+- [Reading the help in your language](reading-help-in-other-languages.md): the help follows the interface language.

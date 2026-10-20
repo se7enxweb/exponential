@@ -283,9 +283,22 @@ French, Spanish (Spain and Mexico), Ukrainian, Hebrew, Arabic, Latin and Klingon
 `untranslated` template kept in step. The names in `exphelp.ini` (`[CategorySettings] CategoryNames[]`, the
 trackers' `Name` and `Description`) go through the same context, so a new name there needs a message in each of
 those catalogues; `tests/tests/lib/ezi18n/expTranslationQualityTest.php` checks that a finished translation keeps
-the placeholders (`%count`, `%title` ...) of its source. The help pages themselves are the documentation in
-`doc/` and stay in the language they are written in; the diagnostics and the issue text the error report prepares
-stay in English on purpose, because the maintainers read them.
+the placeholders (`%count`, `%title` ...) of its source. The diagnostics and the issue text the error report
+prepares stay in English on purpose, because the maintainers read them.
+
+### The pages in the reader's language
+
+The help pages themselves are the documentation, one directory per language below `doc/`: `doc/en/us/` is the
+original, a translation is `doc/<language>/` (`doc/de/`), and `doc/changelogs/` is not translated
+(`expHelpLanguage`; [Translated documentation](../../bc/6.0/translated-documentation.md)). The reader's language is
+the interface language (`site.ini [RegionalSettings] Locale`, which the language switch sets), mapped by
+`exphelp.ini [DocLanguages] Map[]` (`eng-US`, `eng-GB` to `en/us`, `ger-DE` to `de`). A page id is the path below
+`doc/en/us/` in every language, so an address shows the same page in each; a translation may translate its file
+names and list them in `doc/<language>/.paths.json`. A page the language does not have yet is shown in English with a
+note ("This page is not translated into German yet"); the index, the search, the navigation and the rendered pages
+are kept per language (`lang-<language>/` in the help cache), and `./console exp:help index` builds them all. An
+address that names a file (`/exphelp/viewer/en/us/guides/caches.md`, `/exphelp/viewer/de/<translated path>`) is
+redirected to the page id.
 
 In a right-to-left interface language (Hebrew, Arabic) the pages are mirrored: the navigation tree, the contents
 and the previous/next links swap sides and their arrows turn, while paths, code and the diagnostics stay left to
