@@ -12,8 +12,8 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `extension/expservices/settings/expservices.ini` (Erweiterung expservices): 4 Blöcke, 13 Einstellungen.
 
-> expservices: remote services over ezjscore/call/exp<domain>::<method>\[::arg...\]  
-> Guide: doc/eng-us/bc/6.0/backend\_ezjscore\_services.md  
+> expservices: entfernte Dienste über ezjscore/call/exp<domain>::<method>\[::arg...\]  
+> Anleitung: doc/eng-us/bc/6.0/backend\_ezjscore\_services.md  
 
 | Block | Einstellungen |
 |---|---|

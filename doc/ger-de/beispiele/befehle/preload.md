@@ -2,14 +2,14 @@
 title: exp:preload
 audience: developer, admin
 category: examples
-summary: "Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones."
+summary: "Wärmt die Seiten-Caches einer Website vor: fordert ihre Bereichsseiten an, folgt dann ihren Links und meldet die defekten."
 keywords: Konsole, Befehl, exp:preload, preload, console, command, CLI, preload.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:preload
 
-Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones.
+Wärmt die Seiten-Caches einer Website vor: fordert ihre Bereichsseiten an, folgt dann ihren Links und meldet die defekten.
 
 Skript `bin/php/preload.php`, Code in `kernel/private/classes/commands/preload.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -37,8 +37,8 @@ Usage: php bin/php/preload.php --siteaccess=<name> [--max-pages=<n>] [--max-dept
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--target` | erforderlich | the siteaccess whose site is preloaded (default: the one of --siteaccess) |
-| `--max-pages` | erforderlich | most pages to request (default  |
+| `--target` | erforderlich | der Siteaccess, dessen Website vorgewärmt wird (Standard: der von --siteaccess) |
+| `--max-pages` | erforderlich | höchstens so viele Seiten anfordern (Standard  |
 | `--max-depth` | erforderlich |  |
 | `--images` |  |  |
 | `--dry-run` |  |  |

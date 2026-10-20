@@ -2,23 +2,23 @@
 title: Cronjob querycache_cleanup.php
 audience: developer, admin
 category: examples
-summary: Remove the result files of the SQL query cache that are older than MaxAge or from before the last clear.
+summary: Entfernt die Ergebnisdateien des SQL-Abfrage-Caches, die älter als MaxAge sind oder von vor dem letzten Leeren stammen.
 keywords: Teil, querycache_cleanup.php, querycache_cleanup, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob querycache_cleanup.php
 
-Remove the result files of the SQL query cache that are older than MaxAge or from before the last clear.
+Entfernt die Ergebnisdateien des SQL-Abfrage-Caches, die älter als MaxAge sind oder von vor dem letzten Leeren stammen.
 
 Einstiegspunkt `cronjobs/querycache_cleanup.php`, Code in `kernel/private/classes/cronjobs/querycache_cleanup.php`.
 
-> The code of cronjobs/querycache\_cleanup.php. The file cronjobs/querycache\_cleanup.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/querycache\_cleanup.php. Die Datei cronjobs/querycache\_cleanup.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 >
-> Removes the result files of the SQL query cache (querycache.ini Storage=file, or auto without APCu) that can no  
-> longer be answered: older than MaxAge or from before the last clear. A lookup never answers them anyway; without  
-> this run they stay on disk until the same statement is stored again.  
+> Entfernt die Ergebnisdateien des SQL-Abfrage-Caches (querycache.ini Storage=file, oder auto ohne APCu), die nicht mehr  
+> beantwortet werden können: älter als MaxAge oder von vor dem letzten Leeren. Eine Abfrage beantwortet sie ohnehin nie; ohne  
+> diesen Lauf bleiben sie auf der Festplatte, bis dieselbe Anweisung erneut gespeichert wird.  
 
 ## Wann er läuft
 

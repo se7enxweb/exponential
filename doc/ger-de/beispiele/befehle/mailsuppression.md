@@ -2,14 +2,14 @@
 title: exp:mailsuppression
 audience: developer, admin
 category: examples
-summary: "The suppression list of the e-mail gate: list, check, add and lift entries (only hashes are stored)."
+summary: "Die Sperrliste des E-Mail-Gates: Einträge auflisten, prüfen, hinzufügen und aufheben (es werden nur Hashes gespeichert)."
 keywords: Konsole, Befehl, exp:mailsuppression, mailsuppression, console, command, CLI, mailsuppression.php, exp:mail:suppression
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailsuppression
 
-The suppression list of the e-mail gate: list, check, add and lift entries (only hashes are stored).
+Die Sperrliste des E-Mail-Gates: Einträge auflisten, prüfen, hinzufügen und aufheben (es werden nur Hashes gespeichert).
 
 Skript `bin/php/mailsuppression.php`, Code in `kernel/private/classes/commands/mailsuppression.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -41,12 +41,12 @@ address, never the address: an entry is found by entering the address.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--email` | erforderlich | the address (check, add, lift) |
-| `--hash` | erforderlich | lift: the hash of an entry (list shows its start; the whole hash is in --json) |
-| `--reason` | erforderlich | add: the reason; list: only this reason |
-| `--note` | erforderlich | add: a note for the admins (the address is removed from it) |
-| `--limit` | erforderlich | list: how many (default 50) |
-| `--offset` | erforderlich | list: skip this many |
+| `--email` | erforderlich | die Adresse (check, add, lift) |
+| `--hash` | erforderlich | lift: der Hash eines Eintrags (list zeigt seinen Anfang; der ganze Hash steht in --json) |
+| `--reason` | erforderlich | add: der Grund; list: nur dieser Grund |
+| `--note` | erforderlich | add: eine Notiz für die Administratoren (die Adresse wird daraus entfernt) |
+| `--limit` | erforderlich | list: wie viele (Standard 50) |
+| `--offset` | erforderlich | list: so viele überspringen |
 | `--json` |  | list: JSON |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

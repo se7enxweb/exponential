@@ -21,9 +21,9 @@ Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update
 
 ## TemplateFunction
 
-> Url to test this server function(return alert message):  
+> URL zum Testen dieser Serverfunktion (gibt eine Meldung aus):  
 > <root>/ezjscore/call/ezjsctemplate::alert  
-> will execute templates/ezjsctemplate/alert.tpl  
+> führt templates/ezjsctemplate/alert.tpl aus  
 
 Standard: `true`.
 

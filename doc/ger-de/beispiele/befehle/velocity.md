@@ -23,23 +23,23 @@ php bin/php/velocity.php --help
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--json` |  | Als JSON berichten, für einen Aufrufer, der kein Mensch ist |
-| `--keep-global` | erforderlich | More globals to keep between requests (comma-separated), appended to the built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command |
-| `--engine` | erforderlich | php, frankenphp or qbix -- or several, comma-separated -- for this command only, instead of [ServerSettings] Engine |
-| `--from` | erforderlich | install: take the binary from this file instead of downloading it (still verified) |
+| `--keep-global` | erforderlich | Weitere Globals, die zwischen Anfragen erhalten bleiben (durch Kommas getrennt), zusätzlich zu den eingebauten Standards und velocity.ini KeepGlobals[]; für start, restart und command |
+| `--engine` | erforderlich | php, frankenphp oder qbix (oder mehrere, durch Kommas getrennt) nur für diesen Befehl, statt [ServerSettings] Engine |
+| `--from` | erforderlich | install: die Binärdatei aus dieser Datei nehmen, statt sie herunterzuladen (sie wird dennoch geprüft) |
 | `--force` |  | install: erneut herunterladen, auch wenn die Binärdatei schon da ist |
 | `--check` |  | install: den Hash der installierten Binärdatei erneut gegen ihre SHA-256 prüfen |
-| `--trust-github-digest` |  | install: with no Sha256 pinned for the version, accept the digest GitHub publishes for the release |
+| `--trust-github-digest` |  | install: wenn für die Version keine Sha256 festgelegt ist, den Digest akzeptieren, den GitHub für das Release veröffentlicht |
 | `--all` |  | start, stop, restart, graceful, kill oder status für jede Engine, eine nach der anderen |
 | `--https` |  |  |
 | `--no-https` |  |  |
-| `--rebuild-phar` |  | start, restart, graceful, deploy: rebuild the engine archive even when it is current |
-| `--kernel` |  | deploy: regenerate the kernel autoload array too (kernel/ and lib/ only) |
-| `--dry-run` |  | deploy: print the steps and what each would do, and do nothing |
-| `--no-fpm` |  | deploy: leave PHP-FPM alone (no reload, no wait) |
-| `--fpm-reload` |  | deploy: reload PHP-FPM even when its OPcache revalidates the files (php.ini or pool changed, files renamed) |
-| `--no-velocity` |  | deploy: do not restart Velocity |
-| `--no-autoload` |  | deploy: do not regenerate autoload arrays |
-| `--packer` |  | deploy: clear the packed scripts and styles too (ezjscore-packer, right before template-block) |
+| `--rebuild-phar` |  | start, restart, graceful, deploy: das Engine-Archiv neu bauen, auch wenn es aktuell ist |
+| `--kernel` |  | deploy: auch das Autoload-Array des Kernels neu erzeugen (nur kernel/ und lib/) |
+| `--dry-run` |  | deploy: die Schritte ausgeben und was jeder täte, und nichts tun |
+| `--no-fpm` |  | deploy: PHP-FPM in Ruhe lassen (kein Neuladen, kein Warten) |
+| `--fpm-reload` |  | deploy: PHP-FPM neu laden, auch wenn sein OPcache die Dateien neu prüft (php.ini oder Pool geändert, Dateien umbenannt) |
+| `--no-velocity` |  | deploy: Velocity nicht neu starten |
+| `--no-autoload` |  | deploy: die Autoload-Arrays nicht neu erzeugen |
+| `--packer` |  | deploy: auch die gepackten Skripte und Styles leeren (ezjscore-packer, direkt vor template-block) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

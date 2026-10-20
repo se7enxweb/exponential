@@ -2,19 +2,19 @@
 title: Cronjob httpcache_cleanup.php
 audience: developer, admin
 category: examples
-summary: Remove expired, purged and orphaned entries from the role-aware HTTP cache.
+summary: Entfernt abgelaufene, gelöschte und verwaiste Einträge aus dem rollenbewussten HTTP-Cache.
 keywords: Teil, httpcache_cleanup.php, httpcache_cleanup, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob httpcache_cleanup.php
 
-Remove expired, purged and orphaned entries from the role-aware HTTP cache.
+Entfernt abgelaufene, gelöschte und verwaiste Einträge aus dem rollenbewussten HTTP-Cache.
 
 Einstiegspunkt `cronjobs/httpcache_cleanup.php`, Code in `kernel/private/classes/cronjobs/httpcache_cleanup.php`.
 
-> The code of cronjobs/httpcache\_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/httpcache\_cleanup.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/httpcache\_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/httpcache\_cleanup.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

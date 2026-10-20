@@ -2,18 +2,18 @@
 title: Cronjob mailpreferences.php
 audience: developer, admin
 category: examples
-summary: "E-mail preferences retention: consent log rows of people who are gone, expired confirmations, old suppression entries."
+summary: "Aufbewahrung der E-Mail-Einstellungen: Zeilen des Einwilligungsprotokolls von Personen, die nicht mehr da sind, abgelaufene Bestätigungen, alte Einträge der Sperrliste."
 keywords: Teil, mailpreferences.php, mailpreferences, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob mailpreferences.php
 
-E-mail preferences retention: consent log rows of people who are gone, expired confirmations, old suppression entries.
+Aufbewahrung der E-Mail-Einstellungen: Zeilen des Einwilligungsprotokolls von Personen, die nicht mehr da sind, abgelaufene Bestätigungen, alte Einträge der Sperrliste.
 
 Einstiegspunkt `cronjobs/mailpreferences.php`, Code in `kernel/private/classes/cronjobs/mailpreferences.php`.
 
-> The code of cronjobs/mailpreferences.php.  
+> Der Code von cronjobs/mailpreferences.php.  
 
 ## Wann er läuft
 

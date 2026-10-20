@@ -29,11 +29,11 @@ Runs one preload for Setup > Preload and writes its events and status.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--id` | erforderlich | the job id (hex), chosen by setup/preloadjob |
-| `--target` | erforderlich | the siteaccess whose site is preloaded (default: DefaultAccess) |
-| `--max-pages` | erforderlich | most pages to fetch (default 250) |
-| `--max-depth` | erforderlich | most links to follow from a starting page (default 3) |
-| `--images` |  | also request the images the warmed pages show, and report the missing ones |
+| `--id` | erforderlich | die Auftrags-ID (hex), von setup/preloadjob gewählt |
+| `--target` | erforderlich | der Siteaccess, dessen Website vorgewärmt wird (Standard: DefaultAccess) |
+| `--max-pages` | erforderlich | höchstens so viele Seiten abrufen (Standard 250) |
+| `--max-depth` | erforderlich | höchstens so viele Links von einer Startseite aus folgen (Standard 3) |
+| `--images` |  | auch die Bilder anfordern, die die vorgewärmten Seiten zeigen, und die fehlenden melden |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -2,19 +2,19 @@
 title: Cronjob hide.php
 audience: developer, admin
 category: examples
-summary: Process scheduled hide and unhide actions on content objects.
+summary: Führt geplante Aktionen zum Verbergen und Anzeigen von Inhaltsobjekten aus.
 keywords: Teil, hide.php, hide, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob hide.php
 
-Process scheduled hide and unhide actions on content objects.
+Führt geplante Aktionen zum Verbergen und Anzeigen von Inhaltsobjekten aus.
 
 Einstiegspunkt `cronjobs/hide.php`, Code in `kernel/private/classes/cronjobs/hide.php`.
 
-> The code of cronjobs/hide.php, moved into a class (#207 stage 1). The file cronjobs/hide.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/hide.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/hide.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

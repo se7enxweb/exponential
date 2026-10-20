@@ -21,7 +21,7 @@ Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update
 
 ## Class
 
-> Url to test this server function(return node list):  
+> URL zum Testen dieser Serverfunktion (gibt eine Knotenliste zurück):  
 > <root>/ezjscore/call/ezjscnode::subtree::2  
 
 Standard: `ezjscServerFunctionsNode`.
@@ -37,12 +37,12 @@ Class=ezjscServerFunctionsNode
 ## Functions
 
 > File=extension/ezjscore/classes/ezjscserverfunctionsnode.php  
-> The node data (name, ids, remote id, owner, section, dates, class, translations, paths) is  
-> readable by every user who may read the node, anonymous visitors included, unless  
-> RequirePolicy=enabled: then a user also needs ezjscore/call with the function list ezjscnode  
-> (FunctionList limitation). New installations write RequirePolicy=enabled in  
-> settings/override/ezjscore.ini.append.php and grant the Editor role that policy; an upgraded  
-> site keeps disabled until it switches. Guide: doc/eng-us/bc/6.0/backend\_ezjscore\_services.md  
+> Die Knotendaten (Name, IDs, Remote-ID, Eigentümer, Sektion, Daten, Klasse, Übersetzungen, Pfade) kann  
+> jeder Benutzer lesen, der den Knoten lesen darf, anonyme Besucher eingeschlossen, außer bei  
+> RequirePolicy=enabled: Dann braucht ein Benutzer außerdem ezjscore/call mit der Funktionsliste ezjscnode  
+> (Einschränkung FunctionList). Neue Installationen schreiben RequirePolicy=enabled in  
+> settings/override/ezjscore.ini.append.php und gewähren der Rolle Editor diese Richtlinie; eine aktualisierte  
+> Website behält disabled, bis sie umschaltet. Anleitung: doc/eng-us/bc/6.0/backend\_ezjscore\_services.md  
 
 Standard: eine Liste mit 1: `ezjscnode`.
 
@@ -70,11 +70,11 @@ RequirePolicy=disabled
 
 ## HardLimit
 
-> Allows setting a Hard Limit to the subtree method to prevent the load of very large subtrees  
->  reducing server load and risk of DOS attacks.  
->  false disables the feature, any integer will set the hard limit.  
->  for example: a hard limit of 100 will allow limiting to 30 or 40, but will replace a  
->               limit of 150.  
+> Erlaubt eine harte Grenze für die Methode subtree, um das Laden sehr großer Teilbäume zu verhindern,  
+>  was die Serverlast und das Risiko von DoS-Angriffen senkt.  
+>  false deaktiviert die Funktion, jede Ganzzahl setzt die harte Grenze.  
+>  Zum Beispiel: Eine harte Grenze von 100 erlaubt eine Begrenzung auf 30 oder 40, ersetzt aber eine  
+>               Begrenzung von 150.  
 
 Standard: `false`.
 

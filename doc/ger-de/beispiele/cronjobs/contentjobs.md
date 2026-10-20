@@ -2,25 +2,25 @@
 title: Cronjob contentjobs.php
 audience: developer, admin
 category: examples
-summary: Resume content jobs whose worker died and start queued jobs nobody started.
+summary: Setzt Inhaltsaufträge fort, deren Worker gestorben ist, und startet wartende Aufträge, die niemand gestartet hat.
 keywords: Teil, contentjobs.php, contentjobs, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob contentjobs.php
 
-Resume content jobs whose worker died and start queued jobs nobody started.
+Setzt Inhaltsaufträge fort, deren Worker gestorben ist, und startet wartende Aufträge, die niemand gestartet hat.
 
 Einstiegspunkt `cronjobs/contentjobs.php`, Code in `kernel/private/classes/cronjobs/contentjobs.php`.
 
-> The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a  
-> worker and have none — a running job whose worker died (kill -9, a reboot, a memory limit) and a queued job  
-> nobody started within content.ini \[ContentJobSettings\] QueuedGrace seconds (the spawn from the web request  
-> failed) — and removes finished jobs older than KeepDays.  
+> Der Cronjob-Teil contentjobs (cronjobs/contentjobs.php, Gruppe frequent): startet die Inhaltsaufträge, die einen  
+> Worker brauchen und keinen haben (ein laufender Auftrag, dessen Worker gestorben ist (kill -9, ein Neustart, eine Speichergrenze), und ein wartender Auftrag,  
+> den niemand innerhalb von content.ini \[ContentJobSettings\] QueuedGrace Sekunden gestartet hat (der Start aus der Web-Anfrage  
+> ist fehlgeschlagen)) und entfernt abgeschlossene Aufträge, die älter als KeepDays sind.  
 >
-> The worker is started detached (bin/php/expcontentjob.php run <id>), as from the web request, so a long job  
-> never holds up the other cronjob parts; started as root, it becomes the site user. A job resumed again and  
-> again without finishing a batch is failed by the worker after MaxAttempts starts instead of looping.  
+> Der Worker wird abgekoppelt gestartet (bin/php/expcontentjob.php run <id>), wie aus der Web-Anfrage, sodass ein langer Auftrag  
+> nie die anderen Cronjob-Teile aufhält; als root gestartet, wird er zum Benutzer der Website. Ein Auftrag, der immer wieder  
+> fortgesetzt wird, ohne einen Stapel abzuschließen, wird vom Worker nach MaxAttempts Starts als fehlgeschlagen markiert, statt sich endlos zu wiederholen.  
 
 ## Wann er läuft
 

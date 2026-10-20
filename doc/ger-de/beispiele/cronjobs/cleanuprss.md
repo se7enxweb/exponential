@@ -2,19 +2,19 @@
 title: Cronjob cleanuprss.php
 audience: developer, admin
 category: examples
-summary: Trim the content the RSS import has created, keeping the newest items of each feed.
+summary: Kürzt die vom RSS-Import angelegten Inhalte und behält die neuesten Einträge jedes Feeds.
 keywords: Teil, cleanuprss.php, cleanuprss, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob cleanuprss.php
 
-Trim the content the RSS import has created, keeping the newest items of each feed.
+Kürzt die vom RSS-Import angelegten Inhalte und behält die neuesten Einträge jedes Feeds.
 
 Einstiegspunkt `cronjobs/cleanuprss.php`, Code in `kernel/private/classes/cronjobs/cleanuprss.php`.
 
-> The code of cronjobs/cleanuprss.php, moved into a class (#207 stage 1). The file cronjobs/cleanuprss.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/cleanuprss.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/cleanuprss.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

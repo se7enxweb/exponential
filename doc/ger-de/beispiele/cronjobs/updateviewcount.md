@@ -2,19 +2,19 @@
 title: Cronjob updateviewcount.php
 audience: developer, admin
 category: examples
-summary: Flush the in-memory view count buffer to the database.
+summary: Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank.
 keywords: Teil, updateviewcount.php, updateviewcount, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob updateviewcount.php
 
-Flush the in-memory view count buffer to the database.
+Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank.
 
 Einstiegspunkt `cronjobs/updateviewcount.php`, Code in `kernel/private/classes/cronjobs/updateviewcount.php`.
 
-> The code of cronjobs/updateviewcount.php, moved into a class (#207 stage 1). The file cronjobs/updateviewcount.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/updateviewcount.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/updateviewcount.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

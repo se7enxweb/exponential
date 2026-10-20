@@ -2,14 +2,14 @@
 title: exp:maintenance
 audience: developer, admin
 category: examples
-summary: "Take the site offline for maintenance and back: on, off or status."
+summary: "Nimmt die Website für Wartungsarbeiten vom Netz und wieder zurück: on, off oder status."
 keywords: Konsole, Befehl, exp:maintenance, maintenance, console, command, CLI, maintenance.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:maintenance
 
-Take the site offline for maintenance and back: on, off or status.
+Nimmt die Website für Wartungsarbeiten vom Netz und wieder zurück: on, off oder status.
 
 Skript `bin/php/maintenance.php`, Code in `kernel/private/classes/commands/maintenance.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -32,10 +32,10 @@ Maintenance mode: take the site offline and back
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--message` | erforderlich | What the page says, instead of the default text |
-| `--until` | erforderlich | When the site is expected back: 30m, 2h, or a date and time |
-| `--allow-ip` | erforderlich | Addresses that still see the site, comma separated |
-| `--allow-admin` |  | Keep the administration (/admin) reachable |
+| `--message` | erforderlich | Was die Seite sagt, statt des Standardtextes |
+| `--until` | erforderlich | Wann die Website zurück sein soll: 30m, 2h oder ein Datum mit Uhrzeit |
+| `--allow-ip` | erforderlich | Adressen, die die Website weiterhin sehen, durch Kommas getrennt |
+| `--allow-admin` |  | Die Administration (/admin) erreichbar lassen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

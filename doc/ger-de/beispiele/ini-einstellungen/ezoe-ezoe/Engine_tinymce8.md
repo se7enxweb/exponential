@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[Engine_tinymce8]` von `extension/ezoe/settings/ezoe.ini` (Erweiterung ezoe), mit 3 Einstellung(en).
 
-> TinyMCE 8 engine: \[EditorLayout\] button name => TinyMCE 8 toolbar item. Buttons with no counterpart are dropped.  
+> TinyMCE-8-Engine: Name der Schaltfläche in \[EditorLayout\] => Element der Werkzeugleiste von TinyMCE 8. Schaltflächen ohne Gegenstück entfallen.  
 
 Bearbeiten Sie `extension/ezoe/settings/ezoe.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,9 +21,9 @@ Bearbeiten Sie `extension/ezoe/settings/ezoe.ini` nie selbst: Ein Update ersetzt
 
 ## TableDialog
 
-> Dialog of Insert table / Table properties in TinyMCE 8:  
-> classic = the design of the TinyMCE 3 dialog (Properties tab, size grid, width and border with unit, class, custom attributes)  
-> modern  = the TinyMCE 8 dialog (plain form fields)  
+> Dialog für Tabelle einfügen / Tabelleneigenschaften in TinyMCE 8:  
+> classic = das Design des Dialogs von TinyMCE 3 (Reiter Eigenschaften, Größenraster, Breite und Rahmen mit Einheit, Klasse, eigene Attribute)  
+> modern  = der Dialog von TinyMCE 8 (einfache Formularfelder)  
 
 Standard: `classic`.
 
@@ -71,7 +71,7 @@ ToolbarMap[image]=ezembed
 
 ## ExternalPlugins
 
-> ezoe plugins loaded by URL: name => design path (an extension adds its own the same way)  
+> Per URL geladene ezoe-Plugins: Name => Design-Pfad (eine Erweiterung fügt ihre eigenen auf dieselbe Weise hinzu)  
 
 Standard: ein Hash mit 7: `ezembed=javascript/tinymce8_ez/plugins/ezembed/plugin.js`, `ezcustomtag=javascript/tinymce8_ez/plugins/ezcustomtag/plugin.js`, `ezlink=javascript/tinymce8_ez/plugins/ezlink/plugin.js`, `ezpath=javascript/tinymce8_ez/plugins/ezpath/plugin.js`, `ezliteral=javascript/tinymce8_ez/plugins/ezliteral/plugin.js`, `eztable=javascript/tinymce8_ez/plugins/eztable/plugin.js`, `ezgeneral=javascript/tinymce8_ez/plugins/ezgeneral/plugin.js`.
 

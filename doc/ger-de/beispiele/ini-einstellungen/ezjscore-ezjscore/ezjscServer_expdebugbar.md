@@ -21,20 +21,20 @@ Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update
 
 ## Class
 
-> The Exp Debug bar (settings/debugbar.ini, guide doc/eng-us/bc/6.0/debug-bar.md):  
+> Die Exp-Debug-Leiste (settings/debugbar.ini, Anleitung doc/eng-us/bc/6.0/debug-bar.md):  
 > <root>/ezjscore/call/expdebugbar::settings\[::<siteaccess>\]  
->   every debug setting with its value in effect, where it comes from and the value of each scope  
+>   jede Debug-Einstellung mit ihrem geltenden Wert, ihrer Herkunft und dem Wert jedes Bereichs  
 > <root>/ezjscore/call/expdebugbar::set      (POST setting, op, value, scope, ezxform\_token)  
 > <root>/ezjscore/call/expdebugbar::undo     (POST entry or group, ezxform\_token)  
 > <root>/ezjscore/call/expdebugbar::preset   (POST preset + scope, or save, or delete, ezxform\_token)  
 > <root>/ezjscore/call/expdebugbar::cache    (action=list; POST action=clear by=tag|id|all|node|velocity|opcache)  
 > <root>/ezjscore/call/expdebugbar::iptest   (address, list)  
 > <root>/ezjscore/call/expdebugbar::log, expdebugbar::summary  
-> <root>/ezjscore/call/expdebugbar::panelheight  (POST height in pixels or 0, ezxform\_token: user preference  
->   expdebugbar\_panel\_height, the height of the open panel)  
-> Every function checks itself: reading needs debug output for the request or setup/setup or  
-> setup/managecache; changing settings needs setup/setup, clearing caches setup/managecache;  
-> panelheight a signed-in user who sees the debug output.  
+> <root>/ezjscore/call/expdebugbar::panelheight  (POST Höhe in Pixeln oder 0, ezxform\_token: Benutzereinstellung  
+>   expdebugbar\_panel\_height, die Höhe des geöffneten Panels)  
+> Jede Funktion prüft selbst: Lesen braucht die Debug-Ausgabe für die Anfrage oder setup/setup oder  
+> setup/managecache; Einstellungen ändern braucht setup/setup, Caches leeren setup/managecache;  
+> panelheight einen angemeldeten Benutzer, der die Debug-Ausgabe sieht.  
 
 Standard: `expDebugBarServerFunctions`.
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `extension/ezoe/settings/ezoe.ini` nie selbst: Ein Update ersetzt
 
 ## RelativeURL
 
-> Use relative URLs (without host) inside the editor (only affects images in OE 5.x).  
+> Relative URLs (ohne Host) im Editor verwenden (betrifft in OE 5.x nur Bilder).  
 
 Standard: `enabled`.
 

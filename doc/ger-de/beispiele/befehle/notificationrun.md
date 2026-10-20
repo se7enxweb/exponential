@@ -2,14 +2,14 @@
 title: exp:notificationrun
 audience: developer, admin
 category: examples
-summary: "Run the notification filter: send the notifications of the pending events and the due digests (--dry-run: only list them)."
+summary: "Führt den Benachrichtigungsfilter aus: sendet die Benachrichtigungen der anstehenden Ereignisse und die fälligen Zusammenfassungen (--dry-run: nur auflisten)."
 keywords: Konsole, Befehl, exp:notificationrun, notificationrun, console, command, CLI, notificationrun.php, exp:notification:run, exp:notify:run
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationrun
 
-Run the notification filter: send the notifications of the pending events and the due digests (--dry-run: only list them).
+Führt den Benachrichtigungsfilter aus: sendet die Benachrichtigungen der anstehenden Ereignisse und die fälligen Zusammenfassungen (--dry-run: nur auflisten).
 
 Skript `bin/php/notificationrun.php`, Code in `kernel/private/classes/commands/notificationrun.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -46,15 +46,15 @@ instead of being sent, whatever site.ini says. Use it for every trial.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | List what would be sent and change nothing |
-| `--at` | erforderlich | The time of the time event: a date (2026-10-05 08:00) or a timestamp, default now |
-| `--event` | erforderlich | Only these events (ids, comma separated); no time event is made then |
-| `--no-time-event` |  | Make no time event: only the pending events are handled (no digest is due because of this run) |
-| `--mail-file-dir` | erforderlich | Write the mail to files in this directory instead of sending it (this process only) |
-| `--addresses` |  | Show whole recipient addresses in the dry run (they are masked by default) |
+| `--dry-run` |  | Auflisten, was gesendet würde, und nichts ändern |
+| `--at` | erforderlich | Der Zeitpunkt des Zeitereignisses: ein Datum (2026-10-05 08:00) oder ein Zeitstempel, Standard jetzt |
+| `--event` | erforderlich | Nur diese Ereignisse (IDs, durch Kommas getrennt); dann wird kein Zeitereignis erzeugt |
+| `--no-time-event` |  | Kein Zeitereignis erzeugen: nur die anstehenden Ereignisse werden verarbeitet (durch diesen Lauf wird keine Zusammenfassung fällig) |
+| `--mail-file-dir` | erforderlich | Die Mail in Dateien in diesem Verzeichnis schreiben, statt sie zu senden (nur dieser Prozess) |
+| `--addresses` |  | Im Probelauf die ganzen Empfängeradressen zeigen (standardmäßig maskiert) |
 | `--json` |  | Ein JSON-Objekt statt des Textes |
-| `--job` | erforderlich | The id of a background job whose progress file is written (the status page uses this) |
-| `--source` | erforderlich | console (default) or web; what the record of the run says |
+| `--job` | erforderlich | Die ID eines Hintergrundauftrags, dessen Fortschrittsdatei geschrieben wird (die Statusseite verwendet das) |
+| `--source` | erforderlich | console (Standard) oder web; was der Datensatz des Laufs angibt |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

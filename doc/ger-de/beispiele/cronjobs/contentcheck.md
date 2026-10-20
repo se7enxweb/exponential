@@ -2,23 +2,23 @@
 title: Cronjob contentcheck.php
 audience: developer, admin
 category: examples
-summary: Build the reference index of the content checks (unused assets), for installations where a page may not build it (contentcheck.ini BuildOnRequest=false).
+summary: Baut den Referenzindex der Inhaltsprüfungen (ungenutzte Assets) für Installationen, in denen eine Seite ihn nicht bauen darf (contentcheck.ini BuildOnRequest=false).
 keywords: Teil, contentcheck.php, contentcheck, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob contentcheck.php
 
-Build the reference index of the content checks (unused assets), for installations where a page may not build it (contentcheck.ini BuildOnRequest=false).
+Baut den Referenzindex der Inhaltsprüfungen (ungenutzte Assets) für Installationen, in denen eine Seite ihn nicht bauen darf (contentcheck.ini BuildOnRequest=false).
 
 Einstiegspunkt `cronjobs/contentcheck.php`, Code in `kernel/private/classes/cronjobs/contentcheck.php`.
 
-> The code of cronjobs/contentcheck.php: builds the reference index of the content checks and keeps it in the cache  
-> (expContentCheckReferences). Run it as the cronjob part contentcheck (php runcronjobs.php contentcheck) more often  
-> than contentcheck.ini \[UnreferencedSettings\] IndexTTL when BuildOnRequest is false. With \[MissingFileSettings\]  
-> CronjobReport=enabled it also counts the missing files and alias problems of the whole tree and writes the count  
-> to the cronjob output (a warning when there are any); it never resolves anything.  
-> Guide: doc/eng-us/features/6.0/content-checks.md  
+> Der Code von cronjobs/contentcheck.php: baut den Referenzindex der Inhaltsprüfungen und behält ihn im Cache  
+> (expContentCheckReferences). Führen Sie ihn als Cronjob-Teil contentcheck aus (php runcronjobs.php contentcheck), öfter  
+> als contentcheck.ini \[UnreferencedSettings\] IndexTTL, wenn BuildOnRequest false ist. Mit \[MissingFileSettings\]  
+> CronjobReport=enabled zählt er außerdem die fehlenden Dateien und Alias-Probleme des ganzen Baums und schreibt die Zahl  
+> in die Cronjob-Ausgabe (eine Warnung, wenn es welche gibt); er behebt nie etwas.  
+> Anleitung: doc/eng-us/features/6.0/content-checks.md  
 
 ## Wann er läuft
 

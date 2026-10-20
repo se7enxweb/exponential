@@ -2,19 +2,19 @@
 title: Cronjob basket_cleanup.php
 audience: developer, admin
 category: examples
-summary: Remove abandoned shopping baskets older than the configured threshold.
+summary: Entfernt verlassene Warenkörbe, die älter als die konfigurierte Grenze sind.
 keywords: Teil, basket_cleanup.php, basket_cleanup, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob basket_cleanup.php
 
-Remove abandoned shopping baskets older than the configured threshold.
+Entfernt verlassene Warenkörbe, die älter als die konfigurierte Grenze sind.
 
 Einstiegspunkt `cronjobs/basket_cleanup.php`, Code in `kernel/private/classes/cronjobs/basket_cleanup.php`.
 
-> The code of cronjobs/basket\_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/basket\_cleanup.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/basket\_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/basket\_cleanup.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

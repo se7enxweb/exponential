@@ -19,10 +19,10 @@ Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update
 
 ## JavaScriptOptimizer
 
-> Disables/enables js / css packer (for debugging Apache rewrite rules)  
-> Normally controlled by \[TemplateSettings\]DevelopmentMode for convenience,  
-> but can also be specifically controlled by this setting if set.  
-> Force packer level by setting integer from 0 to 3 instead of \[dis|en\]abled  
+> Deaktiviert/aktiviert den Packer für js / css (zum Debuggen von Apache-Rewrite-Regeln)  
+> Normalerweise der Einfachheit halber über \[TemplateSettings\]DevelopmentMode gesteuert,  
+> kann aber auch gezielt über diese Einstellung gesteuert werden, wenn sie gesetzt ist.  
+> Die Packer-Stufe mit einer Ganzzahl von 0 bis 3 statt \[dis|en\]abled erzwingen  
 > Packer=disabled  
 
 Standard: eine Liste mit 1: `ezjscJavascriptOptimizer`.
@@ -53,17 +53,17 @@ CssOptimizer[]=ezjscCssOptimizer
 
 ## LoadFromCDN
 
-> # CDN Script settings (jQuery integration)  
-> The following settings in this block are specific to ezjscore's  
-> jQuery integration and used by the ezjsc::jquery calls.  
-> You only need to change them if you:  
-> - Need to load these scripts locally (intranet / not rely on internet connection)  
-> - Want to add support for another js library / framework  
-> - Want to update the library it self  
-> You don't have to set up your js scripts with this, it's enough to just refer  
-> to them directly using {ezscript\[\_require\]('somescript.js')} or  
-> {ezscript\_require(array('ezjsc::jquery', 'somescript\_that\_uses\_jquery.js'))}  
-> enable / disable loading the jQuery files from external servers  
+> # Einstellungen der CDN-Skripte (jQuery-Integration)  
+> Die folgenden Einstellungen in diesem Block gehören zur jQuery-Integration  
+> von ezjscore und werden von den Aufrufen ezjsc::jquery verwendet.  
+> Sie müssen sie nur ändern, wenn Sie:  
+> - diese Skripte lokal laden müssen (Intranet / ohne Abhängigkeit von einer Internetverbindung)  
+> - Unterstützung für eine andere JS-Bibliothek oder ein anderes Framework hinzufügen wollen  
+> - die Bibliothek selbst aktualisieren wollen  
+> Ihre eigenen JS-Skripte müssen Sie hiermit nicht einrichten; es genügt, sie direkt  
+> über {ezscript\[\_require\]('somescript.js')} oder  
+> {ezscript\_require(array('ezjsc::jquery', 'somescript\_that\_uses\_jquery.js'))} einzubinden  
+> Das Laden der jQuery-Dateien von externen Servern aktivieren / deaktivieren  
 
 Standard: `disabled`.
 
@@ -77,9 +77,9 @@ LoadFromCDN=disabled
 
 ## PreferredLibrary
 
-> Preferred Library (jquery)  
-> This is a preference hint to extensions that use ezjscore  
-> so they can optionally select to support both and select by this setting  
+> Bevorzugte Bibliothek (jquery)  
+> Dies ist ein Hinweis für Erweiterungen, die ezjscore verwenden,  
+> damit sie wahlweise beide unterstützen und anhand dieser Einstellung wählen können  
 
 Standard: `jquery`.
 
@@ -93,13 +93,13 @@ PreferredLibrary=jquery
 
 ## ExternalScripts
 
-> List of external JavaScript jQuery libraries with their CDN URL  
-> If it starts with :// http or https will be selected based on if page is served as https or not  
-> Security hardening (H-06, CWE-829/319): use https for external scripts so the  
-> admin/frontend JavaScript cannot be tampered with on the network path. Prefer  
-> leaving LoadFromCDN=disabled (local scripts) or adding Subresource Integrity.  
-> jQuery: the same releases from the CDN as the local files below (the CDN entries used to name  
-> jQuery 1.10.2 and jQuery UI 1.10.3, older than the local copies).  
+> Liste externer JavaScript-Bibliotheken für jQuery mit ihrer CDN-URL  
+> Beginnt sie mit ://, wird http oder https gewählt, je nachdem, ob die Seite über https ausgeliefert wird  
+> Sicherheitshärtung (H-06, CWE-829/319): Verwenden Sie https für externe Skripte, damit das  
+> JavaScript der Administration und des Frontends auf dem Netzwerkweg nicht manipuliert werden kann. Lassen Sie  
+> am besten LoadFromCDN=disabled (lokale Skripte) oder ergänzen Sie Subresource Integrity.  
+> jQuery: dieselben Releases aus dem CDN wie die lokalen Dateien unten (die CDN-Einträge nannten früher  
+> jQuery 1.10.2 und jQuery UI 1.10.3, älter als die lokalen Kopien).  
 
 Standard: ein Hash mit 3: `jquery=https://code.jquery.com/jquery-4.0.0.min.js`, `jqueryMigrate=https://code.jquery.com/jquery-migrate-4.0.2.min.js`, `jqueryUI=https://code.jquery.com/ui/1.14.2/jquery-ui.min.js`.
 
@@ -117,13 +117,13 @@ ExternalScripts[jqueryUI]=https://code.jquery.com/ui/1.14.2/jquery-ui.min.js
 
 ## LocalScripts
 
-> List of local JavaScript jQuery libraries, optionally start with "/" to signal that its in  
-> root of design folder and not in /javascript sub folder  
-> ezjsc::jquery: jQuery 4.0.0, followed by jQuery Migrate 4.0.2, which restores the APIs jQuery 4 removed so older  
-> code keeps working. This build is quiet; to see in the browser console every old call it restores, use the  
-> reporting build, jquery-migrate-4.0.2.js. Leave jqueryMigrate empty to load jQuery 4 alone. Only these releases  
-> are shipped: the older jQuery 3.7.1, Migrate 3.4.1 and jQuery UI 1.10.3 files are removed.  
-> ezjsc::jqueryUI: jQuery UI 1.14.2, which supports jQuery 4  
+> Liste lokaler JavaScript-Bibliotheken für jQuery; ein "/" am Anfang zeigt an, dass sie im  
+> Wurzelverzeichnis des Design-Ordners liegen und nicht im Unterordner /javascript  
+> ezjsc::jquery: jQuery 4.0.0, gefolgt von jQuery Migrate 4.0.2, das die von jQuery 4 entfernten APIs wiederherstellt, damit älterer  
+> Code weiter funktioniert. Dieser Build ist still; um in der Browser-Konsole jeden alten Aufruf zu sehen, den er wiederherstellt, verwenden Sie den  
+> meldenden Build, jquery-migrate-4.0.2.js. Lassen Sie jqueryMigrate leer, um jQuery 4 allein zu laden. Nur diese Releases  
+> werden ausgeliefert: Die älteren Dateien von jQuery 3.7.1, Migrate 3.4.1 und jQuery UI 1.10.3 sind entfernt.  
+> ezjsc::jqueryUI: jQuery UI 1.14.2, das jQuery 4 unterstützt  
 
 Standard: ein Hash mit 3: `jquery=jquery-4.0.0.min.js`, `jqueryMigrate=jquery-migrate-4.0.2.min.js`, `jqueryUI=jquery-ui-1.14.2.min.js`.
 

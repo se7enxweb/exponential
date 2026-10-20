@@ -2,14 +2,14 @@
 title: exp:notificationstatus
 audience: developer, admin
 category: examples
-summary: "Show the notification system: pending events, digest items, subscriptions, the last runs and problems."
+summary: "Zeigt das Benachrichtigungssystem: anstehende Ereignisse, Einträge der Zusammenfassungen, Abonnements, die letzten Läufe und Probleme."
 keywords: Konsole, Befehl, exp:notificationstatus, notificationstatus, console, command, CLI, notificationstatus.php, exp:notification:status, exp:notify:status
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationstatus
 
-Show the notification system: pending events, digest items, subscriptions, the last runs and problems.
+Zeigt das Benachrichtigungssystem: anstehende Ereignisse, Einträge der Zusammenfassungen, Abonnements, die letzten Läufe und Probleme.
 
 Skript `bin/php/notificationstatus.php`, Code in `kernel/private/classes/commands/notificationstatus.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

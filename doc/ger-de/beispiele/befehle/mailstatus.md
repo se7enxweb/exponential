@@ -2,14 +2,14 @@
 title: exp:mailstatus
 audience: developer, admin
 category: examples
-summary: "Show the e-mail preference system: tables, gate, footer, categories, suppression, consent log, the gate's last decisions and problems."
+summary: "Zeigt das System der E-Mail-Einstellungen: Tabellen, Gate, Fußzeile, Kategorien, Sperrliste, Einwilligungsprotokoll, die letzten Entscheidungen des Gates und Probleme."
 keywords: Konsole, Befehl, exp:mailstatus, mailstatus, console, command, CLI, mailstatus.php, exp:mail:status
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailstatus
 
-Show the e-mail preference system: tables, gate, footer, categories, suppression, consent log, the gate's last decisions and problems.
+Zeigt das System der E-Mail-Einstellungen: Tabellen, Gate, Fußzeile, Kategorien, Sperrliste, Einwilligungsprotokoll, die letzten Entscheidungen des Gates und Probleme.
 
 Skript `bin/php/mailstatus.php`, Code in `kernel/private/classes/commands/mailstatus.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

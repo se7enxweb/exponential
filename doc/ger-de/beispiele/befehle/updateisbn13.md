@@ -2,14 +2,14 @@
 title: exp:updateisbn13
 audience: developer, admin
 category: examples
-summary: Update the ISBN range data in the database from an XML file (--url is required).
+summary: Aktualisiert die ISBN-Bereichsdaten in der Datenbank aus einer XML-Datei (--url ist erforderlich).
 keywords: Konsole, Befehl, exp:updateisbn13, updateisbn13, console, command, CLI, updateisbn13.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:updateisbn13
 
-Update the ISBN range data in the database from an XML file (--url is required).
+Aktualisiert die ISBN-Bereichsdaten in der Datenbank aus einer XML-Datei (--url ist erforderlich).
 
 Skript `bin/php/updateisbn13.php`, Code in `kernel/private/classes/commands/updateisbn13.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -34,7 +34,7 @@ Example: ./bin/php/updateisbn13.php --url=<url of the xml file with the ranges>
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--url` | erforderlich | URL containing the xml file for the different ranges |
+| `--url` | erforderlich | URL der XML-Datei mit den verschiedenen Bereichen |
 | `--db-host` | erforderlich | Datenbankhost. |
 | `--db-user` | erforderlich | Datenbankbenutzer. |
 | `--db-password` | erforderlich | Datenbankpasswort. |

@@ -31,9 +31,9 @@ Class=ezjscServerFunctionsAjaxUploader
 
 ## Functions
 
-> Every call checks the upload handler's canUpload() (content/create and the attribute's class constraints).  
-> RequirePolicy=enabled also asks for ezjscore/call with the function list ezajaxuploader; grant it to the roles  
-> that upload through the AJAX uploader before switching it on.  
+> Jeder Aufruf prüft canUpload() des Upload-Handlers (content/create und die Klassenbeschränkungen des Attributs).  
+> RequirePolicy=enabled verlangt außerdem ezjscore/call mit der Funktionsliste ezajaxuploader; gewähren Sie sie den Rollen,  
+> die über den AJAX-Uploader hochladen, bevor Sie es einschalten.  
 
 Standard: eine Liste mit 1: `ezajaxuploader`.
 

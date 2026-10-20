@@ -2,14 +2,14 @@
 title: exp:updateniceurls
 audience: developer, admin
 category: examples
-summary: Import old URL aliases and update the URL aliases of all nodes (--update-nodes).
+summary: Importiert alte URL-Aliase und aktualisiert die URL-Aliase aller Knoten (--update-nodes).
 keywords: Konsole, Befehl, exp:updateniceurls, updateniceurls, console, command, CLI, updateniceurls.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:updateniceurls
 
-Import old URL aliases and update the URL aliases of all nodes (--update-nodes).
+Importiert alte URL-Aliase und aktualisiert die URL-Aliase aller Knoten (--update-nodes).
 
 Skript `bin/php/updateniceurls.php`, Code in `kernel/private/classes/commands/updateniceurls.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -29,19 +29,19 @@ php bin/php/updateniceurls.php --help
 | `--db-type` | erforderlich | Datenbanktreiber, Alias für --db-driver |
 | `--db-driver` | erforderlich | Datenbanktreiber |
 | `--sql` |  | SQL-Abfragen anzeigen |
-| `--no-import` |  | Disables all import routines. To enable specific ones use the --import-* options. |
-| `--import` |  | Enables all import routines. |
-| `--import-nodes` |  | Enables importing of urls from the old node data. |
-| `--import-aliases` |  | Enables importing of old urls (system and customized). |
-| `--import-redirections` |  | Enables importing of urls which redirects to the correct url (ie. history). |
-| `--import-wildcards` |  | Enables importing of urls which redirects to the correct url using wildcards (ie. history). |
-| `--no-update-nodes` |  | Disable updating of the urls of content object nodes. |
-| `--update-nodes` |  | Enable updating of the urls of content object nodes. |
-| `--verify-data` |  | Verify the database after new data has been inserted, this should only be used for debugging. |
-| `--interactive` |  | Enables interactive mode for --verify-data, this will halt execution when database errors occurs and allow for manual inspection. |
-| `--backup-tables` | erforderlich | Performs a backup of the ezurlalias and ezurlalias_ml tables after each stage is done (import or update), the backup tables will use the original name but with the suffix supplied to this option. Note: Use only for debugging and only on MySQL. |
-| `--column-width` | erforderlich | The approximate width of the output block, defaults to 72. |
-| `--fetch-limit` | erforderlich | The number of items to fetch in one go, increasing it may reduce total time but will also increase memory usage, defaults to 200. |
+| `--no-import` |  | Deaktiviert alle Importroutinen. Um bestimmte zu aktivieren, die Optionen --import-* verwenden. |
+| `--import` |  | Aktiviert alle Importroutinen. |
+| `--import-nodes` |  | Aktiviert den Import von URLs aus den alten Knotendaten. |
+| `--import-aliases` |  | Aktiviert den Import alter URLs (System und angepasst). |
+| `--import-redirections` |  | Aktiviert den Import von URLs, die auf die richtige URL weiterleiten (d. h. Verlauf). |
+| `--import-wildcards` |  | Aktiviert den Import von URLs, die mit Platzhaltern auf die richtige URL weiterleiten (d. h. Verlauf). |
+| `--no-update-nodes` |  | Deaktiviert das Aktualisieren der URLs der Knoten von Inhaltsobjekten. |
+| `--update-nodes` |  | Aktiviert das Aktualisieren der URLs der Knoten von Inhaltsobjekten. |
+| `--verify-data` |  | Prüft die Datenbank, nachdem neue Daten eingefügt wurden; nur zur Fehlersuche verwenden. |
+| `--interactive` |  | Aktiviert den interaktiven Modus für --verify-data, der die Ausführung bei Datenbankfehlern anhält und eine Prüfung von Hand erlaubt. |
+| `--backup-tables` | erforderlich | Sichert nach jeder Phase (Import oder Update) die Tabellen ezurlalias und ezurlalias_ml, die Sicherungstabellen tragen den Originalnamen mit dem bei dieser Option angegebenen Suffix. Hinweis: nur zur Fehlersuche und nur mit MySQL verwenden. |
+| `--column-width` | erforderlich | Die ungefähre Breite des Ausgabeblocks, Standard 72. |
+| `--fetch-limit` | erforderlich | Die Anzahl der auf einmal geholten Einträge; ein höherer Wert kann die Gesamtzeit verkürzen, erhöht aber auch den Speicherverbrauch, Standard 200. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

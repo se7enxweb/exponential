@@ -2,14 +2,14 @@
 title: exp:resetuserpassword
 audience: developer, admin
 category: examples
-summary: Reset a user password with admin authentication or root bypass.
+summary: Setzt das Passwort eines Benutzers zurück, mit Anmeldung als Administrator oder als root ohne Anmeldung.
 keywords: Konsole, Befehl, exp:resetuserpassword, resetuserpassword, console, command, CLI, resetuserpassword.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:resetuserpassword
 
-Reset a user password with admin authentication or root bypass.
+Setzt das Passwort eines Benutzers zurück, mit Anmeldung als Administrator oder als root ohne Anmeldung.
 
 Skript `bin/php/resetuserpassword.php`, Code in `kernel/private/classes/commands/resetuserpassword.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

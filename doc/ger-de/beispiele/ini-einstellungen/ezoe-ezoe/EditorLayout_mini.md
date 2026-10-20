@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[EditorLayout_mini]` von `extension/ezoe/settings/ezoe.ini` (Erweiterung ezoe), mit 2 Einstellung(en).
 
-> Example for Editor layout for mini editor  
-> 'mini' is taken from TagPreset defined in ezxml.ini and  
-> stored while editing the class on a attribute basis.  
-> This feature is eZ Publish 4.1 and higher only!  
+> Beispiel für das Layout eines Mini-Editors  
+> 'mini' stammt aus dem in ezxml.ini definierten TagPreset und  
+> wird beim Bearbeiten der Klasse pro Attribut gespeichert.  
+> Diese Funktion gibt es erst ab eZ Publish 4.1!  
 
 Bearbeiten Sie `extension/ezoe/settings/ezoe.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

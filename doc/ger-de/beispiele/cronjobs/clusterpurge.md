@@ -2,19 +2,19 @@
 title: Cronjob clusterpurge.php
 audience: developer, admin
 category: examples
-summary: Purge expired cluster storage entries from the database backend.
+summary: Löscht abgelaufene Einträge des Cluster-Speichers aus dem Datenbank-Backend.
 keywords: Teil, clusterpurge.php, clusterpurge, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob clusterpurge.php
 
-Purge expired cluster storage entries from the database backend.
+Löscht abgelaufene Einträge des Cluster-Speichers aus dem Datenbank-Backend.
 
 Einstiegspunkt `cronjobs/clusterpurge.php`, Code in `kernel/private/classes/cronjobs/clusterpurge.php`.
 
-> The code of cronjobs/clusterpurge.php, moved into a class (#207 stage 1). The file cronjobs/clusterpurge.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/clusterpurge.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/clusterpurge.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

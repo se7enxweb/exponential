@@ -2,19 +2,19 @@
 title: Cronjob workflow.php
 audience: developer, admin
 category: examples
-summary: Process pending workflow events and advance stalled workflows.
+summary: Verarbeitet anstehende Workflow-Ereignisse und bringt hängende Workflows weiter.
 keywords: Teil, workflow.php, workflow, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob workflow.php
 
-Process pending workflow events and advance stalled workflows.
+Verarbeitet anstehende Workflow-Ereignisse und bringt hängende Workflows weiter.
 
 Einstiegspunkt `cronjobs/workflow.php`, Code in `kernel/private/classes/cronjobs/workflow.php`.
 
-> The code of cronjobs/workflow.php, moved into a class (#207 stage 1). The file cronjobs/workflow.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/workflow.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/workflow.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

@@ -2,14 +2,14 @@
 title: exp:notificationevents
 audience: developer, admin
 category: examples
-summary: List the notification events, or remove the old ones.
+summary: Listet die Benachrichtigungsereignisse auf oder entfernt die alten.
 keywords: Konsole, Befehl, exp:notificationevents, notificationevents, console, command, CLI, notificationevents.php, exp:notification:events, exp:notify:events
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationevents
 
-List the notification events, or remove the old ones.
+Listet die Benachrichtigungsereignisse auf oder entfernt die alten.
 
 Skript `bin/php/notificationevents.php`, Code in `kernel/private/classes/commands/notificationevents.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -43,11 +43,11 @@ is gone, are listed as unknown and removed only with --include-unknown.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--status` | erforderlich | list, cleanup --older-than: pending or handled (default both) |
-| `--limit` | erforderlich | list: how many (default 50) |
-| `--older-than` | erforderlich | cleanup: 90s, 15m, 12h, 30d, 2w or a date (2026-09-01) |
-| `--include-unknown` |  | cleanup: also remove events whose age cannot be told |
-| `--dry-run` |  | cleanup: count, remove nothing |
+| `--status` | erforderlich | list, cleanup --older-than: pending oder handled (Standard beide) |
+| `--limit` | erforderlich | list: wie viele (Standard 50) |
+| `--older-than` | erforderlich | cleanup: 90s, 15m, 12h, 30d, 2w oder ein Datum (2026-09-01) |
+| `--include-unknown` |  | cleanup: auch Ereignisse entfernen, deren Alter sich nicht bestimmen lässt |
+| `--dry-run` |  | cleanup: zählen, nichts entfernen |
 | `--json` |  | list: JSON |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

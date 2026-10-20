@@ -35,33 +35,33 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 
 | Skript | Was es tut | Teile |
 |---|---|---|
-| [audit.php](audit.md) | Audit: sink spools, alert rules, rotation by day, archives, retention and checkpoints | frequent, audit |
-| [basket_cleanup.php](basket_cleanup.md) | Remove abandoned shopping baskets older than the configured threshold | infrequent |
-| [cachecleanup.php](cachecleanup.md) | Remove expired and old view cache and cache-block files from disk | cache_cleanup |
-| [cleanuprss.php](cleanuprss.md) | Trim the content the RSS import has created, keeping the newest items of each feed | cleanuprss |
-| [clusterpurge.php](clusterpurge.md) | Purge expired cluster storage entries from the database backend | cluster_maintenance |
-| [contentcheck.php](contentcheck.md) | Build the reference index of the content checks (unused assets), for installations where a page may not build it (contentcheck.ini BuildOnRequest=false) | contentcheck |
-| [contentjobs.php](contentjobs.md) | Resume content jobs whose worker died and start queued jobs nobody started | frequent, contentjobs |
-| [explogrotate.php](explogrotate.md) | Logs: rotate the logs over their MaxSize, prune and compress their archives (off unless a part runs it) | logs |
-| [hide.php](hide.md) | Process scheduled hide and unhide actions on content objects | (Standard) |
-| [httpcache_cleanup.php](httpcache_cleanup.md) | Remove expired, purged and orphaned entries from the role-aware HTTP cache | cache_cleanup |
-| [indexcontent.php](indexcontent.md) | Index pending content modifications in the search engine | (Standard) |
-| [internal_drafts_cleanup.php](internal_drafts_cleanup.md) | Remove internal drafts that exceed the configured age limit | (Standard) |
-| [linkcheck.php](linkcheck.md) | Check all internal and external links in published content for broken URLs | infrequent |
-| [mailbounces.php](mailbounces.md) | The bounce mailbox: hard bounces and spam complaints go on the suppression list (mailpreferences.ini [BounceSettings]) | frequent, mailbounces |
-| [mailpreferences.php](mailpreferences.md) | E-mail preferences retention: consent log rows of people who are gone, expired confirmations, old suppression entries | infrequent, mailpreferences |
-| [notification.php](notification.md) | Process and dispatch pending notification events to subscribers | frequent, notification |
-| [old_drafts_cleanup.php](old_drafts_cleanup.md) | Remove user drafts that exceed the configured age limit |  |
-| [querycache_cleanup.php](querycache_cleanup.md) | Remove the result files of the SQL query cache that are older than MaxAge or from before the last clear | cache_cleanup |
-| [rssimport.php](rssimport.md) | Fetch and import configured RSS feeds into the content tree | (Standard) |
-| [session_gc.php](session_gc.md) | Garbage-collect expired user sessions from the session store |  |
-| [staticcache_cleanup.php](staticcache_cleanup.md) | Remove expired and stale entries from the static page cache |  |
-| [subtreeexpirycleanup.php](subtreeexpirycleanup.md) | Clean up subtree expiry entries from the URL cache tables |  |
-| [trashpurge.php](trashpurge.md) | Permanently delete objects in the trash (all, or as old as [TrashSettings] KeepItemsForDays says) |  |
-| [unlock.php](unlock.md) | Release content objects stuck in a locked editing state | unlock |
-| [unpublish.php](unpublish.md) | Process scheduled unpublish actions on content objects | (Standard) |
-| [updateviewcount.php](updateviewcount.md) | Flush the in-memory view count buffer to the database |  |
-| [workflow.php](workflow.md) | Process pending workflow events and advance stalled workflows | frequent |
+| [audit.php](audit.md) | Audit: Spools der Ziele, Alarmregeln, Rotation nach Tagen, Archive, Aufbewahrung und Prüfpunkte | frequent, audit |
+| [basket_cleanup.php](basket_cleanup.md) | Entfernt verlassene Warenkörbe, die älter als die konfigurierte Grenze sind | infrequent |
+| [cachecleanup.php](cachecleanup.md) | Entfernt abgelaufene und alte View-Cache- und Cache-Block-Dateien von der Festplatte | cache_cleanup |
+| [cleanuprss.php](cleanuprss.md) | Kürzt die vom RSS-Import angelegten Inhalte und behält die neuesten Einträge jedes Feeds | cleanuprss |
+| [clusterpurge.php](clusterpurge.md) | Löscht abgelaufene Einträge des Cluster-Speichers aus dem Datenbank-Backend | cluster_maintenance |
+| [contentcheck.php](contentcheck.md) | Baut den Referenzindex der Inhaltsprüfungen (ungenutzte Assets) für Installationen, in denen eine Seite ihn nicht bauen darf (contentcheck.ini BuildOnRequest=false) | contentcheck |
+| [contentjobs.php](contentjobs.md) | Setzt Inhaltsaufträge fort, deren Worker gestorben ist, und startet wartende Aufträge, die niemand gestartet hat | frequent, contentjobs |
+| [explogrotate.php](explogrotate.md) | Logs: rotiert die Logs über ihrer MaxSize, bereinigt und komprimiert ihre Archive (aus, solange kein Teil ihn ausführt) | logs |
+| [hide.php](hide.md) | Führt geplante Aktionen zum Verbergen und Anzeigen von Inhaltsobjekten aus | (Standard) |
+| [httpcache_cleanup.php](httpcache_cleanup.md) | Entfernt abgelaufene, gelöschte und verwaiste Einträge aus dem rollenbewussten HTTP-Cache | cache_cleanup |
+| [indexcontent.php](indexcontent.md) | Indiziert anstehende Inhaltsänderungen in der Suchmaschine | (Standard) |
+| [internal_drafts_cleanup.php](internal_drafts_cleanup.md) | Entfernt interne Entwürfe, die die konfigurierte Altersgrenze überschreiten | (Standard) |
+| [linkcheck.php](linkcheck.md) | Prüft alle internen und externen Links in veröffentlichten Inhalten auf defekte URLs | infrequent |
+| [mailbounces.php](mailbounces.md) | Das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste (mailpreferences.ini [BounceSettings]) | frequent, mailbounces |
+| [mailpreferences.php](mailpreferences.md) | Aufbewahrung der E-Mail-Einstellungen: Zeilen des Einwilligungsprotokolls von Personen, die nicht mehr da sind, abgelaufene Bestätigungen, alte Einträge der Sperrliste | infrequent, mailpreferences |
+| [notification.php](notification.md) | Verarbeitet anstehende Benachrichtigungsereignisse und verschickt sie an die Abonnenten | frequent, notification |
+| [old_drafts_cleanup.php](old_drafts_cleanup.md) | Entfernt Entwürfe von Benutzern, die die konfigurierte Altersgrenze überschreiten |  |
+| [querycache_cleanup.php](querycache_cleanup.md) | Entfernt die Ergebnisdateien des SQL-Abfrage-Caches, die älter als MaxAge sind oder von vor dem letzten Leeren stammen | cache_cleanup |
+| [rssimport.php](rssimport.md) | Holt die konfigurierten RSS-Feeds und importiert sie in den Inhaltsbaum | (Standard) |
+| [session_gc.php](session_gc.md) | Räumt abgelaufene Benutzersitzungen aus dem Sitzungsspeicher |  |
+| [staticcache_cleanup.php](staticcache_cleanup.md) | Entfernt abgelaufene und veraltete Einträge aus dem statischen Seiten-Cache |  |
+| [subtreeexpirycleanup.php](subtreeexpirycleanup.md) | Räumt Einträge zum Ablauf von Teilbäumen aus den URL-Cache-Tabellen |  |
+| [trashpurge.php](trashpurge.md) | Löscht Objekte im Papierkorb endgültig (alle oder so alte, wie [TrashSettings] KeepItemsForDays sagt) |  |
+| [unlock.php](unlock.md) | Gibt Inhaltsobjekte frei, die in einem gesperrten Bearbeitungszustand hängen | unlock |
+| [unpublish.php](unpublish.md) | Führt geplante Aktionen zum Zurückziehen von Inhaltsobjekten aus | (Standard) |
+| [updateviewcount.php](updateviewcount.md) | Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank |  |
+| [workflow.php](workflow.md) | Verarbeitet anstehende Workflow-Ereignisse und bringt hängende Workflows weiter | frequent |
 
 - [Alle Beispiele](../README.md)
 

@@ -40,16 +40,16 @@ Filters: --user, --email, --category, --action, --source, --from, --to (YYYY-MM-
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--user` | erforderlich | a login or user id |
-| `--email` | erforderlich | an address |
+| `--user` | erforderlich | ein Login oder eine Benutzer-ID |
+| `--email` | erforderlich | eine Adresse |
 | `--category` | erforderlich | ein Kategoriebezeichner |
 | `--action` | erforderlich | on, off, pending, confirm, ... |
 | `--source` | erforderlich | page, link, admin, import, signup, bridge, confirm, system |
-| `--from` | erforderlich | from this day |
-| `--to` | erforderlich | up to this day |
-| `--limit` | erforderlich | list: how many (default 50) |
-| `--offset` | erforderlich | list: skip this many |
-| `--output` | erforderlich | export: the file (mode 0600) |
+| `--from` | erforderlich | ab diesem Tag |
+| `--to` | erforderlich | bis zu diesem Tag |
+| `--limit` | erforderlich | list: wie viele (Standard 50) |
+| `--offset` | erforderlich | list: so viele überspringen |
+| `--output` | erforderlich | export: die Datei (Modus 0600) |
 | `--dry-run` |  | cleanup: nur zählen |
 | `--addresses` |  | list: Adressen zeigen, statt sie zu verbergen |
 

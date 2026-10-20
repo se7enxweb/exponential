@@ -2,19 +2,19 @@
 title: Cronjob unpublish.php
 audience: developer, admin
 category: examples
-summary: Process scheduled unpublish actions on content objects.
+summary: Führt geplante Aktionen zum Zurückziehen von Inhaltsobjekten aus.
 keywords: Teil, unpublish.php, unpublish, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob unpublish.php
 
-Process scheduled unpublish actions on content objects.
+Führt geplante Aktionen zum Zurückziehen von Inhaltsobjekten aus.
 
 Einstiegspunkt `cronjobs/unpublish.php`, Code in `kernel/private/classes/cronjobs/unpublish.php`.
 
-> The code of cronjobs/unpublish.php, moved into a class (#207 stage 1). The file cronjobs/unpublish.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/unpublish.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/unpublish.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

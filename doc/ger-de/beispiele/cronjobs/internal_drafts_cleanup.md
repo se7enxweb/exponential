@@ -2,19 +2,19 @@
 title: Cronjob internal_drafts_cleanup.php
 audience: developer, admin
 category: examples
-summary: Remove internal drafts that exceed the configured age limit.
+summary: Entfernt interne Entwürfe, die die konfigurierte Altersgrenze überschreiten.
 keywords: Teil, internal_drafts_cleanup.php, internal_drafts_cleanup, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob internal_drafts_cleanup.php
 
-Remove internal drafts that exceed the configured age limit.
+Entfernt interne Entwürfe, die die konfigurierte Altersgrenze überschreiten.
 
 Einstiegspunkt `cronjobs/internal_drafts_cleanup.php`, Code in `kernel/private/classes/cronjobs/internal_drafts_cleanup.php`.
 
-> The code of cronjobs/internal\_drafts\_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/internal\_drafts\_cleanup.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/internal\_drafts\_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/internal\_drafts\_cleanup.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

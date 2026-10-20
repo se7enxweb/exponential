@@ -19,7 +19,7 @@ Bearbeiten Sie `extension/expservices/settings/expservices.ini` nie selbst: Ein 
 
 ## Enabled
 
-> Master switch: when disabled every service answers 403  
+> Hauptschalter: wenn deaktiviert, antwortet jeder Dienst mit 403  
 
 Standard: `enabled`.
 

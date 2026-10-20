@@ -19,46 +19,46 @@ Bearbeiten Sie `extension/ezoe/settings/ezoe.ini` nie selbst: Ein Update ersetzt
 
 ## Buttons
 
-> Global editor layout (buttons and path / toolbar placment)  
-> Default buttons you want to use in the editor  
-> buttons not mentioned here aren't tested and therefore not supported together with Online Editor  
-> NOTE: underline and pagebreak will not appear if these custom tags are not enabled in content.ini!  
-> To controll alignment on p|header|custom|table|td|th tags  
-> Only supported on eZ Publish 4.1 and higher (buttons will be hidden in 4.0.x)  
-> These two needs the directionality to be enabled to be used  
+> Globales Layout des Editors (Schaltflächen und Platzierung von Pfad / Werkzeugleiste)  
+> Standardschaltflächen, die Sie im Editor verwenden wollen  
+> Hier nicht genannte Schaltflächen sind nicht getestet und werden daher mit dem Online Editor nicht unterstützt  
+> HINWEIS: underline und pagebreak erscheinen nicht, wenn diese eigenen Tags in content.ini nicht aktiviert sind!  
+> Zur Steuerung der Ausrichtung bei den Tags p|header|custom|table|td|th  
+> Nur ab eZ Publish 4.1 unterstützt (in 4.0.x werden die Schaltflächen ausgeblendet)  
+> Diese beiden brauchen das Plugin directionality  
 > Buttons\[\]=|  
 > Buttons\[direction\]=ltr,rtl  
-> These two needs the searchreplace plugin in order to work  
+> Diese beiden brauchen das Plugin searchreplace  
 > Buttons\[\]=|  
 > Buttons\[searchreplace\]=search,replace  
-> Additonal embed button for specific file UI  
+> Zusätzliche Einbettungs-Schaltfläche für eine eigene Datei-Oberfläche  
 > Buttons\[\]=file  
-> Needed to be able to past content from word, to wash the syntax (should not be needed on 5.0.2 and up)  
+> Nötig, um Inhalte aus Word einzufügen und die Syntax zu bereinigen (ab 5.0.2 nicht mehr nötig)  
 > Buttons\[\]=pasteword  
-> Needs the nonbreaking plugin enabled and probably also AllowMultipleSpaces set to true in ezxml.ini  
+> Braucht das aktivierte Plugin nonbreaking und wahrscheinlich auch AllowMultipleSpaces=true in ezxml.ini  
 > Buttons\[\]=nonbreaking  
-> emotions button needs ezemotions plugin to be activated  
+> Die Schaltfläche emotions braucht das aktivierte Plugin ezemotions  
 > Buttons\[\]=emotions  
-> SplitButton that puts all table related buttons inside a sub menu.  
+> SplitButton, der alle Tabellen-Schaltflächen in ein Untermenü legt.  
 > Buttons\[table\]=tablemenu  
-> But by default we use buttons directly in toolbar for quick access  
-> Additional table buttons  
+> Standardmäßig verwenden wir die Schaltflächen aber direkt in der Werkzeugleiste für schnellen Zugriff  
+> Zusätzliche Tabellen-Schaltflächen  
 > Buttons\[\]=col\_before  
 > Buttons\[\]=row\_before  
-> Lets you see a popup with html markup  
-> needs rewrite rules to allow html files in design folders if in virtualhost mode (like shown in INSTALL doc)  
+> Zeigt ein Popup mit dem HTML-Markup  
+> braucht Rewrite-Regeln, die HTML-Dateien in Design-Ordnern erlauben, im Modus mit virtuellem Host (wie im INSTALL-Dokument gezeigt)  
 > Buttons\[\]=code  
-> needs the visualchars plugin in order to work  
+> braucht das Plugin visualchars  
 > Buttons\[\]=visualchars  
-> Buttons for publish / store / discard actions on whole object  
+> Schaltflächen für die Aktionen Veröffentlichen / Speichern / Verwerfen für das ganze Objekt  
 > Buttons\[\]=|  
 > Buttons\[\]=publish  
 > Buttons\[\]=store  
 > Buttons\[\]=discard  
 > Buttons\[\]=|  
-> Button for TinyMCE spellchecker, needs spellchecker plugin  
+> Schaltfläche für die Rechtschreibprüfung von TinyMCE, braucht das Plugin spellchecker  
 > Buttons\[\]=spellchecker  
-> Button to disable editor  
+> Schaltfläche zum Deaktivieren des Editors  
 
 Standard: ein Hash mit 20: `style=formatselect,bold,italic,underline`, `|`, `math=sub,sup`, `|`, `align=justifyleft,justifycenter,justifyright,justifyfull`, `|`, `lists=bullist,numlist,outdent,indent`, `|`, `undo=undo,redo`, `|`, `link=link,unlink,anchor`, `|` ....
 
@@ -93,7 +93,7 @@ Buttons[]=disable
 
 ## ToolbarLocation
 
-> Toolbar location (theme\_advanced\_toolbar\_location), possible values: top / bottom / none  
+> Position der Werkzeugleiste (theme\_advanced\_toolbar\_location), mögliche Werte: top / bottom / none  
 
 Standard: `top`.
 
@@ -107,7 +107,7 @@ ToolbarLocation=top
 
 ## PathLocation
 
-> Path location (theme\_advanced\_statusbar\_location), possible values: top / bottom / none  
+> Position des Pfades (theme\_advanced\_statusbar\_location), mögliche Werte: top / bottom / none  
 
 Standard: `bottom`.
 

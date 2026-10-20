@@ -19,11 +19,11 @@ Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update
 
 ## AppendLastModifiedTime
 
-> Appends the last modified time to the cached file name so Proxy/Browser cache  
-> is forced to re fetch file on change. Note: cronjob to cleanup expired  
-> files does not exist, but should be fairly trivial to create.  
-> Enabled by default: packed scripts and styles are served with a long browser cache lifetime, so without the  
-> time in the name an update to a stylesheet or script would not reach browsers until their copy expired.  
+> Hängt die Zeit der letzten Änderung an den Namen der gecachten Datei an, sodass Proxy- und Browser-Cache  
+> die Datei bei einer Änderung neu holen müssen. Hinweis: Ein Cronjob zum Aufräumen abgelaufener  
+> Dateien existiert nicht, sollte aber recht einfach zu erstellen sein.  
+> Standardmäßig aktiviert: Gepackte Skripte und Styles werden mit langer Browser-Cache-Dauer ausgeliefert, ohne die  
+> Zeit im Namen würde ein geändertes Stylesheet oder Skript die Browser also erst erreichen, wenn ihre Kopie abläuft.  
 
 Standard: `enabled`.
 
@@ -37,8 +37,8 @@ AppendLastModifiedTime=enabled
 
 ## CustomHosts
 
-> For spreading the load of static files to separate domains as recommended by  
-> YDN Performance Best Practices. Key should match file extension: .js | .css  
+> Um die Last statischer Dateien auf getrennte Domänen zu verteilen, wie es die  
+> YDN Performance Best Practices empfehlen. Der Schlüssel muss zur Dateiendung passen: .js | .css  
 
 Standard: eine leere Liste.
 

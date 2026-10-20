@@ -19,8 +19,8 @@ Bearbeiten Sie `extension/ezoe/settings/ezoe.ini` nie selbst: Ein Update ersetzt
 
 ## config
 
-> Settings for TinyMCE SpellChecker  
-> You need to enable the spellchecker plugin before these settings have any effect  
+> Einstellungen der Rechtschreibprüfung von TinyMCE  
+> Damit diese Einstellungen wirken, müssen Sie das Plugin spellchecker aktivieren  
 > Wiki: http://www.tinymce.com/wiki.php/Plugin:spellchecker  
 
 Standard: ein Hash mit 1: `general.engine=GoogleSpell`.

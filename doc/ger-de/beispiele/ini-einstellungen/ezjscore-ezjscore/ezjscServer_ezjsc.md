@@ -13,9 +13,9 @@ Der Block `[ezjscServer_ezjsc]` von `extension/ezjscore/settings/ezjscore.ini` (
 
 > FunctionList\[\]=ezjsckeyword  
 > FunctionList\[\]=ezjscrating\_rate  
-> Settings for setting up a server functions  
-> These are also supported by ezjscPacker, the class used in ezcss and ezscript  
-> Here is an example of setting up such a function:  
+> Einstellungen zum Einrichten von Serverfunktionen  
+> Sie werden auch von ezjscPacker unterstützt, der Klasse, die ezcss und ezscript verwenden  
+> Hier ein Beispiel für das Einrichten einer solchen Funktion:  
 >
 > \[ezjscServer\_<custom\_server>\]  
 > # Optional, uses <custom\_server> as class name if not set  
@@ -36,7 +36,7 @@ Der Block `[ezjscServer_ezjsc]` von `extension/ezjscore/settings/ezjscore.ini` (
 > # calls are all refused is answered with 403 Forbidden.  
 > RequirePolicy=enabled  
 >
-> Definition of use in template:  
+> Verwendung in einem Template:  
 > {ezscript('<custom\_server>::<funtion\_name>\[::arg1\[::arg2\]\]')}  
 
 Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
@@ -47,7 +47,7 @@ Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update
 
 ## Class
 
-> Url to test this server function(return current time):  
+> URL zum Testen dieser Serverfunktion (gibt die aktuelle Zeit zurück):  
 > <root>/ezjscore/call/ezjsc::time  
 
 Standard: `ezjscServerFunctionsJs`.

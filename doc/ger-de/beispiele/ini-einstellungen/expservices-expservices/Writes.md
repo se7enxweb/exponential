@@ -19,7 +19,7 @@ Bearbeiten Sie `extension/expservices/settings/expservices.ini` nie selbst: Ein 
 
 ## RequireToken
 
-> Writes need POST and the form token; set to disabled only for tests  
+> Schreibzugriffe brauchen POST und das Formular-Token; nur für Tests auf disabled setzen  
 
 Standard: `enabled`.
 
@@ -33,7 +33,7 @@ RequireToken=enabled
 
 ## Audit
 
-> Audit event written for every successful write (expAudit): service.<domain>.<method>  
+> Audit-Ereignis, das für jeden erfolgreichen Schreibzugriff geschrieben wird (expAudit): service.<domain>.<method>  
 
 Standard: `enabled`.
 

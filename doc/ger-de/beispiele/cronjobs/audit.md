@@ -2,21 +2,21 @@
 title: Cronjob audit.php
 audience: developer, admin
 category: examples
-summary: "Audit: sink spools, alert rules, rotation by day, archives, retention and checkpoints."
+summary: "Audit: Spools der Ziele, Alarmregeln, Rotation nach Tagen, Archive, Aufbewahrung und Prüfpunkte."
 keywords: Teil, audit.php, audit, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob audit.php
 
-Audit: sink spools, alert rules, rotation by day, archives, retention and checkpoints.
+Audit: Spools der Ziele, Alarmregeln, Rotation nach Tagen, Archive, Aufbewahrung und Prüfpunkte.
 
 Einstiegspunkt `cronjobs/audit.php`, Code in `kernel/private/classes/cronjobs/audit.php`.
 
-> The cronjob part audit (cronjobs/audit.php; \[CronjobPart-audit\] and the frequent group in cronjob.ini): the  
-> audit's scheduled work, expAuditMaintenance::run(). Every run: the incremental index, the sink spools (webhook,  
-> mail, network syslog) and the alert rules' cronjob pass; once a day after \[AuditRotationSettings\] RotateAfter:  
-> rotation by day, verification, archiving, retention, pseudonymisation of the index and the checkpoint  
+> Der Cronjob-Teil audit (cronjobs/audit.php; \[CronjobPart-audit\] und die Gruppe frequent in cronjob.ini): die  
+> geplante Arbeit des Audits, expAuditMaintenance::run(). Bei jedem Lauf: der inkrementelle Index, die Spools der Ziele (Webhook,  
+> Mail, Netzwerk-Syslog) und der Cronjob-Durchgang der Alarmregeln; einmal am Tag nach \[AuditRotationSettings\] RotateAfter:  
+> Rotation nach Tagen, Prüfung, Archivierung, Aufbewahrung, Pseudonymisierung des Index und der Prüfpunkt  
 > (doc/eng-us/bc/6.0/audit.md, "Rotation, archives and retention (Q8)").  
 
 ## Wann er läuft

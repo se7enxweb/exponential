@@ -2,14 +2,14 @@
 title: exp:solr
 audience: developer, admin
 category: examples
-summary: Control the Solr search server, once it is installed and configured.
+summary: Steuert den Solr-Suchserver, sobald er installiert und konfiguriert ist.
 keywords: Konsole, Befehl, exp:solr, solr, console, command, CLI, solr.php, exp:search
 type: generated
 generated: exp:help:examples
 ---
 # exp:solr
 
-Control the Solr search server, once it is installed and configured.
+Steuert den Solr-Suchserver, sobald er installiert und konfiguriert ist.
 
 Skript `bin/php/solr.php`, Code in `kernel/private/classes/commands/solr.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

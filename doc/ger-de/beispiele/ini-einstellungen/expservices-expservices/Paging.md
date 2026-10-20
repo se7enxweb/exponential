@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[Paging]` von `extension/expservices/settings/expservices.ini` (Erweiterung expservices), mit 2 Einstellung(en).
 
-> Domains are the \[ezjscServer\_exp<domain>\] blocks of ezjscore.ini whose Class extends expServiceBase.  
+> Domänen sind die Blöcke \[ezjscServer\_exp<domain>\] von ezjscore.ini, deren Class von expServiceBase erbt.  
 
 Bearbeiten Sie `extension/expservices/settings/expservices.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -2,14 +2,14 @@
 title: exp:webserver
 audience: developer, admin
 category: examples
-summary: Control the Exponential web server (php, frankenphp or qbix engines).
+summary: Steuert den Exponential-Webserver (Engines php, frankenphp oder qbix).
 keywords: Konsole, Befehl, exp:webserver, webserver, console, command, CLI, webserver.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:webserver
 
-Control the Exponential web server (php, frankenphp or qbix engines).
+Steuert den Exponential-Webserver (Engines php, frankenphp oder qbix).
 
 Skript `bin/php/webserver.php`, Code in `kernel/private/classes/commands/webserver.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -23,12 +23,12 @@ php bin/php/webserver.php --help
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--json` |  | Als JSON berichten, für einen Aufrufer, der kein Mensch ist |
-| `--engine` | erforderlich | php, frankenphp or qbix for this command only (or several, comma-separated, or --all), instead of the configured default |
-| `--port` | erforderlich | configure/reconfigure: the port to persist for the engine |
-| `--docroot` | erforderlich | configure/reconfigure: the document root to persist for the engine |
-| `--https-port` | erforderlich | configure/reconfigure: the HTTPS port to persist (frankenphp or qbix; php has no TLS) |
-| `--reconfigure` |  | start: resolve and persist the engine/port/docroot/HTTPS port again before running |
-| `--dry-run` |  | configure/reconfigure: show what would be written, without writing it |
+| `--engine` | erforderlich | php, frankenphp oder qbix nur für diesen Befehl (oder mehrere, durch Kommas getrennt, oder --all), statt des konfigurierten Standards |
+| `--port` | erforderlich | configure/reconfigure: der Port, der für die Engine gespeichert wird |
+| `--docroot` | erforderlich | configure/reconfigure: das Dokumentenverzeichnis, das für die Engine gespeichert wird |
+| `--https-port` | erforderlich | configure/reconfigure: der HTTPS-Port, der gespeichert wird (frankenphp oder qbix; php hat kein TLS) |
+| `--reconfigure` |  | start: Engine, Port, Dokumentenverzeichnis und HTTPS-Port vor dem Start erneut ermitteln und speichern |
+| `--dry-run` |  | configure/reconfigure: zeigen, was geschrieben würde, ohne es zu schreiben |
 | `--all` |  | start, stop, restart, graceful, kill oder status für jede Engine, eine nach der anderen |
 | `--force` |  | install: erneut herunterladen, auch wenn die Binärdatei schon da ist |
 | `--check` |  | install: den Hash der installierten Binärdatei erneut gegen ihre SHA-256 prüfen |

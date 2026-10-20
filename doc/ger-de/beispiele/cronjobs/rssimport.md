@@ -2,19 +2,19 @@
 title: Cronjob rssimport.php
 audience: developer, admin
 category: examples
-summary: Fetch and import configured RSS feeds into the content tree.
+summary: Holt die konfigurierten RSS-Feeds und importiert sie in den Inhaltsbaum.
 keywords: Teil, rssimport.php, rssimport, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob rssimport.php
 
-Fetch and import configured RSS feeds into the content tree.
+Holt die konfigurierten RSS-Feeds und importiert sie in den Inhaltsbaum.
 
 Einstiegspunkt `cronjobs/rssimport.php`, Code in `kernel/private/classes/cronjobs/rssimport.php`.
 
-> The code of cronjobs/rssimport.php, moved into a class (#207 stage 1). The file cronjobs/rssimport.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/rssimport.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/rssimport.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

@@ -19,14 +19,14 @@ Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update
 
 ## Class
 
-> The admin subitems list's Table options (settings/subitems.ini, settings/subitemscolumns.ini):  
+> Die Tabellenoptionen der Unterelemente-Liste der Administration (settings/subitems.ini, settings/subitemscolumns.ini):  
 > <root>/ezjscore/call/expsubitems::columns::2  
->   the columns the user may see under node 2, the defaults, presets and the saved choice  
+>   die Spalten, die der Benutzer unter Knoten 2 sehen darf, die Standards, Vorlagen und die gespeicherte Auswahl  
 > <root>/ezjscore/call/expsubitems::rows::2::10::0::name::1?columns=parentnodeid,urlalias  
->   ezjscnode::subtree's list plus the requested columns per item  
+>   die Liste von ezjscnode::subtree plus die angeforderten Spalten pro Eintrag  
 > <root>/ezjscore/call/expsubitems::savepreference\[::2\]  (POST preference=<json>)  
-> Every function checks itself: a logged-in user with content/read who can read the parent;  
-> column policies come from subitemscolumns.ini. The HardLimit above applies to rows too.  
+> Jede Funktion prüft selbst: ein angemeldeter Benutzer mit content/read, der den Elternknoten lesen darf;  
+> die Richtlinien der Spalten kommen aus subitemscolumns.ini. Das HardLimit oben gilt auch für rows.  
 
 Standard: `expSubitemsServerFunctions`.
 

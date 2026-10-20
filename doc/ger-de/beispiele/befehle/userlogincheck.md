@@ -2,14 +2,14 @@
 title: exp:userlogincheck
 audience: developer, admin
 category: examples
-summary: "Unique logins: list the logins more than one user account has; --fix-index adds the unique index on ezuser.login once there are none."
+summary: "Eindeutige Logins: listet die Logins auf, die mehr als ein Benutzerkonto hat; --fix-index fügt den eindeutigen Index auf ezuser.login hinzu, sobald es keine mehr gibt."
 keywords: Konsole, Befehl, exp:userlogincheck, userlogincheck, console, command, CLI, userlogincheck.php, exp:user-login-check
 type: generated
 generated: exp:help:examples
 ---
 # exp:userlogincheck
 
-Unique logins: list the logins more than one user account has; --fix-index adds the unique index on ezuser.login once there are none.
+Eindeutige Logins: listet die Logins auf, die mehr als ein Benutzerkonto hat; --fix-index fügt den eindeutigen Index auf ezuser.login hinzu, sobald es keine mehr gibt.
 
 Skript `bin/php/userlogincheck.php`, Code in `kernel/private/classes/commands/userlogincheck.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -43,9 +43,9 @@ Exit code: 0 clean (or index added), 1 duplicates found (or index refused), 2 er
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--fix-index` |  | Add the unique index on ezuser.login when no duplicates are found |
+| `--fix-index` |  | Den eindeutigen Index auf ezuser.login hinzufügen, wenn keine Duplikate gefunden werden |
 | `--json` |  | Ein JSON-Objekt statt des Textes |
-| `--show-logins` |  | Show the logins in full instead of shortened |
+| `--show-logins` |  | Die Logins vollständig statt gekürzt zeigen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

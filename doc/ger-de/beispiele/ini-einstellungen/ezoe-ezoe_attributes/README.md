@@ -12,13 +12,13 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `extension/ezoe/settings/ezoe_attributes.ini` (Erweiterung ezoe): 0 Blöcke, 0 Einstellungen.
 
-> Exponential configuration file for the eZ Online Editor  
+> Exponential-Konfigurationsdatei für den eZ Online Editor  
 > \[CustomAttribute\_<attribute>\] / \[CustomAttribute\_<tag>\_<attribute>\]  
-> Custom attribute settings, these can be used on all tags (also custom tags)  
-> 'CustomAttributes', defines the list of custom attributes to use on current tag (defined by \[<tag>\])  
-> 'CustomAttributesDefaults' setting defines custom attributes default values  
->  that appear in the dialog window for a newly created element.  
->  Deprecated: use 'Default' on the custom attribute settings block instead (explained bellow)  
+> Einstellungen eigener Attribute; sie können bei allen Tags verwendet werden (auch bei eigenen Tags)  
+> 'CustomAttributes' legt die Liste der eigenen Attribute des aktuellen Tags fest (definiert durch \[<tag>\])  
+> Die Einstellung 'CustomAttributesDefaults' legt Standardwerte eigener Attribute fest,  
+>  die im Dialogfenster für ein neu angelegtes Element erscheinen.  
+>  Veraltet: Verwenden Sie stattdessen 'Default' im Einstellungsblock des eigenen Attributs (unten erklärt)  
 >
 > # Example for a custom tag setting in content.ini:  
 >
@@ -88,8 +88,8 @@ Die ausgelieferten Einstellungen von `extension/ezoe/settings/ezoe_attributes.in
 > LinkType\[eznode://\]=Internal link  
 > LinkType\[http://\]=Http  
 > LinkType\[0\]=Other  
-> Complete custom attributes example for enabling and forcing users  
-> to fill out table summary for WAI conformance  
+> Vollständiges Beispiel für eigene Attribute, das Benutzer dazu bringt,  
+> die Tabellenzusammenfassung für die WAI-Konformität auszufüllen  
 >
 > # In content.ini:  
 > \[table\]  
@@ -100,10 +100,10 @@ Die ausgelieferten Einstellungen von `extension/ezoe/settings/ezoe_attributes.in
 > Name=Summary (WAI)  
 > Required=true  
 > \[Attribute\_<attribute>\] / \[Attribute\_<tag>\_<attribute>\]  
-> Settings for xml attributes can be setup exactly the same way as \[CustomAttribute\_\*\], so look bellow  
-> for list of all supported sub settinbgs like Name / Default / Title / Type  
-> Note: Some attributes ('class' on all tags and 'name' on custom tags) have special meaning to  
-> Exponential and you should not change their selections using this override.  
+> Einstellungen für XML-Attribute lassen sich genauso einrichten wie \[CustomAttribute\_\*\]; siehe oben  
+> die Liste aller unterstützten Untereinstellungen wie Name / Default / Title / Type  
+> Hinweis: Manche Attribute ('class' bei allen Tags und 'name' bei eigenen Tags) haben für  
+> Exponential eine besondere Bedeutung, und Sie sollten ihre Auswahl nicht mit diesem Override ändern.  
 >
 > # Example for setting table border attribute to int type  
 > \[Attribute\_table\_border\]  

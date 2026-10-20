@@ -2,24 +2,24 @@
 title: Cronjob explogrotate.php
 audience: developer, admin
 category: examples
-summary: "Logs: rotate the logs over their MaxSize, prune and compress their archives (off unless a part runs it)."
+summary: "Logs: rotiert die Logs über ihrer MaxSize, bereinigt und komprimiert ihre Archive (aus, solange kein Teil ihn ausführt)."
 keywords: Teil, explogrotate.php, explogrotate, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob explogrotate.php
 
-Logs: rotate the logs over their MaxSize, prune and compress their archives (off unless a part runs it).
+Logs: rotiert die Logs über ihrer MaxSize, bereinigt und komprimiert ihre Archive (aus, solange kein Teil ihn ausführt).
 
 Einstiegspunkt `cronjobs/explogrotate.php`, Code in `kernel/private/classes/cronjobs/explogrotate.php`.
 
-> The code of cronjobs/explogrotate.php: the log rotation cronjob part (\[CronjobPart-logs\], in no default part, so it  
-> runs only when a site adds it to a part it runs or calls php runcronjobs.php logs). Guide:  
+> Der Code von cronjobs/explogrotate.php: der Cronjob-Teil der Log-Rotation (\[CronjobPart-logs\], in keinem Standardteil, er  
+> läuft also nur, wenn eine Website ihn einem Teil hinzufügt, den sie ausführt, oder php runcronjobs.php logs aufruft). Anleitung:  
 > doc/eng-us/features/6.0/log-rotation.md, "As a cronjob part".  
 >
-> Each run, through expLogManager: rotates every log over its MaxSize (logviewer.ini \[RotationSettings\] MaxSize\[<key>\],  
-> else site.ini \[FileSettings\] LogFileMaxSize), prunes the archives beyond Keep and MaxAgeDays, and compresses the plain  
-> archives from .2 on of the logs whose Compress is enabled. Every change is recorded in the audit trail.  
+> Jeder Lauf, über expLogManager: rotiert jedes Log über seiner MaxSize (logviewer.ini \[RotationSettings\] MaxSize\[<key>\],  
+> sonst site.ini \[FileSettings\] LogFileMaxSize), bereinigt die Archive über Keep und MaxAgeDays hinaus und komprimiert die  
+> unkomprimierten Archive ab .2 der Logs, deren Compress aktiviert ist. Jede Änderung wird im Audit-Trail festgehalten.  
 
 ## Wann er läuft
 

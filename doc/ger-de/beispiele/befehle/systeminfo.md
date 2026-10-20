@@ -2,14 +2,14 @@
 title: exp:systeminfo
 audience: developer, admin
 category: examples
-summary: The facts and health checks of Setup > System information, as text or JSON (--json, --sizes).
+summary: Die Fakten und Zustandsprüfungen von Setup > Systeminformationen, als Text oder JSON (--json, --sizes).
 keywords: Konsole, Befehl, exp:systeminfo, systeminfo, console, command, CLI, systeminfo.php, exp:system:info
 type: generated
 generated: exp:help:examples
 ---
 # exp:systeminfo
 
-The facts and health checks of Setup > System information, as text or JSON (--json, --sizes).
+Die Fakten und Zustandsprüfungen von Setup > Systeminformationen, als Text oder JSON (--json, --sizes).
 
 Skript `bin/php/systeminfo.php`, Code in `kernel/private/classes/commands/systeminfo.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -42,7 +42,7 @@ Exit 0 when no check fails, 1 when one does.
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--json` |  | Ein JSON-Objekt statt des Textes |
-| `--sizes` |  | Also measure the size of var/, of each cache directory and of the database |
+| `--sizes` |  | Auch die Größe von var/, jedes Cache-Verzeichnisses und der Datenbank messen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

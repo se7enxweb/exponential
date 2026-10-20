@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[ezjscServer]` von `extension/ezjscore/settings/ezjscore.ini` (Erweiterung ezjscore), mit 1 Einstellung(en).
 
-> Example: Serve javascript files from static sub domain (No end slash!)  
+> Beispiel: JavaScript-Dateien von einer statischen Subdomäne ausliefern (ohne Schrägstrich am Ende!)  
 > CustomHosts\[.js\]=http://static.example.com  
 
 Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
@@ -22,9 +22,9 @@ Bearbeiten Sie `extension/ezjscore/settings/ezjscore.ini` nie selbst: Ein Update
 
 ## FunctionList
 
-> List of permission functions as used by the Exponential permission system  
-> ezjscnode::load, ::subtree and ::updatepriority, when \[ezjscServer\_ezjscnode\] RequirePolicy=enabled  
-> ezajaxuploader (the AJAX uploader of relation attributes), when \[ezjscServer\_ezajaxuploader\] RequirePolicy=enabled  
+> Liste der Berechtigungsfunktionen, wie sie das Berechtigungssystem von Exponential verwendet  
+> ezjscnode::load, ::subtree und ::updatepriority, wenn \[ezjscServer\_ezjscnode\] RequirePolicy=enabled  
+> ezajaxuploader (der AJAX-Uploader von Verknüpfungsattributen), wenn \[ezjscServer\_ezajaxuploader\] RequirePolicy=enabled  
 
 Standard: eine Liste mit 3: `ezjsctemplate`, `ezjscnode`, `ezajaxuploader`.
 

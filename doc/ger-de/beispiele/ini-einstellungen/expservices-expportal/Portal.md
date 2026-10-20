@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[Portal]` von `extension/expservices/settings/expportal.ini` (Erweiterung expservices), mit 6 Einstellung(en).
 
-> Settings of the portal frontends (designs expportal\_jquery and expportal\_reactive).  
-> Node ids of the content roots each page reads. Change them per installation; defaults are the standard roots.  
+> Einstellungen der Portal-Frontends (Designs expportal\_jquery und expportal\_reactive).  
+> Knoten-IDs der Inhaltswurzeln, die jede Seite liest. Ändern Sie sie pro Installation; die Standardwerte sind die üblichen Wurzeln.  
 
 Bearbeiten Sie `extension/expservices/settings/expportal.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

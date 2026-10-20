@@ -85,34 +85,34 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:kickstarter](kickstarter.md) |  | Kickstarter-Runner. Unterstützt die Unterbefehle "ini" zum Erzeugen und "run" für die vollständige Einrichtung |
 | [exp:mailbounces](mailbounces.md) | exp:mail:bounces | Liest das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste |
 | [exp:mailconsent](mailconsent.md) | exp:mail:consent | Das Einwilligungsprotokoll der E-Mail-Einstellungen: auflisten, als CSV exportieren, nach Aufbewahrungsfrist bereinigen |
-| [exp:mailgate](mailgate.md) | exp:mail:gate | Test the mail gate: who of the given addresses would get a mail of a category, and what the decorated mail looks like |
-| [exp:mailpreferences](mailpreferences.md) | exp:mail:preferences | Show and change the e-mail preferences of a user or an address: categories, master switch, frequency, export, erase |
-| [exp:mailstatus](mailstatus.md) | exp:mail:status | Show the e-mail preference system: tables, gate, footer, categories, suppression, consent log, the gate's last decisions and problems |
-| [exp:mailsuppression](mailsuppression.md) | exp:mail:suppression | The suppression list of the e-mail gate: list, check, add and lift entries (only hashes are stored) |
-| [exp:maintenance](maintenance.md) |  | Take the site offline for maintenance and back: on, off or status |
-| [exp:makestaticcache](makestaticcache.md) |  | Crawl the public siteaccesses and generate static pages (--site, --max-pages, --max-depth) |
-| [exp:notificationevents](notificationevents.md) | exp:notification:events, exp:notify:events | List the notification events, or remove the old ones |
-| [exp:notificationrun](notificationrun.md) | exp:notification:run, exp:notify:run | Run the notification filter: send the notifications of the pending events and the due digests (--dry-run: only list them) |
-| [exp:notificationstatus](notificationstatus.md) | exp:notification:status, exp:notify:status | Show the notification system: pending events, digest items, subscriptions, the last runs and problems |
-| [exp:notificationsubscriptions](notificationsubscriptions.md) | exp:notification:subscriptions, exp:notify:subscriptions | List the subtree notification subscriptions per user and subtree, or remove those whose content is gone |
-| [exp:phar](phar.md) |  | Build and inspect the engine archive dist/engine.phar (verbs build, check, clean, info) |
-| [exp:preload](preload.md) |  | Warm the page caches of a site: request its section pages, then follow its links, and report the broken ones |
+| [exp:mailgate](mailgate.md) | exp:mail:gate | Testet das Mail-Gate: wer von den angegebenen Adressen eine Mail einer Kategorie bekäme und wie die ergänzte Mail aussieht |
+| [exp:mailpreferences](mailpreferences.md) | exp:mail:preferences | Zeigt und ändert die E-Mail-Einstellungen eines Benutzers oder einer Adresse: Kategorien, Hauptschalter, Häufigkeit, Export, Löschen |
+| [exp:mailstatus](mailstatus.md) | exp:mail:status | Zeigt das System der E-Mail-Einstellungen: Tabellen, Gate, Fußzeile, Kategorien, Sperrliste, Einwilligungsprotokoll, die letzten Entscheidungen des Gates und Probleme |
+| [exp:mailsuppression](mailsuppression.md) | exp:mail:suppression | Die Sperrliste des E-Mail-Gates: Einträge auflisten, prüfen, hinzufügen und aufheben (es werden nur Hashes gespeichert) |
+| [exp:maintenance](maintenance.md) |  | Nimmt die Website für Wartungsarbeiten vom Netz und wieder zurück: on, off oder status |
+| [exp:makestaticcache](makestaticcache.md) |  | Durchläuft die öffentlichen Siteaccesses und erzeugt statische Seiten (--site, --max-pages, --max-depth) |
+| [exp:notificationevents](notificationevents.md) | exp:notification:events, exp:notify:events | Listet die Benachrichtigungsereignisse auf oder entfernt die alten |
+| [exp:notificationrun](notificationrun.md) | exp:notification:run, exp:notify:run | Führt den Benachrichtigungsfilter aus: sendet die Benachrichtigungen der anstehenden Ereignisse und die fälligen Zusammenfassungen (--dry-run: nur auflisten) |
+| [exp:notificationstatus](notificationstatus.md) | exp:notification:status, exp:notify:status | Zeigt das Benachrichtigungssystem: anstehende Ereignisse, Einträge der Zusammenfassungen, Abonnements, die letzten Läufe und Probleme |
+| [exp:notificationsubscriptions](notificationsubscriptions.md) | exp:notification:subscriptions, exp:notify:subscriptions | Listet die Teilbaum-Benachrichtigungsabonnements pro Benutzer und Teilbaum auf oder entfernt die, deren Inhalt nicht mehr existiert |
+| [exp:phar](phar.md) |  | Baut und untersucht das Engine-Archiv dist/engine.phar (Verben build, check, clean, info) |
+| [exp:preload](preload.md) |  | Wärmt die Seiten-Caches einer Website vor: fordert ihre Bereichsseiten an, folgt dann ihren Links und meldet die defekten |
 | [exp:preloadjob](preloadjob.md) |  |  |
 | [exp:publish_content](publish_content.md) |  |  |
-| [exp:resetuserpassword](resetuserpassword.md) |  | Reset a user password with admin authentication or root bypass |
-| [exp:solr](solr.md) | exp:search | Control the Solr search server, once it is installed and configured |
-| [exp:systeminfo](systeminfo.md) | exp:system:info | The facts and health checks of Setup > System information, as text or JSON (--json, --sizes) |
-| [exp:trashpurge](trashpurge.md) |  | Permanently delete all objects in the trash |
-| [exp:updateisbn13](updateisbn13.md) |  | Update the ISBN range data in the database from an XML file (--url is required) |
-| [exp:updateniceurls](updateniceurls.md) |  | Import old URL aliases and update the URL aliases of all nodes (--update-nodes) |
-| [exp:updatesearchindex](updatesearchindex.md) |  | Reindex all content objects in the search engine |
-| [exp:userlogincheck](userlogincheck.md) | exp:user-login-check | Unique logins: list the logins more than one user account has; --fix-index adds the unique index on ezuser.login once there are none |
+| [exp:resetuserpassword](resetuserpassword.md) |  | Setzt das Passwort eines Benutzers zurück, mit Anmeldung als Administrator oder als root ohne Anmeldung |
+| [exp:solr](solr.md) | exp:search | Steuert den Solr-Suchserver, sobald er installiert und konfiguriert ist |
+| [exp:systeminfo](systeminfo.md) | exp:system:info | Die Fakten und Zustandsprüfungen von Setup > Systeminformationen, als Text oder JSON (--json, --sizes) |
+| [exp:trashpurge](trashpurge.md) |  | Löscht alle Objekte im Papierkorb endgültig |
+| [exp:updateisbn13](updateisbn13.md) |  | Aktualisiert die ISBN-Bereichsdaten in der Datenbank aus einer XML-Datei (--url ist erforderlich) |
+| [exp:updateniceurls](updateniceurls.md) |  | Importiert alte URL-Aliase und aktualisiert die URL-Aliase aller Knoten (--update-nodes) |
+| [exp:updatesearchindex](updatesearchindex.md) |  | Indiziert alle Inhaltsobjekte in der Suchmaschine neu |
+| [exp:userlogincheck](userlogincheck.md) | exp:user-login-check | Eindeutige Logins: listet die Logins auf, die mehr als ein Benutzerkonto hat; --fix-index fügt den eindeutigen Index auf ezuser.login hinzu, sobald es keine mehr gibt |
 | [exp:velocity-router](velocity-router.md) |  |  |
 | [exp:velocity-warmup](velocity-warmup.md) |  |  |
 | [exp:velocity](velocity.md) | exp:vc |  |
 | [exp:verify_aliases](verify_aliases.md) |  |  |
-| [exp:warm](warm.md) |  | Request every published page so no visitor pays for a render (--limit, --concurrency) |
-| [exp:webserver](webserver.md) |  | Control the Exponential web server (php, frankenphp or qbix engines) |
+| [exp:warm](warm.md) |  | Fordert jede veröffentlichte Seite an, damit kein Besucher für das Rendern bezahlt (--limit, --concurrency) |
+| [exp:webserver](webserver.md) |  | Steuert den Exponential-Webserver (Engines php, frankenphp oder qbix) |
 
 ## Shell-Skripte
 

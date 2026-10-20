@@ -2,14 +2,14 @@
 title: exp:mailgate
 audience: developer, admin
 category: examples
-summary: "Test the mail gate: who of the given addresses would get a mail of a category, and what the decorated mail looks like."
+summary: "Testet das Mail-Gate: wer von den angegebenen Adressen eine Mail einer Kategorie bekäme und wie die ergänzte Mail aussieht."
 keywords: Konsole, Befehl, exp:mailgate, mailgate, console, command, CLI, mailgate.php, exp:mail:gate
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailgate
 
-Test the mail gate: who of the given addresses would get a mail of a category, and what the decorated mail looks like.
+Testet das Mail-Gate: wer von den angegebenen Adressen eine Mail einer Kategorie bekäme und wie die ergänzte Mail aussieht.
 
 Skript `bin/php/mailgate.php`, Code in `kernel/private/classes/commands/mailgate.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -38,12 +38,12 @@ var/tmp/mailgate-test), never sent. Addresses are hidden unless --addresses.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--category` | erforderlich | the category of the test mail (empty: a mail without category) |
-| `--to` | erforderlich | addresses, comma separated |
-| `--write` |  | send the test mail through the gate with the file transport |
-| `--html` |  | an HTML test mail |
-| `--mail-file-dir` | erforderlich | where --write puts the mail |
-| `--addresses` |  | show the addresses |
+| `--category` | erforderlich | die Kategorie der Testmail (leer: eine Mail ohne Kategorie) |
+| `--to` | erforderlich | Adressen, durch Kommas getrennt |
+| `--write` |  | die Testmail mit dem Datei-Transport durch das Gate schicken |
+| `--html` |  | eine HTML-Testmail |
+| `--mail-file-dir` | erforderlich | wohin --write die Mail legt |
+| `--addresses` |  | die Adressen zeigen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

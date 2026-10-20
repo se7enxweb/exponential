@@ -2,19 +2,19 @@
 title: Cronjob staticcache_cleanup.php
 audience: developer, admin
 category: examples
-summary: Remove expired and stale entries from the static page cache.
+summary: Entfernt abgelaufene und veraltete Einträge aus dem statischen Seiten-Cache.
 keywords: Teil, staticcache_cleanup.php, staticcache_cleanup, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob staticcache_cleanup.php
 
-Remove expired and stale entries from the static page cache.
+Entfernt abgelaufene und veraltete Einträge aus dem statischen Seiten-Cache.
 
 Einstiegspunkt `cronjobs/staticcache_cleanup.php`, Code in `kernel/private/classes/cronjobs/staticcache_cleanup.php`.
 
-> The code of cronjobs/staticcache\_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/staticcache\_cleanup.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/staticcache\_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/staticcache\_cleanup.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

@@ -2,18 +2,18 @@
 title: Cronjob mailbounces.php
 audience: developer, admin
 category: examples
-summary: "The bounce mailbox: hard bounces and spam complaints go on the suppression list (mailpreferences.ini [BounceSettings])."
+summary: "Das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste (mailpreferences.ini [BounceSettings])."
 keywords: Teil, mailbounces.php, mailbounces, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob mailbounces.php
 
-The bounce mailbox: hard bounces and spam complaints go on the suppression list (mailpreferences.ini [BounceSettings]).
+Das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste (mailpreferences.ini [BounceSettings]).
 
 Einstiegspunkt `cronjobs/mailbounces.php`, Code in `kernel/private/classes/cronjobs/mailbounces.php`.
 
-> The code of cronjobs/mailbounces.php.  
+> Der Code von cronjobs/mailbounces.php.  
 
 ## Wann er läuft
 

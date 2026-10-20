@@ -2,14 +2,14 @@
 title: exp:mailpreferences
 audience: developer, admin
 category: examples
-summary: "Show and change the e-mail preferences of a user or an address: categories, master switch, frequency, export, erase."
+summary: "Zeigt und ändert die E-Mail-Einstellungen eines Benutzers oder einer Adresse: Kategorien, Hauptschalter, Häufigkeit, Export, Löschen."
 keywords: Konsole, Befehl, exp:mailpreferences, mailpreferences, console, command, CLI, mailpreferences.php, exp:mail:preferences
 type: generated
 generated: exp:help:examples
 ---
 # exp:mailpreferences
 
-Show and change the e-mail preferences of a user or an address: categories, master switch, frequency, export, erase.
+Zeigt und ändert die E-Mail-Einstellungen eines Benutzers oder einer Adresse: Kategorien, Hauptschalter, Häufigkeit, Export, Löschen.
 
 Skript `bin/php/mailpreferences.php`, Code in `kernel/private/classes/commands/mailpreferences.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -46,19 +46,19 @@ confirmed elsewhere) and the wording of --wording. Addresses are hidden unless -
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--user` | erforderlich | the person: a login or a user id |
-| `--email` | erforderlich | the person: an address (the account it belongs to, if any) |
-| `--category` | erforderlich | set, frequency: the category identifier |
-| `--state` | erforderlich | set, master: on or off |
-| `--frequency` | erforderlich | frequency: immediate, daily or weekly |
-| `--format` | erforderlich | export: json (default) or csv |
-| `--output` | erforderlich | export: write to this file instead of the screen |
-| `--wording` | erforderlich | the text recorded in the consent log (default: "Changed on the console") |
-| `--source` | erforderlich | admin (default) or import: import switches a double opt-in category on at once |
-| `--no-mail` |  | set: do not send the confirmation mail of a double opt-in |
-| `--yes` |  | erase: really erase |
+| `--user` | erforderlich | die Person: ein Login oder eine Benutzer-ID |
+| `--email` | erforderlich | die Person: eine Adresse (und das Konto, zu dem sie gehört, falls vorhanden) |
+| `--category` | erforderlich | set, frequency: der Kategoriebezeichner |
+| `--state` | erforderlich | set, master: on oder off |
+| `--frequency` | erforderlich | frequency: immediate, daily oder weekly |
+| `--format` | erforderlich | export: json (Standard) oder csv |
+| `--output` | erforderlich | export: in diese Datei statt auf den Bildschirm schreiben |
+| `--wording` | erforderlich | der im Einwilligungsprotokoll festgehaltene Text (Standard: "Changed on the console") |
+| `--source` | erforderlich | admin (Standard) oder import: import schaltet eine Kategorie mit Double-Opt-in sofort ein |
+| `--no-mail` |  | set: die Bestätigungsmail eines Double-Opt-in nicht senden |
+| `--yes` |  | erase: wirklich löschen |
 | `--json` |  | show, categories: JSON |
-| `--addresses` |  | show the address instead of hiding it |
+| `--addresses` |  | die Adresse zeigen, statt sie zu verbergen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

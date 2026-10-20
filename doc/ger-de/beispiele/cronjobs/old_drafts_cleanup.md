@@ -2,19 +2,19 @@
 title: Cronjob old_drafts_cleanup.php
 audience: developer, admin
 category: examples
-summary: Remove user drafts that exceed the configured age limit.
+summary: Entfernt Entwürfe von Benutzern, die die konfigurierte Altersgrenze überschreiten.
 keywords: Teil, old_drafts_cleanup.php, old_drafts_cleanup, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob old_drafts_cleanup.php
 
-Remove user drafts that exceed the configured age limit.
+Entfernt Entwürfe von Benutzern, die die konfigurierte Altersgrenze überschreiten.
 
 Einstiegspunkt `cronjobs/old_drafts_cleanup.php`, Code in `kernel/private/classes/cronjobs/old_drafts_cleanup.php`.
 
-> The code of cronjobs/old\_drafts\_cleanup.php, moved into a class (#207 stage 1). The file cronjobs/old\_drafts\_cleanup.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/old\_drafts\_cleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/old\_drafts\_cleanup.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

@@ -2,19 +2,19 @@
 title: Cronjob cachecleanup.php
 audience: developer, admin
 category: examples
-summary: Remove expired and old view cache and cache-block files from disk.
+summary: Entfernt abgelaufene und alte View-Cache- und Cache-Block-Dateien von der Festplatte.
 keywords: Teil, cachecleanup.php, cachecleanup, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob cachecleanup.php
 
-Remove expired and old view cache and cache-block files from disk.
+Entfernt abgelaufene und alte View-Cache- und Cache-Block-Dateien von der Festplatte.
 
 Einstiegspunkt `cronjobs/cachecleanup.php`, Code in `kernel/private/classes/cronjobs/cachecleanup.php`.
 
-> The code of cronjobs/cachecleanup.php, moved into a class (#207 stage 1). The file cronjobs/cachecleanup.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/cachecleanup.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/cachecleanup.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

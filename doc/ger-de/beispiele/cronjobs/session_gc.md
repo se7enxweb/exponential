@@ -2,19 +2,19 @@
 title: Cronjob session_gc.php
 audience: developer, admin
 category: examples
-summary: Garbage-collect expired user sessions from the session store.
+summary: Räumt abgelaufene Benutzersitzungen aus dem Sitzungsspeicher.
 keywords: Teil, session_gc.php, session_gc, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob session_gc.php
 
-Garbage-collect expired user sessions from the session store.
+Räumt abgelaufene Benutzersitzungen aus dem Sitzungsspeicher.
 
 Einstiegspunkt `cronjobs/session_gc.php`, Code in `kernel/private/classes/cronjobs/session_gc.php`.
 
-> The code of cronjobs/session\_gc.php, moved into a class (#207 stage 1). The file cronjobs/session\_gc.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/session\_gc.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/session\_gc.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

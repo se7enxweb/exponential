@@ -2,14 +2,14 @@
 title: exp:updatesearchindex
 audience: developer, admin
 category: examples
-summary: Reindex all content objects in the search engine.
+summary: Indiziert alle Inhaltsobjekte in der Suchmaschine neu.
 keywords: Konsole, Befehl, exp:updatesearchindex, updatesearchindex, console, command, CLI, updatesearchindex.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:updatesearchindex
 
-Reindex all content objects in the search engine.
+Indiziert alle Inhaltsobjekte in der Suchmaschine neu.
 
 Skript `bin/php/updatesearchindex.php`, Code in `kernel/private/classes/commands/updatesearchindex.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -29,7 +29,7 @@ php bin/php/updatesearchindex.php --help
 | `--db-type` | erforderlich | Datenbanktreiber, Alias für --db-driver |
 | `--db-driver` | erforderlich | Datenbanktreiber |
 | `--sql` |  | SQL-Abfragen anzeigen |
-| `--clean` |  | Remove all search data before beginning indexing |
+| `--clean` |  | Vor dem Indizieren alle Suchdaten entfernen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

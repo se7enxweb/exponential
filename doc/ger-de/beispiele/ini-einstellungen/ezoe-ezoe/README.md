@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `extension/ezoe/settings/ezoe.ini` (Erweiterung ezoe): 6 Blöcke, 26 Einstellungen.
 
-> Exponential configuration file for the eZ Online Editor  
+> Exponential-Konfigurationsdatei für den eZ Online Editor  
 
 | Block | Einstellungen |
 |---|---|

@@ -19,11 +19,11 @@ Bearbeiten Sie `extension/ezoe/settings/ezoe.ini` nie selbst: Ein Update ersetzt
 
 ## EditorEngine
 
-> Editor engine used for ezxmltext attributes  
->  tinymce3 = eZ Online Editor on TinyMCE 3.5 (default)  
->  tinymce8 = prototype on TinyMCE 8, supports formatting, lists, links, anchors,  
->             tables, embed/embed-inline, custom tags and literal  
-> Can be overridden per user with the preference ezoe\_engine:  
+> Editor-Engine für Attribute vom Typ ezxmltext  
+>  tinymce3 = eZ Online Editor auf TinyMCE 3.5 (Standard)  
+>  tinymce8 = Prototyp auf TinyMCE 8, unterstützt Formatierung, Listen, Links, Anker,  
+>             Tabellen, embed/embed-inline, eigene Tags und literal  
+> Kann pro Benutzer mit der Einstellung ezoe\_engine überschrieben werden:  
 >  /user/preferences/set/ezoe\_engine/tinymce8  
 
 Standard: `tinymce3`.
@@ -38,22 +38,22 @@ EditorEngine=tinymce3
 
 ## Engines
 
-> Show a button below the editor to switch between tinymce3 and tinymce8 (saved as user preference),  
-> useful while both editors run in parallel. enabled / disabled; off when not set.  
-> Not set here on purpose: this file is read at the extension level, after every siteaccess setting and every  
-> extension activated for one siteaccess only (ActiveAccessExtensions\[\]), so a value here would override theirs.  
+> Unter dem Editor eine Schaltfläche zeigen, um zwischen tinymce3 und tinymce8 zu wechseln (als Benutzereinstellung gespeichert),  
+> nützlich, solange beide Editoren parallel laufen. enabled / disabled; aus, wenn nicht gesetzt.  
+> Hier absichtlich nicht gesetzt: Diese Datei wird auf Erweiterungsebene gelesen, nach jeder Siteaccess-Einstellung und jeder  
+> nur für einen Siteaccess aktivierten Erweiterung (ActiveAccessExtensions\[\]), ein Wert hier würde also deren Werte überschreiben.  
 > EngineSwitch=disabled  
-> Force one engine for every editor of a siteaccess, whatever their preference ezoe\_engine says (the engine switch is  
-> then hidden and the engine page shows the choice as fixed). Set it per siteaccess, e.g. ForceEngine=tiptap. An engine  
-> that cannot be used (missing files, inactive extension) is ignored, so editors fall back to the usual choice.  
-> Not set here on purpose, for the same reason as EditorEngine and EngineSwitch.  
+> Eine Engine für jeden Redakteur eines Siteaccess erzwingen, egal was seine Einstellung ezoe\_engine sagt (der Engine-Schalter ist  
+> dann ausgeblendet, und die Engine-Seite zeigt die Wahl als fest). Pro Siteaccess setzen, z. B. ForceEngine=tiptap. Eine Engine,  
+> die nicht verwendet werden kann (fehlende Dateien, inaktive Erweiterung), wird ignoriert, die Redakteure fallen also auf die übliche Wahl zurück.  
+> Hier absichtlich nicht gesetzt, aus demselben Grund wie EditorEngine und EngineSwitch.  
 > ForceEngine=  
-> The editor engines: Engines\[<identifier>\]=<class implementing expOEEditorEngine>. An extension adds an  
-> engine with one class and one line in its own ezoe.ini.append.php, EditorEngine / the user preference then  
-> name it. An entry whose class is missing or is not an engine is ignored (and shown in setup/rad).  
-> Guide: doc/eng-us/bc/6.0/ezoe-tinymce8.md  
-> No empty Engines\[\] before the list: read at the extension level, it would remove the engines of an extension  
-> activated for one siteaccess only (ActiveAccessExtensions\[\]) and of siteaccess settings.  
+> Die Editor-Engines: Engines\[<identifier>\]=<class implementing expOEEditorEngine>. Eine Erweiterung fügt eine  
+> Engine mit einer Klasse und einer Zeile in ihrer eigenen ezoe.ini.append.php hinzu; EditorEngine / die Benutzereinstellung  
+> nennen sie dann. Ein Eintrag, dessen Klasse fehlt oder keine Engine ist, wird ignoriert (und in setup/rad angezeigt).  
+> Anleitung: doc/eng-us/bc/6.0/ezoe-tinymce8.md  
+> Kein leeres Engines\[\] vor der Liste: Auf Erweiterungsebene gelesen, würde es die Engines einer nur für einen  
+> Siteaccess aktivierten Erweiterung (ActiveAccessExtensions\[\]) und der Siteaccess-Einstellungen entfernen.  
 
 Standard: ein Hash mit 2: `tinymce3=expOETinyMCE3Engine`, `tinymce8=expOETinyMCE8Engine`.
 
@@ -70,11 +70,11 @@ Engines[tinymce8]=expOETinyMCE8Engine
 
 ## UploadExtensionCheck
 
-> Server-side check of the uploaded file's type against UploadFileExtensions\[\] (ezoe/upload):  
->  engine   = when the user's engine is not tinymce3 (default; the TinyMCE 3 dialog never limited types)  
->  always   = every upload of the online editor  
->  disabled = none  
-> In every mode a name with an executable type anywhere in it (php, phtml, phar, sh, cgi, .htaccess, ...) is refused.  
+> Serverseitige Prüfung des Typs der hochgeladenen Datei gegen UploadFileExtensions\[\] (ezoe/upload):  
+>  engine   = wenn die Engine des Benutzers nicht tinymce3 ist (Standard; der Dialog von TinyMCE 3 hat die Typen nie beschränkt)  
+>  always   = jeder Upload des Online-Editors  
+>  disabled = keiner  
+> In jedem Modus wird ein Name abgelehnt, der irgendwo einen ausführbaren Typ enthält (php, phtml, phar, sh, cgi, .htaccess, ...).  
 
 Standard: `engine`.
 
@@ -88,8 +88,8 @@ UploadExtensionCheck=engine
 
 ## UploadFromUrl
 
-> Upload from a URL on the Upload tab of the embed dialog (both editors): the server fetches a file from  
-> an http(s) address and creates the object like a browser upload. enabled / disabled  
+> Hochladen von einer URL im Reiter Hochladen des Einbettungsdialogs (beide Editoren): Der Server holt eine Datei von  
+> einer http(s)-Adresse und legt das Objekt wie bei einem Browser-Upload an. enabled / disabled  
 
 Standard: `enabled`.
 
@@ -103,8 +103,8 @@ UploadFromUrl=enabled
 
 ## UploadFromUrlMaxSize
 
-> Largest file fetched from a URL (K, M, G). Only this applies, PHP's upload\_max\_filesize does not (a fetch  
-> is not a browser upload); the body is streamed to a temporary file, never held in memory  
+> Größte von einer URL geholte Datei (K, M, G). Nur dies gilt, upload\_max\_filesize von PHP nicht (ein Abruf  
+> ist kein Browser-Upload); der Inhalt wird in eine temporäre Datei gestreamt, nie im Speicher gehalten  
 
 Standard: `145M`.
 
@@ -118,7 +118,7 @@ UploadFromUrlMaxSize=145M
 
 ## UploadFromUrlTimeout
 
-> Total time in seconds a fetch may take (the connection must be made within 5 seconds)  
+> Gesamtzeit in Sekunden, die ein Abruf dauern darf (die Verbindung muss innerhalb von 5 Sekunden zustande kommen)  
 
 Standard: `300`.
 
@@ -132,8 +132,8 @@ UploadFromUrlTimeout=300
 
 ## UploadFileExtensions
 
-> File extensions the upload tab of the TinyMCE 8 embed dialog accepts, the class of the new  
-> object is chosen by upload.ini like in the TinyMCE 3 upload dialog  
+> Dateiendungen, die der Reiter Hochladen im Einbettungsdialog von TinyMCE 8 akzeptiert; die Klasse des neuen  
+> Objekts wählt upload.ini wie im Upload-Dialog von TinyMCE 3  
 
 Standard: eine Liste mit 30: `jpg`, `jpeg`, `png`, `gif`, `webp`, `svg`, `bmp`, `tif`, `tiff`, `pdf`, `doc`, `docx` ....
 
@@ -169,23 +169,23 @@ UploadFileExtensions[]=rtf
 
 ## Plugins
 
-> TinyMCE plugins you want to use  
-> plugins not mentioned here aren't tested and therefore not supported together with Online Editor  
+> TinyMCE-Plugins, die Sie verwenden wollen  
+> Hier nicht genannte Plugins sind nicht getestet und werden daher mit dem Online Editor nicht unterstützt  
 > Plugins\[\]=insertdatetime  
 > Plugins\[\]=visualchars  
-> Support for button to insert nonbreaking white space  
+> Unterstützung für die Schaltfläche zum Einfügen eines geschützten Leerzeichens  
 > Plugins\[\]=nonbreaking  
-> Spellchecker Requirements:  
+> Voraussetzungen der Rechtschreibprüfung:  
 > http://wiki.moxiecode.com/index.php/TinyMCE:Plugins/spellchecker  
 > Plugins\[\]=spellchecker  
 > Plugins\[\]=searchreplace  
-> eZ variant of emotions plugin  
+> eZ-Variante des Plugins emotions  
 > Plugins\[\]=ezemotions  
-> Provides two buttons for text direction: ltr and rtl  
+> Bietet zwei Schaltflächen für die Textrichtung: ltr und rtl  
 > Plugins\[\]=directionality  
-> autolink plugin  
-> list plugin  
-> Support CTRL+Enter to exit a custom tag  
+> Plugin autolink  
+> Plugin list  
+> Unterstützt Strg+Eingabe, um ein eigenes Tag zu verlassen  
 
 Standard: eine Liste mit 7: `eztable`, `paste`, `fullscreen`, `inlinepopups`, `autolink`, `lists`, `breakoutspace`.
 
@@ -207,12 +207,12 @@ Plugins[]=breakoutspace
 
 ## CustomTagControls
 
-> Custom tag controls (TinyMCE 3, TinyMCE 8 and Tiptap): a focused custom tag gets buttons to move it up or  
-> down, to edit and to remove it (Alt+Shift+Up / Down / E / Delete; Backspace removes an empty block custom tag),  
-> and every block custom tag shows its name as a label. enabled / disabled. New installations write  
-> CustomTagControls=enabled; an upgraded site keeps disabled until it is switched on here or in an override.  
-> TinyMCE 3 loads the plugin exp\_customtag\_controls for it, so it needs no entry in Plugins\[\].  
-> (From LoveStack, commit 63334f1681, with thanks to Mugo Web.)  
+> Bedienelemente für eigene Tags (TinyMCE 3, TinyMCE 8 und Tiptap): Ein fokussiertes eigenes Tag erhält Schaltflächen, um es nach oben oder  
+> unten zu verschieben, zu bearbeiten und zu entfernen (Alt+Umschalt+Hoch / Runter / E / Entf; Rücktaste entfernt ein leeres eigenes Block-Tag),  
+> und jedes eigene Block-Tag zeigt seinen Namen als Beschriftung. enabled / disabled. Neue Installationen schreiben  
+> CustomTagControls=enabled; eine aktualisierte Website behält disabled, bis es hier oder in einem Override eingeschaltet wird.  
+> TinyMCE 3 lädt dafür das Plugin exp\_customtag\_controls, es braucht also keinen Eintrag in Plugins\[\].  
+> (Aus LoveStack, Commit 63334f1681, mit Dank an Mugo Web.)  
 
 Standard: `disabled`.
 
@@ -226,7 +226,7 @@ CustomTagControls=disabled
 
 ## Skin
 
-> Skin for the editor, 'default' and 'o2k7' is included as standard  
+> Skin des Editors; 'default' und 'o2k7' sind standardmäßig enthalten  
 
 Standard: `o2k7`.
 
@@ -240,17 +240,17 @@ Skin=o2k7
 
 ## CompatibilityMode
 
-> Included skin variants in the o2k7 skin is: 'silver' and 'black'  
+> Im Skin o2k7 enthaltene Varianten sind: 'silver' und 'black'  
 > SkinVariant=  
-> This option specifies the default writing direction. Some languages (Like Hebrew, Arabic, Urdu...)  
-> write from right to left instead of left to right. The default value of this option is "ltr" but if  
-> you want to use from right to left mode specify "rtl" instead.  
+> Diese Option legt die Standard-Schreibrichtung fest. Manche Sprachen (wie Hebräisch, Arabisch, Urdu ...)  
+> schreiben von rechts nach links statt von links nach rechts. Der Standardwert dieser Option ist "ltr"; wenn  
+> Sie den Modus von rechts nach links verwenden wollen, geben Sie stattdessen "rtl" an.  
 > Directionality=ltr  
-> Lets you control alignment of toolbar buttons \[left|right\]  
+> Steuert die Ausrichtung der Schaltflächen der Werkzeugleiste \[left|right\]  
 > ToolbarAlign=left  
-> Enables compatibility mode by making editor behave more like OE 4.x  
-> - uses attachment icon for embed relations, makes it easier to place embed objects inside text  
->   but looses preview functionality. (name of embed object is shown if you hover the icon though)  
+> Aktiviert den Kompatibilitätsmodus, in dem sich der Editor mehr wie OE 4.x verhält  
+> - verwendet ein Anhangsymbol für eingebettete Verknüpfungen, was das Platzieren eingebetteter Objekte im Text erleichtert,  
+>   aber die Vorschau verliert (der Name des eingebetteten Objekts erscheint jedoch, wenn Sie über das Symbol fahren)  
 
 Standard: `disabled`.
 
@@ -264,7 +264,7 @@ CompatibilityMode=disabled
 
 ## ValidateEmbedObjects
 
-> Validates embed objects and gives a warning if it's in trash  
+> Prüft eingebettete Objekte und warnt, wenn eines im Papierkorb liegt  
 
 Standard: `disabled`.
 
@@ -278,7 +278,7 @@ ValidateEmbedObjects=disabled
 
 ## TagPathOpenDialog
 
-> Makes it possible to get default TinyMCE behavior when clicking tag name by disabling  
+> Wenn deaktiviert, gilt beim Klick auf einen Tag-Namen das Standardverhalten von TinyMCE  
 
 Standard: `enabled`.
 
@@ -292,7 +292,7 @@ TagPathOpenDialog=enabled
 
 ## BrowseImageAlias
 
-> Image alias to use for the preview while browsing  
+> Bild-Alias für die Vorschau beim Durchsuchen  
 
 Standard: `small`.
 
@@ -306,9 +306,9 @@ BrowseImageAlias=small
 
 ## CustomAttributeStyleMap
 
-> Map custom attribute names to style values so they are previewed in the editor.  
-> Supported styles are limited to the following types:  
->     border\* (so border or border-color will work)  
+> Ordnet Namen eigener Attribute Style-Werten zu, damit sie im Editor in der Vorschau erscheinen.  
+> Unterstützte Styles sind auf folgende Typen beschränkt:  
+>     border\* (also funktionieren border oder border-color)  
 >     margin\*  
 >     padding\*  
 >     width  
@@ -335,7 +335,7 @@ CustomAttributeStyleMap[border_style]=border-style
 
 ## XmlTagNameAlias
 
-> Friendly name for tags, is shown in status bar and dialogs  
+> Lesbarer Name für Tags, wird in Statusleiste und Dialogen angezeigt  
 
 Standard: ein Hash mit 6: `th=table header`, `td=table cell`, `tr=table row`, `ul=unordered list`, `ol=ordered list`, `li=list item`.
 

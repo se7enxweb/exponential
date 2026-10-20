@@ -2,19 +2,19 @@
 title: Cronjob indexcontent.php
 audience: developer, admin
 category: examples
-summary: Index pending content modifications in the search engine.
+summary: Indiziert anstehende Inhaltsänderungen in der Suchmaschine.
 keywords: Teil, indexcontent.php, indexcontent, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob indexcontent.php
 
-Index pending content modifications in the search engine.
+Indiziert anstehende Inhaltsänderungen in der Suchmaschine.
 
 Einstiegspunkt `cronjobs/indexcontent.php`, Code in `kernel/private/classes/cronjobs/indexcontent.php`.
 
-> The code of cronjobs/indexcontent.php, moved into a class (#207 stage 1). The file cronjobs/indexcontent.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/indexcontent.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/indexcontent.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

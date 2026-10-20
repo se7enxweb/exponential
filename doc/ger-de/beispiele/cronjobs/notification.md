@@ -2,19 +2,19 @@
 title: Cronjob notification.php
 audience: developer, admin
 category: examples
-summary: Process and dispatch pending notification events to subscribers.
+summary: Verarbeitet anstehende Benachrichtigungsereignisse und verschickt sie an die Abonnenten.
 keywords: Teil, notification.php, notification, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob notification.php
 
-Process and dispatch pending notification events to subscribers.
+Verarbeitet anstehende Benachrichtigungsereignisse und verschickt sie an die Abonnenten.
 
 Einstiegspunkt `cronjobs/notification.php`, Code in `kernel/private/classes/cronjobs/notification.php`.
 
-> The code of cronjobs/notification.php, moved into a class (#207 stage 1). The file cronjobs/notification.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/notification.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/notification.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

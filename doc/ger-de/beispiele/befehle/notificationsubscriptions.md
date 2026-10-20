@@ -2,14 +2,14 @@
 title: exp:notificationsubscriptions
 audience: developer, admin
 category: examples
-summary: List the subtree notification subscriptions per user and subtree, or remove those whose content is gone.
+summary: Listet die Teilbaum-Benachrichtigungsabonnements pro Benutzer und Teilbaum auf oder entfernt die, deren Inhalt nicht mehr existiert.
 keywords: Konsole, Befehl, exp:notificationsubscriptions, notificationsubscriptions, console, command, CLI, notificationsubscriptions.php, exp:notification:subscriptions, exp:notify:subscriptions
 type: generated
 generated: exp:help:examples
 ---
 # exp:notificationsubscriptions
 
-List the subtree notification subscriptions per user and subtree, or remove those whose content is gone.
+Listet die Teilbaum-Benachrichtigungsabonnements pro Benutzer und Teilbaum auf oder entfernt die, deren Inhalt nicht mehr existiert.
 
 Skript `bin/php/notificationsubscriptions.php`, Code in `kernel/private/classes/commands/notificationsubscriptions.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -38,14 +38,14 @@ Notification subscriptions
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--user` | erforderlich | only this user: a login or the user's content object id |
-| `-q` | erforderlich | only nodes whose name contains this |
-| `--class` | erforderlich | only nodes of this class identifier |
-| `--missing` |  | only subscriptions whose node is gone |
-| `--limit` | erforderlich | how many (default 50) |
-| `--offset` | erforderlich | skip this many |
-| `--addresses` |  | also show the user's e-mail address (hidden by default) |
-| `--dry-run` |  | remove-missing: count, remove nothing |
+| `--user` | erforderlich | nur dieser Benutzer: ein Login oder die Inhaltsobjekt-ID des Benutzers |
+| `-q` | erforderlich | nur Knoten, deren Name dies enthält |
+| `--class` | erforderlich | nur Knoten dieses Klassenbezeichners |
+| `--missing` |  | nur Abonnements, deren Knoten nicht mehr existiert |
+| `--limit` | erforderlich | wie viele (Standard 50) |
+| `--offset` | erforderlich | so viele überspringen |
+| `--addresses` |  | auch die E-Mail-Adresse des Benutzers zeigen (standardmäßig verborgen) |
+| `--dry-run` |  | remove-missing: zählen, nichts entfernen |
 | `--json` |  | list: JSON |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

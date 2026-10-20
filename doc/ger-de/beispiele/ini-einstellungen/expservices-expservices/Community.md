@@ -19,8 +19,8 @@ Bearbeiten Sie `extension/expservices/settings/expservices.ini` nie selbst: Ein 
 
 ## ForumClass
 
-> The community services (forum, topic, reply, comment, poll) work on content classes, by identifier.  
-> Change them to run the services over the classes of another site.  
+> Die Community-Dienste (Forum, Thema, Antwort, Kommentar, Umfrage) arbeiten mit Inhaltsklassen, über ihren Bezeichner.  
+> Ändern Sie sie, um die Dienste mit den Klassen einer anderen Website zu betreiben.  
 
 Standard: `forum`.
 
@@ -106,7 +106,7 @@ ReviewClass=review
 
 ## TopicStickyAttribute
 
-> The attribute that says a topic stays on top  
+> Das Attribut, das sagt, dass ein Thema oben bleibt  
 
 Standard: `sticky`.
 

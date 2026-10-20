@@ -2,19 +2,19 @@
 title: Cronjob unlock.php
 audience: developer, admin
 category: examples
-summary: Release content objects stuck in a locked editing state.
+summary: Gibt Inhaltsobjekte frei, die in einem gesperrten Bearbeitungszustand hängen.
 keywords: Teil, unlock.php, unlock, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob unlock.php
 
-Release content objects stuck in a locked editing state.
+Gibt Inhaltsobjekte frei, die in einem gesperrten Bearbeitungszustand hängen.
 
 Einstiegspunkt `cronjobs/unlock.php`, Code in `kernel/private/classes/cronjobs/unlock.php`.
 
-> The code of cronjobs/unlock.php, moved into a class (#207 stage 1). The file cronjobs/unlock.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/unlock.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/unlock.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 

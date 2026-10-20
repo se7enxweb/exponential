@@ -2,19 +2,19 @@
 title: Cronjob trashpurge.php
 audience: developer, admin
 category: examples
-summary: Permanently delete objects in the trash (all, or as old as [TrashSettings] KeepItemsForDays says).
+summary: Löscht Objekte im Papierkorb endgültig (alle oder so alte, wie [TrashSettings] KeepItemsForDays sagt).
 keywords: Teil, trashpurge.php, trashpurge, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob trashpurge.php
 
-Permanently delete objects in the trash (all, or as old as [TrashSettings] KeepItemsForDays says).
+Löscht Objekte im Papierkorb endgültig (alle oder so alte, wie [TrashSettings] KeepItemsForDays sagt).
 
 Einstiegspunkt `cronjobs/trashpurge.php`, Code in `kernel/private/classes/cronjobs/trashpurge.php`.
 
-> The code of cronjobs/trashpurge.php, moved into a class (#207 stage 1). The file cronjobs/trashpurge.php is one call to it.  
-> Guide: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
+> Der Code von cronjobs/trashpurge.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/trashpurge.php ist ein Aufruf davon.  
+> Anleitung: doc/eng-us/bc/6.0/cli\_cronjob\_view\_abstractions.md  
 
 ## Wann er läuft
 
