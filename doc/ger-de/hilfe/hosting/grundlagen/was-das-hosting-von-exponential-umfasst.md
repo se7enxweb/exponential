@@ -49,7 +49,7 @@ Es hat keinen eigenen kompilierten Code und läuft daher überall, wo ein unters
 
 | Teil | Was Exponential braucht | Seite |
 |---|---|---|
-| PHP für das Web | 8.0 oder später (8.1 oder später für Velocity), mit den erforderlichen Erweiterungen | [PHP-Versionen und Erweiterungen](php-versionen-und-erweiterungen.md) |
+| PHP für das Web | 8.0 oder später (einschließlich Velocity), mit den erforderlichen Erweiterungen | [PHP-Versionen und Erweiterungen](php-versionen-und-erweiterungen.md) |
 | PHP auf der Kommandozeile | dieselbe Version und dieselben Erweiterungen wie das Web-PHP | [PHP-Versionen und Erweiterungen](php-versionen-und-erweiterungen.md) |
 | `php.ini` | die Werte, die der Installer prüft, bemessen für Uploads und Importe | [PHP-Einstellungen für Exponential](php-einstellungen-fuer-exponential.md) |
 | Ein Webserver | Exponential Velocity (empfohlen), oder Apache, nginx oder ein anderer Server mit PHP-FPM | [Einen Webserver wählen](../server/einen-webserver-waehlen.md) |
@@ -126,7 +126,7 @@ Möglichkeiten; wählen Sie pro Tarif, und schreiben Sie die Wahl in die Beschre
 ## Checkliste
 
 - [ ] PHP 8.0 oder später für Web und Kommandozeile, in beiden dieselbe Version und dieselben Erweiterungen.
-- [ ] PHP 8.1 oder später mit `sockets`, `pcntl` und `openssl`, wo Velocity angeboten wird.
+- [ ] `sockets`, `pcntl` und `openssl` in diesem PHP, wo Velocity angeboten wird.
 - [ ] Ein Datenbankangebot aus der offiziellen Reihenfolge gewählt.
 - [ ] `var/` und `settings/` für den Benutzer der Website beschreibbar; ein Benutzer oder eine Gruppe für jeden Prozess.
 - [ ] Cron verfügbar, um `runcronjobs.php` auszuführen.

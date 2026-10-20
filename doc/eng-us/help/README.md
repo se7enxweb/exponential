@@ -22,6 +22,7 @@ allowed to use is shown grayed out or not at all.
 
 | Page | What it helps you do |
 |---|---|
+| [Velocity is part of Exponential 6.0.15](velocity-is-part-of-exponential-6-0-15.md) | Know what changed when the Velocity Internet / Web Application Server became part of Exponential: a turning point that makes Exponential one working stack (server, RAD platform, CMS, digital experience and e-commerce) |
 | [Getting started](getting-started.md) | Sign in, take your first steps, and know where to find help |
 | [A tour of the administration](admin-tour.md) | Know the header, the tabs, the side columns and the dashboard |
 | [Logging into the Editor](logging-into-the-editor.md) | Sign in to the Editor, the interface for writing and publishing |

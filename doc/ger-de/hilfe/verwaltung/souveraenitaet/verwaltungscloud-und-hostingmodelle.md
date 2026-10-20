@@ -26,7 +26,7 @@ Projekts ([Ein Hostingmodell wählen](../../hosting/modelle/ein-hosting-modell-w
 
 Die Hilfe zum Hosting verwendet vier Stufen: 1 hier getestet, 2 bekanntermaßen funktionsfähig, 3 voraussichtlich
 funktionsfähig, 4 heute nicht möglich. Ein Eintrag der Stufe 3 ist „eine begründete Erwartung, kein Testergebnis“
-([Die vier Stufen](../../betriebssystemunterstuetzung.md#the-four-tiers)). Für eine öffentliche Stelle heißt ein Modell der Stufe 3:
+([Die vier Stufen](../../betriebssystemunterstuetzung.md#die-vier-stufen)). Für eine öffentliche Stelle heißt ein Modell der Stufe 3:
 Planen Sie eine Testinstallation und eine Abnahmeprüfung, bevor Sie sich festlegen.
 
 ## Die Modelle

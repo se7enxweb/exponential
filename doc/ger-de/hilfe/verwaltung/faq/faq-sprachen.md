@@ -36,7 +36,7 @@ ihre eigene Adresse und eigene Designeinstellungen haben ([Inhaltssprachen](../.
 Jede Sprache mit einer Locale. Das Projekt zählt 268 Locale-Dateien, 40 davon mit Schreibrichtung von rechts nach links
 ([Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit)). Mehr
 als 30 Sprachen auf einer Website brauchen ein 64-Bit-PHP, weil die Sprachen eines Objekts als Bits einer einzigen
-Ganzzahl gespeichert werden ([2. Anforderungen](../../../installation/02-voraussetzungen.md#versions)).
+Ganzzahl gespeichert werden ([2. Anforderungen](../../../installation/02-voraussetzungen.md#versionen)).
 
 ## Werden Sprachen mit Schreibrichtung von rechts nach links unterstützt?
 

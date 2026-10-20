@@ -5,8 +5,8 @@ Dieses Kapitel bringt den Code von Exponential auf Ihren Rechner. Es gibt drei W
 empfohlene Weg für alle, die Websites bauen**), `composer create-project` (der schnellste Weg zu einer Website, die
 Sie nur betreiben) und `composer require` in ein leeres Verzeichnis (wenn die Installation ein eigenes Projekt sein
 soll). Alle drei führen zu denselben Dateien. Das Kapitel erklärt, welche Version Sie auf welchem Weg erhalten und wie
-Sie eine auswählen, wie die Extensions als Composer-Pakete ankommen, wie Sie das optionale Paket Exponential Velocity
-hinzufügen und was unter PHP 8.0 bis 8.3 anders ist, und schließt mit einem Rundgang durch jeden Eintrag der obersten
+Sie eine auswählen, wie die Extensions als Composer-Pakete ankommen, wie das Paket Exponential Velocity
+ankommt und was unter PHP 8.0 bis 8.3 anders ist, und schließt mit einem Rundgang durch jeden Eintrag der obersten
 Ebene des Installationsverzeichnisses und den Rechten, die Sie vor der Installation setzen müssen.
 
 [Inhalt](README.md) · Zurück: [2. Voraussetzungen](02-voraussetzungen.md) · Weiter: [4. Eine Installationsmethode wählen](04-installationsweg-waehlen.md)
@@ -272,19 +272,20 @@ danach wieder her.
 Auf einem Produktivserver ist `--no-dev` unter jeder PHP-Version richtig: Die Testwerkzeuge werden zum Betrieb einer
 Website nicht gebraucht.
 
-## 3.4 Das optionale Velocity-Paket
+## 3.4 Das Velocity-Paket
 
 Exponential Velocity, der empfohlene Anwendungsserver, ist ein eigenes Paket,
 [`se7enxweb/exponential-velocity`](https://packagist.org/packages/se7enxweb/exponential-velocity). `composer.json`
-schlägt es vor, statt es zu verlangen, denn es braucht PHP 8.1 (`"php": ">=8.1"`) und die Erweiterung `sockets`
-(`"ext-sockets": "*"`), während der Kernel unter 8.0 läuft. Fügen Sie es unter PHP 8.1 oder neuer mit der Version
-hinzu, die der Vorschlag nennt:
+verlangt es als `~0.0.4.54`, sodass `composer install` es installiert. Ab diesem Release läuft die Engine unter PHP
+8.0 bis 8.5 (`"php": ">=8.0"`, dieselbe älteste Version wie beim Kernel) und braucht die Erweiterung `sockets`
+(`"ext-sockets": "*"`). Bis 0.0.4.54 brauchte die Engine PHP 8.1, und `composer.json` schlug sie nur vor; eine
+Installation aus dieser Zeit fügt sie so hinzu:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.50
+composer require se7enxweb/exponential-velocity:~0.0.4.54
 ```
 
-`~0.0.4.50` akzeptiert jede spätere Release `0.0.4.x` (`>=0.0.4.50 <0.0.5.0`), sodass Composer die neueste davon
+`~0.0.4.54` akzeptiert jede spätere Release `0.0.4.x` (`>=0.0.4.54 <0.0.5.0`), sodass Composer die neueste davon
 installiert. Die letzte Stelle einer Velocity-Version zählt über 9 hinaus weiter (`0.0.4.9`, `0.0.4.10`, ...), daher
 findet eine Versionssortierung die neueste, keine Namenssortierung.
 

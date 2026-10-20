@@ -45,7 +45,7 @@ eigenen an ([Hosting-Partner](../../partner/hosting-partner.md)).
 
 PHP 8.0 oder später (auch mit Velocity; 8.5 ist die neueste getestete Version), Composer 2, eine unterstützte Datenbank
 oder SQLite sowie GD oder ImageMagick; ein Webserver ist mit Velocity optional
-([2. Anforderungen](../../../installation/02-voraussetzungen.md#21-the-checklist),
+([2. Anforderungen](../../../installation/02-voraussetzungen.md#21-die-checkliste),
 [Anforderungen auf einen Blick](../../hosting/grundlagen/anforderungen-auf-einen-blick.md)). Die Bemessung behandelt
 [Arbeitsspeicher, CPU und Festplatte bemessen](../../hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md).
 

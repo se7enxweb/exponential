@@ -16,7 +16,7 @@ Exponential bauen oder ein bestehendes prüfen. Jeder Abschnitt nennt das Kapite
 
 Quelle: `doc/eng-us/install/02-requirements.md`.
 
-- [ ] Eine unterstützte PHP-Version: 8.0 bis 8.5 für die Linie 6.0.15 (Velocity braucht 8.1 oder später)
+- [ ] Eine unterstützte PHP-Version: 8.0 bis 8.5 für die Linie 6.0.15 (auch für Velocity, ab seinem Release 0.0.4.54)
 - [ ] 64-Bit-Build von PHP
 - [ ] Benötigte Erweiterungen sowohl im Web-PHP als auch im CLI-PHP vorhanden: `dom`, `simplexml`, `xsl`, `mbstring`,
       `iconv`, `intl`, `zlib` und mindestens eine Datenbankerweiterung
