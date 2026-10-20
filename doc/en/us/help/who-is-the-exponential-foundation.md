@@ -377,13 +377,13 @@ clones with their full history" (README, "Installation"; [Develop with Git](deve
   them and never rewritten" ([CI](../bc/6.0/ci.md), commit messages). What needs fixing is fixed in commits on top.
 - **Contributions stay free.** "any modifications made to the project are also released under the same GPLv2 or
   later license" ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
-- **Copyright and control of contributions (CLA).** 7x and the Exponential Foundation require a signed Contributor
+- **Copyright assignment (CLA).** 7x and the Exponential Foundation require a signed Contributor
   Licensing Agreement for every code contribution to the core kernel, in any form, before it is merged. By signing
-  and submitting, the contributor gives up control over the contribution: 7x and the recipients of its software may
-  use, change, sublicense, relicense and distribute it in any way, perpetually and irrevocably, also in commercial
-  products, without asking or paying the contributor; formally the CLA is a license (§4). Users' own
+  and submitting, the contributor assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it: 7x may use, change, relicense and distribute
+  it in any way, also commercially and under other licenses, without asking or paying the contributor, who cannot
+  withdraw it or set conditions on it. Users' own
   custom extensions are not affected
-  ([Copyright and control of your contribution (CLA)](../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)).
+  ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)).
 - **Who contributes.** Since December 2023 pull requests have come from se7enxweb, [ekked](https://github.com/ekked),
   [fwoldt](https://github.com/fwoldt), [netgen](https://github.com/netgen), brookinsconsulting,
   [mugoweb](https://github.com/mugoweb) and others (`git log --grep="Merge pull request"`). Before that, hundreds of

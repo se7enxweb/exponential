@@ -5,12 +5,12 @@
 ## Checklist
 
 - [ ] **I have signed the 7x Contributor Licensing Agreement (CLA)**, or my employer has, and it has been sent to 7x.
-      **I understand that by signing and submitting, I give up control over this contribution:** 7x and the
-      recipients of its software may use, change, sublicense, relicense and distribute it in any way, perpetually and
-      irrevocably, without asking or paying me; formally the CLA is a license (§4).
+      **I understand that by signing and submitting, I assign the copyright in this contribution to 7x, which becomes its owner, and give up control over it:** 7x may
+      use, change, relicense and distribute it in any way, also commercially and under other licenses, without asking
+      or paying me, and I cannot withdraw it or set conditions on it.
       A contribution to the core kernel (this repository, se7enxweb/exponential) is merged only once the signed CLA
       has been received. You sign once for all future contributions. How to sign:
-      [Copyright and control of your contribution (CLA)](../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla) and the
+      [Copyright assignment (CLA)](../CONTRIBUTING.md#copyright-assignment-cla) and the
       [CLA page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla).
       Your own custom extensions, site packages and themes are not affected.
 - [ ] I am prepared for many review rounds: 7x reviews a pull request in many more rounds than usual, sometimes

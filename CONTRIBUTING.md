@@ -2,18 +2,22 @@
 
 Thank you for considering contributing to Exponential CMS! We appreciate the time and effort you invest in making this project better.
 
-## Copyright and control of your contribution (CLA)
+<a name="copyright-and-control-of-your-contribution-cla"></a>
 
-> **By signing the CLA and submitting a contribution, you give up control over that contribution.**
+## Copyright assignment (CLA)
+
+> **By signing the CLA and submitting a contribution to the core kernel, you assign (transfer) the copyright in that
+> contribution to 7x. 7x becomes the copyright owner.**
 >
-> The license you grant to 7x is **perpetual, worldwide, irrevocable and royalty-free, and covers patents too**.
-> 7x and the recipients of its software may use, change, sublicense, relicense and distribute your contribution in
-> any way, including under other licenses and in commercial products, **without asking you and without paying
-> you**. You **cannot withdraw it, restrict it, or set conditions on it later**. In practice, control of the
-> contributed code passes to 7x and the project. (Formally the CLA is a license, not a transfer: §4 of the
-> [agreement](https://share.se7enx.com/content/download/118895/572198/file/7x%20Contributor%20Licensing%20Agreement%202025v1.0.1.pdf).)
+> You **give up control**: 7x may use, change, relicense and distribute your contribution in any way, including
+> commercially and under other licenses, **without asking you and without paying you**. You **cannot withdraw it or
+> set conditions on it**.
+>
+> **Your own custom extensions are not affected.**
 
-Read the whole agreement before you sign it; this summary does not replace it and is not legal advice.
+The agreement form on the CLA page is being updated to this assignment; sign the form currently published there.
+
+Read the agreement before you sign it; this summary does not replace it and is not legal advice.
 
 **Who requires it, and for what.** 7x and the Exponential Foundation require a signed Contributor Licensing
 Agreement (CLA) for every code contribution to the core kernel of Exponential, before that contribution can be
@@ -68,16 +72,13 @@ yourself is not.
 
 ### FAQ
 
-**Do I give up control of my code?** Yes. Once you sign the CLA and submit a contribution, you give up control of it:
-the license to 7x is perpetual and irrevocable, and 7x may use, change, relicense and distribute your contribution as
-it decides, without asking or paying you. You cannot withdraw it or set conditions. (Formally the CLA is a license,
-not a transfer: §4.)
+**Do I give away my copyright?** Yes. You assign it to 7x. Once you sign the CLA and submit a contribution, 7x owns
+the copyright in it and may use, change, relicense and distribute it as it decides, without asking or paying you.
 
-**Can I take my contribution back?** No. The license is "perpetual" and "irrevocable" (§4); you cannot withdraw it,
-restrict it, or add conditions later.
+**Can I take my contribution back?** No. You cannot withdraw it or set conditions on it.
 
-**Can 7x relicense my contribution?** Yes. The license lets 7x "sub-license, and distribute Your Contributions,
-including derivative works", so 7x may distribute it under other licenses and in commercial products.
+**Can 7x relicense my contribution?** Yes. As the copyright owner, 7x may distribute it under other licenses and in
+commercial products.
 
 **Why is it needed?** "Before we can consider the contributions you provide to us, we must agree on what rights you
 are offering to us" (preamble of the agreement), and "We cannot accept your contributions unless we have a signed
@@ -97,7 +98,7 @@ submit code back to the kernel, or hand code to 7x to include in the project.
 you sign again only for a new legal entity.
 
 **Does the CLA replace the GPL?** No. Your contribution is released under the GPL like the rest of Exponential (see
-[Licensing](#licensing)); the CLA is the additional permission that lets 7x accept and distribute it.
+[Licensing](#licensing)); for the kernel, the CLA additionally assigns its copyright to 7x.
 
 ## Licensing of code improvements to Exponential
 Exponential is licensed under the GPLv2 or later license, commonly known as the GNU General Public License, version 2 or any later version, grants users the freedom to modify and distribute software. When it comes to code improvements, contributors must ensure that any modifications made to the project are also released under the same GPLv2 or later license. This means that enhancements, bug fixes, or any changes to the codebase must be open-sourced, allowing others to benefit from and build upon these improvements. The "or later" clause allows the project to upgrade to future versions of the GPL, providing flexibility and ensuring alignment with the principles of free software. It's essential for contributors to understand and comply with these licensing requirements to maintain the open nature of the project.
@@ -163,7 +164,7 @@ git checkout -b feature/your-feature
 git push origin feature/your-feature
 ```
 
-5. Make sure your signed CLA is on file with 7x ([Copyright and control of your contribution (CLA)](#copyright-and-control-of-your-contribution-cla)).
+5. Make sure your signed CLA is on file with 7x ([Copyright assignment (CLA)](#copyright-assignment-cla)).
 
 6. Submit a pull request to the main repository and tick the CLA checkbox of the pull request template.
 
@@ -193,7 +194,7 @@ Feel free to open an issue for bug reports, feature requests, or general discuss
 
 ## Licensing
 
-By contributing, you agree that your contributions will be licensed under the [GNU General Public License, version 2.0 or later](LICENSE). Make sure that your contributions comply with this license. In addition, a contribution to the core kernel needs your signed Contributor Licensing Agreement ([Copyright and control of your contribution (CLA)](#copyright-and-control-of-your-contribution-cla)).
+By contributing, you agree that your contributions will be licensed under the [GNU General Public License, version 2.0 or later](LICENSE). Make sure that your contributions comply with this license. In addition, a contribution to the core kernel needs your signed Contributor Licensing Agreement ([Copyright assignment (CLA)](#copyright-assignment-cla)).
 
 Thank you for contributing to Exponential CMS!
 

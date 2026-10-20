@@ -51,14 +51,12 @@ Kernel fixes go to the project as pull requests; the workflow from fork to merge
 and the CI checks are in [Contributing code back](../../partners/contributing-code-back.md). Contributions to the
 kernel are released under the same license, GPL v2 or later.
 
-**Copyright and control of your contribution (CLA).** Before a kernel contribution can be merged, 7x and the
+**Copyright assignment (CLA).** Before a kernel contribution can be merged, 7x and the
 Exponential Foundation require a signed Contributor Licensing Agreement from its copyright owner. **By signing and
-submitting, the body gives up control over the contribution:** 7x and the recipients of its software receive a
-perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change, sublicense, relicense and
-distribute it in any way, also under other licenses and in commercial products, without asking or paying the body,
-which cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). Your internal approvals must accept this, and settle who may sign:
+submitting, the body assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying the body,
+which cannot withdraw it or set conditions on it. Your internal approvals must accept this, and settle who may sign:
 when the body has the rights to its staff's work, the body signs or gives its permission (CLA, section 6). Extensions the body builds and keeps for its own sites are not affected. See
-[Copyright and control of your contribution (CLA)](../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
+[Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ## Translations and documentation
 

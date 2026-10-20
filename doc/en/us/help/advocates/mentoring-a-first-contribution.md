@@ -68,11 +68,9 @@ For the kernel, read CONTRIBUTING.md together: the commit hook (`make hooks`) an
 (`make manifest-fix`) ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 Tell them early that a code contribution to the kernel is merged only once they have signed the Contributor
 Licensing Agreement that 7x and the Exponential Foundation require, and explain plainly what it means: **by signing
-and submitting, they give up control over the contribution.** 7x and the recipients of its software receive a
-perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change, sublicense, relicense and
-distribute it in any way, also under other licenses and in commercial products, without asking or paying them, and
-they cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4)
-([Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)). Their own extensions are
+and submitting, they assign the copyright in the contribution to 7x, which becomes its owner, and give up control over it.** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or paying them, and
+they cannot withdraw it or set conditions on it
+([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Their own extensions are
 not affected.
 
 ## The pull request

@@ -41,11 +41,9 @@ top, so a contribution is not lost to a long review; that is no reason to send l
 4. Open a pull request ([Pull requests to someone else's theme](pull-request-etiquette.md)). A change to
    Exponential itself, including the kernel's templates and designs, is merged only once you have signed the
    Contributor Licensing Agreement that 7x and the Exponential Foundation require for every kernel contribution.
-   **By signing and submitting, you give up control over your contribution:** 7x and the recipients of its software
-   receive a perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change, sublicense,
-   relicense and distribute it in any way, also under other licenses and in commercial products, without asking or
-   paying you, and you cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4)
-   ([Copyright and control of your contribution (CLA)](../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)); your own themes are
+   **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without asking or
+   paying you, and you cannot withdraw it or set conditions on it
+   ([Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla)); your own themes are
    not affected.
 5. After it is merged, drop your private copy of the change at your next upgrade.
 

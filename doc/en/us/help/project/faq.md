@@ -177,12 +177,10 @@ documentation, accessibility advice and testing. See [Contribute to the project]
 
 For the core kernel, yes. 7x and the Exponential Foundation require a signed Contributor Licensing Agreement (CLA)
 for every code contribution to the kernel, whether it is sent as a pull request, a patch, an issue or by mail, before
-it can be merged. **By signing and submitting, you give up control over your contribution:** 7x and the recipients of
-its software receive a perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change,
-sublicense, relicense and distribute it in any way, also under other licenses and in commercial products, without
-asking or paying you, and you cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). You sign once for all future contributions. Your
+it can be merged. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial products, without
+asking or paying you, and you cannot withdraw it or set conditions on it. You sign once for all future contributions. Your
 own custom extensions, site packages and themes are not affected. See
-[Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
 
 ### Is it really free?
 

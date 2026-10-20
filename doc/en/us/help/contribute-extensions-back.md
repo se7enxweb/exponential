@@ -204,17 +204,15 @@ Now anyone can install it with `composer require yourvendor/myextension`.
   history and your copyright kept. Code that goes into the project's own repositories must be under the same license
   as Exponential, GPL version 2 or later (not "GPL 2 only" or "GPL 3 only"), as the
   [licensing FAQ](https://exponential.earth/faq/licensing) explains. For the kernel, contributors also give up control of their code under the CLA (below).
-- **Copyright and control of your contribution (CLA).** 7x and the Exponential Foundation merge a code
+- **Copyright assignment (CLA).** 7x and the Exponential Foundation merge a code
   contribution to the **core kernel**, `se7enxweb/exponential`, sent in any form, only after you have signed the
-  Contributor Licensing Agreement. **By signing and submitting, you give up control over your contribution:** 7x and
-  the recipients of its software receive a perpetual, worldwide, irrevocable, royalty-free license, patents included,
-  to use, change, sublicense, relicense and distribute it in any way, also under other licenses and in commercial
-  products, without asking or paying you, and you cannot withdraw or restrict it later. Formally the CLA is a license, not a transfer (§4). Publishing your own extension in your own repository
+  Contributor Licensing Agreement. **By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it:** 7x may use, change, relicense and distribute it in any way, also under other licenses and in commercial
+  products, without asking or paying you, and you cannot withdraw it or set conditions on it. Publishing your own extension in your own repository
   is not affected: the CLA page says "if you have written a contribution and want to make it available on GitHub
   [...] you do not need to sign the CLA". The page does list "complete/incomplete extensions" among the code that
   needs a signed CLA "which you want 7x to include", so an extension handed over to 7x for inclusion is covered by
   it; the page names no individual repositories. See
-  [Copyright and control of your contribution (CLA)](../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
+  [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla).
 - **Exponential Projects**, [projects.exponential.earth](https://projects.exponential.earth/): the project forge
   that lists extensions with their news, downloads and source links
   ([Exponential Projects](extension-development/part-1-from-user-to-developer/projects-exponential-earth.md)).

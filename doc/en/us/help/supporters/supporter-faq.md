@@ -27,10 +27,9 @@ Code: GPL v2 or later (CONTRIBUTING.md). Documentation: GFDL 1.3 or later.
 
 **Do I have to sign anything, and what do I give up?**
 For code contributions to the core kernel, yes: a Contributor Licensing Agreement (CLA), once, before the first
-merge. By signing and submitting, you give up control over your contribution: 7x may use, change, sublicense,
-relicense and distribute it in any way, perpetually and irrevocably, without asking or paying you, and you cannot
-take it back. Formally the CLA is a license (§4). Your own extensions are not affected.
-[Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)
+merge. By signing and submitting, you assign the copyright in your contribution to 7x, which becomes its owner, and give up control over it: 7x may use, change, relicense
+and distribute it in any way, without asking or paying you, and you cannot take it back. Your own extensions are not affected.
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)
 
 **Where do I report a security problem?**
 Privately to security@se7enx.com, never in public. [Testing and reporting bugs](testing-and-reporting-bugs.md)
