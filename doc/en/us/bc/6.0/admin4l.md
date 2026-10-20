@@ -9,7 +9,7 @@ for how to use it.
 
 | | |
 |---|---|
-| What changed | New design `design/admin4l` (page layout, zone template, 20 block templates). New admin layout types `admin_3col`, `admin_2col`, `admin_full` (`Group=admin`), block definitions `admin_*` in `[AdminBlockSettings]`, rule targets `module` and `module_view`, `[AdminLayoutSettings]` in `explayouts.ini`. New fetch functions `resolve_admin_layout`, `admin_layout_cache_key`, `admin_layouts_enabled` in the `explayouts` module. |
+| What changed | New design `design/admin4l` (page layout, zone template, 23 block templates). New admin layout types `admin_3col`, `admin_2col`, `admin_full` (`Group=admin`), block definitions `admin_*` in `[AdminBlockSettings]`, rule targets `module` and `module_view`, `[AdminLayoutSettings]` in `explayouts.ini`. New fetch functions `resolve_admin_layout`, `admin_layout_cache_key`, `admin_layouts_enabled` in the `explayouts` module. |
 | Who is affected | Admin siteaccesses with `SiteDesign=admin4l`. Sites that override `pagelayout.tpl` or `page_*.tpl` in `admin4` get the override only when no admin layout resolves. Editors of layouts see a `group` parameter in the editor API (default `site`). |
 | How to check | `php vendor/bin/phpunit --testsuite explayouts_admin`; load the admin pages and compare with `SiteDesign=admin4`. |
 | How to fix | `[AdminLayoutSettings] Enabled=disabled` in the admin siteaccess's `explayouts.ini.append.php` returns every page to plain admin4 (clear the ini and template-block caches). |
@@ -23,6 +23,14 @@ setup, user and shop pages. The differences that exist:
 - A block that errors partway keeps its partial output; only an empty zone falls back to admin4's template.
 - A cache-block keyed by the layout: a design that adds its own cache block around a zone must include the admin
   generation (`fetch( 'explayouts', 'admin_layout_cache_key', hash( 'module', ..., 'view', ... ) )`) in its keys.
+- The header's Tab order is admin4's; on a phone the open menu has no user-actions row (`a4_phone_user`), the header's
+  user menu stays instead.
+- The block `admin_theme_switch` draws the site link, the colour mode button, the help and the user menu, and
+  `admin_ui_switch` is the toolbar tool for the interface choices. Names are kept, as renaming would break stored
+  layouts.
+- `main_top` and `main_bottom` are drawn only with the `#maincolumn` frame; `admin_full` no longer declares them;
+  `admin_popup_menu`, `admin_debug_area` and `admin_overlay` are drawn only from the footer zone; only `admin_*`
+  definitions are drawn.
 - The editor API lists site layouts by default; ask for `?group=admin` or `all` to see the admin ones.
 
 ## Separation from the site
@@ -35,6 +43,14 @@ Site layouts never reach the admin and admin layouts never reach the site. The s
 The stock admin layouts and rules are created on this installation by an idempotent seed. They are **not** in the
 installer's seed data yet: a fresh install has the layout types, blocks and settings, and the page runs as plain admin4
 (nothing resolves) until the layouts are seeded.
+
+## Installed seed and `admin_full`
+
+The seed fragment (`share/fragments/admin_layouts_db_data.dba` of the layouts package) no longer creates the zones
+`main_top` and `main_bottom` of the layout `admin_full`, nor the `admin_breadcrumb` block that sat in `main_top`,
+because the page never draws them there. An installation that was seeded earlier keeps these two zones and the block as
+orphans in its database. They are harmless: nothing draws them and they can stay or be deleted in the layout editor. No
+migration is provided.
 
 ## Styling
 

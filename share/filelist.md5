@@ -3543,7 +3543,7 @@ cdbe0fdc9c9011438bf808f4842b0982  doc/en/us/bc/5.90/relation_indexing.md
 62b37eb9c124b9e5d777e08fec840283  doc/en/us/bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md
 d95203ddf57747c5dcb15b6923bd0356  doc/en/us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
 c47236e5f90f4b96f65f32b75c3a2ec3  doc/en/us/bc/6.0/admin4-styling.md
-e101242c403b860ecda6eb961d8f7659  doc/en/us/bc/6.0/admin4l.md
+a98f04025a77698f04dcc7f7114859a2  doc/en/us/bc/6.0/admin4l.md
 f0b57cd68a5b41cc14ca22727186740c  doc/en/us/bc/6.0/api-keys.md
 04a8047a63b17b583bee880327dc4c51  doc/en/us/bc/6.0/audit.md
 135fd8831f5dd0b8dbba0ba6b7b04166  doc/en/us/bc/6.0/backend_ezjscore_services.md
@@ -6290,7 +6290,7 @@ ff49988dfce36563bf88a79bcdcf6f66  doc/en/us/features/6.0/admin-list-paging.md
 479cad3a1a815006e9ab417b513720ab  doc/en/us/features/6.0/admin3-responsive-admin.md
 ecd70e701eefd3e61d95928de53cb168  doc/en/us/features/6.0/admin3-sidebar-width-and-font-size.md
 72aa123bc6a84dcdb02ced4502913254  doc/en/us/features/6.0/admin4-design.md
-71bb2f64a4847b2614637164a40765b6  doc/en/us/features/6.0/admin4l.md
+40d30c2e74d22eca952f9af75b72abcc  doc/en/us/features/6.0/admin4l.md
 398edccac784658463bef52758453331  doc/en/us/features/6.0/adminneo-database-manager.md
 b13a1535e44d075df911443ec7be10ad  doc/en/us/features/6.0/audit-trail.md
 9e5f2bdaedf2d4198638278c32ed1790  doc/en/us/features/6.0/benchmark.md
