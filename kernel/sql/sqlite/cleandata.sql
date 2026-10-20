@@ -26872,6 +26872,19 @@ INSERT INTO ezpolicy (
   0,
   3
 );
+INSERT INTO ezpolicy (
+  function_name,
+  id,
+  module_name,
+  original_id,
+  role_id
+) VALUES (
+  'register',
+  336,
+  'user',
+  0,
+  1
+);
 
 INSERT INTO ezpolicy_limitation (
   id,

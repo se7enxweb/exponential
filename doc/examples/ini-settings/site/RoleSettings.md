@@ -221,9 +221,9 @@ PolicyOmitList[]=mailpreferences/export
 > Entries taken out of PolicyOmitList\[\] after every settings file is merged, so a site can  
 > close one entry without resetting the list (a reset would also drop the entries the active  
 > extensions add). New installations write PolicyOmitListExclude\[\]=user/register in  
-> settings/override/site.ini.append.php: registering then needs the user/register policy  
-> (give it to the Anonymous role for open registration) and the login pages show the  
-> "register" link only to a user who has it. An upgraded site keeps user/register open;  
+> settings/override/site.ini.append.php: registering then needs the user/register policy,  
+> which their Anonymous role has (remove it there to close registration), and the login  
+> pages show the "register" link only to a user who has it. An upgraded site keeps user/register open;  
 > to close it, add the line above to settings/override/site.ini.append.php.  
 
 Default: an empty list.

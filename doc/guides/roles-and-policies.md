@@ -174,7 +174,10 @@ Two permissions were open to everyone by default and can now be given through ro
 Mugo Web's LoveStack distribution (commits `98854ab935` and `aa307a7ff3`), with thanks.
 
 **Registering a new account (`user/register`).** On a new installation registering needs the `user/register`
-policy. For open registration, add the policy *User / Register* to the **Anonymous** role. The login pages of the
+policy, and the base data gives it to the **Anonymous** role, so visitors can register. To close registration,
+remove the policy *User / Register* from the Anonymous role; to open it on a site that closed it, add it again. The
+other steps of registering (`user/activate`, `user/success`, `user/forgotpassword`) and signing in stay in
+`PolicyOmitList[]`, and the Anonymous role also has *User / Login* for the public siteaccesses. The login pages of the
 administration, the standard design, the media and the starter designs show *Register new account*, *Not
 registered?* or *Sign Up* only to a visitor who may open `user/register`, so a site without open registration shows
 no dead link.

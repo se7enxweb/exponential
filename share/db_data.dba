@@ -15996,6 +15996,14 @@ keywords=exponential, community, content management, open source, cms, platforms
         3 => '0',
         4 => '1',
       ),
+      7 =>
+      array (
+        0 => 'register',
+        1 => '336',
+        2 => 'user',
+        3 => '0',
+        4 => '1',
+      ),
     ),
   ),
   'ezpolicy_limitation' => 

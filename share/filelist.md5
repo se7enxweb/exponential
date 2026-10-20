@@ -3305,7 +3305,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 d7bfaf80f8066a99e0d74160ffcf8f20  doc/changelogs/6.0/6.0.12.md
 09ae95fd34fca4003ad48cb5fb98e168  doc/changelogs/6.0/6.0.13.md
 32049118b749decc1e1d0493b6bebcf8  doc/changelogs/6.0/6.0.14.md
-330c182c85c308880107b6116d7b8ba1  doc/changelogs/6.0/6.0.15.md
+dc9d295e455165f080d45bc9c883518a  doc/changelogs/6.0/6.0.15.md
 4f263894a87973f99e99761658ca0d20  doc/changelogs/6.0/6.0.2.md
 f6a43e9644b79e39fb5c671954aaecd8  doc/changelogs/6.0/6.0.3.md
 a9409f4e49a880bc3f66229f097d00b6  doc/changelogs/6.0/6.0.4.md
@@ -4880,7 +4880,7 @@ db568a7c6a790ae47b375a22aff291ab  doc/examples/ini-settings/site/PortAccessSetti
 08b294507b813f03bbb995305d430031  doc/examples/ini-settings/site/RSSSettings.md
 2b2b4808ddb2c376e2a4a165f1475bbf  doc/examples/ini-settings/site/RegionalSettings.md
 f28588e05ec0e35f21c7961596721b67  doc/examples/ini-settings/site/RequestLogSettings.md
-d617a425a008491a0770391ad19ff704  doc/examples/ini-settings/site/RoleSettings.md
+e261e7370603eca4cd761cc833ca847a  doc/examples/ini-settings/site/RoleSettings.md
 4e0ce0f39bfcf85f70e8a68368437317  doc/examples/ini-settings/site/RunnableSettings.md
 17b3101a03a28d58dd2765c47d91e684  doc/examples/ini-settings/site/SSLZoneSettings.md
 18308ceff84326f966bf76d2a0ac90a1  doc/examples/ini-settings/site/SearchSettings.md
@@ -6279,7 +6279,7 @@ f5c7d03721608109d841867836f390c9  doc/guides/pdf-exports.md
 c777f0fd24777ff82ffc1f07226a62db  doc/guides/preloading-caches.md
 b00b8038efaabe8cee8a586264699283  doc/guides/remote-services-and-apps.md
 d2180bc478399514471afe5c36506a63  doc/guides/rest-api-v1-and-v2.md
-a0a831ac75f0f2a8fcd58c871d580d37  doc/guides/roles-and-policies.md
+cf4c500e79686521742e761abb62b3a4  doc/guides/roles-and-policies.md
 bb8d6835bd7b4751fd30540ba5bdf4c8  doc/guides/rss-feeds.md
 144c47d5a32d4cc3d1014f1b72188bcd  doc/guides/sections.md
 e2bc16bdc1bc1cc3ed9e90696766daf2  doc/guides/security-and-audit.md
@@ -13219,7 +13219,7 @@ a5a61099e4c1ed8b3d4cc85ffb11a5eb  kernel/shop/updatebasket.php
 11c090806e9636c16955a873ba5ae028  kernel/shop/vatrules.php
 a04dffad4e657eed3e6e013d3f0c0374  kernel/shop/vattype.php
 ef06c1c17f9c7019e9f5ce249bc232ee  kernel/shop/wishlist.php
-7774b51415b0e52a39762510cfb8080a  kernel/sql/common/cleandata.sql
+126d09e3a938d9fdb026d498f11d23e6  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
@@ -13227,7 +13227,7 @@ dd46ede74b0eb5e4c6fb55fde80f414a  kernel/sql/mysql/kernel_schema.sql
 c82dc0ebec07c22d5cee916faa0967ce  kernel/sql/postgresql/kernel_schema.sql
 f2ad2f8e1711872bbc2d871d7cc6c76b  kernel/sql/postgresql/sequence.sql.template
 ce03b8330af52b5e601c91208fee1ffd  kernel/sql/postgresql/setval.sql
-fe87abb371fc451f0a0c3ec4b1089a88  kernel/sql/sqlite/cleandata.sql
+79e9087652d75226ede7fbff300f7a00  kernel/sql/sqlite/cleandata.sql
 9f43f24dada2d8918b9663e43af6d2b0  kernel/sql/sqlite/schema.sql
 1bb603e51ab28ac0367fb23c71c2648e  kernel/state/assign.php
 58b38e2e4ae8744e1d4418ed6659bc18  kernel/state/edit.php
@@ -13580,7 +13580,7 @@ ad97f94775c35151cdab893306a21b6e  settings/rest.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-6ffef8877e2d68ed1b81f3ec8a574cdd  settings/site.ini
+f280348f2986b826841c4b9ee54e9b4e  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -13652,7 +13652,7 @@ f18e6605875590291f90885a0343ee7e  share/codepages/windows-1255
 eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
-e5f6b5863776b2f519692dd560cdc983  share/db_data.dba
+3d7a95e2a6a5e29acf0bf607c1b0841a  share/db_data.dba
 2f401f8da6b03bb3f6badf20964a4e87  share/db_schema.dba
 2239955eb5ad31e0f5861a038dba021f  share/help/seed-glossary.json
 44106c7d89ded6e0d66c7085e5d0ce0e  share/help/seed-topics.json
@@ -14992,6 +14992,7 @@ be689765e8454420d901b85cbf6886a9  tests/tests/kernel/classes/eZWorkflowProcessLi
 19ff7e4f706df3370f089e4895b31527  tests/tests/kernel/classes/engineindex/expPharCheckTest.php
 d5d338c22e6d93889bfb8f6e8f13f061  tests/tests/kernel/classes/expAdminListsRedesignTest.php
 4d598dae7c7b0975d1f25362cbd5f73a  tests/tests/kernel/classes/expAdminPaginationTest.php
+b5ef016fd1307be3c3a917084ed5e847  tests/tests/kernel/classes/expBaseDataSeedTest.php
 eda5eece6bd10760282f3d48c5394688  tests/tests/kernel/classes/expCacheCatalogueTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
 d2e32a52cf0830e74fa5377be864c38c  tests/tests/kernel/classes/expContentDraftListTest.php
