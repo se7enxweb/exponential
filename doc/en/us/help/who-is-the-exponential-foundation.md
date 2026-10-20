@@ -377,6 +377,10 @@ clones with their full history" (README, "Installation"; [Develop with Git](deve
   them and never rewritten" ([CI](../bc/6.0/ci.md), commit messages). What needs fixing is fixed in commits on top.
 - **Contributions stay free.** "any modifications made to the project are also released under the same GPLv2 or
   later license" ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
+- **Kernel contributions need a CLA.** 7x and the Exponential Foundation require a signed Contributor Licensing
+  Agreement for every code contribution to the core kernel, in any form, before it is merged. The contributor keeps
+  the copyright and grants 7x a non-exclusive license; users' own custom extensions are not affected
+  ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)).
 - **Who contributes.** Since December 2023 pull requests have come from se7enxweb, [ekked](https://github.com/ekked),
   [fwoldt](https://github.com/fwoldt), [netgen](https://github.com/netgen), brookinsconsulting,
   [mugoweb](https://github.com/mugoweb) and others (`git log --grep="Merge pull request"`). Before that, hundreds of

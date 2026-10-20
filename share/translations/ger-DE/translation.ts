@@ -78516,6 +78516,42 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Deutsch</translation>
     </message>
     <message>
+        <source>Reading in:</source>
+        <translation>Lesesprache:</translation>
+    </message>
+    <message>
+        <source>Choosing a language changes the language of the whole administration.</source>
+        <translation>Die Wahl einer Sprache ändert die Sprache der gesamten Oberfläche.</translation>
+    </message>
+    <message>
+        <source>%language: %count of %total pages</source>
+        <translation>%language: %count von %total Seiten</translation>
+    </message>
+    <message>
+        <source>About the help in other languages</source>
+        <translation>Die Hilfe in anderen Sprachen</translation>
+    </message>
+    <message>
+        <source>Open the %language original</source>
+        <translation>Original auf %language öffnen</translation>
+    </message>
+    <message>
+        <source>You are reading the %language original of this page.</source>
+        <translation>Sie lesen das Original dieser Seite auf %language.</translation>
+    </message>
+    <message>
+        <source>Back to the page in %language</source>
+        <translation>Zurück zur Seite auf %language</translation>
+    </message>
+    <message>
+        <source>This page is a translation.</source>
+        <translation>Diese Seite ist eine Übersetzung.</translation>
+    </message>
+    <message>
+        <source>Read the %language original</source>
+        <translation>Original auf %language lesen</translation>
+    </message>
+    <message>
         <source>Search</source>
         <translation>Suche</translation>
     </message>

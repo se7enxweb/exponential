@@ -34,6 +34,11 @@ the kernel supports (8.0 to 8.5 for 6.0.15, `doc/en/us/install/02-requirements.m
 | Slow but alive | Open the pull request and an issue explaining it; wait a reasonable time |
 | Abandoned (no answer for a long time) | Ask publicly whether you may take over; otherwise fork |
 
+A change to the **core kernel** (`se7enxweb/exponential`) also needs a signed Contributor Licensing Agreement before
+it is merged; 7x and the Exponential Foundation require it for every kernel code contribution, in any form. Your
+own custom extensions, and fixes you keep for your customers, are not affected. See
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+
 ## 4. Forks and rebranding, done respectfully
 
 - Keep the full Git history, the original copyright and the license.

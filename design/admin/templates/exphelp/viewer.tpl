@@ -14,7 +14,9 @@
    category, audience[], changed, size, language, fallback ...), help_html (rendered by expHelpMarkdownRenderer and
    safe: NOT washed), help_toc (level, text, anchor), help_nav_html (the tree: safe HTML, NOT washed), help_prev,
    help_next (documents or null), help_edit_url (GitHub, may be empty), help_category (id, name, icon, or not set),
-   help_i18n_json, help_page_lang, help_page_dir, help_fallback, help_reader_language, help_page_language.
+   help_i18n_json, help_page_lang, help_page_dir, help_fallback, help_reader_language, help_page_language; help_reading
+   (the "Reading in" control, parts/reading_language.tpl), help_original_url, help_original_language, help_original_view
+   (the English original of a page for a reader of another language: ?lang=en-us).
 
    The same file is in design/admin and design/admin4. *}
 {def $help_title = cond( and( is_set( $help_page.title ), $help_page.title|ne( '' ) ), $help_page.title, $help_page.id )
@@ -32,6 +34,7 @@
             <button type="submit" class="a4-btn a4-btn-small"><span class="a4-icon a4-bi-search" aria-hidden="true"></span> {'Search'|i18n( 'kernel/exphelp' )}</button>
             <div id="exphelp-viewer-results" data-exphelp-results aria-live="polite" hidden></div>
         </form>
+        {if and( is_set( $help_reading ), $help_reading )}{include uri='design:exphelp/parts/reading_language.tpl' reading=$help_reading prefix='exphelp-viewer-reading'}{/if}
     </div>
 
     <div class="a4-help-viewer-grid">
@@ -54,7 +57,11 @@
             {/if}
 
             {if and( is_set( $help_fallback ), $help_fallback )}
-            <p class="a4-notice is-info a4-help-fallback" role="note"><span class="a4-icon a4-bi-translate" aria-hidden="true"></span> {'This page is not translated into %reader yet. It is shown in %original.'|i18n( 'kernel/exphelp', '', hash( '%reader', $help_reader_language, '%original', $help_page_language ) )|wash}</p>
+            <p class="a4-notice is-info a4-help-fallback" role="note"><span class="a4-icon a4-bi-translate" aria-hidden="true"></span> {'This page is not translated into %reader yet. It is shown in %original.'|i18n( 'kernel/exphelp', '', hash( '%reader', $help_reader_language, '%original', $help_page_language ) )|wash}{if and( is_set( $help_original_url ), $help_original_url|ne( '' ) )} <a href={$help_original_url|ezurl} hreflang="en">{'Open the %language original'|i18n( 'kernel/exphelp', '', hash( '%language', $help_original_language ) )|wash}</a>{/if}</p>
+            {elseif and( is_set( $help_original_view ), $help_original_view )}
+            <p class="a4-notice is-info a4-help-fallback" role="note"><span class="a4-icon a4-bi-translate" aria-hidden="true"></span> {'You are reading the %language original of this page.'|i18n( 'kernel/exphelp', '', hash( '%language', $help_original_view.name ) )|wash} <a href={$help_original_view.back_url|ezurl}>{'Back to the page in %language'|i18n( 'kernel/exphelp', '', hash( '%language', $help_original_view.reader_name ) )|wash}</a></p>
+            {elseif and( is_set( $help_original_url ), $help_original_url|ne( '' ) )}
+            <p class="a4-help-original a4-meta"><span class="a4-icon a4-bi-translate" aria-hidden="true"></span> {'This page is a translation.'|i18n( 'kernel/exphelp' )} <a href={$help_original_url|ezurl} hreflang="en">{'Read the %language original'|i18n( 'kernel/exphelp', '', hash( '%language', $help_original_language ) )|wash}</a></p>
             {/if}
             <article class="a4-help-article" data-exphelp-content data-exphelp-collapsible="h2" aria-label="{$help_title|wash}" lang="{cond( is_set( $help_page_lang ), $help_page_lang, 'en' )|wash}" dir="{cond( is_set( $help_page_dir ), $help_page_dir, 'ltr' )|wash}">
 {$help_html}

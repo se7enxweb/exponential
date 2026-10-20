@@ -25,6 +25,11 @@ Fix a mistake with "Edit on GitHub" on any help page, or answer one forum questi
 Code: GPL v2 or later (CONTRIBUTING.md). Documentation: GFDL 1.3 or later.
 [Contributing documentation](contributing-documentation.md)
 
+**Do I have to sign anything?**
+For code contributions to the core kernel, yes: a Contributor Licensing Agreement (CLA), once, before the first
+merge. You keep your copyright; the CLA grants 7x a non-exclusive license. Your own extensions are not affected.
+[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)
+
 **Where do I report a security problem?**
 Privately to security@se7enx.com, never in public. [Testing and reporting bugs](testing-and-reporting-bugs.md)
 

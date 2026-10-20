@@ -218,6 +218,13 @@ instead, so you need no write access to the project. For the kernel itself, read
 installation first: it explains the commit hook (`make hooks`) and the file manifest (`make manifest-fix`) that every
 kernel pull request keeps current.
 
+**Before a kernel pull request can be merged, sign the CLA.** 7x and the Exponential Foundation require a signed
+Contributor Licensing Agreement for every code contribution to the core kernel (`se7enxweb/exponential`), whether it
+is sent as a pull request, a patch, an issue or by mail. You sign once, and you keep your copyright: the agreement
+grants 7x a non-exclusive license. See [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)
+and the [CLA page](https://share.se7enx.com/community-project/contributor-licensing-agreement-cla). Your own custom
+extensions, and the branch of your own site, are not affected.
+
 Built an extension of your own? [Contribute extensions back](contribute-extensions-back.md) shows how to publish it on
 GitHub and Packagist so every site can install it, and what the GPL requires when you hand an extension to others.
 

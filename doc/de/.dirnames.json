@@ -1,7 +1,13 @@
 {
     "6.0": "6.0",
+    "business": "geschaeft",
     "guides": "anleitungen",
+    "help": "hilfe",
     "install": "installation",
+    "leadership": "fuehrung",
     "migration": "migration",
-    "specifications": "spezifikationen"
+    "project": "projekt",
+    "specifications": "spezifikationen",
+    "sponsors": "sponsoren",
+    "supporters": "unterstuetzer"
 }
