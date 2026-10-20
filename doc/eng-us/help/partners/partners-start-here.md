@@ -97,7 +97,7 @@ published sources stop and the Exponential Foundation still has to decide.
 | Marketing and sales | [Co-marketing](co-marketing.md) · [Campaign checklist](co-marketing-campaign-checklist.md) · [Press releases](press-releases-and-announcements.md) · [Referrals and leads](referrals-and-leads.md) · [Lead hand-offs](lead-handoffs.md) · [Pre-sales](pre-sales-support.md) · [White label](white-label-services.md) · [OEM and reselling](oem-and-reselling.md) |
 | Stories and listings | [Writing a case study](writing-a-case-study.md) · [Case study template](case-study-template.md) · [Customer references](customer-references.md) · [Directories](partner-directories.md) · [Your partner page](your-partner-page.md) |
 | Giving back | [Roadmap](roadmap-participation.md) · [Feature requests](feature-requests-and-sponsored-features.md) · [Code](contributing-code-back.md) · [Extensions](contributing-extensions-back.md) · [Docs and translations](contributing-docs-and-translations.md) · [Bug filing](filing-bugs-as-a-partner.md) · [Testing releases](testing-releases.md) |
-| Responsibilities | [Keeping customers current](keeping-customers-current.md) · [Security](security-responsibilities.md) · [Licensing](licensing-for-partners.md) · [Customer data](protecting-customer-data.md) |
+| Responsibilities | [Keeping customers current](keeping-customers-current.md) · [Verifying a customer installation](verifying-a-customer-installation.md) · [Security](security-responsibilities.md) · [Licensing](licensing-for-partners.md) · [Customer data](protecting-customer-data.md) |
 | Reference | [FAQ](partner-faq.md) · [Glossary](partner-glossary.md) · [Reading path](partner-reading-path.md) |
 
 ## Who to ask

@@ -53,6 +53,10 @@ GitHub issue tickets and response times by level. [Support levels](support-level
 The partner logos from Professional; "Exponential Certified" from Silver with certification.
 [Logos and marks](partner-logos-and-marks.md)
 
+**How do we check a customer's installation quickly?**
+`./console exp:info` on the server: versions, engine, database, every extension and the hints, without secrets;
+`--json` keeps a dated record. [Verifying a customer installation](verifying-a-customer-installation.md)
+
 **Do we get leads?**
 Customer project referrals from Professional; lead priority by level. [Referrals and leads](referrals-and-leads.md)
 

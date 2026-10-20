@@ -132,7 +132,7 @@ Then follow [Your first week as an advocate](your-first-week-as-an-advocate.md).
 |---|---|
 | [Giving demos as an advocate](giving-demos-as-an-advocate.md) | Show Exponential on an installation you control |
 | [Lightning talk script](lightning-talk-script.md), [Twenty-minute talk slide outline](twenty-minute-talk-slide-outline.md), [Hands-on workshop outline](hands-on-workshop-outline.md) | Talks of 5, 20 and 90+ minutes, ready to adapt |
-| [Presenting at a user group or class](presenting-at-a-user-group-or-class.md), [Live demo safety](live-demo-safety.md), [Recording a screencast](recording-a-screencast.md), [Accessible slides and visuals](accessible-slides-and-visuals.md) | Present well, safely and accessibly |
+| [Presenting at a user group or class](presenting-at-a-user-group-or-class.md), [Live demo safety](live-demo-safety.md), [The system card in demos](the-system-card-in-demos.md), [Recording a screencast](recording-a-screencast.md), [Accessible slides and visuals](accessible-slides-and-visuals.md) | Present well, safely and accessibly |
 
 ### Writing
 

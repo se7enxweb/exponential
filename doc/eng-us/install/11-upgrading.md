@@ -275,14 +275,14 @@ running Exponential 6 inside a Symfony platform, see [Legacy bridge](../features
    Oracle client, and add `trashed` (`ALTER TABLE ezcontentobject_trash ADD ( trashed INTEGER DEFAULT 0 NOT NULL );`)
    if the table lacks it. The MySQL file runs on every MySQL from 5.5.3 and on MariaDB (see the per-database notes
    above). Details: [Changelog 6.0.0](../../changelogs/6.0/6.0.0.md).
-3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`); Velocity needs 8.1. Releases 6.0.8 to
+3. **PHP.** The current line runs on PHP 8.0 to 8.5 (`composer.json`: `^8.0`), Velocity included from its release 0.0.4.54. Releases 6.0.8 to
    6.0.14 required 8.1. A site that must stay on PHP 7.4 stays on 6.0.7. Check your own extensions for PHP 8
    problems: classes that extend `eZPersistentObject` or `eZDataType` are the usual cases. See
    [PHP 8 support](../bc/6.0/php8.md) and [PHP 8.0 support](../bc/6.0/php-8.0-support.md).
 4. Continue with [11.6](#116-from-any-60x-to-today).
 
 6.0.8 to 6.0.14 asked for 8.1 in `composer.json`; from 6.0.15 it accepts 8.0 again, so a server whose operating
-system ships PHP 8.0 can take the current line under Apache or nginx
+system ships PHP 8.0 can take the current line under Apache, nginx or Velocity (Velocity from its release 0.0.4.54)
 ([PHP 8.0 support](../bc/6.0/php-8.0-support.md)). Composer enforces the range: on an older PHP, `composer install`
 stops with "Your requirements could not be resolved to an installable set of packages" and names the PHP version,
 before anything is changed.
@@ -443,7 +443,13 @@ php bin/php/ezcache.php --clear-all                                # ends withou
 php bin/php/console exp:checkdbfiles --no-verify-branches          # prints nothing: every update file is in place
 php bin/php/console exp:checkclasses                               # no class PHP refuses to load
 php bin/php/console exp:checkmanifest --all                        # the installed files against share/filelist.md5; exit status 0 when all match
+php bin/php/console exp:expfetch                                   # the new version, PHP, engine and database at a glance; no error hint
 ```
+
+`exp:expfetch` (the [system card](../features/6.0/system-card.md)) shows the version you upgraded to, the PHP
+branch and its support date, the engine and the database in one screen, and ends with hints for what needs
+attention (OPcache, a missing PHP extension, a stale help index, cron). Keep `./console exp:info --json --no-logo`
+from before and after the upgrade and compare them to see every extension version that changed.
 
 `exp:checkdbfiles` reports only problems, one line each: `!` for a file the upgrade path names but the disk lacks,
 `?` for a file on disk the path does not know. No output (apart from the console's own `running ...` line) means the

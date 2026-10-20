@@ -25,7 +25,7 @@ can reinstall in minutes, with debugging on and your extension in its own Git re
 
 | Tool | Version |
 |---|---|
-| PHP | 8.1 or newer for Velocity (8.0 is the minimum of the kernel), with the extensions of [2.3](../../../install/02-requirements.md#23-php-extensions) |
+| PHP | 8.0 or newer, for the kernel and for Velocity (from its release 0.0.4.54), with the extensions of [2.3](../../../install/02-requirements.md#23-php-extensions) |
 | Composer | 2.x |
 | Git | any current version ([Develop with Git](../../develop-with-git.md)) |
 | A database | SQLite needs nothing; use the engine of production for integration tests |

@@ -41,7 +41,7 @@ host it. 7x sells managed hosting, but "Anyone" may host it; "you choose"
 | Web server | Apache, Nginx, LiteSpeed, OpenLiteSpeed, Caddy, IIS, lighttpd, H2O, Traefik in front, or Velocity; FrankenPHP as an alternative engine | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#the-traditional-options) |
 | Database | SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | [Database support](../database-support.md#the-supported-databases-in-order) |
 | Operating system | Four tiers, from "tested here" to "not possible today" | [Operating system support](../os-support.md#the-four-tiers) |
-| PHP | 8.0 to 8.5; Velocity needs 8.1 | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
+| PHP | 8.0 to 8.5, Velocity included (from its release 0.0.4.54) | [README](https://github.com/se7enxweb/exponential/blob/main/README.md#what-version-of-php-is-required) |
 | Where | Containers, cloud machines and hosting panels are covered | [Operating system support](../os-support.md#containers-cloud-and-hosting-panels) |
 
 ## Facts you can print

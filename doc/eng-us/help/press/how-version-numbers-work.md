@@ -43,7 +43,7 @@ Exponential versions do not roll over at nine. After 6.0.9 came 6.0.10 (28 Augus
 - "After `0.1.9` the next release is `0.1.10`; only the last position counts up unless you decide otherwise"
   ([Extensions guide, Release it](../../guides/extensions.md#7-release-it)).
 - "The last position of a Velocity version counts on past 9 (`0.0.4.9`, `0.0.4.10`, ...)"
-  ([Getting the code, the optional Velocity package](../../install/03-getting-the-code.md#34-the-optional-velocity-package)).
+  ([Getting the code, the Velocity package](../../install/03-getting-the-code.md#34-the-velocity-package)).
 - "Versions count in the last position: `0.0.4.9` is followed by `0.0.4.10`, never `0.0.5.0`"
   ([Velocity release notes](../../../changelogs/extensions/exponential-velocity.md)).
 
@@ -81,7 +81,7 @@ You will meet these in `composer.json` and in changelogs that list required pack
 
 | Constraint | Means | Example and source |
 |---|---|---|
-| `~0.0.4.50` | `>=0.0.4.50 <0.0.5.0`, so every later 0.0.4.x | Velocity, [Getting the code](../../install/03-getting-the-code.md#34-the-optional-velocity-package) |
+| `~0.0.4.54` | `>=0.0.4.54 <0.0.5.0`, so every later 0.0.4.x | Velocity, [Getting the code](../../install/03-getting-the-code.md#34-the-velocity-package) |
 | `~2.4.11` | `>=2.4.11 <2.5.0` | eztags, [Getting the code](../../install/03-getting-the-code.md#35-extensions-are-composer-packages) |
 | `^8.0` | PHP 8.0 or any later 8.x | The 6.0.15 line's PHP requirement, same page, section 3.1 |
 

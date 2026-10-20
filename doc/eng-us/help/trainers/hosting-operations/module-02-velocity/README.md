@@ -35,7 +35,7 @@ Velocity's own certificates.
 
 ## Preparing this module
 
-- One training installation per learner with PHP 8.1 or later and the `sockets`, `pcntl`, `posix` and `openssl`
+- One training installation per learner with PHP 8.0 or later and the `sockets`, `pcntl`, `posix` and `openssl`
   extensions; the engine package already required with Composer
   (`composer require se7enxweb/exponential-velocity:~0.0.4.44`).
 - Root on the learners' virtual machines for the boot unit of lesson 2.2; without root, learners write the unit and

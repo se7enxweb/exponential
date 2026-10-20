@@ -62,7 +62,7 @@ Whatever the panel, an Exponential site needs ([Chapter 2](../../../install/02-r
 
 | Need | In panel terms |
 |---|---|
-| PHP 8.0 or later (8.1 for Velocity) with the required extensions | the panel's PHP selector and extension switches, for the site and for its command line |
+| PHP 8.0 or later (Velocity included) with the required extensions | the panel's PHP selector and extension switches, for the site and for its command line |
 | `php.ini`: `memory_limit` 64M or more, `max_execution_time` 30 or more, `date.timezone`, `file_uploads`, `allow_url_fopen` | the panel's per-site PHP settings |
 | Rewrite rules: only listed asset paths served as files, everything else to `index.php` | `.htaccess` from `.htaccess_root` under Apache or LiteSpeed; for nginx the derived server block ([8.6](../../../install/08-serving-the-site.md#86-nginx-with-php-fpm)) |
 | The document root at the installation root | the panel's document root setting for the domain |

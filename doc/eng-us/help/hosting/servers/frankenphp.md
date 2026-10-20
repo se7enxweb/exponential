@@ -42,7 +42,7 @@ offered, because the kernel keeps request state in globals and would leak one re
 | | `qbix` (Velocity) | `frankenphp` |
 |---|---|---|
 | Role | recommended for every stage | production-ready alternative |
-| PHP | the machine's, 8.1 or later | the binary's own (PHP 8.5 in the official 1.12 releases) |
+| PHP | the machine's, 8.0 or later (from Velocity 0.0.4.54) | the binary's own (PHP 8.5 in the official 1.12 releases) |
 | Requests | persistent workers | classic mode, clean state per request |
 | Response cache | yes | not yet (`[CacheSettings]` is ignored) |
 | TLS and HTTP/2 | yes | yes |

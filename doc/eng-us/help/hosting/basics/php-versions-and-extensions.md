@@ -30,7 +30,7 @@ PHPs (web and command line) must agree. The source is
 
 | PHP | Status |
 |---|---|
-| 8.0 | The oldest supported version; the kernel runs on it under Apache with mod_php or PHP-FPM. It is the stock PHP of RHEL 9, AlmaLinux 9 and Rocky Linux 9. **Velocity does not run on it.** |
+| 8.0 | The oldest supported version; the kernel runs on it under Apache with mod_php or PHP-FPM. It is the stock PHP of RHEL 9, AlmaLinux 9 and Rocky Linux 9. Velocity runs on it from its release 0.0.4.54 (until then it needed 8.1). |
 | 8.1 to 8.4 | Supported, Velocity included. |
 | 8.5 | Supported; the newest version tested. |
 | 7.4 and older | Not supported by 6.0.8 and later; a site that must stay on 7.4 stays on 6.0.7. |
@@ -116,8 +116,10 @@ dnf install php php-fpm php-mysqlnd php-gd php-intl php-mbstring php-xml php-pdo
 ```
 
 `php-xml` brings `dom`, `simplexml`, `xsl` and `libxml`; `php-pdo` brings `sqlite3`; `php-common` brings `iconv`,
-`zlib`, `session` and `openssl`; `php-process` brings `pcntl`; `php-pgsql` adds PostgreSQL. For Velocity switch to a
-newer module stream (`dnf module reset php`, `dnf module enable php:8.3`, `dnf distro-sync`). The Remi repository
+`zlib`, `session` and `openssl`; `php-process` brings `pcntl`; `php-pgsql` adds PostgreSQL. Velocity runs on this
+stock 8.0 (from release 0.0.4.54; the el9 rpm installs without a module stream). For a newer PHP switch to another
+module stream (`dnf module reset php`, `dnf module enable php:8.3`, `dnf distro-sync`). On RHEL 8 (default PHP 7.2)
+enable `php:8.0` first. The Remi repository
 provides 8.0 to 8.5; PECL extensions and `oci8` come from EPEL, Remi or the vendor.
 
 **Debian and Ubuntu.** Packages are named `php<version>-<extension>`: `php8.3-xml`, `php8.3-mbstring`,
@@ -151,7 +153,7 @@ On machines with several PHP versions, call the right binary by its path, for ex
 
 ## Checklist
 
-- [ ] The plan's PHP versions are 8.0 or later; 8.1 or later wherever Velocity is offered.
+- [ ] The plan's PHP versions are 8.0 or later, also wherever Velocity is offered.
 - [ ] 64-bit PHP builds.
 - [ ] Every required extension in both the web and the command line PHP.
 - [ ] Exactly the database extension(s) the plan offers.

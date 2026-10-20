@@ -140,7 +140,7 @@ To follow releases, or every change as it is made, see [Update with Git](../upda
 
 ### Which PHP versions does it support?
 
-Exponential 6.0.15 runs on PHP 8.0 to 8.5; the Velocity application server needs 8.1 or later
+Exponential 6.0.15 runs on PHP 8.0 to 8.5, and so does the Velocity application server from its release 0.0.4.54
 ([Requirements](../../install/02-requirements.md)). The website's community page says "PHP 8.1 through PHP 8.5" for
 the 6.0.14 release; the repository's requirements, which also cover PHP 8.0, are the reference.
 
