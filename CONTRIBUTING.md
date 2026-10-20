@@ -35,7 +35,7 @@ git checkout -b feature/your-feature
 
 1. Always create a new branch for your work to keep the main branch clean.
 
-2. Follow the [PSR standards](https://www.php-fig.org/psr/) and our [coding style](CODING_STYLE.md).
+2. Follow the [PSR standards](https://www.php-fig.org/psr/) and our [coding style](doc/en/us/standards/coding-standards.md).
 
 3. Write clear, concise commit messages whose subject starts with what the change does: `Added: `, `Updated: `,
    `Fixed: `, `Removed: ` or `Renamed: `, e.g. `Fixed: The redirect keeps the query string on the own host`. The
