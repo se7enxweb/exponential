@@ -1067,10 +1067,10 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 03505c55345b654eeb275f3b614a92bf  design/admin4/override/templates/thumbnail/image.tpl
 6971adb19c3c39b21f245c72b7f73305  design/admin4/override/templates/thumbnail/image_browse.tpl
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
-3c35f0d0697bf6320385e335f1bbc629  design/admin4/stylesheets/admin4.css
+8df8fbba064538802ed875039999109e  design/admin4/stylesheets/admin4.css
 a44db4fab06d2b5eb6b8849f1d24bf47  design/admin4/stylesheets/components.css
-fef6201f7a8970ad72c4e5d3fc5147ce  design/admin4/stylesheets/content.css
-399bdd34c0eb57e51468449154ad9911  design/admin4/stylesheets/core.css
+a87bec7d01d40f3de1611df181975ceb  design/admin4/stylesheets/content.css
+ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
 075d56087492dedbbb3352ad63f71faf  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 ddd6d08fb6a623deccfa1b1e280df2cf  design/admin4/stylesheets/modules/content.css
@@ -1080,10 +1080,10 @@ a39fba7a15a652dce2b7782c206dc3a8  design/admin4/stylesheets/modules/setup.css
 f8c80a3bcfd2d2189393cfb5f940f4ec  design/admin4/stylesheets/modules/structure.css
 c8403c6fd45446005e3280195e056623  design/admin4/stylesheets/modules/workflow.css
 6e999aa90b2660caf0fe3e2ef577ecdf  design/admin4/stylesheets/packagecompare.css
-1e9c7cb2c491cfde1b845e98d4178d5a  design/admin4/stylesheets/pagelayout.css
+8eddc989d2d2222387ec716ebc783682  design/admin4/stylesheets/pagelayout.css
 ff5905841b79458608cca6dda718778d  design/admin4/stylesheets/theme/admin_datatable.css
 35eebb3baea1095a0aae748f750e4917  design/admin4/stylesheets/theme/modalwindow.css
-407160d5817625c3053e82e1fe318aef  design/admin4/stylesheets/theme/rounded.css
+9cd0514b0cf33301ab105531a05c0b46  design/admin4/stylesheets/theme/rounded.css
 675329c4b3245699c55425d7aa2ad4ed  design/admin4/stylesheets/visual-templateview.css
 022eb4fed292327e7a10f4812af68540  design/admin4/templates/ajaxuploader/browse.tpl
 66e556ddbb2a268470dd9b7c34d65393  design/admin4/templates/ajaxuploader/location.tpl

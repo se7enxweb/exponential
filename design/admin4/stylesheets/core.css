@@ -205,12 +205,7 @@ table.list td.na-rate, table.special td.na-rate
     color: var(--a4-disabled);
 }
 
-table.list tr.bglight
-{
-    background-color: var(--a4-surface);
-}
-
-table.list tr.bgdark, table.special tr.bgdark
+table.special tr.bgdark
 {
     background-color: var(--a4-soft);
 }
@@ -218,11 +213,6 @@ table.list tr.bgdark, table.special tr.bgdark
 table.list tr.bglight:hover, table.list tr.bgdark:hover /* This has no effect in IE6 and below */
 {
     background-color: var(--a4-soft);
-}
-
-table.list img
-{
-    vertical-align: middle;
 }
 
 th.tight, td.tight

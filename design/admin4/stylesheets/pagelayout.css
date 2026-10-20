@@ -2,13 +2,6 @@
 
 
 /* GENERIC */
-span.vertical-seperator {
-    height: 100%;
-    width: 4px;
-    border-inline-end: 1px solid var(--a4-line-strong);
-    margin-inline-start: 12px;
-    margin-inline-end: 16px;
-}
 
 .inline {
     display: inline;
@@ -359,7 +352,6 @@ div#contentstructure ul#content_tree_menu ul li {
     background-position: 8px 0, 8px 7px;
     background-repeat: no-repeat;
 }
-:where([dir="rtl"]) div#contentstructure ul#content_tree_menu ul li { background-position: calc(100% - 8px) 0, calc(100% - 8px) 7px; }
 
 div#contentstructure ul#content_tree_menu ul li.lastli {
     background-size: 1px 8px, 9px 1px;
@@ -672,21 +664,8 @@ div.popupmenu hr {
     margin-bottom: 0.5em;
 }
 
-#controlbar-top .box-bc .box-ml {
-    margin: 0px 3px 0px 3px;
-    padding: 0.5em;
-}
-
 #controlbar-top .block {
     margin: 0;
-}
-
-h1.context-title {
-    font-size: 1.25em;
-}
-
-h2.context-title {
-    font-size: 1.15em;
 }
 
 div.context-information,
@@ -1193,10 +1172,6 @@ html[data-a4-left-size="large"] {
     font-size: inherit;
 }
 
-.sidebar.left > div {
-    margin: 2rem;
-}
-
 /* Ensure menu items inherit the sidebar font size */
 .sidebar.left ul li,
 .sidebar.left a,
@@ -1251,14 +1226,6 @@ html[data-a4-left-size="large"] {
 
 .sidebar-control:hover {
     background-color: var(--a4-muted);
-}
-
-.sidebar-control.left {
-    border-radius: 50rem;
-}
-
-.sidebar-control.right {
-    border-radius: 50rem;
 }
 
 .sidebar-control .a4-icon {
@@ -1460,23 +1427,9 @@ html[data-a4-left-size="large"] {
     transition: background-color 300ms ease, color 300ms ease;
 }
 
-.navbar-menu li a:hover {
-    color: var(--a4-header-ink);
-}
-
-.navbar-menu li a.selected {
-    background-color: var(--a4-accent-strong);
-    padding: 0.25rem 0.5rem;
-}
-
 .navbar-menu li a.disabled {
     pointer-events: none;
     color: var(--a4-muted);
-}
-
-.navbar-menu li a.selected:hover {
-    background-color: var(--a4-accent-press);
-    color: var(--a4-on-accent-hover);
 }
 
 @media screen and (min-width: 1024px) {
@@ -1624,10 +1577,6 @@ div.message-error {
 
 .form-control::placeholder {
     color: var(--a4-ink);
-}
-
-body {
-    background: url("../images/3/dark_back.png");
 }
 
 #header {
