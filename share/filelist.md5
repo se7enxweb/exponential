@@ -6108,6 +6108,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
+eb46987faece2d4c6d03944c702dcb2b  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6369,7 +6370,7 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 4417b19504a40ad49cf98008437dfa09  doc/eng-us/guides/upgrading.md
 67d569dd75d7549edaefafed9e40d696  doc/eng-us/guides/urls-and-aliases.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
-e845c046d7de903198255cd7dc9cd8b8  doc/eng-us/help/README.md
+9d8d4c2b17acf8820ddf142eaed2d740  doc/eng-us/help/README.md
 d473bbb7f099b90c4fe9d12b44777531  doc/eng-us/help/accounts-and-sign-in.md
 b4e94abf7da18c393cf629df60987d17  doc/eng-us/help/admin-tour.md
 dee790b7c9cea663d3432d0e3b8d2d2a  doc/eng-us/help/advocates/7x-and-the-foundation-for-advocates.md
@@ -10405,6 +10406,7 @@ e4b02770882c1138978f6bcc8eda69de  doc/eng-us/help/trainers/workshops/module-04-f
 b264ffc283d5ebb2134538ad28e81d3d  doc/eng-us/help/trainers/workshops/module-05-capstone-projects/intranet-news-section.md
 6b8f825f9d460c4f9a854965f6a865f2  doc/eng-us/help/trainers/workshops/module-05-capstone-projects/multilingual-event-site.md
 47c351354ffaf224e1924a1dc72937d8  doc/eng-us/help/update-with-git.md
+4e0b8345b4e67dce382d36d112d62cc6  doc/eng-us/help/velocity-is-part-of-exponential-6-0-15.md
 3653c9af5a596f1f71d001f873d9272a  doc/eng-us/help/when-something-goes-wrong.md
 bf81aa9cec0eeb4faf702f48a9b32109  doc/eng-us/help/who-is-7x.md
 30a8f5ea227773ffc556a4cb7009271d  doc/eng-us/help/who-is-the-exponential-foundation.md
