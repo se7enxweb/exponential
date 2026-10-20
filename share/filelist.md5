@@ -3194,7 +3194,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 f4a6fd7fba388894640420c210f94f94  doc/changelogs/6.0/6.0.12.md
 878882418c7ffe32fd4d202a2d889e95  doc/changelogs/6.0/6.0.13.md
 fb8589325fc127b61d43ce5d7cc188d0  doc/changelogs/6.0/6.0.14.md
-e8b08b4a446a0ac4b05274d34cf9f89c  doc/changelogs/6.0/6.0.15.md
+4c998932bb3d00393e9292e73a80577a  doc/changelogs/6.0/6.0.15.md
 dc6c1e6747014d6f9b8be9e724b1b763  doc/changelogs/6.0/6.0.2.md
 831f582bbb230b4566621e2b9c913153  doc/changelogs/6.0/6.0.3.md
 4a9ce240f3051c96fce5a2b61580ff2a  doc/changelogs/6.0/6.0.4.md
@@ -6146,7 +6146,7 @@ c5545530f53d980f227c9e2cad67d78c  doc/en/us/features/6.0/extensions/swark.md
 51f765f021c4cd9059b382a8da0350d4  doc/en/us/features/6.0/ezpm-package-manager-cli.md
 b8686ed08b041700382d969f251b7a73  doc/en/us/features/6.0/file-consistency-check.md
 59921235369f40f7789e0b09d13b8f05  doc/en/us/features/6.0/form-expired-page.md
-1d25daac4da9c47f9f764dd33b7b4653  doc/en/us/features/6.0/help-content.md
+143c624ef5f5f2cd43ba423afcb4f740  doc/en/us/features/6.0/help-content.md
 9f1c612dd532594726d9990dcaf46980  doc/en/us/features/6.0/help-system.md
 b0d4d73922efa2d3bd00e0c098ea0176  doc/en/us/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/en/us/features/6.0/icon-themes-in-extensions.md
@@ -10693,7 +10693,7 @@ f9f738c497f745bb5e02d68375b9f630  doc/en/us/specifications/4.3/admin_refresh/fun
 e14335da02fc54b98c731ab8152fbda6  doc/en/us/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/en/us/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/en/us/specifications/4.5/asynchronous_publishing.txt
-484b5e6f838a647bc5d2de97fb212189  doc/en/us/specifications/6.0/README.md
+533a96570ad51ef12c88d4095165f4c1  doc/en/us/specifications/6.0/README.md
 f8110bc0eeaa10265b5c3260091d8d40  doc/en/us/specifications/6.0/audit-event-model.md
 30fda7cd155980a4ac7d0232ba2bce5a  doc/en/us/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/en/us/specifications/6.0/cjw_newsletter.md
@@ -10704,8 +10704,10 @@ a1b9a3ac35a41274673f3b699458a898  doc/en/us/specifications/6.0/datatype-input-ha
 896d6b70da978db84ed4486d61bd27a2  doc/en/us/specifications/6.0/explayouts-ui-api.md
 a1c0c4233de9b474926e0670497f4173  doc/en/us/specifications/6.0/expservices.md
 9f6990d78cc3c9ffde53cc08589e1fbc  doc/en/us/specifications/6.0/extension-metadata.md
-47277c33acb771d84374e5c43305be47  doc/en/us/specifications/6.0/help-style-guide.md
-c8cc77e79b59364a18f9992a96448db1  doc/en/us/specifications/6.0/help-system.md
+89d22a0bad0876cdbf031a5f889a0637  doc/en/us/specifications/6.0/help-content-package.md
+3b772013bd7769c387f449221aa1d215  doc/en/us/specifications/6.0/help-standards.md
+31b4402e56b74a5c1066a80912346be9  doc/en/us/specifications/6.0/help-style-guide.md
+8f794d1c8b32b225a5e3603ba3e827ad  doc/en/us/specifications/6.0/help-system.md
 6493d5700c0f06ef47ed21bac0810dd5  doc/en/us/specifications/6.0/ini-override-placements.md
 a99979b6f5c1efa6f160e9aa85113479  doc/en/us/specifications/6.0/installer-logs-and-seed-data.md
 1b045e94520f3666a9b51af1b0e806a2  doc/en/us/specifications/6.0/legacy-bridge-bundle.md
