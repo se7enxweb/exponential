@@ -1,6 +1,6 @@
 <?php
 /**
- * The DITA 1.3 export of help maintained as content (doc/en/us/features/6.0/help-content.md, "DITA export"), without a
+ * The DITA 1.3 export of help maintained as content (doc/eng-us/features/6.0/help-content.md, "DITA export"), without a
  * database: a fixed set of topics, chapters, a manual, a figure and glossary entries goes through the export, and the
  * result is checked as the export's own validator and a DITA processor would see it.
  *

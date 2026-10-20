@@ -1,6 +1,6 @@
 <?php
 /**
- * "Report an error" (doc/en/us/features/6.0/help-system.md, "Reporting an error"): the trackers, the prefilled issue and the
+ * "Report an error" (doc/eng-us/features/6.0/help-system.md, "Reporting an error"): the trackers, the prefilled issue and the
  * diagnostics a user copies into a public GitHub issue. The diagnostics must never carry a secret: the test plants
  * marker values in the database, mail and session settings of the running INI and checks none of them, nor any
  * server path outside the installation, appears anywhere the report produces. No database.

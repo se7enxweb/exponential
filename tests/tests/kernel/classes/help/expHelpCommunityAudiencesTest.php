@@ -1,7 +1,7 @@
 <?php
 /**
  * The community audiences of the help: partners, advocates, designers, hosting companies, application creators,
- * website creators, supporters, sponsors, trainers, press, media and influencers, businesses, governments and customers, with their folders and categories (doc/en/us/features/6.0/help-system.md).
+ * website creators, supporters, sponsors, trainers, press, media and influencers, businesses, governments and customers, with their folders and categories (doc/eng-us/features/6.0/help-system.md).
  * No database.
  *
  *  CA-01  expHelpAudience knows the ten audiences and their categories by default, after the first six, with icons
@@ -33,19 +33,19 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
 {
     /** id => name, a sample page in its folder, the category of that page */
     const AUDIENCES = array(
-        'partner'         => array( 'Partners', 'doc/en/us/help/partners/partner-program.md', 'partnership' ),
-        'advocate'        => array( 'Advocates', 'doc/en/us/help/advocates/talking-points.md', 'advocacy' ),
-        'designer'        => array( 'Designers', 'doc/en/us/help/designers/theme-design/first-theme.md', 'theme-design' ),
-        'hosting'         => array( 'Hosting companies', 'doc/en/us/help/hosting/server-requirements.md', 'hosting' ),
-        'app-creator'     => array( 'Application creators', 'doc/en/us/help/creators/app-creators/custom-modules.md', 'app-creation' ),
-        'website-creator' => array( 'Website creators', 'doc/en/us/help/creators/website-creators/plan-the-site.md', 'website-creation' ),
-        'supporter'       => array( 'Supporters', 'doc/en/us/help/supporters/ways-to-help.md', 'supporting' ),
-        'sponsor'         => array( 'Sponsors', 'doc/en/us/help/sponsors/why-sponsor.md', 'sponsorship' ),
-        'trainer'         => array( 'Trainers', 'doc/en/us/help/trainers/editors/lesson-1.md', 'training' ),
-        'press'           => array( 'Press, media and influencers', 'doc/en/us/help/press/fact-sheet.md', 'press-media' ),
-        'businesses'      => array( 'Businesses', 'doc/en/us/help/businesses/why-exponential.md', 'business-solutions' ),
-        'government'      => array( 'Governments', 'doc/en/us/help/government/accessibility.md', 'public-sector' ),
-        'customer'        => array( 'Customers', 'doc/en/us/help/customers/day-to-day/content-calendar.md', 'customer-success' ),
+        'partner'         => array( 'Partners', 'doc/eng-us/help/partners/partner-program.md', 'partnership' ),
+        'advocate'        => array( 'Advocates', 'doc/eng-us/help/advocates/talking-points.md', 'advocacy' ),
+        'designer'        => array( 'Designers', 'doc/eng-us/help/designers/theme-design/first-theme.md', 'theme-design' ),
+        'hosting'         => array( 'Hosting companies', 'doc/eng-us/help/hosting/server-requirements.md', 'hosting' ),
+        'app-creator'     => array( 'Application creators', 'doc/eng-us/help/creators/app-creators/custom-modules.md', 'app-creation' ),
+        'website-creator' => array( 'Website creators', 'doc/eng-us/help/creators/website-creators/plan-the-site.md', 'website-creation' ),
+        'supporter'       => array( 'Supporters', 'doc/eng-us/help/supporters/ways-to-help.md', 'supporting' ),
+        'sponsor'         => array( 'Sponsors', 'doc/eng-us/help/sponsors/why-sponsor.md', 'sponsorship' ),
+        'trainer'         => array( 'Trainers', 'doc/eng-us/help/trainers/editors/lesson-1.md', 'training' ),
+        'press'           => array( 'Press, media and influencers', 'doc/eng-us/help/press/fact-sheet.md', 'press-media' ),
+        'businesses'      => array( 'Businesses', 'doc/eng-us/help/businesses/why-exponential.md', 'business-solutions' ),
+        'government'      => array( 'Governments', 'doc/eng-us/help/government/accessibility.md', 'public-sector' ),
+        'customer'        => array( 'Customers', 'doc/eng-us/help/customers/day-to-day/content-calendar.md', 'customer-success' ),
     );
     const CATEGORIES = array( 'partnership', 'advocacy', 'theme-design', 'templates', 'extension-development', 'theme-extensions',
                               'theme-distribution', 'theme-sales', 'theme-lifecycle', 'hosting', 'app-creation',
@@ -121,7 +121,7 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
                          'creators/app-creators' => 'app-creator', 'creators/website-creators' => 'website-creator',
                          'supporters' => 'supporter', 'sponsors' => 'sponsor', 'trainers' => 'trainer', 'press' => 'press', 'businesses' => 'businesses', 'government' => 'government',
                          'extension-development' => 'developer,designer' ) as $folder => $ids )
-            $this->assertMatchesRegularExpression( '#^PathRules\[\]=doc/en/us/help/' . preg_quote( $folder, '#' ) . '/\*;' . $ids . '\s*$#m', $section );
+            $this->assertMatchesRegularExpression( '#^PathRules\[\]=doc/eng-us/help/' . preg_quote( $folder, '#' ) . '/\*;' . $ids . '\s*$#m', $section );
     }
 
     /** CA-03 */
@@ -135,26 +135,26 @@ class expHelpCommunityAudiencesTest extends PHPUnit\Framework\TestCase
             $this->assertSame( $info[2], $page['category'], $info[1] );
             $this->assertSame( 'help', $page['type'], $info[1] );
         }
-        $page = $audience->classify( 'doc/en/us/help/designers/templates/operators.md' );
+        $page = $audience->classify( 'doc/eng-us/help/designers/templates/operators.md' );
         $this->assertSame( 'templates', $page['category'] );
-        $page = $audience->classify( 'doc/en/us/help/extension-development/01-first-extension.md' );
+        $page = $audience->classify( 'doc/eng-us/help/extension-development/01-first-extension.md' );
         $this->assertSame( array( 'developer', 'designer' ), $page['audience'] );
         $this->assertSame( 'extension-development', $page['category'] );
-        $page = $audience->classify( 'doc/en/us/help/creators/both.md' );
+        $page = $audience->classify( 'doc/eng-us/help/creators/both.md' );
         $this->assertSame( array( 'app-creator', 'website-creator' ), $page['audience'] );
 
         // front matter wins, aliases resolve, the configured order is kept
-        $page = $audience->classify( 'doc/en/us/help/partners/hosting-partners.md',
+        $page = $audience->classify( 'doc/eng-us/help/partners/hosting-partners.md',
             array( 'audience' => array( 'hosting-companies', 'partners', 'admins' ), 'category' => 'hosting' ) );
         $this->assertSame( array( 'admin', 'partner', 'hosting' ), $page['audience'] );
         $this->assertSame( 'hosting', $page['category'] );
         $this->assertSame( array( 'designer', 'app-creator', 'sponsor' ),
                            $audience->audienceList( array( 'sponsors', 'application-creators', 'designers' ) ) );
-        $this->assertSame( array( 'sponsor' ), $audience->guessAudience( 'doc/en/us/guides/benefits-sponsor.md', '' ) );
+        $this->assertSame( array( 'sponsor' ), $audience->guessAudience( 'doc/eng-us/guides/benefits-sponsor.md', '' ) );
 
         // the earlier audiences are untouched
-        $this->assertSame( array( 'editor', 'user' ), $audience->classify( 'doc/en/us/help/editing-content.md' )['audience'] );
-        $this->assertSame( array( 'project-manager' ), $audience->classify( 'doc/en/us/help/leadership/x.md' )['audience'] );
+        $this->assertSame( array( 'editor', 'user' ), $audience->classify( 'doc/eng-us/help/editing-content.md' )['audience'] );
+        $this->assertSame( array( 'project-manager' ), $audience->classify( 'doc/eng-us/help/leadership/x.md' )['audience'] );
     }
 
     /** CA-04 */
