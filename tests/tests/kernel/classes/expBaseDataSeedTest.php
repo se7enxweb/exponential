@@ -9,8 +9,9 @@
  *  BD-02  the three files carry the same short_description and description of the top object (node 2), as
  *         well-formed XML whose links are written with href (no url_id, node_id or object_id: a new installation
  *         has none of those rows)
- *  BD-03  the roles, policies, limitations, limitation values and role assignments are the same rows in the three
- *         files (the Editor role has uiswitch/language, uiswitch/design, oauth/authorize and exphelp/read in each)
+ *  BD-03  every table holds the same rows in the three files, and the clean data has no table the .dba lacks (the
+ *         Editor role has uiswitch/language, uiswitch/design, oauth/authorize and exphelp/read in each); the base
+ *         data says 6.0.15stable and has the one language eng-US, id 2
  *  BD-04  the search index (ezsearch_word, ezsearch_object_word_link) is the same in the three files, every word's
  *         object_count is the number of objects linking it, and object 1 is indexed with the words of its texts
  *         in an unbroken placement chain
@@ -189,22 +190,40 @@ class expBaseDataSeedTest extends PHPUnit\Framework\TestCase
         return $rows;
     }
 
-    private static function byId( array $rows )
+    /** The rows as sorted JSON lines, so tables without an id (or with id and version) compare as well. */
+    private static function sortedRows( array $rows )
     {
-        $out = array();
-        foreach ( $rows as $row )
-            $out[$row['id']] = $row;
-        ksort( $out );
+        $out = array_map( function ( $row ) { return json_encode( $row ); }, $rows );
+        sort( $out );
         return $out;
     }
 
-    /** BD-03 and BD-04: the tables the three files carry row for row. */
+    /** The clean data files, read once: [file => [table => rows]]. */
+    private static $sqlTables = array();
+
+    private static function sqlTables( $file, $backslash )
+    {
+        if ( !isset( self::$sqlTables[$file] ) )
+        {
+            $sql = (string)file_get_contents( self::root() . '/' . $file );
+            preg_match_all( '/^INSERT INTO ([a-z0-9_]+)/m', $sql, $m );
+            $tables = array();
+            foreach ( array_unique( $m[1] ) as $table )
+                $tables[$table] = self::sqlRows( $sql, $table, $backslash );
+            self::$sqlTables[$file] = $tables;
+        }
+        return self::$sqlTables[$file];
+    }
+
+    /** BD-03 and BD-04: every table of share/db_data.dba, against each clean data file. */
     public static function sameRowsProvider()
     {
-        $tables = array( 'ezrole', 'ezpolicy', 'ezpolicy_limitation', 'ezpolicy_limitation_value', 'ezuser_role', 'ezsearch_word', 'ezsearch_object_word_link' );
+        $data = self::dba();
         $cases = array();
-        foreach ( $tables as $table )
+        foreach ( array_keys( $data ) as $table )
         {
+            if ( $table === '_info' )
+                continue;
             $cases["$table common"] = array( $table, 'kernel/sql/common/cleandata.sql', true );
             $cases["$table sqlite"] = array( $table, 'kernel/sql/sqlite/cleandata.sql', false );
         }
@@ -214,11 +233,36 @@ class expBaseDataSeedTest extends PHPUnit\Framework\TestCase
     #[\PHPUnit\Framework\Attributes\DataProvider('sameRowsProvider')]
     public function testTheCleanDataCarriesTheRowsOfTheDba( $table, $file, $backslash )
     {
-        $dba = self::byId( self::dbaRows( self::dba(), $table ) );
-        $sql = self::byId( self::sqlRows( (string)file_get_contents( self::root() . '/' . $file ), $table, $backslash ) );
-        $this->assertNotEmpty( $dba, $table );
-        $this->assertSame( array_keys( $dba ), array_keys( $sql ), "$file: the $table ids of share/db_data.dba" );
+        $dba = self::sortedRows( self::dbaRows( self::dba(), $table ) );
+        $tables = self::sqlTables( $file, $backslash );
+        $sql = self::sortedRows( isset( $tables[$table] ) ? $tables[$table] : array() );
+        $this->assertSame( count( $dba ), count( $sql ), "$file: as many $table rows as share/db_data.dba" );
         $this->assertSame( $dba, $sql, "$file: the $table rows of share/db_data.dba" );
+    }
+
+    public static function cleanDataFilesProvider()
+    {
+        return array( 'common' => array( 'kernel/sql/common/cleandata.sql', true ), 'sqlite' => array( 'kernel/sql/sqlite/cleandata.sql', false ) );
+    }
+
+    #[\PHPUnit\Framework\Attributes\DataProvider('cleanDataFilesProvider')]
+    public function testTheCleanDataHasNoTableTheDbaLacks( $file, $backslash )
+    {
+        $data = self::dba();
+        foreach ( array_keys( self::sqlTables( $file, $backslash ) ) as $table )
+            $this->assertArrayHasKey( $table, $data, "$file: $table is in share/db_data.dba" );
+    }
+
+    public function testTheBaseDataIsThisReleasesAndInEnglishAmerican()
+    {
+        $data = self::dba();
+        $site = array();
+        foreach ( self::rows( $data, 'ezsite_data' ) as $row )
+            $site[$row['name']] = $row['value'];
+        $this->assertSame( '6.0.15stable', $site['ezpublish-version'], 'the version the 6.0.15 database updates also write' );
+        $languages = self::rows( $data, 'ezcontent_language' );
+        $this->assertSame( array( array( 'disabled' => '0', 'id' => '2', 'locale' => 'eng-US', 'name' => 'English (American)' ) ), $languages,
+                           'eng-US with language id 2, which the masks of the base data are built on' );
     }
 
     public function testTheEditorRoleHasTheHelpOAuthAndInterfacePoliciesInTheDba()

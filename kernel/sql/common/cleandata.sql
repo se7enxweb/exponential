@@ -6081,7 +6081,7 @@ INSERT INTO ezcontentobject_attribute (
   54,
   0,
   0,
-  'author=eZ Systems\ncopyright=eZ Systems\ndescription=Content Management System\nkeywords=cms, publish, e-commerce, content management, development framework',
+  'author=Exponential Foundation\ncopyright=Exponential Foundation\ndescription=Exponential Content Management Platform\nkeywords=exponential, community, content management, open source, cms, platforms, stores, blogs',
   'ezinisetting',
   171,
   'eng-US',
@@ -78132,7 +78132,7 @@ INSERT INTO ezsite_data (
   value
 ) VALUES (
   'ezpublish-version',
-  '6.0.10stable'
+  '6.0.15stable'
 );
 
 

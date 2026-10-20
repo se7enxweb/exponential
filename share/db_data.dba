@@ -213,8 +213,15 @@ $data = array (
       2 => 'locale',
       3 => 'name',
     ),
-    'rows' => 
+    'rows' =>
     array (
+      0 =>
+      array (
+        0 => '0',
+        1 => '2',
+        2 => 'eng-US',
+        3 => 'English (American)',
+      ),
     ),
   ),
   'ezcontentclass' => 
