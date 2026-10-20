@@ -53,29 +53,29 @@ Login-Handler des Kernels für LDAP und Textdateien, eingestellt in `settings/ld
 
 | Seite | Was sie beantwortet |
 |---|---|
-| [Intranet planen](../../../../eng-us/help/businesses/intranets/intranet-planning.md) | Was vor dem Bau der ersten Seite zu entscheiden ist: Zielgruppe, Struktur, Verantwortliche, Budgetfragen |
+| [Intranet planen](intranet-planen.md) | Was vor dem Bau der ersten Seite zu entscheiden ist: Zielgruppe, Struktur, Verantwortliche, Budgetfragen |
 | [Abteilungen, Rollen und Sektionen](abteilungen-rollen-und-sektionen.md) | Wie Abteilungen zu Benutzergruppen, Sektionen und eingeschränkten Rollen werden |
 | [Dokumente und Dateibibliotheken](dokumente-und-dateibibliotheken.md) | Richtlinien, Formulare und Dateien so ablegen, dass nur die richtigen Personen sie herunterladen können |
-| [Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md) | Die eingebaute Suche, Solr über `ezfind` und was Mitarbeiter finden können |
-| [Neuigkeiten und Ankündigungen](../../../../eng-us/help/businesses/intranets/news-and-announcements.md) | Firmenneuigkeiten veröffentlichen, Startseiten, Feeds und „Benachrichtigen“ |
+| [Suche im Intranet](suche-im-intranet.md) | Die eingebaute Suche, Solr über `ezfind` und was Mitarbeiter finden können |
+| [Neuigkeiten und Ankündigungen](neuigkeiten-und-ankuendigungen.md) | Firmenneuigkeiten veröffentlichen, Startseiten, Feeds und „Benachrichtigen“ |
 | [Freigabe-Workflows](freigabe-workflows.md) | Freigabe vor dem Veröffentlichen und Prüfstadien mit Objektzuständen |
-| [Zwei-Faktor und Anmeldung](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md) | Passwörter, Sperren, zweistufige Anmeldung und Social Login |
+| [Zwei-Faktor und Anmeldung](zwei-faktor-und-anmeldung.md) | Passwörter, Sperren, zweistufige Anmeldung und Social Login |
 | [Verzeichnisanmeldung und LDAP](verzeichnisanmeldung-und-ldap.md) | Was die Login-Handler für LDAP und Textdateien wirklich tun und was nicht eingebaut ist |
-| [Benachrichtigungen für Mitarbeiter](../../../../eng-us/help/businesses/intranets/notifications-for-staff.md) | Abonnements, Digests, Mails zur Zusammenarbeit und der Cronjob dahinter |
-| [Checkliste für die Intranet-Einführung](../../../../eng-us/help/businesses/intranets/intranet-rollout-checklist.md) | Eine Checkliste vom ersten Test bis zu dem Tag, an dem die Mitarbeiter eingeladen werden |
+| [Benachrichtigungen für Mitarbeiter](benachrichtigungen-fuer-mitarbeiter.md) | Abonnements, Digests, Mails zur Zusammenarbeit und der Cronjob dahinter |
+| [Checkliste für die Intranet-Einführung](checkliste-fuer-die-intranet-einfuehrung.md) | Eine Checkliste vom ersten Test bis zu dem Tag, an dem die Mitarbeiter eingeladen werden |
 | [Intranet-FAQ](intranet-faq.md) | Kurze Antworten auf die Fragen, die Führungskräfte am häufigsten stellen |
 
 ## Eine empfohlene Reihenfolge
 
-1. Lesen Sie [Intranet planen](../../../../eng-us/help/businesses/intranets/intranet-planning.md) mit den Personen, die das Intranet verantworten werden.
+1. Lesen Sie [Intranet planen](intranet-planen.md) mit den Personen, die das Intranet verantworten werden.
 2. Legen Sie die Struktur in [Abteilungen, Rollen und Sektionen](abteilungen-rollen-und-sektionen.md) fest.
-3. Entscheiden Sie, wie sich Mitarbeiter anmelden: [Zwei-Faktor und Anmeldung](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md) und
+3. Entscheiden Sie, wie sich Mitarbeiter anmelden: [Zwei-Faktor und Anmeldung](zwei-faktor-und-anmeldung.md) und
    [Verzeichnisanmeldung und LDAP](verzeichnisanmeldung-und-ldap.md).
 4. Planen Sie die Inhalte: [Dokumente und Dateibibliotheken](dokumente-und-dateibibliotheken.md),
-   [Neuigkeiten und Ankündigungen](../../../../eng-us/help/businesses/intranets/news-and-announcements.md), [Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md).
+   [Neuigkeiten und Ankündigungen](neuigkeiten-und-ankuendigungen.md), [Suche im Intranet](suche-im-intranet.md).
 5. Entscheiden Sie, wer was freigibt: [Freigabe-Workflows](freigabe-workflows.md) und
-   [Benachrichtigungen für Mitarbeiter](../../../../eng-us/help/businesses/intranets/notifications-for-staff.md).
-6. Arbeiten Sie die [Checkliste für die Intranet-Einführung](../../../../eng-us/help/businesses/intranets/intranet-rollout-checklist.md) durch.
+   [Benachrichtigungen für Mitarbeiter](benachrichtigungen-fuer-mitarbeiter.md).
+6. Arbeiten Sie die [Checkliste für die Intranet-Einführung](checkliste-fuer-die-intranet-einfuehrung.md) durch.
 7. Halten Sie die [Intranet-FAQ](intranet-faq.md) für Fragen von Kollegen bereit.
 
 ## Was Sie vor dem Start brauchen

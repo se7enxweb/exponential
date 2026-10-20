@@ -89,5 +89,5 @@ ohne Telefon in der Hand überrascht wird.
 
 - [Ihr Konto und die Anmeldung](../../konten-und-anmeldung.md)
 - [Benutzerkonten und Passwörter](../../../../eng-us/help/businesses/security/user-accounts-and-passwords.md)
-- [Zwei-Faktor und Anmeldung für Intranets](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md)
+- [Zwei-Faktor und Anmeldung für Intranets](../../unternehmen/intranets/zwei-faktor-und-anmeldung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

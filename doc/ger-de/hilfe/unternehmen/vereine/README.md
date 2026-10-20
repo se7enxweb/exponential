@@ -66,7 +66,7 @@ Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezweb
   Barrierefreiheit, kleine Budgets.
 - [Mitglieder](../../../../eng-us/help/businesses/members/README.md): Registrierung von Mitgliedern und Inhalte nur für Mitglieder.
 - [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md): Mails an Mitglieder und Unterstützer.
-- [Bibliotheken und Kataloge](../../../../eng-us/help/businesses/libraries/README.md): für Gruppen, die eine Sammlung pflegen.
+- [Bibliotheken und Kataloge](../bibliotheken/README.md): für Gruppen, die eine Sammlung pflegen.
 - [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): Konten, Zugriffsprüfungen, DSGVO-Grundlagen.
 - Öffentliche Einrichtungen haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
 

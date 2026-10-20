@@ -67,7 +67,7 @@ Uploads werden geprüft: Seit dem 12. Oktober 2026 werden Bilder für jeden Uplo
 
 > **Tipp**
 > Damit Mitarbeiter erfahren, wenn ein Partner hochlädt, folgen sie den Partnerordnern mit **Benachrichtigen**
-> ([Benachrichtigungen für Mitarbeiter](../../../../eng-us/help/businesses/intranets/notifications-for-staff.md)). Ein Freigabe-Workflow kann Uploads
+> ([Benachrichtigungen für Mitarbeiter](../intranets/benachrichtigungen-fuer-mitarbeiter.md)). Ein Freigabe-Workflow kann Uploads
 > von Partnern auch zurückhalten, bis Mitarbeiter sie annehmen ([Freigabe-Workflows](../intranets/freigabe-workflows.md)).
 
 ## Dateien über Formulare
@@ -87,7 +87,7 @@ Download-Ordner ab und verschickt gesammelte Informationen mit der Datei als Anh
   ([Spamschutz für Formulare](../../../../eng-us/help/creators/website-creators/spam-protection-for-forms.md)).
 - **HTTPS** für das Portal ([Live gehen: Hosts und HTTPS](../../../../eng-us/help/creators/website-creators/going-live-hosts-https.md)).
 - **Zweistufige Anmeldung** für Partnerkonten, wenn die Dateien sensibel sind
-  ([Zwei-Faktor und Anmeldung](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md)).
+  ([Zwei-Faktor und Anmeldung](../intranets/zwei-faktor-und-anmeldung.md)).
 - **Backups**, die das Speicherverzeichnis einschließen
   ([Backups, die sich wiederherstellen lassen](../../../../eng-us/help/businesses/reliability/backups-that-restore.md)).
 

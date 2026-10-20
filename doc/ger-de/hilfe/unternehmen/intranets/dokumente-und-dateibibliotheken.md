@@ -76,7 +76,7 @@ verantwortet; die Zuständigkeit drückt die Sektion aus.
 - **Freigabe.** Richtlinien und Handbücher können eine Freigabe brauchen, bevor eine neue Version live geht
   ([Freigabe-Workflows](freigabe-workflows.md)).
 - **Folgende.** Mitarbeiter, die dem Bibliotheksordner folgen, bekommen eine Mail, wenn darunter ein neues Dokument
-  veröffentlicht wird ([Benachrichtigungen für Mitarbeiter](../../../../eng-us/help/businesses/intranets/notifications-for-staff.md)).
+  veröffentlicht wird ([Benachrichtigungen für Mitarbeiter](benachrichtigungen-fuer-mitarbeiter.md)).
 - **Upload-Grenzen.** `upload_max_filesize` und `post_max_size` von PHP begrenzen, was Redakteure hochladen können;
   vereinbaren Sie die größte Dateigröße mit der Person, die den Server betreibt
   ([Dateien und Downloads, Large files](../../../../eng-us/help/creators/website-creators/files-and-downloads.md#large-files)).
@@ -98,7 +98,7 @@ Die eingebaute Suche indiziert die durchsuchbaren Felder jeder Klasse. Für Text
 `settings/binaryfile.ini` Extraktoren pro Typ: `ezpdf` für PDF (mit dem externen Programm `pstotext`), `ezword` für
 Word-Dokumente (mit `wvWare`) und `ezplaintext` für reinen Text. Die externen Programme müssen auf dem Server
 installiert sein. Mit Solr über `ezfind` können auch Dateiinhalte indiziert werden
-([Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md)).
+([Suche im Intranet](suche-im-intranet.md)).
 
 ## Handbücher als PDF und Office-Dokumente
 
@@ -131,7 +131,7 @@ testen, bevor Sie es zusagen.
 - [Dateien und Downloads](../../../../eng-us/help/creators/website-creators/files-and-downloads.md)
 - [Die Medien-Bibliothek ordnen](../../../../eng-us/help/creators/website-creators/organizing-the-media-library.md)
 - [Dateien mit Partnern teilen](../extranets/dateien-mit-partnern-teilen.md)
-- [Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md)
+- [Suche im Intranet](suche-im-intranet.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

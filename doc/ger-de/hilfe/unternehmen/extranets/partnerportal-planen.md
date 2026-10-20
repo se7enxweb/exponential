@@ -64,7 +64,7 @@ wird ([Getrennte Hosts und Siteaccesses](getrennte-hosts-und-siteaccesses.md)).
 | Wie Partner getrennt werden | Sektionen pro Stufe; Teilbäume pro Partner; Objektzustände | Einschränkungen von Rollen | [Kunden- und Partnerbereiche](kunden-und-partnerbereiche.md) |
 | Ob Partner hochladen | nur lesen; Upload in den eigenen Ordner | `content/create`, beschränkt nach Klasse und Teilbaum | [Dateien mit Partnern teilen](dateien-mit-partnern-teilen.md) |
 | Ob Partner bestellen | nein; eingebauter Shop mit Gruppenermäßigungen | Shop, Ermäßigungsgruppen | [Händler- und Lieferantenportale](haendler-und-lieferantenportale.md) |
-| Stärke der Anmeldung | Passwort; zweistufige Anmeldung | `sevenx_authentication_2fa` | [Zwei-Faktor und Anmeldung](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md) |
+| Stärke der Anmeldung | Passwort; zweistufige Anmeldung | `sevenx_authentication_2fa` | [Zwei-Faktor und Anmeldung](../intranets/zwei-faktor-und-anmeldung.md) |
 | Wie Zugriffe geprüft werden | vierteljährliche Prüfung | Rollenseiten, Benutzerkonten prüfen, Audit-Trail | [Berechtigungen im Extranet prüfen](berechtigungen-im-extranet-pruefen.md) |
 
 ## Das Trennungsmodell wählen

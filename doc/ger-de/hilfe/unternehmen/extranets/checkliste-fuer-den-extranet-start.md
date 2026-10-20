@@ -66,7 +66,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
 
 ## Anmeldung
 
-- [ ] Passwortregeln festgelegt ([Zwei-Faktor und Anmeldung](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md#password-rules)).
+- [ ] Passwortregeln festgelegt ([Zwei-Faktor und Anmeldung](../intranets/zwei-faktor-und-anmeldung.md#passwortregeln)).
 - [ ] `MaxNumberOfFailedLogin` auf einen anderen Wert als `0` gesetzt.
 - [ ] Zweistufige Anmeldung entschieden: freiwillig, für alle vorgeschrieben oder für sensible Stufen vorgeschrieben
   ([Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
@@ -128,7 +128,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
 ## Verwandte Seiten
 
 - [Extranets und Partnerportale](README.md)
-- [Checkliste für die Intranet-Einführung](../../../../eng-us/help/businesses/intranets/intranet-rollout-checklist.md)
+- [Checkliste für die Intranet-Einführung](../intranets/checkliste-fuer-die-intranet-einfuehrung.md)
 - [Vorlage Checkliste Go-live](../../../../eng-us/help/businesses/templates/go-live-checklist.md)
 - [Checkliste zur Sicherheitsprüfung für Hoster](../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -34,7 +34,7 @@ enthält, damit ein Projekt auf Fakten geplant wird. Die Einstellungen stehen in
 | LDAP-Verzeichnis (`LDAP`) | ja, `eZLDAPUser` | aus (auskommentiert) | `kernel/classes/datatypes/ezuser/ezldapuser.php`, `settings/ldap.ini` |
 | Eine Textdatei mit Trennzeichen (`textfile`) | ja, `eZTextFileUser` | aus (auskommentiert) | `kernel/classes/datatypes/ezuser/eztextfileuser.php`, `settings/textfile.ini` |
 | Automatisches Single Sign-on | ein Erweiterungspunkt (`SingleSignOnHandlerArray[]`), kein Handler mitgeliefert | leer | `kernel/classes/datatypes/ezuser/ezuser.php`, `settings/site.ini` |
-| Zweistufige Anmeldung und Social Login | Erweiterung `sevenx_authentication_2fa` | freiwillig | [Zwei-Faktor und Anmeldung](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md) |
+| Zweistufige Anmeldung und Social Login | Erweiterung `sevenx_authentication_2fa` | freiwillig | [Zwei-Faktor und Anmeldung](zwei-faktor-und-anmeldung.md) |
 | Ihr eigener Login-Handler | ein Erweiterungspunkt (`ExtensionDirectory[]`) | keiner | `settings/site.ini` |
 
 ## Wie Login-Handler arbeiten
@@ -142,7 +142,7 @@ Erweiterungsprojekt; bitten Sie einen Partner um eine Schätzung ([Einen Partner
 
 ## Verwandte Seiten
 
-- [Zwei-Faktor und Anmeldung](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md)
+- [Zwei-Faktor und Anmeldung](zwei-faktor-und-anmeldung.md)
 - [Referenz der LDAP-Einstellungen](../../../../eng-us/examples/ini-settings/ldap/LDAPSettings.md)
 - [Erweiterungspunkte in ldap.ini](../../../../eng-us/examples/extension-points/ldap.md)
 - [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md)

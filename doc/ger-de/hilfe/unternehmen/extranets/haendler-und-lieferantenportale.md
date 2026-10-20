@@ -99,7 +99,7 @@ Lieferanten lesen meist Anforderungen und schicken Dokumente zurück:
 | Spezifikationen und Qualitätsregeln lesen | Seiten in einer Lieferantensektion | [Kunden- und Partnerbereiche](kunden-und-partnerbereiche.md) |
 | Zertifikate in den eigenen Ordner hochladen | `content/create` für die Klasse File, Teilbaum-Einschränkung pro Lieferant | [Dateien mit Partnern teilen](dateien-mit-partnern-teilen.md#partner-hochladen-lassen) |
 | Ein Formular mit Anhang senden | Information Collector mit `enhancedezbinaryfile` | [Formulare mit dem Information Collector](../../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
-| Mitarbeiter erfahren von neuen Uploads | Benachrichtigen für die Lieferantenordner | [Benachrichtigungen für Mitarbeiter](../../../../eng-us/help/businesses/intranets/notifications-for-staff.md) |
+| Mitarbeiter erfahren von neuen Uploads | Benachrichtigen für die Lieferantenordner | [Benachrichtigungen für Mitarbeiter](../intranets/benachrichtigungen-fuer-mitarbeiter.md) |
 | Uploads werden vor der Verwendung geprüft | ein Freigabe-Workflow für die Lieferantensektion | [Freigabe-Workflows](../intranets/freigabe-workflows.md) |
 
 ## Was nicht eingebaut ist

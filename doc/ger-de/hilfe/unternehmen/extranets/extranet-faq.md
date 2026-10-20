@@ -41,7 +41,7 @@ Ja, mit einer Gruppe von Objektzuständen, die in den Leserichtlinien verwendet 
 ([Kunden- und Partnerbereiche, Wechselnde Zielgruppen](kunden-und-partnerbereiche.md#wechselnde-zielgruppen-mit-objektzuständen)).
 
 **Zeigt die Suche Partnern Dinge, die sie nicht lesen dürfen?**
-Nein. Suchergebnisse folgen den Berechtigungen ([Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md)).
+Nein. Suchergebnisse folgen den Berechtigungen ([Suche im Intranet](../intranets/suche-im-intranet.md)).
 
 ## Konten
 
@@ -68,7 +68,7 @@ Single Sign-on mit dem Identitätsanbieter eines Partners ist nicht eingebaut. D
 Textdateien und einen Erweiterungspunkt für Single-Sign-on-Handler
 ([Verzeichnisanmeldung und LDAP](../intranets/verzeichnisanmeldung-und-ldap.md)). Die Erweiterung
 `sevenx_authentication_2fa` bietet Social Login mit Anbietern wie Google, standardmäßig ausgeschaltet
-([Zwei-Faktor und Anmeldung, Social Login](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md#social-login)).
+([Zwei-Faktor und Anmeldung, Social Login](../intranets/zwei-faktor-und-anmeldung.md#social-login)).
 
 ## Adresse und Design
 

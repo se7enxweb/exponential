@@ -117,12 +117,12 @@ Raten Sie die Minuten nicht; messen Sie sie vorher und nachher:
 - [ ] Einen Umsetzungsfaktor, den Sie begründen können.
 - [ ] Posten für Verzeichnisanbindung, Single Sign-on oder Dokumentenmigration, wenn Ihr Projekt sie braucht.
 - [ ] Einen Posten für eine jährliche Zugriffsprüfung ([Zugriffsprüfungen](../../../../eng-us/help/businesses/security/access-reviews.md)).
-- [ ] Einen Einführungsplan: [Checkliste für die Intranet-Einführung](../../../../eng-us/help/businesses/intranets/intranet-rollout-checklist.md).
+- [ ] Einen Einführungsplan: [Checkliste für die Intranet-Einführung](../intranets/checkliste-fuer-die-intranet-einfuehrung.md).
 
 ## Verwandte Seiten
 
 - [Intranets](../intranets/README.md)
-- [Intranet planen](../../../../eng-us/help/businesses/intranets/intranet-planning.md)
+- [Intranet planen](../intranets/intranet-planen.md)
 - [Gesamtbetriebskosten](gesamtbetriebskosten.md)
 - [Vorlage ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

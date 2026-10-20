@@ -25,9 +25,9 @@ in jeder Abteilung. Die Planung eines Intranets behandelt [Intranets für Untern
 | Mitarbeitende melden sich an, idealerweise mit ihrem Firmenkonto | Benutzerkonten; eine Anmeldung über ein Verzeichnis (LDAP), wo Ihr Partner sie eingerichtet hat | [Anmeldung über Verzeichnisse und LDAP](../../unternehmen/intranets/verzeichnisanmeldung-und-ldap.md) |
 | Ein zweiter Faktor für die Anmeldung | Zwei-Faktor-Anmeldung | [Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Jede Abteilung sieht und bearbeitet ihren eigenen Teil | Rollen, Richtlinien und Sektionen | [Abteilungen, Rollen und Sektionen](../../unternehmen/intranets/abteilungen-rollen-und-sektionen.md), [Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md) |
-| Neuigkeiten für Mitarbeitende | Artikel und Startseiten, wo verwendet mit Layouts gestaltet | [Neuigkeiten und Ankündigungen](../../../../eng-us/help/businesses/intranets/news-and-announcements.md) |
-| Dokumente, die Menschen finden | Dateien, eine Dateibibliothek und die Suche | [Dokumente und Dateibibliotheken](../../unternehmen/intranets/dokumente-und-dateibibliotheken.md), [Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md) |
-| Mitarbeitende über Änderungen informieren | Benachrichtigungen | [Benachrichtigungen für Mitarbeitende](../../../../eng-us/help/businesses/intranets/notifications-for-staff.md) |
+| Neuigkeiten für Mitarbeitende | Artikel und Startseiten, wo verwendet mit Layouts gestaltet | [Neuigkeiten und Ankündigungen](../../unternehmen/intranets/neuigkeiten-und-ankuendigungen.md) |
+| Dokumente, die Menschen finden | Dateien, eine Dateibibliothek und die Suche | [Dokumente und Dateibibliotheken](../../unternehmen/intranets/dokumente-und-dateibibliotheken.md), [Suche im Intranet](../../unternehmen/intranets/suche-im-intranet.md) |
+| Mitarbeitende über Änderungen informieren | Benachrichtigungen | [Benachrichtigungen für Mitarbeitende](../../unternehmen/intranets/benachrichtigungen-fuer-mitarbeiter.md) |
 | Änderungen werden geprüft, bevor sie erscheinen | Freigabe-Workflows | [Freigabe-Workflows](../../unternehmen/intranets/freigabe-workflows.md) |
 | Nachweis, wer was geändert hat | Das manipulationssichere Prüfprotokoll | [Prüfprotokoll](../../../../eng-us/features/6.0/audit-trail.md) |
 
@@ -67,7 +67,7 @@ Folgen Sie dem [Lesepfad für Intranets](lesepfad-intranets.md). Ein Intranet in
 ## Verwandte Seiten
 
 - [Lesepfad für Intranets](lesepfad-intranets.md)
-- [Checkliste für die Einführung eines Intranets (Unternehmen)](../../../../eng-us/help/businesses/intranets/intranet-rollout-checklist.md)
+- [Checkliste für die Einführung eines Intranets (Unternehmen)](../../unternehmen/intranets/checkliste-fuer-die-intranet-einfuehrung.md)
 - [FAQ zu Intranets (Unternehmen)](../../unternehmen/intranets/intranet-faq.md)
 - [Extranets](../../unternehmen/extranets/README.md): Bereiche für Kunden und Partner
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

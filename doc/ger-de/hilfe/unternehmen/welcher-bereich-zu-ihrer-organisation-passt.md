@@ -43,7 +43,7 @@ Aufwand jeder braucht.
 |---|---|---|
 | Verkaufen physische oder digitale Produkte | [Online-Shops](../../../eng-us/help/businesses/stores/README.md) | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md) |
 | Geben einen Newsletter oder ein Magazin heraus | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md) | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) |
-| Verleihen, verzeichnen oder archivieren Objekte | [Bibliotheken und Kataloge](../../../eng-us/help/businesses/libraries/README.md) | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) |
+| Verleihen, verzeichnen oder archivieren Objekte | [Bibliotheken und Kataloge](bibliotheken/README.md) | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) |
 | Sammeln Spenden und organisieren Ehrenamtliche | [Gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/README.md) | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
 | Führen einen Verein oder einen Berufsverband | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) | [Kleine Gruppen und Vereine](vereine/README.md) |
 | Informieren und unterstützen Mitarbeiter | [Intranets](intranets/README.md) | [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
@@ -79,7 +79,7 @@ Das sind Muster, keine Berichte über echte Kunden.
 | Ein Unternehmen mit öffentlicher Website, Intranet und Partnerportal auf einer Installation | [Intranets](intranets/README.md), [Extranets](extranets/README.md), [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md), [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
 | Eine Mitgliederorganisation | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md), [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
 | Eine Marke, die in mehreren Ländern verkauft | [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md), [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md), [Shops](../../../eng-us/help/businesses/stores/README.md) |
-| Eine Bibliothek oder ein Archiv mit öffentlichem Katalog | [Bibliotheken und Kataloge](../../../eng-us/help/businesses/libraries/README.md), [Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md) |
+| Eine Bibliothek oder ein Archiv mit öffentlichem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md), [Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md) |
 
 ## Bereiche, die jede Organisation braucht
 

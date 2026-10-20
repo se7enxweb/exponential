@@ -27,13 +27,13 @@ Die Reihenfolge, in der ein Intranet-Team seine Website kennenlernt. Jeder Schri
 
 | Nr. | Lesen Sie | Wer | Warum |
 |---|---|---|---|
-| 8 | [Neuigkeiten und Ankündigungen](../../../../eng-us/help/businesses/intranets/news-and-announcements.md) | Kommunikation | Neuigkeiten für Mitarbeitende |
+| 8 | [Neuigkeiten und Ankündigungen](../../unternehmen/intranets/neuigkeiten-und-ankuendigungen.md) | Kommunikation | Neuigkeiten für Mitarbeitende |
 | 9 | [Freigabe und Prüfung](../alltag/freigabe-und-pruefung.md) | Intranet-Verantwortliche | Geprüft, bevor es erscheint |
 | 10 | [Dokumente und Dateibibliotheken](../../unternehmen/intranets/dokumente-und-dateibibliotheken.md) | Redakteure der Abteilungen | Dokumente, die Menschen finden |
-| 11 | [Suchen](../../suchen.md) und [Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md) | Alle | Dinge finden |
+| 11 | [Suchen](../../suchen.md) und [Suche im Intranet](../../unternehmen/intranets/suche-im-intranet.md) | Alle | Dinge finden |
 | 12 | [Neue Mitarbeitende einarbeiten](../alltag/neue-mitarbeitende-einarbeiten.md) | Intranet-Verantwortliche, Personalabteilung | Neue Mitarbeitende am ersten Tag startklar |
 | 13 | [Ausscheiden von Mitarbeitenden](../alltag/ausscheiden-von-mitarbeitenden.md) | Intranet-Verantwortliche, Personalabteilung | Ausscheidende an ihrem letzten Tag deaktiviert |
-| 14 | [Benachrichtigungen für Mitarbeitende](../../../../eng-us/help/businesses/intranets/notifications-for-staff.md) | Kommunikation | Menschen über Änderungen informieren |
+| 14 | [Benachrichtigungen für Mitarbeitende](../../unternehmen/intranets/benachrichtigungen-fuer-mitarbeiter.md) | Kommunikation | Menschen über Änderungen informieren |
 
 ## Das erste Quartal: Pflege
 

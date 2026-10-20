@@ -59,11 +59,11 @@ eigene Login-Handler; ein Handler für Ihren Identitätsanbieter wäre ein Erwei
 
 **Gibt es eine zweistufige Anmeldung?**
 Ja, über die Erweiterung `sevenx_authentication_2fa`: Codes aus einer Authenticator-App oder per E-Mail, freiwillig
-oder für alle vorgeschrieben ([Zwei-Faktor und Anmeldung](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md#two-step-sign-in)).
+oder für alle vorgeschrieben ([Zwei-Faktor und Anmeldung](zwei-faktor-und-anmeldung.md#zweistufige-anmeldung)).
 
 **Was geschieht nach mehreren falschen Passwörtern?**
 Standardmäßig nichts: `MaxNumberOfFailedLogin=0` bedeutet keine Sperre. Setzen Sie für das Intranet einen Wert
-([Zwei-Faktor und Anmeldung](../../../../eng-us/help/businesses/intranets/two-factor-and-sign-in.md#locking-an-account-after-failed-sign-ins)).
+([Zwei-Faktor und Anmeldung](zwei-faktor-und-anmeldung.md#ein-konto-nach-fehlgeschlagenen-anmeldungen-sperren)).
 
 ## Inhalte und Dokumente
 
@@ -77,11 +77,11 @@ Ja. Jedes Speichern ist eine Version; frühere veröffentlichte Versionen werden
 wiederhergestellt werden ([Versionen eines Objekts](../../../anleitungen/inhaltsverlauf.md)).
 
 **Zeigt die Suche Mitarbeitern Dinge, die sie nicht lesen dürfen?**
-Nein. Suchergebnisse folgen den Berechtigungen ([Suche im Intranet](../../../../eng-us/help/businesses/intranets/intranet-search.md)).
+Nein. Suchergebnisse folgen den Berechtigungen ([Suche im Intranet](suche-im-intranet.md)).
 
 **Kann die Suche in PDF- und Word-Dateien hineinsehen?**
 Ja, wenn die in `settings/binaryfile.ini` genannten Werkzeuge zur Textextraktion installiert sind, oder mit Solr
-([Suche im Intranet, In Dokumenten suchen](../../../../eng-us/help/businesses/intranets/intranet-search.md#searching-inside-documents)).
+([Suche im Intranet, In Dokumenten suchen](suche-im-intranet.md#in-dokumenten-suchen)).
 
 **Können Mitarbeiter die Bibliothek als Netzlaufwerk einbinden?**
 Der Kernel enthält einen WebDAV-Einstiegspunkt, standardmäßig ausgeschaltet. Testen Sie ihn auf Ihrer Installation,
@@ -95,15 +95,15 @@ Ja, mit einem Ereignis Approve, das vor dem Veröffentlichen ausgelöst wird, od
 
 **Kann eine Ankündigung zu einer festgelegten Zeit live gehen?**
 Das Workflow-Ereignis *Bis Datum warten* hält die Veröffentlichung bis zu einem Datumsfeld der Klasse zurück; es braucht
-den Workflow-Cronjob ([Neuigkeiten und Ankündigungen](../../../../eng-us/help/businesses/intranets/news-and-announcements.md#publishing-at-a-set-time)).
+den Workflow-Cronjob ([Neuigkeiten und Ankündigungen](neuigkeiten-und-ankuendigungen.md#zu-einer-festgelegten-zeit-veröffentlichen)).
 
 **Wie erfahren Mitarbeiter von neuen Inhalten?**
 Sie folgen Ordnern und bekommen sofort oder als Digest eine Mail
-([Benachrichtigungen für Mitarbeiter](../../../../eng-us/help/businesses/intranets/notifications-for-staff.md)).
+([Benachrichtigungen für Mitarbeiter](benachrichtigungen-fuer-mitarbeiter.md)).
 
 **Können wir einen Tippfehler korrigieren, ohne erneut allen zu mailen?**
 Ja, mit *Ohne Benachrichtigung veröffentlichen* für Redakteure, die die Richtlinie haben
-([Neuigkeiten und Ankündigungen](../../../../eng-us/help/businesses/intranets/news-and-announcements.md#corrections-without-a-second-mail)).
+([Neuigkeiten und Ankündigungen](neuigkeiten-und-ankuendigungen.md#korrekturen-ohne-zweite-mail)).
 
 ## Betrieb und Nachweise
 
@@ -131,7 +131,7 @@ zweistufige Anmeldung mit App-Codes verwendet wird ([Mobil und headless](../../.
 ## Verwandte Seiten
 
 - [Intranets](README.md)
-- [Checkliste für die Intranet-Einführung](../../../../eng-us/help/businesses/intranets/intranet-rollout-checklist.md)
+- [Checkliste für die Intranet-Einführung](checkliste-fuer-die-intranet-einfuehrung.md)
 - [Extranet-FAQ](../extranets/extranet-faq.md)
 - [FAQ für Unternehmen](../faq-fuer-unternehmen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

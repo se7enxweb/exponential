@@ -88,7 +88,7 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 | Ein Unternehmen, das Informationen mit Partnern, Händlern, Lieferanten oder Kunden teilt | [Extranets und Partnerportale](extranets/README.md) |
 | Ein Verein, ein Berufsverband oder jemand mit Mitgliedern | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) |
 | Herausgeber eines Newsletters | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md) |
-| Eine Bibliothek, ein Archiv oder jemand mit einem Katalog | [Bibliotheken und Kataloge](../../../eng-us/help/businesses/libraries/README.md) |
+| Eine Bibliothek, ein Archiv oder jemand mit einem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md) |
 | Eine gemeinnützige oder wohltätige Organisation | [Gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/README.md) |
 | Eine kleine Gruppe oder ein Verein, von Ehrenamtlichen geführt | [Kleine Gruppen und Vereine](vereine/README.md) |
 | Eine Marke oder Gruppe mit mehreren Websites | [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md) |
