@@ -72,7 +72,7 @@ Der Fork enthält die vollständige Upstream-Geschichte. Die Tabelle zählt sie 
 - [Release-Changelog](../../../changelogs/extensions/site-bundle.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Übersicht des Ökosystems](../../../eng-us/history/ecosystem.md)
+- [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/site-bundle.md)
 - [Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md)
 - Plattform-Ökosystem nach Monat: [2023-10](monate/2023-10.md), [2023-12](monate/2023-12.md), [2024-01](monate/2024-01.md), [2024-02](monate/2024-02.md), [2024-03](monate/2024-03.md), [2024-07](monate/2024-07.md), [2024-08](monate/2024-08.md), [2024-09](monate/2024-09.md), [2025-05](monate/2025-05.md), [2025-06](monate/2025-06.md), [2025-10](monate/2025-10.md), [2026-03](monate/2026-03.md), [2026-04](monate/2026-04.md)

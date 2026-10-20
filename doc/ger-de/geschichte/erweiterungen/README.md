@@ -84,7 +84,7 @@ Wie Sie eine Erweiterung verwenden, steht auf ihrer Funktionsseite, was jedes Re
 
 ## Verwandte Seiten
 
-- [Geschichte von Exponential](../../../eng-us/history/README.md): die Monatschronik der Hauptinstallation
+- [Geschichte von Exponential](../README.md): die Monatschronik der Hauptinstallation
 - [Funktionsübersicht der Legacy-Erweiterungen](../../../eng-us/features/6.0/extensions/README.md)
 - [Release Notes der Erweiterungen](../../../changelogs/extensions/README.md)
 - [Verhaltensänderungen der Legacy-Erweiterungen](../../../eng-us/bc/6.0/extensions-behaviour-changes.md)

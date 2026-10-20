@@ -163,7 +163,7 @@ Außerdem: 7 Merge- oder Finanzierungs-Commits des Teams (ohne Nutzen für Anwen
 - [Release-Changelog](../../../changelogs/extensions/cjw-exponential-platform-nexus.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Übersicht des Ökosystems](../../../eng-us/history/ecosystem.md)
+- [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/cjw-exponential-platform-nexus.md)
 - [SQLite für die Plattform](../../../eng-us/features/6.0/platform-sqlite-install.md)
 - [Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md)

@@ -75,6 +75,6 @@ Der Fork enthält die vollständige Upstream-Geschichte. Die Tabelle zählt sie 
 - [Release-Changelog](../../../changelogs/extensions/ez-support-tools.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Übersicht des Ökosystems](../../../eng-us/history/ecosystem.md)
+- [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/ez-support-tools.md)
 - Plattform-Ökosystem nach Monat: [2024-02](monate/2024-02.md), [2024-03](monate/2024-03.md), [2025-07](monate/2025-07.md), [2025-09](monate/2025-09.md), [2026-04](monate/2026-04.md)

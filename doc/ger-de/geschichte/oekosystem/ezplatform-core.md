@@ -60,7 +60,7 @@ Der Fork enthält die vollständige Upstream-Geschichte. Die Tabelle zählt sie 
 - [Release-Changelog](../../../changelogs/extensions/ezplatform-core.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Übersicht des Ökosystems](../../../eng-us/history/ecosystem.md)
+- [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/ezplatform-core.md)
 - [Spezifikation des SQLite-Installers](../../spezifikationen/6.0/platform-sqlite-installer.md)
 - [Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md)

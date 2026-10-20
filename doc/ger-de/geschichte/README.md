@@ -23,11 +23,11 @@ Lesen Sie diese Zeilen zuerst, wenn Sie neu sind; jede verweist auf den Monat, d
 - **April 2025: PHP 8.4 kommt, PHP 7 geht.** Websites mit PHP 7.4 bleiben auf 6.0.7. [April 2025](2025/2025-04.md)
 - **August 2025: Das Produkt heißt Exponential.** Bezeichner, Pfade und Tabellen blieben unverändert. [August 2025](2025/2025-08.md)
 - **Dezember 2025: PHP 8.5 wird unterstützt.** [Dezember 2025](2025/2025-12.md)
-- **Juni 2026: MongoDB 8 als Datenbank, und 6.0.14.** [Juni 2026, erste Hälfte](../../eng-us/history/2026/2026-06a.md)
-- **Juli 2026: Die Kommandozeile wird erwachsen.** `ezpm` in der Konsole, der Kickstarter, ein Werkzeug zum Zurücksetzen von Passwörtern, ein vertrauenswürdiger Template-Editor. [Juli 2026](../../eng-us/history/2026/2026-07.md)
-- **August 2026: ehrliches Template-Debugging, sechs Sicherheits-Patches, Tests bei jeder Änderung.** [August 2026](../../eng-us/history/2026/2026-08.md)
-- **September 2026: große Listen, die funktionieren, Velocity, eine Installation mit einem Befehl und eine Härtungsrunde.** [Erste Hälfte](../../eng-us/history/2026/2026-09a.md), [zweite Hälfte](../../eng-us/history/2026/2026-09b.md)
-- **Oktober 2026: jQuery 4 und admin4, ein Audit-Trail, `exp:ini`, eine Debug-Leiste, Inhaltsjobs und TinyMCE 8.** [Oktober 2026](../../eng-us/history/2026/2026-10.md)
+- **Juni 2026: MongoDB 8 als Datenbank, und 6.0.14.** [Juni 2026, erste Hälfte](2026/2026-06a.md)
+- **Juli 2026: Die Kommandozeile wird erwachsen.** `ezpm` in der Konsole, der Kickstarter, ein Werkzeug zum Zurücksetzen von Passwörtern, ein vertrauenswürdiger Template-Editor. [Juli 2026](2026/2026-07.md)
+- **August 2026: ehrliches Template-Debugging, sechs Sicherheits-Patches, Tests bei jeder Änderung.** [August 2026](2026/2026-08.md)
+- **September 2026: große Listen, die funktionieren, Velocity, eine Installation mit einem Befehl und eine Härtungsrunde.** [Erste Hälfte](2026/2026-09a.md), [zweite Hälfte](2026/2026-09b.md)
+- **Oktober 2026: jQuery 4 und admin4, ein Audit-Trail, `exp:ini`, eine Debug-Leiste, Inhaltsjobs und TinyMCE 8.** [Oktober 2026](2026/2026-10.md)
 
 ## So lesen Sie die Chronik
 
@@ -90,18 +90,18 @@ Hinweise stehen im [Changelog von 6.0.15](../../changelogs/6.0/6.0.15.md).
 | [Oktober 2025](2025/2025-10.md) | Keine Änderung an der Hauptinstallation im Oktober 2025. | [Plattform](oekosystem/monate/2025-10.md) |
 | [November 2025](2025/2025-11.md) | Keine Änderung an der Hauptinstallation im November 2025. | [Plattform](oekosystem/monate/2025-11.md) |
 | [Dezember 2025](2025/2025-12.md) | PHP 8.5 wird unterstützt: Zwei Klassen erhielten die Nullable-Typen, die es verlangt, und die Zeta Components wurden angehoben. | [Plattform](oekosystem/monate/2025-12.md) [Erweiterungen](erweiterungen/monate/2025-12.md) |
-| [Januar 2026](../../eng-us/history/2026/2026-01.md) | 6.0.12 war in Entwicklung. | [Plattform](oekosystem/monate/2026-01.md) |
-| [Februar 2026](../../eng-us/history/2026/2026-02.md) | 6.0.12 wurde am 10. Februar 2026 veröffentlicht. | [Plattform](oekosystem/monate/2026-02.md) |
-| [März 2026](../../eng-us/history/2026/2026-03.md) | Die Test-Werkzeugkette zog auf PHPUnit 13 um. | [Plattform](oekosystem/monate/2026-03.md) [Erweiterungen](erweiterungen/monate/2026-03.md) |
-| [April 2026](../../eng-us/history/2026/2026-04.md) | 6.0.13 wurde am 18. April 2026 veröffentlicht. | [Plattform](oekosystem/monate/2026-04.md) [Erweiterungen](erweiterungen/monate/2026-04.md) |
-| [Mai 2026](../../eng-us/history/2026/2026-05.md) | Ein ruhiger Monat: eine Typkorrektur in PHP für die Diff-Engine der Inhalte und eine neu erzeugte Dateiliste des Releases. | [Plattform](oekosystem/monate/2026-05.md) |
-| [Juni 2026, erste Hälfte](../../eng-us/history/2026/2026-06a.md) | MongoDB 8 kam am 1. Juni 2026 als Datenbank hinzu. | [Plattform](oekosystem/monate/2026-06.md) [Erweiterungen](erweiterungen/monate/2026-06.md) |
-| [Juni 2026, zweite Hälfte](../../eng-us/history/2026/2026-06b.md) | 6.0.15 war in Entwicklung. | [Plattform](oekosystem/monate/2026-06.md) [Erweiterungen](erweiterungen/monate/2026-06.md) |
-| [Juli 2026](../../eng-us/history/2026/2026-07.md) | Die Kommandozeile wurde erwachsen: `ezpm` kam in die Konsole, ein Installer mit einem Befehl und der Kickstarter erschienen, dazu ein Werkzeug zum Zurücksetzen von Passwörtern. | [Plattform](oekosystem/monate/2026-07.md) [Erweiterungen](erweiterungen/monate/2026-07.md) [Velocity](../../eng-us/history/velocity/2026-07.md) |
-| [August 2026](../../eng-us/history/2026/2026-08.md) | Template-Debugging sagt die Wahrheit: Pfadkommentare nennen das Template, das wirklich lief, und die Erweiterungsliste sortiert und lädt herunter. | [Erweiterungen](erweiterungen/monate/2026-08.md) [Velocity](../../eng-us/history/velocity/2026-08.md) |
-| [September 2026, erste Hälfte](../../eng-us/history/2026/2026-09a.md) | Lange Listen in der Administrationsoberfläche werden seitenweise angezeigt, sind sortierbar und in der Größe einstellbar, sodass Installationen mit Tausenden von Rollen oder Orten wieder funktionieren. | [Plattform](oekosystem/monate/2026-09.md) [Erweiterungen](erweiterungen/monate/2026-09.md) [Velocity](../../eng-us/history/velocity/2026-09a.md) |
-| [September 2026, zweite Hälfte](../../eng-us/history/2026/2026-09b.md) | Velocity, ein Webserver mit dauerhaft laufenden Workern für Exponential, kam am 22. September und wurde innerhalb von zwei Tagen der empfohlene Weg zu hoher Geschwindigkeit. | [Plattform](oekosystem/monate/2026-09.md) [Erweiterungen](erweiterungen/monate/2026-09.md) [Velocity](../../eng-us/history/velocity/2026-09b.md) |
-| [Oktober 2026](../../eng-us/history/2026/2026-10.md) | 354 Änderungen in zwei Tagen (1. und 2. Oktober), kein Release-Tag; sie gehören zur Linie 6.0.15. | [Erweiterungen](erweiterungen/monate/2026-10.md) [Velocity](../../eng-us/history/velocity/2026-10.md) |
+| [Januar 2026](2026/2026-01.md) | 6.0.12 war in Entwicklung. | [Plattform](oekosystem/monate/2026-01.md) |
+| [Februar 2026](2026/2026-02.md) | 6.0.12 wurde am 10. Februar 2026 veröffentlicht. | [Plattform](oekosystem/monate/2026-02.md) |
+| [März 2026](2026/2026-03.md) | Die Test-Werkzeugkette zog auf PHPUnit 13 um. | [Plattform](oekosystem/monate/2026-03.md) [Erweiterungen](erweiterungen/monate/2026-03.md) |
+| [April 2026](2026/2026-04.md) | 6.0.13 wurde am 18. April 2026 veröffentlicht. | [Plattform](oekosystem/monate/2026-04.md) [Erweiterungen](erweiterungen/monate/2026-04.md) |
+| [Mai 2026](2026/2026-05.md) | Ein ruhiger Monat: eine Typkorrektur in PHP für die Diff-Engine der Inhalte und eine neu erzeugte Dateiliste des Releases. | [Plattform](oekosystem/monate/2026-05.md) |
+| [Juni 2026, erste Hälfte](2026/2026-06a.md) | MongoDB 8 kam am 1. Juni 2026 als Datenbank hinzu. | [Plattform](oekosystem/monate/2026-06.md) [Erweiterungen](erweiterungen/monate/2026-06.md) |
+| [Juni 2026, zweite Hälfte](2026/2026-06b.md) | 6.0.15 war in Entwicklung. | [Plattform](oekosystem/monate/2026-06.md) [Erweiterungen](erweiterungen/monate/2026-06.md) |
+| [Juli 2026](2026/2026-07.md) | Die Kommandozeile wurde erwachsen: `ezpm` kam in die Konsole, ein Installer mit einem Befehl und der Kickstarter erschienen, dazu ein Werkzeug zum Zurücksetzen von Passwörtern. | [Plattform](oekosystem/monate/2026-07.md) [Erweiterungen](erweiterungen/monate/2026-07.md) [Velocity](../../eng-us/history/velocity/2026-07.md) |
+| [August 2026](2026/2026-08.md) | Template-Debugging sagt die Wahrheit: Pfadkommentare nennen das Template, das wirklich lief, und die Erweiterungsliste sortiert und lädt herunter. | [Erweiterungen](erweiterungen/monate/2026-08.md) [Velocity](../../eng-us/history/velocity/2026-08.md) |
+| [September 2026, erste Hälfte](2026/2026-09a.md) | Lange Listen in der Administrationsoberfläche werden seitenweise angezeigt, sind sortierbar und in der Größe einstellbar, sodass Installationen mit Tausenden von Rollen oder Orten wieder funktionieren. | [Plattform](oekosystem/monate/2026-09.md) [Erweiterungen](erweiterungen/monate/2026-09.md) [Velocity](../../eng-us/history/velocity/2026-09a.md) |
+| [September 2026, zweite Hälfte](2026/2026-09b.md) | Velocity, ein Webserver mit dauerhaft laufenden Workern für Exponential, kam am 22. September und wurde innerhalb von zwei Tagen der empfohlene Weg zu hoher Geschwindigkeit. | [Plattform](oekosystem/monate/2026-09.md) [Erweiterungen](erweiterungen/monate/2026-09.md) [Velocity](../../eng-us/history/velocity/2026-09b.md) |
+| [Oktober 2026](2026/2026-10.md) | 354 Änderungen in zwei Tagen (1. und 2. Oktober), kein Release-Tag; sie gehören zur Linie 6.0.15. | [Erweiterungen](erweiterungen/monate/2026-10.md) [Velocity](../../eng-us/history/velocity/2026-10.md) |
 
 ## Die anderen Chroniken
 

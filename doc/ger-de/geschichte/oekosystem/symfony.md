@@ -77,6 +77,6 @@ Außerdem: 2 Merge- oder Finanzierungs-Commits des Teams (ohne Nutzen für Anwen
 - [Release-Changelog](../../../changelogs/extensions/symfony.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Übersicht des Ökosystems](../../../eng-us/history/ecosystem.md)
+- [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/symfony.md)
 - Plattform-Ökosystem nach Monat: [2025-08](monate/2025-08.md), [2026-01](monate/2026-01.md), [2026-02](monate/2026-02.md), [2026-03](monate/2026-03.md), [2026-04](monate/2026-04.md)

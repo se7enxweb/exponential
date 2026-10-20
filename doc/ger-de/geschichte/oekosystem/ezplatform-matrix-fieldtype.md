@@ -58,6 +58,6 @@ composer require se7enxweb/ezplatform-matrix-fieldtype
 - [Release-Changelog](../../../changelogs/extensions/ezplatform-matrix-fieldtype.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Übersicht des Ökosystems](../../../eng-us/history/ecosystem.md)
+- [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/ezplatform-matrix-fieldtype.md)
 - Plattform-Ökosystem nach Monat: [2025-09](monate/2025-09.md), [2026-04](monate/2026-04.md)

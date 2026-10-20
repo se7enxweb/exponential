@@ -32,6 +32,6 @@ Außerdem: 1 Merge- oder Finanzierungs-Commit des Teams (ohne Nutzen für Anwend
 
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Übersicht des Ökosystems](../../../eng-us/history/ecosystem.md)
+- [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/ibexa-xmltext-fieldtype.md)
 - Plattform-Ökosystem nach Monat: [2026-03](monate/2026-03.md)

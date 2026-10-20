@@ -40,7 +40,7 @@ Außerdem: 1 Merge- oder Finanzierungs-Commit des Teams (ohne Nutzen für Anwend
 
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Übersicht des Ökosystems](../../../eng-us/history/ecosystem.md)
+- [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/mirror.exponential.se7enx.com.md)
 - [SQLite für die Plattform](../../../eng-us/features/6.0/platform-sqlite-install.md)
 - [Konsolenbefehle der Plattform](../../spezifikationen/6.0/platform-konsolenbefehle.md)

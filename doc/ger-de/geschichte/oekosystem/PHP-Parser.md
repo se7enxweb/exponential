@@ -42,6 +42,6 @@ composer require se7enxweb/php-parser
 - [Framework-Forks](../../../eng-us/features/6.0/platform-php85-framework-forks.md)
 - [Paketübersicht](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Upgrade-Hinweise](../../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)
-- [Übersicht des Ökosystems](../../../eng-us/history/ecosystem.md)
+- [Übersicht des Ökosystems](../oekosystem.md)
 - [Vollständiges Änderungsverzeichnis dieses Repositorys](../aenderungsverzeichnis/PHP-Parser.md)
 - Plattform-Ökosystem nach Monat: [2026-05](monate/2026-05.md)
