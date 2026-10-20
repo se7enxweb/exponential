@@ -124,7 +124,8 @@ class Dashboard extends \Exponential\Runnable\ModuleView
      * state), false when there are none or help as content is not installed (doc/en/us/features/6.0/help-content.md,
      * "Overdue reviews")
      *
-     * @return array|false array( 'items' => list of help_id, title, state, reason, since, days, node_id, can_edit, url;
+     * @return array|false array( 'items' => list of help_id, title, state, state_name, reason, since, days, node_id, can_edit,
+     *                     url;
      *                     'count' => int, 'max_days' => int )
      */
     public static function reviewSummary()

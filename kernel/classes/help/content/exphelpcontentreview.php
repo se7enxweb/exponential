@@ -107,11 +107,18 @@ class expHelpContentReview
         $repository = expHelpContentRepository::instance();
         // the states of help_status: only those count as "may assign a state" here
         $helpStates = array();
+        $stateNames = array();
         $group = eZContentObjectStateGroup::fetchByIdentifier( expHelpContentSchema::STATE_GROUP );
         if ( $group instanceof eZContentObjectStateGroup )
         {
             foreach ( $group->states() as $state )
+            {
                 $helpStates[] = (int)$state->attribute( 'id' );
+                // the state's name as the site has written it, in the language of the interface where there is one
+                $translation = $state->currentTranslation();
+                $name = $translation ? trim( (string)$translation->attribute( 'name' ) ) : '';
+                $stateNames[(string)$state->attribute( 'identifier' )] = $name !== '' ? $name : (string)$state->attribute( 'identifier' );
+            }
         }
         $items = array();
         foreach ( self::all() as $item )
@@ -125,6 +132,7 @@ class expHelpContentReview
             if ( !$object->canEdit() && !$assignable )
                 continue;
             $item['can_edit'] = (bool)$object->canEdit();
+            $item['state_name'] = isset( $stateNames[$item['state']] ) ? $stateNames[$item['state']] : $item['state'];
             $items[] = $item;
         }
         return array( 'items' => array_slice( $items, 0, max( 1, (int)$limit ) ), 'count' => count( $items ), 'max_days' => self::maxDays() );
