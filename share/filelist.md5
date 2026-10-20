@@ -16261,6 +16261,11 @@ d60e2e424b33dceae4a699b06f3c728d  tests/tests/kernel/classes/subitems/expSubitem
 64c81d5eb6d1b6ebb7089f305649aedb  tests/tests/kernel/classes/subitems/fixtures/expsubitemstesthelpers.php
 5509f70be8ab5c167cec44c57e4b4f07  tests/tests/kernel/classes/subitems/fixtures/subitems.ini
 76ef7c50caba9c07204d2cc9d80b6fa0  tests/tests/kernel/classes/subitems/fixtures/subitemscolumns.ini
+f90a315e3f45bb3f6f647f93cc58fbc5  tests/tests/kernel/classes/syscard/expSysCardCommandTest.php
+1b0ff6f295e8cd01f5544da7155b1ef8  tests/tests/kernel/classes/syscard/expSysCardProvidersTest.php
+6491c80545eb0e3b76ffc003cb492e23  tests/tests/kernel/classes/syscard/expSysCardRegistryTest.php
+055180cc4c227a873e34b012452bd806  tests/tests/kernel/classes/syscard/expSysCardRendererTest.php
+3aa58dd1ef1bf5a526f5209d9b8f69e6  tests/tests/kernel/classes/syscard/expsyscardtestini.php
 65ea0f4fc996e4b55c80a262b019b5d7  tests/tests/kernel/classes/templateside/eZKernelTemplateOperatorsTest.php
 c4093815f512eca06838f9979dc3175b  tests/tests/kernel/classes/templateside/eZTemplateDesignResourceTest.php
 173c7582c0a9772090ad0f6f0e8cf2ca  tests/tests/kernel/classes/trash/TrashListMongoTest.php
