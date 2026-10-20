@@ -425,7 +425,13 @@ function ContentStructureMenu( params, i18n )
                 function setErrorText( txt )
                 {
                     if (aElement) aElement.title = txt;
-                    else divElement.innerHTML = '<span></span>' + txt;
+                    else
+                    {
+                        // an empty span, then the text as text: the message is never parsed as markup
+                        divElement.textContent = '';
+                        divElement.appendChild( document.createElement( 'span' ) );
+                        divElement.appendChild( document.createTextNode( txt ) );
+                    }
                     if (aElement) _describe( aElement.parentNode, txt );
                 }
 
