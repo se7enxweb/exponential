@@ -10832,7 +10832,7 @@ cf41124425e6fb0ba0e5053e62366e77  doc/en/us/specifications/6.0/runnable-commands
 8ff680ada73361630c5ed13edfbd25e7  doc/en/us/specifications/6.0/security-defaults-2026-09.md
 2f8542f316e6413ae50a764b4423e23f  doc/en/us/specifications/6.0/security-hardening-2026-08.md
 4dad973d480bb09e84759969f26db281  doc/en/us/specifications/6.0/security-hardening-6.0.13.md
-b2023df83ebe34bada5225f7a5166785  doc/en/us/specifications/6.0/sqlite3-database-driver.md
+b1e96a3c53d1ec3869873882c67ca980  doc/en/us/specifications/6.0/sqlite3-database-driver.md
 f14404070f007379a58298d1f27c194a  doc/en/us/specifications/6.0/syndication.md
 0579e853d2f70bdb5ad483a90d70db4c  doc/en/us/specifications/6.0/velocity-engine-settings.md
 8fcc5244731a07872bce7a2cffa93e6c  doc/en/us/specifications/6.0/velocity-http2-and-security.md
@@ -15893,7 +15893,7 @@ d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStrin
 647b489c0b9f59541e1d26587ed4bb2b  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
 a0c0ae8787effaa5ef6bf8c35edc273a  tests/tests/lib/ezdb/eZSQLite3DBQueryCountTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
-e4ebfd52c61c72bae807a524e773a520  tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php
+a68019c7f8ac08ae6d18a6dd2c74adf5  tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php
 a0cfc060f83bf5becb309e1ec1003f2f  tests/tests/lib/ezdb/ezdbinterface_test.php
 9050ccc1183ed7d205ba7d47042b29c1  tests/tests/lib/ezdb/ezmysqlcharsettest.php
 f725ee9eb15406052f599712365f5eee  tests/tests/lib/ezdb/ezmysqldb_fk_test.php
