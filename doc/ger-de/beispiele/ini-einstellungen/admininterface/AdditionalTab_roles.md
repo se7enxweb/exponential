@@ -11,24 +11,24 @@ generated: exp:help:examples
 
 Der Block `[AdditionalTab_roles]` von `settings/admininterface.ini`, mit 5 Einstellung(en).
 
-> Additional tab configuration example  
+> Beispiel für die Konfiguration eines zusätzlichen Reiters  
 > \[AdditionalTab\_customtab\]  
 > Title=Example Tab  
 > Description=Some example tab description  
 >
-> Translation context of Title and Description (the extension's catalogue holds the messages); without it  
-> they are shown as written  
+> Übersetzungskontext von Title und Description (der Katalog der Erweiterung enthält die Meldungen); ohne ihn  
+> werden sie so angezeigt, wie sie geschrieben sind  
 > TranslationContext=extension/myextension/tab  
 >
-> Navigation part where the tab will be available (ezcontentnavigationpart, ezusernavigationpart, ...)  
+> Navigationsbereich, in dem der Reiter verfügbar ist (ezcontentnavigationpart, ezusernavigationpart, ...)  
 > NavigationPartName=ezcontentnavigationpart  
 >
-> Custom tab templates should be placed under design/admin/templates/tabs/  
-> E.g design/admin/templates/tabs/custom\_tab.tpl  
+> Templates eigener Reiter gehören unter design/admin/templates/tabs/  
+> Z. B. design/admin/templates/tabs/custom\_tab.tpl  
 >
-> Tab header template, if empty then Title and Description are used by default header template  
+> Template des Reiterkopfes; wenn leer, verwendet das Standard-Kopf-Template Title und Description  
 > HeaderTemplate=  
-> Tab content template  
+> Template des Reiterinhalts  
 > Template=custom\_tab.tpl  
 
 Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:

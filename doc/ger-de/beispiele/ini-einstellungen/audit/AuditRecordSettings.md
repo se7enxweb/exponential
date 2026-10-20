@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## BeforeAfter
 
-> Record before/after values (Q2).  enabled | keys (keys kept, values replaced by their  
-> sha256) | disabled.  Secrets are never recorded either way.  
+> Werte vorher/nachher festhalten (Q2).  enabled | keys (Schlüssel behalten, Werte durch ihren  
+> sha256 ersetzt) | disabled.  Geheimnisse werden in keinem Fall festgehalten.  
 
 Standard: `enabled`.
 
@@ -34,8 +34,8 @@ BeforeAfter=enabled
 
 ## MaxValueLength
 
-> Longest value kept in before/after/object fields, in characters; longer ones are cut  
-> and end in "…".  
+> Längster Wert, der in den Feldern before/after/object erhalten bleibt, in Zeichen; längere werden abgeschnitten  
+> und enden auf "…".  
 
 Standard: `512`.
 
@@ -49,9 +49,9 @@ MaxValueLength=512
 
 ## ChildDepth
 
-> Child events (F2): how many levels below a parent are written one by one, and how many  
-> children per parent at most. Past either limit the parent counts the rest in  
-> after.children\_omitted.  0 = no children at all.  
+> Untergeordnete Ereignisse (F2): wie viele Ebenen unter einem übergeordneten einzeln geschrieben werden und wie viele  
+> untergeordnete pro übergeordnetem höchstens. Über eine der Grenzen hinaus zählt das übergeordnete den Rest in  
+> after.children\_omitted.  0 = gar keine untergeordneten.  
 
 Standard: `3`.
 
@@ -77,7 +77,7 @@ MaxChildren=10000
 
 ## RequestContext
 
-> Extra request fields.  enabled | disabled  
+> Zusätzliche Felder der Anfrage.  enabled | disabled  
 
 Standard: `enabled`.
 
@@ -91,8 +91,8 @@ RequestContext=enabled
 
 ## RequestIdHeader
 
-> Send the request id as a response header (F2); an empty value sends none. Named like  
-> the other X-Exp-\* headers of Exponential (X-Exp-Cache).  
+> Die Anfrage-ID als Antwort-Header senden (F2); ein leerer Wert sendet keinen. Benannt wie  
+> die anderen X-Exp-\*-Header von Exponential (X-Exp-Cache).  
 
 Standard: `X-Exp-Request-Id`.
 
@@ -106,9 +106,9 @@ RequestIdHeader=X-Exp-Request-Id
 
 ## TrustedRequestIdHeader
 
-> Accept the request id from a trusted front proxy instead of making one; empty = never.  
-> The header is only trusted from the addresses in TrustedProxies\[\] (site.ini's list  
-> when empty).  
+> Die Anfrage-ID von einem vertrauenswürdigen vorgelagerten Proxy übernehmen, statt eine zu erzeugen; leer = nie.  
+> Dem Header wird nur von den Adressen in TrustedProxies\[\] vertraut (bei leerem Wert die Liste  
+> von site.ini).  
 
 Standard: leer.
 
@@ -122,7 +122,7 @@ TrustedRequestIdHeader=
 
 ## MaxLineBytes
 
-> Longest line the writer reads back to find the chain's head, in bytes.  
+> Längste Zeile, die der Schreiber zurückliest, um den Kopf der Kette zu finden, in Bytes.  
 
 Standard: `262144`.
 

@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[AuditChannel_content]` von `settings/audit.ini`, mit 5 Einstellung(en).
 
-> One block per channel. Every variable may be left out: the \[AuditRotationSettings\]  
-> defaults apply.  
+> Ein Block pro Kanal. Jede Variable darf fehlen: Dann gelten die Standards aus  
+> \[AuditRotationSettings\].  
 
 Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -22,7 +22,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## LiveDays
 
-> Days a file stays live (uncompressed, in LogDir) before it is archived (F6: 90).  
+> Tage, die eine Datei live bleibt (unkomprimiert, im LogDir), bevor sie archiviert wird (F6: 90).  
 
 Standard: `90`.
 
@@ -36,7 +36,7 @@ LiveDays=90
 
 ## ArchiveDays
 
-> Days an archive is kept before retention removes it (F6: 2 years).  
+> Tage, die ein Archiv aufbewahrt wird, bevor die Aufbewahrungsregel es entfernt (F6: 2 Jahre).  
 
 Standard: `730`.
 
@@ -50,7 +50,7 @@ ArchiveDays=730
 
 ## MaxFileSize
 
-> Size at which a day's file is closed and a new part started; K, M, G suffixes.  
+> Größe, bei der die Datei eines Tages geschlossen und ein neuer Teil begonnen wird; Suffixe K, M, G.  
 
 Standard: `64M`.
 
@@ -64,7 +64,7 @@ MaxFileSize=64M
 
 ## ArchiveFormat
 
-> The archive format handler (see \[AuditArchiveSettings\] FormatHandlers\[\]).  
+> Der Format-Handler der Archive (siehe \[AuditArchiveSettings\] FormatHandlers\[\]).  
 
 Standard: `gzip`.
 
@@ -78,7 +78,7 @@ ArchiveFormat=gzip
 
 ## Sinks
 
-> Sinks this channel's events are sent to, besides the file (see \[AuditSinkSettings\]).  
+> Ziele, an die die Ereignisse dieses Kanals außer der Datei gesendet werden (siehe \[AuditSinkSettings\]).  
 
 Standard: eine leere Liste.
 

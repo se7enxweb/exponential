@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/collect.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Type
 
-> The default information collection type  
+> Der Standardtyp der Informationssammlung  
 
 Standard: `form`.
 
@@ -33,7 +33,7 @@ Type=form
 
 ## TypeList
 
-> Matches class id or identifier to information collection type  
+> Ordnet Klassen-ID oder -Bezeichner einem Informationssammlungstyp zu  
 
 Standard: ein Hash mit 3: `poll=poll`, `form=form`, `feedback=feedback`.
 
@@ -51,8 +51,8 @@ TypeList[feedback]=feedback
 
 ## TypeAttribute
 
-> Which attribute to look for in the object to determine type  
-> if found the content of the attribute will be used for type  
+> Welches Attribut im Objekt den Typ bestimmt;  
+> wenn gefunden, wird der Inhalt des Attributs als Typ verwendet  
 
 Standard: `collection_type`.
 

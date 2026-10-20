@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Enabled
 
-> Which events are recorded, by taxonomy pattern: a whole domain (content.\*), a subject  
-> (content.node.\*), an action with its details (content.node.remove.\*) or one name.  
-> The most specific pattern wins; on a tie the later line wins. Events marked "always"  
-> in the catalogue (system.audit.\*, access.view.sensitive) ignore Disabled\[\].  
+> Welche Ereignisse festgehalten werden, nach Taxonomie-Muster: eine ganze Domäne (content.\*), ein Gegenstand  
+> (content.node.\*), eine Aktion mit ihren Details (content.node.remove.\*) oder ein Name.  
+> Das spezifischste Muster gewinnt; bei Gleichstand gewinnt die spätere Zeile. Im Katalog als "always" markierte Ereignisse  
+> (system.audit.\*, access.view.sensitive) ignorieren Disabled\[\].  
 
 Standard: eine Liste mit 33: `access.*`, `system.*`, `content.node.move`, `content.node.remove.*`, `content.node.hide`, `content.node.reveal`, `content.node.swap`, `content.node.section`, `content.object.remove`, `content.object.purge`, `content.object.restore`, `content.object.state` ....
 
@@ -73,11 +73,11 @@ Disabled[]=access.session.expire
 
 ## Branches
 
-> Reads are switched on in \[AuditReadSettings\], not here.  
+> Lesezugriffe werden in \[AuditReadSettings\] eingeschaltet, nicht hier.  
 >
-> Extensions register their taxonomy branches: name => the branch class (implements  
-> expAuditTaxonomyBranch), which lists the names, their severity, channel and the  
-> privacy of its own fields. Counted by the RAD survey (registry "auditbranches").  
+> Erweiterungen registrieren ihre Taxonomie-Zweige: Name => die Zweigklasse (implementiert  
+> expAuditTaxonomyBranch), die die Namen, ihren Schweregrad, Kanal und den  
+> Datenschutz ihrer eigenen Felder auflistet. Von der RAD-Survey gezählt (Registry "auditbranches").  
 > Branches\[myext\]=myExtAuditBranch  
 
 Standard: eine leere Liste.
@@ -93,7 +93,7 @@ Branches[]
 
 ## MinSeverity
 
-> The severity (RFC 5424 name) below which an event is not recorded at all.  
+> Der Schweregrad (Name nach RFC 5424), unter dem ein Ereignis gar nicht festgehalten wird.  
 > debug | info | notice | warning | error | critical | alert | emergency  
 
 Standard: `info`.

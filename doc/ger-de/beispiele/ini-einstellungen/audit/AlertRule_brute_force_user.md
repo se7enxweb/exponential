@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Class
 
-> Many failed logins for one account, from anywhere.  
+> Viele fehlgeschlagene Anmeldungen für ein Konto, von überall.  
 
 Standard: `threshold`.
 

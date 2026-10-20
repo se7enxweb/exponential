@@ -1,0 +1,678 @@
+{
+    "ini:settings/admininterface.ini [AdditionalMenuSettings]": {
+        "en": "Settings to load additional menu items based on templates",
+        "de": "Einstellungen, um zusätzliche Menüpunkte anhand von Templates zu laden"
+    },
+    "ini:settings/admininterface.ini [AdditionalMenuSettings] AdvancedMenuTemplateArray": {
+        "en": "Template(s) for advance menu, sub menu of Context/Subitems menu",
+        "de": "Template(s) für das erweiterte Menü, Untermenü des Kontext-/Unterelemente-Menüs"
+    },
+    "ini:settings/admininterface.ini [AdditionalMenuSettings] BookmarkMenuTemplateArray": {
+        "en": "Template(s) for bookmark popup menu on right side bookmark box",
+        "de": "Template(s) für das Popup-Menü der Lesezeichen in der Lesezeichenbox rechts"
+    },
+    "ini:settings/admininterface.ini [AdditionalMenuSettings] ClassMenuTemplateArray": {
+        "en": "Template(s) for class popup menu on large class icon in node view",
+        "de": "Template(s) für das Popup-Menü der Klasse am großen Klassensymbol in der Knotenansicht"
+    },
+    "ini:settings/admininterface.ini [AdditionalMenuSettings] ContextMenuTemplateArray": {
+        "en": "Context menu items template(s)",
+        "de": "Template(s) für die Einträge des Kontextmenüs"
+    },
+    "ini:settings/admininterface.ini [AdditionalMenuSettings] ExportMenuTemplateArray": {
+        "en": "Template(s) for the Export submenu of the advance menu: the items an extension adds below the package entries\n(xrowextract: the CSV entries). Each item opens its tool's form filled in for the node (%nodeID%), never an export\nitself, and is shown only to a user with the tool's policy. Export is shown when it has an item.\nGuide: doc/eng-us/bc/6.0/content-export-menu.md",
+        "de": "Template(s) für das Untermenü Export des erweiterten Menüs: die Einträge, die eine Erweiterung unter den Paketeinträgen hinzufügt\n(xrowextract: die CSV-Einträge). Jeder Eintrag öffnet das Formular seines Werkzeugs, für den Knoten ausgefüllt (%nodeID%), nie einen Export\nselbst, und wird nur einem Benutzer mit der Richtlinie des Werkzeugs angezeigt. Export erscheint, wenn es einen Eintrag hat.\nAnleitung: doc/eng-us/bc/6.0/content-export-menu.md"
+    },
+    "ini:settings/admininterface.ini [AdditionalMenuSettings] ExportSubMenuTemplateArray": {
+        "en": "Template(s) for the submenus of those items (a level below Export), output after the Export menu",
+        "de": "Template(s) für die Untermenüs dieser Einträge (eine Ebene unter Export), ausgegeben nach dem Menü Export"
+    },
+    "ini:settings/admininterface.ini [AdditionalMenuSettings] ImportExportMenuTemplateArray": {
+        "en": "Template(s) for the import and job items of the Import/Export menu (Import/Export only). Declared empty so the\npopup_export_items.tpl reads it without a missing-variable error when no extension adds one.",
+        "de": "Template(s) für die Import- und Auftragseinträge des Menüs Import/Export (nur Import/Export). Leer deklariert, damit\npopup_export_items.tpl es ohne Fehler wegen fehlender Variable liest, wenn keine Erweiterung einen hinzufügt."
+    },
+    "ini:settings/admininterface.ini [AdditionalMenuSettings] SubMenuTemplateArray": {
+        "en": "Template(s) for submenus of the popupmenu",
+        "de": "Template(s) für Untermenüs des Popup-Menüs"
+    },
+    "ini:settings/admininterface.ini [AdditionalMenuSettings] SubitemsContextMenuTemplateArray": {
+        "en": "Subitems context menu template(s)",
+        "de": "Template(s) für das Kontextmenü der Unterelemente"
+    },
+    "ini:settings/admininterface.ini [AdditionalTab_roles]": {
+        "en": "Additional tab configuration example\n[AdditionalTab_customtab]\nTitle=Example Tab\nDescription=Some example tab description\n\nTranslation context of Title and Description (the extension's catalogue holds the messages); without it\nthey are shown as written\nTranslationContext=extension/myextension/tab\n\nNavigation part where the tab will be available (ezcontentnavigationpart, ezusernavigationpart, ...)\nNavigationPartName=ezcontentnavigationpart\n\nCustom tab templates should be placed under design/admin/templates/tabs/\nE.g design/admin/templates/tabs/custom_tab.tpl\n\nTab header template, if empty then Title and Description are used by default header template\nHeaderTemplate=\nTab content template\nTemplate=custom_tab.tpl",
+        "de": "Beispiel für die Konfiguration eines zusätzlichen Reiters\n[AdditionalTab_customtab]\nTitle=Example Tab\nDescription=Some example tab description\n\nÜbersetzungskontext von Title und Description (der Katalog der Erweiterung enthält die Meldungen); ohne ihn\nwerden sie so angezeigt, wie sie geschrieben sind\nTranslationContext=extension/myextension/tab\n\nNavigationsbereich, in dem der Reiter verfügbar ist (ezcontentnavigationpart, ezusernavigationpart, ...)\nNavigationPartName=ezcontentnavigationpart\n\nTemplates eigener Reiter gehören unter design/admin/templates/tabs/\nZ. B. design/admin/templates/tabs/custom_tab.tpl\n\nTemplate des Reiterkopfes; wenn leer, verwendet das Standard-Kopf-Template Title und Description\nHeaderTemplate=\nTemplate des Reiterinhalts\nTemplate=custom_tab.tpl"
+    },
+    "ini:settings/admininterface.ini [ContentEditAttributeSettings] CompactDatatypes": {
+        "en": "Short inputs: two of them next to each other share a row (a wide window, not\na translation, where the original stands beside each field)",
+        "de": "Kurze Eingaben: zwei davon nebeneinander teilen sich eine Zeile (in einem breiten Fenster, nicht\nbeim Übersetzen, wo das Original neben jedem Feld steht)"
+    },
+    "ini:settings/admininterface.ini [ContentEditAttributeSettings] DatatypeKind": {
+        "en": "The datatypes of the kernel and of the extensions composer.json requires",
+        "de": "Die Datentypen des Kernels und der Erweiterungen, die composer.json verlangt"
+    },
+    "ini:settings/admininterface.ini [ContentEditAttributeSettings] DefaultKind": {
+        "en": "How content/edit (also while translating), multi-edit and user/register\ndraw an attribute in admin4 (design:content/edit_attribute.tpl), by its\ndatatype: each attribute is a card whose corner names the kind of input (an\nicon and a word), and a short one shares its row with a short neighbour.\n\nA datatype of an extension joins in with the extension's own\nsettings/admininterface.ini.append.php: map it to a kind below or to a kind\nof its own (KindName and KindIcon), and name it in CompactDatatypes if it is\na short input. A datatype nobody maps takes DefaultKind.\n\nKindIcon is a Bootstrap Icons name, drawn as .a4-bi-<name>: components.css\nof admin4 defines the classes it ships; an extension that names another\nicon brings the class with it. KindName is translated in the context\ndesign/admin/content/edit_attribute.",
+        "de": "Wie content/edit (auch beim Übersetzen), Mehrfachbearbeitung und user/register\nein Attribut in admin4 zeichnen (design:content/edit_attribute.tpl), nach seinem\nDatentyp: Jedes Attribut ist eine Karte, deren Ecke die Art der Eingabe nennt (ein\nSymbol und ein Wort), und ein kurzes teilt seine Zeile mit einem kurzen Nachbarn.\n\nEin Datentyp einer Erweiterung schließt sich über die eigene\nsettings/admininterface.ini.append.php der Erweiterung an: Ordnen Sie ihn unten einer Art zu oder einer eigenen\nArt (KindName und KindIcon), und nennen Sie ihn in CompactDatatypes, wenn er eine\nkurze Eingabe ist. Ein Datentyp, den niemand zuordnet, erhält DefaultKind.\n\nKindIcon ist ein Name aus Bootstrap Icons, gezeichnet als .a4-bi-<name>: components.css\nvon admin4 definiert die Klassen, die es mitliefert; eine Erweiterung, die ein anderes\nSymbol nennt, bringt die Klasse mit. KindName wird im Kontext\ndesign/admin/content/edit_attribute übersetzt."
+    },
+    "ini:settings/admininterface.ini [ContentEditAttributeSettings] FieldNavigationFrom": {
+        "en": "The list of the fields above the form, each a link to its card: shown from\nthis many attributes on (0: never)",
+        "de": "Die Liste der Felder über dem Formular, jedes ein Link auf seine Karte: angezeigt ab\nso vielen Attributen (0: nie)"
+    },
+    "ini:settings/admininterface.ini [ContentEditSettings] LeftMenuParts": {
+        "en": "Templates to include in the left menu of content/edit\nfor instance\nLeftMenuParts[]=content/parts/advanced.tpl\nwill include \"design:content/parts/advanced.tpl\"\nfrom design/admin/templates/content/edit_menu.tpl",
+        "de": "Templates, die in das linke Menü von content/edit eingebunden werden\nzum Beispiel\nLeftMenuParts[]=content/parts/advanced.tpl\nbindet \"design:content/parts/advanced.tpl\"\naus design/admin/templates/content/edit_menu.tpl ein"
+    },
+    "ini:settings/admininterface.ini [PaginationSettings] DefaultItemsPerPage": {
+        "en": "How long the lists in the administration interface are.\n\nOne block rather than a setting in each area's own ini file, because the\nquestion is \"where do I change how long these lists are\" and it should have\none answer. The key is the module and view that draws the list, so a setting\ncan be found from the address of the page it governs.\n\nClear the caches after changing these:\n  php bin/php/ezcache.php --clear-all\nUsed by any list below that names no size of its own.",
+        "de": "Wie lang die Listen in der Administrationsoberfläche sind.\n\nEin Block statt einer Einstellung in der eigenen INI-Datei jedes Bereichs, weil die\nFrage „Wo ändere ich, wie lang diese Listen sind?“ eine Antwort haben sollte. Der Schlüssel ist Modul und Ansicht, die die Liste zeichnen, sodass sich eine Einstellung\nüber die Adresse der Seite finden lässt, die sie steuert.\n\nLeeren Sie nach einer Änderung die Caches:\n  php bin/php/ezcache.php --clear-all\nGilt für jede Liste unten, die keine eigene Größe nennt."
+    },
+    "ini:settings/admininterface.ini [PaginationSettings] ItemsPerPage": {
+        "en": "shop/preferredcurrency is not listed: it is a drop-down for choosing one\ncurrency, not a list of rows, and paging it would make it unusable.",
+        "de": "shop/preferredcurrency steht nicht in der Liste: Es ist ein Auswahlfeld für eine\nWährung, keine Liste von Zeilen, und Blättern würde es unbrauchbar machen."
+    },
+    "ini:settings/admininterface.ini [PaginationSettings] ItemsPerPageList_setup_session": {
+        "en": "Setup > Sessions: the sessions (or, without a session table, the recent\nsign-ins) shown at once. The first size is the default.",
+        "de": "Setup > Sitzungen: die gleichzeitig gezeigten Sitzungen (oder, ohne Sitzungstabelle, die letzten\nAnmeldungen). Die erste Größe ist der Standard."
+    },
+    "ini:settings/admininterface.ini [PaginationSettings] ItemsPerPageList_shop_currencylist": {
+        "en": "Lists that offer an items per page selector take the sizes they offer. The\nfirst is what somebody who has never chosen gets, and the list also bounds\nthe query: a size that is not on it cannot be asked for.",
+        "de": "Listen mit einer Auswahl für Einträge pro Seite bieten diese Größen an. Die\nerste erhält, wer nie gewählt hat, und die Liste begrenzt auch\ndie Abfrage: Eine Größe, die nicht darin steht, kann nicht angefordert werden."
+    },
+    "ini:settings/admininterface.ini [SubItems]": {
+        "en": "Example settings used in the OpenOffice.org extension\nContextMenuTemplateArray[]=node/oocontextmenu.tpl\nSubitemsContextMenuTemplateArray[]=node/oosubitemscontextmenu.tpl\nDefault setting for subitems table",
+        "de": "Beispieleinstellungen aus der Erweiterung OpenOffice.org\nContextMenuTemplateArray[]=node/oocontextmenu.tpl\nSubitemsContextMenuTemplateArray[]=node/oosubitemscontextmenu.tpl\nStandardeinstellung für die Tabelle der Unterelemente"
+    },
+    "ini:settings/admininterface.ini [SubItems] VisibleColumns": {
+        "en": "Column names reflect the attribute names of template variable $node",
+        "de": "Die Spaltennamen entsprechen den Attributnamen der Template-Variable $node"
+    },
+    "ini:settings/admininterface.ini [WindowControlsSettings]": {
+        "en": "Settings used by window controls template",
+        "de": "Einstellungen des Templates für die Fenstersteuerung"
+    },
+    "ini:settings/admininterface.ini [WindowControlsSettings] AdditionalTabs": {
+        "en": "List of additional tab identifiers\nAdditionalTabs[]=customtab\nThe audit trail of a node (doc/eng-us/bc/6.0/audit.md, \"Placement\"), only with audit/read",
+        "de": "Liste der Bezeichner zusätzlicher Reiter\nAdditionalTabs[]=customtab\nDer Audit-Trail eines Knotens (doc/eng-us/bc/6.0/audit.md, \"Placement\"), nur mit audit/read"
+    },
+    "ini:settings/admininterface.ini [WindowControlsSettings] HiddenTabs": {
+        "en": "Additional tabs the node view leaves out, whatever AdditionalTabs[] says: a\nsiteaccess cannot take a tab out of AdditionalTabs[] that an extension appends\n(extension settings are read after the siteaccess's). The editor siteaccess\nhides the Layouts tab with it.",
+        "de": "Zusätzliche Reiter, die die Knotenansicht weglässt, egal was AdditionalTabs[] sagt: Ein\nSiteaccess kann keinen Reiter aus AdditionalTabs[] herausnehmen, den eine Erweiterung anhängt\n(die Einstellungen der Erweiterungen werden nach denen des Siteaccess gelesen). Der Siteaccess editor\nblendet damit den Reiter Layouts aus."
+    },
+    "ini:settings/audit.ini": {
+        "en": "Audit: what happens in Exponential, recorded as JSON lines per channel, hash chained,\nrotated, archived and signed. Guide: doc/eng-us/bc/6.0/audit.md\n\nDo not edit this file: override it in settings/override/audit.ini.append.php or in a\nsiteaccess's audit.ini.append.php. Writing any variable of this file is itself audited\n(system.audit.setting.write); switching Audit off is recorded before it takes effect.",
+        "de": "Audit: was in Exponential geschieht, als JSON-Zeilen pro Kanal festgehalten, per Hash verkettet,\nrotiert, archiviert und signiert. Anleitung: doc/eng-us/bc/6.0/audit.md\n\nBearbeiten Sie diese Datei nicht: Überschreiben Sie sie in settings/override/audit.ini.append.php oder in der\naudit.ini.append.php eines Siteaccess. Das Schreiben einer beliebigen Variable dieser Datei wird selbst auditiert\n(system.audit.setting.write); das Ausschalten von Audit wird festgehalten, bevor es wirkt."
+    },
+    "ini:settings/audit.ini [AlertRule_admin_role_granted] Class": {
+        "en": "A role holding these policies is assigned to anyone.",
+        "de": "Eine Rolle mit diesen Richtlinien wird jemandem zugewiesen."
+    },
+    "ini:settings/audit.ini [AlertRule_admin_role_granted] Policies": {
+        "en": "Match when the role grants any of these module/function pairs.",
+        "de": "Trifft zu, wenn die Rolle eines dieser Paare aus Modul und Funktion gewährt."
+    },
+    "ini:settings/audit.ini [AlertRule_brute_force]": {
+        "en": "Recipients[]=admin\nRecipients[]=group:security\nRecipients[]=role:Administrator\nNamed recipient groups: [AlertRecipients_<name>], referenced as group:<name> from\nRecipients[] here or in a rule. Addresses[] lists e-mail addresses; Recipients[] may\nname any of the kinds above (other groups too; loops are cut).\n[AlertRecipients_security]\nAddresses[]\nAddresses[]=security@example.com\nAddresses[]=oncall@example.com\nRecipients[]\nRecipients[]=usergroup:12\nRecipients[]=login:editor1\nAn INI rule: Event (pattern), Threshold (events), Window (seconds), GroupBy (record\nfield), Severity, Sinks[], Class (default threshold), Recipients[] (who is mailed when\nSinks[] has mail; empty = [AuditAlertSettings] Recipients[]). Each fires\nsystem.audit.alert. Example:\n  [AlertRule_brute_force]\n  Recipients[]\n  Recipients[]=group:security\n  Recipients[]=address:soc@example.com",
+        "de": "Recipients[]=admin\nRecipients[]=group:security\nRecipients[]=role:Administrator\nBenannte Empfängergruppen: [AlertRecipients_<name>], hier oder in einer Regel in\nRecipients[] als group:<name> verwendet. Addresses[] listet E-Mail-Adressen auf; Recipients[] darf\njede der obigen Arten nennen (auch andere Gruppen; Schleifen werden abgeschnitten).\n[AlertRecipients_security]\nAddresses[]\nAddresses[]=security@example.com\nAddresses[]=oncall@example.com\nRecipients[]\nRecipients[]=usergroup:12\nRecipients[]=login:editor1\nEine INI-Regel: Event (Muster), Threshold (Ereignisse), Window (Sekunden), GroupBy (Feld des\nEintrags), Severity, Sinks[], Class (Standard threshold), Recipients[] (wer eine Mail erhält, wenn\nSinks[] mail enthält; leer = [AuditAlertSettings] Recipients[]). Jede löst\nsystem.audit.alert aus. Beispiel:\n  [AlertRule_brute_force]\n  Recipients[]\n  Recipients[]=group:security\n  Recipients[]=address:soc@example.com"
+    },
+    "ini:settings/audit.ini [AlertRule_brute_force] Class": {
+        "en": "Many failed logins from one network.",
+        "de": "Viele fehlgeschlagene Anmeldungen aus einem Netz."
+    },
+    "ini:settings/audit.ini [AlertRule_brute_force_user] Class": {
+        "en": "Many failed logins for one account, from anywhere.",
+        "de": "Viele fehlgeschlagene Anmeldungen für ein Konto, von überall."
+    },
+    "ini:settings/audit.ini [AlertRule_mass_delete] Class": {
+        "en": "Many nodes removed by one user in a short time (children are counted).",
+        "de": "Viele Knoten in kurzer Zeit von einem Benutzer entfernt (Unterknoten werden mitgezählt)."
+    },
+    "ini:settings/audit.ini [AuditAlertSettings] Alerts": {
+        "en": "F5: built-in rules, INI rules ([AlertRule_*]) and rule classes.  enabled | disabled",
+        "de": "F5: eingebaute Regeln, INI-Regeln ([AlertRule_*]) und Regelklassen.  enabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditAlertSettings] BusinessDays": {
+        "en": "Business hours for rules with OutOfHours=enabled: days 1 (Mon) … 7 (Sun), hours 0-24,\nin the site's time zone.",
+        "de": "Geschäftszeiten für Regeln mit OutOfHours=enabled: Tage 1 (Mo) … 7 (So), Stunden 0-24,\nin der Zeitzone der Website."
+    },
+    "ini:settings/audit.ini [AuditAlertSettings] EvaluateIn": {
+        "en": "Where rules are evaluated: flush (at the end of the request that wrote the event) and\ncronjob (the audit cronjob part, for windows and rules over many requests).",
+        "de": "Wo Regeln ausgewertet werden: flush (am Ende der Anfrage, die das Ereignis geschrieben hat) und\ncronjob (der Cronjob-Teil audit, für Zeitfenster und Regeln über viele Anfragen)."
+    },
+    "ini:settings/audit.ini [AuditAlertSettings] Recipients": {
+        "en": "Who gets alert mail (rules with Sinks[]=mail, and any other record mailed): the\ndefault list. A rule's own [AlertRule_<rule>] Recipients[] replaces it for that rule.\nEmpty (and [AuditSink_mail] Receivers[] empty too) = the site's AdminEmail.\nOne recipient per line, combinable; addresses are deduplicated (case-insensitive),\nusers are resolved when the mail is sent with their current e-mail address, disabled\nusers are left out, and nothing in the event itself ever becomes a recipient:\n  admin                    site.ini [MailSettings] AdminEmail\n  address:ops@example.com  an e-mail address (a bare address with @ works too)\n  group:security           the named list [AlertRecipients_security] below\n  user:14                  the user with content object id 14\n  login:editor1            the user with that login\n  usergroup:12             every user below the user group with node id 12,\n                           sub-groups included (usergroup:<remote id> works too,\n                           the node's or the object's remote id)\n  role:Administrator       every user the role is assigned to, directly or through\n                           a user group (role:<role id> works too)\nMail is throttled per rule (or event name) and recipient ([AuditSink_mail] Throttle).\nShow who would get what: ./console exp:audit alerts recipients [--rule=<rule>]",
+        "de": "Wer Alarm-Mails erhält (Regeln mit Sinks[]=mail und jeder andere per Mail versandte Eintrag): die\nStandardliste. Die eigene Recipients[] einer Regel in [AlertRule_<rule>] ersetzt sie für diese Regel.\nLeer (und [AuditSink_mail] Receivers[] ebenfalls leer) = die AdminEmail der Website.\nEin Empfänger pro Zeile, kombinierbar; Adressen werden entdoppelt (ohne Beachtung der Groß-/Kleinschreibung),\nBenutzer werden beim Versand mit ihrer aktuellen E-Mail-Adresse aufgelöst, deaktivierte\nBenutzer werden ausgelassen, und nichts aus dem Ereignis selbst wird je zum Empfänger:\n  admin                    site.ini [MailSettings] AdminEmail\n  address:ops@example.com  eine E-Mail-Adresse (eine bloße Adresse mit @ funktioniert auch)\n  group:security           die benannte Liste [AlertRecipients_security] unten\n  user:14                  der Benutzer mit der Inhaltsobjekt-ID 14\n  login:editor1            der Benutzer mit diesem Login\n  usergroup:12             jeder Benutzer unter der Benutzergruppe mit der Knoten-ID 12,\n                           Untergruppen eingeschlossen (usergroup:<remote id> funktioniert auch,\n                           die Remote-ID des Knotens oder des Objekts)\n  role:Administrator       jeder Benutzer, dem die Rolle zugewiesen ist, direkt oder über\n                           eine Benutzergruppe (role:<role id> funktioniert auch)\nMails werden pro Regel (oder Ereignisname) und Empfänger gedrosselt ([AuditSink_mail] Throttle).\nZeigen, wer was erhalten würde: ./console exp:audit alerts recipients [--rule=<rule>]"
+    },
+    "ini:settings/audit.ini [AuditAlertSettings] RuleClasses": {
+        "en": "Rule classes: name => class implementing expAuditAlertRule (RAD survey registry\n\"auditalertrules\").\nBuilt in.",
+        "de": "Regelklassen: Name => Klasse, die expAuditAlertRule implementiert (RAD-Survey-Registry\n\"auditalertrules\").\nEingebaut."
+    },
+    "ini:settings/audit.ini [AuditAlertSettings] Rules": {
+        "en": "The rules in use: [AlertRule_<name>] blocks.",
+        "de": "Die verwendeten Regeln: Blöcke [AlertRule_<name>]."
+    },
+    "ini:settings/audit.ini [AuditArchiveSettings] ArchiveDir": {
+        "en": "Where archives go: absolute, or relative to the site's var directory. Best on another\nfile system or a mount the web server cannot write (see the security notes).",
+        "de": "Wohin Archive kommen: absolut oder relativ zum var-Verzeichnis der Website. Am besten auf einem anderen\nDateisystem oder einem Mount, den der Webserver nicht beschreiben kann (siehe die Sicherheitshinweise)."
+    },
+    "ini:settings/audit.ini [AuditArchiveSettings] FileMode": {
+        "en": "Mode of archive files and directories.",
+        "de": "Modus der Archivdateien und -verzeichnisse."
+    },
+    "ini:settings/audit.ini [AuditArchiveSettings] FormatHandlers": {
+        "en": "Format handlers: name => class implementing expAuditFormatHandler (RAD survey registry\n\"auditformats\"). A handler whose PHP extension or binary is missing reports itself\nunavailable and the archive run falls back to gzip.\nBuilt in.",
+        "de": "Format-Handler: Name => Klasse, die expAuditFormatHandler implementiert (RAD-Survey-Registry\n\"auditformats\"). Ein Handler, dessen PHP-Erweiterung oder Binärdatei fehlt, meldet sich als\nnicht verfügbar, und der Archivlauf weicht auf gzip aus.\nEingebaut."
+    },
+    "ini:settings/audit.ini [AuditArchiveSettings] Level": {
+        "en": "Compression level per handler (each handler's own range).",
+        "de": "Kompressionsstufe pro Handler (im eigenen Bereich jedes Handlers)."
+    },
+    "ini:settings/audit.ini [AuditBridgeSettings] Bridge": {
+        "en": "ezpEvent bridge (Z3): record an existing kernel event as an audit event.\nBridge[<ezpEvent name>]=<audit name>\nThe listener records after.args, the event's arguments made scalar (numbers and short strings as they are,\nobjects as class#id); the arguments of session/* events are session ids and only ever recorded hashed. A\nfilter event's value is passed through unchanged. Extensions add their own events the same way, e.g.\n  Bridge[myext/vote]=content.myext_poll.vote   (with the branch registered in [AuditEventSettings] Branches[])\nKernel events of the catalogue are raised directly where they happen; the bridge is for the events that exist\nonly as ezpEvents. The two session events below are off by default (Disabled[]); switching them on in\n[AuditEventSettings] Enabled[] is all it takes.",
+        "de": "ezpEvent-Brücke (Z3): ein vorhandenes Kernel-Ereignis als Audit-Ereignis festhalten.\nBridge[<ezpEvent name>]=<audit name>\nDer Listener hält after.args fest, die Argumente des Ereignisses als Skalare (Zahlen und kurze Zeichenketten unverändert,\nObjekte als class#id); die Argumente der Ereignisse session/* sind Sitzungs-IDs und werden nur gehasht festgehalten. Der\nWert eines Filter-Ereignisses wird unverändert durchgereicht. Erweiterungen fügen ihre eigenen Ereignisse auf dieselbe Weise hinzu, z. B.\n  Bridge[myext/vote]=content.myext_poll.vote   (with the branch registered in [AuditEventSettings] Branches[])\nKernel-Ereignisse des Katalogs werden direkt dort ausgelöst, wo sie geschehen; die Brücke ist für die Ereignisse, die es\nnur als ezpEvents gibt. Die beiden Sitzungsereignisse unten sind standardmäßig aus (Disabled[]); um sie einzuschalten, genügt es,\nsie in [AuditEventSettings] Enabled[] aufzunehmen."
+    },
+    "ini:settings/audit.ini [AuditBufferSettings] Buffering": {
+        "en": "F3: events are collected and written in one append per channel at the end of the\nrequest (also on a fatal error, through the shutdown handler).  enabled | disabled\n(disabled writes every event at once: for debugging only).",
+        "de": "F3: Ereignisse werden gesammelt und am Ende der Anfrage pro Kanal in einem Schreibvorgang angehängt\n(auch bei einem fatalen Fehler, über den Shutdown-Handler).  enabled | disabled\n(disabled schreibt jedes Ereignis sofort: nur zur Fehlersuche)."
+    },
+    "ini:settings/audit.ini [AuditBufferSettings] FlushInterval": {
+        "en": "Commands, cronjob parts and content job workers also flush every this many seconds.",
+        "de": "Befehle, Cronjob-Teile und Worker der Inhaltsaufträge schreiben außerdem alle so viele Sekunden."
+    },
+    "ini:settings/audit.ini [AuditBufferSettings] ImmediateEvents": {
+        "en": "Events written at once, not buffered (F3: security events): patterns.",
+        "de": "Ereignisse, die sofort und ungepuffert geschrieben werden (F3: Sicherheitsereignisse): Muster."
+    },
+    "ini:settings/audit.ini [AuditBufferSettings] MaxEvents": {
+        "en": "Flush early when the buffer holds this many events or this many bytes (long requests,\ncommands). K, M suffixes.",
+        "de": "Früher schreiben, wenn der Puffer so viele Ereignisse oder so viele Bytes enthält (lange Anfragen,\nBefehle). Suffixe K, M."
+    },
+    "ini:settings/audit.ini [AuditChainSettings] Algorithm": {
+        "en": "The hash chain (Q4). Always on: there is no \"disabled\".\nsha256 (Proposed; the prefix in each hash names the algorithm, so it can change later).",
+        "de": "Die Hash-Kette (Q4). Immer an: Es gibt kein \"disabled\".\nsha256 (Vorschlag; das Präfix in jedem Hash nennt den Algorithmus, er kann also später wechseln)."
+    },
+    "ini:settings/audit.ini [AuditChainSettings] Checkpoints": {
+        "en": "A signed checkpoint of every channel's head, written daily by the cronjob part and\nsent to the sinks.  enabled | disabled",
+        "de": "Ein signierter Prüfpunkt des Kopfes jedes Kanals, täglich vom Cronjob-Teil geschrieben und\nan die Ziele gesendet.  enabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditChannelSettings] Channels": {
+        "en": "The channels (Q6): each is one chain, one file per day (and per MaxFileSize part).\nProposed: a fifth channel for sampled reads, used only when reads are switched on.",
+        "de": "Die Kanäle (Q6): jeder eine Kette, eine Datei pro Tag (und pro MaxFileSize-Teil).\nVorschlag: ein fünfter Kanal für stichprobenartige Lesezugriffe, nur verwendet, wenn Lesezugriffe eingeschaltet sind."
+    },
+    "ini:settings/audit.ini [AuditChannelSettings] Route": {
+        "en": "Routing by taxonomy pattern, most specific wins. An event no pattern matches goes to\nDefaultChannel.",
+        "de": "Zuordnung nach Taxonomie-Muster, das spezifischste gewinnt. Ein Ereignis, auf das kein Muster passt, geht an\nDefaultChannel."
+    },
+    "ini:settings/audit.ini [AuditChannel_content]": {
+        "en": "One block per channel. Every variable may be left out: the [AuditRotationSettings]\ndefaults apply.",
+        "de": "Ein Block pro Kanal. Jede Variable darf fehlen: Dann gelten die Standards aus\n[AuditRotationSettings]."
+    },
+    "ini:settings/audit.ini [AuditChannel_content] ArchiveDays": {
+        "en": "Days an archive is kept before retention removes it (F6: 2 years).",
+        "de": "Tage, die ein Archiv aufbewahrt wird, bevor die Aufbewahrungsregel es entfernt (F6: 2 Jahre)."
+    },
+    "ini:settings/audit.ini [AuditChannel_content] ArchiveFormat": {
+        "en": "The archive format handler (see [AuditArchiveSettings] FormatHandlers[]).",
+        "de": "Der Format-Handler der Archive (siehe [AuditArchiveSettings] FormatHandlers[])."
+    },
+    "ini:settings/audit.ini [AuditChannel_content] LiveDays": {
+        "en": "Days a file stays live (uncompressed, in LogDir) before it is archived (F6: 90).",
+        "de": "Tage, die eine Datei live bleibt (unkomprimiert, im LogDir), bevor sie archiviert wird (F6: 90)."
+    },
+    "ini:settings/audit.ini [AuditChannel_content] MaxFileSize": {
+        "en": "Size at which a day's file is closed and a new part started; K, M, G suffixes.",
+        "de": "Größe, bei der die Datei eines Tages geschlossen und ein neuer Teil begonnen wird; Suffixe K, M, G."
+    },
+    "ini:settings/audit.ini [AuditChannel_content] Sinks": {
+        "en": "Sinks this channel's events are sent to, besides the file (see [AuditSinkSettings]).",
+        "de": "Ziele, an die die Ereignisse dieses Kanals außer der Datei gesendet werden (siehe [AuditSinkSettings])."
+    },
+    "ini:settings/audit.ini [AuditChannel_read] LiveDays": {
+        "en": "Reads are many and of little value after a while (Proposed).",
+        "de": "Lesezugriffe sind zahlreich und nach einer Weile wenig wert (Vorschlag)."
+    },
+    "ini:settings/audit.ini [AuditCompatSettings] LegacyFiles": {
+        "en": "Also write the old text files (old format, outside the chain).  enabled | disabled",
+        "de": "Auch die alten Textdateien schreiben (altes Format, außerhalb der Kette).  enabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditCompatSettings] Map": {
+        "en": "eZAudit::writeAudit( <old name> ) is recorded as the new name (Z3).\nLocation changes (the names LoveStack writes): an added location, a removed one, a new main one.\nPortions derived from LoveStack (mugoweb/ezpublish-legacy, commit 9c931192e0), Copyright (C) Mugo Web, GPL v2",
+        "de": "eZAudit::writeAudit( <old name> ) wird unter dem neuen Namen festgehalten (Z3).\nÄnderungen der Platzierung (die Namen, die LoveStack schreibt): eine hinzugefügte, eine entfernte, eine neue Hauptplatzierung.\nTeile aus LoveStack übernommen (mugoweb/ezpublish-legacy, Commit 9c931192e0), Copyright (C) Mugo Web, GPL v2"
+    },
+    "ini:settings/audit.ini [AuditCompatSettings] UnmappedAsLegacy": {
+        "en": "Old names without a Map[] entry: recorded as system.legacy.<name>.  enabled | disabled",
+        "de": "Alte Namen ohne Eintrag in Map[]: festgehalten als system.legacy.<name>.  enabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditConsoleSettings] MaxBackgroundExportRecords": {
+        "en": "Largest background export, in records.",
+        "de": "Größter Export im Hintergrund, in Einträgen."
+    },
+    "ini:settings/audit.ini [AuditConsoleSettings] MaxExportRecords": {
+        "en": "Largest download of audit/export, in records (streamed while it is read); a larger filter is cut\nand says so. \"Export in the background\" (the content job auditexport) writes a file instead.",
+        "de": "Größter Download von audit/export, in Einträgen (gestreamt, während er gelesen wird); ein größerer Filter wird abgeschnitten\nund sagt das. „Im Hintergrund exportieren“ (der Inhaltsauftrag auditexport) schreibt stattdessen eine Datei."
+    },
+    "ini:settings/audit.ini [AuditConsoleSettings] PageSize": {
+        "en": "Rows per page in the timeline.",
+        "de": "Zeilen pro Seite in der Zeitleiste."
+    },
+    "ini:settings/audit.ini [AuditConsoleSettings] ReauthForManage": {
+        "en": "Q9: ask for the password again before audit/manage actions of the console (\"Verify now\"\non the dashboard, the console and audit/recent). The password is checked like at sign-in,\nwithout signing in again; recorded as access.session.reauth / access.session.reauth.failed.\nenabled | disabled",
+        "de": "Q9: vor Aktionen von audit/manage in der Konsole erneut nach dem Passwort fragen („Jetzt prüfen“\nauf dem Dashboard, die Konsole und audit/recent). Das Passwort wird wie bei der Anmeldung geprüft,\nohne erneute Anmeldung; festgehalten als access.session.reauth / access.session.reauth.failed.\nenabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditConsoleSettings] ReauthMinutes": {
+        "en": "Minutes a re-entered password stays valid in that session (for that user only).",
+        "de": "Minuten, die ein erneut eingegebenes Passwort in dieser Sitzung gültig bleibt (nur für diesen Benutzer)."
+    },
+    "ini:settings/audit.ini [AuditEventSettings] Branches": {
+        "en": "Reads are switched on in [AuditReadSettings], not here.\n\nExtensions register their taxonomy branches: name => the branch class (implements\nexpAuditTaxonomyBranch), which lists the names, their severity, channel and the\nprivacy of its own fields. Counted by the RAD survey (registry \"auditbranches\").\nBranches[myext]=myExtAuditBranch",
+        "de": "Lesezugriffe werden in [AuditReadSettings] eingeschaltet, nicht hier.\n\nErweiterungen registrieren ihre Taxonomie-Zweige: Name => die Zweigklasse (implementiert\nexpAuditTaxonomyBranch), die die Namen, ihren Schweregrad, Kanal und den\nDatenschutz ihrer eigenen Felder auflistet. Von der RAD-Survey gezählt (Registry \"auditbranches\").\nBranches[myext]=myExtAuditBranch"
+    },
+    "ini:settings/audit.ini [AuditEventSettings] Enabled": {
+        "en": "Which events are recorded, by taxonomy pattern: a whole domain (content.*), a subject\n(content.node.*), an action with its details (content.node.remove.*) or one name.\nThe most specific pattern wins; on a tie the later line wins. Events marked \"always\"\nin the catalogue (system.audit.*, access.view.sensitive) ignore Disabled[].",
+        "de": "Welche Ereignisse festgehalten werden, nach Taxonomie-Muster: eine ganze Domäne (content.*), ein Gegenstand\n(content.node.*), eine Aktion mit ihren Details (content.node.remove.*) oder ein Name.\nDas spezifischste Muster gewinnt; bei Gleichstand gewinnt die spätere Zeile. Im Katalog als \"always\" markierte Ereignisse\n(system.audit.*, access.view.sensitive) ignorieren Disabled[]."
+    },
+    "ini:settings/audit.ini [AuditEventSettings] MinSeverity": {
+        "en": "The severity (RFC 5424 name) below which an event is not recorded at all.\ndebug | info | notice | warning | error | critical | alert | emergency",
+        "de": "Der Schweregrad (Name nach RFC 5424), unter dem ein Ereignis gar nicht festgehalten wird.\ndebug | info | notice | warning | error | critical | alert | emergency"
+    },
+    "ini:settings/audit.ini [AuditIndexSettings] BatchSize": {
+        "en": "Rows indexed per run of the incremental indexer.",
+        "de": "Pro Lauf des inkrementellen Indexers indizierte Zeilen."
+    },
+    "ini:settings/audit.ini [AuditIndexSettings] FullText": {
+        "en": "Full-text search over names, object names and before/after values (per engine; see\n\"The index\").  enabled | disabled",
+        "de": "Volltextsuche über Namen, Objektnamen und Werte vorher/nachher (pro Engine; siehe\n\"The index\").  enabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditIndexSettings] Index": {
+        "en": "F4: an index in the site's main database for the console.  enabled | disabled\n(disabled: the console reads the files, slower, no charts).",
+        "de": "F4: ein Index in der Hauptdatenbank der Website für die Konsole.  enabled | disabled\n(disabled: Die Konsole liest die Dateien, langsamer, ohne Diagramme)."
+    },
+    "ini:settings/audit.ini [AuditIndexSettings] IndexReads": {
+        "en": "Index the read channel too.  enabled | disabled",
+        "de": "Auch den Kanal für Lesezugriffe indizieren.  enabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditIndexSettings] KeepDays": {
+        "en": "Rows older than this are removed from the index (they stay in the archives).\nProposed: as long as the archives, so the console can search the whole period.",
+        "de": "Ältere Zeilen werden aus dem Index entfernt (sie bleiben in den Archiven).\nVorschlag: so lange wie die Archive, damit die Konsole den ganzen Zeitraum durchsuchen kann."
+    },
+    "ini:settings/audit.ini [AuditKeySettings] GenerateKeys": {
+        "en": "Generated on first use into settings/override/audit.ini.append.php (Z7); never here,\nnever committed. Shown in the console as fingerprints only.\nInstallationID=<uuid>\nActiveSigningKey=<key id>\nSigningKey[<key id>]=<base64>\nPseudonymKey=<base64>\nGenerate the keys on the first event.  enabled | disabled (disabled: an installation\nthat provides its own keys, e.g. from a secrets store, through settings/override).",
+        "de": "Bei der ersten Verwendung in settings/override/audit.ini.append.php erzeugt (Z7); nie hier,\nnie committet. In der Konsole nur als Fingerabdrücke angezeigt.\nInstallationID=<uuid>\nActiveSigningKey=<key id>\nSigningKey[<key id>]=<base64>\nPseudonymKey=<base64>\nDie Schlüssel beim ersten Ereignis erzeugen.  enabled | disabled (disabled: eine Installation,\ndie ihre eigenen Schlüssel bereitstellt, z. B. aus einem Secret Store, über settings/override)."
+    },
+    "ini:settings/audit.ini [AuditPrivacySettings] Field": {
+        "en": "Per field: full | truncate | hash | off (see \"The record format\" for what truncate\nmeans per field). Q3: a safe default; the session can only be hashed or off.\nE-mail addresses in access.user.* events and attempted logins of unknown users.",
+        "de": "Pro Feld: full | truncate | hash | off (was truncate pro Feld bedeutet, steht unter \"The record format\").\nQ3: ein sicherer Standard; die Sitzung kann nur gehasht oder aus sein.\nE-Mail-Adressen in Ereignissen access.user.* und Anmeldeversuche unbekannter Benutzer."
+    },
+    "ini:settings/audit.ini [AuditPrivacySettings] IPv4Prefix": {
+        "en": "Prefix lengths for truncate of addresses: /24 for IPv4, /48 for IPv6 (Q3).",
+        "de": "Präfixlängen für das Kürzen von Adressen: /24 für IPv4, /48 für IPv6 (Q3)."
+    },
+    "ini:settings/audit.ini [AuditPrivacySettings] NeverRecord": {
+        "en": "Attribute and parameter names never recorded, besides everything\nexpIniEditor::isSecret() recognises.",
+        "de": "Attribut- und Parameternamen, die nie festgehalten werden, zusätzlich zu allem,\nwas expIniEditor::isSecret() erkennt."
+    },
+    "ini:settings/audit.ini [AuditPrivacySettings] PseudonymiseAfterDays": {
+        "en": "Days after which the index replaces personal fields by their hashed form (Q3, F6).",
+        "de": "Tage, nach denen der Index persönliche Felder durch ihre gehashte Form ersetzt (Q3, F6)."
+    },
+    "ini:settings/audit.ini [AuditPrivacySettings] SecretPathViews": {
+        "en": "Views whose path parameters are tokens: their parameters are never recorded.",
+        "de": "Ansichten, deren Pfadparameter Tokens sind: Ihre Parameter werden nie festgehalten."
+    },
+    "ini:settings/audit.ini [AuditReadSettings] AlwaysModules": {
+        "en": "Views of these modules are always recorded, sampled or not, Reads on or off\n(access.view.sensitive).\nProposed: settings writes go through setup and settings; the settings module's views\nare sensitive too.",
+        "de": "Ansichten dieser Module werden immer festgehalten, ob Stichprobe oder nicht, ob Reads an oder aus\n(access.view.sensitive).\nVorschlag: Schreibzugriffe auf Einstellungen laufen über setup und settings; die Ansichten des Moduls settings\nsind ebenfalls sensibel."
+    },
+    "ini:settings/audit.ini [AuditReadSettings] Reads": {
+        "en": "Z6: reads are optional and sampled.  enabled | disabled",
+        "de": "Z6: Lesezugriffe sind optional und werden stichprobenartig erfasst.  enabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditReadSettings] SampleRate": {
+        "en": "Share of reads recorded, 0.0 to 1.0 (0.01 = one in a hundred).",
+        "de": "Anteil der festgehaltenen Lesezugriffe, 0.0 bis 1.0 (0.01 = einer von hundert)."
+    },
+    "ini:settings/audit.ini [AuditReadSettings] Sections": {
+        "en": "Only reads in these sections or of these classes (identifiers); empty = all.",
+        "de": "Nur Lesezugriffe in diesen Sektionen oder auf diese Klassen (Bezeichner); leer = alle."
+    },
+    "ini:settings/audit.ini [AuditRecordSettings] BeforeAfter": {
+        "en": "Record before/after values (Q2).  enabled | keys (keys kept, values replaced by their\nsha256) | disabled.  Secrets are never recorded either way.",
+        "de": "Werte vorher/nachher festhalten (Q2).  enabled | keys (Schlüssel behalten, Werte durch ihren\nsha256 ersetzt) | disabled.  Geheimnisse werden in keinem Fall festgehalten."
+    },
+    "ini:settings/audit.ini [AuditRecordSettings] ChildDepth": {
+        "en": "Child events (F2): how many levels below a parent are written one by one, and how many\nchildren per parent at most. Past either limit the parent counts the rest in\nafter.children_omitted.  0 = no children at all.",
+        "de": "Untergeordnete Ereignisse (F2): wie viele Ebenen unter einem übergeordneten einzeln geschrieben werden und wie viele\nuntergeordnete pro übergeordnetem höchstens. Über eine der Grenzen hinaus zählt das übergeordnete den Rest in\nafter.children_omitted.  0 = gar keine untergeordneten."
+    },
+    "ini:settings/audit.ini [AuditRecordSettings] MaxLineBytes": {
+        "en": "Longest line the writer reads back to find the chain's head, in bytes.",
+        "de": "Längste Zeile, die der Schreiber zurückliest, um den Kopf der Kette zu finden, in Bytes."
+    },
+    "ini:settings/audit.ini [AuditRecordSettings] MaxValueLength": {
+        "en": "Longest value kept in before/after/object fields, in characters; longer ones are cut\nand end in \"…\".",
+        "de": "Längster Wert, der in den Feldern before/after/object erhalten bleibt, in Zeichen; längere werden abgeschnitten\nund enden auf \"…\"."
+    },
+    "ini:settings/audit.ini [AuditRecordSettings] RequestContext": {
+        "en": "Extra request fields.  enabled | disabled",
+        "de": "Zusätzliche Felder der Anfrage.  enabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditRecordSettings] RequestIdHeader": {
+        "en": "Send the request id as a response header (F2); an empty value sends none. Named like\nthe other X-Exp-* headers of Exponential (X-Exp-Cache).",
+        "de": "Die Anfrage-ID als Antwort-Header senden (F2); ein leerer Wert sendet keinen. Benannt wie\ndie anderen X-Exp-*-Header von Exponential (X-Exp-Cache)."
+    },
+    "ini:settings/audit.ini [AuditRecordSettings] TrustedRequestIdHeader": {
+        "en": "Accept the request id from a trusted front proxy instead of making one; empty = never.\nThe header is only trusted from the addresses in TrustedProxies[] (site.ini's list\nwhen empty).",
+        "de": "Die Anfrage-ID von einem vertrauenswürdigen vorgelagerten Proxy übernehmen, statt eine zu erzeugen; leer = nie.\nDem Header wird nur von den Adressen in TrustedProxies[] vertraut (bei leerem Wert die Liste\nvon site.ini)."
+    },
+    "ini:settings/audit.ini [AuditRotationSettings] LiveDays": {
+        "en": "Q8: by day and by size, compressed archives, retention per channel; run by the audit\ncronjob part ([CronjobPart-audit] in cronjob.ini), from the console and by exp:audit.\nDefaults for the [AuditChannel_*] blocks:",
+        "de": "Q8: nach Tag und nach Größe, komprimierte Archive, Aufbewahrung pro Kanal; ausgeführt vom Cronjob-Teil\naudit ([CronjobPart-audit] in cronjob.ini), aus der Konsole und von exp:audit.\nStandards für die Blöcke [AuditChannel_*]:"
+    },
+    "ini:settings/audit.ini [AuditRotationSettings] RotateAfter": {
+        "en": "The daily tasks (rotation of the previous day, archiving, retention, checkpoint) run on\nthe first cronjob run after this time of day (HH:MM, the site's time zone).",
+        "de": "Die täglichen Aufgaben (Rotation des Vortags, Archivierung, Aufbewahrung, Prüfpunkt) laufen beim\nersten Cronjob-Lauf nach dieser Tageszeit (HH:MM, die Zeitzone der Website)."
+    },
+    "ini:settings/audit.ini [AuditRotationSettings] VerifyAfterArchive": {
+        "en": "Read every archive back and compare its sha256 before the live file is removed.",
+        "de": "Jedes Archiv zurücklesen und seinen sha256 vergleichen, bevor die Live-Datei entfernt wird."
+    },
+    "ini:settings/audit.ini [AuditRotationSettings] VerifyBeforeArchive": {
+        "en": "Verify a file's chain before it is archived; a broken file is archived all the same\n(removing evidence is worse) but its manifest says broken and system.audit.chain.broken\nis written.  enabled | disabled",
+        "de": "Die Kette einer Datei prüfen, bevor sie archiviert wird; eine defekte Datei wird trotzdem archiviert\n(Beweise zu entfernen ist schlimmer), aber ihr Manifest sagt broken, und system.audit.chain.broken\nwird geschrieben.  enabled | disabled"
+    },
+    "ini:settings/audit.ini [AuditSettings] Audit": {
+        "en": "enabled | disabled. On in every installation by convention (unlike the 4.x releases).",
+        "de": "enabled | disabled. Vereinbarungsgemäß in jeder Installation an (anders als in den Releases 4.x)."
+    },
+    "ini:settings/audit.ini [AuditSettings] AuditFileNames": {
+        "en": "4.x compatibility: the old per-event file names. Kept so the old names resolve as\naliases in filters and so a site's own names keep a home; see [AuditCompatSettings].",
+        "de": "Kompatibilität mit 4.x: die alten Dateinamen pro Ereignis. Beibehalten, damit die alten Namen in Filtern\nals Aliase aufgelöst werden und die eigenen Namen einer Website ein Zuhause behalten; siehe [AuditCompatSettings]."
+    },
+    "ini:settings/audit.ini [AuditSettings] LogDir": {
+        "en": "Where the live channel files are written, relative to the site's var directory\n([FileSettings] VarDir of site.ini). Created with the site user's owner and group.",
+        "de": "Wohin die Live-Dateien der Kanäle geschrieben werden, relativ zum var-Verzeichnis der Website\n([FileSettings] VarDir von site.ini). Mit Eigentümer und Gruppe des Website-Benutzers angelegt."
+    },
+    "ini:settings/audit.ini [AuditSettings] OnWriteFailure": {
+        "en": "What to do when the audit cannot write (disk full, permissions):\n  continue  the request goes on; the failure is in error.log (AUDIT-UNWRITTEN) and the\n            dashboard warns\n  refuse    actions of the \"always written at once\" kind (ImmediateEvents[]) are refused\n            while their channel cannot be written, so nothing security-relevant happens\n            unrecorded: a POST to a view of AlwaysModules[] by a signed-in user (503 with\n            an error page), a settings write (exp:ini, debug bar), and exp:audit's manage\n            actions (exit 2). Pages, content editing, GET requests, anonymous visitors,\n            reading and verifying the audit are never refused. Each refusal is logged as\n            AUDIT-REFUSED in error.log. Guide: \"When the audit cannot write\".\nDefault: continue (a full disk must not take the site down).",
+        "de": "Was zu tun ist, wenn das Audit nicht schreiben kann (Festplatte voll, Berechtigungen):\n  continue  die Anfrage läuft weiter; der Fehler steht in error.log (AUDIT-UNWRITTEN), und das\n            Dashboard warnt\n  refuse    Aktionen der Art „immer sofort geschrieben“ (ImmediateEvents[]) werden abgelehnt,\n            solange ihr Kanal nicht geschrieben werden kann, damit nichts Sicherheitsrelevantes\n            unprotokolliert geschieht: ein POST an eine Ansicht aus AlwaysModules[] durch einen angemeldeten Benutzer (503 mit\n            einer Fehlerseite), ein Schreibzugriff auf Einstellungen (exp:ini, Debug-Leiste) und die Verwaltungsaktionen\n            von exp:audit (Exit-Code 2). Seiten, Bearbeiten von Inhalten, GET-Anfragen, anonyme Besucher,\n            Lesen und Prüfen des Audits werden nie abgelehnt. Jede Ablehnung wird als\n            AUDIT-REFUSED in error.log protokolliert. Anleitung: \"When the audit cannot write\".\nStandard: continue (eine volle Festplatte darf die Website nicht lahmlegen)."
+    },
+    "ini:settings/audit.ini [AuditSettings] RefuseExemptViews": {
+        "en": "With refuse: module/view POSTs that are never refused, so people can still sign in and\nout (their records go to error.log as AUDIT-UNWRITTEN).",
+        "de": "Mit refuse: POSTs an Modul/Ansicht, die nie abgelehnt werden, damit man sich weiterhin an- und\nabmelden kann (ihre Einträge gehen als AUDIT-UNWRITTEN nach error.log)."
+    },
+    "ini:settings/audit.ini [AuditSinkSettings] SinkClasses": {
+        "en": "Sinks besides the file (which is always written). name => class implementing\nexpAuditSink. Extensions add their own (RAD survey registry \"auditsinks\").",
+        "de": "Ziele außer der Datei (die immer geschrieben wird). Name => Klasse, die\nexpAuditSink implementiert. Erweiterungen fügen ihre eigenen hinzu (RAD-Survey-Registry \"auditsinks\")."
+    },
+    "ini:settings/audit.ini [AuditSinkSettings] SpoolDir": {
+        "en": "Undeliverable batches wait here and are retried by the cronjob part.",
+        "de": "Nicht zustellbare Stapel warten hier und werden vom Cronjob-Teil erneut versucht."
+    },
+    "ini:settings/audit.ini [AuditSink_mail] Receivers": {
+        "en": "E-mail on critical events (Q7). Who gets them: see [AuditAlertSettings] Recipients[].\nReceivers[] is the older name of that default list (same syntax); it is used only\nwhen [AuditAlertSettings] Recipients[] is empty.",
+        "de": "E-Mail bei kritischen Ereignissen (Q7). Wer sie erhält: siehe [AuditAlertSettings] Recipients[].\nReceivers[] ist der ältere Name dieser Standardliste (gleiche Syntax); er wird nur verwendet,\nwenn [AuditAlertSettings] Recipients[] leer ist."
+    },
+    "ini:settings/audit.ini [AuditSink_mail] Throttle": {
+        "en": "At most one mail per rule and group within this many seconds.",
+        "de": "Höchstens eine Mail pro Regel und Gruppe innerhalb so vieler Sekunden."
+    },
+    "ini:settings/audit.ini [AuditSink_mail] Transport": {
+        "en": "The mail transport: empty = the kernel's (site.ini [MailSettings] Transport, which\nhonours DebugSending), or a class extending eZMailTransport. Mail is sent by the\ncronjob part only.",
+        "de": "Der Mail-Transport: leer = der des Kernels (site.ini [MailSettings] Transport, der\nDebugSending beachtet) oder eine Klasse, die von eZMailTransport erbt. Mails werden nur vom\nCronjob-Teil gesendet."
+    },
+    "ini:settings/audit.ini [AuditSink_syslog] AppName": {
+        "en": "The APP-NAME, and the identifier in journald (journalctl -t exponential).",
+        "de": "Der APP-NAME und der Bezeichner in journald (journalctl -t exponential)."
+    },
+    "ini:settings/audit.ini [AuditSink_syslog] Events": {
+        "en": "Which events: patterns; empty = everything routed to this sink.",
+        "de": "Welche Ereignisse: Muster; leer = alles, was diesem Ziel zugeordnet ist."
+    },
+    "ini:settings/audit.ini [AuditSink_syslog] Facility": {
+        "en": "Facility: auth | authpriv | daemon | local0 … local7",
+        "de": "Facility: auth | authpriv | daemon | local0 … local7"
+    },
+    "ini:settings/audit.ini [AuditSink_syslog] Transport": {
+        "en": "RFC 5424 with structured data, one message per record.\nlocal     the system log: journald's native socket where the system runs journald\n          (journalctl -t <AppName> finds the records; rsyslog reading the journal\n          gets them too), else /dev/log; written at flush time\njournald  journald's native socket only\ndevlog    /dev/log with the RFC 5424 line as is (journald 252 does not parse its header)\nudp       Host:Port, header and structured data only (RFC 5426)\ntcp|tls   Host:Port, the whole record, octet counting (RFC 6587, RFC 5425)\nudp, tcp and tls go through the spool and are sent by the cronjob part.",
+        "de": "RFC 5424 mit strukturierten Daten, eine Nachricht pro Eintrag.\nlocal     das Systemlog: der native Socket von journald, wo das System journald verwendet\n          (journalctl -t <AppName> findet die Einträge; ein rsyslog, das das Journal liest,\n          erhält sie auch), sonst /dev/log; beim Flush geschrieben\njournald  nur der native Socket von journald\ndevlog    /dev/log mit der RFC-5424-Zeile unverändert (journald 252 parst ihren Header nicht)\nudp       Host:Port, nur Header und strukturierte Daten (RFC 5426)\ntcp|tls   Host:Port, der ganze Eintrag, Octet Counting (RFC 6587, RFC 5425)\nudp, tcp und tls laufen über den Spool und werden vom Cronjob-Teil gesendet."
+    },
+    "ini:settings/audit.ini [AuditSink_webhook] RetryBackoff": {
+        "en": "Seconds before the first retry; doubled each time.",
+        "de": "Sekunden bis zum ersten erneuten Versuch; jedes Mal verdoppelt."
+    },
+    "ini:settings/audit.ini [AuditSink_webhook] SigningSecret": {
+        "en": "HMAC-SHA-256 of the body with this secret, sent as X-Exponential-Signature.\nPut it in settings/override (it is masked as a secret).",
+        "de": "HMAC-SHA-256 des Inhalts mit diesem Geheimnis, gesendet als X-Exponential-Signature.\nSetzen Sie es in settings/override (es wird als Geheimnis maskiert)."
+    },
+    "ini:settings/audit.ini [AuditSink_webhook] URL": {
+        "en": "Off until a URL is set.",
+        "de": "Aus, bis eine URL gesetzt ist."
+    },
+    "ini:settings/audit.ini [AuditSourceSettings] Sources": {
+        "en": "Optional sources of the audit console (doc/eng-us/bc/6.0/audit.md, \"An extension's source in the\nconsole\"): an extension that records events of its own tells the console how to show them,\nwith a class that implements expAuditSource (best: extends expAuditSourceBase). The dashboard\nshows its panel, the console, recent, charts, alerts and export views its links, the charts\nview its series, audit/event the fields and links of its records, audit/settings its state.\nRegistered by the extension in its own settings/audit.ini.append.php, so an extension that is\nnot active changes nothing. Its channel must be in [AuditChannelSettings] Channels[].\nSources[myext]=myExtAuditSource",
+        "de": "Optionale Quellen der Audit-Konsole (doc/eng-us/bc/6.0/audit.md, \"An extension's source in the\nconsole\"): Eine Erweiterung, die eigene Ereignisse festhält, sagt der Konsole, wie sie anzuzeigen sind,\nmit einer Klasse, die expAuditSource implementiert (am besten: von expAuditSourceBase erbt). Das Dashboard\nzeigt ihr Panel, die Ansichten console, recent, charts, alerts und export ihre Links, die Ansicht charts\nihre Reihen, audit/event die Felder und Links ihrer Einträge, audit/settings ihren Zustand.\nVon der Erweiterung in ihrer eigenen settings/audit.ini.append.php registriert, sodass eine Erweiterung, die\nnicht aktiv ist, nichts ändert. Ihr Kanal muss in [AuditChannelSettings] Channels[] stehen.\nSources[myext]=myExtAuditSource"
+    },
+    "ini:settings/binaryfile.ini": {
+        "en": "Exponential configuration file for binaryfile indexing\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/binaryfile.ini.append  or\n      settings/override/binaryfile.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für die Indizierung von Binärdateien\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/binaryfile.ini.append oder\n      settings/override/binaryfile.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/binaryfile.ini [HandlerSettings]": {
+        "en": "Here you can add handlers for new datatypes.",
+        "de": "Hier können Sie Handler für neue Datentypen hinzufügen."
+    },
+    "ini:settings/binaryfile.ini [HandlerSettings] ExtensionRepositories": {
+        "en": "A list of extensions which have metadata extractor handlers\nIt's common to create a settings/binaryfile.ini.append.php file\nin your extension and add the extension name to automatically\nget handlers from the extension when it's turned on.\nHandlers need to be placed in the extension subdir \"plugins\".",
+        "de": "Eine Liste der Erweiterungen, die Handler zum Auslesen von Metadaten haben\nÜblicherweise legt man in der Erweiterung eine Datei settings/binaryfile.ini.append.php\nan und trägt den Namen der Erweiterung ein, um automatisch\ndie Handler der Erweiterung zu erhalten, wenn sie eingeschaltet ist.\nDie Handler müssen im Unterverzeichnis \"plugins\" der Erweiterung liegen."
+    },
+    "ini:settings/binaryfile.ini [HandlerSettings] Repositories": {
+        "en": "A list of directories to search for metadata extractor handlers",
+        "de": "Eine Liste der Verzeichnisse, in denen nach Handlern zum Auslesen von Metadaten gesucht wird"
+    },
+    "ini:settings/binaryfile.ini [PDFHandlerSettings]": {
+        "en": "The path to the text extraction tool to use to\nfetch the information in PDF files",
+        "de": "Der Pfad zum Werkzeug für die Textextraktion, mit dem\ndie Informationen aus PDF-Dateien gelesen werden"
+    },
+    "ini:settings/binaryfile.ini [WordHandlerSettings]": {
+        "en": "The path to the text extraction tool to use to\nfetch the information in Word files",
+        "de": "Der Pfad zum Werkzeug für die Textextraktion, mit dem\ndie Informationen aus Word-Dateien gelesen werden"
+    },
+    "ini:settings/browse.ini": {
+        "en": "Exponential configuration file for content browsing.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/browse.ini.append or\n      settings/override/browse.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).\nSettings for the browse page.\nFor start nodes and top level nodes it is possible to use text aliases\nYou can use the following aliases:\n content - Represents the content root node defined NodeSettings/RootNode in content.ini, usually 2\n users   - Represents the users root node defined NodeSettings/UserRootNode in content.ini, usually 5\nOther aliases are also possible by defining them in AliasList below",
+        "de": "Exponential-Konfigurationsdatei für das Durchsuchen von Inhalten.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/browse.ini.append oder\n      settings/override/browse.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden).\nEinstellungen der Seite zum Durchsuchen.\nFür Startknoten und Knoten der obersten Ebene können Text-Aliase verwendet werden\nSie können die folgenden Aliase verwenden:\n content - steht für den Wurzelknoten der Inhalte, definiert in NodeSettings/RootNode in content.ini, meist 2\n users   - steht für den Wurzelknoten der Benutzer, definiert in NodeSettings/UserRootNode in content.ini, meist 5\nWeitere Aliase sind möglich, wenn Sie sie unten in AliasList definieren"
+    },
+    "ini:settings/browse.ini [AddBookmark]": {
+        "en": "Action for finding objects to related object datatype",
+        "de": "Aktion zum Suchen von Objekten für den Datentyp Objektverknüpfung"
+    },
+    "ini:settings/browse.ini [AddCustomer]": {
+        "en": "Action used when a user should be selected in discount view",
+        "de": "Aktion, wenn in der Rabattansicht ein Benutzer ausgewählt werden soll"
+    },
+    "ini:settings/browse.ini [AddNodeAssignment]": {
+        "en": "Action for selecting a node placement for an object.",
+        "de": "Aktion zum Auswählen einer Platzierung für ein Objekt."
+    },
+    "ini:settings/browse.ini [AddRelatedImageToDataType]": {
+        "en": "Action for finding images to related object datatype",
+        "de": "Aktion zum Suchen von Bildern für den Datentyp Objektverknüpfung"
+    },
+    "ini:settings/browse.ini [AddRelatedObjectListToDataType]": {
+        "en": "Action for finding objects to related object list datatype",
+        "de": "Aktion zum Suchen von Objekten für den Datentyp Objektverknüpfungsliste"
+    },
+    "ini:settings/browse.ini [AddRelatedObject]": {
+        "en": "Action for finding related objects",
+        "de": "Aktion zum Suchen verknüpfter Objekte"
+    },
+    "ini:settings/browse.ini [AddSubtreeSubscribingNode]": {
+        "en": "Action for finding nodes when adding bookmarks",
+        "de": "Aktion zum Suchen von Knoten beim Hinzufügen von Lesezeichen"
+    },
+    "ini:settings/browse.ini [AssignRole]": {
+        "en": "Action used when assigning a role to a user or user group",
+        "de": "Aktion beim Zuweisen einer Rolle an einen Benutzer oder eine Benutzergruppe"
+    },
+    "ini:settings/browse.ini [AssignSection]": {
+        "en": "Action used when assign a section in the node tree",
+        "de": "Aktion beim Zuweisen einer Sektion im Knotenbaum"
+    },
+    "ini:settings/browse.ini [BrowseSettings] AliasList": {
+        "en": "A map of node aliases to node ids, here it's possible to define custom alias names",
+        "de": "Eine Zuordnung von Knoten-Aliasen zu Knoten-IDs; hier lassen sich eigene Alias-Namen definieren"
+    },
+    "ini:settings/browse.ini [BrowseSettings] DefaultTopLevelNodes": {
+        "en": "Default list of top level nodes to show in browse page\nThis will show the content and user node.",
+        "de": "Standardliste der Knoten der obersten Ebene auf der Seite zum Durchsuchen\nDies zeigt den Inhalts- und den Benutzerknoten."
+    },
+    "ini:settings/browse.ini [BrowseSettings] MaximumRecentItems": {
+        "en": "AliasList[images]=2\nThe default value for maximum recent items to show",
+        "de": "AliasList[images]=2\nDer Standardwert für die höchste Zahl angezeigter zuletzt verwendeter Einträge"
+    },
+    "ini:settings/browse.ini [ContentCheckScope]": {
+        "en": "Action for choosing where a content check starts (contentcheck/scope)",
+        "de": "Aktion zur Auswahl, wo eine Inhaltsprüfung beginnt (contentcheck/scope)"
+    },
+    "ini:settings/browse.ini [CopyNode]": {
+        "en": "Action for copying a node",
+        "de": "Aktion zum Kopieren eines Knotens"
+    },
+    "ini:settings/browse.ini [CopySubtree]": {
+        "en": "Action for copying subtree",
+        "de": "Aktion zum Kopieren eines Teilbaums"
+    },
+    "ini:settings/browse.ini [ExportSourceBrowse]": {
+        "en": "Action used to select source when exporting part on content tree",
+        "de": "Aktion zur Auswahl der Quelle beim Export eines Teils des Inhaltsbaums"
+    },
+    "ini:settings/browse.ini [FindLimitationNode]": {
+        "en": "Action used when a node should be selected in policy editing",
+        "de": "Aktion, wenn beim Bearbeiten einer Richtlinie ein Knoten ausgewählt werden soll"
+    },
+    "ini:settings/browse.ini [FindLimitationSubtree]": {
+        "en": "Action used when the start of a subtree should be selected in policy editing",
+        "de": "Aktion, wenn beim Bearbeiten einer Richtlinie der Anfang eines Teilbaums ausgewählt werden soll"
+    },
+    "ini:settings/browse.ini [FindProduct]": {
+        "en": "Action used when a node should be selected in discount rule edit",
+        "de": "Aktion, wenn beim Bearbeiten einer Rabattregel ein Knoten ausgewählt werden soll"
+    },
+    "ini:settings/browse.ini [MoveNodeAssignment]": {
+        "en": "Action for moving a node placement",
+        "de": "Aktion zum Verschieben einer Platzierung"
+    },
+    "ini:settings/browse.ini [MoveNode]": {
+        "en": "Action for moving a node",
+        "de": "Aktion zum Verschieben eines Knotens"
+    },
+    "ini:settings/browse.ini [NewObjectAddNodeAssignment]": {
+        "en": "Action for newly created objects should select a node placement\nThis action is used when a new object is to be created but no\nplacement is known yet (for instance from the left menu).",
+        "de": "Aktion, mit der neu angelegte Objekte eine Platzierung wählen\nDiese Aktion wird verwendet, wenn ein neues Objekt angelegt werden soll, aber noch keine\nPlatzierung bekannt ist (zum Beispiel aus dem linken Menü)."
+    },
+    "ini:settings/browse.ini [RSSOPMLNodeBrowse]": {
+        "en": "Action used to point an OPML outline at a content node instead of a feed,\nfrom the Browse content button on rss/edit_export. Without this section\neZContentBrowse::browse() has no StartNode to read, so content/browse opens\non nothing and answers 404 - the button appears to do nothing at all.\nSame shape as RSSObjectBrowse: one node, returned as a node id.",
+        "de": "Aktion, um eine OPML-Gliederung auf einen Inhaltsknoten statt auf einen Feed zu richten,\nüber die Schaltfläche zum Durchsuchen der Inhalte in rss/edit_export. Ohne diesen Abschnitt\nhat eZContentBrowse::browse() keinen StartNode zu lesen, content/browse öffnet sich also\nauf nichts und antwortet mit 404 – die Schaltfläche scheint gar nichts zu tun.\nGleiche Form wie RSSObjectBrowse: ein Knoten, als Knoten-ID zurückgegeben."
+    },
+    "ini:settings/browse.ini [RSSObjectBrowse]": {
+        "en": "Action used to select destination and source in the RSS module",
+        "de": "Aktion zur Auswahl von Ziel und Quelle im RSS-Modul"
+    },
+    "ini:settings/browse.ini [RSSUserBrowse]": {
+        "en": "Action used to select owner of imported objects in the RSS module",
+        "de": "Aktion zur Auswahl des Eigentümers importierter Objekte im RSS-Modul"
+    },
+    "ini:settings/browse.ini [SelectMultipleUsers]": {
+        "en": "Action for adding multiple users and groups limitation",
+        "de": "Aktion zum Hinzufügen einer Einschränkung auf mehrere Benutzer und Gruppen"
+    },
+    "ini:settings/browse.ini [SelectObjectRelationListNode]": {
+        "en": "Action for finding placement for objectrelationlist",
+        "de": "Aktion zum Suchen einer Platzierung für objectrelationlist"
+    },
+    "ini:settings/browse.ini [SelectObjectRelationNode]": {
+        "en": "Action for finding placement for objectrelation",
+        "de": "Aktion zum Suchen einer Platzierung für objectrelation"
+    },
+    "ini:settings/browse.ini [SelectSingleUser]": {
+        "en": "Action for adding singe user limitation",
+        "de": "Aktion zum Hinzufügen einer Einschränkung auf einen einzelnen Benutzer"
+    },
+    "ini:settings/browse.ini [SelectToolbarNodePath]": {
+        "en": "Action for finding placement for toolbar node",
+        "de": "Aktion zum Suchen einer Platzierung für einen Knoten der Werkzeugleiste"
+    },
+    "ini:settings/browse.ini [SwapNode]": {
+        "en": "Action for swaping a node",
+        "de": "Aktion zum Tauschen eines Knotens"
+    },
+    "ini:settings/browse.ini [users]": {
+        "en": "Example of action, the group name is named just what the action is named\n[ExampleAction]\n# The node ID where the browsing should start\nStartNode=content\n# Type of selection, possible values are:\n#   single - Allow for just one item to be selected\n#   multiple - Allow for multiple items to be selected\nSelectionType=single\n# The type of the return values, possible values are:\n#   NodeID - Returns the node ids of the selected items\n#   ObjectID - Returns the object ids of the selected items\nReturnType=NodeID\n# Overrides for start node, the value begins with StartNode\n# and a _ (underscore) and the override key name to match\n# The key value is placed inside the [] (brackets)\nStartNode_classgroup[2]=users\n#\n# By specifying class identifier, only objects of specified class can be selected",
+        "de": "Beispiel einer Aktion; die Gruppe heißt genauso wie die Aktion\n[ExampleAction]\n# The node ID where the browsing should start\nStartNode=content\n# Type of selection, possible values are:\n#   single - Allow for just one item to be selected\n#   multiple - Allow for multiple items to be selected\nSelectionType=single\n# The type of the return values, possible values are:\n#   NodeID - Returns the node ids of the selected items\n#   ObjectID - Returns the object ids of the selected items\nReturnType=NodeID\n# Overrides for start node, the value begins with StartNode\n# and a _ (underscore) and the override key name to match\n# The key value is placed inside the [] (brackets)\nStartNode_classgroup[2]=users\n#\n# By specifying class identifier, only objects of specified class can be selected"
+    },
+    "ini:settings/codetemplate.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/codetemplate.ini.append or\n      settings/override/codetemplate.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/codetemplate.ini.append oder\n      settings/override/codetemplate.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/collaboration.ini": {
+        "en": "Exponential configuration file for collaboration.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/collaboration.ini.append or\n      settings/override/collaboration.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei für die Zusammenarbeit.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/collaboration.ini.append oder\n      settings/override/collaboration.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/collaboration.ini [HandlerSettings] Extensions": {
+        "en": "A list of extensions which have collaboration code\nIt's common to create a settings/collaboration.ini.append file\nin your extension and add the extension name to automatically\nget code from the extension when it's turned on.",
+        "de": "Eine Liste der Erweiterungen, die Code für die Zusammenarbeit haben\nÜblicherweise legt man in der Erweiterung eine Datei settings/collaboration.ini.append\nan und trägt den Namen der Erweiterung ein, um automatisch\nden Code der Erweiterung zu erhalten, wenn sie eingeschaltet ist."
+    },
+    "ini:settings/collect.ini": {
+        "en": "Exponential configuration file.\n\nNOTE: It is not recommended to edit this files directly, instead\n      a file in override should be created for setting the\n      values that is required for your site. Either create\n      a file called settings/override/collect.ini.append or\n      settings/override/collect.ini.append.php for more security\n      in non-virtualhost modes (the .php file may already be present\n      and can be used for this purpose).",
+        "de": "Exponential-Konfigurationsdatei.\n\nHINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen\n      eine Datei in override an, um die Werte zu setzen,\n      die Ihre Website braucht. Legen Sie entweder\n      eine Datei settings/override/collect.ini.append oder\n      settings/override/collect.ini.append.php an, für mehr Sicherheit\n      im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden\n      und kann dafür verwendet werden)."
+    },
+    "ini:settings/collect.ini [CollectionSettings] CollectAnonymousData": {
+        "en": "if enabled then information from anonymous users can be collected",
+        "de": "Wenn aktiviert, können Informationen von anonymen Benutzern gesammelt werden"
+    },
+    "ini:settings/collect.ini [CollectionSettings] CollectAnonymousDataList": {
+        "en": "Same as CollectAnonymousData but is a list with of IC types and\ntheir override settings, if specified it will override default setting",
+        "de": "Wie CollectAnonymousData, aber als Liste von Informationssammlungstypen und\nihren abweichenden Einstellungen; wenn angegeben, überschreibt sie die Standardeinstellung"
+    },
+    "ini:settings/collect.ini [CollectionSettings] CollectSensitiveData": {
+        "en": "Are collected data sensitive? If true then user will be able to view collected\ndata only when previously submit a form",
+        "de": "Sind die gesammelten Daten sensibel? Wenn true, kann ein Benutzer gesammelte\nDaten nur sehen, wenn er zuvor ein Formular abgeschickt hat"
+    },
+    "ini:settings/collect.ini [CollectionSettings] CollectSensitiveDataList": {
+        "en": "Same as CollectSensitiveData but is a list with of IC types and\ntheir override settings, if specified it will override default setting",
+        "de": "Wie CollectSensitiveData, aber als Liste von Informationssammlungstypen und\nihren abweichenden Einstellungen; wenn angegeben, überschreibt sie die Standardeinstellung"
+    },
+    "ini:settings/collect.ini [CollectionSettings] CollectionUserData": {
+        "en": "How information collection is handled in terms of user identification\n\nmultiple  - each user can submit multiple data\nunique    - one set of data per user, if already exists give a warning\noverwrite - one set of data per user but new entry overwrites old one",
+        "de": "Wie die Informationssammlung mit der Identifizierung von Benutzern umgeht\n\nmultiple  - jeder Benutzer kann mehrfach Daten abschicken\nunique    - ein Datensatz pro Benutzer; wenn schon vorhanden, gibt es eine Warnung\noverwrite - ein Datensatz pro Benutzer, aber ein neuer Eintrag überschreibt den alten"
+    },
+    "ini:settings/collect.ini [CollectionSettings] CollectionUserDataList": {
+        "en": "Matches class id or identifier to information collection type\nCollectionUserDataList[feedback]=multiple",
+        "de": "Ordnet Klassen-ID oder -Bezeichner einem Informationssammlungstyp zu\nCollectionUserDataList[feedback]=multiple"
+    },
+    "ini:settings/collect.ini [DisplaySettings] Display": {
+        "en": "result   - Display IC result, for instance poll result or your form data\nredirect - Redirect to a specific url\nnode     - Redirect back to content node",
+        "de": "result   - das Ergebnis der Informationssammlung anzeigen, zum Beispiel das Umfrageergebnis oder Ihre Formulardaten\nredirect - auf eine bestimmte URL weiterleiten\nnode     - zurück zum Inhaltsknoten weiterleiten"
+    },
+    "ini:settings/collect.ini [DisplaySettings] DisplayAttribute": {
+        "en": "DisplayList[poll]=result",
+        "de": "DisplayList[poll]=result"
+    },
+    "ini:settings/collect.ini [DisplaySettings] DisplayList": {
+        "en": "Matches class id or identifier to information collection type",
+        "de": "Ordnet Klassen-ID oder -Bezeichner einem Informationssammlungstyp zu"
+    },
+    "ini:settings/collect.ini [DisplaySettings] RedirectURL": {
+        "en": "The url to redirect to if DisplayHandling is set to redirect",
+        "de": "Die URL, auf die weitergeleitet wird, wenn DisplayHandling auf redirect steht"
+    },
+    "ini:settings/collect.ini [EmailSettings] SendEmailAttribute": {
+        "en": "Which attribute to look for in the object to determine\nif an email should be sent.\nIf found the setting will override all other settings.",
+        "de": "Welches Attribut im Objekt bestimmt,\nob eine E-Mail gesendet wird.\nWenn gefunden, überschreibt die Einstellung alle anderen Einstellungen."
+    },
+    "ini:settings/collect.ini [InfoSettings] Type": {
+        "en": "The default information collection type",
+        "de": "Der Standardtyp der Informationssammlung"
+    },
+    "ini:settings/collect.ini [InfoSettings] TypeAttribute": {
+        "en": "Which attribute to look for in the object to determine type\nif found the content of the attribute will be used for type",
+        "de": "Welches Attribut im Objekt den Typ bestimmt;\nwenn gefunden, wird der Inhalt des Attributs als Typ verwendet"
+    }
+}

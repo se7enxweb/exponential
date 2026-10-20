@@ -14,9 +14,9 @@ Der Block `[AlertRule_brute_force]` von `settings/audit.ini`, mit 7 Einstellung(
 > Recipients\[\]=admin  
 > Recipients\[\]=group:security  
 > Recipients\[\]=role:Administrator  
-> Named recipient groups: \[AlertRecipients\_<name>\], referenced as group:<name> from  
-> Recipients\[\] here or in a rule. Addresses\[\] lists e-mail addresses; Recipients\[\] may  
-> name any of the kinds above (other groups too; loops are cut).  
+> Benannte Empfängergruppen: \[AlertRecipients\_<name>\], hier oder in einer Regel in  
+> Recipients\[\] als group:<name> verwendet. Addresses\[\] listet E-Mail-Adressen auf; Recipients\[\] darf  
+> jede der obigen Arten nennen (auch andere Gruppen; Schleifen werden abgeschnitten).  
 > \[AlertRecipients\_security\]  
 > Addresses\[\]  
 > Addresses\[\]=security@example.com  
@@ -24,10 +24,10 @@ Der Block `[AlertRule_brute_force]` von `settings/audit.ini`, mit 7 Einstellung(
 > Recipients\[\]  
 > Recipients\[\]=usergroup:12  
 > Recipients\[\]=login:editor1  
-> An INI rule: Event (pattern), Threshold (events), Window (seconds), GroupBy (record  
-> field), Severity, Sinks\[\], Class (default threshold), Recipients\[\] (who is mailed when  
-> Sinks\[\] has mail; empty = \[AuditAlertSettings\] Recipients\[\]). Each fires  
-> system.audit.alert. Example:  
+> Eine INI-Regel: Event (Muster), Threshold (Ereignisse), Window (Sekunden), GroupBy (Feld des  
+> Eintrags), Severity, Sinks\[\], Class (Standard threshold), Recipients\[\] (wer eine Mail erhält, wenn  
+> Sinks\[\] mail enthält; leer = \[AuditAlertSettings\] Recipients\[\]). Jede löst  
+> system.audit.alert aus. Beispiel:  
 >   \[AlertRule\_brute\_force\]  
 >   Recipients\[\]  
 >   Recipients\[\]=group:security  
@@ -41,7 +41,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Class
 
-> Many failed logins from one network.  
+> Viele fehlgeschlagene Anmeldungen aus einem Netz.  
 
 Standard: `threshold`.
 

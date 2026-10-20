@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Algorithm
 
-> The hash chain (Q4). Always on: there is no "disabled".  
-> sha256 (Proposed; the prefix in each hash names the algorithm, so it can change later).  
+> Die Hash-Kette (Q4). Immer an: Es gibt kein "disabled".  
+> sha256 (Vorschlag; das Präfix in jedem Hash nennt den Algorithmus, er kann also später wechseln).  
 
 Standard: `sha256`.
 
@@ -34,8 +34,8 @@ Algorithm=sha256
 
 ## Checkpoints
 
-> A signed checkpoint of every channel's head, written daily by the cronjob part and  
-> sent to the sinks.  enabled | disabled  
+> Ein signierter Prüfpunkt des Kopfes jedes Kanals, täglich vom Cronjob-Teil geschrieben und  
+> an die Ziele gesendet.  enabled | disabled  
 
 Standard: `enabled`.
 

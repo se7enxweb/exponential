@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## PageSize
 
-> Rows per page in the timeline.  
+> Zeilen pro Seite in der Zeitleiste.  
 
 Standard: `50`.
 
@@ -33,9 +33,9 @@ PageSize=50
 
 ## ReauthForManage
 
-> Q9: ask for the password again before audit/manage actions of the console ("Verify now"  
-> on the dashboard, the console and audit/recent). The password is checked like at sign-in,  
-> without signing in again; recorded as access.session.reauth / access.session.reauth.failed.  
+> Q9: vor Aktionen von audit/manage in der Konsole erneut nach dem Passwort fragen („Jetzt prüfen“  
+> auf dem Dashboard, die Konsole und audit/recent). Das Passwort wird wie bei der Anmeldung geprüft,  
+> ohne erneute Anmeldung; festgehalten als access.session.reauth / access.session.reauth.failed.  
 > enabled | disabled  
 
 Standard: `disabled`.
@@ -50,7 +50,7 @@ ReauthForManage=disabled
 
 ## ReauthMinutes
 
-> Minutes a re-entered password stays valid in that session (for that user only).  
+> Minuten, die ein erneut eingegebenes Passwort in dieser Sitzung gültig bleibt (nur für diesen Benutzer).  
 
 Standard: `10`.
 
@@ -64,8 +64,8 @@ ReauthMinutes=10
 
 ## MaxExportRecords
 
-> Largest download of audit/export, in records (streamed while it is read); a larger filter is cut  
-> and says so. "Export in the background" (the content job auditexport) writes a file instead.  
+> Größter Download von audit/export, in Einträgen (gestreamt, während er gelesen wird); ein größerer Filter wird abgeschnitten  
+> und sagt das. „Im Hintergrund exportieren“ (der Inhaltsauftrag auditexport) schreibt stattdessen eine Datei.  
 
 Standard: `100000`.
 
@@ -79,7 +79,7 @@ MaxExportRecords=100000
 
 ## MaxBackgroundExportRecords
 
-> Largest background export, in records.  
+> Größter Export im Hintergrund, in Einträgen.  
 
 Standard: `1000000`.
 

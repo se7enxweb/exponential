@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[FindProduct]` von `settings/browse.ini`, mit 3 Einstellung(en).
 
-> Action used when a node should be selected in discount rule edit  
+> Aktion, wenn beim Bearbeiten einer Rabattregel ein Knoten ausgewählt werden soll  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

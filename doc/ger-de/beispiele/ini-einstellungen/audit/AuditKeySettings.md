@@ -19,14 +19,14 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## GenerateKeys
 
-> Generated on first use into settings/override/audit.ini.append.php (Z7); never here,  
-> never committed. Shown in the console as fingerprints only.  
+> Bei der ersten Verwendung in settings/override/audit.ini.append.php erzeugt (Z7); nie hier,  
+> nie committet. In der Konsole nur als Fingerabdrücke angezeigt.  
 > InstallationID=<uuid>  
 > ActiveSigningKey=<key id>  
 > SigningKey\[<key id>\]=<base64>  
 > PseudonymKey=<base64>  
-> Generate the keys on the first event.  enabled | disabled (disabled: an installation  
-> that provides its own keys, e.g. from a secrets store, through settings/override).  
+> Die Schlüssel beim ersten Ereignis erzeugen.  enabled | disabled (disabled: eine Installation,  
+> die ihre eigenen Schlüssel bereitstellt, z. B. aus einem Secret Store, über settings/override).  
 
 Standard: `enabled`.
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Reads
 
-> Z6: reads are optional and sampled.  enabled | disabled  
+> Z6: Lesezugriffe sind optional und werden stichprobenartig erfasst.  enabled | disabled  
 
 Standard: `disabled`.
 
@@ -33,7 +33,7 @@ Reads=disabled
 
 ## SampleRate
 
-> Share of reads recorded, 0.0 to 1.0 (0.01 = one in a hundred).  
+> Anteil der festgehaltenen Lesezugriffe, 0.0 bis 1.0 (0.01 = einer von hundert).  
 
 Standard: `0.01`.
 
@@ -47,7 +47,7 @@ SampleRate=0.01
 
 ## Sections
 
-> Only reads in these sections or of these classes (identifiers); empty = all.  
+> Nur Lesezugriffe in diesen Sektionen oder auf diese Klassen (Bezeichner); leer = alle.  
 
 Standard: eine leere Liste.
 
@@ -75,10 +75,10 @@ Classes[]
 
 ## AlwaysModules
 
-> Views of these modules are always recorded, sampled or not, Reads on or off  
+> Ansichten dieser Module werden immer festgehalten, ob Stichprobe oder nicht, ob Reads an oder aus  
 > (access.view.sensitive).  
-> Proposed: settings writes go through setup and settings; the settings module's views  
-> are sensitive too.  
+> Vorschlag: Schreibzugriffe auf Einstellungen laufen über setup und settings; die Ansichten des Moduls settings  
+> sind ebenfalls sensibel.  
 
 Standard: eine Liste mit 5: `setup`, `role`, `user`, `audit`, `settings`.
 

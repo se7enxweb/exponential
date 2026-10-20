@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[WordHandlerSettings]` von `settings/binaryfile.ini`, mit 1 Einstellung(en).
 
-> The path to the text extraction tool to use to  
-> fetch the information in Word files  
+> Der Pfad zum Werkzeug für die Textextraktion, mit dem  
+> die Informationen aus Word-Dateien gelesen werden  
 
 Bearbeiten Sie `settings/binaryfile.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

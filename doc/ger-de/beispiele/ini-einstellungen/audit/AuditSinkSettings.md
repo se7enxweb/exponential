@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## SinkClasses
 
-> Sinks besides the file (which is always written). name => class implementing  
-> expAuditSink. Extensions add their own (RAD survey registry "auditsinks").  
+> Ziele außer der Datei (die immer geschrieben wird). Name => Klasse, die  
+> expAuditSink implementiert. Erweiterungen fügen ihre eigenen hinzu (RAD-Survey-Registry "auditsinks").  
 
 Standard: ein Hash mit 3: `syslog=expAuditSyslogSink`, `webhook=expAuditWebhookSink`, `mail=expAuditMailSink`.
 
@@ -38,7 +38,7 @@ SinkClasses[mail]=expAuditMailSink
 
 ## SpoolDir
 
-> Undeliverable batches wait here and are retried by the cronjob part.  
+> Nicht zustellbare Stapel warten hier und werden vom Cronjob-Teil erneut versucht.  
 
 Standard: `log/audit/spool`.
 

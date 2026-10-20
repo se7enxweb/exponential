@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[AddNodeAssignment]` von `settings/browse.ini`, mit 4 Einstellung(en).
 
-> Action for selecting a node placement for an object.  
+> Aktion zum Auswählen einer Platzierung für ein Objekt.  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

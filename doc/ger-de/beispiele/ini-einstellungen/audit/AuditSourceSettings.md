@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Sources
 
-> Optional sources of the audit console (doc/eng-us/bc/6.0/audit.md, "An extension's source in the  
-> console"): an extension that records events of its own tells the console how to show them,  
-> with a class that implements expAuditSource (best: extends expAuditSourceBase). The dashboard  
-> shows its panel, the console, recent, charts, alerts and export views its links, the charts  
-> view its series, audit/event the fields and links of its records, audit/settings its state.  
-> Registered by the extension in its own settings/audit.ini.append.php, so an extension that is  
-> not active changes nothing. Its channel must be in \[AuditChannelSettings\] Channels\[\].  
+> Optionale Quellen der Audit-Konsole (doc/eng-us/bc/6.0/audit.md, "An extension's source in the  
+> console"): Eine Erweiterung, die eigene Ereignisse festhält, sagt der Konsole, wie sie anzuzeigen sind,  
+> mit einer Klasse, die expAuditSource implementiert (am besten: von expAuditSourceBase erbt). Das Dashboard  
+> zeigt ihr Panel, die Ansichten console, recent, charts, alerts und export ihre Links, die Ansicht charts  
+> ihre Reihen, audit/event die Felder und Links ihrer Einträge, audit/settings ihren Zustand.  
+> Von der Erweiterung in ihrer eigenen settings/audit.ini.append.php registriert, sodass eine Erweiterung, die  
+> nicht aktiv ist, nichts ändert. Ihr Kanal muss in \[AuditChannelSettings\] Channels\[\] stehen.  
 > Sources\[myext\]=myExtAuditSource  
 
 Standard: eine leere Liste.

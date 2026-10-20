@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## URL
 
-> Off until a URL is set.  
+> Aus, bis eine URL gesetzt ist.  
 
 Standard: leer.
 
@@ -33,8 +33,8 @@ URL=
 
 ## SigningSecret
 
-> HMAC-SHA-256 of the body with this secret, sent as X-Exponential-Signature.  
-> Put it in settings/override (it is masked as a secret).  
+> HMAC-SHA-256 des Inhalts mit diesem Geheimnis, gesendet als X-Exponential-Signature.  
+> Setzen Sie es in settings/override (es wird als Geheimnis maskiert).  
 
 Standard: leer.
 
@@ -96,7 +96,7 @@ Retries=5
 
 ## RetryBackoff
 
-> Seconds before the first retry; doubled each time.  
+> Sekunden bis zum ersten erneuten Versuch; jedes Mal verdoppelt.  
 
 Standard: `30`.
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Class
 
-> Many nodes removed by one user in a short time (children are counted).  
+> Viele Knoten in kurzer Zeit von einem Benutzer entfernt (Unterknoten werden mitgezählt).  
 
 Standard: `threshold`.
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## LiveDays
 
-> Reads are many and of little value after a while (Proposed).  
+> Lesezugriffe sind zahlreich und nach einer Weile wenig wert (Vorschlag).  
 
 Standard: `30`.
 

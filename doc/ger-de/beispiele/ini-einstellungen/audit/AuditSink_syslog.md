@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Transport
 
-> RFC 5424 with structured data, one message per record.  
-> local     the system log: journald's native socket where the system runs journald  
->           (journalctl -t <AppName> finds the records; rsyslog reading the journal  
->           gets them too), else /dev/log; written at flush time  
-> journald  journald's native socket only  
-> devlog    /dev/log with the RFC 5424 line as is (journald 252 does not parse its header)  
-> udp       Host:Port, header and structured data only (RFC 5426)  
-> tcp|tls   Host:Port, the whole record, octet counting (RFC 6587, RFC 5425)  
-> udp, tcp and tls go through the spool and are sent by the cronjob part.  
+> RFC 5424 mit strukturierten Daten, eine Nachricht pro Eintrag.  
+> local     das Systemlog: der native Socket von journald, wo das System journald verwendet  
+>           (journalctl -t <AppName> findet die Einträge; ein rsyslog, das das Journal liest,  
+>           erhält sie auch), sonst /dev/log; beim Flush geschrieben  
+> journald  nur der native Socket von journald  
+> devlog    /dev/log mit der RFC-5424-Zeile unverändert (journald 252 parst ihren Header nicht)  
+> udp       Host:Port, nur Header und strukturierte Daten (RFC 5426)  
+> tcp|tls   Host:Port, der ganze Eintrag, Octet Counting (RFC 6587, RFC 5425)  
+> udp, tcp und tls laufen über den Spool und werden vom Cronjob-Teil gesendet.  
 
 Standard: `local`.
 
@@ -79,7 +79,7 @@ Facility=authpriv
 
 ## AppName
 
-> The APP-NAME, and the identifier in journald (journalctl -t exponential).  
+> Der APP-NAME und der Bezeichner in journald (journalctl -t exponential).  
 
 Standard: `exponential`.
 
@@ -93,7 +93,7 @@ AppName=exponential
 
 ## Events
 
-> Which events: patterns; empty = everything routed to this sink.  
+> Welche Ereignisse: Muster; leer = alles, was diesem Ziel zugeordnet ist.  
 
 Standard: eine leere Liste.
 

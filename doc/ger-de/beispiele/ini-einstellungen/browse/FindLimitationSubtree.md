@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[FindLimitationSubtree]` von `settings/browse.ini`, mit 3 Einstellung(en).
 
-> Action used when the start of a subtree should be selected in policy editing  
+> Aktion, wenn beim Bearbeiten einer Richtlinie der Anfang eines Teilbaums ausgewählt werden soll  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

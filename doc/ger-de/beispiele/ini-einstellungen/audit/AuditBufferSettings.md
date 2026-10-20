@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Buffering
 
-> F3: events are collected and written in one append per channel at the end of the  
-> request (also on a fatal error, through the shutdown handler).  enabled | disabled  
-> (disabled writes every event at once: for debugging only).  
+> F3: Ereignisse werden gesammelt und am Ende der Anfrage pro Kanal in einem Schreibvorgang angehängt  
+> (auch bei einem fatalen Fehler, über den Shutdown-Handler).  enabled | disabled  
+> (disabled schreibt jedes Ereignis sofort: nur zur Fehlersuche).  
 
 Standard: `enabled`.
 
@@ -35,7 +35,7 @@ Buffering=enabled
 
 ## ImmediateEvents
 
-> Events written at once, not buffered (F3: security events): patterns.  
+> Ereignisse, die sofort und ungepuffert geschrieben werden (F3: Sicherheitsereignisse): Muster.  
 
 Standard: eine Liste mit 3: `access.*`, `system.audit.*`, `system.setting.write`.
 
@@ -53,8 +53,8 @@ ImmediateEvents[]=system.setting.write
 
 ## MaxEvents
 
-> Flush early when the buffer holds this many events or this many bytes (long requests,  
-> commands). K, M suffixes.  
+> Früher schreiben, wenn der Puffer so viele Ereignisse oder so viele Bytes enthält (lange Anfragen,  
+> Befehle). Suffixe K, M.  
 
 Standard: `500`.
 
@@ -80,7 +80,7 @@ MaxBytes=1M
 
 ## FlushInterval
 
-> Commands, cronjob parts and content job workers also flush every this many seconds.  
+> Befehle, Cronjob-Teile und Worker der Inhaltsaufträge schreiben außerdem alle so viele Sekunden.  
 
 Standard: `5`.
 

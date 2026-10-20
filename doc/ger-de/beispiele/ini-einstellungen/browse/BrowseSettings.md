@@ -55,7 +55,7 @@ DefaultActionName=content
 
 ## AliasList
 
-> A map of node aliases to node ids, here it's possible to define custom alias names  
+> Eine Zuordnung von Knoten-Aliasen zu Knoten-IDs; hier lassen sich eigene Alias-Namen definieren  
 
 Standard: eine leere Liste.
 
@@ -71,7 +71,7 @@ AliasList[]
 ## MaximumRecentItems
 
 > AliasList\[images\]=2  
-> The default value for maximum recent items to show  
+> Der Standardwert für die höchste Zahl angezeigter zuletzt verwendeter Einträge  
 
 Standard: `10`.
 
@@ -85,8 +85,8 @@ MaximumRecentItems=10
 
 ## DefaultTopLevelNodes
 
-> Default list of top level nodes to show in browse page  
-> This will show the content and user node.  
+> Standardliste der Knoten der obersten Ebene auf der Seite zum Durchsuchen  
+> Dies zeigt den Inhalts- und den Benutzerknoten.  
 
 Standard: eine Liste mit 4: `content`, `users`, `media`, `setup`.
 

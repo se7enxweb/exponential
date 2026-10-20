@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Alerts
 
-> F5: built-in rules, INI rules (\[AlertRule\_\*\]) and rule classes.  enabled | disabled  
+> F5: eingebaute Regeln, INI-Regeln (\[AlertRule\_\*\]) und Regelklassen.  enabled | disabled  
 
 Standard: `enabled`.
 
@@ -33,8 +33,8 @@ Alerts=enabled
 
 ## EvaluateIn
 
-> Where rules are evaluated: flush (at the end of the request that wrote the event) and  
-> cronjob (the audit cronjob part, for windows and rules over many requests).  
+> Wo Regeln ausgewertet werden: flush (am Ende der Anfrage, die das Ereignis geschrieben hat) und  
+> cronjob (der Cronjob-Teil audit, für Zeitfenster und Regeln über viele Anfragen).  
 
 Standard: eine Liste mit 2: `flush`, `cronjob`.
 
@@ -51,7 +51,7 @@ EvaluateIn[]=cronjob
 
 ## Rules
 
-> The rules in use: \[AlertRule\_<name>\] blocks.  
+> Die verwendeten Regeln: Blöcke \[AlertRule\_<name>\].  
 
 Standard: eine Liste mit 7: `brute_force`, `brute_force_user`, `admin_role_granted`, `settings_out_of_hours`, `mass_delete`, `audit_disabled`, `chain_broken`.
 
@@ -73,9 +73,9 @@ Rules[]=chain_broken
 
 ## RuleClasses
 
-> Rule classes: name => class implementing expAuditAlertRule (RAD survey registry  
+> Regelklassen: Name => Klasse, die expAuditAlertRule implementiert (RAD-Survey-Registry  
 > "auditalertrules").  
-> Built in.  
+> Eingebaut.  
 
 Standard: ein Hash mit 3: `threshold=expAuditThresholdRule`, `match=expAuditMatchRule`, `schedule=expAuditScheduleRule`.
 
@@ -93,8 +93,8 @@ RuleClasses[schedule]=expAuditScheduleRule
 
 ## BusinessDays
 
-> Business hours for rules with OutOfHours=enabled: days 1 (Mon) … 7 (Sun), hours 0-24,  
-> in the site's time zone.  
+> Geschäftszeiten für Regeln mit OutOfHours=enabled: Tage 1 (Mo) … 7 (So), Stunden 0-24,  
+> in der Zeitzone der Website.  
 
 Standard: `1-5`.
 
@@ -120,24 +120,24 @@ BusinessHours=7-19
 
 ## Recipients
 
-> Who gets alert mail (rules with Sinks\[\]=mail, and any other record mailed): the  
-> default list. A rule's own \[AlertRule\_<rule>\] Recipients\[\] replaces it for that rule.  
-> Empty (and \[AuditSink\_mail\] Receivers\[\] empty too) = the site's AdminEmail.  
-> One recipient per line, combinable; addresses are deduplicated (case-insensitive),  
-> users are resolved when the mail is sent with their current e-mail address, disabled  
-> users are left out, and nothing in the event itself ever becomes a recipient:  
+> Wer Alarm-Mails erhält (Regeln mit Sinks\[\]=mail und jeder andere per Mail versandte Eintrag): die  
+> Standardliste. Die eigene Recipients\[\] einer Regel in \[AlertRule\_<rule>\] ersetzt sie für diese Regel.  
+> Leer (und \[AuditSink\_mail\] Receivers\[\] ebenfalls leer) = die AdminEmail der Website.  
+> Ein Empfänger pro Zeile, kombinierbar; Adressen werden entdoppelt (ohne Beachtung der Groß-/Kleinschreibung),  
+> Benutzer werden beim Versand mit ihrer aktuellen E-Mail-Adresse aufgelöst, deaktivierte  
+> Benutzer werden ausgelassen, und nichts aus dem Ereignis selbst wird je zum Empfänger:  
 >   admin                    site.ini \[MailSettings\] AdminEmail  
->   address:ops@example.com  an e-mail address (a bare address with @ works too)  
->   group:security           the named list \[AlertRecipients\_security\] below  
->   user:14                  the user with content object id 14  
->   login:editor1            the user with that login  
->   usergroup:12             every user below the user group with node id 12,  
->                            sub-groups included (usergroup:<remote id> works too,  
->                            the node's or the object's remote id)  
->   role:Administrator       every user the role is assigned to, directly or through  
->                            a user group (role:<role id> works too)  
-> Mail is throttled per rule (or event name) and recipient (\[AuditSink\_mail\] Throttle).  
-> Show who would get what: ./console exp:audit alerts recipients \[--rule=<rule>\]  
+>   address:ops@example.com  eine E-Mail-Adresse (eine bloße Adresse mit @ funktioniert auch)  
+>   group:security           die benannte Liste \[AlertRecipients\_security\] unten  
+>   user:14                  der Benutzer mit der Inhaltsobjekt-ID 14  
+>   login:editor1            der Benutzer mit diesem Login  
+>   usergroup:12             jeder Benutzer unter der Benutzergruppe mit der Knoten-ID 12,  
+>                            Untergruppen eingeschlossen (usergroup:<remote id> funktioniert auch,  
+>                            die Remote-ID des Knotens oder des Objekts)  
+>   role:Administrator       jeder Benutzer, dem die Rolle zugewiesen ist, direkt oder über  
+>                            eine Benutzergruppe (role:<role id> funktioniert auch)  
+> Mails werden pro Regel (oder Ereignisname) und Empfänger gedrosselt (\[AuditSink\_mail\] Throttle).  
+> Zeigen, wer was erhalten würde: ./console exp:audit alerts recipients \[--rule=<rule>\]  
 
 Standard: eine leere Liste.
 

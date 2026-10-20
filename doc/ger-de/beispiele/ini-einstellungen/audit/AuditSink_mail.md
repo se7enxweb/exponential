@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Receivers
 
-> E-mail on critical events (Q7). Who gets them: see \[AuditAlertSettings\] Recipients\[\].  
-> Receivers\[\] is the older name of that default list (same syntax); it is used only  
-> when \[AuditAlertSettings\] Recipients\[\] is empty.  
+> E-Mail bei kritischen Ereignissen (Q7). Wer sie erhält: siehe \[AuditAlertSettings\] Recipients\[\].  
+> Receivers\[\] ist der ältere Name dieser Standardliste (gleiche Syntax); er wird nur verwendet,  
+> wenn \[AuditAlertSettings\] Recipients\[\] leer ist.  
 
 Standard: eine leere Liste.
 
@@ -63,7 +63,7 @@ Events[]=access.role.assign
 
 ## Throttle
 
-> At most one mail per rule and group within this many seconds.  
+> Höchstens eine Mail pro Regel und Gruppe innerhalb so vieler Sekunden.  
 
 Standard: `900`.
 
@@ -77,9 +77,9 @@ Throttle=900
 
 ## Transport
 
-> The mail transport: empty = the kernel's (site.ini \[MailSettings\] Transport, which  
-> honours DebugSending), or a class extending eZMailTransport. Mail is sent by the  
-> cronjob part only.  
+> Der Mail-Transport: leer = der des Kernels (site.ini \[MailSettings\] Transport, der  
+> DebugSending beachtet) oder eine Klasse, die von eZMailTransport erbt. Mails werden nur vom  
+> Cronjob-Teil gesendet.  
 
 Standard: leer.
 

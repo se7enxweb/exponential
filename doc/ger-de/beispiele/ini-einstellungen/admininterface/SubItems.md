@@ -11,10 +11,10 @@ generated: exp:help:examples
 
 Der Block `[SubItems]` von `settings/admininterface.ini`, mit 1 Einstellung(en).
 
-> Example settings used in the OpenOffice.org extension  
+> Beispieleinstellungen aus der Erweiterung OpenOffice.org  
 > ContextMenuTemplateArray\[\]=node/oocontextmenu.tpl  
 > SubitemsContextMenuTemplateArray\[\]=node/oosubitemscontextmenu.tpl  
-> Default setting for subitems table  
+> Standardeinstellung für die Tabelle der Unterelemente  
 
 Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -24,7 +24,7 @@ Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die 
 
 ## VisibleColumns
 
-> Column names reflect the attribute names of template variable $node  
+> Die Spaltennamen entsprechen den Attributnamen der Template-Variable $node  
 
 Standard: ein Hash mit 3: `ezcontentnavigationpart=checkbox;crank;name;published_date;translations;priority`, `ezmedianavigationpart=checkbox;crank;thumbnail;name;hidden_status_string;class_name`, `ezusernavigationpart=checkbox;crank;name;creator;published_date`.
 

@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[ExportSourceBrowse]` von `settings/browse.ini`, mit 4 Einstellung(en).
 
-> Action used to select source when exporting part on content tree  
+> Aktion zur Auswahl der Quelle beim Export eines Teils des Inhaltsbaums  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Field
 
-> Per field: full | truncate | hash | off (see "The record format" for what truncate  
-> means per field). Q3: a safe default; the session can only be hashed or off.  
-> E-mail addresses in access.user.\* events and attempted logins of unknown users.  
+> Pro Feld: full | truncate | hash | off (was truncate pro Feld bedeutet, steht unter "The record format").  
+> Q3: ein sicherer Standard; die Sitzung kann nur gehasht oder aus sein.  
+> E-Mail-Adressen in Ereignissen access.user.\* und Anmeldeversuche unbekannter Benutzer.  
 
 Standard: ein Hash mit 10: `actor.login=full`, `actor.ip=truncate`, `actor.ua=truncate`, `actor.session=hash`, `actor.cli.os_user=full`, `request.url=truncate`, `request.host=full`, `object.name=full`, `email=hash`, `attempted_login=hash`.
 
@@ -46,7 +46,7 @@ Field[attempted_login]=hash
 
 ## IPv4Prefix
 
-> Prefix lengths for truncate of addresses: /24 for IPv4, /48 for IPv6 (Q3).  
+> Präfixlängen für das Kürzen von Adressen: /24 für IPv4, /48 für IPv6 (Q3).  
 
 Standard: `24`.
 
@@ -72,7 +72,7 @@ IPv6Prefix=48
 
 ## SecretPathViews
 
-> Views whose path parameters are tokens: their parameters are never recorded.  
+> Ansichten, deren Pfadparameter Tokens sind: Ihre Parameter werden nie festgehalten.  
 
 Standard: eine Liste mit 3: `user/activate`, `user/forgotpassword`, `userpaex/forgotpassword`.
 
@@ -90,8 +90,8 @@ SecretPathViews[]=userpaex/forgotpassword
 
 ## NeverRecord
 
-> Attribute and parameter names never recorded, besides everything  
-> expIniEditor::isSecret() recognises.  
+> Attribut- und Parameternamen, die nie festgehalten werden, zusätzlich zu allem,  
+> was expIniEditor::isSecret() erkennt.  
 
 Standard: eine Liste mit 6: `HashKey`, `Hash`, `Password`, `PasswordConfirm`, `password_hash`, `ezxform_token`.
 
@@ -112,7 +112,7 @@ NeverRecord[]=ezxform_token
 
 ## PseudonymiseAfterDays
 
-> Days after which the index replaces personal fields by their hashed form (Q3, F6).  
+> Tage, nach denen der Index persönliche Felder durch ihre gehashte Form ersetzt (Q3, F6).  
 
 Standard: `90`.
 

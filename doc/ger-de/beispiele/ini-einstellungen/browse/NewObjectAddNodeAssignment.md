@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[NewObjectAddNodeAssignment]` von `settings/browse.ini`, mit 5 Einstellung(en).
 
-> Action for newly created objects should select a node placement  
-> This action is used when a new object is to be created but no  
-> placement is known yet (for instance from the left menu).  
+> Aktion, mit der neu angelegte Objekte eine Platzierung wählen  
+> Diese Aktion wird verwendet, wenn ein neues Objekt angelegt werden soll, aber noch keine  
+> Platzierung bekannt ist (zum Beispiel aus dem linken Menü).  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

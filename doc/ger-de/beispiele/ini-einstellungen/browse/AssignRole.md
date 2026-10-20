@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[AssignRole]` von `settings/browse.ini`, mit 5 Einstellung(en).
 
-> Action used when assigning a role to a user or user group  
+> Aktion beim Zuweisen einer Rolle an einen Benutzer oder eine Benutzergruppe  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

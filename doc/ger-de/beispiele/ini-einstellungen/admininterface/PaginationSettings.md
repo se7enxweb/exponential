@@ -19,16 +19,15 @@ Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die 
 
 ## DefaultItemsPerPage
 
-> How long the lists in the administration interface are.  
+> Wie lang die Listen in der Administrationsoberfläche sind.  
 >
-> One block rather than a setting in each area's own ini file, because the  
-> question is "where do I change how long these lists are" and it should have  
-> one answer. The key is the module and view that draws the list, so a setting  
-> can be found from the address of the page it governs.  
+> Ein Block statt einer Einstellung in der eigenen INI-Datei jedes Bereichs, weil die  
+> Frage „Wo ändere ich, wie lang diese Listen sind?“ eine Antwort haben sollte. Der Schlüssel ist Modul und Ansicht, die die Liste zeichnen, sodass sich eine Einstellung  
+> über die Adresse der Seite finden lässt, die sie steuert.  
 >
-> Clear the caches after changing these:  
+> Leeren Sie nach einer Änderung die Caches:  
 >   php bin/php/ezcache.php --clear-all  
-> Used by any list below that names no size of its own.  
+> Gilt für jede Liste unten, die keine eigene Größe nennt.  
 
 Standard: `25`.
 
@@ -42,8 +41,8 @@ DefaultItemsPerPage=25
 
 ## ItemsPerPage
 
-> shop/preferredcurrency is not listed: it is a drop-down for choosing one  
-> currency, not a list of rows, and paging it would make it unusable.  
+> shop/preferredcurrency steht nicht in der Liste: Es ist ein Auswahlfeld für eine  
+> Währung, keine Liste von Zeilen, und Blättern würde es unbrauchbar machen.  
 
 Standard: ein Hash mit 22: `setup/extensions=25`, `setup/cronjobs=25`, `section/list=25`, `workflow/grouplist=25`, `workflow/processlist=10`, `oauthadmin/list=25`, `oauthadmin/keys=25`, `package/list=25`, `pdf/list=25`, `content/translations=25`, `infocollector/overview=25`, `class/grouplist=25` ....
 
@@ -95,9 +94,9 @@ ItemsPerPageList_search_stats[]=50
 
 ## ItemsPerPageList_shop_currencylist
 
-> Lists that offer an items per page selector take the sizes they offer. The  
-> first is what somebody who has never chosen gets, and the list also bounds  
-> the query: a size that is not on it cannot be asked for.  
+> Listen mit einer Auswahl für Einträge pro Seite bieten diese Größen an. Die  
+> erste erhält, wer nie gewählt hat, und die Liste begrenzt auch  
+> die Abfrage: Eine Größe, die nicht darin steht, kann nicht angefordert werden.  
 
 Standard: eine Liste mit 3: `10`, `25`, `50`.
 
@@ -147,8 +146,8 @@ ItemsPerPageList_workflow_processlist[]=50
 
 ## ItemsPerPageList_setup_session
 
-> Setup > Sessions: the sessions (or, without a session table, the recent  
-> sign-ins) shown at once. The first size is the default.  
+> Setup > Sitzungen: die gleichzeitig gezeigten Sitzungen (oder, ohne Sitzungstabelle, die letzten  
+> Anmeldungen). Die erste Größe ist der Standard.  
 
 Standard: eine Liste mit 3: `50`, `25`, `100`.
 

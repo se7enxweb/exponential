@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Class
 
-> A role holding these policies is assigned to anyone.  
+> Eine Rolle mit diesen Richtlinien wird jemandem zugewiesen.  
 
 Standard: `match`.
 
@@ -45,7 +45,7 @@ Event=access.role.assign
 
 ## Policies
 
-> Match when the role grants any of these module/function pairs.  
+> Trifft zu, wenn die Rolle eines dieser Paare aus Modul und Funktion gewährt.  
 
 Standard: eine Liste mit 4: `*/*`, `setup/*`, `role/*`, `audit/manage`.
 

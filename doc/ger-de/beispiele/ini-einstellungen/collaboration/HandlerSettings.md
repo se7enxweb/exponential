@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/collaboration.ini` nie selbst: Ein Update ersetzt die D
 
 ## Extensions
 
-> A list of extensions which have collaboration code  
-> It's common to create a settings/collaboration.ini.append file  
-> in your extension and add the extension name to automatically  
-> get code from the extension when it's turned on.  
+> Eine Liste der Erweiterungen, die Code für die Zusammenarbeit haben  
+> Üblicherweise legt man in der Erweiterung eine Datei settings/collaboration.ini.append  
+> an und trägt den Namen der Erweiterung ein, um automatisch  
+> den Code der Erweiterung zu erhalten, wenn sie eingeschaltet ist.  
 
 Standard: eine leere Liste.
 

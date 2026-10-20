@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[AddRelatedObjectListToDataType]` von `settings/browse.ini`, mit 3 Einstellung(en).
 
-> Action for finding objects to related object list datatype  
+> Aktion zum Suchen von Objekten für den Datentyp Objektverknüpfungsliste  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

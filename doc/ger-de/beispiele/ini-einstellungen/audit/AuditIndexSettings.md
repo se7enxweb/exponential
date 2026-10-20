@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Index
 
-> F4: an index in the site's main database for the console.  enabled | disabled  
-> (disabled: the console reads the files, slower, no charts).  
+> F4: ein Index in der Hauptdatenbank der Website für die Konsole.  enabled | disabled  
+> (disabled: Die Konsole liest die Dateien, langsamer, ohne Diagramme).  
 
 Standard: `enabled`.
 
@@ -34,7 +34,7 @@ Index=enabled
 
 ## BatchSize
 
-> Rows indexed per run of the incremental indexer.  
+> Pro Lauf des inkrementellen Indexers indizierte Zeilen.  
 
 Standard: `2000`.
 
@@ -48,7 +48,7 @@ BatchSize=2000
 
 ## IndexReads
 
-> Index the read channel too.  enabled | disabled  
+> Auch den Kanal für Lesezugriffe indizieren.  enabled | disabled  
 
 Standard: `disabled`.
 
@@ -62,7 +62,7 @@ IndexReads=disabled
 
 ## FullText
 
-> Full-text search over names, object names and before/after values (per engine; see  
+> Volltextsuche über Namen, Objektnamen und Werte vorher/nachher (pro Engine; siehe  
 > "The index").  enabled | disabled  
 
 Standard: `enabled`.
@@ -77,8 +77,8 @@ FullText=enabled
 
 ## KeepDays
 
-> Rows older than this are removed from the index (they stay in the archives).  
-> Proposed: as long as the archives, so the console can search the whole period.  
+> Ältere Zeilen werden aus dem Index entfernt (sie bleiben in den Archiven).  
+> Vorschlag: so lange wie die Archive, damit die Konsole den ganzen Zeitraum durchsuchen kann.  
 
 Standard: `730`.
 

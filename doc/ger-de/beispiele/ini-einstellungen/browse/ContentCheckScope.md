@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[ContentCheckScope]` von `settings/browse.ini`, mit 3 Einstellung(en).
 
-> Action for choosing where a content check starts (contentcheck/scope)  
+> Aktion zur Auswahl, wo eine Inhaltsprüfung beginnt (contentcheck/scope)  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

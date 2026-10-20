@@ -19,20 +19,20 @@ Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die 
 
 ## DefaultKind
 
-> How content/edit (also while translating), multi-edit and user/register  
-> draw an attribute in admin4 (design:content/edit\_attribute.tpl), by its  
-> datatype: each attribute is a card whose corner names the kind of input (an  
-> icon and a word), and a short one shares its row with a short neighbour.  
+> Wie content/edit (auch beim Übersetzen), Mehrfachbearbeitung und user/register  
+> ein Attribut in admin4 zeichnen (design:content/edit\_attribute.tpl), nach seinem  
+> Datentyp: Jedes Attribut ist eine Karte, deren Ecke die Art der Eingabe nennt (ein  
+> Symbol und ein Wort), und ein kurzes teilt seine Zeile mit einem kurzen Nachbarn.  
 >
-> A datatype of an extension joins in with the extension's own  
-> settings/admininterface.ini.append.php: map it to a kind below or to a kind  
-> of its own (KindName and KindIcon), and name it in CompactDatatypes if it is  
-> a short input. A datatype nobody maps takes DefaultKind.  
+> Ein Datentyp einer Erweiterung schließt sich über die eigene  
+> settings/admininterface.ini.append.php der Erweiterung an: Ordnen Sie ihn unten einer Art zu oder einer eigenen  
+> Art (KindName und KindIcon), und nennen Sie ihn in CompactDatatypes, wenn er eine  
+> kurze Eingabe ist. Ein Datentyp, den niemand zuordnet, erhält DefaultKind.  
 >
-> KindIcon is a Bootstrap Icons name, drawn as .a4-bi-<name>: components.css  
-> of admin4 defines the classes it ships; an extension that names another  
-> icon brings the class with it. KindName is translated in the context  
-> design/admin/content/edit\_attribute.  
+> KindIcon ist ein Name aus Bootstrap Icons, gezeichnet als .a4-bi-<name>: components.css  
+> von admin4 definiert die Klassen, die es mitliefert; eine Erweiterung, die ein anderes  
+> Symbol nennt, bringt die Klasse mit. KindName wird im Kontext  
+> design/admin/content/edit\_attribute übersetzt.  
 
 Standard: `other`.
 
@@ -114,7 +114,7 @@ KindIcon[shop]=tag
 
 ## DatatypeKind
 
-> The datatypes of the kernel and of the extensions composer.json requires  
+> Die Datentypen des Kernels und der Erweiterungen, die composer.json verlangt  
 
 Standard: ein Hash mit 54: `ezstring=text`, `eztext=text`, `ezidentifier=text`, `ezisbn=text`, `ezxmltext=richtext`, `ezpage=richtext`, `ezinteger=number`, `ezfloat=number`, `ezboolean=switch`, `ezselection=choice`, `sckenhancedselection=choice`, `ezenum=choice` ....
 
@@ -150,8 +150,8 @@ DatatypeKind[ngenhancedlink]=link
 
 ## CompactDatatypes
 
-> Short inputs: two of them next to each other share a row (a wide window, not  
-> a translation, where the original stands beside each field)  
+> Kurze Eingaben: zwei davon nebeneinander teilen sich eine Zeile (in einem breiten Fenster, nicht  
+> beim Übersetzen, wo das Original neben jedem Feld steht)  
 
 Standard: eine Liste mit 15: `ezboolean`, `ezinteger`, `ezfloat`, `ezdate`, `ezdatetime`, `eztime`, `ezbirthday`, `ezemail`, `ezisbn`, `ezidentifier`, `ezcountry`, `ezselection` ....
 
@@ -181,8 +181,8 @@ CompactDatatypes[]=ezsrrating
 
 ## FieldNavigationFrom
 
-> The list of the fields above the form, each a link to its card: shown from  
-> this many attributes on (0: never)  
+> Die Liste der Felder über dem Formular, jedes ein Link auf seine Karte: angezeigt ab  
+> so vielen Attributen (0: nie)  
 
 Standard: `6`.
 

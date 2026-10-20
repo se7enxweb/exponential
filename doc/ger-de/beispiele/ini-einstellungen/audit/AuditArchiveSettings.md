@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## ArchiveDir
 
-> Where archives go: absolute, or relative to the site's var directory. Best on another  
-> file system or a mount the web server cannot write (see the security notes).  
+> Wohin Archive kommen: absolut oder relativ zum var-Verzeichnis der Website. Am besten auf einem anderen  
+> Dateisystem oder einem Mount, den der Webserver nicht beschreiben kann (siehe die Sicherheitshinweise).  
 
 Standard: `log/audit/archive`.
 
@@ -34,10 +34,10 @@ ArchiveDir=log/audit/archive
 
 ## FormatHandlers
 
-> Format handlers: name => class implementing expAuditFormatHandler (RAD survey registry  
-> "auditformats"). A handler whose PHP extension or binary is missing reports itself  
-> unavailable and the archive run falls back to gzip.  
-> Built in.  
+> Format-Handler: Name => Klasse, die expAuditFormatHandler implementiert (RAD-Survey-Registry  
+> "auditformats"). Ein Handler, dessen PHP-Erweiterung oder Binärdatei fehlt, meldet sich als  
+> nicht verfügbar, und der Archivlauf weicht auf gzip aus.  
+> Eingebaut.  
 
 Standard: ein Hash mit 5: `gzip=expAuditGzipFormat`, `bzip2=expAuditBzip2Format`, `xz=expAuditXzFormat`, `zstd=expAuditZstdFormat`, `zip=expAuditZipFormat`.
 
@@ -57,7 +57,7 @@ FormatHandlers[zip]=expAuditZipFormat
 
 ## Level
 
-> Compression level per handler (each handler's own range).  
+> Kompressionsstufe pro Handler (im eigenen Bereich jedes Handlers).  
 
 Standard: ein Hash mit 5: `gzip=9`, `bzip2=9`, `xz=6`, `zstd=19`, `zip=9`.
 
@@ -77,7 +77,7 @@ Level[zip]=9
 
 ## FileMode
 
-> Mode of archive files and directories.  
+> Modus der Archivdateien und -verzeichnisse.  
 
 Standard: `0440`.
 

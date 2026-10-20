@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Map
 
-> eZAudit::writeAudit( <old name> ) is recorded as the new name (Z3).  
-> Location changes (the names LoveStack writes): an added location, a removed one, a new main one.  
-> Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 9c931192e0), Copyright (C) Mugo Web, GPL v2  
+> eZAudit::writeAudit( <old name> ) wird unter dem neuen Namen festgehalten (Z3).  
+> Änderungen der Platzierung (die Namen, die LoveStack schreibt): eine hinzugefügte, eine entfernte, eine neue Hauptplatzierung.  
+> Teile aus LoveStack übernommen (mugoweb/ezpublish-legacy, Commit 9c931192e0), Copyright (C) Mugo Web, GPL v2  
 
 Standard: ein Hash mit 18: `user-login=access.session.login`, `user-failed-login=access.session.login.failed`, `content-delete=content.node.remove.trash`, `content-move=content.node.move`, `content-hide=content.node.hide`, `role-change=access.role.change`, `role-assign=access.role.assign`, `section-assign=content.node.section`, `state-assign=content.object.state`, `order-delete=commerce.order.delete`, `location-assign=content.node.add`, `location-remove=content.node.remove` ....
 
@@ -54,7 +54,7 @@ Map[user-forgotpassword-fail]=access.user.password.reset.failed
 
 ## UnmappedAsLegacy
 
-> Old names without a Map\[\] entry: recorded as system.legacy.<name>.  enabled | disabled  
+> Alte Namen ohne Eintrag in Map\[\]: festgehalten als system.legacy.<name>.  enabled | disabled  
 
 Standard: `enabled`.
 
@@ -68,7 +68,7 @@ UnmappedAsLegacy=enabled
 
 ## LegacyFiles
 
-> Also write the old text files (old format, outside the chain).  enabled | disabled  
+> Auch die alten Textdateien schreiben (altes Format, außerhalb der Kette).  enabled | disabled  
 
 Standard: `disabled`.
 

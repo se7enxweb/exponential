@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Bridge
 
-> ezpEvent bridge (Z3): record an existing kernel event as an audit event.  
+> ezpEvent-Brücke (Z3): ein vorhandenes Kernel-Ereignis als Audit-Ereignis festhalten.  
 > Bridge\[<ezpEvent name>\]=<audit name>  
-> The listener records after.args, the event's arguments made scalar (numbers and short strings as they are,  
-> objects as class#id); the arguments of session/\* events are session ids and only ever recorded hashed. A  
-> filter event's value is passed through unchanged. Extensions add their own events the same way, e.g.  
+> Der Listener hält after.args fest, die Argumente des Ereignisses als Skalare (Zahlen und kurze Zeichenketten unverändert,  
+> Objekte als class#id); die Argumente der Ereignisse session/\* sind Sitzungs-IDs und werden nur gehasht festgehalten. Der  
+> Wert eines Filter-Ereignisses wird unverändert durchgereicht. Erweiterungen fügen ihre eigenen Ereignisse auf dieselbe Weise hinzu, z. B.  
 >   Bridge\[myext/vote\]=content.myext\_poll.vote   (with the branch registered in \[AuditEventSettings\] Branches\[\])  
-> Kernel events of the catalogue are raised directly where they happen; the bridge is for the events that exist  
-> only as ezpEvents. The two session events below are off by default (Disabled\[\]); switching them on in  
-> \[AuditEventSettings\] Enabled\[\] is all it takes.  
+> Kernel-Ereignisse des Katalogs werden direkt dort ausgelöst, wo sie geschehen; die Brücke ist für die Ereignisse, die es  
+> nur als ezpEvents gibt. Die beiden Sitzungsereignisse unten sind standardmäßig aus (Disabled\[\]); um sie einzuschalten, genügt es,  
+> sie in \[AuditEventSettings\] Enabled\[\] aufzunehmen.  
 
 Standard: ein Hash mit 3: `session/regenerate=access.session.regenerate`, `session/destroy=access.session.expire`, `session/gc=access.session.expire`.
 

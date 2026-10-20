@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die 
 
 ## LeftMenuParts
 
-> Templates to include in the left menu of content/edit  
-> for instance  
+> Templates, die in das linke Menü von content/edit eingebunden werden  
+> zum Beispiel  
 > LeftMenuParts\[\]=content/parts/advanced.tpl  
-> will include "design:content/parts/advanced.tpl"  
-> from design/admin/templates/content/edit\_menu.tpl  
+> bindet "design:content/parts/advanced.tpl"  
+> aus design/admin/templates/content/edit\_menu.tpl ein  
 
 Standard: eine leere Liste.
 

@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[users]` von `settings/browse.ini`, mit 2 Einstellung(en).
 
-> Example of action, the group name is named just what the action is named  
+> Beispiel einer Aktion; die Gruppe heißt genauso wie die Aktion  
 > \[ExampleAction\]  
 > # The node ID where the browsing should start  
 > StartNode=content  

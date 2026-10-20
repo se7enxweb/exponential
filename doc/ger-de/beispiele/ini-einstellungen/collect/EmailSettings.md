@@ -31,7 +31,7 @@ SendEmail=enabled
 
 ## SendEmailList
 
-> Matches class id or identifier to information collection type  
+> Ordnet Klassen-ID oder -Bezeichner einem Informationssammlungstyp zu  
 
 Standard: ein Hash mit 1: `poll=disabled`.
 
@@ -47,9 +47,9 @@ SendEmailList[poll]=disabled
 
 ## SendEmailAttribute
 
-> Which attribute to look for in the object to determine  
-> if an email should be sent.  
-> If found the setting will override all other settings.  
+> Welches Attribut im Objekt bestimmt,  
+> ob eine E-Mail gesendet wird.  
+> Wenn gefunden, überschreibt die Einstellung alle anderen Einstellungen.  
 
 Standard: `collection_email`.
 

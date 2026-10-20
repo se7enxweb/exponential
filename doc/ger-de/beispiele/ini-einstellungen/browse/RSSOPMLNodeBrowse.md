@@ -11,11 +11,11 @@ generated: exp:help:examples
 
 Der Block `[RSSOPMLNodeBrowse]` von `settings/browse.ini`, mit 4 Einstellung(en).
 
-> Action used to point an OPML outline at a content node instead of a feed,  
-> from the Browse content button on rss/edit\_export. Without this section  
-> eZContentBrowse::browse() has no StartNode to read, so content/browse opens  
-> on nothing and answers 404 - the button appears to do nothing at all.  
-> Same shape as RSSObjectBrowse: one node, returned as a node id.  
+> Aktion, um eine OPML-Gliederung auf einen Inhaltsknoten statt auf einen Feed zu richten,  
+> über die Schaltfläche zum Durchsuchen der Inhalte in rss/edit\_export. Ohne diesen Abschnitt  
+> hat eZContentBrowse::browse() keinen StartNode zu lesen, content/browse öffnet sich also  
+> auf nichts und antwortet mit 404 – die Schaltfläche scheint gar nichts zu tun.  
+> Gleiche Form wie RSSObjectBrowse: ein Knoten, als Knoten-ID zurückgegeben.  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

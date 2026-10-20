@@ -12,21 +12,21 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/browse.ini`: 34 Blöcke, 121 Einstellungen.
 
-> Exponential configuration file for content browsing.  
+> Exponential-Konfigurationsdatei für das Durchsuchen von Inhalten.  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/browse.ini.append or  
->       settings/override/browse.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
-> Settings for the browse page.  
-> For start nodes and top level nodes it is possible to use text aliases  
-> You can use the following aliases:  
->  content - Represents the content root node defined NodeSettings/RootNode in content.ini, usually 2  
->  users   - Represents the users root node defined NodeSettings/UserRootNode in content.ini, usually 5  
-> Other aliases are also possible by defining them in AliasList below  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/browse.ini.append oder  
+>       settings/override/browse.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
+> Einstellungen der Seite zum Durchsuchen.  
+> Für Startknoten und Knoten der obersten Ebene können Text-Aliase verwendet werden  
+> Sie können die folgenden Aliase verwenden:  
+>  content - steht für den Wurzelknoten der Inhalte, definiert in NodeSettings/RootNode in content.ini, meist 2  
+>  users   - steht für den Wurzelknoten der Benutzer, definiert in NodeSettings/UserRootNode in content.ini, meist 5  
+> Weitere Aliase sind möglich, wenn Sie sie unten in AliasList definieren  
 
 | Block | Einstellungen |
 |---|---|

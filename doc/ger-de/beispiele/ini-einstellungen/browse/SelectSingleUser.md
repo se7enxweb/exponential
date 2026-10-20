@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[SelectSingleUser]` von `settings/browse.ini`, mit 3 Einstellung(en).
 
-> Action for adding singe user limitation  
+> Aktion zum Hinzufügen einer Einschränkung auf einen einzelnen Benutzer  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## LiveDays
 
-> Q8: by day and by size, compressed archives, retention per channel; run by the audit  
-> cronjob part (\[CronjobPart-audit\] in cronjob.ini), from the console and by exp:audit.  
-> Defaults for the \[AuditChannel\_\*\] blocks:  
+> Q8: nach Tag und nach Größe, komprimierte Archive, Aufbewahrung pro Kanal; ausgeführt vom Cronjob-Teil  
+> audit (\[CronjobPart-audit\] in cronjob.ini), aus der Konsole und von exp:audit.  
+> Standards für die Blöcke \[AuditChannel\_\*\]:  
 
 Standard: `90`.
 
@@ -71,9 +71,9 @@ ArchiveFormat=gzip
 
 ## VerifyBeforeArchive
 
-> Verify a file's chain before it is archived; a broken file is archived all the same  
-> (removing evidence is worse) but its manifest says broken and system.audit.chain.broken  
-> is written.  enabled | disabled  
+> Die Kette einer Datei prüfen, bevor sie archiviert wird; eine defekte Datei wird trotzdem archiviert  
+> (Beweise zu entfernen ist schlimmer), aber ihr Manifest sagt broken, und system.audit.chain.broken  
+> wird geschrieben.  enabled | disabled  
 
 Standard: `enabled`.
 
@@ -87,7 +87,7 @@ VerifyBeforeArchive=enabled
 
 ## VerifyAfterArchive
 
-> Read every archive back and compare its sha256 before the live file is removed.  
+> Jedes Archiv zurücklesen und seinen sha256 vergleichen, bevor die Live-Datei entfernt wird.  
 
 Standard: `enabled`.
 
@@ -101,8 +101,8 @@ VerifyAfterArchive=enabled
 
 ## RotateAfter
 
-> The daily tasks (rotation of the previous day, archiving, retention, checkpoint) run on  
-> the first cronjob run after this time of day (HH:MM, the site's time zone).  
+> Die täglichen Aufgaben (Rotation des Vortags, Archivierung, Aufbewahrung, Prüfpunkt) laufen beim  
+> ersten Cronjob-Lauf nach dieser Tageszeit (HH:MM, die Zeitzone der Website).  
 
 Standard: `00:15`.
 

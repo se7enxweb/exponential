@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[AddRelatedImageToDataType]` von `settings/browse.ini`, mit 3 Einstellung(en).
 
-> Action for finding images to related object datatype  
+> Aktion zum Suchen von Bildern für den Datentyp Objektverknüpfung  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[SelectToolbarNode]` von `settings/browse.ini`, mit 3 Einstellung(en).
 
-> Action for finding placement for toolbar node  
+> Aktion zum Suchen einer Platzierung für einen Knoten der Werkzeugleiste  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

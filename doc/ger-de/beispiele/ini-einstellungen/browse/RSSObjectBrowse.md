@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[RSSObjectBrowse]` von `settings/browse.ini`, mit 4 Einstellung(en).
 
-> Action used to select destination and source in the RSS module  
+> Aktion zur Auswahl von Ziel und Quelle im RSS-Modul  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

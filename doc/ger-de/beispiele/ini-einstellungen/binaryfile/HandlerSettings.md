@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[HandlerSettings]` von `settings/binaryfile.ini`, mit 3 Einstellung(en).
 
-> Here you can add handlers for new datatypes.  
+> Hier können Sie Handler für neue Datentypen hinzufügen.  
 
 Bearbeiten Sie `settings/binaryfile.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -37,7 +37,7 @@ MetaDataExtractor[application/msword]=ezword
 
 ## Repositories
 
-> A list of directories to search for metadata extractor handlers  
+> Eine Liste der Verzeichnisse, in denen nach Handlern zum Auslesen von Metadaten gesucht wird  
 
 Standard: eine Liste mit 1: `kernel/classes/datatypes/ezbinaryfile`.
 
@@ -53,11 +53,11 @@ Repositories[]=kernel/classes/datatypes/ezbinaryfile
 
 ## ExtensionRepositories
 
-> A list of extensions which have metadata extractor handlers  
-> It's common to create a settings/binaryfile.ini.append.php file  
-> in your extension and add the extension name to automatically  
-> get handlers from the extension when it's turned on.  
-> Handlers need to be placed in the extension subdir "plugins".  
+> Eine Liste der Erweiterungen, die Handler zum Auslesen von Metadaten haben  
+> Üblicherweise legt man in der Erweiterung eine Datei settings/binaryfile.ini.append.php  
+> an und trägt den Namen der Erweiterung ein, um automatisch  
+> die Handler der Erweiterung zu erhalten, wenn sie eingeschaltet ist.  
+> Die Handler müssen im Unterverzeichnis "plugins" der Erweiterung liegen.  
 
 Standard: eine leere Liste.
 

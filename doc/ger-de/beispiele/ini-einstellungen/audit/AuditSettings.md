@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Audit
 
-> enabled | disabled. On in every installation by convention (unlike the 4.x releases).  
+> enabled | disabled. Vereinbarungsgemäß in jeder Installation an (anders als in den Releases 4.x).  
 
 Standard: `enabled`.
 
@@ -33,8 +33,8 @@ Audit=enabled
 
 ## LogDir
 
-> Where the live channel files are written, relative to the site's var directory  
-> (\[FileSettings\] VarDir of site.ini). Created with the site user's owner and group.  
+> Wohin die Live-Dateien der Kanäle geschrieben werden, relativ zum var-Verzeichnis der Website  
+> (\[FileSettings\] VarDir von site.ini). Mit Eigentümer und Gruppe des Website-Benutzers angelegt.  
 
 Standard: `log/audit`.
 
@@ -48,8 +48,8 @@ LogDir=log/audit
 
 ## AuditFileNames
 
-> 4.x compatibility: the old per-event file names. Kept so the old names resolve as  
-> aliases in filters and so a site's own names keep a home; see \[AuditCompatSettings\].  
+> Kompatibilität mit 4.x: die alten Dateinamen pro Ereignis. Beibehalten, damit die alten Namen in Filtern  
+> als Aliase aufgelöst werden und die eigenen Namen einer Website ein Zuhause behalten; siehe \[AuditCompatSettings\].  
 
 Standard: ein Hash mit 13: `user-login=login.log`, `user-failed-login=failed_login.log`, `content-delete=content_delete.log`, `content-move=content_move.log`, `content-hide=content_hide.log`, `role-change=role_change.log`, `role-assign=role_assign.log`, `section-assign=section_assign.log`, `state-assign=state_assign.log`, `order-delete=order_delete.log`, `location-assign=location_assign.log`, `location-remove=location_remove.log` ....
 
@@ -77,17 +77,17 @@ AuditFileNames[main-node-update]=location_main_update.log
 
 ## OnWriteFailure
 
-> What to do when the audit cannot write (disk full, permissions):  
->   continue  the request goes on; the failure is in error.log (AUDIT-UNWRITTEN) and the  
->             dashboard warns  
->   refuse    actions of the "always written at once" kind (ImmediateEvents\[\]) are refused  
->             while their channel cannot be written, so nothing security-relevant happens  
->             unrecorded: a POST to a view of AlwaysModules\[\] by a signed-in user (503 with  
->             an error page), a settings write (exp:ini, debug bar), and exp:audit's manage  
->             actions (exit 2). Pages, content editing, GET requests, anonymous visitors,  
->             reading and verifying the audit are never refused. Each refusal is logged as  
->             AUDIT-REFUSED in error.log. Guide: "When the audit cannot write".  
-> Default: continue (a full disk must not take the site down).  
+> Was zu tun ist, wenn das Audit nicht schreiben kann (Festplatte voll, Berechtigungen):  
+>   continue  die Anfrage läuft weiter; der Fehler steht in error.log (AUDIT-UNWRITTEN), und das  
+>             Dashboard warnt  
+>   refuse    Aktionen der Art „immer sofort geschrieben“ (ImmediateEvents\[\]) werden abgelehnt,  
+>             solange ihr Kanal nicht geschrieben werden kann, damit nichts Sicherheitsrelevantes  
+>             unprotokolliert geschieht: ein POST an eine Ansicht aus AlwaysModules\[\] durch einen angemeldeten Benutzer (503 mit  
+>             einer Fehlerseite), ein Schreibzugriff auf Einstellungen (exp:ini, Debug-Leiste) und die Verwaltungsaktionen  
+>             von exp:audit (Exit-Code 2). Seiten, Bearbeiten von Inhalten, GET-Anfragen, anonyme Besucher,  
+>             Lesen und Prüfen des Audits werden nie abgelehnt. Jede Ablehnung wird als  
+>             AUDIT-REFUSED in error.log protokolliert. Anleitung: "When the audit cannot write".  
+> Standard: continue (eine volle Festplatte darf die Website nicht lahmlegen).  
 
 Standard: `continue`.
 
@@ -101,8 +101,8 @@ OnWriteFailure=continue
 
 ## RefuseExemptViews
 
-> With refuse: module/view POSTs that are never refused, so people can still sign in and  
-> out (their records go to error.log as AUDIT-UNWRITTEN).  
+> Mit refuse: POSTs an Modul/Ansicht, die nie abgelehnt werden, damit man sich weiterhin an- und  
+> abmelden kann (ihre Einträge gehen als AUDIT-UNWRITTEN nach error.log).  
 
 Standard: eine Liste mit 2: `user/login`, `user/logout`.
 

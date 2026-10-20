@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[RSSUserBrowse]` von `settings/browse.ini`, mit 5 Einstellung(en).
 
-> Action used to select owner of imported objects in the RSS module  
+> Aktion zur Auswahl des Eigentümers importierter Objekte im RSS-Modul  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

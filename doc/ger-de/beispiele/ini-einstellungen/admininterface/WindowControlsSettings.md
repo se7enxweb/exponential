@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[WindowControlsSettings]` von `settings/admininterface.ini`, mit 2 Einstellung(en).
 
-> Settings used by window controls template  
+> Einstellungen des Templates für die Fenstersteuerung  
 
 Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,10 +21,10 @@ Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die 
 
 ## HiddenTabs
 
-> Additional tabs the node view leaves out, whatever AdditionalTabs\[\] says: a  
-> siteaccess cannot take a tab out of AdditionalTabs\[\] that an extension appends  
-> (extension settings are read after the siteaccess's). The editor siteaccess  
-> hides the Layouts tab with it.  
+> Zusätzliche Reiter, die die Knotenansicht weglässt, egal was AdditionalTabs\[\] sagt: Ein  
+> Siteaccess kann keinen Reiter aus AdditionalTabs\[\] herausnehmen, den eine Erweiterung anhängt  
+> (die Einstellungen der Erweiterungen werden nach denen des Siteaccess gelesen). Der Siteaccess editor  
+> blendet damit den Reiter Layouts aus.  
 
 Standard: eine leere Liste.
 
@@ -39,9 +39,9 @@ HiddenTabs[]
 
 ## AdditionalTabs
 
-> List of additional tab identifiers  
+> Liste der Bezeichner zusätzlicher Reiter  
 > AdditionalTabs\[\]=customtab  
-> The audit trail of a node (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/read  
+> Der Audit-Trail eines Knotens (doc/eng-us/bc/6.0/audit.md, "Placement"), nur mit audit/read  
 
 Standard: eine Liste mit 3: `roles`, `policies`, `audit`.
 

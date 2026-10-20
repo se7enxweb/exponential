@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[SelectObjectRelationListNode]` von `settings/browse.ini`, mit 3 Einstellung(en).
 
-> Action for finding placement for objectrelationlist  
+> Aktion zum Suchen einer Platzierung für objectrelationlist  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

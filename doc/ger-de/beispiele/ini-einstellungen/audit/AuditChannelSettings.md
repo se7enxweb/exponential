@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Channels
 
-> The channels (Q6): each is one chain, one file per day (and per MaxFileSize part).  
-> Proposed: a fifth channel for sampled reads, used only when reads are switched on.  
+> Die Kanäle (Q6): jeder eine Kette, eine Datei pro Tag (und pro MaxFileSize-Teil).  
+> Vorschlag: ein fünfter Kanal für stichprobenartige Lesezugriffe, nur verwendet, wenn Lesezugriffe eingeschaltet sind.  
 
 Standard: eine Liste mit 5: `content`, `access`, `system`, `commerce`, `read`.
 
@@ -40,7 +40,7 @@ Channels[]=read
 
 ## Route
 
-> Routing by taxonomy pattern, most specific wins. An event no pattern matches goes to  
+> Zuordnung nach Taxonomie-Muster, das spezifischste gewinnt. Ein Ereignis, auf das kein Muster passt, geht an  
 > DefaultChannel.  
 
 Standard: ein Hash mit 8: `content.*=content`, `content.node.view=read`, `content.search.*=read`, `content.object.download=read`, `access.*=access`, `system.*=system`, `commerce.*=commerce`, `data.*=commerce`.

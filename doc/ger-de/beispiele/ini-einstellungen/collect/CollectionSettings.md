@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/collect.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## CollectAnonymousData
 
-> if enabled then information from anonymous users can be collected  
+> Wenn aktiviert, können Informationen von anonymen Benutzern gesammelt werden  
 
 Standard: `enabled`.
 
@@ -33,8 +33,8 @@ CollectAnonymousData=enabled
 
 ## CollectAnonymousDataList
 
-> Same as CollectAnonymousData but is a list with of IC types and  
-> their override settings, if specified it will override default setting  
+> Wie CollectAnonymousData, aber als Liste von Informationssammlungstypen und  
+> ihren abweichenden Einstellungen; wenn angegeben, überschreibt sie die Standardeinstellung  
 
 Standard: ein Hash mit 1: `poll=enabled`.
 
@@ -62,8 +62,8 @@ CollectAnonymousDataAttribute=collection_anonymous
 
 ## CollectSensitiveData
 
-> Are collected data sensitive? If true then user will be able to view collected  
-> data only when previously submit a form  
+> Sind die gesammelten Daten sensibel? Wenn true, kann ein Benutzer gesammelte  
+> Daten nur sehen, wenn er zuvor ein Formular abgeschickt hat  
 
 Standard: `true`.
 
@@ -77,8 +77,8 @@ CollectSensitiveData=true
 
 ## CollectSensitiveDataList
 
-> Same as CollectSensitiveData but is a list with of IC types and  
-> their override settings, if specified it will override default setting  
+> Wie CollectSensitiveData, aber als Liste von Informationssammlungstypen und  
+> ihren abweichenden Einstellungen; wenn angegeben, überschreibt sie die Standardeinstellung  
 
 Standard: ein Hash mit 1: `poll=false`.
 
@@ -94,11 +94,11 @@ CollectSensitiveDataList[poll]=false
 
 ## CollectionUserData
 
-> How information collection is handled in terms of user identification  
+> Wie die Informationssammlung mit der Identifizierung von Benutzern umgeht  
 >
-> multiple  - each user can submit multiple data  
-> unique    - one set of data per user, if already exists give a warning  
-> overwrite - one set of data per user but new entry overwrites old one  
+> multiple  - jeder Benutzer kann mehrfach Daten abschicken  
+> unique    - ein Datensatz pro Benutzer; wenn schon vorhanden, gibt es eine Warnung  
+> overwrite - ein Datensatz pro Benutzer, aber ein neuer Eintrag überschreibt den alten  
 
 Standard: `multiple`.
 
@@ -112,7 +112,7 @@ CollectionUserData=multiple
 
 ## CollectionUserDataList
 
-> Matches class id or identifier to information collection type  
+> Ordnet Klassen-ID oder -Bezeichner einem Informationssammlungstyp zu  
 > CollectionUserDataList\[feedback\]=multiple  
 
 Standard: ein Hash mit 1: `poll=unique`.

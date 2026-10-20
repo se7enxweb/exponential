@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[AdditionalMenuSettings]` von `settings/admininterface.ini`, mit 9 Einstellung(en).
 
-> Settings to load additional menu items based on templates  
+> Einstellungen, um zusätzliche Menüpunkte anhand von Templates zu laden  
 
 Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,7 +21,7 @@ Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die 
 
 ## ContextMenuTemplateArray
 
-> Context menu items template(s)  
+> Template(s) für die Einträge des Kontextmenüs  
 
 Standard: eine leere Liste.
 
@@ -36,7 +36,7 @@ ContextMenuTemplateArray[]
 
 ## SubitemsContextMenuTemplateArray
 
-> Subitems context menu template(s)  
+> Template(s) für das Kontextmenü der Unterelemente  
 
 Standard: eine leere Liste.
 
@@ -51,7 +51,7 @@ SubitemsContextMenuTemplateArray[]
 
 ## SubMenuTemplateArray
 
-> Template(s) for submenus of the popupmenu  
+> Template(s) für Untermenüs des Popup-Menüs  
 
 Standard: eine leere Liste.
 
@@ -66,7 +66,7 @@ SubMenuTemplateArray[]
 
 ## ClassMenuTemplateArray
 
-> Template(s) for class popup menu on large class icon in node view  
+> Template(s) für das Popup-Menü der Klasse am großen Klassensymbol in der Knotenansicht  
 
 Standard: eine leere Liste.
 
@@ -81,7 +81,7 @@ ClassMenuTemplateArray[]
 
 ## BookmarkMenuTemplateArray
 
-> Template(s) for bookmark popup menu on right side bookmark box  
+> Template(s) für das Popup-Menü der Lesezeichen in der Lesezeichenbox rechts  
 
 Standard: eine leere Liste.
 
@@ -96,7 +96,7 @@ BookmarkMenuTemplateArray[]
 
 ## AdvancedMenuTemplateArray
 
-> Template(s) for advance menu, sub menu of Context/Subitems menu  
+> Template(s) für das erweiterte Menü, Untermenü des Kontext-/Unterelemente-Menüs  
 
 Standard: eine leere Liste.
 
@@ -111,10 +111,10 @@ AdvancedMenuTemplateArray[]
 
 ## ExportMenuTemplateArray
 
-> Template(s) for the Export submenu of the advance menu: the items an extension adds below the package entries  
-> (xrowextract: the CSV entries). Each item opens its tool's form filled in for the node (%nodeID%), never an export  
-> itself, and is shown only to a user with the tool's policy. Export is shown when it has an item.  
-> Guide: doc/eng-us/bc/6.0/content-export-menu.md  
+> Template(s) für das Untermenü Export des erweiterten Menüs: die Einträge, die eine Erweiterung unter den Paketeinträgen hinzufügt  
+> (xrowextract: die CSV-Einträge). Jeder Eintrag öffnet das Formular seines Werkzeugs, für den Knoten ausgefüllt (%nodeID%), nie einen Export  
+> selbst, und wird nur einem Benutzer mit der Richtlinie des Werkzeugs angezeigt. Export erscheint, wenn es einen Eintrag hat.  
+> Anleitung: doc/eng-us/bc/6.0/content-export-menu.md  
 
 Standard: eine leere Liste.
 
@@ -129,7 +129,7 @@ ExportMenuTemplateArray[]
 
 ## ExportSubMenuTemplateArray
 
-> Template(s) for the submenus of those items (a level below Export), output after the Export menu  
+> Template(s) für die Untermenüs dieser Einträge (eine Ebene unter Export), ausgegeben nach dem Menü Export  
 
 Standard: eine leere Liste.
 
@@ -144,8 +144,8 @@ ExportSubMenuTemplateArray[]
 
 ## ImportExportMenuTemplateArray
 
-> Template(s) for the import and job items of the Import/Export menu (Import/Export only). Declared empty so the  
-> popup\_export\_items.tpl reads it without a missing-variable error when no extension adds one.  
+> Template(s) für die Import- und Auftragseinträge des Menüs Import/Export (nur Import/Export). Leer deklariert, damit  
+> popup\_export\_items.tpl es ohne Fehler wegen fehlender Variable liest, wenn keine Erweiterung einen hinzufügt.  
 
 Standard: eine leere Liste.
 

@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/collect.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Display
 
-> result   - Display IC result, for instance poll result or your form data  
-> redirect - Redirect to a specific url  
-> node     - Redirect back to content node  
+> result   - das Ergebnis der Informationssammlung anzeigen, zum Beispiel das Umfrageergebnis oder Ihre Formulardaten  
+> redirect - auf eine bestimmte URL weiterleiten  
+> node     - zurück zum Inhaltsknoten weiterleiten  
 
 Standard: `result`.
 
@@ -35,7 +35,7 @@ Display=result
 
 ## DisplayList
 
-> Matches class id or identifier to information collection type  
+> Ordnet Klassen-ID oder -Bezeichner einem Informationssammlungstyp zu  
 
 Standard: eine leere Liste.
 
@@ -64,7 +64,7 @@ DisplayAttribute=collection_display
 
 ## RedirectURL
 
-> The url to redirect to if DisplayHandling is set to redirect  
+> Die URL, auf die weitergeleitet wird, wenn DisplayHandling auf redirect steht  
 
 Standard: `/`.
 
@@ -78,7 +78,7 @@ RedirectURL=/
 
 ## RedirectURLList
 
-> Matches class id or identifier to information collection type  
+> Ordnet Klassen-ID oder -Bezeichner einem Informationssammlungstyp zu  
 
 Standard: eine leere Liste.
 
