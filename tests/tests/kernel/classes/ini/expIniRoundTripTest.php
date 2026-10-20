@@ -40,7 +40,9 @@ class expIniRoundTripTest extends PHPUnit\Framework\TestCase
                 if ( is_file( $stale ) )
                     unlink( $stale );
             $copy = $dir . '/' . basename( $rel );
-            copy( $real . $rel, $real . $copy );
+            // a file removed since it was listed (another test's temporary settings) is not a real INI file
+            if ( !@copy( $real . $rel, $real . $copy ) )
+                continue;
             // copies of settings/override can hold secrets
             chmod( $real . $copy, 0600 );
             self::$copies[$rel] = $copy;
