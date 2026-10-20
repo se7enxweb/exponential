@@ -287,8 +287,9 @@ class expHelpDocumentIndex
     /**
      * The id of a path relative to the installation root: doc/en/us/guides/x.md -> guides/x.md, a translation
      * doc/de/anleitungen/x.md -> guides/x.md (its path map) or doc/de/guides/x.md -> guides/x.md, a file in no
-     * language directory doc/changelogs/x.md -> changelogs/x.md, extension/foo/doc/x.md -> ext/foo/x.md; other
-     * configured roots keep their path. null for a path outside the roots.
+     * language directory doc/changelogs/x.md -> changelogs/x.md, extension/foo/doc/x.md -> ext/foo/x.md, a top file of
+     * an extension extension/foo/README.md -> ext/foo/README.md; other configured roots keep their path. null for a
+     * path outside the roots.
      *
      * @param string $path
      * @return string|null
@@ -315,6 +316,10 @@ class expHelpDocumentIndex
                 return 'ext/' . $m[1] . '/' . $rest;
             return $path;
         }
+        // README.md, CHANGELOG, LICENSE ... at the top of an extension whose documentation is shown
+        if ( preg_match( '#^extension/([^/]+)/([^/]+)$#', $path, $m ) && in_array( $m[1], $this->allowlist->extensions(), true )
+             && $this->allowlist->isExtensionTopFile( $m[2] ) )
+            return 'ext/' . $m[1] . '/' . $m[2];
         // a project file outside the roots (README.md -> project/README.md); whether it is listed is the allowlist's
         if ( $this->allowlist->isProjectPath( $path ) )
             return expHelpProjectFiles::idOf( $path );
@@ -341,7 +346,16 @@ class expHelpDocumentIndex
         if ( $projectPath !== null && $this->allowlist->isProjectPath( $projectPath ) )
             return $projectPath;
         if ( preg_match( '#^ext/([^/]+)/(.+)$#', $id, $m ) && in_array( 'extension/' . $m[1] . '/doc', $roots, true ) )
+        {
+            // a top file (ext/foo/README.md) when its doc/ has no file of that name
+            if ( strpos( $m[2], '/' ) === false && $this->allowlist->isExtensionTopFile( $m[2] ) )
+            {
+                $files = $this->files();
+                if ( !isset( $files['extension/' . $m[1] . '/doc/' . $m[2]] ) && isset( $files['extension/' . $m[1] . '/' . $m[2]] ) )
+                    return 'extension/' . $m[1] . '/' . $m[2];
+            }
             return 'extension/' . $m[1] . '/doc/' . $m[2];
+        }
         foreach ( $roots as $root )
             if ( $root !== 'doc' && strncmp( $id, $root . '/', strlen( $root ) + 1 ) === 0 )
                 return $id;
@@ -574,6 +588,66 @@ class expHelpDocumentIndex
     }
 
     /**
+     * The extensions that have visible pages in the help (ext/<name>/...), by name: array( 'name', 'count',
+     * 'index_id' (its doc/README.md or doc/index.md, else its top README, else its first page), 'title' (that page's
+     * title), 'pages' => list of array( 'id', 'title', 'summary', 'folder' (the folder below the extension, '' at
+     * its top) ) in navigation order ). Sorted by name.
+     *
+     * @return array
+     */
+    public function extensions()
+    {
+        $extensions = array();
+        foreach ( $this->tree( 'ext' )['children'] as $node )
+        {
+            $pages = array();
+            $walk = function ( array $node, $folder ) use ( &$walk, &$pages )
+            {
+                if ( $node['index_id'] !== null )
+                    $pages[] = array( 'id' => $node['index_id'], 'folder' => $folder );
+                foreach ( $node['documents'] as $document )
+                    $pages[] = array( 'id' => $document['id'], 'folder' => $folder );
+                foreach ( $node['children'] as $child )
+                    $walk( $child, $folder === '' ? $child['name'] : $folder . '/' . $child['name'] );
+            };
+            $walk( $node, '' );
+            if ( !$pages )
+                continue;
+            // the overview: doc/README.md or doc/index.md, else the README at the top of the extension
+            $index = null;
+            foreach ( array( true, false ) as $inDoc )
+                foreach ( array( 'README.md', 'index.md', 'README.markdown', 'README.txt', 'README' ) as $name )
+                    foreach ( $pages as $page )
+                    {
+                        $document = $this->document( $page['id'] );
+                        if ( $document !== null && strcasecmp( $page['id'], 'ext/' . $node['name'] . '/' . $name ) === 0
+                             && ( strpos( $document['path'], '/doc/' ) !== false ) === $inDoc )
+                        {
+                            $index = $page['id'];
+                            break 3;
+                        }
+                    }
+            if ( $index === null )
+                $index = $pages[0]['id'];
+            $list = array();
+            foreach ( $pages as $page )
+            {
+                $document = $this->document( $page['id'] );
+                if ( $document === null )
+                    continue;
+                $list[] = array( 'id' => $page['id'], 'title' => $document['title'], 'summary' => $document['summary'],
+                                 'folder' => $page['folder'] );
+            }
+            $indexDocument = $this->document( $index );
+            $extensions[$node['name']] = array( 'name' => $node['name'], 'count' => count( $list ), 'index_id' => $index,
+                                                'title' => $indexDocument !== null ? $indexDocument['title'] : $node['name'],
+                                                'pages' => $list );
+        }
+        ksort( $extensions, SORT_NATURAL | SORT_FLAG_CASE );
+        return $extensions;
+    }
+
+    /**
      * The configured categories with their page counts: id => array( 'id', 'name', 'icon', 'count' ).
      *
      * @return array
@@ -677,6 +751,19 @@ class expHelpDocumentIndex
                 if ( !isset( $node['children'][$segment] ) )
                     $node['children'][$segment] = self::node( $segment, $dir, self::humanize( $segment ) );
                 $node = &$node['children'][$segment];
+            }
+            // an extension's doc/README.md or doc/index.md is its overview rather than the README at its top, which
+            // then is one of its pages
+            if ( preg_match( '/^(readme|index)\.(md|markdown|txt)$/i', $file ) && $node['index'] !== null
+                 && preg_match( '#^extension/[^/]+/[^/]+$#', (string)$this->documents()[$node['index']]['path'] )
+                 && !preg_match( '#^extension/[^/]+/[^/]+$#', (string)$document['path'] ) )
+            {
+                $previous = $this->documents()[$node['index']];
+                $node['documents'][] = array( 'id' => $previous['id'], 'path' => $previous['path'], 'title' => $previous['title'],
+                                              'order' => 1000, 'type' => $previous['type'], 'audience' => $previous['audience'] );
+                $node['index'] = $node['index_id'] = null;
+                $node['order'] = 1000;
+                $node['title'] = self::humanize( $node['name'] );
             }
             if ( preg_match( '/^(readme|index)\.(md|markdown|txt)$/i', $file ) && $node['index'] === null )
             {

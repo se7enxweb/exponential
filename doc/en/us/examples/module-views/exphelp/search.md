@@ -14,10 +14,10 @@ A view of the `exphelp` module, defined in `kernel/exphelp/module.php` and run b
 ## Address
 
 ```text
-/exphelp/search/(q)/<Query>/(category)/<Category>/(audience)/<Audience>/(type)/<Type>/(offset)/<Offset>/(limit)/<Limit>/(format)/<Format>
+/exphelp/search/(q)/<Query>/(category)/<Category>/(audience)/<Audience>/(type)/<Type>/(extension)/<Extension>/(offset)/<Offset>/(limit)/<Limit>/(format)/<Format>
 ```
 
-Unordered parameters, in any order as `/(name)/value`: `(q)` sets `Query`, `(category)` sets `Category`, `(audience)` sets `Audience`, `(type)` sets `Type`, `(offset)` sets `Offset`, `(limit)` sets `Limit`, `(format)` sets `Format`.
+Unordered parameters, in any order as `/(name)/value`: `(q)` sets `Query`, `(category)` sets `Category`, `(audience)` sets `Audience`, `(type)` sets `Type`, `(extension)` sets `Extension`, `(offset)` sets `Offset`, `(limit)` sets `Limit`, `(format)` sets `Format`.
 
 ## Who may open it
 

@@ -49,7 +49,8 @@ class expHelpContentValidator
     protected $publicAudiences;
 
     /**
-     * @param array $options now (timestamp), areas (string[]), public_audiences (string[])
+     * @param array $options now (timestamp), areas (string[]), public_audiences (string[]), used_help_ids (where =>
+     *                       help_id, default usedHelpIdsFromSettings())
      */
     public function __construct( array $options = array() )
     {
@@ -57,7 +58,11 @@ class expHelpContentValidator
         $this->areas = isset( $options['areas'] ) ? array_values( (array)$options['areas'] )
                                                   : expHelpContentSchema::setting( 'Areas', self::DEFAULT_AREAS );
         $this->publicAudiences = isset( $options['public_audiences'] ) ? (array)$options['public_audiences'] : null;
+        $this->usedHelpIds = isset( $options['used_help_ids'] ) ? (array)$options['used_help_ids'] : self::usedHelpIdsFromSettings();
     }
+
+    /** @var array where => help_id: the help_ids called from outside (usedHelpIdsFromSettings()) */
+    protected $usedHelpIds = array();
 
     /**
      * Whether a help_id has the form of the style guide
@@ -197,6 +202,7 @@ class expHelpContentValidator
         foreach ( $figures as $figure )
             $this->checkFigure( $figure, isset( $figureSections[(int)$figure['object_id']] ) ? $figureSections[(int)$figure['object_id']] : null );
         $this->checkMaps( $maps, $byObject, $mapIds );
+        $this->checkUsedHelpIds( $topics );
         foreach ( $glossary as $entry )
         {
             if ( isset( $entry['section'] ) && $entry['section'] !== expHelpContentSchema::SECTION_INTERNAL )
@@ -322,6 +328,7 @@ class expHelpContentValidator
                 $this->add( self::WARNING, 'notice.signal-word', $topic, $field,
                             "The signal word {$m[1]} is for hazards to persons; use Attention, Data protection or Note" );
         }
+        $this->checkNotices( $topic, $class, $fields );
 
         // the glossary decides (Terminology)
         $this->checkTerminology( $topic, $fields + array( 'title' => (string)$value( 'title' ), 'shortdesc' => $shortdesc ), $glossary );
@@ -360,6 +367,156 @@ class expHelpContentValidator
         if ( isset( $topic['section'] ) && $topic['section'] !== $expected )
             $this->add( self::ERROR, 'section.mismatch', $topic, 'section',
                         "The section is \"{$topic['section']}\", the audience requires \"$expected\" (--fix sets it)", $expected );
+    }
+
+    /**
+     * The help_ids that are called from outside (plan, "Checks": clients keep a list of the IDs they use, and a test
+     * checks that each exists): exphelp.ini [ContentSettings] ContextHelpIds[] (the "?" of the admin pages) and
+     * ClientHelpIds[] (the help_ids a mobile app or another client opens). An id no topic has is an ERROR (the client
+     * gets a 404); one whose topic is not Released yet is a WARNING.
+     *
+     * @param array $topics
+     */
+    protected function checkUsedHelpIds( array $topics )
+    {
+        $byId = array();
+        foreach ( $topics as $topic )
+            if ( isset( $topic['help_id'] ) && (string)$topic['help_id'] !== '' )
+                $byId[(string)$topic['help_id']] = $topic;
+        foreach ( $this->usedHelpIds as $where => $helpId )
+        {
+            $item = array( 'object_id' => 0, 'help_id' => $helpId );
+            if ( !isset( $byId[$helpId] ) )
+                $this->add( self::ERROR, 'client.help-id-unknown', $item, $where, "No topic has the help_id \"$helpId\" that $where names" );
+            elseif ( isset( $byId[$helpId]['state'] ) && $byId[$helpId]['state'] !== expHelpContentSchema::STATE_RELEASED )
+                $this->add( self::WARNING, 'client.help-id-not-released', $byId[$helpId], $where,
+                            "The topic \"$helpId\" that $where names is not Released; clients get a 404 until it is" );
+        }
+    }
+
+    /**
+     * The help_ids called from outside: "ContextHelpIds[<key>]" or "ClientHelpIds[]" => help_id
+     *
+     * @return array
+     */
+    public static function usedHelpIdsFromSettings()
+    {
+        $used = array();
+        foreach ( (array)expHelpContentSchema::setting( 'ContextHelpIds', array() ) as $key => $helpId )
+            if ( is_scalar( $helpId ) && trim( (string)$helpId ) !== '' )
+                $used["ContextHelpIds[$key]"] = trim( (string)$helpId );
+        foreach ( array_values( (array)expHelpContentSchema::setting( 'ClientHelpIds', array() ) ) as $n => $helpId )
+            if ( is_scalar( $helpId ) && trim( (string)$helpId ) !== '' )
+                $used["ClientHelpIds[$n]"] = trim( (string)$helpId );
+        return $used;
+    }
+
+    /**
+     * The notice levels of the style guide (section 5, IEC/IEEE 82079-1): what can be checked without reading the text.
+     *
+     * - notice.position: an Attention or Data protection notice of a task stands in the step, not in context, prereq,
+     *   result or postreq;
+     * - notice.per-step: one notice per step;
+     * - notice.before-action: in a step, an Attention or Data protection notice comes first, before the action;
+     * - notice.too-long: a notice outside the steps (a paragraph or quote of its own) has at most three sentences.
+     *   In a step the notice and the action share the text, so its length is left to the review.
+     *
+     * @param array $topic
+     * @param string $class
+     * @param array $fields field => Markdown
+     */
+    protected function checkNotices( array $topic, $class, array $fields )
+    {
+        foreach ( $fields as $field => $text )
+        {
+            $text = (string)$text;
+            if ( $class === 'help_task' && $field === 'steps' )
+            {
+                foreach ( self::stepItems( $text ) as $n => $item )
+                {
+                    $notices = self::notices( $item );
+                    if ( count( $notices ) > 1 )
+                        $this->add( self::WARNING, 'notice.per-step', $topic, $field,
+                                    'Step ' . ( $n + 1 ) . ' has ' . count( $notices ) . ' notices; one notice per step, or split the step' );
+                    foreach ( $notices as $notice )
+                        if ( $notice['level'] !== 'note' && $notice['offset'] > 0 )
+                            $this->add( self::WARNING, 'notice.before-action', $topic, $field,
+                                        'Step ' . ( $n + 1 ) . ': the ' . $notice['label'] . ' notice stands after the action; it comes first in the step' );
+                }
+                continue;
+            }
+            foreach ( self::notices( $text ) as $notice )
+            {
+                if ( $class === 'help_task' && $notice['level'] !== 'note' && in_array( $field, array( 'context', 'prereq', 'result', 'postreq' ), true ) )
+                    $this->add( self::WARNING, 'notice.position', $topic, $field,
+                                "The {$notice['label']} notice is in \"$field\"; it stands in the step where the action happens" );
+                if ( self::sentenceCount( $notice['paragraph'] ) > 3 )
+                    $this->add( self::WARNING, 'notice.too-long', $topic, $field,
+                                "The {$notice['label']} notice has more than three sentences" );
+            }
+        }
+    }
+
+    /**
+     * The notices of a Markdown text: a bold label Attention, Data protection or Note with a colon (**Attention:**,
+     * **Attention**:), outside code. Each: level (attention|data-protection|note), label (as written), offset (of the
+     * label in the text without leading blanks and quote markers), paragraph (the notice's text after the label, up
+     * to the end of its paragraph).
+     *
+     * @param string $markdown
+     * @return array
+     */
+    public static function notices( $markdown )
+    {
+        $text = preg_replace( '/```.*?```/s', ' ', (string)$markdown );
+        $text = preg_replace( '/`[^`]*`/', ' ', $text );
+        $text = preg_replace( '/^[ \t]*>[ \t]?/m', '', $text );
+        $text = ltrim( $text );
+        $notices = array();
+        if ( !preg_match_all( '/(?:\*\*|__)[ \t]*(Attention|Data protection|Note)[ \t]*(?::[ \t]*(?:\*\*|__)|(?:\*\*|__)[ \t]*:)/i',
+                              $text, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE ) )
+            return $notices;
+        foreach ( $matches as $m )
+        {
+            $start = $m[0][1] + strlen( $m[0][0] );
+            $rest = substr( $text, $start );
+            $paragraph = preg_split( '/\n[ \t]*\n/', $rest, 2 )[0];
+            $label = ucfirst( strtolower( $m[1][0] ) );
+            $notices[] = array( 'level' => str_replace( ' ', '-', strtolower( $m[1][0] ) ), 'label' => $label,
+                                'offset' => $m[0][1], 'paragraph' => trim( preg_replace( '/\s+/', ' ', $paragraph ) ) );
+        }
+        return $notices;
+    }
+
+    /**
+     * The items of the numbered lists of a Markdown text (the steps), each with its continuation lines, in order.
+     *
+     * @param string $markdown
+     * @return string[]
+     */
+    public static function stepItems( $markdown )
+    {
+        $items = array();
+        $current = null;
+        $inFence = false;
+        foreach ( preg_split( '/\r\n|\r|\n/', (string)$markdown ) as $line )
+        {
+            if ( preg_match( '/^\s*(```|~~~)/', $line ) )
+                $inFence = !$inFence;
+            if ( !$inFence && preg_match( '/^(\d{1,3})[.)]\s+(.*)$/', $line, $m ) )
+            {
+                $items[] = $m[2];
+                $current = count( $items ) - 1;
+                continue;
+            }
+            if ( $current !== null && ( $inFence || trim( $line ) === '' || preg_match( '/^\s{2,}\S/', $line ) ) )
+            {
+                $items[$current] .= "\n" . trim( $line );
+                continue;
+            }
+            $current = null;
+        }
+        return array_map( 'trim', $items );
     }
 
     protected function checkTerminology( array $topic, array $texts, array $glossary )

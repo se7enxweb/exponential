@@ -74423,6 +74423,14 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Pour les organisations et les personnes qui exploitent leur propre site sur Exponential : équipe, publication, commerce, maintenance, croissance et partenaires.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>Manuel utilisateur</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>Une question par page : qui peut le faire, les étapes, ce qui peut mal tourner et où en lire davantage.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>Fichiers du projet</translation>
     </message>

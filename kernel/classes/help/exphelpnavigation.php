@@ -26,6 +26,8 @@ class expHelpNavigation
         'bc' => 'Backward compatibility',
         'changelogs' => 'Changelogs',
         'examples' => 'Examples',
+        // the documentation of the active extensions (ext/<name>/...), one folder per extension
+        'ext' => 'Extensions',
         'features' => 'Features',
         'guides' => 'Guides',
         'help' => 'Using the administration',

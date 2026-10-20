@@ -74565,6 +74565,14 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>För organisationer och personer som driver en egen webbplats på Exponential: team, publicering, handel, underhåll, tillväxt och partner.</translation>
     </message>
     <message>
+        <source>User manual</source>
+        <translation>Användarhandbok</translation>
+    </message>
+    <message>
+        <source>One question per page: who may do it, the steps, what can go wrong and where to read more.</source>
+        <translation>En fråga per sida: vem som får göra det, stegen, vad som kan gå fel och var du kan läsa mer.</translation>
+    </message>
+    <message>
         <source>Project files</source>
         <translation>Projektfiler</translation>
     </message>

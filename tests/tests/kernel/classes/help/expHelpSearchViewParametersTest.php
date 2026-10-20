@@ -49,7 +49,7 @@ class expHelpSearchViewParametersTest extends PHPUnit\Framework\TestCase
 
         $state = Search::state( $view, self::$known );
         $this->assertSame( array( 'q' => 'upload image', 'category' => array( 'layouts' ), 'audience' => array( 'editor' ),
-                                  'type' => array(), 'limit' => 20, 'offset' => 20 ), $state );
+                                  'type' => array(), 'extension' => array(), 'limit' => 20, 'offset' => 20 ), $state );
         $this->assertSame( '/exphelp/search/(q)/upload+image/(category)/layouts/(audience)/editor/(offset)/20', expHelp::searchUrl( $state ) );
     }
 
@@ -90,6 +90,20 @@ class expHelpSearchViewParametersTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( Search::wantsJson( array(), array( 'q' => 'x' ), array( 'HTTP_ACCEPT' => 'text/html,application/json;q=0.9' ) ) );
     }
 
+    public function testExtensionLimitsTheSearch()
+    {
+        $known = self::$known + array( 'extension' => array( 'expai', 'eztags' ) );
+        $state = Search::state( array( 'q' => 'vector', 'extension' => 'EXPAI,../x,nope', 'type' => 'help' ), $known );
+        $this->assertSame( array( 'expai' ), $state['extension'] );
+        $this->assertSame( '/exphelp/search/(q)/vector/(type)/help/(extension)/expai', expHelp::searchUrl( $state ) );
+        $urls = Search::facetUrls( $state, $known );
+        $this->assertSame( '/exphelp/search/(q)/vector/(type)/help', $urls['extension'][''], 'searches the whole help again' );
+        $this->assertSame( '/exphelp/search/(q)/vector/(extension)/expai', $urls['type'][''], 'other facets keep the extension' );
+        $get = array( 'q' => 'vector', 'extension' => 'expai' );
+        $state = Search::state( array_merge( Search::viewParameters( array() ), Search::getState( $get ) ), $known );
+        $this->assertSame( '/exphelp/search/(q)/vector/(extension)/expai', expHelp::searchUrl( $state ) );
+    }
+
     public function testFacetLinksAndPager()
     {
         $state = Search::state( array( 'q' => 'block', 'category' => 'layouts', 'offset' => '40' ), self::$known );
@@ -128,7 +142,10 @@ class expHelpSearchViewParametersTest extends PHPUnit\Framework\TestCase
         $FunctionList = array();
         include dirname( __DIR__, 5 ) . '/kernel/exphelp/module.php';
         $this->assertSame( array( 'q' => 'Query', 'category' => 'Category', 'audience' => 'Audience', 'type' => 'Type',
-                                  'offset' => 'Offset', 'limit' => 'Limit', 'format' => 'Format' ), $ViewList['search']['unordered_params'] );
+                                  'extension' => 'Extension', 'offset' => 'Offset', 'limit' => 'Limit', 'format' => 'Format' ),
+                           $ViewList['search']['unordered_params'] );
+        $this->assertSame( array( 'Extension' ), $ViewList['extensions']['params'] );
+        $this->assertSame( array( 'read' ), $ViewList['extensions']['functions'] );
         $this->assertSame( Search::VIEW_PARAMETERS, $ViewList['search']['unordered_params'] );
         $this->assertSame( array( 'read' ), $ViewList['search']['functions'] );
     }
