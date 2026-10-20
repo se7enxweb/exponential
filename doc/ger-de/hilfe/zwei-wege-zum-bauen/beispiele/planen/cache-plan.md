@@ -30,7 +30,7 @@ Keine Änderung wird für kaputt erklärt, wenn sie nur im Cache steckt.
 
 ## Welchen Weg Sie wählen
 
-Halten Sie [Caches nach einer Änderung](../../../../../eng-us/help/build-two-ways/caches-after-a-change.md) beim Plan bereit.
+Halten Sie [Caches nach einer Änderung](../../caches-nach-einer-aenderung.md) beim Plan bereit.
 
 ## Prüfen
 
@@ -38,7 +38,7 @@ Halten Sie [Caches nach einer Änderung](../../../../../eng-us/help/build-two-wa
 
 ## Verwandte Seiten
 
-- [Caches nach einer Änderung](../../../../../eng-us/help/build-two-ways/caches-after-a-change.md)
+- [Caches nach einer Änderung](../../caches-nach-einer-aenderung.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

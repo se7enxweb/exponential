@@ -40,7 +40,7 @@ Getrennte Adressen halten Seiten-Caches und Resolver korrekt.
 ## Verwandte Seiten
 
 - [Welches Layout bekommt eine Seite?](../../../../../eng-us/help/build-two-ways/layout-mappings.md)
-- [Bekanntes Verhalten des Editors](../../../../../eng-us/help/build-two-ways/known-editor-behaviors.md)
+- [Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

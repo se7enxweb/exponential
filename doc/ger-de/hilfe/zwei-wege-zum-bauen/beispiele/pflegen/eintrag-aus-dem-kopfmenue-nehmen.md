@@ -38,7 +38,7 @@ Beides geht; die Konsole zeigt mit `--dry-run` zuerst den Unterschied.
 
 ## Verwandte Seiten
 
-- [Einträge des Kopfmenüs umordnen oder entfernen](../../../../../eng-us/help/build-two-ways/reorder-or-remove-header-menu-items.md)
+- [Einträge des Kopfmenüs umordnen oder entfernen](../../kopfmenue-eintraege-umordnen-oder-entfernen.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

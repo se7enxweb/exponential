@@ -24,7 +24,7 @@ Den meistgelesenen Artikel an den Anfang stellen.
 
 1. Wählen Sie die Liste aus, ziehen Sie die Einträge unter **Elemente** an ihren Griffen und klicken Sie auf **Layout veröffentlichen**.
 
-Auf der Testkopie hinterließ ein einziges Hinzufügen zwei Einträge mit der Position 0; wenn die Reihenfolge auf der Site von der im Editor abweicht, ziehen Sie noch einmal ([Bekanntes Verhalten des Editors](../../../../../eng-us/help/build-two-ways/known-editor-behaviors.md)).
+Auf der Testkopie hinterließ ein einziges Hinzufügen zwei Einträge mit der Position 0; wenn die Reihenfolge auf der Site von der im Editor abweicht, ziehen Sie noch einmal ([Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)).
 
 ## Mit Templates
 
@@ -41,7 +41,7 @@ Der Layout-Editor.
 ## Verwandte Seiten
 
 - [Den Prefooter im Layout-Editor ändern](../../../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md)
-- [Bekanntes Verhalten des Editors](../../../../../eng-us/help/build-two-ways/known-editor-behaviors.md)
+- [Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

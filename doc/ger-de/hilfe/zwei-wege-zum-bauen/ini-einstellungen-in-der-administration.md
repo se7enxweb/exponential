@@ -67,7 +67,7 @@ frühere Dateien liefern.*
 
 Das Speichern schreibt nur diese Datei, leert die INI-Caches und kehrt mit einer Meldung *Gespeichert: ...* zu den
 Einstellungen der Datei zurück. Ein Wert, der in Templates verwendet wird, braucht außerdem das Leeren von
-**Template & Inhalt** ([Caches nach einer Änderung](../../../eng-us/help/build-two-ways/caches-after-a-change.md)).
+**Template & Inhalt** ([Caches nach einer Änderung](caches-nach-einer-aenderung.md)).
 
 ## Verwandte Seiten
 

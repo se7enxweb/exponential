@@ -40,7 +40,7 @@ Handverlesene Listen gehören den Redakteuren: die manuelle Sammlung.
 
 ## Prüfen
 
-- Die Reihenfolge auf der Seite ist die Reihenfolge im Editor (siehe [Bekanntes Verhalten des Editors](../../../../../eng-us/help/build-two-ways/known-editor-behaviors.md)).
+- Die Reihenfolge auf der Seite ist die Reihenfolge im Editor (siehe [Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)).
 
 ## Verwandte Seiten
 

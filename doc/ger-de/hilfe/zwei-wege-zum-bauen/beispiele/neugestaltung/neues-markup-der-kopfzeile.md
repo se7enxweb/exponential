@@ -41,7 +41,7 @@ Die Kopfzeile ist Design: Templates.
 ## Verwandte Seiten
 
 - [Wie die Kopfzeile aufgebaut ist](../../../../../eng-us/help/build-two-ways/how-the-header-is-built.md)
-- [Ihre eigene Design-Erweiterung](../../../../../eng-us/help/build-two-ways/your-own-design-extension.md)
+- [Ihre eigene Design-Erweiterung](../../eigene-design-erweiterung.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

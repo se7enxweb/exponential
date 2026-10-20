@@ -51,7 +51,7 @@ wird mit `ezroot` statt `ezurl` geschrieben.
 
 | Änderung | Weg | Seite |
 |---|---|---|
-| Eine Seite zur ersten Zeile hinzufügen | Einstellungen (`FooterMenuID[]`) | [Die Einträge des Fußzeilenmenüs](../../../eng-us/help/build-two-ways/footer-menu-items.md) |
+| Eine Seite zur ersten Zeile hinzufügen | Einstellungen (`FooterMenuID[]`) | [Die Einträge des Fußzeilenmenüs](eintraege-des-fusszeilenmenues.md) |
 | Einen Link zur zweiten Zeile hinzufügen | Inhalt (Menu item in Footer links) | [Fußzeilen-Links aus dem Inhaltsbaum](../../../eng-us/help/build-two-ways/footer-links-from-the-content-tree.md) |
 | Adressen der Social-Media-Profile | Inhalt (das Site-Info-Objekt bearbeiten) | |
 | Blöcke über der Fußzeile auf Artikel- und Rezeptseiten | Layout-Editor (gemeinsames Layout Prefooter) | [Gemeinsame Layouts und Zonenverknüpfung](../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md) |
@@ -60,7 +60,7 @@ wird mit `ezroot` statt `ezurl` geschrieben.
 ## Verwandte Seiten
 
 - [Wie die Kopfzeile aufgebaut ist](../../../eng-us/help/build-two-ways/how-the-header-is-built.md)
-- [Die Einträge des Fußzeilenmenüs](../../../eng-us/help/build-two-ways/footer-menu-items.md)
+- [Die Einträge des Fußzeilenmenüs](eintraege-des-fusszeilenmenues.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -38,7 +38,7 @@ Einstellungen für die festen Bereiche, Inhalte für Links, die Redakteure anpas
 
 ## Verwandte Seiten
 
-- [Die Einträge des Fußzeilenmenüs](../../../../../eng-us/help/build-two-ways/footer-menu-items.md)
+- [Die Einträge des Fußzeilenmenüs](../../eintraege-des-fusszeilenmenues.md)
 - [Fußzeilen-Links aus dem Inhaltsbaum](../../../../../eng-us/help/build-two-ways/footer-links-from-the-content-tree.md)
 - [Beispiele zum Livegang, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -26,7 +26,7 @@ Recipes als Erstes im Menü.
 
 ## Mit Einstellungen
 
-1. `exp:ini clear`, dann `exp:ini add` für jede ID in der gewünschten Reihenfolge ([Einträge des Kopfmenüs umordnen oder entfernen](../../../../../eng-us/help/build-two-ways/reorder-or-remove-header-menu-items.md)).
+1. `exp:ini clear`, dann `exp:ini add` für jede ID in der gewünschten Reihenfolge ([Einträge des Kopfmenüs umordnen oder entfernen](../../kopfmenue-eintraege-umordnen-oder-entfernen.md)).
 
 ## Welchen Weg Sie wählen
 
@@ -38,7 +38,7 @@ Die Administration für eine einzelne Verschiebung; die Konsole für Reihenfolge
 
 ## Verwandte Seiten
 
-- [Einträge des Kopfmenüs umordnen oder entfernen](../../../../../eng-us/help/build-two-ways/reorder-or-remove-header-menu-items.md)
+- [Einträge des Kopfmenüs umordnen oder entfernen](../../kopfmenue-eintraege-umordnen-oder-entfernen.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

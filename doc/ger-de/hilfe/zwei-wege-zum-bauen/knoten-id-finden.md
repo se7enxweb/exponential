@@ -41,7 +41,7 @@ Die Menüeinträge der Site tragen die ID in ihrem Markup: `id="menu-item-main_m
 ## Verwandte Seiten
 
 - [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md)
-- [Die Einträge des Fußzeilenmenüs](../../../eng-us/help/build-two-ways/footer-menu-items.md)
+- [Die Einträge des Fußzeilenmenüs](eintraege-des-fusszeilenmenues.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

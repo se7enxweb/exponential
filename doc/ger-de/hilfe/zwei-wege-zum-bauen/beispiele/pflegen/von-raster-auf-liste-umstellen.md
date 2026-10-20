@@ -40,7 +40,7 @@ Design-Option; beachten Sie die Eigenheit beim Speichern.
 
 ## Verwandte Seiten
 
-- [Bekanntes Verhalten des Editors](../../../../../eng-us/help/build-two-ways/known-editor-behaviors.md)
+- [Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)
 - [Der Reiter Design](../../der-reiter-design.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

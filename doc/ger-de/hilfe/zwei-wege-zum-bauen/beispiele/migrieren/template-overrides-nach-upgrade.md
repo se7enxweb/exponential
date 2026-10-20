@@ -38,7 +38,7 @@ Halten Sie Overrides gering; ziehen Sie Ansichtstypen und CSS vor.
 
 ## Verwandte Seiten
 
-- [Ihre eigene Design-Erweiterung](../../../../../eng-us/help/build-two-ways/your-own-design-extension.md)
+- [Ihre eigene Design-Erweiterung](../../eigene-design-erweiterung.md)
 - [Beispiele zur Migration, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

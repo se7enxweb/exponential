@@ -40,7 +40,7 @@ Listen von Knoten-IDs passen zu stabilen Menüs; inhaltsgesteuerte Menüs passen
 ## Verwandte Seiten
 
 - [Einen Eintrag zum Kopfmenü hinzufügen](../../../../../eng-us/help/build-two-ways/add-a-header-menu-item.md)
-- [Die Einträge des Fußzeilenmenüs](../../../../../eng-us/help/build-two-ways/footer-menu-items.md)
+- [Die Einträge des Fußzeilenmenüs](../../eintraege-des-fusszeilenmenues.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -38,7 +38,7 @@ Verlinken Sie für die allgemeinen Teile auf diese Seiten und schreiben Sie nur 
 
 ## Verwandte Seiten
 
-- [Zwei Wege zum Bauen, alle Seiten](../../../../../eng-us/help/build-two-ways/README.md)
+- [Zwei Wege zum Bauen, alle Seiten](../../README.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

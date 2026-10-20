@@ -22,7 +22,7 @@ Redakteure können ihre Teile vom ersten Tag an ändern.
 
 ## Im Layout-Editor
 
-1. Gehen Sie [Der Layout-Editor, ein Rundgang](../../../../../eng-us/help/build-two-ways/layouts-editor-tour.md) und [Den Prefooter im Layout-Editor ändern](../../../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md) gemeinsam durch.
+1. Gehen Sie [Der Layout-Editor, ein Rundgang](../../rundgang-durch-den-layout-editor.md) und [Den Prefooter im Layout-Editor ändern](../../../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md) gemeinsam durch.
 
 ## Was Redakteure nicht ändern
 
@@ -38,7 +38,7 @@ Eine Stunde mit der echten Site schlägt jedes Handbuch.
 
 ## Verwandte Seiten
 
-- [Der Layout-Editor, ein Rundgang](../../../../../eng-us/help/build-two-ways/layouts-editor-tour.md)
+- [Der Layout-Editor, ein Rundgang](../../rundgang-durch-den-layout-editor.md)
 - [Beispiele zum Livegang, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

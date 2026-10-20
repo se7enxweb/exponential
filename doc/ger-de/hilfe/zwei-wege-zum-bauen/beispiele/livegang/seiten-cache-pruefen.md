@@ -38,7 +38,7 @@ Prüfen Sie nach dem Livegang und nach großen Änderungen.
 
 ## Verwandte Seiten
 
-- [Caches nach einer Änderung](../../../../../eng-us/help/build-two-ways/caches-after-a-change.md)
+- [Caches nach einer Änderung](../../caches-nach-einer-aenderung.md)
 - [Beispiele zum Livegang, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

@@ -28,7 +28,7 @@ type: help
 4. Wählen Sie den Block aus, öffnen Sie den Reiter **Design** und setzen Sie **Ansichtstyp** auf `list_numbered`.
 5. **Layout veröffentlichen**. Die Seiten, die das Layout verwenden, zeigen den Block beim nächsten Aufruf.
 
-Wird nur der Ansichtstyp geändert, wird nichts gespeichert, bis sich ein anderes Feld ändert ([Bekanntes Verhalten des Editors](../../../../../eng-us/help/build-two-ways/known-editor-behaviors.md)).
+Wird nur der Ansichtstyp geändert, wird nichts gespeichert, bis sich ein anderes Feld ändert ([Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)).
 
 ## Mit Templates
 
@@ -44,7 +44,7 @@ Der Ansichtstyp ist eine einzige Auswahl im Editor.
 
 ## Verwandte Seiten
 
-- [Bekanntes Verhalten des Editors](../../../../../eng-us/help/build-two-ways/known-editor-behaviors.md)
+- [Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

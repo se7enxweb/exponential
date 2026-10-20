@@ -38,7 +38,7 @@ Der Layout-Editor.
 
 ## Verwandte Seiten
 
-- [Der Layout-Editor, ein Rundgang](../../../../../eng-us/help/build-two-ways/layouts-editor-tour.md)
+- [Der Layout-Editor, ein Rundgang](../../rundgang-durch-den-layout-editor.md)
 - [Beispiele zur Neugestaltung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
