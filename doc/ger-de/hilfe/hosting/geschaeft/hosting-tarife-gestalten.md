@@ -34,7 +34,7 @@ enthält.
 | Baustein | Die Frage, die er beantwortet | Optionen |
 |---|---|---|
 | Engine | Was liefert die Website aus? | Exponential Velocity, FrankenPHP über Velocity, Apache oder nginx mit PHP-FPM |
-| PHP | Welche Versionen, wer wählt? | der unterstützte Bereich 8.0 bis 8.5 (8.1 oder später für Velocity) |
+| PHP | Welche Versionen, wer wählt? | der unterstützte Bereich 8.0 bis 8.5 (einschließlich Velocity) |
 | Datenbank | Welche Engine, geteilt oder dediziert? | in der offiziellen Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL |
 | Speicher | Wie viel Platz für `var/storage` (Uploads und Bildvarianten), Caches und Logs? | ein Kontingent pro Tarif |
 | Abschottung | Was trennt diesen Kunden von anderen? | ein Systembenutzer und PHP-FPM-Pool pro Website, ein VPS, ein Container, eine dedizierte Maschine |

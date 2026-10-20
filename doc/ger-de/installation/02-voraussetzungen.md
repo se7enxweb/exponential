@@ -1,7 +1,7 @@
 # 2. Voraussetzungen
 
 Dieses Kapitel führt auf, was ein Rechner braucht, bevor Exponential darauf installiert werden kann, und warum jeder
-Punkt nötig ist: die PHP-Version (8.0 bis 8.5; Velocity benötigt 8.1 oder neuer), jede PHP-Extension mit der Stelle im
+Punkt nötig ist: die PHP-Version (8.0 bis 8.5, auch für Velocity), jede PHP-Extension mit der Stelle im
 Code, die sie verlangt, die `php.ini`-Einstellungen, die der Setup-Assistent prüft, die Datenbankserver und ihre
 Mindestversionen, Composer, einen Webserver sowie Hinweise zu Red Hat Enterprise Linux 9 und seinen Nachbauten, zu
 Debian und Ubuntu und zu Plesk. Zum Schluss steht, was die Dokumentation über Arbeitsspeicher und Festplatte sagt. Alles
@@ -17,7 +17,7 @@ man sie mitten in einer Installation, kostet sie einen Neustart der Installation
 | Bedarf | Minimum | Empfohlen | Geprüft durch |
 |---|---|---|---|
 | PHP | 8.0 | das neueste 8.x, das Ihr System anbietet (8.5 wird unterstützt) | Composer (`composer.json`, `require.php`); den Setup-Assistenten (`settings/setup.ini`, `[phpversion] MinimumVersion=8.0.0`) |
-| PHP für Exponential Velocity | 8.1, mit `sockets` | wie oben, mit `pcntl` und `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.1"`, `"ext-sockets": "*"`) |
+| PHP für Exponential Velocity | 8.0, mit `sockets` (ab dem Release 0.0.4.54; bis dahin 8.1) | wie oben, mit `pcntl` und `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.0"`, `"ext-sockets": "*"`) |
 | PHP-Extensions | siehe [2.3](#23-php-extensions) | zusätzlich die empfohlenen | Composer (`ext-*`), den Systemtest des Setup-Assistenten |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an, `allow_url_fopen` an | | den Systemtest des Setup-Assistenten |
 | Datenbank | SQLite 3 (kein Server) | in der offiziellen Reihenfolge: SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL ([2.6](#26-datenbanken)) | den Datenbankschritt des Setup-Assistenten |
@@ -38,7 +38,7 @@ Kommandozeile).
 
 | PHP | Status |
 |---|---|
-| 8.0 | Die älteste unterstützte Version. Der Kernel und die mitgelieferten Extensions laufen darauf unter Apache mit mod_php oder PHP-FPM. Sie ist das Standard-PHP von Red Hat Enterprise Linux 9, AlmaLinux 9 und Rocky Linux 9. Velocity läuft darauf nicht. |
+| 8.0 | Die älteste unterstützte Version. Der Kernel und die mitgelieferten Extensions laufen darauf unter Apache mit mod_php oder PHP-FPM. Sie ist das Standard-PHP von Red Hat Enterprise Linux 9, AlmaLinux 9 und Rocky Linux 9. Velocity läuft darauf ab seinem Release 0.0.4.54 (was sich unterscheidet, steht in [2.9](#php-80-und-red-hat-enterprise-linux)). |
 | 8.1 bis 8.4 | Unterstützt, einschließlich Velocity. |
 | 8.5 | Unterstützt; die neueste getestete Version. |
 | 7.4 und älter | Von 6.0.8 an nicht mehr unterstützt. Eine Site, die bei PHP 7.4 bleiben muss, bleibt bei 6.0.7. |
@@ -182,7 +182,7 @@ PHP 8.5 on linux-x86_64: provides the 'lite' set; checked against 'standard'
 und `exp:velocity ext install-hint <extension> ...` gibt den Befehl zur Paketinstallation für Ihr System aus, zum
 Beispiel `php bin/php/console exp:velocity ext install-hint intl xsl`. (`exp:velocity ext
 list|check|plan|install-hint|build` übergibt an `qbixctl ext:<action>` der Engine und benötigt daher das
-Velocity-Paket, siehe [Kapitel 3](03-den-code-beschaffen.md#34-das-optionale-velocity-paket); als `root` fügen Sie
+Velocity-Paket, siehe [Kapitel 3](03-den-code-beschaffen.md#34-das-velocity-paket); als `root` fügen Sie
 `--allow-root-user` hinzu.)
 
 ## 2.4 Der Systemtest des Setup-Assistenten
@@ -338,7 +338,7 @@ ausgeführt wurde, fehlt `vendor/`, und die Site kann nicht starten.
 
 | Möglichkeit | PHP | Wann |
 |---|---|---|
-| **Exponential Velocity** (Engine `qbix`) | 8.1+ | Empfohlen für jede Umgebung. Liefert HTTP und HTTPS selbst aus; kein weiterer Webserver nötig. |
+| **Exponential Velocity** (Engine `qbix`) | 8.0+ | Empfohlen für jede Umgebung. Liefert HTTP und HTTPS selbst aus; kein weiterer Webserver nötig. |
 | Apache mit `mod_rewrite` und PHP-FPM (oder mod_php) | 8.0+ | Die klassische Einrichtung; Shared Hosting. Die Rewrite-Regeln werden in `.htaccess_root` mitgeliefert. |
 | nginx, LiteSpeed, Caddy und andere mit PHP-FPM | 8.0+ | Jeder Server, der eine URL auf `index.php` umschreiben kann; aufgeführt in der [README](../../../README.md#the-traditional-options). |
 | FrankenPHP (über `exp:velocity`) | das der Programmdatei | Produktionsreife alternative Engine. |
@@ -357,7 +357,7 @@ Extension-Manifest von Velocity (`vendor/se7enxweb/exponential-velocity/build/ex
 
 ### Red Hat Enterprise Linux 9, AlmaLinux 9, Rocky Linux 9
 
-- Das Standard-PHP des AppStream-Repositorys ist **8.0**, mit dem Exponential unter Apache oder PHP-FPM läuft. Der
+- Das Standard-PHP des AppStream-Repositorys ist **8.0**, mit dem Exponential unter Apache, PHP-FPM oder Velocity läuft. Der
   Befehl aus [PHP-8.0-Unterstützung](../../eng-us/bc/6.0/php-8.0-support.md):
 
   ```bash
@@ -367,13 +367,37 @@ Extension-Manifest von Velocity (`vendor/se7enxweb/exponential-velocity/build/ex
   `php-xml` bringt `dom`, `simplexml`, `xsl` und `libxml` mit; `php-pdo` bringt `sqlite3`; `php-common` (eine
   Abhängigkeit) bringt `iconv`, `zlib`, `session` und `openssl`; `php-process` bringt `pcntl`; `php-pgsql` fügt
   PostgreSQL hinzu.
-- Für Velocity (PHP 8.1+) wechseln Sie zu einem neueren AppStream-Modul-Stream: `dnf module list php`, dann
-  `dnf module reset php`, `dnf module enable php:8.3` und `dnf distro-sync`. Mit den Streams `php:8.1`, `php:8.2` und
-  `php:8.3` laufen sowohl Exponential als auch Velocity.
+- Velocity braucht keinen neueren Stream: Es läuft ab seinem Release 0.0.4.54 auf dem Standard-PHP 8.0 (siehe
+  [PHP 8.0 und Red Hat Enterprise Linux](#php-80-und-red-hat-enterprise-linux) weiter unten). Für ein neueres PHP
+  wechseln Sie zu einem anderen AppStream-Modul-Stream: `dnf module list php`, dann `dnf module reset php`,
+  `dnf module enable php:8.3` und `dnf distro-sync`. Mit den Streams `php:8.1`, `php:8.2` und `php:8.3` laufen sowohl
+  Exponential als auch Velocity.
 - Das Remi-Repository (Modul-Streams `php:remi-8.x` oder die parallelen Pakete `php<XY>` unter `/opt/remi`) stellt jede
   Version von 8.0 bis 8.5 bereit. PECL-Extensions (`php-pecl-redis`, `php-pecl-apcu`, `php-pecl-mongodb`) und `oci8`
   kommen aus EPEL, von Remi oder vom Anbieter.
 - Der Dienst des Standard-PHP-FPM heißt `php-fpm`; bei einer parallelen Remi-Installation heißt er `php<XY>-php-fpm`.
+
+### PHP 8.0 und Red Hat Enterprise Linux
+
+Ab dem Release 0.0.4.54 (20. Oktober 2026) läuft Exponential Velocity unter PHP 8.0 bis 8.5: Die `composer.json` der
+Engine verlangt `"php": ">=8.0"` (bisher `>=8.1`), und unter 8.0 ist nichts zusätzlich nötig, weder ein Polyfill-Paket
+noch eine Erweiterung. Die `composer.json` von Exponential verlangt die Engine als `~0.0.4.54`, sodass
+`composer install` sie auch unter PHP 8.0 installiert.
+
+- **RHEL 9 und seine Nachbauten**: Das Standard-PHP 8.0 aus AppStream führt Velocity aus. Das el9-RPM
+  (`exponential-velocity-<release>-1.el9.noarch.rpm`) hängt von `php-cli >= 8.0` ab und lässt sich installieren, ohne
+  einen Modul-Stream zu aktivieren; ein neuerer Stream funktioniert weiterhin. Mit Composer geht es genauso.
+- **RHEL 8**: Das Standard-PHP dort ist 7.2. Aktivieren Sie den Stream 8.0 (`dnf module enable php:8.0`) und verwenden
+  Sie das Phar oder Composer; ein el8-RPM gibt es nicht.
+
+Was sich unter PHP 8.0 unterscheidet, und nur das: Die Bildausgabe als AVIF braucht PHP 8.1 (die Formatauswahl hört bei
+WebP auf); die Spitze des Speicherverbrauchs je Anfrage im Dashboard braucht PHP 8.2 (die Spalte bleibt leer); `$_FILES`
+hat kein `full_path`, wie in PHP 8.0 selbst; und eine mit `eval()` deklarierte Klasse mit statischen Eigenschaften führt
+dazu, dass ihr Worker nach dieser Anfrage ersetzt wird (das ist korrekt und kostet einen Fork). Alles andere erledigt
+die Engine selbst, und ihre Zygote läuft unter 8.0. Erweiterungen, systemd, SELinux und wie Sie die Installation
+prüfen: die Seite
+[PHP 8.0 and Red Hat Enterprise Linux](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/rhel.md) der
+Engine und ihre [Anforderungen](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/requirements.md).
 
 ### Debian und Ubuntu
 

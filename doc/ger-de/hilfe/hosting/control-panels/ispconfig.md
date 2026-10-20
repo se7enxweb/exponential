@@ -52,7 +52,7 @@ kein Testergebnis: Behandeln Sie ISPConfig höchstens als Stufe 3, bis Sie es ge
 | Bedarf | Wert | Aufgabe im Panel (allgemein) |
 |---|---|---|
 | Betriebssystem | eine Distribution der Stufe 1 oder 2, zum Beispiel Debian 12 oder 13, Ubuntu 22.04 oder 24.04, AlmaLinux 9 | die Basisinstallation unter dem Panel ([Stufe 2](../../betriebssystemunterstuetzung.md#stufe-2-bekanntermaßen-lauffähig)) |
-| PHP | 8.0 oder später (8.1 für Velocity), mit `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, einer Datenbankerweiterung, `gd` oder ImageMagick | PHP-Version und Module pro Website ([2.3](../../../installation/02-voraussetzungen.md#23-php-extensions)) |
+| PHP | 8.0 oder später (auch für Velocity), mit `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `pcre`, `json`, `session`, `zlib`, einer Datenbankerweiterung, `gd` oder ImageMagick | PHP-Version und Module pro Website ([2.3](../../../installation/02-voraussetzungen.md#23-php-extensions)) |
 | PHP für die Kommandozeile | dieselbe Version und dieselben Erweiterungen wie die der Website | für Composer, die Konsole und Cron ([Kommandozeile und Web-PHP](../../../installation/02-voraussetzungen.md#php-auf-der-kommandozeile-und-im-web)) |
 | `php.ini` | `memory_limit` 64M oder mehr, `max_execution_time` 30 oder mehr, `date.timezone`, `file_uploads` an, `allow_url_fopen` an | PHP-Einstellungen pro Website ([2.5](../../../installation/02-voraussetzungen.md#25-einstellungen-in-der-phpini)) |
 | PHP-Benutzer | PHP läuft als eigener Benutzer der Website | PHP-FPM-Pool pro Website ([8.7.2](../../../installation/08-die-website-ausliefern.md#872-ein-benutzer-oder-eine-gruppe)) |

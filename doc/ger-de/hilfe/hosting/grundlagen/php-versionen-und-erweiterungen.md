@@ -30,7 +30,7 @@ warum die beiden PHPs eines Servers (Web und Kommandozeile) übereinstimmen müs
 
 | PHP | Stand |
 |---|---|
-| 8.0 | Die älteste unterstützte Version; der Kernel läuft darauf unter Apache mit mod_php oder PHP-FPM. Sie ist das mitgelieferte PHP von RHEL 9, AlmaLinux 9 und Rocky Linux 9. **Velocity läuft darauf nicht.** |
+| 8.0 | Die älteste unterstützte Version; der Kernel läuft darauf unter Apache mit mod_php oder PHP-FPM. Sie ist das mitgelieferte PHP von RHEL 9, AlmaLinux 9 und Rocky Linux 9. Velocity läuft darauf ab seinem Release 0.0.4.54 (bis dahin brauchte es 8.1). |
 | 8.1 bis 8.4 | Unterstützt, einschließlich Velocity. |
 | 8.5 | Unterstützt; die neueste getestete Version. |
 | 7.4 und älter | Von 6.0.8 an nicht unterstützt; eine Website, die auf 7.4 bleiben muss, bleibt auf 6.0.7. |
@@ -118,8 +118,10 @@ dnf install php php-fpm php-mysqlnd php-gd php-intl php-mbstring php-xml php-pdo
 ```
 
 `php-xml` bringt `dom`, `simplexml`, `xsl` und `libxml`; `php-pdo` bringt `sqlite3`; `php-common` bringt `iconv`,
-`zlib`, `session` und `openssl`; `php-process` bringt `pcntl`; `php-pgsql` fügt PostgreSQL hinzu. Für Velocity wechseln
-Sie auf einen neueren Modul-Stream (`dnf module reset php`, `dnf module enable php:8.3`, `dnf distro-sync`). Das
+`zlib`, `session` und `openssl`; `php-process` bringt `pcntl`; `php-pgsql` fügt PostgreSQL hinzu. Velocity läuft unter
+diesem mitgelieferten 8.0 (ab Release 0.0.4.54; das el9-rpm installiert sich ohne Modul-Stream). Für ein neueres PHP
+wechseln Sie auf einen anderen Modul-Stream (`dnf module reset php`, `dnf module enable php:8.3`, `dnf distro-sync`).
+Unter RHEL 8 (Standard-PHP 7.2) aktivieren Sie zuerst `php:8.0`. Das
 Remi-Repository stellt 8.0 bis 8.5 bereit; PECL-Erweiterungen und `oci8` kommen aus EPEL, von Remi oder vom Hersteller.
 
 **Debian und Ubuntu.** Pakete heißen `php<version>-<extension>`: `php8.3-xml`, `php8.3-mbstring`, `php8.3-intl`,
@@ -156,7 +158,7 @@ Auf Maschinen mit mehreren PHP-Versionen rufen Sie die richtige Binärdatei übe
 
 ## Checkliste
 
-- [ ] Die PHP-Versionen des Tarifs sind 8.0 oder später; 8.1 oder später überall, wo Velocity angeboten wird.
+- [ ] Die PHP-Versionen des Tarifs sind 8.0 oder später, auch überall, wo Velocity angeboten wird.
 - [ ] 64-Bit-Builds von PHP.
 - [ ] Jede erforderliche Erweiterung sowohl im Web-PHP als auch im PHP der Kommandozeile.
 - [ ] Genau die Datenbankerweiterung(en), die der Tarif anbietet.
