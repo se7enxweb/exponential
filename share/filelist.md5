@@ -11052,7 +11052,7 @@ dd8219b03d60ce0dbee6e5abe1289f20  doc/eng-us/standards/patterns/workflow-event.m
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 94b0410f4d6d290ff0b4dc2b284451c4  doc/ger-de/.dirnames.json
-e9f34dcc656cfe5948045feb779d37d0  doc/ger-de/.paths.json
+1df2d2a38df930b8719b7913fcdd30e7  doc/ger-de/.paths.json
 2ba7d4102f729a5fa7d53ff750a2cf06  doc/ger-de/anleitungen/README.md
 7751add00ddf65f0ea2d8e6510460828  doc/ger-de/anleitungen/aktualisieren.md
 88e9d7a7e41c216d27d0d009da451c34  doc/ger-de/anleitungen/api-schluessel.md
@@ -11549,6 +11549,7 @@ d8dd6f27b808be4c0f17fa78f71cb605  doc/ger-de/hilfe/partner/dokumentation-und-ueb
 9843daf3e6939f26bec485b5ffa28231  doc/ger-de/hilfe/partner/ein-theme-veroeffentlichen.md
 6c7c5c525eade3a783406fbb2aef91bf  doc/ger-de/hilfe/partner/eine-erweiterung-veroeffentlichen.md
 18999f98b16635dc89b90b57165b9743  doc/ger-de/hilfe/partner/eine-fallstudie-schreiben.md
+db0ac09501baa7884418f1b40090d55c  doc/ger-de/hilfe/partner/eine-kundeninstallation-pruefen.md
 65640f6307a88caea666b6f7383ef85d  doc/ger-de/hilfe/partner/eine-schulung-durchfuehren.md
 dd355a43daeae7776549ec58ff9a1db7  doc/ger-de/hilfe/partner/empfehlungen-und-leads.md
 5288cb3266152663f961c687b7a8a82c  doc/ger-de/hilfe/partner/erweiterungen-zurueckgeben.md
