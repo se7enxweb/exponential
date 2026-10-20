@@ -81,7 +81,7 @@ Each one goes through the vendor's own migration pages point by point and says w
 - [Getting started](../guides/getting-started.md), [Operating a site](../guides/operating-a-site.md) and [Upgrading](../guides/upgrading.md): the task guides.
 - [Backwards compatibility notes for 6.0](../bc/6.0/): what changed and what a site has to do about it, per topic.
 - [Changelogs](../../changelogs/6.0/): what each 6.0.x release changed.
-- [The project README](../../../README.md): an overview of Exponential and its features.
+- [The project README](../../README.md): an overview of Exponential and its features.
 
 ## Public demos
 

@@ -255,7 +255,7 @@ built-in server (`php`, for development) and FrankenPHP (`frankenphp`, a product
 optional to install but recommended to use; the site runs without it behind Apache or nginx. Because the workers keep
 the code and the settings in memory, a change to a PHP class or an INI file reaches a Velocity-served site only after
 `exp:velocity restart` (or `exp:velocity deploy`). See [Velocity engines](../bc/6.0/velocity-engines.md) and the
-project [README](../../../README.md#exponential-velocity--the-fast-option).
+project [README](../../README.md#exponential-velocity--the-fast-option).
 
 ## 1.3 The three install methods in one paragraph each
 
@@ -401,7 +401,7 @@ documentation.
 In this repository:
 
 - [Installation overview](../INSTALL.md): the whole install on one page.
-- [Project README](../../../README.md): what Exponential is and how it is served.
+- [Project README](../../README.md): what Exponential is and how it is served.
 - [Glossary](../glossary.md): every term of the documentation.
 - [Getting started](../guides/getting-started.md): the first hour after an install.
 - [The setup wizard and the editor siteaccess](../features/6.0/setup-wizard-and-editor-siteaccess.md).
