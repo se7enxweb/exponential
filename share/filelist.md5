@@ -3297,7 +3297,7 @@ f3810ed1fe8ce28f454c0747ce38f8cb  doc/changelogs/extensions/symfony.md
 ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
-44a0b675f2b7aefaa180fd8ce92378bd  doc/eng-us/INSTALL.md
+d311b548f209d2e35c5770baf32e32ca  doc/eng-us/INSTALL.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 c52deabeab21e6f51d003fdec625ac99  doc/eng-us/README-LICENSE.md
 18eb180621655795c488a99d85dd26f0  doc/eng-us/bc/4.1/changes-4.1.0.txt
@@ -6155,7 +6155,7 @@ fc2b56700373f008957be7c84a6a8e8e  doc/eng-us/features/6.0/ezpm-package-manager-c
 389c1290b79eb9a673acb4c2a85b2f88  doc/eng-us/features/6.0/file-consistency-check.md
 e255d3ea95bcc2539dda2feeec0a5a14  doc/eng-us/features/6.0/form-expired-page.md
 8c5c33dddc81c5e6f444b9029806c644  doc/eng-us/features/6.0/help-content.md
-568e364b38cfe9eb5a02b034529ee521  doc/eng-us/features/6.0/help-system.md
+b7cf10c92e2b71c7050cc90a7384364b  doc/eng-us/features/6.0/help-system.md
 4766a599386d8ddaca93749fc18239b1  doc/eng-us/features/6.0/hidden-admin-tabs.md
 7de3e0ea33d88d5c9ddb6f1068a5bc7a  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 0c40e75f2ef4cebe007a6fda76679666  doc/eng-us/features/6.0/install-in-one-command.md
@@ -9589,7 +9589,7 @@ b773922319310e991c2e5081310c0f5c  doc/eng-us/help/press/writing-a-fair-review.md
 87ca5381983c74f441619764040c3ae7  doc/eng-us/help/press/writing-about-funding-and-sponsors.md
 e2d428da5755dda8a628932599aee3e2  doc/eng-us/help/press/writing-about-the-community.md
 0c4d2324d6b37db33a5baec9d5facf25  doc/eng-us/help/press/writing-about-the-ez-publish-years.md
-3dda9fdddccba5b0afa57ba9063dcb52  doc/eng-us/help/project-files.md
+0111714688cb6819b0dc7e3cdc598cc1  doc/eng-us/help/project-files.md
 e31b7b5ddb78deb0c3980797f66968e9  doc/eng-us/help/project/README.md
 87a8f80812f6de1b57e4916be3a31310  doc/eng-us/help/project/about-the-project.md
 eeaad0abd2c19c64ec8f83985ea2f741  doc/eng-us/help/project/build-with-exponential.md
@@ -10688,8 +10688,8 @@ b157c3ab90ba4fbce6c8fe089c88636b  doc/eng-us/history/velocity/2026-09d.md
 09fe66cfd7efc177b0979e16d00d9add  doc/eng-us/history/velocity/2026-10.md
 1b26aebfc51d07107cde582d6f105804  doc/eng-us/history/velocity/README.md
 6579cb3af6b13e98420cb492887ed497  doc/eng-us/history/velocity/installers-and-packages.md
-a75bba96a686128cf2e6f6f519519484  doc/eng-us/install/01-introduction.md
-9ed728b2f84cb7beb1235c35da14cc5e  doc/eng-us/install/02-requirements.md
+e79000f4b53adafc2d96272ccbfbe17a  doc/eng-us/install/01-introduction.md
+15165a5f22ca3e1598e6275244920326  doc/eng-us/install/02-requirements.md
 b895dc4b2c32b5277fbcb2340b90a672  doc/eng-us/install/03-getting-the-code.md
 33f19689991793745adf151d4c4f95e6  doc/eng-us/install/04-choosing-an-install-method.md
 e36553ca9a11c4abe640c8b416b30b5d  doc/eng-us/install/05-setup-wizard.md
@@ -10705,7 +10705,7 @@ f518ab0f5126a5fc3d73d25e44566984  doc/eng-us/install/14-migrating-from-4x.md
 d9a95492682de35725fd41889cf91702  doc/eng-us/install/15-migrating-from-5x-legacy.md
 61a1bbf2111c37339fbcc5cb08dbb35b  doc/eng-us/install/16-migrating-from-ez-platform-and-ibexa.md
 26011afc73766791ae2822f185cf9f96  doc/eng-us/install/17-migration-reference.md
-400fce9028153d9a6bad1eda2871ff48  doc/eng-us/install/README.md
+a336a53b208de3503e85b201f42476e8  doc/eng-us/install/README.md
 b14f4dad7d257686c6135e77a26587bd  doc/eng-us/install/migration/README.md
 58de1884df7e0fd3f087b5431a83b494  doc/eng-us/install/migration/adobe-aem.md
 560ce43838e37498d21e070ecea424fd  doc/eng-us/install/migration/checklist.md
