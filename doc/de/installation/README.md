@@ -81,7 +81,7 @@ Exponential sich unterscheidet.
 
 ## Weitere Dokumentation
 
-- [Erste Schritte](../../en/us/guides/getting-started.md), [Eine Site betreiben](../../en/us/guides/operating-a-site.md) und [Upgrades](../../en/us/guides/upgrading.md): die Aufgaben-Anleitungen.
+- [Erste Schritte](../anleitungen/erste-schritte.md), [Eine Site betreiben](../anleitungen/betrieb-einer-website.md) und [Upgrades](../anleitungen/aktualisieren.md): die Aufgaben-Anleitungen.
 - [Hinweise zur Abwärtskompatibilität für 6.0](../../en/us/bc/6.0/): was sich geändert hat und was eine Site deswegen tun muss, nach Thema.
 - [Changelogs](../../changelogs/6.0/): was jede 6.0.x-Release geändert hat.
 - [Das README des Projekts](../../../README.md): ein Überblick über Exponential und seine Funktionen.

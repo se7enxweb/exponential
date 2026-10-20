@@ -346,7 +346,7 @@ ausgeführt wurde, fehlt `vendor/`, und die Site kann nicht starten.
 
 Für eine Installation mit dem Kickstarter oder über die Konsole wird keiner benötigt; der Setup-Assistent braucht einen,
 weil er im Browser läuft. Die Einrichtung der einzelnen Server ist Thema von [Kapitel 8](08-die-website-ausliefern.md) und der
-[Anleitung zur Bereitstellung](../../en/us/guides/deploying.md).
+[Anleitung zur Bereitstellung](../anleitungen/bereitstellung.md).
 
 ## 2.9 Hinweise zu Betriebssystemen
 
@@ -431,7 +431,7 @@ Proportional Set Size (PSS) des Elternprozesses und seiner Worker: Die Resident 
 den gemeinsam genutzten Speicher immer wieder mit und summiert sich auf weit mehr, als der Rechner tatsächlich
 verbraucht.
 
-**Umgebungsvariablen.** Exponential liest einige Umgebungsvariablen, aufgeführt unter [Umgebungsvariablen](../../en/us/guides/environment-variables.md). Eine davon, `EXP_DEMO_MODE=1`, kennzeichnet eine Installation als öffentliche Demo ([Demo-Modus](../../en/us/bc/6.0/demo-mode.md)); ein Produktionsserver darf sie für keinen Prozess einer echten Site setzen.
+**Umgebungsvariablen.** Exponential liest einige Umgebungsvariablen, aufgeführt unter [Umgebungsvariablen](../anleitungen/umgebungsvariablen.md). Eine davon, `EXP_DEMO_MODE=1`, kennzeichnet eine Installation als öffentliche Demo ([Demo-Modus](../../en/us/bc/6.0/demo-mode.md)); ein Produktionsserver darf sie für keinen Prozess einer echten Site setzen.
 
 ## Quellen
 
@@ -447,7 +447,7 @@ In diesem Repository:
   [Datenbanktreiber, September 2026](../../en/us/specifications/6.0/database-drivers-2026-09.md).
 - [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [Velocity-Webserver](../../en/us/features/6.0/velocity-web-server.md),
   [Velocity-Pakete und -Programmdateien](../../en/us/features/6.0/velocity-packages-and-binaries.md).
-- [Bereitstellung](../../en/us/guides/deploying.md).
+- [Bereitstellung](../anleitungen/bereitstellung.md).
 - [Qualitätsprüfungen](../../en/us/features/6.0/quality-checks.md) und [Continuous Integration](../../en/us/specifications/6.0/continuous-integration.md):
   wie PHP 8.0 getestet wird.
 - Code: `composer.json`, `settings/setup.ini`, `settings/site.ini` (`[SetupSettings]`), `kernel/setup/ezsetuptests.php`,

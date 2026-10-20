@@ -589,7 +589,7 @@ Führen Sie sie zuerst an der Kopie aus und vergleichen Sie einige Adressen vorh
 
 **Symfony-Routen** haben im Kernel keine Entsprechung. Eine Route zu einem eigenen Controller wird zu einer Modul-View einer
 Extension (`extension/<name>/modules/<module>/module.php` und die View-Datei; siehe
-[Extensions](../../en/us/guides/extensions.md)), erreichbar als `/<module>/<view>`; eine sprechende Adresse dafür ist ein eigener
+[Extensions](../anleitungen/extensions.md)), erreichbar als `/<module>/<view>`; eine sprechende Adresse dafür ist ein eigener
 URL-Alias oder ein Platzhalter (**Setup > URL-Übersetzer**). Eine Route, die nur weitergeleitet hat, wird zu einem
 URL-Alias oder einer [Anfrageregel](../../en/us/features/6.0/request-rules.md), die nach der Übersetzung des Alias erlauben,
 verweigern, weiterleiten, umschreiben oder protokollieren kann. Die eigenen Routen des New Stack
@@ -620,7 +620,7 @@ als Rückfallebene, daher sind die Twig-Templates oft das gesamte Frontend.
 
 `ngsymfonytools` (`symfony_include`) stellt ein Twig-Template aus einer `.tpl` heraus dar, aber nur innerhalb einer
 Symfony-Anwendung über die Bridge; einer eigenständigen Site hilft es nicht. Wie Templates gefunden, überschrieben und
-untersucht werden: [Templates und Design](../../en/us/guides/templates-and-design.md); welches Template welches Markup geschrieben
+untersucht werden: [Templates und Design](../anleitungen/templates-und-design.md); welches Template welches Markup geschrieben
 hat, zeigen die [Template-Pfad-Kommentare](../../en/us/features/6.0/template-path-comments.md).
 
 ## 15.13 REST
@@ -639,7 +639,7 @@ Beide registrieren den Provider `ezp`, daher antworten die Routen von `ezprestap
 (geprüft durch `tests/tests/kernel/classes/rest/ezpRestRoutesTest.php`). Das Präfix ist dasselbe wie bei REST API v2 des
 New Stack, die API ist es nicht: andere Ressourcen, andere Nutzdaten, andere Authentifizierung. Jeder Client der alten API
 muss neu geschrieben werden; nichts daran ist kompatibel. Für die Administration aus Skripten und Apps gibt es außerdem die
-Remote-Dienste: [Remote-Dienste und Apps](../../en/us/guides/remote-services-and-apps.md).
+Remote-Dienste: [Remote-Dienste und Apps](../anleitungen/entfernte-dienste-und-apps.md).
 
 ## 15.14 Caches
 
@@ -864,9 +864,9 @@ In diesem Repository:
 - [11. Upgrade](11-aktualisieren.md): die Update-Dateien, die alte Kette, die 6.0-Linie; [14. Migration von der 4.x-Linie](14-migration-von-4x.md);
   [12. Fehlerbehebung](12-fehlerbehebung.md); [8. Die Site ausliefern](08-die-website-ausliefern.md);
   [9. Datenbanken](09-datenbanken.md); [10. Nach der Installation](10-nach-der-installation.md); [3. Den Code beschaffen](03-den-code-beschaffen.md).
-- Anleitungen: [Upgrade](../../en/us/guides/upgrading.md), [Templates und Design](../../en/us/guides/templates-and-design.md),
-  [Extensions](../../en/us/guides/extensions.md), [Remote-Dienste und Apps](../../en/us/guides/remote-services-and-apps.md),
-  [Betrieb einer Site](../../en/us/guides/operating-a-site.md).
+- Anleitungen: [Upgrade](../anleitungen/aktualisieren.md), [Templates und Design](../anleitungen/templates-und-design.md),
+  [Extensions](../anleitungen/extensions.md), [Remote-Dienste und Apps](../anleitungen/entfernte-dienste-und-apps.md),
+  [Betrieb einer Site](../anleitungen/betrieb-einer-website.md).
 - Die Legacy-Bridge: [Legacy-Bridge](../../en/us/features/6.0/legacy-bridge.md),
   [Bridge-Spezifikation](../../en/us/specifications/6.0/legacy-bridge-bundle.md),
   [Paket-Forks und Umbenennungen von Befehlen](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md).

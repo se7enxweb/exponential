@@ -1403,7 +1403,7 @@ In diesem Repository:
   [Sicherheitsvoreinstellungen](../../en/us/specifications/6.0/security-defaults-2026-09.md)
 - [Upgrade-Hinweise zur Velocity-Engine](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md), [FrankenPHP](../../en/us/bc/6.0/frankenphp.md),
   [Engine-Archiv (phar)](../../en/us/bc/6.0/phar.md)
-- [Anleitung zur Bereitstellung](../../en/us/guides/deploying.md)
+- [Anleitung zur Bereitstellung](../anleitungen/bereitstellung.md)
 - [Weitergeleiteten Headern wird nur von konfigurierten Proxys vertraut](../../en/us/bc/6.0/trusted-proxies.md)
   (`TrustedProxies[]`, Beispiele für Apache, nginx, Velocity, Load Balancer und CDNs)
 - [Voraussetzungen](02-voraussetzungen.md) (PHP-Versionen je Server) und [Sicherheitshärtung](13-sicherheitshaertung.md)

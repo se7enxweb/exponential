@@ -768,8 +768,8 @@ eZ Platform 2.5, Platform 3.3, Ibexa 4.6 und Platform 5), mit den Konsolenbefehl
 In diesem Repository:
 
 - [11. Upgrade](11-aktualisieren.md): die Reihenfolge, in der die Update-Dateien und Skripte auszuführen sind.
-- [Upgrade](../../en/us/guides/upgrading.md), [Inhaltsmodell und Bearbeitung](../../en/us/guides/content-model-and-editing.md),
-  [Templates und Design](../../en/us/guides/templates-and-design.md), [Betrieb einer Website](../../en/us/guides/operating-a-site.md).
+- [Upgrade](../anleitungen/aktualisieren.md), [Inhaltsmodell und Bearbeitung](../anleitungen/inhaltsmodell-und-bearbeitung.md),
+  [Templates und Design](../anleitungen/templates-und-design.md), [Betrieb einer Website](../anleitungen/betrieb-einer-website.md).
 - [Legacy-Bridge](../../en/us/features/6.0/legacy-bridge.md), [Spezifikation des Legacy-Bridge-Bundles](../../en/us/specifications/6.0/legacy-bridge-bundle.md),
   [Übersicht der Plattformpakete](../../en/us/specifications/6.0/platform-package-map.md),
   [Site-Bundles der Plattform](../../en/us/features/6.0/platform-site-bundles.md),

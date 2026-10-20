@@ -331,7 +331,7 @@ Formular mit einem E-Mail-Empfänger absenden, und lesen Sie das Log des Mailser
 Einige Extensions haben eigene Transport-Einstellungen. Die der Newsletter-Extension sind in
 [10.5](#105-benachrichtigungen-und-newsletter) beschrieben; das System der E-Mail-Präferenzen (Kategorien, Einwilligung,
 Sperrliste, das Bounce-Postfach) unter
-[E-Mail-Präferenzen: Einrichtung und Betrieb](../../en/us/guides/mail-preferences-administrator.md).
+[E-Mail-Präferenzen: Einrichtung und Betrieb](../anleitungen/mail-einstellungen-administrator.md).
 `php bin/php/console exp:mailstatus` zeigt den Zustand des Präferenzsystems.
 
 ## 10.5 Benachrichtigungen und Newsletter
@@ -351,7 +351,7 @@ php bin/php/console exp:notificationrun --dry-run                   # who would 
 Die Statusseite in der Administration und der Statusbefehl melden die üblichen Fehler: Ereignisse, die warten, ohne
 dass ein Lauf verzeichnet ist (Cron ist nicht eingerichtet), ein fehlgeschlagener Lauf, eine überfällige Sammelmail,
 der noch aktive Datei-Transport, ein fehlender Absender. Das vollständige Vorgehen mit jedem Fehler und seiner Behebung
-steht unter [Benachrichtigungen: Betrieb und Fehlerbehebung](../../en/us/guides/notifications-administrator.md).
+steht unter [Benachrichtigungen: Betrieb und Fehlerbehebung](../anleitungen/benachrichtigungen-administrator.md).
 
 ### Newsletter (cjw_newsletter)
 
@@ -667,7 +667,7 @@ und Dateien zueinander passen.
 **Testen Sie eine Wiederherstellung** mindestens einmal auf einem anderen Rechner und nach jedem größeren Upgrade:
 Eine Sicherung, die nie wiederhergestellt wurde, ist eine Hoffnung, keine Sicherung. Siehe
 [Wartungsmodus](../../en/us/features/6.0/maintenance-mode.md) und
-[Eine Site betreiben, Teil 6](../../en/us/guides/operating-a-site.md#6-back-up-and-restore).
+[Eine Site betreiben, Teil 6](../anleitungen/betrieb-einer-website.md#6-sichern-und-wiederherstellen).
 
 ### Wartungsfenster
 
@@ -675,7 +675,7 @@ Nehmen Sie für ein Upgrade, einen Import oder eine Wiederherstellung die öffen
 vom Netz (Meldung, voraussichtliche Dauer, wer weiterhin Zugang hat, eine Vorschau und eine Bestätigung) oder mit
 `php bin/php/maintenance.php on|off|status`. Besucher erhalten eine 503-Wartungsseite, die Administration unter
 `/admin` bleibt erreichbar, und das Löschen von `var/maintenance.json` beendet den Wartungsmodus, was auch immer sonst
-nicht stimmt. Die vollständige Anleitung: [Wartungsmodus](../../en/us/guides/maintenance-mode.md).
+nicht stimmt. Die vollständige Anleitung: [Wartungsmodus](../anleitungen/wartungsmodus.md).
 
 ## 10.10 Logs und Log-Rotation
 
@@ -777,7 +777,7 @@ Server nur anhand von Läufen, die direkt nacheinander gemacht wurden. Die CI de
 gegen `tests/benchmark/baseline.json` als Prüfung aus, die nur warnt.
 
 Standardmäßig ist es rücksichtsvoll: Gegen einen anderen Host als diesen Rechner brauchen mehr als 1000 Anfragen je
-URL oder mehr als 16 gleichzeitig `--force`. Die Anleitung [Benchmarking von Exponential](../../en/us/guides/benchmarking.md)
+URL oder mehr als 16 gleichzeitig `--force`. Die Anleitung [Benchmarking von Exponential](../anleitungen/benchmarking.md)
 lehrt jeden Einsatz mit echten Ausgaben: Median, p90 und p99 lesen, Läufe fair vergleichen, die Checkliste gegen
 Messrauschen, Arbeitsabläufe für eine Code-Änderung, Apache gegen Velocity und ein Deployment sowie die CI-Prüfung;
 [Benchmark: exp:benchmark](../../en/us/features/6.0/benchmark.md) ist die Referenz.
@@ -890,7 +890,7 @@ Prüfen Sie nach jeder Änderung der Reihenfolge den wirksamen Wert einer Einste
 `php bin/php/console exp:ini get <file>/<Block>/<Key> --allow-root-user`. Die installierten Versionen, Lizenzen und
 Websites stehen auf der About-Seite (`/ezinfo/about`), die die im aktuellen Siteaccess aktiven Extensions und die auf
 der Festplatte vorhandenen zählt (zum Beispiel „63 aktiv in diesem Siteaccess, 85 auf der Festplatte“), dieselben
-Zahlen wie das Dashboard. Eigene Extensions erstellen und veröffentlichen: [Extensions](../../en/us/guides/extensions.md).
+Zahlen wie das Dashboard. Eigene Extensions erstellen und veröffentlichen: [Extensions](../anleitungen/extensions.md).
 
 **Die Job-Warteschlange und Exponential Intelligence.** `expqueue` und `expai` liegen nach `composer install` auf der
 Festplatte und sind inaktiv, bis Sie sie einschalten:
@@ -912,7 +912,7 @@ Einzelheiten: [Exponential Intelligence](../../en/us/features/6.0/extensions/exp
 
 Inhaltssprachen und Sprachen der Oberfläche sind getrennt:
 
-- **Inhaltssprachen** sind die Sprachen, in die Objekte übersetzt werden ([die Anleitung](../../en/us/guides/content-languages.md)).
+- **Inhaltssprachen** sind die Sprachen, in die Objekte übersetzt werden ([die Anleitung](../anleitungen/inhaltssprachen.md)).
   Fügen Sie eine in der Administration unter **Setup > Sprachen** hinzu (die View `content/translations`); danach
   können Redakteure Objekte in diese Sprache übersetzen.
 - **Die Sprache der Oberfläche** eines Siteaccess ist `site.ini [RegionalSettings] Locale` (ausgeliefert `eng-GB`);
@@ -987,14 +987,14 @@ dass `var/log/security.log` Zeilen mit `demo/mode` für den Webserver und für C
 
 In diesem Repository:
 
-- [Eine Site betreiben](../../en/us/guides/operating-a-site.md): Caches, Cronjobs, statischer Cache, Preload, Sicherungen, Logs,
+- [Eine Site betreiben](../anleitungen/betrieb-einer-website.md): Caches, Cronjobs, statischer Cache, Preload, Sicherungen, Logs,
   Reparaturen.
-- [Erste Schritte](../../en/us/guides/getting-started.md), [Bereitstellung](../../en/us/guides/deploying.md),
-  [Sicherheit und Audit](../../en/us/guides/security-and-audit.md), [Extensions](../../en/us/guides/extensions.md),
-  [Upgrades](../../en/us/guides/upgrading.md), [der Lernpfad](../../en/us/guides/README.md).
-- [Benachrichtigungen: Betrieb und Fehlerbehebung](../../en/us/guides/notifications-administrator.md),
+- [Erste Schritte](../anleitungen/erste-schritte.md), [Bereitstellung](../anleitungen/bereitstellung.md),
+  [Sicherheit und Audit](../anleitungen/sicherheit-und-audit.md), [Extensions](../anleitungen/extensions.md),
+  [Upgrades](../anleitungen/aktualisieren.md), [der Lernpfad](../anleitungen/README.md).
+- [Benachrichtigungen: Betrieb und Fehlerbehebung](../anleitungen/benachrichtigungen-administrator.md),
   [Spezifikation der Benachrichtigungen](../../en/us/specifications/6.0/notifications.md),
-  [E-Mail-Präferenzen für Administratoren](../../en/us/guides/mail-preferences-administrator.md),
+  [E-Mail-Präferenzen für Administratoren](../anleitungen/mail-einstellungen-administrator.md),
   [Spezifikation von cjw_newsletter](../../en/us/specifications/6.0/cjw_newsletter.md).
 - [Cronjob-Konsole](../../en/us/features/6.0/cronjobs-console.md),
   [Befehle, Cronjob-Teile und Views als Klassen](../../en/us/specifications/6.0/runnable-commands-cronjobs-views.md),

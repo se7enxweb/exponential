@@ -1121,7 +1121,7 @@ In diesem Repository:
   [Velocity-Antwort-Cache](../../en/us/features/6.0/velocity-response-cache.md),
   [Velocity-Worker-Pool](../../en/us/specifications/6.0/velocity-worker-pool.md).
 - [Ladereihenfolge der Extensions](../../en/us/features/6.0/extension-loading-order.md).
-- [Eine Site betreiben](../../en/us/guides/operating-a-site.md), Abschnitt 7 (Datenbanktreiber) und Abschnitt 6
+- [Eine Site betreiben](../anleitungen/betrieb-einer-website.md), Abschnitt 7 (Datenbanktreiber) und Abschnitt 6
   (Sicherungen).
 - [Kapitel 11, die Update-Dateien](11-aktualisieren.md#113-die-update-dateien), zu Schema-Updates pro Engine.
 - Der Code: [`ezsqlite3db.php`](../../../lib/ezdb/classes/ezsqlite3db.php), [`ezmysqlidb.php`](../../../lib/ezdb/classes/ezmysqlidb.php),

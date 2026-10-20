@@ -408,7 +408,7 @@ In diesem Repository:
 - [Exponential-Konsole](../../en/us/bc/6.0/console.md)
 - [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md)
 - [Audit-Protokoll](../../en/us/bc/6.0/audit.md) (das Ereignis `system.install.run` protokolliert jede Installation)
-- [Erste Schritte](../../en/us/guides/getting-started.md) und [Bereitstellung](../../en/us/guides/deploying.md)
+- [Erste Schritte](../anleitungen/erste-schritte.md) und [Bereitstellung](../anleitungen/bereitstellung.md)
 - Code: `kernel/setup/steps/ezstep_data.php`, `kernel/setup/steps/ezstep_create_sites.php`,
   `kernel/classes/expkickstarter.php`, `bin/php/install.php`, `kernel/classes/expmaintenance.php`,
   `kernel/classes/ezsiteinstaller.php`

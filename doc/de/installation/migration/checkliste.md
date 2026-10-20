@@ -87,7 +87,7 @@ Die Details zu jedem Konzept stehen unter [Inhalte auf Exponential abbilden](inh
       Adresse oder bewusst ein 410/404 (entfernt).
 - [ ] Erzeugen Sie die Weiterleitungstabelle aus dem Import: Remote-ID zu neuem Knoten, alte Adresse zu neuer Adresse.
 - [ ] In Exponential bewahren Sie eine alte Adresse auf eine von drei Arten (alle beschrieben unter
-      [URLs und Aliase](../../../en/us/guides/urls-and-aliases.md)):
+      [URLs und Aliase](../../anleitungen/urls-und-aliase.md)):
   - **Der eigene URL-Alias des Knotens**: wenn der alte Pfad der neue Pfad sein kann (`about-us/team`). Setzen Sie den
     Namen des Objekts oder einen eigenen Alias so, dass der Alias passt.
   - **Ein eigener URL-Alias am Knoten**, der (mit 301) auf die Hauptadresse des Knotens weiterleitet: einer pro
@@ -127,11 +127,11 @@ Die Details zu jedem Konzept stehen unter [Inhalte auf Exponential abbilden](inh
 | Anzahlen | pro Typ und Sprache, gegen die Bestandsaufnahme |
 | Stichproben | die 50 meistbesuchten Seiten im direkten Vergleich, alt und neu |
 | Formatierter Text | Überschriften, Listen, Tabellen, Links, Bilder, eingebettete Medien in einem Dutzend komplexer Elemente |
-| Links | der Link-Checker der neuen Site ([URLs und Aliase](../../../en/us/guides/urls-and-aliases.md#2-how-links-are-checked)) und `./console exp:contentcheck` für defekte Beziehungen und fehlende Dateien |
+| Links | der Link-Checker der neuen Site ([URLs und Aliase](../../anleitungen/urls-und-aliase.md#2-wie-links-geprüft-werden)) und `./console exp:contentcheck` für defekte Beziehungen und fehlende Dateien |
 | Weiterleitungen | jede Zeile der Weiterleitungstabelle, automatisch |
 | Suche | die Suche der Site findet neue Elemente; der Suchindex ist neu aufgebaut (`./console exp:updatesearchindex`) |
 | Berechtigungen | Redakteure können bearbeiten, anonyme Besucher sehen keine unveröffentlichten Elemente |
-| Performance | die wichtigsten Seitentypen unter Last ([Benchmarking](../../../en/us/guides/benchmarking.md)) |
+| Performance | die wichtigsten Seitentypen unter Last ([Benchmarking](../../anleitungen/benchmarking.md)) |
 | Barrierefreiheit | die Templates, mit einem automatischen Prüfwerkzeug und per Tastatur |
 
 ## 8. Umstellung

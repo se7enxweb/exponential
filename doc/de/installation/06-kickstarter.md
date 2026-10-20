@@ -931,7 +931,7 @@ In diesem Repository:
   [Datenbanktreiber, September 2026](../../en/us/specifications/6.0/database-drivers-2026-09.md)
 - [Die Konsole](../../en/us/bc/6.0/console.md) und [Abstraktionen für CLI, Cronjobs und Views](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md)
   (warum `bin/php/kickstarter.php` ein einziger Aufruf von `kernel/private/classes/commands/kickstarter.php` ist)
-- [Bereitstellung](../../en/us/guides/deploying.md)
+- [Bereitstellung](../anleitungen/bereitstellung.md)
 - Code: `kernel/private/classes/commands/kickstarter.php`, `kernel/classes/expkickstarter.php`,
   `kernel/classes/expkickstarterini.php`, `kernel/setup/steps/`, `kickstart.ini-dist`, `kickstart.ini--example`
 

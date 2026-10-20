@@ -120,7 +120,7 @@ dieser nicht gesetzt ist, der Teil des Paketnamens nach dem Schrägstrich. Desha
 in `extension/explayouts_ui`: Das Paket benennt sein Verzeichnis ausdrücklich.
 [Kapitel 3](03-den-code-beschaffen.md#35-extensions-sind-composer-pakete) erklärt das im Detail. Die Extensions und
 ihre jeweilige Aufgabe sind unter [Extensions](../../en/us/features/6.0/extensions/README.md) aufgeführt; die Entwicklung
-eigener Extensions behandelt die [Anleitung zu Extensions](../../en/us/guides/extensions.md).
+eigener Extensions behandelt die [Anleitung zu Extensions](../anleitungen/extensions.md).
 
 ### Siteaccesses
 
@@ -205,7 +205,7 @@ Das Kernel-Repository liefert die Designs `standard` und `base` (die Rückfall-D
 `admin2` existiert nur innerhalb von Extensions (`eztags`, `cjw_newsletter` und andere legen ihre Admin-Ansichten
 dort ab), weshalb es in der Rückfallliste der Administration bleibt. Das Design der öffentlichen Site kommt mit dem
 Site-Paket oder mit einer Theme-Extension. Wie Sie ein Template finden und überschreiben, steht in
-[Templates und Design](../../en/us/guides/templates-and-design.md).
+[Templates und Design](../anleitungen/templates-und-design.md).
 
 ### Einstellungsdateien
 
@@ -423,11 +423,11 @@ In diesem Repository:
 - [Installationsübersicht](../../en/us/INSTALL.md): die gesamte Installation auf einer Seite.
 - [Projekt-README](../../../README.md): was Exponential ist und wie es ausgeliefert wird.
 - [Glossar](../../en/us/glossary.md): jeder Begriff der Dokumentation.
-- [Erste Schritte](../../en/us/guides/getting-started.md): die erste Stunde nach einer Installation.
+- [Erste Schritte](../anleitungen/erste-schritte.md): die erste Stunde nach einer Installation.
 - [Der Setup-Assistent und der Redaktions-Siteaccess](../../en/us/features/6.0/setup-wizard-and-editor-siteaccess.md).
 - [Standardwerte einer sauberen Installation](../../en/us/features/6.0/clean-install-defaults.md).
-- [Extensions](../../en/us/features/6.0/extensions/README.md) und die [Anleitung zu Extensions](../../en/us/guides/extensions.md).
-- [Templates und Design](../../en/us/guides/templates-and-design.md).
+- [Extensions](../../en/us/features/6.0/extensions/README.md) und die [Anleitung zu Extensions](../anleitungen/extensions.md).
+- [Templates und Design](../anleitungen/templates-und-design.md).
 - [Platzierung von INI-Overrides](../../en/us/specifications/6.0/ini-override-placements.md) und
   [exp:ini](../../en/us/features/6.0/exp-ini-command.md).
 - [Konsole](../../en/us/bc/6.0/console.md).

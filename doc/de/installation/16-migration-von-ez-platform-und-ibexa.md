@@ -1132,7 +1132,7 @@ die eine Regel, die eine Portierung, wenn man sie vergisst, in eine Cross-Site-S
 Mit `se7enxweb/ngsymfonytools` und der Legacy Bridge kann ein TPL-Template während eines Übergangs auch ein
 Twig-Template einbinden (`symfony_include`); siehe [Site-Bundles](../../en/us/features/6.0/platform-site-bundles.md) und
 [ngsymfonytools](../../en/us/features/6.0/extensions/ngsymfonytools.md). Zum Template-System selbst lesen Sie die
-[Anleitung zu Templates und Design](../../en/us/guides/templates-and-design.md).
+[Anleitung zu Templates und Design](../anleitungen/templates-und-design.md).
 
 ### 16.6.7 Eine durchgeführte Portierung: Netgen Layouts und die Media Site
 
@@ -1330,7 +1330,7 @@ In diesem Repository:
   [SQLite für Exponential Platform](../../en/us/features/6.0/platform-sqlite-install.md).
 - Legacy Bridge: [Legacy Bridge](../../en/us/features/6.0/legacy-bridge.md), [Spezifikation des Bundles](../../en/us/specifications/6.0/legacy-bridge-bundle.md), [ngsymfonytools](../../en/us/features/6.0/extensions/ngsymfonytools.md).
 - Layouts: [Exponential Layouts](../../en/us/bc/6.0/LAYOUTS.md), [API des Layout-Editors](../../en/us/specifications/6.0/explayouts-ui-api.md).
-- [Anleitung zu Templates und Design](../../en/us/guides/templates-and-design.md).
+- [Anleitung zu Templates und Design](../anleitungen/templates-und-design.md).
 - Changelogs und Geschichte: [Exponential Platform Nexus](../../changelogs/extensions/exponential-platform-nexus.md),
   [Exponential Platform Legacy](../../changelogs/extensions/exponential-platform-legacy.md),
   [XmlText-Feldtyp](../../changelogs/extensions/ezplatform-xmltext-fieldtype.md),

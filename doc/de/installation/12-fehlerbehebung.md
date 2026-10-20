@@ -280,7 +280,7 @@ listen sie auf):
 Leeren Sie unter Velocity außerdem dessen Antwort-Cache, und zwar **nach** dem Neustart:
 `php bin/php/console exp:velocity cache clear`. Eine Seite, die zwischen dem Leeren eines Caches und dem Neustart noch
 vom alten Code dargestellt wird, landet erneut im Cache und wird ausgeliefert, als hätte die Änderung nicht
-funktioniert. Mehr dazu in [Cache-Konsole](../../en/us/bc/6.0/cache-console.md) und [Eine Site betreiben](../../en/us/guides/operating-a-site.md).
+funktioniert. Mehr dazu in [Cache-Konsole](../../en/us/bc/6.0/cache-console.md) und [Eine Site betreiben](../anleitungen/betrieb-einer-website.md).
 
 | Symptom | Ursache | Abhilfe |
 |---|---|---|
@@ -301,7 +301,7 @@ funktioniert. Mehr dazu in [Cache-Konsole](../../en/us/bc/6.0/cache-console.md) 
 
 ## 12.14 Hilfe erhalten
 
-- Durchsuchen Sie diese Dokumentation: die [Anleitungen](../../en/us/guides/README.md), die [Funktionsseiten](../../en/us/features/6.0/),
+- Durchsuchen Sie diese Dokumentation: die [Anleitungen](../anleitungen/README.md), die [Funktionsseiten](../../en/us/features/6.0/),
   die [Hinweise zu Verhaltensänderungen](../../en/us/bc/6.0/) und das [Glossar](../../en/us/glossary.md).
 - Das Online-Handbuch: [https://exponential.doc.exponential.earth/](https://exponential.doc.exponential.earth/).
 - Einen Fehler melden: im [Issue-Tracker von Exponential](https://github.com/se7enxweb/exponential/issues) oder im
@@ -326,14 +326,14 @@ In diesem Repository:
   [Ein Benutzerpasswort zurücksetzen](../../en/us/features/6.0/reset-user-password.md).
 - [Die Exp Debug bar](../../en/us/features/6.0/exp-debug-bar.md), [Referenz der Debug-Leiste](../../en/us/bc/6.0/debug-bar.md),
   [Einstellungen je Umgebung](../../en/us/features/6.0/environment-settings.md), [exp:ini](../../en/us/features/6.0/exp-ini-command.md).
-- [Cache-Konsole](../../en/us/bc/6.0/cache-console.md), [Eine Site betreiben](../../en/us/guides/operating-a-site.md),
-  [Bereitstellung](../../en/us/guides/deploying.md).
+- [Cache-Konsole](../../en/us/bc/6.0/cache-console.md), [Eine Site betreiben](../anleitungen/betrieb-einer-website.md),
+  [Bereitstellung](../anleitungen/bereitstellung.md).
 - [SQLite-Datenbankunterstützung](../../en/us/features/6.0/sqlite-database.md), [SQLite-Transaktionen](../../en/us/bc/6.0/sqlite-transactions.md),
   [MongoDB](../../en/us/features/6.0/mongodb-database-support.md).
 - [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [Velocity: HTTPS und Zertifikate](../../en/us/features/6.0/velocity-https-certificates.md),
   [Velocity: Verzeichnisstruktur auf der Festplatte](../../en/us/bc/6.0/velocity-ondisk-layout.md).
 - [Audit](../../en/us/bc/6.0/audit.md), [Sicherheitsvorgaben](../../en/us/specifications/6.0/security-defaults-2026-09.md),
-  [Anleitung zu Sicherheit und Audit](../../en/us/guides/security-and-audit.md).
+  [Anleitung zu Sicherheit und Audit](../anleitungen/sicherheit-und-audit.md).
 - [Installer-Logs und Startdaten](../../en/us/specifications/6.0/installer-logs-and-seed-data.md).
 - Code: `kernel/setup/ezsetuptests.php`, `kernel/setup/steps/ezstep_installer.php`,
   `kernel/setup/steps/ezstep_create_sites.php`, `kernel/classes/expkickstarter.php`, `bin/php/install.php`,

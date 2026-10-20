@@ -78,7 +78,7 @@ xrowextract.
 ### Pakete (`.ezpkg`)
 
 Pakete transportieren Inhaltsklassen und Inhaltsobjekte (mit ihren Dateien) von einer Exponential-Installation in eine
-andere ([Pakete](../../../en/us/guides/packages.md)). Von der Shell aus (`ezpm.php` im Wurzelverzeichnis):
+andere ([Pakete](../../anleitungen/pakete.md)). Von der Shell aus (`ezpm.php` im Wurzelverzeichnis):
 
 ```bash
 php ezpm.php export <package> -d var/tmp      # write an .ezpkg
@@ -118,7 +118,7 @@ Quelle: `extension/ezodf/README`. Nützlich, wenn die alte „Site“ aus einer 
 
 **Setup > RSS** kann einen Feed in Inhalte importieren: Jeder neue Eintrag wird zu einem Objekt der gewählten Klasse
 unterhalb eines Knotens, wobei die Felder des Feeds Attributen zugeordnet werden; der Cronjob-Teil `rssimport` führt
-ihn aus ([RSS-Feeds](../../../en/us/guides/rss-feeds.md)). So lässt sich während einer Übergangszeit ein Blog weiter einlesen.
+ihn aus ([RSS-Feeds](../../anleitungen/rss-feeds.md)). So lässt sich während einer Übergangszeit ein Blog weiter einlesen.
 Ein Feed enthält nur seine neuesten Einträge und ist daher allein keine vollständige Migration.
 
 ### Layouts (`se7enxweb/explayouts`)
@@ -137,9 +137,9 @@ Exponential-Installationen (`extension/explayouts_ui/bin/php/layouts.php`):
 - **REST** (`se7enxweb/ezprestapi`): Lesen unter `/api/ezp/v1/...` und `/api/ezp/v2/...`; einen Knoten anlegen ist
   `POST /api/ezp/v2/content/node/create`, löschen `.../content/node/delete/<id>`; Aktualisieren antwortet mit 501
   (noch nicht implementiert). Authentifizierung mit einem OAuth2-Token oder einem persönlichen API-Schlüssel. Details:
-  [REST-API v1 und v2](../../../en/us/guides/rest-api-v1-and-v2.md).
+  [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md).
 - **`expservices`** (im Verzeichnis `extension/` des Kernels): die Funktionen der Administration als benannte
-  HTTP-Dienste, mit einem Shell-Client und Python-Beispielen ([Entfernte Dienste und Apps](../../../en/us/guides/remote-services-and-apps.md)).
+  HTTP-Dienste, mit einem Shell-Client und Python-Beispielen ([Entfernte Dienste und Apps](../../anleitungen/entfernte-dienste-und-apps.md)).
 
 Nutzen Sie die HTTP-Schnittstellen, wenn der Importer auf einem anderen Rechner läuft (zum Beispiel ein
 Node.js-Skript). Für große Importe ist ein Skript auf dem Server ([Abschnitt 4](#4-ein-eigenes-importskript-das-grundgerüst))
@@ -181,9 +181,9 @@ jedem Export, der auf Dateien verweist. Details zum Wechsel weg von Exponential:
 | Die Alias-Tabellen prüfen | `./console exp:verify_aliases` (`--fix` behebt unbedenkliche Fehler) |
 | Titel, Schlüsselwörter, Beschreibung pro Seite; XML-Sitemap | `xrowmetadata` (Datentyp und der Cronjob-Teil `sitemap`) |
 | XML-Sitemap | `bcgooglesitemaps` (Cronjob-Teile `generate`, `generatemultilingual`) |
-| Defekte Links und Beziehungen nach einem Import | der Link-Checker ([URLs und Aliase](../../../en/us/guides/urls-and-aliases.md)), `./console exp:contentcheck` |
+| Defekte Links und Beziehungen nach einem Import | der Link-Checker ([URLs und Aliase](../../anleitungen/urls-und-aliase.md)), `./console exp:contentcheck` |
 
-All diese Werkzeuge sind unter [Links, URL-Aliase, Platzhalter und Suchstatistiken](../../../en/us/guides/urls-and-aliases.md) beschrieben.
+All diese Werkzeuge sind unter [Links, URL-Aliase, Platzhalter und Suchstatistiken](../../anleitungen/urls-und-aliase.md) beschrieben.
 
 ## 4. Ein eigenes Importskript: das Grundgerüst
 
@@ -281,7 +281,7 @@ Bewährte Vorgehensweisen für das Skript:
 - Importieren Sie in **Abhängigkeitsreihenfolge**: zuerst Medien, dann Inhalte, die auf sie verweisen, dann Inhalte,
   die auf Inhalte verweisen; lösen Sie Beziehungen in einem zweiten Durchgang über die Remote-ID auf.
 - Führen Sie es als eigenen **Import-Benutzer** mit genau den nötigen Rechten aus; setzen Sie Ersteller/Eigentümer
-  anschließend, wenn die Autoren der Quelle wichtig sind ([Eigentümer ändern](../../../en/us/guides/changing-owners.md)).
+  anschließend, wenn die Autoren der Quelle wichtig sind ([Eigentümer ändern](../../anleitungen/eigentuemer-aendern.md)).
 - Bauen Sie den Suchindex nach dem Import neu auf: `./console exp:updatesearchindex`. Leeren Sie den Inhalts-Cache:
   `./console exp:cache`.
 - Protokollieren Sie in eine Datei, und machen Sie jeden Lauf wiederholbar.

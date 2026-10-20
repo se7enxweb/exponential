@@ -365,7 +365,7 @@ Extension-Liste der Administration zeigt sie an.
 > Commits. Um ein Archiv in einen Klon umzuwandeln, überlassen Sie das Composer mit `composer reinstall <package>`,
 > nachdem Sie `preferred-install` gesetzt haben ([Weg A](#a-git-clone-und-composer-install-empfohlen)).
 
-Mehr: [Anleitung zu Extensions](../../en/us/guides/extensions.md), [Extension-Liste und Downloads](../../en/us/features/6.0/extension-list-and-downloads.md),
+Mehr: [Anleitung zu Extensions](../anleitungen/extensions.md), [Extension-Liste und Downloads](../../en/us/features/6.0/extension-list-and-downloads.md),
 [Standardverteilung der Extensions](../../en/us/features/6.0/default-extension-distribution.md),
 [Ladereihenfolge der Extensions](../../en/us/features/6.0/extension-loading-order.md),
 [Zusätzliche Extension-Verzeichnisse](../../en/us/features/6.0/additional-extension-directories.md).
@@ -447,12 +447,12 @@ geben Sie beiden eine gemeinsame Gruppe, die dieselben Dateien schreiben darf, s
 In diesem Repository:
 
 - [Installationsüberblick](../../en/us/INSTALL.md), Abschnitt 3.
-- [Aktualisieren](../../en/us/guides/upgrading.md): eine bestehende Website auf neuen Code umstellen.
+- [Aktualisieren](../anleitungen/aktualisieren.md): eine bestehende Website auf neuen Code umstellen.
 - [Unterstützung für PHP 8.0](../../en/us/bc/6.0/php-8.0-support.md): Installation mit Composer unter PHP 8.0.
 - [Continuous Integration](../../en/us/specifications/6.0/continuous-integration.md) und [Qualitätsprüfungen](../../en/us/features/6.0/quality-checks.md).
 - [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md), [Velocity-Pakete und -Binärdateien](../../en/us/features/6.0/velocity-packages-and-binaries.md),
   [Upgrade-Hinweise zur Velocity-Engine](../../en/us/bc/6.0/velocity-engine-upgrade-notes.md).
-- [Anleitung zu Extensions](../../en/us/guides/extensions.md), [Extensions](../../en/us/features/6.0/extensions/README.md),
+- [Anleitung zu Extensions](../anleitungen/extensions.md), [Extensions](../../en/us/features/6.0/extensions/README.md),
   [Extension-Metadaten](../../en/us/specifications/6.0/extension-metadata.md).
 - [Eine Installation reparieren](../../en/us/bc/6.0/repair.md): wenn `vendor/` fehlt.
 - [Konsole](../../en/us/bc/6.0/console.md).

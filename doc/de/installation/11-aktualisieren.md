@@ -6,7 +6,7 @@ betreiben, die eine Regel, die ein Upgrade sicher hält (sichern und dann nie da
 bestehende Site laufen lassen), die Datenbank-Update-Dateien in `update/database/` für jede Engine und wie Sie sie
 anwenden, die Skripte zur Datenreparatur in `update/common/scripts/`, die Konsolenbefehle, die das Ergebnis prüfen,
 und die Release Notes, die Sie für jeden durchlaufenen Zeitraum lesen sollten. Es fasst die
-[Anleitung zum Upgrade](../../en/us/guides/upgrading.md) zusammen und erweitert sie; diese bleibt das Verfahren Schritt für
+[Anleitung zum Upgrade](../anleitungen/aktualisieren.md) zusammen und erweitert sie; diese bleibt das Verfahren Schritt für
 Schritt.
 
 [Inhalt](README.md) · Zurück: [10. Nach der Installation](10-nach-der-installation.md) · Weiter: [12. Fehlerbehebung](12-fehlerbehebung.md)
@@ -527,7 +527,7 @@ Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](../../changelogs
 
 In diesem Repository:
 
-- [Upgrade](../../en/us/guides/upgrading.md): die Schritt-für-Schritt-Anleitung, die dieses Kapitel erweitert.
+- [Upgrade](../anleitungen/aktualisieren.md): die Schritt-für-Schritt-Anleitung, die dieses Kapitel erweitert.
 - Release Notes: [Changelogs von 6.0](../../changelogs/6.0/6.0.15.md) ([6.0.0](../../changelogs/6.0/6.0.0.md) bis
   [6.0.14](../../changelogs/6.0/6.0.14.md)), die [Release Notes der Extensions](../../changelogs/extensions/README.md),
   [alle Changelogs](../../changelogs/README.md).
@@ -547,7 +547,7 @@ In diesem Repository:
   [Prüfung der Dateikonsistenz](../../en/us/features/6.0/file-consistency-check.md),
   [Eine Installation reparieren](../../en/us/bc/6.0/repair.md), [Velocity-Engines](../../en/us/bc/6.0/velocity-engines.md).
 - [Legacy Bridge](../../en/us/features/6.0/legacy-bridge.md).
-- [Eine Site betreiben](../../en/us/guides/operating-a-site.md): Sicherungen, Caches und Reparaturen.
+- [Eine Site betreiben](../anleitungen/betrieb-einer-website.md): Sicherungen, Caches und Reparaturen.
 - [Geschichte](../../en/us/history/README.md): die [Chronik 2026](../../en/us/history/2026/) und das
   [Hauptbuch](../../en/us/history/ledger/exponential-root.md).
 - Code: `update/database/`, `update/common/scripts/`, `bin/php/checkdbfiles.php`, `bin/php/checkclasses.php`,

@@ -743,7 +743,7 @@ Seit 6.0.15 durchläuft jede Mail das **Mail-Gate** (`expMailGate`), bevor sie d
   der eine Kategorie angeben sollte.
 
 Was Sie für den Produktivbetrieb einrichten
-([Anleitung für Administratoren](../../en/us/guides/mail-preferences-administrator.md)):
+([Anleitung für Administratoren](../anleitungen/mail-einstellungen-administrator.md)):
 
 1. Die Tabellen existieren: `php bin/php/console exp:mail:status` meldet fünfmal `ok`.
 2. Die Fußzeile nennt den Absender: `mailpreferences.ini [FooterSettings] OrganisationName` und
@@ -876,7 +876,7 @@ In diesem Repository:
   [Seite „Formular abgelaufen“](../../en/us/features/6.0/form-expired-page.md)
 - [Die Exp-Debug-Leiste](../../en/us/bc/6.0/debug-bar.md)
 - [Audit](../../en/us/bc/6.0/audit.md)
-- [E-Mail-Einstellungen: Anleitung für Administratoren](../../en/us/guides/mail-preferences-administrator.md),
+- [E-Mail-Einstellungen: Anleitung für Administratoren](../anleitungen/mail-einstellungen-administrator.md),
   [Upgrade-Hinweise](../../en/us/bc/6.0/mail-preferences.md)
 - [HTTP-Cache](../../en/us/bc/6.0/httpcache.md)
 - Velocity: [HTTP/2 und Sicherheit](../../en/us/specifications/6.0/velocity-http2-and-security.md),

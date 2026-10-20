@@ -41,7 +41,7 @@ Anleitungen für bestimmte Ziele: [WordPress](wordpress.md#5-von-exponential-zu-
 | Die gesamte Datenbank | `./console exp:ezsqldumpschema --output-types=all ...` oder das eigene Dump-Werkzeug der Datenbank | neutrales Format oder SQL |
 | Formulareinsendungen (Informationssammlung) | `./console ext:bccie:export --object=<id> --format=csv` | CSV oder SYLK |
 | Nachweise über E-Mail-Einwilligungen | `./console exp:mailconsent` (Export als CSV) | CSV |
-| Audit-Protokoll | `./console exp:audit` | siehe [Sicherheit und Audit](../../../en/us/guides/security-and-audit.md) |
+| Audit-Protokoll | `./console exp:audit` | siehe [Sicherheit und Audit](../../anleitungen/sicherheit-und-audit.md) |
 | Einzelne Tabellen, durch einen Administrator | `sevenx_dse` | SQL, CSV, TSV |
 | Inhalte über HTTP | REST v1/v2 | JSON |
 

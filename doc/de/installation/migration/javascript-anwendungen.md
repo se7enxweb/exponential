@@ -59,10 +59,10 @@ Administration von Exponential, das Frontend holt die Inhalte zur Build- oder An
 
 | Schnittstelle | Verwendung | Referenz |
 |---|---|---|
-| REST v1/v2 (`ezprestapi`) | Knoten, Unterknoten und Felder als JSON lesen: `GET /api/ezp/v2/content/node/<id>`, `.../list/offset/<n>/limit/<n>`, `?ResponseGroups=Fields`, `?OutputFormat=xhtml` für den gerenderten Inhalt | [REST-API v1 und v2](../../../en/us/guides/rest-api-v1-and-v2.md) |
-| Persönliche API-Schlüssel | ein Build-Server liest mit `Authorization: Bearer expk_...`, beschränkt auf die Scopes des Schlüssels und die Richtlinien seines Eigentümers | [Persönliche API-Schlüssel](../../../en/us/guides/api-keys.md) |
+| REST v1/v2 (`ezprestapi`) | Knoten, Unterknoten und Felder als JSON lesen: `GET /api/ezp/v2/content/node/<id>`, `.../list/offset/<n>/limit/<n>`, `?ResponseGroups=Fields`, `?OutputFormat=xhtml` für den gerenderten Inhalt | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
+| Persönliche API-Schlüssel | ein Build-Server liest mit `Authorization: Bearer expk_...`, beschränkt auf die Scopes des Schlüssels und die Richtlinien seines Eigentümers | [Persönliche API-Schlüssel](../../anleitungen/api-schluessel.md) |
 | OAuth2 | eine App, die für angemeldete Benutzer handelt | die REST-Anleitung, Abschnitt 3.1 |
-| `expservices` | die Funktionen der Administration als benannte HTTP-Dienste (Inhalte, Benutzer, Medien, Tags, Layouts ...) | [Remote-Dienste und Apps](../../../en/us/guides/remote-services-and-apps.md) |
+| `expservices` | die Funktionen der Administration als benannte HTTP-Dienste (Inhalte, Benutzer, Medien, Tags, Layouts ...) | [Remote-Dienste und Apps](../../anleitungen/entfernte-dienste-und-apps.md) |
 
 Schreibzugriffe über REST sind eingeschränkt (Anlegen und Löschen ab v2; Aktualisieren antwortet derzeit mit 501), deshalb werden
 Massenimporte auf dem Server ausgeführt, nicht vom Frontend aus.

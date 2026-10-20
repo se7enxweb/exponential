@@ -940,7 +940,7 @@ In diesem Repository:
 - [11. Upgrade](11-aktualisieren.md): die Update-Kette, die dieses Kapitel durchläuft, die Schritte für 6.0 und die
   Prüfbefehle; [12. Fehlerbehebung](12-fehlerbehebung.md); [13. Sicherheitshärtung](13-sicherheitshaertung.md);
   [2. Voraussetzungen](02-voraussetzungen.md); [8. Die Site ausliefern](08-die-website-ausliefern.md); [9. Datenbanken](09-datenbanken.md).
-- [Anleitung zum Upgrade](../../en/us/guides/upgrading.md).
+- [Anleitung zum Upgrade](../anleitungen/aktualisieren.md).
 - Release Notes der 4.x-Linie: [4.1](../../en/us/bc/4.1/changes-4.1.0.txt), [4.2](../../en/us/bc/4.2/changes-4.2.0.txt),
   [4.3](../../en/us/bc/4.3/changes-4.3.0.txt), [4.4](../../en/us/bc/4.4/changes-4.4.0.txt), [4.5](../../en/us/bc/4.5/changes-4.5.0.txt),
   [4.6](../../en/us/bc/4.6/changes-4.6.0.txt), [4.7](../../en/us/bc/4.7/changes-4.7.0.txt).

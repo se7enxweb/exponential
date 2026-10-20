@@ -116,14 +116,14 @@ Geltungsbereich vieler Berechtigungen.
 - **Sektionen** gruppieren Inhalte für Zugriff und Design (zum Beispiel „Nur für Mitglieder“, „Intranet“). Bilden Sie
   geschützte Bereiche der Quelle auf Sektionen ab und die Rollen auf Richtlinien, die auf Sektionen beschränkt sind.
 - **Objektzustände** bilden Status jenseits von Entwurf/veröffentlicht ab (zum Beispiel „In Prüfung“, „Archiviert“).
-  [Objektzustände](../../../en/us/guides/object-states.md) erklärt sie.
+  [Objektzustände](../../anleitungen/objektzustaende.md) erklärt sie.
 
 ## 6. Benutzer, Gruppen, Rollen und Passwörter
 
 - Benutzer sind Objekte der Klasse `user` in **Benutzergruppen**; Mitglieder und Redakteure kommen meist in getrennte
   Gruppen.
 - Rollen ergeben sich aus den Rollen oder Fähigkeiten der Quelle und werden als Exponential-Rollen mit Richtlinien
-  neu aufgebaut ([Rollen und Richtlinien](../../../en/us/guides/roles-and-policies.md)). Kopieren Sie Berechtigungen nicht eins
+  neu aufgebaut ([Rollen und Richtlinien](../../anleitungen/rollen-und-richtlinien.md)). Kopieren Sie Berechtigungen nicht eins
   zu eins; entwerfen Sie sie für die neue Site.
 - **Passwörter.** Exponential prüft die Hash-Typen, die in
   [17.7](../17-migrationsreferenz.md#177-passwörter-url-aliase-und-bildspeicherung) aufgeführt sind. Eine Quelle, die
@@ -188,7 +188,7 @@ Geltungsbereich vieler Berechtigungen.
 - Setzen Sie nach dem Import das ursprüngliche Veröffentlichungsdatum: Die Attribute `published` und `modified` des
   Objekts kann das Importskript setzen und speichern; prüfen Sie das Ergebnis in der Administration.
 - Ordnen Sie die Autoren der Quelle Benutzerobjekten zu (importieren oder legen Sie diese zuerst an) und setzen Sie den
-  Eigentümer des Objekts ([Eigentümer ändern](../../../en/us/guides/changing-owners.md)), oder halten Sie den Namen des Autors
+  Eigentümer des Objekts ([Eigentümer ändern](../../anleitungen/eigentuemer-aendern.md)), oder halten Sie den Namen des Autors
   in einem `ezauthor`-Attribut fest.
 
 Diese Seite ist Teil der Exponential-Dokumentation und freie Dokumentation unter der GNU Free Documentation License

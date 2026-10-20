@@ -664,7 +664,7 @@ In diesem Repository:
   [Datenbanktreiber, September 2026](../../en/us/specifications/6.0/database-drivers-2026-09.md),
   [SQLite-Datenbank](../../en/us/features/6.0/sqlite-database.md)
 - [Abstraktionen für CLI, Cronjobs und Views](../../en/us/bc/6.0/cli_cronjob_view_abstractions.md)
-- [Erste Schritte](../../en/us/guides/getting-started.md)
+- [Erste Schritte](../anleitungen/erste-schritte.md)
 - Code: `bin/php/install.php` (Optionen, Prüfungen, Zusammenfassung), `kernel/private/classes/commands/install.php`
   (Passwortregeln, Aufruf des Kickstarters), `kernel/classes/expkickstarter.php`,
   `kernel/setup/steps/ezstep_site_access.php` (Standardwerte des Editors), `kernel/setup/steps/ezstep_site_admin.php`

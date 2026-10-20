@@ -49,7 +49,7 @@ Wenn die Anwendung ihre Funktionen jenseits der Inhalte behält:
 
 - Liefern Sie beide unter einer Domain aus, wobei der Webserver die Pfade jeweils zuweist, oder unter Subdomains.
 - Lassen Sie die Anwendung Inhalte über REST mit einem persönlichen API-Schlüssel aus Exponential lesen
-  ([REST API v1 und v2](../../../en/us/guides/rest-api-v1-and-v2.md)).
+  ([REST API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md)).
 - Anmeldung: Halten Sie sie getrennt, oder verwenden Sie für beide denselben Identity Provider.
 
 ## 4. Von Exponential zu einer Symfony-Anwendung
