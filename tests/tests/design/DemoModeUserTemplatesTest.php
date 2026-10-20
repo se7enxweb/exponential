@@ -8,8 +8,10 @@
  *
  *  DMT-01  The kernel's designs (design/<name>/templates and override/templates): every such template uses
  *          exp_demo_mode() or the demo_mode_* variables, through first_set() so an older kernel still renders it
- *  DMT-02  The installed extensions' designs: the same rule. An extension that comes from its own repository and
- *          has not been released with the notice yet is reported as incomplete (listed), never silently passed
+ *  DMT-02  The installed extensions' designs: the same rule. A missing notice fails for the root repository's own
+ *          extensions and for every extension of NOTICE_RELEASES that composer.json requires at that release or
+ *          later (what CI installs). Any other extension (not required, or required below the release with the
+ *          notice) is reported as incomplete (listed), never silently passed
  *  DMT-03  No notice brings inline CSS (the admin design rules: no style attribute, no <style> block)
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
@@ -23,9 +25,51 @@ class DemoModeUserTemplatesTest extends PHPUnit\Framework\TestCase
     /** The extensions of the root repository itself: a missing notice there is a failure, never incomplete */
     const ROOT_EXTENSIONS = array( 'expservices', 'ezformtoken', 'ezjscore', 'ezoe' );
 
+    /**
+     * The first release of each extension whose user/forgotpassword.tpl and user/password.tpl overrides show the
+     * notice: extension directory => array( composer package, version ). Once composer.json requires that release
+     * or a later one, a missing notice in the installed copy is a failure
+     */
+    const NOTICE_RELEASES = array(
+        'cjw_themes_jumper'   => array( 'se7enxweb/cjw_themes_jumper', '0.1.7' ),
+        'exp_adminui'         => array( 'se7enxweb/exp_adminui', '1.0.0.49' ),
+        'ezdemo'              => array( 'se7enxweb/ezdemo', '6.0.13' ),
+        'ezwebin'             => array( 'se7enxweb/ezwebin', '6.0.23' ),
+        'sevenx_themes_media' => array( 'se7enxweb/sevenx-themes-media', '1.5.71' ),
+    );
+
     private static function root()
     {
         return realpath( __DIR__ . '/../../..' );
+    }
+
+    /**
+     * @return string|null the lowest version composer.json's require allows for $package (the first version of its
+     *         constraint, without ~ ^ >= = v), null when the package is not required or only as a branch
+     */
+    private static function requiredFloor( $package )
+    {
+        static $require = null;
+        if ( $require === null )
+        {
+            $json = json_decode( (string)file_get_contents( self::root() . '/composer.json' ), true );
+            $require = is_array( $json ) && isset( $json['require'] ) ? $json['require'] : array();
+        }
+        if ( !isset( $require[$package] ) )
+            return null;
+        if ( !preg_match( '/^\s*(?:~|\^|>=|=)?\s*v?(\d+(?:\.\d+)*)/', $require[$package], $m ) )
+            return null;
+        return $m[1];
+    }
+
+    /** @return bool whether composer.json requires a release of $extension that shows the notice */
+    private static function noticeRequired( $extension )
+    {
+        if ( !isset( self::NOTICE_RELEASES[$extension] ) )
+            return false;
+        list( $package, $since ) = self::NOTICE_RELEASES[$extension];
+        $floor = self::requiredFloor( $package );
+        return $floor !== null && version_compare( $floor, $since, '>=' );
     }
 
     /**
@@ -93,10 +137,24 @@ class DemoModeUserTemplatesTest extends PHPUnit\Framework\TestCase
             }
             $extension = explode( '/', $path )[1];
             $this->assertNotContains( $extension, self::ROOT_EXTENSIONS, "$path: $problem" );
+            if ( self::noticeRequired( $extension ) )
+            {
+                list( $package, $since ) = self::NOTICE_RELEASES[$extension];
+                $this->fail( "$path: $problem (composer.json requires $package at $since or later, which shows the "
+                             . 'notice: the installed copy is older than that release or was changed)' );
+            }
             $pending[] = "$path: $problem";
         }
         if ( $pending )
             $this->markTestIncomplete( "Extension releases without the demo mode notice yet:\n" . implode( "\n", $pending ) );
+    }
+
+    /** DMT-02 is only as strict as composer.json: every release with the notice must still be what it requires */
+    public function testComposerRequiresTheReleasesWithTheNotice()
+    {
+        foreach ( self::NOTICE_RELEASES as $extension => $release )
+            $this->assertTrue( self::noticeRequired( $extension ),
+                "composer.json must require {$release[0]} at {$release[1]} or later (the first release with the notice)" );
     }
 
     // ------------------------------------------------------------------ DMT-03

@@ -14614,7 +14614,7 @@ db8cab45223a19677ec1dc1f786b2f5c  tests/tests/design/AdminUsedTranslationsTest.p
 79434fdf210e89a5a67e773034cbfa98  tests/tests/design/AdminVisibilityStatusTest.php
 f0f50ee05d633e889c584fbc962ea814  tests/tests/design/AsynchronousPublishingLinkTest.php
 78e62d89e1a68e8217d79c35a9ece84e  tests/tests/design/ClassicAdminNarrowWindowTest.php
-80b6736c264e39da12c1eebadc010407  tests/tests/design/DemoModeUserTemplatesTest.php
+e60b77f6b565f51c791beb12eb91589d  tests/tests/design/DemoModeUserTemplatesTest.php
 be0d65eb9d0dbf34d048d809f070c37f  tests/tests/design/ExtensionInlineScriptsTest.php
 6e105b5c448762ee4581368f59aff5cf  tests/tests/design/FormSubmitButtonDisableTest.php
 375fe339c03acdb153a03aadbc24784d  tests/tests/design/LogViewerCopyMessagesTest.php
