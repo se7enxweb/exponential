@@ -62,7 +62,7 @@ Platzhaltern andere Blöcke.
 Klicken Sie auf einen Block, um ihn auszuwählen. Das Feld rechts hat zwei Reiter:
 
 - **Inhalt**: die Blockbezeichnung und bei Listenblöcken der **Sammlungstyp** und die **Elemente**
-  ([Manuelle und dynamische Sammlungen](../../../eng-us/help/build-two-ways/manual-and-dynamic-collections.md)).
+  ([Manuelle und dynamische Sammlungen](manuelle-und-dynamische-sammlungen.md)).
 - **Design**: der Ansichtstyp und die Optionen des Blocks ([Der Reiter Design](der-reiter-design.md)).
 
 Änderungen werden beim Vornehmen in den Entwurf gespeichert, und die Vorschau in der Mitte folgt, mit einer Ausnahme im
@@ -75,7 +75,7 @@ wenn Sie den Editor verlassen (`./console exp:layouts list --drafts` listet offe
 
 ## Verwandte Seiten
 
-- [Den Prefooter im Layout-Editor ändern](../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md)
+- [Den Prefooter im Layout-Editor ändern](prefooter-im-layout-editor.md)
 - [Der Layout-Editor](../layout-editor.md)
 - [Bekanntes Verhalten des Editors](bekanntes-verhalten-des-editors.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

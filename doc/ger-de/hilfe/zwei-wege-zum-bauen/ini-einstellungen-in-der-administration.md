@@ -71,7 +71,7 @@ Einstellungen der Datei zurück. Ein Wert, der in Templates verwendet wird, brau
 
 ## Verwandte Seiten
 
-- [Das Kopfmenü in der Administration](../../../eng-us/help/build-two-ways/header-menu-in-the-admin.md)
+- [Das Kopfmenü in der Administration](kopfmenue-in-der-administration.md)
 - [exp:ini für Site-Entwickler](exp-ini-fuer-site-entwickler.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

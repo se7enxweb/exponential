@@ -28,7 +28,7 @@ Drei Artikel, die ein Redakteur für diese Woche auswählt.
 4. Ziehen Sie die Einträge in ihre Reihenfolge; wählen Sie im Reiter **Design** den Ansichtstyp und den Ansichtstyp der Elemente.
 5. **Layout veröffentlichen**. Die Seiten, die das Layout verwenden, zeigen den Block beim nächsten Aufruf.
 
-Der Prefooter wurde auf diese Weise geändert: [Den Prefooter im Layout-Editor ändern](../../../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md).
+Der Prefooter wurde auf diese Weise geändert: [Den Prefooter im Layout-Editor ändern](../../prefooter-im-layout-editor.md).
 
 ## Mit Templates
 
@@ -44,7 +44,7 @@ Handverlesene Listen gehören den Redakteuren: die manuelle Sammlung.
 
 ## Verwandte Seiten
 
-- [Den Prefooter im Layout-Editor ändern](../../../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md)
+- [Den Prefooter im Layout-Editor ändern](../../prefooter-im-layout-editor.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

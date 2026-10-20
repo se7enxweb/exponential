@@ -23,7 +23,7 @@ Template- und Inhalts-Caches, wie das Hinzufügen ([Caches nach einer Änderung]
 ## In der Administration
 
 Öffnen Sie **Setup > INI-Einstellungen**, `menu.ini`, Siteaccess `site`, und klicken Sie bei `MainMenuID[]` auf
-**Bearbeiten** ([der Durchgang](../../../eng-us/help/build-two-ways/header-menu-in-the-admin.md) hat Bildschirmfotos). Im Feld **Wert**:
+**Bearbeiten** ([der Durchgang](kopfmenue-in-der-administration.md) hat Bildschirmfotos). Im Feld **Wert**:
 
 - zum **Umordnen** verschieben Sie die Zeilen: Die erste Zeile `=<id>` ist der erste Eintrag;
 - zum **Entfernen** löschen Sie die Zeile des Eintrags;

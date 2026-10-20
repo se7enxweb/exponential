@@ -28,7 +28,7 @@ Die fünf neuesten Artikel von Fitness, immer aktuell.
 4. **Parent location**: Fitness; **Sortierart** Veröffentlicht, **Sortierrichtung** Absteigend; unter **Versatz & Anzahl der Elemente** die Zahl 5.
 5. **Layout veröffentlichen**. Die Seiten, die das Layout verwenden, zeigen den Block beim nächsten Aufruf.
 
-Schritt für Schritt mit Bildschirmfotos: [Manuelle und dynamische Sammlungen](../../../../../eng-us/help/build-two-ways/manual-and-dynamic-collections.md).
+Schritt für Schritt mit Bildschirmfotos: [Manuelle und dynamische Sammlungen](../../manuelle-und-dynamische-sammlungen.md).
 
 ## Mit Templates
 
@@ -44,7 +44,7 @@ Redakteure können die dynamische Liste selbst auf ein neues Ziel richten; das T
 
 ## Verwandte Seiten
 
-- [Manuelle und dynamische Sammlungen](../../../../../eng-us/help/build-two-ways/manual-and-dynamic-collections.md)
+- [Manuelle und dynamische Sammlungen](../../manuelle-und-dynamische-sammlungen.md)
 - [Eigene Template-Blöcke](../../eigene-template-bloecke.md)
 - [Beispiele zum Bauen, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

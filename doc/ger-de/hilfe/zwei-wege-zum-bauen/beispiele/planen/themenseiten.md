@@ -23,7 +23,7 @@ Jede Themenseite listet die Inhalte zu ihrem Thema.
 ## Im Layout-Editor
 
 1. Full / Topic übernimmt `ng_topic` mit Priorität 120 und hat 7 Blöcke; Running (Knoten 163) hat außerdem ein Landingpage-Layout, das über Ort zugeordnet ist.
-2. Themenlisten können den Abfragetyp **Topics** der dynamischen Sammlungen verwenden (`content_by_topic`).
+2. Themenlisten können den Abfragetyp **Themen** der dynamischen Sammlungen verwenden (`content_by_topic`).
 
 ## Mit Templates
 
@@ -31,7 +31,7 @@ Jede Themenseite listet die Inhalte zu ihrem Thema.
 
 ## Welchen Weg Sie wählen
 
-Eine dynamische Sammlung mit der Abfrage Topics hält Themenseiten ohne Code gefüllt.
+Eine dynamische Sammlung mit der Abfrage Themen hält Themenseiten ohne Code gefüllt.
 
 ## Prüfen
 
@@ -39,7 +39,7 @@ Eine dynamische Sammlung mit der Abfrage Topics hält Themenseiten ohne Code gef
 
 ## Verwandte Seiten
 
-- [Manuelle und dynamische Sammlungen](../../../../../eng-us/help/build-two-ways/manual-and-dynamic-collections.md)
+- [Manuelle und dynamische Sammlungen](../../manuelle-und-dynamische-sammlungen.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

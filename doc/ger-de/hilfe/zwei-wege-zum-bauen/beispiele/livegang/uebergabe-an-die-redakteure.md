@@ -22,7 +22,7 @@ Redakteure können ihre Teile vom ersten Tag an ändern.
 
 ## Im Layout-Editor
 
-1. Gehen Sie [Der Layout-Editor, ein Rundgang](../../rundgang-durch-den-layout-editor.md) und [Den Prefooter im Layout-Editor ändern](../../../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md) gemeinsam durch.
+1. Gehen Sie [Der Layout-Editor, ein Rundgang](../../rundgang-durch-den-layout-editor.md) und [Den Prefooter im Layout-Editor ändern](../../prefooter-im-layout-editor.md) gemeinsam durch.
 
 ## Was Redakteure nicht ändern
 

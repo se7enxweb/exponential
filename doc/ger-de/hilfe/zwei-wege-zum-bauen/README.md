@@ -18,14 +18,14 @@ schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzuf�
 ## Hier beginnen
 
 - [Zwei Wege zum Bauen](../../../eng-us/help/build-two-ways/two-ways-to-build.md): was jeder Weg ist, wo sie sich treffen, welchen Sie verwenden.
-- [Welcher Weg: die Entscheidungstabelle](../../../eng-us/help/build-two-ways/decision-table.md): jede Art von Änderung und der Weg, sie vorzunehmen.
+- [Welcher Weg: die Entscheidungstabelle](entscheidungstabelle.md): jede Art von Änderung und der Weg, sie vorzunehmen.
 - [Gemessene Schritte und Zeiten](gemessene-schritte-und-zeiten.md): wie die Zahlen auf diesen Seiten gemessen wurden.
 - [Zwei Wege zum Bauen, die Begriffe](glossar.md): die Fachbegriffe.
 
 ## Die Kopfzeile
 
 - [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md): die kurze Antwort und die drei Wege.
-- [Das Kopfmenü in der Administration](../../../eng-us/help/build-two-ways/header-menu-in-the-admin.md): Schritt für Schritt, ohne Code.
+- [Das Kopfmenü in der Administration](kopfmenue-in-der-administration.md): Schritt für Schritt, ohne Code.
 - [Das Kopfmenü über die Kommandozeile](../../../eng-us/help/build-two-ways/header-menu-by-cli.md): `exp:ini` und `exp:cache`, echte Ausgaben.
 - [Das Kopfmenü und der Inhaltsbaum](../../../eng-us/help/build-two-ways/header-menu-and-the-content-tree.md): was Redakteure im Baum ändern.
 - [Einträge des Kopfmenüs umordnen oder entfernen](kopfmenue-eintraege-umordnen-oder-entfernen.md).
@@ -36,15 +36,15 @@ schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzuf�
 ## Die Fußzeile
 
 - [Die Einträge des Fußzeilenmenüs](eintraege-des-fusszeilenmenues.md): die beiden Linkzeilen und ihre Quellen.
-- [Fußzeilen-Links aus dem Inhaltsbaum](../../../eng-us/help/build-two-ways/footer-links-from-the-content-tree.md): Schritt für Schritt, ohne Code, ohne Leeren eines Cache.
+- [Fußzeilen-Links aus dem Inhaltsbaum](fusszeilen-links-aus-dem-inhaltsbaum.md): Schritt für Schritt, ohne Code, ohne Leeren eines Cache.
 - [Wie die Fußzeile aufgebaut ist](wie-die-fusszeile-aufgebaut-ist.md).
-- [Den Prefooter im Layout-Editor ändern](../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md): Schritt für Schritt, ohne Code.
+- [Den Prefooter im Layout-Editor ändern](prefooter-im-layout-editor.md): Schritt für Schritt, ohne Code.
 
 ## Layouts und die Verbindung zu Templates
 
 - [Der Layout-Editor, ein Rundgang](rundgang-durch-den-layout-editor.md).
 - [Der Reiter Design](der-reiter-design.md).
-- [Manuelle und dynamische Sammlungen](../../../eng-us/help/build-two-ways/manual-and-dynamic-collections.md).
+- [Manuelle und dynamische Sammlungen](manuelle-und-dynamische-sammlungen.md).
 - [Welches Layout bekommt eine Seite?](../../../eng-us/help/build-two-ways/layout-mappings.md).
 - [Wie ein Block seinen Templates zugeordnet wird](../../../eng-us/help/build-two-ways/block-to-template-map.md).
 - [Gemeinsame Layouts und Zonenverknüpfung](../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md): warum eine Kopfzeile jede Seite bedient.
@@ -67,7 +67,7 @@ schnell das Kopfmenü ändern? Gehen Sie zu [Einen Eintrag zum Kopfmenü hinzuf�
 
 ## Layouts übertragen und aufbewahren
 
-- [Layouts exportieren und importieren](../../../eng-us/help/build-two-ways/export-and-import-layouts.md).
+- [Layouts exportieren und importieren](layouts-exportieren-und-importieren.md).
 - [Ein Layout zurücksetzen](layout-zuruecksetzen.md).
 
 ## Werkzeuge

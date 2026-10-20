@@ -38,7 +38,7 @@ Dynamische Listen für Übersichten; manuelle nur für kuratierte Stellen.
 
 ## Verwandte Seiten
 
-- [Manuelle und dynamische Sammlungen](../../../../../eng-us/help/build-two-ways/manual-and-dynamic-collections.md)
+- [Manuelle und dynamische Sammlungen](../../manuelle-und-dynamische-sammlungen.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

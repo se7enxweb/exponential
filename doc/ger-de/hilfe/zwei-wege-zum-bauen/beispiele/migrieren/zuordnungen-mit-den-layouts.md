@@ -39,7 +39,7 @@ Die Kampagnenseite bekommt ihre Zuordnung auch auf dem Ziel.
 
 ## Verwandte Seiten
 
-- [Layouts exportieren und importieren](../../../../../eng-us/help/build-two-ways/export-and-import-layouts.md)
+- [Layouts exportieren und importieren](../../layouts-exportieren-und-importieren.md)
 - [Welches Layout bekommt eine Seite?](../../../../../eng-us/help/build-two-ways/layout-mappings.md)
 - [Beispiele zur Migration, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

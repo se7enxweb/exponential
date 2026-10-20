@@ -35,7 +35,7 @@ Jede Art von Änderung hat einen Verantwortlichen und ein Werkzeug.
 
 ## Welchen Weg Sie wählen
 
-Schreiben Sie die Aufteilung auf; [Welcher Weg: die Entscheidungstabelle](../../../../../eng-us/help/build-two-ways/decision-table.md) ist ein Ausgangspunkt.
+Schreiben Sie die Aufteilung auf; [Welcher Weg: die Entscheidungstabelle](../../entscheidungstabelle.md) ist ein Ausgangspunkt.
 
 ## Prüfen
 
@@ -43,7 +43,7 @@ Schreiben Sie die Aufteilung auf; [Welcher Weg: die Entscheidungstabelle](../../
 
 ## Verwandte Seiten
 
-- [Welcher Weg: die Entscheidungstabelle](../../../../../eng-us/help/build-two-ways/decision-table.md)
+- [Welcher Weg: die Entscheidungstabelle](../../entscheidungstabelle.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

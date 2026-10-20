@@ -35,7 +35,7 @@ Die Ausgabe der Konsole lässt sich beim Projekt aufbewahren und später verglei
 
 ## Verwandte Seiten
 
-- [Layouts exportieren und importieren](../../../../../eng-us/help/build-two-ways/export-and-import-layouts.md)
+- [Layouts exportieren und importieren](../../layouts-exportieren-und-importieren.md)
 - [exp:ini für Site-Entwickler](../../exp-ini-fuer-site-entwickler.md)
 - [Beispiele zur Planung, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

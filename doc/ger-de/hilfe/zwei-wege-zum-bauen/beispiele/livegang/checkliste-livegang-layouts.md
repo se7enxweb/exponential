@@ -42,7 +42,7 @@ Bewahren Sie die Liste bei der Dokumentation der Site auf.
 
 ## Verwandte Seiten
 
-- [Layouts exportieren und importieren](../../../../../eng-us/help/build-two-ways/export-and-import-layouts.md)
+- [Layouts exportieren und importieren](../../layouts-exportieren-und-importieren.md)
 - [Gemeinsame Layouts und Zonenverknüpfung](../../../../../eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md)
 - [Beispiele zum Livegang, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

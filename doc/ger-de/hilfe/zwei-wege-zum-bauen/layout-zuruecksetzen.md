@@ -33,7 +33,7 @@ im Repository Ihres Projekts auf.
 ## 2. Die Änderung vornehmen
 
 Auf der Testkopie bekam der Prefooter einen vierten Artikel, dann den Ansichtstyp `list_compact`, dann einen
-Notice-Block ([Den Prefooter im Layout-Editor ändern](../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md)).
+Notice-Block ([Den Prefooter im Layout-Editor ändern](prefooter-im-layout-editor.md)).
 
 ## 3. Zurücksetzen: Vorschau
 
@@ -82,8 +82,8 @@ Der Import leert den Seiten-Cache nicht. Auf der Testkopie zeigten die Artikelse
 
 ## Verwandte Seiten
 
-- [Layouts exportieren und importieren](../../../eng-us/help/build-two-ways/export-and-import-layouts.md)
-- [Den Prefooter im Layout-Editor ändern](../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md)
+- [Layouts exportieren und importieren](layouts-exportieren-und-importieren.md)
+- [Den Prefooter im Layout-Editor ändern](prefooter-im-layout-editor.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

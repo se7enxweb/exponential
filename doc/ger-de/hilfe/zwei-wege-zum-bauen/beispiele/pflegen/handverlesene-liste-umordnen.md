@@ -40,7 +40,7 @@ Der Layout-Editor.
 
 ## Verwandte Seiten
 
-- [Den Prefooter im Layout-Editor ändern](../../../../../eng-us/help/build-two-ways/prefooter-in-the-layouts-editor.md)
+- [Den Prefooter im Layout-Editor ändern](../../prefooter-im-layout-editor.md)
 - [Bekanntes Verhalten des Editors](../../bekanntes-verhalten-des-editors.md)
 - [Beispiele zur Pflege, alle Seiten](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

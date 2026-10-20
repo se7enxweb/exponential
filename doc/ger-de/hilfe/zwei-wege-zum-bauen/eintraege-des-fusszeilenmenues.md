@@ -38,7 +38,7 @@ Es funktioniert genau wie beim Kopfmenü, mit der Einstellung `FooterMenuID[]` s
 
 In der Administration: **Setup > INI-Einstellungen**, `menu.ini`, Siteaccess `site`, **Einstellungen anzeigen**,
 **Bearbeiten** bei `FooterMenuID[]`, eine Zeile `=<node id>` hinzufügen, **Speichern**, dann **Cache leeren > Template & Inhalt**.
-Die Bildschirmfotos derselben Schritte stehen unter [Das Kopfmenü in der Administration](../../../eng-us/help/build-two-ways/header-menu-in-the-admin.md).
+Die Bildschirmfotos derselben Schritte stehen unter [Das Kopfmenü in der Administration](kopfmenue-in-der-administration.md).
 
 Über die Kommandozeile, hier mit **Video** (Knoten 164):
 
@@ -60,7 +60,7 @@ Auch das Template der Fußzeile wird mit der Liste darin kompiliert: Auf der Tes
 ## Zur zweiten Zeile hinzufügen (Footer links)
 
 Diese Zeile ist Inhalt: keine Einstellungen, kein Leeren eines Cache, und Redakteure können es tun. Schritt für Schritt
-unter [Fußzeilen-Links aus dem Inhaltsbaum](../../../eng-us/help/build-two-ways/footer-links-from-the-content-tree.md). Kurz: unter **Media > Configuration >
+unter [Fußzeilen-Links aus dem Inhaltsbaum](fusszeilen-links-aus-dem-inhaltsbaum.md). Kurz: unter **Media > Configuration >
 Footer links** **Neu erstellen > Menu item**, einen **Title** und eine **Item URL** eingeben, **Zur Veröffentlichung schicken**.
 
 ![Die Fußzeile mit dem neuen Link Showcase an erster Stelle der zweiten Zeile](../../../eng-us/help/build-two-ways/images/ft-05-footer-after.webp)
@@ -75,7 +75,7 @@ Footer links** **Neu erstellen > Menu item**, einen **Title** und eine **Item UR
 
 ## Verwandte Seiten
 
-- [Fußzeilen-Links aus dem Inhaltsbaum](../../../eng-us/help/build-two-ways/footer-links-from-the-content-tree.md)
+- [Fußzeilen-Links aus dem Inhaltsbaum](fusszeilen-links-aus-dem-inhaltsbaum.md)
 - [Wie die Fußzeile aufgebaut ist](wie-die-fusszeile-aufgebaut-ist.md)
 - [Einen Eintrag zum Kopfmenü hinzufügen](../../../eng-us/help/build-two-ways/add-a-header-menu-item.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
