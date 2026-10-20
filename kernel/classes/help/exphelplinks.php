@@ -35,7 +35,7 @@ class expHelpLinks
             $href = substr( $href, 0, $hash );
         }
         $href = preg_replace( '/\?.*$/', '', $href );
-        $id = self::resolvePath( $href, $currentId );
+        $id = self::resolveId( $href, $currentId );
         if ( $id === null || !expHelpDocumentIndex::instance()->isAllowed( $id ) )
             return null;
         $view = expHelpDocumentIndex::instance()->document( $id ) !== null ? 'viewer' : 'asset';
@@ -54,7 +54,7 @@ class expHelpLinks
             return $src;
         if ( $src === '' || preg_match( '#^[a-z][a-z0-9+.-]*:|^//#i', $src ) )
             return null;
-        $id = self::resolvePath( preg_replace( '/[?#].*$/', '', $src ), $currentId );
+        $id = self::resolveId( preg_replace( '/[?#].*$/', '', $src ), $currentId );
         if ( $id === null || expHelpDocumentIndex::instance()->asset( $id ) === null )
             return null;
         return self::absolute( expHelp::url( 'asset', $id ) );
@@ -74,7 +74,7 @@ class expHelpLinks
         $url = self::image( $src, $currentId );
         if ( $url === null || preg_match( '#^https://#i', trim( (string)$src ) ) )
             return $url;
-        $id = self::resolvePath( preg_replace( '/[?#].*$/', '', trim( (string)$src ) ), $currentId );
+        $id = self::resolveId( preg_replace( '/[?#].*$/', '', trim( (string)$src ) ), $currentId );
         $file = $id === null ? null : expHelpDocumentIndex::instance()->asset( $id );
         $size = $file !== null && is_file( $file ) ? @getimagesize( $file ) : false;
         if ( !is_array( $size ) || empty( $size[0] ) || empty( $size[1] ) )
@@ -83,8 +83,74 @@ class expHelpLinks
     }
 
     /**
-     * A relative path resolved against the directory of the current page, normalised; null when it leaves the root.
-     * Ids are paths below doc/ ("features/6.0/x.md"); a leading "/" or "doc/" means from the doc root.
+     * The page or image id a link of a page names. A relative link is resolved against the file the page was read
+     * from (doc/en/us/features/6.0/x.md, or its translation doc/de/...), as GitHub resolves it, and the file's id is
+     * taken from the index (expHelpDocumentIndex::idOf(): the language directory and a translated name are taken
+     * away, doc/changelogs/x.md is changelogs/x.md). "/doc/..." names a file from the installation root. Anything
+     * else falls back to resolvePath() (relative to the id).
+     *
+     * @param string $href without query
+     * @param string $currentId
+     * @param expHelpDocumentIndex|null $index default expHelpDocumentIndex::instance()
+     * @return string|null
+     */
+    public static function resolveId( $href, $currentId = '', ?expHelpDocumentIndex $index = null )
+    {
+        $raw = (string)$href;
+        $href = str_replace( '\\', '/', rawurldecode( $raw ) );
+        if ( $href === '' || strpos( $href, "\0" ) !== false )
+            return null;
+        $index = $index !== null ? $index : expHelpDocumentIndex::instance();
+        if ( $href[0] === '/' )
+        {
+            $file = strpos( ltrim( $href, '/' ), expHelpLanguage::DOC_ROOT . '/' ) === 0 ? expHelpAllowlist::normalize( $href ) : null;
+            $id = $file !== null ? $index->idOf( $file ) : null;
+            return $id !== null ? $id : self::resolvePath( $raw, $currentId );
+        }
+        $base = null;
+        if ( (string)$currentId !== '' )
+        {
+            $document = $index->document( $currentId );
+            $base = $document !== null && isset( $document['path'] ) ? (string)$document['path'] : $index->pathOf( $currentId );
+        }
+        if ( $base === null || $base === '' )
+            return self::resolvePath( $raw, $currentId );
+        // relative to the file the page was read from; a link that leaves the documentation roots names no page
+        $file = self::resolvePathFrom( $href, $base );
+        return $file === null ? null : $index->idOf( $file );
+    }
+
+    /**
+     * A relative path resolved against the directory of a file (both relative to the installation root),
+     * normalised; null when it leaves the installation root.
+     *
+     * @param string $path
+     * @param string $file
+     * @return string|null
+     */
+    public static function resolvePathFrom( $path, $file )
+    {
+        $parts = explode( '/', trim( (string)$file, '/' ) );
+        array_pop( $parts );
+        foreach ( explode( '/', (string)$path ) as $segment )
+        {
+            if ( $segment === '' || $segment === '.' )
+                continue;
+            if ( $segment === '..' )
+            {
+                if ( !$parts )
+                    return null;
+                array_pop( $parts );
+                continue;
+            }
+            $parts[] = $segment;
+        }
+        return $parts ? implode( '/', $parts ) : null;
+    }
+
+    /**
+     * A relative path resolved against the directory of the current page id, normalised; null when it leaves the
+     * root. Ids are paths below doc/en/us/ ("features/6.0/x.md"); a leading "/" or "/doc/" means from the doc root.
      *
      * @param string $path
      * @param string $currentId
@@ -116,8 +182,11 @@ class expHelpLinks
             }
             $parts[] = $segment;
         }
+        // "/doc/<file>": the file's id (doc/en/us/x.md and a translation's doc/de/... are x.md, doc/changelogs/x.md is
+        // changelogs/x.md)
         if ( isset( $parts[0] ) && $parts[0] === 'doc' && count( $parts ) > 1 && $path[0] === '/' )
-            array_shift( $parts );
+            return class_exists( 'expHelpLanguage' ) ? expHelpLanguage::fromIni()->idOfValue( implode( '/', $parts ) )
+                                                     : implode( '/', array_slice( $parts, 1 ) );
         return $parts ? implode( '/', $parts ) : null;
     }
 

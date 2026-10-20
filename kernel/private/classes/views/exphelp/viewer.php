@@ -6,7 +6,10 @@
  * Template variables: help_page (document), help_html (rendered, safe), help_toc (level, text, anchor), help_tree,
  * help_nav_html (the navigation tree, expHelpNavigation: safe HTML, not washed), help_prev, help_next (documents or
  * null), help_edit_url (GitHub), help_category, help_breadcrumb (array of url, text),
- * help_pdf_enabled (bool: the "Download as PDF" link, exphelp/pdf/<page id>).
+ * help_pdf_enabled (bool: the "Download as PDF" link, exphelp/pdf/<page id>), help_page_lang (the HTML language of the
+ * page: en-US, de), help_page_dir (ltr, rtl), help_fallback (the page is not translated into the reader's language yet and is shown in
+ * another), help_reader_language and help_page_language (their names, translated). An address that names a file
+ * (doc/en/us/<id>, de/<translated path>) redirects to the page id.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -34,6 +37,14 @@ class Viewer extends \Exponential\Runnable\ModuleView
 
         $index = \expHelpDocumentIndex::instance();
         $document = $index->document( $id );
+        // an address that names a file instead of a page id (doc/en/us/<id>, en/us/<id>, de/<translated path>, the
+        // old doc/<id>): the page's own address, so a link keeps working and shows the reader's language
+        if ( $document === null )
+        {
+            $canonical = self::canonicalId( $index, $id );
+            if ( $canonical !== null && $index->document( $canonical ) !== null )
+                return $Module->redirectTo( \expHelp::url( 'viewer', $canonical ) );
+        }
         $source = $document === null ? null : $index->source( $id );
         if ( $document === null || $source === null )
             return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
@@ -56,12 +67,56 @@ class Viewer extends \Exponential\Runnable\ModuleView
         // Print and PDF (expHelpPdf): the download is offered when [PdfSettings] Enabled is not false
         $tpl->setVariable( 'help_pdf_enabled', class_exists( 'expHelpPdf' ) && \expHelpPdf::isEnabled() );
         $tpl->setVariable( 'help_category', isset( $document['category'], $categories[$document['category']] ) ? $categories[$document['category']] : false );
+        // the language of the page and, when it is not the reader's (not translated yet), the note that says so
+        foreach ( self::languageVariables( $index, $document ) as $name => $value )
+            $tpl->setVariable( $name, $value );
 
         $title = isset( $document['title'] ) && $document['title'] !== '' ? $document['title'] : $id;
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:exphelp/viewer.tpl' );
         $Result['path'] = self::breadcrumb( $index, $id, $title );
         return $Result;
+    }
+
+    /**
+     * The page id an address names when it is not an id: a file name (doc/en/us/guides/x.md), a path in a language
+     * directory (en/us/guides/x.md, de/anleitungen/x.md through the language's path map). Null when it names no
+     * other id.
+     *
+     * @param \expHelpDocumentIndex $index
+     * @param string $id
+     * @return string|null
+     */
+    public static function canonicalId( $index, $id )
+    {
+        $id = \expHelpAllowlist::normalize( $id );
+        if ( $id === null || strpos( $id, 'ext/' ) === 0 )
+            return null;
+        $canonical = $index->languages()->idOfValue( $id );
+        return $canonical !== '' && $canonical !== $id ? $canonical : null;
+    }
+
+    /**
+     * The template variables of a page's language: help_page_lang (its HTML language, en-US, de), help_fallback
+     * (whether the page is shown in another language than the reader's), help_reader_language and
+     * help_page_language (translated names, for the note).
+     *
+     * @param \expHelpDocumentIndex $index
+     * @param array $document
+     * @return array
+     */
+    public static function languageVariables( $index, array $document )
+    {
+        $languages = $index->languages();
+        $pageLanguage = isset( $document['language'] ) && $document['language'] !== '' ? (string)$document['language'] : $languages->defaultDirectory();
+        $name = function ( $directory ) use ( $languages ) {
+            return \ezpI18n::tr( 'kernel/exphelp', $languages->name( $directory ) );
+        };
+        return array( 'help_page_lang' => \expHelpLanguage::htmlLang( $pageLanguage ),
+                      'help_page_dir' => \expHelpLanguage::htmlDir( $pageLanguage ),
+                      'help_fallback' => !empty( $document['fallback'] ),
+                      'help_reader_language' => $name( $index->language() ),
+                      'help_page_language' => $name( $pageLanguage ) );
     }
 
     /**

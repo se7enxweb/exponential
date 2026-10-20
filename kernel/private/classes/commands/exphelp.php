@@ -32,13 +32,16 @@ class Exphelp extends \Exponential\Runnable\Command
                                  "\n" .
                                  "Only git-tracked files below doc/ (and the doc/ of the extensions in exphelp.ini ExtensionDocDirs[]) are\n" .
                                  "pages; nothing is changed except the cache in var/<site>/cache/exphelp. --json prints one JSON document.\n" .
+                                 "index builds the index of every language of exphelp.ini [DocLanguages] (doc/en/us/, doc/de/ ...);\n" .
+                                 "--language=de limits it to one, and makes search, show, check and pdf read that language.\n" .
                                  "Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing was found, 2 error.",
                 'use-session'    => false,
                 'use-modules'    => false,
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[rebuild][list][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:]', '', array(
+        $options = $this->startup( '[rebuild][list][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:][language:]', '', array(
+            'language' => 'the documentation language: a directory of exphelp.ini [DocLanguages] Directories[] (en/us, de)',
             'rebuild'  => 'index: build the index again even when the cached one is current',
             'list'     => 'index: list every page',
             'json'     => 'Print one JSON document instead of the text',
@@ -58,6 +61,17 @@ class Exphelp extends \Exponential\Runnable\Command
         $json = !empty( $options['json'] );
         try
         {
+            $languages = \expHelpLanguage::fromIni();
+            $language = $this->languageOption( $options, $languages );
+            if ( $language === false )
+            {
+                $this->cli()->error( 'Unknown --language: one of ' . implode( ', ', $languages->directories() ) );
+                $this->shutdown( 2 );
+                return;
+            }
+            // search, show, check and pdf read the index of the language asked for
+            if ( $language !== null && $action !== 'index' )
+                \expHelpDocumentIndex::setInstance( \expHelpDocumentIndex::forLanguage( $language, $languages ) );
             switch ( $action )
             {
                 case 'index':
@@ -89,6 +103,41 @@ class Exphelp extends \Exponential\Runnable\Command
     }
 
     /**
+     * The --language option: a configured directory, null when it is not given, false when it names none.
+     *
+     * @param array $options
+     * @param \expHelpLanguage $languages
+     * @return string|null|false
+     */
+    protected function languageOption( array $options, $languages )
+    {
+        if ( !isset( $options['language'] ) || $options['language'] === '' || $options['language'] === null )
+            return null;
+        $directory = \expHelpLanguage::cleanDirectory( (string)$options['language'] );
+        return $directory !== null && $languages->isDirectory( $directory ) ? $directory : false;
+    }
+
+    /**
+     * The report of exp:help index --language=<a translation>.
+     *
+     * @param array $reports directory => row
+     * @param bool $json
+     * @return int
+     */
+    protected function languageReport( array $reports, $json )
+    {
+        if ( $json )
+        {
+            $this->printJson( array( 'languages' => $reports ) );
+            return 0;
+        }
+        foreach ( $reports as $directory => $row )
+            $this->cli()->output( sprintf( '%s: %d pages, %d translated, %d shown in the original; cache %s', $directory,
+                                           $row['pages'], $row['translated'], $row['fallback'], (string)$row['cache'] ) );
+        return 0;
+    }
+
+    /**
      * exp:help index [--rebuild] [--list]
      *
      * @param array $options
@@ -97,7 +146,27 @@ class Exphelp extends \Exponential\Runnable\Command
      */
     protected function index( array $options, $json )
     {
-        $index = \expHelpDocumentIndex::instance();
+        // every language of the documentation has its own index ([DocLanguages] Directories[]); --language one of them
+        $languages = \expHelpLanguage::fromIni();
+        $wanted = $this->languageOption( $options, $languages );
+        $languageReports = array();
+        foreach ( $languages->directories() as $directory )
+        {
+            if ( $directory === $languages->defaultDirectory() || ( $wanted !== null && $wanted !== $directory ) )
+                continue;
+            $other = \expHelpDocumentIndex::forLanguage( $directory, $languages );
+            $otherStats = !empty( $options['rebuild'] ) ? $other->rebuild() : null;
+            $otherDocuments = $other->documents();
+            $translated = count( array_filter( $otherDocuments, function ( $d ) { return empty( $d['fallback'] ); } ) );
+            $otherSearch = method_exists( 'expHelpSearch', 'rebuild' ) ? ( new \expHelpSearch( $other ) )->rebuild() : null;
+            $languageReports[$directory] = array( 'pages' => count( $otherDocuments ), 'translated' => $translated,
+                                                  'fallback' => count( $otherDocuments ) - $translated,
+                                                  'rebuilt' => $otherStats !== null, 'cache' => $other->cacheDir(),
+                                                  'search' => is_array( $otherSearch ) ? $otherSearch : null );
+        }
+        $index = \expHelpDocumentIndex::forLanguage( $languages->defaultDirectory(), $languages );
+        if ( $wanted !== null && $wanted !== $languages->defaultDirectory() )
+            return $this->languageReport( $languageReports, $json );
         $stats = null;
         $start = microtime( true );
         if ( !empty( $options['rebuild'] ) )
@@ -125,6 +194,8 @@ class Exphelp extends \Exponential\Runnable\Command
             'categories' => array_map( function ( $c ) { return $c['count']; }, $index->categories() ),
             'audiences'  => array_map( function ( $a ) { return $a['count']; }, $index->audiences() ),
             'search'     => is_array( $searchStats ) ? $searchStats : null,
+            'language'   => $index->language(),
+            'languages'  => $languageReports,
         );
         $list = array();
         if ( !empty( $options['list'] ) )
@@ -157,6 +228,10 @@ class Exphelp extends \Exponential\Runnable\Command
         foreach ( array( 'types', 'categories', 'audiences' ) as $group )
             $cli->output( sprintf( '%-11s %s', ucfirst( $group ) . ':', implode( ', ', array_map( function ( $k, $n ) { return "$k $n"; },
                                    array_keys( array_filter( $report[$group] ) ), array_filter( $report[$group] ) ) ) ) );
+        $cli->output( sprintf( '%-11s %s (the original)', 'Language:', $report['language'] ) );
+        foreach ( $languageReports as $directory => $row )
+            $cli->output( sprintf( '%-11s %s: %d pages, %d translated, %d shown in %s', 'Language:', $directory, $row['pages'],
+                                   $row['translated'], $row['fallback'], $report['language'] ) );
         if ( $report['pages'] === 0 )
         {
             $cli->error( 'No pages: is doc/ there and tracked by git, or listed in share/filelist.md5?' );
@@ -220,7 +295,8 @@ class Exphelp extends \Exponential\Runnable\Command
     {
         $cli = $this->cli();
         $index = \expHelpDocumentIndex::instance();
-        $id = preg_replace( '#^doc/#', '', trim( $id ) );
+        // a file name (doc/en/us/<id>, doc/<language>/<translated path>) names its page
+        $id = trim( $id ) === '' ? '' : \expHelpLanguage::fromIni()->idOfValue( trim( $id ) );
         $document = $id === '' ? null : $index->document( $id );
         if ( $document === null )
         {
@@ -266,7 +342,8 @@ class Exphelp extends \Exponential\Runnable\Command
     protected function pdf( $id, array $options, $json )
     {
         $cli = $this->cli();
-        $id = preg_replace( '#^doc/#', '', trim( $id ) );
+        // a file name (doc/en/us/<id>, doc/<language>/<translated path>) names its page
+        $id = trim( $id ) === '' ? '' : \expHelpLanguage::fromIni()->idOfValue( trim( $id ) );
         if ( $id === '' )
         {
             $cli->error( 'Usage: ./console exp:help pdf <id> [--out=file.pdf] [--base-url=https://www.example.com]' );

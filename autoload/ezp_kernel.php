@@ -1140,6 +1140,7 @@ return array(
       'expHelpHighlighter'                                           => 'kernel/classes/help/exphelphighlighter.php',
       'expHelpIssueReport'                                           => 'kernel/classes/help/exphelpissuereport.php',
       'expHelpLanding'                                               => 'kernel/classes/help/exphelplanding.php',
+      'expHelpLanguage'                                              => 'kernel/classes/help/exphelplanguage.php',
       'expHelpLicense'                                               => 'kernel/classes/help/exphelplicense.php',
       'expHelpLinkCheck'                                             => 'kernel/classes/help/exphelplinkcheck.php',
       'expHelpLinks'                                                 => 'kernel/classes/help/exphelplinks.php',

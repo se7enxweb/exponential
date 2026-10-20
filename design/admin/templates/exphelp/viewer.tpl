@@ -6,12 +6,15 @@
    the way to this page open; its filter box (exphelp.js) narrows it as you type. Works without JavaScript; exphelp.js
    (w612/F hooks) adds the instant search, the scrollspy of the contents, the copy buttons of code blocks, collapsible
    sections and the keys / j k [ ].
-   The documentation is written in English, so the article is lang="en" dir="ltr" also on a right-to-left admin.
+   The article carries the language of the page (help_page_lang, help_page_dir: en-US and ltr for the English
+   original, also on a right-to-left admin). A page that is not translated into the reader's language yet is shown in
+   the original, with a note that says so (help_fallback).
 
    Variables (kernel/private/classes/views/exphelp/viewer.php): help_page (document: id, path, title, summary, type,
-   category, audience[], changed, size ...), help_html (rendered by expHelpMarkdownRenderer and safe: NOT washed),
-   help_toc (level, text, anchor), help_nav_html (the tree: safe HTML, NOT washed), help_prev, help_next (documents or
-   null), help_edit_url (GitHub, may be empty), help_category (id, name, icon, or not set), help_i18n_json.
+   category, audience[], changed, size, language, fallback ...), help_html (rendered by expHelpMarkdownRenderer and
+   safe: NOT washed), help_toc (level, text, anchor), help_nav_html (the tree: safe HTML, NOT washed), help_prev,
+   help_next (documents or null), help_edit_url (GitHub, may be empty), help_category (id, name, icon, or not set),
+   help_i18n_json, help_page_lang, help_page_dir, help_fallback, help_reader_language, help_page_language.
 
    The same file is in design/admin and design/admin4. *}
 {def $help_title = cond( and( is_set( $help_page.title ), $help_page.title|ne( '' ) ), $help_page.title, $help_page.id )
@@ -50,7 +53,10 @@
             </details>
             {/if}
 
-            <article class="a4-help-article" data-exphelp-content data-exphelp-collapsible="h2" aria-label="{$help_title|wash}" lang="en" dir="ltr">
+            {if and( is_set( $help_fallback ), $help_fallback )}
+            <p class="a4-notice is-info a4-help-fallback" role="note"><span class="a4-icon a4-bi-translate" aria-hidden="true"></span> {'This page is not translated into %reader yet. It is shown in %original.'|i18n( 'kernel/exphelp', '', hash( '%reader', $help_reader_language, '%original', $help_page_language ) )|wash}</p>
+            {/if}
+            <article class="a4-help-article" data-exphelp-content data-exphelp-collapsible="h2" aria-label="{$help_title|wash}" lang="{cond( is_set( $help_page_lang ), $help_page_lang, 'en' )|wash}" dir="{cond( is_set( $help_page_dir ), $help_page_dir, 'ltr' )|wash}">
 {$help_html}
             </article>
 

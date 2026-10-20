@@ -36,7 +36,7 @@ class expHelpAllowlist
         'documentSuffixes'    => array( 'md', 'markdown', 'txt', 'rst' ),
         'plainTextWithoutSuffix' => true,
         'assetSuffixes'       => array( 'png', 'jpg', 'jpeg', 'gif', 'webp' ),
-        'excludePatterns'     => array( 'doc/en/us/doxygen/*', '*.html', '*.htm', '*.svg', '*.php' ),
+        'excludePatterns'     => array( 'doc/en/us/doxygen/*', 'doc/README.md', '*.html', '*.htm', '*.svg', '*.php' ),
         'maxFileSize'         => 2097152,
         // the tracked paths (relative to the installation root) to use instead of the sources: tests and tools only
         'tracked'             => null,

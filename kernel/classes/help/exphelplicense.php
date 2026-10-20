@@ -124,9 +124,11 @@ class expHelpLicense
     }
 
     /**
-     * Whether a page keeps another license (OtherLicensePathRules[] match its doc/ path).
+     * Whether a page keeps another license (OtherLicensePathRules[] match its path in the default language,
+     * doc/en/us/<id>, or, for a page in no language directory, doc/<id>; a translation has the license of the page
+     * it translates).
      *
-     * @param string $id page id below doc/ or a path starting with doc/
+     * @param string $id page id (below doc/en/us/) or a path starting with doc/
      * @return bool
      */
     public static function isOtherLicense( $id )
@@ -134,10 +136,18 @@ class expHelpLicense
         $id = ltrim( (string)$id, '/' );
         if ( $id === '' || strpos( $id, 'ext/' ) === 0 ) // extension pages: see forPage()
             return false;
-        $path = strpos( $id, 'doc/' ) === 0 ? $id : 'doc/' . $id;
+        $languages = class_exists( 'expHelpLanguage' ) ? expHelpLanguage::fromIni() : null;
+        if ( $languages !== null && strpos( $id, 'doc/' ) === 0 )
+            $id = $languages->idOfValue( $id );
+        elseif ( strpos( $id, 'doc/' ) === 0 )
+            $id = substr( $id, 4 );
+        $paths = array( 'doc/' . $id );
+        if ( $languages !== null )
+            $paths[] = 'doc/' . $languages->defaultDirectory() . '/' . $id;
         foreach ( (array)self::setting( 'OtherLicensePathRules' ) as $pattern )
-            if ( fnmatch( trim( $pattern ), $path ) )
-                return true;
+            foreach ( $paths as $path )
+                if ( fnmatch( trim( $pattern ), $path ) )
+                    return true;
         return false;
     }
 

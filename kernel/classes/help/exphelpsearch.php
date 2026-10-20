@@ -1223,10 +1223,12 @@ class expHelpSearch
         $tfs = array();
         $lengths = array();
         $stems = array();
+        // a document given without its file is taken to be in the default language's directory
+        $defaultDir = 'doc/' . ( class_exists( 'expHelpLanguage' ) ? expHelpLanguage::fromIni()->defaultDirectory() : 'en/us' ) . '/';
         foreach ( $documents as $key => $doc )
         {
             $key = (string)$key;
-            $path = isset( $doc['path'] ) && is_string( $doc['path'] ) && $doc['path'] !== '' ? $doc['path'] : 'doc/' . $key;
+            $path = isset( $doc['path'] ) && is_string( $doc['path'] ) && $doc['path'] !== '' ? $doc['path'] : $defaultDir . $key;
             $id = count( $docs );
             $title = isset( $doc['title'] ) && $doc['title'] !== '' ? (string)$doc['title'] : basename( $key );
             $docs[$id] = array(

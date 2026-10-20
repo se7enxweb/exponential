@@ -78504,6 +78504,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Hilfe</translation>
     </message>
     <message>
+        <source>This page is not translated into %reader yet. It is shown in %original.</source>
+        <translation>Diese Seite ist noch nicht auf %reader übersetzt. Sie wird auf %original angezeigt.</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Englisch</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Deutsch</translation>
+    </message>
+    <message>
         <source>Search</source>
         <translation>Suche</translation>
     </message>

@@ -7,8 +7,16 @@
  * headings and their anchors, summary, audiences, category, type, order and keywords. The views, the search and the
  * console command exp:help read it; nothing reads a file of doc/ without asking it first.
  *
- * A page is named by its id: its path below doc/ ("guides/caches.md"), or "ext/<extension>/<path below its doc/>"
- * for an extension's page. The entry's 'path' is the path relative to the installation root ("doc/en/us/guides/caches.md").
+ * A page is named by its id: its path below the default language's directory doc/en/us/ ("guides/caches.md"), the same
+ * in every language (expHelpLanguage); a file below doc/ that is in no language directory (doc/changelogs/) keeps its
+ * path below doc/ ("changelogs/6.0/6.0.15.md"); "ext/<extension>/<path below its doc/>" names an extension's page.
+ * The entry's 'path' is the file it was read from, relative to the installation root ("doc/en/us/guides/caches.md",
+ * or "doc/de/anleitungen/caches.md" in German).
+ *
+ * An index is built for one reader language ($index->language()): each page comes from that language's directory
+ * when it has the page, else from the default language (the entry's 'fallback' is then true). The index of a
+ * language other than the default is cached in its own directory below the cache directory (lang-<language>/), so
+ * each language has its own index, search index, rendered pages and navigation.
  *
  *   $index = expHelpDocumentIndex::instance();
  *   $index->documents();                  // 'guides/caches.md' => array( 'id', 'path', 'title', 'headings', ... )
@@ -34,8 +42,8 @@
 
 class expHelpDocumentIndex
 {
-    /** Bumped when the entries change shape, so an old cache file is not read */
-    const FORMAT = 2;
+    /** Bumped when the entries change shape, so an old cache file is not read (3: language, fallback) */
+    const FORMAT = 3;
 
     /** The longest summary, in characters */
     const SUMMARY_LENGTH = 220;
@@ -61,6 +69,12 @@ class expHelpDocumentIndex
 
     /** @var expHelpAudience */
     protected $audience;
+
+    /** @var expHelpLanguage the languages of the documentation */
+    protected $languages;
+
+    /** @var string the reader language this index is built for (a directory below doc/: en/us, de) */
+    protected $language;
 
     /** @var string|null the cache directory; null: no cache */
     protected $cacheDir;
@@ -94,15 +108,23 @@ class expHelpDocumentIndex
      * @param array $options cache_dir (string, or false for no cache; default expHelp::cacheDirectory()),
      *                       audience (expHelpAudience, default from exphelp.ini), stat_files (bool, default true),
      *                       stat_interval (int seconds, default 0: look at the files on every call), git_history
-     *                       (bool, default true)
+     *                       (bool, default true), languages (expHelpLanguage, default from exphelp.ini [DocLanguages]
+     *                       for the allowlist's root), language (the reader's directory, default the default language)
      */
     public function __construct( ?expHelpAllowlist $allowlist = null, array $options = array() )
     {
         $this->allowlist = $allowlist !== null ? $allowlist : expHelpAllowlist::fromIni();
         $this->audience = isset( $options['audience'] ) && $options['audience'] instanceof expHelpAudience
             ? $options['audience'] : expHelpAudience::fromIni();
+        $this->languages = isset( $options['languages'] ) && $options['languages'] instanceof expHelpLanguage
+            ? $options['languages'] : expHelpLanguage::fromIni( $this->allowlist->rootDir() );
+        $language = isset( $options['language'] ) ? expHelpLanguage::cleanDirectory( $options['language'] ) : null;
+        $this->language = $language !== null && $this->languages->isDirectory( $language ) ? $language : $this->languages->defaultDirectory();
         $cacheDir = array_key_exists( 'cache_dir', $options ) ? $options['cache_dir'] : self::defaultCacheDir();
         $this->cacheDir = $cacheDir === false || $cacheDir === null || $cacheDir === '' ? null : rtrim( (string)$cacheDir, '/' );
+        // every language but the default has its own cache directory: its index, search, rendered pages, navigation
+        if ( $this->cacheDir !== null && $this->language !== $this->languages->defaultDirectory() )
+            $this->cacheDir .= '/lang-' . expHelpLanguage::key( $this->language );
         $this->statFiles = array_key_exists( 'stat_files', $options ) ? (bool)$options['stat_files'] : true;
         $this->statInterval = isset( $options['stat_interval'] ) ? max( 0, (int)$options['stat_interval'] ) : 0;
         $this->gitHistory = array_key_exists( 'git_history', $options ) ? (bool)$options['git_history'] : true;
@@ -117,16 +139,34 @@ class expHelpDocumentIndex
     {
         if ( self::$instanceFixed && self::$instance !== null )
             return self::$instance;
-        $request = getmypid() . ':' . ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? $_SERVER['REQUEST_TIME_FLOAT'] : '' );
+        $languages = expHelpLanguage::fromIni();
+        $language = $languages->current();
+        // the reader's language is part of the key: the language switch changes it within a worker's life
+        $request = getmypid() . ':' . ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? $_SERVER['REQUEST_TIME_FLOAT'] : '' ) . ':' . $language;
         if ( self::$instance === null || self::$instanceRequest !== $request )
         {
-            self::$instance = new self( expHelpAllowlist::fromIni(), array(
-                'stat_files' => self::iniSetting( 'StatFiles', 'enabled' ) !== 'disabled',
-                'stat_interval' => (int)self::iniSetting( 'StatFilesInterval', '0' ),
-                'git_history' => self::iniSetting( 'GitHistory', 'enabled' ) !== 'disabled' ) );
+            self::$instance = self::forLanguage( $language, $languages );
             self::$instanceRequest = $request;
         }
         return self::$instance;
+    }
+
+    /**
+     * The index of the installation for one reader language, configured by exphelp.ini (not kept as the instance).
+     *
+     * @param string $language a directory of [DocLanguages] Directories[]; another value means the default
+     * @param expHelpLanguage|null $languages
+     * @return expHelpDocumentIndex
+     */
+    public static function forLanguage( $language, ?expHelpLanguage $languages = null )
+    {
+        $allowlist = expHelpAllowlist::fromIni();
+        return new self( $allowlist, array(
+            'stat_files' => self::iniSetting( 'StatFiles', 'enabled' ) !== 'disabled',
+            'stat_interval' => (int)self::iniSetting( 'StatFilesInterval', '0' ),
+            'git_history' => self::iniSetting( 'GitHistory', 'enabled' ) !== 'disabled',
+            'languages' => $languages !== null ? $languages : expHelpLanguage::fromIni( $allowlist->rootDir() ),
+            'language' => $language ) );
     }
 
     /**
@@ -203,8 +243,52 @@ class expHelpDocumentIndex
     }
 
     /**
-     * The id of a path relative to the installation root: doc/en/us/guides/x.md -> guides/x.md,
-     * extension/foo/doc/x.md -> ext/foo/x.md; other configured roots keep their path. null for a path outside the roots.
+     * @return expHelpLanguage the languages of the documentation
+     */
+    public function languages()
+    {
+        return $this->languages;
+    }
+
+    /**
+     * @return string the reader language this index is built for (en/us, de)
+     */
+    public function language()
+    {
+        return $this->language;
+    }
+
+    /**
+     * Whether this index is for the default language (no page of it is a fallback).
+     *
+     * @return bool
+     */
+    public function isDefaultLanguage()
+    {
+        return $this->language === $this->languages->defaultDirectory();
+    }
+
+    /**
+     * The path the settings' path rules ([AudienceSettings], [CategorySettings], [TitleSettings]) are matched
+     * against: for a translated page the path of the page it translates (doc/en/us/<id>), so one rule serves every
+     * language; any other path as it is.
+     *
+     * @param string $path relative to the installation root
+     * @return string
+     */
+    public function rulePath( $path )
+    {
+        $split = $this->languages->split( $path );
+        if ( $split === null || $split[0] === $this->languages->defaultDirectory() )
+            return $path;
+        return expHelpLanguage::DOC_ROOT . '/' . $this->languages->defaultDirectory() . '/' . $this->languages->canonical( $split[0], $split[1] );
+    }
+
+    /**
+     * The id of a path relative to the installation root: doc/en/us/guides/x.md -> guides/x.md, a translation
+     * doc/de/anleitungen/x.md -> guides/x.md (its path map) or doc/de/guides/x.md -> guides/x.md, a file in no
+     * language directory doc/changelogs/x.md -> changelogs/x.md, extension/foo/doc/x.md -> ext/foo/x.md; other
+     * configured roots keep their path. null for a path outside the roots.
      *
      * @param string $path
      * @return string|null
@@ -219,8 +303,14 @@ class expHelpDocumentIndex
             if ( strncmp( $path, $root . '/', strlen( $root ) + 1 ) !== 0 )
                 continue;
             $rest = substr( $path, strlen( $root ) + 1 );
-            if ( $root === 'doc' )
-                return $rest;
+            if ( $root === expHelpLanguage::DOC_ROOT )
+            {
+                $split = $this->languages->split( $path );
+                if ( $split !== null )
+                    return $this->languages->canonical( $split[0], $split[1] );
+                // a translation whose directory is not configured (doc/fr/) is no page
+                return $this->languages->isUnconfiguredLanguagePath( $path ) ? null : $rest;
+            }
             if ( preg_match( '#^extension/([^/]+)/doc$#', $root, $m ) )
                 return 'ext/' . $m[1] . '/' . $rest;
             return $path;
@@ -230,7 +320,9 @@ class expHelpDocumentIndex
 
     /**
      * The path relative to the installation root of an id (the reverse of idOf()); null when it names no root.
-     * Only the syntax is checked: whether the file is a help page is document()'s and asset()'s question.
+     * For the doc root: the file of the reader's language when it is listed, else the default language's, else the
+     * file in no language directory (doc/<id>); the default language's path when none is listed. Whether the file is
+     * a help page is document()'s and asset()'s question.
      *
      * @param string $id
      * @return string|null
@@ -246,7 +338,34 @@ class expHelpDocumentIndex
         foreach ( $roots as $root )
             if ( $root !== 'doc' && strncmp( $id, $root . '/', strlen( $root ) + 1 ) === 0 )
                 return $id;
-        return in_array( 'doc', $roots, true ) ? 'doc/' . $id : null;
+        if ( !in_array( expHelpLanguage::DOC_ROOT, $roots, true ) )
+            return null;
+        $files = $this->files();
+        foreach ( $this->candidatePaths( $id ) as $candidate )
+            if ( isset( $files[$candidate] ) )
+                return $candidate;
+        return expHelpLanguage::DOC_ROOT . '/' . $this->languages->defaultDirectory() . '/' . $id;
+    }
+
+    /**
+     * The files an id of the doc root may be read from, best first: the reader's language (its translated name),
+     * the default language, then no language directory (doc/<id>, never for an id that starts with a language
+     * directory).
+     *
+     * @param string $id
+     * @return string[]
+     */
+    public function candidatePaths( $id )
+    {
+        $doc = expHelpLanguage::DOC_ROOT . '/';
+        $default = $this->languages->defaultDirectory();
+        $paths = array();
+        if ( $this->language !== $default )
+            $paths[] = $doc . $this->language . '/' . $this->languages->translated( $this->language, $id );
+        $paths[] = $doc . $default . '/' . $id;
+        if ( $this->languages->split( $doc . $id ) === null && !$this->languages->isUnconfiguredLanguagePath( $doc . $id ) )
+            $paths[] = $doc . $id;
+        return $paths;
     }
 
     /**
@@ -259,6 +378,7 @@ class expHelpDocumentIndex
         if ( $this->signature !== null )
             return $this->signature;
         $parts = array( 'format ' . self::FORMAT, $this->allowlist->stamp(), json_encode( $this->audience->config() ),
+                        'language ' . $this->language . ' ' . $this->languages->stamp(),
                         $this->gitHistory ? 'history' : 'no history',
                         self::rendererSlugs() ? 'renderer slug' : 'own slug' );
         // the code that builds the entries: a deploy of a changed parser or slugger builds the index again
@@ -889,11 +1009,22 @@ class expHelpDocumentIndex
         $assets = array();
         $files = $this->files();
         $history = $this->gitHistory ? $this->allowlist->history( self::RECENT_KEPT * 4 ) : array( 'changed' => array(), 'recent' => array() );
+        // which file serves an id: the reader's language (3) before the default language (2) before a file in no
+        // language directory (1); files of other languages are not read
+        $rank = array();
         foreach ( $files as $path => $file )
         {
             $id = $this->idOf( $path );
             if ( $id === null )
                 continue;
+            $language = $this->languageOfPath( $path );
+            $weight = $this->languageRank( $language );
+            if ( $weight === 0 )
+                continue;
+            $key = ( $file['kind'] === 'asset' ? 'a:' : 'd:' ) . $id;
+            if ( isset( $rank[$key] ) && $rank[$key] >= $weight )
+                continue;
+            $rank[$key] = $weight;
             if ( $file['kind'] === 'asset' )
             {
                 $assets[$id] = array( 'id' => $id, 'path' => $path, 'mtime' => $file['mtime'], 'size' => $file['size'] );
@@ -913,14 +1044,49 @@ class expHelpDocumentIndex
         foreach ( $history['recent'] as $change )
         {
             $id = $this->idOf( $change['path'] );
-            if ( $id === null || !isset( $documents[$id] ) )
+            // a change of the file this index serves (not of the same page in another language)
+            if ( $id === null || !isset( $documents[$id] ) || $documents[$id]['path'] !== $change['path'] )
                 continue;
             $recent[] = array( 'id' => $id, 'time' => $change['time'], 'subject' => $change['subject'] );
             if ( count( $recent ) >= self::RECENT_KEPT )
                 break;
         }
+        // in id order, as before the languages had directories of their own
+        ksort( $documents, SORT_STRING );
+        ksort( $assets, SORT_STRING );
         return array( 'format' => self::FORMAT, 'signature' => $this->signature(), 'built' => time(),
                       'documents' => $documents, 'assets' => $assets, 'sources' => $this->sourcesCache, 'recent' => $recent );
+    }
+
+    /**
+     * The language directory a path is in: a directory of [DocLanguages], '' for a file in no language directory
+     * of the doc root (doc/changelogs/), null for a path outside the doc root (an extension's doc directory).
+     *
+     * @param string $path
+     * @return string|null
+     */
+    public function languageOfPath( $path )
+    {
+        $split = $this->languages->split( $path );
+        if ( $split !== null )
+            return $split[0];
+        return strncmp( (string)$path, expHelpLanguage::DOC_ROOT . '/', strlen( expHelpLanguage::DOC_ROOT ) + 1 ) === 0 ? '' : null;
+    }
+
+    /**
+     * How well a file of a language serves this index: 3 the reader's language, 2 the default language, 1 no
+     * language (a file in no language directory, or another root), 0 another language (never read).
+     *
+     * @param string|null $language languageOfPath()
+     * @return int
+     */
+    protected function languageRank( $language )
+    {
+        if ( $language === null || $language === '' )
+            return 1;
+        if ( $language === $this->language )
+            return 3;
+        return $language === $this->languages->defaultDirectory() ? 2 : 0;
     }
 
     /**
@@ -934,6 +1100,9 @@ class expHelpDocumentIndex
     public function describe( $path, $text, array $file = array() )
     {
         $format = isset( $file['format'] ) ? $file['format'] : ( preg_match( '/\.(md|markdown)$/i', $path ) ? 'markdown' : 'text' );
+        // the settings' path rules see a translation as the page it translates
+        $rulePath = $this->rulePath( $path );
+        $language = $this->languageOfPath( $path );
         $text = self::toUtf8( $text );
         list( $meta, $body ) = $format === 'markdown' ? expHelpFrontMatter::split( $text ) : array( array(), $text );
         $headings = $format === 'markdown' ? self::headings( $body ) : array();
@@ -955,19 +1124,19 @@ class expHelpDocumentIndex
         // exphelp.ini [TitleSettings]: a clearer title for a page whose own is unclear (front matter always wins)
         $ownTitle = isset( $meta['title'] ) && is_string( $meta['title'] ) && trim( $meta['title'] ) !== '';
         if ( !$ownTitle )
-            $title = $this->audience->pageTitle( $path, $title );
+            $title = $this->audience->pageTitle( $rulePath, $title );
 
         $summary = isset( $meta['summary'] ) && is_string( $meta['summary'] ) ? trim( $meta['summary'] )
                  : ( isset( $meta['description'] ) && is_string( $meta['description'] ) ? trim( $meta['description'] ) : '' );
         if ( $summary === '' )
-            $summary = $this->audience->pageSummary( $path, '' );
+            $summary = $this->audience->pageSummary( $rulePath, '' );
         if ( $summary === '' && $records !== null )
             $summary = $records['summary'];
         if ( $summary === '' )
             $summary = self::summary( $body, $format );
         $summary = self::truncate( $summary, self::SUMMARY_LENGTH );
 
-        $class = $this->audience->classify( $path, $meta, $summary !== '' ? $summary : substr( $body, 0, 600 ) );
+        $class = $this->audience->classify( $rulePath, $meta, $summary !== '' ? $summary : substr( $body, 0, 600 ) );
         $keywords = array();
         foreach ( array( 'keywords', 'tags' ) as $key )
             if ( isset( $meta[$key] ) )
@@ -980,7 +1149,7 @@ class expHelpDocumentIndex
                 if ( is_string( $item ) && preg_match( '#^[a-z0-9_]+(/[a-z0-9_]+)?(\#[A-Za-z0-9_-]+)?$#', trim( $item ) ) )
                     $context[] = trim( $item );
         $base = basename( $path );
-        $isIndex = (bool)preg_match( '/^(readme|index)\.(md|markdown|txt)$/i', $base );
+        $isIndex = (bool)preg_match( '/^(readme|index)\.(md|markdown|txt)$/i', basename( $rulePath ) );
         $dot = strrpos( $base, '.' );
         $suffix = $dot === false || $dot === 0 ? '' : strtolower( substr( $base, $dot + 1 ) );
         $mtime = isset( $file['mtime'] ) ? (int)$file['mtime'] : 0;
@@ -1007,6 +1176,10 @@ class expHelpDocumentIndex
             'root'     => isset( $file['root'] ) ? $file['root'] : strtok( $path, '/' ),
             // the major version most records of a record page (the release history) belong to; search ranks older versions lower
             'version'  => $records !== null ? $records['version'] : '',
+            // the language directory the page was read from ('' for a file in no language directory, an extension's
+            // page), and whether that is not the reader's language (a page not translated yet, shown in the default)
+            'language' => (string)$language,
+            'fallback' => !$this->isDefaultLanguage() && $language !== $this->language && $language !== null,
         );
     }
 
