@@ -58,11 +58,10 @@ class Cronjobsstream extends \Exponential\Runnable\ModuleView
         require_once 'kernel/setup/expcronjobrunner.php';
 
         $Module = $Params['Module'];
-        $http = \eZHTTPTool::instance();
-
         // Where in the log to start. The page sends the size it already has, so a
-        // reconnect does not reprint what the operator has already read.
-        $offset = $http->hasVariable( 'Offset' ) ? (int)$http->variable( 'Offset' ) : 0;
+        // reconnect does not reprint what the operator has already read. A view
+        // parameter (/(offset)/<bytes>), never a query string.
+        $offset = (int)\expViewParameters::get( $Params, 'offset', 'Offset' );
         if ( $offset < 0 )
             $offset = 0;
 

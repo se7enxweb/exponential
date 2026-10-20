@@ -182,9 +182,9 @@
         switch ( type )
         {
             case 'reference':
-                // setup/logs?key=... answers 303 with the permalink of the search
-                return urls.page + '?key=' + encodeURIComponent( file.key || '' ) + ( file.rotation ? '&archive=' + encodeURIComponent( file.rotation ) : '' ) +
-                       '&reference=' + encodeURIComponent( value ) + '&scope=kernel&rotations=1' + ( state.unmasked ? '&unmask=1' : '' );
+                // the permalink of the search for the reference (view parameters, never a query string)
+                return slash( urls.page ) + 'view/' + encodeValue( file.key || '' ) + ( file.rotation ? '/(archive)/' + encodeValue( file.rotation ) : '' ) +
+                       '/(reference)/' + encodeValue( value ) + '/(scope)/kernel/(rotations)/1' + ( state.unmasked ? '/(unmask)/1' : '' );
             case 'url':
                 try
                 {
@@ -196,7 +196,7 @@
                 return urls.node ? urls.node + encodeURIComponent( value ) : '';
             case 'object':
             case 'user':
-                return urls.finder ? urls.finder + '?SearchText=' + encodeURIComponent( value ) + '&SearchType=object' : '';
+                return urls.finder ? urls.finder + '/(type)/object/(text)/' + encodeURIComponent( value ) : '';
             case 'class':
                 m = /^(\d+)\|/.exec( value );
                 return m && urls.klass ? urls.klass + m[1] : '';
@@ -472,14 +472,15 @@
     };
 
     // ---- following the file ----
+    // the feed's options are view parameters, /(name)/value, the values written as a permalink writes them
     var feedUrl = function ( params ) {
-        var q = [];
+        var path = '';
         for ( var k in params )
-            if ( params.hasOwnProperty( k ) )
-                q.push( encodeURIComponent( k ) + '=' + encodeURIComponent( params[k] ) );
+            if ( params.hasOwnProperty( k ) && params[k] !== '' && params[k] !== null && params[k] !== undefined )
+                path += '/(' + k + ')/' + encodeValue( params[k] );
         if ( state.unmasked )
-            q.push( 'unmask=1' );
-        return urls.feed + ( urls.feed.indexOf( '?' ) === -1 ? '?' : '&' ) + q.join( '&' );
+            path += '/(unmask)/1';
+        return urls.feed + path;
     };
     var getJSON = function ( url ) {
         return window.fetch( url, { credentials: 'same-origin', headers: { 'Accept': 'application/json' } } ).then( function ( response ) {
@@ -907,7 +908,7 @@
             ev.preventDefault();
             moreLink.setAttribute( 'aria-disabled', 'true' );
             say( text( 'more-loading' ) );
-            var url = urls.feed + ( urls.feed.indexOf( '?' ) === -1 ? '?' : '&' ) + 'action=search&' + searchQuery + '&cursor=' + encodeURIComponent( cursor );
+            var url = urls.feed + '/(action)/search' + searchQuery + '/(cursor)/' + encodeValue( cursor );
             getJSON( url ).then( function ( r ) {
                 moreLink.removeAttribute( 'aria-disabled' );
                 if ( r.status !== 200 || !r.json )
