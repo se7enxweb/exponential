@@ -320,6 +320,19 @@ class expVelocityConfigLayoutTest extends PHPUnit\Framework\TestCase
                            $this->layout->envvars( $dir ) );
     }
 
+    public function testExportableRefusesLoaderVariablesAndShellValues()
+    {
+        $dir = $this->tree();
+        $this->assertSame( array(), $this->layout->exportable( $dir ) );
+        file_put_contents( "$dir/envvars", "export EXP_DEMO_MODE=1\nEXP_A=\"two words\"\nEXP_B='\$literal'\nEXP_C=1 # comment\n"
+            . "EXP_D=\$HOME/x\nEXP_E=\"`id`\"\nEXP_F=two words\nexport PATH=/x\nLD_PRELOAD=/x.so\nld_library_path=/x\n"
+            . "HTTP_PROXY=http://x\nPHPRC=/x\nHOME=/x\nMALLOC_CHECK_=3\n" );
+        $this->assertSame( array( 'EXP_DEMO_MODE' => '1', 'EXP_A' => 'two words', 'EXP_B' => '$literal', 'EXP_C' => '1' ),
+                           $this->layout->exportable( $dir ) );
+        $this->assertNull( $this->layout->envRefusal( 'EXP_DEMO_MODE', '1', '' ) );
+        $this->assertNotNull( $this->layout->envRefusal( 'DYLD_INSERT_LIBRARIES', '/x', "'" ) );
+    }
+
     public function testDescribe()
     {
         $dir = $this->tree();

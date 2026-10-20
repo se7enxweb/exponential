@@ -2605,7 +2605,7 @@ class expVelocity
             if ( !empty( $applied['ok'] ) )
             {
                 $serverArgs = array( '--conf-dir=' . $applied['confDir'], '--config=' . $applied['siteFile'] );
-                $layoutEnv = $layout->envvars( $applied['confDir'] );
+                $layoutEnv = $layout->exportable( $applied['confDir'] );
             }
             $this->layoutNote = $applied['message'];
 
@@ -2657,7 +2657,10 @@ class expVelocity
             $environment .= 'PATH=' . escapeshellarg( self::DEFAULT_PATH ) . ' ';
 
         // envvars from the configuration directory, as Apache's apache2ctl
-        // reads /etc/apache2/envvars: values only, nothing executed.
+        // reads /etc/apache2/envvars: values only, nothing executed, and never
+        // PATH, LD_* or the other names the engine refuses (exportable()).
+        // The engine reads the same file itself when it starts (it exports
+        // what it sets to every worker), so this only serves older engines.
         foreach ( $layoutEnv as $name => $value )
             $environment .= $name . '=' . escapeshellarg( $value ) . ' ';
 
