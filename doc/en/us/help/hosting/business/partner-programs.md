@@ -43,8 +43,8 @@ question for 7x.
 
 - **Sponsorship** of 7x and of the Foundation is open to anyone and documented
   ([How to support or join](../../who-is-the-exponential-foundation.md#how-to-support-or-join)).
-- **Contribution** of code, documentation and translations is open to anyone: every pull request is merged, and
-  contributors' commits are kept as they wrote them
+- **Contribution** of code, documentation and translations is open to anyone: every pull request is merged, under
+  its author's name, once the author has squashed and rebased it onto `main`
   ([Contributors and pull requests](../../who-is-the-exponential-foundation.md#contributors-and-pull-requests)).
 - **Other companies' work is credited** in the product and its history, for example Netgen, Mugo Web and CJW Network
   ([Contributors and friends of the project](../../who-is-7x.md#contributors-and-friends-of-the-project)).

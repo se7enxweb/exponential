@@ -19,7 +19,7 @@ published. If you are new to Git, start with [Develop with Git](../help/develop-
 | Practice | Status | Evidence (short) |
 |---|---|---|
 | One development branch, `main` | **Complies** | default branch `main`; CI runs on `main`/`master` |
-| Pull requests merged with merge commits, contributor commits kept | **Complies** (by policy) | [Continuous integration](../bc/6.0/ci.md), "The commit message policy"; merge commits in `git log` |
+| Pull requests squashed and rebased onto `main` by their authors while open, then merged with merge commits | **Complies** (by policy) | [Continuous integration](../bc/6.0/ci.md), "The commit message policy"; merge commits in `git log` |
 | Signed CLA before a kernel contribution is merged | **Complies** (by policy) | `CONTRIBUTING.md`, "Copyright assignment (CLA)"; CLA checkbox in `.github/PULL_REQUEST_TEMPLATE.md`; no automated check |
 | No force push, no rewriting of published history | **Partly complies** | a policy; `main` has no branch protection rule (GitHub API, 2026-10-18) |
 | Commit subject prefixes | **Complies** | `.githooks/commit-msg`, `.githooks/check-commit-range`, `quality.yml` |
@@ -38,18 +38,23 @@ published. If you are new to Git, start with [Develop with Git](../help/develop-
   (`extra.branch-alias`), and the CI workflows run on pushes and pull requests to `main` (and `master`).
 - **Work happens on branches** and reaches `main` by pull request or by merge (`CONTRIBUTING.md`, "Making
   Changes": "Always create a new branch for your work").
-- **Pull requests are merged with a merge commit; contributor commits are kept as written and never squashed or
-  rewritten.** This is stated in [Continuous integration](../bc/6.0/ci.md), "The commit message policy" ("Every pull
-  request is merged, and its commits are kept as the contributor wrote them and never rewritten"), and the commit
-  message check is built around it: a contributor's commit with a non-standard subject is only a warning, so a
-  merged pull request never turns `main` red. `git log --merges` on `main` shows merge commits.
+- **Pull requests are squashed and rebased by their authors while open, then merged with a merge commit.** 7x
+  strongly requests and requires contributors to squash their pull request into logical commits (usually one) and
+  rebase it onto `main` while it is open (`git rebase -i origin/main`, `git push --force-with-lease` to the pull
+  request branch only), so the merge is clean ([Code reviews](../../../../CONTRIBUTING.md#code-reviews)). Once merged,
+  `main`'s history is never rewritten, and later fixes come as new pull requests
+  ([Continuous integration](../bc/6.0/ci.md), "The commit message policy"). A contributor's commit with a
+  non-standard subject is only a warning, so a merged pull request never turns `main` red. `git log --merges` on
+  `main` shows merge commits.
 - **A kernel contribution is merged once its author's CLA is on file.** 7x and the Exponential Foundation require a
   signed Contributor Licensing Agreement for every code contribution to the core kernel, whether it arrives as a
   pull request, a patch, an issue or by mail ([Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla)).
   By signing and submitting, the contributor assigns the copyright in the contribution to 7x, which becomes its owner, and gives up control over it: 7x may use, change, relicense and distribute it in any way, and the contributor cannot withdraw it or set conditions on it. The pull request template has a checkbox for it. Users' own custom extensions
   are not affected.
 - **No force push and no rewriting of published history.** A commit on `main` is public; a rewrite would move every
-  later commit and strand any tag that points into the range.
+  later commit and strand any tag that points into the range. The one exception is a contributor's own pull request
+  branch while the pull request is open: it is squashed, rebased and pushed with `git push --force-with-lease`, as
+  above.
 
 > **Warning** These merge and push rules are policy. The repository settings on GitHub still allow squash and rebase
 > merges, and `main` has no branch protection rule or ruleset (checked through the GitHub API on 2026-10-18).

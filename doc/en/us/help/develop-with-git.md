@@ -219,7 +219,16 @@ installation first: it explains the commit hook (`make hooks`) and the file mani
 kernel pull request keeps current.
 
 **Expect many review rounds.** 7x reviews a commit or pull request in many more rounds than usual, sometimes hundreds
-of revisions; be ready to revise your change until it is simple to accept
+of revisions; be ready to revise your change until it is simple to accept. While the pull request is open, squash it
+and rebase it onto `main` as the reviews ask, which 7x requires:
+
+```bash
+git fetch origin
+git rebase -i origin/main
+git push --force-with-lease
+```
+
+Push with force only to your own pull request branch. After the merge, `main` is never rewritten
 ([Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews)).
 
 **Copyright assignment (CLA).** 7x and the Exponential Foundation merge a code contribution to

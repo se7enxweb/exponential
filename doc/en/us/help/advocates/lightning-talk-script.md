@@ -54,7 +54,7 @@ drafts and never publishes on its own. And the help: the documentation is inside
 button on every page."
 
 **Slide 5 (3:30).** "It's free software: the code under the GPL, the documentation under the GNU Free Documentation
-License. And the project has a rule I love: every pull request is merged, and the contributor's commits are kept."
+License. And the project has a rule I love: every pull request is merged, under the contributor's name."
 
 **Slide 6 (4:20).** "Try it: one command installs a complete site on SQLite, no database server. Questions: the forums
 on share.exponential.earth and the Telegram chat. Thank you!"

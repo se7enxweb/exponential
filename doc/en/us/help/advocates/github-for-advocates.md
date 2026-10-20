@@ -65,7 +65,8 @@ How to write a good issue: [Reporting bugs well](reporting-bugs-well.md). Which 
   not affected.
 - **Commit messages** start with `Added:`, `Updated:`, `Fixed:`, `Removed:` or `Renamed:`
   ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
-- **Every pull request is merged**, and its commits are kept; what needs fixing is fixed in commits on top
+- **Every pull request is merged.** While it is open, its author squashes it and rebases it onto `main` as the
+  reviews ask; once it is merged, `main` is never rewritten, and later fixes come as new pull requests
   ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)).
 
 ## Helping without code

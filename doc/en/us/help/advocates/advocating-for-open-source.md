@@ -27,7 +27,7 @@ GNU FDL ([Talking points: open source and licensing](talking-points-open-source-
 | Freedom to use, study, change, share | GPL v2 or later | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE) |
 | Transparency | A public history since 2002; every month told since 2023 | [The history](../../history/README.md) |
 | Contributions stay free | Changes are released under the same GPL | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| Respect for contributors | Every pull request is merged, commits kept as written | [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
+| Respect for contributors | Every pull request is merged under its author's name, once squashed and rebased onto `main` | [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
 | Credit | Work of Netgen, Mugo Web, CJW Network credited by name | [Respecting other projects](respecting-other-projects-and-companies.md) |
 | Giving back upstream | Security pull requests to Zeta Components | [The PHP stack](../who-is-the-exponential-foundation.md#the-php-stack-it-stands-on-and-gives-back-to) |
 | Free knowledge | Documentation under the GNU FDL | [Free documentation](../free-documentation.md) |

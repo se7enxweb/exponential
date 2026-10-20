@@ -1,4 +1,4 @@
-# Exponential CMS Contributors Guidelines
+# Exponential Contributors Guidelines
 
 Thank you for considering contributing to Exponential CMS! We appreciate the time and effort you invest in making this project better.
 
@@ -185,6 +185,21 @@ To get through review faster:
   place.
 - **Keep your branch current**: rebase it on `main` when `main` has moved, before asking for the next round.
 - **Don't take many rounds personally.** Each round makes the change easier to accept.
+
+### Squash and rebase your pull request (required)
+
+7x strongly requests and requires that you **squash and rebase your pull request onto `main` while it is open**, so
+that merging it is clean and easy. Fold the fixups of each review round into logical commits (usually one), then
+rebase onto the current `main`:
+
+```bash
+git fetch origin
+git rebase -i origin/main          # mark fixup commits as "fixup" or "squash"; keep logical commits, usually one
+git push --force-with-lease        # only to your own pull request branch, never to main
+```
+
+Force-push only the branch of your pull request. Once a pull request is merged, `main`'s history is never rewritten:
+a later fix comes as a new pull request.
 
 All contributions will be reviewed before merging. Be open to feedback and be willing to make changes if requested. Code reviews are essential to maintain code quality. A contribution to the kernel is merged only once its author's signed CLA has been received.
 

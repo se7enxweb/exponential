@@ -119,8 +119,8 @@ Each step builds on the one before. You can stay on any step as long as you like
   `make hooks` installs the checks).
 - Know the license: "any modifications made to the project are also released under the same GPLv2 or later
   license" (`CONTRIBUTING.md`).
-- The project's practice is generous to contributors: "Every pull request is merged, and its commits are kept as
-  the contributor wrote them and never rewritten"; what needs fixing is fixed in commits on top
+- The project's practice is generous to contributors: every pull request is merged, once its author has squashed it
+  and rebased it onto `main` as the reviews ask; after the merge, `main` is never rewritten
   ([Continuous integration](../../bc/6.0/ci.md)).
 
 ### Step 5 in detail: reviewer and maintainer

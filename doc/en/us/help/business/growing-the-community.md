@@ -87,7 +87,8 @@ easier.
 
 What makes stage 5 attractive, and is documented:
 
-- "Every pull request is merged, and its commits are kept as the contributor wrote them and never rewritten"
+- Every pull request is merged. While it is open, its author squashes it and rebases it onto `main` as the reviews
+  ask; once it is merged, `main`'s history is never rewritten
   ([Continuous integration](../../bc/6.0/ci.md#the-commit-message-policy)).
 - Contributions stay free: "any modifications made to the project are also released under the same GPLv2 or later
   license" (`CONTRIBUTING.md`).

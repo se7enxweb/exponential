@@ -373,8 +373,10 @@ clones with their full history" (README, "Installation"; [Develop with Git](deve
 
 ### Contributors and pull requests
 
-- **Every pull request is merged.** "Every pull request is merged, and its commits are kept as the contributor wrote
-  them and never rewritten" ([CI](../bc/6.0/ci.md), commit messages). What needs fixing is fixed in commits on top.
+- **Every pull request is merged.** While it is open, its author squashes it and rebases it onto `main` as the
+  reviews ask; once it is merged, `main`'s history is never rewritten, and later fixes come as new pull requests
+  ([CI](../bc/6.0/ci.md), commit messages;
+  [Code reviews](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md#code-reviews)).
 - **Contributions stay free.** "any modifications made to the project are also released under the same GPLv2 or
   later license" ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 - **Copyright assignment (CLA).** 7x and the Exponential Foundation require a signed Contributor

@@ -160,8 +160,8 @@ For the kernel, CONTRIBUTING.md adds:
 From [Contributors and pull requests](../who-is-the-exponential-foundation.md#contributors-and-pull-requests) and
 [Continuous integration](../../bc/6.0/ci.md):
 
-- **Every pull request is merged.** "Every pull request is merged, and its commits are kept as the contributor wrote
-  them and never rewritten." What needs fixing is fixed in commits on top.
+- **Every pull request is merged.** While it is open, its author squashes it and rebases it onto `main` as the
+  reviews ask; once it is merged, `main`'s history is never rewritten, and later fixes come as new pull requests.
 - **A contributor's commit message is never a blocker.** A subject outside the format is a warning, not a failure.
 - **The checks run on the merge with `main`.** A branch that was green can turn red when `main` moves; merge `main`
   into the branch and push again.

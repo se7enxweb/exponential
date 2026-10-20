@@ -41,8 +41,9 @@ database, so a development installation needs no database server ([Database supp
 
 - CI runs syntax, manifest, commit message, code style, PHPStan and test checks on the supported PHP versions
   (`doc/en/us/bc/6.0/ci.md`).
-- It is reviewed. "Every pull request is merged, and its commits are kept as the contributor wrote them and never
-  rewritten" (`doc/en/us/bc/6.0/ci.md`); what needs changing is changed in commits on top.
+- It is reviewed, and every pull request is merged. While it is open, you squash it and rebase it onto `main` as the
+  reviews ask (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` to your pull request
+  branch only); once it is merged, `main`'s history is never rewritten (`doc/en/us/bc/6.0/ci.md`).
 
 ## License
 

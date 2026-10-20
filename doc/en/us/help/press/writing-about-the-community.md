@@ -43,8 +43,8 @@ fairly.
 
 ## How contributions are handled
 
-"Every pull request is merged, and its commits are kept as the contributor wrote them and never rewritten"; what needs
-fixing is fixed in commits on top ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows);
+Every pull request is merged. While it is open, its author squashes it and rebases it onto `main` as the reviews ask;
+once it is merged, `main`'s history is never rewritten ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows);
 [Story: every pull request is merged](story-every-pull-request-merged.md)). Contributions stay under the GPL
 ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).
 

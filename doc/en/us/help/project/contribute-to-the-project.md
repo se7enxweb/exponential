@@ -57,7 +57,9 @@ request to 7x's repository, where it is reviewed and, when merged, released to e
    extensions, site packages and themes are not affected.
 
 The project's continuous integration runs on every pull request ([CI](../../bc/6.0/ci.md)). The project merges every
-pull request and keeps the contributor's commits as written, fixing on top whatever needs fixing
+pull request. While it is open, you squash it and rebase it onto `main` as the reviews ask (`git fetch origin`,
+`git rebase -i origin/main`, `git push --force-with-lease` to your pull request branch only); once it is merged,
+`main`'s history is never rewritten, and later fixes come as new pull requests
 ([Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#contributors-and-pull-requests)).
 
 ### The license of your contribution

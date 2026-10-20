@@ -90,6 +90,11 @@ if you still want to change things.
   or when the project's habit is that the author resolves them.
 - **Keep it current.** If the base branch moves on and conflicts appear, bring it in
   ([Keeping a fork in sync with its source](keeping-a-fork-in-sync.md)).
+- **For the kernel, squash and rebase.** 7x requires the author to squash the pull request into logical commits
+  (usually one) and rebase it onto `main` while it is open, so the merge is clean:
+  `git fetch origin`, `git rebase -i origin/main`, then `git push --force-with-lease` to your pull request branch
+  only. Once it is merged, `main`'s history is never rewritten; a later fix is a new pull request
+  ([Code reviews](../../../../../../CONTRIBUTING.md#code-reviews)).
 - **Be patient.** Volunteer maintainers answer when they can. A friendly reminder after two or three weeks is fine.
 
 ## 7. After it is merged

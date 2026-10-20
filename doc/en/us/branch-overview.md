@@ -43,8 +43,9 @@ All work reaches `main` in the same way:
 1. A change starts on a short-lived branch (a feature, a fix, or one wave of related work), in a fork or in the
    repository.
 2. The branch is proposed as a pull request against `main`.
-3. Every pull request is merged, as a merge commit that keeps the contributor's commits as written. What a review
-   finds is fixed in further commits on top, in the same push, or made optional, so `main` stays safe.
+3. Every pull request is merged, as a merge commit. While it is open, its author squashes it and rebases it onto
+   `main` as the reviews ask; once it is merged, `main` is never rewritten, and a later fix comes as a new pull
+   request, so `main` stays safe.
 4. The branch is deleted or simply left behind; nothing else is merged from it.
 
 `git log --merges origin/main` lists the merges. Commits by project authors start with `Added:`, `Updated:`, `Fixed:`,

@@ -75,7 +75,7 @@ Velocity's own facts and figures, with their measuring conditions, are on [Cover
 | Practice | Source |
 |---|---|
 | Commit messages start with `Added:`, `Updated:`, `Fixed:`, `Removed:` or `Renamed:`, checked by a hook and CI | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| "Every pull request is merged, and its commits are kept as the contributor wrote them" | [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
+| "Every pull request is merged; while it is open, its author squashes and rebases it onto main as the reviews ask, and main's history is never rewritten after the merge" | [How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows) |
 | Administration templates carry no inline styles, so a strict Content Security Policy can be enforced | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md), [Security headers](../who-is-the-exponential-foundation.md#security-headers-and-the-content-security-policy) |
 | Every change since December 2023 is explained in the history and recorded in the ledger | [The history pages as a source](the-history-pages-as-a-source.md) |
 

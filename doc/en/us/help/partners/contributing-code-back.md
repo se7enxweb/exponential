@@ -46,8 +46,10 @@ From CONTRIBUTING.md and [Develop with Git](../develop-with-git.md):
   products, without asking or paying the partner, who cannot withdraw it or set conditions on it. It does not
   affect the partner's own custom extensions or its customers' sites.
 
-- "Every pull request is merged, and its commits are kept as the contributor wrote them and never rewritten"
-  (`doc/en/us/bc/6.0/ci.md`). What needs fixing is fixed in commits on top.
+- Every pull request is merged. While it is open, you squash it and rebase it onto `main` as the reviews ask
+  (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease` to your pull request branch only);
+  once it is merged, `main`'s history is never rewritten, and later fixes come as new pull requests
+  (`doc/en/us/bc/6.0/ci.md`).
 - CI checks syntax, the manifest, commit messages, code style, PHPStan and the tests on supported PHP versions
   (`doc/en/us/bc/6.0/ci.md`).
 - "By contributing, you agree that your contributions will be licensed under the GNU General Public License, version

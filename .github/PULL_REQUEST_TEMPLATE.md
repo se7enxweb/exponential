@@ -15,6 +15,8 @@
       Your own custom extensions, site packages and themes are not affected.
 - [ ] I am prepared for many review rounds: 7x reviews a pull request in many more rounds than usual, sometimes
       hundreds of revisions, until it is simple to accept ([Code reviews](../CONTRIBUTING.md#code-reviews)).
+- [ ] Squashed and rebased onto main (`git fetch origin`, `git rebase -i origin/main`, `git push --force-with-lease`
+      to this branch only; see [Code reviews](../CONTRIBUTING.md#code-reviews)).
 - [ ] Commit subjects start with `Added: `, `Updated: `, `Fixed: `, `Removed: ` or `Renamed: `.
 - [ ] The file manifest is current (`make manifest-fix`; `make hooks` checks it on every commit).
 - [ ] The tests pass, and the documentation is updated where the behavior changed.

@@ -22,8 +22,8 @@ the community tracker.
 
 ## What the project already does
 
-- Every pull request is merged, and contributors' commits are kept as they wrote them, so their names stay in the
-  history ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)).
+- Every pull request is merged under its author's name (squashed and rebased by the author while it is open), so
+  contributors' names stay in the history ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows)).
 - Contributors and companies are named in the history pages and on
   [Who is 7x?](../who-is-7x.md#contributors-and-friends-of-the-project).
 
