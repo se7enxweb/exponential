@@ -11052,7 +11052,7 @@ dd8219b03d60ce0dbee6e5abe1289f20  doc/eng-us/standards/patterns/workflow-event.m
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 94b0410f4d6d290ff0b4dc2b284451c4  doc/ger-de/.dirnames.json
-e9f34dcc656cfe5948045feb779d37d0  doc/ger-de/.paths.json
+369912371ee06c812f3ddd08bf091087  doc/ger-de/.paths.json
 2ba7d4102f729a5fa7d53ff750a2cf06  doc/ger-de/anleitungen/README.md
 7751add00ddf65f0ea2d8e6510460828  doc/ger-de/anleitungen/aktualisieren.md
 88e9d7a7e41c216d27d0d009da451c34  doc/ger-de/anleitungen/api-schluessel.md
@@ -11150,6 +11150,7 @@ ffb1176e3ebbfd34b8b7f3b0104a6acf  doc/ger-de/hilfe/fuersprecher/demos-zeigen.md
 2b79b77294ee66ef0409bda570a0feb2  doc/ger-de/hilfe/fuersprecher/die-hilfe-verbessern.md
 3edf4c27b88185c8a1973c53a4d86d16  doc/ger-de/hilfe/fuersprecher/die-produktfamilie-kennen.md
 4c54f9c058b6f7b28e71e3d37fef1bf2  doc/ger-de/hilfe/fuersprecher/die-stufen-der-fuersprache.md
+7968d0330ad5ee74a7aa0c2a69d223a4  doc/ger-de/hilfe/fuersprecher/die-systemkarte-in-demos.md
 6a833d3e5bfe9b4475b08a21e7c94419  doc/ger-de/hilfe/fuersprecher/ehrlichkeit-und-genauigkeit.md
 83e1991e82fcca85690f362901ef9473  doc/ger-de/hilfe/fuersprecher/ein-90-tage-plan.md
 922eba08d82aeb2228ef28e70192999b  doc/ger-de/hilfe/fuersprecher/ein-online-treffen-durchfuehren.md
@@ -11169,7 +11170,7 @@ c5390c6e1b2d712a9c6fd32bb6aaa24d  doc/ger-de/hilfe/fuersprecher/einwand-php-und-
 f7e292138e605ccca3d204b4dc464ffc  doc/ger-de/hilfe/fuersprecher/einwand-sicherheit-von-open-source.md
 7e7b2bba6c2f5e748776b8cced0db632  doc/ger-de/hilfe/fuersprecher/einwand-warum-nicht-ein-anderes-cms.md
 fe982da0f0553d63a42c3372eaf4f5cb  doc/ger-de/hilfe/fuersprecher/faktenblatt.md
-7bc9c67517fc6ddc08ec5a9f83b74129  doc/ger-de/hilfe/fuersprecher/faq-fuer-fuersprecher.md
+2df29b57b66132dcef6e4b303bb5c3be  doc/ger-de/hilfe/fuersprecher/faq-fuer-fuersprecher.md
 34fad25e80783a810e49ebd70f95b3cb  doc/ger-de/hilfe/fuersprecher/faq-fuer-neue.md
 ed70cc33f3cdcd98b26f968946bde08d  doc/ger-de/hilfe/fuersprecher/fehler-gut-melden.md
 918f54552781ad5ffb774afaf769f027  doc/ger-de/hilfe/fuersprecher/feindselige-diskussionen.md
@@ -11181,7 +11182,7 @@ cd8e668de37878000a704d69b67d1991  doc/ger-de/hilfe/fuersprecher/fuer-nachhaltige
 c3ccadea52068663e0f390fffd7f1557  doc/ger-de/hilfe/fuersprecher/fuer-open-source-eintreten.md
 9267a25b141b367ff0a25dba70418d9b  doc/ger-de/hilfe/fuersprecher/fuer-sicherheit-eintreten.md
 b9f60444b4c6c3fa8a9880ad91219811  doc/ger-de/hilfe/fuersprecher/fuersprache-ehrlich-messen.md
-1e46f821ad87805b748b2e4ff3eb9082  doc/ger-de/hilfe/fuersprecher/fuersprecher-hier-beginnen.md
+ead4969de51295cb8221f0b01393c2ff  doc/ger-de/hilfe/fuersprecher/fuersprecher-hier-beginnen.md
 b425ec11a09a501332f032234c3bd1b2  doc/ger-de/hilfe/fuersprecher/gespraechspunkte-barrierefreiheit.md
 b7038383e1aa22998158bf535018ff48  doc/ger-de/hilfe/fuersprecher/gespraechspunkte-exponential-intelligence.md
 e54f8319e0f4cb8bb0a431c284a0c772  doc/ger-de/hilfe/fuersprecher/gespraechspunkte-exponential-layouts.md
@@ -11223,7 +11224,7 @@ eebc05ae7bdc215b52f2ffc2db0dea37  doc/ger-de/hilfe/fuersprecher/verhalten-und-et
 61df5d1b17abec4875146ff01fe32be0  doc/ger-de/hilfe/fuersprecher/vorlagen-fuer-soziale-medien.md
 be77ef3bcd373f40df51e0bffd8253c5  doc/ger-de/hilfe/fuersprecher/was-ein-fuersprecher-ist.md
 406e5febb2b60e3246c81b3a08619f50  doc/ger-de/hilfe/fuersprecher/welcher-tracker-fuer-welche-meldung.md
-8946393809a18d68fa7959e76d010ae6  doc/ger-de/hilfe/fuersprecher/werkzeugkasten-fuer-fuersprecher.md
+a8613b68498ddf0cd328d3646a2d96cd  doc/ger-de/hilfe/fuersprecher/werkzeugkasten-fuer-fuersprecher.md
 1bc5707c8d5b075bb81db1da9aeb183b  doc/ger-de/hilfe/fuersprecher/wo-die-fakten-stehen.md
 659dbe15b55607fcaa2fc829252c3f34  doc/ger-de/hilfe/fuersprecher/zu-ezpedia-beitragen.md
 3acf2b40556457d265d90e50b7adc50b  doc/ger-de/hilfe/geschaeft/community-und-oekosystem.md
