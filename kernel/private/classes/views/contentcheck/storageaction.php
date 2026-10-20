@@ -1,6 +1,6 @@
 <?php
 /**
- * The contentcheck/storageaction view (doc/en/us/features/6.0/content-checks.md, "Storage files"): POST only, from the
+ * The contentcheck/storageaction view (doc/eng-us/features/6.0/content-checks.md, "Storage files"): POST only, from the
  * forms of contentcheck/storage.
  *
  *   ScanButton / ContinueButton       one step of the scan (contentcheck/storage), then the progress page or the list

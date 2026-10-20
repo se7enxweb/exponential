@@ -1,10 +1,10 @@
 <?php
 /**
  * The code of kernel/setup/extensions.php, moved into a class (#207 stage 1). The file kernel/setup/extensions.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * Setup > Extensions: one list of every extension, in which the active ones are moved, activated and deactivated
- * and the result is written to ActiveExtensions in one step after a review (doc/en/us/guides/extensions-page.md). The view
+ * and the result is written to ActiveExtensions in one step after a review (doc/eng-us/guides/extensions-page.md). The view
  * is thin: what is known about each extension comes from expExtensionCatalogue, what a change means from
  * expExtensionChangePlan, and the write from ezpActiveExtensions.
  */

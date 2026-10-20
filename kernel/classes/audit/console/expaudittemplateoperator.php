@@ -1,6 +1,6 @@
 <?php
 /**
- * The template operator audit_label (doc/en/us/bc/6.0/audit.md, "Template operator and fetch"): the human label of an
+ * The template operator audit_label (doc/eng-us/bc/6.0/audit.md, "Template operator and fetch"): the human label of an
  * audit event name from the taxonomy registry, translated in the context kernel/audit.
  *
  *   {$e.name|audit_label|wash}      content.node.move -> "Node move"

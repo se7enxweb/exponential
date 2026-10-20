@@ -1,7 +1,7 @@
 /*
  * admin4 workflow/edit, event "Wait until date": the attribute list follows the chosen class, so the Update
  * attributes button is hidden. A file of its own, so the page runs under a Content Security Policy without
- * 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md). The ids and the attributes of every class come from
+ * 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md). The ids and the attributes of every class come from
  * the .exp-waituntildate-data element of each event; the file can be loaded once per event.
  */
 (function ()

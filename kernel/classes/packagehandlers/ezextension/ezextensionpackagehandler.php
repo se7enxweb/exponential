@@ -413,7 +413,7 @@ class eZExtensionPackageHandler extends eZPackageHandler
 
     /**
      * The extension's own list of findings that are known not to be secrets: a plain file at the root of the
-     * extension, read only by the package check. See doc/en/us/bc/6.0/extension-package-secret-check.md.
+     * extension, read only by the package check. See doc/eng-us/bc/6.0/extension-package-secret-check.md.
      */
     const ALLOW_FILE = 'package_check.ini';
 

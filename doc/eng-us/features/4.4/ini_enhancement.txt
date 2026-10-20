@@ -1,0 +1,110 @@
+eZIINI enhancements in Exponential 4.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+=====
+Intro
+=====
+
+eZINI has gotten a few changes in this version:
+
+ 1. Ini order is now scoped to make it more consistent and less error prone
+ 2. Improve performance by caching ini locations
+ 3. Related extension and siteaccess code have been improved to create an API
+    to be able to correctly load settings from other siteaccesses and change siteaccess
+    during execution.
+
+This has caused it to use a new cache format, get several API additions and
+some features have been deprecated(see doc/eng-us/bc/4.4/).
+
+
+=====================
+INI (override) Scope
+=====================
+
+Ini overrides are different locations an ini files can be placed.
+Prior to adding scope, order was defined by the order ini locations was added to
+the list of possible locations in code. And hence for it to be consistent it was important
+that this was done correctly, and especially when code suddenly wanted to change or load settings
+for another siteaccess in the middle of execution. Things like siteaccess settings in
+ActiveAccessExtensions did not work as one would imagine, and ActiveAccessExtensions was not
+correctly loaded many places.
+
+So to improve the situation and hopefully avoid it in the future, scopes define the overall loading order
+of ini settings. It is::
+
+    override
+    extension (ActiveExtensions)
+    siteaccess
+    sa-extension (ActiveAccessExtensions)
+
+Bellow sa-extension you'll find the settings folder, but that is not currently defined as a scope since it's not configurable.
+
+In each scope is a list of ini locations in the order they are loaded, for extensions this means the order as defined by
+extension ordering (see separate feature doc). For siteaccess, first the one in settings/siteaccess/* then locations in
+ActiveExtensions as defined by extension ordering, and last locations in ActiveAccessExtensions.
+
+We have removed the condition on ``file_exists`` when processing the multiple locations possible for extensions. This
+means that all locations are tried initially, and the valid ones will be stored in the ini cache, subsequent runs, will
+directly get list of locations from the cache, with no ``file_exists`` calls needed. See also `Improved performance`_ below.
+
+An additional value of scopes is that it makes it a lot easier to change the loading order in the future as discussed
+several places before.
+
+In the meantime you now have a reliable way of creating extensions that contain settings shared by several siteaccesses
+and at the same time have the ability to override those settings from within the siteaccess settings.
+(ActiveAccessExtensions)
+
+
+====================
+Improved performance
+====================
+
+PHP does not cache stat calls (file_exists, filemtime..) when a files does not exist, and neither should it.
+So the change in this version was to cache files used as basis for ini cache in the ini cache file, and hence
+not need to iterate over the whole installation and check if settings folder exists and later if a certain
+ini file exist in a valid ini folder. Then by default check modified time on these files to decide if ini cache
+needs to be refreshed. It is still possible to disable this globally or only do it on one file using
+EZP_INI_FILEMTIME_CHECK, but the performance gain is not as large anymore since it is much more efficient by
+default as well.
+
+There is one downside to this: new ini overrides in existing locations won't be found automatically (in already
+activated extensions/siteaccess, or override folder) anymore. You'll need to clear ini cache so that they can
+be found.
+
+
+==================
+New Siteaccess API
+==================
+
+The API provided by eZINI to read siteaccess settings was flawed / misused, it only loaded siteaccess
+settings from one location, either in settings/siteaccess/* or if it did not exist used the first one it would find
+in extensions, and no extension or sa-extension settings were loaded, or considered in this return.
+
+The new API ( eZSiteAccess::getIni() ) fixes all of this, and uses normal ini loading so no disk iteration is needed
+to load the settings. This is now used throughout the kernel and hence fixes several issues related to extension
+and specifically siteaccess extension settings not being read.
+
+To use it (where 'admin' is siteaccess name, and 'site.ini' is optional as it is also the default value):
+
+    $ini = eZSiteAccess::getIni( 'admin', 'site.ini' );
+    $adminSiteURL = $ini->variable( 'SiteSettings', 'SiteURL' );
+    (...)
+
+or if you just want one setting variable:
+
+    $adminSiteURL = eZSiteAccess::getIni( 'admin', 'site.ini' )->variable( 'SiteSettings', 'SiteURL' );
+
+
+If you want to change siteaccess during execution you can do that like this:
+
+    eZSiteAccess::load( array( 'name' => 'admin'[, 'type' => eZSiteAccess::<TYPE-CONSTANT>[, 'uri_part' => array(...) ] ] ) );
+    // But if you use any kind or uri mapping (incl. host_uri) where the uri part is not the same as
+    // the name of the siteaccess, links might not work on the generated page if uri_part is wrong/undefined.
+
+    // In that case make sure you have specified site.ini\[SiteSettings]\SiteUriParts[]
+    // to be the same as the uri parts that match siteaccess in uri.
+    // However, this won't cover you if you use host_uri matching and siteaccess uses different host.
+
+So we recommend using the approach above with 'SiteURL' instead and redirect the user if possible,
+a lot more straightforward and only requires a correct SiteURL setting.
+

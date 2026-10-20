@@ -1,5 +1,5 @@
 {* One interface choice with a long, grouped list (uiswitch; the language provider with GroupList[] or AllLanguages,
-   doc/en/us/features/6.0/ui-switch-languages.md): a native list box with a heading per group and an Apply button, in a POST
+   doc/eng-us/features/6.0/ui-switch-languages.md): a native list box with a heading per group and an Apply button, in a POST
    form to uiswitch/set (ezformtoken adds its token).
 
    A native <select> because the list has 100 and more entries: the browser gives it type-ahead (typing the first

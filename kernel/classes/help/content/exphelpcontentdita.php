@@ -1,7 +1,7 @@
 <?php
 /**
- * The DITA 1.3 export of help maintained as content (doc/en/us/specifications/6.0/help-system.md, "The standard: what
- * DITA means here" and delivery paths 3 and 4; doc/en/us/features/6.0/help-content.md, "DITA export").
+ * The DITA 1.3 export of help maintained as content (doc/eng-us/specifications/6.0/help-system.md, "The standard: what
+ * DITA means here" and delivery paths 3 and 4; doc/eng-us/features/6.0/help-content.md, "DITA export").
  *
  * The mapping:
  *

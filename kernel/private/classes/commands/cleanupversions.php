@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/cleanupversions.php, moved into a class (#207 stage 1). The file bin/php/cleanupversions.php is one call to it.
  * @description Remove archived content versions beyond the VersionManagement limits (-n: do not wait)
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/cleanupversions.php:

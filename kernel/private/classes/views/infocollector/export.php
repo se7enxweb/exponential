@@ -7,7 +7,7 @@
  * Needs the same policy as the other infocollector views (infocollector/read). Cells that a spreadsheet would
  * read as a formula start with an apostrophe. At most EXPORT_LIMIT collections, newest first. The export is
  * recorded in the audit as data.export.csv with its row count, never the values.
- * User guide: doc/en/us/guides/collected-information.md
+ * User guide: doc/eng-us/guides/collected-information.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -79,7 +79,7 @@ class Export extends \Exponential\Runnable\ModuleView
         }
         fclose( $out );
 
-        // Audit (doc/en/us/bc/6.0/audit.md, data.export.csv): what left the system, never the values
+        // Audit (doc/eng-us/bc/6.0/audit.md, data.export.csv): what left the system, never the values
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'data.export.csv', array( 'object' => \expAuditHook::object( $objectID ), 'verb' => 'export',
                 'after' => array( 'object' => $objectID, 'rows' => $rows, 'columns' => count( $columns ), 'file' => (string)$fileName,

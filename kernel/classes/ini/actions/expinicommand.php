@@ -5,7 +5,7 @@
  * The exp:ini command without its script: splitting the command line, the help texts, finding the action in
  * the registry, running it with an expIniCommandContext and turning what happened into an exit code and
  * (with --json) one JSON object. Exponential\Command\Kernel\Ini (bin/php/ini.php) is the script around it;
- * tests call dispatch() directly. Guide: doc/en/us/bc/6.0/console-exp-ini.md.
+ * tests call dispatch() directly. Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -289,7 +289,7 @@ class expIniCommand
         if ( $aliases )
             $text .= "\nAlias: " . implode( ', ', $aliases ) . "\n";
         $text .= "\nOptions: --dry-run --json --show-secrets --allow-default --no-clear-cache --no-backup --no-create --root=<dir>\n"
-               . 'Exit codes: 0 done, 1 usage error, 2 not found, 3 refused, 4 write failed. Guide: doc/en/us/bc/6.0/console-exp-ini.md';
+               . 'Exit codes: 0 done, 1 usage error, 2 not found, 3 refused, 4 write failed. Guide: doc/eng-us/bc/6.0/console-exp-ini.md';
         return $text;
     }
 
@@ -356,7 +356,7 @@ class expIniCommand
                . "  exp:ini move-all siteaccess:admin extension:mysite:siteaccess:admin --dry-run\n"
                . "  exp:ini help <action>\n"
                . "\nExtending: an extension adds an action with Actions[<name>]=<class> and a scope provider with\n"
-               . "ScopeProviders[]=<class> in extension/<ext>/settings/ini.ini.append.php. Guide: doc/en/us/bc/6.0/console-exp-ini.md";
+               . "ScopeProviders[]=<class> in extension/<ext>/settings/ini.ini.append.php. Guide: doc/eng-us/bc/6.0/console-exp-ini.md";
         return $text;
     }
 }

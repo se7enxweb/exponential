@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/ezcsvimport.php, moved into a class (#207 stage 1). The file bin/php/ezcsvimport.php is one call to it.
  * @description Import content objects of a class below a node from a CSV file (--class, --creator)
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/ezcsvimport.php:
@@ -148,7 +148,7 @@ class Ezcsvimport extends \Exponential\Runnable\Command
 
         fclose( $fp );
 
-        // Audit (doc/en/us/bc/6.0/audit.md, data.import.csv)
+        // Audit (doc/eng-us/bc/6.0/audit.md, data.import.csv)
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'data.import.csv', array( 'object' => array( 'type' => 'file', 'id' => basename( (string)$inputFileName ),
                                                                               'sha256' => is_file( $inputFileName ) ? hash_file( 'sha256', $inputFileName ) : null ),

@@ -5494,8 +5494,8 @@
         <translation>أما نصوص واجهة الإدارة والقوالب (الأزرار، القوائم) فتأتي من ملفات الترجمة (.ts) وتتبع إعداد Locale للـ siteaccess. يمكن لموقع أن يعرض محتوى ألمانيًا بواجهة إنجليزية والعكس.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>إضافة لغة هنا لا تترجم أي شيء ولا تغير أي وصول موقع: ترجم المحتوى في المحرر، وأدرج اللغة في SiteLanguageList حيث يجب عرضها. دليل المستخدم هو doc/en/us/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>إضافة لغة هنا لا تترجم أي شيء ولا تغير أي وصول موقع: ترجم المحتوى في المحرر، وأدرج اللغة في SiteLanguageList حيث يجب عرضها. دليل المستخدم هو doc/eng-us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24020,8 +24020,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>شغّل ملف التعريف لترى عدد العبارات التي ينفذها كل طلب، وكم منها تكرارات مطابقة تمامًا، وما الذي ستوفره ذاكرة التخزين المؤقت للاستعلامات.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>يحسب ملف التعريف العبارات التي وصلت إلى قاعدة البيانات: عند تشغيل ذاكرة التخزين المؤقت للاستعلامات، لا تكون الإجابة المخزنة مؤقتًا فيه. &quot;توفير الذاكرة لكل طلب&quot; هو ما سيوفره وضع request، و&quot;توفير ذاكرة التخزين المؤقت المشتركة&quot; ما سيوفره وضع shared (نحو 15 µs لكل إجابة). العدّادات لكل خادم، إذ لكل خادم APCu الخاص به. السجل هو var/tmp/sql_profile.log؛ راجع doc/en/us/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>يحسب ملف التعريف العبارات التي وصلت إلى قاعدة البيانات: عند تشغيل ذاكرة التخزين المؤقت للاستعلامات، لا تكون الإجابة المخزنة مؤقتًا فيه. &quot;توفير الذاكرة لكل طلب&quot; هو ما سيوفره وضع request، و&quot;توفير ذاكرة التخزين المؤقت المشتركة&quot; ما سيوفره وضع shared (نحو 15 µs لكل إجابة). العدّادات لكل خادم، إذ لكل خادم APCu الخاص به. السجل هو var/tmp/sql_profile.log؛ راجع doc/eng-us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25372,8 +25372,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>إعدادات site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>يتبع النوع site.ini [SiteAccessSettings] SiteAccessType عندما يعيّنه الـ siteaccess، وإلا فتصاميمه وRequireUserLogin. الدليل: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>يتبع النوع site.ini [SiteAccessSettings] SiteAccessType عندما يعيّنه الـ siteaccess، وإلا فتصاميمه وRequireUserLogin. الدليل: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32039,8 +32039,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>كتل إعدادات يسجّل كل إدخال فيها تنفيذًا: أعمدة جدول العناصر الفرعية (subitemscolumns.ini [Column_&lt;key&gt;] Class= أو Handler=&lt;class&gt;::&lt;method&gt; أو Template=)، وأنواع مهام المحتوى (content.ini [ContentJobSettings] JobTypes[])، وإجراءات exp:ini وموفّرو نطاقاته (ini.ini [IniCommandSettings]) ودوال خادم ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=)، مع كل خدمة بعيدة تعلنها فئة دوال خادم ترث expServiceBase (خاصيتها الساكنة $services، وتُستدعى كـ ezjscore/call/&lt;name&gt;::&lt;service&gt;؛ تُضاف كل منها إلى المجموع، والخدمة المعلنة التي تنقصها دالتها معطّلة). الإدخال الذي يسمّي فئة هو أيضًا من الإعدادات التي تسمّي فئة ويُعدّ هناك؛ وتُضاف البقية إلى المجموع هنا. الإدخال الذي تنقصه فئته أو دالته أو قالبه، أو الذي لا ترث فئته ما يطلبه السجل، يظهر معطّلًا. أعمدة العناصر الفرعية المدمجة، التي ترسمها القائمة بنفسها، ليست نقاطًا ولا تُسرد.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>تُعلن سجلات إضافية في rad.ini، من نواة النظام ومن كل امتداد مفعّل في ملفه rad.ini.append.php: مستمعو الأحداث، وموفّرو الذكاء الاصطناعي وأدواته وسلاسله، وأدوات MCP، وأنواع مهام قائمة الانتظار وغيرها. يقول كل منها أيّ كتل ini، أو أيّ قائمة فئات، تحمل إدخالاته وما يجب أن يكون عليه كل إدخال؛ والسجل المعلن مع InTotal=disabled يشير إلى نقاط معدودة في مكان آخر ويُفحص دون أن يُضاف. الدليل: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>تُعلن سجلات إضافية في rad.ini، من نواة النظام ومن كل امتداد مفعّل في ملفه rad.ini.append.php: مستمعو الأحداث، وموفّرو الذكاء الاصطناعي وأدواته وسلاسله، وأدوات MCP، وأنواع مهام قائمة الانتظار وغيرها. يقول كل منها أيّ كتل ini، أو أيّ قائمة فئات، تحمل إدخالاته وما يجب أن يكون عليه كل إدخال؛ والسجل المعلن مع InTotal=disabled يشير إلى نقاط معدودة في مكان آخر ويُفحص دون أن يُضاف. الدليل: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38755,8 +38755,8 @@ your account.</source>
         <translation>استبدلت Exponential Layouts ذلك للمواقع الجديدة: يحتوي التخطيط على مناطق وكتل، والقائمة إحدى الكتل، وتختار قاعدة التخطيط لكل صفحة. الـ siteaccess المبني بهذه الطريقة لا يقرأ هذه الإعدادات أبدًا.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>تبقى الصفحة للمواقع التي لا تزال تستخدم تصميمًا كلاسيكيًا. تغيير إعداد هنا لوصول موقع مبني بـ Layouts غير ضار لكن لا أثر له. يشرح الدليل doc/en/us/guides/classic-menu-settings.md الطريقتين.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>تبقى الصفحة للمواقع التي لا تزال تستخدم تصميمًا كلاسيكيًا. تغيير إعداد هنا لوصول موقع مبني بـ Layouts غير ضار لكن لا أثر له. يشرح الدليل doc/eng-us/guides/classic-menu-settings.md الطريقتين.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -48791,8 +48791,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>كل إعداد في هذا التثبيت قيمته فئة، أو يقول اسمه إنه يأخذ فئة. غيّر أحدها فيجيب شيء آخر بدلًا منه.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>تُعلن سجلات إضافية في rad.ini، من نواة النظام ومن كل امتداد مفعّل في ملفه rad.ini.append.php: مستمعو الأحداث، وموفّرو الذكاء الاصطناعي وأدواته وسلاسله، وأدوات MCP، وأنواع مهام قائمة الانتظار وغيرها. يقول كل منها أيّ كتل ini، أو أيّ قائمة فئات، تحمل إدخالاته وما يجب أن يكون عليه كل إدخال؛ والسجل المعلن مع InTotal=disabled يشير إلى نقاط معدودة في مكان آخر ويُفحص دون أن يُضاف. الدليل: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>تُعلن سجلات إضافية في rad.ini، من نواة النظام ومن كل امتداد مفعّل في ملفه rad.ini.append.php: مستمعو الأحداث، وموفّرو الذكاء الاصطناعي وأدواته وسلاسله، وأدوات MCP، وأنواع مهام قائمة الانتظار وغيرها. يقول كل منها أيّ كتل ini، أو أيّ قائمة فئات، تحمل إدخالاته وما يجب أن يكون عليه كل إدخال؛ والسجل المعلن مع InTotal=disabled يشير إلى نقاط معدودة في مكان آخر ويُفحص دون أن يُضاف. الدليل: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

@@ -3160,7 +3160,7 @@ class expVelocity
     {
         $start = microtime( true );
         $result = $this->restartUnaudited();
-        // Audit (doc/en/us/bc/6.0/audit.md, system.velocity.deploy, verb restart)
+        // Audit (doc/eng-us/bc/6.0/audit.md, system.velocity.deploy, verb restart)
         if ( class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'system.velocity.deploy', function () use ( $result, $start ) {
                 $ok = is_array( $result ) && !empty( $result['ok'] );

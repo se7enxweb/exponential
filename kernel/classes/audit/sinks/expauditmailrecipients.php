@@ -1,6 +1,6 @@
 <?php
 /**
- * Who gets the audit's alert mail (doc/en/us/bc/6.0/audit.md, "E-mail"; owner decision 2026-10-02).
+ * Who gets the audit's alert mail (doc/eng-us/bc/6.0/audit.md, "E-mail"; owner decision 2026-10-02).
  *
  * Recipients are named in the settings only, never taken from event data. A recipient is one of:
  *

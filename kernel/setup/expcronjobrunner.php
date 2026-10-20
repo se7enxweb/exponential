@@ -1087,7 +1087,7 @@ class expCronjobRunner
      *
      * The installation decides first: cronjob.ini [ScriptDocumentation] Link[<script>], by the script's file name
      * (none leaves the script without a link, and so does a value that is no link). Otherwise the @link tag of the script's header, or of its class file
-     * (#207), the phpDoc tag for a URL. A path such as doc/en/us/guides/cronjobs.md is put after DocumentationBase. Only
+     * (#207), the phpDoc tag for a URL. A path such as doc/eng-us/guides/cronjobs.md is put after DocumentationBase. Only
      * http and https come out; anything else gives no link.
      *
      * @param string $name the script as its part names it.

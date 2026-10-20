@@ -3,7 +3,7 @@
    (infocollector/collectionlist, remove_type 'collections'). Says what goes and what stays, then posts
    ConfirmRemoveButton; Cancel posts CancelButton, which removes nothing. Field and button names are unchanged.
 
-   The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/collected-information.md *}
+   The same file is in design/admin and design/admin4. Guide: doc/eng-us/guides/collected-information.md *}
 
 {def $objects = first_set( $remove_objects, array() )}
 

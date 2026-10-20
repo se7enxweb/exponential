@@ -1,6 +1,6 @@
 <?php
 /**
- * Searches the audit index (doc/en/us/bc/6.0/audit.md, "The console", URL parameters): the console's filters turned
+ * Searches the audit index (doc/eng-us/bc/6.0/audit.md, "The console", URL parameters): the console's filters turned
  * into one WHERE clause that every engine understands, full-text search the way the engine has it (FTS5,
  * MySQL FULLTEXT, PostgreSQL tsvector, Oracle Text, else LIKE on the lower-cased search text), counts, pages and
  * the groupings of the charts view.
@@ -209,7 +209,7 @@ class expAuditQuery
             if ( isset( $map[$old] ) )
                 $names[] = $map[$old];
             $names[] = 'system.legacy.' . str_replace( '-', '_', strtolower( $old ) );
-            // one old name, several new ones (see doc/en/us/bc/6.0/audit.md "Compatibility mapping")
+            // one old name, several new ones (see doc/eng-us/bc/6.0/audit.md "Compatibility mapping")
             if ( $old === 'content-delete' )
                 $names = array_merge( $names, array( 'content.object.remove', 'content.object.purge' ) );
             if ( $old === 'content-hide' )

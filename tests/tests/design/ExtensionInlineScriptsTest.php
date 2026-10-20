@@ -1,7 +1,7 @@
 <?php
 /**
  * The extensions whose templates were moved off inline script code stay off it, so the administration's Content
- * Security Policy (script-src 'self', doc/en/us/features/6.0/content-security-policy.md) can be enforced with them installed.
+ * Security Policy (script-src 'self', doc/eng-us/features/6.0/content-security-policy.md) can be enforced with them installed.
  * Checked on the files alone; no database.
  *
  * - EXT-01: every template of a listed extension (all its designs: administration and site) carries no inline
@@ -145,7 +145,7 @@ class ExtensionInlineScriptsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $unexpected,
             'Inline script code in an extension template: move the script into a file (ezscript), the handler to a '
             . 'listener in that file with data-* attributes, the javascript: URL to a link or button with a listener '
-            . '(doc/en/us/features/6.0/content-security-policy.md)' );
+            . '(doc/eng-us/features/6.0/content-security-policy.md)' );
         $this->assertSame( array(), $fewer );
     }
 

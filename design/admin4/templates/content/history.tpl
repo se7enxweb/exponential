@@ -14,7 +14,7 @@
    DoNotEditAfterCopy, DiffButton, FromVersion, ToVersion, Language, BackButton, RedirectURI); CompareButton[n] is new.
    Everything works without javascript; the script only adds Select all, the count of ticked versions and the
    switch between the views of the differences.
-   Guide: doc/en/us/guides/content-history.md *}
+   Guide: doc/eng-us/guides/content-history.md *}
 
 {def $rows = first_set( $history_rows, array() )
      $overview = first_set( $history_overview, false() )

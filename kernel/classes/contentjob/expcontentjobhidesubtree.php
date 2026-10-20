@@ -65,7 +65,7 @@ class expContentJobHideSubtree extends expContentJobBatchType
         $db = eZDB::instance();
         $nodePath = $db->escapeString( $node->attribute( 'path_string' ) );
         $time = time();
-        // Who hides or reveals which subtree (doc/en/us/bc/6.0/audit.md, content.node.hide / content.node.reveal); the
+        // Who hides or reveals which subtree (doc/eng-us/bc/6.0/audit.md, content.node.hide / content.node.reveal); the
         // record is a child of the job's run (expContentJobWorker), with the job id
         if ( class_exists( 'expAuditHook' ) )
         {

@@ -1,6 +1,6 @@
 <?php
 /**
- * The keys of the log viewer's logs and the logs configured by key (doc/en/us/features/6.0/log-viewer.md, "Permalinks" and
+ * The keys of the log viewer's logs and the logs configured by key (doc/eng-us/features/6.0/log-viewer.md, "Permalinks" and
  * "Web server logs"), on a temporary root.
  *
  *  LV-80  keyFor(): var/log/<name>.log is <name>, var/<site>/log/<name>.log is <site>-<name>, another directory is the

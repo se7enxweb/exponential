@@ -1,6 +1,6 @@
 <?php
 /**
- * What the views of the audit module share (doc/en/us/bc/6.0/audit.md, "The console: module audit"): the channels the
+ * What the views of the audit module share (doc/eng-us/bc/6.0/audit.md, "The console: module audit"): the channels the
  * current user may read (audit/read and its Channel limitation), the console filters from a URL and back, the
  * index brought up to date when a view opens, the rows of the index or of the files (when the index is off or not
  * there) in the form the templates show, the chain state per channel and the system.audit.read record.

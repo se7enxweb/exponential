@@ -2,7 +2,7 @@
  * The languages page (content/translations.tpl): before a removal, the user confirms which languages go and which
  * siteaccesses still list them. The texts are data-text-* attributes of #language-form.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     var form = document.getElementById( 'language-form' );

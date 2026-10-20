@@ -1,6 +1,6 @@
 <?php
 /**
- * A forked process and its parent's buffer; repeated record ids (doc/en/us/bc/6.0/audit.md, "Repeated records").
+ * A forked process and its parent's buffer; repeated record ids (doc/eng-us/bc/6.0/audit.md, "Repeated records").
  *
  *  AF-01 — a child forked with buffered records writes only its own; the parent writes its records once; every
  *          record id is in the channel once and the child's records carry a request id of their own

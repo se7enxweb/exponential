@@ -3,7 +3,7 @@
  * Exponential UI's expAjaxUploader on the .relation-upload-new buttons; the object just created is added to the
  * relation list. The texts are data-text-* attributes of the button.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     if (!window.Exp || !window.Exp.ready) { return; }

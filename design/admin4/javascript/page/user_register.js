@@ -1,7 +1,7 @@
 /*
  * admin4 user/register: focuses the first text field of the registration form and disables the OK and Cancel
  * buttons just after one of them is clicked (a second click does not send the form twice). A file of its own, so
- * the page runs under a Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * the page runs under a Content Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 jQuery(function( $ )//called on document.ready
 {

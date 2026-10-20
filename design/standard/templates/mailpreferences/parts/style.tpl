@@ -2,5 +2,5 @@
    page runs in admin4 (--a4-*) and plain defaults on a public site or the old admin. Included once by each page.
    No script is needed: every switch is a checkbox or a button in a form. *}
 {* The styles are stylesheets/mailpreferences.css: a file, not a <style> element (style-src 'self',
-   doc/en/us/features/6.0/content-security-policy.md). *}
+   doc/eng-us/features/6.0/content-security-policy.md). *}
 <link rel="stylesheet" type="text/css" href={'stylesheets/mailpreferences.css'|ezdesign} />

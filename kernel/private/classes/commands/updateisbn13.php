@@ -2,7 +2,7 @@
 /**
  * The code of bin/php/updateisbn13.php, moved into a class (#207 stage 1). The file bin/php/updateisbn13.php is one call to it.
  * @description Update the ISBN range data in the database from an XML file (--url is required)
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of bin/php/updateisbn13.php:

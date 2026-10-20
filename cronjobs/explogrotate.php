@@ -2,7 +2,7 @@
 /**
  * @description Logs: rotate the logs over their MaxSize, prune and compress their archives (off unless a part runs it)
  *
- * Log rotation cronjob part ([CronjobPart-logs]: php runcronjobs.php logs); doc/en/us/features/6.0/log-rotation.md
+ * Log rotation cronjob part ([CronjobPart-logs]: php runcronjobs.php logs); doc/eng-us/features/6.0/log-rotation.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

@@ -7,7 +7,7 @@
 
    The same file is in design/admin and design/admin4. This is an edit view, which admin4 draws without its main
    card; .exp-standalone gives the page its own. Works without javascript; the script fills in the identifier of a
-   new section from its name until the identifier is typed in. Guide: doc/en/us/guides/sections.md *}
+   new section from its name until the identifier is typed in. Guide: doc/eng-us/guides/sections.md *}
 
 {def $is_new = first_set( $section_is_new, eq( $section.id, 0 ) )
      $usage = first_set( $section_usage, false() )

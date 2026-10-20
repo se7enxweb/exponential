@@ -3,7 +3,7 @@
 // Definition of Session_GC Cronjob
 /**
  * @description Garbage-collect expired user sessions from the session store
- * @link doc/en/us/guides/sessions.md
+ * @link doc/eng-us/guides/sessions.md
  *
  * File containing the session_gc.php cronjob
  *

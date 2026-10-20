@@ -4,7 +4,7 @@
  *
  * exp:ini get: the value in effect (every file merged in load order, for the current siteaccess or the one
  * of -s) or, with a scope, the value that scope's file alone gives. Secrets are masked unless --show-secrets.
- * Guide: doc/en/us/bc/6.0/console-exp-ini.md.
+ * Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

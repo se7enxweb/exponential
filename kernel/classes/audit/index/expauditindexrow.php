@@ -1,6 +1,6 @@
 <?php
 /**
- * One audit record as a row of expaudit_event (doc/en/us/bc/6.0/audit.md, "Tables"): the columns the console filters
+ * One audit record as a row of expaudit_event (doc/eng-us/bc/6.0/audit.md, "Tables"): the columns the console filters
  * on, the record itself (as written, so the privacy rules of the writer apply) and the lower-cased search text.
  * Also matches a row against console filters in PHP, for the records of the live files that are not indexed yet.
  *

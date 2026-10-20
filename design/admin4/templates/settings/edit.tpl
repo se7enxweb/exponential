@@ -8,7 +8,7 @@
 
    The same file is in design/admin and design/admin4. This is an edit view, which admin4 draws without its main
    card; .a4-standalone gives the page its own. Works without javascript (the type is changed with its own button).
-   Guide: doc/en/us/guides/settings-page.md *}
+   Guide: doc/eng-us/guides/settings-page.md *}
 
 {def $secret = first_set( $is_secret, false() )
      $steps = first_set( $chain_steps, array() )

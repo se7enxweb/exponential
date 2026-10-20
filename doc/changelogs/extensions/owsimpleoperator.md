@@ -2,7 +2,7 @@
 
 Read this page before you install or update `owsimpleoperator`, or to find out which release brought a change.
 
-What each release of `owsimpleoperator` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/owsimpleoperator.md); the story is in the [chronicle](../../en/us/history/extensions/owsimpleoperator.md).
+What each release of `owsimpleoperator` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../eng-us/features/6.0/extensions/owsimpleoperator.md); the story is in the [chronicle](../../eng-us/history/extensions/owsimpleoperator.md).
 
 ## v1.2.5 (2026-09-30)
 
@@ -56,8 +56,8 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 ## Related pages
 
-- [Feature page](../../en/us/features/6.0/extensions/owsimpleoperator.md)
-- [Chronicle](../../en/us/history/extensions/owsimpleoperator.md)
-- [Change ledger](../../en/us/history/ledger/owsimpleoperator.md)
-- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
-- Months: [2024-01](../../en/us/history/extensions/months/2024-01.md), [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-09](../../en/us/history/extensions/months/2026-09.md)
+- [Feature page](../../eng-us/features/6.0/extensions/owsimpleoperator.md)
+- [Chronicle](../../eng-us/history/extensions/owsimpleoperator.md)
+- [Change ledger](../../eng-us/history/ledger/owsimpleoperator.md)
+- [Behaviour changes of the extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../eng-us/history/extensions/months/2024-01.md), [2026-03](../../eng-us/history/extensions/months/2026-03.md), [2026-09](../../eng-us/history/extensions/months/2026-09.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * expHelpSearch: the full-text search of the help system (doc/en/us/features/6.0/help-system.md, "Search").
+ * expHelpSearch: the full-text search of the help system (doc/eng-us/features/6.0/help-system.md, "Search").
  *
  * The index is built from the documents expHelpDocumentIndex lists and kept as a PHP file in the help cache
  * (var/<site>/cache/exphelp/search-<key>.php). OPcache keeps that file in shared memory, so a query costs a few
@@ -34,7 +34,7 @@
 class expHelpSearch
 {
     /** Version of the index file format; a change builds a new index. */
-    const FORMAT = 4;
+    const FORMAT = 5;
 
     const DEFAULT_LIMIT = 20;
     const MAX_LIMIT = 50;
@@ -574,10 +574,17 @@ class expHelpSearch
         return '/exphelp/viewer/' . implode( '/', array_map( 'rawurlencode', explode( '/', $id ) ) ) . ( $anchor !== '' ? '#' . rawurlencode( $anchor ) : '' );
     }
 
-    /** The address with the siteaccess prefix, for the client (outside a web request: unchanged). */
+    /**
+     * The address with the siteaccess prefix, for the client (outside a web request: unchanged).
+     *
+     * A web request is told by eZExecution::isWebRequest() (a request method and a Host header), not by
+     * eZSys::isShellExecution(): that one trusts php_sapi_name(), which is 'cli' in a PHP web server running in the
+     * CLI SAPI (Velocity, the built-in server), so every hit there kept its module-relative address
+     * (/exphelp/viewer/... instead of /admin/exphelp/viewer/...). Built per call from the current access path.
+     */
     protected static function absoluteUrl( $url )
     {
-        if ( class_exists( 'expHelpLinks' ) && class_exists( 'eZURI' ) && class_exists( 'eZSys' ) && !eZSys::isShellExecution() )
+        if ( class_exists( 'expHelpLinks' ) && class_exists( 'eZURI' ) && class_exists( 'eZExecution' ) && eZExecution::isWebRequest() )
             return expHelpLinks::absolute( $url );
         return $url;
     }
@@ -1228,7 +1235,7 @@ class expHelpSearch
         $lengths = array();
         $stems = array();
         // a document given without its file is taken to be in the default language's directory
-        $defaultDir = 'doc/' . ( class_exists( 'expHelpLanguage' ) ? expHelpLanguage::fromIni()->defaultDirectory() : 'en/us' ) . '/';
+        $defaultDir = 'doc/' . ( class_exists( 'expHelpLanguage' ) ? expHelpLanguage::fromIni()->defaultDirectory() : 'eng-us' ) . '/';
         foreach ( $documents as $key => $doc )
         {
             $key = (string)$key;

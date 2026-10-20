@@ -2,7 +2,7 @@
 
 Read this page before you install or update `bcgooglesitemaps`, or to find out which release brought a change.
 
-What each release of `bcgooglesitemaps` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/bcgooglesitemaps.md); the story is in the [chronicle](../../en/us/history/extensions/bcgooglesitemaps.md).
+What each release of `bcgooglesitemaps` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../eng-us/features/6.0/extensions/bcgooglesitemaps.md); the story is in the [chronicle](../../eng-us/history/extensions/bcgooglesitemaps.md).
 
 ## v1.1.6.4 (2026-10-02)
 
@@ -54,8 +54,8 @@ What each release of `bcgooglesitemaps` contains, assembled from its commits. Ea
 
 ## Related pages
 
-- [Feature page](../../en/us/features/6.0/extensions/bcgooglesitemaps.md)
-- [Chronicle](../../en/us/history/extensions/bcgooglesitemaps.md)
-- [Change ledger](../../en/us/history/ledger/bcgooglesitemaps.md)
-- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
-- Months: [2024-01](../../en/us/history/extensions/months/2024-01.md), [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-09](../../en/us/history/extensions/months/2026-09.md), [2026-10](../../en/us/history/extensions/months/2026-10.md)
+- [Feature page](../../eng-us/features/6.0/extensions/bcgooglesitemaps.md)
+- [Chronicle](../../eng-us/history/extensions/bcgooglesitemaps.md)
+- [Change ledger](../../eng-us/history/ledger/bcgooglesitemaps.md)
+- [Behaviour changes of the extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../eng-us/history/extensions/months/2024-01.md), [2026-03](../../eng-us/history/extensions/months/2026-03.md), [2026-09](../../eng-us/history/extensions/months/2026-09.md), [2026-10](../../eng-us/history/extensions/months/2026-10.md)

@@ -828,7 +828,7 @@ class expRADCatalogue
             'register' => ezpI18n::tr( 'design/admin/setup/rad', 'site.ini [ExtensionSettings] ActiveExtensions[] and ActiveAccessExtensions[], plus AdditionalExtensionDirectories[] when it lives outside extension/' ),
             'contract' => ezpI18n::tr( 'design/admin/setup/rad', 'No class: a directory laid out the way the kernel looks' ),
             'mechanism' => 'directory',
-            'source' => 'doc/en/us/bc/6.0/AdditionalExtensionDirectories.md',
+            'source' => 'doc/eng-us/bc/6.0/AdditionalExtensionDirectories.md',
             'tool'  => 'setup/settingsextension' ),
 
         'iconextension' => array(

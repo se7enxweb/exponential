@@ -43,7 +43,7 @@ class ezpRequestRuleKernel
             return null;
 
         // A rule that answers "not found" makes the request a 404: its one line is in 404.log (reason rule:<name>,
-        // doc/en/us/features/6.0/request-logs.md), not a notice as well
+        // doc/eng-us/features/6.0/request-logs.md), not a notice as well
         $ruleLine = "Request rule '{$result->rule}': " . $result->describe() . ' for ' . $context->get( 'typed_uri' );
         if ( $result->type !== ezpRequestRuleResult::NOT_FOUND || !class_exists( 'expRequestLog' )
              || !expRequestLog::reason( 'rule', (string)$result->rule ) )

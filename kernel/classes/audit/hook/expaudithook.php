@@ -1,6 +1,6 @@
 <?php
 /**
- * The kernel's audit call sites (doc/en/us/bc/6.0/audit.md, "The event catalogue", stage 3): one guarded way to record
+ * The kernel's audit call sites (doc/eng-us/bc/6.0/audit.md, "The event catalogue", stage 3): one guarded way to record
  * an event from a hook point, and the descriptions of the things events are about (node, object, user, role ...).
  *
  *   if ( class_exists( 'expAuditHook' ) )
@@ -31,7 +31,7 @@ class expAuditHook
     protected static $subtreeRoots = array();
 
     /**
-     * The verbs of the catalogue (doc/en/us/bc/6.0/audit.md, "Actor / verb / object") where they are not the name's
+     * The verbs of the catalogue (doc/eng-us/bc/6.0/audit.md, "Actor / verb / object") where they are not the name's
      * third rank, the record's default. A call site's own verb for a kernel name goes to after.action.
      *
      * @var array

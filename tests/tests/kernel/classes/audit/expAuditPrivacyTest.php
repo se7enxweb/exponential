@@ -1,6 +1,6 @@
 <?php
 /**
- * The privacy rules of audit records (doc/en/us/bc/6.0/audit.md, "Fields", acceptance test B5).
+ * The privacy rules of audit records (doc/eng-us/bc/6.0/audit.md, "Fields", acceptance test B5).
  *
  *  AP-01 — defaults: IPv4 to /24, IPv6 to /48, the session hashed (h: + 16 hex), the user agent shortened, the URL
  *          without query values, the login in full

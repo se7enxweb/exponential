@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/class/copy.php, moved into a class (#207 stage 1). The file kernel/class/copy.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/class/copy.php:
@@ -79,7 +79,7 @@ class Copy extends \Exponential\Runnable\ModuleView
         $classCopy->setAttribute( 'version', \eZContentClass::VERSION_STATUS_MODIFIED );
         $classCopy->store();
 
-        // Audit (doc/en/us/bc/6.0/audit.md, content.class.copy)
+        // Audit (doc/eng-us/bc/6.0/audit.md, content.class.copy)
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'content.class.copy', function () use ( $class, $classCopy ) {
                 return array( 'object' => \expAuditHook::contentClass( $class ),

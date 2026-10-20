@@ -1,7 +1,7 @@
 /*
  * admin4 setup/systemupgrade: the filter of the findings and the busy state of the check.
  * The texts are data-text-* attributes of #systemupgrade-script. A file of its own, so the page runs under a Content
- * Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 var expUpgradeText = ( function ( el ) {
     return {

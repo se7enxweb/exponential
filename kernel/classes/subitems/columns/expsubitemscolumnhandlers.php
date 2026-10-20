@@ -6,7 +6,7 @@
  * A handler is the quickest kind of custom column: one function that gets the row's node, the
  * column's settings block and the column object, and returns the value (null, a scalar or a list
  * of scalars). The default html() and text() of the column then make the cell and the CSV text.
- * Guide: doc/en/us/bc/6.0/subitems-table-options.md ("Adding a column in 3 minutes").
+ * Guide: doc/eng-us/bc/6.0/subitems-table-options.md ("Adding a column in 3 minutes").
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

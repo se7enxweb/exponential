@@ -2,7 +2,7 @@
 
 Read this page before you install or update `legacyBridge`, or to find out which release brought a change.
 
-Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../en/us/history/ecosystem/legacyBridge.md).
+Releases made by the se7enxweb team, newest first. Each release lists the team's changes since the previous tag, grouped as Added, Updated, Removed and Renamed. Upstream history carried by the fork is not repeated here; it is in the [repository page](../../eng-us/history/ecosystem/legacyBridge.md).
 
 ## v4.0.0.3 (2026-04-17)
 
@@ -234,6 +234,6 @@ Releases made by the se7enxweb team, newest first. Each release lists the team's
 
 ## Related pages
 
-- [Legacy bridge](../../en/us/features/6.0/legacy-bridge.md)
-- [package map](../../en/us/specifications/6.0/platform-package-map.md)
-- [upgrade notes](../../en/us/bc/6.0/platform-package-forks-and-command-renames.md)
+- [Legacy bridge](../../eng-us/features/6.0/legacy-bridge.md)
+- [package map](../../eng-us/specifications/6.0/platform-package-map.md)
+- [upgrade notes](../../eng-us/bc/6.0/platform-package-forks-and-command-renames.md)

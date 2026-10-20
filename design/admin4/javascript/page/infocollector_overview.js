@@ -1,7 +1,7 @@
 /*
  * admin4 infocollector/overview: shows the "select all" checkbox and keeps it in step with the rows.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     var list = document.getElementById('info-list'), all = document.getElementById('info-select-all');

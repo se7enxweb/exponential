@@ -3,7 +3,7 @@
    menu.ini [Leftmenu_setup], as admin4 draws it (design/admin4/templates/setup/setupmenu.tpl), inside this
    design's page frame. The links, names and access checks are those of the left menu (parts/setup/menu.tpl,
    parts/ini_menu.tpl with menu_layout='tiles'); the tiles are the shared components (parts/ini_menu_tiles.tpl,
-   stylesheets/modules/setup.css). Guide: doc/en/us/features/6.0/admin4-design.md ("Setup overview") *}
+   stylesheets/modules/setup.css). Guide: doc/eng-us/features/6.0/admin4-design.md ("Setup overview") *}
 {def $setup_menu_layout = 'tiles'}
 
 <div class="context-block a4-page a4-setup-overview">

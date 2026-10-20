@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit index and console (doc/en/us/bc/6.0/audit.md, "The index", "The console", acceptance tests D1, D2, A3).
+ * The audit index and console (doc/eng-us/bc/6.0/audit.md, "The index", "The console", acceptance tests D1, D2, A3).
  *
  * Live-database tests: the kernel is started once on the admin siteaccess against the installation's own database
  * (no test database). The records are written by the audit into a throwaway directory under var/tmp/audit-tests/

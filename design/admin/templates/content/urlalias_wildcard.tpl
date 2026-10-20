@@ -7,7 +7,7 @@
 
    The same file is in design/admin and design/admin4. The search, the kind and the tester come from the view
    (wildcard_search, wildcard_kind, wildcard_test_result); without them (an older view class) the page shows the
-   list and the form as before. Everything works without javascript. Guide: doc/en/us/guides/urls-and-aliases.md *}
+   list and the form as before. Everything works without javascript. Guide: doc/eng-us/guides/urls-and-aliases.md *}
 
 {def $total = first_set( $wildcards_total_count, $wildcards_count )
      $search = first_set( $wildcard_search, '' )

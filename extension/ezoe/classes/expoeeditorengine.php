@@ -5,7 +5,7 @@
  * Engines are registered in ezoe.ini [EditorSettings] Engines[<identifier>]=<class>; an extension adds one with a
  * class implementing this interface and one ini line, no ezoe code changes. expOEEditor resolves which engine an
  * editor gets (user preference, then siteaccess, then the global default) and falls back to tinymce3 when the
- * choice is unknown or not available. Guide: doc/en/us/bc/6.0/ezoe-tinymce8.md
+ * choice is unknown or not available. Guide: doc/eng-us/bc/6.0/ezoe-tinymce8.md
  *
  * Optional: version() and description() (both returning a string) are shown on the page ezoe/engine when an
  * engine has them; expOEEditorEngineBase answers both from [Engine_<identifier>] Version and Description.

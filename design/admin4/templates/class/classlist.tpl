@@ -10,7 +10,7 @@
    RemoveGroupButton and DeleteIDArray[] to class/grouplist), and every template variable is still used (group,
    group_modifier, groupclasses, class_count, limit, view_parameters, GroupID, module). Copy posts the form to
    class/copy/<id>, so a copy is never made by following a link. The same file is in design/admin and design/admin4.
-   Guide: doc/en/us/guides/class-groups.md *}
+   Guide: doc/eng-us/guides/class-groups.md *}
 
 {def $languages = fetch( 'content', 'prioritized_languages' )
      $objects = 0

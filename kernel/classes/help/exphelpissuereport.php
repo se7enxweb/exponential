@@ -1,6 +1,6 @@
 <?php
 /**
- * Reporting an error (exphelp/report, doc/en/us/features/6.0/help-system.md "Reporting an error"): where to report it
+ * Reporting an error (exphelp/report, doc/eng-us/features/6.0/help-system.md "Reporting an error"): where to report it
  * (the trackers of [IssueTrackers], the repository of an extension, the community channels), prefilled GitHub
  * new-issue URLs, and a safe summary of the installation to paste into a report.
  *

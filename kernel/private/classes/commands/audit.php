@@ -2,7 +2,7 @@
 /**
  * The audit command, exp:audit: the records of the audit channels and their hash chains.
  * @description Audit log: tail, show one event, verify the hash chains, list the channels
- * Guide: doc/en/us/bc/6.0/audit.md ("The command: exp:audit", "Stage 2 — built")
+ * Guide: doc/eng-us/bc/6.0/audit.md ("The command: exp:audit", "Stage 2 — built")
  *
  *   exp:audit status                                   audit on/off, channels, today's records, chain state
  *   exp:audit channels                                 the channels: routing, files, sizes, chain head

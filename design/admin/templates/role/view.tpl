@@ -12,7 +12,7 @@
    AssignRoleLimitedButton, AssignRoleType, RemoveRoleAssignmentButton, IDArray[], AssignmentFilter,
    AssignmentFilterButton, AssignmentFilterClearButton) and every template variable is still set. Removing
    assignments asks first, in place. The same file is in design/admin and design/admin4.
-   Guide: doc/en/us/guides/roles-and-policies.md *}
+   Guide: doc/eng-us/guides/roles-and-policies.md *}
 
 {def $sentences = first_set( $policy_sentences, hash() )
      $summary = first_set( $role_summary, false() )

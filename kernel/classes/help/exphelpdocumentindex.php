@@ -2,20 +2,20 @@
 /**
  * File containing the expHelpDocumentIndex class.
  *
- * The index of the help pages (doc/en/us/features/6.0/help-system.md, "The index"): one entry per document of the
+ * The index of the help pages (doc/eng-us/features/6.0/help-system.md, "The index"): one entry per document of the
  * allowlist (expHelpAllowlist: git-tracked files below doc/ and opted-in extension doc/ directories), with its title,
  * headings and their anchors, summary, audiences, category, type, order and keywords. The views, the search and the
  * console command exp:help read it; nothing reads a file of doc/ without asking it first.
  *
- * A page is named by its id: its path below the default language's directory doc/en/us/ ("guides/caches.md"), the same
+ * A page is named by its id: its path below the default language's directory doc/eng-us/ ("guides/caches.md"), the same
  * in every language (expHelpLanguage); a file below doc/ that is in no language directory (doc/changelogs/) keeps its
  * path below doc/ ("changelogs/6.0/6.0.15.md"); "ext/<extension>/<path below its doc/>" names an extension's page.
- * The entry's 'path' is the file it was read from, relative to the installation root ("doc/en/us/guides/caches.md",
- * or "doc/de/anleitungen/caches.md" in German).
+ * The entry's 'path' is the file it was read from, relative to the installation root ("doc/eng-us/guides/caches.md",
+ * or "doc/ger-de/anleitungen/caches.md" in German).
  *
  * An index is built for one reader language ($index->language()): each page comes from that language's directory
  * when it has the page, else from the default language (the entry's 'fallback' is then true). The index of a
- * language other than the default is cached in its own directory below the cache directory (lang-<language>/), so
+ * language other than the default is cached in its own directory below the cache directory (lang-<directory>/: lang-ger-de/), so
  * each language has its own index, search index, rendered pages and navigation.
  *
  *   $index = expHelpDocumentIndex::instance();
@@ -42,8 +42,8 @@
 
 class expHelpDocumentIndex
 {
-    /** Bumped when the entries change shape, so an old cache file is not read (3: language, fallback) */
-    const FORMAT = 3;
+    /** Bumped when the entries change shape, so an old cache file is not read (3: language, fallback; 4: the language directories eng-us, ger-de) */
+    const FORMAT = 4;
 
     /** The longest summary, in characters */
     const SUMMARY_LENGTH = 220;
@@ -73,7 +73,7 @@ class expHelpDocumentIndex
     /** @var expHelpLanguage the languages of the documentation */
     protected $languages;
 
-    /** @var string the reader language this index is built for (a directory below doc/: en/us, de) */
+    /** @var string the reader language this index is built for (a directory below doc/: eng-us, ger-de) */
     protected $language;
 
     /** @var string|null the cache directory; null: no cache */
@@ -251,7 +251,7 @@ class expHelpDocumentIndex
     }
 
     /**
-     * @return string the reader language this index is built for (en/us, de)
+     * @return string the reader language this index is built for (eng-us, ger-de)
      */
     public function language()
     {
@@ -270,7 +270,7 @@ class expHelpDocumentIndex
 
     /**
      * The path the settings' path rules ([AudienceSettings], [CategorySettings], [TitleSettings]) are matched
-     * against: for a translated page the path of the page it translates (doc/en/us/<id>), so one rule serves every
+     * against: for a translated page the path of the page it translates (doc/eng-us/<id>), so one rule serves every
      * language; any other path as it is.
      *
      * @param string $path relative to the installation root
@@ -285,8 +285,8 @@ class expHelpDocumentIndex
     }
 
     /**
-     * The id of a path relative to the installation root: doc/en/us/guides/x.md -> guides/x.md, a translation
-     * doc/de/anleitungen/x.md -> guides/x.md (its path map) or doc/de/guides/x.md -> guides/x.md, a file in no
+     * The id of a path relative to the installation root: doc/eng-us/guides/x.md -> guides/x.md, a translation
+     * doc/ger-de/anleitungen/x.md -> guides/x.md (its path map) or doc/ger-de/guides/x.md -> guides/x.md, a file in no
      * language directory doc/changelogs/x.md -> changelogs/x.md, extension/foo/doc/x.md -> ext/foo/x.md, a top file of
      * an extension extension/foo/README.md -> ext/foo/README.md; other configured roots keep their path. null for a
      * path outside the roots.
@@ -341,7 +341,7 @@ class expHelpDocumentIndex
         if ( $id === null )
             return null;
         $roots = $this->allowlist->roots();
-        // project/<path>: the project file, when that path is one by its name (else a page of doc/en/us/project/)
+        // project/<path>: the project file, when that path is one by its name (else a page of doc/eng-us/project/)
         $projectPath = class_exists( 'expHelpProjectFiles' ) ? expHelpProjectFiles::pathOfId( $id ) : null;
         if ( $projectPath !== null && $this->allowlist->isProjectPath( $projectPath ) )
             return $projectPath;

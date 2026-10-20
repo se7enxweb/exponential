@@ -11,7 +11,7 @@
  * leaves out every version the user may not see: their own are theirs, one waiting for their approval only when
  * content/versionread allows it.
  *
- * Guide: doc/en/us/guides/drafts-and-pending.md
+ * Guide: doc/eng-us/guides/drafts-and-pending.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

@@ -17,7 +17,7 @@
  * its answer is kept, so a fact nobody asks for costs nothing: a rule about the
  * URI never loads the node.
  *
- * The kernel fills in the facts listed in doc/en/us/bc/6.0/view_full_security.md
+ * The kernel fills in the facts listed in doc/eng-us/bc/6.0/view_full_security.md
  * (ezpRequestRuleKernel::context()); an extension adds its own with an
  * ezpRequestFactProvider, or define() at any point before the rules run.
  *

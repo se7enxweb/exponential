@@ -4,7 +4,7 @@
    access (Limitation: step three). A module without functions, or every module, cannot be limited this way; the page
    says what to do instead. Step1 goes back to step one, Cancel to the editor. Every name is the one the view has
    always read (CurrentModule, ModuleFunction, AddFunction, Limitation, Step1). The same file is in design/admin and
-   design/admin4. Guide: doc/en/us/guides/roles-and-policies.md *}
+   design/admin4. Guide: doc/eng-us/guides/roles-and-policies.md *}
 
 <form method="post" action={concat( $module.functions.edit.uri, '/', $role.id, '/' )|ezurl} class="a4-page a4-standalone">
 <div class="context-block">

@@ -1,6 +1,6 @@
 <?php
 /**
- * The privacy rules of audit records (doc/en/us/bc/6.0/audit.md, "Fields", "Never recorded"; settings
+ * The privacy rules of audit records (doc/eng-us/bc/6.0/audit.md, "Fields", "Never recorded"; settings
  * [AuditPrivacySettings] and [AuditRecordSettings] BeforeAfter, MaxValueLength).
  *
  * Per field: full (as is), truncate (a shorter form per field), hash ("h:" + the first 16 hex digits of

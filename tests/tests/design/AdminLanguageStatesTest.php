@@ -4,7 +4,7 @@
  * the main language filled, a translation outlined, a missing one dashed (a "Translate into" link for who may create
  * it), an outdated one with a mark. expContentLanguageStates works the states out; design:parts/
  * language_state_badge.tpl draws them in the node view and its Translations tab, the sub-items script in the
- * Translations column. doc/en/us/features/6.0/admin4-design.md.
+ * Translations column. doc/eng-us/features/6.0/admin4-design.md.
  *
  *  LS-01 - states(): main, present and missing in the site's order, the object's other languages after them;
  *          can_translate only for a missing language the user may create

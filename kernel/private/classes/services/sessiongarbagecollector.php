@@ -12,7 +12,7 @@ namespace Exponential\Service;
 /**
  * Removing expired sessions: one service for the sessions view (setup/session, "Remove timed out sessions"),
  * the command (bin/php/ezsessiongc.php) and the cronjob part (cronjobs/session_gc.php).
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  *   SessionGarbageCollector::collect()         expired sessions and the baskets they leave (view, command, cronjob part)
  *   SessionGarbageCollector::collect( false )  expired sessions only

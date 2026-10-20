@@ -2,7 +2,7 @@
 /**
  * Every locale file in share/locale: it parses with eZINI, eZLocale loads it, it has the keys eZLocale reads, its
  * names are valid UTF-8, and dates, times, numbers and currency format through it. The files generated from CLDR for
- * 6.0.15 are also checked against the conventions in doc/en/us/languages.md (code form, HTTP code, utf-8, the license
+ * 6.0.15 are also checked against the conventions in doc/eng-us/languages.md (code form, HTTP code, utf-8, the license
  * note, the right-to-left note). Every right-to-left file, and no other, has [LanguageSettings] TextDirection=rtl;
  * no file holds double-encoded UTF-8 (the old Hebrew file did).
  *

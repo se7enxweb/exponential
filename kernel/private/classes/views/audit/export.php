@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit/export view (doc/en/us/bc/6.0/audit.md, "Views"): the records of the console's filter as a download, newest
+ * The audit/export view (doc/eng-us/bc/6.0/audit.md, "Views"): the records of the console's filter as a download, newest
  * first: /(format)/csv (one row per record, the index columns; with (channel) also the columns the channel's source
  * declares, expAuditSource::exportColumns()), /(format)/jsonl (the records as written, one per
  * line, so the hashes can be checked) or /(format)/json (one array). Without a format it shows the choice, how

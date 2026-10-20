@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/advancedsearch.php, moved into a class (#207 stage 1). The file kernel/content/advancedsearch.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/advancedsearch.php:
@@ -215,7 +215,7 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
                                                                   'SearchLimit' => $pageLimit,
                                                                   'SearchOffset' => $Offset ),
                                                $searchArray );
-            // Audit (doc/en/us/bc/6.0/audit.md, content.search.query): a sampled read
+            // Audit (doc/eng-us/bc/6.0/audit.md, content.search.query): a sampled read
             if ( isset( $searchResult ) && is_array( $searchResult ) && class_exists( 'expAuditHook' ) )
                 \expAuditHook::read( 'content.search.query', null, function () use ( $searchText, $searchResult ) {
                     $phrase = (string)$searchText;

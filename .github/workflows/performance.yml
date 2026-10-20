@@ -19,7 +19,7 @@ name: Performance
 #   cp var/tmp/benchmark-micro/benchmark-micro.json tests/benchmark/baseline.json
 # or, on a quiet machine with PHP 8.5 and OPcache off for the CLI:
 #   php bin/php/benchmark.php micro --save=tests/benchmark/baseline.json
-# See doc/en/us/features/6.0/benchmark.md ("The CI performance check").
+# See doc/eng-us/features/6.0/benchmark.md ("The CI performance check").
 
 on:
   push:

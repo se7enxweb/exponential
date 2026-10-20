@@ -1,7 +1,7 @@
 /*
  * admin4 lists (rss/list, pdf/list, workflow/grouplist, class/grouplist, class/classlist, trigger/list): the search,
  * the filter and the selection, loaded by <module>/exp_list_script.tpl. A file of its own, so the pages run under a
- * Content Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * Content Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  *
  * The template puts a hidden element with data-exp-list right before the script; its attributes configure it:
  *   data-exp-list-scope="<selector>"   the part of the page the script works on (".a4-page", ".a4-trigger-lists")

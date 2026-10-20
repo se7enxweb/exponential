@@ -3498,7 +3498,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $sectionID =(int) $sectionID;
 
-        // Who assigns which section at which node (doc/en/us/bc/6.0/audit.md, content.node.section)
+        // Who assigns which section at which node (doc/eng-us/bc/6.0/audit.md, content.node.section)
         if ( class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'content.node.section', function () use ( $node, $sectionID, $oldSectionID, $objectSimpleIDArray ) {
                 $object = $node->object();
@@ -4675,7 +4675,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $nodeID = $this->attribute( 'node_id' );
         $objectID = $object->attribute( 'id' );
         // Audit: the callers record the removal as a whole (removeNodeFromTree(), removeSubtrees(),
-        // eZContentOperationCollection::removeNodes(); doc/en/us/bc/6.0/audit.md, content.node.remove*)
+        // eZContentOperationCollection::removeNodes(); doc/eng-us/bc/6.0/audit.md, content.node.remove*)
 
         $db = eZDB::instance();
         $db->begin();
@@ -4924,7 +4924,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
                     if ( !$moveToTrashAllowed )
                         $moveToTrashTemp = false;
 
-                    // Audit (doc/en/us/bc/6.0/audit.md, F2): the subtree's root is the parent event, every node removed
+                    // Audit (doc/eng-us/bc/6.0/audit.md, F2): the subtree's root is the parent event, every node removed
                     // below it a child event of the same kind
                     $auditParent = null;
                     if ( class_exists( 'expAuditHook' ) )
@@ -5095,7 +5095,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $object = $this->object();
         $assignedNodes = $object->attribute( 'assigned_nodes' );
 
-        // Audit (doc/en/us/bc/6.0/audit.md): a location only (content.node.remove), the object to the trash
+        // Audit (doc/eng-us/bc/6.0/audit.md): a location only (content.node.remove), the object to the trash
         // (content.node.remove.trash) or removed for good (content.object.remove); described before it goes. The
         // root of a subtree removal is recorded by removeSubtrees() as the parent of these.
         $auditName = null;
@@ -5342,7 +5342,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         if ( $oldParentNodeID != $newParentNodeID )
         {
             $node->updateAndStoreModified();
-            // Who moves which content (doc/en/us/bc/6.0/audit.md, content.node.move)
+            // Who moves which content (doc/eng-us/bc/6.0/audit.md, content.node.move)
             if ( class_exists( 'expAuditHook' ) )
                 expAuditHook::emit( 'content.node.move', function () use ( $node, $oldParentNodeID, $newParentNodeID, $oldPath, $nodeID ) {
                     $newParent = eZContentObjectTreeNode::fetch( $newParentNodeID );
@@ -7295,7 +7295,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $time = time();
         $db = eZDB::instance();
 
-        // Who hides which subtree (doc/en/us/bc/6.0/audit.md, content.node.hide)
+        // Who hides which subtree (doc/eng-us/bc/6.0/audit.md, content.node.hide)
         if ( class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'content.node.hide', function () use ( $node, $modifyRootNode ) {
                 return array( 'object' => expAuditHook::node( $node ),
@@ -7363,7 +7363,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $time = time();
 
-        // Who reveals which subtree (doc/en/us/bc/6.0/audit.md, content.node.reveal)
+        // Who reveals which subtree (doc/eng-us/bc/6.0/audit.md, content.node.reveal)
         if ( class_exists( 'expAuditHook' ) )
             expAuditHook::emit( 'content.node.reveal', function () use ( $node, $parentNode, $modifyRootNode ) {
                 return array( 'object' => expAuditHook::node( $node ),

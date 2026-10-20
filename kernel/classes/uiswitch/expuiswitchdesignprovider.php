@@ -20,7 +20,7 @@
  * Every cache built from the design list gets the request's cache variant key: the design base cache (here), the
  * compiled templates, {cache-block} and the content view cache (expUISwitch); the template override cache is already
  * keyed by the design list. With the siteaccess's own design nothing changes, not even a cache file name.
- * Guide: doc/en/us/guides/ui-switch-settings.md
+ * Guide: doc/eng-us/guides/ui-switch-settings.md
  */
 class expUISwitchDesignProvider extends expUISwitchProvider
 {

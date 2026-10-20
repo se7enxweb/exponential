@@ -2,7 +2,7 @@
 /**
  * File containing the expHelpAllowlist class.
  *
- * The files the help system may show (doc/en/us/features/6.0/help-system.md, "Which files are shown"). Only files that are
+ * The files the help system may show (doc/eng-us/features/6.0/help-system.md, "Which files are shown"). Only files that are
  * tracked by git below a configured documentation root are listed, and nothing else is ever read or served:
  *
  * - where the list comes from (exphelp.ini [IndexSettings] AllowlistSources[], first one that answers wins):
@@ -18,7 +18,7 @@
  * - a text file of an extension without a suffix (LICENSE, CHANGELOG) is left out when it starts like a program
  *   ("#!" or "<?"), so a script without a suffix is never shown as a page;
  * - a listed path is kept only when it has no empty, "." or ".." segment and no backslash, matches no
- *   ExcludePatterns[] (doc/en/us/doxygen/ and HTML by default), has a document or image suffix, is a regular file that is not
+ *   ExcludePatterns[] (doc/eng-us/doxygen/ and HTML by default), has a document or image suffix, is a regular file that is not
  *   a symbolic link (nor is any directory above it, up to the root), lies inside the root after realpath(), and is no
  *   larger than MaxFileSize;
  * - the project files (expHelpProjectFiles, exphelp.ini [ProjectFiles]): tracked Markdown files of the installation
@@ -48,7 +48,7 @@ class expHelpAllowlist
         'documentSuffixes'    => array( 'md', 'markdown', 'txt', 'rst' ),
         'plainTextWithoutSuffix' => true,
         'assetSuffixes'       => array( 'png', 'jpg', 'jpeg', 'gif', 'webp' ),
-        'excludePatterns'     => array( 'doc/en/us/doxygen/*', 'doc/README.md', '*.html', '*.htm', '*.svg', '*.php' ),
+        'excludePatterns'     => array( 'doc/eng-us/doxygen/*', 'doc/README.md', '*.html', '*.htm', '*.svg', '*.php' ),
         'maxFileSize'         => 2097152,
         // the project files outside doc/ (expHelpProjectFiles configuration, exphelp.ini [ProjectFiles]); null: none
         'projectFiles'        => null,

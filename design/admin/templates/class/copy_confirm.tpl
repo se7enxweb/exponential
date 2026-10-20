@@ -2,7 +2,7 @@
 
    Says what the copy will be and where it lands (content.ini [CopySettings] ClassRedirect), with Copy, which posts
    ConfirmCopyButton to class/copy/<id> (the form token protects it), and the way back to the class. Variables:
-   class, copy_redirect, module. The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/class-groups.md *}
+   class, copy_redirect, module. The same file is in design/admin and design/admin4. Guide: doc/eng-us/guides/class-groups.md *}
 
 <form method="post" action={concat( 'class/copy/', $class.id )|ezurl} class="a4-page exp-classgroups a4-standalone">
 <div class="context-block">

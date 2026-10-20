@@ -1,6 +1,6 @@
 <?php
 /**
- * What the log viewer masks (doc/en/us/features/6.0/log-viewer.md, "Privacy"); pure, synthetic values only.
+ * What the log viewer masks (doc/eng-us/features/6.0/log-viewer.md, "Privacy"); pure, synthetic values only.
  *
  *  LV-20  e-mail addresses
  *  LV-21  IPv4 addresses (not versions such as 6.0.15.1), IPv6 addresses (not times such as 01:54:58), the ip field

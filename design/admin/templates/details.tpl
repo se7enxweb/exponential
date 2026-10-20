@@ -93,7 +93,7 @@
 {/if}
 </table>
 
-{* content jobs: the states for the whole subtree, now or as a background job (doc/en/us/bc/6.0/content-jobs.md) *}
+{* content jobs: the states for the whole subtree, now or as a background job (doc/eng-us/bc/6.0/content-jobs.md) *}
 {if and( $states_count, $node.children_count|gt( 0 ) )}
 <div class="block">
     <label><input type="checkbox" name="StateApplyToSubtree" id="tab-details-states-subtree" value="1" />

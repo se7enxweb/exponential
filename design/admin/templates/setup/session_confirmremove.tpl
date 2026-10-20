@@ -2,7 +2,7 @@
    the ticked sessions of one user. Says who is signed out and what happens to the viewer's own session, then posts
    the same button again with ConfirmSessionRemoval. Cancel goes back to the list without changing anything.
 
-   The same file is in design/admin and design/admin4. Guide: doc/en/us/guides/sessions.md *}
+   The same file is in design/admin and design/admin4. Guide: doc/eng-us/guides/sessions.md *}
 
 {def $base_uri = concat( '/setup/session', cond( $user_id, concat( '/', $user_id ), '' ) )
      $self_listed = false()}

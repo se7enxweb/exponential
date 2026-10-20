@@ -3,7 +3,7 @@
    One choice per section; OK (AssignSectionID) goes on to choosing the users and groups in the content browser,
    Cancel (AssignSectionCancelButton) back to the role. Every name is the one the view has always read (SectionID,
    AssignSectionID, AssignSectionCancelButton). The same file is in design/admin and design/admin4.
-   Guide: doc/en/us/guides/roles-and-policies.md *}
+   Guide: doc/eng-us/guides/roles-and-policies.md *}
 
 <form method="post" action={concat( '/role/assign/', $role_id, '/', $limit_ident|wash( url ) )|ezurl} class="a4-page">
 <div class="context-block">

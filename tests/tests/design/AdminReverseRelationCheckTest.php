@@ -1,6 +1,6 @@
 <?php
 /**
- * The pages of the reverse relation check (doc/en/us/features/6.0/reverse-relation-check.md), drawn by the real template
+ * The pages of the reverse relation check (doc/eng-us/features/6.0/reverse-relation-check.md), drawn by the real template
  * engine in admin4, without a database.
  *
  *  RR-01 - the removal page lists the referring objects per selected item: link, class, kind, field, target

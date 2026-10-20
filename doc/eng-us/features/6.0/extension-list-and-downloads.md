@@ -1,0 +1,94 @@
+# Extension list: sort, inspect and download any extension
+
+This page is for administrators who manage extensions in the admin. **Setup > Extensions** (`/setup/extensions`)
+lists the extensions on disk and lets you activate them. Since 5 August 2026 (commits `74bc4ccbd8`, `104a4b487a`,
+`3d125848e8`) it also answers the questions an administrator actually asks: which extension is this, which version,
+when did it change, and can I take a copy of it?
+
+> **Since 6 October 2026** the page is one list of cards with the loading order, activation and deactivation in it,
+> and changes are applied after a review: see [The Extensions page](../../guides/extensions-page.md). The list is no
+> longer paged and orders by loading order or by name; the other `(sort)` values of the table below fall back to the
+> loading order. The download links are under **Details** on each card, at the same addresses.
+
+> **Action required:** exporting extensions is now off by default — list the extension in package.ini
+> [ExtensionExportSettings] AllowedExtensions[] (or `*` for every extension) and grant the policy
+> package/export_extension to the role. Without both, Setup > Extensions shows no download buttons and the package
+> wizard does not let you choose the extension; the command line (`ezpm.php add`) needs the list entry.
+
+## Take a copy of an extension before an upgrade
+
+1. Open **Setup > Extensions**.
+2. Click **Details** (or the name) on the extension's row. An info card opens under the row.
+3. Press one of the four download buttons: `tar.gz`, `.zip`, `tar.bz2` or `.ezpkg`.
+
+A download is a button of the page's form: it posts `ExtensionDownload=<extension name>/<format>` with the form
+token. Since 14 October 2026 the address `/setup/extensions/<extension name>/<format>` no longer downloads; it shows
+the list. An extension that holds a secret value or key material is not packed, and the page says which files and
+settings stopped it ([the secret check](../../bc/6.0/extension-package-secret-check.md)). The buttons are only there when
+the extension may be exported: package.ini `[ExtensionExportSettings] AllowedExtensions[]` lists it (or `*`) and your
+role has the policy `package/export_extension` (unless `RequirePolicy=disabled`); otherwise the card shows the reason
+and the page a notice.
+
+`<format>` is one of `tar.gz`, `tar.bz2`, `zip`, `ezpkg`. The server builds a package of the extension with the
+`ezextension` package handler, streams it as an attachment named `<name>.<format>`, and removes the temporary file
+afterwards (`104a4b487a`). Use it to take a copy before an upgrade, to hand an extension to a colleague, or to move it
+to another installation.
+
+Only extensions that exist under one of the extension roots (`extension/` or an
+[additional extension directory](additional-extension-directories.md)) can be downloaded; any other name does nothing.
+
+## What the list shows
+
+- **The loading order by default** (since 29 September 2026, commit `cb5d523bde`): active extensions in the order of
+  `ActiveExtensions`, then the ones active only for a siteaccess, then the rest by name. When this feature first
+  arrived (5 August, `74bc4ccbd8`) the default was A to Z, natural and case insensitive (`Ext2` before `Ext10`); sort
+  by **Name** to get that back. See [Setup > Extensions: loading order](extension-loading-order.md).
+- **Sortable columns.** **Order**, **Name**, **Version**, **Modified** and others are links: click one to sort by it,
+  click again to reverse. The choice travels as view parameters, so the pager keeps it:
+  `/setup/extensions/(sort)/version/(dir)/desc`. `sort` is one of `order`, `name`, `info_name`, `license`, `version`,
+  `mtime`; `dir` is `asc` or `desc`. Any other value falls back to `order` and `asc`. The August form
+  `/setup/extensions?SortBy=version&SortOrder=desc` is still read, so bookmarks work
+  (`kernel/private/classes/views/setup/extensions.php`).
+- **Version** is the version the extension states, read from `extension.xml`, `ezinfo.php` or `composer.json` (see
+  [extension metadata](../../specifications/6.0/extension-metadata.md)). A dash means none is stated.
+- **Modified** is the time of the newest file inside the extension, not of its folder, so editing a template deep
+  inside moves the date.
+- **Details** opens the info card: description, author, license, info URL, and the four download links. Only one card
+  is open at a time.
+
+The activation check boxes and the **Activate** button work as before.
+
+## The package wizard list
+
+**Setup > Packages > Create package > Extension** (`package/create`, creator `ezextension`) shows the same A to Z
+list as a table with Version, Modified and a Details card, without the download links (`3d125848e8`). An extension
+that may not be exported (see the note above) cannot be chosen there, and the step says why.
+
+## For developers
+
+`eZExtension::extensionInfo( $name )` (`lib/ezutils/classes/ezextension.php`) returns the data the page uses: `name`,
+`version`, `mtime`, `mtime_formatted` and the `meta` array (description, author, license, `info_url`). It returns
+`null` for an unknown extension. `eZPackage::exportToArchive( $archivePath, $format )` accepts the four formats.
+
+The design proposal that led to it, with the open questions, is kept in [EXT_SORT_ORDERS](../../bc/6.0/EXT_SORT_ORDERS.md).
+
+## Limits
+
+- Large extensions take a moment to scan for the newest file; the list is not cached.
+- A download packs the extension as it is on disk. Extensions with secret values or key material are refused, but
+  the check cannot know every secret: look inside before you share it.
+
+## Related pages
+
+- [Setup > Extensions: loading order](extension-loading-order.md), [additional extension directories](additional-extension-directories.md)
+- [Extension metadata](../../specifications/6.0/extension-metadata.md), [About and Copyright pages](about-and-package-pages.md)
+- [Default extension distribution](default-extension-distribution.md), [package compare and import](package-compare-and-import.md), [extensions, themes and packages](extensions/README.md)
+- [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)
+- History: [August 2026](../../history/2026/2026-08.md), [June 2024](../../history/2024/2024-06.md), [March 2024](../../history/2024/2024-03.md), [February 2024](../../history/2024/2024-02.md), [January 2024, second half](../../history/2024/2024-01b.md), [January 2024, first half](../../history/2024/2024-01a.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

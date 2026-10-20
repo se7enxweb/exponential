@@ -2,7 +2,7 @@
  * The language choice of the edit form (content/edit_languages.tpl): choosing an existing translation disables
  * the source translations, choosing a new one enables them.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function( $ )
 {

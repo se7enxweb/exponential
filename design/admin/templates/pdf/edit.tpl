@@ -12,7 +12,7 @@
    pdf_draft_other, pdf_selected_classes, pdf_published_file, pdf_storage_directory and redirect_if_discarded;
    without them the form still works. The same file is in design/admin and design/admin4. This is an edit view,
    which admin4 draws without its main card; .exp-standalone gives the page its own. Works without javascript.
-   Guide: doc/en/us/guides/pdf-exports.md *}
+   Guide: doc/eng-us/guides/pdf-exports.md *}
 
 {def $errors = first_set( $pdf_errors, hash() )
      $source = first_set( $pdf_source, false() )

@@ -1,6 +1,6 @@
 <?php
 /**
- * The contentfinder/action view (doc/en/us/features/6.0/content-finder.md, "Actions"): POST only. The result page posts
+ * The contentfinder/action view (doc/eng-us/features/6.0/content-finder.md, "Actions"): POST only. The result page posts
  * Action (trash, delete, purge, removeversion), ObjectID and, for a version, VersionID; this view answers with the
  * confirmation page, which shows exactly what will happen (expContentFinderAction::plan()) and posts back with
  * ConfirmButton, the confirmation token and, for what cannot be undone, ConfirmPermanent. Then the action runs and

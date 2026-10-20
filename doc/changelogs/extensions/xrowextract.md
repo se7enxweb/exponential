@@ -2,7 +2,7 @@
 
 Read this page before you install or update `xrowextract`, or to find out which release brought a change.
 
-What each release of `xrowextract` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/xrowextract.md); the story is in the [chronicle](../../en/us/history/extensions/xrowextract.md).
+What each release of `xrowextract` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../eng-us/features/6.0/extensions/xrowextract.md); the story is in the [chronicle](../../eng-us/history/extensions/xrowextract.md).
 
 ## v2.5.6 (2026-10-02)
 
@@ -307,9 +307,9 @@ What each release of `xrowextract` contains, assembled from its commits. Each li
 
 ## Related pages
 
-- [Feature page](../../en/us/features/6.0/extensions/xrowextract.md)
-- [Chronicle](../../en/us/history/extensions/xrowextract.md)
-- [Change ledger](../../en/us/history/ledger/xrowextract.md)
-- [Specification](../../en/us/specifications/6.0/xrowextract.md)
-- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
-- Months: [2024-01](../../en/us/history/extensions/months/2024-01.md), [2024-02](../../en/us/history/extensions/months/2024-02.md), [2024-03](../../en/us/history/extensions/months/2024-03.md), [2024-04](../../en/us/history/extensions/months/2024-04.md), [2024-07](../../en/us/history/extensions/months/2024-07.md), [2024-08](../../en/us/history/extensions/months/2024-08.md), [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-09](../../en/us/history/extensions/months/2026-09.md), [2026-10](../../en/us/history/extensions/months/2026-10.md)
+- [Feature page](../../eng-us/features/6.0/extensions/xrowextract.md)
+- [Chronicle](../../eng-us/history/extensions/xrowextract.md)
+- [Change ledger](../../eng-us/history/ledger/xrowextract.md)
+- [Specification](../../eng-us/specifications/6.0/xrowextract.md)
+- [Behaviour changes of the extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../eng-us/history/extensions/months/2024-01.md), [2024-02](../../eng-us/history/extensions/months/2024-02.md), [2024-03](../../eng-us/history/extensions/months/2024-03.md), [2024-04](../../eng-us/history/extensions/months/2024-04.md), [2024-07](../../eng-us/history/extensions/months/2024-07.md), [2024-08](../../eng-us/history/extensions/months/2024-08.md), [2026-03](../../eng-us/history/extensions/months/2026-03.md), [2026-09](../../eng-us/history/extensions/months/2026-09.md), [2026-10](../../eng-us/history/extensions/months/2026-10.md)

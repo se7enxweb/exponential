@@ -1,6 +1,6 @@
 <?php
 /**
- * The reports of the Content Security Policy in the log viewer (doc/en/us/features/6.0/content-security-policy.md,
+ * The reports of the Content Security Policy in the log viewer (doc/eng-us/features/6.0/content-security-policy.md,
  * "Reports"): var/log/csp.log as a kernel log, without a database.
  *
  *  LV-220  the key csp resolves to a kernel log with its label and level, its archives too

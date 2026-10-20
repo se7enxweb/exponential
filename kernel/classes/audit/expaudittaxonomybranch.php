@@ -5,7 +5,7 @@
  *   Branches[myext]=myExtAuditBranch
  * Counted by the RAD survey (registry "auditbranches"). Names start with the extension's own subject
  * (content.myext_poll.vote) so two extensions cannot claim the same branch; a name registered twice is refused.
- * Guide: doc/en/us/bc/6.0/audit.md ("Extension interfaces and their registries").
+ * Guide: doc/eng-us/bc/6.0/audit.md ("Extension interfaces and their registries").
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

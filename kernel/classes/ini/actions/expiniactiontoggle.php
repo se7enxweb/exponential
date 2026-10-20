@@ -4,7 +4,7 @@
  *
  * exp:ini toggle: flips a switch in one scope's file the way the setting writes it: enabled<->disabled,
  * true<->false, yes<->no, on<->off, 1<->0 (the case is kept). A value that is no switch is refused.
- * Guide: doc/en/us/bc/6.0/console-exp-ini.md.
+ * Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

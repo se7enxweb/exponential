@@ -1,13 +1,13 @@
 <?php
 /**
- * The project-manager and sales-marketing audiences of the help and their pages (doc/en/us/help/leadership/,
- * doc/en/us/help/business/; doc/en/us/features/6.0/help-system.md). No database.
+ * The project-manager and sales-marketing audiences of the help and their pages (doc/eng-us/help/leadership/,
+ * doc/eng-us/help/business/; doc/eng-us/features/6.0/help-system.md). No database.
  *
  *  LA-01  expHelpAudience knows both audiences and both categories by default, with icons that admin4 and the
  *         classic admin draw (an .a4-bi-<icon> class in components.css)
  *  LA-02  settings/exphelp.ini lists them: Audiences[], names, icons, the categories and the folder path rules
- *  LA-03  the classifier: a page in doc/en/us/help/leadership/ is for project managers in the leadership category, one in
- *         doc/en/us/help/business/ for sales & marketing in the business category; front matter and aliases win
+ *  LA-03  the classifier: a page in doc/eng-us/help/leadership/ is for project managers in the leadership category, one in
+ *         doc/eng-us/help/business/ for sales & marketing in the business category; front matter and aliases win
  *  LA-04  the search counts and filters the new audiences (facets) and the search view accepts them
  *  LA-05  the dashboard of both designs (the same file) shows six audience cards, the two new ones with a start page
  *         that exists; help.css colors them; no inline CSS or script
@@ -96,8 +96,8 @@ class expHelpLeadershipAudiencesTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( '/^CategoryNames\[' . $category . '\]=\S/m', $categories );
             $this->assertMatchesRegularExpression( '/^CategoryIcons\[' . $category . '\]=[a-z0-9-]+\s*$/m', $categories );
             $folder = $category === 'leadership' ? 'leadership' : 'business';
-            $this->assertMatchesRegularExpression( '#^PathRules\[\]=doc/en/us/help/' . $folder . '/\*;' . $id . '\s*$#m', $section );
-            $this->assertMatchesRegularExpression( '#^PathRules\[\]=doc/en/us/help/' . $folder . '/\*;' . $category . '\s*$#m', $categories );
+            $this->assertMatchesRegularExpression( '#^PathRules\[\]=doc/eng-us/help/' . $folder . '/\*;' . $id . '\s*$#m', $section );
+            $this->assertMatchesRegularExpression( '#^PathRules\[\]=doc/eng-us/help/' . $folder . '/\*;' . $category . '\s*$#m', $categories );
             $this->assertMatchesRegularExpression( '#^PageList\[\]=' . preg_quote( self::START_PAGES[$id], '#' ) . '\s*$#m', $featured );
         }
         $this->assertMatchesRegularExpression( '#^PageList\[\]=help/leadership/leadership-reading-path\.md\s*$#m', $featured );
@@ -107,28 +107,28 @@ class expHelpLeadershipAudiencesTest extends PHPUnit\Framework\TestCase
     public function testClassifier()
     {
         $audience = new expHelpAudience();
-        $page = $audience->classify( 'doc/en/us/help/leadership/risk-management.md', array(), 'A page for project managers.' );
+        $page = $audience->classify( 'doc/eng-us/help/leadership/risk-management.md', array(), 'A page for project managers.' );
         $this->assertSame( array( 'project-manager' ), $page['audience'] );
         $this->assertSame( 'leadership', $page['category'] );
         $this->assertSame( 'help', $page['type'] );
 
-        $page = $audience->classify( 'doc/en/us/help/business/demo-scripts.md' );
+        $page = $audience->classify( 'doc/eng-us/help/business/demo-scripts.md' );
         $this->assertSame( array( 'sales-marketing' ), $page['audience'] );
         $this->assertSame( 'business', $page['category'] );
 
         // front matter wins over the folder, aliases resolve, the configured order is kept
-        $page = $audience->classify( 'doc/en/us/help/leadership/working-together.md',
+        $page = $audience->classify( 'doc/eng-us/help/leadership/working-together.md',
             array( 'audience' => array( 'sales', 'pm', 'editors', 'nobody' ), 'category' => 'business' ) );
         $this->assertSame( array( 'editor', 'project-manager', 'sales-marketing' ), $page['audience'] );
         $this->assertSame( 'business', $page['category'] );
         $this->assertSame( array( 'project-manager', 'sales-marketing' ), $audience->audienceList( array( 'project-managers', 'marketing' ) ) );
 
         // a file name says who it is for
-        $this->assertSame( array( 'sales-marketing' ), $audience->guessAudience( 'doc/en/us/guides/pricing-sales-marketing.md', '' ) );
-        $this->assertSame( array( 'project-manager' ), $audience->guessAudience( 'doc/en/us/guides/launch-project-manager.md', '' ) );
+        $this->assertSame( array( 'sales-marketing' ), $audience->guessAudience( 'doc/eng-us/guides/pricing-sales-marketing.md', '' ) );
+        $this->assertSame( array( 'project-manager' ), $audience->guessAudience( 'doc/eng-us/guides/launch-project-manager.md', '' ) );
 
         // the four first audiences are untouched
-        $this->assertSame( array( 'editor', 'user' ), $audience->classify( 'doc/en/us/help/editing-content.md' )['audience'] );
+        $this->assertSame( array( 'editor', 'user' ), $audience->classify( 'doc/eng-us/help/editing-content.md' )['audience'] );
     }
 
     /** LA-04 */
@@ -182,7 +182,7 @@ class expHelpLeadershipAudiencesTest extends PHPUnit\Framework\TestCase
         foreach ( self::START_PAGES as $id => $page )
         {
             $this->assertMatchesRegularExpression( "#'" . $id . "', hash\\( 'icon', '[a-z0-9-]+', 'name', '[^']+'\\|i18n\\( 'kernel/exphelp' \\), 'text', '[^']+'\\|i18n\\( 'kernel/exphelp' \\),\\s+'start', '" . preg_quote( $page, '#' ) . "' \\)#", $admin4 );
-            $this->assertFileExists( self::root() . '/doc/en/us/' . $page );
+            $this->assertFileExists( self::root() . '/doc/eng-us/' . $page );
         }
         $this->assertStringContainsString( 'class="a4-help-audience-start"', $admin4 );
         $this->assertStringContainsString( '<strong>{$help_audience_ids|count}</strong>', $admin4 );
@@ -287,7 +287,7 @@ class expHelpLeadershipAudiencesTest extends PHPUnit\Framework\TestCase
         $checked = 0;
         foreach ( self::AUDIENCES as $id => $category )
         {
-            $folder = $category === 'leadership' ? 'doc/en/us/help/leadership' : 'doc/en/us/help/business';
+            $folder = $category === 'leadership' ? 'doc/eng-us/help/leadership' : 'doc/eng-us/help/business';
             $files = glob( self::root() . '/' . $folder . '/*.md' );
             $this->assertGreaterThanOrEqual( 10, count( $files ), $folder );
             foreach ( $files as $file )
@@ -327,7 +327,7 @@ class expHelpLeadershipAudiencesTest extends PHPUnit\Framework\TestCase
         $this->assertGreaterThan( 100, $checked );
         foreach ( array_merge( array_values( self::START_PAGES ), array( 'help/leadership/leadership-reading-path.md' ) ) as $page )
         {
-            list( $meta ) = expHelpFrontMatter::split( self::read( 'doc/en/us/' . $page ) );
+            list( $meta ) = expHelpFrontMatter::split( self::read( 'doc/eng-us/' . $page ) );
             $this->assertTrue( isset( $meta['featured'] ) && ( $meta['featured'] === true || $meta['featured'] === 'true' ), $page . ' is featured' );
         }
     }

@@ -1,7 +1,7 @@
 <?php
 /**
  * The "Develop with Git" and "Update with Git" help pages and the "Grow from user to developer" band of the help dashboard
- * (doc/en/us/help/develop-with-git.md, design/<admin4|admin>/templates/exphelp/parts/dashboard_grow.tpl). No database.
+ * (doc/eng-us/help/develop-with-git.md, design/<admin4|admin>/templates/exphelp/parts/dashboard_grow.tpl). No database.
  *
  *  HG-01  the page exists with its front matter: audiences user and developer, category development, featured
  *  HG-02  the help serves it: the allowlist of the real installation allows it (a git-tracked file below doc/)
@@ -24,9 +24,9 @@
 
 class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
 {
-    const PAGE = 'doc/en/us/help/develop-with-git.md';
+    const PAGE = 'doc/eng-us/help/develop-with-git.md';
     const PART = 'templates/exphelp/parts/dashboard_grow.tpl';
-    const UPDATE_PAGE = 'doc/en/us/help/update-with-git.md';
+    const UPDATE_PAGE = 'doc/eng-us/help/update-with-git.md';
 
     private static function root()
     {
@@ -157,7 +157,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
                 self::read( 'design/' . $design . '/templates/exphelp/dashboard.tpl' ), $design );
         $this->assertStringContainsString( "'/exphelp/viewer/help/develop-with-git.md'|ezurl", $admin4 );
         $this->assertStringContainsString( "'/exphelp/viewer/install/03-getting-the-code.md'|ezurl", $admin4 );
-        $this->assertFileExists( self::root() . '/doc/en/us/install/03-getting-the-code.md' );
+        $this->assertFileExists( self::root() . '/doc/eng-us/install/03-getting-the-code.md' );
         $this->assertDoesNotMatchRegularExpression( '/<style|style\s*=|<script|\son[a-z]+\s*=/i', $admin4 );
         foreach ( array( 'admin4', 'admin' ) as $design )
             $this->assertStringContainsString( '.a4-help-grow {', self::read( 'design/' . $design . '/stylesheets/modules/help.css' ) );
@@ -224,7 +224,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Every image of a section: webp below doc/en/us/help/images, a describing alt text, on disk; returns how many
+     * Every image of a section: webp below doc/eng-us/help/images, a describing alt text, on disk; returns how many
      */
     private function assertSectionImages( $section )
     {
@@ -233,7 +233,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
         {
             $this->assertGreaterThan( 40, strlen( $image[1] ), $image[2] . ' has a describing alt text' );
             $this->assertStringEndsWith( '.webp', $image[2] );
-            $this->assertFileExists( self::root() . '/doc/en/us/help/' . $image[2] );
+            $this->assertFileExists( self::root() . '/doc/eng-us/help/' . $image[2] );
         }
         return count( $m );
     }
@@ -290,7 +290,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'a1-maintenance', 'a2-waiting', 'a3-kernel', 'a4-composer', 'a5-check', 'a6-caches', 'a7-leave' ) as $capture )
         {
             $this->assertStringContainsString( '(images/update-cli-' . $capture . '.webp)', $a );
-            $this->assertFileExists( self::root() . '/doc/en/us/help/images/update-cli-' . $capture . '.webp' );
+            $this->assertFileExists( self::root() . '/doc/eng-us/help/images/update-cli-' . $capture . '.webp' );
         }
     }
 
@@ -306,7 +306,7 @@ class expHelpDevelopWithGitTest extends PHPUnit\Framework\TestCase
             'composer status -v',
         ) as $command )
             $this->assertStringContainsString( $command, $text );
-        foreach ( array( 'doc/en/us/install/03-getting-the-code.md', 'doc/en/us/INSTALL.md' ) as $doc )
+        foreach ( array( 'doc/eng-us/install/03-getting-the-code.md', 'doc/eng-us/INSTALL.md' ) as $doc )
             $this->assertStringContainsString( "composer config --global 'preferred-install.se7enxweb/*' source", self::read( $doc ), $doc );
     }
 }

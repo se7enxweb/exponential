@@ -344,7 +344,7 @@ class expCacheManager
             {
                 eZCacheTrash::end();
             }
-            // Audit (doc/en/us/bc/6.0/audit.md, system.cache.clear): a purge is a clear too
+            // Audit (doc/eng-us/bc/6.0/audit.md, system.cache.clear): a purge is a clear too
             if ( method_exists( 'eZCache', 'auditCleared' ) )
                 eZCache::auditCleared( 'purge', $by === 'all' ? array() : $names, $items, $purgeStart );
         }
@@ -786,7 +786,7 @@ class expCacheManager
     }
 
     /**
-     * Switches the SQL profile of every request on or off (doc/en/us/bc/6.0/sql-query-cache.md).
+     * Switches the SQL profile of every request on or off (doc/eng-us/bc/6.0/sql-query-cache.md).
      *
      * @param bool $on
      * @param bool $dryRun

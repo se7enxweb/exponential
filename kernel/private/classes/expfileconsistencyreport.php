@@ -29,7 +29,7 @@
  * Modified, missing and unreadable files are problems: a check with any of them does not pass. Unlisted files,
  * malformed and unordered lines are notes: they are shown and counted, and the check still passes.
  *
- * Guide: doc/en/us/guides/upgrade-check.md
+ * Guide: doc/eng-us/guides/upgrade-check.md
  *
  * @package kernel
  */

@@ -18,7 +18,7 @@
  * makes a chain (esl-AR -> esl-MX -> esl-ES), stopping at a cycle or at FallbackMaxDepth.
  *
  * A rule is created once per resolver, without arguments, so it can keep what it computed. It must be cheap: the
- * translator asks once per locale and request. See doc/en/us/features/6.0/ui-switch-languages.md, "Writing a fallback
+ * translator asks once per locale and request. See doc/eng-us/features/6.0/ui-switch-languages.md, "Writing a fallback
  * rule".
  *
  * @package lib

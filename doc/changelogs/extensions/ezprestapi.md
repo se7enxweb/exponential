@@ -2,7 +2,7 @@
 
 Read this page before you install or update `ezprestapi`, or to find out which release brought a change.
 
-What each release of `ezprestapi` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/ezprestapi.md); the story is in the [chronicle](../../en/us/history/extensions/ezprestapi.md).
+What each release of `ezprestapi` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../eng-us/features/6.0/extensions/ezprestapi.md); the story is in the [chronicle](../../eng-us/history/extensions/ezprestapi.md).
 
 ## v1.2.6 (2026-10-15)
 
@@ -15,7 +15,7 @@ What each release of `ezprestapi` contains, assembled from its commits. Each lin
 - The XHTML output of a node read finds its template again ([`6ecf9b7`](https://github.com/se7enxweb/ezprestapi/commit/6ecf9b7))
 - The name, description and README say the extension serves REST API v1 and v2 and replaces ezprestapiprovider ([`c71b44c`](https://github.com/se7enxweb/ezprestapi/commit/c71b44c))
 
-1 version, merge or metadata commit not listed ([`8ec7883`](https://github.com/se7enxweb/ezprestapi/commit/8ec7883)). See [REST API v1 and v2: one extension](../../en/us/guides/rest-api-v1-and-v2.md).
+1 version, merge or metadata commit not listed ([`8ec7883`](https://github.com/se7enxweb/ezprestapi/commit/8ec7883)). See [REST API v1 and v2: one extension](../../eng-us/guides/rest-api-v1-and-v2.md).
 
 ## v1.2.5 (2026-10-06)
 
@@ -79,8 +79,8 @@ What each release of `ezprestapi` contains, assembled from its commits. Each lin
 
 ## Related pages
 
-- [Feature page](../../en/us/features/6.0/extensions/ezprestapi.md)
-- [Chronicle](../../en/us/history/extensions/ezprestapi.md)
-- [Change ledger](../../en/us/history/ledger/ezprestapi.md)
-- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
-- Months: [2024-10](../../en/us/history/extensions/months/2024-10.md), [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-09](../../en/us/history/extensions/months/2026-09.md), [2026-10](../../en/us/history/extensions/months/2026-10.md)
+- [Feature page](../../eng-us/features/6.0/extensions/ezprestapi.md)
+- [Chronicle](../../eng-us/history/extensions/ezprestapi.md)
+- [Change ledger](../../eng-us/history/ledger/ezprestapi.md)
+- [Behaviour changes of the extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-10](../../eng-us/history/extensions/months/2024-10.md), [2026-03](../../eng-us/history/extensions/months/2026-03.md), [2026-09](../../eng-us/history/extensions/months/2026-09.md), [2026-10](../../eng-us/history/extensions/months/2026-10.md)

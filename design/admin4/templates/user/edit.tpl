@@ -8,9 +8,9 @@
 
    Every name the view reads is kept (EditButton, ChangePasswordButton, ChangeSettingButton, CancelButton,
    ContentObjectLanguageCode, RedirectIfDiscarded) and every template variable is still set. Cancel goes back to
-   the page the editor came from (doc/en/us/features/6.0/safe-redirects.md). This is an edit view, which admin4 draws
+   the page the editor came from (doc/eng-us/features/6.0/safe-redirects.md). This is an edit view, which admin4 draws
    without its main card; .exp-standalone gives the page its own. The same file is in design/admin and
-   design/admin4. Guide: doc/en/us/guides/security-and-audit.md, section 6 *}
+   design/admin4. Guide: doc/eng-us/guides/security-and-audit.md, section 6 *}
 
 {def $ov = first_set( $account_overview, false() )
      $acc = cond( $ov, $ov.account, hash( 'user_id', $userID, 'login', $userAccount.login, 'email', $userAccount.email,

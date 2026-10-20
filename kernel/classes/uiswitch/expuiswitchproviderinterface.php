@@ -14,7 +14,7 @@
  * the translations, the design and any template are set up.
  *
  * A value is only ever one of allowedValues(): nothing from the request reaches a path, a file name or an INI name
- * before isValid() said yes. Guide: doc/en/us/bc/6.0/ui-switch.md
+ * before isValid() said yes. Guide: doc/eng-us/bc/6.0/ui-switch.md
  */
 interface expUISwitchProviderInterface
 {

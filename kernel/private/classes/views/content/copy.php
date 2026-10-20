@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/copy.php, moved into a class (#207 stage 1). The file kernel/content/copy.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/copy.php:
@@ -78,7 +78,7 @@ function expModuleViewContentCopyCopyObject( $Module, $object, $allVersions, $ne
 
     $db->commit();
 
-    // Audit (doc/en/us/bc/6.0/audit.md, content.node.copy)
+    // Audit (doc/eng-us/bc/6.0/audit.md, content.node.copy)
     if ( class_exists( 'expAuditHook' ) )
         expAuditHook::emit( 'content.node.copy', function () use ( $object, $newObject, $newNode, $newParentNode ) {
             return array( 'object' => expAuditHook::node( $object->attribute( 'main_node' ) ) ?: expAuditHook::object( $object ),

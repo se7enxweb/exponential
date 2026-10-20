@@ -8,7 +8,7 @@
    The same file is in design/admin and design/admin4, so every administration design resolves it. The styling is
    the shared admin components and stylesheets/modules/setup.css (.a4-setup-preload). Everything works without javascript: the form posts Start,
    Dry run and Stop, and a reload shows how a run is doing. The script below follows a run as it goes.
-   Guide: doc/en/us/guides/preloading-caches.md *}
+   Guide: doc/eng-us/guides/preloading-caches.md *}
 {def $preload_states = hash(
         'finished', array( 'is-ok', 'Finished'|i18n( 'design/admin/setup/preload' ) ),
         'stopped', array( 'is-warn', 'Stopped'|i18n( 'design/admin/setup/preload' ) ),

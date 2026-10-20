@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/infocollector/view.php, moved into a class (#207 stage 1). The file kernel/infocollector/view.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/infocollector/view.php:
@@ -55,7 +55,7 @@ class View extends \Exponential\Runnable\ModuleView
         $objectID   = $collection->attribute( 'contentobject_id' );
         $objectName = $object->attribute( 'name' );
 
-        // Audit (doc/en/us/bc/6.0/audit.md, data.infocollection.view): which collection was opened, never its values
+        // Audit (doc/eng-us/bc/6.0/audit.md, data.infocollection.view): which collection was opened, never its values
         if ( class_exists( 'expAuditHook' ) )
             \expAuditHook::emit( 'data.infocollection.view', array( 'object' => array( 'type' => 'collection', 'id' => (int)$collection->attribute( 'id' ) ),
                 'target' => array( 'type' => 'object', 'id' => (int)$objectID, 'name' => (string)$objectName ), 'verb' => 'read' ) );

@@ -164,7 +164,7 @@ class eZVatRule extends eZPersistentObject
     static function removeVatRule( $id )
     {
         $db = eZDB::instance();
-        // Audit (doc/en/us/bc/6.0/audit.md, commerce.vat.change): the row removed
+        // Audit (doc/eng-us/bc/6.0/audit.md, commerce.vat.change): the row removed
         if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.vat.change' ) )
         {
             $auditRow = eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$id ), false );
@@ -190,7 +190,7 @@ class eZVatRule extends eZPersistentObject
         $db = eZDB::instance();
         $db->begin();
 
-        // Store the rule itself (and record what changed: doc/en/us/bc/6.0/audit.md, commerce.vat.change)
+        // Store the rule itself (and record what changed: doc/eng-us/bc/6.0/audit.md, commerce.vat.change)
         $auditBefore = class_exists( 'expAuditHook' ) ? expAuditHook::rowBefore( 'commerce.vat.change', $this ) : null;
         parent::store( $fieldFilters );
         if ( $auditBefore !== null )

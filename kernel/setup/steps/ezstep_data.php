@@ -157,7 +157,7 @@ class eZStepData
                            // site type's eZSetupFunctionality() lists; that function no longer exists (the step would
                            // stop with a fatal error) and no package of this release is an addon. A site
                            // package's requirements (and theirs, down the chain) are downloaded by SiteTypes and
-                           // installed by CreateSites. doc/en/us/help/site-packages/basics/how-the-setup-wizard-uses-packages.md
+                           // installed by CreateSites. doc/eng-us/help/site-packages/basics/how-the-setup-wizard-uses-packages.md
                            // array( 'file' => 'site_packages',
                            //        'class' => 'SitePackages' ),
                             array( 'file' => 'package_language_options',

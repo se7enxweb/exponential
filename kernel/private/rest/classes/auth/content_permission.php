@@ -9,7 +9,7 @@
 
 /**
  * The current user's rights on the content a REST call reads or writes, checked the way the content module checks
- * them (doc/en/us/guides/api-keys.md, "Permissions of the REST interface").
+ * them (doc/eng-us/guides/api-keys.md, "Permissions of the REST interface").
  *
  * One place for every caller: the ezprestapi content controller asks it before each read and write, whatever the
  * request was authenticated with (OAuth token, personal API key, HTTP basic authentication, the anonymous user when

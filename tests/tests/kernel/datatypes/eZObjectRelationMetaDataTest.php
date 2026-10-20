@@ -12,7 +12,7 @@
  *  RM-04 - eZObjectRelationListType::metaData(): the same for every related object of the list
  *
  * This is what LoveStack's commit 5c089f6250 does; Exponential has had the same behaviour since 2018 (EZP-27101,
- * doc/en/us/bc/5.90/relation_indexing.md), so there is no setting for it. No database: attributes, classes and objects
+ * doc/eng-us/bc/5.90/relation_indexing.md), so there is no setting for it. No database: attributes, classes and objects
  * are test doubles.
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/datatypes/eZObjectRelationMetaDataTest.php

@@ -2,7 +2,7 @@
  * admin4 setup/cronjobs: the filters, the copy buttons and the site in the commands, the console that follows a run
  * (an EventSource on the stream), and the run, stop and clear buttons posting in the background. The values from the
  * template are data-* attributes of #cronjob-script. A file of its own, so the page runs under a Content Security
- * Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 var expCronjobScript     = document.getElementById( 'cronjob-script' );
 var expCronjobActionUrl  = expCronjobScript.getAttribute( 'data-action-url' );

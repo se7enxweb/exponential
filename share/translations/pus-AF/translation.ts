@@ -5494,8 +5494,8 @@
         <translation>د مدیریت پینل او کېنډیو متنونه (تڼۍ، مینو ګانې) د ژباړې له دوتنو (.ts) څخه راځي او پر ځای یې د سایټ لاسرسي د Locale امستنه تعقیبوي. یو سایټ کولی شي جرمني منځپانګه د انګلیسي انټرفېس سره وښيي او برعکس.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>دلته د یوې ژبې زیاتول هېڅ شی نه ژباړي او هېڅ سایټ لاسرسی نه بدلوي: منځپانګه په سمونګر کې وژباړئ، او ژبه په SiteLanguageList کې هلته لېست کړئ چېرې چې باید وښودل شي. د کارن لارښود doc/en/us/guides/content-languages.md دی.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>دلته د یوې ژبې زیاتول هېڅ شی نه ژباړي او هېڅ سایټ لاسرسی نه بدلوي: منځپانګه په سمونګر کې وژباړئ، او ژبه په SiteLanguageList کې هلته لېست کړئ چېرې چې باید وښودل شي. د کارن لارښود doc/eng-us/guides/content-languages.md دی.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24012,8 +24012,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>پروفایل فعال کړئ تر څو وګورئ چې هره غوښتنه څومره بیانونه چلوي، څومره یې دقیق تکرارونه دي، او د پوښتنو کش به څومره وسپموي.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>پروفایل هغه بیانونه شمېري چې ډېټابېس پورې رسېدلي: کله چې د پوښتنو کش فعال وي، کش شوی ځواب پکې نه وي. «د یادښت سپما» هغه څه دي چې د request حالت به یې وسپموي، «د ګډ کش سپما» هغه څه چې shared حالت به یې وسپموي (د هر ځواب لپاره نږدې 15 µs). شمېرونکي د هر سرور لپاره جلا دي، ځکه چې هر سرور خپل APCu لري. لاګ var/tmp/sql_profile.log دی؛ doc/en/us/bc/6.0/sql-query-cache.md وګورئ.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>پروفایل هغه بیانونه شمېري چې ډېټابېس پورې رسېدلي: کله چې د پوښتنو کش فعال وي، کش شوی ځواب پکې نه وي. «د یادښت سپما» هغه څه دي چې د request حالت به یې وسپموي، «د ګډ کش سپما» هغه څه چې shared حالت به یې وسپموي (د هر ځواب لپاره نږدې 15 µs). شمېرونکي د هر سرور لپاره جلا دي، ځکه چې هر سرور خپل APCu لري. لاګ var/tmp/sql_profile.log دی؛ doc/eng-us/bc/6.0/sql-query-cache.md وګورئ.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25364,8 +25364,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>د site.ini امستنې</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>ډول د site.ini [SiteAccessSettings] SiteAccessType تابع دی کله چې یو سایټ لاسرسی یې وټاکي، که نه نو د هغه ډیزاینونه او RequireUserLogin. لارښود: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>ډول د site.ini [SiteAccessSettings] SiteAccessType تابع دی کله چې یو سایټ لاسرسی یې وټاکي، که نه نو د هغه ډیزاینونه او RequireUserLogin. لارښود: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32031,8 +32031,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>د امستنو هغه بلاکونه چې هره ننوتنه یې یو پلي کېدنه ثبتوي: د فرعي توکو د جدول ستنې (subitemscolumns.ini [Column_&lt;key&gt;] Class=، Handler=&lt;class&gt;::&lt;method&gt; یا Template=)، د منځپانګې د دندو ډولونه (content.ini [ContentJobSettings] JobTypes[])، د exp:ini کړنې او د حوزې چمتو کوونکي (ini.ini [IniCommandSettings]) او د ezjscore د سرور فنکشنونه (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=)، له هر هغه لرې خدمت سره چې د سرور فنکشن یو کلاس یې اعلانوي چې له expServiceBase څخه غځېدلی وي (د هغه static $services، چې د ezjscore/call/&lt;name&gt;::&lt;service&gt; په توګه بلل کېږي؛ هر یو په ټولګډ کې زیاتېږي، او هغه اعلان شوی خدمت چې طریقه یې نشته خراب دی). هغه ننوتنه چې د کلاس نوم اخلي، د هغو امستنو څخه هم ده چې د کلاس نوم اخلي او هلته شمېرل کېږي؛ نورې دلته په ټولګډ کې زیاتېږي. هغه ننوتنه چې کلاس، طریقه یا کېنډۍ یې نشته، یا کلاس یې له هغه څه نه دی غځېدلی چې ثبتلیک یې غواړي، خراب ښودل کېږي. د فرعي توکو دننه جوړې شوې ستنې، چې لېست یې پخپله ښيي، ټکي نه دي او نه لېست کېږي.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>نور ثبتلیکونه په rad.ini کې اعلان شوي دي، د کرنل له خوا او د هرې فعالې غځونې له خوا په خپل rad.ini.append.php کې: د پېښو اورېدونکي، د مصنوعي ځیرکتیا چمتو کوونکي، وسایل او ځنځیرونه، د MCP وسایل، د کتار د دندو ډولونه او نور. هر یو وايي چې کوم ini بلاکونه، یا کوم د کلاسونو لېست، د هغه ننوتنې لري او هره ننوتنه باید څه وي؛ هغه چې له InTotal=disabled سره اعلان شوی وي، هغو ټکو پورې اړه لري چې په بل ځای کې شمېرل شوي او پرته له زیاتولو څخه ازمویل کېږي. لارښود: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>نور ثبتلیکونه په rad.ini کې اعلان شوي دي، د کرنل له خوا او د هرې فعالې غځونې له خوا په خپل rad.ini.append.php کې: د پېښو اورېدونکي، د مصنوعي ځیرکتیا چمتو کوونکي، وسایل او ځنځیرونه، د MCP وسایل، د کتار د دندو ډولونه او نور. هر یو وايي چې کوم ini بلاکونه، یا کوم د کلاسونو لېست، د هغه ننوتنې لري او هره ننوتنه باید څه وي؛ هغه چې له InTotal=disabled سره اعلان شوی وي، هغو ټکو پورې اړه لري چې په بل ځای کې شمېرل شوي او پرته له زیاتولو څخه ازمویل کېږي. لارښود: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38747,8 +38747,8 @@ your account.</source>
         <translation>Exponential Layouts دا د نویو سایټونو لپاره ځای ونیو: یو ترتیب سیمې او بلاکونه لري، مینو له بلاکونو څخه یو دی، او یوه قاعده د هرې پاڼې لپاره ترتیب ټاکي. په دغه ډول جوړ شوی سایټ لاسرسی هېڅکله دا امستنې نه لولي.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>دا پاڼه د هغو سایټونو لپاره پاتې کېږي چې لا هم کلاسیک ډیزاین کاروي. د Layouts سره جوړ شوي سایټ لاسرسي لپاره دلته د یوې امستنې بدلول زیان نه لري خو اغېز هم نه لري. لارښود doc/en/us/guides/classic-menu-settings.md دواړه لارې تشریح کوي.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>دا پاڼه د هغو سایټونو لپاره پاتې کېږي چې لا هم کلاسیک ډیزاین کاروي. د Layouts سره جوړ شوي سایټ لاسرسي لپاره دلته د یوې امستنې بدلول زیان نه لري خو اغېز هم نه لري. لارښود doc/eng-us/guides/classic-menu-settings.md دواړه لارې تشریح کوي.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -48783,8 +48783,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>په دغه نصب کې هره هغه امستنه چې ارزښت یې کلاس وي، یا نوم یې وايي چې کلاس اخلي. یوه له دغو بدله کړئ او پر ځای یې بل څه ځواب ورکوي.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>نور ثبتلیکونه په rad.ini کې اعلان شوي دي، د کرنل له خوا او د هرې فعالې غځونې له خوا په خپل rad.ini.append.php کې: د پېښو اورېدونکي، د مصنوعي ځیرکتیا چمتو کوونکي، وسایل او ځنځیرونه، د MCP وسایل، د کتار د دندو ډولونه او نور. هر یو وايي چې کوم ini بلاکونه، یا کوم د کلاسونو لېست، د هغه ننوتنې لري او هره ننوتنه باید څه وي؛ هغه چې له InTotal=disabled سره اعلان شوی وي، هغو ټکو پورې اړه لري چې په بل ځای کې شمېرل شوي او پرته له زیاتولو څخه ازمویل کېږي. لارښود: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>نور ثبتلیکونه په rad.ini کې اعلان شوي دي، د کرنل له خوا او د هرې فعالې غځونې له خوا په خپل rad.ini.append.php کې: د پېښو اورېدونکي، د مصنوعي ځیرکتیا چمتو کوونکي، وسایل او ځنځیرونه، د MCP وسایل، د کتار د دندو ډولونه او نور. هر یو وايي چې کوم ini بلاکونه، یا کوم د کلاسونو لېست، د هغه ننوتنې لري او هره ننوتنه باید څه وي؛ هغه چې له InTotal=disabled سره اعلان شوی وي، هغو ټکو پورې اړه لري چې په بل ځای کې شمېرل شوي او پرته له زیاتولو څخه ازمویل کېږي. لارښود: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

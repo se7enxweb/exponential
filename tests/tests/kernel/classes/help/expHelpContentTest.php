@@ -1,6 +1,6 @@
 <?php
 /**
- * Help maintained as content (doc/en/us/features/6.0/help-content.md), without a database: the content model, the rules of
+ * Help maintained as content (doc/eng-us/features/6.0/help-content.md), without a database: the content model, the rules of
  * the style guide the validator checks, the help_id, the Markdown of a topic and its mapping into the help.
  *
  *  HCT-01  the model: eight classes, the plan's fields, the topic types' required fields, the roles' limitations

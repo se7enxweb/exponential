@@ -1,7 +1,7 @@
 <?php
 /**
  * @description E-mail preferences retention: consent log rows of people who are gone, expired confirmations, old suppression entries
- * @link doc/en/us/guides/mail-preferences-administrator.md
+ * @link doc/eng-us/guides/mail-preferences-administrator.md
  *
  * File containing the mailpreferences.php cronjob
  *

@@ -1,6 +1,6 @@
 <?php
 /**
- * The content checks against a real installation (doc/en/us/features/6.0/content-checks.md): which objects are
+ * The content checks against a real installation (doc/eng-us/features/6.0/content-checks.md): which objects are
  * unreferenced, the trash action, the broken relations, and what a user with less access sees.
  *
  *  CS-01  unreferenced: an object no other object refers to is listed; one referred to from a published version

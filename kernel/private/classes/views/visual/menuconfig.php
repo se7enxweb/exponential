@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/visual/menuconfig.php, moved into a class (#207 stage 1). The file kernel/visual/menuconfig.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/visual/menuconfig.php:
@@ -28,7 +28,7 @@ namespace Exponential\View\Kernel\Visual
  * available_menu_array, current_menu, siteaccess_list and current_siteaccess. New: the unordered parameter
  * (siteaccess)/<name>, which opens the page for one siteaccess without changing the session.
  *
- * Guide: doc/en/us/guides/classic-menu-settings.md
+ * Guide: doc/eng-us/guides/classic-menu-settings.md
  */
 class Menuconfig extends \Exponential\Runnable\ModuleView
 {

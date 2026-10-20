@@ -22,7 +22,7 @@
  * language when the object has it. Cost: none for "name" without metadata; the data map for
  * the meta fields; for "path" the ancestors, fetched once per parent (every row of a page
  * shares them).
- * Guide: doc/en/us/bc/6.0/subitems-table-options.md
+ * Guide: doc/eng-us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

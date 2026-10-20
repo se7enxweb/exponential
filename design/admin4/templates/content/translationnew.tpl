@@ -4,7 +4,7 @@
    Posts to content/translations as it always has: LocaleID (-1 for a custom language), TranslationName and
    TranslationLocale for a custom one, StoreButton (ChangeButton when editing) and CancelButton. Without javascript
    the list is a plain list box and both parts of the form are open; a language chosen in the list wins over the
-   custom fields. The same file is in design/admin and design/admin4. User guide: doc/en/us/guides/content-languages.md. *}
+   custom fields. The same file is in design/admin and design/admin4. User guide: doc/eng-us/guides/content-languages.md. *}
 {def $chosen = cond( is_set( $selected_locale ), $selected_locale, '' )
      $choice_count = 0}
 {if $chosen|eq('')}{set $chosen = '-1'}{/if}

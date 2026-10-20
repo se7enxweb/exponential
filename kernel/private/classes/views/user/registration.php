@@ -12,7 +12,7 @@ namespace Exponential\View\Kernel\User
 
 /**
  * user/registration/<token>: the page the signed links of the administrator's "New user registered" mail open
- * (expRegistrationAdminAction, doc/en/us/features/6.0/registration-admin-links.md).
+ * (expRegistrationAdminAction, doc/eng-us/features/6.0/registration-admin-links.md).
  *
  * Needs a signed-in user: an anonymous one gets the kernel's access denied, which in the administration is the login
  * form, back to this address after the login. The token is checked first (verify(): a bad, changed, expired, used or

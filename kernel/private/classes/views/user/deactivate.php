@@ -25,7 +25,7 @@ namespace Exponential\View\Kernel\User
  * account or the user who acts. Changes take a POST (with the form token where ezformtoken is active); at most
  * expUserDeactivation::MAX_IDS accounts at once. Confirm also needs the token of the confirmation page, kept in the
  * session (DeactivateToken), so a change is never done by a request the page did not make, even without ezformtoken.
- * Guide: doc/en/us/features/6.0/user-hygiene.md, section "Deactivate and move"
+ * Guide: doc/eng-us/features/6.0/user-hygiene.md, section "Deactivate and move"
  */
 class Deactivate extends \Exponential\Runnable\ModuleView
 {

@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/setup/preload.php, moved into a class (#207 stage 1). The file kernel/setup/preload.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/setup/preload.php:
@@ -31,7 +31,7 @@ namespace Exponential\View\Kernel\Setup
  * last runs. A run never happens inside this request: expPreloadJob::start() starts it in the background, and the
  * page follows it (setup/preloadjob with javascript, a reload without). The form posts the names setup/preloadjob
  * takes (Action, SiteAccess, MaxPages, MaxDepth, JobID), so it works without javascript too.
- * Guide: doc/en/us/guides/preloading-caches.md
+ * Guide: doc/eng-us/guides/preloading-caches.md
  */
 class Preload extends \Exponential\Runnable\ModuleView
 {

@@ -4,7 +4,7 @@
  * audit's scheduled work, expAuditMaintenance::run(). Every run: the incremental index, the sink spools (webhook,
  * mail, network syslog) and the alert rules' cronjob pass; once a day after [AuditRotationSettings] RotateAfter:
  * rotation by day, verification, archiving, retention, pseudonymisation of the index and the checkpoint
- * (doc/en/us/bc/6.0/audit.md, "Rotation, archives and retention (Q8)").
+ * (doc/eng-us/bc/6.0/audit.md, "Rotation, archives and retention (Q8)").
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

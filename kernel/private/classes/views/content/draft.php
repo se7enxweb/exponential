@@ -1,13 +1,13 @@
 <?php
 /**
  * The code of kernel/content/draft.php, moved into a class (#207 stage 1). The file kernel/content/draft.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * The drafts page of the current user ("My drafts"). run() takes the request in steps: removing ticked drafts, one
  * draft, every draft, or the drafts older than a number of days, then the list. Only the user's own drafts are ever
  * listed or removed: every version is checked again at the moment it is removed (expContentDraftList::removable()).
  * The list (filters, search, order, paging, figures) is worked out by expContentDraftList, which needs no database.
- * Guide: doc/en/us/guides/drafts-and-pending.md
+ * Guide: doc/eng-us/guides/drafts-and-pending.md
  */
 /*
  * The original header of kernel/content/draft.php:

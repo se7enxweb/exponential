@@ -1,6 +1,6 @@
 <?php
 /**
- * The help cache keeps only what the current index uses (doc/en/us/features/6.0/help-system.md). No database.
+ * The help cache keeps only what the current index uses (doc/eng-us/features/6.0/help-system.md). No database.
  *
  *  CP-01  a rebuild removes the other index-<signature>.php files and the navigation trees (nav/*.html) and rendered
  *         pages (render/*.json) written before it, keeps the current index, files written after the rebuild started

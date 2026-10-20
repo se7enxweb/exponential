@@ -16,7 +16,7 @@
   It also holds the one set of rules for a redirect target that came from outside the code (a form field, the
   session, a URL parameter): safeURI() and unsafeReason(). eZModule::redirectTo() applies them to every redirect,
   redirectURI() to the preferred and the last viewed page, and returnURI() is "back to where you came from" for a
-  Cancel button. The rules are described in doc/en/us/features/6.0/safe-redirects.md.
+  Cancel button. The rules are described in doc/eng-us/features/6.0/safe-redirects.md.
 */
 
 class eZRedirectManager

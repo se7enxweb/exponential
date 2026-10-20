@@ -1,0 +1,84 @@
+# AdminNeo: the database manager behind the Database Source Editor
+
+This page is for administrators who want to know what the database tool inside the admin can do, or who run it on its
+own. AdminNeo is a complete database management tool written in PHP, a fork of Adminer. In Exponential you reach it
+through the extension `sevenx_dse`, behind role-based permissions, so a site administrator can look at tables and run
+SQL from the same administration interface as everything else. See [sevenx_dse](extensions/sevenx_dse.md) to install
+and use it.
+
+| | |
+|---|---|
+| Repository | `se7enxweb/adminneo` (a fork of the AdminNeo project, itself based on Adminer) |
+| Newest tag | 5.2.1 (2025-12-07); the fork's main branch carries 5.3 development |
+| History | [adminneo](../../history/ecosystem/adminneo.md): 1,121 changes, all upstream history carried by the fork (the fork has no changes of its own in the ledger) |
+
+## What it gives an Exponential administrator
+
+- Browse tables, filter, sort, page through rows and edit values in place.
+- Run SQL commands with syntax highlighting and (from 5.1.0) autocompletion.
+- Create, alter and drop tables, columns and indexes.
+- Export and import: SQL dumps, CSV, TSV; exports can be zipped (Bz2/Zip output plugins) or written as JSON or XML
+  (plugins).
+- A clean responsive interface with dark mode and colour variants (from 5.0.0).
+- Plugins and customisations: the fork ships plugins for logins (one-time password, IP, table based, external), foreign
+  key editing, JSON preview, slug generation, translation, a Tiny MCE editor, SQL logging, and an assistant plugin that
+  generates SQL from a prompt.
+
+AdminNeo is a single file you can upload to a server. **EditorNeo** is its companion, which offers data editing to end
+users without structure or SQL access.
+
+**Supported databases** (README): MySQL, MariaDB, PostgreSQL, MS SQL, SQLite, Oracle, MongoDB, SimpleDB,
+Elasticsearch (beta) and ClickHouse (alpha).
+
+**Requirements:** PHP 5.4 or newer with sessions to run the compiled file, PHP 7.1 or newer to run it from source; the
+composer package states PHP 7.1 to 8.5. The OpenSSL extension is recommended so stored login information is encrypted.
+
+## Use it on its own (optional)
+
+Without the extension you can still use AdminNeo directly: build the single file and upload it.
+
+```bash
+git clone git@github.com:se7enxweb/adminneo.git
+cd adminneo
+php bin/compile.php            # writes the single-file version (see the Makefile for targets)
+```
+
+Upload the compiled file to a protected location (HTTP authentication or a network restriction in front of it) and
+open it in a browser. Never leave a database manager reachable by anonymous visitors. The `examples` directory of the
+repository contains customisation and plugin examples; the `plugins` directory lists the plugins named above.
+
+## Release highlights since December 2023
+
+| Release | Date | Highlights (from the project changelog) |
+|---|---|---|
+| 5.0.0 | 2025-05-29 | First release of AdminNeo and EditorNeo as standalone products: new responsive theme with dark mode and colour variants, easy configuration, reviewed plugins and customisations. Version 5 breaks backward compatibility with older Adminer based customisations; read the upgrade guide of the project before upgrading. |
+| 5.1.0 | 2025-08-31 | New Settings page with basic UI options; autocompletion in the SQL command editor; `defaultServer` and `defaultDatabase` configuration parameters; generated columns (MySQL, SQLite); computed columns (MS SQL); CockroachDB support; indexes on materialized views (PostgreSQL); the editor displays database views; install through Composer. Many bug fixes, for example the MongoDB driver and ordering by `COUNT(*)`. |
+| 5.1.1 | 2025-09-01 | Compiler fix: autocompletion script missing from a single-driver file. |
+| 5.2.0 | 2025-11-02 | `sqlAutocompletion` and `relationLinks` configuration parameters; links to referencing tables; relation links for PostgreSQL and MS SQL; PostgreSQL procedures (11+); URL parameter `?ext=pdo` to force PDO; credential escaping fix for web based drivers; a plugin that generates SQL from an AI prompt (needs an API key you provide). |
+| 5.2.1 | 2025-12-07 | PostgreSQL: connect through the default socket when no server is given; JSON dump format fix; CSV export opens in the browser window again; cookie escaping fix. |
+| 5.3 (main, unreleased) | 2026-03 | Declares PHP 8.5 compatibility; more secure randomness and 256 bits of entropy in all random strings; support for new system tables in the foreign keys plugin; fix for paging the selection table (issue #181). |
+
+The month by month list of all 1,121 changes, including the smaller UI and driver fixes, is in the [repository history](../../history/ecosystem/adminneo.md#upstream-history-carried-by-the-fork-by-month).
+
+## Limits
+
+- A database manager gives full access to the data it can log in to. Restrict it by role, network and backup
+  discipline; the extension adds a safety gate that asks for a backup acknowledgement.
+- The AI SQL plugin sends your prompt to a third party service when you enable it. It is off unless you configure it.
+- Features of the unreleased 5.3 line may change before a tag.
+
+## Related pages
+
+- [sevenx_dse](extensions/sevenx_dse.md)
+- Platform features: [administration interface](platform-admin-ui-fork.md), [DXP skeleton](platform-dxp-skeleton.md), [Layouts on the platform](platform-layouts-core-fork.md), [Nexus starter](platform-nexus-starter.md), [PHP 8.5 framework forks](platform-php85-framework-forks.md), [site bundles](platform-site-bundles.md), [SQLite for Exponential Platform](platform-sqlite-install.md), [legacy bridge](legacy-bridge.md)
+- Specifications: [platform console command names](../../specifications/6.0/platform-console-commands.md), [platform package map](../../specifications/6.0/platform-package-map.md), [platform SQLite installer](../../specifications/6.0/platform-sqlite-installer.md), [legacy bridge bundle](../../specifications/6.0/legacy-bridge-bundle.md)
+- Upgrade notes: [package forks and command renames](../../bc/6.0/platform-package-forks-and-command-renames.md)
+- Changelog: [platform changelog](../../../changelogs/extensions/exponential-platform.md)
+- History: [ecosystem overview](../../history/ecosystem.md), [ecosystem months](../../history/ecosystem/months/2026-04.md), [change ledger](../../history/ledger/README.md)
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../help/partners/partners-start-here.md) and [How to apply](../../help/partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

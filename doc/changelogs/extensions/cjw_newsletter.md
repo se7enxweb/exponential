@@ -2,13 +2,13 @@
 
 Read this page before you install or update `cjw_newsletter`, or to find out which release brought a change.
 
-What each release of `cjw_newsletter` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../en/us/features/6.0/extensions/cjw_newsletter.md); the story is in the [chronicle](../../en/us/history/extensions/cjw_newsletter.md).
+What each release of `cjw_newsletter` contains, assembled from its commits. Each line links its commit. Version bumps, merge commits and funding or package metadata that deliver nothing to a user are counted, not listed. The extension is described on its [feature page](../../eng-us/features/6.0/extensions/cjw_newsletter.md); the story is in the [chronicle](../../eng-us/history/extensions/cjw_newsletter.md).
 
 ## 4.1.16 (2026-10-02)
 
 **Added**
 
-- The installer creates the newsletter tree of a new installation: `CjwNewsletterClassInstaller::installTree()` makes a "Newsletter" root, a newsletter system and one list with the settings of the site, in the section "CJW Newsletter", and `writeRootFolderSetting()` records the root in `settings/override/cjw_newsletter.ini.append.php`; both are idempotent. Commit `fffda2f` (see [the feature page](../../en/us/features/6.0/extensions/cjw_newsletter.md#the-newsletter-tree-of-a-new-installation))
+- The installer creates the newsletter tree of a new installation: `CjwNewsletterClassInstaller::installTree()` makes a "Newsletter" root, a newsletter system and one list with the settings of the site, in the section "CJW Newsletter", and `writeRootFolderSetting()` records the root in `settings/override/cjw_newsletter.ini.append.php`; both are idempotent. Commit `fffda2f` (see [the feature page](../../eng-us/features/6.0/extensions/cjw_newsletter.md#the-newsletter-tree-of-a-new-installation))
 
 **Updated**
 
@@ -195,8 +195,8 @@ No commit of this repository is tagged only with this release in the ledger wind
 
 ## Related pages
 
-- [Feature page](../../en/us/features/6.0/extensions/cjw_newsletter.md)
-- [Chronicle](../../en/us/history/extensions/cjw_newsletter.md)
-- [Change ledger](../../en/us/history/ledger/cjw_newsletter.md)
-- [Behaviour changes of the extensions](../../en/us/bc/6.0/extensions-behaviour-changes.md)
-- Months: [2024-01](../../en/us/history/extensions/months/2024-01.md), [2026-03](../../en/us/history/extensions/months/2026-03.md), [2026-08](../../en/us/history/extensions/months/2026-08.md), [2026-09](../../en/us/history/extensions/months/2026-09.md), [2026-10](../../en/us/history/extensions/months/2026-10.md)
+- [Feature page](../../eng-us/features/6.0/extensions/cjw_newsletter.md)
+- [Chronicle](../../eng-us/history/extensions/cjw_newsletter.md)
+- [Change ledger](../../eng-us/history/ledger/cjw_newsletter.md)
+- [Behaviour changes of the extensions](../../eng-us/bc/6.0/extensions-behaviour-changes.md)
+- Months: [2024-01](../../eng-us/history/extensions/months/2024-01.md), [2026-03](../../eng-us/history/extensions/months/2026-03.md), [2026-08](../../eng-us/history/extensions/months/2026-08.md), [2026-09](../../eng-us/history/extensions/months/2026-09.md), [2026-10](../../eng-us/history/extensions/months/2026-10.md)

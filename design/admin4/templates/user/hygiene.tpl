@@ -9,7 +9,7 @@
    With [UserSettings] DeactivateAndMove=enabled and user/deactivate, Deactivate and move and Reactivate and move
    back send the ticked accounts to user/deactivate, which confirms them; an account in the group of deactivated
    users carries a badge. Works without javascript; the script only adds Select all and the selection count. The same file is in
-   design/admin and design/admin4. Guide: doc/en/us/features/6.0/user-hygiene.md *}
+   design/admin and design/admin4. Guide: doc/eng-us/features/6.0/user-hygiene.md *}
 
 {def $uri = 'user/hygiene'
      $form_uri = concat( $uri, $hygiene_query )

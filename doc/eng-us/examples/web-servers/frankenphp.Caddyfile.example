@@ -1,0 +1,85 @@
+# Exponential 6: FrankenPHP on its own (without exp:velocity)
+#
+# Free documentation: GFDL 1.3 or later, see doc/eng-us/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
+#
+# The shape of the Caddyfile that "exp:velocity" generates for its FrankenPHP
+# engine (kernel/classes/expvelocityfrankenphp.php, caddyfileText(), in
+# var/vc/frankenphp/run/Caddyfile), for a FrankenPHP you start yourself:
+# public names with Caddy's automatic HTTPS instead of the generated ports,
+# example paths instead of this machine's, and the first two rules of
+# .htaccess_root added. Explained in frankenphp.md next to this file.
+#
+# With Velocity, do not use this file: set [ServerSettings] Engine=frankenphp
+# and let "exp:velocity start" write and validate its own Caddyfile; put own
+# directives in the file named by [FrankenPHPSettings] SiteInclude.
+#
+# Never use php_server for Exponential: it serves every file that exists,
+# settings/*.ini and the SQLite database included.
+#
+# Run: frankenphp run --config /etc/frankenphp/Caddyfile
+# Check: frankenphp validate --config /etc/frankenphp/Caddyfile --adapter caddyfile
+
+{
+	email webmaster@example.com
+	grace_period 15s
+	frankenphp {
+		# PHP threads; FrankenPHP's default is twice the CPU cores
+		#num_threads 16
+		# The binary reads no php.ini of the machine: what velocity.ini
+		# [FrankenPHPSettings] IniOptions[] ships
+		php_ini display_errors Off
+		php_ini log_errors On
+		php_ini memory_limit 512M
+		php_ini opcache.enable 1
+		php_ini post_max_size 64M
+		php_ini upload_max_filesize 32M
+	}
+}
+
+(exp) {
+	# The installation root, where index.php is
+	root * /var/www/example.com
+	log {
+		output file /var/log/frankenphp/example.com-access.log
+		format json
+	}
+	encode zstd br gzip
+	header {
+		?X-Content-Type-Options "nosniff"
+		?X-Frame-Options "SAMEORIGIN"
+		?Referrer-Policy "strict-origin-when-cross-origin"
+		?Permissions-Policy "camera=(), microphone=(), payment=(), usb=()"
+	}
+	route {
+		# No dot path (.well-known stays reachable) and no script below the root
+		@dot {
+			path_regexp dot /\.
+			not path /.well-known/*
+		}
+		respond @dot 404
+		@script path_regexp script ^/.+/[^/]+\.(php[0-9]?|phtml|phar)$
+		respond @script 404
+
+		@svg path_regexp svg (?i)\.svgz?$
+		header @svg Content-Security-Policy "sandbox; default-src 'none'; style-src 'unsafe-inline'"
+
+		# As generated: expVelocity::STATIC_PATHS, never a script or a dot path
+		@static {
+			path_regexp static ^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|(index|sw)\.js$|w3c/p3p\.xml$)
+			not path_regexp (?i)(\.(php\d?|phtml|phar)$|/\.)
+		}
+		header @static Cache-Control "public, max-age=31536000"
+		file_server @static
+		@rest path_regexp rest ^/(api/|index_rest\.php)
+		rewrite @rest /index_rest.php
+		@treemenu path_regexp treemenu ^/([^/]+/)?content/treemenu
+		rewrite @treemenu /index_treemenu.php
+		@front not path /index_rest.php /index_treemenu.php
+		rewrite @front /index.php
+		php
+	}
+}
+
+example.com, www.example.com {
+	import exp
+}

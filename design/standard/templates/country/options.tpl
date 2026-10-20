@@ -15,7 +15,7 @@
    back once. Browser autofill picks the first option matching the value or
    the text, which is the ranked one: "United States" finds the United States
    of America, not the United States Minor Outlying Islands.
-   Guide: doc/en/us/features/6.0/country-groups.md *}
+   Guide: doc/eng-us/features/6.0/country-groups.md *}
 {default $country_value_field = 'Alpha2'
          $country_selected = array()
          $country_selected_map = hash()

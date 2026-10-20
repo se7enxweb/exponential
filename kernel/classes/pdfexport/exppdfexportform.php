@@ -14,7 +14,7 @@
  *
  * read() works on plain values and reads nothing, so it is tested without a database. What it cannot know (whether
  * a node exists, which classes there are, whether another stored export writes the same file) is passed in.
- * Guide: doc/en/us/guides/pdf-exports.md
+ * Guide: doc/eng-us/guides/pdf-exports.md
  */
 class expPDFExportForm
 {

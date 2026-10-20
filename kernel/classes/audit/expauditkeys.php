@@ -1,6 +1,6 @@
 <?php
 /**
- * The audit keys (doc/en/us/bc/6.0/audit.md, "Keys (Z7)", "Key handling"): the installation id (a UUID, part of every
+ * The audit keys (doc/eng-us/bc/6.0/audit.md, "Keys (Z7)", "Key handling"): the installation id (a UUID, part of every
  * channel's genesis hash), the signing keys (HMAC-SHA-256 of checkpoints and, from stage 5, archive manifests)
  * and the pseudonym key (the "hash" privacy option).
  *
@@ -371,7 +371,7 @@ class expAuditKeys
     }
 
     /**
-     * Key rotation (doc/en/us/bc/6.0/audit.md, "Keys (Z7)"): adds SigningKey[k<n+1>-...] and makes it the active key.
+     * Key rotation (doc/eng-us/bc/6.0/audit.md, "Keys (Z7)"): adds SigningKey[k<n+1>-...] and makes it the active key.
      * Old keys stay: archives and checkpoints signed by them still verify. The caller records
      * system.audit.key.rotate (exp:audit key rotate does).
      *

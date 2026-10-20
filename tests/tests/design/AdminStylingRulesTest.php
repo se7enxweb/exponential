@@ -1,6 +1,6 @@
 <?php
 /**
- * The administration's styling rules (doc/en/us/bc/6.0/admin4-styling.md), checked on the files alone; no database, no
+ * The administration's styling rules (doc/eng-us/bc/6.0/admin4-styling.md), checked on the files alone; no database, no
  * installation.
  *
  * - No <style> block and no style="" attribute in the templates of the admin designs (admin4, admin4l, admin3,
@@ -41,7 +41,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     const DESIGNS = array( 'admin4', 'admin4l', 'admin3', 'admin' );
 
     /**
-     * Permanent exceptions, path => why (each is documented in doc/en/us/bc/6.0/admin4-styling.md, "Exceptions")
+     * Permanent exceptions, path => why (each is documented in doc/eng-us/bc/6.0/admin4-styling.md, "Exceptions")
      */
     const EXCEPTIONS = array(
         'design/admin/templates/pagelayout.tpl' => 'the column widths of the editor\'s preferences, from menu.ini or dragged by hand, before the page is drawn',
@@ -148,7 +148,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $new = array_values( array_diff( $found, self::ALLOWLIST, array_keys( self::EXCEPTIONS ) ) );
         $this->assertSame( array(), $new,
             "These templates have a <style> block or a style=\"\" attribute. Move the CSS to the design's stylesheets " .
-            "(components.css classes, or stylesheets/modules/<group>.css): doc/en/us/bc/6.0/admin4-styling.md" );
+            "(components.css classes, or stylesheets/modules/<group>.css): doc/eng-us/bc/6.0/admin4-styling.md" );
     }
 
     public function testAllowlistOnlyShrinks()
@@ -380,7 +380,7 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
                 $new[] = "design/admin4/stylesheets/$where -- $problem";
             }
         }
-        $this->assertSame( array(), $new, 'use a --a4-* colour token (doc/en/us/bc/6.0/admin4-styling.md)' );
+        $this->assertSame( array(), $new, 'use a --a4-* colour token (doc/eng-us/bc/6.0/admin4-styling.md)' );
         $this->assertSame( array(), array_values( array_diff( self::BASE_COLOUR_ALLOWLIST, array_keys( $found ) ) ),
             'These allowlisted colour literals are gone: take them off BASE_COLOUR_ALLOWLIST' );
     }

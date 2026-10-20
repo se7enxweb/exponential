@@ -1,7 +1,7 @@
 <?php
 /**
  * The help's safe HTML (expHelpMarkdownRenderer) of a topic field as DITA 1.3 elements, for the DITA export of help
- * maintained as content (expHelpContentDita, doc/en/us/features/6.0/help-content.md, "DITA export").
+ * maintained as content (expHelpContentDita, doc/eng-us/features/6.0/help-content.md, "DITA export").
  *
  * Block elements: p, ul, ol, li, codeblock (from pre), lq (from blockquote), simpletable (from table), note (from the
  * help's callouts, with their type), fig (from a figure with a caption). Inline elements: uicontrol (from bold: the

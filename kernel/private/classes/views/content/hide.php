@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/content/hide.php, moved into a class (#207 stage 1). The file kernel/content/hide.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/content/hide.php:
@@ -38,7 +38,7 @@ class Hide extends \Exponential\Runnable\ModuleView
         if ( !$curNode->attribute( 'can_hide' ) )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
 
-        // Reverse relations (content.ini [HideSettings] ReverseRelationCheck, doc/en/us/features/6.0/reverse-relation-check.md):
+        // Reverse relations (content.ini [HideSettings] ReverseRelationCheck, doc/eng-us/features/6.0/reverse-relation-check.md):
         // with warn, hiding a node that other objects point at, or whose object has further locations, takes the
         // confirmation page first, with the list, even when posted from the popup menu or the Locations tab
         $relationCheck = null;
@@ -59,7 +59,7 @@ class Hide extends \Exponential\Runnable\ModuleView
             }
         }
 
-        // Content jobs (doc/en/us/bc/6.0/content-jobs.md): a large subtree (or the user's last choice) gets a
+        // Content jobs (doc/eng-us/bc/6.0/content-jobs.md): a large subtree (or the user's last choice) gets a
         // confirmation with the now-or-background choice; a small one is hidden or revealed at once, as before.
         if ( class_exists( 'Exponential\\View\\Kernel\\Content\\Job' ) )
         {

@@ -6,7 +6,7 @@
    names are those the view has always read.
 
    The same file is in design/admin and design/admin4. The reasons come from the view (section_overview); without
-   it the page says only that a section is in use. Guide: doc/en/us/guides/sections.md *}
+   it the page says only that a section is in use. Guide: doc/eng-us/guides/sections.md *}
 
 {def $allowed_sections_count = $allowed_sections|count()
      $unallowed_count = $unallowed_sections|count()

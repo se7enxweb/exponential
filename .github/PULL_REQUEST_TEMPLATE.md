@@ -21,6 +21,6 @@
 - [ ] The file manifest is current (`make manifest-fix`; `make hooks` checks it on every commit).
 - [ ] The tests pass, and the documentation is updated where the behavior changed.
 - [ ] Administration templates carry no `<style>` block or `style=""` attribute
-      ([Styling the administration](../doc/en/us/bc/6.0/admin4-styling.md)).
+      ([Styling the administration](../doc/eng-us/bc/6.0/admin4-styling.md)).
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) for the whole procedure.

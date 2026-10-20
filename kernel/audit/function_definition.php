@@ -1,6 +1,6 @@
 <?php
 /**
- * The fetch functions of the audit module (doc/en/us/bc/6.0/audit.md, "Template operator and fetch"): events, count,
+ * The fetch functions of the audit module (doc/eng-us/bc/6.0/audit.md, "Template operator and fetch"): events, count,
  * event, chain_status and can_read. Each checks audit/read with its Channel limitation and returns an empty result
  * to a user without it. The filters are the console's. Written by a generator from one list of filters.
  *

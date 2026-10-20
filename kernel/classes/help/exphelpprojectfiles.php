@@ -2,7 +2,7 @@
 /**
  * File containing the expHelpProjectFiles class.
  *
- * The project files of the help (doc/en/us/features/6.0/help-system.md, "Project files"): the Markdown files of the
+ * The project files of the help (doc/eng-us/features/6.0/help-system.md, "Project files"): the Markdown files of the
  * repository outside doc/ that document the project itself, README.md, INSTALL.md, SECURITY.md, CONTRIBUTING.md,
  * COPYRIGHT.md, LICENSE.md and the README.md files of bin/, design/ and kernel/. They are English only, like
  * doc/changelogs/, and each has the id "project/<path in the repository>" ("project/README.md").
@@ -44,6 +44,7 @@ class expHelpProjectFiles
                                   'INSTALL.md;admin,developer,hosting',
                                   'SECURITY.md;admin,developer,hosting',
                                   'CONTRIBUTING.md;developer,supporter,advocate,partner',
+                                  'CODE_OF_CONDUCT.md;developer,supporter,advocate,partner,trainer,user',
                                   'COPYRIGHT.md;admin,developer,partner,businesses',
                                   'LICENSE.md;admin,developer,partner,businesses' ),
     );

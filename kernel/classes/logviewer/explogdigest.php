@@ -1,6 +1,6 @@
 <?php
 /**
- * The error digest of the log viewer (Setup > Log files > Error digest, setup/logsdigest; doc/en/us/features/6.0/log-viewer.md,
+ * The error digest of the log viewer (Setup > Log files > Error digest, setup/logsdigest; doc/eng-us/features/6.0/log-viewer.md,
  * "Error digest"): the distinct messages of the last hours of each log, normalized and grouped, with their count and
  * when they were last seen, so a flood of the same error reads as one line with a number.
  *
@@ -111,7 +111,7 @@ class expLogDigest
 
     /**
      * The text an entry is grouped by, from its masked headline: the normalized message, or the field the grouping
-     * names (doc/en/us/features/6.0/request-logs.md). An entry without that field is grouped by its message. The text is
+     * names (doc/eng-us/features/6.0/request-logs.md). An entry without that field is grouped by its message. The text is
      * also what the search literal of the group is taken from, so it is a run of the line as it is written. Pure.
      *
      *   category-rule  "probe/wp-login" (security.log: the first word, <category>/<rule>)

@@ -3,7 +3,7 @@
  * File containing the expIniActionClear class.
  *
  * exp:ini clear: writes the array reset line Variable[] in one scope's file, so the values the files loaded
- * before it give are dropped and only what follows counts. Guide: doc/en/us/bc/6.0/console-exp-ini.md.
+ * before it give are dropped and only what follows counts. Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

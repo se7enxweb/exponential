@@ -1,0 +1,91 @@
+# Exponential 6: Caddy with PHP-FPM (automatic HTTPS, HTTP/2 and HTTP/3)
+#
+# Free documentation: GFDL 1.3 or later, see doc/eng-us/README-LICENSE.md; rules derived from .htaccess_root (GPL v2 or later).
+#
+# Derived, not shipped by the kernel: the routing of the Caddyfile that
+# "exp:velocity" generates for its FrankenPHP engine
+# (kernel/classes/expvelocityfrankenphp.php, caddyfileText()), with PHP
+# handed to a PHP-FPM pool instead of FrankenPHP's built-in PHP, plus the
+# first two rules of .htaccess_root (dot paths, scripts below the root).
+# Explained in caddy.md next to this file.
+#
+# Never use php_fastcgi or php_server for Exponential: they serve every file
+# that exists, settings/*.ini and the SQLite database included.
+#
+# Install: copy to /etc/caddy/Caddyfile (or import it from there), replace
+# example.com, the e-mail address, /var/www/example.com and the PHP-FPM
+# socket, then "caddy validate --config /etc/caddy/Caddyfile" and
+# "systemctl reload caddy". Caddy obtains and renews the certificate itself
+# and redirects plain HTTP to HTTPS.
+
+{
+	# The address Let's Encrypt writes to about the certificate
+	email webmaster@example.com
+}
+
+example.com, www.example.com {
+	# The installation root, where index.php is
+	root * /var/www/example.com
+
+	log {
+		output file /var/log/caddy/example.com-access.log
+		format json
+	}
+	encode zstd gzip
+
+	# The values of the kernel's site.ini [HTTPHeaderSettings] SecurityHeaders[];
+	# "?" sets a header only when the response does not have it yet, so a page
+	# from index.php keeps the kernel's own.
+	header {
+		?X-Content-Type-Options "nosniff"
+		?X-Frame-Options "SAMEORIGIN"
+		?Referrer-Policy "strict-origin-when-cross-origin"
+		?Permissions-Policy "camera=(), microphone=(), payment=(), usb=()"
+		# HSTS once every name is served over HTTPS for good; start short. Here or
+		# in site.ini SecurityHeaders[Strict-Transport-Security], not both.
+		#?Strict-Transport-Security "max-age=300"
+	}
+
+	route {
+		# 1. No dot file or dot directory, anywhere; .well-known stays reachable
+		#    (Caddy's regular expressions have no look-ahead, hence two matchers)
+		@dot {
+			path_regexp dot /\.
+			not path /.well-known/*
+		}
+		respond @dot 404
+
+		# 2. No script below the root runs because its path was asked for
+		@script path_regexp script ^/.+/[^/]+\.(php[0-9]?|phtml|phar)$
+		respond @script 404
+
+		# 3. Uploaded SVG images run nothing and load nothing when opened directly
+		@svg path_regexp svg (?i)\.svgz?$
+		header @svg Content-Security-Policy "sandbox; default-src 'none'; style-src 'unsafe-inline'"
+
+		# 4. Files served as they are: expVelocity::STATIC_PATHS, the list of
+		#    .htaccess_root, never a script or a dot path below them
+		@static {
+			path_regexp static ^/(design/[^/]+/(stylesheets|images|javascript|fonts)/|share/icons/|extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/|var/([^/]+/)?storage/images(-versioned)?/|var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$|var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$|var/([^/]+/)?cache/(texttoimage|public)/|packages/styles/.+/(stylesheets|images|javascript)/[^/]+/|packages/styles/.+/thumbnail/|var/storage/packages/.+\.(png|jpe?g|gif|webp)$|favicon\.ico$|design/standard/images/favicon\.ico$|robots\.txt$|(index|sw)\.js$|w3c/p3p\.xml$)
+			not path_regexp (?i)(\.(php\d?|phtml|phar)$|/\.)
+		}
+		file_server @static
+
+		# 5. Front controllers: the REST API, the tree menu, and index.php for
+		#    everything else (settings/, var/, vendor/, kernel/ and composer.json
+		#    included, which index.php answers with a page, never the file).
+		#    The rewrite keeps REQUEST_URI: Caddy passes the original request URI.
+		@rest path_regexp rest ^/(api/|index_rest\.php)
+		rewrite @rest /index_rest.php
+		@treemenu path_regexp treemenu ^/([^/]+/)?content/treemenu
+		rewrite @treemenu /index_treemenu.php
+		@front not path /index_rest.php /index_treemenu.php
+		rewrite @front /index.php
+
+		reverse_proxy unix//run/php-fpm/www.sock {
+			transport fastcgi {
+				split .php
+			}
+		}
+	}
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Shared fixtures of the log viewer tests (doc/en/us/features/6.0/log-viewer.md): a throwaway installation root in the
+ * Shared fixtures of the log viewer tests (doc/eng-us/features/6.0/log-viewer.md): a throwaway installation root in the
  * temporary directory with synthetic log lines (no real log is ever read), and its removal.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.

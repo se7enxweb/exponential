@@ -1,4 +1,4 @@
-{* The API access page of the user's account: apikey/list (doc/en/us/guides/api-keys.md, "For site users").
+{* The API access page of the user's account: apikey/list (doc/eng-us/guides/api-keys.md, "For site users").
 
    Signed out: what the page is for, a sign in form that comes back here, and the way to register.
    Signed in: the key just made (its full value, this once, with a Copy button), the user's keys with Revoke (a

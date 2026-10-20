@@ -13,7 +13,7 @@ namespace Exponential\Service;
  * What the trash view (content/trash) shows about each item, its filters and its summary line.
  * Who moved an item to the trash comes from the trash row (trashed_by, trashed_via), for items trashed before
  * those columns existed from what TrashRecord's file still holds; everything else is read from the trash rows,
- * the archived object and the tree. Guide: doc/en/us/bc/6.0/trash.md
+ * the archived object and the tree. Guide: doc/eng-us/bc/6.0/trash.md
  *
  *   TrashList::filters( $viewParameters )        the filters in the URL: (trashed_by) (class) (from) (to)
  *   TrashList::filterURI( $filters )             the same as a URL part

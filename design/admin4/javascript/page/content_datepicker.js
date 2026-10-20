@@ -3,7 +3,7 @@
  * a click on a button with data-a4-datepicker opens Exponential UI's exp::datepicker, showDatePicker( base, id, type ),
  * with data-a4-datepicker-base, data-a4-datepicker-id and the type in data-a4-datepicker (date, datetime). One listener on the
  * document handles every button of the page. A file of its own, so the page runs under a Content Security Policy
- * without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     'use strict';

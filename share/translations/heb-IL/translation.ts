@@ -5496,8 +5496,8 @@
         <translation>הטקסטים של ממשק הניהול ושל התבניות (כפתורים, תפריטים) מגיעים מקובצי תרגום (.ts) ופועלים לפי הגדרת Locale של גישת האתר. אתר יכול להציג תוכן בגרמנית עם ממשק באנגלית, וגם להפך.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>הוספת שפה כאן אינה מתרגמת דבר ואינה משנה אף גישת אתר: יש לתרגם תוכן בעורך, ולציין את השפה ב־SiteLanguageList היכן שהיא אמורה להיות מוצגת. מדריך המשתמש הוא doc/en/us/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>הוספת שפה כאן אינה מתרגמת דבר ואינה משנה אף גישת אתר: יש לתרגם תוכן בעורך, ולציין את השפה ב־SiteLanguageList היכן שהיא אמורה להיות מוצגת. מדריך המשתמש הוא doc/eng-us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24022,8 +24022,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>יש להפעיל את הפרופיל כדי לראות כמה הוראות כל בקשה מריצה, כמה מהן חזרות זהות ומה מטמון שאילתות היה חוסך.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>הפרופיל סופר את ההוראות שהגיעו למסד הנתונים: כשמטמון השאילתות פועל, תשובה מהמטמון אינה נכללת בו. &quot;חיסכון מזיכרון הבקשה&quot; הוא מה שמצב request היה חוסך, ו&quot;חיסכון ממטמון משותף&quot; הוא מה שמצב shared היה חוסך (כ־15 µs לכל תשובה). המונים הם לכל שרת, כי לכל שרת יש APCu משלו. היומן הוא var/tmp/sql_profile.log; פרטים נוספים ב־doc/en/us/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>הפרופיל סופר את ההוראות שהגיעו למסד הנתונים: כשמטמון השאילתות פועל, תשובה מהמטמון אינה נכללת בו. &quot;חיסכון מזיכרון הבקשה&quot; הוא מה שמצב request היה חוסך, ו&quot;חיסכון ממטמון משותף&quot; הוא מה שמצב shared היה חוסך (כ־15 µs לכל תשובה). המונים הם לכל שרת, כי לכל שרת יש APCu משלו. היומן הוא var/tmp/sql_profile.log; פרטים נוספים ב־doc/eng-us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25374,8 +25374,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>הגדרות site.ini</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>הסוג נקבע לפי site.ini [SiteAccessSettings] SiteAccessType כאשר גישת אתר מגדירה אותו, ואחרת לפי העיצובים שלה ו־RequireUserLogin. מדריך: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>הסוג נקבע לפי site.ini [SiteAccessSettings] SiteAccessType כאשר גישת אתר מגדירה אותו, ואחרת לפי העיצובים שלה ו־RequireUserLogin. מדריך: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32041,8 +32041,8 @@ Note: The packages will not be uninstalled.</source>
         <translation>בלוקי הגדרות שכל רשומה בהם רושמת מימוש: העמודות של טבלת פריטי המשנה (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; או Template=), סוגי משימות התוכן (content.ini [ContentJobSettings] JobTypes[]), הפעולות וספקי התחומים של exp:ini (ini.ini [IniCommandSettings]) ופונקציות השרת של ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=), עם כל שירות מרוחק שמחלקת פונקציית שרת המרחיבה את expServiceBase מצהירה עליו (ה־static $services שלה, הנקרא כ־ezjscore/call/&lt;name&gt;::&lt;service&gt;; כל אחד מהם נוסף לסך הכול, ושירות מוצהר שהמתודה שלו חסרה הוא שבור). רשומה שמציינת מחלקה היא גם אחת מההגדרות שמציינות מחלקה ונספרת שם; האחרות נוספות כאן לסך הכול. רשומה שהמחלקה, המתודה או התבנית שלה חסרות, או שהמחלקה שלה אינה מרחיבה את מה שהמרשם דורש, מוצגת כשבורה. עמודות מובנות של פריטי המשנה, שהרשימה מציגה בעצמה, אינן נקודה כזו ואינן מופיעות.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>מרשמים נוספים מוצהרים ב־rad.ini, על ידי הליבה ועל ידי כל הרחבה פעילה ב־rad.ini.append.php שלה: מאזינים לאירועים, ספקי בינה מלאכותית, כלים ושרשראות, כלי MCP, סוגי משימות בתור ועוד. כל אחד מציין אילו בלוקי ini, או איזו רשימת מחלקה, מכילים את הרשומות שלו ומה כל רשומה חייבת להיות; מרשם שמוצהר עם InTotal=disabled מתייחס לנקודות שנספרות במקום אחר ונבדק בלי שיתווסף לסך. מדריך: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>מרשמים נוספים מוצהרים ב־rad.ini, על ידי הליבה ועל ידי כל הרחבה פעילה ב־rad.ini.append.php שלה: מאזינים לאירועים, ספקי בינה מלאכותית, כלים ושרשראות, כלי MCP, סוגי משימות בתור ועוד. כל אחד מציין אילו בלוקי ini, או איזו רשימת מחלקה, מכילים את הרשומות שלו ומה כל רשומה חייבת להיות; מרשם שמוצהר עם InTotal=disabled מתייחס לנקודות שנספרות במקום אחר ונבדק בלי שיתווסף לסך. מדריך: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38757,8 +38757,8 @@ your account.</source>
         <translation>Exponential Layouts החליף זאת באתרים חדשים: פריסה מכילה אזורים ובלוקים, תפריט הוא אחד הבלוקים, וכלל בוחר את הפריסה לכל עמוד. גישת אתר שנבנתה כך לעולם אינה קוראת הגדרות אלה.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>העמוד נשאר עבור אתרים שעדיין משתמשים בעיצוב קלאסי. שינוי הגדרה כאן עבור גישת אתר שנבנתה עם Layouts אינו מזיק אך אין לו השפעה. המדריך doc/en/us/guides/classic-menu-settings.md מסביר את שתי הדרכים.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>העמוד נשאר עבור אתרים שעדיין משתמשים בעיצוב קלאסי. שינוי הגדרה כאן עבור גישת אתר שנבנתה עם Layouts אינו מזיק אך אין לו השפעה. המדריך doc/eng-us/guides/classic-menu-settings.md מסביר את שתי הדרכים.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -48793,8 +48793,8 @@ The default code was made from the basic parameters you chose.</source>
         <translation>כל הגדרה בהתקנה זו שהערך שלה הוא מחלקה, או ששמה אומר שהיא מקבלת מחלקה. שינוי אחת מאלה גורם למשהו אחר לענות במקום.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>מרשמים נוספים מוצהרים ב־rad.ini, על ידי הליבה ועל ידי כל הרחבה פעילה ב־rad.ini.append.php שלה: מאזינים לאירועים, ספקי בינה מלאכותית, כלים ושרשראות, כלי MCP, סוגי משימות בתור ועוד. כל אחד מציין אילו בלוקי ini, או איזו רשימת מחלקה, מכילים את הרשומות שלו ומה כל רשומה חייבת להיות; מרשם שמוצהר עם InTotal=disabled מתייחס לנקודות שנספרות במקום אחר ונבדק בלי שיתווסף לסך. מדריך: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>מרשמים נוספים מוצהרים ב־rad.ini, על ידי הליבה ועל ידי כל הרחבה פעילה ב־rad.ini.append.php שלה: מאזינים לאירועים, ספקי בינה מלאכותית, כלים ושרשראות, כלי MCP, סוגי משימות בתור ועוד. כל אחד מציין אילו בלוקי ini, או איזו רשימת מחלקה, מכילים את הרשומות שלו ומה כל רשומה חייבת להיות; מרשם שמוצהר עם InTotal=disabled מתייחס לנקודות שנספרות במקום אחר ונבדק בלי שיתווסף לסך. מדריך: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

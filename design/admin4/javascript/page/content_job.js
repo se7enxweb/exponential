@@ -9,7 +9,7 @@
  * passing: the next request waits longer each time (4, 8, 16 ... up to 60 seconds) and is back at two seconds after
  * an answer. While the tab is hidden no request is made; the next one goes out when it is shown again.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
- * (doc/en/us/features/6.0/content-security-policy.md).
+ * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
   var box = document.getElementById('exp-contentjob'); if (!box || !window.fetch) return;

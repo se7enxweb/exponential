@@ -2,7 +2,7 @@
  * admin4 rss/edit_export: the focus when the page opens (the error box after a failed save, the name otherwise; the
  * template names the field in data-focus on #rss-export-script), the parts of the page that follow the format and the
  * podcast category, and Enter in the feed browser's search box. A file of its own, so the page runs under a Content
- * Security Policy without 'unsafe-inline' (doc/en/us/features/6.0/content-security-policy.md).
+ * Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 var expRssExportScript = document.getElementById( 'rss-export-script' );
 var expRssExportFocus = expRssExportScript ? expRssExportScript.getAttribute( 'data-focus' ) : '';

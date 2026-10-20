@@ -5534,8 +5534,8 @@
         <translation>Teksterne i administrationsgrænsefladen og skabelonerne (knapper, menuer) kommer fra oversættelsesfiler (.ts) og følger i stedet en siteaccess' Locale-indstilling. Et site kan vise tysk indhold med en engelsk grænseflade og omvendt.</translation>
     </message>
     <message>
-        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/en/us/guides/content-languages.md.</source>
-        <translation>Tilføjelse af et sprog her oversætter intet og ændrer ingen siteaccess: oversæt indhold i editoren, og angiv sproget i SiteLanguageList, hvor det skal vises. Brugervejledningen er doc/en/us/guides/content-languages.md.</translation>
+        <source>Adding a language here does not translate anything and does not change any siteaccess: translate content in the editor, and list the language in SiteLanguageList where it should be shown. The user guide is doc/eng-us/guides/content-languages.md.</source>
+        <translation>Tilføjelse af et sprog her oversætter intet og ændrer ingen siteaccess: oversæt indhold i editoren, og angiv sproget i SiteLanguageList, hvor det skal vises. Brugervejledningen er doc/eng-us/guides/content-languages.md.</translation>
     </message>
     <message>
         <source>Remove these languages?</source>
@@ -24226,8 +24226,8 @@ Navigeringsdel</translation>
         <translation>Slå profilen til for at se, hvor mange sætninger hver forespørgsel kører, hvor mange der er nøjagtige gentagelser, og hvad en forespørgselscache ville spare.</translation>
     </message>
     <message>
-        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/en/us/bc/6.0/sql-query-cache.md.</source>
-        <translation>Profilen tæller de sætninger, der nåede databasen: med forespørgselscachen slået til er et cachet svar ikke med. &quot;Memo sparer&quot; er det, tilstanden request ville spare, &quot;delt cache sparer&quot; det, tilstanden shared ville (ca. 15 µs pr. svar). Tællerne gælder pr. server, da hver server har sin egen APCu. Loggen er var/tmp/sql_profile.log; se doc/en/us/bc/6.0/sql-query-cache.md.</translation>
+        <source>The profile counts the statements that reached the database: with the query cache on, a cached answer is not in it. &quot;Memo saves&quot; is what the request mode would save, &quot;shared cache saves&quot; what the shared mode would (about 15 µs per answer). Counters are per server, since each server has its own APCu. The log is var/tmp/sql_profile.log; see doc/eng-us/bc/6.0/sql-query-cache.md.</source>
+        <translation>Profilen tæller de sætninger, der nåede databasen: med forespørgselscachen slået til er et cachet svar ikke med. &quot;Memo sparer&quot; er det, tilstanden request ville spare, &quot;delt cache sparer&quot; det, tilstanden shared ville (ca. 15 µs pr. svar). Tællerne gælder pr. server, da hver server har sin egen APCu. Loggen er var/tmp/sql_profile.log; se doc/eng-us/bc/6.0/sql-query-cache.md.</translation>
     </message>
     <message>
         <source>Switch the SQL profile off</source>
@@ -25578,8 +25578,8 @@ Navigeringsdel</translation>
         <translation>site.ini-indstillinger</translation>
     </message>
     <message>
-        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/en/us/guides/system-information.md</source>
-        <translation>Arten følger site.ini [SiteAccessSettings] SiteAccessType, når en siteaccess angiver den, ellers dens designs og RequireUserLogin. Vejledning: doc/en/us/guides/system-information.md</translation>
+        <source>The kind follows site.ini [SiteAccessSettings] SiteAccessType when a siteaccess sets it, else its designs and RequireUserLogin. Guide: doc/eng-us/guides/system-information.md</source>
+        <translation>Arten følger site.ini [SiteAccessSettings] SiteAccessType, når en siteaccess angiver den, ellers dens designs og RequireUserLogin. Vejledning: doc/eng-us/guides/system-information.md</translation>
     </message>
     <message>
         <source>Content languages</source>
@@ -32252,8 +32252,8 @@ Exponential-version</translation>
         <translation>Indstillingsblokke, hvor hver post registrerer en implementering: kolonnerne i tabellen over underelementer (subitemscolumns.ini [Column_&lt;key&gt;] Class=, Handler=&lt;class&gt;::&lt;method&gt; eller Template=), indholdsjobtyperne (content.ini [ContentJobSettings] JobTypes[]), handlingerne og scope-udbyderne for exp:ini (ini.ini [IniCommandSettings]) og serverfunktionerne i ezjscore (ezjscore.ini [ezjscServer_&lt;name&gt;] Class=) med hver fjerntjeneste, som en serverfunktionsklasse, der udvider expServiceBase, erklærer (dens statiske $services, kaldt som ezjscore/call/&lt;name&gt;::&lt;service&gt;; hver føjet til totalen, og en erklæret tjeneste, hvis metode mangler, er ødelagt). En post, der angiver en klasse, er også en af de indstillinger, der angiver en klasse, og tælles der; de andre føjes til totalen her. En post, hvis klasse, metode eller skabelon mangler, eller hvis klasse ikke udvider det, registret kræver, vises som ødelagt. Indbyggede kolonner i underelementer, som listen selv renderer, er ikke et punkt og vises ikke.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Yderligere registre erklæres i rad.ini af kernen og af hver aktiv udvidelse i dens egen rad.ini.append.php: hændelseslyttere, AI-udbydere, værktøjer og kæder, MCP-værktøjer, jobtyper til køen og mere. Hvert angiver, hvilke INI-blokke eller hvilken klasseliste der indeholder dets poster, og hvad hver post skal være; et register erklæret med InTotal=disabled henviser til punkter, der tælles andetsteds, og kontrolleres uden at blive lagt til. Vejledning: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Yderligere registre erklæres i rad.ini af kernen og af hver aktiv udvidelse i dens egen rad.ini.append.php: hændelseslyttere, AI-udbydere, værktøjer og kæder, MCP-værktøjer, jobtyper til køen og mere. Hvert angiver, hvilke INI-blokke eller hvilken klasseliste der indeholder dets poster, og hvad hver post skal være; et register erklæret med InTotal=disabled henviser til punkter, der tælles andetsteds, og kontrolleres uden at blive lagt til. Vejledning: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>
@@ -38981,8 +38981,8 @@ din konto.</translation>
         <translation>Exponential Layouts erstattede det for nye sites: et layout rummer zoner og blokke, en menu er en af blokkene, og en regel vælger layoutet for hver side. En siteaccess bygget på den måde læser aldrig disse indstillinger.</translation>
     </message>
     <message>
-        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/en/us/guides/classic-menu-settings.md explains both ways.</source>
-        <translation>Siden bliver for sites, der stadig bruger et klassisk design. At ændre en indstilling her for en siteaccess bygget med Layouts er harmløst, men har ingen virkning. Vejledningen doc/en/us/guides/classic-menu-settings.md forklarer begge måder.</translation>
+        <source>The page stays for sites that still use a classic design. Changing a setting here for a siteaccess built with Layouts is harmless but has no effect. The guide doc/eng-us/guides/classic-menu-settings.md explains both ways.</source>
+        <translation>Siden bliver for sites, der stadig bruger et klassisk design. At ændre en indstilling her for en siteaccess bygget med Layouts er harmløst, men har ingen virkning. Vejledningen doc/eng-us/guides/classic-menu-settings.md forklarer begge måder.</translation>
     </message>
     <message>
         <source>Uses these settings</source>
@@ -49033,8 +49033,8 @@ Standardkoden er lavet ud fra de grundlæggende parametre, du har valgt.</transl
         <translation>Hver indstilling på denne installation, hvis værdi er en klasse, eller hvis navn siger, at den tager en. Ændr en af disse, så svarer noget andet i stedet.</translation>
     </message>
     <message>
-        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/en/us/bc/6.0/rad-extension-surface.md.</source>
-        <translation>Yderligere registre erklæres i rad.ini af kernen og af hver aktiv udvidelse i dens egen rad.ini.append.php: hændelseslyttere, AI-udbydere, værktøjer og kæder, MCP-værktøjer, jobtyper til køen og mere. Hvert angiver, hvilke INI-blokke eller hvilken klasseliste der indeholder dets poster, og hvad hver post skal være; et register erklæret med InTotal=disabled henviser til punkter, der tælles andetsteds, og kontrolleres uden at blive lagt til. Vejledning: doc/en/us/bc/6.0/rad-extension-surface.md.</translation>
+        <source>Further registries are declared in rad.ini, by the kernel and by every active extension in its own rad.ini.append.php: event listeners, AI providers, tools and chains, MCP tools, queue job types and more. Each says which ini blocks, or which class list, hold its entries and what each entry must be; one declared with InTotal=disabled refers to points counted elsewhere and is checked without being added. Guide: doc/eng-us/bc/6.0/rad-extension-surface.md.</source>
+        <translation>Yderligere registre erklæres i rad.ini af kernen og af hver aktiv udvidelse i dens egen rad.ini.append.php: hændelseslyttere, AI-udbydere, værktøjer og kæder, MCP-værktøjer, jobtyper til køen og mere. Hvert angiver, hvilke INI-blokke eller hvilken klasseliste der indeholder dets poster, og hvad hver post skal være; et register erklæret med InTotal=disabled henviser til punkter, der tælles andetsteds, og kontrolleres uden at blive lagt til. Vejledning: doc/eng-us/bc/6.0/rad-extension-surface.md.</translation>
     </message>
     <message>
         <source>Each limitation of a policy function is listed too, with the class and method that give its values; one whose class is not there offers nothing to choose in the role editor and is shown as broken.</source>

@@ -50,7 +50,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
         $css = self::menuCss();
         // forced-colors keywords (CanvasText, Highlight, GrayText) are system colours, not literals
         $this->assertDoesNotMatchRegularExpression( '/#[0-9a-f]{3,8}\b|rgba?\(|hsla?\(/i', $css,
-            'The admin4 context menu names a colour; use the --a4-* tokens (doc/en/us/bc/6.0/admin4-styling.md)' );
+            'The admin4 context menu names a colour; use the --a4-* tokens (doc/eng-us/bc/6.0/admin4-styling.md)' );
         foreach ( array( '--a4-card', '--a4-line', '--a4-radius-s', '--a4-shadow-m', '--a4-text-m', '--a4-accent-soft', '--a4-muted' ) as $token )
             $this->assertStringContainsString( "var($token)", $css, "The admin4 context menu does not use $token" );
     }

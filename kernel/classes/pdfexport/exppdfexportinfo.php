@@ -14,7 +14,7 @@
  * drafts of new exports that were never finished.
  *
  * The *Of() methods work on plain values and read nothing, so they are tested without a database
- * (tests/tests/kernel/classes/expPDFExportTest.php). Guide: doc/en/us/guides/pdf-exports.md
+ * (tests/tests/kernel/classes/expPDFExportTest.php). Guide: doc/eng-us/guides/pdf-exports.md
  */
 class expPDFExportInfo
 {

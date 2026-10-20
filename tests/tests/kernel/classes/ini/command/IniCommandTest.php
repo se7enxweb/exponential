@@ -1,7 +1,7 @@
 <?php
 /**
  * The exp:ini command (bin/php/ini.php) end to end: every action run as a real process against a temporary
- * installation root (--root), never the real settings. Guide doc/en/us/bc/6.0/console-exp-ini.md.
+ * installation root (--root), never the real settings. Guide doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  *  IC-01 — --help and "help <action>" exit 0 and name every action; no action is a usage error (1)
  *  IC-02 — An unknown action is a usage error (1) that lists the registered actions; so is a missing argument

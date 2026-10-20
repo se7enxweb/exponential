@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry point of kernel/exphelp/manual.php (doc/en/us/features/6.0/help-content.md).
+ * Entry point of kernel/exphelp/manual.php (doc/eng-us/features/6.0/help-content.md).
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

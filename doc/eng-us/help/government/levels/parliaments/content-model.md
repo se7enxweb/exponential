@@ -1,0 +1,125 @@
+---
+title: Content model for parliaments
+audience: government, website-creator, project-manager
+category: public-sector
+order: 30
+summary: Shipped Exponential classes that fit a parliament site and recipes for Member, Sitting, Bill and Vote record classes with real datatypes, linked by relations so each fact is entered once.
+keywords: content model, parliament, member class, sitting class, bill class, vote record, division, ezobjectrelationlist, ezmatrix, ezselection, stage, class editor
+type: help
+---
+# Content model for parliaments
+
+This page is for website creators and project managers who design the classes of a parliament or legislative
+assembly site. The classes and datatypes named exist in Exponential ([sevenx_classes](../../../site-packages/sevenx-multisite/sevenx-classes.md),
+`kernel/classes/datatypes/`, the extensions named); the class editor is in
+[Content classes for websites](../../../creators/website-creators/content-classes-for-websites.md).
+
+## Contents
+
+1. [Shipped classes that fit](#shipped-classes-that-fit)
+2. [Class to add: Member](#class-to-add-member)
+3. [Class to add: Sitting](#class-to-add-sitting)
+4. [Class to add: Bill](#class-to-add-bill)
+5. [Class to add: Vote record](#class-to-add-vote-record)
+6. [How the classes connect](#how-the-classes-connect)
+
+## Shipped classes that fit
+
+| Class | Identifier | Use |
+|---|---|---|
+| Folder | `folder` | chambers, committees, years |
+| Article | `article` | news, explanations of procedure |
+| File | `file` | bill texts, transcripts, reports, vote records |
+| Person | `ng_person` | can serve as Member if you add the attributes below |
+| Event, Event calendar | `event`, `event_calendar` | visits, public events |
+| Documentation page | `documentation_page` | "how parliament works" guides |
+
+## Class to add: Member
+
+Copy `ng_person` or create a class:
+
+| Attribute | Identifier | Datatype | Why |
+|---|---|---|---|
+| Name | `name` | Text line (`ezstring`) | |
+| Party or group | `group` | Tags (`eztags`) or Selection (`ezselection`) | tags let you keep a history of groups |
+| Constituency | `constituency` | Tags | a tag tree of constituencies |
+| Role | `role` | Text block (`eztext`) | speaker, committee chair ... |
+| In office from, to | `from`, `to` | Date (`ezdate`) | former members stay with an end date |
+| Biography | `cv` | XML block (`ezxmltext`) | public role information |
+| Photo | `image` | Image (`ezimage`) | alternative text required |
+| Official contact | `email` | Email (`ezemail`) | the official address |
+
+Former members stay as objects with an end date: votes and transcripts relate to them permanently.
+
+## Class to add: Sitting
+
+| Attribute | Identifier | Datatype |
+|---|---|---|
+| Chamber or committee | `body` | Selection |
+| Date and time | `sitting_date` | Date and time (`ezdatetime`) |
+| Agenda | `agenda` | XML block (items with links) |
+| Agenda document | `agenda_file` | Object relation (`ezobjectrelation`) to a File |
+| Bills on the agenda | `bills` | Object relations (`ezobjectrelationlist`) |
+| Votes | `votes` | Object relations to Vote records |
+| Transcript | `transcript` | Object relation to a File |
+| Video | `video_url` | URL (`ezurl`) |
+| Status | `status` | Selection: scheduled, agenda published, sitting, adjourned, record complete |
+
+## Class to add: Bill
+
+| Attribute | Identifier | Datatype | Why |
+|---|---|---|---|
+| Title | `title` | Text line | |
+| Bill number | `number` | Text line | |
+| Stage | `stage` | Selection | introduced, first reading, committee, ... , adopted, lapsed |
+| Introduced on | `introduced_on` | Date | |
+| Sponsor | `sponsor` | Object relations (Members) | |
+| Summary | `summary` | XML block | what the bill does, in plain language |
+| Versions of the text | `texts` | Object relations (File objects, one per printed version) | |
+| Amendments | `amendments` | Object relations (Files) | |
+| Committee | `committee` | Object relation (a committee folder) | |
+| Topics | `tags` | Tags | |
+| Record in the bill system | `source_url` | URL | the authoritative record |
+
+Each printed version of a bill is its own File object; the Bill object's versions record changes to the page itself.
+
+## Class to add: Vote record
+
+| Attribute | Identifier | Datatype | Why |
+|---|---|---|---|
+| Title | `title` | Text line | "Vote on <bill>, <stage>" |
+| Date and time | `vote_date` | Date and time | |
+| Bill | `bill` | Object relation | |
+| Question | `question` | Text block | what was put to the vote |
+| Result | `result` | Selection | adopted, rejected, tied |
+| For, against, abstentions | `for`, `against`, `abstain` | Integer (`ezinteger`) | |
+| Members' votes | `member_votes` | Matrix (`ezmatrix`) | columns member and vote, where recorded |
+| Official record | `record_file` | File (`ezbinaryfile`) | the record as published by the clerks |
+
+A Matrix holds a table with named columns; a large chamber's per-member list may be better as a data file
+(CSV) in the File field plus the matrix for display, generated by import.
+
+## How the classes connect
+
+```text
+Sitting ──< Bill (on the agenda) ──< Vote record >── Member (sponsor, votes)
+   │                 └── texts, amendments (File)
+   └── transcript, agenda_file (File)
+```
+
+Reverse relations answer "where does this appear?" (the **Relations** tab of an object). Before removing a member or
+a bill, check them ([Relations and reuse](../../../creators/website-creators/relations-and-reuse.md#reverse-relations)).
+
+## Related pages
+
+- [Parliaments](README.md)
+- [Agendas, bills and voting records](agendas-bills-and-voting-records.md)
+- [Choosing datatypes for your fields](../../../creators/website-creators/choosing-datatypes.md)
+- [Free documentation](../../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
+
+<!-- exp-partner-block:start -->
+**Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
+develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for
+mid-2027: please become a partner today to speed up our growth rate and land new features faster. Start with
+[Partners: start here](../../../partners/partners-start-here.md) and [How to apply](../../../partners/how-to-apply.md).
+<!-- exp-partner-block:end -->

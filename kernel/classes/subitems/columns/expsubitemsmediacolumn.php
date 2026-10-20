@@ -10,7 +10,7 @@
  * (ezbinaryfile, enhancedezbinaryfile) or media (ezmedia) attribute. Every field reads the data
  * map, which the columns of one row share and which is loaded for the whole page in one query;
  * image_size and file_size ask the file handler for the stored file's size. Objects whose class has no such attribute give null.
- * Guide: doc/en/us/bc/6.0/subitems-table-options.md
+ * Guide: doc/eng-us/bc/6.0/subitems-table-options.md
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

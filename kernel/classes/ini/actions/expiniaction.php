@@ -5,7 +5,7 @@
  * One action of the exp:ini command (get, set, add, rem, ...). The built-in actions and the
  * actions of extensions are registered in ini.ini [IniCommandSettings] Actions[<name>]=<class>;
  * the command makes the class, hands it the parsed command line as an expIniCommandContext and
- * exits with what run() returns. Guide: doc/en/us/bc/6.0/console-exp-ini.md.
+ * exits with what run() returns. Guide: doc/eng-us/bc/6.0/console-exp-ini.md.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

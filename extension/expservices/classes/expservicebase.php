@@ -1,7 +1,7 @@
 <?php
 /**
  * The base of every expservices domain class: one public static method per service, called as
- * ezjscore/call/exp<domain>::<method>[::arg...]. See doc/en/us/bc/6.0/backend_ezjscore_services.md.
+ * ezjscore/call/exp<domain>::<method>[::arg...]. See doc/eng-us/bc/6.0/backend_ezjscore_services.md.
  *
  * Every service is declared in static::$services: method => array(
  *   'summary' => '...', 'access' => array( 'module', 'function' ) | 'public' | 'user',

@@ -1,4 +1,4 @@
-{* Setup > Log files > Health (setup/logshealth; doc/en/us/features/6.0/log-viewer.md, "Health"). Variables: log_health
+{* Setup > Log files > Health (setup/logshealth; doc/eng-us/features/6.0/log-viewer.md, "Health"). Variables: log_health
    (expLogHealth::summary(): total, logs_bytes, archive_bytes, budget, share, percent, state, fastest, over_limit,
    not_writable, owners, mixed_owners, rows), log_health_errors (key => time, time_text, message, source, permalink),
    log_health_settings (key => list of name, value, file, section, var), log_health_links (key => the permalink of the

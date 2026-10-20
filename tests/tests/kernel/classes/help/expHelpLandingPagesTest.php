@@ -1,7 +1,7 @@
 <?php
 /**
  * The landing pages of the help's audiences (exphelp/audience/<audience>), the commit log of the developers' page
- * and the Support Exponential block (doc/en/us/features/6.0/help-system.md, "Landing pages"). No database, no network.
+ * and the Support Exponential block (doc/eng-us/features/6.0/help-system.md, "Landing pages"). No database, no network.
  *
  *  LP-01  expHelpLanding builds a page from the index: start page and lists from the settings, missing or hidden
  *         pages left out, automatic lists from featured and help pages, a search button per category, related

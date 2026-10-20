@@ -13,7 +13,7 @@
    from). The attribute list keeps the markup the order script relies on (#ezcca-edit-list, tr.ezcca-edit-list-item,
    th.wide, div.listbutton). Every template variable is unchanged. This is an edit view, which admin4 draws without its
    main card; .exp-standalone gives the page its own. The same file is in design/admin and design/admin4.
-   Guide: doc/en/us/guides/class-groups.md *}
+   Guide: doc/eng-us/guides/class-groups.md *}
 
 <form action={concat( $module.functions.edit.uri, '/', $class.id, '/(language)/', $language_code )|ezurl} method="post" id="ClassEdit" name="ClassEdit" class="a4-page exp-classgroups exp-classedit a4-standalone">
 <input type="hidden" name="ContentClassHasInput" value="1" />

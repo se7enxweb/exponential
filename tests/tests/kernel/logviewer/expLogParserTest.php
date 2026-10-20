@@ -1,6 +1,6 @@
 <?php
 /**
- * The log viewer's line parser (doc/en/us/features/6.0/log-viewer.md, "The line format"); pure, no file, no database.
+ * The log viewer's line parser (doc/eng-us/features/6.0/log-viewer.md, "The line format"); pure, no file, no database.
  *
  *  LV-01  eZDebug lines: date, ip, siteaccess and request; without siteaccess and request; a request with ] and a query
  *  LV-02  eZLog lines (with and without siteaccess and request), ISO and bracketed SQL times, JSON lines

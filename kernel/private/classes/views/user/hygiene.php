@@ -29,7 +29,7 @@ namespace Exponential\View\Kernel\User
  * login and name of every account, also of accounts whose object a content/read limitation hides and of those without
  * an object or a location (which the tree's permission SQL cannot judge, and which the "orphaned" filter is for).
  * Grant the function only to roles that may see all accounts.
- * Guide: doc/en/us/features/6.0/user-hygiene.md
+ * Guide: doc/eng-us/features/6.0/user-hygiene.md
  */
 class Hygiene extends \Exponential\Runnable\ModuleView
 {

@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of kernel/state/edit.php, moved into a class (#207 stage 1). The file kernel/state/edit.php is one call to it.
- * Guide: doc/en/us/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  */
 /*
  * The original header of kernel/state/edit.php:
@@ -74,7 +74,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                 $auditNew = !$state->attribute( 'id' );
                 $state->store();
                 \ezpEvent::getInstance()->notify( 'content/state/cache', array( $state->attribute( 'id' ) ) );
-                // Audit (doc/en/us/bc/6.0/audit.md, content.state.change)
+                // Audit (doc/eng-us/bc/6.0/audit.md, content.state.change)
                 if ( class_exists( 'expAuditHook' ) )
                     \expAuditHook::emit( 'content.state.change', function () use ( $state, $group, $auditNew ) {
                         $names = array();
