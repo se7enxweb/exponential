@@ -35,7 +35,7 @@ Web; 1,039 merged pull requests appear in the whole history ([Exponential by the
 | Fixes in commits on top, not by rewriting the contribution | same |
 | The test suite runs on every pull request | [CI](../../bc/6.0/ci.md) |
 | Contributions under GPL v2 or later | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
-| Code contributions to the kernel need a signed Contributor Licensing Agreement (CLA) before they are merged; contributors keep their copyright and grant 7x a non-exclusive license; users' own extensions are not affected | [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla) |
+| Code contributions to the kernel need a signed Contributor Licensing Agreement (CLA) before they are merged; by signing and submitting, contributors give up control: 7x may use, change, sublicense, relicense and distribute a contribution in any way, perpetually and irrevocably, without asking or paying them; they remain only the nominal copyright holders; users' own extensions are not affected | [Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla) |
 | 1,039 merged pull requests in the history (18 October 2026) | [Exponential by the numbers](exponential-by-the-numbers.md) |
 
 ## What not to claim
@@ -45,7 +45,8 @@ Web; 1,039 merged pull requests appear in the whole history ([Exponential by the
 | "No code review" | Contributions are merged and then fixed or adjusted on top; the CI tests run on every pull request |
 | "Anything goes into the release" | Problems are fixed in follow-up commits before release |
 | "Thousands of contributors" | Count from the history with a date |
-| "Contributors hand over their copyright" | Kernel contributors sign a CLA: they keep their copyright and grant 7x a non-exclusive license |
+| "Contributors hand over their copyright" | Kernel contributors sign a CLA that gives control of the contribution to 7x through a perpetual, irrevocable license (including the right to sublicense); the copyright itself is not transferred, they remain its nominal holders |
+| "Contributors keep control of their code" | They do not: once signed and submitted, 7x may relicense and distribute it without asking them, and they cannot withdraw it |
 
 ## Angles and headline ideas
 

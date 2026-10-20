@@ -57,9 +57,12 @@ How to write a good issue: [Reporting bugs well](reporting-bugs-well.md). Which 
 - **Documentation**: **Edit on GitHub** on any help page opens the file; GitHub forks the repository for you
   ([Improving the help](improving-the-help.md)).
 - **Code**: fork, branch, commit, pull request ([Develop with Git](../develop-with-git.md#contribute-a-change-with-a-pull-request)).
-- **The CLA**: a code contribution to the kernel (`se7enxweb/exponential`), in any form, is merged only once its
-  author's signed Contributor Licensing Agreement has been received
-  ([Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)). Your own extensions are
+- **Copyright and control of your contribution (CLA)**: a code contribution to the kernel
+  (`se7enxweb/exponential`), in any form, is merged only once its author's signed Contributor Licensing Agreement
+  has been received. By signing and submitting, you give up control over your contribution: 7x may use, change,
+  sublicense, relicense and distribute it in any way, perpetually and irrevocably, without asking or paying you; you
+  remain only the nominal copyright holder
+  ([Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)). Your own extensions are
   not affected.
 - **Commit messages** start with `Added:`, `Updated:`, `Fixed:`, `Removed:` or `Renamed:`
   ([CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md)).

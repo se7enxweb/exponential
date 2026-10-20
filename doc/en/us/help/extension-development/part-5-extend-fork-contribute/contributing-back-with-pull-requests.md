@@ -18,10 +18,18 @@ start to end. It applies to the kernel (`se7enxweb/exponential`) and to any exte
 1. **Read the project's rules.** The kernel's are in `CONTRIBUTING.md` at the root of the repository: the license
    your contribution goes under (GPL 2 or later), the commit message format, the file manifest, the admin styling
    rules. An extension may have its own `CONTRIBUTING.md`, or none; then look at how its recent commits are written.
-   **For the kernel, sign the CLA once.** 7x and the Exponential Foundation require a signed Contributor Licensing
-   Agreement for every code contribution to the core kernel, whether by pull request, patch, issue or mail, before
-   it can be merged; you keep your copyright, the agreement grants 7x a non-exclusive license. How to sign:
-   [Copyright assignment (CLA)](../../../../../../CONTRIBUTING.md#copyright-assignment-cla). It does not apply to the
+   **For the kernel: expect many review rounds.** 7x reviews a commit or pull request in many more rounds than
+   usual, sometimes hundreds of revisions; be ready to revise your change until it is simple to accept
+   ([Code reviews](../../../../../../CONTRIBUTING.md#code-reviews)).
+   **For the kernel: copyright and control of your contribution (CLA).** 7x and the Exponential Foundation merge a
+   code contribution to the core kernel, sent in any form (pull request, patch, issue or mail), only after you have
+   signed the Contributor Licensing Agreement. **By signing and submitting, you give up control over your
+   contribution:** 7x and the recipients of its software receive a perpetual, worldwide, irrevocable, royalty-free
+   license, patents included, to use, change, sublicense, relicense and distribute it in any way, also under other
+   licenses and in commercial products, without asking or paying you, and you cannot withdraw or restrict it later.
+   Under the agreement's wording you remain the nominal copyright holder and may still use your own work elsewhere.
+   How to sign:
+   [Copyright and control of your contribution (CLA)](../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla). It does not apply to the
    extensions you write and keep for yourself.
 2. **Look for an existing issue or pull request** about the same thing. If there is one, comment there instead of
    starting a second.

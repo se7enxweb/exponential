@@ -168,13 +168,17 @@ The website's FAQ names donations and memberships, and also the many ways that c
 documentation, accessibility advice and testing. See [Contribute to the project](contribute-to-the-project.md),
 [Contribute extensions back](../contribute-extensions-back.md) and [Give and donate](give-and-donate.md).
 
-### Do I have to sign anything to contribute code?
+### Do I have to sign anything to contribute code, and what do I give up?
 
 For the core kernel, yes. 7x and the Exponential Foundation require a signed Contributor Licensing Agreement (CLA)
 for every code contribution to the kernel, whether it is sent as a pull request, a patch, an issue or by mail, before
-it can be merged. You sign it once for all future contributions and keep your copyright: the agreement grants 7x a
-non-exclusive license. Your own custom extensions, site packages and themes are not affected. See
-[Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
+it can be merged. **By signing and submitting, you give up control over your contribution:** 7x and the recipients of
+its software receive a perpetual, worldwide, irrevocable, royalty-free license, patents included, to use, change,
+sublicense, relicense and distribute it in any way, also under other licenses and in commercial products, without
+asking or paying you, and you cannot withdraw or restrict it later. Under the agreement's wording you remain the
+nominal copyright holder and may still use your own work elsewhere. You sign once for all future contributions. Your
+own custom extensions, site packages and themes are not affected. See
+[Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
 
 ### Is it really free?
 

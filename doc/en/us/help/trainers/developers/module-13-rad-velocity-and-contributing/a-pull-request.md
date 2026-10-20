@@ -68,10 +68,16 @@ a commit subject, a syntax error). Fix it with another commit on the branch.
 **Do I need write access to the project?** No. You push to your fork; the pull request asks the project to take the
 change.
 
+**How long does review take?** Prepare learners for many rounds: 7x reviews a commit or pull request in many more
+rounds than usual, sometimes hundreds of revisions, until the change is simple to accept
+([Code reviews](../../../../../../../CONTRIBUTING.md#code-reviews)).
+
 **Do I have to sign anything?** For a code contribution to the kernel, yes: 7x and the Exponential Foundation merge it
-only once the author's signed Contributor Licensing Agreement has been received. It is signed once, and the author
-keeps the copyright. A pull request opened in the course can wait for it. Learners' own extensions are not affected
-([Copyright assignment (CLA)](../../../../../../../CONTRIBUTING.md#copyright-assignment-cla)).
+only once the author's signed Contributor Licensing Agreement has been received. Say plainly what it means: by
+signing and submitting, the author gives up control over the contribution; 7x may use, change, sublicense, relicense
+and distribute it in any way, perpetually and irrevocably, without asking or paying the author, who remains only the
+nominal copyright holder. It is signed once. A pull request opened in the course can wait for it. Learners' own extensions are not affected
+([Copyright and control of your contribution (CLA)](../../../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla)).
 
 ### Pitfalls
 

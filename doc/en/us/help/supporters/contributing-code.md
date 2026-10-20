@@ -49,11 +49,15 @@ database, so a development installation needs no database server ([Database supp
 "By contributing, you agree that your contributions will be licensed under the GNU General Public License, version
 2.0 or later" (CONTRIBUTING.md).
 
-**Sign the CLA once.** 7x and the Exponential Foundation require a signed Contributor Licensing Agreement for every
-code contribution to the core kernel, whether by pull request, patch, issue or mail, before it can be merged. You keep
-your copyright; the agreement grants 7x a non-exclusive license, and one signature covers all your future
-contributions. How to sign: [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla).
-Extensions you write for yourself are not affected.
+**Copyright and control of your contribution (CLA).** 7x and the Exponential Foundation merge a code contribution to
+the core kernel, sent in any form (pull request, patch, issue or mail), only after you have signed the Contributor
+Licensing Agreement. **By signing and submitting, you give up control over your contribution:** 7x and the
+recipients of its software receive a perpetual, worldwide, irrevocable, royalty-free license, patents included, to
+use, change, sublicense, relicense and distribute it in any way, also under other licenses and in commercial
+products, without asking or paying you, and you cannot withdraw or restrict it later. Under the agreement's wording
+you remain the nominal copyright holder and may still use your own work elsewhere. One signature covers all your
+future contributions. Extensions you write for yourself are not affected. How to sign:
+[Copyright and control of your contribution (CLA)](../../../../../CONTRIBUTING.md#copyright-and-control-of-your-contribution-cla).
 
 ## First contribution ideas
 
