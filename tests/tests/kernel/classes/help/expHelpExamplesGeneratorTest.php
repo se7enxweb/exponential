@@ -9,7 +9,8 @@
  *         compare() reports missing, different and stale pages
  *  HE-05  file names are safe; module views and policies come from module.php
  *  HE-06  comments quoted from shipped files are text (escaped), and the link check honors the escapes
- *  HE-07  pageTitles() (included by every admin page for its Help menu) leaves the generated pages out
+ *  HE-07  pageTitles() (included by every admin page for its Help menu) leaves the generated pages out; pageCount()
+ *         counts them all
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -184,5 +185,14 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
             $store->setAccessible( true );
         $this->assertTrue( $store->invoke( $index ) );
         $this->assertSame( array( 'help/start.md' => 'Start', 'examples/README.md' => 'Examples' ), expHelpDocumentIndex::pageTitles( $dir ) );
+        // the number of pages counts them all, as ./console exp:help index does (the system card shows it)
+        $this->assertSame( array( 'pages' => 3, 'signature' => 'sig' ), expHelpDocumentIndex::pageCount( $dir ) );
+        // a list written before it carried the number is written again, even for the same index
+        file_put_contents( $dir . '/pages.php', '<?php return ' . var_export( array( 'signature' => 'sig', 'titles' => array() ), true ) . ';' );
+        if ( function_exists( 'opcache_invalidate' ) )
+            opcache_invalidate( $dir . '/pages.php', true );
+        $this->assertNull( expHelpDocumentIndex::pageCount( $dir ) );
+        $this->assertTrue( $store->invoke( $index ) );
+        $this->assertSame( 3, expHelpDocumentIndex::pageCount( $dir )['pages'] );
     }
 }

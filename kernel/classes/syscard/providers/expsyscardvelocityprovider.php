@@ -117,9 +117,9 @@ class expSysCardVelocityProvider extends expSysCardBaseProvider
         if ( $context->mode === expSysCardContext::MODE_INFO )
         {
             if ( $running )
-                $facts[] = $this->fact( 'instance0', 'Instance 1', 'pid ' . $pid . ', ' . $live . ' workers' );
+                $facts[] = $this->fact( 'instance0', 'Instance 1', 'pid ' . $pid . ', ' . self::counted( $live, 'worker' ) );
             foreach ( $instances as $n => $instance )
-                $facts[] = $this->fact( 'instance' . $n, 'Instance ' . ( $n + 1 ), 'pid ' . $instance['pid'] . ', ' . $instance['workers'] . ' workers' );
+                $facts[] = $this->fact( 'instance' . $n, 'Instance ' . ( $n + 1 ), 'pid ' . $instance['pid'] . ', ' . self::counted( $instance['workers'], 'worker' ) );
             $fork = $context->iniEnabled( 'velocity.ini', 'ServerSettings', 'ForkPerRequest', 'disabled' );
             $facts[] = $this->fact( 'model', 'Worker model', $fork ? 'fork per request' : 'persistent workers' );
         }

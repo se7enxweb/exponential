@@ -72863,10 +72863,6 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Centar za pomoć</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Početak pomoći</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Kako vam možemo pomoći?</translation>
     </message>

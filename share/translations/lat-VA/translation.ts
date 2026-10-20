@@ -71576,10 +71576,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Centrum auxilii</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Initium auxilii</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Quomodo adiuvare possumus?</translation>
     </message>

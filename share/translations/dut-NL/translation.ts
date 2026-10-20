@@ -73035,10 +73035,6 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Helpcentrum</translation>
     </message>
     <message>
-        <source>Help start</source>
-        <translation>Help-start</translation>
-    </message>
-    <message>
         <source>How can we help?</source>
         <translation>Waarmee kunnen we je helpen?</translation>
     </message>
