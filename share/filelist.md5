@@ -13200,7 +13200,7 @@ e15502cf959a7962e688f55cf77d3ca3  kernel/classes/syscard/expsyscardcontext.php
 42ec5a0ec906ab2b8bda751e5b1af6f1  kernel/classes/syscard/expsyscardtheme.php
 12890cf403991f5412ea5ff8bd776ab8  kernel/classes/syscard/providers/expsyscardaboutprovider.php
 a4ed58868de548c6a45d8ef3a5c3dcc0  kernel/classes/syscard/providers/expsyscardcacheprovider.php
-34f79a6dd747cfc0df5503a7ba85ecdd  kernel/classes/syscard/providers/expsyscardcomposerprovider.php
+7bdd0dbdb8b3df96b42afa52f6402406  kernel/classes/syscard/providers/expsyscardcomposerprovider.php
 c0a2fd16101b32a8355fdee6d299046a  kernel/classes/syscard/providers/expsyscardcronprovider.php
 5d738b60fd3c2c4b1208a0af782f861d  kernel/classes/syscard/providers/expsyscarddatabaseprovider.php
 dd30f1799ba3044a99ab315330f77669  kernel/classes/syscard/providers/expsyscardexponentialprovider.php

@@ -70,7 +70,7 @@ class expSysCardComposerProvider extends expSysCardBaseProvider
             // user from clearing the caches
             $cacheDir = eZSys::cacheDirectory();
             $owner = function_exists( 'posix_geteuid' ) && is_dir( $cacheDir ) && @fileowner( $cacheDir ) === posix_geteuid();
-            if ( $ttl > 0 && $owner && ( is_dir( dirname( $file ) ) || @mkdir( dirname( $file ), 0775, true ) ) )
+            if ( $ttl > 0 && $owner && ( is_dir( dirname( $file ) ) || eZDir::mkdir( dirname( $file ), eZDir::directoryPermission(), true ) ) )
                 @file_put_contents( $file, json_encode( array( 'issues' => $issues, 'time' => $context->now ) ) );
             return $issues;
         } );
