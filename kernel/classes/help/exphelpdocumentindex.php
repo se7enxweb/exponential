@@ -24,11 +24,14 @@
  *   $index->source( $id );                // the raw Markdown or text of a page, or null
  *   $index->asset( $id );                 // the absolute file name of an image of doc/, or null
  *   $index->tree();                       // the folders and pages, for the navigation
- *   $index->signature();                  // changes with any file, the git index, the manifest or the settings
+ *   $index->signature();                  // changes with any listed file, the commit (history) or the settings
  *
  * The index is cached in var/<site>/cache/exphelp/index-<signature>.php (a var_export file, so OPcache keeps it), and
- * the allowlist in allowlist-<stamp>.php. The signature covers the git index and manifest (files added or removed),
- * the size and time of every listed file (files changed) and the settings, so a stale index is never used. The look
+ * the allowlist in allowlist-<stamp>.php. The signature covers the listed paths (files added or removed, as the git
+ * index and manifest tell), the size and time of every listed file (files changed), the commit of each repository
+ * (the history) and the settings, so a stale index is never used; a rewrite of the git index that changes none of
+ * them (git status) keeps the index. One process builds a new index at a time, the others use the newest one in
+ * the cache meanwhile (buildOnce()). The look
  * at every file is reused for [IndexSettings] StatFilesInterval seconds by every process (signature.php in the cache
  * directory), so an edited page shows within that time. With [IndexSettings] StatFiles=disabled the files are not looked at on each request: a changed page is then picked up
  * by "./console exp:help index" or the next change of the git index (a deploy). When git can be run, the build also
@@ -398,7 +401,7 @@ class expHelpDocumentIndex
     {
         if ( $this->signature !== null )
             return $this->signature;
-        $parts = array( 'format ' . self::FORMAT, $this->allowlist->stamp(), json_encode( $this->audience->config() ),
+        $parts = array( 'format ' . self::FORMAT, $this->allowlist->configStamp(), json_encode( $this->audience->config() ),
                         'language ' . $this->language . ' ' . $this->languages->stamp(),
                         $this->gitHistory ? 'history' : 'no history',
                         self::rendererSlugs() ? 'renderer slug' : 'own slug' );
@@ -411,12 +414,21 @@ class expHelpDocumentIndex
                          class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
             if ( is_string( $code ) && $code !== '' )
                 $parts[] = basename( $code ) . ':' . (int)@filemtime( $code ) . ':' . (int)@filesize( $code );
+        // The git index and manifest (stamp()) tell that files were added or removed. Without a look at the files they
+        // are all the signature has; with one, the listed paths with their sizes and times say the same, and the
+        // stamp only decides whether the last look can be reused. Kept out of the signature, a rewrite of the git
+        // index that changes no help file (git status, a commit or checkout elsewhere in the tree: about once a
+        // minute on a busy installation) no longer makes a new 19 MB index, a new search index and new rendered
+        // pages that every process, and every Velocity worker, compiles and loads again.
+        $stamp = $this->allowlist->stamp();
+        if ( $this->gitHistory )
+            $parts[] = 'head ' . $this->allowlist->headState();
         if ( !$this->statFiles )
-            return $this->signature = sha1( implode( "\n", $parts ) );
+            return $this->signature = sha1( implode( "\n", $parts ) . "\n" . $stamp );
         // Looking at every listed file is the expensive part (thousands of stats; under Velocity each one is answered
         // by its file layer, ~40 microseconds instead of ~2). With StatFilesInterval the answer is kept in the cache
         // directory for that many seconds, for every process: a page edited meanwhile shows when the time is up.
-        $base = sha1( implode( "\n", $parts ) );
+        $base = sha1( implode( "\n", $parts ) . "\n" . $stamp );
         $statNow = $this->statNow;
         $this->statNow = false;
         if ( !$statNow && $this->statInterval > 0 )
@@ -996,7 +1008,7 @@ class expHelpDocumentIndex
         foreach ( $files as $file )
         {
             clearstatcache( true, $file );
-            if ( is_file( $file ) && filemtime( $file ) < (int)$before && @unlink( $file ) )
+            if ( is_file( $file ) && filemtime( $file ) < (int)$before && self::unlinkCompiled( $file ) )
                 ++$removed;
         }
         return $removed;
@@ -1012,14 +1024,100 @@ class expHelpDocumentIndex
         if ( $this->data !== null )
             return $this->data;
         $signature = $this->signature();
-        $cached = $this->read( 'index-' . $signature . '.php' );
-        if ( is_array( $cached ) && isset( $cached['format'], $cached['documents'], $cached['signature'] )
-             && $cached['format'] === self::FORMAT && $cached['signature'] === $signature )
+        $cached = $this->readIndex( 'index-' . $signature . '.php', $signature );
+        if ( $cached !== null )
+            $this->data = $cached;
+        elseif ( $this->buildOnce( $signature ) )
+            return $this->data;
+        $this->storePageTitles();
+        return $this->data;
+    }
+
+    /** The lock file in the cache directory that one building process holds */
+    const BUILD_LOCK_FILE = 'index.lock';
+
+    /**
+     * Builds the index of a signature that is not cached, in one process at a time. Building takes seconds (15 on
+     * alpha for 7,700 pages, far more under load), and without the lock every request that came meanwhile built it
+     * too, each in its own process or Velocity worker: under a deploy that piled up into gateway timeouts. While
+     * another process builds, this one uses the newest index already in the cache (an older signature: a page
+     * changed seconds ago shows once the build is done); only when there is none (the first build, a new FORMAT)
+     * does it wait for the build and read its file.
+     *
+     * @param string $signature
+     * @return bool whether the index in use is an older one (the page titles are then left as they are)
+     */
+    protected function buildOnce( $signature )
+    {
+        $dir = $this->cacheDir();
+        $lock = $dir !== null && is_dir( $dir ) ? @fopen( $dir . '/' . self::BUILD_LOCK_FILE, 'c' ) : false;
+        if ( !$lock )
+        {
+            $this->rebuild();
+            return false;
+        }
+        if ( !@flock( $lock, LOCK_EX | LOCK_NB ) )
+        {
+            $older = $this->newestIndex();
+            if ( $older !== null )
+            {
+                fclose( $lock );
+                $this->data = $older;
+                // what is derived from the index (search, rendered pages, navigation) follows the index in use
+                $this->signature = $older['signature'];
+                return true;
+            }
+            @flock( $lock, LOCK_EX );
+        }
+        // another process may have built it while this one waited
+        $cached = $this->readIndex( 'index-' . $signature . '.php', $signature );
+        if ( $cached !== null )
             $this->data = $cached;
         else
             $this->rebuild();
-        $this->storePageTitles();
-        return $this->data;
+        @flock( $lock, LOCK_UN );
+        fclose( $lock );
+        return false;
+    }
+
+    /**
+     * A cached index file when it holds an index of this FORMAT (and of the signature, when one is given).
+     *
+     * @param string $name
+     * @param string|null $signature
+     * @return array|null
+     */
+    protected function readIndex( $name, $signature = null )
+    {
+        $cached = $this->read( $name );
+        if ( is_array( $cached ) && isset( $cached['format'], $cached['documents'], $cached['signature'] )
+             && $cached['format'] === self::FORMAT && is_string( $cached['signature'] )
+             && ( $signature === null || $cached['signature'] === $signature ) )
+            return $cached;
+        return null;
+    }
+
+    /**
+     * The newest index in the cache directory, whatever its signature (of this FORMAT), or null.
+     *
+     * @return array|null
+     */
+    protected function newestIndex()
+    {
+        if ( $this->cacheDir === null )
+            return null;
+        $files = array();
+        foreach ( (array)glob( $this->cacheDir . '/index-*.php' ) as $file )
+            if ( preg_match( '/\/index-[a-f0-9]{40}\.php$/', $file ) && ( $mtime = @filemtime( $file ) ) !== false )
+                $files[$file] = $mtime;
+        arsort( $files );
+        foreach ( array_keys( $files ) as $file )
+        {
+            $index = $this->readIndex( basename( $file ) );
+            if ( $index !== null )
+                return $index;
+        }
+        return null;
     }
 
     /** The file of pageTitles(), in the cache directory */
@@ -1696,8 +1794,24 @@ class expHelpDocumentIndex
             @opcache_invalidate( $dir . '/' . $name, true );
         foreach ( (array)glob( $dir . '/' . $prefix . '*.php' ) as $old )
             if ( $old !== $dir . '/' . $name && is_file( $old ) && filemtime( $old ) < time() - 60 )
-                @unlink( $old );
+                self::unlinkCompiled( $old );
         return true;
+    }
+
+    /**
+     * Removes a cache file and its compiled copy in OPcache. Removing the file alone leaves the compile in shared
+     * memory, uncounted as waste because nothing asks for that file again, so OPcache never restarts to reclaim it:
+     * with an 18 to 24 MB compile per version of each index, a few rebuilds filled Velocity's 256 MB and from then on
+     * every include of a new index compiled it again, in every request.
+     *
+     * @param string $file
+     * @return bool whether the file was removed
+     */
+    public static function unlinkCompiled( $file )
+    {
+        if ( substr( $file, -4 ) === '.php' && function_exists( 'opcache_invalidate' ) )
+            @opcache_invalidate( $file, true );
+        return @unlink( $file );
     }
 
     /**
