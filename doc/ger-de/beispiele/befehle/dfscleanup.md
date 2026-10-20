@@ -2,14 +2,14 @@
 title: exp:dfscleanup
 audience: developer, admin
 category: examples
-summary: Check database and DFS files against each other (-S, -B) and delete nonexistent ones (-D).
+summary: Gleicht Datenbank und DFS-Dateien miteinander ab (-S, -B) und löscht nicht vorhandene (-D).
 keywords: Konsole, Befehl, exp:dfscleanup, dfscleanup, console, command, CLI, dfscleanup.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:dfscleanup
 
-Check database and DFS files against each other (-S, -B) and delete nonexistent ones (-D).
+Gleicht Datenbank und DFS-Dateien miteinander ab (-S, -B) und löscht nicht vorhandene (-D).
 
 Skript `bin/php/dfscleanup.php`, Code in `kernel/private/classes/commands/dfscleanup.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -30,11 +30,11 @@ Script for checking database and DFS file consistency
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `-S` |  | Check files on DFS share against files in the database |
-| `-B` |  | Checks files in database against files on DFS share |
-| `-D` |  | Delete nonexistent files |
-| `--path` | erforderlich | Path to limit checks to (e.g.: var/storage/content - Default: var/) |
-| `--iteration-limit` | erforderlich | Amount of items to remove in each iteration when performing a purge operation. Default is all in one iteration. |
+| `-S` |  | Prüft die Dateien auf der DFS-Freigabe gegen die Dateien in der Datenbank |
+| `-B` |  | Prüft die Dateien in der Datenbank gegen die Dateien auf der DFS-Freigabe |
+| `-D` |  | Nicht vorhandene Dateien löschen |
+| `--path` | erforderlich | Pfad, auf den die Prüfungen beschränkt werden (z. B. var/storage/content; Standard: var/) |
+| `--iteration-limit` | erforderlich | Anzahl der Einträge, die beim Löschen in jeder Iteration entfernt werden. Standard ist alles in einer Iteration. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

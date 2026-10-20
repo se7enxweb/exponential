@@ -2,14 +2,14 @@
 title: exp:audit
 audience: developer, admin
 category: examples
-summary: "Audit log: tail, show one event, verify the hash chains, list the channels."
+summary: "Audit-Log: die letzten Einträge, ein Ereignis anzeigen, die Hash-Ketten prüfen, die Kanäle auflisten."
 keywords: Konsole, Befehl, exp:audit, audit, console, command, CLI, audit.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:audit
 
-Audit log: tail, show one event, verify the hash chains, list the channels.
+Audit-Log: die letzten Einträge, ein Ereignis anzeigen, die Hash-Ketten prüfen, die Kanäle auflisten.
 
 Skript `bin/php/audit.php`, Code in `kernel/private/classes/commands/audit.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -56,18 +56,18 @@ Name patterns: * | <domain>.* | a prefix ending in .* (access.session.*) | a who
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--channel` | erforderlich | Only this channel (content, access, system, commerce, read) |
-| `--name` | erforderlich | tail, search, export: only names matching this pattern: *, access.*, access.session.*, content.node.move |
-| `--lines` | erforderlich | tail: how many records (default 20) |
-| `--follow` |  | tail: keep printing new records as they are written (Ctrl-C ends) |
-| `--json` |  | Print records and results as JSON |
-| `--date` | erforderlich | verify: only that day's files; restore: the archived day (YYYY-MM-DD, UTC) |
-| `--archives` |  | verify: also the archives (manifests, HMAC, checksums, the chain through them); reindex: also the archives |
-| `--dry-run` |  | rotate, archive, purge, import, pseudonymise: only say what would be done |
-| `--before` | erforderlich | archive: the days before this date (default: older than LiveDays) |
-| `--format` | erforderlich | archive: the format handler; export: jsonl, csv or bundle |
-| `--to` | erforderlich | restore: the directory (default <LogDir>/restored); search, export: up to and including this time (as --from) |
-| `--incremental` |  | reindex: only what is new (default: rebuild) |
+| `--channel` | erforderlich | Nur dieser Kanal (content, access, system, commerce, read) |
+| `--name` | erforderlich | tail, search, export: nur Namen, die auf dieses Muster passen: *, access.*, access.session.*, content.node.move |
+| `--lines` | erforderlich | tail: wie viele Einträge (Standard 20) |
+| `--follow` |  | tail: neue Einträge weiter ausgeben, sobald sie geschrieben werden (Strg-C beendet) |
+| `--json` |  | Einträge und Ergebnisse als JSON ausgeben |
+| `--date` | erforderlich | verify: nur die Dateien dieses Tages; restore: der archivierte Tag (YYYY-MM-DD, UTC) |
+| `--archives` |  | verify: auch die Archive (Manifeste, HMAC, Prüfsummen, die Kette durch sie hindurch); reindex: auch die Archive |
+| `--dry-run` |  | rotate, archive, purge, import, pseudonymise: nur sagen, was getan würde |
+| `--before` | erforderlich | archive: die Tage vor diesem Datum (Standard: älter als LiveDays) |
+| `--format` | erforderlich | archive: der Format-Handler; export: jsonl, csv oder bundle |
+| `--to` | erforderlich | restore: das Verzeichnis (Standard <LogDir>/restored); search, export: bis einschließlich zu diesem Zeitpunkt (wie --from) |
+| `--incremental` |  | reindex: nur das Neue (Standard: neu aufbauen) |
 | `--user` | erforderlich |  |
 | `--login` | erforderlich |  |
 | `--object` | erforderlich |  |
@@ -78,20 +78,20 @@ Name patterns: * | <domain>.* | a prefix ending in .* (access.session.*) | a who
 | `--job` | erforderlich |  |
 | `--run` | erforderlich |  |
 | `--ip` | erforderlich |  |
-| `--from` | erforderlich | search, export: from this time (YYYY-MM-DD[THH:MM[:SS]], UTC unless it ends in Z or +HH:MM) |
-| `--query` | erforderlich | search, export: full-text search over names, object names and before/after values |
+| `--from` | erforderlich | search, export: ab diesem Zeitpunkt (YYYY-MM-DD[THH:MM[:SS]], UTC, außer er endet auf Z oder +HH:MM) |
+| `--query` | erforderlich | search, export: Volltextsuche über Namen, Objektnamen und Werte vorher/nachher |
 | `--legacy-file` | erforderlich |  |
-| `--limit` | erforderlich | search: how many records (default 50); export: at most MaxExportRecords |
-| `--files` |  | search: read the files, not the index |
-| `--out` | erforderlich | export: the file (jsonl, csv) or directory (bundle) |
-| `--subject-user` | erforderlich | export: every record by or about this user id (an access request) |
-| `--dir` | erforderlich | import: the directory of the 4.x audit files (default: the audit LogDir) |
-| `--file` | erforderlich | import: only this 4.x file (login.log) |
-| `--keep-originals` |  | import: leave the 4.x files in place after archiving them |
-| `--pseudonym` |  | key rotate: replace the pseudonym key instead of the signing key |
-| `--replay` | erforderlich | alerts test: run the rule over the records since this date, without firing |
-| `--daily` |  | cron: run the daily tasks now |
-| `--rule` | erforderlich | alerts recipients: only this rule |
+| `--limit` | erforderlich | search: wie viele Einträge (Standard 50); export: höchstens MaxExportRecords |
+| `--files` |  | search: die Dateien lesen, nicht den Index |
+| `--out` | erforderlich | export: die Datei (jsonl, csv) oder das Verzeichnis (bundle) |
+| `--subject-user` | erforderlich | export: jeder Eintrag von diesem oder über diesen Benutzer (eine Auskunftsanfrage) |
+| `--dir` | erforderlich | import: das Verzeichnis der Audit-Dateien von 4.x (Standard: das LogDir des Audits) |
+| `--file` | erforderlich | import: nur diese Datei von 4.x (login.log) |
+| `--keep-originals` |  | import: die Dateien von 4.x nach dem Archivieren an ihrem Platz lassen |
+| `--pseudonym` |  | key rotate: den Pseudonym-Schlüssel statt des Signaturschlüssels ersetzen |
+| `--replay` | erforderlich | alerts test: die Regel über die Einträge seit diesem Datum laufen lassen, ohne auszulösen |
+| `--daily` |  | cron: die täglichen Aufgaben jetzt ausführen |
+| `--rule` | erforderlich | alerts recipients: nur diese Regel |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

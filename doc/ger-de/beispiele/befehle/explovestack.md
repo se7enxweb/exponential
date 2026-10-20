@@ -52,7 +52,7 @@ Guide: doc/eng-us/guides/upgrading.md (Coming from LoveStack)
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--json` |  | One JSON object instead of the text |
+| `--json` |  | Ein JSON-Objekt statt des Textes |
 | `--dry-run` |  | migrate: print what would be written, write nothing (the default) |
 | `--apply` |  | migrate: write the two ezsite_data rows |
 

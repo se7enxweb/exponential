@@ -14,34 +14,34 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 
 | Befehl | Aliase | Was er tut |
 |---|---|---|
-| [exp:accesscheck](accesscheck.md) | exp:access:check | Check what a user may do with a node or object (content/read, edit, ...) and which limitation refuses it |
+| [exp:accesscheck](accesscheck.md) | exp:access:check | Prüft, was ein Benutzer mit einem Knoten oder Objekt tun darf (content/read, edit, ...) und welche Einschränkung es verweigert |
 | [exp:adddefaultstates](adddefaultstates.md) |  |  |
-| [exp:addexphelpreadpolicy](addexphelpreadpolicy.md) | exp:help-grant | Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first) |
-| [exp:addoauthauthorizepolicy](addoauthauthorizepolicy.md) |  | Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first) |
-| [exp:audit](audit.md) |  | Audit log: tail, show one event, verify the hash chains, list the channels |
-| [exp:benchmark](benchmark.md) | exp:bench | Measure this installation: page timings over HTTP, A/B between servers, kernel probes, regression check |
-| [exp:cache](cache.md) |  | Clear and inspect caches by tag, id or all: content, static, HTTP, Velocity, OPcache, APCu |
-| [exp:changelog2xmltext](changelog2xmltext.md) |  | Convert a Changelog file to XML text format and print it to standard output |
-| [exp:checkclasses](checkclasses.md) |  | Load every declared class and report the ones PHP refuses to load |
+| [exp:addexphelpreadpolicy](addexphelpreadpolicy.md) | exp:help-grant | Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf) |
+| [exp:addoauthauthorizepolicy](addoauthauthorizepolicy.md) |  | Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf) |
+| [exp:audit](audit.md) |  | Audit-Log: die letzten Einträge, ein Ereignis anzeigen, die Hash-Ketten prüfen, die Kanäle auflisten |
+| [exp:benchmark](benchmark.md) | exp:bench | Misst diese Installation: Seitenzeiten über HTTP, A/B zwischen Servern, Kernel-Messungen, Regressionsprüfung |
+| [exp:cache](cache.md) |  | Caches nach Tag, ID oder alle leeren und untersuchen: Inhalte, statisch, HTTP, Velocity, OPcache, APCu |
+| [exp:changelog2xmltext](changelog2xmltext.md) |  | Wandelt eine Changelog-Datei in das XML-Textformat um und gibt sie auf der Standardausgabe aus |
+| [exp:checkclasses](checkclasses.md) |  | Lädt jede deklarierte Klasse und meldet die, deren Laden PHP verweigert |
 | [exp:checkcodestyle](checkcodestyle.md) |  |  |
-| [exp:checkdbfiles](checkdbfiles.md) |  | Verify the database update files against the upgrade path; reports missing or stray files |
+| [exp:checkdbfiles](checkdbfiles.md) |  | Prüft die Datenbank-Update-Dateien gegen den Upgrade-Pfad; meldet fehlende oder überzählige Dateien |
 | [exp:checkmanifest](checkmanifest.md) |  |  |
-| [exp:cleanuppolicies](cleanuppolicies.md) |  | Remove policies of modules that no longer exist (--dry-run lists them first) |
-| [exp:cleanuprss](cleanuprss.md) |  | Trim RSS-imported content, keeping the newest items of each active import |
-| [exp:cleanupversions](cleanupversions.md) |  | Remove archived content versions beyond the VersionManagement limits (-n: do not wait) |
-| [exp:clusterize](clusterize.md) |  | Move var files into the database cluster storage (-u moves them back) |
-| [exp:clusterpurge](clusterpurge.md) |  | Physically purge the cluster files of the given scopes (--scopes=scope1,scope2) |
-| [exp:collaborationsampledata](collaborationsampledata.md) | exp:collaboration:sample-data | Build sample content for the collaboration tool (approvals, comments, groups), or remove it again |
-| [exp:contentcheck](contentcheck.md) | exp:content-check | Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only, unless --fix, --quarantine or --fix-permissions without --dry-run) |
+| [exp:cleanuppolicies](cleanuppolicies.md) |  | Entfernt Richtlinien von Modulen, die es nicht mehr gibt (--dry-run listet sie zuerst auf) |
+| [exp:cleanuprss](cleanuprss.md) |  | Kürzt per RSS importierte Inhalte und behält die neuesten Einträge jedes aktiven Imports |
+| [exp:cleanupversions](cleanupversions.md) |  | Entfernt archivierte Inhaltsversionen über die Grenzen von VersionManagement hinaus (-n: nicht warten) |
+| [exp:clusterize](clusterize.md) |  | Verschiebt die Dateien aus var in den Cluster-Speicher der Datenbank (-u verschiebt sie zurück) |
+| [exp:clusterpurge](clusterpurge.md) |  | Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2) |
+| [exp:collaborationsampledata](collaborationsampledata.md) | exp:collaboration:sample-data | Legt Beispielinhalte für das Werkzeug zur Zusammenarbeit an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder |
+| [exp:contentcheck](contentcheck.md) | exp:content-check | Inhaltsprüfungen: den Referenzindex aufbauen, die ungenutzten Assets und die defekten Verknüpfungen unter einem Knoten auflisten, die fehlenden Dateien auflisten, die Speicherdateien durchsuchen (nur ein Bericht, außer mit --fix, --quarantine oder --fix-permissions ohne --dry-run) |
 | [exp:convertezenumtoezselection](convertezenumtoezselection.md) |  |  |
-| [exp:convertprice2multiprice](convertprice2multiprice.md) |  | Convert content objects with 'price' datatype attributes to 'multiprice' |
-| [exp:dfscleanup](dfscleanup.md) |  | Check database and DFS files against each other (-S, -B) and delete nonexistent ones (-D) |
-| [exp:expcontentjob](expcontentjob.md) |  | Run, list, resume and cancel content jobs: large subtree removes and copies in batches |
-| [exp:expfetch](expfetch.md) | exp:info, exp:about | The system card: the Exponential "e" next to the facts of this installation, its engine and its machine, with health hints (exp:info adds an inventory, exp:about the project) |
-| [exp:exphelp](exphelp.md) | exp:help | The help system on the command line: build and describe the index of doc/, search it, show a page's metadata, check its links and images |
-| [exp:exphelpcontent](exphelpcontent.md) | exp:help:content | Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall |
-| [exp:exphelpexamples](exphelpexamples.md) | exp:help:examples | Generate the reference examples of the help below doc/eng-us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points |
-| [exp:explogs](explogs.md) | exp:logs | The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives |
+| [exp:convertprice2multiprice](convertprice2multiprice.md) |  | Wandelt Inhaltsobjekte mit Attributen vom Datentyp 'price' in 'multiprice' um |
+| [exp:dfscleanup](dfscleanup.md) |  | Gleicht Datenbank und DFS-Dateien miteinander ab (-S, -B) und löscht nicht vorhandene (-D) |
+| [exp:expcontentjob](expcontentjob.md) |  | Inhaltsaufträge ausführen, auflisten, fortsetzen und abbrechen: große Teilbäume stapelweise entfernen und kopieren |
+| [exp:expfetch](expfetch.md) | exp:info, exp:about | Die Systemkarte: das Exponential-„e“ neben den Fakten dieser Installation, ihrer Engine und ihres Rechners, mit Hinweisen zum Zustand (exp:info ergänzt ein Inventar, exp:about das Projekt) |
+| [exp:exphelp](exphelp.md) | exp:help | Das Hilfesystem auf der Kommandozeile: den Index von doc/ aufbauen und beschreiben, darin suchen, die Metadaten einer Seite zeigen, ihre Links und Bilder prüfen |
+| [exp:exphelpcontent](exphelpcontent.md) | exp:help:content | Hilfe als Inhalt gepflegt: die Hilfeklassen, Sektionen, Zustände, den Baum und die Rollen anlegen (idempotent), die Themen gegen den Styleguide prüfen, das Glossar und die Themen befüllen, berichten und deinstallieren |
+| [exp:exphelpexamples](exphelpexamples.md) | exp:help:examples | Erzeugt die Referenzbeispiele der Hilfe unter doc/eng-us/examples/ aus dem Code: Template-Operatoren und -Funktionen, Fetch-Funktionen, Modulansichten, Richtlinien, INI-Einstellungen, Datentypen, Workflow-Ereignisse, Cronjobs, Konsolenbefehle und Erweiterungspunkte |
+| [exp:explogs](explogs.md) | exp:logs | Der Log-Viewer auf der Kommandozeile: die Logdateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive bereinigen |
 | [exp:exploremipsumfill](exploremipsumfill.md) | exp:loremipsum | Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text |
 | [exp:explovestack](explovestack.md) | exp:lovestack | Check an installation coming from LoveStack (read-only), and record its database as Exponential's (migrate) |
 | [exp:exppatterncatalogue](exppatterncatalogue.md) |  |  |
@@ -120,41 +120,41 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 
 | Befehl | Datei | Was er tut |
 |---|---|---|
-| `shell:checkcalltimeref` | `bin/shell/checkcalltimeref.sh` | Check PHP source files for deprecated call-time pass-by-reference usage |
-| `shell:checkcode` | `bin/shell/checkcode.sh` | Check PHP source files for short open tag coding standard violations |
-| `shell:checkdbschema` | `bin/shell/checkdbschema.sh` | Verify database schema files against the expected baseline schema |
-| `shell:checkdbupdate` | `bin/shell/checkdbupdate.sh` | Check database update files for consistency with the current version |
-| `shell:checkforeach` | `bin/shell/checkforeach.sh` | Check PHP foreach loop syntax for Exponential coding standard compliance |
-| `shell:checkini` | `bin/shell/checkini.sh` | Find INI configuration files that do not conform to valid PHP parse syntax |
-| `shell:checkprint` | `bin/shell/checkprint.sh` | Check PHP source files for print() statement usage |
-| `shell:checkversionnumbers` | `bin/shell/checkversionnumbers.sh` | Check version number consistency across source files (deprecated since 5.0) |
-| `shell:clearcache` | `bin/shell/clearcache.sh` | Deprecated — clear site caches using bin/php/ezcache.php instead |
+| `shell:checkcalltimeref` | `bin/shell/checkcalltimeref.sh` | Prüft PHP-Quelldateien auf veraltete Übergabe per Referenz beim Aufruf (call-time pass-by-reference) |
+| `shell:checkcode` | `bin/shell/checkcode.sh` | Prüft PHP-Quelldateien auf Verstöße gegen den Codierstandard durch kurze Open-Tags |
+| `shell:checkdbschema` | `bin/shell/checkdbschema.sh` | Prüft die Datenbankschema-Dateien gegen das erwartete Basisschema |
+| `shell:checkdbupdate` | `bin/shell/checkdbupdate.sh` | Prüft die Datenbank-Update-Dateien auf Übereinstimmung mit der aktuellen Version |
+| `shell:checkforeach` | `bin/shell/checkforeach.sh` | Prüft die Syntax von PHP-foreach-Schleifen auf Einhaltung des Exponential-Codierstandards |
+| `shell:checkini` | `bin/shell/checkini.sh` | Findet INI-Konfigurationsdateien, die sich nicht als gültiges PHP parsen lassen |
+| `shell:checkprint` | `bin/shell/checkprint.sh` | Prüft PHP-Quelldateien auf Verwendung von print() |
+| `shell:checkversionnumbers` | `bin/shell/checkversionnumbers.sh` | Prüft die Versionsnummern in den Quelldateien auf Übereinstimmung (veraltet seit 5.0) |
+| `shell:clearcache` | `bin/shell/clearcache.sh` | Veraltet: Leeren Sie die Caches der Website stattdessen mit bin/php/ezcache.php |
 | `shell:common` | `bin/shell/common.sh` |  |
-| `shell:creatediff` | `bin/shell/creatediff.sh` | Create a patch/diff archive between two Exponential release versions |
-| `shell:distcommon` | `bin/shell/distcommon.sh` | Shared functions library sourced by distribution build scripts (not executable) |
-| `shell:extensionscommon` | `bin/shell/extensionscommon.sh` | Shared functions library sourced by extension packaging scripts (not executable) |
-| `shell:fixlicense` | `bin/shell/fixlicense.sh` | Update legacy eZ Systems license URLs in PHP source files |
-| `shell:generatefilelist` | `bin/shell/generatefilelist.sh` | Generate share/filelist.md5 file integrity checksums for the current release |
-| `shell:i18ncontrol` | `bin/shell/i18ncontrol.sh` | Control and manage i18n translation source files |
-| `shell:i18nstats` | `bin/shell/i18nstats.sh` | Display translation coverage statistics for specified locales |
-| `shell:makeaddonpackages` | `bin/shell/makeaddonpackages.sh` | Build add-on packages for inclusion in a distribution release |
-| `shell:makedist` | `bin/shell/makedist.sh` | Build a full Exponential release distribution package (deprecated since 5.0) |
-| `shell:makedoc` | `bin/shell/makedoc.sh` | Dump the current running site as static HTML for offline documentation |
-| `shell:makei18ndist` | `bin/shell/makei18ndist.sh` | Build i18n translation distribution packages for specified locales |
-| `shell:makestylepackages` | `bin/shell/makestylepackages.sh` | Build style and design distribution packages |
-| `shell:packagescommon` | `bin/shell/packagescommon.sh` | Shared functions library sourced by package build scripts (not executable) |
-| `shell:packext` | `bin/shell/packext.sh` | Package an extension directory into a distributable archive |
-| `shell:phpcheck` | `bin/shell/phpcheck.sh` | Find PHP source files with syntax errors and print their paths |
-| `shell:redumpall` | `bin/shell/redumpall.sh` | Re-dump all SQL database schemas and seed data to SQL files |
-| `shell:setdistribution` | `bin/shell/setdistribution.sh` | Set the distribution name and version properties for a release build |
-| `shell:setupdist` | `bin/shell/setupdist.sh` | Set up a distribution build environment and staging directory structure |
-| `shell:sqlcommon` | `bin/shell/sqlcommon.sh` | Shared database connection variables sourced by SQL scripts (not executable) |
-| `shell:sqlredump` | `bin/shell/sqlredump.sh` | Re-dump a specific SQL schema or data set to a named output file |
-| `shell:stats` | `bin/shell/stats.sh` | Display code statistics including line counts and file totals for the repository |
-| `shell:updateisbn13` | `bin/shell/updateisbn13.sh` | Download updated ISBN-13 publisher prefix data and import it into the database |
-| `shell:updatelicense` | `bin/shell/updatelicense.sh` | Update license header blocks across all source files |
-| `shell:updatetranslations` | `bin/shell/updatetranslations.sh` | Download and update translation files for all configured locales |
-| `shell:verifyfiles` | `bin/shell/verifyfiles.sh` | Verify repository file integrity against share/filelist.md5 checksums |
+| `shell:creatediff` | `bin/shell/creatediff.sh` | Erstellt ein Patch-/Diff-Archiv zwischen zwei Exponential-Releases |
+| `shell:distcommon` | `bin/shell/distcommon.sh` | Gemeinsame Funktionsbibliothek, die die Skripte zum Bau der Distribution einbinden (nicht ausführbar) |
+| `shell:extensionscommon` | `bin/shell/extensionscommon.sh` | Gemeinsame Funktionsbibliothek, die die Skripte zum Paketieren von Erweiterungen einbinden (nicht ausführbar) |
+| `shell:fixlicense` | `bin/shell/fixlicense.sh` | Aktualisiert alte Lizenz-URLs von eZ Systems in PHP-Quelldateien |
+| `shell:generatefilelist` | `bin/shell/generatefilelist.sh` | Erzeugt die Prüfsummen der Dateien in share/filelist.md5 für das aktuelle Release |
+| `shell:i18ncontrol` | `bin/shell/i18ncontrol.sh` | Steuert und verwaltet die Quelldateien der i18n-Übersetzungen |
+| `shell:i18nstats` | `bin/shell/i18nstats.sh` | Zeigt Statistiken zur Übersetzungsabdeckung für die angegebenen Locales |
+| `shell:makeaddonpackages` | `bin/shell/makeaddonpackages.sh` | Baut Zusatzpakete zur Aufnahme in ein Distributions-Release |
+| `shell:makedist` | `bin/shell/makedist.sh` | Baut ein vollständiges Distributionspaket eines Exponential-Releases (veraltet seit 5.0) |
+| `shell:makedoc` | `bin/shell/makedoc.sh` | Speichert die laufende Website als statisches HTML für eine Offline-Dokumentation |
+| `shell:makei18ndist` | `bin/shell/makei18ndist.sh` | Baut Distributionspakete der i18n-Übersetzungen für die angegebenen Locales |
+| `shell:makestylepackages` | `bin/shell/makestylepackages.sh` | Baut Distributionspakete für Styles und Designs |
+| `shell:packagescommon` | `bin/shell/packagescommon.sh` | Gemeinsame Funktionsbibliothek, die die Skripte zum Bau von Paketen einbinden (nicht ausführbar) |
+| `shell:packext` | `bin/shell/packext.sh` | Packt ein Erweiterungsverzeichnis in ein verteilbares Archiv |
+| `shell:phpcheck` | `bin/shell/phpcheck.sh` | Findet PHP-Quelldateien mit Syntaxfehlern und gibt ihre Pfade aus |
+| `shell:redumpall` | `bin/shell/redumpall.sh` | Schreibt alle SQL-Datenbankschemata und Startdaten neu in SQL-Dateien |
+| `shell:setdistribution` | `bin/shell/setdistribution.sh` | Setzt Name und Version der Distribution für den Bau eines Releases |
+| `shell:setupdist` | `bin/shell/setupdist.sh` | Richtet eine Build-Umgebung für die Distribution und die Verzeichnisstruktur des Staging-Bereichs ein |
+| `shell:sqlcommon` | `bin/shell/sqlcommon.sh` | Gemeinsame Variablen für die Datenbankverbindung, die SQL-Skripte einbinden (nicht ausführbar) |
+| `shell:sqlredump` | `bin/shell/sqlredump.sh` | Schreibt ein bestimmtes SQL-Schema oder einen Datenbestand neu in eine benannte Ausgabedatei |
+| `shell:stats` | `bin/shell/stats.sh` | Zeigt Code-Statistiken des Repositorys, darunter Zeilenzahlen und Dateisummen |
+| `shell:updateisbn13` | `bin/shell/updateisbn13.sh` | Lädt aktualisierte Verlagspräfixe für ISBN-13 herunter und importiert sie in die Datenbank |
+| `shell:updatelicense` | `bin/shell/updatelicense.sh` | Aktualisiert die Lizenzköpfe in allen Quelldateien |
+| `shell:updatetranslations` | `bin/shell/updatetranslations.sh` | Lädt die Übersetzungsdateien für alle konfigurierten Locales herunter und aktualisiert sie |
+| `shell:verifyfiles` | `bin/shell/verifyfiles.sh` | Prüft die Integrität der Dateien des Repositorys gegen die Prüfsummen in share/filelist.md5 |
 
 - [Alle Beispiele](../README.md)
 

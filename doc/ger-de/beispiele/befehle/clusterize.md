@@ -2,14 +2,14 @@
 title: exp:clusterize
 audience: developer, admin
 category: examples
-summary: Move var files into the database cluster storage (-u moves them back).
+summary: Verschiebt die Dateien aus var in den Cluster-Speicher der Datenbank (-u verschiebt sie zurück).
 keywords: Konsole, Befehl, exp:clusterize, clusterize, console, command, CLI, clusterize.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:clusterize
 
-Move var files into the database cluster storage (-u moves them back).
+Verschiebt die Dateien aus var in den Cluster-Speicher der Datenbank (-u verschiebt sie zurück).
 
 Skript `bin/php/clusterize.php`, Code in `kernel/private/classes/commands/clusterize.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,12 +22,12 @@ php bin/php/clusterize.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `-u` |  | Unclusterize |
-| `--skip-binary-files` |  | Skip copying binary files |
-| `--skip-media-files` |  | Skip copying media files |
-| `--skip-images` |  | Skip copying images |
-| `-r` |  | Remove files after copying |
-| `-n` |  | Do not wait |
+| `-u` |  | Aus dem Cluster zurückholen |
+| `--skip-binary-files` |  | Binärdateien nicht kopieren |
+| `--skip-media-files` |  | Mediendateien nicht kopieren |
+| `--skip-images` |  | Bilder nicht kopieren |
+| `-r` |  | Dateien nach dem Kopieren entfernen |
+| `-n` |  | Nicht warten |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

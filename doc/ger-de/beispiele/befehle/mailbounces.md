@@ -45,7 +45,7 @@ Ends with PASS, SKIP (the reader is disabled or not configured) or FAIL (exit 1)
 | `--dry-run` |  | Report only: nothing is suppressed, no message is changed, the status is not written |
 | `--file` | erforderlich | Read these saved messages (.eml file, or a directory of them) instead of the mailbox |
 | `--status` |  | Show the last run and stop |
-| `--json` |  | One JSON object instead of the text |
+| `--json` |  | Ein JSON-Objekt statt des Textes |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

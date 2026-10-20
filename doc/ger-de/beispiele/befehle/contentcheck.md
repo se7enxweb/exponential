@@ -2,14 +2,14 @@
 title: exp:contentcheck
 audience: developer, admin
 category: examples
-summary: "Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only, unless --fix, --quarantine or --fix-permissions without --dry-run)."
+summary: "Inhaltsprüfungen: den Referenzindex aufbauen, die ungenutzten Assets und die defekten Verknüpfungen unter einem Knoten auflisten, die fehlenden Dateien auflisten, die Speicherdateien durchsuchen (nur ein Bericht, außer mit --fix, --quarantine oder --fix-permissions ohne ..."
 keywords: Konsole, Befehl, exp:contentcheck, contentcheck, console, command, CLI, contentcheck.php, exp:content-check
 type: generated
 generated: exp:help:examples
 ---
 # exp:contentcheck
 
-Content checks: build the reference index, list the unused assets and the broken relations below a node, list the missing files, scan the storage files (report only, unless --fix, --quarantine or --fix-permissions without --dry-run).
+Inhaltsprüfungen: den Referenzindex aufbauen, die ungenutzten Assets und die defekten Verknüpfungen unter einem Knoten auflisten, die fehlenden Dateien auflisten, die Speicherdateien durchsuchen (nur ein Bericht, außer mit --fix, --quarantine oder --fix-permissions ohne --dry-run).
 
 Skript `bin/php/contentcheck.php`, Code in `kernel/private/classes/commands/contentcheck.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -49,23 +49,23 @@ Exit code: 0 nothing found, 1 something found, 2 error.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--build-index` |  | Build the reference index and keep it in the cache |
-| `--unreferenced` |  | List the unused assets below --node |
-| `--broken` |  | List the broken relations below --node (all pages) and in the layouts |
-| `--missing-files` |  | List the fields below --node whose files are missing, and images with missing or stale aliases |
-| `--problems` | erforderlich | With --missing-files: missing,alias_missing,alias_stale,alias_absent (default: the first three) |
-| `--versions` | erforderlich | With --missing-files: published,draft (default: both) |
-| `--fix` | erforderlich | Resolve: regenerate, restore, replace, remove or review (the findings of --missing-files, or --items) |
-| `--items` | erforderlich | With --fix: field versions as <attribute id>-<version>, separated by commas |
-| `--replace-with` | erforderlich | With --fix=replace: the file put at the expected path (one item) |
-| `--node` | erforderlich | The node the lists start from (default: content.ini [NodeSettings] RootNode) |
-| `--why` | erforderlich | Object ids: say what uses each of them |
-| `--login` | erforderlich | The user whose access the lists use (default admin) |
-| `--json` |  | One JSON object instead of the text |
-| `--storage` |  | Scan the storage files (all of it, in batches) and keep the result for the storage view |
-| `--quarantine` |  | With --storage: move the orphan files of the scan to the quarantine (each checked again) |
-| `--fix-permissions` |  | With --storage: set the expected owner and mode of used files with a wrong one |
-| `--dry-run` |  | With --fix, --quarantine or --fix-permissions: show what would be done, change nothing |
+| `--build-index` |  | Den Referenzindex aufbauen und im Cache behalten |
+| `--unreferenced` |  | Die ungenutzten Assets unter --node auflisten |
+| `--broken` |  | Die defekten Verknüpfungen unter --node (alle Seiten) und in den Layouts auflisten |
+| `--missing-files` |  | Die Felder unter --node auflisten, deren Dateien fehlen, und Bilder mit fehlenden oder veralteten Aliasen |
+| `--problems` | erforderlich | Mit --missing-files: missing,alias_missing,alias_stale,alias_absent (Standard: die ersten drei) |
+| `--versions` | erforderlich | Mit --missing-files: published,draft (Standard: beide) |
+| `--fix` | erforderlich | Beheben: neu erzeugen, wiederherstellen, ersetzen, entfernen oder prüfen (die Befunde von --missing-files oder --items) |
+| `--items` | erforderlich | Mit --fix: Feldversionen als <attribute id>-<version>, durch Kommas getrennt |
+| `--replace-with` | erforderlich | Mit --fix=replace: die Datei, die an den erwarteten Pfad gelegt wird (ein Eintrag) |
+| `--node` | erforderlich | Der Knoten, bei dem die Listen beginnen (Standard: content.ini [NodeSettings] RootNode) |
+| `--why` | erforderlich | Objekt-IDs: sagen, was jede von ihnen verwendet |
+| `--login` | erforderlich | Der Benutzer, dessen Zugriffsrechte die Listen verwenden (Standard admin) |
+| `--json` |  | Ein JSON-Objekt statt des Textes |
+| `--storage` |  | Die Speicherdateien durchsuchen (alle, in Stapeln) und das Ergebnis für die Speicheransicht behalten |
+| `--quarantine` |  | Mit --storage: die verwaisten Dateien des Durchlaufs in die Quarantäne verschieben (jede wird erneut geprüft) |
+| `--fix-permissions` |  | Mit --storage: bei verwendeten Dateien mit falschem Eigentümer oder Modus den erwarteten setzen |
+| `--dry-run` |  | Mit --fix, --quarantine oder --fix-permissions: zeigen, was getan würde, nichts ändern |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -2,14 +2,14 @@
 title: exp:exphelp
 audience: developer, admin
 category: examples
-summary: "The help system on the command line: build and describe the index of doc/, search it, show a page's metadata, check its links and images."
+summary: "Das Hilfesystem auf der Kommandozeile: den Index von doc/ aufbauen und beschreiben, darin suchen, die Metadaten einer Seite zeigen, ihre Links und Bilder prüfen."
 keywords: Konsole, Befehl, exp:exphelp, exphelp, console, command, CLI, exphelp.php, exp:help
 type: generated
 generated: exp:help:examples
 ---
 # exp:exphelp
 
-The help system on the command line: build and describe the index of doc/, search it, show a page's metadata, check its links and images.
+Das Hilfesystem auf der Kommandozeile: den Index von doc/ aufbauen und beschreiben, darin suchen, die Metadaten einer Seite zeigen, ihre Links und Bilder prüfen.
 
 Skript `bin/php/exphelp.php`, Code in `kernel/private/classes/commands/exphelp.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -47,22 +47,22 @@ Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--rebuild` |  | index: build the index again even when the cached one is current |
-| `--list` |  | index: list every page |
-| `--json` |  | Print one JSON document instead of the text |
-| `--audience` | erforderlich | search, index --list: only pages for this audience (editor, admin, developer, user) |
-| `--category` | erforderlich | search, index --list: only pages of this category |
-| `--type` | erforderlich | search, index --list: only pages of this type (guide, feature, bc, changelog ...) |
-| `--limit` | erforderlich | search: the number of results (default 10) |
-| `--below` | erforderlich | check, index --list: only the pages whose id starts with this (e.g. guides/) |
-| `--all` |  | check: also list the notices (links to files that are not help pages) |
-| `--strict` |  | check: exit 1 on warnings too |
-| `--out` | erforderlich | pdf: the file to write (default: the page title as file name, in the current directory) |
-| `--base-url` | erforderlich | pdf: scheme and host for the links and the page address (https://www.example.com) |
-| `--language` | erforderlich | the documentation language: a directory of exphelp.ini [DocLanguages] Directories[] (eng-us, ger-de; the old en/us and de are accepted) |
-| `--fix` |  | maps: write .paths.json and .dirnames.json as the union of their entries, sorted |
-| `--paths` | erforderlich | maps --fix: also merge the entries of this JSON file into .paths.json |
-| `--dirnames` | erforderlich | maps --fix: also merge the entries of this JSON file into .dirnames.json |
+| `--rebuild` |  | index: den Index neu aufbauen, auch wenn der im Cache aktuell ist |
+| `--list` |  | index: jede Seite auflisten |
+| `--json` |  | Ein JSON-Dokument statt des Textes ausgeben |
+| `--audience` | erforderlich | search, index --list: nur Seiten für diese Zielgruppe (editor, admin, developer, user) |
+| `--category` | erforderlich | search, index --list: nur Seiten dieser Kategorie |
+| `--type` | erforderlich | search, index --list: nur Seiten dieses Typs (guide, feature, bc, changelog ...) |
+| `--limit` | erforderlich | search: die Anzahl der Ergebnisse (Standard 10) |
+| `--below` | erforderlich | check, index --list: nur die Seiten, deren ID damit beginnt (z. B. guides/) |
+| `--all` |  | check: auch die Hinweise auflisten (Links auf Dateien, die keine Hilfeseiten sind) |
+| `--strict` |  | check: auch bei Warnungen Exit-Code 1 |
+| `--out` | erforderlich | pdf: die zu schreibende Datei (Standard: der Seitentitel als Dateiname, im aktuellen Verzeichnis) |
+| `--base-url` | erforderlich | pdf: Schema und Host für die Links und die Adresse der Seite (https://www.example.com) |
+| `--language` | erforderlich | die Sprache der Dokumentation: ein Verzeichnis aus exphelp.ini [DocLanguages] Directories[] (eng-us, ger-de; die alten en/us und de werden akzeptiert) |
+| `--fix` |  | maps: .paths.json und .dirnames.json als Vereinigung ihrer Einträge schreiben, sortiert |
+| `--paths` | erforderlich | maps --fix: außerdem die Einträge dieser JSON-Datei in .paths.json übernehmen |
+| `--dirnames` | erforderlich | maps --fix: außerdem die Einträge dieser JSON-Datei in .dirnames.json übernehmen |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

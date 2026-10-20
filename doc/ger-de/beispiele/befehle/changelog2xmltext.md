@@ -2,14 +2,14 @@
 title: exp:changelog2xmltext
 audience: developer, admin
 category: examples
-summary: Convert a Changelog file to XML text format and print it to standard output.
+summary: Wandelt eine Changelog-Datei in das XML-Textformat um und gibt sie auf der Standardausgabe aus.
 keywords: Konsole, Befehl, exp:changelog2xmltext, changelog2xmltext, console, command, CLI, changelog2xmltext.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:changelog2xmltext
 
-Convert a Changelog file to XML text format and print it to standard output.
+Wandelt eine Changelog-Datei in das XML-Textformat um und gibt sie auf der Standardausgabe aus.
 
 Skript `bin/php/changelog2xmltext.php`, Code in `kernel/private/classes/commands/changelog2xmltext.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

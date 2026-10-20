@@ -2,14 +2,14 @@
 title: exp:addexphelpreadpolicy
 audience: developer, admin
 category: examples
-summary: Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first).
+summary: Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf).
 keywords: Konsole, Befehl, exp:addexphelpreadpolicy, addexphelpreadpolicy, console, command, CLI, addexphelpreadpolicy.php, exp:help-grant
 type: generated
 generated: exp:help:examples
 ---
 # exp:addexphelpreadpolicy
 
-Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first).
+Gewährt der Rolle Editor oder den genannten Rollen exphelp/read (das Hilfesystem) (--dry-run listet sie zuerst auf).
 
 Skript `bin/php/addexphelpreadpolicy.php`, Code in `kernel/private/classes/commands/addexphelpreadpolicy.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -37,7 +37,7 @@ Example: php bin/php/addexphelpreadpolicy.php --dry-run
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | List what would be granted, change nothing |
+| `--dry-run` |  | Auflisten, was gewährt würde, nichts ändern |
 | `--role:*` |  |  |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

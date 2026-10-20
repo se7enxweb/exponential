@@ -2,14 +2,14 @@
 title: exp:cleanuppolicies
 audience: developer, admin
 category: examples
-summary: Remove policies of modules that no longer exist (--dry-run lists them first).
+summary: Entfernt Richtlinien von Modulen, die es nicht mehr gibt (--dry-run listet sie zuerst auf).
 keywords: Konsole, Befehl, exp:cleanuppolicies, cleanuppolicies, console, command, CLI, cleanuppolicies.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:cleanuppolicies
 
-Remove policies of modules that no longer exist (--dry-run lists them first).
+Entfernt Richtlinien von Modulen, die es nicht mehr gibt (--dry-run listet sie zuerst auf).
 
 Skript `bin/php/cleanuppolicies.php`, Code in `kernel/private/classes/commands/cleanuppolicies.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -33,8 +33,8 @@ Example: ./bin/php/cleanuppolicies.php --dry-run
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Test mode, output the list of affected policies without removing them |
-| `-n` |  | Do not wait |
+| `--dry-run` |  | Testmodus: die Liste der betroffenen Richtlinien ausgeben, ohne sie zu entfernen |
+| `-n` |  | Nicht warten |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

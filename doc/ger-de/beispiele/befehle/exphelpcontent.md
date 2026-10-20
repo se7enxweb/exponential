@@ -2,14 +2,14 @@
 title: exp:exphelpcontent
 audience: developer, admin
 category: examples
-summary: "Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall."
+summary: "Hilfe als Inhalt gepflegt: die Hilfeklassen, Sektionen, Zustände, den Baum und die Rollen anlegen (idempotent), die Themen gegen den Styleguide prüfen, das Glossar und die Themen befüllen, berichten und deinstallieren."
 keywords: Konsole, Befehl, exp:exphelpcontent, exphelpcontent, console, command, CLI, exphelpcontent.php, exp:help:content
 type: generated
 generated: exp:help:examples
 ---
 # exp:exphelpcontent
 
-Help maintained as content: create the help classes, sections, states, tree and roles (idempotent), check the topics against the style guide, seed the glossary and topics, report and uninstall.
+Hilfe als Inhalt gepflegt: die Hilfeklassen, Sektionen, Zustände, den Baum und die Rollen anlegen (idempotent), die Themen gegen den Styleguide prüfen, das Glossar und die Themen befüllen, berichten und deinstallieren.
 
 Skript `bin/php/exphelpcontent.php`, Code in `kernel/private/classes/commands/exphelpcontent.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -58,18 +58,18 @@ Exit code: 0 fine, 1 check found an ERROR (or a step could not be done), 2 error
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Show what would change, change nothing |
-| `--fix` |  | check: set the section of each topic, figure, chapter and manual from the audience |
-| `--file` | erforderlich | seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json) |
-| `--update` |  | seed-*: also update existing objects that differ from the file |
-| `--release` |  | seed-topics: set new topics, chapters and manuals to Released |
-| `--with-content` |  | uninstall: also the help tree (into the trash), the classes, the state group and the sections |
-| `--login` | erforderlich | The user who creates the classes and objects (default admin) |
-| `--json` |  | Print one JSON document instead of the text |
-| `--manual` | erforderlich | export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual |
-| `--format` | erforderlich | export: epub, pdf or dita |
-| `--output` | erforderlich | export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); dita: the directory (default <cache>/exphelp/dita/all or /<remote_id>); package: the directory (default <cache>/exphelp/packages) |
-| `--version` | erforderlich | package: the release, MAJOR.MINOR.PATCH (default: the version of this installation) |
+| `--dry-run` |  | Zeigen, was sich ändern würde, nichts ändern |
+| `--fix` |  | check: die Sektion jedes Themas, jeder Abbildung, jedes Kapitels und Handbuchs aus der Zielgruppe setzen |
+| `--file` | erforderlich | seed-glossary, seed-topics: die Datendatei (Standard share/help/seed-glossary.json, share/help/seed-topics.json) |
+| `--update` |  | seed-*: auch vorhandene Objekte aktualisieren, die von der Datei abweichen |
+| `--release` |  | seed-topics: neue Themen, Kapitel und Handbücher auf Released setzen |
+| `--with-content` |  | uninstall: auch den Hilfebaum (in den Papierkorb), die Klassen, die Zustandsgruppe und die Sektionen |
+| `--login` | erforderlich | Der Benutzer, der die Klassen und Objekte anlegt (Standard admin) |
+| `--json` |  | Ein JSON-Dokument statt des Textes ausgeben |
+| `--manual` | erforderlich | export, dita, ebooks: die remote_id des Handbuchs (help-manual-...); dita und ebooks ohne sie: jedes Handbuch |
+| `--format` | erforderlich | export: epub, pdf oder dita |
+| `--output` | erforderlich | export: die zu schreibende Datei (Standard <cache>/exphelp/ebooks/<remote_id>.<format>); dita: das Verzeichnis (Standard <cache>/exphelp/dita/all oder /<remote_id>); package: das Verzeichnis (Standard <cache>/exphelp/packages) |
+| `--version` | erforderlich | package: das Release, MAJOR.MINOR.PATCH (Standard: die Version dieser Installation) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

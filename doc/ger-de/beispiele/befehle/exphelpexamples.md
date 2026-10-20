@@ -2,14 +2,14 @@
 title: exp:exphelpexamples
 audience: developer, admin
 category: examples
-summary: "Generate the reference examples of the help below doc/eng-us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points."
+summary: "Erzeugt die Referenzbeispiele der Hilfe unter doc/eng-us/examples/ aus dem Code: Template-Operatoren und -Funktionen, Fetch-Funktionen, Modulansichten, Richtlinien, INI-Einstellungen, Datentypen, Workflow-Ereignisse, Cronjobs, Konsolenbefehle und Erweiterungspunkte."
 keywords: Konsole, Befehl, exp:exphelpexamples, exphelpexamples, console, command, CLI, exphelpexamples.php, exp:help:examples
 type: generated
 generated: exp:help:examples
 ---
 # exp:exphelpexamples
 
-Generate the reference examples of the help below doc/eng-us/examples/ from the code: template operators and functions, fetch functions, module views, policies, INI settings, datatypes, workflow events, cronjobs, console commands and extension points.
+Erzeugt die Referenzbeispiele der Hilfe unter doc/eng-us/examples/ aus dem Code: Template-Operatoren und -Funktionen, Fetch-Funktionen, Modulansichten, Richtlinien, INI-Einstellungen, Datentypen, Workflow-Ereignisse, Cronjobs, Konsolenbefehle und Erweiterungspunkte.
 
 Skript `bin/php/exphelpexamples.php`, Code in `kernel/private/classes/commands/exphelpexamples.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -51,12 +51,12 @@ Exit code: 0 fine, 1 --check found differences, 2 error.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--area` | erforderlich | Only these areas, comma separated (template-operators, template-functions, fetch-functions, module-views, policies, ini-settings, datatypes, workflow-events, cronjobs, commands, extension-points) |
-| `--check` |  | Compare the generated pages with the files and change nothing; exit 1 on a difference |
-| `--list` |  | List the areas with their page counts |
-| `--out` | erforderlich | The output directory relative to the installation root (default doc/eng-us/examples, or the translation's directory) |
-| `--language` | erforderlich | Write the pages in a translation: a language directory below doc/ (ger-de); default the English original |
-| `--worklist` | erforderlich | With --language: write the source texts without a translation to this file, as a description catalogue to fill in |
+| `--area` | erforderlich | Nur diese Bereiche, durch Kommas getrennt (template-operators, template-functions, fetch-functions, module-views, policies, ini-settings, datatypes, workflow-events, cronjobs, commands, extension-points) |
+| `--check` |  | Die erzeugten Seiten mit den Dateien vergleichen und nichts ändern; Exit-Code 1 bei einem Unterschied |
+| `--list` |  | Die Bereiche mit der Anzahl ihrer Seiten auflisten |
+| `--out` | erforderlich | Das Ausgabeverzeichnis relativ zum Wurzelverzeichnis der Installation (Standard doc/eng-us/examples oder das Verzeichnis der Übersetzung) |
+| `--language` | erforderlich | Die Seiten in einer Übersetzung schreiben: ein Sprachverzeichnis unter doc/ (ger-de); Standard ist das englische Original |
+| `--worklist` | erforderlich | Mit --language: die Quelltexte ohne Übersetzung in diese Datei schreiben, als auszufüllenden Beschreibungskatalog |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

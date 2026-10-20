@@ -44,7 +44,7 @@ Exit code: 0 clean (or index added), 1 duplicates found (or index refused), 2 er
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--fix-index` |  | Add the unique index on ezuser.login when no duplicates are found |
-| `--json` |  | One JSON object instead of the text |
+| `--json` |  | Ein JSON-Objekt statt des Textes |
 | `--show-logins` |  | Show the logins in full instead of shortened |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

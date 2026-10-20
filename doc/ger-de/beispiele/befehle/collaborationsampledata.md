@@ -2,14 +2,14 @@
 title: exp:collaborationsampledata
 audience: developer, admin
 category: examples
-summary: Build sample content for the collaboration tool (approvals, comments, groups), or remove it again.
+summary: Legt Beispielinhalte für das Werkzeug zur Zusammenarbeit an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder.
 keywords: Konsole, Befehl, exp:collaborationsampledata, collaborationsampledata, console, command, CLI, collaborationsampledata.php, exp:collaboration:sample-data
 type: generated
 generated: exp:help:examples
 ---
 # exp:collaborationsampledata
 
-Build sample content for the collaboration tool (approvals, comments, groups), or remove it again.
+Legt Beispielinhalte für das Werkzeug zur Zusammenarbeit an (Freigaben, Kommentare, Gruppen) oder entfernt sie wieder.
 
 Skript `bin/php/collaborationsampledata.php`, Code in `kernel/private/classes/commands/collaborationsampledata.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -42,8 +42,8 @@ The command is idempotent: what exists is left as it is.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--remove` |  | Delete the sample data (and only that) |
-| `--dry-run` |  | Show what would be done and change nothing |
+| `--remove` |  | Die Beispieldaten löschen (und nur sie) |
+| `--dry-run` |  | Zeigen, was getan würde, und nichts ändern |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

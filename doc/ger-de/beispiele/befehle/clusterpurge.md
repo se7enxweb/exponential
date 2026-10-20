@@ -2,14 +2,14 @@
 title: exp:clusterpurge
 audience: developer, admin
 category: examples
-summary: Physically purge the cluster files of the given scopes (--scopes=scope1,scope2).
+summary: Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2).
 keywords: Konsole, Befehl, exp:clusterpurge, clusterpurge, console, command, CLI, clusterpurge.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:clusterpurge
 
-Physically purge the cluster files of the given scopes (--scopes=scope1,scope2).
+Löscht die Cluster-Dateien der angegebenen Bereiche physisch (--scopes=scope1,scope2).
 
 Skript `bin/php/clusterpurge.php`, Code in `kernel/private/classes/commands/clusterpurge.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,12 +22,12 @@ php bin/php/clusterpurge.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | Test mode, output the list of affected files without removing them |
-| `--iteration-sleep` | erforderlich | Amount of seconds to sleep between each iteration when performing a purge operation, can be a float. Default is one second. |
-| `--iteration-limit` | erforderlich | Amount of items to remove in each iteration when performing a purge operation. Default is 100. |
-| `--memory-monitoring` |  | Generates memory monitoring output. If set, memory usage will be logged in var/log/clusterpurge.log. |
-| `--scopes` | erforderlich | Comma separated list of file types to purge. Possible values are: classattridentifiers, classidentifiers, content, expirycache, statelimitations, user-info-cache, viewcache, wildcard-cache-index, image, binaryfile, media. |
-| `--expiry` | erforderlich | Number of days since the file was expired. Only files older than this will be purged. Default is 30, minimum is 1. |
+| `--dry-run` |  | Testmodus: die Liste der betroffenen Dateien ausgeben, ohne sie zu entfernen |
+| `--iteration-sleep` | erforderlich | Sekunden Pause zwischen den Iterationen beim Löschen, auch als Dezimalzahl. Standard ist eine Sekunde. |
+| `--iteration-limit` | erforderlich | Anzahl der Einträge, die beim Löschen in jeder Iteration entfernt werden. Standard ist 100. |
+| `--memory-monitoring` |  | Erzeugt eine Ausgabe zur Speicherüberwachung. Wenn gesetzt, wird der Speicherverbrauch in var/log/clusterpurge.log protokolliert. |
+| `--scopes` | erforderlich | Durch Kommas getrennte Liste der zu löschenden Dateitypen. Mögliche Werte: classattridentifiers, classidentifiers, content, expirycache, statelimitations, user-info-cache, viewcache, wildcard-cache-index, image, binaryfile, media. |
+| `--expiry` | erforderlich | Anzahl der Tage, seit die Datei abgelaufen ist. Nur ältere Dateien werden gelöscht. Standard ist 30, Minimum 1. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

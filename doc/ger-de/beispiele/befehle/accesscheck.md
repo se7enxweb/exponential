@@ -2,14 +2,14 @@
 title: exp:accesscheck
 audience: developer, admin
 category: examples
-summary: Check what a user may do with a node or object (content/read, edit, ...) and which limitation refuses it.
+summary: Prüft, was ein Benutzer mit einem Knoten oder Objekt tun darf (content/read, edit, ...) und welche Einschränkung es verweigert.
 keywords: Konsole, Befehl, exp:accesscheck, accesscheck, console, command, CLI, accesscheck.php, exp:access:check
 type: generated
 generated: exp:help:examples
 ---
 # exp:accesscheck
 
-Check what a user may do with a node or object (content/read, edit, ...) and which limitation refuses it.
+Prüft, was ein Benutzer mit einem Knoten oder Objekt tun darf (content/read, edit, ...) und welche Einschränkung es verweigert.
 
 Skript `bin/php/accesscheck.php`, Code in `kernel/private/classes/commands/accesscheck.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -40,12 +40,12 @@ Functions:
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--user` | erforderlich | The user: its content object ID or its login; "anonymous" for the anonymous user |
-| `--node` | erforderlich | The node ID to check |
-| `--object` | erforderlich | The object ID to check (instead of a node) |
-| `--function` | erforderlich | The content function (default read) |
-| `--language` | erforderlich | A language code, for edit and translate |
-| `--json` |  | One JSON object instead of the text |
+| `--user` | erforderlich | Der Benutzer: seine Inhaltsobjekt-ID oder sein Login; "anonymous" für den anonymen Benutzer |
+| `--node` | erforderlich | Die zu prüfende Knoten-ID |
+| `--object` | erforderlich | Die zu prüfende Objekt-ID (statt eines Knotens) |
+| `--function` | erforderlich | Die content-Funktion (Standard read) |
+| `--language` | erforderlich | Ein Sprachcode, für edit und translate |
+| `--json` |  | Ein JSON-Objekt statt des Textes |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

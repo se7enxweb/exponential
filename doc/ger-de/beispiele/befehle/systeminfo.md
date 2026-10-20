@@ -41,7 +41,7 @@ Exit 0 when no check fails, 1 when one does.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--json` |  | One JSON object instead of the text |
+| `--json` |  | Ein JSON-Objekt statt des Textes |
 | `--sizes` |  | Also measure the size of var/, of each cache directory and of the database |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

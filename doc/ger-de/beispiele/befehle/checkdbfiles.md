@@ -2,14 +2,14 @@
 title: exp:checkdbfiles
 audience: developer, admin
 category: examples
-summary: Verify the database update files against the upgrade path; reports missing or stray files.
+summary: Prüft die Datenbank-Update-Dateien gegen den Upgrade-Pfad; meldet fehlende oder überzählige Dateien.
 keywords: Konsole, Befehl, exp:checkdbfiles, checkdbfiles, console, command, CLI, checkdbfiles.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:checkdbfiles
 
-Verify the database update files against the upgrade path; reports missing or stray files.
+Prüft die Datenbank-Update-Dateien gegen den Upgrade-Pfad; meldet fehlende oder überzählige Dateien.
 
 Skript `bin/php/checkdbfiles.php`, Code in `kernel/private/classes/commands/checkdbfiles.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -22,8 +22,8 @@ php bin/php/checkdbfiles.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--no-verify-branches` |  | Do not verify the content of the files with previous branches (To avoid SVN usage) |
-| `--export-path` | erforderlich | Directory in which a new directory for the SVN exports is made and removed again (default var/tmp) |
+| `--no-verify-branches` |  | Den Inhalt der Dateien nicht mit früheren Branches vergleichen (um SVN zu vermeiden) |
+| `--export-path` | erforderlich | Verzeichnis, in dem ein neues Verzeichnis für die SVN-Exporte angelegt und wieder entfernt wird (Standard var/tmp) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

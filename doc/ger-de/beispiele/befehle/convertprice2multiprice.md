@@ -2,14 +2,14 @@
 title: exp:convertprice2multiprice
 audience: developer, admin
 category: examples
-summary: Convert content objects with 'price' datatype attributes to 'multiprice'.
+summary: Wandelt Inhaltsobjekte mit Attributen vom Datentyp 'price' in 'multiprice' um.
 keywords: Konsole, Befehl, exp:convertprice2multiprice, convertprice2multiprice, console, command, CLI, convertprice2multiprice.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:convertprice2multiprice
 
-Convert content objects with 'price' datatype attributes to 'multiprice'.
+Wandelt Inhaltsobjekte mit Attributen vom Datentyp 'price' in 'multiprice' um.
 
 Skript `bin/php/convertprice2multiprice.php`, Code in `kernel/private/classes/commands/convertprice2multiprice.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

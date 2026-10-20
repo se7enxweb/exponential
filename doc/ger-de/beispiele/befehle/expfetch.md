@@ -2,14 +2,14 @@
 title: exp:expfetch
 audience: developer, admin
 category: examples
-summary: "The system card: the Exponential 'e' next to the facts of this installation, its engine and its machine, with health hints (exp:info adds an inventory, exp:about the project)."
+summary: "Die Systemkarte: das Exponential-„e“ neben den Fakten dieser Installation, ihrer Engine und ihres Rechners, mit Hinweisen zum Zustand (exp:info ergänzt ein Inventar, exp:about das Projekt)."
 keywords: Konsole, Befehl, exp:expfetch, expfetch, console, command, CLI, expfetch.php, exp:info, exp:about
 type: generated
 generated: exp:help:examples
 ---
 # exp:expfetch
 
-The system card: the Exponential "e" next to the facts of this installation, its engine and its machine, with health hints (exp:info adds an inventory, exp:about the project).
+Die Systemkarte: das Exponential-„e“ neben den Fakten dieser Installation, ihrer Engine und ihres Rechners, mit Hinweisen zum Zustand (exp:info ergänzt ein Inventar, exp:about das Projekt).
 
 Skript `bin/php/expfetch.php`, Code in `kernel/private/classes/commands/syscard.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 

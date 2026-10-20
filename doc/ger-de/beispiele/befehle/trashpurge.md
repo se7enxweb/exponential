@@ -33,8 +33,8 @@ Permanently deletes all objects in the trash.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--iteration-sleep` | erforderlich | Amount of seconds to sleep between each iteration when performing a purge operation, can be a float. Default is one second. |
-| `--iteration-limit` | erforderlich | Amount of items to remove in each iteration when performing a purge operation. Default is 100. |
+| `--iteration-sleep` | erforderlich | Sekunden Pause zwischen den Iterationen beim Löschen, auch als Dezimalzahl. Standard ist eine Sekunde. |
+| `--iteration-limit` | erforderlich | Anzahl der Einträge, die beim Löschen in jeder Iteration entfernt werden. Standard ist 100. |
 | `--memory-monitoring` |  | If set, memory usage will be logged in var/log/trashpurge.log. |
 | `--trashed-days` | erforderlich | If set, only objects that has been trashed for at least the specified amount of days will be purged. |
 

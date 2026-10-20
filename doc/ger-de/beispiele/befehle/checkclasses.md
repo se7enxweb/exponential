@@ -2,14 +2,14 @@
 title: exp:checkclasses
 audience: developer, admin
 category: examples
-summary: Load every declared class and report the ones PHP refuses to load.
+summary: Lädt jede deklarierte Klasse und meldet die, deren Laden PHP verweigert.
 keywords: Konsole, Befehl, exp:checkclasses, checkclasses, console, command, CLI, checkclasses.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:checkclasses
 
-Load every declared class and report the ones PHP refuses to load.
+Lädt jede deklarierte Klasse und meldet die, deren Laden PHP verweigert.
 
 Skript `bin/php/checkclasses.php`, Code in `kernel/private/classes/commands/checkclasses.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -33,9 +33,9 @@ Loads every class this installation declares and reports the ones php refuses.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--kernel` |  | Check the kernel classes as well as the extension ones. Slower, and they are the ones least likely to be wrong. |
-| `--tests` |  | Include classes that live under a tests directory. Left out by default: they are usually written against whichever version of phpunit was current, and a test class that will not load breaks nothing anybody is looking at. |
-| `--quiet-ok` |  | Print nothing when everything loads. |
+| `--kernel` |  | Die Kernel-Klassen ebenso prüfen wie die der Erweiterungen. Langsamer, und sie sind am wenigsten wahrscheinlich fehlerhaft. |
+| `--tests` |  | Klassen einbeziehen, die unter einem Verzeichnis tests liegen. Standardmäßig weggelassen: Sie sind meist gegen die jeweils aktuelle Version von phpunit geschrieben, und eine Testklasse, die nicht lädt, macht nichts kaputt, worauf jemand schaut. |
+| `--quiet-ok` |  | Nichts ausgeben, wenn alles lädt. |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

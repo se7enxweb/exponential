@@ -39,7 +39,7 @@ Ends with PASS, or FAIL (exit 1) when a problem of level error is found.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--json` |  | One JSON object instead of the text |
+| `--json` |  | Ein JSON-Objekt statt des Textes |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

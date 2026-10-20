@@ -2,14 +2,14 @@
 title: exp:addoauthauthorizepolicy
 audience: developer, admin
 category: examples
-summary: Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first).
+summary: Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf).
 keywords: Konsole, Befehl, exp:addoauthauthorizepolicy, addoauthauthorizepolicy, console, command, CLI, addoauthauthorizepolicy.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:addoauthauthorizepolicy
 
-Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first).
+Gewährt oauth/authorize den Rollen, mit denen sich Benutzer anmelden (Upgrade auf 6.0.15; --dry-run listet sie zuerst auf).
 
 Skript `bin/php/addoauthauthorizepolicy.php`, Code in `kernel/private/classes/commands/addoauthauthorizepolicy.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -35,7 +35,7 @@ Example: php bin/php/addoauthauthorizepolicy.php --dry-run
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--dry-run` |  | List what would be granted, change nothing |
+| `--dry-run` |  | Auflisten, was gewährt würde, nichts ändern |
 | `--role:*` |  |  |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

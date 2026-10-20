@@ -2,14 +2,14 @@
 title: exp:explogs
 audience: developer, admin
 category: examples
-summary: "The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives."
+summary: "Der Log-Viewer auf der Kommandozeile: die Logdateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive bereinigen."
 keywords: Konsole, Befehl, exp:explogs, explogs, console, command, CLI, explogs.php, exp:logs
 type: generated
 generated: exp:help:examples
 ---
 # exp:explogs
 
-The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives.
+Der Log-Viewer auf der Kommandozeile: die Logdateien auflisten, einer folgen, sie und ihre Rotationen durchsuchen, eine Fehlerreferenz und die Zeilen ihrer Anfrage finden (standardmäßig maskiert); Logs rotieren und ihre Archive bereinigen.
 
 Skript `bin/php/explogs.php`, Code in `kernel/private/classes/commands/explogs.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -51,23 +51,23 @@ Exit code: 0 something listed or found, 1 nothing found, 2 error.
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--list` |  | List the log files the viewer may open, by group, with size, time and lines a minute |
-| `--archives` |  | List the logs that can be rotated, with their archives (.1 .. .N, .gz) and sizes, and the limits |
+| `--archives` |  | Die rotierbaren Logs mit ihren Archiven (.1 .. .N, .gz), Größen und Grenzen auflisten |
 | `--rotate` | erforderlich | Rotate these logs now, whatever their size: keys (error,debug,site-storage) or ids (var/log/error.log), comma separated |
 | `--rotate-all` |  | Rotate every log over its MaxSize (with --force: every log that is not empty) |
 | `--force` |  | With --rotate-all: also the logs under their MaxSize |
 | `--prune` | optional | Remove the archives beyond the limits (Keep, MaxAgeDays): of every log, or of these keys |
-| `--days` | erforderlich | With --prune: remove archives older than this many days instead of MaxAgeDays |
-| `--compress` | optional | Compress the plain archives from .2 on: of every log, or of these keys |
+| `--days` | erforderlich | Mit --prune: Archive entfernen, die älter als so viele Tage sind, statt MaxAgeDays |
+| `--compress` | optional | Die unkomprimierten Archive ab .2 komprimieren: von jedem Log oder von diesen Schlüsseln |
 | `--truncate` | erforderlich | Empty these logs: rotate them (the content stays in .1), or with --in-place empty the file itself |
 | `--in-place` |  | With --truncate: empty the file in place, keeping no copy |
-| `--dry-run` |  | With --rotate, --rotate-all, --prune, --compress or --truncate: only print the plan |
+| `--dry-run` |  | Mit --rotate, --rotate-all, --prune, --compress oder --truncate: nur den Plan ausgeben |
 | `--tail` | erforderlich | The last entries of a file (its path relative to the root, e.g. var/log/error.log) |
 | `--lines` | erforderlich | With --tail: how many entries (default 20) |
 | `--follow` |  | With --tail: go on printing what the file gains, polling with backoff (Ctrl-C ends) |
 | `--interval` | erforderlich | With --follow: the shortest poll interval in milliseconds (default [TailSettings] PollInterval) |
 | `--search` | erforderlich | Search for a text (literal, or a regular expression with --regex) |
 | `--regex` |  | With --search: the text is a regular expression (bounded by [SearchSettings] BacktrackLimit and TimeLimit) |
-| `--case` |  | With --search: case sensitive |
+| `--case` |  | Mit --search: Groß- und Kleinschreibung beachten |
 | `--file` | erforderlich | With --search: the file (default: [LogViewerSettings] DefaultFile) |
 | `--scope` | erforderlich | With --search: file (default), kernel (every kernel log) or all (every file listed) |
 | `--rotations` |  | With --search: the rotations (.1 .. .N, .gz) too |
@@ -77,13 +77,13 @@ Exit code: 0 something listed or found, 1 nothing found, 2 error.
 | `--sa` | erforderlich | Only entries of this siteaccess |
 | `--uri` | erforderlich | Only entries whose request contains this text |
 | `--ip` | erforderlich | Only entries whose client address starts with this |
-| `--cursor` | erforderlich | With --search: go on from where an earlier search stopped (printed as "More: --cursor=...") |
+| `--cursor` | erforderlich | Mit --search: dort weitermachen, wo eine frühere Suche aufgehört hat (ausgegeben als "More: --cursor=...") |
 | `--limit` | erforderlich | With --search: print at most this many entries |
 | `--reference` | erforderlich | Find an error reference (ERR-XXXXXXXXXX) in the kernel logs and their rotations, with its request |
 | `--related` | erforderlich | The lines of the same request as the entry at <file>:<offset> |
 | `--unmask` |  | Show e-mail addresses, IP addresses and secrets unmasked (the values of secret settings stay hidden) |
-| `--json` |  | One JSON object instead of the text |
-| `--color` | erforderlich | Color the levels: auto (default: when the output is a terminal), always, never |
+| `--json` |  | Ein JSON-Objekt statt des Textes |
+| `--color` | erforderlich | Die Stufen einfärben: auto (Standard: wenn die Ausgabe ein Terminal ist), always, never |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

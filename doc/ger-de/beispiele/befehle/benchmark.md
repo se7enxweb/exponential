@@ -2,14 +2,14 @@
 title: exp:benchmark
 audience: developer, admin
 category: examples
-summary: "Measure this installation: page timings over HTTP, A/B between servers, kernel probes, regression check."
+summary: "Misst diese Installation: Seitenzeiten über HTTP, A/B zwischen Servern, Kernel-Messungen, Regressionsprüfung."
 keywords: Konsole, Befehl, exp:benchmark, benchmark, console, command, CLI, benchmark.php, exp:bench
 type: generated
 generated: exp:help:examples
 ---
 # exp:benchmark
 
-Measure this installation: page timings over HTTP, A/B between servers, kernel probes, regression check.
+Misst diese Installation: Seitenzeiten über HTTP, A/B zwischen Servern, Kernel-Messungen, Regressionsprüfung.
 
 Skript `bin/php/benchmark.php`, Code in `kernel/private/classes/commands/benchmark.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -23,46 +23,46 @@ php bin/php/benchmark.php --help
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--base` | erforderlich | Server to measure (default: https:// and the SiteURL of the siteaccess) |
-| `--compare` | erforderlich | Two or more servers, comma separated, measured back to back (A/B) |
+| `--base` | erforderlich | Der zu messende Server (Standard: https:// und die SiteURL des Siteaccess) |
+| `--compare` | erforderlich | Zwei oder mehr Server, durch Kommas getrennt, direkt nacheinander gemessen (A/B) |
 | `--url:*` |  |  |
-| `--urls-file` | erforderlich | A file with one URL or path per line (# starts a comment) |
-| `--pages` | erforderlich | How many pages of the menu the default list takes (default 3) |
-| `--no-admin` |  | Leave the admin login page out of the default list |
-| `--no-search` |  | Leave the search page out of the default list |
-| `--search` | erforderlich | The words the default search page searches for (default: the first word of the first menu page) |
-| `--requests` | erforderlich | Requests per URL and server (default 100) |
-| `--runs` | erforderlich | The same as --requests: measured runs per URL and server |
-| `--concurrency` | erforderlich | Requests at the same time (default 4) |
-| `--warmup` | erforderlich | Unmeasured runs first: requests per URL and server (default 5, at least one per connection), micro: iterations per probe (default 3) |
-| `--rounds` | erforderlich | Split the requests into rounds, alternating the server order (default 2) |
-| `--micro` |  | The same as the micro mode |
-| `--format` | erforderlich | Output: table (default), json or csv |
-| `--cold` |  | A unique query string on every request, so no response cache answers |
-| `--cold-clear` |  | Clear the content view cache once before the run (this installation only) |
-| `--insecure` |  | Do not verify TLS certificates (self-signed servers) |
-| `--auth` | erforderlich | HTTP basic auth, user:password (or the EXP_BENCHMARK_AUTH variable) |
+| `--urls-file` | erforderlich | Eine Datei mit einer URL oder einem Pfad pro Zeile (# beginnt einen Kommentar) |
+| `--pages` | erforderlich | Wie viele Seiten des Menüs die Standardliste nimmt (Standard 3) |
+| `--no-admin` |  | Die Anmeldeseite der Administration aus der Standardliste weglassen |
+| `--no-search` |  | Die Suchseite aus der Standardliste weglassen |
+| `--search` | erforderlich | Die Wörter, nach denen die Standard-Suchseite sucht (Standard: das erste Wort der ersten Menüseite) |
+| `--requests` | erforderlich | Anfragen pro URL und Server (Standard 100) |
+| `--runs` | erforderlich | Dasselbe wie --requests: gemessene Läufe pro URL und Server |
+| `--concurrency` | erforderlich | Gleichzeitige Anfragen (Standard 4) |
+| `--warmup` | erforderlich | Zuerst ungemessene Läufe: Anfragen pro URL und Server (Standard 5, mindestens eine pro Verbindung), micro: Iterationen pro Messung (Standard 3) |
+| `--rounds` | erforderlich | Die Anfragen in Runden aufteilen, mit wechselnder Reihenfolge der Server (Standard 2) |
+| `--micro` |  | Dasselbe wie der Modus micro |
+| `--format` | erforderlich | Ausgabe: table (Standard), json oder csv |
+| `--cold` |  | Bei jeder Anfrage eine eindeutige Query-Zeichenkette, damit kein Antwort-Cache antwortet |
+| `--cold-clear` |  | Vor dem Lauf einmal den View-Cache der Inhalte leeren (nur diese Installation) |
+| `--insecure` |  | TLS-Zertifikate nicht prüfen (selbstsignierte Server) |
+| `--auth` | erforderlich | HTTP-Basic-Auth, benutzer:passwort (oder die Variable EXP_BENCHMARK_AUTH) |
 | `--header:*` |  |  |
-| `--cookie` | erforderlich | A Cookie header to send, e.g. to measure a signed-in page |
+| `--cookie` | erforderlich | Ein zu sendender Cookie-Header, z. B. um eine Seite im angemeldeten Zustand zu messen |
 | `--resolve:*` |  |  |
-| `--http` | erforderlich | HTTP version: 1.1 or 2 (default: what curl negotiates) |
-| `--encoding` | erforderlich | The Accept-Encoding to send (default gzip; "none" for none) |
-| `--timeout` | erforderlich | Seconds per request (default 30) |
-| `--no-keepalive` |  | A new connection for every request |
-| `--tool` | erforderlich | curl (default, built in), ab, wrk or oha when installed |
-| `--duration` | erforderlich | Seconds per URL for wrk (default 10) |
-| `--repeat` | erforderlich | kernel: runs of every probe (default 20); micro: measured iterations of every probe (default 30) |
-| `--boot-repeat` | erforderlich | kernel: new processes for boot and the cold render (default 5) |
-| `--node` | erforderlich | kernel: the node to render and fetch (default: the front page) |
+| `--http` | erforderlich | HTTP-Version: 1.1 oder 2 (Standard: was curl aushandelt) |
+| `--encoding` | erforderlich | Das zu sendende Accept-Encoding (Standard gzip; "none" für keines) |
+| `--timeout` | erforderlich | Sekunden pro Anfrage (Standard 30) |
+| `--no-keepalive` |  | Für jede Anfrage eine neue Verbindung |
+| `--tool` | erforderlich | curl (Standard, eingebaut), ab, wrk oder oha, wenn installiert |
+| `--duration` | erforderlich | Sekunden pro URL für wrk (Standard 10) |
+| `--repeat` | erforderlich | kernel: Läufe jeder Messung (Standard 20); micro: gemessene Iterationen jeder Messung (Standard 30) |
+| `--boot-repeat` | erforderlich | kernel: neue Prozesse für den Start und das kalte Rendern (Standard 5) |
+| `--node` | erforderlich | kernel: der zu rendernde und abzurufende Knoten (Standard: die Startseite) |
 | `--probe:*` |  |  |
-| `--json` |  | Print the run as JSON |
-| `--csv` |  | Print the rows as CSV |
-| `--save` | erforderlich | Write the run as JSON to this file |
-| `--baseline` | erforderlich | Compare with this saved run; exit 1 when a metric regressed |
-| `--threshold` | erforderlich | Percent a metric may get worse before it counts as a regression (default 15; micro: 40, after normalisation) |
-| `--min-delta` | erforderlich | Milliseconds a latency must grow by, too, to count (default 1) |
-| `--all-checks` |  | Show every comparison, not only the regressions |
-| `--force` |  | Allow more than the polite limits against a host that is not loopback |
+| `--json` |  | Den Lauf als JSON ausgeben |
+| `--csv` |  | Die Zeilen als CSV ausgeben |
+| `--save` | erforderlich | Den Lauf als JSON in diese Datei schreiben |
+| `--baseline` | erforderlich | Mit diesem gespeicherten Lauf vergleichen; Exit-Code 1, wenn sich ein Messwert verschlechtert hat |
+| `--threshold` | erforderlich | Prozent, um die sich ein Messwert verschlechtern darf, bevor es als Regression zählt (Standard 15; micro: 40, nach Normalisierung) |
+| `--min-delta` | erforderlich | Millisekunden, um die eine Latenz außerdem wachsen muss, damit es zählt (Standard 1) |
+| `--all-checks` |  | Jeden Vergleich anzeigen, nicht nur die Regressionen |
+| `--force` |  | Mehr als die rücksichtsvollen Grenzen gegen einen Host erlauben, der nicht Loopback ist |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

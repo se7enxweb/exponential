@@ -2,14 +2,14 @@
 title: exp:cleanupversions
 audience: developer, admin
 category: examples
-summary: "Remove archived content versions beyond the VersionManagement limits (-n: do not wait)."
+summary: "Entfernt archivierte Inhaltsversionen über die Grenzen von VersionManagement hinaus (-n: nicht warten)."
 keywords: Konsole, Befehl, exp:cleanupversions, cleanupversions, console, command, CLI, cleanupversions.php
 type: generated
 generated: exp:help:examples
 ---
 # exp:cleanupversions
 
-Remove archived content versions beyond the VersionManagement limits (-n: do not wait).
+Entfernt archivierte Inhaltsversionen über die Grenzen von VersionManagement hinaus (-n: nicht warten).
 
 Skript `bin/php/cleanupversions.php`, Code in `kernel/private/classes/commands/cleanupversions.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -32,7 +32,7 @@ Example: ./bin/php/cleanupversions.php -n
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `-n` |  | Do not wait |
+| `-n` |  | Nicht warten |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

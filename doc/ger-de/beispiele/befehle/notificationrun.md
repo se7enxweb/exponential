@@ -52,7 +52,7 @@ instead of being sent, whatever site.ini says. Use it for every trial.
 | `--no-time-event` |  | Make no time event: only the pending events are handled (no digest is due because of this run) |
 | `--mail-file-dir` | erforderlich | Write the mail to files in this directory instead of sending it (this process only) |
 | `--addresses` |  | Show whole recipient addresses in the dry run (they are masked by default) |
-| `--json` |  | One JSON object instead of the text |
+| `--json` |  | Ein JSON-Objekt statt des Textes |
 | `--job` | erforderlich | The id of a background job whose progress file is written (the status page uses this) |
 | `--source` | erforderlich | console (default) or web; what the record of the run says |
 
