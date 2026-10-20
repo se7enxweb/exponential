@@ -321,6 +321,9 @@ class expHelpNavigation
         $path = (string)$node['path'];
         if ( isset( $names[$path] ) && $names[$path] !== '' )
             return $names[$path];
+        // the project files (project/README.md ...): the root README.md is the folder's overview, not its name
+        if ( class_exists( 'expHelpProjectFiles' ) && $path === expHelpProjectFiles::ID_PREFIX )
+            return ezpI18n::tr( expHelp::I18N_CONTEXT, 'Project files' );
         $title = isset( $node['title'] ) ? trim( (string)$node['title'] ) : '';
         $humanized = expHelpDocumentIndex::humanize( isset( $node['name'] ) ? (string)$node['name'] : basename( $path ) );
         if ( $title !== '' && $title !== $humanized )

@@ -74564,5 +74564,17 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>För organisationer och personer som driver en egen webbplats på Exponential: team, publicering, handel, underhåll, tillväxt och partner.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Projektfiler</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Projektfil</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Den här filen är en del av källkoden för Exponential och distribueras med den under %license.</translation>
+    </message>
 </context>
 </TS>

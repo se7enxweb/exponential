@@ -75253,5 +75253,17 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Para organizações e pessoas que mantêm o próprio site no Exponential: equipe, publicação, comércio, manutenção, crescimento e parceiros.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Arquivos do projeto</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Arquivo do projeto</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Este arquivo faz parte do código-fonte do Exponential e é distribuído com ele sob a %license.</translation>
+    </message>
 </context>
 </TS>

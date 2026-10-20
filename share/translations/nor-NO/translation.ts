@@ -74519,5 +74519,17 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>For organisasjoner og personer som driver sitt eget nettsted på Exponential: team, publisering, handel, vedlikehold, vekst og partnere.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Prosjektfiler</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Prosjektfil</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Denne filen er en del av kildekoden til Exponential og distribueres sammen med den under %license.</translation>
+    </message>
 </context>
 </TS>

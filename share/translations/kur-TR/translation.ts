@@ -73259,5 +73259,17 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>For organizations and people running their own site on Exponential: team, publishing, commerce, upkeep, growth and partners.</source>
         <translation>Ji bo rêxistin û kesên ku malpera xwe li ser Exponential dimeşînin: tîm, weşandin, bazirganî, lênêrîn, mezinbûn û hevkar.</translation>
     </message>
+    <message>
+        <source>Project files</source>
+        <translation>Pelên projeyê</translation>
+    </message>
+    <message>
+        <source>Project file</source>
+        <translation>Pela projeyê</translation>
+    </message>
+    <message>
+        <source>This file is part of the source code of Exponential and is distributed with it under the %license.</source>
+        <translation>Ev pel beşek ji koda çavkaniyê ya Exponential e û bi wê re di bin %license de tê belavkirin.</translation>
+    </message>
 </context>
 </TS>

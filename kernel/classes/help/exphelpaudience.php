@@ -110,6 +110,7 @@ class expHelpAudience
         'features'        => array( 'name' => 'Features', 'icon' => 'stars' ),
         'development'     => array( 'name' => 'Development', 'icon' => 'code-square' ),
         'install-upgrade' => array( 'name' => 'Installation and upgrades', 'icon' => 'box-seam' ),
+        'project-files'   => array( 'name' => 'Project files', 'icon' => 'git' ),
         'release-notes'   => array( 'name' => 'Release notes', 'icon' => 'journal-text' ),
         'history'         => array( 'name' => 'History', 'icon' => 'clock-history' ),
         'reference'       => array( 'name' => 'Reference', 'icon' => 'collection' ),
@@ -119,7 +120,7 @@ class expHelpAudience
     const TYPES = array(
         'help' => 'Help', 'guide' => 'Guide', 'feature' => 'Feature', 'bc' => 'Upgrade note', 'install' => 'Installation',
         'changelog' => 'Changelog', 'specification' => 'Specification', 'history' => 'History', 'example' => 'Example',
-        'reference' => 'Reference',
+        'reference' => 'Reference', 'project' => 'Project file',
     );
 
     /** [TypeSettings] PathRules[] by default */
@@ -170,7 +171,7 @@ class expHelpAudience
     const AUDIENCE_DEFAULTS = array(
         'help' => 'editor,user', 'guide' => 'admin', 'feature' => 'admin,developer', 'bc' => 'developer,admin',
         'install' => 'admin,developer', 'changelog' => 'admin,developer', 'specification' => 'developer',
-        'history' => 'developer', 'example' => 'developer', 'reference' => 'developer,admin',
+        'history' => 'developer', 'example' => 'developer', 'reference' => 'developer,admin', 'project' => 'developer,admin',
     );
 
     /** [CategorySettings] PathRules[] by default */
@@ -217,7 +218,7 @@ class expHelpAudience
     const CATEGORY_DEFAULTS = array(
         'help' => 'getting-started', 'guide' => 'administration', 'feature' => 'features', 'bc' => 'install-upgrade',
         'install' => 'install-upgrade', 'changelog' => 'release-notes', 'specification' => 'development',
-        'history' => 'history', 'example' => 'development', 'reference' => 'reference',
+        'history' => 'history', 'example' => 'development', 'reference' => 'reference', 'project' => 'project-files',
     );
 
     /** @var array the configuration: audiences, categories, types, typeRules, audienceRules, audienceDefaults, categoryRules, categoryDefaults */
