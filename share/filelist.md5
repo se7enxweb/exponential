@@ -3200,7 +3200,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 f4a6fd7fba388894640420c210f94f94  doc/changelogs/6.0/6.0.12.md
 878882418c7ffe32fd4d202a2d889e95  doc/changelogs/6.0/6.0.13.md
 fb8589325fc127b61d43ce5d7cc188d0  doc/changelogs/6.0/6.0.14.md
-4fcc31f920501ff9f7162fbb58609b26  doc/changelogs/6.0/6.0.15.md
+ed8b6f5f9249528b93f6e38f430696c1  doc/changelogs/6.0/6.0.15.md
 dc6c1e6747014d6f9b8be9e724b1b763  doc/changelogs/6.0/6.0.2.md
 831f582bbb230b4566621e2b9c913153  doc/changelogs/6.0/6.0.3.md
 4a9ce240f3051c96fce5a2b61580ff2a  doc/changelogs/6.0/6.0.4.md
@@ -4207,7 +4207,7 @@ f6d02bcd45bb371938f563e10ca8296f  doc/en/us/branch-overview.md
 1ccae6e1edbc50e6dd2e1150ac2a57fe  doc/en/us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/en/us/doxygen/empty.html
 39620c79842c7228e6e7b0bff4f8bdf1  doc/en/us/examples/README.md
-d53ec9131eda6beed293b5dd149426bf  doc/en/us/examples/commands/README.md
+9a9588e067e146d120c645fee7a41420  doc/en/us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/en/us/examples/commands/accesscheck.md
 60ea9630aa930608496845e80188b40c  doc/en/us/examples/commands/adddefaultstates.md
 d56b22d202c736dc78c0278eb9573481  doc/en/us/examples/commands/addexphelpreadpolicy.md
@@ -4231,6 +4231,7 @@ f8a3168d2275ef728fe129c35a1cc006  doc/en/us/examples/commands/convertezenumtoezs
 45ccdf225962f695ee9af267cb1e367b  doc/en/us/examples/commands/convertprice2multiprice.md
 f4587c65e9bc49f6da02850ae831874e  doc/en/us/examples/commands/dfscleanup.md
 60e198cf38c26ff250920618474b4902  doc/en/us/examples/commands/expcontentjob.md
+bf66b4b9145212157d8ce068d252ba37  doc/en/us/examples/commands/expfetch.md
 8d53af698c63ebaee2a287d0feeb2dfe  doc/en/us/examples/commands/exphelp.md
 11893fd2bea492d863487478d4a98612  doc/en/us/examples/commands/exphelpcontent.md
 a6aed5b040dd2b4fccfd515429501db5  doc/en/us/examples/commands/exphelpexamples.md
@@ -4628,7 +4629,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/en/us/examples/fetch-functions/user/member
 42a70c11641a0fce108e4659cd159987  doc/en/us/examples/fetch-functions/workflow/workflow_statuses.md
 e2a0d933b995c654fb8d0b0d61460b08  doc/en/us/examples/fetch-functions/workflow/workflow_type_statuses.md
 0cbdb3402793c21a5a4d4e183d75f904  doc/en/us/examples/htaccess
-6f3aeb004cfdf46ba4cc7edc4be62658  doc/en/us/examples/ini-settings/README.md
+06821cb92ba34bfc74d6aafcdab4eb8e  doc/en/us/examples/ini-settings/README.md
 fb5b294a4c83fde6e51eb9ed64a347b3  doc/en/us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/en/us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 cf9fc1e268eda3d5536fcfa4ce5399a4  doc/en/us/examples/ini-settings/admininterface/AdditionalTab_policies.md
@@ -5854,6 +5855,23 @@ a91caa77dd1dd1720f4c00a31cceda95  doc/en/us/examples/ini-settings/subitemscolumn
 3903cffcb4398c0d4995f223d45ced0b  doc/en/us/examples/ini-settings/subitemscolumns/Column_wordcount.md
 19e86790413a7a6ca40f257620c3a336  doc/en/us/examples/ini-settings/subitemscolumns/Column_workflowprocesses.md
 0c2a55654c8c505484325ec819ea2b78  doc/en/us/examples/ini-settings/subitemscolumns/README.md
+23bcdbcfca6fe7e5bf6b330feef9126c  doc/en/us/examples/ini-settings/syscard/About.md
+f2e224067bcc3b475d22bb8cc2e93145  doc/en/us/examples/ini-settings/syscard/Database.md
+d95fd38e48307f73aaa2f1a4ef829113  doc/en/us/examples/ini-settings/syscard/Display.md
+ed6fc81630c66d16823771d00c4d9199  doc/en/us/examples/ini-settings/syscard/Inventory.md
+7ad32dab123271da648f37f1bd181595  doc/en/us/examples/ini-settings/syscard/Logo.md
+06b381292d3dede3e0d007a59d57b470  doc/en/us/examples/ini-settings/syscard/Php.md
+fe8db5a4a219892875d5eb027e18827e  doc/en/us/examples/ini-settings/syscard/Providers.md
+670c20f4744b4286b883d7245e66b652  doc/en/us/examples/ini-settings/syscard/README.md
+28a06be4e080da14ec60ba0a5bcdc693  doc/en/us/examples/ini-settings/syscard/Runtime.md
+a0a34ec1b861f07e6b053070a70db442  doc/en/us/examples/ini-settings/syscard/Sections.md
+f507791c97bec13ed2823bb7d743c2b5  doc/en/us/examples/ini-settings/syscard/Theme-high-contrast.md
+cbac4a702c345b6aedc002cde0f5677b  doc/en/us/examples/ini-settings/syscard/Theme-light.md
+e5bfb58703ef36d3d72e72d37085e291  doc/en/us/examples/ini-settings/syscard/Theme-mono.md
+d660649e195d9ea36eba448b083e22e7  doc/en/us/examples/ini-settings/syscard/Theme-orange.md
+c3db1b7901232bcc3a366a855a6113f3  doc/en/us/examples/ini-settings/syscard/Theme-rainbow.md
+f7006db38025d399b22227a489c27720  doc/en/us/examples/ini-settings/syscard/Theme.md
+7b6a51c013488cd292843e550b78b8e3  doc/en/us/examples/ini-settings/syscard/Updates.md
 298de3d59a135d7b633d5c775096cafe  doc/en/us/examples/ini-settings/template/AttributeOperator.md
 4434a648695c5263dd38597fada3b230  doc/en/us/examples/ini-settings/template/AutoLinkOperator.md
 85733cbe7363a55e48459c3f6c100e50  doc/en/us/examples/ini-settings/template/CharsetSettings.md
@@ -7008,6 +7026,7 @@ fd5cadc1a80d69b09333536e764659cb  doc/en/us/features/6.0/static-cache-generator.
 fdefa7c63dade11f2a711f8ec8e395aa  doc/en/us/features/6.0/string-template-operators.md
 8058b8ff4b7a7e7decb4bd43588e2ee0  doc/en/us/features/6.0/subitems-copy-selected.md
 3be7f638fbea68c9fb618d94ae449dcc  doc/en/us/features/6.0/subitems-table-options.md
+3203b4915120ab373cfc0a7c0adfbdf4  doc/en/us/features/6.0/system-card.md
 b3567c70f7b7fb87fe0bc6a670787116  doc/en/us/features/6.0/template-editor-overrides.md
 2f2da5e78e73cd7d6f4d423008a79a08  doc/en/us/features/6.0/template-override-ordering.md
 f3c2c3b474be43dc9f1381795678ee49  doc/en/us/features/6.0/template-path-comments.md
@@ -7033,7 +7052,7 @@ fea90865726b731c5aeb5c2a13f27e55  doc/en/us/features/6.0/velocity-web-server.md
 830603ffdab645c466d90997dfbd4fc6  doc/en/us/features/6.0/velocity-websockets-and-events.md
 f9c3f344c473869cfb55845caedce10f  doc/en/us/features/6.0/version-preview-view-modes.md
 48c88a13a12cbbe550d830bb7ca3d987  doc/en/us/features/6.0/web-server-and-solr-commands.md
-9afbf186d3bc9d1ea16cf5d3b488a4ea  doc/en/us/glossary.md
+eccf0b369021430220f4313892d1b176  doc/en/us/glossary.md
 13020aac108160e4ae980cd95a4e69d9  doc/en/us/guides/README.md
 46f9f5e92e9ba38a49736a77a86f559a  doc/en/us/guides/api-keys.md
 e6788c036282afd665d79ed6bb9c4d6d  doc/en/us/guides/benchmarking.md
@@ -7105,7 +7124,7 @@ dc5f0aedab105f984fc1d7e71761f4eb  doc/en/us/guides/two-factor-login.md
 06d9b73556412ec28f4c1fe7b5c7c58d  doc/en/us/guides/ui-switch-design.md
 d55259e5b036dd972962aa0bd877bc3f  doc/en/us/guides/ui-switch-settings.md
 e88f1a3ca3576aac3d3c8d1c59a9ab92  doc/en/us/guides/upgrade-check.md
-c3a42f63a772fa560db257e7e7e9e681  doc/en/us/guides/upgrading.md
+9fde688214b0b158c027356eee77be09  doc/en/us/guides/upgrading.md
 1b76e34634b1670bfd28ad7c07c43c96  doc/en/us/guides/urls-and-aliases.md
 d0260680e11ffdb7581f3bff6191d877  doc/en/us/guides/workflows.md
 ac0c1313cee31d670b7b04a9ef6c9a36  doc/en/us/help/README.md
@@ -7117,10 +7136,10 @@ c0a1b603923fa958f5b144705bd89967  doc/en/us/help/accounts-and-sign-in.md
 10b4b9083e35d15fe649d7b72f1a51ba  doc/en/us/help/advocates/accessible-slides-and-visuals.md
 c687cdc70159c340b84df7eae755bd15  doc/en/us/help/advocates/advocate-checklists.md
 0ffcc23ffe07c4f6c0bb90c8cf16ae5b  doc/en/us/help/advocates/advocate-conduct-and-ethics.md
-9c453cad2247f8e888a1e8c03ecb8809  doc/en/us/help/advocates/advocate-faq.md
+7c5cec91ed69d85ca460e2d8436384a8  doc/en/us/help/advocates/advocate-faq.md
 1c6bcc13b96d4f00ad5dd027a98d75b2  doc/en/us/help/advocates/advocate-reading-path.md
-8beaea413997cc1e4e705829b26046af  doc/en/us/help/advocates/advocate-toolkit.md
-17e0eb72e658930db6fe1c03809bdcc8  doc/en/us/help/advocates/advocates-start-here.md
+c6bb0b87f32fbf22b72e63773585e1ec  doc/en/us/help/advocates/advocate-toolkit.md
+9aad2f0ff733b7d8bb18e3121ad1b1fe  doc/en/us/help/advocates/advocates-start-here.md
 eac3c16f296cfa4c066382c0708f45bc  doc/en/us/help/advocates/advocating-for-accessibility.md
 fe4693c78ecea4dca522053ecdc566d3  doc/en/us/help/advocates/advocating-for-free-documentation.md
 50138d4cf8796bb77c71c4043409b556  doc/en/us/help/advocates/advocating-for-open-source.md
@@ -7191,6 +7210,7 @@ f02fe568bdd2ede8e2956b8a2bbda2c0  doc/en/us/help/advocates/talking-points-speed-
 0088c1f1b5a369883be0e91539fabe96  doc/en/us/help/advocates/testing-the-development-line.md
 b11b945fcdfed11f09f0a30e2157f856  doc/en/us/help/advocates/the-advocacy-ladder.md
 855ee7b2a5cfe5832e575e79f237f992  doc/en/us/help/advocates/the-story-of-exponential-in-two-minutes.md
+b655adbb79d27e5ca7880672b2f95d47  doc/en/us/help/advocates/the-system-card-in-demos.md
 994052bf9623ca658e3c24e885ecbfcc  doc/en/us/help/advocates/the-telegram-chat.md
 e1254ed1ee2f85390cef5e983eda1c4b  doc/en/us/help/advocates/tracking-your-contributions.md
 771ca3b1b559f7366fe14e278a19b443  doc/en/us/help/advocates/twenty-minute-talk-slide-outline.md
@@ -8316,7 +8336,7 @@ b5a0d45b784723230afbed51f17ba8f2  doc/en/us/help/designers/theme-design/what-a-d
 4ac4636d810cc9aba59dc02556c9f6d5  doc/en/us/help/develop-with-git.md
 928c817286e6070ebaf6d352b0fb22bd  doc/en/us/help/editing-content.md
 9ee633b36625eee72f1fed888d088d5f  doc/en/us/help/extension-development/README.md
-6a9f520b0e93dcdadf869b5faa8c6890  doc/en/us/help/extension-development/index-of-topics.md
+4a5631bb9d87ba855fe935f9b5d5a424  doc/en/us/help/extension-development/index-of-topics.md
 b4db989fbd50a706c2e584fa92ecd216  doc/en/us/help/extension-development/part-1-from-user-to-developer/README.md
 e4dd135fd550656195683f46e17e75f7  doc/en/us/help/extension-development/part-1-from-user-to-developer/asking-the-community.md
 fe6eb946ff3cb7aaf0a1c17988d273a9  doc/en/us/help/extension-development/part-1-from-user-to-developer/debug-output-and-logs-for-developers.md
@@ -8361,7 +8381,7 @@ c15c13422fc3db180a64ce4f193be09d  doc/en/us/help/extension-development/part-2-bu
 7658385c5fe992dbb8da2bcc1c6140be  doc/en/us/help/extension-development/part-2-builder/view-modes-for-builders.md
 2ba98a0a21ce1a7e76abc16f2cd6f9b7  doc/en/us/help/extension-development/part-2-builder/when-settings-are-not-enough.md
 fb9bdd24116ed69989cd46979e58a380  doc/en/us/help/extension-development/part-2-builder/workflows-for-builders.md
-0a1ac00098e47373818ff9f4be64eebc  doc/en/us/help/extension-development/part-3-extension-developer/README.md
+8e8de89e675acd4a3cfa1f021502d492  doc/en/us/help/extension-development/part-3-extension-developer/README.md
 e4322c94f149a753adc3d7cb1f39409c  doc/en/us/help/extension-development/part-3-extension-developer/activating-an-extension.md
 8fe7b84c3208986371b78ae261d6fd84  doc/en/us/help/extension-development/part-3-extension-developer/admin-pages-in-admin4-style.md
 7b46050611bad0fa1dd5fdcee132c5fd  doc/en/us/help/extension-development/part-3-extension-developer/ajax-with-ezjscore-server-functions.md
@@ -8391,6 +8411,7 @@ c601d706577db9b807ded9df5f7139f8  doc/en/us/help/extension-development/part-3-ex
 a4d074a54c4f864757ba9cb651c6504c  doc/en/us/help/extension-development/part-3-extension-developer/policy-functions-and-access.md
 2e9712572d3c64fd8ce69a3368a81b0c  doc/en/us/help/extension-development/part-3-extension-developer/security-in-extensions.md
 459435c5b13a8a3284802d97c2cd7816  doc/en/us/help/extension-development/part-3-extension-developer/settings-in-an-extension.md
+46a09272a5ecf29c8438dc354b0d786a  doc/en/us/help/extension-development/part-3-extension-developer/system-card-providers.md
 bddddbb448ea35c3c62185daf8d38869  doc/en/us/help/extension-development/part-3-extension-developer/template-functions.md
 df9be57e729bcfccf2705a987ea721c4  doc/en/us/help/extension-development/part-3-extension-developer/template-operators.md
 d77065199fef2b4187f7fd930ecf2e9a  doc/en/us/help/extension-development/part-3-extension-developer/tests-for-extensions.md
@@ -9482,7 +9503,7 @@ af8f76b541a969d17c06f07a2302a324  doc/en/us/help/hosting/models/kubernetes.md
 c3ee51c0e2481727305b93481d8029b1  doc/en/us/help/hosting/models/platform-as-a-service.md
 defc93772474f794f90448aee5fd05c9  doc/en/us/help/hosting/models/shared-hosting.md
 21034a6d2e20de1b86396e0f16e826b6  doc/en/us/help/hosting/models/vps-hosting.md
-c03583cfef9bda54b167c2d9e4bcfcd9  doc/en/us/help/hosting/operations/README.md
+354d10198395c906415de22a169390e3  doc/en/us/help/hosting/operations/README.md
 45f346393b9ebd6e2df8071378bf9fd7  doc/en/us/help/hosting/operations/automated-updates-with-ezupdate.md
 1bd5f0d94f97c5c0cffe9c3dbe3d021a  doc/en/us/help/hosting/operations/backup-schedules-and-retention.md
 4725320f5aca8884e3e740f5d26f9ec8  doc/en/us/help/hosting/operations/backups-what-to-back-up.md
@@ -9502,6 +9523,7 @@ d9ed2e65bdd00365f834cd5ad3303b4c  doc/en/us/help/hosting/operations/mail-deliver
 dbcee71416878f40af6bbe3c3aa6df60  doc/en/us/help/hosting/operations/security-log.md
 5728075ededa075e1e0409022594f5dc  doc/en/us/help/hosting/operations/several-web-nodes.md
 a1dc65dab18f181ca79191692696e32f  doc/en/us/help/hosting/operations/storage-layout.md
+a174164828d99869f94f8f0bfbe371ec  doc/en/us/help/hosting/operations/system-card-for-hosts.md
 affe2c7407810ac81f1959499aaab1c4  doc/en/us/help/hosting/operations/upgrading-customer-sites.md
 c8491c1d2dc0bfeaa1b2cb67c1ff1e03  doc/en/us/help/hosting/panels/README.md
 85c7886a5fc9b1caeabad2249f1e518e  doc/en/us/help/hosting/panels/cpanel.md
@@ -10188,7 +10210,7 @@ b80aac0139a3d1bcc92383b0af6cedfb  doc/en/us/help/partners/onboarding-checklist.m
 7c3326aa585378e333522a8f3b752196  doc/en/us/help/partners/partner-benefits.md
 25e4d202940dbd2234ea1ebbcced608f  doc/en/us/help/partners/partner-code-of-conduct.md
 a0f6381ecfc0d24d315b0311a8987be8  doc/en/us/help/partners/partner-directories.md
-8d30a75b4521a47f6f9ea48dd7a3910c  doc/en/us/help/partners/partner-faq.md
+0152e4c04d2cac6727ed78d5b83521eb  doc/en/us/help/partners/partner-faq.md
 19ec74761119f78e6452cfc4812ff61f  doc/en/us/help/partners/partner-glossary.md
 7b7cb8d5fe4450423763fb793725f2b5  doc/en/us/help/partners/partner-levels.md
 902797cf8377225a86f741dbbd99ac82  doc/en/us/help/partners/partner-logos-and-marks.md
@@ -10196,9 +10218,9 @@ d69c4e46b6f1db8338ca26c46089c876  doc/en/us/help/partners/partner-meetings-and-b
 fa3ebe85f84747ef5be350c3d8bad6c0  doc/en/us/help/partners/partner-plans-and-prices.md
 93b4186b47e730fa8a6506933b248ca8  doc/en/us/help/partners/partner-profiles.md
 8674f892387452fac5448a8219eabde6  doc/en/us/help/partners/partner-program-at-a-glance.md
-8915204385436671824d2fa5bc95fe69  doc/en/us/help/partners/partner-reading-path.md
+fb875dd4d6d302a1729b5585511a0f19  doc/en/us/help/partners/partner-reading-path.md
 58653922d91e9f6a42cc9c90d69a5928  doc/en/us/help/partners/partner-requirements.md
-0afdc45f0931a13ad0fca601a2f3b97e  doc/en/us/help/partners/partners-start-here.md
+22d30827c4cbcc0700759cf3ff342bd0  doc/en/us/help/partners/partners-start-here.md
 f3422605db37d4c5c33e253b43df11ed  doc/en/us/help/partners/powered-by-exponential.md
 f300ebbb1b7c6feee9742c3f5b890d2c  doc/en/us/help/partners/pre-sales-support.md
 c4cdf249a906c023d49c8da24156b609  doc/en/us/help/partners/press-releases-and-announcements.md
@@ -10216,6 +10238,7 @@ fa7b8602b0c2ce2e12f9c698474494ca  doc/en/us/help/partners/running-a-training-cou
 53a2881921995f5f6bb43cf817b23415  doc/en/us/help/partners/the-partnership-agreement.md
 1932b4a6ac72651b182f5b30f760ba98  doc/en/us/help/partners/the-points-system.md
 bf2b382334cfaf8f5aa6fb68bc06efe8  doc/en/us/help/partners/training-partners.md
+b2b7f31a44671292d0e27036e972411d  doc/en/us/help/partners/verifying-a-customer-installation.md
 e8625001529ca717de81a02cb0aa50fe  doc/en/us/help/partners/what-is-an-exponential-partner.md
 6da65a9fa04d3e24b1a5071093f8f9af  doc/en/us/help/partners/white-label-services.md
 ff49a18c96a0a3e854b114deda667d34  doc/en/us/help/partners/who-runs-the-partner-program.md
@@ -10248,7 +10271,7 @@ d22a06a98de8d62abc8d25ec00a83218  doc/en/us/help/press/covering-platform-release
 e820a9a42fc20c509ba75cfa6c8ab467  doc/en/us/help/press/covering-velocity-releases.md
 a59899e70d0b0cc697b3d2a3355de768  doc/en/us/help/press/creator-checklist.md
 65f5d972cbe45a51292543cea0e8c397  doc/en/us/help/press/creator-faq.md
-0d8e747eae891ee28a1058596d6b3696  doc/en/us/help/press/creators-and-influencers-start-here.md
+ae3da9722ea78601a12470427604718e  doc/en/us/help/press/creators-and-influencers-start-here.md
 3f342a914fb931ac4850940504fbbe2f  doc/en/us/help/press/crediting-other-projects.md
 5bb0269409c75d2423ba46fc2dab548d  doc/en/us/help/press/demo-script-administrator-tour.md
 cfe242b91f3609168ec456c6799a30d4  doc/en/us/help/press/demo-script-editor-tour.md
@@ -10489,10 +10512,10 @@ fc935070c328b0b3250bff77a631b9d9  doc/en/us/help/supporters/contributing-transla
 80f628b29f7ae38e8e77e3796c06e07c  doc/en/us/help/supporters/funding-the-work.md
 457532f68c2ef45503440c060f3e118c  doc/en/us/help/supporters/helping-in-the-community.md
 5e72993ae5ea0fbebcedb1b60be084f5  doc/en/us/help/supporters/recognition-for-supporters.md
-79705167d16e4c5d961cde7f5cbc882a  doc/en/us/help/supporters/supporter-faq.md
+48faef917591b53b605dca851f82f18d  doc/en/us/help/supporters/supporter-faq.md
 6c6670dd377a85a84588a3e74c294627  doc/en/us/help/supporters/supporters-start-here.md
 457a76da27b0e835a9ab252c976d8626  doc/en/us/help/supporters/supporting-as-a-company.md
-756cca3c7b02a19aed7dc684a35ac63e  doc/en/us/help/supporters/testing-and-reporting-bugs.md
+5dea26cbf7a5d888a46846508981bace  doc/en/us/help/supporters/testing-and-reporting-bugs.md
 5ee72694af42447c656e297194c8e3c2  doc/en/us/help/supporters/ways-to-support-exponential.md
 5c6f46370e565cad5137506ae8ddd93d  doc/en/us/help/template-language/README.md
 b4978406c491ddbdbf479a1fb8185d10  doc/en/us/help/template-language/attribute-access.md
@@ -10800,11 +10823,12 @@ b4edb6743c102b9a3e1dea79f9f23e22  doc/en/us/help/trainers/hosting-operations/mod
 aff646826f1362c1f516dc33e5f4b324  doc/en/us/help/trainers/hosting-operations/module-04-deploying-and-cron/deploying-a-change.md
 6560647f69ef09f400b3d940fff895fe  doc/en/us/help/trainers/hosting-operations/module-04-deploying-and-cron/the-cronjob-console.md
 b50ab0b84d60c3ea58a389d47c8b4762  doc/en/us/help/trainers/hosting-operations/module-04-deploying-and-cron/upgrading-customer-sites.md
-29bcfcf7868c4ad8ffb6073dfbdc636d  doc/en/us/help/trainers/hosting-operations/module-05-monitoring-and-logs/README.md
+dc4856e2b78f7c98ae2db947628deb25  doc/en/us/help/trainers/hosting-operations/module-05-monitoring-and-logs/README.md
 8b12c1c510eadffc0dba37f7c3121897  doc/en/us/help/trainers/hosting-operations/module-05-monitoring-and-logs/log-viewer-and-rotation.md
 2bfc97c95a4a3314ccf6636307220cd9  doc/en/us/help/trainers/hosting-operations/module-05-monitoring-and-logs/monitoring-and-health-checks.md
 8d08a8a0aab68174c4da4849f9a67f0c  doc/en/us/help/trainers/hosting-operations/module-05-monitoring-and-logs/request-and-security-logs.md
 8461922f60feff89ea9269d848301090  doc/en/us/help/trainers/hosting-operations/module-05-monitoring-and-logs/runbooks-site-down-and-slow.md
+834ccb628d9e5a804f021fa0f2a68e68  doc/en/us/help/trainers/hosting-operations/module-05-monitoring-and-logs/system-card-exercise.md
 0aeaec4d1d975b51ccb02334cf1e4f55  doc/en/us/help/trainers/hosting-operations/module-06-backups-and-recovery/README.md
 9565f5375a1a6fad2bad7017e7dbb686  doc/en/us/help/trainers/hosting-operations/module-06-backups-and-recovery/backup-policy-and-retention.md
 e4121c5d7eb7faa070369601203fea4f  doc/en/us/help/trainers/hosting-operations/module-06-backups-and-recovery/disk-full-and-incident-restores.md
@@ -11138,7 +11162,7 @@ df8aafff28c4bb0be5e5535aec81f028  doc/en/us/help/trainers/workshops/module-05-ca
 785349a6b52e4b9b32979a291eeb2774  doc/en/us/help/trainers/workshops/module-05-capstone-projects/intranet-news-section.md
 d9ba715ff69a95223caafc139e72c44e  doc/en/us/help/trainers/workshops/module-05-capstone-projects/multilingual-event-site.md
 229ea5861825d26d7951d974facd4e1a  doc/en/us/help/update-with-git.md
-c3dd809f812dd3a2f0ccf7b03f056a73  doc/en/us/help/when-something-goes-wrong.md
+5f06494ea7c87168036d09bef95ef42f  doc/en/us/help/when-something-goes-wrong.md
 64f49f9f5b0955e45a74bf46f0b13268  doc/en/us/help/who-is-7x.md
 e28ab16d4678ccc93c4732740211b057  doc/en/us/help/who-is-the-exponential-foundation.md
 ef64cf1fa291c6ab3f41ca59c651bc2a  doc/en/us/history/2023/2023-12.md
@@ -11485,8 +11509,8 @@ e36553ca9a11c4abe640c8b416b30b5d  doc/en/us/install/05-setup-wizard.md
 f26a7cc3031c80565d93653e795f98f5  doc/en/us/install/07-console-install.md
 c2f0e883b00176e9fafd0f7f3e872c07  doc/en/us/install/08-serving-the-site.md
 85d57e96c8402ccf8fcf05682d36aa5d  doc/en/us/install/09-databases.md
-11abe2a508ee2accf694eca8b531b2c2  doc/en/us/install/10-after-installing.md
-89342c9f655f7b2f8e9a507460adf127  doc/en/us/install/11-upgrading.md
+a69b2cffd5dd3679f0d3c19be789a2de  doc/en/us/install/10-after-installing.md
+43a8dc36345c3cb85f76927c3e24667a  doc/en/us/install/11-upgrading.md
 e7d503635e4e2b9a15c4d2dff5b63258  doc/en/us/install/12-troubleshooting.md
 b9b958bdc5cf179a551774846bd1e7bd  doc/en/us/install/13-security-hardening.md
 3bbb447f562293802b129e5c1063362d  doc/en/us/install/14-migrating-from-4x.md

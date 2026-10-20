@@ -32,6 +32,11 @@ merge. By signing and submitting, you assign the copyright in your contribution 
 and distribute it in any way, without asking or paying you, and you cannot take it back. Your own extensions are not affected.
 [Copyright assignment (CLA)](../../../../../CONTRIBUTING.md#copyright-assignment-cla)
 
+**What should I paste when I ask for help or report a bug?**
+The output of `./console exp:info --json --no-logo` (or `--plain`): the versions of Exponential, PHP, the database,
+the engine and every extension, with the hints. Secrets are never included, so it is safe in a public issue.
+[The system card](../../features/6.0/system-card.md)
+
 **Where do I report a security problem?**
 Privately to security@se7enx.com, never in public. [Testing and reporting bugs](testing-and-reporting-bugs.md)
 

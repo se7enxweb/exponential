@@ -28,7 +28,10 @@ The essentials:
 
 - What you did, step by step.
 - What you expected, and what happened instead.
-- The versions: Exponential, PHP, database, engine, extensions.
+- The versions: Exponential, PHP, database, engine, extensions. One command collects them all:
+  `./console exp:info --json --no-logo` (or `--plain` for a text block). Paste its output as it is: it never
+  contains a password, key, token, database user or full database address
+  ([The system card](../../features/6.0/system-card.md)).
 - Error messages and log lines, with passwords, keys and personal data removed.
 - Whether it happens on a clean installation.
 

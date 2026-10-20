@@ -696,6 +696,7 @@ ends with a recognisable status, and most have `--json` for a monitoring system.
 
 | Check | Command | Healthy |
 |---|---|---|
+| Everything at a glance | `./console exp:expfetch --allow-root-user` ([the system card](../features/6.0/system-card.md); `--json` for a monitor) | no `error` in the Hints block |
 | The site answers | `curl -s -o /dev/null -w '%{http_code} %{time_total}\n' https://www.example.com/` | `200` and a time you know |
 | The administration answers | `curl -s -o /dev/null -w '%{http_code}\n' https://www.example.com/admin/user/login` | `200` |
 | The caches | `php bin/php/cache.php status --json --allow-root-user` | ends in `PASS` |
@@ -906,6 +907,8 @@ and after a change to a `.ts` file clear `--clear-tag=i18n`. See
 7. A benchmark baseline is saved in `var/benchmark/`.
 8. Logs rotate (built-in limits in `config.php`, logrotate for cron logs).
 9. Behind a proxy on another machine: its address is in `TrustedProxies[]`, and HTTPS pages link to `https://`.
+10. `./console exp:expfetch --allow-root-user` shows the expected versions and engine, and its Hints block has no
+    `error` ([The system card](../features/6.0/system-card.md)).
 
 ## 10.16 When something does not work
 

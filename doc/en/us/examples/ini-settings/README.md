@@ -78,6 +78,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [staticcache.ini](staticcache/README.md) | kernel | 1 |
 | [subitems.ini](subitems/README.md) | kernel | 7 |
 | [subitemscolumns.ini](subitemscolumns/README.md) | kernel | 129 |
+| [syscard.ini](syscard/README.md) | kernel | 16 |
 | [template.ini](template/README.md) | kernel | 7 |
 | [textfile.ini](textfile/README.md) | kernel | 1 |
 | [texttoimage.ini](texttoimage/README.md) | kernel | 11 |

@@ -49,6 +49,7 @@ you. The [tutorials](tutorials/README.md) then build real small extensions step 
 | [Datatypes](datatypes.md), [Datatype storage, validation and templates](datatype-storage-validation-and-templates.md) | new kinds of fields |
 | [Workflow event types](workflow-event-types.md), [Triggers and workflows for developers](triggers-and-workflows-for-developers.md) | steps around publishing |
 | [Cronjob parts](cronjob-parts.md), [CLI scripts and console commands](cli-scripts-and-console-commands.md) | work outside a request |
+| [Facts, themes and logos for the system card](system-card-providers.md) | add your extension to `exp:expfetch`, `exp:info` and `exp:about` |
 
 ### Front end
 

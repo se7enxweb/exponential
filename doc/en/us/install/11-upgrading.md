@@ -443,7 +443,13 @@ php bin/php/ezcache.php --clear-all                                # ends withou
 php bin/php/console exp:checkdbfiles --no-verify-branches          # prints nothing: every update file is in place
 php bin/php/console exp:checkclasses                               # no class PHP refuses to load
 php bin/php/console exp:checkmanifest --all                        # the installed files against share/filelist.md5; exit status 0 when all match
+php bin/php/console exp:expfetch                                   # the new version, PHP, engine and database at a glance; no error hint
 ```
+
+`exp:expfetch` (the [system card](../features/6.0/system-card.md)) shows the version you upgraded to, the PHP
+branch and its support date, the engine and the database in one screen, and ends with hints for what needs
+attention (OPcache, a missing PHP extension, a stale help index, cron). Keep `./console exp:info --json --no-logo`
+from before and after the upgrade and compare them to see every extension version that changed.
 
 `exp:checkdbfiles` reports only problems, one line each: `!` for a file the upgrade path names but the disk lacks,
 `?` for a file on disk the path does not know. No output (apart from the console's own `running ...` line) means the

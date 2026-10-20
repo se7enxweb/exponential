@@ -18,6 +18,7 @@ This page is for advocates with a quick question about advocacy itself.
 | Can I speak for 7x or the Foundation? | Only if they ask you. Otherwise speak as yourself | [Disclosure and conflicts of interest](disclosure-and-conflicts-of-interest.md) |
 | Can I use the logo? | The sources set no logo rules for third parties; ask the owner | [Brand and naming rules](../business/brand-and-naming-rules.md#what-the-sources-do-not-decide) |
 | May I be paid for posts or talks? | Yes, if you disclose it clearly | [Disclosure and conflicts of interest](disclosure-and-conflicts-of-interest.md) |
+| How do I show "what is this installation" in a demo? | Run `./console exp:about`: the logo, the facts and the project on one screen, no secrets | [The system card in demos](the-system-card-in-demos.md) |
 | Can I organize an "Exponential meetup"? | Yes, as your own event, said clearly | [Proposing a meetup](proposing-a-meetup.md) |
 | Can I copy help pages into my blog? | Under the GNU FDL's conditions; quoting with a link is easiest | [Citing sources and licensing your writing](citing-sources-and-licensing-your-writing.md) |
 | What if I said something wrong? | Correct it openly | [Honesty and accuracy](honesty-and-accuracy.md) |

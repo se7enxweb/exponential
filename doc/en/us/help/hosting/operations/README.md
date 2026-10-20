@@ -54,6 +54,8 @@ repository where they are described, so you can check each statement yourself. S
 - [Security log](security-log.md): the request classifier, `auth.log` and the audit trail as a host's view of attacks.
 - [Log viewer and rotation](log-viewer-and-rotation.md): **Setup > Log files**, `exp:logs`, rotation, pruning and
   the disk budget.
+- [The system card for hosts](system-card-for-hosts.md): `exp:expfetch` at login, its health hints, `--watch` and
+  `exp:info --json` for monitoring and inventories.
 - [Health checks and uptime](health-checks-and-uptime.md): what an external monitor should request and what a check
   inside the server should run.
 

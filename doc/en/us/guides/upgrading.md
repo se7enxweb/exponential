@@ -266,7 +266,11 @@ Run these; each states what good looks like.
 ```bash
 php bin/php/ezcache.php --clear-all --allow-root-user         # ends without an error
 ./console exp:checkdbfiles --allow-root-user                   # no file marked as missing for your line
+./console exp:expfetch --allow-root-user                       # the new version, PHP and engine; no error in the Hints
 ```
+
+Before the upgrade, keep `./console exp:info --json --no-logo > before.json`; after it, the same into `after.json`:
+the difference lists every version that changed ([The system card](../features/6.0/system-card.md)).
 
 Then in the browser: the front page loads; log in to the admin; open **Setup** > **System information** and read the
 version; publish a test item and see it on the site. In the admin, **Setup** > **Upgrade check** and
