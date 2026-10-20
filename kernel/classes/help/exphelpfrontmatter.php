@@ -148,7 +148,8 @@ class expHelpFrontMatter
     }
 
     /**
-     * A scalar without its quotes.
+     * A scalar without its quotes, unescaped as YAML does: in double quotes \" \\ \/ \t \n \r \0 and \uXXXX, in
+     * single quotes '' (an unknown escape is kept as written).
      *
      * @param string $raw
      * @return string
@@ -157,9 +158,28 @@ class expHelpFrontMatter
     {
         $raw = trim( (string)$raw );
         $len = strlen( $raw );
-        if ( $len >= 2 && ( ( $raw[0] === '"' && $raw[$len - 1] === '"' ) || ( $raw[0] === "'" && $raw[$len - 1] === "'" ) ) )
-            $raw = substr( $raw, 1, -1 );
+        if ( $len >= 2 && $raw[0] === "'" && $raw[$len - 1] === "'" )
+            return str_replace( "''", "'", substr( $raw, 1, -1 ) );
+        if ( $len >= 2 && $raw[0] === '"' && $raw[$len - 1] === '"' )
+            return self::unescapeDoubleQuoted( substr( $raw, 1, -1 ) );
         return $raw;
+    }
+
+    /**
+     * The escapes of a double-quoted YAML scalar.
+     *
+     * @param string $inner the text between the quotes
+     * @return string
+     */
+    protected static function unescapeDoubleQuoted( $inner )
+    {
+        $map = array( '"' => '"', '\\' => '\\', '/' => '/', 't' => "\t", 'n' => "\n", 'r' => "\r", '0' => "\0", ' ' => ' ' );
+        return preg_replace_callback( '/\\\\(u[0-9A-Fa-f]{4}|.)/su', function ( $m ) use ( $map )
+        {
+            if ( $m[1][0] === 'u' && strlen( $m[1] ) === 5 )
+                return mb_convert_encoding( pack( 'n', hexdec( substr( $m[1], 1 ) ) ), 'UTF-8', 'UTF-16BE' );
+            return isset( $map[$m[1]] ) ? $map[$m[1]] : $m[0];
+        }, $inner );
     }
 
     /**
