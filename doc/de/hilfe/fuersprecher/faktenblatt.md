@@ -1,0 +1,69 @@
+---
+title: Faktenblatt auf einer Seite
+audience: advocate
+category: advocacy
+order: 142
+summary: Ein belegtes Faktenblatt über Exponential auf einer Seite, das Fürsprecher drucken oder teilen können - was es ist, wer dahintersteht, Releases, Lizenz, wo es läuft, wichtigste Funktionen, Sicherheit, Community und wie man es ausprobiert - mit dem Datum, an dem die Fakten geprüft wurden.
+keywords: Faktenblatt, Einseiter, Handzettel, Zusammenfassung, Fakten, drucken, teilen, Exponential, Lizenz, Releases, Funktionen, Community, ausprobieren, fact sheet, one pager, handout, summary, facts, print, share, license, releases, features, community, try it
+type: help
+---
+# Faktenblatt auf einer Seite
+
+Diese Seite ist für Fürsprecher, die einen Handzettel brauchen: an einem Tisch, nach einem Vortrag, in einer E-Mail.
+Jede Zeile hat ihre Quelle in dieser Hilfe. Die Fakten wurden am **18. Oktober 2026** geprüft; prüfen Sie sie vor dem
+Drucken erneut, denn Zahlen ändern sich mit Releases ([Wo die Fakten stehen](wo-die-fakten-stehen.md)).
+
+## Das Faktenblatt
+
+```text
+EXPONENTIAL - FREE AND OPEN SOURCE PHP CMS AND APPLICATION FRAMEWORK            (facts as of 18 Oct 2026)
+
+WHAT IT IS     A professional PHP application framework with advanced CMS functionality.
+               Its most notable feature: a fully customizable content model.
+               Shop, multisite, many languages (incl. right to left), workflows, REST API, page builder.
+WHO            7x leads development. The Exponential Foundation, a nonprofit (2026), operates the project.
+RELEASES       Fifteen 6.0.x releases since 1 January 2024 (6.0.0 - 6.0.14); 6.0.15 in development.
+LICENSE        Code: GNU GPL v2 or later.  Documentation: GNU FDL 1.3 or later.
+RUNS ON        PHP 8.0 - 8.5.  SQLite 3, PostgreSQL, MongoDB, MariaDB, Oracle, MySQL.
+               Linux, BSD, macOS, Windows (documented tiers). Velocity, FrankenPHP, Apache/nginx + PHP-FPM.
+NEW            Exponential Velocity (PHP web server) - Exponential Layouts (page builder) -
+               Exponential Intelligence (writes drafts only) - help inside the administration.
+SECURITY       Private reports (SECURITY.md), first answer within one business day, fixes in the next 6.0.x.
+               Content Security Policy, audit trail, two-step sign-in, hardening guide.
+LANGUAGES      268 locale files (40 right to left); 32 administration translations, 10 complete.
+HISTORY        Code base developed since 1999, formerly as eZ Publish (discontinued by its creator after
+               almost 18 years). Not associated with eZ Systems or Ibexa.
+TRY IT         ./console exp:install          (a complete site on SQLite, one command)
+COMMUNITY      share.exponential.earth/forums   t.me/exponentialcms   ezpedia.exponential.earth
+               projects.exponential.earth       github.com/se7enxweb/exponential
+SUPPORT IT     github.com/sponsors/exponentialcms (Foundation)   github.com/sponsors/se7enxweb (7x)
+```
+
+Für ein deutschsprachiges Publikum übersetzen Sie die Zeilen und behalten die Fakten, Befehle und Adressen bei.
+
+## Quellen
+
+| Zeile | Quelle |
+|---|---|
+| Was es ist | [Exponential 6](../../../en/us/help/who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
+| Wer | [Die Foundation und 7x](../../../en/us/help/who-is-the-exponential-foundation.md#the-foundation-and-7x) |
+| Releases | [Wer ist 7x?, Die Releases 6.0.x](../../../en/us/help/who-is-7x.md#the-60x-releases) |
+| Lizenz | [Gesprächspunkte: Open Source und Lizenzierung](gespraechspunkte-open-source-und-lizenzierung.md) |
+| Läuft auf | [PHP-Versionen](../../../en/us/help/who-is-the-exponential-foundation.md#php-versions), [Datenbankunterstützung](../../../en/us/help/database-support.md), [Betriebssystemunterstützung](../../../en/us/help/os-support.md) |
+| Neu | [Die Produkte im Einzelnen](../../../en/us/help/who-is-the-exponential-foundation.md#the-products-one-by-one) |
+| Sicherheit | [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md), [Sicherheitshärtung](../../../en/us/help/security-hardening.md) |
+| Sprachen | [Sprachen und Barrierefreiheit](../../../en/us/help/who-is-the-exponential-foundation.md#languages-and-accessibility) |
+| Geschichte | [Gesprächspunkte: Langlebigkeit und Geschichte](gespraechspunkte-langlebigkeit-und-geschichte.md) |
+| Ausprobieren | [Installation mit einem Befehl](../../../en/us/features/6.0/install-in-one-command.md) |
+| Community, Unterstützung | [Die Community-Kanäle](community-kanaele.md) |
+
+## Verwendung
+
+- Fügen Sie unten Ihren Namen und eine Offenlegungszeile hinzu, wenn Sie es verteilen ([Offenlegung](offenlegung-und-interessenkonflikte.md)).
+- Drucken Sie es groß genug zum Lesen; bieten Sie Screenreader-Nutzern den Link zu dieser Seite an.
+
+## Verwandte Seiten
+
+- [Gesprächspunkte: das Grundset](gespraechspunkte-grundset.md)
+- [Der Werkzeugkasten für Fürsprecher](werkzeugkasten-fuer-fuersprecher.md)
+- [Freie Dokumentation](../../../en/us/help/free-documentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
