@@ -86,7 +86,7 @@ nachverfolgten Änderungen; frühere Formulierungen stehen in älteren Versionen
 ## Verwandte Seiten
 
 - [Eine Auskunft nach Informationsfreiheitsrecht veröffentlichen](eine-auskunft-nach-informationsfreiheitsrecht-veroeffentlichen.md)
-- [Datenschutzprüfung vor dem Veröffentlichen von Daten](../../../../eng-us/help/government/open-data/privacy-checks-before-publishing-data.md)
+- [Datenschutzprüfung vor dem Veröffentlichen von Daten](../offene-daten/datenschutzpruefung-vor-dem-veroeffentlichen.md)
 - [Inhaltsgeschichte](../../../anleitungen/inhaltsverlauf.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

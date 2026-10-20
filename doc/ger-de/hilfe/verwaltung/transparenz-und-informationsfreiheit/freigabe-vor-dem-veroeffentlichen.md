@@ -84,7 +84,7 @@ sie zeigt, bevor Sie sich auf sie als Nachweis der Freigabe verlassen.
 
 - [Workflows](../../../anleitungen/workflows.md)
 - [Entwürfe und ausstehende Einträge](../../../anleitungen/entwuerfe-und-ausstehende-objekte.md)
-- [Wer Datensätze veröffentlichen darf](../../../../eng-us/help/government/open-data/who-may-publish-datasets.md)
+- [Wer Datensätze veröffentlichen darf](../offene-daten/wer-datensaetze-veroeffentlichen-darf.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

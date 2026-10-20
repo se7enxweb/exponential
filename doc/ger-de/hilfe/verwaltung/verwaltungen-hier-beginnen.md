@@ -68,8 +68,8 @@ verantwortungsvoll.
 | [Barrierefreiheit](../../../eng-us/help/government/accessibility/README.md) | WCAG 2.2 AA, EN 301 549 und Section 508, abgebildet auf das, was Exponential mitbringt, jede Aussage belegt durch die [Standards zur Barrierefreiheit](../../../eng-us/standards/accessibility.md); Erklärungen, Prüfungen, barrierefreie Inhalte |
 | [Sicherheit](../../../eng-us/help/government/security/README.md) | OWASP, Härtung, der Audit-Trail, zweistufige Anmeldung, die Content Security Policy, request-shield |
 | [Datenschutz](datenschutz/README.md) | DSGVO-Funktionen, Datenminimierung, Aufbewahrung, Einwilligungsnachweise, Löschung; andere Rechtsordnungen allgemein eingeordnet |
-| [Schriftgut und Archivierung](../../../eng-us/help/government/records-and-archiving/README.md) | Versionen, Verlauf, Archivieren von Bekanntmachungen, Aufbewahrungspläne, Exporte, Erhalt von URLs |
-| [Offene Daten](../../../eng-us/help/government/open-data/README.md) | Datensätze mit Metadaten, Lizenzen und stabilen URLs veröffentlichen, und die vorhandenen APIs und Feeds |
+| [Schriftgut und Archivierung](schriftgut-und-archivierung/README.md) | Versionen, Verlauf, Archivieren von Bekanntmachungen, Aufbewahrungspläne, Exporte, Erhalt von URLs |
+| [Offene Daten](offene-daten/README.md) | Datensätze mit Metadaten, Lizenzen und stabilen URLs veröffentlichen, und die vorhandenen APIs und Feeds |
 | [Transparenz und Informationsfreiheit](transparenz-und-informationsfreiheit/README.md) | Proaktive Veröffentlichung, Offenlegungsprotokolle, Veröffentlichungspläne, Beschlussregister |
 | [Sprachen](sprachen/README.md) | Amtssprachen, Übersetzungsabläufe, Schreibrichtung von rechts nach links, einfache Sprache |
 | [Souveränität](souveraenitaet/README.md) | Selbstbetrieb, Datenstandort, Open-Source-Lizenzierung und -Beschaffung, Vermeiden von Anbieterabhängigkeit |
@@ -77,7 +77,7 @@ verantwortungsvoll.
 | [Betrieb](../../../eng-us/help/government/operations/README.md) | Hosting im eigenen Haus und in der Verwaltungscloud, Verfügbarkeit, Datensicherungen, Überwachung, Vorfälle, Aktualisierungen, Änderungsmanagement, Rollen der Mitarbeitenden, redaktionelle Abläufe |
 | [Beschaffung und Lebenszyklus](../../../eng-us/help/government/procurement/README.md) | Anforderungen, Ausschreibungsvorlagen, Bewertung, Gesamtbetriebskosten, Ausstiegspläne, Schulung, der Produktlebenszyklus |
 | [Aufgaben](../../../eng-us/help/government/tasks/README.md) | Hunderte Schritt-für-Schritt-Anleitungen: die Tagesordnung einer Ratssitzung veröffentlichen, eine Leistungsseite mit barrierefreiem Formular anlegen, eine Unterseite für eine Abteilung einrichten, eine Seite übersetzen, die Bekanntmachungen des Vorjahres archivieren ... |
-| [Checklisten](../../../eng-us/help/government/checklists/README.md), [FAQ](../../../eng-us/help/government/faq/README.md) und [Glossar](../../../eng-us/help/government/glossary/README.md) | Checklisten für Livegang, Barrierefreiheit, Sicherheit, Datenschutz und Bereitschaft; Antworten auf häufige Fragen; Begriffe |
+| [Checklisten](../../../eng-us/help/government/checklists/README.md), [FAQ](../../../eng-us/help/government/faq/README.md) und [Glossar](glossar/README.md) | Checklisten für Livegang, Barrierefreiheit, Sicherheit, Datenschutz und Bereitschaft; Antworten auf häufige Fragen; Begriffe |
 
 ## Was Exponential mitbringt und was bei Ihnen bleibt
 
@@ -99,7 +99,7 @@ verantwortungsvoll.
 | Koordination Barrierefreiheit | den [Standards zur Barrierefreiheit](../../../eng-us/standards/accessibility.md), dann [Barrierefreiheit](../../../eng-us/help/government/accessibility/README.md) |
 | Informationssicherheitsbeauftragte | den [Sicherheitsstandards](../../../eng-us/standards/security.md), der [Sicherheitshärtung](../sicherheitshaertung.md), dann [Sicherheit](../../../eng-us/help/government/security/README.md) |
 | Datenschutzbeauftragte | den [Datenschutzstandards](../../../eng-us/standards/privacy.md), dann [Datenschutz](datenschutz/README.md) |
-| Schriftgutverwaltung oder zuständig für Informationsfreiheit | [Schriftgut und Archivierung](../../../eng-us/help/government/records-and-archiving/README.md) und [Transparenz und Informationsfreiheit](transparenz-und-informationsfreiheit/README.md) |
+| Schriftgutverwaltung oder zuständig für Informationsfreiheit | [Schriftgut und Archivierung](schriftgut-und-archivierung/README.md) und [Transparenz und Informationsfreiheit](transparenz-und-informationsfreiheit/README.md) |
 | Leitung Übersetzung oder Kommunikation | [Sprachen](sprachen/README.md), einschließlich einfacher Sprache |
 | ein IT-Betriebsteam | dem [Betrieb](../../../eng-us/help/government/operations/README.md) und der [Hilfe zum Hosting](../hosting/hosting-anbieter-hier-beginnen.md), die Server ausführlich behandelt |
 | Redakteurin oder Redakteur | den [Aufgaben](../../../eng-us/help/government/tasks/README.md) und [Inhalte bearbeiten](../inhalte-bearbeiten.md) |
