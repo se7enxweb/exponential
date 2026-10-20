@@ -13,7 +13,7 @@ Diese Seite ist für den Eigentümer und die Shop-Leitung. In Warenkörben und a
 Interesse, bevor sie kaufen, und einige Einstellungen bestimmen, wie sich beide verhalten. Diese Seite erklärt, worauf
 Sie achten sollten und was Sie Ihren Partner fragen; der Wunschzettel selbst ist unter
 [Rabatte und Wunschzettel für Unternehmen](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md) beschrieben, die Schritte
-an der Kasse unter [Warenkorb und Bestellablauf](../../../../eng-us/help/businesses/stores/basket-and-checkout-flow.md).
+an der Kasse unter [Warenkorb und Bestellablauf](../../unternehmen/shops/warenkorb-und-bestellablauf.md).
 
 ## Warenkörbe im Dashboard
 
@@ -78,7 +78,7 @@ Berücksichtigen Sie sie, wenn Sie die Daten Ihres Shops in Ihrer Datenschutzerk
 
 ## Verwandte Seiten
 
-- [Warenkorb und Bestellablauf](../../../../eng-us/help/businesses/stores/basket-and-checkout-flow.md)
+- [Warenkorb und Bestellablauf](../../unternehmen/shops/warenkorb-und-bestellablauf.md)
 - [Rabatte und Wunschzettel für Unternehmen](../../../../eng-us/help/businesses/stores/discounts-and-wishlists.md)
 - [Shop-Berichte](shop-berichte.md)
 - [Warenkorb, Kasse und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)

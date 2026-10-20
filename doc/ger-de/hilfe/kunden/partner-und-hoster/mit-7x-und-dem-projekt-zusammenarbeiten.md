@@ -65,7 +65,7 @@ Freiwillige Wege zu helfen ([Mit 7x und dem Projekt zusammenarbeiten](../../unte
 - die Dokumentation verbessern: Diese Hilfe ist freie Dokumentation unter der GNU FDL;
 - 7x oder die Foundation sponsern ([Geben und spenden](../../projekt/geben-und-spenden.md));
 - Ihre Geschichte als Fallstudie teilen, mit Ihrer Zustimmung
-  ([Vorlage für eine Fallstudie](../../../../eng-us/help/businesses/templates/case-study-template.md)).
+  ([Vorlage für eine Fallstudie](../../unternehmen/vorlagen/vorlage-fuer-fallstudien.md)).
 
 ## Verwandte Seiten
 

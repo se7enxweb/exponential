@@ -121,7 +121,7 @@ dann entscheiden, ob diese Stunden gut angelegt sind. Gemeinsames Bearbeiten mit
 - [Gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/README.md)
 - [Website-Planung für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md)
 - [Wofür Sie nicht bezahlen](wofuer-sie-nicht-bezahlen.md)
-- [Vorlage ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)
+- [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

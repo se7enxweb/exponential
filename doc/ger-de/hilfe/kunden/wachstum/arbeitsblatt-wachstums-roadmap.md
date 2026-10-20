@@ -88,7 +88,7 @@ Vor jedem Schritt:
 - [ ] Ihr Partner weiß, wann das nächste Upgrade geplant ist, damit sich beides nicht überschneidet
       ([Release- und Upgrade-Planung](../../fuehrung/release-und-upgrade-planung.md)).
 - [ ] Die Kosten sind mit den Arbeitsblättern aus dem Bereich für Unternehmen geschätzt
-      ([Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md),
+      ([Vorlage für ein ROI-Arbeitsblatt](../../unternehmen/vorlagen/vorlage-roi-arbeitsblatt.md),
       [Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md)).
 
 ## Teil 5: Auswertung
@@ -105,5 +105,5 @@ Next year's first step: ______________________
 
 - [Ihre Website ausbauen](README.md)
 - [Ein Exponential-Projekt planen](../../fuehrung/ein-exponential-projekt-planen.md)
-- [Checkliste für die Jahresüberprüfung](../../../../eng-us/help/businesses/templates/annual-review-checklist.md)
+- [Checkliste für die Jahresüberprüfung](../../unternehmen/vorlagen/checkliste-jahresrueckblick.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

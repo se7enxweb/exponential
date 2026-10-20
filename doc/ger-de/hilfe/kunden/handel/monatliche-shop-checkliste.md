@@ -12,7 +12,7 @@ type: help
 Diese Seite ist die Checkliste für die ersten Arbeitstage jedes Monats. Das meiste erledigt der Eigentümer, zusammen
 mit der Shop-Leitung und dem Hoster. Sie schließt den Monat für die Buchhaltung ab und fängt schleichende Probleme
 ab, die ein täglicher Blick nicht zeigt. Eine allgemeine monatliche Checkliste für jede Unternehmenswebsite finden Sie
-unter [Monatliche Checkliste für den Betrieb](../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md); diese hier
+unter [Monatliche Checkliste für den Betrieb](../../unternehmen/vorlagen/monatliche-betriebscheckliste.md); diese hier
 ist für den Shop.
 
 ## Die Checkliste

@@ -59,7 +59,7 @@ Leser eintippen, etwa eine ISBN, und die Namen der Urheber in Person-Objekten.
 
 Schlagwörter aus `eztags` werden standardmäßig mit ihren Synonymen indiziert (`IndexSynonyms=enabled`); ein Leser, der
 einen nicht bevorzugten Begriff eintippt, findet den Eintrag also trotzdem
-([Tags und Schlagwörter](../../../../eng-us/help/businesses/libraries/tagging-and-subject-headings.md#headings-in-search)).
+([Tags und Schlagwörter](tags-und-schlagwoerter.md#schlagwörter-in-der-suche)).
 
 Bauen Sie nach einem großen Import den ganzen Index neu auf:
 
@@ -129,9 +129,9 @@ weiter; Facetten brauchen Templates, die die eigenen Fetch-Funktionen von ezfind
 
 Viele Leser stöbern, statt zu suchen. Geben Sie ihnen:
 
-- Themenseiten aus Tags ([Tags und Schlagwörter](../../../../eng-us/help/businesses/libraries/tagging-and-subject-headings.md#subject-pages-and-lists-by-subject));
-- Sammlungen als Container im Menü ([Katalogeinträge modellieren](../../../../eng-us/help/businesses/libraries/modeling-catalog-records.md#collections-and-series));
-- eine Liste und einen Feed der Neuerwerbungen ([Feeds für Neuerwerbungen](../../../../eng-us/help/businesses/libraries/feeds-for-new-acquisitions.md)).
+- Themenseiten aus Tags ([Tags und Schlagwörter](tags-und-schlagwoerter.md#themenseiten-und-listen-nach-thema));
+- Sammlungen als Container im Menü ([Katalogeinträge modellieren](katalogeintraege-modellieren.md#sammlungen-und-reihen));
+- eine Liste und einen Feed der Neuerwerbungen ([Feeds für Neuerwerbungen](feeds-fuer-neuerwerbungen.md)).
 
 ## Checkliste zur Suche
 

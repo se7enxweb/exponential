@@ -91,10 +91,10 @@ den Rückweg. Das Installationsbuch hat die Kapitel:
 
 | Wann | Aufgabe |
 |---|---|
-| Jeden Monat | Nach Releases sehen; Logs und das Audit-Dashboard lesen; der [monatlichen Betriebscheckliste](../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md) folgen |
+| Jeden Monat | Nach Releases sehen; Logs und das Audit-Dashboard lesen; der [monatlichen Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md) folgen |
 | Wenn ein Release 6.0.x erscheint | Sein Changelog lesen; auf Staging testen; in einem geplanten Zeitfenster einspielen |
 | Jedes Quartal | Eine Wiederherstellung testen; Erweiterungen aktualisieren; Speicherplatz und Aufbewahrung der Backups prüfen |
-| Jedes Jahr | PHP- und Betriebssystem-Aktualisierungen planen; Konten und Rollen prüfen; dieses Budget prüfen ([Jahresrückblick](../../../../eng-us/help/businesses/templates/annual-review-checklist.md)) |
+| Jedes Jahr | PHP- und Betriebssystem-Aktualisierungen planen; Konten und Rollen prüfen; dieses Budget prüfen ([Jahresrückblick](../vorlagen/checkliste-jahresrueckblick.md)) |
 
 ## Ein durchgerechnetes Jahresbudget
 

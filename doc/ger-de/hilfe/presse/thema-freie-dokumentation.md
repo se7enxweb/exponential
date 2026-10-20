@@ -60,12 +60,12 @@ und freie Schulungsbücher sind auf GitHub gespiegelt.
 
 ## Wen Sie fragen
 
-7x und die Foundation über die [Pressekontakte](../../../eng-us/help/press/press-contacts.md); die Foundation nennt die Dokumentation in ihrer
-Mission ([Die Exponential Foundation für Reporter](../../../eng-us/help/press/the-foundation-for-reporters.md)).
+7x und die Foundation über die [Pressekontakte](pressekontakte.md); die Foundation nennt die Dokumentation in ihrer
+Mission ([Die Exponential Foundation für Reporter](die-foundation-fuer-reporter.md)).
 
 ## Verwandte Seiten
 
-- [Die Dokumentation zitieren und wiederverwenden](../../../eng-us/help/press/quoting-and-reusing-the-documentation.md)
-- [Thema: das Hilfesystem](../../../eng-us/help/press/story-the-help-system.md)
+- [Die Dokumentation zitieren und wiederverwenden](die-dokumentation-zitieren-und-wiederverwenden.md)
+- [Thema: das Hilfesystem](thema-das-hilfesystem.md)
 - [Gesprächspunkte: die Hilfe und freie Dokumentation](../fuersprecher/gespraechspunkte-hilfe-und-freie-dokumentation.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

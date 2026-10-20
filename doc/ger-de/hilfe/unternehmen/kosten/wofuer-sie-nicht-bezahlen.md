@@ -72,7 +72,7 @@ Aus `README.md`, „Main Exponential features“, und den Erweiterungen, die `co
 
 | Bedarf | Enthalten | Mehr lesen |
 |---|---|---|
-| Online-Shop | „Advanced e-Commerce Stores (Built in)“ mit USt, Währungen, Bestellungen; PayPal über `ezpaypal` | [Shops](../../../../eng-us/help/businesses/stores/README.md) |
+| Online-Shop | „Advanced e-Commerce Stores (Built in)“ mit USt, Währungen, Bestellungen; PayPal über `ezpaypal` | [Shops](../shops/README.md) |
 | Newsletter | `cjw_newsletter` wird von `composer.json` verlangt | [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md) |
 | Zweistufige Anmeldung | `sevenx_authentication_2fa` wird verlangt, und die Installer aktivieren es | [Zweistufige Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md) |
 | Audit-Trail | „A tamper-evident audit trail with a console, alerts, exports and extension channels“ (ein manipulationssicherer Audit-Trail mit Konsole, Warnungen, Exporten und Kanälen für Erweiterungen) | [Der Audit-Trail](../../../../eng-us/features/6.0/audit-trail.md) |

@@ -99,5 +99,5 @@ und [Newsletter sicher versenden](../../../../eng-us/help/creators/website-creat
 
 - [Newsletter-Routine](newsletter-routine.md)
 - [Newsletter-Checkliste](../../../../eng-us/help/businesses/newsletters/newsletter-checklist.md)
-- [Kommunikation mit Mitgliedern](../../../../eng-us/help/businesses/members/member-communications.md)
+- [Kommunikation mit Mitgliedern](../../unternehmen/mitglieder/kommunikation-mit-mitgliedern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -46,10 +46,10 @@ meisten Unternehmen brauchen:
 
 | Bedarf | Bereitgestellt durch | Lesen |
 |---|---|---|
-| Produkte verkaufen | „Advanced e-Commerce Stores (Built in)“: Produkte, Warenkorb, Bestellungen, USt, Währungen | [Online-Shops](../../../eng-us/help/businesses/stores/README.md) |
+| Produkte verkaufen | „Advanced e-Commerce Stores (Built in)“: Produkte, Warenkorb, Bestellungen, USt, Währungen | [Online-Shops](shops/README.md) |
 | Zahlungen annehmen | Zahlungsanbieter über das Workflow-System, zum Beispiel PayPal mit `ezpaypal` | [Zahlungsanbieter für Unternehmen](../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md) |
 | Interessenten und Anfragen sammeln | „Contact forms“ und der Informationssammler | [Formulare mit dem Informationssammler](../../../eng-us/help/creators/website-creators/forms-with-the-information-collector.md) |
-| Zugang verkaufen | Registrierung und Bereiche nur für Mitglieder über Rollen und Sektionen | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) |
+| Zugang verkaufen | Registrierung und Bereiche nur für Mitglieder über Rollen und Sektionen | [Mitgliederwebsites](mitglieder/README.md) |
 | Partner und Händler bedienen | Extranets auf derselben Installation | [Extranets und Partnerportale](extranets/README.md) |
 | Landingpages schnell bauen | Exponential Layouts, ein visueller Seitenbaukasten mit Regeln, die Layouts Inhalten zuordnen | [Der Layout-Editor](../layout-editor.md) |
 
@@ -130,7 +130,7 @@ Cost of one hour unavailable (all channels): <from the cost of downtime workshee
 ## Verwandte Seiten
 
 - [Unternehmen: hier beginnen](unternehmen-hier-beginnen.md)
-- [Online-Shops](../../../eng-us/help/businesses/stores/README.md)
+- [Online-Shops](shops/README.md)
 - [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md)
 - [Funktionshighlights, den Bedürfnissen der Kunden zugeordnet](../geschaeft/funktionshighlights-fuer-kunden.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

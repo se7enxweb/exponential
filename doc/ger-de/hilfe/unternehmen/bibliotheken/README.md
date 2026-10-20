@@ -26,12 +26,12 @@ Katalogwebsite verbinden, und sagt deutlich, wo weiterhin ein eigenes Bibliothek
 
 | Bedarf einer Bibliothek | Funktion von Exponential | Seite in diesem Bereich |
 |---|---|---|
-| Ein Eintrag pro Objekt mit strukturierten Feldern | Inhaltsklassen mit Datentypen wie `ezisbn`, `ezdate`, `ezobjectrelationlist` | [Katalogeinträge modellieren](../../../../eng-us/help/businesses/libraries/modeling-catalog-records.md) |
-| Schlagwörter mit Hierarchie und Synonymen | Die Erweiterung `eztags`, mit dem Produkt ausgeliefert | [Tags und Schlagwörter](../../../../eng-us/help/businesses/libraries/tagging-and-subject-headings.md) |
+| Ein Eintrag pro Objekt mit strukturierten Feldern | Inhaltsklassen mit Datentypen wie `ezisbn`, `ezdate`, `ezobjectrelationlist` | [Katalogeinträge modellieren](katalogeintraege-modellieren.md) |
+| Schlagwörter mit Hierarchie und Synonymen | Die Erweiterung `eztags`, mit dem Produkt ausgeliefert | [Tags und Schlagwörter](tags-und-schlagwoerter.md) |
 | Einträge nach Wörtern finden und später nach Facetten | Die eingebaute Suchmaschine; Solr über `ezfind`, wenn der Katalog wächst | [Katalogsuche](katalogsuche.md) |
-| Digitalisierte Dokumente und Downloads | File-Objekte, Downloads mit Berechtigungsprüfung, Textextraktion für die Suche | [Dateien und digitale Sammlungen](../../../../eng-us/help/businesses/libraries/files-and-digital-collections.md) |
-| Ein gedruckter Katalog oder PDF-Katalog | PDF-Exporte eines Knotens oder eines Baums | [PDF- und Druckexporte](../../../../eng-us/help/businesses/libraries/pdf-and-print-exports.md) |
-| „Neu in der Bibliothek“ für Leser und andere Websites | Exporte als RSS 2.0, Atom und weitere Feeds | [Feeds für Neuerwerbungen](../../../../eng-us/help/businesses/libraries/feeds-for-new-acquisitions.md) |
+| Digitalisierte Dokumente und Downloads | File-Objekte, Downloads mit Berechtigungsprüfung, Textextraktion für die Suche | [Dateien und digitale Sammlungen](dateien-und-digitale-sammlungen.md) |
+| Ein gedruckter Katalog oder PDF-Katalog | PDF-Exporte eines Knotens oder eines Baums | [PDF- und Druckexporte](pdf-und-druckexporte.md) |
+| „Neu in der Bibliothek“ für Leser und andere Websites | Exporte als RSS 2.0, Atom und weitere Feeds | [Feeds für Neuerwerbungen](feeds-fuer-neuerwerbungen.md) |
 
 All das gehört außer Solr zu einer Standardinstallation: `eztags`, `enhancedezbinaryfile` und `xrowmetadata` stehen im
 Block `require` von `composer.json`, und `se7enxweb/ezfind` steht in dessen Block `suggest` mit dem Hinweis „Install it
@@ -58,28 +58,28 @@ Wenn Sie sie brauchen, behalten Sie dafür Ihr integriertes Bibliothekssystem un
 | Seite | Was sie beantwortet |
 |---|---|
 | [Katalog planen](katalog-planen.md) | Umfang, Zielgruppen, die Arten von Einträgen, wer katalogisiert und die Entscheidungen, die zuerst zu treffen sind |
-| [Katalogeinträge modellieren](../../../../eng-us/help/businesses/libraries/modeling-catalog-records.md) | Aus einem Eintrag eine Inhaltsklasse machen: Felder, Datentypen, Relationen, Pflichtfelder |
-| [Tags und Schlagwörter](../../../../eng-us/help/businesses/libraries/tagging-and-subject-headings.md) | Ein kontrolliertes Vokabular mit eztags: Hierarchie, Synonyme, Übersetzungen, Berechtigungen |
+| [Katalogeinträge modellieren](katalogeintraege-modellieren.md) | Aus einem Eintrag eine Inhaltsklasse machen: Felder, Datentypen, Relationen, Pflichtfelder |
+| [Tags und Schlagwörter](tags-und-schlagwoerter.md) | Ein kontrolliertes Vokabular mit eztags: Hierarchie, Synonyme, Übersetzungen, Berechtigungen |
 | [Katalogsuche](katalogsuche.md) | Die eingebaute Suche, Suchstatistiken und wann sich Solr lohnt |
-| [Dateien und digitale Sammlungen](../../../../eng-us/help/businesses/libraries/files-and-digital-collections.md) | Digitalisierte Objekte, geschützte Downloads, Lizenzen, große Dateien, fehlende Dateien |
-| [PDF- und Druckexporte](../../../../eng-us/help/businesses/libraries/pdf-and-print-exports.md) | Ein PDF eines Knotens oder eines Baums, einmalig oder bei Bedarf erzeugt, und was öffentlich ist |
-| [Feeds für Neuerwerbungen](../../../../eng-us/help/businesses/libraries/feeds-for-new-acquisitions.md) | Feeds neuer Einträge für Leser, Partnerwebsites und Newsletter |
-| [Checkliste für Bibliothekswebsites](../../../../eng-us/help/businesses/libraries/library-site-checklist.md) | Eine Checkliste von der Planung bis zum Start und die Routine danach |
+| [Dateien und digitale Sammlungen](dateien-und-digitale-sammlungen.md) | Digitalisierte Objekte, geschützte Downloads, Lizenzen, große Dateien, fehlende Dateien |
+| [PDF- und Druckexporte](pdf-und-druckexporte.md) | Ein PDF eines Knotens oder eines Baums, einmalig oder bei Bedarf erzeugt, und was öffentlich ist |
+| [Feeds für Neuerwerbungen](feeds-fuer-neuerwerbungen.md) | Feeds neuer Einträge für Leser, Partnerwebsites und Newsletter |
+| [Checkliste für Bibliothekswebsites](checkliste-fuer-bibliothekswebsites.md) | Eine Checkliste von der Planung bis zum Start und die Routine danach |
 
 ## Empfohlene Lesereihenfolge
 
 1. [Katalog planen](katalog-planen.md)
-2. [Katalogeinträge modellieren](../../../../eng-us/help/businesses/libraries/modeling-catalog-records.md)
-3. [Tags und Schlagwörter](../../../../eng-us/help/businesses/libraries/tagging-and-subject-headings.md)
+2. [Katalogeinträge modellieren](katalogeintraege-modellieren.md)
+3. [Tags und Schlagwörter](tags-und-schlagwoerter.md)
 4. [Katalogsuche](katalogsuche.md)
-5. [Dateien und digitale Sammlungen](../../../../eng-us/help/businesses/libraries/files-and-digital-collections.md)
-6. [Feeds für Neuerwerbungen](../../../../eng-us/help/businesses/libraries/feeds-for-new-acquisitions.md) und [PDF- und Druckexporte](../../../../eng-us/help/businesses/libraries/pdf-and-print-exports.md)
-7. [Checkliste für Bibliothekswebsites](../../../../eng-us/help/businesses/libraries/library-site-checklist.md)
+5. [Dateien und digitale Sammlungen](dateien-und-digitale-sammlungen.md)
+6. [Feeds für Neuerwerbungen](feeds-fuer-neuerwerbungen.md) und [PDF- und Druckexporte](pdf-und-druckexporte.md)
+7. [Checkliste für Bibliothekswebsites](checkliste-fuer-bibliothekswebsites.md)
 
 ## Benachbarte Bereiche
 
 - [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md): ein Newsletter über Neuerwerbungen.
-- [Mitglieder](../../../../eng-us/help/businesses/members/README.md): Leserkonten und Inhalte nur für Mitglieder.
+- [Mitglieder](../mitglieder/README.md): Leserkonten und Inhalte nur für Mitglieder.
 - [Gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/README.md) und [Vereine und kleine Gruppen](../vereine/README.md):
   Viele Bibliotheken werden von einer solchen Organisation betrieben oder unterstützen eine.
 - [Mehrsprachige Websites](../../../../eng-us/help/businesses/multilingual/README.md): Kataloge in mehreren Sprachen.

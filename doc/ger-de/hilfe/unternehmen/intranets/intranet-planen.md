@@ -113,7 +113,7 @@ die Arbeit schätzt ([Schätzen und Abgrenzen mit Erweiterungen](../../fuehrung/
 ## Ein Arbeitsblatt zur Planung
 
 Kopieren Sie diese Liste in die Projektbeschreibung
-([Vorlage für Projektbeschreibungen](../../../../eng-us/help/businesses/templates/project-brief-template.md)).
+([Vorlage für Projektbeschreibungen](../vorlagen/vorlage-fuer-projektbeschreibungen.md)).
 
 - [ ] Zweck des Intranets in zwei Sätzen.
 - [ ] Liste der Benutzergruppen und ihrer Größe.

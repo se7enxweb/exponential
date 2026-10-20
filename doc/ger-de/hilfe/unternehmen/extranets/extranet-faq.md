@@ -124,7 +124,7 @@ In einem festen Rhythmus, den Sie mit Ihrem Sicherheitsbeauftragten vereinbaren;
 
 - [Extranets und Partnerportale](README.md)
 - [Intranet-FAQ](../intranets/intranet-faq.md)
-- [FAQ zu Mitgliederwebsites](../../../../eng-us/help/businesses/members/member-site-faq.md)
+- [FAQ zu Mitgliederwebsites](../mitglieder/faq-zu-mitgliederwebsites.md)
 - [FAQ für Unternehmen](../faq-fuer-unternehmen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

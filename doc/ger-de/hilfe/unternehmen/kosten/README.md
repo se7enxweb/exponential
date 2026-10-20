@@ -66,7 +66,7 @@ Worten und verlinkt die technischen Seiten für die Personen, die die Arbeit mac
    [Budget für Aktualisierungen und Wartung](budget-fuer-aktualisierungen-und-wartung.md) für das laufende Budget ab.
 
 Ein leeres Formular für die Berechnung steht im Bereich Vorlagen:
-[Vorlage ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md).
+[Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md).
 
 ## Die Fakten, auf denen der Bereich aufbaut
 
@@ -85,7 +85,7 @@ Ein leeres Formular für die Berechnung steht im Bereich Vorlagen:
 - [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): die Grundlagen, die ein Unternehmen zum Schutz von Kundendaten
   braucht.
 - [Hosting und Partner auswählen](../auswahl/README.md): wohin das Geld für Hosting und Dienstleistungen geht.
-- [Vorlagen](../../../../eng-us/help/businesses/templates/README.md): kopierfertige Arbeitsblätter und Checklisten.
+- [Vorlagen](../vorlagen/README.md): kopierfertige Arbeitsblätter und Checklisten.
 - [Unternehmen: hier beginnen](../unternehmen-hier-beginnen.md)
 - Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
 

@@ -40,7 +40,7 @@ jeder mit eigener Adresse, eigenem Design, eigener Startseite und eigenen Anmeld
 | Form | Was sie bedeutet | Passt, wenn |
 |---|---|---|
 | Portal-Siteaccess in derselben Installation | eine Installation, ein Siteaccess `partners` unter eigenem Host | Inhalte teilweise mit der öffentlichen Website geteilt werden; ein Team betreibt beides |
-| Portalordner der öffentlichen Website | ein Mitgliederbereich unter der Adresse der öffentlichen Website | kleine Portale, wenig Trennung nötig ([Registrierung von Mitgliedern](../../../../eng-us/help/businesses/members/member-registration.md)) |
+| Portalordner der öffentlichen Website | ein Mitgliederbereich unter der Adresse der öffentlichen Website | kleine Portale, wenig Trennung nötig ([Registrierung von Mitgliedern](../mitglieder/registrierung-von-mitgliedern.md)) |
 | Eigene Installation | eigener Code, eigene Datenbank und eigene Benutzer | Verträge eine strenge Trennung verlangen oder ein anderer Aktualisierungsrhythmus gilt |
 
 ## Ein Portal neben der öffentlichen Website

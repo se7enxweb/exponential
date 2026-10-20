@@ -116,14 +116,14 @@ Posten gleich, damit der Vergleich fair bleibt.
 ## Wie Sie Ihre eigenen Zahlen sammeln
 
 1. Bitten Sie zwei oder drei Partner oder Hoster um schriftliche Angebote zu denselben Anforderungen
-   ([Checkliste Anforderungen](../../../../eng-us/help/businesses/templates/requirements-checklist.md)).
+   ([Checkliste Anforderungen](../vorlagen/checkliste-anforderungen.md)).
 2. Bitten Sie Ihre eigenen Mitarbeiter, die Stunden für den Betrieb zu schätzen, und prüfen Sie sie an einem Monat
    echter Arbeit.
 3. Nehmen Sie die Hostingzahlen aus dem Tarif, den Sie wirklich kaufen würden; zur Dimensionierung siehe
    [Speicher, CPU und Festplatte dimensionieren](../../hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md), die nur Zahlen
    nennt, die das Repository liefert.
-4. Tragen Sie jede Zahl mit ihrer Quelle in die [Vorlage ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md) ein.
-5. Prüfen Sie die Zahlen einmal im Jahr mit der [Checkliste Jahresrückblick](../../../../eng-us/help/businesses/templates/annual-review-checklist.md).
+4. Tragen Sie jede Zahl mit ihrer Quelle in die [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md) ein.
+5. Prüfen Sie die Zahlen einmal im Jahr mit der [Checkliste Jahresrückblick](../vorlagen/checkliste-jahresrueckblick.md).
 
 ## Verwandte Seiten
 

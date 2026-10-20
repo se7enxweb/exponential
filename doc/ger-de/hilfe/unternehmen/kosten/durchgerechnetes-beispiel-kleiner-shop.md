@@ -128,10 +128,10 @@ Tagen erreichbar bleiben.
 
 ## Verwandte Seiten
 
-- [Shops](../../../../eng-us/help/businesses/stores/README.md)
+- [Shops](../shops/README.md)
 - [Shop-Planung für kleine Unternehmen](../../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md)
 - [Gesamtbetriebskosten](gesamtbetriebskosten.md)
-- [Vorlage ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)
+- [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

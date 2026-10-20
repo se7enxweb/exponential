@@ -13,7 +13,7 @@ Diese Seite ist für Betreiber, die Kartenzahlungen annehmen, direkt oder über 
 Kartensicherheit eine Routine, die Sie einhalten können: wissen, wie Karten in Ihren Shop gelangen, die Nachweise
 aufbewahren, die Ihr Anbieter verlangt, und nach Änderungen prüfen. Den Hintergrund, und was die Zahlungsanbindungen
 des Projekts laut ihrem Code mit Kartendaten tun, finden Sie unter
-[Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../eng-us/help/businesses/stores/card-payments-and-pci-basics.md).
+[Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../unternehmen/shops/kartenzahlungen-und-pci-grundlagen.md).
 
 > **Warnung**
 > Grundlagen, keine Rechts- oder Compliance-Beratung. Pflichten zur Kartensicherheit ergeben sich aus dem Payment Card
@@ -30,7 +30,7 @@ des Projekts laut ihrem Code mit Kartendaten tun, finden Sie unter
 | Auf der Seite des Anbieters | Weiterleitung, zum Beispiel `ezpaypal` | Kartennummern laufen nicht über Ihren Server |
 | In einem Formular auf Ihrer Website | Formular auf der eigenen Website, zum Beispiel `ezauthorize` | Kartennummern laufen auf dem Weg zum Anbieter über Ihren Server |
 
-Quelle: [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../eng-us/help/businesses/stores/card-payments-and-pci-basics.md).
+Quelle: [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../unternehmen/shops/kartenzahlungen-und-pci-grundlagen.md).
 Wenn Sie nicht sicher sind, welche Variante Ihr Shop verwendet, fragen Sie Ihren Partner; die Antwort entscheidet
 über das meiste, was folgt.
 
@@ -57,7 +57,7 @@ Wenn Sie nicht sicher sind, welche Variante Ihr Shop verwendet, fragen Sie Ihren
 Die Erweiterung `ezauthorize` zeigt ein Kartenformular auf Ihrer Website und sendet die Daten an Authorize.Net. Laut
 ihrem Code werden die Kartendaten in die gespeicherten Daten der Bestellung geschrieben, und sie werden nur
 verschlüsselt, wenn die separate Erweiterung `ezgpg` installiert und mit einem Schlüssel konfiguriert ist
-([Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../eng-us/help/businesses/stores/card-payments-and-pci-basics.md)).
+([Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../unternehmen/shops/kartenzahlungen-und-pci-grundlagen.md)).
 
 > **Warnung**
 > Betreiben Sie kein Kartenformular auf der eigenen Website, ohne dass ein Entwickler anhand der Anforderungen Ihres
@@ -72,7 +72,7 @@ Fragen an Ihren Partner:
 
 ## Fragen an Ihren Zahlungsanbieter
 
-Aus [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../eng-us/help/businesses/stores/card-payments-and-pci-basics.md):
+Aus [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../unternehmen/shops/kartenzahlungen-und-pci-grundlagen.md):
 
 - Welche Pflichten zur Kartensicherheit gelten für eine Website, die zu Ihnen weiterleitet, und für eine, die Kartendaten an Sie sendet?
 - Welche Selbstbewertung oder welche Nachweise verlangen Sie von uns, und wie oft?
@@ -91,7 +91,7 @@ Aus [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../eng-us/
 ## Verwandte Seiten
 
 - [Zahlungsanbieter](zahlungsanbieter.md)
-- [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../eng-us/help/businesses/stores/card-payments-and-pci-basics.md)
+- [Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../unternehmen/shops/kartenzahlungen-und-pci-grundlagen.md)
 - [Sicherheits-Checkliste für den Shop](../../../../eng-us/help/businesses/stores/store-security-checklist.md)
 - [Sicherheitshärtung](../../sicherheitshaertung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

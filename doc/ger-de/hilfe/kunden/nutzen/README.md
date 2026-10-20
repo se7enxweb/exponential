@@ -13,7 +13,7 @@ Dieser Bereich ist für Organisationen, die bereits eine Website mit Exponential
 was sie ihnen bringt. Er ist für den Betreiber, die Leitung, die für das Budget verantwortlich ist, und alle, die mit dem
 Hoster oder Partner sprechen. Die Seiten, die Ihnen bei der Entscheidung für Exponential helfen, stehen im Bereich für
 Unternehmen ([Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md),
-[Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)); hier messen und verbessern Sie
+[Vorlage für ein ROI-Arbeitsblatt](../../unternehmen/vorlagen/vorlage-roi-arbeitsblatt.md)); hier messen und verbessern Sie
 eine Website, die bereits Ihnen gehört.
 
 ## Messen und entscheiden

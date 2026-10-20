@@ -59,7 +59,7 @@ Ziel: eine Entscheidung für ein Pilotprojekt, mit verstandenen Kosten und Risik
 | [Rendite der Stabilität](kosten/rendite-der-stabilitaet.md) und ein durchgerechnetes Beispiel: [Shop](kosten/durchgerechnetes-beispiel-kleiner-shop.md), [Intranet](kosten/durchgerechnetes-beispiel-intranet.md) oder [gemeinnützige Organisation](kosten/durchgerechnetes-beispiel-gemeinnuetzige-organisation.md) | Die Rechnung mit Ihren Zahlen |
 | [Sicherheitsgrundlagen für Unternehmen](../../../eng-us/help/businesses/security/security-basics-for-businesses.md) | Worum Sie sich kümmern müssen |
 | [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md) | Personenbezogene Daten (Grundlagen, keine Rechtsberatung) |
-| [Bewertungsbogen für Anbieter](../../../eng-us/help/businesses/templates/vendor-evaluation-scorecard.md) | Optionen auf dem Papier vergleichen |
+| [Bewertungsbogen für Anbieter](vorlagen/bewertungsbogen-fuer-anbieter.md) | Optionen auf dem Papier vergleichen |
 
 ## Stufe 3: planen
 
@@ -67,8 +67,8 @@ Ziel: eine Projektbeschreibung, ein Hoster und ein Partner.
 
 | Lesen | Warum |
 |---|---|
-| [Vorlage für Projektbeschreibungen](../../../eng-us/help/businesses/templates/project-brief-template.md) | Aufschreiben, was Sie brauchen |
-| [Checkliste Anforderungen](../../../eng-us/help/businesses/templates/requirements-checklist.md) | Nichts vergessen |
+| [Vorlage für Projektbeschreibungen](vorlagen/vorlage-fuer-projektbeschreibungen.md) | Aufschreiben, was Sie brauchen |
+| [Checkliste Anforderungen](vorlagen/checkliste-anforderungen.md) | Nichts vergessen |
 | [Hosting auswählen](auswahl/hosting-auswaehlen.md) und [Hosting-Modelle im Vergleich](auswahl/hosting-modelle-im-vergleich.md) | Wo es läuft |
 | [Einen Partner auswählen](auswahl/einen-partner-auswaehlen.md) und [Fragen an einen Partner](auswahl/fragen-an-einen-partner.md) | Wer es baut und pflegt |
 | [Grundlagen zu Verträgen und SLAs](auswahl/grundlagen-zu-vertraegen-und-slas.md) | Was Sie vereinbaren |
@@ -80,22 +80,22 @@ Ziel: eine Website, die verfügbar bleibt und weiter Ertrag bringt.
 
 | Lesen | Warum |
 |---|---|
-| [Checkliste Go-live](../../../eng-us/help/businesses/templates/go-live-checklist.md) | Der Tag des Starts |
+| [Checkliste Go-live](vorlagen/checkliste-go-live.md) | Der Tag des Starts |
 | [Verfügbarkeit in der Praxis](../../../eng-us/help/businesses/reliability/uptime-practice.md) | Tägliche Gewohnheiten |
 | [Backups, die sich wiederherstellen lassen](../../../eng-us/help/businesses/reliability/backups-that-restore.md) und [Wiederherstellungsübungen](../../../eng-us/help/businesses/reliability/restore-drills.md) | Das eine, was Sie rettet |
 | [Health Checks und Monitoring](../../../eng-us/help/businesses/reliability/health-checks-and-monitoring.md) | Es wissen, bevor die Kunden es merken |
 | [Störungsbehandlung für kleine Teams](../../../eng-us/help/businesses/reliability/incident-response-for-small-teams.md) | Wenn es trotzdem passiert |
 | [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/reliability/upgrades-without-surprises.md) | Jedes Release |
-| [Monatliche Betriebscheckliste](../../../eng-us/help/businesses/templates/monthly-operations-checklist.md) und [Checkliste für den Jahresrückblick](../../../eng-us/help/businesses/templates/annual-review-checklist.md) | Die Routine |
+| [Monatliche Betriebscheckliste](vorlagen/monatliche-betriebscheckliste.md) und [Checkliste für den Jahresrückblick](vorlagen/checkliste-jahresrueckblick.md) | Die Routine |
 
 ## Zusätzliche Seiten für jede Art von Organisation
 
 | Organisation | In dieser Reihenfolge lesen |
 |---|---|
-| Online-Shop | [README Shops](../../../eng-us/help/businesses/stores/README.md), [Shop-Planung](../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md), [was der eingebaute Shop kann](../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md), [Zahlungsanbieter](../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md), [Checkliste für den Shop-Start](../../../eng-us/help/businesses/stores/store-launch-checklist.md) |
+| Online-Shop | [README Shops](shops/README.md), [Shop-Planung](../../../eng-us/help/businesses/stores/store-planning-for-small-businesses.md), [was der eingebaute Shop kann](../../../eng-us/help/businesses/stores/what-the-built-in-shop-does.md), [Zahlungsanbieter](../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md), [Checkliste für den Shop-Start](../../../eng-us/help/businesses/stores/store-launch-checklist.md) |
 | Intranet | [README Intranets](intranets/README.md), [Intranet planen](intranets/intranet-planen.md), [Abteilungen, Rollen und Sektionen](intranets/abteilungen-rollen-und-sektionen.md), [Checkliste für die Einführung](intranets/checkliste-fuer-die-intranet-einfuehrung.md) |
 | Extranet oder Partnerportal | [README Extranets](extranets/README.md), [Partnerportal planen](extranets/partnerportal-planen.md), [Registrierung und Freigabe](extranets/registrierung-und-kontofreigabe.md), [Checkliste für den Start](extranets/checkliste-fuer-den-extranet-start.md) |
-| Mitgliederorganisation | [README Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md), [Mitgliederwebsite planen](../../../eng-us/help/businesses/members/member-site-planning.md), [Checkliste für Mitgliederwebsites](../../../eng-us/help/businesses/members/member-site-checklist.md) |
+| Mitgliederorganisation | [README Mitgliederwebsites](mitglieder/README.md), [Mitgliederwebsite planen](mitglieder/mitgliederwebsite-planen.md), [Checkliste für Mitgliederwebsites](mitglieder/checkliste-fuer-mitgliederwebsites.md) |
 | Herausgeber eines Newsletters | [README Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Einen Newsletter planen](../../../eng-us/help/businesses/newsletters/newsletter-planning.md), [Opt-in und Einwilligung](../../../eng-us/help/businesses/newsletters/opt-in-and-consent.md) |
 | Bibliothek oder Katalog | [README Bibliotheken](bibliotheken/README.md), [Katalog planen](bibliotheken/katalog-planen.md), [Katalogsuche](bibliotheken/katalogsuche.md) |
 | Gemeinnützige Organisation | [README Gemeinnützige](../../../eng-us/help/businesses/nonprofits/README.md), [Website-Planung für gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/nonprofit-site-planning.md), [Betrieb mit kleinem Budget](../../../eng-us/help/businesses/nonprofits/low-budget-operations.md) |

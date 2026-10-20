@@ -123,12 +123,12 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie nicht alle Mitarbeiter ein, b
 - [ ] Ungenutzte Konten unter **Benutzer > Benutzerkonten prüfen** geprüft
   ([Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md)).
 - [ ] Monatliche Betriebsroutine eingerichtet
-  ([Monatliche Betriebscheckliste](../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md)).
+  ([Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md)).
 
 ## Verwandte Seiten
 
 - [Intranets](README.md)
-- [Vorlage Checkliste Go-live](../../../../eng-us/help/businesses/templates/go-live-checklist.md)
+- [Vorlage Checkliste Go-live](../vorlagen/checkliste-go-live.md)
 - [Qualitätsschwellen und Abnahme](../../fuehrung/qualitaetsschranken-und-abnahme.md)
 - [Checkliste für den Start für Website-Ersteller](../../../../eng-us/help/creators/website-creators/launch-checklist.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

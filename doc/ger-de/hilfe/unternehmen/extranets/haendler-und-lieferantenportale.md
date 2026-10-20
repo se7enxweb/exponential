@@ -54,7 +54,7 @@ Berechtigungen im Shop: Händler brauchen `shop/buy`; Ihre Bestellabteilung brau
 Währungen `shop/setup`. Da `shop/buy` eine Richtlinie wie jede andere ist, kann das Bestellen auf die Händlerrolle
 beschränkt werden, während die öffentliche Website die Produkte nur zeigt.
 
-Die Einzelheiten eines Shops, von USt-Regeln bis zu Belegen, stehen im Bereich [Shops](../../../../eng-us/help/businesses/stores/README.md).
+Die Einzelheiten eines Shops, von USt-Regeln bis zu Belegen, stehen im Bereich [Shops](../shops/README.md).
 
 ## Preise pro Händlergruppe
 
@@ -125,7 +125,7 @@ Händlers, Kreditlimits und eine Schnittstelle zu Ihrem ERP. Die REST API und di
 
 ## Verwandte Seiten
 
-- [Shops](../../../../eng-us/help/businesses/stores/README.md)
+- [Shops](../shops/README.md)
 - [Wie Unternehmen online verkaufen](../wie-unternehmen-online-verkaufen.md)
 - [Verkaufen über Netzwerke und Partner](../../../../eng-us/help/businesses/mobile-and-headless/selling-through-networks-and-partners.md)
 - [Warenkorb, Bestellablauf und Bestellungen](../../../../eng-us/help/creators/website-creators/basket-checkout-and-orders.md)

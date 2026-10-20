@@ -140,7 +140,7 @@ selbst zurück ([Das Passwort eines Benutzers zurücksetzen](../../../../eng-us/
 
 ## Verwandte Seiten
 
-- [Registrierung von Mitgliedern](../../../../eng-us/help/businesses/members/member-registration.md)
+- [Registrierung von Mitgliedern](../mitglieder/registrierung-von-mitgliedern.md)
 - [Mitgliederregistrierung und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md)
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md)
 - [Einwilligung und Formulare](../../../../eng-us/help/businesses/security/consent-and-forms.md)

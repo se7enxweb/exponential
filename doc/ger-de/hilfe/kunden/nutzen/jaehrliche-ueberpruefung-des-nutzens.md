@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für den Betreiber, der einen klaren Moment im Jahr haben möchte, um zu fragen: Was hat uns die Website
 gebracht, was hat sie gekostet, und was tun wir als Nächstes? Sie gibt einen Sitzungsplan mit Unterlagen, einer
 Tagesordnung und den festzuhaltenden Entscheidungen vor. Die betriebliche Seite des Jahres (Updates, Backups,
-Sicherheit, Datenschutz) hat ihre eigene Vorlage, die [Checkliste für die Jahresüberprüfung](../../../../eng-us/help/businesses/templates/annual-review-checklist.md);
+Sicherheit, Datenschutz) hat ihre eigene Vorlage, die [Checkliste für die Jahresüberprüfung](../../unternehmen/vorlagen/checkliste-jahresrueckblick.md);
 halten Sie beide am selben Tag ab, oder die betriebliche zuerst.
 
 ## Wer teilnimmt
@@ -90,7 +90,7 @@ Signed: ______________________
 
 ## Verwandte Seiten
 
-- [Checkliste für die Jahresüberprüfung](../../../../eng-us/help/businesses/templates/annual-review-checklist.md)
+- [Checkliste für die Jahresüberprüfung](../../unternehmen/vorlagen/checkliste-jahresrueckblick.md)
 - [ROI-Arbeitsblatt](roi-arbeitsblatt.md)
 - [Jährliche Checkliste](checklisten/jaehrlich.md)
 - [Den ROI messen](den-roi-messen.md)

@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Betreiber, die Besucher Konten anlegen lassen: ein Mitgliederbereich, ein Kundenportal, eine
 Community oder einfach Kommentare unter einem Namen. Der Website-Ersteller richtet die Seiten und Einstellungen ein
 ([Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md));
-die Planungssicht steht unter [Mitglieder-Websites](../../../../eng-us/help/businesses/members/README.md). Diese Seite behandelt, was Sie
+die Planungssicht steht unter [Mitglieder-Websites](../../unternehmen/mitglieder/README.md). Diese Seite behandelt, was Sie
 entscheiden und was Ihr Team jeden Monat tut.
 
 ## Inhalt
@@ -29,7 +29,7 @@ entscheiden und was Ihr Team jeden Monat tut.
 |---|---|---|
 | Wer darf sich registrieren? | jeder, oder nur Personen, die Sie genehmigen | [Registrierung und Genehmigung von Konten](../../unternehmen/extranets/registrierung-und-kontofreigabe.md) |
 | Wie wird ein Konto bestätigt? | ein Link in einer E-Mail (`VerifyUserType=email`) | [Registrierung von Mitgliedern und Bereiche nur für Mitglieder](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md) |
-| Was sehen Mitglieder, was Besucher nicht sehen? | eine Sektion nur für Mitglieder | [Inhalte nur für Mitglieder](../../../../eng-us/help/businesses/members/members-only-content.md) |
+| Was sehen Mitglieder, was Besucher nicht sehen? | eine Sektion nur für Mitglieder | [Inhalte nur für Mitglieder](../../unternehmen/mitglieder/inhalte-nur-fuer-mitglieder.md) |
 | Welche E-Mails erhalten Mitglieder? | notwendige Konto-E-Mails immer; optionale E-Mails nur, wenn sie sie einschalten | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
 | Zweistufige Anmeldung für Mitglieder? | optional für Mitglieder, verpflichtend für Mitarbeitende | [Konten, Passwörter und zweistufige Anmeldung](../alltag/konten-passwoerter-und-zweistufige-anmeldung.md) |
 | Welche Daten fragen Sie ab? | so wenig wie nötig, auf dem Formular erklärt | [Personenbezogene Daten in Exponential](../../../../eng-us/help/businesses/security/personal-data-in-exponential.md) |
@@ -88,7 +88,7 @@ Diese Liste folgt der Checkliste für Website-Ersteller
 
 ## Verwandte Seiten
 
-- [Mitglieder-Websites](../../../../eng-us/help/businesses/members/README.md)
-- [Registrierung von Mitgliedern](../../../../eng-us/help/businesses/members/member-registration.md)
+- [Mitglieder-Websites](../../unternehmen/mitglieder/README.md)
+- [Registrierung von Mitgliedern](../../unternehmen/mitglieder/registrierung-von-mitgliedern.md)
 - [Kunden- und Partnerbereiche](../../unternehmen/extranets/kunden-und-partnerbereiche.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

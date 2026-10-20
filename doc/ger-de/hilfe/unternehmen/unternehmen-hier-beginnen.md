@@ -83,10 +83,10 @@ Die Kurzfassung, erklärt in [Warum Unternehmen sich auf Exponential verlassen](
 
 | Sie sind | Beginnen Sie mit |
 |---|---|
-| Ein Online-Shop oder ein kleiner Laden | [Online-Shops](../../../eng-us/help/businesses/stores/README.md) |
+| Ein Online-Shop oder ein kleiner Laden | [Online-Shops](shops/README.md) |
 | Ein Unternehmen, das ein Intranet für seine Mitarbeiter braucht | [Intranets](intranets/README.md) |
 | Ein Unternehmen, das Informationen mit Partnern, Händlern, Lieferanten oder Kunden teilt | [Extranets und Partnerportale](extranets/README.md) |
-| Ein Verein, ein Berufsverband oder jemand mit Mitgliedern | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) |
+| Ein Verein, ein Berufsverband oder jemand mit Mitgliedern | [Mitgliederwebsites](mitglieder/README.md) |
 | Herausgeber eines Newsletters | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md) |
 | Eine Bibliothek, ein Archiv oder jemand mit einem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md) |
 | Eine gemeinnützige oder wohltätige Organisation | [Gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/README.md) |
@@ -126,11 +126,11 @@ Der größte Teil der Kosten einer Website liegt nicht im Aufbau, sondern im jah
 
 | Tag | Tun | Lesen |
 |---|---|---|
-| 1 | Aufschreiben, was die Website leisten muss und was Sie eine Stunde Ausfall kostet | [Vorlage für Projektbeschreibungen](../../../eng-us/help/businesses/templates/project-brief-template.md), [Arbeitsblatt: Kosten eines Ausfalls](kosten/arbeitsblatt-kosten-eines-ausfalls.md) |
+| 1 | Aufschreiben, was die Website leisten muss und was Sie eine Stunde Ausfall kostet | [Vorlage für Projektbeschreibungen](vorlagen/vorlage-fuer-projektbeschreibungen.md), [Arbeitsblatt: Kosten eines Ausfalls](kosten/arbeitsblatt-kosten-eines-ausfalls.md) |
 | 2 | Ihren Bereich oben finden und seine ersten Seiten lesen | die README des Bereichs |
 | 3 | Eine laufende Installation ansehen: die Demo oder eine Testinstallation mit SQLite | [Erste Schritte](../erste-schritte.md), [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) |
 | 4 | Entscheiden, wer sie betreibt: Sie selbst, ein Hoster oder ein Partner | [Hosting auswählen](auswahl/hosting-auswaehlen.md), [Fragen an einen Partner](auswahl/fragen-an-einen-partner.md) |
-| 5 | Die Anforderungen und den Bewertungsbogen ausfüllen und über ein Pilotprojekt entscheiden | [Checkliste Anforderungen](../../../eng-us/help/businesses/templates/requirements-checklist.md), [Bewertungsbogen für Anbieter](../../../eng-us/help/businesses/templates/vendor-evaluation-scorecard.md) |
+| 5 | Die Anforderungen und den Bewertungsbogen ausfüllen und über ein Pilotprojekt entscheiden | [Checkliste Anforderungen](vorlagen/checkliste-anforderungen.md), [Bewertungsbogen für Anbieter](vorlagen/bewertungsbogen-fuer-anbieter.md) |
 
 Die vollständige Lesereihenfolge steht im [Lesepfad](lesepfad-fuer-unternehmen.md). Kurze Antworten finden Sie in der
 [FAQ](faq-fuer-unternehmen.md), und die Begriffe sind im [Glossar](glossar-fuer-unternehmen.md) erklärt.
@@ -146,7 +146,7 @@ Die vollständige Lesereihenfolge steht im [Lesepfad](lesepfad-fuer-unternehmen.
 | [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md) | Die Website bauen |
 | [Anwendungsentwickler](../../../eng-us/help/creators/app-creators/app-creators-start-here.md) | Eigene Anwendungen und Integrationen bauen |
 | [Hosting-Anbieter](../hosting/hosting-anbieter-hier-beginnen.md) | Exponential für Kunden betreiben |
-| [Presse](../../../eng-us/help/press/press-start-here.md) | Journalisten und Rezensenten |
+| [Presse](../presse/presse-hier-beginnen.md) | Journalisten und Rezensenten |
 
 ## Verwandte Seiten
 

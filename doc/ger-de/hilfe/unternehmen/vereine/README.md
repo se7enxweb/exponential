@@ -37,7 +37,7 @@ Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezweb
 
 > **Hinweis**
 > Größere Mitgliederorganisationen mit Registrierung, Bereichen nur für Mitglieder und Kommunikation mit Mitgliedern
-> sollten auch den Bereich [Mitglieder](../../../../eng-us/help/businesses/members/README.md) lesen. Wohltätige Organisationen und Stiftungen finden
+> sollten auch den Bereich [Mitglieder](../mitglieder/README.md) lesen. Wohltätige Organisationen und Stiftungen finden
 > Spenden und Kampagnen unter [Gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/README.md).
 
 ## Die Seiten dieses Bereichs
@@ -64,7 +64,7 @@ Die Website-Oberfläche `ezwebin`, die diese Klassen mitbringt (`extension/ezweb
 
 - [Gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/README.md): Spenden, Anmeldung von Ehrenamtlichen, Kampagnen,
   Barrierefreiheit, kleine Budgets.
-- [Mitglieder](../../../../eng-us/help/businesses/members/README.md): Registrierung von Mitgliedern und Inhalte nur für Mitglieder.
+- [Mitglieder](../mitglieder/README.md): Registrierung von Mitgliedern und Inhalte nur für Mitglieder.
 - [Newsletter](../../../../eng-us/help/businesses/newsletters/README.md): Mails an Mitglieder und Unterstützer.
 - [Bibliotheken und Kataloge](../bibliotheken/README.md): für Gruppen, die eine Sammlung pflegen.
 - [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): Konten, Zugriffsprüfungen, DSGVO-Grundlagen.

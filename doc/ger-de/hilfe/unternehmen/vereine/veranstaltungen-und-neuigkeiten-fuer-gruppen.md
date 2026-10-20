@@ -109,7 +109,7 @@ die nur Mitglieder lesen dürfen; Besucher können sie dann nicht öffnen, und d
 dürfen ([Website-Suche](../../../../eng-us/help/creators/website-creators/site-search.md#the-built-in-engine)). Verwenden Sie Ordner nur
 für Mitglieder nicht als Quellen öffentlicher Feeds oder als Artikelvorrat eines öffentlichen Newsletters
 ([Sektionen und Objektzustände](../../../../eng-us/help/creators/website-creators/sections-and-object-states.md),
-[Inhalte nur für Mitglieder](../../../../eng-us/help/businesses/members/members-only-content.md)).
+[Inhalte nur für Mitglieder](../mitglieder/inhalte-nur-fuer-mitglieder.md)).
 
 ## Checkliste für Veranstaltungen und Neuigkeiten
 
@@ -123,9 +123,9 @@ für Mitglieder nicht als Quellen öffentlicher Feeds oder als Artikelvorrat ein
 ## Verwandte Seiten
 
 - [Vereine und kleine Gruppen](README.md)
-- [Veranstaltungen und Kalender](../../../../eng-us/help/businesses/members/events-and-calendars.md)
-- [Kommunikation mit Mitgliedern](../../../../eng-us/help/businesses/members/member-communications.md)
-- [Feeds für Neuerwerbungen](../../../../eng-us/help/businesses/libraries/feeds-for-new-acquisitions.md)
+- [Veranstaltungen und Kalender](../mitglieder/veranstaltungen-und-kalender.md)
+- [Kommunikation mit Mitgliedern](../mitglieder/kommunikation-mit-mitgliedern.md)
+- [Feeds für Neuerwerbungen](../bibliotheken/feeds-fuer-neuerwerbungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -118,7 +118,7 @@ waren und was sich in den letzten Monaten geändert hat, ohne fragen zu müssen.
       Eigentümer zugeordnet.
 - [ ] Der Leitfaden für Redakteure nennt die neuen Rolleninhaber.
 - [ ] Die monatliche Routine hat bei jeder Aufgabe neue Namen
-      ([Monatliche Betriebscheckliste](../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md)).
+      ([Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md)).
 - [ ] Ein Termin für die Prüfung der nächsten Übergabe steht im Kalender der Gruppe.
 
 ## Checkliste für die Übergabe

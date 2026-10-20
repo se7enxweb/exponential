@@ -16,7 +16,7 @@ halten, die richtigen E-Mails an die richtigen Menschen zu schicken und Konten a
 
 Diese Seite ist für die Mitgliederverwaltung, das Vorstandsmitglied des Vereins, das für die Website verantwortlich ist,
 und die Ehrenamtlichen, die helfen. Die Planung einer Mitglieder-Website behandelt
-[Mitglieder-Websites für Unternehmen](../../../../eng-us/help/businesses/members/README.md).
+[Mitglieder-Websites für Unternehmen](../../unternehmen/mitglieder/README.md).
 
 ## Was Exponential einer Mitglieder-Website bietet
 
@@ -24,10 +24,10 @@ und die Ehrenamtlichen, die helfen. Die Planung einer Mitglieder-Website behande
 |---|---|---|
 | Menschen registrieren sich selbst | Registrierung von Benutzern, wo gewünscht mit einem Genehmigungsschritt | [Registrierung von Mitgliedern und Mitgliederbereiche](../../../../eng-us/help/creators/website-creators/member-registration-and-areas.md) |
 | Sie erfahren von neuen Registrierungen | Die E-Mail „New user registered“ mit signierten Links zum Ansehen, Genehmigen oder Ablehnen des Kontos (6.0.15) | [Administratorlinks bei Registrierungen](../../../../eng-us/features/6.0/registration-admin-links.md) |
-| Inhalte nur für Mitglieder | Sektionen und Rollen: Anonyme Besucher sehen einen Teil, Mitglieder einen anderen | [Inhalte nur für Mitglieder](../../../../eng-us/help/businesses/members/members-only-content.md), [Sektionen](../../../anleitungen/sektionen.md) |
+| Inhalte nur für Mitglieder | Sektionen und Rollen: Anonyme Besucher sehen einen Teil, Mitglieder einen anderen | [Inhalte nur für Mitglieder](../../unternehmen/mitglieder/inhalte-nur-fuer-mitglieder.md), [Sektionen](../../../anleitungen/sektionen.md) |
 | Mitglieder wählen ihre E-Mails | E-Mail-Einstellungen: eine Seite pro Person, um E-Mails zu wählen und zu beenden und ihre Daten herunterzuladen | [E-Mail-Einstellungen](../../../../eng-us/features/6.0/mail-preferences.md) |
 | Newsletter an Mitglieder | Die Erweiterung CJW Newsletter | [Newsletter](../wachstum/newsletter.md) |
-| Veranstaltungen, Foren | Klassen für Veranstaltungskalender und Foren in der Demo-Installation | [Veranstaltungen und Kalender](../../../../eng-us/help/businesses/members/events-and-calendars.md) |
+| Veranstaltungen, Foren | Klassen für Veranstaltungskalender und Foren in der Demo-Installation | [Veranstaltungen und Kalender](../../unternehmen/mitglieder/veranstaltungen-und-kalender.md) |
 | Alte und doppelte Konten finden | **Benutzer > Benutzerkonten prüfen** (`user/hygiene`) | [Benutzerkonten prüfen](../../../../eng-us/features/6.0/user-hygiene.md) |
 
 Die Demo-Installation unter <https://alpha.se7enx.com> hat die Klassen Event calendar, Event, Forums, Forum, Forum topic
@@ -65,7 +65,7 @@ Folgen Sie dem [Lesepfad für Mitglieder-Websites](lesepfad-mitglieder-websites.
 ## Verwandte Seiten
 
 - [Lesepfad für Mitglieder-Websites](lesepfad-mitglieder-websites.md)
-- [Checkliste für Mitglieder-Websites (Unternehmen)](../../../../eng-us/help/businesses/members/member-site-checklist.md)
-- [Kommunikation mit Mitgliedern](../../../../eng-us/help/businesses/members/member-communications.md)
+- [Checkliste für Mitglieder-Websites (Unternehmen)](../../unternehmen/mitglieder/checkliste-fuer-mitgliederwebsites.md)
+- [Kommunikation mit Mitgliedern](../../unternehmen/mitglieder/kommunikation-mit-mitgliedern.md)
 - [Vereine](../../unternehmen/vereine/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

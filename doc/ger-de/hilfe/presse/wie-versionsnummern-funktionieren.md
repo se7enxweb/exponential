@@ -49,7 +49,7 @@ Die Versionen von Exponential springen bei neun nicht um. Nach 6.0.9 kam 6.0.10 
   ([Release Notes von Velocity](../../../changelogs/extensions/exponential-velocity.md)).
 
 Lesen Sie einen Sprung in der letzten Stelle also nicht als kleines oder großes Release. Die Nummer gibt die
-Reihenfolge an, nicht den Umfang. Was ein Release enthält, steht in seinem Changelog ([Ein Changelog lesen](../../../eng-us/help/press/reading-a-changelog.md)).
+Reihenfolge an, nicht den Umfang. Was ein Release enthält, steht in seinem Changelog ([Ein Changelog lesen](ein-changelog-lesen.md)).
 
 ## Tags, Branches und die Entwicklungslinie
 
@@ -61,7 +61,7 @@ Reihenfolge an, nicht den Umfang. Was ein Release enthält, steht in seinem Chan
 | Release-Branches `6.0.7` bis `6.0.14` | „der Stand jeder Release-Linie“ | Dieselbe Seite |
 
 Nur ein Tag ist ein Release. Ein Branch bewegt sich jeden Tag; ein Tag nie
-([Veröffentlichte Versionen ändern sich nie](../../../eng-us/help/press/published-versions-never-change.md)).
+([Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md)).
 
 ## Versionen richtig sortieren
 
@@ -92,7 +92,7 @@ Wenn ein Changelog sagt, ein Paket „benötigt `~1.4.39`“, schreiben Sie „b
 ## Verwandte Seiten
 
 - [Kurzkarte der Namensregeln](../fuersprecher/kurzkarte-namensregeln.md)
-- [Veröffentlichte Versionen ändern sich nie](../../../eng-us/help/press/published-versions-never-change.md)
+- [Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md)
 - [Ein Release selbst überprüfen](../../../eng-us/help/press/verifying-a-release-yourself.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

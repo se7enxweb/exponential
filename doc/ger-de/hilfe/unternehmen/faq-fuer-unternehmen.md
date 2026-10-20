@@ -74,7 +74,7 @@ Siehe [Aktualisierungen ohne Überraschungen](../../../eng-us/help/businesses/re
 
 **Gibt es einen eingebauten Shop?**
 Ja: „Advanced e-Commerce Stores (Built in)“ (`README.md`), mit Produkten, Warenkorb, Bestellungen, USt und Währungen
-sowie Zahlungsanbietern wie PayPal über `ezpaypal`. Siehe [Online-Shops](../../../eng-us/help/businesses/stores/README.md).
+sowie Zahlungsanbietern wie PayPal über `ezpaypal`. Siehe [Online-Shops](shops/README.md).
 
 **Können wir eine mobile App haben?**
 Ja, über die REST API („A headless CRUD REST API“, `README.md`), die dieselben Berechtigungen prüft wie die Website

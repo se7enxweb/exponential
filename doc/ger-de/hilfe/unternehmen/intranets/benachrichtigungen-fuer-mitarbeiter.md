@@ -128,7 +128,7 @@ Die Mailzustellung selbst (Absenderadresse, SPF und DKIM bei Ihrem Mailanbieter)
 - [Benachrichtigungen: die Anleitung für Benutzer](../../../../eng-us/features/6.0/notifications.md)
 - [Benachrichtigungen: die Anleitung für Administratoren](../../../anleitungen/benachrichtigungen-administrator.md)
 - [Neuigkeiten und Ankündigungen](neuigkeiten-und-ankuendigungen.md)
-- [Kommunikation mit Mitgliedern](../../../../eng-us/help/businesses/members/member-communications.md)
+- [Kommunikation mit Mitgliedern](../mitglieder/kommunikation-mit-mitgliedern.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

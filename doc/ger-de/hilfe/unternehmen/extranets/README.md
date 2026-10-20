@@ -81,8 +81,8 @@ Die Werkzeuge sind dieselben, daher lohnt sich auch der Bereich [Intranets](../i
 ## Benachbarte Bereiche
 
 - [Intranets](../intranets/README.md): dieselben Werkzeuge für Mitarbeiter.
-- [Mitgliederwebsites](../../../../eng-us/help/businesses/members/README.md): offene Registrierung für die Öffentlichkeit.
-- [Shops](../../../../eng-us/help/businesses/stores/README.md): der eingebaute Shop für den Online-Verkauf.
+- [Mitgliederwebsites](../mitglieder/README.md): offene Registrierung für die Öffentlichkeit.
+- [Shops](../shops/README.md): der eingebaute Shop für den Online-Verkauf.
 - [Sicherheit](../../../../eng-us/help/businesses/security/README.md): Zugriffsprüfungen, DSGVO-Grundlagen, Konten und Passwörter.
 - [Multisite](../../../../eng-us/help/businesses/multisite/README.md): mehrere Websites in einer Installation.
 - Öffentliche Stellen: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).

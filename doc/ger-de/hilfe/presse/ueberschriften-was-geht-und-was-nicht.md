@@ -57,7 +57,7 @@ Menschen lesen werden. Eine Überschrift ist eine Behauptung; sie braucht diesel
 
 ## Video- und Social-Media-Titel
 
-- Titel und Vorschaubild stellen zusammen eine Behauptung auf; beide müssen stimmen ([Titel, Vorschaubilder und Beschreibungen](../../../eng-us/help/press/titles-thumbnails-and-descriptions.md)).
+- Titel und Vorschaubild stellen zusammen eine Behauptung auf; beide müssen stimmen ([Titel, Vorschaubilder und Beschreibungen](titel-vorschaubilder-und-beschreibungen.md)).
 - Wenn das Video gesponsert ist, sagen Sie das im Titel oder am Anfang der Beschreibung, nicht nur am Ende
   ([Offenlegung und Ethik beim Sponsoring](../../../eng-us/help/press/disclosure-and-sponsorship-ethics.md)).
 - Versionsnummern in Titeln veralten schnell; nennen Sie die Version, damit die Zuschauer wissen, was sie sehen werden.

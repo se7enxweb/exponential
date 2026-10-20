@@ -108,7 +108,7 @@ Raten Sie die Minuten nicht; messen Sie sie vorher und nachher:
 - [ ] Vergleichen Sie nach dem Start nach drei Monaten dieselben Notizen und Zählungen.
 - [ ] Verwenden Sie die eigenen Zahlen der Website: Suchanfragen und ihre Ergebnisse und die Aufzeichnung der
       Veröffentlichungen im Audit-Trail ([Kennzahlen aus Logs und Audit](../../fuehrung/kennzahlen-aus-logs-und-audit.md)).
-- [ ] Tragen Sie den gemessenen Wert beim [Jahresrückblick](../../../../eng-us/help/businesses/templates/annual-review-checklist.md) in die Berechnung
+- [ ] Tragen Sie den gemessenen Wert beim [Jahresrückblick](../vorlagen/checkliste-jahresrueckblick.md) in die Berechnung
       zurück.
 
 ## Was Sie für Ihr Intranet ändern
@@ -124,7 +124,7 @@ Raten Sie die Minuten nicht; messen Sie sie vorher und nachher:
 - [Intranets](../intranets/README.md)
 - [Intranet planen](../intranets/intranet-planen.md)
 - [Gesamtbetriebskosten](gesamtbetriebskosten.md)
-- [Vorlage ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)
+- [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

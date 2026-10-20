@@ -71,12 +71,12 @@ anbieten: Die GPL schreibt keinen Lieferanten vor
 ## Wie Sie auswählen, Schritt für Schritt
 
 1. **Schreiben Sie eine Projektbeschreibung.** Was Sie wollen, bis wann, mit welchem Budgetrahmen; verwenden Sie die
-   [Vorlage für Projektbeschreibungen](../../../../eng-us/help/businesses/templates/project-brief-template.md) und die
-   [Checkliste Anforderungen](../../../../eng-us/help/businesses/templates/requirements-checklist.md).
+   [Vorlage für Projektbeschreibungen](../vorlagen/vorlage-fuer-projektbeschreibungen.md) und die
+   [Checkliste Anforderungen](../vorlagen/checkliste-anforderungen.md).
 2. **Bitten Sie zwei oder drei Firmen** um ein schriftliches Angebot zur selben Projektbeschreibung.
 3. **Führen Sie Gespräche** mit den [Fragen an einen Partner](fragen-an-einen-partner.md).
 4. **Verlangen Sie Belege** (siehe unten), und rufen Sie mindestens eine Referenz an.
-5. **Bewerten Sie die Angebote** mit dem [Bewertungsbogen für Anbieter](../../../../eng-us/help/businesses/templates/vendor-evaluation-scorecard.md),
+5. **Bewerten Sie die Angebote** mit dem [Bewertungsbogen für Anbieter](../vorlagen/bewertungsbogen-fuer-anbieter.md),
    mit denselben Gewichten für alle.
 6. **Vergleichen Sie die Gesamtkosten**, nicht die erste Rechnung ([Gesamtbetriebskosten](../kosten/gesamtbetriebskosten.md)).
 7. **Vereinbaren Sie den Vertrag**, einschließlich Support, Updates und Ausstieg

@@ -117,13 +117,13 @@ die Investition ihr Geld zurückbringt und danach weiter spart.
 - [ ] Nennen Sie keine Preise anderer Produkte, wenn Sie kein schriftliches Angebot haben; vergleichen Sie sonst
       qualitativ ([Exponential sachlich vergleichen](../../geschaeft/exponential-sachlich-vergleichen.md)).
 - [ ] Wiederholen Sie die Berechnung nach einem Jahr mit gemessenen Zahlen
-      ([Checkliste Jahresrückblick](../../../../eng-us/help/businesses/templates/annual-review-checklist.md)).
+      ([Checkliste Jahresrückblick](../vorlagen/checkliste-jahresrueckblick.md)).
 
 ## Verwandte Seiten
 
 - [Warum Stabilität wichtig ist](../../../../eng-us/help/businesses/reliability/why-stability-matters.md)
 - [Release-Linie und Support-Richtlinie](../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md)
-- [Vorlage ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)
+- [Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md)
 - [Kennzahlen aus Logs und Audit](../../fuehrung/kennzahlen-aus-logs-und-audit.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

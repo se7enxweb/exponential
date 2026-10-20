@@ -136,7 +136,7 @@ Der Bereich [Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/RE
 
 - [Verfügbarkeit in der Praxis](../../../../eng-us/help/businesses/reliability/uptime-practice.md)
 - [Rendite der Stabilität](rendite-der-stabilitaet.md)
-- [Monatliche Betriebscheckliste](../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md)
+- [Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

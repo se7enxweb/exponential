@@ -129,7 +129,7 @@ Sie bei jeder Zeile einen Namen ein, und laden Sie einen ersten Partner erst ein
 
 - [Extranets und Partnerportale](README.md)
 - [Checkliste für die Intranet-Einführung](../intranets/checkliste-fuer-die-intranet-einfuehrung.md)
-- [Vorlage Checkliste Go-live](../../../../eng-us/help/businesses/templates/go-live-checklist.md)
+- [Vorlage Checkliste Go-live](../vorlagen/checkliste-go-live.md)
 - [Checkliste zur Sicherheitsprüfung für Hoster](../../hosting/checklisten/checkliste-fuer-die-sicherheitspruefung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

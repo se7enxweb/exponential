@@ -96,8 +96,8 @@ bereits beantwortet, zitieren Sie die Dokumentation und nutzen Sie Ihre Zeit fü
 
 ## Verwandte Seiten
 
-- [Ein Briefing vorbereiten](../../../eng-us/help/press/preparing-a-briefing.md)
-- [Ein Interview anfragen](../../../eng-us/help/press/requesting-an-interview.md)
+- [Ein Briefing vorbereiten](ein-briefing-vorbereiten.md)
+- [Ein Interview anfragen](ein-interview-anfragen.md)
 - [Aussagen zuordnen](../../../eng-us/help/press/attributing-statements.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

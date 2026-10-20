@@ -17,7 +17,7 @@ unter [ROI-Beispielannahmen](roi-beispielannahmen.md) und im [ROI-Arbeitsblatt](
 ## Die Formel
 
 ROI = (Nutzen - Kosten) / Kosten x 100 %, über einen Zeitraum, den Sie wählen, bei einer laufenden Website meist ein
-Jahr. Dieselbe Formel wird im Bereich für Unternehmen verwendet ([Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)).
+Jahr. Dieselbe Formel wird im Bereich für Unternehmen verwendet ([Vorlage für ein ROI-Arbeitsblatt](../../unternehmen/vorlagen/vorlage-roi-arbeitsblatt.md)).
 
 ## Wenige Kennzahlen wählen
 
@@ -64,7 +64,7 @@ die nun die Website beantwortet.
 - **Bestellwert ist kein Ertrag.** Das Shop-Dashboard zeigt den Bestellwert; Gebühren, Erstattungen und Mehrwertsteuer
   stehen in Ihrer Buchhaltung ([Shop-Berichte](../handel/shop-berichte.md)).
 - **Gesparte Zeit ist kein gespartes Geld**, es sei denn, die Zeit wird für etwas anderes genutzt. Verwenden Sie einen
-  Realisierungsfaktor und sagen Sie, welchen ([Vorlage für ein ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md)).
+  Realisierungsfaktor und sagen Sie, welchen ([Vorlage für ein ROI-Arbeitsblatt](../../unternehmen/vorlagen/vorlage-roi-arbeitsblatt.md)).
 - **Fehlende Kosten.** Die Arbeitszeit für Inhalte ist meist der größte Kostenposten und der, der am häufigsten
   weggelassen wird ([Gesamtbetriebskosten](../../unternehmen/kosten/gesamtbetriebskosten.md)).
 - **Testdaten.** Testbestellungen und Testeinsendungen blähen die Zahlen auf; entfernen Sie sie.

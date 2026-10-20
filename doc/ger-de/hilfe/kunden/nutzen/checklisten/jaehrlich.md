@@ -11,7 +11,7 @@ type: help
 
 Diese Seite ist die Checkliste des Betreibers für das Jahr, verteilt über einige Wochen, bevor das Budget für das
 nächste Jahr festgelegt wird. Zwei Sitzungen tragen das meiste davon: die [jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md)
-(was die Website bringt und kostet) und die betriebliche [Checkliste für die Jahresüberprüfung](../../../../../eng-us/help/businesses/templates/annual-review-checklist.md)
+(was die Website bringt und kostet) und die betriebliche [Checkliste für die Jahresüberprüfung](../../../unternehmen/vorlagen/checkliste-jahresrueckblick.md)
 (Updates, Sicherheit, Datenschutz, Wiederherstellung). Die folgende Liste stellt sicher, dass nichts zwischen beide fällt.
 
 ## Die Checkliste
@@ -65,14 +65,14 @@ NEXT YEAR
 
 | Teil | Lesen Sie |
 |---|---|
-| Überprüfungen | [Jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md), [Checkliste für die Jahresüberprüfung](../../../../../eng-us/help/businesses/templates/annual-review-checklist.md) |
+| Überprüfungen | [Jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md), [Checkliste für die Jahresüberprüfung](../../../unternehmen/vorlagen/checkliste-jahresrueckblick.md) |
 | Release-Linie und PHP | `SECURITY.md`, [Release-Linie und Support-Richtlinie](../../../../../eng-us/help/businesses/reliability/release-line-and-support-policy.md), [Runbook für PHP-Upgrades](../../../hosting/runbooks/php-upgrade.md) |
 | Upgrade-Prüfung | [Upgrade-Prüfung](../../../../anleitungen/upgrade-pruefung.md) |
-| Verträge | [Grundlagen zu Verträgen und SLAs](../../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md), [Scorecard zur Bewertung von Anbietern](../../../../../eng-us/help/businesses/templates/vendor-evaluation-scorecard.md) |
+| Verträge | [Grundlagen zu Verträgen und SLAs](../../../unternehmen/auswahl/grundlagen-zu-vertraegen-und-slas.md), [Scorecard zur Bewertung von Anbietern](../../../unternehmen/vorlagen/bewertungsbogen-fuer-anbieter.md) |
 | Zugriff | [Zugriffsüberprüfungen](../../../../../eng-us/help/businesses/security/access-reviews.md) |
 | Datenschutz | [DSGVO-Grundlagen](../../../../../eng-us/help/businesses/security/gdpr-basics.md), [Datenaufbewahrung und Löschung](../../../../../eng-us/help/businesses/security/data-retention-and-deletion.md) |
 | Barrierefreiheit | [Barrierefreiheit testen](../../../../../eng-us/help/creators/website-creators/testing-accessibility.md) |
-| Shop | [Mehrwertsteuer-Checkliste](../../handel/mehrwertsteuer-checkliste.md), [Kartenzahlungen und PCI](../../handel/kartenzahlungen-und-pci.md), [Ländergruppen und Regionen](../../../../../eng-us/help/businesses/stores/country-groups-and-regions.md) |
+| Shop | [Mehrwertsteuer-Checkliste](../../handel/mehrwertsteuer-checkliste.md), [Kartenzahlungen und PCI](../../handel/kartenzahlungen-und-pci.md), [Ländergruppen und Regionen](../../../unternehmen/shops/laendergruppen-und-regionen.md) |
 | Budget | [Budget für Upgrades und Wartung](../../../unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md) |
 
 > **Hinweis**
@@ -92,6 +92,6 @@ NEXT YEAR
 
 - [Jährliche Überprüfung des Nutzens](../jaehrliche-ueberpruefung-des-nutzens.md)
 - [Vierteljährliche Checkliste](vierteljaehrlich.md)
-- [Checkliste für die Jahresüberprüfung](../../../../../eng-us/help/businesses/templates/annual-review-checklist.md)
+- [Checkliste für die Jahresüberprüfung](../../../unternehmen/vorlagen/checkliste-jahresrueckblick.md)
 - [Checklisten für Betreiber](README.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

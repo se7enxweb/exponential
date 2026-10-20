@@ -44,7 +44,7 @@ Alles andere ist optional. Die allgemeine Methode steht in
 - [ ] Neuigkeiten.
 - [ ] Veranstaltungskalender ([Veranstaltungen und Neuigkeiten für Gruppen](veranstaltungen-und-neuigkeiten-fuer-gruppen.md)).
 - [ ] Beitritts- oder Kontaktformular ([Formulare und Rückmeldungen von Mitgliedern](formulare-und-rueckmeldungen-von-mitgliedern.md)).
-- [ ] Mitgliederbereich, falls nötig ([Mitglieder](../../../../eng-us/help/businesses/members/README.md)).
+- [ ] Mitgliederbereich, falls nötig ([Mitglieder](../mitglieder/README.md)).
 - [ ] Datenschutzerklärung und die rechtlichen Angaben, die Ihr Recht verlangt.
 
 ## Klassen, die Sie nicht bauen müssen

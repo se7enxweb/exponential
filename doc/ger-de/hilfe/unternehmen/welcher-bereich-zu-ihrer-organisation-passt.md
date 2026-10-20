@@ -41,11 +41,11 @@ Aufwand jeder braucht.
 
 | Sie | Hauptbereich | Oft auch |
 |---|---|---|
-| Verkaufen physische oder digitale Produkte | [Online-Shops](../../../eng-us/help/businesses/stores/README.md) | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md) |
-| Geben einen Newsletter oder ein Magazin heraus | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md) | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) |
-| Verleihen, verzeichnen oder archivieren Objekte | [Bibliotheken und Kataloge](bibliotheken/README.md) | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) |
+| Verkaufen physische oder digitale Produkte | [Online-Shops](shops/README.md) | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md) |
+| Geben einen Newsletter oder ein Magazin heraus | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md) | [Mitgliederwebsites](mitglieder/README.md) |
+| Verleihen, verzeichnen oder archivieren Objekte | [Bibliotheken und Kataloge](bibliotheken/README.md) | [Mitgliederwebsites](mitglieder/README.md) |
 | Sammeln Spenden und organisieren Ehrenamtliche | [Gemeinnützige Organisationen](../../../eng-us/help/businesses/nonprofits/README.md) | [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
-| Führen einen Verein oder einen Berufsverband | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md) | [Kleine Gruppen und Vereine](vereine/README.md) |
+| Führen einen Verein oder einen Berufsverband | [Mitgliederwebsites](mitglieder/README.md) | [Kleine Gruppen und Vereine](vereine/README.md) |
 | Informieren und unterstützen Mitarbeiter | [Intranets](intranets/README.md) | [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
 | Arbeiten mit Händlern, Lieferanten oder Kunden hinter einer Anmeldung | [Extranets und Partnerportale](extranets/README.md) | [Intranets](intranets/README.md) |
 | Führen mehrere Marken oder Länder | [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md) | [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md) |
@@ -57,10 +57,10 @@ Aufwand jeder braucht.
 | Nutzer | Was sie braucht | Lesen |
 |---|---|---|
 | Anonyme Besucher | Schnelle Seiten, Suche, gute URLs | [Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md), [Website-Ersteller](../../../eng-us/help/creators/website-creators/website-creators-start-here.md) |
-| Kunden mit einem Konto | Registrierung, Bestellhistorie, Datenschutz | [Kundenkonten und Gastbestellung](../../../eng-us/help/businesses/stores/customer-accounts-and-guest-checkout.md), [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md) |
+| Kunden mit einem Konto | Registrierung, Bestellhistorie, Datenschutz | [Kundenkonten und Gastbestellung](shops/kundenkonten-und-gastbestellung.md), [DSGVO-Grundlagen](../../../eng-us/help/businesses/security/gdpr-basics.md) |
 | Mitarbeiter | Rollen pro Abteilung, Freigabe, Suche | [Abteilungen, Rollen und Sektionen](intranets/abteilungen-rollen-und-sektionen.md) |
 | Partner | Freigegebene Registrierung, getrennte Bereiche | [Registrierung und Kontofreigabe](extranets/registrierung-und-kontofreigabe.md) |
-| Mitglieder | Inhalte nur für Mitglieder, Kommunikation | [Inhalte nur für Mitglieder](../../../eng-us/help/businesses/members/members-only-content.md) |
+| Mitglieder | Inhalte nur für Mitglieder, Kommunikation | [Inhalte nur für Mitglieder](mitglieder/inhalte-nur-fuer-mitglieder.md) |
 | Ehrenamtliche, die bearbeiten | Einfache Rollen, Übergabe | [Gemeinsam bearbeiten mit Ehrenamtlichen](vereine/gemeinsam-bearbeiten-mit-ehrenamtlichen.md) |
 | Apps und andere Systeme | Eine stabile API | [Headless mit der REST API](../../../eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md) |
 
@@ -75,10 +75,10 @@ Das sind Muster, keine Berichte über echte Kunden.
 
 | Muster | Bereiche in dieser Reihenfolge |
 |---|---|
-| Ein kleiner Shop, der wächst | [Shops](../../../eng-us/help/businesses/stores/README.md), [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md), dann [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md) |
+| Ein kleiner Shop, der wächst | [Shops](shops/README.md), [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md), dann [Mobil und headless](../../../eng-us/help/businesses/mobile-and-headless/README.md) |
 | Ein Unternehmen mit öffentlicher Website, Intranet und Partnerportal auf einer Installation | [Intranets](intranets/README.md), [Extranets](extranets/README.md), [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md), [Sicherheit](../../../eng-us/help/businesses/security/README.md) |
-| Eine Mitgliederorganisation | [Mitgliederwebsites](../../../eng-us/help/businesses/members/README.md), [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
-| Eine Marke, die in mehreren Ländern verkauft | [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md), [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md), [Shops](../../../eng-us/help/businesses/stores/README.md) |
+| Eine Mitgliederorganisation | [Mitgliederwebsites](mitglieder/README.md), [Newsletter](../../../eng-us/help/businesses/newsletters/README.md), [Kleine Gruppen und Vereine](vereine/README.md) |
+| Eine Marke, die in mehreren Ländern verkauft | [Marken mit Multisite](../../../eng-us/help/businesses/multisite/README.md), [Mehrsprachige Unternehmen](../../../eng-us/help/businesses/multilingual/README.md), [Shops](shops/README.md) |
 | Eine Bibliothek oder ein Archiv mit öffentlichem Katalog | [Bibliotheken und Kataloge](bibliotheken/README.md), [Zuverlässigkeit](../../../eng-us/help/businesses/reliability/README.md) |
 
 ## Bereiche, die jede Organisation braucht
@@ -89,7 +89,7 @@ Was auch immer Sie betreiben, lesen Sie diese, bevor Sie live gehen:
 - [Kosten](kosten/README.md): was der Betrieb über Jahre kostet.
 - [Grundlagen zu Sicherheit und Compliance](../../../eng-us/help/businesses/security/README.md).
 - [Hosting und einen Partner auswählen](auswahl/README.md).
-- [Vorlagen und Checklisten](../../../eng-us/help/businesses/templates/README.md), insbesondere die [Checkliste Go-live](../../../eng-us/help/businesses/templates/go-live-checklist.md).
+- [Vorlagen und Checklisten](vorlagen/README.md), insbesondere die [Checkliste Go-live](vorlagen/checkliste-go-live.md).
 
 ## Wenn Exponential 6 nicht das richtige Produkt ist
 

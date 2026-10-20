@@ -40,13 +40,13 @@ Jeder darf die Software für jeden Zweck nutzen, ihren Code untersuchen und änd
 geänderte Kopien. Wer die Software oder eine geänderte Version verbreitet, muss dieselben Freiheiten und den Quellcode
 weitergeben. Wer sie auf dem eigenen Server für die eigene Website betreibt, muss seine Änderungen nicht unter der
 GPL v2 veröffentlichen. Diese Lizenz hat es 7x ermöglicht, den Code weiterzuführen, nachdem sein ursprünglicher
-Entwickler aufgehört hatte ([Thema: Open Source und Lizenzen](../../../eng-us/help/press/story-open-source-and-licenses.md)).
+Entwickler aufgehört hatte ([Thema: Open Source und Lizenzen](thema-open-source-und-lizenzen.md)).
 
 ## Die GFDL in einfachen Worten
 
 Jeder darf die Dokumentation kopieren, weiterverbreiten, übersetzen und bearbeiten, auch kommerziell, wenn die
 Hinweise auf Urheberrecht und Lizenz erhalten bleiben und geänderte Fassungen unter derselben Lizenz stehen
-([Die Dokumentation zitieren und wiederverwenden](../../../eng-us/help/press/quoting-and-reusing-the-documentation.md)).
+([Die Dokumentation zitieren und wiederverwenden](die-dokumentation-zitieren-und-wiederverwenden.md)).
 
 ## Wer das Urheberrecht hält
 
@@ -61,7 +61,7 @@ gemeinsam“, nie „7x gehört Exponential“.
 - „Die Nutzung von Exponential unter den Bedingungen der GNU GPL ist kostenlos. Die Professional License ist nicht mehr
   erhältlich“ (README, „License“).
 - 7x verkauft Dienstleistungen rund um die Software: Entwicklung, Support, Hosting, Schulungen und Migrationen
-  ([7x für Reporter](../../../eng-us/help/press/7x-for-reporters.md#what-it-sells-and-what-stays-free)).
+  ([7x für Reporter](7x-fuer-reporter.md#was-es-verkauft-und-was-kostenlos-bleibt)).
 - Das Partnerprogramm hat kostenpflichtige Stufen für Unternehmen ([Partnerpläne und Preise](../partner/partnertarife-und-preise.md)).
 - Sponsoring finanziert die Arbeit ([Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md)).
 
@@ -74,11 +74,11 @@ gemeinsam“, nie „7x gehört Exponential“.
 | „Open Core: Die guten Funktionen kosten extra.“ | Es ist keine kostenpflichtige Ausgabe der Software dokumentiert; die Professional License „ist nicht mehr erhältlich“. |
 | „Die Dokumentation steht unter Creative Commons.“ | Sie steht unter der GNU FDL 1.3 oder später. |
 | „Velocity steht auch unter der GPL.“ | Velocity steht unter der MIT-Lizenz. |
-| „Kostenlos heißt, niemand wird bezahlt.“ | Die Entwicklung wird von 7x und Sponsoren finanziert ([Zwei Organisationen, ein Projekt](../../../eng-us/help/press/two-organizations-one-project.md)). |
+| „Kostenlos heißt, niemand wird bezahlt.“ | Die Entwicklung wird von 7x und Sponsoren finanziert ([Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md)). |
 
 ## Verwandte Seiten
 
 - [Lizenzen für Käufer erklärt](../geschaeft/lizenzen-fuer-kaeufer.md)
 - [Gesprächspunkte: Open Source und Lizenzen](../fuersprecher/gespraechspunkte-open-source-und-lizenzierung.md)
-- [Die Dokumentation zitieren und wiederverwenden](../../../eng-us/help/press/quoting-and-reusing-the-documentation.md)
+- [Die Dokumentation zitieren und wiederverwenden](die-dokumentation-zitieren-und-wiederverwenden.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

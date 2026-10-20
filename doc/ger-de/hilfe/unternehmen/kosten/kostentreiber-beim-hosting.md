@@ -110,7 +110,7 @@ Jeder davon ist optional. Lassen Sie ihn aus dem Budget heraus, bis ein gemessen
 Der Tarifpreis ist oft kleiner als die Zeit, die jemand mit dem Betrieb der Website verbringt: Aktualisierungen,
 Backups, Wiederherstellungstests, Logs beobachten. Zählen Sie diese Stunden (siehe
 [Gesamtbetriebskosten](gesamtbetriebskosten.md)) oder kaufen Sie sie als Teil eines Managed-Tarifs. Die
-[monatliche Betriebscheckliste](../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md) zeigt, worin die Arbeit besteht.
+[monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md) zeigt, worin die Arbeit besteht.
 
 ## Eine durchgerechnete Monatsschätzung
 

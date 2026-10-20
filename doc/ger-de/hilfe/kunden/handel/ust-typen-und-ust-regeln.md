@@ -65,7 +65,7 @@ Produkts, das diesen Typ verwendet.
   Kategorie“ oder den betroffenen Kategorien. Eine Regel, die das Land genau nennt, hat Vorrang vor einer Regel für
   „jedes Land“ (`kernel/classes/vathandlers/ezdefaultvathandler.php`).
 - [ ] Das Land kann in den Formularen des Shops gewählt werden; die Länderliste ist gruppiert, mit den
-  meistverwendeten Ländern zuerst ([Ländergruppen und Regionen](../../../../eng-us/help/businesses/stores/country-groups-and-regions.md)).
+  meistverwendeten Ländern zuerst ([Ländergruppen und Regionen](../../unternehmen/shops/laendergruppen-und-regionen.md)).
 - [ ] Eine Testbestellung aus diesem Land zeigt die erwartete Mehrwertsteuer.
 
 ## Wenn eine Produktgruppe einen eigenen Satz hat

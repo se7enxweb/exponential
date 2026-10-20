@@ -36,7 +36,7 @@ mit einer Abdeckungsseite, die zeigt, dass keine fehlt
 | Websites lassen sich mit Git aktualisieren | [Mit Git aktualisieren](../mit-git-aktualisieren.md) |
 | Der älteste Commit stammt vom 2. September 2002 | `git log --reverse`; [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) |
 | Jede Änderung seit Dezember 2023 steht in der Geschichte und in den Ledgern | [Die Geschichte](../../../eng-us/history/README.md), [Die Ledger](../../../eng-us/history/ledger/README.md), [Abdeckung](../../../eng-us/history/coverage.md) |
-| Veröffentlichte Versionen werden nie geändert; eine Korrektur ist das nächste Release | [Veröffentlichte Versionen ändern sich nie](../../../eng-us/help/press/published-versions-never-change.md) |
+| Veröffentlichte Versionen werden nie geändert; eine Korrektur ist das nächste Release | [Veröffentlichte Versionen ändern sich nie](veroeffentlichte-versionen-aendern-sich-nie.md) |
 | Administratoren können Checkouts mit `git_manager` aus der Administration aktualisieren | [git_manager](../../../eng-us/features/6.0/extensions/git_manager.md) |
 
 ## Was Sie nicht behaupten sollten
@@ -53,7 +53,7 @@ mit einer Abdeckungsseite, die zeigt, dass keine fehlt
 
 ## Verwandte Seiten
 
-- [Die Geschichtsseiten als Quelle](../../../eng-us/help/press/the-history-pages-as-a-source.md)
+- [Die Geschichtsseiten als Quelle](die-geschichtsseiten-als-quelle.md)
 - [Thema: jeder Pull Request wird übernommen](../../../eng-us/help/press/story-every-pull-request-merged.md)
 - [Mit Git entwickeln](../mit-git-entwickeln.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -128,8 +128,8 @@ Aus [Übergabe bei Wechsel der Ehrenamtlichen](uebergabe-bei-wechsel-der-ehrenam
 
 - [Vereine und kleine Gruppen](README.md)
 - [Checkliste für gemeinnützige Organisationen](../../../../eng-us/help/businesses/nonprofits/nonprofit-checklist.md)
-- [Checkliste für den Jahresrückblick](../../../../eng-us/help/businesses/templates/annual-review-checklist.md)
-- [Monatliche Betriebscheckliste](../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md)
+- [Checkliste für den Jahresrückblick](../vorlagen/checkliste-jahresrueckblick.md)
+- [Monatliche Betriebscheckliste](../vorlagen/monatliche-betriebscheckliste.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

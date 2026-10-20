@@ -82,7 +82,7 @@ URLs mit Weiterleitungen funktionsfähig zu halten ([Migration zu und von Expone
    letzte Durchlauf.
 6. **Halten Sie einen Rückfallplan bereit.** Die alte Website und ihre Backups bleiben bereit, bis die neue abgenommen
    ist ([14.14 Rückfallplan](../../../installation/14-migration-von-4x.md#1414-rollback-plan)).
-7. **Gehen Sie live** mit der [Checkliste Go-live](../../../../eng-us/help/businesses/templates/go-live-checklist.md).
+7. **Gehen Sie live** mit der [Checkliste Go-live](../vorlagen/checkliste-go-live.md).
 8. **Nachsorge.** Beobachten Sie in den ersten Wochen Logs, 404-Fehler und die Suche.
 
 ## Entscheidungen, die nur Sie treffen können

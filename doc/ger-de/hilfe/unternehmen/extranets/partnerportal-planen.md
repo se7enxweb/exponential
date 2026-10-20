@@ -117,7 +117,7 @@ Rechtsberatung.
 - [Extranets und Partnerportale](README.md)
 - [Ein Exponential-Projekt planen](../../fuehrung/ein-exponential-projekt-planen.md)
 - [Risikomanagement](../../fuehrung/risikomanagement.md)
-- [Checkliste Anforderungen](../../../../eng-us/help/businesses/templates/requirements-checklist.md)
+- [Checkliste Anforderungen](../vorlagen/checkliste-anforderungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

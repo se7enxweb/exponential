@@ -12,7 +12,7 @@ type: help
 Diese Seite ist die monatliche Prüfung des Betreibers, erledigt in den ersten Tagen jedes Monats mit Antworten vom
 Hoster oder Partner. Sie hält die Website aktuell und sicher und die Kosten bekannt. Der Bereich für Unternehmen hat eine
 umfassendere Vorlage für den Betrieb für Teams, die den Server selbst betreiben
-([Monatliche Checkliste für den Betrieb](../../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md)); diese Liste
+([Monatliche Checkliste für den Betrieb](../../../unternehmen/vorlagen/monatliche-betriebscheckliste.md)); diese Liste
 ist der Anteil des Betreibers daran.
 
 ## Die Checkliste
@@ -90,6 +90,6 @@ Eine Antwort „Ich glaube schon“ auf eine dieser Fragen ist ein Grund, nächs
 
 - [Wöchentliche Checkliste](woechentlich.md)
 - [Vierteljährliche Checkliste](vierteljaehrlich.md)
-- [Monatliche Checkliste für den Betrieb](../../../../../eng-us/help/businesses/templates/monthly-operations-checklist.md)
+- [Monatliche Checkliste für den Betrieb](../../../unternehmen/vorlagen/monatliche-betriebscheckliste.md)
 - [Monatliche Shop-Checkliste](../../handel/monatliche-shop-checkliste.md)
 - [Freie Dokumentation](../../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

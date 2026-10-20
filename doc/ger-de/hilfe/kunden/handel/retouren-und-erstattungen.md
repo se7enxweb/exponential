@@ -61,7 +61,7 @@ Erstattungen bewegen Geld; beschränken Sie sie daher auf wenige Personen:
 Jede Statusänderung wird in der Statushistorie der Bestellung festgehalten (`kernel/classes/ezorderstatushistory.php`).
 
 Wenn Ihr Shop die Erweiterung `ezauthorize` verwendet, hat diese ein Erstattungsmodul in der Administration
-([Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../../../eng-us/help/businesses/stores/card-payments-and-pci-basics.md));
+([Grundlagen zu Kartenzahlungen und PCI für Unternehmen](../../unternehmen/shops/kartenzahlungen-und-pci-grundlagen.md));
 bei PayPal und anderen Anbietern mit Weiterleitung erfolgen Erstattungen im Konto des Anbieters.
 
 ## Ein Retourenprotokoll

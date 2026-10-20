@@ -27,7 +27,7 @@ of life in 2021 and survived“ (README). 7x, das als Brookins Consulting seit d
 gearbeitet hatte, startete sein Projekt im Dezember 2023, veröffentlichte 6.0.0 am 1. Januar 2024 und bis Juni 2026
 vierzehn weitere Releases, brachte den Code auf PHP 8.0 bis 8.5, benannte ihn im August 2025 in Exponential um und half
 im März 2026, eine gemeinnützige Organisation dafür zu gründen
-([Die Geschichte für lange Beiträge](../../../eng-us/help/press/the-history-for-long-form-stories.md)).
+([Die Geschichte für lange Beiträge](die-geschichte-fuer-lange-beitraege.md)).
 
 ## Fakten, die Sie drucken können
 
@@ -36,7 +36,7 @@ im März 2026, eine gemeinnützige Organisation dafür zu gründen
 | Copyright-Jahre ab 1999 (eZ Systems) und 1998 (Hinweis von 7x und der Foundation) | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | Ältester Commit am 2. September 2002; mehr als 27.000 Commits (18. Oktober 2026) | [Exponential in Zahlen](../../../eng-us/help/press/exponential-by-the-numbers.md) |
 | Letztes Release der alten Linie: v2019.03.6.1, 3. September 2021 | [Wer ist 7x?, Zeitleiste](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
-| 15 Releases der Linie 6.0 von Januar 2024 bis Juni 2026 | [Die 6.0.x-Releases auf einen Blick](../../../eng-us/help/press/the-6-0-x-releases-at-a-glance.md) |
+| 15 Releases der Linie 6.0 von Januar 2024 bis Juni 2026 | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) |
 | PHP 8.0 bis 8.5 unterstützt | [Thema: aktuelles PHP](../../../eng-us/help/press/story-current-php.md) |
 | „The platform originally known as eZ Publish reached end-of-life in 2021. We kept going.“ | GitHub-Profil von se7enxweb, zitiert auf [Wer ist 7x?](../wer-ist-7x.md#fast-dreißig-jahre-die-zeitleiste) |
 
@@ -56,8 +56,8 @@ im März 2026, eine gemeinnützige Organisation dafür zu gründen
 
 ## Verwandte Seiten
 
-- [Thema: Open Source und Lizenzen](../../../eng-us/help/press/story-open-source-and-licenses.md)
-- [Zeitleiste für Reporter](../../../eng-us/help/press/timeline-for-reporters.md)
+- [Thema: Open Source und Lizenzen](thema-open-source-und-lizenzen.md)
+- [Zeitleiste für Reporter](zeitleiste-fuer-reporter.md)
 - [Gesprächspunkte: Langlebigkeit und Geschichte](../fuersprecher/gespraechspunkte-langlebigkeit-und-geschichte.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

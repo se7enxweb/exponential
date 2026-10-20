@@ -62,7 +62,7 @@ sich ihr Thema unterscheidet. Ein typischer Satz:
 - [ ] Person oder Organisation (Autoren, Urheber) als eigene Objekte, mit den Einträgen verknüpft
 - [ ] Sammlung oder Reihe (ein Container für Einträge)
 
-Einzelheiten unter [Katalogeinträge modellieren](../../../../eng-us/help/businesses/libraries/modeling-catalog-records.md).
+Einzelheiten unter [Katalogeinträge modellieren](katalogeintraege-modellieren.md).
 
 ## Vokabulare
 
@@ -70,7 +70,7 @@ Entscheiden Sie, welche Listen kontrolliert sind und wer sie verantwortet:
 
 | Vokabular | Werkzeug |
 |---|---|
-| Schlagwörter mit Ober- und Unterbegriffen | Tag-Baum von `eztags` ([Tags und Schlagwörter](../../../../eng-us/help/businesses/libraries/tagging-and-subject-headings.md)) |
+| Schlagwörter mit Ober- und Unterbegriffen | Tag-Baum von `eztags` ([Tags und Schlagwörter](tags-und-schlagwoerter.md)) |
 | Eine kurze feste Liste (Format, Sprache des Objekts) | Feld `ezselection` ([Datentypen wählen](../../../../eng-us/help/creators/website-creators/choosing-datatypes.md)) |
 | Freie Schlüsselwörter | offenes Vokabular von `eztags` oder `ezkeyword` |
 | Wo ein Objekt im Menü steht | der Inhaltsbaum, nicht Tags |
@@ -138,7 +138,7 @@ Measures reviewed monthly:    ...
 ## Verwandte Seiten
 
 - [Bibliotheken und Kataloge](README.md)
-- [Katalogeinträge modellieren](../../../../eng-us/help/businesses/libraries/modeling-catalog-records.md)
+- [Katalogeinträge modellieren](katalogeintraege-modellieren.md)
 - [Ihre Website planen](../../../../eng-us/help/creators/website-creators/planning-your-website.md)
 - [Workshops zur Inhaltsmodellierung](../../fuehrung/workshops-zur-inhaltsmodellierung.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

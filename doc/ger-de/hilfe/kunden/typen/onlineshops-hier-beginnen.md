@@ -15,7 +15,7 @@ jedem Land stimmen, in das Sie verkaufen, und Kunden erwarten eine Antwort, wenn
 Routine, und um diese Routine geht es auf dieser Seite und in ihrem Lesepfad.
 
 Diese Seite ist für den Shop-Eigentümer, die Shop-Leitung und alle, die Bestellungen und Kundenfragen bearbeiten. Die
-Auswahl und Planung eines Shops behandelt [Onlineshops für Unternehmen](../../../../eng-us/help/businesses/stores/README.md); den Bau eines
+Auswahl und Planung eines Shops behandelt [Onlineshops für Unternehmen](../../unternehmen/shops/README.md); den Bau eines
 Shops behandelt für Website-Ersteller [Shop-Überblick](../../../../eng-us/help/creators/website-creators/shop-overview.md).
 
 ## Wo der Shop in der Administration liegt

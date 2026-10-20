@@ -94,5 +94,5 @@ Lesson for next time: ________________________________________________
 
 - [Landingpages mit Layouts](landingpages-mit-layouts.md)
 - [Vorlage für den Redaktionskalender](../alltag/vorlage-redaktionskalender.md)
-- [Checkliste für den Go-live](../../../../eng-us/help/businesses/templates/go-live-checklist.md)
+- [Checkliste für den Go-live](../../unternehmen/vorlagen/checkliste-go-live.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

@@ -34,7 +34,7 @@ Grenzen zu lesen, bevor sie es für eine produktive Website wählen.
 | Was | Wann | Quelle |
 |---|---|---|
 | MongoDB 8 als Datenbank | 1. Juni 2026 | [Juni 2026](../../../eng-us/history/2026/2026-06a.md) |
-| Erstes Release damit, 6.0.14 | 7. Juni 2026 | [Die 6.0.x-Releases auf einen Blick](../../../eng-us/help/press/the-6-0-x-releases-at-a-glance.md) |
+| Erstes Release damit, 6.0.14 | 7. Juni 2026 | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) |
 
 ## Fakten, die Sie drucken können
 
@@ -68,7 +68,7 @@ liefert nichts zurück.
 ## Verwandte Seiten
 
 - [Thema: sechs Datenbanken](../../../eng-us/help/press/story-databases.md)
-- [Thema: SQLite als Standard](../../../eng-us/help/press/story-sqlite-by-default.md)
+- [Thema: SQLite als Standard](thema-sqlite-als-standard.md)
 - [Datenbankunterstützung](../datenbankunterstuetzung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

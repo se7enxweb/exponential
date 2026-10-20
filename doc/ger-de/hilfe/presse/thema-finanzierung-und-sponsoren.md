@@ -54,7 +54,7 @@ Sponsor“ ([7x, der erste Sponsor](../sponsoren/7x-der-erste-sponsor.md)).
 ## Verwandte Seiten
 
 - [Über Finanzierung und Sponsoren schreiben](../../../eng-us/help/press/writing-about-funding-and-sponsors.md)
-- [Zwei Organisationen, ein Projekt](../../../eng-us/help/press/two-organizations-one-project.md)
+- [Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md)
 - [Sponsoren: Hier beginnen](../sponsoren/sponsoren-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

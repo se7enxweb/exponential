@@ -44,7 +44,7 @@ Zeitplaner und nicht den Legacy-Kernel mit
 | Sagen Sie nicht | Sagen Sie stattdessen |
 |---|---|
 | „Ibexa DXP gratis“ oder „von Ibexa“ | Eine Fortführung durch die Community, von 7x; nicht mit Ibexa verbunden |
-| „Enthält den Seitenbaukasten“ | Sie liefert keinen Layout-Editor mit; Nexus schon ([Thema: Exponential Platform Nexus und Legacy](../../../eng-us/help/press/story-nexus-and-legacy.md)) |
+| „Enthält den Seitenbaukasten“ | Sie liefert keinen Layout-Editor mit; Nexus schon ([Thema: Exponential Platform Nexus und Legacy](thema-exponential-platform-nexus-und-legacy.md)) |
 | „Betreibt Exponential 6“ | Sie enthält den Legacy-Kernel nicht |
 
 ## Blickwinkel und Ideen für Überschriften
@@ -54,8 +54,8 @@ Zeitplaner und nicht den Legacy-Kernel mit
 
 ## Verwandte Seiten
 
-- [Die Produktfamilie für Reporter](../../../eng-us/help/press/the-product-family-for-reporters.md)
-- [Nicht verbunden mit eZ Systems oder Ibexa](../../../eng-us/help/press/not-associated-with-ez-systems-or-ibexa.md)
+- [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md)
+- [Nicht verbunden mit eZ Systems oder Ibexa](nicht-verbunden-mit-ez-systems-oder-ibexa.md)
 - [Über Releases von Exponential Platform berichten](../../../eng-us/help/press/covering-platform-releases.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

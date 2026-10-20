@@ -33,7 +33,7 @@ Geheimnisse von Exponential auftauchen, damit Sie sie aus dem Bild heraushalten 
 - Private Schlüssel von Zertifikaten.
 - Serveradressen, Hostnamen von Datenbanken und interne Pfade eines echten Servers.
 - QR-Codes, Geheimnisse und Wiederherstellungscodes der zweistufigen Anmeldung.
-- Daten anderer Menschen: siehe [Privatsphäre vor der Kamera](../../../eng-us/help/press/privacy-on-camera.md).
+- Daten anderer Menschen: siehe [Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md).
 
 ## Wo Geheimnisse in Exponential auftauchen
 
@@ -91,7 +91,7 @@ eine Korrektur erschienen ist.
 ## Verwandte Seiten
 
 - [Sicherheit bei Live-Demos](../fuersprecher/sicherheit-bei-live-demos.md)
-- [Privatsphäre vor der Kamera](../../../eng-us/help/press/privacy-on-camera.md)
+- [Privatsphäre vor der Kamera](privatsphaere-vor-der-kamera.md)
 - [Leitfaden für Livestreams](leitfaden-fuer-livestreams.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

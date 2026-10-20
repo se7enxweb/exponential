@@ -31,13 +31,13 @@ und die Geschichte.
 |---|---|
 | **Exponential** | Ein freies, quelloffenes Content-Management-System und Anwendungsframework in PHP. [Exponential in Kürze](../../../eng-us/help/press/exponential-in-brief.md) |
 | **Exponential 6, 6.0.x** | Die aktuelle Hauptlinie, seit dem 1. Januar 2024 |
-| **7x** | Das Unternehmen, das Exponential führt; früher Brookins Consulting. [7x für Reporter](../../../eng-us/help/press/7x-for-reporters.md) |
+| **7x** | Das Unternehmen, das Exponential führt; früher Brookins Consulting. [7x für Reporter](7x-fuer-reporter.md) |
 | **se7enxweb** | Der Name von 7x auf GitHub und Packagist |
-| **die Exponential Foundation** | Die gemeinnützige Organisation, die das Projekt betreibt und finanziert, gegründet am 19. März 2026. [Die Exponential Foundation für Reporter](../../../eng-us/help/press/the-foundation-for-reporters.md) |
-| **Exponential Velocity (vc)** | Ein in PHP geschriebener Webserver, der die Anwendung zwischen den Anfragen geladen hält. [Thema: Exponential Velocity](../../../eng-us/help/press/story-velocity.md) |
+| **die Exponential Foundation** | Die gemeinnützige Organisation, die das Projekt betreibt und finanziert, gegründet am 19. März 2026. [Die Exponential Foundation für Reporter](die-foundation-fuer-reporter.md) |
+| **Exponential Velocity (vc)** | Ein in PHP geschriebener Webserver, der die Anwendung zwischen den Anfragen geladen hält. [Thema: Exponential Velocity](thema-exponential-velocity.md) |
 | **Exponential Intelligence (expai)** | Ein Schreibassistent in der Administration, der nur Entwürfe schreibt. [Thema: Exponential Intelligence](thema-exponential-intelligence.md) |
 | **Exponential Layouts (explayouts)** | Ein visueller Seitenbaukasten: Layouts, Zonen, Blöcke und Regeln. [Thema: Exponential Layouts, der Seitenbaukasten](thema-exponential-layouts.md) |
-| **Exponential Platform** | Die auf Symfony basierende Linie: 3.2.9, Legacy, Nexus und DXP. [Die Produktfamilie für Reporter](../../../eng-us/help/press/the-product-family-for-reporters.md) |
+| **Exponential Platform** | Die auf Symfony basierende Linie: 3.2.9, Legacy, Nexus und DXP. [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md) |
 | **Legacy** | Exponential 6, das neben einer Symfony-Plattform läuft; nicht „alt“ |
 | **DXP** | Digital Experience Platform; hier die reine Symfony-Ausgabe Exponential Platform DXP |
 | **AdminUI** | Eine alternative Administration, eine Portierung der Netgen AdminUI |
@@ -48,7 +48,7 @@ und die Geschichte.
 | Begriff | Bedeutung |
 |---|---|
 | **eZ Publish** | Der Name der Software, solange eZ Systems sie entwickelte; ein Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat. Nur Geschichte. [Über die Jahre von eZ Publish schreiben](../../../eng-us/help/press/writing-about-the-ez-publish-years.md) |
-| **eZ Systems, Ibexa** | Der ursprüngliche Entwickler und sein Nachfolgeunternehmen; nicht mit Exponential verbunden. [Nicht verbunden mit eZ Systems oder Ibexa](../../../eng-us/help/press/not-associated-with-ez-systems-or-ibexa.md) |
+| **eZ Systems, Ibexa** | Der ursprüngliche Entwickler und sein Nachfolgeunternehmen; nicht mit Exponential verbunden. [Nicht verbunden mit eZ Systems oder Ibexa](nicht-verbunden-mit-ez-systems-oder-ibexa.md) |
 | **eZ Platform, Ibexa DXP OSS** | Die auf Symfony basierenden Nachfolger von eZ Publish |
 | **Fork** | Eine Kopie einer Codebasis, die getrennt weitergeführt wird; das Repository von Exponential ist ein GitHub-Fork |
 | **Pflege (Stewardship)** | Das Wort des Projekts für die Obhut von 7x über die Codebasis seit Dezember 2023 |
@@ -73,7 +73,7 @@ und die Geschichte.
 | **Webserver** | Das Programm, das Anfragen des Browsers beantwortet: Apache, Nginx, Velocity |
 | **PHP-FPM** | Der klassische Weg, PHP hinter einem Webserver zu betreiben |
 | **FrankenPHP** | Caddy mit eingebautem PHP, eine alternative Engine |
-| **SQLite** | Eine Datenbank in einer Datei, die keinen Server braucht; die Voreinstellung von Exponential. [Thema: SQLite als Voreinstellung](../../../eng-us/help/press/story-sqlite-by-default.md) |
+| **SQLite** | Eine Datenbank in einer Datei, die keinen Server braucht; die Voreinstellung von Exponential. [Thema: SQLite als Voreinstellung](thema-sqlite-als-standard.md) |
 | **Composer, Packagist** | Der Paketmanager von PHP und sein öffentliches Verzeichnis |
 | **Git** | Das Versionsverwaltungssystem, das das Projekt nutzt; „Git first“-Installationen enthalten die vollständige Historie |
 
@@ -101,7 +101,7 @@ und die Geschichte.
 | Begriff | Bedeutung |
 |---|---|
 | **Tag** | Ein benannter, fester Punkt in der Historie des Codes; ein Release |
-| **Changelog** | Die Liste der Änderungen eines Release. [Ein Changelog lesen](../../../eng-us/help/press/reading-a-changelog.md) |
+| **Changelog** | Die Liste der Änderungen eines Release. [Ein Changelog lesen](ein-changelog-lesen.md) |
 | **Main-Branch** | Wo die Entwicklung stattfindet; jederzeit öffentlich |
 | **Pull Request** | Eine vorgeschlagene Änderung; das Projekt übernimmt jeden Pull Request |
 | **CLA** | Contributor Licensing Agreement: was jemand, der zum Kernel beiträgt, vor der ersten Übernahme einmal unterschreibt; mit der Unterschrift und der Einreichung überträgt er das Urheberrecht an 7x und gibt die Kontrolle ab: 7x darf den Beitrag auf jede Weise nutzen, ändern, neu lizenzieren und verbreiten, ohne zu fragen oder zu bezahlen, und er kann ihn nicht zurückziehen. Die eigenen Erweiterungen der Anwender sind nicht betroffen. [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
@@ -109,7 +109,7 @@ und die Geschichte.
 
 ## Verwandte Seiten
 
-- [FAQ für Reporter](../../../eng-us/help/press/reporter-faq.md)
+- [FAQ für Reporter](faq-fuer-reporter.md)
 - [Das Glossar](../../../eng-us/glossary.md)
 - [Glossar für Fürsprecher](../fuersprecher/glossar-fuer-fuersprecher.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

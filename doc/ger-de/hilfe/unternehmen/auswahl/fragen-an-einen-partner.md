@@ -29,7 +29,7 @@ Antwort“, worauf Sie achten sollten, gestützt auf das, was die Dokumentation 
 
 - Schicken Sie jedem Kandidaten dieselben Fragen, schriftlich.
 - Verlangen Sie schriftliche Antworten; vertiefen Sie sie dann im Gespräch.
-- Bewerten Sie die Antworten mit dem [Bewertungsbogen für Anbieter](../../../../eng-us/help/businesses/templates/vendor-evaluation-scorecard.md).
+- Bewerten Sie die Antworten mit dem [Bewertungsbogen für Anbieter](../vorlagen/bewertungsbogen-fuer-anbieter.md).
 - Lassen Sie Gruppen weg, die nicht zutreffen (eine reine Designagentur muss keine Fragen zum Hosting beantworten).
 
 ## Erfahrung und Team
@@ -127,7 +127,7 @@ und verspricht nichts, was von anderen abhängt
 ```
 
 Eine gute Antwort liegt schriftlich vor und trennt einmalige, wiederkehrende und Drittkosten, sodass Sie die
-[Vorlage ROI-Arbeitsblatt](../../../../eng-us/help/businesses/templates/roi-worksheet-template.md) ausfüllen können. Beachten Sie, dass für
+[Vorlage ROI-Arbeitsblatt](../vorlagen/vorlage-roi-arbeitsblatt.md) ausfüllen können. Beachten Sie, dass für
 Exponential selbst keine Lizenzgebühr auftauchen sollte (`README.md`, „License“).
 
 ## Eigentum und Ausstieg

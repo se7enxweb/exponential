@@ -53,7 +53,7 @@ verweist auf die Seite, die ihn vollständig erklärt. Das technische Glossar de
 
 | Begriff | Bedeutung | Lesen |
 |---|---|---|
-| Shop | Der eingebaute E-Commerce: Produkte, Warenkorb, Bestellungen | [Online-Shops](../../../eng-us/help/businesses/stores/README.md) |
+| Shop | Der eingebaute E-Commerce: Produkte, Warenkorb, Bestellungen | [Online-Shops](shops/README.md) |
 | USt-Typ | Ein Steuersatz, dem Produkte zugeordnet werden | [USt-Regeln und USt-Typen](../../../eng-us/help/businesses/stores/vat-rules-and-vat-types.md) |
 | Ländergruppe | Eine Menge von Ländern, die gleich behandelt werden, zum Beispiel bei der USt | [Ländergruppen](../../../eng-us/features/6.0/country-groups.md) |
 | Zahlungsanbieter | Die Anbindung an einen Zahlungsdienstleister, ausgeführt als Workflow-Ereignis an der Kasse | [Zahlungsanbieter für Unternehmen](../../../eng-us/help/businesses/stores/payment-gateways-for-businesses.md) |

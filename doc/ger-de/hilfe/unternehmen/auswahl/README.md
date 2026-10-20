@@ -55,7 +55,7 @@ Sie prüfen sollten.
 4. [Grundlagen zu Verträgen und SLAs](grundlagen-zu-vertraegen-und-slas.md), bevor Sie unterschreiben.
 5. [Zu Exponential wechseln](zu-exponential-wechseln.md), wenn Sie eine bestehende Website umziehen.
 
-Bewerten Sie die Kandidaten mit dem [Bewertungsbogen für Anbieter](../../../../eng-us/help/businesses/templates/vendor-evaluation-scorecard.md).
+Bewerten Sie die Kandidaten mit dem [Bewertungsbogen für Anbieter](../vorlagen/bewertungsbogen-fuer-anbieter.md).
 
 ## Warum die Wahl bei Ihnen liegt
 
@@ -76,7 +76,7 @@ darauf, dass Ihre Verträge diese Freiheit erhalten.
 - [Kosten](../kosten/README.md): was Hosting und Dienstleistungen kosten, und der Ertrag.
 - [Zuverlässigkeit](../../../../eng-us/help/businesses/reliability/README.md): was Sie von einer gut betriebenen Website erwarten können.
 - [Sicherheit und Datenschutz](../../../../eng-us/help/businesses/security/README.md): was Sie einen Hoster und einen Partner zu Daten fragen sollten.
-- [Vorlagen](../../../../eng-us/help/businesses/templates/README.md): Projektbeschreibung, Anforderungen, Bewertungsbogen.
+- [Vorlagen](../vorlagen/README.md): Projektbeschreibung, Anforderungen, Bewertungsbogen.
 - Behörden haben einen eigenen Bereich: [Behörden: hier beginnen](../../../../eng-us/help/government/government-start-here.md).
 
 ## Verwandte Seiten

@@ -98,7 +98,7 @@ Möglichkeiten zu helfen, alle freiwillig:
 | Korrekturen beitragen | Pull Requests unter GPL v2 oder später | `CONTRIBUTING.md` |
 | Dokumentation verbessern | die Hilfe ist freie Dokumentation unter der GNU FDL | [Freie Dokumentation: Nutzen Sie sie, um sich selbst und anderen zu helfen](../../freie-dokumentation.md) |
 | Sponsern oder spenden | <https://sponsor.se7enx.com>, <https://github.com/sponsors/se7enxweb> und die Foundation unter <https://github.com/sponsors/exponentialcms> | `README.md`, „Donate“; [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#die-foundation-und-7x) |
-| Ihre Geschichte erzählen | eine Fallstudie, mit Ihrer Zustimmung | [Vorlage für Fallstudien](../../../../eng-us/help/businesses/templates/case-study-template.md) |
+| Ihre Geschichte erzählen | eine Fallstudie, mit Ihrer Zustimmung | [Vorlage für Fallstudien](../vorlagen/vorlage-fuer-fallstudien.md) |
 
 Die beiden Sponsoring-Wege unterscheiden sich: Wer 7x sponsert, finanziert „das Unternehmen, das den Betrieb am Laufen
 hält“, wer die Foundation sponsert, finanziert „das Open-Source-Projekt selbst“

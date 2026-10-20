@@ -95,5 +95,5 @@ Jedes Quartal:
 
 - [RSS-Feeds](../../../anleitungen/rss-feeds.md)
 - [RSS-Feeds für Ihre Website](../../../../eng-us/help/creators/website-creators/rss-feeds-for-your-site.md)
-- [Feeds für Neuerwerbungen](../../../../eng-us/help/businesses/libraries/feeds-for-new-acquisitions.md)
+- [Feeds für Neuerwerbungen](../../unternehmen/bibliotheken/feeds-fuer-neuerwerbungen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

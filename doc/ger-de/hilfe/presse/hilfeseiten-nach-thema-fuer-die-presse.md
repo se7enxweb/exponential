@@ -102,7 +102,7 @@ wahrscheinlich berührt.
 
 - [Wo die Fakten stehen, für die Presse](../../../eng-us/help/press/where-the-facts-live-for-press.md)
 - [Themenbeiträge: Übersicht](../../../eng-us/help/press/feature-stories-index.md)
-- [Lesepfad für die Presse](../../../eng-us/help/press/press-reading-path.md)
+- [Lesepfad für die Presse](lesepfad-fuer-die-presse.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
