@@ -32,6 +32,10 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                  "./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state\n" .
                                  "./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file]\n" .
                                  "                                              an e-book of the Released topics of a manual (export_manual.php)\n" .
+                                 "./console exp:help:content package -s ... [--output=dir] [--version=6.0.15]   the eight classes as the content\n" .
+                                 "                                              class package exp_help_classes (a directory and an .ezpkg)\n" .
+                                 "./console exp:help:content verify-package -s ... --file=<.ezpkg or directory>   compare a package with the\n" .
+                                 "                                              classes of this release (no database)\n" .
                                  "./console exp:help:content uninstall -s ... [--with-content] [--dry-run]   take the roles away (and the tree, classes,\n" .
                                  "                                              state group and sections with --with-content)\n" .
                                  "\n" .
@@ -43,7 +47,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json][manual:][format:][output:]', '', array(
+        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json][manual:][format:][output:][version:]', '', array(
             'dry-run'      => 'Show what would change, change nothing',
             'fix'          => 'check: set the section of each topic, figure, chapter and manual from the audience',
             'file'         => 'seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json)',
@@ -54,7 +58,8 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             'json'         => 'Print one JSON document instead of the text',
             'manual'       => 'export: the remote_id of the manual (help-manual-...)',
             'format'       => 'export: epub or pdf',
-            'output'       => 'export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>)',
+            'output'       => 'export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); package: the directory (default <cache>/exphelp/packages)',
+            'version'      => 'package: the release, MAJOR.MINOR.PATCH (default: the version of this installation)',
         ) );
 
         $arguments = isset( $options['arguments'] ) ? array_values( $options['arguments'] ) : array();
@@ -68,7 +73,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             $this->shutdown( 2 );
             return;
         }
-        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export' );
+        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'report', 'uninstall', 'export', 'package', 'verify-package' );
         if ( !in_array( $action, $known, true ) )
         {
             $cli->error( "Unknown action \"$action\": " . implode( ', ', $known ) . ' (./console exp:help:content --help)' );
@@ -120,13 +125,17 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 case 'export':
                     $code = $this->export( $options, $dryRun, $json );
                     break;
+                case 'package':
+                case 'verify-package':
+                    $code = $this->package( $action, $options, $dryRun, $json, $user );
+                    break;
                 case 'uninstall':
                     $installer = new \expHelpContentInstaller( $common );
                     $installer->uninstall( !empty( $options['with-content'] ) );
                     $code = $this->printChanges( $installer->changes(), $json );
                     break;
             }
-            if ( !$dryRun && !in_array( $action, array( 'report', 'export' ), true ) )
+            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'package', 'verify-package' ), true ) )
                 \expHelpContentProvider::clearCache();
         }
         catch ( \Exception $e )
@@ -201,6 +210,58 @@ class Exphelpcontent extends \Exponential\Runnable\Command
         else
             $cli->output( sprintf( 'PASS wrote %s (%d bytes, %d topics)', $result['file'], $result['bytes'], $result['topics'] ) );
         return 0;
+    }
+
+    /**
+     * package: the help classes of this installation as the content class package exp_help_classes (directory and
+     * .ezpkg); verify-package: compare a built package with the schema of this release, without the database.
+     */
+    protected function package( $action, array $options, $dryRun, $json, \eZUser $user )
+    {
+        $cli = $this->cli();
+        if ( $action === 'verify-package' )
+        {
+            $file = isset( $options['file'] ) ? (string)$options['file'] : '';
+            if ( $file === '' || !file_exists( $file ) )
+            {
+                $cli->error( 'FAIL: --file=<.ezpkg or package directory> is required' );
+                return 2;
+            }
+            $problems = is_dir( $file ) ? \expHelpContentPackage::verifyDirectory( $file ) : \expHelpContentPackage::verifyArchive( $file );
+            if ( $json )
+                $this->printJson( array( 'file' => $file, 'problems' => $problems, 'ok' => !$problems ) );
+            else
+            {
+                foreach ( $problems as $problem )
+                    $cli->output( '  ' . $problem );
+                $cli->output( $problems ? 'FAIL ' . count( $problems ) . " difference(s) in $file" : "PASS $file matches the help classes of this release" );
+            }
+            return $problems ? 1 : 0;
+        }
+        $dir = !empty( $options['output'] ) ? (string)$options['output'] : rtrim( \expHelp::cacheDirectory(), '/' ) . '/packages';
+        $version = isset( $options['version'] ) ? (string)$options['version'] : '';
+        $name = \expHelpContentPackage::fileName( $version );
+        if ( $dryRun )
+        {
+            if ( $json )
+                $this->printJson( array( 'directory' => $dir, 'archive' => $dir . '/' . $name, 'classes' => \expHelpContentPackage::provides(), 'written' => false ) );
+            else
+                $cli->output( "Would write $dir/" . \expHelpContentPackage::NAME . "/ and $dir/$name with the classes " . implode( ', ', \expHelpContentPackage::provides() ) );
+            return 0;
+        }
+        $object = $user->attribute( 'contentobject' );
+        $result = \expHelpContentPackage::build( $dir, $version, $object ? array( (string)$object->attribute( 'name' ), (string)$user->attribute( 'email' ) ) : array() );
+        $problems = \expHelpContentPackage::verifyArchive( $result['archive'] );
+        $result['problems'] = $problems;
+        if ( $json )
+            $this->printJson( $result );
+        else
+        {
+            foreach ( $problems as $problem )
+                $cli->output( '  ' . $problem );
+            $cli->output( ( $problems ? 'FAIL' : 'PASS' ) . sprintf( ' wrote %s and %s (%d classes)', $result['directory'], $result['archive'], count( $result['classes'] ) ) );
+        }
+        return $problems ? 1 : 0;
     }
 
     protected function check( $fix, array $common, $json )

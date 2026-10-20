@@ -1125,6 +1125,7 @@ return array(
       'expHelpCommitFeed'                                            => 'kernel/classes/help/exphelpcommitfeed.php',
       'expHelpContentExport'                                         => 'kernel/classes/help/content/exphelpcontentexport.php',
       'expHelpContentInstaller'                                      => 'kernel/classes/help/content/exphelpcontentinstaller.php',
+      'expHelpContentPackage'                                        => 'kernel/classes/help/content/exphelpcontentpackage.php',
       'expHelpContentProvider'                                       => 'kernel/classes/help/content/exphelpcontentprovider.php',
       'expHelpContentRepository'                                     => 'kernel/classes/help/content/exphelpcontentrepository.php',
       'expHelpContentSchema'                                         => 'kernel/classes/help/content/exphelpcontentschema.php',
