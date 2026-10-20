@@ -12,13 +12,13 @@ generated: exp:help:examples
 Der Block `[VersionManagement]` von `settings/content.ini`, mit 7 Einstellung(en).
 
 > ViewModes\[\]=print  
-> Define maximum versions can be managed. Use syntax  
-> VersionHistoryClass\[class\_id\]=maximum\_nr to specify value for particular  
-> classes. Or if you prefer to use class\_identifier (since 4.1.1)  
+> Legt fest, wie viele Versionen höchstens verwaltet werden. Verwenden Sie die Syntax  
+> VersionHistoryClass\[class\_id\]=maximum\_nr, um den Wert für bestimmte  
+> Klassen anzugeben. Oder, wenn Sie lieber class\_identifier verwenden (seit 4.1.1),  
 > VersionHistoryClass\[class\_identifier\]=maximum\_nr  
-> Otherwise, the value of DefaultVersionHistoryLimit will be used.  
-> When decreasing DefaultVersionHistoryLimit or one value in VersionHistoryClass,  
-> you can execute bin/php/cleanupversions.php to remove the exceeded archived versions.  
+> Sonst wird der Wert von DefaultVersionHistoryLimit verwendet.  
+> Wenn Sie DefaultVersionHistoryLimit oder einen Wert in VersionHistoryClass verringern,  
+> können Sie bin/php/cleanupversions.php ausführen, um die überzähligen archivierten Versionen zu entfernen.  
 
 Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -66,8 +66,8 @@ DeleteDrafts=disabled
 
 ## DraftsDuration
 
-> Time duration (number of days, hours, minutes and seconds)  
-> before a draft is considered old and can be removed  
+> Zeitspanne (Anzahl der Tage, Stunden, Minuten und Sekunden),  
+> nach der ein Entwurf als alt gilt und entfernt werden kann  
 
 Standard: ein Hash mit 4: `days=90`, `hours=0`, `minutes=0`, `seconds=0`.
 
@@ -86,7 +86,7 @@ DraftsDuration[seconds]=0
 
 ## DraftsCleanUpLimit
 
-> Clean-up limit per one run of the 'old\_drafts\_cleanup.php' cronjob script  
+> Grenze für das Aufräumen pro Lauf des Cronjob-Skripts 'old\_drafts\_cleanup.php'  
 
 Standard: `100`.
 
@@ -100,8 +100,8 @@ DraftsCleanUpLimit=100
 
 ## InternalDraftsDuration
 
-> Time duration (number of days, hours, minutes and seconds)  
-> before an internal draft is considered old and can be removed  
+> Zeitspanne (Anzahl der Tage, Stunden, Minuten und Sekunden),  
+> nach der ein interner Entwurf als alt gilt und entfernt werden kann  
 
 Standard: ein Hash mit 4: `days=1`, `hours=0`, `minutes=0`, `seconds=0`.
 
@@ -120,7 +120,7 @@ InternalDraftsDuration[seconds]=0
 
 ## InternalDraftsCleanUpLimit
 
-> Clean-up limit per one run of the 'internal\_drafts\_cleanup.php' cronjob script  
+> Grenze für das Aufräumen pro Lauf des Cronjob-Skripts 'internal\_drafts\_cleanup.php'  
 
 Standard: `100`.
 

@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## DraftTimeout
 
-> Number of seconds to wait before removing class edit lock.  
+> Sekunden, bis die Bearbeitungssperre einer Klasse entfernt wird.  
 
 Standard: `7200`.
 
@@ -33,7 +33,7 @@ DraftTimeout=7200
 
 ## ApplyButton
 
-> Controls the presence of the "Apply" button in class edit mode.  
+> Steuert, ob es beim Bearbeiten einer Klasse die Schaltfläche „Anwenden“ gibt.  
 
 Standard: `enabled`.
 

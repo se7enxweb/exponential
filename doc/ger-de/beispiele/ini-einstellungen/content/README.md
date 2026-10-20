@@ -12,15 +12,15 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/content.ini`: 53 Blöcke, 141 Einstellungen.
 
-> Exponential configuration file for content module  
+> Exponential-Konfigurationsdatei für das Modul content  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/content.ini.append or  
->       settings/override/content.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/content.ini.append oder  
+>       settings/override/content.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
 
 | Block | Einstellungen |
 |---|---|

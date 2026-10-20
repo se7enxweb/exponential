@@ -19,14 +19,14 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## RootNodeList
 
-> Example:  
+> Beispiel:  
 >
 > RootNodeList\[\]  
 > RootNodeList\[\]=2  
 > HideDateAttributeList\[\]  
 > HideDateAttributeList\[article\]=hide\_date  
 >
-> List of root nodes where nodes can be hidden.  
+> Liste der Wurzelknoten, unter denen Knoten verborgen werden können.  
 
 Standard: eine leere Liste.
 
@@ -41,8 +41,8 @@ RootNodeList[]
 
 ## HideDateAttributeList
 
-> Class attribute map, describing which date/time fields to use.  
-> The systems uses the class identifier to determine which classes to hide in the cronjob.  
+> Zuordnung von Klassenattributen, die festlegt, welche Datums-/Zeitfelder verwendet werden.  
+> Das System bestimmt über den Klassenbezeichner, welche Klassen der Cronjob verbirgt.  
 
 Standard: eine leere Liste.
 
@@ -57,12 +57,12 @@ HideDateAttributeList[]
 
 ## ReverseRelationCheck
 
-> What content/hide and "Hide selected" of the sub items list do before hiding a node that other objects  
-> point at (what the hide takes away entirely, counted as for \[RemoveSettings\] ReverseRelationCheck), or whose  
-> object has further locations. The hidecron cronjob is not affected. doc/eng-us/features/6.0/reverse-relation-check.md  
->  disabled - no check: the hide is done at once, as before  
->  warn     - (default) a confirmation page lists the references and the further locations first; a hide  
->             without either is done as before  
+> Was content/hide und „Auswahl verbergen“ in der Liste der Unterelemente tun, bevor ein Knoten verborgen wird, auf den andere Objekte  
+> verweisen (was das Verbergen ganz wegnimmt, gezählt wie bei \[RemoveSettings\] ReverseRelationCheck) oder dessen  
+> Objekt weitere Platzierungen hat. Der Cronjob hidecron ist nicht betroffen. doc/eng-us/features/6.0/reverse-relation-check.md  
+>  disabled - keine Prüfung: das Verbergen geschieht wie bisher sofort  
+>  warn     - (Standard) eine Bestätigungsseite listet zuerst die Verweise und die weiteren Platzierungen auf; ein Verbergen  
+>             ohne beides geschieht wie bisher  
 
 Standard: `warn`.
 

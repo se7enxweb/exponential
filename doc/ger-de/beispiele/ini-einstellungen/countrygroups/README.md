@@ -12,23 +12,23 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/countrygroups.ini`: 1 Blöcke, 4 Einstellungen.
 
-> Exponential configuration file for the grouped country list  
+> Exponential-Konfigurationsdatei für die gruppierte Länderliste  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/countrygroups.ini.append or  
->       settings/override/countrygroups.ini.append.php for more security  
->       in non-virtualhost modes.  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/countrygroups.ini.append oder  
+>       settings/override/countrygroups.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host.  
 >
-> Every country select (the country attribute, the shop's account form, the  
-> VAT rules, the user country toolbar) shows these groups first, each in the  
-> order given here, then "All countries" A-Z by the translated name.  
-> The countries themselves come from country.ini; a code that is not in it is  
-> skipped. These settings are not in country.ini because every group of that  
-> file is read as a country.  
+> Jede Länderauswahl (das Länderattribut, das Kontoformular des Shops, die  
+> Mehrwertsteuerregeln, die Länder-Werkzeugleiste des Benutzers) zeigt zuerst diese Gruppen, jede in der  
+> hier angegebenen Reihenfolge, dann „Alle Länder“ von A bis Z nach dem übersetzten Namen.  
+> Die Länder selbst kommen aus country.ini; ein Code, der dort nicht steht, wird  
+> übersprungen. Diese Einstellungen stehen nicht in country.ini, weil jede Gruppe dieser  
+> Datei als Land gelesen wird.  
 >
-> The ranking of the default list is explained in  
+> Die Rangfolge der Standardliste ist erklärt in  
 > doc/eng-us/features/6.0/country-groups.md  
 
 | Block | Einstellungen |

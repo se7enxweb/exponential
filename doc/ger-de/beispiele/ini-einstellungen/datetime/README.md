@@ -12,49 +12,49 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/datetime.ini`: 1 Blöcke, 1 Einstellungen.
 
-> Exponential configuration file for date and time handling.  
+> Exponential-Konfigurationsdatei für den Umgang mit Datum und Zeit.  
 >
-> NOTE:  It is not recommended to edit this file directly, instead  
->        a file in override should be created for setting the  
->        values that are required for your site. Either create  
->        a file called settings/override/datetime.ini.append or  
->        settings/override/datetime.ini.append.php for more security  
->        in non-virtualhost modes (the .php file may already be present  
->        and can be used for this purpose).  
->  Element    Example                          Description  
+> HINWEIS:  Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>        eine Datei in override an, um die Werte zu setzen,  
+>        die Ihre Website braucht. Legen Sie entweder  
+>        eine Datei settings/override/datetime.ini.append oder  
+>        settings/override/datetime.ini.append.php an, für mehr Sicherheit  
+>        im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>        und kann dafür verwendet werden).  
+>  Element    Beispiel                         Beschreibung  
 >  -------    -------                          -----------  
->  %a         am                               Lowercase Ante meridiem and Post meridiem.  
->  %A         AM                               Uppercase Ante meridiem and Post meridiem.  
->  %c         2004-02-12T15:19:21+00:00        ISO 8601 date  
->  %d         08                               Day of the month, 2 digits with leading zeros.  
->  %D         Wed                              A short textual representation of a day, in accordance  
->                                              with the "\[ShortDayNames\]" section of the language .INI file  
->                                              located in the "share/locale" directory.  
->  %F         October                          A full textual representation of a month, such as January or March.  
->  %g         12                               12-hour format of an hour without leading zeros.  
->  %G         3                                24-hour format of an hour without leading zeros.  
->  %h         12                               12-hour format of an hour with leading zeros.  
->  %H         03                               24-hour format of an hour with leading zeros.  
->  %i         00                               Minutes with leading zeros  
->  %j         8                                Day of the month without leading zeros  
->  %l         Wednesday                        A full textual representation of the day of the week.  
->  %m         10                               Numeric representation of a month, with leading zeros.  
->  %M         Oct                              A short textual representation of a month, in accordance  
->                                              with the "\[ShortMonthNames\]" section of the language .INI file located  
->                                              in the "share/locale" directory.  
->  %n         10                               Numeric representation of a month, without leading zeros.  
->  %O         -0500                            Difference to Greenwich time (GMT) in hours.  
->  %r         Thu, 21 Dec 2000 16:01:07 +0200  RFC 2822 formatted date  
->  %s         00                               Seconds, with leading zeros.  
->  %T         CDT                              Timezone setting of this machine.  
->  %U         1065589200                       Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT).  
->  %w         3                                Numeric representation of the day of the week.  
->  %W         41                               ISO-8601 week number of year, weeks starting on Monday.  
->  %Y         2003                             A full numeric representation of a year, 4 digits.  
->  %y         03                               A two digit representation of a year.  
->  %z         280                              The day of the year.  
->  %Z         -18000                           Timezone offset in seconds. The offset for timezones west of UTC is  
->                                              always negative, and for those east of UTC is always positive.  
+>  %a         am                               Kleingeschriebenes Ante meridiem und Post meridiem.  
+>  %A         AM                               Großgeschriebenes Ante meridiem und Post meridiem.  
+>  %c         2004-02-12T15:19:21+00:00        Datum nach ISO 8601  
+>  %d         08                               Tag des Monats, zweistellig mit führender Null.  
+>  %D         Wed                              Kurzer Name eines Tages, gemäß  
+>                                              dem Abschnitt "\[ShortDayNames\]" der Sprach-INI-Datei  
+>                                              im Verzeichnis "share/locale".  
+>  %F         October                          Voller Name eines Monats, etwa January oder March.  
+>  %g         12                               Stunde im 12-Stunden-Format ohne führende Null.  
+>  %G         3                                Stunde im 24-Stunden-Format ohne führende Null.  
+>  %h         12                               Stunde im 12-Stunden-Format mit führender Null.  
+>  %H         03                               Stunde im 24-Stunden-Format mit führender Null.  
+>  %i         00                               Minuten mit führender Null  
+>  %j         8                                Tag des Monats ohne führende Null  
+>  %l         Wednesday                        Voller Name des Wochentags.  
+>  %m         10                               Monat als Zahl, mit führender Null.  
+>  %M         Oct                              Kurzer Name eines Monats, gemäß  
+>                                              dem Abschnitt "\[ShortMonthNames\]" der Sprach-INI-Datei  
+>                                              im Verzeichnis "share/locale".  
+>  %n         10                               Monat als Zahl, ohne führende Null.  
+>  %O         -0500                            Abweichung von der Greenwich-Zeit (GMT) in Stunden.  
+>  %r         Thu, 21 Dec 2000 16:01:07 +0200  Datum im Format nach RFC 2822  
+>  %s         00                               Sekunden, mit führender Null.  
+>  %T         CDT                              Zeitzoneneinstellung dieses Rechners.  
+>  %U         1065589200                       Sekunden seit der Unix-Epoche (1. Januar 1970 00:00:00 GMT).  
+>  %w         3                                Wochentag als Zahl.  
+>  %W         41                               Kalenderwoche nach ISO 8601, Wochen beginnen am Montag.  
+>  %Y         2003                             Jahr als volle Zahl, vierstellig.  
+>  %y         03                               Jahr zweistellig.  
+>  %z         280                              Der Tag des Jahres.  
+>  %Z         -18000                           Zeitzonenversatz in Sekunden. Der Versatz für Zeitzonen westlich von UTC ist  
+>                                              immer negativ, für die östlich von UTC immer positiv.  
 
 | Block | Einstellungen |
 |---|---|

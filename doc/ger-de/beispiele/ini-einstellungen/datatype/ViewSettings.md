@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[ViewSettings]` von `settings/datatype.ini`, mit 2 Einstellung(en).
 
-> Settings related to content view and datatypes  
+> Einstellungen zur Ansicht von Inhalten und zu Datentypen  
 
 Bearbeiten Sie `settings/datatype.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,9 +21,9 @@ Bearbeiten Sie `settings/datatype.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## GroupedInput
 
-> A list of datatypes that needs to group output data  
-> when displayed in view mode  
-> NOTE: The datatype may override this using PHP code  
+> Eine Liste der Datentypen, die ihre Ausgabedaten gruppieren müssen,  
+> wenn sie im Ansichtsmodus angezeigt werden  
+> HINWEIS: Der Datentyp kann dies per PHP-Code überschreiben  
 
 Standard: eine Liste mit 6: `ezinisetting`, `ezmultioption`, `ezoption`, `ezrangeoption`, `ezpackage`, `ezuser`.
 
@@ -44,12 +44,12 @@ GroupedInput[]=ezuser
 
 ## CustomActionMap
 
-> List of custom datatype actions and corresponding <module>/<view> or  
-> just <view> in case of content module where they should be executed  
-> eg: CustomActionMap\[ActionAddToBasket\]=shop/basket  
-> eg: CustomActionMap\[ActionCollectInformation\]=collectinformation  
-> Note: Action definition should be defined in contentActionList function  
-> of the datatype, see ez\[multi\]pricetype.php for code example.  
+> Liste eigener Aktionen von Datentypen und des zugehörigen <module>/<view> oder,  
+> beim Modul content, nur <view>, wo sie ausgeführt werden sollen  
+> z. B.: CustomActionMap\[ActionAddToBasket\]=shop/basket  
+> z. B.: CustomActionMap\[ActionCollectInformation\]=collectinformation  
+> Hinweis: Die Definition der Aktion gehört in die Funktion contentActionList  
+> des Datentyps; ein Codebeispiel steht in ez\[multi\]pricetype.php.  
 
 Standard: eine leere Liste.
 

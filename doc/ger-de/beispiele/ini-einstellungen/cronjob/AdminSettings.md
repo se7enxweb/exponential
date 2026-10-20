@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## ForbiddenParts
 
-> Settings for the cronjobs console at Setup > Cronjobs, which launches a  
-> cronjob part from the administration interface.  
-> Parts that must not be launchable from a browser. Both defaults are  
-> destructive and belong to an administrator on a shell: cluster\_maintenance  
-> purges cluster storage, and unlock releases locks other processes hold.  
+> Einstellungen der Cronjob-Konsole unter Setup > Cronjobs, die einen  
+> Cronjob-Teil aus der Administrationsoberfläche startet.  
+> Teile, die sich nicht aus einem Browser starten lassen dürfen. Beide Standards sind  
+> destruktiv und gehören in die Hand eines Administrators auf einer Shell: cluster\_maintenance  
+> löscht Cluster-Speicher, und unlock gibt Sperren frei, die andere Prozesse halten.  
 
 Standard: eine Liste mit 2: `cluster_maintenance`, `unlock`.
 
@@ -40,10 +40,10 @@ ForbiddenParts[]=unlock
 
 ## PhpCliPath
 
-> Full path to the php command line binary used to run runcronjobs.php. Left  
-> empty the usual locations are tried, which is enough on a normal installation.  
-> It has to be a command line binary: the one running the web request cannot run  
-> a script.  
+> Vollständiger Pfad zur PHP-Kommandozeilen-Binärdatei, mit der runcronjobs.php ausgeführt wird. Bleibt er  
+> leer, werden die üblichen Orte versucht, was in einer normalen Installation genügt.  
+> Es muss eine Kommandozeilen-Binärdatei sein: Die, die die Web-Anfrage ausführt, kann kein  
+> Skript ausführen.  
 
 Standard: leer.
 
@@ -57,9 +57,9 @@ PhpCliPath=
 
 ## LogFile
 
-> Where a launched cronjob's output and errors are written, relative to the var  
-> directory of the siteaccess. The console reads these, and follows them as they  
-> grow while a job runs.  
+> Wohin Ausgabe und Fehler eines gestarteten Cronjobs geschrieben werden, relativ zum var-  
+> Verzeichnis des Siteaccess. Die Konsole liest sie und verfolgt sie, während sie  
+> wachsen, solange ein Auftrag läuft.  
 
 Standard: `cronjobs/output.log`.
 

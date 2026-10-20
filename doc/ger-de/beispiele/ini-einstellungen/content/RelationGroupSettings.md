@@ -22,9 +22,9 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Groups
 
-> A list of defined relation groups, each entry  
-> will have a class definition setting suffixed with ClassList  
-> e.g. a group called images would have the setting ImagesClassList  
+> Eine Liste der definierten Verknüpfungsgruppen; jeder Eintrag  
+> hat eine Einstellung mit der Klassendefinition, mit dem Suffix ClassList  
+> z. B. hätte eine Gruppe namens images die Einstellung ImagesClassList  
 
 Standard: eine Liste mit 2: `images`, `files`.
 
@@ -41,8 +41,8 @@ Groups[]=files
 
 ## DefaultGroup
 
-> The group were all non-match classes are placed  
-> this is usually related folders and articles  
+> Die Gruppe, in die alle nicht passenden Klassen kommen,  
+> meist verknüpfte Ordner und Artikel  
 
 Standard: `objects`.
 
@@ -56,8 +56,8 @@ DefaultGroup=objects
 
 ## ImagesClassList
 
-> A list of class identifiers that should be placed in the  
-> related image group  
+> Eine Liste der Klassenbezeichner, die in die  
+> Gruppe der verknüpften Bilder kommen  
 
 Standard: eine Liste mit 1: `image`.
 
@@ -73,8 +73,8 @@ ImagesClassList[]=image
 
 ## FilesClassList
 
-> A list of class identifiers that should be placed in the  
-> related files group  
+> Eine Liste der Klassenbezeichner, die in die  
+> Gruppe der verknüpften Dateien kommen  
 
 Standard: eine Liste mit 1: `file`.
 

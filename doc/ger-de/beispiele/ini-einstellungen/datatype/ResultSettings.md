@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[ResultSettings]` von `settings/datatype.ini`, mit 1 Einstellung(en).
 
-> Settings related to results (after infocollection) and datatypes  
+> Einstellungen zu Ergebnissen (nach der Informationssammlung) und zu Datentypen  
 
 Bearbeiten Sie `settings/datatype.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -21,9 +21,9 @@ Bearbeiten Sie `settings/datatype.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## GroupedInput
 
-> A list of datatypes that needs to group their data  
-> when displayed after information collection  
-> NOTE: The datatype may override this using PHP code  
+> Eine Liste der Datentypen, die ihre Daten gruppieren müssen,  
+> wenn sie nach der Informationssammlung angezeigt werden  
+> HINWEIS: Der Datentyp kann dies per PHP-Code überschreiben  
 
 Standard: eine leere Liste.
 

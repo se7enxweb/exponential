@@ -19,15 +19,15 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## DefaultAssignment
 
-> Default assignment for new related objects, possible values are  
-> - A Node ID - Place all new objects under this node  
-> - A node path - The placement of the parent node by a path, e.g. media/files  
-> - root - The root of the tree  
-> - users - The root of the user tree  
-> - media - The root of the media tree  
-> - none - DEPRECATED  
+> Standardplatzierung für neue verknüpfte Objekte, mögliche Werte sind  
+> - eine Knoten-ID - alle neuen Objekte unter diesen Knoten legen  
+> - ein Knotenpfad - die Platzierung des Elternknotens über einen Pfad, z. B. media/files  
+> - root - die Wurzel des Baums  
+> - users - die Wurzel des Benutzerbaums  
+> - media - die Wurzel des Medienbaums  
+> - none - VERALTET  
 >
-> Multiple assignments are not allowed.  
+> Mehrere Platzierungen sind nicht erlaubt.  
 
 Standard: `root`.
 
@@ -41,22 +41,22 @@ DefaultAssignment=root
 
 ## ClassSpecificAssignment
 
-> Automatic assignments for specific classes.  
+> Automatische Platzierungen für bestimmte Klassen.  
 >
-> Each line consists of three or two values separated by semi-colon.  
-> First two values are lists of elements which are comma separated.  
+> Jede Zeile besteht aus drei oder zwei durch Semikolon getrennten Werten.  
+> Die ersten beiden Werte sind durch Kommas getrennte Listen von Elementen.  
 >
-> First value is the class identifier, second is the assignment (see above for  
-> values). An optional third is the main node in case you upload to many  
-> locations. If the third parameter is not set, then the first element of  
-> the value 2 will be used as main node.  
+> Der erste Wert ist der Klassenbezeichner, der zweite die Platzierung (Werte  
+> siehe oben). Ein optionaler dritter ist der Hauptknoten, falls Sie an viele  
+> Platzierungen hochladen. Ist der dritte Parameter nicht gesetzt, wird das erste Element  
+> des zweiten Werts als Hauptknoten verwendet.  
 >
-> Classes are either specified with identifier, ID or group\_ID  
-> The items are searched in order so the first to match will be used,  
-> this means that class IDs should come before class group IDs.  
+> Klassen werden mit Bezeichner, ID oder group\_ID angegeben  
+> Die Einträge werden der Reihe nach durchsucht, der erste Treffer wird verwendet,  
+> Klassen-IDs sollten also vor IDs von Klassengruppen stehen.  
 >
-> If the same class is specified in many lines, then will be used the first  
-> match where user has an access to all listed nodes.  
+> Ist dieselbe Klasse in mehreren Zeilen angegeben, wird der erste  
+> Treffer verwendet, bei dem der Benutzer Zugriff auf alle aufgeführten Knoten hat.  
 
 Standard: eine Liste mit 8: `user,user_group;users/guest_accounts`, `image;media/images`, `video;media/multimedia`, `file;media/files`, `quicktime;media/multimedia`, `windows_media;media/multimedia`, `real_video;media/multimedia`, `flash;media/multimedia`.
 

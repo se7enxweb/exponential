@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## RepositoryDirectories
 
-> A list of directories to check for datatypes  
+> Eine Liste der Verzeichnisse, in denen nach Datentypen gesucht wird  
 
 Standard: eine Liste mit 1: `kernel/classes/datatypes`.
 
@@ -35,10 +35,10 @@ RepositoryDirectories[]=kernel/classes/datatypes
 
 ## ExtensionDirectories
 
-> A list of extensions which have content object datatypes  
-> It's common to create a settings/content.ini.append file  
-> in your extension and add the extension name to automatically  
-> get datatypes from the extension when it's turned on.  
+> Eine Liste der Erweiterungen, die Datentypen für Inhaltsobjekte haben  
+> Üblicherweise legt man in der Erweiterung eine Datei settings/content.ini.append  
+> an und trägt den Namen der Erweiterung ein, um automatisch  
+> die Datentypen der Erweiterung zu erhalten, wenn sie eingeschaltet ist.  
 
 Standard: eine leere Liste.
 
@@ -87,9 +87,9 @@ AvailableDataTypes[]=ezmultioption
 
 ## UserDataTypes
 
-> datatypes that hold user accounts  
-> several actions on user account objects (removing, moving, etc.)  
-> require clearing of the user policy cache  
+> Datentypen, die Benutzerkonten enthalten  
+> mehrere Aktionen an Objekten mit Benutzerkonten (Entfernen, Verschieben usw.)  
+> erfordern das Leeren des Caches der Benutzerrichtlinien  
 
 Standard: eine Liste mit 1: `ezuser`.
 

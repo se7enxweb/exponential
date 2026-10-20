@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## MaxNodesRemoveSubtree
 
-> Maximum number of nodes to remove using Remove Subtrees feature  
+> Höchstzahl der Knoten, die mit der Funktion Teilbäume entfernen entfernt werden  
 
 Standard: `100`.
 
@@ -33,7 +33,7 @@ MaxNodesRemoveSubtree=100
 
 ## DefaultRemoveAction
 
-> delete or trash  
+> delete oder trash  
 
 Standard: `trash`.
 
@@ -47,7 +47,7 @@ DefaultRemoveAction=trash
 
 ## ShowRemoveToTrashCheck
 
-> true or false  
+> true oder false  
 
 Standard: `true`.
 
@@ -61,7 +61,7 @@ ShowRemoveToTrashCheck=true
 
 ## HideRemoveConfirmation
 
-> true or false  
+> true oder false  
 
 Standard: `false`.
 
@@ -75,19 +75,19 @@ HideRemoveConfirmation=false
 
 ## ReverseRelationCheck
 
-> What content/removeobject does when other objects point at an object that the removal takes away (an object  
-> goes when every one of its locations lies inside the removed subtrees). References are the rows of  
-> ezcontentobject\_link from the published version of a referring object (object relations, embeds and links in  
-> rich text by object or node id, relation fields), plus what the providers of \[ReverseRelationSettings\] report  
-> (Layouts blocks that name a node inside the subtrees). doc/eng-us/features/6.0/reverse-relation-check.md  
->  disabled - no check  
->  warn     - (default) the confirmation page lists the referring objects per selected item (link, class, kind  
->             of reference and field); it is also shown when every location of such an object is selected,  
->             which was removed at once before; with HideRemoveConfirmation=true there is no page  
->  block    - as warn, and the removal is refused while such references exist: the OK button is disabled, and  
->             the server refuses the removal on its own as well: a posted confirmation, HideRemoveConfirmation,  
->             a removal as a content job, the removal of the last locations on the Locations tab and a delete  
->             over WebDAV. Off by default.  
+> Was content/removeobject tut, wenn andere Objekte auf ein Objekt verweisen, das das Entfernen wegnimmt (ein Objekt  
+> geht, wenn jede seiner Platzierungen in den entfernten Teilbäumen liegt). Verweise sind die Zeilen von  
+> ezcontentobject\_link aus der veröffentlichten Version eines verweisenden Objekts (Objektverknüpfungen, Einbettungen und Links in  
+> Rich Text per Objekt- oder Knoten-ID, Verknüpfungsfelder), dazu das, was die Provider von \[ReverseRelationSettings\] melden  
+> (Layout-Blöcke, die einen Knoten innerhalb der Teilbäume nennen). doc/eng-us/features/6.0/reverse-relation-check.md  
+>  disabled - keine Prüfung  
+>  warn     - (Standard) die Bestätigungsseite listet die verweisenden Objekte pro ausgewähltem Eintrag auf (Link, Klasse, Art  
+>             des Verweises und Feld); sie erscheint auch, wenn jede Platzierung eines solchen Objekts ausgewählt ist,  
+>             das früher sofort entfernt wurde; mit HideRemoveConfirmation=true gibt es keine Seite  
+>  block    - wie warn, und das Entfernen wird abgelehnt, solange solche Verweise bestehen: Die Schaltfläche OK ist deaktiviert, und  
+>             der Server lehnt das Entfernen auch von sich aus ab: eine abgeschickte Bestätigung, HideRemoveConfirmation,  
+>             ein Entfernen als Inhaltsauftrag, das Entfernen der letzten Platzierungen im Reiter Platzierungen und ein Löschen  
+>             über WebDAV. Standardmäßig aus.  
 
 Standard: `warn`.
 

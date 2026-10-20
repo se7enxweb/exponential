@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[mysql]` von `settings/dbschema.ini`, mit 1 Einstellung(en).
 
-> RDBMS specific schema transformation rules  
+> Regeln zur Schema-Umwandlung je RDBMS  
 >
 > Syntax:  
 > \[RDBMSName\]  
@@ -32,7 +32,7 @@ Der Block `[mysql]` von `settings/dbschema.ini`, mit 1 Einstellung(en).
 > # Index name translation  
 > # Maps a different index name, to avoid index identifiers length limitation issues on some RDBMS.  
 > IndexNameTranslation\[table.indexName\]=newIndexName  
-> Transformation rules specific to MySQL  
+> Umwandlungsregeln speziell für MySQL  
 
 Bearbeiten Sie `settings/dbschema.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -42,8 +42,8 @@ Bearbeiten Sie `settings/dbschema.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## IndexTranslation
 
-> Since we do not store length information fields in indexes yet we  
-> need to add/remove them for MySQL.  
+> Da wir noch keine Längenangaben von Feldern in Indizes speichern,  
+> müssen wir sie für MySQL hinzufügen/entfernen.  
 
 Standard: ein Hash mit 17: `ezimagefile.ezimagefile_file=filepath.mysql:length/200`, `eztrigger.eztrigger_fetch=name.mysql:length/25;module_name.mysql:length/50;function_name.mysql:length/50`, `ezurlalias.ezurlalias_desturl=destination_url.mysql:length/200`, `ezurlalias.ezurlalias_source_url=source_url.mysql:length/255`, `ezcontentobject_tree.ezcontentobject_tree_path_ident=path_identification_string.mysql:length/50`, `ezcontentobject_trash.ezcobj_trash_path_ident=path_identification_string.mysql:length/50`, `ezimagefile.ezimagefile_file=filepath.mysql:length/200`, `eztrigger.eztrigger_fetch=name.mysql:length/25;module_name.mysql:length/50;function_name.mysql:length/50`, `eztrigger.eztrigger_def_id=module_name.mysql:length/50;function_name.mysql:length/50`, `ezurlalias.ezurlalias_desturl=destination_url.mysql:length/200`, `ezurlalias.ezurlalias_source_url=source_url.mysql:length/255`, `ezurlalias_ml.ezurlalias_ml_text=text.mysql:length/32` ....
 

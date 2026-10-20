@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/contentfinder.ini` nie selbst: Ein Update ersetzt die D
 
 ## Enabled
 
-> true | false. With false the finder answers 404 on every siteaccess.  
+> true | false. Mit false antwortet der Finder in jedem Siteaccess mit 404.  
 
 Standard: `true`.
 
@@ -33,10 +33,10 @@ Enabled=true
 
 ## SiteAccessList
 
-> The siteaccesses the finder answers on. Empty (the default): every siteaccess whose design  
-> list (\[DesignSettings\] SiteDesign, AdditionalSiteDesignList\[\]) has an administration design  
-> (admin, admin2, admin3, admin4, admin4l, adminui, or any other design starting with admin).  
-> Every other siteaccess answers 404.  
+> Die Siteaccesses, in denen der Finder antwortet. Leer (der Standard): jeder Siteaccess, dessen Design-  
+> Liste (\[DesignSettings\] SiteDesign, AdditionalSiteDesignList\[\]) ein Administrations-Design enthält  
+> (admin, admin2, admin3, admin4, admin4l, adminui oder jedes andere Design, das mit admin beginnt).  
+> Jeder andere Siteaccess antwortet mit 404.  
 
 Standard: eine leere Liste.
 
@@ -51,7 +51,7 @@ SiteAccessList[]
 
 ## ResultLimit
 
-> At most this many objects are shown for one search (1 to 100)  
+> Höchstens so viele Objekte werden für eine Suche angezeigt (1 bis 100)  
 
 Standard: `25`.
 
@@ -65,7 +65,7 @@ ResultLimit=25
 
 ## FileRowLimit
 
-> At most this many file rows are read for one file path or prefix (1 to 500)  
+> Höchstens so viele Dateizeilen werden für einen Dateipfad oder ein Präfix gelesen (1 bis 500)  
 
 Standard: `50`.
 
@@ -79,9 +79,9 @@ FileRowLimit=50
 
 ## PartialAliasSearch
 
-> enabled | disabled. When no URL alias, siteaccess prefix or last part of an alias matches, the  
-> finder looks for alias elements that contain the text ("product" finds test-product). That is  
-> one LIKE '%...%' over the whole of ezurlalias\_ml: disable it where the table is very large.  
+> enabled | disabled. Wenn kein URL-Alias, kein Siteaccess-Präfix und kein letzter Teil eines Alias passt, sucht der  
+> Finder nach Alias-Elementen, die den Text enthalten ("product" findet test-product). Das ist  
+> ein LIKE '%...%' über die ganze Tabelle ezurlalias\_ml: Deaktivieren Sie es, wo die Tabelle sehr groß ist.  
 
 Standard: `enabled`.
 
@@ -95,7 +95,7 @@ PartialAliasSearch=enabled
 
 ## MinimumPartLength
 
-> The shortest text (in characters, without the separators) searched for as a part (1 to 100)  
+> Der kürzeste Text (in Zeichen, ohne die Trennzeichen), nach dem als Teil gesucht wird (1 bis 100)  
 
 Standard: `3`.
 
@@ -109,8 +109,8 @@ MinimumPartLength=3
 
 ## PartRowLimit
 
-> At most this many alias elements are read for one part; the closest matches are shown first  
-> (the element itself, then elements starting with it, then whole words, then inside a word)  
+> Höchstens so viele Alias-Elemente werden für einen Teil gelesen; die nächsten Treffer stehen zuerst  
+> (das Element selbst, dann Elemente, die damit beginnen, dann ganze Wörter, dann innerhalb eines Wortes)  
 
 Standard: `2000`.
 

@@ -32,10 +32,10 @@ AvailableClasses[]
 
 ## CustomAttributes
 
-> The class 'html' is disabled by default because it gives editors the  
-> possibility to insert html and javascript code in XML blocks.  
-> Don't enable the 'html' class unless you really trust all users who has  
-> privileges to edit objects containing XML blocks.  
+> Die Klasse 'html' ist standardmäßig deaktiviert, weil sie Redakteuren die  
+> Möglichkeit gibt, HTML- und JavaScript-Code in XML-Blöcke einzufügen.  
+> Aktivieren Sie die Klasse 'html' nur, wenn Sie allen Benutzern wirklich vertrauen, die  
+> Objekte mit XML-Blöcken bearbeiten dürfen.  
 > AvailableClasses\[\]=html  
 
 Standard: eine leere Liste.

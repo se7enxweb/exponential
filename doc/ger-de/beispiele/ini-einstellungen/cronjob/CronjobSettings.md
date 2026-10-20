@@ -33,7 +33,7 @@ ScriptDirectories[]=cronjobs
 
 ## Scripts
 
-> Since 4.6 the following script is not activated by default  
+> Seit 4.6 ist das folgende Skript standardmäßig nicht aktiviert  
 > Scripts\[\]=subtreeexpirycleanup.php  
 
 Standard: eine Liste mit 5: `unpublish.php`, `rssimport.php`, `indexcontent.php`, `hide.php`, `internal_drafts_cleanup.php`.
@@ -57,7 +57,7 @@ Scripts[]=internal_drafts_cleanup.php
 > Scripts\[\]=unlock.php  
 > Scripts\[\]=staticcache\_cleanup.php  
 > Scripts\[\]=updateviewcount.php  
-> Extension directory for cronjobs.  
+> Verzeichnis der Erweiterung für Cronjobs.  
 
 Standard: eine leere Liste.
 
@@ -72,12 +72,12 @@ ExtensionDirectories[]
 
 ## MaxScriptExecutionTime
 
-> No more than one instance of a cronjob script can be run at any given time.  
-> If a script uses more time than MaxScriptExecutionTime, the next instance of  
-> it will try to gracefully steal the cronjob script mutex. If the process has  
-> been running for more than two times MaxScriptExecutionTime, the original  
-> process will be killed. The default is 12 hours. MaxScriptExecutionTime can  
-> also be set per cronjob part, that will override this global setting.  
+> Von einem Cronjob-Skript kann jederzeit höchstens eine Instanz laufen.  
+> Braucht ein Skript länger als MaxScriptExecutionTime, versucht die nächste Instanz,  
+> den Mutex des Cronjob-Skripts sauber zu übernehmen. Läuft der Prozess schon länger  
+> als zweimal MaxScriptExecutionTime, wird der ursprüngliche  
+> Prozess beendet. Der Standard ist 12 Stunden. MaxScriptExecutionTime lässt sich  
+> auch pro Cronjob-Teil setzen, was diese globale Einstellung überschreibt.  
 
 Standard: `43200`.
 

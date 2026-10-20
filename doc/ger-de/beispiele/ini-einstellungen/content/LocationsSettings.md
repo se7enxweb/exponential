@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## LocationsPerPage
 
-> How many locations the locations tab shows at a time.  
+> Wie viele Platzierungen der Reiter Platzierungen auf einmal zeigt.  
 >
-> An object can be placed in any number of locations, and a widely reused piece  
-> of content can reach thousands. Drawing them all meant fetching them all, and  
-> a path lookup for every row, which took the page down before it rendered  
-> anything. The tab pages them; this is the page size.  
+> Ein Objekt kann beliebig viele Platzierungen haben, und ein vielfach wiederverwendeter  
+> Inhalt kann Tausende erreichen. Sie alle zu zeichnen hieß, sie alle zu holen, mit  
+> einer Pfadabfrage für jede Zeile, was die Seite lahmlegte, bevor sie  
+> irgendetwas darstellte. Der Reiter blättert sie; dies ist die Seitengröße.  
 
 Standard: `25`.
 

@@ -21,13 +21,13 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## KeepItemsForDays
 
-> How many days an item stays in the trash before the cronjob trashpurge  
-> (cronjobs/trashpurge.php) purges it. Empty or 0: the cronjob purges the whole  
-> trash, as before. A value that is not a whole number of days up to 36500 purges  
-> nothing and reports an error. bin/php/trashpurge.php is not affected; it takes  
-> --trashed-days=<days>. Items trashed before 6.0 have no trash time (trashed = 0)  
-> and are purged on the first run whatever the value; see the guide to keep them.  
-> Guide: doc/eng-us/bc/6.0/trash.md  
+> Wie viele Tage ein Eintrag im Papierkorb bleibt, bevor der Cronjob trashpurge  
+> (cronjobs/trashpurge.php) ihn endgültig löscht. Leer oder 0: Der Cronjob leert wie bisher den ganzen  
+> Papierkorb. Ein Wert, der keine ganze Zahl von Tagen bis 36500 ist, löscht  
+> nichts und meldet einen Fehler. bin/php/trashpurge.php ist nicht betroffen; es nimmt  
+> --trashed-days=<days>. Einträge, die vor 6.0 in den Papierkorb kamen, haben keine Papierkorb-Zeit (trashed = 0)  
+> und werden beim ersten Lauf unabhängig vom Wert gelöscht; wie Sie sie behalten, steht in der Anleitung.  
+> Anleitung: doc/eng-us/bc/6.0/trash.md  
 
 Standard: leer.
 

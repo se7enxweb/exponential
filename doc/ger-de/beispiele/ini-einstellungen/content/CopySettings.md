@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## MaxNodesCopySubtree
 
-> Maximum number of nodes to copy using Copy Subtree feature  
+> Höchstzahl der Knoten, die mit der Funktion Teilbaum kopieren kopiert werden  
 
 Standard: `30`.
 
@@ -33,7 +33,7 @@ MaxNodesCopySubtree=30
 
 ## VersionHandling
 
-> Use either user-defined, last-published or all  
+> Verwenden Sie user-defined, last-published oder all  
 
 Standard: `all`.
 
@@ -47,8 +47,8 @@ VersionHandling=all
 
 ## CreatorHandling
 
-> Use either user-defined, keep-unchanged or current to  
-> set current user as creator of copied contentobjects  
+> Verwenden Sie user-defined, keep-unchanged oder current, um  
+> den aktuellen Benutzer als Ersteller kopierter Inhaltsobjekte zu setzen  
 
 Standard: `current`.
 
@@ -62,7 +62,7 @@ CreatorHandling=current
 
 ## TimeHandling
 
-> Use either user-defined, keep-unchanged or current  
+> Verwenden Sie user-defined, keep-unchanged oder current  
 
 Standard: `current`.
 
@@ -76,7 +76,7 @@ TimeHandling=current
 
 ## ShowCopySubtreeNotification
 
-> Show or not copy subtree notification after copying subtree  
+> Ob nach dem Kopieren eines Teilbaums eine Benachrichtigung angezeigt wird  
 
 Standard: `enabled`.
 
@@ -90,12 +90,12 @@ ShowCopySubtreeNotification=enabled
 
 ## ClassRedirect
 
-> Controls where it will redirect after copying a class  
-> Use one of:  
-> grouplist - Redirect to the main classgroup list  
-> classlist - Redirect to group of the copied class  
-> classedit - Redirect to edit mode of copied class  
-> classview - Redirect to view mode of copied class  
+> Steuert, wohin nach dem Kopieren einer Klasse weitergeleitet wird  
+> Verwenden Sie eines von:  
+> grouplist - zur Liste der Klassengruppen weiterleiten  
+> classlist - zur Gruppe der kopierten Klasse weiterleiten  
+> classedit - in den Bearbeitungsmodus der kopierten Klasse weiterleiten  
+> classview - in die Ansicht der kopierten Klasse weiterleiten  
 
 Standard: `classlist`.
 

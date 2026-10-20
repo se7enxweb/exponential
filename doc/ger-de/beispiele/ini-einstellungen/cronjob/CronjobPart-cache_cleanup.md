@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-cache_cleanup]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> Removes view cache and cache-block files that have expired or grown old;  
-> without it they stay on disk until the same key is generated again. Runs for  
-> the var directory of the given siteaccess, so once per VarDir:  
+> Entfernt View-Cache- und Cache-Block-Dateien, die abgelaufen oder alt geworden sind;  
+> ohne ihn bleiben sie auf der Festplatte, bis derselbe Schlüssel erneut erzeugt wird. Läuft für  
+> das var-Verzeichnis des angegebenen Siteaccess, also einmal pro VarDir:  
 >   php runcronjobs.php -s <siteaccess> cache\_cleanup  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
@@ -24,9 +24,9 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Scripts
 
-> The role-aware HTTP cache (settings/httpcache.ini); does nothing while it is off.  
-> The result files of the SQL query cache (settings/querycache.ini Storage=file,  
-> or auto without APCu); does nothing while there are none.  
+> Der rollenbewusste HTTP-Cache (settings/httpcache.ini); tut nichts, solange er aus ist.  
+> Die Ergebnisdateien des SQL-Abfrage-Caches (settings/querycache.ini Storage=file,  
+> oder auto ohne APCu); tut nichts, solange es keine gibt.  
 
 Standard: eine Liste mit 3: `cachecleanup.php`, `httpcache_cleanup.php`, `querycache_cleanup.php`.
 

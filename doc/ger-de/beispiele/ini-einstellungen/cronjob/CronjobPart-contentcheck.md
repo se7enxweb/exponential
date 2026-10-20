@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-contentcheck]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> The reference index of the content checks on its own: php runcronjobs.php contentcheck. Only  
-> needed with contentcheck.ini \[UnreferencedSettings\] BuildOnRequest=false (very large  
-> installations); run it more often than IndexTTL. Guide: doc/eng-us/features/6.0/content-checks.md  
+> Der Referenzindex der Inhaltsprüfungen für sich: php runcronjobs.php contentcheck. Nur  
+> nötig mit contentcheck.ini \[UnreferencedSettings\] BuildOnRequest=false (sehr große  
+> Installationen); führen Sie ihn öfter als IndexTTL aus. Anleitung: doc/eng-us/features/6.0/content-checks.md  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

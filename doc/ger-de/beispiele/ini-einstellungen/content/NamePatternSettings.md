@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## ResolverClasses
 
-> PHP classes a content class's object name pattern or URL alias name pattern  
-> may name in braces at its start, for example {myNameResolver} or  
-> {myNameResolver} <title>: the class then makes the name. A listed class must  
-> implement expNamePatternResolverInterface; a name that is not listed here is  
-> ignored (and logged), and the pattern is resolved from its attribute tokens.  
-> Empty by default.  
+> PHP-Klassen, die das Namensmuster für Objekte oder für URL-Aliase einer Inhaltsklasse  
+> am Anfang in geschweiften Klammern nennen darf, zum Beispiel {myNameResolver} oder  
+> {myNameResolver} <title>: Die Klasse bildet dann den Namen. Eine aufgeführte Klasse muss  
+> expNamePatternResolverInterface implementieren; ein Name, der hier nicht steht, wird  
+> ignoriert (und protokolliert), und das Muster wird aus seinen Attribut-Platzhaltern aufgelöst.  
+> Standardmäßig leer.  
 
 Standard: eine leere Liste.
 

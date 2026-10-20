@@ -21,7 +21,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## CustomAttributes
 
-> Custom attributes list  
+> Liste der eigenen Attribute  
 
 Standard: eine Liste mit 1: `title`.
 

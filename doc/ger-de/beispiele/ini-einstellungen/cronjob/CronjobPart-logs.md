@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-logs]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> The logs: rotate those over their MaxSize, prune and compress their archives (doc/eng-us/features/6.0/log-rotation.md).  
-> In no default part: run it with php runcronjobs.php logs, or add explogrotate.php to a part the site runs.  
+> Die Logs: die über ihrer MaxSize rotieren, ihre Archive bereinigen und komprimieren (doc/eng-us/features/6.0/log-rotation.md).  
+> In keinem Standardteil: Führen Sie ihn mit php runcronjobs.php logs aus oder fügen Sie explogrotate.php einem Teil hinzu, den die Website ausführt.  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

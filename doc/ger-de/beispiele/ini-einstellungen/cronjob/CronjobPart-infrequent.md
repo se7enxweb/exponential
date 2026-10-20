@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Scripts
 
-> E-mail preferences retention (mailpreferences.ini \[ConsentSettings\], \[SuppressionSettings\])  
+> Aufbewahrung der E-Mail-Einstellungen (mailpreferences.ini \[ConsentSettings\], \[SuppressionSettings\])  
 
 Standard: eine Liste mit 3: `basket_cleanup.php`, `linkcheck.php`, `mailpreferences.php`.
 

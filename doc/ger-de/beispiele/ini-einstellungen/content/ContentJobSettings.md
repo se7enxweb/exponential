@@ -19,16 +19,16 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## SynchronousLimit
 
-> Content jobs: large subtree removes (content/removeobject, content/removenode) and subtree copies  
-> (content/copysubtree) run in batches in a background worker instead of in the web request, so they  
-> never fail from a request time limit, a memory limit or one huge transaction. Each batch is a  
-> transaction of its own, followed by a checkpoint: a job resumes where it stopped after any  
-> interruption (kill -9 included). Classes in kernel/classes/contentjob/; the command  
+> Inhaltsaufträge: Das Entfernen großer Teilbäume (content/removeobject, content/removenode) und das Kopieren von Teilbäumen  
+> (content/copysubtree) läuft stapelweise in einem Hintergrund-Worker statt in der Web-Anfrage, sodass es  
+> nie an einer Zeitgrenze der Anfrage, einer Speichergrenze oder einer riesigen Transaktion scheitert. Jeder Stapel ist eine  
+> eigene Transaktion, gefolgt von einem Prüfpunkt: Ein Auftrag macht nach jeder  
+> Unterbrechung (auch kill -9) dort weiter, wo er aufgehört hat. Klassen in kernel/classes/contentjob/; der Befehl  
 > bin/php/expcontentjob.php (./console exp:expcontentjob list|show|run|resume|cancel|remove|copy).  
-> Jobs live in var/<site var dir>/jobs/content/ (a cluster needs a shared var directory for them).  
+> Aufträge liegen in var/<site var dir>/jobs/content/ (ein Cluster braucht dafür ein gemeinsames var-Verzeichnis).  
 >
-> The user chooses per operation whether it runs now (in the request) or as a background job; this  
-> sets the choice offered first: below this number of nodes "now", from it on "job". 0 = "job" always.  
+> Der Benutzer wählt pro Operation, ob sie jetzt (in der Anfrage) oder als Hintergrundauftrag läuft; dies  
+> legt die zuerst angebotene Wahl fest: unter dieser Zahl von Knoten „jetzt“, ab ihr „Auftrag“. 0 = immer „Auftrag“.  
 
 Standard: `50`.
 
@@ -42,7 +42,7 @@ SynchronousLimit=50
 
 ## NowLimit
 
-> "Now" is refused above this number of nodes, with a message to run it as a job. 0 = no ceiling.  
+> „Jetzt“ wird über dieser Zahl von Knoten abgelehnt, mit dem Hinweis, es als Auftrag auszuführen. 0 = keine Obergrenze.  
 
 Standard: `1000`.
 
@@ -56,7 +56,7 @@ NowLimit=1000
 
 ## BatchSize
 
-> Nodes per batch (one transaction each).  
+> Knoten pro Stapel (jeder eine Transaktion).  
 
 Standard: `50`.
 
@@ -70,7 +70,7 @@ BatchSize=50
 
 ## BatchPause
 
-> Pause between batches in milliseconds (0 = none), to leave room for other writers.  
+> Pause zwischen den Stapeln in Millisekunden (0 = keine), um anderen Schreibern Raum zu lassen.  
 
 Standard: `0`.
 
@@ -84,8 +84,8 @@ BatchPause=0
 
 ## QueuedGrace
 
-> A queued job whose worker has not started within this many seconds is started by the cronjob  
-> part 'contentjobs' (frequent group); a running job whose worker died is started at once.  
+> Einen wartenden Auftrag, dessen Worker nicht innerhalb so vieler Sekunden gestartet ist, startet der Cronjob-Teil  
+> 'contentjobs' (Gruppe frequent); ein laufender Auftrag, dessen Worker gestorben ist, wird sofort gestartet.  
 
 Standard: `60`.
 
@@ -99,9 +99,9 @@ QueuedGrace=60
 
 ## QueuedTimeout
 
-> A queued job that no worker started within this many seconds (no cronjob runs, the start was lost) fails  
-> and gives back its locks if it has done nothing yet, so it never blocks a subtree; resume it to try again.  
-> A worker that cannot be started at all fails the job at once, with the reason. 0 = never expire.  
+> Ein wartender Auftrag, den innerhalb so vieler Sekunden kein Worker gestartet hat (keine Cronjob-Läufe, der Start ging verloren), schlägt fehl  
+> und gibt seine Sperren zurück, wenn er noch nichts getan hat, sodass er nie einen Teilbaum blockiert; setzen Sie ihn fort, um es erneut zu versuchen.  
+> Ein Worker, der gar nicht gestartet werden kann, lässt den Auftrag sofort fehlschlagen, mit dem Grund. 0 = läuft nie ab.  
 
 Standard: `600`.
 
@@ -115,8 +115,8 @@ QueuedTimeout=600
 
 ## MaxAttempts
 
-> A job whose worker is started this many times without finishing one batch is failed (with the  
-> last error) instead of being retried for ever. Resume it once the cause is fixed.  
+> Ein Auftrag, dessen Worker so oft gestartet wird, ohne einen Stapel abzuschließen, wird als fehlgeschlagen markiert (mit dem  
+> letzten Fehler), statt endlos wiederholt zu werden. Setzen Sie ihn fort, sobald die Ursache behoben ist.  
 
 Standard: `5`.
 
@@ -130,7 +130,7 @@ MaxAttempts=5
 
 ## KeepDays
 
-> Finished (done or cancelled) jobs are removed by the cronjob part after this many days. 0 = never.  
+> Abgeschlossene (fertige oder abgebrochene) Aufträge entfernt der Cronjob-Teil nach so vielen Tagen. 0 = nie.  
 
 Standard: `30`.
 
@@ -144,7 +144,7 @@ KeepDays=30
 
 ## PhpBinary
 
-> The PHP command line binary for the worker; empty = the PHP running the request (PHP\_BINDIR/php).  
+> Die PHP-Kommandozeilen-Binärdatei für den Worker; leer = das PHP, das die Anfrage ausführt (PHP\_BINDIR/php).  
 
 Standard: leer.
 
@@ -158,9 +158,9 @@ PhpBinary=
 
 ## JobTypes
 
-> The job types: JobTypes\[<name>\]=<class implementing expContentJobType>.  
-> A package install in the background (Setup > Packages > Install, "Install in the background"), doc/eng-us/bc/6.0/package-json-format.md  
-> An export of the audit console in the background (Audit > Export, "Export in the background"), doc/eng-us/bc/6.0/audit.md  
+> Die Auftragstypen: JobTypes\[<name>\]=<class implementing expContentJobType>.  
+> Eine Paketinstallation im Hintergrund (Setup > Pakete > Installieren, „Im Hintergrund installieren“), doc/eng-us/bc/6.0/package-json-format.md  
+> Ein Export der Audit-Konsole im Hintergrund (Audit > Export, „Im Hintergrund exportieren“), doc/eng-us/bc/6.0/audit.md  
 
 Standard: ein Hash mit 11: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`.
 

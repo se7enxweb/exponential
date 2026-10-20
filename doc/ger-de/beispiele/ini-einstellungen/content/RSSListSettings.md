@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## ItemsPerPageList
 
-> The page sizes the RSS list offers in its items per page selector. The first  
-> is the one a visitor who has not chosen gets. A size that is not on this list  
-> cannot be asked for in the url either, so the list is also what bounds the  
-> query.  
+> Die Seitengrößen, die die RSS-Liste in ihrer Auswahl für Einträge pro Seite anbietet. Die erste  
+> erhält ein Besucher, der nicht gewählt hat. Eine Größe, die nicht in dieser Liste steht,  
+> lässt sich auch nicht in der URL anfordern, die Liste begrenzt also auch die  
+> Abfrage.  
 
 Standard: eine Liste mit 3: `25`, `50`, `250`.
 

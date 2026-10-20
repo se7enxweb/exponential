@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## MaxAge
 
-> Seconds after which a file is removed whatever its expiry. A cold entry that  
-> was still valid costs one regeneration. 0 removes only expired files.  
+> Sekunden, nach denen eine Datei unabhängig von ihrem Ablauf entfernt wird. Ein kalter Eintrag, der  
+> noch gültig war, kostet eine Neuerzeugung. 0 entfernt nur abgelaufene Dateien.  
 
 Standard: `172800`.
 
@@ -34,7 +34,7 @@ MaxAge=172800
 
 ## IterationSleep
 
-> Microseconds to sleep after every 1000 files, to go easy on the disk. 0 = none.  
+> Mikrosekunden Pause nach je 1000 Dateien, um die Festplatte zu schonen. 0 = keine.  
 
 Standard: `0`.
 
@@ -48,13 +48,13 @@ IterationSleep=0
 
 ## RenameAfterClear
 
-> After a global clear of a cache, move its whole directory aside in one rename  
-> and delete it from there, instead of looking at every file. Entries stored  
-> between the clear and the run are lost and generated again. disabled removes  
-> file by file. A clear in the administration interface or with  
-> bin/php/ezcache.php already moves the directory aside itself (site.ini  
-> \[FileSettings\] RenameExpiredCaches) and records that here, so this run does  
-> not move it a second time.  
+> Nach dem globalen Leeren eines Caches sein ganzes Verzeichnis mit einer Umbenennung beiseiteschieben  
+> und dort löschen, statt jede Datei anzusehen. Einträge, die zwischen  
+> dem Leeren und dem Lauf gespeichert wurden, gehen verloren und werden neu erzeugt. disabled entfernt  
+> Datei für Datei. Ein Leeren in der Administrationsoberfläche oder mit  
+> bin/php/ezcache.php schiebt das Verzeichnis schon selbst beiseite (site.ini  
+> \[FileSettings\] RenameExpiredCaches) und vermerkt das hier, sodass dieser Lauf es  
+> nicht ein zweites Mal verschiebt.  
 
 Standard: `enabled`.
 

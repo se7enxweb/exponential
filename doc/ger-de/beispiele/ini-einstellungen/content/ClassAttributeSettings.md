@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## CategoryList
 
-> List of attribute categories, by default used for grouping  
-> attributes in edit interface.  
-> Key is identifier and value is used in UI as name  
-> Note: Limit on identifier is 25 charters!  
+> Liste der Attributkategorien, standardmäßig zum Gruppieren  
+> der Attribute in der Bearbeitungsoberfläche verwendet.  
+> Der Schlüssel ist der Bezeichner, der Wert wird in der Oberfläche als Name verwendet  
+> Hinweis: Der Bezeichner ist auf 25 Zeichen begrenzt!  
 
 Standard: ein Hash mit 2: `content=Content`, `meta=Meta`.
 
@@ -39,8 +39,8 @@ CategoryList[meta]=Meta
 
 ## DefaultCategory
 
-> Default Category for attributes without or with invalid category  
-> Note: Must be defined in CategoryList!  
+> Standardkategorie für Attribute ohne oder mit ungültiger Kategorie  
+> Hinweis: Muss in CategoryList definiert sein!  
 
 Standard: `content`.
 

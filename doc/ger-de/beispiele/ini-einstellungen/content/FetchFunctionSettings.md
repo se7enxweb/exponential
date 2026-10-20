@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## InstClassListFilter
 
-> Setting used by 'can\_instantiate\_class\_list' fetch function to hide  
-> certain content classes. Supported are only content class identifiers  
-> Filtering is only available when 'group\_by\_class\_group' param is used  
+> Einstellung, mit der die Fetch-Funktion 'can\_instantiate\_class\_list'  
+> bestimmte Inhaltsklassen ausblendet. Unterstützt werden nur Bezeichner von Inhaltsklassen  
+> Das Filtern ist nur verfügbar, wenn der Parameter 'group\_by\_class\_group' verwendet wird  
 
 Standard: eine leere Liste.
 

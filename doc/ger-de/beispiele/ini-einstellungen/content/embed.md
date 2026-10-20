@@ -47,8 +47,8 @@ AvailableClasses[]
 
 > AvailableClasses\[\]=embedRed  
 > AvailableClasses\[\]=embedBlue  
-> How an embedded gallery is shown: slider or grid (read by the embed view of ng\_gallery). Listed here so the online  
-> editor keeps the attribute when it saves rich text.  
+> Wie eine eingebettete Galerie angezeigt wird: slider oder grid (von der Einbettungsansicht von ng\_gallery gelesen). Hier aufgeführt, damit der Online-  
+> Editor das Attribut beim Speichern des Rich Texts behält.  
 
 Standard: eine Liste mit 1: `gallery_view_mode`.
 

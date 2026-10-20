@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[postgresql]` von `settings/dbschema.ini`, mit 1 Einstellung(en).
 
-> Make sure this table has delayed key write set when dumping SQL  
+> Sorgen Sie dafür, dass diese Tabelle beim Ausgeben von SQL Delayed Key Write gesetzt hat  
 
 Bearbeiten Sie `settings/dbschema.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

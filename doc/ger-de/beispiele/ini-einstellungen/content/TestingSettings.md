@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## MultivariateTesting
 
-> Enable or disable multivariate testing feature  
+> Die Funktion für multivariates Testen aktivieren oder deaktivieren  
 
 Standard: `disabled`.
 
@@ -33,7 +33,7 @@ MultivariateTesting=disabled
 
 ## MultivariateTestingHandlerClass
 
-> A handler class which implements <ezpMultivariateTestHandlerInterface> interface  
+> Eine Handler-Klasse, die die Schnittstelle <ezpMultivariateTestHandlerInterface> implementiert  
 
 Standard: `ezpMultivariateTestHandler`.
 
@@ -47,7 +47,7 @@ MultivariateTestingHandlerClass=ezpMultivariateTestHandler
 
 ## EnabledForSiteAccessList
 
-> List of site accesses multivariate testing is enabled for.  
+> Liste der Siteaccesses, für die multivariates Testen aktiviert ist.  
 
 Standard: eine leere Liste.
 

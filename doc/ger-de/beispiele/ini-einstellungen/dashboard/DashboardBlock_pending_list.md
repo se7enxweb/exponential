@@ -14,25 +14,25 @@ Der Block `[DashboardBlock_pending_list]` von `settings/dashboard.ini`, mit 4 Ei
 > DashboardBlocks\[\]=community\_activity  
 > DashboardBlocks\[\]=wishlist  
 > \[DashboardBlock\_example\]  
-> By default system will load /dashboard/\[block\_identifier\].tpl template  
-> e.g if INI group is called \[Dashboard\_example\] then system will load /dashboard/example.tpl file  
-> If Template variable is specified then it will be used instead of default location  
+> Standardmäßig lädt das System das Template /dashboard/\[block\_identifier\].tpl  
+> z. B. lädt das System bei einer INI-Gruppe \[Dashboard\_example\] die Datei /dashboard/example.tpl  
+> Ist die Variable Template angegeben, wird sie statt des Standardorts verwendet  
 > Template=example.tpl  
-> Priority determines the order in which the blocks will be rendered  
+> Priority bestimmt die Reihenfolge, in der die Blöcke gerendert werden  
 > Priority=10  
-> List of policies, either in "<node\_id>" or "<module>/<function>" form  
-> In case of node id, content/read is checked!  
-> The block is left out unless the user has every one of them.  
+> Liste der Richtlinien, in der Form "<node\_id>" oder "<module>/<function>"  
+> Bei einer Knoten-ID wird content/read geprüft!  
+> Der Block entfällt, außer der Benutzer hat jede davon.  
 > PolicyList\[\]  
-> The addresses the block is about or links to, "<module>/<view>\[/<parameters>\]" or a URL alias.  
-> The block is left out unless the user can open every one of them, checked the way the kernel  
-> checks the request (expViewAccess: the view's policy functions with their limitations, a module  
-> without functions as a whole, the siteaccess rules, the user/login SiteAccess limitation, and the  
-> node or object of content/view and content/edit). Use it for what PolicyList cannot say: a view  
-> whose functions are "a or b", a view without functions, an extension's module.  
+> Die Adressen, um die es im Block geht oder auf die er verlinkt, "<module>/<view>\[/<parameters>\]" oder ein URL-Alias.  
+> Der Block entfällt, außer der Benutzer kann jede davon öffnen, geprüft wie der Kernel  
+> die Anfrage prüft (expViewAccess: die Richtlinienfunktionen der Ansicht mit ihren Einschränkungen, ein Modul  
+> ohne Funktionen als Ganzes, die Siteaccess-Regeln, die Einschränkung SiteAccess von user/login und der  
+> Knoten oder das Objekt von content/view und content/edit). Verwenden Sie es für das, was PolicyList nicht sagen kann: eine Ansicht,  
+> deren Funktionen „a oder b“ sind, eine Ansicht ohne Funktionen, das Modul einer Erweiterung.  
 > ViewList\[\]  
-> Controls how many items are fetched and displayed in the dashboard block  
-> Value available as a {$block.number\_of\_items} variable  
+> Steuert, wie viele Einträge im Dashboard-Block geholt und angezeigt werden  
+> Wert verfügbar als Variable {$block.number\_of\_items}  
 > NumberOfItems=10  
 
 Bearbeiten Sie `settings/dashboard.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:

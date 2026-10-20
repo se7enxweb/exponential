@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## EnableClassGroupOverride
 
-> Set this to true if you would like to do an override  
-> based on the class group of the content  
+> Setzen Sie dies auf true, wenn Sie ein Override  
+> nach der Klassengruppe des Inhalts machen wollen  
 
 Standard: `false`.
 

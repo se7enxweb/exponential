@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## AvailableViewModes
 
-> AvailableViewModes is possible views for the view parameter (used by oe)  
+> AvailableViewModes sind die möglichen Ansichten für den Parameter view (vom OE verwendet)  
 
 Standard: eine leere Liste.
 

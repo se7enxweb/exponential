@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/contentcheck.ini` nie selbst: Ein Update ersetzt die Da
 
 ## Enabled
 
-> true | false. With false the checks answer 404 on every siteaccess.  
+> true | false. Mit false antworten die Prüfungen in jedem Siteaccess mit 404.  
 
 Standard: `true`.
 
@@ -33,9 +33,9 @@ Enabled=true
 
 ## SiteAccessList
 
-> The siteaccesses the checks answer on. Empty (the default): every siteaccess whose design  
-> list (\[DesignSettings\] SiteDesign, AdditionalSiteDesignList\[\]) has an administration design  
-> (a design whose name starts with admin). Every other siteaccess answers 404.  
+> Die Siteaccesses, in denen die Prüfungen antworten. Leer (der Standard): jeder Siteaccess, dessen Design-Liste  
+> (\[DesignSettings\] SiteDesign, AdditionalSiteDesignList\[\]) ein Administrations-Design enthält  
+> (ein Design, dessen Name mit admin beginnt). Jeder andere Siteaccess antwortet mit 404.  
 
 Standard: eine leere Liste.
 

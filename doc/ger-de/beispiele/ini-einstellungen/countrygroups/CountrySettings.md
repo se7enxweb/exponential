@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/countrygroups.ini` nie selbst: Ein Update ersetzt die D
 
 ## GroupList
 
-> The groups shown before "All countries", in this order. Each group needs  
-> GroupName\_<group> (its label, translated in the context kernel/country)  
-> and GroupCountries\_<group>\[\] (ISO 3166-1 alpha-2 codes, ranked).  
-> An empty list leaves only "All countries".  
+> Die vor „Alle Länder“ gezeigten Gruppen, in dieser Reihenfolge. Jede Gruppe braucht  
+> GroupName\_<group> (ihre Beschriftung, übersetzt im Kontext kernel/country)  
+> und GroupCountries\_<group>\[\] (Codes nach ISO 3166-1 alpha-2, nach Rang).  
+> Eine leere Liste lässt nur „Alle Länder“ übrig.  
 
 Standard: eine Liste mit 1: `common`.
 
@@ -38,9 +38,9 @@ GroupList[]=common
 
 ## RepeatInAllCountries
 
-> Whether "All countries" lists the countries of the groups above again  
-> (enabled), so the A-Z list stays complete, or leaves them out (disabled).  
-> A select that allows several countries never repeats them.  
+> Ob „Alle Länder“ die Länder der Gruppen oben erneut auflistet  
+> (enabled), damit die Liste von A bis Z vollständig bleibt, oder sie weglässt (disabled).  
+> Eine Auswahl, die mehrere Länder erlaubt, wiederholt sie nie.  
 
 Standard: `enabled`.
 
@@ -66,8 +66,8 @@ GroupName_common=Most used countries
 
 ## GroupCountries_common
 
-> North America, South America, Europe, the United Kingdom, Asia,  
-> New Zealand, Australia, Africa  
+> Nordamerika, Südamerika, Europa, das Vereinigte Königreich, Asien,  
+> Neuseeland, Australien, Afrika  
 
 Standard: eine Liste mit 37: `US`, `CA`, `MX`, `BR`, `AR`, `CO`, `CL`, `PE`, `DE`, `FR`, `IT`, `ES` ....
 

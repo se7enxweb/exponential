@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## ProviderClassList
 
-> Classes that report references kept outside ezcontentobject\_link, for the check of \[RemoveSettings\] and  
-> \[HideSettings\] ReverseRelationCheck. Each answers the static method reverseRelations( array $paths, int $limit )  
-> (see Exponential\\Service\\ReverseRelationCheck::providerReferences()). A class that does not exist is skipped.  
-> Extensions add theirs in their own content.ini.append.php, e.g. ProviderClassList\[\]=expLayoutsReverseRelationProvider  
+> Klassen, die Verweise melden, die außerhalb von ezcontentobject\_link gespeichert sind, für die Prüfung von \[RemoveSettings\] und  
+> \[HideSettings\] ReverseRelationCheck. Jede beantwortet die statische Methode reverseRelations( array $paths, int $limit )  
+> (siehe Exponential\\Service\\ReverseRelationCheck::providerReferences()). Eine Klasse, die es nicht gibt, wird übersprungen.  
+> Erweiterungen fügen ihre in ihrer eigenen content.ini.append.php hinzu, z. B. ProviderClassList\[\]=expLayoutsReverseRelationProvider  
 
 Standard: eine leere Liste.
 

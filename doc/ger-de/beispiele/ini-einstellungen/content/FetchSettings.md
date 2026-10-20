@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## DefaultClassFilterType
 
-> The class filter type the fetch functions content/list, content/tree,  
-> content/list\_count, content/tree\_count and content/calendar use when a fetch  
-> gives class\_filter\_array without class\_filter\_type.  
-> Empty (the default): the class filter array is ignored then, as before.  
-> include: only the classes in the array; exclude: every class but those.  
+> Der Typ des Klassenfilters, den die Fetch-Funktionen content/list, content/tree,  
+> content/list\_count, content/tree\_count und content/calendar verwenden, wenn ein Fetch  
+> class\_filter\_array ohne class\_filter\_type angibt.  
+> Leer (der Standard): Das Array des Klassenfilters wird dann wie bisher ignoriert.  
+> include: nur die Klassen im Array; exclude: jede Klasse außer diesen.  
 
 Standard: leer.
 

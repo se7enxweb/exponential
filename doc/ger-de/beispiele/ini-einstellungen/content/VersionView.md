@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## AvailableSiteDesignList
 
-> OBSOLETE: Use AvailableSiteDesignList instead  
-> Specify all available site designs  
+> VERALTET: Verwenden Sie stattdessen AvailableSiteDesignList  
+> Alle verfügbaren Website-Designs angeben  
 > AvailableSiteDesigns=standard;user;admin;demo  
-> OBSOLETE: A list of designs the site can use  
+> VERALTET: Eine Liste der Designs, die die Website verwenden kann  
 
 Standard: eine Liste mit 1: `admin`.
 
@@ -39,10 +39,10 @@ AvailableSiteDesignList[]=admin
 ## ViewModes
 
 > AvailableSiteDesignList\[\]=base  
-> The view modes a version can be shown in, content/versionview/<object>/<version>/(view\_mode)/<mode>  
-> (node/view/<mode>.tpl); another one is not available. Without the parameter it is full.  
-> With more than one listed, the View control box of the preview in the admin offers them.  
-> design/standard has node/view/print.tpl as an example of a print layout.  
+> Die Ansichtsmodi, in denen eine Version angezeigt werden kann, content/versionview/<object>/<version>/(view\_mode)/<mode>  
+> (node/view/<mode>.tpl); ein anderer ist nicht verfügbar. Ohne den Parameter ist es full.  
+> Sind mehrere aufgeführt, bietet sie die Box Ansicht der Vorschau in der Administration an.  
+> design/standard hat node/view/print.tpl als Beispiel für ein Drucklayout.  
 
 Standard: eine Liste mit 1: `full`.
 

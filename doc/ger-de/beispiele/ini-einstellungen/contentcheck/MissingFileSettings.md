@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/contentcheck.ini` nie selbst: Ein Update ersetzt die Da
 
 ## Handlers
 
-> Missing files and image aliases (the target "Missing files" of contentcheck/brokenrelations,  
-> doc/eng-us/features/6.0/content-checks.md, "Missing files"). The class that says which files a field  
-> of a datatype stands for: one implementing expContentCheckFileHandler. An extension adds its  
-> file datatype here.  
+> Fehlende Dateien und Bild-Aliase (das Ziel „Fehlende Dateien“ von contentcheck/brokenrelations,  
+> doc/eng-us/features/6.0/content-checks.md, "Missing files"). Die Klasse, die sagt, für welche Dateien ein Feld  
+> eines Datentyps steht: eine, die expContentCheckFileHandler implementiert. Eine Erweiterung fügt ihren  
+> Datei-Datentyp hier hinzu.  
 
 Standard: ein Hash mit 3: `ezimage=expContentCheckFileImage`, `ezbinaryfile=expContentCheckFileTable`, `ezmedia=expContentCheckFileTable`.
 
@@ -40,7 +40,7 @@ Handlers[ezmedia]=expContentCheckFileTable
 
 ## Tables
 
-> The table of each datatype handled by expContentCheckFileTable (the columns of ezbinaryfile:  
+> Die Tabelle jedes Datentyps, den expContentCheckFileTable behandelt (die Spalten von ezbinaryfile:  
 > contentobject\_attribute\_id, version, filename, original\_filename, mime\_type)  
 
 Standard: ein Hash mit 2: `ezbinaryfile=ezbinaryfile`, `ezmedia=ezmedia`.
@@ -58,9 +58,9 @@ Tables[ezmedia]=ezmedia
 
 ## AliasList
 
-> The aliases of image.ini an image is expected to have when "Alias never made" is ticked; empty:  
-> every alias of image.ini. Aliases are made when an image is first shown in them, so a  
-> missing one is normal and only listed when asked for.  
+> Die Aliase aus image.ini, die ein Bild haben soll, wenn „Alias nie erzeugt“ angekreuzt ist; leer:  
+> jeder Alias aus image.ini. Aliase entstehen, wenn ein Bild zum ersten Mal in ihnen angezeigt wird, ein  
+> fehlender ist also normal und wird nur aufgeführt, wenn danach gefragt wird.  
 
 Standard: eine leere Liste.
 
@@ -75,7 +75,7 @@ AliasList[]
 
 ## ChunkSize
 
-> How many objects are checked with one set of queries (10 to 1000)  
+> Wie viele Objekte mit einem Satz von Abfragen geprüft werden (10 bis 1000)  
 
 Standard: `200`.
 
@@ -89,7 +89,7 @@ ChunkSize=200
 
 ## ScanLimit
 
-> At most this many objects are checked for one page (ChunkSize to 100000)  
+> Höchstens so viele Objekte werden für eine Seite geprüft (ChunkSize bis 100000)  
 
 Standard: `5000`.
 
@@ -103,9 +103,9 @@ ScanLimit=5000
 
 ## ListLimit
 
-> The list of missing files has a total and pages: it walks every object below the node, at  
-> most this many (100 to 1000000), and keeps the findings this many seconds for its pages  
-> (0 to 3600; 0: walked again for every page). A resolution forgets them.  
+> Die Liste der fehlenden Dateien hat eine Gesamtzahl und Seiten: Sie durchläuft jedes Objekt unter dem Knoten,  
+> höchstens so viele (100 bis 1000000), und behält die Befunde so viele Sekunden für ihre Seiten  
+> (0 bis 3600; 0: für jede Seite neu durchlaufen). Eine Behebung vergisst sie.  
 
 Standard: `50000`.
 
@@ -131,7 +131,7 @@ ListCacheTTL=60
 
 ## MaxFixItems
 
-> At most this many field versions in one resolution (1 to 1000)  
+> Höchstens so viele Feldversionen in einer Behebung (1 bis 1000)  
 
 Standard: `200`.
 
@@ -145,8 +145,8 @@ MaxFixItems=200
 
 ## FixBatchSize
 
-> How many field versions one request resolves; the page then shows the progress and goes on  
-> with the next batch (1 to 200)  
+> Wie viele Feldversionen eine Anfrage behebt; die Seite zeigt dann den Fortschritt und macht  
+> mit dem nächsten Stapel weiter (1 bis 200)  
 
 Standard: `10`.
 
@@ -160,7 +160,7 @@ FixBatchSize=10
 
 ## MaxReplaceSize
 
-> The largest file "Re-upload or replace" takes, in bytes; 0: what PHP takes (upload\_max\_filesize)  
+> Die größte Datei, die „Neu hochladen oder ersetzen“ annimmt, in Bytes; 0: was PHP annimmt (upload\_max\_filesize)  
 
 Standard: `0`.
 
@@ -174,8 +174,8 @@ MaxReplaceSize=0
 
 ## CronjobReport
 
-> enabled: the cronjob part contentcheck also counts the missing files and alias problems of  
-> the whole tree and writes the count to its output (it never resolves anything)  
+> enabled: Der Cronjob-Teil contentcheck zählt außerdem die fehlenden Dateien und Alias-Probleme  
+> des ganzen Baums und schreibt die Zahl in seine Ausgabe (er behebt nie etwas)  
 
 Standard: `disabled`.
 

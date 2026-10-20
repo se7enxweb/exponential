@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## AvailableCustomTags
 
-> You can use custom tags through the <custom> tag in XML fields.  
-> Example: <custom name="sub">Sub text</custom>  
+> Eigene Tags können Sie über das Tag <custom> in XML-Feldern verwenden.  
+> Beispiel: <custom name="sub">Sub text</custom>  
 
 Standard: eine Liste mit 5: `factbox`, `quote`, `strike`, `sub`, `sup`.
 
@@ -56,13 +56,13 @@ IsInline[sup]=true
 
 ## TeXSource
 
-> Custom tags whose text is TeX source (e.g. a LaTeX formula). When such a  
-> text is opened in the Online Editor, it is read as TeX reads it: an unescaped  
-> % comment is dropped with the rest of its line, the line break and the  
-> indentation of the next line (otherwise the line break becomes a space and  
-> the comment swallows the rest of the formula), and leading white space is  
-> dropped instead of being stored as a no-break space. Other custom tags only  
-> get their line breaks turned into spaces. None is set by default.  
+> Eigene Tags, deren Text TeX-Quelltext ist (z. B. eine LaTeX-Formel). Wird ein solcher  
+> Text im Online Editor geöffnet, wird er so gelesen, wie TeX ihn liest: Ein nicht maskierter  
+> %-Kommentar entfällt mit dem Rest seiner Zeile, dem Zeilenumbruch und der  
+> Einrückung der nächsten Zeile (sonst wird der Zeilenumbruch zu einem Leerzeichen, und  
+> der Kommentar verschluckt den Rest der Formel), und führende Leerzeichen entfallen,  
+> statt als geschützte Leerzeichen gespeichert zu werden. Bei anderen eigenen Tags werden nur  
+> die Zeilenumbrüche zu Leerzeichen. Standardmäßig ist keines gesetzt.  
 > TeXSource\[<custom tag name>\]=true  
 
 Standard: eine leere Liste.

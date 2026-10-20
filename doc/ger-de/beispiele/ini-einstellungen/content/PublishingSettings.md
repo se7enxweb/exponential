@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## AsynchronousPublishing
 
-> Enable/Disable the asynchronous publishing feature  
+> Die Funktion des asynchronen Veröffentlichens aktivieren/deaktivieren  
 
 Standard: `disabled`.
 
@@ -33,8 +33,8 @@ AsynchronousPublishing=disabled
 
 ## PublishingProcessSlots
 
-> how many parallel publishing operations should be allowed  
-> default: 10  
+> wie viele parallele Veröffentlichungsvorgänge erlaubt sind  
+> Standard: 10  
 
 Standard: `10`.
 
@@ -48,9 +48,9 @@ PublishingProcessSlots=10
 
 ## AsynchronousPublishingFilters
 
-> Asynchronous Publishing filters  
-> Each filter must implement the eZAsynchronousPublishinfFilter abstract class,  
-> and the class name must be added to this array. Ex:  
+> Filter des asynchronen Veröffentlichens  
+> Jeder Filter muss die abstrakte Klasse eZAsynchronousPublishinfFilter implementieren,  
+> und der Klassenname muss diesem Array hinzugefügt werden. Bsp.:  
 > AsynchronousPublishingFilters\[\]=MyAPFilterClass  
 
 Standard: eine leere Liste.
@@ -66,12 +66,12 @@ AsynchronousPublishingFilters[]
 
 ## AsynchronousPublishingPreQueueHooks
 
-> Queue hooks  
-> You can have your own code executed before an item is added to the publishing queue  
-> It isn't possible to do so after it is added as there is no way to ensure it isn't already being handled  
-> Hooks can either be registered dynamically, using PHP code, or pre-defined in INI settings using the following variable  
+> Queue-Hooks  
+> Sie können eigenen Code ausführen lassen, bevor ein Eintrag in die Warteschlange zum Veröffentlichen kommt  
+> Danach ist es nicht möglich, weil sich nicht sicherstellen lässt, dass er nicht schon verarbeitet wird  
+> Hooks lassen sich entweder dynamisch mit PHP-Code registrieren oder in den INI-Einstellungen mit folgender Variable festlegen  
 > AsynchronousPublishingQueueHooks\[\]=MyHookClass::queue  
-> The hook method must accept two parameters: the content object id, and its version (both integers)  
+> Die Hook-Methode muss zwei Parameter annehmen: die ID des Inhaltsobjekts und seine Version (beide Ganzzahlen)  
 
 Standard: eine leere Liste.
 
@@ -86,9 +86,9 @@ AsynchronousPublishingPreQueueHooks[]
 
 ## AsynchronousPublishingPostHandlingHooks
 
-> Post handling hooks  
-> These hooks will be executed right after an item has been processed by asynchronous publishing  
-> It can for instance be used to remove custom data added in a Queue hook  
+> Hooks nach der Verarbeitung  
+> Diese Hooks werden direkt ausgeführt, nachdem das asynchrone Veröffentlichen einen Eintrag verarbeitet hat  
+> Sie lassen sich zum Beispiel verwenden, um eigene Daten zu entfernen, die ein Queue-Hook hinzugefügt hat  
 > AsynchronousPublishingQueueHooks\[\]=MyHookClass::postHandle  
 
 Standard: eine leere Liste.
@@ -104,11 +104,11 @@ AsynchronousPublishingPostHandlingHooks[]
 
 ## AsynchronousPublishingQueueReader
 
-> Queue reader handler  
-> Exponential comes with a default queue reader handler, but it can be overridden with a custom one  
-> To define a new queue reader, override AsynchronousPublishingQueueReader with your class name:  
+> Handler zum Lesen der Warteschlange  
+> Exponential bringt einen Standard-Handler zum Lesen der Warteschlange mit, er kann aber durch einen eigenen ersetzt werden  
+> Um einen neuen zu definieren, überschreiben Sie AsynchronousPublishingQueueReader mit Ihrem Klassennamen:  
 > AsynchronousPublishingQueueReader=myContentPublishingQueue  
-> The class configured here must declare a method named next()  
+> Die hier konfigurierte Klasse muss eine Methode namens next() deklarieren  
 
 Standard: `ezpContentPublishingQueue`.
 
@@ -122,8 +122,8 @@ AsynchronousPublishingQueueReader=ezpContentPublishingQueue
 
 ## AsynchronousPollingInterval
 
-> How frequent the daemon polls the queue (sleep in seconds)  
-> default: 1  
+> Wie oft der Daemon die Warteschlange abfragt (Pause in Sekunden)  
+> Standard: 1  
 
 Standard: `1`.
 
@@ -137,8 +137,8 @@ AsynchronousPollingInterval=1
 
 ## AsynchronousCleanupInterval
 
-> How frequent the daemon cleans the queue (sleep in seconds)  
-> default: 43200 (12 hours)  
+> Wie oft der Daemon die Warteschlange aufräumt (Pause in Sekunden)  
+> Standard: 43200 (12 Stunden)  
 
 Standard: `43200`.
 
@@ -152,8 +152,8 @@ AsynchronousCleanupInterval=43200
 
 ## AsynchronousCleanupAgeLimit
 
-> How old processes need to be in order to be cleaned (in seconds)  
-> default: 604800 (a week)  
+> Wie alt Prozesse sein müssen, um aufgeräumt zu werden (in Sekunden)  
+> Standard: 604800 (eine Woche)  
 
 Standard: `604800`.
 

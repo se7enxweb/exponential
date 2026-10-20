@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-mailpreferences]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> The e-mail preferences retention on its own: php runcronjobs.php mailpreferences  
+> Die Aufbewahrung der E-Mail-Einstellungen für sich: php runcronjobs.php mailpreferences  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

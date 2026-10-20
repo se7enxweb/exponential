@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/contentcheck.ini` nie selbst: Ein Update ersetzt die Da
 
 ## ScanDirectoryList
 
-> The storage files (doc/eng-us/features/6.0/content-checks.md, "Storage files"): files below  
-> var/<site>/storage that no content uses, and the file-system problems of those it uses.  
-> The directories below the storage that are scanned  
+> Die Speicherdateien (doc/eng-us/features/6.0/content-checks.md, "Storage files"): Dateien unter  
+> var/<site>/storage, die kein Inhalt verwendet, und die Dateisystemprobleme der verwendeten.  
+> Die Verzeichnisse unter dem Speicher, die durchsucht werden  
 
 Standard: eine Liste mit 3: `images`, `images-versioned`, `original`.
 
@@ -39,7 +39,7 @@ ScanDirectoryList[]=original
 
 ## IgnorePathList
 
-> Paths below the storage that are never listed (prefixes): caches other code keeps there  
+> Pfade unter dem Speicher, die nie aufgeführt werden (Präfixe): Caches, die anderer Code dort hält  
 
 Standard: eine Liste mit 1: `images/_video-thumbnails`.
 
@@ -55,8 +55,8 @@ IgnorePathList[]=images/_video-thumbnails
 
 ## ScanBatchSize
 
-> Files read in one step of the scan (50 to 50000), and how long a step in the browser may  
-> take before it stops at the end of a batch (seconds, 1 to 25); the CLI runs the whole scan  
+> In einem Schritt des Durchlaufs gelesene Dateien (50 bis 50000) und wie lange ein Schritt im Browser dauern darf,  
+> bevor er am Ende eines Stapels anhält (Sekunden, 1 bis 25); die Kommandozeile führt den ganzen Durchlauf aus  
 
 Standard: `2000`.
 
@@ -82,7 +82,7 @@ StepSeconds=4
 
 ## MaxListed
 
-> Orphans and problems kept in the result of a scan (100 to 100000); the totals count on  
+> Verwaiste Dateien und Probleme, die im Ergebnis eines Durchlaufs behalten werden (100 bis 100000); die Summen zählen weiter  
 
 Standard: `5000`.
 
@@ -96,8 +96,8 @@ MaxListed=5000
 
 ## MinAge
 
-> A file younger than this (seconds) is never an orphan: an upload writes the file before  
-> its row in the database  
+> Eine Datei, die jünger ist (Sekunden), ist nie verwaist: Ein Upload schreibt die Datei vor  
+> ihrer Zeile in der Datenbank  
 
 Standard: `86400`.
 
@@ -111,8 +111,8 @@ MinAge=86400
 
 ## ExpectedOwner
 
-> The owner every used file should have: a user name or id; empty: the owner of the storage  
-> directory. The mode every used file should have at least (octal); empty: site.ini  
+> Der Eigentümer, den jede verwendete Datei haben sollte: ein Benutzername oder eine ID; leer: der Eigentümer des Speicher-  
+> verzeichnisses. Der Modus, den jede verwendete Datei mindestens haben sollte (oktal); leer: site.ini  
 > \[FileSettings\] StorageFilePermissions  
 
 Standard: leer.
@@ -139,7 +139,7 @@ FileMode=
 
 ## QuarantineDirectory
 
-> Where orphans are moved: var/<site>/<QuarantineDirectory>/<date>/<path below the storage>  
+> Wohin verwaiste Dateien verschoben werden: var/<site>/<QuarantineDirectory>/<date>/<path below the storage>  
 
 Standard: `storage-quarantine`.
 
@@ -153,7 +153,7 @@ QuarantineDirectory=storage-quarantine
 
 ## MaxActionBatch
 
-> At most this many files are taken from one confirmation (1 to 1000)  
+> Höchstens so viele Dateien werden aus einer Bestätigung übernommen (1 bis 1000)  
 
 Standard: `200`.
 

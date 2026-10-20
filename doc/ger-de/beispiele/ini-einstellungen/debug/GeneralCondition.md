@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/debug.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## workflow-event
 
-> Enabled/disabled specific conditions  
-> Default is to have everything off and to turn it on  
-> in override files.  
+> Bestimmte Bedingungen aktiviert/deaktiviert  
+> Standard ist, alles aus zu haben und es in  
+> Override-Dateien einzuschalten.  
 
 Standard: `disabled`.
 

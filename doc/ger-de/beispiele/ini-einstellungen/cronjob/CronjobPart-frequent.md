@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Scripts
 
-> Content jobs whose worker died, or that nobody started (kernel/classes/contentjob/)  
-> The audit: sink spools, alert rules; once a day rotation, archives, retention and the  
-> checkpoint (audit.ini \[AuditRotationSettings\] RotateAfter). Here so that an installation  
-> running only the frequent group needs no extra crontab line.  
-> The bounce mailbox (mailpreferences.ini \[BounceSettings\]; does nothing until it is set up)  
+> Inhaltsaufträge, deren Worker gestorben ist oder die niemand gestartet hat (kernel/classes/contentjob/)  
+> Das Audit: Spools der Ziele, Alarmregeln; einmal am Tag Rotation, Archive, Aufbewahrung und der  
+> Prüfpunkt (audit.ini \[AuditRotationSettings\] RotateAfter). Hier, damit eine Installation,  
+> die nur die Gruppe frequent ausführt, keine zusätzliche Crontab-Zeile braucht.  
+> Das Postfach für Rückläufer (mailpreferences.ini \[BounceSettings\]; tut nichts, bis es eingerichtet ist)  
 
 Standard: eine Liste mit 5: `notification.php`, `workflow.php`, `contentjobs.php`, `audit.php`, `mailbounces.php`.
 

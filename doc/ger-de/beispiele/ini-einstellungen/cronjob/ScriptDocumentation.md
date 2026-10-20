@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Link
 
-> A "Docs" link beside a script at Setup > Cronjobs. A script names its documentation  
-> with the @link tag of its header (or of its class file), a URL or a path such as  
-> doc/eng-us/guides/sessions.md. An installation can give or replace one per script, by the  
-> file name as Scripts\[\] has it; none removes the link the header gives.  
-> Guide: doc/eng-us/features/6.0/cronjobs-console.md  
+> Ein Link „Doku“ neben einem Skript unter Setup > Cronjobs. Ein Skript nennt seine Dokumentation  
+> mit dem Tag @link seines Kopfes (oder seiner Klassendatei), eine URL oder einen Pfad wie  
+> doc/eng-us/guides/sessions.md. Eine Installation kann pro Skript einen angeben oder ersetzen, über den  
+> Dateinamen, wie ihn Scripts\[\] hat; none entfernt den Link, den der Kopf angibt.  
+> Anleitung: doc/eng-us/features/6.0/cronjobs-console.md  
 > Link\[session\_gc.php\]=https://intranet.example.com/operations/sessions  
 > Link\[sitemap.php\]=none  
 
@@ -40,8 +40,8 @@ Link[]
 
 ## DocumentationBase
 
-> Where a path is looked up. Empty: the documentation of Exponential on GitHub.  
-> Only http and https links are shown.  
+> Wo ein Pfad nachgeschlagen wird. Leer: die Dokumentation von Exponential auf GitHub.  
+> Es werden nur http- und https-Links angezeigt.  
 
 Standard: leer.
 

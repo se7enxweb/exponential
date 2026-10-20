@@ -19,16 +19,16 @@ Bearbeiten Sie `settings/contentcheck.ini` nie selbst: Ein Update ersetzt die Da
 
 ## PresetList
 
-> Where a check starts (doc/eng-us/features/6.0/content-checks.md, "Where a check starts"): from the  
-> node in its form or address, else the signed-in user's last choice (the preference  
-> admin\_contentcheck\_scope), else content.ini \[NodeSettings\] RootNode.  
-> The quick scope buttons the checks offer, in this order: tree ("Whole tree", node 1, for users  
-> with an unlimited content/read), content ("Websites", content.ini RootNode), media ("Media",  
-> MediaRootNode), users ("Users", UserRootNode), setup (SetupRootNode), design (DesignRootNode),  
-> a node id, or a URL alias path such as media/images (these two show the node's name). A button  
-> whose node does not exist or that the user may not read is left out. Any other node, Users  
-> among them, is chosen with the node picker. The content and media roots are the ones of  
-> content.ini \[NodeSettings\] (RootNode, MediaRootNode); set them there.  
+> Wo eine Prüfung beginnt (doc/eng-us/features/6.0/content-checks.md, "Where a check starts"): beim  
+> Knoten in ihrem Formular oder ihrer Adresse, sonst bei der letzten Wahl des angemeldeten Benutzers (die Einstellung  
+> admin\_contentcheck\_scope), sonst bei content.ini \[NodeSettings\] RootNode.  
+> Die Schnellwahl-Schaltflächen der Prüfungen, in dieser Reihenfolge: tree („Ganzer Baum“, Knoten 1, für Benutzer  
+> mit unbeschränktem content/read), content („Websites“, content.ini RootNode), media („Medien“,  
+> MediaRootNode), users („Benutzer“, UserRootNode), setup (SetupRootNode), design (DesignRootNode),  
+> eine Knoten-ID oder ein URL-Alias-Pfad wie media/images (diese beiden zeigen den Namen des Knotens). Eine Schaltfläche,  
+> deren Knoten nicht existiert oder die der Benutzer nicht lesen darf, entfällt. Jeder andere Knoten, Benutzer  
+> darunter, wird mit der Knotenauswahl gewählt. Die Wurzeln der Inhalte und Medien sind die aus  
+> content.ini \[NodeSettings\] (RootNode, MediaRootNode); setzen Sie sie dort.  
 
 Standard: eine Liste mit 3: `tree`, `content`, `media`.
 
@@ -46,12 +46,12 @@ PresetList[]=media
 
 ## SiteRow
 
-> The second row beneath the buttons: the sites, sections and top folders under the content root,  
-> so a check can start in one site's subtree. Read live from the content tree: the visible  
-> children (not hidden, not invisible) the user may read, in the content root's sort order.  
-> SiteRow=disabled hides it. SiteRowParent is a preset key, a node id or a URL alias path  
-> (default: content). SiteRowLimit buttons at most (1 to 50); with more, "More..." opens the  
-> node picker at that level.  
+> Die zweite Zeile unter den Schaltflächen: die Websites, Sektionen und obersten Ordner unter der Inhaltswurzel,  
+> damit eine Prüfung im Teilbaum einer Website beginnen kann. Live aus dem Inhaltsbaum gelesen: die sichtbaren  
+> Unterknoten (nicht verborgen, nicht unsichtbar), die der Benutzer lesen darf, in der Sortierung der Inhaltswurzel.  
+> SiteRow=disabled blendet sie aus. SiteRowParent ist ein Vorlagenschlüssel, eine Knoten-ID oder ein URL-Alias-Pfad  
+> (Standard: content). SiteRowLimit Schaltflächen höchstens (1 bis 50); bei mehr öffnet „Mehr ...“ die  
+> Knotenauswahl auf dieser Ebene.  
 
 Standard: `enabled`.
 
@@ -89,7 +89,7 @@ SiteRowLimit=12
 
 ## ViewList
 
-> The views that take a start location and that the node picker may return to  
+> Die Ansichten, die einen Startort nehmen und zu denen die Knotenauswahl zurückkehren darf  
 
 Standard: eine Liste mit 3: `unreferenced`, `brokenrelations`, `storage`.
 

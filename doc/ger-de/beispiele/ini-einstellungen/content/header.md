@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## UseStrictHeaderRule
 
-> UseStrictHeaderRule controls if you can use headers tags  
-> arbitrarily or only properly nested (header 2 must be inside  
-> header 1 etc.)  
+> UseStrictHeaderRule steuert, ob Überschriften-Tags  
+> beliebig oder nur korrekt verschachtelt verwendet werden dürfen (Überschrift 2 muss in  
+> Überschrift 1 liegen usw.)  
 
 Standard: `false`.
 
@@ -35,7 +35,7 @@ UseStrictHeaderRule=false
 
 ## AvailableClasses
 
-> Header classes  
+> Klassen für Überschriften  
 
 Standard: eine leere Liste.
 
@@ -52,7 +52,7 @@ AvailableClasses[]
 
 > AvailableClasses\[\]=headerRed  
 > AvailableClasses\[\]=headerBlue  
-> Custom attributes list  
+> Liste der eigenen Attribute  
 
 Standard: eine leere Liste.
 

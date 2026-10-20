@@ -19,18 +19,18 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> Trims what the RSS import has created, keeping the newest items of each feed.  
+> Kürzt, was der RSS-Import angelegt hat, und behält die neuesten Einträge jedes Feeds.  
 >
-> An import run adds an object for every item in the feed and never takes one  
-> away, so a site importing a busy feed grows without limit. Run it from the  
-> cronjob part 'cleanuprss', or by hand:  
+> Ein Importlauf legt für jeden Eintrag im Feed ein Objekt an und nimmt nie eines  
+> weg, eine Website, die einen lebhaften Feed importiert, wächst also unbegrenzt. Führen Sie es über den  
+> Cronjob-Teil 'cleanuprss' oder von Hand aus:  
 >
 >   php bin/php/cleanuprss.php --dry-run  
 >
-> Nothing happens until Enabled is true AND ClassIdentifiers names at least one  
-> class: this removes content, and on an installation that has not been set up  
-> for it there is no safe guess about what may go.  
-> Off until the site says otherwise.  
+> Nichts geschieht, bevor Enabled true ist UND ClassIdentifiers mindestens eine  
+> Klasse nennt: Dies entfernt Inhalte, und bei einer Installation, die nicht dafür  
+> eingerichtet ist, gibt es keine sichere Vermutung darüber, was weg darf.  
+> Aus, bis die Website etwas anderes sagt.  
 
 Standard: `false`.
 
@@ -44,7 +44,7 @@ Enabled=false
 
 ## KeepPerFeed
 
-> How many items to keep per feed, newest first. Must be at least 1.  
+> Wie viele Einträge pro Feed behalten werden, die neuesten zuerst. Mindestens 1.  
 
 Standard: `100`.
 
@@ -58,10 +58,10 @@ KeepPerFeed=100
 
 ## ClassIdentifiers
 
-> The classes that may be removed. Class identifiers, and nothing outside this  
-> list is touched however old it is - so a folder or a page that happens to sit  
-> in the destination is safe. Empty means nothing is removed.  
-> Example:  
+> Die Klassen, die entfernt werden dürfen. Klassenbezeichner; nichts außerhalb dieser  
+> Liste wird angefasst, wie alt es auch ist – ein Ordner oder eine Seite, die zufällig  
+> im Ziel liegt, ist also sicher. Leer bedeutet, dass nichts entfernt wird.  
+> Beispiel:  
 > ClassIdentifiers\[\]=article  
 
 Standard: eine leere Liste.
@@ -77,7 +77,7 @@ ClassIdentifiers[]
 
 ## CleanupUser
 
-> Removing is permission checked, so it runs as somebody who may remove.  
+> Das Entfernen wird auf Berechtigungen geprüft, es läuft also als jemand, der entfernen darf.  
 
 Standard: `admin`.
 
@@ -91,7 +91,7 @@ CleanupUser=admin
 
 ## LogFile
 
-> Where the run is recorded. Empty writes no file.  
+> Wo der Lauf festgehalten wird. Leer schreibt keine Datei.  
 
 Standard: `rsscleanup.log`.
 
@@ -105,8 +105,8 @@ LogFile=rsscleanup.log
 
 ## MoveToTrash
 
-> Whether removed items go to the trash, where they can be recovered, or are  
-> deleted outright. Trash on a busy feed is itself something to empty.  
+> Ob entfernte Einträge in den Papierkorb kommen, wo sie sich wiederherstellen lassen, oder  
+> sofort gelöscht werden. Der Papierkorb eines lebhaften Feeds muss seinerseits geleert werden.  
 
 Standard: `true`.
 

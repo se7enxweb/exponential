@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/contentstructuremenu.ini` nie selbst: Ein Update ersetz
 
 ## Dynamic
 
-> If set to enabled, the admin tree menu is fetched and built dynamically on  
-> fly. Requires a web browser with AJAX support.  
+> Wenn auf enabled gesetzt, wird das Baummenü der Administration dynamisch  
+> zur Laufzeit geholt und aufgebaut. Erfordert einen Webbrowser mit AJAX-Unterstützung.  
 
 Standard: `disabled`.
 
@@ -34,7 +34,7 @@ Dynamic=disabled
 
 ## UseCache
 
-> If set to enabled, the JSON documents will be also cached on the server.  
+> Wenn auf enabled gesetzt, werden die JSON-Dokumente auch auf dem Server gecacht.  
 
 Standard: `enabled`.
 
@@ -48,7 +48,7 @@ UseCache=enabled
 
 ## ShowClasses
 
-> which classes to show  
+> welche Klassen angezeigt werden  
 
 Standard: eine Liste mit 4: `folder`, `forum`, `gallery`, `user_group`.
 
@@ -68,17 +68,17 @@ ShowClasses[]=user_group
 ## RootNodeID
 
 > ShowClasses\[\]=foo\_folder  
-> Root node of the content structure menu (the left tree of the Content  
-> structure tab in the administration interface).  
-> "1" is the real top of the content tree, the virtual node every top-level  
-> subtree hangs from: Content (2), Users (5), Media (43), Setup (48), Design  
-> (58) and any other top-level node are then shown as its children, so the  
-> whole tree can be browsed from one place. Node 1 has no object; it is  
-> labelled "Top Level Nodes" (translated) and clicking it opens the dashboard.  
-> Set it to 2 to start the menu at the Content node, as older releases did,  
-> or to any other node ID to start it there.  
-> The Media and Users tabs keep their own trees, rooted at  
-> \[NodeSettings\] MediaRootNode and UserRootNode in content.ini.  
+> Wurzelknoten des Menüs der Inhaltsstruktur (der linke Baum des Reiters  
+> Inhaltsstruktur in der Administrationsoberfläche).  
+> "1" ist die eigentliche Spitze des Inhaltsbaums, der virtuelle Knoten, an dem jeder Teilbaum der  
+> obersten Ebene hängt: Inhalte (2), Benutzer (5), Medien (43), Setup (48), Design  
+> (58) und jeder andere Knoten der obersten Ebene erscheinen dann als seine Unterknoten, sodass sich der  
+> ganze Baum von einer Stelle aus durchsuchen lässt. Knoten 1 hat kein Objekt; er ist  
+> mit „Knoten der obersten Ebene“ (übersetzt) beschriftet, und ein Klick darauf öffnet das Dashboard.  
+> Setzen Sie ihn auf 2, um das Menü wie in älteren Releases beim Knoten Inhalte zu beginnen,  
+> oder auf eine andere Knoten-ID, um es dort zu beginnen.  
+> Die Reiter Medien und Benutzer behalten ihre eigenen Bäume, mit den Wurzeln  
+> \[NodeSettings\] MediaRootNode und UserRootNode in content.ini.  
 > RootNodeID=118  
 > RootNodeID=2  
 
@@ -94,17 +94,17 @@ RootNodeID=1
 
 ## MaxDepth
 
-> Maximum number of levels shown below the root node of the menu.  
-> "0" means unlimited: every level of the tree can be opened, down to the  
-> deepest node.  
-> "1" shows only the children of the root node, "2" also their children, and  
-> so on. A node at the last allowed level is shown without the open/close  
-> control.  
-> With 'Dynamic' enabled the levels are loaded one at a time when a node is  
-> opened, so an unlimited depth does not make the menu slower; MaxNodes still  
-> limits how many children one level lists.  
-> The depth is counted from the root of each tree, so it applies in the same  
-> way to the Media and Users trees.  
+> Höchstzahl der unter dem Wurzelknoten des Menüs angezeigten Ebenen.  
+> "0" bedeutet unbegrenzt: Jede Ebene des Baums lässt sich öffnen, bis zum  
+> tiefsten Knoten.  
+> "1" zeigt nur die Unterknoten des Wurzelknotens, "2" auch deren Unterknoten und  
+> so weiter. Ein Knoten auf der letzten erlaubten Ebene wird ohne das Element zum  
+> Öffnen/Schließen angezeigt.  
+> Mit aktiviertem 'Dynamic' werden die Ebenen einzeln geladen, wenn ein Knoten  
+> geöffnet wird, eine unbegrenzte Tiefe macht das Menü also nicht langsamer; MaxNodes begrenzt weiterhin,  
+> wie viele Unterknoten eine Ebene auflistet.  
+> Die Tiefe wird ab der Wurzel jedes Baums gezählt, sie gilt also ebenso  
+> für die Bäume Medien und Benutzer.  
 
 Standard: `0`.
 
@@ -118,8 +118,8 @@ MaxDepth=0
 
 ## MaxNodes
 
-> max nodes count to fetch  
-> "0" means unlimited  
+> Höchstzahl der zu holenden Knoten  
+> "0" bedeutet unbegrenzt  
 
 Standard: `150`.
 
@@ -133,14 +133,14 @@ MaxNodes=150
 
 ## SortBy
 
-> the value is a pair of "type/order".  
-> for example:  published/ascending,  name/descending, ...  
-> using "array" notation it's possible to sort by multiple sort  
-> criteria:  
+> der Wert ist ein Paar "type/order".  
+> zum Beispiel:  published/ascending,  name/descending, ...  
+> mit der "array"-Schreibweise lässt sich nach mehreren Kriterien  
+> sortieren:  
 >    SortBy\[\]  
 >    SortBy\[\]=name/ascending  
 >    SortBy\[\]=published/descending  
-> if an empty array, it uses the sorting defined for each node instead (from the Ordering tab)  
+> bei einem leeren Array wird stattdessen die für jeden Knoten festgelegte Sortierung verwendet (aus dem Reiter Sortierung)  
 
 Standard: eine leere Liste.
 
@@ -169,9 +169,9 @@ ToolTips=enabled
 
 ## ItemClickAction
 
-> url to redirect when clicking on menu item  
-> if empty then default action(viewing of object) will be performed  
-> example: /content/browse, /content/view/full, etc.  
+> URL, auf die beim Klick auf einen Menüeintrag weitergeleitet wird  
+> wenn leer, wird die Standardaktion (Ansicht des Objekts) ausgeführt  
+> Beispiel: /content/browse, /content/view/full usw.  
 
 Standard: leer.
 
@@ -185,8 +185,8 @@ ItemClickAction=
 
 ## ClassIconsSize
 
-> Size of icons in menu: small, normal, large, etc.  
-> Check 'Sizes' setting in icon.ini for available sizes  
+> Größe der Symbole im Menü: small, normal, large usw.  
+> Die verfügbaren Größen stehen in der Einstellung 'Sizes' in icon.ini  
 
 Standard: `small`.
 
@@ -200,11 +200,11 @@ ClassIconsSize=small
 
 ## PreloadClassIcons
 
-> Controls the pre-loading of class-icons, use  
-> enabled or disabled. When pre-loading is enabled  
-> icons of all classes will be loaded before  
-> menu will be shown. If disabled icons will be loaded  
-> on demand.  
+> Steuert das Vorladen der Klassensymbole, verwenden Sie  
+> enabled oder disabled. Wenn das Vorladen aktiviert ist,  
+> werden die Symbole aller Klassen geladen, bevor  
+> das Menü angezeigt wird. Wenn deaktiviert, werden die Symbole  
+> bei Bedarf geladen.  
 
 Standard: `enabled`.
 
@@ -218,9 +218,9 @@ PreloadClassIcons=enabled
 
 ## AutoopenCurrentNode
 
-> Use enabled or disabled. If enabled then current node  
-> will be unfolded( children will be shown )  
-> automatically.  
+> Verwenden Sie enabled oder disabled. Wenn enabled, wird der aktuelle Knoten  
+> automatisch aufgeklappt (seine Unterknoten werden  
+> angezeigt).  
 
 Standard: `enabled`.
 
@@ -234,9 +234,9 @@ AutoopenCurrentNode=enabled
 
 ## MenuPersistence
 
-> Use cookies to remember opened paths and keep then  
-> open until closed by user.  
-> If disabled only current path will be opened.  
+> Cookies verwenden, um geöffnete Pfade zu merken und sie  
+> geöffnet zu halten, bis der Benutzer sie schließt.  
+> Wenn deaktiviert, wird nur der aktuelle Pfad geöffnet.  
 
 Standard: `enabled`.
 
@@ -250,7 +250,7 @@ MenuPersistence=enabled
 
 ## ChapterClasses
 
-> which classes are chapter  
+> welche Klassen Kapitel sind  
 
 Standard: eine leere Liste.
 
@@ -267,14 +267,14 @@ ChapterClasses[]
 
 > ChapterClasses\[\]=chapter  
 > ChapterClasses\[\]=lighttoc  
-> The "Create here" menu when clicking the node icon in the administrator interface.  
->   disabled   - Not having the menu.  
->   full       - Having the menu with the necessary permission checks - this will most likely slow down the interface.  
->   simplified - Having the menu without the necessary permission checks  
->                (in other words: the menu will include all classes regardless  
->                 if the logged in user is allowed to create all those classes at that exact location).  
->                Some users might get ACCESS DENIED, but it might just work for the most typical/usual cases  
->                (where only one admin or a bunch of admins without limitations are using the interface).  
+> Das Menü „Hier anlegen“ beim Klick auf das Knotensymbol in der Administrationsoberfläche.  
+>   disabled   - kein Menü.  
+>   full       - das Menü mit den nötigen Berechtigungsprüfungen; das verlangsamt die Oberfläche wahrscheinlich.  
+>   simplified - das Menü ohne die nötigen Berechtigungsprüfungen  
+>                (das heißt: Das Menü enthält alle Klassen, unabhängig davon,  
+>                 ob der angemeldete Benutzer alle diese Klassen an genau dieser Stelle anlegen darf).  
+>                Manche Benutzer erhalten dann ZUGRIFF VERWEIGERT, aber für die häufigsten Fälle kann es genügen  
+>                (wenn nur ein Administrator oder einige Administratoren ohne Einschränkungen die Oberfläche verwenden).  
 
 Standard: `simplified`.
 

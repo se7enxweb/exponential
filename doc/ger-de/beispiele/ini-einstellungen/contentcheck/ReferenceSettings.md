@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/contentcheck.ini` nie selbst: Ein Update ersetzt die Da
 
 ## ImportedIdRemotePatterns
 
-> Content imported from another installation may keep that installation's ids where a field  
-> or a layout names content by id (an enhanced link's internal id, a layout component's  
-> content parameter). A site whose templates resolve such ids as remote ids or with an offset  
-> lists the same patterns here, in the order it tries them, so both checks resolve them the  
-> way the site does. %id is the stored id, %id+N or %id-N the id moved by N. The media site  
-> demo resolves them like this:  
+> Aus einer anderen Installation importierte Inhalte können deren IDs behalten, wo ein Feld  
+> oder ein Layout Inhalte per ID nennt (die interne ID eines erweiterten Links, der Inhaltsparameter  
+> einer Layout-Komponente). Eine Website, deren Templates solche IDs als Remote-IDs oder mit einem Versatz auflösen,  
+> listet hier dieselben Muster in der Reihenfolge, in der sie sie versucht, damit beide Prüfungen sie so auflösen,  
+> wie die Website es tut. %id ist die gespeicherte ID, %id+N oder %id-N die um N verschobene ID. Die Demo der Media Site  
+> löst sie so auf:  
 > ImportedIdRemotePatterns\[\]=media-o-%id+776  
 > ImportedIdRemotePatterns\[\]=media-o-%id  
 > ImportedIdObjectPatterns\[\]=%id+776  

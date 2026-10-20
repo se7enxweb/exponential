@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/contentcheck.ini` nie selbst: Ein Update ersetzt die Da
 
 ## XmlDatatypes
 
-> The datatypes whose text is read for links and embeds (object\_id="..." and node\_id="..."  
-> of <link>, <embed> and <embed-inline>)  
+> Die Datentypen, deren Text nach Links und Einbettungen durchsucht wird (object\_id="..." und node\_id="..."  
+> von <link>, <embed> und <embed-inline>)  
 
 Standard: eine Liste mit 1: `ezxmltext`.
 
@@ -36,7 +36,7 @@ XmlDatatypes[]=ezxmltext
 
 ## ChunkSize
 
-> How many objects are checked with one set of queries (10 to 1000)  
+> Wie viele Objekte mit einem Satz von Abfragen geprüft werden (10 bis 1000)  
 
 Standard: `200`.
 
@@ -50,8 +50,8 @@ ChunkSize=200
 
 ## ScanLimit
 
-> At most this many objects are checked for one page (ChunkSize to 100000); a page with fewer  
-> findings than its size then ends early and the next page goes on from there  
+> Höchstens so viele Objekte werden für eine Seite geprüft (ChunkSize bis 100000); eine Seite mit weniger  
+> Befunden als ihre Größe endet dann früher, und die nächste Seite macht dort weiter  
 
 Standard: `5000`.
 

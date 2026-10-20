@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## ExtensionDirectories
 
-> A list of extensions containing custom content edit handlers.  
-> These handler must be placed in : <extensions>/<extension-name>/content/<extension-name>handler.php  
-> And contain a class called : <extension-name>Handler, with the function : fetchInput  
-> This class must implement eZContentObjectEditHandler ( kernel/classes/ezcontentobjectedithandler.php )  
+> Eine Liste der Erweiterungen mit eigenen Handlern für das Bearbeiten von Inhalten.  
+> Diese Handler müssen hier liegen: <extensions>/<extension-name>/content/<extension-name>handler.php  
+> Und eine Klasse namens <extension-name>Handler mit der Funktion fetchInput enthalten  
+> Diese Klasse muss eZContentObjectEditHandler implementieren ( kernel/classes/ezcontentobjectedithandler.php )  
 
 Standard: eine leere Liste.
 
@@ -37,10 +37,10 @@ ExtensionDirectories[]
 
 ## AdditionalTemplates
 
-> A list of additional templates to include from content/edit.tpl template  
-> For instance  
+> Eine Liste zusätzlicher Templates, die aus dem Template content/edit.tpl eingebunden werden  
+> Zum Beispiel  
 > AdditionalTemplates\[\]=content/edit/autosave.tpl  
-> will trigger the inclusion of design:content/edit/autosave.tpl  
+> bindet design:content/edit/autosave.tpl ein  
 
 Standard: eine leere Liste.
 
@@ -55,11 +55,11 @@ AdditionalTemplates[]
 
 ## AttributeTemplates
 
-> A list of templates to include in every field of the content edit form of the admin designs  
-> (content/edit\_attribute.tpl), with the field as $attribute and the variables of the edit form: right after the  
-> field's label, or first in its block when the field has its own fieldset or is being translated. For the tools an  
-> extension adds to a field (expai: content/edit/expai\_attribute.tpl), so they are drawn with the page and the form  
-> does not move when the scripts start.  
+> Eine Liste von Templates, die in jedes Feld des Bearbeitungsformulars der Administrations-Designs eingebunden werden  
+> (content/edit\_attribute.tpl), mit dem Feld als $attribute und den Variablen des Bearbeitungsformulars: direkt nach der  
+> Beschriftung des Feldes oder zuerst in seinem Block, wenn das Feld ein eigenes Fieldset hat oder übersetzt wird. Für die Werkzeuge, die eine  
+> Erweiterung einem Feld hinzufügt (expai: content/edit/expai\_attribute.tpl), damit sie mit der Seite gezeichnet werden und das Formular  
+> sich nicht verschiebt, wenn die Skripte starten.  
 > AttributeTemplates\[\]=content/edit/myextension\_attribute.tpl  
 
 Standard: eine leere Liste.

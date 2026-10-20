@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Pause
 
-> Pausing cronjob parts at Setup > Cronjobs: a paused part (or "all") is left out by  
-> runcronjobs.php, whoever starts it, until it is resumed. The state is a file per part,  
-> cronpart\_deactivated\_<part>.txt with "1" for paused, the layout extensions that paused  
-> parts already use, so a page of such an extension shows the same state. disabled ignores them.  
-> Guide: doc/eng-us/features/6.0/cronjob-pause.md  
+> Pausieren von Cronjob-Teilen unter Setup > Cronjobs: Einen pausierten Teil (oder "all") lässt  
+> runcronjobs.php aus, egal wer es startet, bis er fortgesetzt wird. Der Zustand ist eine Datei pro Teil,  
+> cronpart\_deactivated\_<part>.txt mit "1" für pausiert, das Format, das die Layout-Erweiterungen für pausierte  
+> Teile schon verwenden, sodass eine Seite einer solchen Erweiterung denselben Zustand zeigt. disabled ignoriert sie.  
+> Anleitung: doc/eng-us/features/6.0/cronjob-pause.md  
 
 Standard: `enabled`.
 
@@ -37,8 +37,8 @@ Pause=enabled
 
 ## Directory
 
-> Where the files are, relative to the var directory of the siteaccess. Empty: the  
-> cronjob\_control directory below the cache directory.  
+> Wo die Dateien liegen, relativ zum var-Verzeichnis des Siteaccess. Leer: das  
+> Verzeichnis cronjob\_control unter dem Cache-Verzeichnis.  
 
 Standard: leer.
 

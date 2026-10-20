@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/contentcheck.ini` nie selbst: Ein Update ersetzt die Da
 
 ## AssetClassList
 
-> The classes the list covers: assets that only matter when something uses them. A page, a  
-> folder, a user or a settings object is reached through the tree (navigation, menus,  
-> search) whether or not anything links to it, so it is never called unreferenced.  
+> Die Klassen, die die Liste abdeckt: Assets, die nur zählen, wenn etwas sie verwendet. Eine Seite, ein  
+> Ordner, ein Benutzer oder ein Einstellungsobjekt wird über den Baum erreicht (Navigation, Menüs,  
+> Suche), ob etwas darauf verlinkt oder nicht, und gilt daher nie als nicht referenziert.  
 
 Standard: eine Liste mit 8: `image`, `file`, `video`, `audio`, `flash`, `quicktime`, `windows_media`, `real_video`.
 
@@ -44,9 +44,9 @@ AssetClassList[]=real_video
 
 ## StorageParentClassList
 
-> An asset is listed only when every location's parent is of one of these classes (a folder  
-> that only stores it). Below any other parent (a gallery, an article, an event) the  
-> parent's template shows it, so it counts as used.  
+> Ein Asset wird nur aufgeführt, wenn der Elternknoten jeder Platzierung zu einer dieser Klassen gehört (ein Ordner,  
+> der es nur aufbewahrt). Unter jedem anderen Elternknoten (eine Galerie, ein Artikel, eine Veranstaltung) zeigt es das  
+> Template des Elternknotens, es gilt also als verwendet.  
 
 Standard: eine Liste mit 1: `folder`.
 
@@ -62,7 +62,7 @@ StorageParentClassList[]=folder
 
 ## MaxTrashBatch
 
-> At most this many objects are moved to the trash in one confirmation (1 to 200)  
+> Höchstens so viele Objekte werden in einer Bestätigung in den Papierkorb verschoben (1 bis 200)  
 
 Standard: `50`.
 
@@ -76,8 +76,8 @@ MaxTrashBatch=50
 
 ## IndexTTL
 
-> The reference index: every id, remote id and path that fields, links, layouts, settings,  
-> templates, roles and the tables below use. It is kept this many seconds (0 to 604800).  
+> Der Referenzindex: jede ID, Remote-ID und jeder Pfad, den Felder, Links, Layouts, Einstellungen,  
+> Templates, Rollen und die Tabellen unten verwenden. Er wird so viele Sekunden behalten (0 bis 604800).  
 
 Standard: `600`.
 
@@ -91,10 +91,10 @@ IndexTTL=600
 
 ## BuildOnRequest
 
-> true: a page builds the index when it is older than IndexTTL (the move to the trash always  
-> builds it). false (very large installations): only bin/php/contentcheck.php --build-index  
-> or the cronjob part cronjobs/contentcheck.php builds it; the list then shows the last  
-> index, and the move to the trash needs one younger than IndexTTL.  
+> true: Eine Seite baut den Index, wenn er älter als IndexTTL ist (das Verschieben in den Papierkorb baut  
+> ihn immer). false (sehr große Installationen): nur bin/php/contentcheck.php --build-index  
+> oder der Cronjob-Teil cronjobs/contentcheck.php baut ihn; die Liste zeigt dann den letzten  
+> Index, und das Verschieben in den Papierkorb braucht einen, der jünger als IndexTTL ist.  
 
 Standard: `true`.
 
@@ -108,7 +108,7 @@ BuildOnRequest=true
 
 ## ScanChunkSize
 
-> Fields read per query while building the index (100 to 20000)  
+> Pro Abfrage gelesene Felder beim Aufbau des Index (100 bis 20000)  
 
 Standard: `2000`.
 
@@ -122,8 +122,8 @@ ScanChunkSize=2000
 
 ## CandidateLimit
 
-> At most this many candidates (assets below the node) are judged for one list (100 to  
-> 500000); with more, the list asks for a smaller subtree or fewer classes  
+> Höchstens so viele Kandidaten (Assets unter dem Knoten) werden für eine Liste beurteilt (100 bis  
+> 500000); bei mehr bittet die Liste um einen kleineren Teilbaum oder weniger Klassen  
 
 Standard: `20000`.
 
@@ -137,14 +137,14 @@ CandidateLimit=20000
 
 ## ObjectColumns
 
-> Table columns that hold an object id, a node id, or a list or path of node ids. A row there  
-> keeps the object or node from being called unreferenced. A table or column that does not  
-> exist is skipped, so the tables of extensions can be listed here.  
-> the shop: baskets, wish lists and orders hold product collections  
-> collected information (forms) belongs to its object  
-> indexing and other pending actions  
-> role assignments to users and groups  
-> the newsletter: articles of editions, sends, tracked links, schedules, approvals, lists  
+> Tabellenspalten, die eine Objekt-ID, eine Knoten-ID oder eine Liste oder einen Pfad von Knoten-IDs enthalten. Eine Zeile dort  
+> bewahrt das Objekt oder den Knoten davor, als nicht referenziert zu gelten. Eine Tabelle oder Spalte, die nicht  
+> existiert, wird übersprungen, die Tabellen von Erweiterungen können also hier aufgeführt werden.  
+> der Shop: Warenkörbe, Wunschlisten und Bestellungen enthalten Produktsammlungen  
+> gesammelte Informationen (Formulare) gehören zu ihrem Objekt  
+> Indizierung und andere ausstehende Aktionen  
+> Rollenzuweisungen an Benutzer und Gruppen  
+> der Newsletter: Artikel von Ausgaben, Versände, verfolgte Links, Zeitpläne, Freigaben, Listen  
 
 Standard: eine Liste mit 14: `ezproductcollection_item.contentobject_id`, `ezinfocollection.contentobject_id`, `ezpending_actions.param`, `ezuser_role.contentobject_id`, `cjwnl_edition_article.contentobject_id`, `cjwnl_edition_send.edition_contentobject_id`, `cjwnl_edition_send.list_contentobject_id`, `cjwnl_link.contentobject_id`, `cjwnl_schedule.template_edition_contentobject_id`, `cjwnl_schedule.list_contentobject_id`, `cjwnl_approval.edition_contentobject_id`, `cjwnl_approval.list_contentobject_id` ....
 
@@ -173,8 +173,8 @@ ObjectColumns[]=cjwnl_article_pool.list_contentobject_id
 
 ## NodeColumns
 
-> subtree notifications and bookmarks  
-> where drafts and pending versions will be placed  
+> Teilbaum-Benachrichtigungen und Lesezeichen  
+> wo Entwürfe und ausstehende Versionen platziert werden  
 
 Standard: eine Liste mit 3: `ezsubtree_notification_rule.node_id`, `ezcontentbrowsebookmark.node_id`, `eznode_assignment.parent_node`.
 

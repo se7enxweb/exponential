@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## UseSimplifiedXML
 
-> When enabled, diff of eZXMLText will occur in the simplified xml input format, with formatting tags.  
-> When disabled, diff of eZXMLText will occur with just plain text.  
+> Wenn aktiviert, wird der Vergleich von eZXMLText im vereinfachten XML-Eingabeformat mit Formatierungs-Tags erstellt.  
+> Wenn deaktiviert, wird der Vergleich von eZXMLText nur mit reinem Text erstellt.  
 
 Standard: `disabled`.
 

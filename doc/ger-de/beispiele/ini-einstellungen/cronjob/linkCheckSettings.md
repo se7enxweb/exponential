@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## SiteURL
 
-> The link check (linkcheck.php, part infrequent) tests the links of published content.  
-> Guide: doc/eng-us/guides/urls-and-aliases.md  
+> Die Linkprüfung (linkcheck.php, Teil infrequent) testet die Links veröffentlichter Inhalte.  
+> Anleitung: doc/eng-us/guides/urls-and-aliases.md  
 >
-> Specify full path of all site URL; a path that is not a URL alias or module  
-> view is tried on these addresses.  
-> Example:  
+> Geben Sie den vollständigen Pfad jeder Website-URL an; ein Pfad, der kein URL-Alias und keine Modul-  
+> ansicht ist, wird an diesen Adressen versucht.  
+> Beispiel:  
 > SiteURL\[\]=http://exponential.earth/admin  
 > SiteURL\[\]=http://exponential.earth/news  
 
@@ -42,7 +42,7 @@ SiteURL[]=
 
 ## Timeout
 
-> Seconds a request may take, and seconds to connect  
+> Sekunden, die eine Anfrage dauern darf, und Sekunden für den Verbindungsaufbau  
 
 Standard: `15`.
 
@@ -68,7 +68,7 @@ ConnectTimeout=5
 
 ## MaxRedirects
 
-> Redirects followed before a link counts as broken  
+> Weiterleitungen, denen gefolgt wird, bevor ein Link als defekt gilt  
 
 Standard: `5`.
 
@@ -82,7 +82,7 @@ MaxRedirects=5
 
 ## HostDelay
 
-> Milliseconds between two requests to the same host  
+> Millisekunden zwischen zwei Anfragen an denselben Host  
 
 Standard: `1000`.
 
@@ -96,7 +96,7 @@ HostDelay=1000
 
 ## RecheckInterval
 
-> Seconds before a checked link is checked again; 0 checks every link on every run  
+> Sekunden, bis ein geprüfter Link erneut geprüft wird; 0 prüft jeden Link bei jedem Lauf  
 
 Standard: `72000`.
 
@@ -110,7 +110,7 @@ RecheckInterval=72000
 
 ## MaxURLsPerRun
 
-> Links checked in one run, the ones checked longest ago first; 0 checks all  
+> In einem Lauf geprüfte Links, die am längsten nicht geprüften zuerst; 0 prüft alle  
 
 Standard: `0`.
 
@@ -124,7 +124,7 @@ MaxURLsPerRun=0
 
 ## UserAgent
 
-> The User-Agent header of the requests  
+> Der User-Agent-Header der Anfragen  
 
 Standard: `Exponential Link Validator (+https://exponential.earth)`.
 
@@ -138,10 +138,10 @@ UserAgent=Exponential Link Validator (+https://exponential.earth)
 
 ## AllowedPrivateHosts
 
-> Addresses on a private, loopback or link-local network are never requested,  
-> so content cannot make the server reach inside its own network. List the  
-> hosts, addresses or IPv4 ranges that may be tested anyway.  
-> Example:  
+> Adressen in einem privaten, Loopback- oder Link-Local-Netz werden nie angefragt,  
+> damit Inhalte den Server nicht in sein eigenes Netz greifen lassen können. Listen Sie die  
+> Hosts, Adressen oder IPv4-Bereiche auf, die trotzdem geprüft werden dürfen.  
+> Beispiel:  
 > AllowedPrivateHosts\[\]=intranet.example.local  
 > AllowedPrivateHosts\[\]=10.1.0.0/16  
 

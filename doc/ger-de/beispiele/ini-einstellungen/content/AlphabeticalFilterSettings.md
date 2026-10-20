@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## ContentFilterList
 
-> List of alphabets that will be used in alphabetical navigation.  
-> Alphabets will be fetched from AlphabetList\[<name of alphabet>\]  
-> For example:  
+> Liste der Alphabete, die in der alphabetischen Navigation verwendet werden.  
+> Die Alphabete werden aus AlphabetList\[<name of alphabet>\] geholt  
+> Zum Beispiel:  
 >     ContentFilterList\[\]=<name of alphabet>  
-> If array is empty means the alphabetical navigation will be disabled.  
-> Note: This is currently implemented in new admin interface, as it was in the old one,  
-> as a full refresh of the page. It might be enhanced by Ajax calls in the future.  
+> Ist das Array leer, ist die alphabetische Navigation deaktiviert.  
+> Hinweis: Dies ist in der neuen Administrationsoberfläche derzeit wie in der alten  
+> als vollständiges Neuladen der Seite umgesetzt. Es könnte künftig durch Ajax-Aufrufe verbessert werden.  
 
 Standard: eine leere Liste.
 
@@ -42,8 +42,8 @@ ContentFilterList[]
 
 > ContentFilterList\[\]=eng-GB  
 > ContentFilterList\[\]=ger-DE  
-> Alphabet range in unicode (range of english alphabet is between 97 and 122).  
-> You can use range (e.g. 97-122) and/or sequence of letters (e.g. 248,249).  
+> Alphabetbereich in Unicode (der Bereich des englischen Alphabets liegt zwischen 97 und 122).  
+> Sie können einen Bereich (z. B. 97-122) und/oder eine Folge von Buchstaben (z. B. 248,249) verwenden.  
 
 Standard: ein Hash mit 4: `eng-GB=97-122`, `ger-DE=97,228,98-111,246,112-115,223,116,117,252,118-122`, `rus-RU=1072-1103`, `nor-NO=97-122,230,248,229`.
 
@@ -62,10 +62,10 @@ AlphabetList[nor-NO]=97-122,230,248,229
 
 ## EnableUnusedLetters
 
-> If true unused letters in alphabetical navigation (when browsing or fetching subitems)  
-> will be disabled.  
-> For example:  
-> if there are no objects with 'a' first letter in the object name 'a' letter will be disabled in alphabetical navigation.  
+> Wenn true, werden ungenutzte Buchstaben in der alphabetischen Navigation (beim Durchsuchen oder Abrufen von Unterelementen)  
+> deaktiviert.  
+> Zum Beispiel:  
+> Gibt es keine Objekte, deren Name mit 'a' beginnt, wird der Buchstabe 'a' in der alphabetischen Navigation deaktiviert.  
 
 Standard: `true`.
 

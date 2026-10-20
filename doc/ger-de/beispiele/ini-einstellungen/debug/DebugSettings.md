@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/debug.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## ConditionDebug
 
-> Master switch for conditional debugging, if disabled  
-> no conditions are checked.  
+> Hauptschalter für bedingtes Debugging; wenn deaktiviert,  
+> werden keine Bedingungen geprüft.  
 
 Standard: `enabled`.
 

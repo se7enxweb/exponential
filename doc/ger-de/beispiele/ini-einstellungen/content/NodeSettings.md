@@ -19,7 +19,7 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## RootNode
 
-> The node ID of the normal content tree  
+> Die Knoten-ID des normalen Inhaltsbaums  
 
 Standard: `2`.
 
@@ -33,7 +33,7 @@ RootNode=2
 
 ## UserRootNode
 
-> The node ID of the user tree  
+> Die Knoten-ID des Benutzerbaums  
 
 Standard: `5`.
 
@@ -47,7 +47,7 @@ UserRootNode=5
 
 ## MediaRootNode
 
-> The node ID for the media tree  
+> Die Knoten-ID des Medienbaums  
 
 Standard: `43`.
 
@@ -61,7 +61,7 @@ MediaRootNode=43
 
 ## SetupRootNode
 
-> The node ID for the setup tree  
+> Die Knoten-ID des Setup-Baums  
 
 Standard: `48`.
 
@@ -75,7 +75,7 @@ SetupRootNode=48
 
 ## DesignRootNode
 
-> The node ID for the design tree  
+> Die Knoten-ID des Design-Baums  
 
 Standard: `58`.
 

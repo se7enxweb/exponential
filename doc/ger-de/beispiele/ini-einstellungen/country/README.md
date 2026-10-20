@@ -12,19 +12,19 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/country.ini`: 246 Blöcke, 984 Einstellungen.
 
-> Exponential configuration file for content module  
+> Exponential-Konfigurationsdatei für das Modul content  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/country.ini.append or  
->       settings/override/country.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
-> This file should contain groups of countries only.  
-> Name of group is Alpha-2 code as reserved in ISO 3166-1  
-> see http://en.wikipedia.org/wiki/ISO\_3166-1  
-> For example:  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen,  
+>       die Ihre Website braucht. Legen Sie entweder  
+>       eine Datei settings/override/country.ini.append oder  
+>       settings/override/country.ini.append.php an, für mehr Sicherheit  
+>       im Modus ohne virtuellen Host (die .php-Datei ist eventuell schon vorhanden  
+>       und kann dafür verwendet werden).  
+> Diese Datei sollte nur Gruppen von Ländern enthalten.  
+> Der Name der Gruppe ist der Alpha-2-Code nach ISO 3166-1  
+> siehe http://en.wikipedia.org/wiki/ISO\_3166-1  
+> Zum Beispiel:  
 > \[<Alpha2>\]  
 > Name=<Name of country>  
 > Alpha2=<Aplha2 code>  

@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-mailbounces]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> The bounce mailbox on its own: php runcronjobs.php mailbounces  
+> Das Postfach für Rückläufer für sich: php runcronjobs.php mailbounces  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

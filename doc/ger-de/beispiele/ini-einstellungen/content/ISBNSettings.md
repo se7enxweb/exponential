@@ -19,8 +19,8 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## StrictValidation
 
-> Will not validate other than registered ISBN13 ranges when this option is set to true.  
-> When the value is false, values that are outside the ISBN13 ranges, will only check the length and check digit.  
+> Wenn true, werden nur registrierte ISBN-13-Bereiche als gültig akzeptiert.  
+> Bei false wird bei Werten außerhalb der ISBN-13-Bereiche nur die Länge und die Prüfziffer geprüft.  
 
 Standard: `true`.
 

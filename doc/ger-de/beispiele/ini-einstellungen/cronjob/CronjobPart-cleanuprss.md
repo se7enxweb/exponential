@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[CronjobPart-cleanuprss]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
-> Trims what the RSS import has created. Does nothing until  
-> content.ini \[RSSImportCleanupSettings\] says what may be removed, so it is  
-> safe to schedule before it is configured:  
+> Kürzt, was der RSS-Import angelegt hat. Tut nichts, bis  
+> content.ini \[RSSImportCleanupSettings\] sagt, was entfernt werden darf, es lässt sich also  
+> schon vor der Konfiguration sicher einplanen:  
 >   php runcronjobs.php cleanuprss  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:

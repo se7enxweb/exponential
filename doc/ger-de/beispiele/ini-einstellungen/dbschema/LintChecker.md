@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/dbschema.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## TableLimit
 
-> Limitations on names and identifiers in the database  
-> In general they should not exceed 30 which is the limit of Oracle  
-> Table name limit, is 30 minus 4, this reserves room for suffixes  
+> Grenzen für Namen und Bezeichner in der Datenbank  
+> Im Allgemeinen sollten sie 30 nicht überschreiten, die Grenze von Oracle  
+> Grenze für Tabellennamen ist 30 minus 4, das lässt Platz für Suffixe  
 
 Standard: `26`.
 
@@ -59,13 +59,13 @@ IndexLimit=30
 
 ## IgnoredTables
 
-> A list of tables which do not get their names checked.  
-> These are tables which are already in Exponential and  
-> cannot be changed in the 3.x series.  
-> They all have workarounds for the various DB handlers.  
+> Eine Liste von Tabellen, deren Namen nicht geprüft werden.  
+> Das sind Tabellen, die es in Exponential schon gibt und die  
+> in der Serie 3.x nicht geändert werden können.  
+> Für alle gibt es Umgehungen in den verschiedenen Datenbank-Handlern.  
 >
-> Each entry is the table name  
-> e.g ezuser  
+> Jeder Eintrag ist der Tabellenname  
+> z. B. ezuser  
 
 Standard: eine Liste mit 5: `ezcollab_item_participant_link`, `ezgeneral_digest_user_settings`, `eznotificationcollection_item`, `ezproductcollection_item_opt`, `ezsubtree_notification_rule`.
 
@@ -85,13 +85,13 @@ IgnoredTables[]=ezsubtree_notification_rule
 
 ## IgnoredFields
 
-> A list of table + fields which do not get their names checked.  
-> These are fields which are already in Exponential and  
-> cannot be changed in the 3.x series.  
-> They all have workarounds for the various DB handlers.  
+> Eine Liste von Tabellen und Feldern, deren Namen nicht geprüft werden.  
+> Das sind Felder, die es in Exponential schon gibt und die  
+> in der Serie 3.x nicht geändert werden können.  
+> Für alle gibt es Umgehungen in den verschiedenen Datenbank-Handlern.  
 >
-> Each entry is the table name, a dot and the field name  
-> e.g ezuser.login  
+> Jeder Eintrag ist der Tabellenname, ein Punkt und der Feldname  
+> z. B. ezuser.login  
 
 Standard: eine Liste mit 2: `ezenumobjectvalue.contentobject_attribute_version`, `ezurl_object_link.contentobject_attribute_version`.
 
@@ -108,13 +108,13 @@ IgnoredFields[]=ezurl_object_link.contentobject_attribute_version
 
 ## IgnoredFieldSyntax
 
-> A list of table + fields which do not get their syntax checked.  
-> These are fields which are already in Exponential and  
-> cannot be changed in the 3.x series.  
-> They all have workarounds for the various DB handlers.  
+> Eine Liste von Tabellen und Feldern, deren Syntax nicht geprüft wird.  
+> Das sind Felder, die es in Exponential schon gibt und die  
+> in der Serie 3.x nicht geändert werden können.  
+> Für alle gibt es Umgehungen in den verschiedenen Datenbank-Handlern.  
 >
-> Each entry is the table name, a dot and the field name  
-> e.g ezuser.login  
+> Jeder Eintrag ist der Tabellenname, ein Punkt und der Feldname  
+> z. B. ezuser.login  
 
 Standard: eine leere Liste.
 
@@ -129,13 +129,13 @@ IgnoredFieldSyntax[]
 
 ## IgnoredIndexes
 
-> A list of indexes which do not get their names checked.  
-> These are indexes which are already in Exponential and  
-> cannot be changed in the 3.x series.  
-> They all have workarounds for the various DB handlers.  
+> Eine Liste von Indizes, deren Namen nicht geprüft werden.  
+> Das sind Indizes, die es in Exponential schon gibt und die  
+> in der Serie 3.x nicht geändert werden können.  
+> Für alle gibt es Umgehungen in den verschiedenen Datenbank-Handlern.  
 >
-> Each entry is the index name  
-> e.g ezuser\_role  
+> Jeder Eintrag ist der Name des Index  
+> z. B. ezuser\_role  
 
 Standard: eine Liste mit 16: `ezcontentobject_attribute_co_id_ver_lang_code`, `ezcontentobject_attribute_language_code`, `ezcontentobject_tree_path_ident`, `ezcobj_trash_path_ident`, `ezenumvalue_co_cl_attr_id_co_class_att_ver`, `ezmodule_run_workflow_process_id_s`, `ezoperation_memento_memento_key_main`, `ezproductcollection_item_contentobject_id`, `ezproductcollection_item_productcollection_id`, `ezproductcollection_item_opt_item_id`, `ezsearch_object_word_link_frequency`, `ezsearch_object_word_link_identifier` ....
 
@@ -166,12 +166,12 @@ IgnoredIndexes[]=ezwaituntildateevalue_wf_ev_id_wf_ver
 
 ## NameMap
 
-> Mapping of long words to short words  
-> This will be used whenever an identifier or name is to long  
-> each entry will be tried in order until the string is short enough.  
-> e.g. NameMap\[notification\]=notif  
-> combined words that are really shortened  
-> General word shortening  
+> Zuordnung langer Wörter zu kurzen Wörtern  
+> Wird verwendet, wann immer ein Bezeichner oder Name zu lang ist;  
+> jeder Eintrag wird der Reihe nach versucht, bis die Zeichenkette kurz genug ist.  
+> z. B. NameMap\[notification\]=notif  
+> zusammengesetzte Wörter, die stark gekürzt werden  
+> Allgemeine Wortkürzungen  
 
 Standard: ein Hash mit 26: `enumobjectvalue=enov`, `enumvalue=env`, `waituntildateeval=wude`, `co_cl_attr_id_co_class_att_ver=ccai_ccav`, `contentobject=cobj`, `content=co`, `object=obj`, `attribute=attr`, `version=ver`, `notification=notif`, `collection=coll`, `workflow=wflw` ....
 
