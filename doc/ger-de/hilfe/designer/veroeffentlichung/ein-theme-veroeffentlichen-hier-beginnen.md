@@ -11,7 +11,7 @@ type: help
 # Ein Theme veröffentlichen: hier beginnen
 
 Dieser Bereich ist für Designer, deren Theme-Erweiterung funktioniert und die möchten, dass andere sie finden,
-installieren und ihr vertrauen. Bauen Sie zuerst die Erweiterung ([Theme-Erweiterungen: hier beginnen](../../../../eng-us/help/designers/extensions/theme-extensions-start-here.md)).
+installieren und ihr vertrauen. Bauen Sie zuerst die Erweiterung ([Theme-Erweiterungen: hier beginnen](../erweiterungen/theme-erweiterungen-hier-beginnen.md)).
 
 ## Die eine Regel, die Sie sich merken sollten
 

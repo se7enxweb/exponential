@@ -47,7 +47,7 @@ Die Beispiele für `Added:` und `Updated:` stammen aus dem Changelog von `cjw_th
 ## Verwandte Seiten
 
 - [Eine CHANGELOG.md führen](eine-changelog-datei-fuehren.md)
-- [INSTALL.md und CHANGELOG.md](../../../../eng-us/help/designers/extensions/install-and-changelog-files.md)
+- [INSTALL.md und CHANGELOG.md](../erweiterungen/install-und-changelog-dateien.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

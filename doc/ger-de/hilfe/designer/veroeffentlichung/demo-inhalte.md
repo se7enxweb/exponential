@@ -34,8 +34,8 @@ Demo-Inhalte verkaufen das Theme und finden seine Fehler.
 
 | Weg | Seite |
 |---|---|
-| Ein Inhaltsobjekt-Paket (`.ezpkg`) des Demo-Teilbaums | [Der Paketerstellungs-Assistent](../../../../eng-us/help/designers/extensions/package-creator-wizard-step-by-step.md), [Exportieren mit ezpm](../../../../eng-us/help/designers/extensions/exporting-with-ezpm.md) |
-| Bilder und Dateien in `share/` mit Installationsschritten | [Der share-Ordner](../../../../eng-us/help/designers/extensions/share-folder-assets.md) |
+| Ein Inhaltsobjekt-Paket (`.ezpkg`) des Demo-Teilbaums | [Der Paketerstellungs-Assistent](../erweiterungen/paketerstellungs-assistent-schritt-fuer-schritt.md), [Exportieren mit ezpm](../erweiterungen/exportieren-mit-ezpm.md) |
+| Bilder und Dateien in `share/` mit Installationsschritten | [Der share-Ordner](../erweiterungen/der-share-ordner.md) |
 | Nur auf Ihrer Demo-Website | [Eine Demo-Website betreiben](demo-websites.md) |
 
 ## Schritt für Schritt
@@ -43,7 +43,7 @@ Demo-Inhalte verkaufen das Theme und finden seine Fehler.
 1. Bauen Sie die Inhalte auf einer Entwicklungsinstallation in einem eigenen Teilbaum auf.
 2. Prüfen Sie sie anhand der Tabelle oben.
 3. Exportieren Sie den Teilbaum: `php ezpm.php add mytheme_demo ezcontentobject <node id>` nach `create`, dann `export`.
-4. Installieren Sie ihn auf einer frischen Testseite ([Ihr Paket auf einer Testseite installieren](../../../../eng-us/help/designers/extensions/installing-your-package-on-a-test-site.md)).
+4. Installieren Sie ihn auf einer frischen Testseite ([Ihr Paket auf einer Testseite installieren](../erweiterungen/ihr-paket-auf-einer-testseite-installieren.md)).
 
 ## Seitenpakete: tragen Sie sie bei
 

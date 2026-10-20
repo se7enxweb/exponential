@@ -16,7 +16,7 @@ landet.
 
 1. `LICENSE` mit dem vollständigen Lizenztext.
 2. Das README mit einer Copyright-Zeile und dem Namen der Lizenz.
-3. `ezinfo.php` und `extension.xml` mit derselben Zeile ([Copyright- und Autorenzeilen](../../../../eng-us/help/designers/extensions/copyright-and-author-lines.md)).
+3. `ezinfo.php` und `extension.xml` mit derselben Zeile ([Copyright- und Autorenzeilen](../erweiterungen/copyright-und-autorenzeilen.md)).
 
 ## Dateiköpfe (optional, für PHP empfohlen)
 

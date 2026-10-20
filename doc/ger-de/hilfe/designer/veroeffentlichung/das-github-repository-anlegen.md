@@ -14,7 +14,7 @@ Andere Git-Hosts funktionieren ganz ähnlich; die Befehle unten verwenden die Gi
 
 ## Bevor Sie beginnen
 
-- Das Theme ist ein Git-Repository, dessen Wurzel der Erweiterungsordner ist ([Ein Theme unter Git stellen](../../../../eng-us/help/designers/extensions/putting-a-theme-under-git.md)).
+- Das Theme ist ein Git-Repository, dessen Wurzel der Erweiterungsordner ist ([Ein Theme unter Git stellen](../erweiterungen/ein-theme-unter-git-stellen.md)).
 - `gh auth status` meldet, dass Sie bei github.com angemeldet sind.
 - `LICENSE` und `README.md` sind committet.
 

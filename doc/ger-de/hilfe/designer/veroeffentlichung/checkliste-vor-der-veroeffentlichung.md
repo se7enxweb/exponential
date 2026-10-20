@@ -11,7 +11,7 @@ type: help
 # Checkliste: vor der Veröffentlichung
 
 Diese Seite ist für Designer, die gleich ein Release veröffentlichen. Das Theme selbst sollte bereits die
-[Checkliste: Die Theme-Erweiterung ist bereit](../../../../eng-us/help/designers/extensions/checklist-theme-extension-ready.md) bestehen.
+[Checkliste: Die Theme-Erweiterung ist bereit](../erweiterungen/checkliste-theme-erweiterung-bereit.md) bestehen.
 
 ## Repository
 

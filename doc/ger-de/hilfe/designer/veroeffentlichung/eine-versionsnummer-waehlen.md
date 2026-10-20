@@ -35,7 +35,7 @@ darüber, was sich geändert hat. Wählen Sie sie mit Sorgfalt: Ist ein Tag gepu
    | Eine mittlere Stelle | Ein bewusster Schritt, zum Beispiel eine neue Mindestversion von Exponential oder PHP oder eine geänderte API für Template-Autoren | `1.4.x` zu `1.5.0` |
    | Die erste Stelle | Ein Redesign oder ein Bruch, bei dem Nutzer handeln müssen | `1.x` zu `2.0.0` |
 
-5. Schreiben Sie die Nummer in jedes Versionsfeld ([Alle Versionsfelder synchron halten](../../../../eng-us/help/designers/extensions/keeping-version-fields-in-sync.md)).
+5. Schreiben Sie die Nummer in jedes Versionsfeld ([Alle Versionsfelder synchron halten](../erweiterungen/versionsfelder-synchron-halten.md)).
 
 ## Was die veröffentlichten Themes tun
 

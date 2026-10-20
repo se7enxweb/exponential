@@ -15,7 +15,7 @@ wird.
 ## Name
 
 Verwenden Sie den Namen der Erweiterung als Namen des Repositorys (`cjw_themes_jumper`, `sevenx_themes_simple`). Dann
-sagen Repository, Ordner und Einstellungen alle dasselbe ([Ihre Theme-Erweiterung benennen](../../../../eng-us/help/designers/extensions/naming-your-theme-extension.md)).
+sagen Repository, Ordner und Einstellungen alle dasselbe ([Ihre Theme-Erweiterung benennen](../erweiterungen/ihre-theme-erweiterung-benennen.md)).
 
 ## Beschreibung
 

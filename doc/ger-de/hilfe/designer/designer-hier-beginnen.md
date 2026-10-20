@@ -74,7 +74,7 @@ dieser Hilfe steht.
 |---|---|---|
 | Theme-Design | Designs, Kaskade, Pagelayout, CSS und JS, Bilder und Schriften, Responsive Design, Barrierefreiheit, Dunkelmodus, rechts nach links, CSP, Leistung, Layout-Editor | [Die Design-Kaskade](../../../eng-us/help/designers/theme-design/the-design-cascade.md) |
 | Templates | die Sprache TPL, Operatoren und Funktionen, Inhalte abrufen, Ansichtsmodi, Overrides, Debugging | [Templates im Überblick](../../../eng-us/help/designers/templates/templates-overview.md) |
-| Theme-Erweiterungen | Metadaten, Einstellungen, Paketierung, die RAD-Assistenten für Designs und Pakete | [Theme-Erweiterungen: hier beginnen](../../../eng-us/help/designers/extensions/theme-extensions-start-here.md) |
+| Theme-Erweiterungen | Metadaten, Einstellungen, Paketierung, die RAD-Assistenten für Designs und Pakete | [Theme-Erweiterungen: hier beginnen](erweiterungen/theme-erweiterungen-hier-beginnen.md) |
 | Veröffentlichung | Repositories, Versionen, Releases, Packagist, Lizenzen, Veröffentlichen | [Ein Theme veröffentlichen: hier beginnen](veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md) |
 | Verkauf | Themes und Dienstleistungen verkaufen | [Themes und Dienstleistungen verkaufen: hier beginnen](../../../eng-us/help/designers/sales/selling-start-here.md) |
 | Lebenszyklus der Wartung | Kompatibilität, Upgrades, Sicherheit, Abkündigung, Lebensende, Forks | [Der Lebenszyklus der Wartung: hier beginnen](../../../eng-us/help/designers/lifecycle/lifecycle-start-here.md) |
@@ -102,7 +102,7 @@ dieser Hilfe steht.
 [Dunkelmodus](../../../eng-us/help/designers/theme-design/checklist-dark-mode.md) ·
 [Rechts nach links](../../../eng-us/help/designers/theme-design/checklist-right-to-left.md) ·
 [Code-Review für Templates](../../../eng-us/help/designers/theme-design/checklist-code-review-for-templates.md) ·
-[Die Theme-Erweiterung ist bereit](../../../eng-us/help/designers/extensions/checklist-theme-extension-ready.md)
+[Die Theme-Erweiterung ist bereit](erweiterungen/checkliste-theme-erweiterung-bereit.md)
 
 ## Regeln, die jedes Design befolgt
 

@@ -48,7 +48,7 @@ Installation; ein GitHub-Release nicht. Führen Sie beides.
 
 ## Verwandte Seiten
 
-- [INSTALL.md und CHANGELOG.md](../../../../eng-us/help/designers/extensions/install-and-changelog-files.md)
+- [INSTALL.md und CHANGELOG.md](../erweiterungen/install-und-changelog-dateien.md)
 - [Release Notes schreiben](release-notes-schreiben.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

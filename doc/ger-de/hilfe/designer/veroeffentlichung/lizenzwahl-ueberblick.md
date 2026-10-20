@@ -38,13 +38,13 @@ Und wenn Sie Geld verdienen wollen: [Kommerzielle Bedingungen neben der GPL](kom
 
 Die Paket- und RAD-Assistenten bieten die Lizenzen an, die in `package.ini [LicenseSettings]` eingerichtet sind: die
 Familien GPL, LGPL und AGPL, MIT, die GFDL, Creative Commons 1.0 bis 4.0, CC0, die Public Domain Mark und
-`LicenseRef-Proprietary` ([Eine Lizenz im Paket-Assistenten wählen](../../../../eng-us/help/designers/extensions/package-licenses-in-the-wizard.md)).
+`LicenseRef-Proprietary` ([Eine Lizenz im Paket-Assistenten wählen](../erweiterungen/paketlizenzen-im-assistenten.md)).
 
 ## Schritt für Schritt
 
 1. Entscheiden Sie jede der vier Zeilen oben.
 2. Legen Sie die Lizenztexte in das Theme: `LICENSE` für den Code, eigene Dateien neben Assets unter anderen
-   Bedingungen ([Die LICENSE-Datei eines Themes](../../../../eng-us/help/designers/extensions/license-file.md)).
+   Bedingungen ([Die LICENSE-Datei eines Themes](../erweiterungen/die-license-datei.md)).
 3. Führen Sie jede Lizenz im README mit dem auf, was sie abdeckt.
 4. Nennen Sie die Lizenz des Codes in `composer.json`, `ezinfo.php` und `extension.xml`.
 

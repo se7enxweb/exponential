@@ -56,7 +56,7 @@ beginnen. Wie: [Ihr Seitenpaket beitragen](../../seitenpakete/ihr-seitenpaket-be
 
 ## Verwandte Seiten
 
-- [Composer-Paket oder .ezpkg](../../../../eng-us/help/designers/extensions/composer-or-ezpkg.md)
+- [Composer-Paket oder .ezpkg](../erweiterungen/composer-oder-ezpkg.md)
 - [Wo Exponential-Themes heute zu finden sind](../../../../eng-us/help/designers/sales/where-themes-are-found.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

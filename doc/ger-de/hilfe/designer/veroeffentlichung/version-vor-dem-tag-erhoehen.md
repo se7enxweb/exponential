@@ -52,7 +52,7 @@ verbrauchte Versionsnummer.
 
 ## Verwandte Seiten
 
-- [Alle Versionsfelder synchron halten](../../../../eng-us/help/designers/extensions/keeping-version-fields-in-sync.md)
+- [Alle Versionsfelder synchron halten](../erweiterungen/versionsfelder-synchron-halten.md)
 - [Ein gepushter Tag ist endgültig](ein-gepushter-tag-ist-endgueltig.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

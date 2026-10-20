@@ -40,7 +40,7 @@ nicht zu diagnostizieren.
 
 - [ ] `git status --short` gibt nichts aus.
 - [ ] `git log --oneline -1` ist der Release-Commit.
-- [ ] Die Versionsfelder zeigen die neue Nummer ([Alle Versionsfelder synchron halten](../../../../eng-us/help/designers/extensions/keeping-version-fields-in-sync.md)).
+- [ ] Die Versionsfelder zeigen die neue Nummer ([Alle Versionsfelder synchron halten](../erweiterungen/versionsfelder-synchron-halten.md)).
 - [ ] Die Nummer ist höher als jeder veröffentlichte Tag und jedes Release.
 - [ ] Das Theme wurde aus diesem Commit auf einer Testinstallation installiert und angesehen.
 - [ ] Die Tag-Nachricht stimmt (`git show v<version> | head -5`).

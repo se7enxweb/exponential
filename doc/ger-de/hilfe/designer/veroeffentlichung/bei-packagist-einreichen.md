@@ -15,7 +15,7 @@ Packagist ist der Hauptindex, den Composer durchsucht; sobald Ihr Theme dort ist
 
 ## Bevor Sie beginnen
 
-- Ein öffentliches Repository mit `composer.json` im Wurzelverzeichnis ([composer.json für ein Theme](../../../../eng-us/help/designers/extensions/composer-json-for-a-theme.md)).
+- Ein öffentliches Repository mit `composer.json` im Wurzelverzeichnis ([composer.json für ein Theme](../erweiterungen/composer-json-fuer-ein-theme.md)).
 - `composer validate` läuft fehlerfrei durch.
 - Mindestens ein Release-Tag ist gepusht ([GitHub-Releases](github-releases.md)). Ohne Tag listet Packagist nur den
   Branch (`dev-main`).
@@ -51,7 +51,7 @@ Version mit ihrer Lizenz und Quelle.
 
 ## Verwandte Seiten
 
-- [Eine Composer-Installation vor der Veröffentlichung testen](../../../../eng-us/help/designers/extensions/testing-a-composer-install-locally.md)
+- [Eine Composer-Installation vor der Veröffentlichung testen](../erweiterungen/composer-installation-lokal-testen.md)
 - [Packagist zeigt eine alte Version](veraltete-packagist-version.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 

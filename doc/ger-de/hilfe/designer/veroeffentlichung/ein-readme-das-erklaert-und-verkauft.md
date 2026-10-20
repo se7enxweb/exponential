@@ -9,7 +9,7 @@ type: help
 ---
 # Ein README, das erklärt und verkauft
 
-Diese Seite ist für Designer, die schon ein README haben ([Das README eines Themes schreiben](../../../../eng-us/help/designers/extensions/readme-for-a-theme.md))
+Diese Seite ist für Designer, die schon ein README haben ([Das README eines Themes schreiben](../erweiterungen/readme-fuer-ein-theme.md))
 und möchten, dass es ebenso überzeugt wie anleitet. Auf GitHub und Packagist ist das README die Produktseite.
 
 ## Der erste Bildschirm

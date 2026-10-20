@@ -51,7 +51,7 @@ Erwartet bei `~1.0.24`: eine Zeile, die sagt, dass das Root-Paket `~1.0.24` verl
 
 ## Verwandte Seiten
 
-- [require und suggest](../../../../eng-us/help/designers/extensions/composer-require-and-suggest.md)
+- [require und suggest](../erweiterungen/composer-require-und-suggest.md)
 - [Inkompatible Änderungen und die nächste Major-Version](../../../../eng-us/help/designers/lifecycle/breaking-changes.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
